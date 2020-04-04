@@ -234,30 +234,48 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		data.t = TimerManager:game():time()
 		local my_data = data.internal_data
 		local min_reaction = AIAttentionObject.REACT_AIM
-		
-		
+
 		CopLogicBase._upd_attention_obj_detection(data, min_reaction, nil)
 
-		local under_multiple_fire = nil
-		local alert_chk_t = data.t - 1.2
-		
-		for key, enemy_data in pairs(data.detected_attention_objects) do
-			if enemy_data.dmg_t and alert_chk_t < enemy_data.dmg_t then
-				under_multiple_fire = 0
+		local tasing = my_data.tasing
+		local tase_in_effect = nil
 
-				if under_multiple_fire > 11 then
-						under_multiple_fire = true
-					break
+		if tasing then
+			if data.unit:movement()._active_actions[3] and data.unit:movement()._active_actions[3]:type() == "tase" then
+				local tase_action = data.unit:movement()._active_actions[3]
+
+				if tase_action._discharging or tase_action._firing_at_husk or tase_action._discharging_on_husk then
+					tase_in_effect = true
 				end
 			end
 		end
 
 		local find_new_focus_enemy = nil
-		local tasing = my_data.tasing
-		local tased_u_key = tasing and tasing.target_u_key
-		local tase_in_effect = tasing and tasing.target_u_data.unit:movement():tased()
+		local highest_tase_delay = data.char_tweak.weapon.is_rifle.aim_delay_tase[2] or 1
 
-		if tase_in_effect or tasing and data.t - tasing.start_t < math.max(1, data.char_tweak.weapon.is_rifle.aim_delay_tase[2] or 0 * 1.5) then --added some fallback code to make sure this mod works with tdlq's excellent mods
+		if tase_in_effect then
+			return
+		elseif tasing and data.t - tasing.start_t < math.max(1, highest_tase_delay * 1.5) then
+			local under_multiple_fire = nil
+			local und_mul_fire_amount = nil
+			local alert_chk_t = data.t - 1.2
+
+			for key, enemy_data in pairs(data.detected_attention_objects) do
+				if key ~= tasing.target_u_key and enemy_data.dmg_t and alert_chk_t < enemy_data.dmg_t then
+					if not und_mul_fire_amount then
+						und_mul_fire_amount = 1
+					else
+						und_mul_fire_amount = und_mul_fire_amount + 1
+					end
+
+					if und_mul_fire_amount > 2 then
+						under_multiple_fire = true
+
+						break
+					end
+				end
+			end
+
 			if under_multiple_fire then
 				find_new_focus_enemy = true
 			end
@@ -339,7 +357,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			my_data.tasing = nil
 		elseif action_type == "reload" then
 			--Removed the requirement for being important here.
-			if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+			if not data.unit:character_damage():dead() and action:expired() then
 				TaserLogicAttack._upd_aim(data, my_data)
 				data.logic._upd_stance_and_pose(data, data.internal_data)
 			end
@@ -350,7 +368,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			--CopLogicAttack._cancel_charge(data, my_data)
 			
 			--Fixed panic never waking up cops.
-			if action:expired() then
+			if not data.unit:character_damage():dead() and action:expired() then
 				TaserLogicAttack._upd_aim(data, my_data)
 				data.logic._upd_stance_and_pose(data, data.internal_data)
 				CopLogicAttack._upd_combat_movement(data)
@@ -360,7 +378,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			CopLogicAttack._cancel_charge(data, my_data)
 			
 			--Removed the requirement for being important here.
-			if action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
+			if not data.unit:character_damage():dead() and action:expired() and not CopLogicBase.chk_start_action_dodge(data, "hit") then
 				TaserLogicAttack._upd_aim(data, my_data)
 				data.logic._upd_stance_and_pose(data, data.internal_data)
 			end
@@ -373,7 +391,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			CopLogicAttack._cancel_cover_pathing(data, my_data)
 
-			if action:expired() then
+			if not data.unit:character_damage():dead() and action:expired() then
 				TaserLogicAttack._upd_aim(data, my_data)
 				data.logic._upd_stance_and_pose(data, data.internal_data)
 				TaserLogicAttack._upd_combat_movement(data)

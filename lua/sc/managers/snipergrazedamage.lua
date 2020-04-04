@@ -32,11 +32,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	  local result = hit.damage_result
 	  local attack_data = result and result.attack_data
 	  if attack_data and attack_data.headshot and not is_turret and not is_ally and not is_cuff then
-		local multiplier = (result.type == "death" or result.type == "healed") and upgrade_value.damage_factor_kill or upgrade_value.damage_factor
 		local key = hit.unit:key()
 		hit_enemies[key] = {
 		  position = hit.position,
-		  damage = attack_data.damage * multiplier
+		  damage = attack_data.damage
 		}
 		ignored_enemies[key] = true
 	  end
@@ -46,17 +45,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	for _, hit in pairs(hit_enemies) do
 	  local distance_sq = mvector3.distance_sq(hit.position, player_unit:movement():m_head_pos())
 	  local times = 1
+	  local damage_range_mult = upgrade_value.damage_factor
 	  for i=1, upgrade_value.max_chain do
 		  if distance_sq > i * i * upgrade_value.range_increment * upgrade_value.range_increment then
 		  	times = times + 1
+		  	damage_range_mult = damage_range_mult + upgrade_value.damage_factor_range
 		  end
 	  end
-	  self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times)
+	  self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_range_mult)
 	end
 
 	end
 
-	function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times)
+	function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times, damage_mult)
 	if times <= 0 then
 	  return
 	end
@@ -99,7 +100,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		local result = closest:character_damage():damage_simple({
 		  variant = "graze",
-		  damage = hit.damage,
+		  damage = hit.damage * damage_mult,
 		  attacker_unit = player_unit,
 		  pos = hit_pos,
 		  attack_dir = hit_pos - hit.position
@@ -107,10 +108,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		hit = {
 		  position = hit_pos,
-		  damage = result and result.damage or hit.damage
+		  damage = result and result.damage or hit.damage * damage_mult
 		}
 	  
-		self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times - 1)
+		self:find_closest_hit(hit, ignored_enemies, upgrade_value, enemy_mask, geometry_mask, player_unit, times - 1, damage_mult)
 	  end)
 
 	end

@@ -1,0 +1,9 @@
+<unit type="debris" slot="18">
+	<object file="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_body_debris" />
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

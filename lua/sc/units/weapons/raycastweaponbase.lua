@@ -68,7 +68,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
   	   end
   	   return raycast_current_damage_orig(self, dmg_mul)
 	end
-
+	
 	function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound, already_ricocheted)
 		if Network:is_client() and not blank and user_unit ~= managers.player:player_unit() then
 			blank = true
@@ -83,14 +83,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if enemy_unit:character_damage() and enemy_unit:character_damage().dead and not enemy_unit:character_damage():dead() then
 				if enemy_unit:base():char_tweak() then
 					if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
-						local MIN_KNOCK_BACK = 200
-						local KNOCK_BACK_CHANCE = 0.8
-						local dmg_ratio = math.min(damage, MIN_KNOCK_BACK)
-						dmg_ratio = dmg_ratio / MIN_KNOCK_BACK + 1
+						local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
 
-						local rand = math.random() * dmg_ratio
-
-						if KNOCK_BACK_CHANCE < rand then
+						if knock_chance < math.random() then
 							local damage_info = {
 								damage = 0,
 								type = "shield_knock",

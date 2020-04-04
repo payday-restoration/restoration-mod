@@ -195,7 +195,7 @@
 
 	<decal_surfaces default_material="flesh" >
 		<decal_mesh name="dm_helmet" 				enabled="false" material="steel_no_decal" />
-		<decal_mesh name="c_body_plate" 			enabled="true" material="heavy_swat_steel_no_decal" />
+		<decal_mesh name="c_body_plate" 			enabled="false" material="heavy_swat_steel_no_decal" />
 	</decal_surfaces>
 
 	<graphics>

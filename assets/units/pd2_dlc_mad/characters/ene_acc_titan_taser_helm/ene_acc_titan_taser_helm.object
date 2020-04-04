@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_mad/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" orientation_object="rp_ene_acc_security_cap" />
+	
+	<bodies>
+	    <body name="helmet" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="g_hat_lod0" />
+			<object name="c_convex" collision_type="convex" mass="1.5" />
+	    </body>	   
+		<body name="helmet1" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="g_hat_lod1" />
+			<object name="c_convex" collision_type="convex" mass="1.5" />
+	    </body>		
+	</bodies>
+
+	<decal_surfaces default_material="metal">
+	</decal_surfaces>
+
+	<graphics>
+		<!--<graphic_group name="grp_ene_acc_security_cap" enabled="true" culling_object="c_convex">-->	
+			<lod_object name="lod_ene_acc_security_cap">
+				<object name="g_hat_lod0" enabled="true">
+					<material materials="mtr_ene_acc_security_cap"/>
+				</object>
+			</lod_object>	
+			
+			<lod_object name="lod_ene_acc_security_cap1">
+				<object name="g_hat_lod1" enabled="true">
+					<material materials="mtr_ene_acc_security_cap" max_distance="0"/>
+					<material materials="mtr_ene_acc_security_cap_lod_1"/>
+				</object>	
+			</lod_object>
+			
+			</lod_object>
+		<!--</graphic_group>-->
+	</graphics>
+	
+</dynamic_object>

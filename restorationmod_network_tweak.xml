@@ -1,28 +1,43 @@
 <?xml version="1.0"?>
 <tweak name="settings/network" extension="network_settings">
-    <search>
-        <network/>
-    </search>
-
-    <target>
-		<!-- RestorationMod RECIEVERS -->
-
-		<!-- Connection -->
-		<rpc>
-			<message name="RestorationMod__sync_player_installed_mod" delivery="reliable" receiver="RestorationMod__connection">
-				<param type="int" min="0" max="15" />  <!-- Player -->
-				<param type="string" step="0.01" />     <!-- Mod id -->
-				<param type="longstring" step="0.01" /> <!-- Mod friendly name -->
-			</message>
-		</rpc>
-
-		<!-- END OF NETWORK BASE -->	<!-- END OF NETWORK BASE -->	<!-- END OF NETWORK BASE -->
-
-		<!-- Unit -->
-		<rpc>
-
-		</rpc>
-    </target>
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_smoke_grenade"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_smoke_grenade_kill"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_cs_grenade"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_cs_grenade_kill"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
 </tweak>
 <tweak name="settings/network" extension="network_settings">
 	<search>
@@ -31,7 +46,7 @@
 		<message name="sync_underbarrel_switch"/>
 	</search>
 	<target mode="attributes">
-		<attr name="receiver" value="ordered"/>
+		<attr name="delivery" value="ordered"/>
 	</target>
 </tweak>
 <tweak name="settings/network" extension="network_settings">
@@ -41,7 +56,7 @@
 		<message name="shot_blank"/>
 	</search>
 	<target mode="attributes">
-		<attr name="receiver" value="ordered"/>
+		<attr name="delivery" value="ordered"/>
 	</target>
 </tweak>
 <tweak name="settings/network" extension="network_settings">
@@ -51,7 +66,7 @@
 		<message name="reload_weapon"/>
 	</search>
 	<target mode="attributes">
-		<attr name="receiver" value="ordered"/>
+		<attr name="delivery" value="ordered"/>
 	</target>
 </tweak>
 <tweak name="settings/network" extension="network_settings">
@@ -61,6 +76,6 @@
 		<message name="reload_weapon_interupt"/>
 	</search>
 	<target mode="attributes">
-		<attr name="receiver" value="ordered"/>
+		<attr name="delivery" value="ordered"/>
 	</target>
 </tweak>

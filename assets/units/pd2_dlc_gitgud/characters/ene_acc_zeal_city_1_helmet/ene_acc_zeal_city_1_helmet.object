@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet" orientation_object="rp_ene_acc_zeal_swat_helmet" />
+	<diesel materials="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_1_helmet/ene_acc_zeal_city_1_helmet" orientation_object="rp_ene_acc_fbi_swat_helmet" />
 	
 	<bodies>
 	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
-			<object name="rp_ene_acc_zeal_swat_helmet" />
-			<object name="c_sphere_rear" collision_type="sphere" mass="1.5" />
-			<object name="c_sphere_front" collision_type="sphere" mass="1.5" />
-			<object name="c_box" collision_type="box" />
+			<object name="rp_ene_acc_fbi_swat_helmet" />
+			<object name="c_sphere_front" 	collision_type="sphere" mass="0.6" />
+			<object name="c_sphere_rear" 	collision_type="sphere" mass="0.6" />
+			<object name="c_box" 			collision_type="box" 	mass="0.3" />
 		</body>
 	</bodies>
 
@@ -15,9 +15,12 @@
 	</decal_surfaces>
 
 	<graphics>
-		<lod_object name="g_helmet">
-			<object name="g_helmet" enabled="true"  max_distance="1000" />
-			<object name="g_helmet_lod1" enabled="true" />
+		<lod_object name="lod_ene_acc_fbi_swat_helmet">
+			<object name="g_helmet" enabled="true" >
+				<material materials="mtr_helmet" max_distance="1000" />
+				<material materials="mtr_helmet_lod_1" max_distance="1500" />
+				<material materials="mtr_helmet_lod_2" /> 
+			</object>
 		</lod_object>
 	</graphics>
 	

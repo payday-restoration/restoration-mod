@@ -1,4 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	table.insert(WeaponDescription._stats_shown, {
+		name = "swap_speed"
+	})
 
 	function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint)
 		local skill_stats = {}
@@ -219,4 +222,106 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return mods_stats
 	end
 
+	function WeaponDescription._get_base_swap_speed(name, base_stats)
+		local weapon_tweak = tweak_data.weapon[name]
+		local multiplier = 1
+		for _, category in ipairs(weapon_tweak.categories) do
+			if tweak_data[category] and tweak_data[category].swap_bonus then
+				multiplier = multiplier * tweak_data[category].swap_bonus
+			end
+		end
+		multiplier = multiplier * tweak_data.weapon.stats.mobility[base_stats.concealment.value + 1]
+
+		return (tweak_data.weapon[name].timers.equip + tweak_data.weapon[name].timers.unequip) / multiplier
+	end
+
+	function WeaponDescription._get_mods_swap_speed(name, base_stats, mods_stats)
+		local weapon_tweak = tweak_data.weapon[name]
+		local multiplier = 1
+		for _, category in ipairs(weapon_tweak.categories) do
+			if tweak_data[category] and tweak_data[category].swap_bonus then
+				multiplier = multiplier * tweak_data[category].swap_bonus
+			end
+		end
+		multiplier = multiplier * tweak_data.weapon.stats.mobility[math.max(base_stats.concealment.value + mods_stats.concealment.value, 0) + 1]
+		local mod_swap_speed = (tweak_data.weapon[name].timers.equip + tweak_data.weapon[name].timers.unequip) / multiplier - base_stats.swap_speed.value
+
+		return mod_swap_speed
+	end
+
+	function WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats)
+		local weapon_tweak = tweak_data.weapon[name]
+		local multiplier = 1
+		multiplier = multiplier * managers.player:upgrade_value("weapon", "swap_speed_multiplier", 1)
+		multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_swap_speed_multiplier", 1)
+
+		for _, category in ipairs(weapon_tweak.categories) do
+			multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", tweak_data[category] and tweak_data[category].swap_bonus or 1)
+		end
+		local multiplier = multiplier * tweak_data.weapon.stats.mobility[math.max(base_stats.concealment.value + mods_stats.concealment.value + skill_stats.concealment.value, 0) + 1]
+		local skill_swap_speed = (tweak_data.weapon[name].timers.equip + tweak_data.weapon[name].timers.unequip) / multiplier - base_stats.swap_speed.value - mods_stats.swap_speed.value
+		
+		if skill_swap_speed >= 0 then
+			return false, 0
+		else
+			return true, skill_swap_speed
+		end
+	end
+
+	function WeaponDescription._get_stats(name, category, slot, blueprint)
+		local equipped_mods = nil
+		local silencer = false
+		local single_mod = false
+		local auto_mod = false
+		local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(name)
+		local blueprint = blueprint or slot and managers.blackmarket:get_weapon_blueprint(category, slot) or managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
+		local cosmetics = managers.blackmarket:get_weapon_cosmetics(category, slot)
+		local bonus_stats = {}
+
+		if cosmetics and cosmetics.id and cosmetics.bonus and not managers.job:is_current_job_competitive() and not managers.weapon_factory:has_perk("bonus", factory_id, blueprint) then
+			bonus_stats = tweak_data:get_raw_value("economy", "bonuses", tweak_data.blackmarket.weapon_skins[cosmetics.id].bonus, "stats") or {}
+		end
+
+		if blueprint then
+			equipped_mods = deep_clone(blueprint)
+			local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(name)
+			local default_blueprint = managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
+
+			if equipped_mods then
+				silencer = managers.weapon_factory:has_perk("silencer", factory_id, equipped_mods)
+				single_mod = managers.weapon_factory:has_perk("fire_mode_single", factory_id, equipped_mods)
+				auto_mod = managers.weapon_factory:has_perk("fire_mode_auto", factory_id, equipped_mods)
+			end
+		end
+
+		local base_stats = WeaponDescription._get_base_stats(name)
+		local mods_stats = WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonus_stats)
+		local skill_stats = WeaponDescription._get_skill_stats(name, category, slot, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint)
+		local clip_ammo, max_ammo, ammo_data = WeaponDescription.get_weapon_ammo_info(name, tweak_data.weapon[name].stats.extra_ammo, base_stats.totalammo.index + mods_stats.totalammo.index)
+		base_stats.totalammo.value = ammo_data.base
+		mods_stats.totalammo.value = ammo_data.mod
+		skill_stats.totalammo.value = ammo_data.skill
+		skill_stats.totalammo.skill_in_effect = ammo_data.skill_in_effect
+		local my_clip = base_stats.magazine.value + mods_stats.magazine.value + skill_stats.magazine.value
+
+		if max_ammo < my_clip then
+			mods_stats.magazine.value = mods_stats.magazine.value + max_ammo - my_clip
+		end
+
+		--Concealment hardcap stuff. Easier than applying it elsewhere.
+		local weapon = {
+			factory_id = factory_id,
+			blueprint = blueprint
+		}
+		base_stats.concealment.value = tweak_data.weapon[name].stats.concealment
+		mods_stats.concealment.value = managers.blackmarket:calculate_weapon_concealment(weapon) - base_stats.concealment.value
+		skill_stats.concealment.value = managers.blackmarket:get_silencer_concealment_modifiers(weapon)
+
+		--Ditto for weapon swap speed.
+		base_stats.swap_speed.value = WeaponDescription._get_base_swap_speed(name, base_stats)
+		mods_stats.swap_speed.value = WeaponDescription._get_mods_swap_speed(name, base_stats, mods_stats)
+		skill_stats.swap_speed.skill_in_effect, skill_stats.swap_speed.value = WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats)
+
+		return base_stats, mods_stats, skill_stats
+	end
 end

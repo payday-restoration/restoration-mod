@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_swat_helmet/ene_acc_bravo_akan_swat_helmet" orientation_object="rp_ene_acc_swat_helmet" />
+	
+	<bodies>
+	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_swat_helmet" />
+			<object name="c_sphere" collision_type="sphere" mass="1.5" />
+			<object name="c_box" collision_type="box" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel_no_decal">
+	</decal_surfaces>
+
+	<graphics>
+			<lod_object name="lod_ene_acc_swat_heavy_helmet">
+				<object name="g_hemet" enabled="true" >
+					<material materials="mtr_ene_acc_swat_helmet" max_distance="1000" />
+					<material materials="mtr_ene_acc_swat_helmet_lod_1" max_distance="1500" />
+					<material materials="mtr_ene_acc_swat_helmet_lod_2" />
+				</object>
+			</lod_object>
+	</graphics>
+	
+</dynamic_object>

@@ -1,5 +1,4 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
 	function PlayerManager:check_selected_equipment_placement_valid(player)
 		local equipment_data = managers.player:selected_equipment()
 		if not equipment_data then
@@ -176,6 +175,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if dist_sq <= close_combat_sq then
 			regen_armor_bonus = regen_armor_bonus + self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)
 			local panic_chance = self:upgrade_value("player", "killshot_close_panic_chance", 0)
+				+ self:upgrade_value("player", "killshot_extra_spooky_panic_chance", 0)
+				+ self:upgrade_value("player", "killshot_spooky_panic_chance", 0) * self:player_unit():character_damage():get_missing_revives()
 			panic_chance = managers.modifiers:modify_value("PlayerManager:GetKillshotPanicChance", panic_chance)
 
 			if panic_chance > 0 or panic_chance == -1 then
@@ -184,7 +185,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 				for e_key, unit in pairs(units) do
 					if alive(unit) and unit:character_damage() and not unit:character_damage():dead() then
-						unit:character_damage():build_suppression(0, panic_chance)
+						unit:character_damage():build_suppression(200, panic_chance)
 					end
 				end
 			end
@@ -284,6 +285,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function PlayerManager:refill_messiah_charges()
 		if self._max_messiah_charges then
 			self._messiah_charges = self._max_messiah_charges
+		end
+
+		self._messiah_kills_required = 1
+	end
+
+	function PlayerManager:use_messiah_charge()
+		if self._messiah_charges and not self:has_category_upgrade("player", "infinite_messiah") then
+			self._messiah_charges = math.max(self._messiah_charges - 1, 0)
+		end
+	end
+
+	function PlayerManager:_on_messiah_event()
+		self._messiah_kills = self._messiah_kills + 1
+
+		if self._messiah_charges > 0 and self._messiah_kills >= self._messiah_kills_required and self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
+			if self:has_category_upgrade("player", "infinite_messiah") then
+				self._messiah_kills_required = self._messiah_kills_required + 2
+				self._messiah_kills = 0
+			end
+			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
 		end
 	end
 
@@ -395,19 +416,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		multiplier = multiplier * dmg_red_mul
 
 		if self:is_damage_health_ratio_active(health_ratio) then
-			multiplier = multiplier * (1 - managers.player:upgrade_value("player", "resistance_damage_health_ratio_multiplier", 0) * (1 - health_ratio))
+			multiplier = multiplier * (1 - self:upgrade_value("player", "resistance_damage_health_ratio_multiplier", 0) * (1 - health_ratio))
 		end
 
 		if damage_type == "melee" then
-			multiplier = multiplier * managers.player:upgrade_value("player", "melee_damage_dampener", 1)
+			multiplier = multiplier * self:upgrade_value("player", "melee_damage_dampener", 1)
 		end
 
 		local current_state = self:get_current_state()
 
 		if current_state and current_state:_interacting() then
-			multiplier = multiplier * managers.player:upgrade_value("player", "interacting_damage_multiplier", 1)
+			multiplier = multiplier * self:upgrade_value("player", "interacting_damage_multiplier", 1)
 		end
 		
+
+		if current_state and current_state:in_melee() then
+			local melee_name_id = managers.blackmarket:equipped_melee_weapon()
+			if damage_type == "bullet" then
+				multiplier = multiplier * self:upgrade_value("player", "deflect_ranged", 1)
+			end
+
+			if tweak_data.blackmarket.melee_weapons[melee_name_id].block then
+				multiplier = multiplier * tweak_data.blackmarket.melee_weapons[melee_name_id].block
+			end
+		end
 
 		return multiplier
 	end
@@ -423,7 +455,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		multiplier = multiplier * self:upgrade_value("player", "perk_armor_regen_timer_multiplier", 1)
 
 		if not moving then
-			multiplier = multiplier * managers.player:upgrade_value("player", "armor_regen_timer_stand_still_multiplier", 1)
+			multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_stand_still_multiplier", 1)
 		end
 
 		return multiplier
@@ -435,10 +467,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
 
-		local detection_risk_add_dodge_chance = managers.player:upgrade_value("player", "detection_risk_add_dodge_chance")
+		local detection_risk_add_dodge_chance = self:upgrade_value("player", "detection_risk_add_dodge_chance")
 		chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)
 		chance = chance + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_dodge_addend", 0)
-		chance = chance + self:upgrade_value("team", "crew_add_dodge", 0)
 
 		return chance
 	end
@@ -501,12 +532,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self:has_category_upgrade("player", "messiah_revive_from_bleed_out") then
 			self._messiah_charges = self:upgrade_value("player", "messiah_revive_from_bleed_out", 0)
 			self._max_messiah_charges = self._messiah_charges
-
+			self._messiah_kills_required = 1
+			self._messiah_kills = 0
 			self._message_system:register(Message.OnEnemyKilled, "messiah_revive_from_bleed_out", callback(self, self, "_on_messiah_event"))
 		else
 			self._messiah_charges = 0
+			self._messiah_kills_required = 0
+			self._messiah_kills = 0
 			self._max_messiah_charges = self._messiah_charges
-
 			self._message_system:unregister(Message.OnEnemyKilled, "messiah_revive_from_bleed_out")
 		end
 
@@ -582,6 +615,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:unregister_message(Message.OnPlayerDodge, "dodge_replenish_armor")
 		end
 
+		if self:has_category_upgrade("player", "dodge_to_heal") then
+			self:register_message(Message.OnPlayerDodge, "add_dodge_healing", callback(self, self, "_dodge_stack_health_regen"))
+		else
+			self:unregister_message(Message.OnPlayerDodge, "add_dodge_healing")
+		end
+
+		if self:has_category_upgrade("player", "bomb_cooldown_reduction") then
+			self:register_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr", callback(self, self, "_dodge_smokebomb_cdr"))
+		else
+			self:unregister_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr")
+		end
+
 		if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
 			local function speed_up_on_kill()
 				if #managers.player:smoke_screens() == 0 then
@@ -633,9 +678,170 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant
 
-			if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") then
+			if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") and attack_data.result.type == "death" then
 				self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
 			end
+		end
+	end
+
+	function PlayerManager:get_deflection_from_skills()
+		if self:has_category_upgrade("player", "no_deflection") then
+			return -self:body_armor_value("deflection", nil, 0)
+		end
+
+		return 
+			  self:upgrade_value("player", "deflection_addend", 0)
+			+ self:upgrade_value("player", "frenzy_deflection", 0)
+	end
+
+	function PlayerManager:get_max_grenades(grenade_id)
+		grenade_id = grenade_id or managers.blackmarket:equipped_grenade()
+		local max_amount = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "max_amount") or 0
+
+		if max_amount and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") then
+			max_amount = math.ceil(max_amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
+		end
+		max_amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", max_amount)
+
+		return max_amount
+	end
+
+	local function get_as_digested(amount)
+		local list = {}
+
+		for i = 1, #amount, 1 do
+			table.insert(list, Application:digest_value(amount[i], false))
+		end
+
+		return list
+	end
+
+	function PlayerManager:_internal_load()
+		local player = self:player_unit()
+
+		if not player then
+			return
+		end
+
+		local default_weapon_selection = 1
+		local secondary = managers.blackmarket:equipped_secondary()
+		local secondary_slot = managers.blackmarket:equipped_weapon_slot("secondaries")
+		local texture_switches = managers.blackmarket:get_weapon_texture_switches("secondaries", secondary_slot, secondary)
+
+		player:inventory():add_unit_by_factory_name(secondary.factory_id, default_weapon_selection == 1, false, secondary.blueprint, secondary.cosmetics, texture_switches)
+
+		local primary = managers.blackmarket:equipped_primary()
+
+		if primary then
+			local primary_slot = managers.blackmarket:equipped_weapon_slot("primaries")
+			local texture_switches = managers.blackmarket:get_weapon_texture_switches("primaries", primary_slot, primary)
+
+			player:inventory():add_unit_by_factory_name(primary.factory_id, default_weapon_selection == 2, false, primary.blueprint, primary.cosmetics, texture_switches)
+		end
+
+		player:inventory():set_melee_weapon(managers.blackmarket:equipped_melee_weapon())
+
+		local peer_id = managers.network:session():local_peer():id()
+		local grenade, amount = managers.blackmarket:equipped_grenade()
+
+		if self:has_grenade(peer_id) then
+			amount = self:get_grenade_amount(peer_id) or amount
+		end
+
+
+		if amount and not grenade.base_cooldown then
+			amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount)
+			amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
+		end
+
+		self:_set_grenade({
+			grenade = grenade,
+			amount = math.min(amount, self:get_max_grenades())
+		})
+		self:_set_body_bags_amount(self._local_player_body_bags or self:total_body_bags())
+
+		if not self._respawn then
+			self:_add_level_equipment(player)
+
+			for i, name in ipairs(self._global.default_kit.special_equipment_slots) do
+				local ok_name = self._global.equipment[name] and name
+
+				if ok_name then
+					local upgrade = tweak_data.upgrades.definitions[ok_name]
+
+					if upgrade and (upgrade.slot and upgrade.slot < 2 or not upgrade.slot) then
+						self:add_equipment({
+							silent = true,
+							equipment = upgrade.equipment_id
+						})
+					end
+				end
+			end
+
+			local slot = 2
+
+			if self:has_category_upgrade("player", "second_deployable") then
+				slot = 3
+			else
+				self:set_equipment_in_slot(nil, 2)
+			end
+
+			local equipment_list = self:equipment_slots()
+
+			for i, name in ipairs(equipment_list) do
+				local ok_name = self._global.equipment[name] and name or self:equipment_in_slot(i)
+
+				if ok_name then
+					local upgrade = tweak_data.upgrades.definitions[ok_name]
+
+					if upgrade and (upgrade.slot and upgrade.slot < slot or not upgrade.slot) then
+						self:add_equipment({
+							silent = true,
+							equipment = upgrade.equipment_id,
+							slot = i
+						})
+					end
+				end
+			end
+
+			self:update_deployable_selection_to_peers()
+		end
+
+		if self:has_category_upgrade("player", "cocaine_stacking") then
+			self:update_synced_cocaine_stacks_to_peers(0, self:upgrade_value("player", "sync_cocaine_upgrade_level", 1), self:upgrade_level("player", "cocaine_stack_absorption_multiplier", 0))
+			managers.hud:set_info_meter(nil, {
+				icon = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_icon_01",
+				max = 1,
+				current = self:get_local_cocaine_damage_absorption_ratio(),
+				total = self:get_local_cocaine_damage_absorption_max_ratio()
+			})
+		end
+
+		self:update_cocaine_hud()
+
+		local equipment = self:selected_equipment()
+
+		if equipment then
+			add_hud_item(get_as_digested(equipment.amount), equipment.icon)
+		end
+
+		if self:has_equipment("armor_kit") then
+			managers.mission:call_global_event("player_regenerate_armor", true)
+		end
+	end
+
+	function PlayerManager:_dodge_stack_health_regen()
+		self:player_unit():character_damage():add_damage_to_hot()
+	end
+
+	function PlayerManager:_dodge_smokebomb_cdr()
+		self:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
+	end
+
+	function PlayerManager:add_backstab_dodge()
+		if self.player_unit then
+			local damage_ext = self:player_unit():character_damage()
+			damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * self:upgrade_value("player", "backstab_dodge", 0))
 		end
 	end
 end

@@ -1,5 +1,43 @@
 if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
+	
+	function CopDamage:_spawn_head_gadget(params)
+		if not self._head_gear then
+			return
+		end
 
+		if self._head_gear_object then
+			if self._nr_head_gear_objects then
+				for i = 1, self._nr_head_gear_objects, 1 do
+					local head_gear_obj_name = self._head_gear_object .. tostring(i)
+
+					self._unit:get_object(Idstring(head_gear_obj_name)):set_visibility(false)
+				end
+			else
+				self._unit:get_object(Idstring(self._head_gear_object)):set_visibility(false)
+			end
+
+			if self._head_gear_decal_mesh then
+				local mesh_name_idstr = Idstring(self._head_gear_decal_mesh)
+
+				self._unit:decal_surface(mesh_name_idstr):set_mesh_material(mesh_name_idstr, Idstring("flesh"))
+			end
+		end
+
+		local unit = World:spawn_unit(Idstring(self._head_gear), params.position, params.rotation)
+
+		if not params.skip_push then
+			local true_dir = params.dir
+			local spread = math.random(6, 9)
+			mvector3.spread(true_dir, spread)
+			local dir = math.UP + true_dir
+			local body = unit:body(0)
+
+			body:push_at(body:mass(), dir * math.lerp(450, 650, math.random()), unit:position() + Vector3(math.rand(1), math.rand(1), math.rand(1)))
+		end
+
+		self._head_gear = false
+	end
+	
 	function CopDamage:damage_fire(attack_data)	
 		if self._dead or self._invulnerable then
 			return
@@ -50,7 +88,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					local recloak_roll = math.rand(1, 100)
 					local chance_recloak = 75
 
-					if recloak_roll then
+					if recloak_roll <= chance_recloak then
 						self._unit:damage():run_sequence_simple("cloak_engaged")
 
 						local weapon_unit = self._unit:inventory():equipped_unit()
@@ -263,7 +301,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					local recloak_roll = math.rand(1, 100)
 					local chance_recloak = 75
 
-					if recloak_roll then
+					if recloak_roll <= chance_recloak then
 						self._unit:damage():run_sequence_simple("cloak_engaged")
 
 						local weapon_unit = self._unit:inventory():equipped_unit()
@@ -482,7 +520,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		damage = damage * (self._char_tweak.damage.bullet_damage_mul or 1)
 		local roll = math.rand(1, 100)
 		local dodge_chance = self._char_tweak.damage.bullet_dodge_chance or 0
-		if attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit:base().thrower_unit then
+		if attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
 			dodge_chance = 0
 		end
 		
@@ -502,6 +540,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local headshot = false
 		local headshot_multiplier = 1
 		if attack_data.attacker_unit == managers.player:player_unit() then
+			attack_data.backstab = self:check_backstab(attack_data)
 			local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
 			if critical_hit then
 				managers.hud:on_crit_confirmed()
@@ -541,7 +580,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					local recloak_roll = math.rand(1, 100)
 					local chance_recloak = 75
 
-					if recloak_roll then
+					if recloak_roll <= chance_recloak then
 						self._unit:damage():run_sequence_simple("cloak_engaged")
 
 						local weapon_unit = self._unit:inventory():equipped_unit()
@@ -609,6 +648,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					type = "death",
 					variant = attack_data.variant
 				}
+				if attack_data.backstab then
+					managers.player:add_backstab_dodge()
+				end
 				self:die(attack_data)
 				self:chk_killshot(attack_data.attacker_unit, "bullet", headshot)
 			end
@@ -741,7 +783,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					local recloak_roll = math.rand(1, 100)
 					local chance_recloak = 75
 
-					if recloak_roll then
+					if recloak_roll <= chance_recloak then
 						self._unit:damage():run_sequence_simple("cloak_engaged")
 
 						local weapon_unit = self._unit:inventory():equipped_unit()
@@ -761,9 +803,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local damage = damage_percent * self._HEALTH_INIT_PRECENT
 		local attack_data = {}
 		local hit_pos = mvector3.copy(body:center_of_mass())
-		--local hit_pos = mvector3.copy(self._unit:movement():m_pos())
-
-		--mvector3.set_z(hit_pos, hit_pos.z + hit_offset_height)
 
 		attack_data.pos = hit_pos
 		attack_data.attacker_unit = attacker_unit
@@ -869,34 +908,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		self:_send_sync_bullet_attack_result(attack_data, hit_offset_height)
 		self:_on_damage_received(attack_data)
-
-		if shotgun_push then
-			local push_dir = attack_dir
-			local push_hit_pos = hit_pos
-
-			if attacker_unit and alive(attacker_unit) then
-				if attacker_unit:movement() and attacker_unit:movement().detect_look_dir then
-					push_dir = attacker_unit:movement():detect_look_dir()
-				--[[elseif attacker_unit:inventory() and attacker_unit:inventory().equipped_unit and attacker_unit:inventory():equipped_unit() and alive(attacker_unit:inventory():equipped_unit()) then
-					local weapon_fire_obj = attacker_unit:inventory():equipped_unit():get_object(Idstring("fire"))
-
-					if weapon_fire_obj and alive(weapon_fire_obj) then
-						push_dir = weapon_fire_obj:rotation():y()
-					end]]
-				end
-
-				local from_pos = attacker_unit:movement().m_detect_pos and attacker_unit:movement():m_detect_pos() or attacker_unit:movement():m_head_pos()
-				local hit_ray = World:raycast("ray", from_pos, body:center_of_mass(), "target_body", body)
-
-				if hit_ray then
-					--managers.player:player_unit():sound():say("r03x_sin", true)
-					push_hit_pos = hit_ray.position
-					--push_dir = hit_ray.ray
-				end
-			end
-
-			managers.game_play_central:_do_shotgun_push(self._unit, push_hit_pos, push_dir, distance, attacker_unit)
-		end
 	end
 
 	local mvec_1 = Vector3()
@@ -914,7 +925,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local is_cop = not is_civlian and not is_gangster		
 		local head = self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
 		local damage = attack_data.damage
+		local damage_effect = attack_data.damage_effect
 		if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() then
+			attack_data.backstab = self:check_backstab(attack_data)
+			if attack_data.backstab and attack_data.backstab_multiplier then
+				damage = damage * attack_data.backstab_multiplier
+			end
 			local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
 			if critical_hit then
 				managers.hud:on_crit_confirmed()
@@ -926,10 +942,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				managers.achievment:award(tweak_data.achievement.cavity.award)
 			end
 		end
-		damage = damage * (self._marked_dmg_mul or 1)
+		if self._marked_dmg_mul then
+			damage = damage * self._marked_dmg_mul
+		end
 		local head = self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
-		local damage = attack_data.damage
-		local damage_effect = attack_data.damage_effect
 		local headshot_multiplier = 1
 		if attack_data.attacker_unit == managers.player:player_unit() then
 			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
@@ -940,10 +956,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				managers.player:on_headshot_dealt(self._unit, attack_data)
 			end
 		end
-		if self._damage_reduction_multiplier then
-			damage = damage * self._damage_reduction_multiplier
-			damage_effect = damage_effect * self._damage_reduction_multiplier
-		elseif head then
+		
+		if head and not self._damage_reduction_multiplier then
 			if self._char_tweak and self._char_tweak.headshot_dmg_mul then
 				damage = damage * self._char_tweak.headshot_dmg_mul * headshot_multiplier
 				damage_effect = damage_effect * self._char_tweak.headshot_dmg_mul * headshot_multiplier
@@ -971,6 +985,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 		local damage_effect_percent
 		damage = self:_apply_damage_reduction(damage)
+		damage_effect = self:_apply_damage_reduction(damage_effect) 
+		
 		damage = math.clamp(damage, self._HEALTH_INIT_PRECENT, self._HEALTH_INIT)
 		local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
 		damage = damage_percent * self._HEALTH_INIT_PRECENT
@@ -992,6 +1008,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					type = "death",
 					variant = attack_data.variant
 				}
+				if attack_data.backstab then
+					managers.player:add_backstab_dodge()
+				end
 				self:die(attack_data)
 				self:chk_killshot(attack_data.attacker_unit, "melee")
 			end
@@ -1012,7 +1031,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		local dismember_victim = false
 		local snatch_pager = false
 		if result.type == "death" then
-			if self:_dismember_condition(attack_data) then
+			if attack_data.attacker_unit == managers.player:player_unit() and self:_dismember_condition(attack_data) then
 				self:_dismember_body_part(attack_data)
 				dismember_victim = true
 			end
@@ -1075,10 +1094,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						end	
 					end
 				end
+			elseif managers.groupai:state():is_unit_team_AI(attack_data.attacker_unit) then
+				self:_AI_comment_death(attack_data.attacker_unit, self._unit)
 			end
 		end
 		
-		if attack_data.attacker_unit and attack_data.attacker_unit == managers.player:player_unit() and alive(attack_data.attacker_unit) and tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
+		if attack_data.attacker_unit == managers.player:player_unit() and alive(attack_data.attacker_unit) and tweak_data.blackmarket.melee_weapons[attack_data.name_id] then
 			local achievements = tweak_data.achievement.enemy_melee_hit_achievements or {}
 			local melee_type = tweak_data.blackmarket.melee_weapons[attack_data.name_id].type
 			local enemy_base = self._unit:base()
@@ -1185,6 +1206,85 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self:_on_damage_received(attack_data)
 		return result
 	end	
+	
+	function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effect_percent, i_body, hit_offset_height, variant, death)
+		if self._dead then
+			return
+		end
+
+		local attack_data = {
+			variant = "melee",
+			attacker_unit = attacker_unit
+		}
+		local body = self._unit:body(i_body)
+		local damage = damage_percent * self._HEALTH_INIT_PRECENT
+		local result = nil
+
+		if death then
+			if variant == 6 and self:_sync_dismember(attacker_unit) then
+				attack_data.body_name = body:name()
+
+				self:_dismember_body_part(attack_data)
+			end
+
+			result = {
+				variant = "melee",
+				type = "death"
+			}
+
+			self:die(attack_data)
+			self:chk_killshot(attacker_unit, "melee")
+
+			local data = {
+				variant = "melee",
+				head_shot = false,
+				name = self._unit:base()._tweak_table,
+				stats_name = self._unit:base()._stats_name
+			}
+
+			managers.statistics:killed_by_anyone(data)
+		else
+			local result_type = variant == 1 and "shield_knock" or variant == 2 and "counter_tased" or variant == 5 and "taser_tased" or variant == 4 and "expl_hurt" or self:get_damage_type(damage_effect_percent, "bullet") or "fire_hurt"
+			result = {
+				variant = "melee",
+				type = result_type
+			}
+
+			self:_apply_damage_to_health(damage)
+
+			attack_data.variant = result_type
+		end
+
+		attack_data.result = result
+		attack_data.damage = damage
+		attack_data.is_synced = true
+		local attack_dir = nil
+
+		if attacker_unit then
+			attack_dir = self._unit:position() - attacker_unit:position()
+
+			mvector3.normalize(attack_dir)
+		else
+			attack_dir = -self._unit:rotation():y()
+		end
+
+		attack_data.attack_dir = attack_dir
+
+		if variant == 3 then
+			self._unit:unit_data().has_alarm_pager = false
+		end
+
+		attack_data.pos = self._unit:position()
+
+		mvector3.set_z(attack_data.pos, attack_data.pos.z + math.random() * 180)
+
+		if not self._no_blood and damage > 0 then
+			managers.game_play_central:sync_play_impact_flesh(self._unit:movement():m_pos() + Vector3(0, 0, hit_offset_height), attack_dir)
+		end
+
+		self:_send_sync_melee_attack_result(attack_data, hit_offset_height)
+		self:_on_damage_received(attack_data)
+	end
 	
 end
 
@@ -1370,7 +1470,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					local recloak_roll = math.rand(1, 100)
 					local chance_recloak = 75
 
-					if recloak_roll then
+					if recloak_roll <= chance_recloak then
 						self._unit:damage():run_sequence_simple("cloak_engaged")
 
 						local weapon_unit = self._unit:inventory():equipped_unit()
@@ -1500,7 +1600,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					local recloak_roll = math.rand(1, 100)
 					local chance_recloak = 75
 
-					if recloak_roll then
+					if recloak_roll <= chance_recloak then
 						self._unit:damage():run_sequence_simple("cloak_engaged")
 
 						local weapon_unit = self._unit:inventory():equipped_unit()
@@ -1904,4 +2004,48 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return type == "swat" or type == "fbi" or type == "cop" or type == "security"
 	end
 
+	function CopDamage:roll_critical_hit(attack_data)
+		local damage = attack_data.damage
+
+		if not self:can_be_critical(attack_data) then
+			return false, damage
+		end
+
+		local critical_hits = self._char_tweak.critical_hits or {}
+		local critical_hit = false
+		local critical_value = (critical_hits.base_chance or 0) + managers.player:critical_hit_chance() * (critical_hits.player_chance_multiplier or 1)
+
+		if attack_data.backstab then
+			critical_value = critical_value + managers.player:upgrade_value("player", "backstab_crits", 0)
+		end
+
+		if critical_value > 0 then
+			local critical_roll = math.rand(1)
+			critical_hit = critical_roll < critical_value
+		end
+
+		if critical_hit then
+			local critical_damage_mul = critical_hits.damage_mul or self._char_tweak.headshot_dmg_mul
+
+			if critical_damage_mul then
+				damage = damage * critical_damage_mul
+			else
+				damage = self._health * 10
+			end
+		end
+
+		return critical_hit, damage
+	end
+
+	function CopDamage:check_backstab(attack_data)
+		if self._unit.movement and self._unit:movement().m_rot then
+			local fwd_vec = mvector3.dot(self._unit:movement():m_rot():y(), managers.player:player_unit():movement():m_head_rot():y())
+			--# degrees of leeway == (1-(2*number fwd_vec > than))pi radians
+			if fwd_vec > 0.15 then
+				return true
+			end
+		end
+
+		return false
+	end
 end

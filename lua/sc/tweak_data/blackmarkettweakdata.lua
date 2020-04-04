@@ -331,7 +331,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			texture_bundle_folder = "mods"
 		}
 		
-		
+		--Classic Helmet
+		self.masks.classic_helmet = {}
+		self.masks.classic_helmet.unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"		
+		if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
+			self.masks.classic_helmet = {
+				unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet",
+				name_id = "bm_msk_classic_helmet",
+				desc_id = "bm_msk_classic_helmet_desc",
+				value = 0,
+				type = "helmet",			
+				global_value = "rest_omnia",
+				texture_bundle_folder = "mods"
+			}
+		end
+
+		--All Seeing Anchor		
 		self.masks.all_seeing = {}
 		self.masks.all_seeing.unit = "units/pd2_mod_fucking_masks/msk_eye/msk_eye"			
 		if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
@@ -345,7 +360,21 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				texture_bundle_folder = "mods"
 			}		
 		end
-		
+
+		--devmask.model		
+		self.masks.cube = {}
+		self.masks.cube.unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube"	
+		if Steam:is_user_in_source(Steam:userid(), "103582791465743585") then
+			self.masks.cube = {
+				unit = "units/pd2_mod_fucking_masks/msk_cube/msk_cube",
+				name_id = "bm_cube",
+				desc_id = "bm_cube_desc",
+				value = 0,
+			    type = "helmet",
+				global_value = "rest_omnia",
+				texture_bundle_folder = "mods"
+			}		
+		end		
 		
 	end
 	
@@ -482,6 +511,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"wild"
 		}
 		local characters_all = table.list_union(characters_female, characters_male, characters_female_big, characters_male_big)
+		local body_replacement_fuck_the_new_raincoat = {
+			head = false,
+			armor = true,
+			body = false,
+			hands = false,
+			vest = true
+		}	
 		local body_replacement_standard = {
 			head = false,
 			armor = true,
@@ -524,7 +560,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			for _, key in ipairs(characters) do
 				self.player_styles[player_style].characters[key] = data
 			end
-		end		
+		end	
 		
 		--Two Piece Suit
 		self.player_styles.two_piece_suit = {
@@ -599,7 +635,76 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				third_material = "units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_big/trd_acc_jumpsuit_male_big_flatgreen"
 			}			
 			end
-		end						
+		end				
+	    
+		--Fixed Raincoat
+		self.player_styles.raincoat = {
+	    	name_id = "bm_suit_raincoat",
+	    	desc_id = "bm_suit_raincoat_desc",
+	    	locks = {
+	    		achievement = "glace_1"
+	    	},
+	    	texture_bundle_folder = "trd",
+	    	body_replacement = body_replacement_fuck_the_new_raincoat,
+	    	third_body_replacement = body_replacement_fuck_the_new_raincoat,
+	    	characters = {}
+	    }
+		set_characters_data("raincoat", characters_male, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_black_gloves, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_tony, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_bodhi, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_jimmy, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_chains, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_sangres, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_jacket, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_male_big, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_worst_addition, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan"
+		})
+		set_characters_data("raincoat", characters_female, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_sydney, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_joy, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+		})
+		set_characters_data("raincoat", characters_female_big, {
+			unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+			third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie_sc/glc_acc_raincoat_bonnie_sc"
+		})			
 
 		--Resmod Loud Suit
 		self.player_styles.loud_suit = {
@@ -649,8 +754,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
 		set_characters_data("loud_suit", characters_sangres, {
-			body_replacement = body_replacement_hands,
+			body_replacement = body_replacement_fuck_the_new_raincoat ,
 			third_body_replacement = body_replacement_armor,
+			keep_wrists = false,
 			unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
 			third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 		})
@@ -891,7 +997,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.wpn_prj_jav.max_amount = 6
 	self.projectiles.wpn_prj_hur.max_amount = 6
 	self.projectiles.fir_com.max_amount = 3
-	self.projectiles.smoke_screen_grenade.base_cooldown = 35
+	self.projectiles.smoke_screen_grenade.base_cooldown = 40
 	self.projectiles.damage_control.base_cooldown = 30
 	self.projectiles.concussion.max_amount = 3
 	
@@ -3115,7 +3221,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--REMEMBER THE BASICS OF--
 	self.melee_weapons.cqc.dot_data = {
 		type = "poison",
-		custom_data = {dot_length = 3, hurt_animation_chance = 0.75}
+		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.75}
 	}	
 	self.melee_weapons.cqc.stats.min_damage = 2
 	self.melee_weapons.cqc.stats.max_damage = 4
@@ -3155,7 +3261,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.buck.repeat_expire_t = 0.7
 	self.melee_weapons.buck.stats.concealment = 26
 	self.melee_weapons.buck.melee_damage_delay = 0.2
-	self.melee_weapons.buck.expire_t = 1.2	
+	self.melee_weapons.buck.expire_t = 1.2
+	self.melee_weapons.buck.block = 0.9
 
 	--Fear the beard--	
 	self.melee_weapons.beardy.anim_global_param = "melee_baseballbat"
@@ -3304,16 +3411,17 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.scoutknife.stats.concealment = 28
 	self.melee_weapons.scoutknife.expire_t = 1.1
 
-	--It's kinda cool I guess, but it just ended up to be a katana reskin--
+	--Fires actual nails when--
+	self.melee_weapons.nin.info_id = "bm_melee_nin_info" 
 	self.melee_weapons.nin.make_effect = true
-	self.melee_weapons.nin.make_decal = true
+	self.melee_weapons.nin.make_decal = true  
 	self.melee_weapons.nin.stats.min_damage = 7.5
 	self.melee_weapons.nin.stats.max_damage = 7.5
 	self.melee_weapons.nin.stats.min_damage_effect = 1
 	self.melee_weapons.nin.stats.max_damage_effect = 1
 	self.melee_weapons.nin.stats.charge_time = 0.00001
 	self.melee_weapons.nin.stats.range = 500
-	self.melee_weapons.nin.stats.concealment = 26
+	self.melee_weapons.nin.stats.concealment = 24
 	self.melee_weapons.nin.repeat_expire_t = 1
 	self.melee_weapons.nin.melee_damage_delay = 0.15
 
@@ -3348,16 +3456,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.zeus.melee_damage_delay = 0.2
 
 	--you got blood on my suit--
-	self.melee_weapons.wing.stats.min_damage = 5
-	self.melee_weapons.wing.stats.max_damage = 10.5
+	self.melee_weapons.wing.info_id = "bm_melee_wing_info"	
+	self.melee_weapons.wing.stats.min_damage = 2.5
+	self.melee_weapons.wing.stats.max_damage = 4.5
 	self.melee_weapons.wing.stats.min_damage_effect = 0.4
 	self.melee_weapons.wing.stats.max_damage_effect = 0.5
 	self.melee_weapons.wing.stats.charge_time = 0.75
 	self.melee_weapons.wing.stats.range = 165
-	self.melee_weapons.wing.stats.concealment = 29
+	self.melee_weapons.wing.stats.concealment = 30
 	self.melee_weapons.wing.repeat_expire_t = 0.5
 	self.melee_weapons.wing.expire_t = 1.1
 	self.melee_weapons.wing.melee_damage_delay = 0.1
+	self.melee_weapons.wing.backstab_damage_multiplier = 4
 
 	--YEAH YEAH YEAH YEAH--
 	self.melee_weapons.road.anim_speed_mult = 1.75
@@ -3514,11 +3624,16 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.meter.expire_t = 1.2	
 	
 	--Clowns to the left of me, jokers to the right--
+	self.melee_weapons.clean.dot_data = {
+		type = "poison",
+		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.0}
+	}	
+	self.melee_weapons.clean.info_id = "bm_melee_clean_info"
 	self.melee_weapons.clean.stats.weapon_type = "sharp"
-	self.melee_weapons.clean.stats.min_damage = 7.5
-	self.melee_weapons.clean.stats.max_damage = 7.5
-	self.melee_weapons.clean.stats.min_damage_effect = 0.1
-	self.melee_weapons.clean.stats.max_damage_effect = 0.1
+	self.melee_weapons.clean.stats.min_damage = 5.0
+	self.melee_weapons.clean.stats.max_damage = 5.0
+	self.melee_weapons.clean.stats.min_damage_effect = 0.2
+	self.melee_weapons.clean.stats.max_damage_effect = 0.2
 	self.melee_weapons.clean.stats.charge_time = 0.00001
 	self.melee_weapons.clean.stats.range = 140
 	self.melee_weapons.clean.stats.concealment = 30
@@ -3578,7 +3693,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--LET'S GO PRACTICE MEDICINE--
 	self.melee_weapons.fear.dot_data = {
 		type = "poison",
-		custom_data = {dot_length = 3, hurt_animation_chance = 0.75}
+		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.75}
 	}	
 	self.melee_weapons.fear.stats.min_damage = 2
 	self.melee_weapons.fear.stats.max_damage = 4
@@ -3591,6 +3706,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.fear.expire_t = 1.1
 	self.melee_weapons.fear.melee_damage_delay = 0.1	
 	self.melee_weapons.fear.info_id = "bm_melee_cqc_info"
+	
+	--Ay, qué lindo carnaval--	
+	self.melee_weapons.chac.stats.min_damage = 3.4
+	self.melee_weapons.chac.stats.max_damage = 5.5
+	self.melee_weapons.chac.stats.min_damage_effect = 4
+	self.melee_weapons.chac.stats.max_damage_effect = 4.5
+	self.melee_weapons.chac.stats.charge_time = 0.6
+	self.melee_weapons.chac.repeat_expire_t = 0.45
+	self.melee_weapons.chac.stats.range = 160
+	self.melee_weapons.chac.stats.concealment = 29
+	self.melee_weapons.chac.melee_damage_delay = 0.2
+	self.melee_weapons.chac.expire_t = 1.1		
 end	
 
 end

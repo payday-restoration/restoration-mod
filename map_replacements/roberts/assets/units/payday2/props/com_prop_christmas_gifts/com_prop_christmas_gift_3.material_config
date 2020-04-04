@@ -1,6 +1,0 @@
-<materials version="3">
-    <material name="mat_com_prop_christmas_gift_3" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-        <diffuse_texture file="units/payday2/props/com_prop_christmas_gifts/com_prop_christmas_gift_3_df"/>
-        <bump_normal_texture file="units/payday2/props/com_prop_christmas_gifts/com_prop_christmas_gifts_nm"/>
-    </material>
-</materials>

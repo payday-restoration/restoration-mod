@@ -21,6 +21,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local math_random = math.random
 	local math_clamp = math.clamp
 	local math_up = math.UP
+	local melee_vec1 = Vector3()
+	local melee_vec2 = Vector3()
+	local melee_vec3 = Vector3()
+	local melee_vec4 = Vector3()
 	local temp_vec2 = Vector3()
 	local temp_rot1 = Rotation()
 	local projectile_throw_pos_offset = Vector3(50, 50, 0)
@@ -339,11 +343,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if self._is_server then
 						if attention.unit:base() and attention.unit:base().is_husk_player then
 							self._shooting_husk_unit = true
-							self._next_vis_ray_t = t
+							self._next_vis_ray_t = t - 1
 						end
 					else
 						self._shooting_husk_unit = true
-						self._next_vis_ray_t = t
+						self._next_vis_ray_t = t - 1
 					end
 				end
 
@@ -378,7 +382,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					self._can_attack_with_special_move = true
 				end
 
-				if self._ext_base:has_tag("sniper") then
+				if self._ext_base._tweak_table == "sniper" then
 					self._use_sniper_focus = true
 					self._sniper_focus_start_t = t
 				end
@@ -392,9 +396,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local aim_delay_minmax = self._aim_delay_minmax
 
 				if shoot_hist then
-					local displacement = mvec3_dis(target_pos, shoot_hist.m_last_pos)
-
-					if displacement > self._focus_displacement then
+					if self._use_sniper_focus then
 						if self._draw_focus_displacement then
 							local line_1 = Draw:brush(Color.blue:with_alpha(0.5), 2)
 							line_1:cylinder(self._shoot_from_pos, shoot_hist.m_last_pos, 0.5)
@@ -410,20 +412,53 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 							if aim_delay_minmax[1] == aim_delay_minmax[2] then
 								aim_delay = aim_delay_minmax[1]
 							else
-								local lerp_dis = math_min(1, self._focus_displacement / displacement)
+								local lerp_dis = math_min(1, target_dis / self._falloff[#self._falloff].r)
 
-								aim_delay = math_lerp(aim_delay_minmax[2], aim_delay_minmax[1], lerp_dis)
+								aim_delay = math_lerp(aim_delay_minmax[1], aim_delay_minmax[2], lerp_dis)
 							end
 
 							if self._common_data.is_suppressed then
 								aim_delay = aim_delay * 1.5
 							end
 						end
-					end
 
-					self._shoot_t = t + aim_delay
-					shoot_hist.focus_start_t = t
-					shoot_hist.m_last_pos = mvec3_copy(target_pos)
+						self._shoot_t = self._mod_enable_t + aim_delay
+						shoot_hist.focus_start_t = t
+						shoot_hist.m_last_pos = mvec3_copy(target_pos)
+					else
+						local displacement = mvec3_dis(target_pos, shoot_hist.m_last_pos)
+
+						if displacement > self._focus_displacement then
+							if self._draw_focus_displacement then
+								local line_1 = Draw:brush(Color.blue:with_alpha(0.5), 2)
+								line_1:cylinder(self._shoot_from_pos, shoot_hist.m_last_pos, 0.5)
+
+								local line_2 = Draw:brush(Color.blue:with_alpha(0.5), 2)
+								line_2:cylinder(self._shoot_from_pos, target_pos, 0.5)
+
+								local line_3 = Draw:brush(Color.blue:with_alpha(0.5), 2)
+								line_3:cylinder(target_pos, shoot_hist.m_last_pos, 0.5)
+							end
+
+							if aim_delay_minmax[1] ~= 0 or aim_delay_minmax[2] ~= 0 then
+								if aim_delay_minmax[1] == aim_delay_minmax[2] then
+									aim_delay = aim_delay_minmax[1]
+								else
+									local lerp_dis = math_min(1, self._focus_displacement / displacement)
+
+									aim_delay = math_lerp(aim_delay_minmax[2], aim_delay_minmax[1], lerp_dis)
+								end
+
+								if self._common_data.is_suppressed then
+									aim_delay = aim_delay * 1.5
+								end
+							end
+						end
+
+						self._shoot_t = self._mod_enable_t + aim_delay
+						shoot_hist.focus_start_t = t
+						shoot_hist.m_last_pos = mvec3_copy(target_pos)
+					end
 				else
 					if aim_delay_minmax[1] ~= 0 or aim_delay_minmax[2] ~= 0 then
 						if aim_delay_minmax[1] == aim_delay_minmax[2] then
@@ -439,7 +474,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						end
 					end
 
-					self._shoot_t = t + aim_delay
+					self._shoot_t = self._mod_enable_t + aim_delay
 
 					shoot_hist = {
 						focus_start_t = t,
@@ -545,13 +580,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			mvec3_set_z(ray_to, ray_to.z - 1000)
 
-			local ground_ray = self._unit:raycast("ray", attention_m_pos, ray_to, "slot_mask", managers.slot:get_mask("statics"))
+			local ground_ray = self._unit:raycast("ray", attention_m_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry, statics"))
 
 			if ground_ray then
 				detonate_pos = mvec3_copy(ground_ray.hit_position)
 				mvec3_set_z(detonate_pos, detonate_pos.z + 3)
 
-				managers.groupai:state():detonate_cs_grenade(detonate_pos, nil, 7.5)
+				managers.groupai:state():detonate_cs_grenade(detonate_pos, mvec3_copy(self._shoot_from_pos), 7.5)
 
 				return true
 			end
@@ -680,9 +715,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 						if is_autumn then
 							if not self._ext_brain._set_endless_assault then
-								managers.groupai:state():set_assault_endless(true)
-								managers.hud:set_buff_enabled("vip", true)
-								self._ext_brain._set_endless_assault = true
+								local ai_task_data = managers.groupai:state()._task_data
+
+								if ai_task_data and ai_task_data.assault.active then
+									if ai_task_data.assault.phase == "build" or ai_task_data.assault.phase == "sustain" then
+										managers.groupai:state():set_assault_endless(true)
+										managers.hud:set_buff_enabled("vip", true)
+										self._ext_brain._set_endless_assault = true
+									end
+								end
 							end
 
 							local gas_roll = math_random() <= 0.2
@@ -872,34 +913,37 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						else
 							local shield_in_the_way = nil
 
-							if self._shield then
-								shield_in_the_way = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", self._shield_slotmask, "ignore_unit", self._shield, "report")
-							else
-								shield_in_the_way = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", self._shield_slotmask, "report")
+							if not self._weapon_base._use_armor_piercing or self._shooting_player then
+								if self._shield then
+									shield_in_the_way = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", self._shield_slotmask, "ignore_unit", self._shield, "report")
+								else
+									shield_in_the_way = self._unit:raycast("ray", shoot_from_pos, target_pos, "slot_mask", self._shield_slotmask, "report")
+								end
 							end
 
 							if not shield_in_the_way then
-								if not self._last_vis_check_status and t - self._line_of_sight_t > 1 then
-									if self._draw_focus_delay_vis_reset then
-										local draw_duration = self._shooting_husk_unit and 4 or 2
-
-										local line_1 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
-										line_1:cylinder(shoot_from_pos, self._shoot_history.m_last_pos, 0.5)
-
-										local line_2 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
-										line_2:cylinder(shoot_from_pos, target_pos, 0.5)
-
-										local line_3 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
-										line_3:cylinder(target_pos, self._shoot_history.m_last_pos, 0.5)
-									end
-
-									self._shoot_history.focus_start_t = t
-								end
-
-								self._shoot_history.m_last_pos = mvec3_copy(target_pos)
-								self._line_of_sight_t = t
 								shoot = true
 							end
+
+							if not self._last_vis_check_status and t - self._line_of_sight_t > 1 then
+								if self._draw_focus_delay_vis_reset then
+									local draw_duration = self._shooting_husk_unit and 4 or 2
+
+									local line_1 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
+									line_1:cylinder(shoot_from_pos, self._shoot_history.m_last_pos, 0.5)
+
+									local line_2 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
+									line_2:cylinder(shoot_from_pos, target_pos, 0.5)
+
+									local line_3 = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
+									line_3:cylinder(target_pos, self._shoot_history.m_last_pos, 0.5)
+								end
+
+								self._shoot_history.focus_start_t = t
+							end
+
+							self._shoot_history.m_last_pos = mvec3_copy(target_pos)
+							self._line_of_sight_t = t
 						end
 
 						if self._use_sniper_focus then
@@ -1146,17 +1190,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 
 				local my_fwd = mvec3_copy(self._ext_movement:m_head_rot():z())
-				local target_pos = Vector3()
 
-				mvec3_set(target_pos, my_fwd)
-				mvec3_mul(target_pos, target_dis)
-				mvec3_add(target_pos, shoot_from_pos)
+				mvec3_set(melee_vec1, my_fwd)
+				mvec3_mul(melee_vec1, target_dis)
+				mvec3_add(melee_vec1, shoot_from_pos)
 
-				local obstructed_by_geometry = self._unit:raycast("ray", shoot_from_pos, target_pos, "sphere_cast_radius", 20, "slot_mask", managers.slot:get_mask("world_geometry", "vehicles"), "ray_type", "body melee", "report")
+				local obstructed_by_geometry = self._unit:raycast("ray", shoot_from_pos, melee_vec1, "sphere_cast_radius", 20, "slot_mask", managers.slot:get_mask("world_geometry", "vehicles"), "ray_type", "body melee", "report")
 
 				if not obstructed_by_geometry then
 					local target_has_shield = alive(attention.unit:inventory() and attention.unit:inventory()._shield_unit) and true or nil
-					local target_is_covered_by_shield = self._unit:raycast("ray", shoot_from_pos, target_pos, "sphere_cast_radius", 20, "slot_mask", self._shield_slotmask, "ray_type", "body melee", "report")
+					local target_is_covered_by_shield = self._unit:raycast("ray", shoot_from_pos, melee_vec1, "sphere_cast_radius", 20, "slot_mask", self._shield_slotmask, "ray_type", "body melee", "report")
 
 					if autotarget then
 						if not target_is_covered_by_shield then
@@ -1272,21 +1315,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 
-		local shoot_from_pos = self._shoot_from_pos
+		local shoot_from_pos = mvec3_copy(self._shoot_from_pos)
 		local my_fwd = mvec3_copy(self._ext_movement:m_head_rot():z())
-		local target_pos = Vector3()
 
-		mvec3_set(target_pos, my_fwd)
-		mvec3_mul(target_pos, self._melee_weapon_data.range)
-		mvec3_add(target_pos, shoot_from_pos)
+		mvec3_set(melee_vec2, my_fwd)
+		mvec3_mul(melee_vec2, self._melee_weapon_data.range)
+		mvec3_add(melee_vec2, shoot_from_pos)
 
 		--similar to player melee attacks, use a sphere ray instead of just a normal plain ray
-		local col_ray = self._unit:raycast("ray", shoot_from_pos, target_pos, "sphere_cast_radius", 20, "slot_mask", self._melee_weapon_data.slotmask, "ray_type", "body melee")
+		local col_ray = self._unit:raycast("ray", shoot_from_pos, melee_vec2, "sphere_cast_radius", 20, "slot_mask", self._melee_weapon_data.slotmask, "ray_type", "body melee")
 
 		if self._draw_melee_sphere_rays then
 			local draw_duration = 3
 			local new_brush = col_ray and Draw:brush(Color.red:with_alpha(0.5), draw_duration) or Draw:brush(Color.white:with_alpha(0.5), draw_duration)
-			local sphere_draw_pos = col_ray and col_ray.position or target_pos
+			local sphere_draw_pos = col_ray and col_ray.position or melee_vec2
 			local sphere_draw_size = col_ray and 5 or 20
 			new_brush:sphere(sphere_draw_pos, sphere_draw_size)
 		end
@@ -1297,25 +1339,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--sadly, no raycasts I tried so far (even with target_unit/target_body) seem to be able to hit the local player
 		if self._melee_weapon_data.hit_player and alive(local_player) and not self._unit:character_damage():is_friendly_fire(local_player) then
 			local player_head_pos = local_player:movement():m_head_pos()
-			local player_vec = Vector3()
-			local player_distance = mvec3_dir(player_vec, mvec3_copy(shoot_from_pos), mvec3_copy(player_head_pos))
+			local player_distance = mvec3_dir(melee_vec3, shoot_from_pos, player_head_pos)
 
 			if player_distance <= self._melee_weapon_data.range then
 				if not col_ray or col_ray.distance > player_distance or not self._unit:raycast("ray", shoot_from_pos, player_head_pos, "sphere_cast_radius", 5, "slot_mask", self._melee_weapon_data.slotmask, "ray_type", "body melee", "report") then
-					local flat_vec = Vector3()
-
-					mvec3_set(flat_vec, player_vec)
-					mvec3_set_z(flat_vec, 0)
-					mvec3_norm(flat_vec)
+					mvec3_set(melee_vec4, melee_vec3)
+					mvec3_set_z(melee_vec4, 0)
+					mvec3_norm(melee_vec4)
 
 					local min_dot = math_lerp(0, 0.4, player_distance / self._melee_weapon_data.range)
-					local fwd_dot = mvec3_dot(my_fwd, flat_vec)
+					local fwd_dot = mvec3_dot(my_fwd, melee_vec4)
 
 					if fwd_dot >= min_dot then
 						col_ray = {
 							unit = local_player,
 							position = player_head_pos,
-							ray = mvec3_copy(player_vec:normalized())
+							ray = mvec3_copy(melee_vec3:normalized())
 						}
 
 						if self._draw_melee_sphere_rays then
@@ -1369,7 +1408,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				defense_data = character_unit:character_damage():damage_melee(action_data)
 			else
 				if self._is_server then --only allow melee damage against NPCs for the host (used in case an enemy targets a client locally but hits something else instead)
-					if character_unit:character_damage() then
+					if character_unit:character_damage() and character_unit:base() then
 						if character_unit:base().sentry_gun then
 							local action_data = {
 								variant = "bullet",
@@ -1413,19 +1452,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if defense_data == "countered" then
 					self._common_data.melee_countered_t = TimerManager:game():time()
 
-					--use a sphere ray to properly attack the countered unit by getting a proper direction, position of the hit, etc
-					local counter_ray = World:raycast("ray", character_unit:movement():m_head_pos(), self._unit:movement():m_com(), "sphere_cast_radius", 20, "target_unit", self._unit)
-					local action_data = {
-						damage_effect = 1,
+					local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
+					mvec3_norm(attack_dir)
+
+					local counter_data = {
 						damage = 0,
+						damage_effect = 1,
 						variant = "counter_spooc",
 						attacker_unit = character_unit,
-						col_ray = counter_ray,
-						attack_dir = counter_ray.ray,
+						attack_dir = attack_dir,
+						col_ray = {
+							position = mvector3.copy(self._unit:movement():m_com()),
+							body = self._unit:body("body"),
+							ray = attack_dir
+						},
 						name_id = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
 					}
 
-					self._unit:character_damage():damage_melee(action_data)
+					self._unit:character_damage():damage_melee(counter_data)
 				else
 					if not shield_knock and character_unit ~= local_player and character_unit:character_damage() and not character_unit:character_damage()._no_blood then
 						if character_unit:base().sentry_gun then

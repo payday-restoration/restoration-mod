@@ -15,53 +15,55 @@ function restoration:Init()
 		"election_day_3", --Election Day 3
 		"election_day_3_skip1", --Election Day 3 (Skipped 1)
 		"election_day_3_skip2", --Election Day 3 (Skipped 2)
-		"firestarter_1", --Firestarter Day 1
-		"mia_1", --Hotline Day 1
-		"hox_2", --Hoxout Day 2
-		"jewelry_store", --Jewelry Store
-		"alex_1", --Rats Day 1
+		"firestarter_2", --firestarter day 2
+		"four_stores", --Gee, I wonder what this could be.
 		"dinner", --Slaughterhouse
 		"moon", --Stealing Xmas
-		"ukrainian_job", --Ukrainian Job
+		"mus",	--the diamond
 		--Custom Heists--
-		"firestarter_1_res", --Firestarter Day 1 res edit version
-		"alex_1_res", --Rats Day 1 res edit version
-		"ukrainian_job_res", --Ukrainian Job res edit version
-	}		
+		"office_strike", --office strike
+		"firestarter_2_res" --firestarter day 2 res edit version
+	}
 	restoration.captain_teamwork = {
-		"pal", --counterfeit 
+		"pal", --counterfeit
+		"mia_1", --Hotline Day 1
 		"crojob2", --bomb dockyard
+		"firestarter_1", --Firestarter Day 1
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
-		"watchdogs_2_day", --Watchdogs Day 2 Daytime		
+		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
-		"office_strike", --office strike
+		"firestarter_1_res", --Firestarter Day 1 res edit version
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {
-		"firestarter_2", --firestarter day 2
+		"dah", --diamond heist
+		"hox_2", --Hoxout Day 2
 		"framing_frame_3", --framing frame day 3
-		"rat",	--cook off
 		"arm_for",	--train heist
-		"mus",	--the diamond
 		"big", --big bank
-		--custom heists		
-		"firestarter_2_res" --firestarter day 2 res edit version
+		"kenaz",--Golden Grin Casino
+		"cas" --Golden Grin Casino
 	}
 	restoration.captain_stelf = {
+		"alex_1", --Rats Day 1
+		"rat",	--cook off
 		"nightclub", --and Autumn stay off the dance floor
-		"gallery", --art gallery
-		"framing_frame_1", --art gallery but ff
 		"branchbank", --well the trees are orange
-		"dah", --diamond heist
-		"four_stores", --do i really need to make a comment here?
 		"family", --diamond store
+		"framing_frame_1", --art gallery but ff
+		"gallery", --art gallery
+		"jewelry_store", --Jewelry Store
+		"ukrainian_job", --Ukrainian Job
+		"framing_frame_2", --Powerbox simulator
 		--custom heists
 		"wetwork", --res map package wetworks
+		"alex_1_res", --Rats Day 1 res edit version
 		"lvl_fourmorestores", --four more stores
+		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
 	}
 	restoration.tiny_levels = {
@@ -125,6 +127,27 @@ function restoration:Init()
 		--Custom Heists below--
 		"Victor Romeo",
 		"thechase"
+	}	
+	--For custom heists that seem to be broken with our normal spawn setup
+	restoration.bad_spawn_heists = {
+		"help",
+		--Custom Heists--
+		"Victor Romeo",
+		"hardware_store",
+		"hntn",
+		"bookmakers_office",
+		"thechase",
+		"santa_pain"
+	}	
+	--Christmas Effects Heists
+	restoration.christmas_heists = {
+		"roberts",
+		"pines",
+		"cane",
+		"moon",
+		--Custom Heists--
+		"roberts_v2",
+		"santa_pain"
 	}	
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
@@ -306,35 +329,35 @@ restoration.environments_choice_ukrainian_job = {
 
 -- These tables show the network messages we've modified in the network settings pdmod
 -- We will use them for switching to RestorationMod prefixed messages when in SC Mode.
-local connection_network_handler_funcs = {
+-- local connection_network_handler_funcs = {
 	-- 'sync_player_installed_mod'
-}
+--}
 
-local unit_network_handler_funcs = {
+-- local unit_network_handler_funcs = {
 	-- 'sync_grenades',
 	-- 'place_grenade_crate'
-}
+--}
 
 -- Builds a single table from our two string based keys for each handler above
-restoration.network_handler_funcs = {}
-function restoration:add_handler_funcs(handler_funcs)
-	for i = 1, #handler_funcs do
-		self.network_handler_funcs[handler_funcs[i]] = true
-	end
-end
+-- restoration.network_handler_funcs = {}
+-- function restoration:add_handler_funcs(handler_funcs)
+-- 	for i = 1, #handler_funcs do
+-- 		self.network_handler_funcs[handler_funcs[i]] = true
+-- 	end
+-- end
 
-restoration:add_handler_funcs(connection_network_handler_funcs)
-restoration:add_handler_funcs(unit_network_handler_funcs)
+-- restoration:add_handler_funcs(connection_network_handler_funcs)
+-- restoration:add_handler_funcs(unit_network_handler_funcs)
 
 
 -- Takes the network keys we defined above and prefixes any matches on the given handler
-function restoration:rename_handler_funcs(NetworkHandler)
-	for key, value in pairs(restoration.network_handler_funcs) do
-		if NetworkHandler[key] then
-			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
-		end
-	end
-end
+-- function restoration:rename_handler_funcs(NetworkHandler)
+-- 	for key, value in pairs(restoration.network_handler_funcs) do
+-- 		if NetworkHandler[key] then
+-- 			NetworkHandler['RestorationMod__' .. key] = NetworkHandler[key]
+-- 		end
+-- 	end
+-- end
 
 Hooks:Register("restoration_on_synced_peer")
 Hooks:Add("restoration_on_synced_peer","restoration_do_sync_peer_stuff",function(peer,peer_id)

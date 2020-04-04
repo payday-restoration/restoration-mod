@@ -1,7 +1,0 @@
-<table directory="assets">
-	<add path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x2x3" type="unit">
-		<unit force="true" path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x2x3" unload="true"/>
-		<object force="true" path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x2x3" unload="true"/>
-		<material_config force="true" path="core/material_configs/hub_elements" unload="true"/>
-	</add>
-</table>

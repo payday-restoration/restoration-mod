@@ -1,7 +1,7 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 	function NewRaycastWeaponBase:get_add_head_shot_mul()
-		if self:is_category("smg", "lmg", "assault_rifle", "minigun") and self._fire_mode == ids_auto then
+		if self:is_category("smg", "lmg", "assault_rifle", "minigun", "pistol") and self._fire_mode == ids_auto then
 			return self._add_head_shot_mul
 		end
 		return nil
@@ -51,10 +51,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		function NewRaycastWeaponBase:reload_expire_t()
 			if self._use_shotgun_reload then
 				local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
-				if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
-					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
-				else
+				if self._started_reload_empty or self:weapon_tweak_data().tactical_reload ~= 1 then
 					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+				else
+					return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
 				end
 			end
 			return nil
@@ -64,11 +64,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			if self._use_shotgun_reload and t > self._next_shell_reloded_t then
 				local speed_multiplier = self:reload_speed_multiplier()
 				self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t() / speed_multiplier
-				if self:get_ammo_remaining_in_clip() > 0 and  self:weapon_tweak_data().tactical_reload == 1 then
-					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
+				if self._started_reload_empty or self:weapon_tweak_data().tactical_reload ~= 1 then
+					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
 					return true
 				else
-					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
+					self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
 					return true
 				end
 				managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
@@ -80,6 +80,35 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	NewRaycastWeaponBase.DEFAULT_BURST_SIZE = 3
 	NewRaycastWeaponBase.IDSTRING_SINGLE = Idstring("single")
 	NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
+
+	function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
+		local mul = 1
+
+		if not current_state then
+			return mul
+		end
+
+		local pm = managers.player
+
+		--Will do this in a more proper way some other time.
+		if current_state:in_steelsight() and self:is_category("assault_rifle", "smg", "snp") --[[and self:is_single_shot()]] then
+			mul = mul + 1 - pm:upgrade_value("player", "single_shot_accuracy_inc", 1)
+		end
+
+		if current_state:in_steelsight() then
+			for _, category in ipairs(self:categories()) do
+				mul = mul + 1 - managers.player:upgrade_value(category, "steelsight_accuracy_inc", 1)
+			end
+		end
+
+		if current_state._moving then
+			mul = mul + 1 - pm:upgrade_value("player", "weapon_movement_stability", 1)
+		end
+
+		mul = mul + 1 - pm:get_property("desperado", 1)
+
+		return self:_convert_add_to_mul(mul)
+	end
 
 	function NewRaycastWeaponBase:_get_spread(user_unit)
 		local current_state = user_unit:movement()._current_state
@@ -123,7 +152,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		
 		spread_x = spread_x * spread_mult
 		spread_y = spread_y * spread_mult
-		
+
 		return spread_x, spread_y
 	end
 	
@@ -272,6 +301,18 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 	end
 
+	--Returns the weapon's current concealment stat.
+	function RaycastWeaponBase:get_concealment()
+		local result = self._current_concealment or self._concealment
+		if result then
+			return math.max(result, 0)
+		else
+			log("Error: Missing concealment information")
+			return 20
+		end
+		
+	end
+
 	--Le stats face
 	local old_update_stats_values = NewRaycastWeaponBase._update_stats_values	
 	function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
@@ -312,6 +353,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		end
 		
 		if not self:is_npc() then
+			local weapon = {
+				factory_id = self._factory_id,
+				blueprint = self._blueprint
+			}
+			self._current_concealment = managers.blackmarket:calculate_weapon_concealment(weapon) + managers.blackmarket:get_silencer_concealment_modifiers(weapon)
+
 			self._burst_rounds_remaining = 0
 			self._has_auto = not self._locked_fire_mode and (self:can_toggle_firemode() or self:weapon_tweak_data().FIRE_MODE == "auto")
 			
@@ -410,29 +457,31 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				self:weapon_tweak_data().armor_piercing_chance = 0
 			end
 
+			--Leaving in case we ever want to give pistols their own kick
 			if stats.use_pistol_kick then
 				if self:weapon_tweak_data().kick then
 					self:weapon_tweak_data().kick.standing = {
 									0.6,
 									0.8,
-									-0.5,
-									0.5
+									-1,
+									1
 					}
 					self:weapon_tweak_data().kick.crouching = {
-									0.6,
-									0.8,
-									-0.5,
-									0.5
+									0.40002,
+									0.53336,
+									-0.6667,
+									0.6667
 					}
 					self:weapon_tweak_data().kick.steelsight = {
-									0.6,
-									0.8,
-									-0.5,
-									0.5
+									0.40002,
+									0.53336,
+									-0.6667,
+									0.6667
 					}
 				end
 			end
 
+			--Basically give it new_m4 kick
 			if stats.use_auto_kick then
 				if self:weapon_tweak_data().kick then
 					self:weapon_tweak_data().kick.standing = {
@@ -442,42 +491,69 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 									1
 					}
 					self:weapon_tweak_data().kick.crouching = {
-									0.6,
-									0.8,
-									-1,
-									1
+									0.40002,
+									0.53336,
+									-0.6667,
+									0.6667
 					}
 					self:weapon_tweak_data().kick.steelsight = {
-									0.6,
-									0.8,
-									-1,
-									1
+									0.40002,
+									0.53336,
+									-0.6667,
+									0.6667
 					}
 				end
 			end
 			
+			--Ditto, give it Huntsman kick profile
 			if stats.use_heavy_kick then
 				if self:weapon_tweak_data().kick then
 					self:weapon_tweak_data().kick.standing = {
-									1.9,
-									2,
-									-0.2,
-									0.2
+									1.5,
+									1.58,
+									-0.16,
+									0.16
 					}
 					self:weapon_tweak_data().kick.crouching = {
-									1.9,
-									2,
-									-0.2,
-									0.2
+									1.06,
+									1.12,
+									-0.11,
+									-0.11
 					}
 					self:weapon_tweak_data().kick.steelsight = {
-									1.9,
-									2,
-									-0.2,
-									0.2
+									1.06,
+									1.12,
+									-0.11,
+									-0.11
 					}
 				end
-			end			
+			end	
+
+			--Flamethrower stuff, since fire DOT data doesn't like being changed in a normal custom stat
+			if stats.use_rare_dot then
+				if self:weapon_tweak_data().fire_dot_data then
+					self:weapon_tweak_data().fire_dot_data = {
+						dot_damage = 0.5,
+						dot_trigger_max_distance = 999999,
+						dot_trigger_chance = 50,
+						dot_length = 6.1,
+						dot_tick_period = 0.5
+					}					
+				end
+			end		
+
+			--Worst way to eat a steak, seriously what the fuck's wrong with you
+			if stats.use_well_done_dot then
+				if self:weapon_tweak_data().fire_dot_data then
+					self:weapon_tweak_data().fire_dot_data = {
+						dot_damage = 2,
+						dot_trigger_max_distance = 999999,
+						dot_trigger_chance = 50,
+						dot_length = 1.6,
+						dot_tick_period = 0.5
+					}					
+				end
+			end					
 
 		end
 							

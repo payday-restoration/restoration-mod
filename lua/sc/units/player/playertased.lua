@@ -66,12 +66,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if shout_sound then
 				interact_type = "cmd_point"
 				queue_name = "s07x_sin"
+				
 				if managers.player:has_category_upgrade("player", "special_enemy_highlight") then
 					prime_target.unit:contour():add(managers.player:get_contour_for_marked_enemy(), true, managers.player:upgrade_value("player", "mark_enemy_time_multiplier", 1))
 				end
-				if not self._tase_ended and managers.player:has_category_upgrade("player", "escape_taser") and prime_target.unit:key() == self._unit:character_damage():tase_data().attacker_unit:key() then
-					self:_start_action_counter_tase(t, prime_target)
+				
+				--fuck off
+				if prime_target.unit:base()._tweak_table == "taser" then
+					if not self._tase_ended and managers.player:has_category_upgrade("player", "escape_taser") and prime_target.unit:key() == self._unit:character_damage():tase_data().attacker_unit:key() then
+						self:_start_action_counter_tase(t, prime_target)
+					end
 				end
+
 			end
 		end
 		if interact_type then

@@ -1,0 +1,13 @@
+<materials version="3">
+	<material name="mtr_ene_acc_fbi_cap" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bex/masks/msk_sombrero/msk_sombrero_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bex/masks/msk_sombrero/msk_sombrero_df"/>
+	</material>
+	<material name="mtr_ene_acc_fbi_cap_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/pd2_dlc_bex/masks/msk_sombrero/msk_sombrero_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_bex/masks/msk_sombrero/msk_sombrero_df" mip="1"/>
+	</material>	
+	<material name="mtr_ene_acc_fbi_cap_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <diffuse_texture file="units/pd2_dlc_bex/masks/msk_sombrero/msk_sombrero_df" mip="4"/>
+	</material>
+</materials>

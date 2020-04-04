@@ -1,7 +1,0 @@
-<unit type="mcm" slot="11">
-	<object file="units/pd2_mcmansion/props/mcm_prop_kitchen_toaster/mcm_prop_kitchen_toaster" />
-	<extensions>
-		<extension name="unit_data" class="ScriptUnitData" />
-		<extension name="damage" class="UnitDamage" />
-	</extensions>
-</unit>

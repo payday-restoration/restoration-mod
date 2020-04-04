@@ -1,0 +1,19 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" orientation_object="rp_dynamite" />
+    <bodies>
+        <!-- collision_script_tag="bounce" -->
+		<body name="static_body" collision_class="projectile" collision_script_tag="impact" enabled="true" template="small_prop" friction="1" sweep="true" restitution="0" ang_damping="0.1" pushed_by_mover="false"> <!--error in havok forces pushed_by_mover="false" to be used to not collide with mover-->
+            <object name="rp_dynamite" />
+            <object name="c_convex" collision_type="box" mass="0.19" padding="-2.5" />
+            <object name="c_sphere" collision_type="box" mass="0.01" padding="-2.5" />
+            <object name="c_sphere1" collision_type="box" mass="0.2" padding="-2.5" />
+        </body>
+    </bodies>
+	<graphics>
+		<object name="g_dynamite" enabled="true" />
+		<object name="g_illum" enabled="true" />
+	</graphics>
+	<effects>
+		<effect_spawner name="sparks" enabled="true" object="e_spark" effect="effects/payday2/particles/weapons/dynamite/dynamite_spark" fade_kill="false" />
+	</effects>
+</dynamic_object>

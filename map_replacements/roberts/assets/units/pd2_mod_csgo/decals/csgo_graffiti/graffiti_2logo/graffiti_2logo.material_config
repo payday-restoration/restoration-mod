@@ -1,5 +1,0 @@
-<materials version="3">
-	<material name="mtl_graffiti" render_template="decal:DIFFUSE_TEXTURE" version="2">
-        <diffuse_texture file="units/pd2_mod_csgo/decals/csgo_graffiti/graffiti_2logo/graffiti_2logo_df"/>
-    </material>
-</materials>

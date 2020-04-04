@@ -1,0 +1,17 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc" orientation_object="rp_ene_spook_head_debris" />
+	<bodies>
+		<body name="body_c_sphere" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_spook_head_debris" />
+			<object name="c_sphere" collision_type="sphere" padding="-2.5"/>
+			<object name="c_cube" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="flesh" />
+	<graphics>
+		<graphic_group name="graphics" enabled="true" culling_object="g_head">
+			<object name="g_head" enabled="true" />
+			<object name="s_mesh_mopp" enabled="true" shadow_caster="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

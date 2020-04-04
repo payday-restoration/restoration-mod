@@ -40,6 +40,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		CopMovement._action_variants.boom = security_variant
 		CopMovement._action_variants.rboom = security_variant
 		CopMovement._action_variants.fbi_vet = security_variant
+		CopMovement._action_variants.fbi_vet_boss = security_variant
 		CopMovement._action_variants.vetlod = security_variant		
 		CopMovement._action_variants.meme_man = security_variant		
 		CopMovement._action_variants.meme_man_shield = clone(security_variant)
@@ -662,153 +663,200 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self._action_common_data.is_suppressed = state and true or nil
 
-		if Network:is_server() and state then
-			if self._tweak_data.allowed_poses and (self._tweak_data.allowed_poses.crouch or self._tweak_data.allowed_poses.stand) or self:chk_action_forbidden("walk") then
-				--nothing
-			elseif state == "panic" and not self:chk_action_forbidden("act") then
-				if self._ext_anim.run and self._ext_anim.move_fwd then
-					local action_desc = {
-						clamp_to_graph = true,
-						type = "act",
-						body_part = 1,
-						variant = "e_so_sup_fumble_run_fwd",
-						blocks = {
-							action = -1,
-							walk = -1
-						}
-					}
+		if Network:is_server() then
+			if state then
+				if not self._tweak_data.allowed_poses or self._tweak_data.allowed_poses.crouch then
+					if not self._tweak_data.allowed_poses or self._tweak_data.allowed_poses.stand then
+						if not self:chk_action_forbidden("walk") then
+							local try_something_else = true
 
-					self:action_request(action_desc)
-				else
-					local function debug_fumble(result, from, to)
-					end
+							if state == "panic" and not self:chk_action_forbidden("act") then
+								if self._ext_anim.run and self._ext_anim.move_fwd then
+									local action_desc = {
+										clamp_to_graph = true,
+										type = "act",
+										body_part = 1,
+										variant = "e_so_sup_fumble_run_fwd",
+										blocks = {
+											action = -1,
+											walk = -1
+										}
+									}
 
-					local vec_from = temp_vec1
-					local vec_to = temp_vec2
-					local ray_params = {
-						allow_entry = false,
-						trace = true,
-						tracker_from = self:nav_tracker(),
-						pos_from = vec_from,
-						pos_to = vec_to
-					}
-					local allowed_fumbles = {
-						"e_so_sup_fumble_inplace_3"
-					}
-					local allow = nil
+									if self:action_request(action_desc) then
+										try_something_else = false
+									end
+								else
+									local allow = nil
+									local vec_from = temp_vec1
+									local vec_to = temp_vec2
+									local ray_params = {
+										allow_entry = false,
+										trace = true,
+										tracker_from = self:nav_tracker(),
+										pos_from = vec_from,
+										pos_to = vec_to
+									}
+									local allowed_fumbles = {
+										"e_so_sup_fumble_inplace_3"
+									}
 
-					mvec3_set(vec_from, self:m_pos())
-					mvec3_set(vec_to, self:m_rot():y())
-					mvec3_mul(vec_to, -100)
-					mvec3_add(vec_to, self:m_pos())
+									mvec3_set(ray_params.pos_from, self:m_pos())
+									mvec3_set(ray_params.pos_to, self:m_rot():y())
+									mvec3_mul(ray_params.pos_to, -100)
+									mvec3_add(ray_params.pos_to, self:m_pos())
 
-					allow = not managers.navigation:raycast(ray_params)
+									allow = not managers.navigation:raycast(ray_params)
 
-					debug_fumble(allow, vec_from, vec_to)
+									if allow then
+										table.insert(allowed_fumbles, "e_so_sup_fumble_inplace_1")
+									end
 
-					if allow then
-						table.insert(allowed_fumbles, "e_so_sup_fumble_inplace_1")
-					end
+									mvec3_set(ray_params.pos_from, self:m_pos())
+									mvec3_set(ray_params.pos_to, self:m_rot():x())
+									mvec3_mul(ray_params.pos_to, 200)
+									mvec3_add(ray_params.pos_to, self:m_pos())
 
-					mvec3_set(vec_from, self:m_pos())
-					mvec3_set(vec_to, self:m_rot():x())
-					mvec3_mul(vec_to, 200)
-					mvec3_add(vec_to, self:m_pos())
+									allow = not managers.navigation:raycast(ray_params)
 
-					allow = not managers.navigation:raycast(ray_params)
+									if allow then
+										table.insert(allowed_fumbles, "e_so_sup_fumble_inplace_2")
+									end
 
-					debug_fumble(allow, vec_from, vec_to)
+									mvec3_set(ray_params.pos_from, self:m_pos())
+									mvec3_set(ray_params.pos_to, self:m_rot():x())
+									mvec3_mul(ray_params.pos_to, -200)
+									mvec3_add(ray_params.pos_to, self:m_pos())
 
-					if allow then
-						table.insert(allowed_fumbles, "e_so_sup_fumble_inplace_2")
-					end
+									allow = not managers.navigation:raycast(ray_params)
 
-					mvec3_set(vec_from, self:m_pos())
-					mvec3_set(vec_to, self:m_rot():x())
-					mvec3_mul(vec_to, -200)
-					mvec3_add(vec_to, self:m_pos())
+									if allow then
+										table.insert(allowed_fumbles, "e_so_sup_fumble_inplace_4")
+									end
 
-					allow = not managers.navigation:raycast(ray_params)
+									if #allowed_fumbles > 0 then
+										local action_desc = {
+											body_part = 1,
+											type = "act",
+											variant = allowed_fumbles[math.random(#allowed_fumbles)],
+											blocks = {
+												action = -1,
+												walk = -1
+											}
+										}
 
-					debug_fumble(allow, vec_from, vec_to)
+										if self:action_request(action_desc) then
+											try_something_else = false
+										end
+									end
+								end
+							end
 
-					if allow then
-						table.insert(allowed_fumbles, "e_so_sup_fumble_inplace_4")
-					end
+							if try_something_else and not self._ext_anim.crouch then
+								if self._tweak_data.can_slide_on_suppress and not self._ext_anim.run and self._ext_anim.move_fwd and not self:chk_action_forbidden("act") then
+									local allow = nil
+									local vec_from = temp_vec1
+									local vec_to = temp_vec2
+									local ray_params = {
+										allow_entry = false,
+										trace = true,
+										tracker_from = self:nav_tracker(),
+										pos_from = vec_from,
+										pos_to = vec_to
+									}
 
-					if #allowed_fumbles > 0 then
-						local action_desc = {
-							body_part = 1,
-							type = "act",
-							variant = allowed_fumbles[math.random(#allowed_fumbles)],
-							blocks = {
-								action = -1,
-								walk = -1
-							}
-						}
+									mvec3_set(ray_params.pos_from, self:m_pos())
+									mvec3_set(ray_params.pos_to, self:m_rot():y())
+									mvec3_mul(ray_params.pos_to, 380)
+									mvec3_add(ray_params.pos_to, self:m_pos())
 
-						self:action_request(action_desc)
-					end
-				end
-			elseif self._ext_anim.idle and (not self._active_actions[2] or self._active_actions[2]:type() == "idle") and not self:chk_action_forbidden("act") then
-				local action_desc = {
-					clamp_to_graph = true,
-					type = "act",
-					body_part = 1,
-					variant = "suppressed_reaction",
-					blocks = {
-						walk = -1
-					}
-				}
+									--verify there's the way is clear to execute the slide
+									if not managers.navigation:raycast(ray_params) then
+										local action_desc = {
+											clamp_to_graph = true,
+											type = "act",
+											body_part = 1,
+											variant = "e_nl_slide_fwd_4m",
+											blocks = {
+												action = -1,
+												walk = -1
+											}
+										}
 
-				self:action_request(action_desc)
-			elseif not self._ext_anim.crouch then
-				if self._ext_anim.run then
-					if self._tweak_data.can_slide_on_suppress and not self:chk_action_forbidden("act") then
-						local action_desc = {
-							clamp_to_graph = true,
-							type = "act",
-							body_part = 1,
-							variant = "e_nl_slide_fwd_4m",
-							blocks = {
-								action = -1,
-								walk = -1
-							}
-						}
+										if self:action_request(action_desc) then
+											try_something_else = false
+										end
+									end
+								end
 
-						self:action_request(action_desc)
-						--this will currently be done by anyone without "poses" but add stuff like 
-						--can_slide_on_suppress = true
-						--to charactertweakdata on the enemies that should be able to slide to further narrow it down so only certain enemies can do slides
-					end
-				elseif not self._tweak_data.allowed_poses or self._tweak_data.allowed_poses.crouch then
-					local action_desc = nil
+								if try_something_else and self._tweak_data.crouch_move then
+									if self._ext_anim.idle then
+										if not self._active_actions[2] or self._active_actions[2]:type() == "idle" then
+											if not self:chk_action_forbidden("act") then
+												--using body part 2 means shooting won't be interrupted, which in turn fixes the issue
+												--where sometimes suppressing an enemy causes them to instantly fire their weapon again
+												--this happens because using 1 causes the shoot action to expire and exit
+												local action_desc = {
+													clamp_to_graph = true,
+													type = "act",
+													body_part = 2,
+													variant = "suppressed_reaction",
+													blocks = {
+														walk = -1
+													}
+												}
 
-					if self._ext_anim.move then
-						if self._tweak_data.crouch_move then
-							action_desc = {
-								body_part = 4,
-								type = "crouch"
-							}
+												if self:action_request(action_desc) then
+													try_something_else = false
+												end
+											end
+										end
+									end
+
+									if try_something_else and not self:chk_action_forbidden("crouch") then
+										local action_desc = {
+											body_part = 4,
+											type = "crouch"
+										}
+
+										self:action_request(action_desc)
+									end
+								end
+							end
 						end
-					else
-						action_desc = {
-							body_part = 4,
-							type = "crouch"
-						}
-					end
-
-					if action_desc and not self:chk_action_forbidden("crouch") then
-						self:action_request(action_desc)
 					end
 				end
 			end
+
+			managers.network:session():send_to_peers_synched("suppressed_state", self._unit, state and true or false)
 		end
 
 		self:enable_update()
+	end
 
-		if Network:is_server() then
-			managers.network:session():send_to_peers_synched("suppressed_state", self._unit, state and true or false)
+	function CopMovement:synch_attention(attention)
+		if attention and self._unit:character_damage():dead() then
+			--debug_pause_unit(self._unit, "[CopMovement:synch_attention] dead AI", self._unit, inspect(attention))
+		end
+
+		self:_remove_attention_destroy_listener(self._attention)
+		self:_add_attention_destroy_listener(attention)
+
+		if attention and attention.unit and not attention.destroy_listener_key then
+			--debug_pause_unit(attention.unit, "[CopMovement:synch_attention] problematic attention unit", attention.unit)
+			self:synch_attention(nil)
+
+			return
+		end
+
+		local old_attention = self._attention --of course vanilla lacks this for no real reason
+		self._attention = attention
+		self._action_common_data.attention = attention
+
+		for _, action in ipairs(self._active_actions) do
+			if action and action.on_attention then
+				action:on_attention(attention, old_attention)
+			end
 		end
 	end
 
@@ -828,6 +876,214 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._melee_item_unit = World:spawn_unit(unit_name, align_obj_l:position(), align_obj_l:rotation())
 			self._unit:link(align_obj_l:name(), self._melee_item_unit, self._melee_item_unit:orientation_object():name())
 		end
+	end
+
+	function CopMovement:_equip_item(item_type, align_place, droppable)
+		if item_type == "needle" then
+			align_place = "hand_l"
+		end
+
+		local align_name = self._gadgets.aligns[align_place]
+
+		if not align_name then
+			--print("[CopMovement:anim_clbk_equip_item] non existent align place:", align_place)
+
+			return
+		end
+
+		local align_obj = self._unit:get_object(align_name)
+		local available_items = self._gadgets[item_type]
+
+		if not available_items then
+			--print("[CopMovement:anim_clbk_equip_item] non existent item_type:", item_type)
+
+			return
+		end
+
+		local item_name = available_items[math.random(available_items)]
+
+		if self._spawneditems[item_type] ~= nil then
+			return
+		end
+
+		self._spawneditems[item_type] = true
+
+		if item_type == "needle" then
+			align_place = "hand_l"
+		end
+
+		--print("[CopMovement]Spawning: " .. item_type)
+
+		local item_unit = World:spawn_unit(item_name, align_obj:position(), align_obj:rotation())
+
+		self._unit:link(align_name, item_unit, item_unit:orientation_object():name())
+
+		self._equipped_gadgets = self._equipped_gadgets or {}
+		self._equipped_gadgets[align_place] = self._equipped_gadgets[align_place] or {}
+
+		table.insert(self._equipped_gadgets[align_place], item_unit)
+
+		if droppable then
+			self._droppable_gadgets = self._droppable_gadgets or {}
+
+			table.insert(self._droppable_gadgets, item_unit)
+		end
+	end
+
+	function CopMovement:drop_held_items()
+		self._spawneditems = {}
+
+		if not self._droppable_gadgets then
+			return
+		end
+
+		for _, drop_item_unit in ipairs(self._droppable_gadgets) do
+			local wanted_item_key = drop_item_unit:key()
+
+			if alive(drop_item_unit) then
+				for align_place, item_list in pairs(self._equipped_gadgets) do
+					if wanted_item_key then
+						for i_item, item_unit in ipairs(item_list) do
+							if item_unit:key() == wanted_item_key then
+								table.remove(item_list, i_item)
+
+								wanted_item_key = nil
+
+								break
+							end
+						end
+					else
+						break
+					end
+				end
+
+				drop_item_unit:unlink()
+				drop_item_unit:set_slot(0)
+			else
+				for align_place, item_list in pairs(self._equipped_gadgets) do
+					if wanted_item_key then
+						for i_item, item_unit in ipairs(item_list) do
+							if not alive(item_unit) then
+								table.remove(item_list, i_item)
+							end
+						end
+					end
+				end
+			end
+		end
+
+		self._droppable_gadgets = nil
+	end
+
+	function CopMovement:sync_action_spooc_nav_point(pos, action_id)
+		local spooc_action, is_queued = self:_get_latest_spooc_action(action_id)
+
+		if is_queued then
+			if spooc_action.stop_pos and not spooc_action.nr_expected_nav_points then
+				return
+			end
+
+			table.insert(spooc_action.nav_path, pos)
+
+			if spooc_action.nr_expected_nav_points then
+				if spooc_action.nr_expected_nav_points == 1 then
+					spooc_action.nr_expected_nav_points = nil
+
+					table.insert(spooc_action.nav_path, spooc_action.stop_pos)
+				else
+					spooc_action.nr_expected_nav_points = spooc_action.nr_expected_nav_points - 1
+				end
+			end
+		elseif spooc_action then
+			spooc_action:sync_append_nav_point(pos)
+		end
+	end
+
+	function CopMovement:sync_action_spooc_stop(pos, nav_index, action_id)
+		local spooc_action, is_queued = self:_get_latest_spooc_action(action_id)
+
+		if is_queued then
+			if spooc_action.host_stop_pos_inserted then
+				nav_index = nav_index + spooc_action.host_stop_pos_inserted
+			end
+
+			local nav_path = spooc_action.nav_path
+
+			while nav_index < #nav_path do
+				table.remove(nav_path)
+			end
+
+			spooc_action.stop_pos = pos
+
+			if #nav_path < nav_index - 1 then
+				spooc_action.nr_expected_nav_points = nav_index - #nav_path + 1
+			else
+				table.insert(nav_path, pos)
+			end
+
+			spooc_action.path_index = math.max(1, math.min(spooc_action.path_index, #nav_path - 1))
+		elseif spooc_action then
+			if Network:is_server() then
+				self:action_request({
+					sync = true,
+					body_part = 1,
+					type = "idle"
+				})
+			else
+				spooc_action:sync_stop(pos, nav_index)
+			end
+		end
+	end
+
+	function CopMovement:sync_action_spooc_strike(pos, action_id)
+		local spooc_action, is_queued = self:_get_latest_spooc_action(action_id)
+
+		if is_queued then
+			if spooc_action.stop_pos and not spooc_action.nr_expected_nav_points then
+				return
+			end
+
+			table.insert(spooc_action.nav_path, pos)
+
+			spooc_action.strike_nav_index = #spooc_action.nav_path
+			spooc_action.strike = true
+		elseif spooc_action then
+			spooc_action:sync_strike(pos)
+		end
+	end
+
+	function CopMovement:_get_latest_tase_action()
+		if self._queued_actions then
+			for i = #self._queued_actions, 1, -1 do
+				local action = self._queued_actions[i]
+
+				if action.type == "tase" then
+					return self._queued_actions[i], true
+				end
+			end
+		end
+
+		if self._active_actions[3] and self._active_actions[3]:type() == "tase" and not self._active_actions[3]:expired() then
+			return self._active_actions[3]
+		end
+	end
+
+	function CopMovement:sync_taser_fire()
+		local tase_action, is_queued = self:_get_latest_tase_action()
+
+		if is_queued then
+			tase_action.firing_at_husk = true
+		elseif tase_action then
+			tase_action:fire_taser()
+		end
+	end
+
+	function CopMovement:anim_clbk_reload_exit()
+		if self._ext_inventory:equipped_unit() then
+			self._ext_inventory:equipped_unit():base():on_reload()
+		end
+
+		self:anim_clbk_hide_magazine_in_hand()
 	end
 
 	function CopMovement:set_uncloaked(state)
@@ -865,23 +1121,39 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	function CopMovement:damage_clbk(my_unit, damage_info)
 		local hurt_type = damage_info.result.type
 
-		if damage_info.variant == "explosion" or damage_info.variant == "bullet" or damage_info.variant == "fire" or damage_info.variant == "poison" then
+		if not hurt_type then
+			return
+		end
+
+		if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "graze" then
 			hurt_type = managers.modifiers:modify_value("CopMovement:HurtType", hurt_type)
+
+			if not hurt_type then
+				return
+			end
 		end
 
-		if hurt_type == "stagger" then
-			hurt_type = "heavy_hurt"
-		end
-
-		if hurt_type == "hurt" or hurt_type == "heavy_hurt" or hurt_type == "knock_down" then
-			if self._anim_global and self._anim_global == "shield" then
+		if damage_info.variant == "stun" and self._anim_global == "shield" then
+			hurt_type = "expl_hurt"
+			damage_info.result = {
+				variant = damage_info.variant,
+				type = "expl_hurt"
+			}
+		elseif hurt_type == "stagger" or hurt_type == "knock_down" then
+			if self._anim_global == "shield" then
+				hurt_type = "expl_hurt"
+			else
+				hurt_type = "heavy_hurt"
+			end
+		elseif hurt_type == "hurt" or hurt_type == "heavy_hurt" then
+			if self._anim_global == "shield" then
 				hurt_type = "expl_hurt"
 			end
 		end
 
 		local block_type = hurt_type
 
-		if hurt_type == "knock_down" or hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+		if hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
 			block_type = "heavy_hurt"
 		end
 
@@ -889,30 +1161,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._queued_actions = {}
 		end
 
-		if not hurt_type or Network:is_server() and self:chk_action_forbidden(block_type) then
-			if hurt_type == "death" then
-				debug_pause_unit(self._unit, "[CopMovement:damage_clbk] Death action skipped!!!", self._unit)
-				Application:draw_cylinder(self._m_pos, self._m_pos + math.UP * 5000, 30, 1, 0, 0)
-
-				for body_part, action in ipairs(self._active_actions) do
-					if action then
-						print(body_part, action:type(), inspect(action._blocks))
-					end
-				end
-			end
-
+		if Network:is_server() and self:chk_action_forbidden(block_type) then
 			return
-		end
-
-		if damage_info.variant == "stun" and alive(self._ext_inventory and self._ext_inventory._shield_unit) then
-			hurt_type = "shield_knock"
-			block_type = "shield_knock"
-			damage_info.variant = "melee"
-			damage_info.result = {
-				variant = "melee",
-				type = "shield_knock"
-			}
-			damage_info.shield_knock = true
 		end
 
 		if hurt_type == "death" then
@@ -954,25 +1204,24 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				blocks.bleedout = -1
 				blocks.hurt = -1
 				blocks.heavy_hurt = -1
+				blocks.stagger = -1
+				blocks.knock_down = -1
+				blocks.counter_tased = -1
 				blocks.hurt_sick = -1
+				blocks.expl_hurt = -1
+				blocks.fire_hurt = -1
+				blocks.taser_tased = -1
+				blocks.poison_hurt = -1
+				blocks.shield_knock = -1
 				blocks.concussion = -1
-			end
-
-			if hurt_type == "shield_knock" then
-				blocks.light_hurt = -1
-				blocks.concussion = -1
-			end
-
-			if hurt_type == "concussion" or hurt_type == "counter_tased" then
+			elseif hurt_type == "shield_knock" or hurt_type == "concussion" or hurt_type == "counter_tased" then
 				blocks.hurt = -1
-				blocks.light_hurt = -1
 				blocks.heavy_hurt = -1
 				blocks.stagger = -1
 				blocks.knock_down = -1
 				blocks.counter_tased = -1
 				blocks.hurt_sick = -1
 				blocks.expl_hurt = -1
-				blocks.counter_spooc = -1
 				blocks.fire_hurt = -1
 				blocks.taser_tased = -1
 				blocks.poison_hurt = -1
@@ -981,34 +1230,45 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
-		if damage_info.variant == "tase" then
-			block_type = "bleedout"
-		elseif hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
-			block_type = "heavy_hurt"
-		else
-			block_type = hurt_type
-		end
-
 		local client_interrupt = nil
 
-		if Network:is_client() and (hurt_type == "light_hurt" or hurt_type == "hurt" and damage_info.variant ~= "tase" or hurt_type == "heavy_hurt" or hurt_type == "expl_hurt" or hurt_type == "shield_knock" or hurt_type == "counter_tased" or hurt_type == "taser_tased" or hurt_type == "counter_spooc" or hurt_type == "death" or hurt_type == "hurt_sick" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "concussion") then
-			client_interrupt = true
+		if damage_info.variant == "tase" then
+			block_type = "bleedout"
+		else
+			if Network:is_client() then
+				client_interrupt = true
+			end
+
+			block_type = hurt_type
 		end
 
 		local tweak = self._tweak_data
 		local action_data = nil
 
 		if hurt_type == "healed" then
-			if Network:is_client() then
-				client_interrupt = true
+			if self._unit:contour() then
+				self._unit:contour():add("medic_heal")
+				self._unit:contour():flash("medic_heal", 0.2)
+			end
+
+			if tweak.ignore_medic_revive_animation then
+				return
 			end
 
 			action_data = {
-				body_part = 3,
+				body_part = 1,
 				type = "healed",
 				client_interrupt = client_interrupt
 			}
 		else
+			local death_type = "normal"
+
+			if tweak.damage.death_severity then
+				if tweak.damage.death_severity < damage_info.damage / tweak.HEALTH_INIT then
+					death_type = "heavy"
+				end
+			end
+
 			action_data = {
 				type = "hurt",
 				block_type = block_type,
@@ -1020,7 +1280,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				blocks = blocks,
 				client_interrupt = client_interrupt,
 				attacker_unit = damage_info.attacker_unit,
-				death_type = tweak.damage.death_severity and (tweak.damage.death_severity < damage_info.damage / tweak.HEALTH_INIT and "heavy" or "normal") or "normal",
+				death_type = death_type,
 				ignite_character = damage_info.ignite_character,
 				start_dot_damage_roll = damage_info.start_dot_damage_roll,
 				is_fire_dot_damage = damage_info.is_fire_dot_damage,
@@ -1029,18 +1289,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		end
 
-		local request_action = Network:is_server() or not self:chk_action_forbidden(action_data)
-
-		if damage_info.is_synced and (hurt_type == "knock_down" or hurt_type == "heavy_hurt") then
-			request_action = false
-		end
-
-		if request_action then
+		if Network:is_server() or not self:chk_action_forbidden(action_data) then
 			self:action_request(action_data)
-
-			if hurt_type == "death" and self._queued_actions then
-				self._queued_actions = {}
-			end
 		end
 	end
 end

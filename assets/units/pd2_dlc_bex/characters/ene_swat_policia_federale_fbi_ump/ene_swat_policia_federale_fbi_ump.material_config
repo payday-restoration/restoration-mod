@@ -1,0 +1,41 @@
+<materials version="3" group="ene_swat_policia_federale">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_atlas_df"/>
+	</material>
+	<material name="mtr_head_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mips="1"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_atlas_df" mips="1"/>
+	</material>
+	<material name="mtr_head_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mips="4"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_atlas_df" mips="4"/>
+	</material>
+
+	<material name="mtr_swat_fbi" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/swat_fbi_body_df"/>
+	</material>
+	<material name="mtr_swat_fbi_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mips="1"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/swat_fbi_body_df" mips="1"/>
+	</material>
+	<material name="mtr_swat_fbi_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mips="4"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/swat_fbi_body_df" mips="4"/>
+	</material>
+
+	<material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df"/>
+	</material>
+	<material name="mtr_helmet_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" mip="1"/>
+	</material>
+	<material name="mtr_helmet_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" mip="4"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

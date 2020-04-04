@@ -1,0 +1,14 @@
+<materials version="3">
+	<material name="mtr_bulldozer" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_akan_dozer_policia_federale_body_black_df"/>
+	</material>
+	<material name="mtr_bulldozer_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/bulldozer_nm" mip="1" />
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_akan_dozer_policia_federale_body_black_df" mip="1"/>
+	</material>
+	<material name="mtr_bulldozer_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/bulldozer_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_akan_dozer_policia_federale_body_black_df" mip="4"/>
+	</material>
+</materials>

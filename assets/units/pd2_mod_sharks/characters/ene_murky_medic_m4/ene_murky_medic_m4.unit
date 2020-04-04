@@ -5,6 +5,7 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/special_medic" />
+		<depends_on bnk="soundbanks/npc_russian_mercenaries" />		
 		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_medic_helmet/ene_acc_murky_medic_helmet" />
 	</dependencies>
 

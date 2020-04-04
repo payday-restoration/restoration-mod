@@ -2,11 +2,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	-- Extends the UnitNetworkHandler class to add our own unit network calls
 	-- For function modifications use the original function name it will be prefixed later
-	RestorationMod__UnitNetworkHandler = RestorationMod__UnitNetworkHandler or class(UnitNetworkHandler)
+	-- RestorationMod__UnitNetworkHandler = RestorationMod__UnitNetworkHandler or class(UnitNetworkHandler)
 
 	-- Will add a prefix of `RestorationMod__` to all functions our definitions use
 	-- Required to maintain compatibility with normal lobbies.
-	restoration:rename_handler_funcs(RestorationMod__UnitNetworkHandler)
+	-- restoration:rename_handler_funcs(RestorationMod__UnitNetworkHandler)
 	
 	local orig_sync_player = UnitNetworkHandler.sync_player_movement_state
 	function UnitNetworkHandler:sync_player_movement_state(unit, state, down_time, unit_id_str,...) --i can't reverse engineer RPC stuff and make my own unitnetworkhandler functions so... guess i'll die
@@ -51,6 +51,41 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
+	function UnitNetworkHandler:action_spooc_start(unit, target_u_pos, flying_strike, action_id)
+		if not self._verify_character(unit) or not self._verify_gamestate(self._gamestate_filter.any_ingame) then
+			return
+		end
+
+		local action_desc = {
+			block_type = "walk",
+			type = "spooc",
+			path_index = 1,
+			body_part = 1,
+			nav_path = {
+				unit:position()
+			},
+			target_u_pos = target_u_pos,
+			flying_strike = flying_strike,
+			action_id = action_id,
+			blocks = {
+				act = -1,
+				turn = -1,
+				walk = -1
+			}
+		}
+
+		if flying_strike then
+			action_desc.blocks.idle = -1
+			action_desc.blocks.light_hurt = -1
+			action_desc.blocks.heavy_hurt = -1
+			action_desc.blocks.fire_hurt = -1
+			action_desc.blocks.hurt = -1
+			action_desc.blocks.expl_hurt = -1
+			action_desc.blocks.taser_tased = -1
+		end
+
+		unit:movement():action_request(action_desc)
+	end
 
 	function UnitNetworkHandler:action_aim_state(unit, state)
 		if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not self._verify_character(unit) then
@@ -116,5 +151,89 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			managers.dot:sync_add_dot_damage(enemy_unit, variant, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation, variant, weapon_id)
 		end
+	end
+
+	function UnitNetworkHandler:request_throw_projectile(projectile_type_index, position, dir, sender)
+		if not self._verify_gamestate(self._gamestate_filter.any_ingame) then
+			log("projectile throw request failed: _verify failed")
+			return
+		end
+
+		local peer = self._verify_sender(sender)
+
+		if not peer then
+			log("projectile throw request failed: no peer/invalid peer?")
+			return
+		end
+
+		local peer_id = peer:id()
+		local projectile_type = tweak_data.blackmarket:get_projectile_name_from_index(projectile_type_index)
+		local no_cheat_count = tweak_data.blackmarket.projectiles[projectile_type].no_cheat_count
+
+		if not no_cheat_count and not managers.player:verify_grenade(peer_id) then
+			log("projectile throw request failed: apparently went past the cheat count check")
+			return
+		end
+
+		ProjectileBase.throw_projectile(projectile_type, position, dir, peer_id)
+	end
+
+	function UnitNetworkHandler:sync_throw_projectile(unit, pos, dir, projectile_type_index, peer_id, sender)
+		if not self._verify_gamestate(self._gamestate_filter.any_ingame) then
+			log("projectile throw request failed: _verify failed")
+			return
+		end
+
+		local peer = self._verify_sender(sender)
+
+		if not peer then
+			log("projectile throw request failed: no peer/invalid peer?")
+			return
+		end
+
+		local projectile_type = tweak_data.blackmarket:get_projectile_name_from_index(projectile_type_index)
+		local tweak_entry = tweak_data.blackmarket.projectiles[projectile_type]
+
+		if tweak_entry.client_authoritative then
+			if not unit then
+				local unit_name = Idstring(tweak_entry.local_unit)
+				unit = World:spawn_unit(unit_name, pos, Rotation(dir, math.UP))
+			end
+
+			unit:base():set_owner_peer_id(peer_id)
+		end
+
+		if not alive(unit) then
+			log("projectile throw request failed: unit doesn't exist")
+
+			return
+		end
+
+		local server_peer = managers.network:session():server_peer()
+
+		if tweak_entry.throwable and not peer == server_peer then
+			log("projectile throw request failed: projectile is throwable, should not be thrown by client")
+
+			return
+		end
+
+		local no_cheat_count = tweak_entry.no_cheat_count
+
+		if not no_cheat_count then
+			managers.player:verify_grenade(peer_id)
+		end
+
+		local member = managers.network:session():peer(peer_id)
+		local thrower_unit = member and member:unit()
+
+		if alive(thrower_unit) then
+			unit:base():set_thrower_unit(thrower_unit)
+
+			if not tweak_entry.throwable and thrower_unit:movement() and thrower_unit:movement():current_state() then
+				unit:base():set_weapon_unit(thrower_unit:movement():current_state()._equipped_unit)
+			end
+		end
+
+		unit:base():sync_throw_projectile(dir, projectile_type)
 	end
 end

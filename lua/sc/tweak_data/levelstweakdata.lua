@@ -6,6 +6,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	LevelsTweakData.LevelType.Russia = "russia"
 	LevelsTweakData.LevelType.Zombie = "zombie"
 	LevelsTweakData.LevelType.Murkywater = "murkywater"
+	LevelsTweakData.LevelType.Federales = "federales"
 	LevelsTweakData.LevelType.NYPD = "nypd"
 	LevelsTweakData.LevelType.LAPD = "lapd"
 	--///LEVELS\\\--
@@ -16,6 +17,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local zombie = LevelsTweakData.LevelType.Zombie
 		local murkywater = LevelsTweakData.LevelType.Murkywater
 		local nypd = LevelsTweakData.LevelType.NYPD
+		local federales = LevelsTweakData.LevelType.Federales		
 		local lapd = LevelsTweakData.LevelType.LAPD
 		self.ai_groups = {}
 		self.ai_groups.default = america
@@ -23,8 +25,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ai_groups.russia = russia
 		self.ai_groups.zombie  = zombie
 		self.ai_groups.murkywater = murkywater
+		self.ai_groups.federales = federales
 		self.ai_groups.nypd = nypd
 		self.ai_groups.lapd = lapd
+		
+		--///MEXICAN LEVELS\\\--
+		self.bex.package = {"packages/mexicoassets", "packages/job_bex"}
+
+		self.mex_cooking.package = {"packages/mexicoassets", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
+		self.mex_cooking.ai_group_type = federales 
+		self.mex_cooking.player_style = "suit_sunny"	
 		
 		--///MURKYWATER LEVELS\\\--
 		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
@@ -55,11 +65,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.mex.package = {"packages/murkyassets", "packages/job_mex"}
 		self.mex.ai_group_type = murkywater 
-		self.mex.player_style = "suit_sunny"
-
-		self.mex_cooking.package = {"packages/murkyassets", "packages/job_mex2"}
-		self.mex_cooking.ai_group_type = murkywater 
-		self.mex_cooking.player_style = "suit_sunny"		
+		self.mex.player_style = "suit_sunny"	
 
 		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu", "packages/murkyassets"}
 		self.crojob2.ai_group_type = murkywater			
@@ -244,7 +250,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mia_1.player_style = "suit_sunny"
 		self.mia_2.player_style = "suit_sunny"
 		
-		--reminder to add the biker vo package here
 		self.cane.package = {"packages/cane", "packages/addsnow", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 		self.cane.player_style = "winter_suit"
 								

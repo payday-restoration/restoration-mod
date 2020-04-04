@@ -10,7 +10,10 @@
 	"menu_utility_radial_menu_name" : "Utility Radial Menu",
 	"menu_utility_radial_menu_desc" : "Open the Utility Menu",
 	
-	"res_saveboost" : "HOLD $BTN_INTERACT TO BOOST TO REP 100",
+	"res_credits" : "Restoration Mod Credits",
+	"res_credits_help" : "View the credits for RESTORATION MOD.",
+	
+	"res_saveboost" : "HOLD $BTN_INTERACT TO BOOST TO LEVEL 100",
 	
 	"RestorationModOptionsButtonTitleID" : "Restoration Mod Options",
 	"RestorationModOptionsButtonDescID" : "Restoration Mod's Options.",
@@ -58,7 +61,9 @@
 	"RestorationModEnv_UkraDescID" : "Select an environment for Ukrainian Job.",
 
 	"RestorationModAltLastDownColorTitleID" : "Alternative Last Down Color Grading",
-	"RestorationMoAltLastDownColorDescID" : "Switches the last down color grading to color_sin.",
+	"RestorationModAltLastDownColorDescID" : "Switches the last down color grading to color_sin_classic.",
+	"RestorationModNoBleedoutTiltTitleID" : "Disable Bleedout Camera Tilt",
+	"RestorationModNoBleedoutTiltDescID" : "Disables the camera tilt that happens while in bleedout",
 	
 	"default" : "Default",
 	"random" : "Random",
@@ -127,7 +132,7 @@
 	"RestorationModPauseDescID" : "Enable or disable the Alpha Pause Menu.",
 	
 	"menu_support" : "Overhaul Guide/Support",
-	"menu_support_help" : "View the guide for Restoration's Overhaul, get support, find crew mates.",
+	"menu_support_help" : "View the guide for Restoration Mod's Overhaul, get support, find crew mates.",
 	"menu_manual_header" : "Placeholder Text",
 	"hud_instruct_mask_on_alpha" : "Hold $BTN_USE_ITEM to put on your mask",
 	"hud_assault_alpha" : "POLICE ASSAULT",
@@ -250,11 +255,12 @@
 	"restoration_level_data_des" : "TIME CLASSIFIED, Nevada - Henry's Rock",
 	"restoration_level_data_sah" : "TIME CLASSIFIED, New England - Shacklethorne Estate",
 	"restoration_level_data_tag" : "12:43 AM, J. Edgar Hoover Building",
-	"restoration_level_data_bph" : "TIME CLASSIFIED, ''Hell'S Island''",
+	"restoration_level_data_bph" : "TIME CLASSIFIED, ''Hell's Island''",
 	"restoration_level_data_nmh" : "8:24 PM, Mercy Hospital - Isolation Ward",
 	"restoration_level_data_vit" : "1:07 PM, Washington D.C. - The White House",
 	"restoration_level_data_mex" : "TIME CLASSIFIED, United States - Southern Border",
 	"restoration_level_data_mex_cooking" : "TIME CLASSIFIED, Mexico - Coyopa Compound",
+	"restoration_level_data_bex" : "TIME CLASSIFIED, Mexico - San Martín Bank",
 	"restoration_level_data_wetwork" : "TIME CLASSIFIED, LOCATION CLASSIFIED",
 	"restoration_level_data_junk" : "TIME CLASSIFIED, LOCATION CLASSIFIED",
 	"restoration_level_data_holly" : "5:00 PM, Los Angeles - Lukas' Mansion",
@@ -262,11 +268,11 @@
 	"heist_greattrain_name" : "Time Window",
 	"heist_easystore_name" : "Twenty-Four Seven",
 	"heist_sin_villa_name" : "SCORE: Villa Vivaldi",
-	"heist_monalisaoverdrive_name" : "Highway",
+	"heist_monalisaoverdrive_name" : "Stonefist",
 	"heist_jkl_base_name" : "Jackal's Safehouse",
 	"heist_junger_name" : "Distorted Angels",
 	"heist_deep_name" : "Deep Six",
-	"heist_blood_name" : "Body & Blood",
+	"heist_blood_name" : "Body/Prison",
 	"heist_crystal_name" : "Slaves of Fear",
 	"heist_gold_name" : "Remains of Nothing",
 	"heist_titanium_name" : "Turf War",
@@ -275,9 +281,9 @@
 	"heist_cursed_name" : "Green Harvest",
 	"heist_holly_name" : "Blockbuster Night",
 	
-	"heist_platinum_brief" : "Placeholder Briefing for Crimenet. Heist the yacht. Shoot some people.",
+	"heist_platinum_brief" : "stir the boat",
 	"heist_jackal_surface_tension_name" : "OMNIA Research Vessel SN-XR-LETHE",
-	"heist_jackal_surface_tension_brief" : "Placeholder Briefing For Loadouts. Don't forget a medic bag.",
+	"heist_jackal_surface_tension_brief" : "PLACEHOLDER",
 	
 	"heist_vivinite_name" : "Zero Day",
 	
@@ -293,11 +299,12 @@
 	"bm_msk_shatter_true" : "Raze",
 	"bm_msk_shatter_true_desc" : "The mask of Raze, Jackal's partner in crime. The Phoenix represents rebirth. Each death bringing about new life. Raze believes that the mask is her 'lucky charm', and often doesn't work without it.",
 	
-	"menu_l_global_value_veritas" : "Aletheia",
-	"menu_l_global_value_veritas_desc" : "This is an Aletheia item!",
+	"menu_l_global_value_veritas" : "Restoration Mod",
+	"menu_l_global_value_veritas_desc" : "This is a Restoration Mod item!",
 	
 	"menu_asset_wet_intel" : "Intel",
 	"menu_asset_risk_murky" : "Murkywater Mercenaries",
+	"menu_asset_risk_bexico" : "Policía Federal",
 	"menu_asset_risk_zombie" : "zOmbIe rEpsondERs",
 	"menu_asset_wet_boat" : "Boat",
 	"menu_asset_wet_boat_desc" : "Buy an additional boat drop-off and escape",
@@ -340,13 +347,13 @@
 	"bm_msk_wolf_stone_desc" : "Wolf's original mask from when he first tipped over the edge, acting out crimes from his favourite media. The mask was thought lost in a robbery, inspired by the video game 'Hyper Heisting.'\n\nIn the wake of the gang's early jobs, the mask resurfaced, and was brought to the safehouse by one of Bain's associates.\n\nThe mask's original pattern has partially worn away over time, perhaps mirroring Wolf's own decline in sanity.",	
    
     "bm_msk_dallas_aged" : "Aged Dallas",
-	"bm_msk_dallas_aged_desc" : "You found this mask in the strange Egyptian box at Henry's Rock, and decided to take it home as a souvenir.\n\nYou have no idea where it originally came from, or who made it....",
+	"bm_msk_dallas_aged_desc" : "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.",
 	"bm_msk_chains_aged" : "Aged Chains",
-	"bm_msk_chains_aged_desc" : "You found this mask in the strange Egyptian box at Henry's Rock, and decided to take it home as a souvenir.\n\nYou have no idea where it originally came from, or who made it....",
+	"bm_msk_chains_aged_desc" : "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.",
 	"bm_msk_hoxton_aged" : "Aged Hoxton",
-	"bm_msk_hoxton_aged_desc" : "You found this mask in the strange Egyptian box at Henry's Rock, and decided to take it home as a souvenir.\n\nYou have no idea where it originally came from, or who made it....",
+	"bm_msk_hoxton_aged_desc" : "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.",
 	"bm_msk_wolf_aged" : "Aged Wolf",
-	"bm_msk_wolf_aged_desc" : "You found this mask in the strange Egyptian box at Henry's Rock, and decided to take it home as a souvenir.\n\nYou have no idea where it originally came from, or who made it....", 
+	"bm_msk_wolf_aged_desc" : "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.", 
    
     "bm_msk_beef_dallas" : "Beeef Dallas",	
 	"bm_msk_beef_dallas_desc" : "The Crew used these masks when doing the Slaughterhouse heist.\n\nDallas chose to keep the design similar to his iconic clown mask.",
@@ -371,7 +378,16 @@
    
     "bm_all_seeing" : "The All Seeing Anchor",
 	"bm_all_seeing_desc" : "A horrifying vision, a nightmarish sight.\n\nThe powers that be have seen you, and ensure you are rewarded for your contributions.",	
-   
+	
+    "bm_msk_classic_helmet" : "The Classic Enforcer",
+	"bm_msk_classic_helmet_desc" : "A gift given by an ex-SWAT enforcer. Before retiring, he found Jackal... and offered only the gear he had access to, to aid in Jackal's efforts.\n\nHis curious offer was due to one reason: he saw himself, what OMNIA was doing in secret. But he himself, refused to divulge those secrets, and left soon after, never to be seen again.\n\nJackal sent these helmets forward. A reward for your contributions.",		
+
+    "bm_cube" : "devmask.model",
+	"bm_cube_desc" : "Push the placeholder, we'll get around to it.",
+	
+	"bm_j4" : "J-4",
+	"bm_j4_desc" : "Jackal's mask. Or at least, a recreation.\n\nThe real mask is important to Jackal, and some say the real thing is loaded with sensitive data.\n\nThis recreation, however, the system running the display is very rudimentary, and only seeks to replicate the real thing.",
+	  
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",
 	"material_jkl_matt01_title" : "Fighting Feathers",
@@ -398,6 +414,8 @@
 	"RestorationModHostagesTextTitleID" : "Hostages text",
 	"RestorationModHintTextTitleID" : "Hint text",
 	"RestorationModMaskOnTextTitleID" : "Mask on text",
+	"RestorationModStopAllBotsTitleID" : "Stop All Bots",
+	"RestorationModStopAllBotsDescID" : "Stops all bots by holding the stop bot key",
 	"RestorationModScaleTitleID" : "HUD scaling",
 	"RestorationModScaleDescID" : "Changes HUD scaling. May require a restart.",
 	"RestorationModSizeOnScreenTitleID" : "HUD size on screen",
@@ -430,6 +448,8 @@
 	"RestorationModProfileDescID" : "Enable or disable alpha Profile Box.",
 	"RestorationModNewsfeedTitleID" : "Alpha Newsfeed",
 	"RestorationModNewsfeedDescID" : "Enable or disable alpha Newsfeed.",
+	"RestorationModUppercaseNamesTitleID" : "Uppercase names",
+	"RestorationModUppercaseNamesDescID" : "Enable or disable uppercase names.",	
 	"RestorationModPeerColorsTitleID" : "Alpha Peer Colors",
 	"RestorationModPeerColorsDescID" : "Enable or disable the alpha peer colors.",
 	"alpha_assault" : "Early Alpha Corner",
@@ -494,10 +514,10 @@
 	"wwburn_defend" : "Defend",
 	"wwburn_container" : "Shipping Container",
 
-    "menu_jukebox_resmusic_wetwork" : "Spectre Shark (Wetworks)",
-    "menu_jukebox_screen_resmusic_wetwork" : "Spectre Shark (Wetworks)",
-    "menu_jukebox_resmusic_burnout" : "Brute Force (Burnout)",
-    "menu_jukebox_screen_resmusic_burnout" : "Brute Force (Burnout)",
+    "menu_jukebox_resmusic_wetwork" : "Spectre Shark",
+    "menu_jukebox_screen_resmusic_wetwork" : "Spectre Shark",
+    "menu_jukebox_resmusic_burnout" : "Brute Force",
+    "menu_jukebox_screen_resmusic_burnout" : "Brute Force",
     "menu_jukebox_resmusic_doghouse" : "Bleeding Edge",
     "menu_jukebox_screen_resmusic_doghouse" : "Bleeding Edge",
 	"menu_jukebox_resmusic_lethalforce" : "Lethal Force",
@@ -508,8 +528,8 @@
     "menu_jukebox_screen_resmusic_ponr" : "Window of Opportunity",
 	"menu_jukebox_resmusic_speciesnova" : "Species Nova",
     "menu_jukebox_screen_resmusic_speciesnova" : "Species Nova",
-	"menu_jukebox_resmusic_madvlad" : "Mad Vlad (Doghouse)",
-    "menu_jukebox_screen_resmusic_madvlad" : "Mad Vlad (Doghouse)",
+	"menu_jukebox_resmusic_madvlad" : "Mad Vlad",
+    "menu_jukebox_screen_resmusic_madvlad" : "Mad Vlad",
     "menu_jukebox_screen_m1" : "Criminal Intent (Old Version)",
 	"menu_jukebox_screen_m2" : "Preparations (Old Version)",
 	"menu_jukebox_screen_m3" : "Blueprints (Prototype Version)",

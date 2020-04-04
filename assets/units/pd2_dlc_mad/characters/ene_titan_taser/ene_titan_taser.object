@@ -198,6 +198,10 @@
 		<decal_mesh name="c_body_plate" 			enabled="false" material="heavy_swat_steel_no_decal" />
 	</decal_surfaces>
 
+	<effects>
+		<effect_spawner name="es_light" enabled="true" object="e_light" effect="effects/payday2/particles/character/flashlight_ss" />
+	</effects>
+
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
@@ -207,12 +211,12 @@
 			</lod_object>
 
 			<lod_object name="lod_head">
-				<object name="g_head" 		enabled="false"  max_distance="2000"  max_draw_lod="0"/>
-				<object name="g_head_lod1" 	enabled="false" lod="1" />
+				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>
+				<object name="g_head_lod1" 	enabled="true" lod="1" />
 			</lod_object>
 
 				<object name="g_helmet_lod1" 	enabled="true"/>
-				<object name="g_helmet_lod2" 	enabled="true"/>
+				<object name="g_helmet_lod2" 	enabled="true"/>		
 
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 

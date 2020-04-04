@@ -1,0 +1,27 @@
+<materials version="3" group="ene_akan_fbi_spooc_asval_smg">
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 			file="units/payday2/characters/shared_textures/spook_cloak_nm"/>
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_cloak_dead_df"/>
+	</material>
+
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 			file="units/payday2/characters/shared_textures/spook_cloak_nm" mip="1" />
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_cloak_dead_df" mip="1" />
+	</material>	
+	<material name="mtr_body_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 			file="units/payday2/characters/shared_textures/spook_cloak_nm" mip="1" />
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_cloak_dead_df" mip="1" />
+	</material>
+	<material name="mtr_night_vision" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 			file="units/payday2/characters/shared_textures/nvg_nm"/>
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/nvg_df"/>
+	</material>
+
+	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/titan_il"/>
+		<self_illumination_texture 		file="units/payday2/characters/shared_textures/titan_il"/>
+		<opacity_texture 				file="units/payday2/characters/shared_textures/titan_il"/>
+		<variable 						value="reddot" type="scalar" name="il_multiplier"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

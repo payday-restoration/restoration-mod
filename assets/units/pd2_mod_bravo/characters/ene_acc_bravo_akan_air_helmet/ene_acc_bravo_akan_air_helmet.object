@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet" orientation_object="rp_ene_acc_fbi_swat_helmet" />
+	
+	<bodies>
+	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_fbi_swat_helmet" />
+			<object name="c_sphere_front" 	collision_type="sphere" mass="0.6" />
+			<object name="c_sphere_rear" 	collision_type="sphere" mass="0.6" />
+			<object name="c_box" 			collision_type="box" 	mass="0.3" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel_no_decal">
+	</decal_surfaces>
+
+	<graphics>
+		<lod_object name="lod_ene_acc_fbi_swat_helmet">
+			<object name="g_helmet" enabled="true" >
+				<material materials="mtr_helmet" max_distance="1000" />
+				<material materials="mtr_helmet_lod_1" max_distance="1500" />
+				<material materials="mtr_helmet_lod_2" /> 
+			</object>
+		</lod_object>
+	</graphics>
+	
+</dynamic_object>

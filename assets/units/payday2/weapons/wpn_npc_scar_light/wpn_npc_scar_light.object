@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" orientation_object="rp_m4" />
+  <sequence_manager file="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" />
+  <bodies>
+    <body name="body" enabled="false" template="debris" pushed_by_mover="false">
+		<object name="rp_m4" />
+		<object name="c_convex" collision_type="convex" padding="-2.5" mass="2.5"/>
+    </body>
+  </bodies>
+  <effects>
+  	<effect_spawner name="flashlight" object="a_effect_flashlight" effect="effects/particles/weapons/flashlight/flashlight" enabled="false" assign_parent="true"/>
+  </effects>
+  <graphics>
+	<graphic_group name="lod_group" enabled="true" culling_object="co_weapon">
+      <lod_object name="weapon_lod">
+        <object  name="g_body" enabled="true" max_draw_lod="0" max_distance="1000" />
+        <object lod="1" name="g_body_lod1" enabled="true" />
+      </lod_object>
+    </graphic_group>
+    <object name="s_body" enabled="false" />
+  </graphics>
+  <lights>
+    <light multiplier="identity" far_range="1000" name="a_effect_flashlight" enabled="false" type="spot|specular" />
+  </lights>  
+</dynamic_object>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<unit type="being" slot="12">
+	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
+	<object file="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump" />
+
+	<dependencies>
+		
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="HuskCopBase" >
+			<var name="_tweak_table" value="city_swat" />
+			<var name="_default_weapon_id" value="ump" />
+		</extension>
+		<extension name="inventory" class="HuskCopInventory" />
+		<extension name="brain" class="HuskCopBrain" />
+		<extension name="anim_data" class="PlayerAnimationData" />
+		<extension name="character_damage" class="HuskCopDamage" >
+			<var name="_head_body_name" value="head" />
+			<var name="_head_gear_object" value="g_helmet_lod" />
+			<var name="_nr_head_gear_objects" value="2" />
+			<var name="_head_gear" value="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" />
+			<var name="_head_gear_decal_mesh" value="dm_helmet" />
+		</extension>
+		<extension name="movement" class="HuskCopMovement" >
+			<var name="_footwear" value="hardsole" />
+			<var name="_anim_global" value="cop" />
+		</extension>
+		<extension name="interaction" class="IntimitateInteractionExt" >
+			<var name="tweak_data" value="intimidate" />
+		</extension>
+		<extension name="network" class="NetworkBaseExtension" />
+		<extension name="damage" class="UnitDamage" >
+			<var name="_skip_save_anim_state_machine" value="true" />
+		</extension>
+		<extension name="contour" class="ContourExt" />
+		<extension name="sound" class="CopSound" />
+	</extensions>
+
+  <network sync="husk" remote_unit=""/>
+
+  <sounds>
+		<default_soundsource source="Hips"/>
+  </sounds>
+</unit>

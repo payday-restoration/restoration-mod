@@ -210,22 +210,22 @@
 
 		<graphic_group name="grp_body_no_head" enabled="false" culling_object="c_cullblock">
 			<lod_object name="lod_no_head">
-				<object name="g_body_lod0" enabled="true"  max_distance="1000">
-				</object>
-				<object name="g_body_lod1" enabled="true" >
-				</object>
+				<object name="g_body_lod0" enabled="true"  max_distance="1000" />
+				<object name="g_body_lod1" enabled="true" />
 			</lod_object>
-			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<object name="g_helmet_lod1" enabled="true" />
+			<object name="g_helmet_lod2" enabled="true" />
+			<object name="s_body" 			enabled="true" shadow_caster="true"/>	
 		</graphic_group>
 
 		<graphic_group name="grp_body_bottom" enabled="false" culling_object="c_cullblock">
 			<lod_object name="lod_bottom">
-				<object name="g_body_lod0" enabled="true"  max_distance="1000">
-				</object>
-				<object name="g_body_lod1" enabled="true" >
-				</object>
+				<object name="g_body_lod0" enabled="true"  max_distance="1000" />
+				<object name="g_body_lod1" enabled="true" />
 			</lod_object>
-			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<object name="g_helmet_lod1" enabled="true" />
+			<object name="g_helmet_lod2" enabled="true" />
+			<object name="s_body" 			enabled="true" shadow_caster="true"/>	
 		</graphic_group>		
 		
 		<object name="g_il" 	enabled="false" culling_object="c_cullblock"/>

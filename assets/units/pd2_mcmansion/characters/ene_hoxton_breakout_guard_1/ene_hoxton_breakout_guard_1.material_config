@@ -1,4 +1,4 @@
-<materials version="3" group="ene_hoxton_breakout_guard_2">
+<materials version="3" group="ene_akan_fbi_heavy_g36">
 	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture file="units/payday2/characters/shared_textures/murkyhead_1_nm"/>
 		<diffuse_texture file="units/payday2/characters/shared_textures/murkyhead_1_df"/>
@@ -7,22 +7,25 @@
 		<bump_normal_texture file="units/payday2/characters/shared_textures/murkyhead_1_nm" mip="1"/>
 		<diffuse_texture file="units/payday2/characters/shared_textures/murkyhead_1_df" mip="1"/>
 	</material>
-	<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/payday2/characters/shared_textures/murkyhead_1_nm" mip="4"/>
-		<diffuse_texture file="units/payday2/characters/shared_textures/murkyhead_1_df" mip="4"/>
-	</material>
 
-	<material name="mtr_murkywater" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture file="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_nm"/>
 		<diffuse_texture file="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df"/>
 	</material>
-	<material name="mtr_murkywater_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture file="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_nm" mip="1"/>
 		<diffuse_texture file="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df" mip="1"/>
 	</material>
-	<material name="mtr_murkywater_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_nm" mip="4"/>
-		<diffuse_texture file="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df" mip="4"/>
+
+	<material name="mtr_helmet_lod0" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/murkywater_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/murkywater_df"/>
 	</material>
+	
+	<material name="mtr_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/murkywater_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/murkywater_df" mip="1"/>
+	</material>
+
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

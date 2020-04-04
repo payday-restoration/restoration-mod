@@ -1,0 +1,21 @@
+<materials version="3" group="ene_bulldozer_3_federale">
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_dozer_policia_federale_body_grey_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_bulldozer_lod_1">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_dozer_policia_federale_body_grey_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_bulldozer_lod_2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2">
+	    <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_dozer_policia_federale_body_grey_df"/>
+		<variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" orientation_object="rp_wpn_npc_mp5" />
+  <sequence_manager file="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" />
+	<bodies>
+	<body name="body" enabled="false" template="debris" pushed_by_mover="false">
+		<object name="rp_wpn_npc_mp5" />
+			<object name="c_convex_01" collision_type="convex" padding="-2.5" mass="1.5"/>
+		</body>
+	</bodies>
+  <effects>
+  	<effect_spawner name="flashlight" object="a_effect_flashlight" effect="effects/particles/weapons/flashlight/flashlight" enabled="false" assign_parent="true"/>
+  </effects>
+  <graphics>
+	<graphic_group name="weapon" enabled="true" culling_object="co_weapon">
+
+        <object	name="g_body" enabled="true" />
+        <object	name="g_body_lod1" enabled="true" />
+
+    </graphic_group>
+	</graphics>
+  <lights>
+    <light multiplier="identity" far_range="1000" name="a_effect_flashlight" enabled="false" type="spot|specular" />
+  </lights>
+</dynamic_object>

@@ -42,7 +42,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"/>
+	<network sync="spawn" remote_unit="units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

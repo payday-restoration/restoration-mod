@@ -61,7 +61,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	
 	local orig_check_interact = PlayerStandard._check_action_interact
 	function PlayerStandard:_check_action_interact(t, input,...)
-		if not (self._start_shout_all_ai_t or (input and input.btn_interact_secondary_press)) then 
+		if not (self._start_shout_all_ai_t or (input and input.btn_interact_secondary_press)) or not restoration.Options:GetValue("OTHER/StopAllBots") then
 			return orig_check_interact(self,t,input,...)
 		end
 		local keyboard = self._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
@@ -997,7 +997,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						custom_data = {engine = melee_hand_id == 1 and "right" or "left"}
 					end
 				end			
-				
+
 				managers.rumble:play("melee_hit", nil, nil, custom_data)
 				managers.game_play_central:physics_push(col_ray)
 				
@@ -1037,10 +1037,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
 						self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
 					end
-					local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
+
+					local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 					local action_data = {}
 					action_data.variant = "melee"
-					if special_weapon == "taser" and charge_lerp_value >= 0.99 then
+					if melee_weapon.special_weapon == "taser" and charge_lerp_value >= 0.99 then
 						action_data.variant = "taser_tased"
 					end
 					
@@ -1055,6 +1056,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					action_data.shield_knock = can_shield_knock
 					action_data.name_id = melee_entry
 					action_data.charge_lerp_value = charge_lerp_value
+					action_data.backstab_multiplier = melee_weapon.backstab_damage_multiplier or 1
 					if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 						self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
 						self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {nil, 0}
@@ -1098,4 +1100,150 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		Hooks:PostHook(PlayerStandard, "_enter", "ResDodgeInit", function(self, enter_data)
 			self._ext_damage:set_dodge_points()
 		end)
+
+	function PlayerStandard:_update_reload_timers(t, dt, input)
+		if self._state_data.reload_enter_expire_t and self._state_data.reload_enter_expire_t <= t then
+			self._state_data.reload_enter_expire_t = nil
+
+			self:_start_action_reload(t)
+		end
+
+		local speed_multiplier = self._equipped_unit:base():reload_speed_multiplier()
+		
+		if self._state_data.reload_expire_t then
+			local interupt = nil
+
+			if self._equipped_unit:base():update_reloading(t, dt, self._state_data.reload_expire_t - t) then
+				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
+				
+				if self._queue_reload_interupt then
+					self._queue_reload_interupt = nil
+					interupt = true
+				elseif self._state_data.reload_expire_t <= t then --Update timers in case player total ammo would allow for more to be reloaded.
+					self._state_data.reload_expire_t = t + (self._equipped_unit:base():reload_expire_t() or 2.2) / speed_multiplier
+				end
+			end
+
+			if self._state_data.reload_expire_t <= t or interupt then
+				managers.player:remove_property("shock_and_awe_reload_multiplier")
+
+				self._state_data.reload_expire_t = nil
+
+				if self._equipped_unit:base():reload_exit_expire_t() then
+
+					if self._equipped_unit:base():started_reload_empty() then
+						self._state_data.reload_exit_expire_t = t + self._equipped_unit:base():reload_exit_expire_t() / speed_multiplier
+
+						self._ext_camera:play_redirect(self:get_animation("reload_exit"), speed_multiplier)
+						self._equipped_unit:base():tweak_data_anim_play("reload_exit", speed_multiplier)
+					else
+						self._state_data.reload_exit_expire_t = t + self._equipped_unit:base():reload_not_empty_exit_expire_t() / speed_multiplier
+
+						self._ext_camera:play_redirect(self:get_animation("reload_not_empty_exit"), speed_multiplier)
+						self._equipped_unit:base():tweak_data_anim_play("reload_not_empty_exit", speed_multiplier)
+					end
+				elseif self._equipped_unit then
+					if not interupt then
+						self._equipped_unit:base():on_reload()
+					end
+
+					managers.statistics:reloaded()
+					managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
+
+					if input.btn_steelsight_state then
+						self._steelsight_wanted = true
+					elseif self.RUN_AND_RELOAD and self._running and not self._end_running_expire_t and not self._equipped_unit:base():run_and_shoot_allowed() then
+						self._ext_camera:play_redirect(self:get_animation("start_running"))
+					end
+				end
+			end
+		end
+
+		if self._state_data.reload_exit_expire_t and self._state_data.reload_exit_expire_t <= t then
+			self._state_data.reload_exit_expire_t = nil
+
+			if self._equipped_unit then
+				managers.statistics:reloaded()
+				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
+
+				if input.btn_steelsight_state then
+					self._steelsight_wanted = true
+				elseif self.RUN_AND_RELOAD and self._running and not self._end_running_expire_t and not self._equipped_unit:base():run_and_shoot_allowed() then
+					self._ext_camera:play_redirect(self:get_animation("start_running"))
+				end
+
+				if self._equipped_unit:base().on_reload_stop then
+					self._equipped_unit:base():on_reload_stop()
+				end
+			end
+		end
+	end
+
+	function PlayerStandard:_start_action_reload(t)
+		local weapon = self._equipped_unit:base()
+
+		if weapon and weapon:can_reload() then
+			weapon:tweak_data_anim_stop("fire")
+
+			local speed_multiplier = weapon:reload_speed_multiplier()
+			local empty_reload = weapon:clip_empty() and 1 or 0
+
+			if weapon._use_shotgun_reload then
+				empty_reload = weapon:get_ammo_max_per_clip() - weapon:get_ammo_remaining_in_clip()
+			end
+
+			local tweak_data = weapon:weapon_tweak_data()
+			local reload_anim = "reload"
+			local reload_prefix = weapon:reload_prefix() or ""
+			local reload_name_id = tweak_data.animations.reload_name_id or weapon.name_id
+			
+			weapon:start_reload() --Executed earlier to get accurate reload timers, otherwise may mess up normal and tactical for shotguns.
+
+			if weapon:clip_empty() then
+				local reload_ids = Idstring(reload_prefix .. "reload_" .. reload_name_id)
+				local result = self._ext_camera:play_redirect(reload_ids, speed_multiplier)
+
+				Application:trace("PlayerStandard:_start_action_reload( t ): ", reload_ids)
+
+				self._state_data.reload_expire_t = t + (tweak_data.timers.reload_empty or weapon:reload_expire_t() or 2.6) / speed_multiplier
+			else
+				reload_anim = "reload_not_empty"
+				local reload_ids = Idstring(reload_prefix .. "reload_not_empty_" .. reload_name_id)
+				local result = self._ext_camera:play_redirect(reload_ids, speed_multiplier)
+
+				Application:trace("PlayerStandard:_start_action_reload( t ): ", reload_ids)
+
+				self._state_data.reload_expire_t = t + (tweak_data.timers.reload_not_empty or weapon:reload_expire_t() or 2.2) / speed_multiplier
+			end
+
+
+			if not weapon:tweak_data_anim_play(reload_anim, speed_multiplier) then
+				weapon:tweak_data_anim_play("reload", speed_multiplier)
+				Application:trace("PlayerStandard:_start_action_reload( t ): ", reload_anim)
+			end
+
+			self._ext_network:send("reload_weapon", empty_reload, speed_multiplier)
+		end
+	end
+
+	function PlayerStandard:_get_swap_speed_multiplier()
+		local multiplier = 1
+		local weapon_tweak_data = self._equipped_unit:base():weapon_tweak_data()
+		multiplier = multiplier * managers.player:upgrade_value("weapon", "swap_speed_multiplier", 1)
+		multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_swap_speed_multiplier", 1)
+		multiplier = multiplier * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1]
+
+		for _, category in ipairs(weapon_tweak_data.categories) do
+			multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", tweak_data[category] and tweak_data[category].swap_bonus or 1)
+		end
+
+		multiplier = multiplier * managers.player:upgrade_value("team", "crew_faster_swap", 1)
+
+		if managers.player:has_activate_temporary_upgrade("temporary", "swap_weapon_faster") then
+			multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "swap_weapon_faster", 1)
+		end
+
+		multiplier = managers.modifiers:modify_value("PlayerStandard:GetSwapSpeedMultiplier", multiplier)
+		return multiplier
+	end
 end

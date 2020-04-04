@@ -1,0 +1,38 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ene_acc_shield_small" materials="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+    <sequence_manager file="units/payday2/characters/ene_acc_shield_small/shield_small" />
+	<bodies>
+		<body name="held_body" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_small" />
+			<object name="c_box_left_middle" 			collision_type="box" padding="-2" />
+			<object name="c_box_left_bottom" 			collision_type="box" padding="-2" />
+			<object name="c_box_right" 					collision_type="box" padding="-2" />
+			<object name="c_box_left_top" 				collision_type="box" padding="-2" />
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
+		</body>
+
+		<body name="dropped_body" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_small" />
+			<object name="c_box_left_middle" 			collision_type="box" />
+			<object name="c_box_left_bottom" 			collision_type="box" />
+			<object name="c_box_right" 					collision_type="box" />
+			<object name="c_box_left_top" 				collision_type="box" />
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
+		</body>
+	</bodies>
+	
+    <decal_surfaces>
+        <decal_mesh name="dm_metal" enabled="true" material="shield" />
+    </decal_surfaces>
+	
+    <graphics>
+			<lod_object name="lod_shield_small">
+        		<object name="g_shield" enabled="true" >
+					<material materials="mtr_shield_small" max_distance="1000" />
+					<material materials="mtr_shield_small_lod_1" max_distance="1500" />
+					<material materials="mtr_shield_small_lod_2" />
+				</object>
+			</lod_object>
+    </graphics>
+	
+</dynamic_object>

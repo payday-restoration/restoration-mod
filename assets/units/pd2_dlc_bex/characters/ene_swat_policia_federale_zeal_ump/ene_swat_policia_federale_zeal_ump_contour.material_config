@@ -1,0 +1,61 @@
+<materials version="3" group="ene_city_swat_3">
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_atlas_df"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head_lod_1">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="1"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_atlas_df" mip="1"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_head_lod_2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="4"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_atlas_df" mip="4"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+
+
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_city_swat">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/swat_city_df"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_city_swat_lod_1">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mip="1"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/swat_city_df" mip="1"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" name="mtr_city_swat_lod_2">
+		<bump_normal_texture file="units/payday2/characters/shared_textures/swat_body_nm" mip="4"/>
+		<diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/swat_city_df" mip="4"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+
+
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_lod_1">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" mip="1"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_lod_2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" mip="4"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material> mip="1"
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

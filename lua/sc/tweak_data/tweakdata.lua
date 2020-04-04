@@ -18,6 +18,13 @@
 		near_angle = 60
 	}
 
+	--Swap Speed Multipliers
+	tweak_data.pistol = {swap_bonus = 1.5}
+	tweak_data.akimbo = {swap_bonus = 0.6}
+
+	--Max concealment for guns.
+	tweak_data.concealment_cap = 32
+
 	--HE'S GOT AN RPG--
 	tweak_data.projectiles.launcher_rocket.damage = 120
 	tweak_data.projectiles.launcher_rocket.player_damage = 60
@@ -27,11 +34,11 @@
 	--Grenade launcher stuff--
 	tweak_data.projectiles.launcher_frag.damage = 80
 	tweak_data.projectiles.launcher_frag.player_damage = 40
-	tweak_data.projectiles.launcher_frag.curve_pow = 2
+	tweak_data.projectiles.launcher_frag.curve_pow = 1
 	tweak_data.projectiles.launcher_frag.range = 500
 	tweak_data.projectiles.launcher_incendiary.damage = 3
 	tweak_data.projectiles.launcher_incendiary.launch_speed = 1250
-	tweak_data.projectiles.launcher_incendiary.curve_pow = 2
+	tweak_data.projectiles.launcher_incendiary.curve_pow = 1
 	tweak_data.projectiles.launcher_incendiary.player_damage = 3
 	tweak_data.projectiles.launcher_incendiary.burn_duration = 5
 	tweak_data.projectiles.launcher_incendiary.fire_dot_data = {
@@ -43,7 +50,7 @@
 	}
 	tweak_data.projectiles.launcher_m203.damage = 80
 	tweak_data.projectiles.launcher_m203.player_damage = 80
-	tweak_data.projectiles.launcher_m203.curve_pow = 2
+	tweak_data.projectiles.launcher_m203.curve_pow = 1
 	tweak_data.projectiles.launcher_m203.range = 500
 	tweak_data.projectiles.launcher_frag_m32.damage = 80
 	tweak_data.projectiles.launcher_frag_china.damage = 80
@@ -57,13 +64,13 @@
 	--Arbiter--
 	tweak_data.projectiles.launcher_frag_arbiter.damage = 60
 	tweak_data.projectiles.launcher_frag_arbiter.player_damage = 30
-	tweak_data.projectiles.launcher_frag_arbiter.launch_speed = 8000
-	tweak_data.projectiles.launcher_frag_arbiter.range = 500
-	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 3
+	tweak_data.projectiles.launcher_frag_arbiter.launch_speed = 2500
+	tweak_data.projectiles.launcher_frag_arbiter.range = 250
+	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 1
 	tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 
 	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2
-	tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 8000
+	tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 2500
 	tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
 	tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
 	tweak_data.projectiles.launcher_incendiary_arbiter.init_timer = nil
@@ -77,97 +84,97 @@
 
 	--Plainsrider--
 	tweak_data.projectiles.west_arrow.damage = 24
-	tweak_data.projectiles.west_arrow.launch_speed = 10000
+	tweak_data.projectiles.west_arrow.launch_speed = 2500
 	tweak_data.projectiles.west_arrow_exp.damage = 48
-	tweak_data.projectiles.west_arrow_exp.launch_speed = 10000
+	tweak_data.projectiles.west_arrow_exp.launch_speed = 2500
 	tweak_data.projectiles.bow_poison_arrow.damage = 20
-	tweak_data.projectiles.bow_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.bow_poison_arrow.launch_speed = 2500
 
 	--Hunter crossbow--
 	tweak_data.projectiles.crossbow_arrow.damage = 24
 	tweak_data.projectiles.crossbow_poison_arrow.damage = 20
 	tweak_data.projectiles.crossbow_arrow_exp.damage = 48
-	tweak_data.projectiles.crossbow_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.crossbow_arrow.launch_speed = 10000
-	tweak_data.projectiles.crossbow_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.crossbow_arrow_exp.launch_speed = 3125
+	tweak_data.projectiles.crossbow_arrow.launch_speed = 3125
+	tweak_data.projectiles.crossbow_poison_arrow.launch_speed = 3125
 
 	--Arblast Heavy Crossbow--
 	tweak_data.projectiles.arblast_arrow.damage = 36
 	tweak_data.projectiles.arblast_arrow_exp.damage = 60
-	tweak_data.projectiles.arblast_poison_arrow.damage = 31
-	tweak_data.projectiles.arblast_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.arblast_arrow.launch_speed = 10000
-	tweak_data.projectiles.arblast_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.arblast_poison_arrow.damage = 30
+	tweak_data.projectiles.arblast_arrow_exp.launch_speed = 4375
+	tweak_data.projectiles.arblast_arrow.launch_speed = 4375
+	tweak_data.projectiles.arblast_poison_arrow.launch_speed = 4375
 
 	--Franken fish--
 	tweak_data.projectiles.frankish_arrow.damage = 24
 	tweak_data.projectiles.frankish_arrow_exp.damage = 48
 	tweak_data.projectiles.frankish_poison_arrow.damage = 20
-	tweak_data.projectiles.frankish_poison_arrow.launch_speed = 10000
-	tweak_data.projectiles.frankish_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.frankish_arrow.launch_speed = 10000
+	tweak_data.projectiles.frankish_poison_arrow.launch_speed = 3750
+	tweak_data.projectiles.frankish_arrow_exp.launch_speed = 3750
+	tweak_data.projectiles.frankish_arrow.launch_speed = 3750
 
 	--BOWMEN, FORM UP--
 	tweak_data.projectiles.long_arrow.damage = 36
 	tweak_data.projectiles.long_arrow_exp.damage = 60
-	tweak_data.projectiles.long_poison_arrow.damage = 31
-	tweak_data.projectiles.long_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.long_arrow.launch_speed = 10000
-	tweak_data.projectiles.long_poison_arrow.launch_speed = 10000
+	tweak_data.projectiles.long_poison_arrow.damage = 30
+	tweak_data.projectiles.long_arrow_exp.launch_speed = 3125
+	tweak_data.projectiles.long_arrow.launch_speed = 3125
+	tweak_data.projectiles.long_poison_arrow.launch_speed = 3125
 	
 	--le happy merchant--
 	tweak_data.projectiles.ecp_arrow.damage = 18
-	tweak_data.projectiles.ecp_arrow_exp.damage = 36
-	tweak_data.projectiles.ecp_arrow_poison.damage = 15
-	tweak_data.projectiles.ecp_arrow_poison.launch_speed = 10000
-	tweak_data.projectiles.ecp_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.ecp_arrow.launch_speed = 10000	
+	tweak_data.projectiles.ecp_arrow_exp.damage = 360
+	tweak_data.projectiles.ecp_arrow_poison.damage = 14
+	tweak_data.projectiles.ecp_arrow_poison.launch_speed = 3125
+	tweak_data.projectiles.ecp_arrow_exp.launch_speed = 3125
+	tweak_data.projectiles.ecp_arrow.launch_speed = 3125	
 	
 	--The not longbow--
 	tweak_data.projectiles.elastic_arrow.damage = 36
 	tweak_data.projectiles.elastic_arrow_exp.damage = 60
-	tweak_data.projectiles.elastic_arrow_poison.damage = 31
-	tweak_data.projectiles.elastic_arrow_exp.launch_speed = 10000
-	tweak_data.projectiles.elastic_arrow.launch_speed = 10000
-	tweak_data.projectiles.elastic_arrow_poison.launch_speed = 10000	
+	tweak_data.projectiles.elastic_arrow_poison.damage = 30
+	tweak_data.projectiles.elastic_arrow_exp.launch_speed = 3125
+	tweak_data.projectiles.elastic_arrow.launch_speed = 3125
+	tweak_data.projectiles.elastic_arrow_poison.launch_speed = 3125	
 
 	--GRENADE OUT--
 	tweak_data.projectiles.frag.damage = 80
 	tweak_data.projectiles.frag.player_damage = 40
-	tweak_data.projectiles.frag.curve_pow = 1
+	tweak_data.projectiles.frag.curve_pow = 0.5
 	tweak_data.projectiles.frag.range = 500
 
 	--Dynamite--
 	tweak_data.projectiles.dynamite.damage = 80
 	tweak_data.projectiles.dynamite.player_damage = 40
-	tweak_data.projectiles.dynamite.curve_pow = 1
+	tweak_data.projectiles.dynamite.curve_pow = 0.5
 	tweak_data.projectiles.dynamite.range = 500
 
 	--Community Frag--
 	tweak_data.projectiles.frag_com.damage = 80
 	tweak_data.projectiles.frag_com.player_damage = 40
-	tweak_data.projectiles.frag_com.curve_pow = 1
+	tweak_data.projectiles.frag_com.curve_pow = 0.5
 	tweak_data.projectiles.frag_com.range = 500
 
 	--The other community frag--
 	tweak_data.projectiles.dada_com.damage = 80
 	tweak_data.projectiles.dada_com.player_damage = 40
-	tweak_data.projectiles.dada_com.curve_pow = 1
+	tweak_data.projectiles.dada_com.curve_pow = 0.5
 	tweak_data.projectiles.dada_com.range = 500
 
-        --Molliest of tovs--
+    --Molliest of tovs--
 	tweak_data.projectiles.molotov.damage = 3
 	tweak_data.projectiles.molotov.player_damage = 3
 	tweak_data.projectiles.molotov.burn_duration = 10
 
-	--Incendiary Nades, idea to make em a mollie (WIP)--
+	--Incendiary Nades, idea to make em a mollie--
 	tweak_data.projectiles.fir_com.damage = 3
 	tweak_data.projectiles.fir_com.player_damage = 3
 	tweak_data.projectiles.fir_com.fire_dot_data = {
 		dot_damage = 1,
 		dot_trigger_max_distance = 3000,
 		dot_trigger_chance = 50,
-		dot_length = 3,
+		dot_length = 3.1,
 		dot_tick_period = 0.5
 	}
 	tweak_data.projectiles.fir_com.range = 75
@@ -204,7 +211,7 @@
 
 	--Stun nades--
 	tweak_data.projectiles.concussion.damage = 0
-	tweak_data.projectiles.concussion.curve_pow = 2
+	tweak_data.projectiles.concussion.curve_pow = 1
 	tweak_data.projectiles.concussion.range = 1000
 	tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 0}
 
@@ -235,7 +242,7 @@
 
 	--Smoke Grenades--
 	tweak_data.projectiles.smoke_screen_grenade.damage = 0
-	tweak_data.projectiles.smoke_screen_grenade.curve_pow = 2
+	tweak_data.projectiles.smoke_screen_grenade.curve_pow = 1
 	tweak_data.projectiles.smoke_screen_grenade.range = 1500
 	tweak_data.projectiles.smoke_screen_grenade.name_id = "bm_smoke_screen_grenade"
 	tweak_data.projectiles.smoke_screen_grenade.duration = 12

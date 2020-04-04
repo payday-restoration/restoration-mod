@@ -1,28 +1,48 @@
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" orientation_object="rp_ene_acc_shield_akan" />
-	<sequence_manager file="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<diesel orientation_object="rp_ene_acc_shield_lights" materials="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield/ene_acc_shield_akan" />
+	<sequence_manager file="units/payday2/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 
 	<bodies>
 		<body name="held_body" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
-			<object name="rp_ene_acc_shield_akan" />
-			<object name="c_convex_1" collision_type="convex" padding="-2.5" />
-			<object name="c_convex_2" collision_type="convex" padding="-2.5" />
-			<object name="c_convex_3" collision_type="convex" padding="-2.5" />
+			<object name="rp_ene_acc_shield_lights" />
+			<object name="c_box_shield_left" 			collision_type="box" padding="-2" />
+			<object name="c_box_shield_front" 			collision_type="box" padding="-2" />
+			<object name="c_box_shield_right_bottom" 	collision_type="box" padding="-2" />
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
+		</body>
+		<body name="light_01" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
+			<object name="rp_ene_acc_shield_lights" />
+			<object name="c_light_01" collision_type="box" />
 		</body>
 
+
+
 		<body name="dropped_body" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision walk">
-			<object name="rp_ene_acc_shield_akan" />
-			<object name="c_convex_1" collision_type="convex" padding="-2.5" />
-			<object name="c_convex_2" collision_type="convex" padding="-2.5" />
-			<object name="c_convex_3" collision_type="convex" padding="-2.5" />
+			<object name="rp_ene_acc_shield_lights" />
+			<object name="c_box_shield_left" 			collision_type="box" />
+			<object name="c_box_shield_front" 			collision_type="box" />
+			<object name="c_box_shield_right_bottom" 	collision_type="box" />
+			<object name="c_sphere_bottom" 				collision_type="sphere" padding="-2" />
 		</body>
 	</bodies>
 
-	<decal_surfaces default_material="metal">
-		<decal_mesh name="dm_cloth_stuffed" enabled="true" material="carpet" />
-		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+	<decal_surfaces default_material="shield" >
+		<decal_mesh name="dm_metal" 	enabled="true" 	material="carpet" />
 	</decal_surfaces>
+
 	<graphics>
-		<object name="g_shield" enabled="true" />
+		<object name="g_shield" 	enabled="true" >
+			<material materials="mtr_shield" max_distance="1000" />
+			<material materials="mtr_shield_lod_1" max_distance="1500" />
+			<material materials="mtr_shield_lod_2" />
+		</object>
+		<object name="g_light_01" 	enabled="true" >
+			<material materials="mtr_light_il" max_distance="1000" />
+			<material materials="mtr_light_il_lod_1" max_distance="1500" />
+			<material materials="mtr_light_il_lod_2" />
+		</object>
+
 	</graphics>
+
+
 </dynamic_object>

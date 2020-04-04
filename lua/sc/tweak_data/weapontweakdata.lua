@@ -8792,8 +8792,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.spread.moving_crouching = 3 * 1
 		self.x_judge.spread.moving_steelsight = 2 * 1
 		self.x_judge.AMMO_MAX = 40
-		self.x_judge.damage_near = 500
-		self.x_judge.damage_far = 1000
+		self.x_judge.damage_near = 300
+		self.x_judge.damage_far = 600
 		self.x_judge.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.x_judge.stats = {
 			damage = 150,

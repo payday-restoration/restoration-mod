@@ -6996,8 +6996,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.boot.AMMO_MAX = 40
 		self.boot.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.boot.CLIP_AMMO_MAX = 6
-		self.boot.damage_near = 900
-		self.boot.damage_far = 1800
+		self.boot.damage_near = 1000
+		self.boot.damage_far = 2000
 		self.boot.fire_mode_data.fire_rate = 0.75
 		self.boot.single.fire_rate = 0.75
 		self.boot.rays = 9

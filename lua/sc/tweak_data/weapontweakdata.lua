@@ -4498,8 +4498,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.judge.AMMO_PICKUP = self:_pickup_chance(30, 1)
 		self.judge.stats = {
 			damage = 150,
-			spread = 6,
-			recoil = 8,
+			spread = 5,
+			recoil = 10,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,
@@ -8797,8 +8797,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_judge.AMMO_PICKUP = self:_pickup_chance(40, 2)
 		self.x_judge.stats = {
 			damage = 150,
-			spread = 6,
-			recoil = 8,
+			spread = 5,
+			recoil = 10,
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 25,

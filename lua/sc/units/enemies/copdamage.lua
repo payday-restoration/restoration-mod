@@ -908,26 +908,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 
 		self:_send_sync_bullet_attack_result(attack_data, hit_offset_height)
 		self:_on_damage_received(attack_data)
-
-		if shotgun_push then
-			local push_dir = attack_dir
-			local push_hit_pos = hit_pos
-
-			if attacker_unit and alive(attacker_unit) then
-				if attacker_unit:movement() and attacker_unit:movement().detect_look_dir then
-					push_dir = attacker_unit:movement():detect_look_dir()
-				end
-
-				local from_pos = attacker_unit:movement().m_detect_pos and attacker_unit:movement():m_detect_pos() or attacker_unit:movement():m_head_pos()
-				local hit_ray = World:raycast("ray", from_pos, body:center_of_mass(), "target_body", body)
-
-				if hit_ray then
-					push_hit_pos = hit_ray.position
-				end
-			end
-
-			managers.game_play_central:_do_shotgun_push(self._unit, push_hit_pos, push_dir, distance, attacker_unit)
-		end
 	end
 
 	local mvec_1 = Vector3()

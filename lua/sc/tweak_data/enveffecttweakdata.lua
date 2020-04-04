@@ -8,7 +8,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				dot_damage = 1,
 				dot_trigger_max_distance = 3000,
 				dot_trigger_chance = 50,
-				dot_length = 3,
+				dot_length = 3.1,
 				dot_tick_period = 0.5
 			},
 			range = 75,
@@ -33,7 +33,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				dot_damage = 1,
 				dot_trigger_max_distance = 3000,
 				dot_trigger_chance = 50,
-				dot_length = 3,
+				dot_length = 3.1,
 				dot_tick_period = 0.5
 			},
 			range = 75,
@@ -58,7 +58,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				dot_damage = 1,
 				dot_trigger_max_distance = 3000,
 				dot_trigger_chance = 50,
-				dot_length = 3,
+				dot_length = 3.1,
 				dot_tick_period = 0.5
 			},
 			range = 75,
@@ -83,7 +83,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				dot_damage = 1,
 				dot_trigger_max_distance = 3000,
 				dot_trigger_chance = 50,
-				dot_length = 3,
+				dot_length = 3.1,
 				dot_tick_period = 0.5
 			},
 			range = 75,
@@ -108,7 +108,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				dot_damage = 1,
 				dot_trigger_max_distance = 3000,
 				dot_trigger_chance = 50,
-				dot_length = 3,
+				dot_length = 3.1,
 				dot_tick_period = 0.5
 			},
 			range = 75,

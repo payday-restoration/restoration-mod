@@ -12737,7 +12737,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			dlc = "gage_pack_snp",
 			stats = {
 				value = 1,
-				concealment = -2,
+				concealment = -1,
+				recoil = -1,
 				spread = 1
 			}
 		}
@@ -12752,9 +12753,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			dlc = "gage_pack_snp",
 			stats = {
 				value = 1,
-				concealment = 2,
-				spread = -1,
-				spread_moving = 2
+				concealment = 1,
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_snp_m95_barrel_suppressed = {
@@ -12768,11 +12768,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "gage_pack_snp",
 			dlc = "gage_pack_snp",
 			stats = {
-				value = 6,
-				suppression = 13,
-				alert_size = 13,
+				value = 10,
+				suppression = 10,
+				alert_size = 10,
 				spread = -1,
-				recoil = 2
+				recoil = 1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -12822,11 +12822,124 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.parts.wpn_fps_snp_m95_magazine.third_unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95_pts/wpn_third_snp_m95_magazine"
 		self.wpn_fps_snp_m95 = {}
 		self.wpn_fps_snp_m95.unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_m95/wpn_fps_snp_m95"
-		self.wpn_fps_snp_m95.optional_types = {"gadget", "sight"}
+		self.wpn_fps_snp_m95.optional_types = {"gadget", "sight"}					
 		self.wpn_fps_snp_m95.override = {
 			wpn_fps_snp_model70_iron_sight = { 
 				adds = {"wpn_fps_ass_vhs_o_standard"}
-			}
+			},
+			wpn_fps_upg_o_specter = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_aimpoint = {
+				stats = {
+					value = 8,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				stats = {
+					value = 1,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_docter = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},
+			wpn_fps_upg_o_eotech = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_t1micro = {
+				stats = {
+					value = 3,
+					concealment = 4
+				}
+			},	
+			wpn_fps_upg_o_cmore = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},		
+			wpn_fps_upg_o_acog = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_cs = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_eotech_xps = {
+				stats = {
+					value = 5
+				}
+			},	
+			wpn_fps_upg_o_reflex = {
+				stats = {
+					value = 5,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_rx01 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},	
+			wpn_fps_upg_o_rx30 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},		
+			wpn_fps_upg_o_spot = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1	
+				}
+			},
+			wpn_fps_upg_o_bmg = {
+				stats = {
+					zoom = 6,
+					concealment = 1,
+					value = 8
+				}
+			},	
+			wpn_fps_upg_o_fc1 = {
+				stats = {
+					value = 6,
+					concealment = 4
+				}			
+			},
+			wpn_fps_upg_o_uh = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}			
+			}				
 		}
 		self.wpn_fps_snp_m95.default_blueprint = {
 			"wpn_fps_snp_m95_barrel_standard",
@@ -13106,7 +13219,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},	
 			wpn_fps_upg_o_fc1 = {
 				stats = {
-					value = 6
+					value = 6,
+					concealment = 4
 				}			
 			},
 			wpn_fps_upg_o_uh = {
@@ -13190,6 +13304,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			is_a_unlockable = true,
 			stats = {
 				value = 0,
+				spread = -1,
 				concealment = 1
 			}
 		}
@@ -13204,13 +13319,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			dlc = "gage_pack_snp",
 			is_a_unlockable = true,
 			stats = {
-				value = 4,
-				suppression = 13,
-				alert_size = 13,
-				spread = -2,
-				recoil = 1,
-				spread_moving = 1,
-				concealment = -1
+				value = 10,
+				suppression = 10,
+				alert_size = 10,
+				spread = -1,
+				recoil = 1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -13241,6 +13354,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 7,
 				concealment = -1,
+				spread = -1,
 				recoil = 1
 			},
 			animations = {
@@ -13273,6 +13387,119 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			wpn_fps_snp_model70_iron_sight = { 
 				adds = {"wpn_fps_m4_uupg_o_flipup", "wpn_fps_shot_r870_s_nostock_single"},
 			},
+			wpn_fps_upg_o_specter = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_aimpoint = {
+				stats = {
+					value = 8,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				stats = {
+					value = 1,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_docter = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},
+			wpn_fps_upg_o_eotech = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_t1micro = {
+				stats = {
+					value = 3,
+					concealment = 4
+				}
+			},	
+			wpn_fps_upg_o_cmore = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},		
+			wpn_fps_upg_o_acog = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_cs = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_eotech_xps = {
+				stats = {
+					value = 5
+				}
+			},	
+			wpn_fps_upg_o_reflex = {
+				stats = {
+					value = 5,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_rx01 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},	
+			wpn_fps_upg_o_rx30 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},		
+			wpn_fps_upg_o_spot = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1	
+				}
+			},
+			wpn_fps_upg_o_bmg = {
+				stats = {
+					zoom = 6,
+					concealment = 1,
+					value = 8
+				}
+			},	
+			wpn_fps_upg_o_fc1 = {
+				stats = {
+					value = 6,
+					concealment = 4
+				}			
+			},
+			wpn_fps_upg_o_uh = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}			
+			},			
 			wpn_fps_shot_r870_s_nostock_single = { a_obj = "a_b" }
 		}
 		self.wpn_fps_snp_r93.unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_r93/wpn_fps_snp_r93"
@@ -17409,7 +17636,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			is_a_unlockable = true,
 			stats = {
 				value = 9,
-				damage = -6,
+				damage = -10,
 			},
 			custom_stats = {
 				ignore_statistic = true,
@@ -17418,10 +17645,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				can_shoot_through_shield = false,
 				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 				fire_dot_data = {
-					dot_damage = "0.25",
+					dot_damage = "1",
 					dot_trigger_max_distance = "99999999",
 					dot_trigger_chance = "50",
-					dot_length = "5",
+					dot_length = "3.1",
 					dot_tick_period = "0.5"
 				}
 			},
@@ -19667,7 +19894,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_snp_mosin_b_short = {
@@ -19682,7 +19910,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_snp_mosin_b_sniper = {
@@ -19696,13 +19924,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "gage_pack_historical",
 			is_a_unlockable = true,
 			stats = {
-				value = 6,
-				suppression = 13,
-				alert_size = 13,
-				recoil = 1,
-				spread = -2,
-				spread_moving = -1,
-				concealment = 0
+				value = 10,
+				suppression = 10,
+				alert_size = 10,
+				spread = -1,
+				recoil = 1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -19803,7 +20029,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_snp_mosin_pts/wpn_fps_snp_mosin_iron_sight",
 			stats = {
 				value = 0,
-				concealment = 2
+				concealment = 4
 			},
 			dlc = "gage_pack_historical",
 			texture_bundle_folder = "gage_pack_historical",
@@ -19834,6 +20060,121 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"sight",
 			"bayonet"
 		}
+		self.wpn_fps_snp_mosin.override = {
+			wpn_fps_upg_o_specter = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_aimpoint = {
+				stats = {
+					value = 8,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				stats = {
+					value = 1,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_docter = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},
+			wpn_fps_upg_o_eotech = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_t1micro = {
+				stats = {
+					value = 3,
+					concealment = 4
+				}
+			},	
+			wpn_fps_upg_o_cmore = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},		
+			wpn_fps_upg_o_acog = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_cs = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_eotech_xps = {
+				stats = {
+					value = 5
+				}
+			},	
+			wpn_fps_upg_o_reflex = {
+				stats = {
+					value = 5,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_rx01 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},	
+			wpn_fps_upg_o_rx30 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},		
+			wpn_fps_upg_o_spot = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1	
+				}
+			},
+			wpn_fps_upg_o_bmg = {
+				stats = {
+					zoom = 6,
+					concealment = 1,
+					value = 8
+				}
+			},	
+			wpn_fps_upg_o_fc1 = {
+				stats = {
+					value = 6,
+					concealment = 4
+				}			
+			},
+			wpn_fps_upg_o_uh = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}			
+			}
+		}		
 		self.wpn_fps_snp_mosin.adds = {
 			wpn_fps_upg_o_specter = {
 				"wpn_fps_snp_mosin_rail"
@@ -26529,7 +26870,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},	
 			wpn_fps_upg_o_fc1 = {
 				stats = {
-					value = 6
+					value = 6,
+					concealment = 4
 				}			
 			},
 			wpn_fps_upg_o_uh = {
@@ -28179,11 +28521,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			parent = "barrel",
 			unit = "units/pd2_dlc_berry/weapons/wpn_fps_snp_model70_pts/wpn_fps_snp_model70_ns_suppressor",
 			stats = {
-				value = 1,
-				suppression = 13,
-				alert_size = 13,
-				spread_moving = -2,
-				concealment = -2
+				value = 10,
+				suppression = 10,
+				alert_size = 10,
+				spread = -1,
+				recoil = 1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -28290,6 +28632,121 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"sight",
 			"bayonet"
 		}
+		self.wpn_fps_snp_model70.override = {
+			wpn_fps_upg_o_specter = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_aimpoint = {
+				stats = {
+					value = 8,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				stats = {
+					value = 1,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_docter = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},
+			wpn_fps_upg_o_eotech = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_t1micro = {
+				stats = {
+					value = 3,
+					concealment = 4
+				}
+			},	
+			wpn_fps_upg_o_cmore = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},		
+			wpn_fps_upg_o_acog = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_cs = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_eotech_xps = {
+				stats = {
+					value = 5
+				}
+			},	
+			wpn_fps_upg_o_reflex = {
+				stats = {
+					value = 5,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_rx01 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},	
+			wpn_fps_upg_o_rx30 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},		
+			wpn_fps_upg_o_spot = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1	
+				}
+			},
+			wpn_fps_upg_o_bmg = {
+				stats = {
+					zoom = 6,
+					concealment = 1,
+					value = 8
+				}
+			},	
+			wpn_fps_upg_o_fc1 = {
+				stats = {
+					value = 6,
+					concealment = 4
+				}			
+			},
+			wpn_fps_upg_o_uh = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}			
+			}
+		}				
 		self.wpn_fps_snp_model70.adds = {
 			wpn_fps_upg_o_specter = {
 				"wpn_fps_snp_model70_o_rail"
@@ -30672,8 +31129,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = 1,
-				spread_moving = -2,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "pim",
 			texture_bundle_folder = "pim",
@@ -30693,11 +31150,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox_pts/wpn_fps_snp_desertfox_b_silencer",
 			stats = {
-				value = 6,
-				suppression = 13,
-				alert_size = 13,
+				value = 10,
+				suppression = 10,
+				alert_size = 10,
 				spread = -1,
-				recoil = 1,
+				recoil = 1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -30747,8 +31204,121 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload_not_empty = "reload_not_empty",
 			fire = "recoil",
 			fire_steelsight = "recoil"
-		}
+		}				
 		self.wpn_fps_snp_desertfox.override = {
+			wpn_fps_upg_o_specter = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_aimpoint = {
+				stats = {
+					value = 8,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				stats = {
+					value = 1,
+					zoom = 4,
+					concealment = 2
+				}
+			},
+			wpn_fps_upg_o_docter = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},
+			wpn_fps_upg_o_eotech = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_t1micro = {
+				stats = {
+					value = 3,
+					concealment = 4
+				}
+			},	
+			wpn_fps_upg_o_cmore = {
+				stats = {
+					value = 5,
+					concealment = 4
+				}
+			},		
+			wpn_fps_upg_o_acog = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1
+				}
+			},
+			wpn_fps_upg_o_cs = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_eotech_xps = {
+				stats = {
+					value = 5
+				}
+			},	
+			wpn_fps_upg_o_reflex = {
+				stats = {
+					value = 5,
+					zoom = 2,
+					concealment = 3
+				}
+			},	
+			wpn_fps_upg_o_rx01 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},	
+			wpn_fps_upg_o_rx30 = {
+				stats = {
+					value = 5,
+					zoom = 4,
+					concealment = 2
+				}
+			},		
+			wpn_fps_upg_o_spot = {
+				stats = {
+					value = 8,
+					zoom = 6,
+					concealment = 1	
+				}
+			},
+			wpn_fps_upg_o_bmg = {
+				stats = {
+					zoom = 6,
+					concealment = 1,
+					value = 8
+				}
+			},	
+			wpn_fps_upg_o_fc1 = {
+				stats = {
+					value = 6,
+					concealment = 4
+				}			
+			},
+			wpn_fps_upg_o_uh = {
+				stats = {
+					value = 3,
+					zoom = 2,
+					concealment = 3
+				}			
+			},		
 			wpn_fps_snp_model70_iron_sight = { 
 				adds = {"wpn_fps_m4_uupg_o_flipup"}
 			}
@@ -32548,7 +33118,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},	
 			wpn_fps_upg_o_fc1 = {
 				stats = {
-					value = 6
+					value = 6,
+					concealment = 4
 				}			
 			},
 			wpn_fps_upg_o_uh = {
@@ -32943,7 +33514,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},	
 			wpn_fps_upg_o_fc1 = {
 				stats = {
-					value = 6
+					value = 6,
+					concealment = 4
 				}			
 			},
 			wpn_fps_upg_o_uh = {
@@ -48858,7 +49430,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				},	
 				wpn_fps_upg_o_fc1 = {
 					stats = {
-						value = 6
+						value = 6,
+						concealment = 4
 					}			
 				},
 				wpn_fps_upg_o_uh = {

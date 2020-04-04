@@ -34,11 +34,11 @@
 	--Grenade launcher stuff--
 	tweak_data.projectiles.launcher_frag.damage = 80
 	tweak_data.projectiles.launcher_frag.player_damage = 40
-	tweak_data.projectiles.launcher_frag.curve_pow = 2
+	tweak_data.projectiles.launcher_frag.curve_pow = 1
 	tweak_data.projectiles.launcher_frag.range = 500
 	tweak_data.projectiles.launcher_incendiary.damage = 3
 	tweak_data.projectiles.launcher_incendiary.launch_speed = 1250
-	tweak_data.projectiles.launcher_incendiary.curve_pow = 2
+	tweak_data.projectiles.launcher_incendiary.curve_pow = 1
 	tweak_data.projectiles.launcher_incendiary.player_damage = 3
 	tweak_data.projectiles.launcher_incendiary.burn_duration = 5
 	tweak_data.projectiles.launcher_incendiary.fire_dot_data = {
@@ -50,7 +50,7 @@
 	}
 	tweak_data.projectiles.launcher_m203.damage = 80
 	tweak_data.projectiles.launcher_m203.player_damage = 80
-	tweak_data.projectiles.launcher_m203.curve_pow = 2
+	tweak_data.projectiles.launcher_m203.curve_pow = 1
 	tweak_data.projectiles.launcher_m203.range = 500
 	tweak_data.projectiles.launcher_frag_m32.damage = 80
 	tweak_data.projectiles.launcher_frag_china.damage = 80
@@ -64,13 +64,13 @@
 	--Arbiter--
 	tweak_data.projectiles.launcher_frag_arbiter.damage = 60
 	tweak_data.projectiles.launcher_frag_arbiter.player_damage = 30
-	tweak_data.projectiles.launcher_frag_arbiter.launch_speed = 8000
-	tweak_data.projectiles.launcher_frag_arbiter.range = 500
-	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 3
+	tweak_data.projectiles.launcher_frag_arbiter.launch_speed = 2500
+	tweak_data.projectiles.launcher_frag_arbiter.range = 250
+	tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 1
 	tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 
 	tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2
-	tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 8000
+	tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 2500
 	tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
 	tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
 	tweak_data.projectiles.launcher_incendiary_arbiter.init_timer = nil
@@ -141,40 +141,40 @@
 	--GRENADE OUT--
 	tweak_data.projectiles.frag.damage = 80
 	tweak_data.projectiles.frag.player_damage = 40
-	tweak_data.projectiles.frag.curve_pow = 1
+	tweak_data.projectiles.frag.curve_pow = 0.5
 	tweak_data.projectiles.frag.range = 500
 
 	--Dynamite--
 	tweak_data.projectiles.dynamite.damage = 80
 	tweak_data.projectiles.dynamite.player_damage = 40
-	tweak_data.projectiles.dynamite.curve_pow = 1
+	tweak_data.projectiles.dynamite.curve_pow = 0.5
 	tweak_data.projectiles.dynamite.range = 500
 
 	--Community Frag--
 	tweak_data.projectiles.frag_com.damage = 80
 	tweak_data.projectiles.frag_com.player_damage = 40
-	tweak_data.projectiles.frag_com.curve_pow = 1
+	tweak_data.projectiles.frag_com.curve_pow = 0.5
 	tweak_data.projectiles.frag_com.range = 500
 
 	--The other community frag--
 	tweak_data.projectiles.dada_com.damage = 80
 	tweak_data.projectiles.dada_com.player_damage = 40
-	tweak_data.projectiles.dada_com.curve_pow = 1
+	tweak_data.projectiles.dada_com.curve_pow = 0.5
 	tweak_data.projectiles.dada_com.range = 500
 
-        --Molliest of tovs--
+    --Molliest of tovs--
 	tweak_data.projectiles.molotov.damage = 3
 	tweak_data.projectiles.molotov.player_damage = 3
 	tweak_data.projectiles.molotov.burn_duration = 10
 
-	--Incendiary Nades, idea to make em a mollie (WIP)--
+	--Incendiary Nades, idea to make em a mollie--
 	tweak_data.projectiles.fir_com.damage = 3
 	tweak_data.projectiles.fir_com.player_damage = 3
 	tweak_data.projectiles.fir_com.fire_dot_data = {
 		dot_damage = 1,
 		dot_trigger_max_distance = 3000,
 		dot_trigger_chance = 50,
-		dot_length = 3,
+		dot_length = 3.1,
 		dot_tick_period = 0.5
 	}
 	tweak_data.projectiles.fir_com.range = 75
@@ -211,7 +211,7 @@
 
 	--Stun nades--
 	tweak_data.projectiles.concussion.damage = 0
-	tweak_data.projectiles.concussion.curve_pow = 2
+	tweak_data.projectiles.concussion.curve_pow = 1
 	tweak_data.projectiles.concussion.range = 1000
 	tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 0}
 
@@ -242,7 +242,7 @@
 
 	--Smoke Grenades--
 	tweak_data.projectiles.smoke_screen_grenade.damage = 0
-	tweak_data.projectiles.smoke_screen_grenade.curve_pow = 2
+	tweak_data.projectiles.smoke_screen_grenade.curve_pow = 1
 	tweak_data.projectiles.smoke_screen_grenade.range = 1500
 	tweak_data.projectiles.smoke_screen_grenade.name_id = "bm_smoke_screen_grenade"
 	tweak_data.projectiles.smoke_screen_grenade.duration = 12

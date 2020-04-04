@@ -14748,9 +14748,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_gre_m79_pts/wpn_fps_gre_m79_barrel_short",
 			stats = {
 				value = 1,
-				recoil = 0,
-				spread = -8,
-				concealment = 4
+				spread = -1,
+				concealment = 1
 			},
 			adds = {
 				"wpn_fps_gre_m79_sight_up"
@@ -14813,8 +14812,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = -1,
-				spread = 0,
-				concealment = 4
+				concealment = 1
 			},
 			texture_bundle_folder = "gage_pack_assault",
 			dlc = "gage_pack_assault",
@@ -23102,18 +23100,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			type = "extra",
-			name_id = "bm_wp_upg_a_halfthatkit", --"bm_wp_m134_body_upper_light",
+			name_id = "bm_wp_m134_body_upper_light",
 			a_obj = "a_body",
 			unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134_pts/wpn_fps_lmg_m134_body_upper_light",
 			stats = {
 				value = 1,
-				extra_ammo = 60,
-				total_ammo_mod = 20,
-				concealment = -3
+				concealment = 1,
+				recoil = -1
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},
-			has_description = true,
-			desc_id = "bm_wp_upg_a_halfthatkit_desc",
 			texture_bundle_folder = "dlc_pack_overkill",
 			dlc = "overkill_pack"
 		}
@@ -23139,7 +23133,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			has_description = false,
 			texture_bundle_folder = "dlc_pack_overkill",
@@ -23160,7 +23154,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			texture_bundle_folder = "dlc_pack_overkill",
 			dlc = "overkill_pack",
@@ -23181,6 +23176,17 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"sight",
 			"barrel_ext"
 		}
+		self.wpn_fps_lmg_m134.override = {
+			wpn_fps_upg_ammo_half_that = {
+				stats = {
+					value = 1,
+					total_ammo_mod = 20,
+					extra_ammo = 60,
+					concealment = -2
+				},
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.87},	
+			}
+		}				
 		self.wpn_fps_lmg_m134.default_blueprint = {
 			"wpn_fps_lmg_m134_body",
 			"wpn_fps_lmg_m134_body_upper",
@@ -23204,6 +23210,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"wpn_fps_upg_fl_ass_utg",
 			"wpn_fps_lmg_m134_barrel_legendary",
 			"wpn_fps_lmg_m134_body_upper_spikey",
+			"wpn_fps_upg_ammo_half_that",
 			"wpn_fps_upg_i_slower_rof",
 			"wpn_fps_upg_i_faster_rof"
 		}
@@ -23825,9 +23832,16 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_body_silent/wpn_fps_saw_body_silent",
 			stats = {
 				value = 1,
+				concealment = 1,
 				suppression = 20,
 				alert_size = 20
 			},
+			custom_stats = {
+				rof_mult = 0.85
+			},	
+			perks = {"silencer"},			
+			has_description = true,
+			desc_id = "bm_slow_motor_sc_desc",			
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free",
 			sound_switch = {
@@ -23840,8 +23854,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_saw_body_speed",
 			a_obj = "a_body",
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_body_speed/wpn_fps_saw_body_speed",
-			stats = {value = 1},
-			custom_stats = {rof_mult = 1.15},
+			stats = {
+				value = 1,
+				concealment = -1
+			},
+			custom_stats = {
+				rof_mult = 1.15
+			},
 			has_description = true,
 			desc_id = "bm_fast_motor_sc_desc",
 			texture_bundle_folder = "butcher_pack_mods",
@@ -23856,8 +23875,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_m_blade_durable/wpn_fps_saw_m_blade_durable",
 			stats = {
 				value = 1,
-				extra_ammo = 20
+				extra_ammo = 10,
+				damage = -50,
+				total_ammo_mod = 50
 			},
+			custom_stats = {
+				ammo_pickup_min_mul = 1.5,
+				ammo_pickup_max_mul = 1.5
+			},			
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free",
 			animations = {
@@ -23873,14 +23898,20 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_saw_m_blade_sharp",
 			a_obj = "a_m",
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_m_blade_sharp/wpn_fps_saw_m_blade_sharp",
-			stats = {value = 1},
+			stats = {
+				value = 1,
+				extra_ammo = -5,
+				damage = 50,
+				total_ammo_mod = -25
+			},
+			custom_stats = {
+				ammo_pickup_min_mul = 0.75,
+				ammo_pickup_max_mul = 0.75
+			},				
 			texture_bundle_folder = "butcher_pack_mods",
-			has_description = true,
+			has_description = false,
 			desc_id = "bm_ap_saw_blade_sc_desc",
 			dlc = "butch_pack_free",
-			custom_stats = {
-				armor_piercing_add = 1
-			},
 			animations = {
 				reload = "reload",
 				reload_not_empty = "reload",
@@ -23896,7 +23927,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_aug_body_f90/wpn_fps_aug_body_f90",
 			stats = {
 				value = 1,
-				concealment = -1,
+				spread = -1,
 				recoil = 1
 			},
 			adds = {
@@ -24679,30 +24710,22 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.parts.wpn_fps_fla_mk2_mag_rare = {
 			pcs = {
+				10,
 				20,
 				30,
 				40
 			},
 			type = "magazine",
 			name_id = "bm_wp_fla_mk2_mag_rare_sc",
+			desc_id = "bm_wp_fla_mk2_mag_rare_desc_sc",
 			a_obj = "a_m",
+			has_description = true,			
 			unit = "units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/wpn_fps_fla_mk2_mag_rare",
 			stats = {
-				value = 10,
-				total_ammo_mod = 20,
-				extra_ammo = 10,
-				spread = -1,
-				suppression = 1,
-				alert_size = 1,
-				recoil = 1,
-				damage = -4
+				value = 5
 			},
 			custom_stats = {
-				flame_max_range_set = 1400,
-				damage_near_mul = -100,
-				damage_far_mul = -200,
-				ammo_pickup_min_mul = 1.2, 
-				ammo_pickup_max_mul = 1.2		
+				use_rare_dot = true
 			},
 			texture_bundle_folder = "bbq",
 			dlc = "bbq"
@@ -24716,30 +24739,22 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.parts.wpn_fps_fla_mk2_mag_welldone = {
 			pcs = {
+				10,
 				20,
 				30,
 				40
 			},
 			type = "magazine",
+			has_description = true,	
 			name_id = "bm_wp_fla_mk2_mag_welldone",
+			desc_id = "bm_wp_fla_mk2_mag_well_desc_sc",
 			a_obj = "a_m",
 			unit = "units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2_pts/wpn_fps_fla_mk2_mag_welldone",
 			stats = {
-				value = 10,
-				total_ammo_mod = -20,
-				extra_ammo = -10,
-				spread = 1,
-				recoil = -1,
-				suppression = -1,
-				alert_size = -1,
-				damage = 3
+				value = 5
 			},
 			custom_stats = {
-				flame_max_range_set = 1800,
-				damage_near_mul = 100,
-				damage_far_mul = 200,
-				ammo_pickup_min_mul = 0.75, 
-				ammo_pickup_max_mul = 0.75		
+				use_well_done_dot = true
 			},
 			texture_bundle_folder = "bbq",
 			dlc = "bbq"
@@ -24800,6 +24815,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_bbq/weapons/wpn_fps_gre_m32_pts/wpn_fps_gre_m32_barrel_short",
 			stats = {
 				value = 1,
+				spread = -1,
 				concealment = 1
 			},
 			texture_bundle_folder = "bbq",
@@ -24859,7 +24875,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_bbq/weapons/wpn_fps_gre_m32_pts/wpn_fps_gre_m32_no_stock",
 			stats = {
 				value = 0,
-				concealment = 2,
+				concealment = 1,
 				recoil = -1
 			},
 			texture_bundle_folder = "bbq",
@@ -26285,7 +26301,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			texture_bundle_folder = "kenaz",
 			dlc = "kenaz",
@@ -26310,7 +26326,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			texture_bundle_folder = "kenaz",
 			dlc = "kenaz",
@@ -26327,11 +26343,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_fg",
 			unit = "units/pd2_dlc_casino/weapons/wpn_fps_ass_sub2000_pts/wpn_fps_ass_sub2000_fg_suppressed",
 			stats = {
-				value = 5,
-				suppression = 12,
-				alert_size = 12,
-				spread_moving = 1,
-				concealment = -1
+				value = 10,
+				suppression = 10,
+				alert_size = 10,
+				spread = -1,
+				recoil = 1
 			},
 			sound_switch = {
 				suppressed = "suppressed_b"
@@ -26583,7 +26599,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"wpn_fps_upg_fl_ass_laser",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_upg_ammo_40sw",
 			"wpn_fps_upg_o_45iron",
 			"wpn_fps_upg_o_45rds",
 			"wpn_fps_upg_o_spot",
@@ -27172,7 +27187,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_bow_hunter_b_carbon",
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_b_carbon",
-			stats = {value = 1, spread = 1, concealment = -1},
+			stats = {value = 1, spread = 1, recoil = -1, concealment = -1},
 			texture_bundle_folder = "turtles",
 			dlc = "turtles",
 			animations = {reload = "recoil"}
@@ -27188,7 +27203,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_bow_hunter_b_skeletal",
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_b_skeletal",
-			stats = {value = 1, concealment = 1},
+			stats = {value = 1, spread = -1, concealment = 1},
 			texture_bundle_folder = "turtles",
 			dlc = "turtles",
 			animations = {reload = "recoil"}
@@ -27220,7 +27235,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_bow_hunter_g_camo",
 			a_obj = "a_g",
 			unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_g_camo",
-			stats = {value = 1, concealment = 1},
+			stats = {value = 1, recoil = -1, concealment = 1},
 			texture_bundle_folder = "turtles",
 			dlc = "turtles"
 		}
@@ -27242,7 +27257,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_bow_hunter_g_walnut",
 			a_obj = "a_g",
 			unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_g_walnut",
-			stats = {value = 1, recoil = 1, concealment = -1},
+			stats = {value = 1, recoil = 1, spread = -1},
 			texture_bundle_folder = "turtles",
 			dlc = "turtles"
 		}
@@ -27250,7 +27265,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			type = "ammo",
 			name_id = "bm_wp_standard",
 			a_obj = "a_m",
-			custom_stats = {ammo_pickup_min_mul = 1.67, ammo_pickup_max_mul = 1.67},
 			bullet_objects = {prefix = "g_bullet_", amount = 1},
 			unit = "units/pd2_dlc_turtles/weapons/wpn_fps_bow_hunter_pts/wpn_fps_bow_hunter_m_standard",
 			stats = {value = 1}
@@ -29176,7 +29190,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			texture_bundle_folder = "lupus",
 			dlc = "pal"
@@ -32486,7 +32500,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -32501,7 +32516,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -39324,7 +39339,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			override = {wpn_fps_lmg_shuno_b_dummy_long = {unit = "units/pd2_dlc_dmg/weapons/wpn_fps_lmg_shuno_pts/wpn_fps_lmg_shuno_b_dummy_short"}}
 		}
@@ -39342,7 +39357,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				spread = -1,
-				recoil = 2,
+				recoil = 1,
 				value = 1
 			},
 			override = {wpn_fps_lmg_shuno_b_dummy_long = {unit = "units/pd2_dlc_dmg/weapons/wpn_fps_lmg_shuno_pts/wpn_fps_lmg_shuno_b_dummy_short"}}
@@ -39362,7 +39377,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				spread = 1,
 				value = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_lmg_shuno_b_dummy_long = {
@@ -39435,14 +39451,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			wpn_fps_upg_ammo_half_that = {
 				stats = {
 					value = 1,
-					extra_ammo = 60,
 					total_ammo_mod = 20,
-					concealment = -3,
-					recoil = 0
+					extra_ammo = 60,
+					concealment = -2
 				},
-				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
+				custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.87},	
 			}
-		}		
+		}				
 		self.wpn_fps_lmg_shuno_npc = deep_clone(self.wpn_fps_lmg_shuno)
 		self.wpn_fps_lmg_shuno_npc.unit = "units/pd2_dlc_dmg/weapons/wpn_fps_lmg_shuno/wpn_fps_lmg_shuno_npc"
 	end
@@ -39469,8 +39484,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				concealment = 1,
+				spread = -1,
 				value = 1
-			}
+			},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			}				
 		}
 		self.parts.wpn_fps_fla_system_body_standard = {
 			a_obj = "a_body",
@@ -39498,6 +39518,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_m",
 			type = "magazine",
 			name_id = "bm_wp_system_m_high",
+			desc_id = "bm_wp_fla_mk2_mag_well_desc_sc",
+			has_description = true,	
 			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_m_high",
 			pcs = {
 				10,
@@ -39506,21 +39528,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			stats = {
-				value = 10,
-				total_ammo_mod = -33,
-				extra_ammo = -10,
-				spread = 1,
-				recoil = -1,
-				suppression = -1,
-				alert_size = -1,
-				damage = 3
+				value = 5
 			},
 			custom_stats = {
-				flame_max_range_set = 1200,
-				damage_near_mul = 100,
-				damage_far_mul = 200,
-				ammo_pickup_min_mul = 0.667, 
-				ammo_pickup_max_mul = 0.667		
+				use_well_done_dot = true
 			}			
 		}
 		self.parts.wpn_fps_fla_system_m_low = {
@@ -39528,6 +39539,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_m",
 			type = "magazine",
 			name_id = "bm_wp_system_m_low",
+			desc_id = "bm_wp_fla_mk2_mag_rare_desc_sc",
+			has_description = true,	
 			unit = "units/pd2_dlc_sft/weapons/wpn_fps_fla_system_pts/wpn_fps_fla_system_m_low",
 			pcs = {
 				10,
@@ -39536,21 +39549,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			stats = {
-				value = 10,
-				total_ammo_mod = 25,
-				extra_ammo = 10,
-				spread = -1,
-				suppression = 1,
-				alert_size = 1,
-				recoil = 1,
-				damage = -4
+				value = 5
 			},
 			custom_stats = {
-				flame_max_range_set = 800,
-				damage_near_mul = -100,
-				damage_far_mul = -200,
-				ammo_pickup_min_mul = 1.25, 
-				ammo_pickup_max_mul = 1.25		
+				use_rare_dot = true
 			}			
 		}
 		self.parts.wpn_fps_fla_system_m_standard = {

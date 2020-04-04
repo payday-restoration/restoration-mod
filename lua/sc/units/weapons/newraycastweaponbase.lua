@@ -527,7 +527,33 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 									-0.11
 					}
 				end
-			end			
+			end	
+
+			--Flamethrower stuff, since fire DOT data doesn't like being changed in a normal custom stat
+			if stats.use_rare_dot then
+				if self:weapon_tweak_data().fire_dot_data then
+					self:weapon_tweak_data().fire_dot_data = {
+						dot_damage = 0.5,
+						dot_trigger_max_distance = 999999,
+						dot_trigger_chance = 50,
+						dot_length = 6.1,
+						dot_tick_period = 0.5
+					}					
+				end
+			end		
+
+			--Worst way to eat a steak, seriously what the fuck's wrong with you
+			if stats.use_well_done_dot then
+				if self:weapon_tweak_data().fire_dot_data then
+					self:weapon_tweak_data().fire_dot_data = {
+						dot_damage = 2,
+						dot_trigger_max_distance = 999999,
+						dot_trigger_chance = 50,
+						dot_length = 1.6,
+						dot_tick_period = 0.5
+					}					
+				end
+			end					
 
 		end
 							

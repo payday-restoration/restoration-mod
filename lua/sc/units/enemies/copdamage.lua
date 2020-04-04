@@ -520,7 +520,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		damage = damage * (self._char_tweak.damage.bullet_damage_mul or 1)
 		local roll = math.rand(1, 100)
 		local dodge_chance = self._char_tweak.damage.bullet_dodge_chance or 0
-		if attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit:base().thrower_unit then
+		if attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
 			dodge_chance = 0
 		end
 		

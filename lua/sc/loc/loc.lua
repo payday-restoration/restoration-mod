@@ -61,9 +61,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800",
 		
 		--Saw--
-		["bm_ap_saw_sc_desc"] = "",
+		["bm_ap_saw_sc_desc"] = "CUTS THROUGH BODY ARMOR.",
 		["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to cut through body armor.",
 		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
+		["bm_slow_motor_sc_desc"] = "Decreases Rotations Per Minute by 15%.",
 		
 		--Weapon Sights--
 		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks special enemies and guards in stealth while aiming.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
@@ -74,10 +75,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
+		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "Doubles the burn duration on ignited enemies, but halves damage over time.",
+		["bm_wp_fla_mk2_mag_well_desc_sc"] = "Halves the burn duration on ignited enemies, but doubles damage over time.",
 		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH BODY ARMOR.", --used by both flamethrowers, decouple later?--
 		
 		--LMGs/Miniguns--
 		["bm_wp_upg_a_halfthatkit"] = "Super Size Me!", -- lol
+		["bm_wp_m134_body_upper_light"] = "Light Body",
 		["bm_wp_upg_a_halfthatkit_desc"] = "ADDS A 10% MOVEMENT SPEED PENALTY WHILE THE WEAPON IS EQUIPPED.",
 		
 		--Thanatos--

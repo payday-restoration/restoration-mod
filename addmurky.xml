@@ -18,6 +18,9 @@
 
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/omnia_hrt_df" force="false"/>	
 
+	<unit_mat path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_cap/ene_acc_omnia_crew_cap" force="false" load="true"/>
+	<unit_mat path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_helmet/ene_acc_omnia_crew_helmet" force="false" load="true"/>
+	
 	<!--OMNIA Crew 1-->
 	<object path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew" force="false"/>
 	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew" force="false"/>

@@ -52,7 +52,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			new_brush:sphere(hit_pos, range)
 		end
 
-		local bodies = World:find_bodies("intersect", "sphere", hit_pos, range, slotmask)
+		local bodies = nil
+
+		if ignore_unit then
+			bodies = World:find_bodies(ignore_unit, "intersect", "sphere", hit_pos, range, slotmask)
+		else
+			bodies = World:find_bodies("intersect", "sphere", hit_pos, range, slotmask)
+		end
+
 		local splinters = {
 			mvec3_copy(hit_pos)
 		}
@@ -106,7 +113,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local type = nil
 
 		for _, hit_body in ipairs(bodies) do
-			if alive(hit_body) and ignore_unit ~= hit_body:unit() then
+			if alive(hit_body) then
 				units_to_push[hit_body:unit():key()] = hit_body:unit()
 				local character = hit_body:unit():character_damage() and hit_body:unit():character_damage().stun_hit and not hit_body:unit():character_damage():dead()
 				local ray_hit = nil
@@ -271,7 +278,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			new_brush:sphere(hit_pos, range)
 		end
 
-		local bodies = World:find_bodies("intersect", "sphere", hit_pos, range, slotmask)
+		local bodies = nil
+
+		if ignore_unit then
+			bodies = World:find_bodies(ignore_unit, "intersect", "sphere", hit_pos, range, slotmask)
+		else
+			bodies = World:find_bodies("intersect", "sphere", hit_pos, range, slotmask)
+		end
+
 		local splinters = {
 			mvec3_copy(hit_pos)
 		}
@@ -325,7 +339,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local type = nil
 
 		for _, hit_body in ipairs(bodies) do
-			if alive(hit_body) and ignore_unit ~= hit_body:unit() then
+			if alive(hit_body) then
 				units_to_push[hit_body:unit():key()] = hit_body:unit()
 				local character = hit_body:unit():character_damage() and hit_body:unit():character_damage().damage_explosion and not hit_body:unit():character_damage():dead()
 				local apply_dmg = hit_body:extension() and hit_body:extension().damage
@@ -348,7 +362,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 									if hit_body:unit():movement() and hit_body:unit():movement().m_com then
 										local det_pos = params.hit_pos
-										local e_com = hit_body:unit():movement():m_com() --hit_body:unit():body("body"):center_of_mass()
+										local e_com = hit_body:unit():movement():m_com()
 										local shield_ray = World:raycast("ray", det_pos, e_com, "slot_mask", managers.slot:get_mask("enemy_shield_check"))
 
 										if shield_ray and alive(shield_ray.unit:parent()) then
@@ -573,7 +587,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local sync_damage = is_server and hit_unit:id() ~= -1
 
 		if not local_damage and not sync_damage then
-			print("_apply_body_damage skipped")
+			--print("_apply_body_damage skipped")
 
 			return
 		end
@@ -636,5 +650,4 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self:units_to_push(units_to_push, position, range)
 	end
-
 end

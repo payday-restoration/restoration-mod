@@ -875,7 +875,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function TeamAILogicIdle._find_intimidateable_civilians(criminal, use_default_shout_shape, max_angle, max_dis)
-		local enemy_domination = nil --add toggle to use -"assist" or true or nil-
+		local enemy_domination = "assist"
 		local draw_civ_detection_lines = nil
 		local head_pos = criminal:movement():m_head_pos()
 		local look_vec = criminal:movement():m_rot():y()

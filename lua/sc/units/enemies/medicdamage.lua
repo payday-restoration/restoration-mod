@@ -12,8 +12,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if my_tweak_data == "medic" or my_tweak_data == "tank_medic" then
 				if unit:character_damage()._healed_cooldown_t and unit:character_damage()._healed_cooldown_t > t then
 					return false
-				elseif t < self._heal_cooldown_t + cooldown and not override_cooldown then
-					return false
+				else
+					local cooldown = 20
+					cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
+
+					if t < self._heal_cooldown_t + cooldown then
+						return false
+					end
 				end
 			end
 		end

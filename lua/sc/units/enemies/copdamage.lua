@@ -1587,28 +1587,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	end
 
 	function CopDamage:heal_unit(unit, override_cooldown)
-		local t = Application:time()
-		local tweak_table = self._unit:base()._tweak_table
-
-		if tweak_table == "medic" and not override_cooldown then
-			local cooldown = tweak_data.medic.cooldown
-			cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
-
-			if t < self._heal_cooldown_t + cooldown then
-				return false
-			end
-		end
-
 		if self._unit:anim_data() and self._unit:anim_data().act then
 			return false
 		end
 
-		if tweak_table == "medic" then
-			if table.contains(tweak_data.medic.disabled_units, tweak_table) then
+		local t = Application:time()
+		local my_tweak_table = self._unit:base()._tweak_table
+
+		if not override_cooldown then
+			if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
+				local cooldown = tweak_data.medic.cooldown
+				cooldown = managers.modifiers:modify_value("MedicDamage:CooldownTime", cooldown)
+
+				if t < self._heal_cooldown_t + cooldown then
+					return false
+				end
+			end
+		end
+
+		local target_tweak_table = unit:base()._tweak_table
+
+		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
+			if table.contains(tweak_data.medic.disabled_units, target_tweak_table) then
 				return false
 			end
 		else
-			if not table.contains(tweak_data.medic.whitelisted_units, tweak_table) then
+			if not table.contains(tweak_data.medic.whitelisted_units, target_tweak_table) then
 				return false
 			end
 		end
@@ -1631,13 +1635,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 
-		if tweak_table == "medic" then
+		if my_tweak_table == "medic" or my_tweak_table == "tank_medic" then
 			self._heal_cooldown_t = t
 		end
 
 		if not self._unit:character_damage():dead() then
-			if tweak_table.custom_voicework then
-				local voicelines = _G.restoration.BufferedSounds[tweak_table.custom_voicework]
+			if self._unit:contour() then
+				self._unit:contour():add("medic_show")
+				self._unit:contour():flash("medic_show", 0.2)
+			end
+
+			if my_tweak_table.custom_voicework then
+				local voicelines = _G.restoration.BufferedSounds[my_tweak_table.custom_voicework]
 
 				if voicelines["heal"] then
 					local line_to_use = voicelines.heal[math.random(#voicelines.heal)]

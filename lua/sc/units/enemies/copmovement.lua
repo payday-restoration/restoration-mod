@@ -1094,11 +1094,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._unit:contour():flash("medic_heal", 0.2)
 			end
 
-			if Network:is_server() then
+			--temporarily disabling buff due to other conflicts
+			--[[if Network:is_server() then
 				managers.modifiers:run_func("OnEnemyHealed", nil, self._unit)
-			end
+			end]]
 
-			if damage_info.is_synced or self._tweak_data.ignore_medic_revive_animation then
+			if damage_info.is_synced then
+				local healed_cooldown = self._tweak_data.heal_cooldown or 90
+				self._ext_damage._healed_cooldown_t = TimerManager:main():time() + healed_cooldown
+
+				return
+			elseif self._tweak_data.ignore_medic_revive_animation then
 				return
 			end
 

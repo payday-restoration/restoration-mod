@@ -79,3 +79,24 @@
 		<attr name="delivery" value="ordered"/>
 	</target>
 </tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="sync_medic_heal"/>
+	</search>
+	<target mode="attributes">
+		<attr name="delivery" value="ordered"/>
+	</target>
+</tweak>
+<tweak name="settings/network" extension="network_settings">
+	<search>
+		<network/>
+		<rpc/>
+		<message name="damage_tase"/>
+            	<param type="int" min="0" max="1" />
+	</search>
+	<target mode="attributes">
+		<attr name="max" value="4"/>
+	</target>
+</tweak>

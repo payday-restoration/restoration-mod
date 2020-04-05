@@ -24,6 +24,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end)
 
+	function SentryGunBase:unregister()
+		if self._registered then
+			self._registered = nil
+		end
+	end
+
+	function SentryGunBase:register()
+		self._registered = true
+	end
+
 	function SentryGunBase:is_repairmode()
 		return self._is_repairing and true or false
 	end

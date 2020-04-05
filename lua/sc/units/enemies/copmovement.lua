@@ -1,5 +1,4 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
 	local old_init = CopMovement.init
 	local action_variants = {
 		security = {
@@ -930,49 +929,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
+	local drop_held_items_original = CopMovement.drop_held_items
 	function CopMovement:drop_held_items()
 		self._spawneditems = {}
-
-		if not self._droppable_gadgets then
-			return
-		end
-
-		for _, drop_item_unit in ipairs(self._droppable_gadgets) do
-			local wanted_item_key = drop_item_unit:key()
-
-			if alive(drop_item_unit) then
-				for align_place, item_list in pairs(self._equipped_gadgets) do
-					if wanted_item_key then
-						for i_item, item_unit in ipairs(item_list) do
-							if item_unit:key() == wanted_item_key then
-								table.remove(item_list, i_item)
-
-								wanted_item_key = nil
-
-								break
-							end
-						end
-					else
-						break
-					end
-				end
-
-				drop_item_unit:unlink()
-				drop_item_unit:set_slot(0)
-			else
-				for align_place, item_list in pairs(self._equipped_gadgets) do
-					if wanted_item_key then
-						for i_item, item_unit in ipairs(item_list) do
-							if not alive(item_unit) then
-								table.remove(item_list, i_item)
-							end
-						end
-					end
-				end
-			end
-		end
-
-		self._droppable_gadgets = nil
+		drop_held_items_original(self)
 	end
 
 	function CopMovement:sync_action_spooc_nav_point(pos, action_id)
@@ -1125,7 +1085,44 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return
 		end
 
-		if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "graze" then
+		if hurt_type == "healed" then
+			self._ext_damage._health = self._ext_damage._HEALTH_INIT
+			self._ext_damage._health_ratio = 1
+
+			if self._unit:contour() then
+				self._unit:contour():add("medic_heal")
+				self._unit:contour():flash("medic_heal", 0.2)
+			end
+
+			--temporarily disabling buff due to other conflicts
+			--[[if Network:is_server() then
+				managers.modifiers:run_func("OnEnemyHealed", nil, self._unit)
+			end]]
+
+			if damage_info.is_synced then
+				local healed_cooldown = self._tweak_data.heal_cooldown or 90
+				self._ext_damage._healed_cooldown_t = TimerManager:main():time() + healed_cooldown
+
+				return
+			elseif self._tweak_data.ignore_medic_revive_animation then
+				return
+			end
+
+			local action_data = {
+				body_part = 1,
+				type = "healed",
+				client_interrupt = Network:is_client(),
+				allow_network = true
+			}
+
+			self:action_request(action_data)
+
+			return
+		elseif damage_info.is_synced or damage_info.variant == "bleeding" and not Network:is_server() then
+			return
+		end
+
+		if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "dot" or damage_info.variant == "graze" then
 			hurt_type = managers.modifiers:modify_value("CopMovement:HurtType", hurt_type)
 
 			if not hurt_type then
@@ -1143,7 +1140,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if self._anim_global == "shield" then
 				hurt_type = "expl_hurt"
 			else
-				hurt_type = "heavy_hurt"
+				hurt_type = "hurt"
 			end
 		elseif hurt_type == "hurt" or hurt_type == "heavy_hurt" then
 			if self._anim_global == "shield" then
@@ -1204,28 +1201,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				blocks.bleedout = -1
 				blocks.hurt = -1
 				blocks.heavy_hurt = -1
-				blocks.stagger = -1
-				blocks.knock_down = -1
-				blocks.counter_tased = -1
 				blocks.hurt_sick = -1
-				blocks.expl_hurt = -1
-				blocks.fire_hurt = -1
-				blocks.taser_tased = -1
-				blocks.poison_hurt = -1
-				blocks.shield_knock = -1
-				blocks.concussion = -1
-			elseif hurt_type == "shield_knock" or hurt_type == "concussion" or hurt_type == "counter_tased" then
-				blocks.hurt = -1
-				blocks.heavy_hurt = -1
-				blocks.stagger = -1
-				blocks.knock_down = -1
-				blocks.counter_tased = -1
-				blocks.hurt_sick = -1
-				blocks.expl_hurt = -1
-				blocks.fire_hurt = -1
-				blocks.taser_tased = -1
-				blocks.poison_hurt = -1
-				blocks.shield_knock = -1
 				blocks.concussion = -1
 			end
 		end
@@ -1234,8 +1210,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if damage_info.variant == "tase" then
 			block_type = "bleedout"
-		else
+		elseif hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+			block_type = "heavy_hurt"
+
 			if Network:is_client() then
+				client_interrupt = true
+			end
+		else
+			if hurt_type ~= "bleedout" and hurt_type ~= "fatal" and Network:is_client() then
 				client_interrupt = true
 			end
 
@@ -1243,51 +1225,32 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		local tweak = self._tweak_data
-		local action_data = nil
+		local death_type = "normal"
 
-		if hurt_type == "healed" then
-			if self._unit:contour() then
-				self._unit:contour():add("medic_heal")
-				self._unit:contour():flash("medic_heal", 0.2)
+		if tweak.damage.death_severity then
+			if tweak.damage.death_severity < damage_info.damage / self._ext_damage._HEALTH_INIT then
+				death_type = "heavy"
 			end
-
-			if tweak.ignore_medic_revive_animation then
-				return
-			end
-
-			action_data = {
-				body_part = 1,
-				type = "healed",
-				client_interrupt = client_interrupt
-			}
-		else
-			local death_type = "normal"
-
-			if tweak.damage.death_severity then
-				if tweak.damage.death_severity < damage_info.damage / tweak.HEALTH_INIT then
-					death_type = "heavy"
-				end
-			end
-
-			action_data = {
-				type = "hurt",
-				block_type = block_type,
-				hurt_type = hurt_type,
-				variant = damage_info.variant,
-				direction_vec = attack_dir,
-				hit_pos = hit_pos,
-				body_part = body_part,
-				blocks = blocks,
-				client_interrupt = client_interrupt,
-				attacker_unit = damage_info.attacker_unit,
-				death_type = death_type,
-				ignite_character = damage_info.ignite_character,
-				start_dot_damage_roll = damage_info.start_dot_damage_roll,
-				is_fire_dot_damage = damage_info.is_fire_dot_damage,
-				fire_dot_data = damage_info.fire_dot_data,
-				is_synced = damage_info.is_synced
-			}
 		end
+
+		local action_data = {
+			type = "hurt",
+			block_type = block_type,
+			hurt_type = hurt_type,
+			variant = damage_info.variant,
+			direction_vec = attack_dir,
+			hit_pos = hit_pos,
+			body_part = body_part,
+			blocks = blocks,
+			client_interrupt = client_interrupt,
+			attacker_unit = damage_info.attacker_unit,
+			death_type = death_type,
+			ignite_character = damage_info.ignite_character,
+			start_dot_damage_roll = damage_info.start_dot_damage_roll,
+			is_fire_dot_damage = damage_info.is_fire_dot_damage,
+			fire_dot_data = damage_info.fire_dot_data,
+			allow_network = true
+		}
 
 		if Network:is_server() or not self:chk_action_forbidden(action_data) then
 			self:action_request(action_data)

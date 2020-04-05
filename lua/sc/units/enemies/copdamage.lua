@@ -1548,14 +1548,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		old_death(self, attack_data)
-		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
 		if self._unit:interaction().tweak_data == "hostage_convert" then
 			self._unit:interaction():set_active(false, true, false)
 		end
 
-		if char_tweak.ends_assault_on_death then
+		if self._char_tweak.ends_assault_on_death then
 			managers.groupai:state():force_end_assault_phase()
 			managers.hud:set_buff_enabled("vip", false)
 		end
@@ -1570,19 +1568,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self._unit:damage():run_sequence_simple("kill_spook_lights")
 		end
 
-		if char_tweak.failure_on_death then
+		if self._char_tweak.failure_on_death then
 			if managers.platform:presence() == "Playing" then
 				managers.network:session():send_to_peers("mission_ended", false)
 				game_state_machine:change_state_by_name("gameoverscreen")
 			end
 		end
 
-		if char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
+		if self._char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
 			managers.enemy:end_autumn_blackout()
 		end
 
-		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") then
-			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)
+		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") and self._char_tweak.die_sound_event_2 then
+			self._unit:sound():play(self._char_tweak.die_sound_event_2, nil, nil)
 		end
 	end
 

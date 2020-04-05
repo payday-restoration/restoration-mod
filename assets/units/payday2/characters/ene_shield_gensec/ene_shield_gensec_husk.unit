@@ -5,7 +5,7 @@
 
 	<dependencies>
 		
-		<depends_on unit="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
+		<depends_on unit="units/payday2/characters/ene_acc_fbi_swat_helmet/ene_acc_fbi_swat_helmet" />
 		<depends_on unit="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
 	</dependencies>
 
@@ -25,7 +25,7 @@
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod" />
 			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" />
+			<var name="_head_gear" value="units/payday2/characters/ene_acc_fbi_swat_helmet/ene_acc_fbi_swat_helmet" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >

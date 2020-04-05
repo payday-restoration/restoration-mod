@@ -394,6 +394,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._verify_character(unit) then
 			unit:character_damage()._heal_cooldown_t = Application:time()
 
+			if unit:contour() then
+				unit:contour():add("medic_show")
+				unit:contour():flash("medic_show", 0.2)
+			end
+
 			if unit:anim_data() and unit:anim_data().act then
 				self._unit:sound():say("heal")
 			else

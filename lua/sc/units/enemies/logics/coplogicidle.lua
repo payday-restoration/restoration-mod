@@ -10,7 +10,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if managers.groupai:state():has_room_for_police_hostage() then
 			local i_am_special = managers.groupai:state():is_enemy_special(data.unit)
-			local required_skill = "intimidate_enemies"
+			local required_skill = i_am_special and "intimidate_specials" or "intimidate_enemies"
 			local aggressor_can_intimidate = nil
 			local aggressor_intimidation_mul = 1
 
@@ -31,9 +31,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if hold_chance then
 					hold_chance = hold_chance ^ aggressor_intimidation_mul
 
-					if hold_chance >= 1 then
-						-- Nothing
-					else
+					if hold_chance < 1 then
 						local rand_nr = math.random()
 
 						--print("and the winner is: hold_chance", hold_chance, "rand_nr", rand_nr, "rand_nr > hold_chance", hold_chance < rand_nr)

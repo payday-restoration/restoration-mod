@@ -2064,9 +2064,26 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			detect = "cloaker_detect_mono"
 		}
 		self.spooc.heal_cooldown = 45
+		self.spooc.special_deaths = {
+			melee = {
+				[("head"):id():key()] = {
+					sequence = "dismember_head",
+					melee_weapon_id = "sandsteel",
+					character_name = "dragon",
+					sound_effect = "split_gen_head"
+				},
+				[("body"):id():key()] = {
+					sequence = "dismember_body_top",
+					melee_weapon_id = "sandsteel",
+					character_name = "dragon",
+					sound_effect = "split_gen_body"
+				}
+			}
+		}
 		table.insert(self._enemy_list, "spooc")
-		
+
 		self.spooc_titan = deep_clone(self.spooc)
+		self.spooc_titan.special_deaths = nil
 		self.spooc_titan.HEALTH_INIT = 90
 		self.spooc_titan.headshot_dmg_mul = 5.85	
 		if is_reaper then	

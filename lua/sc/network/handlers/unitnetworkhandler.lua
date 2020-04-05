@@ -236,4 +236,175 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		unit:base():sync_throw_projectile(dir, projectile_type)
 	end
+
+	function UnitNetworkHandler:action_hurt_start(unit, hurt_type_idx, body_part, death_type_idx, type_idx, variant_idx, direction_vec, hit_pos)
+		if not self._verify_gamestate(self._gamestate_filter.any_ingame) then
+			return
+		end
+
+		local hurt_type = CopActionHurt.idx_to_hurt_type(hurt_type_idx)
+
+		if hurt_type == "death" then
+			if alive(unit) then
+				local action_type = CopActionHurt.idx_to_type(type_idx)
+				local variant = CopActionHurt.idx_to_variant(variant_idx)
+				local block_type = hurt_type
+				local mov_ext = unit:movement()
+				local client_interrupt = nil
+
+				if mov_ext._queued_actions then
+					mov_ext._queued_actions = {}
+				end
+
+				if mov_ext._rope then
+					mov_ext._rope:base():retract()
+
+					mov_ext._rope = nil
+					mov_ext._rope_death = true
+
+					if unit:sound().anim_clbk_play_sound then
+						unit:sound():anim_clbk_play_sound(unit, "repel_end")
+					end
+				end
+
+				if Network:is_server() then
+					mov_ext:set_attention()
+				else
+					client_interrupt = true
+					mov_ext:synch_attention()
+				end
+
+				local blocks = {
+					act = -1,
+					aim = -1,
+					action = -1,
+					tase = -1,
+					walk = -1,
+					light_hurt = -1,
+					death = -1
+				}
+
+				local action_data = {
+					allow_network = false,
+					client_interrupt = client_interrupt,
+					hurt_type = hurt_type,
+					block_type = block_type,
+					blocks = blocks,
+					body_part = body_part,
+					death_type = CopActionHurt.idx_to_death_type(death_type_idx),
+					type = action_type,
+					variant = variant,
+					direction_vec = direction_vec,
+					hit_pos = hit_pos
+				}
+
+				unit:movement():action_request(action_data)
+			end
+		else
+			if not self._verify_character(unit) then
+				return
+			end
+
+			local action_data = nil
+			local action_type = CopActionHurt.idx_to_type(type_idx)
+
+			if action_type == "healed" then
+				if unit:anim_data() and unit:anim_data().act then
+					return
+				end
+
+				action_data = {
+					body_part = body_part,
+					type = "healed",
+					client_interrupt = Network:is_client()
+				}
+			else
+				local block_type = hurt_type
+
+				if hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+					block_type = "heavy_hurt"
+				end
+
+				if Network:is_server() and unit:movement():chk_action_forbidden(block_type) then
+					return
+				end
+
+				local variant = CopActionHurt.idx_to_variant(variant_idx)
+				local client_interrupt, blocks = nil
+
+				if variant == "tase" then
+					block_type = "bleedout"
+				elseif hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
+					block_type = "heavy_hurt"
+
+					client_interrupt = Network:is_client()
+				else
+					block_type = hurt_type
+
+					if hurt_type ~= "bleedout" and hurt_type ~= "fatal" then
+						client_interrupt = Network:is_client()
+					end
+				end
+
+				if hurt_type ~= "light_hurt" then
+					blocks = {
+						act = -1,
+						aim = -1,
+						action = -1,
+						tase = -1,
+						walk = -1,
+						light_hurt = -1
+					}
+
+					if hurt_type == "bleedout" then
+						blocks.bleedout = -1
+						blocks.hurt = -1
+						blocks.heavy_hurt = -1
+						blocks.hurt_sick = -1
+						blocks.concussion = -1
+					end
+				end
+
+				action_data = {
+					allow_network = false,
+					client_interrupt = client_interrupt,
+					hurt_type = hurt_type,
+					block_type = block_type,
+					blocks = blocks,
+					body_part = body_part,
+					death_type = CopActionHurt.idx_to_death_type(death_type_idx),
+					type = action_type,
+					variant = variant,
+					direction_vec = direction_vec,
+					hit_pos = hit_pos
+				}
+			end
+
+			unit:movement():action_request(action_data)
+		end
+	end
+
+	function UnitNetworkHandler:sync_medic_heal(unit, sender)
+		if not self._verify_gamestate(self._gamestate_filter.any_ingame) or not self._verify_sender(sender) then
+			return
+		end
+
+		MedicActionHeal:check_achievements()
+
+		if self._verify_character(unit) then
+			unit:character_damage()._heal_cooldown_t = Application:time()
+
+			if unit:anim_data() and unit:anim_data().act then
+				self._unit:sound():say("heal")
+			else
+				local action_data = {
+					body_part = 1,
+					type = "heal",
+					client_interrupt = Network:is_client()
+				}
+
+				unit:movement():action_request(action_data)
+			end
+		end
+	end
 end

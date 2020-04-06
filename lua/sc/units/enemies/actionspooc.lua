@@ -285,7 +285,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if not self._taunt_during_assault then
 					if ai_type == r then
 						self._taunt_during_assault = "rcloaker_taunt_during_assault"
-					elseif ai_type == f then
+					elseif ai_type == f and not common_data.ext_base._tweak_table == "spooc_titan" then
 						self._taunt_during_assault = "mcloaker_taunt_during_assault"
 					else
 						self._taunt_during_assault = "cloaker_taunt_during_assault"
@@ -295,7 +295,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if not self._taunt_after_assault then
 					if ai_type == r then
 						self._taunt_after_assault = "rcloaker_taunt_after_assault"
-					elseif ai_type == f then
+					elseif ai_type == f and not common_data.ext_base._tweak_table == "spooc_titan" then
 						self._taunt_after_assault = "mcloaker_taunt_after_assault"
 					else
 						self._taunt_after_assault = "cloaker_taunt_after_assault"

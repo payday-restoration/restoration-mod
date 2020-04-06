@@ -476,9 +476,6 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.player.no_deflection = {true}
 	self.values.player.yakuza_berserker = {true}
 	self.values.player.electrocution_resistance_multiplier = {1}
-	self.values.player.dodge_to_heal = {true}
-	self.values.player.melee_to_heal = {true}
-	self.values.player.dodge_on_revive = {true}	
 	
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
@@ -696,7 +693,6 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.flashbang_multiplier = {0.5, 0.25}
 				
 				--Die Hard
-				self.values.player.armor_regen_timer_multiplier = {0.9}
 				self.values.player.deflection_addend = {0.05, 0.10}
 
 				--Transporter
@@ -714,6 +710,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Iron Man
 				self.values.player.shield_knock = {true}
+				self.values.player.armor_regen_timer_multiplier = {0.95}
 
 			--}
 			
@@ -994,8 +991,8 @@ function UpgradesTweakData:_init_pd2_values()
 						0.15
 					}
 				}
-				self.values.player.health_damage_bonus_dodge = {
-					0.5
+				self.values.player.backstab_dodge = {
+					0.75
 				}
 
 				--Shockproof
@@ -1014,8 +1011,11 @@ function UpgradesTweakData:_init_pd2_values()
 				self.counter_taser_damage = 0.5			
 
 				--Sneaky Bastard
-				self.values.player.backstab_dodge = {
-					0.75
+				self.values.player.health_damage_bonus_dodge = {
+					0.5
+				}
+				self.values.player.dodge_heal_no_armor = {
+					0.03 --% of maximum health
 				}
 
 			--}
@@ -1084,7 +1084,7 @@ function UpgradesTweakData:_init_pd2_values()
 						0.3
 					}
 				}
-				self.values.player.backstab_crits = {0.35}
+				self.values.player.backstab_crits = {0.50}
 
 			--}
 		--}
@@ -1214,9 +1214,9 @@ function UpgradesTweakData:_init_pd2_values()
 				--Frenzy (Berserker)
 				self.values.player.max_health_reduction = {0.25}
 				self.values.player.healing_reduction = {0.00, 0.25}
-				self.values.player.frenzy_deflection = {0.25, 0.50}
-               			self.values.player.health_damage_reduction = {0.85, 0.7}
-                		self.values.player.real_health_damage_reduction = {0.7, 0.4}
+				self.values.player.frenzy_deflection = {0.20, 0.45}
+               	--self.values.player.health_damage_reduction = {0.85, 0.7}
+                --self.values.player.real_health_damage_reduction = {0.7, 0.4}
 				
 				--Berserker (Frenzy)
 				self.player_damage_health_ratio_threshold = 0.5
@@ -1293,6 +1293,7 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	--infiltrator stuff
 	self.infiltrator_dr_range = 1200
+	self.values.player.melee_stacking_heal = {true}
 	self.values.temporary.melee_life_leech = {
 		{0.08, 08}
 	}
@@ -1429,6 +1430,8 @@ function UpgradesTweakData:_init_pd2_values()
 			civilian = false
 		}
 	}
+	self.values.player.dodge_stacking_heal = {true}
+	self.values.player.dodge_on_revive = {true}	
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {
@@ -2056,21 +2059,21 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}	
-	self.definitions.player_dodge_to_heal = {
+	self.definitions.player_dodge_stacking_heal = {
 		category = "feature",
-		name_id = "menu_player_dodge_to_heal",
+		name_id = "menu_player_dodge_stacking_heal",
 		upgrade = {
 			category = "player",
-			upgrade = "dodge_to_heal",
+			upgrade = "dodge_stacking_heal",
 			value = 1
 		}
 	}
-	self.definitions.player_melee_to_heal = {
+	self.definitions.player_melee_stacking_heal = {
 		category = "feature",
-		name_id = "menu_player_melee_to_heal",
+		name_id = "menu_player_melee_stacking_heal",
 		upgrade = {
 			category = "player",
-			upgrade = "melee_to_heal",
+			upgrade = "melee_stacking_heal",
 			value = 1
 		}
 	}
@@ -3034,6 +3037,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "health_damage_bonus_dodge",
+			category = "player"
+		}
+	}
+	self.definitions.player_dodge_heal_no_armor = {
+		name_id = "menu_player_dodge_heal_no_armor",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "dodge_heal_no_armor",
 			category = "player"
 		}
 	}

@@ -241,9 +241,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		--Load alternate heal over time tweakdata if player is using Infiltrator.
 		local data = tweak_data.upgrades.damage_to_hot_data
-		if self:has_category_upgrade("player", "melee_to_heal") then --Load alternate heal over time tweakdata if player is using Infiltrator.
+		if self:has_category_upgrade("player", "melee_stacking_heal") then --Load alternate heal over time tweakdata if player is using Infiltrator.
 			data = tweak_data.upgrades.melee_to_hot_data
-		elseif self:has_category_upgrade("player", "dodge_to_heal") then --Or Rogue
+		elseif self:has_category_upgrade("player", "dodge_stacking_heal") then --Or Rogue
 			data = tweak_data.upgrades.dodge_to_hot_data
 		end
 
@@ -615,16 +615,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:unregister_message(Message.OnPlayerDodge, "dodge_replenish_armor")
 		end
 
-		if self:has_category_upgrade("player", "dodge_to_heal") then
-			self:register_message(Message.OnPlayerDodge, "add_dodge_healing", callback(self, self, "_dodge_stack_health_regen"))
+		if self:has_category_upgrade("player", "dodge_stacking_heal") then
+			self:register_message(Message.OnPlayerDodge, "dodge_stack_health_regen", callback(self, self, "_dodge_stack_health_regen"))
 		else
-			self:unregister_message(Message.OnPlayerDodge, "add_dodge_healing")
+			self:unregister_message(Message.OnPlayerDodge, "dodge_stack_health_regen")
 		end
 
 		if self:has_category_upgrade("player", "bomb_cooldown_reduction") then
 			self:register_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr", callback(self, self, "_dodge_smokebomb_cdr"))
 		else
 			self:unregister_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr")
+		end
+
+		if self:has_category_upgrade("player", "dodge_heal_no_armor") then
+			self:register_message(Message.OnPlayerDodge, "dodge_healing_no_armor", callback(self, self, "_dodge_healing_no_armor"))
+		else
+			self:unregister_message(Message.OnPlayerDodge, "dodge_healing_no_armor")
 		end
 
 		if managers.blackmarket:equipped_grenade() == "smoke_screen_grenade" then
@@ -842,6 +848,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self.player_unit then
 			local damage_ext = self:player_unit():character_damage()
 			damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * self:upgrade_value("player", "backstab_dodge", 0))
+		end
+	end
+
+	function PlayerManager:_dodge_healing_no_armor()
+		local damage_ext = self:player_unit():character_damage()
+		if not (damage_ext:get_real_armor() > 0) then
+			damage_ext:restore_health(self:upgrade_value("player", "dodge_heal_no_armor"), false)
 		end
 	end
 end

@@ -844,7 +844,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
-			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.",																																																																																																																																																																																																
+			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nYour armor recovers ##5%## faster.",																																																																																																																																																																																																
 		
 
 			--}
@@ -906,7 +906,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Bulletproof--
 			["menu_iron_man_sc"] = "Bulletproof",
-			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##20%## more armor.\n\nACE: ##$pro##\nYou gain ##30%## more armor.\n\nYour armor recovery rate is increased by ##5%.##",																																																																																																																																																																																																																									
+			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##20%## more armor.\n\nACE: ##$pro##\nYou gain ##30%## more armor.\n\nYour armor recovers ##5%## faster.",																																																																																																																																																																																																																									
 					
 			--}
 			
@@ -1024,7 +1024,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##10%## of your dodge every second while sprinting.\n\nYour dodge meter fills up by ##30%## of your dodge every second while on a zipline.",																								
 
 		--Sneaky Bastard--
-		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nAttacks dealing health damage to you fill your dodge meter by an additional ##50%## of your dodge.",
+		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nWhile your armor is broken, dodging an attack restores ##3%## of your maximum health; and attacks you don't dodge fill your dodge meter ##50%## more.",
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
@@ -1092,7 +1092,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Low Blow--
 		["menu_unseen_strike_beta_sc"] = "Low Blow",
-		["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##\n\nYour critical hit chance is increased by an additional ##35%## when attacking enemies from behind with guns or melee.",																								
+		["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##\n\nYour critical hit chance is increased by an additional ##50%## when attacking enemies from behind with guns or melee.",																								
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Equilibrium",
@@ -1148,7 +1148,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",
-		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nYou start with and cannot heal above ##25%## of your maximum health.\n\nYou gain ##25## deflection but ##you can no longer heal##.\n\nEach point of deflection makes you take ##1%## less health damage.\n\nACE: ##$pro##\nYou gain an additional ##25## deflection, and healing is instead reduced by ##75%##.",																																																																																																																																																																																																																																		
+		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nYou start with and cannot heal above ##25%## of your maximum health.\n\nYou gain ##20## deflection but ##you can no longer heal##.\n\nEach point of deflection makes you take ##1%## less health damage.\n\nACE: ##$pro##\nYou gain an additional ##25## deflection, and healing is instead reduced by ##75%##.",																																																																																																																																																																																																																																		
 
 		--Berserker--
 		["menu_frenzy_sc"] = "Berserker",

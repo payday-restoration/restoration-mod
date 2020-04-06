@@ -719,7 +719,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_shield_knock"
+						"player_shield_knock",
+						"player_armor_regen_timer_multiplier"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1477,7 +1478,8 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_detection_risk_add_dodge_chance_2",
-						"player_health_damage_bonus_dodge"
+						"player_health_damage_bonus_dodge",
+						"player_dodge_heal_no_armor"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -2274,7 +2276,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_dodge_to_heal",
+					"player_dodge_stacking_heal",
 					"player_heal_over_time"
 				},
 				cost = 4000,
@@ -2526,7 +2528,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_heal_over_time",
-					"player_melee_to_heal",
+					"player_melee_stacking_heal",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

@@ -36,10 +36,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.sequence:add_inflict_updator_body("fire", self._unit:key(), self._inflict_damage_body:key(), self._inflict_damage_body:extension().damage)
 
 		--Load alternate heal over time tweakdata if player is using Infiltrator or Rogue.
-		if player_manager:has_category_upgrade("player", "melee_to_heal") then
+		if player_manager:has_category_upgrade("player", "melee_stacking_heal") then
 			self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
 			self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
-		elseif player_manager:has_category_upgrade("player", "dodge_to_heal") then
+		elseif player_manager:has_category_upgrade("player", "dodge_stacking_heal") then
 			self._doh_data = tweak_data.upgrades.dodge_to_hot_data or {}
 			self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
 		else 
@@ -569,7 +569,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		health_subtracted = self:get_real_health()
 		attack_data.damage = attack_data.damage * self._deflection
 
-		if managers.player:has_category_upgrade("player", "dodge_to_heal") and attack_data.damage > 0.0 then --Rogue health regen.
+		if managers.player:has_category_upgrade("player", "dodge_stacking_heal") and attack_data.damage > 0.0 then --Rogue health regen.
 			self._damage_to_hot_stack = {}
 		end
 		

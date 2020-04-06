@@ -1386,8 +1386,8 @@ function UpgradesTweakData:_init_pd2_values()
 			explosion = true,
 			melee = true,
 			taser_tased = true,
-			poison = true,
-			fire = true,
+			poison = false,
+			fire = false,
 			projectile = true,
 			swat_van = true,
 			sentry_gun = false,
@@ -1400,7 +1400,7 @@ function UpgradesTweakData:_init_pd2_values()
 		0.3,
 		0.4
 	}	
-	self.values.player.damage_to_hot_extra_ticks = {2}
+	self.values.player.damage_to_hot_extra_ticks = {3}
 	
 	self.values.player.perk_armor_loss_multiplier = {
 		0.5,

@@ -1118,19 +1118,86 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:action_request(action_data)
 
 			return
+		elseif hurt_type == "death" and damage_info.is_synced then
+			if self._queued_actions then
+				self._queued_actions = {}
+			end
+
+			if self._rope then
+				self._rope:base():retract()
+
+				self._rope = nil
+				self._rope_death = true
+
+				if self._unit:sound().anim_clbk_play_sound then
+					self._unit:sound():anim_clbk_play_sound(self._unit, "repel_end")
+				end
+			end
+
+			if Network:is_server() then
+				self:set_attention()
+			else
+				self:synch_attention()
+			end
+
+			local attack_dir = damage_info.col_ray and damage_info.col_ray.ray or damage_info.attack_dir
+			local hit_pos = damage_info.col_ray and damage_info.col_ray.position or damage_info.pos
+			local body_part = 1
+			local blocks = {
+				act = -1,
+				aim = -1,
+				action = -1,
+				tase = -1,
+				walk = -1,
+				light_hurt = -1
+			}
+
+			local tweak = self._tweak_data
+			local death_type = "normal"
+
+			if tweak.damage.death_severity then
+				if tweak.damage.death_severity < damage_info.damage / self._ext_damage._HEALTH_INIT then
+					death_type = "heavy"
+				end
+			end
+
+			local action_data = {
+				type = "hurt",
+				block_type = hurt_type,
+				hurt_type = hurt_type,
+				variant = damage_info.variant,
+				direction_vec = attack_dir,
+				hit_pos = hit_pos,
+				body_part = body_part,
+				blocks = blocks,
+				client_interrupt = Network:is_client(),
+				attacker_unit = damage_info.attacker_unit,
+				death_type = death_type,
+				ignite_character = damage_info.ignite_character,
+				start_dot_damage_roll = damage_info.start_dot_damage_roll,
+				is_fire_dot_damage = damage_info.is_fire_dot_damage,
+				fire_dot_data = damage_info.fire_dot_data,
+				allow_network = false
+			}
+
+			self:action_request(action_data)
+
+			return
 		elseif damage_info.is_synced or damage_info.variant == "bleeding" and not Network:is_server() then
 			return
 		end
 
-		if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "dot" or damage_info.variant == "graze" then
-			hurt_type = managers.modifiers:modify_value("CopMovement:HurtType", hurt_type)
+		if hurt_type ~= "death" then
+			if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "dot" or damage_info.variant == "graze" then
+				hurt_type = managers.modifiers:modify_value("CopMovement:HurtType", hurt_type)
 
-			if not hurt_type then
-				return
+				if not hurt_type then
+					return
+				end
 			end
 		end
 
-		if damage_info.variant == "stun" and self._anim_global == "shield" then
+		if self._anim_global == "shield" and damage_info.variant == "stun" and hurt_type ~= "death" then
 			hurt_type = "expl_hurt"
 			damage_info.result = {
 				variant = damage_info.variant,
@@ -1208,7 +1275,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		local client_interrupt = nil
 
-		if damage_info.variant == "tase" then
+		if damage_info.variant == "tase" and hurt_type ~= "death" then
 			block_type = "bleedout"
 		elseif hurt_type == "expl_hurt" or hurt_type == "fire_hurt" or hurt_type == "poison_hurt" or hurt_type == "taser_tased" then
 			block_type = "heavy_hurt"

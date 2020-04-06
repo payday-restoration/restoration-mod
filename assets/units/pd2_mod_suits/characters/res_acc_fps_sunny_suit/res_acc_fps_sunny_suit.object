@@ -197,7 +197,7 @@
 	</effects>
 
 	<graphics>
-		<graphic_group name="character" enabled="true" culling_object="g_body">
+		<graphic_group name="character" enabled="true" culling_object="c_capsule_mover_blocker">
 			<object name="g_body" 		enabled="true"  cpy_material_vars="contour_color, contour_opacity">
 				<material materials="mtr_body" />
 			</object>		

@@ -19,7 +19,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		----Weapon Mod Descriptions/names----
 		
 		--Reinfield--
-		["bm_wp_r870_s_folding_ext"] = "Muldon Stock (Retracted)",	
+		["bm_wp_r870_s_folding_ext"] = "Extended Muldon Stock",	
 		
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",

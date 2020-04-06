@@ -529,13 +529,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			attacker = self._unit
 		end
 
-		local send_hit_shield = 1
+		local send_hit_type = 1
 
 		if dmg_shield then
-			send_hit_shield = 2
+			send_hit_type = 2
 		end
 
-		self._unit:network():send("damage_explosion_fire", attacker, damage_percent, send_hit_shield, self._dead and true or false, Vector3())
+		self._unit:network():send("damage_explosion_fire", attacker, damage_percent, send_hit_type, self._dead and true or false, Vector3(), attack_data.weapon_unit)
 
 		if not self._dead then
 			self._unit:brain():on_damage_received(attacker_unit)
@@ -630,7 +630,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-	function SentryGunDamage:sync_damage_explosion(attacker_unit, damage_percent, hit_shield_number, death)
+	function SentryGunDamage:sync_damage_explosion(attacker_unit, damage_percent, hit_type, death)
 		if self._dead then
 			return
 		end
@@ -653,7 +653,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			dmg_shield = true
 			dmg_body = true
 		else
-			if hit_shield_number == 2 then
+			if hit_type == 2 then
 				dmg_shield = true
 				damage = damage_percent * self._SHIELD_HEALTH_INIT_PERCENT
 			else

@@ -2107,7 +2107,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 			self.spooc_titan.custom_voicework = "tspook"
 		end		
-		self.spooc_titan.die_sound_event = "mga_death_scream"
+		self.spooc_titan.die_sound_event_2 = "mga_death_scream"
 		self.spooc_titan.heal_cooldown = 67.5
 		table.insert(self._enemy_list, "spooc_titan")	
 	end

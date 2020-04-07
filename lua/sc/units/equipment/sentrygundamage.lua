@@ -535,7 +535,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			send_hit_type = 2
 		end
 
-		self._unit:network():send("damage_explosion_fire", attacker, damage_percent, send_hit_type, self._dead and true or false, Vector3(), attack_data.weapon_unit)
+		self._unit:network():send("damage_explosion_fire", attacker, damage_percent, send_hit_type, self._dead and true or false, Vector3(), self._unit)
 
 		if not self._dead then
 			self._unit:brain():on_damage_received(attacker_unit)

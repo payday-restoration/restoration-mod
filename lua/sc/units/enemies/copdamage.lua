@@ -83,7 +83,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 		local head = attack_data.variant ~= "stun" and self._head_body_name and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
 
-		if head and weap_unit and weap_unit:base() and not weap_unit:base().thrower_unit and attack_data.col_ray and attack_data.col_ray.ray and self._unit:base():has_tag("tank") then
+		if head and weap_unit and alive(weap_unit) and weap_unit:base() and not weap_unit:base().thrower_unit and attack_data.col_ray and attack_data.col_ray.ray and self._unit:base():has_tag("tank") then
 			mvector3.set(mvec_1, attack_data.col_ray.ray)
 			mrotation.z(self._unit:movement():m_head_rot(), mvec_2)
 
@@ -98,7 +98,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local damage = attack_data.damage
 
 		if attack_data.attacker_unit == managers.player:player_unit() then
-			if weap_unit and attack_data.variant ~= "stun" then
+			if weap_unit and alive(weap_unit) and attack_data.variant ~= "stun" then
 				local weap_base = weap_unit:base()
 				local is_grenade_or_ground_fire = nil
 

@@ -885,31 +885,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					common_data.unit:sound():say("burnhurt")
 				elseif action_type == "death" then
 					if common_data.ext_base:has_tag("tank") then
-						if common_data.char_tweak.die_sound_event then
-							common_data.unit:sound():say(common_data.char_tweak.die_sound_event)
-						else
-							common_data.unit:sound():say("x02a_any_3p")
-						end
+						common_data.unit:sound():say("x02a_any_3p")
 					else
 						common_data.unit:sound():say("burndeath")
-
-						if common_data.ext_base:has_tag("spooc") and common_data.char_tweak.die_sound_event then
-							common_data.unit:sound():play(common_data.char_tweak.die_sound_event)
-						end
 					end
 				end
 			elseif action_type == "death" then
-				if common_data.ext_base:has_tag("spooc") then
-					if common_data.char_tweak.die_sound_event then
-						common_data.unit:sound():play(common_data.char_tweak.die_sound_event)
-					end
-
-					common_data.unit:sound():say("x02a_any_3p")
-				elseif common_data.char_tweak.die_sound_event then
-					common_data.unit:sound():say(common_data.char_tweak.die_sound_event)
-				else
-					common_data.unit:sound():say("x02a_any_3p")
-				end
+				common_data.unit:sound():say("x02a_any_3p")
 			elseif action_type == "counter_tased" or action_type == "taser_tased" or action_desc.variant == "tase" then
 				if common_data.ext_base:has_tag("taser") or common_data.ext_base:has_tag("taser_titan") then
 					common_data.unit:sound():say("tasered")

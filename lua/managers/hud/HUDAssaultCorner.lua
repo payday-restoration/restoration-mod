@@ -815,17 +815,14 @@ function HUDAssaultCorner:_end_assault()
 	end
 	self._remove_hostage_offset = true
 	self._start_assault_after_hostage_offset = nil
-		if restoration.Options:GetValue("HUD/Hostage") then
-			self:_show_hostages()
-		end
 	self:_set_feedback_color(nil)
 	local corner_panel = self._hud_panel:child("corner_panel")
 	corner_panel:set_visible(false)
 	corner_panel:stop()
 	local assault_panel = self._hud_panel:child("assault_panel")
 	local text_panel = assault_panel:child("text_panel")
-	self._hud_panel:child("assault_panel"):child("text_panel"):stop()
-	self._hud_panel:child("assault_panel"):child("text_panel"):clear()
+	--self._hud_panel:child("assault_panel"):child("text_panel"):stop()
+	--self._hud_panel:child("assault_panel"):child("text_panel"):clear()
 	if self:has_waves() then
 		assault_panel:set_visible(restoration.Options:GetValue("HUD/AssaultStyle") == 1)
 		self._raid_finised = false
@@ -933,6 +930,12 @@ function HUDAssaultCorner:_offset_hostage(is_offseted, hostage_panel)
 		if self._start_assault_after_hostage_offset and lerp > 0.4 then
 			self._start_assault_after_hostage_offset = nil
 			self:start_assault_callback()
+		end
+		if hostage_panel:y() == 0 and restoration.Options:GetValue("HUD/AssaultStyle") == 1 then
+			wait(1)
+			self:_show_hostages()
+		elseif hostage_panel:y() == 0 and restoration.Options:GetValue("HUD/AssaultStyle") == 2 then
+			self:_show_hostages()
 		end
 	end
 	if self._start_assault_after_hostage_offset then

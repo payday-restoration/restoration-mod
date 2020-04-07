@@ -500,6 +500,44 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		data.internal_data.charge_path = verified_paths.charge_path
 	end
 
+	function CopLogicTravel.chk_group_ready_to_move(data, my_data)
+		local my_objective = data.objective
+
+		if not my_objective.grp_objective then
+			return true
+		end
+
+		if CopLogicTravel._chk_close_to_criminal(data, my_data) and data.tactics and data.tactics.obstacle then
+			if data.attention_obj and data.attention_obj.verified_t and data.attention_obj.verified then			
+				return
+			end
+		end
+
+		local my_dis = mvector3.distance_sq(my_objective.area.pos, data.m_pos)
+
+		if my_dis > 4000000 then
+			return true
+		end
+
+		my_dis = my_dis * 1.15 * 1.15
+
+		for u_key, u_data in pairs(data.group.units) do
+			if u_key ~= data.key then
+				local his_objective = u_data.unit:brain():objective()
+
+				if his_objective and his_objective.grp_objective == my_objective.grp_objective and not his_objective.in_place then
+					local his_dis = mvector3.distance_sq(his_objective.area.pos, u_data.m_pos)
+
+					if my_dis < his_dis then
+						return false
+					end
+				end
+			end
+		end
+
+		return true
+	end	
+
 	function CopLogicTravel._chk_start_pathing_to_next_nav_point(data, my_data)
 		if not CopLogicTravel.chk_group_ready_to_move(data, my_data) then
 			return

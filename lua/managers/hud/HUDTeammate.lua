@@ -1011,7 +1011,7 @@ function HUDTeammate:set_special_equipment_amount(equipment_id, amount)
 end
 
 function HUDTeammate:teammate_progress(enabled, tweak_data_id, timer, success)
-	self._player_panel:child("radial_health_panel"):set_alpha(enabled and 0.2 or 1)
+	self._player_panel:child("weapons_panel"):set_alpha(enabled and 0.2 or 1)
 	self._player_panel:child("interact_panel"):stop()
 	self._player_panel:child("interact_panel"):set_visible(enabled)
 

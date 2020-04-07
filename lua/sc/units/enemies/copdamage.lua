@@ -705,7 +705,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 
 			if head then
-				managers.player:on_headshot_dealt()
+				managers.player:on_headshot_dealt(self._unit, attack_data)
 
 				headshot_by_player = true
 				headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)

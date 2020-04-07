@@ -1015,7 +1015,7 @@ function UpgradesTweakData:_init_pd2_values()
 					0.5
 				}
 				self.values.player.dodge_heal_no_armor = {
-					0.03 --% of maximum health
+					0.05 --% of maximum health
 				}
 
 			--}

@@ -17,9 +17,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if current_stacks <= max_stacks then
 						player_manager:mul_to_property("trigger_happy", damage_bonus)
 					end
+					max_time = current_time + add_time
 				end
-
-				max_time = current_time + add_time
 			end
 
 			local function on_hit(unit, attack_data)

@@ -416,6 +416,8 @@
 	"RestorationModMaskOnTextTitleID" : "Mask on text",
 	"RestorationModStopAllBotsTitleID" : "Stop All Bots",
 	"RestorationModStopAllBotsDescID" : "Stops all bots by holding the stop bot key",
+	"RestorationModPONRTrackTitleID" : "Point Of No Return Track",
+	"RestorationModPONRTrackDescID" : "Change",
 	"RestorationModScaleTitleID" : "HUD scaling",
 	"RestorationModScaleDescID" : "Changes HUD scaling. May require a restart.",
 	"RestorationModSizeOnScreenTitleID" : "HUD size on screen",

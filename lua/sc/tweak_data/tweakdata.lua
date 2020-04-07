@@ -4,13 +4,6 @@
 
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-	table.insert(tweak_data.music.track_list, 
-		{
-			track = "resmusic_ponr",
-			lock = "ponr"	
-		}
-	)
-
 	tweak_data.ammo = {}
 	tweak_data.ammo.ricochet = {}
 	tweak_data.ammo.ricochet.max_ricochets = 5

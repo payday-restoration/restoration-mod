@@ -259,7 +259,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--New menu stats--
 		["bm_menu_deflection"] = "Deflection",
-		["bm_menu_swap_speed"] = "Swap Speed",
+		["bm_menu_swap_speed"] = "Swap Time",
 	})
 end)
 

@@ -9739,7 +9739,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			animations = {
 				reload = "reload",
@@ -9763,7 +9763,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -9815,7 +9816,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 4,
 				spread = 1,
-				concealment = -3
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "pd2_clan"
 		}
@@ -9836,7 +9838,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 1,
 				suppression = -2,
 				alert_size = -2,
-				concealment = -2
+				spread = -1
 			},
 			dlc = "pd2_clan"
 		}
@@ -9946,7 +9948,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "pd2_clan",
 			animations = {
@@ -11760,7 +11763,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 4,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "gage_pack",
 			adds = {
@@ -11784,7 +11787,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "gage_pack",
 			adds = {
@@ -11829,7 +11833,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			dlc = "gage_pack"
 		}
@@ -11891,7 +11895,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 4,
 				spread = 1,
-				concealment = -3
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "gage_pack"
 		}
@@ -11912,7 +11917,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 1,
 				alert_size = -2,
 				suppression = -2,
-				concealment = -2
+				spread = -1
 			},
 			dlc = "gage_pack"
 		}
@@ -19221,7 +19226,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -19246,7 +19252,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 1,
 				alert_size = -2,
 				suppression = -2,
-				concealment = -2
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_c96_sight = {
@@ -19376,7 +19382,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_c96_b_long.third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_pis_c96_pts/wpn_third_pis_c96_b_long"
@@ -21215,7 +21221,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 4,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "the_bomb",
 			adds = {"wpn_fps_pis_hs2000_b_custom"}
@@ -21235,7 +21241,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 6,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "the_bomb",
 			adds = {"wpn_fps_pis_hs2000_b_long"},
@@ -22330,14 +22337,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_akm4_modpack/weapons/wpn_fps_upg_ak_s_solidstock/wpn_fps_upg_ak_s_solidstock",
 			stats = {
-				value = 1,
-				recoil = 1,
-				spread = -1
-			},
-			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200
-			},			
+				value = 0
+			},		
 			texture_bundle_folder = "dlc_akm4",
 			dlc = "akm4_pack",
 			is_a_unlockable = true,
@@ -28206,10 +28207,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1, 
-				recoil = 1, 
-				concealment = -4
+				recoil = -1, 
+				concealment = -1
 				},
 			dlc = "berry",
+			--[[
 			forbids = {
 				"wpn_fps_upg_ns_pis_large",
 				"wpn_fps_upg_ns_pis_medium",
@@ -28226,6 +28228,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"wpn_fps_pis_g18c_co_1",
 				"wpn_fps_pis_g18c_co_comp_2"
 			}
+			]]--
 		}
 		self.parts.wpn_fps_pis_sparrow_b_threaded = {
 			pcs = {
@@ -28239,7 +28242,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "rip",
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_rip/weapons/wpn_fps_pis_sparrow_pts/wpn_fps_pis_sparrow_b_threaded",
-			stats = {value = 1, recoil = 1, concealment = -1},
+			stats = {value = 1, recoil = 1, spread = -1},
 			dlc = "berry"
 		}
 		self.parts.wpn_fps_pis_sparrow_body_941 = {
@@ -29539,6 +29542,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
+				recoil = -1,
 				concealment = -1
 			},
 			forbids = { -- workaround to fix the ssp killing the game
@@ -34435,7 +34439,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "pd2_clan",
 			texture_bundle_folder = "fi7"
@@ -40377,7 +40382,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_pis_legacy_body_standard = {
@@ -41462,10 +41468,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			stats = {
-				zoom = 0,
-				spread = 0,
-				concealment = 0,
-				recoil = 0,
+				zoom = 2,
+				concealment = -1,
 				value = 6
 			},
 			perks = {
@@ -42506,7 +42510,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				spread = 1,
 				value = 5,
-				concealment = -2
+				concealment = -1,
+				recoil = -1
 			}
 		}
 		self.parts.wpn_fps_pis_stech_body_standard = {
@@ -42543,7 +42548,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				recoil = 1,
 				value = 4,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_stech_g_tactical = {
@@ -42561,6 +42566,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				value = 3,
+				recoil = -1,
 				concealment = 1
 			}
 		}
@@ -42617,7 +42623,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_stech_sl_standard = {

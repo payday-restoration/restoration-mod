@@ -1,4 +1,4 @@
-	local old_init_risk_assets = AssetsTweakData._init_risk_assets
+local old_init_risk_assets = AssetsTweakData._init_risk_assets
 function AssetsTweakData:_init_risk_assets(tweak_data)
 	old_init_risk_assets(self, tweak_data)
 		
@@ -204,7 +204,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		--Alex 1 Zipline
 		self.alex_1_zipline = {}
 		self.alex_1_zipline.name_id = "menu_alex_1_zipline"
-		self.alex_1_zipline.texture = "guis/textures/pd2/mission_briefing/assets/generic_assets/generic_escape"
+		self.alex_1_zipline.texture = "guis/textures/pd2/mission_briefing/assets/alex_1_zipline"
 		self.alex_1_zipline.visible_if_locked = true
 		self.alex_1_zipline.no_mystery = true
 		self.alex_1_zipline.unlock_desc_id = "menu_alex_1_zipline_desc"

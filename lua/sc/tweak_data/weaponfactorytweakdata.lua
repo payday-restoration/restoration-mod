@@ -6691,9 +6691,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_b_long",
 			stats = {
 				value = 5,
-				spread_moving = -3,
+				recoil = -1,
 				spread = 1,
-				concealment = -2
+				concealment = -1
 			},
 			forbids = {
 				"wpn_fps_pis_deagle_co_long",
@@ -6722,9 +6722,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_co",
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_co_long",
 			stats = {
-				value = 6,
-				spread = 2,
-				concealment = -5
+				value = 3,
+				spread = 1,
+				recoil = -1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_pis_deagle_co_short = {
@@ -6739,12 +6740,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_co",
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_co_short",
 			stats = {
-				value = 7,
-				spread = 1,
+				value = 2,
 				recoil = 1,
 				alert_size = -2,
 				suppression = -2,
-				concealment = -4
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_deagle_fg_rail = {
@@ -6767,8 +6767,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_g_bling",
 			stats = {
 				value = 10,
-				spread_moving = -2,
-				concealment = 1
+				recoil = 1,
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_deagle_g_ergo = {
@@ -6784,9 +6784,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_pis_deagle_pts/wpn_fps_pis_deagle_g_ergo",
 			stats = {
 				value = 5,
-				spread_moving = 2,
-				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_pis_deagle_g_standard = {
@@ -7453,7 +7452,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			adds = {
 				"wpn_fps_pis_1911_o_long"
@@ -7498,7 +7498,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			adds = {
 				"wpn_fps_pis_1911_o_standard"
@@ -7532,11 +7532,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_co_1",
 			stats = {
 				value = 5,
-				spread_moving = -1,
 				suppression = -2,
 				alert_size = -2,
 				recoil = 1,
-				concealment = -2
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_1911_co_2 = {
@@ -7553,9 +7552,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_co_2",
 			stats = {
 				value = 2,
-				spread_moving = 1,
+				recoil = -1,
 				spread = 1,
-				concealment = -3
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_pis_1911_g_bling = {
@@ -7572,7 +7571,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 10,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_1911_g_ergo = {
@@ -7588,6 +7587,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_pis_1911_pts/wpn_fps_pis_1911_g_ergo",
 			stats = {
 				value = 2,
+				recoil = -1,
 				concealment = 1
 			}
 		}
@@ -9369,7 +9369,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_pis_rage_b_comp2 = {
@@ -9387,9 +9388,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_pis_rage_pts/wpn_fps_pis_rage_b_comp2",
 			stats = {
 				value = 5,
-				recoil = 2,
-				spread = -1,
-				concealment = -1
+				recoil = 1,
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_ammo_mag_type = {
@@ -9420,8 +9420,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				spread = 2,
-				recoil = -1,
-				concealment = -3
+				recoil = -2,
+				concealment = -2
 			}
 		}
 		self.parts.wpn_fps_pis_rage_b_short = {
@@ -9438,7 +9438,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_pis_rage_b_standard = {
@@ -9461,6 +9461,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_pis_rage_pts/wpn_fps_pis_rage_body_smooth",
 			stats = {
 				value = 5,
+				recoil = -1,
 				concealment = 1
 			},
 			animations = {
@@ -9503,7 +9504,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_rage_g_standard = {
@@ -24225,7 +24226,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_1911_g_engraved",
 			a_obj = "a_g",
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_pis_1911_g_engraved/wpn_fps_pis_1911_g_engraved",
-			stats = {value = 3, recoil = -1, spread = 2, concealment = -2},
+			stats = {value = 3, recoil = -1, spread = 1, concealment = -1},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free"
 		}
@@ -25381,8 +25382,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				spread_moving = -1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "west",
 			texture_bundle_folder = "west"
@@ -25401,8 +25402,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = -1,
-				spread_moving = -1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "west",
 			texture_bundle_folder = "west"
@@ -25442,7 +25442,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			dlc = "west",
 			texture_bundle_folder = "west"
@@ -25461,7 +25461,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			dlc = "west",
 			texture_bundle_folder = "west"
@@ -25797,7 +25797,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			texture_bundle_folder = "dlc_arena",
 			dlc = "arena"
@@ -25815,6 +25816,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_arena/weapons/wpn_fps_pis_2006m_pts/wpn_fps_pis_2006m_b_medium",
 			stats = {
 				value = 1,
+				spread = -1,
 				concealment = 1
 			},
 			texture_bundle_folder = "dlc_arena",
@@ -25833,7 +25835,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_arena/weapons/wpn_fps_pis_2006m_pts/wpn_fps_pis_2006m_b_short",
 			stats = {
 				value = 1,
-				spread = -1,
+				spread = -2,
 				concealment = 2
 			},
 			texture_bundle_folder = "dlc_arena",
@@ -25877,7 +25879,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_2006m_g_bling",
 			a_obj = "a_g",
 			unit = "units/pd2_dlc_arena/weapons/wpn_fps_pis_2006m_pts/wpn_fps_pis_2006m_g_bling",
-			stats = {value = 1, concealment = -1, recoil = 1},
+			stats = {value = 1, spread = -1, recoil = 1},
 			texture_bundle_folder = "dlc_arena",
 			dlc = "arena"
 		}
@@ -34603,7 +34605,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_chinchilla_b_satan",
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla_pts/wpn_fps_pis_chinchilla_b_satan",
-			stats = {value = 1, spread = 1, concealment = -2},
+			stats = {value = 1, spread = 1, recoil = -1, concealment = -1},
 			stance_mod = {
 				wpn_fps_pis_chinchilla = {
 					translation = Vector3(0, 0, -0.58)
@@ -34657,7 +34659,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_chinchilla_g_black",
 			a_obj = "a_g",
 			unit = "units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla_pts/wpn_fps_pis_chinchilla_g_black",
-			stats = {value = 1, concealment = 1},
+			stats = {value = 1, recoil = -1, concealment = 1},
 			texture_bundle_folder = "max"
 		}
 		self.parts.wpn_fps_pis_chinchilla_g_death = {
@@ -34671,7 +34673,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_chinchilla_g_death",
 			a_obj = "a_g",
 			unit = "units/pd2_dlc_max/weapons/wpn_fps_pis_chinchilla_pts/wpn_fps_pis_chinchilla_g_death",
-			stats = {value = 1, recoil = 1, concealment = -1},
+			stats = {value = 1, recoil = 1, spread = -1},
 			texture_bundle_folder = "max"
 		}
 		self.parts.wpn_fps_pis_chinchilla_g_standard = {
@@ -35742,7 +35744,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_shrew_g_ergo = {
@@ -35759,6 +35761,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				value = 1,
+				recoil = -1,
 				concealment = 1
 			}
 		}
@@ -35822,7 +35825,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			stats = {
-				value = 1
+				value = 1,
+				recoil = 1,
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_pis_shrew_sl_standard = {
@@ -36475,7 +36480,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			desc_id = "bm_wp_90_body_boxy_desc",			
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_p90_body_boxy/wpn_fps_smg_p90_body_boxy",
 			pcs = {},
-			stats = {value = 1},
+			stats = {value = 0},
 			animations = {
 				reload_not_empty = "reload_not_empty",
 				reload = "reload"
@@ -36489,7 +36494,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_mac10_body_modern",
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_smg_mac10_body_modern/wpn_fps_smg_mac10_body_modern",
 			pcs = {},
-			stats = {value = 1},
+			stats = {value = 0},
 			animations = {
 				fire = "recoil",
 				reload = "reload",
@@ -36505,10 +36510,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_deagle_b_modern/wpn_fps_pis_deagle_b_modern",
 			pcs = {},
 			stats = {
-				value = 5,
-				spread = -1,
-				concealment = 2
+				value = 0
 			},
+			--[[
 			forbids = {
 				"wpn_fps_upg_ns_pis_large",
 				"wpn_fps_upg_ns_pis_medium",
@@ -36521,6 +36525,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"wpn_fps_pis_g18c_co_comp_2",
 				"wpn_fps_pis_g18c_co_1"				
 			},				
+			]]--
 			third_unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_deagle_b_modern/wpn_third_pis_deagle_b_modern"
 		}
 		self.parts.wpn_fps_pis_beretta_body_modern = {
@@ -36530,7 +36535,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_beretta_body_modern",
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_beretta_body_modern/wpn_fps_pis_beretta_body_modern",
 			pcs = {},
-			stats = {value = 1},
+			stats = {value = 0},
 			forbids = {"wpn_fps_pis_beretta_body_rail"},
 			animations = {
 				fire = "recoil",
@@ -36546,7 +36551,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_judge_body_modern",
 			unit = "units/pd2_dlc_icc/weapons/wpn_fps_pis_judge_body_modern/wpn_fps_pis_judge_body_modern",
 			pcs = {},
-			stats = {value = 1},
+			stats = {value = 0},
 			forbids = {
 				"wpn_fps_addon_ris",
 				"wpn_fps_pis_judge_fl_adapter"

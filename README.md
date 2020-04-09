@@ -87,6 +87,8 @@ Nardo: Allowing us to include "First-person Stealth Suit Fixes".
 
 KLEITON and Tom Blaine: taking on the huge task of translating the steam guide into Russian.
 
+DryBittenCuticles: voicing the Policía Federal Grenadier
+
 MarioInATopHat: voicing Big Dave
 
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale

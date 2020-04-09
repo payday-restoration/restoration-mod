@@ -659,7 +659,7 @@ function UpgradesTweakData:_init_pd2_values()
 				
 				--Shotgun CQB
 				self.values.shotgun.reload_speed_multiplier = {1.25, 1.5}
-				self.values.shotgun.enter_steelsight_speed_multiplier = {1.5}
+				self.values.shotgun.enter_steelsight_speed_multiplier = {1.75}
 				self.skill_descs.shotgun_cqb = {multibasic = "25%", multibasic2 = "25%", multipro = "25%", multipro2 = "125%"}
 
 				--Shotgun Impact

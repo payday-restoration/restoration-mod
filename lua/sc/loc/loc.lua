@@ -799,7 +799,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB	
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##50%## faster with shotguns.\n\nACE: ##$pro##\nYou reload shotguns ##25%## faster.",																								
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##75%## faster with shotguns.\n\nACE: ##$pro##\nYou reload shotguns ##25%## faster.",																								
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",

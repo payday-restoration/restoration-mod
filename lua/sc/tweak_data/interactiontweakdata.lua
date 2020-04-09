@@ -586,7 +586,11 @@ function InteractionTweakData:init(...)
 		}	
 		self.grenade_briefcase = deep_clone(self.invisible_interaction_open_superfast)
 		self.grenade_briefcase.contour = "deployable"
+		
 		--Gage package
 		self.gage_assignment.timer = 0		
+		self.gage_assignment.sound_start = "money_grab"	
+		self.gage_assignment.sound_event = "money_grab"	
+		self.gage_assignment.sound_done = "money_grab"	
 	end
 end

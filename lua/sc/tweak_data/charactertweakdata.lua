@@ -2758,7 +2758,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.boom.announce_incomming = "incomming_gren"
 		self.boom.steal_loot = nil
-		self.boom.custom_voicework = "grenadier"
+		if is_federales then
+		    self.boom.custom_voicework = "grenadier_bex"
+		else
+		    self.boom.custom_voicework = "grenadier"
+		end
 		self.boom.is_special = true		
 		self.boom.heal_cooldown = 30
 		table.insert(self._enemy_list, "boom")

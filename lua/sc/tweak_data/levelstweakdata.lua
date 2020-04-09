@@ -32,7 +32,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///MEXICAN LEVELS\\\--
 		self.bex.package = {"packages/mexicoassets", "packages/job_bex"}
 
-		self.mex_cooking.package = {"packages/mexicoassets", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
+		self.mex_cooking.package = {"packages/mexicoassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
 		self.mex_cooking.ai_group_type = federales 
 		self.mex_cooking.player_style = "suit_sunny"	
 		
@@ -63,7 +63,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.arm_for.ai_group_type = murkywater 
 		self.arm_for.player_style = "sneak_suit"
 		
-		self.mex.package = {"packages/murkyassets", "packages/job_mex"}
+		self.mex.package = {"packages/murkyassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex"}
 		self.mex.ai_group_type = murkywater 
 		self.mex.player_style = "suit_sunny"	
 

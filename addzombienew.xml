@@ -149,13 +149,13 @@
 	<material_config path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2_contour" force="true" />
 	<object path="units/pd2_dlc_hvh/characters/ene_sniper_hvh_2/ene_sniper_hvh_2" force="true" />
 
-	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" load="true"/>
+<!-- 	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" load="true"/>
 	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_husk" force="true" load="true"/>
 	<model path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
 	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
 	<material_config path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
 	<material_config path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_contour" force="true" />
-	<object path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" /> -->
 
 	<unit path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1" force="true" load="true"/>
 	<unit path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1_husk" force="true" load="true"/>

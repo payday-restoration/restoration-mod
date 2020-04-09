@@ -1,17 +1,30 @@
-<materials version="3" group="ene_spook_hvh_1">
+<materials version="3" group="ene_akan_fbi_spooc_asval_smg">
     <material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
-        <bump_normal_texture 	file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_nm"/>
-        <diffuse_texture 		file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df"/>
+		<bump_normal_texture 			file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_nm"/>
+		<diffuse_texture 				file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" 	type="scalar" name="contour_opacity"/>
     </material>
 
     <material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
-        <bump_normal_texture    file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_nm" mip="1" />
-        <diffuse_texture        file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df" mip="1" />
+		<bump_normal_texture 			file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_nm" mip="1" />
+		<diffuse_texture 				file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df" mip="1" />
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0"     type="scalar" name="contour_opacity"/>
     </material>
+    <material name="mtr_body_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 			file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_nm" mip="4" />
+		<diffuse_texture 				file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df" mip="4" />
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_night_vision" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_halloween/characters/shared_textures/skull_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/shared_textures/skull_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0"     type="scalar" name="contour_opacity"/>
+    </material>
+
 
 	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
 		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_il"/>

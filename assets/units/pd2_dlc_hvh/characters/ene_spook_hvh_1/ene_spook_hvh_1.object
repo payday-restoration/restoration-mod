@@ -199,41 +199,50 @@
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
-
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" />
-				<object name="g_body_lod1" 	enabled="true" lod="1" >
-				</object>
+				<object name="g_body_lod1" 	enabled="true" lod="1" />
 			</lod_object>
-	
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-
 			<object name="g_il" 		enabled="false" />
-			
+			<object name="g_nvg" enabled="true"/> <!--6174151832083474918-->
 		</graphic_group>
+
 		<graphic_group name="grp_body_no_head" enabled="false" >
-			<lod_object name="lod_no_head">
-				<object name="g_body_no_head" enabled="true"  max_distance="2000">
+			<!-- <lod_object name="lod_no_head"> -->
+				<object name="g_body_no_head" enabled="true"  max_distance="2000" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod1" max_distance="1500" />
+					<material materials="mtr_body_lod2" />
 				</object>
 				<object name="g_body_no_head_lod1" enabled="true" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2" />
 				</object>
-			</lod_object>
+			<!-- </lod_object> -->
 			<object name="s_body_no_head" enabled="true" shadow_caster="true"/>
 		</graphic_group>
 		<graphic_group name="grp_body_bottom" enabled="false" >
-			<lod_object name="lod_bottom">
-				<object name="g_body_bottom" enabled="true"  max_distance="2000">
+			<!-- <lod_object name="lod_bottom"> -->
+				<object name="g_body_bottom" enabled="true"  max_distance="2000" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod1" max_distance="1500" />
+					<material materials="mtr_body_lod2" />
 				</object>
 				<object name="g_body_bottom_lod1" enabled="true" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2" />
 				</object>
-			</lod_object>
+			<!-- </lod_object> -->
 
 			<object name="s_body_bottom" enabled="true" shadow_caster="true"/>
 		</graphic_group>
 	</graphics>
-
+	
 	<lights>
 		<light name="point_light" enabled="false" multiplier="reddot" far_range="25" near_range="1" falloff="4.0" type="omni|specular" />
 	</lights>
+
+
 
 </dynamic_object>

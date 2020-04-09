@@ -1,4 +1,4 @@
-<materials version="3" group="ene_spook_hvh_1">
+<materials version="3" group="ene_akan_fbi_spooc_asval_smg">
 	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 			file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_nm"/>
 		<diffuse_texture 				file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df"/>
@@ -7,6 +7,14 @@
 	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 			file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_nm" mip="1" />
 		<diffuse_texture 				file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df" mip="1" />
+	</material>
+	<material name="mtr_body_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 			file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_nm" mip="4" />
+		<diffuse_texture 				file="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/spook_hvh_df" mip="4" />
+	</material>
+	<material name="mtr_night_vision" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_halloween/characters/shared_textures/skull_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/shared_textures/skull_df"/>
 	</material>
 
 	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">

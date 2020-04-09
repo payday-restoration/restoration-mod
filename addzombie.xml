@@ -1,5 +1,13 @@
 <table directory="assets">
-	<!--spooky shit below-->	
+	<!--spooky shit below-->
+	<!--swat cloaker-->	
+	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" load="true"/>
+	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_husk" force="true" load="true"/>
+	<model path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
+	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
+	<material_config path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_contour" force="true" />
+	<object path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />	
 	<!--FBI UMP Zombie-->
 	<object path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>

@@ -6208,7 +6208,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 7,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 		}
 		self.parts.wpn_fps_smg_p90_b_short = {
@@ -6570,7 +6571,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_smg_mp9_b_dummy = {
@@ -6592,14 +6593,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"gadget",
 			"sight",
 			"vertical_grip"
-		}
-		self.wpn_fps_smg_mp9.override = {
-			wpn_fps_upg_ammo_p = {
-				stats = {
-					value = 3,
-					damage = 12
-				}
-			}
 		}
 		self.wpn_fps_smg_mp9.default_blueprint = {
 			"wpn_fps_smg_mp9_body_mp9",
@@ -7181,7 +7174,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			adds = {
 				"wpn_fps_smg_mp5_b_mp5a5"
@@ -7203,12 +7196,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_fg",
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_fg_mp5sd",
 			stats = {
-				value = 10,
-				spread_moving = -1,
-				suppression = 13,
-				alert_size = 13,
-				spread = 1,
-				recoil = -1,
+				value = 5,
+				suppression = 12,
+				alert_size = 12,
+				spread = 2,
+				recoil = -2,
 				concealment = -2
 			},
 			perks = {"silencer"},
@@ -7244,6 +7236,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 9,
 				extra_ammo = 20,
+				spread = -1,
 				concealment = -2,
 				reload = -2
 			}
@@ -7268,6 +7261,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_s_adjust",
 			stats = {
 				value = 3,
+				recoil = -1,
 				concealment = 1
 			}
 		}
@@ -7283,7 +7277,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_fps_smg_mp5_pts/wpn_fps_smg_mp5_s_ring",
 			stats = {
 				value = 3,
-				recoil = -1,
+				recoil = -2,
 				concealment = 2
 			}
 		}
@@ -16331,13 +16325,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_b_suppressed",
 			stats = {
-				value = 10,
-				suppression = 13,
-				alert_size = 13,
+				value = 5,
+				suppression = 12,
+				alert_size = 12,
 				spread = 2,
-				recoil = -1,
-				spread_moving = 1,
-				concealment = -4
+				recoil = -2,
+				concealment = -2
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -16378,7 +16371,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			dlc = "hl_miami",
 			texture_bundle_folder = "hl_miami",
@@ -16393,6 +16386,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_g_ergo",
 			stats = {
 				value = 1,
+				recoil = -1,
 				concealment = 1
 			},
 			dlc = "hl_miami",
@@ -16422,8 +16416,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_miami/weapons/wpn_fps_smg_scorpion_pts/wpn_fps_smg_scorpion_m_extended",
 			stats = {
 				value = 3,
-				concealment = -2,
-				reload = 4
+				concealment = -1,
+				spread = -1,
+				reload = 3
 			},
 			has_description = true,
 			desc_id = "bm_sc_scorpion_double_mag",
@@ -16445,7 +16440,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "hl_miami",
 			texture_bundle_folder = "hl_miami",
@@ -16469,7 +16464,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			dlc = "hl_miami",
 			texture_bundle_folder = "hl_miami",
@@ -23999,13 +23994,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			parent = "barrel",
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_mp9_b_suppressed/wpn_fps_smg_mp9_b_suppressed",
 			stats = {
-				value = 10,
-				suppression = 13,
-				alert_size = 13,
-				spread_moving = -2,
+				value = 5,
+				suppression = 12,
+				alert_size = 12,
 				spread = 2,
-				recoil = -1,
-				concealment = -4
+				recoil = -2,
+				concealment = -2
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -24022,7 +24016,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free"
@@ -24036,11 +24030,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_p90_b_ninja/wpn_fps_smg_p90_b_ninja",
 			stats = {
 				value = 10,
-				suppression = 13,
-				alert_size = 13,
-				spread = 2,
-				recoil = -1,
-				concealment = -4
+				suppression = 10,
+				alert_size = 10,
+				spread = -1,
+				recoil = 1
 			},
 			texture_bundle_folder = "butcher_pack_mods",
 			dlc = "butch_pack_free",
@@ -27435,7 +27428,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka_pts/wpn_fps_smg_baka_b_comp",
 			stats = {
 				value = 1,
-				concealment = 1
+				spread = -1,
+				concealment = 1,
 			},
 			texture_bundle_folder = "dragon",
 			dlc = "dragon"
@@ -27460,11 +27454,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka_pts/wpn_fps_smg_baka_b_midsupp",
 			stats = {
-				value = 3,
-				concealment = -3,
-				spread = 1,
+				value = 2,
 				suppression = 11,
-				alert_size = 11
+				alert_size = 11,
+				recoil = -1,
+				spread = 1,
+				concealment = -1
 			},
 			texture_bundle_folder = "dragon",
 			dlc = "dragon",
@@ -27486,11 +27481,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka_pts/wpn_fps_smg_baka_b_smallsupp",
 			stats = {
-				value = 4,
-				concealment = -2,
+				value = 3,
 				suppression = 10,
 				alert_size = 10,
-				recoil = 1
+				recoil = 1,				
+				spread = -1
 			},
 			texture_bundle_folder = "dragon",
 			dlc = "dragon",
@@ -27512,12 +27507,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_b",
 			unit = "units/pd2_dlc_dragon/weapons/wpn_fps_smg_baka_pts/wpn_fps_smg_baka_b_longsupp",
 			stats = {
-				value = 8,
-				concealment = -4,
+				value = 5,
+				suppression = 12,
+				alert_size = 12,
 				spread = 2,
-				recoil = -1,
-				suppression = 13,
-				alert_size = 13
+				recoil = -2,
+				concealment = -2
 			},
 			texture_bundle_folder = "dragon",
 			dlc = "dragon",
@@ -27549,7 +27544,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = -1,
-				concealment = 2
+				concealment = 1
 			}
 		}
 		self.parts.wpn_fps_smg_baka_s_folded = {
@@ -27576,7 +27571,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_smg_baka_o_adapter = {
@@ -29315,7 +29310,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			name_id = "bm_wp_sr2_s_unfolded",
 			a_obj = "a_s",
 			unit = "units/pd2_dlc_coco/weapons/wpn_fps_smg_sr2_parts/wpn_fps_smg_sr2_s_unfolded",
-			stats = {value = 1, recoil = 1, concealment = -1},
+			stats = {value = 1, recoil = 1, spread = -1},
 			is_a_unlockable = true,
 			texture_bundle_folder = "coco"
 		}
@@ -29340,13 +29335,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			parent = "barrel",
 			unit = "units/pd2_dlc_coco/weapons/wpn_fps_smg_sr2_parts/wpn_fps_smg_sr2_ns_silencer",
 			stats = {
-				value = 10,
-				suppression = 13,
-				alert_size = 13,
+				value = 5,
+				suppression = 12,
+				alert_size = 12,
 				spread = 2,
-				recoil = -1,
-				spread_moving = -2,
-				concealment = -4
+				recoil = -2,
+				concealment = -2
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -29716,6 +29710,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 9,
 					extra_ammo = 40,
 					reload = -2,
+					spread = -1,
 					concealment = -2
 				},
 			},
@@ -29738,8 +29733,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 1,
 					recoil = -2,
-					spread = 2,
-					concealment = 1
+					spread = 2
 				},
 				animations = {}
 			},
@@ -32248,7 +32242,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -3
+				recoil = -1,
+				concealment = -1
 			},
 			perks = {"gadget"},
 			texture_bundle_folder = "tng",
@@ -32275,9 +32270,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_tng/weapons/wpn_fps_smg_mp5_s_folding/wpn_fps_smg_mp5_s_folding",
 			stats = {
 				value = 1, 
-				concealment = -2, 
 				spread = -1, 
-				recoil = 2
+				recoil = 1
 			},
 			texture_bundle_folder = "tng",
 			dlc = "tango",
@@ -37854,8 +37848,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_osa/weapons/wpn_fps_smg_x_scorpion/wpn_fps_smg_x_scorpion",
 			override = {wpn_fps_smg_scorpion_m_extended = {stats = {
 					value = 3,
-					concealment = -2,
-					reload = 4
+					concealment = -1,
+					spread = -1,
+					reload = 3
 			}}},
 			adds = {
 				wpn_fps_upg_fl_pis_laser = {"wpn_fps_smg_scorpion_extra_rail_gadget"},
@@ -39675,6 +39670,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				concealment = 1,
+				recoil = -1,
 				value = 1
 			}
 		}
@@ -39696,9 +39692,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			a_obj = "a_m",
 			type = "magazine",
 			name_id = "bm_wp_shepheard_m_standard",
-			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_mag_standard",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_mag_extended",
 			bullet_objects = {
-				amount = 20,
+				amount = 30,
 				prefix = "g_bullet_"
 			},
 			stats = {value = 1}
@@ -39708,8 +39704,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "joy",
 			a_obj = "a_m",
 			dlc = "pd2_clan",
-			name_id = "bm_wp_shepheard_m_extended",
-			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_mag_extended",
+			name_id = "bm_wp_upg_vintage_sc",
+			unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard_pts/wpn_fps_smg_shepheard_mag_standard",
 			pcs = {
 				10,
 				20,
@@ -39717,14 +39713,14 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			bullet_objects = {
-				amount = 30,
+				amount = 20,
 				prefix = "g_bullet_"
 			},
 			stats = {
 				value = 1,
-				extra_ammo = 10,
-				reload = -2,
-				concealment = -1				
+				extra_ammo = -10,
+				reload = 2,
+				concealment = 2			
 			}
 		}
 		self.parts.wpn_fps_smg_shepheard_ns_standard = {
@@ -39756,7 +39752,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			stats = {
-				concealment = 3,
+				concealment = 2,
 				recoil = -2,
 				value = 1
 			}
@@ -39887,7 +39883,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.wpn_fps_smg_shepheard_npc.unit = "units/pd2_dlc_joy/weapons/wpn_fps_smg_shepheard/wpn_fps_smg_shepheard_npc"
 	end	
 	
-
 	function WeaponFactoryTweakData:_init_x_shepheard()
 		self.parts.wpn_fps_smg_shepheard_s_no_vanilla = deep_clone(self.parts.wpn_fps_smg_shepheard_s_no)
 		self.parts.wpn_fps_smg_shepheard_s_no_vanilla.stats = nil
@@ -39901,9 +39896,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			override = {wpn_fps_smg_shepheard_mag_extended = {stats = {
 				value = 1,
-				extra_ammo = 20,
-				reload = -2,
-				concealment = -1
+				extra_ammo = -20,
+				reload = 2,
+				concealment = 2		
 			}}},
 			default_blueprint = {
 				"wpn_fps_smg_shepheard_b_standard",

@@ -104,6 +104,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
+		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
 		
 		--Little Friend--
 		["bm_m203_weapon_sc_desc"] = "Press the $BTN_BIPOD to switch to the mounted Grenade Launcher.",
@@ -381,7 +382,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_spread_p1"] = "Small Accuracy bonus and Stability penalty",
 		["bm_menu_bonus_spread_p1_mod"] = "Small Accuracy Modifier",
 		["bm_menu_bonus_spread_n1"] = "Massive Stability bonus and Accuracy penalty",
-		["bm_menu_bonus_spread_n1_mod"] = "Massive Stability Modifier",
+		["bm_menu_bonus_recoil_p3_mod"] = "Massive Stability Modifier",
 		["bm_menu_bonus_recoil_p1"] = "Small Stability bonus and Accuracy penalty",
 		["bm_menu_bonus_recoil_p1_mod"] = "Small Stability Modifier",
 		["bm_menu_bonus_recoil_p2"] = "Large Stability bonus and Accuracy penalty",
@@ -389,10 +390,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_spread"] = "Accuracy\n",
 		["bm_menu_recoil"] = "Stability\n",	
 		["bm_menu_concealment"] = "Concealment\n",
-		["bm_menu_bonus_damage_p1_mod"] = "Small Damage Modifier",
-		["bm_menu_bonus_damage_p2_mod"] = "Large Damage Modifier",
-		["bm_menu_bonus_total_ammo_p1_mod"] = "Small Total Ammo Modifier",
-		["bm_menu_bonus_total_ammo_p3_mod"] = "Massive Total Ammo Modifier",
+		["bm_menu_bonus_spread_p2_mod"] = "Large Accuracy Modifier",
+		["bm_menu_bonus_spread_p3_mod"] = "Massive Accuracy Modifier",
+		["bm_menu_bonus_recoil_p2_mod"] = "Large Stability Modifier",
+		["bm_wp_upg_bonus_team_money_exp_p1"] = "Money Boost",
+		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+10% Money reward for you and your crew, -10% Experience reward for you and your crew.",	
 		
 		["bm_wp_upg_i_singlefire_desc"] = "LOCKS YOUR WEAPON TO SINGLE-FIRE MODE.",
 		["bm_wp_upg_i_autofire_desc"] = "LOCKS YOUR WEAPON TO AUTO-FIRE MODE.",

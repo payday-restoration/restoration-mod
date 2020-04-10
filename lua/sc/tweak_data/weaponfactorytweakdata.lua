@@ -17288,7 +17288,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			type = "bonus",
-			name_id = "bm_menu_bonus_spread_n1_mod",
+			name_id = "bm_menu_bonus_recoil_p3_mod",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
@@ -17326,6 +17326,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats"
 		}
+		--Large Accuracy Modifier
 		self.parts.wpn_fps_upg_bonus_damage_p1 = {
 			pcs = {
 				10,
@@ -17334,19 +17335,23 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			type = "bonus",
-			name_id = "bm_menu_bonus_damage_p1_mod",
+			name_id = "bm_menu_bonus_spread_p2_mod",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			stats = {value = 1, damage = 1, total_ammo_mod = -1},
-			custom_stats = {ammo_pickup_min_mul = 0.99, ammo_pickup_max_mul = 0.99},
 			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc",
+			stats = {value = 1, spread = 2, recoil = -2, concealment = -2},
 			internal_part = true,
+			custom_stats = {
+				damage_near_mul = 200,
+				damage_far_mul = 400
+			},
 			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats",
 			exclude_from_challenge = true
 		}
+		--Massive Accuracy Modifier
 		self.parts.wpn_fps_upg_bonus_damage_p2 = {
 			pcs = {
 				10,
@@ -17355,19 +17360,23 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			type = "bonus",
-			name_id = "bm_menu_bonus_damage_p2_mod",
+			name_id = "bm_menu_bonus_spread_p3_mod",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			stats = {value = 1, damage = 2, total_ammo_mod = -2},
-			custom_stats = {ammo_pickup_min_mul = 0.98, ammo_pickup_max_mul = 0.98},
 			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc",
+			stats = {value = 1, spread = 3, recoil = -3, concealment = -3},
 			internal_part = true,
+			custom_stats = {
+				damage_near_mul = 300,
+				damage_far_mul = 600
+			},
 			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats",
 			exclude_from_challenge = true
 		}
+		--Large Recoil Modifier
 		self.parts.wpn_fps_upg_bonus_total_ammo_p1 = {
 			pcs = {
 				10,
@@ -17376,19 +17385,23 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			type = "bonus",
-			name_id = "bm_menu_bonus_total_ammo_p1_mod",
+			name_id = "bm_menu_bonus_recoil_p2_mod",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			stats = {value = 1, damage = -1, total_ammo_mod = 1},
-			custom_stats = {ammo_pickup_min_mul = 1.01, ammo_pickup_max_mul = 1.01},
 			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1_sc",
+			stats = {value = 1, spread = -2, recoil = 2},
 			internal_part = true,
+			custom_stats = {
+				damage_near_mul = -200,
+				damage_far_mul = -400
+			},
 			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats",
 			exclude_from_challenge = true
 		}
+		--Team Money Boost
 		self.parts.wpn_fps_upg_bonus_total_ammo_p3 = {
 			pcs = {
 				10,
@@ -17397,17 +17410,18 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			type = "bonus",
-			name_id = "bm_menu_bonus_total_ammo_p3_mod",
+			name_id = "bm_wp_upg_bonus_team_money_exp_p1",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			stats = {value = 1, damage = -3, total_ammo_mod = 3},
-			custom_stats = {ammo_pickup_min_mul = 1.03, ammo_pickup_max_mul = 1.03},
+			stats = {value = 1},
+			custom_stats = {exp_multiplier = 0.9, money_multiplier = 1.1},
 			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc",
 			internal_part = true,
+			has_description = true,
 			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
-			sub_type = "bonus_stats",
+			sub_type = "bonus_team",
 			exclude_from_challenge = true
 		}
 		self.parts.wpn_fps_upg_bonus_team_exp_money_p3 = {
@@ -17444,6 +17458,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			is_a_unlockable = true,
 			dlc = "sc",
 			perks = {"bonus"},
+			has_description = true,
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats",
 			exclude_from_challenge = true
@@ -17464,10 +17479,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_damage_p1 = {
-				exclude_category = {"grenade_launcher", "crossbow", "bow"}
+				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_total_ammo_p1 = {
-				exclude_category = {"grenade_launcher", "crossbow", "bow"}
+				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_concealment_p2 = {
 				exclude_category = {"saw"}
@@ -17476,10 +17491,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_damage_p2 = {
-				exclude_category = {"grenade_launcher", "crossbow", "bow"}
+				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_total_ammo_p3 = {
-				exclude_category = {"grenade_launcher", "crossbow", "bow"}
+				exclude_category = {"saw"}
 			},
 			wpn_fps_upg_bonus_sc_none = {}
 				}

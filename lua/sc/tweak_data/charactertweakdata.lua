@@ -2760,19 +2760,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom.steal_loot = nil
 		if is_federales then
 		    self.boom.custom_voicework = "grenadier_bex"
+		--Temp, until we get a better one
+		elseif is_reaper then
+			self.boom.custom_voicework = "tswat_ru"
 		else
 		    self.boom.custom_voicework = "grenadier"
 		end
 		self.boom.is_special = true		
 		self.boom.heal_cooldown = 30
 		table.insert(self._enemy_list, "boom")
-		self.rboom = deep_clone(self.boom)
-		self.rboom.die_sound_event = "mdc_x02a_any_3p"
-		self.rboom.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.rboom.speech_prefix_p2 = self._speech_prefix_p2
-		self.rboom.speech_prefix_count = 1	
-		self.rboom.custom_voicework = nil
-		table.insert(self._enemy_list, "rboom")
+		
 		self.boom_summers = deep_clone(self.boom)
 		self.boom_summers.use_animation_on_fire_damage = false
 		self.boom_summers.damage.explosion_damage_mul = 0.25

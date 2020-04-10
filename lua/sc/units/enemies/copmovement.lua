@@ -37,7 +37,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		CopMovement._action_variants.omnia = security_variant
 		CopMovement._action_variants.omnia_heavy = security_variant
 		CopMovement._action_variants.boom = security_variant
-		CopMovement._action_variants.rboom = security_variant
 		CopMovement._action_variants.fbi_vet = security_variant
 		CopMovement._action_variants.fbi_vet_boss = security_variant
 		CopMovement._action_variants.vetlod = security_variant		
@@ -442,8 +441,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"spooc",
 					"shield",
 					"taser",
-					"boom",
-					"rboom"
+					"boom"
 				}
 				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 1, managers.slot:get_mask("enemies"))
 				if enemies then
@@ -512,8 +510,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					"shield",
 					"phalanx_minion",
 					"taser",
-					"boom",
-					"rboom"
+					"boom"
 				}
 				local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.lpf_radius * 4, managers.slot:get_mask("enemies"))
 				if enemies then

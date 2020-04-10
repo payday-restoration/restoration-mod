@@ -40,7 +40,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		CopBrain._logic_variants.boom_summers = security_variant
 		CopBrain._logic_variants.taser_summers = clone(security_variant)
 		CopBrain._logic_variants.medic_summers = security_variant
-		CopBrain._logic_variants.rboom = security_variant
 		CopBrain._logic_variants.fbi_vet = security_variant
 		CopBrain._logic_variants.fbi_vet_boss = security_variant
 		CopBrain._logic_variants.vetlod = security_variant	

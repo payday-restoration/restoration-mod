@@ -75,7 +75,7 @@ Porky da Corgi: creating the base textures for the grenadier and OMNIA Light
 
 Wekk: Telling us what LPF should mean and allowing us to implement "Less Clones, More Face Variations" mod and "Zeal Shield Illumination Fix" into the mod.
 
-ShinyHopip: Created the Mind Blown graze rework.
+Hoppip: Created the Mind Blown graze rework.
 
 Baddy: fixing the cap on security 7, giving us the sexico HRT and UMP dudes, Russian Medic helmet popping, providing the model for the Russian Titan Cloaker, fixing the ZEAL Heavy leg strap and providing inspiration for the FBI/GenSec heavy shotgunner and OMNIA grenadier gas mask assets.
 

@@ -59,6 +59,8 @@
 	"RestorationModEnv_FSDescID" : "Select an environment for Four Stores.",
 	"RestorationModEnv_UkraTitleID" : "Ukrainian Job",
 	"RestorationModEnv_UkraDescID" : "Select an environment for Ukrainian Job.",
+	"RestorationModEnv_KosugiTitleID" : "Shadow Raid",
+	"RestorationModEnv_KosugiDescID" : "Select an environment for Shadow Raid Job.",
 
 	"RestorationModAltLastDownColorTitleID" : "Alternative Last Down Color Grading",
 	"RestorationModAltLastDownColorDescID" : "Switches the last down color grading to color_sin_classic.",
@@ -85,6 +87,8 @@
 	"docks" : "Docks",
 	"bank_green" : "Beta Green",
 	"cloudy_day" : "Cloudy Day",
+	"shadowraid_day" : "Shadow Raid Daytime",
+	"shadowraiud_darker" : "Shadow Raid Darker",
 	
 	"RestorationModPaintingsTitleID" : "Unused Art Gallery Paintings",
 	"RestorationModPaintingsDescID" : "Enable or disable the ability for unused paintings to spawn on Art Gallery. As host only.",

@@ -168,7 +168,8 @@ function restoration:Init()
 		["OTHER/Env_Alex3"] = true,
 		["OTHER/Env_Big"] = true,
 		["OTHER/Env_FS"] = true,
-		["OTHER/Env_Ukra"] = true
+		["OTHER/Env_Ukra"] = true,
+		["OTHER/Env_Kosugi"] = true
 	}
 	for name,enabled in pairs(environment_settings) do 
 		if enabled then 
@@ -325,6 +326,13 @@ restoration.environments_choice_four_stores = {
 restoration.environments_choice_ukrainian_job = {
 	"default",
 	"cloudy_day"
+}
+
+restoration.environments_choice_shadow_raid = {
+	"default",
+	"random",
+	"shadowraiud_darker",
+	"shadowraid_day"
 }
 
 -- These tables show the network messages we've modified in the network settings pdmod

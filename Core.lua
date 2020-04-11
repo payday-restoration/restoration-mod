@@ -328,12 +328,12 @@ restoration.environments_choice_ukrainian_job = {
 	"cloudy_day"
 }
 
-restoration.environments_choice_shadow_raid = {
-	"default",
-	"random",
-	"shadowraiud_darker",
-	"shadowraid_day"
-}
+-- restoration.environments_choice_shadow_raid = {
+-- 	"default",
+-- 	"random",
+-- 	"shadowraiud_darker",
+-- 	"shadowraid_day"
+-- }
 
 -- These tables show the network messages we've modified in the network settings pdmod
 -- We will use them for switching to RestorationMod prefixed messages when in SC Mode.

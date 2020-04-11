@@ -232,13 +232,13 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 			end
 		elseif level_id == "kosugi" then 
-			setting = restoration:get_env_setting("OTHER/Env_Kosugi")
-			if setting == 1 then
-				return
-			elseif setting == 2 then	--random setting
-				math.random( 3 , #setting )
-			elseif setting == 3 then
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
+			-- setting = restoration:get_env_setting("OTHER/Env_Kosugi")
+			-- if setting == 1 then
+			-- 	return
+			-- elseif setting == 2 then	--random setting
+			-- 	math.random( 3 , #setting )
+			-- elseif setting == 3 then
+				-- BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 			-- elseif setting == 4 then
 			-- 	BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_day.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 			end
@@ -281,6 +281,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				if SystemFS:exists(mod_path .. "scriptdata/missions/safehouse.mission") and SystemFS:exists(mod_path .. "scriptdata/missions/safehouse.continent") then
 					BeardLib:ReplaceScriptData(mod_path .. "scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
 					BeardLib:ReplaceScriptData(mod_path .. "scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
+				end
+			elseif level_id == "kosugi" then 
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 				end
 			end
 		end

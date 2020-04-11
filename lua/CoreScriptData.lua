@@ -239,8 +239,8 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				math.random( 3 , #setting )
 			elseif setting == 3 then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
-			elseif setting == 4 then
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_day.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
+			-- elseif setting == 4 then
+			-- 	BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_day.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 			end
 		elseif level_id == "cult_murky" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/cult_stage1.custom_xml", "custom_xml", "core/environments/default", "environment")

@@ -817,7 +817,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Overkill
 			["menu_overkill_sc"] = "OVERKILL",
-			["menu_overkill_desc_sc"] = "BASIC: ##$basic##\nWhen you kill an enemy using a shotgun or the OVE9000 portable saw, you receive a ##50%## damage boost for ##2## seconds.\n\nNote: Does not apply to grenade launchers.\n\nACE: ##$pro##\nThe damage bonus now applies to all weapons and lasts ##10## seconds. Skill must still be activated using a shotgun or the OVE9000 portable saw.\n\nDecreases the time it takes to pull and put away shotguns and the saw by ##80%##.",
+			["menu_overkill_desc_sc"] = "BASIC: ##$basic##\nWhen you kill an enemy using a shotgun or the OVE9000 portable saw, they receive a ##50%## damage boost for ##2## seconds.\n\nNote: Does not apply to grenade launchers.\n\nACE: ##$pro##\nThe damage bonus now applies to all weapons and lasts ##10## seconds. Skill must still be activated using a shotgun or the OVE9000 portable saw.\n\nDecreases the time it takes to pull and put away shotguns and the saw by ##80%##.",
 
 			--}
 			
@@ -1114,11 +1114,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
-		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol headshot grants your weapons a ##8%## accuracy boost for ##6## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on successful pistol headshots.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##8## seconds, and all pistol hits refresh the duration.",																																																																																																																																																																																																																																		
+		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##8%## accuracy boost for ##6## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##8## seconds, and all pistol hits refresh the duration.",																																																																																																																																																																																																																																		
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "Trigger Happy",
-		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach successful pistol headshot grants pistols a ##10%## damage boost for ##6## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on successful pistol headshots.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##8## seconds, and all pistol hits refresh the duration.",																								
+		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants them a ##10%## damage boost for ##6## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##8## seconds, and all pistol hits refresh the duration.",																								
 				
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "Running from Death",

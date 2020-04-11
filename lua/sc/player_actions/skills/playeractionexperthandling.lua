@@ -5,13 +5,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local co = coroutine.running()
 			local current_time = Application:time()
 			local current_stacks = 1
+			local pistol_unequipped = false
 			local add_time = player_manager:upgrade_value("pistol", "stacked_accuracy_bonus", nil).max_time
 
 			local function on_headshot(unit, attack_data)
 				local attacker_unit = attack_data.attacker_unit
 				local variant = attack_data.variant
 
-				if attacker_unit == player_manager:player_unit() and variant == "bullet" then
+				if attacker_unit == player_manager:player_unit() and variant == "bullet" and not pistol_unequipped then
 					current_stacks = current_stacks + 1
 
 					if current_stacks <= max_stacks then
@@ -26,7 +27,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				local attacker_unit = attack_data.attacker_unit
 				local variant = attack_data.variant
 
-				if attacker_unit == player_manager:player_unit() and variant == "bullet" then
+				if attacker_unit == player_manager:player_unit() and variant == "bullet" and not pistol_unequipped then
 					max_time = current_time + add_time
 				end
 			end
@@ -41,7 +42,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				current_time = Application:time()
 
 				if not player_manager:is_current_weapon_of_category("pistol") then
-					break
+					pistol_unequipped = true
+				elseif pistol_unequipped then
+					pistol_unequipped = false
 				end
 
 				coroutine.yield(co)

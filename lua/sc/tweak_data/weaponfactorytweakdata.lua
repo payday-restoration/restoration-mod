@@ -3900,7 +3900,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"wpn_fps_m4_uupg_b_short_vanilla",
 			"wpn_fps_m4_uupg_b_medium",
 			"wpn_fps_m4_uupg_m_std_vanilla",
-			"wpn_fps_upg_m4_m_drum",
+			--"wpn_fps_upg_m4_m_drum",
 			"wpn_fps_upg_m4_m_pmag",
 			"wpn_fps_upg_m4_m_straight",
 			"wpn_fps_ass_m16_o_handle_sight",
@@ -5138,7 +5138,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"wpn_fps_upg_ak_fg_zenit",
 			"wpn_fps_upg_ass_ns_battle",
 			"wpn_fps_upg_fl_ass_utg",
-			"wpn_upg_ak_m_drum",
+			--"wpn_upg_ak_m_drum",
 			"wpn_fps_upg_o_45iron",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_upg_ak_m_quick",
@@ -10338,7 +10338,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 6,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			dlc = "armored_transport"
 		}
@@ -10357,7 +10358,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			dlc = "armored_transport"
 		}
@@ -10389,7 +10390,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			animations = {
 				reload = "reload",
@@ -10420,6 +10421,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc1/weapons/wpn_fps_smg_m45_pts/wpn_fps_smg_m45_s_folded",
 			stats = {
 				value = 1,
+				recoil = -1,
 				concealment = 1
 			},
 			is_a_unlockable = true,						
@@ -10447,6 +10449,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc1/weapons/wpn_fps_smg_m45_pts/wpn_fps_smg_m45_g_ergo",
 			stats = {
 				value = 2,
+				recoil = -1,
 				concealment = 1
 			},
 			dlc = "armored_transport"
@@ -10466,7 +10469,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			dlc = "armored_transport"
 		}
@@ -11252,13 +11255,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			parent = "barrel",
 			unit = "units/pd2_dlc_dec5/weapons/wpn_fps_smg_mp7_pts/wpn_fps_smg_mp7_b_suppressed",
 			stats = {
-				value = 7,
-				suppression = 13,
-				alert_size = 13,
-				recoil = -1,
+				value = 5,
+				suppression = 12,
+				alert_size = 12,
 				spread = 2,
-				spread_moving = -2,
-				concealment = -4
+				recoil = -2,
+				concealment = -2
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -11306,7 +11308,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			is_a_unlockable = true,			
 			dlc = "gage_pack"
@@ -16657,7 +16659,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 3,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			animations = {
 				reload = "reload",
@@ -16678,7 +16680,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 5,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -16742,7 +16745,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			},
 			dlc = "hl_miami",
 			texture_bundle_folder = "hl_miami",
@@ -17183,6 +17186,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	end
 
 	function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
+		--Gotta keep the internal IDs intact to not anger remote JSONs and custom_xml. Using comments to note what is actually what.
+	
+		--Small Conceal
 		self.parts.wpn_fps_upg_bonus_concealment_p1 = {
 			pcs = {
 				10,
@@ -17206,6 +17212,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats"
 		}
+		
+		--Large Conceal
 		self.parts.wpn_fps_upg_bonus_concealment_p2 = {
 			pcs = {
 				10,
@@ -17229,6 +17237,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats"
 		}
+		
+		--Massive Conceal
 		self.parts.wpn_fps_upg_bonus_concealment_p3 = {
 			pcs = {
 				10,
@@ -17252,7 +17262,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats"
 		}
-		self.parts.wpn_fps_upg_bonus_spread_p1 = {
+		
+		--This is where it gets messy
+		--Small Accuracy Modifier
+		self.parts.wpn_fps_upg_bonus_damage_p1 = {
 			pcs = {
 				10,
 				20,
@@ -17273,56 +17286,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
-			sub_type = "bonus_stats"
-		}
-		self.parts.wpn_fps_upg_bonus_spread_n1 = {
-			pcs = {
-				10,
-				20,
-				30,
-				40
-			},
-			type = "bonus",
-			name_id = "bm_menu_bonus_recoil_p3_mod",
-			a_obj = "a_body",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc",
-			stats = {value = 1, spread = -3, recoil = 3},
-			custom_stats = {
-				damage_near_mul = -300,
-				damage_far_mul = -600
-			},
-			internal_part = true,
-			perks = {"bonus"},
-			texture_bundle_folder = "boost_in_lootdrop",
-			sub_type = "bonus_stats"
-		}
-		self.parts.wpn_fps_upg_bonus_recoil_p1 = {
-			pcs = {
-				10,
-				20,
-				30,
-				40
-			},
-			type = "bonus",
-			name_id = "bm_menu_bonus_recoil_p1_mod",
-			a_obj = "a_body",
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc",
-			stats = {value = 1, spread = -1, recoil = 1},
-			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200
-			},
-			internal_part = true,
-			perks = {"bonus"},
-			texture_bundle_folder = "boost_in_lootdrop",
-			sub_type = "bonus_stats"
-		}
+			sub_type = "bonus_stats",
+			exclude_from_challenge = true
+		}		
+		
 		--Large Accuracy Modifier
-		self.parts.wpn_fps_upg_bonus_damage_p1 = {
+		self.parts.wpn_fps_upg_bonus_damage_p2 = {
 			pcs = {
 				10,
 				20,
@@ -17345,9 +17314,10 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "boost_in_lootdrop",
 			sub_type = "bonus_stats",
 			exclude_from_challenge = true
-		}
+		}		
+		
 		--Massive Accuracy Modifier
-		self.parts.wpn_fps_upg_bonus_damage_p2 = {
+		self.parts.wpn_fps_upg_bonus_recoil_p1 = {
 			pcs = {
 				10,
 				20,
@@ -17361,18 +17331,43 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc",
 			stats = {value = 1, spread = 3, recoil = -3, concealment = -3},
-			internal_part = true,
 			custom_stats = {
 				damage_near_mul = 300,
 				damage_far_mul = 600
 			},
+			internal_part = true,
 			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
-			sub_type = "bonus_stats",
-			exclude_from_challenge = true
-		}
-		--Large Recoil Modifier
-		self.parts.wpn_fps_upg_bonus_total_ammo_p1 = {
+			sub_type = "bonus_stats"
+		}		
+		
+		--Small Stability Modifier
+		self.parts.wpn_fps_upg_bonus_spread_n1 = {
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			type = "bonus",
+			name_id = "bm_menu_bonus_recoil_p1_mod",
+			a_obj = "a_body",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc",
+			stats = {value = 1, spread = -1, recoil = 1},
+			custom_stats = {
+				damage_near_mul = -100,
+				damage_far_mul = -200
+			},
+			internal_part = true,
+			perks = {"bonus"},
+			texture_bundle_folder = "boost_in_lootdrop",
+			sub_type = "bonus_stats"
+		}		
+		
+		--Large Stability Modifier		
+		self.parts.wpn_fps_upg_bonus_spread_p1 = {
 			pcs = {
 				10,
 				20,
@@ -17393,11 +17388,11 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
-			sub_type = "bonus_stats",
-			exclude_from_challenge = true
+			sub_type = "bonus_stats"
 		}
-		--Team Money Boost
-		self.parts.wpn_fps_upg_bonus_total_ammo_p3 = {
+
+		--Massive Recoil Modifier
+		self.parts.wpn_fps_upg_bonus_team_exp_money_p3 = {
 			pcs = {
 				10,
 				20,
@@ -17405,21 +17400,24 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			type = "bonus",
-			name_id = "bm_wp_upg_bonus_team_money_exp_p1",
+			name_id = "bm_menu_bonus_recoil_p3_mod",
 			a_obj = "a_body",
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			stats = {value = 1},
-			custom_stats = {exp_multiplier = 0.9, money_multiplier = 1.1},
-			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc",
+			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc",
+			stats = {value = 1, spread = -3, recoil = 3},
+			custom_stats = {
+				damage_near_mul = -300,
+				damage_far_mul = -600
+			},
 			internal_part = true,
-			has_description = true,
 			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
-			sub_type = "bonus_team",
-			exclude_from_challenge = true
-		}
-		self.parts.wpn_fps_upg_bonus_team_exp_money_p3 = {
+			sub_type = "bonus_stats"
+		}		
+		
+		--Team Boost
+		self.parts.wpn_fps_upg_bonus_total_ammo_p3 = {
 			pcs = {
 				10,
 				20,
@@ -17433,13 +17431,40 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			stats = {value = 1},
-			custom_stats = {exp_multiplier = 1.1, money_multiplier = 0.9},
+			custom_stats = {exp_multiplier = 1.05, money_multiplier = 0.9},
+			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_team_exp_money_p3_sc",
 			internal_part = true,
-			perks = {"bonus"},
 			has_description = true,
+			perks = {"bonus"},
 			texture_bundle_folder = "boost_in_lootdrop",
-			sub_type = "bonus_team"
+			sub_type = "bonus_team",
+			exclude_from_challenge = true
+		}		
+
+		--Money Boost
+		self.parts.wpn_fps_upg_bonus_total_ammo_p1 = {
+			pcs = {
+				10,
+				20,
+				30,
+				40
+			},
+			type = "bonus",
+			name_id = "bm_wp_upg_bonus_team_money_exp_p1",
+			a_obj = "a_body",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc",
+			stats = {value = 1},
+			internal_part = true,
+			custom_stats = {money_multiplier = 1.1, exp_multiplier = 0.95},
+			perks = {"bonus"},
+			texture_bundle_folder = "boost_in_lootdrop",
+			sub_type = "bonus_team",
+			has_description = true,
+			exclude_from_challenge = true
 		}
+		
 		self.parts.wpn_fps_upg_bonus_sc_none = {
 			pcs = {},
 			type = "bonus",
@@ -19506,7 +19531,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			animations = {
 				reload = "reload",
@@ -19527,7 +19553,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			animations = {
 				reload = "reload",
@@ -19560,12 +19586,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "gage_pack_historical",
 			is_a_unlockable = true,
 			stats = {
-				value = 10,
-				suppression = 13,
-				alert_size = 13,
+				value = 2,
+				suppression = 11,
+				alert_size = 11,
 				recoil = -1,
-				spread = 2,
-				concealment = -3
+				spread = 1,
+				concealment = -1
 			},
 			perks = {"silencer"},
 			sound_switch = {
@@ -19603,12 +19629,12 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			texture_bundle_folder = "gage_pack_historical",
 			is_a_unlockable = true,
 			stats = {
-				value = 10,
-				suppression = 13,
-				alert_size = 13,
+				value = 2,
+				suppression = 11,
+				alert_size = 11,
 				recoil = -1,
-				spread = 2,
-				concealment = -3
+				spread = 1,
+				concealment = -1
 			},
 			custom_stats = {
 				is_laser_gun = true
@@ -19657,7 +19683,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				extra_ammo = 10,
-				reload = -1,
+				reload = -2,
 				concealment = -1
 			},
 			animations = {
@@ -19690,7 +19716,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				extra_ammo = -10,
-				reload = 1,
+				reload = 2,
 				concealment = 1
 			},
 			animations = {
@@ -19709,6 +19735,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			is_a_unlockable = true,
 			stats = {
 				value = 1,
+				recoil = -1,
 				concealment = 1
 			}
 		}
@@ -19723,7 +19750,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			is_a_unlockable = true,
 			stats = {
 				value = 1,
-				recoil = -1,
+				recoil = -2,
 				concealment = 2
 			}
 		}
@@ -19739,7 +19766,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				recoil = 1,
-				concealment = -1
+				spread = -1
 			}
 		}
 		self.parts.wpn_fps_smg_sterling_s_standard = {
@@ -20334,7 +20361,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 4,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			},
 			texture_bundle_folder = "pines"
 		}
@@ -20353,7 +20381,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 2,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			},
 			texture_bundle_folder = "pines",
 			override = {
@@ -20423,6 +20451,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_foregrip_discrete",
 			stats = {
 				value = 2,
+				recoil = -1,
 				concealment = 1
 			},
 			texture_bundle_folder = "pines"
@@ -20449,6 +20478,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_grip_discrete",
 			stats = {
 				value = 2,
+				recoil = -1,
 				concealment = 1
 			},
 			texture_bundle_folder = "pines"
@@ -20492,6 +20522,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_stock_discrete",
 			stats = {
 				value = 3,
+				recoil = -1,
 				concealment = 1
 			},
 			texture_bundle_folder = "pines"
@@ -20510,7 +20541,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_stock_nostock",
 			stats = {
 				value = 1,
-				recoil = -1,
+				recoil = -2,
 				concealment = 2
 			},
 			texture_bundle_folder = "pines"
@@ -30423,7 +30454,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			"wpn_fps_upg_o_rx01",
 			"wpn_fps_upg_o_reflex",
 			"wpn_fps_upg_o_eotech_xps",
-			"wpn_fps_upg_m4_m_drum",
+			--"wpn_fps_upg_m4_m_drum",
 			"wpn_fps_upg_o_spot",
 			"wpn_fps_m4_upg_m_quick",
 			"wpn_fps_upg_o_xpsg33_magnifier",
@@ -35347,6 +35378,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				value = 0,
+				recoil = -1,
 				concealment = 1
 			}
 		}
@@ -37942,13 +37974,13 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				wpn_fps_smg_sterling_m_short = {stats = {
 					value = 1,
 					extra_ammo = -20,
-					reload = 1,
+					reload = 2,
 					concealment = 1
 				}},
 				wpn_fps_smg_sterling_m_long = {stats = {
 					value = 1,
 					extra_ammo = 20,
-					reload = -1,
+					reload = -2,
 					concealment = -1
 				}},
 				wpn_fps_upg_ammo_762_sterling = {
@@ -40065,7 +40097,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				"wpn_fps_ass_komodo_o_flipups_down",
 				"wpn_fps_smg_hajk_vg_moe",
 				"wpn_fps_m4_uupg_m_std_vanilla",
-				"wpn_fps_upg_m4_m_drum",
+				--"wpn_fps_upg_m4_m_drum",
 				"wpn_fps_upg_m4_m_pmag",
 				"wpn_fps_upg_m4_m_straight",
 				"wpn_fps_upg_m4_m_quad",

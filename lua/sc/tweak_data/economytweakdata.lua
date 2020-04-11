@@ -52,7 +52,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.bonuses.damage_p2_tem_p1 = deep_clone(self.bonuses.concealment_p2)
 		self.bonuses.total_ammo_p1_tem_p1 = deep_clone(self.bonuses.concealment_p3)
 		self.bonuses.total_ammo_p3_tem_p1 = deep_clone(self.bonuses.spread_p1)
-		self.bonuses.team_exp_money_p3.exp_multiplier = 1.1
+		self.bonuses.team_exp_money_p3.exp_multiplier = 1.05
 		self.bonuses.team_exp_money_p3.money_multiplier = 0.9
 	end
 

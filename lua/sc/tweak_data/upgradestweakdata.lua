@@ -1121,26 +1121,13 @@ function UpgradesTweakData:_init_pd2_values()
 					1.3,
 					1.2
 				}
-				--[[self.values.akimbo.recoil_index_addend = {
-					-10,
-					-8,
-					-5,
-					-3,
-					-1
-				}
-				self.values.akimbo.spread_index_addend = {
-					-2,
-					-1,
-					-0,
-					-1,
-					2
-				}		]]
+				
 				self.values.akimbo.recoil_index_addend = {
 					0,
 					2,
 					5,
 					7,
-					9
+					10
 				}
 				self.values.akimbo.spread_index_addend = {
 					0,

@@ -850,6 +850,7 @@ function UpgradesTweakData:_init_pd2_values()
 					"smg",
 					"snp"
 				}
+				self.values.player.not_moving_accuracy_increase = {1}
 				
 				--Kilmer
 				self.values.assault_rifle.reload_speed_multiplier = {1.25}

@@ -5,6 +5,7 @@
 
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" />
 	</dependencies>
 

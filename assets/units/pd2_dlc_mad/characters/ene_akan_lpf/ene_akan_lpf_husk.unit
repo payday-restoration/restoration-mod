@@ -6,6 +6,7 @@
     <dependencies>
         
         <depends_on unit="units/payday2/characters/ene_acc_medic_helmet/ene_acc_medic_helmet" />
+		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
     </dependencies>
 
     <extensions>

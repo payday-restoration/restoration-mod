@@ -8,6 +8,7 @@
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />	
         <depends_on bnk="soundbanks/regular_vox" />
         <depends_on bnk="soundbanks/special_medic" />
+		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
     </dependencies>
 
     <extensions>

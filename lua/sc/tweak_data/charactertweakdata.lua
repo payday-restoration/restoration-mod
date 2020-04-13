@@ -470,7 +470,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fbi_vet.move_speed = presets.move_speed.lightning
 		self.fbi_vet.surrender = nil
 		self.fbi_vet.unintimidateable = true	
-		if is_reaper then
+		if is_reaper or is_federales then
 		   self.fbi_vet.custom_voicework = nil	
 		else   
 		   self.fbi_vet.custom_voicework = "bruce"
@@ -683,10 +683,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}
 		self.omnia_lpf.weapon_voice = "2"
 		self.omnia_lpf.experience.cable_tie = "tie_swat"	
-		if is_reaper then
+		if is_reaper or is_federales then
 		    self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.medic()
 		    self.omnia_lpf.speech_prefix_count = nil
-		    self.omnia_lpf.spawn_sound_event = self._prefix_data_p1.medic() .. "_entrance"
+		    self.omnia_lpf.spawn_sound_event = "rmdc_entrance"
 		else
 		    self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.medic()
 		    self.omnia_lpf.speech_prefix_p2 = nil
@@ -701,7 +701,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.omnia_lpf.melee_weapon_dmg_multiplier = 1
 		self.omnia_lpf.rescue_hostages = false
 		self.omnia_lpf.steal_loot = nil
-		if is_reaper then
+		if is_reaper or is_federales then
 			self.omnia_lpf.custom_voicework = nil
 		else
 			self.omnia_lpf.custom_voicework = "olpf"
@@ -954,7 +954,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat_sniper.custom_voicework = nil
 		self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
 		self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
-		if is_reaper then
+		if is_reaper or is_federales then
 			self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
 			self.heavy_swat_sniper.speech_prefix_count = 4
@@ -963,8 +963,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.heavy_swat_sniper.speech_prefix_p2 = nil
 			self.heavy_swat_sniper.speech_prefix_count = nil
 		end			
-		if is_reaper then
-			self.heavy_swat_sniper.custom_voicework = nil
+		if is_reaper or is_federales then
+			self.heavy_swat_sniper.custom_voicework = "tswat_ru"
 		else
 			self.heavy_swat_sniper.custom_voicework = "tsniper"
 		end		
@@ -974,7 +974,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend Snipers
 		self.weekend_dmr = deep_clone(self.heavy_swat_sniper)	
-		if is_reaper then
+		if is_reaper or is_federales then
 		    self.weekend_dmr.custom_voicework = "tswat_ru"
 		elseif is_murky then
 		    self.weekend_dmr.custom_voicework = "bravo_murky"	
@@ -1200,7 +1200,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend
 		self.weekend = deep_clone(self.city_swat)
-		if is_reaper then
+		if is_reaper or is_federales then
 		    self.weekend.custom_voicework = "tswat_ru"
 		elseif is_murky then
 		    self.weekend.custom_voicework = "bravo_murky"	
@@ -1219,7 +1219,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
 		self.city_swat_titan.speech_prefix_count = 4		
-		if is_reaper then
+		if is_reaper or is_federales then
 		    self.city_swat_titan.custom_voicework = "tswat_ru"
 		else
 		    self.city_swat_titan.custom_voicework = "pdth"
@@ -1249,7 +1249,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend LMG
 		self.weekend_lmg = deep_clone(self.city_swat_titan)		
-		if is_reaper then
+		if is_reaper or is_federales then
 		    self.weekend_lmg.custom_voicework = "tswat_ru"
 		elseif is_murky then
 		    self.weekend_lmg.custom_voicework = "bravo_murky"	
@@ -1938,17 +1938,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank_titan.immune_to_knock_down = true
 		self.tank_titan.priority_shout_max_dis = 3000
 		self.tank_titan.ecm_vulnerability = 0
-		if is_reaper then
+		if is_reaper or is_federales then
 			self.tank_titan.die_sound_event_2 = nil
 		else
 			self.tank_titan.die_sound_event_2 = nil
 		end			
-		if is_reaper then
+		if is_reaper or is_federales then
 			self.tank_titan.custom_voicework = "tdozer_ru"
 		else
 			self.tank_titan.custom_voicework = "tdozer"
 		end			
-		if is_reaper then
+		if is_reaper or is_federales then
 		    self.tank_titan.spawn_sound_event = "rbdz_entrance_elite"
 		else
 		    self.tank_titan.spawn_sound_event = "bdz_entrance"
@@ -2086,7 +2086,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.special_deaths = nil
 		self.spooc_titan.HEALTH_INIT = 90
 		self.spooc_titan.headshot_dmg_mul = 5.85	
-		if is_reaper then	
+		if is_reaper or is_federales then	
 		    self.spooc.speech_prefix_p1 = self._prefix_data_p1.cloaker()
 		    self.spooc.speech_prefix_count = nil
 		    self.spooc.access = "spooc"
@@ -2102,7 +2102,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 		self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 		self.spooc_titan.is_special = true
-		if is_reaper then
+		if is_reaper or is_federales then
 			self.spooc_titan.custom_voicework = nil
 		else
 			self.spooc_titan.custom_voicework = "tspook"
@@ -2289,7 +2289,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.phalanx_minion.spawn_sound_event = "shield_identification"
 		self.phalanx_minion.suppression = nil
 		self.phalanx_minion.is_special = true
-		if is_reaper or is_zombie then
+		if is_reaper or is_zombie or is_federales then
 			self.phalanx_minion.speech_prefix_p1 = self._prefix_data_p1.swat()
 			self.phalanx_minion.speech_prefix_p2 = self._speech_prefix_p2
 			self.phalanx_minion.speech_prefix_count = 4
@@ -2672,7 +2672,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.immune_to_concussion = true	
 		self.taser_titan.use_animation_on_fire_damage = false
 		self.taser_titan.can_be_tased = false	
-		if is_reaper then
+		if is_reaper or is_federales then
 		    self.taser_titan.spawn_sound_event = "rtsr_elite"
 		else
 		    self.taser_titan.spawn_sound_event = "tsr_elite"

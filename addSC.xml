@@ -1534,7 +1534,6 @@
     <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>		
 	<sequence_manager path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
-	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>		
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
 	
@@ -1844,15 +1843,6 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" load="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249_contour" load="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
-
-	<!--Murky Medicdozer-->
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic_husk" load="true"/>
-	<model path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
-	<object path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" load="false"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic_contour" load="false"/>
-	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>
 	
 	<!--Murky Bulldozer Saiga-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" load="true"/>

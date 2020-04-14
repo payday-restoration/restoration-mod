@@ -231,14 +231,14 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 			elseif setting == 2 then 
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 			end
-		elseif level_id == "kosugi" then 
+		-- elseif level_id == "kosugi" then 
 			-- setting = restoration:get_env_setting("OTHER/Env_Kosugi")
 			-- if setting == 1 then
 			-- 	return
 			-- elseif setting == 2 then	--random setting
 			-- 	math.random( 3 , #setting )
 			-- elseif setting == 3 then
-				-- BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
+			-- 	BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 			-- elseif setting == 4 then
 			-- 	BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_day.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 			-- end
@@ -284,7 +284,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			elseif level_id == "kosugi" then 
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
-				end
 			end
 		end
 	end)

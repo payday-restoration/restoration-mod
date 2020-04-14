@@ -27,7 +27,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end		
 			end		
 			
-			--Nightclub
+			--Nightclub--
 			if id == "pln_nightclub_stage1_10" then
 				if difficulty_index <= 2 then
 					escape_time = 1050
@@ -42,6 +42,57 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				else
 					escape_time = 900
 				end		
+			end		
+		    
+			--Firestarter Day 1--
+			if id == "pln_fs1_11" then
+				if difficulty_index <= 2 then
+					escape_time = 1200 
+				elseif difficulty_index == 3 then
+					escape_time = 1170
+				elseif difficulty_index == 4 then
+					escape_time = 1140
+				elseif difficulty_index == 5 then
+					escape_time = 1080	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 1080						
+				else
+					escape_time = 1050
+				end
+			end	
+			
+			--Firestarter Day 2--
+			if id == "pln_fs2_20" then
+				if difficulty_index <= 2 then
+					escape_time = 450 
+				elseif difficulty_index == 3 then
+					escape_time = 420
+				elseif difficulty_index == 4 then
+					escape_time = 390
+				elseif difficulty_index == 5 then
+					escape_time = 360	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 330						
+				else
+					escape_time = 300
+				end
+			end			
+		
+	        --Firestarter Day 3--
+			if id == "pln_fs3_07" then
+				if difficulty_index <= 2 then
+					escape_time = 450
+				elseif difficulty_index == 3 then
+					escape_time = 420
+				elseif difficulty_index == 4 then
+					escape_time = 390
+				elseif difficulty_index == 5 then
+					escape_time = 360	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 330						
+				else
+					escape_time = 300
+				end
 			end	
 		
 			--Highland Mortuary--		

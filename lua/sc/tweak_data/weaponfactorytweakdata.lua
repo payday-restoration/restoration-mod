@@ -5264,7 +5264,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -33,
-					damage = 25,
+					damage = 15,
 					recoil = -1,
 					spread = 11,
 					suppression = -1,
@@ -5289,7 +5289,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
@@ -5304,7 +5304,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
@@ -5321,7 +5321,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 50
+					damage = 30
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -8411,7 +8411,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 10,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					recoil = -2,
 					spread = 12,
 					spread_multi = {1, 1},	
@@ -8439,7 +8439,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 9,
 					spread = -1,
 					total_ammo_mod = -33,
-					damage = 50
+					damage = 30
 				},
 				custom_stats = {
 					damage_near_mul = -100,
@@ -8455,7 +8455,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 9,
 					spread = -1,
 					total_ammo_mod = -33,
-					damage = 50
+					damage = 30
 				},
 				custom_stats = {
 					damage_near_mul = -100,
@@ -8473,7 +8473,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					recoil = -5,
 					spread_multi = {1, 1},	
 					concealment = -7,
-					damage = 100
+					damage = 60
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -8637,7 +8637,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 10,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					recoil = -2,
 					spread = 12,
 					spread_multi = {1, 1},	
@@ -8664,7 +8664,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					spread = -1
 				},
 				custom_stats = {
@@ -8680,7 +8680,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					spread = -1
 				},
 				custom_stats = {
@@ -8699,7 +8699,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					recoil = -5,
 					spread_multi = {1, 1},	
 					concealment = -7,
-					damage = 100
+					damage = 60
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -9320,7 +9320,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					concealment = -7,
 					spread_multi = {1, 1},	
 					total_ammo_mod = -50,
-					damage = 150
+					damage = 90
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -10095,7 +10095,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					spread_multi = {1, 1},	
 					concealment = -7,
 					total_ammo_mod = -60,
-					damage = 250
+					damage = 90
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -10113,7 +10113,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -25,
-					damage = 50,	
+					damage = 30,	
 					recoil = -2,
 					spread = 12,
 					spread_multi = {1, 1},	
@@ -10137,7 +10137,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 50,	
+					damage = 30,	
 					spread = -1
 				},
 				custom_stats = {
@@ -10152,7 +10152,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 50,	
+					damage = 30,	
 					spread = -1
 				},
 				custom_stats = {
@@ -13965,7 +13965,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = 12,
 					spread_multi = {1, 1},	
 					recoil = -1,
@@ -13988,7 +13988,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
@@ -14003,7 +14003,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
@@ -14021,7 +14021,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 75
+					damage = 45
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -14179,8 +14179,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 10,
 					concealment = 0,
-					total_ammo_mod = -33,
-					damage = 25,
+					total_ammo_mod = -25,
+					damage = 15,
 					spread = 14,
 					spread_multi = {1, 1},	
 					recoil = -3,
@@ -14195,48 +14195,48 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					can_shoot_through_enemy = false,
 					can_shoot_through_shield = false,
 					can_shoot_through_wall = false,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					ammo_pickup_min_mul = 0.75,
+					ammo_pickup_max_mul = 0.75
 				}
 			},
 			wpn_fps_upg_a_custom = {
 				stats = {
 					value = 9,
-					total_ammo_mod = -33,
-					damage = 25,
+					total_ammo_mod = -25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
 					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					ammo_pickup_min_mul = 0.75,
+					ammo_pickup_max_mul = 0.75
 				}
 			},	
 			wpn_fps_upg_a_custom_free = {
 				stats = {
 					value = 9,
-					total_ammo_mod = -33,
-					damage = 25,
+					total_ammo_mod = -25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
 					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					ammo_pickup_min_mul = 0.75,
+					ammo_pickup_max_mul = 0.75
 				}
 			},				
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
 					concealment = -5,
-					total_ammo_mod = -66,
+					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 125
+					damage = 45
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -14245,8 +14245,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,	
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.333333333333,
-					ammo_pickup_max_mul = 0.333333333333
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -14614,7 +14614,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 10,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					recoil = -2,
 					spread = 12,
 					spread_multi = {1, 1},	
@@ -14641,7 +14641,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					spread = -1
 				},
 				custom_stats = {
@@ -14657,7 +14657,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					spread = -1
 				},
 				custom_stats = {
@@ -14676,7 +14676,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					recoil = -5,
 					spread_multi = {1, 1},	
 					concealment = -7,
-					damage = 100
+					damage = 60
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -17558,7 +17558,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 10,
 				concealment = -5,
 				total_ammo_mod = -25,
-				damage = 50,	
+				damage = 30,	
 				recoil = -2,
 				spread = 12,
 				spread_multi = {1, 1},	
@@ -17594,7 +17594,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 50,	
+				damage = 30,	
 				spread = -1,
 			},
 			custom_stats = {
@@ -17625,7 +17625,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 10,
 				total_ammo_mod = -16,
-				damage = 50,
+				damage = 90,
 				spread = 0,
 				spread_multi = {1, 1},	
 				concealment = 0,
@@ -17680,7 +17680,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			is_a_unlockable = true,
 			stats = {
 				value = 9,
-				damage = -10,
+				damage = -5,
 			},
 			custom_stats = {
 				ignore_statistic = true,
@@ -18930,7 +18930,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = 12,
 					spread_multi = {1, 1},	
 					recoil = -1,
@@ -18953,7 +18953,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
@@ -18968,7 +18968,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
@@ -18986,7 +18986,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 75
+					damage = 45
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -23840,7 +23840,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					concealment = -7,
 					spread_multi = {1, 1},	
 					total_ammo_mod = -50,
-					damage = 150
+					damage = 90
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -23924,7 +23924,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				extra_ammo = 10,
-				damage = -50,
+				damage = -30,
 				total_ammo_mod = 50
 			},
 			custom_stats = {
@@ -23949,7 +23949,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			stats = {
 				value = 1,
 				extra_ammo = -5,
-				damage = 50,
+				damage = 30,
 				total_ammo_mod = -25
 			},
 			custom_stats = {
@@ -25203,7 +25203,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -33,
-					damage = 25,	
+					damage = 15,	
 					recoil = -1,
 					spread = 11,
 					spread_multi = {1, 1},	
@@ -25228,7 +25228,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 25,	
+					damage = 15,	
 					spread = -1
 				},
 				custom_stats = {
@@ -25243,7 +25243,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 25,	
+					damage = 15,	
 					spread = -1
 				},
 				custom_stats = {
@@ -25260,7 +25260,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 50
+					damage = 30
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -29052,7 +29052,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 10,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					recoil = -2,
 					spread = 12,
 					spread_multi = {1, 1},	
@@ -29079,7 +29079,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					spread = -1
 				},
 				custom_stats = {
@@ -29095,7 +29095,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -33,
-					damage = 50,
+					damage = 30,
 					spread = -1
 				},
 				custom_stats = {
@@ -29114,7 +29114,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					recoil = -5,
 					spread_multi = {1, 1},	
 					concealment = -7,
-					damage = 100
+					damage = 60
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -30632,7 +30632,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					concealment = -7,
 					spread_multi = {1, 1},	
 					total_ammo_mod = -50,
-					damage = 150
+					damage = 90
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -31680,8 +31680,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 10,
 					concealment = 0,
-					total_ammo_mod = -33,
-					damage = 25,
+					total_ammo_mod = -25,
+					damage = 15,
 					spread = 14,
 					spread_multi = {1, 1},	
 					recoil = -3,
@@ -31696,59 +31696,58 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					can_shoot_through_enemy = false,
 					can_shoot_through_shield = false,
 					can_shoot_through_wall = false,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					ammo_pickup_min_mul = 0.75,
+					ammo_pickup_max_mul = 0.75
 				}
 			},
 			wpn_fps_upg_a_custom = {
 				stats = {
 					value = 9,
-					total_ammo_mod = -33,
-					damage = 25,
-					spread_multi = {1, 1},	
+					total_ammo_mod = -25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
 					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					ammo_pickup_min_mul = 0.75,
+					ammo_pickup_max_mul = 0.75
 				}
-			},
+			},	
 			wpn_fps_upg_a_custom_free = {
 				stats = {
 					value = 9,
-					total_ammo_mod = -33,
-					damage = 25,
+					total_ammo_mod = -25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
 					damage_near_mul = -100,
 					damage_far_mul = -200,
 					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					ammo_pickup_min_mul = 0.75,
+					ammo_pickup_max_mul = 0.75
 				}
-			},			
+			},				
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
 					concealment = -5,
-					total_ammo_mod = -66,
-					spread_multi = {1, 1},	
+					total_ammo_mod = -50,
 					recoil = -5,
-					damage = 125
+					spread_multi = {1, 1},	
+					damage = 45
 				},
 				custom_stats = {
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
 					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_far_mul = 999999999,	
 					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.333333333333,
-					ammo_pickup_max_mul = 0.333333333333
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5
 				}
 			}
 		}
@@ -36232,7 +36231,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						value = 10,
 						concealment = -5,
 						total_ammo_mod = -25,
-						damage = 25,	
+						damage = 15,	
 						recoil = -1,
 						spread = 11,
 						spread_multi = {1, 1},	
@@ -36257,7 +36256,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 9,
 						total_ammo_mod = -25,
-						damage = 25,	
+						damage = 15,	
 						spread = -1
 					},
 					custom_stats = {
@@ -36272,7 +36271,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 9,
 						total_ammo_mod = -33,
-						damage = 25,	
+						damage = 15,	
 						spread = -1
 					},
 					custom_stats = {
@@ -36289,7 +36288,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						total_ammo_mod = -50,
 						recoil = -5,
 						spread_multi = {1, 1},	
-						damage = 50
+						damage = 30
 					},
 					custom_stats = {
 						ignore_statistic = true,
@@ -36387,7 +36386,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						value = 10,
 						concealment = -5,
 						total_ammo_mod = -33,
-						damage = 25,	
+						damage = 15,	
 						recoil = -1,
 						spread = 11,
 						spread_multi = {1, 1},	
@@ -36412,7 +36411,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 9,
 						total_ammo_mod = -33,
-						damage = 25,	
+						damage = 15,	
 						spread = -1
 					},
 					custom_stats = {
@@ -36427,7 +36426,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 9,
 						total_ammo_mod = -33,
-						damage = 25,	
+						damage = 15,	
 						spread = -1
 					},
 					custom_stats = {
@@ -36444,7 +36443,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						total_ammo_mod = -50,
 						recoil = -5,
 						spread_multi = {1, 1},	
-						damage = 50
+						damage = 30
 					},
 					custom_stats = {
 						ignore_statistic = true,
@@ -39096,7 +39095,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						concealment = -7,
 						spread_multi = {1, 1},	
 						total_ammo_mod = -62,
-						damage = 250
+						damage = 90
 					},
 					custom_stats = {
 						ignore_statistic = true,
@@ -39114,7 +39113,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						value = 10,
 						concealment = -5,
 						total_ammo_mod = -25,
-						damage = 50,	
+						damage = 30,	
 						recoil = -2,
 						spread = 12,
 						spread_multi = {1, 1},	
@@ -39139,7 +39138,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 9,
 						total_ammo_mod = -25,
-						damage = 50,	
+						damage = 30,	
 						spread = -1,
 					},
 					custom_stats = {
@@ -39154,7 +39153,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 9,
 						total_ammo_mod = -25,
-						damage = 50,	
+						damage = 30,	
 						spread = -1,
 					},
 					custom_stats = {
@@ -39290,7 +39289,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = 12,
 					spread_multi = {1, 1},	
 					recoil = -1,
@@ -39313,7 +39312,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
@@ -39328,7 +39327,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 25,
+					damage = 15,
 					spread = -1
 				},
 				custom_stats = {
@@ -39346,7 +39345,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 75
+					damage = 45
 				},
 				custom_stats = {
 					ignore_statistic = true,
@@ -40894,7 +40893,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						spread_multi = {1, 1},	
 						concealment = -7,
 						total_ammo_mod = -60,
-						damage = 250
+						damage = 90
 					},
 					custom_stats = {
 						ignore_statistic = true,
@@ -40912,7 +40911,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 						value = 10,
 						concealment = -5,
 						total_ammo_mod = -25,
-						damage = 50,	
+						damage = 30,	
 						recoil = -2,
 						spread = 12,
 						spread_multi = {1, 1},	
@@ -40936,7 +40935,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 9,
 						total_ammo_mod = -25,
-						damage = 50,	
+						damage = 30,	
 						spread = -1
 					},
 					custom_stats = {
@@ -40951,7 +40950,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					stats = {
 						value = 9,
 						total_ammo_mod = -25,
-						damage = 50,	
+						damage = 30,	
 						spread = -1
 					},
 					custom_stats = {

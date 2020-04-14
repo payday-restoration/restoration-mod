@@ -1236,7 +1236,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--Perk Deck shit--
 	
 	--Shared stuff--
-	self.values.weapon.passive_damage_multiplier = {1.05, 1.1, 1.15, 1.2}     
+	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}     
 	
 	self.values.temporary.armor_break_invulnerable = {
 		{2, 15}

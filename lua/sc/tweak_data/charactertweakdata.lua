@@ -1876,6 +1876,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.tank.surrender = nil
 		self.tank.ecm_vulnerability = 0
 		self.tank.ecm_hurts = {}
+		if is_federales then
+		    self.tank.die_sound_event = "bdz_x02a_any_3p"
+        else
+		    self.tank.die_sound_event = nil
+		end
 		self.tank.weapon_voice = "3"
 		self.tank.experience.cable_tie = "tie_swat"
 		self.tank.access = "tank"

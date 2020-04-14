@@ -10,13 +10,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				
 		if Global.game_settings and Global.game_settings.one_down then
 		
-			--generic thats enough but you can stay for more--		
-            --PLEASE TEST THIS 			
-            --PLEASE TEST THIS 			
-            --PLEASE TEST THIS 			
-            --PLEASE TEST THIS 			
-            --PLEASE TEST THIS 			
+			--generic "that's enough but you can stay for more"--				
 			if id == "play_pln_gen_bfr_06" then
+				if difficulty_index <= 2 then
+					escape_time = 1050
+				elseif difficulty_index == 3 then
+					escape_time = 1020
+				elseif difficulty_index == 4 then
+					escape_time = 990
+				elseif difficulty_index == 5 then
+					escape_time = 960	
+				elseif difficulty_index == 6 or difficulty_index == 7 then
+					escape_time = 930					
+				else
+					escape_time = 900
+				end		
+			end		
+			
+			--Nightclub
+			if id == "pln_nightclub_stage1_10" then
 				if difficulty_index <= 2 then
 					escape_time = 1050
 				elseif difficulty_index == 3 then

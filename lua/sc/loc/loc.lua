@@ -506,7 +506,7 @@ end
 
  if _G.HopLib then
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
-		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.txt")
+		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
 	end)
  end
 

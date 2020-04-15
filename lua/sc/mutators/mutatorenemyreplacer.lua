@@ -76,7 +76,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types.russia, classic_medic_unit_name)
 		table.insert(unit_types.zombie, classic_medic_unit_name)
 		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-		table.insert(unit_types.murkywater, classic_medic_unit_name)
+		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types.nypd, classic_medic_unit_name)
 		table.insert(unit_types.lapd, classic_medic_unit_name)
 		
@@ -84,7 +84,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_black.russia, classic_medic_unit_name)
 		table.insert(unit_types_black.zombie, classic_medic_unit_name)
 		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-		table.insert(unit_types_black.murkywater, classic_medic_unit_name)
+		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_black.nypd, classic_medic_unit_name)
 		table.insert(unit_types_black.lapd, classic_medic_unit_name)
 
@@ -92,7 +92,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_skull.russia, classic_medic_unit_name)
 		table.insert(unit_types_skull.zombie, classic_medic_unit_name)
 		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-		table.insert(unit_types_skull.murkywater, classic_medic_unit_name)
+		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_skull.nypd, classic_medic_unit_name)
 		table.insert(unit_types_skull.lapd, classic_medic_unit_name)			
 		else
@@ -100,7 +100,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types.russia, medic_unit_name)
 		table.insert(unit_types.zombie, medic_unit_name)
 		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-		table.insert(unit_types.murkywater, medic_unit_name)
+		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types.nypd, medic_unit_name)
 		table.insert(unit_types.lapd, medic_unit_name)
 		
@@ -108,7 +108,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_black.russia, medic_unit_name)
 		table.insert(unit_types_black.zombie, medic_unit_name)
 		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-		table.insert(unit_types_black.murkywater, medic_unit_name)
+		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_black.nypd, medic_unit_name)
 		table.insert(unit_types_black.lapd, medic_unit_name)
 
@@ -116,7 +116,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		table.insert(unit_types_skull.russia, medic_unit_name)
 		table.insert(unit_types_skull.zombie, medic_unit_name)
 		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-		table.insert(unit_types_skull.murkywater, medic_unit_name)
+		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
 		table.insert(unit_types_skull.nypd, medic_unit_name)
 		table.insert(unit_types_skull.lapd, medic_unit_name)					
 		end		

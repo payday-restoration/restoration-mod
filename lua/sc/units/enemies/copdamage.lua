@@ -3236,9 +3236,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local fwd_vec = mvector3.dot(self._unit:movement():m_rot():y(), managers.player:player_unit():movement():m_head_rot():y())
 
 			--# degrees of leeway == (1-(2*number fwd_vec > than))pi radians
-			log("fwd_vec: " .. tostring(fwd_vec))
 			if fwd_vec > 0.15 then
-				log("BACKSTAB!")
 				return true
 			end
 		end

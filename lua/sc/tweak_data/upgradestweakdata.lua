@@ -1202,8 +1202,8 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.temporary.melee_kill_increase_reload_speed = {{1.25, 10}}
 
 				--Pumping Iron	
-				self.values.player.non_special_melee_multiplier = {1.05, 1.1, 1.15, 1.2}
-				self.values.player.melee_damage_multiplier = {1.05, 1.1, 1.15, 1.2}
+				self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
+				self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 				self.values.player.melee_swing_multiplier = {1.2, 1.5}
 				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5}
 				

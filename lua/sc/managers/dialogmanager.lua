@@ -285,20 +285,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end	
 		
 			--Big Oil Day 2--
-			if id == "pln_bo2_36" then
+			if id == "pln_bo2_36" or id == "pln_bo2_40" or id == "pln_bo2_39" then
 				if difficulty_index <= 2 then
-					escape_time = 1200 
+					escape_time = 630
 				elseif difficulty_index == 3 then
-					escape_time = 1170
+					escape_time = 600
 				elseif difficulty_index == 4 then
-					escape_time = 1140
+					escape_time = 570
 				elseif difficulty_index == 5 then
-					escape_time = 1080	
+					escape_time = 540	
 				elseif difficulty_index == 6 or difficulty_index == 7 then
-					escape_time = 1080						
+					escape_time = 510					
 				else
-					escape_time = 1050
-				end
+					escape_time = 480
+				end		
 			end	
 			
 			--Breaking Ballot--

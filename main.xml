@@ -138,6 +138,7 @@
 		<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
 		<hook file="sc/units/enemies/copbase.lua" source_file="lib/units/enemies/cop/copbase"/>
 		<hook file="sc/units/player_team/teamaimovement.lua" source_file="lib/units/player_team/teamaimovement"/>
+		<hook file="sc/units/player_team/huskteamaidamage.lua" source_file="lib/units/player_team/huskteamaidamage"/>
 		<hook file="sc/units/enemies/logics/coplogicintimidated.lua" source_file="lib/units/enemies/cop/logics/coplogicintimidated"/>
 		<hook file="sc/units/enemies/logics/coplogictravel.lua" source_file="lib/units/enemies/cop/logics/coplogictravel"/>
 		<hook file="sc/units/enemies/logics/taserlogicattack.lua" source_file="lib/units/enemies/taser/logics/taserlogicattack"/>

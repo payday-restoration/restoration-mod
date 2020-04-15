@@ -685,6 +685,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local headshot_multiplier = 1
 
 		if attack_data.attacker_unit == managers.player:player_unit() then
+			attack_data.backstab = self:check_backstab(attack_data)
 			local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
 
 			if critical_hit then
@@ -795,11 +796,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 				end
 
+
 				result = {
 					type = "death",
 					variant = attack_data.variant
 				}
 
+				if attack_data.backstab then
+					managers.player:add_backstab_dodge()
+				end
 				self:die(attack_data)
 				self:chk_killshot(attack_data.attacker_unit, "bullet", headshot_by_player)
 			end
@@ -1174,10 +1179,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					variant = "melee"
 				}
 			else
-				if attack_data.backstab then
-					managers.player:add_backstab_dodge()
-				end
-
 				if head then
 					if self._unit:base()._tweak_table == "boom" then
 						self._unit:damage():run_sequence_simple("grenadier_glass_break")
@@ -1194,6 +1195,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					type = "death",
 					variant = "melee"
 				}
+
+				if attack_data.backstab then
+					managers.player:add_backstab_dodge()
+				end
 
 				self:die(attack_data)
 				self:chk_killshot(attack_data.attacker_unit, "melee")
@@ -3231,7 +3236,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local fwd_vec = mvector3.dot(self._unit:movement():m_rot():y(), managers.player:player_unit():movement():m_head_rot():y())
 
 			--# degrees of leeway == (1-(2*number fwd_vec > than))pi radians
+			log("fwd_vec: " .. tostring(fwd_vec))
 			if fwd_vec > 0.15 then
+				log("BACKSTAB!")
 				return true
 			end
 		end

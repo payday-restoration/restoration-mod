@@ -48751,28 +48751,28 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.parts.wpn_fps_pis_pl14_body_custom.stats = {
 				value = 3,
+				spread = -1,
 				recoil = 1,
 				concealment = -1
 			}
 			self.parts.wpn_fps_upg_ak_s_polymerstock.stats = {
 				value = 6,
 				spread = 1,
-				spread_moving = -3,
-				recoil = 1,
-				concealment = -1
+				concealment = -4
 			}
 			self.parts.wpn_fps_ass_amcar_fg_covers_base.stats = {
-				recoil = 1,
+				recoil = -1,
 				concealment =1,
 				value = 4
 			}
 			self.parts.wpn_fps_shot_beck_pump_swat.stats = {
 				value = 1,
-				recoil = 1,
+				recoil = -2,
 				spread = 1,
 				concealment = -2
 			}
 			self.parts.wpn_upg_ak_g_titanium.stats = {
+				spread = -1,
 				recoil = -1,
 				concealment = 2,
 				value = 1
@@ -48783,6 +48783,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.parts.wpn_fps_pis_lebman_m_extended.stats = {
 				value = 3,
 				extra_ammo = 6,
+				spread = -1,
+				recoil = -1,
 				concealment = -1,
 				reload = -1
 			}
@@ -48793,31 +48795,35 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.parts.wpn_fps_pis_lebman_body_classic.stats = {
 				value = 6,
+				spread = -1,
 				recoil = 2,
-				concealment = -3
+				concealment = -4
 			}			
 			self.parts.wpn_fps_pis_lebman_b_chrome.stats = { --quatruple quitraple platinum
 				value = 6
 			}
 			self.parts.wpn_fps_ass_s552_g_sniper.stats = {
 				value = 2,
-				spread = 1
+				spread = 1,
+				recoil = -1,
+				concealment = -1
 			}									
 			self.parts.wpn_fps_ass_s552_s_sniper.stats = {
 				value = 1,
 				recoil = 2,
 				spread = -1,
-				concealment = -2
+				concealment = -4
 			}						
 			self.parts.wpn_fps_sho_rota_b_longer.stats = {
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 			self.parts.wpn_fps_ass_s552_fg_tac.stats = {
 				value = 7,
 				spread = -2,
 				recoil = 3,
-				concealment = -1
+				concealment = -3
 			}			
 			self.parts.wpn_fps_pis_g17_b_bling.stats = {
 				value = 1
@@ -48831,7 +48837,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.parts.wpn_fps_ass_amcar_fg_cylinder.stats = {
 				value = 5,
 				spread_moving = 1,
-				concealment = 1,
+				concealment = -4,
 				spread = 1
 			}
 			self.parts.wpn_fps_pis_2006m_g_pearl.stats = {
@@ -48839,24 +48845,27 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.parts.wpn_fps_shot_r870_fg_swat.stats = {
 				value = 1,
-				recoil = 1,
+				recoil = -1,
 				spread = 1,
 				concealment = -2
 			}			
 			self.parts.wpn_fps_smg_mp7_b_long.stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 			self.parts.wpn_fps_smg_uzi_b_carbine.stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 			self.parts.wpn_fps_smg_cobray_body_upper_long.stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 			self.parts.wpn_fps_pis_hs2000_body_stealth.stats = {
 				value = 1
@@ -48867,32 +48876,36 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.parts.wpn_fps_smg_schakal_b_uncivil.stats = {
 				value = 1,
 				recoil = 1,
+				spread = -1,
 				concealment = -1
 			}
 			self.parts.wpn_fps_smg_polymer_barrel_long.stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}
 			self.parts.wpn_fps_smg_baka_b_long.stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = -1,
+				concealment = -1
 			}			
 			self.parts.wpn_fps_upg_ns_ass_smg_heavy.stats = {
 				value = 1,
 				spread = 1,
-				concealment = -3
+				concealment = -4
 			}
 			self.parts.wpn_fps_sho_coach_b_long.stats = {
 				value = 1,
 				spread = 2,
-				recoil = -1,
+				recoil = -4,
 				concealment = -3
 			}						
 			self.parts.wpn_fps_ass_vhs_body_camo.stats = {
 				value = 1,
 				spread = 1,
+				recoil = -1,
 				concealment = -1
 			}			
 			self.parts.wpn_fps_upg_fl_ass_smg_sho_marker.stats = {
@@ -48900,8 +48913,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				concealment = -1
 			}			
 			self.parts.wpn_fps_pis_chinchilla_cylinder_smooth.stats = {
-				value = 2,
-				concealment = 1				
+				value = 1				
 			}
 			self.parts.wpn_fps_pis_legacy_sl_chrome.stats = {
 				value = 1
@@ -48912,19 +48924,20 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.parts.wpn_fps_pis_chinchilla_b_longboy.stats = {
 				value = 5,
 				spread = 2,
-				recoil = -1,
+				recoil = -2,
 				concealment = -3
 			}									
 			self.parts.wpn_fps_ass_m16_s_op.stats = {
 				value = 2,
-				spread = 2,
-				recoil = -1,
+				spread = -1,
+				recoil = 2,
 				concealment = -3
 			}
 			self.parts.wpn_fps_pis_deagle_g_wooden.stats = {
 				value = 1,
-				recoil = 1,
-				concealment = -2
+				recoil = 3,
+				spread = -1,
+				concealment = -6
 			}
 			self.parts.wpn_fps_sho_saiga_upper_receiver_smooth.stats = {
 				value = 1
@@ -48938,42 +48951,47 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.parts.wpn_fps_ass_ak_fg_waffle.stats = {
 				value = 1,
 				spread = -2,
+				recoil = -1,
 				concealment = 3
 			}							
 			self.parts.wpn_fps_pis_g18c_b_long.stats = {
 				value = 4,
 				spread = 1,
 				recoil = -1,
+				concealment = -1,
 				spread_moving = 1
 			}			
 			self.parts.wpn_fps_ass_tecci_vg_ergo.stats = {
 				value = 1,
-				spread = 1,
-				spread_moving = 2,
-				concealment = -2
+				spread = -1,
+				concealment = 1
 			}		
 			self.parts.wpn_fps_shot_shorty_fg_rail.stats = {
 				value = 1,
+				recoil = -1,
 				concealment = 1				
 			}															
 			self.parts.wpn_fps_ass_tecci_s_minicontra.stats = {
 				value = 2,
-				recoil = -1,
+				recoil = 1,
 				spread = 2,
-				concealment = -3
+				concealment = -8
 			}							
 			self.parts.wpn_fps_ass_flint_g_custom.stats = {
 				value = 2,
-				recoil = 1
+				recoil = -1,
+				concealment = 1
 			}
 			self.parts.wpn_fps_ass_m4_s_russian.stats = {
 				value = 1,
-				spread = 1,				
-				concealment = -2
+				spread = 1,
+				recoil = -1,
+				concealment = -1
 			}
 			self.parts.wpn_fps_pis_chinchilla_b_short.stats = {
 				value = 1,
-				spread = -1,				
+				spread = -1,
+				recoil = -1,				
 				concealment = 2
 			}
 			self.parts.wpn_fps_pis_chinchilla_g_pearl.stats = {
@@ -48981,54 +48999,65 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			}
 			self.parts.wpn_fps_snp_model70_s_discrete.stats = {
 				value = 1,
+				recoil = -2,
 				concealment = 1
 			}				
 			self.parts.wpn_fps_snp_model70_b_smol.stats = {
 				value = 1,
 				spread = -1,
+				recoil = -1,
 				concealment = 2
 			}								
 			self.parts.wpn_fps_ass_corgi_b_medium.stats = {
 				value = 2,
-				recoil = 1
+				recoil = 1,
+				spread = -5
 			}
 			self.parts.wpn_fps_snp_tti_b_long.stats = {
 				value = 3,
 				recoil = 1,
 				spread = 1,
-				concealment = -2
+				concealment = -5
 			}
 			self.parts.wpn_fps_smg_cobray_m_extended.stats = {
 				value = 2,
+				recoil = 1,
+				spread = -1,
 				extra_ammo = 12,
-				concealment = -1,				
+				concealment = -2,				
 				reload = -2
 			}				
 			self.parts.wpn_fps_smg_cobray_m_extended_akimbo.stats = {
 				value = 2,
-				concealment = -2,								
+				recoil = 2,
+				spread = -2,
 				extra_ammo = 24,
-				reload = -2
+				concealment = -4,				
+				reload = -3
 			}				
 			self.parts.wpn_fps_ass_scar_m_extended.stats = {
 				value = 2,
+				spread = -1,
 				extra_ammo = 10,
+				concealment = -1,
 				reload = -2
 			}						
 			self.parts.wpn_fps_pis_c96_b_short.stats = {
 				value = 1,
-				spread = -1,				
+				spread = -1,
+				recoil = -2,
 				concealment = 2
 			}
 			self.parts.wpn_fps_smg_thompson_fg_custom.stats = {
 				value = 1,
 				spread = 1,
-				concealment = -2
+				recoil = 1,
+				concealment = -5
 			}
 			self.parts.wpn_fps_smg_thompson_stock_fold.stats = {
 				value = 1,
 				spread = -1,
-				concealment = 2
+				concealment = 1
 			}
 			self.parts.wpn_fps_shot_m37_s_ergo.stats = {
 				spread = -1,
@@ -49036,23 +49065,27 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				recoil = 1
 			}
 			self.parts.wpn_fps_shot_m37_fg_tactical.stats = {
-				value = 0
+				value = 1,
+				recoil = -1,
+				concealment = 1
 			}
 			self.parts.wpn_fps_shot_m37_fg_long.stats = {
 				value = 0
 			}
 			self.parts.wpn_fps_ass_m4_g_sg.stats = {
 				value = 2,
+				recoil = -1,
 				concealment = 1
 			}
-			self.parts.wpn_fps_snp_mosin_body_grip.stats = {
+			self.parts.wpn_fps_snp_mosin_body_grip.stats = { ---TEACYN TEACYN TEACYN TEACYN TEACYN TEACYN I left off here
 				value = 1,
 				recoil = 1
 			}			
 			self.parts.wpn_fps_pis_c96_b_finned.stats = {
 				value = 2,
 				spread = 1,
-				recoil = -2
+				recoil = -1,
+				concealment = -1
 			}
 			self.parts.wpn_fps_pis_peacemaker_m_smooth.stats = {
 				value = 5,

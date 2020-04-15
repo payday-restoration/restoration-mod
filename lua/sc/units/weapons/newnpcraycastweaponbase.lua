@@ -21,14 +21,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local mvec_spread = Vector3()
 
 	function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player)
-		if not self._checked_for_ap then
-			self._checked_for_ap = true
+		if not self._check_ap_and_masks then
+			self._check_ap_and_masks = true
 
 			if not self._use_armor_piercing then
 				if self._is_team_ai and managers.player:has_category_upgrade("team", "crew_ai_ap_ammo") then
 					self._use_armor_piercing = true
 				end
 			end
+
+			self._wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
+			self._shield_mask = managers.slot:get_mask("enemy_shield_check")
+			self._enemy_mask = managers.slot:get_mask("enemies")
 		end
 
 		local char_hit = nil
@@ -56,9 +60,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				hit.hit_position = hit.position
 
 				if hit.unit:in_slot(self._wall_mask) then
-					if hit.body:has_ray_type(ai_vision_ids) or hit.body:has_ray_type(bulletproof_ids) then
+					local hard_surface = hit.body:has_ray_type(ai_vision_ids) or hit.body:has_ray_type(bulletproof_ids)
+
+					if hard_surface then
 						break
 					end
+				elseif hit.unit:in_slot(self._shield_mask) or hit.unit:in_slot(self._enemy_mask) then
+					break
 				end
 			end
 		end

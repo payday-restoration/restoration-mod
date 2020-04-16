@@ -6403,8 +6403,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 7,
+			alert_size = 7,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9754,8 +9754,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 7,
 			zoom = 3,
 			concealment = 18,
-			suppression = 5,
-			alert_size = 5,
+			suppression = 6,
+			alert_size = 6,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9819,7 +9819,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.aek971.kick.crouching = self.new_m4.kick.crouching
 		self.aek971.kick.steelsight = self.new_m4.kick.steelsight
 		self.aek971.stats = {
-			damage = 34,
+			damage = 20,
 			spread = 17,
 			recoil = 20,
 			spread_moving = 6,
@@ -10094,8 +10094,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 27,
-			suppression = 9,
-			alert_size = 9,
+			suppression = 7,
+			alert_size = 7,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -10189,8 +10189,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			spread_moving = 5,
 			zoom = 3,
 			concealment = 15,
-			suppression = 5,
-			alert_size = 5,
+			suppression = 4,
+			alert_size = 4,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -10203,9 +10203,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.car9 then --Gambyt's ACAR 9
 		self.car9.desc_id = "bm_menu_sc_amcar_desc"
 		self.car9.CLIP_AMMO_MAX = 20
-		self.car9.AMMO_MAX = 135
+		self.car9.AMMO_MAX = 90
 		self.car9.tactical_reload = 1		
-		self.car9.AMMO_PICKUP = self:_pickup_chance(135, 1)
+		self.car9.AMMO_PICKUP = self:_pickup_chance(90, 1)
 		self.car9.fire_mode_data.fire_rate = 0.06315789473
 		self.car9.auto.fire_rate = 0.06315789473
 		self.car9.spread.standing = 3

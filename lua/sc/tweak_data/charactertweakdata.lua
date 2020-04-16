@@ -2856,7 +2856,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.civilian.submission_max = {60, 120}
 		self.civilian.submission_intimidate = 120
 		self.civilian.run_away_delay = {5, 20}
-		self.civilian.damage = presets.hurt_severities.no_hurts
+		self.civilian.damage.hurt_severity = presets.hurt_severities.no_hurts
 		self.civilian.ecm_vulnerability = nil
 		self.civilian.ecm_hurts = {
 			ears = {min_duration = 0, max_duration = 0}

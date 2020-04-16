@@ -10203,9 +10203,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 	if self.car9 then --Gambyt's ACAR 9
 		self.car9.desc_id = "bm_menu_sc_amcar_desc"
 		self.car9.CLIP_AMMO_MAX = 20
-		self.car9.AMMO_MAX = 135
+		self.car9.AMMO_MAX = 90
 		self.car9.tactical_reload = 1		
-		self.car9.AMMO_PICKUP = self:_pickup_chance(135, 1)
+		self.car9.AMMO_PICKUP = self:_pickup_chance(90, 1)
 		self.car9.fire_mode_data.fire_rate = 0.06315789473
 		self.car9.auto.fire_rate = 0.06315789473
 		self.car9.spread.standing = 3

@@ -372,6 +372,7 @@
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
 				<option type="bool" default_value="true" name="PONRTrack"/>
+				<option type="bool" default_value="true" name="MusicShuffle"/>
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>

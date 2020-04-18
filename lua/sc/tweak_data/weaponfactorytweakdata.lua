@@ -23189,8 +23189,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134_pts/wpn_fps_lmg_m134_barrel_short",
 			stats = {
 				value = 3,
-				spread = -1,
-				concealment = 1
+				spread = -2,
+				concealment = 2
 			},
 			has_description = false,
 			texture_bundle_folder = "dlc_pack_overkill",
@@ -23210,9 +23210,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			unit = "units/pd2_dlc_overkill_pack/weapons/wpn_fps_lmg_m134_pts/wpn_fps_lmg_m134_barrel_extreme",
 			stats = {
 				value = 3,
-				spread = 1,
-				recoil = -1,
-				concealment = -1
+				spread = 2,
+				recoil = -2,
+				concealment = -2
 			},
 			texture_bundle_folder = "dlc_pack_overkill",
 			dlc = "overkill_pack",
@@ -39403,8 +39403,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				40
 			},
 			stats = {
-				spread = -1,
-				concealment = 1
+				spread = -2,
+				concealment = 2
 			},
 			override = {wpn_fps_lmg_shuno_b_dummy_long = {unit = "units/pd2_dlc_dmg/weapons/wpn_fps_lmg_shuno_pts/wpn_fps_lmg_shuno_b_dummy_short"}}
 		}
@@ -39441,9 +39441,9 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			},
 			stats = {
 				spread = 1,
-				value = 1,
-				recoil = -1,
-				concealment = -1
+				value = 2,
+				recoil = -2,
+				concealment = -2
 			}
 		}
 		self.parts.wpn_fps_lmg_shuno_b_dummy_long = {

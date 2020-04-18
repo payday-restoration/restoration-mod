@@ -5795,7 +5795,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			recoil = 23,
 			spread_moving = 7,
 			zoom = 3,
-			concealment = 23,
+			concealment = 27,
 			suppression = 7,
 			alert_size = 7,
 			extra_ammo = 101,

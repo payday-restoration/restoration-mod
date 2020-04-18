@@ -17488,22 +17488,24 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		if weapon_skins then
 				local uses_parts = {
-					wpn_fps_upg_bonus_team_exp_money_p3 = {},
+					wpn_fps_upg_bonus_team_exp_money_p3 = {
+				exclude_category = {"bow"}
+			},
 					wpn_fps_upg_bonus_concealment_p1 = {
 				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_recoil_p1 = {
-				exclude_category = {"saw"},
+				exclude_category = {"saw", "bow"},
 				exclude_weapon = {"x_judge"}
 			},
 					wpn_fps_upg_bonus_spread_p1 = {
-				exclude_category = {"saw"}
+				exclude_category = {"saw", "bow"}
 			},
 					wpn_fps_upg_bonus_spread_n1 = {
-				exclude_category = {"saw"}
+				exclude_category = {"saw", "bow"}
 			},
 					wpn_fps_upg_bonus_damage_p1 = {
-				exclude_category = {"saw"},
+				exclude_category = {"saw", "bow"},
 				exclude_weapon = {"x_judge"}
 			},
 					wpn_fps_upg_bonus_total_ammo_p1 = {
@@ -17516,7 +17518,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_damage_p2 = {
-				exclude_category = {"saw"},
+				exclude_category = {"saw", "bow"},
 				exclude_weapon = {"x_judge"}
 			},
 					wpn_fps_upg_bonus_total_ammo_p3 = {

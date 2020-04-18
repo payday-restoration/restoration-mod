@@ -17493,7 +17493,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_recoil_p1 = {
-				exclude_category = {"saw"}
+				exclude_category = {"saw"},
+				exclude_weapon = {"x_judge"}
 			},
 					wpn_fps_upg_bonus_spread_p1 = {
 				exclude_category = {"saw"}
@@ -17502,7 +17503,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_damage_p1 = {
-				exclude_category = {"saw"}
+				exclude_category = {"saw"},
+				exclude_weapon = {"x_judge"}
 			},
 					wpn_fps_upg_bonus_total_ammo_p1 = {
 				exclude_category = {"saw"}
@@ -17514,7 +17516,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				exclude_category = {"saw"}
 			},
 					wpn_fps_upg_bonus_damage_p2 = {
-				exclude_category = {"saw"}
+				exclude_category = {"saw"},
+				exclude_weapon = {"x_judge"}
 			},
 					wpn_fps_upg_bonus_total_ammo_p3 = {
 				exclude_category = {"saw"}

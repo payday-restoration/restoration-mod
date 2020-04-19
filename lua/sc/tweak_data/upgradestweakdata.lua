@@ -449,13 +449,13 @@ function UpgradesTweakData:_init_pd2_values()
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		1.50,
-		1.45,
 		1.40,
-		1.35,
-		1.30,
-		1.25,
-		1.20
+		1.36,
+		1.32,
+		1.28,
+		1.24,
+		1.20,
+		1.16
 	}
 	self.values.player.body_armor.deflection = {
 		0.00,

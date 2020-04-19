@@ -439,13 +439,13 @@ function UpgradesTweakData:_init_pd2_values()
 		1.12
 	}
 	self.values.player.body_armor.skill_max_health_store = {
-		10,
-		9,
 		8,
-		7,
-		5,
+		7.2,
+		6.4,
+		5.6,
+		4.8,
 		4,
-		3
+		3.2
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
@@ -1509,8 +1509,8 @@ function UpgradesTweakData:_init_pd2_values()
 	--Ex President
 	self.values.player.armor_health_store_amount = {
 		0.4,
-		0.8,
-		1.2
+		0.7,
+		1.0
 	}	
 	self.values.player.armor_max_health_store_multiplier = {
 		1.25

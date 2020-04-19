@@ -1239,9 +1239,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Grinder--
 		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every second for ##6## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries, fire, or poison does not grant stacks.\n\nYou lose ##50## armor while wearing the Flak Jacket.\n\n##Deflection is disabled while using this perk deck.##",
-		["menu_deck11_3_desc_sc"] = "You gain ##10%## more health.",
+		["menu_deck11_3_desc_sc"] = "You gain ##15%## more health.",
 		["menu_deck11_5_desc_sc"] = "Damaging an enemy now heals ##2## life points every second for ##6## seconds.",
-		["menu_deck11_7_desc_sc"] = "You gain an additional ##10%## more health.",
+		["menu_deck11_7_desc_sc"] = "You gain an additional ##15%## more health.",
 		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##3## life points every second for ##9## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Open your mind--	

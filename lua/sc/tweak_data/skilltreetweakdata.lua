@@ -2671,7 +2671,8 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2"
+					"player_passive_health_multiplier_2",
+					"player_passive_health_multiplier_3"
 				},
 				cost = 400,
 				icon_xy = {0, 0},
@@ -2691,8 +2692,9 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_3",
-					"player_passive_health_multiplier_4"
+					"player_passive_health_multiplier_4",
+					"player_passive_health_multiplier_5",
+					"player_passive_health_multiplier_6"
 				},
 				cost = 2400,
 				icon_xy = {4, 0},

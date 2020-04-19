@@ -442,7 +442,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if alive(attack_data.attacker_unit) then
 				if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
 					if alive(player_unit) then
-						if not self._unit:movement():is_taser_attack_allowed() then
+						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
 						else
 							attack_data.attacker_unit:sound():say("post_tasing_taunt")
 							player_unit:movement():on_non_lethal_electrocution()

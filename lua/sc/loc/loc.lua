@@ -1046,7 +1046,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Cleaner--
 		["menu_jail_workout_sc"] = "Cleaner",
-		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases.\n\nYou deal ##10%## more damage against special enemies. ",	
+		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nYou deal ##5%## more damage against special enemies.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases.\n\nYou deal an additional ##10%## damage against special enemies.",	
 
 		--Nimble--
 		["menu_cleaner_beta_sc"] = "Nimble",

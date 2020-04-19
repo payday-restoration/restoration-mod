@@ -564,7 +564,7 @@ function InteractionTweakData:init(...)
 		self.hold_hack_server_room = deep_clone(self.hold_type_in_password)
 		self.hold_hack_server_room.text_id = "hud_int_hack_server_room"
 		self.hold_hack_server_room.action_text_id = "hud_action_hacking_server_room"	
-
+		
 		--PEOC Pardons
 		self.take_pardons.timer = 0
 		

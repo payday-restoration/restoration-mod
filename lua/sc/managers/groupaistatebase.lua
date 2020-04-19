@@ -673,6 +673,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		elseif message == "restoration_drop_ammo" then
+			--[[
 			if Network:is_server() then
 				local data_tbl = string.split(data,":") or {}
 				if data_tbl and #data_tbl > 0 then 
@@ -692,6 +693,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					end
 				end
 			end
+			]]
 		end
 	end)
 	

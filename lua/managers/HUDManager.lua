@@ -28,6 +28,7 @@ core:import("CoreEvent")
 		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
 		self._bloody_screen = HUDBloodyScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
 			--managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel
+			--[[
 --setup radial mouse menu
 		local ammo_texture,ammo_rect = tweak_data.hud_icons:get_icon_data("equipment_ammo_bag")
 		local sentry_texture,sentry_rect = tweak_data.hud_icons:get_icon_data("equipment_sentry")
@@ -63,6 +64,7 @@ core:import("CoreEvent")
 			}
 		}
 		restoration._utilitymenu = RadialMouseMenu:new(utility_params)	
+		]]
 	end
 
 	

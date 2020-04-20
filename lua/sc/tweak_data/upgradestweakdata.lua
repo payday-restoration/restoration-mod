@@ -56,296 +56,225 @@ function UpgradesTweakData:init(tweak_data)
 	sc_upg_old_init(self, tweak_data)
 	
 	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	
-		--Level 2
-		local level2 = {
-				name_id = "weapons",
-				upgrades = {
-					"colt_1911",
-					"mac10",
-					"hajk",
-					"x_mac10"
-				}
-			}		
-		
-		--Level 10
-		local level10 = {
-				name_id = "lvl_10",
-				upgrades = {
-					"cutters",
-					"shawn"
-				}
-			}	
-			
-		--Level 12
-		local level12 = {
-				name_id = "body_armor3",
-				upgrades = {
-					"body_armor3",
-					"cobray",
-					"boxcutter"
-				}
-			}			
-			
-		--Level 14
-		local level14 = {
-				name_id = "weapons",
-				upgrades = {
-					"bayonet",
-					"m1928",
-					"sparrow",
-					"gator",
-					"pl14"
-				}
-			}	
-			
-		--Level 15
-		local level15 = {
-				name_id = "weapons",
-				upgrades = {
-					"msr",
-					"benelli",
-					"plainsrider",
-					"sub2000",
-					"road",
-					"legacy"
-				}
-			}	
+		local level = {
+			l2 = {
+					name_id = "weapons",
+					upgrades = {
+						"colt_1911",
+						"mac10",
+						"hajk",
+						"x_mac10"
+					}
+				},	
+			l10 = {
+					name_id = "lvl_10",
+					upgrades = {
+						"cutters",
+						"shawn"
+					}
+				},	
+			l12 = {
+					name_id = "body_armor3",
+					upgrades = {
+						"body_armor3",
+						"cobray",
+						"boxcutter"
+					}
+				},			
+			l14 = {
+					name_id = "weapons",
+					upgrades = {
+						"bayonet",
+						"m1928",
+						"sparrow",
+						"gator",
+						"pl14"
+					}
+				},
+			l15 = {
+					name_id = "weapons",
+					upgrades = {
+						"msr",
+						"benelli",
+						"plainsrider",
+						"sub2000",
+						"road",
+						"legacy"
+					}
+				},
+			l18 = {
+					name_id = "weapons",
+					upgrades = {
+						"baseballbat",
+						"scorpion",
+						"oldbaton",
+						"hockey",
+						"meter",
+						"hauteur",
+						"shock",
+						"fear"
+					}
+				},
+			l19 = {
+					name_id = "weapons",
+					upgrades = {
+						"olympic",
+						"mp9",
+						"baka",
+						"x_baka",
+						"pugio",
+						"ballistic"
+					}
+				},
+			l20 = {
+					name_id = "lvl_20",
+					upgrades = {
+						"schakal",
+						"agave",
+						"happy",
+						"shepheard",
+						"slap"
+					}
+				},
+			l23 = {
+					name_id = "weapons",
+					upgrades = {
+						"bullseye",
+						"c96",
+						"par",
+						"m37",
+						"rota",
+						"cs",
+						"brick",
+						"ostry"
+					}
+				},
+			l25 = {
+					name_id = "weapons",
+					upgrades = {
+						"boxing_gloves",
+						"meat_cleaver",
+						"wpn_prj_four",
+						"sr2",
+						"grip",
+						"push",
+						"breech",
+						"ching",
+						"erma",
+						"sap"
+					}
+				},
+			l27 = {
+					name_id = "weapons",
+					upgrades = {
+						"famas",
+						"g26",
+						"twins",
+						"pitchfork",
+						"shrew",
+						"x_shrew",
+						"basset"
+					}
+				},
+			l28 = {
+					name_id = "weapons",
+					upgrades = {
+						"hs2000",
+						"vhs",
+						"bowie",
+						"micstand"
+					}
+				},
+			l30 = {
+					name_id = "lvl_30",
+					upgrades = {
+						"shuno"
+					}
+				},
+			l32 = {
+					name_id = "weapons",
+					upgrades = {
+						"x46",
+						"tec9",
+						"tiger",
+						"model70"
+					}
+				},
+			l36 = {
+					name_id = "weapons",
+					upgrades = {
+						"p90",
+						"deagle",
+						"winchester1874"
+					}
+				},
+			l39 = {
+					name_id = "weapons",
+					upgrades = {
+						"m16",
+						"huntsman",
+						"polymer",
+						"china"
+					}
+				},
+			l40 = {
+					name_id = "lvl_40",
+					upgrades = {}
+				},
+			l42 = {
+					name_id = "weapons",
+					upgrades = {
+						"fal",
+						"tomahawk",
+						"coal"
+					}
+				},
+			l50 = {
+					name_id = "lvl_50",
+					upgrades = {}
+				},
+			l51 = {
+					name_id = "weapons",
+					upgrades = {
+						"machete",
+						"sterling"
+					}
+				},
+			l55 = {
+					name_id = "weapons",
+					upgrades = {
+						"uzi"
+					}
+				},
+			l60 = {
+					name_id = "lvl_60",
+					upgrades = {}
+				},
+			l70 = {
+					name_id = "lvl_70",
+					upgrades = {}
+				},
+			l80 = {
+					name_id = "lvl_80",
+					upgrades = {}
+				},
+			l90 = {
+					name_id = "lvl_90",
+					upgrades = {}
+				},
+			l100 = {
+					name_id = "lvl_100",
+					upgrades = {}
+				}			
+		}
 
-		--Level 18
-		local level18 = {
-				name_id = "weapons",
-				upgrades = {
-					"baseballbat",
-					"scorpion",
-					"oldbaton",
-					"hockey",
-					"meter",
-					"hauteur",
-					"shock",
-					"fear"
-				}
-			}
-
-		--Level 19
-		local level19 = {
-				name_id = "weapons",
-				upgrades = {
-					"olympic",
-					"mp9",
-					"baka",
-					"x_baka",
-					"pugio",
-					"ballistic"
-				}
-			}		
-			
-		--Level 20
-		local level20 = {
-				name_id = "lvl_20",
-				upgrades = {
-					"schakal",
-					"agave",
-					"happy",
-					"shepheard",
-					"slap"
-				}
-			}			
-
-		--Level 23
-		local level23 = {
-				name_id = "weapons",
-				upgrades = {
-					"bullseye",
-					"c96",
-					"par",
-					"m37",
-					"rota",
-					"cs",
-					"brick",
-					"ostry"
-				}
-			}	
-
-		--Level 25
-		local level25 = {
-				name_id = "weapons",
-				upgrades = {
-					"boxing_gloves",
-					"meat_cleaver",
-					"wpn_prj_four",
-					"sr2",
-					"grip",
-					"push",
-					"breech",
-					"ching",
-					"erma",
-					"sap"
-				}
-			}		
-					
-		--Level 27
-		local level27 = {
-				name_id = "weapons",
-				upgrades = {
-					"famas",
-					"g26",
-					"twins",
-					"pitchfork",
-					"shrew",
-					"x_shrew",
-					"basset"
-				}
-			}
-			
-		--Level 28
-		local level28 = {
-				name_id = "weapons",
-				upgrades = {
-					"hs2000",
-					"vhs",
-					"bowie",
-					"micstand"
-				}
-			}
-			
-		--Level 30
-		local level30 = {
-				name_id = "lvl_30",
-				upgrades = {
-					"shuno"
-				}
-			}	
-
-		--Level 32
-		local level32 = {
-				name_id = "weapons",
-				upgrades = {
-					"x46",
-					"tec9",
-					"tiger",
-					"model70"
-				}
-			}	
-
-		--Level 36
-		local level36 = {
-				name_id = "weapons",
-				upgrades = {
-					"p90",
-					"deagle",
-					"winchester1874"
-				}
-			}
-
-		--Level 39
-		local level39 = {
-				name_id = "weapons",
-				upgrades = {
-					"m16",
-					"huntsman",
-					"polymer",
-					"china"
-				}
-			}
-
-		--Level 40
-		local level40 = {
-				name_id = "lvl_40",
-				upgrades = {}
-			}		
-
-		--Level 42
-		local level42 = {
-				name_id = "weapons",
-				upgrades = {
-					"fal",
-					"tomahawk",
-					"coal"
-				}
-			}	
-			
-		--Level 50
-		local level50 = {
-				name_id = "lvl_50",
-				upgrades = {}
-			}	
-
-		--Level 51
-		local level51 = {
-				name_id = "weapons",
-				upgrades = {
-					"machete",
-					"sterling"
-				}
-			}
-
-		--Level 55
-		local level55 = {
-				name_id = "weapons",
-				upgrades = {
-					"uzi"
-				}
-			}	
-
-		--Level 60
-		local level60 = {
-				name_id = "lvl_60",
-				upgrades = {}
-			}		
-
-		--Level 70
-		local level70 = {
-				name_id = "lvl_70",
-				upgrades = {}
-			}	
-
-		--Level 80
-		local level80 = {
-				name_id = "lvl_80",
-				upgrades = {}
-			}	
-
-		--Level 90
-		local level90 = {
-				name_id = "lvl_90",
-				upgrades = {}
-			}	
-
-		--Level 100
-		local level100 = {
-				name_id = "lvl_100",
-				upgrades = {}
-			}			
-							
-		--Now we insert em
-		self.level_tree[2] = level2
-		self.level_tree[10] = level10
-		self.level_tree[12] = level12
-		self.level_tree[14] = level14
-		self.level_tree[15] = level15
-		self.level_tree[18] = level18
-		self.level_tree[19] = level19
-		self.level_tree[20] = level20
-		self.level_tree[23] = level23
-		self.level_tree[25] = level25
-		self.level_tree[27] = level27
-		self.level_tree[28] = level28
-		self.level_tree[30] = level30
-		self.level_tree[32] = level32
-		self.level_tree[36] = level36
-		self.level_tree[39] = level39
-		self.level_tree[40] = level40
-		self.level_tree[42] = level42
-		self.level_tree[50] = level50
-		self.level_tree[51] = level51
-		self.level_tree[55] = level55
-		self.level_tree[60] = level60
-		self.level_tree[70] = level70
-		self.level_tree[80] = level80
-		self.level_tree[90] = level90
-		self.level_tree[100] = level100
-	
+		--Insert level variables into level_tree.
+		for i=1, 100 do
+			local currLevel = level["l" .. tostring(i)]
+			if currLevel then
+				self.level_tree[i] = currLevel
+			end
+		end 	
 	end
 
 end		

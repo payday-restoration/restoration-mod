@@ -73,7 +73,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			return true
 		end
 	end	
-
+--[[
 	Hooks:Add("radialmenu_released_resutilitymenu","resmod_utility_menu_on_selected",function(item)
 		if item == 1 then 
 					
@@ -135,5 +135,5 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end)
-	
+	]]
 end

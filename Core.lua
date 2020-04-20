@@ -92,6 +92,7 @@ function restoration:Init()
 		"arm_par",
 		"arm_und",
 		"arm_for",
+		"shoutout_raid", --Scripted spawns out the ass, doing this just to even it out
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn",

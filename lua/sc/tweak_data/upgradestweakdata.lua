@@ -849,7 +849,7 @@ function UpgradesTweakData:_init_pd2_values()
 				self.values.player.extra_corpse_dispose_amount = {1}
 				self.values.bodybags_bag.quantity = {1}
 				self.values.player.cleaner_cost_multiplier = {0}
-				self.values.weapon.special_damage_taken_multiplier = {1.1}
+				self.values.weapon.special_damage_taken_multiplier = {1.05, 1.15}
 				
 				--Nimble
 				self.values.player.pick_lock_easy_speed_multiplier = {0.5, 0.25}
@@ -1738,6 +1738,24 @@ function UpgradesTweakData:_player_definitions()
 			category = "akimbo"
 		}
 	}		
+	self.definitions.weapon_special_damage_taken_multiplier_1 = {
+		name_id = "menu_weapon_special_damage_taken_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "special_damage_taken_multiplier",
+			category = "weapon"
+		}
+	}
+	self.definitions.weapon_special_damage_taken_multiplier_2 = {
+		name_id = "menu_weapon_special_damage_taken_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "special_damage_taken_multiplier",
+			category = "weapon"
+		}
+	}	
     self.definitions.player_detection_risk_add_movement_speed_1 = {
             category = "feature",
             name_id = "menu_player_detection_risk_add_movement_speed",

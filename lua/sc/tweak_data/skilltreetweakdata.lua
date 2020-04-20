@@ -1239,14 +1239,15 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {7, 2},
 				[1] = {
 					upgrades = {
-						"player_corpse_dispose_amount_2"
+						"player_corpse_dispose_amount_2",
+						"weapon_special_damage_taken_multiplier_1"			
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
 						"bodybags_bag_quantity",
-						"weapon_special_damage_taken_multiplier"						
+						"weapon_special_damage_taken_multiplier_2"						
 					},
 					cost = self.costs.pro
 				}

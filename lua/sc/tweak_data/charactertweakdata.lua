@@ -195,6 +195,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ears = {min_duration = 10, max_duration = 10}
 		}
 		self.security.weapon_voice = "3"
+		self.security.melee_weapon = "baton"
 		self.security.experience.cable_tie = "tie_swat"
 		self.security.speech_prefix_p1 = "l"
 		self.security.speech_prefix_p2 = "n"
@@ -207,7 +208,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.security.deathguard = false
 		self.security.chatter = presets.enemy_chatter.guard
 		self.security.has_alarm_pager = true
-		self.security.melee_weapon = nil
 		self.security.steal_loot = nil
 		self.security.static_dodge_preset = true
 		self.security.shooting_death = false
@@ -339,7 +339,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.cop.deathguard = true
 		self.cop.shooting_death = false
 		self.cop.chatter = presets.enemy_chatter.cop
-		self.cop.melee_weapon = nil
+		self.cop.melee_weapon = "baton"
 		if job == "chill_combat" then
 			self.cop.steal_loot = true
 		else
@@ -782,12 +782,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat_titan.static_dodge_preset = true
 		self.swat_titan.heal_cooldown = 7.5
 		table.insert(self._enemy_list, "swat_titan")
-		
-		self.hrt = deep_clone(self.swat)
-		self.hrt.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.hrt.speech_prefix_p2 = "n"
-		self.hrt.speech_prefix_count = 4
-		table.insert(self._enemy_list, "hrt")		
 	end
 
 	function CharacterTweakData:_init_heavy_swat(presets)
@@ -848,7 +842,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.heavy_swat_sniper.bot_priority_shout = "f34x_any"
 		self.heavy_swat_sniper.priority_shout_max_dis = 3000
 		self.heavy_swat_sniper.weapon = deep_clone(presets.weapon.expert)
-		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 12
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 8.4
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -2690,7 +2684,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser_titan.static_dodge_preset = true
 		self.taser_titan.is_special = true	
 		self.taser_titan.move_speed = presets.move_speed.fast
-		self.taser_titan.melee_weapon = "buzzer_summer"
 		self.taser_titan.heal_cooldown = 45
 		table.insert(self._enemy_list, "taser_titan")
 	end
@@ -4118,7 +4111,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_pistol.miss_dis = 40
 		presets.weapon.normal.is_pistol.RELOAD_SPEED = 1
 		presets.weapon.normal.is_pistol.melee_speed = 1
-		presets.weapon.normal.is_pistol.melee_dmg = 5
+		presets.weapon.normal.is_pistol.melee_dmg = 3
 		presets.weapon.normal.is_pistol.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_pistol.range = {
 			close = 1000,
@@ -4195,7 +4188,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_rifle.miss_dis = 30
 		presets.weapon.normal.is_rifle.RELOAD_SPEED = 1
 		presets.weapon.normal.is_rifle.melee_speed = 1
-		presets.weapon.normal.is_rifle.melee_dmg = 5
+		presets.weapon.normal.is_rifle.melee_dmg = 3
 		presets.weapon.normal.is_rifle.tase_distance = 1400
 		presets.weapon.normal.is_rifle.aim_delay_tase = {0, 0.5}
 		presets.weapon.normal.is_rifle.tase_sphere_cast_radius = 30
@@ -4276,7 +4269,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_shotgun_pump.miss_dis = 20
 		presets.weapon.normal.is_shotgun_pump.RELOAD_SPEED = 0.25
 		presets.weapon.normal.is_shotgun_pump.melee_speed = 1
-		presets.weapon.normal.is_shotgun_pump.melee_dmg = 5
+		presets.weapon.normal.is_shotgun_pump.melee_dmg = 3
 		presets.weapon.normal.is_shotgun_pump.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_shotgun_pump.range = {
 			close = 500,
@@ -4544,7 +4537,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_smg.miss_dis = 20
 		presets.weapon.normal.is_smg.RELOAD_SPEED = 1
 		presets.weapon.normal.is_smg.melee_speed = 1
-		presets.weapon.normal.is_smg.melee_dmg = 5
+		presets.weapon.normal.is_smg.melee_dmg = 3
 		presets.weapon.normal.is_smg.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_smg.range = {
 			close = 1000,
@@ -4698,7 +4691,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.mac11.miss_dis = 25
 		presets.weapon.normal.mac11.RELOAD_SPEED = 1
 		presets.weapon.normal.mac11.melee_speed = 1
-		presets.weapon.normal.mac11.melee_dmg = 5
+		presets.weapon.normal.mac11.melee_dmg = 3
 		presets.weapon.normal.mac11.melee_retry_delay = {2, 2}
 		presets.weapon.normal.mac11.range = {
 			close = 1000,
@@ -4775,7 +4768,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.is_revolver.miss_dis = 50
 		presets.weapon.normal.is_revolver.RELOAD_SPEED = 1
 		presets.weapon.normal.is_revolver.melee_speed = 1
-		presets.weapon.normal.is_revolver.melee_dmg = 5
+		presets.weapon.normal.is_revolver.melee_dmg = 3
 		presets.weapon.normal.is_revolver.melee_retry_delay = {2, 2}
 		presets.weapon.normal.is_revolver.range = {
 			close = 1000,
@@ -5169,6 +5162,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		presets.weapon.normal.flamethrower = deep_clone(presets.weapon.normal.is_shotgun_pump)
+		presets.weapon.normal.flamethrower.melee_speed = 1
+		presets.weapon.normal.flamethrower.melee_dmg = 3
+		presets.weapon.normal.flamethrower.melee_retry_delay = {2, 2}		
 		presets.weapon.normal.flamethrower.autofire_rounds = {25, 50}
 		presets.weapon.normal.flamethrower.RELOAD_SPEED = 0.5
 		presets.weapon.normal.flamethrower.range = {
@@ -5238,7 +5234,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.normal.mini.miss_dis = 40
 		presets.weapon.normal.mini.RELOAD_SPEED = 0.25
 		presets.weapon.normal.mini.melee_speed = 1
-		presets.weapon.normal.mini.melee_dmg = 5
+		presets.weapon.normal.mini.melee_dmg = 3
 		presets.weapon.normal.mini.melee_retry_delay = {2, 2}
 		presets.weapon.normal.mini.range = {
 			close = 1000,
@@ -5319,7 +5315,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_pistol.miss_dis = 30
 		presets.weapon.good.is_pistol.RELOAD_SPEED = 1
 		presets.weapon.good.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
-		presets.weapon.good.is_pistol.melee_dmg = 10
+		presets.weapon.good.is_pistol.melee_dmg = 6
 		presets.weapon.good.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
 		presets.weapon.good.is_pistol.range = presets.weapon.normal.is_pistol.range
 		presets.weapon.good.is_pistol.FALLOFF = {
@@ -5392,7 +5388,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_rifle.miss_dis = 20
 		presets.weapon.good.is_rifle.RELOAD_SPEED = 1
 		presets.weapon.good.is_rifle.melee_speed = 1
-		presets.weapon.good.is_rifle.melee_dmg = 10
+		presets.weapon.good.is_rifle.melee_dmg = 6
 		presets.weapon.good.is_rifle.tase_distance = 1400
 		presets.weapon.good.is_rifle.aim_delay_tase = {0, 0.5}
 		presets.weapon.good.is_rifle.tase_sphere_cast_radius = 30
@@ -5473,8 +5469,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_shotgun_pump.miss_dis = 20
 		presets.weapon.good.is_shotgun_pump.RELOAD_SPEED = 0.25
 		presets.weapon.good.is_shotgun_pump.melee_speed = 1
-		presets.weapon.good.is_shotgun_pump.melee_dmg = 10
-		presets.weapon.good.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+		presets.weapon.good.is_shotgun_pump.melee_dmg = 6
+		presets.weapon.good.is_shotgun_pump.melee_retry_delay = {2, 2}
 		presets.weapon.good.is_shotgun_pump.range = {
 			close = 500,
 			optimal = 1000,
@@ -5753,8 +5749,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_shotgun_mag.miss_dis = 20
 		presets.weapon.good.is_shotgun_mag.RELOAD_SPEED = 0.25
 		presets.weapon.good.is_shotgun_mag.melee_speed = 1
-		presets.weapon.good.is_shotgun_mag.melee_dmg = 10
-		presets.weapon.good.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
+		presets.weapon.good.is_shotgun_mag.melee_dmg = 6
+		presets.weapon.good.is_shotgun_mag.melee_retry_delay = {2, 2}
 		presets.weapon.good.is_shotgun_mag.autofire_rounds = {4, 9}
 		presets.weapon.good.is_shotgun_mag.range = {
 			close = 500,
@@ -6028,6 +6024,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		presets.weapon.good.flamethrower = deep_clone(presets.weapon.good.is_shotgun_pump)
+		presets.weapon.good.flamethrower.melee_speed = 1
+		presets.weapon.good.flamethrower.melee_dmg = 6
+		presets.weapon.good.flamethrower.melee_retry_delay = {2, 2}
 		presets.weapon.good.flamethrower.autofire_rounds = {25, 50}
 		presets.weapon.good.flamethrower.RELOAD_SPEED = 0.5
 		presets.weapon.good.flamethrower.range = {
@@ -6096,7 +6095,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_smg.miss_dis = 20
 		presets.weapon.good.is_smg.RELOAD_SPEED = 1
 		presets.weapon.good.is_smg.melee_speed = presets.weapon.normal.is_smg.melee_speed
-		presets.weapon.good.is_smg.melee_dmg = 10
+		presets.weapon.good.is_smg.melee_dmg = 6
 		presets.weapon.good.is_smg.melee_retry_delay = presets.weapon.normal.is_smg.melee_retry_delay
 		presets.weapon.good.is_smg.range = presets.weapon.normal.is_smg.range
 		presets.weapon.good.is_smg.autofire_rounds = presets.weapon.normal.is_smg.autofire_rounds
@@ -6246,7 +6245,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.mac11.miss_dis = 10
 		presets.weapon.good.mac11.RELOAD_SPEED = 1
 		presets.weapon.good.mac11.melee_speed = presets.weapon.normal.mac11.melee_speed
-		presets.weapon.good.mac11.melee_dmg = 10
+		presets.weapon.good.mac11.melee_dmg = 6
 		presets.weapon.good.mac11.melee_retry_delay = presets.weapon.normal.mac11.melee_retry_delay
 		presets.weapon.good.mac11.range = presets.weapon.normal.mac11.range
 		presets.weapon.good.mac11.autofire_rounds = presets.weapon.normal.mac11.autofire_rounds
@@ -6319,7 +6318,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.is_revolver.miss_dis = 30
 		presets.weapon.good.is_revolver.RELOAD_SPEED = 1
 		presets.weapon.good.is_revolver.melee_speed = 1
-		presets.weapon.good.is_revolver.melee_dmg = 10
+		presets.weapon.good.is_revolver.melee_dmg = 6
 		presets.weapon.good.is_revolver.melee_retry_delay = {2, 2}
 		presets.weapon.good.is_revolver.range = {
 			close = 1000,
@@ -6463,7 +6462,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.good.mini.miss_dis = 40
 		presets.weapon.good.mini.RELOAD_SPEED = 0.25
 		presets.weapon.good.mini.melee_speed = 1
-		presets.weapon.good.mini.melee_dmg = 10
+		presets.weapon.good.mini.melee_dmg = 6
 		presets.weapon.good.mini.melee_retry_delay = {2, 2}
 		presets.weapon.good.mini.range = {
 			close = 1000,
@@ -6544,7 +6543,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_pistol.miss_dis = 20
 		presets.weapon.expert.is_pistol.RELOAD_SPEED = 1
 		presets.weapon.expert.is_pistol.melee_speed = presets.weapon.normal.is_pistol.melee_speed
-		presets.weapon.expert.is_pistol.melee_dmg = 10.5
+		presets.weapon.expert.is_pistol.melee_dmg = 8.4
 		presets.weapon.expert.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
 		presets.weapon.expert.is_pistol.range = presets.weapon.normal.is_pistol.range
 		presets.weapon.expert.is_pistol.FALLOFF = {
@@ -6629,7 +6628,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_rifle.miss_dis = 10
 		presets.weapon.expert.is_rifle.RELOAD_SPEED = 1
 		presets.weapon.expert.is_rifle.melee_speed = 1
-		presets.weapon.expert.is_rifle.melee_dmg = 10.5
+		presets.weapon.expert.is_rifle.melee_dmg = 8.4
 		presets.weapon.expert.is_rifle.tase_distance = 1400
 		presets.weapon.expert.is_rifle.aim_delay_tase = {0, 0.5}
 		presets.weapon.expert.is_rifle.tase_sphere_cast_radius = 30
@@ -6722,7 +6721,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_shotgun_pump.miss_dis = 10
 		presets.weapon.expert.is_shotgun_pump.RELOAD_SPEED = 0.25
 		presets.weapon.expert.is_shotgun_pump.melee_speed = 1
-		presets.weapon.expert.is_shotgun_pump.melee_dmg = 10.5
+		presets.weapon.expert.is_shotgun_pump.melee_dmg = 8.4
 		presets.weapon.expert.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 		presets.weapon.expert.is_shotgun_pump.range = {
 			close = 500,
@@ -6990,7 +6989,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_shotgun_mag.miss_dis = 10
 		presets.weapon.expert.is_shotgun_mag.RELOAD_SPEED = 0.25
 		presets.weapon.expert.is_shotgun_mag.melee_speed = 1
-		presets.weapon.expert.is_shotgun_mag.melee_dmg = 10.5
+		presets.weapon.expert.is_shotgun_mag.melee_dmg = 8.4
 		presets.weapon.expert.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 		presets.weapon.expert.is_shotgun_mag.range = {
 			close = 500,
@@ -7321,7 +7320,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_smg.miss_dis = 10
 		presets.weapon.expert.is_smg.RELOAD_SPEED = 1
 		presets.weapon.expert.is_smg.melee_speed = presets.weapon.normal.is_smg.melee_speed
-		presets.weapon.expert.is_smg.melee_dmg = 10.5
+		presets.weapon.expert.is_smg.melee_dmg = 8.4
 		presets.weapon.expert.is_smg.melee_retry_delay = presets.weapon.normal.is_smg.melee_retry_delay
 		presets.weapon.expert.is_smg.range = presets.weapon.normal.is_smg.range
 		presets.weapon.expert.is_smg.autofire_rounds = presets.weapon.normal.is_smg.autofire_rounds
@@ -7495,7 +7494,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.mac11.miss_dis = 10
 		presets.weapon.expert.mac11.RELOAD_SPEED = 1
 		presets.weapon.expert.mac11.melee_speed = presets.weapon.normal.mac11.melee_speed
-		presets.weapon.expert.mac11.melee_dmg = 10.5
+		presets.weapon.expert.mac11.melee_dmg = 8.4
 		presets.weapon.expert.mac11.melee_retry_delay = presets.weapon.normal.mac11.melee_retry_delay
 		presets.weapon.expert.mac11.range = presets.weapon.normal.mac11.range
 		presets.weapon.expert.mac11.autofire_rounds = presets.weapon.normal.mac11.autofire_rounds
@@ -7580,7 +7579,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.is_revolver.miss_dis = 30
 		presets.weapon.expert.is_revolver.RELOAD_SPEED = 1
 		presets.weapon.expert.is_revolver.melee_speed = 1
-		presets.weapon.expert.is_revolver.melee_dmg = 10.5
+		presets.weapon.expert.is_revolver.melee_dmg = 8.4
 		presets.weapon.expert.is_revolver.melee_retry_delay = {2, 2}
 		presets.weapon.expert.is_revolver.range = {
 			close = 1000,
@@ -7748,7 +7747,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.expert.mini.miss_dis = 40
 		presets.weapon.expert.mini.RELOAD_SPEED = 0.25
 		presets.weapon.expert.mini.melee_speed = 1
-		presets.weapon.expert.mini.melee_dmg = 10.5
+		presets.weapon.expert.mini.melee_dmg = 8.4
 		presets.weapon.expert.mini.melee_retry_delay = {2, 2}
 		presets.weapon.expert.mini.range = {
 			close = 1000,
@@ -7835,7 +7834,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		presets.weapon.deathwish = deep_clone(presets.weapon.expert)
-		presets.weapon.deathwish.is_shotgun_pump.melee_dmg = 13.125
+		presets.weapon.deathwish.is_shotgun_pump.melee_dmg = 10.5
 		presets.weapon.deathwish.is_shotgun_pump.FALLOFF = {
 			{
 				r = 100,
@@ -8152,7 +8151,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				autofire_rounds = {25, 50}
 			}
 		}
-		presets.weapon.deathwish.is_shotgun_mag.melee_dmg = 13.125
+		presets.weapon.deathwish.is_shotgun_mag.melee_dmg = 10.5
 		presets.weapon.deathwish.is_shotgun_mag.FALLOFF = {
 			{
 				r = 100,
@@ -8407,7 +8406,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		presets.weapon.deathwish.is_pistol.melee_dmg = 13.125
+		presets.weapon.deathwish.is_pistol.melee_dmg = 10.5
 		presets.weapon.deathwish.is_pistol.FALLOFF = {
 			{
 				r = 100,
@@ -8482,7 +8481,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		presets.weapon.deathwish.akimbo_pistol.melee_dmg = 13.125
+		presets.weapon.deathwish.akimbo_pistol.melee_dmg = 10.5
 		presets.weapon.deathwish.akimbo_pistol.FALLOFF = {
 			{
 				r = 100,
@@ -8557,7 +8556,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		presets.weapon.deathwish.mac11.melee_dmg = 13.125
+		presets.weapon.deathwish.mac11.melee_dmg = 10.5
 		presets.weapon.deathwish.mac11.FALLOFF = {
 			{
 				r = 100,
@@ -8632,7 +8631,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		presets.weapon.deathwish.is_revolver.melee_dmg = 13.125
+		presets.weapon.deathwish.is_revolver.melee_dmg = 10.5
 		presets.weapon.deathwish.is_revolver.FALLOFF = {
 			{
 				r = 100,
@@ -8707,7 +8706,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		presets.weapon.deathwish.is_rifle.melee_dmg = 13.125
+		presets.weapon.deathwish.is_rifle.melee_dmg = 10.5
 		presets.weapon.deathwish.is_rifle.FALLOFF = {
 			{
 				r = 100,
@@ -8783,7 +8782,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		presets.weapon.deathwish.is_bullpup = presets.weapon.deathwish.is_rifle
-		presets.weapon.deathwish.is_smg.melee_dmg = 13.125
+		presets.weapon.deathwish.is_smg.melee_dmg = 10.5
 		presets.weapon.deathwish.is_smg.FALLOFF = {
 			{
 				r = 100,
@@ -8932,7 +8931,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		presets.weapon.deathwish.is_lmg.melee_dmg = 13.125
+		presets.weapon.deathwish.is_lmg.melee_dmg = 10.5
 		presets.weapon.deathwish.is_lmg.FALLOFF = {
 			{
 				r = 100,
@@ -9007,7 +9006,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				}
 			}
 		}
-		presets.weapon.deathwish.mini.melee_dmg = 13.125
+		presets.weapon.deathwish.mini.melee_dmg = 10.5
 		presets.weapon.deathwish.mini.FALLOFF = {
 			{
 				r = 100,
@@ -9093,7 +9092,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_pistol.miss_dis = 20
 		presets.weapon.gang_member.is_pistol.RELOAD_SPEED = 1.5
 		presets.weapon.gang_member.is_pistol.melee_speed = 3
-		presets.weapon.gang_member.is_pistol.melee_dmg = 5
+		presets.weapon.gang_member.is_pistol.melee_dmg = 6
 		presets.weapon.gang_member.is_pistol.melee_retry_delay = presets.weapon.normal.is_pistol.melee_retry_delay
 		presets.weapon.gang_member.is_pistol.range = presets.weapon.normal.is_pistol.range
 		presets.weapon.gang_member.is_pistol.FALLOFF = {
@@ -9189,7 +9188,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_rifle.miss_dis = 40
 		presets.weapon.gang_member.is_rifle.RELOAD_SPEED = 1
 		presets.weapon.gang_member.is_rifle.melee_speed = 1
-		presets.weapon.gang_member.is_rifle.melee_dmg = 5
+		presets.weapon.gang_member.is_rifle.melee_dmg = 6
 		presets.weapon.gang_member.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 		presets.weapon.gang_member.is_rifle.range = {
 			close = 1500,
@@ -9291,7 +9290,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_shotgun_pump.miss_dis = 20
 		presets.weapon.gang_member.is_shotgun_pump.RELOAD_SPEED = 1
 		presets.weapon.gang_member.is_shotgun_pump.melee_speed = 1
-		presets.weapon.gang_member.is_shotgun_pump.melee_dmg = 5
+		presets.weapon.gang_member.is_shotgun_pump.melee_dmg = 6
 		presets.weapon.gang_member.is_shotgun_pump.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 		presets.weapon.gang_member.is_shotgun_pump.range = {
 			close = 1000,
@@ -9656,7 +9655,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.mossberg = deep_clone(presets.weapon.gang_member.is_shotgun_pump)
 		presets.weapon.gang_member.mac11 = presets.weapon.gang_member.is_smg
 		presets.weapon.gang_member.rifle = deep_clone(presets.weapon.gang_member.is_rifle)
-		presets.weapon.gang_member.rifle.spread = 5
+		presets.weapon.gang_member.rifle.spread = 6
 		presets.weapon.gang_member.rifle.autofire_rounds = nil
 		presets.weapon.gang_member.rifle.FALLOFF = {
 			{
@@ -9703,7 +9702,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.gang_member.is_shotgun_mag.spread = 15
 		presets.weapon.gang_member.is_shotgun_mag.miss_dis = 20
 		presets.weapon.gang_member.is_shotgun_mag.melee_speed = 1
-		presets.weapon.gang_member.is_shotgun_mag.melee_dmg = 5
+		presets.weapon.gang_member.is_shotgun_mag.melee_dmg = 6
 		presets.weapon.gang_member.is_shotgun_mag.melee_retry_delay = presets.weapon.normal.is_shotgun_pump.melee_retry_delay
 		presets.weapon.gang_member.is_shotgun_mag.RELOAD_SPEED = 1
 		presets.weapon.gang_member.is_shotgun_mag.autofire_rounds = {4, 9}
@@ -10011,7 +10010,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		presets.weapon.sniper.is_rifle.miss_dis = 250
 		presets.weapon.sniper.is_rifle.RELOAD_SPEED = 1
 		presets.weapon.sniper.is_rifle.melee_speed = presets.weapon.normal.is_rifle.melee_speed
-		presets.weapon.sniper.is_rifle.melee_dmg = 5
+		presets.weapon.sniper.is_rifle.melee_dmg = 3
 		presets.weapon.sniper.is_rifle.melee_retry_delay = presets.weapon.normal.is_rifle.melee_retry_delay
 		presets.weapon.sniper.is_rifle.range = {
 			close = 2000,
@@ -10082,7 +10081,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		presets.weapon.sniper_good = deep_clone(presets.weapon.sniper)
-		presets.weapon.sniper_good.is_rifle.melee_dmg = 10
+		presets.weapon.sniper_good.is_rifle.melee_dmg = 6
 		presets.weapon.sniper_good.is_rifle.FALLOFF = {
 			{
 				r = 2000,
@@ -10146,7 +10145,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		presets.weapon.sniper_expert = deep_clone(presets.weapon.sniper)
-		presets.weapon.sniper_expert.is_rifle.melee_dmg = 12
+		presets.weapon.sniper_expert.is_rifle.melee_dmg = 8.4
 		presets.weapon.sniper_expert.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -10222,7 +10221,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}
 		presets.weapon.sniper_deathwish = deep_clone(presets.weapon.sniper)
-		presets.weapon.sniper_deathwish.is_rifle.melee_dmg = 12
+		presets.weapon.sniper_deathwish.is_rifle.melee_dmg = 10.5
 		presets.weapon.sniper_deathwish.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12009,9 +12008,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
 			Idstring("units/payday2/weapons/wpn_npc_mini/x_mini_npc"),	
 			Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
-			Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
-			Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli"),
-			Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
+			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"),
+			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou"),
+			Idstring("units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"),
 			Idstring("units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater"),
 			Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"),
 			Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light"),
@@ -12050,8 +12049,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend_lmg.weapon = deep_clone(self.presets.weapon.normal)
 		
 		--Weekend Snipers
-		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
-		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 3
 		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12116,8 +12115,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}				
 		
 		
-		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
-		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
+		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.normal)
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 3
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12245,8 +12244,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend_lmg.melee_weapon_dmg_multiplier = 1
 		
 		--Weekend Snipers
-		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
-		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 3
 		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12310,8 +12309,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}						
 		
-		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
-		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
+		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.normal)
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 3
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12437,8 +12436,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend_lmg.melee_weapon_dmg_multiplier = 1
 		
 		--Weekend Snipers
-		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
-		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 3
 		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12503,8 +12502,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}				
 		
 		
-		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
-		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
+		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.normal)
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 3
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12631,8 +12630,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.weekend_lmg.melee_weapon_dmg_multiplier = 2
 		
 		--Weekend Snipers
-		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
-		self.weekend_dmr.weapon.is_rifle.melee_dmg = 5
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.normal)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 3
 		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12696,8 +12695,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			}
 		}						
 		
-		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
-		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 5
+		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.normal)
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 3
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12827,7 +12826,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
-		self.weekend_dmr.weapon.is_rifle.melee_dmg = 10
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 6
 		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -12892,7 +12891,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		}								
 				
 		self:_set_characters_dodge_preset("athletic_overkill")
-		self:_set_characters_melee_preset("2.1", "2")
+		self:_set_characters_melee_preset("2.8", "2")
 		self.fbi.can_shoot_while_dodging = true
 		self.swat.can_shoot_while_dodging = true
 		self.fbi.can_slide_on_suppress = true		
@@ -12904,7 +12903,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.damage.bullet_dodge_chance = 15
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
-		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 10
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 6
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -13007,7 +13006,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.swat.can_slide_on_suppress = true		
 		self.fbi_swat.can_slide_on_suppress = true		
 		self.city_swat.can_slide_on_suppress = true		
-		self:_set_characters_melee_preset("2.1", "2")
+		self:_set_characters_melee_preset("2.8", "2")
 		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)
@@ -13027,7 +13026,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Weekend Snipers
 		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.good)
-		self.weekend_dmr.weapon.is_rifle.melee_dmg = 10
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 6
 		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -13096,7 +13095,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.shield.weapon.is_pistol.melee_retry_delay = nil
 		self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
-		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 10
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 6
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
 			{
 				r = 1000,
@@ -13200,7 +13199,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("deathwish", "expert")
 		self:_set_characters_dodge_preset("deathwish")
-		self:_set_characters_melee_preset("2.625", "2.1")
+		self:_set_characters_melee_preset("3.5", "2.8")
 		self.fbi.can_shoot_while_dodging = true
 		self.swat.can_shoot_while_dodging = true	
 		self.fbi.can_slide_on_suppress = true		
@@ -13281,7 +13280,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 		self:_set_characters_weapon_preset("deathwish", "expert")
 		self:_set_characters_dodge_preset("deathwish")
-		self:_set_characters_melee_preset("2.625", "2.1")
+		self:_set_characters_melee_preset("3.5", "2.8")
 		self.fbi.can_shoot_while_dodging = true
 		self.swat.can_shoot_while_dodging = true	
 		self.fbi.can_slide_on_suppress = true		
@@ -13299,7 +13298,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--Full auto on Titan Snipers within 10 meters
 		self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.expert)
-		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 12
+		self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 8.4
 		self.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
 			{
 				r = 500,
@@ -13385,7 +13384,95 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					0
 				}
 			}
-		}			
+		}	
+		self.weekend_dmr.weapon = deep_clone(self.presets.weapon.expert)
+		self.weekend_dmr.weapon.is_rifle.melee_dmg = 8.4
+		self.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 500,
+				acc = {0.3, 0.6},
+				dmg_mul = 2.3,
+				recoil = {0.4, 0.8},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},			
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.3,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 1800,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2.1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1.05,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1.05,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}					
 		
 		--Even less damage from these things--
 		self.phalanx_minion.damage.explosion_damage_mul = 0.1

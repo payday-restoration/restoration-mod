@@ -7332,7 +7332,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9")
 					},					
 					nypd = {
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1")
 					},		
 					lapd = {
 						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
@@ -7457,25 +7457,25 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")							
 					},					
 					nypd = {
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),	
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),	
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),	
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),	
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 					},	
 					lapd = {
@@ -7569,15 +7569,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 					},					
 					nypd = {
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-						Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+						Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
 						Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 					},
 					lapd = {

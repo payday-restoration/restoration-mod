@@ -118,7 +118,6 @@
 	
 	<!--OMNIA Textures-->
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_city_df"/>
-	<texture path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_city_heavy_nm"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_heavy_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/heads_atlas_omnia_df"/>

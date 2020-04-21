@@ -1,5 +1,5 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	function SentryGunDamage:_apply_damage(damage, dmg_shield, dmg_body, is_local)
+	function SentryGunDamage:_apply_damage(damage, dmg_shield, dmg_body, is_local, attacker_unit, variant)
 		if dmg_shield and self._shield_health > 0 then
 			local shield_dmg = damage == "death" and self._shield_health or damage
 
@@ -75,7 +75,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return body and (self._shield_body_name_ids and (body:name() == self._shield_body_name_ids) or self._bag_body_name_ids and (body:name() == self._bag_body_name_ids))
 	end
 
-	local orig_sentry_die = SentryGunDamage.die
 	function SentryGunDamage:die(attacker_unit, variant, options)
 	--this replacement function prevents some on_death sequences because they can glitch the repairs
 		local owner = self._unit:base():get_owner_id()
@@ -106,7 +105,67 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		else
 			--called at game join since owner is not set at that point; can result in glitchy sentry repairs for late joins :(
-			return orig_sentry_die(self,attacker_unit,variant,options)
+			options = options or {}
+			local sequence_death = options.sequence_death or self._death_sequence_name
+			local sequence_shield_death = options.sequence_shield_death or self._death_with_shield_sequence_name
+			local sequence_done = options.sequence_done or "done_turret_destroyed"
+			local global_event = options.global_event or "turret_destroyed"
+
+			if self._stats_name and attacker_unit == managers.player:player_unit() then
+				local data = {
+					name = self._stats_name,
+					stats_name = self._stats_name,
+					variant = variant
+				}
+
+				managers.statistics:killed(data)
+			end
+
+			self._health = 0
+			self._dead = true
+
+			self._unit:weapon():remove_fire_mode_interaction()
+			self._unit:set_slot(26)
+			self._unit:brain():set_active(false)
+			self._unit:movement():set_active(false)
+			self._unit:movement():on_death()
+			managers.groupai:state():on_criminal_neutralized(self._unit)
+			self._unit:base():on_death()
+
+			if self._breakdown_snd_event then
+				self._unit:sound_source():post_event(self._breakdown_snd_event)
+			end
+
+			self._shield_smoke_level = 0
+
+			if self._enabled_sparks_on_shield and self._shield_sparks_disable and self._unit:damage():has_sequence(self._shield_sparks_disable) then
+				self._unit:damage():run_sequence_simple(self._shield_sparks_disable)
+				self._enabled_sparks_on_shield = nil
+			end
+
+			if sequence_shield_death and self._unit:base():has_shield() and self._unit:damage():has_sequence(sequence_shield_death) then
+				self._unit:damage():run_sequence_simple(sequence_shield_death)
+			elseif sequence_death and self._unit:damage():has_sequence(sequence_death) then
+				self._unit:damage():run_sequence_simple(sequence_death)
+			end
+
+			if self._parent_unit ~= nil and self._parent_unit:damage():has_sequence(sequence_done) then
+				self._parent_unit:damage():run_sequence_simple(sequence_done)
+			end
+
+			local turret_units = managers.groupai:state():turrets()
+
+			if turret_units and table.contains(turret_units, self._unit) then
+				if global_event then
+					managers.mission:call_global_event("turret_destroyed")
+				end
+
+				self._unit:contour():remove("mark_unit_friendly", true)
+				self._unit:contour():remove("mark_unit_dangerous", true)
+				managers.groupai:state():unregister_turret(self._unit)
+			end
+
+			self._unit:event_listener():call("on_death")
 		end
 	end
 
@@ -290,8 +349,19 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		local body_index = self._unit:get_body_index(hit_body_name)
+		local i_result = 0
 
-		self._unit:network():send("damage_bullet", attacker, damage_percent, body_index, 0, 0, self._dead and true or false)
+		if dmg_shield then
+			if self._shield_health > 0 then
+				i_result = 1
+			else
+				i_result = 2
+			end
+		elseif hit_bag then
+			i_result = 3
+		end
+
+		self._unit:network():send("damage_bullet", attacker, damage_percent, body_index, 0, i_result, self._dead and true or false)
 
 		if not self._dead then
 			self._unit:brain():on_damage_received(attack_data.attacker_unit)
@@ -415,17 +485,22 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 
 		local send_hit_shield = false
+		local send_destroy_shield = false
 
 		if dmg_shield then
 			send_hit_shield = true
+
+			if self._shield_health > 0 then
+				send_destroy_shield = true
+			end
 		end
 
-		self._unit:network():send("damage_fire", attacker, damage_percent, send_hit_shield, self._dead and true or false, Vector3(), nil, nil, false)
+		self._unit:network():send("damage_fire", attacker, damage_percent, send_hit_shield, self._dead and true or false, Vector3(), nil, nil, send_destroy_shield)
 
 		if not self._dead then
 			self._unit:brain():on_damage_received(attack_data.attacker_unit)
 		end
-		
+
 		if not self._ignore_client_damage then
 			local attacker_unit = attack_data and attack_data.attacker_unit
 
@@ -529,13 +604,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			attacker = self._unit
 		end
 
-		local send_hit_type = 1
+		local i_result = 1
 
 		if dmg_shield then
-			send_hit_type = 2
+			if self._shield_health > 0 then
+				i_result = 2
+			else
+				i_result = 4 --using 3 will cause the function in unitnetworkhandler to use sync_damage_fire instead of sync_damage_explosion
+			end
 		end
 
-		self._unit:network():send("damage_explosion_fire", attacker, damage_percent, send_hit_type, self._dead and true or false, Vector3(), self._unit)
+		self._unit:network():send("damage_explosion_fire", attacker, damage_percent, i_result, self._dead and true or false, Vector3(), self._unit)
 
 		if not self._dead then
 			self._unit:brain():on_damage_received(attacker_unit)
@@ -556,30 +635,30 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return result
 	end
 
-	function SentryGunDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit_offset_height, variant, death)
+	function SentryGunDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit_offset_height, i_result, death)
 		if self._dead then
 			return
 		end
 
-		local hit_body = self._unit:body(i_body)
 		local dmg_shield, dmg_body, damage = nil
 
 		if death then
-			damage = "death"
-
-			if self._bag_hit_snd_event and hit_body:name() == self._bag_body_name_ids then
+			if i_result == 3 and self._bag_hit_snd_event then
 				self._unit:sound_source():post_event(self._bag_hit_snd_event)
 			end
 
+			damage = "death"
 			dmg_shield = true
 			dmg_body = true
 		else
-			local dmg_shield = hit_body:name() == self._shield_body_name_ids
-
-			if dmg_shield then
+			if i_result == 1 then
 				damage = damage_percent * self._SHIELD_HEALTH_INIT_PERCENT
+				dmg_shield = true
+			elseif i_result == 2 then
+				damage = "death"
+				dmg_shield = true
 			else
-				if self._bag_hit_snd_event and hit_body:name() == self._bag_body_name_ids then
+				if i_result == 3 and self._bag_hit_snd_event then
 					self._unit:sound_source():post_event(self._bag_hit_snd_event)
 				end
 
@@ -595,7 +674,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-	function SentryGunDamage:sync_damage_fire(attacker_unit, damage_percent, hit_shield, death)
+	function SentryGunDamage:sync_damage_fire(attacker_unit, damage_percent, hit_shield, death, ignore, ignore_2, ignore_3, destroy_shield)
 		if self._dead then
 			return
 		end
@@ -610,13 +689,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if death then
 			damage = "death"
-
 			dmg_shield = true
 			dmg_body = true
 		else
 			if hit_shield then
+				if destroy_shield then
+					damage = "death"
+				else
+					damage = damage_percent * self._SHIELD_HEALTH_INIT_PERCENT
+				end
+
 				dmg_shield = true
-				damage = damage_percent * self._SHIELD_HEALTH_INIT_PERCENT
 			else
 				damage = damage_percent * self._HEALTH_INIT_PERCENT
 				dmg_body = true
@@ -630,7 +713,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end
 
-	function SentryGunDamage:sync_damage_explosion(attacker_unit, damage_percent, hit_type, death)
+	function SentryGunDamage:sync_damage_explosion(attacker_unit, damage_percent, i_result, death)
 		if self._dead then
 			return
 		end
@@ -649,13 +732,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if death then
 			damage = "death"
-
 			dmg_shield = true
 			dmg_body = true
 		else
-			if hit_type == 2 then
+			if i_result == 4 then
+				damage = "death"
 				dmg_shield = true
+			elseif i_result == 2 then
 				damage = damage_percent * self._SHIELD_HEALTH_INIT_PERCENT
+				dmg_shield = true
 			else
 				damage = damage_percent * self._HEALTH_INIT_PERCENT
 				dmg_body = true

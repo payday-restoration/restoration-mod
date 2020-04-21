@@ -44581,7 +44581,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.parts.wpn_fps_ass_corgi_b_medium.stats = {
 				value = 2,
 				recoil = 1,
-				spread = -5
+				spread = -1
 			}
 			self.parts.wpn_fps_snp_tti_b_long.stats = {
 				value = 3,

@@ -2559,15 +2559,6 @@
 	<animation path="anims/shared/pistol/neutral/husk1/ntl_std_turn_r45" force="true"/>
 	<animation path="anims/shared/pistol/neutral/husk1/ntl_std_turn_r90" force="true"/>
 	<animation path="anims/shared/pistol/neutral/husk1/ntl_std_turn_r135" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk2/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk2/ntl_std_idle_var1" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk2/ntl_std_idle_var2" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk3/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk3/ntl_std_idle_var1" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk3/ntl_std_idle_var2" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk4/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk4/ntl_std_idle_var1" force="true"/>
-	<animation path="anims/shared/pistol/neutral/husk4/ntl_std_idle_var2" force="true"/>
 	<animation path="anims/shared/pistol/neutral/ntl_std_equip" force="true"/>
 	<animation path="anims/shared/pistol/neutral/ntl_std_idle" force="true"/>
 	<animation path="anims/shared/pistol/neutral/ntl_std_turn_l45" force="true"/>

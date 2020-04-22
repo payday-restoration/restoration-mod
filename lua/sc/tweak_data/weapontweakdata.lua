@@ -913,6 +913,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ump_npc.suppression = 2.8
 		
 		--Krinkov(ASVAL atm waiting on jarey's wepom), clone of UMP
+		self.asval_smg_npc = deep_clone(self.mp5_npc)		
 		self.asval_smg_npc.DAMAGE = 3
 		self.asval_smg_npc.auto.fire_rate = 0.083
 		self.asval_smg_npc.CLIP_AMMO_MAX = 25

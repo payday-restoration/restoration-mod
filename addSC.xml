@@ -1361,7 +1361,7 @@
 	
 	<!--Note: remove units/pd2_dlc_bbq. These aren't necessary for the NPC flamethrower to work-->
 
-	<!--'Classic' Medic Dozer-->
+	<!--Classic Medic Dozer-->
 	<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic" load="true"/>
 	<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_husk" load="true"/>
 	<cooked_physics path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic"/>
@@ -1373,7 +1373,7 @@
 	
 	<texture path="units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic_df"/>
 
-	<!--'Classic' Medic Dozer Armor Pieces-->
+	<!--Classic Medic Dozer Armor Pieces-->
 	<unit path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back" load="false"/>
 	<cooked_physics path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back"/>
 	<model path="units/pd2_dlc_drm/characters/ene_acc_bulldozer_medic_classic_back/ene_acc_bulldozer_medic_classic_back" />
@@ -2071,8 +2071,14 @@
 	<!--MINIGUN uh um I mean BENELLI DOZER-->
 	<texture path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
 	<model path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" force="true"/>
+	<object path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" force="true"/>	
 	<sequence_manager path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" force="true"/>	
-
+	
+	<!--medic dosr-->
+	<object path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>	
+	<model path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>	
+	<sequence_manager path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" force="true"/>	
+	
 	<!--shield-->
 	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	

@@ -117,6 +117,7 @@
 
 	<!--Corrected NPC Weapon Sounds-->	
 	<unit path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true" />		
+	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true"/>	
 	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" force="true" />			
 	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" />		
 
@@ -638,16 +639,21 @@
 	<!--Russian Reaper Weapons looking nicer-->
 	<material_config path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" force="true"/>
 	<model path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" force="true"/>
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" force="true"/>
+	
 	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47_df"/>
 	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47_nm"/>
 	
 	<material_config path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" force="true"/>
 	<model path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" force="true"/>
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" force="true"/>	
 	<object path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" force="true"/>
+	
 	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/akmsu_df" force="true"/>
 	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/akmsu_nm" force="true"/>	
 	
 	<model path="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" force="true"/>		
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" force="true"/>		
 	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_asval/asval_df" force="true"/>
 	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_asval/asval_nm" force="true"/>	
 	

@@ -980,6 +980,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
         self.weekend_dmr.speech_prefix_p1 = "uwu"
         self.weekend_dmr.speech_prefix_count = nil    
 		self.weekend_dmr.heal_cooldown = 15
+		self.weekend_dmr.can_throw_frag = true
 		table.insert(self._enemy_list, "weekend_dmr")
 	end
 
@@ -1206,6 +1207,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
         self.weekend.speech_prefix_p1 = "uwu"
         self.weekend.speech_prefix_count = nil 
 		self.weekend.heal_cooldown = 5
+		self.weekend.can_throw_frag = true
 		table.insert(self._enemy_list, "weekend")				
 		
 		self.city_swat_titan = deep_clone(self.city_swat)
@@ -1255,6 +1257,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
         self.weekend_lmg.speech_prefix_p1 = "uwu"
         self.weekend_lmg.speech_prefix_count = nil 
 		self.weekend_lmg.heal_cooldown = 7.5
+		self.weekend_lmg.can_throw_frag = true
 		table.insert(self._enemy_list, "weekend_lmg")						
 				
 		--Temp Solution
@@ -1328,7 +1331,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.gangster.experience = {}
 		self.gangster.weapon = presets.weapon.normal
 		self.gangster.detection = presets.detection.normal
-		self.gangster.HEALTH_INIT = 4
+		self.gangster.HEALTH_INIT = 2
 		self.gangster.headshot_dmg_mul = 2.3
 		self.gangster.move_speed = presets.move_speed.normal
 		self.gangster.suspicious = nil
@@ -1354,6 +1357,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self.gangster.speech_prefix_count = 2
 		elseif job == "man" then	
 			self.gangster.speech_prefix_p1 = self._prefix_data_p1.cop()
+			self.gangster.HEALTH_INIT = 4
 			self.gangster.speech_prefix_p2 = "n"
 			self.gangster.speech_prefix_count = 4	
 			self.gangster.no_arrest = false
@@ -1372,14 +1376,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			suppress = true
 		}
 		self.gangster.silent_priority_shout = "f37"
-		if job == "alex_3" or job == "alex_3_res" or job == "mex" or job == "mex_cooking" then
+		if job == "alex_3" or job == "alex_3_res" or job == "mex" then
 			self.gangster.access = "security"
 		else
 			self.gangster.access = "gangster"
 		end
 		self.gangster.dodge = presets.dodge.average
 		self.gangster.challenges = {type = "gangster"}
-		self.gangster.melee_weapon = nil
+		self.gangster.melee_weapon = "fists"
 		self.gangster.steal_loot = nil
 		self.gangster.calls_in = true
 		self.gangster.static_dodge_preset = true
@@ -1391,12 +1395,12 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function CharacterTweakData:_init_biker(presets)
 		self.biker = deep_clone(self.gangster)
-		if job == "mex" or job == "mex_cooking" then
+		if job == "mex" then
 			self.biker.access = "security"
 		else
 			self.biker.access = "gangster"
 		end		
-		self.biker.HEALTH_INIT = 4
+		self.biker.HEALTH_INIT = 2
 		self.biker.headshot_dmg_mul = 2.3	
 		self.biker.calls_in = true
 		self.biker.speech_prefix_p1 = "bik"
@@ -1412,6 +1416,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.biker.static_dodge_preset = true
 		self.biker.always_drop = true
 		self.biker.heal_cooldown = 2.5
+		self.biker.melee_weapon = "knife_1"
 		table.insert(self._enemy_list, "biker")
 		self.biker_guard = deep_clone(self.biker)
 		self.biker_guard.suppression = presets.suppression.hard_def
@@ -1473,7 +1478,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mobster = deep_clone(self.gangster)
 		self.mobster.calls_in = true
 		self.mobster.melee_weapon = "fists"
-		self.mobster.HEALTH_INIT = 4
+		self.mobster.HEALTH_INIT = 2
 		self.mobster.headshot_dmg_mul = 2.3
 		self.mobster.speech_prefix_p1 = "rt"
 		self.mobster.speech_prefix_p2 = nil
@@ -1729,7 +1734,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.bolivian_indoors_mex = deep_clone(self.bolivian_indoors)
 		self.bolivian_indoors_mex.has_alarm_pager = true
-		if job == "mex" or job == "mex_cooking" then
+		if job == "mex" then
 			self.bolivian_indoors_mex.access = "security"
 		else
 			self.bolivian_indoors_mex.access = "gangster"
@@ -12040,6 +12045,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--No normal tase for Elektra on lower difficulties
 		self.taser_summers.weapon.is_rifle.tase_distance = 0
 		
+		--No Frags on Spring on lower difficulties
+		self.spring.can_throw_frag = false
+		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.dodge = self.presets.dodge.athletic_very_hard
@@ -12233,6 +12241,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--No normal tase for Elektra on lower difficulties
 		self.taser_summers.weapon.is_rifle.tase_distance = 0
 		
+		--No Frags on Spring on lower difficulties
+		self.spring.can_throw_frag = false		
+		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 		self.weekend.melee_weapon_dmg_multiplier = 1
@@ -12417,7 +12428,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.taser.shock_damage = 2.0
 
 		--No normal tase for Elektra on lower difficulties
-		self.taser_summers.weapon.is_rifle.tase_distance = 0		
+		self.taser_summers.weapon.is_rifle.tase_distance = 0	
+
+		--No Frags on Spring on lower difficulties
+		self.spring.can_throw_frag = false		
 		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12612,6 +12626,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		--No normal tase for Elektra on lower difficulties
 		self.taser_summers.weapon.is_rifle.tase_distance = 0		
+		
+		--No Frags on Spring on lower difficulties
+		self.spring.can_throw_frag = false		
 		
 		--Weekend Rifles/Shotguns
 		self.weekend.weapon = deep_clone(self.presets.weapon.good)

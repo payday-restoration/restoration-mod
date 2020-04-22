@@ -865,12 +865,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			self:_remove_group_member(e_data.group, u_key, dead)
 		end
 		
-		if dead and managers.groupai:state():whisper_mode() then
+		--Only guards with pagers increase suspicion
+		local char_tweak = tweak_data.character[unit:base()._tweak_table]
+		
+		if dead and char_tweak.has_alarm_pager and managers.groupai:state():whisper_mode() then
 			self._next_whisper_susp_mul_t = self._t + 5
-			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.01
+			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.04
 			self._decay_target = self._old_guard_detection_mul_raw * 0.75			
 			self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
-			self._guard_delay_deduction = self._guard_delay_deduction + 0.01
+			self._guard_delay_deduction = self._guard_delay_deduction + 0.04
 		end		
 
 		if e_data.assigned_area and dead then
@@ -936,12 +939,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		local dead = unit:character_damage():dead()
 		
+		--*Big* suspicion increase from dead civs. Watch your background!--
 		if dead and managers.groupai:state():whisper_mode() then
 			self._next_whisper_susp_mul_t = self._t + 5
-			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.01
+			self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.1
 			self._decay_target = self._old_guard_detection_mul_raw * 0.75			
 			self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
-			self._guard_delay_deduction = self._guard_delay_deduction + 0.01
+			self._guard_delay_deduction = self._guard_delay_deduction + 0.1
 		end		
 		
 	end	

@@ -179,7 +179,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}	
 		
 		self.friend.ai_group_type = lapd
-		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/nypdassets"}
+		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/nypdassets", "packages/narr_rvd"}
 		self.friend.player_style = "suit_sunny"
 		
 		self.kenaz.ai_group_type = lapd

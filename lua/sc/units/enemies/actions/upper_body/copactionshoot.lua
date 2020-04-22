@@ -654,8 +654,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			local proceed_as_usual = true
 
 			if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
-				if self._throw_frag and self._ext_brain._throw_frag_t < t then
-					self._ext_brain._throw_frag_t = t + 30
+				if self._throw_frag and self._ext_brain._throw_frag_t < t then				
+					local is_spring = self._ext_base._tweak_table == "spring"					
+					local frag_cooldown = 60
+										
+					if is_spring then
+						frag_cooldown = 30
+					end
+					
+					self._ext_brain._throw_frag_t = t + frag_cooldown
 
 					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "frag") then
 						self._ext_movement:play_redirect("throw_grenade")
@@ -681,7 +688,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						self._ext_brain._deploy_gas_t = t + 10
 
 						local is_normal_grenadier = self._ext_base._tweak_table == "boom"
-						local roll_chance = is_normal_grenadier and 0.35 or 0.25
+						local roll_chance = is_normal_grenadier and 0.5 or 0.4
 						local gas_roll = math_random() <= roll_chance
 
 						if gas_roll then

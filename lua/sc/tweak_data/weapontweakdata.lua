@@ -953,7 +953,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mac11_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 		self.mac11_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 		self.mac11_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
-		self.mac11_npc.CLIP_AMMO_MAX = 30
+		self.mac11_npc.CLIP_AMMO_MAX = 20
 		self.mac11_npc.NR_CLIPS_MAX = 5
 		self.mac11_npc.auto.fire_rate = 0.06
 		self.mac11_npc.hold = "pistol"

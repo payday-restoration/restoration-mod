@@ -258,10 +258,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		
 		--Suspicion Increase from a pager call
-		managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.04
+		managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.02
 		managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
 		managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.04
+		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.02
 		managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
 
 		self._alarm_pager_has_run = true

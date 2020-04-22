@@ -10399,7 +10399,90 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		}
 		self.cold.stats_modifiers = nil
 		self.cold.panic_suppression_chance = 0.0
-	end						
+	end
+
+	if self.m590 then --Silent Enforcer and GT's Mossberg 590
+		self.m590.has_description = true
+		self.m590.tactical_reload = 1
+		self.m590.desc_id = "bm_w_m590_desc"		
+		self.m590.rays = 9
+		self.m590.timers = {
+			shotgun_reload_enter = 0.4,
+			shotgun_reload_exit_empty = 1.3,
+			shotgun_reload_exit_not_empty = 1,
+			shotgun_reload_shell = 0.6666667,
+			shotgun_reload_first_shell_offset = 0.33666667,
+			unequip = 0.5,
+			equip = 0.5
+		}
+		self.m590.CLIP_AMMO_MAX = 8
+		self.m590.spread.standing = 3 * 1
+		self.m590.muzzleflash = "effects/particles/shotgun/muzzleflash"		
+		self.m590.spread.crouching = 2 * 1 
+		self.m590.spread.steelsight = 1 * 1
+		self.m590.spread.moving_standing = 4 * 1
+		self.m590.spread.moving_crouching = 3 * 1
+		self.m590.spread.moving_steelsight = 2 * 1
+		self.m590.kick.standing = self.new_m4.kick.standing
+		self.m590.kick.crouching = self.new_m4.kick.standing
+		self.m590.kick.steelsight = self.new_m4.kick.standing
+		self.m590.single.fire_rate = 0.8
+		self.m590.fire_mode_data.fire_rate = 0.8
+		self.m590.AMMO_MAX = 40 
+		self.m590.damage_near = 600
+		self.m590.damage_far = 1200
+		self.m590.AMMO_PICKUP = self:_pickup_chance(40, 2)
+		self.m590.stats = {
+			damage = 90,
+			spread = 9,
+			recoil = 16,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 15,
+			suppression = 5,
+			alert_size = 5,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.m590.stats_modifiers = {damage = 1}
+		self.m590.panic_suppression_chance = 0.0
+	end	
+	
+	if self.hpb then --Gambyt's Browning HP	
+		self.hpb.tactical_reload = 1												
+		self.hpb.fire_mode_data.fire_rate = 0.08571428571
+		self.hpb.single.fire_rate = 0.08571428571
+		self.hpb.CLIP_AMMO_MAX = 10
+		self.hpb.AMMO_MAX = 40
+		self.hpb.AMMO_PICKUP = self:_pickup_chance(40, 1)
+		self.hpb.spread.standing = 3
+		self.hpb.spread.crouching = 2
+		self.hpb.spread.steelsight = 1
+		self.hpb.spread.moving_standing = 4
+		self.hpb.spread.moving_crouching = 3
+		self.hpb.spread.moving_steelsight = 2
+		self.hpb.kick.standing = self.glock_17.kick.standing
+		self.hpb.kick.crouching = self.glock_17.kick.crouching
+		self.hpb.kick.steelsight = self.glock_17.kick.steelsight
+		self.hpb.stats = {
+			damage = 45,
+			spread = 17,
+			recoil = 18,
+			spread_moving = 5,
+			zoom = 3,
+			concealment = 25,
+			suppression = 6,
+			alert_size = 6,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.hpb.stats_modifiers = nil
+		self.hpb.panic_suppression_chance = 0.0
+	end	
 		
 	if BeardLib.Utils:FindMod("Custom Attachment Points") or BeardLib.Utils:FindMod("WeaponLib") then	--fixes lmg sights not following the dustcover/lid when reloading, but ONLY if the mod user has CAP/WeaponLib installed.
 		self:SetupAttachmentPoint( "par", {

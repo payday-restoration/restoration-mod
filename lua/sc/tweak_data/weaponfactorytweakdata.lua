@@ -44057,6 +44057,164 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 					concealment = 0
 				}
 			end
+
+		if self.wpn_fps_shot_m590 then -- Silent Enforcer & GT's Mossberg 590
+			self.parts.wpn_fps_shot_m590_s_wood.stats = {			
+					value = 3,
+					recoil = -1,
+					spread = 1,
+					concealment = -1
+			}
+			self.parts.wpn_fps_shot_m590_s_wood.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
+			self.parts.wpn_fps_shot_m590_s_hdtf.stats = {
+					value = 5,
+					recoil = -3,
+					concealment = 3
+			}
+			self.parts.wpn_fps_shot_m590_s_old.stats = {
+					value = 1,
+					recoil = 2,
+					spread = -2
+			}
+			self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = -200, damage_far_mul = -400}
+			self.parts.wpn_fps_shot_m590_fg_wood.stats = {
+					value = 2,
+					recoil = 1,
+					spread = -1
+			}
+			self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = -100, damage_far_mul = -200}			
+			self.parts.wpn_fps_shot_m590_fg_wood.stats = {
+					value = 2,
+					concealment = 1,
+					spread = -1
+			}
+			self.parts.wpn_fps_shot_m590_b_short.stats = {
+					value = 0,
+					recoil = -1,
+					extra_ammo = -2,
+					concealment = 3
+			}
+			self.parts.wpn_fps_shot_m590_heat_shield.stats = {
+					value = 0
+			}
+			self.parts.wpn_fps_shot_m590_b_silencer.stats = {
+					value = 7,
+					suppression = 12,
+					alert_size = 12,
+					recoil = 1,
+					spread = -1
+			}
+			self.wpn_fps_shot_m590.override = { 
+				wpn_fps_shot_r870_body_rack = {
+					stats = {				
+						value = 2,
+						spread = -1,
+						concealment = -1,
+						reload = 3
+					}, 
+					custom_stats = {damage_near_mul = -100,	damage_far_mul = -200},
+					a_obj="a_rack"
+				},		
+				wpn_fps_upg_a_explosive = {
+					stats = {
+						value = 10,
+						recoil = -5,
+						concealment = -7,
+						spread_multi = {1, 1},	
+						total_ammo_mod = -62,
+						damage = 250
+					},
+					custom_stats = {
+						ignore_statistic = true,
+						block_b_storm = true,
+						rays = 1,
+						damage_near_mul = 9999999999,
+						damage_far_mul = 9999999999,
+						bullet_class = "InstantExplosiveBulletBase",
+						ammo_pickup_min_mul = 0.375,
+						ammo_pickup_max_mul = 0.375
+				}
+			}
+		}		
+		end	
+
+		if self.parts.wpn_fps_ass_ns_g_sup1 then -- Gambyt's Sneaky Suppressor Pack
+				self.parts.wpn_fps_ass_ns_g_sup1.stats = { 
+					value = 2,
+					suppression = 11,
+					alert_size = 11,
+					recoil = -1,
+					spread = 1,
+					concealment = -1
+				}	
+				self.parts.wpn_fps_ass_ns_g_sup2.stats = { 
+					value = 2,
+					suppression = 11,
+					alert_size = 11,
+					recoil = -1,
+					spread = 1,
+					concealment = -1
+				}			
+				self.parts.wpn_fps_ass_ns_g_sup3.stats = { 
+					value = 2,
+					suppression = 11,
+					alert_size = 11,
+					recoil = -1,
+					spread = 1,
+					concealment = -1
+				}			
+				self.parts.wpn_fps_ass_ns_g_sup4.stats = { 
+					value = 5,
+					suppression = 12,
+					alert_size = 12,
+					spread = 2,
+					recoil = -2,
+					concealment = -2
+				}		
+				self.parts.wpn_fps_ass_ns_g_sup5.stats = { 
+					value = 2,
+					suppression = 11,
+					alert_size = 11,
+					recoil = -1,
+					spread = 1,
+					concealment = -1
+				}		
+				self.parts.wpn_fps_ass_ns_g_sup6.stats = { 
+					value = 2,
+					suppression = 11,
+					alert_size = 11,
+					recoil = -1,
+					spread = 1,
+					concealment = -1
+				}							
+				self.parts.wpn_fps_ass_ns_g_sup7.stats = { 
+					value = 10,
+					suppression = 10,
+					alert_size = 10,
+					spread = -1,
+					recoil = 1
+				}
+				self.parts.wpn_fps_ass_ns_g_sup8.stats = { 
+					value = 2,
+					suppression = 11,
+					alert_size = 11,
+					recoil = -1,
+					spread = 1,
+					concealment = -1
+				}
+				self.parts.wpn_fps_ass_ns_g_sup9.stats = { 
+					value = 10,
+					suppression = 12,
+					alert_size = 12,
+					spread = 2,
+					recoil = -2,
+					concealment = -2
+				}						
+				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1) --not a good way of fixing it, but it works, yeah?
+				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)
+				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)				
+				table.remove(self.parts.wpn_fps_pis_pl14_b_comp.forbids, 1)				
+			end				
 						
 		if self.parts.wpn_fps_rail_covers then 	--Kden and Silent Enforcer's Rail Covers
 			self.parts.wpn_fps_rc_dd.stats = { 
@@ -44065,7 +44223,43 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			self.parts.wpn_fps_rail_covers.stats = { 
 					value = 0
 				}	
-			end		
+			end
+
+		if self.wpn_fps_pis_hpb then --Gambyt's Browning HP
+			self.parts.wpn_fps_pis_hpb_g_white.stats = { 
+					value = 3, 
+					recoil = -1, 
+					spread = 1, 
+					concealment = -1
+				}
+			self.parts.wpn_fps_pis_hpb_thread.stats = { 
+					value = 4,
+					recoil = -1,
+					concealment = 1
+				}
+			self.parts.wpn_fps_pis_hpb_comp2.stats = { 
+					value = 4,
+					spread = -1,
+					concealment = 1
+				}								
+			self.parts.wpn_fps_pis_hpb_m_extended.stats = { 
+					value = 3,
+					concealment = -1,
+					extra_ammo = 4,
+					reload = -1
+				}				
+			self.parts.wpn_fps_pis_hpb_g_cherry.stats = { 
+					value = 10,
+					recoil = 1,
+					spread = -1
+				}				
+			self.parts.wpn_fps_pis_hpb_g_black.stats = { 
+					value = 2,
+					recoil = -1,
+					concealment = 1
+				}				
+			self.parts.wpn_fps_pis_hpb_a_c45.pcs = nil
+			end					
  
 		if self.wpn_fps_snp_moss464spx then -- Pawcio's SPX Centerfire
 			self.parts.wpn_fps_snp_moss464spx_stock.stats = nil

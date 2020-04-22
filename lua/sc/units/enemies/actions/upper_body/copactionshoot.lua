@@ -666,6 +666,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "frag") then
 						self._ext_movement:play_redirect("throw_grenade")
+						self._unit:sound():say("use_gas", true, nil, true)
 						managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
 
 						proceed_as_usual = nil
@@ -678,6 +679,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "molotov") then
 						self._ext_movement:play_redirect("throw_grenade")
 						managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
+						self._unit:sound():say("use_gas", true, nil, true)
 
 						proceed_as_usual = nil
 					end

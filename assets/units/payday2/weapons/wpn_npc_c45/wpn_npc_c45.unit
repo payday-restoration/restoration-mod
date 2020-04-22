@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" />
+   <dependencies>
+	<depends_on effect="effects/particles/weapons/c45/muzzleflash_3dp" />
+	<depends_on effect="effects/payday2/particles/weapons/9mm_auto" />
+	<depends_on bnk="soundbanks/weapon_g17" />
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCRaycastWeaponBase" >
+			<var name="name_id" value="c45_npc" />
+    </extension>
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_c45" />
+    <default_soundsource source="rp_c45" />
+  </sounds>
+</unit>

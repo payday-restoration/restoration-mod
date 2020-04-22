@@ -619,7 +619,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	function WeaponTweakData:_init_data_c45_npc()
 		self.c45_npc.categories = {"pistol"}
-		self.c45_npc.sounds.prefix = "c45_npc"
+		self.c45_npc.sounds.prefix = "g17_npc"
 		self.c45_npc.use_data.selection_index = 1
 		self.c45_npc.DAMAGE = 2
 		self.c45_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
@@ -644,7 +644,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			"akimbo",
 			"pistol"
 		}	
-		self.x_c45_npc.sounds.prefix = "c45_npc"
+		self.x_c45_npc.sounds.prefix = "g17_npc"
 		self.x_c45_npc.use_data.selection_index = 1
 		self.x_c45_npc.DAMAGE = 2
 		self.x_c45_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
@@ -737,7 +737,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		--AK 101 used by Reapers
 		self.ak47_ass_npc = deep_clone(self.m4_npc)
-		self.ak47_ass_npc.sounds.prefix = "akm_npc"
+		self.ak47_ass_npc.sounds.prefix = "ak74_npc"
 		
 		--Bravo Rifle
 		self.swamp_npc = deep_clone(self.m4_npc)
@@ -750,7 +750,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.sg417_npc.CLIP_AMMO_MAX = 20
 		self.sg417_npc.DAMAGE = 4.5
 		self.sg417_npc.alert_size = 3000
-		self.sg417_npc.suppression = 3		
+		self.sg417_npc.suppression = 3
+		
+		self.s553_zeal_npc = deep_clone(self.m4_npc)
+		self.s553_zeal_npc.sounds.prefix = "sig552_npc"		
 		
 		--M4/203 used by Grenadier
 		self.m4_boom_npc = deep_clone(self.m4_npc)
@@ -852,7 +855,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.bayou_npc.suppression = 3		
 		
 		self.r870_taser_npc = deep_clone(self.r870_npc)
-		self.r870_taser_npc.sounds.prefix = "remington_npc"
+		self.r870_taser_npc.sounds.prefix = "keltec_npc"
 		self.r870_taser_npc.DAMAGE = 5
 		self.r870_taser_npc.CLIP_AMMO_MAX = 8
 	end
@@ -909,18 +912,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.ump_npc.alert_size = 2800
 		self.ump_npc.suppression = 2.8
 		
-		--ASVAL, clone of UMP
-		self.asval_smg_npc = deep_clone(self.mp5_npc)
+		--Krinkov(ASVAL atm waiting on jarey's wepom), clone of UMP
 		self.asval_smg_npc.DAMAGE = 3
-		self.asval_smg_npc.has_suppressor = "suppressed_a"
 		self.asval_smg_npc.auto.fire_rate = 0.083
 		self.asval_smg_npc.CLIP_AMMO_MAX = 25
-		self.asval_smg_npc.suppression = 2.8
+		self.asval_smg_npc.suppression = 2.8		
 		self.asval_smg_npc.alert_size = 2800
+		self.asval_smg_npc.sounds.prefix = "akmsu_npc"
 		
-		--AKMSU
+		--Tatonka
 		self.akmsu_smg_npc = deep_clone(self.ump_npc)
-		self.akmsu_smg_npc.has_suppressor = "suppressed_a"
+		self.akmsu_smg_npc.sounds.prefix = "coal_npc"
 		
 		--Autumn MPX
 		self.mpx_npc = deep_clone(self.mp5_tactical_npc)

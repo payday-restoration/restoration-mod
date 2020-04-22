@@ -1,5 +1,5 @@
 <materials version="3" group="wpn_npc_r870">
-    <material name="mtr_r870" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+    <material name="mtr_m4" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
         <bump_normal_texture file="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_nm"/>
         <diffuse_texture file="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_df"/>
     </material>

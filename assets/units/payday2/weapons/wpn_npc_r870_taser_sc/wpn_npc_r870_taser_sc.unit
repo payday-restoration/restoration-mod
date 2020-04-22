@@ -13,7 +13,7 @@
   <extension name="damage" class="UnitDamage" />
   </extensions>
   <sounds>
-    <soundsource name="root" source="rp_r870" />
-    <default_soundsource source="rp_r870" />
+		<soundsource name="root" source="rp_m4" />
+		<default_soundsource source="rp_m4" />
   </sounds>
 </unit>

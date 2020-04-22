@@ -858,6 +858,8 @@
 	<sequence_manager path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
 	<unit path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_df" force="true"/>	
+	<texture path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_nm" force="true"/>	
 
 	<!--Spring-->
 	<sequence_manager path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>

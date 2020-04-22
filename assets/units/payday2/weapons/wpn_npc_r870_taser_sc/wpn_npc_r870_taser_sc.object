@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <dynamic_object>
-  <diesel materials="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" orientation_object="rp_r870" />
+  <diesel materials="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" orientation_object="rp_m4" />
    <sequence_manager file="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" />
   <bodies>
-	<body name="body" enabled="false" template="debris" pushed_by_mover="false">
-		<object name="rp_r870" />
-		<object name="c_box" collision_type="box" mass="3" />
-	</body>
+    <body name="body" enabled="false" template="debris" pushed_by_mover="false">
+		<object name="rp_m4" />
+		<object name="c_convex" collision_type="convex" padding="-2.5" mass="3"/>
+    </body>
   </bodies>
   <effects>
   	<effect_spawner name="flashlight" object="a_effect_flashlight" effect="effects/particles/weapons/flashlight/flashlight" enabled="false" assign_parent="true"/>
@@ -18,8 +18,9 @@
         <object lod="1" name="g_body_lod1" enabled="true" />
       </lod_object>
     </graphic_group>
+    <object name="s_body" enabled="false" />
   </graphics>
   <lights>
     <light multiplier="identity" far_range="1000" name="a_effect_flashlight" enabled="false" type="spot|specular" />
-  </lights>
+  </lights>  
 </dynamic_object>

@@ -1537,6 +1537,15 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 	local old_death = CopDamage.die
 	function CopDamage:die(attack_data)
+
+		if self._unit:base():char_tweak()["custom_voicework"] then
+			local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
+			if voicelines and voicelines["death"] then
+				local line_to_use = voicelines.death[math.random(#voicelines.death)]
+				self._unit:base():play_voiceline(line_to_use, true)
+			end
+		end
+		
 		if not self._char_tweak.always_drop then
 			local attacker_unit = attack_data.attacker_unit
 

@@ -985,5 +985,16 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		
 	end	
+
+	local _remove_group_member_ori = GroupAIStateBase._remove_group_member
+	function GroupAIStateBase:_remove_group_member(group, u_key, is_casualty)
+		_remove_group_member_ori(self, group, u_key, is_casualty)
+		if is_casualty then
+			local unit_to_scream = group.units[math.random(#group.units)]
+			if unit_to_scream then
+				unit_to_scream:sound():say("buddy_died", true)
+			end
+		end
+	end
 	
 end

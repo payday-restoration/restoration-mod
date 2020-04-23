@@ -15,6 +15,18 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") then
 			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event_2, nil, nil)
 		end
+
+		if self._unit:base():char_tweak().die_sound_event then
+			self._unit:sound():play(self._unit:base():char_tweak().die_sound_event, nil, nil)
+		else
+			if self._unit:base():char_tweak()["custom_voicework"] then
+				local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
+				if voicelines and voicelines["death"] then
+					local line_to_use = voicelines.death[math.random(#voicelines.death)]
+					self._unit:base():play_voiceline(line_to_use, true)
+				end
+			end
+		end
 	end
 
 	function HuskCopDamage:heal_unit(...)

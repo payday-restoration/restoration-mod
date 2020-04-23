@@ -1,0 +1,224 @@
+<table name="shatters_fury">
+    <Localization directory="Localization" default="english.txt">
+    </Localization>
+    <GlobalValue id="shatters_fury" color="Color(1, 0.5, 0)"/>
+    <WeaponMod based_on="wpn_fps_pis_rage_body_standard" id="wpn_fps_pis_shatters_fury_body_standard" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard" type="body" drop="false" is_a_unlockable="false"/>
+    
+    <WeaponMod based_on="wpn_fps_pis_rage_b_standard" id="wpn_fps_pis_shatters_fury_b_standard" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard" type="barrel" drop="false" is_a_unlockable="false"/>
+    
+    <WeaponMod based_on="wpn_fps_pis_rage_g_standard" id="wpn_fps_pis_shatters_fury_g_standard" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard" type="grip" drop="false" is_a_unlockable="false"/>
+    
+    <WeaponMod based_on="wpn_fps_pis_rage_b_long" id="wpn_fps_pis_shatters_fury_b_long" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+    <stats damage="0" recoil="-4" spread="4" spread_moving="3" reload="-2" concealment="-5"/>
+	</WeaponMod>
+    
+    <WeaponMod based_on="wpn_fps_pis_rage_b_short" id="wpn_fps_pis_shatters_fury_b_short" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+    <stats damage="-3" recoil="4" spread="-2" spread_moving="3" reload="4" concealment="-3"/>
+	</WeaponMod>
+    
+    <WeaponMod based_on="wpn_fps_pis_rage_b_comp1" id="wpn_fps_pis_shatters_fury_b_comp1" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+    <stats damage="0" recoil="2" spread="2" spread_moving="-3" concealment="-3"/>
+	</WeaponMod>
+	
+    <WeaponMod based_on="wpn_fps_pis_rage_b_comp2" id="wpn_fps_pis_shatters_fury_b_comp2" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
+    <stats damage="2" recoil="1" spread="-1" spread_moving="1" suppression="-4" concealment="-3"/>
+	</WeaponMod>
+    
+    <WeaponMod based_on="wpn_fps_pis_rage_g_ergo" id="wpn_fps_pis_shatters_fury_g_ergo" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo" type="grip" drop="false" texture_bundle_folder="mods" is_a_unlockable="true"/>
+    
+    <WeaponMod based_on="wpn_fps_pis_rage_body_smooth" id="wpn_fps_pis_shatters_fury_body_smooth" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth" type="upper_reciever" drop="false" texture_bundle_folder="mods" is_a_unlockable="true"/>
+
+    <WeaponNew>
+        <weapon id="shatters_fury" based_on="new_raging_bull" unlock_level="75" texture_bundle_folder="mods" global_value="shatters_fury">            
+            <stats damage="100" concealment="12"/>
+            <fire_mode_data fire_rate="0.80"/>
+			<use_data selection_index="2"/>
+            <sounds fire="rbull_fire" fire_single="rbull_fire"/>                
+            <animations reload_name_id="new_raging_bull" equip_id="equip_glock" recoil_steelsight="true">
+            </animations>             
+        </weapon>
+        <factory id="wpn_fps_pis_shatters_fury" unit="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury">        
+        
+            <optional_types>
+                <value_node value="barrel_ext"/>
+                <value_node value="gadget"/>
+            </optional_types>
+
+            <default_blueprint>
+            <value_node value="wpn_fps_pis_shatters_fury_body_standard"/> 
+            <value_node value="wpn_fps_pis_shatters_fury_b_standard"/>
+            <value_node value="wpn_fps_pis_shatters_fury_g_standard"/>
+            </default_blueprint>
+
+            <uses_parts>
+			<!-- Default -->
+            <value_node value="wpn_fps_pis_shatters_fury_body_standard"/>
+            <value_node value="wpn_fps_pis_shatters_fury_b_standard"/>
+            <value_node value="wpn_fps_pis_shatters_fury_g_standard"/>
+			
+			<!-- Scope Mount -->
+            <value_node value="wpn_fps_pis_rage_o_adapter"/>
+            <value_node value="wpn_fps_pis_rage_lock"/>
+            <value_node value="wpn_fps_pis_rage_extra"/>
+			
+			<!-- barrels -->
+            <value_node value="wpn_fps_pis_shatters_fury_b_long"/>
+            <value_node value="wpn_fps_pis_shatters_fury_b_short"/>
+            <value_node value="wpn_fps_pis_shatters_fury_b_comp1"/>
+            <value_node value="wpn_fps_pis_shatters_fury_b_comp2"/>
+			
+			<!-- grip -->
+            <value_node value="wpn_fps_pis_shatters_fury_g_ergo"/> 
+			
+			<!-- body -->
+            <value_node value="wpn_fps_pis_shatters_fury_body_smooth"/>
+			
+			<!-- Sights -->
+            <value_node value="wpn_fps_upg_o_specter"/>
+            <value_node value="wpn_fps_upg_o_docter"/>
+            <value_node value="wpn_fps_upg_o_eotech"/>
+            <value_node value="wpn_fps_upg_o_t1micro"/>
+            <value_node value="wpn_fps_upg_o_cmore"/>
+            <value_node value="wpn_fps_upg_o_aimpoint_2"/>
+            <value_node value="wpn_fps_upg_o_acog"/>
+            <value_node value="wpn_fps_upg_o_eotech_xps"/>
+            <value_node value="wpn_fps_upg_o_reflex"/>
+            <value_node value="wpn_fps_upg_o_rx01"/>
+            <value_node value="wpn_fps_upg_o_rx30"/>
+            <value_node value="wpn_fps_upg_o_cs"/>
+            <value_node value="wpn_fps_upg_o_spot"/>			
+            </uses_parts>            
+            
+        </factory>
+
+        <stance/>
+
+    </Weapon>
+
+    <AddFiles directory="assets">
+    <!-- main section -->
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury"/>
+        
+    <!-- Textures -->
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/44mag_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/44mag_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_long_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_long_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_short_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_short_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_standard_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_standard_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/base_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/base_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/comp1_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/comp1_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/comp2_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/comp2_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_smooth_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_smooth_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/ergo_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/ergo_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/grip_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/grip_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/lock_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/lock_nm"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_df"/>
+        <texture path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_nm"/>
+        
+    <!-- body -->
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard_thq"/>
+                
+    <!-- body_smooth -->
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth_thq"/>
+        
+    <!-- barrel -->        
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_standard_thq"/>
+                
+    <!-- barrel_long -->        
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long_thq"/>
+                        
+    <!-- barrel_long -->        
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short_thq"/>
+        
+    <!-- barrel_compensator_1 -->        
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1_thq"/>
+                
+        
+    <!-- barrel_compensator_2 -->        
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2_thq"/>
+                
+    <!-- grip -->        
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard_thq"/>
+        
+    <!-- grip_ergo -->        
+        <cooked_physics path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo"/>
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo"/>
+        <model path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo"/>
+        <object path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo"/>
+        <unit path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo"/>
+        
+        <material_config path="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo_thq"/>
+        
+    <!-- icons -->
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/shatters_fury"/>
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_b_comp1"/>
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_b_comp2"/>
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_b_long"/>
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_b_short"/>
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_body_smooth"/>
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_pis_shatters_fury_g_ergo"/>
+    </AddFiles>
+</table>

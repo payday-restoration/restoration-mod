@@ -1,0 +1,7 @@
+<materials version="3" group="weapon_group">
+	<material name="barrel_standard" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_standard_df" mip="1"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/barrel_standard_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+</materials>

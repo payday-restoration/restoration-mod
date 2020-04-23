@@ -1,0 +1,14 @@
+{
+    "bm_w_shatters_fury" : "Shatter's Fury",
+    
+    "bm_wp_wpn_fps_pis_shatters_fury_b_comp1" : "Compensated Barrel",
+    "bm_wp_wpn_fps_pis_shatters_fury_b_comp2" : "Long Compensated Barrel",
+    "bm_wp_wpn_fps_pis_shatters_fury_b_long" : "Long Barrel",
+    "bm_wp_wpn_fps_pis_shatters_fury_b_short" : "Short Barrel",
+    
+    "bm_wp_wpn_fps_pis_shatters_fury_g_ergo" : "Ergo Grip",
+    
+    "bm_wp_wpn_fps_pis_shatters_fury_body_smooth" : "Smooth Cylinder",
+
+    "menu_l_global_value_shatters_fury" : "This is a VERITAS item!"
+}

@@ -1,0 +1,69 @@
+<materials version="3" group="weapon_group">
+	<material name="barrel_long" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/barrel_long_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/barrel_long_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	<material name="barrel_short" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/barrel_short_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/barrel_short_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>	
+	<material name="barrel_standard" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/barrel_standard_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/barrel_standard_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>	
+	<material name="base" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/base_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/base_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>	
+	<material name="comp1" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/comp1_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/comp1_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>	
+	<material name="comp2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/comp2_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/comp2_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	<material name="cylinder" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_df" mip="1"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	<material name="smooth" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_smooth_df" mip="1"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/cylinder_smooth_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	<material name="ergo" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/ergo_df" mip="1"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/ergo_nm" mip="1"/>
+    </material>
+	<material name="grip" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/grip_df" mip="1"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/grip_nm" mip="1"/>
+    </material>
+	<material name="lock" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/lock_df" mip="1"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/lock_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	<material name="mag44" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/44mag_df" mip="1"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/44mag_nm" mip="1"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	<material name="rearsight" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_df" mip="1"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/rearsight_nm" mip="1"/>
+    </material>
+	<material name="no_blurr" version="2" render_template="effect:DOF_CUTTER">
+        <variable value="10" type="scalar" name="fadeout_distance"/>
+        <diffuse_texture file="units/payday2/weapons/wpn_effects_textures/wpn_effect_no_blurr_df" mip="1"/>
+        <variable value="182.69010925293" type="scalar" name="falloff_exp"/>
+    </material>
+</materials>

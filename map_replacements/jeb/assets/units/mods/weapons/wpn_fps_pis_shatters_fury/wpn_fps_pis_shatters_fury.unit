@@ -1,0 +1,12 @@
+<unit type="wpn" slot="1" >
+	<object file="units/mods/weapons/wpn_fps_pis_shatters_fury/wpn_fps_pis_shatters_fury" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_rbull"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="NewRaycastWeaponBase" >
+			<var name="name_id" value="shatters_fury" />
+		</extension>
+	</extensions>
+</unit>

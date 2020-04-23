@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_pis_rage_o_adapter" materials="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_o_adapter" />
+    <graphics>
+        <object enabled="true" name="g_adapter" />
+    </graphics>
+</dynamic_object>

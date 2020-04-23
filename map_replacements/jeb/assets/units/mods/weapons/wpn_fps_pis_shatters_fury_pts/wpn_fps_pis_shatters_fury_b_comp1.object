@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel materials="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1" orientation_object="rp_wpn_fps_pis_rage_b_comp1"/>
+    <graphics>
+        <object enabled="true" name="g_comp1" />
+    </graphics>
+</dynamic_object>

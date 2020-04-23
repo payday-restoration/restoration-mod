@@ -13,9 +13,9 @@
 	"res_credits" : "Restoration Mod Credits",
 	"res_credits_help" : "View the credits for RESTORATION MOD.",
 
-	"Warning_overhaul_title" : "Warning: Closing thw game to prevent savefile corruption",
-	"dialog_show_overhaul_dialog" : "You are diasabling the overhaul, your game will close in $TIME seconds",
-	"dialog_enable_overhaul_dialog" : "You are enabling the overhaul, your game will close in $TIME seconds",
+	"Warning_overhaul_title" : "WARNING: Game closing to prevent save corruption.",
+	"dialog_show_overhaul_dialog" : "You are DISABLING the Complete Overhaul. It is typically NOT RECOMMENDED to do this, and you should instead REMOVE the mod from your mods folder if you intend not to use the Overhaul actively.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
+	"dialog_enable_overhaul_dialog" : "You are ENABLING the Complete Overhaul. Your Overhaul should typically remain ON at all times, and only be disabled by removing the mod from your mods folder.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
 	
 	"res_saveboost" : "HOLD $BTN_INTERACT TO BOOST TO LEVEL 100",
 	
@@ -130,7 +130,7 @@
 	"RestorationModDistrictDescID" : "Enable or disable district descriptions in CRIME.NET.  Not gameplay accurate.",
 	"RestorationModSCOptionsButtonTitleID" : "Restoration Overhaul Options",
 	"RestorationModSCOptionsButtonDescID" : "Restoration Overhaul Options",
-	"RestorationModSCTitleID" : "Complete Overhaul",
+	"RestorationModSCTitleID" : "Complete Overhaul (DEBUG)",
 	"RestorationModSCDescID" : "Enable or disable Restoration's complete game overhaul. Toggling this option will automatically exit your game to prevent save corruption.",
 	"RestorationModHolidayTitleID" : "Holiday Effects",
 	"RestorationModHolidayDescID" : "Enable or disable Holiday effects for the overhaul.",

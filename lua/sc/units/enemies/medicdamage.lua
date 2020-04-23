@@ -99,8 +99,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 		MedicActionHeal:check_achievements()
 
-		return true
-
 		if self._unit:base():char_tweak()["custom_voicework"] then
 			local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
 			if voicelines and voicelines["heal"] then
@@ -108,6 +106,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				self._unit:base():play_voiceline(line_to_use)
 			end
 		end
+
+		return true
 
 	end
 end

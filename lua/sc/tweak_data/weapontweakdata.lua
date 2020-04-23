@@ -10484,33 +10484,6 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.hpb.panic_suppression_chance = 0.0
 	end	
 		
-	if BeardLib.Utils:FindMod("Custom Attachment Points") or BeardLib.Utils:FindMod("WeaponLib") then	--fixes lmg sights not following the dustcover/lid when reloading, but ONLY if the mod user has CAP/WeaponLib installed.
-		self:SetupAttachmentPoint( "par", {
-			name = "a_o",
-			base_a_obj = "a_o",
-			part_attach_data = {
-				{"wpn_fps_lmg_par_upper_reciever"}, 
-				"g_cover"
-			}
-		})	 
-		self:SetupAttachmentPoint( "m249", {
-			name = "a_o",
-			base_a_obj = "a_o",
-			part_attach_data = {
-				{"wpn_fps_lmg_m249_upper_reciever"}, 
-				"g_dustcover"
-			}
-		})
-		self:SetupAttachmentPoint( "mg42", {
-			name = "a_o",
-			base_a_obj = "a_o",
-			part_attach_data = {
-				{"wpn_fps_lmg_mg42_reciever"}, 
-				"g_lid"
-			}
-		})
-	end		
-
 	end)
 else
 end

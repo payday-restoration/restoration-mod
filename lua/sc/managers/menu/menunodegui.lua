@@ -99,26 +99,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 		end
 	end 
-    if not SystemFS:exists("mods/voiceline-framework-master/mod.txt") then
-		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
-		function MenuNodeGui:_setup_item_rows(node, ...)
-			_setup_item_rows_original(self, node, ...)
-			if not Global._friendsonly_warning_shown then
-				Global._friendsonly_warning_shown = true
-				QuickMenu:new(
-					"SC's Mod",
-					"Warning! You are missing Voiceline Framework, which is required for the mod to function correctly. Neglecting to install Voiceline Framework will result in the game crashing frequently.",
-					{
-						{
-							text = "ok",
-							is_cancel_button = true
-						}
-					},
-					true
-				)
-			end
-		end
-	end 	
     --[[if SystemFS:exists("mods/Monkeepers/mod.txt") then
 		local _setup_item_rows_original = MenuNodeGui._setup_item_rows
 		function MenuNodeGui:_setup_item_rows(node, ...)

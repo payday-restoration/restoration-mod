@@ -1000,6 +1000,11 @@
 
 	<!--NPC XC45-->	
 	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45" force="true" load="false"/>
+	
+	<!--NPC Mosconi less ugly-->
+	<model path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun" force="true"/>	
+	<texture path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/sawnoff_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/sawnoff_nm" force="true"/>
 
 	<!--Fixed Sniper-->
 	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>

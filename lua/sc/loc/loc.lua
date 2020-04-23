@@ -147,8 +147,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["sc_flash_desc"] = "Turn this off if you don't want a flashbang HUD indicator... wait why wouldn't you? (Requires restart)",
 		["sc_stealth_desc"] = "Turn this off if you don't want stealth changes from SC's mod.(Requires restart)",
 		
-		["menu_difficulty_apocalypse"] = "Death Life",
-		["menu_difficulty_sm_wish"] = "Parking Violation",
+		--you can't be funny any more
+	--	["menu_difficulty_apocalypse"] = "Death Life",
+	--	["menu_difficulty_sm_wish"] = "Parking Violation",
 		
 		["menu_rifle"] = "RIFLES",
 		["menu_jowi"] = "Wick",

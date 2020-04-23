@@ -1417,7 +1417,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		return result
 	end
 
-	function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effect_percent, i_body, hit_offset_height, variant, death)
+	function CopDamage:sync_damage_melee(attacker_unit, damage_percent, damage_effect_percent, i_body, hit_offset_height, i_result, death)
 		if self._dead then
 			return
 		end

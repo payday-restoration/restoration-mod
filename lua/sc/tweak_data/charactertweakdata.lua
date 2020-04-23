@@ -830,9 +830,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		else
 			self.heavy_swat.steal_loot = true
 		end
-		self.heavy_swat.static_weapon_preset = true
+		self.heavy_swat.static_weapon_preset = false
 		self.heavy_swat.static_dodge_preset = true
-		self.heavy_swat.static_melee_preset = true	
+		self.heavy_swat.static_melee_preset = false	
 		self.heavy_swat.heal_cooldown = 10
 		table.insert(self._enemy_list, "heavy_swat")
 		
@@ -2518,6 +2518,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.spooc_attack_beating_time = {0, 0}
 		self.autumn.no_damage_mission = true
 		self.autumn.spawn_sound_event_2 = "cloaker_spawn"
+		self.autumn.can_deploy_tear_gas = true
 		--self.autumn.spawn_sound_event_2 = "cpa_a02_01"--uncomment for testing purposes
 		self.autumn.spooc_attack_use_smoke_chance = 1
 		self.autumn.weapon_voice = "3"
@@ -2714,7 +2715,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.boom.tags = {"law", "boom", "custom", "special", "customvo"}
 		self.boom.experience = {}
 		self.boom.weapon = deep_clone(presets.weapon.normal)
-		self.boom.melee_weapon = "knife_1"
+		self.boom.melee_weapon = nil
 		self.boom.melee_weapon_dmg_multiplier = 1
 		self.boom.weapon_safety_range = 1000
 		self.boom.detection = presets.detection.normal

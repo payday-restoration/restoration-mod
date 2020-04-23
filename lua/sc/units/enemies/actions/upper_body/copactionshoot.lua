@@ -690,7 +690,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						self._ext_brain._deploy_gas_t = t + 10
 
 						local is_normal_grenadier = self._ext_base._tweak_table == "boom"
-						local roll_chance = is_normal_grenadier and 0.5 or 0.4
+						local roll_chance = is_normal_grenadier and 0.3 or 0.25
 						local gas_roll = math_random() <= roll_chance
 
 						if gas_roll then

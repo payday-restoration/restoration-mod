@@ -548,8 +548,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["hud_action_repair_sentry"] = "Repairing sentry...",		
 		
 		--More fitting descriptions of difficulties--
-		["menu_risk_elite"] = "DEATH LIFE. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "PARKING VIOLATION. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",		
+		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
+		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",		
 	
 		--Woo Hints--
 		["loading_gameplay_118"] = "You have a 25% chance to pick up cable ties from ammo boxes, make the most of them!",

@@ -15,7 +15,7 @@
 
 	"Warning_overhaul_title" : "WARNING: Game closing to prevent save corruption.",
 	"dialog_show_overhaul_dialog" : "You are DISABLING the Complete Overhaul. It is typically NOT RECOMMENDED to do this, and you should instead REMOVE the mod from your mods folder if you intend not to use the Overhaul actively.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
-	"dialog_enable_overhaul_dialog" : "You are ENABLING the Complete Overhaul. Your Overhaul should typically remain ON at all times, and only be disabled by removing the mod from your mods folder.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
+	"dialog_enable_overhaul_dialog" : "You are ENABLING the Complete Overhaul. The Overhaul should typically remain ON at all times, and only be disabled by removing the mod from your mods folder.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
 	
 	"res_saveboost" : "HOLD $BTN_INTERACT TO BOOST TO LEVEL 100",
 	

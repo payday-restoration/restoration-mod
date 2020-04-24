@@ -1,5 +1,5 @@
 {
-    "bm_w_shatters_fury" : "Shatter's Fury",
+    "bm_w_shatters_fury" : "Raze's Fury",
     
     "bm_wp_wpn_fps_pis_shatters_fury_b_comp1" : "Compensated Barrel",
     "bm_wp_wpn_fps_pis_shatters_fury_b_comp2" : "Long Compensated Barrel",

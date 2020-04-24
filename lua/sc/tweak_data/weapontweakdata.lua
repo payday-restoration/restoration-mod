@@ -1565,8 +1565,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.raging_bull_crew.FIRE_MODE = "single"
 		self.raging_bull_primary_crew = deep_clone(self.raging_bull_crew)
 		self.raging_bull_primary_crew.use_data.selection_index = 2
-		
-		self.jeb_crew = deep_clone(self.raging_bull_crew)
 	end	
 	
 	function WeaponTweakData:_init_data_shepheard_crew()
@@ -4612,8 +4610,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 			reload = 20
 		}
 		self.judge.stats_modifiers = nil
-		self.judge.timers.reload_not_empty = 2.65
-		self.judge.timers.reload_empty = 2.65
+		self.judge.timers.reload_not_empty = 2.4
+		self.judge.timers.reload_empty = 2.4
 		self.judge.panic_suppression_chance = 0.0
 		self.judge.stats_modifiers = {damage = 1}
 		self.judge.kick.standing = self.huntsman.kick.standing
@@ -9591,93 +9589,42 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_stech.panic_suppression_chance = 0.0			
 		
 		--Restoration Weapons--
-		self.jeb = {
-			categories = {
-				"pistol",
-				"revolver"
-			},
-			upgrade_blocks = nil,
-			damage_melee = 3,
-			damage_melee_effect_mul = 1,
-			sounds = {}
-		}
-		self.jeb.sounds.fire = "rbull_fire"
-		self.jeb.sounds.dryfire = "secondary_dryfire"
-		self.jeb.sounds.enter_steelsight = "pistol_steel_sight_enter"
-		self.jeb.sounds.leave_steelsight = "pistol_steel_sight_exit"
-		self.jeb.timers = {
-			reload_not_empty = 2.25,
-			reload_empty = 2.25,
-			unequip = 0.5,
-			equip = 0.45
-		}
-		self.jeb.FIRE_MODE = "single"
-		self.jeb.fire_mode_data = {fire_rate = 0.166}
-		self.jeb.single = {fire_rate = 0.166}
-		self.jeb.name_id = "bm_w_jeb"
-		self.jeb.desc_id = "bm_w_jeb_desc"
-		self.jeb.description_id = "des_new_raging_bull"
-		self.jeb.muzzleflash = "effects/payday2/particles/weapons/762_auto_fps"
-		self.jeb.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
-		self.jeb.use_data = {selection_index = 1}
-		self.jeb.DAMAGE = 2
-		self.jeb.CLIP_AMMO_MAX = 6
-		self.jeb.NR_CLIPS_MAX = 9
-		self.jeb.AMMO_MAX = 30
-		self.jeb.AMMO_PICKUP = self:_pickup_chance(1, 1)
-		self.jeb.spread = {
-			standing = self.new_m4.spread.standing,
-			crouching = self.new_m4.spread.crouching,
-			steelsight = self.new_m4.spread.steelsight,
-			moving_standing = self.new_m4.spread.moving_standing,
-			moving_crouching = self.new_m4.spread.moving_crouching,
-			moving_steelsight = self.new_m4.spread.moving_steelsight
-		}
-		self.jeb.kick = {standing = self.glock_17.kick.standing}
-		self.jeb.kick.crouching = self.new_raging_bull.kick.standing
-		self.jeb.kick.steelsight = self.new_raging_bull.kick.standing
-		self.jeb.crosshair = {
-			standing = {},
-			crouching = {},
-			steelsight = {}
-		}
-		self.jeb.crosshair.standing.offset = 0.2
-		self.jeb.crosshair.standing.moving_offset = 0.6
-		self.jeb.crosshair.standing.kick_offset = 0.4
-		self.jeb.crosshair.crouching.offset = 0.1
-		self.jeb.crosshair.crouching.moving_offset = 0.6
-		self.jeb.crosshair.crouching.kick_offset = 0.3
-		self.jeb.crosshair.steelsight.hidden = true
-		self.jeb.crosshair.steelsight.offset = 0
-		self.jeb.crosshair.steelsight.moving_offset = 0
-		self.jeb.crosshair.steelsight.kick_offset = 0.1
-		self.jeb.shake = {
-			fire_multiplier = 1,
-			fire_steelsight_multiplier = -1
-		}
-		self.jeb.autohit = autohit_pistol_default
-		self.jeb.aim_assist = aim_assist_pistol_default		
-		self.jeb.weapon_hold = "raging_bull"
-		self.jeb.animations = {
-			equip_id = "equip_raging_bull",
-			recoil_steelsight = true
-		}
-		self.jeb.panic_suppression_chance = 0.2
-		self.jeb.stats = {
-			zoom = 3,
-			total_ammo_mod = 21,
-			damage = 175,
-			alert_size = 7,
-			spread = 20,
-			spread_moving = 5,
-			recoil = 2,
-			value = 1,
+		self.shatters_fury.AMMO_MAX = 30
+		self.shatters_fury.CLIP_AMMO_MAX = 5
+		self.shatters_fury.AMMO_PICKUP = self:_pickup_chance(30, 2)
+		self.shatters_fury.spread = {}
+		self.shatters_fury.spread.standing = 3
+		self.shatters_fury.spread.crouching = 2
+		self.shatters_fury.spread.steelsight = 1
+		self.shatters_fury.spread.moving_standing = 4
+		self.shatters_fury.spread.moving_crouching = 3
+		self.shatters_fury.spread.moving_steelsight = 2
+		self.shatters_fury.kick.standing = self.huntsman.kick.standing
+		self.shatters_fury.kick.crouching = self.huntsman.kick.crouching
+		self.shatters_fury.kick.steelsight = self.huntsman.kick.steelsight
+		self.shatters_fury.stats = {
+			damage = 90,
+			spread = 17,
+			recoil = 11,
+			spread_moving = 9,
+			zoom = 5,
+			concealment = 21,
+			suppression = 4,
+			alert_size = 4,
 			extra_ammo = 101,
-			reload = 20,
-			suppression = 7,
-			concealment = 26
-		}		
-		self.jeb.custom = true
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.shatters_fury.stats_modifiers = nil
+		self.shatters_fury.panic_suppression_chance = 0.0
+		self.shatters_fury.has_description = true
+		self.shatters_fury.desc_id = "bm_ap_weapon_sc_desc"
+		self.shatters_fury.can_shoot_through_enemy = true
+		self.shatters_fury.can_shoot_through_shield = true
+		self.shatters_fury.can_shoot_through_wall = true
+		self.shatters_fury.armor_piercing_chance = 1		
+		self.shatters_fury.custom = true
 		
 		--Custom weapons below--
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
@@ -10606,11 +10553,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			use_data = {},
 			auto = {}
 		}
-		self.jeb_crew = {
-			usage = "is_revolver",
-			sounds = {},
-			use_data = {}
-		}	
 		self.smoke_npc = {
 			usage = "is_smg",
 			sounds = {},

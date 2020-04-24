@@ -8,30 +8,26 @@
     
     <WeaponMod based_on="wpn_fps_pis_rage_g_standard" id="wpn_fps_pis_shatters_fury_g_standard" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_standard" type="grip" drop="false" is_a_unlockable="false"/>
     
-    <WeaponMod based_on="wpn_fps_pis_rage_b_long" id="wpn_fps_pis_shatters_fury_b_long" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
-    <stats damage="0" recoil="-4" spread="4" spread_moving="3" reload="-2" concealment="-5"/>
+    <WeaponMod based_on="wpn_fps_pis_rage_b_long" id="wpn_fps_pis_shatters_fury_b_long" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_long" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" global_value = "sc">
 	</WeaponMod>
     
-    <WeaponMod based_on="wpn_fps_pis_rage_b_short" id="wpn_fps_pis_shatters_fury_b_short" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
-    <stats damage="-3" recoil="4" spread="-2" spread_moving="3" reload="4" concealment="-3"/>
+    <WeaponMod based_on="wpn_fps_pis_rage_b_short" id="wpn_fps_pis_shatters_fury_b_short" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_short" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" global_value = "sc">
 	</WeaponMod>
     
-    <WeaponMod based_on="wpn_fps_pis_rage_b_comp1" id="wpn_fps_pis_shatters_fury_b_comp1" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
-    <stats damage="0" recoil="2" spread="2" spread_moving="-3" concealment="-3"/>
+    <WeaponMod based_on="wpn_fps_pis_rage_b_comp2" id="wpn_fps_pis_shatters_fury_b_comp1" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp1" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" global_value = "sc">
 	</WeaponMod>
 	
-    <WeaponMod based_on="wpn_fps_pis_rage_b_comp2" id="wpn_fps_pis_shatters_fury_b_comp2" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true">
-    <stats damage="2" recoil="1" spread="-1" spread_moving="1" suppression="-4" concealment="-3"/>
+    <WeaponMod based_on="wpn_fps_pis_rage_b_comp1" id="wpn_fps_pis_shatters_fury_b_comp2" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_b_comp2" type="barrel" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" global_value = "sc">
 	</WeaponMod>
     
-    <WeaponMod based_on="wpn_fps_pis_rage_g_ergo" id="wpn_fps_pis_shatters_fury_g_ergo" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo" type="grip" drop="false" texture_bundle_folder="mods" is_a_unlockable="true"/>
+    <WeaponMod based_on="wpn_fps_pis_rage_g_ergo" id="wpn_fps_pis_shatters_fury_g_ergo" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_g_ergo" type="grip" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" global_value = "sc"/>
     
-    <WeaponMod based_on="wpn_fps_pis_rage_body_smooth" id="wpn_fps_pis_shatters_fury_body_smooth" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth" type="upper_reciever" drop="false" texture_bundle_folder="mods" is_a_unlockable="true"/>
+    <WeaponMod based_on="wpn_fps_pis_rage_body_smooth" id="wpn_fps_pis_shatters_fury_body_smooth" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth" type="upper_reciever" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" global_value = "sc"/>
 
     <WeaponNew>
-        <weapon id="shatters_fury" based_on="new_raging_bull" unlock_level="75" texture_bundle_folder="mods" global_value="shatters_fury">            
-            <stats damage="100" concealment="12"/>
-            <fire_mode_data fire_rate="0.80"/>
+        <weapon id="shatters_fury" based_on="new_raging_bull" unlock_level="55" texture_bundle_folder="mods" global_value="rest">            
+            <stats damage="90" concealment="21"/>
+            <fire_mode_data fire_rate="0.19047619047"/>
 			<use_data selection_index="2"/>
             <sounds fire="rbull_fire" fire_single="rbull_fire"/>                
             <animations reload_name_id="new_raging_bull" equip_id="equip_glock" recoil_steelsight="true">

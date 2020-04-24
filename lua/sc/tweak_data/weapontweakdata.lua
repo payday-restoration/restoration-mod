@@ -9619,7 +9619,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shatters_fury.stats_modifiers = nil
 		self.shatters_fury.panic_suppression_chance = 0.0
 		self.shatters_fury.has_description = true
-		self.shatters_fury.desc_id = "bm_ap_weapon_sc_desc"
+		self.shatters_fury.desc_id = "bm_wp_shatters_fury_desc"
 		self.shatters_fury.can_shoot_through_enemy = true
 		self.shatters_fury.can_shoot_through_shield = true
 		self.shatters_fury.can_shoot_through_wall = true

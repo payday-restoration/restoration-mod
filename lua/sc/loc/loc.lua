@@ -16,7 +16,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Heist Breifings--
 		["heist_pines_briefing"] = "We need you there fast, because the explosion from that was surely enough to get the Reapers out of their base - and mobile. Anyway, it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.",	
 		
-		----Weapon Mod Descriptions/names----
+		----Weapons + Mods Descriptions/names----
 		
 		--Reinfield--
 		["bm_wp_r870_s_folding_ext"] = "Extended Muldon Stock",	
@@ -92,6 +92,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
+		
+		--Raze's Fury--
+		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Raze's weapon of choice.\n##CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.##",
 		
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -224,7 +227,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield
 		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 40 damage per second to targets in front of you while charging.", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "Doesn't do much to help with fidgeting sadly.\n\nDeals 20 damage per second to targets in front of you while charging.", --Kazaguruma
+		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals 20 damage per second to targets in front of you while charging.", --Kazaguruma
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",-- Wing Butterfly Knife
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
 		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 extra damage over three seconds.", --Alabama Razor

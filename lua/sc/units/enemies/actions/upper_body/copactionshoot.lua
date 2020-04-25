@@ -580,7 +580,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			mvec3_set_z(ray_to, ray_to.z - 1000)
 
-			local ground_ray = self._unit:raycast("ray", attention_m_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry"))
+			local ground_ray = self._unit:raycast("ray", attention_m_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry", "statics"))
 
 			if ground_ray then
 				detonate_pos = mvec3_copy(ground_ray.hit_position)

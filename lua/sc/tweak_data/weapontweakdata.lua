@@ -9605,7 +9605,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shatters_fury.stats = {
 			damage = 90,
 			spread = 17,
-			recoil = 11,
+			recoil = 10,
 			spread_moving = 9,
 			zoom = 5,
 			concealment = 21,

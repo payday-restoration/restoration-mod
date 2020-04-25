@@ -580,7 +580,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			mvec3_set_z(ray_to, ray_to.z - 1000)
 
-			local ground_ray = self._unit:raycast("ray", attention_m_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry, statics"))
+			local ground_ray = self._unit:raycast("ray", attention_m_pos, ray_to, "slot_mask", managers.slot:get_mask("world_geometry"))
 
 			if ground_ray then
 				detonate_pos = mvec3_copy(ground_ray.hit_position)
@@ -656,7 +656,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
 				if self._throw_frag and self._ext_brain._throw_frag_t < t then				
 					local is_spring = self._ext_base._tweak_table == "spring"					
-					local frag_cooldown = 60
+					local frag_cooldown = 30
+					
+					local frag_roll_chance = is_spring and 1 or 0.25
+					local frag_roll = math_random() <= frag_roll_chance					
 										
 					if is_spring then
 						frag_cooldown = 30
@@ -664,12 +667,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 					
 					self._ext_brain._throw_frag_t = t + frag_cooldown
 
-					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "frag") then
-						self._ext_movement:play_redirect("throw_grenade")
-						self._unit:sound():say("use_gas", true, nil, true)
-						managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
+					if frag_roll then
+						if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "frag") then
+							self._ext_movement:play_redirect("throw_grenade")
+							self._unit:sound():say("use_gas", true, nil, true)
+							managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
 
-						proceed_as_usual = nil
+							proceed_as_usual = nil
+						end
 					end
 				end
 
@@ -690,7 +695,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						self._ext_brain._deploy_gas_t = t + 10
 
 						local is_normal_grenadier = self._ext_base._tweak_table == "boom"
-						local roll_chance = is_normal_grenadier and 0.3 or 0.25
+						local roll_chance = is_normal_grenadier and 0.75 or 0.5
 						local gas_roll = math_random() <= roll_chance
 
 						if gas_roll then
@@ -735,7 +740,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 								end
 							end
 
-							local gas_roll = math_random() <= 0.2
+							local gas_roll = math_random() <= 0.5
 
 							if gas_roll then
 								if self:throw_grenade(nil, nil, nil, "tear_gas") then

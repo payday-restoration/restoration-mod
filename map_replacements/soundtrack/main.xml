@@ -51,4 +51,5 @@
 	<MenuMusic id="m2" source="m2.ogg" start_source="m2intro.ogg" volume="0.6"/>
 	<MenuMusic id="m3" source="m3.ogg" start_source="m3intro.ogg" volume="0.6"/>
 	<MenuMusic id="m4" source="m4.ogg" volume="0.6"/>
+	<MenuMusic id="m5" source="m5.ogg" volume="0.6"/>
 </table>

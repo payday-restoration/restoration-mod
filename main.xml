@@ -137,6 +137,7 @@
 		<hook file="sc/units/enemies/actions/upper_body/copactiontase.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactiontase"/>
 		<hook file="sc/units/enemies/actions/lower_body/copactionturn.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionturn"/>
 		<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
+		<hook file="sc/units/enemies/actions/full_body/copactionact.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionact"/>
 		<hook file="sc/units/enemies/copbase.lua" source_file="lib/units/enemies/cop/copbase"/>
 		<hook file="sc/units/player_team/teamaimovement.lua" source_file="lib/units/player_team/teamaimovement"/>
 		<hook file="sc/units/player_team/huskteamaidamage.lua" source_file="lib/units/player_team/huskteamaidamage"/>

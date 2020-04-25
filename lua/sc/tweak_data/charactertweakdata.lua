@@ -2518,6 +2518,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.autumn.spooc_attack_beating_time = {0, 0}
 		self.autumn.no_damage_mission = true
 		self.autumn.spawn_sound_event_2 = "cloaker_spawn"
+		self.autumn.can_deploy_tear_gas = true
 		--self.autumn.spawn_sound_event_2 = "cpa_a02_01"--uncomment for testing purposes
 		self.autumn.spooc_attack_use_smoke_chance = 1
 		self.autumn.weapon_voice = "3"

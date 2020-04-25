@@ -276,7 +276,7 @@
 	"heist_greattrain_name" : "Time Window",
 	"heist_easystore_name" : "Twenty-Four Seven",
 	"heist_sin_villa_name" : "SCORE: Villa Vivaldi",
-	"heist_monalisaoverdrive_name" : "Stonefist",
+	"heist_dragon_name" : "Stonefist",
 	"heist_jkl_base_name" : "Jackal's Safehouse",
 	"heist_junger_name" : "Distorted Angels",
 	"heist_deep_name" : "Deep Six",
@@ -549,6 +549,7 @@
     "menu_jukebox_screen_m1" : "Criminal Intent (Old Version)",
 	"menu_jukebox_screen_m2" : "Preparations (Old Version)",
 	"menu_jukebox_screen_m3" : "Blueprints (Prototype Version)",
+	"menu_jukebox_screen_m4" : "No Name",
 	
 	"look_dad" : "no_errors",
 	

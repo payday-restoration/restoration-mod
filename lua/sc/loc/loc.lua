@@ -362,9 +362,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_1911"] = "Mustang & Sally",
 		["bm_w_tec9"] = "T3K Urban Submachine Gun",
 		["bm_w_x_tec9"] = "Akimbo T3K Urban Submachine Guns",
-
-		["bm_w_deagle"] = "Big Pistol",
-		["bm_w_sparrow"] = "Big Pistol (Smaller)",						
+		
+		--sGnrrnsfNGDSNgdnsfDNSGDFNGHhDFHDFNH
+		--["bm_w_deagle"] = "Big Pistol",
+		--["bm_w_sparrow"] = "Big Pistol (Smaller)",						
 			
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
 		["bm_wp_hs2000_sl_long"] = "Elite Slide",				

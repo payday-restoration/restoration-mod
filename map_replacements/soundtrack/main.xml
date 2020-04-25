@@ -47,6 +47,12 @@
 		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg"/>
 		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
 	</HeistMusic>
+	<HeistMusic directory="sounds/proto" id="resmusic_proto" volume="1.0">
+		<event name="setup" source="stealth.ogg" start_source="stealthintro.ogg" alt_start_source="stealthintroalt.ogg" alt_start_source_chance="0.05"/>
+		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg"/>
+		<event name="control" source="control.ogg" start_source="controlintro.ogg" alt_source="controlalt.ogg" alt_source_chance="0.50" alt_start_source="controlintroalt.ogg" alt_start_source_chance="0.10"/>
+	</HeistMusic>
 	<MenuMusic id="m1" source="m1.ogg" start_source="m1intro.ogg" volume="0.6"/>
 	<MenuMusic id="m2" source="m2.ogg" start_source="m2intro.ogg" volume="0.6"/>
 	<MenuMusic id="m3" source="m3.ogg" start_source="m3intro.ogg" volume="0.6"/>

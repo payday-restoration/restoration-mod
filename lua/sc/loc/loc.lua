@@ -50,7 +50,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_wp_upg_vintage_desc"] = "",
 		
-		--Socrpion (get in-game-name later)
+		--Scorpion (get in-game-name later)
 		["bm_wp_scorpion_m_extended_sc"] = "Double Magazine",
 		["bm_sc_scorpion_double_mag"] = "", --Unsure what this one is?--
 		
@@ -95,6 +95,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Raze's Fury--
 		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Raze's weapon of choice.\n##CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.##",
+		
+		--OICW--
+		
 		
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -630,7 +633,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",
 		["mutator_zombie_outbreak_longdesc"] = "The dead have risen! Replaces all enemies with Zombie units",
 
-		["mutator_faction_override"] = "Enemy Factor Override",
+		["mutator_faction_override"] = "Enemy Faction Override",
 		["mutator_faction_override_desc"] = "",
 		["mutator_faction_override_longdesc"] = "",
 		["mutator_faction_override_"] = "",

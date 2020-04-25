@@ -1,0 +1,4 @@
+{
+	"bm_w_osipr" : "OICW",
+	"bm_w_osipr_desc" : " "
+}

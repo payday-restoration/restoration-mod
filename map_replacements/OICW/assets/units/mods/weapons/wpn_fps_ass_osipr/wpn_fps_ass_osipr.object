@@ -1,0 +1,19 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_m4" />
+	<animations>
+		<animation_group name="reload">
+			<object name="anim_reload" enabled="true" />
+			<object name="anim_dh" enabled="true" />
+			<object name="anim_bolt_reload" enabled="true" />
+		</animation_group>
+		<animation_group name="reload_not_empty">
+			<object name="anim_reload_tactical" enabled="true" />
+		</animation_group>
+		<animation_group name="recoil">
+			<object name="anim_bolt_recoil" enabled="true" />
+		</animation_group>
+		<animation_group name="last_recoil">
+			<object name="anim_bolt_last_recoil" enabled="true" />
+		</animation_group>
+	</animations>
+</dynamic_object>

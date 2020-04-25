@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_body" orientation_object="rp_wpn_fps_m4_lower_reciever" />
+  <graphics>
+        <object name="g_body" enabled="true" />
+  </graphics>
+</dynamic_object>

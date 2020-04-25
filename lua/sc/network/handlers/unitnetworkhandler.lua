@@ -400,7 +400,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			end
 
 			if unit:anim_data() and unit:anim_data().act then
-				self._unit:sound():say("heal")
+				unit:sound():say("heal")
 			else
 				local action_data = {
 					body_part = 1,

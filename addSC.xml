@@ -16,7 +16,11 @@
 	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
 	
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/chill_combat"/>
-		
+	
+	<!--New logo-->
+	<texture path="guis/textures/game_logo_small" force="true"/>	
+	<texture path="units/menu/menu_scene/menu_cylinder_logo" force="true"/>	
+	
 	<model path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>
 	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
 	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>

@@ -144,7 +144,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self._forbid_drop_in = true
 		self._ponr_is_on = true
-		managers.music:post_event(managers.music:jukebox_menu_track("ponr"))
+		
 		managers.network.matchmake:set_server_joinable(false)
 
 		if not self._peers_inside_point_of_no_return then

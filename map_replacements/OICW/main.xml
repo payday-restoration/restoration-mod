@@ -44,6 +44,7 @@
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_body"/>
 		<!--unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_b_standard"/-->
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df"/>
+		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
 
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/osipr"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/outline/osipr"/>

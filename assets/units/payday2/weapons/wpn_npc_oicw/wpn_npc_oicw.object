@@ -5,7 +5,7 @@
   <bodies>
     <body name="body" enabled="false" template="debris" pushed_by_mover="false">
 		<object name="rp_wpn_npc_g36" />
-		<object name="c_convex" collision_type="convex" mass="2.5" />
+		<object name="c_convex" collision_type="convex" mass="10" />
     </body>
   </bodies>
 

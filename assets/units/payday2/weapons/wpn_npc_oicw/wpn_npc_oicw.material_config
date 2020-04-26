@@ -1,11 +1,10 @@
 <materials version="3">
     <material name="lambert1" render_template="generic" version="2"/>
     <material name="mtr_g36_npc" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS" version="2">
-        <diffuse_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_df"/>
-        <bump_normal_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_nm"/>
+        <diffuse_texture file="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df" mip="1"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm" mip="2"/>
     </material>
-    <material name="weapon_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS" version="2">
-        <diffuse_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_sight_df"/>
-        <bump_normal_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_sight_nm"/>
+    <material name="weapon_lod1" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_lod_df"/>
     </material>
 </materials>

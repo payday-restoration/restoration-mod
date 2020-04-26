@@ -22,7 +22,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_weekly_skirmish"] = "Target Locale",
 		["menu_weekly_skirmish_progress"] = "Waves Completed, Reward Upon Total Completion",
 		["menu_skirmish_random_briefing"] = "In this scenario, you're placed into a random SKIRMISH.\n\nA random SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash & experience reward with each wave completed, but failure will negate all rewards accrued.\n\nYou will fail if anyone in your crew -- including yourself -- is taken into custody, or if the target hostage is rescued by hostiles.",
-		["menu_weekly_skirmish_desc"] = "In this scenario, you're placed into a pre-configured SKIRMISH.\n\nThe weekly SKIRMISH consists of 9 waves, with starting modifiers. Each consecutive wave increases in difficulty.\n\nFinishing all waves will grant you additional weekly rewards, in addition to your cash payout.\n\nYou will fail if anyone in your crew -- including yourself, are taken into custody, or if the target hostage is rescued by hostiles.",
+		["menu_weekly_skirmish_desc"] = "In this scenario, you're placed into a pre-configured SKIRMISH.\n\nThe weekly SKIRMISH consists of 9 waves, with starting modifiers. Each consecutive wave increases in difficulty.\n\nFinishing all waves will grant you additional weekly rewards, in addition to your cash payout.\n\n##You will fail if anyone in your crew -- including yourself -- are taken into custody, or if the target hostage is rescued by hostiles.##",
 		["menu_weekly_skirmish_tab_description"] = "Rundown",
 		["menu_weekly_skirmish_rewards"] = "Total Waves Completed & Associated Rewards",
 		["hud_skirmish"] = "Skirmish",
@@ -258,7 +258,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Player Outfits--					
 		["bm_suit_two_piece_sc"] = "Two-piece Suit",
-		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!' \n \nSelecting this option will make sure you wear your Default outfit, regardless of any heist's own outfit.",				
+		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!'\n\nSelecting this option will make sure you wear your Default outfit, regardless of any heist's own outfit.",				
 		
 		["bm_suit_loud_suit"] = "Combat Harness",
 		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		

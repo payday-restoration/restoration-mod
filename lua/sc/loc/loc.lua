@@ -12,6 +12,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_hud_cheater"] = "",
 		["menu_inspect_player"] = "Inspect Player",
 		["menu_inspect_player_desc"] = "Inspect player's stats",
+		--["menu_player_inventory"] = "Career",
+		
+		--Holdout--
+		["menu_cn_skirmish"] = "Skirmish",
+		["menu_skirmish"] = "Skirmish - Hostile Engagement",
+		["menu_skirmish_random"] = "Random Locale",
+		["menu_random_skirmish_subtitle"] = "Random combat location.\n\nNo weekly rewards, no starting modifiers.",
+		["menu_weekly_skirmish"] = "Target Locale",
+		["menu_weekly_skirmish_progress"] = "Waves Completed, Reward Upon Total Completion",
 		
 		--Heist Breifings--
 		["heist_pines_briefing"] = "We need you there fast, because the explosion from that was surely enough to get the Reapers out of their base - and mobile. Anyway, it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.",	
@@ -97,7 +106,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Raze's weapon of choice.\n##CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.##",
 		
 		--OICW--
-		
+		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.",
 		
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",

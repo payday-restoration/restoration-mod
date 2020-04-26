@@ -25,6 +25,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_weekly_skirmish_desc"] = "In this scenario, you're placed into a pre-configured SKIRMISH.\n\nThe weekly SKIRMISH consists of 9 waves, with starting modifiers. Each consecutive wave increases in difficulty.\n\nFinishing all waves will grant you additional weekly rewards, in addition to your cash payout.\n\nYou will fail if anyone in your crew -- including yourself, are taken into custody, or if the target hostage is rescued by hostiles.",
 		["menu_weekly_skirmish_tab_description"] = "Rundown",
 		["menu_weekly_skirmish_rewards"] = "Total Waves Completed & Associated Rewards",
+		["hud_skirmish"] = "Skirmish",
 		
 		--Heist Breifings--
 		["heist_pines_briefing"] = "We need you there fast, because the explosion from that was surely enough to get the Reapers out of their base - and mobile. Anyway, it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.",	

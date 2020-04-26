@@ -44,7 +44,6 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 			CopActionAct._create_blocks_table(self, action_desc.blocks)
 			self._ext_movement:enable_update()
-			self:on_attention(common_data.attention)
 
 			if Network:is_server() then
 				local i_variation = CopActionDodge._get_variation_index(action_desc.variation)

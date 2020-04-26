@@ -254,7 +254,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
 		["menu_asset_bomb_inside_info"] = "Insider Info",
-		["menu_asset_mad_cyborg_test_subject"] = "Test Subjects", --unused?--
+		["menu_asset_mad_cyborg_test_subject"] = "Test Subjects",
 		
 		--Player Outfits--					
 		["bm_suit_two_piece_sc"] = "Two-piece Suit",
@@ -278,9 +278,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen"] = "Gooey Green",
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",	
 		
-		--Safe House Test-- --unused?--
+		--Safe House--
 		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
-		["dialog_safehouse_text"] = "You haven't visited the safe house yet. You should, as you might find something new.\nWould you like to go there now?",
+		["dialog_safehouse_text"] = "You haven't visited the safe house yet.\n\nYou should, as you might find something new.\nWould you like to go there now?",
 		
 		--New menu stats--
 		["bm_menu_deflection"] = "Deflection",

@@ -18,7 +18,8 @@
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/chill_combat"/>
 	
 	<!--New logo-->
-	<texture path="guis/textures/game_logo_small" force="true"/>	
+	<texture path="guis/textures/game_small_logo" force="true"/>
+	<texture path="guis/textures/menu_title_screen" force="true"/>
 	<texture path="units/menu/menu_scene/menu_cylinder_logo" force="true"/>	
 	
 	<model path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>

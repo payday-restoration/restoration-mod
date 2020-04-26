@@ -9589,6 +9589,8 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.x_stech.panic_suppression_chance = 0.0			
 		
 		--Restoration Weapons--
+		
+		--Raze's Fury
 		self.shatters_fury.AMMO_MAX = 30
 		self.shatters_fury.CLIP_AMMO_MAX = 5
 		self.shatters_fury.AMMO_PICKUP = self:_pickup_chance(30, 2)
@@ -9625,6 +9627,40 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 		self.shatters_fury.can_shoot_through_wall = true
 		self.shatters_fury.armor_piercing_chance = 1		
 		self.shatters_fury.custom = true
+		
+		--OICW
+		self.osipr.tactical_reload = 1		
+		self.osipr.AMMO_MAX = 120
+		self.osipr.AMMO_PICKUP = self:_pickup_chance(120, 2)
+		self.osipr.CLIP_AMMO_MAX = 30
+		self.osipr.fire_mode_data.fire_rate = 0.075
+		self.osipr.auto.fire_rate = 0.075
+		self.osipr.spread.standing = 3
+		self.osipr.spread.crouching = 2
+		self.osipr.spread.steelsight = 1
+		self.osipr.spread.moving_standing = 4
+		self.osipr.spread.moving_crouching = 3
+		self.osipr.spread.moving_steelsight = 2
+		self.osipr.kick.standing = self.new_m4.kick.standing
+		self.osipr.kick.crouching = self.new_m4.kick.crouching
+		self.osipr.kick.steelsight = self.new_m4.kick.steelsight
+		self.osipr.stats = {
+			damage = 24,
+			spread = 17,
+			recoil = 18,
+			spread_moving = 6,
+			zoom = 3,
+			concealment = 20,
+			suppression = 8,
+			alert_size = 8,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.osipr.stats_modifiers = nil
+		self.osipr.timers.reload_empty = 3.5		
+		self.osipr.panic_suppression_chance = 0.0		
 		
 		--Custom weapons below--
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44

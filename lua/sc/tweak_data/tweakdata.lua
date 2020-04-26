@@ -124,7 +124,7 @@
 	
 	--le happy merchant--
 	tweak_data.projectiles.ecp_arrow.damage = 18
-	tweak_data.projectiles.ecp_arrow_exp.damage = 360
+	tweak_data.projectiles.ecp_arrow_exp.damage = 36
 	tweak_data.projectiles.ecp_arrow_poison.damage = 14
 	tweak_data.projectiles.ecp_arrow_poison.launch_speed = 3125
 	tweak_data.projectiles.ecp_arrow_exp.launch_speed = 3125

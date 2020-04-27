@@ -278,10 +278,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen"] = "Gooey Green",
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",	
 		
-		--Safe House--
-		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
-		["dialog_safehouse_text"] = "You haven't visited the safe house yet.\n\nYou should, as you might find something new.\nWould you like to go there now?",
-		
 		--New menu stats--
 		["bm_menu_deflection"] = "Deflection",
 		["bm_menu_swap_speed"] = "Swap Time",
@@ -301,6 +297,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--["steam_inventory_team_boost"] = "",
 		--["steam_inventory_boost_xp_cash"] = "",
 		
+		--Safe House--
+		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
+		["dialog_safehouse_text"] = "You haven't visited the safe house yet.\n\nYou should, as you might find something new.\nWould you like to go there now?",
 		
 		["bm_menu_custom_plural"] = "WEAPON ATTACHMENTS IN THE CUSTOM CATEGORY", --unused?--
 		

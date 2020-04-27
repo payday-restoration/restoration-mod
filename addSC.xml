@@ -2436,6 +2436,10 @@
 	<!--fixed male suit heister faces and necks-->
 	<model path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" force="true"/>
 	<model path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_menu_1" force="true"/>	
+	
+	<!--BravoGrenade-->
+	<texture path="units/payday2/weapons/wpn_frag_grenade/wpn_frag_grenade_enemy_df" force="true"/>
+	
 	<!-- Actually Good Third Person Animations -->
 	<animation path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_bleedout_0" force="true"/>

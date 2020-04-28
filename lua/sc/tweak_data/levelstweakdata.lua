@@ -67,9 +67,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.mex.ai_group_type = murkywater 
 		self.mex.player_style = "suit_sunny"	
 
-		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addbdu", "packages/murkyassets"}
+		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/murkyassets"}
 		self.crojob2.ai_group_type = murkywater			
-		self.crojob2.player_style = "sneak_suit"	
+		self.crojob2.player_style = "slaughterhouse"	
 
 		self.dark.package = {"packages/job_dark", "packages/addbdu", "packages/murkyassets"}
 		self.dark.ai_group_type = murkywater	
@@ -102,14 +102,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.dah.ai_group_type = nypd
 		self.dah.package = {"packages/lvl_dah", "packages/nypdassets"}
+		self.dah.player_style = "slaughterhouse"
 		
 		self.dinner.ai_group_type = nypd
 		self.dinner.package = {"packages/narr_dinner", "packages/nypdassets"}
-
-		self.dinner.player_style = "loud_suit"
+		self.dinner.player_style = "slaughterhouse"
 		
 		self.man.package = {"packages/narr_man"}
-		self.man.player_style = "loud_suit"
+		self.man.player_style = "slaughterhouse"
 		self.man.teams = {
 			criminal1 = {
 				foes = {
@@ -199,20 +199,20 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.fish.package = {"packages/lvl_fish", "packages/nypdassets", "packages/addtux"}
 		self.fish.player_style = "tux"
 		
-		self.arm_cro.player_style = "loud_suit"
+		self.arm_cro.player_style = "slaughterhouse"
 		
-		self.arm_hcm.player_style = "loud_suit"	
+		self.arm_hcm.player_style = "slaughterhouse"	
 		
-		self.arm_fac.player_style = "loud_suit"
+		self.arm_fac.player_style = "slaughterhouse"
 		
-		self.arm_par.player_style = "loud_suit"		
+		self.arm_par.player_style = "slaughterhouse"		
 		
 		self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
 		self.arm_und.player_style = "scrub"
 								
-		self.hox_1.player_style = "suit_sunny"
-		self.hox_2.player_style = "suit_sunny"
-		self.hox_3.player_style = "suit_sunny"
+		self.hox_1.player_style = "slaughterhouse"
+		self.hox_2.player_style = "slaughterhouse"
+		self.hox_3.player_style = "slaughterhouse"
 		
 		self.rat.player_style = "suit_sunny"
 		
@@ -229,7 +229,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.framing_frame_3.package = {"packages/narr_framing_3", "packages/addbdu"}
 				
 		self.alex_1.player_style = "suit_sunny"
-		self.alex_3.player_style = "suit_sunny"
+		self.alex_2.player_style = "suit_sunny"
+		self.alex_3.player_style = "slaughterhouse"
 		
 		self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 		self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"

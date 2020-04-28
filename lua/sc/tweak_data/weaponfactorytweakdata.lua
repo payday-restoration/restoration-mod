@@ -44632,7 +44632,7 @@ if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Option
 				value = 2,
 				spread = -1,
 				recoil = 2,
-				concealment = -3
+				concealment = -4
 			}
 			self.parts.wpn_fps_pis_deagle_g_wooden.stats = {
 				value = 1,

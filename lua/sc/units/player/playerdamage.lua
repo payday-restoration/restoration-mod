@@ -182,7 +182,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		local player_unit = managers.player:player_unit()
 		if attack_data then
 			if alive(attack_data.attacker_unit) then
-				if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" or tostring(attack_data.attacker_unit:base()._tweak_table) == "taser_titan" or tostring(attack_data.attacker_unit:base()._tweak_table) == "fbi_vet_boss" then
+				if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" or tostring(attack_data.attacker_unit:base()._tweak_table) == "fbi_vet_boss" then
 					if alive(player_unit) then
 						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
 						else
@@ -195,6 +195,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 						if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
 						else
 							attack_data.attacker_unit:damage():run_sequence_simple("decloak")
+							attack_data.attacker_unit:movement():set_uncloaked(true)
 							attack_data.attacker_unit:sound():say("i03", true, nil, true)
 							managers.player:set_player_state("arrested")
 						end

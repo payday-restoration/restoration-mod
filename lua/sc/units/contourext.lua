@@ -31,7 +31,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 	local idstr_contour_color = Idstring("contour_color")
 	local idstr_contour_opacity = Idstring("contour_opacity")
 
-	function ContourExt:add(type, sync, multiplier)
+	function ContourExt:add(type, sync, multiplier, override_color)
 		if Global.debug_contour_enabled then
 			return
 		end
@@ -78,6 +78,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				elseif not self._types[setup.type].unique then
 					setup.ref_c = (setup.ref_c or 0) + 1
 				end
+				
+				setup.color = override_color or setup.color
 
 				if damage_bonus then
 					self._unit:character_damage():on_marked_state(damage_bonus, damage_bonus_dis)
@@ -99,7 +101,8 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			ref_c = 1,
 			type = type,
 			fadeout_t = fadeout and TimerManager:game():time() + fadeout or nil,
-			sync = sync
+			sync = sync,
+			color = override_color
 		}
 		local old_preset_type = self._contour_list[1] and self._contour_list[1].type
 		local i = 1

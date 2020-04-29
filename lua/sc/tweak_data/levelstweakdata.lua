@@ -34,7 +34,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		self.mex_cooking.package = {"packages/mexicoassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
 		self.mex_cooking.ai_group_type = federales 
-		--self.mex_cooking.player_style = "suit_sunny"	
+		self.mex_cooking.player_style = "suit_sunny"	
 		
 		--///MURKYWATER LEVELS\\\--
 		self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
@@ -65,7 +65,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.mex.package = {"packages/murkyassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex"}
 		self.mex.ai_group_type = murkywater 
-		--self.mex.player_style = "suit_sunny"	
+		self.mex.player_style = "suit_sunny"	
 
 		self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addslaughter", "packages/murkyassets"}
 		self.crojob2.ai_group_type = murkywater			
@@ -173,14 +173,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		--///LAPD LEVELS\\\--			
 		self.jolly.ai_group_type = lapd
 		self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
-		--self.jolly.player_style = "suit_sunny"
+		self.jolly.player_style = "suit_sunny"
 		
 		self.pal.ai_group_type = lapd
 		self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}	
 		
 		self.friend.ai_group_type = lapd
 		self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/nypdassets", "packages/narr_rvd"}
-		--self.friend.player_style = "suit_sunny"
+		self.friend.player_style = "suit_sunny"
 		
 		self.kenaz.ai_group_type = lapd
 		self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/addtux"}	
@@ -188,11 +188,11 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.rvd1.ai_group_type = lapd
 		self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}	
-		--self.rvd1.player_style = "suit_sunny"		
+		self.rvd1.player_style = "suit_sunny"		
 		
 		self.rvd2.ai_group_type = lapd
 		self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}
-		--self.rvd2.player_style = "suit_sunny"
+		self.rvd2.player_style = "suit_sunny"
 
         --///NEW OUTFITS\\\--
 		
@@ -221,7 +221,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.hox_3.package = {"packages/packages/narr_hox_3", "packages/addslaughter"}
 		self.hox_3.player_style = "slaughterhouse"
 		
-		--self.rat.player_style = "suit_sunny"
+		self.rat.player_style = "suit_sunny"
 		
 		self.election_day_1.package = {"packages/narr_election1", "packages/addbdu"}
 		self.election_day_1.player_style = "sneak_suit"	
@@ -235,13 +235,13 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self.framing_frame_3.player_style = "sneak_suit"
 		self.framing_frame_3.package = {"packages/narr_framing_3", "packages/addbdu"}
 				
-		--self.alex_1.player_style = "suit_sunny"
-		--self.alex_2.player_style = "suit_sunny"
+		self.alex_1.player_style = "suit_sunny"
+		self.alex_2.player_style = "suit_sunny"
 		self.alex_3.package = {"packages/narr_alex3", "packages/addslaughter"}
 		self.alex_3.player_style = "slaughterhouse"
 		
-		--self.welcome_to_the_jungle_1.player_style = "suit_sunny"
-		--self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
+		self.welcome_to_the_jungle_1.player_style = "suit_sunny"
+		self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 		
 		self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/addbdu"}
 		self.welcome_to_the_jungle_2.player_style = "sneak_suit"
@@ -250,14 +250,14 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		
 		self.pbr2.player_style = "loud_suit"
 		
-		--self.watchdogs_1.player_style = "suit_sunny"
+		self.watchdogs_1.player_style = "suit_sunny"
 		self.watchdogs_2.player_style = "loud_suit"
 		
-		--self.watchdogs_1_night.player_style = "suit_sunny"
+		self.watchdogs_1_night.player_style = "suit_sunny"
 		self.watchdogs_2_day.player_style = "loud_suit"
 		
-		--self.mia_1.player_style = "suit_sunny"
-		--self.mia_2.player_style = "suit_sunny"
+		self.mia_1.player_style = "suit_sunny"
+		self.mia_2.player_style = "suit_sunny"
 		
 		self.cane.package = {"packages/cane", "packages/addsnow", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 		self.cane.player_style = "winter_suit"

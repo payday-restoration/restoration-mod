@@ -1,7 +1,15 @@
 if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
-	function CriminalsManager.set_character_visual_state(unit, character_name, is_local_peer, visual_seed, player_style, suit_variation, mask_id, armor_id, armor_skin)
-		print("[CriminalsManager.set_character_visual_state]", unit, character_name, is_local_peer, visual_seed, player_style, suit_variation, mask_id, armor_id, armor_skin)
+	function CriminalsManager.set_character_visual_state(unit, character_name, visual_state)
+		print("[CriminalsManager.set_character_visual_state]", unit, character_name, inspect(visual_state))
+
+		local is_local_peer = visual_state.is_local_peer
+		local visual_seed = visual_state.visual_seed
+		local player_style = visual_state.player_style
+		local suit_variation = visual_state.suit_variation
+		local mask_id = visual_state.mask_id
+		local armor_id = visual_state.armor_id
+		local armor_skin = visual_state.armor_skin
 
 		if not alive(unit) then
 			return
@@ -19,6 +27,10 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 
 		if not unit_damage then
 			return
+		end
+
+		if unit:inventory() and unit:inventory().mask_visibility and not unit:inventory():mask_visibility() then
+			mask_id = nil
 		end
 
 		local function run_sequence_safe(sequence, sequence_unit)
@@ -93,7 +105,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			unit:spawn_manager():remove_unit("char_mesh")
 
 			local unit_name = tweak_data.blackmarket:get_player_style_value(player_style, character_name, get_value_string("unit"))
-			local char_mesh_unit, char_name_key = nil
+			local char_mesh_unit = nil
 
 			if unit_name then
 				unit:spawn_manager():spawn_and_link_unit("_char_joint_names", "char_mesh", unit_name)
@@ -123,7 +135,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				char_mesh_unit:set_enabled(unit:enabled())
 			end
 		end
-
+		
 		--Wrist stuff (Thanks Zdann!)
 		player_style = tweak_data.blackmarket.player_styles[player_style]
 		keep_wrists = player_style.keep_wrists
@@ -141,9 +153,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 		if alive(wrist_object) and keep_wrists then
 			wrist_object:set_visibility(true)
-		end
-		
-		
+		end		
 
 		if unit:armor_skin() and unit:armor_skin().set_armor_id then
 			unit:armor_skin():set_armor_id(armor_id)

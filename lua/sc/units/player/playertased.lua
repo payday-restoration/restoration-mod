@@ -39,8 +39,17 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		self._state_data = state_data
 		local player_manager = managers.player
 		if player_manager:has_category_upgrade("player", "escape_taser") then
+			local interact_string = managers.localization:text("hud_int_escape_taser", {
+				BTN_INTERACT = managers.localization:btn_macro("interact", false)
+			})
+
+			managers.hud:show_interact({
+				icon = "mugshot_electrified",
+				text = interact_string
+			})		
+		
 			local target_time = player_manager:upgrade_value("player", "escape_taser", 2)
-			player_manager:add_coroutine("escape_tase", PlayerAction.EscapeTase, player_manager, target_time)
+			managers.player:add_coroutine("escape_tase", PlayerAction.EscapeTase, managers.player, managers.hud, Application:time() + target_time)
 		end
 	end
 

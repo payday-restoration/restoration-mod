@@ -1494,7 +1494,7 @@ function UpgradesTweakData:_init_pd2_values()
 	--alcoholism is no joke
 	--stoic
 	self.values.player.armor_to_health_conversion = {
-		40
+		50
 	}
 	self.values.player.damage_control_passive = {{
 		30,

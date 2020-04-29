@@ -1,0 +1,8 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_big/sus_acc_slaughterhouse_female_big" orientation_object="root_point" />
+	<graphics>
+		<object name="g_body" enabled="true" />
+		<object name="g_gloves" enabled="true" />
+		<object name="g_arms" enabled="true" />
+	</graphics>
+</dynamic_object>

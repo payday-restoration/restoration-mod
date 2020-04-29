@@ -1,0 +1,21 @@
+<materials version="3" group="sus_acc_slaughterhouse_female_big">
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" name="mtr_arms" version="2">
+        <bump_normal_texture file="units/pd2_dlc_sus/characters/sus_npc_female_arms/npc_female_criminals_arms_caucasian_nm"/>
+        <diffuse_texture file="units/pd2_dlc_sus/characters/sus_npc_female_arms/npc_female_criminals_arms_caucasian_df"/>
+        <material file="units/pd2_dlc_sus/characters/sus_npc_female_arms/npc_female_criminals_arms_caucasian_gsma"/>
+        <variable type="vector3" name="contour_color" value="1 1 1"/>
+        <variable type="scalar" name="contour_opacity" value="0"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" name="mtr_body" version="2">
+        <bump_normal_texture file="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/shared_textures/sus_acc_slaughterhouse_nm"/>
+        <diffuse_texture file="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/shared_textures/sus_acc_slaughterhouse_df"/>
+        <variable type="vector3" name="contour_color" value="1 1 1"/>
+        <variable type="scalar" name="contour_opacity" value="0"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" name="mtr_gloves" version="2">
+        <bump_normal_texture file="units/pd2_dlc_trd/characters/shared_textures/wrinkled_plastic_gloves_nm"/>
+        <diffuse_texture file="units/pd2_dlc_trd/characters/shared_textures/wrinkled_plastic_gloves_df"/>
+        <variable type="vector3" name="contour_color" value="1 1 1"/>
+        <variable type="scalar" name="contour_opacity" value="0"/>
+    </material>
+</materials>

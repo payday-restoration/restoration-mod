@@ -1,0 +1,15 @@
+<unit type="sus" slot="1">
+	<object file="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" />
+
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_vox" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="PlayerBodyBoneMergeBase">
+			<var name="bonemerge_success_sequence" value="int_seq_hide_body"/>
+		</extension>
+		<extension name="contour" class="ContourExt"/>
+	</extensions>
+</unit>

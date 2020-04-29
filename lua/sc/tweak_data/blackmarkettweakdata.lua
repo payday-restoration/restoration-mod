@@ -810,7 +810,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_suit_sunny",
 			desc_id = "bm_suit_sunny_desc",
 			texture_bundle_folder = "mods",
-			unlocked = true,
+			unlocked = false,
 			global_value = "sc",
 			third_body_replacement = body_replacement_standard,
 			characters = {}
@@ -891,7 +891,7 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 			name_id = "bm_suit_prison",
 			desc_id = "bm_suit_prison_desc",
 			texture_bundle_folder = "mods",
-			unlocked = true,
+			unlocked = false,
 			global_value = "sc",
 			body_replacement = body_replacement_standard,
 			third_body_replacement = body_replacement_standard,

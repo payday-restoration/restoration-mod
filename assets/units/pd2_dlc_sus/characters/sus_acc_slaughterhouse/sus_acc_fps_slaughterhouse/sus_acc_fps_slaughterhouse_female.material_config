@@ -1,0 +1,11 @@
+<materials version="3" group="sus_acc_fps_slaughterhouse_female">
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_arms" version="2">
+        <bump_normal_texture file="units/pd2_dlc_sus/characters/sus_npc_female_arms/npc_female_criminals_arms_caucasian_nm"/>
+        <diffuse_texture file="units/pd2_dlc_sus/characters/sus_npc_female_arms/npc_female_criminals_arms_caucasian_df"/>
+        <material file="units/pd2_dlc_sus/characters/sus_npc_female_arms/npc_female_criminals_arms_caucasian_gsma"/>
+    </material>
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_gloves" version="2">
+        <bump_normal_texture file="units/pd2_dlc_trd/characters/shared_textures/wrinkled_plastic_gloves_nm"/>
+        <diffuse_texture file="units/pd2_dlc_trd/characters/shared_textures/wrinkled_plastic_gloves_df"/>
+    </material>
+</materials>

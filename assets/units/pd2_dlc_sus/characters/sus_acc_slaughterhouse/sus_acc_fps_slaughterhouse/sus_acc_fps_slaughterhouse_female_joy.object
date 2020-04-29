@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy" orientation_object="root_point" />
+
+<graphics>
+	<graphic_group name="GraphicGroupName" enabled="true" culling_object="co_box">
+		<object name="g_arms" enabled="true" />
+		<object name="g_gloves" enabled="true" />
+	</graphic_group>
+</graphics>
+
+</dynamic_object>

@@ -86,7 +86,7 @@
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres_df" />
     
-	<!--///Sunny-Side Robber FPS Chains\\\-->
+	<!--///Sunny-Side Robber FPS Chains
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" />
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" />
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" />
@@ -94,35 +94,35 @@
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains_df" />
     
-	<!--///Sunny-Side Robber FPS Jacket\\\-->
+	<!--///Sunny-Side Robber FPS Jacket
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_jacket/res_acc_fps_sunny_suit_jacket" />
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_jacket/res_acc_fps_sunny_suit_jacket" />
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_jacket/res_acc_fps_sunny_suit_jacket" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_jacket/res_acc_fps_sunny_suit_jacket" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_jacket/res_acc_fps_sunny_suit_jacket" />
     
-	<!--///Sunny-Side Robber FPS Bodhi\\\-->
+	<!--///Sunny-Side Robber FPS Bodhi
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_bodhi/res_acc_fps_sunny_suit_bodhi" />
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_bodhi/res_acc_fps_sunny_suit_bodhi" />
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_bodhi/res_acc_fps_sunny_suit_bodhi" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_bodhi/res_acc_fps_sunny_suit_bodhi" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_bodhi/res_acc_fps_sunny_suit_bodhi" />
     
-	<!--///Sunny-Side Robber FPS Rust\\\-->
+	<!--///Sunny-Side Robber FPS Rust
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust" />
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust" />
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust" />
     
-	<!--///Sunny-Side Robber FPS Joy\\\-->
+	<!--///Sunny-Side Robber FPS Joy
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_joy/res_acc_fps_sunny_suit_joy" />
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_joy/res_acc_fps_sunny_suit_joy" />
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_joy/res_acc_fps_sunny_suit_joy" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_joy/res_acc_fps_sunny_suit_joy" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_joy/res_acc_fps_sunny_suit_joy" />
     
-	<!--///Sunny-Side Robber FPS\\\-->
+	<!--///Sunny-Side Robber FPS
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" />
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" />
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" />
@@ -130,13 +130,13 @@
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit_df" />
     
-	<!--///Sunny-Side Robber Female FPS\\\-->
+	<!--///Sunny-Side Robber Female FPS
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" />
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" />
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female" />
-	<!--///Sunny-Side Robber Sydney FPS\\\-->
+	<!--///Sunny-Side Robber Sydney FPS
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female_2" />
 	<object path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female_2" />
 	<model path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female_2" />
@@ -144,7 +144,7 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female_2" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_sydney_df" />
     
-	<!--///Sunny-Side Robber\\\-->
+	<!--///Sunny-Side Robber
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" />
@@ -153,21 +153,21 @@
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_df" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_nm" />
     
-	<!--///Sunny-Side Robber Big\\\-->
+	<!--///Sunny-Side Robber Big
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" />
     
-	<!--///Sunny-Side Robber Female\\\-->
+	<!--///Sunny-Side Robber Female
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" />
     
-	<!--///Sunny-Side Robber Sydney\\\-->
+	<!--///Sunny-Side Robber Sydney
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney" />
@@ -175,7 +175,7 @@
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney_df" />
     
-	<!--///Sunny-Side Robber Chains\\\-->
+	<!--///Sunny-Side Robber Chains
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" />
@@ -183,7 +183,7 @@
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains_df" />
     
-	<!--///Sunny-Side Robber Jacket\\\-->
+	<!--///Sunny-Side Robber Jacket
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" />
@@ -192,7 +192,7 @@
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_df" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_nm" />
     
-	<!--///Sunny-Side Robber Bodhi\\\-->
+	<!--///Sunny-Side Robber Bodhi
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
@@ -201,7 +201,7 @@
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_df" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_nm" />
     
-	<!--///Sunny-Side Robber Rust\\\-->
+	<!--///Sunny-Side Robber Rust
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" />
@@ -210,7 +210,7 @@
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust_df" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust_nm" />
     
-	<!--///Sunny-Side Robber Joy\\\-->
+	<!--///Sunny-Side Robber Joy
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" />
@@ -218,7 +218,7 @@
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy_df" />
     
-	<!--///Sunny-Side Robber Sangres\\\-->
+	<!--///Sunny-Side Robber Sangres
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" />
 	<object path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" />
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" />

@@ -287,8 +287,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	})
 end)
 
-if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
-
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_bonus"] = "Modifiers",
@@ -463,10 +461,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",				
 	})
 end)
-
-end
-
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 
 local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
@@ -1353,5 +1347,3 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck0_1_desc"] = "",		
 	})
 end)
-
-end

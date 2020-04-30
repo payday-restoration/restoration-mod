@@ -55,227 +55,225 @@ local sc_upg_old_init = UpgradesTweakData.init
 function UpgradesTweakData:init(tweak_data)
 	sc_upg_old_init(self, tweak_data)
 	
-	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-		local level = {
-			l2 = {
-					name_id = "weapons",
-					upgrades = {
-						"colt_1911",
-						"mac10",
-						"hajk",
-						"x_mac10"
-					}
-				},	
-			l10 = {
-					name_id = "lvl_10",
-					upgrades = {
-						"cutters",
-						"shawn"
-					}
-				},	
-			l12 = {
-					name_id = "body_armor3",
-					upgrades = {
-						"body_armor3",
-						"cobray",
-						"boxcutter"
-					}
-				},			
-			l14 = {
-					name_id = "weapons",
-					upgrades = {
-						"bayonet",
-						"m1928",
-						"sparrow",
-						"gator",
-						"pl14"
-					}
-				},
-			l15 = {
-					name_id = "weapons",
-					upgrades = {
-						"msr",
-						"benelli",
-						"plainsrider",
-						"sub2000",
-						"road",
-						"legacy"
-					}
-				},
-			l18 = {
-					name_id = "weapons",
-					upgrades = {
-						"baseballbat",
-						"scorpion",
-						"oldbaton",
-						"hockey",
-						"meter",
-						"hauteur",
-						"shock",
-						"fear"
-					}
-				},
-			l19 = {
-					name_id = "weapons",
-					upgrades = {
-						"olympic",
-						"mp9",
-						"baka",
-						"x_baka",
-						"pugio",
-						"ballistic"
-					}
-				},
-			l20 = {
-					name_id = "lvl_20",
-					upgrades = {
-						"schakal",
-						"agave",
-						"happy",
-						"shepheard",
-						"slap"
-					}
-				},
-			l23 = {
-					name_id = "weapons",
-					upgrades = {
-						"bullseye",
-						"c96",
-						"par",
-						"m37",
-						"rota",
-						"cs",
-						"brick",
-						"ostry"
-					}
-				},
-			l25 = {
-					name_id = "weapons",
-					upgrades = {
-						"boxing_gloves",
-						"meat_cleaver",
-						"wpn_prj_four",
-						"sr2",
-						"grip",
-						"push",
-						"breech",
-						"ching",
-						"erma",
-						"sap"
-					}
-				},
-			l27 = {
-					name_id = "weapons",
-					upgrades = {
-						"famas",
-						"g26",
-						"twins",
-						"pitchfork",
-						"shrew",
-						"x_shrew",
-						"basset"
-					}
-				},
-			l28 = {
-					name_id = "weapons",
-					upgrades = {
-						"hs2000",
-						"vhs",
-						"bowie",
-						"micstand"
-					}
-				},
-			l30 = {
-					name_id = "lvl_30",
-					upgrades = {
-						"shuno"
-					}
-				},
-			l32 = {
-					name_id = "weapons",
-					upgrades = {
-						"x46",
-						"tec9",
-						"tiger",
-						"model70"
-					}
-				},
-			l36 = {
-					name_id = "weapons",
-					upgrades = {
-						"p90",
-						"deagle",
-						"winchester1874"
-					}
-				},
-			l39 = {
-					name_id = "weapons",
-					upgrades = {
-						"m16",
-						"huntsman",
-						"polymer",
-						"china"
-					}
-				},
-			l40 = {
-					name_id = "lvl_40",
-					upgrades = {}
-				},
-			l42 = {
-					name_id = "weapons",
-					upgrades = {
-						"fal",
-						"tomahawk",
-						"coal"
-					}
-				},
-			l50 = {
-					name_id = "lvl_50",
-					upgrades = {}
-				},
-			l51 = {
-					name_id = "weapons",
-					upgrades = {
-						"machete",
-						"sterling"
-					}
-				},
-			l55 = {
-					name_id = "weapons",
-					upgrades = {
-						"uzi"
-					}
-				},
-			l60 = {
-					name_id = "lvl_60",
-					upgrades = {}
-				},
-			l70 = {
-					name_id = "lvl_70",
-					upgrades = {}
-				},
-			l80 = {
-					name_id = "lvl_80",
-					upgrades = {}
-				},
-			l90 = {
-					name_id = "lvl_90",
-					upgrades = {}
-				},
-			l100 = {
-					name_id = "lvl_100",
-					upgrades = {}
-				}			
-		}
+	local level = {
+		l2 = {
+				name_id = "weapons",
+				upgrades = {
+					"colt_1911",
+					"mac10",
+					"hajk",
+					"x_mac10"
+				}
+			},	
+		l10 = {
+				name_id = "lvl_10",
+				upgrades = {
+					"cutters",
+					"shawn"
+				}
+			},	
+		l12 = {
+				name_id = "body_armor3",
+				upgrades = {
+					"body_armor3",
+					"cobray",
+					"boxcutter"
+				}
+			},			
+		l14 = {
+				name_id = "weapons",
+				upgrades = {
+					"bayonet",
+					"m1928",
+					"sparrow",
+					"gator",
+					"pl14"
+				}
+			},
+		l15 = {
+				name_id = "weapons",
+				upgrades = {
+					"msr",
+					"benelli",
+					"plainsrider",
+					"sub2000",
+					"road",
+					"legacy"
+				}
+			},
+		l18 = {
+				name_id = "weapons",
+				upgrades = {
+					"baseballbat",
+					"scorpion",
+					"oldbaton",
+					"hockey",
+					"meter",
+					"hauteur",
+					"shock",
+					"fear"
+				}
+			},
+		l19 = {
+				name_id = "weapons",
+				upgrades = {
+					"olympic",
+					"mp9",
+					"baka",
+					"x_baka",
+					"pugio",
+					"ballistic"
+				}
+			},
+		l20 = {
+				name_id = "lvl_20",
+				upgrades = {
+					"schakal",
+					"agave",
+					"happy",
+					"shepheard",
+					"slap"
+				}
+			},
+		l23 = {
+				name_id = "weapons",
+				upgrades = {
+					"bullseye",
+					"c96",
+					"par",
+					"m37",
+					"rota",
+					"cs",
+					"brick",
+					"ostry"
+				}
+			},
+		l25 = {
+				name_id = "weapons",
+				upgrades = {
+					"boxing_gloves",
+					"meat_cleaver",
+					"wpn_prj_four",
+					"sr2",
+					"grip",
+					"push",
+					"breech",
+					"ching",
+					"erma",
+					"sap"
+				}
+			},
+		l27 = {
+				name_id = "weapons",
+				upgrades = {
+					"famas",
+					"g26",
+					"twins",
+					"pitchfork",
+					"shrew",
+					"x_shrew",
+					"basset"
+				}
+			},
+		l28 = {
+				name_id = "weapons",
+				upgrades = {
+					"hs2000",
+					"vhs",
+					"bowie",
+					"micstand"
+				}
+			},
+		l30 = {
+				name_id = "lvl_30",
+				upgrades = {
+					"shuno"
+				}
+			},
+		l32 = {
+				name_id = "weapons",
+				upgrades = {
+					"x46",
+					"tec9",
+					"tiger",
+					"model70"
+				}
+			},
+		l36 = {
+				name_id = "weapons",
+				upgrades = {
+					"p90",
+					"deagle",
+					"winchester1874"
+				}
+			},
+		l39 = {
+				name_id = "weapons",
+				upgrades = {
+					"m16",
+					"huntsman",
+					"polymer",
+					"china"
+				}
+			},
+		l40 = {
+				name_id = "lvl_40",
+				upgrades = {}
+			},
+		l42 = {
+				name_id = "weapons",
+				upgrades = {
+					"fal",
+					"tomahawk",
+					"coal"
+				}
+			},
+		l50 = {
+				name_id = "lvl_50",
+				upgrades = {}
+			},
+		l51 = {
+				name_id = "weapons",
+				upgrades = {
+					"machete",
+					"sterling"
+				}
+			},
+		l55 = {
+				name_id = "weapons",
+				upgrades = {
+					"uzi"
+				}
+			},
+		l60 = {
+				name_id = "lvl_60",
+				upgrades = {}
+			},
+		l70 = {
+				name_id = "lvl_70",
+				upgrades = {}
+			},
+		l80 = {
+				name_id = "lvl_80",
+				upgrades = {}
+			},
+		l90 = {
+				name_id = "lvl_90",
+				upgrades = {}
+			},
+		l100 = {
+				name_id = "lvl_100",
+				upgrades = {}
+			}			
+	}
 
-		--Insert level variables into level_tree.
-		for i=1, 100 do
-			local currLevel = level["l" .. tostring(i)]
-			if currLevel then
-				self.level_tree[i] = currLevel
-			end
-		end 	
-	end
+	--Insert level variables into level_tree.
+	for i=1, 100 do
+		local currLevel = level["l" .. tostring(i)]
+		if currLevel then
+			self.level_tree[i] = currLevel
+		end
+	end 	
 
 end		
 
@@ -285,22 +283,16 @@ function UpgradesTweakData:_init_pd2_values()
 	
 	--Upgrade Value changes for skills and such--
 
-	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
+	--Explosives hurt--
+	self.explosive_bullet.curve_pow = 1
+	self.explosive_bullet.player_dmg_mul = 0.5
+	self.explosive_bullet.range = 250
+	self.explosive_bullet.feedback_range = self.explosive_bullet.range
+	self.explosive_bullet.camera_shake_max_mul = 4
 
-		--Explosives hurt--
-		self.explosive_bullet.curve_pow = 1
-		self.explosive_bullet.player_dmg_mul = 0.5
-		self.explosive_bullet.range = 250
-		self.explosive_bullet.feedback_range = self.explosive_bullet.range
-		self.explosive_bullet.camera_shake_max_mul = 4
-
-		--Restoring movement penalties--
-		self.weapon_movement_penalty.minigun = 0.75
-		self.weapon_movement_penalty.lmg = 1
-
-	end
-
-	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+	--Restoring movement penalties--
+	self.weapon_movement_penalty.minigun = 0.75
+	self.weapon_movement_penalty.lmg = 1
 
 	--Armor related stuff--
 	self.values.player.body_armor.armor = {
@@ -1157,10 +1149,10 @@ function UpgradesTweakData:_init_pd2_values()
 			--}
 		--}
 
-		if Global.game_settings and Global.game_settings.single_player then
-			self.values.cable_tie.quantity_1 = {16}
-			self.values.player.corpse_dispose_amount = {12, 16}
-		end
+	if Global.game_settings and Global.game_settings.single_player then
+		self.values.cable_tie.quantity_1 = {16}
+		self.values.player.corpse_dispose_amount = {12, 16}
+	end
 
 	--Perk Deck shit--
 	
@@ -1611,19 +1603,6 @@ function UpgradesTweakData:_init_pd2_values()
 	}	
 	
 end
-
-local sc_utd_init = UpgradesTweakData.init
-function UpgradesTweakData:init(tweak_data)
-	sc_utd_init(self, tweak_data)
-	
-	self.definitions.jeb = {
-		dlc = "rest",
-		factory_id = "wpn_fps_pis_jeb",
-		weapon_id = "jeb",
-		category = "weapon"
-	}	
-	table.insert(self.level_tree[50].upgrades, "jeb")
-end	
 
 --Added new definitions--
 
@@ -3016,5 +2995,4 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
-end
 end

@@ -1,6 +1,7 @@
 RestorationCoreCallbacks = RestorationCoreCallbacks or {}
 RestorationCoreCallbacks._value_changed_funcs = {}
 
+--[[
 --Save Force Restart
 function RestorationCoreCallbacks:Restart(key, value)
 	if restoration.Options:GetValue("SC/SC") == false then
@@ -13,6 +14,7 @@ function RestorationCoreCallbacks:Restart(key, value)
 	-- 	Application:close()
 	-- end)
 end
+]]--
 
 --Any function inside the table will be called, this way we can keep things like hud updated.
 function RestorationCoreCallbacks:ValueChanged(key, value)

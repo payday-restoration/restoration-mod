@@ -1,5 +1,3 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
 function DramaTweakData:init()
 	self:_create_table_structure()
 	self.drama_actions = {
@@ -13,6 +11,4 @@ function DramaTweakData:init()
 	self.low = 0.1
 	self.peak = 0.95
 	self.assault_fade_end = 1
-end
-
 end

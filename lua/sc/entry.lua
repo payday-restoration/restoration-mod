@@ -1,10 +1,7 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+local Net = _G.LuaNetworking
 
-	local Net = _G.LuaNetworking
-
-	--Place grenade case
-	Hooks:Add("NetworkReceivedData", "PlaceGrenadeCrate", function(sender, id, data)
-	
+--Place grenade case
+Hooks:Add("NetworkReceivedData", "PlaceGrenadeCrate", function(sender, id, data)	
 	if id == "PlaceGrenadeCrate" then
 
 		--Put the data into an array
@@ -38,11 +35,9 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 				end
 			end
 		end
-	
-	end
-	end)
 
-end
+	end
+end)
 
 --Hooks:Call("NetworkReceivedData",1,"environments_all",LuaNetworking:TableToString(restoration.Environment_Settings_Table))
 

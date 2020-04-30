@@ -1,5 +1,3 @@
-if restoration and restoration.Options:GetValue("SC/SC") then
-
 local old_PlayerInventory = PlayerInventory.add_unit_by_factory_name
 
 function PlayerInventory:add_unit_by_factory_name(...)
@@ -21,5 +19,4 @@ function PlayerInventory:add_unit_by_factory_name(...)
 	setup_data.alert_AI = true
 	setup_data.alert_filter = self._unit:movement():SO_access()
 	setup_data.timer = managers.player:player_timer()
-end
 end

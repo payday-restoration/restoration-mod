@@ -1,4 +1,3 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 	local _setup_player_info_hud_pd2_original = HUDManager._setup_player_info_hud_pd2
 
 HUDManager = HUDManager or class()
@@ -319,8 +318,6 @@ function HUDManager:check_anticipation_voice(t)
 		self:sync_assault_dialog(data.dialog)
 		managers.network:session():send_to_peers_synched("sync_assault_dialog", data.dialog)
 	end
-end
-
 end
 
 if not restoration.Options:GetValue("HUD/MainHUD") then

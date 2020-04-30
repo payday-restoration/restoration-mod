@@ -249,45 +249,43 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 end
 
 --SC Level Edits
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-	Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
-		if Global.load_level == true then 
-			local level_id = Global.game_settings.level_id
-			if level_id == "ukrainian_job_res" then 
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-			elseif level_id == "family_res" then 
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
-			elseif level_id == "watchdogs_1_res" then 
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-				--"sky_orientation/rotation":"278.53564453125",
-			elseif level_id == "firestarter_2_res" then 
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-				--"sky_orientation/rotation":"278.53564453125",
-			elseif level_id == "firestarter_1_res" then 
-				--if rnd == 1 or rnd == 2 then
-				--BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-				--if rnd == 3 then
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
-				--"sky_orientation/rotation":"278.53564453125",
-					--end
+Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", function()
+	if Global.load_level == true then 
+		local level_id = Global.game_settings.level_id
+		if level_id == "ukrainian_job_res" then 
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		elseif level_id == "family_res" then 
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
+		elseif level_id == "watchdogs_1_res" then 
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+		elseif level_id == "firestarter_2_res" then 
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+		elseif level_id == "firestarter_1_res" then 
+			--if rnd == 1 or rnd == 2 then
+			--BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			--if rnd == 3 then
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
 				--end
-			elseif level_id == "alex_1_res" then 
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/rat1.custom_xml", "custom_xml", "environments/pd2_env_rat_night/pd2_env_rat_night", "environment")
-				--"sky_orientation/rotation":"278.53564453125",
-			elseif level_id == "alex_3_res" then 
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
-				--"sky_orientation/rotation":"278.53564453125",
-			elseif level_id == "safehouse" then --Safehouse Booster
-				if SystemFS:exists(mod_path .. "scriptdata/missions/safehouse.mission") and SystemFS:exists(mod_path .. "scriptdata/missions/safehouse.continent") then
-					BeardLib:ReplaceScriptData(mod_path .. "scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
-					BeardLib:ReplaceScriptData(mod_path .. "scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
-				end
-			elseif level_id == "kosugi" then 
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
+			--end
+		elseif level_id == "alex_1_res" then 
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/rat1.custom_xml", "custom_xml", "environments/pd2_env_rat_night/pd2_env_rat_night", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+		elseif level_id == "alex_3_res" then 
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
+			--"sky_orientation/rotation":"278.53564453125",
+		elseif level_id == "safehouse" then --Safehouse Booster
+			if SystemFS:exists(mod_path .. "scriptdata/missions/safehouse.mission") and SystemFS:exists(mod_path .. "scriptdata/missions/safehouse.continent") then
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/missions/safehouse.continent", "custom_xml", "levels/narratives/safehouse/world/world", "continent")
 			end
+		elseif level_id == "kosugi" then 
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 		end
-	end)
-end
+	end
+end)
 
 --Restoration Levels
 Hooks:Add("BeardLibCreateScriptDataMods", "RESMapsCallBeardLibSequenceFuncs", function()

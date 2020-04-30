@@ -57,15 +57,12 @@ function MusicManager:jukebox_heist_specific()
 	return "all"
 end
 
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
+local current_track_string_orig = MusicManager.current_track_string
+function MusicManager:current_track_string()
+	
+	if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTrack") then
+		return utf8.to_upper(managers.localization:text("menu_jukebox_screen_resmusic_ponr"))
+	end
 
-    local current_track_string_orig = MusicManager.current_track_string
-    function MusicManager:current_track_string()
-        
-        if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTrack") then
-            return utf8.to_upper(managers.localization:text("menu_jukebox_screen_resmusic_ponr"))
-        end
-
-        return current_track_string_orig(self)
-    end
+	return current_track_string_orig(self)
 end

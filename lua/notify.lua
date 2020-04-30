@@ -3,27 +3,30 @@ if restoration.Options:GetValue("HUD/MainHUD") then
 end
 local idealVersion = Application:version()
 local GameVersion = Application:version()
+
+--[[
 --///MAIN MENU STARTUP NOTIFICATION\\\--
 if restoration.Options:GetValue("OTHER/Notify") then
-local _setup_item_rows_original = MenuNodeGui._setup_item_rows
-function MenuNodeGui:_setup_item_rows(node, ...)
-    _setup_item_rows_original(self, node, ...)
-    if not Global._friendsonly_warning_shown then
-        Global._friendsonly_warning_shown = true
-        QuickMenu:new(
-            "NEW FEATURE ALERT!",
-            "Restoration Mod's Overhaul now has its own savefile!\n\nThis means that when you turn the overhaul on or off, the game will force-restart to allow the changes to take effect. Your normal, vanilla savefile will be totally unaffected in the Overhaul as of now.\n\nContact us on our Discord channel for troubleshooting and questions. Thanks!\n\n-Restoration Mod Team",
-            {
-                {
-                    text = "GOTCHA",
-                    is_cancel_button = true
-                }
-            },
-            true
-        )
-    end
+	local _setup_item_rows_original = MenuNodeGui._setup_item_rows
+	function MenuNodeGui:_setup_item_rows(node, ...)
+		_setup_item_rows_original(self, node, ...)
+		if not Global._friendsonly_warning_shown then
+			Global._friendsonly_warning_shown = true
+			QuickMenu:new(
+				"NEW FEATURE ALERT!",
+				"Restoration Mod's Overhaul now has its own savefile!\n\nThis means that when you turn the overhaul on or off, the game will force-restart to allow the changes to take effect. Your normal, vanilla savefile will be totally unaffected in the Overhaul as of now.\n\nContact us on our Discord channel for troubleshooting and questions. Thanks!\n\n-Restoration Mod Team",
+				{
+					{
+						text = "GOTCHA",
+						is_cancel_button = true
+					}
+				},
+				true
+			)
+		end
+	end
 end
-end
+]]--
 
 --///MOD PANEL NOTIFICATION\\\--
 --This isn't used currently

@@ -9,8 +9,6 @@ before dismissing it. I promise you it's still fun and in fact, you may find tha
 
 ]]--
 
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
 local sc_sttd = SkillTreeTweakData.init
 function SkillTreeTweakData:init(tweak_data)
 	sc_sttd(self, tweak_data)
@@ -3536,6 +3534,4 @@ function SkillTreeTweakData:init(tweak_data)
 	self.specializations[21] = sc_nip
 	self.specializations[22] = sc_blank
 	self.specializations[23] = sc_yes_man
-end
-
 end

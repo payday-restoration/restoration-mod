@@ -1,4 +1,3 @@
-
 if not restoration.Options:GetValue("OTHER/AltLastDownColor") then return end
 
 local set_post_composite_orig = CoreEnvironmentControllerManager.set_post_composite

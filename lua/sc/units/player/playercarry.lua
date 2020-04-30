@@ -1,5 +1,3 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
 local armor_init = tweak_data.player.damage.ARMOR_INIT
 
 function PlayerCarry:_perform_jump(jump_vec)
@@ -26,6 +24,4 @@ function PlayerCarry:_get_max_walk_speed(...)
 	end
 		
 	return PlayerCarry.super._get_max_walk_speed(self, ...) * multiplier
-end
-
 end

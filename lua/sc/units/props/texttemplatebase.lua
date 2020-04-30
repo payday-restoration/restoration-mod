@@ -1,4 +1,3 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 function TextTemplateBase:_stock_ticker()
 	for i = 1, self._unit:text_gui().ROWS, 1 do
 		self._unit:text_gui():set_row_gap(i, 20)
@@ -218,6 +217,4 @@ function TextTemplateBase:_stock_ticker()
 		self._unit:text_gui():add_text(row, "" .. (j < 0 and "" or "+") .. string.format("%.2f", j) .. "%", j < 0 and "light_red" or "light_green", self._unit:text_gui().FONT_SIZE / 1.5, "bottom", nil)
 		self._unit:text_gui():add_text(row, "  ", "white")
 	end
-end
-
 end

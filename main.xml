@@ -50,10 +50,8 @@
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
-		<hook file="sc/states/ingameaccesscamera.lua" source_file="lib/states/ingameaccesscamera"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
-		<hook file="sc/managers/hud/hudtemp.lua" source_file="lib/managers/hud/HUDTemp"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
 		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
@@ -93,11 +91,10 @@
 		<hook file="sc/loc/loc.lua" source_file="lib/managers/localizationmanager"/>
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
-		<hook file="sc/units/weapons/smokescreengrenade" source_file="lib/units/weapons/grenades/smokescreengrenade.lua"/>
+		<hook file="sc/units/weapons/smokescreengrenade" source_file="lib/units/weapons/grenades/smokescreengrenade"/>
 		<hook file="sc/units/weapons/newraycastweaponbase.lua" source_file="lib/units/weapons/newraycastweaponbase"/>
 		<hook file="sc/units/weapons/newnpcraycastweaponbase.lua" source_file="lib/units/weapons/newnpcraycastweaponbase"/>
 		<hook file="sc/units/weapons/newflamethrowerbase.lua" source_file="lib/units/weapons/newflamethrowerbase"/>
-		<hook file="sc/units/weapons/newnpcflamethrowerbase.lua" source_file="lib/units/weapons/newnpcflamethrowerbase"/>
 		<hook file="sc/units/weapons/flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
 		<hook file="sc/units/weapons/shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
 		<hook file="sc/units/weapons/raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
@@ -147,8 +144,6 @@
 		<hook file="sc/tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="sc/units/enemies/copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
 		<hook file="sc/units/enemies/copmovement.lua" source_file="lib/units/enemies/cop/copmovement"/>
-		<hook file="sc/units/enemies/copinventory.lua" source_file="lib/units/enemies/cop/copinventory"/>
-		<hook file="sc/units/enemies/huskcopinventory.lua" source_file="lib/units/enemies/cop/huskcopinventory"/>
 		<hook file="sc/units/enemies/copbrain.lua" source_file="lib/units/enemies/cop/copbrain"/>
 		<hook file="sc/units/enemies/huskcopbrain.lua" source_file="lib/units/enemies/cop/huskcopbrain"/>
 		<hook file="sc/units/civilians/civilianbrain.lua" source_file="lib/units/civilians/civilianbrain"/>
@@ -352,11 +347,10 @@
 				<option type="bool" default_value="false" name="Custody"/>
 				<option type="bool" default_value="true" name="UppercaseNames"/>				
 			</option_group>
-			<option_group name="SC">
-				<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>
-				<option type="bool" default_value="true" name="Holiday"/>
+			<!--<option_group name="SC">>-->
+				<!--<option type="bool" default_value="false" name="SC" value_changed="RestorationCoreCallbacks:Restart"/>-->
 				<!--<option type="bool" default_value="false" name="Save"/>-->
-			</option_group>
+			<!--</option_group>-->
 			<option_group name="OTHER">
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
@@ -364,6 +358,7 @@
 				<option type="bool" default_value="true" name="PONRTrack"/>
 				<option type="bool" default_value="true" name="MusicShuffle"/>
 				<option type="bool" default_value="true" name="TimeOfDay"/>
+				<option type="bool" default_value="true" name="Holiday"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>
@@ -384,7 +379,7 @@
 				<!-- <option type="multichoice" default_value="2" name="Env_Kosugi" values_tbl="restoration.environments_choice_shadow_raid"/> -->
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Paintings"/>
-				<option type="bool" default_value="true" name="Notify"/>
+				<!--<option type="bool" default_value="false" name="Notify"/> -->
 			</option_group>
         </options>
     </Options>

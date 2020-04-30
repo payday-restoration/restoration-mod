@@ -1,4 +1,3 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
 --[[
 	function AmmoBagBase:setup(ammo_upgrade_lvl, bullet_storm_level)
 		self._bullet_storm_level = bullet_storm_level
@@ -73,4 +72,3 @@ if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue(
 		end
 	end	
 --]]
-end

@@ -1,5 +1,3 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
 function VehicleDrivingExt:_detect_npc_collisions()
 	local vel = self._vehicle:velocity()
 	if vel:length() < 150 then
@@ -41,6 +39,4 @@ function VehicleDrivingExt:_detect_npc_collisions()
 			end
 		end
 	end
-end
-
 end

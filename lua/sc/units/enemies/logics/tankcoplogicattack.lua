@@ -1,5 +1,3 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
 function TankCopLogicAttack.update(data)
 	local t = data.t
 	local unit = data.unit
@@ -75,6 +73,4 @@ function TankCopLogicAttack.update(data)
 	else
 		TankCopLogicAttack._cancel_chase_attempt(data, my_data)
 	end
-end
-
 end

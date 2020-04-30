@@ -188,10 +188,6 @@ function restoration:Init()
 		SC._data.sc_player_weapon_toggle = true
 	end
 
-	if not restoration.Options:GetValue("SC/SC") then
-		SC._data.sc_player_weapon_toggle = false
-	end
-
 	local C = blt_class()
 	VoicelineFramework = C
 	VoicelineFramework.BufferedSounds = {}
@@ -247,9 +243,7 @@ function restoration.log_shit(to_log)
 end
 
 function restoration:LoadSCAssets()
-	if restoration and restoration.Options:GetValue("SC/SC") then
-		return true
-	end
+	return true
 end
 
 restoration.assault_style = {

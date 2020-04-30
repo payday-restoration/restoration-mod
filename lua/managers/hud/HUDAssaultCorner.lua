@@ -337,29 +337,25 @@ function HUDAssaultCorner:init(hud, full_hud)
 	})
 	buffs_panel:set_top(0)
 	buffs_panel:set_right(self._hud_panel:w())
-	if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-		self.buff_icon = "guis/textures/pd2/hud_buff_shield"
-		local job = Global.level_data and Global.level_data.level_id        
-		for _,j in ipairs(restoration.captain_teamwork) do
-			if job == j then
-				self.buff_icon = "guis/textures/pd2/hud_buff_fire"
-				break
-			end
+	self.buff_icon = "guis/textures/pd2/hud_buff_shield"
+	local job = Global.level_data and Global.level_data.level_id        
+	for _,j in ipairs(restoration.captain_teamwork) do
+		if job == j then
+			self.buff_icon = "guis/textures/pd2/hud_buff_fire"
+			break
 		end
-		for _,j2 in ipairs(restoration.captain_murderdozer) do
-			if job == j2 then
-				self.buff_icon = "guis/textures/pd2/hud_buff_skull"
-				break
-			end
+	end
+	for _,j2 in ipairs(restoration.captain_murderdozer) do
+		if job == j2 then
+			self.buff_icon = "guis/textures/pd2/hud_buff_skull"
+			break
 		end
-		for _,j3 in ipairs(restoration.captain_stelf) do
-			if job == j3 then
-				self.buff_icon = "guis/textures/pd2/hud_buff_spooc"
-				break
-			end
+	end
+	for _,j3 in ipairs(restoration.captain_stelf) do
+		if job == j3 then
+			self.buff_icon = "guis/textures/pd2/hud_buff_spooc"
+			break
 		end
-	else
-		self.buff_icon = "guis/textures/pd2/hud_buff_shield"
 	end
 	
 	local vip_icon_ = buffs_panel:bitmap({

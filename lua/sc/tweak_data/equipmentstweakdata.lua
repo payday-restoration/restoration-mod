@@ -1,5 +1,3 @@
-if SC and SC._data.sc_ai_toggle or restoration and restoration.Options:GetValue("SC/SC") then
-
 local sc_etd = EquipmentsTweakData.init
 function EquipmentsTweakData:init()
 	sc_etd(self, tweak_data)
@@ -87,6 +85,4 @@ function EquipmentsTweakData:init()
 		self.specials.lance_part.quantity=4
 		self.specials.lance_part.max_quantity=4				
    	end
-end
-
 end

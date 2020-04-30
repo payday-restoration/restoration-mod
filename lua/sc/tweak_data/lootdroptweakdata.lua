@@ -2,15 +2,15 @@ local old_init = old_init or LootDropTweakData.init
  
 function LootDropTweakData:init(tweak_data)
     old_init(self, tweak_data)
-	if SC and SC._data.sc_player_weapon_toggle or restoration and restoration.Options:GetValue("SC/SCWeapon") then
-		for i = 10, 100, 10 do
-			self.WEIGHTED_TYPE_CHANCE[i].weapon_mods = self.WEIGHTED_TYPE_CHANCE[i].weapon_mods + self.WEIGHTED_TYPE_CHANCE[i].cash + self.WEIGHTED_TYPE_CHANCE[i].xp
-			self.WEIGHTED_TYPE_CHANCE[i].cash = 0
-			self.WEIGHTED_TYPE_CHANCE[i].xp = 0
-		end
-		self.global_values.gage_pack_assault.value_multiplier = 0
-		self.global_values.gage_pack_snp.value_multiplier = 0
+	
+	for i = 10, 100, 10 do
+		self.WEIGHTED_TYPE_CHANCE[i].weapon_mods = self.WEIGHTED_TYPE_CHANCE[i].weapon_mods + self.WEIGHTED_TYPE_CHANCE[i].cash + self.WEIGHTED_TYPE_CHANCE[i].xp
+		self.WEIGHTED_TYPE_CHANCE[i].cash = 0
+		self.WEIGHTED_TYPE_CHANCE[i].xp = 0
 	end
+	
+	self.global_values.gage_pack_assault.value_multiplier = 0
+	self.global_values.gage_pack_snp.value_multiplier = 0
     self.global_values.sc = {}
     self.global_values.sc.name_id = "loot_sc"
     self.global_values.sc.desc_id = "loot_sc_desc"

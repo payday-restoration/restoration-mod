@@ -1782,6 +1782,9 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				name = "bm_menu_btn_unlock_crew_item",
 				callback = callback(self, self, "buy_crew_item_callback")
 			}
+		}
+
+		--[[
 			--Extended Continental Coin Shop Goonmod Standalone support
 			if GageModShop then
 				local bm_modshop = {
@@ -1800,8 +1803,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					callback = callback(self, self, "modshop_purchase_mask_part_callback")
 				}
 			end
-		}
-
+		]]
 		for btn, data in pairs(BTNS) do
 			data.callback = callback(self, self, "overridable_callback", {
 				button = btn,

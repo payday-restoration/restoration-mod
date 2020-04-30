@@ -4055,19 +4055,32 @@ function BlackMarketGui:update_info_text()
 		elseif managers.player:has_category_upgrade("player", "damage_to_hot") and not table.contains(tweak_data:get_raw_value("upgrades", "damage_to_hot_data", "armors_allowed") or {}, self._slot_data.name) then
 			updated_texts[3].text = managers.localization:to_upper_text("bm_menu_disables_damage_to_hot")
 			updated_texts[3].below_stats = true
-		elseif managers.player:has_category_upgrade("player", "armor_health_store_amount") then
+		elseif managers.player:has_category_upgrade("player", "armor_health_store_amount") then --Add Ex-Pres per-kill armor regen bonus.
 			local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
 			local upgrade_level = bm_armor_tweak.upgrade_level
 			local amount = managers.player:body_armor_value("skill_max_health_store", upgrade_level, 1)
 			local multiplier = managers.player:upgrade_value("player", "armor_max_health_store_multiplier", 1)
-			updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_max_health_store", {
-				amount = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)
-			})
+			local regen_speed = format_round((managers.player:body_armor_value("skill_kill_change_regenerate_speed", upgrade_level, 1) - 1) * 100)
+			if managers.player:has_category_upgrade("player", "skill_kill_change_regenerate_speed") then
+				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_max_health_store_1", 
+					{health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier)})
+			else
+				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_max_health_store_2", 
+					{health_stored = format_round(amount * multiplier * tweak_data.gui.stats_present_multiplier), regen_bonus = regen_speed})
+			end
 			updated_texts[2].below_stats = true
-		elseif managers.player:has_category_upgrade("player", "armor_grinding") then
+		elseif managers.player:has_category_upgrade("player", "armor_grinding") then --Add Anarchist per-armor skill information.
 			local bm_armor_tweak = tweak_data.blackmarket.armors[slot_data.name]
 			local upgrade_level = bm_armor_tweak.upgrade_level
-			updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_grinding") .. format_round(10 * tweak_data.upgrades.values.player.armor_grinding[1][upgrade_level][1])
+			local passive_regen = format_round(10 * tweak_data.upgrades.values.player.armor_grinding[1][upgrade_level][1])
+			local active_regen = format_round(10 * tweak_data.upgrades.values.player.damage_to_armor[1][upgrade_level][1])
+			if managers.player:has_category_upgrade("player", "damage_to_armor") then
+				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_grinding_2", 
+					{passive_armor_regen = passive_regen, active_armor_regen = active_regen})
+			else
+				updated_texts[2].text = managers.localization:to_upper_text("bm_menu_armor_grinding_1", 
+					{passive_armor_regen = passive_regen})
+			end
 			updated_texts[2].below_stats = true
 		end
 	elseif identifier == self.identifiers.armor_skins then

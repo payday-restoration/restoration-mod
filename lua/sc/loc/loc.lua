@@ -283,7 +283,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_regen_time"] = "Regen Delay",
 		["bm_menu_swap_speed"] = "Swap Time",
 
-		["bm_menu_armor_grinding"] = "Amount of armor regenerated every tick by The Anarchist perk deck: ",
+		--Blackmarket gui per-armor skill descriptions.
+		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: $passive_armor_regen",
+		["bm_menu_armor_grinding_2"] = "Armor regenerated every tick: $passive_armor_regen \nArmor regenerated when damaging enemies: $active_armor_regen",
+
+		["bm_menu_armor_max_health_store_1"] = "Max health stored: $health_stored",
+		["bm_menu_armor_max_health_store_2"] = "Max health stored: $health_stored \nArmor regen bonus on kill: $regen_bonus%",
 	})
 end)
 

@@ -213,11 +213,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
 	self.arm_und.player_style = "scrub"
 							
-	self.hox_1.package = {"packages/packages/narr_hox_1", "packages/addslaughter"}
+	self.hox_1.package = {"packages/narr_hox_1", "packages/addslaughter"}
 	self.hox_1.player_style = "slaughterhouse"
-	self.hox_2.package = {"packages/packages/narr_hox_2", "packages/addslaughter"}
+	self.hox_2.package = {"packages/narr_hox_2", "packages/addslaughter"}
 	self.hox_2.player_style = "slaughterhouse"
-	self.hox_3.package = {"packages/packages/narr_hox_3", "packages/addslaughter"}
+	self.hox_3.package = {"packages/narr_hox_3", "packages/addslaughter"}
 	self.hox_3.player_style = "slaughterhouse"
 	
 	self.rat.player_style = "suit_sunny"

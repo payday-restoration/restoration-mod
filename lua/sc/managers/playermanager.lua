@@ -285,24 +285,27 @@ function PlayerManager:refill_messiah_charges()
 	if self._max_messiah_charges then
 		self._messiah_charges = self._max_messiah_charges
 	end
-
+	log("Messiah refilled, kills required now 1")
 	self._messiah_kills_required = 1
 end
 
 function PlayerManager:use_messiah_charge()
-	if self._messiah_charges and not self:has_category_upgrade("player", "infinite_messiah") then
+	log("Kills required to Messiah = " .. tostring(self._messiah_kills_required))
+	if self:has_category_upgrade("player", "infinite_messiah") then
+		self._messiah_kills_required = self._messiah_kills_required + 2
+		self._messiah_kills = 0
+	elseif self._messiah_charges and not self:has_category_upgrade("player", "infinite_messiah") then
 		self._messiah_charges = math.max(self._messiah_charges - 1, 0)
 	end
+
+	if 
 end
 
 function PlayerManager:_on_messiah_event()
+	log("Kills required to messiah = " .. tostring(self._messiah_kills_required - self._messiah_kills))
 	self._messiah_kills = self._messiah_kills + 1
 
 	if self._messiah_charges > 0 and self._messiah_kills >= self._messiah_kills_required and self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
-		if self:has_category_upgrade("player", "infinite_messiah") then
-			self._messiah_kills_required = self._messiah_kills_required + 2
-			self._messiah_kills = 0
-		end
 		self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
 	end
 end

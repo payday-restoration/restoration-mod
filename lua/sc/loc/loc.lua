@@ -33,6 +33,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_skirmish_selected_briefing"] = "In this scenario, you & your crew can select any SKIRMISH.\n\nA SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash, experience, and loot reward with each wave completed.\n\nYou will fail if anyone in your crew -- including yourself -- is taken into custody, or if the target hostage is rescued by hostiles.",
 		["menu_skirmish_selected"] = "Skirmish",
 		
+		--Skirmish Heists--
+		["heist_skm_mallcrasher"] = "Shield Mall",
+		["heist_skm_mallcrasher_h1"] = "Shield Mall",
+		["heist_skm_arena"] = "Monarch Arena",
+		["heist_skm_arena_h1"] = "Monarch Arena",
+		["heist_skm_big2"] = "Benevolent Bank",
+		["heist_skm_big2_h1"] = "Benevolent Bank",
+		["heist_skm_watchdogs_stage2"] = "Almendia Logistics Dockyard",
+		["heist_skm_watchdogs_stage2_h1"] = "Almendia Logistics Dockyard",
+		["heist_skm_mus"] = "Andersonian Museum",
+		["heist_skm_mus_h1"] = "Andersonian Museum",
+		["heist_skm_run"] = "Uptown - Inkwell Industrial",
+		["heist_skm_run_h1"] = "Uptown - Inkwell Industrial",
+		
+		
 		--Heist Breifings--
 		["heist_pines_briefing"] = "We need you there fast, because the explosion from that was surely enough to get the Reapers out of their base - and mobile. Anyway, it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.",	
 		

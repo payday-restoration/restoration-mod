@@ -1,4 +1,6 @@
 local mvec1 = Vector3()
+PlayerDamage._UPPERS_COOLDOWN = tweak_data.upgrades.values.first_aid_kit.uppers_cooldown
+
 function PlayerDamage:init(unit)
 	self._lives_init = tweak_data.player.damage.LIVES_INIT
 	self._lives_init = managers.modifiers:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
@@ -175,7 +177,6 @@ function PlayerDamage:init(unit)
 
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
 end
-PlayerDamage._UPPERS_COOLDOWN = 60
 
 function PlayerDamage:damage_melee(attack_data)
 	local player_unit = managers.player:player_unit()
@@ -537,6 +538,8 @@ function PlayerDamage:revive(silent)
 		self:fill_dodge_meter(3.0, true)
 	end
 	
+	managers.player:deactivate_db_regen()
+
 	managers.player:set_damage_absorption(
 		"down_absorption",
 		managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
@@ -547,7 +550,8 @@ function PlayerDamage:band_aid_health()
 	if managers.platform:presence() == "Playing" and (self:arrested() or self:need_revive()) then
 		return
 	end
-	self:change_health(self:_max_health() * self._healing_reduction)
+	self:change_health(tweak_data.upgrades.values.first_aid_kit.heal_amount * self._healing_reduction)
+	
 	self._said_hurt = false
 	if math.rand(1) < managers.player:upgrade_value("first_aid_kit", "downs_restore_chance", 0) then
 		self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
@@ -558,6 +562,21 @@ function PlayerDamage:band_aid_health()
 			managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
 		)
 	end
+end
+
+function PlayerDamage:recover_health()
+	if managers.platform:presence() == "Playing" and (self:arrested() or self:need_revive()) then
+		self:revive(true)
+	end
+
+	self:restore_health(tweak_data.upgrades.values.doctor_bag.heal_amount)
+	managers.player:activate_db_regen()
+
+	managers.hud:set_player_health({
+		current = self:get_real_health(),
+		total = self:_max_health(),
+		revives = Application:digest_value(self._revives, false)
+	})
 end
 
 function PlayerDamage:get_missing_revives()
@@ -804,10 +823,10 @@ function PlayerDamage:_upd_health_regen(t, dt)
 		local max_health = self:_max_health()
 
 		if self:get_real_health() < max_health then
-			self:restore_health(managers.player:health_regen(), false)
-			self:restore_health(managers.player:fixed_health_regen(self:health_ratio()), true)
+			local regened_health = managers.player:health_regen_2() * max_health + managers.player:fixed_health_regen_2()
+			self:restore_health(regened_health, true)
 
-			self._health_regen_update_timer = 5
+			self._health_regen_update_timer = 4
 		end
 	end
 
@@ -836,6 +855,22 @@ function PlayerDamage:_upd_health_regen(t, dt)
 		until done
 	end
 end
+
+function PlayerDamage:restore_health(health_restored, is_static, chk_health_ratio)
+	log("pls work")
+	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) then
+		return false
+	end
+	log("2")
+	if is_static then
+		return self:change_health(health_restored * self._healing_reduction)
+	else
+		local max_health = self:_max_health()
+
+		return self:change_health(max_health * health_restored * self._healing_reduction)
+	end
+end
+
 
 Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", function(self, can_activate_berserker, ignore_movement_state)
 	if self._check_berserker_done then
@@ -882,4 +917,23 @@ function PlayerDamage:consume_messiah_charge()
 	end
 
 	return false
+end
+
+function PlayerManager:health_regen()
+	local health_regen = tweak_data.player.damage.HEALTH_REGEN
+	health_regen = health_regen + self:temporary_upgrade_value("temporary", "wolverine_health_regen", 0)
+	health_regen = health_regen + self:upgrade_value("player", "passive_health_regen", 0)
+
+	return health_regen
+end
+
+function PlayerManager:fixed_health_regen(health_ratio)
+	local health_regen = 0
+
+	if not health_ratio or not self:is_damage_health_ratio_active(health_ratio) then
+		health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
+	end
+
+	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")
+	return health_regen
 end

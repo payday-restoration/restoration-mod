@@ -731,7 +731,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_motivated_desc"] = "Players have 25 more stamina.",
 
 		["menu_crew_regen"] = "Healer",
-		["menu_crew_regen_desc"] = "Players heal 1.5 health every 5 seconds.",
+		["menu_crew_regen_desc"] = "Players heal 1 health every 4 seconds.",
 
 		["menu_crew_quiet"] = "Concealer",
 		["menu_crew_quiet_desc"] = "Players gain 1 more concealment.",
@@ -758,7 +758,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "Quick Fix",
-			["menu_tea_time_beta_desc_sc"] = "BASIC: ##$basic##\nDecreases your First Aid Kit and Doctor Bag deploy time by ##50%.##\n\nACE: ##$pro##\nCrew members that use your First Aid Kits or Doctor Bags take ##15%## less damage for ##20## seconds.",
+			["menu_tea_time_beta_desc_sc"] = "BASIC: ##$basic##\nDecreases your First Aid Kit and Doctor Bag deploy time by ##50%.##\n\nACE: ##$pro##\nCrew members that use your First Aid Kits take ##80%## less damage for ##5## seconds.",
 
 			--Pain Killers
 			["menu_fast_learner_beta_sc"] = "Painkillers",
@@ -766,7 +766,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Uppers
 			["menu_tea_cookies_beta_sc"] = "Uppers",
-			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##3## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##3## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a ##5## meter radius of the first aid kit.\n\nThis cannot occur more than once every ##60## seconds.\n\nNote: Does not apply to Swan Song.",
+			["menu_tea_cookies_beta_desc_sc"] = "BASIC: ##$basic##\nAdds ##5## more First Aid Kits to your inventory.\n\nACE: ##$pro##\nAdds ##5## more First Aid Kits to your inventory.\n\nYour deployed first aid kits will be automatically used if a player would go down within a ##5## meter radius of the first aid kit.\n\nThis cannot occur more than once every ##30## seconds.\n\nNote: Does not apply to Swan Song.",
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "Combat Doctor",
@@ -804,7 +804,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Hostage Taker
 			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
-			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##0.5%## health every ##5## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nYou regenerate an additional ##0.5%## health every ##5## seconds for each hostage up to ##4## times.\n\nYou and your crew gain ##1## damage absorption for each hostage up to ##4## times.\n\nNote: Hostage Taker does not stack.",
+			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##1.25## life points every ##4## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nYou regenerate an additional ##1.25## life points every ##4## seconds for each hostage up to ##4## times.\n\nYou and your crew gain ##1## damage absorption for each hostage up to ##4## times.\n\nNote: Hostage Taker does not stack.",
 		
 
 			--}
@@ -1177,13 +1177,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_running_from_death_beta_sc"] = "Undying",
 		["menu_running_from_death_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##100%## increase to bleedout health.\n\nACE: ##$pro##\nYou gain an additional ##100%## increase to bleedout health.\n\nYou may use your primary weapon while in bleedout.",																																																																																																																																																																																																																																		
 
-		--What Doesn't Kill You--
+		--What Doesn't Kill You Only Makes You Stronger--
 		["menu_what_doesnt_kill_beta_sc"] = "What Doesn't Kill",
 		["menu_what_doesnt_kill_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## damage absorption for each down you are closer to custody. \n\nACE: ##$pro##\nYou gain an additional ##3## damage absorption.",
 
 		--Haunt--
 		["menu_haunt_sc"] = "Haunt",
-		["menu_haunt_desc_sc"] = "BASIC: ##$basic##\nKilling an enemy within ##18## meters has a ##10%## chance to spread panic for each down you are closer to custody.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nACE: ##$pro##\nEnemy panic chance is increased by an additional ##20%##.",																																																																																																																																																																																																																																		
+		["menu_haunt_desc_sc"] = "BASIC: ##$basic##\nKilling an enemy within ##18## meters has a ##8%## chance to spread panic for each down you are closer to custody.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nACE: ##$pro##\nEnemy panic chance is increased by an additional ##20%##.",																																																																																																																																																																																																																																		
 
 		--Messiah--
 		["menu_pistol_beta_messiah_sc"] = "Messiah",

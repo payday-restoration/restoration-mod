@@ -859,3 +859,39 @@ function PlayerManager:_dodge_healing_no_armor()
 		damage_ext:restore_health(self:upgrade_value("player", "dodge_heal_no_armor"), false)
 	end
 end
+
+--For some reason the original health regen functions refused to hook.
+function PlayerManager:health_regen_2()
+	local health_regen = tweak_data.player.damage.HEALTH_REGEN
+	health_regen = health_regen + self:temporary_upgrade_value("temporary", "wolverine_health_regen", 0)
+	health_regen = health_regen + self:upgrade_value("player", "passive_health_regen", 0)
+
+	if self:is_db_regen_active() then
+		health_regen = health_regen + tweak_data.upgrades.values.doctor_bag.passive_regen
+	end
+
+	return health_regen
+end
+
+function PlayerManager:fixed_health_regen_2()
+	local health_regen = 0
+	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
+	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")
+
+	return health_regen
+end
+
+function PlayerManager:activate_db_regen()
+	self._db_regen_endtime = Application:time() + tweak_data.upgrades.values.doctor_bag.passive_regen_duration
+end
+
+function PlayerManager:deactivate_db_regen()
+	self._db_regen_endtime = nil
+end
+
+function PlayerManager:is_db_regen_active()
+	if self._db_regen_endtime and Application:time() < self._db_regen_endtime then
+		return true
+	end
+	return false
+end

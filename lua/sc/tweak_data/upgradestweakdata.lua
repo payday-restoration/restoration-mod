@@ -405,7 +405,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_add_concealment = {1}
 	self.values.team.crew_add_stamina = {25}
 	self.values.team.crew_reduce_speed_penalty = {1}
-	self.values.team.crew_health_regen = {0.15}
+	self.values.team.crew_health_regen = {0.1}
 	self.values.team.crew_throwable_regen = {70}
 	self.values.team.crew_faster_reload = {1.1}
 	self.values.team.crew_faster_swap = {1}	
@@ -435,6 +435,11 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_ai_ap_ammo = {true}
 	
 	--Equipment--
+	self.values.first_aid_kit.uppers_cooldown = 30
+	self.values.first_aid_kit.heal_amount = 10 --Heals 100 health on use.
+	self.values.doctor_bag.heal_amount = 0.2 --Heals 20% of max health on use.
+	self.values.doctor_bag.passive_regen = 0.03
+	self.values.doctor_bag.passive_regen_duration = 240.1 --Heals 3% of max health every 4 seconds for the next 4 minutes or until you enter bleedout.
 	
 	--ECMs--
 	self.ecm_jammer_base_battery_life = 10
@@ -463,7 +468,7 @@ function UpgradesTweakData:_init_pd2_values()
 				
 				--Quick Fix
 				self.values.first_aid_kit.deploy_time_multiplier = {0.5}
-				self.values.temporary.first_aid_damage_reduction = { {0.85, 20} }
+				self.values.temporary.first_aid_damage_reduction = { {0.2, 5} }
 
 				--Painkillers--
 				self.values.temporary.passive_revive_damage_reduction = {
@@ -472,8 +477,8 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 			
 				--Uppers
-				self.values.first_aid_kit.quantity = {3, 6}
-				self.values.first_aid_kit.downs_restore_chance = {1}
+				self.values.first_aid_kit.quantity = {6, 12}
+				self.values.first_aid_kit.downs_restore_chance = {0}
 
 				--Combat Doctor
 				self.doctor_bag_base = 2
@@ -534,7 +539,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 							
 				--Hostage Taker
-				self.values.player.hostage_health_regen_addend = {0.005, 0.01}
+				self.values.player.hostage_health_regen_addend = {0.125, 0.25}
 				self.values.team.damage = {
 					hostage_absorption = {0.1},
 					hostage_absorption_limit = 4
@@ -1102,7 +1107,7 @@ function UpgradesTweakData:_init_pd2_values()
 
 				--Haunt (Formerly Undying)
 				self.values.player.cheat_death_chance = {0.2, 0.45}
-				self.values.player.killshot_spooky_panic_chance = {0.1}
+				self.values.player.killshot_spooky_panic_chance = {0.08}
 				self.values.player.killshot_extra_spooky_panic_chance = {0.2}
 				
 				--Messiah

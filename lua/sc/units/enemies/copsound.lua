@@ -52,7 +52,7 @@ function CopSound:init(unit)
 	elseif self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city_husk") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2_husk") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3_husk") or self._unit:name() == Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"			
 	elseif self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_1/ene_biker_female_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_2/ene_biker_female_2_husk") or self._unit:name() == Idstring("units/pd2_dlc_born/characters/ene_biker_female_3/ene_biker_female_3_husk") then
-		self._prefix = ("fl1n") .. "_"			
+		self._prefix = ("f1n") .. "_"			
 	--DRAK Titans husks
 	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser_husk") then
 		self._prefix = ("rtsr") .. "_"	
@@ -204,11 +204,11 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		if self._prefix == "l1n_" or self._prefix == "l2n_" or self._prefix == "l3n_" or self._prefix == "l4n_" then
 			if sound_name == "x02a_any_3p" then
 				sound_name = "x01a_any_3p"
-				--log("help")
+				--log("IM FUCKIN DEAD BRO")
 				fixed_sound = true
 			elseif sound_name == "x01a_any_3p" and not fixed_sound and not self._prefix == "l4n_" then
 				sound_name = "x02a_any_3p"
-				--log("fuckinghell")
+				--log("OW MY BONES")
 			end
 		end
 		
@@ -290,11 +290,11 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		
 		if self._prefix == "z1n_" or self._prefix == "z2n_" or self._prefix == "z3n_" or self._prefix == "z4n_" then
 			if sound_name == "x02a_any_3p" then
-				full_sound = "shd_x02a_any_3p_01"
+				full_sound = "l2n_x01a_any_3p"
 			end
 			
 			if sound_name == "x01a_any_3p" then
-				full_sound = "bdz_x01a_any_3p"
+				full_sound = "l2n_x02a_any_3p"
 			end
 			
 			if sound_name ~= "x01a_any_3p" and sound_name ~= "x02a_any_3p" then
@@ -302,9 +302,9 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 			end
 		end
 			
-		if self._prefix == "fl1n_" then
+		if self._prefix == "f1n_" then
 			if sound_name == "x02a_any_3p" then
-				full_sound = "fl1n_x01a_any_3p_01"
+				full_sound = "f1n_x01a_any_3p_01"
 			end
 		end
 			

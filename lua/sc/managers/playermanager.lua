@@ -285,7 +285,7 @@ function PlayerManager:refill_messiah_charges()
 	if self._max_messiah_charges then
 		self._messiah_charges = self._max_messiah_charges
 	end
-	log("Messiah refilled, kills required now 1")
+	log("Messiah refilled, kills required reset")
 	self._messiah_kills_required = 1
 end
 
@@ -294,6 +294,7 @@ function PlayerManager:use_messiah_charge()
 	if self:has_category_upgrade("player", "infinite_messiah") then
 		self._messiah_kills_required = self._messiah_kills_required + 2
 		self._messiah_kills = 0
+		log("Kills required to messiah = " .. tostring(self._messiah_kills_required))
 	elseif self._messiah_charges and not self:has_category_upgrade("player", "infinite_messiah") then
 		self._messiah_charges = math.max(self._messiah_charges - 1, 0)
 	end

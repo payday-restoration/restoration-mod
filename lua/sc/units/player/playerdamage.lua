@@ -279,6 +279,10 @@ end
 local old_player_regenerated = PlayerDamage._regenerated
 function PlayerDamage:_regenerated(no_messiah)
 	old_player_regenerated(self, no_messiah)
+	if no_messiah then
+		managers.player:refill_messiah_charges()
+	end
+
 	managers.player:set_damage_absorption(
 		"down_absorption",
 		0

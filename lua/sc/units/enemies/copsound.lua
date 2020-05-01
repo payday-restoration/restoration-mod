@@ -212,6 +212,13 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 			end
 		end
 		
+		if self._prefix == "l1d_" or self._prefix == "l2d_" or self._prefix == "l3d_" or self._prefix == "l4d_" or self._prefix == "l5d_" then
+			if sound_name == "a05" or sound_name == "a06" then
+				sound_name = "clr"
+				--log("CLEAR!!!")
+			end
+		end
+		
 		local faction = tweak_data.levels:get_ai_group_type()
 		
 		if self._unit:base():has_tag("special") and not sound_name == "g90" and not sound_name == "c01" then --just making sure

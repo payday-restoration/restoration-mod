@@ -297,8 +297,6 @@ function PlayerManager:use_messiah_charge()
 	elseif self._messiah_charges and not self:has_category_upgrade("player", "infinite_messiah") then
 		self._messiah_charges = math.max(self._messiah_charges - 1, 0)
 	end
-
-	if 
 end
 
 function PlayerManager:_on_messiah_event()

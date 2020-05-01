@@ -279,10 +279,6 @@ end
 local old_player_regenerated = PlayerDamage._regenerated
 function PlayerDamage:_regenerated(no_messiah)
 	old_player_regenerated(self, no_messiah)
-	if not no_messiah then
-		managers.player:refill_messiah_charges()
-	end
-
 	managers.player:set_damage_absorption(
 		"down_absorption",
 		0
@@ -874,9 +870,10 @@ function PlayerDamage:tick_biker_armor_regen(amount)
 end
 
 function PlayerDamage:consume_messiah_charge()
-	if self:got_messiah_charges() and not managers.player:has_category_upgrade("player", "infinite_messiah") then
+	if managers.player:has_category_upgrade("player", "infinite_messiah") then
+		return true
+	elseif self:got_messiah_charges() then
 		self._messiah_charges = self._messiah_charges - 1
-
 		return true
 	end
 

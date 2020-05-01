@@ -301,11 +301,12 @@ function PlayerManager:use_messiah_charge()
 end
 
 function PlayerManager:_on_messiah_event()
-	self._messiah_kills = self._messiah_kills + 1
-	log("Kills required to messiah = " .. tostring(self._messiah_kills_required - self._messiah_kills))
-
-	if self._messiah_charges > 0 and self._messiah_kills >= self._messiah_kills_required and self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
-		self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
+	if self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
+		self._messiah_kills = self._messiah_kills + 1
+		log("Kills required to messiah = " .. tostring(self._messiah_kills_required - self._messiah_kills))
+		if self._messiah_charges > 0 and self._messiah_kills >= self._messiah_kills_required then
+			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
+		end
 	end
 end
 

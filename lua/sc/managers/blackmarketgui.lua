@@ -207,39 +207,17 @@ function BlackMarketGui:populate_mods(data)
 			new_data.corner_text.noselected_text = new_data.corner_text.selected_text
 			new_data.corner_text.noselected_color = Color.white
 		elseif not new_data.lock_texture and (not new_data.unlocked or new_data.unlocked == 0) then
-			local selected_text, noselected_text = nil
-			if not new_data.dlc_locked and new_data.unlock_tracker then
-				local text_id = "bm_menu_no_items"
-				local progress = ""
-				local stat = new_data.unlock_tracker.stat or false
-				local max_progress = new_data.unlock_tracker.max_progress or 0
-				local award = new_data.unlock_tracker.award or false
-				if new_data.unlock_tracker.text_id then
-					if max_progress > 0 and stat then
-						local progress_left = max_progress - (managers.achievment:get_stat(stat) or 0)
-						if progress_left > 0 then
-							progress = tostring(progress_left)
-							text_id = new_data.unlock_tracker.text_id
-							font = small_font
-							font_size = small_font_size
-							no_upper = true
-						end
-					elseif award then
-						local achievement = managers.achievment:get_info(award)
-						text_id = new_data.unlock_tracker.text_id
-						font = small_font
-						font_size = small_font_size
-						no_upper = true
-					end
-					selected_text = managers.localization:text(text_id, {progress = progress})
-				end
+			if managers.dlc:is_content_achievement_locked("weapon_mods", new_data.name) or managers.dlc:is_content_achievement_milestone_locked("weapon_mods", new_data.name) then
+				new_data.lock_texture = "guis/textures/pd2/lock_achievement"
+			elseif managers.dlc:is_content_skirmish_locked("weapon_mods", new_data.name) then
+				new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
+			else
+				local selected_text = managers.localization:text("bm_menu_no_items")
+				new_data.corner_text = {
+					selected_text = selected_text,
+					noselected_text = selected_text
+				}
 			end
-			selected_text = selected_text or managers.localization:text("bm_menu_no_items")
-			noselected_text = selected_text
-			new_data.corner_text = {
-				selected_text = selected_text,
-				noselected_text = selected_text
-			}
 		elseif new_data.unlocked and not new_data.can_afford then
 			new_data.corner_text = {selected_text = managers.localization:text("bm_menu_not_enough_cash")}
 			new_data.corner_text.noselected_text = new_data.corner_text.selected_text
@@ -399,7 +377,7 @@ function BlackMarketGui:populate_mods(data)
 				table.insert(data[equipped], "w_skin")
 			end
 			local weapon_mod_tweak = tweak_data.weapon.factory.parts[data[equipped].name]
-			if weapon_mod_tweak and weapon_mod_tweak.type ~= "bonus" and weapon_mod_tweak.is_a_unlockable ~= true then
+			if weapon_mod_tweak and weapon_mod_tweak.is_a_unlockable ~= true and can_apply and managers.custom_safehouse:unlocked() then
 				table.insert(data[equipped], "wm_buy_mod")
 			end
 		end

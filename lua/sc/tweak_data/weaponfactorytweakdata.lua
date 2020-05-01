@@ -44658,7 +44658,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_upg_ns_ass_smg_heavy.stats = {
 			value = 1,
 			spread = 1,
-			concealment = -4
+			concealment = -6
 		}
 		self.parts.wpn_fps_sho_coach_b_long.stats = {
 			value = 1,

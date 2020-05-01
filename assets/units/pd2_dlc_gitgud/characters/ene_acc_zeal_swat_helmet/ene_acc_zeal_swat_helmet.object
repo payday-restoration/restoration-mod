@@ -15,10 +15,7 @@
 	</decal_surfaces>
 
 	<graphics>
-		<lod_object name="g_helmet">
-			<object name="g_helmet" enabled="true"  max_distance="999999999999999999999999999999999999999999999" />
-			<object name="g_helmet_lod1" enabled="true" />
-		</lod_object>
+		<object name="g_helmet" enabled="true" />
 	</graphics>
 	
 </dynamic_object>

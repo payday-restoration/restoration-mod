@@ -36,8 +36,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Skirmish Heists--
 		["heist_skm_mallcrasher"] = "Shield Mall",
 		["heist_skm_mallcrasher_h1"] = "Shield Mall",
-		["heist_skm_arena"] = "Monarch Arena",
-		["heist_skm_arena_h1"] = "Monarch Arena",
+		["heist_skm_arena"] = "Monarch Stadium",
+		["heist_skm_arena_h1"] = "Monarch Stadium",
 		["heist_skm_big2"] = "Benevolent Bank",
 		["heist_skm_big2_h1"] = "Benevolent Bank",
 		["heist_skm_watchdogs_stage2"] = "Almendia Logistics Dockyard",

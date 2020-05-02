@@ -100,7 +100,6 @@
 	<continent path="levels/narratives/vlad/bex/art_props_interior/art_props_interior" force="true" unload="true"/>		
 	<world path="levels/narratives/vlad/bex/world" force="true" unload="true"/>-->
 	
-
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	
@@ -2326,6 +2325,7 @@
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison"/>
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny"/>
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/two_piece_suit"/>
+	<texture path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/esport_rhynne"/>	
 		
 	<!--zombie necro cloaker-->
 	<material_config path="units/pd2_dlc_help/props/hlp_prop_giant_cloaker/hlp_prop_giant_cloaker"/>

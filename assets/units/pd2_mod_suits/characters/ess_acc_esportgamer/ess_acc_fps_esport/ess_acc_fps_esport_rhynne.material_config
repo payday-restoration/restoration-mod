@@ -1,0 +1,11 @@
+<materials version="3" group="ess_acc_fps_esport">
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mat_arms" version="2">
+        <bump_normal_texture file="units/pd2_dlc_ess/characters/ess_acc_esportgamer/shared_textures/ess_acc_esportgamer_fps_default_nm"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_textures/ess_acc_esportgamer_fps_rhynne_df"/>
+    </material>
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mat_gloves" version="2">
+        <bump_normal_texture file="units/pd2_dlc_ess/characters/ess_acc_esportgamer/shared_textures/glv_esport_nm"/>
+        <diffuse_texture file="units/pd2_dlc_ess/characters/ess_acc_esportgamer/shared_textures/glv_esport_df"/>
+    </material>
+    <material render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2" name="shadow_caster"/>
+</materials>

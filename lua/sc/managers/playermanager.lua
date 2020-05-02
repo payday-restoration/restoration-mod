@@ -861,7 +861,7 @@ function PlayerManager:_dodge_healing_no_armor()
 end
 
 --For some reason the original health regen functions refused to hook.
-function PlayerManager:health_regen_2()
+function PlayerManager:health_regen()
 	local health_regen = tweak_data.player.damage.HEALTH_REGEN
 	health_regen = health_regen + self:temporary_upgrade_value("temporary", "wolverine_health_regen", 0)
 	health_regen = health_regen + self:upgrade_value("player", "passive_health_regen", 0)
@@ -873,7 +873,7 @@ function PlayerManager:health_regen_2()
 	return health_regen
 end
 
-function PlayerManager:fixed_health_regen_2()
+function PlayerManager:fixed_health_regen()
 	local health_regen = 0
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
 	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")

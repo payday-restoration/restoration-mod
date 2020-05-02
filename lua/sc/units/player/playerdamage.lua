@@ -823,7 +823,7 @@ function PlayerDamage:_upd_health_regen(t, dt)
 		local max_health = self:_max_health()
 
 		if self:get_real_health() < max_health then
-			local regened_health = managers.player:health_regen_2() * max_health + managers.player:fixed_health_regen_2()
+			local regened_health = managers.player:health_regen() * max_health + managers.player:fixed_health_regen()
 			self:restore_health(regened_health, true)
 
 			self._health_regen_update_timer = 4
@@ -855,22 +855,6 @@ function PlayerDamage:_upd_health_regen(t, dt)
 		until done
 	end
 end
-
-function PlayerDamage:restore_health(health_restored, is_static, chk_health_ratio)
-	log("pls work")
-	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) then
-		return false
-	end
-	log("2")
-	if is_static then
-		return self:change_health(health_restored * self._healing_reduction)
-	else
-		local max_health = self:_max_health()
-
-		return self:change_health(max_health * health_restored * self._healing_reduction)
-	end
-end
-
 
 Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", function(self, can_activate_berserker, ignore_movement_state)
 	if self._check_berserker_done then
@@ -917,23 +901,4 @@ function PlayerDamage:consume_messiah_charge()
 	end
 
 	return false
-end
-
-function PlayerManager:health_regen()
-	local health_regen = tweak_data.player.damage.HEALTH_REGEN
-	health_regen = health_regen + self:temporary_upgrade_value("temporary", "wolverine_health_regen", 0)
-	health_regen = health_regen + self:upgrade_value("player", "passive_health_regen", 0)
-
-	return health_regen
-end
-
-function PlayerManager:fixed_health_regen(health_ratio)
-	local health_regen = 0
-
-	if not health_ratio or not self:is_damage_health_ratio_active(health_ratio) then
-		health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
-	end
-
-	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")
-	return health_regen
 end

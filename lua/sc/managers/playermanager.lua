@@ -860,7 +860,6 @@ function PlayerManager:_dodge_healing_no_armor()
 	end
 end
 
---For some reason the original health regen functions refused to hook.
 function PlayerManager:health_regen()
 	local health_regen = tweak_data.player.damage.HEALTH_REGEN
 	health_regen = health_regen + self:temporary_upgrade_value("temporary", "wolverine_health_regen", 0)

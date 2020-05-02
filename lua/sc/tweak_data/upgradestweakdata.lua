@@ -468,7 +468,7 @@ function UpgradesTweakData:_init_pd2_values()
 				
 				--Quick Fix
 				self.values.first_aid_kit.deploy_time_multiplier = {0.5}
-				self.values.temporary.first_aid_damage_reduction = { {0.2, 5} }
+				self.values.temporary.first_aid_damage_reduction = { {0.5, 5} }
 
 				--Painkillers--
 				self.values.temporary.passive_revive_damage_reduction = {
@@ -477,7 +477,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 			
 				--Uppers
-				self.values.first_aid_kit.quantity = {6, 12}
+				self.values.first_aid_kit.quantity = {5, 10}
 				self.values.first_aid_kit.downs_restore_chance = {0}
 
 				--Combat Doctor

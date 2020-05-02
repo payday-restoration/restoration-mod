@@ -28,7 +28,6 @@ function MusicManager:jukebox_heist_specific()
 		return self:track_attachment("escape") or "all"
     end
     if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTrack") and not restoration.Options:GetValue("OTHER/MusicShuffle") then
-        managers.music:post_event(tweak_data.levels:get_music_event("control" or "assault"))
         return self:track_attachment("ponr")
     end
 

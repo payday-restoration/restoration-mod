@@ -78,7 +78,7 @@
 	
 	<mission path="levels/narratives/butcher/friend/world/world" force="true" unload="true"/> <!--Forces boat escape-->	
 
-	<mission path="levels/narratives/locke/mex/world/world" force="true" unload="true"/>  <!--just incase-->
+	<!--<mission path="levels/narratives/locke/mex/world/world" force="true" unload="true"/>
 	<continent path="levels/narratives/locke/mex/world/world" force="true" unload="true"/>	
 	<mission path="levels/narratives/locke/mex/mexico/mexico" force="true" unload="true"/> 
 	<continent path="levels/narratives/locke/mex/mexico/mexico" force="true" unload="true"/>	
@@ -98,7 +98,7 @@
 	<continent path="levels/narratives/vlad/bex/art_props/art_props" force="true" unload="true"/>			
 	<mission path="levels/narratives/vlad/bex/art_props_interior/art_props_interior" force="true" unload="true"/>
 	<continent path="levels/narratives/vlad/bex/art_props_interior/art_props_interior" force="true" unload="true"/>		
-	<world path="levels/narratives/vlad/bex/world" force="true" unload="true"/>
+	<world path="levels/narratives/vlad/bex/world" force="true" unload="true"/>-->
 	
 
 	

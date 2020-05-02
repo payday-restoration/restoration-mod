@@ -1,0 +1,14 @@
+<materials version="3" group="ess_acc_esport">
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" name="mat_body" version="2">
+        <bump_normal_texture file="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_textures/ess_acc_esportgamer_body_rhynne_nm"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_textures/ess_acc_esportgamer_body_rhynne_df"/>
+        <variable type="vector3" name="contour_color" value="1 1 1"/>
+        <variable type="scalar" name="contour_opacity" value="0"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" name="mat_gloves" version="2">
+        <bump_normal_texture file="units/pd2_dlc_ess/characters/ess_acc_esportgamer/shared_textures/glv_esport_nm"/>
+        <diffuse_texture file="units/pd2_dlc_ess/characters/ess_acc_esportgamer/shared_textures/glv_esport_df"/>
+        <variable type="vector3" name="contour_color" value="1 1 1"/>
+        <variable type="scalar" name="contour_opacity" value="0"/>
+    </material>
+</materials>

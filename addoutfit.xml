@@ -325,4 +325,11 @@
 	<texture path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flatgreen_df"/>
 	<texture path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_flatgreen_df"/>
 	
+	<!--RMjumpsuit-->
+	<material_config path="units/pd2_mod_suits/characters/ess_acc_esportgamer/ess_acc_fps_esport/ess_acc_fps_esport_rhynne"/>
+	<material_config path="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_materials/ess_acc_esport_rhynne"/>	
+	<texture path="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_textures/ess_acc_esportgamer_body_rhynne_df"/>
+	<texture path="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_textures/ess_acc_esportgamer_body_rhynne_nm"/>
+	<texture path="units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_textures/ess_acc_esportgamer_fps_rhynne_df"/>
+	
 </table>

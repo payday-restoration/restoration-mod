@@ -1553,10 +1553,11 @@ function UpgradesTweakData:_init_pd2_values()
 	}}
 
 	self.values.player.biker_armor_regen = {
+		--Amount regenerated per tick, time between ticks, time fast forwarded when melee kills are done.
 		{1.0, 3.0, 0.0},
-		{2.0, 2.5, 3.5}
+		{2.0, 2.5, 3.5} 
 	}
-	
+
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{

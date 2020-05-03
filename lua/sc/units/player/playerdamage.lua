@@ -825,8 +825,7 @@ function PlayerDamage:_upd_health_regen(t, dt)
 		local max_health = self:_max_health()
 
 		if self:get_real_health() < max_health then
-			local regened_health = managers.player:health_regen() * max_health + managers.player:fixed_health_regen()
-			self:restore_health(regened_health, true)
+			self:restore_health(managers.player:health_regen() * max_health + managers.player:fixed_health_regen(), true)
 
 			self._health_regen_update_timer = 4
 		end
@@ -838,7 +837,7 @@ function PlayerDamage:_upd_health_regen(t, dt)
 			local done = not next_doh or TimerManager:game():time() < next_doh.next_tick
 
 			if not done then
-				local regen_rate = self._hot_amount --All this for a single line change so stacking health regen isn't coupled to grinder. :)
+				local regen_rate = self._hot_amount
 
 				self:restore_health(regen_rate, true)
 

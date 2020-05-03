@@ -574,6 +574,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		name_id = "bm_suit_jackal_track",
 		desc_id = "bm_suit_jackal_track_desc",
 		texture_bundle_folder = "mods",
+		unlocked = true,		
 		global_value = "rest_omnia",
 		body_replacement = body_replacement_standard,
 		third_body_replacement = body_replacement_standard,
@@ -610,7 +611,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 	set_characters_data("poggers", characters_big_chungus, poggers_characters_male_big)
 
 	local poggers_characters_female = {
-		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_female/ess_acc_esport_female",
+		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_female_average/ess_acc_esport_female_average",
 		material_variations = {
 			default = {
 				third_material = "units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_materials/ess_acc_esport_rhynne"

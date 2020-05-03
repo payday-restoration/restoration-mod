@@ -30,6 +30,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///MEXICAN LEVELS\\\--
 	self.bex.package = {"packages/mexicoassets", "packages/job_bex"}
+	
+	self.skm_bex.package = {"packages/dlcs/skm/job_bex_skm", "packages/mexicoassets"}
 
 	self.mex_cooking.package = {"packages/mexicoassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
 	self.mex_cooking.ai_group_type = federales 

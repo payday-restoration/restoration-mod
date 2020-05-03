@@ -44058,6 +44058,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 		end
 
+	if SystemFS:exists("assets/mod_overrides/Classic Weapon Animations") then
+			self.parts.wpn_fps_pis_g17_m_standard.unit = "units/payday2/weapons/wpn_fps_pis_g17_pts/wpn_fps_pis_g17_m_standard"
+		end		
+
 	if self.wpn_fps_shot_m590 then -- Silent Enforcer & GT's Mossberg 590
 		self.parts.wpn_fps_shot_m590_s_wood.stats = {			
 				value = 3,

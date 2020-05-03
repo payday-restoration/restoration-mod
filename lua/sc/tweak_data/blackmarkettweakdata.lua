@@ -569,6 +569,79 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		global_value = "sc"
 	}		
 	
+	--Jackal Track Suit
+	self.player_styles.poggers = {
+		name_id = "bm_suit_jackal_track",
+		desc_id = "bm_suit_jackal_track_desc",
+		texture_bundle_folder = "mods",
+		global_value = "rest_omnia",
+		body_replacement = body_replacement_standard,
+		third_body_replacement = body_replacement_standard,
+		unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_fps_esport/ess_acc_fps_esport_male",
+		material_variations = {}
+	}
+
+	self.player_styles.poggers.material_variations.default = {
+		material = "units/pd2_mod_suits/characters/ess_acc_esportgamer/ess_acc_fps_esport/ess_acc_fps_esport_rhynne"
+	}
+	
+	self.player_styles.poggers.characters = {}	
+	local poggers_characters_male = {
+		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_male_average/ess_acc_esport_male_average",
+		material_variations = {
+			default = {
+				third_material = "units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_materials/ess_acc_esport_rhynne"
+			}
+		}
+	}
+
+	set_characters_data("poggers", characters_chungus, poggers_characters_male)
+
+
+	local poggers_characters_male_big = {
+		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_male_big/ess_acc_esport_male_big",
+		material_variations = {
+			default = {
+				third_material = "units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_materials/ess_acc_esport_rhynne"
+			}
+		}
+	}
+
+	set_characters_data("poggers", characters_big_chungus, poggers_characters_male_big)
+
+	local poggers_characters_female = {
+		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_female/ess_acc_esport_female",
+		material_variations = {
+			default = {
+				third_material = "units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_materials/ess_acc_esport_rhynne"
+			}
+		}
+	}
+
+	set_characters_data("poggers", characters_chungette, poggers_characters_female)
+
+	local poggers_characters_female_big = {
+		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_female_big/ess_acc_esport_female_big",
+		material_variations = {
+			default = {
+				third_material = "units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_materials/ess_acc_esport_rhynne"
+			}
+		}
+	}
+
+	set_characters_data("poggers", characters_chungette_big, poggers_characters_female_big)
+
+	local esport_characters_fat_cunt  = {
+		third_unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_esport_male_fat/ess_acc_esport_male_fat",
+		sequence = "set_ehtan",
+		material_variations = {
+			default = {
+				third_material = "units/pd2_mod_suits/characters/ess_acc_esportgamer/shared_materials/ess_acc_esport_rhynne"
+			}
+		}
+	}
+	self.player_styles.poggers.characters.ecp_male = esport_characters_fat_cunt
+	
 	-- Flecktarn Jumpsuit 
 	self.player_styles.jumpsuit.material_variations.flecktarn = {
 		name_id = "bm_suit_var_jumpsuit_flecktarn",

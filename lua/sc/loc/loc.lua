@@ -282,6 +282,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		["bm_suit_loud_suit"] = "Combat Harness",
 		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		
+
+		["bm_suit_jackal_track"] = "Jackal Jackoffs Tracksuit",
+		["bm_suit_jackal_track_desc"] = "you've been struck by you've been hit by truck",		
 		
 		["bm_suit_sunny"] = "Sunny-Side Robber",
 		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",		

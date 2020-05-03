@@ -852,23 +852,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB	
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##75%## faster with shotguns.\n\nACE: ##$pro##\nYou reload shotguns ##25%## faster.",																								
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##75%## faster with shotguns and flamethrowers.\n\nACE: ##$pro##\nYou reload shotguns and flamethrowers ##25%## faster.",																								
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
-			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability with all shotguns is increased by ##4.##\n\nACE: ##$pro##\nYou gain ##3## extra pellets with every shotgun shot.\n\nNote: Does not apply to slugs or explosive rounds.",																																																																																																																																																																																																
+			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability with all shotguns and flamethrowers is increased by ##4.##\n\nACE: ##$pro##\nYou gain ##3## extra pellets with every shotgun shot.\n\nNote: Does not apply to slugs or explosive rounds.",																																																																																																																																																																																																
 
 			--Pigeon Shooting	
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
-			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYour shotgun's accuracy is increased by ##40%## while aiming down sights.\n\nNote: This extra accuracy does not increase shotgun range.\n\nACE: ##$pro##\nYour shotgun's range is increased by ##50%## while aiming down sights.",																																																																																																																																																																																																
+			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYour accuracy with shotguns and flamethrowers is increased by ##40%## while aiming down sights.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nYour range with shotguns and flamethrowers is increased by ##50%## while aiming down sights.",																																																																																																																																																																																																
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",
-			["menu_close_by_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now hip-fire with shotguns while sprinting.\n\nACE: ##$pro##\nYour rate of fire is increased by ##35%## while hip-firing with shotguns.",
+			["menu_close_by_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now hip-fire with shotguns and flamethrowers while sprinting.\n\nACE: ##$pro##\nYour rate of fire is increased by ##35%## while hip-firing with shotguns and flamethrowers.",
 
 			--Overkill
 			["menu_overkill_sc"] = "OVERKILL",
-			["menu_overkill_desc_sc"] = "BASIC: ##$basic##\nKills using a shotgun or the OVE9000 portable saw grants them a ##50%## damage boost for ##2## seconds.\n\nACE: ##$pro##\nThe damage bonus now applies to all weapons and lasts ##10## seconds. Skill must still be activated using a shotgun or the OVE9000 portable saw.\n\nNote: Does not apply to grenade launchers.\n\nDecreases the time it takes to pull and put away shotguns and the saw by ##80%##.",
+			["menu_overkill_desc_sc"] = "BASIC: ##$basic##\nKills using a shotgun, flamethrower, or the OVE9000 portable saw grants them a ##50%## damage boost for ##2## seconds.\n\nACE: ##$pro##\nThe damage bonus now applies to all weapons and lasts ##10## seconds. Skill must still be activated using a shotgun or the OVE9000 portable saw.\n\nNote: Does not apply to grenade launchers.\n\nDecreases the time it takes to pull and put away shotguns and the saw by ##80%##.",
 
 			--}
 			

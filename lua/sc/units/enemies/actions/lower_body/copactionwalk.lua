@@ -1163,7 +1163,7 @@ function CopActionWalk:_get_current_max_walk_speed(move_dir)
 	local is_host = self._sync or Global.game_settings.single_player
 
 	if not is_host then
-		if self:_husk_needs_speedup()
+		if self:_husk_needs_speedup() then
 			self._host_peer = self._host_peer or managers.network:session():peer(1)
 			local ping_multiplier = 1
 			local vis_multiplier = 1

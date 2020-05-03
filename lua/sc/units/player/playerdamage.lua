@@ -194,8 +194,10 @@ function PlayerDamage:damage_melee(attack_data)
 				if alive(player_unit) then
 					if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
 					else
-						attack_data.attacker_unit:damage():run_sequence_simple("decloak")
-						attack_data.attacker_unit:movement():set_uncloaked(true)
+						--only the host can currently handle cloaking and decloaking without causing issues, disabling for now
+						--attack_data.attacker_unit:damage():run_sequence_simple("decloak")
+						--attack_data.attacker_unit:movement():set_uncloaked(true)
+
 						attack_data.attacker_unit:sound():say("i03", true, nil, true)
 						managers.player:set_player_state("arrested")
 					end

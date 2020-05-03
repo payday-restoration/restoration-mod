@@ -54,10 +54,10 @@ function CopActionWalk:init(action_desc, common_data)
 	self:_init_ik()
 
 	self._machine = common_data.machine
+	self._stance = common_data.stance
 
 	self:on_attention(common_data.attention)
 
-	self._stance = common_data.stance
 	self._last_vel_z = 0
 	self._cur_vel = 0
 	self._end_rot = action_desc.end_rot

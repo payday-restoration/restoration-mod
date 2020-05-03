@@ -76,7 +76,14 @@
 	<mission path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--adds a bikerdozer to the bunker, removes swat turret.-->	
 	<continent path="levels/narratives/elephant/born/world/world" force="true" unload="true"/><!--fixes cars clipping into ground-->		
 	
-	<mission path="levels/narratives/butcher/friend/world/world" force="true" unload="true"/> <!--Forces boat escape-->	
+	<mission path="levels/narratives/butcher/friend/world/world" force="true" unload="true"/> <!--Forces boat escape-->
+	
+	<continent path="levels/narratives/bain/big/world/world" force="true" unload="true"/><!--you can now drill the small cashbox, money cassettes spawn-->
+
+	<continent path="levels/narratives/locke/brb/art/art" force="true" unload="true"/><!--optimization-->	
+	<continent path="levels/narratives/locke/brb/world/world" force="true" unload="true"/><!--optimization-->	
+	<continent path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->
+	<continent path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->	
 
 	<!--<mission path="levels/narratives/locke/mex/world/world" force="true" unload="true"/>
 	<continent path="levels/narratives/locke/mex/world/world" force="true" unload="true"/>	

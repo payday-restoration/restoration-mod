@@ -511,6 +511,7 @@ function PlayerDamage:revive(silent)
 		self._revive_health_i = math.min(#tweak_data.player.damage.REVIVE_HEALTH_STEPS, self._revive_health_i + 1)
 		--self._down_time = math.max(tweak_data.player.damage.DOWNED_TIME_MIN, self._down_time - tweak_data.player.damage.DOWNED_TIME_DEC)
 		self._revive_miss = 2
+		managers.player:deactivate_db_regen()
 	end
 	self:_regenerate_armor()
 	managers.hud:set_player_health({
@@ -539,8 +540,6 @@ function PlayerDamage:revive(silent)
 	if managers.player:has_category_upgrade("player", "dodge_on_revive") then
 		self:fill_dodge_meter(3.0, true)
 	end
-	
-	managers.player:deactivate_db_regen()
 
 	managers.player:set_damage_absorption(
 		"down_absorption",

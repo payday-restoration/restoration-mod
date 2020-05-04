@@ -1,7 +1,7 @@
 <materials version="3">
     <material name="mtr_chains_mask" unique="true" render_template="solid_mask" version="2">
 		<diffuse_texture file="units/pd2_dlc_sms/masks/sms_02/sms_02_df" />
-		<bump_normal_texture file="units/pd2_dlc_sms/masks/sms_02/sms_02_nm" />
+        <bump_normal_texture file="units/payday2/masks/msk_chains_clean/chains_clean_nm"/>
         <reflection_texture file="units/payday2/matcaps/matcap_plastic_df"/>
         <material_texture file="units/payday2/masks/shared_textures/patterns/pattern_no_color_no_material_df"/>
         <variable value="0 0 0" type="vector3" name="tint_color_a"/>

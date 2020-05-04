@@ -2307,13 +2307,13 @@
     <material_config path="units/pd2_dlc_sms/masks/sms_03/msk_sms_03" force="true"/>
     <material_config path="units/pd2_dlc_sms/masks/sms_04/msk_sms_04" force="true"/>
     <texture path="units/pd2_dlc_sms/masks/sms_01/sms_01_df" force="true"/>
-    <texture path="units/pd2_dlc_sms/masks/sms_01/sms_01_nm" force="true"/>
+<!--     <texture path="units/pd2_dlc_sms/masks/sms_01/sms_01_nm" force="true"/> -->
     <texture path="units/pd2_dlc_sms/masks/sms_02/sms_02_df" force="true"/>
-    <texture path="units/pd2_dlc_sms/masks/sms_02/sms_02_nm" force="true"/>
+<!--     <texture path="units/pd2_dlc_sms/masks/sms_02/sms_02_nm" force="true"/> -->
     <texture path="units/pd2_dlc_sms/masks/sms_03/sms_03_df" force="true"/>
-    <texture path="units/pd2_dlc_sms/masks/sms_03/sms_03_nm" force="true"/>
+<!--     <texture path="units/pd2_dlc_sms/masks/sms_03/sms_03_nm" force="true"/> -->
     <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_df" force="true"/>
-    <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_nm" force="true"/>
+<!--     <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_nm" force="true"/> -->
 	<!--Perk Decks-->
     <texture path="guis/textures/pd2/specialization/icons_atlas" force="true"/>
     <texture path="guis/dlcs/chico/textures/pd2/specialization/icons_atlas" force="true"/>

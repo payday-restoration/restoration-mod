@@ -8,6 +8,40 @@ function DialogManager:queue_dialog(id, ...)
 			
 	if Global.game_settings and Global.game_settings.one_down then
 	
+		--Train Heist--				
+		if id == "Play_pln_tr1b_02" then
+			if difficulty_index <= 2 then
+				escape_time = 1050
+			elseif difficulty_index == 3 then
+				escape_time = 1020
+			elseif difficulty_index == 4 then
+				escape_time = 990
+			elseif difficulty_index == 5 then
+				escape_time = 960	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 930					
+			else
+				escape_time = 900
+			end		
+		end	
+	
+		--White House--				
+		if id == "Play_loc_vit_137" then
+			if difficulty_index <= 2 then
+				escape_time = 1050
+			elseif difficulty_index == 3 then
+				escape_time = 1020
+			elseif difficulty_index == 4 then
+				escape_time = 990
+			elseif difficulty_index == 5 then
+				escape_time = 960	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 930					
+			else
+				escape_time = 900
+			end		
+		end		
+	
 		--generic "that's enough but you can stay for more"--				
 		if id == "play_pln_gen_bfr_06" then
 			if difficulty_index <= 2 then

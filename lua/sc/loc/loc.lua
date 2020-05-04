@@ -134,6 +134,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--OICW--
 		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.",
 		
+		--Mk23b--
+		["bm_w_mk23b_desc"] = "",
+		
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
 		["bm_menu_sc_legendary_flamethrower"] = "Dragon Lord",

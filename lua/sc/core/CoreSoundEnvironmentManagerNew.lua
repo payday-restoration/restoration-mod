@@ -13,7 +13,6 @@
 -- id as first param and active boolean as second
 
 -- Remove an object by calling remove_check_object with the returned id as param
-if restoration and restoration.Options:GetValue("SC/SC") then
 
 core:import('CoreShapeManager')
 
@@ -533,6 +532,3 @@ end
 function CoreSoundEnvironmentManager:_next_occasional()
 	return Application:time() + (6 + math.rand( 4 ))
 end
-end
-
-

@@ -38,6 +38,7 @@ function ActionSpooc:init(action_desc, common_data)
 	self._ext_movement = common_data.ext_movement
 	self._ext_anim = common_data.ext_anim
 	self._ext_base = common_data.ext_base
+	self._ext_brain = common_data.ext_brain
 	self._ext_network = common_data.ext_network
 	self._stance = common_data.stance
 	self._machine = common_data.machine
@@ -50,12 +51,9 @@ function ActionSpooc:init(action_desc, common_data)
 	end
 
 	if not common_data.ext_anim.pose then
-		--print("[ActionSpooc:init] no pose in anim", self._machine:segment_state(ids_base), self._unit)
 		common_data.ext_movement:play_redirect("idle")
 
-		if not common_data.ext_anim.pose then
-			--debug_pause()]]
-
+		if not common_data.ext_anim.pose and not common_data.ext_movement:play_state("std/stand/still/idle/look") then
 			return
 		end
 	end
@@ -65,7 +63,7 @@ function ActionSpooc:init(action_desc, common_data)
 		mvec3_copy(common_data.pos)
 	}
 
-	self._ext_movement:enable_update()
+	common_data.ext_movement:enable_update()
 
 	self._is_flying_strike = action_desc.flying_strike
 	self._host_stop_pos_inserted = action_desc.host_stop_pos_inserted
@@ -75,8 +73,8 @@ function ActionSpooc:init(action_desc, common_data)
 
 	self._beating_time = 0
 
-	if self._common_data.char_tweak.spooc_attack_beating_time then
-		local tweak_beat = self._common_data.char_tweak.spooc_attack_beating_time
+	if common_data.char_tweak.spooc_attack_beating_time then
+		local tweak_beat = common_data.char_tweak.spooc_attack_beating_time
 
 		if tweak_beat[1] == tweak_beat[2] then
 			self._beating_time = tweak_beat[1]
@@ -135,13 +133,13 @@ function ActionSpooc:init(action_desc, common_data)
 	end
 
 	if self._is_local and self._target_unit and self._target_unit:base().is_local_player then
-		self._target_unit:movement():on_targetted_for_attack(true, self._unit)
+		self._target_unit:movement():on_targetted_for_attack(true, common_data.unit)
 	end
 
 	if self._is_server then
-		self._ext_network:send("action_spooc_start", self._target_unit:movement():m_pos(), action_desc.flying_strike, self._action_id)
+		common_data.ext_network:send("action_spooc_start", self._target_unit:movement():m_pos(), action_desc.flying_strike, self._action_id)
 	else
-		local host_stop_pos = self._ext_movement:m_host_stop_pos()
+		local host_stop_pos = common_data.ext_movement:m_host_stop_pos()
 
 		if host_stop_pos ~= common_data.pos then
 			table_insert(self._nav_path, 2, mvec3_copy(host_stop_pos))
@@ -165,14 +163,14 @@ function ActionSpooc:init(action_desc, common_data)
 			self._last_sent_pos = action_desc.last_sent_pos
 
 			if self:_chk_target_invalid() then
-				self._ext_network:send_to_host("action_spooc_stop", self._ext_movement:m_pos(), 1, self._action_id)
+				common_data.ext_network:send_to_host("action_spooc_stop", common_data.ext_movement:m_pos(), 1, self._action_id)
 				self:_wait()
 			else
 				if action_desc.flying_strike then
-					if ActionSpooc.chk_can_start_flying_strike(self._unit, self._target_unit) then
+					if ActionSpooc.chk_can_start_flying_strike(common_data.unit, self._target_unit) then
 						self:_set_updator("_upd_flying_strike_first_frame")
 					else
-						self._ext_network:send_to_host("action_spooc_stop", self._ext_movement:m_pos(), 1, self._action_id)
+						common_data.ext_network:send_to_host("action_spooc_stop", common_data.ext_movement:m_pos(), 1, self._action_id)
 						self:_wait()
 					end
 				else
@@ -206,13 +204,13 @@ function ActionSpooc:init(action_desc, common_data)
 				self._last_sent_pos = mvec3_copy(common_data.pos)
 			end
 
-			self._ext_network:send_to_host("action_spooc_stop", self._ext_movement:m_pos(), 1, self._action_id)
+			common_data.ext_network:send_to_host("action_spooc_stop", common_data.ext_movement:m_pos(), 1, self._action_id)
 			self:_wait()
 		elseif action_desc.flying_strike then
-			if self._is_server or ActionSpooc.chk_can_start_flying_strike(self._unit, self._target_unit) then
+			if self._is_server or ActionSpooc.chk_can_start_flying_strike(common_data.unit, self._target_unit) then
 				self:_set_updator("_upd_flying_strike_first_frame")
 			else
-				self._ext_network:send_to_host("action_spooc_stop", self._ext_movement:m_pos(), 1, self._action_id)
+				common_data.ext_network:send_to_host("action_spooc_stop", common_data.ext_movement:m_pos(), 1, self._action_id)
 				self:_wait()
 			end
 		else
@@ -237,12 +235,14 @@ function ActionSpooc:init(action_desc, common_data)
 				self:_start_sprint()
 			elseif action_desc.flying_strike and #self._nav_path > 1 then
 				self:_set_updator("_upd_flying_strike_first_frame")
+			else
+				self:_wait()
 			end
 		end
 	end
 
-	if self._is_server and common_data.ext_movement.is_uncloaked and not common_data.ext_movement:is_uncloaked() and self._unit:damage() and self._unit:damage():has_sequence("decloak") then
-		self._unit:damage():run_sequence_simple("decloak")
+	if self._is_server and common_data.ext_movement.is_uncloaked and not common_data.ext_movement:is_uncloaked() and common_data.unit:damage() and common_data.unit:damage():has_sequence("decloak") then
+		common_data.unit:damage():run_sequence_simple("decloak")
 
 		local weapon_unit = common_data.ext_inventory:equipped_unit()
 
@@ -257,15 +257,15 @@ function ActionSpooc:init(action_desc, common_data)
 
 	if detect_sound then
 		if common_data.ext_base._tweak_table == "spooc_titan" then 
-			self._unit:sound():play(detect_sound)
+			common_data.unit:sound():play(detect_sound)
 		else
 			if self._is_flying_strike then
-				self._unit:sound():play(detect_sound)
+				common_data.unit:sound():play(detect_sound)
 			end
 		end
 	end
 
-	local spooc_sound_events = self._common_data.char_tweak.spooc_sound_events or {}
+	local spooc_sound_events = common_data.char_tweak.spooc_sound_events or {}
 
 	if spooc_sound_events.taunt_during_assault then
 		self._taunt_during_assault = spooc_sound_events.taunt_during_assault
@@ -276,7 +276,7 @@ function ActionSpooc:init(action_desc, common_data)
 	end
 
 	if not self._taunt_during_assault or not self._taunt_after_assault then
-		if self._ext_base:has_tag("spooc") then
+		if common_data.ext_base.has_tag and common_data.ext_base:has_tag("spooc") then
 			local ai_type = tweak_data.levels:get_ai_group_type()
 			local r = LevelsTweakData.LevelType.Russia
 			local f = LevelsTweakData.LevelType.Federales
@@ -337,6 +337,12 @@ function ActionSpooc:on_exit()
 
 	if self._root_blend_disabled then
 		self._ext_movement:set_root_blend(true)
+	end
+
+	if self._changed_driving then
+		self._unit:set_driving("script")
+
+		self._changed_driving = nil
 	end
 
 	if self._expired and self._common_data.ext_anim.move then
@@ -633,19 +639,25 @@ function ActionSpooc:_upd_sprint(t)
 		local wanted_walk_dir = nil
 
 		if math_abs(right_dot) < math_abs(fwd_dot) then
-			if (anim_data.move_l and right_dot < 0 or anim_data.move_r and right_dot > 0) and math_abs(fwd_dot) < 0.73 then
+			local strafe = anim_data.move_l and right_dot < 0 or anim_data.move_r and right_dot > 0
+
+			if strafe and math_abs(fwd_dot) < 0.73 then
 				wanted_walk_dir = anim_data.move_side
 			elseif fwd_dot > 0 then
 				wanted_walk_dir = "fwd"
 			else
 				wanted_walk_dir = "bwd"
 			end
-		elseif (anim_data.move_fwd and fwd_dot > 0 or anim_data.move_bwd and fwd_dot < 0) and math_abs(right_dot) < 0.73 then
-			wanted_walk_dir = anim_data.move_side
-		elseif right_dot > 0 then
-			wanted_walk_dir = "r"
 		else
-			wanted_walk_dir = "l"
+			local fwd_or_bwd = anim_data.move_fwd and fwd_dot > 0 or anim_data.move_bwd and fwd_dot < 0
+
+			if fwd_or_bwd and math_abs(right_dot) < 0.73 then
+				wanted_walk_dir = anim_data.move_side
+			elseif right_dot > 0 then
+				wanted_walk_dir = "r"
+			else
+				wanted_walk_dir = "l"
+			end
 		end
 
 		local wanted_u_fwd = self._move_dir:rotate_with(self._walk_side_rot[wanted_walk_dir])
@@ -653,27 +665,27 @@ function ActionSpooc:_upd_sprint(t)
 
 		self._ext_movement:set_rotation(rot_new)
 
-		local pose = self._stance.values[4] > 0 and "wounded" or self._ext_anim.pose or "stand"
+		local pose = self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"
 		local real_velocity = self._cur_vel
 		local variant = nil
 
-		if self._ext_anim.sprint then
-			if real_velocity > 480 and self._ext_anim.pose == "stand" then
+		if anim_data.sprint then
+			if real_velocity > 480 and anim_data.pose == "stand" then
 				variant = "sprint"
 			elseif real_velocity > 250 then
 				variant = "run"
 			else
 				variant = "walk"
 			end
-		elseif self._ext_anim.run then
-			if real_velocity > 530 and self._walk_anim_velocities[pose][self._stance.name].sprint and self._ext_anim.pose == "stand" then
+		elseif anim_data.run then
+			if real_velocity > 530 and self._walk_anim_velocities[pose][self._stance.name].sprint and anim_data.pose == "stand" then
 				variant = "sprint"
 			elseif real_velocity > 250 then
 				variant = "run"
 			else
 				variant = "walk"
 			end
-		elseif real_velocity > 530 and self._walk_anim_velocities[pose][self._stance.name].sprint and self._ext_anim.pose == "stand" then
+		elseif real_velocity > 530 and self._walk_anim_velocities[pose][self._stance.name].sprint and anim_data.pose == "stand" then
 			variant = "sprint"
 		elseif real_velocity > 300 then
 			variant = "run"
@@ -683,7 +695,7 @@ function ActionSpooc:_upd_sprint(t)
 
 		self:_adjust_move_anim(wanted_walk_dir, variant)
 
-		local pose = self._ext_anim.pose
+		local pose = anim_data.pose
 		local anim_walk_speed = self._walk_anim_velocities[pose][self._common_data.stance.name][variant][wanted_walk_dir]
 		local wanted_walk_anim_speed = real_velocity / anim_walk_speed
 
@@ -1748,4 +1760,71 @@ function ActionSpooc:get_sound_event(sound)
 	end
 
 	return event
-end	
+end
+
+function ActionSpooc:_get_current_max_walk_speed(move_dir)
+	if move_dir == "l" or move_dir == "r" then
+		move_dir = "strafe"
+	end
+
+	local speed = self._common_data.char_tweak.move_speed[self._ext_anim.pose][self._haste][self._stance.name][move_dir]
+
+	if not self._is_local and self:_needs_speedup() then
+		local ping_multiplier = 1
+		local vis_multiplier = 1
+
+		if not self._target_peer then
+			local target_unit = self._target_unit
+
+			if alive(target_unit) then
+				if target_unit:base().is_husk_player then
+					local peer_id = managers.network:session():peer_by_unit(target_unit):id()
+
+					self._target_peer = managers.network:session():peer(peer_id)
+				else
+					self._target_peer = managers.network:session():peer(1)
+				end
+			end
+		end
+
+		if self._target_peer then
+			ping_multiplier = ping_multiplier + Network:qos(self._target_peer:rpc()).ping / 1000
+		end
+
+		if Unit.occluded(self._unit) then
+			vis_multiplier = 1.5
+		else
+			local lod = self._ext_base:lod_stage()
+			local lod_multiplier_add = CopActionWalk.lod_multipliers[lod] or 0.65
+
+			vis_multiplier = 0.85 + lod_multiplier_add
+		end
+
+		local final_multiplier = math_min(ping_multiplier * vis_multiplier, 2)
+		speed = speed * final_multiplier
+	end
+
+	return speed
+end
+
+function ActionSpooc:_needs_speedup()
+	if self._ext_movement._queued_actions and next(self._ext_movement._queued_actions) then
+		return true
+	elseif #self._nav_path > 2 then
+		local nav_path = #self._nav_path
+		local prev_pos = self._common_data.pos
+		local i = 2
+		local dis_error_total = 0
+
+		while i <= nav_path do
+			local next_pos = CopActionWalk._nav_point_pos(self._nav_path[i])
+			dis_error_total = dis_error_total + mvec3_dist_sq(prev_pos, next_pos)
+			prev_pos = next_pos
+			i = i + 1
+		end
+
+		if dis_error_total > 90000 then
+			return true
+		end
+	end
+end

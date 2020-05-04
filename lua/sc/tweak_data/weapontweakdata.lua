@@ -744,12 +744,17 @@ function WeaponTweakData:_init_data_m4_npc()
 	
 	--HK417 (unused?)
 	self.sg417_npc = deep_clone(self.m4_npc)
+	self.sg417_npc.sounds.prefix = "contraband_npc"
+	
+	--[[
 	self.sg417_npc.auto.fire_rate = 0.1
 	self.sg417_npc.CLIP_AMMO_MAX = 20
 	self.sg417_npc.DAMAGE = 4.5
 	self.sg417_npc.alert_size = 3000
 	self.sg417_npc.suppression = 3
+	]]--
 	
+	--Zeal S553
 	self.s553_zeal_npc = deep_clone(self.m4_npc)
 	self.s553_zeal_npc.sounds.prefix = "sig552_npc"		
 	
@@ -1429,15 +1434,15 @@ function WeaponTweakData:_init_data_contraband_npc()
 	self.contraband_npc.categories = clone(self.contraband.categories)
 	self.contraband_npc.sounds.prefix = "contraband_npc"
 	self.contraband_npc.use_data.selection_index = 2
-	self.contraband_npc.DAMAGE = 4.5
+	self.contraband_npc.DAMAGE = 2.4
 	self.contraband_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 	self.contraband_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
-	self.contraband_npc.CLIP_AMMO_MAX = 20
+	self.contraband_npc.CLIP_AMMO_MAX = 30
 	self.contraband_npc.NR_CLIPS_MAX = 5
-	self.contraband_npc.auto.fire_rate = 0.1
+	self.contraband_npc.auto.fire_rate = 0.08571428571
 	self.contraband_npc.hold = "rifle"
-	self.contraband_npc.alert_size = 3000
-	self.contraband_npc.suppression = 3
+	self.contraband_npc.alert_size = 2600
+	self.contraband_npc.suppression = 2.6
 	self.contraband_npc.FIRE_MODE = "auto"	
 
 	--M203

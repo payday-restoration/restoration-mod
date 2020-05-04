@@ -46,13 +46,13 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour"/>
 	
 	<!--fbi swat 3-->
-    <unit path="units/pd3_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
-    <unit path="units/pd3_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>
-    <object path="units/pd3_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
-	<cooked_physics path="units/pd3_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
-	<model path="units/pd3_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
-	<material_config path="units/pd3_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
-	<material_config path="units/pd3_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour"/>
+    <unit path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
+    <unit path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>
+    <object path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<model path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour"/>
 	
 	<!--nypd dozer stuff-->	
 	<!--green-->

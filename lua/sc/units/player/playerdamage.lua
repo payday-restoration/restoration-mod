@@ -902,3 +902,36 @@ function PlayerDamage:consume_messiah_charge()
 
 	return false
 end
+
+function PlayerDamage:exit_custody()
+	if (Application:editor() or managers.platform:presence() == "Playing") and (self:arrested() or self:need_revive()) then
+		self:revive(true)
+	end
+
+	self:set_health(self:_max_health())
+	self:_send_set_health()
+	self:_set_health_effect()
+
+	self._said_hurt = false
+	self._revives = Application:digest_value(tweak_data.player.custody.LIVES, true)
+	self._revive_health_i = 1
+
+	managers.environment_controller:set_last_life(false)
+
+	self._down_time = math.max(tweak_data.player.damage.DOWNED_TIME_MIN, self._down_time - tweak_data.player.damage.DOWNED_TIME_DEC)
+	self._messiah_charges = managers.player:upgrade_value("player", "pistol_revive_from_bleed_out", 0)
+	managers.player:refill_messiah_charges()
+
+	managers.player:set_damage_absorption(
+		"down_absorption",
+		managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
+	)
+	self:_regenerate_armor()
+	managers.hud:set_player_health({
+		current = self:get_real_health(),
+		total = self:_max_health(),
+		revives = Application:digest_value(self._revives, false)
+	})
+	SoundDevice:set_rtpc("shield_status", 100)
+	SoundDevice:set_rtpc("downed_state_progression", 0)
+end

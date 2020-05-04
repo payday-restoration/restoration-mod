@@ -1192,7 +1192,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Messiah--
 		["menu_pistol_beta_messiah_sc"] = "Messiah",
-		["menu_pistol_beta_messiah_desc_sc"] = "BASIC: ##$basic##\nWhile in bleedout, killing an enemy will allow you to revive yourself.\n\nYou only have ##1## charge which is replenished when leaving custody.\n\nACE: ##$pro##\nYou can be downed ##1## additional time before going into custody.\n\nMessiah now has infinite charges, but each subsequent use requires ##2## additional kills. This is reset when leaving custody.",																																																																																																																																																																																																																																		
+		["menu_pistol_beta_messiah_desc_sc"] = "BASIC: ##$basic##\nWhile in bleedout, killing an enemy will allow you to revive yourself.\n\nYou only have ##1## charge which is replenished when leaving custody.\n\nACE: ##$pro##\nYou can be downed ##1## additional time before going into custody for the first time.\n\nMessiah now has infinite charges, but each subsequent use requires ##2## additional kills. This is reset when leaving custody.",																																																																																																																																																																																																																																		
 
 		--Martial Arts--
 		["menu_martial_arts_beta_sc"] = "Martial Arts",

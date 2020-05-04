@@ -26,14 +26,18 @@ function PlayerTweakData:_set_overkill()
 	self.damage.MIN_DAMAGE_INTERVAL = 0.4
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
-	self.suspicion.buildup_mul = 1	
+	self.suspicion.buildup_mul = 1
+	self.custody.ammo_kept  = 0.5
+	self.damage.DOWNED_TIME_DEC = 5
 end
 
 function PlayerTweakData:_set_overkill_145()
 	self.damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
-	self.suspicion.buildup_mul = 1	
+	self.suspicion.buildup_mul = 1
+	self.custody.ammo_kept  = 0.5
+	self.damage.DOWNED_TIME_DEC = 5
 end
 
 function PlayerTweakData:_set_easy_wish()
@@ -41,6 +45,8 @@ function PlayerTweakData:_set_easy_wish()
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
 	self.damage.MIN_DAMAGE_INTERVAL = 0.3
+	self.custody.ammo_kept  = 0.25
+	self.damage.DOWNED_TIME_DEC = 5
 end
 
 function PlayerTweakData:_set_overkill_290()
@@ -72,7 +78,9 @@ function PlayerTweakData:_set_overkill_290()
 			1,
 			0
 		}
-	}		
+	}
+	self.custody.ammo_kept  = 0.25
+	self.damage.DOWNED_TIME_DEC = 10
 end
 
 function PlayerTweakData:_set_sm_wish()
@@ -103,7 +111,9 @@ function PlayerTweakData:_set_sm_wish()
 			1,
 			0
 		}
-	}			
+	}
+	self.custody.ammo_kept  = 0.0
+	self.damage.DOWNED_TIME_DEC = 10
 end
 
 function PlayerTweakData:_set_singleplayer()
@@ -155,14 +165,16 @@ function PlayerTweakData:init()
 		0.8,
 		0.65,
 		0.5
-	}		
+	}
+	self.custody.LIVES = 3 --Number of downs left when leaving custody.
+	self.custody.ammo_kept = 1 --% of remaining ammo kept when leaving custody.
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.TASED_TIME = 10
 	self.damage.STUN_TIME = 1
 	self.damage.TASED_RECOVER_TIME = 1
 	self.damage.BLEED_OUT_HEALTH_INIT = 20
 	self.damage.DOWNED_TIME = 30
-	self.damage.DOWNED_TIME_DEC = 10
+	self.damage.DOWNED_TIME_DEC = 0
 	self.damage.DOWNED_TIME_MIN = 10
 	self.damage.ARRESTED_TIME = 60
 	self.damage.INCAPACITATED_TIME = 30

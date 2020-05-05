@@ -1,0 +1,27 @@
+<dynamic_object>
+    <diesel materials="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide" orientation_object="rp_wpn_fps_pis_usp_b_expert"/>
+    <animations>
+		<animation_group name="reload">
+			<object name="anim_bolt_reload" enabled="true"/>
+		</animation_group>
+		<animation_group name="reload_right">
+			<object name="anim_bolt_reload_right" enabled="true"/>
+		</animation_group>
+		<animation_group name="reload_left">
+			<object name="anim_bolt_reload_left" enabled="true"/>
+		</animation_group>
+		<animation_group name="recoil">
+			<object name="anim_bolt_recoil" enabled="true"/>
+		</animation_group>
+		<animation_group name="last_recoil">
+			<object name="anim_bolt_last_recoil" enabled="true"/>
+		</animation_group>
+    </animations>
+    <graphics>
+		<graphic_group name="character" enabled="true" culling_object="g_slide_lod0">
+        <object enabled="true" inherit_bounding_volume="co_culling" name="g_slide_lod0" />
+	</graphic_group>
+        <object enabled="true" name="g_sights_lod0"/>
+        <object enabled="true" name="g_barrel_lod0"/>
+    </graphics>
+</dynamic_object>

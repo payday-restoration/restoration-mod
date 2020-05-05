@@ -1,0 +1,240 @@
+<table name="MK23" image="guis/socom" color="Color(0.01,0.62,0.98)">
+
+	<Localization directory="loc" default="english.txt"/>
+	<GlobalValue id="socom" color="Color(1, 0.5, 0)"/>
+	
+	<WeaponMod id="wpn_fps_pis_socom_frame" based_on="wpn_fps_pis_usp_body_standard" type="lower_reciever" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame" drop="false" is_a_unlockable="false"/>
+
+	<WeaponMod id="wpn_fps_pis_socom_mag" based_on="wpn_fps_pis_usp_m_standard" type="magazine" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag" drop="false" is_a_unlockable="false">
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_fps_pis_socom_sight" unit="units/payday2/weapons/wpn_fps_smg_mp9_pts/wpn_fps_smg_mp9_b_dummy" based_on="wpn_fps_pis_usp_m_standard" type="sight">
+		<stance_mod>
+			<wpn_fps_pis_socom translation="0 0 0.45"/>
+		</stance_mod>
+	</WeaponMod>
+
+	<WeaponMod id="wpn_fps_pis_socom_slide" based_on="wpn_fps_pis_usp_b_expert" type="slide" pcs="nil" stats="nil" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide" drop="false" is_a_unlockable="false"/>
+	
+	<WeaponMod id="wpn_fps_upg_fl_pis_socomlam" based_on="wpn_fps_upg_fl_pis_x400v" type="gadget" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam" texture_bundle_folder="mods" drop="false" is_a_unlockable="true">
+		<stats recoil="2" spread="0" concealment="-2"/>
+		<perks>
+			<value_node value="gadget"/>
+		</perks>
+		<weapons>
+			<value_node value="wpn_fps_pis_socom"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_fps_pis_socom_fl_adapter" based_on="wpn_fps_pis_shrew_fl_adapter" type="rail" pcs="nil" stats="nil" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter" drop="false" is_a_unlockable="false"/>
+
+	<WeaponNew unlock_level="45">
+		<weapon id="socom" based_on="usp" CLIP_AMMO_MAX="14" NR_CLIPS_MAX="11" lock_slide="true" texture_bundle_folder="mods" global_value="rest">
+			<stats spread="17" spread_moving="19" recoil="14" concealment="29" damage="39" />
+			<fire_mode_data fire_rate="0.125"/>
+			<animations reload_name_id="usp"/>
+		</weapon>
+        <factory id="wpn_fps_pis_socom" unit="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom">
+			<animations fire = "recoil" reload = "reload" fire_steelsight = "recoil" magazine_empty = "last_recoil"/>
+			<optional_types>
+				<value_node value="barrel_ext"/>
+				<value_node value="gadget"/>
+			</optional_types>
+			<default_blueprint>
+				<value_node value="wpn_fps_pis_socom_slide"/>
+				<value_node value="wpn_fps_pis_socom_frame"/>
+				<value_node value="wpn_fps_pis_socom_mag"/>
+				<value_node value="wpn_fps_pis_socom_sight"/>
+			</default_blueprint>
+			<uses_parts>
+				<value_node value="wpn_fps_pis_socom_frame"/>
+				<value_node value="wpn_fps_pis_socom_mag"/>
+				<value_node value="wpn_fps_pis_socom_slide"/>
+				<value_node value="wpn_fps_upg_fl_pis_socomlam"/>
+				<value_node value="wpn_fps_pis_socom_sight"/>
+
+				<value_node value="wpn_fps_upg_o_rmr"/>
+				<value_node value="wpn_fps_upg_o_rms"/>
+				<value_node value="wpn_fps_upg_o_rikt"/>
+				<value_node value="wpn_fps_upg_fl_pis_laser"/>
+				<value_node value="wpn_fps_upg_fl_pis_tlr1"/>
+				<value_node value="wpn_fps_upg_fl_pis_crimson"/>
+				<value_node value="wpn_fps_upg_fl_pis_x400v"/>
+				<value_node value="wpn_fps_upg_fl_pis_m3x"/>
+				<value_node value="wpn_fps_upg_ns_pis_large"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium"/>
+				<value_node value="wpn_fps_upg_ns_pis_small"/>
+				<value_node value="wpn_fps_upg_ns_pis_large_kac"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium_gem"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium_slim"/>
+				<value_node value="wpn_fps_upg_pis_ns_flash"/>
+				<value_node value="wpn_fps_upg_pis_ns_flash"/>
+				<value_node value="wpn_fps_upg_ns_pis_meatgrinder"/>
+				<value_node value="wpn_fps_upg_ns_pis_jungle"/>
+			</uses_parts>
+			<override>
+				<wpn_fps_upg_o_rmr parent="slide"/>
+				<wpn_fps_upg_o_rms parent="slide"/>
+				<wpn_fps_upg_o_rikt parent="slide"/>
+			</override>
+			<adds>
+				<wpn_fps_upg_fl_pis_laser>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_laser>
+				<wpn_fps_upg_fl_pis_tlr1>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_tlr1>
+				<wpn_fps_upg_fl_pis_crimson>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_crimson>
+				<wpn_fps_upg_fl_pis_x400v>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_x400v>
+				<wpn_fps_upg_fl_pis_m3x>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_m3x>
+			</adds>
+		</factory>
+		<stance/>
+	</WeaponNew>
+
+	<WeaponNew unlock_level="45">
+		<weapon id="x_socom" based_on="x_usp" CLIP_AMMO_MAX="28" NR_CLIPS_MAX="6" lock_slide="true" texture_bundle_folder="mods" global_value="rest">
+			<stats spread="17" spread_moving="19" recoil="14" concealment="28" damage="39" />
+			<fire_mode_data fire_rate="0.15"/>
+			<animations reload_name_id="jowi" recoil_steelsight="true" has_steelsight_stance="true" >
+			</animations>
+		</weapon>
+        <factory id="wpn_fps_pis_x_socom" unit="units/mods/weapons/wpn_fps_pis_x_socom/wpn_fps_pis_x_socom">
+			<optional_types>
+				<value_node value="barrel_ext"/>
+				<value_node value="gadget"/>
+			</optional_types>
+			<default_blueprint>
+				<value_node value="wpn_fps_pis_socom_slide"/>
+				<value_node value="wpn_fps_pis_socom_frame"/>
+				<value_node value="wpn_fps_pis_socom_mag"/>
+			</default_blueprint>
+			<uses_parts>
+				<value_node value="wpn_fps_pis_socom_frame"/>
+				<value_node value="wpn_fps_pis_socom_mag"/>
+				<value_node value="wpn_fps_pis_socom_slide"/>
+				<value_node value="wpn_fps_upg_fl_pis_socomlam"/>
+
+				<value_node value="wpn_fps_upg_fl_pis_laser"/>
+				<value_node value="wpn_fps_upg_fl_pis_tlr1"/>
+				<value_node value="wpn_fps_upg_fl_pis_crimson"/>
+				<value_node value="wpn_fps_upg_fl_pis_x400v"/>
+				<value_node value="wpn_fps_upg_fl_pis_m3x"/>
+				<value_node value="wpn_fps_upg_ns_pis_large"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium"/>
+				<value_node value="wpn_fps_upg_ns_pis_small"/>
+				<value_node value="wpn_fps_upg_ns_pis_large_kac"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium_gem"/>
+				<value_node value="wpn_fps_upg_ns_pis_medium_slim"/>
+				<value_node value="wpn_fps_upg_pis_ns_flash"/>
+				<value_node value="wpn_fps_upg_pis_ns_flash"/>
+				<value_node value="wpn_fps_upg_ns_pis_meatgrinder"/>
+				<value_node value="wpn_fps_upg_ns_pis_jungle"/>
+			</uses_parts>
+			<adds>
+				<wpn_fps_upg_fl_pis_laser>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_laser>
+				<wpn_fps_upg_fl_pis_tlr1>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_tlr1>
+				<wpn_fps_upg_fl_pis_crimson>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_crimson>
+				<wpn_fps_upg_fl_pis_x400v>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_x400v>
+				<wpn_fps_upg_fl_pis_m3x>
+					<value_node value="wpn_fps_pis_socom_fl_adapter"/>
+				</wpn_fps_upg_fl_pis_m3x>
+			</adds>
+		</factory>
+		<stance/>
+	</WeaponNew>
+	
+	
+	<AddFiles directory="Assets">
+	
+		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/socom_df"/>
+		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/socom_df_cc"/>
+		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/socom_nm"/>
+		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_df"/>
+		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_df_cc"/>
+		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_nm"/>
+
+		<cooked_physics path="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom"/>
+		<model path="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom"/>
+		<object path="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom_npc"/>
+
+		<cooked_physics path="units/mods/weapons/wpn_fps_pis_x_socom/wpn_fps_pis_x_socom"/>
+		<model path="units/mods/weapons/wpn_fps_pis_x_socom/wpn_fps_pis_x_socom"/>
+		<object path="units/mods/weapons/wpn_fps_pis_x_socom/wpn_fps_pis_x_socom"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_x_socom/wpn_fps_pis_x_socom"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_x_socom/wpn_fps_pis_x_socom_npc"/>
+
+		<cooked_physics path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame"/>
+		<model path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame"/>
+		<object path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame_thq"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame_cc"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame_cc_thq"/>
+
+		<cooked_physics path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag"/>
+		<model path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag"/>
+		<object path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag_thq"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag_cc"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_mag_cc_thq"/>
+
+		<cooked_physics path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide"/>
+		<model path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide"/>
+		<object path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide_cc"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide_thq"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide_cc_thq"/>
+		
+		<cooked_physics path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam"/>
+		<model path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam"/>
+		<object path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam_cc"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam_thq"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam_cc_thq"/>
+		
+		<cooked_physics path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter"/>
+		<model path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter"/>
+		<object path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter"/>
+		<unit path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter_cc"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter_thq"/>
+		<material_config path="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter_cc_thq"/>
+
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_fl_pis_socomlam"/>
+
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/socom"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/x_socom"/>
+		<texture path="guis/socom"/>
+	</AddFiles>
+	
+	<Hooks directory="Hooks">
+		<hook file="weaponfactorytweakdata.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
+		<hook file="weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
+	</Hooks>
+	
+</table>

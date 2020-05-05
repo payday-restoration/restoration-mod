@@ -1,0 +1,15 @@
+<unit type="wpn" slot="1" >
+	<object file="units/mods/weapons/wpn_fps_pis_x_socom/wpn_fps_pis_x_socom" />
+	
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_usp45"/>
+		<depends_on bnk="soundbanks/weapon_g17"/>
+ </dependencies>
+	
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="AkimboWeaponBase" >
+			<var name="name_id" value="x_socom" />
+		</extension>
+    </extensions>
+</unit>

@@ -1,0 +1,9 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_upg_fl_pis_x400v" materials="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam" />
+    <graphics>
+        <object enabled="false" name="g_light" />
+        <object enabled="true" name="g_x400w" />
+        <object enabled="false" name="g_laser" />
+        <object enabled="false" name="g_indicator" />
+    </graphics>
+</dynamic_object>

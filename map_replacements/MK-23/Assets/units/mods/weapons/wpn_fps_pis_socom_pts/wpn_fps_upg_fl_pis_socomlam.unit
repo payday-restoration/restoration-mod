@@ -1,0 +1,7 @@
+<unit type="wpn" slot="1" >
+    <object file="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+		<extension name="base" class="WeaponLaser" />
+    </extensions>
+</unit>

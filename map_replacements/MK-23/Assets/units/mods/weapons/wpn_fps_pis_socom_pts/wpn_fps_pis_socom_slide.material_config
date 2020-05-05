@@ -1,0 +1,14 @@
+<materials version="3" group="weapon_group">
+    <material name="mtr_barrel_expert" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_usp_pts/barrel_expert_df"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_usp_pts/barrel_expert_nm"/>
+    </material>
+    <material name="mtr_expert" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/mods/weapons/wpn_fps_pis_socom_pts/socom_df"/>
+        <bump_normal_texture file="units/mods/weapons/wpn_fps_pis_socom_pts/socom_nm"/>
+    </material>
+    <material name="mtr_sights" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_fps_pis_usp_pts/sights_df"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_usp_pts/sights_nm"/>
+    </material>
+</materials>

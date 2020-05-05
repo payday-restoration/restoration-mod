@@ -1,0 +1,6 @@
+<unit type="wpn" slot="1" >
+    <object file="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

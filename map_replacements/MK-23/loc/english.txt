@@ -1,0 +1,7 @@
+{
+    "bm_w_socom" : "Anubis .45",
+    "bm_w_x_socom" : "Akimbo Anubis .45",
+    "bm_wp_wpn_fps_upg_fl_pis_socomlam" : "Ra Tactical Module",
+
+    "menu_l_global_value_socom" : "This is Placeholder Text!"
+}

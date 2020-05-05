@@ -1,0 +1,6 @@
+<materials version="3" group="weapon_shrew">
+	<material name="mat_rail" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/payday2/weapons/wpn_fps_pis_deagle_pts/rail_df" />
+		<bump_normal_texture file="units/payday2/weapons/wpn_fps_pis_deagle_pts/rail_nm" />
+	</material>
+</materials>

@@ -1,0 +1,14 @@
+<unit type="wpn" slot="1" >
+	<object file="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom" />
+	
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_usp45"/>
+	</dependencies>
+	
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData" />
+        <extension name="base" class="NewNPCRaycastWeaponBase" >
+			<var name="name_id" value="socom_crew" />
+		</extension>
+    </extensions>
+</unit>

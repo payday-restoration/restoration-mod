@@ -1,0 +1,22 @@
+<materials version="3" group="weapon_hs20000">
+	<material name="mtr_bullet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_bullet/wpn_fps_bullet_556_df" />
+		<bump_normal_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_bullet/wpn_fps_bullet_556_nm" />
+	</material>
+	<material name="mtr_m_extended" render_template="generic_customizable:CUBE_ENVIRONMENT_MAPPING:DECAL_STICKER_UV2:DIFFUSE_TEXTURE:GRADIENTMAP:NORMALMAP:PATTERN_GRADIENTMAP:PATTERN_GRADIENTMAP_ANGLE_OFFSET:PATTERN_UV2:WEAR_TEAR_MASKING" version="2">
+		<diffuse_texture file="units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_hs2000_m_extended_df_cc" mip="1"/>
+		<bump_normal_texture file="units/pd2_dlc_the_bomb/weapons/wpn_fps_pis_hs2000_pts/wpn_fps_hs2000_m_extended_nm"  mip="1"/>
+		<diffuse_layer1_texture file="units/payday2_cash/safes/default/base_gradient/base_default_df"/>
+		<diffuse_layer2_texture file="units/payday2_cash/safes/default/pattern_gradient/gradient_default_df"/>
+		<diffuse_layer0_texture file="units/payday2_cash/safes/default/pattern/pattern_default_df"/>
+		<reflection_texture type="cube" global_texture="current_global_texture"/>
+		<variable value="1 0 1" type="vector3" name="pattern_tweak"/>
+		<variable value="0 0 0" type="vector3" name="pattern_pos"/>
+		<variable value="0" type="scalar" name="wear_tear_value"/>
+		<diffuse_layer3_texture file="units/payday2_cash/safes/default/sticker/sticker_default_df"/>
+		<variable value="1 1 1" type="vector3" name="uv_scale"/>
+		<variable value="0 0 0" type="vector3" name="uv_offset_rot"/>
+		<variable value="0 0 0" type="vector3" name="cubemap_pattern_control"/>
+	</material>
+</materials>
+

@@ -9660,6 +9660,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.stats_modifiers = nil
 	self.osipr.timers.reload_empty = 3.5		
 	self.osipr.panic_suppression_chance = 0.0		
+	self.osipr.has_description = true
+	self.osipr.desc_id = "bm_w_osipr_desc"
+	self.osipr.custom = false
 	
 	--Custom weapons below--
 if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44

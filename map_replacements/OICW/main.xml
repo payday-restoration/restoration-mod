@@ -3,10 +3,10 @@
 		<loc file="english.txt" language="english"/>
 	</Localization>
 	<!--WeaponMod id="wpn_fps_ass_osipr_b_standard" based_on="wpn_fps_m4_uupg_b_medium_vanilla" type="barrel" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/-->
-	<WeaponMod id="wpn_fps_ass_osipr_body" based_on="wpn_fps_m4_lower_reciever" type="lower_reciever" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
+	<WeaponMod id="wpn_fps_ass_osipr_body" based_on="wpn_fps_m4_lower_reciever" type="lower_reciever" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2" custom="false"/>
 	
 	<Weapon>
-		<weapon id="osipr" based_on="new_m4" has_description="true" global_value="rest">
+		<weapon id="osipr" based_on="new_m4" has_description="true" global_value="rest" custom="false">
 			<stats/>
 			<animations reload_name_id="m4"/>
 		</weapon>

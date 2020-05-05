@@ -94,16 +94,16 @@ function HUDDodgeMeter:_animate_high_dodge(input_panel)
 	end
 end
 
-HUDBloodyScreen = HUDBloodyScreen or class()
-function HUDBloodyScreen:init(hud)
+HUDEffectScreen = HUDEffectScreen or class()
+function HUDEffectScreen:init(hud)
 	self._hud_panel = hud.panel
 	
-	self._blood_panel = hud.panel:bitmap({
-		name = "blood_panel",
+	self._effect_panel = hud.panel:bitmap({
+		name = "effect_panel",
 		visible = true,
 		texture = "guis/textures/restoration/bloodyscreen",
 		layer = 0,
-		color = Color(1, 0.2, 0),
+		color = Color(1, 1, 1),
 		alpha = 0,
 		blend_mode = "add",
 		w = hud.panel:w(),
@@ -116,25 +116,26 @@ function HUDBloodyScreen:init(hud)
 	self._duration = 0.0
 end
 
-function HUDBloodyScreen:do_bloody_screen(duration)
-	self._blood_panel:set_alpha(1)
+function HUDEffectScreen:do_effect_screen(duration, color)
+	self._effect_panel:set_alpha(1)
 	self._duration = duration
+	self._effect_panel:set_color(Color(color[1], color[2], color[3]))
 	if self._active == true then
-		self._blood_panel:stop()
+		self._effect_panel:stop()
 	end
 	self._active = true
-	self._blood_panel:animate(callback(self, self, "_fadeout_bloody_screen"))
+	self._effect_panel:animate(callback(self, self, "_fadeout_effect_screen"))
 end
 
-function HUDBloodyScreen:_fadeout_bloody_screen()
+function HUDEffectScreen:_fadeout_effect_screen()
 	local start_time = Application:time()
 	local curr_time = start_time
 	while curr_time - start_time < self._duration do
 		curr_time = Application:time()
-		self._blood_panel:set_alpha(1 - ((curr_time - start_time) / self._duration))
+		self._effect_panel:set_alpha(1 - ((curr_time - start_time) / self._duration))
 		coroutine.yield()
 	end
-	self._blood_panel:set_alpha(0)
+	self._effect_panel:set_alpha(0)
 	self._active = false
 end
 

@@ -408,7 +408,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	if attack_data.armor_piercing then
 		attack_data.damage = attack_data.damage - health_subtracted
 		if not _G.IS_VR then
-			managers.hud:activate_bloody_screen(0.75)
+			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
 		end
 	else
 		attack_data.damage = attack_data.damage * armor_reduction_multiplier
@@ -441,22 +441,20 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	local _time = math.floor(TimerManager:game():time())
 	self.tase_time = self.tase_time or 0
 	local player_unit = managers.player:player_unit()
-	if attack_data then
-		if alive(attack_data.attacker_unit) then
-			if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
-				if alive(player_unit) then
-					if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
-					else
-						attack_data.attacker_unit:sound():say("post_tasing_taunt")
-						player_unit:movement():on_non_lethal_electrocution()
-						managers.player:set_player_state("tased")
-						attack_data.damage = attack_data.damage * 0
-						self.tase_time = _time + 10
-					end
+	if alive(attack_data.attacker_unit) then
+		if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
+			if alive(player_unit) then
+				if not self._unit:movement():current_state().driving then
+					attack_data.attacker_unit:sound():say("post_tasing_taunt")
+					--player_unit:movement():on_non_lethal_electrocution()
+					--managers.player:set_player_state("tased")
+					managers.player:activate_titan_tased()
+					attack_data.damage = attack_data.damage * 0
+					self.tase_time = _time + 3
 				end
-			end		
-		end
-	end		
+			end
+		end		
+	end
 	
 	return 
 end

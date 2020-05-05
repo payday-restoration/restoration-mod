@@ -73,6 +73,13 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 		multiplier = multiplier + self:detection_risk_movement_speed_bonus()
 	end
 
+	if self:_is_titan_tased() then
+		log("Is Titan Tased")
+		multiplier = multiplier * self:_titan_tase_speed_mult()
+	else
+		log("DAB")
+	end
+
 	local damage_speed_multiplier = managers.player:temporary_upgrade_value("temporary", "damage_speed_multiplier", managers.player:temporary_upgrade_value("temporary", "team_damage_speed_multiplier_received", 1))
 	multiplier = multiplier * damage_speed_multiplier
 	
@@ -893,4 +900,20 @@ function PlayerManager:is_db_regen_active()
 		return true
 	end
 	return false
+end
+
+function PlayerManager:activate_titan_tased()
+	self._titan_tase_time = 3 + Application:time()
+	managers.hud:activate_effect_screen(3, {0.0, 0.2, 1})
+end
+
+function PlayerManager:_is_titan_tased()
+	if self._titan_tase_time and self._titan_tase_time > Application:time() then
+		return true
+	end 
+	return false
+end
+
+function PlayerManager:_titan_tase_speed_mult()
+	return 1 / (self._titan_tase_time - Application:time() + 1)
 end

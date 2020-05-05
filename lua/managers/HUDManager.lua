@@ -25,7 +25,7 @@ core:import("CoreEvent")
 		self:_create_level_suspicion_hud(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
 		_setup_player_info_hud_pd2_original(self,...)
 		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
-		self._bloody_screen = HUDBloodyScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
+		self._bloody_screen = HUDEffectScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
 			--managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel
 			--[[
 --setup radial mouse menu
@@ -252,9 +252,9 @@ core:import("CoreEvent")
 		self._dodge_meter:unhide_dodge_panel(dodge_points)
 	end
 
-	function HUDManager:activate_bloody_screen(duration)
-		--Apply the bloody screen over a duration.
-		self._bloody_screen:do_bloody_screen(duration)
+	function HUDManager:activate_effect_screen(duration, color)
+		--Apply the effect screen with a color over a duration.
+		self._bloody_screen:do_effect_screen(duration, color)
 	end
 
 function HUDManager:setup_anticipation(total_t)

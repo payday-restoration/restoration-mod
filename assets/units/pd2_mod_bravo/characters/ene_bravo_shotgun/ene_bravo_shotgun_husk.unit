@@ -4,7 +4,8 @@
 	<object file="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
 
 	<dependencies>
-		
+	
+		<depends_on unit="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" />												
 		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" />
 	</dependencies>
 

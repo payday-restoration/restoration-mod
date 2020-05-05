@@ -4,7 +4,7 @@
 	<object file="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky" />
 
 	<dependencies>
-		
+		<depends_on unit="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" />						
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 	</dependencies>
 

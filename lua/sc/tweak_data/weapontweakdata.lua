@@ -9624,8 +9624,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shatters_fury.can_shoot_through_enemy = true
 	self.shatters_fury.can_shoot_through_shield = true
 	self.shatters_fury.can_shoot_through_wall = true
-	self.shatters_fury.armor_piercing_chance = 1		
-	self.shatters_fury.custom = true
+	self.shatters_fury.armor_piercing_chance = 1
+	--this line doesn't do shit
+	--self.shatters_fury.custom = true
 	
 	--OICW
 	self.osipr.tactical_reload = 1		
@@ -9662,7 +9663,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.panic_suppression_chance = 0.0		
 	self.osipr.has_description = true
 	self.osipr.desc_id = "bm_w_osipr_desc"
-	self.osipr.custom = false
+	--self.osipr.custom = false
 	
 	--Custom weapons below--
 if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44

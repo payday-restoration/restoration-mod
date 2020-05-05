@@ -913,7 +913,7 @@ function PlayerDamage:exit_custody()
 	self:_set_health_effect()
 
 	self._said_hurt = false
-	self._revives = Application:digest_value(tweak_data.player.custody.LIVES, true)
+	self._revives = Application:digest_value(tweak_data.player.damage.CUSTODY_LIVES, true)
 	self._revive_health_i = 1
 
 	managers.environment_controller:set_last_life(false)

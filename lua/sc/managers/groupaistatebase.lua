@@ -142,7 +142,6 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 
 	self._forbid_drop_in = true
 	self._ponr_is_on = true
-	managers.music:post_event(managers.music:jukebox_menu_track("ponr"))
 	
 	managers.network.matchmake:set_server_joinable(false)
 

@@ -2,6 +2,7 @@
     "bm_w_socom" : "Anubis .45",
     "bm_w_x_socom" : "Akimbo Anubis .45",
     "bm_wp_wpn_fps_upg_fl_pis_socomlam" : "Ra Tactical Module",
+	"bm_wp_wpn_fps_upg_fl_pis_socomlam_desc" : "placeholder text because i don't know how to make it display gadget keybind",
 
     "menu_l_global_value_socom" : "This is Placeholder Text!"
 }

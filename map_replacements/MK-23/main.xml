@@ -29,7 +29,7 @@
 	<WeaponMod id="wpn_fps_pis_socom_fl_adapter" based_on="wpn_fps_pis_shrew_fl_adapter" type="rail" pcs="nil" stats="nil" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_fl_adapter" drop="false" is_a_unlockable="false"/>
 
 	<WeaponNew unlock_level="45">
-		<weapon id="socom" based_on="usp" CLIP_AMMO_MAX="14" NR_CLIPS_MAX="11" lock_slide="true" texture_bundle_folder="mods" global_value="socom">
+		<weapon id="socom" based_on="usp" CLIP_AMMO_MAX="14" NR_CLIPS_MAX="11" lock_slide="true" texture_bundle_folder="mods" global_value="rest">
 			<stats spread="17" spread_moving="19" recoil="14" concealment="29" damage="39" />
 			<fire_mode_data fire_rate="0.125"/>
 			<animations reload_name_id="usp"/>
@@ -99,7 +99,7 @@
 	</WeaponNew>
 
 	<WeaponNew unlock_level="45">
-		<weapon id="x_socom" based_on="x_usp" CLIP_AMMO_MAX="28" NR_CLIPS_MAX="6" lock_slide="true" texture_bundle_folder="mods" global_value="socom">
+		<weapon id="x_socom" based_on="x_usp" CLIP_AMMO_MAX="28" NR_CLIPS_MAX="6" lock_slide="true" texture_bundle_folder="mods" global_value="rest">
 			<stats spread="17" spread_moving="19" recoil="14" concealment="28" damage="39" />
 			<fire_mode_data fire_rate="0.15"/>
 			<animations reload_name_id="jowi" recoil_steelsight="true" has_steelsight_stance="true" >

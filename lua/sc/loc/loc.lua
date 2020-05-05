@@ -135,7 +135,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.",
 		
 		--socom deez nuts--
-		["bm_w_socom_desc"] = "",
+		["bm_w_socom_desc"] = "Jackal's sidearm of choice.",
 		
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",

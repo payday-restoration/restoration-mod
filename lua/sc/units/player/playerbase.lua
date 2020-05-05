@@ -71,7 +71,7 @@ function PlayerBase:_setup_suspicion_and_detection_data()
 	}
 end
 
-function PlayerBase:replenish()
+--[[ function PlayerBase:replenish()
 	for id, weapon in pairs(self._unit:inventory():available_selections()) do
 		if alive(weapon.unit) then
 			weapon.unit:base():remove_ammo(1 - tweak_data.player.damage.custody_ammo_kept)
@@ -81,3 +81,4 @@ function PlayerBase:replenish()
 
 	self._unit:character_damage():exit_custody()
 end
+]] --Doesn't seem to be used for custody.

@@ -74,10 +74,7 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	end
 
 	if self:_is_titan_tased() then
-		log("Is Titan Tased")
 		multiplier = multiplier * self:_titan_tase_speed_mult()
-	else
-		log("DAB")
 	end
 
 	local damage_speed_multiplier = managers.player:temporary_upgrade_value("temporary", "damage_speed_multiplier", managers.player:temporary_upgrade_value("temporary", "team_damage_speed_multiplier_received", 1))
@@ -886,8 +883,8 @@ function PlayerManager:fixed_health_regen()
 
 	return health_regen
 end
-
 function PlayerManager:activate_db_regen()
+
 	self._db_regen_endtime = Application:time() + tweak_data.upgrades.values.doctor_bag.passive_regen_duration
 end
 

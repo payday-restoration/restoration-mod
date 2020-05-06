@@ -1412,7 +1412,7 @@ function CopDamage:damage_melee(attack_data)
 
 	self:_send_melee_attack_result(attack_data, damage_percent, damage_effect_percent, hit_offset_height, i_result, body_index)
 	self:_on_damage_received(attack_data)
-	log(damage)
+
 	return result
 end
 

@@ -2686,8 +2686,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.boxing_gloves.info_id = "bm_melee_boxing_gloves_info"
 	self.melee_weapons.boxing_gloves.stats.min_damage = 1.0
 	self.melee_weapons.boxing_gloves.stats.max_damage = 2.0
-	self.melee_weapons.boxing_gloves.stats.min_damage_effect = 10
-	self.melee_weapons.boxing_gloves.stats.max_damage_effect = 15
+	self.melee_weapons.boxing_gloves.stats.min_damage_effect = 10.8
+	self.melee_weapons.boxing_gloves.stats.max_damage_effect = 11.5
 	self.melee_weapons.boxing_gloves.stats.charge_time = 1
 	self.melee_weapons.boxing_gloves.stats.range = 170
 	self.melee_weapons.boxing_gloves.stats.concealment = 28
@@ -3126,8 +3126,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.mining_pick.make_effect = true
 	self.melee_weapons.mining_pick.stats.min_damage = 4.5
 	self.melee_weapons.mining_pick.stats.max_damage = 9.1
-	self.melee_weapons.mining_pick.stats.min_damage_effect = 1.8
-	self.melee_weapons.mining_pick.stats.max_damage_effect = 2.1
+	self.melee_weapons.mining_pick.stats.min_damage_effect = 1.7778
+	self.melee_weapons.mining_pick.stats.max_damage_effect = 2.0275
 	self.melee_weapons.mining_pick.stats.charge_time = 1.75
 	self.melee_weapons.mining_pick.stats.range = 205
 	self.melee_weapons.mining_pick.stats.concealment = 25
@@ -3241,7 +3241,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 			"var3",
 			"var4"
 	}
-	self.melee_weapons.switchblade.repeat_expire_t = 0.45
+	self.melee_weapons.switchblade.repeat_expire_t = 0.5
 	self.melee_weapons.switchblade.stats.min_damage = 2.4
 	self.melee_weapons.switchblade.stats.max_damage = 4.6
 	self.melee_weapons.switchblade.stats.min_damage_effect = 0.8
@@ -3419,8 +3419,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.iceaxe.info_id = "bm_melee_iceaxe_info"
 	self.melee_weapons.iceaxe.stats.min_damage = 4.5
 	self.melee_weapons.iceaxe.stats.max_damage = 9.1
-	self.melee_weapons.iceaxe.stats.min_damage_effect = 0.5
-	self.melee_weapons.iceaxe.stats.max_damage_effect = 0.7
+	self.melee_weapons.iceaxe.stats.min_damage_effect = 0.46667
+	self.melee_weapons.iceaxe.stats.max_damage_effect = 0.53297
 	self.melee_weapons.iceaxe.stats.charge_time = 1.55
 	self.melee_weapons.iceaxe.stats.range = 185
 	self.melee_weapons.iceaxe.stats.concealment = 27

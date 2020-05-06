@@ -1,5 +1,486 @@
 local is_win_32 = SystemInfo:platform() == Idstring("WIN32")
 local is_not_win_32 = not is_win_32
+Hooks:PostHook( WeaponFactoryTweakData, "init", "SC_weapons", function(self)
+	self:_init_new_weapon_sync()
+end)
+
+function WeaponFactoryTweakData:_init_new_weapon_sync()
+	self.parts.wpn_fps_pis_new_weapon_sync_body_standard = {
+		a_obj = "a_body",
+		type = "lower_reciever",
+		name_id = "bm_wp_new_weapon_sync_body_standard",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_body_standard",
+		stats = {
+			value = 1
+		},
+		animations = {
+			reload = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
+		},
+		adds = {
+			"wpn_fps_pis_new_weapon_sync_lock"
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_b_long = {
+		a_obj = "a_b",
+		type = "slide",
+		name_id = "bm_wp_new_weapon_sync_b_long",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_b_long",
+		pcs = {
+			10,
+			20,
+			30,
+			40
+		},
+		stats = {
+			value = 7,
+			concealment = -3,
+			damage = 2,
+			spread = 2,
+			spread_moving = -3
+		},
+		forbids = {
+			"wpn_fps_pis_new_weapon_sync_co_long",
+			"wpn_fps_pis_new_weapon_sync_co_short",
+			"wpn_fps_upg_ns_pis_meatgrinder",
+			"wpn_fps_upg_ns_pis_ipsccomp"
+		},
+		override = {
+			wpn_upg_o_marksmansight_front = {
+				a_obj = "a_ol"
+			}
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_b_standard = {
+		a_obj = "a_b",
+		type = "slide",
+		name_id = "bm_wp_new_weapon_sync_b_standard",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_b_standard",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_co_long = {
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_co_long",
+		a_obj = "a_co",
+		type = "barrel_ext",
+		name_id = "bm_wp_new_weapon_sync_co_long",
+		pcs = {
+			10,
+			20,
+			30,
+			40
+		},
+		stats = {
+			recoil = 2,
+			concealment = -2,
+			damage = 2,
+			value = 8,
+			spread_moving = -2
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_co_short = {
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_co_short",
+		a_obj = "a_co",
+		type = "barrel_ext",
+		name_id = "bm_wp_new_weapon_sync_co_short",
+		pcs = {
+			10,
+			20,
+			30,
+			40
+		},
+		stats = {
+			recoil = 1,
+			concealment = -1,
+			damage = 1,
+			suppression = -5,
+			value = 6,
+			spread_moving = -1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_fg_rail = {
+		a_obj = "a_fg",
+		type = "extra",
+		name_id = "bm_wp_new_weapon_sync_fg_rail",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_fg_rail",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_g_bling = {
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_g_bling",
+		a_obj = "a_g",
+		type = "grip",
+		name_id = "bm_wp_new_weapon_sync_g_bling",
+		pcs = {
+			10,
+			20,
+			30,
+			40
+		},
+		stats = {
+			value = 10,
+			spread_moving = -2,
+			recoil = 2,
+			concealment = 1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_g_ergo = {
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_g_ergo",
+		a_obj = "a_g",
+		type = "grip",
+		name_id = "bm_wp_new_weapon_sync_g_ergo",
+		pcs = {
+			10,
+			20,
+			30,
+			40
+		},
+		stats = {
+			spread_moving = 2,
+			value = 6,
+			concealment = -1,
+			spread = 1,
+			recoil = -1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_g_standard = {
+		a_obj = "a_g",
+		type = "grip",
+		name_id = "bm_wp_new_weapon_sync_g_standard",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_g_standard",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_m_extended = {
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_m_extended",
+		type = "magazine",
+		name_id = "bm_wp_new_weapon_sync_m_extended",
+		a_obj = "a_m",
+		pcs = {
+			10,
+			20,
+			30,
+			40
+		},
+		bullet_objects = {
+			amount = 5,
+			prefix = "g_bullet_"
+		},
+		stats = {
+			concealment = -2,
+			spread_moving = -2,
+			value = 7,
+			extra_ammo = 3
+		},
+		animations = {
+			reload_not_empty = "reload_not_empty",
+			reload = "reload"
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_m_standard = {
+		a_obj = "a_m",
+		type = "magazine",
+		name_id = "bm_wp_new_weapon_sync_m_standard",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_m_standard",
+		bullet_objects = {
+			amount = 5,
+			prefix = "g_bullet_"
+		},
+		stats = {
+			value = 1
+		},
+		animations = {
+			reload_not_empty = "reload_not_empty",
+			reload = "reload"
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_o_standard_rear = {
+		a_obj = "a_o",
+		type = "extra",
+		name_id = "bm_wp_new_weapon_sync_o_standard_rear",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_o_standard_rear",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_o_standard_front = {
+		a_obj = "a_os",
+		type = "extra",
+		name_id = "bm_wp_new_weapon_sync_o_standard_front",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_o_standard_front",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_o_standard_front_long = {
+		a_obj = "a_ol",
+		type = "extra",
+		name_id = "bm_wp_new_weapon_sync_o_standard_front_long",
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync_pts/wpn_fps_pis_new_weapon_sync_o_standard_front_long",
+		stats = {
+			value = 1
+		}
+	}
+	self.parts.wpn_fps_pis_new_weapon_sync_body_standard.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_body_standard"
+	self.parts.wpn_fps_pis_new_weapon_sync_b_long.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_b_long"
+	self.parts.wpn_fps_pis_new_weapon_sync_b_standard.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_b_standard"
+	self.parts.wpn_fps_pis_new_weapon_sync_co_long.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_co_long"
+	self.parts.wpn_fps_pis_new_weapon_sync_co_short.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_co_short"
+	self.parts.wpn_fps_pis_new_weapon_sync_fg_rail.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_fg_rail"
+	self.parts.wpn_fps_pis_new_weapon_sync_g_bling.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_g_bling"
+	self.parts.wpn_fps_pis_new_weapon_sync_g_ergo.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_g_ergo"
+	self.parts.wpn_fps_pis_new_weapon_sync_g_standard.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_g_standard"
+	self.parts.wpn_fps_pis_new_weapon_sync_m_extended.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_m_extended"
+	self.parts.wpn_fps_pis_new_weapon_sync_m_standard.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_m_standard"
+	self.parts.wpn_fps_pis_new_weapon_sync_o_standard_rear.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_o_standard_rear"
+	self.parts.wpn_fps_pis_new_weapon_sync_o_standard_front.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_o_standard_front"
+	self.parts.wpn_fps_pis_new_weapon_sync_o_standard_front_long.third_unit = "units/payday2/weapons/wpn_third_pis_new_weapon_sync_pts/wpn_third_pis_new_weapon_sync_o_standard_front_long"
+	self.wpn_fps_pis_new_weapon_sync = {
+		unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync/wpn_fps_pis_new_weapon_sync",
+		animations = {
+			reload = "reload",
+			fire = "recoil",
+			fire_steelsight = "recoil",
+			magazine_empty = "last_recoil"
+		},
+		optional_types = {
+			"barrel_ext",
+			"gadget",
+			"sight"
+		},
+		adds = {
+			wpn_fps_upg_fl_pis_laser = {
+				"wpn_fps_pis_new_weapon_sync_fg_rail"
+			},
+			wpn_fps_upg_fl_pis_tlr1 = {
+				"wpn_fps_pis_new_weapon_sync_fg_rail"
+			},
+			wpn_fps_upg_fl_pis_crimson = {
+				"wpn_fps_pis_new_weapon_sync_fg_rail"
+			},
+			wpn_fps_upg_fl_pis_x400v = {
+				"wpn_fps_pis_new_weapon_sync_fg_rail"
+			},
+			wpn_fps_upg_fl_pis_m3x = {
+				"wpn_fps_pis_new_weapon_sync_fg_rail"
+			},
+			wpn_fps_pis_new_weapon_sync_b_standard = {
+				"wpn_fps_pis_new_weapon_sync_o_standard_rear",
+				"wpn_fps_pis_new_weapon_sync_o_standard_front"
+			},
+			wpn_fps_pis_new_weapon_sync_b_long = {
+				"wpn_fps_pis_new_weapon_sync_o_standard_rear",
+				"wpn_fps_pis_new_weapon_sync_o_standard_front_long"
+			},
+			wpn_fps_pis_new_weapon_sync_b_modern = {
+				"wpn_fps_pis_new_weapon_sync_o_standard_rear",
+				"wpn_fps_pis_new_weapon_sync_o_standard_front"
+			},
+			wpn_fps_upg_o_specter = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_aimpoint = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_docter = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_eotech = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_t1micro = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_cmore = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_acog = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_cs = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_eotech_xps = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_reflex = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_rx01 = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_rx30 = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_spot = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_bmg = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_fc1 = {
+				"wpn_fps_pis_rage_o_adapter"
+			},
+			wpn_fps_upg_o_uh = {
+				"wpn_fps_pis_rage_o_adapter"
+			}
+		},
+		override = {
+			wpn_upg_o_marksmansight_rear = {
+				a_obj = "a_o",
+				forbids = table.list_add(self.parts.wpn_upg_o_marksmansight_rear.forbids, {
+					"wpn_fps_pis_new_weapon_sync_o_standard_front",
+					"wpn_fps_pis_new_weapon_sync_o_standard_front_long",
+					"wpn_fps_pis_new_weapon_sync_o_standard_rear"
+				})
+			},
+			wpn_upg_o_marksmansight_front = {
+				a_obj = "a_os"
+			},
+			wpn_fps_upg_o_specter = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_aimpoint = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_aimpoint_2 = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_docter = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_eotech = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_t1micro = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_cmore = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_acog = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_cs = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_eotech_xps = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_reflex = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_rx01 = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_rx30 = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_rmr = {
+				parent = "lower_reciever"
+			},
+			wpn_fps_upg_o_spot = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_rms = {
+				parent = "lower_reciever"
+			},
+			wpn_fps_upg_o_rikt = {
+				parent = "lower_reciever"
+			},
+			wpn_fps_upg_o_bmg = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_fc1 = {
+				a_obj = "a_quite"
+			},
+			wpn_fps_upg_o_uh = {
+				a_obj = "a_quite"
+			}
+		},
+		default_blueprint = {
+			"wpn_fps_pis_new_weapon_sync_body_standard",
+			"wpn_fps_pis_new_weapon_sync_b_standard",
+			"wpn_fps_pis_new_weapon_sync_g_standard",
+			"wpn_fps_pis_new_weapon_sync_m_standard"
+		},
+		uses_parts = {
+			"wpn_fps_pis_new_weapon_sync_body_standard",
+			"wpn_fps_pis_new_weapon_sync_b_standard",
+			"wpn_fps_pis_new_weapon_sync_b_long",
+			"wpn_fps_pis_new_weapon_sync_co_long",
+			"wpn_fps_pis_new_weapon_sync_co_short",
+			"wpn_fps_pis_new_weapon_sync_fg_rail",
+			"wpn_fps_pis_new_weapon_sync_g_bling",
+			"wpn_fps_pis_new_weapon_sync_g_ergo",
+			"wpn_fps_pis_new_weapon_sync_g_standard",
+			"wpn_fps_pis_new_weapon_sync_m_extended",
+			"wpn_fps_pis_new_weapon_sync_m_standard",
+			"wpn_fps_pis_new_weapon_sync_o_standard_rear",
+			"wpn_fps_pis_new_weapon_sync_o_standard_front",
+			"wpn_fps_pis_new_weapon_sync_o_standard_front_long",
+			"wpn_upg_o_marksmansight_rear",
+			"wpn_fps_upg_fl_pis_laser",
+			"wpn_fps_upg_fl_pis_tlr1",
+			"wpn_fps_upg_ns_pis_large",
+			"wpn_fps_upg_ns_pis_medium",
+			"wpn_fps_upg_ns_pis_small",
+			"wpn_fps_upg_ns_pis_large_kac",
+			"wpn_fps_upg_ns_pis_medium_gem",
+			"wpn_fps_pis_new_weapon_sync_extra",
+			"wpn_fps_pis_rage_o_adapter",
+			"wpn_fps_pis_new_weapon_sync_lock",
+			"wpn_fps_upg_ns_pis_medium_slim",
+			"wpn_fps_upg_pis_ns_flash",
+			"wpn_fps_upg_o_specter",
+			"wpn_fps_upg_o_aimpoint",
+			"wpn_fps_upg_o_docter",
+			"wpn_fps_upg_o_eotech",
+			"wpn_fps_upg_o_t1micro",
+			"wpn_fps_upg_o_cmore",
+			"wpn_fps_upg_o_aimpoint_2",
+			"wpn_fps_upg_o_acog",
+			"wpn_fps_upg_o_eotech_xps",
+			"wpn_fps_upg_o_reflex",
+			"wpn_fps_upg_o_rx01",
+			"wpn_fps_upg_o_rx30",
+			"wpn_fps_upg_o_cs",
+			"wpn_fps_upg_o_rmr",
+			"wpn_fps_upg_fl_pis_crimson",
+			"wpn_fps_upg_fl_pis_x400v",
+			"wpn_fps_upg_ns_pis_meatgrinder",
+			"wpn_fps_upg_ns_pis_ipsccomp",
+			"wpn_fps_upg_fl_pis_m3x",
+			"wpn_fps_upg_ns_ass_filter",
+			"wpn_fps_upg_ns_pis_jungle",
+			"wpn_fps_pis_new_weapon_sync_b_legend",
+			"wpn_fps_upg_o_spot",
+			"wpn_fps_upg_o_xpsg33_magnifier",
+			"wpn_fps_pis_new_weapon_sync_b_modern",
+			"wpn_fps_upg_ns_pis_typhoon",
+			"wpn_fps_upg_o_sig",
+			"wpn_fps_upg_o_bmg",
+			"wpn_fps_upg_o_uh",
+			"wpn_fps_upg_o_fc1",
+			"wpn_fps_upg_o_rms",
+			"wpn_fps_upg_o_rikt"
+		}
+	}
+	self.wpn_fps_pis_new_weapon_sync_npc = deep_clone(self.wpn_fps_pis_new_weapon_sync)
+	self.wpn_fps_pis_new_weapon_sync_npc.unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync/wpn_fps_pis_new_weapon_sync_npc"
+	self.wpn_fps_pis_new_weapon_sync_primary = deep_clone(self.wpn_fps_pis_new_weapon_sync)
+	self.wpn_fps_pis_new_weapon_sync_primary.unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync/wpn_fps_pis_new_weapon_sync_primary"
+	self.wpn_fps_pis_new_weapon_sync_primary_npc = deep_clone(self.wpn_fps_pis_new_weapon_sync_npc)
+	self.wpn_fps_pis_new_weapon_sync_primary_npc.unit = "units/payday2/weapons/wpn_fps_pis_new_weapon_sync/wpn_fps_pis_new_weapon_sync_primary_npc"
+end
 
 function WeaponFactoryTweakData:_init_silencers()
 	self.parts.wpn_fps_upg_ns_ass_smg_large = {

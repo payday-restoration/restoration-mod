@@ -25,7 +25,7 @@
     <WeaponMod based_on="wpn_fps_pis_rage_body_smooth" id="wpn_fps_pis_shatters_fury_body_smooth" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_smooth" type="upper_reciever" drop="false" texture_bundle_folder="mods" is_a_unlockable="true" global_value = "sc"/>
 
     <WeaponNew>
-        <weapon id="shatters_fury" based_on="new_raging_bull" unlock_level="55" texture_bundle_folder="mods" global_value="rest">            
+        <weapon id="shatters_fury" based_on="new_weapon_sync" unlock_level="55" texture_bundle_folder="mods" global_value="rest">            
             <stats damage="90" concealment="21"/>
             <fire_mode_data fire_rate="0.19047619047"/>
 			<use_data selection_index="2"/>

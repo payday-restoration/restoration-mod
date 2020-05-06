@@ -1,4 +1,126 @@
 local job = Global.level_data and Global.level_data.level_id
+local PICKUP = {
+	SNIPER_HIGH_DAMAGE = 6,
+	SHOTGUN_HIGH_CAPACITY = 4,
+	AR_HIGH_CAPACITY = 2,
+	OTHER = 1,
+	SNIPER_LOW_DAMAGE = 5,
+	AR_MED_CAPACITY = 3
+}
+
+function WeaponTweakData:_init_new_weapon_sync(weapon_data)
+	self.new_weapon_sync = {
+		categories = {
+			"pistol"
+		},
+		damage_melee = 3,
+		damage_melee_effect_mul = 1,
+		sounds = {}
+	}
+	self.new_weapon_sync.sounds.fire = "deagle_fire"
+	self.new_weapon_sync.sounds.dryfire = "secondary_dryfire"
+	self.new_weapon_sync.sounds.enter_steelsight = "pistol_steel_sight_enter"
+	self.new_weapon_sync.sounds.leave_steelsight = "pistol_steel_sight_exit"
+	self.new_weapon_sync.sounds.magazine_empty = "wp_pistol_slide_lock"
+	self.new_weapon_sync.FIRE_MODE = "single"
+	self.new_weapon_sync.fire_mode_data = {
+		fire_rate = 0.25
+	}
+	self.new_weapon_sync.single = {
+		fire_rate = 0.25
+	}
+	self.new_weapon_sync.timers = {
+		reload_not_empty = 1.85,
+		reload_empty = 3.1,
+		unequip = 0.5,
+		equip = 0.35
+	}
+	self.new_weapon_sync.name_id = "bm_w_deagle_gg"
+	self.new_weapon_sync.desc_id = "bm_w_deagle_gg_desc"
+	self.new_weapon_sync.description_id = "des_deagle"
+	self.new_weapon_sync.muzzleflash = "effects/payday2/particles/weapons/556_auto_fps"
+	self.new_weapon_sync.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+	self.new_weapon_sync.use_data = {selection_index = 1}
+	self.new_weapon_sync.DAMAGE = 2
+	self.new_weapon_sync.CLIP_AMMO_MAX = 10
+	self.new_weapon_sync.NR_CLIPS_MAX = 5
+	self.new_weapon_sync.AMMO_MAX = self.new_weapon_sync.CLIP_AMMO_MAX * self.new_weapon_sync.NR_CLIPS_MAX
+	self.new_weapon_sync.AMMO_PICKUP = self:_pickup_chance(self.new_weapon_sync.AMMO_MAX, PICKUP.OTHER)
+	self.new_weapon_sync.spread = {
+		standing = self.new_m4.spread.standing,
+		crouching = self.new_m4.spread.crouching,
+		steelsight = self.new_m4.spread.steelsight,
+		moving_standing = self.new_m4.spread.moving_standing,
+		moving_crouching = self.new_m4.spread.moving_crouching,
+		moving_steelsight = self.new_m4.spread.moving_steelsight
+	}
+	self.new_weapon_sync.kick = {
+		standing = self.glock_17.kick.standing
+	}
+	self.new_weapon_sync.kick.crouching = self.new_weapon_sync.kick.standing
+	self.new_weapon_sync.kick.steelsight = self.new_weapon_sync.kick.standing
+	self.new_weapon_sync.crosshair = {
+		standing = {},
+		crouching = {},
+		steelsight = {}
+	}
+	self.new_weapon_sync.crosshair.standing.offset = 0.2
+	self.new_weapon_sync.crosshair.standing.moving_offset = 0.6
+	self.new_weapon_sync.crosshair.standing.kick_offset = 0.4
+	self.new_weapon_sync.crosshair.crouching.offset = 0.1
+	self.new_weapon_sync.crosshair.crouching.moving_offset = 0.6
+	self.new_weapon_sync.crosshair.crouching.kick_offset = 0.3
+	self.new_weapon_sync.crosshair.steelsight.hidden = true
+	self.new_weapon_sync.crosshair.steelsight.offset = 0
+	self.new_weapon_sync.crosshair.steelsight.moving_offset = 0
+	self.new_weapon_sync.crosshair.steelsight.kick_offset = 0.1
+	self.new_weapon_sync.shake = {
+		fire_multiplier = -1,
+		fire_steelsight_multiplier = -1
+	}
+	self.new_weapon_sync.autohit = autohit_pistol_default
+	self.new_weapon_sync.aim_assist = aim_assist_pistol_default
+	self.new_weapon_sync.animations = {
+		equip_id = "equip_glock",
+		recoil_steelsight = true,
+		magazine_empty = "last_recoil"
+	}
+	self.new_weapon_sync.panic_suppression_chance = 0.2
+	self.new_weapon_sync.stats = {
+		zoom = 1,
+		total_ammo_mod = 21,
+		damage = 120,
+		alert_size = 7,
+		spread = 20,
+		spread_moving = 20,
+		recoil = 8,
+		value = 1,
+		extra_ammo = 51,
+		reload = 11,
+		suppression = 7,
+		concealment = 28
+	}
+end
+
+function WeaponTweakData:_init_new_weapon_sync_npc()	
+end
+
+function WeaponTweakData:_init_new_weapon_sync_crew()
+	-- self.new_weapon_sync_crew.categories = clone(self.new_weapon_sync.categories)
+	-- self.new_weapon_sync_crew.sounds.prefix = "deagle_npc"
+	-- self.new_weapon_sync_crew.use_data.selection_index = 1
+	-- self.new_weapon_sync_crew.DAMAGE = 4
+	-- self.new_weapon_sync_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+	-- self.new_weapon_sync_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+	-- self.new_weapon_sync_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+	-- self.new_weapon_sync_crew.CLIP_AMMO_MAX = 10
+	-- self.new_weapon_sync_crew.NR_CLIPS_MAX = 5
+	-- self.new_weapon_sync_crew.pull_magazine_during_reload = "pistol"
+	-- self.new_weapon_sync_crew.hold = "pistol"
+	-- self.new_weapon_sync_crew.alert_size = 2500
+	-- self.new_weapon_sync_crew.suppression = 1
+	-- self.new_weapon_sync_crew.FIRE_MODE = "single"
+end
 
 function WeaponTweakData:_init_data_sentry_gun_npc()
 	self.sentry_gun.categories = {}
@@ -3465,6 +3587,8 @@ end
 
 Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
+	self:_init_new_weapon_sync(weapon_data)
+	self:_init_new_weapon_sync_crew()
 	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1

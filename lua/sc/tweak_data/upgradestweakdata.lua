@@ -62,7 +62,8 @@ function UpgradesTweakData:init(tweak_data)
 					"colt_1911",
 					"mac10",
 					"hajk",
-					"x_mac10"
+					"x_mac10",
+					"new_weapon_sync"
 				}
 			},	
 		l10 = {

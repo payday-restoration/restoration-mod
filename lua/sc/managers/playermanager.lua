@@ -760,7 +760,6 @@ function PlayerManager:_internal_load()
 		amount = self:get_grenade_amount(peer_id) or amount
 	end
 
-
 	if amount and not grenade.base_cooldown then
 		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount)
 		amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
@@ -774,7 +773,7 @@ function PlayerManager:_internal_load()
 
 	if not self._respawn then
 		self:_add_level_equipment(player)
-
+		self._down_time = tweak_data.player.damage.DOWNED_TIME
 		for i, name in ipairs(self._global.default_kit.special_equipment_slots) do
 			local ok_name = self._global.equipment[name] and name
 
@@ -817,6 +816,15 @@ function PlayerManager:_internal_load()
 		end
 
 		self:update_deployable_selection_to_peers()
+	else
+		for id, weapon in pairs(player:inventory():available_selections()) do
+			if alive(weapon.unit) then
+				weapon.unit:base():remove_ammo(1 - tweak_data.player.damage.custody_ammo_kept)
+				managers.hud:set_ammo_amount(id, weapon.unit:base():ammo_info())
+			end
+		end
+		self._down_time = self._down_time - tweak_data.player.damage.DOWNED_TIME_DEC
+		player:character_damage():exit_custody(math.max(tweak_data.player.damage.DOWNED_TIME_MIN, self._down_time))
 	end
 
 	if self:has_category_upgrade("player", "cocaine_stacking") then

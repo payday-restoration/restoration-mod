@@ -901,7 +901,7 @@ function PlayerDamage:consume_messiah_charge()
 	return false
 end
 
-function PlayerDamage:exit_custody()
+function PlayerDamage:exit_custody(down_timer)
 	if (Application:editor() or managers.platform:presence() == "Playing") and (self:arrested() or self:need_revive()) then
 		self:revive(true)
 	end
@@ -916,7 +916,7 @@ function PlayerDamage:exit_custody()
 
 	managers.environment_controller:set_last_life(false)
 
-	self._down_time = math.max(tweak_data.player.damage.DOWNED_TIME_MIN, self._down_time - tweak_data.player.damage.DOWNED_TIME_DEC)
+	self._down_time = down_timer
 	self._messiah_charges = managers.player:upgrade_value("player", "pistol_revive_from_bleed_out", 0)
 	managers.player:refill_messiah_charges()
 

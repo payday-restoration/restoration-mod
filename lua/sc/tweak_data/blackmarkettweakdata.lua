@@ -2616,16 +2616,19 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.moneybundle.expire_t = 1.1
 
 	--About time--
-	self.melee_weapons.chef.stats.min_damage = 4.5
-	self.melee_weapons.chef.stats.max_damage = 9.1
-	self.melee_weapons.chef.stats.min_damage_effect = 0.6
-	self.melee_weapons.chef.stats.max_damage_effect = 0.7
-	self.melee_weapons.chef.stats.charge_time = 1.15
+		--About time--
+	self.melee_weapons.chef.info_id = "bm_melee_chef_info"
+	self.melee_weapons.chef.stats.min_damage = 0.65
+	self.melee_weapons.chef.stats.max_damage = 33.3
+	self.melee_weapons.chef.stats.min_damage_effect = 2
+	self.melee_weapons.chef.stats.max_damage_effect = 2
+	self.melee_weapons.chef.stats.charge_time = 7
 	self.melee_weapons.chef.stats.range = 170
 	self.melee_weapons.chef.repeat_expire_t = 0.65
 	self.melee_weapons.chef.stats.concealment = 28
 	self.melee_weapons.chef.melee_damage_delay = 0.1
 	self.melee_weapons.chef.expire_t = 1.1
+	self.melee_weapons.chef.special_weapon = "panic"
 
 	--Payday DLC? Nah it's a walking dead game you cunts.--
 	self.melee_weapons.barbedwire.anim_global_param = "melee_baseballbat"

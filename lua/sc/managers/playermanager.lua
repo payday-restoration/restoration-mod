@@ -922,3 +922,17 @@ end
 function PlayerManager:_titan_tase_speed_mult()
 	return 1 / (self._titan_tase_time - Application:time() + 1)
 end
+
+function PlayerManager:spread_psycho_knife_panic()
+	local pos = self:player_unit():position()
+	local area = 1000
+	local chance = 1
+	local amount = 200
+	local enemies = World:find_units_quick("sphere", pos, area, 12, 21)
+
+	for i, unit in ipairs(enemies) do
+		if unit:character_damage() then
+			unit:character_damage():build_suppression(amount, chance)
+		end
+	end
+end

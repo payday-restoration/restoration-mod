@@ -1035,10 +1035,14 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 			local action_data = {}
 			action_data.variant = "melee"
-			if melee_weapon.special_weapon == "taser" and charge_lerp_value >= 0.99 then
-				action_data.variant = "taser_tased"
+			if charge_lerp_value >= 0.99 then
+				if melee_weapon.special_weapon == "taser" then
+					action_data.variant = "taser_tased"
+				elseif melee_weapon.special_weapon == "panic" then
+					managers.player:spread_psycho_knife_panic()
+				end
 			end
-			
+				
 			if _G.IS_VR and melee_entry == "weapon" and not bayonet_melee then
 				dmg_multiplier = 0.1
 			end				

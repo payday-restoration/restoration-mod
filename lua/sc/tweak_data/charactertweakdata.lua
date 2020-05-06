@@ -2088,6 +2088,8 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.special_deaths = nil
 	self.spooc_titan.HEALTH_INIT = 90
 	self.spooc_titan.headshot_dmg_mul = 5.85	
+	self.spooc_titan.damage.bullet_damage_mul = 1.5
+	self.spooc_titan.damage.explosion_damage_mul = 1.75
 	if is_reaper or is_federales then	
 		self.spooc.speech_prefix_p1 = self._prefix_data_p1.cloaker()
 		self.spooc.speech_prefix_count = nil
@@ -2096,7 +2098,7 @@ function CharacterTweakData:_init_spooc(presets)
 		self.spooc_titan.speech_prefix_p1 = "t_spk"
 		self.spooc_titan.speech_prefix_count = nil
 	end
-	self.spooc_titan.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
+	self.spooc_titan.damage.hurt_severity = presets.hurt_severities.spooc_titan
 	self.spooc_titan.can_cloak = true
 	self.spooc_titan.can_be_tased = false
 	self.spooc_titan.priority_shout_max_dis = 0
@@ -2291,15 +2293,11 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.spawn_sound_event = "shield_identification"
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
-	if is_reaper or is_zombie or is_federales then
-		self.phalanx_minion.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.phalanx_minion.speech_prefix_p2 = self._speech_prefix_p2
-		self.phalanx_minion.speech_prefix_count = 4
+	if is_reaper or is_federales then
+		self.phalanx_minion.custom_voicework = "tswat_ru"
 	else
-		self.phalanx_minion.speech_prefix_p1 = "l5d"
-		self.phalanx_minion.speech_prefix_p2 = nil
-		self.phalanx_minion.speech_prefix_count = nil
-	end
+		self.phalanx_minion.custom_voicework = "tsniper"
+	end		
 	self.phalanx_minion.heal_cooldown = 30
 	table.insert(self._enemy_list, "phalanx_minion")
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
@@ -2332,6 +2330,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.suppression = nil
 	self.phalanx_vip.ecm_hurts = {}
 	self.phalanx_vip.is_special = true
+	self.phalanx_vip.custom_voicework = nil
 	self.phalanx_vip.speech_prefix_p1 = "cpw"
 	self.phalanx_vip.speech_prefix_p2 = nil
 	self.phalanx_vip.speech_prefix_count = nil
@@ -4016,6 +4015,19 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.hurt_severities.spooc = deep_clone(presets.hurt_severities.base)
+	presets.hurt_severities.spooc_titan = deep_clone(presets.hurt_severities.base)
+	presets.hurt_severities.spooc_titan.fire = {
+		health_reference = 1,
+		zones = {
+			{none = 1}
+		}
+	}
+	presets.hurt_severities.spooc_titan.melee = {
+		health_reference = "current",
+		zones = {
+			{none = 1}
+		}
+	}	
 	presets.hurt_severities.boom = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.boom.explosion = {
 		health_reference = 1,

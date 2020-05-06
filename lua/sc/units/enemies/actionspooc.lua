@@ -1378,7 +1378,7 @@ function ActionSpooc:anim_act_clbk(anim_act)
 			end
 		end
 	elseif self._strike_unit:movement().on_SPOOCed then
-		spooc_res = self._strike_unit:movement():on_SPOOCed(self._unit, self._is_flying_strike and "flying_strike" or "sprint_attack")
+		spooc_res = self._strike_unit:movement():on_SPOOCed(self._unit, self._is_flying_strike and "flying_strike")
 	elseif self._strike_unit:character_damage().damage_melee then
 		local from_pos = self._is_flying_strike and self._unit:movement():m_head_pos() or self._unit:movement():m_com()
 		local attack_dir = self._strike_unit:movement():m_com() - from_pos

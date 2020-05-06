@@ -10,20 +10,18 @@ function TeamAIMovement:sync_reload_weapon(empty_reload, reload_speed_multiplier
 	self:action_request(reload_action)
 end
 
-function TeamAIMovement:on_jump_SPOOCed(enemy_unit)
+function TeamAIMovement:on_SPOOCed(enemy_unit, flying_strike)
 	if self._unit:character_damage()._god_mode then
 		return
 	end
 
-	self._unit:brain():set_logic("surrender")
-	self._unit:network():send("arrested")
-	self._unit:character_damage():on_arrested()
-
-	return true
-end
-
-function TeamAIMovement:on_SPOOCed(enemy_unit)
-	self._unit:character_damage():on_incapacitated()
+	if flying_strike then
+		self._unit:brain():set_logic("surrender")
+		self._unit:network():send("arrested")
+		self._unit:character_damage():on_arrested()	
+	else
+		self._unit:character_damage():on_incapacitated()
+	end
 
 	return true
 end

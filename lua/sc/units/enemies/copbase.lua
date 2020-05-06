@@ -106,11 +106,16 @@ function CopBase:default_weapon_name()
 	
 	--Bolivian Weapons
 	if self._unit:name() == Idstring("units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01") then
-		default_weapon_id = "mac11"	
+		default_weapon_id = "mossberg"	
 	elseif self._unit:name() == Idstring("units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02") then
-		default_weapon_id = "mossberg"		
+		default_weapon_id = "mac11"		
 	elseif self._unit:name() == Idstring("units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager") then
 		default_weapon_id = "raging_bull"				
+	end
+	
+	--Security Guards
+	if self._unit:name() == Idstring("units/payday2/characters/ene_security_3/ene_security_3") then
+		default_weapon_id = "r870"	
 	end
 
 	--Giving Friendly AI silenced pistols

@@ -1077,7 +1077,7 @@ function CopDamage:damage_melee(attack_data)
 	end
 
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
-	local headshot_multiplier = 1
+	local headshot_multiplier = attack_data.headshot_multiplier
 	local damage = attack_data.damage
 	local damage_effect = attack_data.damage_effect
 
@@ -1124,7 +1124,7 @@ function CopDamage:damage_melee(attack_data)
 
 		if head then
 			managers.player:on_headshot_dealt(self._unit, attack_data)
-			headshot_multiplier = managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
 		end
 	end
 
@@ -1412,7 +1412,7 @@ function CopDamage:damage_melee(attack_data)
 
 	self:_send_melee_attack_result(attack_data, damage_percent, damage_effect_percent, hit_offset_height, i_result, body_index)
 	self:_on_damage_received(attack_data)
-
+	log(damage)
 	return result
 end
 

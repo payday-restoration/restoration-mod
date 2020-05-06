@@ -1055,6 +1055,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			action_data.name_id = melee_entry
 			action_data.charge_lerp_value = charge_lerp_value
 			action_data.backstab_multiplier = melee_weapon.backstab_damage_multiplier or 1
+			action_data.headshot_multiplier = melee_weapon.headshot_damage_multiplier or 1
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
 				self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {nil, 0}

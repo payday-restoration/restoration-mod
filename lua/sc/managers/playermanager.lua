@@ -154,9 +154,14 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			self._throw_regen_kills = 0
 		end
 	end
-
-	if variant == "melee" and self:has_category_upgrade("player", "biker_armor_regen") then
-		damage_ext:tick_biker_armor_regen(self:upgrade_value("player", "biker_armor_regen")[3])
+	if variant == "melee" or weapon_melee then
+		if self:has_category_upgrade("player", "biker_armor_regen") then
+			damage_ext:tick_biker_armor_regen(self:upgrade_value("player", "biker_armor_regen")[3])
+		end
+		local melee_weapon = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
+		if melee_weapon.special_weapon and melee_weapon.special_weapon == "stamina_restore" then
+			player_unit:movement():add_stamina(player_unit:movement():_max_stamina())
+		end
 	end
 
 	if damage_ext:health_ratio() < 0.5 then

@@ -2683,16 +2683,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.boxcutter.melee_damage_delay = 0.1
 	
 	--Ding Ding--
-	self.melee_weapons.boxing_gloves.stats.min_damage = 2.4
-	self.melee_weapons.boxing_gloves.stats.max_damage = 4.6
-	self.melee_weapons.boxing_gloves.stats.min_damage_effect = 5
-	self.melee_weapons.boxing_gloves.stats.max_damage_effect = 5.5
+	self.melee_weapons.boxing_gloves.info_id = "bm_melee_boxing_gloves_info"
+	self.melee_weapons.boxing_gloves.stats.min_damage = 1.0
+	self.melee_weapons.boxing_gloves.stats.max_damage = 2.0
+	self.melee_weapons.boxing_gloves.stats.min_damage_effect = 10
+	self.melee_weapons.boxing_gloves.stats.max_damage_effect = 15
 	self.melee_weapons.boxing_gloves.stats.charge_time = 1
 	self.melee_weapons.boxing_gloves.stats.range = 170
 	self.melee_weapons.boxing_gloves.stats.concealment = 28
 	self.melee_weapons.boxing_gloves.repeat_expire_t = 0.6
 	self.melee_weapons.boxing_gloves.melee_damage_delay = 0.2
 	self.melee_weapons.boxing_gloves.expire_t = 1.1
+	self.melee_weapons.boxing_gloves.special_weapon = "stamina_restore"
 
 	--Ayy Hammer--
 	self.melee_weapons.alien_maul.anim_global_param = "melee_baseballbat"
@@ -3119,18 +3121,20 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.bowie.expire_t = 1.1		
 
 	--Manly Miner Men--
+	self.melee_weapons.mining_pick.info_id = "bm_melee_mining_pick_info"
 	self.melee_weapons.mining_pick.make_decal = true
 	self.melee_weapons.mining_pick.make_effect = true
 	self.melee_weapons.mining_pick.stats.min_damage = 6
 	self.melee_weapons.mining_pick.stats.max_damage = 12.1
-	self.melee_weapons.mining_pick.stats.min_damage_effect = 0.8
-	self.melee_weapons.mining_pick.stats.max_damage_effect = 0.9
+	self.melee_weapons.mining_pick.stats.min_damage_effect = 0.6
+	self.melee_weapons.mining_pick.stats.max_damage_effect = 0.8
 	self.melee_weapons.mining_pick.stats.charge_time = 1.75
 	self.melee_weapons.mining_pick.stats.range = 205
 	self.melee_weapons.mining_pick.stats.concealment = 25
 	self.melee_weapons.mining_pick.repeat_expire_t = 0.9
 	self.melee_weapons.mining_pick.melee_damage_delay = 0.1
 	self.melee_weapons.mining_pick.expire_t = 1.2
+	self.melee_weapons.mining_pick.headshot_damage_multiplier = 1.5
 
 	--Who's up for rockin the mic?--	
 	self.melee_weapons.microphone.stats.min_damage = 2
@@ -3412,16 +3416,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.gator.expire_t = 1.1	
 
 	--Reminds me of how HL2 was gonna have an ice axe--
-	self.melee_weapons.iceaxe.stats.min_damage = 6
-	self.melee_weapons.iceaxe.stats.max_damage = 12.1
-	self.melee_weapons.iceaxe.stats.min_damage_effect = 0.6
+	self.melee_weapons.iceaxe.info_id = "bm_melee_iceaxe_info"
+	self.melee_weapons.iceaxe.stats.min_damage = 4.5
+	self.melee_weapons.iceaxe.stats.max_damage = 9.1
+	self.melee_weapons.iceaxe.stats.min_damage_effect = 0.5
 	self.melee_weapons.iceaxe.stats.max_damage_effect = 0.7
 	self.melee_weapons.iceaxe.stats.charge_time = 1.55
 	self.melee_weapons.iceaxe.stats.range = 185
 	self.melee_weapons.iceaxe.stats.concealment = 27
 	self.melee_weapons.iceaxe.repeat_expire_t = 0.8
 	self.melee_weapons.iceaxe.melee_damage_delay = 0.1
-	self.melee_weapons.iceaxe.expire_t = 1.2	
+	self.melee_weapons.iceaxe.expire_t = 1.2
+	self.melee_weapons.iceaxe.headshot_damage_multiplier = 1.5
 
 	--Even more pokey knives--
 	self.melee_weapons.pugio.stats.min_damage = 2.4

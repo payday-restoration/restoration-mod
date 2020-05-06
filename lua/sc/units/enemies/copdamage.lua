@@ -1077,7 +1077,7 @@ function CopDamage:damage_melee(attack_data)
 	end
 
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
-	local headshot_multiplier = attack_data.headshot_multiplier
+	local headshot_multiplier = attack_data.headshot_multiplier or 1
 	local damage = attack_data.damage
 	local damage_effect = attack_data.damage_effect
 

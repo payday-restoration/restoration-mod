@@ -3223,6 +3223,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.croupier_rake.expire_t = 1.1
 
 	--Nyeh hey there's the high roller--
+	self.melee_weapons.switchblade.info_id = "bm_melee_switchblade_info"	
 	self.melee_weapons.switchblade.anim_global_param = "melee_boxcutter"
 	self.melee_weapons.switchblade.align_objects = {
 		"a_weapon_right"
@@ -3238,10 +3239,11 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.switchblade.stats.max_damage = 4.6
 	self.melee_weapons.switchblade.stats.min_damage_effect = 0.8
 	self.melee_weapons.switchblade.stats.max_damage_effect = 0.9
-	self.melee_weapons.switchblade.stats.charge_time = 0.4
-	self.melee_weapons.switchblade.stats.range = 180
+	self.melee_weapons.switchblade.stats.charge_time = 0.6
+	self.melee_weapons.switchblade.stats.range = 170
 	self.melee_weapons.switchblade.stats.concealment = 27
-	self.melee_weapons.switchblade.expire_t = 1.1	
+	self.melee_weapons.switchblade.expire_t = 1.2
+	self.melee_weapons.switchblade.backstab_damage_multiplier = 2
 
 	--RIP Buzzer meta--
 	self.melee_weapons.taser.stats.min_damage = 0.5

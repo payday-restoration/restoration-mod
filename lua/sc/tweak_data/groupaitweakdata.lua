@@ -13196,7 +13196,15 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.04,
 				0.12,
 				0.16
+			},	
+			--[[
+			--Base array to consider working with
+			FBI_tanks = {
+				0,
+				0.25,
+				0.3
 			},			
+			]]--
 			FBI_tanks = {
 				0,
 				0.125,
@@ -13250,15 +13258,23 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.12,
 				0.16
 			},	
+			--[[
+			--Base array to consider working with
 			FBI_tanks = {
 				0,
-				0.1125,
-				0.135
+				0.25,
+				0.3
+			},			
+			]]--			
+			FBI_tanks = {
+				0,
+				0.11875,
+				0.285
 			},
 			BLACK_tanks = {
 				0,
-				0.1125,
-				0.135
+				0.11875,
+				0.285
 			},	
 			TIT_tanks = {
 				0,
@@ -13307,7 +13323,15 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.04,
 				0.16,
 				0.12
-			},				
+			},	
+			--[[
+			--Baseline numbers to think about, work from this as an array for determining dozer types
+			FBI_tanks = {
+				0.1,
+				0.35,
+				0.4
+			},			
+			]]--			
 			FBI_tanks = {
 				0.03166666666,
 				0.11083333333,
@@ -13370,26 +13394,34 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.04,
 				0.16,
 				0.12
-			},				
+			},			
+			--[[
+			--Baseline numbers to think about, work from this as an array for determining dozer types
 			FBI_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.1,
+				0.35,
+				0.4
+			},			
+			]]--
+			FBI_tanks = {
+				0.03,
+				0.105,
+				0.12
 			},
 			BLACK_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.03,
+				0.105,
+				0.12
 			},
 			SKULL_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.03,
+				0.105,
+				0.12
 			},
 			TIT_tanks = {
-				0.005,
-				0.0175,
-				0.02
+				0.01,
+				0.035,
+				0.04
 			},					
 			CS_tazers = {
 				0.06,

@@ -3124,10 +3124,10 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.mining_pick.info_id = "bm_melee_mining_pick_info"
 	self.melee_weapons.mining_pick.make_decal = true
 	self.melee_weapons.mining_pick.make_effect = true
-	self.melee_weapons.mining_pick.stats.min_damage = 6
-	self.melee_weapons.mining_pick.stats.max_damage = 12.1
-	self.melee_weapons.mining_pick.stats.min_damage_effect = 0.6
-	self.melee_weapons.mining_pick.stats.max_damage_effect = 0.8
+	self.melee_weapons.mining_pick.stats.min_damage = 4.5
+	self.melee_weapons.mining_pick.stats.max_damage = 9.1
+	self.melee_weapons.mining_pick.stats.min_damage_effect = 1.8
+	self.melee_weapons.mining_pick.stats.max_damage_effect = 2.1
 	self.melee_weapons.mining_pick.stats.charge_time = 1.75
 	self.melee_weapons.mining_pick.stats.range = 205
 	self.melee_weapons.mining_pick.stats.concealment = 25

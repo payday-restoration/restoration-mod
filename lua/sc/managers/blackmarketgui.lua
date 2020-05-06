@@ -833,7 +833,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				self._extra_options_data.selected = selected
 				local num_panels = 0
 
-				for i = 1, #self._extra_options_data, 1 do
+				for i = 1, #self._extra_options_data do
 					if self._extra_options_data[i].panel then
 						num_panels = num_panels + 1
 					end
@@ -4713,7 +4713,7 @@ function BlackMarketGui:update_info_text()
 			end
 
 			if #missed_mods > 1 then
-				for i = 1, #missed_mods, 1 do
+				for i = 1, #missed_mods do
 					list_of_mods = list_of_mods .. missed_mods[i]
 
 					if i < #missed_mods - 1 then
@@ -5026,7 +5026,7 @@ function BlackMarketGui:update_info_text()
 
 	local below_y = nil
 
-	for i = 2, #self._info_texts, 1 do
+	for i = 2, #self._info_texts do
 		local info_text = self._info_texts[i]
 
 		info_text:set_font_size(small_font_size)

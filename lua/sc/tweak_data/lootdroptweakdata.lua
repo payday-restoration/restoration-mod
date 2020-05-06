@@ -50,4 +50,7 @@ function LootDropTweakData:init(tweak_data)
 	self.global_values.rest_omnia.hide_unavailable = true
     self.global_values.rest_omnia.sort_number = 30
     self.global_values.rest_omnia.category = "rest"		
+	
+	self.global_values.rest_omnia_fake = deep_clone(self.global_values.rest_omnia)
+	self.global_values.rest_omnia_fake.dlc = true
 end

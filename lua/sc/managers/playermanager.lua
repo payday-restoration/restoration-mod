@@ -378,7 +378,7 @@ function PlayerManager:_add_equipment(params)
 
 	add_hud_item(amount, icon)
 
-	for i = 1, #amount, 1 do
+	for i = 1, #amount do
 		self:add_equipment_amount(equipment, amount[i], i)
 	end
 end
@@ -721,7 +721,7 @@ end
 local function get_as_digested(amount)
 	local list = {}
 
-	for i = 1, #amount, 1 do
+	for i = 1, #amount do
 		table.insert(list, Application:digest_value(amount[i], false))
 	end
 

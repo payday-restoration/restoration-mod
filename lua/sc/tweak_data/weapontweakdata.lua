@@ -9665,6 +9665,45 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.desc_id = "bm_w_osipr_desc"
 	--self.osipr.custom = false
 	
+	--Anubis .45
+	self.socom.timers = {
+		reload_not_empty = 1.5435,
+		reload_empty = 2.226,
+		unequip = 0.5,
+		equip = 0.35
+	}	
+	self.socom.tactical_reload = 1	
+	self.socom.fire_mode_data.fire_rate = 0.08571428571
+	self.socom.single.fire_rate = 0.08571428571
+	self.socom.CLIP_AMMO_MAX = 12
+	self.socom.AMMO_MAX = 40
+	self.socom.AMMO_PICKUP = self:_pickup_chance(40, 1)
+	self.socom.spread.standing = 3
+	self.socom.spread.crouching = 2
+	self.socom.spread.steelsight = 1
+	self.socom.spread.moving_standing = 4
+	self.socom.spread.moving_crouching = 3
+	self.socom.spread.moving_steelsight = 2
+	self.socom.kick.standing = self.glock_17.kick.standing
+	self.socom.kick.crouching = self.glock_17.kick.crouching
+	self.socom.kick.steelsight = self.glock_17.kick.steelsight
+	self.socom.stats = {
+		damage = 45,
+		spread = 18,
+		recoil = 19,
+		spread_moving = 5,
+		zoom = 3,
+		concealment = 25,
+		suppression = 6,
+		alert_size = 6,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.socom.stats_modifiers = nil
+	self.socom.panic_suppression_chance = 0.0	
+	
 	--Custom weapons below--
 if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
 	self.amt.tactical_reload = 1									

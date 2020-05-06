@@ -14,10 +14,10 @@
 		</stance_mod>
 	</WeaponMod>
 
-	<WeaponMod id="wpn_fps_pis_socom_slide" based_on="wpn_fps_pis_usp_b_expert" type="slide" pcs="nil" stats="nil" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide" drop="false" is_a_unlockable="false"/>
+	<WeaponMod id="wpn_fps_pis_socom_slide" based_on="wpn_fps_pis_usp_b_tactical" type="slide" pcs="nil" stats="nil" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_slide" drop="false" is_a_unlockable="false"/>
 	
 	<WeaponMod id="wpn_fps_upg_fl_pis_socomlam" based_on="wpn_fps_upg_fl_pis_x400v" type="gadget" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_upg_fl_pis_socomlam" texture_bundle_folder="mods" drop="false" is_a_unlockable="true">
-		<stats recoil="2" spread="0" concealment="-2"/>
+		<stats recoil="0" spread="0" concealment="-1"/>
 		<perks>
 			<value_node value="gadget"/>
 		</perks>

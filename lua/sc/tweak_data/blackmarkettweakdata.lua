@@ -573,9 +573,8 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 	self.player_styles.poggers = {
 		name_id = "bm_suit_jackal_track",
 		desc_id = "bm_suit_jackal_track_desc",
-		texture_bundle_folder = "mods",
-		unlocked = true,		
-		global_value = "rest_omnia",
+		texture_bundle_folder = "mods",	
+		global_value = "rest_omnia_fake",
 		body_replacement = body_replacement_standard,
 		third_body_replacement = body_replacement_standard,
 		unit = "units/pd2_dlc_ess/characters/ess_acc_esportgamer/ess_acc_fps_esport/ess_acc_fps_esport_male",
@@ -643,6 +642,11 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 	}
 	self.player_styles.poggers.characters.ecp_male = esport_characters_fat_cunt
 	
+	if Steam:is_user_in_source(Steam:userid(), "103582791466033055") then
+		self.player_styles.poggers.global_value = "rest_omnia"
+		self.player_styles.poggers.unlocked = true
+	end	
+	
 	-- Flecktarn Jumpsuit 
 	self.player_styles.jumpsuit.material_variations.flecktarn = {
 		name_id = "bm_suit_var_jumpsuit_flecktarn",
@@ -675,7 +679,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		}			
 		end
 	end
-
+	
 	-- FLAT GREEN JUMPSUIT
 	self.player_styles.jumpsuit.material_variations.flatgreen = {
 		name_id = "bm_suit_var_jumpsuit_flatgreen",

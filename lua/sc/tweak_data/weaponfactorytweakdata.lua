@@ -34254,6 +34254,9 @@ function WeaponFactoryTweakData:_init_varmods()
 			wpn_fps_pis_rage = {
 				translation = Vector3(-0.05, -4, -4.65)
 			},
+			wpn_fps_pis_shatters_fury = {
+				translation = Vector3(-0.05, -4, -4.65)
+			},			
 			wpn_fps_pis_deagle = {
 				translation = Vector3(0, -9, -4.25),
 				rotation = Rotation(0, -0.5, 0)
@@ -45960,6 +45963,98 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		end	
 		
 --Resmod Custom Weapon stuff
+
+--Raze's Fury
+self.wpn_fps_pis_shatters_fury.adds = {
+	wpn_fps_upg_o_specter = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_aimpoint = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_aimpoint_2 = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_docter = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_eotech = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_t1micro = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_cmore = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_acog = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_cs = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_eotech_xps = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_reflex = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_rx01 = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_rx30 = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_spot = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_bmg = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_fc1 = {
+		"wpn_fps_pis_rage_o_adapter"
+	},
+	wpn_fps_upg_o_uh = {
+		"wpn_fps_pis_rage_o_adapter"
+	}			
+}
+self.wpn_fps_pis_shatters_fury.override = {
+	wpn_fps_pis_rage_lock = { 
+		forbids = {}
+	}
+}	
+self.wpn_fps_pis_shatters_fury.uses_parts = {
+	"wpn_fps_pis_shatters_fury_body_standard",
+	"wpn_fps_pis_shatters_fury_body_smooth",
+	"wpn_fps_pis_shatters_fury_b_standard",
+	"wpn_fps_pis_shatters_fury_b_short",
+	"wpn_fps_pis_shatters_fury_b_long",
+	"wpn_fps_pis_shatters_fury_b_comp1",
+	"wpn_fps_pis_shatters_fury_b_comp2",
+	"wpn_fps_pis_shatters_fury_g_standard",
+	"wpn_fps_pis_shatters_fury_g_ergo",
+	"wpn_fps_upg_o_specter",
+	"wpn_fps_upg_o_aimpoint",
+	"wpn_fps_upg_o_docter",
+	"wpn_fps_upg_o_eotech",
+	"wpn_fps_upg_o_t1micro",
+	"wpn_fps_upg_o_cmore",
+	"wpn_fps_upg_o_aimpoint_2",
+	"wpn_fps_upg_o_acog",
+	"wpn_fps_upg_o_eotech_xps",
+	"wpn_fps_upg_o_reflex",
+	"wpn_fps_upg_o_rx01",
+	"wpn_fps_upg_o_rx30",
+	"wpn_fps_upg_o_cs",
+	"wpn_fps_pis_rage_o_adapter",
+	"wpn_fps_pis_rage_lock",
+	"wpn_fps_upg_o_spot",
+	"wpn_fps_upg_o_xpsg33_magnifier",
+	"wpn_fps_upg_o_sig",
+	"wpn_fps_upg_o_bmg",
+	"wpn_fps_upg_o_uh",
+	"wpn_fps_upg_o_fc1"		
+}
 
 --OICW--
 self.wpn_fps_ass_osipr.uses_parts = {

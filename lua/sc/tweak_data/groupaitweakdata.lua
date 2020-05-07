@@ -9241,15 +9241,23 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",
 			"murder"
 		},
-		--Placeholder
 		CS_boom = {
-			"flank",
-			"charge",
+			"harass",		
+			"elite_ranged_fire",
+			"provide_coverfire",		
 			"flash_grenade",
 			"smoke_grenade",
-			"shield_cover",
-			"murder"
-		},		
+			"shield_cover"
+		},	
+		ELITE_boom = {
+			"harass",		
+			"elite_ranged_fire",
+			"provide_coverfire",
+			"hitnrun",
+			"flash_grenade",
+			"smoke_grenade",
+			"shield_cover"
+		},			
 		CS_sniper = {
 			"ranged_fire",
 			"provide_coverfire",
@@ -9499,6 +9507,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		TIT_tank = { --set up to use passive suppressive fire against players :)
 			"obstacle",
+			"hitnrun",
 			"reloadingretreat",
 			"spoocavoidance",
 			"murder",
@@ -10057,7 +10066,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics_ = self._tactics.CS_boom,
+					tactics_ = self._tactics.ELITE_boom,
 					rank = 1
 				},
 				{
@@ -10086,7 +10095,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics_ = self._tactics.CS_boom,
+					tactics_ = self._tactics.ELITE_boom,
 					rank = 1
 				},
 				{
@@ -10336,7 +10345,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "boom_M4203",
 					freq = 1,
 					amount_max = 2,
-					tactics = self._tactics.CS_boom,
+					tactics = self._tactics.ELITE_boom,
 					rank = 1
 				},				
 				{
@@ -10363,7 +10372,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "boom_M4203",
 					freq = 1,
 					amount_max = 1,
-					tactics = self._tactics.CS_boom,
+					tactics = self._tactics.ELITE_boom,
 					rank = 1
 				},			
 				{
@@ -10503,34 +10512,40 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "FBI_swat_M4",
 					freq = 1,
-					amount_min = 3,
+					amount_min = 1,
 					tactics = self._tactics.MH_swat_rifle,
-					rank = 1
+					rank = 2
 				},
 				{
 					unit = "FBI_swat_M4",
-					freq = 1,
+					freq = 0.75,
 					tactics = self._tactics.MH_swat_rifle_flank,
-					rank = 2
-				},					
-				{
-					unit = "FBI_swat_R870",
-					amount_min = 1,
-					amount_max = 2,
-					freq = 1,
-					tactics = self._tactics.MH_swat_shotgun,
 					rank = 3
 				},
 				{
+					unit = "FBI_swat_R870",
+					freq = 0.5,
+					amount_max = 1,
+					tactics = self._tactics.MH_swat_shotgun,
+					rank = 1
+				},
+				{
+					unit = "spooc",
+					freq = 0.15,
+					amount_max = 2,
+					tactics = self._tactics.spooc,
+					rank = 1
+				},
+				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.2,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.MH_swat_rifle,
 					rank = 1
 				}
 			}
-		}		
+		}
 	elseif difficulty_index == 7 then	
 		self.enemy_spawn_groups.FBI_swats = {
 			amount = {3, 4},
@@ -10558,7 +10573,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.DW_swat_rifle,
@@ -10593,7 +10608,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle,
@@ -10709,7 +10724,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},						
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -10744,7 +10759,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},						
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -10860,7 +10875,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},						
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -10895,7 +10910,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},						
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -10975,7 +10990,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},				
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -11018,7 +11033,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},			
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -11093,12 +11108,12 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "boom_M4203",
 					freq = 0.75,
 					amount_max = 2,
-					tactics = self._tactics.CS_boom,
+					tactics = self._tactics.ELITE_boom,
 					rank = 2
 				},				
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -11136,12 +11151,12 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "boom_M4203",
 					freq = 0.75,
 					amount_max = 2,
-					tactics = self._tactics.CS_boom,
+					tactics = self._tactics.ELITE_boom,
 					rank = 2
 				},			
 				{
 					unit = "medic_M4",
-					freq = 0.7,
+					freq = 0.6,
 					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -11201,7 +11216,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				}		
@@ -11230,7 +11245,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				}			
@@ -11288,7 +11303,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				}
@@ -11317,7 +11332,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				}
@@ -11375,7 +11390,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				}
@@ -11404,7 +11419,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				}
@@ -11463,7 +11478,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				}
@@ -11492,7 +11507,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_min = 1,
+					amount_max = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				}

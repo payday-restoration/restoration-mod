@@ -106,6 +106,11 @@
 	<mission path="levels/narratives/vlad/bex/art_props_interior/art_props_interior" force="true" unload="true"/>
 	<continent path="levels/narratives/vlad/bex/art_props_interior/art_props_interior" force="true" unload="true"/>		
 	<world path="levels/narratives/vlad/bex/world" force="true" unload="true"/>-->
+
+	<!--UNDERCOVER-->
+	<mission path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 
+	<sequence_manager path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
+
 	
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->

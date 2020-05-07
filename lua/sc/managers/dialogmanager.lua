@@ -419,7 +419,7 @@ function DialogManager:queue_dialog(id, ...)
 		end		
 
 		--Undercover--
-		if id == "Play_pln_man_74" then
+		if id == "Play_pln_man_74" or id == "Play_pln_man_73" then
 			if difficulty_index <= 2 then
 				escape_time = 270
 			elseif difficulty_index == 3 then

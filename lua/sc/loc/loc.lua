@@ -103,7 +103,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Weapon Sights--
 		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks special enemies, as well as guards in Stealth, while aiming.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
-		
+
+		--Generic Optic Zoom Descriptions--
+		["bm_wp_upg_o_tiny"] = "1.1x MAGNIFICATION.",	
+		["bm_wp_upg_o_small"] = "1.2x MAGNIFICATION.",	
+		["bm_wp_upg_o_med"] = "1.5x MAGNIFICATION.",	
+		["bm_wp_upg_o_large"] = "4x MAGNIFICATION.",	
 		
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that causes a fire at point of impact. The fire deals damage over time and has a chance to interrupt enemies.",
@@ -263,7 +268,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_40sw_desc"] = "",		
 		["bm_wp_upg_a_storm_40acp"] = ".45ACP Conversion Kit",
 		["bm_wp_upg_a_storm_40acp_desc"] = "",
-		
+				
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield

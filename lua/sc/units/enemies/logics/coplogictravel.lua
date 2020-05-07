@@ -373,7 +373,7 @@ function CopLogicTravel._chk_start_pathing_to_next_nav_point(data, my_data)
 	data.unit:brain():search_for_path(my_data.advance_path_search_id, to_pos, prio, nil, nav_segs)
 end
 
-function CopLogicTravel.action_complete_clbk(data, action)
+--[[function CopLogicTravel.action_complete_clbk(data, action)
 	local my_data = data.internal_data
 
 	if data.unit:inventory() and data.unit:inventory().equipped_unit and data.unit:inventory():equipped_unit() then
@@ -870,7 +870,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 			end
 		end
 	end
-end
+end]]--
 
 function CopLogicTravel.upd_advance(data)
 	local unit = data.unit

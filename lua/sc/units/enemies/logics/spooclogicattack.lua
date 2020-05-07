@@ -296,7 +296,7 @@ function SpoocLogicAttack._upd_enemy_detection(data, is_synchronous)
 	CopLogicBase._report_detections(data.detected_attention_objects)
 end
 
-function SpoocLogicAttack.action_complete_clbk(data, action)
+--[[function SpoocLogicAttack.action_complete_clbk(data, action)
 	local my_data = data.internal_data
 	local action_type = action:type()
 
@@ -393,4 +393,4 @@ function SpoocLogicAttack.action_complete_clbk(data, action)
 			SpoocLogicAttack._upd_combat_movement(data)
 		end
 	end
-end
+end]]--

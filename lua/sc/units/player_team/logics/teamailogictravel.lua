@@ -373,7 +373,7 @@ function TeamAILogicTravel.chk_should_turn(data, my_data)
 return not my_data.advancing and not my_data.turning and not my_data.has_old_action and not data.unit:movement():chk_action_forbidden("turn") and (not my_data.coarse_path or my_data.coarse_path_index < #my_data.coarse_path - 1 or not data.objective.rot)
 end
 
-function TeamAILogicTravel.action_complete_clbk(data, action)
+--[[function TeamAILogicTravel.action_complete_clbk(data, action)
 local my_data = data.internal_data
 local action_type = action:type()
 
@@ -474,7 +474,7 @@ elseif action_type == "dodge" then
 		end
 	end
 end
-end
+end]]--
 
 
 function TeamAILogicTravel._upd_enemy_detection(data)

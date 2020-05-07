@@ -563,8 +563,8 @@ elseif ai_type == m and difficulty_index <= 7 then
 elseif ai_type == m then	
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "OMNIA Assault in Progress",
-			["hud_assault_alpha"] = "OMNIA ASSAULT"
+			["hud_assault_assault"] = "OMNIA Incursion Underway",
+			["hud_assault_alpha"] = "OMNIA INCURSION"
 		})
 	end)		
 end

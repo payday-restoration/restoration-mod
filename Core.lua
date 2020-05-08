@@ -28,7 +28,6 @@ function restoration:Init()
 		"pal", --counterfeit
 		"mia_1", --Hotline Day 1
 		"crojob2", --bomb dockyard
-		"firestarter_1", --Firestarter Day 1
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
@@ -36,7 +35,6 @@ function restoration:Init()
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
-		"firestarter_1_res", --Firestarter Day 1 res edit version
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {

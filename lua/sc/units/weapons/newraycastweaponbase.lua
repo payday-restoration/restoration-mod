@@ -16,8 +16,16 @@ else
 		end
 	end
 			
-	function NewRaycastWeaponBase:on_reload()
+	local original_on_reload = NewRaycastWeaponBase.on_reload
+	function NewRaycastWeaponBase:on_reload(...)
+		if not self._setup.expend_ammo then
+			original_on_reload(self, ...)
+
+			return
+		end
+
 		local ammo_base = self._reload_ammo_base or self:ammo_base()
+
 		if ammo_base:weapon_tweak_data().uses_clip == true then
 			if ammo_base:get_ammo_remaining_in_clip() <= ammo_base:get_ammo_max_per_clip()  then
 				ammo_base:set_ammo_remaining_in_clip(math.min(ammo_base:get_ammo_total(), ammo_base:get_ammo_max_per_clip(), ammo_base:get_ammo_remaining_in_clip() +  ammo_base:weapon_tweak_data().clip_capacity))
@@ -38,8 +46,20 @@ else
 				ammo_base:set_ammo_total(ammo_base:get_ammo_max_per_clip())
 			end
 		end
+
 		managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
+
 		self._reload_ammo_base = nil
+
+		local user_unit = managers.player:player_unit()
+
+		if user_unit then
+			user_unit:movement():current_state():send_reload_interupt()
+		end
+
+		self:set_reload_objects_visible(false)
+
+		self._reload_objects = {}
 	end
 	
 	function NewRaycastWeaponBase:reload_expire_t()

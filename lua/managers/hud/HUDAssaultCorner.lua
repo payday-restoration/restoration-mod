@@ -44,7 +44,7 @@ HUDAssaultCorner._custom_lines_ponr = {
 	"RUN, RUN GOD DAMN IT",
 	"I'm the point of no return ticker!  I'm not in the mod anymore.  Isn't that unfortunate?  If for some reason you're seeing me, please alert the team right away.  Thanks!",
 }
-HUDAssaultCorner._custom_line_chance = 1 -- Chance of a new line, between 0-100
+HUDAssaultCorner._custom_line_chance = 2 -- Chance of a new line, between 0-100
 
 function HUDAssaultCorner:init(hud, full_hud)
 	self._hud_panel = hud.panel

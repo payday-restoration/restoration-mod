@@ -41,10 +41,13 @@ function restoration:Init()
 		"dah", --diamond heist
 		"hox_2", --Hoxout Day 2
 		"framing_frame_3", --framing frame day 3
+		"firestarter_1", --firestarter day 1
 		"arm_for",	--train heist
 		"big", --big bank
 		"kenaz",--Golden Grin Casino
-		"cas" --Golden Grin Casino
+		"cas", --Golden Grin Casino
+		--custom heists		
+		"firestarter_1_res" --firestarter day 1 res edit version
 	}
 	restoration.captain_stelf = {
 		"alex_1", --Rats Day 1

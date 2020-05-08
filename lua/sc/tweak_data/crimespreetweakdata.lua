@@ -470,7 +470,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 	local damage_increase = 15
 	self.max_modifiers_displayed = 3
 	self.modifier_levels = {
-		forced = 500,
+		forced = 100,
 		loud = 20,
 		stealth = 26
 	}
@@ -480,10 +480,10 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				id = "damage_health_1",
 				class = "ModifierEnemyHealthAndDamage",
 				icon = "crime_spree_health",
-				level = 400,
+				level = 100,
 				data = {
 					health = {0, "add"},
-					damage = {15, "add"}
+					damage = {3, "add"}
 				}
 			}
 		},

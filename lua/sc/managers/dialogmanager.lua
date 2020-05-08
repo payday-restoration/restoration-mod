@@ -282,8 +282,7 @@ function DialogManager:queue_dialog(id, ...)
 		end	
 	
 		--Bomb Dockyard--
-		--i think only one of these plays im not 100% sure
-		if id == "Play_pln_cr2_63" then
+		if id == "Play_pln_cr2_104 " then
 			if difficulty_index <= 2 then
 				escape_time = 690
 			elseif difficulty_index == 3 then

@@ -1375,7 +1375,7 @@ function WeaponTweakData:_init_data_scar_npc()
 	self.scar_npc.categories = clone(self.scar.categories)
 	self.scar_npc.sounds.prefix = "zsniper_npc"
 	self.scar_npc.use_data.selection_index = 2
-	self.scar_npc.DAMAGE = 7.5
+	self.scar_npc.DAMAGE = 6
 	self.scar_npc.muzzleflash = "effects/payday2/particles/weapons/762_auto"
 	self.scar_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
 	self.scar_npc.CLIP_AMMO_MAX = 20

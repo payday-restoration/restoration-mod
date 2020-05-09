@@ -780,7 +780,7 @@ function WeaponFactoryTweakData:_init_sights()
 		unit = "units/payday2/weapons/wpn_fps_upg_o_aimpoint/wpn_fps_upg_o_aimpoint",
 		stats = {
 			value = 8,
-			zoom = 5,
+			zoom = 20,
 			concealment = -2
 		},
 		perks = {"scope"},
@@ -814,7 +814,7 @@ function WeaponFactoryTweakData:_init_sights()
 		unit = "units/payday2/weapons/wpn_fps_upg_o_aimpoint/wpn_fps_upg_o_aimpoint_preorder",
 		stats = {
 			value = 1,
-			zoom = 5,
+			zoom = 20,
 			concealment = -2
 		},
 		perks = {"scope"},
@@ -842,11 +842,11 @@ function WeaponFactoryTweakData:_init_sights()
 		name_id = "bm_wp_upg_o_docter",
 		a_obj = "a_o",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_tiny",		
+		desc_id = "bm_wp_upg_o_small",		
 		unit = "units/payday2/weapons/wpn_fps_upg_o_docter/wpn_fps_upg_o_docter",
 		stats = {
 			value = 5,
-			zoom = 1,
+			zoom = 10,
 			concealment = -1		
 		},
 		perks = {"scope"},
@@ -877,8 +877,8 @@ function WeaponFactoryTweakData:_init_sights()
 		unit = "units/payday2/weapons/wpn_fps_upg_o_eotech/wpn_fps_upg_o_eotech",
 		stats = {
 			value = 3,
-			zoom = 2,
-			concealment = -2	
+			zoom = 10,
+			concealment = -1	
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -903,12 +903,12 @@ function WeaponFactoryTweakData:_init_sights()
 		type = "sight",
 		name_id = "bm_wp_upg_o_t1micro",
 		a_obj = "a_o",
-		desc_id = "bm_wp_upg_o_tiny",
+		desc_id = "bm_wp_upg_o_small",
 		has_description = true,				
 		unit = "units/payday2/weapons/wpn_fps_upg_o_t1micro/wpn_fps_upg_o_t1micro",
 		stats = {
 			value = 5,
-			zoom = 1,
+			zoom = 10,
 			concealment = -1				
 		},
 		perks = {"scope"},
@@ -1287,12 +1287,12 @@ function WeaponFactoryTweakData:_init_content_dlc1()
 		name_id = "bm_wp_upg_o_cmore",
 		texture_bundle_folder = "dlc1",
 		a_obj = "a_o",
-		desc_id = "bm_wp_upg_o_tiny",
+		desc_id = "bm_wp_upg_o_small",
 		has_description = true,		
 		unit = "units/pd2_dlc1/weapons/wpn_fps_upg_o_cmore/wpn_fps_upg_o_cmore",
 		stats = {
 			value = 5,
-			zoom = 1,
+			zoom = 10,
 			concealment = -1
 		},
 		perks = {"scope"},
@@ -2271,10 +2271,14 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		name_id = "bm_wp_upg_o_rmr",
 		a_obj = "a_rds",
 		parent = "body",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_small",
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rmr/wpn_fps_upg_o_rmr",
 		stats = {
-			value = 6
+			value = 6,
+			zoom = 10,
+			concealment = -1
 		},
 		custom_stats = {disable_steelsight_stance = true},
 		perks = {"scope"},
@@ -2334,10 +2338,14 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		type = "sight",
 		name_id = "bm_wp_upg_o_eotech_xps",
 		a_obj = "a_o",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_small",		
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_eotech_xps/wpn_fps_upg_o_eotech_xps",
 		stats = {
-			value = 5
+			value = 5,
+			concealment = -1,
+			zoom = 10
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -2363,11 +2371,13 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		type = "sight",
 		name_id = "bm_wp_upg_o_reflex",
 		a_obj = "a_o",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_small",				
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_reflex/wpn_fps_upg_o_reflex",
 		stats = {
 			value = 5,
-			zoom = 2,
+			zoom = 10,
 			concealment = -1
 		},
 		perks = {"scope"},
@@ -2389,12 +2399,14 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		type = "sight",
 		name_id = "bm_wp_upg_o_rx01",
 		a_obj = "a_o",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_small",			
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rx01/wpn_fps_upg_o_rx01",
 		stats = {
 			value = 5,
-			zoom = 4,
-			concealment = -2
+			zoom = 10,
+			concealment = -1
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -2415,12 +2427,14 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		type = "sight",
 		name_id = "bm_wp_upg_o_rx30",
 		a_obj = "a_o",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_small",			
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rx30/wpn_fps_upg_o_rx30",
 		stats = {
 			value = 5,
-			zoom = 4,
-			concealment = -2
+			zoom = 10,
+			concealment = -1
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -2441,13 +2455,15 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		type = "sight",
 		name_id = "bm_wp_upg_o_cs",
 		a_obj = "a_o",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_med",			
 		reticle_obj = "g_reddot",
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/wpn_fps_upg_o_cs",
 		stats = {
 			value = 3,
-			zoom = 2,
-			concealment = -1
+			zoom = 20,
+			concealment = -2
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -19287,13 +19303,15 @@ function WeaponFactoryTweakData:_init_c96()
 		type = "sight",
 		name_id = "bm_wp_c96_sight",
 		a_obj = "a_o",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_huge",			
 		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_pis_c96_pts/wpn_fps_pis_c96_sight",
 		dlc = "gage_pack_historical",
 		texture_bundle_folder = "gage_pack_historical",
 		is_a_unlockable = true,
 		stats = {
 			value = 1,
-			zoom = 8,
+			zoom = 40,
 			concealment = -4
 		},
 		perks = {"scope"},
@@ -25641,10 +25659,12 @@ function WeaponFactoryTweakData:_init_winchester1874()
 		type = "sight",
 		name_id = "bm_wp_winchester_sniper_scope",
 		a_obj = "a_o",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_huge",
 		unit = "units/pd2_dlc_west/weapons/wpn_fps_snp_winchester_pts/wpn_fps_upg_winchester_o_classic",
 		stats = {
 			value = 0,
-			zoom = 8,
+			zoom = 40,
 			concealment = -4
 		},
 		stance_mod = {
@@ -32048,12 +32068,14 @@ function WeaponFactoryTweakData:_init_tng()
 		type = "sight",
 		reticle_obj = "g_reticle",
 		name_id = "bm_wp_upg_o_spot",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_large",
 		a_obj = "a_o",
 		unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_spot/wpn_fps_upg_o_spot",
 		stats = {
 			value = 8,
-			zoom = 6,
-			concealment = -3
+			zoom = 40,
+			concealment = -4
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -32107,7 +32129,7 @@ function WeaponFactoryTweakData:_init_tng()
 		unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_box/wpn_fps_upg_o_box",
 		stats = {
 			value = 8,
-			zoom = 8,
+			zoom = 50,
 			concealment = -1
 		},
 		perks = {"scope", "highlight"},
@@ -32182,11 +32204,13 @@ function WeaponFactoryTweakData:_init_tng()
 		type = "sight",
 		name_id = "bm_wp_g36_o_vintage",
 		a_obj = "a_body",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_large",
 		unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_g36_body_optics/wpn_fps_ass_g36_o_vintage",
 		reticle_obj = "g_reticle",
 		stats = {
 			value = 1,
-			zoom = 8,
+			zoom = 40,
 			concealment = -4
 		},
 		perks = {"scope"},
@@ -41112,6 +41136,8 @@ function WeaponFactoryTweakData:_init_mwm()
 		a_obj = "a_o",
 		reticle_obj = "g_reddot",
 		name_id = "bm_wp_upg_o_bmg",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_large",
 		unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_bmg/wpn_fps_upg_o_bmg",
 		pcs = {
 			10,
@@ -41122,7 +41148,7 @@ function WeaponFactoryTweakData:_init_mwm()
 		stats = {
 			zoom = 6,
 			concealment = -3,
-			value = 8
+			value = 30
 		},
 		perks = {
 			"scope"
@@ -41422,6 +41448,8 @@ function WeaponFactoryTweakData:_init_mwm()
 		type = "sight",
 		parent = "body",
 		dlc = "mwm",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_small",
 		name_id = "bm_wp_upg_o_rms",
 		unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_rms/wpn_fps_upg_o_rms",
 		pcs = {
@@ -41431,10 +41459,8 @@ function WeaponFactoryTweakData:_init_mwm()
 			40
 		},
 		stats = {
-			zoom = 0,
-			spread = 0,
-			concealment = 0,
-			recoil = 0,
+			zoom = 10,
+			concealment = -1,
 			value = 6
 		},
 		perks = {
@@ -41537,6 +41563,8 @@ function WeaponFactoryTweakData:_init_mwm()
 		parent = "body",
 		dlc = "mwm",
 		name_id = "bm_wp_upg_o_rikt",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_med",
 		unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_rikt/wpn_fps_upg_o_rikt",
 		pcs = {
 			10,
@@ -41545,8 +41573,8 @@ function WeaponFactoryTweakData:_init_mwm()
 			40
 		},
 		stats = {
-			zoom = 2,
-			concealment = -1,
+			zoom = 20,
+			concealment = -2,
 			value = 6
 		},
 		perks = {
@@ -41645,6 +41673,8 @@ function WeaponFactoryTweakData:_init_mwm()
 		dlc = "mwm",
 		a_obj = "a_o",
 		name_id = "bm_wp_upg_o_uh",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_small",		
 		unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_uh/wpn_fps_upg_o_uh",
 		pcs = {
 			10,
@@ -41654,7 +41684,7 @@ function WeaponFactoryTweakData:_init_mwm()
 		},
 		stats = {
 			value = 3,
-			zoom = 2,
+			zoom = 10,
 			concealment = -1
 		},
 		perks = {
@@ -41678,6 +41708,8 @@ function WeaponFactoryTweakData:_init_mwm()
 		dlc = "mwm",
 		a_obj = "a_o",
 		name_id = "bm_wp_upg_o_fc1",
+		has_description = true,
+		desc_id = "bm_wp_upg_o_small",		
 		unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_fc1/wpn_fps_upg_o_fc1",
 		pcs = {
 			10,
@@ -41686,8 +41718,8 @@ function WeaponFactoryTweakData:_init_mwm()
 			40
 		},
 		stats = {
-			zoom = 0,
-			concealment = 0,
+			zoom = 10,
+			concealment = -1,
 			value = 6
 		},
 		perks = {

@@ -1,5 +1,5 @@
 function ModifierCloakerArrest:modify_value(id, value)
-	if id == "PlayerMovement:on_SPOOCed" then
+	if id == "PlayerMovement:OnSpooked" then
 		return "incapacitated"
 	end
 

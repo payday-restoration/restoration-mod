@@ -9676,9 +9676,9 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.gang_member.rifle.FALLOFF = {
 		{
 			r = 100,
-			acc = {1, 1},
+			acc = {0.8, 0.9},
 			dmg_mul = 1.25,
-			recoil = {1, 1},
+			recoil = {1.5, 1.5},
 			mode = {
 				1,
 				1,
@@ -9687,10 +9687,10 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 3000,
-			acc = {0.95, 1},
+			r = 1000,
+			acc = {0.7, 0.8},
 			dmg_mul = 1.25,
-			recoil = {1, 1},
+			recoil = {2, 2},
 			mode = {
 				1,
 				1,
@@ -9699,10 +9699,10 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		{
-			r = 10000,
-			acc = {0.9, 0.95},
+			r = 2000,
+			acc = {0.6, 0.7},
 			dmg_mul = 1.25,
-			recoil = {1, 1},
+			recoil = {2, 2},
 			mode = {
 				1,
 				1,

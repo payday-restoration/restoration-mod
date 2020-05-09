@@ -115,6 +115,55 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				icon = "csm_fwb",
 				add = debug_long_add,
 				level = tweak_data.narrative.stages.red2
+			},
+			{
+				stage_id = "dah",
+				add = 8,
+				id = "dah",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.dah
+			},
+			{
+				stage_id = "mallcrasher",
+				add = debug_short_add,
+				id = "mallcrasher",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.mallcrasher
+			},
+			{
+				stage_id = "vit",
+				add = 11,
+				id = "vit",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.vit
+			},
+			{
+				stage_id = "arena",
+				add = 8,
+				id = "arena",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.arena
+			},
+			{
+				stage_id = "kenaz",
+				add = 13,
+				id = "kenaz",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.kenaz
+			},
+			{
+				stage_id = "sah",
+				add = debug_med_add,
+				id = "sah",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.sah
+			},
+			{
+				stage_id = "nightclub",
+				add = debug_short_add,
+				id = "nightclub",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.nightclub
 			}
 		},
 		{
@@ -250,6 +299,27 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				id = "mia_2",
 				icon = "csm_miami_2",
 				level = tweak_data.narrative.stages.mia_2
+			},
+			{
+				stage_id = "nmh",
+				add = 8,
+				id = "nmh",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.nmh
+			},
+			{
+				stage_id = "des",
+				add = 9,
+				id = "des",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.des
+			},
+			{
+				stage_id = "election_day_3_skip1",
+				add = debug_med_add,
+				id = "election_day_3_skip1",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.election_day_3_skip1
 			}
 		},
 		{
@@ -357,6 +427,34 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				id = "jolly",
 				icon = "csm_aftershock",
 				level = tweak_data.narrative.stages.jolly
+			},
+			{
+				stage_id = "shoutout_raid",
+				add = debug_long_add,
+				id = "shoutout_raid",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.shoutout_raid
+			},
+			{
+				stage_id = "bph",
+				add = debug_long_add,
+				id = "bph",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.bph
+			},
+			{
+				stage_id = "peta_1",
+				add = 15,
+				id = "peta_1",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.peta_1
+			},
+			{
+				stage_id = "bex",
+				add = debug_long_add,
+				id = "bex",
+				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				level = tweak_data.narrative.stages.bex
 			}
 		}
 	}
@@ -755,6 +853,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 			}
 		}
 	}
+	--i don't THINK this is used but i really don't want to take the chance
 	self.repeating_modifiers = {
 		forced = {
 			{
@@ -764,7 +863,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				level = 5,
 				data = {
 					health = {0, "add"},
-					damage = {15, "add"}
+					damage = {3, "add"}
 				}
 			}
 		}

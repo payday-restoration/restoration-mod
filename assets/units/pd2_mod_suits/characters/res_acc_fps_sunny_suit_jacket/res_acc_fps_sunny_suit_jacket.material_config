@@ -1,10 +1,11 @@
-<materials version="3" group="ene_mex_security_guard_3">
-    <material name="mtr_body" version="2" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
-        <diffuse_texture        file="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_df"/>
-        <bump_normal_texture 	file="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_nm"/>
+<materials version="3" group="sus_acc_fps_slaughterhouse">
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_arms" version="2">
+        <bump_normal_texture file="units/pd2_dlc_sus/characters/sus_npc_male_arms/npc_male_criminals_arms_caucasian_nm"/>
+        <diffuse_texture file="units/pd2_dlc_sus/characters/sus_npc_male_arms/npc_male_criminals_arms_caucasian_df"/>
+        <material file="units/pd2_dlc_sus/characters/sus_npc_female_arms/npc_female_criminals_arms_caucasian_gsma"/>
     </material>
-    <material name="mtr_hands" version="2" render_template="generic">
-    </material>
-    <material name="mtr_suit" version="2" render_template="generic">
+    <material render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" name="mtr_gloves" version="2">
+        <bump_normal_texture file="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_jacket/res_acc_fps_sunny_suit_jacket_nm"/>
+        <diffuse_texture file="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_jacket/res_acc_fps_sunny_suit_jacket_df"/>
     </material>
 </materials>

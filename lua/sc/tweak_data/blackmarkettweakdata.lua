@@ -484,8 +484,10 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		"dragon"
 	}
 	local characters_black_gloves = {
-		"jowi",
 		"myh"
+	}
+	local characters_wholesome_100 = {
+		"jowi"
 	}
 	local characters_tony = {
 		"chico"
@@ -733,6 +735,10 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
 		third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
 	})
+	set_characters_data("raincoat", characters_wholesome_100, {
+		unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
+		third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
+	})
 	set_characters_data("raincoat", characters_tony, {
 		unit = "units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat",
 		third_unit = "units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat"
@@ -799,6 +805,12 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 	})
 	set_characters_data("loud_suit", characters_black_gloves, {
+		body_replacement = body_replacement_hands,
+		third_body_replacement = body_replacement_armor,
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
+	})
+	set_characters_data("loud_suit", characters_wholesome_100, {
 		body_replacement = body_replacement_hands,
 		third_body_replacement = body_replacement_armor,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
@@ -901,8 +913,13 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
+	set_characters_data("suit_sunny", characters_wholesome_100, {
+		body_replacement = body_replacement_hands,
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
+	})
 	set_characters_data("suit_sunny", characters_tony, {
-		body_replacement = body_replacement_standard,
+		body_replacement = body_replacement_hands,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust", -- fuck you and your stupid fucking long tight ass gloves
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
@@ -922,7 +939,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres"
 	})
 	set_characters_data("suit_sunny", characters_bodhi, {
-		body_replacement = body_replacement_hands,
+		body_replacement = body_replacement_standard,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_bodhi/res_acc_fps_sunny_suit_bodhi",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi"
 	})
@@ -952,7 +969,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney"
 	})
 	set_characters_data("suit_sunny", characters_joy, {
-		body_replacement = body_replacement_standard,
+		body_replacement = body_replacement_hands,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_joy/res_acc_fps_sunny_suit_joy",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy"
 	})
@@ -978,6 +995,10 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 	})
 	set_characters_data("suit_prison", characters_black_gloves, {
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
+	})
+	set_characters_data("suit_prison", characters_wholesome_100, {
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 	})

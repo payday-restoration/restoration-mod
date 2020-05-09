@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<unit type="dah" slot="1">
+<unit type="sus" slot="1">
 	<object file="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust" />
 
 	<dependencies>
@@ -9,7 +9,6 @@
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
-		<extension name="contour" class="ContourExt" />
 	</extensions>
 
 </unit>

@@ -106,6 +106,7 @@
 	<mission path="levels/narratives/vlad/bex/art_props_interior/art_props_interior" force="true" unload="true"/>
 	<continent path="levels/narratives/vlad/bex/art_props_interior/art_props_interior" force="true" unload="true"/>		
 	<world path="levels/narratives/vlad/bex/world" force="true" unload="true"/>-->
+	<nav_data path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
 
 	<!--UNDERCOVER-->
 	<mission path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 

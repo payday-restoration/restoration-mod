@@ -43568,60 +43568,6 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		end					
 
 	if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Mod Pack		
-		self.wpn_fps_snp_wa2000.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}		
-		self.wpn_fps_snp_tti.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}
-		self.wpn_fps_snp_m95.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}
-		self.wpn_fps_snp_desertfox.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}
-		self.wpn_fps_snp_mosin.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}				
-		self.wpn_fps_snp_model70.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}								
-		self.wpn_fps_snp_r93.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}								
-		self.wpn_fps_snp_msr.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}								
-		self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}		
 		self.parts.wpn_fps_ass_m4_m_stick_amcar.pcs = nil
 		self.parts.wpn_fps_ass_m4_m_stick_sg.pcs = nil
 		self.parts.wpn_fps_ass_m4_m_stick_heavy.pcs = nil			
@@ -43636,7 +43582,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.wpn_fps_lmg_mg42.adds.wpn_fps_upg_o_cqb = {"wpn_fps_snp_mosin_rail"}
 		self.wpn_fps_lmg_hk21.adds.wpn_fps_upg_o_cqb = {"wpn_fps_ass_g3_body_rail"}
 		self.parts.wpn_fps_upg_o_cqb.stats = {
-			value = 5
+			value = 5,
+			zoom = 1
 		}
 		self.parts.wpn_fps_pis_pl14_body_custom.stats = {
 			value = 3,
@@ -44334,134 +44281,6 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			value = 2,
 			concealment = 1
 		}											
-		self.wpn_fps_snp_sgs.override = {	
-			wpn_fps_upg_o_specter = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			},
-			wpn_fps_upg_o_aimpoint = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			},
-			wpn_fps_upg_o_aimpoint_2 = {
-				stats = {
-					value = 1,
-					zoom = 4,
-					concealment = 2
-				}
-			},
-			wpn_fps_upg_o_docter = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			},
-			wpn_fps_upg_o_eotech = {
-				stats = {
-					value = 3,
-					zoom = 2,
-					concealment = 3
-				}
-			},	
-			wpn_fps_upg_o_cqb = {
-				stats = {
-					value = 3,
-					zoom = 2,
-					concealment = 3
-				}
-			},					
-			wpn_fps_upg_o_t1micro = {
-				stats = {
-					value = 3,
-					concealment = 4
-				}
-			},	
-			wpn_fps_ass_s552_o_custom = {
-				stats = {
-					value = 0,
-					concealment = 4
-				}
-			},					
-			wpn_fps_upg_o_cmore = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			},		
-			wpn_fps_upg_o_acog = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			},
-			wpn_fps_upg_o_cs = {
-				stats = {
-					value = 3,
-					zoom = 2,
-					concealment = 3
-				}
-			},	
-			wpn_fps_upg_o_eotech_xps = {
-				stats = {
-					value = 5
-				}
-			},	
-			wpn_fps_upg_o_reflex = {
-				stats = {
-					value = 5,
-					zoom = 2,
-					concealment = 3
-				}
-			},	
-			wpn_fps_upg_o_rx01 = {
-				stats = {
-					value = 5,
-					zoom = 4,
-					concealment = 2
-				}
-			},	
-			wpn_fps_upg_o_rx30 = {
-				stats = {
-					value = 5,
-					zoom = 4,
-					concealment = 2
-				}
-			},		
-			wpn_fps_upg_o_spot = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1	
-				}
-			},
-			wpn_fps_upg_o_bmg = {
-				stats = {
-					zoom = 6,
-					concealment = 1,
-					value = 8
-				}
-			},	
-			wpn_fps_upg_o_fc1 = {
-				stats = {
-					value = 6,
-					concealment = 4
-				}			
-			},
-			wpn_fps_upg_o_uh = {
-				stats = {
-					value = 3,
-					zoom = 2,
-					concealment = 3
-				}			
-			}			
-		}
 		self.parts.wpn_fps_pis_smolak_fg_polymer.stats = {
 			value = 1,
 			concealment = 1
@@ -44767,121 +44586,40 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 	end		
 
 	if self.parts.wpn_fps_upg_o_compm4s then --Pawcio's Aimpoint Comp M4s Sight
-		self.wpn_fps_snp_r93.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}
-		self.wpn_fps_snp_m95.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}						
-		self.wpn_fps_snp_mosin.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}		
-		self.wpn_fps_snp_model70.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}		
-		self.wpn_fps_snp_desertfox.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}				
-		self.wpn_fps_snp_wa2000.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}		
-		self.wpn_fps_snp_tti.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}
-		self.wpn_fps_snp_msr.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}								
-		self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_compm4s = {
-				stats = {
-					value = 8,
-					zoom = 6,
-					concealment = 1
-				}
-			}		
 		self.parts.wpn_fps_upg_o_compm4s.stats = {
-					zoom = 6,			
-					value = 8,
-					concealment = -3
+				value = 3,
+				zoom = 5
 			}			
-			if self.parts.wpn_fps_upg_o_compm4s and self.parts.wpn_fps_ass_flint_b_long then
-				self.wpn_fps_snp_sgs.override.wpn_fps_upg_o_compm4s = {
-						stats = {
-							value = 8,
-							zoom = 6,
-							concealment = 1
-						}
-					}												
-			end								
 		end
 
 
 	if self.parts.wpn_fps_ass_komodo_o_tele then --Alcat's F2000 Sight
 		self.parts.wpn_fps_ass_komodo_o_tele.stats = {
-			value = 1,
-			concealment = -3
+			value = 1
 			}			
 		end	
 
 	if self.parts.wpn_fps_upg_o_snp_m4flipup_rear then --Pawcio's Ironsights Pack
 		self.parts.wpn_fps_upg_o_snp_m4flipup_rear.stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 			}		
 		self.parts.wpn_fps_upg_o_snp_mbus_rear.stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 			}
 		self.parts.wpn_fps_upg_o_snp_troy_rear.stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 			}			
 		self.parts.wpn_fps_upg_o_snp_troym4_rear.stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 			}								
 		self.parts.wpn_fps_upg_o_snp_scorpionevo_rear.stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 			}				
 		self.parts.wpn_fps_upg_o_snp_kac_rear.stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 			}				
 		self.parts.wpn_fps_upg_o_snp_dd_a1_rear.stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 			}											
 		end			
 		
@@ -44916,145 +44654,36 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		end
 					
 	if self.parts.wpn_fps_upg_o_compm2 then --Pawcio's Aimpoint Comp M2 Sight		
-		self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}
-		self.wpn_fps_snp_desertfox.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}
-		self.wpn_fps_snp_m95.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}
-		self.wpn_fps_snp_mosin.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}
-		self.wpn_fps_snp_r93.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}
-		self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}				
-		self.wpn_fps_snp_wa2000.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}		
-		self.wpn_fps_snp_tti.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}
-		self.wpn_fps_snp_msr.override.wpn_fps_upg_o_compm2 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}								
 		self.parts.wpn_fps_upg_o_compm2.stats = {
-				value = 8,
-				zoom = 3,
-				spread_moving = -3,
-				concealment = -3
+				value = 3,
+				zoom = 5
 			}		
-			if self.parts.wpn_fps_upg_o_compm2 and self.parts.wpn_fps_ass_flint_b_long then
-				self.wpn_fps_snp_sgs.override.wpn_fps_upg_o_compm2 = {
-						stats = {
-							value = 8,
-							zoom = 4,
-							concealment = 2
-						}
-					}												
-			end
 		end				
 
 	if self.parts.wpn_fps_upg_o_okp7_dove then --Pawcio's Russian Sight Pack 
-		self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_okp7_dove = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}
-		self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_ekp_1s_03 = {
-				stats = {
-					value = 5,
-					concealment = 4
-				}
-			}
-		self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_1pn93 = {
-				stats = {
-					zoom = 6,
-					concealment = 1,
-					value = 8
-				}
-			}						
-		self.wpn_fps_snp_siltstone.override.wpn_fps_upg_o_1p29 = {
-				stats = {
-					value = 8,
-					zoom = 4,
-					concealment = 2
-				}
-			}										
 		self.parts.wpn_fps_upg_o_okp7_dove.stats = {
-			value = 5,
-			zoom = 4,
-			spread_moving = -4,
-			concealment = -4
+			value = 3,
+			zoom = 2	
 			}	
 		self.parts.wpn_fps_upg_o_pso1.stats = {
-			value = 5,
-			zoom = 6
+			value = 8,
+			zoom = 40
 			}				
 		self.parts.wpn_fps_upg_o_pso1_rifle.stats = {
-			value = 5,
-			concealment = -5,								
-			zoom = 6
+			value = 8,
+			zoom = 40
 			}	
 		self.parts.wpn_fps_upg_o_1pn93.stats = {
 			value = 8,
-			zoom = 3,
-			spread_moving = -3,
-			concealment = -3
+			zoom = 30
 			}	
 		self.parts.wpn_fps_upg_o_ekp_1s_03.stats = {
-			value = 5,
-			zoom = 2,
-			spread_moving = -2,
-			concealment = -2
+			value = 3,
+			zoom = 2	
 			}									
 		self.parts.wpn_fps_upg_o_1p29.stats = {
 			value = 8,
-			zoom = 3,
-			spread_moving = -3,
-			concealment = -3
+			zoom = 30
 			}															
 		end	
 		

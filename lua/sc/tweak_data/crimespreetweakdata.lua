@@ -120,50 +120,57 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				stage_id = "dah",
 				add = 8,
 				id = "dah",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_dah",
 				level = tweak_data.narrative.stages.dah
 			},
 			{
 				stage_id = "mallcrasher",
 				add = debug_short_add,
 				id = "mallcrasher",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_mallcrasher",
 				level = tweak_data.narrative.stages.mallcrasher
 			},
 			{
 				stage_id = "vit",
 				add = 11,
 				id = "vit",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_vit",
 				level = tweak_data.narrative.stages.vit
 			},
 			{
 				stage_id = "arena",
-				add = 8,
+				add = 10,
 				id = "arena",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_arena",
 				level = tweak_data.narrative.stages.arena
 			},
 			{
 				stage_id = "kenaz",
 				add = 13,
 				id = "kenaz",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_kenaz",
 				level = tweak_data.narrative.stages.kenaz
 			},
 			{
 				stage_id = "sah",
 				add = debug_med_add,
 				id = "sah",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_sah",
 				level = tweak_data.narrative.stages.sah
 			},
 			{
 				stage_id = "nightclub",
 				add = debug_short_add,
 				id = "nightclub",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_nightclub",
 				level = tweak_data.narrative.stages.nightclub
+			},
+			{
+				stage_id = "bex",
+				add = debug_long_add,
+				id = "bex",
+				icon = "csm_bex",
+				level = tweak_data.narrative.stages.bex
 			}
 		},
 		{
@@ -304,21 +311,21 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				stage_id = "nmh",
 				add = 8,
 				id = "nmh",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_nmh",
 				level = tweak_data.narrative.stages.nmh
 			},
 			{
 				stage_id = "des",
 				add = 9,
 				id = "des",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_des",
 				level = tweak_data.narrative.stages.des
 			},
 			{
 				stage_id = "election_day_3_skip1",
 				add = debug_med_add,
 				id = "election_day_3_skip1",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_election_3",
 				level = tweak_data.narrative.stages.election_day_3_skip1
 			}
 		},
@@ -432,29 +439,22 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				stage_id = "shoutout_raid",
 				add = debug_long_add,
 				id = "shoutout_raid",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_shoutout_raid",
 				level = tweak_data.narrative.stages.shoutout_raid
 			},
 			{
 				stage_id = "bph",
 				add = debug_long_add,
 				id = "bph",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_bph",
 				level = tweak_data.narrative.stages.bph
 			},
 			{
 				stage_id = "peta_1",
 				add = 15,
 				id = "peta_1",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
+				icon = "csm_peta",
 				level = tweak_data.narrative.stages.peta_1
-			},
-			{
-				stage_id = "bex",
-				add = debug_long_add,
-				id = "bex",
-				icon = "units/payday2/cubemaps/cubemap_zero_df",
-				level = tweak_data.narrative.stages.bex
 			}
 		}
 	}

@@ -437,8 +437,7 @@ function WeaponFactoryTweakData:_init_sights()
 		unit = "units/payday2/weapons/wpn_fps_upg_o_specter/wpn_fps_upg_o_specter",
 		stats = {
 			value = 8,
-			zoom = 30,
-			concealment = -3
+			zoom = 30
 		},
 		perks = {"scope"},
 		stance_mod = {
@@ -776,12 +775,11 @@ function WeaponFactoryTweakData:_init_sights()
 		name_id = "bm_wp_upg_o_aimpoint",
 		a_obj = "a_o",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_med",		
+		desc_id = "bm_wp_upg_o_aim",		
 		unit = "units/payday2/weapons/wpn_fps_upg_o_aimpoint/wpn_fps_upg_o_aimpoint",
 		stats = {
 			value = 8,
-			zoom = 20,
-			concealment = -2
+			zoom = 20
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -810,12 +808,11 @@ function WeaponFactoryTweakData:_init_sights()
 		name_id = "bm_wp_upg_o_aimpoint",
 		a_obj = "a_o",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_med",		
+		desc_id = "bm_wp_upg_o_aim",			
 		unit = "units/payday2/weapons/wpn_fps_upg_o_aimpoint/wpn_fps_upg_o_aimpoint_preorder",
 		stats = {
 			value = 1,
-			zoom = 20,
-			concealment = -2
+			zoom = 20
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -842,12 +839,11 @@ function WeaponFactoryTweakData:_init_sights()
 		name_id = "bm_wp_upg_o_docter",
 		a_obj = "a_o",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_small",		
+		desc_id = "bm_wp_upg_o_tiny",		
 		unit = "units/payday2/weapons/wpn_fps_upg_o_docter/wpn_fps_upg_o_docter",
 		stats = {
 			value = 5,
-			zoom = 10,
-			concealment = -1		
+			zoom = 1		
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -877,8 +873,7 @@ function WeaponFactoryTweakData:_init_sights()
 		unit = "units/payday2/weapons/wpn_fps_upg_o_eotech/wpn_fps_upg_o_eotech",
 		stats = {
 			value = 3,
-			zoom = 10,
-			concealment = -1	
+			zoom = 2	
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -903,13 +898,12 @@ function WeaponFactoryTweakData:_init_sights()
 		type = "sight",
 		name_id = "bm_wp_upg_o_t1micro",
 		a_obj = "a_o",
-		desc_id = "bm_wp_upg_o_small",
+		desc_id = "bm_wp_upg_o_tiny",
 		has_description = true,				
 		unit = "units/payday2/weapons/wpn_fps_upg_o_t1micro/wpn_fps_upg_o_t1micro",
 		stats = {
 			value = 5,
-			zoom = 10,
-			concealment = -1				
+			zoom = 1				
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -1191,7 +1185,7 @@ function WeaponFactoryTweakData:_init_sights()
 		stats = {
 			value = 8,
 			zoom = 50,
-			concealment = -1
+			concealment = -2
 		},
 		perks = {"scope", "highlight"},
 		stance_mod = {
@@ -1287,13 +1281,12 @@ function WeaponFactoryTweakData:_init_content_dlc1()
 		name_id = "bm_wp_upg_o_cmore",
 		texture_bundle_folder = "dlc1",
 		a_obj = "a_o",
-		desc_id = "bm_wp_upg_o_small",
+		desc_id = "bm_wp_upg_o_tiny",
 		has_description = true,		
 		unit = "units/pd2_dlc1/weapons/wpn_fps_upg_o_cmore/wpn_fps_upg_o_cmore",
 		stats = {
 			value = 5,
-			zoom = 10,
-			concealment = -1
+			zoom = 1
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -1443,8 +1436,7 @@ function WeaponFactoryTweakData:_init_content_dlc2_dec16()
 		unit = "units/pd2_dlc2/weapons/wpn_fps_upg_o_acog/wpn_fps_upg_o_acog",
 		stats = {
 			value = 8,
-			zoom = 30,
-			concealment = -3
+			zoom = 30
 		},
 		perks = {"scope"},
 		stance_mod = {
@@ -2277,8 +2269,7 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rmr/wpn_fps_upg_o_rmr",
 		stats = {
 			value = 6,
-			zoom = 10,
-			concealment = -1
+			zoom = 2
 		},
 		custom_stats = {disable_steelsight_stance = true},
 		perks = {"scope"},
@@ -2339,13 +2330,12 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		name_id = "bm_wp_upg_o_eotech_xps",
 		a_obj = "a_o",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_small",		
+		desc_id = "bm_wp_upg_o_tiny",		
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_eotech_xps/wpn_fps_upg_o_eotech_xps",
 		stats = {
 			value = 5,
-			concealment = -1,
-			zoom = 10
+			zoom = 1
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -2377,8 +2367,7 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_reflex/wpn_fps_upg_o_reflex",
 		stats = {
 			value = 5,
-			zoom = 10,
-			concealment = -1
+			zoom = 2
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -2400,13 +2389,12 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		name_id = "bm_wp_upg_o_rx01",
 		a_obj = "a_o",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_small",			
+		desc_id = "bm_wp_upg_o_aim",			
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rx01/wpn_fps_upg_o_rx01",
 		stats = {
 			value = 5,
-			zoom = 10,
-			concealment = -1
+			zoom = 10
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -2428,13 +2416,12 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		name_id = "bm_wp_upg_o_rx30",
 		a_obj = "a_o",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_small",			
+		desc_id = "bm_wp_upg_o_cs_desc",			
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_rx30/wpn_fps_upg_o_rx30",
 		stats = {
 			value = 5,
-			zoom = 10,
-			concealment = -1
+			zoom = 5
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -2456,14 +2443,13 @@ function WeaponFactoryTweakData:_init_content_jobs()
 		name_id = "bm_wp_upg_o_cs",
 		a_obj = "a_o",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_med",			
+		desc_id = "bm_wp_upg_o_cs_desc",			
 		reticle_obj = "g_reddot",
 		texture_bundle_folder = "gage_pack_jobs",
 		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_o_cs/wpn_fps_upg_o_cs",
 		stats = {
 			value = 3,
-			zoom = 20,
-			concealment = -2
+			zoom = 5
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -12834,6 +12820,7 @@ function WeaponFactoryTweakData:_init_m95()
 		wpn_fps_snp_model70_iron_sight = { 
 			adds = {"wpn_fps_ass_vhs_o_standard"}
 		},
+		--[[
 		wpn_fps_upg_o_specter = {
 			stats = {
 				value = 8,
@@ -12946,7 +12933,8 @@ function WeaponFactoryTweakData:_init_m95()
 				zoom = 2,
 				concealment = 3
 			}			
-		}				
+		}	
+		]]--
 	}
 	self.wpn_fps_snp_m95.default_blueprint = {
 		"wpn_fps_snp_m95_barrel_standard",
@@ -13123,120 +13111,7 @@ function WeaponFactoryTweakData:_init_msr()
 	self.wpn_fps_snp_msr.override = {
 		wpn_fps_snp_model70_iron_sight = { 
 			adds = {"wpn_fps_m4_uupg_o_flipup"}
-		},		
-		wpn_fps_upg_o_specter = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_aimpoint = {
-			stats = {
-				value = 8,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			stats = {
-				value = 1,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_docter = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},
-		wpn_fps_upg_o_eotech = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_t1micro = {
-			stats = {
-				value = 3,
-				concealment = 4
-			}
-		},	
-		wpn_fps_upg_o_cmore = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},		
-		wpn_fps_upg_o_acog = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_cs = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_eotech_xps = {
-			stats = {
-				value = 5
-			}
-		},	
-		wpn_fps_upg_o_reflex = {
-			stats = {
-				value = 5,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_rx01 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},	
-		wpn_fps_upg_o_rx30 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},		
-		wpn_fps_upg_o_spot = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1	
-			}
-		},
-		wpn_fps_upg_o_bmg = {
-			stats = {
-				zoom = 6,
-				concealment = 1,
-				value = 8
-			}
-		},	
-		wpn_fps_upg_o_fc1 = {
-			stats = {
-				value = 6,
-				concealment = 4
-			}			
-		},
-		wpn_fps_upg_o_uh = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}			
-		}			
+		}	
 	}				
 	self.wpn_fps_snp_msr.unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_msr/wpn_fps_snp_msr"
 	self.wpn_fps_snp_msr.optional_types = {"gadget", "sight"}
@@ -13394,119 +13269,6 @@ function WeaponFactoryTweakData:_init_r93()
 		wpn_fps_snp_model70_iron_sight = { 
 			adds = {"wpn_fps_m4_uupg_o_flipup", "wpn_fps_shot_r870_s_nostock_single"},
 		},
-		wpn_fps_upg_o_specter = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_aimpoint = {
-			stats = {
-				value = 8,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			stats = {
-				value = 1,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_docter = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},
-		wpn_fps_upg_o_eotech = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_t1micro = {
-			stats = {
-				value = 3,
-				concealment = 4
-			}
-		},	
-		wpn_fps_upg_o_cmore = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},		
-		wpn_fps_upg_o_acog = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_cs = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_eotech_xps = {
-			stats = {
-				value = 5
-			}
-		},	
-		wpn_fps_upg_o_reflex = {
-			stats = {
-				value = 5,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_rx01 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},	
-		wpn_fps_upg_o_rx30 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},		
-		wpn_fps_upg_o_spot = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1	
-			}
-		},
-		wpn_fps_upg_o_bmg = {
-			stats = {
-				zoom = 6,
-				concealment = 1,
-				value = 8
-			}
-		},	
-		wpn_fps_upg_o_fc1 = {
-			stats = {
-				value = 6,
-				concealment = 4
-			}			
-		},
-		wpn_fps_upg_o_uh = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}			
-		},			
 		wpn_fps_shot_r870_s_nostock_single = { a_obj = "a_b" }
 	}
 	self.wpn_fps_snp_r93.unit = "units/pd2_dlc_gage_snp/weapons/wpn_fps_snp_r93/wpn_fps_snp_r93"
@@ -19311,8 +19073,7 @@ function WeaponFactoryTweakData:_init_c96()
 		is_a_unlockable = true,
 		stats = {
 			value = 1,
-			zoom = 40,
-			concealment = -4
+			zoom = 40
 		},
 		perks = {"scope"},
 		stance_mod = {
@@ -20085,8 +19846,7 @@ function WeaponFactoryTweakData:_init_mosin()
 		a_obj = "a_o",
 		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_snp_mosin_pts/wpn_fps_snp_mosin_iron_sight",
 		stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 		},
 		dlc = "gage_pack_historical",
 		texture_bundle_folder = "gage_pack_historical",
@@ -20117,121 +19877,6 @@ function WeaponFactoryTweakData:_init_mosin()
 		"sight",
 		"bayonet"
 	}
-	self.wpn_fps_snp_mosin.override = {
-		wpn_fps_upg_o_specter = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_aimpoint = {
-			stats = {
-				value = 8,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			stats = {
-				value = 1,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_docter = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},
-		wpn_fps_upg_o_eotech = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_t1micro = {
-			stats = {
-				value = 3,
-				concealment = 4
-			}
-		},	
-		wpn_fps_upg_o_cmore = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},		
-		wpn_fps_upg_o_acog = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_cs = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_eotech_xps = {
-			stats = {
-				value = 5
-			}
-		},	
-		wpn_fps_upg_o_reflex = {
-			stats = {
-				value = 5,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_rx01 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},	
-		wpn_fps_upg_o_rx30 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},		
-		wpn_fps_upg_o_spot = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1	
-			}
-		},
-		wpn_fps_upg_o_bmg = {
-			stats = {
-				zoom = 6,
-				concealment = 1,
-				value = 8
-			}
-		},	
-		wpn_fps_upg_o_fc1 = {
-			stats = {
-				value = 6,
-				concealment = 4
-			}			
-		},
-		wpn_fps_upg_o_uh = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}			
-		}
-	}		
 	self.wpn_fps_snp_mosin.adds = {
 		wpn_fps_upg_o_specter = {
 			"wpn_fps_snp_mosin_rail"
@@ -25664,8 +25309,7 @@ function WeaponFactoryTweakData:_init_winchester1874()
 		unit = "units/pd2_dlc_west/weapons/wpn_fps_snp_winchester_pts/wpn_fps_upg_winchester_o_classic",
 		stats = {
 			value = 0,
-			zoom = 40,
-			concealment = -4
+			zoom = 40
 		},
 		stance_mod = {
 			wpn_fps_snp_winchester = {
@@ -26857,122 +26501,7 @@ function WeaponFactoryTweakData:_init_wa2000()
 	self.parts.wpn_fps_snp_wa2000_s_standard.third_unit = "units/pd2_dlc_turtles/weapons/wpn_third_snp_wa2000_pts/wpn_third_snp_wa2000_s_standard"
 	self.wpn_fps_snp_wa2000 = {}
 	self.wpn_fps_snp_wa2000.unit = "units/pd2_dlc_turtles/weapons/wpn_fps_snp_wa2000/wpn_fps_snp_wa2000"
-	self.wpn_fps_snp_wa2000.optional_types = {"gadget", "sight"}
-	self.wpn_fps_snp_wa2000.override = {	
-		wpn_fps_upg_o_specter = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_aimpoint = {
-			stats = {
-				value = 8,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			stats = {
-				value = 1,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_docter = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},
-		wpn_fps_upg_o_eotech = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_t1micro = {
-			stats = {
-				value = 3,
-				concealment = 4
-			}
-		},	
-		wpn_fps_upg_o_cmore = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},		
-		wpn_fps_upg_o_acog = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_cs = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_eotech_xps = {
-			stats = {
-				value = 5
-			}
-		},	
-		wpn_fps_upg_o_reflex = {
-			stats = {
-				value = 5,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_rx01 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},	
-		wpn_fps_upg_o_rx30 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},		
-		wpn_fps_upg_o_spot = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1	
-			}
-		},
-		wpn_fps_upg_o_bmg = {
-			stats = {
-				zoom = 6,
-				concealment = 1,
-				value = 8
-			}
-		},	
-		wpn_fps_upg_o_fc1 = {
-			stats = {
-				value = 6,
-				concealment = 4
-			}			
-		},
-		wpn_fps_upg_o_uh = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}			
-		}			
-	}					
+	self.wpn_fps_snp_wa2000.optional_types = {"gadget", "sight"}				
 	self.wpn_fps_snp_wa2000.default_blueprint = {
 		"wpn_fps_snp_wa2000_body_standard",
 		"wpn_fps_snp_wa2000_m_standard",
@@ -28681,8 +28210,7 @@ function WeaponFactoryTweakData:_init_model70()
 		a_obj = "a_o",
 		unit = "units/pd2_dlc_berry/weapons/wpn_fps_snp_model70_pts/wpn_fps_snp_model70_iron_sight",
 		stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 		},
 		stance_mod = {
 			wpn_fps_snp_msr = {
@@ -28725,122 +28253,7 @@ function WeaponFactoryTweakData:_init_model70()
 		"gadget",
 		"sight",
 		"bayonet"
-	}
-	self.wpn_fps_snp_model70.override = {
-		wpn_fps_upg_o_specter = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_aimpoint = {
-			stats = {
-				value = 8,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			stats = {
-				value = 1,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_docter = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},
-		wpn_fps_upg_o_eotech = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_t1micro = {
-			stats = {
-				value = 3,
-				concealment = 4
-			}
-		},	
-		wpn_fps_upg_o_cmore = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},		
-		wpn_fps_upg_o_acog = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_cs = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_eotech_xps = {
-			stats = {
-				value = 5
-			}
-		},	
-		wpn_fps_upg_o_reflex = {
-			stats = {
-				value = 5,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_rx01 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},	
-		wpn_fps_upg_o_rx30 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},		
-		wpn_fps_upg_o_spot = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1	
-			}
-		},
-		wpn_fps_upg_o_bmg = {
-			stats = {
-				zoom = 6,
-				concealment = 1,
-				value = 8
-			}
-		},	
-		wpn_fps_upg_o_fc1 = {
-			stats = {
-				value = 6,
-				concealment = 4
-			}			
-		},
-		wpn_fps_upg_o_uh = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}			
-		}
-	}				
+	}			
 	self.wpn_fps_snp_model70.adds = {
 		wpn_fps_upg_o_specter = {
 			"wpn_fps_snp_model70_o_rail"
@@ -31301,120 +30714,7 @@ function WeaponFactoryTweakData:_init_desertfox()
 		fire = "recoil",
 		fire_steelsight = "recoil"
 	}				
-	self.wpn_fps_snp_desertfox.override = {
-		wpn_fps_upg_o_specter = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_aimpoint = {
-			stats = {
-				value = 8,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			stats = {
-				value = 1,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_docter = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},
-		wpn_fps_upg_o_eotech = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_t1micro = {
-			stats = {
-				value = 3,
-				concealment = 4
-			}
-		},	
-		wpn_fps_upg_o_cmore = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},		
-		wpn_fps_upg_o_acog = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_cs = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_eotech_xps = {
-			stats = {
-				value = 5
-			}
-		},	
-		wpn_fps_upg_o_reflex = {
-			stats = {
-				value = 5,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_rx01 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},	
-		wpn_fps_upg_o_rx30 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},		
-		wpn_fps_upg_o_spot = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1	
-			}
-		},
-		wpn_fps_upg_o_bmg = {
-			stats = {
-				zoom = 6,
-				concealment = 1,
-				value = 8
-			}
-		},	
-		wpn_fps_upg_o_fc1 = {
-			stats = {
-				value = 6,
-				concealment = 4
-			}			
-		},
-		wpn_fps_upg_o_uh = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}			
-		},		
+	self.wpn_fps_snp_desertfox.override = {	
 		wpn_fps_snp_model70_iron_sight = { 
 			adds = {"wpn_fps_m4_uupg_o_flipup"}
 		}
@@ -32069,13 +31369,12 @@ function WeaponFactoryTweakData:_init_tng()
 		reticle_obj = "g_reticle",
 		name_id = "bm_wp_upg_o_spot",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_large",
+		desc_id = "bm_wp_upg_o_huge",
 		a_obj = "a_o",
 		unit = "units/pd2_dlc_tng/weapons/wpn_fps_upg_o_spot/wpn_fps_upg_o_spot",
 		stats = {
 			value = 8,
-			zoom = 40,
-			concealment = -4
+			zoom = 40
 		},
 		perks = {"scope"},
 		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod),
@@ -32130,7 +31429,7 @@ function WeaponFactoryTweakData:_init_tng()
 		stats = {
 			value = 8,
 			zoom = 50,
-			concealment = -1
+			concealment = -2
 		},
 		perks = {"scope", "highlight"},
 		stance_mod = {
@@ -32205,13 +31504,12 @@ function WeaponFactoryTweakData:_init_tng()
 		name_id = "bm_wp_g36_o_vintage",
 		a_obj = "a_body",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_large",
+		desc_id = "bm_wp_upg_o_huge",
 		unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_g36_body_optics/wpn_fps_ass_g36_o_vintage",
 		reticle_obj = "g_reticle",
 		stats = {
 			value = 1,
-			zoom = 40,
-			concealment = -4
+			zoom = 40
 		},
 		perks = {"scope"},
 		texture_bundle_folder = "tng",
@@ -33123,120 +32421,7 @@ function WeaponFactoryTweakData:_init_tti()
 	self.wpn_fps_snp_tti.override = {	
 		wpn_fps_snp_model70_iron_sight = { 
 			adds = {"wpn_fps_m4_uupg_o_flipup"}
-		},		
-		wpn_fps_upg_o_specter = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_aimpoint = {
-			stats = {
-				value = 8,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			stats = {
-				value = 1,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_docter = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},
-		wpn_fps_upg_o_eotech = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_t1micro = {
-			stats = {
-				value = 3,
-				concealment = 4
-			}
-		},	
-		wpn_fps_upg_o_cmore = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},		
-		wpn_fps_upg_o_acog = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_cs = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_eotech_xps = {
-			stats = {
-				value = 5
-			}
-		},	
-		wpn_fps_upg_o_reflex = {
-			stats = {
-				value = 5,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_rx01 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},	
-		wpn_fps_upg_o_rx30 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},		
-		wpn_fps_upg_o_spot = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1	
-			}
-		},
-		wpn_fps_upg_o_bmg = {
-			stats = {
-				zoom = 6,
-				concealment = 1,
-				value = 8
-			}
-		},	
-		wpn_fps_upg_o_fc1 = {
-			stats = {
-				value = 6,
-				concealment = 4
-			}			
-		},
-		wpn_fps_upg_o_uh = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}			
-		}			
+		}
 	}							
 	self.wpn_fps_snp_tti.unit = "units/pd2_dlc_spa/weapons/wpn_fps_snp_tti/wpn_fps_snp_tti"
 	self.wpn_fps_snp_tti.optional_types = {"gadget", "sight"}
@@ -33458,8 +32643,7 @@ function WeaponFactoryTweakData:_init_siltstone()
 		a_obj = "a_o",
 		unit = "units/pd2_dlc_grv/weapons/wpn_fps_snp_siltstone_pts/wpn_fps_snp_siltstone_iron_sight",
 		stats = {
-			value = 0,
-			concealment = 4
+			value = 0
 		},
 		dlc = "grv",
 		texture_bundle_folder = "grv",
@@ -33519,121 +32703,6 @@ function WeaponFactoryTweakData:_init_siltstone()
 		fire = "recoil",
 		fire_steelsight = "recoil"
 	}
-	self.wpn_fps_snp_siltstone.override = {
-		wpn_fps_upg_o_specter = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_aimpoint = {
-			stats = {
-				value = 8,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			stats = {
-				value = 1,
-				zoom = 4,
-				concealment = 2
-			}
-		},
-		wpn_fps_upg_o_docter = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},
-		wpn_fps_upg_o_eotech = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_t1micro = {
-			stats = {
-				value = 3,
-				concealment = 4
-			}
-		},	
-		wpn_fps_upg_o_cmore = {
-			stats = {
-				value = 5,
-				concealment = 4
-			}
-		},		
-		wpn_fps_upg_o_acog = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1
-			}
-		},
-		wpn_fps_upg_o_cs = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_eotech_xps = {
-			stats = {
-				value = 5
-			}
-		},	
-		wpn_fps_upg_o_reflex = {
-			stats = {
-				value = 5,
-				zoom = 2,
-				concealment = 3
-			}
-		},	
-		wpn_fps_upg_o_rx01 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},	
-		wpn_fps_upg_o_rx30 = {
-			stats = {
-				value = 5,
-				zoom = 4,
-				concealment = 2
-			}
-		},		
-		wpn_fps_upg_o_spot = {
-			stats = {
-				value = 8,
-				zoom = 6,
-				concealment = 1	
-			}
-		},
-		wpn_fps_upg_o_bmg = {
-			stats = {
-				zoom = 6,
-				concealment = 1,
-				value = 8
-			}
-		},	
-		wpn_fps_upg_o_fc1 = {
-			stats = {
-				value = 6,
-				concealment = 4
-			}			
-		},
-		wpn_fps_upg_o_uh = {
-			stats = {
-				value = 3,
-				zoom = 2,
-				concealment = 3
-			}			
-		}			
-	}		
 	self.wpn_fps_snp_siltstone.adds = {
 		wpn_fps_upg_o_specter = {
 			"wpn_fps_snp_siltstone_o_scopemount"
@@ -41146,9 +40215,8 @@ function WeaponFactoryTweakData:_init_mwm()
 			40
 		},
 		stats = {
-			zoom = 6,
-			concealment = -3,
-			value = 30
+			zoom = 30,
+			value = 6
 		},
 		perks = {
 			"scope"
@@ -41459,8 +40527,7 @@ function WeaponFactoryTweakData:_init_mwm()
 			40
 		},
 		stats = {
-			zoom = 10,
-			concealment = -1,
+			zoom = 2,
 			value = 6
 		},
 		perks = {
@@ -41564,7 +40631,7 @@ function WeaponFactoryTweakData:_init_mwm()
 		dlc = "mwm",
 		name_id = "bm_wp_upg_o_rikt",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_med",
+		desc_id = "bm_wp_upg_o_cs_desc",
 		unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_rikt/wpn_fps_upg_o_rikt",
 		pcs = {
 			10,
@@ -41573,8 +40640,7 @@ function WeaponFactoryTweakData:_init_mwm()
 			40
 		},
 		stats = {
-			zoom = 20,
-			concealment = -2,
+			zoom = 5,
 			value = 6
 		},
 		perks = {
@@ -41684,8 +40750,7 @@ function WeaponFactoryTweakData:_init_mwm()
 		},
 		stats = {
 			value = 3,
-			zoom = 10,
-			concealment = -1
+			zoom = 2
 		},
 		perks = {
 			"scope"
@@ -41709,7 +40774,7 @@ function WeaponFactoryTweakData:_init_mwm()
 		a_obj = "a_o",
 		name_id = "bm_wp_upg_o_fc1",
 		has_description = true,
-		desc_id = "bm_wp_upg_o_small",		
+		desc_id = "bm_wp_upg_o_tiny",		
 		unit = "units/pd2_dlc_mwm/weapons/wpn_fps_upg_o_fc1/wpn_fps_upg_o_fc1",
 		pcs = {
 			10,
@@ -41718,8 +40783,7 @@ function WeaponFactoryTweakData:_init_mwm()
 			40
 		},
 		stats = {
-			zoom = 10,
-			concealment = -1,
+			zoom = 1,
 			value = 6
 		},
 		perks = {

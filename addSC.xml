@@ -141,7 +141,8 @@
 	<unit path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true" />		
 	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true"/>	
 	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" force="true" />			
-	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" />		
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" />	
+	<unit path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" />		
 
 	<!--Reaper Bullet Impact Fixes-->	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />

@@ -4944,7 +4944,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 9,
 		spread_moving = 8,
 		zoom = 1,
-		concealment = 10,
+		concealment = 14,
 		suppression = 2,
 		alert_size = 2,
 		extra_ammo = 101,
@@ -4979,7 +4979,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 14,
 		spread_moving = 8,
 		zoom = 1,
-		concealment = 19,
+		concealment = 23,
 		suppression = 4,
 		alert_size = 4,
 		extra_ammo = 101,
@@ -5011,7 +5011,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 11,
 		spread_moving = 8,
 		zoom = 1,
-		concealment = 15,
+		concealment = 19,
 		suppression = 3,
 		alert_size = 3,
 		extra_ammo = 101,
@@ -5728,7 +5728,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 12,
 		spread_moving = 9,
 		zoom = 1,
-		concealment = 16,
+		concealment = 20,
 		suppression = 3,
 		alert_size = 3,
 		extra_ammo = 101,
@@ -6509,7 +6509,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 12,
 		spread_moving = 6,
 		zoom = 1,
-		concealment = 17,
+		concealment = 21,
 		suppression = 4,
 		alert_size = 4,
 		extra_ammo = 101,
@@ -6848,7 +6848,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 11,
 		spread_moving = 9,
 		zoom = 1,
-		concealment = 14,
+		concealment = 18,
 		suppression = 3,
 		alert_size = 3,
 		extra_ammo = 101,
@@ -7274,7 +7274,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 11,
 		spread_moving = 8,
 		zoom = 1,
-		concealment = 16,
+		concealment = 20,
 		suppression = 3,
 		alert_size = 3,
 		extra_ammo = 101,
@@ -7515,7 +7515,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 13,
 		spread_moving = 24,
 		zoom = 1,
-		concealment = 15,
+		concealment = 19,
 		suppression = 4,
 		alert_size = 4,
 		extra_ammo = 101,
@@ -7548,7 +7548,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 13,
 		spread_moving = 8,
 		zoom = 1,
-		concealment = 18,
+		concealment = 22,
 		suppression = 4,
 		alert_size = 4,
 		extra_ammo = 101,
@@ -9592,6 +9592,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Restoration Weapons--
 	
 	--Raze's Fury
+	self.shatters_fury.fire_mode_data.fire_rate = 0.25
+	self.shatters_fury.single.fire_rate = 0.25	
 	self.shatters_fury.AMMO_MAX = 30
 	self.shatters_fury.CLIP_AMMO_MAX = 5
 	self.shatters_fury.AMMO_PICKUP = self:_pickup_chance(30, 2)
@@ -9627,6 +9629,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shatters_fury.can_shoot_through_shield = true
 	self.shatters_fury.can_shoot_through_wall = true
 	self.shatters_fury.armor_piercing_chance = 1
+	self.shatters_fury.timers.reload_not_empty = 2.4
+	self.shatters_fury.timers.reload_empty = 2.4	
 	--this line doesn't do shit
 	--self.shatters_fury.custom = true
 	

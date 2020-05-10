@@ -105,7 +105,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks special enemies, as well as guards in Stealth, while aiming.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
 
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_small"] = "2x MAGNIFICATION.",	
+		["bm_wp_upg_o_tiny"] = "1.1x MAGNIFICATION.",	
+		["bm_wp_upg_o_small"] = "1.2x MAGNIFICATION.",	
+		["bm_wp_upg_o_cs_desc"] = "1.5x MAGNIFICATION.",	
+		["bm_wp_upg_o_aim"] = "2x MAGNIFICATION.",	
 		["bm_wp_upg_o_med"] = "3x MAGNIFICATION.",	
 		["bm_wp_upg_o_large"] = "4x MAGNIFICATION.",	
 		["bm_wp_upg_o_huge"] = "5x MAGNIFICATION.",

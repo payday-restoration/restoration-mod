@@ -935,12 +935,7 @@ function CopLogicTravel.upd_advance(data)
 			CopLogicTravel._begin_coarse_pathing(data, my_data)
 		end
 	else
-		if CopLogicBase.should_enter_attack(data) then
-			CopLogicBase._exit(data.unit, "attack")
-		else
-			CopLogicBase._exit(data.unit, "idle")
-		end
-
+		CopLogicBase._exit(data.unit, "idle")
 		return
 	end
 end
@@ -1018,11 +1013,6 @@ function CopLogicTravel.queued_update(data)
 	local objective = data.objective or nil
 
 	data.logic._upd_stance_and_pose(data, data.internal_data, objective)
-
-	if CopLogicBase.should_enter_attack(data) then
-		CopLogicBase._exit(data.unit, "attack")
-		return
-	end
 
 	if data.char_tweak.leader then
 		managers.groupai:state():find_followers_to_unit(data.key, data.char_tweak.leader)

@@ -1278,10 +1278,6 @@ function CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, my_pos,
 end
 
 function CopLogicAttack._chk_exit_attack_logic(data, new_reaction)
-	if CopLogicBase.should_enter_attack(data) then
-		return
-	end
-
 	if not data.unit:movement():chk_action_forbidden("walk") then
 		local wanted_state = CopLogicBase._get_logic_state_from_reaction(data, new_reaction)
 

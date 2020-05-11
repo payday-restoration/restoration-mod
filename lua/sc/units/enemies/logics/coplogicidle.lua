@@ -627,10 +627,6 @@ end]]--
 
 
 function CopLogicIdle._chk_relocate(data)
-	if CopLogicBase.should_enter_attack(data) then
-		return
-	end
-	
 	if data.objective and data.objective.type == "follow" then
 		if data.is_converted then
 			if TeamAILogicIdle._check_should_relocate(data, data.internal_data, data.objective) then
@@ -744,8 +740,6 @@ function CopLogicIdle.on_new_objective(data, old_objective)
 
 		if objective_type == "free" and my_data.exiting then
 			--nothing
-		elseif CopLogicBase.should_enter_attack(data) then
-			CopLogicBase._exit(data.unit, "attack")
 		elseif CopLogicIdle._chk_objective_needs_travel(data, new_objective) then
 			CopLogicBase._exit(data.unit, "travel")
 		elseif objective_type == "guard" then
@@ -783,10 +777,6 @@ end
 function CopLogicIdle._chk_objective_needs_travel(data, new_objective)
 	
 	if not new_objective.nav_seg and new_objective.type ~= "follow" then
-		return
-	end
-	
-	if CopLogicBase.should_enter_attack(data) then
 		return
 	end
 

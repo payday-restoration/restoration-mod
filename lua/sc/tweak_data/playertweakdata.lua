@@ -112,7 +112,7 @@ function PlayerTweakData:_set_sm_wish()
 			0
 		}
 	}
-	self.damage.custody_ammo_kept  = 0.1
+	self.damage.custody_ammo_kept  = 0.25
 	self.damage.DOWNED_TIME_DEC = 10
 end
 

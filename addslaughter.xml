@@ -39,12 +39,8 @@
 	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_average_chains/sus_acc_slaughterhouse_male_average_chains" force="true"/>
 	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_average_chains/sus_acc_slaughterhouse_male_average_chains" force="true"/>
 
-	<unit path="units/pd2_dlc_sus/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-	<object path="units/pd2_dlc_sus/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-	<model path="units/pd2_dlc_sus/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big_contour" force="true"/>
-	<cooked_physics path="units/pd2_dlc_sus/characters/wwh_acc_stealth_suit_female_big/wwh_acc_stealth_suit_female_big" force="true"/>
+	<unit_mat path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_big/sus_acc_slaughterhouse_female_big" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_big/sus_acc_slaughterhouse_female_big" force="true"/>
 
 	<unit path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" force="true"/>
 	<object path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" force="true"/>

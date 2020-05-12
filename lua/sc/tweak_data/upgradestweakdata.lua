@@ -477,7 +477,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 			
 				--Uppers
-				self.values.first_aid_kit.quantity = {4, 8}
+				self.values.first_aid_kit.quantity = {3, 6}
 				self.values.first_aid_kit.downs_restore_chance = {0}
 
 				--Combat Doctor

@@ -1,3 +1,5 @@
+--[[
+
 function SpoocLogicAttack.enter(data, new_logic_name, enter_params)
 	CopLogicBase.enter(data, new_logic_name, enter_params)
 	data.unit:brain():cancel_all_pathing_searches()
@@ -296,7 +298,7 @@ function SpoocLogicAttack._upd_enemy_detection(data, is_synchronous)
 	CopLogicBase._report_detections(data.detected_attention_objects)
 end
 
---[[function SpoocLogicAttack.action_complete_clbk(data, action)
+function SpoocLogicAttack.action_complete_clbk(data, action)
 	local my_data = data.internal_data
 	local action_type = action:type()
 
@@ -393,4 +395,6 @@ end
 			SpoocLogicAttack._upd_combat_movement(data)
 		end
 	end
-end]]--
+end
+
+]]--

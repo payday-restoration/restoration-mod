@@ -1,3 +1,5 @@
+--[[
+
 function TankCopLogicAttack.update(data)
 	local t = data.t
 	local unit = data.unit
@@ -74,3 +76,5 @@ function TankCopLogicAttack.update(data)
 		TankCopLogicAttack._cancel_chase_attempt(data, my_data)
 	end
 end
+
+]]--

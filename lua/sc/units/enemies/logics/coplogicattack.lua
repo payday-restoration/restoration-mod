@@ -1,3 +1,5 @@
+--[[
+
 local mvec3_set = mvector3.set
 local mvec3_set_z = mvector3.set_z
 local mvec3_sub = mvector3.subtract
@@ -553,9 +555,9 @@ function CopLogicAttack._upd_combat_movement(data)
 	if not my_data.turning and not data.unit:movement():chk_action_forbidden("walk") and CopLogicAttack._can_move(data) and data.attention_obj.verified and (not in_cover or not in_cover[4]) and not spoocavoidancemovementqualify then
 		if data.is_suppressed and data.t - data.unit:character_damage():last_suppression_t() < 0.7 then
 			action_taken = CopLogicBase.chk_start_action_dodge(data, "scared")
-			--[[if data.char_tweak.chatter.dodge then
+			if data.char_tweak.chatter.dodge then
 				managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "dodge")
-			end]]--
+			end
 		end
 
 		if not action_taken and focus_enemy.is_person and focus_enemy.dis < 3000 and math.random() < 0.5 then
@@ -577,9 +579,9 @@ function CopLogicAttack._upd_combat_movement(data)
 
 			if dodge and focus_enemy.aimed_at then
 				action_taken = CopLogicBase.chk_start_action_dodge(data, "preemptive")
-				--[[if data.char_tweak.chatter.dodge then
+				if data.char_tweak.chatter.dodge then
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "dodge")
-				end]]--
+				end
 			end
 		end
 	end
@@ -795,7 +797,7 @@ function CopLogicAttack._chk_start_action_move_back(data, my_data, focus_enemy, 
 	end
 end
 
---[[function CopLogicAttack.action_complete_clbk(data, action)
+function CopLogicAttack.action_complete_clbk(data, action)
 	local my_data = data.internal_data
 	local action_type = action:type()
 
@@ -922,7 +924,7 @@ end
 			CopLogicAttack._upd_combat_movement(data)
 		end
 	end
-end]]--
+end
 
 function CopLogicAttack.queue_update(data, my_data)
 	local focus_enemy = data.attention_obj
@@ -1296,3 +1298,5 @@ function CopLogicAttack._chk_exit_attack_logic(data, new_reaction)
 		end
 	end
 end
+
+]]--

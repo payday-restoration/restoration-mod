@@ -1,3 +1,5 @@
+--[[
+
 local math = math
 local mvec3_set = mvector3.set
 local mvec3_set_z = mvector3.set_z
@@ -182,7 +184,7 @@ if ray_hit1 and dis and dis < min_space then
 	return
 end
 
---[[local dodge_side = nil    -- Default, below is the modified part
+local dodge_side = nil    -- Default, below is the modified part
 if face_attention then -- choose side that rotates us towards our attention
 	dodge_side = dodge_dir_reversed and "l" or "r"
 else -- choose side closest to the wanted rotation
@@ -193,7 +195,7 @@ else -- choose side closest to the wanted rotation
 	--print( "fwd_dot", fwd_dot )
 	--print( "right_dot", right_dot )
 	dodge_side = math.abs(fwd_dot) > 0.7071067690849 and (fwd_dot > 0 and "fwd" or "bwd") or right_dot > 0 and "r" or "l"
-end]]
+end
 
 local dodge_side
 local fwd_dot = mvec3_dot(dodge_dir, data.unit:movement():m_fwd())
@@ -433,3 +435,5 @@ end
 function CopLogicBase.chk_should_turn(data, my_data)
 	return not my_data.turning and not my_data.has_old_action and not data.unit:movement():chk_action_forbidden("walk") and not my_data.moving_to_cover and not my_data.walking_to_cover_shoot_pos and not my_data.surprised
 end
+
+]]--

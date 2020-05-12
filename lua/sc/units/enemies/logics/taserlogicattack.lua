@@ -1,3 +1,5 @@
+--[[
+
 function TaserLogicAttack.queued_update(data)
 	local my_data = data.internal_data
 
@@ -317,7 +319,7 @@ function TaserLogicAttack._upd_enemy_detection(data)
 	TaserLogicAttack._upd_aim(data, my_data, new_reaction)
 end
 
---[[function CopLogicAttack.action_complete_clbk(data, action)
+function CopLogicAttack.action_complete_clbk(data, action)
 	local my_data = data.internal_data
 	local action_type = action:type()
 
@@ -395,7 +397,7 @@ end
 			TaserLogicAttack._upd_combat_movement(data)
 		end
 	end
-end]]--
+end
 
 function TaserLogicAttack._chk_play_charge_weapon_sound(data, my_data, focus_enemy)
 	--if not my_data.tasing and (not my_data.last_charge_snd_play_t or data.t - my_data.last_charge_snd_play_t > 30) and focus_enemy.verified_dis < 2000 and math.abs(data.m_pos.z - focus_enemy.m_pos.z) < 300 then
@@ -404,3 +406,5 @@ function TaserLogicAttack._chk_play_charge_weapon_sound(data, my_data, focus_ene
 		--data.unit:sound():play("taser_charge", nil, true)
 	--end
 end
+
+]]--

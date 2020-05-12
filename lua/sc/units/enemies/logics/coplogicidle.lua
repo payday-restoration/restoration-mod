@@ -1,3 +1,5 @@
+--[[
+
 function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 	local surrender = false
 	local my_data = data.internal_data
@@ -521,7 +523,7 @@ function CopLogicIdle._upd_enemy_detection(data)
 	return delay
 end
 
---[[function CopLogicIdle.action_complete_clbk(data, action)
+function CopLogicIdle.action_complete_clbk(data, action)
 	local action_type = action:type()
 	local my_data = data.internal_data
 	
@@ -623,7 +625,7 @@ end
 			CopLogicAttack._upd_combat_movement(data)
 		end
 	end
-end]]--
+end
 
 
 function CopLogicIdle._chk_relocate(data)
@@ -862,3 +864,5 @@ function CopLogicIdle._chk_reaction_to_attention_object(data, attention_data, st
 
 	return math.min(attention_data.settings.reaction, AIAttentionObject.REACT_COMBAT)
 end	
+
+]]--

@@ -1,3 +1,5 @@
+--[[
+
 local murkywater = {
 		["units/payday2/characters/ene_cop_1/ene_cop_1"] = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45",
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_sharks/characters/ene_murky_cs_cop_raging_bull/ene_murky_cs_cop_raging_bull",
@@ -744,3 +746,5 @@ function ElementSpawnEnemyDummy:init(...)
 	self._events = {}
 	self:_finalize_values()
 end
+
+]]--

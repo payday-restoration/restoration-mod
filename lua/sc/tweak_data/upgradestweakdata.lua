@@ -438,8 +438,8 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.first_aid_kit.uppers_cooldown = 30
 	self.values.first_aid_kit.heal_amount = 10 --Heals 100 health on use.
 	self.values.doctor_bag.heal_amount = 0.2 --Heals 20% of max health on use.
-	self.values.doctor_bag.passive_regen = 0.03
-	self.values.doctor_bag.passive_regen_duration = 240.1 --Heals 3% of max health every 4 seconds for the next 4 minutes or until you enter bleedout.
+	self.values.doctor_bag.passive_regen = 0.04
+	self.values.doctor_bag.passive_regen_duration = 180.1 --Heals 4% of max health every 4 seconds for the next 3 minutes or until you enter bleedout.
 	
 	--ECMs--
 	self.ecm_jammer_base_battery_life = 10
@@ -477,7 +477,7 @@ function UpgradesTweakData:_init_pd2_values()
 				}
 			
 				--Uppers
-				self.values.first_aid_kit.quantity = {4, 8}
+				self.values.first_aid_kit.quantity = {3, 6}
 				self.values.first_aid_kit.downs_restore_chance = {0}
 
 				--Combat Doctor

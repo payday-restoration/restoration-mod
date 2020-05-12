@@ -38,6 +38,20 @@ function PlayerTweakData:_set_overkill_145()
 	self.suspicion.buildup_mul = 1
 	self.damage.custody_ammo_kept  = 0.5
 	self.damage.DOWNED_TIME_DEC = 5
+	self.damage.REVIVE_HEALTH_STEPS = {
+		0.70,
+		0.60,
+		0.50,
+		0.40,
+		0.30
+	}
+	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
+		0.95,
+		0.85,
+		0.75,
+		0.65,
+		0.55
+	}
 end
 
 function PlayerTweakData:_set_easy_wish()
@@ -47,6 +61,20 @@ function PlayerTweakData:_set_easy_wish()
 	self.damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.damage.custody_ammo_kept  = 0.25
 	self.damage.DOWNED_TIME_DEC = 5
+	self.damage.REVIVE_HEALTH_STEPS = {
+		0.70,
+		0.60,
+		0.50,
+		0.40,
+		0.30
+	}
+	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
+		0.95,
+		0.85,
+		0.75,
+		0.65,
+		0.55
+	}
 end
 
 function PlayerTweakData:_set_overkill_290()
@@ -55,11 +83,11 @@ function PlayerTweakData:_set_overkill_290()
 	self.suspicion.buildup_mul = 1.1
 	self.damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.damage.REVIVE_HEALTH_STEPS = {
-		0.25
+		0.30
 	}
 	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
-		0.5
-	}	
+		0.55
+	}
 	self.damage.STUN_TIME = 1.25
 	self.alarm_pager = {
 		first_call_delay = {2, 4},
@@ -89,10 +117,10 @@ function PlayerTweakData:_set_sm_wish()
 	self.suspicion.buildup_mul = 1.2
 	self.damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.damage.REVIVE_HEALTH_STEPS = {
-		0.25
+		0.3
 	}
 	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
-		0.5
+		0.55
 	}		
 	self.damage.TASED_TIME = 5
 	self.damage.STUN_TIME = 1.5
@@ -112,7 +140,7 @@ function PlayerTweakData:_set_sm_wish()
 			0
 		}
 	}
-	self.damage.custody_ammo_kept  = 0.1
+	self.damage.custody_ammo_kept  = 0.25
 	self.damage.DOWNED_TIME_DEC = 10
 end
 
@@ -153,18 +181,18 @@ function PlayerTweakData:init()
 	self.damage.LIVES_INIT = 6
 	self.damage.REGENERATE_TIME = 3
 	self.damage.REVIVE_HEALTH_STEPS = {
-		0.95,
-		0.70,
-		0.55,
-		0.4,
-		0.25
+		1.00,
+		0.75,
+		0.60,
+		0.45,
+		0.30
 	}
 	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
-		1,
-		1,
-		0.8,
-		0.65,
-		0.5
+		1.00,
+		1.00,
+		0.85,
+		0.70,
+		0.55
 	}
 	self.damage.CUSTODY_LIVES = 3 --Number of downs left when leaving damage.
 	self.damage.custody_ammo_kept = 1 --% of remaining ammo kept when leaving damage.

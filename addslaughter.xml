@@ -40,14 +40,10 @@
 	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_average_chains/sus_acc_slaughterhouse_male_average_chains" force="true"/>
 
 	<unit_mat path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_big/sus_acc_slaughterhouse_female_big" force="true"/>
-	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_big/sus_acc_slaughterhouse_female_big" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_big/sus_acc_slaughterhouse_female_big" />
 
-	<unit path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" force="true"/>
-	<object path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" force="true"/>
-	<model path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy_contour" force="true"/>
-	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" force="true"/>
+	<unit_mat path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" force="true"/>
+	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average_joy/sus_acc_slaughterhouse_female_average_joy" />
 
 	<unit path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female" force="true"/>
 	<object path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female" force="true"/>
@@ -71,7 +67,6 @@
 	<object path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average/sus_acc_slaughterhouse_female_average" force="true"/>
 	<model path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average/sus_acc_slaughterhouse_female_average" force="true"/>
 	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average/sus_acc_slaughterhouse_female_average" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average/sus_acc_slaughterhouse_female_average_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average/sus_acc_slaughterhouse_female_average" force="true"/>
 
 	<unit path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney" force="true"/>
@@ -84,7 +79,6 @@
 	<object path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average_sydney/sus_acc_slaughterhouse_female_average_sydney" force="true"/>
 	<model path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average_sydney/sus_acc_slaughterhouse_female_average_sydney" force="true"/>
 	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average_sydney/sus_acc_slaughterhouse_female_average_sydney" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average_sydney/sus_acc_slaughterhouse_female_average_sydney_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_female_average_sydney/sus_acc_slaughterhouse_female_average_sydney" force="true"/>
 
 	<unit path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres" force="true"/>
@@ -97,20 +91,17 @@
 	<object path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big_sangres/sus_acc_slaughterhouse_male_big_sangres" force="true"/>
 	<model path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big_sangres/sus_acc_slaughterhouse_male_big_sangres" force="true"/>
 	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big_sangres/sus_acc_slaughterhouse_male_big_sangres" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big_sangres/sus_acc_slaughterhouse_male_big_sangres_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big_sangres/sus_acc_slaughterhouse_male_big_sangres" force="true"/>
 
 	<unit path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big/sus_acc_slaughterhouse_male_big" force="true"/>
 	<object path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big/sus_acc_slaughterhouse_male_big" force="true"/>
 	<model path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big/sus_acc_slaughterhouse_male_big" force="true"/>
 	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big/sus_acc_slaughterhouse_male_big" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big/sus_acc_slaughterhouse_male_big_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_big/sus_acc_slaughterhouse_male_big" force="true"/>
 
 	<unit path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_fat/sus_acc_slaughterhouse_male_fat" force="true"/>
 	<object path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_fat/sus_acc_slaughterhouse_male_fat" force="true"/>
 	<model path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_fat/sus_acc_slaughterhouse_male_fat" force="true"/>
 	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_fat/sus_acc_slaughterhouse_male_fat" force="true"/>
-	<material_config path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_fat/sus_acc_slaughterhouse_male_fat_contour" force="true"/>
 	<cooked_physics path="units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_slaughterhouse_male_fat/sus_acc_slaughterhouse_male_fat" force="true"/>
 </table>

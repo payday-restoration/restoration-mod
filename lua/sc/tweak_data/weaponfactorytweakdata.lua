@@ -22005,7 +22005,8 @@ function WeaponFactoryTweakData:_init_modpack_m4_ak()
 		texture_bundle_folder = "dlc_akm4",
 		dlc = "akm4_pack",
 		forbids = {
-			"wpn_upg_ak_g_standard"
+			"wpn_upg_ak_g_standard",
+			"wpn_fps_ass_asval_g_standard"
 		},
 		is_a_unlockable = true
 	}
@@ -25895,7 +25896,15 @@ function WeaponFactoryTweakData:_init_asval()
 		wpn_upg_ak_g_standard = {
 			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
-		},	
+		},
+		wpn_fps_upg_ak_g_hgrip = {
+			unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_hgrip",
+			third_unit = "units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_hgrip"
+		},
+		wpn_fps_upg_ak_g_pgrip = {
+			unit = "units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_pgrip",
+			third_unit = "units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_pgrip"
+		},					
 		wpn_upg_ak_s_folding = {
 			adds = {
 				"wpn_fps_ass_asval_g_standard"
@@ -25932,6 +25941,7 @@ function WeaponFactoryTweakData:_init_asval()
 			}
 		}		
 	}
+	
 	self.wpn_fps_ass_asval.default_blueprint = {
 		"wpn_fps_ass_asval_b_standard",
 		"wpn_fps_ass_asval_body_standard",
@@ -25999,10 +26009,11 @@ function WeaponFactoryTweakData:_init_asval()
 		"wpn_fps_upg_m4_s_mk46",
 		"wpn_fps_upg_m4_s_ubr",
 		"wpn_fps_snp_tti_s_vltor",	
-		--Don't fucking work
-		--"wpn_fps_upg_ak_g_hgrip",
-		--"wpn_fps_upg_ak_g_pgrip",
-		--"wpn_fps_upg_ak_g_wgrip",		
+		--Works :)
+		"wpn_fps_upg_ak_g_rk3",
+		"wpn_fps_upg_ak_g_hgrip",
+		"wpn_fps_upg_ak_g_pgrip",
+		"wpn_fps_upg_ak_g_wgrip",		
 		"wpn_fps_upg_i_slower_rof",
 		"wpn_fps_upg_i_faster_rof"	
 	}

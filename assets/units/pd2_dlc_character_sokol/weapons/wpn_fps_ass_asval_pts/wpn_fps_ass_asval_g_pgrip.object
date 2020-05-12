@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_fps_upg_ak_g_pgrip" materials="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_pgrip" />
+    <graphics>
+        <object enabled="true" name="g_grip" />
+    </graphics>
+</dynamic_object>

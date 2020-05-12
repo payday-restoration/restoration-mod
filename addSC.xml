@@ -3,11 +3,6 @@
 	<!--Updated Assets-->
 	<!-- <object	path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/> -->
 	<!-- <sequence_manager	path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/> -->
-
-	<!--REMOVED CAP REQUIREMENT FOR LMG SIGHTS FOLLOWING LID-->
-	<model path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever" force="true"/>
-	<model path="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249_pts/wpn_fps_lmg_m249_upper_reciever" force="true"/>
-	<model path="units/pd2_dlc_par/weapons/wpn_fps_lmg_par_pts/wpn_fps_lmg_par_upper_reciever" force="true"/>
 	
 	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
 	
@@ -132,6 +127,22 @@
 	<!--Dynamite no rolly polly-->
 	<object path="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" force="true" />		
 
+	<!--REMOVED CAP REQUIREMENT FOR LMG SIGHTS FOLLOWING LID-->
+	<model path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever" force="true"/>
+	<model path="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249_pts/wpn_fps_lmg_m249_upper_reciever" force="true"/>
+	<model path="units/pd2_dlc_par/weapons/wpn_fps_lmg_par_pts/wpn_fps_lmg_par_upper_reciever" force="true"/>
+		
+	<!-- AS VAL GRIP ATTACHMENT STUFF  -->
+	<unit_obj path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_pgrip" />
+	<unit_obj path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_hgrip" />
+	
+	<unit_mat_cc path="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_hgrip" />	
+	<unit_mat_cc path="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_pgrip" />
+	
+	<model path="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval/wpn_fps_ass_asval" force="true"/>
+	<model path="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_standard" force="true"/>
+	<model path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_standard" force="true"/>
+	
 	<!--PDTH Smokebomb-->
 	<effect path="effects/particles/explosions/smoke_grenade_smoke" force="true"/>
 

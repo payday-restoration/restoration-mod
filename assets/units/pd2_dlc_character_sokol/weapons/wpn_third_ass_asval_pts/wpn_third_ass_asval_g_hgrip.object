@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_wpn_third_upg_ak_g_hgrip" materials="units/pd2_dlc_gage_jobs/weapons/wpn_third_upg_ak_g_hgrip/wpn_third_upg_ak_g_hgrip" />
+    <graphics>
+        <object enabled="true" name="g_grip" />
+    </graphics>
+</dynamic_object>

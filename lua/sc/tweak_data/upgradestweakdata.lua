@@ -391,7 +391,6 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.rep_upgrades.values = {0}
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
-	self.values.player.suppression_resist = {true}
 	self.values.player.ignore_suppression_flinch = {true}
 	self.values.player.health_revive_max = {true}
 	self.values.player.no_deflection = {true}
@@ -447,7 +446,7 @@ function UpgradesTweakData:_init_pd2_values()
 	self.ecm_jammer_base_range = 2500
 	self.ecm_feedback_min_duration = 20
 	self.ecm_feedback_max_duration = 20
-	self.ecm_feedback_interval = 1.5	
+	self.ecm_feedback_interval = 1.5
 	self.ecm_feedback_retrigger_interval = 240
 	
 	--[[   MASTERMIND   ]]--
@@ -1910,15 +1909,6 @@ function UpgradesTweakData:_player_definitions()
 			category = "player",
 			upgrade = "messiah_revive_from_bleed_out",
 			value = 2
-		}
-	}
-	self.definitions.player_suppression_resist = {
-		category = "feature",
-		name_id = "menu_player_panic_suppression",
-		upgrade = {
-			category = "player",
-			upgrade = "suppression_resist",
-			value = 1
 		}
 	}
 	self.definitions.player_deflect_ranged = {

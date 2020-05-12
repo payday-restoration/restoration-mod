@@ -3,15 +3,15 @@ PlayerDamage._UPPERS_COOLDOWN = tweak_data.upgrades.values.first_aid_kit.uppers_
 
 function PlayerDamage:init(unit)
 	self._lives_init = tweak_data.player.damage.LIVES_INIT
+	--No longer check for one_down.
 	self._lives_init = managers.modifiers:modify_value("PlayerDamage:GetMaximumLives", self._lives_init)
 	self._unit = unit
 	self._max_health_reduction = managers.player:upgrade_value("player", "max_health_reduction", 1)
 	self._healing_reduction = managers.player:upgrade_value("player", "healing_reduction", 1)
-	self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0) - managers.player:get_deflection_from_skills()
 	self._revives = Application:digest_value(0, true)
 	self._uppers_elapsed = 0
 
-	self:replenish()
+	self:replenish() --Sets a number of things, mostly resetting armor, health, and ui stuff. Vanilla code.
 
 	local player_manager = managers.player
 	self._bleed_out_health = Application:digest_value(tweak_data.player.damage.BLEED_OUT_HEALTH_INIT * player_manager:upgrade_value("player", "bleed_out_health_multiplier", 1), true)
@@ -59,15 +59,20 @@ function PlayerDamage:init(unit)
 	self._has_damage_speed = managers.player:has_inactivate_temporary_upgrade("temporary", "damage_speed_multiplier")
 	self._has_damage_speed_team = managers.player:upgrade_value("player", "team_damage_speed_multiplier_send", 0) ~= 0
 
-	self._dodge_points = 0.0
+	--Unique resmod stuff.
+	self._dodge_points = 0.0 --The player's dodge stat, gets set by set_dodge_points once players enter their standard state.
 	self._dodge_meter = 0.0 --Amount of dodge built up as meter. Caps at '150' dodge.
 	self._dodge_meter_prev = 0.0 --dodge in meter from previous frame.
-	self._in_smoke_bomb = 0.0 --0 = not in smoke, 1 = inside smoke, 2 = inside own smoke.
-	self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit")
-	self._keep_health_on_revive = false
-	self._biker_armor_regen_t = 0.0
-	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95)
+	self._in_smoke_bomb = 0.0 --Sicario tracking stuff; 0 = not in smoke, 1 = inside smoke, 2 = inside own smoke. Tfw no explicit enum support in lua :(
+	self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit") --Yakuza ability to survive at 1 hp before going down.
+	self._keep_health_on_revive = false --Used for cloaker kicks and taser downs, stops reviving from changing player health.
+	self._biker_armor_regen_t = 0.0 --Used to track the time until the next biker armor regen tick.
+	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
+	self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0) - managers.player:get_deflection_from_skills() --Damage reduction for health.
+	self.tase_time = 0 --Titan Taser slow cooldown.
+	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
 
+	--The rest of this is unchanged vanilla code.
 	local function revive_player()
 		self:revive(true)
 	end
@@ -90,7 +95,6 @@ function PlayerDamage:init(unit)
 				target_tick = damage_to_armor_data[idx][2],
 				elapsed = 0
 			}
-
 
 			local function on_damage(damage_info)
 				local attacker_unit = damage_info and damage_info.attacker_unit
@@ -175,40 +179,69 @@ function PlayerDamage:init(unit)
 		chunks = {}
 	}
 
-	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
+	self:clear_delayed_damage()
+end
+
+--General function to deal with god mode and stuff. Uses same checks as vanilla damage_bullet().
+--Not to be confused with vanilla function using similar name.
+function PlayerDamage:can_take_damage(attack_data, damage_info)
+	if not self:_chk_can_take_dmg() then
+		return false
+	elseif self._god_mode then
+		if attack_data.damage > 0 then
+			self:_send_damage_drama(attack_data, attack_data.damage)
+		end
+		self:_call_listeners(damage_info)
+		return false
+	elseif self._invulnerable or self._mission_damage_blockers.invulnerable then
+		self:_call_listeners(damage_info)
+		return false
+	elseif self:incapacitated() then
+		return false
+	elseif self:is_friendly_fire(attack_data.attacker_unit) then
+		return false
+	elseif self:_chk_dmg_too_soon(attack_data.damage) then
+		return false
+	elseif self._unit:movement():current_state().immortal then
+		return false
+	elseif self._revive_miss and math.random() < self._revive_miss then
+		self:play_whizby(attack_data.col_ray.position)
+		return false
+	end
+	return true
 end
 
 function PlayerDamage:damage_melee(attack_data)
-	local player_unit = managers.player:player_unit()
-	if attack_data then
-		if alive(attack_data.attacker_unit) then
-			if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" or tostring(attack_data.attacker_unit:base()._tweak_table) == "fbi_vet_boss" then
-				if alive(player_unit) then
-					if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
-					else
-						player_unit:movement():on_non_lethal_electrocution()
-						managers.player:set_player_state("tased")
-					end
-				end
-			elseif tostring(attack_data.attacker_unit:base()._tweak_table) == "autumn" then
-				if alive(player_unit) then
-					if self._invulnerable or self._mission_damage_blockers.invulnerable or self._god_mode or self:incapacitated() or self._unit:movement():current_state().immortal or self._unit:movement():current_state().driving then
-					else
-						--only the host can currently handle cloaking and decloaking without causing issues, disabling for now
-						--attack_data.attacker_unit:damage():run_sequence_simple("decloak")
-						--attack_data.attacker_unit:movement():set_uncloaked(true)
+	local damage_info = {
+		result = {type = "hurt", variant = "bullet"},
+		attacker_unit = attack_data.attacker_unit
+	}
 
-						attack_data.attacker_unit:sound():say("i03", true, nil, true)
-						managers.player:set_player_state("arrested")
-					end
-				end			
-			end		
-		end
-	end
-
-	if not self:_chk_can_take_dmg() then
+	--Nearly reduntant, but is needed for unique melee events to not break in some cases.
+	if not self:can_take_damage(attack_data, damage_info) and not self:_chk_can_take_dmg() then
 		return
 	end
+
+	local player_unit = managers.player:player_unit()
+
+	--Handles unique events to resmod enemies.
+	if alive(attack_data.attacker_unit) then
+		if tostring(attack_data.attacker_unit:base()._tweak_table) == "summers" or tostring(attack_data.attacker_unit:base()._tweak_table) == "fbi_vet_boss" then
+			if alive(player_unit) then
+				player_unit:movement():on_non_lethal_electrocution()
+				managers.player:set_player_state("tased")
+			end
+		elseif tostring(attack_data.attacker_unit:base()._tweak_table) == "autumn" then
+			if alive(player_unit) then
+				--only the host can currently handle cloaking and decloaking without causing issues, disabling for now
+				--attack_data.attacker_unit:damage():run_sequence_simple("decloak")
+				--attack_data.attacker_unit:movement():set_uncloaked(true)
+				attack_data.attacker_unit:sound():say("i03", true, nil, true)
+				managers.player:set_player_state("arrested")
+			end			
+		end		
+	end
+
 
 	local pm = managers.player
 	local can_counter_strike = pm:has_category_upgrade("player", "counter_strike_melee")
@@ -249,6 +282,7 @@ function PlayerDamage:damage_melee(attack_data)
 		"melee_hit_var2"
 	}
 
+	--Apply changes to melee push camera effect, cap effects of it so even players with insane armor can tell they were meleed.
 	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(1 * self._melee_push_multiplier, 0.2))
 
 	if pm:current_state() == "bipod" then
@@ -256,44 +290,25 @@ function PlayerDamage:damage_melee(attack_data)
 		pm:set_player_state("standard")
 	end
 
-	local push_vel = Vector3(attack_data.push_vel.x * self._melee_push_multiplier, attack_data.push_vel.y * self._melee_push_multiplier, attack_data.push_vel.z * self._melee_push_multiplier)
-	self._unit:movement():push(push_vel)
+	--Apply changes to melee push, this *can* be reduced to 0.
+	mvector3.multiply(attack_data.push_vel, _melee_push_multiplier)
+	self._unit:movement():push(attack_data.push_vel)
 
 	return result
 end
 
-local orig_dmg_xpl = PlayerDamage.damage_explosion	
-function PlayerDamage:damage_explosion(attack_data,...)
-	local attacker_unit = attack_data and attack_data.attacker_unit
-	if attacker_unit then
-		log("RES DEBUG STUFF: attacker team id is [" .. tostring(attacker_unit:movement():team().id) .. "], own team id is [" .. tostring(self._unit:movement():team().id) .. "]")
-		if (attacker_unit:movement():team().id == self._unit:movement():team().id) or (self._unit == attacker_unit) then 
-			return
-		end
-	end
-	return orig_dmg_xpl(self,attack_data,...)
-end 
-
---Lets you heal with full HP--
-function PlayerDamage:full_revives(self)
-	return Application:digest_value(self._revives, false) >= tweak_data.player.damage.LIVES_INIT + managers.player:upgrade_value("player", "additional_lives", 0)
-end
-
-local old_player_regenerated = PlayerDamage._regenerated
-function PlayerDamage:_regenerated(no_messiah)
-	old_player_regenerated(self, no_messiah)
+Hooks:PostHook(PlayerDamage, "_regenerated" , "ResRegenerated" , function(self, no_messiah)
+	--Apply new method to handle refilling messiah charges.
 	if no_messiah then
 		managers.player:refill_messiah_charges()
 	end
 
+	--Remove What Doesn't Kill DA.
 	managers.player:set_damage_absorption(
 		"down_absorption",
 		0
 	)
-end
-
-local damage_bullet_original = PlayerDamage.damage_bullet
-local _chk_dmg_too_soon_original = PlayerDamage._chk_dmg_too_soon
+end)
 
 function PlayerDamage:damage_bullet(attack_data, ...)
 	local damage_info = {
@@ -301,30 +316,13 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 		attacker_unit = attack_data.attacker_unit
 	}
 	
-	if not self:_chk_can_take_dmg() then
-		return
-	elseif self._god_mode then
-		if attack_data.damage > 0 then
-			self:_send_damage_drama(attack_data, attack_data.damage)
-		end
-		self:_call_listeners(damage_info)
-		return
-	elseif self._invulnerable or self._mission_damage_blockers.invulnerable then
-		self:_call_listeners(damage_info)
-		return
-	elseif self:incapacitated() then
-		return
-	elseif self:is_friendly_fire(attack_data.attacker_unit) then
-		return
-	elseif self:_chk_dmg_too_soon(attack_data.damage) then
-		return
-	elseif self._unit:movement():current_state().immortal then
-		return
-	elseif self._revive_miss and math.random() < self._revive_miss then
-		self:play_whizby(attack_data.col_ray.position)
+	--Vanilla checks just encased into a function for reuse.
+	if not self:can_take_damage(attack_data, damage_info) then
 		return
 	end
 	
+	--These are done after god mode checks now, just to save time.
+	--Also done before DR calcs, so that DR going away never causes grace piercing.
 	local pm = managers.player
 	self._last_received_dmg = attack_data.damage
 	self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
@@ -348,16 +346,16 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	
 	self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
 	if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
-		self._unit:sound():play("pickup_fak_skill") --Feel free to replace if you know a better sound.
+		self._unit:sound():play("pickup_fak_skill") --PLEASE PLEASE PLEASE REPLACE WITH BETTER SOUND IN THE FUTURE!!!
 		if attack_data.damage > 0 then
-			self:fill_dodge_meter(-1.0)
+			self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
 			self:_send_damage_drama(attack_data, 0)
 		end
 		self:_call_listeners(damage_info)
 		self:play_whizby(attack_data.col_ray.position)
 		self:_hit_direction(attack_data.attacker_unit:position())
-		self._last_received_dmg = 10000.0 --SC pls no 10000 damage units.
-		managers.player:send_message(Message.OnPlayerDodge)
+		self._last_received_dmg = 10000.0 --Makes the grace period from dodging effectively impossible to pierce.
+		managers.player:send_message(Message.OnPlayerDodge) --Call skills that listen for dodging.
 		return	
 	end
 
@@ -395,7 +393,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 		return
 	end
 	
-	self:_check_chico_heal(attack_data)
+	self:_check_chico_heal(attack_data) --Remind Ravi to add friendly fire checks to this later.
 
 	local armor_reduction_multiplier = 0
 	
@@ -407,7 +405,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	
 	if attack_data.armor_piercing then
 		attack_data.damage = attack_data.damage - health_subtracted
-		if not _G.IS_VR then
+		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
 			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
 		end
 	else
@@ -416,6 +414,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	
 	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data)
 	
+	--Unique kill taunt stuff.
 	if not self._bleed_out and health_subtracted > 0 then
 		self:_send_damage_drama(attack_data, health_subtracted)
 	elseif self._bleed_out and attack_data.attacker_unit and attack_data.attacker_unit:alive() and attack_data.attacker_unit:base()._tweak_table == "tank" then
@@ -438,19 +437,19 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	pm:send_message(Message.OnPlayerDamage, nil, attack_data)
 	self:_call_listeners(damage_info)
 	
+	--Titan Taser shenanigans.
 	local _time = math.floor(TimerManager:game():time())
-	self.tase_time = self.tase_time or 0
 	local player_unit = managers.player:player_unit()
 	if alive(attack_data.attacker_unit) then
 		if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
 			if alive(player_unit) then
 				if not self._unit:movement():current_state().driving then
 					attack_data.attacker_unit:sound():say("post_tasing_taunt")
-					--player_unit:movement():on_non_lethal_electrocution()
+					--player_unit:movement():on_non_lethal_electrocution() --old titan taser effect.
 					--managers.player:set_player_state("tased")
-					managers.player:activate_titan_tased()
+					managers.player:activate_titan_tased() --Apply slow from titan taser.
 					attack_data.damage = attack_data.damage * 0
-					self.tase_time = _time + 3
+					self.tase_time = _time + 3 --Update cooldown
 				end
 			end
 		end		
@@ -459,29 +458,15 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	return 
 end
 
+--Reenable if there's some obscure crash.
+--[[local _chk_dmg_too_soon_original = PlayerDamage._chk_dmg_too_soon
 function PlayerDamage:_chk_dmg_too_soon(damage, ...)
 	return _chk_dmg_too_soon_original(self, self._last_bullet_damage or damage, ...)
-end
+end]]
 
+--This mechanic is disabled to give players predictable armor regen.
 function PlayerDamage:_upd_suppression(t, dt)
-	local data = self._supperssion_data
-	if not managers.player:has_category_upgrade("player", "suppression_resist") then
-		if data.value then
-			if t > data.decay_start_t then
-				data.value = data.value - dt
-				if data.value <= 0 then
-					data.value = nil
-					data.decay_start_t = nil
-					managers.environment_controller:set_suppression_value(0, 0)
-				end
-			elseif data.value == tweak_data.player.suppression.max_value and self._regenerate_timer then
-				self._listener_holder:call("suppression_max")
-			end
-			if data.value then
-				managers.environment_controller:set_suppression_value(self:effective_suppression_ratio(), self:suppression_ratio())
-			end
-		end
-	end
+	--nothing
 end
 
 function PlayerDamage:revive(silent)
@@ -498,6 +483,8 @@ function PlayerDamage:revive(silent)
 	self._incapacitated = nil
 	self._downed_timer = nil
 	self._downed_start_time = nil
+
+	--Skip this if player was also downed by a cloaker kick/taser shock.
 	if not arrested and not self._keep_health_on_revive then
 		if managers.player:has_category_upgrade("player", "health_revive_max") then		
 			self:set_health(self:_max_health() * tweak_data.player.damage.REVIVE_HEALTH_STEPS_W_SKILL[self._revive_health_i] * (self._revive_health_multiplier or 1) * managers.player:upgrade_value("player", "revived_health_regain", 1))
@@ -507,10 +494,10 @@ function PlayerDamage:revive(silent)
 		
 		self:set_armor(self:_max_armor())
 		self._revive_health_i = math.min(#tweak_data.player.damage.REVIVE_HEALTH_STEPS, self._revive_health_i + 1)
-		--self._down_time = math.max(tweak_data.player.damage.DOWNED_TIME_MIN, self._down_time - tweak_data.player.damage.DOWNED_TIME_DEC)
 		self._revive_miss = 2
-		managers.player:deactivate_db_regen()
+		managers.player:deactivate_db_regen() --End DB health regen because downed.
 	end
+	self._keep_health_on_revive = false --reset cloaker kick/taser shock flag.
 	self:_regenerate_armor()
 	managers.hud:set_player_health({
 		current = self:get_real_health(),
@@ -522,7 +509,6 @@ function PlayerDamage:revive(silent)
 	managers.hud:pd_stop_progress()
 	self._revive_health_multiplier = nil
 	self._listener_holder:call("on_revive")
-	self._keep_health_on_revive = false
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "revived_damage_resist") then
 		managers.player:activate_temporary_upgrade("temporary", "revived_damage_resist")
 	end
@@ -535,49 +521,38 @@ function PlayerDamage:revive(silent)
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "reload_weapon_faster") then
 		managers.player:activate_temporary_upgrade("temporary", "reload_weapon_faster")
 	end
-	if managers.player:has_category_upgrade("player", "dodge_on_revive") then
+	if managers.player:has_category_upgrade("player", "dodge_on_revive") then --Rogue dodge meter bonus on revive.
 		self:fill_dodge_meter(3.0, true)
 	end
 
+	--Update What Doesn't Kill
 	managers.player:set_damage_absorption(
 		"down_absorption",
 		managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
 	)
 end
 
+--First Aid Kit healing.
 function PlayerDamage:band_aid_health()
 	if managers.platform:presence() == "Playing" and (self:arrested() or self:need_revive()) then
 		return
 	end
+
 	self:change_health(tweak_data.upgrades.values.first_aid_kit.heal_amount * self._healing_reduction)
-	
 	self._said_hurt = false
-	if math.rand(1) < managers.player:upgrade_value("first_aid_kit", "downs_restore_chance", 0) then
-		self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
-		self._revive_health_i = math.max(self._revive_health_i - 1, 1)
-		managers.environment_controller:set_last_life(1 >= Application:digest_value(self._revives, false))
-		managers.player:set_damage_absorption(
-			"down_absorption",
-			managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
-		)
-	end
 end
 
+--Doctor Bag Healing.
 function PlayerDamage:recover_health()
 	if managers.platform:presence() == "Playing" and (self:arrested() or self:need_revive()) then
-		self:revive(true)
+		return
 	end
 
-	self:restore_health(tweak_data.upgrades.values.doctor_bag.heal_amount)
-	managers.player:activate_db_regen()
-
-	managers.hud:set_player_health({
-		current = self:get_real_health(),
-		total = self:_max_health(),
-		revives = Application:digest_value(self._revives, false)
-	})
+	self:restore_health(tweak_data.upgrades.values.doctor_bag.heal_amount) --Initial % heal.
+	managers.player:activate_db_regen() --Start heal over time.
 end
 
+--Returns number of lives used up. Is relied on for What Doesn't Kill calcs.
 function PlayerDamage:get_missing_revives()
 	return self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0) - self:get_revives()
 end
@@ -585,9 +560,9 @@ end
 function PlayerDamage:_calc_health_damage(attack_data)
 	local health_subtracted = 0
 	health_subtracted = self:get_real_health()
-	attack_data.damage = attack_data.damage * self._deflection
+	attack_data.damage = attack_data.damage * self._deflection --Apply Deflection DR.
 
-	if managers.player:has_category_upgrade("player", "dodge_stacking_heal") and attack_data.damage > 0.0 then --Rogue health regen.
+	if managers.player:has_category_upgrade("player", "dodge_stacking_heal") and attack_data.damage > 0.0 then --End Rogue health regen.
 		self._damage_to_hot_stack = {}
 	end
 	
@@ -614,9 +589,9 @@ function PlayerDamage:_calc_health_damage(attack_data)
 		revives = Application:digest_value(self._revives, false)
 	})
 	self:_send_set_health()
-		self:_set_health_effect()
-		managers.statistics:health_subtracted(health_subtracted)
-		return health_subtracted
+	self:_set_health_effect()
+	managers.statistics:health_subtracted(health_subtracted)
+	return health_subtracted
 end
 
 function PlayerDamage:clbk_kill_taunt_spring(attack_data)
@@ -646,6 +621,7 @@ function PlayerDamage:clbk_kill_taunt_common(attack_data)
 	end
 end	
 
+--Make lock picking skill affect arrested time.
 function PlayerDamage:on_arrested()
 	self._bleed_out = false
 	self._arrested_timer = tweak_data.player.damage.ARRESTED_TIME * managers.player:upgrade_value("player", "pick_lock_easy_speed_multiplier", 1)
@@ -655,47 +631,18 @@ function PlayerDamage:on_arrested()
 	managers.hud:on_arrested()
 end
 
-function PlayerDamage:damage_tase(attack_data)
-	if self._god_mode then
-		return
-	end
-	
-	local cur_state = self._unit:movement():current_state_name()
-	
-	if cur_state ~= "tased" and cur_state ~= "fatal" then
-		self:on_tased(false)
-	
-		self._tase_data = attack_data
-	
-		managers.player:set_player_state("tased")
-	
-		local damage_info = {
-			result = {
-				variant = "tase",
-				type = "hurt"
-			}
-		}
-	
-		self:_call_listeners(damage_info)
-	
-		if attack_data.attacker_unit and attack_data.attacker_unit:alive() and attack_data.attacker_unit:base()._tweak_table == "taser" then
-			attack_data.attacker_unit:sound():say("post_tasing_taunt")
- 
-			if managers.blackmarket:equipped_mask().mask_id == tweak_data.achievement.its_alive_its_alive.mask then
-				managers.achievment:award_progress(tweak_data.achievement.its_alive_its_alive.stat)
-			end
-		end
-	end
+Hooks:PostHook(PlayerDamage, "damage_tase" , "ResTaserTaunts" , function(self, attack_data)
 	if cur_state == "tased" then
 		if attack_data.attacker_unit:base()._tweak_table == "taser" or attack_data.attacker_unit:base()._tweak_table == "taser_titan" then
 		   attack_data.attacker_unit:sound():say("post_tasing_taunt")
 		end
 	end	
-end
+end)
 
 function PlayerDamage:_max_armor()
 	local max_armor = self:_raw_max_armor()
 
+	--Stoic deletes armor.
 	if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
 		max_armor = 0
 	end
@@ -749,6 +696,7 @@ function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
 	self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
 end
 
+--Called when players get kicked/tased. Applies damage and sets flag to true.
 function PlayerDamage:cloak_or_shock_incap(damage)
 	self:change_health(-1.0 * damage * managers.player:upgrade_value("player", "spooc_damage_resist", 1.0) or 0.0)
 
@@ -758,7 +706,7 @@ function PlayerDamage:cloak_or_shock_incap(damage)
 	self._keep_health_on_revive = true
 end
 
-Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function(self, unit, t, dt)
+Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, unit, t, dt)
 	local pm = managers.player
 	self._in_smoke_bomb = 0.0
 	for _, smoke_screen in ipairs(pm._smoke_screen_effects or {}) do
@@ -784,19 +732,15 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "sicario_multiplier", 0)
 	end
 
-	--Burglar capstone skill.
-	if self._unit:movement():crouching() then
+	if self._unit:movement():crouching() then --Burglar capstone skill.
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance", 0)
-	end
-
-	--Duck and Cover aced.
-	if self._unit:movement():running() then
+	elseif self._unit:movement():running() then --Duck and Cover aced.
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "run_dodge_chance", 0)
 	elseif self._unit:movement():zipline_unit() then
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "on_zipline_dodge_chance", 0)
 	end
 
-	self:fill_dodge_meter(self._dodge_points * dt * passive_dodge)
+	self:fill_dodge_meter(self._dodge_points * dt * passive_dodge) --Apply passive dodge to meter.
 
 	if self._dodge_meter ~= self._dodge_meter_prev then
 		managers.hud:set_dodge_value(math.min(self._dodge_meter, 1.5)) --Update UI element once per frame.
@@ -809,6 +753,7 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDodgeMeterMovementUpdate" , function
 	end
 end)
 
+--Deals with resmod's health regen changes.
 function PlayerDamage:_upd_health_regen(t, dt)
 	if self._health_regen_update_timer then
 		self._health_regen_update_timer = self._health_regen_update_timer - dt
@@ -854,13 +799,14 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	end
 end
 
+
 Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", function(self, can_activate_berserker, ignore_movement_state)
-	if self._check_berserker_done then
+	if self._check_berserker_done then --Deals with swan song shenanigans.
 		if self._can_survive_one_hit then
 			self._can_survive_one_hit = false
 		end
 	end
-	if self:get_real_health() == 0 and not self._check_berserker_done then
+	if self:get_real_health() == 0 and not self._check_berserker_done then --If you would be in bleedout but you dont want to, then don't.
 		if self._can_survive_one_hit then
 			self:change_health(0.1)
 			self._can_survive_one_hit = false
@@ -871,6 +817,7 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 	end
 end)
 
+--Starts biker regen when there is missing armor.
 Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
 	if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
 		self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
@@ -878,7 +825,7 @@ Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(
 end)
 
 function PlayerDamage:tick_biker_armor_regen(amount)
-	if self:get_real_armor() == self:_max_armor() then
+	if self:get_real_armor() == self:_max_armor() then --End biker regen when armor returns.
 		self._biker_armor_regen_t = 0.0
 		return
 	end
@@ -890,6 +837,7 @@ function PlayerDamage:tick_biker_armor_regen(amount)
 	end
 end
 
+--Adds special case for infinite messiah.
 function PlayerDamage:consume_messiah_charge()
 	if managers.player:has_category_upgrade("player", "infinite_messiah") then
 		return true
@@ -901,6 +849,7 @@ function PlayerDamage:consume_messiah_charge()
 	return false
 end
 
+--Applies custody penalties to players on spawn in.
 function PlayerDamage:exit_custody(down_timer)
 	if (Application:editor() or managers.platform:presence() == "Playing") and (self:arrested() or self:need_revive()) then
 		self:revive(true)

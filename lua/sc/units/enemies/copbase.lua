@@ -31,6 +31,14 @@ function CopBase:default_weapon_name()
 	local weap_ids = tweak_data.character.weap_ids
 	
 	local job = Global.level_data and Global.level_data.level_id
+
+	--M1911 Users--
+	if self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_1/ene_secret_service_1") 
+	or self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2") 
+	or self._unit:name() == Idstring("units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2") then
+		default_weapon_id = "m1911_npc"
+	end
+	
 	
 	--Biker Weapon Changes--
 	if self._unit:name() == Idstring("units/payday2/characters/ene_biker_1/ene_biker_1") then

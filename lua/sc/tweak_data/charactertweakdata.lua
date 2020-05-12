@@ -1892,9 +1892,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.deathguard = true
 	self.tank.melee_weapon = "fists_dozer"
 	self.tank.melee_weapon_dmg_multiplier = 1
-	self.tank.melee_anims = {
-		"cbt_std_melee"
-	}
 	self.tank.critical_hits = {
 		damage_mul = 2
 	}
@@ -2380,9 +2377,6 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.damage.hurt_severity = presets.hurt_severities.captain
 	self.spring.melee_weapon = "fists_dozer"
 	self.spring.melee_weapon_dmg_multiplier = 1
-	self.spring.melee_anims = {
-		"cbt_std_melee"
-	}
 	self.spring.speech_prefix_p1 = "cpw"
 	self.spring.speech_prefix_p2 = nil
 	self.spring.speech_prefix_count = nil

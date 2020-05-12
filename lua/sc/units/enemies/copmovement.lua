@@ -619,6 +619,7 @@ function CopMovement:play_redirect(redirect_name, at_time)
 	return result ~= Idstring("") and result
 end
 
+
 local mvec3_set = mvector3.set
 local mvec3_set_z = mvector3.set_z
 local mvec3_lerp = mvector3.lerp

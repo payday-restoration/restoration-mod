@@ -164,7 +164,6 @@
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>
 		<hook file="sc/units/enemies/securitycamera.lua" source_file="lib/units/props/securitycamera"/>
-		<hook file="sc/states/ingamewaitingforplayers.lua" source_file="lib/states/ingamewaitingforplayers"/>
 		<hook file="sc/managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
 		<hook file="sc/tweak_data/dramatweakdata.lua" source_file="lib/tweak_data/dramatweakdata"/>
 		<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>

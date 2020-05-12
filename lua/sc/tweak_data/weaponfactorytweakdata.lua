@@ -1993,7 +1993,8 @@ function WeaponFactoryTweakData:_init_content_jobs()
 			damage_far_mul = 400
 		},
 		forbids = {
-			"wpn_upg_ak_g_standard"
+			"wpn_upg_ak_g_standard",
+			"wpn_fps_ass_asval_g_standard"
 		},
 		dlc = "gage_pack_jobs"
 	}
@@ -2015,7 +2016,8 @@ function WeaponFactoryTweakData:_init_content_jobs()
 			damage_far_mul = 200
 		},			
 		forbids = {
-			"wpn_upg_ak_g_standard"
+			"wpn_upg_ak_g_standard",
+			"wpn_fps_ass_asval_g_standard"
 		},
 		dlc = "gage_pack_jobs"
 	}
@@ -2036,7 +2038,8 @@ function WeaponFactoryTweakData:_init_content_jobs()
 			damage_far_mul = -200
 		},			
 		forbids = {
-			"wpn_upg_ak_g_standard"
+			"wpn_upg_ak_g_standard",
+			"wpn_fps_ass_asval_g_standard"
 		},
 		dlc = "gage_pack_jobs"
 	}
@@ -25833,6 +25836,7 @@ function WeaponFactoryTweakData:_init_asval()
 		"sight",
 		"barrel_ext"
 	}
+	self.wpn_fps_ass_asval.stock_adapter = "wpn_upg_ak_s_adapter"	
 	self.wpn_fps_ass_asval.adds = {
 		wpn_fps_upg_o_specter = {
 			"wpn_fps_ass_asval_scopemount"
@@ -25887,11 +25891,46 @@ function WeaponFactoryTweakData:_init_asval()
 		}			
 	}
 	self.wpn_fps_ass_asval.override = {
+		--Just in case
+		wpn_upg_ak_g_standard = {
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},	
 		wpn_upg_ak_s_folding = {
 			adds = {
 				"wpn_fps_ass_asval_g_standard"
 			}
-		}
+		},
+		wpn_fps_upg_m4_s_standard = {
+			adds = {
+				"wpn_fps_ass_asval_g_standard"
+			}
+		},	
+		wpn_fps_upg_m4_s_pts = {
+			adds = {
+				"wpn_fps_ass_asval_g_standard"
+			}
+		},			
+		wpn_fps_upg_m4_s_crane = {
+			adds = {
+				"wpn_fps_ass_asval_g_standard"
+			}
+		},	
+		wpn_fps_upg_m4_s_mk46 = {
+			adds = {
+				"wpn_fps_ass_asval_g_standard"
+			}
+		},	
+		wpn_fps_upg_m4_s_ubr = {
+			adds = {
+				"wpn_fps_ass_asval_g_standard"
+			}
+		},	
+		wpn_fps_snp_tti_s_vltor = {
+			adds = {
+				"wpn_fps_ass_asval_g_standard"
+			}
+		}		
 	}
 	self.wpn_fps_ass_asval.default_blueprint = {
 		"wpn_fps_ass_asval_b_standard",
@@ -25942,16 +25981,28 @@ function WeaponFactoryTweakData:_init_asval()
 		"wpn_fps_upg_ass_ns_linear",
 		"wpn_fps_upg_ass_ns_surefire",
 		"wpn_fps_upg_ass_ns_battle",
-		"wpn_upg_ak_s_folding",
 		"wpn_fps_upg_o_45iron",
-		"wpn_fps_ass_asval_scopemount_lock",
 		"wpn_fps_upg_o_45rds",
 		"wpn_fps_upg_o_spot",
 		"wpn_fps_upg_o_45rds_v2",
 		"wpn_fps_upg_o_bmg",
 		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_45steel",			
+		"wpn_fps_upg_o_fc1",	
+		--Custom
+		"wpn_fps_ass_asval_scopemount_lock",		
+		"wpn_upg_ak_s_folding",		
+		"wpn_fps_upg_o_45steel",		
+		"wpn_fps_upg_m4_s_standard",
+		"wpn_fps_upg_m4_s_pts",		
+		"wpn_upg_ak_s_psl",
+		"wpn_fps_upg_m4_s_crane",
+		"wpn_fps_upg_m4_s_mk46",
+		"wpn_fps_upg_m4_s_ubr",
+		"wpn_fps_snp_tti_s_vltor",	
+		--Don't fucking work
+		--"wpn_fps_upg_ak_g_hgrip",
+		--"wpn_fps_upg_ak_g_pgrip",
+		--"wpn_fps_upg_ak_g_wgrip",		
 		"wpn_fps_upg_i_slower_rof",
 		"wpn_fps_upg_i_faster_rof"	
 	}

@@ -25780,7 +25780,11 @@ function WeaponFactoryTweakData:_init_asval()
 		dlc = "character_pack_sokol",
 		is_a_unlockable = true,
 		forbids = {
-			"wpn_fps_ass_asval_g_standard"
+			"wpn_fps_ass_asval_g_standard",
+			"wpn_fps_upg_ak_g_rk3",
+			"wpn_fps_upg_ak_g_hgrip",
+			"wpn_fps_upg_ak_g_pgrip",
+			"wpn_fps_upg_ak_g_wgrip"			
 		}
 	}
 	self.parts.wpn_fps_ass_asval_s_standard = {
@@ -26003,8 +26007,8 @@ function WeaponFactoryTweakData:_init_asval()
 		"wpn_upg_ak_s_folding",		
 		"wpn_fps_upg_o_45steel",		
 		"wpn_fps_upg_m4_s_standard",
-		"wpn_fps_upg_m4_s_pts",		
-		"wpn_upg_ak_s_psl",
+		"wpn_fps_upg_m4_s_pts",
+		"wpn_upg_ak_s_psl",				
 		"wpn_fps_upg_m4_s_crane",
 		"wpn_fps_upg_m4_s_mk46",
 		"wpn_fps_upg_m4_s_ubr",

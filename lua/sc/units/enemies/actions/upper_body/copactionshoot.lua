@@ -1278,13 +1278,13 @@ function CopActionShoot:_chk_start_melee()
 	local redir_name = is_weapon and "melee" or "melee_item"
 	local tank_melee = nil
 
-	if is_weapon then
-		if self._weap_tweak.usage == "mini" then
-			redir_name = "melee_bayonet" --bash with the front of the minigun's barrel like in first person
+	if self._weap_tweak.usage == "mini" then
+		redir_name = "melee_bayonet" --bash with the front of the minigun's barrel like in first person
+	else self._tank_animations then
+		if melee_weapon == "fists_dozer" or melee_weapon == "fists" then
+			redir_name = "melee" --use tank_melee unique punching animation as originally intended
+			tank_melee = true
 		end
-	elseif melee_weapon == "fists" and self._tank_animations then
-		redir_name = "melee" --use tank_melee unique punching animation as originally intended
-		tank_melee = true
 	end
 
 	local melee_res = self._ext_movement:play_redirect(redir_name)

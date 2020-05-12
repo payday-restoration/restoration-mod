@@ -1,201 +1,132 @@
 local is_win_32 = SystemInfo:platform() == Idstring("WIN32")
 local is_not_win_32 = not is_win_32
 
-function WeaponFactoryTweakData:_init_silencers()
-	self.parts.wpn_fps_upg_ns_ass_smg_large = {
-		pcs = {
+Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", function(self)
+
+	--The Bigger the Better
+	self.parts.wpn_fps_upg_ns_ass_smg_large.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_ns_ass_smg_large.stats = {
+		value = 5,
+		suppression = 12,
+		alert_size = 12,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
+	}
+	self.parts.wpn_fps_upg_ns_ass_smg_large.perks = {"silencer"}
+	
+	--Medium Suppressor
+	self.parts.wpn_fps_upg_ns_ass_smg_medium.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_ns_ass_smg_medium.stats = {
+		value = 2,
+		suppression = 11,
+		alert_size = 11,
+		recoil = -1,
+		spread = 1,
+		concealment = -1
+	}
+	self.parts.wpn_fps_upg_ns_ass_smg_medium.perks = {"silencer"}
+	
+	--Low Profile Suppressor
+	self.parts.wpn_fps_upg_ns_ass_smg_small.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_ns_ass_smg_small.stats = {
+		value = 3,
+		suppression = 10,
+		alert_size = 10,
+		recoil = 1,				
+		spread = -1
+	}
+	self.parts.wpn_fps_upg_ns_ass_smg_small.perks = {"silencer"}
+	
+	--Monolith Suppressor
+	self.parts.wpn_fps_upg_ns_pis_large.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_ns_pis_large.stats = {
+		value = 5,
+		suppression = 12,
+		alert_size = 12,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
+	}
+	self.parts.wpn_fps_upg_ns_pis_large.perks = {"silencer"}
+
+	--Standard Issue Suppressor
+	self.parts.wpn_fps_upg_ns_pis_medium.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_ns_pis_medium.stats = {
+		value = 2,
+		suppression = 11,
+		alert_size = 11,
+		recoil = -1,
+		spread = 1,
+		concealment = -1
+	}
+	self.parts.wpn_fps_upg_ns_pis_medium.perks = {"silencer"}
+
+	--Size Doesn't Matter
+	self.parts.wpn_fps_upg_ns_pis_small.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_ns_pis_small.stats = {
+		value = 3,
+		suppression = 10,
+		alert_size = 10,
+		recoil = 1,				
+		spread = -1
+	}
+	self.parts.wpn_fps_upg_ns_pis_small.perks = {"silencer"}
+	
+	--Silent Killer Suppressor
+	self.parts.wpn_fps_upg_ns_shot_thick.pcs = {
 			10,
 			20,
 			30,
 			40
-		},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_ass_smg_large",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/payday2/weapons/wpn_fps_upg_ns_ass_smg_large/wpn_fps_upg_ns_ass_smg_large",
-		stats = {
-			value = 5,
-			suppression = 12,
-			alert_size = 12,
-			spread = 2,
-			recoil = -2,
-			concealment = -2
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_c"
-		}
+		}	
+	self.parts.wpn_fps_upg_ns_shot_thick.stats = {
+		value = 7,
+		suppression = 12,
+		alert_size = 12,
+		recoil = 1,
+		spread = -1
 	}
-	self.parts.wpn_fps_upg_ns_ass_smg_medium = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_ass_smg_medium",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/payday2/weapons/wpn_fps_upg_ns_ass_smg_medium/wpn_fps_upg_ns_ass_smg_medium",
-		stats = {
-			value = 2,
-			suppression = 11,
-			alert_size = 11,
-			recoil = -1,
-			spread = 1,
-			concealment = -1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_b"
-		}
+	self.parts.wpn_fps_upg_ns_shot_thick.perks = {"silencer"}
+	self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {
+		damage_near_mul = -100,
+		damage_far_mul = -200
+	}			
+	self.parts.wpn_fps_upg_ns_shot_thick.forbids = {
+		"wpn_fps_upg_a_explosive"
 	}
-	self.parts.wpn_fps_upg_ns_ass_smg_small = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_ass_smg_small",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/payday2/weapons/wpn_fps_upg_ns_ass_smg_small/wpn_fps_upg_ns_ass_smg_small",
-		stats = {
-			value = 3,
-			suppression = 10,
-			alert_size = 10,
-			recoil = 1,				
-			spread = -1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_a"
-		}
-	}
-	self.parts.wpn_fps_upg_ns_pis_large = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_pis_large",
-		a_obj = "a_ns",
-		parent = "slide",
-		unit = "units/payday2/weapons/wpn_fps_upg_ns_pis_large/wpn_fps_upg_ns_pis_large",
-		stats = {
-			value = 5,
-			suppression = 12,
-			alert_size = 12,
-			spread = 2,
-			recoil = -2,
-			concealment = -2
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_c"
-		}
-	}
-	self.parts.wpn_fps_upg_ns_pis_medium = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_pis_medium",
-		a_obj = "a_ns",
-		parent = "slide",
-		unit = "units/payday2/weapons/wpn_fps_upg_ns_pis_medium/wpn_fps_upg_ns_pis_medium",
-		stats = {
-			value = 2,
-			suppression = 11,
-			alert_size = 11,
-			recoil = -1,
-			spread = 1,
-			concealment = -1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_b"
-		}
-	}
-	self.parts.wpn_fps_upg_ns_pis_small = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_pis_small",
-		a_obj = "a_ns",
-		parent = "slide",
-		unit = "units/payday2/weapons/wpn_fps_upg_ns_pis_small/wpn_fps_upg_ns_pis_small",
-		stats = {
-			value = 3,
-			suppression = 10,
-			alert_size = 10,
-			recoil = 1,				
-			spread = -1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_a"
-		}
-	}
-	self.parts.wpn_fps_upg_ns_shot_thick = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_shot_thick",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/payday2/weapons/wpn_fps_upg_ns_shot_thick/wpn_fps_upg_ns_shot_thick",
-		stats = {
-			value = 7,
-			suppression = 12,
-			alert_size = 12,
-			recoil = 1,
-			spread = -1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_a"
-		},
-		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
-		},				
-		forbids = {
-			"wpn_fps_upg_a_explosive"
-		}
-	}
-	self.parts.wpn_fps_upg_ns_ass_smg_large.third_unit = "units/payday2/weapons/wpn_third_upg_ns_ass_smg_large/wpn_third_upg_ns_ass_smg_large"
-	self.parts.wpn_fps_upg_ns_ass_smg_medium.third_unit = "units/payday2/weapons/wpn_third_upg_ns_ass_smg_medium/wpn_third_upg_ns_ass_smg_medium"
-	self.parts.wpn_fps_upg_ns_ass_smg_small.third_unit = "units/payday2/weapons/wpn_third_upg_ns_ass_smg_small/wpn_third_upg_ns_ass_smg_small"
-	self.parts.wpn_fps_upg_ns_pis_large.third_unit = "units/payday2/weapons/wpn_third_upg_ns_pis_large/wpn_third_upg_ns_pis_large"
-	self.parts.wpn_fps_upg_ns_pis_medium.third_unit = "units/payday2/weapons/wpn_third_upg_ns_pis_medium/wpn_third_upg_ns_pis_medium"
-	self.parts.wpn_fps_upg_ns_pis_small.third_unit = "units/payday2/weapons/wpn_third_upg_ns_pis_small/wpn_third_upg_ns_pis_small"
-	self.parts.wpn_fps_upg_ns_shot_thick.third_unit = "units/payday2/weapons/wpn_third_upg_ns_shot_thick/wpn_third_upg_ns_shot_thick"
-end
+	
+end)
 
 function WeaponFactoryTweakData:_init_nozzles()
 	self.parts.wpn_fps_upg_ns_ass_smg_firepig = {

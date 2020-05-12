@@ -402,12 +402,6 @@ function PlayerTweakData:init()
 	self:_init_parachute()
 end
 
-local sc_ptd_stance = PlayerTweakData._init_new_stances
-function PlayerTweakData:_init_new_stances()
-	sc_ptd_stance(self, tweak_data)
-	self.stances.jeb = deep_clone(self.stances.new_raging_bull)
-end
-
 local default_init_hk21 = PlayerTweakData._init_hk21
 function PlayerTweakData:_init_hk21()
 	default_init_hk21(self)

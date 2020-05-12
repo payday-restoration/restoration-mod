@@ -82,7 +82,7 @@ function CrimeSpreeManager:on_mission_completed(mission_id)
 		return
 	end
 	
-	Global.game_settings.incsmission = true
+	Global.game_settings.incsmission = false
 	managers.mission:clear_job_values()
 
 	if not self:has_failed() then

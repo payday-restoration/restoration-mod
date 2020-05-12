@@ -1,44 +1,4 @@
-function MenuCallbackHandler:accept_skirmish_contract(item)
-	local node = item:parameters().gui_node.node
-
-	managers.menu:active_menu().logic:navigate_back(true)
-	managers.menu:active_menu().logic:navigate_back(true)
-
-	local job_id = (node:parameters().menu_component_data or {}).job_id
-	local job_data = {
-		difficulty = "overkill_145",
-		customize_contract = true,
-		job_id = job_id or managers.skirmish:random_skirmish_job_id(),
-		difficulty_id = tweak_data:difficulty_to_index("overkill_145")
-	}
-
-	managers.job:on_buy_job(job_data.job_id, job_data.difficulty_id or 3)
-
-	if Global.game_settings.single_player then
-		MenuCallbackHandler:start_single_player_job(job_data)
-	else
-		MenuCallbackHandler:start_job(job_data)
-	end
-end
-
-function MenuCallbackHandler:accept_skirmish_weekly_contract(item)
-	managers.menu:active_menu().logic:navigate_back(true)
-	managers.menu:active_menu().logic:navigate_back(true)
-
-	local weekly_skirmish = managers.skirmish:active_weekly()
-	local job_data = {
-		difficulty = "overkill_145",
-		weekly_skirmish = true,
-		job_id = weekly_skirmish.id
-	}
-
-	if Global.game_settings.single_player then
-		MenuCallbackHandler:start_single_player_job(job_data)
-	else
-		MenuCallbackHandler:start_job(job_data)
-	end
-end
-
+--Fix for Grenade Cases on Pro Jobs
 function MenuPrePlanningInitiator:set_locks_to_param(params, key, index)
 	local data = tweak_data:get_raw_value("preplanning", key, index) or {}
 	local enabled = params.enabled ~= false
@@ -69,6 +29,7 @@ function MenuPrePlanningInitiator:set_locks_to_param(params, key, index)
 	params.ignore_disabled = true
 end
 
+--Allow Chat in Crime.net Offline
 function MenuManager:toggle_chatinput()
 	if Application:editor() or SystemInfo:platform() ~= Idstring("WIN32") or self:active_menu() or not managers.network:session() then
 		return

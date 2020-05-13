@@ -38,7 +38,7 @@
 			<file file="environments/env_street.environment" type="custom_xml"/>
 		</include>
 		<outro_event>
-			<value_node value=""/>
+			<value_node value="Play_loc_run_end"/>
 		</outro_event>
 		<packages>
 			<value_node value="packages/narr_run"/>
@@ -54,7 +54,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<narrative briefing_event="Play_loc_run_cbf_01" contact="classic" icon="guis/textures/street_icon" id="run" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_heatstreet" region="street">
+	<narrative brief_id="heist_run_crimenet" briefing_event="Play_loc_run_cbf_01" contact="classic" icon="guis/textures/street_icon" id="run" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_heatstreet" name_id="heist_run" region="street">
 		<chain>
 			<table level_id="street_new" type="a" type_id="heist_type_survive"/>
 		</chain>
@@ -68,7 +68,7 @@
 			<value_node value="900000"/>
 		</contract_cost>
 		<crimenet_callouts>
-			<value_node value=""/>
+			<value_node value="Play_loc_run_cnc_01"/>
 		</crimenet_callouts>
 		<crimenet_videos>
 			<value_node value="cn_branchbank3"/>

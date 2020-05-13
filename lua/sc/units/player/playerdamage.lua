@@ -28,6 +28,8 @@ function PlayerDamage:init(unit)
 		log("Old Grace Period = " .. tostring(self._dmg_interval))
 		--Get crime spree level.
 		local crime_spree_level = 0
+		local grace_scaling = tweak_data.crime_spree.grace_scaling
+		
 		if Network:is_server() or Global.game_settings.single_player then
 			crime_spree_level = managers.crime_spree:spree_level() or 0
 		else

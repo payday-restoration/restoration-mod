@@ -3,7 +3,7 @@
 		<texture load="true" path="guis/textures/street_icon"/>
 	</AddFiles>
 	<Localization default="english.txt" directory="loc"/>
-	<level ai_group_type="America" brief_id="heist_run_briefing" briefing_dialog="Play_pln_run_brf" cube="cube_apply_heist_street" id="street_new" intro_event="Play_pln_run_intro" max_bags="0" music="heist" name_id="heist_run_hl">
+	<level ai_group_type="nypd" brief_id="heist_run_briefing" briefing_dialog="Play_pln_run_brf" cube="cube_apply_heist_street" id="street_new" intro_event="Play_pln_run_intro" max_bags="0" music="heist" name_id="heist_run_hl">
 		<add file="levels/street_new/add.xml"/>
 		<assets>
 			<asset name="location"/>
@@ -41,6 +41,7 @@
 			<value_node value="Play_loc_run_end"/>
 		</outro_event>
 		<packages>
+			<value_node value="packages/nypdassets"/>
 			<value_node value="packages/narr_run"/>
 			<value_node value="levels/narratives/classics/run/world"/>
 			<value_node value="levels/narratives/classics/run/world_sounds"/>

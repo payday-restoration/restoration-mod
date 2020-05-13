@@ -359,6 +359,7 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	--Removed vanilla crew chief team DR.
 
 	--Yakuza DR.
+	local health_ratio = self:player_unit():character_damage():health_ratio()
 	if self:is_damage_health_ratio_active(health_ratio) then
 		multiplier = multiplier * (1 - self:upgrade_value("player", "resistance_damage_health_ratio_multiplier", 0) * (1 - health_ratio))
 	end

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="core/material_configs/hub_elements" orientation_object="rp_navigation_splitter_10m" />
+  <bodies>
+    <body name="static_body" enabled="true" template="editor">
+      <object name="g_navigation_splitter_10m" collision_type="box" />
+    </body>
+    <body name="phys_body" enabled="true" template="graph_blocker">
+      <object name="g_navigation_splitter_10m" collision_type="box" />
+    </body>     
+  </bodies>
+  <graphics>
+    <object name="g_navigation_splitter_10m" enabled="true" instance_struct="world_tm" />
+  </graphics>
+</dynamic_object>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="street" slot="1">
+  <object file="units/world/architecture/street/ground/sidewalk/ground_sidewalk_10x10m" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

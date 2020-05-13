@@ -1,0 +1,1060 @@
+<generic_scriptdata type="table">
+	<entry index="1" type="table" _id="103" metatable="unit">
+		<entry index="1" type="table" _id="102" metatable="sequence">
+			<entry index="1" type="table" _id="1" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="from" type="string" value="0/30"/>
+				<entry key="name" type="string" value="'anim'"/>
+				<entry key="to" type="string" value="150/30"/>
+			</entry>
+			<entry index="2" type="table" _id="2" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'policecar_closing'"/>
+				<entry key="source" type="string" value="'police_siren'"/>
+			</entry>
+			<entry index="3" type="table" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'policecar_arrive'"/>
+				<entry key="source" type="string" value="'police_siren'"/>
+				<entry key="start_time" type="string" value="60/30"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="1"/>
+			<entry key="editable_state" type="boolean" value="true"/>
+			<entry key="name" type="string" value="'anim_turn1'"/>
+			<entry key="sound" type="table" _ref="2"/>
+			<entry key="triggable" type="boolean" value="true"/>
+		</entry>
+		<entry index="2" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="3" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="from" type="string" value="180/30"/>
+				<entry key="name" type="string" value="'anim'"/>
+				<entry key="to" type="string" value="370/30"/>
+			</entry>
+			<entry index="2" type="table" _id="4" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'policecar_closing'"/>
+				<entry key="source" type="string" value="'police_siren'"/>
+			</entry>
+			<entry index="3" type="table" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'policecar_arrive'"/>
+				<entry key="source" type="string" value="'police_siren'"/>
+				<entry key="start_time" type="string" value="100/30"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="3"/>
+			<entry key="editable_state" type="boolean" value="true"/>
+			<entry key="name" type="string" value="'anim_turn2'"/>
+			<entry key="sound" type="table" _ref="4"/>
+			<entry key="triggable" type="boolean" value="true"/>
+		</entry>
+		<entry index="3" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="5" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="from" type="string" value="430/30"/>
+				<entry key="name" type="string" value="'anim'"/>
+				<entry key="to" type="string" value="573/30"/>
+			</entry>
+			<entry index="2" type="table" _id="6" metatable="run_sequence">
+				<entry key="name" type="string" value="'hide'"/>
+				<entry key="start_time" type="string" value="143/30"/>
+			</entry>
+			<entry index="3" type="table" _id="7" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'policecar_closing'"/>
+				<entry key="source" type="string" value="'police_siren'"/>
+			</entry>
+			<entry index="4" type="table" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'policecar_arrive'"/>
+				<entry key="source" type="string" value="'police_siren'"/>
+				<entry key="start_time" type="string" value="53/30"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="5"/>
+			<entry key="editable_state" type="boolean" value="true"/>
+			<entry key="name" type="string" value="'anim_straight'"/>
+			<entry key="run_sequence" type="table" _ref="6"/>
+			<entry key="sound" type="table" _ref="7"/>
+			<entry key="triggable" type="boolean" value="true"/>
+		</entry>
+		<entry index="4" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="8" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="from" type="string" value="600/30"/>
+				<entry key="name" type="string" value="'anim'"/>
+				<entry key="to" type="string" value="900/30"/>
+			</entry>
+			<entry index="2" type="table" _id="9" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'policecar_closing'"/>
+				<entry key="source" type="string" value="'police_siren'"/>
+			</entry>
+			<entry index="3" type="table" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'policecar_arrive'"/>
+				<entry key="source" type="string" value="'police_siren'"/>
+				<entry key="start_time" type="string" value="180/30"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="8"/>
+			<entry key="editable_state" type="boolean" value="true"/>
+			<entry key="name" type="string" value="'anim_straight_and_turn'"/>
+			<entry key="sound" type="table" _ref="9"/>
+			<entry key="triggable" type="boolean" value="true"/>
+		</entry>
+		<entry index="5" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="10" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_cop'"/>
+			</entry>
+			<entry key="editable_state" type="boolean" value="true"/>
+			<entry key="name" type="string" value="'hide_cop'"/>
+			<entry key="object" type="table" _ref="10"/>
+			<entry key="triggable" type="boolean" value="true"/>
+		</entry>
+		<entry index="6" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="11" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="end_time" type="string" value="25/30"/>
+				<entry key="name" type="string" value="'ag_tire_front_right'"/>
+				<entry key="time" type="string" value="0/30"/>
+			</entry>
+			<entry index="2" type="table" _id="13" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'tire_blow'"/>
+				<entry key="object" type="string" value="'a_tire_front_right'"/>
+			</entry>
+			<entry index="3" type="table" _id="12" metatable="effect">
+				<entry key="align" type="string" value="dest_normal"/>
+				<entry key="name" type="string" value="'effects/particles/bullet_hit/misc/misc_tire'"/>
+				<entry key="position" type="string" value="pos"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="11"/>
+			<entry key="effect" type="table" _ref="12"/>
+			<entry key="name" type="string" value="'kill_tire_front_right'"/>
+			<entry key="sound" type="table" _ref="13"/>
+		</entry>
+		<entry index="7" type="table" _id="101" metatable="body">
+			<entry index="1" type="table" _id="15" metatable="endurance">
+				<entry index="1" type="table" _id="14" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_tire_front_right'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="14"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="15"/>
+			<entry key="name" type="string" value="'tire_front_right'"/>
+		</entry>
+		<entry index="8" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="16" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="end_time" type="string" value="25/30"/>
+				<entry key="name" type="string" value="'ag_tire_front_left'"/>
+				<entry key="time" type="string" value="0/30"/>
+			</entry>
+			<entry index="2" type="table" _id="18" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'tire_blow'"/>
+				<entry key="object" type="string" value="'a_tire_front_left'"/>
+			</entry>
+			<entry index="3" type="table" _id="17" metatable="effect">
+				<entry key="align" type="string" value="dest_normal"/>
+				<entry key="name" type="string" value="'effects/particles/bullet_hit/misc/misc_tire'"/>
+				<entry key="position" type="string" value="pos"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="16"/>
+			<entry key="effect" type="table" _ref="17"/>
+			<entry key="name" type="string" value="'kill_tire_front_left'"/>
+			<entry key="sound" type="table" _ref="18"/>
+		</entry>
+		<entry index="9" type="table" metatable="body">
+			<entry index="1" type="table" _id="20" metatable="endurance">
+				<entry index="1" type="table" _id="19" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_tire_front_left'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="19"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="20"/>
+			<entry key="name" type="string" value="'tire_front_left'"/>
+		</entry>
+		<entry index="10" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="21" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="end_time" type="string" value="25/30"/>
+				<entry key="name" type="string" value="'ag_tire_rear_right'"/>
+				<entry key="time" type="string" value="0/30"/>
+			</entry>
+			<entry index="2" type="table" _id="23" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'tire_blow'"/>
+				<entry key="object" type="string" value="'a_tire_rear_right'"/>
+			</entry>
+			<entry index="3" type="table" _id="22" metatable="effect">
+				<entry key="align" type="string" value="dest_normal"/>
+				<entry key="name" type="string" value="'effects/particles/bullet_hit/misc/misc_tire'"/>
+				<entry key="position" type="string" value="pos"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="21"/>
+			<entry key="effect" type="table" _ref="22"/>
+			<entry key="name" type="string" value="'kill_tire_rear_right'"/>
+			<entry key="sound" type="table" _ref="23"/>
+		</entry>
+		<entry index="11" type="table" metatable="body">
+			<entry index="1" type="table" _id="25" metatable="endurance">
+				<entry index="1" type="table" _id="24" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_tire_rear_right'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="24"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="25"/>
+			<entry key="name" type="string" value="'tire_rear_right'"/>
+		</entry>
+		<entry index="12" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="26" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="end_time" type="string" value="25/30"/>
+				<entry key="name" type="string" value="'ag_tire_rear_left'"/>
+				<entry key="time" type="string" value="0/30"/>
+			</entry>
+			<entry index="2" type="table" _id="28" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'tire_blow'"/>
+				<entry key="object" type="string" value="'a_tire_rear_left'"/>
+			</entry>
+			<entry index="3" type="table" _id="27" metatable="effect">
+				<entry key="align" type="string" value="dest_normal"/>
+				<entry key="name" type="string" value="'effects/particles/bullet_hit/misc/misc_tire'"/>
+				<entry key="position" type="string" value="pos"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="26"/>
+			<entry key="effect" type="table" _ref="27"/>
+			<entry key="name" type="string" value="'kill_tire_rear_left'"/>
+			<entry key="sound" type="table" _ref="28"/>
+		</entry>
+		<entry index="13" type="table" metatable="body">
+			<entry index="1" type="table" _id="30" metatable="endurance">
+				<entry index="1" type="table" _id="29" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_tire_rear_left'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="29"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="30"/>
+			<entry key="name" type="string" value="'tire_rear_left'"/>
+		</entry>
+		<entry index="14" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="31" metatable="object">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'g_window_front_dmg'"/>
+			</entry>
+			<entry index="2" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_window_front'"/>
+			</entry>
+			<entry key="name" type="string" value="'kill_window_front_01'"/>
+			<entry key="object" type="table" _ref="31"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="15" type="table" metatable="body">
+			<entry index="1" type="table" _id="33" metatable="endurance">
+				<entry index="1" type="table" _id="32" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_front_01'"/>
+				</entry>
+				<entry key="bullet" type="number" value="2"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="32"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="33"/>
+			<entry key="name" type="string" value="'window_front'"/>
+		</entry>
+		<entry index="16" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="34" metatable="object">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'g_right_door_window_dmg'"/>
+			</entry>
+			<entry index="2" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_right_door_window'"/>
+			</entry>
+			<entry key="name" type="string" value="'kill_window_right_front_01'"/>
+			<entry key="object" type="table" _ref="34"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="17" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="38" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_right_door_window_dmg'"/>
+			</entry>
+			<entry index="2" type="table" _id="36" metatable="decal_mesh">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'dm_right_door_window'"/>
+			</entry>
+			<entry index="3" type="table" _id="39" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'window_small_shatter'"/>
+				<entry key="object" type="string" value="'e_window_right_front'"/>
+			</entry>
+			<entry index="4" type="table" _id="37" metatable="effect">
+				<entry key="name" type="string" value="'effects/particles/window/vehicle_window'"/>
+				<entry key="parent" type="string" value="object( 'e_window_right_front' )"/>
+				<entry key="position" type="string" value="v()"/>
+			</entry>
+			<entry index="5" type="table" _id="35" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_right_front'"/>
+			</entry>
+			<entry key="body" type="table" _ref="35"/>
+			<entry key="decal_mesh" type="table" _ref="36"/>
+			<entry key="effect" type="table" _ref="37"/>
+			<entry key="name" type="string" value="'kill_window_right_front_02'"/>
+			<entry key="object" type="table" _ref="38"/>
+			<entry key="once" type="boolean" value="true"/>
+			<entry key="sound" type="table" _ref="39"/>
+		</entry>
+		<entry index="18" type="table" metatable="body">
+			<entry index="1" type="table" _id="42" metatable="endurance">
+				<entry index="1" type="table" _id="40" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_right_front_01'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="40"/>
+			</entry>
+			<entry index="2" type="table" metatable="endurance">
+				<entry index="1" type="table" _id="41" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_right_front_02'"/>
+				</entry>
+				<entry key="bullet" type="number" value="2"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="41"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="42"/>
+			<entry key="name" type="string" value="'window_right_front'"/>
+		</entry>
+		<entry index="19" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="43" metatable="object">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'g_window_right_rear_dmg'"/>
+			</entry>
+			<entry index="2" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_window_right_rear'"/>
+			</entry>
+			<entry key="name" type="string" value="'kill_window_right_rear_01'"/>
+			<entry key="object" type="table" _ref="43"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="20" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="47" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_window_right_rear_dmg'"/>
+			</entry>
+			<entry index="2" type="table" _id="45" metatable="decal_mesh">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'dm_window_right_rear'"/>
+			</entry>
+			<entry index="3" type="table" _id="48" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'window_small_shatter'"/>
+				<entry key="object" type="string" value="'e_window_right_rear'"/>
+			</entry>
+			<entry index="4" type="table" _id="46" metatable="effect">
+				<entry key="name" type="string" value="'effects/particles/window/vehicle_window'"/>
+				<entry key="parent" type="string" value="object( 'e_window_right_rear' )"/>
+				<entry key="position" type="string" value="v()"/>
+			</entry>
+			<entry index="5" type="table" _id="44" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_right_rear'"/>
+			</entry>
+			<entry key="body" type="table" _ref="44"/>
+			<entry key="decal_mesh" type="table" _ref="45"/>
+			<entry key="effect" type="table" _ref="46"/>
+			<entry key="name" type="string" value="'kill_window_right_rear_02'"/>
+			<entry key="object" type="table" _ref="47"/>
+			<entry key="once" type="boolean" value="true"/>
+			<entry key="sound" type="table" _ref="48"/>
+		</entry>
+		<entry index="21" type="table" metatable="body">
+			<entry index="1" type="table" _id="51" metatable="endurance">
+				<entry index="1" type="table" _id="49" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_right_rear_01'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="49"/>
+			</entry>
+			<entry index="2" type="table" metatable="endurance">
+				<entry index="1" type="table" _id="50" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_right_rear_02'"/>
+				</entry>
+				<entry key="bullet" type="number" value="2"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="50"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="51"/>
+			<entry key="name" type="string" value="'window_right_rear'"/>
+		</entry>
+		<entry index="22" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="52" metatable="object">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'g_left_door_window_dmg'"/>
+			</entry>
+			<entry index="2" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_left_door_window'"/>
+			</entry>
+			<entry key="name" type="string" value="'kill_window_left_front_01'"/>
+			<entry key="object" type="table" _ref="52"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="23" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="56" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_left_door_window_dmg'"/>
+			</entry>
+			<entry index="2" type="table" _id="54" metatable="decal_mesh">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'dm_left_door_window'"/>
+			</entry>
+			<entry index="3" type="table" _id="57" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'window_small_shatter'"/>
+				<entry key="object" type="string" value="'e_window_left_front'"/>
+			</entry>
+			<entry index="4" type="table" _id="55" metatable="effect">
+				<entry key="name" type="string" value="'effects/particles/window/vehicle_window'"/>
+				<entry key="parent" type="string" value="object( 'e_window_left_front' )"/>
+				<entry key="position" type="string" value="v()"/>
+			</entry>
+			<entry index="5" type="table" _id="53" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_left_front'"/>
+			</entry>
+			<entry key="body" type="table" _ref="53"/>
+			<entry key="decal_mesh" type="table" _ref="54"/>
+			<entry key="effect" type="table" _ref="55"/>
+			<entry key="name" type="string" value="'kill_window_left_front_02'"/>
+			<entry key="object" type="table" _ref="56"/>
+			<entry key="once" type="boolean" value="true"/>
+			<entry key="sound" type="table" _ref="57"/>
+		</entry>
+		<entry index="24" type="table" metatable="body">
+			<entry index="1" type="table" _id="60" metatable="endurance">
+				<entry index="1" type="table" _id="58" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_left_front_01'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="58"/>
+			</entry>
+			<entry index="2" type="table" metatable="endurance">
+				<entry index="1" type="table" _id="59" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_left_front_02'"/>
+				</entry>
+				<entry key="bullet" type="number" value="2"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="59"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="60"/>
+			<entry key="name" type="string" value="'window_left_front'"/>
+		</entry>
+		<entry index="25" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="61" metatable="object">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'g_window_left_rear_dmg'"/>
+			</entry>
+			<entry index="2" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_window_left_rear'"/>
+			</entry>
+			<entry key="name" type="string" value="'kill_window_left_rear_01'"/>
+			<entry key="object" type="table" _ref="61"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="26" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="65" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_window_left_rear_dmg'"/>
+			</entry>
+			<entry index="2" type="table" _id="63" metatable="decal_mesh">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'dm_window_left_rear'"/>
+			</entry>
+			<entry index="3" type="table" _id="66" metatable="sound">
+				<entry key="action" type="string" value="'play'"/>
+				<entry key="event" type="string" value="'window_small_shatter'"/>
+				<entry key="object" type="string" value="'e_window_left_rear'"/>
+			</entry>
+			<entry index="4" type="table" _id="64" metatable="effect">
+				<entry key="name" type="string" value="'effects/particles/window/vehicle_window'"/>
+				<entry key="parent" type="string" value="object( 'e_window_left_rear' )"/>
+				<entry key="position" type="string" value="v()"/>
+			</entry>
+			<entry index="5" type="table" _id="62" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_left_rear'"/>
+			</entry>
+			<entry key="body" type="table" _ref="62"/>
+			<entry key="decal_mesh" type="table" _ref="63"/>
+			<entry key="effect" type="table" _ref="64"/>
+			<entry key="name" type="string" value="'kill_window_left_rear_02'"/>
+			<entry key="object" type="table" _ref="65"/>
+			<entry key="once" type="boolean" value="true"/>
+			<entry key="sound" type="table" _ref="66"/>
+		</entry>
+		<entry index="27" type="table" metatable="body">
+			<entry index="1" type="table" _id="69" metatable="endurance">
+				<entry index="1" type="table" _id="67" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_left_rear_01'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="67"/>
+			</entry>
+			<entry index="2" type="table" metatable="endurance">
+				<entry index="1" type="table" _id="68" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_left_rear_02'"/>
+				</entry>
+				<entry key="bullet" type="number" value="2"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="68"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="69"/>
+			<entry key="name" type="string" value="'window_left_rear'"/>
+		</entry>
+		<entry index="28" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="70" metatable="object">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'g_window_back_dmg'"/>
+			</entry>
+			<entry index="2" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_window_back'"/>
+			</entry>
+			<entry key="name" type="string" value="'kill_window_back_01'"/>
+			<entry key="object" type="table" _ref="70"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="29" type="table" metatable="body">
+			<entry index="1" type="table" _id="72" metatable="endurance">
+				<entry index="1" type="table" _id="71" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_window_back_01'"/>
+				</entry>
+				<entry key="bullet" type="number" value="2"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="71"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="72"/>
+			<entry key="name" type="string" value="'window_back'"/>
+		</entry>
+		<entry index="30" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="75" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_f_l_il'"/>
+			</entry>
+			<entry index="2" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_l_head'"/>
+			</entry>
+			<entry index="3" type="table" _id="73" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'f_l_il'"/>
+			</entry>
+			<entry index="4" type="table" _id="74" metatable="light">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'ls_left'"/>
+			</entry>
+			<entry key="body" type="table" _ref="73"/>
+			<entry key="light" type="table" _ref="74"/>
+			<entry key="name" type="string" value="'kill_f_l_il'"/>
+			<entry key="object" type="table" _ref="75"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="31" type="table" metatable="body">
+			<entry index="1" type="table" _id="77" metatable="endurance">
+				<entry index="1" type="table" _id="76" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_f_l_il'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="76"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="77"/>
+			<entry key="name" type="string" value="'f_l_il'"/>
+		</entry>
+		<entry index="32" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="80" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_f_r_il'"/>
+			</entry>
+			<entry index="2" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_r_head'"/>
+			</entry>
+			<entry index="3" type="table" _id="78" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'f_r_il'"/>
+			</entry>
+			<entry index="4" type="table" _id="79" metatable="light">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'ls_right'"/>
+			</entry>
+			<entry key="body" type="table" _ref="78"/>
+			<entry key="light" type="table" _ref="79"/>
+			<entry key="name" type="string" value="'kill_f_r_il'"/>
+			<entry key="object" type="table" _ref="80"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="33" type="table" metatable="body">
+			<entry index="1" type="table" _id="82" metatable="endurance">
+				<entry index="1" type="table" _id="81" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_f_r_il'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="81"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="82"/>
+			<entry key="name" type="string" value="'f_r_il'"/>
+		</entry>
+		<entry index="34" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="84" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_b_l_il'"/>
+			</entry>
+			<entry index="2" type="table" _id="83" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'b_l_il'"/>
+			</entry>
+			<entry key="body" type="table" _ref="83"/>
+			<entry key="name" type="string" value="'kill_b_l_il'"/>
+			<entry key="object" type="table" _ref="84"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="35" type="table" metatable="body">
+			<entry index="1" type="table" _id="86" metatable="endurance">
+				<entry index="1" type="table" _id="85" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_b_l_il'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="85"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="86"/>
+			<entry key="name" type="string" value="'b_l_il'"/>
+		</entry>
+		<entry index="36" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="88" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_b_r_il'"/>
+			</entry>
+			<entry index="2" type="table" _id="87" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'b_r_il'"/>
+			</entry>
+			<entry key="body" type="table" _ref="87"/>
+			<entry key="name" type="string" value="'kill_b_r_il'"/>
+			<entry key="object" type="table" _ref="88"/>
+			<entry key="once" type="boolean" value="true"/>
+		</entry>
+		<entry index="37" type="table" metatable="body">
+			<entry index="1" type="table" _id="90" metatable="endurance">
+				<entry index="1" type="table" _id="89" metatable="run_sequence">
+					<entry key="name" type="string" value="'kill_b_r_il'"/>
+				</entry>
+				<entry key="bullet" type="number" value="1"/>
+				<entry key="explosion" type="number" value="1"/>
+				<entry key="run_sequence" type="table" _ref="89"/>
+			</entry>
+			<entry key="endurance" type="table" _ref="90"/>
+			<entry key="name" type="string" value="'b_r_il'"/>
+		</entry>
+		<entry index="38" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="91" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="end_time" type="number" value="0"/>
+				<entry key="name" type="string" value="'ag_right_door'"/>
+				<entry key="speed" type="number" value="0"/>
+				<entry key="time" type="number" value="0"/>
+			</entry>
+			<entry index="2" type="table" metatable="animation_group">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="end_time" type="number" value="0"/>
+				<entry key="name" type="string" value="'ag_left_door'"/>
+				<entry key="speed" type="number" value="0"/>
+				<entry key="time" type="number" value="0"/>
+			</entry>
+			<entry index="3" type="table" _id="92" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'mover_blocker'"/>
+			</entry>
+			<entry index="4" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'f_l_il'"/>
+			</entry>
+			<entry index="5" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'f_r_il'"/>
+			</entry>
+			<entry index="6" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'b_l_il'"/>
+			</entry>
+			<entry index="7" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'b_r_il'"/>
+			</entry>
+			<entry index="8" type="table" _id="94" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_f_l_il'"/>
+			</entry>
+			<entry index="9" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_f_r_il'"/>
+			</entry>
+			<entry index="10" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_b_l_il'"/>
+			</entry>
+			<entry index="11" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_b_r_il'"/>
+			</entry>
+			<entry index="12" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_l_head'"/>
+			</entry>
+			<entry index="13" type="table" metatable="object">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'g_r_head'"/>
+			</entry>
+			<entry index="14" type="table" _id="93" metatable="light">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'ls_left'"/>
+			</entry>
+			<entry index="15" type="table" metatable="light">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'ls_right'"/>
+			</entry>
+			<entry key="animation_group" type="table" _ref="91"/>
+			<entry key="body" type="table" _ref="92"/>
+			<entry key="light" type="table" _ref="93"/>
+			<entry key="name" type="string" value="'default'"/>
+			<entry key="object" type="table" _ref="94"/>
+			<entry key="reset_editable_state" type="boolean" value="true"/>
+		</entry>
+		<entry index="39" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="97" metatable="graphic_group">
+				<entry key="name" type="string" value="'police_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="2" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'door1_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="3" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'door2_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="4" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win1_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="5" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win2_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="6" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win3_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="7" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win4_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="8" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win5_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="9" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win6_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="10" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win8_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="11" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win9_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="12" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win10_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="13" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win11_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="14" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win12_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="15" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'wheels_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="16" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'siren_grp'"/>
+				<entry key="visibility" type="boolean" value="true"/>
+			</entry>
+			<entry index="17" type="table" _id="95" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'mover_blocker'"/>
+			</entry>
+			<entry index="18" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'left_door_body'"/>
+			</entry>
+			<entry index="19" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'right_door_body'"/>
+			</entry>
+			<entry index="20" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'vehicle_police_ny'"/>
+			</entry>
+			<entry index="21" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'window_right_rear'"/>
+			</entry>
+			<entry index="22" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'window_right_front'"/>
+			</entry>
+			<entry index="23" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'window_left_rear'"/>
+			</entry>
+			<entry index="24" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'window_left_front'"/>
+			</entry>
+			<entry index="25" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'window_front'"/>
+			</entry>
+			<entry index="26" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'window_back'"/>
+			</entry>
+			<entry index="27" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'tire_front_left'"/>
+			</entry>
+			<entry index="28" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'tire_rear_left'"/>
+			</entry>
+			<entry index="29" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'tire_front_right'"/>
+			</entry>
+			<entry index="30" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'tire_rear_right'"/>
+			</entry>
+			<entry index="31" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'rims'"/>
+			</entry>
+			<entry index="32" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'f_l_il'"/>
+			</entry>
+			<entry index="33" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'f_r_il'"/>
+			</entry>
+			<entry index="34" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'b_r_il'"/>
+			</entry>
+			<entry index="35" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'siren'"/>
+			</entry>
+			<entry index="36" type="table" _id="96" metatable="effect_spawner">
+				<entry key="enabled" type="boolean" value="true"/>
+				<entry key="name" type="string" value="'es_e_efx'"/>
+			</entry>
+			<entry key="body" type="table" _ref="95"/>
+			<entry key="editable_state" type="boolean" value="true"/>
+			<entry key="effect_spawner" type="table" _ref="96"/>
+			<entry key="graphic_group" type="table" _ref="97"/>
+			<entry key="name" type="string" value="'show'"/>
+			<entry key="triggable" type="boolean" value="true"/>
+		</entry>
+		<entry index="40" type="table" metatable="sequence">
+			<entry index="1" type="table" _id="100" metatable="graphic_group">
+				<entry key="name" type="string" value="'police_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="2" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'door1_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="3" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'door2_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="4" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win1_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="5" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win2_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="6" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win3_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="7" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win4_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="8" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win5_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="9" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win6_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="10" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win8_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="11" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win9_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="12" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win10_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="13" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win11_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="14" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'win12_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="15" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'wheels_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="16" type="table" metatable="graphic_group">
+				<entry key="name" type="string" value="'siren_grp'"/>
+				<entry key="visibility" type="boolean" value="false"/>
+			</entry>
+			<entry index="17" type="table" _id="98" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'mover_blocker'"/>
+			</entry>
+			<entry index="18" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'left_door_body'"/>
+			</entry>
+			<entry index="19" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'right_door_body'"/>
+			</entry>
+			<entry index="20" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'vehicle_police_ny'"/>
+			</entry>
+			<entry index="21" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_right_rear'"/>
+			</entry>
+			<entry index="22" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_right_front'"/>
+			</entry>
+			<entry index="23" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_left_rear'"/>
+			</entry>
+			<entry index="24" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_left_front'"/>
+			</entry>
+			<entry index="25" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_back'"/>
+			</entry>
+			<entry index="26" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'window_front'"/>
+			</entry>
+			<entry index="27" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'tire_front_left'"/>
+			</entry>
+			<entry index="28" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'tire_rear_left'"/>
+			</entry>
+			<entry index="29" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'tire_front_right'"/>
+			</entry>
+			<entry index="30" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'tire_rear_right'"/>
+			</entry>
+			<entry index="31" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'rims'"/>
+			</entry>
+			<entry index="32" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'f_l_il'"/>
+			</entry>
+			<entry index="33" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'f_r_il'"/>
+			</entry>
+			<entry index="34" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'b_r_il'"/>
+			</entry>
+			<entry index="35" type="table" metatable="body">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'siren'"/>
+			</entry>
+			<entry index="36" type="table" _id="99" metatable="effect_spawner">
+				<entry key="enabled" type="boolean" value="false"/>
+				<entry key="name" type="string" value="'es_e_efx'"/>
+			</entry>
+			<entry key="body" type="table" _ref="98"/>
+			<entry key="editable_state" type="boolean" value="true"/>
+			<entry key="effect_spawner" type="table" _ref="99"/>
+			<entry key="graphic_group" type="table" _ref="100"/>
+			<entry key="name" type="string" value="'hide'"/>
+			<entry key="triggable" type="boolean" value="true"/>
+		</entry>
+		<entry key="body" type="table" _ref="101"/>
+		<entry key="sequence" type="table" _ref="102"/>
+	</entry>
+	<entry key="unit" type="table" _ref="103"/>
+</generic_scriptdata>

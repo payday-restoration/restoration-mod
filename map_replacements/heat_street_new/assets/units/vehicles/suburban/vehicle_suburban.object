@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/vehicles/suburban/vehicle_suburban" orientation_object="rp_suburban" />
+	<sequence_manager file="units/vehicles/suburban/vehicle_suburban" />
+		<animations>
+			<animation_group name="ag_tire_front_right">
+				<object name="a_tire_front_right" />
+			</animation_group>
+			<animation_group name="ag_tire_front_left">
+				<object name="a_tire_front_left" />
+			</animation_group>
+			<animation_group name="ag_tire_rear_right">
+				<object name="a_tire_rear_right" />
+			</animation_group>
+			<animation_group name="ag_tire_rear_left">
+				<object name="a_tire_rear_left" />
+			</animation_group>
+		</animations>
+		<bodies>
+			<body name="static_body" enabled="true" template="static">
+				<object name="rp_suburban" />
+				<object name="c_suburban" collision_type="mesh_mopp" />
+			</body>
+			<body name="graph_blocker" enabled="true" template="graph_blocker">
+				<object name="c_graph_blocker" collision_type="box" />
+			</body>
+			<body name="window_front" enabled="true" template="static">
+				<object name="c_glass_front" collision_type="mesh_mopp" two_sided="true"/>
+			</body>
+			<body remove_ray_type="ai_vision" name="window_left_front" enabled="true" template="static">
+				<object name="c_glass_front_l" collision_type="mesh_mopp" two_sided="true" />
+			</body>	
+			<body remove_ray_type="ai_vision" name="window_right_front" enabled="true" template="static">
+				<object name="c_glass_front_r" collision_type="mesh_mopp" two_sided="true" />
+			</body>
+			<body remove_ray_type="ai_vision" name="window_left_middle" enabled="true" template="static">
+				<object name="c_glass_middle_l" collision_type="mesh_mopp" two_sided="true"/>
+			</body>
+			<body remove_ray_type="ai_vision" name="window_right_middle" enabled="true" template="static">
+				<object name="c_glass_middle_r" collision_type="mesh_mopp" two_sided="true"/>
+			</body>
+			<body remove_ray_type="ai_vision" name="window_left_rear" enabled="true" template="static">
+				<object name="c_glass_back_l" collision_type="mesh_mopp" two_sided="true"/>
+			</body>
+			<body remove_ray_type="ai_vision" name="window_right_rear" enabled="true" template="static">
+				<object name="c_glass_back_r" collision_type="mesh_mopp" two_sided="true"/>
+			</body>
+			<body name="window_back" enabled="true" template="static">
+				<object name="c_glass_back" collision_type="mesh_mopp" two_sided="true"/>
+			</body>
+		
+			<body name="tire_front_left" enabled="true" template="static">
+				<object name="dm_suburban_wheel_01" collision_type="mesh_mopp" />
+			</body>
+			<body name="tire_rear_left" enabled="true" template="static">
+				<object name="dm_suburban_wheel_03" collision_type="mesh_mopp" />
+			</body>
+			<body name="tire_front_right" enabled="true" template="static">
+				<object name="dm_suburban_wheel_02" collision_type="mesh_mopp" />
+			</body>
+			<body name="tire_rear_right" enabled="true" template="static">
+				<object name="dm_suburban_wheel_04" collision_type="mesh_mopp" />
+			</body>
+			<body name="rims" enabled="true" template="static">
+				<object name="a_tire_front_left" />
+				<object name="dm_suburban_wheel_01_metal" collision_type="mesh_mopp" />
+				<object name="dm_suburban_wheel_02_metal" collision_type="mesh_mopp" />
+				<object name="dm_suburban_wheel_03_metal" collision_type="mesh_mopp" />
+				<object name="dm_suburban_wheel_04_metal" collision_type="mesh_mopp" />
+			</body>
+		</bodies>
+		<graphics>
+	<lod_object name="suburban">
+        <object name="g_suburban" max_distance="5000" lod="0" enabled="true" />
+        <object name="g_suburban_lod" lod="1" enabled="true" />
+    </lod_object> 
+    <lod_object name="win1">
+        <object name="g_glass_front" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_glass_front_lod" lod="1" enabled="false" />
+    </lod_object> 
+	<lod_object name="win2">
+        <object name="g_glass_front_l" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_glass_front_l_lod" lod="1"  enabled="false" />
+    </lod_object> 
+	 <lod_object name="win3">
+        <object name="g_glass_front_r" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_glass_front_r_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win4">
+        <object name="g_glass_middle_l" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_glass_middle_l_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win5">
+        <object name="g_glass_middle_r" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_glass_middle_r_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win6">
+        <object name="g_glass_back_l" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_glass_back_l_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win7">
+        <object name="g_glass_back_r" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_glass_back_r_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win8">
+        <object name="g_glass_back" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_glass_back_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win9">
+        <object name="g_glass_front_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_glass_front_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win10">
+        <object name="g_glass_front_l_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_glass_front_l_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win11">
+        <object name="g_glass_front_r_dmg" max_distance="5000" lod="0" enabled="false" /> 
+		<object name="g_glass_front_r_dmg_lod" lod="1" enabled="false" />
+    </lod_object>
+	<lod_object name="win12">
+        <object name="g_glass_middle_l_dmg" max_distance="5000" lod="0" enabled="false" /> 
+		<object name="g_glass_middle_l_dmg_lod" lod="1" enabled="false" />
+    </lod_object>
+	<lod_object name="win13">
+        <object name="g_glass_middle_r_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_glass_middle_r_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+	<lod_object name="win14">
+        <object name="g_glass_back_l_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_glass_back_l_dmg_lod" lod="1"  enabled="false" />
+    </lod_object> 
+	 <lod_object name="win15">
+        <object name="g_glass_back_r_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_glass_back_r_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win16">
+        <object name="g_glass_back_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_glass_back_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+			<object name="s_suburban" enabled="true" shadow_caster="true"  />
+		</graphics>
+		<decal_surfaces default_material="metal">
+			<decal_mesh name="dm_suburban_wheel_01" enabled="true" material="rubber" />
+			<decal_mesh name="dm_suburban_wheel_01_metal" enabled="true" material="rubber" />
+			<decal_mesh name="dm_suburban_wheel_02" enabled="true" material="rubber" />
+			<decal_mesh name="dm_suburban_wheel_02_metal" enabled="true" material="rubber" />
+			<decal_mesh name="dm_suburban_wheel_03" enabled="true" material="rubber" />
+			<decal_mesh name="dm_suburban_wheel_03_metal" enabled="true" material="rubber" />
+			<decal_mesh name="dm_suburban_wheel_04" enabled="true" material="rubber" />
+			<decal_mesh name="dm_suburban_wheel_04_metal" enabled="true" material="rubber" />
+			<decal_mesh name="dm_glass_front" enabled="true" material="glass_breakable" />
+			<decal_mesh name="dm_glass_front_l" enabled="true" material="glass_breakable" />
+			<decal_mesh name="dm_glass_front_r" enabled="true" material="glass_breakable" />
+			<decal_mesh name="dm_glass_middle_l" enabled="true" material="glass_breakable" />
+			<decal_mesh name="dm_glass_middle_r" enabled="true" material="glass_breakable" />
+			<decal_mesh name="dm_glass_back_l" enabled="true" material="glass_breakable" />
+			<decal_mesh name="dm_glass_back_r" enabled="true" material="glass_breakable" />
+			<decal_mesh name="dm_glass_back" enabled="true" material="glass_breakable" />
+			<decal_mesh name="dm_metal" enabled="true" material="metal" />
+			<decal_mesh name="dm_rubber" enabled="true" material="rubber" />
+			<decal_mesh name="dm_cloth" enabled="true" material="cloth" />
+			<decal_mesh name="dm_inner_cloth" enabled="true" material="cloth" />
+			<decal_mesh name="dm_sheet_metal" enabled="true" material="metal_chassis"/>
+		</decal_surfaces>
+		<objects> 
+			<align_point name="a_glass_front_l" enabled="true" parent="rp_suburban" position="0 0 0" rotation="0 0 0" />
+			<align_point name="a_glass_front_r" enabled="true" parent="rp_suburban" position="0 0 0" rotation="0 0 0" />
+			<align_point name="a_glass_middle_l" enabled="true" parent="rp_suburban" position="0 0 0" rotation="0 0 0" />
+			<align_point name="a_glass_middle_r" enabled="true" parent="rp_suburban" position="0 0 0" rotation="0 0 0" />
+			<align_point name="a_glass_back_l" enabled="true" parent="rp_suburban" position="0 0 0" rotation="0 0 0" />
+			<align_point name="a_glass_back_r" enabled="true" parent="rp_suburban" position="0 0 0" rotation="0 0 0" />
+		</objects>
+</dynamic_object>

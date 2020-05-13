@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<unit type="dev" slot="1">
+  <object file="units/dev_tools/level_tools/ai_blockade" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" >
+	 <var name="only_visible_in_editor" value="true" />
+     <var name="helper_type" value="ai_blockade" />
+	 </extension>
+  </extensions>
+</unit>

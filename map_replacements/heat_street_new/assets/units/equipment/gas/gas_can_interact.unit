@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/equipment/gas/gas_can_interact" />
+  <network sync="spawn" />
+	<dependencies>
+		<depends_on material_config="units/equipment/thermite/thermite_01" />
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+	<extension name="interaction" class="UseInteractionExt">
+      <var name="tweak_data" value="gasoline" />
+    </extension>
+  </extensions>
+</unit>

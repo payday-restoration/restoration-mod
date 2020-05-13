@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/world/street/street_lights/street_lights" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

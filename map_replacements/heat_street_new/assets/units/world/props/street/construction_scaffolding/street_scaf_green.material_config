@@ -1,0 +1,10 @@
+<materials version="3" group="scaf_tint_group">
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED"  version="2"/>
+    <material version="2" decal_material="metal" name="des_prop_con_scaf" render_template="generic:DIFFUSE_TEXTURE:INSTANCED">
+        <diffuse_texture file="units/world/props/street/construction_scaffolding/street_scaf_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:INSTANCED:SIMPLE_TINT" version="2" name="wood">
+        <variable value="0.37894088029861 0.40944880247116 0.34522157907486" type="vector3" name="tint_color"/>
+        <diffuse_texture file="units/world/props/street/construction_scaffolding/street_scaf_wood_df"/>
+    </material>
+</materials>

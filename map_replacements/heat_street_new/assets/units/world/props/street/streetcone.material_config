@@ -1,0 +1,9 @@
+<materials version="3">
+    <material name="streetcone" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GLOSS_BLURS_CUBEMAP:GLOSS_CONTROL_VALUE:INSTANCED:NORMALMAP" version="2">
+        <diffuse_texture file="units/world/props/street/streetcone_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="0.20000000298023" type="scalar" name="glossiness_control"/>
+        <bump_normal_texture file="units/payday2/textures/blank_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+</materials>

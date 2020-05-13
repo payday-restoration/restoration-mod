@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/vehicles/mondeo/low/vehicle_mondeo_low" orientation_object="rp_mondeo_low" />
+
+ <bodies>
+    <body name="mondeo" enabled="true" template="static">
+      <object name="rp_mondeo_low" />
+      <object name="c_mondeo" collision_type="box" padding="-2" />
+      <object name="c_mondeo2" collision_type="convex" />
+	  </body>
+  </bodies>
+  
+  
+	<decal_surfaces default_material="metal_chassis" />
+
+
+  
+	<graphics>
+		<lod_object name="mondeo">
+			<object name="g_mondeo" max_distance="5000" lod="0" enabled="true" instance_struct="world_tm" />
+			<object name="g_mondeo_lod" lod="1" enabled="true" instance_struct="world_tm" />
+		</lod_object> 
+
+
+		<object name="s_mondeo" enabled="true" shadow_caster="true" instance_struct="world_tm" />
+		<object name="g_window" enabled="true" instance_struct="world_tm" />
+	</graphics>
+  
+	
+</dynamic_object> 

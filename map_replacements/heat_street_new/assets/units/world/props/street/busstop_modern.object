@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/street/busstop_modern" orientation_object="rp_busstop_modern" />
+  <sequence_manager file="units/world/props/street/busstop_modern" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+	  <object name="rp_busstop_modern"/>
+      <object name="c_metal_casing" collision_type="mesh_mopp" />
+    </body>
+    <body remove_ray_type="vis_graph ai_vision" name="glass_1" enabled="true" template="static">
+	 <object name="c_box_glass_1" collision_type="box" />
+    </body> 
+    <body remove_ray_type="vis_graph ai_vision" name="glass_2" enabled="true" template="static">
+      <object name="c_box_glass_2" collision_type="box" />
+    </body>
+    <body remove_ray_type="vis_graph ai_vision" name="glass_3" enabled="true" template="static">
+      <object name="c_box_glass_3" collision_type="box" />
+    </body>
+    <body remove_ray_type="vis_graph ai_vision" name="glass_4" enabled="true" template="static">
+      <object name="c_box_glass_4" collision_type="box" />
+    </body>
+    <body remove_ray_type="vis_graph ai_vision" name="glass_5" enabled="true" template="static">
+      <object name="c_box_glass_5" collision_type="box" />
+    </body>
+   <body remove_ray_type="vis_graph ai_vision" name="glass_6" enabled="true" template="static">
+      <object name="c_box_glass_6" collision_type="box" />
+    </body>
+    <body remove_ray_type="vis_graph ai_vision" name="glass_7" enabled="true" template="static">
+      <object name="c_box_glass_7" collision_type="box" />
+    </body>
+   <body remove_ray_type="vis_graph ai_vision" name="glass_8" enabled="true" template="static">
+      <object name="c_box_glass_8" collision_type="box" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="metal" static="true">
+    <decal_mesh name="dm_glass_1" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_glass_2" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_glass_3" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_glass_4" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_glass_5" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_glass_6" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_glass_7" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_glass_8" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_glass_9" enabled="true" material="glass_unbreakable" />
+    <decal_mesh name="dm_metal" enabled="true" material="metal_hollow" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_poster" enabled="true" shadow_caster="false"  />
+    <object name="g_glass_1" enabled="true"  />
+    <object name="g_glass_2" enabled="true"  />
+    <object name="g_glass_3" enabled="true"  />
+    <object name="g_glass_4" enabled="true"  />
+    <object name="g_glass_5" enabled="true"  />
+    <object name="g_glass_6" enabled="true"  />
+    <object name="g_glass_7" enabled="true"  />
+    <object name="g_glass_8" enabled="true"  />
+    <object name="g_glass_9" enabled="true"  />
+    <object name="g_glass_shattered_1"  />
+    <object name="g_glass_shattered_2"  />
+    <object name="g_glass_shattered_3"  />
+    <object name="g_glass_shattered_4"  />
+    <object name="g_glass_shattered_5"  />
+    <object name="g_glass_shattered_6"  />
+    <object name="g_glass_shattered_7"  />
+    <object name="g_glass_shattered_8"  />
+    <object name="g_metal_casing" enabled="true" shadow_caster="false"  />
+    <object name="s_metal_casing" enabled="true" shadow_caster="true"  />
+    <object name="g_illumination" enabled="true" />
+  </graphics>
+  <objects>
+    <object name="e_glass_01" />
+    <object name="e_glass_02" />
+    <object name="e_glass_03" />
+    <object name="e_glass_04" />
+    <object name="e_glass_05" />
+    <object name="e_glass_07" />
+    <object name="e_glass_08" />
+  </objects>
+</dynamic_object>

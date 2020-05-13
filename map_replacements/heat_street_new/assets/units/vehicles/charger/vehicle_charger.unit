@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<unit type="storm" slot="1">
+  <object file="units/vehicles/charger/vehicle_charger" />
+   <dependencies>
+    <depends_on effect="effects/particles/window/vehicle_window" />
+	<depends_on effect="effects/particles/bullet_hit/misc/misc_tire" />
+	<depends_on bnk="soundbanks/effects" />
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

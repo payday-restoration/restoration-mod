@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/architecture/street/ground/ground_io" orientation_object="rp_ground_road_crossing_20x20m" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_ground_road_crossing_20x20m" />
+      <object name="c_ground_road_crossing" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="asphalt" static="true">
+  <decal_mesh name="c_ground_road_crossing" enabled="true" material="asphalt" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_ground_road_crossing" enabled="true"/>
+  </graphics>
+</dynamic_object> 

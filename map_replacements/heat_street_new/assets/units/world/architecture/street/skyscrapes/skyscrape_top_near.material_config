@@ -1,0 +1,8 @@
+<materials version="3">
+    <material name="facade_window" decal_material="metal" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/architecture/street/skyscrapes/scyscrape_top_near_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_street_01"/>
+        <bump_normal_texture file="units/world/architecture/street/skyscrapes/scyscrape_top_near_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

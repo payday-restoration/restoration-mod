@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/architecture/apartment/door/apartment_door_03" orientation_object="rp_apartment_door_03" />
+  <sequence_manager file="units/world/architecture/apartment/door/apartment_door_03" />
+  <animations>
+	<animation_group name="slam_in" enabled="false">
+		<object name="a_door_slam_in" />
+	</animation_group>
+	<animation_group name="slam_out" enabled="false">
+		<object name="a_door_slam_out" />
+	</animation_group>
+	<animation_group name="in" enabled="false">
+		<object name="a_in" />
+	</animation_group>
+	<animation_group name="out" enabled="false">
+		<object name="a_out" />
+	</animation_group>
+  </animations>
+  <bodies>
+	<body remove_ray_type="walk vis_graph" name="door" enabled="true" template="animated" >
+		<object name="a_in" />
+		<object name="c_door" collision_type="box" />
+	</body>
+  </bodies>
+  <decal_surfaces default_material="metal" static="true">
+	<decal_mesh name="c_door" enabled="true" material="metal" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_door" enabled="true" shadow_caster="true" instance_struct="world_tm"/>
+    <object name="g_hinge_in" enabled="false"  instance_struct="world_tm"/>
+    <object name="g_hinge_out" enabled="true" instance_struct="world_tm"/>
+  </graphics>
+</dynamic_object> 

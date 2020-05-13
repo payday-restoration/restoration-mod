@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/world/architecture/street/facade_industrial/facade_industrial_01_20m" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

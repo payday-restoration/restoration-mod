@@ -1,0 +1,30 @@
+<materials version="3">
+    <material name="suburban" version="2" render_template="generic:BLUE_MASK_TINT:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_BIGPROPS">
+        <variable value="1.2000000476837 0.25 2" type="vector3" name="environment_settings"/>
+        <diffuse_texture file="units/vehicles/suburban/low/vehicle_suburban_low_df"/>
+        <bump_normal_texture file="units/vehicles/suburban/low/vehicle_suburban_low_nm"/>
+        <variable value="0.17647059261799 0.15686275064945 0.1176470592618" type="vector3" name="tint_color"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	
+	<material name="suburban_low" version="2" render_template="generic:BLUE_MASK_TINT:DIFFUSE_TEXTURE">
+        <variable value="0.17647059261799 0.15686275064945 0.1176470592618" type="vector3" name="tint_color"/>
+        <diffuse_texture file="units/vehicles/suburban/low/vehicle_suburban_low_df"/>
+    </material>
+
+	
+    <material name="glass_shattered" decal_material="glass_breakable" version="2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP">
+        <variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/vehicles/window/glass_shattered_2_op"/>
+        <diffuse_texture file="units/vehicles/window/glass_shattered_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/vehicles/window/glass_shattered_nm"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" name="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE">
+        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/glass/vehicle_glass_op"/>
+        <diffuse_texture file="units/glass/vehicle_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/props/pillar_fence/pillar_fence" orientation_object="rp_pillar_fence_single_01" />
+  
+	<bodies>
+		<body name="static_body" enabled="true" template="static" remove_ray_type="ai_vision">
+			<object name="rp_pillar_fence_single_01" />
+			<object name="c_mesh_mopp_01" collision_type="mesh_mopp" />
+		</body>
+	</bodies> 
+	
+	<decal_surfaces default_material="concrete" static="true">
+		<decal_mesh name="dm_concrete" enabled="true" material="concrete" />
+	</decal_surfaces>
+  
+	<graphics>
+		<object name="g_pillar_fence_single_01" enabled="true" shadow_caster="true" instance_struct="world_tm"/>
+	</graphics>
+</dynamic_object> 

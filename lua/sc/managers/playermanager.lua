@@ -1,17 +1,3 @@
-function PlayerManager:check_selected_equipment_placement_valid(player)
-	local equipment_data = managers.player:selected_equipment()
-	if not equipment_data then
-		return false
-	end
-	
-	if equipment_data.equipment == "trip_mine" or equipment_data.equipment == "ecm_jammer" then
-		return player:equipment():valid_look_at_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
-	else
-		return player:equipment():valid_shape_placement(equipment_data.equipment, tweak_data.equipments[equipment_data.equipment]) and true or false
-	end
-	return player:equipment():valid_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
-end
-
 local function make_double_hud_string(a, b)
 	return string.format("%01d|%01d", a, b)
 end
@@ -46,39 +32,36 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("speed") - 1
 	multiplier = multiplier + self:upgrade_value("player", "movement_speed_multiplier", 1) - 1
+
+	--Make movespeed bonus from converts vary based on number of converts.
 	multiplier = multiplier + self:num_local_minions() * (self:upgrade_value("player", "minion_master_speed_multiplier", 1) - 1)
 
+	--Kingpin movespeed bonus.
 	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
 		multiplier = multiplier + self:upgrade_value("player", "chico_injector_speed", 1) - 1
 	end
 
-	if self:has_category_upgrade("player", "secured_bags_speed_multiplier") then
-		local bags = 0
-		bags = bags + (managers.loot:get_secured_mandatory_bags_amount() or 0)
-		bags = bags + (managers.loot:get_secured_bonus_bags_amount() or 0)
-		multiplier = multiplier + bags * (self:upgrade_value("player", "secured_bags_speed_multiplier", 1) - 1)
-	end
-
-	if managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier") then
-		multiplier = multiplier * (tweak_data.upgrades.berserker_movement_speed_multiplier or 1)
-	end
-
-	if health_ratio then
-		local damage_health_ratio = self:get_damage_health_ratio(health_ratio, "movement_speed")
-		multiplier = multiplier * (1 + managers.player:upgrade_value("player", "movement_speed_damage_health_ratio_multiplier", 0) * damage_health_ratio)
-	end
-
+	--Moving Target movespeed bonus
 	if self:has_category_upgrade("player", "detection_risk_add_movement_speed") then
-		--Apply Moving Target movement speed bonus (additively)
 		multiplier = multiplier + self:detection_risk_movement_speed_bonus()
 	end
 
+	--Removed unused "secured_bags_multiplier" nonsense.
+
+	--Second Wind
+	local damage_speed_multiplier = managers.player:temporary_upgrade_value("temporary", "damage_speed_multiplier", 1)
+	multiplier = multiplier + damage_speed_multiplier - 1
+
+	if managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier") then	
+		multiplier = multiplier * (tweak_data.upgrades.berserker_movement_speed_multiplier or 1)	
+	end
+
+	--Removed unused Yakuza nonsense.
+
+	--Titan Taser Slow
 	if self:_is_titan_tased() then
 		multiplier = multiplier * self:_titan_tase_speed_mult()
 	end
-
-	local damage_speed_multiplier = managers.player:temporary_upgrade_value("temporary", "damage_speed_multiplier", managers.player:temporary_upgrade_value("temporary", "team_damage_speed_multiplier_received", 1))
-	multiplier = multiplier * damage_speed_multiplier
 	
 	return multiplier
 end
@@ -114,6 +97,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	if self._saw_panic_when_kill and variant ~= "melee" then
 		local equipped_unit = self:get_current_state()._equipped_unit:base()
 
+		--Allow all special weapons to spread panic with skill.
 		if equipped_unit:is_category("saw") or equipped_unit:is_category("grenade_launcher") or equipped_unit:is_category("bow") or equipped_unit:is_category("crossbow") then
 			local pos = player_unit:position()
 			local skill = self:upgrade_value("saw", "panic_when_kill")
@@ -154,23 +138,6 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			self._throw_regen_kills = 0
 		end
 	end
-	if variant == "melee" or weapon_melee then
-		if self:has_category_upgrade("player", "biker_armor_regen") then
-			damage_ext:tick_biker_armor_regen(self:upgrade_value("player", "biker_armor_regen")[3])
-		end
-		local melee_weapon = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
-		if melee_weapon.special_weapon and melee_weapon.special_weapon == "stamina_restore" then
-			player_unit:movement():add_stamina(player_unit:movement():_max_stamina())
-		end
-	end
-
-	if damage_ext:health_ratio() < 0.5 then
-		if variant == "melee" and self:has_category_upgrade("player", "melee_kill_dodge_regen") then
-			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen") + self:upgrade_value("player", "kill_dodge_regen"))
-		else
-			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
-		end
-	end
 
 	if self._on_killshot_t and t < self._on_killshot_t then
 		return
@@ -183,7 +150,7 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 	if dist_sq <= close_combat_sq then
 		regen_armor_bonus = regen_armor_bonus + self:upgrade_value("player", "killshot_close_regen_armor_bonus", 0)
 		local panic_chance = self:upgrade_value("player", "killshot_close_panic_chance", 0)
-			+ self:upgrade_value("player", "killshot_extra_spooky_panic_chance", 0)
+			+ self:upgrade_value("player", "killshot_extra_spooky_panic_chance", 0) --Add Haunt skill to panic chance.
 			+ self:upgrade_value("player", "killshot_spooky_panic_chance", 0) * self:player_unit():character_damage():get_missing_revives()
 		panic_chance = managers.modifiers:modify_value("PlayerManager:GetKillshotPanicChance", panic_chance)
 
@@ -205,7 +172,28 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 	local regen_health_bonus = 0
 
+	--Yakuza dodge meter generation.
+	if damage_ext:health_ratio() < 0.5 then
+		if variant == "melee" then
+			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen", 0) + self:upgrade_value("player", "kill_dodge_regen"))
+		else
+			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
+		end
+	end
+
+
 	if variant == "melee" then
+		--Biker Armor Regen
+		if self:has_category_upgrade("player", "biker_armor_regen") then
+			damage_ext:tick_biker_armor_regen(self:upgrade_value("player", "biker_armor_regen")[3])
+		end
+		--Boxing Glove Stamina Restore
+		local melee_weapon = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
+		if melee_weapon.special_weapon and melee_weapon.special_weapon == "stamina_restore" then
+			player_unit:movement():add_stamina(player_unit:movement():_max_stamina())
+		end
+
+		--Sociopath regen.
 		regen_health_bonus = regen_health_bonus + self:upgrade_value("player", "melee_kill_life_leech", 0)
 	end
 
@@ -227,6 +215,7 @@ end
 function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 	local player_unit = self:player_unit()
 
+	--Allow healing over time to be applied to select non-grinder perks using dummy heal_over_time upgrade.
 	if not self:has_category_upgrade("player", "damage_to_hot") and not self:has_category_upgrade("player", "heal_over_time") then
 		return
 	end
@@ -247,11 +236,11 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 		return
 	end
 
-	--Load alternate heal over time tweakdata if player is using Infiltrator.
+	--Load alternate heal over time tweakdata if player is using Infiltrator or Rogue.
 	local data = tweak_data.upgrades.damage_to_hot_data
-	if self:has_category_upgrade("player", "melee_stacking_heal") then --Load alternate heal over time tweakdata if player is using Infiltrator.
+	if self:has_category_upgrade("player", "melee_stacking_heal") then
 		data = tweak_data.upgrades.melee_to_hot_data
-	elseif self:has_category_upgrade("player", "dodge_stacking_heal") then --Or Rogue
+	elseif self:has_category_upgrade("player", "dodge_stacking_heal") then
 		data = tweak_data.upgrades.dodge_to_hot_data
 	end
 
@@ -290,29 +279,30 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 	self._next_allowed_doh_t = t + data.stacking_cooldown
 end	
 
+--Messiah functions updated to work indefinitely but with an increasing number of required kills.
 function PlayerManager:refill_messiah_charges()
-	if self._max_messiah_charges then
+	if self._max_messiah_charges then --Refill charges.
 		self._messiah_charges = self._max_messiah_charges
 	end
-	log("Messiah refilled, kills required reset")
-	self._messiah_kills_required = 1
+
+	self._messiah_kills_required = 1 --Reset number of kills needed.
 end
 
+--Called when people jump to get up.
 function PlayerManager:use_messiah_charge()
-	log("Kills required to Messiah = " .. tostring(self._messiah_kills_required))
-	if self:has_category_upgrade("player", "infinite_messiah") then
+	if self:has_category_upgrade("player", "infinite_messiah") then --If player has infinite messiah, increase kills required and reset counter.
 		self._messiah_kills_required = self._messiah_kills_required + 2
 		self._messiah_kills = 0
 		log("Kills required to messiah = " .. tostring(self._messiah_kills_required))
-	elseif self._messiah_charges and not self:has_category_upgrade("player", "infinite_messiah") then
+	elseif self._messiah_charges then --Eat a messiah charge if not infinite.
 		self._messiah_charges = math.max(self._messiah_charges - 1, 0)
 	end
 end
 
+--Called when players get kills while downed.
 function PlayerManager:_on_messiah_event()
 	if self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
 		self._messiah_kills = self._messiah_kills + 1
-		log("Kills required to messiah = " .. tostring(self._messiah_kills_required - self._messiah_kills))
 		if self._messiah_charges > 0 and self._messiah_kills >= self._messiah_kills_required then
 			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
 		end
@@ -939,5 +929,19 @@ function PlayerManager:spread_psycho_knife_panic()
 		if unit:character_damage() then
 			unit:character_damage():build_suppression(amount, chance)
 		end
+	end
+end
+
+--Should help stop Trip Mines and ECMs from becoming embeded in the floor.
+function PlayerManager:check_selected_equipment_placement_valid(player)
+	local equipment_data = managers.player:selected_equipment()
+	if not equipment_data then
+		return false
+	end
+	
+	if equipment_data.equipment == "trip_mine" or equipment_data.equipment == "ecm_jammer" then
+		return player:equipment():valid_look_at_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
+	else
+		return player:equipment():valid_shape_placement(equipment_data.equipment, tweak_data.equipments[equipment_data.equipment]) and true or false
 	end
 end

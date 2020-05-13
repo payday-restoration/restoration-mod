@@ -711,7 +711,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",
 		["menu_cs_modifier_no_hurt"] = "Enemies are 50% resistant to knock down.",
-		["menu_cs_modifier_enemy_health_damage"] = "Enemies deal an additional 3% damage and have an additional 5% chance to become Bravo Units.",
+		["menu_cs_modifier_enemy_health_damage"] = "Your I-frames are reduced by 0.0025 seconds and enemies have an additional 5% chance to become Bravo Units.",
 		["menu_cs_modifier_health_damage_total"] = "",
 		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 15% chance to become an elite UMP unit.",
 		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 15% chance to become a Titan Shotgunner.",
@@ -1047,7 +1047,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Second Wind
 			["menu_scavenger_beta_sc"] = "Second Wind",
-			["menu_scavenger_beta_desc_sc"] = "BASIC: ##$basic##\nWhen your armor breaks you gain ##10%## speed for ##3## seconds.\n\nACE: ##$pro##\nWhen your armor is fully depleted, the first shot on every enemy will cause them to stagger.\n\nThis effect persists for ##3## seconds after your armor has regenerated.",
+			["menu_scavenger_beta_desc_sc"] = "BASIC: ##$basic##\nWhen your armor breaks you gain ##15%## speed for ##3## seconds.\n\nACE: ##$pro##\nWhen your armor is fully depleted, the first shot on every enemy will cause them to stagger.\n\nThis effect persists for ##3## seconds after your armor has regenerated.",
 
 
 

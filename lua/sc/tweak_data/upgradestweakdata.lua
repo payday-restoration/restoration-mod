@@ -950,8 +950,8 @@ function UpgradesTweakData:_init_pd2_values()
 			--{
 				--Second Wind--
 				self.values.temporary.damage_speed_multiplier = {
-					{1.1, 3},
-					{1.2, 3}
+					{1.15, 3},
+					{1.3, 3}
 				}
 				self.values.player.armor_depleted_stagger_shot = {0, 3}
 

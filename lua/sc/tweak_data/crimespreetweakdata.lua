@@ -581,7 +581,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				level = 100,
 				data = {
 					health = {0, "add"},
-					damage = {3, "add"}
+					damage = {0, "add"}
 				}
 			}
 		},
@@ -863,9 +863,16 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				level = 5,
 				data = {
 					health = {0, "add"},
-					damage = {3, "add"}
+					damage = {0, "add"}
 				}
 			}
 		}
+	}
+
+	--Grace period scaling in crime spree.
+	self.grace_scaling = {
+		min_level = 500,
+		level_interval = 100,
+		amount = 0.025
 	}
 end

@@ -1,3 +1,4 @@
+--Local functions requested elsewhere. These are vanilla code.
 local function make_double_hud_string(a, b)
 	return string.format("%01d|%01d", a, b)
 end
@@ -15,6 +16,16 @@ local function add_hud_item(amount, icon)
 			icon = icon
 		})
 	end
+end
+
+local function get_as_digested(amount)
+	local list = {}
+
+	for i = 1, #amount do
+		table.insert(list, Application:digest_value(amount[i], false))
+	end
+
+	return list
 end
 
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
@@ -309,6 +320,7 @@ function PlayerManager:_on_messiah_event()
 	end
 end
 
+--Calculates bonus from Moving Target.
 function PlayerManager:detection_risk_movement_speed_bonus()
 	local multiplier = 0
 	local detection_risk_add_movement_speed = managers.player:upgrade_value("player", "detection_risk_add_movement_speed")
@@ -316,68 +328,8 @@ function PlayerManager:detection_risk_movement_speed_bonus()
 	return multiplier
 end
 
-function PlayerManager:_add_equipment(params)
-	if self:has_equipment(params.equipment) then
-		print("Allready have equipment", params.equipment)
-
-		return
-	end
-
-	local equipment = params.equipment
-	local tweak_data = tweak_data.equipments[equipment]
-	local amount = {}
-	local amount_digest = {}
-	local quantity = tweak_data.quantity
-
-	for i = 1, #quantity, 1 do
-		local equipment_name = equipment
-
-		if tweak_data.upgrade_name then
-			equipment_name = tweak_data.upgrade_name[i]
-		end
-
-		local amt = (quantity[i] or 0) + self:equiptment_upgrade_value(equipment_name, "quantity")
-		amt = managers.modifiers:modify_value("PlayerManager:GetEquipmentMaxAmount", amt, params)
-
-		table.insert(amount, amt)
-		table.insert(amount_digest, Application:digest_value(0, true))
-	end
-
-	local icon = params.icon or tweak_data and tweak_data.icon
-	local use_function_name = params.use_function_name or tweak_data and tweak_data.use_function_name
-	local use_function = use_function_name or nil
-
-	if params.slot and params.slot > 1 then
-		if self:has_category_upgrade("player", "second_deployable_full") then
-			for i = 1, #quantity, 1 do
-				amount[i] = amount[i]
-			end			
-		else
-			for i = 1, #quantity, 1 do
-				amount[i] = math.ceil(amount[i] / 2)
-			end
-		end
-	end
-
-	table.insert(self._equipment.selections, {
-		equipment = equipment,
-		amount = amount_digest,
-		use_function = use_function,
-		action_timer = tweak_data.action_timer,
-		icon = icon,
-		unit = tweak_data.unit,
-		on_use_callback = tweak_data.on_use_callback
-	})
-
-	self._equipment.selected_index = self._equipment.selected_index or 1
-
-	add_hud_item(amount, icon)
-
-	for i = 1, #amount do
-		self:add_equipment_amount(equipment, amount[i], i)
-	end
-end
-
+--Used in some sort of groupai state besiege nonsense. Probably not a good idea and also undocumented
+--Probs best to nuke this in the future.
 function PlayerManager:_chk_fellow_crimin_proximity(unit)
 	local players_nearby = 0
 	
@@ -387,12 +339,9 @@ function PlayerManager:_chk_fellow_crimin_proximity(unit)
 		players_nearby = players_nearby + 1
 	end
 	
-	if players_nearby <= 0 then
-		--log("uhohstinky")
-	end
-	
 	return players_nearby
 end
+
 
 function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	local multiplier = 1
@@ -401,24 +350,20 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	multiplier = multiplier * self:temporary_upgrade_value("temporary", "dmg_dampener_close_contact", 1)
 	multiplier = multiplier * self:temporary_upgrade_value("temporary", "revived_damage_resist", 1)
 	multiplier = multiplier * self:upgrade_value("player", "damage_dampener", 1)
-	multiplier = multiplier * self:upgrade_value("player", "health_damage_reduction", 1)
+	--Frenzy now grants deflection instead of damage reduction.
 	multiplier = multiplier * self:temporary_upgrade_value("temporary", "first_aid_damage_reduction", 1)
 	multiplier = multiplier * self:temporary_upgrade_value("temporary", "revive_damage_reduction", 1)
-	multiplier = multiplier * self:get_hostage_bonus_multiplier("damage_dampener")
+	multiplier = multiplier * self:get_hostage_bonus_multiplier("damage_dampener") --Might be unused.
 	multiplier = multiplier * self._properties:get_property("revive_damage_reduction", 1)
 	multiplier = multiplier * self._temporary_properties:get_property("revived_damage_reduction", 1)
-	local dmg_red_mul = self:team_upgrade_value("damage_dampener", "team_damage_reduction", 1)
+	--Removed vanilla crew chief team DR.
 
-	local health_ratio = self:player_unit():character_damage():health_ratio()
-	local min_ratio = self:upgrade_value("player", "passive_damage_reduction")
-	if health_ratio < min_ratio and self:has_category_upgrade("player", "passive_damage_reduction") then
-		dmg_red_mul = dmg_red_mul - (1 - dmg_red_mul)
-	end
-	multiplier = multiplier * dmg_red_mul
-
+	--Yakuza DR.
 	if self:is_damage_health_ratio_active(health_ratio) then
 		multiplier = multiplier * (1 - self:upgrade_value("player", "resistance_damage_health_ratio_multiplier", 0) * (1 - health_ratio))
 	end
+
+	--Removed vanilla crew chief self DR.
 
 	if damage_type == "melee" then
 		multiplier = multiplier * self:upgrade_value("player", "melee_damage_dampener", 1)
@@ -433,11 +378,11 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 
 	if current_state and current_state:in_melee() then
 		local melee_name_id = managers.blackmarket:equipped_melee_weapon()
-		if damage_type == "bullet" then
+		if damage_type == "bullet" then --Counter Strike
 			multiplier = multiplier * self:upgrade_value("player", "deflect_ranged", 1)
 		end
 
-		if tweak_data.blackmarket.melee_weapons[melee_name_id].block then
+		if tweak_data.blackmarket.melee_weapons[melee_name_id].block then --Buck shield.
 			multiplier = multiplier * tweak_data.blackmarket.melee_weapons[melee_name_id].block
 		end
 	end
@@ -445,23 +390,7 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 	return multiplier
 end
 
-
-function PlayerManager:body_armor_regen_multiplier(moving, health_ratio)
-	local multiplier = 1
-	multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier_tier", 1)
-	multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier", 1)
-	multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_multiplier_passive", 1)
-	multiplier = multiplier * self:team_upgrade_value("armor", "regen_time_multiplier", 1)
-	multiplier = multiplier * self:team_upgrade_value("armor", "passive_regen_time_multiplier", 1)
-	multiplier = multiplier * self:upgrade_value("player", "perk_armor_regen_timer_multiplier", 1)
-
-	if not moving then
-		multiplier = multiplier * self:upgrade_value("player", "armor_regen_timer_stand_still_multiplier", 1)
-	end
-
-	return multiplier
-end
-
+--Removed a number of situational buffs in vanilla that might result in dodge points being set wrong.
 --Leaving stance stuff in parameters for compatability.
 function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, override_armor, detection_risk)
 	local chance = self:upgrade_value("player", "passive_dodge_chance", 0)
@@ -475,13 +404,10 @@ function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, overri
 	return chance
 end
 
+--Now can also trigger from Yakuza DR.
 function PlayerManager:is_damage_health_ratio_active(health_ratio)
 	return self:has_category_upgrade("player", "melee_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "melee") > 0 or self:has_category_upgrade("player", "resistance_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "armor_regen") > 0 or self:has_category_upgrade("player", "damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "damage") > 0 or self:has_category_upgrade("player", "movement_speed_damage_health_ratio_multiplier") and self:get_damage_health_ratio(health_ratio, "movement_speed") > 0
 end
-
---function PlayerManager:speak(message, arg1, arg2)
---	self:player_unit():sound():say(message, arg1, arg2)
---end
 
 function PlayerManager:health_skill_multiplier()
 	local multiplier = 1
@@ -489,8 +415,9 @@ function PlayerManager:health_skill_multiplier()
 	multiplier = multiplier + self:upgrade_value("player", "passive_health_multiplier", 1) - 1
 	multiplier = multiplier + self:team_upgrade_value("health", "passive_multiplier", 1) - 1
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("health") - 1
+	--Now scales off of number of converts.
 	multiplier = multiplier + self:num_local_minions() * (self:upgrade_value("player", "minion_master_health_multiplier", 1) - 1)
-	multiplier = multiplier * self:upgrade_value("player", "health_decrease", 1.0)
+	multiplier = multiplier * self:upgrade_value("player", "health_decrease", 1.0) --Anarchist reduces health by expected amount.
 	
 	return multiplier
 end
@@ -502,6 +429,7 @@ function PlayerManager:check_skills()
 	self._saw_panic_when_kill = self:has_category_upgrade("saw", "panic_when_kill")
 	self._unseen_strike = self:has_category_upgrade("player", "unseen_increased_crit_chance")
 
+	--Make Trigger Happy and Desperado stack off of headshots.
 	if self:has_category_upgrade("pistol", "stacked_accuracy_bonus") then
 		self._message_system:register(Message.OnHeadShot, self, callback(self, self, "_on_expert_handling_event"))
 	else
@@ -530,17 +458,15 @@ function PlayerManager:check_skills()
 		self._message_system:unregister(Message.OnEnemyKilled, "bloodthirst_base")
 	end
 
+
 	if self:has_category_upgrade("player", "messiah_revive_from_bleed_out") then
 		self._messiah_charges = self:upgrade_value("player", "messiah_revive_from_bleed_out", 0)
-		self._max_messiah_charges = self._messiah_charges
+		self._messiah_charges = 0	--Messiah init stuff to handle how the skill was changed.
 		self._messiah_kills_required = 1
 		self._messiah_kills = 0
+		self._max_messiah_charges = self._messiah_charges
 		self._message_system:register(Message.OnEnemyKilled, "messiah_revive_from_bleed_out", callback(self, self, "_on_messiah_event"))
 	else
-		self._messiah_charges = 0
-		self._messiah_kills_required = 0
-		self._messiah_kills = 0
-		self._max_messiah_charges = self._messiah_charges
 		self._message_system:unregister(Message.OnEnemyKilled, "messiah_revive_from_bleed_out")
 	end
 
@@ -588,34 +514,7 @@ function PlayerManager:check_skills()
 		self._super_syndrome_count = 0
 	end
 
-	if self:has_category_upgrade("player", "dodge_shot_gain") then
-		local last_gain_time = 0
-		local dodge_gain = self:upgrade_value("player", "dodge_shot_gain")[1]
-		local cooldown = self:upgrade_value("player", "dodge_shot_gain")[2]
-
-		local function on_player_damage(attack_data)
-			local t = TimerManager:game():time()
-
-			if attack_data.variant == "bullet" and t > last_gain_time + cooldown then
-				last_gain_time = t
-
-				managers.player:_dodge_shot_gain(managers.player:_dodge_shot_gain() + dodge_gain)
-			end
-		end
-
-		self:register_message(Message.OnPlayerDodge, "dodge_shot_gain_dodge", callback(self, self, "_dodge_shot_gain", 0))
-		self:register_message(Message.OnPlayerDamage, "dodge_shot_gain_damage", on_player_damage)
-	else
-		self:unregister_message(Message.OnPlayerDodge, "dodge_shot_gain_dodge")
-		self:unregister_message(Message.OnPlayerDamage, "dodge_shot_gain_damage")
-	end
-
-	if self:has_category_upgrade("player", "dodge_replenish_armor") then
-		self:register_message(Message.OnPlayerDodge, "dodge_replenish_armor", callback(self, self, "_dodge_replenish_armor"))
-	else
-		self:unregister_message(Message.OnPlayerDodge, "dodge_replenish_armor")
-	end
-
+	--New resmod skills for dodge.
 	if self:has_category_upgrade("player", "dodge_stacking_heal") then
 		self:register_message(Message.OnPlayerDodge, "dodge_stack_health_regen", callback(self, self, "_dodge_stack_health_regen"))
 	else
@@ -655,6 +554,8 @@ function PlayerManager:check_skills()
 	end
 end
 
+--The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.
+--IE: Ammo Efficiency not proccing off of melee headshots.
 function PlayerManager:on_headshot_dealt(unit, attack_data)
 	local player_unit = self:player_unit()
 
@@ -679,6 +580,7 @@ function PlayerManager:on_headshot_dealt(unit, attack_data)
 	end
 end
 
+--Add extra checks to make sure that it only looks for killing headshots done with valid guns.
 function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 	if not self._coroutine_mgr:is_running("ammo_efficiency") then
 		local weapon_unit = self:equipped_weapon_unit()
@@ -691,7 +593,9 @@ function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 	end
 end
 
+--Get health damage reduction gained via skills.
 function PlayerManager:get_deflection_from_skills()
+	--"""Upgrade"""
 	if self:has_category_upgrade("player", "no_deflection") then
 		return -self:body_armor_value("deflection", nil, 0)
 	end
@@ -705,22 +609,14 @@ function PlayerManager:get_max_grenades(grenade_id)
 	grenade_id = grenade_id or managers.blackmarket:equipped_grenade()
 	local max_amount = tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "max_amount") or 0
 
+	--Jack of all trades basic grenade count increase.
+	--MAY be source of grenade syncing issues due to interaction with get_max_grenades_by_peer_id(). Is worth investigating some time.
 	if max_amount and not tweak_data:get_raw_value("blackmarket", "projectiles", grenade_id, "base_cooldown") then
 		max_amount = math.ceil(max_amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
 	end
 	max_amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", max_amount)
 
 	return max_amount
-end
-
-local function get_as_digested(amount)
-	local list = {}
-
-	for i = 1, #amount do
-		table.insert(list, Application:digest_value(amount[i], false))
-	end
-
-	return list
 end
 
 function PlayerManager:_internal_load()
@@ -755,9 +651,9 @@ function PlayerManager:_internal_load()
 		amount = self:get_grenade_amount(peer_id) or amount
 	end
 
-	if amount and not grenade.base_cooldown then
-		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount)
-		amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0))
+	if amount and not grenade.base_cooldown then --*Should* stop perk deck actives from being increased.
+		amount = managers.modifiers:modify_value("PlayerManager:GetThrowablesMaxAmount", amount) --Crime spree throwables mod.
+		amount = math.ceil(amount * self:upgrade_value("player", "throwables_multiplier", 1.0)) --JOAT Basic
 	end
 
 	self:_set_grenade({
@@ -768,7 +664,7 @@ function PlayerManager:_internal_load()
 
 	if not self._respawn then
 		self:_add_level_equipment(player)
-		self._down_time = tweak_data.player.damage.DOWNED_TIME
+		self._down_time = tweak_data.player.damage.DOWNED_TIME --Tracks down time for custody purposes.
 		for i, name in ipairs(self._global.default_kit.special_equipment_slots) do
 			local ok_name = self._global.equipment[name] and name
 
@@ -811,7 +707,7 @@ function PlayerManager:_internal_load()
 		end
 
 		self:update_deployable_selection_to_peers()
-	else
+	else --If someone is respawning from custody, apply relevant penalties.
 		for id, weapon in pairs(player:inventory():available_selections()) do
 			if alive(weapon.unit) then
 				weapon.unit:base():remove_ammo(tweak_data.player.damage.custody_ammo_kept)
@@ -840,19 +736,20 @@ function PlayerManager:_internal_load()
 		add_hud_item(get_as_digested(equipment.amount), equipment.icon)
 	end
 
-	if self:has_equipment("armor_kit") then
-		managers.mission:call_global_event("player_regenerate_armor", true)
-	end
+	--Removed armor kit weirdness.
 end
 
+--Adds rogue health regen stack on dodge.
 function PlayerManager:_dodge_stack_health_regen()
 	self:player_unit():character_damage():add_damage_to_hot()
 end
 
+--Cuts Sicario smock bomb cooldown on dodge.
 function PlayerManager:_dodge_smokebomb_cdr()
 	self:speed_up_grenade_cooldown(tweak_data.upgrades.values.player.bomb_cooldown_reduction[1])
 end
 
+--Fills dodge meter when backstab kills are done.
 function PlayerManager:add_backstab_dodge()
 	if self.player_unit then
 		local damage_ext = self:player_unit():character_damage()
@@ -860,6 +757,7 @@ function PlayerManager:add_backstab_dodge()
 	end
 end
 
+--Sneaky Bastard Aced healing stuff.
 function PlayerManager:_dodge_healing_no_armor()
 	local damage_ext = self:player_unit():character_damage()
 	if not (damage_ext:get_real_armor() > 0) then
@@ -867,6 +765,7 @@ function PlayerManager:_dodge_healing_no_armor()
 	end
 end
 
+--Adds doctor bag health regen.
 function PlayerManager:health_regen()
 	local health_regen = tweak_data.player.damage.HEALTH_REGEN
 	health_regen = health_regen + self:temporary_upgrade_value("temporary", "wolverine_health_regen", 0)
@@ -879,6 +778,7 @@ function PlayerManager:health_regen()
 	return health_regen
 end
 
+--Move hostage taker to flat # regen from % regen.
 function PlayerManager:fixed_health_regen()
 	local health_regen = 0
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
@@ -886,8 +786,9 @@ function PlayerManager:fixed_health_regen()
 
 	return health_regen
 end
-function PlayerManager:activate_db_regen()
 
+--DB management.
+function PlayerManager:activate_db_regen()
 	self._db_regen_endtime = Application:time() + tweak_data.upgrades.values.doctor_bag.passive_regen_duration
 end
 
@@ -902,6 +803,7 @@ function PlayerManager:is_db_regen_active()
 	return false
 end
 
+--Titan taser effect, will make more generic later when needed.
 function PlayerManager:activate_titan_tased()
 	self._titan_tase_time = 3 + Application:time()
 	managers.hud:activate_effect_screen(3, {0.0, 0.2, 1})
@@ -918,6 +820,7 @@ function PlayerManager:_titan_tase_speed_mult()
 	return 1 / (self._titan_tase_time - Application:time() + 1)
 end
 
+--Called when psychoknife kills are performed.
 function PlayerManager:spread_psycho_knife_panic()
 	local pos = self:player_unit():position()
 	local area = 1000

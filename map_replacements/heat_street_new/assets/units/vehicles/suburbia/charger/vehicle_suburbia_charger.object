@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/vehicles/suburbia/charger/vehicle_suburbia_charger" orientation_object="rp_charger" />
+	<sequence_manager file="units/vehicles/suburbia/charger/vehicle_suburbia_charger" />
+
+	<animations>
+		<!--tire animation groups-->
+		<animation_group name="ag_tire_front_right">
+			<object name="a_tire_front_right" />
+		</animation_group>
+		<animation_group name="ag_tire_front_left">
+			<object name="a_tire_front_left" />
+		</animation_group>
+		<animation_group name="ag_tire_rear_right">
+			<object name="a_tire_rear_right" />
+		</animation_group>
+		<animation_group name="ag_tire_rear_left">
+			<object name="a_tire_rear_left" />
+		</animation_group>
+	</animations>
+  
+   <bodies>
+    <body name="charger" enabled="true" template="static">
+      <object name="rp_charger" />
+      <object name="c_charger" collision_type="mesh_mopp" />
+	</body>
+	<body name="graph_blocker" enabled="true" template="graph_blocker">
+      <object name="c_graph_blocker" collision_type="box" />
+	</body>
+	<body remove_ray_type="ai_vision" name="window_right_rear" enabled="true" template="static">
+      <object name="c_window_right_rear" collision_type="mesh_mopp" two_sided="true" />
+	</body>
+	<body remove_ray_type="ai_vision" name="window_right_front" enabled="true" template="static">
+      <object name="c_window_right_front" collision_type="mesh_mopp" two_sided="true" />
+	</body>
+	<body remove_ray_type="ai_vision" name="window_left_rear" enabled="true" template="static">
+      <object name="c_window_left_rear" collision_type="mesh_mopp" two_sided="true" />
+	</body>
+	<body remove_ray_type="ai_vision" name="window_left_front" enabled="true" template="static">
+      <object name="c_window_left_front" collision_type="mesh_mopp" two_sided="true" />
+	</body>
+	<body name="window_back" enabled="true" template="static">
+      <object name="c_window_back" collision_type="mesh_mopp" two_sided="true" />
+	</body>
+	<body name="window_front" enabled="true" template="static">
+      <object name="c_window_front" collision_type="mesh_mopp" two_sided="true" />
+	</body>
+
+	<body name="tire_front_right" enabled="true" template="static">
+      <object name="c_tire_front_right" collision_type="mesh_mopp" />
+    </body>
+	
+	<body name="tire_front_left" enabled="true" template="static">
+      <object name="c_tire_front_left" collision_type="mesh_mopp" />
+    </body>
+	
+	<body name="tire_rear_right" enabled="true" template="static">
+      <object name="c_tire_rear_right" collision_type="mesh_mopp" />
+    </body>
+	
+	<body name="tire_rear_left" enabled="true" template="static">
+      <object name="c_tire_rear_left" collision_type="mesh_mopp" />
+    </body>
+	
+  </bodies>
+  
+  <decal_surfaces default_material="metal">
+	  <decal_mesh name="dm_window_right_rear"	 	enabled="true" material="glass_breakable" />
+	  <decal_mesh name="dm_window_right_front"		enabled="true" material="glass_breakable" />
+	  <decal_mesh name="dm_window_left_rear" 	 	enabled="true" material="glass_breakable" />
+	  <decal_mesh name="dm_window_left_front"	 	enabled="true" material="glass_breakable" />
+	  <decal_mesh name="dm_window_back" 			enabled="true" material="glass_breakable" />
+	  <decal_mesh name="dm_window_front" 			enabled="true" material="glass_breakable" />
+	  <decal_mesh name="dm_glass" 					enabled="true" material="glass_breakable" />
+	  <decal_mesh name="c_tire_front_right" 		enabled="true" material="rubber" />
+	  <decal_mesh name="c_tire_front_left" 			enabled="true" material="rubber" />
+	  <decal_mesh name="c_tire_rear_right" 			enabled="true" material="rubber" />
+	  <decal_mesh name="c_tire_rear_left" 			enabled="true" material="rubber" />
+	  <decal_mesh name="dm_charger" 				enabled="true" material="metal_chassis" /> 
+	  </decal_surfaces>
+  
+  <graphics>
+     <lod_object name="charger">
+        <object name="g_charger" max_distance="5000" lod="0" enabled="true" />
+        <object name="g_charger_lod" lod="1" enabled="true" />
+     </lod_object> 
+	<lod_object name="win1">
+        <object name="g_window_right_rear" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_window_right_rear_lod" lod="1" enabled="false" />
+    </lod_object> 
+	<lod_object name="win2">
+        <object name="g_window_right_rear_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_window_right_rear_dmg_lod" lod="1"  enabled="false" />
+    </lod_object> 
+	<lod_object name="win3">
+        <object name="g_window_right_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_window_right_dmg_lod" lod="1"  enabled="false" />
+    </lod_object> 
+	 <lod_object name="win4">
+        <object name="g_window_left_rear" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_window_left_rear_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win5">
+        <object name="g_window_left_rear_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_window_left_rear_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win6">
+        <object name="g_window_left_front_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_window_left_front_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win7">
+        <object name="g_window_left_front" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_window_left_front_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win8">
+        <object name="g_window_back_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_window_back_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win9">
+        <object name="g_window_back" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_window_back_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win10">
+        <object name="g_window_front_dmg" max_distance="5000" lod="0" enabled="false" />
+		<object name="g_window_front_dmg_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win11">
+        <object name="g_window_front" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_window_front_lod" lod="1" enabled="false" />
+    </lod_object> 
+	 <lod_object name="win12">
+        <object name="g_window_right_front" max_distance="5000" lod="0" enabled="true" />
+		<object name="g_window_right_front_lod" lod="1" enabled="false" />
+    </lod_object>
+	<object name="s_charger" enabled="true" shadow_caster="true" />
+  </graphics>
+  
+	<objects>
+		<align_point name="e_window_right_rear" enabled="true" parent="rp_charger" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_right_front" enabled="true" parent="rp_charger" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_left_rear" enabled="true" parent="rp_charger" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_left_front" enabled="true" parent="rp_charger" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_back" enabled="true" parent="rp_charger" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_front" enabled="true" parent="rp_charger" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_radiator" enabled="true" parent="rp_charger" position="0 0 0" rotation="0 0 0" />
+	</objects>  
+</dynamic_object> 

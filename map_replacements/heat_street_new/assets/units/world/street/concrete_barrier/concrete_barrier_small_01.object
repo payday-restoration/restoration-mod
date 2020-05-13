@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/street/concrete_barrier/concrete_barrier" orientation_object="rp_concrete_barrier_small_01" />
+		<bodies>
+			<body name="static_body" enabled="true" template="static">
+				<object name="rp_concrete_barrier_small_01" />
+      			<object name="c_convex_01" collision_type="convex" padding="-2.5"/>
+		</body>
+	</bodies>
+	
+	<decal_surfaces default_material="metal" static="true">
+		<decal_mesh name="dm_concrete" enabled="true" material="concrete"/>
+	</decal_surfaces>
+  
+	<graphics>
+		<object name="g_concrete_barrier_small_01" enabled="true" shadow_caster="false" />
+		<object name="s_concrete_barrier_small_01" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

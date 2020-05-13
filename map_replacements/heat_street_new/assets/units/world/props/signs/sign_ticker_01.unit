@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/world/props/signs/sign_ticker_01" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

@@ -1,0 +1,20 @@
+<materials version="3">
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:INSTANCED:OPACITY_FADE" decal_material="glass_breakable" version="2" name="glass_breakable">
+        <variable value="0.46999999880791 1 0.58999997377396" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/glass/vehicle_glass_op"/>
+        <diffuse_texture file="units/glass/vehicle_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="mercedes" version="2" render_template="generic:BLUE_MASK_TINT:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:RL_BIGPROPS">
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <diffuse_texture file="units/vehicles/mercedes/low/vehicle_mercedes_low_df"/>
+        <bump_normal_texture file="units/vehicles/mercedes/low/vehicle_mercedes_low_nm"/>
+        <variable value="0.10196078568697 0.10196078568697 0.10196078568697" type="vector3" name="tint_color"/>
+    </material>
+    <material name="mercedes_low" version="2" render_template="generic:BLUE_MASK_TINT:DIFFUSE_TEXTURE:INSTANCED:RL_BIGPROPS">
+        <variable value="0.10196078568697 0.10196078568697 0.10196078568697" type="vector3" name="tint_color"/>
+        <diffuse_texture file="units/vehicles/mercedes/low/vehicle_mercedes_low_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+</materials>

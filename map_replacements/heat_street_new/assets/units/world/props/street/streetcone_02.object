@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/props/street/streetcone" orientation_object="rp_streetcone_02" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_streetcone_02" />
+			<object name="c_capsule" collision_type="capsule" padding="-2.5"/>
+		</body>
+  </bodies>
+  <decal_surfaces default_material="plastic" static="true">
+    <decal_mesh name="dm_plastic" enabled="true" material="rubber" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_streetcone_02" enabled="true" instance_struct="world_tm"  shadow_caster="false"/>
+    <object name="s_streetcone_02" enabled="true" instance_struct="world_tm"  shadow_caster="true"/>
+  </graphics>
+</dynamic_object>

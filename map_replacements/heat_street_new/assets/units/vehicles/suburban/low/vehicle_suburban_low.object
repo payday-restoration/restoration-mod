@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/vehicles/suburban/low/vehicle_suburban_low" orientation_object="rp_suburban_low" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_suburban_low" />
+			<object name="c_c" collision_type="convex" />
+		</body>
+	</bodies>
+  <decal_surfaces default_material="metal_chassis"/>
+	<graphics>
+		<lod_object name="suburban">
+			<object name="g_suburban" max_distance="5000" lod="0" enabled="true" />
+			<object name="g_suburban_lod" lod="1" enabled="true" />
+		</lod_object> 
+		<object name="g_glass" enabled="true"/>
+		<object name="s_suburban" enabled="true" shadow_caster="true"  />
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/vehicles/animated_cars/police_ny_noinstance" orientation_object="rp_police_ny" />
+  <sequence_manager file="units/vehicles/animated_cars/police_ny_bank_anim" />
+  <animations>
+    <animation_group name="ag_tire_front_right">
+      <object name="a_tire_front_right" />
+    </animation_group>
+    <animation_group name="ag_tire_front_left">
+      <object name="a_tire_front_left" />
+    </animation_group>
+    <animation_group name="ag_tire_rear_right">
+      <object name="a_tire_rear_right" />
+    </animation_group>
+    <animation_group name="ag_tire_rear_left">
+      <object name="a_tire_rear_left" />
+    </animation_group>
+    <animation_group name="anim">
+      <object name="a_animation_nod" />
+      <object name="a_body" />
+      <object name="a_left_door" />
+      <object name="a_right_door" />
+    </animation_group>
+  </animations>
+  <bodies>
+	<body name="mover_blocker" enabled="true" keyframed="true" template="mover_blocker">
+		<object name="a_body"  />
+		<object name="c_mover_blocker" collision_type="box" />
+		<object name="c_mover_blocker1" collision_type="box" />
+    </body>
+	
+<!--<body name="graph_blocker" enabled="true" template="graph_blocker"> 
+	  <object name="c_graph_blocker" collision_type="box" />
+	</body>																-->
+	
+	<body name="left_door_body" enabled="true" collision_class = "disabled" template="animated">
+      <object name="a_left_door" />
+	  
+      <object name="c_convex_left_door_000" collision_type="convex" padding="-2" />
+	  
+      <object name="c_box_left_door_000" collision_type="box" padding="-2" />
+      <object name="c_box_left_door_001" collision_type="box" padding="-2" />
+      <object name="c_box_left_door_002" collision_type="box" padding="-2" />
+      <object name="c_box_left_door_003" collision_type="box" padding="-2" />
+      <object name="c_box_left_door_004" collision_type="box" padding="-2" />
+    </body>
+	<body name="right_door_body" enabled="true" collision_class = "disabled" template="animated">
+      <object name="a_right_door"  />
+      <object name="c_convex_right_door_000" collision_type="convex" padding="-2" />
+	  
+      <object name="c_box_right_door_000" collision_type="box" padding="-2" />
+      <object name="c_box_right_door_001" collision_type="box" padding="-2" />
+      <object name="c_box_right_door_002" collision_type="box" padding="-2" />
+      <object name="c_box_right_door_003" collision_type="box" padding="-2" />
+      <object name="c_box_right_door_004" collision_type="box" padding="-2" />
+    </body>
+    <body name="vehicle_police_ny" enabled="true" template="animated">
+      <object name="a_body"  />
+      <object name="c_box_000" collision_type="box" padding="-2" />
+      <object name="c_box_001" collision_type="box" padding="-2" />
+      <object name="c_box_002" collision_type="box" padding="-2" />
+      <object name="c_box_003" collision_type="box" padding="-2" />
+      <object name="c_box_004" collision_type="box" padding="-2" />
+      <object name="c_box_005" collision_type="box" padding="-2" />
+      <object name="c_box_006" collision_type="box" padding="-2" />
+      <object name="c_box_007" collision_type="box" padding="-2" />
+      <object name="c_box_008" collision_type="box" padding="-2" />
+      <object name="c_box_009" collision_type="box" padding="-2" />
+      <object name="c_box_010" collision_type="box" padding="-2" />
+      <object name="c_box_011" collision_type="box" padding="-2" />
+      <object name="c_box_012" collision_type="box" padding="-2" />
+	  
+      <object name="c_convex_000" collision_type="convex" padding="-2" />
+      <object name="c_convex_001" collision_type="convex" padding="-2" />
+      <object name="c_convex_002" collision_type="convex" padding="-2" />
+      <object name="c_convex_003" collision_type="convex" padding="-2" />
+      <object name="c_convex_004" collision_type="convex" padding="-2" />
+      <object name="c_convex_005" collision_type="convex" padding="-2" />
+      <object name="c_convex_006" collision_type="convex" padding="-2" />
+      <object name="c_convex_007" collision_type="convex" padding="-2" />
+      <object name="c_convex_008" collision_type="convex" padding="-2" />
+      <object name="c_convex_009" collision_type="convex" padding="-2" />
+      <object name="c_convex_010" collision_type="convex" padding="-2" />
+      <object name="c_convex_011" collision_type="convex" padding="-2" />
+    </body>
+    <body remove_ray_type="ai_vision" name="window_right_rear" enabled="true" template="animated">
+      <object name="c_window_right_rear" collision_type="convex"/>
+    </body>
+    <body remove_ray_type="ai_vision" name="window_right_front" collision_class = "disabled" enabled="true" template="animated">
+      <object name="c_right_door_window" collision_type="convex"/>
+    </body>
+    <body remove_ray_type="ai_vision" name="window_left_rear" enabled="true" template="animated">
+      <object name="c_window_left_rear" collision_type="convex"/>
+    </body>
+    <body remove_ray_type="ai_vision" name="window_left_front" collision_class = "disabled" enabled="true" template="animated">
+      <object name="c_left_door_window" collision_type="convex"/>
+    </body>
+    <body name="window_back" enabled="true" template="animated">
+      <object name="c_window_back" collision_type="convex"/>
+    </body>
+    <body  name="window_front" enabled="true" template="animated">
+      <object name="c_window_front" collision_type="convex"/>
+    </body>
+    <body name="tire_front_left" enabled="true" template="animated">
+      <object name="c_tire_front_left" collision_type="convex" padding="-2" />
+    </body>
+    <body name="tire_rear_left" enabled="true" template="animated">
+      <object name="c_tire_rear_left" collision_type="convex" padding="-2" />
+    </body>
+    <body name="tire_front_right" enabled="true" template="animated">
+      <object name="c_tire_front_right" collision_type="convex" padding="-2" />
+    </body>
+    <body name="tire_rear_right" enabled="true" template="animated">
+      <object name="c_tire_rear_right" collision_type="convex" padding="-2" />
+    </body>
+    <body name="rims" enabled="true" template="animated">
+      <object name="a_body" />
+      <object name="c_rim_front_left" collision_type="convex" padding="-2" />
+      <object name="c_rim_rear_left" collision_type="convex" padding="-2" />
+      <object name="c_rim_front_right" collision_type="convex" padding="-2"/>
+      <object name="c_rim_rear_right" collision_type="convex" padding="-2" />
+    </body>
+		
+	 <body name="siren" enabled="true" template="animated">
+      <object name="c_siren" collision_type="box" padding="-2" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="metal">
+    <decal_mesh name="dm_window_right_rear" enabled="true" material="glass_breakable" />
+    <decal_mesh name="dm_right_door_window" enabled="true" material="glass_breakable" />
+    <decal_mesh name="dm_window_left_rear" enabled="true" material="glass_breakable" />
+    <decal_mesh name="dm_left_door_window" enabled="true" material="glass_breakable" />
+    <decal_mesh name="dm_window_back" enabled="true" material="glass_breakable" />
+    <decal_mesh name="dm_window_front" enabled="true" material="glass_breakable" />
+    <decal_mesh name="c_rim_front_left" enabled="true" material="metal" />
+    <decal_mesh name="c_rim_rear_left" enabled="true" material="metal" />
+    <decal_mesh name="c_rim_front_right" enabled="true" material="metal" />
+    <decal_mesh name="c_rim_rear_right" enabled="true" material="metal" />
+    <decal_mesh name="c_tire_front_left" enabled="true" material="rubber" />
+    <decal_mesh name="c_tire_rear_left" enabled="true" material="rubber" />
+    <decal_mesh name="c_tire_front_right" enabled="true" material="rubber" />
+    <decal_mesh name="c_tire_rear_right" enabled="true" material="rubber" />
+    <decal_mesh name="dm_vehicle_police_ny" enabled="true" material="sheet_metal" />
+    <decal_mesh name="dm_right_door" enabled="true" material="sheet_metal" />
+    <decal_mesh name="dm_left_door" enabled="true" material="sheet_metal" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_vehicle_police_ny" enabled="true"  />
+    <object name="g_window_right_rear" enabled="true"  />
+    <object name="g_window_right_rear_dmg"  />
+    <object name="g_right_door_window" enabled="true"  />
+    <object name="g_right_door_window_dmg"  />
+    <object name="g_window_left_rear" enabled="true"  />
+    <object name="g_window_left_rear_dmg"  />
+    <object name="g_left_door_window_dmg"  />
+    <object name="g_left_door_window" enabled="true"  />
+    <object name="g_window_back_dmg"  />
+    <object name="g_window_back" enabled="true"  />
+    <object name="g_window_front_dmg"  />
+    <object name="g_window_front" enabled="true"  />
+    <object name="g_window_interior" enabled="true"  />
+    <object name="g_right_door" enabled="true"  />
+    <object name="g_left_door" enabled="true"  />
+	<object name="g_wheels" enabled="true" />
+	
+	 <object name="g_orange" enabled="true" />
+    <object name="g_base" enabled="true" />
+    <object name="g_illum" enabled="true" />
+    <object name="g_cup" enabled="true" />
+    <object name="g_illum1" enabled="true" />
+    <object name="g_cop" enabled="true" />
+  </graphics>
+  <objects>
+    <align_point name="e_window_right_rear" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+    <align_point name="e_window_right_front" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+    <align_point name="e_window_left_rear" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+    <align_point name="e_window_left_front" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+    <align_point name="e_window_back" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+    <align_point name="e_window_front" enabled="true" parent="rp_police_ny" position="0 0 0" rotation="0 0 0" />
+  </objects>
+   <effects>
+    <effect_spawner name="es_e_efx" enabled="true" object="e_efx" effect="effects/particles/environment/cop_car_lights" />
+  </effects>
+</dynamic_object>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="storm" slot="1">
+  <object file="units/vehicles/charger/low/vehicle_charger_low" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

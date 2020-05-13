@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/dev_tools/level_tools/shadow_caster" orientation_object="rp_shadow_caster_5x5" />
+	<sequence_manager file="units/dev_tools/level_tools/shadow_caster" />
+  
+  <bodies>
+    <body name="static_body" enabled="true" template="editor">
+      <object name="g_shadow_caster" collision_type="box" />
+    </body>
+  </bodies>  
+  
+  <graphics>
+		<object name="s_shadow_caster" enabled="true" shadow_caster="true" instance_struct="world_tm"/>    
+    <object name="g_shadow_caster" enabled="false" instance_struct="world_tm"/>    
+  </graphics>
+</dynamic_object>

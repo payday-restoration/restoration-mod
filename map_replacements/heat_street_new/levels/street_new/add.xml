@@ -1,0 +1,714 @@
+<table directory="assets">
+	<add path="units/vehicles/police_armored_truck/vehicle_police_armored_truck" type="unit">
+		<texture force="true" path="units/vehicles/police_armored_truck/police_armored_truck_df" unload="true"/>
+		<texture force="true" path="units/vehicles/police_armored_truck/police_armored_truck_nm" unload="true"/>
+		<texture force="true" path="units/vehicles/police_armored_truck/logo_df" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_2_op" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_df" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_nm" unload="true"/>
+		<texture force="true" path="units/world/props/shared_textures/fence_tile_df" unload="true"/>
+		<texture force="true" path="units/world/props/shared_textures/fence_tile_nm" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<texture force="true" path="effects/textures/opacity_atlas_df" unload="true"/>
+		<texture force="true" path="effects/textures/opacity_atlas_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/police_armored_truck/vehicle_police_armored_truck" unload="true"/>
+		<material_config force="true" path="units/vehicles/police_armored_truck/vehicle_police_armored_truck" unload="true"/>
+		<model force="true" path="units/vehicles/police_armored_truck/vehicle_police_armored_truck" unload="true"/>
+		<object force="true" path="units/vehicles/police_armored_truck/vehicle_police_armored_truck" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/police_armored_truck/vehicle_police_armored_truck" unload="true"/>
+		<unit force="true" path="units/vehicles/police_armored_truck/vehicle_police_armored_truck" unload="true"/>
+	</add>
+	<add path="units/vehicles/police_ny/vehicle_police_ny" type="unit">
+		<texture force="true" path="units/vehicles/police_ny/vehicle_police_ny_df" unload="true"/>
+		<texture force="true" path="units/vehicles/police_ny/vehicle_police_ny_nm" unload="true"/>
+		<texture force="true" path="units/vehicles/police_ny/saftblandare_df" unload="true"/>
+		<texture force="true" path="units/vehicles/police_ny/saftblandare_edf" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_2_op" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_df" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_nm" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<texture force="true" path="effects/textures/opacity_atlas_df" unload="true"/>
+		<texture force="true" path="effects/textures/opacity_atlas_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/police_ny/vehicle_police_ny" unload="true"/>
+		<material_config force="true" path="units/vehicles/police_ny/vehicle_police_ny" unload="true"/>
+		<model force="true" path="units/vehicles/police_ny/vehicle_police_ny" unload="true"/>
+		<object force="true" path="units/vehicles/police_ny/vehicle_police_ny" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/police_ny/vehicle_police_ny" unload="true"/>
+		<unit force="true" path="units/vehicles/police_ny/vehicle_police_ny" unload="true"/>
+	</add>
+	<add path="units/world/props/pillar_fence/pillar_fence_01" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<cooked_physics force="true" path="units/world/props/pillar_fence/pillar_fence_01" unload="true"/>
+		<material_config force="true" path="units/world/props/pillar_fence/pillar_fence" unload="true"/>
+		<model force="true" path="units/world/props/pillar_fence/pillar_fence_01" unload="true"/>
+		<object force="true" path="units/world/props/pillar_fence/pillar_fence_01" unload="true"/>
+		<unit force="true" path="units/world/props/pillar_fence/pillar_fence_01" unload="true"/>
+	</add>
+	<add path="units/world/props/prop_shovel/prop_shovel" type="unit">
+		<cooked_physics force="true" path="units/world/props/prop_shovel/prop_shovel" unload="true"/>
+		<material_config force="true" path="units/world/props/prop_shovel/prop_shovel" unload="true"/>
+		<model force="true" path="units/world/props/prop_shovel/prop_shovel" unload="true"/>
+		<object force="true" path="units/world/props/prop_shovel/prop_shovel" unload="true"/>
+		<texture force="true" path="units/world/props/prop_shovel/prop_shovel_df" unload="true"/>
+		<unit force="true" path="units/world/props/prop_shovel/prop_shovel" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_10x10m" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_10x10m" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_10x10m" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_10x10m" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_10x10m" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_16x20" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_16x20" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_16x20" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_16x20" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_16x20" unload="true"/>
+	</add>
+	<add path="units/world/props/street/loadingdock_roof/loadingdock_roof" type="unit">
+		<texture force="true" path="units/world/props/street/loadingdock_roof/loadingdock_roof_df" unload="true"/>
+		<texture force="true" path="units/world/props/street/loadingdock_roof/loadingdock_roof_nm" unload="true"/>
+		<cooked_physics force="true" path="units/world/props/street/loadingdock_roof/loadingdock_roof" unload="true"/>
+		<material_config force="true" path="units/world/props/street/loadingdock_roof/loadingdock_roof" unload="true"/>
+		<model force="true" path="units/world/props/street/loadingdock_roof/loadingdock_roof" unload="true"/>
+		<object force="true" path="units/world/props/street/loadingdock_roof/loadingdock_roof" unload="true"/>
+		<unit force="true" path="units/world/props/street/loadingdock_roof/loadingdock_roof" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/backdrop_road_100x100" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/backdrop_road_100x100" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/backdrop_road_100x100" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/backdrop_road_100x100" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/backdrop_road_100x100" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_20x80" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_20x80" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_20x80" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_20x80" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_20x80" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/asphalt/ground_asphalt_20x20m" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/asphalt/ground_asphalt_20x20m" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/asphalt/ground_asphalt_20x20m" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/asphalt/ground_asphalt_20x20m" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/asphalt/ground_asphalt_20x20m" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_corner_16m_02" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_corner_16m_02" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground_io" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_corner_16m_02" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_corner_16m_02" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_corner_16m_02" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x20m" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x20m" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x20m" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x20m" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x20m" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_corner_16m_01" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_corner_16m_01" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground_io" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_corner_16m_01" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_corner_16m_01" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_corner_16m_01" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_crossing_20_20m" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_20_20m" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground_io" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_20_20m" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_20_20m" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_20_20m" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/backdrop_road_100x100_02" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/backdrop_road_100x100_02" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/backdrop_road_100x100_02" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/backdrop_road_100x100_02" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/backdrop_road_100x100_02" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_crossing_16_20m" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_16_20m" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground_io" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_16_20m" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_16_20m" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_16_20m" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_crossing_16m" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_16m" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground_io" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_16m" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_16m" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_crossing_16m" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x15m" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x15m" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground_io" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x15m" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x15m" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/sidewalk/ground_sidewalk_20x15m" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_20x10" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_20x10" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground_io" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_20x10" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_20x10" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_20x10" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_16x40" type="unit">
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_blend_2_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_nm" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/ground/ground_lines_op" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/ground/road/ground_road_16x40" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<model force="true" path="units/world/architecture/street/ground/road/ground_road_16x40" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_16x40" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_16x40" unload="true"/>
+	</add>
+	<add path="units/world/architecture/apartment/door/apartment_door_03" type="unit">
+		<texture force="true" path="units/world/architecture/apartment/textures/door_03_df" unload="true"/>
+		<texture force="true" path="units/glass/glass_indoors_op" unload="true"/>
+		<texture force="true" path="units/glass/glass_indoors_df" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/apartment/door/apartment_door_03" unload="true"/>
+		<material_config force="true" path="units/world/architecture/apartment/door/apartment_door_03" unload="true"/>
+		<model force="true" path="units/world/architecture/apartment/door/apartment_door_03" unload="true"/>
+		<object force="true" path="units/world/architecture/apartment/door/apartment_door_03" unload="true"/>
+		<sequence_manager force="true" path="units/world/architecture/apartment/door/apartment_door_03" unload="true"/>
+		<unit force="true" path="units/world/architecture/apartment/door/apartment_door_03" unload="true"/>
+	</add>
+	<add path="units/vehicles/animated_cars/police_ny_street_anim" type="unit">
+		<texture force="true" path="units/vehicles/police_ny/vehicle_police_ny_df" unload="true"/>
+		<texture force="true" path="units/vehicles/police_ny/vehicle_police_ny_nm" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_2_op" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_df" unload="true"/>
+		<texture force="true" path="units/vehicles/window/glass_shattered_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/vehicles/police_ny/saftblandare_df" unload="true"/>
+		<texture force="true" path="units/vehicles/police_ny/saftblandare_edf" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/environment/cop_car_lights" unload="true"/>
+		<texture force="true" path="effects/textures/opacity_atlas_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<texture force="true" path="effects/textures/bullet_hit/e_debris_glass_01_4x2" unload="true"/>
+		<texture force="true" path="effects/textures/smoke/e_smoke_01" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/environment/cop_car_lights" unload="true"/>
+		<bnk force="true" path="soundbanks/effects" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/animated_cars/police_ny_street_anim" unload="true"/>
+		<material_config force="true" path="units/vehicles/animated_cars/police_ny_noinstance" unload="true"/>
+		<model force="true" path="units/vehicles/animated_cars/police_ny_street_anim" unload="true"/>
+		<object force="true" path="units/vehicles/animated_cars/police_ny_street_anim" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/animated_cars/police_ny_street_anim" unload="true"/>
+		<unit force="true" path="units/vehicles/animated_cars/police_ny_street_anim" unload="true"/>
+	</add>
+	<add path="units/equipment/gas/gas_can_interact" type="unit">
+		<material_config force="true" path="units/equipment/gas/gas_can_interact" unload="true"/>
+		<texture force="true" path="units/gui/gui_color_use_df" unload="true"/>
+		<texture force="true" path="units/world/props/desert/des_prop_gascan/des_prop_gascan_nm" unload="true"/>
+		<texture force="true" path="units/equipment/thermite/thermite_txt_df" unload="true"/>
+		<material_config force="true" path="units/equipment/thermite/thermite_01" unload="true"/>
+		<texture force="true" path="units/equipment/thermite/thermite_df" unload="true"/>
+		<texture force="true" path="units/equipment/thermite/thermite_op" unload="true"/>
+		<texture force="true" path="units/equipment/thermite/thermite_txt_df" unload="true"/>
+		<texture force="true" path="units/world/props/desert/des_prop_gascan/des_prop_gascan_df" unload="true"/>
+		<texture force="true" path="units/world/props/desert/des_prop_gascan/des_prop_gascan_nm" unload="true"/>
+		<cooked_physics force="true" path="units/equipment/gas/gas_can_interact" unload="true"/>
+		<model force="true" path="units/equipment/gas/gas_can_interact" unload="true"/>
+		<object force="true" path="units/equipment/gas/gas_can_interact" unload="true"/>
+		<sequence_manager force="true" path="units/equipment/gas/gas_can_interact" unload="true"/>
+		<unit force="true" path="units/equipment/gas/gas_can_interact" unload="true"/>
+	</add>
+	<add path="units/world/props/pillar_fence/pillar_fence_single_01" type="unit">
+		<material_config force="true" path="units/world/props/pillar_fence/pillar_fence" unload="true"/>
+		<object force="true" path="units/world/props/pillar_fence/pillar_fence_single_01" unload="true"/>
+		<unit force="true" path="units/world/props/pillar_fence/pillar_fence_single_01" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/navigation_blocker_1" type="unit">
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<texture force="true" path="units/dev_tools/level_tools/ai_coverpoint_df" unload="true"/>
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<cooked_physics force="true" path="units/dev_tools/level_tools/navigation_blocker_1" unload="true"/>
+		<material_config force="true" path="core/material_configs/hub_elements" unload="true"/>
+		<model force="true" path="units/dev_tools/level_tools/navigation_blocker_1" unload="true"/>
+		<object force="true" path="units/dev_tools/level_tools/navigation_blocker_1" unload="true"/>
+		<unit force="true" path="units/dev_tools/level_tools/navigation_blocker_1" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/navigation_blocker_20" type="unit">
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<texture force="true" path="units/dev_tools/level_tools/ai_coverpoint_df" unload="true"/>
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<texture force="true" path="core/textures/hub_elements_df" unload="true"/>
+		<cooked_physics force="true" path="units/dev_tools/level_tools/navigation_blocker_20" unload="true"/>
+		<material_config force="true" path="core/material_configs/hub_elements" unload="true"/>
+		<model force="true" path="units/dev_tools/level_tools/navigation_blocker_20" unload="true"/>
+		<object force="true" path="units/dev_tools/level_tools/navigation_blocker_20" unload="true"/>
+		<unit force="true" path="units/dev_tools/level_tools/navigation_blocker_20" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/shadow_caster_10x10" type="unit">
+		<material_config force="true" path="units/dev_tools/level_tools/shadow_caster" unload="true"/>
+		<object force="true" path="units/dev_tools/level_tools/shadow_caster_10x10" unload="true"/>
+		<sequence_manager force="true" path="units/dev_tools/level_tools/shadow_caster" unload="true"/>
+		<unit force="true" path="units/dev_tools/level_tools/shadow_caster_10x10" unload="true"/>
+	</add>
+	<add path="units/world/street/road_block/street_police_road_block" type="unit">
+		<material_config force="true" path="units/world/street/road_block/street_police_road_block" unload="true"/>
+		<object force="true" path="units/world/street/road_block/street_police_road_block" unload="true"/>
+		<sequence_manager force="true" path="units/world/street/road_block/street_police_road_block" unload="true"/>
+		<unit force="true" path="units/world/street/road_block/street_police_road_block" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/navigation_blocker_10" type="unit">
+		<material_config force="true" path="core/material_configs/hub_elements" unload="true"/>
+		<object force="true" path="units/dev_tools/level_tools/navigation_blocker_10" unload="true"/>
+		<unit force="true" path="units/dev_tools/level_tools/navigation_blocker_10" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/navigation_blocker_50" type="unit">
+		<material_config force="true" path="core/material_configs/hub_elements" unload="true"/>
+		<object force="true" path="units/dev_tools/level_tools/navigation_blocker_50" unload="true"/>
+		<unit force="true" path="units/dev_tools/level_tools/navigation_blocker_50" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_20x20" type="unit">
+		<material_config force="true" path="units/world/architecture/street/ground/ground" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_20x20" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_20x20" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/ground/road/ground_road_corner_20m" type="unit">
+		<material_config force="true" path="units/world/architecture/street/ground/ground_io" unload="true"/>
+		<object force="true" path="units/world/architecture/street/ground/road/ground_road_corner_20m" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/ground/road/ground_road_corner_20m" unload="true"/>
+	</add>
+	<add path="units/vehicles/van/vehicle_van" type="unit">
+		<texture force="true" path="units/vehicles/van/vehicle_van_df" unload="true"/>
+		<texture force="true" path="units/vehicles/van/vehicle_van_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/van/vehicle_van" unload="true"/>
+		<material_config force="true" path="units/vehicles/van/vehicle_van" unload="true"/>
+		<model force="true" path="units/vehicles/van/vehicle_van" unload="true"/>
+		<object force="true" path="units/vehicles/van/vehicle_van" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/van/man_vehicle_truck" unload="true"/>
+		<unit force="true" path="units/vehicles/van/vehicle_van" unload="true"/>
+	</add>
+	<add path="units/vehicles/ford/vehicle_ford" type="unit">
+		<texture force="true" path="units/vehicles/ford/vehicle_ford_df" unload="true"/>
+		<texture force="true" path="units/vehicles/ford/vehicle_ford_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/ford/vehicle_ford" unload="true"/>
+		<material_config force="true" path="units/vehicles/ford/vehicle_ford" unload="true"/>
+		<model force="true" path="units/vehicles/ford/vehicle_ford" unload="true"/>
+		<object force="true" path="units/vehicles/ford/vehicle_ford" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/ford/vehicle_ford" unload="true"/>
+		<unit force="true" path="units/vehicles/ford/vehicle_ford" unload="true"/>
+	</add>
+	<add path="units/vehicles/taxi/vehicle_taxi" type="unit">
+		<texture force="true" path="units/vehicles/taxi/vehicle_taxi_df" unload="true"/>
+		<texture force="true" path="units/vehicles/taxi/vehicle_taxi_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/taxi/vehicle_taxi" unload="true"/>
+		<material_config force="true" path="units/vehicles/taxi/vehicle_taxi" unload="true"/>
+		<model force="true" path="units/vehicles/taxi/vehicle_taxi" unload="true"/>
+		<object force="true" path="units/vehicles/taxi/vehicle_taxi" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/taxi/vehicle_taxi" unload="true"/>
+		<unit force="true" path="units/vehicles/taxi/vehicle_taxi" unload="true"/>
+	</add>
+	<add path="units/vehicles/mercedes/vehicle_mercedes" type="unit">
+		<texture force="true" path="units/vehicles/mercedes/vehicle_mercedes_df" unload="true"/>
+		<texture force="true" path="units/vehicles/mercedes/vehicle_mercedes_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/mercedes/vehicle_mercedes" unload="true"/>
+		<material_config force="true" path="units/vehicles/mercedes/vehicle_mercedes" unload="true"/>
+		<model force="true" path="units/vehicles/mercedes/vehicle_mercedes" unload="true"/>
+		<object force="true" path="units/vehicles/mercedes/vehicle_mercedes" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/mercedes/vehicle_mercedes" unload="true"/>
+		<unit force="true" path="units/vehicles/mercedes/vehicle_mercedes" unload="true"/>
+	</add>
+	<add path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes" type="unit">
+		<texture force="true" path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes_df" unload="true"/>
+		<texture force="true" path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes" unload="true"/>
+		<material_config force="true" path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes" unload="true"/>
+		<model force="true" path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes" unload="true"/>
+		<object force="true" path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes" unload="true"/>
+		<unit force="true" path="units/vehicles/suburbia/mercedes/vehicle_suburbia_mercedes" unload="true"/>
+	</add>
+	<add path="units/vehicles/charger/vehicle_charger" type="unit">
+		<texture force="true" path="units/vehicles/charger/vehicle_charger_df" unload="true"/>
+		<texture force="true" path="units/vehicles/charger/vehicle_charger_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/charger/vehicle_charger" unload="true"/>
+		<material_config force="true" path="units/vehicles/charger/vehicle_charger" unload="true"/>
+		<model force="true" path="units/vehicles/charger/vehicle_charger" unload="true"/>
+		<object force="true" path="units/vehicles/charger/vehicle_charger" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/charger/vehicle_charger" unload="true"/>
+		<unit force="true" path="units/vehicles/charger/vehicle_charger" unload="true"/>
+	</add>
+	<add path="units/vehicles/suburbia/charger/vehicle_suburbia_charger" type="unit">
+		<texture force="true" path="units/vehicles/suburbia/charger/vehicle_suburbia_charger_df" unload="true"/>
+		<texture force="true" path="units/vehicles/suburbia/charger/vehicle_suburbia_charger_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/suburbia/charger/vehicle_suburbia_charger" unload="true"/>
+		<material_config force="true" path="units/vehicles/suburbia/charger/vehicle_suburbia_charger" unload="true"/>
+		<model force="true" path="units/vehicles/suburbia/charger/vehicle_suburbia_charger" unload="true"/>
+		<object force="true" path="units/vehicles/suburbia/charger/vehicle_suburbia_charger" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/suburbia/charger/vehicle_suburbia_charger" unload="true"/>
+		<unit force="true" path="units/vehicles/suburbia/charger/vehicle_suburbia_charger" unload="true"/>
+	</add>
+	<add path="units/vehicles/mondeo/vehicle_mondeo" type="unit">
+		<texture force="true" path="units/vehicles/mondeo/vehicle_mondeo_df" unload="true"/>
+		<texture force="true" path="units/vehicles/mondeo/vehicle_mondeo_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/mondeo/vehicle_mondeo" unload="true"/>
+		<material_config force="true" path="units/vehicles/mondeo/vehicle_mondeo" unload="true"/>
+		<model force="true" path="units/vehicles/mondeo/vehicle_mondeo" unload="true"/>
+		<object force="true" path="units/vehicles/mondeo/vehicle_mondeo" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/mondeo/vehicle_mondeo" unload="true"/>
+		<unit force="true" path="units/vehicles/mondeo/vehicle_mondeo" unload="true"/>
+	</add>
+	<add path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo" type="unit">
+		<texture force="true" path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo_df" unload="true"/>
+		<texture force="true" path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo" unload="true"/>
+		<material_config force="true" path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo" unload="true"/>
+		<model force="true" path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo" unload="true"/>
+		<object force="true" path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo" unload="true"/>
+		<unit force="true" path="units/vehicles/suburbia/mondeo/vehicle_suburbia_mondeo" unload="true"/>
+	</add>
+	<add path="units/vehicles/bmw/vehicle_bmw" type="unit">
+		<texture force="true" path="units/vehicles/bmw/vehicle_bmw_df" unload="true"/>
+		<texture force="true" path="units/vehicles/bmw/vehicle_bmw_nm" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_op" unload="true"/>
+		<texture force="true" path="units/glass/vehicle_glass_df" unload="true"/>
+		<texture force="true" path="units/world/street/street_lights/cone_light_df" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/bullet_hit/misc/misc_tire" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/bmw/vehicle_bmw" unload="true"/>
+		<material_config force="true" path="units/vehicles/bmw/vehicle_bmw" unload="true"/>
+		<model force="true" path="units/vehicles/bmw/vehicle_bmw" unload="true"/>
+		<object force="true" path="units/vehicles/bmw/vehicle_bmw" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/bmw/vehicle_bmw" unload="true"/>
+		<unit force="true" path="units/vehicles/bmw/vehicle_bmw" unload="true"/>
+	</add>
+	<add path="units/vehicles/suburban/vehicle_suburban" type="unit">
+		<texture force="true" path="units/vehicles/suburban/vehicle_suburban_df" unload="true"/>
+		<texture force="true" path="units/vehicles/suburban/vehicle_suburban_nm" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/suburban/vehicle_suburban" unload="true"/>
+		<material_config force="true" path="units/vehicles/suburban/vehicle_suburban" unload="true"/>
+		<model force="true" path="units/vehicles/suburban/vehicle_suburban" unload="true"/>
+		<object force="true" path="units/vehicles/suburban/vehicle_suburban" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/suburban/vehicle_suburban" unload="true"/>
+		<unit force="true" path="units/vehicles/suburban/vehicle_suburban" unload="true"/>
+	</add>
+	<add path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban" type="unit">
+		<texture force="true" path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban_df" unload="true"/>
+		<texture force="true" path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban_nm" unload="true"/>
+		<cooked_physics force="true" path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban" unload="true"/>
+		<material_config force="true" path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban" unload="true"/>
+		<model force="true" path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban" unload="true"/>
+		<object force="true" path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban" unload="true"/>
+		<unit force="true" path="units/vehicles/suburbia/suburban/vehicle_suburbia_suburban" unload="true"/>
+	</add>
+	<add path="units/world/street/street_lights/street_lights" type="unit">
+		<material_config force="true" path="units/world/street/trafic_lights/trafic_lights" unload="true"/>
+		<object force="true" path="units/world/street/street_lights/street_lights" unload="true"/>
+		<sequence_manager force="true" path="units/world/street/street_lights/street_lights" unload="true"/>
+		<unit force="true" path="units/world/street/street_lights/street_lights" unload="true"/>
+	</add>
+	<texture path="levels/mods/street_new/cube_lights/500000"/>
+	<texture path="levels/mods/street_new/cube_lights/500001"/>
+	<texture path="levels/mods/street_new/cube_lights/602260"/>
+	<texture path="levels/mods/street_new/cube_lights/100106"/>
+	<texture path="levels/mods/street_new/cube_lights/101635"/>
+	<texture path="levels/mods/street_new/cube_lights/100526"/>
+	<texture path="levels/mods/street_new/cube_lights/102981"/>
+	<texture path="levels/mods/street_new/cube_lights/103051"/>
+	<texture path="levels/mods/street_new/cubemaps/100109"/>
+	<texture path="levels/mods/street_new/cube_lights/500021"/>
+	<add path="units/world/props/street/busstop_modern" type="unit">
+		<material_config force="true" path="units/world/props/street/busstop_modern" unload="true"/>
+		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+		<effect force="true" load="true" path="effects/payday2/particles/window/storefront_window_small" unload="true"/>
+		<object force="true" path="units/world/props/street/busstop_modern" unload="true"/>
+		<sequence_manager force="true" path="units/world/props/street/busstop_modern" unload="true"/>
+		<unit force="true" path="units/world/props/street/busstop_modern" unload="true"/>
+	</add>
+	<add path="units/world/street/concrete_barrier/concrete_barrier_small_01" type="unit">
+		<material_config force="true" path="units/world/street/concrete_barrier/concrete_barrier" unload="true"/>
+		<object force="true" path="units/world/street/concrete_barrier/concrete_barrier_small_01" unload="true"/>
+		<unit force="true" path="units/world/street/concrete_barrier/concrete_barrier_small_01" unload="true"/>
+	</add>
+	<add path="units/world/props/signs/sign_ticker_01" type="unit">
+		<material_config force="true" path="units/world/props/signs/sign_ticker_01" unload="true"/>
+		<object force="true" path="units/world/props/signs/sign_ticker_01" unload="true"/>
+		<unit force="true" path="units/world/props/signs/sign_ticker_01" unload="true"/>
+	</add>
+	<add path="units/world/props/signs/sign_ticker_02" type="unit">
+		<cooked_physics force="true" path="units/world/props/signs/sign_ticker_02" unload="true"/>
+		<material_config force="true" path="units/world/props/signs/sign_ticker_02" unload="true"/>
+		<model force="true" path="units/world/props/signs/sign_ticker_02" unload="true"/>
+		<object force="true" path="units/world/props/signs/sign_ticker_02" unload="true"/>
+		<texture force="true" path="units/world/props/signs/sign_ticker_02_df" unload="true"/>
+		<unit force="true" path="units/world/props/signs/sign_ticker_02" unload="true"/>
+	</add>
+	<add path="units/world/props/street/concrete_barrier/concrete_barrier_stripes_single" type="unit">
+		<material_config force="true" path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
+		<object force="true" path="units/world/props/street/concrete_barrier/concrete_barrier_stripes_single" unload="true"/>
+		<unit force="true" path="units/world/props/street/concrete_barrier/concrete_barrier_stripes_single" unload="true"/>
+	</add>
+	<add path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" type="unit">
+		<material_config force="true" path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
+		<object force="true" path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
+		<unit force="true" path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/skyscrapes/skyscrape_01_top_20x40" type="unit">
+		<material_config force="true" path="units/world/architecture/street/skyscrapes/skyscrape_top_near" unload="true"/>
+		<material_config force="true" path="units/world/architecture/street/skyscrapers" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/skyscrapes/scyscrape_top_near_df" unload="true"/>
+		<texture force="true" path="units/world/architecture/street/skyscrapes/scyscrape_top_near_nm" unload="true"/>
+		<cooked_physics force="true" path="units/world/architecture/street/skyscrapes/skyscrape_01_top_20x40" unload="true"/>
+		<model force="true" path="units/world/architecture/street/skyscrapes/skyscrape_01_top_20x40" unload="true"/>
+		<object force="true" path="units/world/architecture/street/skyscrapes/skyscrape_01_top_20x40" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/skyscrapes/skyscrape_01_top_20x40" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/skyscrapes/skyscrape_02_top_20x40" type="unit">
+		<cooked_physics force="true" path="units/world/architecture/street/skyscrapes/skyscrape_02_top_20x40" unload="true"/>
+		<model force="true" path="units/world/architecture/street/skyscrapes/skyscrape_02_top_20x40" unload="true"/>
+		<object force="true" path="units/world/architecture/street/skyscrapes/skyscrape_02_top_20x40" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/skyscrapes/skyscrape_02_top_20x40" unload="true"/>
+	</add>
+	<add path="units/world/props/desert/des_prop_con_cone/des_prop_con_boom_4m" type="unit">
+		<texture force="true" path="units/world/props/desert/des_prop_con_cone/des_prop_con_cone_df" unload="true"/>
+		<texture force="true" path="units/world/props/desert/des_prop_con_cone/des_prop_con_cone_nm" unload="true"/>
+		<cooked_physics force="true" path="units/world/props/desert/des_prop_con_cone/des_prop_con_boom_4m" unload="true"/>
+		<material_config force="true" path="units/world/props/desert/des_prop_con_cone/des_prop_con_cone" unload="true"/>
+		<model force="true" path="units/world/props/desert/des_prop_con_cone/des_prop_con_boom_4m" unload="true"/>
+		<object force="true" path="units/world/props/desert/des_prop_con_cone/des_prop_con_boom_4m" unload="true"/>
+		<unit force="true" path="units/world/props/desert/des_prop_con_cone/des_prop_con_boom_4m" unload="true"/>
+	</add>
+	<add path="effects/particles/rain/screendrops" type="effect">
+		<effect force="true" load="true" path="effects/particles/rain/screendrops" unload="true"/>
+	</add>
+	<add path="effects/particles/rain/rain_01_a" type="effect">
+		<effect force="true" load="true" path="effects/particles/rain/rain_01_a" unload="true"/>
+	</add>
+	<add path="effects/particles/rain/rain_glace_inside" type="effect">
+		<effect force="true" load="true" path="effects/particles/rain/rain_glace_inside" unload="true"/>
+	</add>
+	<texture path="levels/mods/street_new/cube_lights/600296"/>
+	<texture path="levels/mods/street_new/cube_lights/500019"/>
+	<texture path="levels/mods/street_new/cube_lights/600297"/>
+	<texture path="levels/mods/street_new/cube_lights/600299"/>
+	<texture path="levels/mods/street_new/cube_lights/600298"/>
+	<texture path="levels/mods/street_new/cube_lights/600300"/>
+	<add path="units/world/props/street/parking_meter/sidewalk_pole" type="unit">
+		<material_config force="true" path="units/world/props/street/parking_meter/parking_meter" unload="true"/>
+		<object force="true" path="units/world/props/street/parking_meter/sidewalk_pole" unload="true"/>
+		<unit force="true" path="units/world/props/street/parking_meter/sidewalk_pole" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/shadow_caster_5x5" type="unit">
+		<material_config force="true" path="units/dev_tools/level_tools/shadow_caster" unload="true"/>
+		<object force="true" path="units/dev_tools/level_tools/shadow_caster_5x5" unload="true"/>
+		<sequence_manager force="true" path="units/dev_tools/level_tools/shadow_caster" unload="true"/>
+		<unit force="true" path="units/dev_tools/level_tools/shadow_caster_5x5" unload="true"/>
+	</add>
+	<add path="units/world/props/street/construction_scaffolding/street_scaf_long" type="unit">
+		<texture force="true" path="units/world/props/street/construction_scaffolding/street_scaf_df" unload="true"/>
+		<texture force="true" path="units/world/props/street/construction_scaffolding/street_scaf_wood_df" unload="true"/>
+		<material_config force="true" path="units/world/props/street/construction_scaffolding/street_scaf_brown" unload="true"/>
+		<material_config force="true" path="units/world/props/street/construction_scaffolding/street_scaf_green" unload="true"/>
+		<cooked_physics force="true" path="units/world/props/street/construction_scaffolding/street_scaf_long" unload="true"/>
+		<model force="true" path="units/world/props/street/construction_scaffolding/street_scaf_long" unload="true"/>
+		<object force="true" path="units/world/props/street/construction_scaffolding/street_scaf_long" unload="true"/>
+		<unit force="true" path="units/world/props/street/construction_scaffolding/street_scaf_long" unload="true"/>
+	</add>
+	<add path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" type="unit">
+		<effect force="true" load="true" path="effects/particles/weapons/flashlight/flashlight" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/window/vehicle_window" unload="true"/>
+		<animation_def force="true" path="anims/units/helicopter/helicopter" unload="true"/>
+		<animation_state_machine force="true" path="anims/units/helicopter/helicopter" unload="true"/>
+		<animation_states force="true" path="anims/units/helicopter/std" unload="true"/>
+		<animation_subset force="true" path="anims/units/helicopter/std" unload="true"/>
+		<material_config force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter" unload="true"/>
+		<object force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
+		<sequence_manager force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
+		<unit force="true" path="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" unload="true"/>
+	</add>
+	<add path="units/world/architecture/street/fireescape/fireescape_01" type="unit">
+		<material_config force="true" path="units/world/architecture/street/facadebalcony" unload="true"/>
+		<object force="true" path="units/world/architecture/street/fireescape/fireescape_01" unload="true"/>
+		<unit force="true" path="units/world/architecture/street/fireescape/fireescape_01" unload="true"/>
+	</add>
+	<add path="units/world/props/street/streetcone_02" type="unit">
+		<material_config force="true" path="units/world/props/street/streetcone" unload="true"/>
+		<object force="true" path="units/world/props/street/streetcone_02" unload="true"/>
+		<unit force="true" path="units/world/props/street/streetcone_02" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_flat/props/flat_prop_plywood_fence/flt_prop_plywood_fence_wide" type="unit">
+		<material_config force="true" path="units/pd2_dlc_flat/props/flat_prop_plywood_fence/flt_prop_plywood_fence_wide" unload="true"/>
+		<object force="true" path="units/pd2_dlc_flat/props/flat_prop_plywood_fence/flt_prop_plywood_fence_wide" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_flat/props/flat_prop_plywood_fence/flt_prop_plywood_fence_wide" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/navigation_splitter_10m" type="unit">
+		<material_config path="core/material_configs/hub_elements" unload="true"/>
+		<object path="units/dev_tools/level_tools/navigation_splitter_10m" unload="true"/>
+		<unit path="units/dev_tools/level_tools/navigation_splitter_10m" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/navigation_splitter" type="unit">
+		<material_config path="core/material_configs/hub_elements" unload="true"/>
+		<object path="units/dev_tools/level_tools/navigation_splitter" unload="true"/>
+		<unit path="units/dev_tools/level_tools/navigation_splitter" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/navigation_blocker" type="unit">
+		<material_config path="core/material_configs/hub_elements" unload="true"/>
+		<object path="units/dev_tools/level_tools/navigation_blocker" unload="true"/>
+		<unit path="units/dev_tools/level_tools/navigation_blocker" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/ai_blockade" type="unit">
+		<material_config path="core/material_configs/hub_elements" unload="true"/>
+		<object path="units/dev_tools/level_tools/ai_blockade" unload="true"/>
+		<unit path="units/dev_tools/level_tools/ai_blockade" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/navigation_splitter_1m" type="unit">
+		<material_config path="core/material_configs/hub_elements" unload="true"/>
+		<object path="units/dev_tools/level_tools/navigation_splitter_1m" unload="true"/>
+		<unit path="units/dev_tools/level_tools/navigation_splitter_1m" unload="true"/>
+	</add>
+	<add path="units/world/props/signs/sign_street_cover_poster_01" type="unit">
+		<material_config path="units/world/props/signs/sign_street_cover_poster_01" unload="true"/>
+		<material_config path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+		<object path="units/world/props/signs/sign_street_cover_poster_01" unload="true"/>
+		<sequence_manager path="units/world/props/signs/sign_street_cover_poster_01" unload="true"/>
+		<unit path="units/world/props/signs/sign_street_cover_poster_01" unload="true"/>
+	</add>
+	<add path="units/world/architecture/backdrops/scrapers/backdrop_street" type="unit">
+		<unit path="units/world/architecture/backdrops/scrapers/backdrop_street" unload="true"/>
+		<object path="units/world/architecture/backdrops/scrapers/backdrop_street" unload="true"/>
+		<material_config path="units/world/architecture/backdrops/scrapers/backdrop_street" unload="true"/>
+	</add>
+</table>

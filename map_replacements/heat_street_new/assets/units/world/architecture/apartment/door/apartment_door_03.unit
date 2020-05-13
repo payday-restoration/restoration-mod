@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+<network sync="spawn"/>
+  <object file="units/world/architecture/apartment/door/apartment_door_03" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

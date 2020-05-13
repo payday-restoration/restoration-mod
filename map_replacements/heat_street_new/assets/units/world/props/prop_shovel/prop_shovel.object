@@ -1,0 +1,12 @@
+<dynamic_object>
+    <diesel orientation_object="rp_shovel" materials="units/world/props/prop_shovel/prop_shovel" />
+    <bodies>
+        <body enabled="true" template="raycoll_static" name="body0" >
+            <object collision_type="convex" name="c_c_convex" />
+        </body>
+    </bodies>
+	<decal_surfaces default_material="steel" static="true"/>
+    <graphics>
+        <object enabled="true" name="g_g1" />
+    </graphics>
+</dynamic_object>

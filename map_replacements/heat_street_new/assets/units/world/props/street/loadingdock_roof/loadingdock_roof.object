@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/street/loadingdock_roof/loadingdock_roof" orientation_object="rp_loadingdock_roof" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_loadingdock_roof" />
+      <object name="c_sheet_metal_mesh_mopp" collision_type="mesh_mopp" />
+      <object name="c_metal_mesh_mopp" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces>
+    <decal_mesh name="c_sheet_metal_mesh_mopp" enabled="true" material="sheet_metal" />
+    <decal_mesh name="c_metal_mesh_mopp" enabled="true" material="metal" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_loading_roof" enabled="true" shadow_caster="true"/>
+  </graphics>
+</dynamic_object>

@@ -1,0 +1,28 @@
+<materials version="3">
+    <material name="street_sign_metal" render_template="generic:DIFFUSE_TEXTURE:RL_BIGPROPS:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/props/signs/sign_street_cover_metal_df"/>
+    </material>
+    <material name="ad_01" render_template="generic:DIFFUSE_TEXTURE:RL_BIGPROPS:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/props/signs/sign_street_cover_poster_01_df"/>
+    </material>
+    <material name="ad_02" render_template="generic:DIFFUSE_TEXTURE:RL_BIGPROPS:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/props/signs/sign_street_cover_poster_02_df"/>
+    </material>
+    <material name="ad_03" render_template="generic:DIFFUSE_TEXTURE:RL_BIGPROPS:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/world/props/signs/sign_street_cover_poster_03_df"/>
+    </material>
+    <material name="glass_breakable" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP" decal_material="glass_breakable" name="glass_shattered" version="2">
+        <variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_2_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

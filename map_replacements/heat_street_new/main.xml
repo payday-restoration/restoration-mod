@@ -1,0 +1,116 @@
+<table name="heat_street_new">
+	<AddFiles directory="assets">
+		<texture load="true" path="guis/textures/street_icon"/>
+	</AddFiles>
+	<Localization default="english.txt" directory="loc"/>
+	<level ai_group_type="America" brief_id="heist_run_briefing" briefing_dialog="Play_pln_run_brf" cube="cube_apply_heist_street" id="street_new" intro_event="Play_pln_run_intro" max_bags="0" music="heist" name_id="heist_run_hl">
+		<add file="levels/street_new/add.xml"/>
+		<assets>
+			<asset name="location"/>
+			<asset name="health_bag"/>
+			<asset name="ammo_bag"/>
+			<asset name="grenade_crate"/>
+		</assets>
+		<include directory="levels/street_new">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="collision/collision.continent" type="binary"/>
+			<file file="collision/collision.mission" type="binary"/>
+			<file file="editor only/editor only.continent" type="binary"/>
+			<file file="editor only/editor only.mission" type="binary"/>
+			<file file="aaaa/aaaa.continent" type="binary"/>
+			<file file="aaaa/aaaa.mission" type="binary"/>
+			<file file="dhruva_art/dhruva_art.continent" type="binary"/>
+			<file file="dhruva_art/dhruva_art.mission" type="binary"/>
+			<file file="backdrop/backdrop.continent" type="binary"/>
+			<file file="backdrop/backdrop.mission" type="binary"/>
+			<file file="lights/lights.continent" type="binary"/>
+			<file file="lights/lights.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="environments/env_white.environment" type="custom_xml"/>
+			<file file="environments/env_street_pdthshaders.environment" type="custom_xml"/>
+			<file file="environments/env_street.environment" type="custom_xml"/>
+		</include>
+		<outro_event>
+			<value_node value=""/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_run"/>
+			<value_node value="levels/narratives/classics/run/world"/>
+			<value_node value="levels/narratives/classics/run/world_sounds"/>
+			<value_node value="levels/narratives/classics/run/collision/collision"/>
+			<value_node value="levels/narratives/classics/run/editor only/editor only"/>
+			<value_node value="levels/narratives/classics/run/dhruva_art/dhruva_art"/>
+			<value_node value="levels/narratives/classics/run/backdrop/backdrop"/>
+			<value_node value="levels/narratives/classics/run/world/world"/>
+			<value_node value="levels/narratives/classics/dinner/world_sounds"/>
+			<value_node value="levels/instances/unique/dark/dumpster/world/world"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<narrative briefing_event="Play_loc_run_cbf_01" contact="classic" icon="guis/textures/street_icon" id="run" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_heatstreet" region="street">
+		<chain>
+			<table level_id="street_new" type="a" type_id="heist_type_survive"/>
+		</chain>
+		<contract_cost>
+			<value_node value="70000"/>
+			<value_node value="150000"/>
+			<value_node value="350000"/>
+			<value_node value="700000"/>
+			<value_node value="900000"/>
+			<value_node value="900000"/>
+			<value_node value="900000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value=""/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_branchbank3"/>
+		</crimenet_videos>
+		<debrief_event>
+			<value_node value=""/>
+		</debrief_event>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+			<value_node value="26000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="110000"/>
+			<value_node value="220000"/>
+			<value_node value="550000"/>
+			<value_node value="1.1e+006"/>
+			<value_node value="1.265e+006"/>
+			<value_node value="1.43e+006"/>
+			<value_node value="1.54e+006"/>
+		</payout>
+	</narrative>
+</table>

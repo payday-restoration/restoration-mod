@@ -873,6 +873,6 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 	self.grace_scaling = {
 		min_level = 500,
 		level_interval = 100,
-		amount = 0.025
+		amount = 0.016666667
 	}
 end

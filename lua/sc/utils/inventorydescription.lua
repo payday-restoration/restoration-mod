@@ -229,6 +229,9 @@ function WeaponDescription._get_base_swap_speed(name, base_stats)
 			multiplier = multiplier * tweak_data[category].swap_bonus
 		end
 	end
+
+	multiplier = multiplier * (weapon_tweak.swap_speed_multiplier or 1)
+
 	multiplier = multiplier * tweak_data.weapon.stats.mobility[base_stats.concealment.value + 1]
 
 	return (tweak_data.weapon[name].timers.equip + tweak_data.weapon[name].timers.unequip) / multiplier
@@ -242,6 +245,9 @@ function WeaponDescription._get_mods_swap_speed(name, base_stats, mods_stats)
 			multiplier = multiplier * tweak_data[category].swap_bonus
 		end
 	end
+
+	multiplier = multiplier * (weapon_tweak.swap_speed_multiplier or 1)
+	
 	multiplier = multiplier * tweak_data.weapon.stats.mobility[math.max(base_stats.concealment.value + mods_stats.concealment.value, 0) + 1]
 	local mod_swap_speed = (tweak_data.weapon[name].timers.equip + tweak_data.weapon[name].timers.unequip) / multiplier - base_stats.swap_speed.value
 
@@ -257,6 +263,9 @@ function WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, s
 	for _, category in ipairs(weapon_tweak.categories) do
 		multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", tweak_data[category] and tweak_data[category].swap_bonus or 1)
 	end
+
+	multiplier = multiplier * (weapon_tweak.swap_speed_multiplier or 1)
+
 	local multiplier = multiplier * tweak_data.weapon.stats.mobility[math.max(base_stats.concealment.value + mods_stats.concealment.value + skill_stats.concealment.value, 0) + 1]
 	local skill_swap_speed = (tweak_data.weapon[name].timers.equip + tweak_data.weapon[name].timers.unequip) / multiplier - base_stats.swap_speed.value - mods_stats.swap_speed.value
 	

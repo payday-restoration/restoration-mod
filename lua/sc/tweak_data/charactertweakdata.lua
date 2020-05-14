@@ -958,7 +958,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	if is_reaper or is_federales then
 		self.heavy_swat_sniper.custom_voicework = "tswat_ru"
 	else
-		self.heavy_swat_sniper.custom_voicework = "tsniper"
+		self.heavy_swat_sniper.custom_voicework = "tsniper_real"
 	end		
 	self.heavy_swat_sniper.is_special = true
 	self.heavy_swat_sniper.heal_cooldown = 15

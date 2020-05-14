@@ -87,7 +87,7 @@ end
 function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	local line_array = { c01 = "contact",
 		c01x = "contact",
-		rrl = "gogo",
+		rrl = "reload",
 		gr1a = "spawn",
 		gr1b = "spawn",
 		gr1c = "spawn",
@@ -116,7 +116,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		ch2 = "sentry",--
 		ch3 = "ecm", --
 		ch4 = "saw", -- could add these lines to our units
-		t01 = "gogo", -- could add flank lines to all our units
+		t01 = "flank",
 		pus = "gogo",
 		g90 = "contact",
 		civ = "hostage",

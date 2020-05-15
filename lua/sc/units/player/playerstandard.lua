@@ -1,20 +1,10 @@
-local playerstandard_exit_old = PlayerStandard.exit
-function PlayerStandard:exit(...)
-	if self._shooting then
-		local weap_base = self._equipped_unit:base()
-		if not weap_base.akimbo or weap_base:weapon_tweak_data().allow_akimbo_autofire then
-			self._ext_network:send('sync_stop_auto_fire_sound')
-		end
-	end
-
-	return playerstandard_exit_old(self, ...)
-end
-
+--Allows night vision to be used with any mask.
 function PlayerStandard:set_night_vision_state(state)
 	local mask_id = managers.blackmarket:equipped_mask().mask_id
 	local mask_tweak = tweak_data.blackmarket.masks[mask_id]
 	local night_vision = mask_tweak.night_vision 
 
+	--If mask doesn't have night vision, it does.
 	if not night_vision then
 		night_vision = {
 			effect = "color_night_vision",
@@ -22,13 +12,14 @@ function PlayerStandard:set_night_vision_state(state)
 		}
 	end
 
-	if not night_vision or not not self._state_data.night_vision_active == state then
+	--This conditional is hilarious in vanilla btw.
+	if self._state_data.night_vision_active == state then
 		return
 	end
 
 	local ambient_color_key = CoreEnvironmentFeeder.PostAmbientColorFeeder.DATA_PATH_KEY
-	local default_color_grading = EnvironmentControllerManager._GAME_DEFAULT_COLOR_GRADING
-	local effect = state and night_vision.effect or default_color_grading
+	--Use a proper fallback env instead of whatever vanilla does if there's an issue.
+	local effect = state and night_vision.effect or EnvironmentControllerManager._GAME_DEFAULT_COLOR_GRADING
 
 	if state then
 		local function light_modifier(handler, feeder)
@@ -57,6 +48,7 @@ function PlayerStandard:_add_unit_to_char_table(char_table, unit, unit_type, ...
 	end
 end	
 
+--If stop bots option is enabled, replace vanilla version with a version with bot stopping support.
 local orig_check_interact = PlayerStandard._check_action_interact
 function PlayerStandard:_check_action_interact(t, input,...)
 	if not (self._start_shout_all_ai_t or (input and input.btn_interact_secondary_press)) or not restoration.Options:GetValue("OTHER/StopAllBots") then
@@ -297,16 +289,16 @@ function PlayerStandard:_update_omniscience(t, dt)
 		self._state_data.omniscience_t = t + tweak_data.player.omniscience.interval_t
 	end
 end
-	
-function PlayerStandard:clbk_sprint_delay_expire()
 
+
+--Appears to never be called.
+--[[function PlayerStandard:clbk_sprint_delay_expire()
 	self._sprint_delay = nil
 	
 	if self._running and not self._end_running_expire_t and not self:_is_reloading() and not self._shooting and not self._camera_unit:base()._melee_item_units then
 		self._ext_camera:play_redirect( self:get_animation("start_running") )
 	end
-
-end	
+end]]
 
 Hooks:PostHook( PlayerStandard , "_start_action_running" , "ResPlayerStandardPostStartActionRunning" , function( self , t )
 

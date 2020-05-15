@@ -791,33 +791,18 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	end
 end
 
-local update_original = PlayerStandard.update
-local start_steelsight_original = PlayerStandard._start_action_steelsight
-local end_steelsight_original = PlayerStandard._end_action_steelsight
-local _check_action_primary_attack_original = PlayerStandard._check_action_primary_attack
-local _check_action_deploy_underbarrel_original = PlayerStandard._check_action_deploy_underbarrel	
-
-function PlayerStandard:update(t, ...)
-	local weapon = self._unit:inventory():equipped_unit():base()
-	
+--Updates burst fire and minigun spinup.
+Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_burst_fire(t)
-	
+		
+	local weapon = self._unit:inventory():equipped_unit():base()
 	if weapon:get_name_id() == "m134" then
 		weapon:update_spin()
 	end
-	
-	return update_original(self,t, ...)
-end
+end)
 
-function PlayerStandard:_check_action_primary_attack(t, input, ...)
-	if self._trigger_down and not input.btn_primary_attack_state then
-		self._equipped_unit:base():cancel_burst(true)
-	end
-	self._trigger_down = input.btn_primary_attack_state
-	
-	return _check_action_primary_attack_original(self, t, input, ...)
-end
-
+--Deals with burst fire hud stuff when swapping from an underbarrel back to a weapon in burst fire.
+local _check_action_deploy_underbarrel_original = PlayerStandard._check_action_deploy_underbarrel	
 function PlayerStandard:_check_action_deploy_underbarrel(...)
 	local new_action = _check_action_deploy_underbarrel_original(self, ...)
 	
@@ -828,6 +813,7 @@ function PlayerStandard:_check_action_deploy_underbarrel(...)
 	return new_action
 end	
 
+--Adds burst fire check.
 function PlayerStandard:_check_action_weapon_firemode(t, input)
 	local wbase = self._equipped_unit:base()
 	if input.btn_weapon_firemode_press and wbase.toggle_firemode then
@@ -841,76 +827,40 @@ function PlayerStandard:_check_action_weapon_firemode(t, input)
 		end
 	end
 end
-	
+
+--Fires next round in burst if needed.
 function PlayerStandard:_update_burst_fire(t)
 	if alive(self._equipped_unit) and self._equipped_unit:base():burst_rounds_remaining() then
 		self:_check_action_primary_attack(t, { btn_primary_attack_state = true, btn_primary_attack_press = true })
 	end
 end
 
-function PlayerStandard:force_recoil_kick(weap_base, manual_multiplier)
-	local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (manual_multiplier or 1)
+--Recoil used at the end of burst fire.
+function PlayerStandard:force_recoil_kick(weap_base, shots_fired)
+	local recoil_multiplier = (weap_base:recoil() + weap_base:recoil_addend()) * weap_base:recoil_multiplier() * (shots_fired or 1)
 	local up, down, left, right = unpack(weap_base:weapon_tweak_data().kick[self._state_data.in_steelsight and "steelsight" or self._state_data.ducking and "crouching" or "standing"])
 	self._camera_unit:base():recoil_kick(up * recoil_multiplier, down * recoil_multiplier, left * recoil_multiplier, right * recoil_multiplier)
 end
 
-function PlayerStandard:_start_action_steelsight(...)
-	start_steelsight_original(self, ...)
-	
+--Starts minigun spinup.
+Hooks:PostHook(PlayerStandard, "_start_action_steelsight", "ResMinigunEnterSteelsight", function(self, t, gadget_state)
 	if self._state_data.in_steelsight or self._steelsight_wanted then
 		local weapon = self._unit:inventory():equipped_unit():base()
 		if weapon:get_name_id() == "m134" then
 			weapon:vulcan_enter_steelsight()
 		end
 	end
-end
+end)
 
-function PlayerStandard:_end_action_steelsight(...)
-	end_steelsight_original(self, ...)
-
+--Ends minigun spinup.
+Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsight", function(self, t, gadget_state)
 	if not self._state_data.in_steelsight then
 		local weapon = self._unit:inventory():equipped_unit():base()
 		if weapon:get_name_id() == "m134" then
 			weapon:vulcan_exit_steelsight()
 		end
 	end
-end
-
-local old_PlayerStandard_stance_entered = PlayerStandard._stance_entered
-
-function PlayerStandard:_stance_entered(unequipped)
-	local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
-	local head_stance = self._state_data.ducking and tweak_data.player.stances.default.crouched.head or stance_standard.head
-	local stance_id
-	local stance_mod = {
-		translation = Vector3(0, 0, 0)
-	}
-	if not unequipped then
-		stance_id = self._equipped_unit:base():get_stance_id()
-		stance_mod = self._state_data.in_steelsight and self._equipped_unit:base().stance_mod and self._equipped_unit:base():stance_mod() or stance_mod
-	end
-	local stances
-	if self:_is_meleeing() or self:_is_throwing_projectile() then
-		stances = tweak_data.player.stances.default
-	else
-		stances = tweak_data.player.stances[stance_id] or tweak_data.player.stances.default
-	end
-	local misc_attribs = stances.standard
-	if self:_is_using_bipod() and not self:_is_throwing_projectile() then
-		misc_attribs = stances.bipod
-		if self._state_data.in_steelsight then 
-			misc_attribs = stances.steelsight
-		end
-	else
-		misc_attribs = self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard
-	end
-	local duration = tweak_data.player.TRANSITION_DURATION + (self._equipped_unit:base():transition_duration() or 0)
-	local duration_multiplier = self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
-	local new_fov = self:get_zoom_fov(misc_attribs) + 0
-	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
-	managers.menu:set_mouse_sensitivity(self:in_steelsight())
-	old_PlayerStandard_stance_entered(self, unequipped)			
-end
+end)
 
 local melee_vars = {
 	"player_melee",
@@ -923,7 +873,8 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
 	self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, charge_lerp_value))
 	local sphere_cast_radius = 20
-	local col_ray
+	local col_ray = nil
+	--Holds info for certain melee gimmicks (IE: Taser Shock, Psycho Knife Panic, ect)
 	local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
 	if melee_hit_ray then
 		col_ray = melee_hit_ray ~= true and melee_hit_ray or nil
@@ -940,7 +891,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		if hit_unit:character_damage() then
 			if bayonet_melee then
 				self._unit:sound():play("fairbairn_hit_body", nil, false)
-			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then
+			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 				self._unit:sound():play("melee_hit_gen", nil, false)
 			else
 				self:_play_melee_sound(melee_entry, "hit_body")
@@ -954,17 +905,13 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				})
 			end
 			self._camera_unit:base():play_anim_melee_item("hit_body")
-		elseif self._on_melee_restart_drill and hit_unit:base() and hit_unit:base().is_drill then
+		elseif self._on_melee_restart_drill and hit_unit:base() and (hit_unit:base().is_drill or hit_unit:base().is_saw) then
 			hit_unit:base():on_melee_hit(managers.network:session():local_peer():id())
 		else
 			if bayonet_melee then
 				self._unit:sound():play("knife_hit_gen", nil, false)
-			elseif special_weapon == "taser" then
-				if charge_lerp_value >= 0.99 then
-					self:_play_melee_sound(melee_entry, "hit_gen")
-				else
+			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.
 					self._unit:sound():play("melee_hit_gen", nil, false)
-				end
 			else
 				self:_play_melee_sound(melee_entry, "hit_gen")
 			end
@@ -975,12 +922,15 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				no_sound = true
 			})
 		end
-		if hit_unit:damage() and col_ray.body:extension() and col_ray.body:extension().damage then
+
+		--Out of date syncing method, reenable in case it was load bearing.
+		--[[if hit_unit:damage() and col_ray.body:extension() and col_ray.body:extension().damage then
 			col_ray.body:extension().damage:damage_melee(self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
 			if hit_unit:id() ~= -1 then
 				managers.network:session():send_to_peers_synched("sync_body_damage_melee", col_ray.body, self._unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
 			end
-		end
+		end]]
+
 		local custom_data = nil
 			
 		if _G.IS_VR then
@@ -1032,13 +982,14 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
 			end
 
+			--Do melee gimmick stuff. Might be worth it to use function references instead of branching later on if we get more of these.
 			local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 			local action_data = {}
 			action_data.variant = "melee"
 			if charge_lerp_value >= 0.99 then
-				if melee_weapon.special_weapon == "taser" then
+				if special_weapon == "taser" then
 					action_data.variant = "taser_tased"
-				elseif melee_weapon.special_weapon == "panic" then
+				elseif special_weapon == "panic" then
 					managers.player:spread_psycho_knife_panic()
 				end
 			end
@@ -1051,9 +1002,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			action_data.damage_effect = damage_effect
 			action_data.attacker_unit = self._unit
 			action_data.col_ray = col_ray
-			action_data.shield_knock = can_shield_knock
+			action_data.shield_knock = can_shield_knock --Silly vanilla code using branching when it doesn't need to.
 			action_data.name_id = melee_entry
 			action_data.charge_lerp_value = charge_lerp_value
+			--Damage multipliers for certain melees (IE: Butterfly Knife).
 			action_data.backstab_multiplier = melee_weapon.backstab_damage_multiplier or 1
 			action_data.headshot_multiplier = melee_weapon.headshot_damage_multiplier or 1
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
@@ -1070,7 +1022,11 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			end
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
 			self:_check_melee_dot_damage(col_ray, defense_data, melee_entry)
+			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage)
+
 			return defense_data
+		else
+			self:_perform_sync_melee_damage(hit_unit, col_ray, damage)
 		end
 	else
 	end
@@ -1084,6 +1040,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	return col_ray
 end
 
+--Now also returns steelsight information. Used for referencing spread values to give steelsight bonuses.
 function PlayerStandard:get_movement_state()
 	if self._state_data.in_steelsight then
 		return self._moving and "moving_steelsight" or "steelsight"
@@ -1096,10 +1053,13 @@ function PlayerStandard:get_movement_state()
 	end
 end
 
+--Initiate dodge stuff when player enters a state where they can begin dodging stuff.
+--Crashes here indicate syntax errors in playerdamage.
 Hooks:PostHook(PlayerStandard, "_enter", "ResDodgeInit", function(self, enter_data)
 	self._ext_damage:set_dodge_points()
 end)
 
+--Reload functions changed to allow for shotgun per-shell reloads to take ammo picked up over their duration into account.
 function PlayerStandard:_update_reload_timers(t, dt, input)
 	if self._state_data.reload_enter_expire_t and self._state_data.reload_enter_expire_t <= t then
 		self._state_data.reload_enter_expire_t = nil
@@ -1107,6 +1067,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		self:_start_action_reload(t)
 	end
 
+	--Moved earlier in function to avoid math on nil value.
 	local speed_multiplier = self._equipped_unit:base():reload_speed_multiplier()
 	
 	if self._state_data.reload_expire_t then
@@ -1118,7 +1079,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 			if self._queue_reload_interupt then
 				self._queue_reload_interupt = nil
 				interupt = true
-			elseif self._state_data.reload_expire_t <= t then --Update timers in case player total ammo would allow for more to be reloaded.
+			elseif self._state_data.reload_expire_t <= t then --Update timers in case player total ammo changes to allow for more to be reloaded.
 				self._state_data.reload_expire_t = t + (self._equipped_unit:base():reload_expire_t() or 2.2) / speed_multiplier
 			end
 		end
@@ -1230,12 +1191,14 @@ function PlayerStandard:_get_swap_speed_multiplier()
 	local weapon_tweak_data = self._equipped_unit:base():weapon_tweak_data()
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "swap_speed_multiplier", 1)
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_swap_speed_multiplier", 1)
-	multiplier = multiplier * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1]
+	multiplier = multiplier * tweak_data.weapon.stats.mobility[self._equipped_unit:base():get_concealment() + 1] --Get concealment bonus/penalty.
 
+	--Get per category multipliers (IE: Pistols swap faster, Akimbos swap slower, ect).
 	for _, category in ipairs(weapon_tweak_data.categories) do
 		multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", tweak_data[category] and tweak_data[category].swap_bonus or 1)
 	end
 
+	--Get per weapon multiplier.
 	multiplier = multiplier * (weapon_tweak_data.swap_speed_multiplier or 1)
 
 	multiplier = multiplier * managers.player:upgrade_value("team", "crew_faster_swap", 1)

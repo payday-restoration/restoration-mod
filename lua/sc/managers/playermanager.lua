@@ -595,6 +595,7 @@ function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 end
 
 --Get health damage reduction gained via skills.
+--Crashes mentioning this function mean that there is a syntax error in the file.
 function PlayerManager:get_deflection_from_skills()
 	--"""Upgrade"""
 	if self:has_category_upgrade("player", "no_deflection") then

@@ -25,7 +25,6 @@ function PlayerDamage:init(unit)
 
 	--Crimespree damage interval scaling
 	if Global.game_settings and Global.game_settings.incsmission then
-		log("Old Grace Period = " .. tostring(self._dmg_interval))
 		--Get crime spree level.
 		local crime_spree_level = 0
 		local grace_scaling = tweak_data.crime_spree.grace_scaling
@@ -40,7 +39,6 @@ function PlayerDamage:init(unit)
 		if crime_spree_level > grace_scaling.min_level then
 			self._dmg_interval = math.max(self._dmg_interval - math.floor((crime_spree_level - grace_scaling.min_level) / grace_scaling.level_interval) * grace_scaling.amount, 0)
 		end
-		log("EVIL Grace Period = " .. tostring(self._dmg_interval))
 	end
 
 	self._next_allowed_dmg_t = Application:digest_value(-100, true)
@@ -89,7 +87,7 @@ function PlayerDamage:init(unit)
 	self._keep_health_on_revive = false --Used for cloaker kicks and taser downs, stops reviving from changing player health.
 	self._biker_armor_regen_t = 0.0 --Used to track the time until the next biker armor regen tick.
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
-	self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0) - managers.player:get_deflection_from_skills() --Damage reduction for health.
+	self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0) - managers.player:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
 	self.tase_time = 0 --Titan Taser slow cooldown.
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
 
@@ -782,8 +780,8 @@ function PlayerDamage:_upd_health_regen(t, dt)
 		local max_health = self:_max_health()
 
 		if self:get_real_health() < max_health then
+			--No need to do health nonsense twice.
 			self:restore_health(managers.player:health_regen() * max_health + managers.player:fixed_health_regen(), true)
-
 			self._health_regen_update_timer = 4
 		end
 	end

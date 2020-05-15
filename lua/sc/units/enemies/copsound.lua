@@ -87,6 +87,8 @@ end
 function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	local line_array = { c01 = "contact",
 		c01x = "contact",
+		burnhurt = "burnhurt",
+		burndeath = "burndeath",
 		rrl = "reload",
 		gr1a = "spawn",
 		gr1b = "spawn",

@@ -887,6 +887,13 @@ function CopActionHurt:init(action_desc, common_data)
 					common_data.unit:sound():say("x02a_any_3p")
 				else
 					common_data.unit:sound():say("burndeath")
+	                if self._unit:base():char_tweak()["custom_voicework"] then
+	                	local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
+	                	if voicelines and voicelines["burndeath"] then
+	                		local line_to_use = voicelines.burndeath[math.random(#voicelines.burndeath)]
+	                		self._unit:base():play_voiceline(line_to_use, true)
+	                	end
+	                end
 				end
 			end
 		elseif action_type == "death" then

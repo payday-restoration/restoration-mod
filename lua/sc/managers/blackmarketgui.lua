@@ -569,6 +569,23 @@ end
 					name = "damage_shake"
 				}
 			}
+
+			Also add the following to the end off local BTNS
+			,
+			bm_modshop = {
+				prio = 5,
+				btn = "BTN_BACK",
+				pc_btn = "toggle_chat",
+				name = "gm_gms_purchase",
+				callback = callback(self, self, "modshop_purchase_mask_callback")
+			},
+			mp_modshop = {
+				prio = 5,
+				btn = "BTN_BACK",
+				pc_btn = "toggle_chat",
+				name = "gm_gms_purchase",
+				callback = callback(self, self, "modshop_purchase_mask_part_callback")
+			}
 ]]
 -- Or just add the name = "deflection" to the table somewhere if you don't care much for a logical layout.
 function BlackMarketGui:_setup(is_start_page, component_data)
@@ -1759,29 +1776,23 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				prio = 1,
 				name = "bm_menu_btn_unlock_crew_item",
 				callback = callback(self, self, "buy_crew_item_callback")
+			},
+			bm_modshop = {
+				prio = 5,
+				btn = "BTN_BACK",
+				pc_btn = "toggle_chat",
+				name = "gm_gms_purchase",
+				callback = callback(self, self, "modshop_purchase_mask_callback")
+			},
+			mp_modshop = {
+				prio = 5,
+				btn = "BTN_BACK",
+				pc_btn = "toggle_chat",
+				name = "gm_gms_purchase",
+				callback = callback(self, self, "modshop_purchase_mask_part_callback")
 			}
 		}
 
-		--[[
-			--Extended Continental Coin Shop Goonmod Standalone support
-			if GageModShop then
-				local bm_modshop = {
-					prio = 5,
-					btn = "BTN_BACK",
-					pc_btn = "toggle_chat",
-					name = "gm_gms_purchase",
-					callback = callback(self, self, "modshop_purchase_mask_callback")
-				}
-			
-				local mp_modshop = {
-					prio = 5,
-					btn = "BTN_BACK",
-					pc_btn = "toggle_chat",
-					name = "gm_gms_purchase",
-					callback = callback(self, self, "modshop_purchase_mask_part_callback")
-				}
-			end
-		]]
 		for btn, data in pairs(BTNS) do
 			data.callback = callback(self, self, "overridable_callback", {
 				button = btn,
@@ -5114,3 +5125,980 @@ function BlackMarketGui:update_info_text()
 		self._rename_caret:set_world_position(x + w, y)
 	end
 end
+
+
+-- Mod Shop Stuff
+Hooks:RegisterHook("BlackMarketGUIOnPopulateBuyMasks")
+Hooks:RegisterHook("BlackMarketGUIOnPopulateBuyMasksActionList")
+function BlackMarketGui.populate_buy_mask(self, data)
+
+	Hooks:Call("BlackMarketGUIOnPopulateBuyMasks", self, data)
+
+	local new_data = {}
+	local guis_catalog = "guis/"
+	local max_masks = #data.on_create_data
+
+	for i = 1, max_masks do
+		data[i] = nil
+	end
+
+	for i = 1, #data.on_create_data do
+
+		guis_catalog = "guis/"
+
+		local bundle_folder = tweak_data.blackmarket.masks[data.on_create_data[i].mask_id] and tweak_data.blackmarket.masks[data.on_create_data[i].mask_id].texture_bundle_folder
+		if bundle_folder then
+			guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
+		end
+
+		new_data = {}
+		new_data.name = data.on_create_data[i].mask_id
+		new_data.name_localized = managers.localization:text(tweak_data.blackmarket.masks[new_data.name].name_id)
+		new_data.category = data.category
+		new_data.slot = data.prev_node_data and data.prev_node_data.slot
+		new_data.global_value = data.on_create_data[i].global_value
+		new_data.unlocked = managers.blackmarket:get_item_amount(new_data.global_value, "masks", new_data.name, true) or 0
+		new_data.equipped = false
+		new_data.num_backs = data.prev_node_data.num_backs + 1
+		new_data.bitmap_texture = guis_catalog .. "textures/pd2/blackmarket/icons/masks/" .. new_data.name
+		new_data.stream = false
+
+		if not new_data.global_value then
+			Application:debug("BlackMarketGui:populate_buy_mask( data ) Missing global value on mask", new_data.name)
+		end
+
+		if tweak_data.lootdrop.global_values[new_data.global_value] and tweak_data.lootdrop.global_values[new_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(new_data.global_value) then
+			new_data.unlocked = -math.abs(new_data.unlocked)
+			new_data.lock_texture = self:get_lock_icon(new_data)
+			new_data.dlc_locked = tweak_data.lootdrop.global_values[new_data.global_value].unlock_id or "bm_menu_dlc_locked"
+		elseif managers.dlc:is_content_achievement_locked(data.category, new_data.name) or managers.dlc:is_content_achievement_milestone_locked(data.category, new_data.name) then
+			new_data.unlocked = -math.abs(new_data.unlocked)
+			new_data.lock_texture = "guis/textures/pd2/lock_achievement"
+		elseif managers.dlc:is_content_skirmish_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
+			new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
+		end
+
+		if tweak_data.blackmarket.masks[new_data.name].infamy_lock then
+
+			local infamy_lock = tweak_data.blackmarket.masks[new_data.name].infamy_lock
+			local is_unlocked = managers.infamy:owned(infamy_lock)
+			if not is_unlocked then
+				if type(new_data.unlocked) == "number" then
+					new_data.unlocked = -math.abs(new_data.unlocked)
+				end
+				new_data.lock_texture = "guis/textures/pd2/lock_infamy"
+				new_data.infamy_lock = infamy_lock
+			end
+
+		end
+
+		if new_data.unlocked and new_data.unlocked > 0 then
+
+			table.insert(new_data, "bm_buy")
+			table.insert(new_data, "bm_preview")
+			if 0 < managers.money:get_mask_sell_value(new_data.name, new_data.global_value) then
+				table.insert(new_data, "bm_sell")
+			end
+
+		else
+			table.insert(new_data, "bm_preview")
+			new_data.mid_text = ""
+			new_data.lock_texture = new_data.lock_texture or true
+
+		end
+
+		Hooks:Call("BlackMarketGUIOnPopulateBuyMasksActionList", self, new_data)
+
+		if managers.blackmarket:got_new_drop(new_data.global_value or "normal", "masks", new_data.name) then
+
+			new_data.mini_icons = new_data.mini_icons or {}
+			table.insert(new_data.mini_icons, {
+				name = "new_drop",
+				texture = "guis/textures/pd2/blackmarket/inv_newdrop",
+				right = 0,
+				top = 0,
+				layer = 1,
+				w = 16,
+				h = 16,
+				stream = false
+			})
+			new_data.new_drop_data = {
+				new_data.global_value or "normal",
+				"masks",
+				new_data.name
+			}
+
+		end
+
+		data[i] = new_data
+
+	end
+
+	local max_page = data.override_slots[1] * data.override_slots[2]
+	for i = 1, math.max(math.ceil(max_masks / data.override_slots[1]) * data.override_slots[1], max_page) do
+
+		if not data[i] then
+			new_data = {}
+			new_data.name = "empty"
+			new_data.name_localized = ""
+			new_data.category = data.category
+			new_data.slot = i
+			new_data.unlocked = true
+			new_data.equipped = false
+			data[i] = new_data
+		end
+
+	end
+
+end
+
+Hooks:RegisterHook("BlackMarketGUIOnPopulateMasks")
+Hooks:RegisterHook("BlackMarketGUIOnPopulateMasksActionList")
+function BlackMarketGui.populate_masks(self, data)
+
+	Hooks:Call("BlackMarketGUIOnPopulateMasks", self, data)
+
+	local NOT_WIN_32 = SystemInfo:platform() ~= Idstring("WIN32")
+	local GRID_H_MUL = (NOT_WIN_32 and 7 or 6.6) / 8
+
+	local new_data = {}
+	local crafted_category = managers.blackmarket:get_crafted_category("masks") or {}
+	local mini_icon_helper = math.round((self._panel:h() - (tweak_data.menu.pd2_medium_font_size + 10) - 60) * GRID_H_MUL / 3) - 16
+	local max_items = data.override_slots and data.override_slots[1] * data.override_slots[2] or 9
+	local start_crafted_item = data.start_crafted_item or 1
+	local hold_crafted_item = managers.blackmarket:get_hold_crafted_item()
+	local currently_holding = hold_crafted_item and hold_crafted_item.category == "masks"
+	local max_rows = tweak_data.gui.MAX_MASK_ROWS or 5
+	max_items = max_rows * (data.override_slots and data.override_slots[2] or 3)
+	for i = 1, max_items do
+		data[i] = nil
+	end
+
+	local guis_catalog = "guis/"
+	local index = 0
+	for i, crafted in pairs(crafted_category) do
+
+		index = i - start_crafted_item + 1
+		guis_catalog = "guis/"
+		local bundle_folder = tweak_data.blackmarket.masks[crafted.mask_id] and tweak_data.blackmarket.masks[crafted.mask_id].texture_bundle_folder
+		if bundle_folder then
+			guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
+		end
+
+		new_data = {}
+		new_data.name = crafted.mask_id
+		new_data.name_localized = managers.blackmarket:get_mask_name_by_category_slot("masks", i)
+		new_data.raw_name_localized = managers.localization:text(tweak_data.blackmarket.masks[new_data.name].name_id)
+		new_data.custom_name_text = managers.blackmarket:get_crafted_custom_name("masks", i, true)
+		new_data.custom_name_text_right = crafted.modded and -55 or -20
+		new_data.custom_name_text_width = crafted.modded and 0.6
+		new_data.category = "masks"
+		new_data.global_value = crafted.global_value
+		new_data.slot = i
+		new_data.unlocked = true
+		new_data.equipped = crafted.equipped
+		new_data.bitmap_texture = guis_catalog .. "textures/pd2/blackmarket/icons/masks/" .. new_data.name
+		new_data.stream = false
+		new_data.holding = currently_holding and hold_crafted_item.slot == i
+		local is_locked = tweak_data.lootdrop.global_values[new_data.global_value] and tweak_data.lootdrop.global_values[new_data.global_value].dlc and not managers.dlc:has_dlc(new_data.global_value)
+		local locked_parts = {}
+		if not is_locked then
+			for part, type in pairs(crafted.blueprint) do
+				if tweak_data.lootdrop.global_values[part.global_value] and tweak_data.lootdrop.global_values[part.global_value].dlc and not tweak_data.dlc[part.global_value].free and not managers.dlc:has_dlc(part.global_value) then
+					locked_parts[type] = part.global_value
+					is_locked = true
+				end
+			end
+		end
+
+		if is_locked then
+			new_data.unlocked = false
+			new_data.lock_texture = self:get_lock_icon(new_data, "guis/textures/pd2/lock_incompatible")
+			new_data.dlc_locked = tweak_data.lootdrop.global_values[new_data.global_value].unlock_id or "bm_menu_dlc_locked"
+		end
+
+		if currently_holding then
+			if i ~= 1 then
+				new_data.selected_text = managers.localization:to_upper_text("bm_menu_btn_swap_mask")
+			end
+
+			if i ~= 1 and new_data.slot ~= hold_crafted_item.slot then
+				table.insert(new_data, "m_swap")
+			end
+
+			table.insert(new_data, "i_stop_move")
+		else
+			if new_data.unlocked then
+				if not new_data.equipped then
+					table.insert(new_data, "m_equip")
+				end
+
+				if i ~= 1 and new_data.equipped then
+					table.insert(new_data, "m_move")
+				end
+
+				if not crafted.modded and managers.blackmarket:can_modify_mask(i) and i ~= 1 then
+					table.insert(new_data, "m_mod")
+				end
+
+				if i ~= 1 then
+					table.insert(new_data, "m_preview")
+				end
+
+			end
+
+			if i ~= 1 then
+				Hooks:Call("BlackMarketGUIOnPopulateMasksActionList", self, new_data)
+			end
+
+			if i ~= 1 then
+				if 0 < managers.money:get_mask_sell_value(new_data.name, new_data.global_value) then
+					table.insert(new_data, "m_sell")
+				else
+					table.insert(new_data, "m_remove")
+				end
+
+			end
+
+		end
+
+		if crafted.modded then
+			new_data.mini_icons = {}
+			local color_1 = tweak_data.blackmarket.colors[crafted.blueprint.color.id].colors[1]
+			local color_2 = tweak_data.blackmarket.colors[crafted.blueprint.color.id].colors[2]
+			table.insert(new_data.mini_icons, {
+				texture = false,
+				w = 16,
+				h = 16,
+				right = 0,
+				bottom = 0,
+				layer = 1,
+				color = color_2
+			})
+			table.insert(new_data.mini_icons, {
+				texture = false,
+				w = 16,
+				h = 16,
+				right = 18,
+				bottom = 0,
+				layer = 1,
+				color = color_1
+			})
+			if locked_parts.color then
+				local texture = self:get_lock_icon({
+					global_value = locked_parts.color
+				})
+				table.insert(new_data.mini_icons, {
+					texture = texture,
+					w = 32,
+					h = 32,
+					right = 2,
+					bottom = -5,
+					layer = 2,
+					color = tweak_data.screen_colors.important_1
+				})
+			end
+
+			local pattern = crafted.blueprint.pattern.id
+			if pattern == "solidfirst" or pattern == "solidsecond" then
+			else
+				local material_id = crafted.blueprint.material.id
+				guis_catalog = "guis/"
+				local bundle_folder = tweak_data.blackmarket.materials[material_id] and tweak_data.blackmarket.materials[material_id].texture_bundle_folder
+				if bundle_folder then
+					guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
+				end
+
+				local right = -3
+				local bottom = 38 - (NOT_WIN_32 and 20 or 10)
+				local w = 42
+				local h = 42
+				table.insert(new_data.mini_icons, {
+					texture = guis_catalog .. "textures/pd2/blackmarket/icons/materials/" .. material_id,
+					right = right,
+					bottom = bottom,
+					w = w,
+					h = h,
+					layer = 1,
+					stream = true
+				})
+				if locked_parts.material then
+					local texture = self:get_lock_icon({
+						global_value = locked_parts.material
+					})
+					table.insert(new_data.mini_icons, {
+						texture = texture,
+						w = 32,
+						h = 32,
+						right = right + (w - 32) / 2,
+						bottom = bottom + (h - 32) / 2,
+						layer = 2,
+						color = tweak_data.screen_colors.important_1
+					})
+				end
+
+			end
+
+			do
+				local right = -3
+				local bottom = math.round(mini_icon_helper - 6 - 6 - 42)
+				local w = 42
+				local h = 42
+				table.insert(new_data.mini_icons, {
+					texture = tweak_data.blackmarket.textures[pattern].texture,
+					right = right,
+					bottom = bottom,
+					w = h,
+					h = w,
+					layer = 1,
+					stream = true,
+					render_template = Idstring("VertexColorTexturedPatterns")
+				})
+				if locked_parts.pattern then
+					local texture = self:get_lock_icon({
+						global_value = locked_parts.pattern
+					})
+					table.insert(new_data.mini_icons, {
+						texture = texture,
+						w = 32,
+						h = 32,
+						right = right + (w - 32) / 2,
+						bottom = bottom + (h - 32) / 2,
+						layer = 2,
+						color = tweak_data.screen_colors.important_1
+					})
+				end
+
+			end
+
+			new_data.mini_icons.borders = true
+		elseif i ~= 1 and managers.blackmarket:can_modify_mask(i) and managers.blackmarket:got_new_drop("normal", "mask_mods", crafted.mask_id) then
+			new_data.mini_icons = new_data.mini_icons or {}
+			table.insert(new_data.mini_icons, {
+				name = "new_drop",
+				texture = "guis/textures/pd2/blackmarket/inv_newdrop",
+				right = 0,
+				top = 0,
+				layer = 1,
+				w = 16,
+				h = 16,
+				stream = false,
+				visible = true
+			})
+			new_data.new_drop_data = {}
+		end
+
+		data[index] = new_data
+
+	end
+
+	local can_buy_masks = true
+	for i = 1, max_items do
+		if not data[i] then
+			index = i + start_crafted_item - 1
+			can_buy_masks = managers.blackmarket:is_mask_slot_unlocked(i)
+			new_data = {}
+			if can_buy_masks then
+				new_data.name = "bm_menu_btn_buy_new_mask"
+				new_data.name_localized = managers.localization:text("bm_menu_empty_mask_slot")
+				new_data.mid_text = {}
+				new_data.mid_text.noselected_text = new_data.name_localized
+				new_data.mid_text.noselected_color = tweak_data.screen_colors.button_stage_3
+				if not currently_holding or not new_data.mid_text.noselected_text then
+				end
+
+				new_data.mid_text.selected_text = managers.localization:text("bm_menu_btn_buy_new_mask")
+				new_data.mid_text.selected_color = currently_holding and new_data.mid_text.noselected_color or tweak_data.screen_colors.button_stage_2
+				new_data.empty_slot = true
+				new_data.category = "masks"
+				new_data.slot = index
+				new_data.unlocked = true
+				new_data.equipped = false
+				new_data.num_backs = 0
+				new_data.cannot_buy = not can_buy_masks
+				if currently_holding then
+					if i ~= 1 then
+						new_data.selected_text = managers.localization:to_upper_text("bm_menu_btn_place_mask")
+					end
+
+					if i ~= 1 then
+						table.insert(new_data, "m_place")
+					end
+
+					table.insert(new_data, "i_stop_move")
+				else
+					table.insert(new_data, "em_buy")
+				end
+
+				if index ~= 1 and managers.blackmarket:got_new_drop(nil, "mask_buy", nil) then
+					new_data.mini_icons = new_data.mini_icons or {}
+					table.insert(new_data.mini_icons, {
+						name = "new_drop",
+						texture = "guis/textures/pd2/blackmarket/inv_newdrop",
+						right = 0,
+						top = 0,
+						layer = 1,
+						w = 16,
+						h = 16,
+						stream = false,
+						visible = false
+					})
+					new_data.new_drop_data = {}
+				end
+
+			else
+				new_data.name = "bm_menu_btn_buy_mask_slot"
+				new_data.name_localized = managers.localization:text("bm_menu_locked_mask_slot")
+				new_data.empty_slot = true
+				new_data.category = "masks"
+				new_data.slot = index
+				new_data.unlocked = true
+				new_data.equipped = false
+				new_data.num_backs = 0
+				new_data.lock_texture = "guis/textures/pd2/blackmarket/money_lock"
+				new_data.lock_color = tweak_data.screen_colors.button_stage_3
+				new_data.lock_shape = {
+					w = 32,
+					h = 32,
+					x = 0,
+					y = -32
+				}
+				new_data.locked_slot = true
+				new_data.dlc_locked = managers.experience:cash_string(managers.money:get_buy_mask_slot_price())
+				new_data.mid_text = {}
+				new_data.mid_text.noselected_text = new_data.name_localized
+				new_data.mid_text.noselected_color = tweak_data.screen_colors.button_stage_3
+				new_data.mid_text.is_lock_same_color = true
+				if currently_holding then
+					new_data.mid_text.selected_text = new_data.mid_text.noselected_text
+					new_data.mid_text.selected_color = new_data.mid_text.noselected_color
+					table.insert(new_data, "i_stop_move")
+				elseif managers.money:can_afford_buy_mask_slot() then
+					new_data.mid_text.selected_text = managers.localization:text("bm_menu_btn_buy_mask_slot")
+					new_data.mid_text.selected_color = tweak_data.screen_colors.button_stage_2
+					table.insert(new_data, "em_unlock")
+				else
+					new_data.mid_text.selected_text = managers.localization:text("bm_menu_cannot_buy_mask_slot")
+					new_data.mid_text.selected_color = tweak_data.screen_colors.important_1
+					new_data.dlc_locked = new_data.dlc_locked .. "  " .. managers.localization:to_upper_text("bm_menu_cannot_buy_mask_slot")
+					new_data.mid_text.lock_noselected_color = tweak_data.screen_colors.important_1
+					new_data.cannot_buy = true
+				end
+
+			end
+
+			data[i] = new_data
+		end
+
+	end
+
+end
+
+local populate_choose_mask_mod1 = BlackMarketGui.populate_choose_mask_mod
+Hooks:RegisterHook("BlackMarketGUIOnPopulateMaskMods")
+Hooks:RegisterHook("BlackMarketGUIOnPopulateMaskModsActionList")
+function BlackMarketGui.populate_choose_mask_mod(self, data)
+populate_choose_mask_mod1(self, data)
+	Hooks:Call("BlackMarketGUIOnPopulateMaskMods", self, data)
+
+	local new_data = {}
+	local index = 1
+	local equipped_mod = managers.blackmarket:customize_mask_category_id(data.category)
+	local guis_catalog = "guis/"
+	local type_func = type
+
+	for k, mods in pairs(data.on_create_data) do
+
+		guis_catalog = "guis/"
+		local bundle_folder = tweak_data.blackmarket[data.category][mods.id] and tweak_data.blackmarket[data.category][mods.id].texture_bundle_folder
+		if bundle_folder then
+			guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
+		end
+
+		new_data = {}
+		new_data.name = mods.id
+		new_data.name_localized = managers.localization:text(tweak_data.blackmarket[data.category][new_data.name].name_id)
+		new_data.category = data.category
+		new_data.slot = index
+		new_data.prev_slot = data.prev_node_data and data.prev_node_data.slot
+		new_data.unlocked = mods.default or mods.amount
+		new_data.amount = mods.amount or 0
+		new_data.equipped = equipped_mod == mods.id
+		new_data.equipped_text = managers.localization:text("bm_menu_chosen")
+		new_data.mods = mods
+		new_data.stream = data.category ~= "colors"
+		new_data.global_value = mods.global_value
+		local is_locked = false
+		if new_data.amount < 1 and mods.id ~= "plastic" and mods.id ~= "no_color_full_material" and not mods.free_of_charge then
+			if type(new_data.unlocked) == "number" then
+				new_data.unlocked = -math.abs(new_data.unlocked)
+			end
+			new_data.lock_texture = true
+			new_data.dlc_locked = "bm_menu_amount_locked"
+			is_locked = true
+		end
+		if new_data.unlocked and type_func(new_data.unlocked) == "number" and tweak_data.lootdrop.global_values[new_data.global_value] and tweak_data.lootdrop.global_values[new_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(new_data.global_value) then
+			new_data.unlocked = -math.abs(new_data.unlocked)
+			new_data.lock_texture = self:get_lock_icon(new_data)
+			new_data.dlc_locked = tweak_data.lootdrop.global_values[new_data.global_value].unlock_id or "bm_menu_dlc_locked"
+			is_locked = true
+		end
+		if data.category == "colors" then
+			new_data.bitmap_texture = "guis/textures/pd2/blackmarket/icons/colors/color_bg"
+			new_data.extra_bitmaps = {}
+			table.insert(new_data.extra_bitmaps, "guis/textures/pd2/blackmarket/icons/colors/color_02")
+			table.insert(new_data.extra_bitmaps, "guis/textures/pd2/blackmarket/icons/colors/color_01")
+			new_data.extra_bitmaps_colors = {}
+			table.insert(new_data.extra_bitmaps_colors, tweak_data.blackmarket.colors[new_data.name].colors[2])
+			table.insert(new_data.extra_bitmaps_colors, tweak_data.blackmarket.colors[new_data.name].colors[1])
+		elseif data.category == "textures" then
+			new_data.bitmap_texture = tweak_data.blackmarket[data.category][mods.id].texture
+			new_data.render_template = Idstring("VertexColorTexturedPatterns")
+		else
+			new_data.bitmap_texture = guis_catalog .. "textures/pd2/blackmarket/icons/" .. tostring(data.category) .. "/" .. new_data.name
+			if mods.bitmap_texture_override then
+				new_data.bitmap_texture = guis_catalog .. "textures/pd2/blackmarket/icons/" .. tostring(data.category) .. "/" .. mods.bitmap_texture_override
+			end
+		end
+
+		if managers.blackmarket:got_new_drop(new_data.global_value or "normal", new_data.category, new_data.name) then
+			new_data.mini_icons = new_data.mini_icons or {}
+			table.insert(new_data.mini_icons, {
+				name = "new_drop",
+				texture = "guis/textures/pd2/blackmarket/inv_newdrop",
+				right = 0,
+				top = 0,
+				layer = 1,
+				w = 16,
+				h = 16,
+				stream = false
+			})
+			new_data.new_drop_data = {
+				new_data.global_value or "normal",
+				new_data.category,
+				new_data.name
+			}
+		end
+
+		new_data.btn_text_params = {
+			type = managers.localization:text("bm_menu_" .. data.category)
+		}
+		if not is_locked then
+
+			table.insert(new_data, "mp_choose")
+			table.insert(new_data, "mp_preview")
+
+		end
+
+		if managers.blackmarket:can_finish_customize_mask() and managers.blackmarket:can_afford_customize_mask() then
+			table.insert(new_data, "mm_buy")
+		end
+
+		Hooks:Call("BlackMarketGUIOnPopulateMaskModsActionList", self, new_data)
+
+		data[index] = new_data
+		index = index + 1
+
+	end
+
+	if #data == 0 then
+		new_data = {}
+		new_data.name = "bm_menu_nothing"
+		new_data.empty_slot = true
+		new_data.category = data.category
+		new_data.slot = 1
+		new_data.unlocked = true
+		new_data.can_afford = true
+		new_data.equipped = false
+		data[1] = new_data
+	end
+
+	local max_mask_mods = #data.on_create_data
+	for i = 1, math.ceil(max_mask_mods / data.override_slots[1]) * data.override_slots[1] do
+		if not data[i] then
+			new_data = {}
+			new_data.name = "empty"
+			new_data.name_localized = ""
+			new_data.category = data.category
+			new_data.slot = i
+			new_data.unlocked = true
+			new_data.equipped = false
+			data[i] = new_data
+		end
+
+	end
+
+end
+
+BlackMarketGui.modshop_purchase_mask_callback = function(self, data)
+	ModShop:AttemptItemPurchase( data )
+end
+
+BlackMarketGui.modshop_purchase_mask_part_callback = function(self, data)
+	ModShop:AttemptItemPurchase( data )
+end
+
+_G.ModShop = _G.ModShop or {}
+
+ModShop.PurchaseCurrency = "gage_coin"
+ModShop.CostRegular = 6
+ModShop.CostInfamous = 24
+ModShop.MaskPricing = {
+	["default"] = 6,
+	["dlc"] = 6,
+	["normal"] = 6,
+	["pd2_clan"] = 6,
+	["halloween"] = 12,
+	["infamous"] = 24,
+	["infamy"] = 24,
+}
+
+ModShop.ExclusionList = {
+	["nothing"] = true,
+	["no_material"] = true,
+	["no_color_no_material"] = true,
+	["no_color_full_material"] = true,
+	["plastic"] = true,
+	["character_locked"] = true,
+}
+
+ModShop.NonDLCGlobalValues = {
+	["normal"] = true,
+	["pd2_clan"] = true,
+	["halloween"] = true,
+	["infamous"] = true,
+	["infamy"] = true,
+}
+
+ModShop.MaskMods = {
+	["materials"] = true,
+	["textures"] = true,
+	["colors"] = true,
+}
+
+ModShop.NamePriceOverrides = {
+	["wpn_fps_upg_bonus_"] = 12,
+}
+
+function ModShop:IsItemExluded( item )
+	return ModShop.ExclusionList[item] or false
+end
+
+function ModShop:IsGlobalValueDLC( gv )
+	if not ModShop.NonDLCGlobalValues[gv] then
+		return true
+	end
+	return false
+end
+
+function ModShop:IsInfamyLocked( data )
+
+	local infamy_lock = data.tweak_data.infamy_lock
+	if infamy_lock then
+		local is_unlocked = managers.infamy:owned(infamy_lock)
+		if not is_unlocked then
+			return true
+		end
+	end
+
+	return false
+
+end
+
+function ModShop:IsItemMaskMod( item )
+	return ModShop.MaskMods[item.category] or false
+end
+
+function ModShop:GetItemPrice( data )
+
+	if data.category == "masks" then
+		local gv = self:IsGlobalValueDLC( data.global_value ) and "dlc" or data.global_value
+		return ModShop.MaskPricing[ gv ]
+	end
+
+	if data.global_value == "infamy" or data.global_value == "infamous" then
+		return ModShop.CostInfamous
+	end
+
+	for pattern, cost_override in pairs(self.NamePriceOverrides) do
+		if data.name and string.find(data.name, pattern) then
+			return cost_override
+		end
+	end
+
+	return ModShop.CostRegular
+
+end
+
+function ModShop:_ReloadBlackMarket()
+	local blackmarket_gui = managers.menu_component._blackmarket_gui
+	if blackmarket_gui then
+		blackmarket_gui:reload()
+		blackmarket_gui:on_slot_selected( blackmarket_gui._selected_slot )
+	end
+end
+
+function ModShop:AttemptItemPurchase( data, weapon_part )
+
+	if not data then
+		return
+	end
+
+	local verified, purchase_data = self:VerifyItemPurchase( data, weapon_part )
+	if verified then
+		if purchase_data.price <= managers.custom_safehouse:coins() then
+			self:ShowItemPurchaseMenu( purchase_data )
+		else
+			self:ShowItemCannotAffordMenu( purchase_data )
+		end
+	end
+
+end
+
+function ModShop:VerifyItemPurchase( data, weapon_part )
+
+	if not data then
+		return
+	end
+
+	local name = data.name
+	local category = weapon_part and "parts" or data.category
+
+	local entry
+	if weapon_part then
+		entry = tweak_data:get_raw_value("weapon", "factory", category, name)
+	else
+		entry = tweak_data:get_raw_value("blackmarket", category, name)
+	end
+
+	if not entry then
+		local str = "[Error] Could not retrieve tweak_data for {1} item '{2}', weapon_part: {3}"
+		str = str:gsub("{1}", tostring(category))
+		str = str:gsub("{2}", tostring(name))
+		str = str:gsub("{3}", tostring(weapon_part or false))
+		Print(str)
+		return
+	end
+
+	local global_value = entry.infamous and "infamous" or entry.global_value or entry.dlc or entry.dlcs and entry.dlcs[math.random(#entry.dlcs)] or "normal"
+	local purchase_data = {
+		name = data.name,
+		name_localized = data.name_localized,
+		category = weapon_part and "weapon_mods" or data.category,
+		is_weapon_part = weapon_part,
+		bitmap_texture = data.bitmap_texture,
+		global_value = global_value,
+		tweak_data = entry,
+		price = 1,
+	}
+	purchase_data.price = self:GetItemPrice( purchase_data )
+
+	if self:IsItemExluded( purchase_data.name ) then
+		return false
+	end
+
+	if self:IsGlobalValueDLC( purchase_data.global_value ) and not managers.dlc:is_dlc_unlocked( purchase_data.global_value ) then
+		return false
+	end
+
+	if self:IsInfamyLocked( purchase_data ) then
+		return false
+	end
+
+	if managers.dlc:is_content_achievement_locked(data.category, purchase_data.name) or managers.dlc:is_content_achievement_milestone_locked(data.category, purchase_data.name) then
+		return false
+	elseif managers.dlc:is_content_skirmish_locked(data.category, purchase_data.name) and (not data.unlocked or data.unlocked == 0) then
+		return false
+	end
+
+	for k, v in pairs( tweak_data.dlc ) do
+		if v.achievement_id ~= nil and v.content ~= nil and v.content.loot_drops ~= nil then
+			for i, loot in pairs( v.content.loot_drops ) do
+				if loot.item_entry ~= nil and loot.item_entry == purchase_data.name and loot.type_items == purchase_data.category then
+
+					if not managers.achievment.handler:has_achievement(v.achievement_id) then
+
+						local achievement_tracker = tweak_data.achievement[ purchase_data.is_weapon_part and "weapon_part_tracker" or "mask_tracker" ]
+						local achievement_progress = achievement_tracker[purchase_data.name]
+						if achievement_progress then
+							return false
+						end
+
+						if not purchase_data.is_weapon_part then
+							return false
+						end
+						
+					end
+
+				end
+			end
+		end
+	end
+
+	if purchase_data.tweak_data.is_a_unlockable then
+		return false
+	end
+
+	return true, purchase_data
+
+end
+
+function ModShop:ShowItemPurchaseMenu( purchase_data )
+
+	local currency_name = "menu_cs_coins"
+	local title = managers.localization:text("gm_gms_purchase_window_title")
+	local message = managers.localization:text("gm_gms_purchase_window_message")
+	message = message:gsub("{1}", purchase_data.name_localized)
+	message = message:gsub("{2}", tostring(purchase_data.price))
+	message = message:gsub("{3}", managers.localization:text(currency_name) .. (purchase_data.price > 1 and ""))
+
+	local dialog_data = {}
+	dialog_data.title = title
+	dialog_data.text = message
+	dialog_data.id = "gms_purchase_item_window"
+
+	local ok_button = {}
+	ok_button.text = managers.localization:text("dialog_yes")
+	ok_button.callback_func = callback( self, self, "_PurchaseItem", purchase_data )
+
+	local cancel_button = {}
+	cancel_button.text = managers.localization:text("dialog_no")
+	cancel_button.cancel_button = true
+
+	dialog_data.button_list = {ok_button, cancel_button}
+	dialog_data.purchase_data = purchase_data
+	managers.system_menu:show( dialog_data )
+
+end
+
+function ModShop:ShowItemCannotAffordMenu( purchase_data )
+
+	local currency_name = "menu_cs_coins"
+	local title = managers.localization:text("gm_gms_purchase_failed")
+	local message = managers.localization:text("gm_gms_cannot_afford_message")
+	message = message:gsub("{1}", purchase_data.name_localized)
+	message = message:gsub("{2}", tostring(purchase_data.price))
+	message = message:gsub("{3}", managers.localization:text(currency_name) .. (purchase_data.price > 1 and ""))
+
+	local dialog_data = {}
+	dialog_data.title = title
+	dialog_data.text = message
+	dialog_data.id = "gms_purchase_item_window"
+
+	local cancel_button = {}
+	cancel_button.text = managers.localization:text("dialog_ok")
+	cancel_button.cancel_button = true
+
+	dialog_data.button_list = { cancel_button }
+	managers.system_menu:show( dialog_data )
+
+end
+
+
+function ModShop:_PurchaseItem( purchase_data )
+
+	if not purchase_data then
+		return
+	end
+
+	local name = purchase_data.name
+	local category = purchase_data.category
+	local global_value = purchase_data.global_value
+	local price = purchase_data.price
+
+	log(string.format( "Purchased item with continental coins:\n\tItem name: %s\n\tCategory: %s", tostring(name), tostring(category) ))
+	managers.blackmarket:add_to_inventory(global_value, category, name, true)
+
+	managers.custom_safehouse:deduct_coins( price )
+
+	-- Record mask mods that were purchased so we can immediately add them to the gui when it reloads
+	if self:IsItemMaskMod( purchase_data ) then
+		self._purchased_mask_mods = ModShop._purchased_mask_mods or {}
+		self._purchased_mask_mods[category] = self._purchased_mask_mods[category] or {}
+		table.insert(self._purchased_mask_mods[category], name)
+	end
+
+	self:_ReloadBlackMarket()
+	if Global.wallet_panel then
+		WalletGuiObject.refresh()
+	end
+
+end
+
+-- Hooks
+Hooks:Add("BlackMarketGUIOnPopulateBuyMasksActionList", "BlackMarketGUIOnPopulateBuyMasksActionList_", function(gui, data)
+	if ModShop:VerifyItemPurchase( data, false ) then
+		table.insert(data, "bm_modshop")
+	end
+end)
+
+Hooks:Add("BlackMarketGUIOnPopulateMaskModsActionList", "BlackMarketGUIOnPopulateMaskModsActionList_", function(gui, data)
+	if ModShop:VerifyItemPurchase( data, false ) then
+		table.insert(data, "mp_modshop")
+	end
+end)
+
+Hooks:Add("BlackMarketGUIOnPopulateMaskMods", "BlackMarketGUIOnPopulateMaskMods_", function(gui, data)
+
+	local category = data.category
+
+	-- If we've purchased an item from this category then forcefully add that item when we force reload the gui
+	-- That way we don't have to stop customizing the mask and reload the gui for it to appear anymore
+	if data.on_create_data and ModShop._purchased_mask_mods and ModShop._purchased_mask_mods[category] then
+
+		for k, v in pairs( ModShop._purchased_mask_mods[category] ) do
+
+			for i, mods in pairs(data.on_create_data) do
+				if mods.id == v then
+					mods.amount = mods.amount + 1
+				end
+			end
+
+		end
+
+		ModShop._purchased_mask_mods[category] = nil
+
+		-- Search compatibility, repopulate our inventory and then re-filter it
+		if gui._search_bar and gui._search_bar:has_search() then
+			gui._search_bar:do_search()
+		end
+
+	end
+
+end)
+
+Hooks:Add("BlackMarketManagerModifyGetInventoryCategory", "BlackMarketManagerModifyGetInventoryCategory_", function(blackmarket, category, data)
+
+	local blackmarket_table = {}
+	for k, v in pairs( tweak_data.blackmarket[category] ) do
+
+		local already_in_table = blackmarket_table[v.id]
+		for x, y in pairs( data ) do
+			blackmarket_table[y.id] = true
+			if y.id == k then
+				already_in_table = true
+			end
+		end
+
+		local global_value = v.infamous and "infamous" or v.global_value or v.dlc or v.dlcs and v.dlcs[math.random(#v.dlcs)] or "normal"
+		if not already_in_table and not ModShop:IsItemExluded(k) then
+			
+			local add_item = true
+			if ModShop:IsGlobalValueDLC( global_value ) and not managers.dlc:is_dlc_unlocked( global_value ) then
+				add_item = false
+			end
+
+			if add_item then
+				local item_data = {
+					id = k,
+					global_value = global_value,
+					amount = 0
+				}
+				table.insert(data, item_data)
+			end
+
+		end
+		
+	end
+
+end)

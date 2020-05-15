@@ -565,6 +565,13 @@
 	"color_plus" : "E3 PAYDAY+",
 	"color_rvd1" : "Inverted",
 	"color_e3nice" : "E3 Nice",
-	"color_force" : "E3 BHD"
+	"color_force" : "E3 BHD",
+
+	"gm_gms_purchase" : "Purchase with Continental Coins",
+	"gm_gms_purchase_window_title" : "Are you sure?",
+	"gm_gms_purchase_window_message" : "Do you really want to buy '{1}'?\n\nIt will cost you {2} {3}.",
+	"gm_gms_purchase_failed" : "Cannot Purchase",
+	"gm_gms_free_of_charge_message" : "{1} is free of charge and can be applied to as many weapons as you wish.",
+	"gm_gms_cannot_afford_message" : "You cannot purchase {1}, as you do not have enough {3} to afford it. To purchase {1}, you need {2} {3}"
 		
 }

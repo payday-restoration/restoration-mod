@@ -6137,8 +6137,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flamethrower_mk2.timers.reload_empty = 7.7
 	self.flamethrower_mk2.rays = 9
 	self.flamethrower_mk2.CLIP_AMMO_MAX = 60
-	self.flamethrower_mk2.AMMO_MAX = 150
-	self.flamethrower_mk2.AMMO_PICKUP = self:_pickup_chance(150, 2)
+	self.flamethrower_mk2.AMMO_MAX = 120
+	self.flamethrower_mk2.AMMO_PICKUP = self:_pickup_chance(120, 2)
 	self.flamethrower_mk2.fire_mode_data.fire_rate = 0.1
 	self.flamethrower_mk2.auto = {}
 	self.flamethrower_mk2.auto.fire_rate = 0.1
@@ -9118,8 +9118,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.system.timers.reload_empty = 8
 	self.system.rays = 9
 	self.system.CLIP_AMMO_MAX = 35
-	self.system.AMMO_MAX = 75
-	self.system.AMMO_PICKUP = self:_pickup_chance(75, 1)
+	self.system.AMMO_MAX = 60
+	self.system.AMMO_PICKUP = self:_pickup_chance(60, 1)
 	self.system.fire_mode_data.fire_rate = 0.1
 	self.system.auto = {}
 	self.system.auto.fire_rate = 0.1

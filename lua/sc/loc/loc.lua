@@ -1186,7 +1186,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
-		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##8%## accuracy boost for ##6## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nNote: This extra accuracy does not increase shotgun range.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##8## seconds, and all pistol hits refresh the duration.",																																																																																																																																																																																																																																		
+		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##8%## accuracy boost for ##6## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##8## seconds, and all pistol hits refresh the duration.",																																																																																																																																																																																																																																		
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "Trigger Happy",

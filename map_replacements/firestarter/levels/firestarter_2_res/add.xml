@@ -282,13 +282,6 @@
 	<texture path="levels/mods/firestarter_2_res/cube_lights/100766"/>
 	<texture path="levels/mods/firestarter_2_res/cube_lights/101696"/>
 	<texture path="levels/mods/firestarter_2_res/cube_lights/106025"/>
-	<add path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" type="unit">
-		<bnk force="true" path="soundbanks/regular_sfx" unload="true"/>
-		<material_config force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
-		<object force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
-		<sequence_manager force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
-		<unit force="true" path="units/payday2/props/bnk_prop_security_keybox/bnk_prop_security_keybox" unload="true"/>
-	</add>
 	<add path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" type="unit">
 		<material_config force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" unload="true"/>
 		<object force="true" path="units/pd2_dlc_arena/architecture/are_supply_room_02/are_supply_room_02" unload="true"/>
@@ -363,16 +356,6 @@
 		<material_config force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
 		<object force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
 		<unit force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
-	</add>
-	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" type="unit">
-		<material_config force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
-		<object force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
-	</add>
-	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" type="unit">
-		<material_config force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
-		<object force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
-		<unit force="true" path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
 	</add>
 	<add path="units/payday2/equipment/gen_interactable_pickup_harddrive/gen_interactable_pickup_harddrive" type="unit">
 		<material_config force="true" path="units/payday2/equipment/gen_interactable_pickup_harddrive/gen_interactable_pickup_harddrive" unload="true"/>
@@ -548,9 +531,6 @@
 		<unit force="true" path="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_a" unload="true"/>
 	</add>
 	<add path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" type="unit">
-		<unit force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
-		<object force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
-		<material_config force="true" path="units/payday2/architecture/hcm/hcm_str_glass" unload="true"/>
 		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_df" unload="true"/>
 		<texture force="true" path="environments/cubemaps/cubemap_quick_diamond_ext" unload="true"/>
 		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_nm" unload="true"/>
@@ -558,5 +538,8 @@
 		<texture force="true" path="units/payday2/architecture/hcm/hcm_ext_01_glass_df" unload="true"/>
 		<texture force="true" path="units/payday2/architecture/str/str_01_df" unload="true"/>
 		<texture force="true" path="units/payday2/architecture/str/str_01_nm" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/hcm/hcm_str_glass" unload="true"/>
+		<object force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
 	</add>
 </table>

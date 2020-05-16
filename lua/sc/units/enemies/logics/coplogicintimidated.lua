@@ -1,5 +1,3 @@
---[[
-
 function CopLogicIntimidated._do_tied(data, aggressor_unit)
 	local my_data = data.internal_data
 	aggressor_unit = alive(aggressor_unit) and aggressor_unit
@@ -57,5 +55,3 @@ function CopLogicIntimidated._do_tied(data, aggressor_unit)
 
 	managers.groupai:state():on_criminal_suspicion_progress(nil, data.unit, nil)
 end
-
-]]--

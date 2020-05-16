@@ -1,5 +1,3 @@
---[[
-
 function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 	local surrender = false
 	local my_data = data.internal_data
@@ -56,6 +54,8 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 
 	return surrender
 end
+
+--[[
 
 --harass enemy priority changes
 function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_func)

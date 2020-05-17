@@ -935,27 +935,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		recoil = -1,
 		concealment = -1
 	}
-	self.parts.wpn_fps_m4_upper_reciever_edge.override = {
-		wpn_fps_amcar_bolt_standard = {
-			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_bolt_edge"
-		},
-		wpn_fps_amcar_uupg_body_upperreciever = {
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"			
-		},
-		wpn_fps_m4_upper_reciever_round_vanilla = {
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"			
-		},
-		wpn_fps_ass_m16_os_frontsight = {
-			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"		
-		},
-		wpn_fps_amcar_uupg_fg_amcar = {
-			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail",
-			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_rail"			
-		}		
-	}
 		
 	--(CAR) Long Barrel
 	self.parts.wpn_fps_m4_uupg_b_long.pcs = {

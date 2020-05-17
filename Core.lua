@@ -154,6 +154,20 @@ function restoration:Init()
 		"roberts_v2",
 		"santa_pain"
 	}	
+	--For heists that we want to have keep their normal PONR timers regardless of pro job or not
+	restoration.always_ponr = {
+		"escape_cafe_day",
+		"escape_park_day",
+		"escape_cafe",
+		"escape_park",
+		"escape_street",
+		"escape_overpass",
+		"escape_overpass_night",
+		"escape_garage",
+		"chew",
+		--Custom Heists--
+		"chew_res" --Biker Day 2 Resmod Edit
+	}		
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	

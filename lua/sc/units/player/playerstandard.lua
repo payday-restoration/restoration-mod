@@ -41,6 +41,7 @@ function PlayerStandard:set_night_vision_state(state)
 	self._state_data.night_vision_active = state
 end	
 
+--If anyone knows why this is here, please explain. 2 scared to touch it.
 local add_unit_to_char_table_old = PlayerStandard._add_unit_to_char_table
 function PlayerStandard:_add_unit_to_char_table(char_table, unit, unit_type, ...)
 	if unit_type ~= 3 or unit:base()._detection_delay or (Network:is_client() and unit:base().cam_disabled ~= true) then
@@ -147,7 +148,7 @@ function PlayerStandard:_check_action_interact(t, input,...)
 end
 
 function PlayerStandard:_start_action_intimidate(t, secondary)
-	if not self._intimidate_t or t - self._intimidate_t > tweak_data.player.movement_state.interaction_delay then
+	if not self._intimidate_t or tweak_data.player.movement_state.interaction_delay < t - self._intimidate_t then
 		local skip_alert = managers.groupai:state():whisper_mode()
 		local voice_type, plural, prime_target = self:_get_unit_intimidation_action(not secondary, not secondary, true, false, true, nil, nil, nil, secondary)
 		if prime_target and prime_target.unit and prime_target.unit.base and (prime_target.unit:base().unintimidateable or prime_target.unit:anim_data() and prime_target.unit:anim_data().unintimidateable) then

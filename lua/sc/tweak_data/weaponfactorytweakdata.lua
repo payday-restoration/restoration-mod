@@ -919,282 +919,157 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 
 end)
 
-function WeaponFactoryTweakData:_init_m4()
-	self.parts.wpn_fps_m4_lower_reciever = {
-		type = "lower_reciever",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_lower_reciever",
-		stats = {value = 1}
+--CAR-4
+Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
+
+	--Exotique Receiver
+	self.parts.wpn_fps_m4_upper_reciever_edge.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_m4_upper_reciever_edge = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "upper_reciever",
-		name_id = "bm_wp_m4_upper_reciever_edge",
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_edge",
-		stats = {
-			value = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		forbids = {
-			"wpn_fps_m4_upper_reciever_round_vanilla",
-			"wpn_fps_amcar_uupg_body_upperreciever"
-		},
-		animations = {},
-		override = {wpn_fps_amcar_bolt_standard = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_bolt_edge"}}
+	self.parts.wpn_fps_m4_upper_reciever_edge.stats = {
+		value = 1,
+		spread = 1,
+		recoil = -1,
+		concealment = -1
 	}
-	self.parts.wpn_fps_m4_upper_reciever_round = {
-		type = "upper_reciever",
-		name_id = "bm_wp_m4_upper_reciever_round",
-		a_obj = "a_body",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_upper_reciever_round",
-		stats = {value = 1},
-		override = {wpn_fps_amcar_bolt_standard = {unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_bolt_round"}}
+	
+	--(CAR) Long Barrel
+	self.parts.wpn_fps_m4_uupg_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_m4_uupg_b_long = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_m4_uupg_b_long",
-		a_obj = "a_b",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long",
-		stats = {
-			value = 4,			
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}
+	self.parts.wpn_fps_m4_uupg_b_long.stats = {
+		value = 4,			
+		spread = 1,
+		recoil = -1,
+		concealment = -1
 	}
-	self.parts.wpn_fps_m4_uupg_b_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_m4_uupg_b_short",
-		a_obj = "a_b",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_short",
-		stats = {
-			value = 4,					
-			spread = -1,
-			concealment = 1
-		}
+
+	--(CAR) Short Barrel
+	self.parts.wpn_fps_m4_uupg_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_m4_uupg_b_medium = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_m4_uupg_b_medium",
-		a_obj = "a_b",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_medium",
-		stats = {
-			value = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}
+	self.parts.wpn_fps_m4_uupg_b_short.stats = {
+		value = 4,					
+		spread = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_m4_uupg_b_sd = {
-		pcs = {
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		sub_type = "silencer",
-		name_id = "bm_wp_m4_uupg_b_sd",
-		a_obj = "a_b",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_sd",
-		stats = {
-			value = 10,
-			suppression = 10,
-			alert_size = 10,
-			spread = -1,
-			recoil = 1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_c"
-		},
-		forbids = {
-			"wpn_fps_m4_uupg_fg_rail_ext",
-			"wpn_fps_upg_ns_ass_smg_large",
-			"wpn_fps_upg_ns_ass_smg_medium",
-			"wpn_fps_upg_ns_ass_smg_small",
-			"wpn_fps_upg_ns_ass_smg_firepig",
-			"wpn_fps_upg_ns_ass_smg_stubby",
-			"wpn_fps_upg_ns_ass_smg_tank",
-			"wpn_fps_upg_ass_ns_jprifles",
-			"wpn_fps_upg_ass_ns_linear",
-			"wpn_fps_upg_ass_ns_surefire",
-			"wpn_fps_upg_ass_ns_battle",
-			"wpn_fps_upg_ns_ass_smg_v6"
-		}
+
+	--(CAR) Medium Barrel
+	self.parts.wpn_fps_m4_uupg_b_medium.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_m4_uupg_fg_lr300 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "foregrip",
-		name_id = "bm_wp_m4_uupg_fg_lr300",
-		a_obj = "a_fg",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_lr300",
-		stats = {
-			value = 5,
-			concealment = -1,
-			recoil = -1,
-			spread = 1
-		}
+	self.parts.wpn_fps_m4_uupg_b_medium.stats = {
+		value = 1,
+		spread = 1,
+		recoil = -1,
+		concealment = -1
 	}
-	self.parts.wpn_fps_m4_uupg_fg_rail = {
-		type = "foregrip",
-		name_id = "bm_wp_m4_uupg_fg_rail",
-		a_obj = "a_fg",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail",
-		stats = {value = 1},
-		adds = {
-			"wpn_fps_m4_uupg_fg_rail_ext"
-		},
-		forbids = {
-			"wpn_fps_addon_ris"
-		}
+	
+	--(CAR) Stealth Barrel
+	self.parts.wpn_fps_m4_uupg_b_sd.pcs = {
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_m4_uupg_m_std = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "magazine",
-		name_id = "bm_wp_upg_mil_sc",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		has_description = false,
-		desc_id = "bm_wp_upg_mil_desc",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_m_std",
-		stats = {
-			value = 1,
-			extra_ammo = 10,
-			reload = -2,
-			concealment = -1
-		},
-		forbids = {
-			"wpn_fps_upg_m4_m_straight_vanilla"
-		}
+	self.parts.wpn_fps_m4_uupg_b_sd.stats = {
+		value = 10,
+		suppression = 10,
+		alert_size = 10,
+		spread = -1,
+		recoil = 1
 	}
-	self.parts.wpn_fps_m4_uupg_s_fold = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_m4_uupg_s_fold",
-		a_obj = "a_s",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_s_fold",
-		stats = {
-			value = 5,
-			recoil = -1,
-			concealment = 1
-		}
+	self.parts.wpn_fps_m4_uupg_b_sd.perks = {"silencer"}
+	
+	--Aftermarket Special Handguard
+	self.parts.wpn_fps_m4_uupg_fg_lr300.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_m4_uupg_o_flipup = {
-		type = "sight",
-		name_id = "bm_wp_m4_uupg_o_flipup",
-		a_obj = "a_o",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_o_flipup",
-		stats = {value = 1},
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds",
-			"wpn_fps_upg_o_45rds_v2",
-			"wpn_fps_upg_o_sig",
-			"wpn_fps_upg_o_45steel"				
-		}
+	self.parts.wpn_fps_m4_uupg_fg_lr300.stats = {
+		value = 5,
+		concealment = -1,
+		recoil = -1,
+		spread = 1
 	}
-	self.parts.wpn_fps_m4_uupg_draghandle = {
-		type = "drag_handle",
-		name_id = "bm_wp_m4_uupg_draghandle",
-		a_obj = "a_dh",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_draghandle",
-		stats = {value = 1}
+
+	--Milspec Mag.
+	self.parts.wpn_fps_m4_uupg_m_std.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_m4_uupg_fg_rail_ext = {
-		type = "foregrip_ext",
-		name_id = "bm_wp_m4_uupg_fg_rail_ext",
-		a_obj = "a_fg",
-		unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_fg_rail_ext",
-		stats = {value = 1}
+	self.parts.wpn_fps_m4_uupg_m_std.name_id = "bm_wp_upg_mil_sc"
+	self.parts.wpn_fps_m4_uupg_m_std.stats = {
+		value = 1,
+		extra_ammo = 10,
+		reload = -2,
+		concealment = -1
 	}
-	self.parts.wpn_fps_upg_m4_g_standard = {
-		type = "grip",
-		name_id = "bm_wp_m4_g_standard",
-		a_obj = "a_g",
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_g_standard",
-		stats = {value = 1}
+	
+	--Folding Stock
+	self.parts.wpn_fps_m4_uupg_s_fold.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_upg_m4_g_ergo = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "grip",
-		name_id = "bm_wp_m4_g_ergo",
-		a_obj = "a_g",
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_g_ergo",
-		stats = {
-			value = 2,
-			spread = -1,
-			recoil = 1
-		}
+	self.parts.wpn_fps_m4_uupg_s_fold.stats = {
+		value = 5,
+		recoil = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_upg_m4_g_sniper = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "grip",
-		name_id = "bm_wp_m4_g_sniper",
-		a_obj = "a_g",
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_g_sniper",
-		stats = {
-			value = 6,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		custom_stats = {
-			damage_near_mul = 100,
-			damage_far_mul = 200
-		}
+	
+	--(CAR) Ergo Grip
+	self.parts.wpn_fps_upg_m4_g_ergo.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
+	self.parts.wpn_fps_upg_m4_g_ergo.stats = {
+		value = 2,
+		spread = -1,
+		recoil = 1
+	}
+	self.parts.wpn_fps_upg_m4_g_ergo.custom_stats = {
+		damage_near_mul = -100,
+		damage_far_mul = -200
+	}	
+
+	--(CAR) Pro Grip
+	self.parts.wpn_fps_upg_m4_g_sniper.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_m4_g_sniper.stats = {
+		value = 6,
+		spread = 1,
+		recoil = -1,
+		concealment = -1
+	}
+	self.parts.wpn_fps_upg_m4_g_sniper.custom_stats = {
+		damage_near_mul = 100,
+		damage_far_mul = 200
+	}
+	
+	--(CAR) Drum Magazine 
 	self.parts.wpn_fps_upg_m4_m_drum = {
 		pcs = {},
 		type = "magazine",
@@ -1212,287 +1087,92 @@ function WeaponFactoryTweakData:_init_m4()
 			concealment = -5
 		}
 	}
-	self.parts.wpn_fps_upg_m4_m_pmag = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "magazine",
-		name_id = "bm_wp_upg_tac_sc",
-		desc_id = "bm_sc_blank",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 28},
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_pmag",
-		stats = {
-			value = 3,
-			recoil = -1,
-			extra_ammo = -5,
-			concealment = 1
-		}
-	}
-	self.parts.wpn_fps_upg_m4_m_straight = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "magazine",
-		name_id = "bm_wp_upg_vintage_sc",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_straight",
-		stats = {
-			value = 2,
-			concealment = 1,
-			reload = 3,
-			extra_ammo = -10
-		}
-	}
-	self.parts.wpn_fps_upg_m4_s_standard = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_m4_s_standard",
-		a_obj = "a_s",
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_s_standard",
-		stats = {
-			value = 1,
-			recoil = 1,
-			spread = -1
-		},
-		adds_type = {
-			"stock_adapter"
-		},
-		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
-		},			
-		forbids = {
-			"wpn_fps_shot_r870_ris_special"
-		}
-	}
-	self.parts.wpn_fps_upg_m4_s_pts = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_m4_s_pts",
-		a_obj = "a_s",
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_s_pts",
-		stats = {
-			value = 3,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		custom_stats = {
-			damage_near_mul = 100,
-			damage_far_mul = 200
-		},
-		adds_type = {
-			"stock_adapter"
-		},
-		forbids = {
-			"wpn_fps_shot_r870_ris_special"
-		}
-	}
-	self.parts.wpn_fps_upg_m4_s_adapter = {
-		type = "stock_adapter",
-		name_id = "bm_wp_m4_s_adapter",
-		a_obj = "a_s",
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_s_adapter",
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_m4_lower_reciever.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_lower_reciever"
-	self.parts.wpn_fps_m4_upper_reciever_edge.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_upper_reciever_edge"
-	self.parts.wpn_fps_m4_upper_reciever_round.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_upper_reciever_round"
-	self.parts.wpn_fps_m4_uupg_b_long.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_long"
-	self.parts.wpn_fps_m4_uupg_b_short.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_short"
-	self.parts.wpn_fps_m4_uupg_b_medium.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_medium"
-	self.parts.wpn_fps_m4_uupg_b_sd.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_sd"
-	self.parts.wpn_fps_m4_uupg_draghandle.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_draghandle"
-	self.parts.wpn_fps_m4_uupg_fg_lr300.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_lr300"
-	self.parts.wpn_fps_m4_uupg_fg_rail.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_rail"
-	self.parts.wpn_fps_m4_uupg_fg_rail_ext.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_fg_rail_ext"
-	self.parts.wpn_fps_m4_uupg_m_std.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_m_std"
-	self.parts.wpn_fps_m4_uupg_o_flipup.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_o_flipup"
-	self.parts.wpn_fps_m4_uupg_s_fold.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_s_fold"
-	self.parts.wpn_fps_upg_m4_g_ergo.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_g_ergo"
-	self.parts.wpn_fps_upg_m4_g_sniper.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_g_sniper"
-	self.parts.wpn_fps_upg_m4_g_standard.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_g_standard"
 	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_m_drum"
-	self.parts.wpn_fps_upg_m4_m_pmag.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_m_pmag"
-	self.parts.wpn_fps_upg_m4_m_straight.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_m_straight"
-	self.parts.wpn_fps_upg_m4_s_adapter.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_s_adapter"
-	self.parts.wpn_fps_upg_m4_s_pts.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_s_pts"
-	self.parts.wpn_fps_upg_m4_s_standard.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_s_standard"
-	self.parts.wpn_fps_m4_upper_reciever_round_vanilla = deep_clone(self.parts.wpn_fps_m4_upper_reciever_round)
-	self.parts.wpn_fps_m4_upper_reciever_round_vanilla.stats = nil
-	self.parts.wpn_fps_m4_upper_reciever_round_vanilla.pcs = nil
-	self.parts.wpn_fps_m4_uupg_draghandle_vanilla = deep_clone(self.parts.wpn_fps_m4_uupg_draghandle)
-	self.parts.wpn_fps_m4_uupg_draghandle_vanilla.stats = nil
-	self.parts.wpn_fps_m4_uupg_draghandle_vanilla.pcs = nil
-	self.parts.wpn_fps_m4_uupg_m_std_vanilla = deep_clone(self.parts.wpn_fps_m4_uupg_m_std)
-	self.parts.wpn_fps_m4_uupg_m_std_vanilla.stats = nil
-	self.parts.wpn_fps_m4_uupg_m_std_vanilla.pcs = nil
-	self.parts.wpn_fps_upg_m4_m_straight_vanilla = deep_clone(self.parts.wpn_fps_upg_m4_m_straight)
-	self.parts.wpn_fps_upg_m4_m_straight_vanilla.stats = nil
-	self.parts.wpn_fps_upg_m4_m_straight_vanilla.pcs = nil
-	self.parts.wpn_fps_upg_m4_s_standard_vanilla = deep_clone(self.parts.wpn_fps_upg_m4_s_standard)
-	self.parts.wpn_fps_upg_m4_s_standard_vanilla.stats = nil
-	self.parts.wpn_fps_upg_m4_s_standard_vanilla.pcs = nil
-	self.parts.wpn_fps_upg_m4_g_standard_vanilla = deep_clone(self.parts.wpn_fps_upg_m4_g_standard)
-	self.parts.wpn_fps_upg_m4_g_standard_vanilla.stats = nil
-	self.parts.wpn_fps_upg_m4_g_standard_vanilla.pc = nil
-	self.parts.wpn_fps_m4_uupg_b_medium_vanilla = deep_clone(self.parts.wpn_fps_m4_uupg_b_medium)
-	self.parts.wpn_fps_m4_uupg_b_medium_vanilla.stats = nil
-	self.parts.wpn_fps_m4_uupg_b_medium_vanilla.pcs = nil
-	self.parts.wpn_fps_m4_uupg_b_short_vanilla = deep_clone(self.parts.wpn_fps_m4_uupg_b_short)
-	self.parts.wpn_fps_m4_uupg_b_short_vanilla.stats = nil
-	self.parts.wpn_fps_m4_uupg_b_short_vanilla.pcs = nil
-	self.wpn_fps_ass_m4 = {}
-	self.wpn_fps_ass_m4.animations = {
-		reload = "reload",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		reload_not_empty = "reload_not_empty",
-		magazine_empty = "last_recoil"
+	
+	--(CAR) Tactical Mag.
+	self.parts.wpn_fps_upg_m4_m_pmag.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.wpn_fps_ass_m4.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"vertical_grip"
+	self.parts.wpn_fps_upg_m4_m_pmag.stats = {
+		value = 3,
+		recoil = -1,
+		extra_ammo = -5,
+		concealment = 1
 	}
-	self.wpn_fps_ass_m4.unit = "units/payday2/weapons/wpn_fps_ass_m4/wpn_fps_ass_m4"
-	self.wpn_fps_ass_m4.stock_adapter = "wpn_fps_upg_m4_s_adapter"
-	self.wpn_fps_ass_m4.default_blueprint = {
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_m4_upper_reciever_round",
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_m4_uupg_fg_rail",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_m16_s_solid",
-		"wpn_fps_m4_uupg_draghandle",
-		"wpn_fps_m4_uupg_o_flipup",
-		"wpn_fps_amcar_bolt_standard"
+	
+	--Vintage Mag.
+	self.parts.wpn_fps_upg_m4_m_straight.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.wpn_fps_ass_m4.override = {
-		wpn_fps_upg_ass_m4_b_beowulf = {
-			a_obj = "a_b_beowulf"
-		}
+	self.parts.wpn_fps_upg_m4_m_straight.name_id = "bm_wp_upg_vintage_sc"
+	self.parts.wpn_fps_upg_m4_m_straight.stats = {
+		value = 2,
+		concealment = 1,
+		reload = 3,
+		extra_ammo = -10
 	}
-	self.wpn_fps_ass_m4.uses_parts = {
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_m4_upper_reciever_edge",
-		"wpn_fps_m4_upper_reciever_round",
-		"wpn_fps_m4_uupg_b_long",
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_m4_uupg_b_short",
-		"wpn_fps_m4_uupg_b_sd",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_m4_uupg_fg_rail",
-		"wpn_fps_m4_uupg_fg_lr300",
-		"wpn_fps_upg_m4_m_straight",
-		"wpn_fps_upg_m4_m_drum",
-		"wpn_fps_upg_m4_m_pmag",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_m4_uupg_s_fold",
-		"wpn_fps_upg_m4_s_standard_vanilla",
-		"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_m4_uupg_draghandle",
-		"wpn_fps_m4_uupg_o_flipup",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_vg_ass_smg_verticalgrip",
-		"wpn_fps_upg_vg_ass_smg_stubby",
-		"wpn_fps_upg_vg_ass_smg_afg",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_upg_m4_g_ergo",
-		"wpn_fps_upg_m4_g_sniper",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_upg_m4_g_mgrip",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_fg_jp",
-		"wpn_fps_upg_fg_smr",
-		"wpn_fps_upg_m4_m_quad",
-		"wpn_fps_ass_l85a2_m_emag",
-		"wpn_fps_upg_m4_s_crane",
-		"wpn_fps_upg_m4_s_mk46",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_upg_m4_m_l5",
-		"wpn_fps_upg_ass_m4_upper_reciever_ballos",
-		"wpn_fps_upg_ass_m4_upper_reciever_core",
-		"wpn_fps_upg_ass_m4_lower_reciever_core",
-		"wpn_fps_m4_uupg_draghandle_ballos",
-		"wpn_fps_m4_uupg_draghandle_core",
-		"wpn_fps_upg_ass_m4_b_beowulf",
-		"wpn_fps_upg_ass_m4_fg_moe",
-		"wpn_fps_upg_ass_m4_fg_lvoa",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_amcar_bolt_standard",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_m4_upg_m_quick",
-		"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_snp_tti_g_grippy",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_45rds_v2",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_g_m4_surgeon",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_45steel",
-		--Stuff--
-		"wpn_fps_m16_s_solid",
-		"wpn_fps_upg_m4_s_standard",
-		"wpn_fps_upg_i_slower_rof",
-		"wpn_fps_upg_i_faster_rof"		
+	
+	--Standard Stock
+	self.parts.wpn_fps_upg_m4_s_standard.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.wpn_fps_ass_m4_npc = deep_clone(self.wpn_fps_ass_m4)
-	self.wpn_fps_ass_m4_npc.unit = "units/payday2/weapons/wpn_fps_ass_m4/wpn_fps_ass_m4_npc"
-	self.wpn_fps_ass_m4_secondary = deep_clone(self.wpn_fps_ass_m4)
-	self.wpn_fps_ass_m4_secondary.unit = "units/payday2/weapons/wpn_fps_ass_m4/wpn_fps_ass_m4_secondary"
-	self.wpn_fps_ass_m4_secondary_npc = deep_clone(self.wpn_fps_ass_m4_npc)
-	self.wpn_fps_ass_m4_secondary_npc.unit = "units/payday2/weapons/wpn_fps_ass_m4/wpn_fps_ass_m4_secondary_npc"
-end
+	self.parts.wpn_fps_upg_m4_s_standard.stats = {
+		value = 1,
+		recoil = 1,
+		spread = -1
+	}
+	self.parts.wpn_fps_upg_m4_s_standard.custom_stats = {
+		damage_near_mul = -100,
+		damage_far_mul = -200
+	}
+
+	--Tactical Stock
+	self.parts.wpn_fps_upg_m4_s_pts.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_m4_s_pts.stats = {
+		value = 3,
+		spread = 1,
+		recoil = -1,
+		concealment = -1
+	}
+	self.parts.wpn_fps_upg_m4_s_pts.custom_stats = {
+		damage_near_mul = 100,
+		damage_far_mul = 200
+	}
+	
+	--CAR-4 Override Tables
+	self.wpn_fps_ass_m4.override.wpn_fps_upg_m4_s_standard_vanilla = {
+		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_s_solid",
+		third_unit = "units/payday2/weapons/wpn_third_ass_m16_pts/wpn_third_m16_s_solid"
+	}
+	
+	--CAR-4 Part Additions
+	--Standard Stock
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_ass_m4_npc.uses_parts, "wpn_fps_upg_m4_s_standard")	
+	
+	--Faster/Slower ROF mods (Unused)
+	--[[
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_slower_rof")
+	table.insert(self.wpn_fps_ass_m4_npc.uses_parts, "wpn_fps_upg_i_slower_rof")	
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_i_faster_rof")
+	table.insert(self.wpn_fps_ass_m4_npc.uses_parts, "wpn_fps_upg_i_faster_rof")	
+	]]--
+
+end)
 
 function WeaponFactoryTweakData:_init_g18c()
 	self.parts.wpn_fps_pis_g18c_body_frame = {

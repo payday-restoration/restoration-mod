@@ -96,6 +96,8 @@ function restoration:Init()
 		"arm_par",
 		"arm_und",
 		"arm_for",
+		"spa",		
+		"mia_2",		
 		"shoutout_raid", --Scripted spawns out the ass, doing this just to even it out
 		--Custom Heists below--
 		"junk",
@@ -123,12 +125,10 @@ function restoration:Init()
 		"peta2",
 		"des",		
 		"vit",
-		"spa",		
 		"chill_combat",		
 		"flat",	
 		"mex",
 		"mex_cooking",		
-		"mia_2",
 		--Custom Heists below--
 		"Victor Romeo",
 		"thechase"

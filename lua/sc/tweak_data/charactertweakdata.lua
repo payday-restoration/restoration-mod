@@ -93,7 +93,7 @@ function CharacterTweakData:_init_region_murkywater()
 		taser = "tsr",
 		cloaker = "clk",
 		bulldozer = "bdz",
-		medic = "mdc"
+		medic = "nothing"
 	}
 	self._speech_prefix_p2 = "n"
 end
@@ -2974,6 +2974,8 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.rescue_hostages = false
 	self.old_hoxton_mission.crouch_move = false
 	self.old_hoxton_mission.static_dodge_preset = true
+	
+	self.anubis = deep_clone(self.old_hoxton_mission)	
 end
 
 function CharacterTweakData:_init_spa_vip(presets)

@@ -7,7 +7,7 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" />
+		<depends_on unit="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" />
 	</dependencies>
 
 	<extensions>
@@ -23,7 +23,7 @@
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_hat_lod" />
 			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" />
+			<var name="_head_gear" value="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

@@ -728,7 +728,7 @@ function SkillTreeTweakData:init(tweak_data)
 			
 			--[[   AMMO SPECIALIST SUBTREE   ]]--
 			--{
-				--Scavenging--
+				--Scavenger--
 				self.skills.scavenging = {
 					["name_id"] = "menu_scavenging_sc",
 					["desc_id"] = "menu_scavenging_desc_sc",

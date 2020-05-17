@@ -928,7 +928,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Scavenger
 			["menu_scavenging_sc"] = "Scavenger",
-			["menu_scavenging_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##50%## increased ammo box pick up range.\n\nACE: ##$pro##\nEvery ##10th## enemy you kill will drop an extra ammo box.",																																																																																																																																																																																																
+			["menu_scavenging_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##50%## increased ammo box pick up range.\n\nACE: ##$pro##\nEvery ##5th## enemy you kill will drop an extra ammo box.",																																																																																																																																																																																																
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "Bulletstorm",

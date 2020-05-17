@@ -641,8 +641,8 @@ function UpgradesTweakData:_init_pd2_values()
 			
 			--[[   AMMO SPECIALIST SUBTREE   ]]--
 			--{
-				--Scavenging
-				self.values.player.double_drop = {10}
+				--Scavenger
+				self.values.player.double_drop = {5}
 				self.values.player.increased_pickup_area = {1.5}
 				
 				--Bulletstorm
@@ -673,7 +673,7 @@ function UpgradesTweakData:_init_pd2_values()
 				
 				--Fully Loaded
 				self.values.player.extra_ammo_multiplier = {1.25}
-				self.values.player.pick_up_ammo_multiplier = {1.35, 2.1}
+				self.values.player.pick_up_ammo_multiplier = {1.35, 1.75}
 				self.values.player.regain_throwable_from_ammo = {
 					{chance = 0.05, chance_inc = 1.0}
 				}

@@ -1,0 +1,46 @@
+<table>
+	<unit>
+		<sequence editable_state="true" name=" 'hide' " triggable="true">
+			<interaction enabled="false"/>
+			<object enabled="false" name=" 'g_g' "/>
+			<object enabled="false" name=" 'g_g_dmg' "/>
+			<graphic_group name="'plankicongroup'" visibility="false"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'show_planks' " triggable="true">
+			<interaction enabled="false"/>
+			<object enabled="true" name=" 'g_g' "/>
+			<object enabled="false" name=" 'g_g_dmg' "/>
+			<body enabled="true" name=" 'planks_body' "/>
+			<body enabled="true" name=" 'ai_vision_block' "/>
+			<decal_mesh enabled="true" name=" 'dm_hardwood' "/>
+			<graphic_group name="'plankicongroup'" visibility="false"/>
+		</sequence>
+		<sequence editable_state="true" name=" 'enable_interaction' " startup="true" triggable="true">
+			<interaction enabled="true"/>
+			<object enabled="false" name=" 'g_g' "/>
+			<object enabled="false" name=" 'g_sunray' "/>
+			<object enabled="false" name=" 's_planks' "/>
+			<object enabled="false" name=" 'g_g_dmg' "/>
+			<object enabled="false" name=" 's_planks_dmg' "/>
+			<graphic_group name=" 'plankicongroup'" visibility="true"/>
+		</sequence>
+		<sequence name=" 'interact' ">
+			<run_sequence name=" 'show_planks' "/>
+		</sequence>
+		<sequence editable_state="true" name=" 'destroy_planks' ">
+			<object enabled="false" name=" 'g_g' "/>
+			<object enabled="true" name=" 'g_g_dmg' "/>
+			<decal_mesh enabled="false" name=" 'dm_hardwood' "/>
+			<body enabled="false" name=" 'planks_body' "/>
+			<body enabled="false" name=" 'ai_vision_block' "/>
+			<graphic_group name="'plankicongroup'" visibility="false"/>
+			<effect name="'effects/particles/dest/stair_dest'" parent="object('e_effect_01')" position="v()"/>
+			<effect name="'effects/particles/dest/stair_dest'" parent="object('e_effect_02')" position="v()"/>
+		</sequence>
+		<body name=" 'planks_body' ">
+			<endurance bullet="25" explosion="5">
+				<run_sequence name=" 'destroy_planks' "/>
+			</endurance>
+		</body>
+	</unit>
+</table>

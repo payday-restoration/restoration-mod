@@ -1,0 +1,33 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 0.382683 -0.92388" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc2/props/com_props_christmas_tree/com_prop_christmas_tree" name_id="com_prop_christmas_tree_001" position="0 0 0" rotation="0 0 0.382683 -0.92388" unit_id="100000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -100 0" _prev_rot="0 0 0.649448 -0.760406" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/com_prop_christmas_gifts/com_prop_christmas_gift_1" name_id="com_prop_christmas_gift_1_001" position="0 -100 0" rotation="0 0 0.649448 -0.760406" unit_id="100001"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="75 -75 0" _prev_rot="0 0 0.052336 -0.99863" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/com_prop_christmas_gifts/com_prop_christmas_gift_2" name_id="com_prop_christmas_gift_2_001" position="75 -75 0" rotation="0 0 0.052336 -0.99863" unit_id="100002"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="100 0 0" _prev_rot="0 0 0.62932 -0.777146" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/com_prop_christmas_gifts/com_prop_christmas_gift_3" name_id="com_prop_christmas_gift_3_001" position="100 0 0" rotation="0 0 0.62932 -0.777146" unit_id="100003"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-50 50 0" _prev_rot="-0 0 0 -1" continent="world" disable_on_ai_graph="true" local_pos="0 100 0" local_rot="0 0 0 1" name="units/dev_tools/level_tools/navigation_splitter" name_id="navigation_splitter_001" only_exists_in_editor="true" position="-50 50 0" rotation="-0 0 0 -1" unit_id="100004"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-50 -50 0" _prev_rot="-0 0 0 -1" continent="world" disable_on_ai_graph="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/dev_tools/level_tools/navigation_splitter" name_id="navigation_splitter_002" only_exists_in_editor="true" position="-50 -50 0" rotation="-0 0 0 -1" unit_id="100005"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="50 -50 0" _prev_rot="-0 0 0 -1" continent="world" disable_on_ai_graph="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/dev_tools/level_tools/navigation_splitter" name_id="navigation_splitter_003" only_exists_in_editor="true" position="50 -50 0" rotation="-0 0 0 -1" unit_id="100006"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-50 50 0" _prev_rot="-0 0 0 -1" continent="world" disable_on_ai_graph="true" local_pos="0 100 0" local_rot="0 0 0 1" name="units/dev_tools/level_tools/navigation_splitter" name_id="navigation_splitter_004" only_exists_in_editor="true" position="50 50 0" rotation="-0 0 0 -1" unit_id="100007"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

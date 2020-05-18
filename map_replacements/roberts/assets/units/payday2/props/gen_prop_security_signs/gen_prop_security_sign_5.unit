@@ -1,0 +1,6 @@
+<unit type="gen" slot="1" >
+    <object file="units/payday2/props/gen_prop_security_signs/gen_prop_security_sign_5" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

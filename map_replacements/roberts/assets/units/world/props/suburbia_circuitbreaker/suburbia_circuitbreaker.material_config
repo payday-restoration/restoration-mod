@@ -1,0 +1,5 @@
+<materials version="3" group="suburbia_circuitbreaker">
+    <material name="suburbia_circuitbreaker" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/suburbia_circuitbreaker/suburbia_circuitbreaker_df"/>
+    </material>
+</materials>

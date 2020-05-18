@@ -1,0 +1,19 @@
+<dynamic_object>
+    <diesel materials="units/payday2/equipment/gen_equipment_camera_hackingtool/gen_equipment_camera_hackingtool" orientation_object="rp_gen_equipment_camera_hackingtool" />
+	<sequence_manager file="units/payday2/equipment/gen_equipment_camera_hackingtool/gen_equipment_camera_hackingtool" />
+    <bodies>
+        <body enabled="true" template="editor" name="static_body" >
+            <object collision_type="box" name="c_box" padding="-2.5" />
+        </body>
+    </bodies>
+    <graphics>
+		<graphic_group name="drillicongroup" 	enabled="false" culling_object="g_icon">
+			<lod_object name="drill_icon">
+					<object name="g_icon" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
+					<object name="g_icon_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+        <object enabled="true" name="g_tool" />
+        <object enabled="false" name="g_tool_glow" />
+    </graphics>
+</dynamic_object>

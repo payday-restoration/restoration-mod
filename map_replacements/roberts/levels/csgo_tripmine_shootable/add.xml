@@ -1,0 +1,16 @@
+<table directory="assets">
+	<add path="units/payday2/architecture/com_int_gallery/laser_detection" type="unit">
+		<unit force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<object force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/architecture/com_int_gallery/laser_detection" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc2/props/gen_prop_swat_tripmine_shootable/gen_prop_swat_tripmine_shootable" type="unit">
+		<bnk force="true" path="soundbanks/weapon_trip_mine" unload="true"/>
+		<effect force="true" load="true" path="effects/particles/explosions/explosion_grenade" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc2/props/gen_prop_swat_tripmine_shootable/gen_prop_swat_tripmine_shootable" unload="true"/>
+		<object force="true" path="units/pd2_dlc2/props/gen_prop_swat_tripmine_shootable/gen_prop_swat_tripmine_shootable" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc2/props/gen_prop_swat_tripmine_shootable/gen_prop_swat_tripmine_shootable" unload="true"/>
+		<unit force="true" path="units/pd2_dlc2/props/gen_prop_swat_tripmine_shootable/gen_prop_swat_tripmine_shootable" unload="true"/>
+	</add>
+</table>

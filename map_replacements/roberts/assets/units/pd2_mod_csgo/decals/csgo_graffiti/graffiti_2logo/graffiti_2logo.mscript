@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<modelscript>
+    <object3d name="rp_root" mode="add">
+        <parent root="true" />
+    </object3d>
+	
+    <import file="graffiti.obj" type="obj" create_objects="true">
+        <rootpoint name="rp_root">
+            <default/>
+            <object name="co_culling" />
+        </rootpoint>
+    </import>
+	
+</modelscript>

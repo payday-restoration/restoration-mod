@@ -1,0 +1,159 @@
+<table directory="assets">
+	<texture path="units/pd2_mod_csgo/guis/equip_csgo_spraycan" unload="true"/>
+	<add>
+		<material_config path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
+		<model path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
+		<object path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
+		<sequence_manager path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
+		<unit path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
+	</add>
+	<add>
+		<material_config path="units/pd2_mod_csgo/pickups/pku_prop_spraycan_color/pku_prop_spraycan_color" unload="true"/>
+		<model path="units/pd2_mod_csgo/pickups/pku_prop_spraycan_color/pku_prop_spraycan_color" unload="true"/>
+		<object path="units/pd2_mod_csgo/pickups/pku_prop_spraycan_color/pku_prop_spraycan_color" unload="true"/>
+		<unit path="units/pd2_mod_csgo/pickups/pku_prop_spraycan_color/pku_prop_spraycan_color" unload="true"/>
+	</add>
+	<add>
+		<material_config path="units/pd2_mod_csgo/decals/csgo_graffiti/graffiti_2logo/graffiti_2logo" unload="true"/>
+		<model path="units/pd2_mod_csgo/decals/csgo_graffiti/graffiti_2logo/graffiti_2logo" unload="true"/>
+		<object path="units/pd2_mod_csgo/decals/csgo_graffiti/graffiti_2logo/graffiti_2logo" unload="true"/>
+		<sequence_manager path="units/pd2_mod_csgo/decals/csgo_graffiti/graffiti_2logo/graffiti_2logo" unload="true"/>
+		<texture path="units/pd2_mod_csgo/decals/csgo_graffiti/graffiti_2logo/graffiti_2logo_df" unload="true"/>
+		<unit path="units/pd2_mod_csgo/decals/csgo_graffiti/graffiti_2logo/graffiti_2logo" unload="true"/>
+	</add>
+	<add path="units/test/martin_loot_and_carry_test/test_security_monitor/test_security_monitor" type="unit">
+		<material_config force="true" path="units/test/martin_loot_and_carry_test/test_security_monitor/test_security_monitor" unload="true"/>
+		<object force="true" path="units/test/martin_loot_and_carry_test/test_security_monitor/test_security_monitor" unload="true"/>
+		<unit force="true" path="units/test/martin_loot_and_carry_test/test_security_monitor/test_security_monitor" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_security_signs/gen_prop_security_sign_5" type="unit">
+		<material_config force="true" path="units/payday2/props/gen_prop_security_signs/gen_prop_security_sign_5" unload="true"/>
+		<object force="true" path="units/payday2/props/gen_prop_security_signs/gen_prop_security_sign_5" unload="true"/>
+		<unit force="true" path="units/payday2/props/gen_prop_security_signs/gen_prop_security_sign_5" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_chill/props/chl_props_graffiti/chl_props_tag1" type="unit">
+		<material_config force="true" path="units/pd2_dlc_chill/props/chl_props_graffiti/chl_props_tags" unload="true"/>
+		<object force="true" path="units/pd2_dlc_chill/props/chl_props_graffiti/chl_props_tag1" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_chill/props/chl_props_graffiti/chl_props_tag1" unload="true"/>
+	</add>
+	<add path="units/payday2/mockup/occluder_plane_16x16" type="unit">
+		<material_config force="true" path="units/payday2/mockup/occluder_plane" unload="true"/>
+		<object force="true" path="units/payday2/mockup/occluder_plane_16x16" unload="true"/>
+		<unit force="true" path="units/payday2/mockup/occluder_plane_16x16" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button" type="unit">
+		<material_config force="true" path="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button" unload="true"/>
+		<object force="true" path="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button" unload="true"/>
+	</add>
+	<texture path="levels/mods/roberts_v2/cubemaps/201894"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/dome_occlusion"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/105932"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/105928"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/105939"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/105931"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100144"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/105930"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/105929"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100166"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100167"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/105636"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/106410"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100250"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100267"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100266"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100269"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100268"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100270"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300019"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300022"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300023"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300017"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300018"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300020"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300024"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300025"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300029"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300021"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/300026"/>
+	<texture path="levels/mods/roberts_v2/cube_lights/100276"/>
+	<add path="units/world/street/street_lights/street_lights_night_cone" type="unit">
+		<material_config force="true" path="units/world/street/street_lights/street_lights_night" unload="true"/>
+		<object force="true" path="units/world/street/street_lights/street_lights_night_cone" unload="true"/>
+		<unit force="true" path="units/world/street/street_lights/street_lights_night_cone" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_glow/gen_prop_glow_01" type="unit">
+		<effect force="true" load="true" path="effects/payday2/particles/flares/street_light_flare_blueish" unload="true"/>
+		<material_config force="true" path="units/payday2/props/gen_prop_glow/gen_prop_glow" unload="true"/>
+		<object force="true" path="units/payday2/props/gen_prop_glow/gen_prop_glow_01" unload="true"/>
+		<unit force="true" path="units/payday2/props/gen_prop_glow/gen_prop_glow_01" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc2/props/deposit_box/csgo_deposit_box" type="unit">
+		<unit force="true" path="units/pd2_dlc2/props/deposit_box/csgo_deposit_box" unload="true"/>
+		<object force="true" path="units/pd2_dlc2/props/deposit_box/csgo_deposit_box" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc2/props/deposit_box/csgo_deposit_box" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc2/props/deposit_box/csgo_deposit_box" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_a" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_a" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_a" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_b" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_b" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_b" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_c" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_d" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_d" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_d" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_e" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_e" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_e" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_a" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_a" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_a" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_b" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_b" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_b" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_c" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_c" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_c" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_d" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_d" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_d" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_e" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_e" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_e" unload="true"/>
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_money" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_money" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_money" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_money" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder" unload="true"/>
+		<object force="true" path="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder" unload="true"/>
+		<material_config force="true" path="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_equipment_camera_hackingtool/gen_equipment_camera_hackingtool" type="unit">
+		<material_config force="true" path="units/payday2/equipment/gen_equipment_camera_hackingtool/gen_equipment_camera_hackingtool" unload="true"/>
+		<object force="true" path="units/payday2/equipment/gen_equipment_camera_hackingtool/gen_equipment_camera_hackingtool" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/equipment/gen_equipment_camera_hackingtool/gen_equipment_camera_hackingtool" unload="true"/>
+		<unit force="true" path="units/payday2/equipment/gen_equipment_camera_hackingtool/gen_equipment_camera_hackingtool" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_3x4x3" type="unit">
+		<material_config force="true" path="core/material_configs/hub_elements" unload="true"/>
+		<object force="true" path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_3x4x3" unload="true"/>
+		<unit force="true" path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_3x4x3" unload="true"/>
+	</add>
+	<add path="units/pd2_mcmansion/props/mcm_prop_kitchen_toaster/mcm_prop_kitchen_toaster" type="unit">
+		<material_config force="true" path="units/pd2_mcmansion/props/mcm_prop_kitchen_toaster/mcm_prop_kitchen_toaster" unload="true"/>
+		<object force="true" path="units/pd2_mcmansion/props/mcm_prop_kitchen_toaster/mcm_prop_kitchen_toaster" unload="true"/>
+		<sequence_manager force="true" path="units/pd2_mcmansion/props/mcm_prop_kitchen_toaster/mcm_prop_kitchen_toaster" unload="true"/>
+		<unit force="true" path="units/pd2_mcmansion/props/mcm_prop_kitchen_toaster/mcm_prop_kitchen_toaster" unload="true"/>
+	</add>
+	<add path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" type="unit">
+		<unit force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" unload="true"/>
+		<object force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" unload="true"/>
+		<material_config force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" unload="true"/>
+		<sequence_manager force="true" path="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_toast" unload="true"/>
+	</add>
+	<texture path="levels/mods/roberts_v2/cube_lights/100376"/>
+</table>

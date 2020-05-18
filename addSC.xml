@@ -1867,6 +1867,8 @@
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/swat_heavy_head_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/swat_heavy_head_nm" />	
 	<!--textures heavy -->
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_nm" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_head_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_df" />	
 	<!--fbi ready team 1 -->

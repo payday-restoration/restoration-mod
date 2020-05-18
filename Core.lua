@@ -77,6 +77,7 @@ function restoration:Init()
 		"brb",
 		"mus",
 		"hox_1",
+		"chew",
 		"skm_mus",
 		"skm_red2",
 		"skm_run",

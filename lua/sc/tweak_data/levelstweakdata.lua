@@ -244,7 +244,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 	
-	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/addbdu"}
+	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/addbdu", "packages/murkyassets",}
+	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 	
 	self.chew.player_style = "loud_suit"

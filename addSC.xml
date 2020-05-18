@@ -112,7 +112,14 @@
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	
 	<!--Ovk's Murky light beret never despawning fix-->
+	
+	<!--game crashes if i dont load ALL of these fucking files-->
+	<model path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="true" />
 	<unit path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="true" />
+	<cooked_physics path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="true" />
+	<material_config path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="true" />
+	<object path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="true" />
+	<unit path="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" force="true" load="true"/>
 	
 	<!-- Hoxton Breakout FBI Boss Vetcop -->
 	<unit path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" load="true" force="true" />

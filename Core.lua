@@ -113,7 +113,8 @@ function restoration:Init()
 	--Mostly for stuff like Cursed Killed Room and other crap heists
 	restoration.very_tiny_levels = {
 		"hvh",
-		"chew",
+		-- :^)
+		--"chew",
 		"sah",		
 		"nail",		
 		"nmh",		

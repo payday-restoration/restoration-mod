@@ -1176,7 +1176,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.wpn_fps_ass_m4_npc.uses_parts, "wpn_fps_upg_i_faster_rof")	
 	]]--
 	
-	self.wpn_fps_ass_m4_npc = deep_clone(self.wpn_fps_ass_m4)
+	self.wpn_fps_ass_m4_npc.uses_parts = deep_clone(self.wpn_fps_ass_m4.uses_parts)
 
 end)
 
@@ -1268,7 +1268,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 	table.insert(self.wpn_fps_pis_g18c_npc.uses_parts, "wpn_fps_upg_i_faster_rof")	
 	]]--
 	
-	self.wpn_fps_pis_g18c_npc = deep_clone(self.wpn_fps_pis_g18c)
+	self.wpn_fps_pis_g18c_npc.uses_parts = deep_clone(self.wpn_fps_pis_g18c.uses_parts)
 
 end)
 
@@ -1380,7 +1380,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 		--"wpn_fps_m4_uupg_o_flipup"
 	}
 	
-	self.wpn_fps_ass_amcar_npc = deep_clone(self.wpn_fps_ass_amcar)
+	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)
 
 end)
 
@@ -1524,7 +1524,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		"wpn_fps_smg_olympic_s_short"
 	}
 	
-	self.wpn_fps_ass_m16_npc = deep_clone(self.wpn_fps_ass_m16)
+	self.wpn_fps_ass_m16_npc.uses_parts = deep_clone(self.wpn_fps_ass_m16.uses_parts)
 
 end)
 
@@ -1656,7 +1656,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		"wpn_fps_m4_uupg_s_fold"
 	}
 	
-	self.wpn_fps_smg_olympic_npc = deep_clone(self.wpn_fps_smg_olympic)
+	self.wpn_fps_smg_olympic_npc.uses_parts = deep_clone(self.wpn_fps_smg_olympic.uses_parts)
 
 end)
 
@@ -1944,7 +1944,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 	table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_saiga_m_20rnd")
 	table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_saiga_m_20rnd")	
 
-	self.wpn_fps_shot_saiga_npc = deep_clone(self.wpn_fps_shot_saiga)
+	self.wpn_fps_shot_saiga_npc.uses_parts = deep_clone(self.wpn_fps_shot_saiga.uses_parts)
 
 end)
 
@@ -2118,7 +2118,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 		"wpn_fps_upg_o_45steel"			
 	}
 	
-	self.wpn_fps_ass_aug_npc = deep_clone(self.wpn_fps_ass_aug)
+	self.wpn_fps_ass_aug_npc.uses_parts = deep_clone(self.wpn_fps_ass_aug.uses_parts)
 
 end)
 
@@ -2219,7 +2219,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 	table.insert(self.wpn_fps_smg_p90.uses_parts, "wpn_fps_smg_p90_body_p90_tan")
 	table.insert(self.wpn_fps_smg_p90_npc.uses_parts, "wpn_fps_smg_p90_body_p90_tan")	
 	
-	self.wpn_fps_smg_p90_npc = deep_clone(self.wpn_fps_smg_p90)
+	self.wpn_fps_smg_p90_npc.uses_parts = deep_clone(self.wpn_fps_smg_p90.uses_parts)
 
 end)
 
@@ -2270,7 +2270,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 	table.insert(self.wpn_fps_ass_m14_npc.uses_parts, "wpn_fps_upg_i_faster_rof")		
 	]]--
 	
-	self.wpn_fps_ass_m14_npc = deep_clone(self.wpn_fps_ass_m14)
+	self.wpn_fps_ass_m14_npc.uses_parts = deep_clone(self.wpn_fps_ass_m14.uses_parts)
 
 end)
 
@@ -2353,7 +2353,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp9", "resmod_mp9", function(self)
 		"wpn_fps_upg_o_uh",
 		"wpn_fps_upg_o_fc1"
 	}
-	self.wpn_fps_smg_mp9_npc = deep_clone(self.wpn_fps_smg_mp9)
+	self.wpn_fps_smg_mp9_npc.uses_parts = deep_clone(self.wpn_fps_smg_mp9.uses_parts)
 
 end)
 
@@ -2449,7 +2449,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	table.insert(self.wpn_fps_pis_deagle.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_deagle_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 	
-	self.wpn_fps_pis_deagle_npc = deep_clone(self.wpn_fps_pis_deagle)
+	self.wpn_fps_pis_deagle_npc.uses_parts = deep_clone(self.wpn_fps_pis_deagle.uses_parts)
 
 end)
 
@@ -2977,7 +2977,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		"wpn_fps_upg_o_fc1"
 	}
 	
-	self.wpn_fps_shot_r870_npc = deep_clone(self.wpn_fps_shot_r870)
+	self.wpn_fps_shot_r870_npc.uses_parts = deep_clone(self.wpn_fps_shot_r870.uses_parts)
 
 end)
 

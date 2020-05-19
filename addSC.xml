@@ -2468,26 +2468,12 @@
 	
 	<!-- Actually Good Third Person Animations -->
 	<animation path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_bleedout_0" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_bleedout_180" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_bleedout_enter" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_bleedout_exit" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_bleedout_l90" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_bleedout_r90" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_hurt_lowbdy_left" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_hurt_lowbdy_right" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_hurt_upbdy_back" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_hurt_upbdy_left" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_hurt_upbdy_right" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_idle" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_crh_run_bwd" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_crh_run_fwd" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_crh_run_l" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_crh_run_r" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_sup_idle" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_turn_180_cbt_crh_run_fwd" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_turn_l_cbt_crh_run_fwd" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_turn_r_cbt_crh_run_fwd" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_reload" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_run_bwd" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_run_bwd_to_cbt_crh_idle" force="true"/>
@@ -2500,32 +2486,12 @@
 	<animation path="anims/shared/pistol/combat/cbt_crh_shoot" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_shoot_aut" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_to_std" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_turn_l45" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_turn_l90" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_turn_l135" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_turn_r45" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_turn_r90" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_crh_turn_r135" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_walk_bwd" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_walk_fwd" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_walk_l" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_crh_walk_r" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_fatal_death" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_fatal_enter" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_fatal_exit" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_fatal_idle" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sprint_bwd" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sprint_fwd" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sprint_left" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sprint_right" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_std_arrest_gesture_var1" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_std_comehere_gesture_var1" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_halt_gesture_var1" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_hurt_lowbdy_left" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_hurt_lowbdy_right" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_hurt_upbdy_back" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_hurt_upbdy_left" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_hurt_upbdy_right" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_std_idle" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_std_idle_to_cbt_sup_idle" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_std_melee" force="true"/>
@@ -2533,35 +2499,14 @@
 	<animation path="anims/shared/pistol/combat/cbt_std_shoot" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_std_shoot_aut" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_std_to_crh" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_turn_l45" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_turn_l90" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_turn_l135" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_turn_r45" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_turn_r90" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_std_turn_r135" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_hurt_lowbdy_left" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_hurt_lowbdy_right" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_hurt_upbdy_back" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_hurt_upbdy_left" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_hurt_upbdy_right" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_idle" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_sup_shoot" force="true"/>
 	<animation path="anims/shared/pistol/combat/cbt_sup_shoot_aut" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_turn_l45" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_turn_l90" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_turn_l135" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_turn_r45" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_turn_r90" force="true"/>
-	<animation path="anims/shared/pistol/combat/cbt_sup_turn_r135" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_idle" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_crh_run_bwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_crh_run_fwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_crh_run_l" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_crh_run_r" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_sup_idle" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_turn_180_hos_crh_run_fwd" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_turn_l_hos_crh_run_fwd" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_turn_r_hos_crh_run_fwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_run_bwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_run_bwd_to_hos_crh_idle" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_run_fwd" force="true"/>
@@ -2571,12 +2516,6 @@
 	<animation path="anims/shared/pistol/hostile/hos_crh_run_r" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_run_r_to_hos_crh_idle" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_to_std" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_turn_l45" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_turn_l90" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_turn_l135" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_turn_r45" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_turn_r90" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_crh_turn_r135" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_walk_bwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_walk_fwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_crh_walk_l" force="true"/>
@@ -2586,45 +2525,17 @@
 	<animation path="anims/shared/pistol/hostile/hos_std_idle_to_hos_sup_idle" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_std_supprised_fwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_std_to_crh" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_std_turn_l45" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_std_turn_l90" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_std_turn_l135" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_std_turn_r45" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_std_turn_r90" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_std_turn_r135" force="true"/>
 	<animation path="anims/shared/pistol/hostile/hos_sup_idle" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_sup_turn_l45" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_sup_turn_l90" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_sup_turn_l135" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_sup_turn_r45" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_sup_turn_r90" force="true"/>
-	<animation path="anims/shared/pistol/hostile/hos_sup_turn_r135" force="true"/>
 	<animation path="anims/shared/pistol/hostile/sprint_bwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/sprint_fwd" force="true"/>
 	<animation path="anims/shared/pistol/hostile/sprint_left" force="true"/>
 	<animation path="anims/shared/pistol/hostile/sprint_right" force="true"/>
-	<animation path="anims/shared/pistol/neutral/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/pistol/neutral/ntl_std_idle" force="true"/>
-	<animation path="anims/shared/pistol/neutral/ntl_std_turn_l45" force="true"/>
-	<animation path="anims/shared/pistol/neutral/ntl_std_turn_l90" force="true"/>
-	<animation path="anims/shared/pistol/neutral/ntl_std_turn_l135" force="true"/>
-	<animation path="anims/shared/pistol/neutral/ntl_std_turn_r45" force="true"/>
-	<animation path="anims/shared/pistol/neutral/ntl_std_turn_r90" force="true"/>
-	<animation path="anims/shared/pistol/neutral/ntl_std_turn_r135" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_hurt_lowbdy_left" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_hurt_lowbdy_right" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_hurt_upbdy_back" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_hurt_upbdy_left" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_hurt_upbdy_right" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_idle" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_crh_run_bwd" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_crh_run_fwd" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_crh_run_l" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_crh_run_r" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_sup_idle" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_turn_180_cbt_crh_run_fwd" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_turn_l_cbt_crh_run_fwd" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_turn_r_cbt_crh_run_fwd" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_rel" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_run_bwd" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_run_bwd_to_cbt_crh_idle" force="true"/>
@@ -2639,28 +2550,12 @@
 	<animation path="anims/shared/rifle/combat/cbt_crh_shotgun_rel" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_shotgun_shoot" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_to_std" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_turn_l45" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_turn_l90" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_turn_l135" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_turn_r45" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_turn_r90" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_crh_turn_r135" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_walk_bwd" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_walk_fwd" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_walk_l" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_crh_walk_r" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sprint_bwd" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sprint_fwd" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sprint_left" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sprint_right" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_std_arrest_gesture_var1" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_std_comehere_gesture_var1" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_halt_gesture_var1" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_hurt_lowbdy_left" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_hurt_lowbdy_right" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_hurt_upbdy_back" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_hurt_upbdy_left" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_hurt_upbdy_right" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_std_idle" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_std_idle_to_cbt_sup_idle" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_std_melee" force="true"/>
@@ -2669,27 +2564,10 @@
 	<animation path="anims/shared/rifle/combat/cbt_std_shoot_aut" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_std_shotgun_shoot" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_std_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_turn_l45" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_turn_l90" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_turn_l135" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_turn_r45" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_turn_r90" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_std_turn_r135" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_hurt_lowbdy_left" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_hurt_lowbdy_right" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_hurt_upbdy_back" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_hurt_upbdy_left" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_hurt_upbdy_right" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_sup_idle" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_sup_shoot" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_sup_shoot_aut" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_sup_shotgun_shoot" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_turn_l45" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_turn_l90" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_turn_l135" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_turn_r45" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_turn_r90" force="true"/>
-	<animation path="anims/shared/rifle/combat/cbt_sup_turn_r135" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var1" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var2" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var3" force="true"/>
@@ -2708,17 +2586,6 @@
 	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var18" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var19" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var20" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_revive_enter" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_revive_exit" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_revive_idle" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_std_dodge_bwd_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_std_dodge_fwd_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_std_dodge_left_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_std_dodge_right_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_std_panicdodge_bwd_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_std_panicdodge_fwd_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_std_panicdodge_l_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_std_panicdodge_r_to_crh" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl1_enter_var1" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl1_idle_var1" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl2_enter_var1" force="true"/>
@@ -2733,9 +2600,6 @@
 	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_hos_crh_run_l" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_hos_crh_run_r" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_hos_sup_idle" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_turn_180_hos_crh_run_fwd" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_turn_l_hos_crh_run_fwd" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_turn_r_hos_crh_run_fwd" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_run_bwd" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_run_bwd_to_hos_crh_idle" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_run_fwd" force="true"/>
@@ -2745,12 +2609,6 @@
 	<animation path="anims/shared/rifle/hostile/hos_crh_run_r" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_run_r_to_hos_crh_idle" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_to_std" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_turn_l45" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_turn_l90" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_turn_l135" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_turn_r45" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_turn_r90" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_crh_turn_r135" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_walk_bwd" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_walk_fwd" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_crh_walk_l" force="true"/>
@@ -2760,47 +2618,5 @@
 	<animation path="anims/shared/rifle/hostile/hos_std_idle_to_hos_sup_idle" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_std_supprised_fwd" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_std_to_crh" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_std_turn_l45" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_std_turn_l90" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_std_turn_l135" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_std_turn_r45" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_std_turn_r90" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_std_turn_r135" force="true"/>
 	<animation path="anims/shared/rifle/hostile/hos_sup_idle" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_sup_turn_l45" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_sup_turn_l90" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_sup_turn_l135" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_sup_turn_r45" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_sup_turn_r90" force="true"/>
-	<animation path="anims/shared/rifle/hostile/hos_sup_turn_r135" force="true"/>
-	<animation path="anims/shared/rifle/hostile/sprint_bwd" force="true"/>
-	<animation path="anims/shared/rifle/hostile/sprint_fwd" force="true"/>
-	<animation path="anims/shared/rifle/hostile/sprint_left" force="true"/>
-	<animation path="anims/shared/rifle/hostile/sprint_right" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_idle_var1" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_idle_var2" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_turn_l45" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_turn_l90" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_turn_l135" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_turn_r45" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_turn_r90" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk1/ntl_std_turn_r135" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk2/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk2/ntl_std_idle_var1" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk2/ntl_std_idle_var2" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk3/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk3/ntl_std_idle_var1" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk3/ntl_std_idle_var2" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk4/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk4/ntl_std_idle_var1" force="true"/>
-	<animation path="anims/shared/rifle/neutral/husk4/ntl_std_idle_var2" force="true"/>
-	<animation path="anims/shared/rifle/neutral/ntl_std_equip" force="true"/>
-	<animation path="anims/shared/rifle/neutral/ntl_std_idle" force="true"/>
-	<animation path="anims/shared/rifle/neutral/ntl_std_turn_l45" force="true"/>
-	<animation path="anims/shared/rifle/neutral/ntl_std_turn_l90" force="true"/>
-	<animation path="anims/shared/rifle/neutral/ntl_std_turn_l135" force="true"/>
-	<animation path="anims/shared/rifle/neutral/ntl_std_turn_r45" force="true"/>
-	<animation path="anims/shared/rifle/neutral/ntl_std_turn_r90" force="true"/>
-	<animation path="anims/shared/rifle/neutral/ntl_std_turn_r135" force="true"/>
 </table>

@@ -1871,6 +1871,7 @@
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_helmet_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_head_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/swat_heavy_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/swat_heavy_nm" />	
 	<!--fbi ready team 1 -->
 	<!--
     <object path="units/pd2_dlc_gitgud/characters/ene_fbi_ready_guard_1/ene_fbi_ready_guard_1"/>

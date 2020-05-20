@@ -106,7 +106,12 @@
 	<nav_data path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
 
 	<!--UNDERCOVER-->
-	<mission path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 
+	<mission path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 
+	<continent path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"/>
+	<nav_data path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"/>	
+	<cover_data path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>
+	
 	<sequence_manager path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->

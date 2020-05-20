@@ -719,6 +719,10 @@ function CopDamage:damage_bullet(attack_data)
 			damage = self._health * 10
 		end
 	end
+	
+	if self._char_tweak.damage.bullet_damage_mul then
+		damage = damage * self._char_tweak.damage.bullet_damage_mul
+	end	
 
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul

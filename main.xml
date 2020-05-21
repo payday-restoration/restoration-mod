@@ -357,9 +357,10 @@
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
 				<option type="bool" default_value="true" name="PONRTrack"/>
-				<option type="bool" default_value="true" name="MusicShuffle"/>
+				<option type="bool" default_value="false" name="MusicShuffle"/>
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<option type="bool" default_value="true" name="Holiday"/>
+				<option type="bool" default_value="false" name="ClassicMovies"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>
@@ -401,5 +402,6 @@
 	<Package id="packages/akanassetsnew" file="addakannew.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/zombieassetsnew" file="addzombienew.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/secret_stash" file="secret_stash.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/classicemovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 </mod>

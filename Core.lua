@@ -265,7 +265,12 @@ end
 function restoration:LoadSCAssets()
 	return true
 end
-
+--don't load the fucking classic movies if setting is on.  memory hog
+function restoration:LoadClassicMovies()
+	if restoration and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		return true
+	end
+end
 restoration.assault_style = {
 	"beta_assault",
 	"alpha_assault"

@@ -400,5 +400,6 @@
 	<Package id="packages/addtux" file="addtux.xml" use_clbk="self:DebugLoadAssets"/> 
 	<Package id="packages/akanassetsnew" file="addakannew.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/zombieassetsnew" file="addzombienew.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/secret_stash" file="secret_stash.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 </mod>

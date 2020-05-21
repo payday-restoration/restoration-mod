@@ -109,7 +109,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dinner.package = {"packages/narr_dinner", "packages/nypdassets", "packages/addslaughter"}
 	self.dinner.player_style = "slaughterhouse"
 	
-	self.man.package = {"packages/narr_man", "packages/addslaughter"}
+	self.man.package = {"packages/narr_man", "packages/addslaughter", "packages/secret_stash"}
 	self.man.player_style = "slaughterhouse"
 	self.man.teams = {
 		criminal1 = {

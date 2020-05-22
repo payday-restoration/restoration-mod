@@ -1160,13 +1160,14 @@ function PlayerStandard:_get_swap_speed_multiplier()
 
 	--Get per category multipliers (IE: Pistols swap faster, Akimbos swap slower, ect).
 	for _, category in ipairs(weapon_tweak_data.categories) do
-		multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", tweak_data[category] and tweak_data[category].swap_bonus or 1)
+		multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", 1)
+		multiplier = multiplier * (tweak_data[category] and tweak_data[category].swap_bonus or 1)
 	end
 
 	--Get per weapon multiplier.
 	multiplier = multiplier * (weapon_tweak_data.swap_speed_multiplier or 1)
 
-	multiplier = multiplier * managers.player:upgrade_value("team", "crew_faster_swap", 1)
+	--Bot crew boost to increase swap speed was never implemented.
 
 	if managers.player:has_activate_temporary_upgrade("temporary", "swap_weapon_faster") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "swap_weapon_faster", 1)

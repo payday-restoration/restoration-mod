@@ -51,10 +51,7 @@ function UpgradesTweakData:_init_value_tables()
 	self.values.team.damage_dampener = {}
 end
 
-local sc_upg_old_init = UpgradesTweakData.init
-function UpgradesTweakData:init(tweak_data)
-	sc_upg_old_init(self, tweak_data)
-	
+Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tweak_data)
 	local level = {
 		l2 = {
 				name_id = "weapons",
@@ -274,15 +271,11 @@ function UpgradesTweakData:init(tweak_data)
 			self.level_tree[i] = currLevel
 		end
 	end 	
+end)
 
-end		
 
-local sc_sttd = UpgradesTweakData._init_pd2_values
-function UpgradesTweakData:_init_pd2_values()
-	sc_sttd(self, tweak_data)
-	
-	--Upgrade Value changes for skills and such--
-
+--Upgrade Value changes for skills and such--
+Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
 	--Explosives hurt--
 	self.explosive_bullet.curve_pow = 1
 	self.explosive_bullet.player_dmg_mul = 0.5
@@ -290,19 +283,20 @@ function UpgradesTweakData:_init_pd2_values()
 	self.explosive_bullet.feedback_range = self.explosive_bullet.range
 	self.explosive_bullet.camera_shake_max_mul = 4
 
-	--Restoring movement penalties--
+	--Weapon Based Movement Modifiers--
 	self.weapon_movement_penalty.minigun = 0.75
 	self.weapon_movement_penalty.lmg = 1
 
-	--Armor related stuff--
+	--Armor Stats--
+	--Add 20 to the values in this table to get in game amounts.
 	self.values.player.body_armor.armor = {
-		0,
-		2,
-		4,
-		6,
-		11,
-		13,
-		18
+		0, --Suit
+		2, --LBV
+		4, --BV
+		6, --HBV
+		11, --Flak
+		13, --CTV
+		18 --ICTV
 	}
 	
 	self.values.player.body_armor.movement = { 
@@ -350,6 +344,7 @@ function UpgradesTweakData:_init_pd2_values()
 		0.7,
 		0.6
 	}
+	--Appears to be unused.
 	self.values.player.body_armor.skill_ammo_mul = {
 		1,
 		1.02,
@@ -358,25 +353,6 @@ function UpgradesTweakData:_init_pd2_values()
 		1.8,
 		1.1,
 		1.12
-	}
-	self.values.player.body_armor.skill_max_health_store = {
-		8,
-		7.2,
-		6.4,
-		5.6,
-		4.8,
-		4,
-		3.2
-	}
-	self.kill_change_regenerate_speed_percentage = true
-	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
-		1.40,
-		1.35,
-		1.30,
-		1.25,
-		1.20,
-		1.15,
-		1.10
 	}
 	self.values.player.body_armor.deflection = {
 		0.00,
@@ -391,25 +367,22 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.rep_upgrades.values = {0}
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
-	self.values.player.ignore_suppression_flinch = {true}
-	self.values.player.health_revive_max = {true}
-	self.values.player.no_deflection = {true}
-	self.values.player.yakuza_berserker = {true}
-	self.values.player.electrocution_resistance_multiplier = {1}
+	self.values.player.extra_revive_health = {0.25} --Bonus health % to add when getting up. Used by Muscle and Stoic.
+	self.values.player.no_deflection = {true} --Removes health DR. Used by Grinder and Stoic.
 	
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
 	self.values.team.crew_add_armor = {1.5}
-	self.values.team.crew_add_dodge = {0.03}
+	self.values.team.crew_add_dodge = {0.03} --Now adds % of dodge stat every second to meter.
 	self.values.team.crew_add_concealment = {1}
 	self.values.team.crew_add_stamina = {25}
 	self.values.team.crew_reduce_speed_penalty = {1}
 	self.values.team.crew_health_regen = {0.1}
 	self.values.team.crew_throwable_regen = {70}
 	self.values.team.crew_faster_reload = {1.1}
-	self.values.team.crew_faster_swap = {1}	
 
 	--Crew ability stuff
+	--Table index corresponds to number of bots.
 	self.values.team.crew_inspire = {
 		{
 			90,
@@ -434,13 +407,16 @@ function UpgradesTweakData:_init_pd2_values()
 	self.values.team.crew_ai_ap_ammo = {true}
 	
 	--Equipment--
-	self.values.first_aid_kit.uppers_cooldown = 30
+	--FAKS: Intended to offer on-demand burst healing that cann save people from going down.
 	self.values.first_aid_kit.heal_amount = 10 --Heals 100 health on use.
+
+	--Doctor Bags: Intended to offer consistent sustain over a long period of time.
+	self.doctor_bag_base = 2 --Starting Number
 	self.values.doctor_bag.heal_amount = 0.2 --Heals 20% of max health on use.
 	self.values.doctor_bag.passive_regen = 0.04
 	self.values.doctor_bag.passive_regen_duration = 180.1 --Heals 4% of max health every 4 seconds for the next 3 minutes or until you enter bleedout.
 	
-	--ECMs--
+	--ECMs: They're ECMs
 	self.ecm_jammer_base_battery_life = 10
 	self.ecm_jammer_base_low_battery_life = 4
 	self.ecm_jammer_base_range = 2500
@@ -448,358 +424,434 @@ function UpgradesTweakData:_init_pd2_values()
 	self.ecm_feedback_max_duration = 20
 	self.ecm_feedback_interval = 1.5
 	self.ecm_feedback_retrigger_interval = 240
-	
-	--[[   MASTERMIND   ]]--
-		--{
-			--[[   MEDIC SUBTREE   ]]--
-			--{
-				--Combat Medic--
-				self.values.temporary.combat_medic_damage_multiplier = {
-					{1.25, 10},
-					{1.25, 15}
-				}
-				self.revive_health_multiplier = {1.3}
-				self.values.temporary.revive_damage_reduction = {{
-					0.9,
-					5
-				}}
-				self.values.player.revive_damage_reduction = {0.9}
-				
-				--Quick Fix
-				self.values.first_aid_kit.deploy_time_multiplier = {0.5}
-				self.values.temporary.first_aid_damage_reduction = { {0.5, 5} }
 
-				--Painkillers--
+	--"Baked In" upgrades
+	self.values.cable_tie.interact_speed_multiplier = {0.25}
+	self.values.player.stamina_multiplier = {2}
+	self.values.team.stamina.multiplier = {1.5}
+	self.values.player.civ_calming_alerts = {true}
+	self.values.carry.throw_distance_multiplier = {1.5}
+	self.values.sentry_gun.cost_reduction = {2, 3}
+	self.values.sentry_gun.spread_multiplier = {2}
+	self.values.sentry_gun.rot_speed_multiplier = {2}
+	self.values.sentry_gun.extra_ammo_multiplier = {2}
+	self.values.player.sec_camera_highlight_mask_off = {true}
+	self.values.player.special_enemy_highlight_mask_off = {true}
+	self.values.player.mask_off_pickup = {true}
+	self.values.player.small_loot_multiplier = {1.3, 1.3}
+	self.values.player.melee_kill_snatch_pager_chance = {1}
+	self.values.player.run_speed_multiplier = {1.25}
+	self.values.player.climb_speed_multiplier = {1.2, 1.75}
+	self.values.player.can_free_run = {true}
+	self.values.player.fall_health_damage_multiplier = {0}
+	self.values.player.counter_strike_melee = {true}
+	self.player_damage_health_ratio_threshold = 0.5
+	self.player_damage_health_ratio_threshold_2 = 0.5
+
+	--Allegedly used somewhere???
+	self.values.akimbo.recoil_multiplier = {
+		1.4,
+		1.3,
+		1.2
+	}
+
+	--Skills--
+	--MASTERMIND--
+		--Medic--
+			--Combat Medic--
+				--Basic
+					self.values.player.revive_damage_reduction = {0.9}
+					self.values.temporary.revive_damage_reduction = {{
+						0.9,
+						5
+					}}
+				--Ace
+					self.revive_health_multiplier = {1.3}
+			
+			--Quick Fix
+				--Basic
+					self.values.first_aid_kit.deploy_time_multiplier = {0.5} --Also applies to DBs.
+				--Ace
+					self.values.temporary.first_aid_damage_reduction = {{0.5, 5}}
+
+			--Painkillers--
 				self.values.temporary.passive_revive_damage_reduction = {
-					{0.75, 5},
-					{0.5, 5}
+					{0.75, 5}, --Basic
+					{0.5, 5}   --Ace
 				}
-			
-				--Uppers
-				self.values.first_aid_kit.quantity = {3, 6}
-				self.values.first_aid_kit.downs_restore_chance = {0}
 
-				--Combat Doctor
-				self.doctor_bag_base = 2
-				self.values.doctor_bag.quantity = {1}
-				self.values.doctor_bag.amount_increase = {1}
-				
-				--Inspire
-				self.values.player.long_dis_revive = {0.5, 0.5}
-				self.skill_descs.inspire = {multibasic = "50%", multibasic2 = "20%", multibasic3 = "10", multipro = "50%"}
-				self.values.cooldown.long_dis_revive = {
-					{1, 90}
+			--Uppers
+				self.values.first_aid_kit.quantity = {
+					3, --Basic
+					6 --Ace
 				}
-				self.morale_boost_speed_bonus = 1.2
-				self.morale_boost_suppression_resistance = 1
-				self.morale_boost_time = 10
-				self.morale_boost_reload_speed_bonus = 1.2
-				self.morale_boost_base_cooldown = 3.5
-			--}
+				--Ace
+					self.values.first_aid_kit.uppers_cooldown = 30
+
+			--Combat Doctor
+				--Basic
+					self.values.doctor_bag.amount_increase = {1}
+				--Ace
+					self.values.doctor_bag.quantity = {1}
 			
-			--[[   CONTROLLER SUBTREE   ]]--
-			--{
-				--Cable Guy
-				self.values.cable_tie.interact_speed_multiplier = {0.25}
-				self.values.cable_tie.pickup_chance = {true}
-				self.values.cable_tie.quantity_1 = {4}
-				self.values.cable_tie.quantity_2 = {4}
-				self.values.player.stamina_multiplier = {2}
-				self.values.team.stamina.multiplier = {1.5}
+			--Inspire
+				--Basic
+					self.skill_descs.inspire = {multibasic = "50%", multibasic2 = "20%", multibasic3 = "10", multipro = "50%"}
+					self.morale_boost_speed_bonus = 1.2
+					self.morale_boost_suppression_resistance = 1
+					self.morale_boost_time = 10
+					self.morale_boost_reload_speed_bonus = 1.2
+					self.morale_boost_base_cooldown = 3.5
+					self.values.player.revive_interaction_speed_multiplier = {
+						0.5
+					}
+				--Ace
+					self.values.player.long_dis_revive = {0.5, 0.5}
+					self.values.cooldown.long_dis_revive = {
+						{1, 90}
+					}
+			
+		--Controller--
+			--Cable Guy
+				--Basic
+					self.values.cable_tie.quantity_1 = {4}
+				--Ace
+					self.values.cable_tie.quantity_2 = {4}
+					self.values.cable_tie.pickup_chance = {true}
 
 				--Clowns are Scary
-				self.values.player.intimidate_range_mul = {1.5}
-				self.values.player.intimidate_aura = {1000}
-				self.values.player.convert_enemies_max_minions = {1, 2}
+					--Basic
+						self.values.player.civ_intimidation_mul = {1.5}
+					--Ace
+						self.values.player.intimidate_range_mul = {1.5}
+						self.values.player.intimidate_aura = {1000}
 
 				--Joker
-				self.values.player.convert_enemies = {true}
-				self.values.player.convert_enemies_health_multiplier = {0.45}
-				self.values.player.convert_enemies_damage_multiplier = {1.45, 1.45}
-				self.values.player.convert_enemies_interaction_speed_multiplier = {0.35}
+					self.values.player.convert_enemies_max_minions = {
+						1, --Basic
+						2 --Ace
+					}
+					--Basic
+						self.values.player.convert_enemies = {true}
+					--Ace
+						self.values.player.convert_enemies_health_multiplier = {0.45}
+						self.values.player.convert_enemies_damage_multiplier = {1.45, 1.45}
 
 				--Stockholm Syndrome
-				self.values.player.civ_calming_alerts = {true}
-				self.values.player.civ_intimidation_mul = {1.5}
-				self.values.player.civilian_reviver = {true}
-				self.values.player.civilian_gives_ammo = {true}
-				self.values.player.super_syndrome = {0}
+					--Basic
+						self.values.player.super_syndrome = {0}
+					--Ace
+						self.values.player.civilian_reviver = {true}
+						self.values.player.civilian_gives_ammo = {true}
 
 				--Partners in Crime--
-				self.values.player.passive_convert_enemies_health_multiplier = {
-					0.5,
-					0.2
-				}
-				self.values.player.minion_master_health_multiplier = {
-					1.15
-				}
-				self.values.player.minion_master_speed_multiplier = {
-					1.05
-				}
+					--Says health multiplier, but actually multiplies damage taken.
+					self.values.player.passive_convert_enemies_health_multiplier = {
+						0.5, --Basic
+						0.2 --Ace
+					}
+					--Basic
+						self.values.player.minion_master_speed_multiplier = {1.05}
+					--Ace
+						self.values.player.minion_master_health_multiplier = {1.15}
 							
 				--Hostage Taker
-				self.values.player.hostage_health_regen_addend = {0.125, 0.25}
-				self.values.team.damage = {
-					hostage_absorption = {0.1},
-					hostage_absorption_limit = 4
-				}
-			--}
+					self.values.player.hostage_health_regen_addend = {
+						0.125, --Basic
+						0.25 --Ace
+					}
+					--Ace
+						self.values.team.damage = {
+							hostage_absorption = {0.1},
+							hostage_absorption_limit = 4
+						}
 			
-			--[[   ASSAULT SUBTREE   ]]--
-			--{
-				--Leadership--
-				self.values.smg.recoil_index_addend = {1}
-				self.values.team.weapon.recoil_index_addend = {1}
+		--Assault--
+			--Leadership--
+				--Basic
+					self.values.smg.recoil_index_addend = {1}
+				--Ace
+					self.values.team.weapon.recoil_index_addend = {1}
 
-				--MG Handling
-				self.values.smg.reload_speed_multiplier = {1.25}
-				self.values.smg.hip_fire_spread_multiplier = {0.5}
-				self.values.assault_rifle.hip_fire_spread_multiplier = {0.5}
-
-				--MG Specialist
-				self.values.smg.fire_rate_multiplier = {1.15, 1.15}
-				self.values.smg.move_spread_multiplier = {0.5}
-				self.values.assault_rifle.move_spread_multiplier = {0.5}
-				self.values.smg.damage_multiplier = {1}
+			--MG Handling
+				--Basic
+					self.values.smg.hip_fire_spread_multiplier = {0.5}
+					self.values.assault_rifle.hip_fire_spread_multiplier = {0.5}
+				--Ace
+					self.values.smg.reload_speed_multiplier = {1.25}
 				
-				--Shock and Awe
-				self.values.weapon.clip_ammo_increase = {1.2, 1.5}
+			--Shock and Awe
+				self.values.weapon.clip_ammo_increase = {
+					1.2, --Basic
+					1.5 --Ace
+				}
 
-				--Heavy Impact
-				self.values.weapon.knock_down = {0.1, 0.25}
+			--MG Specialist
+				--Basic
+					self.values.smg.move_spread_multiplier = {0.5}
+					self.values.assault_rifle.move_spread_multiplier = {0.5}
+				--Ace
+					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
+				
+			--Heavy Impact
+				self.values.weapon.knock_down = {
+					0.1, --Basic
+					0.25 --Ace
+				}
 	
-				--Body Expertise
+			--Body Expertise
 				self.values.weapon.automatic_head_shot_add = {0.3, 1}
-
-			--}
-		--}
+				--Run and Shoot
 		
-		--[[   ENFORCER   ]]--
-		--{
-			--[[   SHOTGUNNER SUBTREE   ]]--
-			--{
-				--Underdog
-				self.values.temporary.dmg_multiplier_outnumbered = { {1.1, 7} }
-				self.values.temporary.dmg_dampener_outnumbered = { {0.9, 7} }
-				
-				--Shotgun CQB
-				self.values.shotgun.reload_speed_multiplier = {1.25, 1.5}
-				self.values.shotgun.enter_steelsight_speed_multiplier = {1.75}
-				self.skill_descs.shotgun_cqb = {multibasic = "25%", multibasic2 = "25%", multipro = "25%", multipro2 = "125%"}
+	--ENFORCER--
+		--Shotgunner--
+			--Shotgun Impact
+				--Basic
+					self.values.shotgun.recoil_index_addend = {1}
+				--Ace
+					self.values.shotgun.extra_rays = {3}
 
-				--Shotgun Impact
-				self.values.shotgun.recoil_index_addend = {1}
-				self.values.shotgun.damage_multiplier = {1, 1}
-				self.values.shotgun.extra_rays = {3}
-				self.skill_descs.shotgun_impact = {multibasic = "4", multipro = "35%"}
+			--Shotgun CQB
+				--Basic
+					self.values.shotgun.enter_steelsight_speed_multiplier = {1.75}
+				--Ace
+					self.values.shotgun.reload_speed_multiplier = {1.25, 1.25}
 				
-				--Far Away
-				self.values.shotgun.steelsight_accuracy_inc = {0.6}
-				self.values.shotgun.steelsight_range_inc = {1.5}
+			--Underdog
+				--Basic
+					self.values.temporary.dmg_multiplier_outnumbered = {{1.1, 7}}
+				--Ace
+					self.values.temporary.dmg_dampener_outnumbered = {{0.9, 7}}
+				
+			--Far Away
+				--Basic
+					self.values.shotgun.steelsight_accuracy_inc = {0.6}
+				--Ace
+					self.values.shotgun.steelsight_range_inc = {1.5}
 
-				--Close By
-				self.values.shotgun.hip_run_and_shoot = {true}
-				self.values.shotgun.hip_rate_of_fire = {1.35}
+			--Close By
+				--Basic
+					self.values.shotgun.hip_run_and_shoot = {true}
+				--Ace
+					self.values.shotgun.hip_rate_of_fire = {1.35}
 				
-				--Overkill
-				self.values.shotgun.swap_speed_multiplier = {1.8}
-				self.values.saw.swap_speed_multiplier = {1.8}
+			--Overkill
 				self.values.temporary.overkill_damage_multiplier = {
-					{1.5, 2},
-					{1.5, 10}
+					{1.5, 2}, --Basic
+					{1.5, 10} --Ace
 				}
-			--}
+				--Ace
+					self.values.shotgun.swap_speed_multiplier = {1.8}
+					self.values.saw.swap_speed_multiplier = {1.8}
 			
-			--[[   ARMORER SUBTREE   ]]--
-			--{
-				--Stun Resistance
-				self.values.player.damage_shake_addend = {1}
-				self.values.player.resist_melee_push = {0.025}
-				self.values.player.flashbang_multiplier = {0.5, 0.25}
+		--Juggernaut--
+			--Stun Resistance
+				--Basic
+					self.values.player.damage_shake_addend = {1}
+					self.values.player.resist_melee_push = {0.025}
+				--Ace
+					self.values.player.flashbang_multiplier = {0.5, 0.5}
 				
 				--Die Hard
-				self.values.player.deflection_addend = {0.05, 0.10}
+					self.values.player.deflection_addend = {
+						0.05, --Basic
+						0.10 --Ace
+					}
 
 				--Transporter
-				self.values.carry.movement_speed_multiplier = {1.5}
-				self.values.carry.throw_distance_multiplier = {1.5}
-				self.values.carry.movement_penalty_nullifier = {true}
-				self.values.player.armor_carry_bonus = {1.005}
-				
+					--Basic
+						self.values.player.armor_carry_bonus = {1.005}
+					--Ace
+						self.values.carry.movement_penalty_nullifier = {true}
+
 				--More Blood To Bleed
-				self.values.player.health_multiplier = {1.15, 1.4}
+					self.values.player.health_multiplier = {
+						1.15, --Basic
+						1.4 --Ace
+					}
 
 				--Bullseye
-				self.values.player.headshot_regen_armor_bonus = {0.5, 3.5}
-				self.on_headshot_dealt_cooldown = 3
+					self.values.player.headshot_regen_armor_bonus = {
+						0.5, --Basic
+						3.5 --Ace
+					}
+					self.on_headshot_dealt_cooldown = 3
 
 				--Iron Man
-				self.values.player.shield_knock = {true}
-				self.values.player.armor_regen_timer_multiplier = {0.95}
-
-			--}
+					--Basic
+						--Unlock ICTV
+					--Ace
+						self.values.player.shield_knock = {true}
+						self.values.player.armor_regen_timer_multiplier = {0.95}
 			
-			--[[   AMMO SPECIALIST SUBTREE   ]]--
-			--{
-				--Scavenger
-				self.values.player.double_drop = {5}
-				self.values.player.increased_pickup_area = {1.5}
+		--Support--
+			--Scavenger
+				--Basic
+					self.values.player.increased_pickup_area = {1.5}
+				--Ace
+					self.values.player.double_drop = {5}
 				
-				--Bulletstorm
-				self.values.player.no_ammo_cost = {true, true}
+			--Bulletstorm
+				--Identical to vanilla
 
-				--Portable Saw
-				self.values.saw.reload_speed_multiplier = {1.25}
-				self.values.grenade_launcher.reload_speed_multiplier = {1.25}
-				self.values.crossbow.reload_speed_multiplier = {1.25}
-				self.values.bow.reload_speed_multiplier = {1.25}
-				self.values.saw.damage_multiplier = {1}
-								
-				--Extra Lead
-				self.values.ammo_bag.ammo_increase = {2}
-				self.values.ammo_bag.quantity = {1}
+			--Portable Saw
+				--Basic
+					self.values.saw.enemy_slicer = {true}
+				--Ace
+					self.values.saw.reload_speed_multiplier = {1.25}
+					self.values.grenade_launcher.reload_speed_multiplier = {1.25}
+					self.values.crossbow.reload_speed_multiplier = {1.25}
+					self.values.bow.reload_speed_multiplier = {1.25}
+			
+			--Extra Lead
+				--Basic
+					self.values.ammo_bag.ammo_increase = {2}
+				--Ace
+					self.values.ammo_bag.quantity = {1}
 
-				--Saw Massacre
-				self.values.saw.enemy_slicer = {true}
-				self.values.saw.ignore_shields = {true}
-				self.values.saw.panic_when_kill = {
-					{
-						area = 1000,
-						chance = 0.5,
-						amount = 200
+			--Saw Massacre
+				--Basic
+					self.values.saw.ignore_shields = {true}
+				--Ace
+					self.values.saw.panic_when_kill = {
+						{
+							area = 1000,
+							chance = 0.5,
+							amount = 200
+						}
 					}
-				}
-				self.values.player.explosive_damage_reduction = {true}
 				
-				--Fully Loaded
-				self.values.player.extra_ammo_multiplier = {1.25}
-				self.values.player.pick_up_ammo_multiplier = {1.35, 1.75}
-				self.values.player.regain_throwable_from_ammo = {
-					{chance = 0.05, chance_inc = 1.0}
-				}
-			--}
-		--}
+			--Fully Loaded
+				--Basic
+					self.values.player.extra_ammo_multiplier = {1.25}
+				--Ace
+					self.values.player.pick_up_ammo_multiplier = {1.35, 1.75}
+					self.values.player.regain_throwable_from_ammo = {
+						{chance = 0.05, chance_inc = 0.0}
+					}
 		
-		--[[   TECHNICIAN   ]]--
-		--{
-			--[[   ENGINEER SUBTREE   ]]--
-			--{
-				--Defense up (RIP)
-				self.values.sentry_gun.cost_reduction = {2, 3}
+	--TECHNICIAN--
+		--Fortress--
+			--Logistician
+				self.values.player.deploy_interact_faster = {
+					0.75, --Basic
+					0.25 --Ace
+				}
+				--Ace
+					self.values.team.deploy_interact_faster = {0.25}
 				
-				--Sentry Targeting Package (RIP)
-				self.values.sentry_gun.spread_multiplier = {2}
-				self.values.sentry_gun.rot_speed_multiplier = {2}
-				self.values.sentry_gun.extra_ammo_multiplier = {2}
-				
-				--Logistician
-				self.values.player.deploy_interact_faster = {0.75, 0.25}
-				self.values.player.extra_equipment = {true}
-				self.values.team.deploy_interact_faster = {0.25}
-				
-				--Nerves of Steel
-				self.values.player.interacting_damage_multiplier = {0.5}
-				self.values.player.steelsight_when_downed = {true}				
+			--Nerves of Steel
+				--Basic
+					self.values.player.steelsight_when_downed = {true}				
+				--Ace			
+					self.values.player.interacting_damage_multiplier = {0.5}
 
-				--Engineering
-				self.values.sentry_gun.armor_multiplier = {2.5}
-				self.values.sentry_gun.shield = {true}	
+			--Engineering
+				--Basic
+					self.values.sentry_gun.armor_multiplier = {2.5}
+				--Ace
+					self.values.sentry_gun.shield = {true}	
 		
-				--Jack of All Trades
-				self.values.player.throwables_multiplier = {1.5}
-				self.values.player.second_deployable = {true}
-				self.values.player.second_deployable_full = {true}
+			--Jack of All Trades
+				--Basic
+					self.values.player.throwables_multiplier = {1.5}
+				--Ace
+					self.values.player.second_deployable = {true}
 	
-				--Tower Defense
-				self.values.sentry_gun.quantity = {1, 2}
-				self.skill_descs.tower_defense = { 
-					[1] = 1, 
-					[2] = 1, 
-					multibasic = "2",
-					multipro = "3"
-				}
-				self.values.sentry_gun.less_noisy = {true}
-				self.values.sentry_gun.ap_bullets = {true}
-				self.values.sentry_gun.fire_rate_reduction = {4}
-				self.values.sentry_gun.damage_multiplier = {1}	
+			--Tower Defense
+				--Basic
+					self.values.sentry_gun.ap_bullets = {true}
+					self.values.sentry_gun.fire_rate_reduction = {4}
+					self.values.sentry_gun.damage_multiplier = {1}	
+				--Ace
+					self.values.sentry_gun.quantity = {1, 2}
 
 				--Bulletproof
-				self.values.player.armor_multiplier = {1.2, 1.5}
-				self.values.team.armor.regen_time_multiplier = {0.95}
-				self.values.player.armor_regen_timer_multiplier_tier = {0.95}				
-				
-			--}
+					self.values.player.armor_multiplier = {
+						1.2, --Basic
+						1.5 --Ace
+					}
+					--Ace
+						self.values.player.armor_regen_timer_multiplier_tier = {0.95}				
 			
-			--[[   BREACHER SUBTREE   ]]--
-			--{
-				--Hardware Expert
-				self.values.player.drill_deploy_speed_multiplier = {0.5}
-				self.values.player.drill_fix_interaction_speed_multiplier = {0.8, 0.5}
-				self.values.player.drill_alert_rad = {900}
-				self.values.player.silent_drill = {true}
+		--Breacher--
+			--Hardware Expert
+				self.values.player.drill_fix_interaction_speed_multiplier = {
+					0.8, --Basic
+					0.5 --Ace
+				}
+				--Basic
+					self.values.player.drill_alert_rad = {900}
+				--Ace
+					self.values.player.silent_drill = {true}
 				
-				--Danger Close
-				self.values.trip_mine.explosion_size_multiplier_1 = {1.3}
-				self.values.trip_mine.damage_multiplier = {1.5}
+			--Danger Close
+				--Basic
+					self.values.trip_mine.explosion_size_multiplier_1 = {1.3}
+				--Ace
+					self.values.trip_mine.damage_multiplier = {1.5}
 
-				--Drill Sawgent
-				self.values.player.drill_speed_multiplier = {0.9, 0.7}
+			--Drill Sawgent
+				self.values.player.drill_speed_multiplier = {
+					0.9, --Basic
+					0.7 --Ace
+				}
 				
-				--Demoman
+			--Demoman
 				self.values.player.trip_mine_deploy_time_multiplier = {
-					0.8,
-					0.6
-				}				
-				--Located in tweakdata.lua since their quantity is hardcoded in the exe
+					0.8, --Basic
+					0.6 --Ace
+				}
+				--Quantity Increase Located in tweakdata.lua since their quantity is hardcoded in the exe
 
 				--Kickstarter
-				self.values.player.drill_autorepair_1 = {0.1}
-				self.values.player.drill_autorepair_2 = {0.2}
-				self.values.player.drill_melee_hit_restart_chance = {true}
+					--Basic
+						self.values.player.drill_autorepair_1 = {0.3}
+					--Ace
+						self.values.player.drill_melee_hit_restart_chance = {true}
 				
 				--Fire Trap
-				self.values.trip_mine.fire_trap = {
-					{0, 1},
-					{10, 1.5}
-				}
-			--}
+					self.values.trip_mine.fire_trap = {
+						{0, 1}, --Basic
+						{10, 1.5} --Ace
+					}
 			
-			--[[   BATTLE SAPPER SUBTREE   ]]--
-			--{	
-				--Sharpshooter
-				self.values.weapon.single_spread_index_addend = {1}
-				self.values.assault_rifle.recoil_index_addend = {1}
-				self.values.snp.recoil_index_addend = {1}
-				self.sharpshooter_categories = {
-					"assault_rifle",
-					"smg",
-					"snp"
-				}
-				self.values.player.not_moving_accuracy_increase = {1}
+		--Combat Engineer--
+			--Sharpshooter
+				--Basic
+					self.values.snp.recoil_index_addend = {1}
+					self.values.assault_rifle.recoil_index_addend = {1}
+				--Ace
+					self.values.player.not_moving_accuracy_increase = {1}
 				
-				--Kilmer
-				self.values.assault_rifle.reload_speed_multiplier = {1.25}
-				self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.5}
-				self.values.snp.enter_steelsight_speed_multiplier = {1.5}
-				self.values.snp.reload_speed_multiplier = {1.25}
-				self.values.assault_rifle.move_spread_multiplier = {0.5}
-				self.values.snp.move_spread_multiplier = {0.5}
+			--Kilmer
+				--Basic
+					self.values.weapon.single_spread_index_addend = {1}
+				--Ace
+					self.values.snp.reload_speed_multiplier = {1.25}
+					self.values.assault_rifle.reload_speed_multiplier = {1.25}
 
-				--Rifleman
-				self.values.assault_rifle.enter_steelsight_speed_multiplier = {1.5}
-				self.values.weapon.enter_steelsight_speed_multiplier = {1.25}
-				self.values.player.single_shot_accuracy_inc = {0.75}
-				
-				--Mind Blown, formerly Explosive Headshot, formerly Graze
+			--Rifleman
+				--Basic
+					self.values.weapon.enter_steelsight_speed_multiplier = {1.5}
+				--Ace
+					self.values.player.single_shot_accuracy_inc = {0.75}
+					self.sharpshooter_categories = {
+						"assault_rifle",
+						"smg",
+						"snp"
+					}
+					
+			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
-					{
+					{ --Basic
 						radius = 400,
 						max_chain = 4,
 						damage_factor = 0.70,
 						damage_factor_range = 0.00,
 						range_increment = 700
 					},
-					{
+					{ --Ace
 						radius = 500,
 						max_chain = 4,
 						damage_factor = 0.70,
@@ -808,108 +860,120 @@ function UpgradesTweakData:_init_pd2_values()
 					}
 				}				
 
-				--Ammo Efficiency
+			--Ammo Efficiency
 				self.values.player.head_shot_ammo_return = {
-					{ ammo = 0.035, time = 6, headshots = 3, to_magazine = false },
-					{ ammo = 0.035, time = 6, headshots = 2, to_magazine = true }
+					{ ammo = 0.035, time = 6, headshots = 3, to_magazine = false }, --Basic
+					{ ammo = 0.035, time = 6, headshots = 2, to_magazine = true } --Ace
 				}
 
-				--Aggressive Reload
+			--Aggressive Reload
 				self.values.temporary.single_shot_fast_reload = {
-					{
+					{ --Basic
 						1.25,
 						6
 					},
-					{
+					{ --Ace
 						1.5,
 						12
 					},
 				}
-					
-			--}
-		--}
-		
-		--[[   GHOST   ]]--
-		--{
-			--[[   COVERT OPS SUBTREE   ]]--
-			--{
-				--Chameleon (RIP)
-				self.values.player.suspicion_multiplier = {0.75}
-				self.values.player.sec_camera_highlight_mask_off = {true}
-				self.values.player.special_enemy_highlight_mask_off = {true}
-				self.values.player.mask_off_pickup = {true}
-				self.values.player.small_loot_multiplier = {1.3, 1.3}
-				
-				--Cleaner
-				self.values.player.corpse_dispose_amount = {3, 4}
-				self.values.player.extra_corpse_dispose_amount = {1}
-				self.values.bodybags_bag.quantity = {1}
-				self.values.player.cleaner_cost_multiplier = {0}
-				self.values.weapon.special_damage_taken_multiplier = {1.05, 1.15}
-				
-				--Nimble
-				self.values.player.pick_lock_easy_speed_multiplier = {0.5, 0.25}
-				self.values.player.pick_lock_hard = {true}
 
-				--Sixth Sense
-				self.values.player.standstill_omniscience = {true}
-				self.values.player.additional_assets = {true}
-				self.values.player.buy_bodybags_asset = {true}
-				self.values.player.buy_spotter_asset = {true}
+	--GHOST--
+		--Shinobi--
+			--Cleaner
+				self.values.weapon.special_damage_taken_multiplier = {
+					1.05, --Basic
+					1.15 --Ace
+				}
+				--Basic
+					self.values.player.corpse_dispose_amount = {3, 4}
+				--Ace
+					self.values.bodybags_bag.quantity = {1}
+
+			--Nimble
+				self.values.player.pick_lock_easy_speed_multiplier = {
+					0.5, --Basic
+					0.25 --Ace
+				}
+				--Ace
+					self.values.player.pick_lock_hard = {true}
+
+			--Sixth Sense
+				--Basic
+					self.values.player.standstill_omniscience = {true}
+				--Ace
+					self.values.player.additional_assets = {true}
+					self.values.player.buy_bodybags_asset = {true}
+					self.values.player.buy_spotter_asset = {true}
 				
-				--Systems Specialist
-				self.values.player.tape_loop_duration = {10, 30}
-				self.values.player.hack_fix_interaction_speed_multiplier = {0.75, 0.25}
-				self.values.player.marked_inc_dmg_distance = {{2000, 1.3}}
-				self.values.player.mark_enemy_time_multiplier = {2}
+			--Systems Specialist
+				self.values.player.tape_loop_duration = {
+					10, --Baked in
+					30 --Basic
+				}
+				self.values.player.hack_fix_interaction_speed_multiplier = {
+					0.75, --Basic
+					0.25 --Ace
+				}
+				--Ace
+					self.values.player.mark_enemy_time_multiplier = {2}
 				
-				--ECM Specialist
-				self.values.ecm_jammer.quantity = {1, 2}
-				self.values.ecm_jammer.duration_multiplier_2 = {1.25}
-				self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}
-				self.values.player.melee_kill_snatch_pager_chance = {1}
+			--ECM Specialist
+				self.values.ecm_jammer.quantity = {
+					1, --Basic
+					2 --Ace
+				}
 				
-				--ECM Overdrive
-				self.values.ecm_jammer.feedback_duration_boost = {1.25}
-				self.values.ecm_jammer.duration_multiplier = {1.25}
-				self.values.ecm_jammer.can_open_sec_doors = {true}		
-				self.values.ecm_jammer.affects_pagers = {true}
-			--}
+			--ECM Overdrive
+				--Basic
+					self.values.ecm_jammer.can_open_sec_doors = {true}		
+					self.values.ecm_jammer.feedback_duration_boost = {1.25}
+					self.values.ecm_jammer.duration_multiplier = {1.25}
+				--Ace
+					self.values.ecm_jammer.duration_multiplier_2 = {1.25}
+					self.values.ecm_jammer.feedback_duration_boost_2 = {1.25}
+					self.values.ecm_jammer.affects_pagers = {true}
 			
-			--[[   COMMANDO SUBTREE   ]]--
-			--{
-				--Duck and Cover
-				self.values.player.run_dodge_chance = {0.10}
-				self.values.player.zipline_dodge_chance = {0.3}
-				self.values.player.run_speed_multiplier = {1.25}
-				self.values.player.crouch_dodge_chance = {0.05, 0.10}
+		--Artful Dodger--
+			--Duck and Cover
+				--Basic
+					self.values.player.stamina_regen_timer_multiplier = {0.75}
+					self.values.player.stamina_regen_multiplier = {1.25}
+				--Ace
+					self.values.player.run_dodge_chance = {0.10}
+					self.values.player.zipline_dodge_chance = {0.3}
 
-				--Evasion
-				self.values.player.movement_speed_multiplier = {1.05, 1.1}
-				self.values.player.climb_speed_multiplier = {1.2, 1.75}
-				self.values.player.can_free_run = {true}
-				self.values.player.fall_damage_multiplier = {0.25}
-				self.values.player.fall_health_damage_multiplier = {0}
-
-				--Deep Pockets
-				self.values.player.melee_concealment_modifier = {2}
-				self.values.player.ballistic_vest_concealment = {4}
-				self.values.player.level_1_armor_addend = {2}
-				self.values.player.level_2_armor_addend = {2}
-				self.values.player.level_3_armor_addend = {2}
-				self.values.player.level_4_armor_addend = {2}
-
+			--Evasion
+				self.values.player.movement_speed_multiplier = {
+					1.05, --Basic
+					1.1 --Unused
+				}
+				--Basic
+					self.values.player.fall_damage_multiplier = {0.25}
 				
-				--Moving Target
+				--Ace
+					--Run and Reload
+				
+			--Deep Pockets
+				--Basic
+					self.values.player.melee_concealment_modifier = {2}
+				--Ace
+					self.values.player.ballistic_vest_concealment = {4}
+					self.values.player.level_1_armor_addend = {2}
+					self.values.player.level_2_armor_addend = {2}
+					self.values.player.level_3_armor_addend = {2}
+					self.values.player.level_4_armor_addend = {2}
+
+			--Moving Target
 				self.values.player.detection_risk_add_movement_speed = {
-					{
+					{ --Basic
 						0.015,
 						3,
 						"below",
 						35,
 						0.15
 					},
-					{
+					{ --Ace
 						0.015,
 						1,
 						"below",
@@ -917,92 +981,94 @@ function UpgradesTweakData:_init_pd2_values()
 						0.15
 					}
 				}
-				self.values.player.backstab_dodge = {
-					0.75
-				}
+				--Ace
+					self.values.player.backstab_dodge = {0.75}
 
-				--Shockproof
-				self.values.player.taser_malfunction = {
-					{
-						interval = 1,
-						chance_to_trigger = 0.15
+			--Shockproof
+				--Basic
+					self.values.player.taser_malfunction = {{
+							interval = 1,
+							chance_to_trigger = 0.15
+					}}
+				--Ace
+					self.values.player.taser_self_shock = {
+						true
+					}	
+					self.counter_taser_damage = 0.5			
+					self.values.player.escape_taser = {
+						2
 					}
-				}				
-				self.values.player.taser_self_shock = {
-					true
-				}	
-				self.values.player.escape_taser = {
-					2
-				}				
-				self.counter_taser_damage = 0.5			
 
-				--Sneaky Bastard
-				self.values.player.health_damage_bonus_dodge = {
-					0.5
-				}
-				self.values.player.dodge_heal_no_armor = {
-					0.04 --% of maximum health
-				}
-
-			--}
+			--Sneaky Bastard
+				--Concealment stuff same as vanilla.
+				--Ace
+					self.values.player.health_damage_bonus_dodge = {
+						0.5
+					}
+					self.values.player.dodge_heal_no_armor = {
+						0.04 --% of maximum health
+					}
 			
-			--[[   SILENT KILLER SUBTREE   ]]--
-			--{
-				--Second Wind--
-				self.values.temporary.damage_speed_multiplier = {
-					{1.15, 3},
-					{1.3, 3}
-				}
-				self.values.player.armor_depleted_stagger_shot = {0, 3}
+		--Silent Killer--
+			--Second Wind--
+				--Basic
+					self.values.temporary.damage_speed_multiplier = {{1.15, 3}}
+				--Ace
+					self.values.player.armor_depleted_stagger_shot = {0, 3}
 
-				--Optical Illusions
-				self.values.player.silencer_concealment_penalty_decrease = {1}
-				self.values.player.silencer_concealment_increase = {1, 2}
+			--Optical Illusions
+				--Basic
+					self.values.player.silencer_concealment_penalty_decrease = {1}
+				--Ace
+					self.values.player.silencer_concealment_increase = {1, 2}
 
-				--The Professional
-				self.values.weapon.silencer_spread_index_addend = {1}
-				self.values.weapon.silencer_recoil_index_addend = {1}
-				self.values.weapon.silencer_enter_steelsight_speed_multiplier = {1.5}
+			--The Professional
+				--Basic
+					self.values.weapon.silencer_recoil_index_addend = {1}
+				--Ace
+					self.values.weapon.silencer_spread_index_addend = {1}
 
-				--Unseen Strike, formally Dire Need
+			--Unseen Strike
 				self.values.temporary.unseen_strike = {
-					{
+					{ --Basic
 						1.15,
 						3
 					},
-					{
+					{ --Ace
 						1.15,
 						6
 					}
 				}
 				self.values.player.unseen_increased_crit_chance = {
-					{
+					{ --Basic
 						min_time = 3,
 						max_duration = 3,
 						crit_chance = 1.15
 					},
-					{
+					{ --Ace
 						min_time = 3,
 						max_duration = 6,
 						crit_chance = 1.15
 					}
 				}				
 				
-				--Spotter
-				self.values.weapon.silencer_damage_multiplier = {1, 1}
-				self.values.player.marked_enemy_extra_damage = {true}
-				self.values.player.marked_enemy_damage_mul = 1.15				
+			--Spotter
+				--Basic
+					self.values.player.marked_enemy_extra_damage = {true}
+					self.values.player.marked_enemy_damage_mul = 1.15	
+				--Ace
+					self.values.player.marked_inc_dmg_distance = {{2000, 1.3}}			
 
-				--Low Blow
+			--Low Blow
 				self.values.player.detection_risk_add_crit_chance = {
-					{
+					{ --Basic
 						0.03,
 						3,
 						"below",
 						35,
 						0.3
 					},
-					{
+					{ --Ace
 						0.03,
 						1,
 						"below",
@@ -1010,43 +1076,38 @@ function UpgradesTweakData:_init_pd2_values()
 						0.3
 					}
 				}
-				self.values.player.backstab_crits = {0.50}
-
-			--}
-		--}
+				--Ace
+					self.values.player.backstab_crits = {0.50}
 		
-		--[[   FUGITIVE   ]]--
-		--{
-			--[[   GUNSLINGER SUBTREE   ]]--
-			--{
-				--Equilibrium
-				self.values.pistol.swap_speed_multiplier = {1.5, 3}
-				self.values.team.pistol.recoil_index_addend = {1}
-				self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
+	--FUGITIVE--
+		--Gunslinger
+			--Equilibrium
+				--Basic
+					self.values.team.pistol.recoil_index_addend = {1}
+					self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
+				--Ace
+					self.values.pistol.swap_speed_multiplier = {2}
 				
-				--Gun Nut	
-				self.values.pistol.fire_rate_multiplier = {1.15}
-				self.values.pistol.move_spread_multiplier = {0.5}
-				self.values.pistol.spread_index_addend = {1}						
+			--Gun Nut	
+				--Basic
+					self.values.pistol.fire_rate_multiplier = {1.15}
+					self.values.pistol.hip_fire_spread_multiplier = {0.5}	
+				--Ace
+					self.values.pistol.spread_index_addend = {1}						
 
-				--Over Pressurized/Gunfighter (Formerly Akimbo)
-				self.values.pistol.magazine_capacity_inc = {
-					5
-				}				
-				self.values.pistol.hip_fire_spread_multiplier = {
-					0.5
-				}				
-				self.values.pistol.reload_speed_multiplier = {1.15, 1.4}
-				self.values.pistol.damage_multiplier = {1}
-				
-				--Akimbo (Formerly Over Pressurized/Custom Ammo)
-				self.values.akimbo.extra_ammo_multiplier = {1.25, 1.5}
-				self.values.akimbo.recoil_multiplier = {
-					1.4,
-					1.3,
-					1.2
+			--Gunfighter
+				self.values.pistol.reload_speed_multiplier = {
+					1.15, --Basic
+					1.4 --Ace
 				}
+				--Basic
+					self.values.pistol.move_spread_multiplier = {0.5}
+				
+			--Akimbo
+				--Ace
+					self.values.akimbo.extra_ammo_multiplier = {1.25, 1.25}
 
+				--Also used by Hitman, unfortunately.
 				self.values.akimbo.recoil_index_addend = {
 					0,
 					2,
@@ -1054,6 +1115,7 @@ function UpgradesTweakData:_init_pd2_values()
 					6,
 					8
 				}
+				--Reserved for future use.
 				self.values.akimbo.spread_index_addend = {
 					0,
 					1,
@@ -1062,112 +1124,115 @@ function UpgradesTweakData:_init_pd2_values()
 					4
 				}
 
-				--Desperado
+			--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 5},
-					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 10}
+					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 5}, --Basic
+					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 10} --Ace
 				}
-				self.values.player.desperado_bodyshot_refresh = {true}
+				--Ace
+					self.values.player.desperado_bodyshot_refresh = {true}
 				
-				--Trigger Happy
+			--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
-					{
-						damage_bonus = 1.1,
-						max_stacks = 5,
-						max_time = 5
-					},
-					{	
-						damage_bonus = 1.1,
-						max_stacks = 5,
-						max_time = 10
-					}
+					{damage_bonus = 1.1, max_stacks = 5, max_time = 5}, --Basic
+					{damage_bonus = 1.1, max_stacks = 5, max_time = 10} --Ace
 				}
-				self.values.player.trigger_happy_bodyshot_refresh = {true}
-
-			--}
+				--Ace
+					self.values.player.trigger_happy_bodyshot_refresh = {true}
 			
-			--[[   RELENTLESS SUBTREE   ]]--
-			--{
-				--Running From Death (Formerly Nine Lives)
+		--Revenant
+			--Running From Death
+				--Basic
+					self.values.temporary.increased_movement_speed = {{1.25, 10}}
+				--Ace
 				self.values.temporary.swap_weapon_faster = {{1.25, 10}}
 				self.values.temporary.reload_weapon_faster = {{1.25, 10}}
-				self.values.temporary.increased_movement_speed = {{1.25, 10}}
 				
-				--Undying (Formerly Nine Lives, Formerly Running From Death)
-				self.values.player.bleed_out_health_multiplier = {2, 3}
-				self.values.player.primary_weapon_when_downed = {true}
+			--Undying (Formerly Nine Lives, Formerly Running From Death)
+				self.values.player.bleed_out_health_multiplier = {
+					2, --Basic
+					3 --Ace
+				}
+				--Ace
+					self.values.player.primary_weapon_when_downed = {true}
 
-				--What Doesn't Kill (Formerly Up You Go)
-				self.values.player.damage_absorption_addend = {0.3}
-				self.values.player.damage_absorption_low_revives = {0.1}
+			--What Doesn't Kill
+				--Basic
+					self.values.player.damage_absorption_low_revives = {0.1}
+				--Ace
+					self.values.player.damage_absorption_addend = {0.3}
 
-				--Swan Song
-				self.values.temporary.berserker_damage_multiplier = { {1, 3}, {1, 9} }
+			--Swan Song
+				self.values.temporary.berserker_damage_multiplier = {
+					{1, 3}, --Basic
+					{1, 9} --Ace
+				}
 
-				--Haunt (Formerly Undying)
-				self.values.player.cheat_death_chance = {0.2, 0.45}
-				self.values.player.killshot_spooky_panic_chance = {0.08}
-				self.values.player.killshot_extra_spooky_panic_chance = {0.2}
+			--Haunt
+				--Basic
+					self.values.player.killshot_spooky_panic_chance = {0.08}
+				--Ace
+					self.values.player.killshot_extra_spooky_panic_chance = {0.2}
 				
-				--Messiah
+			--Messiah
 				self.values.player.messiah_revive_from_bleed_out = {1, 3}
 				self.values.player.pistol_revive_from_bleed_out = {1, 3}
 				self.values.player.infinite_messiah = {true}
 				self.values.player.additional_lives = {1, 3}
-			--}
 			
-			--[[   BRAWLER SUBTREE   ]]--
-			--{
-				--Martial Arts
-				self.values.player.melee_damage_dampener = {0.50}
-				self.values.player.melee_knockdown_mul = {1.5}
+		--Brawler--
+			--Martial Arts
+				--Basic
+					self.values.player.melee_damage_dampener = {0.50}
+				--Ace
+					self.values.player.melee_knockdown_mul = {1.5}
 				
-				--Bloodthirst
-				self.values.player.melee_damage_stacking = {{melee_multiplier = 0.25, max_multiplier = 2}}
-				self.values.temporary.melee_kill_increase_reload_speed = {{1.25, 10}}
+			--Bloodthirst
+				--Basic
+					self.values.player.melee_damage_stacking = {{melee_multiplier = 0.25, max_multiplier = 2}}
+				--Ace
+					self.values.temporary.melee_kill_increase_reload_speed = {{1.25, 10}}
 
-				--Pumping Iron	
-				self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
-				self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
+			--Pumping Iron
 				self.values.player.melee_swing_multiplier = {1.2, 1.5}
 				self.values.player.melee_swing_multiplier_delay = {0.8, 0.5}
 				
-				--Counter Strike
-				self.values.player.counter_strike_melee = {true}
-				self.values.player.counter_strike_spooc = {true}
-				self.values.player.deflect_ranged = {0.9}
-				self.values.player.spooc_damage_resist = {0.2, 0.5}
+			--Counter Strike
+				self.values.player.spooc_damage_resist = {
+					0.2, --Basic
+					0.5 --Ace
+				}
+				--Basic
+					self.values.player.counter_strike_spooc = {true}
+				--Ace
+					self.values.player.deflect_ranged = {0.9}
 
-				--Frenzy (Berserker)
+			--Frenzy (Berserker)
 				self.values.player.max_health_reduction = {0.25}
 				self.values.player.healing_reduction = {0.00, 0.25}
 				self.values.player.frenzy_deflection = {0.20, 0.45}
-               	--self.values.player.health_damage_reduction = {0.85, 0.7}
-                --self.values.player.real_health_damage_reduction = {0.7, 0.4}
 				
-				--Berserker (Frenzy)
-				self.player_damage_health_ratio_threshold = 0.5
-				self.player_damage_health_ratio_threshold_2 = 0.5
-				self.values.player.damage_health_ratio_multiplier = {0.75}
-				self.values.player.melee_damage_health_ratio_multiplier = {1.50}
-			--}
-		--}
+			--Berserker (Frenzy)
+				--Basic
+					self.values.player.melee_damage_health_ratio_multiplier = {1.50}
+				--Aced
+					self.values.player.damage_health_ratio_multiplier = {0.75}
 
+	--Singleplayer stealth stuff, to give them access to the resources they'd have if playing with a full crew.
 	if Global.game_settings and Global.game_settings.single_player then
 		self.values.cable_tie.quantity_1 = {16}
 		self.values.player.corpse_dispose_amount = {12, 16}
 	end
 
-	--Perk Deck shit--
+	--Perk Decks--
 	
-	--Shared stuff--
-	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}     
-	
-	self.values.temporary.armor_break_invulnerable = {
-		{2, 15}
-	}
-	self.values.player.armor_regen_timer_stand_still_multiplier = {0.9}
-	self.values.player.armor_regen_timer_multiplier_passive = {0.95}
+	--Shared Perks--
+	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
+	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
+	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
+
+	--Burglar
+	self.values.player.crouch_dodge_chance = {0.05, 0.10}
 
 	--Hitman
 	self.values.player.perk_armor_regen_timer_multiplier = {
@@ -1439,6 +1504,26 @@ function UpgradesTweakData:_init_pd2_values()
 	}	
 	self.values.player.armor_max_health_store_multiplier = {
 		1.25
+	}
+
+	self.values.player.body_armor.skill_max_health_store = {
+		8,
+		7.2,
+		6.4,
+		5.6,
+		4.8,
+		4,
+		3.2
+	}
+	self.kill_change_regenerate_speed_percentage = true
+	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
+		1.40,
+		1.35,
+		1.30,
+		1.25,
+		1.20,
+		1.15,
+		1.10
 	}	
 
 	--I AM A BAD MOTHERFUCKA--
@@ -1607,7 +1692,7 @@ function UpgradesTweakData:_init_pd2_values()
 		1
 	}	
 	
-end
+end)
 
 --Added new definitions--
 
@@ -1616,24 +1701,6 @@ function UpgradesTweakData:_player_definitions()
 	sc_definitions (self, tweak_data)
 
 	--New Definitions, calling em here to play it safe--
-	self.definitions.player_revived_health_regain_1 = {
-		name_id = "menu_revived_health_regain",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "revived_health_regain",
-			category = "player"
-		}
-	}
-	self.definitions.player_revived_health_regain_2 = {
-		name_id = "menu_revived_health_regain",
-		category = "feature",
-		upgrade = {
-			value = 2,
-			upgrade = "revived_health_regain",
-			category = "player"
-		}
-	}	
 	self.definitions.player_drill_deploy_speed_multiplier = {
 		name_id = "menu_player_drill_fix_interaction_speed_multiplier",
 		category = "feature",
@@ -1919,34 +1986,7 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "deflect_ranged",
 			value = 1
 		}
-	}	
-	self.definitions.player_ignore_suppression_flinch = {
-		category = "feature",
-		name_id = "menu_player_panic_suppression",
-		upgrade = {
-			category = "player",
-			upgrade = "ignore_suppression_flinch",
-			value = 1
-		}
 	}
-	self.definitions.player_yakuza_berserker = {
-		category = "feature",
-		name_id = "menu_player_panic_suppression",
-		upgrade = {
-			category = "player",
-			upgrade = "yakuza_berserker",
-			value = 1
-		}
-	}
-	self.definitions.player_electrocution_resistance_1 = {
-		name_id = "menu_player_electrocution_resistance",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "electrocution_resistance_multiplier",
-			category = "player"
-		}
-	}	
 	self.definitions.player_level_1_armor_addend = {
 		name_id = "menu_player_level_1_armor_addend",
 		category = "feature",
@@ -1965,12 +2005,12 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
-	self.definitions.player_health_revive_max = {
+	self.definitions.player_extra_revive_health = {
 		category = "feature",
 		name_id = "menu_player_panic_suppression",
 		upgrade = {
 			category = "player",
-			upgrade = "health_revive_max",
+			upgrade = "extra_revive_health",
 			value = 1
 		}
 	}
@@ -2278,16 +2318,7 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "pick_lock_easy_speed_multiplier",
 			category = "player"
 		}
-	}	
-	self.definitions.player_second_deployable_full = {
-		name_id = "menu_second_deployable",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "second_deployable_full",
-			category = "player"
-		}
-	}	
+	}		
 	self.definitions.temporary_single_shot_fast_reload_2 = {
 		name_id = "menu_temporary_single_shot_fast_reload",
 		category = "temporary",
@@ -2331,15 +2362,6 @@ function UpgradesTweakData:_player_definitions()
 			value = 2,
 			upgrade = "deploy_interact_faster",
 			category = "player"
-		}
-	}
-	self.definitions.player_extra_equipment = {
-		category = "feature",
-		name_id = "menu_player_panic_suppression",
-		upgrade = {
-			category = "player",
-			upgrade = "extra_equipment",
-			value = 1
 		}
 	}
 	self.definitions.player_bomb_cooldown_reduction = {
@@ -2411,15 +2433,6 @@ function UpgradesTweakData:_player_definitions()
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "swap_speed_multiplier",
-			category = "pistol"
-		}
-	}	
-	self.definitions.pistol_swap_speed_multiplier_2 = {
-		name_id = "menu_pistol_swap_speed_multiplier",
-		category = "feature",
-		upgrade = {
-			value = 2,
 			upgrade = "swap_speed_multiplier",
 			category = "pistol"
 		}

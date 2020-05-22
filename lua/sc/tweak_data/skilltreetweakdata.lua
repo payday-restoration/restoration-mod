@@ -79,7 +79,6 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_fall_health_damage_multiplier",
 		"player_melee_kill_snatch_pager_chance",
 		"player_convert_enemies_health_multiplier",
-		"player_convert_enemies_interaction_speed_multiplier",
 		"player_climb_speed_multiplier_1",
 		"player_suspicion_bonus",
 		"player_sec_camera_highlight_mask_off",
@@ -88,8 +87,6 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_small_loot_multiplier_1",
 		"player_pick_lock_easy_speed_multiplier_1",
 		"player_counter_strike_melee",
-		"first_aid_kit_downs_restore_chance",
-		"player_electrocution_resistance_1",
 		"sentry_gun_cost_reduction_1",
 		"sentry_gun_cost_reduction_2",
 		"sentry_gun_spread_multiplier",
@@ -1067,8 +1064,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {9, 8},
 				[1] = {
 					upgrades = {
-						"player_drill_autorepair_1",
-						"player_drill_autorepair_2"
+						"player_drill_autorepair_1"
 					},
 					cost = self.costs.hightier
 				},
@@ -1629,7 +1625,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"pistol_swap_speed_multiplier_2"
+						"pistol_swap_speed_multiplier_1"
 					},
 					cost = self.costs.pro
 				}
@@ -2157,7 +2153,7 @@ function SkillTreeTweakData:init(tweak_data)
 				upgrades = {
 					"player_passive_health_multiplier_7",
 					"player_passive_health_multiplier_8",			
-					"player_health_revive_max",
+					"player_extra_revive_health",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
@@ -3220,7 +3216,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck19_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_health_revive_max"
+					"player_extra_revive_health"
 				},
 				icon_xy = {
 					0,

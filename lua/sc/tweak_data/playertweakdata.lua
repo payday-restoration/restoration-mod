@@ -45,13 +45,6 @@ function PlayerTweakData:_set_overkill_145()
 		0.40,
 		0.30
 	}
-	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
-		0.95,
-		0.85,
-		0.75,
-		0.65,
-		0.55
-	}
 end
 
 function PlayerTweakData:_set_easy_wish()
@@ -68,13 +61,6 @@ function PlayerTweakData:_set_easy_wish()
 		0.40,
 		0.30
 	}
-	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
-		0.95,
-		0.85,
-		0.75,
-		0.65,
-		0.55
-	}
 end
 
 function PlayerTweakData:_set_overkill_290()
@@ -84,9 +70,6 @@ function PlayerTweakData:_set_overkill_290()
 	self.damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.30
-	}
-	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
-		0.55
 	}
 	self.damage.STUN_TIME = 1.25
 	self.alarm_pager = {
@@ -118,9 +101,6 @@ function PlayerTweakData:_set_sm_wish()
 	self.damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.3
-	}
-	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
-		0.55
 	}		
 	self.damage.TASED_TIME = 5
 	self.damage.STUN_TIME = 1.5
@@ -186,13 +166,6 @@ function PlayerTweakData:init()
 		0.60,
 		0.45,
 		0.30
-	}
-	self.damage.REVIVE_HEALTH_STEPS_W_SKILL = {
-		1.00,
-		1.00,
-		0.85,
-		0.70,
-		0.55
 	}
 	self.damage.CUSTODY_LIVES = 3 --Number of downs left when leaving damage.
 	self.damage.custody_ammo_kept = 1 --% of remaining ammo kept when leaving damage.

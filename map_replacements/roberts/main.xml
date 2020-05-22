@@ -177,7 +177,7 @@
 		<texture force="true" path="guis/textures/pd2/new_heists/mod_gobank_v2"/>
 	</AddFiles>
 	<Localization default="english.txt" directory="loc"/>
-	<narrative briefing_event="pln_cs1_cbf_01" contact="bain" icon="guis/dlcs/bro/textures/pd2/crimenet/go_bank" id="gobank_v2" jc="40" load_screen="guis/dlcs/pic/textures/loading/job_go_bank" region="street">
+	<narrative briefing_event="pln_cs1_cbf_01" contact="bain" icon="guis/dlcs/bro/textures/pd2/crimenet/go_bank" id="roberts" jc="40" load_screen="guis/dlcs/pic/textures/loading/job_go_bank" region="street" name_id="heist_roberts" brief_id="heist_roberts_crimenet">
 		<chain>
 			<table level_id="roberts_v2" type="d" type_id="heist_type_assault"/>
 		</chain>

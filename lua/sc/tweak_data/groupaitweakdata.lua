@@ -2274,7 +2274,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},				
 			nypd = {
 				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"),
-				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2")
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2")
 			},	
 			lapd = {
 				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1"),

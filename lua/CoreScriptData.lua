@@ -276,6 +276,11 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		elseif level_id == "alex_3_res" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/rat3.custom_xml", "custom_xml", "environments/pd2_env_rat_night_stage_3/pd2_env_rat_night_stage_3", "environment")
 			--"sky_orientation/rotation":"278.53564453125",
+		elseif level_id == "man" then 
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/pd2_man/pd2_man_main", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/pd2_man/pd2_man_corridor", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/pd2_man/pd2_man_corridor_nofog", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/env_und.custom_xml", "custom_xml", "environments/pd2_man/pd2_man_rooms", "environment")
 		elseif level_id == "safehouse" then --Safehouse Booster
 			if SystemFS:exists(mod_path .. "scriptdata/missions/safehouse.mission") and SystemFS:exists(mod_path .. "scriptdata/missions/safehouse.continent") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/missions/safehouse.mission", "generic_xml", "levels/narratives/safehouse/world/world", "mission")

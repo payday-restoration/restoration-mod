@@ -1,4 +1,6 @@
-Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)	
+Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
+	--how the fuck does this wanna be set up
+	--self.jobs.man.contract_visuals.preview_image = {icon = "guis/textures/restoration/cni/secret_stash"}
 	self.jobs.mex.jc = 60
 	self.jobs.mex_cooking.jc = 60
 	self.jobs.kenaz.payout = {			

@@ -261,7 +261,7 @@ function WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, s
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "passive_swap_speed_multiplier", 1)
 
 	--Get per category multipliers (IE: Pistols swap faster, Akimbos swap slower, ect).
-	for _, category in ipairs(weapon_tweak_data.categories) do
+	for _, category in ipairs(weapon_tweak.categories) do
 		multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", 1)
 		multiplier = multiplier * (tweak_data[category] and tweak_data[category].swap_bonus or 1)
 	end

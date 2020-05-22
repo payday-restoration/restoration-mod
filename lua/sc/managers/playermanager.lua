@@ -150,6 +150,28 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 		end
 	end
 
+	--Yakuza dodge meter generation.
+	if damage_ext:health_ratio() < 0.5 then
+		if variant == "melee" then
+			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen", 0) + self:upgrade_value("player", "kill_dodge_regen"))
+		else
+			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
+		end
+	end
+
+	if variant == "melee" then
+		--Biker Armor Regen
+		if self:has_category_upgrade("player", "biker_armor_regen") then
+			damage_ext:tick_biker_armor_regen(self:upgrade_value("player", "biker_armor_regen")[3])
+		end
+		--Boxing Glove Stamina Restore
+		local melee_weapon = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
+		if melee_weapon.special_weapon and melee_weapon.special_weapon == "stamina_restore" then
+			player_unit:movement():add_stamina(player_unit:movement():_max_stamina())
+		end
+	end
+
+
 	if self._on_killshot_t and t < self._on_killshot_t then
 		return
 	end
@@ -183,28 +205,9 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 
 	local regen_health_bonus = 0
 
-	--Yakuza dodge meter generation.
-	if damage_ext:health_ratio() < 0.5 then
-		if variant == "melee" then
-			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "melee_kill_dodge_regen", 0) + self:upgrade_value("player", "kill_dodge_regen"))
-		else
-			damage_ext:fill_dodge_meter_yakuza(self:upgrade_value("player", "kill_dodge_regen"))
-		end
-	end
 
-
+	--Sociopath regen.
 	if variant == "melee" then
-		--Biker Armor Regen
-		if self:has_category_upgrade("player", "biker_armor_regen") then
-			damage_ext:tick_biker_armor_regen(self:upgrade_value("player", "biker_armor_regen")[3])
-		end
-		--Boxing Glove Stamina Restore
-		local melee_weapon = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
-		if melee_weapon.special_weapon and melee_weapon.special_weapon == "stamina_restore" then
-			player_unit:movement():add_stamina(player_unit:movement():_max_stamina())
-		end
-
-		--Sociopath regen.
 		regen_health_bonus = regen_health_bonus + self:upgrade_value("player", "melee_kill_life_leech", 0)
 	end
 

@@ -1,3 +1,27 @@
+CopBrain._NET_EVENTS = {
+	detected_client = 3,
+	stopped_seeing_client = 2,
+	seeing_client = 1
+}
+
+function CopBrain:sync_net_event(event_id, peer)
+	local peer_id = peer:id()
+	local peer_unit = managers.criminals:character_unit_by_peer_id(peer_id)
+
+	if event_id == self._NET_EVENTS.seeing_client then
+		managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, 1, peer_id)
+	elseif event_id == self._NET_EVENTS.stopped_seeing_client then
+		managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, false, peer_id)
+	elseif event_id == self._NET_EVENTS.detected_client then
+		local att_obj_data = CopLogicBase.identify_attention_obj_instant(self._logic_data, peer_unit:key())
+
+		if att_obj_data and att_obj_data.criminal_record then
+			managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, true, peer_id)
+			managers.groupai:state():criminal_spotted(peer_unit)
+		end
+	end
+end
+
 local old_init = CopBrain.init
 local old_update = CopBrain.update
 local logic_variants = {

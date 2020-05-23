@@ -21,19 +21,19 @@
 			<hook file="hudobjectives.lua" source_file="lib/managers/hud/hudobjectives"/>
 		</hooks>
 		<include directory="levels/roberts_v2">
-			<file file="world.world" type="generic_xml"/>
-			<file file="continents.continents" type="custom_xml"/>
-			<file file="mission.mission" type="custom_xml"/>
-			<file file="nav_manager_data.nav_data" type="generic_xml"/>
-			<file file="world_sounds.world_sounds" type="generic_xml"/>
-			<file file="world_cameras.world_cameras" type="custom_xml"/>
-			<file file="world/world.continent" type="custom_xml"/>
-			<file file="world/world.mission" type="generic_xml"/>
-			<file file="night_only/night_only.continent" type="custom_xml"/>
-			<file file="night_only/night_only.mission" type="generic_xml"/>
-			<file file="editor_only/editor_only.continent" type="custom_xml"/>
-			<file file="editor_only/editor_only.mission" type="generic_xml"/>
-			<file file="cover_data.cover_data" type="custom_xml"/>
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="night_only/night_only.continent" type="binary"/>
+			<file file="night_only/night_only.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
 			<file file="environments/csgo_test_env_v2.environment" type="custom_xml"/>
 			<file file="environments/csgo_bank_env_v2.environment" type="custom_xml"/>
 			<file file="environments/csgo_bank_env_night_v2.environment" type="custom_xml"/>
@@ -170,14 +170,14 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<Hooks directory="hooks">
-		<hook file="guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
-	</Hooks>
 	<AddFiles directory="assets">
 		<texture force="true" path="guis/textures/pd2/new_heists/mod_gobank_v2"/>
 	</AddFiles>
+	<Hooks directory="hooks">
+		<hook file="guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
+	</Hooks>
 	<Localization default="english.txt" directory="loc"/>
-	<narrative briefing_event="pln_cs1_cbf_01" contact="bain" icon="guis/dlcs/bro/textures/pd2/crimenet/go_bank" id="roberts" jc="40" load_screen="guis/dlcs/pic/textures/loading/job_go_bank" region="street" name_id="heist_roberts" brief_id="heist_roberts_crimenet">
+	<narrative brief_id="heist_roberts_crimenet" briefing_event="pln_cs1_cbf_01" contact="bain" icon="guis/dlcs/bro/textures/pd2/crimenet/go_bank" id="roberts" jc="40" load_screen="guis/dlcs/pic/textures/loading/job_go_bank" name_id="heist_roberts" region="street">
 		<chain>
 			<table level_id="roberts_v2" type="d" type_id="heist_type_assault"/>
 		</chain>

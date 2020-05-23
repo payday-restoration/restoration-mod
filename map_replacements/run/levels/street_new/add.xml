@@ -707,8 +707,8 @@
 		<unit path="units/world/props/signs/sign_street_cover_poster_01" unload="true"/>
 	</add>
 	<add path="units/world/architecture/backdrops/scrapers/backdrop_street" type="unit">
-		<unit path="units/world/architecture/backdrops/scrapers/backdrop_street" unload="true"/>
-		<object path="units/world/architecture/backdrops/scrapers/backdrop_street" unload="true"/>
 		<material_config path="units/world/architecture/backdrops/scrapers/backdrop_street" unload="true"/>
+		<object path="units/world/architecture/backdrops/scrapers/backdrop_street" unload="true"/>
+		<unit path="units/world/architecture/backdrops/scrapers/backdrop_street" unload="true"/>
 	</add>
 </table>

@@ -1,4 +1,4 @@
-<table name="heat_street_new">
+<table name="run">
 	<AddFiles directory="assets">
 		<texture load="true" path="guis/textures/street_icon"/>
 	</AddFiles>
@@ -33,8 +33,6 @@
 			<file file="world/world.continent" type="binary"/>
 			<file file="world/world.mission" type="binary"/>
 			<file file="cover_data.cover_data" type="binary"/>
-			<file file="environments/env_white.environment" type="custom_xml"/>
-			<file file="environments/env_street_pdthshaders.environment" type="custom_xml"/>
 			<file file="environments/env_street.environment" type="custom_xml"/>
 		</include>
 		<outro_event>

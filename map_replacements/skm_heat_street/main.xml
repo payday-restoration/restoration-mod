@@ -1,0 +1,94 @@
+<table name="skm_heat_street">
+	<Localization default="english.txt" directory="loc"/>
+	<level ai_group_type="america" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_street" intro_event="Play_loc_skm_intro" music="heist" narrator="locke" wave_count="9">
+		<add file="levels/skm_street/add.xml"/>
+		<assets/>
+		<include directory="levels/skm_street">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="collision/collision.continent" type="binary"/>
+			<file file="collision/collision.mission" type="binary"/>
+			<file file="editor only/editor only.continent" type="binary"/>
+			<file file="editor only/editor only.mission" type="binary"/>
+			<file file="backdrop/backdrop.continent" type="binary"/>
+			<file file="backdrop/backdrop.mission" type="binary"/>
+			<file file="dhruva_art/dhruva_art.continent" type="binary"/>
+			<file file="dhruva_art/dhruva_art.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="lights/lights.continent" type="binary"/>
+			<file file="lights/lights.mission" type="binary"/>
+			<file file="aaaaa/aaaaa.continent" type="binary"/>
+			<file file="aaaaa/aaaaa.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="environments/env_skm_street.environment" type="custom_xml"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_loc_skm_end_win"/>
+			<value_node value="Play_loc_skm_end_fail"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/dlcs/skm/job_skm"/>
+			<value_node value="levels/narratives/skm/skm_run/world"/>
+			<value_node value="levels/narratives/skm/skm_run/world_sounds"/>
+			<value_node value="levels/narratives/skm/skm_run/collision/collision"/>
+			<value_node value="levels/narratives/skm/skm_run/editor only/editor only"/>
+			<value_node value="levels/narratives/skm/skm_run/dhruva_art/dhruva_art"/>
+			<value_node value="levels/narratives/skm/skm_run/backdrop/backdrop"/>
+			<value_node value="levels/narratives/skm/skm_run/world/world"/>
+			<value_node value="levels/narratives/skm/skm_run/lights/lights"/>
+		</packages>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" debrief_event="pln_fwb_34" id="skm_heat_street" jc="60" max_mission_xp="135900" min_mission_xp="8000" region="street">
+		<chain>
+			<table level_id="skm_street" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<payout>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+			<value_node value="0"/>
+		</payout>
+	</narrative>
+</table>

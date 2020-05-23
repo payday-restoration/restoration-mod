@@ -536,7 +536,7 @@ function HuskCopBrain:update_local_player_suspicion(t, attention_info)
 	end
 end
 
-function HuskCopBrain.update_local_player_suspicion_decay(t)
+function HuskCopBrain:update_local_player_suspicion_decay(t)
 	for _, u_data in pairs(self._detected_player_att_data) do
 		if u_data.uncover_progress and u_data.last_suspicion_t ~= t then
 			local dt = t - u_data.last_suspicion_t

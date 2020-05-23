@@ -97,7 +97,6 @@ local nypd = {
 		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec",
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_nypd/characters/ene_bulldozer_3/ene_bulldozer_3",	
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
 		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic",
 		--Need to add NYPD Snipers at some point

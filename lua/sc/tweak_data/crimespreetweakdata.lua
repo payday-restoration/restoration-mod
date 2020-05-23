@@ -103,11 +103,11 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.mus
 			},
 			{
-				stage_id = "roberts",
-				id = "roberts",
+				stage_id = "roberts_v2",
+				id = "roberts_v2",
 				icon = "csm_go",
 				add = debug_long_add,
-				level = tweak_data.narrative.stages.roberts
+				level = tweak_data.narrative.stages.roberts_v2
 			},
 			{
 				stage_id = "red2",

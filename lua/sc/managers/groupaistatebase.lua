@@ -994,3 +994,263 @@ function GroupAIStateBase:_remove_group_member(group, u_key, is_casualty)
 		end
 	end
 end
+
+function GroupAIStateBase:criminal_spotted(unit)
+	local u_key = unit:key()
+	local u_sighting = self._criminals[u_key]
+	local prev_area = u_sighting.area
+	local seg = u_sighting.tracker:nav_segment()
+
+	if u_sighting.undetected then
+		u_sighting.undetected = nil
+	end
+
+	if u_sighting.tracker:lost() then
+		mvector3.set(tmp_vec2, u_sighting.tracker:field_position())
+
+		seg = managers.navigation:get_nav_seg_from_pos(tmp_vec2, true)
+	else
+		u_sighting.tracker:m_position(tmp_vec2)
+	end
+
+	if mvector3.not_equal(u_sighting.pos, tmp_vec2) then
+		mvector3.set(u_sighting.pos, tmp_vec2)
+	elseif mvector3.not_equal(u_sighting.pos, u_sighting.m_pos) then
+		mvector3.set(u_sighting.pos, u_sighting.m_pos)
+		mvector3.set(tmp_vec2, u_sighting.m_pos)
+
+		seg = managers.navigation:get_nav_seg_from_pos(tmp_vec2, true)
+	end
+
+	u_sighting.seg = seg
+	u_sighting.det_t = self._t
+	local area = nil
+
+	if prev_area and prev_area.nav_segs[seg] then
+		area = prev_area
+	else
+		area = self:get_area_from_nav_seg_id(seg)
+	end
+
+	if prev_area ~= area then
+		u_sighting.area = area
+
+		if prev_area then
+			prev_area.criminal.units[u_key] = nil
+		end
+
+		area.criminal.units[u_key] = u_sighting
+	end
+
+	if area.is_safe then
+		area.is_safe = nil
+
+		self:_on_area_safety_status(area, {
+			reason = "criminal",
+			record = u_sighting
+		})
+	end
+end
+
+function GroupAIStateBase:on_criminal_nav_seg_change(unit, nav_seg_id)
+end
+
+function GroupAIStateBase:on_criminal_suspicion_progress(u_suspect, u_observer, status, client_id)
+	if not self._ai_enabled or not self._whisper_mode or self._stealth_hud_disabled then
+		return
+	end
+
+	local ignore_suspicion = u_observer:brain() and u_observer:brain()._ignore_suspicion
+	local observer_is_dead = u_observer:character_damage() and u_observer:character_damage():dead()
+
+	if ignore_suspicion or observer_is_dead then
+		return
+	end
+
+	local obs_key = u_observer:key()
+
+	if managers.groupai:state():all_AI_criminals()[obs_key] then
+		return
+	end
+
+	local susp_data = self._suspicion_hud_data
+	local susp_key = u_suspect and u_suspect:key()
+
+	local function _sync_status(sync_status_code)
+		if Network:is_server() and managers.network:session() then
+			if client_id then
+				managers.network:session():send_to_peers_synched_except(client_id, "suspicion_hud", u_observer, sync_status_code)
+			else
+				managers.network:session():send_to_peers_synched("suspicion_hud", u_observer, sync_status_code)
+			end
+		end
+	end
+
+	local obs_susp_data = susp_data[obs_key]
+
+	if status == "called" then
+		if obs_susp_data then
+			if status == obs_susp_data.status then
+				return
+			else
+				obs_susp_data.suspects = nil
+			end
+		else
+			local icon_id = "susp1" .. tostring(obs_key)
+			local icon_pos = self._create_hud_suspicion_icon(obs_key, u_observer, "wp_calling_in", tweak_data.hud.suspicion_color, icon_id)
+			obs_susp_data = {
+				u_observer = u_observer,
+				icon_id = icon_id,
+				icon_pos = icon_pos
+			}
+			susp_data[obs_key] = obs_susp_data
+		end
+
+		managers.hud:change_waypoint_icon(obs_susp_data.icon_id, "wp_calling_in")
+		managers.hud:change_waypoint_arrow_color(obs_susp_data.icon_id, tweak_data.hud.detected_color)
+
+		if obs_susp_data.icon_id2 then
+			managers.hud:remove_waypoint(obs_susp_data.icon_id2)
+
+			obs_susp_data.icon_id2 = nil
+			obs_susp_data.icon_pos2 = nil
+		end
+
+		obs_susp_data.status = "called"
+		obs_susp_data.alerted = true
+		obs_susp_data.expire_t = self._t + 8
+		obs_susp_data.persistent = true
+
+		_sync_status(4)
+	elseif status == "calling" then
+		if obs_susp_data then
+			if status == obs_susp_data.status then
+				return
+			else
+				obs_susp_data.suspects = nil
+			end
+		else
+			local icon_id = "susp1" .. tostring(obs_key)
+			local icon_pos = self._create_hud_suspicion_icon(obs_key, u_observer, "wp_calling_in", tweak_data.hud.detected_color, icon_id)
+			obs_susp_data = {
+				u_observer = u_observer,
+				icon_id = icon_id,
+				icon_pos = icon_pos
+			}
+			susp_data[obs_key] = obs_susp_data
+		end
+
+		if not obs_susp_data.icon_id2 then
+			local hazard_icon_id = "susp2" .. tostring(obs_key)
+			local hazard_icon_pos = self._create_hud_suspicion_icon(obs_key, u_observer, "wp_calling_in_hazard", tweak_data.hud.detected_color, hazard_icon_id)
+			obs_susp_data.icon_id2 = hazard_icon_id
+			obs_susp_data.icon_pos2 = hazard_icon_pos
+		end
+
+		managers.hud:change_waypoint_icon(obs_susp_data.icon_id, "wp_calling_in")
+		managers.hud:change_waypoint_arrow_color(obs_susp_data.icon_id, tweak_data.hud.detected_color)
+		managers.hud:change_waypoint_icon(obs_susp_data.icon_id2, "wp_calling_in_hazard")
+		managers.hud:change_waypoint_arrow_color(obs_susp_data.icon_id2, tweak_data.hud.detected_color)
+
+		obs_susp_data.status = "calling"
+		obs_susp_data.alerted = true
+
+		_sync_status(3)
+	elseif status == true or status == "call_interrupted" then
+		if obs_susp_data then
+			if obs_susp_data.status == status then
+				return
+			else
+				obs_susp_data.suspects = nil
+			end
+		else
+			local icon_id = "susp1" .. tostring(obs_key)
+			local icon_pos = self._create_hud_suspicion_icon(obs_key, u_observer, "wp_detected", tweak_data.hud.detected_color, icon_id)
+			obs_susp_data = {
+				u_observer = u_observer,
+				icon_id = icon_id,
+				icon_pos = icon_pos
+			}
+			susp_data[obs_key] = obs_susp_data
+		end
+
+		managers.hud:change_waypoint_icon(obs_susp_data.icon_id, "wp_detected")
+		managers.hud:change_waypoint_arrow_color(obs_susp_data.icon_id, tweak_data.hud.detected_color)
+
+		if obs_susp_data.icon_id2 then
+			managers.hud:remove_waypoint(obs_susp_data.icon_id2)
+
+			obs_susp_data.icon_id2 = nil
+			obs_susp_data.icon_pos2 = nil
+		end
+
+		obs_susp_data.status = status
+		obs_susp_data.alerted = true
+
+		_sync_status(2)
+	elseif not status then
+		if obs_susp_data then
+			if obs_susp_data.suspects and susp_key then
+				obs_susp_data.suspects[susp_key] = nil
+
+				if not next(obs_susp_data.suspects) then
+					obs_susp_data.suspects = nil
+				end
+			end
+
+			if not susp_key or not obs_susp_data.alerted and (not obs_susp_data.suspects or not next(obs_susp_data.suspects)) then
+				managers.hud:remove_waypoint(obs_susp_data.icon_id)
+
+				if obs_susp_data.icon_id2 then
+					managers.hud:remove_waypoint(obs_susp_data.icon_id2)
+				end
+
+				susp_data[obs_key] = nil
+
+				_sync_status(0)
+			end
+		end
+	else
+		if obs_susp_data then
+			if obs_susp_data.alerted then
+				return
+			end
+
+			_sync_status(1)
+		elseif not obs_susp_data then
+			local icon_id = "susp1" .. tostring(obs_key)
+			local icon_pos = self._create_hud_suspicion_icon(obs_key, u_observer, "wp_suspicious", tweak_data.hud.suspicion_color, icon_id)
+			obs_susp_data = {
+				u_observer = u_observer,
+				icon_id = icon_id,
+				icon_pos = icon_pos
+			}
+			susp_data[obs_key] = obs_susp_data
+
+			managers.hud:change_waypoint_icon(obs_susp_data.icon_id, "wp_suspicious")
+			managers.hud:change_waypoint_arrow_color(obs_susp_data.icon_id, tweak_data.hud.suspicion_color)
+
+			if obs_susp_data.icon_id2 then
+				managers.hud:remove_waypoint(obs_susp_data.icon_id2)
+
+				obs_susp_data.icon_id2 = nil
+				obs_susp_data.icon_pos2 = nil
+			end
+
+			_sync_status(1)
+		end
+
+		if susp_key then
+			obs_susp_data.suspects = obs_susp_data.suspects or {}
+
+			if obs_susp_data.suspects[susp_key] then
+				obs_susp_data.suspects[susp_key].status = status
+			else
+				obs_susp_data.suspects[susp_key] = {
+					status = status,
+					u_suspect = u_suspect
+				}
+			end
+		end
+	end
+end

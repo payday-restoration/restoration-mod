@@ -28,51 +28,51 @@ function GroupAITweakData:_init_chatter_data()
 	}
 	self.enemy_chatter.cscharlie = {
 		radius = 6000,
-			max_nr = 1,
-			duration = {3, 4},
+		max_nr = 1,
+		duration = {3, 4},
 		interval = {2, 4},
 		group_min = 0,
-			queue = "gr2c"
+		queue = "gr2c"
 	}
 	self.enemy_chatter.csdelta = {
 		radius = 6000,
-			max_nr = 1,
-			duration = {3, 4},
+		max_nr = 1,
+		duration = {3, 4},
 		interval = {2, 4},
 		group_min = 0,
-			queue = "gr2d"
+		queue = "gr2d"
 	}
 	self.enemy_chatter.hrtalpha = {
 		radius = 6000,
-			max_nr = 1,
-			duration = {3, 4},
+		max_nr = 1,
+		duration = {3, 4},
 		interval = {2, 4},
 		group_min = 0,
 		queue = "gr1a"
 	}
 	self.enemy_chatter.hrtbravo = {
 		radius = 6000,
-			max_nr = 1,
-			duration = {3, 4},
+		max_nr = 1,
+		duration = {3, 4},
 		interval = {2, 4},
 		group_min = 0,
-			queue = "gr1b"
+		queue = "gr1b"
 	}
 	self.enemy_chatter.hrtcharlie = {
 		radius = 6000,
-			max_nr = 1,
-			duration = {3, 4},
+		max_nr = 1,
+		duration = {3, 4},
 		interval = {2, 4},
 		group_min = 0,
-			queue = "gr1c"
+		queue = "gr1c"
 	}
 	self.enemy_chatter.hrtdelta = {
 		radius = 6000,
-			max_nr = 1,
-			duration = {3, 4},
+		max_nr = 1,
+		duration = {3, 4},
 		interval = {2, 4},
 		group_min = 0,
-			queue = "gr1d"
+		queue = "gr1d"
 	}
 	self.enemy_chatter.aggressive = {
 		radius = 700,
@@ -320,11 +320,20 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	if difficulty_index <= 2 then
 		self.special_unit_spawn_limits = {
 			tank = 1,
+			tank_medic = 0,
+			tank_mini = 0,
+			tank_hw = 0,
+			tank_titan_assault = 0,
 			taser = 1,
+			taser_titan = 1,
 			boom = 0,
+			heavy_swat_sniper = 0,
 			spooc = 0,
+			spooc_titan = 0,
 			shield = 2,
+			phalanx_minion_assault = 0,
 			medic = 0,
+			omnia_LPF = 0,
 			phalanx_vip = 0,
 			spring = 0,
 			autumn = 0,
@@ -333,11 +342,20 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	elseif difficulty_index == 3 then
 		self.special_unit_spawn_limits = {
 			tank = 1,
+			tank_medic = 0,
+			tank_mini = 0,
+			tank_hw = 0,
+			tank_titan_assault = 0,			
 			taser = 2,
+			taser_titan = 1,
 			boom = 0,
+			heavy_swat_sniper = 0,
 			spooc = 1,
+			spooc_titan = 0,
 			shield = 3,
+			phalanx_minion_assault = 0,
 			medic = 0,
+			omnia_LPF = 0,
 			phalanx_vip = 0,
 			spring = 0,
 			autumn = 0,
@@ -346,11 +364,20 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	elseif difficulty_index == 4 then
 		self.special_unit_spawn_limits = {
 			tank = 2,
+			tank_medic = 0,
+			tank_mini = 0,
+			tank_hw = 0,
+			tank_titan_assault = 0,			
 			taser = 3,
+			taser_titan = 1,
 			boom = 0,
+			heavy_swat_sniper = 1,
 			spooc = 2,
+			spooc_titan = 0,
 			shield = 4,
+			phalanx_minion_assault = 0,
 			medic = 2,
+			omnia_LPF = 0,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -358,12 +385,21 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	elseif difficulty_index == 5 then
 		self.special_unit_spawn_limits = {
-			tank = 3,
+			tank = 2,
+			tank_medic = 1,
+			tank_mini = 1,
+			tank_hw = 0,
+			tank_titan_assault = 0,			
 			taser = 4,
+			taser_titan = 2,
 			boom = 2,
+			heavy_swat_sniper = 2,
 			spooc = 3,
+			spooc_titan = 0,
 			shield = 5,
+			phalanx_minion_assault = 1,
 			medic = 3,
+			omnia_LPF = 0,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -372,11 +408,20 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	elseif difficulty_index == 6 then
 		self.special_unit_spawn_limits = {
 			tank = 3,
+			tank_medic = 1,
+			tank_mini = 1,
+			tank_hw = 1,
+			tank_titan_assault = 1,					
 			taser = 4,
+			taser_titan = 2,
 			boom = 2,
+			heavy_swat_sniper = 2,
 			spooc = 4,
+			spooc_titan = 0,
 			shield = 5,
+			phalanx_minion_assault = 2,
 			medic = 3,
+			omnia_LPF = 1,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -385,11 +430,20 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	elseif difficulty_index == 7 then
 		self.special_unit_spawn_limits = {
 			tank = 3,
+			tank_medic = 1,
+			tank_mini = 1,
+			tank_hw = 1,
+			tank_titan_assault = 1,					
 			taser = 4,
+			taser_titan = 2,
 			boom = 2,
+			heavy_swat_sniper = 2,
 			spooc = 4,
+			spooc_titan = 0,
 			shield = 5,
+			phalanx_minion_assault = 2,
 			medic = 3,
+			omnia_LPF = 1,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -398,11 +452,20 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	else
 		self.special_unit_spawn_limits = {
 			tank = 3,
+			tank_medic = 1,
+			tank_mini = 1,
+			tank_hw = 1,
+			tank_titan_assault = 1,					
 			taser = 4,
+			taser_titan = 2,
 			boom = 2,
+			heavy_swat_sniper = 2,
 			spooc = 4,
+			spooc_titan = 1,
 			shield = 5,
+			phalanx_minion_assault = 2,
 			medic = 3,
+			omnia_LPF = 1,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -8198,7 +8261,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			}				
 		},
 		access = access_type_all,
-		special_type = "tank"
+		special_type = "tank_titan_assault"
 	}
 	self.unit_categories.boom_M4203 = {
 		unit_types = {
@@ -8732,6 +8795,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "medic"
 	}
+	
+	--Old Winters Minion
 	self.unit_categories.Phalanx_minion = {
 		unit_types = {
 			america = {
@@ -8760,6 +8825,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "shield",
 		is_captain = true
 	}
+	--Old Winters
 	self.unit_categories.Phalanx_vip = {
 		unit_types = {
 			america = {
@@ -8787,33 +8853,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "shield",
 		is_captain = true
-	}
-	--New Winters Minions
-	self.unit_categories.Phalanx_minion_new = {
-		unit_types = {
-			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			},
-			zombie = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			},					
-			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			},
-			federales = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			},				
-			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			},
-			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
-			}				
-		},
-		access = access_type_all
 	}
 	--New Winters
 	self.unit_categories.Phalanx_vip_new = {
@@ -8843,35 +8882,36 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		max_amount = 1,
 		access = access_type_all,
 		special_type = "phalanx_vip"
-	}		
-	self.unit_categories.Cap_Spring = {
+	}	
+	--New Winters Minions
+	self.unit_categories.Phalanx_minion_new = {
 		unit_types = {
 			america = {
-				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 			},
 			zombie = {
-				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 			},					
 			murkywater = {
-				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 			},
 			federales = {
-				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 			},				
 			nypd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 			},
 			lapd = {
-				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
-			},				
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+			}				
 		},
-		max_amount = 1,
 		access = access_type_all,
-		special_type = "spring"
-	}
+		is_captain = true
+	}	
+	--Captain Autumn
 	self.unit_categories.Cap_Autumn = {
 		unit_types = {
 			america = {
@@ -8900,6 +8940,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "autumn"
 	}
+	--Titan Cloakers that spawn with Autumn, ignores spawncaps
 	self.unit_categories.Titan_Spooc = {
 		unit_types = {
 			america = {
@@ -8924,8 +8965,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 			}				
 		},
-		access = access_type_all
+		access = access_type_all,
+		is_captain = true
 	}		
+	--Captain Summers
 	self.unit_categories.Cap_Summers = {
 		unit_types = {
 			america = {
@@ -8954,6 +8997,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "summers"
 	}
+	--Molly
 	self.unit_categories.boom_summers = {
 		unit_types = {
 			america = {
@@ -8980,6 +9024,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}
+	--Doc
 	self.unit_categories.medic_summers = {
 		unit_types = {
 			america = {
@@ -9006,6 +9051,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}
+	--Elektra
 	self.unit_categories.taser_summers = {
 		unit_types = {
 			america = {
@@ -9032,6 +9078,37 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}
+	
+	--Captain Spring 
+	self.unit_categories.Cap_Spring = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+			},					
+			murkywater = {
+				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+			},				
+			nypd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+			},
+			lapd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_spring/ene_spring")
+			},				
+		},
+		max_amount = 1,
+		access = access_type_all,
+		special_type = "spring"
+	}	
+	--Titan Dozers that specifically spawn with Spring (Ignores Spawncaps)
 	self.unit_categories.Tank_Titan = {
 		unit_types = {
 			america = {
@@ -9056,8 +9133,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_vip_2/ene_vip_2")
 			}				
 		},
-		access = access_type_all
+		access = access_type_all,
+		is_captain = true
 	}
+	--Benelli Dozers that spawn with Spring (Also ignores spawncaps)
 	if difficulty_index <= 7 then
 		self.unit_categories.Tank_Ben = {
 			unit_types = {
@@ -9083,7 +9162,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
 				}				
 			},
-			access = access_type_all
+			access = access_type_all,
+			is_captain = true
 		}	
 	else
 		self.unit_categories.Tank_Ben = {
@@ -9110,7 +9190,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 				}				
 			},
-			access = access_type_all
+			access = access_type_all,
+			is_captain = true
 		}		
 	end
 if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday") then		

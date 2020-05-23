@@ -2802,8 +2802,9 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.ecm_vulnerability = 0
 	self.boom_summers.ecm_hurts = {}		
 	table.insert(self._enemy_list, "boom_summers")		
+	
 	self.boom_titan = deep_clone(self.boom)
-	self.boom.heal_cooldown = 45
+	self.boom_titan.heal_cooldown = 45
 	table.insert(self._enemy_list, "boom_titan")		
 end
 

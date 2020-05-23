@@ -262,6 +262,10 @@
 	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_df"/>
 	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_nm"/>
 	<effect path="units/pd2_mod_nypd/effects/particles/character/cloaker_goggle"/>		
+	
+	<!--NYPD Sniper (Placeholder)-->	
+	<unit path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" load="true" />
+	<unit path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1_husk" load="true" />		
 
 	<!--LAPD swat-->
 	<!--LAPD heavy r870-->	

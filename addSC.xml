@@ -11,6 +11,14 @@
 	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
 	
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/chill_combat"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/fwb" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/green_bridge" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/panicroom" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/slaughterhouse" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/counterfeit" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/undercover" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/dah" force="true"/>
+	<texture path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>
 	
 	<!--New logo-->
 	<texture path="guis/textures/game_small_logo" force="true"/>

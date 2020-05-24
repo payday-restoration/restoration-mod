@@ -1,3 +1,19 @@
+function CrimeSpreeManager:get_mission(mission_id)
+	mission_id = mission_id or self:current_mission()
+	for category, tbl in pairs(tweak_data.crime_spree.missions) do
+		for idx, data in pairs(tbl) do
+			if data.id == mission_id then
+				return data
+			end
+		end
+	end
+
+	--if we've gotten to this point, it means the game has checked every level in the tweak_data table and our mission still hasn't come up
+	--this means that we have an invalid mission. if we leave this in, the game will crash.
+	--to prevent this, throw out the old set of missions and generate a new set.
+	self:generate_new_mission_set()
+end
+
 function CrimeSpreeManager:_setup_global_from_mission_id(mission_id)
 	local mission_data = self:get_mission(mission_id)
 	if mission_data then

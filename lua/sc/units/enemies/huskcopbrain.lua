@@ -147,7 +147,7 @@ function HuskCopBrain:update_local_player_detection(t)
 		return
 	end
 
-	local handler = player_attention.attention_handler
+	local handler = player_attention.handler
 
 	if not handler then
 		return
@@ -218,11 +218,11 @@ function HuskCopBrain:update_local_player_detection(t)
 	if attention_info then
 		acquired = true
 	elseif not player_attention.nav_tracker or chk_vis_func(my_tracker, player_attention.nav_tracker) then
-		local settings = player_attention.handler:get_attention(my_access, nil, nil, team)
+		local settings = handler:get_attention(my_access, nil, nil, team)
 
 		if settings then
-			local attention_pos = player_attention.handler:get_detection_m_pos()
-			local angle, dis_multiplier = _angle_and_dis_chk(player_attention.handler, settings, attention_pos)
+			local attention_pos = handler:get_detection_m_pos()
+			local angle, dis_multiplier = _angle_and_dis_chk(handler, settings, attention_pos)
 
 			if angle then
 				local vis_ray = World:raycast("ray", my_pos, attention_pos, "slot_mask", visibility_slotmask, "ray_type", "ai_vision")

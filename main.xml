@@ -61,7 +61,6 @@
 		<hook file="sc/tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="sc/tweak_data/tweakdatapd2.lua" source_file="lib/tweak_data/tweakdatapd2"/>		
 		<hook file="sc/tweak_data/equipmentstweakdata.lua" source_file="lib/tweak_data/equipmentstweakdata"/>
-		<hook file="sc/units/vehicles/vehicledrivingext.lua" source_file="lib/units/vehicles/vehicledrivingext"/>
 		<hook file="sc/tweak_data/economytweakdata.lua" source_file="lib/tweak_data/economytweakdata"/>
 		<hook file="sc/tweak_data/narrativetweakdata.lua" source_file="lib/tweak_data/narrativetweakdata"/>		
 		<hook file="sc/tweak_data/customsafehousetweakdata.lua" source_file="lib/tweak_data/customsafehousetweakdata"/>
@@ -220,7 +219,6 @@
 		<hook file="sc/managers/menu/playerinventorygui.lua" source_file="lib/managers/menu/playerinventorygui"/>
 		<hook file="sc/managers/dialogmanager.lua" source_file="lib/managers/dialogmanager"/>
 		<hook file="sc/units/player/playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
-		<hook file="sc/units/vehicles/animatedvehiclebase.lua" source_file="lib/units/vehicles/animatedvehiclebase"/>
 		<hook file="sc/managers/modifiersmanager.lua" source_file="lib/managers/modifiersmanager"/>
 		<hook file="sc/managers/criminalsmanager.lua" source_file="lib/managers/criminalsmanager"/>
 		<hook file="sc/managers/menu/skilltreeguinew.lua" source_file="lib/managers/menu/skilltreeguinew"/>

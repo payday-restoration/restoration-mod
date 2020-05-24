@@ -643,6 +643,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.bot_priority_shout = "f45x_any"
 	self.medic_summers.speech_prefix_p1 = "rmdc"
 	self.medic_summers.speech_prefix_p2 = nil
+	self.medic_summers.custom_voicework = nil
 	self.medic_summers.spawn_sound_event = "rmdc_entrance"
 	self.medic_summers.die_sound_event = "mga_death_scream"
 	self.medic_summers.use_radio = "dsp_radio_russian"
@@ -2336,6 +2337,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.speech_prefix_p1 = "cpw"
 	self.phalanx_vip.speech_prefix_p2 = nil
 	self.phalanx_vip.speech_prefix_count = nil
+	self.phalanx_vip.no_damage_mission = true
 	--self.phalanx_vip.death_animation = "death_run" 
 	--self.phalanx_vip.death_animation_vars = {"var3", "heavy", "fwd", "high"}
 	self.phalanx_vip.chatter = {

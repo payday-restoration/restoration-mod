@@ -88,6 +88,12 @@ function PlayerMovement:_upd_underdog_skill(t)
 	data.chk_t = t + (activated and data.chk_interval_active or data.chk_interval_inactive)
 end
 
+function PlayerMovement:clbk_attention_notice_sneak(observer_unit, status, local_client_detection)
+	if alive(observer_unit) then
+		self:on_suspicion(observer_unit, status, local_client_detection)
+	end
+end
+
 function PlayerMovement:on_suspicion(observer_unit, status, local_client_detection)
 	if Network:is_server() or local_client_detection then
 		self._suspicion_debug = self._suspicion_debug or {}

@@ -85,9 +85,6 @@
 	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false" load="true"/>
 	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>			
 	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>		
-	<!--r870 dude-->
-	<unit path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870" force="false" load="true"/>
-	<unit path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk" force="false" load="true"/>	
 		
 	<!--OMNIA city 2-->
 	<object path="units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2" force="false"/>

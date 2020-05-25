@@ -545,6 +545,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.no_run_start = true
 	self.meme_man_shield.no_run_stop = true
 	self.meme_man_shield.no_retreat = true
+	self.meme_man_shield.no_limping = true
 	self.meme_man_shield.no_arrest = true
 	self.meme_man_shield.no_equip_anim = true
 	self.meme_man_shield.wall_fwd_offset = 100
@@ -634,6 +635,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.ecm_hurts = {}			
 	self.medic_summers.immune_to_concussion = true
 	self.medic_summers.no_damage_mission = true
+	self.medic_summers.no_limping = true
 	self.medic_summers.no_retreat = true
 	self.medic_summers.no_arrest = true
 	self.medic_summers.rescue_hostages = false
@@ -1316,6 +1318,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.priority_shout_max_dis = 3000
 	self.sniper.access = "sniper"
 	self.sniper.no_retreat = true
+	self.sniper.no_limping = true
 	self.sniper.no_arrest = true
 	self.sniper.chatter = presets.enemy_chatter.no_chatter
 	self.sniper.steal_loot = nil
@@ -1455,6 +1458,7 @@ end
 function CharacterTweakData:_init_captain(presets)
 	self.captain = deep_clone(self.gangster)
 	self.captain.calls_in = true
+	self.captain.no_limping = true
 	self.captain.immune_to_knock_down = true
 	self.captain.immune_to_concussion = true
 	self.captain.no_retreat = true
@@ -1516,6 +1520,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.no_run_start = true
 	self.mobster_boss.no_run_stop = true
 	self.mobster_boss.no_retreat = true
+	self.mobster_boss.no_limping = true
 	self.mobster_boss.no_arrest = true
 	self.mobster_boss.surrender = nil
 	self.mobster_boss.ecm_vulnerability = 0
@@ -1563,6 +1568,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.move_speed = presets.move_speed.very_slow
 	self.biker_boss.allowed_poses = {stand = true}
 	self.biker_boss.no_retreat = true
+	self.biker_boss.no_limping = true
 	self.biker_boss.no_run_start = true
 	self.biker_boss.no_run_stop = true	
 	self.biker_boss.no_arrest = true
@@ -1619,6 +1625,7 @@ end
 function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor = deep_clone(self.fbi)
 	self.hector_boss_no_armor.no_retreat = true
+	self.hector_boss_no_armor.no_limping = true
 	self.hector_boss_no_armor.no_arrest = true
 	self.hector_boss_no_armor.surrender = nil
 	self.hector_boss_no_armor.unintimidateable = true
@@ -1652,6 +1659,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.move_speed = presets.move_speed.very_slow
 	self.chavez_boss.allowed_poses = {stand = true}
 	self.chavez_boss.no_retreat = true
+	self.chavez_boss.no_limping = true
 	self.chavez_boss.no_arrest = true
 	self.chavez_boss.no_run_start = true
 	self.chavez_boss.no_run_stop = true		
@@ -1763,6 +1771,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.no_run_start = true
 	self.drug_lord_boss.no_run_stop = true
 	self.drug_lord_boss.no_retreat = true
+	self.drug_lord_boss.no_limping = true
 	self.drug_lord_boss.no_arrest = true
 	self.drug_lord_boss.surrender = nil
 	self.drug_lord_boss.ecm_vulnerability = 0
@@ -1808,6 +1817,7 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.headshot_dmg_mul = 3.4
 	self.drug_lord_boss_stealth.move_speed = presets.move_speed.very_fast
 	self.drug_lord_boss_stealth.no_retreat = true
+	self.drug_lord_boss_stealth.no_limping = true
 	self.drug_lord_boss_stealth.no_arrest = true
 	self.drug_lord_boss_stealth.surrender = nil
 	self.drug_lord_boss_stealth.unintimidateable = true
@@ -1875,6 +1885,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.no_run_start = true
 	self.tank.no_run_stop = true
 	self.tank.no_retreat = true
+	self.tank.no_limping = true
 	self.tank.no_arrest = true
 	self.tank.surrender = nil
 	self.tank.ecm_vulnerability = 0
@@ -2206,6 +2217,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.no_run_start = true
 	self.shield.no_run_stop = true
 	self.shield.no_retreat = true
+	self.shield.no_limping = true
 	self.shield.no_arrest = true
 	self.shield.surrender = nil
 	self.shield.ecm_vulnerability = 1
@@ -2360,6 +2372,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.no_run_start = true
 	self.spring.no_run_stop = true
 	self.spring.no_retreat = true
+	self.spring.no_limping = true
 	self.spring.no_arrest = true
 	self.spring.LOWER_HEALTH_PERCENTAGE_LIMIT = nil
 	self.spring.FINAL_LOWER_HEALTH_PERCENTAGE_LIMIT = nil
@@ -2443,6 +2456,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.move_speed = presets.move_speed.fast
 	self.summers.crouch_move = false
 	self.summers.no_retreat = true
+	self.summers.no_limping = true
 	self.summers.no_arrest = true
 	self.summers.ends_assault_on_death = true
 	self.summers.no_damage_mission = true
@@ -2502,6 +2516,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.move_speed = presets.move_speed.lightning
 	self.autumn.can_cloak = true
 	self.autumn.no_retreat = true
+	self.autumn.no_limping = true
 	self.autumn.no_arrest = true
 	self.autumn.surrender_break_time = {4, 6}
 	self.autumn.suppression = nil
@@ -2646,6 +2661,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.ecm_hurts = {}
 	self.taser_summers.chatter = presets.enemy_chatter.summers
 	self.taser_summers.no_retreat = true
+	self.taser_summers.no_limping = true
 	self.taser_summers.rescue_hostages = false
 	self.taser_summers.steal_loot = nil
 	self.taser_summers.immune_to_concussion = true
@@ -2791,6 +2807,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.can_deploy_tear_gas = false
 	self.boom_summers.can_throw_molotov = true
 	self.boom_summers.no_retreat = true
+	self.boom_summers.no_limping = true
 	self.boom_summers.no_arrest = true
 	self.boom_summers.immune_to_knock_down = true
 	self.boom_summers.immune_to_concussion = true

@@ -472,7 +472,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.first_aid_kit.deploy_time_multiplier = {0.5} --Also applies to DBs.
 				--Ace
-					self.values.temporary.first_aid_damage_reduction = {{0.5, 5}}
+					self.values.temporary.first_aid_damage_reduction = {{0.4, 5}}
 
 			--Painkillers--
 				self.values.temporary.passive_revive_damage_reduction = {

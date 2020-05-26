@@ -781,7 +781,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "Quick Fix",
-			["menu_tea_time_beta_desc_sc"] = "BASIC: ##$basic##\nDecreases your First Aid Kit and Doctor Bag deploy time by ##50%.##\n\nACE: ##$pro##\nCrew members that use your First Aid Kits take ##50%## less damage for ##5## seconds.",
+			["menu_tea_time_beta_desc_sc"] = "BASIC: ##$basic##\nDecreases your First Aid Kit and Doctor Bag deploy time by ##50%.##\n\nACE: ##$pro##\nCrew members that use your First Aid Kits take ##60%## less damage for ##5## seconds.",
 
 			--Pain Killers
 			["menu_fast_learner_beta_sc"] = "Painkillers",

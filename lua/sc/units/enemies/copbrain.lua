@@ -162,6 +162,22 @@ function CopBrain:on_nav_link_unregistered(element_id)
 end
 
 function CopBrain:convert_to_criminal(mastermind_criminal)
+	if self._alert_listen_key then
+		managers.groupai:state():remove_alert_listener(self._alert_listen_key)
+	else
+		self._alert_listen_key = "CopBrain" .. tostring(self._unit:key())
+	end
+
+	local alert_listen_filter = managers.groupai:state():get_unit_type_filter("combatant")
+	local alert_types = {
+		explosion = true,
+		fire = true,
+		aggression = true,
+		bullet = true
+	}
+
+	managers.groupai:state():add_alert_listener(self._alert_listen_key, callback(self, self, "on_alert"), alert_listen_filter, alert_types, self._unit:movement():m_head_pos())
+
 	self._logic_data.is_converted = true
 	self._logic_data.group = nil
 	local mover_col_body = self._unit:body("mover_blocker")
@@ -231,17 +247,9 @@ function CopBrain:convert_to_criminal(mastermind_criminal)
 	self._unit:movement():set_stance("hos")
 
 	local action_data = {
-		clamp_to_graph = true,
-		type = "act",
+		variant = "stand",
 		body_part = 1,
-		variant = "attached_collar_enter",
-		blocks = {
-			heavy_hurt = -1,
-			hurt = -1,
-			action = -1,
-			light_hurt = -1,
-			walk = -1
-		}
+		type = "act"
 	}
 
 	self._unit:brain():action_request(action_data)

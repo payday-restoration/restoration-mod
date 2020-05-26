@@ -504,7 +504,6 @@ function PlayerDamage:revive(silent)
 		self:set_armor(self:_max_armor())
 		self._revive_health_i = math.min(#tweak_data.player.damage.REVIVE_HEALTH_STEPS, self._revive_health_i + 1)
 		self._revive_miss = 2
-		managers.player:deactivate_db_regen() --End DB health regen because downed.
 	end
 	self._keep_health_on_revive = false --reset cloaker kick/taser shock flag.
 	self:_regenerate_armor()

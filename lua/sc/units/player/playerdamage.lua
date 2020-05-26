@@ -826,10 +826,14 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 	end
 end)
 
---Starts biker regen when there is missing armor.
+--Starts biker regen when there is missing armor. Notify ex-pres that armor has broken to get around dumb interaction with bullseye.
 Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
 	if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
 		self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
+	end
+
+	if self:get_real_armor() == 0 then
+		self._armor_broken = true
 	end
 end)
 
@@ -874,4 +878,33 @@ function PlayerDamage:exit_custody(down_timer)
 		total = self:_max_health(),
 		revives = Application:digest_value(self._revives, false)
 	})
+end
+
+--New trigger for ex-pres. Now occurs when armor regen kicks in any time after armor has been broken. Ignores partial regen from stuff like Bullseye.
+Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(self, no_sound)
+	if self._armor_broken then
+		self:consume_armor_stored_health()
+		self._armor_broken = false
+	end
+end)
+
+--Remove old ex-pres stuff. Technically won't do anything beyond a very tiny performance increase at the cost of a tiny amount of compatability.
+function PlayerDamage:set_armor(armor)
+	self:_check_update_max_armor()
+
+	armor = math.clamp(armor, 0, self:_max_armor())
+
+	if self._armor then
+		local current_armor = self:get_real_armor()
+
+		if current_armor ~= 0 and armor == 0 and self._dire_need then
+			local function clbk()
+				return self:is_regenerating_armor()
+			end
+
+			managers.player:add_coroutine(PlayerAction.DireNeed, PlayerAction.DireNeed, clbk, managers.player:upgrade_value("player", "armor_depleted_stagger_shot", 0))
+		end
+	end
+
+	self._armor = Application:digest_value(armor, true)
 end

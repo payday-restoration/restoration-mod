@@ -1317,7 +1317,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck11_9_desc_sc"] = "Damaging an enemy now heals ##3## life points every second for ##9## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Open your mind--	
-		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by ##5## points.",	
+		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.",			
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equipped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	

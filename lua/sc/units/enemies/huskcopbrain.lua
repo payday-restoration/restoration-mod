@@ -13,11 +13,62 @@ HuskCopBrain._NET_EVENTS = {
 	weapon_laser_on = 1
 }
 
-local post_init_original = HuskCopBrain.post_init
 function HuskCopBrain:post_init()
-	post_init_original(self)
+	local is_ally = self._unit:in_slot(16)
+	self._is_ally = is_ally
 
-	self._is_team_ai = self._unit:base().nick_name
+	self._alert_listen_key = "HuskCopBrain" .. tostring(self._unit:key())
+
+	local alert_listen_filter, alert_types = nil
+
+	if is_ally then
+		alert_listen_filter = managers.groupai:state():get_unit_type_filter("combatant")
+		alert_types = {
+			explosion = true,
+			fire = true,
+			aggression = true,
+			bullet = true
+		}
+
+		self._enemy_slotmask = managers.slot:get_mask("enemies")
+	else
+		self._enemy_slotmask = managers.slot:get_mask("criminals")
+
+		if self._unit:movement():cool() then
+			self._detect_local_player = true
+
+			alert_listen_filter = managers.groupai:state():get_unit_type_filter("criminals_enemies_civilians")
+			alert_types = {
+				vo_distress = true,
+				fire = true,
+				bullet = true,
+				vo_intimidate = true,
+				explosion = true,
+				footstep = true,
+				aggression = true,
+				vo_cbt = true
+			}
+		else
+			alert_listen_filter = managers.groupai:state():get_unit_type_filter("criminal")
+			alert_types = {
+				explosion = true,
+				fire = true,
+				aggression = true,
+				bullet = true
+			}
+		end
+	end
+
+	managers.groupai:state():add_alert_listener(self._alert_listen_key, callback(self, self, "on_alert"), alert_listen_filter, alert_types, self._unit:movement():m_head_pos())
+
+	self._last_alert_t = 0
+
+	self._unit:character_damage():add_listener("HuskCopBrain_death" .. tostring(self._unit:key()), {
+		"death"
+	}, callback(self, self, "clbk_death"))
+
+	self._post_init_complete = true
+	self._surrendered = false
 
 	local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
 	local SO_access_str = char_tweak.access
@@ -25,22 +76,44 @@ function HuskCopBrain:post_init()
 	self._SO_access = managers.navigation:convert_access_flag(SO_access_str)
 	self._detection = char_tweak.detection.ntl
 	self._visibility_slotmask = managers.slot:get_mask("AI_visibility")
-	self._enemy_slotmask = managers.slot:get_mask("criminals")
 	self._detected_player_att_data = {}
-
-	if self._unit:movement():cool() and not self._is_team_ai then
-		self._detect_local_player = true
-	end
 end
 
 function HuskCopBrain:sync_surrender(surrendered)
-	if surrendered then
-		self._unit:base():set_slot(self._unit, 22)
-	else
-		self._unit:base():set_slot(self._unit, 12)
+	if not self._converted then
+		if surrendered then
+			self._unit:base():set_slot(self._unit, 22)
+		else
+			self._unit:base():set_slot(self._unit, 12)
+		end
 	end
 
 	self._surrendered = surrendered
+end
+
+function HuskCopBrain:sync_converted()
+	self._converted = true
+
+	if self._alert_listen_key then
+		managers.groupai:state():remove_alert_listener(self._alert_listen_key)
+	else
+		self._alert_listen_key = "HuskCopBrain" .. tostring(self._unit:key())
+	end
+
+	local alert_listen_filter = managers.groupai:state():get_unit_type_filter("combatant")
+	local alert_types = {
+		explosion = true,
+		fire = true,
+		aggression = true,
+		bullet = true
+	}
+
+	managers.groupai:state():add_alert_listener(self._alert_listen_key, callback(self, self, "on_alert"), alert_listen_filter, alert_types, self._unit:movement():m_head_pos())
+
+	local SO_access_str = tweak_data.character.russian.access
+	self._SO_access_str = SO_access_str
+	self._SO_access = managers.navigation:convert_access_flag(SO_access_str)
+	self._enemy_slotmask = managers.slot:get_mask("enemies")
 end
 
 function HuskCopBrain:sync_net_event(event_id)
@@ -100,23 +173,66 @@ end
 function HuskCopBrain:on_team_set(team_data)
 	self._team = team_data
 
-	if self._unit:movement():cool() and not self._is_team_ai then
+	if self._unit:movement():cool() and not self._is_ally then
 		self._detect_local_player = true
 	end
 end
 
 function HuskCopBrain:on_cool_state_changed(state)
-	if self._is_team_ai then
+	if self._is_ally then
+		self._detect_local_player = nil
+
 		return
 	end
 
-	if not state then
-		self:_destroy_all_detected_attention_object_data()
-
-		managers.groupai:state():on_criminal_suspicion_progress(nil, self._unit, true)
+	if self._alert_listen_key then
+		managers.groupai:state():remove_alert_listener(self._alert_listen_key)
+	else
+		self._alert_listen_key = "HuskCopBrain" .. tostring(self._unit:key())
 	end
 
+	local alert_listen_filter, alert_types = nil
+
+	if state then
+		alert_listen_filter = managers.groupai:state():get_unit_type_filter("criminals_enemies_civilians")
+		alert_types = {
+			vo_distress = true,
+			fire = true,
+			bullet = true,
+			vo_intimidate = true,
+			explosion = true,
+			footstep = true,
+			aggression = true,
+			vo_cbt = true
+		}
+	else
+		alert_listen_filter = managers.groupai:state():get_unit_type_filter("criminal")
+		alert_types = {
+			explosion = true,
+			fire = true,
+			aggression = true,
+			bullet = true
+		}
+
+		if self._detected_player_att_data then
+			self:terminate_all_suspicion()
+		end
+	end
+
+	managers.groupai:state():add_alert_listener(self._alert_listen_key, callback(self, self, "on_alert"), alert_listen_filter, alert_types, self._unit:movement():m_head_pos())
+
 	self._detect_local_player = state
+end
+
+function HuskCopBrain:terminate_all_suspicion()
+	for u_key, u_data in pairs(self._detected_player_att_data) do
+		if u_data.uncover_progress then
+			u_data.uncover_progress = nil
+			u_data.last_suspicion_t = nil
+
+			u_data.unit:movement():on_suspicion(self._unit, false, true)
+		end
+	end
 end
 
 function HuskCopBrain:update_local_player_detection(t)
@@ -290,7 +406,7 @@ function HuskCopBrain:update_local_player_detection(t)
 
 					managers.network:session():send_to_peer_synched(managers.network:session():peer(1), "sync_unit_event_id_16", unit, "brain", CopBrain._NET_EVENTS.detected_client)
 
-					self:_destroy_detected_attention_object_data(attention_info, true)
+					self:terminate_all_suspicion()
 					self._detect_local_player = nil
 					self._seeing_local_player = nil
 
@@ -382,14 +498,6 @@ function HuskCopBrain:update_local_player_detection(t)
 					if verified then
 						attention_info.release_t = nil
 						attention_info.verified_t = t
-					elseif self._enemy_slotmask and attention_info.unit:in_slot(self._enemy_slotmask) then
-						if attention_info.release_t and attention_info.release_t < t then
-							self:_destroy_detected_attention_object_data(attention_info)
-
-							break
-						else
-							attention_info.release_t = attention_info.release_t or t + attention_info.settings.release_delay
-						end
 					elseif attention_info.release_t and attention_info.release_t < t then
 						self:_destroy_detected_attention_object_data(attention_info)
 
@@ -457,7 +565,7 @@ function HuskCopBrain:update_local_player_suspicion(t, attention_info)
 		managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, self._unit, true)
 		managers.network:session():send_to_peer_synched(managers.network:session():peer(1), "sync_unit_event_id_16", self._unit, "brain", CopBrain._NET_EVENTS.detected_client)
 
-		self:_destroy_detected_attention_object_data(attention_info, true)
+		self:terminate_all_suspicion()
 		self._detect_local_player = nil
 		self._seeing_local_player = nil
 	end
@@ -628,21 +736,19 @@ function HuskCopBrain:on_detected_attention_obj_modified(modified_u_key)
 	end
 end
 
-function HuskCopBrain:_destroy_detected_attention_object_data(attention_info, detected_player)
+function HuskCopBrain:_destroy_detected_attention_object_data(attention_info)
 	attention_info.handler:remove_listener("detect_" .. tostring(self._unit:key()))
 
-	if not detected_player then
-		if not attention_info.identified and attention_info.settings.notice_clbk then
-			attention_info.settings.notice_clbk(self._unit, false, true)
-		end
+	if not attention_info.identified and attention_info.settings.notice_clbk then
+		attention_info.settings.notice_clbk(self._unit, false, true)
+	end
 
-		if AIAttentionObject.REACT_SUSPICIOUS <= attention_info.settings.reaction then
-			managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, self._unit, nil)
-		end
+	if AIAttentionObject.REACT_SUSPICIOUS <= attention_info.settings.reaction then
+		managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, self._unit, nil)
+	end
 
-		if attention_info.uncover_progress then
-			attention_info.unit:movement():on_suspicion(self._unit, false, true)
-		end
+	if attention_info.uncover_progress then
+		attention_info.unit:movement():on_suspicion(self._unit, false, true)
 	end
 
 	self._detected_player_att_data[attention_info.u_key] = nil

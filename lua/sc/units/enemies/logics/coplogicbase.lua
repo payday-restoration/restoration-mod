@@ -34,6 +34,23 @@ local table_contains = table.contains
 local tmp_vec1 = Vector3()
 local tmp_vec2 = Vector3()
 
+CopLogicBase._AGGRESSIVE_ALERT_TYPES = {
+	vo_distress = true,
+	aggression = true,
+	bullet = true,
+	vo_intimidate = true,
+	explosion = true,
+	footstep = true,
+	vo_cbt = true,
+	fire = true
+}
+CopLogicBase._DANGEROUS_ALERT_TYPES = {
+	explosion = true,
+	bullet = true,
+	aggression = true,
+	fire = true
+}
+
 function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_reaction)
 	local t = data.t
 	local detected_obj = data.detected_attention_objects

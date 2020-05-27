@@ -13,10 +13,13 @@ function CopBrain:sync_net_event(event_id, peer)
 	elseif event_id == self._NET_EVENTS.stopped_seeing_client then
 		managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, false, peer_id)
 	elseif event_id == self._NET_EVENTS.detected_client then
+		managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, true, peer_id)
+
+		self._unit:movement():set_cool(false, managers.groupai:state().analyse_giveaway(self._unit:base()._tweak_table, peer_unit))
+
 		local att_obj_data = CopLogicBase.identify_attention_obj_instant(self._logic_data, peer_unit:key())
 
 		if att_obj_data and att_obj_data.criminal_record then
-			managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, true, peer_id)
 			managers.groupai:state():criminal_spotted(peer_unit)
 		end
 	end

@@ -1982,3 +1982,70 @@ function CopLogicTravel._try_anounce(data, my_data)
 end
 
 ]]--
+
+function CopLogicTravel.queued_update(data)
+	local my_data = data.internal_data
+	data.t = TimerManager:game():time()
+	my_data.close_to_criminal = nil
+	local delay = CopLogicTravel._upd_enemy_detection(data)
+
+	if data.internal_data ~= my_data then
+		return
+	end
+
+	CopLogicTravel.upd_advance(data)
+
+	if data.internal_data ~= my_data then
+		return
+	end
+	
+	if my_data.coarse_path then
+		if data.char_tweak.chatter.clear and data.unit:anim_data().idle and not ( data.attention_obj and data.attention_obj.reaction >= AIAttentionObject.REACT_COMBAT and data.attention_obj.verified_t and data.attention_obj.verified_t < 5 ) then
+			if data.unit:movement():cool() then
+				local roll = math.rand(1, 100)
+				local chance_report = 50
+					if roll <= chance_report then
+						managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper" )
+					else	
+						managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper_2" )
+					end	
+			else
+				local clearchk = math.random(1, 100)
+				local say_clear = 50
+				if clearchk <= say_clear then
+					managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear" )
+				else
+					if not managers.groupai:state():chk_assault_active_atm() and managers.groupai:state():not_assault_0_check() then
+						managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "retreat" )
+					end
+				end
+			end
+		end
+	end
+
+	if not delay then
+		debug_pause_unit(data.unit, "crap!!!", inspect(data))
+
+		delay = 1
+	end
+
+	CopLogicTravel.queue_update(data, data.internal_data, delay)
+end
+
+function CopLogicTravel._try_anounce(data, my_data)
+	local my_pos = data.m_pos
+	local max_dis_sq = 500000
+	local my_key = data.key
+	local announce_type = data.char_tweak.announce_incomming
+	
+	for u_key, u_data in pairs(managers.enemy:all_enemies()) do
+		if u_key ~= my_key and tweak_data.character[u_data.unit:base()._tweak_table].chatter[announce_type] and mvector3.distance_sq(my_pos, u_data.m_pos) < max_dis_sq and not u_data.unit:sound():speaking(data.t) and (u_data.unit:anim_data().idle or u_data.unit:anim_data().move) then
+			managers.groupai:state():chk_say_enemy_chatter(u_data.unit, u_data.m_pos, announce_type)
+			--log("announced arrival")
+	
+			my_data.announce_t = data.t + 15
+	
+			break
+		end
+	end
+end

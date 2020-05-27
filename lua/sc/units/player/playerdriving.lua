@@ -8,3 +8,9 @@ function PlayerDriving:_set_camera_limits(mode)
 		self._camera_unit:base():set_limits(270, 90)
 	end
 end
+
+local update_original = PlayerDriving.update
+function PlayerDriving:update(t, dt)
+	update_original(self, t, dt)
+	self:_upd_nav_data()
+end

@@ -293,21 +293,19 @@ function PlayerManager:_check_damage_to_hot(t, unit, damage_info)
 	self._next_allowed_doh_t = t + data.stacking_cooldown
 end	
 
---Messiah functions updated to work indefinitely but with an increasing number of required kills.
+--Messiah functions updated to work indefinitely but with a cooldown.
 function PlayerManager:refill_messiah_charges()
 	if self._max_messiah_charges then --Refill charges.
 		self._messiah_charges = self._max_messiah_charges
 	end
 
-	self._messiah_kills_required = 1 --Reset number of kills needed.
+	self._messiah_cooldown = 0
 end
 
 --Called when people jump to get up.
 function PlayerManager:use_messiah_charge()
-	if self:has_category_upgrade("player", "infinite_messiah") then --If player has infinite messiah, increase kills required and reset counter.
-		self._messiah_kills_required = self._messiah_kills_required + 2
-		self._messiah_kills = 0
-		log("Kills required to messiah = " .. tostring(self._messiah_kills_required))
+	if self:has_category_upgrade("player", "infinite_messiah") then --If player has infinite messiah, set the cooldown timer.
+		self._messiah_cooldown = Application:time() + 90
 	elseif self._messiah_charges then --Eat a messiah charge if not infinite.
 		self._messiah_charges = math.max(self._messiah_charges - 1, 0)
 	end
@@ -315,11 +313,8 @@ end
 
 --Called when players get kills while downed.
 function PlayerManager:_on_messiah_event()
-	if self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
-		self._messiah_kills = self._messiah_kills + 1
-		if self._messiah_charges > 0 and self._messiah_kills >= self._messiah_kills_required then
-			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
-		end
+	if self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") and self._messiah_charges > 0 and self._messiah_cooldown < Application:time() then
+		self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
 	end
 end
 
@@ -465,12 +460,13 @@ function PlayerManager:check_skills()
 
 	if self:has_category_upgrade("player", "messiah_revive_from_bleed_out") then
 		self._messiah_charges = self:upgrade_value("player", "messiah_revive_from_bleed_out", 0)
-		self._messiah_charges = 0	--Messiah init stuff to handle how the skill was changed.
-		self._messiah_kills_required = 1
-		self._messiah_kills = 0
 		self._max_messiah_charges = self._messiah_charges
+		self._messiah_cooldown = 0
 		self._message_system:register(Message.OnEnemyKilled, "messiah_revive_from_bleed_out", callback(self, self, "_on_messiah_event"))
 	else
+		self._messiah_charges = 0	--Messiah init stuff to handle how the skill was changed.
+		self._max_messiah_charges = self._messiah_charges
+		self._messiah_cooldown = 0
 		self._message_system:unregister(Message.OnEnemyKilled, "messiah_revive_from_bleed_out")
 	end
 

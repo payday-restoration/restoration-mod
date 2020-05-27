@@ -111,6 +111,8 @@
 		<hook file="sc/units/player/playerinventory.lua" source_file="lib/units/beings/player/playerinventory"/>
 		<hook file="sc/units/player/playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
 		<hook file="sc/units/player/playerdriving.lua" source_file="lib/units/beings/player/states/playerdriving"/>
+		<hook file="sc/units/player/playerclean.lua" source_file="lib/units/beings/player/states/playerclean"/>
+		<hook file="sc/units/player/playercivilian.lua" source_file="lib/units/beings/player/states/playercivilian"/>
 		<hook file="sc/units/player/recoil.lua" source_file="lib/units/cameras/fpcameraplayerbase"/>
 		<hook file="sc/units/interactions/interactionext.lua" source_file="lib/units/interactions/interactionext"/>
 		<hook file="sc/units/enemies/actionspooc.lua" source_file="lib/units/enemies/spooc/actions/lower_body/actionspooc"/>

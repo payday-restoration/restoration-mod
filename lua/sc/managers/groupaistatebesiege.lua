@@ -130,50 +130,30 @@ function GroupAIStateBesiege:chk_assault_active_atm()
 end
 
 function GroupAIStateBesiege:_voice_groupentry(group)
-local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
-if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.char_tweak.chatter.entry then
-	for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
-		local randomgroupcallout = math.random(1, 100)
-		--assign tactic-identifiers for this in groupaistatebesiege on a group-to-group basis
-		--groupcs is for assault team, grouphrt is for rescue team,groupcsr/grouphrtr picks a random letter, groupany depends on whether assault is active and picks a random letter or not
-		if tactic_name == "groupcs1" then
-			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
-		elseif tactic_name == "groupcs2" then
-			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
-		elseif tactic_name == "groupcs3" then
-			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
-		elseif tactic_name == "groupcs4" then
-			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
-		elseif tactic_name == "grouphrt1" then
-			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
-		elseif tactic_name == "grouphrt2" then
-			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
-		elseif tactic_name == "grouphrt3" then
-			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
-		elseif tactic_name == "grouphrt4" then
-			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
-		elseif tactic_name == "groupcsr" then
-			if randomgroupcallout < 25 then
+	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
+
+	if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.char_tweak.chatter.entry then
+		for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
+			local randomgroupcallout = math.random(1, 100)
+			--assign tactic-identifiers for this in groupaistatebesiege on a group-to-group basis
+			--groupcs is for assault team, grouphrt is for rescue team,groupcsr/grouphrtr picks a random letter, groupany depends on whether assault is active and picks a random letter or not
+			if tactic_name == "groupcs1" then
 				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
-			elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+			elseif tactic_name == "groupcs2" then
 				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
-			elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+			elseif tactic_name == "groupcs3" then
 				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
-			else
+			elseif tactic_name == "groupcs4" then
 				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
-			end
-		elseif tactic_name == "grouphrtr" then
-			if randomgroupcallout < 25 then
+			elseif tactic_name == "grouphrt1" then
 				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
-			elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+			elseif tactic_name == "grouphrt2" then
 				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
-			elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+			elseif tactic_name == "grouphrt3" then
 				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
-			else
+			elseif tactic_name == "grouphrt4" then
 				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
-			end
-		elseif tactic_name == "groupany" then
-			if self._task_data.assault.active then
+			elseif tactic_name == "groupcsr" then
 				if randomgroupcallout < 25 then
 					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
 				elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
@@ -183,7 +163,7 @@ if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.c
 				else
 					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
 				end
-			else
+			elseif tactic_name == "grouphrtr" then
 				if randomgroupcallout < 25 then
 					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
 				elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
@@ -192,6 +172,28 @@ if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.c
 					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
 				else
 					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
+				end
+			elseif tactic_name == "groupany" then
+				if self._task_data.assault.active then
+					if randomgroupcallout < 25 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
+					elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
+					elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
+					else
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
+					end
+				else
+					if randomgroupcallout < 25 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
+					elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
+					elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
+					else
+						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
+					end
 				end
 			end
 		end
@@ -384,97 +386,72 @@ function GroupAIStateBesiege:_upd_assault_task()
 				end		
 			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
 		end
-	else
-		local end_assault = false
-		local enemies_left = self:_count_police_force("assault")
-		if not self._hunt_mode then
-		
-			local enemies_defeated_time_limit = 30
-			local drama_engagement_time_limit = 60
+	elseif not self._hunt_mode then
+		if not task_data.said_retreat then
+			task_data.said_retreat = true
 
-			if managers.skirmish:is_skirmish() then
-				enemies_defeated_time_limit = 0
-				drama_engagement_time_limit = 0
-			end			
-		
-			local min_enemies_left = 7
-			local enemies_defeated = enemies_left < min_enemies_left
-			local taking_too_long = task_data.phase_end_t + enemies_defeated_time_limit < t
+			self:_police_announce_retreat()
+			self:_get_megaphone_sound_source():post_event("mga_robbers_clever")
 
-			if enemies_defeated or taking_too_long then
-				if not task_data.said_retreat then
-					task_data.said_retreat = true
+			for group_id, group in pairs(self._groups) do
+				local current_objective = group.objective
 
-					self:_police_announce_retreat()
-					self:_get_megaphone_sound_source():post_event("mga_robbers_clever")
-					local time = self._t
-						for group_id, group in pairs(self._groups) do
-							  for u_key, u_data in pairs(group.units) do
-							  local nav_seg_id = u_data.tracker:nav_segment()
-							  local current_objective = group.objective
-								if current_objective.coarse_path then
-									  if not u_data.unit:sound():speaking(time) then
-										u_data.unit:sound():say("m01", true)
-									end	
-								end					   
-							end	
-						end					
-						elseif task_data.phase_end_t < t then
-					local drama_pass = self._drama_data.amount < tweak_data.drama.assault_fade_end
-					local engagement_pass = self:_count_criminals_engaged_force(11) <= 10
-					local taking_too_long = task_data.phase_end_t + drama_engagement_time_limit < t
-
-					if drama_pass and engagement_pass or taking_too_long then
-						end_assault = true
+				if current_objective and current_objective.coarse_path then
+					for u_key, u_data in pairs(group.units) do
+						if not u_data.unit:sound():speaking(t) then
+							u_data.unit:sound():say("m01", true)
+						end
 					end
 				end
 			end
-							
-			if task_data.force_end or end_assault then
-				print("assault task clear")
+		end
 
-				task_data.active = nil
-				task_data.phase = nil
-				task_data.said_retreat = nil
-				task_data.force_end = nil
-				self:_get_megaphone_sound_source():post_event("mga_leave")
-				local time = self._t
-					for group_id, group in pairs(self._groups) do
-						  for u_key, u_data in pairs(group.units) do
-						  local nav_seg_id = u_data.tracker:nav_segment()
-						  local current_objective = group.objective
-							if current_objective.coarse_path then
-								if not u_data.unit:sound():speaking(time) then
-									u_data.unit:sound():say("m01", true)
-								end	
-							end					   
-						end	
-					end		
-				if self._draw_drama then
-					self._draw_drama.assault_hist[#self._draw_drama.assault_hist][2] = t
+		if task_data.force_end or task_data.phase_end_t < t then
+			task_data.active = nil
+			task_data.phase = nil
+			task_data.said_retreat = nil
+			task_data.force_end = nil
+			local force_regroup = task_data.force_regroup
+			task_data.force_regroup = nil
+			self:_get_megaphone_sound_source():post_event("mga_leave")
+
+			for group_id, group in pairs(self._groups) do
+				local current_objective = group.objective
+
+				if current_objective and current_objective.coarse_path then
+					for u_key, u_data in pairs(group.units) do
+						if not u_data.unit:sound():speaking(t) then
+							u_data.unit:sound():say("m01", true)
+						end
+					end
 				end
-
-				managers.mission:call_global_event("end_assault")
-				self:_begin_regroup_task()
-
-				return
 			end
-			
-		else
+
+			if self._draw_drama then
+				self._draw_drama.assault_hist[#self._draw_drama.assault_hist][2] = t
+			end
+
+			managers.mission:call_global_event("end_assault")
+			self:_begin_regroup_task(force_regroup)
+
+			return
 		end
 	end
+
 	if self._drama_data.amount <= tweak_data.drama.low then
 		for criminal_key, criminal_data in pairs(self._player_criminals) do
 			self:criminal_spotted(criminal_data.unit)
-			for group_id, group in pairs(self._groups) do
+
+			--[[for group_id, group in pairs(self._groups) do
 				if group.objective.charge then
 					for u_key, u_data in pairs(group.units) do
 						u_data.unit:brain():clbk_group_member_attention_identified(nil, criminal_key)
 					end
 				end
-			end
+			end]]
 		end
 	end
+
 	local primary_target_area = task_data.target_areas[1]
 	if self:is_area_safe_assault(primary_target_area) then
 		local target_pos = primary_target_area.pos
@@ -1173,8 +1150,6 @@ function GroupAIStateBesiege:_perform_group_spawning(spawn_task, force, use_last
 			self._groups[spawn_task.group.id] = nil
 		end
 	end
-end
-
 end
 
 function GroupAIStateBesiege:_voice_saw()

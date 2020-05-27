@@ -403,14 +403,6 @@ function HuskCopBrain:update_local_player_detection(t)
 					attention_info.release_t = t + attention_info.settings.release_delay
 					attention_info.identified_t = t
 					noticable = true
-
-					managers.network:session():send_to_peer_synched(managers.network:session():peer(1), "sync_unit_event_id_16", unit, "brain", CopBrain._NET_EVENTS.detected_client)
-
-					self:terminate_all_suspicion()
-					self._detect_local_player = nil
-					self._seeing_local_player = nil
-
-					break
 				elseif attention_info.notice_progress < 0 then
 					noticable = false
 

@@ -797,7 +797,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "Inspire",
-			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster.\n\nShouting at your teammates will increase their movement and reload speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nYou can revive crew members with clear line of sight at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##90## seconds.",																								
+			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster.\n\nShouting at your teammates will increase their movement and reload speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nYou can revive crew members with ##clear line of sight## at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##90## seconds.",																								
 
 
 			--}

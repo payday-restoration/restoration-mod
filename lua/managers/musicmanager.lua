@@ -1,4 +1,7 @@
 local jukebox_heist_specific_orig = MusicManager.jukebox_heist_specific
+local ponr_random1 = math.random(50)
+local ponr_random2 = math.random(50)
+
 function MusicManager:jukebox_heist_specific()
     jukebox_heist_specific_orig(self)
     if not Global.music_manager.track_attachment.int_dock then
@@ -28,7 +31,11 @@ function MusicManager:jukebox_heist_specific()
 		return self:track_attachment("escape") or "all"
     end
     if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTrack") and not restoration.Options:GetValue("OTHER/MusicShuffle") then
-        return self:track_attachment("ponr")
+        if ponr_random1 then
+            return self:track_attachment("ponr")
+        elseif ponr_random2 then
+            return self:track_attachment("track_16")
+        end
     end
 
 	local job_data = Global.job_manager.current_job

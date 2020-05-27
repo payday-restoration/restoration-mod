@@ -8,63 +8,8 @@ local math_lerp = math.lerp
 local tmp_vec2 = Vector3()
 local tmp_vec3 = Vector3()
 
-local log_interval = 3 --How often the update function should ping.
-local next_log = 0
-
-function log_ai(data, ht)
-	local timestamp = tostring(math.floor(ht / 60)) .. ":" .. tostring(math.floor(math.fmod(ht, 60))) .. " "
-	local objective = data.objective
-
-	if objective and objective.follow_unit and objective.follow_unit.base and objective.follow_unit:base().nick_name then
-		log(timestamp .. data.unit:base():nick_name() .. " Objective- " .. objective.type .. " " .. objective.follow_unit:base():nick_name())
-	elseif objective then
-		log(timestamp .. data.unit:base():nick_name() .. " Objective- " .. objective.type)
-	else
-		log(timestamp .. data.unit:base():nick_name() .. " Objective- None")
-	end
-
-	next_log = ht + log_interval
-end
-
---Here purely for logging purposes, don't want to create a whole posthook for this.
---Delete this later.
-function TeamAILogicIdle.update(data)
-	local my_data = data.internal_data
-	local ht = math.abs(managers.game_play_central:get_heist_timer())
-
-	CopLogicIdle._upd_pathing(data, my_data)
-	CopLogicIdle._upd_scan(data, my_data)
-
-	local objective = data.objective
-
-	if objective then
-		if not my_data.acting then
-			if objective.type == "follow" then
-				if TeamAILogicIdle._check_should_relocate(data, my_data, objective) and not data.unit:movement():chk_action_forbidden("walk") then
-					objective.in_place = nil
-
-					TeamAILogicBase._exit(data.unit, "travel")
-				end
-			elseif objective.type == "revive" then
-				objective.in_place = nil
-
-				TeamAILogicBase._exit(data.unit, "travel")
-			end
-		end
-	elseif not data.path_fail_t or data.t - data.path_fail_t > 6 then
-		managers.groupai:state():on_criminal_jobless(data.unit)
-	end
-
-	if ht > next_log then
-		log_ai(data, ht)
-	end
-end
-
-
 function TeamAILogicIdle.enter(data, new_logic_name, enter_params)
 	TeamAILogicBase.enter(data, new_logic_name, enter_params)
-	local ht = math.abs(managers.game_play_central:get_heist_timer())
-	log_ai(data, ht)
 	local my_data = {
 		unit = data.unit,
 		detection = data.char_tweak.detection.idle,

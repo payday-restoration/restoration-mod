@@ -18,6 +18,11 @@ ModifierSkulldozers.blackdozers = {
 	Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2")
 }	
 
+--kill the original function, we do NOT want invalid scripted spawns
+function ModifierSkulldozers:init(data)
+	ModifierSkulldozers.super.init(self, data)
+end
+
 function ModifierSkulldozers:modify_value(id, value)
 	if id == "GroupAIStateBesiege:SpawningUnit" then
 		local is_green = table.contains(ModifierSkulldozers.greendozers, value)

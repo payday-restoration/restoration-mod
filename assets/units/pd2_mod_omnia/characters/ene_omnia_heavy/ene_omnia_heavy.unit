@@ -8,6 +8,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" />
 	</dependencies>
 
 	<extensions>

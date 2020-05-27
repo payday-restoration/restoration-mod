@@ -248,6 +248,8 @@
 		<hook file="sc/modifiers/modifiercloakerkick.lua" source_file="lib/modifiers/modifiercloakerkick"/>	
 		<hook file="sc/modifiers/modifiercloakerteargas.lua" source_file="lib/modifiers/modifiercloakerteargas"/>
 		<hook file="sc/modifiers/modifierskulldozers.lua" source_file="lib/modifiers/modifierskulldozers"/>
+		<!--///NEW MODIFIERS FOR CRIME SPREE GO HERE\\\-->
+		<hook file="sc/modifiers/modifierbravos.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<!--///MUTATORS\\\-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>

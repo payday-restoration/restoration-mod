@@ -282,7 +282,8 @@ function DialogManager:queue_dialog(id, ...)
 		end	
 	
 		--Bomb Dockyard--
-		if id == "Play_pln_cr2_104 " then
+		--pls work this time
+		if id == "Play_pln_cr2_35" then
 			if difficulty_index <= 2 then
 				escape_time = 690
 			elseif difficulty_index == 3 then
@@ -415,24 +416,7 @@ function DialogManager:queue_dialog(id, ...)
 			else
 				escape_time = 240
 			end			
-		end		
-
-		--Undercover--
-		if id == "Play_pln_man_74" or id == "Play_pln_man_73" then
-			if difficulty_index <= 2 then
-				escape_time = 270
-			elseif difficulty_index == 3 then
-				escape_time = 240
-			elseif difficulty_index == 4 then
-				escape_time = 210
-			elseif difficulty_index == 5 then
-				escape_time = 180	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 150					
-			else
-				escape_time = 120
-			end			
-		end				
+		end					
 
 		--Green Bridge--
 		if id == "Play_pln_glace_29" then

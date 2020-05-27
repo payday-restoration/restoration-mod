@@ -96,18 +96,14 @@ for k,v in pairs(replacement_table) do
 end
 replacement_table = nil --not exactly resource intensive but not like we need it anymore
 
+--modify this function so that we can pass the bravo table to other files
+function ModifiersManager:init()
+	self._modifiers = {}
+	self._unit_table = unit_table or {} --define this here so ModifierBravos can pull the same table. avoids having to remake the same table twice
+end
+
 local orig_modify = ModifiersManager.modify_value
 function ModifiersManager:modify_value(id, value, ...)
-	--get cs level
-	local crime_spree_level = 0
-	if Network:is_server() or Global.game_settings.single_player then
-		crime_spree_level = managers.crime_spree:spree_level()
-	else
-		crime_spree_level = managers.crime_spree:get_peer_spree_level(1)
-	end
-		
-	--calculate bravo chance
-	local crime_spree_bravo_chance = (math.floor(crime_spree_level / 100) or 0) * 5
 	local result = orig_modify(self,id,value,...)
 	value = tostring(value)
 	if id == "GroupAIStateBesiege:SpawningUnit" and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down then 
@@ -116,11 +112,7 @@ function ModifiersManager:modify_value(id, value, ...)
 --			else
 --				log("Did not find " .. value,{color = Color(1,0.6,0.6)})
 --			end
-		return unit_table[value] or result 
-	elseif id == "GroupAIStateBesiege:SpawningUnit" and (Global.game_settings and Global.game_settings.incsmission) and math.random(0,100) < crime_spree_bravo_chance then
-		--log("chance successful!! replacing unit with bravo")
-		--log("the chance of replacement was:" .. crime_spree_bravo_chance .. ".")
-		return unit_table[value] or result
+		return self._unit_table[value] or result 
 	end
 	return result
 end

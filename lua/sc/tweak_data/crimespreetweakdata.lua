@@ -575,13 +575,12 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 	self.modifiers = {
 		forced = {
 			{
-				id = "damage_health_1",
-				class = "ModifierEnemyHealthAndDamage",
-				icon = "crime_spree_health",
+				id = "bravo_replacer",
+				class = "ModifierBravos",
+				icon = "crime_spree_no_hurt",
 				level = 100,
 				data = {
-					health = {0, "add"},
-					damage = {0, "add"}
+					spawn_chance = {5, "add"}
 				}
 			}
 		},
@@ -857,13 +856,12 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 	self.repeating_modifiers = {
 		forced = {
 			{
-				id = "damage_health_rpt_",
-				class = "ModifierEnemyHealthAndDamage",
-				icon = "crime_spree_health",
-				level = 5,
+				id = "bravo_replacer",
+				class = "ModifierBravos",
+				icon = "crime_spree_no_hurt",
+				level = 100,
 				data = {
-					health = {0, "add"},
-					damage = {0, "add"}
+					spawn_chance = {5, "add"}
 				}
 			}
 		}

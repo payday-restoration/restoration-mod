@@ -305,7 +305,7 @@ end
 --Called when people jump to get up.
 function PlayerManager:use_messiah_charge()
 	if self:has_category_upgrade("player", "infinite_messiah") then --If player has infinite messiah, set the cooldown timer.
-		self._messiah_cooldown = Application:time() + 90
+		self._messiah_cooldown = Application:time() + 120 --Replace with tweakdata once we settle on something.
 	elseif self._messiah_charges then --Eat a messiah charge if not infinite.
 		self._messiah_charges = math.max(self._messiah_charges - 1, 0)
 	end
@@ -313,8 +313,11 @@ end
 
 --Called when players get kills while downed.
 function PlayerManager:_on_messiah_event()
-	if self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") and self._messiah_charges > 0 and self._messiah_cooldown < Application:time() then
-		self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
+	if self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
+		self._messiah_cooldown = self._messiah_cooldown - 10 --Downed kill CDR.
+		if self._messiah_charges > 0 and self._messiah_cooldown < Application:time() then
+			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
+		end
 	end
 end
 

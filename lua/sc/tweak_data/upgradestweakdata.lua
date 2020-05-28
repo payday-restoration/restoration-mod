@@ -1002,11 +1002,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Sneaky Bastard
 				--Concealment stuff same as vanilla.
 				--Ace
-					self.values.player.health_damage_bonus_dodge = {
-						0.5
-					}
 					self.values.player.dodge_heal_no_armor = {
-						0.04 --% of maximum health
+						0.05 --% of maximum health
 					}
 			
 		--Silent Killer--
@@ -2965,15 +2962,6 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "throwables_multiplier",
-			category = "player"
-		}
-	}
-	self.definitions.player_health_damage_bonus_dodge = {
-		name_id = "menu_player_health_damage_bonus_dodge",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "health_damage_bonus_dodge",
 			category = "player"
 		}
 	}

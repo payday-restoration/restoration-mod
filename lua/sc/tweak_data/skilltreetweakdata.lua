@@ -1472,7 +1472,6 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"player_detection_risk_add_dodge_chance_2",
-						"player_health_damage_bonus_dodge",
 						"player_dodge_heal_no_armor"
 					},
 					cost = self.costs.hightierpro

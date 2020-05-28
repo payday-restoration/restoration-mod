@@ -75,7 +75,7 @@ function CopActionWalk:init(action_desc, common_data)
 	self._sync = Network:is_server()
 	self._skipped_frames = 1
 
-	if self._ext_anim.needs_idle then
+	if common_data.ext_anim.needs_idle then
 		self._waiting_full_blend = true
 
 		self:_set_updator("_upd_wait_for_full_blend")
@@ -106,6 +106,9 @@ function CopActionWalk:_init()
 	self._walk_velocity = self:_get_max_walk_speed()
 	local action_desc = self._action_desc
 	local common_data = self._common_data
+
+	self._no_run_start = common_data.char_tweak.no_run_start
+	self._no_run_stop = common_data.char_tweak.no_run_stop
 
 	if self._sync then
 		if managers.groupai:state():all_AI_criminals()[common_data.unit:key()] then
@@ -219,90 +222,82 @@ function CopActionWalk:_init()
 		}
 	end
 
-	if #self._simplified_path == 2 and not self._NO_RUN_STOP and not self._no_walk and self._haste ~= "walk" and mvec3_dis(self._curve_path[2], self._curve_path[1]) >= 120 then
+	if #self._simplified_path == 2 and not self._no_run_stop and self._haste ~= "walk" and mvec3_dis(self._curve_path[2], self._curve_path[1]) >= 120 then
 		self._chk_stop_dis = 210
 	end
 
-	if self._sync then
-		local sync_yaw = 0
-
-		if self._end_rot then
-			local yaw = self._end_rot:yaw()
-
-			if yaw < 0 then
-				yaw = 360 + yaw
-			end
-
-			sync_yaw = 1 + math_ceil(yaw * 254 / 360)
-		end
-
-		local sync_haste = self._haste == "walk" and 1 or 2
-		local nav_link_act_index, nav_link_act_yaw = nil
-		local next_nav_point = self._simplified_path[2]
-		local nav_link_from_idle = false
-
-		if next_nav_point.x then
-			nav_link_act_index = 0
-			nav_link_act_yaw = 1
-		else
-			nav_link_act_index = CopActionAct._get_act_index(CopActionAct, next_nav_point.element:value("so_action"))
-			nav_link_act_yaw = next_nav_point.element:value("rotation")
-
-			if nav_link_act_yaw < 0 then
-				nav_link_act_yaw = 360 + nav_link_act_yaw
-			end
-
-			nav_link_act_yaw = math_ceil(255 * nav_link_act_yaw / 360)
-
-			if nav_link_act_yaw == 0 then
-				nav_link_act_yaw = 255
-			end
-
-			if next_nav_point.element:nav_link_wants_align_pos() then
-				nav_link_from_idle = true
-			end
-
-			self._nav_link_synched_with_start = true
-		end
-
-		local pose_code = nil
-
-		if not action_desc.pose then
-			pose_code = 0
-		elseif action_desc.pose == "stand" then
-			pose_code = 1
-		else
-			pose_code = 2
-		end
-
-		local end_pose_code = nil
-
-		if not action_desc.end_pose then
-			end_pose_code = 0
-		elseif action_desc.end_pose == "stand" then
-			end_pose_code = 1
-		else
-			end_pose_code = 2
-		end
-
-		self._ext_network:send("action_walk_start", self._nav_point_pos(next_nav_point), nav_link_act_yaw, nav_link_act_index, nav_link_from_idle, sync_haste, sync_yaw, self._no_walk and true or false, self._no_strafe and true or false, pose_code, end_pose_code)
-
-		common_data.ext_brain:rem_pos_rsrv("stand")
-		common_data.ext_brain:add_pos_rsrv("move_dest", {
-			radius = 30,
-			position = mvec3_cpy(self._simplified_path[#self._simplified_path])
-		})
-	else
-		local pose = action_desc.pose
-
-		if pose and not common_data.ext_anim[pose] then
-			if pose == "stand" then
-				CopActionStand:new(action_desc, common_data)
-			else
-				CopActionCrouch:new(action_desc, common_data)
-			end
-		end
+	if not self._sync then
+		return true
 	end
+
+	local sync_yaw = 0
+
+	if self._end_rot then
+		local yaw = self._end_rot:yaw()
+
+		if yaw < 0 then
+			yaw = 360 + yaw
+		end
+
+		sync_yaw = 1 + math_ceil(yaw * 254 / 360)
+	end
+
+	local sync_haste = self._haste == "walk" and 1 or 2
+	local nav_link_act_index, nav_link_act_yaw = nil
+	local next_nav_point = self._simplified_path[2]
+	local nav_link_from_idle = false
+
+	if next_nav_point.x then
+		nav_link_act_index = 0
+		nav_link_act_yaw = 1
+	else
+		nav_link_act_index = CopActionAct._get_act_index(CopActionAct, next_nav_point.element:value("so_action"))
+		nav_link_act_yaw = next_nav_point.element:value("rotation")
+
+		if nav_link_act_yaw < 0 then
+			nav_link_act_yaw = 360 + nav_link_act_yaw
+		end
+
+		nav_link_act_yaw = math_ceil(255 * nav_link_act_yaw / 360)
+
+		if nav_link_act_yaw == 0 then
+			nav_link_act_yaw = 255
+		end
+
+		if next_nav_point.element:nav_link_wants_align_pos() then
+			nav_link_from_idle = true
+		end
+
+		self._nav_link_synched_with_start = true
+	end
+
+	local pose_code = nil
+
+	if not action_desc.pose then
+		pose_code = 0
+	elseif action_desc.pose == "stand" then
+		pose_code = 1
+	else
+		pose_code = 2
+	end
+
+	local end_pose_code = nil
+
+	if not action_desc.end_pose then
+		end_pose_code = 0
+	elseif action_desc.end_pose == "stand" then
+		end_pose_code = 1
+	else
+		end_pose_code = 2
+	end
+
+	self._ext_network:send("action_walk_start", self._nav_point_pos(next_nav_point), nav_link_act_yaw, nav_link_act_index, nav_link_from_idle, sync_haste, sync_yaw, self._no_walk and true or false, self._no_strafe and true or false, pose_code, end_pose_code)
+
+	common_data.ext_brain:rem_pos_rsrv("stand")
+	common_data.ext_brain:add_pos_rsrv("move_dest", {
+		radius = 30,
+		position = mvec3_cpy(self._simplified_path[#self._simplified_path])
+	})
 
 	return true
 end
@@ -316,7 +311,11 @@ function CopActionWalk:_sanitize()
 		end
 	end
 
-	if not self._sync and not self._walk_anim_lengths[self._ext_anim.pose] then
+	local start_pose = self._action_desc.pose
+
+	if start_pose and not self._ext_anim[start_pose] and self._walk_anim_lengths[start_pose] then
+		self._ext_movement:play_redirect(start_pose)
+	elseif not self._walk_anim_lengths[self._ext_anim.pose] then
 		self._ext_movement:play_redirect("stand")
 	end
 
@@ -324,7 +323,7 @@ function CopActionWalk:_sanitize()
 end
 
 function CopActionWalk:_chk_start_anim(next_pos)
-	if self._haste ~= "run" or self._common_data.char_tweak.no_run_start then
+	if self._no_run_start or self._haste ~= "run" then
 		return
 	end
 
@@ -614,6 +613,8 @@ function CopActionWalk:on_exit()
 
 	if self._root_blend_disabled then
 		self._ext_movement:set_root_blend(true)
+
+		self._root_blend_disabled = nil
 	end
 
 	if self._changed_driving then
@@ -820,7 +821,7 @@ function CopActionWalk:update(t)
 
 		self._ext_movement:set_rotation(rot_new)
 
-		if self._chk_stop_dis and not self._common_data.char_tweak.no_run_stop then
+		if self._chk_stop_dis and not self._no_run_stop then
 			local end_dis = mvec3_dis(self._nav_point_pos(self._simplified_path[#self._simplified_path]), self._last_pos)
 
 			if end_dis < self._chk_stop_dis then
@@ -880,13 +881,13 @@ function CopActionWalk:update(t)
 		local real_velocity = self._cur_vel
 		local variant = self._haste
 
-		if variant == "run" and not self._no_walk then
+		if variant == "run" then
 			if anim_data.sprint then
 				if real_velocity > 480 and anim_data.pose == "stand" then
 					variant = "sprint"
 				elseif real_velocity > 250 then
 					variant = "run"
-				else
+				elseif not self._no_walk then
 					variant = "walk"
 				end
 			elseif anim_data.run then
@@ -895,7 +896,7 @@ function CopActionWalk:update(t)
 						variant = "sprint"
 					elseif real_velocity > 250 then
 						variant = "run"
-					else
+					elseif not self._no_walk then
 						variant = "walk"
 					end
 				end
@@ -903,7 +904,7 @@ function CopActionWalk:update(t)
 				variant = "sprint"
 			elseif real_velocity > 300 then
 				variant = "run"
-			else
+			elseif not self._no_walk then
 				variant = "walk"
 			end
 		end
@@ -954,6 +955,12 @@ end
 
 function CopActionWalk:_upd_start_anim(t)
 	if not self._ext_anim.run_start then
+		if self._root_blend_disabled then
+			self._ext_movement:set_root_blend(true)
+
+			self._root_blend_disabled = nil
+		end
+
 		self._start_run = nil
 		self._start_run_turn = nil
 		local old_pos = self._curve_path[1]
@@ -1236,27 +1243,22 @@ function CopActionWalk._calculate_simplified_path(good_pos, original_path, nr_it
 	local original_path_size = #original_path
 
 	for i_nav_point, nav_point in ipairs(original_path) do
+		local is_nav_link = true
+
 		if nav_point.x and i_nav_point ~= original_path_size then
 			if i_nav_point == 1 or simplified_path[#simplified_path].x then
+				is_nav_link = false
 				local pos_from = simplified_path[#simplified_path]
 				local pos_to = CopActionWalk._nav_point_pos(original_path[i_nav_point + 1])
 				local add_point = z_test and math_abs(nav_point.z - pos_from.z - (nav_point.z - pos_to.z)) > 60
 
-				if add_point then
+				if add_point or CopActionWalk._chk_shortcut_pos_to_pos(pos_from, pos_to) then
 					table_insert(simplified_path, mvec3_cpy(nav_point))
-				else
-					local ray, trace = CopActionWalk._chk_shortcut_pos_to_pos(pos_from, pos_to, true)
-
-					if ray then
-						table_insert(simplified_path, mvec3_cpy(nav_point))
-					else
-						table_insert(simplified_path, trace[1])
-					end
 				end
-			else
-				table_insert(simplified_path, nav_point)
 			end
-		else
+		end
+
+		if is_nav_link then
 			table_insert(simplified_path, nav_point)
 		end
 	end
@@ -1455,7 +1457,7 @@ function CopActionWalk:_nav_chk_walk(t, dt, vis_state)
 					self._walk_turn = nil
 				end
 			else
-				if vis_state < 3 and self._end_of_curved_path and self._ext_anim.run and not self._NO_RUN_STOP and not self._no_walk and mvec3_dis(c_path[new_c_index + 1], new_pos) >= 120 then
+				if vis_state < 3 and self._end_of_curved_path and self._ext_anim.run and not self._no_run_stop and not self._no_walk and mvec3_dis(c_path[new_c_index + 1], new_pos) >= 120 then
 					self._chk_stop_dis = 210
 				elseif self._chk_stop_dis then
 					self._chk_stop_dis = nil

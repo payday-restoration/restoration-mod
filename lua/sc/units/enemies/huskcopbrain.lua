@@ -152,8 +152,13 @@ function HuskCopBrain:update(unit, t, dt)
 	if self._detect_local_player then
 		local attention_info = self:update_local_player_detection(t)
 
-		if attention_info and attention_info.reaction == AIAttentionObject.REACT_SUSPICIOUS then
-			self:update_local_player_suspicion(t, attention_info)
+		if attention_info and attention_info.identified then
+			if attention_info.reaction == AIAttentionObject.REACT_SUSPICIOUS then
+				self:update_local_player_suspicion(t, attention_info)
+			elseif AIAttentionObject.REACT_SCARED <= attention_info.settings.reaction then
+				managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, self._unit, true)
+				managers.network:session():send_to_peer_synched(managers.network:session():peer(1), "sync_unit_event_id_16", unit, "brain", CopBrain._NET_EVENTS.detected_client)
+			end
 		end
 
 		self:update_local_player_suspicion_decay(t)
@@ -305,6 +310,8 @@ function HuskCopBrain:update_local_player_detection(t)
 			end
 		end
 	end
+
+	local player_attention_data = nil
 
 	for u_key, attention_info in pairs(all_attention_objects) do
 		if u_key == player_key and not self._detected_player_att_data[u_key] then
@@ -505,9 +512,11 @@ function HuskCopBrain:update_local_player_detection(t)
 		attention_info.visible_angle = nil
 		attention_info.visible_dis_multiplier = nil
 		attention_info.visible_ray = nil
+
+		player_attention_data = attention_info
 	end
 
-	return attention_info
+	return player_attention_data
 end
 
 function HuskCopBrain:_create_detected_player_data(t, u_key, attention_info, settings, forced, visible_data)

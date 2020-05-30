@@ -35,7 +35,7 @@ function EnvEffectTweakData:incendiary_burst_fire()
 			dot_tick_period = 0.5
 		},
 		range = 75,
-		burn_duration = 10,
+		burn_duration = 12,
 		burn_tick_period = 0.5,
 		curve_pow = 3,
 		sound_event = "white_explosion",

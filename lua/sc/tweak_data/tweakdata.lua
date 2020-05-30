@@ -145,8 +145,8 @@ tweak_data.projectiles.frag.range = 500
 --Dynamite--
 tweak_data.projectiles.dynamite.damage = 80
 tweak_data.projectiles.dynamite.player_damage = 40
-tweak_data.projectiles.dynamite.curve_pow = 0.5
-tweak_data.projectiles.dynamite.range = 500
+tweak_data.projectiles.dynamite.curve_pow = 0.6
+tweak_data.projectiles.dynamite.range = 400
 
 --Community Frag--
 tweak_data.projectiles.frag_com.damage = 80

@@ -1240,6 +1240,8 @@ function CopActionWalk._calculate_simplified_path(good_pos, original_path, nr_it
 	local simplified_path = {
 		good_pos
 	}
+	local nav_point_pos_func = CopActionWalk._nav_point_pos
+	local shortcut_func = CopActionWalk._chk_shortcut_pos_to_pos
 	local original_path_size = #original_path
 
 	for i_nav_point, nav_point in ipairs(original_path) do
@@ -1249,10 +1251,10 @@ function CopActionWalk._calculate_simplified_path(good_pos, original_path, nr_it
 			if i_nav_point == 1 or simplified_path[#simplified_path].x then
 				is_nav_link = false
 				local pos_from = simplified_path[#simplified_path]
-				local pos_to = CopActionWalk._nav_point_pos(original_path[i_nav_point + 1])
+				local pos_to = nav_point_pos_func(original_path[i_nav_point + 1])
 				local add_point = z_test and math_abs(nav_point.z - pos_from.z - (nav_point.z - pos_to.z)) > 60
 
-				if add_point or CopActionWalk._chk_shortcut_pos_to_pos(pos_from, pos_to) then
+				if add_point or shortcut_func(pos_from, pos_to) then
 					table_insert(simplified_path, mvec3_cpy(nav_point))
 				end
 			end

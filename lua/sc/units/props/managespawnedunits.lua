@@ -2,7 +2,7 @@ function ManageSpawnedUnits:spawn_unit(unit_id, align_obj_name, unit)
 	local align_obj = self._unit:get_object(Idstring(align_obj_name))
 	local spawn_unit = nil
 
-	if self._unit.base and self._unit:base().nick_name then
+	if self._unit.base and self._unit:base() and self._unit:base().nick_name then
 		log("Adding outfit to: " .. self._unit:base():nick_name())
 	else
 		log("Adding outfit to unknown character.")

@@ -166,6 +166,13 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			elseif setting == 3 then 
 			end
+		elseif level_id == "watchdogs_1" then 
+			setting = restoration:get_env_setting("OTHER/Env_WDD1D")
+			if setting == 1 then
+				return
+			elseif setting == 2 then
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/wd_d1_cloudy_day.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			end
 		elseif level_id == "bronze" then 
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bronze.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 		elseif level_id == "watchdogs_2_day" then 
@@ -244,6 +251,13 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 			-- end
 		elseif level_id == "cult_murky" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/cult_stage1.custom_xml", "custom_xml", "core/environments/default", "environment")
+		elseif level_id == "peta" then
+			setting = restoration:get_env_setting("OTHER/Env_Peta")
+			if setting == 1 then
+				return
+			elseif setting == 2 then
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/goat_alt_day.custom_xml", "custom_xml", "environments/pd2_peta1_outside/env_peta1_outside", "environment")
+			end
 		end
 	end)
 end

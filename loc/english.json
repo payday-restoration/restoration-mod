@@ -53,6 +53,8 @@
 	"RestorationModEnv_FSD3DescID" : "Select an environment for Firestarter Day 3.",
 	"RestorationModEnv_WDD1NTitleID" : "Watchdogs Day 1 (Night)",
 	"RestorationModEnv_WDD1NDescID" : "Select an environment for Watchdogs Day 1 (Night).",
+	"RestorationModEnv_WDD1DTitleID" : "Watchdogs Day 1 (Day)",
+	"RestorationModEnv_WDD1DDescID" : "Select an environment for Watchdogs Day 1 (Day).",
 	"RestorationModEnv_WDD2DTitleID" : "Watchdogs Day 2 (Day)",
 	"RestorationModEnv_WDD2DDescID" : "Select an environment for Watchdogs Day 2 (Day).",
 	"RestorationModEnv_Alex3TitleID" : "Rats Day 3",
@@ -65,6 +67,9 @@
 	"RestorationModEnv_UkraDescID" : "Select an environment for Ukrainian Job.",
 	"RestorationModEnv_KosugiTitleID" : "Shadow Raid",
 	"RestorationModEnv_KosugiDescID" : "Select an environment for Shadow Raid Job.",
+	"RestorationModEnv_PetaTitleID" : "Goat Simulator Day 1",
+	"RestorationModEnv_PetaDescID" : "Select an environment for Goat Simulator Day 1.",
+
 
 	"RestorationModAltLastDownColorTitleID" : "Alternative Last Down Color Grading",
 	"RestorationModAltLastDownColorDescID" : "Switches the last down color grading to color_sin_classic.",

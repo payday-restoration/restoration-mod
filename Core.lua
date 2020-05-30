@@ -171,11 +171,13 @@ function restoration:Init()
 		["OTHER/Env_Mia_1"] = true,
 		["OTHER/Env_FSD3"] = true,
 		["OTHER/Env_WDD1N"] = true,
+		["OTHER/Env_WDD1D"] = true,
 		["OTHER/Env_WDD2D"] = true,
 		["OTHER/Env_Alex3"] = true,
 		["OTHER/Env_Big"] = true,
 		["OTHER/Env_FS"] = true,
-		["OTHER/Env_Ukra"] = true
+		["OTHER/Env_Ukra"] = true,
+		["OTHER/Env_Peta"] = true
 		-- ["OTHER/Env_Kosugi"] = true
 	}
 	for name,enabled in pairs(environment_settings) do 
@@ -340,6 +342,11 @@ restoration.environments_choice_watchdogs_1_night = {
 	"brightnight"
 }
 
+restoration.environments_choice_watchdogs_1_day = {
+	"default",
+	"cloudy_day"
+}
+
 restoration.environments_choice_watchdogs_2_day = {
 	"default",
 	"random",
@@ -368,6 +375,11 @@ restoration.environments_choice_four_stores = {
 }
 
 restoration.environments_choice_ukrainian_job = {
+	"default",
+	"cloudy_day"
+}
+
+restoration.environments_choice_peta = {
 	"default",
 	"cloudy_day"
 }

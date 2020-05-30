@@ -377,12 +377,14 @@
 				<option type="multichoice" default_value="2" name="Env_Mia_1" values_tbl="restoration.environments_choice_mia_1"/>
 				<option type="multichoice" default_value="2" name="Env_FSD3" values_tbl="restoration.environments_choice_firestarter_3"/>
 				<option type="multichoice" default_value="2" name="Env_WDD1N" values_tbl="restoration.environments_choice_watchdogs_1_night"/>
+				<option type="multichoice" default_value="2" name="Env_WDD1D" values_tbl="restoration.environments_choice_watchdogs_1_day"/>
 				<option type="multichoice" default_value="2" name="Env_WDD2D" values_tbl="restoration.environments_choice_watchdogs_2_day"/>
 				<option type="multichoice" default_value="2" name="Env_Alex3" values_tbl="restoration.environments_choice_alex_3"/>
 				<option type="multichoice" default_value="2" name="Env_Big" values_tbl="restoration.environments_choice_big"/>
 				<option type="multichoice" default_value="2" name="Env_FS" values_tbl="restoration.environments_choice_four_stores"/>
 				<option type="multichoice" default_value="2" name="Env_Ukra" values_tbl="restoration.environments_choice_ukrainian_job"/>
 				<!-- <option type="multichoice" default_value="2" name="Env_Kosugi" values_tbl="restoration.environments_choice_shadow_raid"/> -->
+				<option type="multichoice" default_value="2" name="Env_Peta" values_tbl="restoration.environments_choice_peta"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="bool" default_value="true" name="Paintings"/>
 				<!--<option type="bool" default_value="false" name="Notify"/> -->

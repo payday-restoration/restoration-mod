@@ -155,9 +155,6 @@ function HuskCopBrain:update(unit, t, dt)
 		if attention_info and attention_info.identified then
 			if attention_info.reaction == AIAttentionObject.REACT_SUSPICIOUS then
 				self:update_local_player_suspicion(t, attention_info)
-			elseif AIAttentionObject.REACT_SCARED <= attention_info.settings.reaction then
-				managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, self._unit, true)
-				managers.network:session():send_to_peer_synched(managers.network:session():peer(1), "sync_unit_event_id_16", unit, "brain", CopBrain._NET_EVENTS.detected_client)
 			end
 		end
 
@@ -323,7 +320,7 @@ function HuskCopBrain:update_local_player_detection(t)
 					local angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, settings, attention_pos)
 
 					if angle then
-						local vis_ray = World:raycast("ray", my_pos, attention_pos, "slot_mask", visibility_slotmask, "ray_type", "ai_vision")
+						local vis_ray = unit:raycast("ray", my_pos, attention_pos, "slot_mask", visibility_slotmask, "ray_type", "ai_vision")
 
 						if not vis_ray or vis_ray.unit:key() == u_key then
 							local visible_data = {
@@ -332,7 +329,7 @@ function HuskCopBrain:update_local_player_detection(t)
 								visible_ray = vis_ray
 							}
 
-							self._detected_player_att_data[u_key] = self:_create_detected_player_data(t, u_key, attention_info, settings, nil, visible_data)
+							self._detected_player_att_data[u_key] = self:_create_detected_player_data(t, u_key, attention_info, settings, visible_data)
 						end
 					end
 				end
@@ -353,8 +350,7 @@ function HuskCopBrain:update_local_player_detection(t)
 			attention_info.next_verify_t = t + verify_interval
 
 			if not attention_info.identified then
-				local noticable = nil
-				local angle, dis_multiplier = nil
+				local noticable, angle, dis_multiplier = nil
 
 				if attention_info.visible_in_this_instance then
 					noticable = true
@@ -364,7 +360,7 @@ function HuskCopBrain:update_local_player_detection(t)
 					angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, attention_info.settings)
 
 					if angle then
-						local vis_ray = attention_info.visible_ray or World:raycast("ray", my_pos, attention_info.m_head_pos, "slot_mask", visibility_slotmask, "ray_type", "ai_vision")
+						local vis_ray = attention_info.visible_ray or unit:raycast("ray", my_pos, attention_info.m_head_pos, "slot_mask", visibility_slotmask, "ray_type", "ai_vision")
 
 						if not vis_ray or vis_ray.unit:key() == u_key then
 							noticable = true
@@ -410,7 +406,16 @@ function HuskCopBrain:update_local_player_detection(t)
 					attention_info.release_t = t + attention_info.settings.release_delay
 					attention_info.identified_t = t
 					noticable = true
+
+					if AIAttentionObject.REACT_SCARED <= attention_info.settings.reaction then
+						managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, unit, true)
+						managers.network:session():send_to_peer_synched(managers.network:session():peer(1), "sync_unit_event_id_16", unit, "brain", CopBrain._NET_EVENTS.detected_client)
+					end
+
+					self._detect_local_player = nil
 				elseif attention_info.notice_progress < 0 then
+					self:_destroy_detected_attention_object_data(attention_info)
+
 					noticable = false
 
 					if self._seeing_local_player then
@@ -418,10 +423,6 @@ function HuskCopBrain:update_local_player_detection(t)
 
 						managers.network:session():send_to_peer_synched(managers.network:session():peer(1), "sync_unit_event_id_16", unit, "brain", CopBrain._NET_EVENTS.stopped_seeing_client)
 					end
-
-					self:_destroy_detected_attention_object_data(attention_info)
-
-					break
 				else
 					noticable = attention_info.notice_progress
 					attention_info.prev_notice_chk_t = t
@@ -451,56 +452,44 @@ function HuskCopBrain:update_local_player_detection(t)
 
 				if is_ignored then
 					self:_destroy_detected_attention_object_data(attention_info)
-
-					break
 				else
-					local verified, vis_ray = nil
-					local attention_pos = attention_info.handler:get_detection_m_pos()
+					local verified = nil
 					local dis = mvec3_dis(my_m_pos, attention_info.m_pos)
+					local max_dis = detection.dis_max
 
-					if dis < detection.dis_max * 1.2 then
-						local in_range = nil
-
-						if not attention_info.settings.max_range then
-							in_range = true
-						else
-							local range_mul = attention_info.settings.detection and attention_info.settings.detection.range_mul or 1
-
-							if dis < attention_info.settings.max_range * range_mul * 1.2 then
-								in_range = true
-							end
+					if dis < max_dis * 1.2 then
+						if attention_info.settings.max_range then
+							max_dis = math_min(max_dis, attention_info.settings.max_range)
 						end
 
-						if in_range then
-							local in_FOV = not attention_info.settings.notice_requires_FOV or self._enemy_slotmask and attention_info.unit:in_slot(self._enemy_slotmask) or _angle_chk(attention_pos, dis, 0.8)
+						if attention_info.settings.detection and attention_info.settings.detection.range_mul then
+							max_dis = max_dis * attention_info.settings.detection.range_mul
+						end
+
+						if dis < max_dis * 1.2 then
+							local in_FOV = not attention_info.settings.notice_requires_FOV or self._enemy_slotmask and attention_info.unit:in_slot(self._enemy_slotmask) or _angle_chk(attention_info.m_head_pos, dis, 0.8)
 
 							if in_FOV then
 								if attention_info.visible_in_this_instance then
 									verified = true
-									vis_ray = attention_info.visible_ray
 								else
-									vis_ray = attention_info.visible_ray or World:raycast("ray", my_pos, attention_pos, "slot_mask", self._visibility_slotmask, "ray_type", "ai_vision")
+									local vis_ray = attention_info.visible_ray or unit:raycast("ray", my_pos, attention_info.m_head_pos, "slot_mask", self._visibility_slotmask, "ray_type", "ai_vision")
 
 									if not vis_ray or vis_ray.unit:key() == u_key then
 										verified = true
 									end
 								end
 							end
-
-							attention_info.verified = verified
 						end
 					end
 
+					attention_info.verified = verified
 					attention_info.dis = dis
-					attention_info.vis_ray = vis_ray or nil
 
 					if verified then
 						attention_info.release_t = nil
-						attention_info.verified_t = t
 					elseif attention_info.release_t and attention_info.release_t < t then
 						self:_destroy_detected_attention_object_data(attention_info)
-
-						break
 					else
 						attention_info.release_t = attention_info.release_t or t + attention_info.settings.release_delay
 					end
@@ -519,7 +508,7 @@ function HuskCopBrain:update_local_player_detection(t)
 	return player_attention_data
 end
 
-function HuskCopBrain:_create_detected_player_data(t, u_key, attention_info, settings, forced, visible_data)
+function HuskCopBrain:_create_detected_player_data(t, u_key, attention_info, settings, visible_data)
 	attention_info.handler:add_listener("detect_" .. tostring(self._unit:key()), callback(self, self, "on_detected_attention_obj_modified"))
 
 	local att_unit = attention_info.unit
@@ -695,8 +684,6 @@ function HuskCopBrain:on_detected_attention_obj_modified(modified_u_key)
 	if new_settings then
 		local switch_from_suspicious = AIAttentionObject.REACT_SCARED <= new_settings.reaction and attention_info.reaction <= AIAttentionObject.REACT_SUSPICIOUS
 		attention_info.settings = new_settings
-		attention_info.stare_expire_t = nil
-		attention_info.pause_expire_t = nil
 
 		if attention_info.uncover_progress then
 			attention_info.uncover_progress = nil
@@ -719,7 +706,7 @@ function HuskCopBrain:on_detected_attention_obj_modified(modified_u_key)
 			attention_info.prev_notice_chk_t = TimerManager:game():time()
 		end
 
-		attention_info.reaction = math.min(new_settings.reaction, attention_info.reaction)
+		attention_info.reaction = math_min(new_settings.reaction, attention_info.reaction)
 	else
 		self:_destroy_detected_attention_object_data(attention_info)
 	end

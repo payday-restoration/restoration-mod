@@ -542,4 +542,32 @@
 		<object force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
 		<unit force="true" path="units/payday2/architecture/hcm/hcm_ext_storefront_8x16m_c" unload="true"/>
 	</add>
+	<add path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" type="unit">
+		<material_config path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" unload="true"/>
+		<object path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" unload="true"/>
+		<sequence_manager path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" unload="true"/>
+		<unit path="units/payday2/props/off_prop_officehigh_lights/off_prop_officehigh_ceilinglight_01" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk" type="unit">
+		<effect load="true" path="effects/particles/dest/sparks_lamp_dest" unload="true"/>
+		<material_config path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk_on" unload="true"/>
+		<object path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk" unload="true"/>
+		<unit path="units/pd2_dlc_cage/props/are_prop_office_lamp_desk/are_prop_office_lamp_desk" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_cage/props/ind_prop_cardealership_armchair_set/ind_prop_cardealership_rug" type="unit">
+		<material_config path="units/pd2_dlc_cage/props/ind_prop_cardealership_armchair_set/ind_prop_cardealership_armchair" unload="true"/>
+		<object path="units/pd2_dlc_cage/props/ind_prop_cardealership_armchair_set/ind_prop_cardealership_rug" unload="true"/>
+		<unit path="units/pd2_dlc_cage/props/ind_prop_cardealership_armchair_set/ind_prop_cardealership_rug" unload="true"/>
+	</add>
+	<add path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup_tall" type="unit">
+		<material_config path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup" unload="true"/>
+		<object path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup_tall" unload="true"/>
+		<unit path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup_tall" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" type="unit">
+		<unit path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" unload="true"/>
+		<object path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" unload="true"/>
+		<material_config path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01" unload="true"/>
+	</add>
 </table>

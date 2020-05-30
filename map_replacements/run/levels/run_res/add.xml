@@ -540,16 +540,16 @@
 		<sequence_manager force="true" path="units/world/street/street_lights/street_lights" unload="true"/>
 		<unit force="true" path="units/world/street/street_lights/street_lights" unload="true"/>
 	</add>
-	<texture path="levels/mods/street_new/cube_lights/500000"/>
-	<texture path="levels/mods/street_new/cube_lights/500001"/>
-	<texture path="levels/mods/street_new/cube_lights/602260"/>
-	<texture path="levels/mods/street_new/cube_lights/100106"/>
-	<texture path="levels/mods/street_new/cube_lights/101635"/>
-	<texture path="levels/mods/street_new/cube_lights/100526"/>
-	<texture path="levels/mods/street_new/cube_lights/102981"/>
-	<texture path="levels/mods/street_new/cube_lights/103051"/>
-	<texture path="levels/mods/street_new/cubemaps/100109"/>
-	<texture path="levels/mods/street_new/cube_lights/500021"/>
+	<texture path="levels/mods/run_res/cube_lights/500000"/>
+	<texture path="levels/mods/run_res/cube_lights/500001"/>
+	<texture path="levels/mods/run_res/cube_lights/602260"/>
+	<texture path="levels/mods/run_res/cube_lights/100106"/>
+	<texture path="levels/mods/run_res/cube_lights/101635"/>
+	<texture path="levels/mods/run_res/cube_lights/100526"/>
+	<texture path="levels/mods/run_res/cube_lights/102981"/>
+	<texture path="levels/mods/run_res/cube_lights/103051"/>
+	<texture path="levels/mods/run_res/cubemaps/100109"/>
+	<texture path="levels/mods/run_res/cube_lights/500021"/>
 	<add path="units/world/props/street/busstop_modern" type="unit">
 		<material_config force="true" path="units/world/props/street/busstop_modern" unload="true"/>
 		<material_config force="true" path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
@@ -620,12 +620,12 @@
 	<add path="effects/particles/rain/rain_glace_inside" type="effect">
 		<effect force="true" load="true" path="effects/particles/rain/rain_glace_inside" unload="true"/>
 	</add>
-	<texture path="levels/mods/street_new/cube_lights/600296"/>
-	<texture path="levels/mods/street_new/cube_lights/500019"/>
-	<texture path="levels/mods/street_new/cube_lights/600297"/>
-	<texture path="levels/mods/street_new/cube_lights/600299"/>
-	<texture path="levels/mods/street_new/cube_lights/600298"/>
-	<texture path="levels/mods/street_new/cube_lights/600300"/>
+	<texture path="levels/mods/run_res/cube_lights/600296"/>
+	<texture path="levels/mods/run_res/cube_lights/500019"/>
+	<texture path="levels/mods/run_res/cube_lights/600297"/>
+	<texture path="levels/mods/run_res/cube_lights/600299"/>
+	<texture path="levels/mods/run_res/cube_lights/600298"/>
+	<texture path="levels/mods/run_res/cube_lights/600300"/>
 	<add path="units/world/props/street/parking_meter/sidewalk_pole" type="unit">
 		<material_config force="true" path="units/world/props/street/parking_meter/parking_meter" unload="true"/>
 		<object force="true" path="units/world/props/street/parking_meter/sidewalk_pole" unload="true"/>

@@ -126,8 +126,14 @@
 	
 	<sequence_manager path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
 	<sequence_manager path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
-	<texture path="guis/textures/restoration/cni/secret_stash" force="true"/>
 	
+	<!--PANIC ROOM-->
+	<mission path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	<nav_data path="levels/narratives/classics/flat/nav_manager_data" force="true" unload="true"/>	
+	<cover_data path="levels/narratives/classics/flat/cover_data" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/flat/art_dhruva/art_dhruva" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/flat/lights/lights" force="true" unload="true"/>
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	

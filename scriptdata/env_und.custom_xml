@@ -8,7 +8,7 @@
 		<others>
 			<param key="sky_texture" value=""/>
 			<param key="global_world_overlay_mask_texture" value=""/>
-			<param key="underlay" value="core/environments/skies/default/default"/>
+			<param key="underlay" value="core/environments/skies/sky_2100_moon/sky_2100_moon"/>
 			<param key="sun_ray_color_scale" value="1.6000000238419"/>
 			<param key="global_world_overlay_texture" value=""/>
 			<param key="sun_ray_color" value="1 0.90980392694473 0.75686275959015"/>
@@ -48,16 +48,12 @@
 					</shadow_modifier>
 				</shadow_rendering>
 			</shadow_processor>
-			<fog_processor>
-			</fog_processor>
-			<hdr_post_processor>
-			</hdr_post_processor>
 			<bloom_combine_post_processor>
 				<bloom_combine>
 					<bloom_lense>
-						<param key="lense_intensity" value="0.44200000166893"/>
+						<param key="lense_intensity" value="0.5"/>
 						<param key="bloom_blur_size" value="4"/>
-						<param key="bloom_intensity" value="0.47900000214577"/>
+						<param key="bloom_intensity" value="0.5"/>
 					</bloom_lense>
 				</bloom_combine>
 			</bloom_combine_post_processor>

@@ -63,7 +63,6 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 	local my_tracker = data.unit:movement():nav_tracker()
 	local chk_vis_func = my_tracker.check_visibility
 	local is_detection_persistent = managers.groupai:state():is_detection_persistent()
-	local is_cool = data.cool
 	local delay = 2
 	local player_importance_wgt = data.unit:in_slot(managers.slot:get_mask("enemies")) and {}
 
@@ -123,7 +122,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 			mvec3_set(near_pos, detect_pos)
 			mvec3_set_z(near_pos, near_pos.z + 100)
 
-			local near_vis_ray = World:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
+			local near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
 
 			if near_vis_ray then
 				local side_vec = tmp_vec1
@@ -135,13 +134,13 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 				mvec3_set(near_pos, detect_pos)
 				mvec3_add(near_pos, side_vec)
 
-				local near_vis_ray = World:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
+				local near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
 
 				if near_vis_ray then
 					mvec3_mul(side_vec, -2)
 					mvec3_add(near_pos, side_vec)
 
-					near_vis_ray = World:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
+					near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
 				end
 			end
 
@@ -208,31 +207,39 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 	for u_key, attention_info in pairs(all_attention_objects) do
 		if u_key ~= my_key and not detected_obj[u_key] then
-			if not attention_info.nav_tracker or chk_vis_func(my_tracker, attention_info.nav_tracker) then
-				local settings = attention_info.handler:get_attention(my_access, min_reaction, max_reaction, data.team)
+			local can_acquire = true
 
-				if settings then
-					local acquired = nil
-					local attention_pos = attention_info.handler:get_detection_m_pos()
-					local angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, settings, attention_pos)
+			if data.cool and attention_info.unit and attention_info.unit:base() and attention_info.unit:base().is_husk_player then
+				can_acquire = false
+			end
 
-					if angle then
-						local vis_ray = World:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
+			if can_acquire then
+				if not attention_info.nav_tracker or chk_vis_func(my_tracker, attention_info.nav_tracker) then
+					local settings = attention_info.handler:get_attention(my_access, min_reaction, max_reaction, data.team)
 
-						if not vis_ray or vis_ray.unit:key() == u_key then
-							acquired = true
+					if settings then
+						local acquired = nil
+						local attention_pos = attention_info.handler:get_detection_m_pos()
+						local angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, settings, attention_pos)
 
-							local visible_data = {
-								visible_angle = angle,
-								visible_dis_multiplier = dis_multiplier,
-								visible_ray = vis_ray
-							}
-							detected_obj[u_key] = CopLogicBase._create_detected_attention_object_data(data.t, data.unit, u_key, attention_info, settings, nil, visible_data)
+						if angle then
+							local vis_ray = data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
+
+							if not vis_ray or vis_ray.unit:key() == u_key then
+								acquired = true
+
+								local visible_data = {
+									visible_angle = angle,
+									visible_dis_multiplier = dis_multiplier,
+									visible_ray = vis_ray
+								}
+								detected_obj[u_key] = CopLogicBase._create_detected_attention_object_data(data.t, data.unit, u_key, attention_info, settings, nil, visible_data)
+							end
 						end
-					end
 
-					if not acquired then
-						_chk_record_attention_obj_importance_wgt(u_key, attention_info)
+						if not acquired then
+							_chk_record_attention_obj_importance_wgt(u_key, attention_info)
+						end
 					end
 				end
 			end
@@ -242,7 +249,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 	for u_key, attention_info in pairs(detected_obj) do
 		local can_detect = true
 
-		if is_cool and attention_info.is_husk_player then
+		if data.cool and attention_info.is_husk_player then
 			can_detect = false
 		end
 
@@ -264,8 +271,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 				delay = math_min(delay, attention_info.settings.verification_interval)
 
 				if not attention_info.identified then
-					local noticable = nil
-					local angle, dis_multiplier = nil
+					local noticable, angle, dis_multiplier = nil
 
 					if attention_info.visible_in_this_instance then
 						noticable = true
@@ -276,7 +282,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 						if angle then
 							local attention_pos = attention_info.handler:get_detection_m_pos()
-							local vis_ray = attention_info.visible_ray or World:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
+							local vis_ray = attention_info.visible_ray or data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
 
 							if not vis_ray or vis_ray.unit:key() == u_key then
 								noticable = true
@@ -355,23 +361,20 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 						delay = math_min(delay, attention_info.settings.verification_interval)
 						attention_info.nearly_visible = nil
 						local verified, vis_ray = nil
-						local attention_pos = attention_info.handler:get_detection_m_pos()
+						local attention_pos = attention_info.m_head_pos
 						local dis = mvec3_dis(data.m_pos, attention_info.m_pos)
+						local max_dis = my_data.detection.dis_max
 
-						if dis < my_data.detection.dis_max * 1.2 then
-							local in_range = nil
-
-							if not attention_info.settings.max_range then
-								in_range = true
-							else
-								local range_mul = attention_info.settings.detection and attention_info.settings.detection.range_mul or 1
-
-								if dis < attention_info.settings.max_range * range_mul * 1.2 then
-									in_range = true
-								end
+						if dis < max_dis * 1.2 then
+							if attention_info.settings.max_range then
+								max_dis = math_min(max_dis, attention_info.settings.max_range)
 							end
 
-							if in_range then
+							if attention_info.settings.detection and attention_info.settings.detection.range_mul then
+								max_dis = max_dis * attention_info.settings.detection.range_mul
+							end
+
+							if dis < max_dis * 1.2 then
 								local in_FOV = not attention_info.settings.notice_requires_FOV or data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) or _angle_chk(attention_pos, dis, 0.8)
 
 								if in_FOV then
@@ -379,18 +382,17 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 										verified = true
 										vis_ray = attention_info.visible_ray
 									else
-										vis_ray = attention_info.visible_ray or World:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
+										vis_ray = attention_info.visible_ray or data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
 
 										if not vis_ray or vis_ray.unit:key() == u_key then
 											verified = true
 										end
 									end
 								end
-
-								attention_info.verified = verified
 							end
 						end
 
+						attention_info.verified = verified
 						attention_info.dis = dis
 						attention_info.vis_ray = vis_ray or nil
 
@@ -402,7 +404,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 							attention_info.last_verified_pos = mvec3_cpy(attention_pos)
 							attention_info.verified_dis = dis
-						elseif data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
+						elseif not data.cool and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
 							if attention_info.criminal_record and AIAttentionObject.REACT_COMBAT <= attention_info.settings.reaction then
 								if not is_detection_persistent and mvec3_dis(attention_info.m_pos, attention_info.criminal_record.pos) > 700 then
 									CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
@@ -438,6 +440,10 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 		attention_info.visible_ray = nil
 	end
 
+	if data.cool then
+		delay = 0
+	end
+
 	if player_importance_wgt then
 		managers.groupai:state():set_importance_weight(data.key, player_importance_wgt)
 	end
@@ -445,7 +451,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 	return delay
 end
 
-function CopLogicBase._create_detected_attention_object_data(time, my_unit, u_key, attention_info, settings, forced, visible_data)
+function CopLogicBase._create_detected_attention_object_data(t, my_unit, u_key, attention_info, settings, forced, visible_data)
 	local ext_brain = my_unit:brain()
 
 	attention_info.handler:add_listener("detect_" .. tostring(my_unit:key()), callback(ext_brain, ext_brain, "on_detected_attention_obj_modified"))
@@ -485,8 +491,8 @@ function CopLogicBase._create_detected_attention_object_data(time, my_unit, u_ke
 		unit = attention_info.unit,
 		u_key = u_key,
 		handler = attention_info.handler,
-		next_verify_t = time + verify_interval,
-		prev_notice_chk_t = time,
+		next_verify_t = t + verify_interval,
+		prev_notice_chk_t = t,
 		m_rot = m_rot,
 		m_pos = m_pos,
 		m_head_pos = m_head_pos,

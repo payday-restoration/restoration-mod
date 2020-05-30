@@ -14,6 +14,11 @@ function ManageSpawnedUnits:spawn_unit(unit_id, align_obj_name, unit)
 			local spawn_pos = align_obj:position()
 			local spawn_rot = align_obj:rotation()
 			spawn_unit = safe_spawn_unit(Idstring(unit), spawn_pos, spawn_rot)
+			if not spawn_unit then
+				log("Outfit not loaded, aborting?")
+				log("No clue what happens after this.")
+				return
+			end
 			spawn_unit:unit_data().parent_unit = self._unit
 		end
 	else

@@ -89,6 +89,7 @@ function restoration:Init()
 		"dinner",
 		"wwh",
 		"born",
+		"flat",
 		"dah",
 		"run",
 		"arm_cro",
@@ -128,7 +129,6 @@ function restoration:Init()
 		"des",		
 		"vit",
 		"chill_combat",		
-		"flat",	
 		"mex",
 		"mex_cooking",		
 		--Custom Heists below--

@@ -177,6 +177,8 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 
 	managers.hud:show_point_of_no_return_timer()
 	managers.hud:add_updator("point_of_no_return", callback(self, self, "_update_point_of_no_return"))
+	--log("setting diff to 1!!")
+	self:set_difficulty(nil, 1)
 end
 
 local old_update_point_of_no_return = GroupAIStateBase._update_point_of_no_return

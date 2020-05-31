@@ -12,7 +12,7 @@
 			<param key="sun_ray_color_scale" value="2.194000005722"/>
 			<param key="global_world_overlay_texture" value=""/>
 			<param key="sun_ray_color" value="0.90196079015732 0.85490196943283 0.70588237047195"/>
-			<param key="global_texture" value="levels/mods/street_new/cubemaps/100109"/>
+			<param key="global_texture" value="levels/mods/run_res/cubemaps/100109"/>
 		</others>
 		<post_effect>
 			<deferred>

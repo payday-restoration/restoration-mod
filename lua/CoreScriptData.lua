@@ -337,7 +337,8 @@ Hooks:Add("BeardLibPreProcessScriptData", "RestorationCreateEnvironment", functi
 			"sky_0927_whispy_clouds",
 			"sky_2335_night_moon",
 			"sky_2100_moon",
-			"sky_1313_cloudy_dark"
+			"sky_1313_cloudy_dark",
+			"sky_2003_dusk_blue_high_color_scale"
 			
         }
         for _, sky in ipairs(skies) do

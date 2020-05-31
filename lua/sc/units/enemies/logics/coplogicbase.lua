@@ -116,38 +116,60 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 	end
 
 	local function _nearly_visible_chk(attention_info, detect_pos)
+		local side_offset = 25
+		local head_offset = 15
+		local hips_offset = 35
+		local legs_offset = 70
+
+		if attention_info.is_human_player then
+			side_offset = 20
+			head_offset = 10
+		end
+
 		local near_pos = tmp_vec1
+		local side_vec = tmp_vec2
 
-		if attention_info.verified_dis < 2000 and math_abs(detect_pos.z - my_pos.z) < 300 then
-			mvec3_set(near_pos, detect_pos)
-			mvec3_set_z(near_pos, near_pos.z + 100)
+		mvec3_set(side_vec, detect_pos)
+		mvec3_sub(side_vec, my_pos)
+		mvec3_cross(side_vec, side_vec, math_up)
+		mvec3_set_length(side_vec, side_offset)
+		mvec3_set(near_pos, detect_pos)
+		mvec3_add(near_pos, side_vec)
 
-			local near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
+		local near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
+
+		if near_vis_ray then
+			mvec3_mul(side_vec, -2)
+			mvec3_add(near_pos, side_vec)
+
+			near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
 
 			if near_vis_ray then
-				local side_vec = tmp_vec1
-
-				mvec3_set(side_vec, detect_pos)
-				mvec3_sub(side_vec, my_pos)
-				mvec3_cross(side_vec, side_vec, math_up)
-				mvec3_set_length(side_vec, 150)
 				mvec3_set(near_pos, detect_pos)
-				mvec3_add(near_pos, side_vec)
+				mvec3_set_z(near_pos, near_pos.z + head_offset)
 
-				local near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
+				near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
 
 				if near_vis_ray then
-					mvec3_mul(side_vec, -2)
-					mvec3_add(near_pos, side_vec)
+
+					mvec3_set(near_pos, detect_pos)
+					mvec3_set_z(near_pos, near_pos.z - hips_offset)
 
 					near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
+
+					if near_vis_ray then
+						mvec3_set(near_pos, detect_pos)
+						mvec3_set_z(near_pos, near_pos.z - legs_offset)
+
+						near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
+					end
 				end
 			end
+		end
 
-			if not near_vis_ray then
-				attention_info.nearly_visible = true
-				attention_info.last_verified_pos = mvec3_cpy(near_pos)
-			end
+		if not near_vis_ray then
+			attention_info.nearly_visible = true
+			attention_info.last_verified_pos = mvec3_cpy(near_pos)
 		end
 	end
 
@@ -268,7 +290,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 				end
 
 				attention_info.next_verify_t = t + verify_interval
-				delay = math_min(delay, attention_info.settings.verification_interval)
+				delay = math_min(delay, verify_interval)
 
 				if not attention_info.identified then
 					local noticable, angle, dis_multiplier = nil
@@ -358,8 +380,10 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 					if is_ignored then
 						CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
 					else
+						attention_info.next_verify_t = t + attention_info.settings.verification_interval
 						delay = math_min(delay, attention_info.settings.verification_interval)
 						attention_info.nearly_visible = nil
+
 						local verified, vis_ray = nil
 						local attention_pos = attention_info.m_head_pos
 						local dis = mvec3_dis(data.m_pos, attention_info.m_pos)
@@ -394,7 +418,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 						attention_info.verified = verified
 						attention_info.dis = dis
-						attention_info.vis_ray = vis_ray or nil
+						attention_info.vis_ray = vis_ray
 
 						if verified then
 							attention_info.release_t = nil
@@ -413,8 +437,14 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 									attention_info.verified_pos = mvec3_cpy(attention_info.criminal_record.pos)
 									attention_info.verified_dis = dis
 
-									if vis_ray and attention_info.is_person then
-										_nearly_visible_chk(attention_info, attention_pos)
+									if vis_ray and attention_info.is_person and attention_info.dis < 2000 then
+										if not attention_info.nearly_visible_chk_t or attention_info.nearly_visible_chk_t < t then
+											local nearly_visible_chk_delay = delay * 3
+
+											attention_info.nearly_visible_chk_t = t + nearly_visible_chk_delay
+
+											_nearly_visible_chk(attention_info, attention_pos)
+										end
 									end
 								end
 							elseif attention_info.release_t and attention_info.release_t < t then
@@ -442,6 +472,10 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 	if data.cool then
 		delay = 0
+
+		for u_key, attention_info in pairs(detected_obj) do
+			attention_info.next_verify_t = t
+		end
 	end
 
 	if player_importance_wgt then

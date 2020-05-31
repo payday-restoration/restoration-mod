@@ -1276,3 +1276,89 @@ function GroupAIStateBase:on_criminal_suspicion_progress(u_suspect, u_observer, 
 		end
 	end
 end
+
+--setup for host to set diff based on events
+--probably fine if clients run it, but better safe than sorry
+if Network:is_server() then
+	--set diff to 0.5 (default) if police called
+	local on_enemy_weapons_hot = GroupAIStateBase.on_enemy_weapons_hot
+	function GroupAIStateBase:on_enemy_weapons_hot(is_delayed_callback)
+		on_enemy_weapons_hot(self, is_delayed_callback)
+			self:set_difficulty(nil, 0.5)
+			--log("police called!! setting diff to 0.5")
+	end
+
+	--increase diff by x amount for each hostage killed (only by players)
+	local hostage_killed = GroupAIStateBase.hostage_killed
+	function GroupAIStateBase:hostage_killed(killer_unit)
+		hostage_killed(self, killer_unit)
+			--vanilla checks to make sure its a player
+			if not alive(killer_unit) then
+				return
+			end
+
+			if killer_unit:base() and killer_unit:base().thrower_unit then
+				killer_unit = killer_unit:base():thrower_unit()
+
+				if not alive(killer_unit) then
+					return
+				end
+			end
+
+			local key = killer_unit:key()
+			local criminal = self._criminals[key]
+
+			if not criminal then
+				return
+			end
+			self:set_difficulty(nil, 0.05)
+			--log("civ killed!! you monster! adding 0.05 to diff")
+	end
+end
+
+--this function has been repurposed. instead of overriding any previous value, this ADDS diff
+--this is set to 0.5 on police called, while other events increase it
+--+0.05 on civilian kill (watch your fire!), +0.125 on assault end
+--script value is used by the base game, its only purpose here is to set diff to 0 at the beginning of the mission/when spawns should be disabled
+--thanks (again) to hoxi for helping out with this
+--perhaps modify these values at one point in crime spree? who knows
+function GroupAIStateBase:set_difficulty(script_value, manual_value)
+    if self._difficulty_value == 1 then
+        --log("diff is already maxed out at 1.")
+
+        return
+    end
+
+    if script_value then
+        if script_value == 0 then
+            --log("new diff value is 0, initial setup or script that disables spawns")
+
+            self._difficulty_value = 0
+
+            self:_calculate_difficulty_ratio()
+
+            return
+        end
+
+        --log("element tried set diff to " .. script_value .. ", but we don't care!")
+    end
+
+    if not manual_value then
+        return
+    end
+
+    --log("current diff value is: " .. self._difficulty_value .. ".")
+    --log("value to increase diff is: " .. manual_value .. ".")
+
+    self._difficulty_value = self._difficulty_value + manual_value
+
+    if self._difficulty_value > 1 then
+        self._difficulty_value = 1
+
+        --log("new diff value went past 1, clamping.")
+    else
+        --log("new diff value is: " .. self._difficulty_value .. ".")
+    end
+
+    self:_calculate_difficulty_ratio()
+end

@@ -434,17 +434,13 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 									CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
 								else
 									delay = math_min(0.2, delay)
+									attention_info.next_verify_t = math_min(0.2, attention_info.next_verify_t)
+
 									attention_info.verified_pos = mvec3_cpy(attention_info.criminal_record.pos)
 									attention_info.verified_dis = dis
 
 									if vis_ray and attention_info.is_person and attention_info.dis < 2000 then
-										if not attention_info.nearly_visible_chk_t or attention_info.nearly_visible_chk_t < t then
-											local nearly_visible_chk_delay = delay * 3
-
-											attention_info.nearly_visible_chk_t = t + nearly_visible_chk_delay
-
-											_nearly_visible_chk(attention_info, attention_pos)
-										end
+										_nearly_visible_chk(attention_info, attention_pos)
 									end
 								end
 							elseif attention_info.release_t and attention_info.release_t < t then

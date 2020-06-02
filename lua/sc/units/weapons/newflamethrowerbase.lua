@@ -6,6 +6,13 @@ function NewFlamethrowerBase:setup_default()
 	self._flame_max_range = tweak_data.weapon[self._name_id].flame_max_range
 	self._single_flame_effect_duration = tweak_data.weapon[self._name_id].single_flame_effect_duration
 	self._bullet_class = FlameBulletBase
+
+	if Global.one_down then
+		self._bullet_slotmask = self._bullet_slotmask + 3
+	else
+		self._bullet_slotmask = managers.mutators:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
+		self._bullet_slotmask = managers.modifiers:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
+	end
 end
 
 function NewFlamethrowerBase:run_and_shoot_allowed()

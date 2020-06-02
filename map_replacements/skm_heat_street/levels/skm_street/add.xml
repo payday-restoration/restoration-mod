@@ -8,4 +8,25 @@
 	<texture path="levels/mods/skm_street/cube_lights/500014"/>
 	<texture path="levels/mods/skm_street/cube_lights/500009"/>
 	<texture path="levels/mods/skm_street/cube_lights/500002"/>
+	<add path="units/equipment/gas/gas_can_interact" type="unit">
+		<material_config path="units/equipment/gas/gas_can_interact" unload="true"/>
+		<material_config path="units/equipment/thermite/thermite_01" unload="true"/>
+		<object path="units/equipment/gas/gas_can_interact" unload="true"/>
+		<sequence_manager path="units/equipment/gas/gas_can_interact" unload="true"/>
+		<unit path="units/equipment/gas/gas_can_interact" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_run/props/run_vehicle_van_street_burning_man_event/run_vehicle_van_player" type="unit">
+		<material_config path="units/pd2_dlc_run/props/run_vehicle_van_street_burning_man_event/run_vehicle_van_player" unload="true"/>
+		<material_config path="units/payday2/props/dest_glass/glass_shatter" unload="true"/>
+		<effect load="true" path="effects/payday2/particles/window/storefront_window_small" unload="true"/>
+		<object path="units/pd2_dlc_run/props/run_vehicle_van_street_burning_man_event/run_vehicle_van_player" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_run/props/run_vehicle_van_street_burning_man_event/run_vehicle_van_player" unload="true"/>
+		<unit path="units/pd2_dlc_run/props/run_vehicle_van_street_burning_man_event/run_vehicle_van_player" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_pku_gas_can/gen_pku_gas_can" type="unit">
+		<unit path="units/payday2/equipment/gen_pku_gas_can/gen_pku_gas_can" unload="true"/>
+		<object path="units/payday2/equipment/gen_pku_gas_can/gen_pku_gas_can" unload="true"/>
+		<material_config path="units/payday2/equipment/gen_pku_gas_can/gen_pku_gas_can" unload="true"/>
+		<sequence_manager path="units/payday2/equipment/gen_pku_gas_can/gen_pku_gas_can" unload="true"/>
+	</add>
 </table>

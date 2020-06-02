@@ -31,8 +31,8 @@
 						<param key="bloom_threshold" value="1"/>
 						<param key="sky_top_color_scale" value="4"/>
 						<param key="sky_top_color" value="0.054901961237192 0.062745101749897 0.031372550874949"/>
-						<param key="fog_min_range" value="1612"/>
-						<param key="fog_max_density" value="0.11200000345707"/>
+						<param key="fog_min_range" value="806"/>
+						<param key="fog_max_density" value="0.20000000298023"/>
 					</apply_ambient>
 				</deferred_lighting>
 			</deferred>

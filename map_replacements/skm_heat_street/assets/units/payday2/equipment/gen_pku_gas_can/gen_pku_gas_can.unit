@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+	<object file="units/payday2/equipment/gen_pku_gas_can/gen_pku_gas_can" />
+	<network sync="spawn" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="hold_take_gas_can" />
+		</extension>
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit> 

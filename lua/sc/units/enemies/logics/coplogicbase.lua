@@ -1236,14 +1236,17 @@ function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
 				is_same_obj = true
 				contact_chatter_time_ok = new_crim_rec and data.t - new_crim_rec.det_t > 2
 
-				if new_att_obj.stare_expire_t and new_att_obj.stare_expire_t < data.t and (not new_att_obj.settings.pause or data.t + math.lerp(new_att_obj.settings.pause[1], new_att_obj.settings.pause[2], math.random())) or new_att_obj.pause_expire_t and new_att_obj.pause_expire_t < data.t then
-					if not new_att_obj.settings.attract_chance or math.random() < new_att_obj.settings.attract_chance then
+				if new_att_obj.stare_expire_t and new_att_obj.stare_expire_t < data.t then
+					if new_att_obj.settings.pause then
+						new_att_obj.stare_expire_t = nil
+						new_att_obj.pause_expire_t = data.t + math_lerp(new_att_obj.settings.pause[1], new_att_obj.settings.pause[2], math_random())
+					end
+				elseif new_att_obj.pause_expire_t and new_att_obj.pause_expire_t < data.t then
+					if not new_att_obj.settings.attract_chance or math_random() < new_att_obj.settings.attract_chance then
 						new_att_obj.pause_expire_t = nil
-						new_att_obj.stare_expire_t = data.t + math.lerp(new_att_obj.settings.duration[1], new_att_obj.settings.duration[2], math.random())
+						new_att_obj.stare_expire_t = data.t + math_lerp(new_att_obj.settings.duration[1], new_att_obj.settings.duration[2], math_random())
 					else
-						debug_pause_unit(data.unit, "skipping attraction")
-
-						new_att_obj.pause_expire_t = data.t + math.lerp(new_att_obj.settings.pause[1], new_att_obj.settings.pause[2], math.random())
+						new_att_obj.pause_expire_t = data.t + math_lerp(new_att_obj.settings.pause[1], new_att_obj.settings.pause[2], math_random())
 					end
 				end
 			else
@@ -1253,40 +1256,42 @@ function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
 
 				if new_crim_rec then
 					managers.groupai:state():on_enemy_engaging(data.unit, new_att_obj.u_key)
+
+					contact_chatter_time_ok = data.t - new_crim_rec.det_t > 15
 				end
-
-				contact_chatter_time_ok = new_crim_rec and data.t - new_crim_rec.det_t > 15
 			end
-		else
-			if new_crim_rec then
-				managers.groupai:state():on_enemy_engaging(data.unit, new_att_obj.u_key)
-			end
+		elseif new_crim_rec then
+			managers.groupai:state():on_enemy_engaging(data.unit, new_att_obj.u_key)
 
-			contact_chatter_time_ok = new_crim_rec and data.t - new_crim_rec.det_t > 15
+			contact_chatter_time_ok = data.t - new_crim_rec.det_t > 15
 		end
 
 		if not is_same_obj then
 			if new_att_obj.settings.duration then
-				new_att_obj.stare_expire_t = data.t + math.lerp(new_att_obj.settings.duration[1], new_att_obj.settings.duration[2], math.random())
+				new_att_obj.stare_expire_t = data.t + math_lerp(new_att_obj.settings.duration[1], new_att_obj.settings.duration[2], math_random())
 				new_att_obj.pause_expire_t = nil
 			end
 
 			new_att_obj.acquire_t = data.t
 		end
 
-		if AIAttentionObject.REACT_SHOOT <= new_reaction and new_att_obj.verified and contact_chatter_time_ok and (data.unit:anim_data().idle or data.unit:anim_data().move) and new_att_obj.is_person and data.char_tweak.chatter.contact then
-			if data.unit:base()._tweak_table == "phalanx_vip" then
-				data.unit:sound():say("a01", true)
-			elseif data.unit:base()._tweak_table == "spring" then
-				data.unit:sound():say("a01", true)						
-			elseif data.unit:base()._tweak_table == "gensec" then
-				data.unit:sound():say("a01", true)			
-			elseif data.unit:base()._tweak_table == "security" then
-				data.unit:sound():say("a01", true)		
-			elseif data.unit:base()._tweak_table == "spooc" then
-				data.unit:sound():say("clk_c01x_plu", true, true)						
-			else
-				data.unit:sound():say("c01", true)
+		if contact_chatter_time_ok and data.char_tweak.chatter.contact and new_att_obj.is_person and new_att_obj.verified and AIAttentionObject.REACT_SHOOT <= new_reaction then
+			if data.unit:anim_data().idle or data.unit:anim_data().move then
+				local tweak_table = data.unit:base()._tweak_table
+
+				if tweak_table == "phalanx_vip" then
+					data.unit:sound():say("a01", true)
+				elseif tweak_table == "spring" then
+					data.unit:sound():say("a01", true)						
+				elseif tweak_table == "gensec" then
+					data.unit:sound():say("a01", true)			
+				elseif tweak_table == "security" then
+					data.unit:sound():say("a01", true)		
+				elseif tweak_table == "spooc" then
+					data.unit:sound():say("clk_c01x_plu", true, true)
+				else
+					data.unit:sound():say("c01", true)
+				end
 			end
 		end
 	elseif old_att_obj and old_att_obj.criminal_record then

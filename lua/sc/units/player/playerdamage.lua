@@ -22,24 +22,8 @@ function PlayerDamage:init(unit)
 	self._ws = self._gui:create_screen_workspace()
 	self._focus_delay_mul = 1
 	self._dmg_interval = tweak_data.player.damage.MIN_DAMAGE_INTERVAL
-
-	--Crimespree damage interval scaling
-	if Global.game_settings and Global.game_settings.incsmission then
-		--Get crime spree level.
-		local crime_spree_level = 0
-		local grace_scaling = tweak_data.crime_spree.grace_scaling
-		
-		if Network:is_server() or Global.game_settings.single_player then
-			crime_spree_level = managers.crime_spree:spree_level() or 0
-		else
-			crime_spree_level = managers.crime_spree:get_peer_spree_level(1) or 0
-		end
-
-		--Change grace period.
-		if crime_spree_level > grace_scaling.min_level then
-			self._dmg_interval = math.max(self._dmg_interval - math.floor((crime_spree_level - grace_scaling.min_level) / grace_scaling.level_interval) * grace_scaling.amount, 0)
-		end
-	end
+	--change grace period in cs
+	self._dmg_interval = managers.modifiers:modify_value("PlayerDamage:CheckingGrace", self._dmg_interval)
 
 	self._next_allowed_dmg_t = Application:digest_value(-100, true)
 	self._last_received_dmg = 0

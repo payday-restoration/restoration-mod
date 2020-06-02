@@ -471,8 +471,11 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		end
 
 		local rotation = Rotation(math.random() * 360, 0, 0)
-		local smoke_grenade = World:spawn_unit(Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick"), det_pos, rotation)
+		local smoke_grenade_id = Idstring("units/weapons/smoke_grenade_quick/smoke_grenade_quick")
+		smoke_grenade_id = managers.modifiers:modify_value("GroupAIStateBase:SpawningSmoke", smoke_grenade_id)
+		local smoke_grenade = World:spawn_unit(smoke_grenade_id, det_pos, rotation)
 		local shoot_from_pos = data.shooter_pos or det_pos
+		--log("spawning smoke!! was it tear gas?")
 		smoke_grenade:base():activate(shoot_from_pos, data.duration)
 
 		managers.groupai:state():teammate_comment(nil, "g40x_any", det_pos, true, 2000, false)

@@ -8,8 +8,8 @@ function CrimeSpreeTweakData:init(tweak_data)
 		40
 	}
 	self.allow_highscore_continue = true
-	self.initial_cost = 0
-	self.cost_per_level = 0.5
+	self.initial_cost = 6
+	self.cost_per_level = 0.75
 	self.randomization_cost = 6
 	self.randomization_multiplier = 2
 	self.catchup_bonus = 0.035
@@ -567,6 +567,11 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 	local health_increase = 0
 	local damage_increase = 15
 	self.max_modifiers_displayed = 3
+	self.start_levels = {
+		forced = 500,
+		loud = 0,
+		stealth = 0
+	}
 	self.modifier_levels = {
 		forced = 100,
 		loud = 20,
@@ -577,10 +582,19 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 			{
 				id = "bravo_replacer",
 				class = "ModifierBravos",
+				icon = "crime_spree_heavies",
+				level = 100,
+				data = {
+					spawn_chance = {6.666666666667, "add"}
+				}
+			},
+			{
+				id = "grace_reduction",
+				class = "ModifierGrace",
 				icon = "crime_spree_no_hurt",
 				level = 100,
 				data = {
-					spawn_chance = {5, "add"}
+					penalty = {0.016666667, "add"}
 				}
 			}
 		},
@@ -775,6 +789,43 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				data = {
 					damage = {5, "add"}
 				}
+			},
+			--gren go boom
+			{
+				id = "gren_boom",
+				class = "ModifierBoomBoom",
+				icon = "crime_spree_dozer_explosion",
+				data = {}
+			},
+			--lets try gas
+			{
+				id = "lets_try_gas",
+				class = "ModifierLetsTryGas",
+				icon = "crime_spree_cloaker_tear_gas",
+				data = {}
+			},
+			--yippee ki yay mother fucker
+			{
+				id = "bruce_willis_was_dead",
+				class = "ModifierDodgeThis",
+				icon = "crime_spree_no_hurt",
+				data = {}
+			},
+			--CHECK YOUR FIRE
+			{
+				id = "you_team_killing_fucktard",
+				class = "ModifierFriendlyFire",
+				icon = "crime_spree_no_hurt",
+				data = {}
+			},
+			--Shorter Medic Cooldown T3
+			{
+				id = "medic_heal_3",
+				class = "ModifierHealSpeed",
+				icon = "crime_spree_medic_speed",
+				data = {
+					speed = {25, "add"}
+				}
 			}
 		},
 		stealth = {
@@ -852,25 +903,28 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 			}
 		}
 	}
-	--i don't THINK this is used but i really don't want to take the chance
+	--reverse order because menus are weird and changing the function for one tiny non issue isnt necessary
 	self.repeating_modifiers = {
 		forced = {
 			{
-				id = "bravo_replacer",
-				class = "ModifierBravos",
+				id = "grace_reduction",
+				class = "ModifierGrace",
 				icon = "crime_spree_no_hurt",
 				level = 100,
 				data = {
-					spawn_chance = {5, "add"}
+					penalty = {0.016666667, "add"}
+				}
+			},
+			{
+				id = "bravo_replacer",
+				class = "ModifierBravos",
+				icon = "crime_spree_heavies",
+				level = 100,
+				data = {
+					spawn_chance = {6.666666666667, "add"}
 				}
 			}
 		}
 	}
 
-	--Grace period scaling in crime spree.
-	self.grace_scaling = {
-		min_level = 500,
-		level_interval = 100,
-		amount = 0.016666667
-	}
 end

@@ -107,6 +107,7 @@
 		<hook file="sc/units/player/playertased.lua" source_file="lib/units/beings/player/states/playertased"/>
 		<hook file="sc/units/player/playermovement.lua" source_file="lib/units/beings/player/playermovement"/>
 		<hook file="sc/units/player/huskplayermovement.lua" source_file="lib/units/beings/player/huskplayermovement"/>
+		<hook file="sc/units/player/huskplayerdamage.lua" source_file="lib/units/beings/player/huskplayerdamage"/>
 		<hook file="sc/units/player/playerbipod.lua" source_file="lib/units/beings/player/states/playerbipod"/>
 		<hook file="sc/units/player/playerinventory.lua" source_file="lib/units/beings/player/playerinventory"/>
 		<hook file="sc/units/player/playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
@@ -230,6 +231,7 @@
 		<hook file="sc/managers/mission/coreelementunitsequence.lua" source_file="core/lib/managers/mission/coreelementunitsequence"/>
 		<hook file="sc/units/player/playerbase.lua" source_file="lib/units/beings/player/playerbase"/>
 		<hook file="sc/managers/mission/elementsecuritycamera.lua" source_file="lib/managers/mission/elementsecuritycamera"/>
+		<hook file="sc/managers/mission/elementaiglobalevent.lua" source_file="lib/managers/mission/elementaiglobalevent"/>
 		<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
@@ -249,7 +251,12 @@
 		<hook file="sc/modifiers/modifiercloakerteargas.lua" source_file="lib/modifiers/modifiercloakerteargas"/>
 		<hook file="sc/modifiers/modifierskulldozers.lua" source_file="lib/modifiers/modifierskulldozers"/>
 		<!--///NEW MODIFIERS FOR CRIME SPREE GO HERE\\\-->
-		<hook file="sc/modifiers/modifierbravos.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifierbravos.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifiergrace.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifierboomboom.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifierletstrygas.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifierdodgethis.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifierfriendlyfire.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<!--///MUTATORS\\\-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
@@ -259,6 +266,7 @@
 		<hook file="sc/mutators/mutatorshielddozers.lua" source_file="lib/mutators/mutatorshielddozers"/>
 		<hook file="sc/mutators/mutatorhydra.lua" source_file="lib/mutators/mutatorhydra"/>
 		<hook file="sc/mutators/mutatorenemyreplacer.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
+		<hook file="sc/mutators/mutatorexplodingenemies.lua" source_file="lib/mutators/mutatorexplodingenemies"/>
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>

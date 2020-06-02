@@ -156,6 +156,16 @@ function restoration:Init()
 		"roberts_v2",
 		"santa_pain"
 	}	
+	--heists to remove infinite assaults from
+	restoration.fuck_hunt = {
+		"kenaz", --ggc
+		"pines", --white xmas
+		"spa", --brooklyn 10-10
+		"jolly", --aftershock
+		"ukrainian_job", --uk joj
+		"ukrainian_job_res", --ditto
+		"sah" --shacklethorne
+	}	
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
 	

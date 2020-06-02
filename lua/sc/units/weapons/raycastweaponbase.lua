@@ -10,6 +10,13 @@ function RaycastWeaponBase:init(...)
 	}
 	
 	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+
+	if Global.one_down then
+		self._bullet_slotmask = self._bullet_slotmask + 3
+	else
+		self._bullet_slotmask = managers.mutators:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
+		self._bullet_slotmask = managers.modifiers:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
+	end
 end
 
 function RaycastWeaponBase:setup(...)

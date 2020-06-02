@@ -444,5 +444,7 @@ function UnitNetworkHandler:sync_friendly_fire_damage(peer_id, unit, damage, var
 		end
 	end
 
-	managers.job:set_memory("trophy_flawless", true, false)
+	if managers.mutators:is_mutator_active(MutatorFriendlyFire) then
+		managers.job:set_memory("trophy_flawless", true, false)
+	end
 end

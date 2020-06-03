@@ -858,7 +858,7 @@ function PlayerManager:add_revive()
 	if alive(self:player_unit()) then
 		local damage_ext = self:player_unit():character_damage()
 		if damage_ext:get_missing_revives() > 0 then
-			managers.hud:show_hint( { text = "1 Down Restored" } )
+			managers.hud:show_hint( { text = "Assault Survived- Restoring 1 Down" } )
 			damage_ext:add_revive()
 		end
 	end

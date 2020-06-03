@@ -236,13 +236,13 @@ function PlayerDamage:can_take_damage(attack_data, damage_info)
 	return true
 end
 
+--Now has damage_bullet integrated into it with melee specific changes.
 function PlayerDamage:damage_melee(attack_data)
 	local damage_info = {
 		result = {type = "hurt", variant = "melee"},
 		attacker_unit = attack_data.attacker_unit
 	}
 
-	--Nearly reduntant, but is needed for unique melee events to not break in some cases.
 	if not self:can_take_damage(attack_data, damage_info) and not self:_chk_can_take_dmg() then
 		return
 	end
@@ -250,19 +250,20 @@ function PlayerDamage:damage_melee(attack_data)
 	local pm = managers.player
 	local can_counter_strike = pm:has_category_upgrade("player", "counter_strike_melee")
 
-	--Handles unique events to resmod enemies.
+	--Unit specific shenanigans.
+	local _time = math.floor(TimerManager:game():time())
+	local player_unit = managers.player:player_unit()
 	if alive(attack_data.attacker_unit) then
-		if attack_data.attacker_unit:base()._tweak_table == "summers" or attack_data.attacker_unit:base()._tweak_table == "fbi_vet_boss" then
-			self._unit:movement():on_non_lethal_electrocution()
-			pm:set_player_state("tased")
-
+		--Titan Taser tase.
+		if alive(player_unit) and not self._unit:movement():current_state().driving and (attack_data.attacker_unit:base()._tweak_table == "taser_titan" or attack_data.attacker_unit:base()._tweak_table == "taser_summers" or attack_data.attacker_unit:base()._tweak_table == "summers" or attack_data.attacker_unit:base()._tweak_table == "fbi_vet_boss") then
+			attack_data.attacker_unit:sound():say("post_tasing_taunt")
+			attack_data.variant = "taser_tased" --they give you an actual tase on a melee attack.
 			can_counter_strike = false
 		elseif attack_data.attacker_unit:base()._tweak_table == "autumn" then
 			attack_data.attacker_unit:sound():say("i03", true, nil, true)
 			pm:set_player_state("arrested")
-
 			can_counter_strike = false
-		end		
+		end
 	end
 
 	if can_counter_strike and self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
@@ -300,9 +301,95 @@ function PlayerDamage:damage_melee(attack_data)
 	local dmg_mul = pm:damage_reduction_skill_multiplier("melee")
 	attack_data.damage = attack_data.damage * dmg_mul
 
-	self._unit:sound():play("melee_hit_body", nil, nil)
+	--These are done after god mode checks now, just to save time.
+	--Also done before DR calcs, so that DR going away never causes grace piercing.
+	self._last_received_dmg = attack_data.damage
+	self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
 
-	local result = self:damage_bullet(attack_data)
+	self._last_bullet_damage = attack_data.damage
+	local next_allowed_dmg_t_old = self._next_allowed_dmg_t
+	
+	if self._next_allowed_dmg_t ~= next_allowed_dmg_t_old then
+		self._last_received_dmg = self._last_bullet_damage
+	end
+
+	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
+	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
+
+	local damage_absorption = pm:damage_absorption()
+	if damage_absorption > 0 then
+		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+	end
+	
+	--Can't dodge melee.
+
+	if attack_data.attacker_unit:base()._tweak_table == "tank" then
+		managers.achievment:set_script_data("dodge_this_fail", true)
+	end
+
+	if 0 < self:get_real_armor() then
+		self._unit:sound():play("melee_hit_body", nil, nil)
+	else
+		self._unit:sound():play("player_hit_permadamage")
+	end
+	
+	local shake_armor_multiplier = pm:body_armor_value("damage_shake") * pm:upgrade_value("player", "damage_shake_multiplier", 1)
+	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
+	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
+	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
+	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
+	
+	managers.rumble:play("damage_bullet")
+	
+	self:_hit_direction(attack_data.attacker_unit:position())
+	pm:check_damage_carry(attack_data)
+	
+	attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
+	
+	if self._bleed_out then
+		self:_bleed_out_damage(attack_data)
+		return
+	end
+	
+	if not attack_data.ignore_suppression and not self:is_suppressed() then
+		return
+	end
+	
+	self:_check_chico_heal(attack_data) --Remind Ravi to add friendly fire checks to this later.
+
+	local armor_reduction_multiplier = 0
+	
+	if 0 >= self:get_real_armor() then
+		armor_reduction_multiplier = 1
+	end
+	
+	local health_subtracted = self:_calc_armor_damage(attack_data)
+	attack_data.damage = attack_data.damage * armor_reduction_multiplier	
+	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data)
+
+	--Unique kill taunt stuff.
+	if alive(attack_data.attacker_unit) then
+		if not self._bleed_out and health_subtracted > 0 then
+			self:_send_damage_drama(attack_data, health_subtracted)
+		elseif self._bleed_out then
+			if attack_data.attacker_unit:base()._tweak_table == "tank" then
+				managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)
+			elseif attack_data.attacker_unit:base()._tweak_table == "spring" then
+				managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_spring", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)	
+			elseif attack_data.attacker_unit:base()._tweak_table == "taser" then
+				managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_tase", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)	
+			elseif attack_data.attacker_unit:base()._tweak_table == "taser_titan" then
+				managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_tase", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)	
+			else
+				managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_common", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)			
+			end
+			self._kill_taunt_clbk_id = "kill_taunt" .. tostring(self._unit:key())
+		end
+	end
+	
+	pm:send_message(Message.OnPlayerDamage, nil, attack_data)
+	self:_call_listeners(damage_info)
+
 	local vars = {
 		"melee_hit",
 		"melee_hit_var2"
@@ -327,11 +414,13 @@ function PlayerDamage:damage_melee(attack_data)
 		pm:set_player_state("standard")
 	end
 
-	--Apply changes to melee push, this *can* be reduced to 0.
-	mvector3.multiply(attack_data.push_vel, self._melee_push_multiplier)
-	self._unit:movement():push(attack_data.push_vel)
+	--Apply changes to melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
+	if not self._bleed_out then
+		mvector3.multiply(attack_data.push_vel, self._melee_push_multiplier)
+		self._unit:movement():push(attack_data.push_vel)
+	end
 
-	return result
+	return
 end
 
 function PlayerDamage:damage_explosion(attack_data)

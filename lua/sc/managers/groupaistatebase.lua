@@ -478,7 +478,9 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		--log("spawning smoke!! was it tear gas?")
 		smoke_grenade:base():activate(shoot_from_pos, data.duration)
 
-		managers.groupai:state():teammate_comment(nil, "g40x_any", det_pos, true, 2000, false)
+		local voice_line = "g40x_any"
+		voice_line = managers.modifiers:modify_value("GroupAIStateBase:CheckingVoiceLine", voice_line)
+		managers.groupai:state():teammate_comment(nil, voice_line, det_pos, true, 2000, false)
 
 		data.grenade = smoke_grenade
 		self._smoke_end_t = Application:time() + data.duration

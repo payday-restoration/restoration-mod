@@ -42,7 +42,7 @@ end
 --Attempt #1 at adding start level offset to crime spree modifiers.
 function CrimeSpreeManager:modifiers_to_select(table_name, add_repeating)
 	local modifiers_table = tweak_data.crime_spree.modifiers[table_name]
-	local base_number = (self:server_spree_level() - tweak_data.crime_spree.start_levels[table_name]) / tweak_data.crime_spree.modifier_levels[table_name]
+	local base_number = math.floor((self:server_spree_level() - tweak_data.crime_spree.start_levels[table_name]) / tweak_data.crime_spree.modifier_levels[table_name])
 	local active_number = 0
 
 	if not add_repeating then

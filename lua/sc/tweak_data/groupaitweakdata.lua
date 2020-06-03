@@ -9356,7 +9356,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard"
 		},
 		DW_tazer = { --tries to get as close as possible to tase players easily
-			"flank",
 			"charge",
 			"aggressor",
 			"flash_grenade",

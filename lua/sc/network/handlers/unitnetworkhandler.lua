@@ -424,6 +424,7 @@ function UnitNetworkHandler:sync_friendly_fire_damage(peer_id, unit, damage, var
 				ignore_suppression = true,
 				attacker_unit = unit,
 				damage = damage,
+				armor_piercing = true,
 				variant = variant,
 				col_ray = {
 					position = mvector3.copy(unit:movement():m_head_pos())

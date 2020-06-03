@@ -2155,6 +2155,8 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				end
 			end
 		else
+			--Insert swap speed into weapon stats table.
+			--Also make reload not use table.insert because that's stupid.
 			self._stats_shown = {
 				{
 					round_value = true,
@@ -2368,6 +2370,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				end
 			end
 
+			--Add deflection to table, and also reorganize stats to a more helpful order where relevant stats are lumped near eachother.
 			self._armor_stats_shown = {
 				{
 					name = "armor"
@@ -3277,10 +3280,11 @@ function BlackMarketGui:show_stats()
 				self._armor_stats_texts[stat.name].total:set_text("")
 				self._armor_stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.text)
 
+				--Allow armor stats with "inverted" flag to have inverted green/red colors.
 				if value ~= 0 and base < value then
-					self._armor_stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stats_positive)
+					self._armor_stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
 				elseif value ~= 0 and value < base then
-					self._armor_stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.stats_negative)
+					self._armor_stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_positive or tweak_data.screen_colors.stats_negative)
 				else
 					self._armor_stats_texts[stat.name].equip:set_color(tweak_data.screen_colors.text)
 				end
@@ -3288,7 +3292,6 @@ function BlackMarketGui:show_stats()
 				self._armor_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.text)
 			else
 				local equip = math.max(equip_base_stats[stat.name].value + equip_mods_stats[stat.name].value + equip_skill_stats[stat.name].value, 0)
-				local inverted = stat.inverted or false
 
 				self._armor_stats_texts[stat.name].equip:set_alpha(0.75)
 				self._armor_stats_texts[stat.name].equip:set_text(format_round(equip, stat.round_value))
@@ -3296,10 +3299,11 @@ function BlackMarketGui:show_stats()
 				self._armor_stats_texts[stat.name].skill:set_text("")
 				self._armor_stats_texts[stat.name].total:set_text(format_round(value, stat.round_value))
 
-				if equip < value and not inverted or value < equip and inverted then
-					self._armor_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_positive)
-				elseif value < equip and not inverted or equip < value and inverted then
-					self._armor_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.stats_negative)
+				--Allow armor stats with "inverted" flag to have inverted green/red colors.
+				if equip < value then
+					self._armor_stats_texts[stat.name].total:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
+				elseif value < equip then
+					self._armor_stats_texts[stat.name].total:set_color(stat.inverted and tweak_data.screen_colors.stats_positive or tweak_data.screen_colors.stats_negative)
 				else
 					self._armor_stats_texts[stat.name].total:set_color(tweak_data.screen_colors.text)
 				end

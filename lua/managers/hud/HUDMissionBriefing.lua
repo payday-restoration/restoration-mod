@@ -187,23 +187,23 @@ function HUDMissionBriefing:init(hud, workspace)
 	local level_id = Global.game_settings.level_id
 	
 	if show_contact_gui and level_id == "red2" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_bank", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_bank", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	elseif show_contact_gui and level_id == "glace" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_bridge", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_bridge", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	elseif show_contact_gui and level_id == "flat" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_apartment", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_apartment", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	elseif show_contact_gui and level_id == "dah" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_diamond_heist", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_diamond_heist", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	elseif show_contact_gui and level_id == "nmh" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_hospital", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_hospital", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	elseif show_contact_gui and level_id == "man" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_secret_stash", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_secret_stash", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	elseif show_contact_gui and level_id == "dinner" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_slaughter_house", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_slaughter_house", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	elseif show_contact_gui and level_id == "run_res" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_street", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_street", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	elseif show_contact_gui and level_id == "pal" and restoration.Options:GetValue("OTHER/ClassicMovies") then
-		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_suburbia", width=1280, height=720, loop=true, alpha=1 } )
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_suburbia", width=1280, height=720, loop=true, alpha=0.5, blend_mode="add" } )
 	else
 		local image, pattern = self:set_contact_info(self._current_contact, interupt_stage)
 		local contact_image = self._background_layer_two:bitmap( { name="contact_image", texture=image, w=720, h=720 } )

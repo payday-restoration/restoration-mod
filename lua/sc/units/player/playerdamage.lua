@@ -243,7 +243,7 @@ function PlayerDamage:damage_melee(attack_data)
 		attacker_unit = attack_data.attacker_unit
 	}
 
-	if not self:can_take_damage(attack_data, damage_info) and not self:_chk_can_take_dmg() then
+	if not self:can_take_damage(attack_data, damage_info) or not self:_chk_can_take_dmg() then
 		return
 	end
 

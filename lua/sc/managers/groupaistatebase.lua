@@ -77,6 +77,7 @@ end
 local sc_group_base = GroupAIStateBase.on_simulation_started
 function GroupAIStateBase:on_simulation_started()
 	sc_group_base(self)
+	self._loud_diff_set = false --i really just dont want to take any chances
 	self._ponr_is_on = nil
 	self._min_detection_threshold = 1
 	self._old_guard_detection_mul = 1
@@ -478,7 +479,9 @@ function GroupAIStateBase:detonate_world_smoke_grenade(id)
 		--log("spawning smoke!! was it tear gas?")
 		smoke_grenade:base():activate(shoot_from_pos, data.duration)
 
-		managers.groupai:state():teammate_comment(nil, "g40x_any", det_pos, true, 2000, false)
+		local voice_line = "g40x_any"
+		voice_line = managers.modifiers:modify_value("GroupAIStateBase:CheckingVoiceLine", voice_line)
+		managers.groupai:state():teammate_comment(nil, voice_line, det_pos, true, 2000, false)
 
 		data.grenade = smoke_grenade
 		self._smoke_end_t = Application:time() + data.duration
@@ -1285,14 +1288,6 @@ end
 --setup for host to set diff based on events
 --probably fine if clients run it, but better safe than sorry
 if Network:is_server() then
-	--set diff to 0.5 (default) if police called
-	local on_enemy_weapons_hot = GroupAIStateBase.on_enemy_weapons_hot
-	function GroupAIStateBase:on_enemy_weapons_hot(is_delayed_callback)
-		on_enemy_weapons_hot(self, is_delayed_callback)
-			self:set_difficulty(nil, 0.5)
-			--log("police called!! setting diff to 0.5")
-	end
-
 	--increase diff by x amount for each hostage killed (only by players)
 	local hostage_killed = GroupAIStateBase.hostage_killed
 	function GroupAIStateBase:hostage_killed(killer_unit)
@@ -1317,52 +1312,55 @@ if Network:is_server() then
 				return
 			end
 			self:set_difficulty(nil, 0.05)
-			--log("civ killed!! you monster! adding 0.05 to diff")
 	end
 end
 
 --this function has been repurposed. instead of overriding any previous value, this ADDS diff
---this is set to 0.5 on police called, while other events increase it
+--this is set to 0.5 on loud, while other events increase it
 --+0.05 on civilian kill (watch your fire!), +0.125 on assault end
---script value is used by the base game, its only purpose here is to set diff to 0 at the beginning of the mission/when spawns should be disabled
+--script value is used by the base game, we usually ignore it after the beginning of a level
 --thanks (again) to hoxi for helping out with this
 --perhaps modify these values at one point in crime spree? who knows
 function GroupAIStateBase:set_difficulty(script_value, manual_value)
     if self._difficulty_value == 1 then
-        --log("diff is already maxed out at 1.")
-
         return
     end
 
-    if script_value then
-        if script_value == 0 then
-            --log("new diff value is 0, initial setup or script that disables spawns")
-
-            self._difficulty_value = 0
-
+	if script_value then
+		if script_value == 0 then
+			self._difficulty_value = 0
+			--if diff is set to 0 in the middle of a mission, heists cannot start assaults. this ensures that we can set diff to default 0.5 again if a script sets it to 0
+			--i dont think any heists do this but there's no harm in having this check here
+			self._loud_diff_set = false 
             self:_calculate_difficulty_ratio()
 
-            return
+			return
+		elseif not self._loud_diff_set and script_value > 0  then
+			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.5
+			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
+			--should fix armored transport and its jank mission scripts	(ovk why)
+			--also, add 0.5 here instead of setting so you cant bypass civ penalty on some heists
+			self._difficulty_value = self._difficulty_value + 0.5
+			self:_calculate_difficulty_ratio()
+			--please kill me
+			self._loud_diff_set = true
+
+			return
         end
 
-        --log("element tried set diff to " .. script_value .. ", but we don't care!")
     end
 
     if not manual_value then
         return
     end
 
-    --log("current diff value is: " .. self._difficulty_value .. ".")
-    --log("value to increase diff is: " .. manual_value .. ".")
 
+	--note that this ADDS, not replaces. only way to replace is with a script_value of 0
     self._difficulty_value = self._difficulty_value + manual_value
 
+	--cap this to be safe
     if self._difficulty_value > 1 then
         self._difficulty_value = 1
-
-        --log("new diff value went past 1, clamping.")
-    else
-        --log("new diff value is: " .. self._difficulty_value .. ".")
     end
 
     self:_calculate_difficulty_ratio()

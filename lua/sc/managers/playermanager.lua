@@ -852,3 +852,14 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 		return player:equipment():valid_shape_placement(equipment_data.equipment, tweak_data.equipments[equipment_data.equipment]) and true or false
 	end
 end
+
+--Restored 1 down, used between assaults in singleplayer to compensate for lack of custody options.
+function PlayerManager:add_revive()
+	if alive(self:player_unit()) then
+		local damage_ext = self:player_unit():character_damage()
+		if damage_ext:get_missing_revives() > 0 then
+			managers.hud:show_hint( { text = "1 Down Restored" } )
+			damage_ext:add_revive()
+		end
+	end
+end

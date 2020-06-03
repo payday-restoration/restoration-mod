@@ -1172,6 +1172,12 @@ function PlayerDamage:exit_custody(down_timer)
 	})
 end
 
+function PlayerDamage:add_revive()
+	self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
+	self._revive_health_i = math.max(self._revive_health_i - 1, 1)
+	managers.environment_controller:set_last_life(Application:digest_value(self._revives, false) <= 1)
+end
+
 --New trigger for ex-pres. Now occurs when armor regen kicks in any time after armor has been broken. Ignores partial regen from stuff like Bullseye.
 Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(self, no_sound)
 	if self._armor_broken then

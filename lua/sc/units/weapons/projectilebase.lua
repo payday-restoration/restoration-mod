@@ -69,7 +69,7 @@ function ProjectileBase:create_sweep_data()
 		slot_mask = self._slot_mask
 	}
 
-	if Global.crime_spree then
+	if Global.one_down then
 		self._sweep_data.slot_mask = self._sweep_data.slot_mask + 3
 	else
 		self._sweep_data.slot_mask = managers.mutators:modify_value("ProjectileBase:create_sweep_data:slot_mask", self._sweep_data.slot_mask)

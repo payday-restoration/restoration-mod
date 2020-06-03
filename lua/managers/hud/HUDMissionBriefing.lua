@@ -184,7 +184,27 @@ function HUDMissionBriefing:init(hud, workspace)
 		show_contact_gui = false
 	end
 	self._current_contact = managers.job:current_contact_id()
-	if show_contact_gui then
+	local level_id = Global.game_settings.level_id
+	
+	if show_contact_gui and level_id == "red2" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_bank", width=720, height=720, loop=true, alpha=1 } )
+	elseif show_contact_gui and level_id == "glace" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_bridge", width=720, height=720, loop=true, alpha=1 } )
+	elseif show_contact_gui and level_id == "flat" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_apartment", width=720, height=720, loop=true, alpha=1 } )
+	elseif show_contact_gui and level_id == "dah" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_diamond_heist", width=720, height=720, loop=true, alpha=1 } )
+	elseif show_contact_gui and level_id == "nmh" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_hospital", width=720, height=720, loop=true, alpha=1 } )
+	elseif show_contact_gui and level_id == "man" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_secret_stash", width=720, height=720, loop=true, alpha=1 } )
+	elseif show_contact_gui and level_id == "dinner" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_slaughter_house", width=720, height=720, loop=true, alpha=1 } )
+	elseif show_contact_gui and level_id == "run" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_street", width=720, height=720, loop=true, alpha=1 } )
+	elseif show_contact_gui and level_id == "pal" and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		local contact_image = self._background_layer_two:video( { name="contact_image", video="movies/level_suburbia", width=720, height=720, loop=true, alpha=1 } )
+	else
 		local image, pattern = self:set_contact_info(self._current_contact, interupt_stage)
 		local contact_image = self._background_layer_two:bitmap( { name="contact_image", texture=image, w=720, h=720 } )
 		if pattern then

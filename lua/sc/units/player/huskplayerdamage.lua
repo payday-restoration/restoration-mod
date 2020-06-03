@@ -1,17 +1,17 @@
 function HuskPlayerDamage:damage_bullet(attack_data)
-	if Global.one_down or Global.crime_spree or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
+	if Global.game_settings and Global.game_settings.one_down or Global.crime_spree or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
 		self:_send_damage_to_owner(attack_data)
 	end
 end
 
 function HuskPlayerDamage:damage_melee(attack_data)
-	if Global.one_down or Global.crime_spree or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
+	if Global.game_settings and Global.game_settings.one_down or Global.crime_spree or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
 		self:_send_damage_to_owner(attack_data)
 	end
 end
 
 function HuskPlayerDamage:damage_fire(attack_data)
-	if Global.one_down or Global.crime_spree or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
+	if Global.game_settings and Global.game_settings.one_down or Global.crime_spree or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
 		local apply_damage_reduction = true
 		local attacker_unit = attack_data.attacker_unit
 
@@ -45,12 +45,13 @@ function HuskPlayerDamage:_send_damage_to_owner(attack_data)
 
 		if is_enabled then
 			damage = managers.modifiers:modify_value("HuskPlayerDamage:FriendlyFireDamageCS", damage)
+			log("damage is: " .. damage .. ".")
 		else
 			return
 		end
 	elseif managers.mutators:is_mutator_active(MutatorFriendlyFire) then --mutator overrides pro job setting
 		damage = managers.mutators:modify_value("HuskPlayerDamage:FriendlyFireDamage", damage)
-	elseif Global.one_down then
+	elseif Global.game_settings and Global.game_settings.one_down then
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 		local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
@@ -59,6 +60,7 @@ function HuskPlayerDamage:_send_damage_to_owner(attack_data)
 		else
 			damage = damage * 0.5
 		end
+		log("damage is: " .. damage .. ".")
 	end
 
 	managers.network:session():send_to_peers("sync_friendly_fire_damage", peer_id, attack_data.attacker_unit, damage, attack_data.variant)

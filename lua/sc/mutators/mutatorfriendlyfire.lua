@@ -13,7 +13,7 @@ function MutatorFriendlyFire:modify_value(id, value)
 		return false
 	elseif id == "HuskPlayerDamage:FriendlyFireDamage" then
 		return value * self:get_friendly_fire_damage_multiplier()
-	elseif id == "ProjectileBase:create_sweep_data:slot_mask" then
+	elseif id == "ProjectileBase:create_sweep_data:slot_mask" or id == "PlayerStandard:init:melee_slot_mask" or id == "RaycastWeaponBase:setup:weapon_slot_mask" then
 		return value + 3
 	end
 end

@@ -12,7 +12,18 @@ function ManageSpawnedUnits:spawn_unit(unit_id, align_obj_name, unit)
 		log("Outfit: " .. unit)
 		if Network:is_server() or self.allow_client_spawn then
 			local spawn_pos = align_obj:position()
+
+			if not spawn_pos then
+				log("spawn_pos is nil, aborting")
+				return
+			end
+
 			local spawn_rot = align_obj:rotation()
+
+			if not spawn_rot then
+				log("spawn_rot is nil, aborting")
+				return
+			end
 			spawn_unit = safe_spawn_unit(Idstring(unit), spawn_pos, spawn_rot)
 			if not spawn_unit then
 				log("Outfit not loaded, aborting?")

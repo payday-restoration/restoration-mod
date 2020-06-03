@@ -185,6 +185,28 @@ function PlayerDamage:init(unit)
 	self:clear_delayed_damage()
 end
 
+function PlayerDamage:is_friendly_fire(unit)
+	if not unit then
+		return false
+	end
+
+	if unit:movement():team() ~= self._unit:movement():team() and unit:movement():friendly_fire() then
+		return false
+	end
+
+	local friendly_fire = nil
+
+	if Global.game_settings and Global.game_settings.one_down and unit:base() and unit:base().is_husk_player then
+		friendly_fire = false
+	else
+		friendly_fire = not unit:movement():team().foes[self._unit:movement():team().id]
+		friendly_fire = managers.mutators:modify_value("PlayerDamage:FriendlyFire", friendly_fire)
+		friendly_fire = managers.modifiers:modify_value("PlayerDamage:FriendlyFire", friendly_fire)
+	end
+
+	return friendly_fire
+end
+
 --General function to deal with god mode and stuff. Uses same checks as vanilla damage_bullet().
 --Not to be confused with vanilla function using similar name.
 function PlayerDamage:can_take_damage(attack_data, damage_info)

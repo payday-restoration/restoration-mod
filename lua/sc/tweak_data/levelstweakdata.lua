@@ -124,7 +124,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		law1 = {
 			foes = {
 				converted_enemy = true,
-				criminal1 = true
+				criminal1 = true,
+				hacked_turret = true
 			},
 			friends = {
 				mobster1 = true
@@ -133,7 +134,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		mobster1 = {
 			foes = {
 				converted_enemy = true,
-				criminal1 = true
+				criminal1 = true,
+				hacked_turret = true
 			},
 			friends = {
 				law1 = true
@@ -260,7 +262,70 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.mia_1.player_style = "suit_sunny"
 	self.mia_2.player_style = "suit_sunny"
-	
+
+	self.mia_2.teams = {
+		criminal1 = {
+			foes = {
+				mobster_boss = true,
+				law1 = true,
+				mobster1 = true
+			},
+			friends = {
+				converted_enemy = true
+			}
+		},
+		law1 = {
+			foes = {
+				converted_enemy = true,
+				criminal1 = true,
+				mobster1 = true,
+				hacked_turret = true
+			},
+			friends = {}
+		},
+		mobster1 = {
+			foes = {
+				converted_enemy = true,
+				law1 = true,
+				criminal1 = true,
+				hacked_turret = true
+			},
+			friends = {}
+		},
+		mobster_boss = {
+			foes = {
+				converted_enemy = true,
+				criminal1 = true,
+				hacked_turret = true
+			},
+			friends = {}
+		},
+		converted_enemy = {
+			foes = {
+				mobster_boss = true,
+				law1 = true,
+				mobster1 = true
+			},
+			friends = {
+				criminal1 = true
+			}
+		},
+		neutral1 = {
+			foes = {},
+			friends = {}
+		},
+		hacked_turret = {
+			foes = {
+				law1 = true,
+				mobster1 = true,
+				mobster_boss = true
+			},
+			friends = {}
+		}
+	}
+
+	self.mia2_new.teams = self.mia_2.teams
+
 	self.cane.package = {"packages/cane", "packages/addsnow", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 	self.cane.player_style = "winter_suit"
 							
@@ -354,4 +419,76 @@ function LevelsTweakData:get_ai_group_type()
 		end
 		return self.ai_groups.default
 	end
+end
+
+function LevelsTweakData:get_team_setup()
+	local lvl_tweak = nil
+
+	if not Application:editor() or not managers.editor or self[managers.editor:layer("Level Settings"):get_setting("simulation_level_id")] then
+		if Global.level_data and Global.level_data.level_id then
+			lvl_tweak = self[Global.level_data.level_id]
+		end
+	end
+
+	local teams = lvl_tweak and lvl_tweak.teams
+
+	if teams then
+		teams = deep_clone(teams)
+	else
+		teams = {
+			criminal1 = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {
+					converted_enemy = true
+				}
+			},
+			law1 = {
+				foes = {
+					converted_enemy = true,
+					criminal1 = true,
+					mobster1 = true,
+					hacked_turret = true
+				},
+				friends = {}
+			},
+			mobster1 = {
+				foes = {
+					converted_enemy = true,
+					law1 = true,
+					criminal1 = true,
+					hacked_turret = true
+				},
+				friends = {}
+			},
+			converted_enemy = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {
+					criminal1 = true
+				}
+			},
+			neutral1 = {
+				foes = {},
+				friends = {}
+			},
+			hacked_turret = {
+				foes = {
+					law1 = true,
+					mobster1 = true
+				},
+				friends = {}
+			}
+		}
+
+		for id, team in pairs(teams) do
+			team.id = id
+		end
+	end
+
+	return teams
 end

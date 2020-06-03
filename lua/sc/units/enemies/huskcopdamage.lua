@@ -1,6 +1,6 @@
 local old_death = HuskCopDamage.die
-function HuskCopDamage:die(variant)
-	old_death(self, variant)
+function HuskCopDamage:die(attack_data)
+	old_death(self, attack_data)
 
 	if self._unit:base():char_tweak().ends_assault_on_death then
 		managers.hud:set_buff_enabled("vip", false)

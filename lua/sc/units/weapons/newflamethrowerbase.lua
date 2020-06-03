@@ -7,7 +7,7 @@ function NewFlamethrowerBase:setup_default()
 	self._single_flame_effect_duration = tweak_data.weapon[self._name_id].single_flame_effect_duration
 	self._bullet_class = FlameBulletBase
 
-	if Global.one_down then
+	if Global.crime_spree then
 		self._bullet_slotmask = self._bullet_slotmask + 3
 	else
 		self._bullet_slotmask = managers.mutators:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)

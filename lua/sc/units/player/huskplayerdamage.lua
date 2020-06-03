@@ -39,7 +39,16 @@ function HuskPlayerDamage:_send_damage_to_owner(attack_data)
 	local peer_id = managers.criminals:character_peer_id_by_unit(self._unit)
 	local damage = attack_data.damage
 
-	if managers.mutators:is_mutator_active(MutatorFriendlyFire) then
+	if Global.inc_mission then
+		local is_enabled = false
+		is_enabled = managers.modifiers:modify_value("HuskPlayerDamage:FriendlyFireDamageCSEnabled", is_enabled)
+
+		if is_enabled then
+			damage = managers.modifiers:modify_value("HuskPlayerDamage:FriendlyFireDamageCS", damage)
+		else
+			return
+		end
+	elseif managers.mutators:is_mutator_active(MutatorFriendlyFire) then --mutator overrides pro job setting
 		damage = managers.mutators:modify_value("HuskPlayerDamage:FriendlyFireDamage", damage)
 	elseif Global.one_down then
 		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
@@ -50,8 +59,6 @@ function HuskPlayerDamage:_send_damage_to_owner(attack_data)
 		else
 			damage = damage * 0.5
 		end
-	elseif Global.inc_mission then
-		damage = managers.modifiers:modify_value("HuskPlayerDamage:FriendlyFireDamageCS", damage)
 	end
 
 	managers.network:session():send_to_peers("sync_friendly_fire_damage", peer_id, attack_data.attacker_unit, damage, attack_data.variant)

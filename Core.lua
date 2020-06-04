@@ -98,6 +98,7 @@ function restoration:Init()
 		"arm_par",
 		"arm_und",
 		"arm_for",
+		"framing_frame_3",
 		"spa",		
 		"mia_2",		
 		"shoutout_raid", --Scripted spawns out the ass, doing this just to even it out

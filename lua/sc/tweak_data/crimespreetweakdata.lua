@@ -753,7 +753,9 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				id = "dozer_immunity",
 				class = "ModifierExplosionImmunity",
 				icon = "crime_spree_dozer_explosion",
-				data = {}
+				data = {
+					explosive_resist = {50, "add"}
+				}
 			},
 			--Vet Cop Spawn increase
 			{

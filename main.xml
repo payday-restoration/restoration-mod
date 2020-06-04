@@ -251,6 +251,7 @@
 		<hook file="sc/modifiers/modifiercloakerkick.lua" source_file="lib/modifiers/modifiercloakerkick"/>	
 		<hook file="sc/modifiers/modifiercloakerteargas.lua" source_file="lib/modifiers/modifiercloakerteargas"/>
 		<hook file="sc/modifiers/modifierskulldozers.lua" source_file="lib/modifiers/modifierskulldozers"/>
+		<hook file="sc/modifiers/modifierexplosionimmunity.lua" source_file="lib/modifiers/modifierexplosionimmunity"/>
 		<!--///NEW MODIFIERS FOR CRIME SPREE GO HERE\\\-->
 		<hook file="sc/modifiers/new/modifierbravos.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifiergrace.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>

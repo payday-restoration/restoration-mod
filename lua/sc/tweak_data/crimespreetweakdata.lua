@@ -4,8 +4,8 @@ function CrimeSpreeTweakData:init(tweak_data)
 	self.base_difficulty_index = 5
 	self.starting_levels = {
 		0,
-		20,
-		40
+		200,
+		400
 	}
 	self.allow_highscore_continue = true
 	self.initial_cost = 6

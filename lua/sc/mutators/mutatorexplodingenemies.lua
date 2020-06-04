@@ -7,7 +7,7 @@ function MutatorExplodingEnemies:_detonate(cop_damage, attack_data, is_cs, damag
 
 	if self:explosion_delay() > 0 or not pos then
 		if alive(cop_damage._unit) then
-			pos = cop_damage._unit:get_object(Idstring("Spine2")):position() or pos
+			pos = cop_damage._unit:get_object(Idstring("Hips")):position() or pos
 		end
 	end
 

@@ -418,6 +418,7 @@
 	<Package id="packages/akanassetsnew" file="addakannew.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/zombieassetsnew" file="addzombienew.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/secret_stash" file="secret_stash.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/rex_gold" file="rex_gold.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 </mod>

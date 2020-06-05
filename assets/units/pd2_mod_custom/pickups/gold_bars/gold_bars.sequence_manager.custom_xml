@@ -1,0 +1,46 @@
+<table>
+	<unit>
+		<variables>
+			<var_hidden value="0"/>
+		</variables>
+		<filter name="'filter_visible'">
+			<check value="vars.var_hidden == 0"/>
+		</filter>
+		<sequence editable_state="true" filter="'filter_visible'" name="'enable_interaction'" triggable="true">
+			<interaction enabled="true"/>
+		</sequence>
+		<sequence editable_state="true" name="'disable_interaction'" triggable="true">
+			<interaction enabled="false"/>
+		</sequence>
+		<sequence editable_state="true" name="'hide'" triggable="true">
+			<interaction enabled="false"/>
+			<object enabled="false" name="'g_g'"/>
+			<body enabled="false" name="'body_main'"/>
+			<decal_mesh enabled="false" name="'g_g'"/>
+			<set_variables var_hidden="1"/>
+		</sequence>
+		<sequence editable_state="true" name="'show'" triggable="true">
+			<object enabled="true" name="'g_g'"/>
+			<body enabled="true" name="'body_main'"/>
+			<decal_mesh enabled="true" name="'g_g'"/>
+			<set_variables var_hidden="0"/>
+		</sequence>
+		<sequence editable_state="true" name="'show_and_enable_interaction'" triggable="true">
+			<interaction enabled="true"/>
+			<object enabled="true" name="'g_g'"/>
+			<body enabled="true" name="'body_main'"/>
+			<decal_mesh enabled="true" name="'g_g'"/>
+			<set_variables var_hidden="0"/>
+		</sequence>
+		<sequence editable_state="false" name="'interact'" triggable="false">
+			<run_sequence name="'hide'"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_contour_enable'" triggable="true">
+			<material_config name="'units/pd2_mod_custom/pickups/gold_bars/gold_bars_contour'"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_contour_disable'" triggable="true">
+			<material_config name="'units/pd2_mod_custom/pickups/gold_bars/gold_bars'"/>
+		</sequence>
+		<sequence name="'load'"/>
+	</unit>
+</table>

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<modelscript>
+    <object3d name="rp_root" mode="add">
+        <parent root="true" />
+    </object3d>
+    <import file="gen_pku_gold_a.obj" type="obj" create_objects="true">
+        <rootpoint name="rp_root">
+            <default/>
+            <object	name="g_g" />
+        </rootpoint>
+    </import>
+</modelscript>

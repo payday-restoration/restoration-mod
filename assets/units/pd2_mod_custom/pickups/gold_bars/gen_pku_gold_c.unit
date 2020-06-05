@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+	<network sync="spawn" />
+	<object file="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_c" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="gold_pile" />
+			<var name="_remove_on_interact" value="true" />
+			<var name="_global_event" value="pku_gold" />
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="gold" />
+		</extension>
+	</extensions>
+</unit>

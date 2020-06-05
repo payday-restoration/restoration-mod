@@ -81,8 +81,17 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 	local function _angle_and_dis_chk(handler, settings, attention_pos)
 		attention_pos = attention_pos or handler:get_detection_m_pos()
 		local dis = mvec3_dir(tmp_vec1, my_pos, attention_pos)
+
+		if my_data.detection.use_uncover_range and settings.uncover_range and dis < settings.uncover_range then
+			return -1, 0
+		end
+
 		local dis_multiplier, angle_multiplier = nil
-		local max_dis = math_min(my_data.detection.dis_max, settings.max_range or my_data.detection.dis_max)
+		local max_dis = my_data.detection.dis_max
+
+		if settings.max_range then
+			max_dis = math_min(max_dis, settings.max_range)
+		end
 
 		if settings.detection and settings.detection.range_mul then
 			max_dis = max_dis * settings.detection.range_mul
@@ -90,16 +99,12 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 		dis_multiplier = dis / max_dis
 
-		if settings.uncover_range and my_data.detection.use_uncover_range and dis < settings.uncover_range then
-			return -1, 0
-		end
-
 		if dis_multiplier < 1 then
 			if settings.notice_requires_FOV then
 				my_head_fwd = my_head_fwd or data.unit:movement():m_head_rot():z()
 				local angle = mvec3_angle(my_head_fwd, tmp_vec1)
 
-				if angle < 55 and not my_data.detection.use_uncover_range and settings.uncover_range and dis < settings.uncover_range then
+				if not my_data.detection.use_uncover_range and angle < 55 and settings.uncover_range and dis < settings.uncover_range then
 					return -1, 0
 				end
 
@@ -169,7 +174,12 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 		if not near_vis_ray then
 			attention_info.nearly_visible = true
-			attention_info.last_verified_pos = mvec3_cpy(detect_pos)
+
+			if attention_info.last_verified_pos then
+				mvec3_set(attention_info.last_verified_pos, detect_pos)
+			else
+				attention_info.last_verified_pos = mvec3_cpy(detect_pos)
+			end
 		end
 	end
 
@@ -280,11 +290,17 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 				if attention_info.verified then
 					attention_info.verified_t = t
-
-					mvec3_set(attention_info.verified_pos, attention_info.m_head_pos)
-
-					attention_info.last_verified_pos = mvec3_cpy(attention_info.m_head_pos)
 					attention_info.verified_dis = dis
+
+					local attention_pos = attention_info.m_head_pos
+
+					mvec3_set(attention_info.verified_pos, attention_pos)
+
+					if attention_info.last_verified_pos then
+						mvec3_set(attention_info.last_verified_pos, attention_pos)
+					else
+						attention_info.last_verified_pos = mvec3_cpy(attention_pos)
+					end
 				end
 			end
 		end
@@ -314,10 +330,10 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 						angle = attention_info.visible_angle
 						dis_multiplier = attention_info.visible_dis_multiplier
 					else
-						angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, attention_info.settings)
+						local attention_pos = attention_info.m_head_pos
+						angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, attention_info.settings, attention_pos)
 
 						if angle then
-							local attention_pos = attention_info.m_head_pos
 							local vis_ray = attention_info.visible_ray or data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
 
 							if not vis_ray or vis_ray.unit:key() == u_key then
@@ -437,27 +453,41 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 						if verified then
 							attention_info.release_t = nil
 							attention_info.verified_t = t
+							attention_info.verified_dis = dis
 
 							mvec3_set(attention_info.verified_pos, attention_pos)
 
-							attention_info.last_verified_pos = mvec3_cpy(attention_pos)
-							attention_info.verified_dis = dis
-						elseif is_detection_persistent and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
-							if attention_info.criminal_record and AIAttentionObject.REACT_COMBAT <= attention_info.settings.reaction then
+							if attention_info.last_verified_pos then
+								mvec3_set(attention_info.last_verified_pos, attention_pos)
+							else
+								attention_info.last_verified_pos = mvec3_cpy(attention_pos)
+							end
+						elseif not data.cool and AIAttentionObject.REACT_COMBAT <= attention_info.settings.reaction and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
+							local destroyed_att_data = nil
+
+							if is_detection_persistent and attention_info.criminal_record then
+								attention_info.release_t = nil
+
 								delay = math_min(0.2, delay)
 								attention_info.next_verify_t = math_min(0.2, attention_info.next_verify_t)
 
 								mvec3_set(attention_info.verified_pos, attention_pos)
 
 								attention_info.verified_dis = dis
-
-								if vis_ray and attention_info.is_person and attention_info.dis < 2000 then
-									_nearly_visible_chk(attention_info, attention_pos)
-								end
 							elseif attention_info.release_t and attention_info.release_t < t then
 								CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
+
+								destroyed_att_data = true
 							else
 								attention_info.release_t = attention_info.release_t or t + attention_info.settings.release_delay
+							end
+
+							if not destroyed_att_data and vis_ray and attention_info.is_person and dis < 2000 and attention_info.verified_t then
+								local required_last_seen_t = attention_info.settings.release_delay * 0.5
+
+								if t - attention_info.verified_t < required_last_seen_t then
+									_nearly_visible_chk(attention_info, attention_pos)
+								end
 							end
 						elseif attention_info.release_t and attention_info.release_t < t then
 							CopLogicBase._destroy_detected_attention_object_data(data, attention_info)

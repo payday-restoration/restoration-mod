@@ -32,7 +32,7 @@
 			<decal_mesh enabled="true" name="'g_g'"/>
 			<set_variables var_hidden="0"/>
 		</sequence>
-		<sequence editable_state="false" name="'interact'" triggable="false">
+		<sequence editable_state="false" name="'interact'" triggable="true">
 			<run_sequence name="'hide'"/>
 		</sequence>
 		<sequence editable_state="true" name="'state_contour_enable'" triggable="true">

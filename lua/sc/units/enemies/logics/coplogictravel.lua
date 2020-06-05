@@ -2014,10 +2014,6 @@ function CopLogicTravel.queued_update(data)
 				local say_clear = 50
 				if clearchk <= say_clear then
 					managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear" )
-				else
-					if not managers.groupai:state():chk_assault_active_atm() and managers.groupai:state():not_assault_0_check() then
-						managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "retreat" )
-					end
 				end
 			end
 		end

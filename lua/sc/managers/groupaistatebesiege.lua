@@ -885,6 +885,9 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 									if alternate_assault_path then
 										self:_merge_coarse_path_by_area(alternate_assault_path)
 
+			                            self:_voice_looking_for_angle(group)
+			                            --log("I'll try to flank em!!11!!!!!")
+										
 										alternate_assault_area = search_area
 										alternate_assault_area_from = assault_from_area
 									end

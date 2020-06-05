@@ -5,6 +5,10 @@ local america = {
 local america_very_hard = {
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2"		
 	}	
+local america_zeal = {
+		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",	
+		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
+	}	
 	
 	
 --Murkywater Scripted Spawn Replacements, try to use these as templates to work from
@@ -133,13 +137,18 @@ function ElementSpawnEnemyDummy:init(...)
 			if america[self._values.enemy] then
 				self._values.enemy = america[self._values.enemy]
 			end
-			self._values.enemy = america[self._values.enemy] or self._values.enemy	
-		else
-		--Very Hard and Above
+			self._values.enemy = america[self._values.enemy] or self._values.enemy
+		--Very Hard and Above			
+		elseif difficulty_index > 3 then
 			if america_very_hard[self._values.enemy] then
 				self._values.enemy = america_very_hard[self._values.enemy]
 			end
-			self._values.enemy = america_very_hard[self._values.enemy] or self._values.enemy	
+			self._values.enemy = america_very_hard[self._values.enemy] or self._values.enemy
+		elseif difficulty_index == 8 then
+			if america_zeal[self._values.enemy] then
+				self._values.enemy = america_zeal[self._values.enemy]
+			end
+			self._values.enemy = america_zeal[self._values.enemy] or self._values.enemy				
 		end
 	end
 								

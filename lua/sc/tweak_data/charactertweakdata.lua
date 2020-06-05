@@ -14226,6 +14226,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
+				"ene_zeal_sniper",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_heavy_shield",
 				"ene_zeal_swat_shield",

@@ -1799,6 +1799,17 @@
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" load="true" force="false"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk" load="true" force="false"/>
 	-->		
+
+	<!--zeal sniper-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper_husk" load="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper_contour"/>	
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" />
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" />
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"/>	
+
+	<df_nm path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/sniper_joe_head_atlas" />
 	
 	<!--zeal city 1-->
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"/>

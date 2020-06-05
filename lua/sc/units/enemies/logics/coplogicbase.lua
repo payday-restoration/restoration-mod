@@ -169,7 +169,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 		if not near_vis_ray then
 			attention_info.nearly_visible = true
-			attention_info.last_verified_pos = mvec3_cpy(near_pos)
+			attention_info.last_verified_pos = mvec3_cpy(detect_pos)
 		end
 	end
 
@@ -273,6 +273,20 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 		if data.cool and attention_info.is_husk_player then
 			can_detect = false
+
+			if attention_info.client_casing_suspicion then
+				local dis = mvec3_dis(data.m_pos, attention_info.m_pos)
+				attention_info.dis = dis
+
+				if attention_info.verified then
+					attention_info.verified_t = t
+
+					mvec3_set(attention_info.verified_pos, attention_info.m_head_pos)
+
+					attention_info.last_verified_pos = mvec3_cpy(attention_info.m_head_pos)
+					attention_info.verified_dis = dis
+				end
+			end
 		end
 
 		if can_detect then
@@ -303,7 +317,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 						angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, attention_info.settings)
 
 						if angle then
-							local attention_pos = attention_info.handler:get_detection_m_pos()
+							local attention_pos = attention_info.m_head_pos
 							local vis_ray = attention_info.visible_ray or data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
 
 							if not vis_ray or vis_ray.unit:key() == u_key then
@@ -428,20 +442,17 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 							attention_info.last_verified_pos = mvec3_cpy(attention_pos)
 							attention_info.verified_dis = dis
-						elseif not data.cool and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
+						elseif is_detection_persistent and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
 							if attention_info.criminal_record and AIAttentionObject.REACT_COMBAT <= attention_info.settings.reaction then
-								if not is_detection_persistent and mvec3_dis(attention_info.m_pos, attention_info.criminal_record.pos) > 700 then
-									CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
-								else
-									delay = math_min(0.2, delay)
-									attention_info.next_verify_t = math_min(0.2, attention_info.next_verify_t)
+								delay = math_min(0.2, delay)
+								attention_info.next_verify_t = math_min(0.2, attention_info.next_verify_t)
 
-									attention_info.verified_pos = mvec3_cpy(attention_info.criminal_record.pos)
-									attention_info.verified_dis = dis
+								mvec3_set(attention_info.verified_pos, attention_pos)
 
-									if vis_ray and attention_info.is_person and attention_info.dis < 2000 then
-										_nearly_visible_chk(attention_info, attention_pos)
-									end
+								attention_info.verified_dis = dis
+
+								if vis_ray and attention_info.is_person and attention_info.dis < 2000 then
+									_nearly_visible_chk(attention_info, attention_pos)
 								end
 							elseif attention_info.release_t and attention_info.release_t < t then
 								CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
@@ -641,7 +652,8 @@ function CopLogicBase.on_detected_attention_obj_modified(data, modified_u_key)
 end
 
 function CopLogicBase.should_duck_on_alert(data, alert_data)
-	if data.char_tweak.allowed_poses and not data.char_tweak.allowed_poses.crouch or data.unit:anim_data().crouch or data.unit:movement():chk_action_forbidden("walk") then
+	--I guess it was unused for a reason
+	--[[if data.char_tweak.allowed_poses and not data.char_tweak.allowed_poses.crouch or data.unit:anim_data().crouch or data.unit:movement():chk_action_forbidden("walk") then
 		return
 	end
 
@@ -653,7 +665,7 @@ function CopLogicBase.should_duck_on_alert(data, alert_data)
 		end
 	end
 
-	return true
+	return true]]
 end
 
 function CopLogicBase._chk_nearly_visible_chk_needed(data, attention_info, u_key)
@@ -732,8 +744,17 @@ function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 end
 
 function CopLogicBase._upd_suspicion(data, my_data, attention_obj)
+	if attention_obj.client_casing_suspicion then
+		return
+	end
+
 	local function _exit_func()
-		attention_obj.unit:movement():on_uncovered(data.unit)
+		if not attention_obj.client_casing_detected then
+			attention_obj.unit:movement():on_uncovered(data.unit)
+		else
+			attention_obj.client_casing_detected = nil
+			attention_obj.client_casing_suspicion = true
+		end
 
 		local reaction, state_name = nil
 
@@ -775,6 +796,12 @@ function CopLogicBase._upd_suspicion(data, my_data, attention_obj)
 
 			return true
 		end
+	end
+
+	if attention_obj.client_casing_detected then
+		managers.groupai:state():criminal_spotted(attention_obj.unit)
+
+		return _exit_func()
 	end
 
 	local dis = attention_obj.dis
@@ -830,6 +857,28 @@ function CopLogicBase._upd_suspicion(data, my_data, attention_obj)
 			end
 		else
 			attention_obj.last_suspicion_t = data.t
+		end
+	end
+end
+
+function CopLogicBase.upd_suspicion_decay(data)
+	local my_data = data.internal_data
+
+	for u_key, u_data in pairs(data.detected_attention_objects) do
+		if not u_data.client_casing_suspicion and u_data.uncover_progress and u_data.last_suspicion_t ~= data.t then
+			local dt = data.t - u_data.last_suspicion_t
+			u_data.uncover_progress = u_data.uncover_progress - dt
+
+			if u_data.uncover_progress <= 0 then
+				u_data.uncover_progress = nil
+				u_data.last_suspicion_t = nil
+
+				u_data.unit:movement():on_suspicion(data.unit, false)
+			else
+				u_data.unit:movement():on_suspicion(data.unit, u_data.uncover_progress)
+
+				u_data.last_suspicion_t = data.t
+			end
 		end
 	end
 end

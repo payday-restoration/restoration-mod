@@ -299,7 +299,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
 		elseif t > task_data.phase_end_t then
 			self._assault_number = self._assault_number + 1
-			 self:_get_megaphone_sound_source():post_event("mga_generic_c")
+			self:_get_megaphone_sound_source():post_event("mga_generic_c")
 			managers.mission:call_global_event("start_assault")
 			managers.hud:start_assault(self._assault_number)
 			managers.groupai:dispatch_event("start_assault", self._assault_number)
@@ -336,6 +336,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 					end
 					if best_group then
 						self:_voice_dont_delay_assault(best_group)
+			            self:_get_megaphone_sound_source():post_event("mga_hostage_assault_delay")
 					end
 					task_data.is_hesitating = nil
 				end

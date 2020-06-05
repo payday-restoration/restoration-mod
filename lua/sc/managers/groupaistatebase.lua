@@ -7,6 +7,27 @@ local mvec3_l_sq = mvector3.length_sq
 local tmp_vec1 = Vector3()
 local tmp_vec2 = Vector3()
 
+function GroupAIStateBase:_get_megaphone_sound_source()
+	local level_id = Global.level_data.level_id
+	local pos = nil
+
+	if not level_id then
+		pos = Vector3(0, 0, 0)
+
+		Application:error("[TradeManager:_get_megaphone_sound_source] This level has no megaphone position!")
+	elseif not tweak_data.levels[level_id].megaphone_pos then
+		pos = Vector3(0, 0, 0)
+	else
+		pos = tweak_data.levels[level_id].megaphone_pos
+	end
+
+	local sound_source = SoundDevice:create_source("megaphone")
+
+	sound_source:set_position(pos)
+
+	return sound_source
+end
+
 local sc_group_misc_data = GroupAIStateBase._init_misc_data
 function GroupAIStateBase:_init_misc_data()
 	sc_group_misc_data(self)
@@ -1312,6 +1333,14 @@ if Network:is_server() then
 				return
 			end
 			self:set_difficulty(nil, 0.05)
+			
+		    if is_first or self._assault_number and self._assault_number >= 1 then
+				local roll = math.rand(1, 100)
+				local chance_civ = 50
+			    if roll <= chance_civ then
+			        self:_get_megaphone_sound_source():post_event("mga_killed_civ_1st")
+				end	
+			end
 	end
 end
 

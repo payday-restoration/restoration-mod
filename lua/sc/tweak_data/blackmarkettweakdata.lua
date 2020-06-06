@@ -14,6 +14,41 @@ function BlackMarketTweakData:_init_masks(tweak_data)
 		texture_bundle_folder = "mods"
 	}		
 	
+	--Unforsaken (CONSOLES)
+	self.masks.unforsaken = {
+		unit = "units/mods/masks/unforsaken/msk_unforsaken",
+		name_id = "bm_msk_unforsaken",
+		desc_id = "bm_msk_unforsaken_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Griefer (CONSOLE PREORDER EXCLUSIVE)
+	--Lock this to lootbag before release
+	self.masks.finger = {
+		unit = "units/mods/masks/finger/msk_finger",
+		name_id = "bm_msk_finger",
+		desc_id = "bm_msk_finger_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Intuition (CONSOLE PREORDER EXCLUSIVE)
+	--Lock this to lootbag before release
+	self.masks.instinct = {
+		unit = "units/mods/masks/instinct/msk_instinct",
+		name_id = "bm_msk_instinct",
+		desc_id = "bm_msk_instinct_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
 	--Hockey Hell
 	self.masks.canada = {
 		unit = "units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc",

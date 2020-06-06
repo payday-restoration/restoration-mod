@@ -389,7 +389,38 @@
 	<model path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
 	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_df" force="false"/>
 	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_nm" force="false"/>
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true" force="false"/>	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true" force="false"/>
+	
+	<!--Mask: Unforsaken-->
+	<material_config path="units/mods/masks/unforsaken/msk_unforsaken" force="false"/>
+	<unit path="units/mods/masks/unforsaken/msk_unforsaken" load="false"/>
+	<cooked_physics path="units/mods/masks/unforsaken/msk_unforsaken" force="false"/>
+	<object path="units/mods/masks/unforsaken/msk_unforsaken" force="false"/>
+	<model path="units/mods/masks/unforsaken/msk_unforsaken" force="false"/>
+	<texture path="units/mods/masks/unforsaken/unforsaken_nm" force="false"/>
+	<texture path="units/mods/masks/unforsaken/unforsaken_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/unforsaken" force="false"/>	
+	
+	<!--Mask: Finger-->
+	<material_config path="units/mods/masks/finger/msk_finger" force="false"/>
+	<unit path="units/mods/masks/finger/msk_finger" load="false"/>
+	<cooked_physics path="units/mods/masks/finger/msk_finger" force="false"/>
+	<object path="units/mods/masks/finger/msk_finger" force="false"/>
+	<model path="units/mods/masks/finger/msk_finger" force="false"/>
+	<texture path="units/mods/masks/finger/finger_nm" force="false"/>
+	<texture path="units/mods/masks/finger/finger_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/finger" force="false"/>
+
+	<!--Mask: Instinct-->
+	<material_config path="units/mods/masks/instinct/msk_instinct" force="false"/>
+	<unit path="units/mods/masks/instinct/msk_instinct" load="false"/>
+	<cooked_physics path="units/mods/masks/instinct/msk_instinct" force="false"/>
+	<object path="units/mods/masks/instinct/msk_instinct" force="false"/>
+	<model path="units/mods/masks/instinct/msk_instinct" force="false"/>
+	<texture path="units/mods/masks/instinct/instinct_nm" force="false"/>
+	<texture path="units/mods/masks/instinct/instinct_df" force="false"/>
+	<texture path="units/mods/masks/instinct/instinct_il" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/instinct" force="false"/>	
 	
 	<!--Muldon Stock Unfolded (thx Jarey_!!!!)-->
 	<cooked_physics path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>

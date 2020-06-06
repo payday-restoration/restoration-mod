@@ -402,7 +402,17 @@
 	
 	"bm_j4" : "J-4",
 	"bm_j4_desc" : "Jackal's mask. Or at least, a recreation.\n\nThe real mask is important to Jackal, and some say the real thing is loaded with sensitive data.\n\nThis recreation, however, the system running the display is very rudimentary, and only seeks to replicate the real thing.",
-	  
+	 
+	 
+	"bm_msk_finger" : "The Griefer",
+	"bm_msk_finger_desc" : "The Griefer is a mythical beast, known to have been a part of this world long ago. The beast deliberately chased and harassed common folk in villages and towns, hunting them down in unsuspecting ways. The Griefer derived pleasure from these acts and was a threat to the peace until the King's men finally found him and destroyed him.",
+    
+	"bm_msk_instinct" : "The Intuition",
+	"bm_msk_instinct_desc" : "This mask belonged to a mysterious warrior from far away place. He walked the lands, guided by his intuition, hunting evil forces across the world. He ventured to dungeons and slew thousands of evil beings he came across. In the end, he found peace, knowing that the next generation would continue as he did.",
+    
+	"bm_msk_unforsaken" : "The Unforsaken",
+	"bm_msk_unforsaken_desc" : "This legendary mask is a token of our appreciation of our community's dedication, understanding and continued support. From us in the OVERKILL crew - we salute you.\n\nThrough thick and thin, let those helmets fly.",
+	
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",
 	"material_jkl_matt01_title" : "Fighting Feathers",

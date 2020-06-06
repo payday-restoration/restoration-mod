@@ -18,6 +18,21 @@ function DLCTweakData:init(...)
 			type_items = "masks",
 			item_entry = "shatter_true",
 			amount = 1
+		},
+		{
+			type_items = "masks",
+			item_entry = "finger",
+			amount = 1
+		},
+		{
+			type_items = "masks",
+			item_entry = "unforsaken",
+			amount = 1
+		},
+		{
+			type_items = "masks",
+			item_entry = "instinct",
+			amount = 1
 		},		
 		{
 			type_items = "masks",

@@ -1,0 +1,7 @@
+<unit type="msk" slot="1">
+	<object file="units/mods/masks/instinct/msk_instinct" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="MaskExt" />
+	</extensions>
+</unit>

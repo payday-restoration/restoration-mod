@@ -17,7 +17,7 @@ function DLCTweakData:init(...)
 		-- console
 	elseif SystemInfo:platform() == Idstring("XB1") then
 		-- console
-	elseif if managers.dlc:is_dlc_unlocked("preorder") then
+	elseif managers.dlc:is_dlc_unlocked("preorder") then
 		table.insert(self.preorder.content.loot_drops, {
 			type_items = "masks",
 			item_entry = "finger",

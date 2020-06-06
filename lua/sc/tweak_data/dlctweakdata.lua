@@ -13,6 +13,7 @@ function DLCTweakData:init(...)
 		free = true
 	}
 
+	--[[
 	if SystemInfo:platform() == Idstring("PS4") then
 		-- console
 	elseif SystemInfo:platform() == Idstring("XB1") then
@@ -29,6 +30,7 @@ function DLCTweakData:init(...)
 			amount = 1
 		})
 	end
+	]]--
 
 	self.wetwork_masks.content.loot_global_value = "rest"
 	self.wetwork_masks.content.loot_drops = {

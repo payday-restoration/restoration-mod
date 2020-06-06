@@ -174,6 +174,8 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 		if not near_vis_ray then
 			attention_info.nearly_visible = true
+			attention_info.nearly_visible_t = t
+			attention_info.release_t = nil
 
 			if attention_info.last_verified_pos then
 				mvec3_set(attention_info.last_verified_pos, detect_pos)
@@ -482,10 +484,10 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 								attention_info.release_t = attention_info.release_t or t + attention_info.settings.release_delay
 							end
 
-							if not destroyed_att_data and vis_ray and attention_info.is_person and dis < 2000 and attention_info.verified_t then
+							if not destroyed_att_data and vis_ray and attention_info.is_person and attention_info.verified_t and dis < 2000 then
 								local required_last_seen_t = attention_info.settings.release_delay * 0.5
 
-								if t - attention_info.verified_t < required_last_seen_t then
+								if t - attention_info.verified_t < required_last_seen_t or attention_info.nearly_visible_t and t - attention_info.nearly_visible_t < required_last_seen_t then
 									_nearly_visible_chk(attention_info, attention_pos)
 								end
 							end

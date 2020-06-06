@@ -96,35 +96,14 @@ function EnemyManager:get_nearby_medic(unit)
 	return nil
 end
 
---for internal testing only
 function EnemyManager:start_autumn_blackout()
-	local all_eq = World:find_units_quick("all", 14, 25, 26)
-
-	for k,unit in pairs(all_eq) do 
-		if unit:base() then 
-			unit:base().blackout_active = true
-		end
-
-		if unit:contour() then 
-			unit:contour():add("deployable_blackout")
-		end
-	end
+	--deprecated
+	restoration.log_shit("SC: HEY YOU!!!!!!!!!!!! YOU CALLED EnemyManager:start_autumn_blackout(), DON'T DO THAT!! use groupaistate:do_blackout(true) or related functions instead!")
 end
 
---lol idk where to put this so i guess it goes in enemymanager
---this function is called on autumn's death, and removes the un-interactable blackout effect on all deployables
 function EnemyManager:end_autumn_blackout()
-	local all_eq = World:find_units_quick("all", 14, 25, 26)
-
-	for k, unit in pairs(all_eq) do 
-		if unit:base() then 
-			unit:base().blackout_active = false
-		end
-
-		if unit:contour() then 
-			unit:contour():remove("deployable_blackout")
-		end
-	end
+	--deprecated
+	restoration.log_shit("SC: HEY YOU!!!!!!!!!!!! YOU CALLED EnemyManager:end_autumn_blackout(), DON'T DO THAT!! use groupaistate:do_blackout(false) or related functions instead!")
 end
 
 function EnemyManager:_update_gfx_lod()

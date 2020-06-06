@@ -1594,8 +1594,8 @@ function CopDamage:die(attack_data)
 		end
 	end
 
-	if self._char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
-		managers.enemy:end_autumn_blackout()
+	if self._char_tweak.do_autumn_blackout then
+		managers.groupai:state():unregister_blackout_source(self._unit)
 	end
 
 	if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") and self._char_tweak.die_sound_event_2 then

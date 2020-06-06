@@ -27,6 +27,10 @@ function HuskCopDamage:die(attack_data)
 		end
 	end
 
+	if self._char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
+		managers.groupai:state():unregister_blackout_source(self._unit)
+	end
+
 	--client sided boomboom
 	if self._unit:base()._tweak_table == "boom" then
 		local boom_boom = false

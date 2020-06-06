@@ -12,6 +12,24 @@ function DLCTweakData:init(...)
 		content = {},
 		free = true
 	}
+
+	if SystemInfo:platform() == Idstring("PS4") then
+		-- console
+	elseif SystemInfo:platform() == Idstring("XB1") then
+		-- console
+	elseif if managers.dlc:is_dlc_unlocked("preorder") then
+		table.insert(self.preorder.content.loot_drops, {
+			type_items = "masks",
+			item_entry = "finger",
+			amount = 1
+		})
+		table.insert(self.preorder.content.loot_drops, {
+			type_items = "masks",
+			item_entry = "instinct",
+			amount = 1
+		})
+	end
+
 	self.wetwork_masks.content.loot_global_value = "rest"
 	self.wetwork_masks.content.loot_drops = {
 		{
@@ -21,19 +39,9 @@ function DLCTweakData:init(...)
 		},
 		{
 			type_items = "masks",
-			item_entry = "finger",
-			amount = 1
-		},
-		{
-			type_items = "masks",
 			item_entry = "unforsaken",
 			amount = 1
-		},
-		{
-			type_items = "masks",
-			item_entry = "instinct",
-			amount = 1
-		},		
+		},	
 		{
 			type_items = "masks",
 			item_entry = "canada",

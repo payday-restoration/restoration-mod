@@ -242,6 +242,8 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/cafe_escape_day_newdefault.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 		elseif level_id == "escape_cafe" then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/cafe_escape_night_newdefault.custom_xml", "custom_xml", "environments/env_cafe/env_cafe", "environment")
+		elseif level_id == "kosugi" then
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 		-- elseif level_id == "kosugi" then 
 			-- setting = restoration:get_env_setting("OTHER/Env_Kosugi")
 			-- if setting == 1 then

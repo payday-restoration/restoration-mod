@@ -244,6 +244,8 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/cafe_escape_night_newdefault.custom_xml", "custom_xml", "environments/env_cafe/env_cafe", "environment")
 		elseif level_id == "skm_watchdogs_stage2" then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/wd_d2_skm_new.custom_xml", "custom_xml", "units/pd2_dlc_skm/environments/pd2_env_skm_watchdogs_2_exterior", "environment")
+			elseif level_id == "skm_big2" then
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bb_skm_new.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
 		elseif level_id == "kosugi" then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 			

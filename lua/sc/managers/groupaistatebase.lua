@@ -92,7 +92,7 @@ function GroupAIStateBase:_init_misc_data()
 		self._weapons_hot_threshold = 0.30
 		self._suspicion_threshold = 0.9
 	end
-	
+	self._blackout_units = {} --offy wuz hear
 end
 
 local sc_group_base = GroupAIStateBase.on_simulation_started
@@ -1393,4 +1393,72 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
     end
 
     self:_calculate_difficulty_ratio()
+end
+
+
+--below stuff is used to handle autumn's deployable blackout effect
+function GroupAIStateBase:register_blackout_source(unit)
+	if unit and alive(unit) then 
+		self._blackout_units[unit:key()] = unit
+		self:do_blackout(true)
+	end
+end
+
+function GroupAIStateBase:unregister_blackout_source(unit)
+	if unit and alive(unit) then
+		self._blackout_units[unit:key()] = nil
+	end
+	self:check_blackout()
+end
+
+function GroupAIStateBase:check_blackout()
+	local any_active = false
+	for key,unit in pairs(self._blackout_units) do 
+		if unit and alive(unit) then 
+			any_active = true
+			break
+		else
+			--remove any invalid units from the list, in case their destroy method was not called properly
+			self._blackout_units[key] = nil
+		end
+	end
+	self:do_blackout(any_active)
+end
+
+function GroupAIStateBase:do_blackout(state)
+	local all_eq = World:find_units_quick("all",14,25,26)
+	if state then 
+		for k,unit in pairs(all_eq) do
+			if unit and alive(unit) and unit:base() then
+				if unit:interaction() and unit:interaction()._tweak_data and unit:interaction()._tweak_data.blackout_vulnerable then 
+					--todo add a cool timed callback thing so that they all die with a bit of an offset from each other but all within x seconds
+					if unit:base().get_name_id then 
+						local eq_id = unit:base():get_name_id() or ""
+						if eq_id == "sentry_gun" then --perish
+							unit:character_damage():die()
+						elseif eq_id == "ecm_jammer" then 
+							unit:base():set_battery_empty()
+							unit:base():_set_feedback_active(false)
+						end
+					end
+					
+					if unit.contour and unit:contour() then 
+						unit:contour():add("deployable_blackout")
+					end
+					unit:base().blackout_active = true
+				end
+			end
+		end
+	else
+		for k,unit in pairs(all_eq) do
+			if unit and alive(unit) and unit:base() then
+				if unit:interaction() and unit:interaction()._tweak_data and unit:interaction()._tweak_data.blackout_vulnerable then 
+					if unit.contour and unit:contour() then 
+						unit:contour():remove("deployable_blackout")
+					end
+					unit:base().blackout_active = false
+				end
+			end
+		end
+	end
 end

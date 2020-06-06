@@ -178,8 +178,12 @@ function CopMovement:post_init()
 
 	self:_post_init()
 	self._omnia_cooldown = 0
-	self._aoe_heal_cooldown = 0
+	self._aoe_heal_cooldown = 0 --should not be used anymore
 	self._aoe_blackout_cooldown = 0		
+	
+	if self._tweak_data.do_autumn_blackout then 
+		managers.groupai:state():register_blackout_source(self._unit)
+	end
 end	
 
 function CopMovement:_upd_actions(t)
@@ -247,10 +251,7 @@ function CopMovement:_upd_actions(t)
 		if not self._unit:character_damage():dead() then			
 			self:do_summers_heal(self)		
 		end
-	end		
-	if self._tweak_data.do_autumn_blackout then 
-		self:do_autumn_blackout(self)
-	end
+	end	
 end
 
 function CopMovement:do_omnia(self)
@@ -307,8 +308,12 @@ function CopMovement:do_omnia(self)
 		restoration.log_shit("SC: UNIT NOT FOUND WTF")
 	end
 end
-
-function CopMovement:do_autumn_blackout(self)	
+	
+Hooks:PostHook(CopMovement,"pre_destroy","resmod_unregister_blackout_unit",function(self,...)
+	managers.groupai:state():unregister_blackout_source(self._unit)
+end)
+	
+function CopMovement:do_autumn_blackout(self)	--no longer used
 	local test_kicker = false 
 	
 --every [cooldown] seconds:
@@ -410,14 +415,6 @@ function CopMovement:do_autumn_blackout(self)
 		end
 	end
 end
-
-function CopMovement:clbk_autumn_blackout_cancel(self) --not used
-	--OffyLib:c_log(target,"Cancelled blackout on unit")
-end
-function CopMovement:clbk_autumn_blackout_complete(self) --not used
-	--OffyLib:c_log(target,"Done blackout on unit")
-end
-
 
 function CopMovement:do_aoe_heal(self)
 	local t = TimerManager:main():time()

@@ -33,7 +33,7 @@ function BlackMarketTweakData:_init_masks(tweak_data)
 		desc_id = "bm_msk_finger_desc",
 		pcs = {},
 		value = 0,
-		global_value = "rest",
+		dlc = "preorder",
 		texture_bundle_folder = "mods"
 	}
 	
@@ -45,7 +45,7 @@ function BlackMarketTweakData:_init_masks(tweak_data)
 		desc_id = "bm_msk_instinct_desc",
 		pcs = {},
 		value = 0,
-		global_value = "rest",
+		dlc = "preorder",
 		texture_bundle_folder = "mods"
 	}
 	

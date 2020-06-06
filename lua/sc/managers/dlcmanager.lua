@@ -4,3 +4,7 @@ function GenericDLCManager:give_missing_package()
 		return give_missing_package_original(self)
 	end
 end
+
+function GenericDLCManager:has_cce_beta()
+	return self:is_dlc_unlocked("preorder")
+end

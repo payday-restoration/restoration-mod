@@ -23,6 +23,10 @@ function CoreEnvironmentControllerManager:set_post_composite(t, dt)
 		return
     end
 
+    if not alive(self._vp) then
+		return
+	end
+
 	local last_life = 0
 
     if self._last_life then

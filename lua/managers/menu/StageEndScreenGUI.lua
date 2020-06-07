@@ -411,7 +411,7 @@ function StageEndScreenGui:feed_statistics(data)
 	data.total_specials_kills = managers.statistics:session_total_specials_kills()
 	data.total_head_shots = managers.statistics:session_total_head_shots()
 	data.civilians_killed_penalty = managers.statistics:session_total_civilian_kills()
-	data.last_completed_challenge = (pdth_hud and managers.challenges:get_last_comleted_title_text() or managers.localization:text("RestorationPDTHHudNeeded") )
+	data.last_completed_challenge = (managers.challenges and managers.challenges:get_last_comleted_title_text() or managers.localization:text("RestorationPDTHHudNeeded") )
 	self._data = data or {}
 	for i, item in ipairs(self._items) do
 		item:feed_statistics(data)

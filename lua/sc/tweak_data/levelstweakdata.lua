@@ -382,7 +382,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.vit.ghost_bonus = 0.15
 	
 	--///SKIRMISH FIXES\\\--
-	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/rex_gold"}
+	self.skm_cas.package = {"packages/dlcs/skm/job_skm"}
 end)
 
 function LevelsTweakData:get_ai_group_type()

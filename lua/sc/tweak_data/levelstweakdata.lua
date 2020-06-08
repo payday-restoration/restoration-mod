@@ -380,6 +380,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.fish.max_bags = 20
 	--White House Heist Stelf Bonus--		
 	self.vit.ghost_bonus = 0.15
+	
+	--///SKIRMISH FIXES\\\--
+	self.skm_cas.package = {"packages/dlcs/skm/job_skm"}
 end)
 
 function LevelsTweakData:get_ai_group_type()

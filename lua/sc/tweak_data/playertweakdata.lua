@@ -182,8 +182,8 @@ function PlayerTweakData:init()
 	self.damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.damage.respawn_time_penalty = 30
 	self.damage.base_respawn_time_penalty = 5
-	self.damage.automatic_assault_ai_trade_time = 360
-	self.damage.automatic_assault_ai_trade_time_max = 420
+	self.damage.automatic_assault_ai_trade_time = 240
+	self.damage.automatic_assault_ai_trade_time_max = 300
 	self.fall_health_damage = 3
 	self.fall_damage_alert_size = 250
 	self.SUSPICION_OFFSET_LERP = 0.75

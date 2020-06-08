@@ -75,8 +75,8 @@
 	"RestorationModAltLastDownColorDescID" : "Switches the last down color grading to color_sin_classic.",
 	"RestorationModNoBleedoutTiltTitleID" : "Disable Bleedout Camera Tilt",
 	"RestorationModNoBleedoutTiltDescID" : "Disables the camera tilt that happens while in bleedout",
-	"RestorationModNoClassicMoviesTitleID" : "change",
-	"RestorationModNoClassicMoviesDescID" : "change",
+	"RestorationModClassicMoviesTitleID" : "Classic Loadout Backgrounds",
+	"RestorationModClassicMoviesDescID" : "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
 	
 	"default" : "Default",
 	"random" : "Random",

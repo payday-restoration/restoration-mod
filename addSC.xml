@@ -117,6 +117,9 @@
 	<!--I LOVE GOOOOOOOOOOOOOLD-->
 	<continent path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>
 
+	<!--ffs ovk, dont load the entire map if you force the players in one area-->
+	<continent path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
+
 	<!--fuck your powerboxes-->
 	<mission path="levels/narratives/e_framing_frame/stage_3/world/world" force="true" unload="true"/>
 

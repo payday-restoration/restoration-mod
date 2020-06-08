@@ -853,13 +853,25 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 	end
 end
 
---Restored 1 down, used between assaults in singleplayer to compensate for lack of custody options.
+--Restores 1 down when enough assaults have passed and bots have the related skill. Counter is paused when player is in custody or has max revives.
 function PlayerManager:add_revive()
-	if alive(self:player_unit()) then
-		local damage_ext = self:player_unit():character_damage()
-		if damage_ext:get_missing_revives() > 0 then
-			managers.hud:show_hint( { text = "Assault Survived- Restoring 1 Down" } )
-			damage_ext:add_revive()
+	if self:has_category_upgrade("team", "crew_scavenge") then
+		if not self._assaults_to_extra_revive then
+			self._assaults_to_extra_revive = self:crew_ability_upgrade_value("crew_scavenge")
+		end
+
+		if self._assaults_to_extra_revive and alive(self:player_unit()) then
+			local damage_ext = self:player_unit():character_damage()
+			if damage_ext:get_missing_revives() > 0 then
+				self._assaults_to_extra_revive = math.max(self._assaults_to_extra_revive - 1, 0)
+				if self._assaults_to_extra_revive == 0 then
+					damage_ext:add_revive()
+					managers.hud:show_hint( { text = "Assaults Survived- Restoring 1 Down" } )
+					self._assaults_to_extra_revive = self:crew_ability_upgrade_value("crew_scavenge")
+				else
+					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assault(s) Remaining To Down Restore." } )
+				end
+			end
 		end
 	end
 end

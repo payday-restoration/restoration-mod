@@ -438,10 +438,8 @@ function GroupAIStateBesiege:_upd_assault_task()
 			--log("assault over!!!")
 			self:set_difficulty(nil, 0.125)
 
-			--Restore 1 down at the end of an assault in single player, to compensate for lack of custody.
-			if Global.game_settings and Global.game_settings.single_player then
-				managers.player:add_revive()
-			end
+			--End of assault down restore. 
+			managers.player:add_revive()
 			return
 		end
 	end

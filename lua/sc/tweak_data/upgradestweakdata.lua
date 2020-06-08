@@ -390,11 +390,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			60
 		}
 	}
+	--# waves required to regain a down.
 	self.values.team.crew_scavenge = {
 		{
-			0.25,
-			0.5,
-			0.75
+			3,
+			2,
+			1
 		}
 	}
 	self.values.team.crew_interact = {
@@ -404,7 +405,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			0.55
 		}
 	}
-	self.values.team.crew_ai_ap_ammo = {true}
+	--Also increases bot damage dealt.
+	self.values.team.crew_ai_ap_ammo = {
+		1.25
+	}
 	
 	--Equipment--
 	--FAKS: Intended to offer on-demand burst healing that cann save people from going down.

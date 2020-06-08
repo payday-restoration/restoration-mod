@@ -89,6 +89,9 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 			if enemy_unit:base():char_tweak() then
 				if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
 					local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
+					if weapon_unit:base()._is_team_ai then
+						knock_chance = knock_chance * 0.25 --Bots have reduced knock chances. Usually hovers around 10%, weapons like the Thanatos cap around 25%.
+					end
 
 					if knock_chance < math.random() then
 						local damage_info = {
@@ -204,14 +207,14 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 		end
 		multiplier_min = multiplier_min * managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
 		multiplier_min = multiplier_min * managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1)
-		multiplier_min = multiplier_min + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
+		--multiplier_min = multiplier_min + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
 		
 		if ammo_max then
 			multiplier_max = multiplier_max * ammo_max
 		end
 		multiplier_max = multiplier_max * managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
 		multiplier_max = multiplier_max * managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1)
-		multiplier_max = multiplier_max + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
+		--multiplier_max = multiplier_max + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
 		
 		local add_amount = add_amount_override
 		local picked_up = true

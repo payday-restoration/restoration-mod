@@ -22,9 +22,12 @@ function NewNPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, d
 	if not self._check_ap_and_masks then
 		self._check_ap_and_masks = true
 
+		--Apply bot boosts if not done yet.
 		if not self._use_armor_piercing then
 			if self._is_team_ai and managers.player:has_category_upgrade("team", "crew_ai_ap_ammo") then
 				self._use_armor_piercing = true
+				self._shield_knock = true
+				self._damage = self._damage * managers.player:upgrade_value("team", "crew_ai_ap_ammo")
 			end
 		end
 

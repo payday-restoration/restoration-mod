@@ -545,8 +545,8 @@
 	"wwburn_defend" : "Defend",
 	"wwburn_container" : "Shipping Container",
 
-    "menu_jukebox_resmusic_wetwork" : "Spectre Shark (Old Version)",
-    "menu_jukebox_screen_resmusic_wetwork" : "Spectre Shark (Old Version)",
+    "menu_jukebox_resmusic_wetwork" : "Spectre Shark",
+    "menu_jukebox_screen_resmusic_wetwork" : "Spectre Shark",
 	"menu_jukebox_resmusic_bluewave" : "Spectre Shark 2020",
     "menu_jukebox_screen_resmusic_bluewave" : "Spectre Shark 2020",
     "menu_jukebox_resmusic_burnout" : "Brute Force",

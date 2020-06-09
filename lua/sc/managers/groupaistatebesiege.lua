@@ -436,7 +436,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			self:_begin_regroup_task(force_regroup)
 			--add diff on assault end (game normally does this through mission scripts, we have to do it manually here)
 			--log("assault over!!!")
-			self:set_difficulty(nil, 0.125)
+			self:set_difficulty(nil, 0.166667)
 
 			--End of assault down restore. 
 			managers.player:add_revive()

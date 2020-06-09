@@ -17,9 +17,9 @@ function restoration:Init()
 		"election_day_3_skip2", --Election Day 3 (Skipped 2)
 		"firestarter_2", --firestarter day 2
 		"four_stores", --Gee, I wonder what this could be.
-		"dinner", --Slaughterhouse
 		"moon", --Stealing Xmas
 		"mus",	--the diamond
+		"gallery", --art gallery
 		--Custom Heists--
 		"office_strike", --office strike
 		"firestarter_2_res" --firestarter day 2 res edit version
@@ -40,7 +40,6 @@ function restoration:Init()
 	restoration.captain_murderdozer = {
 		"dah", --diamond heist
 		"hox_2", --Hoxout Day 2
-		"framing_frame_3", --framing frame day 3
 		"firestarter_1", --firestarter day 1
 		"arm_for",	--train heist
 		"big", --big bank
@@ -56,10 +55,9 @@ function restoration:Init()
 		"branchbank", --well the trees are orange
 		"family", --diamond store
 		"framing_frame_1", --art gallery but ff
-		"gallery", --art gallery
+		"framing_frame_3", --Powerbox simulator
 		"jewelry_store", --Jewelry Store
 		"ukrainian_job", --Ukrainian Job
-		"framing_frame_2", --Powerbox simulator
 		--custom heists
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version

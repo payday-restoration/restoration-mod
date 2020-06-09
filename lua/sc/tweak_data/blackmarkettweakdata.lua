@@ -939,7 +939,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		characters = {}
 	}
 	set_characters_data("suit_sunny", characters_male, {
-		body_replacement = body_replacement_hands,
+		body_replacement = body_replacement_standard,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit"
 	})
@@ -949,7 +949,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
 	set_characters_data("suit_sunny", characters_wholesome_100, {
-		body_replacement = body_replacement_hands,
+		body_replacement = body_replacement_standard,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
@@ -959,12 +959,12 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
 	set_characters_data("suit_sunny", characters_jimmy, {
-		body_replacement = body_replacement_hands,
+		body_replacement = body_replacement_standard,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit"
 	})
 	set_characters_data("suit_sunny", characters_chains, {
-		body_replacement = body_replacement_hands,
+		body_replacement = body_replacement_standard,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains"
 	})

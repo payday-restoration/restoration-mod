@@ -43,6 +43,7 @@ function restoration:Init()
 		"firestarter_1", --firestarter day 1
 		"arm_for",	--train heist
 		"big", --big bank
+		"dinner", --Slaughterhouse
 		"kenaz",--Golden Grin Casino
 		"cas", --Golden Grin Casino
 		--custom heists		

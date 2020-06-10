@@ -108,7 +108,7 @@ function GroupAITweakData:_init_chatter_data()
 	}			
 	self.enemy_chatter.retreat = {
 		radius = 700,
-		max_nr = 3,
+		max_nr = 10,
 		duration = {2, 4},
 		interval = {2, 4},
 		group_min = 0,

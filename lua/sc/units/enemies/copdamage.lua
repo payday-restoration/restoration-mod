@@ -1304,7 +1304,7 @@ function CopDamage:damage_melee(attack_data)
 							local not_cool_t = self._unit:movement().not_cool_t and self._unit:movement():not_cool_t()
 							local t = TimerManager:game():time()
 
-							if not not_cool_t or t - not_cool_t < 1.5 then
+							if not not_cool_t or t - not_cool_t < 0.75 then
 								snatch_pager = true
 								self._unit:unit_data().has_alarm_pager = false
 							end

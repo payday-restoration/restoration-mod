@@ -203,14 +203,25 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		
 		local fixed_sound = nil
 		
-		if self._prefix == "l1n_" or self._prefix == "l2n_" or self._prefix == "l3n_" or self._prefix == "l4n_" then
+		if self._prefix == "l1n_" or self._prefix == "l2n_" or self._prefix == "l3n_" then
 			if sound_name == "x02a_any_3p" then
 				sound_name = "x01a_any_3p"
-				--log("IM FUCKIN DEAD BRO")
 				fixed_sound = true
-			elseif sound_name == "x01a_any_3p" and not fixed_sound and not self._prefix == "l4n_" then
+				--log("IM FUCKIN DEAD BRO")
+			elseif sound_name == "x01a_any_3p" then
 				sound_name = "x02a_any_3p"
 				--log("OW MY BONES")
+			end
+		end
+		
+		if self._prefix == "l4n_" then
+			if sound_name == "x02a_any_3p" then
+				sound_name = "x01a_any_3p"
+				fixed_sound = true
+				--log("l4N IS FUCKIGN DEAD WTF NOOOO")
+			elseif sound_name == "x01a_any_3p" then
+				sound_name = "l1n_x02a_any_3p"
+				--log("l4N BONE HURTY JUICE")
 			end
 		end
 		

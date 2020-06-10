@@ -327,7 +327,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.cop.speech_prefix_p2 = "n"
 	self.cop.speech_prefix_count = 4
-	if job == "crojob2" or job == "welcome_to_the_jungle_2" or job == "dark" or job == "kosugi" then
+	if job == "crojob2" or job == "welcome_to_the_jungle_2" or job == "dark" or job == "kosugi" or job == "arm_for" then
 		self.cop.access = "security"
 	else
 		self.cop.access = "fbi"
@@ -344,7 +344,7 @@ function CharacterTweakData:_init_cop(presets)
 		self.cop.steal_loot = true
 	end
 	self.cop.static_dodge_preset = true
-	if job == "crojob2" or job == "welcome_to_the_jungle_2" or job == "dark" or job == "kosugi" then
+	if job == "crojob2" or job == "welcome_to_the_jungle_2" or job == "dark" or job == "kosugi" or job == "arm_for" then
 		self.cop.has_alarm_pager = true
 		self.cop.radio_prefix = "fri_"
 	else

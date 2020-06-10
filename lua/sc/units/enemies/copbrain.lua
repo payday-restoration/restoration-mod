@@ -371,29 +371,6 @@ function CopBrain:on_suppressed(state)
 		end
 	end
 end
-
-function CopBrain:begin_alarm_pager(reset)
-	if not reset and self._alarm_pager_has_run then
-		return
-	end
-	
-	--Suspicion Increase from a pager call
-	managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.02
-	managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-	managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-	managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.02
-	managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
-
-	self._alarm_pager_has_run = true
-	self._alarm_pager_data = {
-		total_nr_calls = math.random(tweak_data.player.alarm_pager.nr_of_calls[1], tweak_data.player.alarm_pager.nr_of_calls[2]),
-		nr_calls_made = 0
-	}
-	local call_delay = math.lerp(tweak_data.player.alarm_pager.first_call_delay[1], tweak_data.player.alarm_pager.first_call_delay[2], math.random())
-	self._alarm_pager_data.pager_clbk_id = "pager" .. tostring(self._unit:key())
-
-	managers.enemy:add_delayed_clbk(self._alarm_pager_data.pager_clbk_id, callback(self, self, "clbk_alarm_pager"), TimerManager:game():time() + call_delay)
-end
 	
 function CopBrain:on_alarm_pager_interaction(status, player)
 	if not managers.groupai:state():whisper_mode() then
@@ -444,6 +421,13 @@ function CopBrain:on_alarm_pager_interaction(status, player)
 			else
 				self._unit:sound():play(self:_get_radio_id("dsp_radio_fooled_" .. tostring(cue_index)), nil, true)
 			end
+			
+			--Suspicion Increase from a 'convincing' pager call
+			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.02
+			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
+			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.02
+			managers.groupai:state():_delay_whisper_suspicion_mul_decay()					
 
 			if is_last then
 				-- Nothing

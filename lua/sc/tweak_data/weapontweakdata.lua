@@ -10165,7 +10165,7 @@ if self.spike then --Gambyt's Spike Rifle
 end
 
 
-if self.ak5s then --Gambyt's AK5 SMG
+if self.ak5s then --Gambyt's Automat-5/AK5 SMG
 	self.ak5s.desc_id = nil
 	self.ak5s.categories = {"smg"}
 	self.ak5s.tactical_reload = 1		
@@ -10189,11 +10189,11 @@ if self.ak5s then --Gambyt's AK5 SMG
 	self.ak5s.AMMO_PICKUP = self:_pickup_chance(180, 2)
 	self.ak5s.stats = {
 		damage = 20,
-		spread = 16,
-		recoil = 22,
+		spread = 14,
+		recoil = 24,
 		spread_moving = 8,
 		zoom = 1,
-		concealment = 27,
+		concealment = 28,
 		suppression = 9,
 		alert_size = 9,
 		extra_ammo = 101,
@@ -10352,11 +10352,11 @@ if self.car9 then --Gambyt's ACAR 9
 	self.car9.kick.steelsight = self.new_m4.kick.steelsight
 	self.car9.stats = {
 		damage = 20,
-		spread = 12,
-		recoil = 23,
+		spread = 18,
+		recoil = 19,
 		spread_moving = 6,
 		zoom = 1,
-		concealment = 27,
+		concealment = 29,
 		suppression = 9,
 		alert_size = 9,
 		extra_ammo = 101,

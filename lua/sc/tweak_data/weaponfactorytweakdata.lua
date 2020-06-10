@@ -34688,7 +34688,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_shot_amr12_s_wire.stats = {
 			value = 5,
 			spread = -1,
-			concealment = 2
+			concealment = 1
 		}
 		self.parts.wpn_fps_ass_sg416_b_long.stats = {
 			value = 4,
@@ -34867,20 +34867,24 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		}						
 		self.parts.wpn_fps_shot_amr12_fg_railed.stats = {
 			value = 7,
-			spread_moving = -2,
-			recoil = 1,
+			spread = 1,
+			recoil = -1,
 			concealment = -1
+		}
+		self.parts.wpn_fps_shot_amr12_fg_railed.custom_stats = {
+			damage_near_mul = 100,
+			damage_far_mul = 200			
 		}
 		self.parts.wpn_fps_shot_amr12_fg_short.stats = {
 			value = 4,
 			spread = -1,
 			recoil = -1,
-			concealment = 3
+			concealment = 2
 		}
 		self.parts.wpn_fps_shot_amr12_fg_short.custom_stats = {
 			damage_near_mul = -100,
 			damage_far_mul = -200			
-		}			
+		}
 		self.wpn_fps_shot_amr12.override = {
 			wpn_fps_upg_a_slug = {
 				name_id = "bm_wp_upg_a_slug_sc",
@@ -34890,7 +34894,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					concealment = -5,
 					total_ammo_mod = -25,
 					damage = 15,
-					spread = 12,
+					spread = 11,
 					spread_multi = {1, 1},	
 					recoil = -1,
 					moving_spread = 0
@@ -34941,11 +34945,10 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			wpn_fps_upg_a_explosive = {
 				stats = {
 					value = 10,
-					concealment = -5,
 					total_ammo_mod = -50,
 					recoil = -5,
 					spread_multi = {1, 1},	
-					damage = 45
+					damage = 30
 				},
 				custom_stats = {
 					ignore_statistic = true,

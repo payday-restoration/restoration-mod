@@ -9866,34 +9866,33 @@ end
 if self.amr12 then --Gambyt's AMR 12G Shotgun
 	self.amr12.rays = 9
 	self.amr12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
-	self.amr12.AMMO_MAX = 80
+	self.amr12.AMMO_MAX = 120
 	self.amr12.tactical_reload = 1		
 	self.amr12.CLIP_AMMO_MAX = 5
-	self.amr12.AMMO_PICKUP = self:_pickup_chance(80, 2)
+	self.amr12.AMMO_PICKUP = self:_pickup_chance(120, 2)
 	self.amr12.fire_mode_data.fire_rate = 0.08571428571
 	self.amr12.CAN_TOGGLE_FIREMODE = false
 	self.amr12.single = {}
 	self.amr12.single.fire_rate = 0.08571428571
 	self.amr12.damage_near = 700
 	self.amr12.damage_far = 1400
-	self.amr12.spread.standing = 3 * 1
-	self.amr12.spread.crouching = 2 * 1
-	self.amr12.spread.steelsight = 1 * 1
-	self.amr12.spread.moving_standing = 4 * 1
-	self.amr12.spread.moving_crouching = 3 * 1
-	self.amr12.spread.moving_steelsight = 2 * 1
+	self.amr12.spread.standing = 3
+	self.amr12.spread.crouching = 2
+	self.amr12.spread.steelsight = 1
+	self.amr12.spread.moving_standing = 4
+	self.amr12.spread.moving_crouching = 3
+	self.amr12.spread.moving_steelsight = 2
 	self.amr12.kick.standing = self.new_m4.kick.standing
 	self.amr12.kick.crouching = self.new_m4.kick.crouching
 	self.amr12.kick.steelsight = self.new_m4.kick.steelsight
 	self.amr12.stats = {
-		damage = 45,
-		spread = 3,
-		recoil = 4,
-		spread_moving = 7,
+		damage = 30,
+		spread = 8,
+		recoil = 18,
 		zoom = 1,
-		concealment = 18,
-		suppression = 6,
-		alert_size = 6,
+		concealment = 25,
+		suppression = 5,
+		alert_size = 5,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -10117,7 +10116,7 @@ if self.sg416 then --Gambyt's SG416
 		recoil = 20,
 		spread_moving = 6,
 		zoom = 1,
-		concealment = 26,
+		concealment = 22,
 		suppression = 8,
 		alert_size = 8,
 		extra_ammo = 101,
@@ -10149,9 +10148,8 @@ if self.spike then --Gambyt's Spike Rifle
 	self.spike.kick.steelsight = self.new_m4.kick.steelsight		
 	self.spike.stats = {
 		damage = 30,
-		spread = 16,
-		recoil = 22,
-		spread_moving = 6,
+		spread = 15,
+		recoil = 20,
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
@@ -10227,11 +10225,10 @@ if self.lebman then --Gambyt's Vendetta 38 Pistol
 	self.lebman.kick.steelsight = self.new_m4.kick.steelsight
 	self.lebman.stats = {
 		damage = 30,
-		spread = 15,
-		recoil = 18,
-		spread_moving = 5,
+		spread = 17,
+		recoil = 20,
 		zoom = 1,
-		concealment = 27,
+		concealment = 26,
 		suppression = 7,
 		alert_size = 7,
 		extra_ammo = 101,
@@ -10273,10 +10270,9 @@ if self.sgs then --Gambyt's Guerilla 308.
 	self.sgs.stats = {
 		damage = 90,
 		spread = 16,
-		recoil = 13,
-		spread_moving = 24,
+		recoil = 12,
 		zoom = 1,
-		concealment = 15,
+		concealment = 18,
 		suppression = 4,
 		alert_size = 4,
 		extra_ammo = 101,
@@ -10311,9 +10307,9 @@ if self.beck then --Gambyt's Reinbeck M1 Shotgun
 	self.beck.spread.moving_standing = 4 * 1
 	self.beck.spread.moving_crouching = 3 * 1
 	self.beck.spread.moving_steelsight = 2 * 1
-	self.beck.kick.standing = self.new_m4.kick.standing
-	self.beck.kick.crouching = self.new_m4.kick.crouching
-	self.beck.kick.steelsight = self.new_m4.kick.steelsight
+	self.beck.kick.standing = self.huntsman.kick.standing
+	self.beck.kick.crouching = self.huntsman.kick.crouching
+	self.beck.kick.steelsight = self.huntsman.kick.steelsight
 	self.beck.single.fire_rate = 0.5
 	self.beck.fire_mode_data.fire_rate = 0.5
 	self.beck.AMMO_MAX = 40 
@@ -10322,11 +10318,10 @@ if self.beck then --Gambyt's Reinbeck M1 Shotgun
 	self.beck.AMMO_PICKUP = self:_pickup_chance(40, 2)
 	self.beck.stats = {
 		damage = 90,
-		spread = 10,
-		recoil = 18,
-		spread_moving = 5,
+		spread = 5,
+		recoil = 11,
 		zoom = 1,
-		concealment = 15,
+		concealment = 18,
 		suppression = 4,
 		alert_size = 4,
 		extra_ammo = 101,
@@ -10398,8 +10393,8 @@ if self.smolak then --Gambyt's AK Draco Pistol
 	self.smolak.kick.steelsight = self.new_m4.kick.steelsight		
 	self.smolak.stats = {
 		damage = 45,
-		spread = 17,
-		recoil = 16,
+		spread = 18,
+		recoil = 17,
 		spread_moving = 5,
 		zoom = 1,
 		concealment = 25,
@@ -10464,6 +10459,41 @@ if self.cold then --Gambyt's VMP Classic Crosskill
 	}
 	self.cold.stats_modifiers = nil
 	self.cold.panic_suppression_chance = 0.0
+end
+
+if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
+	self.aknato.tactical_reload = 1
+	self.aknato.spread = {
+		standing = 3,
+		crouching = 2,
+		steelsight = 1,
+		moving_standing = 4,
+		moving_crouching = 3,
+		moving_steelsight = 2
+	}
+	self.aknato.CLIP_AMMO_MAX = 30
+	self.aknato.AMMO_MAX = 150
+	self.aknato.FIRE_MODE = "auto"				
+	self.aknato.CAN_TOGGLE_FIREMODE = true
+	self.aknato.AMMO_PICKUP = self:_pickup_chance(150, 2)
+	self.aknato.kick.standing = self.new_m4.kick.standing
+	self.aknato.kick.crouching = self.new_m4.kick.crouching
+	self.aknato.kick.steelsight = self.new_m4.kick.steelsight		
+	self.aknato.stats = {
+		damage = 24,
+		spread = 18,
+		recoil = 21,
+		zoom = 1,
+		concealment = 25,
+		suppression = 8,
+		alert_size = 8,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.aknato.stats_modifiers = nil
+	self.aknato.panic_suppression_chance = 0.0
 end
 
 if self.m590 then --Silent Enforcer and GT's Mossberg 590

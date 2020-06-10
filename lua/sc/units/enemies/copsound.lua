@@ -219,6 +219,9 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 				sound_name = "x01a_any_3p"
 				fixed_sound = true
 				--log("l4N IS FUCKIGN DEAD WTF NOOOO")
+			elseif sound_name == "x01a_any_3p" then
+				sound_name = "l1n_x02a_any_3p"
+				--log("l4N BONE HURTY JUICE")
 			end
 		end
 		

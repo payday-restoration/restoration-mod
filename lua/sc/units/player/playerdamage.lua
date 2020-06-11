@@ -487,6 +487,7 @@ function PlayerDamage:damage_explosion(attack_data)
 
 		return
 	else
+		managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
 		if self:get_real_armor() > 0 or attack_data.damage == 0 then
 			self._unit:sound():play("player_hit")
 		else

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14">
+  <!--<network sync="spawn" />-->
+  <!-- <network sync="bodies" remote_unit="units/weapons/frag_grenade/frag_grenade_hus" sync_rotation="false" sync_position="true"/> -->
+  <object file="units/payday2/weapons/wpn_frag_grenade/wpn_frag_grenade_husk" />
+  <dependencies>
+    <depends_on bnk="soundbanks/weapon_trip_mine" />
+  </dependencies>
+  <extensions>
+  	<!-- <extension name="base" class="FragGrenade" />
+    <extension name="unit_data" class="ScriptUnitData" /> -->
+  </extensions>
+   <sounds>
+    <default_soundsource source="rp_grenade_husk" />
+  </sounds>
+</unit>

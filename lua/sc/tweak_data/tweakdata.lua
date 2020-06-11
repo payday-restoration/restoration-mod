@@ -249,6 +249,15 @@ tweak_data.projectiles.smoke_screen_grenade.init_timer = 0
 tweak_data.projectiles.smoke_screen_grenade.accuracy_roll_chance = 0.5
 tweak_data.projectiles.smoke_screen_grenade.accuracy_fail_spread = {5, 10}
 
+--Bravo grenades.
+tweak_data.projectiles.bravo_frag = {
+	name_id = "bm_bravo_frag",
+	damage = 125, --120 damage at point blank.
+	player_damage = 125,
+	curve_pow = 0.35,
+	range = 500
+}
+
 --But why--
 tweak_data.team_ai.stop_action.delay = 0.8
 tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999

@@ -20,6 +20,10 @@
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/undercover" force="true"/>
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/dah" force="true"/>
 	<texture path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>
+
+	<!-- Bravo Grenades, probably best moved to a better spot later -->
+	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" load="true"/>
+	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" load="true"/>
 	
 	<!--New logo-->
 	<texture path="guis/textures/game_small_logo" force="true"/>

@@ -1114,6 +1114,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	}
 	]]--
 
+	table.insert(self._projectiles_index, "bravo_frag")
+
 	--Throwables--
 	self.projectiles.wpn_prj_four.max_amount = 9
 	self.projectiles.wpn_prj_four.repeat_expire_t = 0.5
@@ -1170,6 +1172,18 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--Sicaro Smoke 
 	--self.projectiles.smoke_screen_grenade.animation = "throw_grenade_com"					--throw_grenade_com
 	--self.projectiles.smoke_screen_grenade.anim_global_param = "projectile_frag_com"		--projectile_frag_com	
+
+	self.projectiles.bravo_frag = {}
+	self.projectiles.bravo_frag.damage = 12 --120 damage at point blank.
+	self.projectiles.bravo_frag.player_damage = 12
+	self.projectiles.bravo_frag.curve_pow = 0.5
+	self.projectiles.bravo_frag.range = 500
+	self.projectiles.bravo_frag.name_id = "bm_bravo_frag"
+	self.projectiles.bravo_frag.unit = "units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"
+	self.projectiles.bravo_frag.unit_dummy = "units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk"
+	self.projectiles.bravo_frag.throwable = false
+	self.projectiles.bravo_frag.is_a_grenade = true
+	self.projectiles.bravo_frag.is_explosive = true
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins

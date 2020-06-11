@@ -555,7 +555,7 @@ function CopActionShoot:set_sniper_focus_sound(sound_progress)
 end
 
 function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, grenade_type)
-	if grenade_type == "frag" or grenade_type == "molotov" then
+	if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "molotov" then
 		if ProjectileBase.throw_projectile(grenade_type, shoot_from_pos, target_vec, nil, self._unit, true) then
 			return true
 		end
@@ -655,19 +655,22 @@ function CopActionShoot:update(t)
 		if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
 			if self._throw_frag and self._ext_brain._throw_frag_t < t then				
 				local is_spring = self._ext_base._tweak_table == "spring"					
-				local frag_cooldown = 30
+				local frag_cooldown = 20
 				
 				local frag_roll_chance = is_spring and 1 or 0.25
 				local frag_roll = math_random() <= frag_roll_chance					
+				local grenade_type = "bravo_frag"
 									
 				if is_spring then
 					frag_cooldown = 30
+					grenade_type = "frag"
 				end
 				
 				self._ext_brain._throw_frag_t = t + frag_cooldown
 
 				if frag_roll then
-					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "frag") then
+					log(grenade_type)
+					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type) then
 						self._ext_movement:play_redirect("throw_grenade")
 						self._unit:sound():say("use_gas", true, nil, true)
 						managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")

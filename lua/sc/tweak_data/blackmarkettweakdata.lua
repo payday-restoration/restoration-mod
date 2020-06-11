@@ -1184,6 +1184,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.bravo_frag.throwable = false
 	self.projectiles.bravo_frag.is_a_grenade = true
 	self.projectiles.bravo_frag.is_explosive = true
+	self.projectiles.bravo_frag.add_trail_effect = true
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins

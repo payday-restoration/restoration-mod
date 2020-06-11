@@ -19,19 +19,7 @@
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/counterfeit" force="true"/>
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/undercover" force="true"/>
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/dah" force="true"/>
-	<texture path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>
-	
-	<!-- Bravo Grenades, probably best moved to a better spot later -->
-	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" load="true"/>
-	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" load="true"/>
-	<cooked_physics path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
-	<material_config path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
-	<model path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
-	<object path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
-	<sequence_manager path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
-	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_df"/>	
-	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_nm"/>
-	<effect path="effects/payday2/particles/explosions/wpn_npc_bravo_frag_flash"/>		
+	<texture path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>	
 	
 	<!--New logo-->
 	<texture path="guis/textures/game_small_logo" force="true"/>
@@ -2361,7 +2349,19 @@
 	<unit path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"  load="true"/>
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_contour" />
-	<unit path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_husk"  load="true"/>	
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_husk"  load="true"/>
+
+	<!-- Bravo Grenades -->
+	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" load="true"/>
+	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" load="true"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<model path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<object path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<sequence_manager path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_df"/>	
+	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_nm"/>
+	<effect path="effects/payday2/particles/explosions/wpn_npc_bravo_frag_flash"/>	
 	
 	<!--cool hat bro-vo-->
 	<object path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />

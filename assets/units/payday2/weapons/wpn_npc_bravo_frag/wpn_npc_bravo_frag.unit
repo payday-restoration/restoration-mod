@@ -2,10 +2,11 @@
 <unit type="item" slot="14">
 	<network sync="spawn" />
   <!-- <network sync="unit" remote_unit="units/weapons/frag_grenade/frag_grenade" sync_rotation="false" sync_position="true"/> -->
-  <object file="units/payday2/weapons/wpn_frag_grenade/wpn_frag_grenade" />
+  <object file="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" />
 	<dependencies>
-    <!-- <depends_on effect="effects/particles/explosions/explosion_grenade" /> -->
-		<depends_on unit="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" />
+    <depends_on effect="effects/particles/explosions/explosion_grenade" />
+    <depends_on effect="effects/payday2/particles/explosions/wpn_npc_bravo_frag_flash" />	
+	<depends_on unit="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" />
     <depends_on effect="effects/payday2/particles/explosions/grenade_explosion" />
     <depends_on effect="effects/particles/fire/small_light_fire" />
     <depends_on effect="effects/payday2/particles/impacts/stone_explosion_impact_pd2" />

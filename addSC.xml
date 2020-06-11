@@ -23,7 +23,15 @@
 	
 	<!-- Bravo Grenades, probably best moved to a better spot later -->
 	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" load="true"/>
-	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" load="true"/>	
+	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" load="true"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<model path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<object path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<sequence_manager path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_df"/>	
+	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_nm"/>
+	<effect path="effects/payday2/particles/explosions/wpn_npc_bravo_frag_flash"/>		
 	
 	<!--New logo-->
 	<texture path="guis/textures/game_small_logo" force="true"/>

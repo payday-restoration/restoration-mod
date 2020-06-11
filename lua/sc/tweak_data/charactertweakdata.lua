@@ -206,11 +206,15 @@ function CharacterTweakData:_init_security(presets)
 	self.security.deathguard = false
 	self.security.chatter = presets.enemy_chatter.guard
 	self.security.has_alarm_pager = true
+	if is_murky then
+		self.security.radio_prefix = "fri_"
+	end			
 	self.security.steal_loot = nil
 	self.security.static_dodge_preset = true
 	self.security.shooting_death = false
 	self.security.heal_cooldown = 2.5
 	table.insert(self._enemy_list, "security")
+	
 	self.security_undominatable = deep_clone(self.security)
 	self.security_undominatable.surrender = nil
 	self.security_undominatable.unintimidateable = true
@@ -327,11 +331,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.cop.speech_prefix_p2 = "n"
 	self.cop.speech_prefix_count = 4
-	if job == "crojob2" or job == "welcome_to_the_jungle_2" or job == "dark" or job == "kosugi" or job == "arm_for" then
-		self.cop.access = "security"
-	else
-		self.cop.access = "fbi"
-	end
+	self.cop.access = "fbi"
 	self.cop.silent_priority_shout = "f37"
 	self.cop.dodge = presets.dodge.average
 	self.cop.deathguard = true
@@ -344,12 +344,7 @@ function CharacterTweakData:_init_cop(presets)
 		self.cop.steal_loot = true
 	end
 	self.cop.static_dodge_preset = true
-	if job == "crojob2" or job == "welcome_to_the_jungle_2" or job == "dark" or job == "kosugi" or job == "arm_for" then
-		self.cop.has_alarm_pager = true
-		self.cop.radio_prefix = "fri_"
-	else
-		self.cop.has_alarm_pager = false
-	end		
+	self.cop.has_alarm_pager = false
 	self.cop.heal_cooldown = 2.5
 	table.insert(self._enemy_list, "cop")
 	self.cop_scared = deep_clone(self.cop)

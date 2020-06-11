@@ -254,7 +254,7 @@ tweak_data.projectiles.bravo_frag = {
 	name_id = "bm_bravo_frag",
 	damage = 12.5, --125 damage at point blank.
 	player_damage = 12.5,
-	curve_pow = 0.35,
+	curve_pow = 0.25,
 	range = 500
 }
 

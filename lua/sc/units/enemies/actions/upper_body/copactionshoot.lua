@@ -653,18 +653,17 @@ function CopActionShoot:update(t)
 		local proceed_as_usual = true
 
 		if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
-			if self._throw_frag and self._ext_brain._throw_frag_t < t then				
-				local is_spring = self._ext_base._tweak_table == "spring"					
-				local frag_cooldown = 20
+			if self._throw_frag and self._ext_brain._throw_frag_t < t and 1500 >= mvec3_dis(target_pos, shoot_from_pos) then
+				local is_spring = self._ext_base._tweak_table == "spring"	
+				local frag_cooldown = 6
+				if is_spring then
+					frag_cooldown = 12
+				end
 				
-				local frag_roll_chance = is_spring and 1 or 0.25
-				local frag_roll = math_random() <= frag_roll_chance					
+				local frag_roll_chance = is_spring and 1 or 0.2
+				local frag_roll = math_random() <= frag_roll_chance	
 				local grenade_type = "bravo_frag"
 									
-				if is_spring then
-					frag_cooldown = 30
-					grenade_type = "frag"
-				end
 				
 				self._ext_brain._throw_frag_t = t + frag_cooldown
 

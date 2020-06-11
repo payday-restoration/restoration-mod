@@ -20,10 +20,10 @@
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/undercover" force="true"/>
 	<texture path="guis/dlcs/bro/textures/pd2/crimenet/dah" force="true"/>
 	<texture path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>
-
+	
 	<!-- Bravo Grenades, probably best moved to a better spot later -->
 	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" load="true"/>
-	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" load="true"/>
+	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" load="true"/>	
 	
 	<!--New logo-->
 	<texture path="guis/textures/game_small_logo" force="true"/>
@@ -205,11 +205,11 @@
 	<object path="units/payday2/characters/ene_security_7/ene_security_7" force="true" />	
 
 	<!--Corrected NPC Weapon Sounds-->	
-	<unit path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true" />		
-	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true"/>	
-	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" force="true" />			
-	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" />	
-	<unit path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" />		
+	<unit path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true" load="true" />		
+	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true" load="true"/>	
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" force="true" load="true"/>			
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" load="true"/>	
+	<unit path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" load="true"/>		
 
 	<!--Reaper Bullet Impact Fixes-->	
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />
@@ -760,7 +760,7 @@
 	<object path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<sequence_manager path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
-	<unit path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="false" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="true" force="false"/>
 	<texture path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
 
 	<!--Russian Reaper Weapons looking nicer-->
@@ -821,7 +821,7 @@
 	<material_config path="units/payday2/characters/ene_mememan_2/ene_mememan_2_contour" force="false"/>
 	<unit path="units/payday2/characters/ene_mememan_2/ene_mememan_2_husk" force="false" load="true"/>	
 	
-	<unit path="units/payday2/weapons/wpn_npc_mini/x_mini_npc" load="false" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_mini/x_mini_npc" load="true" force="false"/>
 
 	<!--MemeMan2 Mod-->	
 	<unit path="units/payday2/characters/ene_acc_mememan_2_throat/ene_acc_mememan_2_throat" load="false"/>

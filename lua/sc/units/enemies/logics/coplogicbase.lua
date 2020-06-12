@@ -33,6 +33,13 @@ local table_insert = table.insert
 local table_contains = table.contains
 local tmp_vec1 = Vector3()
 local tmp_vec2 = Vector3()
+local REACT_AIM = AIAttentionObject.REACT_AIM
+local REACT_ARREST = AIAttentionObject.REACT_ARREST
+local REACT_COMBAT = AIAttentionObject.REACT_COMBAT
+local REACT_SCARED = AIAttentionObject.REACT_SCARED
+local REACT_SHOOT = AIAttentionObject.REACT_SHOOT
+local REACT_SURPRISED = AIAttentionObject.REACT_SURPRISED
+local REACT_SUSPICIOUS = AIAttentionObject.REACT_SUSPICIOUS
 
 CopLogicBase._AGGRESSIVE_ALERT_TYPES = {
 	vo_distress = true,
@@ -51,6 +58,32 @@ CopLogicBase._DANGEROUS_ALERT_TYPES = {
 	fire = true
 }
 
+function CopLogicBase.on_importance(data)
+	if not data.important or not data.internal_data then
+		return
+	end
+
+	local internal_data = data.internal_data
+	local detection_id = internal_data.detection_task_key
+	local update_func_id = internal_data.update_queue_id
+	local update_func2_id = internal_data.upd_task_key
+
+	local e_manager = managers.enemy
+	local update_task = e_manager.update_queue_task
+
+	if detection_id then
+		update_task(e_manager, detection_id, nil, nil, data.t, nil, true)
+	end
+
+	if update_func_id then
+		update_task(e_manager, update_func_id, nil, nil, data.t, nil, true)
+	end
+
+	if update_func2_id then
+		update_task(e_manager, update_func2_id, nil, nil, data.t, nil, true)
+	end
+end
+
 function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_reaction)
 	local t = data.t
 	local detected_obj = data.detected_attention_objects
@@ -64,186 +97,14 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 	local chk_vis_func = my_tracker.check_visibility
 	local is_detection_persistent = managers.groupai:state():is_detection_persistent()
 	local delay = 2
+	local vis_mask = data.visibility_slotmask
 	local player_importance_wgt = data.unit:in_slot(managers.slot:get_mask("enemies")) and {}
-
-	local function _angle_chk(attention_pos, dis, strictness)
-		mvec3_dir(tmp_vec1, my_pos, attention_pos)
-
-		my_head_fwd = my_head_fwd or data.unit:movement():m_head_rot():z()
-		local angle = mvec3_angle(my_head_fwd, tmp_vec1)
-		local angle_max = math_lerp(180, my_data.detection.angle_max, math_clamp((dis - 150) / 700, 0, 1))
-
-		if angle_max > angle * strictness then
-			return true
-		end
-	end
-
-	local function _angle_and_dis_chk(handler, settings, attention_pos)
-		attention_pos = attention_pos or handler:get_detection_m_pos()
-		local dis = mvec3_dir(tmp_vec1, my_pos, attention_pos)
-
-		if my_data.detection.use_uncover_range and settings.uncover_range and dis < settings.uncover_range then
-			return -1, 0
-		end
-
-		local dis_multiplier, angle_multiplier = nil
-		local max_dis = my_data.detection.dis_max
-
-		if settings.max_range then
-			max_dis = math_min(max_dis, settings.max_range)
-		end
-
-		if settings.detection and settings.detection.range_mul then
-			max_dis = max_dis * settings.detection.range_mul
-		end
-
-		dis_multiplier = dis / max_dis
-
-		if dis_multiplier < 1 then
-			if settings.notice_requires_FOV then
-				my_head_fwd = my_head_fwd or data.unit:movement():m_head_rot():z()
-				local angle = mvec3_angle(my_head_fwd, tmp_vec1)
-
-				if not my_data.detection.use_uncover_range and angle < 55 and settings.uncover_range and dis < settings.uncover_range then
-					return -1, 0
-				end
-
-				local angle_max = math_lerp(180, my_data.detection.angle_max, math_clamp((dis - 150) / 700, 0, 1))
-				angle_multiplier = angle / angle_max
-
-				if angle_multiplier < 1 then
-					return angle, dis_multiplier
-				end
-			else
-				return 0, dis_multiplier
-			end
-		end
-	end
-
-	local function _nearly_visible_chk(attention_info, detect_pos)
-		local side_offset = 25
-		local head_offset = 15
-		local hips_offset = 35
-		local legs_offset = 70
-
-		if attention_info.is_human_player then
-			side_offset = 20
-			head_offset = 10
-		end
-
-		local near_pos = tmp_vec1
-		local side_vec = tmp_vec2
-
-		mvec3_set(side_vec, detect_pos)
-		mvec3_sub(side_vec, my_pos)
-		mvec3_cross(side_vec, side_vec, math_up)
-		mvec3_set_length(side_vec, side_offset)
-		mvec3_set(near_pos, detect_pos)
-		mvec3_add(near_pos, side_vec)
-
-		local near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
-
-		if near_vis_ray then
-			mvec3_mul(side_vec, -2)
-			mvec3_add(near_pos, side_vec)
-
-			near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
-
-			if near_vis_ray then
-				mvec3_set(near_pos, detect_pos)
-				mvec3_set_z(near_pos, near_pos.z + head_offset)
-
-				near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
-
-				if near_vis_ray then
-
-					mvec3_set(near_pos, detect_pos)
-					mvec3_set_z(near_pos, near_pos.z - hips_offset)
-
-					near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
-
-					if near_vis_ray then
-						mvec3_set(near_pos, detect_pos)
-						mvec3_set_z(near_pos, near_pos.z - legs_offset)
-
-						near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision", "report")
-					end
-				end
-			end
-		end
-
-		if not near_vis_ray then
-			attention_info.nearly_visible = true
-			attention_info.nearly_visible_t = t
-			attention_info.release_t = nil
-
-			if attention_info.last_verified_pos then
-				mvec3_set(attention_info.last_verified_pos, detect_pos)
-			else
-				attention_info.last_verified_pos = mvec3_cpy(detect_pos)
-			end
-		end
-	end
-
-	local function _chk_record_acquired_attention_importance_wgt(attention_info)
-		if not player_importance_wgt or not attention_info.is_human_player then
-			return
-		end
-
-		local weight = mvec3_dir(tmp_vec1, attention_info.m_head_pos, my_pos)
-		local e_fwd = nil
-
-		if attention_info.is_husk_player then
-			e_fwd = attention_info.unit:movement():detect_look_dir()
-		else
-			e_fwd = attention_info.unit:movement():m_head_rot():y()
-		end
-
-		local dot = mvec3_dot(e_fwd, tmp_vec1)
-		weight = weight * weight * (1 - dot)
-
-		table_insert(player_importance_wgt, attention_info.u_key)
-		table_insert(player_importance_wgt, weight)
-	end
-
-	local function _chk_record_attention_obj_importance_wgt(u_key, attention_info)
-		if not player_importance_wgt then
-			return
-		end
-
-		local is_human_player, is_local_player, is_husk_player = nil
-
-		if attention_info.unit:base() then
-			is_local_player = attention_info.unit:base().is_local_player
-			is_husk_player = attention_info.unit:base().is_husk_player
-			is_human_player = is_local_player or is_husk_player
-		end
-
-		if not is_human_player then
-			return
-		end
-
-		local weight = mvec3_dir(tmp_vec1, attention_info.handler:get_detection_m_pos(), my_pos)
-		local e_fwd = nil
-
-		if is_husk_player then
-			e_fwd = attention_info.unit:movement():detect_look_dir()
-		else
-			e_fwd = attention_info.unit:movement():m_head_rot():y()
-		end
-
-		local dot = mvec3_dot(e_fwd, tmp_vec1)
-		weight = weight * weight * (1 - dot)
-
-		table_insert(player_importance_wgt, u_key)
-		table_insert(player_importance_wgt, weight)
-	end
 
 	for u_key, attention_info in pairs(all_attention_objects) do
 		if u_key ~= my_key and not detected_obj[u_key] then
 			local can_acquire = true
 
-			if data.cool and attention_info.unit and attention_info.unit:base() and attention_info.unit:base().is_husk_player then
+			if data.cool and attention_info.unit:base() and attention_info.unit:base().is_husk_player then
 				can_acquire = false
 			end
 
@@ -252,12 +113,53 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 					local settings = attention_info.handler:get_attention(my_access, min_reaction, max_reaction, data.team)
 
 					if settings then
-						local acquired = nil
+						local acquired, angle, dis_multiplier = nil
 						local attention_pos = attention_info.handler:get_detection_m_pos()
-						local angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, settings, attention_pos)
+						local dis = mvec3_dir(tmp_vec1, my_pos, attention_pos)
+
+						if my_data.detection.use_uncover_range and settings.uncover_range and dis < settings.uncover_range then
+							angle = -1
+							dis_multiplier = 0
+						else
+							local dis_mul = nil
+							local max_dis = my_data.detection.dis_max
+
+							if settings.max_range then
+								max_dis = math_min(max_dis, settings.max_range)
+							end
+
+							if settings.detection and settings.detection.range_mul then
+								max_dis = max_dis * settings.detection.range_mul
+							end
+
+							dis_mul = dis / max_dis
+
+							if dis_mul < 1 then
+								if settings.notice_requires_FOV then
+									my_head_fwd = my_head_fwd or data.unit:movement():m_head_rot():z()
+									local vec_angle = mvec3_angle(my_head_fwd, tmp_vec1)
+
+									if not my_data.detection.use_uncover_range and vec_angle < 55 and settings.uncover_range and dis < settings.uncover_range then
+										angle = -1
+										dis_multiplier = 0
+									else
+										local angle_max = math_lerp(180, my_data.detection.angle_max, math_clamp((dis - 150) / 700, 0, 1))
+										angle_multiplier = vec_angle / angle_max
+
+										if angle_multiplier < 1 then
+											angle = vec_angle
+											dis_multiplier = dis_mul
+										end
+									end
+								else
+									angle = 0
+									dis_multiplier = dis_mul
+								end
+							end
+						end
 
 						if angle then
-							local vis_ray = data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
+							local vis_ray = data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", vis_mask, "ray_type", "ai_vision")
 
 							if not vis_ray or vis_ray.unit:key() == u_key then
 								acquired = true
@@ -271,8 +173,31 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 							end
 						end
 
-						if not acquired then
-							_chk_record_attention_obj_importance_wgt(u_key, attention_info)
+						if not acquired and player_importance_wgt then
+							local is_human_player, is_local_player, is_husk_player = nil
+
+							if attention_info.unit:base() then
+								is_local_player = attention_info.unit:base().is_local_player
+								is_husk_player = attention_info.unit:base().is_husk_player
+								is_human_player = is_local_player or is_husk_player
+							end
+
+							if is_human_player then
+								local weight = mvec3_dir(tmp_vec1, attention_pos, my_pos)
+								local e_fwd = nil
+
+								if is_husk_player then
+									e_fwd = attention_info.unit:movement():detect_look_dir()
+								else
+									e_fwd = attention_info.unit:movement():m_head_rot():y()
+								end
+
+								local dot = mvec3_dot(e_fwd, tmp_vec1)
+								weight = weight * weight * (1 - dot)
+
+								table_insert(player_importance_wgt, u_key)
+								table_insert(player_importance_wgt, weight)
+							end
 						end
 					end
 				end
@@ -286,22 +211,34 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 		if data.cool and attention_info.is_husk_player then
 			can_detect = false
 
-			if attention_info.client_casing_suspicion then
-				local dis = mvec3_dis(data.m_pos, attention_info.m_pos)
-				attention_info.dis = dis
+			if attention_info.client_casing_suspicion or attention_info.client_peaceful_detection then
+				if t >= attention_info.next_verify_t then
+					local verify_interval = nil
 
-				if attention_info.verified then
-					attention_info.verified_t = t
-					attention_info.verified_dis = dis
+					if attention_info.identified and attention_info.verified then
+						verify_interval = attention_info.settings.verification_interval
+					else
+						verify_interval = attention_info.settings.notice_interval or attention_info.settings.verification_interval
+					end
+
+					attention_info.next_verify_t = t + verify_interval
+					delay = math_min(delay, verify_interval)
 
 					local attention_pos = attention_info.m_head_pos
+					local dis = mvec3_dis(my_pos, attention_pos)
+					attention_info.dis = dis
 
-					mvec3_set(attention_info.verified_pos, attention_pos)
+					if attention_info.verified then
+						attention_info.verified_t = t
+						attention_info.verified_dis = dis
 
-					if attention_info.last_verified_pos then
-						mvec3_set(attention_info.last_verified_pos, attention_pos)
-					else
-						attention_info.last_verified_pos = mvec3_cpy(attention_pos)
+						mvec3_set(attention_info.verified_pos, attention_pos)
+
+						if attention_info.last_verified_pos then
+							mvec3_set(attention_info.last_verified_pos, attention_pos)
+						else
+							attention_info.last_verified_pos = mvec3_cpy(attention_pos)
+						end
 					end
 				end
 			end
@@ -309,16 +246,17 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 		if can_detect then
 			if not attention_info.visible_in_this_instance and t < attention_info.next_verify_t then
-				if AIAttentionObject.REACT_SUSPICIOUS <= attention_info.reaction then
+				if REACT_SUSPICIOUS <= attention_info.reaction then
 					delay = math_min(attention_info.next_verify_t - t, delay)
 				end
 			else
+				local settings = attention_info.settings
 				local verify_interval = nil
 
 				if attention_info.identified and attention_info.verified then
-					verify_interval = attention_info.settings.verification_interval
+					verify_interval = settings.verification_interval
 				else
-					verify_interval = attention_info.settings.notice_interval or attention_info.settings.verification_interval
+					verify_interval = settings.notice_interval or settings.verification_interval
 				end
 
 				attention_info.next_verify_t = t + verify_interval
@@ -333,10 +271,51 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 						dis_multiplier = attention_info.visible_dis_multiplier
 					else
 						local attention_pos = attention_info.m_head_pos
-						angle, dis_multiplier = _angle_and_dis_chk(attention_info.handler, attention_info.settings, attention_pos)
+						local dis = mvec3_dir(tmp_vec1, my_pos, attention_pos)
+
+						if my_data.detection.use_uncover_range and settings.uncover_range and dis < settings.uncover_range then
+							angle = -1
+							dis_multiplier = 0
+						else
+							local dis_mul = nil
+							local max_dis = my_data.detection.dis_max
+
+							if settings.max_range then
+								max_dis = math_min(max_dis, settings.max_range)
+							end
+
+							if settings.detection and settings.detection.range_mul then
+								max_dis = max_dis * settings.detection.range_mul
+							end
+
+							dis_mul = dis / max_dis
+
+							if dis_mul < 1 then
+								if settings.notice_requires_FOV then
+									my_head_fwd = my_head_fwd or data.unit:movement():m_head_rot():z()
+									local vec_angle = mvec3_angle(my_head_fwd, tmp_vec1)
+
+									if not my_data.detection.use_uncover_range and vec_angle < 55 and settings.uncover_range and dis < settings.uncover_range then
+										angle = -1
+										dis_multiplier = 0
+									else
+										local angle_max = math_lerp(180, my_data.detection.angle_max, math_clamp((dis - 150) / 700, 0, 1))
+										angle_multiplier = vec_angle / angle_max
+
+										if angle_multiplier < 1 then
+											angle = vec_angle
+											dis_multiplier = dis_mul
+										end
+									end
+								else
+									angle = 0
+									dis_multiplier = dis_mul
+								end
+							end
+						end
 
 						if angle then
-							local vis_ray = attention_info.visible_ray or data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
+							local vis_ray = attention_info.visible_ray or data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", vis_mask, "ray_type", "ai_vision")
 
 							if not vis_ray or vis_ray.unit:key() == u_key then
 								noticable = true
@@ -360,10 +339,10 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 							local max_delay = my_data.detection.delay[2]
 							local angle_mul_mod = 0.25 * math_min(angle / my_data.detection.angle_max, 1)
 							local dis_mul_mod = 0.75 * dis_multiplier
-							local notice_delay_mul = attention_info.settings.notice_delay_mul or 1
+							local notice_delay_mul = settings.notice_delay_mul or 1
 
-							if attention_info.settings.detection and attention_info.settings.detection.delay_mul then
-								notice_delay_mul = notice_delay_mul * attention_info.settings.detection.delay_mul
+							if settings.detection and settings.detection.delay_mul then
+								notice_delay_mul = notice_delay_mul * settings.detection.delay_mul
 							end
 
 							local notice_delay_modified = math_lerp(min_delay * notice_delay_mul, max_delay, dis_mul_mod + angle_mul_mod)
@@ -379,7 +358,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 						attention_info.notice_progress = nil
 						attention_info.prev_notice_chk_t = nil
 						attention_info.identified = true
-						attention_info.release_t = t + attention_info.settings.release_delay
+						attention_info.release_t = t + settings.release_delay
 						attention_info.identified_t = t
 						noticable = true
 
@@ -392,13 +371,13 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 						noticable = attention_info.notice_progress
 						attention_info.prev_notice_chk_t = t
 
-						if data.cool and AIAttentionObject.REACT_SCARED <= attention_info.settings.reaction then
+						if data.cool and REACT_SCARED <= settings.reaction then
 							managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, data.unit, noticable)
 						end
 					end
 
-					if noticable ~= false and attention_info.settings.notice_clbk then
-						attention_info.settings.notice_clbk(data.unit, noticable)
+					if noticable ~= false and settings.notice_clbk then
+						settings.notice_clbk(data.unit, noticable)
 					end
 				end
 
@@ -412,33 +391,46 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 					if is_ignored then
 						CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
 					else
-						attention_info.next_verify_t = t + attention_info.settings.verification_interval
-						delay = math_min(delay, attention_info.settings.verification_interval)
+						attention_info.next_verify_t = t + settings.verification_interval
+						delay = math_min(delay, settings.verification_interval)
 						attention_info.nearly_visible = nil
 
 						local verified, vis_ray = nil
 						local attention_pos = attention_info.m_head_pos
-						local dis = mvec3_dis(data.m_pos, attention_info.m_pos)
+						local dis = mvec3_dis(my_pos, attention_pos)
 						local max_dis = my_data.detection.dis_max
 
 						if dis < max_dis * 1.2 then
-							if attention_info.settings.max_range then
-								max_dis = math_min(max_dis, attention_info.settings.max_range)
+							if settings.max_range then
+								max_dis = math_min(max_dis, settings.max_range)
 							end
 
-							if attention_info.settings.detection and attention_info.settings.detection.range_mul then
-								max_dis = max_dis * attention_info.settings.detection.range_mul
+							if settings.detection and settings.detection.range_mul then
+								max_dis = max_dis * settings.detection.range_mul
 							end
 
 							if dis < max_dis * 1.2 then
-								local in_FOV = not attention_info.settings.notice_requires_FOV or data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) or _angle_chk(attention_pos, dis, 0.8)
+								local in_FOV = not settings.notice_requires_FOV or data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask)
+
+								if not in_FOV then
+									mvec3_dir(tmp_vec1, my_pos, attention_pos)
+
+									my_head_fwd = my_head_fwd or data.unit:movement():m_head_rot():z()
+									local angle = mvec3_angle(my_head_fwd, tmp_vec1)
+									local angle_max = math_lerp(180, my_data.detection.angle_max, math_clamp((dis - 150) / 700, 0, 1))
+									local strictness = 0.8
+
+									if angle_max > angle * strictness then
+										in_FOV = true
+									end
+								end
 
 								if in_FOV then
 									if attention_info.visible_in_this_instance then
 										verified = true
 										vis_ray = attention_info.visible_ray
 									else
-										vis_ray = attention_info.visible_ray or data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", data.visibility_slotmask, "ray_type", "ai_vision")
+										vis_ray = attention_info.visible_ray or data.unit:raycast("ray", my_pos, attention_pos, "slot_mask", vis_mask, "ray_type", "ai_vision")
 
 										if not vis_ray or vis_ray.unit:key() == u_key then
 											verified = true
@@ -464,7 +456,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 							else
 								attention_info.last_verified_pos = mvec3_cpy(attention_pos)
 							end
-						elseif not data.cool and AIAttentionObject.REACT_COMBAT <= attention_info.settings.reaction and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
+						elseif not data.cool and REACT_COMBAT <= settings.reaction and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
 							local destroyed_att_data = nil
 
 							if is_detection_persistent and attention_info.criminal_record then
@@ -481,27 +473,103 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 
 								destroyed_att_data = true
 							else
-								attention_info.release_t = attention_info.release_t or t + attention_info.settings.release_delay
+								attention_info.release_t = attention_info.release_t or t + settings.release_delay
 							end
 
 							if not destroyed_att_data and vis_ray and attention_info.is_person and attention_info.verified_t and dis < 2000 then
-								local required_last_seen_t = attention_info.settings.release_delay * 0.5
+								local required_last_seen_t = attention_info.criminal_record and 3 or settings.release_delay * 0.5
 
 								if t - attention_info.verified_t < required_last_seen_t or attention_info.nearly_visible_t and t - attention_info.nearly_visible_t < required_last_seen_t then
-									_nearly_visible_chk(attention_info, attention_pos)
+									local side_offset = 25
+									local head_offset = 15
+									local hips_offset = 35
+									local legs_offset = 70
+
+									if attention_info.is_human_player then
+										side_offset = 20
+										head_offset = 10
+									end
+
+									local near_pos = tmp_vec1
+									local side_vec = tmp_vec2
+
+									mvec3_set(side_vec, attention_pos)
+									mvec3_sub(side_vec, my_pos)
+									mvec3_cross(side_vec, side_vec, math_up)
+									mvec3_set_length(side_vec, side_offset)
+									mvec3_set(near_pos, attention_pos)
+									mvec3_add(near_pos, side_vec)
+
+									local near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", vis_mask, "ray_type", "ai_vision", "report")
+
+									if near_vis_ray then
+										mvec3_mul(side_vec, -2)
+										mvec3_add(near_pos, side_vec)
+
+										near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", vis_mask, "ray_type", "ai_vision", "report")
+
+										if near_vis_ray then
+											mvec3_set(near_pos, attention_pos)
+											mvec3_set_z(near_pos, near_pos.z + head_offset)
+
+											near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", vis_mask, "ray_type", "ai_vision", "report")
+
+											if near_vis_ray then
+
+												mvec3_set(near_pos, attention_pos)
+												mvec3_set_z(near_pos, near_pos.z - hips_offset)
+
+												near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", vis_mask, "ray_type", "ai_vision", "report")
+
+												if near_vis_ray then
+													mvec3_set(near_pos, attention_pos)
+													mvec3_set_z(near_pos, near_pos.z - legs_offset)
+
+													near_vis_ray = data.unit:raycast("ray", my_pos, near_pos, "slot_mask", vis_mask, "ray_type", "ai_vision", "report")
+												end
+											end
+										end
+									end
+
+									if not near_vis_ray then
+										attention_info.nearly_visible = true
+										attention_info.nearly_visible_t = t
+										attention_info.release_t = nil
+
+										if attention_info.last_verified_pos then
+											mvec3_set(attention_info.last_verified_pos, attention_pos)
+										else
+											attention_info.last_verified_pos = mvec3_cpy(attention_pos)
+										end
+									end
 								end
 							end
 						elseif attention_info.release_t and attention_info.release_t < t then
 							CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
 						else
-							attention_info.release_t = attention_info.release_t or t + attention_info.settings.release_delay
+							attention_info.release_t = attention_info.release_t or t + settings.release_delay
 						end
 					end
 				end
 			end
 		end
 
-		_chk_record_acquired_attention_importance_wgt(attention_info)
+		if player_importance_wgt and attention_info.is_human_player then
+			local weight = mvec3_dir(tmp_vec1, attention_info.m_head_pos, my_pos)
+			local e_fwd = nil
+
+			if attention_info.is_husk_player then
+				e_fwd = attention_info.unit:movement():detect_look_dir()
+			else
+				e_fwd = attention_info.unit:movement():m_head_rot():y()
+			end
+
+			local dot = mvec3_dot(e_fwd, tmp_vec1)
+			weight = weight * weight * (1 - dot)
+
+			table_insert(player_importance_wgt, attention_info.u_key)
+			table_insert(player_importance_wgt, weight)
+		end
 
 		attention_info.visible_in_this_instance = nil
 		attention_info.visible_angle = nil
@@ -555,7 +623,7 @@ function CopLogicBase._create_detected_attention_object_data(t, my_unit, u_key, 
 	end
 
 	local verify_interval = settings.notice_interval or settings.verification_interval
-	local dis = mvec3_dis(my_unit:movement():m_pos(), m_pos)
+	local dis = mvec3_dis(my_unit:movement():m_head_pos(), m_head_pos)
 	local new_entry = {
 		verified = false,
 		verified_t = false,
@@ -620,7 +688,7 @@ function CopLogicBase.on_detected_attention_obj_modified(data, modified_u_key)
 	local old_notice_clbk = not attention_info.identified and old_settings.notice_clbk
 
 	if new_settings then
-		local switch_from_suspicious = AIAttentionObject.REACT_SCARED <= new_settings.reaction and attention_info.reaction <= AIAttentionObject.REACT_SUSPICIOUS
+		local switch_from_suspicious = REACT_SCARED <= new_settings.reaction and attention_info.reaction <= REACT_SUSPICIOUS
 		attention_info.settings = new_settings
 		attention_info.stare_expire_t = nil
 		attention_info.pause_expire_t = nil
@@ -676,8 +744,8 @@ function CopLogicBase.on_detected_attention_obj_modified(data, modified_u_key)
 		end
 	end
 
-	if AIAttentionObject.REACT_SCARED <= old_settings.reaction then
-		if not new_settings or AIAttentionObject.REACT_SCARED > new_settings.reaction then
+	if REACT_SCARED <= old_settings.reaction then
+		if not new_settings or REACT_SCARED > new_settings.reaction then
 			managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, data.unit, nil)
 		end
 	end
@@ -701,7 +769,7 @@ function CopLogicBase.should_duck_on_alert(data, alert_data)
 end
 
 function CopLogicBase._chk_nearly_visible_chk_needed(data, attention_info, u_key)
-	return attention_info.is_person
+	return attention_info.is_person and attention_info.verified_t and dis < 2000
 end
 
 function CopLogicBase.is_obstructed(data, objective, strictness, attention)
@@ -720,15 +788,29 @@ function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 		return true, true
 	end
 
-	strictness = strictness or 0
+	local strictness_mul = strictness and 1 - strictness
 
 	if objective.interrupt_health then
 		local health_ratio = data.unit:character_damage():health_ratio()
-		local too_much_damage = health_ratio < 1 and health_ratio * (1 - strictness) < objective.interrupt_health
-		local is_dead = data.unit:character_damage():dead() or health_ratio <= 0
 
-		if too_much_damage or is_dead then
-			return true, true
+		if health_ratio < 1 then
+			local too_much_damage = nil
+
+			if strictness_mul then
+				too_much_damage = health_ratio * strictness_mul < objective.interrupt_health
+			else
+				too_much_damage = health_ratio < objective.interrupt_health
+			end
+
+			if too_much_damage then
+				return true, true
+			else
+				local is_dead = data.unit:character_damage():dead() or health_ratio <= 0
+
+				if is_dead then
+					return true, true
+				end
+			end
 		end
 	end
 
@@ -737,16 +819,20 @@ function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 			local reaction_to_check = nil
 
 			if data.cool then
-				reaction_to_check = AIAttentionObject.REACT_SURPRISED
+				reaction_to_check = REACT_SURPRISED
 			else
-				reaction_to_check = AIAttentionObject.REACT_COMBAT
+				reaction_to_check = REACT_COMBAT
 			end
 			
 			if reaction_to_check <= attention.reaction then
 				if objective.interrupt_dis == -1 then
 					return true, true
 				elseif math_abs(attention.m_pos.z - data.m_pos.z) < 250 then
-					local enemy_dis = attention.dis * (1 - strictness)
+					local enemy_dis = attention.dis
+
+					if strictness_mul then
+						enemy_dis = enemy_dis * strictness_mul
+					end
 
 					if not attention.verified then
 						enemy_dis = enemy_dis * 2
@@ -758,7 +844,11 @@ function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 				end
 
 				if objective.pos and math_abs(attention.m_pos.z - objective.pos.z) < 250 then
-					local enemy_dis = mvec3_dis(objective.pos, attention.m_pos) * (1 - strictness)
+					local enemy_dis = mvec3_dis(objective.pos, attention.m_pos)
+
+					if strictness_mul then
+						enemy_dis = enemy_dis * strictness_mul
+					end
 
 					if enemy_dis < objective.interrupt_dis then
 						return true, true
@@ -791,24 +881,24 @@ function CopLogicBase._upd_suspicion(data, my_data, attention_obj)
 		local reaction, state_name = nil
 
 		if attention_obj.forced then
-			reaction = AIAttentionObject.REACT_SHOOT
+			reaction = REACT_SHOOT
 			state_name = "attack"
 		elseif attention_obj.verified then
 			if not data.char_tweak.no_arrest and attention_obj.dis < 1500 then
-				reaction = AIAttentionObject.REACT_ARREST
+				reaction = REACT_ARREST
 				state_name = "arrest"
 			elseif attention_obj.criminal_record and attention_obj.criminal_record.being_arrested then
-				reaction = AIAttentionObject.REACT_AIM
+				reaction = REACT_AIM
 				state_name = "arrest"
 			else
-				reaction = AIAttentionObject.REACT_COMBAT
+				reaction = REACT_COMBAT
 				state_name = "attack"
 			end
 		elseif data.char_tweak.calls_in then
-			reaction = AIAttentionObject.REACT_AIM
+			reaction = REACT_AIM
 			state_name = "arrest"
 		else
-			reaction = AIAttentionObject.REACT_COMBAT
+			reaction = REACT_COMBAT
 			state_name = "attack"
 		end
 
@@ -927,7 +1017,7 @@ function CopLogicBase._get_logic_state_from_reaction(data, reaction)
 	end
 
 	if data.is_converted then
-		if not reaction or reaction <= AIAttentionObject.REACT_SCARED then
+		if not reaction or reaction <= REACT_SCARED then
 			return "idle"
 		else
 			return "attack"
@@ -950,13 +1040,13 @@ function CopLogicBase._get_logic_state_from_reaction(data, reaction)
 		end
 	end
 
-	if not reaction or reaction <= AIAttentionObject.REACT_SCARED then
+	if not reaction or reaction <= REACT_SCARED then
 		if can_call_the_police then
 			return "arrest"
 		else
 			return "idle"
 		end
-	elseif reaction == AIAttentionObject.REACT_ARREST and not data.char_tweak.no_arrest then
+	elseif reaction == REACT_ARREST and not data.char_tweak.no_arrest then
 		return "arrest"
 	elseif can_call_the_police then
 		if not focus_enemy then
@@ -981,7 +1071,7 @@ function CopLogicBase._chk_call_the_police(data)
 	local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, data.objective, nil, nil)
 
 	if allow_trans and data.logic.is_available_for_assignment(data) then
-		if not data.attention_obj or not data.attention_obj.verified_t or data.t - data.attention_obj.verified_t > 6 or data.attention_obj.reaction <= AIAttentionObject.REACT_ARREST then
+		if not data.attention_obj or not data.attention_obj.verified_t or data.t - data.attention_obj.verified_t > 6 or data.attention_obj.reaction <= REACT_ARREST then
 			if obj_failed then
 				data.objective_failed_clbk(data.unit, data.objective)
 			end

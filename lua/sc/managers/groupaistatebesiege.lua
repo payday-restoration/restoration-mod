@@ -439,7 +439,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			self:set_difficulty(nil, 0.166667)
 
 			--End of assault down restore. 
-			managers.player:add_revive()
+			managers.player:check_enduring()
 			return
 		end
 	end

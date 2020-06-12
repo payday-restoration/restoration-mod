@@ -258,6 +258,11 @@ tweak_data.projectiles.bravo_frag = {
 	range = 500
 }
 
+if difficulty_index <= 4 then --Grenades deal reduced damage on lower difficulties.
+	tweak_data.projectiles.bravo_frag.damage = 9.0
+	tweak_data.projectiles.bravo_frag.player_damage = 9.0
+end
+
 --But why--
 tweak_data.team_ai.stop_action.delay = 0.8
 tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999

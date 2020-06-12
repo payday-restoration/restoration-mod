@@ -881,6 +881,15 @@ function GroupAIStateBase:on_enemy_unregistered(unit)
 		return
 	end
 
+	local objective = unit:brain():objective()
+
+	if objective and objective.fail_clbk then
+		local fail_clbk = objective.fail_clbk
+		objective.fail_clbk = nil
+
+		fail_clbk(unit)
+	end
+
 	local e_data = self._police[u_key]
 
 	if e_data.importance > 0 then
@@ -1302,6 +1311,109 @@ function GroupAIStateBase:on_criminal_suspicion_progress(u_suspect, u_observer, 
 					u_suspect = u_suspect
 				}
 			end
+		end
+	end
+end
+
+function GroupAIStateBase:set_whisper_mode(state)
+	state = state and true or false
+
+	if state == self._whisper_mode then
+		return
+	end
+
+	self._whisper_mode = state
+	self._whisper_mode_change_t = TimerManager:game():time()
+
+	self:set_ambience_flag()
+
+	if Network:is_server() then
+		if state then
+			self:chk_register_removed_attention_objects()
+		else
+			self:chk_unregister_irrelevant_attention_objects()
+
+			if not self._switch_to_not_cool_clbk_id then
+				self._switch_to_not_cool_clbk_id = "GroupAI_delayed_not_cool"
+
+				managers.enemy:add_delayed_clbk(self._switch_to_not_cool_clbk_id, callback(self, self, "_clbk_switch_enemies_to_not_cool"), self._t + 1)
+			end
+		end
+	end
+
+	self:_call_listeners("whisper_mode", state)
+
+	if not state then
+		self:_clear_criminal_suspicion_data()
+	end
+end
+
+function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracker, team, SO_access)
+	local store_instead = nil
+
+	if Network:is_server() and not self:whisper_mode() then
+		if not nav_tracker and not unit:vehicle_driving() or unit:in_slot(1) then
+			store_instead = true
+		end
+	end
+
+	if store_instead then
+		local attention_info = {
+			unit = unit,
+			handler = handler,
+			nav_tracker = nav_tracker,
+			team = team,
+			SO_access = SO_access
+		}
+
+		self:store_removed_attention_object(unit:key(), attention_info)
+
+		return
+	end
+
+	self._attention_objects.all[unit:key()] = {
+		unit = unit,
+		handler = handler,
+		nav_tracker = nav_tracker,
+		team = team,
+		SO_access = SO_access
+	}
+
+	self:on_AI_attention_changed(unit:key())
+end
+
+function GroupAIStateBase:chk_register_removed_attention_objects()
+	if not self._removed_attention_objects then
+		return
+	end
+
+	local all_attention_objects = self:get_all_AI_attention_objects()
+
+	for u_key, att_info in pairs (self._removed_attention_objects) do
+		if all_attention_objects[u_key] then
+			self._removed_attention_objects[u_key] = nil
+		elseif alive(attention_info.unit) then
+			self:register_AI_attention_object(att_info.unit, att_info.handler, att_info.nav_tracker, att_info.team, att_info.SO_access)
+			self._removed_attention_objects[u_key] = nil
+		end
+	end
+
+	self._removed_attention_objects = nil
+end
+
+function GroupAIStateBase:store_removed_attention_object(u_key, attention_info)
+	self._removed_attention_objects = self._removed_attention_objects or {}
+
+	self._removed_attention_objects[u_key] = attention_info
+end
+
+function GroupAIStateBase:chk_unregister_irrelevant_attention_objects()
+	local all_attention_objects = self:get_all_AI_attention_objects()
+
+	for u_key, att_info in pairs (all_attention_objects) do
+		if not att_info.nav_tracker and not att_info.unit:vehicle_driving() or att_info.unit:in_slot(1) then
+			self:store_removed_attention_object(u_key, att_info)
+			att_info.handler:set_attention(nil)
 		end
 	end
 end

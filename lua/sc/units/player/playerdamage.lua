@@ -762,7 +762,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 					--managers.player:set_player_state("tased")
 					managers.player:activate_titan_tased() --Apply slow from titan taser.
 					attack_data.damage = attack_data.damage * 0
-					self.tase_time = _time + 3 --Update cooldown
+					self.tase_time = _time + 1 --Update cooldown
 				end
 			end
 		end		

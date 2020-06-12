@@ -853,8 +853,8 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 	end
 end
 
---Restores 1 down when enough assaults have passed and bots have the related skill. Counter is paused when player is in custody or has max revives.
-function PlayerManager:add_revive()
+--Restores 1 down when enough assaults have passed and bots have the skill. Counter is paused when player is in custody or has max revives; or if the crew loses access to the skill.
+function PlayerManager:check_enduring()
 	if self:has_category_upgrade("team", "crew_scavenge") then
 		if not self._assaults_to_extra_revive then
 			self._assaults_to_extra_revive = self:crew_ability_upgrade_value("crew_scavenge")
@@ -868,8 +868,10 @@ function PlayerManager:add_revive()
 					damage_ext:add_revive()
 					managers.hud:show_hint( { text = "Assaults Survived- Restoring 1 Down" } )
 					self._assaults_to_extra_revive = self:crew_ability_upgrade_value("crew_scavenge")
+				elseif self._assaults_to_extra_revive == 1 then
+					managers.hud:show_hint( { text = "1 Assault Remaining Until Down Restore." } )
 				else
-					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assault(s) Remaining To Down Restore." } )
+					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assaults Remaining Until Down Restore." } )
 				end
 			end
 		end

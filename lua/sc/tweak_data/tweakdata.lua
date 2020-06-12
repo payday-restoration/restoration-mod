@@ -252,8 +252,8 @@ tweak_data.projectiles.smoke_screen_grenade.accuracy_fail_spread = {5, 10}
 --Bravo grenades.
 tweak_data.projectiles.bravo_frag = {
 	name_id = "bm_bravo_frag",
-	damage = 12.5, --125 damage at point blank.
-	player_damage = 12.5,
+	damage = 15.0, --150 damage at point blank.
+	player_damage = 15.0,
 	curve_pow = 0.25,
 	range = 500
 }

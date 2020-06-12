@@ -653,7 +653,7 @@ function CopActionShoot:update(t)
 		local proceed_as_usual = true
 
 		if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
-			if self._throw_frag and self._ext_brain._throw_frag_t < t and 1500 >= mvec3_dis(target_pos, shoot_from_pos) then
+			if self._throw_frag and self._ext_brain._throw_frag_t < t and 1600 >= mvec3_dis(target_pos, shoot_from_pos) then
 				local is_spring = self._ext_base._tweak_table == "spring"	
 				local frag_cooldown = 6
 				if is_spring then

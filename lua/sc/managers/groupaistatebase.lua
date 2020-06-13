@@ -1392,7 +1392,7 @@ function GroupAIStateBase:chk_register_removed_attention_objects()
 	for u_key, att_info in pairs (self._removed_attention_objects) do
 		if all_attention_objects[u_key] then
 			self._removed_attention_objects[u_key] = nil
-		elseif alive(attention_info.unit) then
+		elseif alive(att_info.unit) then
 			self:register_AI_attention_object(att_info.unit, att_info.handler, att_info.nav_tracker, att_info.team, att_info.SO_access)
 			self._removed_attention_objects[u_key] = nil
 		end

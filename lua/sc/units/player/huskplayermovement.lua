@@ -3,6 +3,7 @@ local mvec3_set_z = mvector3.set_z
 local mvec3_z = mvector3.z
 local mvec3_cpy = mvector3.copy
 local mvec3_dist_sq = mvector3.distance_sq
+local mvec3_lerp = mvector3.lerp
 local mrot_look = mrotation.set_look_at
 local math_up = math.UP
 local math_clamp = math.clamp

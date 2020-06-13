@@ -16,6 +16,10 @@ function CopBrain:sync_net_event(event_id, peer)
 	local peer_id = peer:id()
 	local peer_unit = managers.criminals:character_unit_by_peer_id(peer_id)
 
+	if not peer_unit then
+		return
+	end
+
 	if event_id == self._NET_EVENTS.seeing_client then
 		managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, 1, peer_id)
 	elseif event_id == self._NET_EVENTS.stopped_seeing_client then
@@ -140,7 +144,7 @@ function CopBrain:sync_net_event(event_id, peer)
 		if att_obj_data then
 			att_obj_data.handler:remove_listener("detect_" .. tostring(self._logic_data.key))
 
-			self._logic_data.detected_attention_objects[attention_info.u_key] = nil
+			self._logic_data.detected_attention_objects[peer_unit:key()] = nil
 		end
 	elseif event_id == self._NET_EVENTS.detected_suspected_client then
 		managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, true, peer_id)

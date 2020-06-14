@@ -149,6 +149,7 @@
 	<cover_data path="levels/narratives/classics/flat/cover_data" force="true" unload="true"/>
 	<continent path="levels/narratives/classics/flat/art_dhruva/art_dhruva" force="true" unload="true"/>
 	<continent path="levels/narratives/classics/flat/lights/lights" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/flat/collision/collision" force="true" unload="true"/>
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	

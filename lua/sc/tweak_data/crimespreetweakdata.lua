@@ -78,7 +78,7 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				stage_id = "arm_for",
 				id = "arm_for",
 				icon = "csm_train_forest",
-				add = debug_med_add,
+				add = 12,
 				level = tweak_data.narrative.stages.arm_for
 			},
 			{
@@ -171,6 +171,34 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				id = "bex",
 				icon = "csm_bex",
 				level = tweak_data.narrative.stages.bex
+			},
+			{
+				stage_id = "four_stores",
+				add = 4,
+				id = "four_stores",
+				icon = "csm_four_stores",
+				level = tweak_data.narrative.stages.four_stores
+			},
+			{
+				stage_id = "ukrainian_job",
+				add = 3,
+				id = "ukrainian_job",
+				icon = "csm_ukrainian_job",
+				level = tweak_data.narrative.stages.ukrainian_job
+			},
+			{
+				stage_id = "family",
+				add = 5,
+				id = "family",
+				icon = "csm_family",
+				level = tweak_data.narrative.stages.family
+			},
+			{
+				stage_id = "wetwork",
+				add = 6,
+				id = "wetwork",
+				icon = "csm_wetwork",
+				level = tweak_data.narrative.stages.wetwork
 			}
 		},
 		{
@@ -327,6 +355,20 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				id = "election_day_3_skip1",
 				icon = "csm_election_3",
 				level = tweak_data.narrative.stages.election_day_3_skip1
+			},
+			{
+				stage_id = "wetwork_burn",
+				add = 7,
+				id = "wetwork_burn",
+				icon = "csm_wetwork_burn",
+				level = tweak_data.narrative.stages.wetwork_burn
+			},
+			{
+				stage_id = "junk",
+				add = 5,
+				id = "junk",
+				icon = "csm_junk",
+				level = tweak_data.narrative.stages.junk
 			}
 		},
 		{

@@ -166,4 +166,58 @@ function HudIconsTweakData:init()
 			csm_h
 		}
 	}
+	self.csm_family = {
+		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
+		texture_rect = {
+			csm_w * 5,
+			csm_h * 1,
+			csm_w,
+			csm_h
+		}
+	}
+	self.csm_four_stores = {
+		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
+		texture_rect = {
+			csm_w * 6,
+			csm_h * 1,
+			csm_w,
+			csm_h
+		}
+	}
+	self.csm_ukrainian_job = {
+		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
+		texture_rect = {
+			csm_w * 0,
+			csm_h * 2,
+			csm_w,
+			csm_h
+		}
+	}
+	self.csm_junk = {
+		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
+		texture_rect = {
+			csm_w * 1,
+			csm_h * 2,
+			csm_w,
+			csm_h
+		}
+	}
+	self.csm_wetwork = {
+		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
+		texture_rect = {
+			csm_w * 2,
+			csm_h * 2,
+			csm_w,
+			csm_h
+		}
+	}
+	self.csm_wetwork_burn = {
+		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
+		texture_rect = {
+			csm_w * 3,
+			csm_h * 2,
+			csm_w,
+			csm_h
+		}
+	}
 end

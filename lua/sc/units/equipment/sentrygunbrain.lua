@@ -425,6 +425,8 @@ function SentryGunBrain:_select_focus_attention(t)
 	local best_focus_attention, best_focus_weight = nil
 	local best_focus_reaction = 0
 	local e_manager = managers.enemy
+	local health_ratio_chk_func = self._attention_health_ratio
+	local objective_chk_func = self._attention_objective
 
 	for u_key, attention_info in pairs(self._detected_attention_objects) do
 		if best_focus_reaction < attention_info.reaction or best_focus_reaction == attention_info.reaction then

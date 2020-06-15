@@ -2652,7 +2652,6 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_damage_to_hot_1",
-					"player_no_deflection",
 					"player_level_5_armor_addend"
 				},
 				cost = 200,
@@ -2663,9 +2662,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_1",
-					"player_passive_health_multiplier_2",
-					"player_passive_health_multiplier_3"
+					"player_damage_to_hot_2"
 				},
 				cost = 400,
 				icon_xy = {0, 0},
@@ -2675,7 +2672,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_damage_to_hot_2"
+					"player_damage_to_hot_extra_ticks"
 				},
 				cost = 1000,
 				icon_xy = {2, 6},
@@ -2685,9 +2682,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_health_multiplier_4",
-					"player_passive_health_multiplier_5",
-					"player_passive_health_multiplier_6"
+					"player_damage_to_hot_3"
 				},
 				cost = 2400,
 				icon_xy = {4, 0},
@@ -2697,8 +2692,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_damage_to_hot_extra_ticks",
-					"player_damage_to_hot_3",
+					"player_hot_speed_bonus",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
@@ -2795,7 +2789,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_armor_max_health_store_multiplier"
+					"player_armor_max_health_store_multiplier",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 1000,
 				icon_xy = {5, 7},
@@ -2806,7 +2801,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_armor_health_store_amount_3",
-					"player_passive_dodge_chance_2"
+					"player_passive_dodge_chance_3"
 				},
 				cost = 2400,
 				icon_xy = {6, 7},
@@ -3340,7 +3335,8 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck21_5_desc_sc",
 				name_id = "menu_deck21_5",
 				upgrades = {
-					"player_pocket_ecm_heal_on_kill_1"
+					"player_pocket_ecm_heal_on_kill_1",
+					"player_passive_dodge_chance_2"
 				},
 				icon_xy = {
 					2,
@@ -3354,7 +3350,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck21_7",
 				upgrades = {
 					"player_perk_armor_regen_timer_multiplier_1",
-					"player_passive_dodge_chance_2"
+					"player_passive_dodge_chance_3"
 				},
 				icon_xy = {
 					6,

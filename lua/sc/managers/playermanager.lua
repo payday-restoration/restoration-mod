@@ -57,6 +57,13 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 		multiplier = multiplier + self:detection_risk_movement_speed_bonus()
 	end
 
+	--Grinder speed bonus.
+	local player_unit = self:player_unit()
+	if alive(player_unit) then
+		local hot_stacks = player_unit:character_damage()._damage_to_hot_stack
+		multiplier = multiplier + self:upgrade_value("player", "hot_speed_bonus", 0) * #hot_stacks or 0
+	end
+
 	--Removed unused "secured_bags_multiplier" nonsense.
 
 	--Second Wind

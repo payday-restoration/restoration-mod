@@ -1013,7 +1013,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Silent Killer--
 			--Second Wind--
 				--Basic
-					self.values.temporary.damage_speed_multiplier = {{1.15, 3}}
+					self.values.temporary.damage_speed_multiplier = {{1.10, 3}}
 				--Ace
 					self.values.player.armor_depleted_stagger_shot = {0, 3}
 
@@ -1394,6 +1394,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.4
 	}	
 	self.values.player.damage_to_hot_extra_ticks = {3}
+	self.values.player.hot_speed_bonus = {0.04}
 	
 	self.values.player.perk_armor_loss_multiplier = {
 		0.5,
@@ -2750,6 +2751,15 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "heal_over_time",
+			category = "player"
+		}
+	}
+	self.definitions.player_hot_speed_bonus = {
+		name_id = "menu_player_hot_speed_bonus",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hot_speed_bonus",
 			category = "player"
 		}
 	}

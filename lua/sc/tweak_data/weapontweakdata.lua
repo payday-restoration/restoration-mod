@@ -3519,7 +3519,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		if weap.stats and weap.stats.extra_ammo then
 			weap.stats.extra_ammo = 101
 		end
-	end				
+	end
 	
 	--Test to just give everything sniper auto hit cause reasons
 	for i, weap in pairs(self) do
@@ -10578,6 +10578,18 @@ if self.hpb then --Gambyt's Browning HP
 	self.hpb.stats_modifiers = nil
 	self.hpb.panic_suppression_chance = 0.0
 end	
+
+	--Set damage falloff on shotguns.
+	for i, weap in pairs(self) do
+		if weap.categories then
+			for _, value in pairs(weap.categories) do
+				if value == "shotgun" and weap.stats then
+					weap.damage_near = 200 + 75 * (weap.stats.spread - 1)
+					weap.damage_far = weap.damage_near * 2
+				end
+			end
+		end
+	end		
 	
 end)
 

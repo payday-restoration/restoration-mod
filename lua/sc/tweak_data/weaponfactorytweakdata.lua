@@ -117,8 +117,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 	}
 	self.parts.wpn_fps_upg_ns_shot_thick.perks = {"silencer"}
 	self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}			
 	self.parts.wpn_fps_upg_ns_shot_thick.forbids = {
 		"wpn_fps_upg_a_explosive"
@@ -186,8 +186,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_ns_shot_shark.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}			
 
 end)
@@ -533,8 +533,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		spread = 1
 	}
 	self.parts.wpn_fps_upg_i_singlefire.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 	self.parts.wpn_fps_upg_i_singlefire.perks = {
 		"fire_mode_single"
@@ -557,8 +557,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		recoil = 1
 	}
 	self.parts.wpn_fps_upg_i_autofire.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}			
 	self.parts.wpn_fps_upg_i_autofire.perks = {
 		"fire_mode_auto"
@@ -581,8 +581,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		concealment = -2
 	}
 	self.parts.wpn_fps_upg_m4_g_hgrip.custom_stats = {
-		damage_near_mul = 200,
-		damage_far_mul = 400
+		damage_near_mul = 150,
+		damage_far_mul = 300
 	}
 
 	--Vanilla Rubber Grip
@@ -713,8 +713,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ak_g_hgrip.custom_stats = {
-		damage_near_mul = 200,
-		damage_far_mul = 400
+		damage_near_mul = 150,
+		damage_far_mul = 300
 	}
 	self.parts.wpn_fps_upg_ak_g_hgrip.forbids = {
 		"wpn_upg_ak_g_standard",
@@ -730,8 +730,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_ak_g_pgrip.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}		
 	self.parts.wpn_fps_upg_ak_g_pgrip.forbids = {
 		"wpn_upg_ak_g_standard",
@@ -746,8 +746,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		recoil = 1
 	}
 	self.parts.wpn_fps_upg_ak_g_wgrip.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}		
 	self.parts.wpn_fps_upg_ak_g_wgrip.forbids = {
 		"wpn_upg_ak_g_standard",
@@ -798,8 +798,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_shot_ns_king.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 		
 	--Asepsis Suppressor
@@ -830,8 +830,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		spread = -2
 	}
 	self.parts.wpn_fps_upg_m4_s_crane.custom_stats = {
-		damage_near_mul = -200,
-		damage_far_mul = -400
+		damage_near_mul = -150,
+		damage_far_mul = -300
 	}
 	
 	--War-Torn Stock
@@ -843,8 +843,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		spread = 2
 	}
 	self.parts.wpn_fps_upg_m4_s_mk46.custom_stats = {
-		damage_near_mul = 200,
-		damage_far_mul = 400
+		damage_near_mul = 150,
+		damage_far_mul = 300
 	}
 
 	--Pistol Red Dot Sight
@@ -1044,8 +1044,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		recoil = 1
 	}
 	self.parts.wpn_fps_upg_m4_g_ergo.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}	
 
 	--(CAR) Pro Grip
@@ -1062,8 +1062,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_m4_g_sniper.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 	
 	--(CAR) Drum Magazine 
@@ -1128,8 +1128,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_m4_s_standard.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}
 
 	--Tactical Stock
@@ -1146,8 +1146,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_m4_s_pts.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 	
 	--CAR-4 Override Tables
@@ -1735,8 +1735,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		concealment = -3
 	}
 	self.parts.wpn_upg_ak_s_psl.custom_stats = {
-		damage_near_mul = 300,
-		damage_far_mul = 600
+		damage_near_mul = 225,
+		damage_far_mul = 450
 	}
 	self.parts.wpn_upg_ak_s_psl.override = {
 		wpn_fps_snp_flint_s_adapter = {
@@ -1832,8 +1832,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		spread = -1
 	}
 	self.parts.wpn_upg_saiga_fg_lowerrail.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}	
 	
 	--(Izhma) Drum Mag
@@ -1892,8 +1892,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.666666666667,
 				ammo_pickup_max_mul = 0.666666666667
@@ -1907,8 +1907,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.666666666667,
 				ammo_pickup_max_mul = 0.666666666667
@@ -2706,8 +2706,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		reload = 3
 	}
 	self.parts.wpn_fps_shot_r870_body_rack.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}	
 
 	--Zombie Hunter Pump
@@ -2723,8 +2723,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		spread = -1
 	}
 	self.parts.wpn_fps_shot_r870_fg_wood.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}
 
 	--Extended Mag.
@@ -2766,8 +2766,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		spread = -1
 	}
 	self.parts.wpn_fps_shot_r870_s_solid.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}
 	
 	--Short Enough Tactical Stock
@@ -2810,8 +2810,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		concealment = -1
 	}
 	self.parts.wpn_fps_shot_r870_s_solid_big.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 	
 	--???
@@ -2821,8 +2821,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		spread = -1
 	}
 	self.parts.wpn_fps_shot_r870_s_solid_single.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}
 	
 	--Override Table
@@ -2862,8 +2862,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage = 30
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				use_heavy_kick = true,
 				ammo_pickup_min_mul = 0.666666666667,
@@ -2878,8 +2878,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage = 30
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				use_heavy_kick = true,
 				ammo_pickup_min_mul = 0.666666666667,
@@ -3020,8 +3020,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		concealment = -1
 	}
 	self.parts.wpn_fps_shot_shorty_s_solid_short.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 	
 	--Locomotive 12g override table
@@ -3061,8 +3061,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				use_heavy_kick = true,
 				ammo_pickup_min_mul = 0.666666666667,
@@ -3077,8 +3077,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				use_heavy_kick = true,
 				ammo_pickup_min_mul = 0.666666666667,
@@ -3289,8 +3289,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 		concealment = 2
 	}
 	self.parts.wpn_fps_shot_huntsman_b_short.custom_stats = {
-		damage_near_mul = -200,
-		damage_far_mul = -400
+		damage_near_mul = -150,
+		damage_far_mul = -300
 	}
 	
 	--Base reload mult to better match timers
@@ -3607,8 +3607,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200,
+			damage_near_mul = -75,
+			damage_far_mul = -150,
 			rays = 6,
 			ammo_pickup_min_mul = 0.75,
 			ammo_pickup_max_mul = 0.75
@@ -3622,8 +3622,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200,
+			damage_near_mul = -75,
+			damage_far_mul = -150,
 			rays = 6,
 			ammo_pickup_min_mul = 0.75,
 			ammo_pickup_max_mul = 0.75
@@ -4810,8 +4810,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 		spread = -1
 	}
 	self.parts.wpn_fps_sho_ben_s_solid.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}
 
 	--Override Table
@@ -4850,8 +4850,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -4865,8 +4865,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -4908,8 +4908,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 		concealment = -1
 	}
 	self.parts.wpn_fps_sho_striker_b_long.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 	
 	--Suppressed Barrel
@@ -4923,8 +4923,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 		concealment = -1
 	}
 	self.parts.wpn_fps_sho_striker_b_suppressed.custom_stats = {
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 	self.parts.wpn_fps_sho_striker_b_suppressed.perks = {"silencer"}
 	self.parts.wpn_fps_sho_striker_b_suppressed.forbids = {
@@ -4975,8 +4975,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -4990,8 +4990,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -5082,8 +5082,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200,
+			damage_near_mul = -75,
+			damage_far_mul = -150,
 			rays = 6,
 			use_heavy_kick = true,
 			ammo_pickup_min_mul = 0.666666666667,
@@ -5098,8 +5098,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200,
+			damage_near_mul = -75,
+			damage_far_mul = -150,
 			rays = 6,
 			use_heavy_kick = true,
 			ammo_pickup_min_mul = 0.666666666667,
@@ -5571,8 +5571,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		stats = {value = 1, concealment = 1, spread = -1},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5596,8 +5596,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		stats = {value = 1, concealment = 2, spread = -2},
 		custom_stats = {
-			damage_near_mul = -200,
-			damage_far_mul = -400
+			damage_near_mul = -150,
+			damage_far_mul = -300
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5621,8 +5621,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc",
 		stats = {value = 1, concealment = 3, spread = -3},
 		custom_stats = {
-			damage_near_mul = -300,
-			damage_far_mul = -600
+			damage_near_mul = -225,
+			damage_far_mul = -450
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5648,8 +5648,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = 1, recoil = -1, concealment = -1},
 		internal_part = true,
 		custom_stats = {
-			damage_near_mul = 100,
-			damage_far_mul = 200
+			damage_near_mul = 75,
+			damage_far_mul = 150
 		},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -5674,8 +5674,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = 2, recoil = -2, concealment = -2},
 		internal_part = true,
 		custom_stats = {
-			damage_near_mul = 200,
-			damage_far_mul = 400
+			damage_near_mul = 150,
+			damage_far_mul = 300
 		},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -5699,8 +5699,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc",
 		stats = {value = 1, spread = 3, recoil = -3, concealment = -3},
 		custom_stats = {
-			damage_near_mul = 300,
-			damage_far_mul = 600
+			damage_near_mul = 225,
+			damage_far_mul = 450
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5724,8 +5724,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc",
 		stats = {value = 1, spread = -1, recoil = 1},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5750,8 +5750,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = -2, recoil = 2},
 		internal_part = true,
 		custom_stats = {
-			damage_near_mul = -200,
-			damage_far_mul = -400
+			damage_near_mul = -150,
+			damage_far_mul = -300
 		},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -5774,8 +5774,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc",
 		stats = {value = 1, spread = -3, recoil = 3},
 		custom_stats = {
-			damage_near_mul = -300,
-			damage_far_mul = -600
+			damage_near_mul = -225,
+			damage_far_mul = -450
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5950,8 +5950,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		spread = -1,
 	}
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200,
+		damage_near_mul = -75,
+		damage_far_mul = -150,
 		rays = 6,
 		ammo_pickup_min_mul = 0.75,
 		ammo_pickup_max_mul = 0.75
@@ -5995,8 +5995,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	}
 	self.parts.wpn_fps_upg_a_piercing.custom_stats = {
 		rays = 6,
-		damage_near_mul = 100,
-		damage_far_mul = 200
+		damage_near_mul = 75,
+		damage_far_mul = 150
 	}
 	
 	--Dragon's Breath
@@ -6483,8 +6483,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 		spread = -1
 	}
 	self.parts.wpn_fps_sho_s_spas12_solid.custom_stats = {
-		damage_near_mul = -100,
-		damage_far_mul = -200
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}
 	
 	--Overrides
@@ -6523,8 +6523,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -6538,8 +6538,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -10473,8 +10473,8 @@ function WeaponFactoryTweakData:_init_modpack_m4_ak()
 			spread = -2
 		},
 		custom_stats = {
-			damage_near_mul = -200,
-			damage_far_mul = -400
+			damage_near_mul = -150,
+			damage_far_mul = -300
 		},			
 		texture_bundle_folder = "dlc_akm4",
 		dlc = "akm4_pack",
@@ -11139,8 +11139,8 @@ function WeaponFactoryTweakData:_init_b682()
 			concealment = 2
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},
 		texture_bundle_folder = "character_pack_bonnie",
 		dlc = "pd2_clan",
@@ -11223,8 +11223,8 @@ function WeaponFactoryTweakData:_init_b682()
 			reload = 4
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},
 		texture_bundle_folder = "character_pack_bonnie",
 		dlc = "pd2_clan"
@@ -11816,8 +11816,8 @@ function WeaponFactoryTweakData:_init_butchermodpack()
 			concealment = -1
 		},
 		custom_stats = {
-			damage_near_mul = 100,
-			damage_far_mul = 200
+			damage_near_mul = 75,
+			damage_far_mul = 150
 		},
 		perks = {"silencer"},
 		forbids = {
@@ -12478,8 +12478,8 @@ function WeaponFactoryTweakData:_init_aa12()
 			concealment = -1
 		},
 		custom_stats = {
-			damage_near_mul = 100,
-			damage_far_mul = 200
+			damage_near_mul = 75,
+			damage_far_mul = 150
 		},
 		texture_bundle_folder = "bbq",
 		dlc = "bbq"
@@ -12504,8 +12504,8 @@ function WeaponFactoryTweakData:_init_aa12()
 			recoil = 1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},
 		perks = {"silencer"},
 		sound_switch = {
@@ -16223,8 +16223,8 @@ function WeaponFactoryTweakData:_init_m37()
 			concealment = 1
 		},
 		custom_stats = {											
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},			
 		texture_bundle_folder = "peta",
 		dlc = "peta"
@@ -16343,8 +16343,8 @@ function WeaponFactoryTweakData:_init_m37()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				use_heavy_kick = true,
 				ammo_pickup_min_mul = 0.666666666667,
@@ -16359,8 +16359,8 @@ function WeaponFactoryTweakData:_init_m37()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				use_heavy_kick = true,
 				ammo_pickup_min_mul = 0.666666666667,
@@ -17754,8 +17754,8 @@ function WeaponFactoryTweakData:_init_boot()
 			concealment = 1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},
 		dlc = "wild",
 		texture_bundle_folder = "wild"
@@ -17778,8 +17778,8 @@ function WeaponFactoryTweakData:_init_boot()
 			concealment = -1
 		},
 		custom_stats = {
-			damage_near_mul = 100,
-			damage_far_mul = 200
+			damage_near_mul = 75,
+			damage_far_mul = 150
 		},
 		dlc = "wild",
 		texture_bundle_folder = "wild"
@@ -18705,8 +18705,8 @@ function WeaponFactoryTweakData:_init_rota()
 			concealment = 1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},			
 		dlc = "rota",
 		texture_bundle_folder = "rota"
@@ -18731,8 +18731,8 @@ function WeaponFactoryTweakData:_init_rota()
 			concealment = -1
 		},
 		custom_stats = {
-			damage_near_mul = 100,
-			damage_far_mul = 200
+			damage_near_mul = 75,
+			damage_far_mul = 150
 		},
 		perks = {"silencer"},
 		sound_switch = {
@@ -18855,8 +18855,8 @@ function WeaponFactoryTweakData:_init_rota()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -18870,8 +18870,8 @@ function WeaponFactoryTweakData:_init_rota()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -18973,8 +18973,8 @@ function WeaponFactoryTweakData:_init_tng()
 			concealment = 1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},			
 		forbids = {
 			"wpn_fps_ak_extra_ris"
@@ -19482,8 +19482,8 @@ function WeaponFactoryTweakData:_init_tng()
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		},
 		texture_bundle_folder = "tng",
 		dlc = "tango",
@@ -20105,8 +20105,8 @@ function WeaponFactoryTweakData:_init_tti()
 			spread = 2
 		},
 		custom_stats = {
-			damage_near_mul = 200,
-			damage_far_mul = 400
+			damage_near_mul = 150,
+			damage_far_mul = 300
 		},
 		adds_type = {
 			"stock_adapter"
@@ -23194,8 +23194,8 @@ function WeaponFactoryTweakData:_init_basset()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -23209,8 +23209,8 @@ function WeaponFactoryTweakData:_init_basset()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -23349,8 +23349,8 @@ function WeaponFactoryTweakData:_init_x_basset()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -23364,8 +23364,8 @@ function WeaponFactoryTweakData:_init_x_basset()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.666666666667,
 					ammo_pickup_max_mul = 0.666666666667
@@ -26076,8 +26076,8 @@ function WeaponFactoryTweakData:_init_x_judge()
 					spread = -1,
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -26091,8 +26091,8 @@ function WeaponFactoryTweakData:_init_x_judge()
 					spread = -1,
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -26250,8 +26250,8 @@ function WeaponFactoryTweakData:_init_x_rota()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -26265,8 +26265,8 @@ function WeaponFactoryTweakData:_init_x_rota()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -100,
-				damage_far_mul = -200,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6,
 				ammo_pickup_min_mul = 0.75,
 				ammo_pickup_max_mul = 0.75
@@ -26482,8 +26482,8 @@ function WeaponFactoryTweakData:_init_system()
 			value = 1
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		}				
 	}
 	self.parts.wpn_fps_fla_system_body_standard = {
@@ -27750,8 +27750,8 @@ function WeaponFactoryTweakData:_init_coach()
 			concealment = 2
 		},
 		custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200
+			damage_near_mul = -75,
+			damage_far_mul = -150
 		}			
 	}
 	self.parts.wpn_fps_sho_coach_s_long = {
@@ -27873,8 +27873,8 @@ function WeaponFactoryTweakData:_init_coach()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -27888,8 +27888,8 @@ function WeaponFactoryTweakData:_init_coach()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -31007,7 +31007,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				spread = 1,
 				concealment = -1
 		}
-		self.parts.wpn_fps_shot_m590_s_wood.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
+		self.parts.wpn_fps_shot_m590_s_wood.custom_stats = {damage_near_mul = 75, damage_far_mul = 150}
 		self.parts.wpn_fps_shot_m590_s_hdtf.stats = {
 				value = 5,
 				recoil = -3,
@@ -31018,13 +31018,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				recoil = 2,
 				spread = -2
 		}
-		self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = -200, damage_far_mul = -400}
+		self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = -150, damage_far_mul = -300}
 		self.parts.wpn_fps_shot_m590_fg_wood.stats = {
 				value = 2,
 				recoil = 1,
 				spread = -1
 		}
-		self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = -100, damage_far_mul = -200}			
+		self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = -75, damage_far_mul = -150}			
 		self.parts.wpn_fps_shot_m590_fg_wood.stats = {
 				value = 2,
 				concealment = 1,
@@ -31054,7 +31054,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -1,
 					reload = 3
 				}, 
-				custom_stats = {damage_near_mul = -100,	damage_far_mul = -200},
+				custom_stats = {damage_near_mul = -75,	damage_far_mul = -150},
 				a_obj="a_rack"
 			},		
 			wpn_fps_upg_a_explosive = {
@@ -31252,7 +31252,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				spread = -1,
 				recoil = 1
 			}
-		self.parts.wpn_fps_ass_tilt_g_wood.custom_stats = {damage_near_mul = -100, damage_far_mul = -200}		
+		self.parts.wpn_fps_ass_tilt_g_wood.custom_stats = {damage_near_mul = -75, damage_far_mul = -150}		
 		self.parts.wpn_fps_ass_tilt_stock_wood.stats = {
 				value = 1
 			}			
@@ -31267,7 +31267,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				recoil = -1,
 				concealment = -1
 		}
-		self.parts.wpn_fps_ass_tilt_stock_tactical.custom_stats = {damage_near_mul = 100, damage_far_mul = 200}
+		self.parts.wpn_fps_ass_tilt_stock_tactical.custom_stats = {damage_near_mul = 75, damage_far_mul = 150}
 		self.parts.wpn_fps_ass_tilt_stock_none.stats = {
 				value = 3,
 				recoil = -3,
@@ -31910,8 +31910,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = 2
 		}		
 		self.parts.wpn_fps_sho_b_spas12_small.custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200			
+			damage_near_mul = -75,
+			damage_far_mul = -150			
 		}
 		self.parts.wpn_fps_ass_ak_m_proto.stats = {
 			value = 1
@@ -32109,8 +32109,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = -1
 		}
 		self.parts.wpn_fps_shot_amr12_fg_railed.custom_stats = {
-			damage_near_mul = 100,
-			damage_far_mul = 200			
+			damage_near_mul = 75,
+			damage_far_mul = 150			
 		}
 		self.parts.wpn_fps_shot_amr12_fg_short.stats = {
 			value = 4,
@@ -32119,8 +32119,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = 2
 		}
 		self.parts.wpn_fps_shot_amr12_fg_short.custom_stats = {
-			damage_near_mul = -100,
-			damage_far_mul = -200			
+			damage_near_mul = -75,
+			damage_far_mul = -150			
 		}
 		self.wpn_fps_shot_amr12.override = {
 			wpn_fps_upg_a_slug = {
@@ -32157,8 +32157,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75
@@ -32172,8 +32172,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -100,
-					damage_far_mul = -200,
+					damage_near_mul = -75,
+					damage_far_mul = -150,
 					rays = 6,
 					ammo_pickup_min_mul = 0.75,
 					ammo_pickup_max_mul = 0.75

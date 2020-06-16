@@ -1574,3 +1574,17 @@ function GroupAIStateBase:do_blackout(state)
 		end
 	end
 end
+
+--Procs Enduring (Down restore with bots) at end of assaults for host.
+Hooks:PreHook(GroupAIStateBase, "set_assault_mode" , "TriggerEnduringHost" , function(self, enabled)
+	if self._assault_mode ~= enabled and enabled == false then
+		managers.player:check_enduring()
+	end
+end)
+
+--Procs Enduring at end of assaults for clients.
+Hooks:PreHook(GroupAIStateBase, "sync_assault_mode" , "TriggerEnduringHost" , function(self, enabled)
+	if self._assault_mode ~= enabled and enabled == false then
+		managers.player:check_enduring()
+	end
+end)

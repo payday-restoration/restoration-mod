@@ -42,6 +42,10 @@
 		{
 			"hook_id" : "lib/units/beings/player/states/playerdamage",
 			"script_path" : "lua/sc/units/player/playertased.lua"
+		},
+		{
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebase"
+			"script_path" : "lua/sc/managers/groupaistatebase.lua"
 		}
 	]
 }

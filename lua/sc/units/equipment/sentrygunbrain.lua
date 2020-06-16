@@ -89,8 +89,10 @@ function SentryGunBrain:_upd_detection(t)
 				else
 					local att_brain_ext = att_unit:brain()
 
-					if att_unit:brain() and att_brain_ext.objective and att_brain_ext:objective() == "surrender" then
-						skip = true
+					if att_brain_ext then
+						if att_brain_ext.objective and att_brain_ext:objective() == "surrender" or att_brain_ext.surrendered and att_brain_ext:surrendered() then
+							skip = true
+						end
 					end
 				end
 			end
@@ -163,6 +165,12 @@ function SentryGunBrain:_upd_detection(t)
 			if not skip then
 				if health_ratio_chk_func(self, attention_info) <= 0 or objective_chk_func(self, attention_info) == "surrender" then
 					skip = true
+				else
+					local att_brain_ext = attention_info.unit:brain()
+
+					if att_brain_ext and att_brain_ext.surrendered and att_brain_ext:surrendered() then
+						skip = true
+					end
 				end
 			end
 
@@ -433,22 +441,23 @@ function SentryGunBrain:_select_focus_attention(t)
 			local att_unit = attention_info.unit
 			local att_base_ext = att_unit:base()
 			local att_mov_ext = att_unit:movement()
-			local weight = 1
 			local remove_obj = nil
 
-			if not attention_info.identified then
-				weight = nil
-			else
-				if att_mov_ext then
-					if att_mov_ext.downed and att_mov_ext:downed() then
-						remove_obj = true
-					elseif att_mov_ext.is_cuffed and att_mov_ext:is_cuffed() then
-						remove_obj = true
-					end
+			if att_mov_ext then
+				if att_mov_ext.downed and att_mov_ext:downed() then
+					remove_obj = true
+				elseif att_mov_ext.is_cuffed and att_mov_ext:is_cuffed() then
+					remove_obj = true
 				end
+			end
 
-				if not remove_obj then
-					if health_ratio_chk_func(self, attention_info) <= 0 or objective_chk_func(self, attention_info) == "surrender" then
+			if not remove_obj then
+				if health_ratio_chk_func(self, attention_info) <= 0 or objective_chk_func(self, attention_info) == "surrender" then
+					remove_obj = true
+				else
+					local att_brain_ext = att_unit:brain()
+
+					if att_brain_ext and att_brain_ext.surrendered and att_brain_ext:surrendered() then
 						remove_obj = true
 					end
 				end
@@ -457,7 +466,11 @@ function SentryGunBrain:_select_focus_attention(t)
 			if remove_obj then
 				self:_destroy_detected_attention_object_data(attention_info)
 			else
-				if att_base_ext._tweak_table == "spooc_titan" or att_base_ext._tweak_table == "autumn" then
+				local weight = 1
+
+				if not attention_info.identified then
+					weight = nil
+				elseif att_base_ext._tweak_table == "spooc_titan" or att_base_ext._tweak_table == "autumn" then
 					if not att_mov_ext:is_uncloaked() then
 						weight = nil
 					end
@@ -564,15 +577,13 @@ function SentryGunBrain:_select_focus_attention(t)
 							end
 						end
 					end
-				end
-			end
-		end
 
-		if weight then
-			if not best_focus_weight or best_focus_weight < weight then
-				best_focus_weight = weight
-				best_focus_attention = attention_info
-				best_focus_reaction = attention_info.reaction
+					if not best_focus_weight or best_focus_weight < weight then
+						best_focus_weight = weight
+						best_focus_attention = attention_info
+						best_focus_reaction = attention_info.reaction
+					end
+				end
 			end
 		end
 	end

@@ -175,10 +175,6 @@ function CopActionHurt:init(action_desc, common_data)
 			return
 		end
 
-		if common_data.ext_damage.set_last_time_unit_got_fire_damage then
-			common_data.ext_damage:set_last_time_unit_got_fire_damage(t)
-		end
-
 		if action_desc.ignite_character == "dragonsbreath" then
 			self:_dragons_breath_sparks()
 		end
@@ -1335,8 +1331,14 @@ function CopActionHurt:on_exit()
 		managers.hud:set_mugshot_normal(self._unit:unit_data().mugshot_id)
 	end
 
-	if self._unit and alive(self._unit) and self._ext_damage.character_damage and self._ext_damage.call_listener then
-		self._ext_damage:call_listener("on_exit_hurt")
+	if self._unit and alive(self._unit) and self._ext_damage then
+		if self._ext_damage.call_listener then
+			self._ext_damage:call_listener("on_exit_hurt")
+		end
+
+		if self._hurt_type == "fire_hurt" and self._ext_damage.set_last_time_unit_got_fire_damage then
+			self._ext_damage:set_last_time_unit_got_fire_damage(TimerManager:game():time())
+		end
 	end
 end
 

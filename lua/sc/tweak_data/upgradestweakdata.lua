@@ -1219,10 +1219,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Aced
 					self.values.player.damage_health_ratio_multiplier = {0.75}
 
-	--Singleplayer stealth stuff, to give them access to the resources they'd have if playing with a full crew.
+	--Singleplayer stealth stuff, to give them access to resources closer to what they would have in coop.
 	if Global.game_settings and Global.game_settings.single_player then
-		self.values.cable_tie.quantity_1 = {16}
-		self.values.player.corpse_dispose_amount = {12, 16}
+		self.values.cable_tie.quantity_1 = {8}
+		self.values.player.corpse_dispose_amount = {6, 8}
 	end
 
 	--Perk Decks--

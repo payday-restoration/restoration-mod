@@ -470,9 +470,11 @@ function SentryGunBrain:_select_focus_attention(t)
 
 				if not attention_info.identified then
 					weight = nil
-				elseif att_base_ext._tweak_table == "spooc_titan" or att_base_ext._tweak_table == "autumn" then
-					if not att_mov_ext:is_uncloaked() then
-						weight = nil
+				elseif att_base_ext then
+					if att_base_ext._tweak_table == "spooc_titan" or att_base_ext._tweak_table == "autumn" then
+						if not att_mov_ext:is_uncloaked() then
+							weight = nil
+						end
 					end
 				end
 

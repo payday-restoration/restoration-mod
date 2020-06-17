@@ -1113,6 +1113,39 @@ function GroupAIStateBase:criminal_spotted(unit)
 end
 
 function GroupAIStateBase:on_criminal_nav_seg_change(unit, nav_seg_id)
+	local u_key = unit:key()
+	local u_sighting = self._criminals[u_key]
+
+	if not u_sighting then
+		return
+	end
+
+	local prev_area = u_sighting.area
+
+	if u_sighting.tracker:lost() then
+		mvector3.set(tmp_vec2, u_sighting.tracker:field_position())
+	else
+		u_sighting.tracker:m_position(tmp_vec2)
+	end
+
+	local seg = managers.navigation:get_nav_seg_from_pos(tmp_vec2, true)
+	local area = nil
+
+	if prev_area and prev_area.nav_segs[seg] then
+		area = prev_area
+	else
+		area = self:get_area_from_nav_seg_id(seg)
+	end
+
+	if prev_area ~= area then
+		u_sighting.area = area
+
+		if prev_area then
+			prev_area.criminal.units[u_key] = nil
+		end
+
+		area.criminal.units[u_key] = u_sighting
+	end
 end
 
 function GroupAIStateBase:on_criminal_suspicion_progress(u_suspect, u_observer, status, client_id)

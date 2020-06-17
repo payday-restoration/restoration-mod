@@ -1352,7 +1352,7 @@ function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracke
 	local store_instead = nil
 
 	if Network:is_server() and not self:whisper_mode() then
-		if not nav_tracker and not unit:vehicle_driving() or unit:in_slot(1) then
+		if not nav_tracker and not unit:vehicle_driving() or unit:in_slot(1) or unit:in_slot(17) and unit:character_damage() then
 			store_instead = true
 		end
 	end
@@ -1411,7 +1411,7 @@ function GroupAIStateBase:chk_unregister_irrelevant_attention_objects()
 	local all_attention_objects = self:get_all_AI_attention_objects()
 
 	for u_key, att_info in pairs (all_attention_objects) do
-		if not att_info.nav_tracker and not att_info.unit:vehicle_driving() or att_info.unit:in_slot(1) then
+		if not att_info.nav_tracker and not att_info.unit:vehicle_driving() or att_info.unit:in_slot(1) or att_info.unit:in_slot(17) and att_info.unit:character_damage() then
 			self:store_removed_attention_object(u_key, att_info)
 			att_info.handler:set_attention(nil)
 		end

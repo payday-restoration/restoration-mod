@@ -91,14 +91,16 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 	local my_key = data.key
 	local my_pos = data.unit:movement():m_head_pos()
 	local my_access = data.SO_access
-	local all_attention_objects = managers.groupai:state():get_AI_attention_objects_by_filter(data.SO_access_str, data.team)
 	local my_head_fwd = nil
 	local my_tracker = data.unit:movement():nav_tracker()
 	local chk_vis_func = my_tracker.check_visibility
-	local is_detection_persistent = managers.groupai:state():is_detection_persistent()
-	local delay = 2
 	local vis_mask = data.visibility_slotmask
+	local is_cool = data.cool
 	local player_importance_wgt = data.unit:in_slot(managers.slot:get_mask("enemies")) and {}
+
+	local groupai_state_manager = managers.groupai:state()
+	local all_attention_objects = groupai_state_manager:get_AI_attention_objects_by_filter(data.SO_access_str, data.team)
+	local is_detection_persistent = groupai_state_manager:is_detection_persistent()
 
 	for u_key, attention_info in pairs(all_attention_objects) do
 		if u_key ~= my_key and not detected_obj[u_key] then
@@ -205,24 +207,17 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 		end
 	end
 
+	local delay = is_cool and 0 or 2
+
 	for u_key, attention_info in pairs(detected_obj) do
 		local can_detect = true
 
-		if data.cool and attention_info.is_husk_player then
+		if is_cool and attention_info.is_husk_player then
 			can_detect = false
 
 			if attention_info.client_casing_suspicion or attention_info.client_peaceful_detection then
 				if t >= attention_info.next_verify_t then
-					local verify_interval = nil
-
-					if attention_info.identified and attention_info.verified then
-						verify_interval = attention_info.settings.verification_interval
-					else
-						verify_interval = attention_info.settings.notice_interval or attention_info.settings.verification_interval
-					end
-
-					attention_info.next_verify_t = t + verify_interval
-					delay = math_min(delay, verify_interval)
+					attention_info.next_verify_t = t
 
 					local attention_pos = attention_info.m_head_pos
 					local dis = mvec3_dis(my_pos, attention_pos)
@@ -253,7 +248,9 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 				local settings = attention_info.settings
 				local verify_interval = nil
 
-				if attention_info.identified and attention_info.verified then
+				if is_cool then
+					verify_interval = 0
+				elseif attention_info.identified and attention_info.verified then
 					verify_interval = settings.verification_interval
 				else
 					verify_interval = settings.notice_interval or settings.verification_interval
@@ -371,8 +368,8 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 						noticable = attention_info.notice_progress
 						attention_info.prev_notice_chk_t = t
 
-						if data.cool and REACT_SCARED <= settings.reaction then
-							managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, data.unit, noticable)
+						if is_cool and REACT_SCARED <= settings.reaction then
+							groupai_state_manager:on_criminal_suspicion_progress(attention_info.unit, data.unit, noticable)
 						end
 					end
 
@@ -391,8 +388,11 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 					if is_ignored then
 						CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
 					else
-						attention_info.next_verify_t = t + settings.verification_interval
-						delay = math_min(delay, settings.verification_interval)
+						if not is_cool then
+							attention_info.next_verify_t = t + settings.verification_interval
+							delay = math_min(delay, settings.verification_interval)
+						end
+
 						attention_info.nearly_visible = nil
 
 						local verified, vis_ray = nil
@@ -456,7 +456,7 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 							else
 								attention_info.last_verified_pos = mvec3_cpy(attention_pos)
 							end
-						elseif not data.cool and REACT_COMBAT <= settings.reaction and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
+						elseif not is_cool and REACT_COMBAT <= settings.reaction and data.enemy_slotmask and attention_info.unit:in_slot(data.enemy_slotmask) then
 							local destroyed_att_data = nil
 
 							if is_detection_persistent and attention_info.criminal_record then
@@ -575,14 +575,6 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 		attention_info.visible_angle = nil
 		attention_info.visible_dis_multiplier = nil
 		attention_info.visible_ray = nil
-	end
-
-	if data.cool then
-		delay = 0
-
-		for u_key, attention_info in pairs(detected_obj) do
-			attention_info.next_verify_t = t
-		end
 	end
 
 	if player_importance_wgt then
@@ -715,6 +707,10 @@ function CopLogicBase.on_detected_attention_obj_modified(data, modified_u_key)
 		end
 
 		attention_info.reaction = math_min(new_settings.reaction, attention_info.reaction)
+
+		if attention_info.unit:character_damage() and attention_info.unit:character_damage().dead then
+			attention_info.is_alive = not attention_info.unit:character_damage():dead()
+		end
 	else
 		CopLogicBase._destroy_detected_attention_object_data(data, attention_info)
 

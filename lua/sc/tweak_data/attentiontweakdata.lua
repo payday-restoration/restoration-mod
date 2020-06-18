@@ -205,6 +205,7 @@ function AttentionTweakData:_init_player()
 	}
 	self.settings.pl_foe_non_combatant_cbt_stand = deep_clone(self.settings.pl_foe_combatant_cbt_stand)
 	self.settings.pl_foe_non_combatant_cbt_stand.filter = "non_combatant"
+	self.settings.pl_foe_non_combatant_cbt_stand.relation = nil
 end
 
 function AttentionTweakData:_init_drill()

@@ -20,4 +20,5 @@ function MoneyTweakData:init(tweak_data, presets)
 	local biggest_weapon_mod_cost = math.round(self.biggest_cashout * 0.5)
 	local smallest_weapon_mod_cost = math.round(smallest_cashout * 3)
 	self.modify_weapon_cost = self._create_value_table(smallest_weapon_mod_cost, biggest_weapon_mod_cost, 10, true, 1.2)
+	self.max_small_loot_value = 1000000000  --this is stupid but it works
 end

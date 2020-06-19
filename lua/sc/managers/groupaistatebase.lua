@@ -5,7 +5,6 @@ local mvec3_dis_sq = mvector3.distance_sq
 local mvec3_dir = mvector3.direction
 local mvec3_l_sq = mvector3.length_sq
 local tmp_vec1 = Vector3()
-local tmp_vec2 = Vector3()
 
 function GroupAIStateBase:_get_megaphone_sound_source()
 	local level_id = Global.level_data.level_id
@@ -1058,32 +1057,16 @@ end
 function GroupAIStateBase:criminal_spotted(unit)
 	local u_key = unit:key()
 	local u_sighting = self._criminals[u_key]
-	local prev_area = u_sighting.area
-	local seg = u_sighting.tracker:nav_segment()
 
-	if u_sighting.undetected then
-		u_sighting.undetected = nil
-	end
-
-	if u_sighting.tracker:lost() then
-		mvector3.set(tmp_vec2, u_sighting.tracker:field_position())
-
-		seg = managers.navigation:get_nav_seg_from_pos(tmp_vec2, true)
-	else
-		u_sighting.tracker:m_position(tmp_vec2)
-	end
-
-	if mvector3.not_equal(u_sighting.pos, tmp_vec2) then
-		mvector3.set(u_sighting.pos, tmp_vec2)
-	elseif mvector3.not_equal(u_sighting.pos, u_sighting.m_pos) then
-		mvector3.set(u_sighting.pos, u_sighting.m_pos)
-		mvector3.set(tmp_vec2, u_sighting.m_pos)
-
-		seg = managers.navigation:get_nav_seg_from_pos(tmp_vec2, true)
-	end
-
-	u_sighting.seg = seg
+	u_sighting.undetected = nil
 	u_sighting.det_t = self._t
+
+	u_sighting.tracker:m_position(u_sighting.pos)
+
+	local seg = u_sighting.tracker:nav_segment()
+	u_sighting.seg = seg
+
+	local prev_area = u_sighting.area
 	local area = nil
 
 	if prev_area and prev_area.nav_segs[seg] then
@@ -1120,15 +1103,8 @@ function GroupAIStateBase:on_criminal_nav_seg_change(unit, nav_seg_id)
 		return
 	end
 
+	local seg = nav_seg_id
 	local prev_area = u_sighting.area
-
-	if u_sighting.tracker:lost() then
-		mvector3.set(tmp_vec2, u_sighting.tracker:field_position())
-	else
-		u_sighting.tracker:m_position(tmp_vec2)
-	end
-
-	local seg = managers.navigation:get_nav_seg_from_pos(tmp_vec2, true)
 	local area = nil
 
 	if prev_area and prev_area.nav_segs[seg] then

@@ -724,7 +724,7 @@ function HuskCopBrain:update_local_player_suspicion_decay(t)
 					self:_send_client_detection_net_event(CopBrain._NET_EVENTS.suspecting_client)
 				end
 
-				if self._suspecting_player_verified and not attention_info.verified then
+				if self._suspecting_player_verified and not u_data.verified then
 					self._suspecting_player_verified = nil
 
 					self:_send_client_detection_net_event(CopBrain._NET_EVENTS.client_no_longer_verified)

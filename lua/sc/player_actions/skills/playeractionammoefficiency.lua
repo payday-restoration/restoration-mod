@@ -10,15 +10,18 @@ PlayerAction.AmmoEfficiency = {
 		local function on_headshot(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant
-
+			--Filter out melee attacks, along with any other niche things that might proc headshots. Require said attacks to be lethal to match skill description since onlethalheadshot doesn't work properly
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" and attack_data.result.type == "death" then
 				headshots = headshots + 1
 
 				if headshots == target_headshots then
+					--Amount of ammo to refund. bullet_refund corresponds to % of ammo to refund. If amount would be less than 1 bullet, clamp it to 1 bullet.
 					local refund = math.floor(math.max(bullet_refund * weapon_unit:get_ammo_max(), 1))
+					--Throw ammo into magazine if the player has the relevant upgrade.
 					if to_magazine then
 						weapon_unit:set_ammo_remaining_in_clip(math.min(weapon_unit:get_ammo_max_per_clip(), weapon_unit:get_ammo_remaining_in_clip() + refund))
 					end
+					--Add ammo to pool. Doing this before adding ammo to magazine leads to hud errors, since set_ammo_remaining_in_clip() doesn't care about total remaining ammo and doesn't update the hud.
 					player_manager:on_ammo_increase(refund)
 					time = target_time
 				end

@@ -4,13 +4,16 @@ PlayerAction.TriggerHappy = {
 		local co = coroutine.running()
 		local current_time = Application:time()
 		local current_stacks = 1
+		--Tracker for whether or not the pistol is put away.
 		local pistol_unequipped = false
 		local add_time = player_manager:upgrade_value("pistol", "stacking_hit_damage_multiplier", nil).max_time
 		
+		--Headshot stacking + refresh.
 		local function on_headshot(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant
-
+			
+			--Extra checks that you're actually *shooting* enemies with your *pistol*
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" and not pistol_unequipped then
 				current_stacks = current_stacks + 1
 
@@ -21,6 +24,7 @@ PlayerAction.TriggerHappy = {
 			end
 		end
 
+		--Duration refresh.
 		local function on_hit(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit
 			local variant = attack_data.variant

@@ -16,6 +16,7 @@ PlayerAction.DamageControl = {
 			delay_ratio = damage_delay_values[1] * 0.01,
 			tick_ratio = damage_delay_values[2] * 0.01
 		}
+		--Added sanity check for on kill CDR. Otherwise crashes on an incomplete perk deck.
 		if cooldown_drain then
 			cooldown_drain = {
 				health_ratio = cooldown_drain[1] * 0.01,
@@ -72,6 +73,7 @@ PlayerAction.DamageControl = {
 		end
 
 		local function on_enemy_killed(weapon_unit, variant, enemy_unit)
+			--Added sanity check for on kill CDR. Otherwise crashes on an incomplete perk deck.
 			if cooldown_drain then
 				local player = managers.player:player_unit()
 				local low_health = player:character_damage():health_ratio() <= cooldown_drain.health_ratio

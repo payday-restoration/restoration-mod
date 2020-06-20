@@ -587,9 +587,3 @@ tweak_data.player.stances.wa2000.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.model70.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.tti.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.siltstone.steelsight.shakers.breathing.amplitude = 0
-
---MONEY CHANGES--
-tweak_data.money.bag_values.counterfeit_money = 1565
-tweak_data.money.bag_values.diamonds = 2265
-tweak_data.money.bag_values.red_diamond = 21000
-tweak_data.money.bag_values.meth = 11500

@@ -6,6 +6,14 @@ local mvec3_dir = mvector3.direction
 local mvec3_l_sq = mvector3.length_sq
 local tmp_vec1 = Vector3()
 
+function GroupAIStateBase:_check_assault_panic_chatter()
+	if self._t and self._last_killed_cop_t and self._t - self._last_killed_cop_t < math.random(1, 3.5) then
+		return true
+	end
+	
+	return
+end
+
 function GroupAIStateBase:_get_megaphone_sound_source()
 	local level_id = Global.level_data.level_id
 	local pos = nil
@@ -920,6 +928,10 @@ function GroupAIStateBase:on_enemy_unregistered(unit)
 
 	if e_data.group then
 		self:_remove_group_member(e_data.group, u_key, dead)
+		if dead and self._task_data and self._task_data.assault and self._task_data.assault.active then
+			self:_voice_friend_dead(e_data.group)
+			self._last_killed_cop_t = self._t
+		end
 	end
 	
 	--Only guards with pagers increase suspicion

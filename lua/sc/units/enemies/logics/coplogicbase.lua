@@ -58,6 +58,285 @@ CopLogicBase._DANGEROUS_ALERT_TYPES = {
 	fire = true
 }
 
+function CopLogicBase.action_taken(data, my_data)
+	return my_data.turning or my_data.moving_to_cover or my_data.walking_to_cover_shoot_pos or my_data.has_old_action or data.unit:movement():chk_action_forbidden("walk")
+end
+
+function CopLogicBase._update_haste(data, my_data)
+	if my_data ~= data.internal_data then
+		log("how is this man")
+		return
+	end
+	
+	if data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) then
+		return
+	end
+	
+	if data.unit:movement():chk_action_forbidden("walk") or my_data.tasing or my_data.spooc_attack then
+		return
+	end
+	
+	local path = my_data.chase_path or my_data.charge_path or my_data.advance_path or my_data.cover_path or my_data.expected_pos_path or my_data.hunt_path or my_data.flank_path
+	
+	if not path then
+		return
+	end
+	
+	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+	local can_perform_walking_action = not my_data.turning and not data.unit:movement():chk_action_forbidden("walk") and not my_data.has_old_action
+	local pose = nil
+	local mook_units = {
+		"security",
+		"security_undominatable",
+		"cop",
+		"cop_scared",
+		"cop_female",
+		"gensec",
+		"fbi",
+		"fbi_xc45",
+		"swat",
+		"heavy_swat",
+		"fbi_swat",
+		"fbi_heavy_swat",
+		"city_swat",
+		"gangster",
+		"biker",
+		"mobster",
+		"bolivian",
+		"bolivian_indoors",
+		"medic",
+		"taser",
+		"spooc",
+		"shadow_spooc",
+		"spooc_heavy",
+		"tank_ftsu",
+		"tank_mini",
+		"tank",
+		"tank_medic"
+	}
+	local is_mook = nil
+	for _, name in ipairs(mook_units) do
+		if data.unit:base()._tweak_table == name or data.unit:base():has_tag("law") then
+			is_mook = true
+		end
+	end
+	
+	-- I'm gonna leave a note to myself here so that I never commit the same mistake ever again.
+	-- AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction
+	-- THIS IS HOW YOU CHECK FOR COMBAT REACTIONS, YOU DEHYDRATED RAISIN OF A PERSON, FUGLORE
+	-- I SWEAR TO FUCKING GOD I WILL SLAUGHTER YOU IF YOU MAKE THE SAME MISTAKE AGAIN
+	-- - Past Fuglore, thembo extraordinaire and apparently, no longer an idiot.
+	
+	if path and can_perform_walking_action and data.attention_obj then
+		local haste = nil
+		
+		if is_mook and not data.is_converted and not data.unit:in_slot(16) then
+			local enemyseeninlast4secs = data.attention_obj and data.attention_obj.verified_t and data.t - data.attention_obj.verified_t < 4
+			local enemy_seen_range_bonus = enemyseeninlast4secs and 500 or 0
+			local enemy_has_height_difference = data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.dis >= 1200 and data.attention_obj.verified_t and data.t - data.attention_obj.verified_t < 4 and math.abs(data.m_pos.z - data.attention_obj.m_pos.z) > 250
+			local height_difference_penalty = enemy_has_height_difference and 400 or 0
+			local can_crouch = not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch
+			local can_stand = not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.stand
+			
+			
+			local should_crouch = nil
+			local pose = nil
+			local end_pose = nil
+			if data.unit:movement():cool() and data.unit:movement()._active_actions[2] and data.unit:movement()._active_actions[2]:type() == "walk" and data.unit:movement()._active_actions[2]:haste() == "run" then
+				haste = "walk"
+			elseif data.attention_obj and data.attention_obj.dis > 10000 and data.unit:movement()._active_actions[2] and data.unit:movement()._active_actions[2]:type() == "walk" and data.unit:movement()._active_actions[2]:haste() ~= "run" then
+				haste = "run"
+			elseif data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.dis > 1200 + enemy_seen_range_bonus and not data.unit:movement():cool() and not managers.groupai:state():whisper_mode() and data.unit:movement()._active_actions[2] and data.unit:movement()._active_actions[2]:type() == "walk" and data.unit:movement()._active_actions[2]:haste() ~= "run" and is_mook then
+				haste = "run"
+				my_data.has_reset_walk_cycle = nil
+			elseif data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.dis <= 1200 + enemy_seen_range_bonus - height_difference_penalty and is_mook and data.tactics and not data.tactics.hitnrun and data.unit:movement()._active_actions[2] and data.unit:movement()._active_actions[2]:type() == "walk" and data.unit:movement()._active_actions[2]:haste() == "run" then
+				haste = "walk"
+				my_data.has_reset_walk_cycle = nil
+			 else
+				if data.unit:movement()._active_actions[2] and data.unit:movement()._active_actions[2]:type() == "walk" and data.unit:movement()._active_actions[2]:haste() ~= "run" then
+					my_data.has_reset_walk_cycle = nil
+					haste = "run"
+				else
+					--log("current haste is fine!")
+					return
+				end
+			 end
+				 
+			local crouch_roll = math.random(0.01, 1)
+			local stand_chance = nil
+			
+			local verified_chk = data.attention_obj.verified and data.attention_obj.dis <= 1500 or data.attention_obj.dis <= 1000
+			
+			if data.attention_obj and data.attention_obj.dis > 10000 then
+				stand_chance = 1
+				pose = "stand"
+				end_pose = "stand"
+			elseif data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.dis > 2000 then
+				stand_chance = 0.75
+			elseif enemy_has_height_difference and can_crouch then
+				stand_chance = 0.25
+			elseif data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and verified_chk and CopLogicTravel._chk_close_to_criminal(data, my_data) and data.tactics and data.tactics.flank and haste == "walk" then
+				stand_chance = 0.25
+			elseif my_data.moving_to_cover and can_crouch then
+				stand_chance = 0.5
+			else
+				stand_chance = 1
+				pose = "stand"
+				end_pose = "stand"
+			end
+			
+			--randomize enemy crouching to make enemies feel less easy to aim at, the fact they're always crouching all over the place always bugged me, plus, they shouldn't need to crouch so often when you're at long distances from them
+			
+			if not data.unit:movement():cool() and not managers.groupai:state():whisper_mode() then
+				if stand_chance ~= 1 and crouch_roll > stand_chance and can_crouch then
+					end_pose = "crouch"
+					pose = "crouch"
+					should_crouch = true
+				end
+			end
+			
+			if not pose then
+				pose = not data.char_tweak.crouch_move and "stand" or data.char_tweak.allowed_poses and not data.char_tweak.allowed_poses.stand and "crouch" or should_crouch and "crouch" or "stand"
+				end_pose = pose
+			end
+
+			if not data.unit:anim_data()[pose] then
+				CopLogicAttack["_chk_request_action_" .. pose](data)
+			end	
+		end
+	end	
+	 
+	if data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and haste and can_perform_walking_action then
+		if not my_data.has_reset_walk_cycle then
+			local new_action = {
+				body_part = 2,
+				type = "idle"
+			}
+
+			data.unit:brain():action_request(new_action)
+			my_data.has_reset_walk_cycle = true
+		else
+			local new_action_data = {
+				type = "walk",
+				body_part = 2,
+				nav_path = path,
+				variant = haste,
+				pose = pose,
+				end_pose = end_pose
+			}
+			
+			if my_data.advancing then
+				my_data.advancing = data.unit:brain():action_request(new_action_data)
+				my_data.moving_to_cover = my_data.best_cover
+				my_data.at_cover_shoot_pos = nil
+				my_data.in_cover = nil
+
+				data.brain:rem_pos_rsrv("path")
+			end
+		end
+	end
+end 
+
+function CopLogicBase._upd_stance_and_pose(data, my_data, objective)
+	if my_data ~= data.internal_data then
+		--log("how is this man")
+		return
+	end
+
+	if data.char_tweak.allowed_poses or data.is_converted or my_data.tasing or my_data.spooc_attack or data.unit:in_slot(managers.slot:get_mask("criminals")) then
+		return
+	end
+
+	if data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.unit:movement():chk_action_forbidden("walk") then
+		return
+	end
+
+	local obj_has_stance, obj_has_pose, agg_pose = nil
+	local can_stand_or_crouch = nil
+
+	if not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch then
+		if not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.stand then
+			if data.char_tweak.crouch_move then
+				can_stand_or_crouch = true
+			end
+		end
+	end
+
+	if can_stand_or_crouch then
+		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+
+		if data.is_suppressed then
+			if diff_index <= 5 and not Global.game_settings.use_intense_AI then
+				if data.unit:anim_data().stand then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_crouch(data) then
+							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+							agg_pose = true
+						end
+					end
+				end
+			else
+				if data.unit:anim_data().stand then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_crouch(data) then
+							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+							agg_pose = true
+						end
+					end
+				elseif data.unit:anim_data().crouch then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_stand(data) then
+							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+							agg_pose = true
+						end
+					end
+				end
+			end
+		elseif data.attention_obj and data.attention_obj.aimed_at and data.attention_obj.reaction and data.attention_obj.reaction >= AIAttentionObject.REACT_COMBAT and data.attention_obj.verified then
+			if diff_index > 5 or Global.game_settings.use_intense_AI then
+				if data.unit:anim_data().stand then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_crouch(data) then
+							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+							agg_pose = true
+						end
+					end
+				elseif data.unit:anim_data().crouch then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_stand(data) then
+							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
+							agg_pose = true
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	if agg_pose then
+		return
+	end
+
+	if data.char_tweak.allowed_poses and can_stand_or_crouch and not obj_has_pose and not agg_pose then
+		for pose_name, state in pairs(data.char_tweak.allowed_poses) do
+			if state then
+			
+				if pose_name == "stand" then
+					CopLogicAttack._chk_request_action_stand(data)
+
+					break
+				end
+				
+				if pose_name == "crouch" then
+					CopLogicAttack._chk_request_action_crouch(data)
+
+					break
+				end
+			end
+		end
+	end
+end
+
 function CopLogicBase.on_importance(data)
 	if not data.important or not data.internal_data then
 		return
@@ -1442,7 +1721,7 @@ function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
 			new_att_obj.acquire_t = data.t
 		end
 
-		if contact_chatter_time_ok and data.char_tweak.chatter.contact and new_att_obj.is_person and new_att_obj.verified and AIAttentionObject.REACT_SHOOT <= new_reaction then
+		if data.char_tweak.chatter and contact_chatter_time_ok and data.char_tweak.chatter.contact and new_att_obj.is_person and new_att_obj.verified and AIAttentionObject.REACT_SHOOT <= new_reaction then
 			if data.unit:anim_data().idle or data.unit:anim_data().move then
 				local tweak_table = data.unit:base()._tweak_table
 

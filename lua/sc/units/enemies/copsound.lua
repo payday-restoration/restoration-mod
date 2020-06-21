@@ -84,6 +84,12 @@ function CopSound:init(unit)
 	unit:base():post_init()
 end
 
+function CopSound:chk_voice_prefix()
+	if self._prefix then
+		return self._prefix
+	end
+end	
+
 function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 	local line_array = { c01 = "contact",
 		c01x = "contact",

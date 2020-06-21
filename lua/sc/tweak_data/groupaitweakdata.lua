@@ -9913,6 +9913,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"spoocavoidance",
 			"murder",
 			"elite_ranged_fire",
+			"harass",
 			"shield_cover"
 		},
 		spooc = {

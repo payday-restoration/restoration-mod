@@ -252,9 +252,9 @@ function GroupAITweakData:_init_chatter_data()
 	}
 	self.enemy_chatter.reload = {
 		radius = 700,
-		max_nr = 3,
+		max_nr = 4,
 		duration = {2, 4},
-		interval = {15, 15},
+		interval = {4, 5},
 		group_min = 0,
 		queue = "rrl"
 	}

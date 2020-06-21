@@ -1,10 +1,10 @@
 {
-    "bm_w_shatters_fury" : "Raze's Fury",
+    "bm_w_shatters_fury" : "Phoenix .500",
     
-    "bm_wp_wpn_fps_pis_shatters_fury_b_comp1" : "Compensated Barrel",
-    "bm_wp_wpn_fps_pis_shatters_fury_b_comp2" : "Long Compensated Barrel",
-    "bm_wp_wpn_fps_pis_shatters_fury_b_long" : "Long Barrel",
-    "bm_wp_wpn_fps_pis_shatters_fury_b_short" : "Short Barrel",
+    "bm_wp_wpn_fps_pis_shatters_fury_b_comp1" : "Horus Barrel",
+    "bm_wp_wpn_fps_pis_shatters_fury_b_comp2" : "Shatter Barrel",
+    "bm_wp_wpn_fps_pis_shatters_fury_b_long" : "Hathor Barrel",
+    "bm_wp_wpn_fps_pis_shatters_fury_b_short" : "Firebird Barrel",
     
     "bm_wp_wpn_fps_pis_shatters_fury_g_ergo" : "Ergo Grip",
     

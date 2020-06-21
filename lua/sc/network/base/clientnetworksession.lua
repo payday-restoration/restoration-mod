@@ -1,1 +1,1 @@
-ClientNetworkSession.JOIN_REQUEST_TIMEOUT = 40
+ClientNetworkSession.JOIN_REQUEST_TIMEOUT = 9001 --if someone is going to end up fucked up on the loading screen, they're gonna alt+f4 anyways.  who cares, pick up a football

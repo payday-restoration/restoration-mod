@@ -592,7 +592,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.4}
+					self.values.smg.move_spread_multiplier = {0.5}
 					self.values.assault_rifle.move_spread_multiplier = {0.5}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}

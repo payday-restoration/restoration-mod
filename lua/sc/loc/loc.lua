@@ -851,7 +851,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##60%## for SMGs, LMGs, and Assault Rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##50%## for SMGs, LMGs, and Assault Rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",

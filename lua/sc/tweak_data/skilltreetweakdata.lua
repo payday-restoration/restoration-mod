@@ -367,8 +367,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"team_weapon_recoil_index_addend",
-						"team_weapon_suppression_recoil_index_addend"
+						"team_weapon_recoil_index_addend"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1617,8 +1616,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 9},
 				[1] = {
 					upgrades = {
-						"team_pistol_recoil_index_addend",
-						"team_pistol_suppression_recoil_index_addend"
+						"team_pistol_recoil_index_addend"
 					},
 					cost = self.costs.default
 				},

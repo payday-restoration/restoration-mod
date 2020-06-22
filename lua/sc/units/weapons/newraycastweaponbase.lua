@@ -149,18 +149,20 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	
 	--Moving penalty to spread, based on stability stat.
 	if current_state._moving then
-		local stability = tweak_data.weapon[self._name_id].stats.recoil
-		local moving_spread = tweak_data.weapon.stats.spread_moving[stability] * self:moving_spread_penalty_reduction()
-		log("Stability Penalty: " .. tostring(stability))
+		local moving_spread = self._spread_moving * self:moving_spread_penalty_reduction()
+		log("Stability Penalty: " .. tostring(moving_spread))
 		spread_area = spread_area + moving_spread
 	end
 
-	--Convert spread area to degrees.
+	--Apply skill and stance multipliers.
 	local multiplier = tweak_data.weapon.stats.stance_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
 	spread_area = spread_area * multiplier
+	log("Spread Area: " .. tostring(spread_area))
+
+
+	--Convert spread area to degrees.
 	local spread_x = math.sqrt((spread_area)/math.pi)
 	local spread_y = spread_x
-	log("Spread Area: " .. tostring(spread_area * 5))
 
 	return spread_x, spread_y
 end

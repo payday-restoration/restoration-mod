@@ -22,6 +22,16 @@ end
 function RaycastWeaponBase:setup(...)
 	setup_original(self, ...)
 	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+
+	local moving_spread_index = 0
+	local recoil_table = tweak_data.weapon.stats.recoil
+	for i = 0, 25, 1 do
+		if recoil_table[i] == self._recoil then
+			moving_spread_index = i
+			break
+		end
+	end
+	self._spread_moving = tweak_data.weapon.stats.spread_moving[moving_spread_index] or 1
 end
 
 function FlameBulletBase:bullet_slotmask()

@@ -3029,80 +3029,26 @@ function WeaponTweakData:_init_stats()
     	steelsight = 1
     }
 
-    self.stats.spread = {
-    	4.05,
-    	3.85,
-    	3.65,
-    	3.45,
-    	3.25,
-    	3.05,
-    	2.85,
-    	2.65,
-    	2.45,
-    	2.25,
-    	2.05,
-    	1.85,
-    	1.65,
-    	1.45,
-    	1.25,
-    	1.05,
-    	0.85,
-    	0.65,
-    	0.45,
-    	0.25,
-    	0.05
-    }
-	--[[self.stats.spread = {
-		2.016,
-		1.92,
-		1.824,
-		1.728,
-		1.632,
-		1.536,
-		1.44,
-		1.344,
-		1.248,
-		1.152,
-		1.056,
-		0.96,
-		0.864,
-		0.768,
-		0.672,
-		0.576,
-		0.48,
-		0.384,
-		0.288,
-		0.192,
-		0.096
-	}]]
-	self.stats.spread_moving = {
-		2.5,
-		2.4,
-		2.3,
-		2.2,
-		2.1,
-		2.0,
-		1.9,
-		1.8,
-		1.7,
-		1.6,
-		1.5,
-		1.4,
-		1.3,
-		1.2,
-		1.1,
-		1.0,
-		0.9,
-		0.8,
-		0.7,
-		0.6,
-		0.5,
-		0.4,
-		0.3,
-		0.2,
-		0.1,
-		0.0
-	}
+    --Generate table for spread and how it relates to accuracy.
+    --The values in the table correspond to the area of spread.
+    self.stat_info = {}
+    self.stat_info.base_spread = 4.05 --How much spread area you have at 0 accuracy.
+    self.stat_info.spread_per_accuracy = 0.2 --How much each point of accuracy reduces spread area.
+    self.stats.spread = {}
+    for i = 0, 20, 1 do
+    	table.insert(self.stats.spread, self.stat_info.base_spread - (i * self.stat_info.spread_per_accuracy))
+    end
+
+    --Generate table for moving_spread and how it relates to stability.
+    --The values in the table correspond to the area of spread.
+    --These are added to the area for accuracy while moving before determining the final angles.
+	self.stat_info.base_move_spread = 2.5 --See base_spread/spread_per_accuracy.
+    self.stat_info.spread_per_stability = 0.1
+	self.stats.spread_moving = {}
+    for i = 0, 25, 1 do
+    	table.insert(self.stats.spread_moving, self.stat_info.base_move_spread - (i * self.stat_info.spread_per_stability))
+    end
+
 	self.stats.recoil = {
 		3,
 		2.9,

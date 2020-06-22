@@ -1,1 +1,1 @@
-ClientNetworkSession.JOIN_REQUEST_TIMEOUT = 9001 --if someone is going to end up fucked up on the loading screen, they're gonna alt+f4 anyways.  who cares, pick up a football
+ClientNetworkSession.JOIN_REQUEST_TIMEOUT = 15 --this is probably for requesting to join a game from the main menu.  keep it at 15s for now

@@ -3029,9 +3029,12 @@ function WeaponTweakData:_init_stats()
     	steelsight = 1
     }
 
+    self.stat_info = {}
+    --Multiplier for spread on multi-pellet shotguns.
+    self.stat_info.shotgun_spread_increase = 2
+
     --Generate table for spread and how it relates to accuracy.
     --The values in the table correspond to the area of spread.
-    self.stat_info = {}
     self.stat_info.base_spread = 4.05 --How much spread area you have at 0 accuracy.
     self.stat_info.spread_per_accuracy = -0.2 --How much each point of accuracy reduces spread area.
     self.stats.spread = {}

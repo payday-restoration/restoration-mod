@@ -99,6 +99,11 @@ NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	local mul = 1
 
+	--Multi-pellet spread increase.
+	if self._rays and self._rays > 1 then
+		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
+	end
+
 	if not current_state then
 		return mul
 	end

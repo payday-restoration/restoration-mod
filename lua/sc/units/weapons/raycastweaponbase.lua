@@ -502,3 +502,87 @@ function RaycastWeaponBase:stop_shooting(...)
 		orig_stop_shooting(self,...)
 	end
 end
+
+
+--Multipliers for overall spread.
+function RaycastWeaponBase:conditional_accuracy_multiplier(current_state)
+	local mul = 1
+
+	--Multi-pellet spread increase.
+	if self._rays and self._rays > 1 then
+		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
+	end
+
+	if not current_state then
+		return mul
+	end
+
+	local pm = managers.player
+
+	--Rifleman ace bonus.
+	--Todo: Move these to steelsight_accuracy_inc
+	if current_state:in_steelsight() and self:is_category("assault_rifle", "snp") then
+		mul = mul * pm:upgrade_value("player", "single_shot_accuracy_inc", 1)
+	end
+
+	if current_state:in_steelsight() then
+		for _, category in ipairs(self:categories()) do
+			mul = mul * pm:upgrade_value(category, "steelsight_accuracy_inc", 1)
+		end
+	else
+		for _, category in ipairs(self:categories()) do
+			mul = mul * pm:upgrade_value(category, "hip_fire_spread_multiplier", 1)
+		end
+	end
+
+	mul = mul * pm:get_property("desperado", 1)
+
+	return mul
+end
+
+--Multiplier for movement penalty to spread.
+function RaycastWeaponBase:moving_spread_penalty_reduction()
+	local spread_multiplier = 1
+	for _, category in ipairs(self:weapon_tweak_data().categories) do
+		spread_multiplier = spread_multiplier * managers.player:upgrade_value(category, "move_spread_multiplier", 1)
+	end
+	return spread_multiplier
+end
+
+function RaycastWeaponBase:_get_spread(user_unit)
+	local current_state = user_unit:movement()._current_state
+	if not current_state then
+		return 0, 0
+	end
+
+	local weapon_tweak_data = tweak_data.weapon
+	
+
+	--Get spread area from accuracy stat.
+	local spread_area = math.max(self._spread + 
+		managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) * weapon_tweak_data.stat_info.spread_per_accuracy, 0.05)
+	log("Accuracy: " .. tostring(spread_area))
+	
+	--Moving penalty to spread, based on stability stat.
+	if current_state._moving then
+		--Get spread area from stability stat.
+		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * weapon_tweak_data.stat_info.spread_per_stability, 0)
+		--Add moving spread penalty reduction.
+		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
+		log("Stability Penalty: " .. tostring(moving_spread))
+		--Add spread areas.
+		spread_area = spread_area + moving_spread
+	end
+
+	--Apply skill and stance multipliers to overall spread area.
+	local multiplier = weapon_tweak_data.stats.stance_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	spread_area = spread_area * multiplier
+	log("Spread Area: " .. tostring(spread_area))
+
+
+	--Convert spread area to degrees.
+	local spread_x = math.sqrt((spread_area)/math.pi)
+	local spread_y = spread_x
+
+	return spread_x, spread_y
+end

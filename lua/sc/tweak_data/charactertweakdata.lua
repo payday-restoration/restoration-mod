@@ -1213,9 +1213,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	
 	self.city_swat_titan = deep_clone(self.city_swat)
 	self.city_swat_titan.can_slide_on_suppress = true
-	self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
-	self.city_swat_titan.speech_prefix_count = 4		
+	self.city_swat_titan.speech_prefix_p1 = "are you team cum pisser"
+	self.city_swat_titan.speech_prefix_p2 = "or team poop shitter"
+	self.city_swat_titan.speech_prefix_count = nil		
 	if is_reaper or is_federales then
 		self.city_swat_titan.custom_voicework = "tswat_ru"
 	else

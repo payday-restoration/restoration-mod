@@ -9635,8 +9635,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"shield_cover"
 		},	
-		MH_shield = { --same as fbi shield for now
+		MH_shield = { --shields with elite ranged fire
 			"charge",
+			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
 			"shield",

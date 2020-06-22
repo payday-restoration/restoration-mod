@@ -3019,7 +3019,40 @@ function WeaponTweakData:_init_stats()
     for i = 1, 12.1, 0.1 do
         table.insert(self.stats.zoom, 65 / i)
     end
-	self.stats.spread = {
+
+    self.stats.stance_mults = {
+    	standing = 9,
+    	moving_standing = 9,
+    	moving_crouching = 4,
+    	crouching = 4,
+    	moving_steelsight = 1,
+    	steelsight = 1
+    }
+
+    self.stats.spread = {
+    	4.05,
+    	3.85,
+    	3.65,
+    	3.45,
+    	3.25,
+    	3.05,
+    	2.85,
+    	2.65,
+    	2.45,
+    	2.25,
+    	2.05,
+    	1.85,
+    	1.65,
+    	1.45,
+    	1.25,
+    	1.05,
+    	0.85,
+    	0.65,
+    	0.45,
+    	0.25,
+    	0.05
+    }
+	--[[self.stats.spread = {
 		2.016,
 		1.92,
 		1.824,
@@ -3041,22 +3074,34 @@ function WeaponTweakData:_init_stats()
 		0.288,
 		0.192,
 		0.096
-	}
+	}]]
 	self.stats.spread_moving = {
-		3,
-		2.7,
+		2.5,
 		2.4,
+		2.3,
 		2.2,
-		2,
+		2.1,
+		2.0,
+		1.9,
+		1.8,
 		1.7,
+		1.6,
+		1.5,
 		1.4,
+		1.3,
 		1.2,
-		1,
+		1.1,
+		1.0,
 		0.9,
 		0.8,
 		0.7,
 		0.6,
-		0.5
+		0.5,
+		0.4,
+		0.3,
+		0.2,
+		0.1,
+		0.0
 	}
 	self.stats.recoil = {
 		3,
@@ -3556,9 +3601,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_m4.spread.standing = 3
 	self.new_m4.spread.crouching = 2
 	self.new_m4.spread.steelsight = 1
-	self.new_m4.spread.moving_standing = 4
-	self.new_m4.spread.moving_crouching = 3
-	self.new_m4.spread.moving_steelsight = 2
+	self.new_m4.spread.moving_standing = 3
+	self.new_m4.spread.moving_crouching = 2
+	self.new_m4.spread.moving_steelsight = 1
 	self.new_m4.kick.standing = {
 		0.6,
 		0.8,
@@ -3603,9 +3648,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.glock_17.spread.standing = 3
 	self.glock_17.spread.crouching = 2
 	self.glock_17.spread.steelsight = 1
-	self.glock_17.spread.moving_standing = 4
-	self.glock_17.spread.moving_crouching = 3
-	self.glock_17.spread.moving_steelsight = 2
+	self.glock_17.spread.moving_standing = 3
+	self.glock_17.spread.moving_crouching = 2
+	self.glock_17.spread.moving_steelsight = 1
 	self.glock_17.kick.standing = {
 		0.6,
 		0.8,
@@ -3649,9 +3694,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mp9.spread.standing = 3
 	self.mp9.spread.crouching = 2
 	self.mp9.spread.steelsight = 1
-	self.mp9.spread.moving_standing = 4
-	self.mp9.spread.moving_crouching = 3
-	self.mp9.spread.moving_steelsight = 2
+	self.mp9.spread.moving_standing = 3
+	self.mp9.spread.moving_crouching = 2
+	self.mp9.spread.moving_steelsight = 1
 	self.mp9.kick.standing = self.new_m4.kick.standing
 	self.mp9.kick.crouching = self.new_m4.kick.crouching
 	self.mp9.kick.steelsight = self.new_m4.kick.steelsight
@@ -3678,9 +3723,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r870.spread.standing = 3 * 1
 	self.r870.spread.crouching = 2 * 1 
 	self.r870.spread.steelsight = 1 * 1
-	self.r870.spread.moving_standing = 4 * 1
-	self.r870.spread.moving_crouching = 3 * 1
-	self.r870.spread.moving_steelsight = 2 * 1
+	self.r870.spread.moving_standing = 3 * 1
+	self.r870.spread.moving_crouching = 2 * 1
+	self.r870.spread.moving_steelsight = 1 * 1
 	self.r870.kick.standing = self.new_m4.kick.standing
 	self.r870.kick.crouching = self.new_m4.kick.crouching
 	self.r870.kick.steelsight = self.new_m4.kick.steelsight
@@ -3715,9 +3760,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.glock_18c.spread.standing = 3
 	self.glock_18c.spread.crouching = 2
 	self.glock_18c.spread.steelsight = 1
-	self.glock_18c.spread.moving_standing = 4
-	self.glock_18c.spread.moving_crouching = 3
-	self.glock_18c.spread.moving_steelsight = 2
+	self.glock_18c.spread.moving_standing = 3
+	self.glock_18c.spread.moving_crouching = 2
+	self.glock_18c.spread.moving_steelsight = 1
 	self.glock_18c.kick.standing = self.new_m4.kick.standing
 	self.glock_18c.kick.crouching = self.new_m4.kick.crouching
 	self.glock_18c.kick.steelsight = self.new_m4.kick.steelsight
@@ -3746,9 +3791,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.amcar.spread.standing = 3
 	self.amcar.spread.crouching = 2
 	self.amcar.spread.steelsight = 1
-	self.amcar.spread.moving_standing = 4
-	self.amcar.spread.moving_crouching = 3
-	self.amcar.spread.moving_steelsight = 2
+	self.amcar.spread.moving_standing = 3
+	self.amcar.spread.moving_crouching = 2
+	self.amcar.spread.moving_steelsight = 1
 	self.amcar.kick.standing = self.new_m4.kick.standing
 	self.amcar.kick.crouching = self.new_m4.kick.crouching
 	self.amcar.kick.steelsight = self.new_m4.kick.steelsight
@@ -3781,9 +3826,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m16.spread.standing = 3
 	self.m16.spread.crouching = 2
 	self.m16.spread.steelsight = 1
-	self.m16.spread.moving_standing = 4
-	self.m16.spread.moving_crouching = 3
-	self.m16.spread.moving_steelsight = 2
+	self.m16.spread.moving_standing = 3
+	self.m16.spread.moving_crouching = 2
+	self.m16.spread.moving_steelsight = 1
 	self.m16.kick.standing = self.new_m4.kick.standing
 	self.m16.kick.crouching = self.new_m4.kick.crouching
 	self.m16.kick.steelsight = self.new_m4.kick.steelsight		
@@ -3815,9 +3860,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.olympic.spread.standing = 3
 	self.olympic.spread.crouching = 2
 	self.olympic.spread.steelsight = 1
-	self.olympic.spread.moving_standing = 4
-	self.olympic.spread.moving_crouching = 3
-	self.olympic.spread.moving_steelsight = 2
+	self.olympic.spread.moving_standing = 3
+	self.olympic.spread.moving_crouching = 2
+	self.olympic.spread.moving_steelsight = 1
 	self.olympic.panic_suppression_chance = 0.0
 	self.olympic.kick.standing = self.new_m4.kick.standing
 	self.olympic.kick.crouching = self.new_m4.kick.crouching
@@ -3843,9 +3888,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ak74.spread.standing = 3
 	self.ak74.spread.crouching = 2
 	self.ak74.spread.steelsight = 1
-	self.ak74.spread.moving_standing = 4
-	self.ak74.spread.moving_crouching = 3
-	self.ak74.spread.moving_steelsight = 2
+	self.ak74.spread.moving_standing = 3
+	self.ak74.spread.moving_crouching = 2
+	self.ak74.spread.moving_steelsight = 1
 	self.ak74.fire_mode_data.fire_rate = 0.0923076923
 	self.ak74.auto.fire_rate = 0.0923076923
 	self.ak74.kick.standing = self.new_m4.kick.standing
@@ -3875,9 +3920,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akm.spread.standing = 3
 	self.akm.spread.crouching = 2
 	self.akm.spread.steelsight = 1
-	self.akm.spread.moving_standing = 4
-	self.akm.spread.moving_crouching = 3
-	self.akm.spread.moving_steelsight = 2
+	self.akm.spread.moving_standing = 3
+	self.akm.spread.moving_crouching = 2
+	self.akm.spread.moving_steelsight = 1
 	self.akm.kick.standing = self.new_m4.kick.standing
 	self.akm.kick.crouching = self.new_m4.kick.crouching
 	self.akm.kick.steelsight = self.new_m4.kick.steelsight		
@@ -3902,9 +3947,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akm_gold.spread.standing = 3
 	self.akm_gold.spread.crouching = 2
 	self.akm_gold.spread.steelsight = 1
-	self.akm_gold.spread.moving_standing = 4
-	self.akm_gold.spread.moving_crouching = 3
-	self.akm_gold.spread.moving_steelsight = 2
+	self.akm_gold.spread.moving_standing = 3
+	self.akm_gold.spread.moving_crouching = 2
+	self.akm_gold.spread.moving_steelsight = 1
 	self.akm_gold.kick.standing = self.new_m4.kick.standing
 	self.akm_gold.kick.crouching = self.new_m4.kick.crouching
 	self.akm_gold.kick.steelsight = self.new_m4.kick.steelsight			
@@ -3939,9 +3984,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akmsu.spread.standing = 3
 	self.akmsu.spread.crouching = 2
 	self.akmsu.spread.steelsight = 1
-	self.akmsu.spread.moving_standing = 4
-	self.akmsu.spread.moving_crouching = 3
-	self.akmsu.spread.moving_steelsight = 2
+	self.akmsu.spread.moving_standing = 3
+	self.akmsu.spread.moving_crouching = 2
+	self.akmsu.spread.moving_steelsight = 1
 	self.akmsu.panic_suppression_chance = 0.0
 	self.akmsu.kick.standing = self.new_m4.kick.standing
 	self.akmsu.kick.crouching = self.new_m4.kick.crouching
@@ -3968,9 +4013,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saiga.spread.standing = 3 * 1
 	self.saiga.spread.crouching = 2 * 1 
 	self.saiga.spread.steelsight = 1 * 1
-	self.saiga.spread.moving_standing = 4 * 1
-	self.saiga.spread.moving_crouching = 3 * 1
-	self.saiga.spread.moving_steelsight = 2 * 1
+	self.saiga.spread.moving_standing = 3 * 1
+	self.saiga.spread.moving_crouching = 2 * 1
+	self.saiga.spread.moving_steelsight = 1 * 1
 	self.saiga.CLIP_AMMO_MAX = 6
 	self.saiga.AMMO_MAX = 120
 	self.saiga.AMMO_PICKUP = self:_pickup_chance(120, 2)
@@ -4002,9 +4047,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ak5.spread.standing = 3
 	self.ak5.spread.crouching = 2
 	self.ak5.spread.steelsight = 1
-	self.ak5.spread.moving_standing = 4
-	self.ak5.spread.moving_crouching = 3
-	self.ak5.spread.moving_steelsight = 2
+	self.ak5.spread.moving_standing = 3
+	self.ak5.spread.moving_crouching = 2
+	self.ak5.spread.moving_steelsight = 1
 	self.ak5.auto.fire_rate = 0.08571428571
 	self.ak5.fire_mode_data.fire_rate = 0.08571428571
 	self.ak5.kick.standing = self.new_m4.kick.standing
@@ -4034,9 +4079,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aug.spread.standing = 3
 	self.aug.spread.crouching = 2
 	self.aug.spread.steelsight = 1
-	self.aug.spread.moving_standing = 4
-	self.aug.spread.moving_crouching = 3
-	self.aug.spread.moving_steelsight = 2
+	self.aug.spread.moving_standing = 3
+	self.aug.spread.moving_crouching = 2
+	self.aug.spread.moving_steelsight = 1
 	self.aug.kick.standing = self.new_m4.kick.standing
 	self.aug.kick.crouching = self.new_m4.kick.crouching
 	self.aug.kick.steelsight = self.new_m4.kick.steelsight
@@ -4061,9 +4106,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g36.spread.standing = 3
 	self.g36.spread.crouching = 2
 	self.g36.spread.steelsight = 1
-	self.g36.spread.moving_standing = 4
-	self.g36.spread.moving_crouching = 3
-	self.g36.spread.moving_steelsight = 2
+	self.g36.spread.moving_standing = 3
+	self.g36.spread.moving_crouching = 2
+	self.g36.spread.moving_steelsight = 1
 	self.g36.BURST_FIRE = 2
 	self.g36.ADAPTIVE_BURST_SIZE = false																	
 	self.g36.auto.fire_rate = 0.08
@@ -4100,9 +4145,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.p90.spread.standing = 3
 	self.p90.spread.crouching = 2
 	self.p90.spread.steelsight = 1
-	self.p90.spread.moving_standing = 4
-	self.p90.spread.moving_crouching = 3
-	self.p90.spread.moving_steelsight = 2
+	self.p90.spread.moving_standing = 3
+	self.p90.spread.moving_crouching = 2
+	self.p90.spread.moving_steelsight = 1
 	self.p90.kick.standing = self.new_m4.kick.standing
 	self.p90.kick.crouching = self.new_m4.kick.crouching
 	self.p90.kick.steelsight = self.new_m4.kick.steelsight
@@ -4128,9 +4173,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_m14.spread.standing = 3
 	self.new_m14.spread.crouching = 2
 	self.new_m14.spread.steelsight = 1
-	self.new_m14.spread.moving_standing = 4
-	self.new_m14.spread.moving_crouching = 3
-	self.new_m14.spread.moving_steelsight = 2
+	self.new_m14.spread.moving_standing = 3
+	self.new_m14.spread.moving_crouching = 2
+	self.new_m14.spread.moving_steelsight = 1
 	self.new_m14.kick.standing = self.new_m4.kick.standing
 	self.new_m14.kick.crouching = self.new_m4.kick.crouching
 	self.new_m14.kick.steelsight = self.new_m4.kick.steelsight
@@ -4160,9 +4205,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.deagle.spread.standing = 3
 	self.deagle.spread.crouching = 2
 	self.deagle.spread.steelsight = 1
-	self.deagle.spread.moving_standing = 4
-	self.deagle.spread.moving_crouching = 3
-	self.deagle.spread.moving_steelsight = 2
+	self.deagle.spread.moving_standing = 3
+	self.deagle.spread.moving_crouching = 2
+	self.deagle.spread.moving_steelsight = 1
 	self.deagle.kick.standing = self.glock_17.kick.standing
 	self.deagle.kick.crouching = self.glock_17.kick.crouching
 	self.deagle.kick.steelsight = self.glock_17.kick.steelsight
@@ -4192,9 +4237,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_mp5.BURST_FIRE = 3
 	self.new_mp5.ADAPTIVE_BURST_SIZE = false			
 	self.new_mp5.spread.steelsight = 1
-	self.new_mp5.spread.moving_standing = 4
-	self.new_mp5.spread.moving_crouching = 3
-	self.new_mp5.spread.moving_steelsight = 2
+	self.new_mp5.spread.moving_standing = 3
+	self.new_mp5.spread.moving_crouching = 2
+	self.new_mp5.spread.moving_steelsight = 1
 	self.new_mp5.panic_suppression_chance = 0.05
 	self.new_mp5.kick.standing = self.new_m4.kick.standing
 	self.new_mp5.kick.crouching = self.new_m4.kick.crouching
@@ -4225,9 +4270,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.colt_1911.spread.standing = 3
 	self.colt_1911.spread.crouching = 2
 	self.colt_1911.spread.steelsight = 1
-	self.colt_1911.spread.moving_standing = 4
-	self.colt_1911.spread.moving_crouching = 3
-	self.colt_1911.spread.moving_steelsight = 2
+	self.colt_1911.spread.moving_standing = 3
+	self.colt_1911.spread.moving_crouching = 2
+	self.colt_1911.spread.moving_steelsight = 1
 	self.colt_1911.kick.standing = self.glock_17.kick.standing
 	self.colt_1911.kick.crouching = self.glock_17.kick.crouching
 	self.colt_1911.kick.steelsight = self.glock_17.kick.steelsight
@@ -4253,9 +4298,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mac10.spread.standing = 3
 	self.mac10.spread.crouching = 2
 	self.mac10.spread.steelsight = 1
-	self.mac10.spread.moving_standing = 4
-	self.mac10.spread.moving_crouching = 3
-	self.mac10.spread.moving_steelsight = 2
+	self.mac10.spread.moving_standing = 3
+	self.mac10.spread.moving_crouching = 2
+	self.mac10.spread.moving_steelsight = 1
 	self.mac10.fire_mode_data.fire_rate = 0.06
 	self.mac10.auto.fire_rate = 0.06
 	self.mac10.kick.standing = self.new_m4.kick.standing
@@ -4284,9 +4329,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.serbu.spread.standing = 3 * 1
 	self.serbu.spread.crouching = 2 * 1
 	self.serbu.spread.steelsight = 1 * 1
-	self.serbu.spread.moving_standing = 4 * 1 
-	self.serbu.spread.moving_crouching = 3 * 1 
-	self.serbu.spread.moving_steelsight = 2 * 1
+	self.serbu.spread.moving_standing = 3 * 1 
+	self.serbu.spread.moving_crouching = 2 * 1 
+	self.serbu.spread.moving_steelsight = 1 * 1
 	self.serbu.CLIP_AMMO_MAX = 4
 	self.serbu.AMMO_MAX = 30
 	self.serbu.damage_near = 800
@@ -4318,9 +4363,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.huntsman.spread.standing = 3 * 1
 	self.huntsman.spread.crouching = 2 * 1
 	self.huntsman.spread.steelsight = 1 * 1
-	self.huntsman.spread.moving_standing = 4 * 1
-	self.huntsman.spread.moving_crouching = 3 * 1
-	self.huntsman.spread.moving_steelsight = 2 * 1
+	self.huntsman.spread.moving_standing = 3 * 1
+	self.huntsman.spread.moving_crouching = 2 * 1
+	self.huntsman.spread.moving_steelsight = 1 * 1
 	self.huntsman.AMMO_MAX = 40
 	self.huntsman.damage_near = 1200
 	self.huntsman.damage_far = 2400
@@ -4383,9 +4428,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b92fs.spread.standing = 3
 	self.b92fs.spread.crouching = 2
 	self.b92fs.spread.steelsight = 1
-	self.b92fs.spread.moving_standing = 4
-	self.b92fs.spread.moving_crouching = 3
-	self.b92fs.spread.moving_steelsight = 2
+	self.b92fs.spread.moving_standing = 3
+	self.b92fs.spread.moving_crouching = 2
+	self.b92fs.spread.moving_steelsight = 1
 	self.b92fs.kick.standing = self.glock_17.kick.standing
 	self.b92fs.kick.crouching = self.glock_17.kick.crouching
 	self.b92fs.kick.steelsight = self.glock_17.kick.steelsight
@@ -4412,9 +4457,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_raging_bull.spread.standing = 3
 	self.new_raging_bull.spread.crouching = 2
 	self.new_raging_bull.spread.steelsight = 1
-	self.new_raging_bull.spread.moving_standing = 4
-	self.new_raging_bull.spread.moving_crouching = 3
-	self.new_raging_bull.spread.moving_steelsight = 2
+	self.new_raging_bull.spread.moving_standing = 3
+	self.new_raging_bull.spread.moving_crouching = 2
+	self.new_raging_bull.spread.moving_steelsight = 1
 	self.new_raging_bull.AMMO_MAX = 30
 	self.new_raging_bull.kick.standing = self.glock_17.kick.standing
 	self.new_raging_bull.kick.crouching = self.glock_17.kick.crouching
@@ -4521,9 +4566,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.usp.spread.standing = 3
 	self.usp.spread.crouching = 2
 	self.usp.spread.steelsight = 1
-	self.usp.spread.moving_standing = 4
-	self.usp.spread.moving_crouching = 3
-	self.usp.spread.moving_steelsight = 2
+	self.usp.spread.moving_standing = 3
+	self.usp.spread.moving_crouching = 2
+	self.usp.spread.moving_steelsight = 1
 	self.usp.kick.standing = self.glock_17.kick.standing
 	self.usp.kick.crouching = self.glock_17.kick.crouching
 	self.usp.kick.steelsight = self.glock_17.kick.steelsight
@@ -4557,9 +4602,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g22c.spread.standing = 3
 	self.g22c.spread.crouching = 2
 	self.g22c.spread.steelsight = 1
-	self.g22c.spread.moving_standing = 4
-	self.g22c.spread.moving_crouching = 3
-	self.g22c.spread.moving_steelsight = 2
+	self.g22c.spread.moving_standing = 3
+	self.g22c.spread.moving_crouching = 2
+	self.g22c.spread.moving_steelsight = 1
 	self.g22c.kick.standing = self.glock_17.kick.standing
 	self.g22c.kick.crouching = self.glock_17.kick.crouching
 	self.g22c.kick.steelsight = self.glock_17.kick.steelsight
@@ -4589,9 +4634,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.judge.spread.standing = 3
 	self.judge.spread.crouching = 2
 	self.judge.spread.steelsight = 1
-	self.judge.spread.moving_standing = 4
-	self.judge.spread.moving_crouching = 3
-	self.judge.spread.moving_steelsight = 2
+	self.judge.spread.moving_standing = 3
+	self.judge.spread.moving_crouching = 2
+	self.judge.spread.moving_steelsight = 1
 	self.judge.AMMO_MAX = 20
 	self.judge.damage_near = 500
 	self.judge.damage_far = 1000
@@ -4624,9 +4669,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m45.spread.standing = 3
 	self.m45.spread.crouching = 2
 	self.m45.spread.steelsight = 1
-	self.m45.spread.moving_standing = 4
-	self.m45.spread.moving_crouching = 3
-	self.m45.spread.moving_steelsight = 2
+	self.m45.spread.moving_standing = 3
+	self.m45.spread.moving_crouching = 2
+	self.m45.spread.moving_steelsight = 1
 	self.m45.kick.standing = self.new_m4.kick.standing
 	self.m45.kick.crouching = self.new_m4.kick.crouching
 	self.m45.kick.steelsight = self.new_m4.kick.steelsight
@@ -4654,11 +4699,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.s552.spread.standing = 3
 	self.s552.spread.crouching = 2
 	self.s552.spread.steelsight = 1
-	self.s552.spread.moving_standing = 4
+	self.s552.spread.moving_standing = 3
 	self.s552.BURST_FIRE = 3
 	self.s552.ADAPTIVE_BURST_SIZE = false															
-	self.s552.spread.moving_crouching = 3
-	self.s552.spread.moving_steelsight = 2
+	self.s552.spread.moving_crouching = 2
+	self.s552.spread.moving_steelsight = 1
 	self.s552.kick.standing = self.new_m4.kick.standing
 	self.s552.kick.crouching = self.new_m4.kick.crouching
 	self.s552.kick.steelsight = self.new_m4.kick.steelsight
@@ -4694,9 +4739,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ppk.spread.standing = 3
 	self.ppk.spread.crouching = 2
 	self.ppk.spread.steelsight = 1
-	self.ppk.spread.moving_standing = 4
-	self.ppk.spread.moving_crouching = 3
-	self.ppk.spread.moving_steelsight = 2
+	self.ppk.spread.moving_standing = 3
+	self.ppk.spread.moving_crouching = 2
+	self.ppk.spread.moving_steelsight = 1
 	self.ppk.kick.standing = self.glock_17.kick.standing
 	self.ppk.kick.crouching = self.glock_17.kick.crouching
 	self.ppk.kick.steelsight = self.glock_17.kick.steelsight
@@ -4728,9 +4773,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mp7.spread.standing = 3
 	self.mp7.spread.crouching = 2
 	self.mp7.spread.steelsight = 1
-	self.mp7.spread.moving_standing = 4
-	self.mp7.spread.moving_crouching = 3
-	self.mp7.spread.moving_steelsight = 2
+	self.mp7.spread.moving_standing = 3
+	self.mp7.spread.moving_crouching = 2
+	self.mp7.spread.moving_steelsight = 1
 	self.mp7.kick.standing = self.new_m4.kick.standing
 	self.mp7.kick.crouching = self.new_m4.kick.crouching
 	self.mp7.kick.steelsight = self.new_m4.kick.steelsight			
@@ -4757,9 +4802,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.scar.spread.standing = 3
 	self.scar.spread.crouching = 2
 	self.scar.spread.steelsight = 1
-	self.scar.spread.moving_standing = 4
-	self.scar.spread.moving_crouching = 3
-	self.scar.spread.moving_steelsight = 2
+	self.scar.spread.moving_standing = 3
+	self.scar.spread.moving_crouching = 2
+	self.scar.spread.moving_steelsight = 1
 	self.scar.fire_mode_data.fire_rate = 0.09523809523
 	self.scar.CAN_TOGGLE_FIREMODE = true
 	self.scar.auto.fire_rate = 0.09523809523
@@ -4791,9 +4836,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.p226.spread.standing = 3
 	self.p226.spread.crouching = 2
 	self.p226.spread.steelsight = 1
-	self.p226.spread.moving_standing = 4
-	self.p226.spread.moving_crouching = 3
-	self.p226.spread.moving_steelsight = 2
+	self.p226.spread.moving_standing = 3
+	self.p226.spread.moving_crouching = 2
+	self.p226.spread.moving_steelsight = 1
 	self.p226.kick.standing = self.glock_17.kick.standing
 	self.p226.kick.crouching = self.glock_17.kick.crouching
 	self.p226.kick.steelsight = self.glock_17.kick.steelsight
@@ -4825,9 +4870,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hk21.spread.standing = 3
 	self.hk21.spread.crouching = 2
 	self.hk21.spread.steelsight = 1
-	self.hk21.spread.moving_standing = 4
-	self.hk21.spread.moving_crouching = 3
-	self.hk21.spread.moving_steelsight = 2
+	self.hk21.spread.moving_standing = 3
+	self.hk21.spread.moving_crouching = 2
+	self.hk21.spread.moving_steelsight = 1
 	self.hk21.spread.bipod = 0.5
 	self.hk21.kick.standing = self.new_m4.kick.standing
 	self.hk21.kick.crouching = self.new_m4.kick.crouching
@@ -4859,9 +4904,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m249.spread.standing = 3
 	self.m249.spread.crouching = 2
 	self.m249.spread.steelsight = 1
-	self.m249.spread.moving_standing = 4
-	self.m249.spread.moving_crouching = 3
-	self.m249.spread.moving_steelsight = 2
+	self.m249.spread.moving_standing = 3
+	self.m249.spread.moving_crouching = 2
+	self.m249.spread.moving_steelsight = 1
 	self.m249.spread.bipod = 0.5
 	self.m249.fire_mode_data.fire_rate = 0.075
 	self.m249.auto.fire_rate = 0.075
@@ -4900,9 +4945,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpk.spread.standing = 3
 	self.rpk.spread.crouching = 2
 	self.rpk.spread.steelsight = 1
-	self.rpk.spread.moving_standing = 4
-	self.rpk.spread.moving_crouching = 3
-	self.rpk.spread.moving_steelsight = 2
+	self.rpk.spread.moving_standing = 3
+	self.rpk.spread.moving_crouching = 2
+	self.rpk.spread.moving_steelsight = 1
 	self.rpk.spread.bipod = 0.5
 	self.rpk.kick.standing = self.new_m4.kick.standing
 	self.rpk.kick.crouching = self.new_m4.kick.crouching
@@ -4931,9 +4976,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m95.spread.standing = 3
 	self.m95.spread.crouching = 2
 	self.m95.spread.steelsight = 1
-	self.m95.spread.moving_standing = 4
-	self.m95.spread.moving_crouching = 3
-	self.m95.spread.moving_steelsight = 2
+	self.m95.spread.moving_standing = 3
+	self.m95.spread.moving_crouching = 2
+	self.m95.spread.moving_steelsight = 1
 	self.m95.fire_mode_data.fire_rate = 1.2
 	self.m95.kick.standing = self.huntsman.kick.standing
 	self.m95.kick.crouching = self.huntsman.kick.crouching
@@ -4967,9 +5012,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.msr.spread.standing = 3
 	self.msr.spread.crouching = 2
 	self.msr.spread.steelsight = 2
-	self.msr.spread.moving_standing = 4
-	self.msr.spread.moving_crouching = 3
-	self.msr.spread.moving_steelsight = 2
+	self.msr.spread.moving_standing = 3
+	self.msr.spread.moving_crouching = 2
+	self.msr.spread.moving_steelsight = 1
 	self.msr.kick.standing = self.huntsman.kick.standing
 	self.msr.kick.crouching = self.huntsman.kick.crouching
 	self.msr.kick.steelsight = self.huntsman.kick.steelsight
@@ -4999,9 +5044,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r93.spread.standing = 3
 	self.r93.spread.crouching = 2
 	self.r93.spread.steelsight = 1
-	self.r93.spread.moving_standing = 4
-	self.r93.spread.moving_crouching = 3
-	self.r93.spread.moving_steelsight = 2
+	self.r93.spread.moving_standing = 3
+	self.r93.spread.moving_crouching = 2
+	self.r93.spread.moving_steelsight = 1
 	self.r93.kick.standing = self.huntsman.kick.standing
 	self.r93.kick.crouching = self.huntsman.kick.crouching
 	self.r93.kick.steelsight = self.huntsman.kick.steelsight
@@ -5033,8 +5078,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.fal.spread.standing = 3
 	self.fal.spread.crouching = 2
 	self.fal.spread.steelsight = 1
-	self.fal.spread.moving_standing = 4
-	self.fal.spread.moving_crouching = 3
+	self.fal.spread.moving_standing = 3
+	self.fal.spread.moving_crouching = 2
 	self.fal.spread.moving_steelsight = 3
 	self.fal.kick.standing = self.new_m4.kick.standing
 	self.fal.kick.crouching = self.new_m4.kick.crouching
@@ -5068,9 +5113,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.benelli.spread.standing = 3 * 1
 	self.benelli.spread.crouching = 2 * 1
 	self.benelli.spread.steelsight = 1 * 1
-	self.benelli.spread.moving_standing = 4 * 1
-	self.benelli.spread.moving_crouching = 3 * 1
-	self.benelli.spread.moving_steelsight = 2 * 1
+	self.benelli.spread.moving_standing = 3 * 1
+	self.benelli.spread.moving_crouching = 2 * 1
+	self.benelli.spread.moving_steelsight = 1 * 1
 	self.benelli.kick.standing = self.new_m4.kick.standing
 	self.benelli.kick.crouching = self.new_m4.kick.crouching
 	self.benelli.kick.steelsight = self.new_m4.kick.steelsight
@@ -5104,9 +5149,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.striker.spread.standing = 3 * 1
 	self.striker.spread.crouching = 2 * 1
 	self.striker.spread.steelsight = 1 * 1
-	self.striker.spread.moving_standing = 4 * 1
-	self.striker.spread.moving_crouching = 3 * 1
-	self.striker.spread.moving_steelsight = 2 * 1
+	self.striker.spread.moving_standing = 3 * 1
+	self.striker.spread.moving_crouching = 2 * 1
+	self.striker.spread.moving_steelsight = 1 * 1
 	self.striker.kick.standing = self.new_m4.kick.standing
 	self.striker.kick.crouching = self.new_m4.kick.crouching
 	self.striker.kick.steelsight = self.new_m4.kick.steelsight
@@ -5136,9 +5181,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ksg.spread.standing = 3 * 1
 	self.ksg.spread.crouching = 2 * 1
 	self.ksg.spread.steelsight = 1 * 1
-	self.ksg.spread.moving_standing = 4 * 1
-	self.ksg.spread.moving_crouching = 3 * 1
-	self.ksg.spread.moving_steelsight = 2 * 1
+	self.ksg.spread.moving_standing = 3 * 1
+	self.ksg.spread.moving_crouching = 2 * 1
+	self.ksg.spread.moving_steelsight = 1 * 1
 	self.ksg.single.fire_rate = 0.6
 	self.ksg.fire_mode_data.fire_rate = 0.6
 	self.ksg.kick.standing = self.new_m4.kick.standing
@@ -5172,9 +5217,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.gre_m79.spread.standing = 3
 	self.gre_m79.spread.crouching = 2
 	self.gre_m79.spread.steelsight = 1
-	self.gre_m79.spread.moving_standing = 4
-	self.gre_m79.spread.moving_crouching = 3
-	self.gre_m79.spread.moving_steelsight = 2
+	self.gre_m79.spread.moving_standing = 3
+	self.gre_m79.spread.moving_crouching = 2
+	self.gre_m79.spread.moving_steelsight = 1
 	self.gre_m79.kick.standing = self.huntsman.kick.standing
 	self.gre_m79.kick.crouching = self.huntsman.kick.crouching
 	self.gre_m79.kick.steelsight = self.huntsman.kick.steelsight
@@ -5207,9 +5252,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g3.spread.standing = 3
 	self.g3.spread.crouching = 2
 	self.g3.spread.steelsight = 1
-	self.g3.spread.moving_standing = 4
-	self.g3.spread.moving_crouching = 3
-	self.g3.spread.moving_steelsight = 2
+	self.g3.spread.moving_standing = 3
+	self.g3.spread.moving_crouching = 2
+	self.g3.spread.moving_steelsight = 1
 	self.g3.kick.standing = self.new_m4.kick.standing
 	self.g3.kick.crouching = self.new_m4.kick.crouching
 	self.g3.kick.steelsight = self.new_m4.kick.steelsight		
@@ -5240,9 +5285,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.galil.spread.standing = 3
 	self.galil.spread.crouching = 2
 	self.galil.spread.steelsight = 1
-	self.galil.spread.moving_standing = 4
-	self.galil.spread.moving_crouching = 3
-	self.galil.spread.moving_steelsight = 2
+	self.galil.spread.moving_standing = 3
+	self.galil.spread.moving_crouching = 2
+	self.galil.spread.moving_steelsight = 1
 	self.galil.kick.standing = self.new_m4.kick.standing
 	self.galil.kick.crouching = self.new_m4.kick.crouching
 	self.galil.kick.steelsight = self.new_m4.kick.steelsight
@@ -5275,9 +5320,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.famas.spread.standing = 3
 	self.famas.spread.crouching = 2
 	self.famas.spread.steelsight = 1
-	self.famas.spread.moving_standing = 4
-	self.famas.spread.moving_crouching = 3
-	self.famas.spread.moving_steelsight = 2
+	self.famas.spread.moving_standing = 3
+	self.famas.spread.moving_crouching = 2
+	self.famas.spread.moving_steelsight = 1
 	self.famas.kick.standing = self.new_m4.kick.standing
 	self.famas.kick.crouching = self.new_m4.kick.crouching
 	self.famas.kick.steelsight = self.new_m4.kick.steelsight
@@ -5312,9 +5357,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.scorpion.spread.standing = 3
 	self.scorpion.spread.crouching = 2
 	self.scorpion.spread.steelsight = 1
-	self.scorpion.spread.moving_standing = 4
-	self.scorpion.spread.moving_crouching = 3
-	self.scorpion.spread.moving_steelsight = 2
+	self.scorpion.spread.moving_standing = 3
+	self.scorpion.spread.moving_crouching = 2
+	self.scorpion.spread.moving_steelsight = 1
 	self.scorpion.kick.standing = self.new_m4.kick.standing
 	self.scorpion.kick.crouching = self.new_m4.kick.crouching
 	self.scorpion.kick.steelsight = self.new_m4.kick.steelsight
@@ -5348,9 +5393,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tec9.spread.standing = 3
 	self.tec9.spread.crouching = 2
 	self.tec9.spread.steelsight = 1
-	self.tec9.spread.moving_standing = 4
-	self.tec9.spread.moving_crouching = 3
-	self.tec9.spread.moving_steelsight = 2
+	self.tec9.spread.moving_standing = 3
+	self.tec9.spread.moving_crouching = 2
+	self.tec9.spread.moving_steelsight = 1
 	self.tec9.kick.standing = self.new_m4.kick.standing
 	self.tec9.kick.crouching = self.new_m4.kick.crouching
 	self.tec9.kick.steelsight = self.new_m4.kick.steelsight
@@ -5382,9 +5427,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.uzi.spread.standing = 3
 	self.uzi.spread.crouching = 2
 	self.uzi.spread.steelsight = 1
-	self.uzi.spread.moving_standing = 4
-	self.uzi.spread.moving_crouching = 3
-	self.uzi.spread.moving_steelsight = 2
+	self.uzi.spread.moving_standing = 3
+	self.uzi.spread.moving_crouching = 2
+	self.uzi.spread.moving_steelsight = 1
 	self.uzi.kick.standing = self.new_m4.kick.standing
 	self.uzi.kick.crouching = self.new_m4.kick.crouching
 	self.uzi.kick.steelsight = self.new_m4.kick.steelsight
@@ -5409,9 +5454,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.jowi.spread.standing = 3
 	self.jowi.spread.crouching = 2
 	self.jowi.spread.steelsight = 1
-	self.jowi.spread.moving_standing = 4
-	self.jowi.spread.moving_crouching = 3
-	self.jowi.spread.moving_steelsight = 2
+	self.jowi.spread.moving_standing = 3
+	self.jowi.spread.moving_crouching = 2
+	self.jowi.spread.moving_steelsight = 1
 	self.jowi.kick.standing = self.glock_17.kick.standing
 	self.jowi.kick.crouching = self.glock_17.kick.crouching
 	self.jowi.kick.steelsight = self.glock_17.kick.steelsight
@@ -5439,9 +5484,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_1911.spread.standing = 3
 	self.x_1911.spread.crouching = 2
 	self.x_1911.spread.steelsight = 1
-	self.x_1911.spread.moving_standing = 4
-	self.x_1911.spread.moving_crouching = 3
-	self.x_1911.spread.moving_steelsight = 2
+	self.x_1911.spread.moving_standing = 3
+	self.x_1911.spread.moving_crouching = 2
+	self.x_1911.spread.moving_steelsight = 1
 	self.x_1911.CLIP_AMMO_MAX = 16
 	self.x_1911.AMMO_MAX = 80
 	self.x_1911.AMMO_PICKUP = self:_pickup_chance(80, 2)
@@ -5470,9 +5515,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_b92fs.spread.standing = 3
 	self.x_b92fs.spread.crouching = 2
 	self.x_b92fs.spread.steelsight = 1
-	self.x_b92fs.spread.moving_standing = 4
-	self.x_b92fs.spread.moving_crouching = 3
-	self.x_b92fs.spread.moving_steelsight = 2
+	self.x_b92fs.spread.moving_standing = 3
+	self.x_b92fs.spread.moving_crouching = 2
+	self.x_b92fs.spread.moving_steelsight = 1
 	self.x_b92fs.kick.standing = self.glock_17.kick.standing
 	self.x_b92fs.kick.crouching = self.glock_17.kick.crouching
 	self.x_b92fs.kick.steelsight = self.glock_17.kick.steelsight
@@ -5510,9 +5555,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_deagle.spread.standing = 3
 	self.x_deagle.spread.crouching = 2
 	self.x_deagle.spread.steelsight = 1
-	self.x_deagle.spread.moving_standing = 4
-	self.x_deagle.spread.moving_crouching = 3
-	self.x_deagle.spread.moving_steelsight = 2
+	self.x_deagle.spread.moving_standing = 3
+	self.x_deagle.spread.moving_crouching = 2
+	self.x_deagle.spread.moving_steelsight = 1
 	self.x_deagle.kick.standing = self.glock_17.kick.standing
 	self.x_deagle.kick.crouching = self.glock_17.kick.crouching
 	self.x_deagle.kick.steelsight = self.glock_17.kick.steelsight
@@ -5543,9 +5588,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g26.spread.standing = 3
 	self.g26.spread.crouching = 2
 	self.g26.spread.steelsight = 1
-	self.g26.spread.moving_standing = 4
-	self.g26.spread.moving_crouching = 3
-	self.g26.spread.moving_steelsight = 2
+	self.g26.spread.moving_standing = 3
+	self.g26.spread.moving_crouching = 2
+	self.g26.spread.moving_steelsight = 1
 	self.g26.stats = {
 		damage = 20,
 		spread = 20,
@@ -5576,9 +5621,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.spas12.spread.standing = 3 * 1
 	self.spas12.spread.crouching = 2 * 1
 	self.spas12.spread.steelsight = 1 * 1
-	self.spas12.spread.moving_standing = 4 * 1
-	self.spas12.spread.moving_crouching = 3 * 1
-	self.spas12.spread.moving_steelsight = 2 * 1
+	self.spas12.spread.moving_standing = 3 * 1
+	self.spas12.spread.moving_crouching = 2 * 1
+	self.spas12.spread.moving_steelsight = 1 * 1
 	self.spas12.kick.standing = self.new_m4.kick.standing
 	self.spas12.kick.crouching = self.new_m4.kick.crouching
 	self.spas12.kick.steelsight = self.new_m4.kick.steelsight
@@ -5609,9 +5654,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mg42.spread.standing = 3
 	self.mg42.spread.crouching = 2
 	self.mg42.spread.steelsight = 1
-	self.mg42.spread.moving_standing = 4
-	self.mg42.spread.moving_crouching = 3
-	self.mg42.spread.moving_steelsight = 2
+	self.mg42.spread.moving_standing = 3
+	self.mg42.spread.moving_crouching = 2
+	self.mg42.spread.moving_steelsight = 1
 	self.mg42.spread.bipod = 0.5
 	self.mg42.kick.standing = self.new_m4.kick.standing
 	self.mg42.kick.crouching = self.new_m4.kick.crouching
@@ -5652,9 +5697,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.spread.standing = 3
 	self.c96.spread.crouching = 2
 	self.c96.spread.steelsight = 1
-	self.c96.spread.moving_standing = 4
-	self.c96.spread.moving_crouching = 3
-	self.c96.spread.moving_steelsight = 2
+	self.c96.spread.moving_standing = 3
+	self.c96.spread.moving_crouching = 2
+	self.c96.spread.moving_steelsight = 1
 	self.c96.kick.standing = self.new_m4.kick.standing
 	self.c96.kick.crouching = self.new_m4.kick.crouching
 	self.c96.kick.steelsight = self.new_m4.kick.steelsight
@@ -5685,9 +5730,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sterling.spread.standing = 3
 	self.sterling.spread.crouching = 2
 	self.sterling.spread.steelsight = 1
-	self.sterling.spread.moving_standing = 4
-	self.sterling.spread.moving_crouching = 3
-	self.sterling.spread.moving_steelsight = 2
+	self.sterling.spread.moving_standing = 3
+	self.sterling.spread.moving_crouching = 2
+	self.sterling.spread.moving_steelsight = 1
 	self.sterling.kick.standing = self.new_m4.kick.standing
 	self.sterling.kick.crouching = self.new_m4.kick.crouching
 	self.sterling.kick.steelsight = self.new_m4.kick.steelsight
@@ -5716,9 +5761,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mosin.spread.standing = 3
 	self.mosin.spread.crouching = 2
 	self.mosin.spread.steelsight = 1
-	self.mosin.spread.moving_standing = 4
-	self.mosin.spread.moving_crouching = 3
-	self.mosin.spread.moving_steelsight = 2
+	self.mosin.spread.moving_standing = 3
+	self.mosin.spread.moving_crouching = 2
+	self.mosin.spread.moving_steelsight = 1
 	self.mosin.kick.standing = self.huntsman.kick.standing
 	self.mosin.kick.crouching = self.huntsman.kick.crouching
 	self.mosin.kick.steelsight = self.huntsman.kick.steelsight
@@ -5747,9 +5792,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1928.spread.standing = 3
 	self.m1928.spread.crouching = 2
 	self.m1928.spread.steelsight = 1
-	self.m1928.spread.moving_standing = 4
-	self.m1928.spread.moving_crouching = 3
-	self.m1928.spread.moving_steelsight = 2
+	self.m1928.spread.moving_standing = 3
+	self.m1928.spread.moving_crouching = 2
+	self.m1928.spread.moving_steelsight = 1
 	self.m1928.CLIP_AMMO_MAX = 50
 	self.m1928.AMMO_MAX = 75
 	self.m1928.AMMO_PICKUP = self:_pickup_chance(75, 1)
@@ -5786,9 +5831,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.l85a2.spread.standing = 3
 	self.l85a2.spread.crouching = 2
 	self.l85a2.spread.steelsight = 1
-	self.l85a2.spread.moving_standing = 4
-	self.l85a2.spread.moving_crouching = 3
-	self.l85a2.spread.moving_steelsight = 2
+	self.l85a2.spread.moving_standing = 3
+	self.l85a2.spread.moving_crouching = 2
+	self.l85a2.spread.moving_steelsight = 1
 	self.l85a2.kick = {}
 	self.l85a2.kick.standing = self.new_m4.kick.standing
 	self.l85a2.kick.crouching = self.new_m4.kick.crouching
@@ -5821,9 +5866,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.vhs.spread.standing = 3
 	self.vhs.spread.crouching = 2
 	self.vhs.spread.steelsight = 1
-	self.vhs.spread.moving_standing = 4
-	self.vhs.spread.moving_crouching = 3
-	self.vhs.spread.moving_steelsight = 2
+	self.vhs.spread.moving_standing = 3
+	self.vhs.spread.moving_crouching = 2
+	self.vhs.spread.moving_steelsight = 1
 	self.vhs.kick.standing = self.new_m4.kick.standing
 	self.vhs.kick.crouching = self.new_m4.kick.crouching
 	self.vhs.kick.steelsight = self.new_m4.kick.steelsight
@@ -5855,9 +5900,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hs2000.spread.standing = 3
 	self.hs2000.spread.crouching = 2
 	self.hs2000.spread.steelsight = 1
-	self.hs2000.spread.moving_standing = 4
-	self.hs2000.spread.moving_crouching = 3
-	self.hs2000.spread.moving_steelsight = 2
+	self.hs2000.spread.moving_standing = 3
+	self.hs2000.spread.moving_crouching = 2
+	self.hs2000.spread.moving_steelsight = 1
 	self.hs2000.kick.standing = self.glock_17.kick.standing
 	self.hs2000.kick.crouching = self.glock_17.kick.crouching
 	self.hs2000.kick.steelsight = self.glock_17.kick.steelsight
@@ -5896,9 +5941,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m134.spread.standing = 3
 	self.m134.spread.crouching = 2
 	self.m134.spread.steelsight = 1
-	self.m134.spread.moving_standing = 4
-	self.m134.spread.moving_crouching = 3
-	self.m134.spread.moving_steelsight = 2
+	self.m134.spread.moving_standing = 3
+	self.m134.spread.moving_crouching = 2
+	self.m134.spread.moving_steelsight = 1
 	self.m134.kick.standing = self.new_m4.kick.standing
 	self.m134.kick.crouching = self.new_m4.kick.crouching
 	self.m134.kick.steelsight = self.new_m4.kick.steelsight
@@ -5927,9 +5972,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.spread.standing = 3
 	self.rpg7.spread.crouching = 2
 	self.rpg7.spread.steelsight = 1
-	self.rpg7.spread.moving_standing = 4
-	self.rpg7.spread.moving_crouching = 3
-	self.rpg7.spread.moving_steelsight = 2
+	self.rpg7.spread.moving_standing = 3
+	self.rpg7.spread.moving_crouching = 2
+	self.rpg7.spread.moving_steelsight = 1
 	self.rpg7.kick.standing = self.huntsman.kick.standing
 	self.rpg7.kick.crouching = self.huntsman.kick.crouching
 	self.rpg7.kick.steelsight = self.huntsman.kick.steelsight
@@ -5964,9 +6009,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.cobray.spread.standing = 3
 	self.cobray.spread.crouching = 2
 	self.cobray.spread.steelsight = 1
-	self.cobray.spread.moving_standing = 4
-	self.cobray.spread.moving_crouching = 3
-	self.cobray.spread.moving_steelsight = 2
+	self.cobray.spread.moving_standing = 3
+	self.cobray.spread.moving_crouching = 2
+	self.cobray.spread.moving_steelsight = 1
 	self.cobray.kick.standing = self.new_m4.kick.standing
 	self.cobray.kick.crouching = self.new_m4.kick.crouching
 	self.cobray.kick.steelsight = self.new_m4.kick.steelsight
@@ -5997,9 +6042,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b682.spread.standing = 3 * 1
 	self.b682.spread.crouching = 2 * 1
 	self.b682.spread.steelsight = 1 * 1
-	self.b682.spread.moving_standing = 4 * 1
-	self.b682.spread.moving_crouching = 3 * 1
-	self.b682.spread.moving_steelsight = 2 * 1
+	self.b682.spread.moving_standing = 3 * 1
+	self.b682.spread.moving_crouching = 2 * 1
+	self.b682.spread.moving_steelsight = 1 * 1
 	self.b682.damage_near = 1300
 	self.b682.damage_far = 2600
 	self.b682.fire_mode_data = {}
@@ -6034,9 +6079,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g22c.spread.standing = 3
 	self.x_g22c.spread.crouching = 2
 	self.x_g22c.spread.steelsight = 1
-	self.x_g22c.spread.moving_standing = 4
-	self.x_g22c.spread.moving_crouching = 3
-	self.x_g22c.spread.moving_steelsight = 2
+	self.x_g22c.spread.moving_standing = 3
+	self.x_g22c.spread.moving_crouching = 2
+	self.x_g22c.spread.moving_steelsight = 1
 	self.x_g22c.kick.standing = self.glock_17.kick.standing
 	self.x_g22c.kick.crouching = self.glock_17.kick.crouching
 	self.x_g22c.kick.steelsight = self.glock_17.kick.steelsight
@@ -6067,9 +6112,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g17.spread.standing = 3
 	self.x_g17.spread.crouching = 2
 	self.x_g17.spread.steelsight = 1
-	self.x_g17.spread.moving_standing = 4
-	self.x_g17.spread.moving_crouching = 3
-	self.x_g17.spread.moving_steelsight = 2
+	self.x_g17.spread.moving_standing = 3
+	self.x_g17.spread.moving_crouching = 2
+	self.x_g17.spread.moving_steelsight = 1
 	self.x_g17.kick.standing = self.glock_17.kick.standing
 	self.x_g17.kick.crouching = self.glock_17.kick.crouching
 	self.x_g17.kick.steelsight = self.glock_17.kick.steelsight
@@ -6098,9 +6143,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_usp.spread.standing = 3
 	self.x_usp.spread.crouching = 2
 	self.x_usp.spread.steelsight = 1
-	self.x_usp.spread.moving_standing = 4
-	self.x_usp.spread.moving_crouching = 3
-	self.x_usp.spread.moving_steelsight = 2
+	self.x_usp.spread.moving_standing = 3
+	self.x_usp.spread.moving_crouching = 2
+	self.x_usp.spread.moving_steelsight = 1
 	self.x_usp.kick.standing = self.glock_17.kick.standing
 	self.x_usp.kick.crouching = self.glock_17.kick.crouching
 	self.x_usp.kick.steelsight = self.glock_17.kick.steelsight
@@ -6151,9 +6196,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flamethrower_mk2.spread.standing = 3 * 1
 	self.flamethrower_mk2.spread.crouching = 2 * 1
 	self.flamethrower_mk2.spread.steelsight = 1 * 1
-	self.flamethrower_mk2.spread.moving_standing = 4 * 1
-	self.flamethrower_mk2.spread.moving_crouching = 3 * 1
-	self.flamethrower_mk2.spread.moving_steelsight = 2 * 1
+	self.flamethrower_mk2.spread.moving_standing = 3 * 1
+	self.flamethrower_mk2.spread.moving_crouching = 2 * 1
+	self.flamethrower_mk2.spread.moving_steelsight = 1 * 1
 	self.flamethrower_mk2.damage_near = 700
 	self.flamethrower_mk2.damage_far = 1400
 	self.flamethrower_mk2.kick.standing = self.new_m4.kick.standing
@@ -6190,9 +6235,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m32.spread.standing = 3
 	self.m32.spread.crouching = 2
 	self.m32.spread.steelsight = 1
-	self.m32.spread.moving_standing = 4
-	self.m32.spread.moving_crouching = 3
-	self.m32.spread.moving_steelsight = 2
+	self.m32.spread.moving_standing = 3
+	self.m32.spread.moving_crouching = 2
+	self.m32.spread.moving_steelsight = 1
 	self.m32.kick.standing = self.huntsman.kick.standing
 	self.m32.kick.crouching = self.huntsman.kick.crouching
 	self.m32.kick.steelsight = self.huntsman.kick.steelsight
@@ -6225,9 +6270,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aa12.spread.standing = 3 * 1
 	self.aa12.spread.crouching = 2 * 1
 	self.aa12.spread.steelsight = 1 * 1
-	self.aa12.spread.moving_standing = 4 * 1
-	self.aa12.spread.moving_crouching = 3 * 1
-	self.aa12.spread.moving_steelsight = 2 * 1
+	self.aa12.spread.moving_standing = 3 * 1
+	self.aa12.spread.moving_crouching = 2 * 1
+	self.aa12.spread.moving_steelsight = 1 * 1
 	self.aa12.kick.standing = self.new_m4.kick.standing
 	self.aa12.kick.crouching = self.new_m4.kick.crouching
 	self.aa12.kick.steelsight = self.new_m4.kick.steelsight
@@ -6253,9 +6298,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.peacemaker.spread.standing = 3
 	self.peacemaker.spread.crouching = 2
 	self.peacemaker.spread.steelsight = 1
-	self.peacemaker.spread.moving_standing = 4
-	self.peacemaker.spread.moving_crouching = 3
-	self.peacemaker.spread.moving_steelsight = 2
+	self.peacemaker.spread.moving_standing = 3
+	self.peacemaker.spread.moving_crouching = 2
+	self.peacemaker.spread.moving_steelsight = 1
 	self.peacemaker.kick.standing = self.huntsman.kick.standing
 	self.peacemaker.kick.crouching = self.huntsman.kick.crouching
 	self.peacemaker.kick.steelsight = self.huntsman.kick.steelsight
@@ -6297,9 +6342,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.winchester1874.spread.standing = 3
 	self.winchester1874.spread.crouching = 2
 	self.winchester1874.spread.steelsight = 1
-	self.winchester1874.spread.moving_standing = 4
-	self.winchester1874.spread.moving_crouching = 3
-	self.winchester1874.spread.moving_steelsight = 2
+	self.winchester1874.spread.moving_standing = 3
+	self.winchester1874.spread.moving_crouching = 2
+	self.winchester1874.spread.moving_steelsight = 1
 	self.winchester1874.kick.standing = self.huntsman.kick.standing
 	self.winchester1874.kick.crouching = self.huntsman.kick.crouching
 	self.winchester1874.kick.steelsight = self.huntsman.kick.steelsight
@@ -6330,9 +6375,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.plainsrider.spread.standing = 3
 	self.plainsrider.spread.crouching = 2
 	self.plainsrider.spread.steelsight = 1
-	self.plainsrider.spread.moving_standing = 4
-	self.plainsrider.spread.moving_crouching = 3
-	self.plainsrider.spread.moving_steelsight = 2
+	self.plainsrider.spread.moving_standing = 3
+	self.plainsrider.spread.moving_crouching = 2
+	self.plainsrider.spread.moving_steelsight = 1
 	self.plainsrider.kick.standing = {
 		0,
 		0,
@@ -6381,9 +6426,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mateba.spread.standing = 3
 	self.mateba.spread.crouching = 2
 	self.mateba.spread.steelsight = 1
-	self.mateba.spread.moving_standing = 4
-	self.mateba.spread.moving_crouching = 3
-	self.mateba.spread.moving_steelsight = 2
+	self.mateba.spread.moving_standing = 3
+	self.mateba.spread.moving_crouching = 2
+	self.mateba.spread.moving_steelsight = 1
 	self.mateba.kick.standing = self.glock_17.kick.standing
 	self.mateba.kick.crouching = self.glock_17.kick.crouching
 	self.mateba.kick.steelsight = self.glock_17.kick.steelsight
@@ -6419,9 +6464,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.asval.spread.standing = 3
 	self.asval.spread.crouching = 2
 	self.asval.spread.steelsight = 1
-	self.asval.spread.moving_standing = 4
-	self.asval.spread.moving_crouching = 3
-	self.asval.spread.moving_steelsight = 2
+	self.asval.spread.moving_standing = 3
+	self.asval.spread.moving_crouching = 2
+	self.asval.spread.moving_steelsight = 1
 	self.asval.kick.standing = self.new_m4.kick.standing
 	self.asval.kick.crouching = self.new_m4.kick.crouching
 	self.asval.kick.steelsight = self.new_m4.kick.steelsight
@@ -6461,9 +6506,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sub2000.spread.standing = 3
 	self.sub2000.spread.crouching = 2
 	self.sub2000.spread.steelsight = 1
-	self.sub2000.spread.moving_standing = 4
-	self.sub2000.spread.moving_crouching = 3
-	self.sub2000.spread.moving_steelsight = 2
+	self.sub2000.spread.moving_standing = 3
+	self.sub2000.spread.moving_crouching = 2
+	self.sub2000.spread.moving_steelsight = 1
 	self.sub2000.kick = {}
 	self.sub2000.kick.standing = self.glock_17.kick.standing
 	self.sub2000.kick.crouching = self.glock_17.kick.crouching
@@ -6497,9 +6542,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.wa2000.spread.standing = 3
 	self.wa2000.spread.crouching = 2
 	self.wa2000.spread.steelsight = 1
-	self.wa2000.spread.moving_standing = 4
-	self.wa2000.spread.moving_crouching = 3
-	self.wa2000.spread.moving_steelsight = 2
+	self.wa2000.spread.moving_standing = 3
+	self.wa2000.spread.moving_crouching = 2
+	self.wa2000.spread.moving_steelsight = 1
 	self.wa2000.kick.standing = self.huntsman.kick.standing
 	self.wa2000.kick.crouching = self.huntsman.kick.crouching
 	self.wa2000.kick.steelsight = self.huntsman.kick.steelsight
@@ -6536,9 +6581,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.polymer.spread.standing = 3
 	self.polymer.spread.crouching = 2
 	self.polymer.spread.steelsight = 1
-	self.polymer.spread.moving_standing = 4
-	self.polymer.spread.moving_crouching = 3
-	self.polymer.spread.moving_steelsight = 2
+	self.polymer.spread.moving_standing = 3
+	self.polymer.spread.moving_crouching = 2
+	self.polymer.spread.moving_steelsight = 1
 	self.polymer.kick.standing = self.new_m4.kick.standing
 	self.polymer.kick.crouching = self.new_m4.kick.crouching
 	self.polymer.kick.steelsight = self.new_m4.kick.steelsight
@@ -6570,9 +6615,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hunter.spread.standing = 3
 	self.hunter.spread.crouching = 2
 	self.hunter.spread.steelsight = 1
-	self.hunter.spread.moving_standing = 4
-	self.hunter.spread.moving_crouching = 3
-	self.hunter.spread.moving_steelsight = 2
+	self.hunter.spread.moving_standing = 3
+	self.hunter.spread.moving_crouching = 2
+	self.hunter.spread.moving_steelsight = 1
 	self.hunter.panic_suppression_chance = 0.0
 	self.hunter.ignore_damage_upgrades = true
 	self.hunter.fire_mode_data.fire_rate = 1
@@ -6608,9 +6653,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.baka.spread.standing = 3
 	self.baka.spread.crouching = 2
 	self.baka.spread.steelsight = 1
-	self.baka.spread.moving_standing = 4
-	self.baka.spread.moving_crouching = 3
-	self.baka.spread.moving_steelsight = 2
+	self.baka.spread.moving_standing = 3
+	self.baka.spread.moving_crouching = 2
+	self.baka.spread.moving_steelsight = 1
 	self.baka.kick = {}
 	self.baka.kick.standing = self.new_m4.kick.standing
 	self.baka.kick.crouching = self.new_m4.kick.crouching
@@ -6643,9 +6688,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arblast.spread.standing = 3
 	self.arblast.spread.crouching = 2
 	self.arblast.spread.steelsight = 1
-	self.arblast.spread.moving_standing = 4
-	self.arblast.spread.moving_crouching = 3
-	self.arblast.spread.moving_steelsight = 2
+	self.arblast.spread.moving_standing = 3
+	self.arblast.spread.moving_crouching = 2
+	self.arblast.spread.moving_steelsight = 1
 	self.arblast.fire_mode_data.fire_rate = 1.2
 	self.arblast.kick.standing = self.huntsman.kick.standing
 	self.arblast.kick.crouching = self.huntsman.kick.crouching
@@ -6678,9 +6723,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.frankish.spread.standing = 3
 	self.frankish.spread.crouching = 2
 	self.frankish.spread.steelsight = 1
-	self.frankish.spread.moving_standing = 4
-	self.frankish.spread.moving_crouching = 3
-	self.frankish.spread.moving_steelsight = 2
+	self.frankish.spread.moving_standing = 3
+	self.frankish.spread.moving_crouching = 2
+	self.frankish.spread.moving_steelsight = 1
 	self.frankish.fire_mode_data.fire_rate = 1
 	self.frankish.kick.standing = self.huntsman.kick.standing
 	self.frankish.kick.crouching = self.huntsman.kick.crouching
@@ -6716,9 +6761,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.long.spread.standing = 3
 	self.long.spread.crouching = 2
 	self.long.spread.steelsight = 1
-	self.long.spread.moving_standing = 4
-	self.long.spread.moving_crouching = 3
-	self.long.spread.moving_steelsight = 2
+	self.long.spread.moving_standing = 3
+	self.long.spread.moving_crouching = 2
+	self.long.spread.moving_steelsight = 1
 	self.long.kick.standing = {
 		0,
 		0,
@@ -6770,9 +6815,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.par.spread.standing = 3
 	self.par.spread.crouching = 2
 	self.par.spread.steelsight = 1
-	self.par.spread.moving_standing = 4
-	self.par.spread.moving_crouching = 3
-	self.par.spread.moving_steelsight = 2
+	self.par.spread.moving_standing = 3
+	self.par.spread.moving_crouching = 2
+	self.par.spread.moving_steelsight = 1
 	self.par.spread.bipod = 0.5
 	self.par.timers.reload_not_empty = 6.5
 	self.par.timers.reload_empty = 6.5
@@ -6802,9 +6847,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sparrow.spread.standing = 3
 	self.sparrow.spread.crouching = 2
 	self.sparrow.spread.steelsight = 1
-	self.sparrow.spread.moving_standing = 4
-	self.sparrow.spread.moving_crouching = 3
-	self.sparrow.spread.moving_steelsight = 2
+	self.sparrow.spread.moving_standing = 3
+	self.sparrow.spread.moving_crouching = 2
+	self.sparrow.spread.moving_steelsight = 1
 	self.sparrow.kick = {}
 	self.sparrow.kick.standing = self.glock_17.kick.standing
 	self.sparrow.kick.crouching = self.glock_17.kick.crouching
@@ -6831,9 +6876,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.model70.spread.standing = 3
 	self.model70.spread.crouching = 2
 	self.model70.spread.steelsight = 1
-	self.model70.spread.moving_standing = 4
-	self.model70.spread.moving_crouching = 3
-	self.model70.spread.moving_steelsight = 2
+	self.model70.spread.moving_standing = 3
+	self.model70.spread.moving_crouching = 2
+	self.model70.spread.moving_steelsight = 1
 	self.model70.has_description = true
 	self.model70.desc_id = "bm_ap_weapon_sc_desc"
 	self.model70.AMMO_MAX = 30
@@ -6871,9 +6916,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m37.spread.standing = 3 * 1
 	self.m37.spread.crouching = 2 * 1
 	self.m37.spread.steelsight = 1 * 1
-	self.m37.spread.moving_standing = 4 * 1
-	self.m37.spread.moving_crouching = 3 * 1
-	self.m37.spread.moving_steelsight = 2 * 1
+	self.m37.spread.moving_standing = 3 * 1
+	self.m37.spread.moving_crouching = 2 * 1
+	self.m37.spread.moving_steelsight = 1 * 1
 	self.m37.kick.standing = self.new_m4.kick.standing
 	self.m37.kick.crouching = self.new_m4.kick.standing
 	self.m37.kick.steelsight = self.new_m4.kick.standing
@@ -6906,9 +6951,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.china.spread.standing = 3
 	self.china.spread.crouching = 2
 	self.china.spread.steelsight = 1
-	self.china.spread.moving_standing = 4
-	self.china.spread.moving_crouching = 3
-	self.china.spread.moving_steelsight = 2
+	self.china.spread.moving_standing = 3
+	self.china.spread.moving_crouching = 2
+	self.china.spread.moving_steelsight = 1
 	self.china.kick.standing = self.huntsman.kick.standing
 	self.china.kick.crouching = self.huntsman.kick.crouching
 	self.china.kick.steelsight = self.huntsman.kick.steelsight
@@ -6938,9 +6983,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sr2.spread.standing = 3
 	self.sr2.spread.crouching = 2
 	self.sr2.spread.steelsight = 1
-	self.sr2.spread.moving_standing = 4
-	self.sr2.spread.moving_crouching = 3
-	self.sr2.spread.moving_steelsight = 2
+	self.sr2.spread.moving_standing = 3
+	self.sr2.spread.moving_crouching = 2
+	self.sr2.spread.moving_steelsight = 1
 	self.sr2.kick = {}
 	self.sr2.kick.standing = self.new_m4.kick.standing
 	self.sr2.kick.crouching = self.new_m4.kick.crouching
@@ -6968,9 +7013,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_sr2.spread.standing = 3
 	self.x_sr2.spread.crouching = 2
 	self.x_sr2.spread.steelsight = 1
-	self.x_sr2.spread.moving_standing = 4
-	self.x_sr2.spread.moving_crouching = 3
-	self.x_sr2.spread.moving_steelsight = 2
+	self.x_sr2.spread.moving_standing = 3
+	self.x_sr2.spread.moving_crouching = 2
+	self.x_sr2.spread.moving_steelsight = 1
 	self.x_sr2.kick.standing = self.new_m4.kick.standing
 	self.x_sr2.kick.crouching = self.new_m4.kick.crouching
 	self.x_sr2.kick.steelsight = self.new_m4.kick.steelsight
@@ -7000,9 +7045,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.pl14.spread.standing = 3
 	self.pl14.spread.crouching = 2
 	self.pl14.spread.steelsight = 1
-	self.pl14.spread.moving_standing = 4
-	self.pl14.spread.moving_crouching = 3
-	self.pl14.spread.moving_steelsight = 2
+	self.pl14.spread.moving_standing = 3
+	self.pl14.spread.moving_crouching = 2
+	self.pl14.spread.moving_steelsight = 1
 	self.pl14.kick.standing = self.glock_17.kick.standing
 	self.pl14.kick.crouching = self.glock_17.kick.crouching
 	self.pl14.kick.steelsight = self.glock_17.kick.steelsight
@@ -7028,9 +7073,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp5.ADAPTIVE_BURST_SIZE = false					
 	self.x_mp5.spread.crouching = 2
 	self.x_mp5.spread.steelsight = 1
-	self.x_mp5.spread.moving_standing = 4
-	self.x_mp5.spread.moving_crouching = 3
-	self.x_mp5.spread.moving_steelsight = 2
+	self.x_mp5.spread.moving_standing = 3
+	self.x_mp5.spread.moving_crouching = 2
+	self.x_mp5.spread.moving_steelsight = 1
 	self.x_mp5.kick.standing = self.new_m4.kick.standing
 	self.x_mp5.kick.crouching = self.new_m4.kick.crouching
 	self.x_mp5.kick.steelsight = self.new_m4.kick.steelsight
@@ -7060,9 +7105,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_akmsu.spread.standing = 3
 	self.x_akmsu.spread.crouching = 2
 	self.x_akmsu.spread.steelsight = 1
-	self.x_akmsu.spread.moving_standing = 4
-	self.x_akmsu.spread.moving_crouching = 3
-	self.x_akmsu.spread.moving_steelsight = 2
+	self.x_akmsu.spread.moving_standing = 3
+	self.x_akmsu.spread.moving_crouching = 2
+	self.x_akmsu.spread.moving_steelsight = 1
 	self.x_akmsu.panic_suppression_chance = 0.0
 	self.x_akmsu.kick.standing = self.new_m4.kick.standing
 	self.x_akmsu.kick.crouching = self.new_m4.kick.crouching
@@ -7091,9 +7136,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tecci.spread.standing = 3
 	self.tecci.spread.crouching = 2
 	self.tecci.spread.steelsight = 1
-	self.tecci.spread.moving_standing = 4
-	self.tecci.spread.moving_crouching = 3
-	self.tecci.spread.moving_steelsight = 2
+	self.tecci.spread.moving_standing = 3
+	self.tecci.spread.moving_crouching = 2
+	self.tecci.spread.moving_steelsight = 1
 	self.tecci.kick.standing = self.new_m4.kick.standing
 	self.tecci.kick.crouching = self.new_m4.kick.crouching
 	self.tecci.kick.steelsight = self.new_m4.kick.steelsight
@@ -7128,9 +7173,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hajk.spread.standing = 3
 	self.hajk.spread.crouching = 2
 	self.hajk.spread.steelsight = 1
-	self.hajk.spread.moving_standing = 4
-	self.hajk.spread.moving_crouching = 3
-	self.hajk.spread.moving_steelsight = 2
+	self.hajk.spread.moving_standing = 3
+	self.hajk.spread.moving_crouching = 2
+	self.hajk.spread.moving_steelsight = 1
 	self.hajk.kick.standing = self.new_m4.kick.standing
 	self.hajk.kick.crouching = self.new_m4.kick.crouching
 	self.hajk.kick.steelsight = self.new_m4.kick.steelsight
@@ -7167,9 +7212,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.boot.spread.standing = 3 * 1
 	self.boot.spread.crouching = 2 * 1
 	self.boot.spread.steelsight = 1 * 1
-	self.boot.spread.moving_standing = 4 * 1
-	self.boot.spread.moving_crouching = 3 * 1
-	self.boot.spread.moving_steelsight = 2 * 1
+	self.boot.spread.moving_standing = 3 * 1
+	self.boot.spread.moving_crouching = 2 * 1
+	self.boot.spread.moving_steelsight = 1 * 1
 	self.boot.kick.standing = self.huntsman.kick.standing
 	self.boot.kick.crouching = self.huntsman.kick.crouching
 	self.boot.kick.steelsight = self.huntsman.kick.steelsight
@@ -7198,9 +7243,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.packrat.spread.standing = 3
 	self.packrat.spread.crouching = 2
 	self.packrat.spread.steelsight = 1
-	self.packrat.spread.moving_standing = 4
-	self.packrat.spread.moving_crouching = 3
-	self.packrat.spread.moving_steelsight = 2
+	self.packrat.spread.moving_standing = 3
+	self.packrat.spread.moving_crouching = 2
+	self.packrat.spread.moving_steelsight = 1
 	self.packrat.kick.standing = self.glock_17.kick.standing
 	self.packrat.kick.crouching = self.glock_17.kick.crouching
 	self.packrat.kick.steelsight = self.glock_17.kick.steelsight
@@ -7230,9 +7275,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.schakal.spread.standing = 3
 	self.schakal.spread.crouching = 2
 	self.schakal.spread.steelsight = 1
-	self.schakal.spread.moving_standing = 4
-	self.schakal.spread.moving_crouching = 3
-	self.schakal.spread.moving_steelsight = 2
+	self.schakal.spread.moving_standing = 3
+	self.schakal.spread.moving_crouching = 2
+	self.schakal.spread.moving_steelsight = 1
 	self.schakal.kick.standing = self.new_m4.kick.standing
 	self.schakal.kick.crouching = self.new_m4.kick.crouching
 	self.schakal.kick.steelsight = self.new_m4.kick.steelsight
@@ -7261,9 +7306,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.desertfox.spread.standing = 3
 	self.desertfox.spread.crouching = 2
 	self.desertfox.spread.steelsight = 1
-	self.desertfox.spread.moving_standing = 4
-	self.desertfox.spread.moving_crouching = 3
-	self.desertfox.spread.moving_steelsight = 2
+	self.desertfox.spread.moving_standing = 3
+	self.desertfox.spread.moving_crouching = 2
+	self.desertfox.spread.moving_steelsight = 1
 	self.desertfox.kick.standing = self.huntsman.kick.standing
 	self.desertfox.kick.crouching = self.huntsman.kick.crouching
 	self.desertfox.kick.steelsight = self.huntsman.kick.steelsight
@@ -7290,9 +7335,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_packrat.spread.standing = 3
 	self.x_packrat.spread.crouching = 2
 	self.x_packrat.spread.steelsight = 1
-	self.x_packrat.spread.moving_standing = 4
-	self.x_packrat.spread.moving_crouching = 3
-	self.x_packrat.spread.moving_steelsight = 2
+	self.x_packrat.spread.moving_standing = 3
+	self.x_packrat.spread.moving_crouching = 2
+	self.x_packrat.spread.moving_steelsight = 1
 	self.x_packrat.kick.standing = self.glock_17.kick.standing
 	self.x_packrat.kick.crouching = self.glock_17.kick.crouching
 	self.x_packrat.kick.steelsight = self.glock_17.kick.steelsight
@@ -7320,9 +7365,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rota.spread.standing = 3 * 1
 	self.rota.spread.crouching = 2 * 1
 	self.rota.spread.steelsight = 1 * 1
-	self.rota.spread.moving_standing = 4 * 1
-	self.rota.spread.moving_crouching = 3 * 1
-	self.rota.spread.moving_steelsight = 2 * 1
+	self.rota.spread.moving_standing = 3 * 1
+	self.rota.spread.moving_crouching = 2 * 1
+	self.rota.spread.moving_steelsight = 1 * 1
 	self.rota.kick.standing = self.new_m4.kick.standing
 	self.rota.kick.crouching = self.new_m4.kick.crouching
 	self.rota.kick.steelsight = self.new_m4.kick.steelsight
@@ -7375,9 +7420,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arbiter.spread.standing = 3
 	self.arbiter.spread.crouching = 2
 	self.arbiter.spread.steelsight = 1
-	self.arbiter.spread.moving_standing = 4
-	self.arbiter.spread.moving_crouching = 3
-	self.arbiter.spread.moving_steelsight = 2
+	self.arbiter.spread.moving_standing = 3
+	self.arbiter.spread.moving_crouching = 2
+	self.arbiter.spread.moving_steelsight = 1
 	self.arbiter.kick.standing = self.huntsman.kick.standing
 	self.arbiter.kick.crouching = self.huntsman.kick.crouching
 	self.arbiter.kick.steelsight = self.huntsman.kick.steelsight
@@ -7393,9 +7438,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.contraband.spread.standing = 3
 	self.contraband.spread.crouching = 2
 	self.contraband.spread.steelsight = 1
-	self.contraband.spread.moving_standing = 4
-	self.contraband.spread.moving_crouching = 3
-	self.contraband.spread.moving_steelsight = 2
+	self.contraband.spread.moving_standing = 3
+	self.contraband.spread.moving_crouching = 2
+	self.contraband.spread.moving_steelsight = 1
 	self.contraband.panic_suppression_chance = 0.0
 	self.contraband.kick.standing = self.new_m4.kick.standing
 	self.contraband.kick.crouching = self.new_m4.kick.crouching
@@ -7423,9 +7468,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.contraband_m203.spread.standing = 3
 	self.contraband_m203.spread.crouching = 2
 	self.contraband_m203.spread.steelsight = 1
-	self.contraband_m203.spread.moving_standing = 4
-	self.contraband_m203.spread.moving_crouching = 3
-	self.contraband_m203.spread.moving_steelsight = 2
+	self.contraband_m203.spread.moving_standing = 3
+	self.contraband_m203.spread.moving_crouching = 2
+	self.contraband_m203.spread.moving_steelsight = 1
 	self.contraband_m203.kick.standing = self.huntsman.kick.standing
 	self.contraband_m203.kick.crouching = self.huntsman.kick.crouching
 	self.contraband_m203.kick.steelsight = self.huntsman.kick.steelsight
@@ -7457,9 +7502,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ray.spread.standing = 3
 	self.ray.spread.crouching = 2
 	self.ray.spread.steelsight = 1
-	self.ray.spread.moving_standing = 4
-	self.ray.spread.moving_crouching = 3
-	self.ray.spread.moving_steelsight = 2
+	self.ray.spread.moving_standing = 3
+	self.ray.spread.moving_crouching = 2
+	self.ray.spread.moving_steelsight = 1
 	self.ray.kick.standing = self.huntsman.kick.standing
 	self.ray.kick.crouching = self.huntsman.kick.crouching
 	self.ray.kick.steelsight = self.huntsman.kick.steelsight
@@ -7500,9 +7545,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tti.spread.standing = 3
 	self.tti.spread.crouching = 2
 	self.tti.spread.steelsight = 1
-	self.tti.spread.moving_standing = 4
-	self.tti.spread.moving_crouching = 3
-	self.tti.spread.moving_steelsight = 2
+	self.tti.spread.moving_standing = 3
+	self.tti.spread.moving_crouching = 2
+	self.tti.spread.moving_steelsight = 1
 	self.tti.kick.standing = self.huntsman.kick.standing
 	self.tti.kick.crouching = self.huntsman.kick.crouching
 	self.tti.kick.steelsight = self.huntsman.kick.steelsight
@@ -7536,9 +7581,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.siltstone.spread.standing = 3
 	self.siltstone.spread.crouching = 2
 	self.siltstone.spread.steelsight = 2
-	self.siltstone.spread.moving_standing = 4
-	self.siltstone.spread.moving_crouching = 3
-	self.siltstone.spread.moving_steelsight = 2
+	self.siltstone.spread.moving_standing = 3
+	self.siltstone.spread.moving_crouching = 2
+	self.siltstone.spread.moving_steelsight = 1
 	self.siltstone.kick.standing = self.huntsman.kick.standing
 	self.siltstone.kick.crouching = self.huntsman.kick.crouching
 	self.siltstone.kick.steelsight = self.huntsman.kick.steelsight
@@ -7569,9 +7614,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flint.spread.standing = 3
 	self.flint.spread.crouching = 2
 	self.flint.spread.steelsight = 1
-	self.flint.spread.moving_standing = 4
-	self.flint.spread.moving_crouching = 3
-	self.flint.spread.moving_steelsight = 2
+	self.flint.spread.moving_standing = 3
+	self.flint.spread.moving_crouching = 2
+	self.flint.spread.moving_steelsight = 1
 	self.flint.kick.standing = self.new_m4.kick.standing
 	self.flint.kick.crouching = self.new_m4.kick.crouching
 	self.flint.kick.steelsight = self.new_m4.kick.steelsight
@@ -7600,9 +7645,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coal.spread.standing = 3
 	self.coal.spread.crouching = 2
 	self.coal.spread.steelsight = 1
-	self.coal.spread.moving_standing = 4
-	self.coal.spread.moving_crouching = 3
-	self.coal.spread.moving_steelsight = 2
+	self.coal.spread.moving_standing = 3
+	self.coal.spread.moving_crouching = 2
+	self.coal.spread.moving_steelsight = 1
 	self.coal.kick.standing = self.new_m4.kick.standing
 	self.coal.kick.crouching = self.new_m4.kick.crouching
 	self.coal.kick.steelsight = self.new_m4.kick.steelsight
@@ -7630,9 +7675,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.lemming.spread.standing = 3
 	self.lemming.spread.crouching = 2
 	self.lemming.spread.steelsight = 1
-	self.lemming.spread.moving_standing = 4
-	self.lemming.spread.moving_crouching = 3
-	self.lemming.spread.moving_steelsight = 2
+	self.lemming.spread.moving_standing = 3
+	self.lemming.spread.moving_crouching = 2
+	self.lemming.spread.moving_steelsight = 1
 	self.lemming.kick.standing = self.glock_17.kick.standing
 	self.lemming.kick.crouching = self.glock_17.kick.crouching
 	self.lemming.kick.steelsight = self.glock_17.kick.steelsight
@@ -7661,9 +7706,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.chinchilla.spread.standing = 3
 	self.chinchilla.spread.crouching = 2
 	self.chinchilla.spread.steelsight = 1
-	self.chinchilla.spread.moving_standing = 4
-	self.chinchilla.spread.moving_crouching = 3
-	self.chinchilla.spread.moving_steelsight = 2
+	self.chinchilla.spread.moving_standing = 3
+	self.chinchilla.spread.moving_crouching = 2
+	self.chinchilla.spread.moving_steelsight = 1
 	self.chinchilla.AMMO_MAX = 30
 	self.chinchilla.kick.standing = self.glock_17.kick.standing
 	self.chinchilla.kick.crouching = self.glock_17.kick.crouching
@@ -7692,9 +7737,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_chinchilla.spread.standing = 3
 	self.x_chinchilla.spread.crouching = 2
 	self.x_chinchilla.spread.steelsight = 1
-	self.x_chinchilla.spread.moving_standing = 4
-	self.x_chinchilla.spread.moving_crouching = 3
-	self.x_chinchilla.spread.moving_steelsight = 2
+	self.x_chinchilla.spread.moving_standing = 3
+	self.x_chinchilla.spread.moving_crouching = 2
+	self.x_chinchilla.spread.moving_steelsight = 1
 	self.x_chinchilla.AMMO_MAX = 60
 	self.x_chinchilla.kick.standing = self.glock_17.kick.standing
 	self.x_chinchilla.kick.crouching = self.glock_17.kick.crouching
@@ -7732,9 +7777,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.breech.spread.standing = 3
 	self.breech.spread.crouching = 2
 	self.breech.spread.steelsight = 1
-	self.breech.spread.moving_standing = 4
-	self.breech.spread.moving_crouching = 3
-	self.breech.spread.moving_steelsight = 2
+	self.breech.spread.moving_standing = 3
+	self.breech.spread.moving_crouching = 2
+	self.breech.spread.moving_steelsight = 1
 	self.breech.kick.standing = self.glock_17.kick.standing
 	self.breech.kick.crouching = self.glock_17.kick.crouching
 	self.breech.kick.steelsight = self.glock_17.kick.steelsight
@@ -7769,9 +7814,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ching.spread.standing = 3
 	self.ching.spread.crouching = 2
 	self.ching.spread.steelsight = 1
-	self.ching.spread.moving_standing = 4
-	self.ching.spread.moving_crouching = 3
-	self.ching.spread.moving_steelsight = 2
+	self.ching.spread.moving_standing = 3
+	self.ching.spread.moving_crouching = 2
+	self.ching.spread.moving_steelsight = 1
 	self.ching.kick.standing = self.new_m4.kick.standing
 	self.ching.kick.crouching = self.new_m4.kick.crouching
 	self.ching.kick.steelsight = self.new_m4.kick.steelsight			
@@ -7806,9 +7851,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.erma.spread.standing = 3
 	self.erma.spread.crouching = 2
 	self.erma.spread.steelsight = 1
-	self.erma.spread.moving_standing = 4
-	self.erma.spread.moving_crouching = 3
-	self.erma.spread.moving_steelsight = 2
+	self.erma.spread.moving_standing = 3
+	self.erma.spread.moving_crouching = 2
+	self.erma.spread.moving_steelsight = 1
 	self.erma.kick.standing = self.new_m4.kick.standing
 	self.erma.kick.crouching = self.new_m4.kick.crouching
 	self.erma.kick.steelsight = self.new_m4.kick.steelsight
@@ -7838,9 +7883,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ecp.spread.standing = 3
 	self.ecp.spread.crouching = 2
 	self.ecp.spread.steelsight = 1
-	self.ecp.spread.moving_standing = 4
-	self.ecp.spread.moving_crouching = 3
-	self.ecp.spread.moving_steelsight = 2
+	self.ecp.spread.moving_standing = 3
+	self.ecp.spread.moving_crouching = 2
+	self.ecp.spread.moving_steelsight = 1
 	self.ecp.kick.standing = self.huntsman.kick.standing
 	self.ecp.kick.crouching = self.huntsman.kick.crouching
 	self.ecp.kick.steelsight = self.huntsman.kick.steelsight
@@ -7871,9 +7916,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shrew.spread.standing = 3
 	self.shrew.spread.crouching = 2
 	self.shrew.spread.steelsight = 1
-	self.shrew.spread.moving_standing = 4
-	self.shrew.spread.moving_crouching = 3
-	self.shrew.spread.moving_steelsight = 2
+	self.shrew.spread.moving_standing = 3
+	self.shrew.spread.moving_crouching = 2
+	self.shrew.spread.moving_steelsight = 1
 	self.shrew.kick.standing = self.glock_17.kick.standing
 	self.shrew.kick.crouching = self.glock_17.kick.crouching
 	self.shrew.kick.steelsight = self.glock_17.kick.steelsight
@@ -7902,9 +7947,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_shrew.spread.standing = 3
 	self.x_shrew.spread.crouching = 2
 	self.x_shrew.spread.steelsight = 1
-	self.x_shrew.spread.moving_standing = 4
-	self.x_shrew.spread.moving_crouching = 3
-	self.x_shrew.spread.moving_steelsight = 2
+	self.x_shrew.spread.moving_standing = 3
+	self.x_shrew.spread.moving_crouching = 2
+	self.x_shrew.spread.moving_steelsight = 1
 	self.x_shrew.kick.standing = self.glock_17.kick.standing
 	self.x_shrew.kick.crouching = self.glock_17.kick.crouching
 	self.x_shrew.kick.steelsight = self.glock_17.kick.steelsight
@@ -8008,9 +8053,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.corgi.spread.standing = 3
 	self.corgi.spread.crouching = 2
 	self.corgi.spread.steelsight = 1
-	self.corgi.spread.moving_standing = 4
-	self.corgi.spread.moving_crouching = 3
-	self.corgi.spread.moving_steelsight = 2
+	self.corgi.spread.moving_standing = 3
+	self.corgi.spread.moving_crouching = 2
+	self.corgi.spread.moving_steelsight = 1
 	self.corgi.kick.standing = self.new_m4.kick.standing
 	self.corgi.kick.crouching = self.new_m4.kick.crouching
 	self.corgi.kick.steelsight = self.new_m4.kick.steelsight
@@ -8041,9 +8086,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.slap.spread.standing = 3
 	self.slap.spread.crouching = 2
 	self.slap.spread.steelsight = 1
-	self.slap.spread.moving_standing = 4
-	self.slap.spread.moving_crouching = 3
-	self.slap.spread.moving_steelsight = 2
+	self.slap.spread.moving_standing = 3
+	self.slap.spread.moving_crouching = 2
+	self.slap.spread.moving_steelsight = 1
 	self.slap.kick.standing = self.huntsman.kick.standing
 	self.slap.kick.crouching = self.huntsman.kick.crouching
 	self.slap.kick.steelsight = self.huntsman.kick.steelsight
@@ -8076,9 +8121,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_coal.spread.standing = 3
 	self.x_coal.spread.crouching = 2
 	self.x_coal.spread.steelsight = 1
-	self.x_coal.spread.moving_standing = 4
-	self.x_coal.spread.moving_crouching = 3
-	self.x_coal.spread.moving_steelsight = 2
+	self.x_coal.spread.moving_standing = 3
+	self.x_coal.spread.moving_crouching = 2
+	self.x_coal.spread.moving_steelsight = 1
 	self.x_coal.kick.standing = self.new_m4.kick.standing
 	self.x_coal.kick.crouching = self.new_m4.kick.crouching
 	self.x_coal.kick.steelsight = self.new_m4.kick.steelsight
@@ -8112,9 +8157,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_baka.spread.standing = 3
 	self.x_baka.spread.crouching = 2
 	self.x_baka.spread.steelsight = 1
-	self.x_baka.spread.moving_standing = 4
-	self.x_baka.spread.moving_crouching = 3
-	self.x_baka.spread.moving_steelsight = 2
+	self.x_baka.spread.moving_standing = 3
+	self.x_baka.spread.moving_crouching = 2
+	self.x_baka.spread.moving_steelsight = 1
 	self.x_baka.kick = {}
 	self.x_baka.kick.standing = self.new_m4.kick.standing
 	self.x_baka.kick.crouching = self.new_m4.kick.crouching
@@ -8146,9 +8191,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_cobray.spread.standing = 3
 	self.x_cobray.spread.crouching = 2
 	self.x_cobray.spread.steelsight = 1
-	self.x_cobray.spread.moving_standing = 4
-	self.x_cobray.spread.moving_crouching = 3
-	self.x_cobray.spread.moving_steelsight = 2
+	self.x_cobray.spread.moving_standing = 3
+	self.x_cobray.spread.moving_crouching = 2
+	self.x_cobray.spread.moving_steelsight = 1
 	self.x_cobray.kick.standing = self.new_m4.kick.standing
 	self.x_cobray.kick.crouching = self.new_m4.kick.crouching
 	self.x_cobray.kick.steelsight = self.new_m4.kick.steelsight
@@ -8182,9 +8227,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_erma.spread.standing = 3
 	self.x_erma.spread.crouching = 2
 	self.x_erma.spread.steelsight = 1
-	self.x_erma.spread.moving_standing = 4
-	self.x_erma.spread.moving_crouching = 3
-	self.x_erma.spread.moving_steelsight = 2
+	self.x_erma.spread.moving_standing = 3
+	self.x_erma.spread.moving_crouching = 2
+	self.x_erma.spread.moving_steelsight = 1
 	self.x_erma.kick.standing = self.new_m4.kick.standing
 	self.x_erma.kick.crouching = self.new_m4.kick.crouching
 	self.x_erma.kick.steelsight = self.new_m4.kick.steelsight
@@ -8216,9 +8261,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_hajk.spread.standing = 3
 	self.x_hajk.spread.crouching = 2
 	self.x_hajk.spread.steelsight = 1
-	self.x_hajk.spread.moving_standing = 4
-	self.x_hajk.spread.moving_crouching = 3
-	self.x_hajk.spread.moving_steelsight = 2
+	self.x_hajk.spread.moving_standing = 3
+	self.x_hajk.spread.moving_crouching = 2
+	self.x_hajk.spread.moving_steelsight = 1
 	self.x_hajk.kick.standing = self.new_m4.kick.standing
 	self.x_hajk.kick.crouching = self.new_m4.kick.standing
 	self.x_hajk.kick.steelsight = self.new_m4.kick.standing
@@ -8246,9 +8291,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_m45.spread.standing = 3
 	self.x_m45.spread.crouching = 2
 	self.x_m45.spread.steelsight = 1
-	self.x_m45.spread.moving_standing = 4
-	self.x_m45.spread.moving_crouching = 3
-	self.x_m45.spread.moving_steelsight = 2
+	self.x_m45.spread.moving_standing = 3
+	self.x_m45.spread.moving_crouching = 2
+	self.x_m45.spread.moving_steelsight = 1
 	self.x_m45.kick.standing = self.new_m4.kick.standing
 	self.x_m45.kick.crouching = self.new_m4.kick.crouching
 	self.x_m45.kick.steelsight = self.new_m4.kick.steelsight
@@ -8277,9 +8322,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_m1928.spread.standing = 3
 	self.x_m1928.spread.crouching = 2
 	self.x_m1928.spread.steelsight = 1
-	self.x_m1928.spread.moving_standing = 4
-	self.x_m1928.spread.moving_crouching = 3
-	self.x_m1928.spread.moving_steelsight = 2
+	self.x_m1928.spread.moving_standing = 3
+	self.x_m1928.spread.moving_crouching = 2
+	self.x_m1928.spread.moving_steelsight = 1
 	self.x_m1928.CLIP_AMMO_MAX = 100
 	self.x_m1928.AMMO_MAX = 180
 	self.x_m1928.AMMO_PICKUP = self:_pickup_chance(180, 2)
@@ -8309,9 +8354,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mac10.spread.standing = 3
 	self.x_mac10.spread.crouching = 2
 	self.x_mac10.spread.steelsight = 1
-	self.x_mac10.spread.moving_standing = 4
-	self.x_mac10.spread.moving_crouching = 3
-	self.x_mac10.spread.moving_steelsight = 2
+	self.x_mac10.spread.moving_standing = 3
+	self.x_mac10.spread.moving_crouching = 2
+	self.x_mac10.spread.moving_steelsight = 1
 	self.x_mac10.fire_mode_data.fire_rate = 0.06
 	self.x_mac10.single.fire_rate = 0.06
 	self.x_mac10.kick.standing = self.new_m4.kick.standing
@@ -8344,9 +8389,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp7.spread.standing = 3
 	self.x_mp7.spread.crouching = 2
 	self.x_mp7.spread.steelsight = 1
-	self.x_mp7.spread.moving_standing = 4
-	self.x_mp7.spread.moving_crouching = 3
-	self.x_mp7.spread.moving_steelsight = 2
+	self.x_mp7.spread.moving_standing = 3
+	self.x_mp7.spread.moving_crouching = 2
+	self.x_mp7.spread.moving_steelsight = 1
 	self.x_mp7.kick.standing = self.new_m4.kick.standing
 	self.x_mp7.kick.crouching = self.new_m4.kick.crouching
 	self.x_mp7.kick.steelsight = self.new_m4.kick.steelsight		
@@ -8376,9 +8421,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp9.spread.standing = 3
 	self.x_mp9.spread.crouching = 2
 	self.x_mp9.spread.steelsight = 1
-	self.x_mp9.spread.moving_standing = 4
-	self.x_mp9.spread.moving_crouching = 3
-	self.x_mp9.spread.moving_steelsight = 2
+	self.x_mp9.spread.moving_standing = 3
+	self.x_mp9.spread.moving_crouching = 2
+	self.x_mp9.spread.moving_steelsight = 1
 	self.x_mp9.kick.standing = self.new_m4.kick.standing
 	self.x_mp9.kick.crouching = self.new_m4.kick.crouching
 	self.x_mp9.kick.steelsight = self.new_m4.kick.steelsight
@@ -8408,9 +8453,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_olympic.spread.standing = 3
 	self.x_olympic.spread.crouching = 2
 	self.x_olympic.spread.steelsight = 1
-	self.x_olympic.spread.moving_standing = 4
-	self.x_olympic.spread.moving_crouching = 3
-	self.x_olympic.spread.moving_steelsight = 2
+	self.x_olympic.spread.moving_standing = 3
+	self.x_olympic.spread.moving_crouching = 2
+	self.x_olympic.spread.moving_steelsight = 1
 	self.x_olympic.panic_suppression_chance = 0.0
 	self.x_olympic.stats = {
 		damage = 20,
@@ -8437,9 +8482,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_p90.spread.standing = 3
 	self.x_p90.spread.crouching = 2
 	self.x_p90.spread.steelsight = 1
-	self.x_p90.spread.moving_standing = 4
-	self.x_p90.spread.moving_crouching = 3
-	self.x_p90.spread.moving_steelsight = 2
+	self.x_p90.spread.moving_standing = 3
+	self.x_p90.spread.moving_crouching = 2
+	self.x_p90.spread.moving_steelsight = 1
 	self.x_p90.kick.standing = self.new_m4.kick.standing
 	self.x_p90.kick.crouching = self.new_m4.kick.crouching
 	self.x_p90.kick.steelsight = self.new_m4.kick.steelsight
@@ -8472,9 +8517,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_polymer.spread.standing = 3
 	self.x_polymer.spread.crouching = 2
 	self.x_polymer.spread.steelsight = 1
-	self.x_polymer.spread.moving_standing = 4
-	self.x_polymer.spread.moving_crouching = 3
-	self.x_polymer.spread.moving_steelsight = 2
+	self.x_polymer.spread.moving_standing = 3
+	self.x_polymer.spread.moving_crouching = 2
+	self.x_polymer.spread.moving_steelsight = 1
 	self.x_polymer.kick.standing = self.new_m4.kick.standing
 	self.x_polymer.kick.crouching = self.new_m4.kick.crouching
 	self.x_polymer.kick.steelsight = self.new_m4.kick.steelsight
@@ -8506,9 +8551,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_schakal.spread.standing = 3
 	self.x_schakal.spread.crouching = 2
 	self.x_schakal.spread.steelsight = 1
-	self.x_schakal.spread.moving_standing = 4
-	self.x_schakal.spread.moving_crouching = 3
-	self.x_schakal.spread.moving_steelsight = 2
+	self.x_schakal.spread.moving_standing = 3
+	self.x_schakal.spread.moving_crouching = 2
+	self.x_schakal.spread.moving_steelsight = 1
 	self.x_schakal.kick.standing = self.new_m4.kick.standing
 	self.x_schakal.kick.crouching = self.new_m4.kick.standing
 	self.x_schakal.kick.steelsight = self.new_m4.kick.standing
@@ -8539,9 +8584,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_scorpion.spread.standing = 3
 	self.x_scorpion.spread.crouching = 2
 	self.x_scorpion.spread.steelsight = 1
-	self.x_scorpion.spread.moving_standing = 4
-	self.x_scorpion.spread.moving_crouching = 3
-	self.x_scorpion.spread.moving_steelsight = 2
+	self.x_scorpion.spread.moving_standing = 3
+	self.x_scorpion.spread.moving_crouching = 2
+	self.x_scorpion.spread.moving_steelsight = 1
 	self.x_scorpion.kick.standing = self.new_m4.kick.standing
 	self.x_scorpion.kick.crouching = self.new_m4.kick.crouching
 	self.x_scorpion.kick.steelsight = self.new_m4.kick.steelsight
@@ -8571,9 +8616,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_sterling.spread.standing = 3
 	self.x_sterling.spread.crouching = 2
 	self.x_sterling.spread.steelsight = 1
-	self.x_sterling.spread.moving_standing = 4
-	self.x_sterling.spread.moving_crouching = 3
-	self.x_sterling.spread.moving_steelsight = 2
+	self.x_sterling.spread.moving_standing = 3
+	self.x_sterling.spread.moving_crouching = 2
+	self.x_sterling.spread.moving_steelsight = 1
 	self.x_sterling.kick.standing = self.new_m4.kick.standing
 	self.x_sterling.kick.crouching = self.new_m4.kick.crouching
 	self.x_sterling.kick.steelsight = self.new_m4.kick.steelsight
@@ -8604,9 +8649,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_tec9.spread.standing = 3
 	self.x_tec9.spread.crouching = 2
 	self.x_tec9.spread.steelsight = 1
-	self.x_tec9.spread.moving_standing = 4
-	self.x_tec9.spread.moving_crouching = 3
-	self.x_tec9.spread.moving_steelsight = 2
+	self.x_tec9.spread.moving_standing = 3
+	self.x_tec9.spread.moving_crouching = 2
+	self.x_tec9.spread.moving_steelsight = 1
 	self.x_tec9.kick.standing = self.new_m4.kick.standing
 	self.x_tec9.kick.crouching = self.new_m4.kick.crouching
 	self.x_tec9.kick.steelsight = self.new_m4.kick.steelsight
@@ -8636,9 +8681,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_uzi.spread.standing = 3
 	self.x_uzi.spread.crouching = 2
 	self.x_uzi.spread.steelsight = 1
-	self.x_uzi.spread.moving_standing = 4
-	self.x_uzi.spread.moving_crouching = 3
-	self.x_uzi.spread.moving_steelsight = 2
+	self.x_uzi.spread.moving_standing = 3
+	self.x_uzi.spread.moving_crouching = 2
+	self.x_uzi.spread.moving_steelsight = 1
 	self.x_uzi.kick.standing = self.new_m4.kick.standing
 	self.x_uzi.kick.crouching = self.new_m4.kick.crouching
 	self.x_uzi.kick.steelsight = self.new_m4.kick.steelsight
@@ -8666,9 +8711,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_2006m.spread.standing = 3
 	self.x_2006m.spread.crouching = 2
 	self.x_2006m.spread.steelsight = 1
-	self.x_2006m.spread.moving_standing = 4
-	self.x_2006m.spread.moving_crouching = 3
-	self.x_2006m.spread.moving_steelsight = 2
+	self.x_2006m.spread.moving_standing = 3
+	self.x_2006m.spread.moving_crouching = 2
+	self.x_2006m.spread.moving_steelsight = 1
 	self.x_2006m.kick.standing = self.glock_17.kick.standing
 	self.x_2006m.kick.crouching = self.glock_17.kick.crouching
 	self.x_2006m.kick.steelsight = self.glock_17.kick.steelsight
@@ -8704,9 +8749,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_breech.spread.standing = 3
 	self.x_breech.spread.crouching = 2
 	self.x_breech.spread.steelsight = 1
-	self.x_breech.spread.moving_standing = 4
-	self.x_breech.spread.moving_crouching = 3
-	self.x_breech.spread.moving_steelsight = 2
+	self.x_breech.spread.moving_standing = 3
+	self.x_breech.spread.moving_crouching = 2
+	self.x_breech.spread.moving_steelsight = 1
 	self.x_breech.kick.standing = self.glock_17.kick.standing
 	self.x_breech.kick.crouching = self.glock_17.kick.crouching
 	self.x_breech.kick.steelsight = self.glock_17.kick.steelsight
@@ -8742,9 +8787,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_c96.spread.standing = 3
 	self.x_c96.spread.crouching = 2
 	self.x_c96.spread.steelsight = 1
-	self.x_c96.spread.moving_standing = 4
-	self.x_c96.spread.moving_crouching = 3
-	self.x_c96.spread.moving_steelsight = 2
+	self.x_c96.spread.moving_standing = 3
+	self.x_c96.spread.moving_crouching = 2
+	self.x_c96.spread.moving_steelsight = 1
 	self.x_c96.kick.standing = self.new_m4.kick.standing
 	self.x_c96.kick.crouching = self.new_m4.kick.crouching
 	self.x_c96.kick.steelsight = self.new_m4.kick.steelsight
@@ -8773,9 +8818,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g18c.spread.standing = 3
 	self.x_g18c.spread.crouching = 2
 	self.x_g18c.spread.steelsight = 1
-	self.x_g18c.spread.moving_standing = 4
-	self.x_g18c.spread.moving_crouching = 3
-	self.x_g18c.spread.moving_steelsight = 2
+	self.x_g18c.spread.moving_standing = 3
+	self.x_g18c.spread.moving_crouching = 2
+	self.x_g18c.spread.moving_steelsight = 1
 	self.x_g18c.kick.standing = self.new_m4.kick.standing
 	self.x_g18c.kick.crouching = self.new_m4.kick.crouching
 	self.x_g18c.kick.steelsight = self.new_m4.kick.steelsight
@@ -8808,9 +8853,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_hs2000.spread.standing = 3
 	self.x_hs2000.spread.crouching = 2
 	self.x_hs2000.spread.steelsight = 1
-	self.x_hs2000.spread.moving_standing = 4
-	self.x_hs2000.spread.moving_crouching = 3
-	self.x_hs2000.spread.moving_steelsight = 2
+	self.x_hs2000.spread.moving_standing = 3
+	self.x_hs2000.spread.moving_crouching = 2
+	self.x_hs2000.spread.moving_steelsight = 1
 	self.x_hs2000.kick.standing = self.glock_17.kick.standing
 	self.x_hs2000.kick.crouching = self.glock_17.kick.crouching
 	self.x_hs2000.kick.steelsight = self.glock_17.kick.steelsight
@@ -8840,9 +8885,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_p226.spread.standing = 3
 	self.x_p226.spread.crouching = 2
 	self.x_p226.spread.steelsight = 1
-	self.x_p226.spread.moving_standing = 4
-	self.x_p226.spread.moving_crouching = 3
-	self.x_p226.spread.moving_steelsight = 2
+	self.x_p226.spread.moving_standing = 3
+	self.x_p226.spread.moving_crouching = 2
+	self.x_p226.spread.moving_steelsight = 1
 	self.x_p226.kick.standing = self.glock_17.kick.standing
 	self.x_p226.kick.crouching = self.glock_17.kick.crouching
 	self.x_p226.kick.steelsight = self.glock_17.kick.steelsight
@@ -8871,9 +8916,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_pl14.spread.standing = 3
 	self.x_pl14.spread.crouching = 2
 	self.x_pl14.spread.steelsight = 1
-	self.x_pl14.spread.moving_standing = 4
-	self.x_pl14.spread.moving_crouching = 3
-	self.x_pl14.spread.moving_steelsight = 2
+	self.x_pl14.spread.moving_standing = 3
+	self.x_pl14.spread.moving_crouching = 2
+	self.x_pl14.spread.moving_steelsight = 1
 	self.x_pl14.kick.standing = self.glock_17.kick.standing
 	self.x_pl14.kick.crouching = self.glock_17.kick.crouching
 	self.x_pl14.kick.steelsight = self.glock_17.kick.steelsight
@@ -8903,9 +8948,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_ppk.spread.standing = 3
 	self.x_ppk.spread.crouching = 2
 	self.x_ppk.spread.steelsight = 1
-	self.x_ppk.spread.moving_standing = 4
-	self.x_ppk.spread.moving_crouching = 3
-	self.x_ppk.spread.moving_steelsight = 2
+	self.x_ppk.spread.moving_standing = 3
+	self.x_ppk.spread.moving_crouching = 2
+	self.x_ppk.spread.moving_steelsight = 1
 	self.x_ppk.kick.standing = self.glock_17.kick.standing
 	self.x_ppk.kick.crouching = self.glock_17.kick.crouching
 	self.x_ppk.kick.steelsight = self.glock_17.kick.steelsight
@@ -8931,9 +8976,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_rage.spread.standing = 3
 	self.x_rage.spread.crouching = 2
 	self.x_rage.spread.steelsight = 1
-	self.x_rage.spread.moving_standing = 4
-	self.x_rage.spread.moving_crouching = 3
-	self.x_rage.spread.moving_steelsight = 2
+	self.x_rage.spread.moving_standing = 3
+	self.x_rage.spread.moving_crouching = 2
+	self.x_rage.spread.moving_steelsight = 1
 	self.x_rage.AMMO_MAX = 60
 	self.x_rage.kick.standing = self.glock_17.kick.standing
 	self.x_rage.kick.crouching = self.glock_17.kick.crouching
@@ -8968,9 +9013,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_sparrow.spread.standing = 3
 	self.x_sparrow.spread.crouching = 2
 	self.x_sparrow.spread.steelsight = 1
-	self.x_sparrow.spread.moving_standing = 4
-	self.x_sparrow.spread.moving_crouching = 3
-	self.x_sparrow.spread.moving_steelsight = 2
+	self.x_sparrow.spread.moving_standing = 3
+	self.x_sparrow.spread.moving_crouching = 2
+	self.x_sparrow.spread.moving_steelsight = 1
 	self.x_sparrow.kick.standing = self.glock_17.kick.standing
 	self.x_sparrow.kick.crouching = self.glock_17.kick.crouching
 	self.x_sparrow.kick.steelsight = self.glock_17.kick.steelsight
@@ -9001,9 +9046,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_judge.spread.standing = 3 * 1
 	self.x_judge.spread.crouching = 2 * 1
 	self.x_judge.spread.steelsight = 1 * 1
-	self.x_judge.spread.moving_standing = 4 * 1
-	self.x_judge.spread.moving_crouching = 3 * 1
-	self.x_judge.spread.moving_steelsight = 2 * 1
+	self.x_judge.spread.moving_standing = 3 * 1
+	self.x_judge.spread.moving_crouching = 2 * 1
+	self.x_judge.spread.moving_steelsight = 1 * 1
 	self.x_judge.AMMO_MAX = 40
 	self.x_judge.damage_near = 300
 	self.x_judge.damage_far = 600
@@ -9040,9 +9085,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_rota.spread.standing = 3 * 1
 	self.x_rota.spread.crouching = 2 * 1
 	self.x_rota.spread.steelsight = 1 * 1
-	self.x_rota.spread.moving_standing = 4 * 1
-	self.x_rota.spread.moving_crouching = 3 * 1
-	self.x_rota.spread.moving_steelsight = 2 * 1
+	self.x_rota.spread.moving_standing = 3 * 1
+	self.x_rota.spread.moving_crouching = 2 * 1
+	self.x_rota.spread.moving_steelsight = 1 * 1
 	self.x_rota.kick.standing = self.new_m4.kick.standing
 	self.x_rota.kick.crouching = self.new_m4.kick.crouching
 	self.x_rota.kick.steelsight = self.new_m4.kick.steelsight
@@ -9085,9 +9130,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shuno.spread.standing = 3
 	self.shuno.spread.crouching = 2
 	self.shuno.spread.steelsight = 1
-	self.shuno.spread.moving_standing = 4
-	self.shuno.spread.moving_crouching = 3
-	self.shuno.spread.moving_steelsight = 2
+	self.shuno.spread.moving_standing = 3
+	self.shuno.spread.moving_crouching = 2
+	self.shuno.spread.moving_steelsight = 1
 	self.shuno.kick.standing = self.new_m4.kick.standing
 	self.shuno.kick.crouching = self.new_m4.kick.crouching
 	self.shuno.kick.steelsight = self.new_m4.kick.steelsight
@@ -9132,9 +9177,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.system.spread.standing = 3 * 1
 	self.system.spread.crouching = 2 * 1
 	self.system.spread.steelsight = 1 * 1
-	self.system.spread.moving_standing = 4 * 1
-	self.system.spread.moving_crouching = 3 * 1
-	self.system.spread.moving_steelsight = 2 * 1
+	self.system.spread.moving_standing = 3 * 1
+	self.system.spread.moving_crouching = 2 * 1
+	self.system.spread.moving_steelsight = 1 * 1
 	self.system.damage_near = 600
 	self.system.damage_far = 1200
 	self.system.kick.standing = self.new_m4.kick.standing
@@ -9170,9 +9215,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shepheard.spread.standing = 3
 	self.shepheard.spread.crouching = 2
 	self.shepheard.spread.steelsight = 1
-	self.shepheard.spread.moving_standing = 4
-	self.shepheard.spread.moving_crouching = 3
-	self.shepheard.spread.moving_steelsight = 2
+	self.shepheard.spread.moving_standing = 3
+	self.shepheard.spread.moving_crouching = 2
+	self.shepheard.spread.moving_steelsight = 1
 	self.shepheard.panic_suppression_chance = 0.05
 	self.shepheard.kick.standing = self.new_m4.kick.standing
 	self.shepheard.kick.crouching = self.new_m4.kick.crouching
@@ -9203,9 +9248,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_shepheard.spread.standing = 3
 	self.x_shepheard.spread.crouching = 2
 	self.x_shepheard.spread.steelsight = 1
-	self.x_shepheard.spread.moving_standing = 4
-	self.x_shepheard.spread.moving_crouching = 3
-	self.x_shepheard.spread.moving_steelsight = 2
+	self.x_shepheard.spread.moving_standing = 3
+	self.x_shepheard.spread.moving_crouching = 2
+	self.x_shepheard.spread.moving_steelsight = 1
 	self.x_shepheard.panic_suppression_chance = 0.05
 	self.x_shepheard.kick.standing = self.new_m4.kick.standing
 	self.x_shepheard.kick.crouching = self.new_m4.kick.crouching
@@ -9241,9 +9286,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.komodo.spread.standing = 3
 	self.komodo.spread.crouching = 2
 	self.komodo.spread.steelsight = 1
-	self.komodo.spread.moving_standing = 4
-	self.komodo.spread.moving_crouching = 3
-	self.komodo.spread.moving_steelsight = 2
+	self.komodo.spread.moving_standing = 3
+	self.komodo.spread.moving_crouching = 2
+	self.komodo.spread.moving_steelsight = 1
 	self.komodo.panic_suppression_chance = 0.0
 	self.komodo.kick.standing = self.new_m4.kick.standing
 	self.komodo.kick.crouching = self.new_m4.kick.standing
@@ -9279,9 +9324,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.elastic.spread.standing = 3
 	self.elastic.spread.crouching = 2
 	self.elastic.spread.steelsight = 1
-	self.elastic.spread.moving_standing = 4
-	self.elastic.spread.moving_crouching = 3
-	self.elastic.spread.moving_steelsight = 2
+	self.elastic.spread.moving_standing = 3
+	self.elastic.spread.moving_crouching = 2
+	self.elastic.spread.moving_steelsight = 1
 	self.elastic.kick.standing = {
 		0,
 		0,
@@ -9326,9 +9371,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coach.spread.standing = 3 * 1
 	self.coach.spread.crouching = 2 * 1
 	self.coach.spread.steelsight = 1 * 1
-	self.coach.spread.moving_standing = 4 * 1
-	self.coach.spread.moving_crouching = 3 * 1
-	self.coach.spread.moving_steelsight = 2 * 1
+	self.coach.spread.moving_standing = 3 * 1
+	self.coach.spread.moving_crouching = 2 * 1
+	self.coach.spread.moving_steelsight = 1 * 1
 	self.coach.kick.standing = self.huntsman.kick.standing
 	self.coach.kick.crouching = self.huntsman.kick.crouching
 	self.coach.kick.steelsight = self.huntsman.kick.steelsight
@@ -9373,9 +9418,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.legacy.spread.standing = 3
 	self.legacy.spread.crouching = 2
 	self.legacy.spread.steelsight = 1
-	self.legacy.spread.moving_standing = 4
-	self.legacy.spread.moving_crouching = 3
-	self.legacy.spread.moving_steelsight = 2
+	self.legacy.spread.moving_standing = 3
+	self.legacy.spread.moving_crouching = 2
+	self.legacy.spread.moving_steelsight = 1
 	self.legacy.kick.standing = self.glock_17.kick.standing
 	self.legacy.kick.crouching = self.glock_17.kick.crouching
 	self.legacy.kick.steelsight = self.glock_17.kick.steelsight
@@ -9411,9 +9456,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_legacy.spread.standing = 3
 	self.x_legacy.spread.crouching = 2
 	self.x_legacy.spread.steelsight = 1
-	self.x_legacy.spread.moving_standing = 4
-	self.x_legacy.spread.moving_crouching = 3
-	self.x_legacy.spread.moving_steelsight = 2
+	self.x_legacy.spread.moving_standing = 3
+	self.x_legacy.spread.moving_crouching = 2
+	self.x_legacy.spread.moving_steelsight = 1
 	self.x_legacy.kick.standing = self.glock_17.kick.standing
 	self.x_legacy.kick.crouching = self.glock_17.kick.crouching
 	self.x_legacy.kick.steelsight = self.glock_17.kick.steelsight
@@ -9442,9 +9487,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.beer.spread.standing = 3
 	self.beer.spread.crouching = 2
 	self.beer.spread.steelsight = 1
-	self.beer.spread.moving_standing = 4
-	self.beer.spread.moving_crouching = 3
-	self.beer.spread.moving_steelsight = 2
+	self.beer.spread.moving_standing = 3
+	self.beer.spread.moving_crouching = 2
+	self.beer.spread.moving_steelsight = 1
 	self.beer.kick.standing = self.new_m4.kick.standing
 	self.beer.kick.crouching = self.new_m4.kick.crouching
 	self.beer.kick.steelsight = self.new_m4.kick.steelsight
@@ -9474,9 +9519,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.czech.spread.standing = 3
 	self.czech.spread.crouching = 2
 	self.czech.spread.steelsight = 1
-	self.czech.spread.moving_standing = 4
-	self.czech.spread.moving_crouching = 3
-	self.czech.spread.moving_steelsight = 2
+	self.czech.spread.moving_standing = 3
+	self.czech.spread.moving_crouching = 2
+	self.czech.spread.moving_steelsight = 1
 	self.czech.kick.standing = self.new_m4.kick.standing
 	self.czech.kick.crouching = self.new_m4.kick.crouching
 	self.czech.kick.steelsight = self.new_m4.kick.steelsight
@@ -9504,9 +9549,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_czech.spread.standing = 3
 	self.x_czech.spread.crouching = 2
 	self.x_czech.spread.steelsight = 1
-	self.x_czech.spread.moving_standing = 4
-	self.x_czech.spread.moving_crouching = 3
-	self.x_czech.spread.moving_steelsight = 2
+	self.x_czech.spread.moving_standing = 3
+	self.x_czech.spread.moving_crouching = 2
+	self.x_czech.spread.moving_steelsight = 1
 	self.x_czech.kick.standing = self.new_m4.kick.standing
 	self.x_czech.kick.crouching = self.new_m4.kick.crouching
 	self.x_czech.kick.steelsight = self.new_m4.kick.steelsight
@@ -9534,9 +9579,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.stech.spread.standing = 3
 	self.stech.spread.crouching = 2
 	self.stech.spread.steelsight = 1
-	self.stech.spread.moving_standing = 4
-	self.stech.spread.moving_crouching = 3
-	self.stech.spread.moving_steelsight = 2
+	self.stech.spread.moving_standing = 3
+	self.stech.spread.moving_crouching = 2
+	self.stech.spread.moving_steelsight = 1
 	self.stech.kick.standing = self.new_m4.kick.standing
 	self.stech.kick.crouching = self.new_m4.kick.crouching
 	self.stech.kick.steelsight = self.new_m4.kick.steelsight
@@ -9565,9 +9610,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_stech.spread.standing = 3
 	self.x_stech.spread.crouching = 2
 	self.x_stech.spread.steelsight = 1
-	self.x_stech.spread.moving_standing = 4
-	self.x_stech.spread.moving_crouching = 3
-	self.x_stech.spread.moving_steelsight = 2
+	self.x_stech.spread.moving_standing = 3
+	self.x_stech.spread.moving_crouching = 2
+	self.x_stech.spread.moving_steelsight = 1
 	self.x_stech.kick.standing = self.new_m4.kick.standing
 	self.x_stech.kick.crouching = self.new_m4.kick.crouching
 	self.x_stech.kick.steelsight = self.new_m4.kick.steelsight
@@ -9601,9 +9646,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shatters_fury.spread.standing = 3
 	self.shatters_fury.spread.crouching = 2
 	self.shatters_fury.spread.steelsight = 1
-	self.shatters_fury.spread.moving_standing = 4
-	self.shatters_fury.spread.moving_crouching = 3
-	self.shatters_fury.spread.moving_steelsight = 2
+	self.shatters_fury.spread.moving_standing = 3
+	self.shatters_fury.spread.moving_crouching = 2
+	self.shatters_fury.spread.moving_steelsight = 1
 	self.shatters_fury.kick.standing = self.huntsman.kick.standing
 	self.shatters_fury.kick.crouching = self.huntsman.kick.crouching
 	self.shatters_fury.kick.steelsight = self.huntsman.kick.steelsight
@@ -9645,9 +9690,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.spread.standing = 3
 	self.osipr.spread.crouching = 2
 	self.osipr.spread.steelsight = 1
-	self.osipr.spread.moving_standing = 4
-	self.osipr.spread.moving_crouching = 3
-	self.osipr.spread.moving_steelsight = 2
+	self.osipr.spread.moving_standing = 3
+	self.osipr.spread.moving_crouching = 2
+	self.osipr.spread.moving_steelsight = 1
 	self.osipr.kick.standing = self.new_m4.kick.standing
 	self.osipr.kick.crouching = self.new_m4.kick.crouching
 	self.osipr.kick.steelsight = self.new_m4.kick.steelsight
@@ -9688,9 +9733,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.socom.spread.standing = 3
 	self.socom.spread.crouching = 2
 	self.socom.spread.steelsight = 1
-	self.socom.spread.moving_standing = 4
-	self.socom.spread.moving_crouching = 3
-	self.socom.spread.moving_steelsight = 2
+	self.socom.spread.moving_standing = 3
+	self.socom.spread.moving_crouching = 2
+	self.socom.spread.moving_steelsight = 1
 	self.socom.kick.standing = self.glock_17.kick.standing
 	self.socom.kick.crouching = self.glock_17.kick.crouching
 	self.socom.kick.steelsight = self.glock_17.kick.steelsight
@@ -9721,9 +9766,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_socom.spread.standing = 3
 	self.x_socom.spread.crouching = 2
 	self.x_socom.spread.steelsight = 1
-	self.x_socom.spread.moving_standing = 4
-	self.x_socom.spread.moving_crouching = 3
-	self.x_socom.spread.moving_steelsight = 2
+	self.x_socom.spread.moving_standing = 3
+	self.x_socom.spread.moving_crouching = 2
+	self.x_socom.spread.moving_steelsight = 1
 	self.x_socom.kick.standing = self.glock_17.kick.standing
 	self.x_socom.kick.crouching = self.glock_17.kick.crouching
 	self.x_socom.kick.steelsight = self.glock_17.kick.steelsight
@@ -9754,9 +9799,9 @@ if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
 	self.amt.spread.standing = 3
 	self.amt.spread.crouching = 2
 	self.amt.spread.steelsight = 1
-	self.amt.spread.moving_standing = 4
-	self.amt.spread.moving_crouching = 3
-	self.amt.spread.moving_steelsight = 2
+	self.amt.spread.moving_standing = 3
+	self.amt.spread.moving_crouching = 2
+	self.amt.spread.moving_steelsight = 1
 	self.amt.kick.standing = self.glock_17.kick.standing
 	self.amt.kick.crouching = self.glock_17.kick.crouching
 	self.amt.kick.steelsight = self.glock_17.kick.steelsight
@@ -9792,9 +9837,9 @@ if self.tilt then --Gambyt's AN 92
 	self.tilt.ADAPTIVE_BURST_SIZE = false														
 	self.tilt.spread.crouching = 2
 	self.tilt.spread.steelsight = 1
-	self.tilt.spread.moving_standing = 4
-	self.tilt.spread.moving_crouching = 3
-	self.tilt.spread.moving_steelsight = 2
+	self.tilt.spread.moving_standing = 3
+	self.tilt.spread.moving_crouching = 2
+	self.tilt.spread.moving_steelsight = 1
 	self.tilt.fire_mode_data.fire_rate = 0.1
 	self.tilt.auto.fire_rate = 0.1
 	self.tilt.kick.standing = self.new_m4.kick.standing
@@ -9837,9 +9882,9 @@ if self.ks23 then --Pawcio's KS23
 	self.ks23.spread.standing = 3 * 1
 	self.ks23.spread.crouching = 2 * 1
 	self.ks23.spread.steelsight = 1 * 1
-	self.ks23.spread.moving_standing = 4 * 1
-	self.ks23.spread.moving_crouching = 3 * 1
-	self.ks23.spread.moving_steelsight = 2 * 1
+	self.ks23.spread.moving_standing = 3 * 1
+	self.ks23.spread.moving_crouching = 2 * 1
+	self.ks23.spread.moving_steelsight = 1 * 1
 	self.ks23.kick.standing = self.huntsman.kick.standing
 	self.ks23.kick.crouching = self.huntsman.kick.crouching
 	self.ks23.kick.steelsight = self.huntsman.kick.steelsight
@@ -9879,9 +9924,9 @@ if self.amr12 then --Gambyt's AMR 12G Shotgun
 	self.amr12.spread.standing = 3
 	self.amr12.spread.crouching = 2
 	self.amr12.spread.steelsight = 1
-	self.amr12.spread.moving_standing = 4
-	self.amr12.spread.moving_crouching = 3
-	self.amr12.spread.moving_steelsight = 2
+	self.amr12.spread.moving_standing = 3
+	self.amr12.spread.moving_crouching = 2
+	self.amr12.spread.moving_steelsight = 1
 	self.amr12.kick.standing = self.new_m4.kick.standing
 	self.amr12.kick.crouching = self.new_m4.kick.crouching
 	self.amr12.kick.steelsight = self.new_m4.kick.steelsight
@@ -9917,9 +9962,9 @@ if self.owen then -- Silent Enforcer's Owen Gun
 	self.owen.spread.standing = 3
 	self.owen.spread.crouching = 2
 	self.owen.spread.steelsight = 1
-	self.owen.spread.moving_standing = 4
-	self.owen.spread.moving_crouching = 3
-	self.owen.spread.moving_steelsight = 2
+	self.owen.spread.moving_standing = 3
+	self.owen.spread.moving_crouching = 2
+	self.owen.spread.moving_steelsight = 1
 	self.owen.kick.standing = self.new_m4.kick.standing
 	self.owen.kick.crouching = self.new_m4.kick.crouching
 	self.owen.kick.steelsight = self.new_m4.kick.steelsight
@@ -9949,9 +9994,9 @@ if self.aek971 then --Pawcio's AEK 971
 	self.aek971.spread.standing = 3
 	self.aek971.spread.crouching = 2
 	self.aek971.spread.steelsight = 1
-	self.aek971.spread.moving_standing = 4
-	self.aek971.spread.moving_crouching = 3
-	self.aek971.spread.moving_steelsight = 2
+	self.aek971.spread.moving_standing = 3
+	self.aek971.spread.moving_crouching = 2
+	self.aek971.spread.moving_steelsight = 1
 	self.aek971.kick.standing = self.new_m4.kick.standing
 	self.aek971.kick.crouching = self.new_m4.kick.crouching
 	self.aek971.kick.steelsight = self.new_m4.kick.steelsight
@@ -9986,9 +10031,9 @@ if self.czevo then --Gambyt's Scorpion EVO
 	self.czevo.spread.standing = 3
 	self.czevo.spread.crouching = 2
 	self.czevo.spread.steelsight = 1
-	self.czevo.spread.moving_standing = 4
-	self.czevo.spread.moving_crouching = 3
-	self.czevo.spread.moving_steelsight = 2
+	self.czevo.spread.moving_standing = 3
+	self.czevo.spread.moving_crouching = 2
+	self.czevo.spread.moving_steelsight = 1
 	self.czevo.kick.standing = self.new_m4.kick.standing
 	self.czevo.kick.crouching = self.new_m4.kick.crouching
 	self.czevo.kick.steelsight = self.new_m4.kick.steelsight		
@@ -10027,9 +10072,9 @@ if self.winchester1894 then --Pawcio's Winchester 1894
 	self.winchester1894.spread.standing = 3
 	self.winchester1894.spread.crouching = 2
 	self.winchester1894.spread.steelsight = 1
-	self.winchester1894.spread.moving_standing = 4
-	self.winchester1894.spread.moving_crouching = 3
-	self.winchester1894.spread.moving_steelsight = 2
+	self.winchester1894.spread.moving_standing = 3
+	self.winchester1894.spread.moving_crouching = 2
+	self.winchester1894.spread.moving_steelsight = 1
 	self.winchester1894.kick.standing = self.huntsman.kick.standing
 	self.winchester1894.kick.crouching = self.huntsman.kick.crouching
 	self.winchester1894.kick.steelsight = self.huntsman.kick.steelsight
@@ -10069,9 +10114,9 @@ if self.moss464spx then --Pawcio's SPX Centerfire
 	self.moss464spx.spread.standing = 3
 	self.moss464spx.spread.crouching = 2
 	self.moss464spx.spread.steelsight = 1
-	self.moss464spx.spread.moving_standing = 4
-	self.moss464spx.spread.moving_crouching = 3
-	self.moss464spx.spread.moving_steelsight = 2
+	self.moss464spx.spread.moving_standing = 3
+	self.moss464spx.spread.moving_crouching = 2
+	self.moss464spx.spread.moving_steelsight = 1
 	self.moss464spx.kick.standing = self.huntsman.kick.standing
 	self.moss464spx.kick.crouching = self.huntsman.kick.crouching
 	self.moss464spx.kick.steelsight = self.huntsman.kick.steelsight
@@ -10102,11 +10147,11 @@ if self.sg416 then --Gambyt's SG416
 	self.sg416.spread.standing = 3
 	self.sg416.spread.crouching = 2
 	self.sg416.spread.steelsight = 1
-	self.sg416.spread.moving_standing = 4
+	self.sg416.spread.moving_standing = 3
 	self.sg416.fire_mode_data.fire_rate = 0.08571428571
 	self.sg416.auto.fire_rate = 0.08571428571
-	self.sg416.spread.moving_crouching = 3
-	self.sg416.spread.moving_steelsight = 2
+	self.sg416.spread.moving_crouching = 2
+	self.sg416.spread.moving_steelsight = 1
 	self.sg416.kick.standing = self.new_m4.kick.standing
 	self.sg416.kick.crouching = self.new_m4.kick.crouching
 	self.sg416.kick.steelsight = self.new_m4.kick.steelsight
@@ -10140,9 +10185,9 @@ if self.spike then --Gambyt's Spike Rifle
 	self.spike.spread.standing = 3
 	self.spike.spread.crouching = 2
 	self.spike.spread.steelsight = 1
-	self.spike.spread.moving_standing = 4
-	self.spike.spread.moving_crouching = 3
-	self.spike.spread.moving_steelsight = 2
+	self.spike.spread.moving_standing = 3
+	self.spike.spread.moving_crouching = 2
+	self.spike.spread.moving_steelsight = 1
 	self.spike.kick.standing = self.new_m4.kick.standing
 	self.spike.kick.crouching = self.new_m4.kick.crouching
 	self.spike.kick.steelsight = self.new_m4.kick.steelsight		
@@ -10178,9 +10223,9 @@ if self.ak5s then --Gambyt's Automat-5/AK5 SMG
 	self.ak5s.spread.standing = 3
 	self.ak5s.spread.crouching = 2
 	self.ak5s.spread.steelsight = 1
-	self.ak5s.spread.moving_standing = 4
-	self.ak5s.spread.moving_crouching = 3
-	self.ak5s.spread.moving_steelsight = 2
+	self.ak5s.spread.moving_standing = 3
+	self.ak5s.spread.moving_crouching = 2
+	self.ak5s.spread.moving_steelsight = 1
 	self.ak5s.panic_suppression_chance = 0.05
 	self.ak5s.kick.standing = self.new_m4.kick.standing
 	self.ak5s.kick.crouching = self.new_m4.kick.crouching
@@ -10217,9 +10262,9 @@ if self.lebman then --Gambyt's Vendetta 38 Pistol
 	self.lebman.spread.standing = 3
 	self.lebman.spread.crouching = 2
 	self.lebman.spread.steelsight = 1
-	self.lebman.spread.moving_standing = 4
-	self.lebman.spread.moving_crouching = 3
-	self.lebman.spread.moving_steelsight = 2
+	self.lebman.spread.moving_standing = 3
+	self.lebman.spread.moving_crouching = 2
+	self.lebman.spread.moving_steelsight = 1
 	self.lebman.kick.standing = self.new_m4.kick.standing
 	self.lebman.kick.crouching = self.new_m4.kick.crouching
 	self.lebman.kick.steelsight = self.new_m4.kick.steelsight
@@ -10258,9 +10303,9 @@ if self.sgs then --Gambyt's Guerilla 308.
 	self.sgs.spread.standing = 3
 	self.sgs.spread.crouching = 2
 	self.sgs.spread.steelsight = 1
-	self.sgs.spread.moving_standing = 4
-	self.sgs.spread.moving_crouching = 3
-	self.sgs.spread.moving_steelsight = 2
+	self.sgs.spread.moving_standing = 3
+	self.sgs.spread.moving_crouching = 2
+	self.sgs.spread.moving_steelsight = 1
 	self.sgs.kick.standing = self.huntsman.kick.standing
 	self.sgs.kick.crouching = self.huntsman.kick.crouching
 	self.sgs.kick.steelsight = self.huntsman.kick.steelsight
@@ -10304,9 +10349,9 @@ if self.beck then --Gambyt's Reinbeck M1 Shotgun
 	self.beck.muzzleflash = "effects/particles/shotgun/muzzleflash"		
 	self.beck.spread.crouching = 2 * 1 
 	self.beck.spread.steelsight = 1 * 1
-	self.beck.spread.moving_standing = 4 * 1
-	self.beck.spread.moving_crouching = 3 * 1
-	self.beck.spread.moving_steelsight = 2 * 1
+	self.beck.spread.moving_standing = 3 * 1
+	self.beck.spread.moving_crouching = 2 * 1
+	self.beck.spread.moving_steelsight = 1 * 1
 	self.beck.kick.standing = self.huntsman.kick.standing
 	self.beck.kick.crouching = self.huntsman.kick.crouching
 	self.beck.kick.steelsight = self.huntsman.kick.steelsight
@@ -10344,9 +10389,9 @@ if self.car9 then --Gambyt's ACAR 9
 	self.car9.spread.standing = 3
 	self.car9.spread.crouching = 2
 	self.car9.spread.steelsight = 1
-	self.car9.spread.moving_standing = 4
-	self.car9.spread.moving_crouching = 3
-	self.car9.spread.moving_steelsight = 2
+	self.car9.spread.moving_standing = 3
+	self.car9.spread.moving_crouching = 2
+	self.car9.spread.moving_steelsight = 1
 	self.car9.kick.standing = self.new_m4.kick.standing
 	self.car9.kick.crouching = self.new_m4.kick.crouching
 	self.car9.kick.steelsight = self.new_m4.kick.steelsight
@@ -10384,9 +10429,9 @@ if self.smolak then --Gambyt's AK Draco Pistol
 	self.smolak.spread.standing = 3
 	self.smolak.spread.crouching = 2
 	self.smolak.spread.steelsight = 1
-	self.smolak.spread.moving_standing = 4
-	self.smolak.spread.moving_crouching = 3
-	self.smolak.spread.moving_steelsight = 2
+	self.smolak.spread.moving_standing = 3
+	self.smolak.spread.moving_crouching = 2
+	self.smolak.spread.moving_steelsight = 1
 	self.smolak.CAN_TOGGLE_FIREMODE = true
 	self.smolak.kick.standing = self.new_m4.kick.standing
 	self.smolak.kick.crouching = self.new_m4.kick.crouching
@@ -10437,9 +10482,9 @@ if self.cold then --Gambyt's VMP Classic Crosskill
 	self.cold.spread.standing = 3
 	self.cold.spread.crouching = 2
 	self.cold.spread.steelsight = 1
-	self.cold.spread.moving_standing = 4
-	self.cold.spread.moving_crouching = 3
-	self.cold.spread.moving_steelsight = 2
+	self.cold.spread.moving_standing = 3
+	self.cold.spread.moving_crouching = 2
+	self.cold.spread.moving_steelsight = 1
 	self.cold.kick.standing = self.glock_17.kick.standing
 	self.cold.kick.crouching = self.glock_17.kick.crouching
 	self.cold.kick.steelsight = self.glock_17.kick.steelsight
@@ -10515,9 +10560,9 @@ if self.m590 then --Silent Enforcer and GT's Mossberg 590
 	self.m590.muzzleflash = "effects/particles/shotgun/muzzleflash"		
 	self.m590.spread.crouching = 2 * 1 
 	self.m590.spread.steelsight = 1 * 1
-	self.m590.spread.moving_standing = 4 * 1
-	self.m590.spread.moving_crouching = 3 * 1
-	self.m590.spread.moving_steelsight = 2 * 1
+	self.m590.spread.moving_standing = 3 * 1
+	self.m590.spread.moving_crouching = 2 * 1
+	self.m590.spread.moving_steelsight = 1 * 1
 	self.m590.kick.standing = self.new_m4.kick.standing
 	self.m590.kick.crouching = self.new_m4.kick.standing
 	self.m590.kick.steelsight = self.new_m4.kick.standing
@@ -10555,9 +10600,9 @@ if self.hpb then --Gambyt's Browning HP
 	self.hpb.spread.standing = 3
 	self.hpb.spread.crouching = 2
 	self.hpb.spread.steelsight = 1
-	self.hpb.spread.moving_standing = 4
-	self.hpb.spread.moving_crouching = 3
-	self.hpb.spread.moving_steelsight = 2
+	self.hpb.spread.moving_standing = 3
+	self.hpb.spread.moving_crouching = 2
+	self.hpb.spread.moving_steelsight = 1
 	self.hpb.kick.standing = self.glock_17.kick.standing
 	self.hpb.kick.crouching = self.glock_17.kick.crouching
 	self.hpb.kick.steelsight = self.glock_17.kick.steelsight

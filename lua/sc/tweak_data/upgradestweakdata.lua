@@ -579,8 +579,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Handling
 				--Basic
-					self.values.smg.hip_fire_spread_multiplier = {0.5}
-					self.values.assault_rifle.hip_fire_spread_multiplier = {0.5}
+					self.values.smg.hip_fire_spread_multiplier = {0.75}
+					self.values.assault_rifle.hip_fire_spread_multiplier = {0.75}
 				--Ace
 					self.values.smg.reload_speed_multiplier = {1.25}
 				
@@ -592,8 +592,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.5}
-					self.values.assault_rifle.move_spread_multiplier = {0.5}
+					self.values.smg.move_spread_multiplier = {0.4}
+					self.values.assault_rifle.move_spread_multiplier = {0.4}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 				
@@ -839,7 +839,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.weapon.enter_steelsight_speed_multiplier = {1.5}
 				--Ace
-					self.values.player.single_shot_accuracy_inc = {0.75}
+					self.values.player.single_shot_accuracy_inc = {0.6}
 					self.sharpshooter_categories = {
 						"assault_rifle",
 						"smg",
@@ -1092,7 +1092,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Gun Nut	
 				--Basic
 					self.values.pistol.fire_rate_multiplier = {1.15}
-					self.values.pistol.hip_fire_spread_multiplier = {0.5}	
+					self.values.pistol.hip_fire_spread_multiplier = {0.8}	
 				--Ace
 					self.values.pistol.spread_index_addend = {1}						
 
@@ -1102,7 +1102,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					1.4 --Ace
 				}
 				--Basic
-					self.values.pistol.move_spread_multiplier = {0.5}
+					self.values.pistol.move_spread_multiplier = {0.6}
 				
 			--Akimbo
 				--Ace
@@ -1127,8 +1127,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 5}, --Basic
-					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 10} --Ace
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 5}, --Basic
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 10} --Ace
 				}
 				--Ace
 					self.values.player.desperado_bodyshot_refresh = {true}

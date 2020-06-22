@@ -104,27 +104,68 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 
 	local pm = managers.player
 
-	--Will do this in a more proper way some other time.
-	if current_state:in_steelsight() and self:is_category("assault_rifle", "smg", "snp") --[[and self:is_single_shot()]] then
-		mul = mul + 1 - pm:upgrade_value("player", "single_shot_accuracy_inc", 1)
+	--Rifleman ace bonus.
+	--Todo: Move these to steelsight_accuracy_inc
+	if current_state:in_steelsight() and self:is_category("assault_rifle", "snp") then
+		mul = mul * pm:upgrade_value("player", "single_shot_accuracy_inc", 1)
 	end
 
 	if current_state:in_steelsight() then
 		for _, category in ipairs(self:categories()) do
-			mul = mul + 1 - managers.player:upgrade_value(category, "steelsight_accuracy_inc", 1)
+			mul = mul * pm:upgrade_value(category, "steelsight_accuracy_inc", 1)
+		end
+	else
+		for _, category in ipairs(self:categories()) do
+			mul = mul * pm:upgrade_value(category, "hip_fire_spread_multiplier", 1)
 		end
 	end
 
-	if current_state._moving then
-		mul = mul + 1 - pm:upgrade_value("player", "weapon_movement_stability", 1)
+	mul = mul * pm:get_property("desperado", 1)
+
+	return mul
+end
+
+function NewRaycastWeaponBase:moving_spread_penalty_reduction()
+	local spread_multiplier = 1
+	for _, category in ipairs(self:weapon_tweak_data().categories) do
+		spread_multiplier = spread_multiplier * managers.player:upgrade_value(category, "move_spread_multiplier", 1)
 	end
-
-	mul = mul + 1 - pm:get_property("desperado", 1)
-
-	return self:_convert_add_to_mul(mul)
+	return spread_multiplier
 end
 
 function NewRaycastWeaponBase:_get_spread(user_unit)
+	local current_state = user_unit:movement()._current_state
+	
+	if not current_state then
+		return 0, 0
+	end
+
+	--Base accuracy, based on accuracy stat.
+	local spread_area = self._spread
+	log("Accuracy: " .. tostring(spread_area))
+	if not spread_area then
+		return 0, 0
+	end
+	
+	--Moving penalty to spread, based on stability stat.
+	if current_state._moving then
+		local stability = tweak_data.weapon[self._name_id].stats.recoil
+		local moving_spread = tweak_data.weapon.stats.spread_moving[stability] * self:moving_spread_penalty_reduction()
+		log("Stability Penalty: " .. tostring(stability))
+		spread_area = spread_area + moving_spread
+	end
+
+	--Convert spread area to degrees.
+	local multiplier = tweak_data.weapon.stats.stance_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	spread_area = spread_area * multiplier
+	local spread_x = math.sqrt((spread_area)/math.pi)
+	local spread_y = spread_x
+	log("Spread Area: " .. tostring(spread_area * 5))
+
+	return spread_x, spread_y
+end
+
+--[[function NewRaycastWeaponBase:_get_spread(user_unit)
 	local current_state = user_unit:movement()._current_state
 	
 	if not current_state then
@@ -168,7 +209,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	spread_y = spread_y * spread_mult
 
 	return spread_x, spread_y
-end
+end]]
 
 local start_shooting_original = RaycastWeaponBase.start_shooting
 local stop_shooting_original = RaycastWeaponBase.stop_shooting

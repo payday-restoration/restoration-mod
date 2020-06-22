@@ -3708,8 +3708,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r870.single.fire_rate = 0.5
 	self.r870.fire_mode_data.fire_rate = 0.5
 	self.r870.AMMO_MAX = 60
-	self.r870.damage_near = 900
-	self.r870.damage_far = 1800
 	self.r870.AMMO_PICKUP = self:_pickup_chance(60, 2)
 	self.r870.stats = {
 		damage = 60,
@@ -3943,8 +3941,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saiga.AMMO_PICKUP = self:_pickup_chance(120, 2)
 	self.saiga.fire_mode_data.fire_rate = 0.1
 	self.saiga.auto.fire_rate = 0.1
-	self.saiga.damage_near = 700
-	self.saiga.damage_far = 1400
 	self.saiga.shake.fire_multiplier = 1
 	self.saiga.shake.fire_steelsight_multiplier = -1
 	self.saiga.kick.standing = self.new_m4.kick.standing
@@ -4196,8 +4192,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.serbu.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.serbu.CLIP_AMMO_MAX = 4
 	self.serbu.AMMO_MAX = 30
-	self.serbu.damage_near = 800
-	self.serbu.damage_far = 1600
 	self.serbu.AMMO_PICKUP = self:_pickup_chance(30, 1)
 	self.serbu.fire_mode_data.fire_rate = 0.5
 	self.serbu.single.fire_rate = 0.5
@@ -4223,8 +4217,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.huntsman.rays = 9
 	self.huntsman.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.huntsman.AMMO_MAX = 40
-	self.huntsman.damage_near = 1200
-	self.huntsman.damage_far = 2400
 	self.huntsman.AMMO_PICKUP = self:_pickup_chance(40, 2)
 	self.huntsman.sounds.fire_single = "huntsman_fire"
 	self.huntsman.sounds.fire_auto = "huntsman_fire"
@@ -4452,8 +4444,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.judge.rays = 9
 	self.judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.judge.AMMO_MAX = 20
-	self.judge.damage_near = 500
-	self.judge.damage_far = 1000
 	self.judge.AMMO_PICKUP = self:_pickup_chance(20, 1)
 	self.judge.stats = {
 		damage = 90,
@@ -4840,8 +4830,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.benelli.CAN_TOGGLE_FIREMODE = false
 	self.benelli.single = {}
 	self.benelli.single.fire_rate = 0.13953488372
-	self.benelli.damage_near = 800
-	self.benelli.damage_far = 1600
 	self.benelli.kick.standing = self.new_m4.kick.standing
 	self.benelli.kick.crouching = self.new_m4.kick.crouching
 	self.benelli.kick.steelsight = self.new_m4.kick.steelsight
@@ -4870,8 +4858,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.striker.single = {}
 	self.striker.single.fire_rate = 0.13953488372
 	self.striker.CLIP_AMMO_MAX = 12
-	self.striker.damage_near = 700
-	self.striker.damage_far = 1400
 	self.striker.kick.standing = self.new_m4.kick.standing
 	self.striker.kick.crouching = self.new_m4.kick.crouching
 	self.striker.kick.steelsight = self.new_m4.kick.steelsight
@@ -4895,8 +4881,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ksg.rays = 9
 	self.ksg.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.ksg.AMMO_MAX = 60
-	self.ksg.damage_near = 800
-	self.ksg.damage_far = 1600
 	self.ksg.CLIP_AMMO_MAX = 12
 	self.ksg.single.fire_rate = 0.6
 	self.ksg.fire_mode_data.fire_rate = 0.6
@@ -5254,8 +5238,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.spas12.CAN_TOGGLE_FIREMODE = false
 	self.spas12.single = {}
 	self.spas12.single.fire_rate = 0.13953488372
-	self.spas12.damage_near = 800
-	self.spas12.damage_far = 1600
 	self.spas12.kick.standing = self.new_m4.kick.standing
 	self.spas12.kick.crouching = self.new_m4.kick.crouching
 	self.spas12.kick.steelsight = self.new_m4.kick.steelsight
@@ -5601,8 +5583,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b682.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.b682.AMMO_MAX = 40
 	self.b682.AMMO_PICKUP = self:_pickup_chance(40, 2)
-	self.b682.damage_near = 1300
-	self.b682.damage_far = 2600
 	self.b682.fire_mode_data = {}
 	self.b682.CAN_TOGGLE_FIREMODE = false										
 	self.b682.fire_mode_data.fire_rate = 0.075
@@ -5731,8 +5711,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flamethrower_mk2.can_shoot_through_enemy = false
 	self.flamethrower_mk2.can_shoot_through_shield = false
 	self.flamethrower_mk2.can_shoot_through_wall = false
-	self.flamethrower_mk2.damage_near = 700
-	self.flamethrower_mk2.damage_far = 1400
 	self.flamethrower_mk2.kick.standing = self.new_m4.kick.standing
 	self.flamethrower_mk2.kick.crouching = self.new_m4.kick.crouching
 	self.flamethrower_mk2.kick.steelsight = self.new_m4.kick.steelsight
@@ -5791,8 +5769,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aa12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.aa12.AMMO_MAX = 120
 	self.aa12.AMMO_PICKUP = self:_pickup_chance(120, 2)
-	self.aa12.damage_near = 1100
-	self.aa12.damage_far = 2200
 	self.aa12.kick.standing = self.new_m4.kick.standing
 	self.aa12.kick.crouching = self.new_m4.kick.crouching
 	self.aa12.kick.steelsight = self.new_m4.kick.steelsight
@@ -6324,8 +6300,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.model70.stats_modifiers = nil
 	self.model70.timers.reload_empty = 4.3	
 	self.model70.panic_suppression_chance = 0.0
-	self.m37.damage_near = 900
-	self.m37.damage_far = 1800
 	self.m37.rays = 9
 	self.m37.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.m37.CLIP_AMMO_MAX = 6
@@ -6569,8 +6543,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.boot.AMMO_MAX = 40
 	self.boot.AMMO_PICKUP = self:_pickup_chance(40, 2)
 	self.boot.CLIP_AMMO_MAX = 6
-	self.boot.damage_near = 1000
-	self.boot.damage_far = 2000
 	self.boot.fire_mode_data.fire_rate = 0.75
 	self.boot.single.fire_rate = 0.75
 	self.boot.rays = 9
@@ -6704,8 +6676,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rota.fire_mode_data.fire_rate = 0.13953488372
 	self.rota.single.fire_rate = 0.13953488372
 	self.rota.panic_suppression_chance = 0.0
-	self.rota.damage_near = 500
-	self.rota.damage_far = 1000
 	self.rota.stats = {
 		damage = 45,
 		spread = 5,
@@ -7196,9 +7166,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.x_shrew.stats_modifiers = nil
-	self.x_shrew.panic_suppression_chance = 0.0		
-	self.basset.damage_near = 600	
-	self.basset.damage_far = 1200
+	self.x_shrew.panic_suppression_chance = 0.0			
 	self.basset.rays = 9
 	self.basset.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.basset.CLIP_AMMO_MAX = 6
@@ -7228,8 +7196,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Disabled--	
 	self.x_basset.use_data.selection_index = 4			
 	self.x_basset.tactical_akimbo = true
-	self.x_basset.damage_near = 600
-	self.x_basset.damage_far = 1200
 	self.x_basset.rays = 9
 	self.x_basset.CLIP_AMMO_MAX = 12
 	self.x_basset.AMMO_MAX = 120
@@ -8071,8 +8037,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_judge.FIRE_MODE = "single"
 	self.x_judge.BURST_FIRE = true
 	self.x_judge.AMMO_MAX = 40
-	self.x_judge.damage_near = 300
-	self.x_judge.damage_far = 600
 	self.x_judge.AMMO_PICKUP = self:_pickup_chance(40, 2)
 	self.x_judge.stats = {
 		damage = 90,
@@ -8109,8 +8073,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_rota.fire_mode_data.fire_rate = 0.13953488372
 	self.x_rota.single.fire_rate = 0.13953488372
 	self.x_rota.panic_suppression_chance = 0.0
-	self.x_rota.damage_near = 800
-	self.x_rota.damage_far = 1600
 	self.x_rota.stats = {
 		damage = 45,
 		spread = 3,
@@ -8182,8 +8144,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.system.can_shoot_through_enemy = false
 	self.system.can_shoot_through_shield = false
 	self.system.can_shoot_through_wall = false
-	self.system.damage_near = 600
-	self.system.damage_far = 1200
 	self.system.kick.standing = self.new_m4.kick.standing
 	self.system.kick.crouching = self.new_m4.kick.crouching
 	self.system.kick.steelsight = self.new_m4.kick.steelsight
@@ -8350,8 +8310,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coach.kick.crouching = self.huntsman.kick.crouching
 	self.coach.kick.steelsight = self.huntsman.kick.steelsight
 	self.coach.AMMO_MAX = 20
-	self.coach.damage_near = 1000
-	self.coach.damage_far = 2000
 	self.coach.AMMO_PICKUP = self:_pickup_chance(20, 1)
 	self.coach.sounds.fire_single = "coach_fire"
 	self.coach.sounds.fire_auto = "coach_fire"		
@@ -8764,8 +8722,6 @@ if self.ks23 then --Pawcio's KS23
 	self.ks23.categories = {
 			"shotgun"
 	}		
-	self.ks23.damage_near = 1500
-	self.ks23.damage_far = 1500
 	self.ks23.tactical_reload = 1		
 	self.ks23.fire_mode_data.fire_rate = 1.5
 	self.ks23.single.fire_rate = 1.5
@@ -8806,8 +8762,6 @@ if self.amr12 then --Gambyt's AMR 12G Shotgun
 	self.amr12.CAN_TOGGLE_FIREMODE = false
 	self.amr12.single = {}
 	self.amr12.single.fire_rate = 0.08571428571
-	self.amr12.damage_near = 700
-	self.amr12.damage_far = 1400
 	self.amr12.kick.standing = self.new_m4.kick.standing
 	self.amr12.kick.crouching = self.new_m4.kick.crouching
 	self.amr12.kick.steelsight = self.new_m4.kick.steelsight
@@ -9171,8 +9125,6 @@ if self.beck then --Gambyt's Reinbeck M1 Shotgun
 	self.beck.single.fire_rate = 0.5
 	self.beck.fire_mode_data.fire_rate = 0.5
 	self.beck.AMMO_MAX = 40 
-	self.beck.damage_near = 600
-	self.beck.damage_far = 1200
 	self.beck.AMMO_PICKUP = self:_pickup_chance(40, 2)
 	self.beck.stats = {
 		damage = 90,
@@ -9358,8 +9310,6 @@ if self.m590 then --Silent Enforcer and GT's Mossberg 590
 	self.m590.single.fire_rate = 0.8
 	self.m590.fire_mode_data.fire_rate = 0.8
 	self.m590.AMMO_MAX = 40 
-	self.m590.damage_near = 600
-	self.m590.damage_far = 1200
 	self.m590.AMMO_PICKUP = self:_pickup_chance(40, 2)
 	self.m590.stats = {
 		damage = 90,

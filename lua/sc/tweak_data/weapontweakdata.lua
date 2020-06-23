@@ -4685,6 +4685,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m95.can_shoot_through_titan_shield = true
 	self.m95.stats_modifiers = nil
 	self.m95.panic_suppression_chance = 0.0
+	self.m95.swap_speed_multiplier = 1.15
 	self.msr.upgrade_blocks = nil
 	self.msr.has_description = true
 	self.msr.desc_id = "bm_ap_weapon_sc_desc"
@@ -5493,6 +5494,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.rpg7.panic_suppression_chance = 0.0
 	self.rpg7.stats_modifiers = {damage = 3}
+	self.rpg7.swap_speed_multiplier = 1.45
 	self.cobray.timers.reload_not_empty = 2
 	self.cobray.timers.reload_empty = 4.25
 	self.cobray.CLIP_AMMO_MAX = 30
@@ -5708,6 +5710,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m32.stats_modifiers = {damage = 10}
 	self.m32.panic_suppression_chance = 0.0
 	self.m32.timers.shotgun_reload_first_shell_offset = 1
+	self.m32.swap_speed_multiplier = 1.2
 	self.aa12.rays = 9
 	self.aa12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.aa12.AMMO_MAX = 120
@@ -6750,6 +6753,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.ray.panic_suppression_chance = 0.0
 	self.ray.stats_modifiers = {damage = 3}
+	self.ray.swap_speed_multiplier = 1.4
 	self.tti.upgrade_blocks = nil
 	self.tti.has_description = true
 	self.tti.desc_id = "bm_ap_weapon_sc_desc"
@@ -8065,6 +8069,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}		
 	self.shuno.stats_modifiers = nil
+	self.shuno.swap_speed_multiplier = 1.25
 	self.system.categories = {
 		"flamethrower",
 		"shotgun"

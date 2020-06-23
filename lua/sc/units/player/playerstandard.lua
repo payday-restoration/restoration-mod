@@ -1179,6 +1179,10 @@ function PlayerStandard:_get_swap_speed_multiplier()
 		multiplier = multiplier * (tweak_data[category] and tweak_data[category].swap_bonus or 1)
 	end
 
+	if self._equipped_unit:base():got_silencer() then
+		multiplier = multiplier * managers.player:upgrade_value("player", "silencer_swap_increase", 1)
+	end
+
 	--Get per weapon multiplier.
 	multiplier = multiplier * (weapon_tweak_data.swap_speed_multiplier or 1)
 

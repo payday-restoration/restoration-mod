@@ -1019,16 +1019,19 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.armor_depleted_stagger_shot = {0, 3}
 
 			--Optical Illusions
-				--Basic
-					self.values.player.silencer_concealment_penalty_decrease = {1}
-				--Ace
-					self.values.player.silencer_concealment_increase = {1, 2}
+					self.values.player.silencer_concealment_increase = {
+						1, --Basic
+						2 --Ace
+					}
+					--Ace
+					self.values.player.silencer_swap_increase = {1.25}
 
 			--The Professional
 				--Basic
-					self.values.weapon.silencer_recoil_index_addend = {1}
-				--Ace
 					self.values.weapon.silencer_spread_index_addend = {1}
+				--Ace
+					self.values.weapon.silencer_recoil_index_addend = {1}
+					self.values.player.special_double_drop = {true}
 
 			--Unseen Strike
 				self.values.temporary.unseen_strike = {
@@ -1092,10 +1095,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Gun Nut	
 				--Basic
-					self.values.pistol.fire_rate_multiplier = {1.15}
 					self.values.pistol.hip_fire_spread_multiplier = {0.8}	
 				--Ace
-					self.values.pistol.spread_index_addend = {1}						
+					self.values.pistol.fire_rate_multiplier = {1.15}
+					self.values.pistol.ap_bullets = {true}
 
 			--Gunfighter
 				self.values.pistol.reload_speed_multiplier = {
@@ -3007,6 +3010,24 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_silencer_swap_increase = {
+		name_id = "menu_player_silencer_swap_increase",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "silencer_swap_increase",
+			category = "player"
+		}
+	}
+	self.definitions.player_special_double_drop = {
+		name_id = "menu_player_special_double_drop",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "special_double_drop",
+			category = "player"
+		}
+	}
 end
 
 Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", function(self)
@@ -3026,6 +3047,15 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 1,
 			upgrade = "steelsight_accuracy_inc",
 			category = "assault_rifle"
+		}
+	}
+	self.definitions.pistol_ap_bullets_1 = {
+		name_id = "menu_pistol_ap_bullets_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ap_bullets",
+			category = "pistol"
 		}
 	}
 end)

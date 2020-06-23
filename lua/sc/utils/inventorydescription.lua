@@ -254,7 +254,7 @@ function WeaponDescription._get_mods_swap_speed(name, base_stats, mods_stats)
 	return mod_swap_speed
 end
 
-function WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats)
+function WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats, silencer)
 	local weapon_tweak = tweak_data.weapon[name]
 	local multiplier = 1
 	multiplier = multiplier * managers.player:upgrade_value("weapon", "swap_speed_multiplier", 1)
@@ -264,6 +264,10 @@ function WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, s
 	for _, category in ipairs(weapon_tweak.categories) do
 		multiplier = multiplier * managers.player:upgrade_value(category, "swap_speed_multiplier", 1)
 		multiplier = multiplier * (tweak_data[category] and tweak_data[category].swap_bonus or 1)
+	end
+
+	if silencer then
+		multiplier = multiplier * managers.player:upgrade_value("player", "silencer_swap_increase", 1)
 	end
 
 	multiplier = multiplier * (weapon_tweak.swap_speed_multiplier or 1)
@@ -330,7 +334,7 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	--Ditto for weapon swap speed.
 	base_stats.swap_speed.value = WeaponDescription._get_base_swap_speed(name, base_stats)
 	mods_stats.swap_speed.value = WeaponDescription._get_mods_swap_speed(name, base_stats, mods_stats)
-	skill_stats.swap_speed.skill_in_effect, skill_stats.swap_speed.value = WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats)
+	skill_stats.swap_speed.skill_in_effect, skill_stats.swap_speed.value = WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats, silencer)
 
 	return base_stats, mods_stats, skill_stats
 end

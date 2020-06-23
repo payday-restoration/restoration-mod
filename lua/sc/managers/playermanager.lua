@@ -562,6 +562,12 @@ function PlayerManager:check_skills()
 	else
 		self:unregister_message(Message.OnWeaponFired, "graze_damage")
 	end
+
+	if self:has_category_upgrade("player", "special_double_drop") then
+		self._message_system:register(Message.OnEnemyKilled, "special_double_ammo_drop", callback(self, self, "_on_spawn_special_ammo_event"))
+	else
+		self._message_system:unregister(Message.OnEnemyKilled, "special_double_ammo_drop")
+	end
 end
 
 --The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.
@@ -857,6 +863,17 @@ function PlayerManager:check_selected_equipment_placement_valid(player)
 		return player:equipment():valid_look_at_placement(tweak_data.equipments[equipment_data.equipment]) and true or false
 	else
 		return player:equipment():valid_shape_placement(equipment_data.equipment, tweak_data.equipments[equipment_data.equipment]) and true or false
+	end
+end
+
+--Professional aced extra ammo when killing specials while using silenced weapons.
+function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, killed_unit)
+	if tweak_data.character[killed_unit:base()._tweak_table].priority_shout and equipped_unit:base():got_silencer() and variant == "bullet" then
+		if Network:is_client() then
+			managers.network:session():send_to_host("sync_spawn_extra_ammo", killed_unit)
+		else
+			self:spawn_extra_ammo(killed_unit)
+		end
 	end
 end
 

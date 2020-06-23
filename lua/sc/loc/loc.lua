@@ -1156,11 +1156,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Optical Illusions--
 		["menu_optic_illusions_sc"] = "Optical Illusions",
-		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nYou gain an additional ##1## concealment for each suppressed weapon you equip.\n\nACE: ##$pro##\nYou gain an additional ##1## concealment for each suppressed weapon you equip.",																								
+		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nSilenced weapons gain ##1## concealment.\n\nACE: ##$pro##\nSilenced weapons gain an additional ##1## concealment.\n\nYou draw and holster silenced weapons ##25%## faster.",																								
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "The Professional",
-		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##4## weapon stability with silenced weapons.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy with silenced weapons.",																								
+		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an additional ammo box.",																								
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Unseen Strike",
@@ -1180,7 +1180,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "Gun Nut",
-		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##15%## increased rate of fire with pistols.\n\nTightens the hipfire accuracy of Pistols by ##20%##.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy with pistols.",																								
+		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of Pistols by ##25%##.\n\nACE: ##$pro##\nYou gain a ##15%## increased rate of fire with pistols.\n\nYour pistols can ##now pierce body armor.##",																								
 
 		--Over Pressurized/Gunfighter--
 		["menu_gun_fighter_sc"] = "Gunfighter",

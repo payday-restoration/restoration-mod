@@ -6,7 +6,7 @@ function HUDDodgeMeter:init(hud)
 		name = "dodge_meter_init",
 		layer = 0,
 		visible = true,
-		valign = "scale",
+		valign = "center",
 		y = 0
 	})
 	self._dodge_panel = self._dodge_meter_panel:panel({

@@ -518,13 +518,7 @@ function RaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	end
 
 	local pm = managers.player
-
-	--Rifleman ace bonus.
-	--Todo: Move these to steelsight_accuracy_inc
-	if current_state:in_steelsight() and self:is_category("assault_rifle", "snp") then
-		mul = mul * pm:upgrade_value("player", "single_shot_accuracy_inc", 1)
-	end
-
+	
 	if current_state:in_steelsight() then
 		for _, category in ipairs(self:categories()) do
 			mul = mul * pm:upgrade_value(category, "steelsight_accuracy_inc", 1)

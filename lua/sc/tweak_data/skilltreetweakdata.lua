@@ -1152,7 +1152,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"single_shot_accuracy_inc_1"
+						"assault_rifle_steelsight_accuracy_inc_1",
+						"snp_steelsight_accuracy_inc_1"
 					},
 					cost = self.costs.hightierpro
 				}

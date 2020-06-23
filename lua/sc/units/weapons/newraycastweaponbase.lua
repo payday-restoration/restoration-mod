@@ -99,7 +99,7 @@ NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	local mul = 1
 
-	--Multi-pellet spread increase.
+	--Multi-pellet spread increase.gi
 	if self._rays and self._rays > 1 then
 		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
 	end
@@ -109,12 +109,6 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	end
 
 	local pm = managers.player
-
-	--Rifleman ace bonus.
-	--Todo: Move these to steelsight_accuracy_inc
-	if current_state:in_steelsight() and self:is_category("assault_rifle", "snp") then
-		mul = mul * pm:upgrade_value("player", "single_shot_accuracy_inc", 1)
-	end
 
 	if current_state:in_steelsight() then
 		for _, category in ipairs(self:categories()) do
@@ -142,17 +136,16 @@ end
 
 function NewRaycastWeaponBase:_get_spread(user_unit)
 	local current_state = user_unit:movement()._current_state
+	
 	if not current_state then
 		return 0, 0
 	end
 
 	local weapon_tweak_data = tweak_data.weapon
 	
-
 	--Get spread area from accuracy stat.
 	local spread_area = math.max(self._spread + 
 		managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) * weapon_tweak_data.stat_info.spread_per_accuracy, 0.05)
-	log("Accuracy: " .. tostring(spread_area))
 	
 	--Moving penalty to spread, based on stability stat.
 	if current_state._moving then
@@ -160,7 +153,6 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * weapon_tweak_data.stat_info.spread_per_stability, 0)
 		--Add moving spread penalty reduction.
 		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
-		log("Stability Penalty: " .. tostring(moving_spread))
 		--Add spread areas.
 		spread_area = spread_area + moving_spread
 	end
@@ -168,8 +160,6 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	--Apply skill and stance multipliers to overall spread area.
 	local multiplier = weapon_tweak_data.stats.stance_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
 	spread_area = spread_area * multiplier
-	log("Spread Area: " .. tostring(spread_area))
-
 
 	--Convert spread area to degrees.
 	local spread_x = math.sqrt((spread_area)/math.pi)
@@ -177,52 +167,6 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 
 	return spread_x, spread_y
 end
-
---[[function NewRaycastWeaponBase:_get_spread(user_unit)
-	local current_state = user_unit:movement()._current_state
-	
-	if not current_state then
-		return 0, 0
-	end
-	
-	local spread_values = tweak_data.weapon[self._name_id].spread
-	
-	if not spread_values then
-		return 0, 0
-	end
-	
-	local cond_spread_addend = self:conditional_accuracy_addend(current_state) or 0
-	local spread_addend = (self:spread_index_addend(current_state) or 0) + cond_spread_addend
-	local current_spread_value = spread_values[current_state:get_movement_state()]
-	local new_spread = self._current_stats_indices.spread + spread_addend
-	new_spread = math.clamp(new_spread, 1, #tweak_data.weapon.stats.spread)
-	self._spread = tweak_data.weapon.stats.spread[new_spread]
-	local spread_x, spread_y
-	if type(current_spread_value) == "number" then
-		spread_x = self._spread * current_spread_value --self:_get_spread_from_number(user_unit, current_state, current_spread_value)
-		spread_y = spread_x
-	else
-		spread_x, spread_y = self:_get_spread_from_table(user_unit, current_state, current_spread_value)
-	end
-	
-	if self._spread_multiplier then
-		spread_x = spread_x * self._spread_multiplier[1]
-		spread_y = spread_y * self._spread_multiplier[2]
-	end
-	
-	local spread_mult = 1
-	spread_mult = spread_mult * self:spread_multiplier(current_state)
-	spread_mult = spread_mult * self:conditional_accuracy_multiplier(current_state)
-	
-	if managers.player:current_state() == "bipod" then
-		spread_mult = spread_mult * 0.5
-	end
-	
-	spread_x = spread_x * spread_mult
-	spread_y = spread_y * spread_mult
-
-	return spread_x, spread_y
-end]]
 
 local start_shooting_original = RaycastWeaponBase.start_shooting
 local stop_shooting_original = RaycastWeaponBase.stop_shooting

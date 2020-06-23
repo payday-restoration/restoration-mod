@@ -831,6 +831,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Kilmer
 				--Basic
 					self.values.weapon.single_spread_index_addend = {1}
+					self.sharpshooter_categories = { --Determines what weapons benefit.
+						"assault_rifle",
+						"smg",
+						"snp"
+					}
 				--Ace
 					self.values.snp.reload_speed_multiplier = {1.25}
 					self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -839,12 +844,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.weapon.enter_steelsight_speed_multiplier = {1.5}
 				--Ace
-					self.values.player.single_shot_accuracy_inc = {0.6}
-					self.sharpshooter_categories = {
-						"assault_rifle",
-						"smg",
-						"snp"
-					}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.6}
+					self.values.snp.steelsight_accuracy_inc = {0.6}
 					
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
@@ -3007,3 +3008,24 @@ function UpgradesTweakData:_saw_definitions()
 		}
 	}
 end
+
+Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", function(self)
+	self.definitions.snp_steelsight_accuracy_inc_1 = {
+		name_id = "menu_snp_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_accuracy_inc",
+			category = "snp"
+		}
+	}
+	self.definitions.assault_rifle_steelsight_accuracy_inc_1 = {
+		name_id = "menu_assault_rifle_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_accuracy_inc",
+			category = "assault_rifle"
+		}
+	}
+end)

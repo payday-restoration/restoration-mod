@@ -3031,7 +3031,7 @@ function WeaponTweakData:_init_stats()
 
     self.stat_info = {}
     --Multiplier for spread on multi-pellet shotguns.
-    self.stat_info.shotgun_spread_increase = 2
+    self.stat_info.shotgun_spread_increase = 2.3
 
     --Generate table for spread and how it relates to accuracy.
     --The values in the table correspond to the area of spread.

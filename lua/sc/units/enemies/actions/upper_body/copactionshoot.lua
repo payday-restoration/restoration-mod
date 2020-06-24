@@ -692,7 +692,7 @@ function CopActionShoot:update(t)
 			end
 
 			if proceed_as_usual then
-				if self._deploy_gas and self._ext_brain._deploy_gas_t < t then
+				if self._deploy_gas and self._ext_brain._deploy_gas_t < t and 2800 >= mvec3_dis(target_pos, shoot_from_pos) then
 					self._ext_brain._deploy_gas_t = t + 10
 
 					local is_normal_grenadier = self._ext_base._tweak_table == "boom"
@@ -700,7 +700,7 @@ function CopActionShoot:update(t)
 					local gas_roll = math_random() <= roll_chance
 
 					if gas_roll then
-						if self:throw_grenade(nil, nil, nil, "tear_gas") and 2400 >= mvec3_dis(target_pos, shoot_from_pos) then
+						if self:throw_grenade(nil, nil, nil, "tear_gas") then
 							if is_normal_grenadier then
 								self._unit:sound():say("use_gas", true, nil, true)
 							end

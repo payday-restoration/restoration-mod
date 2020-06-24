@@ -268,7 +268,7 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 			if setting == 1 then
 				return
 			elseif setting == 2 then
-				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/goat_alt_day.custom_xml", "custom_xml", "environments/pd2_peta1_outside/env_peta1_outside", "environment")
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/goat_cloudy_day.custom_xml", "custom_xml", "environments/pd2_peta1_outside/env_peta1_outside", "environment")
 			end
 		end
 	end)

@@ -452,23 +452,6 @@ function DialogManager:queue_dialog(id, ...)
 			end			
 		end				
 
-		--First World Bank--
-		if id == "Play_pln_fwb_57" then
-			if difficulty_index <= 2 then
-				escape_time = 690
-			elseif difficulty_index == 3 then
-				escape_time = 660
-			elseif difficulty_index == 4 then
-				escape_time = 630
-			elseif difficulty_index == 5 then
-				escape_time = 600	
-			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 570						
-			else
-				escape_time = 540
-			end			
-		end		
-
 		--Counterfeit--
 		--Escaping
 		if id == "Play_pln_pal_59" or id == "Play_pln_pal_76" then

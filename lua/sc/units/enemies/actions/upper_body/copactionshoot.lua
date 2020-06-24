@@ -660,7 +660,7 @@ function CopActionShoot:update(t)
 					frag_cooldown = 12
 				end
 				
-				local frag_roll_chance = is_spring and 1 or 0.2
+				local frag_roll_chance = is_spring and 1 or 0.3
 				local frag_roll = math_random() <= frag_roll_chance	
 				local grenade_type = "bravo_frag"
 									
@@ -700,7 +700,7 @@ function CopActionShoot:update(t)
 					local gas_roll = math_random() <= roll_chance
 
 					if gas_roll then
-						if self:throw_grenade(nil, nil, nil, "tear_gas") then
+						if self:throw_grenade(nil, nil, nil, "tear_gas") and 2400 >= mvec3_dis(target_pos, shoot_from_pos) then
 							if is_normal_grenadier then
 								self._unit:sound():say("use_gas", true, nil, true)
 							end

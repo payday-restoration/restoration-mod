@@ -660,7 +660,7 @@ function CopActionShoot:update(t)
 					frag_cooldown = 12
 				end
 				
-				local frag_roll_chance = is_spring and 1 or 0.2
+				local frag_roll_chance = is_spring and 1 or 0.3
 				local frag_roll = math_random() <= frag_roll_chance	
 				local grenade_type = "bravo_frag"
 									
@@ -692,7 +692,7 @@ function CopActionShoot:update(t)
 			end
 
 			if proceed_as_usual then
-				if self._deploy_gas and self._ext_brain._deploy_gas_t < t then
+				if self._deploy_gas and self._ext_brain._deploy_gas_t < t and 2800 >= mvec3_dis(target_pos, shoot_from_pos) then
 					self._ext_brain._deploy_gas_t = t + 10
 
 					local is_normal_grenadier = self._ext_base._tweak_table == "boom"

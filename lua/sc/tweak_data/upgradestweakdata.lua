@@ -476,7 +476,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.first_aid_kit.deploy_time_multiplier = {0.5} --Also applies to DBs.
 				--Ace
-					self.values.temporary.first_aid_damage_reduction = {{0.4, 5}}
+					self.values.temporary.first_aid_damage_reduction = {{0.5, 5}}
 
 			--Painkillers--
 				self.values.temporary.passive_revive_damage_reduction = {
@@ -1171,7 +1171,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Haunt
 				--Basic
-					self.values.player.killshot_spooky_panic_chance = {0.08}
+					self.values.player.killshot_spooky_panic_chance = {0.07}
 				--Ace
 					self.values.player.killshot_extra_spooky_panic_chance = {0.2}
 				
@@ -1371,7 +1371,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
 		tick_time = 1,
-		total_ticks = 6,
+		total_ticks = 4,
 		max_stacks = 5,
 		stacking_cooldown = 0.5,
 		add_stack_sources = {
@@ -1393,7 +1393,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.3,
 		0.4
 	}	
-	self.values.player.damage_to_hot_extra_ticks = {3}
+	self.values.player.damage_to_hot_extra_ticks = {2}
 	self.values.player.hot_speed_bonus = {0.04}
 	
 	self.values.player.perk_armor_loss_multiplier = {

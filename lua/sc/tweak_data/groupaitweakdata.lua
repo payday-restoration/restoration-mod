@@ -9619,14 +9619,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover"
 		},	
 		FBI_medic = { --passive medics cus fuck you
-			"obstacle",
 			"provide_coverfire",	
 			"hitnrun",
 			"reloadingretreat",
 			"elite_ranged_fire",
 			"shield_cover"
 		},	
-		FBI_medic_flank = { --passive medics who flank cus fuck you
+		FBI_medic_flank = {
 			"flank",
 			"obstacle",
 			"provide_coverfire",	
@@ -9635,9 +9634,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"shield_cover"
 		},	
-		MH_shield = { --shields with elite ranged fire
+		MH_shield = { 
 			"charge",
-			"elite_ranged_fire",
+			"aggressor",
 			"provide_coverfire",
 			"provide_support",
 			"shield",
@@ -9674,25 +9673,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"elite_ranged_fire",
 			"provide_support"
-		},			
-		--very hard light rifle
-		VH_swat_rifle = { --unused
-			"smoke_grenade",
-			"charge",
-			"provide_coverfire",
-			"provide_support",
-			"elite_ranged_fire",
-			"deathguard",
-			"groupcsr"
-		},
-		VH_swat_rifle_flank = { --unused
-			"flank",
-			"flash_grenade",
-			"smoke_grenade",
-			"charge",
-			"provide_coverfire",
-			"elite_ranged_fire",
-			"provide_support"
 		},
 		FBI_suit = {
 			"flank",
@@ -9710,13 +9690,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"grouphrtr"
 		},
-		FBI_swat_rifle = { --may back up if needed
+		FBI_swat_rifle = { 
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
 			"charge",
 			"provide_support",
-			"elite_ranged_fire",
+			"ranged_fire",
 			"groupcsr"
 		},
 		FBI_swat_shotgun = {
@@ -9760,17 +9740,17 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield",
 			"deathguard"
 		},
-		FBI_swat_rifle_flank = { --standard flank tactics may abck up if needed
+		FBI_swat_rifle_flank = {
+			"elite_ranged_fire",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
-			"elite_ranged_fire"
+			"shield_cover"
 		},
-		FBI_swat_shotgun_flank = { --flanking will back up
+		FBI_swat_shotgun_flank = {
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
@@ -9785,23 +9765,22 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
-			"obstacle",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover"
 		},
 		--mayhem tactics
 		MH_swat_rifle = { --standard tactics
+			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
 			"charge",
 			"provide_support",
 			"shield_cover",
-			"elite_ranged_fire",
 			"groupcsr"
 		},
-		MH_swat_shotgun = { --standard tactics won't back up
+		MH_swat_shotgun = { 
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
@@ -9809,7 +9788,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"groupcsr"
 		},
-		MH_heavy = { --standard tactics
+		MH_heavy = { 
+			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
@@ -9817,20 +9797,19 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield_cover",
 			"deathguard",
-			"elite_ranged_fire",
 			"groupcsr"
 		},
-		MH_swat_rifle_flank = { --flanking may back up if needed
+		MH_swat_rifle_flank = { 
+			"elite_ranged_fire",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
-			"elite_ranged_fire"
+			"shield_cover"
 		},
-		MH_swat_shotgun_flank = { --aggressive flanking will back up
+		MH_swat_shotgun_flank = {
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
@@ -9838,38 +9817,37 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"aggressor",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
-			"hitnrun"
+			"shield_cover"
 		},
-		MH_heavy_flank = { --ambush team
+		MH_heavy_flank = {
+			"elite_ranged_fire",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
-			"obstacle",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover"
 		},
-		MH_heavy_shotgun_flank = { --ambush team
+		MH_heavy_shotgun_flank = {
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
-			"obstacle",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover"
 		},
 		--death wish tactics
-		DW_swat_rifle = { --supportive fire will back off if needed
+		DW_swat_rifle = {
+			"ranged_fire",
+			"aggressor",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
 			"charge",
 			"provide_support",
 			"shield_cover",
-			"elite_ranged_fire",
 			"groupcsr"
 		},
 		FBI_shield_flank = {
@@ -9985,7 +9963,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"hitnrun",
 			"grouphrtr"
 		},
-		ELITE_swat_rifle = { --supportive fire will back off if needed and targets players in bad positions
+		ELITE_swat_rifle = {
+			"ranged_fire ",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -9993,10 +9972,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"harass",
 			"provide_support",
 			"shield_cover",
-			"elite_ranged_fire",
 			"groupcsr"
 		},
-		ELITE_heavy = { --supportive fire will hold their ground and targets players in bad positions
+		ELITE_heavy = { 
+			"ranged_fire ",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
@@ -10007,7 +9986,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		ELITE_swat_shotgun = { --aggressive charge team and targets players in bad positions
+		ELITE_swat_shotgun = {
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
@@ -10018,20 +9997,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"groupcsr"
 		},
-		ELITE_swat_rifle_flank = { --aggressive flanking can back off if needed and targets players in bad positions
-			"harass",
-			"flank",
-			"smoke_grenade",
-			"flash_grenade",
-			"charge",
-			"aggressor",
-			"provide_coverfire",
-			"provide_support",
+		ELITE_swat_rifle_flank = {
 			"elite_ranged_fire",
-			"shield_cover",
-			"hitnrun"
-		},
-		ELITE_swat_shotgun_flank = { --aggressive flanking won't back off and targets players in bad positions
 			"harass",
 			"flank",
 			"smoke_grenade",
@@ -10042,17 +10009,27 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield_cover"
 		},
-		ELITE_heavy_flank = { --ambush team and targets players in bad positions
+		ELITE_swat_shotgun_flank = {
 			"harass",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
-			"obstacle",
+			"aggressor",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
-			"elite_ranged_fire"
+			"shield_cover"
+		},
+		ELITE_heavy_flank = { 
+			"elite_ranged_fire",
+			"harass",
+			"flank",
+			"smoke_grenade",
+			"flash_grenade",
+			"charge",
+			"provide_coverfire",
+			"provide_support",
+			"shield_cover"
 		},
 		--Vanilla shit below
 		swat_shotgun_rush = {

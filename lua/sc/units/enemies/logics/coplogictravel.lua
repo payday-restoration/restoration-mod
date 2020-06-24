@@ -1637,9 +1637,8 @@ function CopLogicTravel.upd_advance(data)
 				CopLogicTravel._try_anounce(data, my_data)
 			end
             
-			if data.is_converted and not data.converted_has_wiped_coarse then
+			if data.is_converted then
 			    my_data.coarse_path = nil
-				data.converted_has_wiped_coarse = true
 			end
 			
 			CopLogicTravel._chk_stop_for_follow_unit(data, my_data)
@@ -1703,7 +1702,7 @@ function CopLogicTravel._chk_stop_for_follow_unit(data, my_data)
 	local follow_unit_nav_seg = data.objective.follow_unit:movement():nav_tracker():nav_segment()
 	
 	if not follow_unit_nav_seg or not my_data.coarse_path or not my_data.coarse_path_index or not my_data.coarse_path[my_data.coarse_path_index + 1][1] then 
-		log("FUCKINGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+		--log("FUCKINGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 		return
 	end
 

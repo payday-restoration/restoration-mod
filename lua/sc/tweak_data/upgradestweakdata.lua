@@ -1171,9 +1171,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Haunt
 				--Basic
-					self.values.player.killshot_spooky_panic_chance = {0.07}
+					self.values.player.killshot_spooky_panic_chance = {0.05}
 				--Ace
-					self.values.player.killshot_extra_spooky_panic_chance = {0.2}
+					self.values.player.killshot_extra_spooky_panic_chance = {0.15}
 				
 			--Messiah
 				self.values.player.messiah_revive_from_bleed_out = {1, 3}

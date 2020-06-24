@@ -3021,10 +3021,10 @@ function WeaponTweakData:_init_stats()
     end
 
     self.stats.stance_mults = {
-    	standing = 9,
-    	moving_standing = 9,
-    	moving_crouching = 4,
-    	crouching = 4,
+    	standing = 7,
+    	moving_standing = 7,
+    	moving_crouching = 3,
+    	crouching = 3,
     	moving_steelsight = 1,
     	steelsight = 1
     }
@@ -3037,8 +3037,8 @@ function WeaponTweakData:_init_stats()
     --Generate table for spread and how it relates to accuracy.
     --The values in the table correspond to the area of spread, rather than the number of degrees as in vanilla.
     --This is because area corresponds directly to % chance to hit, so it's a more useful metric to focus on.
-    self.stat_info.base_spread = 4.05 --How much spread area you have at 0 accuracy.
-    self.stat_info.spread_per_accuracy = -0.2 --How much each point of accuracy reduces spread area.
+    self.stat_info.base_spread = 4.85 --How much spread area you have at 0 accuracy.
+    self.stat_info.spread_per_accuracy = -0.24 --How much each point of accuracy reduces spread area.
     self.stats.spread = {}
     for i = 0, 20, 1 do
     	table.insert(self.stats.spread, self.stat_info.base_spread + (i * self.stat_info.spread_per_accuracy))
@@ -3047,8 +3047,8 @@ function WeaponTweakData:_init_stats()
     --Generate table for moving_spread and how it relates to stability.
     --The values in the table correspond to the area of spread.
     --These are added to the area for accuracy while moving before determining the final angles.
-	self.stat_info.base_move_spread = 2.5
-    self.stat_info.spread_per_stability = -0.1
+	self.stat_info.base_move_spread = 3.00
+    self.stat_info.spread_per_stability = -0.12
 	self.stats.spread_moving = {}
     for i = 0, 25, 1 do
     	table.insert(self.stats.spread_moving, self.stat_info.base_move_spread + (i * self.stat_info.spread_per_stability))

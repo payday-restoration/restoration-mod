@@ -579,8 +579,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Handling
 				--Basic
-					self.values.smg.hip_fire_spread_multiplier = {0.75}
-					self.values.assault_rifle.hip_fire_spread_multiplier = {0.75}
+					self.values.smg.hip_fire_spread_multiplier = {0.8}
+					self.values.assault_rifle.hip_fire_spread_multiplier = {0.8}
 				--Ace
 					self.values.smg.reload_speed_multiplier = {1.25}
 				
@@ -592,8 +592,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.5}
-					self.values.assault_rifle.move_spread_multiplier = {0.5}
+					self.values.smg.move_spread_multiplier = {0.35}
+					self.values.assault_rifle.move_spread_multiplier = {0.35}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 				

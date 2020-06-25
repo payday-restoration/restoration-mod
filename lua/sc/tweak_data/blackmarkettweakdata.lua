@@ -364,6 +364,28 @@ function BlackMarketTweakData:_init_masks(tweak_data)
 		texture_bundle_folder = "mods"
 	}
 	
+	--Secret Dragan
+	self.masks.secret_dragan = {
+		unit = "units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret",
+		name_id = "bm_msk_secret_dragan",
+		desc_id = "bm_msk_secret_dragan_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Secret clover
+	self.masks.secret_clover = {
+		unit = "units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret",
+		name_id = "bm_msk_secret_clover",
+		desc_id = "bm_msk_secret_clover_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
 	--Classic Helmet
 	self.masks.classic_helmet = {}
 	self.masks.classic_helmet.unit = "units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"		

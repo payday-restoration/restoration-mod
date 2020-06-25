@@ -705,6 +705,26 @@
 	
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_old_hoxton"/> 
    
+    <!--secret dragan-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_dragan_secret/dragan_secret_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_dragan"/> 
+   
+    <!--secret clover-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_clover"/> 
+   
     <!--secret dev mask ssshhh-->
     <cooked_physics path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
     <model path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>

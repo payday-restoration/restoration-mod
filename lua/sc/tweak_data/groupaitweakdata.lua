@@ -9635,6 +9635,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover"
 		},	
 		MH_shield = { 
+			"legday",
 			"charge",
 			"aggressor",
 			"provide_coverfire",
@@ -9643,6 +9644,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard"
 		},
 		DW_tazer = { --tries to get as close as possible to tase players easily
+			"legday",
 			"charge",
 			"aggressor",
 			"flash_grenade",
@@ -9680,7 +9682,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"grouphrtr"
 		},
-		FBI_suit_stealth = { --not super sneaky but will retreat if approached 
+		FBI_suit_stealth = { 
+			"hunter",
 			"reloadingretreat",
 			"provide_coverfire",
 			"provide_support",
@@ -9700,6 +9703,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"groupcsr"
 		},
 		FBI_swat_shotgun = {
+			"legday",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
@@ -9760,7 +9764,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",
 			"hitnrun"
 		},
-		FBI_heavy_flank = { --ambush team
+		FBI_heavy_flank = {
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
@@ -9770,7 +9774,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover"
 		},
 		--mayhem tactics
-		MH_swat_rifle = { --standard tactics
+		MH_swat_rifle = {
 			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
@@ -9781,6 +9785,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"groupcsr"
 		},
 		MH_swat_shotgun = { 
+			"legday",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
@@ -9810,6 +9815,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover"
 		},
 		MH_swat_shotgun_flank = {
+			"legday",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
@@ -9904,13 +9910,11 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		Cap_spring = {
 			"aggressor",
-			"charge",
-			"murder"
+			"charge"
 		},
 		Cap_summers = {
 			"aggressor",
-			"charge",
-			"murder"
+			"charge"
 		},
 		Cap_autumn = {
 			"hunter",
@@ -9953,6 +9957,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		--mean DS tactics below
 		ELITE_suit_stealth = { --sneaky as fuck
+			"hunter",
+			"legday",
 			"reloadingretreat",
 			"spoocavoidance",
 			"provide_coverfire",
@@ -9987,6 +9993,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"groupcsr"
 		},
 		ELITE_swat_shotgun = {
+			"legday",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
@@ -10010,6 +10017,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover"
 		},
 		ELITE_swat_shotgun_flank = {
+			"legday",
 			"harass",
 			"flank",
 			"smoke_grenade",
@@ -10090,6 +10098,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		tazer_flanking = {
 			"flank",
+			"legday",
+			"aggressor",
 			"charge",
 			"provide_coverfire",
 			"smoke_grenade",
@@ -10097,6 +10107,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		tazer_charge = {
 			"charge",
+			"legday",
+			"aggressor",
 			"provide_coverfire",
 			"murder"
 		},

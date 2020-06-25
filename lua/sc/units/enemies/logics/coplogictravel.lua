@@ -309,9 +309,9 @@ function CopLogicTravel._upd_combat_movement(data)
 	--hitnrun: approach enemies, back away once the enemy is visible, creating a variating degree of aggressiveness
 	--eliterangedfire: open fire at enemies from longer distances, back away if the enemy gets too close for comfort
 	--spoocavoidance: attempt to approach enemies, if aimed at/seen, retreat away into cover and disengage until ready to try again
-	local hitnrunmovementqualify = data.tactics and data.tactics.hitnrun and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1000 and math_abs(data.m_pos.z - data.attention_obj.m_pos.z) < 200
-	local spoocavoidancemovementqualify = data.tactics and data.tactics.spoocavoidance and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 2000 and focus_enemy.aimed_at
-	local eliterangedfiremovementqualify = data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1500
+	local hitnrunmovementqualify = data.tactics and data.tactics.hitnrun and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 800 and math_abs(data.m_pos.z - data.attention_obj.m_pos.z) < 200
+	local spoocavoidancemovementqualify = data.tactics and data.tactics.spoocavoidance and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1500 and focus_enemy.aimed_at
+	local eliterangedfiremovementqualify = data.tactics and data.tactics.elite_ranged_fire and focus_enemy and focus_enemy.verified and focus_enemy.verified_dis <= 1000
 	
 	local ammo_max, ammo = data.unit:inventory():equipped_unit():base():ammo_info()
 	local reloadingretreatmovementqualify = ammo / ammo_max < 0.2 and data.tactics and data.tactics.reloadingretreat and focus_enemy and focus_enemy.verified
@@ -778,7 +778,7 @@ function CopLogicTravel.queued_update(data)
 		end	
 	end
 	
-	data.logic._update_haste(data, data.internal_data)
+	--data.logic._update_haste(data, data.internal_data)
 	data.logic._upd_stance_and_pose(data, data.internal_data, objective)
       
     CopLogicTravel.queue_update(data, data.internal_data, delay)
@@ -946,7 +946,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 					cover_wait_time = 0.6 + 0.4 * math.random()
   			    end
 				
-				if not CopLogicTravel._chk_close_to_criminal(data, my_data) then
+				if not CopLogicTravel._chk_close_to_criminal(data, my_data) or data.tactics and data.tactics.legday then
 					cover_wait_time = 0
 				end
 
@@ -1172,7 +1172,7 @@ function CopLogicTravel._chk_begin_advance(data, my_data)
 		end
 	end
 	
-	--this is a mess, but it should keep enemy movement tacticool overall, by having them prefer slower apporoaches at close ranges
+	--this is a mess, but it should keep enemy movement tacticool overall, by having them prefer slower approaches at close ranges
 	if can_perform_walking_action then
 		local pose_chk = not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch
 		local enemyseeninlast4secs = data.attention_obj and data.attention_obj.verified_t and data.t - data.attention_obj.verified_t < 4
@@ -1181,12 +1181,14 @@ function CopLogicTravel._chk_begin_advance(data, my_data)
 		local height_difference_penalty = data.attention_obj and math_abs(data.m_pos.z - data.attention_obj.m_pos.z) < 250 and 400 or 0
 		
 		if data.unit:movement():cool() then
-				haste = "walk"
+			haste = "walk"
+		elseif data.tactics and data.tactics.legday	then 
+			haste = "run"
 		elseif data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) or data.attention_obj and data.attention_obj.dis > 10000 then
 			haste = "run"
-		elseif data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.dis > 1200 + enemy_seen_range_bonus and not data.unit:movement():cool() and not managers.groupai:state():whisper_mode() then
+		elseif data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.dis > 800 + enemy_seen_range_bonus and not data.unit:movement():cool() and not managers.groupai:state():whisper_mode() then
 			haste = "run"
-		elseif data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.dis <= 1200 + enemy_seen_range_bonus - height_difference_penalty and is_mook and data.tactics and not data.tactics.hitnrun then
+		elseif data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.dis <= 800 + enemy_seen_range_bonus - height_difference_penalty and is_mook and data.tactics and not data.tactics.hitnrun then
 			haste = "walk"
 		else
 			haste = "run"
@@ -1196,7 +1198,7 @@ function CopLogicTravel._chk_begin_advance(data, my_data)
 
 		local end_rot = nil
 
-		if my_data.coarse_path_index >= #my_data.coarse_path - 1 then
+		if my_data.coarse_path and my_data.coarse_path_index >= #my_data.coarse_path - 1 then
 			end_rot = objective and objective.rot
 		end
 

@@ -179,6 +179,144 @@ function GroupAIStateBesiege:chk_anticipation()
 	return
 end
 
+function GroupAIStateBesiege:_upd_assault_areas(current_area)
+	local all_areas = self._area_data
+	local nav_manager = managers.navigation
+	local all_nav_segs = nav_manager._nav_segments
+	local task_data = self._task_data
+	local t = self._t
+	
+	local assault_candidates = {}
+	local assault_data = task_data.assault
+
+	local found_areas = {}
+	local to_search_areas = {}
+
+	for area_id, area in pairs(all_areas) do
+		if area.spawn_points then
+			for _, sp_data in pairs(area.spawn_points) do
+				if sp_data.delay_t <= t and not all_nav_segs[sp_data.nav_seg].disabled then
+					table.insert(to_search_areas, area)
+
+					found_areas[area_id] = true
+
+					break
+				end
+			end
+		end
+
+		if not found_areas[area_id] and area.spawn_groups then
+			for _, sp_data in pairs(area.spawn_groups) do
+				if sp_data.delay_t <= t and not all_nav_segs[sp_data.nav_seg].disabled then
+					table.insert(to_search_areas, area)
+
+					found_areas[area_id] = true
+
+					break
+				end
+			end
+		end
+	end
+
+	if #to_search_areas == 0 then
+		return current_area
+	end
+
+	if assault_candidates then
+		for criminal_key, criminal_data in pairs(self._char_criminals) do
+			if not criminal_data.status then
+				local nav_seg = criminal_data.tracker:nav_segment()
+				local area = self:get_area_from_nav_seg_id(nav_seg)
+				found_areas[area] = true
+				
+				for _, nbr in pairs(area.neighbours) do
+					found_areas[nbr] = true
+				end
+
+				table.insert(assault_candidates, area)
+			end
+		end
+	end
+
+	local i = 1
+
+	repeat
+		local area = to_search_areas[i]
+		local force_factor = area.factors.force
+		local demand = force_factor and force_factor.force
+		local nr_police = table.size(area.police.units)
+		local nr_criminals = table.size(area.criminal.units)
+
+		if assault_candidates then
+			for criminal_key, _ in pairs(area.criminal.units) do
+				if not self._criminals[criminal_key].is_deployable then
+					table.insert(assault_candidates, area)
+
+					break
+				end
+			end
+		end
+
+		if nr_criminals == 0 then
+			for neighbour_area_id, neighbour_area in pairs(area.neighbours) do
+				if not found_areas[neighbour_area_id] then
+					table.insert(to_search_areas, neighbour_area)
+
+					found_areas[neighbour_area_id] = true
+				end
+			end
+		end
+
+		i = i + 1
+	until i > #to_search_areas
+
+	if assault_candidates and #assault_candidates > 0 then
+		return assault_candidates
+	end
+	
+end
+
+function GroupAIStateBesiege:_begin_assault_task(assault_areas)
+	local assault_task = self._task_data.assault
+	assault_task.active = true
+	assault_task.next_dispatch_t = nil
+	assault_task.target_areas = assault_areas or self:_upd_assault_areas(nil)
+	self._current_target_area = self._task_data.assault.target_areas[1]
+	assault_task.phase = "anticipation"
+	assault_task.start_t = self._t
+	local anticipation_duration = self:_get_anticipation_duration(self._tweak_data.assault.anticipation_duration, assault_task.is_first)
+	assault_task.is_first = nil
+	assault_task.phase_end_t = self._t + anticipation_duration
+	assault_task.force = math.ceil(self:_get_difficulty_dependent_value(self._tweak_data.assault.force) * self:_get_balancing_multiplier(self._tweak_data.assault.force_balance_mul))
+	assault_task.use_smoke = true
+	assault_task.use_smoke_timer = 0
+	assault_task.use_spawn_event = true
+	assault_task.force_spawned = 0
+
+	if self._hostage_headcount > 0 then
+		assault_task.phase_end_t = assault_task.phase_end_t + self:_get_difficulty_dependent_value(self._tweak_data.assault.hostage_hesitation_delay)
+		assault_task.is_hesitating = true
+		assault_task.voice_delay = self._t + (assault_task.phase_end_t - self._t) / 2
+	end
+
+	self._downs_during_assault = 0
+
+	if self._hunt_mode then
+		assault_task.phase_end_t = 0
+	else
+		managers.hud:setup_anticipation(anticipation_duration)
+		managers.hud:start_anticipation()
+	end
+
+	if self._draw_drama then
+		table.insert(self._draw_drama.assault_hist, {
+			self._t
+		})
+	end
+
+	self._task_data.recon.tasks = {}
+end
+
 function GroupAIStateBesiege:_voice_groupentry(group)
 	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
 
@@ -505,24 +643,24 @@ function GroupAIStateBesiege:_upd_assault_task()
 		end
 	end
 
-	local primary_target_area = task_data.target_areas[1]
-	if self:is_area_safe_assault(primary_target_area) then
-		local target_pos = primary_target_area.pos
-		local nearest_area, nearest_dis
-		for criminal_key, criminal_data in pairs(self._player_criminals) do
-			if not criminal_data.status then
-				local dis = mvector3.distance_sq(target_pos, criminal_data.m_pos)
-				if not nearest_dis or nearest_dis > dis then
-					nearest_dis = dis
-					nearest_area = self:get_area_from_nav_seg_id(criminal_data.tracker:nav_segment())
-				end
-			end
-		end
-		if nearest_area then
-			primary_target_area = nearest_area
-			task_data.target_areas[1] = nearest_area
+	local primary_target_area = nil
+	
+	if self._current_target_area then
+		primary_target_area = self._current_target_area
+	elseif self._task_data.assault.target_areas then
+		self._current_target_area = self._task_data.assault.target_areas[1]
+		primary_target_area = self._current_target_area
+	end
+
+	if not primary_target_area or not self._current_target_area or self:is_area_safe_assault(primary_target_area) or self._force_assault_end_t then
+		self._task_data.assault.target_areas = self:_upd_assault_areas()
+		
+		if self._task_data.assault.target_areas then
+			self._current_target_area = self._task_data.assault.target_areas[1]
+			primary_target_area = self._current_target_area
 		end
 	end
+	
 	local nr_wanted = task_data.force - self:_count_police_force("assault")
 	if task_data.phase == "anticipation" then
 		nr_wanted = nr_wanted - 5

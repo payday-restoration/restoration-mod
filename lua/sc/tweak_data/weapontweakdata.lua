@@ -3032,7 +3032,7 @@ function WeaponTweakData:_init_stats()
     self.stat_info = {}
 
     --Multiplier for spread on multi-pellet shotguns. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-    self.stat_info.shotgun_spread_increase = 2.3
+    self.stat_info.shotgun_spread_increase = 2.5
 
     --Generate table for spread and how it relates to accuracy.
     --The values in the table correspond to the area of spread, rather than the number of degrees as in vanilla.

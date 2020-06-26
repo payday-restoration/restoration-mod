@@ -5,7 +5,7 @@
 <graphics>
 	<graphic_group name="GraphicGroupName" enabled="true" culling_object="co_box">
 		<object name="g_arms" enabled="true" />
-		<object name="g_gloves" enabled="false" />
+		<object name="g_gloves" enabled="true" />
 	</graphic_group>
 </graphics>
 

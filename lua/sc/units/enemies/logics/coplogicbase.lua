@@ -20,19 +20,24 @@ local mvec3_set_stat = mvector3.set_static
 local mvec3_set_length = mvector3.set_length
 local mvec3_angle = mvector3.angle
 local mvec3_step = mvector3.step
+
+local tmp_vec1 = Vector3()
+local tmp_vec2 = Vector3()
+
+local m_rot_x = mrotation.x
+local m_rot_y = mrotation.y
+local m_rot_z = mrotation.z
+
 local math_lerp = math.lerp
 local math_random = math.random
 local math_up = math.UP
 local math_abs = math.abs
 local math_clamp = math.clamp
 local math_min = math.min
-local m_rot_x = mrotation.x
-local m_rot_y = mrotation.y
-local m_rot_z = mrotation.z
+
 local table_insert = table.insert
 local table_contains = table.contains
-local tmp_vec1 = Vector3()
-local tmp_vec2 = Vector3()
+
 local REACT_AIM = AIAttentionObject.REACT_AIM
 local REACT_ARREST = AIAttentionObject.REACT_ARREST
 local REACT_COMBAT = AIAttentionObject.REACT_COMBAT
@@ -959,33 +964,32 @@ function CopLogicBase.on_detected_attention_obj_modified(data, modified_u_key)
 	local old_notice_clbk = not attention_info.identified and old_settings.notice_clbk
 
 	if new_settings then
+		if data.cool then
+			if attention_info.client_casing_suspicion or attention_info.client_peaceful_detection then
+				attention_info.reaction = new_settings.reaction
+
+				return
+			end
+		end
+
 		local switch_from_suspicious = REACT_SCARED <= new_settings.reaction and attention_info.reaction <= REACT_SUSPICIOUS
 		attention_info.settings = new_settings
 		attention_info.stare_expire_t = nil
 		attention_info.pause_expire_t = nil
 
-		if attention_info.uncover_progress then
-			attention_info.uncover_progress = nil
+		if switch_from_suspicious then
+			attention_info.next_verify_t = 0
+			attention_info.prev_notice_chk_t = TimerManager:game():time()
 
-			attention_info.unit:movement():on_suspicion(data.unit, false)
-			managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, data.unit, nil)
-		end
-
-		if attention_info.identified then
-			if switch_from_suspicious then
+			if attention_info.identified then
 				attention_info.identified = false
 				attention_info.notice_progress = attention_info.uncover_progress or 0
 				attention_info.verified = nil
-				attention_info.next_verify_t = 0
-				attention_info.prev_notice_chk_t = TimerManager:game():time()
 			end
-		elseif switch_from_suspicious then
-			attention_info.next_verify_t = 0
-			attention_info.notice_progress = 0
-			attention_info.prev_notice_chk_t = TimerManager:game():time()
 		end
 
-		attention_info.reaction = math_min(new_settings.reaction, attention_info.reaction)
+		attention_info.uncover_progress = nil
+		attention_info.reaction = new_settings.reaction
 
 		if attention_info.unit:character_damage() and attention_info.unit:character_damage().dead then
 			attention_info.is_alive = not attention_info.unit:character_damage():dead()
@@ -1204,7 +1208,7 @@ function CopLogicBase._upd_suspicion(data, my_data, attention_obj)
 	local dis = attention_obj.dis
 	local susp_settings = attention_obj.unit:base():suspicion_settings()
 
-	if attention_obj.settings.uncover_range and dis < math_min(attention_obj.settings.max_range, attention_obj.settings.uncover_range) * susp_settings.range_mul then
+	if attention_obj.verified and attention_obj.settings.uncover_range and dis < math_min(attention_obj.settings.max_range, attention_obj.settings.uncover_range) * susp_settings.range_mul then
 		attention_obj.unit:movement():on_suspicion(data.unit, true)
 		managers.groupai:state():criminal_spotted(attention_obj.unit)
 

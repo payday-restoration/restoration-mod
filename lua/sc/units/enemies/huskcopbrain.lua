@@ -619,7 +619,7 @@ function HuskCopBrain:update_local_player_suspicion(t, attention_info)
 	local dis = attention_info.dis
 	local susp_settings = attention_info.unit:base():suspicion_settings()
 
-	if attention_info.settings.uncover_range and dis < math_min(attention_info.settings.max_range, attention_info.settings.uncover_range) * susp_settings.range_mul then
+	if attention_info.verified and attention_info.settings.uncover_range and dis < math_min(attention_info.settings.max_range, attention_info.settings.uncover_range) * susp_settings.range_mul then
 		attention_info.unit:movement():on_suspicion(self._unit, true, true)
 
 		return _exit_func()
@@ -754,29 +754,15 @@ function HuskCopBrain:on_detected_attention_obj_modified(modified_u_key)
 		local switch_from_suspicious = REACT_SCARED <= new_settings.reaction and attention_info.reaction <= REACT_SUSPICIOUS
 		attention_info.settings = new_settings
 
-		if attention_info.uncover_progress then
-			attention_info.uncover_progress = nil
+		if switch_from_suspicious then
+			attention_info.next_verify_t = 0
+			attention_info.prev_notice_chk_t = TimerManager:game():time()
 
-			attention_info.unit:movement():on_suspicion(self._unit, false, true)
-			managers.groupai:state():on_criminal_suspicion_progress(attention_info.unit, self._unit, nil)
-		end
-
-		if attention_info.identified then
-			if switch_from_suspicious then
+			if attention_info.identified then
 				attention_info.identified = false
 				attention_info.notice_progress = attention_info.uncover_progress or 0
 				attention_info.verified = nil
-				attention_info.prev_notice_chk_t = TimerManager:game():time()
-
-				if self._suspecting_player then
-					self._suspecting_player = nil
-
-					self:_send_client_detection_net_event(CopBrain._NET_EVENTS.stopped_suspecting_client)
-				end
 			end
-		elseif switch_from_suspicious then
-			attention_info.notice_progress = 0
-			attention_info.prev_notice_chk_t = TimerManager:game():time()
 
 			if self._suspecting_player then
 				self._suspecting_player = nil
@@ -785,7 +771,8 @@ function HuskCopBrain:on_detected_attention_obj_modified(modified_u_key)
 			end
 		end
 
-		attention_info.reaction = math_min(new_settings.reaction, attention_info.reaction)
+		attention_info.uncover_progress = nil
+		attention_info.reaction = new_settings.reaction
 	else
 		self:_destroy_detected_attention_object_data(attention_info)
 	end

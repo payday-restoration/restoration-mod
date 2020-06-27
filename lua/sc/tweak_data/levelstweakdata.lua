@@ -164,37 +164,37 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	}
 	
 	self.nmh.ai_group_type = nypd
-	self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
+	self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/lapdassets"}
 	self.nmh.ghost_bonus = nil
 	
 	self.skm_run.ai_group_type = nypd
-	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
+	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/lapdassets"}
 	
 	self.skm_red2.ai_group_type = nypd
-	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
+	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/lapdassets"}
 	
 	--///LAPD LEVELS\\\--			
 	self.jolly.ai_group_type = lapd
-	self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/nypdassets"}
+	self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/lapdassets"}
 	self.jolly.player_style = "suit_sunny"
 	
 	self.pal.ai_group_type = lapd
-	self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/nypdassets"}	
+	self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/lapdassets"}	
 	
 	self.friend.ai_group_type = lapd
-	self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/nypdassets", "packages/narr_rvd"}
+	self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/lapdassets", "packages/narr_rvd"}
 	self.friend.player_style = "suit_sunny"
 	
 	self.kenaz.ai_group_type = lapd
-	self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/nypdassets", "packages/addtux", "packages/rex_gold"}	
+	self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/lapdassets", "packages/addtux", "packages/rex_gold"}	
 	self.kenaz.player_style = "tux"				
 	
 	self.rvd1.ai_group_type = lapd
-	self.rvd1.package = {"packages/job_rvd", "packages/nypdassets"}	
+	self.rvd1.package = {"packages/job_rvd", "packages/lapdassets"}	
 	self.rvd1.player_style = "suit_sunny"		
 	
 	self.rvd2.ai_group_type = lapd
-	self.rvd2.package = {"packages/job_rvd2", "packages/nypdassets"}
+	self.rvd2.package = {"packages/job_rvd2", "packages/lapdassets"}
 	self.rvd2.player_style = "suit_sunny"
 
 	--///NEW OUTFITS\\\--

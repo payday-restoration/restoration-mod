@@ -14634,6 +14634,13 @@ function CharacterTweakData:character_map()
 		lapd = {
 			path = "units/pd2_mod_lapd/characters/",
 			list = {
+				"ene_shield_1",
+				"ene_fbi_swat_1",
+				"ene_fbi_swat_2",
+				"ene_fbi_swat_3",
+				"ene_fbi_heavy_1",
+				"ene_fbi_heavy_r870",
+				"ene_fbi_heavy_r870_sc",
 				"ene_lapd_light_1",
 				"ene_lapd_light_2",
 				"ene_lapd_heavy_1",

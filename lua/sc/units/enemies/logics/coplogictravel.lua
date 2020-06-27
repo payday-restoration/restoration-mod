@@ -676,12 +676,21 @@ function CopLogicTravel.queued_update(data)
 	end
 		
 	local clear_t_chk = not data.attention_obj or not data.attention_obj.verified_t or data.attention_obj.verified_t - data.t > math_random(2.5, 5)	
-		
 	local cant_say_clear = not data.attention_obj or AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and clear_t_chk and not data.is_converted
 		
 	if not cant_say_clear then
-		if data.unit:movement():cool() and data.char_tweak.chatter and data.char_tweak.chatter.clear_whisper then
-			managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper" )
+		
+	
+	if data.unit:movement():cool() and data.char_tweak.chatter and data.char_tweak.chatter.clear_whisper then			
+		local roll = math.rand(1, 100)
+		local whistle_chance = 50
+	        if roll <= whistle_chance then
+		        managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper_2" )
+	            --log("whistle")
+		    else
+		        managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "clear_whisper" )
+	            --log("reporting")
+		    end
 		elseif not data.unit:movement():cool() then
 			if not data.unit:base():has_tag("special") and not managers.groupai:state():chk_assault_active_atm() then
 				if data.char_tweak.chatter and data.char_tweak.chatter.controlpanic then
@@ -711,8 +720,8 @@ function CopLogicTravel.queued_update(data)
 				end
 			end
 		end
-	end
-		
+	end	 
+		 
 	--mid-assault panic for cops based on alerts instead of opening fire, since its supposed to be generic action lines instead of for opening fire and such
 	--I'm adding some randomness to these since the delays in groupaitweakdata went a bit overboard but also arent able to really discern things proper
 				

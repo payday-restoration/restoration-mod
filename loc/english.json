@@ -595,6 +595,36 @@
 	"gm_gms_purchase_window_message" : "Do you really want to buy '{1}'?\n\nIt will cost you {2} {3}.",
 	"gm_gms_purchase_failed" : "Cannot Purchase",
 	"gm_gms_free_of_charge_message" : "{1} is free of charge and can be applied to as many weapons as you wish.",
-	"gm_gms_cannot_afford_message" : "You cannot purchase {1}, as you do not have enough {3} to afford it. To purchase {1}, you need {2} {3}"
+	"gm_gms_cannot_afford_message" : "You cannot purchase {1}, as you do not have enough {3} to afford it. To purchase {1}, you need {2} {3}",
+
+	"pdth_hud_challenges" : "Challenges",
+	"pdth_hud_challenges_hint" : "View your completed and active challenges",
+	"pdth_hud_active_challenges" : "Active Challenges",
+	"pdth_hud_active_challenges_hint" : "Your current Challenges",
+	"pdth_hud_completed_challenges" : "Completed Challenges",
+	"pdth_hud_completed_challenges_hint" : "Your current completed Challenges",
+
+	"ch_deploy_ammobag_hl" : "Last Bullet!",
+	"ch_deploy_ammobag" : "Deploy $count Ammo Bags",
+	"ch_plant_tripmine_hl" : "Trip Mine Plantation",
+	"ch_plant_tripmine" : "Deploy $count Trip Mines",
+	"ch_deploy_medicbag_hl" : "I neeeeeeeed a medic bag!",
+	"ch_deploy_medicbag" : "Deploy $count Medic Bags",
+	"ch_deploy_ecm_hl" : "Electric Bomb",
+	"ch_deploy_ecm" : "Deploy $count Ecm's",
+	"ch_deploy_fak_hl" : "Cupcakes are nice",
+	"ch_deploy_fak" : "Deploy $count First Aid Kits",
+	"ch_deploy_sentry_hl" : "NEED A SENTRY HERE",
+	"ch_deploy_sentry" : "Deploy $count Sentries",
+
+	"ch_vs_desc" : "Using the $weapon, defeat $count $eneType. Using melee does not contribute to this",
+	"ch_vs_head_shots_desc" : "Using the $weapon, defeat $count $eneType with Headshots.",
+	"ch_vs" : "$weapon VS. $eneType $no",
+	"ch_vs_head_shots" : "$weapon VS. $eneType HEADSHOTS $no",
+
+	"ene_law" : "THE LAW",
+    "ene_law_desc" : "law enforcers",
+ 
+	"menu_me" : "YOU"
 		
 }

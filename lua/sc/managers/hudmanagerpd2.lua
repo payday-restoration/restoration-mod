@@ -11,3 +11,20 @@ function HUDManager:show_point_of_no_return_timer()
 		managers.music:track_listen_start("music_heist_assault", "resmusic_ponr")
 	end
 end
+
+function HUDManager:GetCategoryFromWeaponCategory(cat)
+    local weapon, category, factoryid, weaponid
+    if cat == "primary" then
+		weapon = managers.blackmarket:equipped_primary()
+		factoryid = weapon.factory_id
+		weaponid = weapon.weapon_id or managers.weapon_factory:get_weapon_id_by_factory_id(factoryid)
+		category = tweak_data.weapon[weaponid].category
+	else
+		weapon = managers.blackmarket:equipped_secondary()
+		factoryid = weapon.factory_id
+		weaponid = weapon.weapon_id or managers.weapon_factory:get_weapon_id_by_factory_id(factoryid)
+		category = tweak_data.weapon[weaponid].category
+	end
+
+    return category
+end

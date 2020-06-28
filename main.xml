@@ -3,11 +3,14 @@
     <Classes directory="classes">
 		<class file="callbacks.lua"/>
 		<class file="hooks.lua"/>
+		<class file="ChallengesManager.lua"/>
+        <class file="ChallengesTweakData.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
 	<AssetUpdates id="428" version="9.7.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
+		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
 	</ScriptMods>	
     <Hooks directory="lua">
 		<!--///RESTORATION HUD & UI\\\-->
@@ -282,6 +285,10 @@
 		<hook file="sc/managers/menu/CrimeNetContractGUI.lua" source_file="lib/managers/menu/crimenetcontractgui"/>
 		<hook file="sc/managers/menu/ingamecontractgui.lua" source_file="lib/managers/menu/ingamecontractgui"/>
 		<hook file="sc/managers/menu/ContractBoxGUI.lua" source_file="lib/managers/menu/ContractBoxGUI"/>
+		<!--///PDTH Challenges\\\-->
+		<hook file="sc/managers/menu/items/CoreItemChallenges.lua" source_file="lib/managers/menu/items/menuitemchallenge"/>
+		<hook file="sc/setups/Setup.lua" source_file="lib/setups/setup"/>
+        <hook file="Psc/setups/MenuSetup.lua" source_file="lib/setups/menusetup"/>
 		<!--///INGAME MANUAL\\\-->
 		<hook file="managers/menu/IngameManualGUI.lua" source_file="lib/managers/menu/IngameManualGUI"/>
 		<!--///Outfit crash debugging, delete when fixed.\\\-->

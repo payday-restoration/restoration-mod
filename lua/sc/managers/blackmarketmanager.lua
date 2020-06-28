@@ -158,3 +158,10 @@ function BlackMarketManager.get_inventory_category(self, category)
 	return t
 
 end
+
+Hooks:PostHook(BlackMarketManager, "save", "PDTHHudSaveChallenges", function(self, data)
+	managers.challenges:save(data)
+end)
+Hooks:PostHook(BlackMarketManager, "load", "PDTHHudLoadChallenges", function(self, data)
+	managers.challenges:load(data)
+end)

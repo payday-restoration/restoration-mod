@@ -24,17 +24,16 @@ local mrot_y = mrotation.y
 local mrot_z = mrotation.z
 local table_insert = table.insert
 
---[[function CopLogicTravel.enter(data, new_logic_name, enter_params)
+function CopLogicTravel.enter(data, new_logic_name, enter_params)
 	CopLogicBase.enter(data, new_logic_name, enter_params)
 	data.unit:brain():cancel_all_pathing_searches()
-	
+
 	local old_internal_data = data.internal_data
 	local my_data = {
 		unit = data.unit
 	}
-	data.internal_data = my_data
 	local is_cool = data.unit:movement():cool()
-	
+
 	if is_cool then
 		my_data.detection = data.char_tweak.detection.ntl
 	else
@@ -46,7 +45,7 @@ local table_insert = table.insert
 		my_data.firing = old_internal_data.firing
 		my_data.shooting = old_internal_data.shooting
 		my_data.attention_unit = old_internal_data.attention_unit
-	
+
 		if old_internal_data.nearest_cover then
 			my_data.nearest_cover = old_internal_data.nearest_cover
 
@@ -63,14 +62,8 @@ local table_insert = table.insert
 	if data.char_tweak.announce_incomming then
 		my_data.announce_t = data.t + 2
 	end
-	
-	local prefix = data.unit:sound():chk_voice_prefix() or "empty"
-	local is_radio_cop = prefix == "l1d_" or prefix == "l2d_" or prefix == "l3d_" or prefix == "l4d_" or prefix == "l5d_"
-	
-	if prefix ~= "empty" and is_radio_cop then
-		my_data.radio_voice = true
-	end
-	
+
+	data.internal_data = my_data
 	local key_str = tostring(data.key)
 	my_data.upd_task_key = "CopLogicTravel.queued_update" .. key_str
 
@@ -79,7 +72,7 @@ local table_insert = table.insert
 	my_data.cover_update_task_key = "CopLogicTravel._update_cover" .. key_str
 
 	if my_data.nearest_cover or my_data.best_cover then
-		CopLogicBase.add_delayed_clbk(my_data, my_data.cover_update_task_key, callback(CopLogicTravel, CopLogicTravel, "_update_cover", data), data.t)
+		CopLogicBase.add_delayed_clbk(my_data, my_data.cover_update_task_key, callback(CopLogicTravel, CopLogicTravel, "_update_cover", data), data.t + 1)
 	end
 
 	my_data.advance_path_search_id = "CopLogicTravel_detailed" .. tostring(data.key)
@@ -101,7 +94,7 @@ local table_insert = table.insert
 			}
 
 			for _, point in ipairs(path_data.points) do
-				table_insert(path, mvec3_copy(point.position))
+				table.insert(path, mvec3_copy(point.position))
 			end
 
 			my_data.advance_path = path
@@ -119,9 +112,7 @@ local table_insert = table.insert
 				}
 			}
 			my_data.path_is_precise = true
-			my_data.path_ahead = true
 		elseif path_style == "coarse" then
-			my_data.path_ahead = true
 			local nav_manager = managers.navigation
 			local f_get_nav_seg = nav_manager.get_nav_seg_from_pos
 			local start_seg = data.unit:movement():nav_tracker():nav_segment()
@@ -135,7 +126,7 @@ local table_insert = table.insert
 				local pos = mvec3_copy(point.position)
 				local nav_seg = f_get_nav_seg(nav_manager, pos)
 
-				table_insert(path, {
+				table.insert(path, {
 					nav_seg,
 					pos
 				})
@@ -144,11 +135,34 @@ local table_insert = table.insert
 			my_data.coarse_path = path
 			my_data.coarse_path_index = CopLogicTravel.complete_coarse_path(data, my_data, path)
 		elseif path_style == "coarse_complete" then
-			my_data.path_safely = nil
-			my_data.path_ahead = true
-			my_data.coarse_path_index = 1
-			my_data.coarse_path = deep_clone(objective.path_data)
-			my_data.coarse_path_index = CopLogicTravel.complete_coarse_path(data, my_data, my_data.coarse_path)
+			if not data.is_converted then
+				my_data.coarse_path_index = 1
+				my_data.coarse_path = deep_clone(objective.path_data)
+				my_data.coarse_path_index = CopLogicTravel.complete_coarse_path(data, my_data, my_data.coarse_path)
+			else
+				my_data.coarse_path = nil
+				local nav_manager = managers.navigation
+				local f_get_nav_seg = nav_manager.get_nav_seg_from_pos
+				local start_seg = data.unit:movement():nav_tracker():nav_segment()
+				local path = {
+					{
+						start_seg
+					}
+				}
+
+				for _, point in ipairs(path_data.points) do
+					local pos = mvec3_copy(point.position)
+					local nav_seg = f_get_nav_seg(nav_manager, pos)
+
+					table.insert(path, {
+						nav_seg,
+						pos
+					})
+				end
+
+				my_data.coarse_path = path
+				my_data.coarse_path_index = CopLogicTravel.complete_coarse_path(data, my_data, path)
+			end			
 		end
 	end
 
@@ -176,11 +190,12 @@ local table_insert = table.insert
 
 	my_data.attitude = data.objective.attitude or "avoid"
 	my_data.weapon_range = data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].range
-	my_data.path_safely = data.team.foes[tweak_data.levels:get_default_team_ID("player")]
+	my_data.path_safely = my_data.attitude == "avoid" or nil
 	my_data.path_ahead = data.objective.path_ahead or data.team.id == tweak_data.levels:get_default_team_ID("player")
 
 	data.unit:brain():set_update_enabled_state(false)
-end--]]
+end
+
 
 function CopLogicTravel._upd_enemy_detection(data)
 	managers.groupai:state():on_unit_detection_updated(data.unit)
@@ -1648,10 +1663,6 @@ function CopLogicTravel.upd_advance(data)
 				CopLogicTravel._try_anounce(data, my_data)
 			end
             
-			if data.is_converted then
-			    my_data.coarse_path = nil
-			end
-			
 			CopLogicTravel._chk_stop_for_follow_unit(data, my_data)
 
 			if my_data ~= data.internal_data then
@@ -1712,12 +1723,12 @@ function CopLogicTravel._chk_stop_for_follow_unit(data, my_data)
 
 	local follow_unit_nav_seg = data.objective.follow_unit:movement():nav_tracker():nav_segment()
 	
-	if not follow_unit_nav_seg or not my_data.coarse_path or not my_data.coarse_path_index or not my_data.coarse_path[my_data.coarse_path_index + 1][1] then 
+	if not follow_unit_nav_seg or not my_data.coarse_path or not my_data.coarse_path_index or not my_data.coarse_path[my_data.coarse_path_index + 1] or not my_data.coarse_path[my_data.coarse_path_index + 1][1] then 
 		--log("FUCKINGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 		return
 	end
 
-	if follow_unit_nav_seg ~= my_data.coarse_path[my_data.coarse_path_index + 1][1] or my_data.coarse_path_index ~= #my_data.coarse_path - 1 then
+	if my_data.coarse_path[my_data.coarse_path_index + 1] and follow_unit_nav_seg ~= my_data.coarse_path[my_data.coarse_path_index + 1][1] or my_data.coarse_path_index ~= #my_data.coarse_path - 1 then
 		local my_nav_seg = data.unit:movement():nav_tracker():nav_segment()
 
 		if follow_unit_nav_seg == my_nav_seg then

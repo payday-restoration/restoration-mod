@@ -1163,9 +1163,7 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 									alternate_assault_path = managers.navigation:search_coarse(search_params)
 
 									if alternate_assault_path then
-										local clean_path = self:_merge_coarse_path_by_area(alternate_assault_path)
-										
-										alternate_assault_path = clean_path
+										self:_merge_coarse_path_by_area(alternate_assault_path)	
 										
 										alternate_assault_area = search_area
 										alternate_assault_area_from = current_objective.area
@@ -1189,9 +1187,7 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 							assault_path = managers.navigation:search_coarse(search_params)
 
 							if assault_path then
-								local clean_path = self:_merge_coarse_path_by_area(assault_path)
-								
-								assault_path = clean_path
+								self:_merge_coarse_path_by_area(assault_path)
 								assault_area = search_area
 								
 								if not assault_area_uno then

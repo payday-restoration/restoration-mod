@@ -269,6 +269,7 @@ function restoration:LoadClassicMovies()
 		return true
 	end
 end
+
 restoration.assault_style = {
 	"beta_assault",
 	"alpha_assault"

@@ -1,0 +1,9 @@
+<merged_font>
+      <font name="fonts/pdth_challenge"/>
+	  <font name="fonts/font_small_cyrillic"/>
+      <font name="fonts/font_small_buttons_old_ps3" color="ffffff"/>
+	  <font name="core/fonts/system_font"/>
+      <font name="fonts/font_small"/>
+      <font name="fonts/font_small_buttons"/>
+	  <font name="fonts/font_small_csicons"/>
+</merged_font>

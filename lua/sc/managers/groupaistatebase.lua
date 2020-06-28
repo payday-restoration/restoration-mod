@@ -1596,6 +1596,26 @@ function GroupAIStateBase:do_blackout(state)
 	end
 end
 
+function GroupAIStateBase:_merge_coarse_path_by_area(coarse_path)
+	local i_nav_seg = #coarse_path
+	local last_area = nil
+
+	while i_nav_seg > 0 do
+		if #coarse_path > 2 then
+			local nav_seg = coarse_path[i_nav_seg][1]
+			local area = self:get_area_from_nav_seg_id(nav_seg)
+
+			if last_area and last_area == area then
+				table.remove(coarse_path, i_nav_seg)
+			else
+				last_area = area
+			end
+		end
+
+		i_nav_seg = i_nav_seg - 1
+	end
+end
+
 --Procs Enduring (Down restore with bots) at end of assaults for host.
 Hooks:PreHook(GroupAIStateBase, "set_assault_mode" , "TriggerEnduringHost" , function(self, enabled)
 	if self._assault_mode ~= enabled and enabled == false then

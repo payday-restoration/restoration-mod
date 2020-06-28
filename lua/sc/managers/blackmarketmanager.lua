@@ -211,3 +211,12 @@ function BlackMarketManager:accuracy_index_addend(name, categories, silencer, cu
 
 	return index
 end
+
+if restoration.Options:GetValue("OTHER/PDTHChallenges") then
+	Hooks:PostHook(BlackMarketManager, "save", "PDTHHudSaveChallenges", function(self, data)
+		managers.challenges:save(data)
+	end)
+	Hooks:PostHook(BlackMarketManager, "load", "PDTHHudLoadChallenges", function(self, data)
+		managers.challenges:load(data)
+	end)
+end

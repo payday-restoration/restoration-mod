@@ -246,6 +246,10 @@ Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(
 	
 end)
 
+function CopBrain:clbk_pathing_results(search_id, path)
+    self:_add_pathing_result(search_id, path)
+end
+
 function CopBrain:on_nav_link_unregistered(element_id)
 	if self._logic_data.pathing_results then
 		local failed_search_ids = nil
@@ -298,6 +302,10 @@ function CopBrain:on_nav_link_unregistered(element_id)
 end
 
 function CopBrain:convert_to_criminal(mastermind_criminal)
+	if self._logic_data.internal_data and self._logic_data.internal_data.coarse_path then
+		self._logic_data.internal_data.coarse_path = nil
+	end
+	
 	if self._alert_listen_key then
 		managers.groupai:state():remove_alert_listener(self._alert_listen_key)
 	else
@@ -615,4 +623,6 @@ function CopBrain:clbk_alarm_pager(ignore_this, data)
 
 		managers.enemy:add_delayed_clbk(self._alarm_pager_data.pager_clbk_id, callback(self, self, "clbk_alarm_pager"), TimerManager:game():time() + call_delay)
 	end
-end	
+end
+
+

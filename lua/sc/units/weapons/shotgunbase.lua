@@ -385,5 +385,5 @@ function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 		inc_range_addend = inc_range_addend + pm:upgrade_value("player", "not_moving_accuracy_increase", 0) * 75
 	end
 
-	return (1 - math.min(1, math.max(0, distance - (self._damage_near + inc_range_addend) * inc_range_mul) / ((self._damage_far + 2*inc_range_addend) * inc_range_mul))) * damage
+	return math.max((1 - math.min(1, math.max(0, distance - (self._damage_near + inc_range_addend) * inc_range_mul) / ((self._damage_far + 2*inc_range_addend) * inc_range_mul))) * damage, 0.05 * damage)
 end

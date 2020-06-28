@@ -1,5 +1,3 @@
-if not restoration.Options:GetValue("OTHER/PDTHChallenges") then return end
-
 ChallengesManager = ChallengesManager or class()
 
 function ChallengesManager:init()

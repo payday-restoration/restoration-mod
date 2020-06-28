@@ -1,5 +1,3 @@
-if not restoration.Options:GetValue("OTHER/PDTHChallenges") then return end
-
 Hooks:PostHook(Setup, "init_managers", "pdth_hud_define_challenges", function(ply)
     tweak_data.challenges = ChallengesTweakData:new()
     managers.challenges = ChallengesManager:new()

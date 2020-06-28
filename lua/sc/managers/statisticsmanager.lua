@@ -270,6 +270,8 @@ function StatisticsManager:init()
 		
 end
 
+if restoration.Options:GetValue("OTHER/PDTHChallenges") then
+
 Hooks:PostHook(StatisticsManager, "stop_session", "PDTHHudstop_session", function(self, data)
     local success = data and data.success
 	managers.challenges:session_stopped({success = success, from_beginning = self._start_session_from_beginning, drop_in = self._start_session_drop_in, last_session = self._global.last_session})
@@ -465,3 +467,5 @@ end)
 Hooks:PostHook(StatisticsManager, "use_first_aid", "PDTHHuduse_first_aid", function(self)
     managers.challenges:count_up("deploy_fak")
 end)
+
+end

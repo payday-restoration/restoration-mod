@@ -1,7 +1,7 @@
 <table>
     <menu search="menu;id='pause_menu'">
         <node search="node;name='pause'">
-            <item index="after:item;name='player_list'" next_node="pdth_hud_challenges" name="pdth_challenges" text_id="pdth_hud_challenges" help_id="pdth_hud_challenges_hint"/>
+            <item index="after:item;name='player_list'" next_node="pdth_hud_challenges" name="pdth_challenges" text_id="pdth_hud_challenges" help_id="pdth_hud_challenges_hint" visible_callback="PDTHChall"/>
         </node>
 
         <node align_line="0.75" menu_components="" modifier="PDTHHudActiveChallenges" refresh="PDTHHudActiveChallenges" name="pdth_hud_active_challenges">

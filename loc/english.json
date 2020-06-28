@@ -625,6 +625,9 @@
 	"ene_law" : "THE LAW",
     "ene_law_desc" : "law enforcers",
  
-	"menu_me" : "YOU"
+	"menu_me" : "YOU",
+
+	"RestorationModPDTHChallengesTitleID" : "Show PDTH Challenges",
+	"RestorationModPDTHChallengesDescID" : "Toggles the visibility of the PDTH challenges in the menu and the hud"
 		
 }

@@ -1,3 +1,5 @@
+if not restoration.Options:GetValue("OTHER/PDTHChallenges") then return end
+
 ChallengesTweakData = ChallengesTweakData or class()
 
 local tiny_xp = 800

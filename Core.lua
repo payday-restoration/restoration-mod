@@ -269,6 +269,13 @@ function restoration:LoadClassicMovies()
 		return true
 	end
 end
+
+function restoration:PDTHChall()
+	if restoration and restoration.Options:GetValue("OTHER/PDTHChallenges") then
+		return true
+	end
+end
+
 restoration.assault_style = {
 	"beta_assault",
 	"alpha_assault"

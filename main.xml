@@ -383,6 +383,7 @@
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<option type="bool" default_value="true" name="Holiday"/>
 				<option type="bool" default_value="false" name="ClassicMovies"/>
+				<option type="bool" default_value="false" hidden="true" name="PDTHChallenges"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>

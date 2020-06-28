@@ -125,8 +125,6 @@ function MenuManager:enable_overhaul_dialog(func)
 	managers.system_menu:show(dialog_data)
 end
 
-if restoration.Options:GetValue("OTHER/PDTHChallenges") then
-
 PDTHHudChallenges = PDTHHudChallenges or class()
 function PDTHHudChallenges:refresh_node(node, data)
 	local selected_item = node:selected_item() and node:selected_item():name()
@@ -174,6 +172,4 @@ function PDTHHudActiveChallenges:modify_node(node, data)
 	end
 	managers.menu:add_back_button(node)
 	return node
-end
-
 end

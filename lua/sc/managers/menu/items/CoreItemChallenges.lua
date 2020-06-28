@@ -2,7 +2,7 @@ if not restoration.Options:GetValue("OTHER/PDTHChallenges") then return end
 
 MenuItemChallenge.TYPE = "challenge"
 
-local make_fine_text = function(text)
+function MenuItemChallenge:make_fine_text(text)
 	local x, y, w, h = text:text_rect()
 	text:set_size(w, h)
 	text:set_position(math.round(text:x()), math.round(text:y()))
@@ -36,7 +36,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 		row_item.challenge_name:set_x(row_item.challenge_name:x() + tweak_data.menu.info_padding)
 		row_item.challenge_name:set_blend_mode("normal")
 		row_item.challenge_name:set_color(Color.white)
-		make_fine_text(row_item.challenge_name)
+		self:make_fine_text(row_item.challenge_name)
 
 		row_item.gui_panel:set_height(row_item.challenge_name:h())
 	end
@@ -54,7 +54,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 			name = "background",
 			blend_mode = "normal",
 			layer = 0,
-			texture = "guis/textures/pdth_hud/hud_icons",
+			texture = "guis/textures/restoration/challenge_progress",
 			texture_rect = {0, 414, 360, 22},
 			w = row_item.progress_panel:w(),
 			h = row_item.progress_panel:h()
@@ -64,7 +64,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 			name = "foreground",
 			blend_mode = "normal",
 			layer = 1,
-			texture = "guis/textures/pdth_hud/hud_icons",
+			texture = "guis/textures/restoration/challenge_progress",
 			color = Color.white:with_alpha(0.5),
 			texture_rect = {0, 392, 360, 22},
 			w = row_item.progress_panel:w(),
@@ -85,7 +85,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 		else
 			row_item.progress_panel:set_visible(false)
 		end
-		make_fine_text(row_item.progress_text)
+		self:make_fine_text(row_item.progress_text)
 		row_item.progress_text:set_center(bg:center())
 	end
 	do -- Info Panel
@@ -117,7 +117,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 			wrap = true,
 			word_wrap = true
 		})
-		make_fine_text(row_item.challenge_hl)
+		self:make_fine_text(row_item.challenge_hl)
 		row_item.challenge_hl:set_w(row_item.gui_info_panel:w() - (tweak_data.menu.info_padding * 2))
 		row_item.challenge_hl:set_lefttop(tweak_data.menu.info_padding, tweak_data.menu.info_padding)
 
@@ -129,7 +129,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 			wrap = true,
 			word_wrap = true
 		})
-		make_fine_text(row_item.description_text)
+		self:make_fine_text(row_item.description_text)
 		row_item.description_text:set_w(row_item.gui_info_panel:w() - (tweak_data.menu.info_padding * 2))
 		row_item.description_text:set_top(row_item.challenge_hl:bottom() + tweak_data.menu.info_padding)
 		row_item.description_text:set_left(tweak_data.menu.info_padding)

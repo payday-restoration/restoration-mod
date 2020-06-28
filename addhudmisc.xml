@@ -86,5 +86,11 @@
 	<movie path="movies/level_slaughter_house" force="true"/>
 	<movie path="movies/level_street" force="true"/>
 	<movie path="movies/level_suburbia" force="true"/>
+
+	<!-- PDTH Challenges -->
+	<font path="fonts/pdth_challenge" load="true"/>
+	<texture path="fonts/pdth_challenge"/>
+	<merged_font path="fonts/pdth_challenge_mf"/>
+	<texture path="guis/textures/restoration/challenge_progress"/>
 			
 </table>

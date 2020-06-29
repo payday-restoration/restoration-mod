@@ -343,6 +343,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_rpk = {
 		translation = Vector3(0.02, -2, -3.1),
 	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_shatters_fury = {
+		translation = Vector3(-0.05, -10, -4.65)
+	}	
 
 	--Military Red Dot
 	self.parts.wpn_fps_upg_o_aimpoint.pcs = {
@@ -629,6 +632,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2_dec16", "resmod_conte
 	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_lmg_m249 = {
 		translation = Vector3(0, 0, -3.4)
 	}
+	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_pis_shatters_fury = {
+		translation = Vector3(-0.05, -15, -4.65)
+	}		
 
 end)
 
@@ -857,6 +863,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	}
 	self.parts.wpn_fps_upg_o_rmr.custom_stats = {disable_steelsight_stance = true}
 	self.parts.wpn_fps_upg_o_rmr.perks = {"scope"}
+	self.parts.wpn_fps_upg_o_rmr.stance_mod.wpn_fps_pis_shatters_fury = {
+		translation = Vector3(0, 0, -0.45)
+	}	
 
 	--Compact Holosight
 	self.parts.wpn_fps_upg_o_eotech_xps.pcs = {}
@@ -4314,7 +4323,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 		}
 	}
 	
-	--HK21 Part Additions
+	--M249 Part Additions
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_specter")	
 
@@ -6569,130 +6578,34 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 
 end)
 
-function WeaponFactoryTweakData:_init_mg42()
-	self.parts.wpn_fps_lmg_mg42_b_mg42 = {
-		type = "barrel",
-		name_id = "bm_wp_mg42_b_long",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_b_mg42",
-		stats = {value = 1}
+--Buzzsaw 42
+Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(self)
+	
+	--Light Barrel
+	self.parts.wpn_fps_lmg_mg42_b_mg34.pcs = {}
+	self.parts.wpn_fps_lmg_mg42_b_mg34.stats = {
+		value = 1,
+		recoil = 4
 	}
-	self.parts.wpn_fps_lmg_mg42_b_mg34 = {
-		pcs = {},
-		type = "barrel",
-		name_id = "bm_wp_mg42_b_mg34",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_b_mg34",
-		dlc = "gage_pack_historical",
-		texture_bundle_folder = "gage_pack_historical",
-		is_a_unlockable = true,
-		stats = {
-			value = 1,
-			recoil = 4
-		},
-		custom_stats = {rof_mult = 0.667},
-		has_description = true,
-		desc_id = "bm_wp_mg42_b_mg34_desc_sc",			
-		override = {
-			wpn_fps_lmg_mg42_n42 = {
-				unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_n34",
-				third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_n34"
-			}
-		}
+	self.parts.wpn_fps_lmg_mg42_b_mg34.custom_stats = {rof_mult = 0.667}
+	self.parts.wpn_fps_lmg_mg42_b_mg34.has_description = true
+	self.parts.wpn_fps_lmg_mg42_b_mg34.desc_id = "bm_wp_mg42_b_mg34_desc_sc"
+	
+	--Heatsinked Suppressed Barrel
+	self.parts.wpn_fps_lmg_mg42_b_vg38.pcs = {}
+	self.parts.wpn_fps_lmg_mg42_b_vg38.stats = {
+		value = 10,
+		spread = -1,
+		recoil = 2,
+		suppression = 13,
+		alert_size = 13
 	}
-	self.parts.wpn_fps_lmg_mg42_b_vg38 = {
-		pcs = {},
-		type = "barrel",
-		sub_type = "silencer",
-		name_id = "bm_wp_mg42_b_vg38",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_b_vg38",
-		dlc = "gage_pack_historical",
-		texture_bundle_folder = "gage_pack_historical",
-		is_a_unlockable = true,
-		stats = {
-			value = 10,
-			spread = -1,
-			recoil = 2,
-			suppression = 13,
-			alert_size = 13
-		},
-		custom_stats = {
-			is_laser_gun = true
-		},					
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_d"
-		},
-		forbids = {
-			"wpn_fps_upg_ns_ass_smg_large",
-			"wpn_fps_upg_ns_ass_smg_medium",
-			"wpn_fps_upg_ns_ass_smg_small",
-			"wpn_fps_upg_ns_ass_smg_firepig",
-			"wpn_fps_upg_ns_ass_smg_stubby",
-			"wpn_fps_upg_ns_ass_smg_tank",
-			"wpn_fps_upg_ass_ns_jprifles",
-			"wpn_fps_upg_ass_ns_linear",
-			"wpn_fps_upg_ass_ns_surefire",
-			"wpn_fps_upg_ass_ns_battle",
-			"wpn_fps_upg_ns_ass_smg_v6"
-		},
-		override = {
-			wpn_fps_lmg_mg42_n42 = {
-				unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_n38",
-				third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_lmg_mg42_pts/wpn_third_lmg_mg42_n38"
-			}
-		}
-	}
-	self.parts.wpn_fps_lmg_mg42_reciever = {
-		type = "lower_reciever",
-		name_id = "bm_wp_mg42_b_long",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever",
-		stats = {value = 1},
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload_not_empty"
-		}
-	}
-	self.parts.wpn_fps_lmg_mg42_n42 = {
-		type = "barrel_ext",
-		name_id = "bm_wp_mg42_n42",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_n42",
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_lmg_mg42_n34 = {
-		type = "barrel_ext",
-		name_id = "bm_wp_mg42_n42",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_n42",
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_lmg_mg42_n38 = {
-		type = "barrel_ext",
-		name_id = "bm_wp_mg42_n42",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_n38",
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_lmg_mg42_b_mg42.third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_lmg_mg42_pts/wpn_third_lmg_mg42_b_mg42"
-	self.parts.wpn_fps_lmg_mg42_b_mg34.third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_lmg_mg42_pts/wpn_third_lmg_mg42_b_mg34"
-	self.parts.wpn_fps_lmg_mg42_b_vg38.third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_lmg_mg42_pts/wpn_third_lmg_mg42_b_vg38"
-	self.parts.wpn_fps_lmg_mg42_reciever.third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_lmg_mg42_pts/wpn_third_lmg_mg42_reciever"
-	self.parts.wpn_fps_lmg_mg42_n42.third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_lmg_mg42_pts/wpn_third_lmg_mg42_nozzle_42"
-	self.parts.wpn_fps_lmg_mg42_n34.third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_lmg_mg42_pts/wpn_third_lmg_mg42_nozzle_34"
-	self.parts.wpn_fps_lmg_mg42_n38.third_unit = "units/pd2_dlc_gage_historical/weapons/wpn_third_lmg_mg42_pts/wpn_third_lmg_mg42_n38"
-	self.wpn_fps_lmg_mg42 = {}
-	self.wpn_fps_lmg_mg42.unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42/wpn_fps_lmg_mg42"
-	self.wpn_fps_lmg_mg42.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"vertical_grip"
-	}
+	self.parts.wpn_fps_lmg_mg42_b_vg38.custom_stats = {
+		is_laser_gun = true
+	}				
+	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = {"silencer"}
+	
+	--Override Tables
 	self.wpn_fps_lmg_mg42.override = {
 		wpn_fps_upg_ammo_half_that = {
 			stats = {
@@ -6703,6 +6616,8 @@ function WeaponFactoryTweakData:_init_mg42()
 			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
 		}
 	}
+	
+	--Rails
 	self.wpn_fps_lmg_mg42.adds = { 
 		wpn_fps_upg_o_specter = { "wpn_fps_snp_mosin_rail" },
 		wpn_fps_upg_o_aimpoint = { "wpn_fps_snp_mosin_rail" },
@@ -6724,53 +6639,59 @@ function WeaponFactoryTweakData:_init_mg42()
 		wpn_fps_upg_o_fc1 = { "wpn_fps_snp_mosin_rail" },
 		shortdot_normal = { "wpn_fps_snp_mosin_rail" },
 	}
-	self.wpn_fps_lmg_mg42.default_blueprint = {
-		"wpn_fps_lmg_mg42_b_mg42",
-		"wpn_fps_lmg_mg42_n42",
-		"wpn_fps_lmg_mg42_reciever"
-	}
-	self.wpn_fps_lmg_mg42.uses_parts = {
-		"wpn_fps_lmg_mg42_b_mg42",
-		"wpn_fps_lmg_mg42_b_mg34",
-		"wpn_fps_lmg_mg42_b_vg38",
-		"wpn_fps_lmg_mg42_reciever",
-		"wpn_fps_lmg_mg42_n42",
-		"wpn_fps_lmg_mg42_n34",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_ns_ass_smg_v6"
-	}
-	self.wpn_fps_lmg_mg42_npc = deep_clone(self.wpn_fps_lmg_mg42)
-	self.wpn_fps_lmg_mg42_npc.unit = "units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42/wpn_fps_lmg_mg42_npc"
-end
+
+	--Buzzsaw Part Additions
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_specter")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_specter")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_aimpoint")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_aimpoint")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_docter")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_docter")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_eotech")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_eotech")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_t1micro")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_t1micro")		
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cmore")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_cmore")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_aimpoint_2")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cs")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_cs")		
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_rx30")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_rx30")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_rx01")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_rx01")		
+	
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_reflex")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_reflex")		
+	
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_eotech_xps")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_sig")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_sig")	
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_uh")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_uh")		
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_fc1")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_fc1")		
+
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ammo_half_that")
+	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_ammo_half_that")			
+			
+	self.wpn_fps_lmg_mg42_npc.uses_parts = deep_clone(self.wpn_fps_lmg_mg42.uses_parts)			
+
+end)
 
 function WeaponFactoryTweakData:_init_c96()
 	self.parts.wpn_fps_pis_c96_b_long = {
@@ -32510,6 +32431,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 --Resmod Custom Weapon stuff
 
 --Raze's Fury
+
 self.wpn_fps_pis_shatters_fury.adds = {
 	wpn_fps_upg_o_specter = {
 		"wpn_fps_pis_rage_o_adapter"

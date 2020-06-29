@@ -608,20 +608,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	if difficulty_index <= 2 then
 		self.special_unit_spawn_limits = {
 			tank = 1,
-			tank_medic = 0,
-			tank_mini = 0,
-			tank_hw = 0,
-			tank_titan_assault = 0,
 			taser = 1,
-			taser_titan = 1,
 			boom = 0,
-			heavy_swat_sniper = 0,
 			spooc = 0,
-			spooc_titan = 0,
 			shield = 2,
-			phalanx_minion_assault = 0,
 			medic = 0,
-			omnia_LPF = 0,
 			phalanx_vip = 0,
 			spring = 0,
 			autumn = 0,
@@ -630,20 +621,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	elseif difficulty_index == 3 then
 		self.special_unit_spawn_limits = {
 			tank = 1,
-			tank_medic = 0,
-			tank_mini = 0,
-			tank_hw = 0,
-			tank_titan_assault = 0,			
 			taser = 2,
-			taser_titan = 1,
 			boom = 0,
-			heavy_swat_sniper = 0,
 			spooc = 1,
-			spooc_titan = 0,
 			shield = 3,
-			phalanx_minion_assault = 0,
 			medic = 0,
-			omnia_LPF = 0,
 			phalanx_vip = 0,
 			spring = 0,
 			autumn = 0,
@@ -652,20 +634,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	elseif difficulty_index == 4 then
 		self.special_unit_spawn_limits = {
 			tank = 2,
-			tank_medic = 0,
-			tank_mini = 0,
-			tank_hw = 0,
-			tank_titan_assault = 0,			
 			taser = 3,
-			taser_titan = 1,
 			boom = 0,
-			heavy_swat_sniper = 1,
 			spooc = 2,
-			spooc_titan = 0,
 			shield = 4,
-			phalanx_minion_assault = 0,
 			medic = 2,
-			omnia_LPF = 0,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -673,21 +646,12 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	elseif difficulty_index == 5 then
 		self.special_unit_spawn_limits = {
-			tank = 2,
-			tank_medic = 1,
-			tank_mini = 1,
-			tank_hw = 0,
-			tank_titan_assault = 0,			
+			tank = 3,
 			taser = 4,
-			taser_titan = 2,
 			boom = 2,
-			heavy_swat_sniper = 2,
 			spooc = 3,
-			spooc_titan = 0,
 			shield = 5,
-			phalanx_minion_assault = 1,
 			medic = 3,
-			omnia_LPF = 0,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -696,20 +660,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	elseif difficulty_index == 6 then
 		self.special_unit_spawn_limits = {
 			tank = 3,
-			tank_medic = 1,
-			tank_mini = 1,
-			tank_hw = 1,
-			tank_titan_assault = 1,					
 			taser = 4,
-			taser_titan = 2,
 			boom = 2,
-			heavy_swat_sniper = 2,
 			spooc = 4,
-			spooc_titan = 0,
 			shield = 5,
-			phalanx_minion_assault = 2,
 			medic = 3,
-			omnia_LPF = 1,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -718,20 +673,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	elseif difficulty_index == 7 then
 		self.special_unit_spawn_limits = {
 			tank = 3,
-			tank_medic = 1,
-			tank_mini = 1,
-			tank_hw = 1,
-			tank_titan_assault = 1,					
 			taser = 4,
-			taser_titan = 2,
 			boom = 2,
-			heavy_swat_sniper = 2,
 			spooc = 4,
-			spooc_titan = 0,
 			shield = 5,
-			phalanx_minion_assault = 2,
 			medic = 3,
-			omnia_LPF = 1,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -740,20 +686,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	else
 		self.special_unit_spawn_limits = {
 			tank = 3,
-			tank_medic = 1,
-			tank_mini = 1,
-			tank_hw = 1,
-			tank_titan_assault = 1,					
 			taser = 4,
-			taser_titan = 2,
 			boom = 2,
-			heavy_swat_sniper = 2,
 			spooc = 4,
-			spooc_titan = 1,
 			shield = 5,
-			phalanx_minion_assault = 2,
 			medic = 3,
-			omnia_LPF = 1,
 			phalanx_vip = 1,
 			spring = 1,
 			autumn = 1,
@@ -9197,6 +9134,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			}				
 		},
 		access = access_type_all,
+		special_type = "shield",
 		is_captain = true
 	}	
 	--Captain Autumn
@@ -9254,6 +9192,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			}				
 		},
 		access = access_type_all,
+		special_type = "spooc",
 		is_captain = true
 	}		
 	--Captain Summers
@@ -9422,6 +9361,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			}				
 		},
 		access = access_type_all,
+		special_type = "tank",
 		is_captain = true
 	}
 	--Benelli Dozers that spawn with Spring (Also ignores spawncaps)
@@ -9451,6 +9391,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				}				
 			},
 			access = access_type_all,
+			special_type = "tank",
 			is_captain = true
 		}	
 	else
@@ -9479,6 +9420,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				}				
 			},
 			access = access_type_all,
+			special_type = "tank",
 			is_captain = true
 		}		
 	end
@@ -9515,7 +9457,8 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 				}				
 			},
 			access = access_type_all,
-			special_type = "tank"
+			special_type = "tank",
+			is_captain = true
 		}
 	end
 			

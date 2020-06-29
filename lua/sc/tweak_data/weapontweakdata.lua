@@ -853,14 +853,14 @@ function WeaponTweakData:_init_data_r870_npc()
 	
 	self.benelli_npc = deep_clone(self.r870_npc)
 	self.benelli_npc.sounds.prefix = "benelli_m4_npc"
-	self.benelli_npc.DAMAGE = 6
+	self.benelli_npc.DAMAGE = 4.5
 	self.benelli_npc.CLIP_AMMO_MAX = 10
 	self.benelli_npc.alert_size = 3000
 	self.benelli_npc.suppression = 3	
 	
 	self.bayou_npc = deep_clone(self.r870_npc)
 	self.bayou_npc.sounds.prefix = "spas_npc"
-	self.bayou_npc.DAMAGE = 6
+	self.bayou_npc.DAMAGE = 4.5
 	self.bayou_npc.CLIP_AMMO_MAX = 10
 	self.bayou_npc.alert_size = 3000
 	self.bayou_npc.suppression = 3		
@@ -8503,6 +8503,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shatters_fury.can_shoot_through_shield = true
 	self.shatters_fury.can_shoot_through_wall = true
 	self.shatters_fury.armor_piercing_chance = 1
+	--self.shatters_fury.animations.reload_name_id = "chinchilla"
 	self.shatters_fury.timers.reload_not_empty = 2.97
 	self.shatters_fury.timers.reload_empty = 2.97
 	self.shatters_fury.swap_speed_multiplier = 0.6

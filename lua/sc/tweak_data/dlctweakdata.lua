@@ -177,10 +177,12 @@ function DLCTweakData:init(...)
 			item_entry = "secret_old_hoxton",
 			amount = 1
 		},
+		{
 			type_items = "masks",
 			item_entry = "secret_dragan",
 			amount = 1
 		},
+		{
 			type_items = "masks",
 			item_entry = "secret_clover",
 			amount = 1

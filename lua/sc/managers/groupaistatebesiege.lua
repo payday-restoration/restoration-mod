@@ -402,17 +402,21 @@ function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, deto
 				if not detonate_pos then
 					local nav_seg_id = u_data.tracker:nav_segment()
 					local nav_seg = managers.navigation._nav_segments[nav_seg_id]
+					if u_data.group and u_data.group.objective and u_data.group.objective.area and u_data.group.objective.type == "assault_area" or u_data.group and u_data.group.objective and u_data.group.objective.area and u_data.group.objective.type == "retire" then
+						detonate_pos = mvector3.copy(u_data.group.objective.area.pos)
+					else
+						for neighbour_nav_seg_id, door_list in pairs(nav_seg.neighbours) do
+							if self._current_target_area and self._current_target_area.nav_segs[neighbour_nav_seg_id] then
+								local random_door_id = door_list[math.random(#door_list)]
 
-					for neighbour_nav_seg_id, door_list in pairs(nav_seg.neighbours) do
-						local area = self:get_area_from_nav_seg_id(neighbour_nav_seg_id)
+								if type(random_door_id) == "number" then
+									detonate_pos = managers.navigation._room_doors[random_door_id].center
+								else
+									detonate_pos = random_door_id:script_data().element:nav_link_end_pos()
+								end
 
-						if task_data.target_areas[1].nav_segs[neighbour_nav_seg_id] or next(area.criminal.units) then
-							local random_door_id = door_list[math.random(#door_list)]
-							detonate_pos = type(random_door_id) == "number" and managers.navigation._room_doors[random_door_id].center or random_door_id:script_data().element:nav_link_end_pos()
-							shooter_pos = mvector3.copy(u_data.m_pos)
-							shooter_u_data = u_data
-
-							break
+								break
+							end
 						end
 					end
 				end
@@ -443,15 +447,21 @@ function GroupAIStateBesiege:_chk_group_use_flash_grenade(group, task_data, deto
 				if not detonate_pos then
 					local nav_seg_id = u_data.tracker:nav_segment()
 					local nav_seg = managers.navigation._nav_segments[nav_seg_id]
+					if u_data.group and u_data.group.objective and u_data.group.objective.area and u_data.group.objective.type == "assault_area" then
+						detonate_pos = mvector3.copy(u_data.group.objective.area.pos)
+					else
+						for neighbour_nav_seg_id, door_list in pairs(nav_seg.neighbours) do
+							if self._current_target_area and self._current_target_area.nav_segs[neighbour_nav_seg_id] then
+								local random_door_id = door_list[math.random(#door_list)]
 
-					for neighbour_nav_seg_id, door_list in pairs(nav_seg.neighbours) do
-						if task_data.target_areas[1].nav_segs[neighbour_nav_seg_id] then
-							local random_door_id = door_list[math.random(#door_list)]
-							detonate_pos = type(random_door_id) == "number" and managers.navigation._room_doors[random_door_id].center or random_door_id:script_data().element:nav_link_end_pos()
-							shooter_pos = mvector3.copy(u_data.m_pos)
-							shooter_u_data = u_data
+								if type(random_door_id) == "number" then
+									detonate_pos = managers.navigation._room_doors[random_door_id].center
+								else
+									detonate_pos = random_door_id:script_data().element:nav_link_end_pos()
+								end
 
-							break
+								break
+							end
 						end
 					end
 				end

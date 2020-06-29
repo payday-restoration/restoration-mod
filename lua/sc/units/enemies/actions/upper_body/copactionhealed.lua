@@ -14,7 +14,7 @@ function CopActionHealed:init(action_desc, common_data)
 		self._ext_movement:spawn_wanted_items()
 		self._unit:sound():say("hr01")
 
-		if allow_network then
+		if action_desc.allow_network then
 			local params = {
 				CopActionHurt.hurt_type_to_idx(action_desc.type),
 				action_desc.body_part,

@@ -367,8 +367,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"team_weapon_recoil_index_addend",
-						"team_weapon_suppression_recoil_index_addend"
+						"team_weapon_recoil_index_addend"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1153,7 +1152,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"single_shot_accuracy_inc_1"
+						"assault_rifle_steelsight_accuracy_inc_1",
+						"snp_steelsight_accuracy_inc_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1517,7 +1517,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_silencer_concealment_increase_2"
+						"player_silencer_concealment_increase_2",
+						"player_silencer_swap_increase"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1530,13 +1531,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {4, 4},
 				[1] = {
 					upgrades = {
-						"weapon_silencer_recoil_index_addend"
+						"weapon_silencer_spread_index_addend"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"weapon_silencer_spread_index_addend"
+						"player_special_double_drop"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1617,8 +1618,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 9},
 				[1] = {
 					upgrades = {
-						"team_pistol_recoil_index_addend",
-						"team_pistol_suppression_recoil_index_addend"
+						"team_pistol_recoil_index_addend"
 					},
 					cost = self.costs.default
 				},
@@ -1637,14 +1637,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {11, 0},
 				[1] = {
 					upgrades = {
-						"pistol_fire_rate_multiplier",
 						"pistol_hip_fire_spread_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"pistol_spread_index_addend"
+						"pistol_fire_rate_multiplier",
+						"pistol_ap_bullets_1"
 					},
 					cost = self.costs.hightierpro
 				}

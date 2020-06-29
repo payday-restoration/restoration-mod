@@ -22,6 +22,21 @@ end
 function RaycastWeaponBase:setup(...)
 	setup_original(self, ...)
 	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+
+	--Use stability stat to get the moving accuracy penalty.
+	if self._current_stats_indices and self._current_stats_indices.recoil then
+		self._spread_moving = tweak_data.weapon.stats.spread_moving[self._current_stats_indices.recoil] or 0
+	else --Fallback method for getting stability moving accuracy penalty, in case the indices somehow don't get set.
+		local moving_spread_index = 0
+		local recoil_table = tweak_data.weapon.stats.recoil
+		for i = 0, 25, 1 do
+			if recoil_table[i] == self._recoil then
+				moving_spread_index = i
+				break
+			end
+		end
+		self._spread_moving = tweak_data.weapon.stats.spread_moving[moving_spread_index] or 0
+	end
 end
 
 function FlameBulletBase:bullet_slotmask()
@@ -486,4 +501,76 @@ function RaycastWeaponBase:stop_shooting(...)
 	if self:_soundfix_should_play_normal() then
 		orig_stop_shooting(self,...)
 	end
+end
+
+
+--Multipliers for overall spread.
+function RaycastWeaponBase:conditional_accuracy_multiplier(current_state)
+	local mul = 1
+
+	--Multi-pellet spread increase.
+	if self._rays and self._rays > 1 then
+		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
+	end
+
+	if not current_state then
+		return mul
+	end
+
+	local pm = managers.player
+
+	if current_state:in_steelsight() then
+		for _, category in ipairs(self:categories()) do
+			mul = mul * pm:upgrade_value(category, "steelsight_accuracy_inc", 1)
+		end
+	else
+		for _, category in ipairs(self:categories()) do
+			mul = mul * pm:upgrade_value(category, "hip_fire_spread_multiplier", 1)
+		end
+	end
+
+	mul = mul * pm:get_property("desperado", 1)
+
+	return mul
+end
+
+--Multiplier for movement penalty to spread.
+function RaycastWeaponBase:moving_spread_penalty_reduction()
+	local spread_multiplier = 1
+	for _, category in ipairs(self:weapon_tweak_data().categories) do
+		spread_multiplier = spread_multiplier * managers.player:upgrade_value(category, "move_spread_multiplier", 1)
+	end
+	return spread_multiplier
+end
+
+--Simpler spread function. Determines area bullets can hit then converts that to the max degrees by which the rays can fire.
+function RaycastWeaponBase:_get_spread(user_unit)
+	local current_state = user_unit:movement()._current_state
+	if not current_state then
+		return 0, 0
+	end
+
+	--Get spread area from accuracy stat.
+	local spread_area = math.max(self._spread + 
+		managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) * tweak_data.weapon.stat_info.spread_per_accuracy, 0.05)
+	
+	--Moving penalty to spread, based on stability stat- added to total area.
+	if current_state._moving then
+		--Get spread area from stability stat.
+		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
+		--Add moving spread penalty reduction.
+		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
+		spread_area = spread_area + moving_spread
+	end
+
+	--Apply skill and stance multipliers to overall spread area.
+	local multiplier = tweak_data.weapon.stats.stance_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	spread_area = spread_area * multiplier
+
+
+	--Convert spread area to degrees.
+	local spread_x = math.sqrt((spread_area)/math.pi)
+	local spread_y = spread_x
+
+	return spread_x, spread_y
 end

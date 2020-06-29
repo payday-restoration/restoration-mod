@@ -847,11 +847,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Handling
 			["menu_scavenger_sc"] = "MG Handling",	
-			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs, LMGs and Assault Rifles by ##50%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
+			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs, LMGs and Assault Rifles by ##20%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy while moving with SMGs, LMGs and Assault Rifles is increased by ##50%.##\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##65%## for SMGs, LMGs, and Assault Rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -1021,7 +1021,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Rifleman
 			["menu_rifleman_sc"] = "Rifleman",
-			["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour snap to zoom is ##50%## faster with all weapons.\n\nACE: ##$pro##\nYou gain a ##25%## accuracy bonus while aiming down sights with all rifles and SMGs.",		
+			["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour snap to zoom is ##50%## faster with all weapons.\n\nACE: ##$pro##\nYou gain a ##40%## accuracy bonus while aiming down sights with all rifles.",		
 
 			--Aggressive Reload
 			["menu_engineering_beta_sc"] = "Aggressive Reload",
@@ -1156,11 +1156,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Optical Illusions--
 		["menu_optic_illusions_sc"] = "Optical Illusions",
-		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nYou gain an additional ##1## concealment for each suppressed weapon you equip.\n\nACE: ##$pro##\nYou gain an additional ##1## concealment for each suppressed weapon you equip.",																								
+		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nSilenced weapons gain ##1## concealment.\n\nACE: ##$pro##\nSilenced weapons gain an additional ##1## concealment.\n\nYou draw and holster silenced weapons ##25%## faster.",																								
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "The Professional",
-		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##4## weapon stability with silenced weapons.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy with silenced weapons.",																								
+		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an extra ammo box.",																								
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Unseen Strike",
@@ -1180,11 +1180,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "Gun Nut",
-		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##15%## increased rate of fire with pistols.\n\nTightens the hipfire accuracy of Pistols by ##50%##.\n\nACE: ##$pro##\nYou gain ##5## weapon accuracy with pistols.",																								
+		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of Pistols by ##20%##.\n\nACE: ##$pro##\nYou gain a ##15%## increased rate of fire with pistols.\n\nYour pistols can ##now pierce body armor.##",																								
 
 		--Over Pressurized/Gunfighter--
 		["menu_gun_fighter_sc"] = "Gunfighter",
-		["menu_gun_fighter_desc_sc"] = "BASIC: ##$basic##\nYou reload pistols ##15%## faster.\n\nYour weapon accuracy while moving with Pistols is increased by ##50%##.\n\nACE: ##$pro##\nYou reload pistols an additional ##25%## faster.",																								
+		["menu_gun_fighter_desc_sc"] = "BASIC: ##$basic##\nYou reload pistols ##15%## faster.\n\nThe movement penalty to accuracy is reduced by ##40%## for Pistols.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nYou reload pistols an additional ##25%## faster.",																								
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
@@ -1192,7 +1192,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
-		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##8%## accuracy boost for ##5## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##10## seconds, and all pistol hits refresh the duration.",																																																																																																																																																																																																																																		
+		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##10%## accuracy boost for ##5## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##10## seconds, and all pistol hits refresh the duration.",																																																																																																																																																																																																																																		
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "Trigger Happy",

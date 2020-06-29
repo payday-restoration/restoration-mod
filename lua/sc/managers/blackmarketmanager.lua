@@ -159,13 +159,64 @@ function BlackMarketManager.get_inventory_category(self, category)
 
 end
 
+--Returns bonus to the stability stat from skills.
+function BlackMarketManager:stability_index_addend(categories, silencer)
+	local pm = managers.player
+
+	--Weapon category specific buffs.
+	local index = pm:upgrade_value("weapon", "recoil_index_addend", 0)
+
+	for _, category in ipairs(categories) do
+		index = index + pm:upgrade_value(category, "recoil_index_addend", 0)
+	end
+
+	--Teamwide buffs.
+	if managers.player:has_team_category_upgrade("weapon", "recoil_index_addend") then
+		index = index + pm:team_upgrade_value("weapon", "recoil_index_addend", 0)
+	end
+
+	for _, category in ipairs(categories) do
+		if managers.player:has_team_category_upgrade(category, "recoil_index_addend") then
+			index = index + pm:team_upgrade_value(category, "recoil_index_addend", 0)
+		end
+	end
+
+	--Silencer stability boost.
+	if self._silencer then
+		index = index + pm:upgrade_value("weapon", "silencer_recoil_index_addend", 0)
+	end
+
+	return index
+end
+
+function BlackMarketManager:accuracy_index_addend(name, categories, silencer, current_state, fire_mode, blueprint)
+	local pm = managers.player
+	local index = 0
+
+	for _, category in ipairs(categories) do
+		index = index + pm:upgrade_value(category, "spread_index_addend", 0)
+	end
+
+	if silencer then
+		index = index + pm:upgrade_value("weapon", "silencer_spread_index_addend", 0)
+	end
+
+	if fire_mode == "single" and table.contains_any(tweak_data.upgrades.sharpshooter_categories, categories) then
+		index = index + pm:upgrade_value("weapon", "single_spread_index_addend", 0)
+	end
+
+	if not current_state._moving then
+		index = index + pm:upgrade_value("player", "not_moving_accuracy_increase", 0)
+	end
+
+	return index
+end
+
 if restoration.Options:GetValue("OTHER/PDTHChallenges") then
-
-Hooks:PostHook(BlackMarketManager, "save", "PDTHHudSaveChallenges", function(self, data)
-	managers.challenges:save(data)
-end)
-Hooks:PostHook(BlackMarketManager, "load", "PDTHHudLoadChallenges", function(self, data)
-	managers.challenges:load(data)
-end)
-
+	Hooks:PostHook(BlackMarketManager, "save", "PDTHHudSaveChallenges", function(self, data)
+		managers.challenges:save(data)
+	end)
+	Hooks:PostHook(BlackMarketManager, "load", "PDTHHudLoadChallenges", function(self, data)
+		managers.challenges:load(data)
+	end)
 end

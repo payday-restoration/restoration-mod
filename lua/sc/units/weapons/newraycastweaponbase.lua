@@ -5,6 +5,15 @@ function NewRaycastWeaponBase:get_add_head_shot_mul()
 	return nil
 end
 
+--Adds ability to define per weapon category AP skills.
+Hooks:PostHook(NewRaycastWeaponBase, "setup", "ResExtraSkills", function(self)
+	if not self._use_armor_piercing then
+		for _, category in ipairs(self:categories()) do
+			self._use_armor_piercing = managers.player:upgrade_value(category, "ap_bullets", false)
+		end
+	end
+end)
+
 if _G.IS_VR then
 	--I might have to do something unique for VR, but we'll see.
 else	
@@ -95,8 +104,14 @@ NewRaycastWeaponBase.DEFAULT_BURST_SIZE = 3
 NewRaycastWeaponBase.IDSTRING_SINGLE = Idstring("single")
 NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 
+--Multipliers for overall spread.
 function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	local mul = 1
+
+	--Multi-pellet spread increase.gi
+	if self._rays and self._rays > 1 then
+		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
+	end
 
 	if not current_state then
 		return mul
@@ -104,26 +119,31 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 
 	local pm = managers.player
 
-	--Will do this in a more proper way some other time.
-	if current_state:in_steelsight() and self:is_category("assault_rifle", "smg", "snp") --[[and self:is_single_shot()]] then
-		mul = mul + 1 - pm:upgrade_value("player", "single_shot_accuracy_inc", 1)
-	end
-
 	if current_state:in_steelsight() then
 		for _, category in ipairs(self:categories()) do
-			mul = mul + 1 - managers.player:upgrade_value(category, "steelsight_accuracy_inc", 1)
+			mul = mul * pm:upgrade_value(category, "steelsight_accuracy_inc", 1)
+		end
+	else
+		for _, category in ipairs(self:categories()) do
+			mul = mul * pm:upgrade_value(category, "hip_fire_spread_multiplier", 1)
 		end
 	end
 
-	if current_state._moving then
-		mul = mul + 1 - pm:upgrade_value("player", "weapon_movement_stability", 1)
-	end
+	mul = mul * pm:get_property("desperado", 1)
 
-	mul = mul + 1 - pm:get_property("desperado", 1)
-
-	return self:_convert_add_to_mul(mul)
+	return mul
 end
 
+--Multiplier for movement penalty to spread.
+function NewRaycastWeaponBase:moving_spread_penalty_reduction()
+	local spread_multiplier = 1
+	for _, category in ipairs(self:weapon_tweak_data().categories) do
+		spread_multiplier = spread_multiplier * managers.player:upgrade_value(category, "move_spread_multiplier", 1)
+	end
+	return spread_multiplier
+end
+
+--Simpler spread function. Determines area bullets can hit then converts that to the max degrees by which the rays can fire.
 function NewRaycastWeaponBase:_get_spread(user_unit)
 	local current_state = user_unit:movement()._current_state
 	
@@ -131,41 +151,26 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		return 0, 0
 	end
 	
-	local spread_values = tweak_data.weapon[self._name_id].spread
+	--Get spread area from accuracy stat.
+	local spread_area = math.max(self._spread + 
+		managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) * tweak_data.weapon.stat_info.spread_per_accuracy, 0.05)
 	
-	if not spread_values then
-		return 0, 0
+	--Moving penalty to spread, based on stability stat- added to total area.
+	if current_state._moving then
+		--Get spread area from stability stat.
+		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
+		--Add moving spread penalty reduction.
+		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
+		spread_area = spread_area + moving_spread
 	end
-	
-	local cond_spread_addend = self:conditional_accuracy_addend(current_state) or 0
-	local spread_addend = (self:spread_index_addend(current_state) or 0) + cond_spread_addend
-	local current_spread_value = spread_values[current_state:get_movement_state()]
-	local new_spread = self._current_stats_indices.spread + spread_addend
-	new_spread = math.clamp(new_spread, 1, #tweak_data.weapon.stats.spread)
-	self._spread = tweak_data.weapon.stats.spread[new_spread]
-	local spread_x, spread_y
-	if type(current_spread_value) == "number" then
-		spread_x = self._spread * current_spread_value --self:_get_spread_from_number(user_unit, current_state, current_spread_value)
-		spread_y = spread_x
-	else
-		spread_x, spread_y = self:_get_spread_from_table(user_unit, current_state, current_spread_value)
-	end
-	
-	if self._spread_multiplier then
-		spread_x = spread_x * self._spread_multiplier[1]
-		spread_y = spread_y * self._spread_multiplier[2]
-	end
-	
-	local spread_mult = 1
-	spread_mult = spread_mult * self:spread_multiplier(current_state)
-	spread_mult = spread_mult * self:conditional_accuracy_multiplier(current_state)
-	
-	if managers.player:current_state() == "bipod" then
-		spread_mult = spread_mult * 0.5
-	end
-	
-	spread_x = spread_x * spread_mult
-	spread_y = spread_y * spread_mult
+
+	--Apply skill and stance multipliers to overall spread area.
+	local multiplier = tweak_data.weapon.stats.stance_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	spread_area = spread_area * multiplier
+
+	--Convert spread area to degrees.
+	local spread_x = math.sqrt((spread_area)/math.pi)
+	local spread_y = spread_x
 
 	return spread_x, spread_y
 end

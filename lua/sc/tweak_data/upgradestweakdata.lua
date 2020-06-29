@@ -579,8 +579,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Handling
 				--Basic
-					self.values.smg.hip_fire_spread_multiplier = {0.5}
-					self.values.assault_rifle.hip_fire_spread_multiplier = {0.5}
+					self.values.smg.hip_fire_spread_multiplier = {0.8}
+					self.values.assault_rifle.hip_fire_spread_multiplier = {0.8}
 				--Ace
 					self.values.smg.reload_speed_multiplier = {1.25}
 				
@@ -592,8 +592,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.5}
-					self.values.assault_rifle.move_spread_multiplier = {0.5}
+					self.values.smg.move_spread_multiplier = {0.35}
+					self.values.assault_rifle.move_spread_multiplier = {0.35}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 				
@@ -831,6 +831,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Kilmer
 				--Basic
 					self.values.weapon.single_spread_index_addend = {1}
+					self.sharpshooter_categories = { --Determines what weapons benefit.
+						"assault_rifle",
+						"smg",
+						"snp"
+					}
 				--Ace
 					self.values.snp.reload_speed_multiplier = {1.25}
 					self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -839,12 +844,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.weapon.enter_steelsight_speed_multiplier = {1.5}
 				--Ace
-					self.values.player.single_shot_accuracy_inc = {0.75}
-					self.sharpshooter_categories = {
-						"assault_rifle",
-						"smg",
-						"snp"
-					}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.6}
+					self.values.snp.steelsight_accuracy_inc = {0.6}
 					
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
@@ -1018,16 +1019,19 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.armor_depleted_stagger_shot = {0, 3}
 
 			--Optical Illusions
-				--Basic
-					self.values.player.silencer_concealment_penalty_decrease = {1}
-				--Ace
-					self.values.player.silencer_concealment_increase = {1, 2}
+					self.values.player.silencer_concealment_increase = {
+						1, --Basic
+						2 --Ace
+					}
+					--Ace
+					self.values.player.silencer_swap_increase = {1.25}
 
 			--The Professional
 				--Basic
-					self.values.weapon.silencer_recoil_index_addend = {1}
-				--Ace
 					self.values.weapon.silencer_spread_index_addend = {1}
+				--Ace
+					self.values.weapon.silencer_recoil_index_addend = {1}
+					self.values.player.special_double_drop = {true}
 
 			--Unseen Strike
 				self.values.temporary.unseen_strike = {
@@ -1091,10 +1095,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Gun Nut	
 				--Basic
-					self.values.pistol.fire_rate_multiplier = {1.15}
-					self.values.pistol.hip_fire_spread_multiplier = {0.5}	
+					self.values.pistol.hip_fire_spread_multiplier = {0.8}	
 				--Ace
-					self.values.pistol.spread_index_addend = {1}						
+					self.values.pistol.fire_rate_multiplier = {1.15}
+					self.values.pistol.ap_bullets = {true}
 
 			--Gunfighter
 				self.values.pistol.reload_speed_multiplier = {
@@ -1102,7 +1106,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					1.4 --Ace
 				}
 				--Basic
-					self.values.pistol.move_spread_multiplier = {0.5}
+					self.values.pistol.move_spread_multiplier = {0.6}
 				
 			--Akimbo
 				--Ace
@@ -1127,8 +1131,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 5}, --Basic
-					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 10} --Ace
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 5}, --Basic
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 10} --Ace
 				}
 				--Ace
 					self.values.player.desperado_bodyshot_refresh = {true}
@@ -3006,4 +3010,52 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_silencer_swap_increase = {
+		name_id = "menu_player_silencer_swap_increase",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "silencer_swap_increase",
+			category = "player"
+		}
+	}
+	self.definitions.player_special_double_drop = {
+		name_id = "menu_player_special_double_drop",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "special_double_drop",
+			category = "player"
+		}
+	}
 end
+
+Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", function(self)
+	self.definitions.snp_steelsight_accuracy_inc_1 = {
+		name_id = "menu_snp_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_accuracy_inc",
+			category = "snp"
+		}
+	}
+	self.definitions.assault_rifle_steelsight_accuracy_inc_1 = {
+		name_id = "menu_assault_rifle_steelsight_accuracy_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_accuracy_inc",
+			category = "assault_rifle"
+		}
+	}
+	self.definitions.pistol_ap_bullets_1 = {
+		name_id = "menu_pistol_ap_bullets_1",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "ap_bullets",
+			category = "pistol"
+		}
+	}
+end)

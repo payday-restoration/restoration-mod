@@ -1210,7 +1210,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins
-function BlackMarketTweakData:_init_weapon_skins()
+function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 	old_weapon_skins(self, tweak_data)
 	for weapon, data in pairs(self.weapon_skins) do
 		self.weapon_skins[weapon].locked = nil

@@ -2899,12 +2899,12 @@ function CharacterTweakData:_init_civilian(presets)
 	self.robbers_safehouse.ignores_contours = true
 	self.robbers_safehouse.HEALTH_INIT = 50
 	self.robbers_safehouse.headshot_dmg_mul = 1
-	self.robbers_safehouse.use_ik = true
-	
-	function CharacterTweakData:_init_civilian_mariachi(presets)
-		self.civilian_mariachi = deep_clone(self.civilian)
-	end		
+	self.robbers_safehouse.use_ik = true	
 end
+
+function CharacterTweakData:_init_civilian_mariachi(presets)
+	self.civilian_mariachi = deep_clone(self.civilian)
+end	
 
 function CharacterTweakData:_init_bank_manager(presets)
 	self.bank_manager = {
@@ -14360,6 +14360,23 @@ function CharacterTweakData:character_map()
 				"civ_male_italian"
 			}				
 		},
+		pex = {
+			path = "units/pd2_dlc_pex/characters/",
+			list = {
+				"civ_male_prisoner_pex",
+				"civ_male_prisoner_pex_bloody",
+				"civ_male_janitor_pex_01",
+				"civ_male_janitor_pex_02",
+				"ene_male_office_cop_01",
+				"ene_male_office_cop_02",
+				"ene_male_office_cop_03",
+				"ene_male_office_cop_04",
+				"ene_female_office_cop_01",
+				"npc_male_vladbroinlaw_pex",
+				"npc_male_vladbroinlaw_pex_bloody",
+				"npc_male_vladbroinlaw_cop_pex"
+			}
+		},		
 		bex = {
 			path = "units/pd2_dlc_bex/characters/",
 			list = {

@@ -1375,7 +1375,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
 		tick_time = 1,
-		total_ticks = 4,
+		total_ticks = 3,
 		max_stacks = 5,
 		stacking_cooldown = 0.5,
 		add_stack_sources = {
@@ -1398,7 +1398,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.4
 	}	
 	self.values.player.damage_to_hot_extra_ticks = {2}
-	self.values.player.hot_speed_bonus = {0.04}
+	self.values.player.hot_speed_bonus = {0.05}
 	
 	self.values.player.perk_armor_loss_multiplier = {
 		0.5,

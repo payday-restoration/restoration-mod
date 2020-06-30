@@ -1316,11 +1316,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every second for ##4## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries, fire, or poison does not grant stacks.\n\nYou lose ##50## armor while wearing the Flak Jacket.",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## life point every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries, fire, or poison does not grant stacks.\n\nYou lose ##50## armor while wearing the Flak Jacket.",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##1## life point every second.",
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## life point every second.",
-		["menu_deck11_9_desc_sc"] = "Every stack increases your movement speed by ##4%##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck11_9_desc_sc"] = "Every stack increases your movement speed by ##5%##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		
 		--Open your mind--	
 		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by ##5## points.",

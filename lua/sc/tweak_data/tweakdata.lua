@@ -587,3 +587,4 @@ tweak_data.player.stances.wa2000.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.model70.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.tti.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.siltstone.steelsight.shakers.breathing.amplitude = 0
+tweak_data.player.stances.r700.steelsight.shakers.breathing.amplitude = 0

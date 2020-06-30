@@ -343,6 +343,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_rpk = {
 		translation = Vector3(0.02, -2, -3.1),
 	}
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
+		translation = Vector3(0, -3, -2.95),
+	}	
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_shatters_fury = {
 		translation = Vector3(-0.05, -10, -4.65)
 	}	
@@ -15965,7 +15968,10 @@ function WeaponFactoryTweakData:_init_model70()
 			},
 			wpn_fps_snp_tti = {
 				translation = Vector3(0, 0, 0.25)
-			}
+			},
+			wpn_fps_snp_r700 = {
+				translation = Vector3(0, 0, -3)
+			}			
 		},
 		texture_bundle_folder = "berry",
 		is_a_unlockable = true,
@@ -29812,6 +29818,328 @@ function WeaponFactoryTweakData:_init_x_stech()
 	self.wpn_fps_pis_x_stech_npc = deep_clone(self.wpn_fps_pis_x_stech)
 	self.wpn_fps_pis_x_stech_npc.unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_x_stech/wpn_fps_pis_x_stech_npc"
 end	
+
+--Holt 9mm
+Hooks:PostHook(WeaponFactoryTweakData, "_init_holt", "resmod_holt", function(self)
+
+	--Bling Grip
+	self.parts.wpn_fps_pis_holt_g_bling.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_holt_g_bling.stats = {
+		value = 3,
+		recoil = -1,
+		spread = 1
+	}
+	
+	--Ergo Grip
+	self.parts.wpn_fps_pis_holt_g_ergo.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_holt_g_ergo.stats = {
+		value = 2,
+		spread = -1,
+		recoil = 1
+	}
+	
+	--Extended Mag
+	self.parts.wpn_fps_pis_holt_m_extended.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_holt_m_extended.stats = {
+		extra_ammo = 5,
+		value = 2,
+		concealment = -1,
+		reload = -1
+	}
+	
+	--Override Table
+	self.wpn_fps_pis_holt.override.wpn_fps_pis_g18c_co_comp_2 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_holt.override.wpn_fps_pis_g18c_co_1 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}	
+
+	table.insert(self.wpn_fps_pis_holt.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_holt_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
+
+	table.insert(self.wpn_fps_pis_holt.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_holt_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
+					
+	self.wpn_fps_pis_holt_npc.uses_parts = deep_clone(self.wpn_fps_pis_holt.uses_parts)			
+
+end)
+
+--Akimbo Holt 9mm
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_holt", "resmod_x_holt", function(self)
+	
+	--Override Table
+	self.wpn_fps_pis_x_holt.override.wpn_fps_pis_holt_m_extended = {
+		stats = {
+			extra_ammo = 10,
+			value = 2,
+			concealment = -1,
+			reload = -1
+		}
+	}	
+	self.wpn_fps_pis_x_holt.override.wpn_fps_pis_g18c_co_comp_2 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_x_holt.override.wpn_fps_pis_g18c_co_1 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}	
+
+	table.insert(self.wpn_fps_pis_x_holt.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_x_holt_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
+
+	table.insert(self.wpn_fps_pis_x_holt.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_x_holt_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
+					
+	self.wpn_fps_pis_x_holt_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_holt.uses_parts)			
+
+end)
+
+--ATW Mods
+Hooks:PostHook(WeaponFactoryTweakData, "_init_atw_mod", "resmod_atw_mod", function(self)
+	
+	self.parts.wpn_fps_ass_m14_body_ruger.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_ass_m14_body_ruger.stats = {
+		concealment = 1,
+		recoil = -1,
+		value = 1
+	}
+
+end)
+
+
+--M60
+Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
+
+	--Short Barrel
+	self.parts.wpn_fps_lmg_m60_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_m60_b_short.stats = {
+		spread = -1,
+		concealment = 1,
+		value = 3
+	}
+	
+	--Tactical Foregrip
+	self.parts.wpn_fps_lmg_m60_fg_tactical.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_m60_fg_tactical.stats = {
+		spread = -1,
+		recoil = 1
+	}
+	
+	--Tropical Foregrip
+	self.parts.wpn_fps_lmg_m60_fg_tropical.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_m60_fg_tropical.stats = {
+		value = 1,
+		concealment = 1,
+		spread = -1
+	}
+
+	--Modern Foregrip
+	self.parts.wpn_fps_lmg_m60_fg_keymod.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_lmg_m60_fg_keymod.stats = {
+		spread = 1,
+		recoil = -1,
+		value = 1
+	}
+	
+	--Override Table
+	self.wpn_fps_lmg_m60.override = {
+		wpn_fps_upg_ammo_half_that = {
+			stats = {
+				value = 1,
+				total_ammo_mod = 20,
+				concealment = -2
+			},
+			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
+		}
+	}
+	
+	--M60 Part Additions
+	
+	--[[
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_specter")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_specter")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_aimpoint")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_aimpoint")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_docter")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_docter")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_eotech")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_eotech")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_t1micro")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_t1micro")		
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_cmore")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_cmore")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_aimpoint_2")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_cs")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_cs")		
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_rx30")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_rx30")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_rx01")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_rx01")		
+	
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_reflex")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_reflex")		
+	
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_eotech_xps")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_sig")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_sig")	
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_uh")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_uh")		
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_o_fc1")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_fc1")		
+	
+	]]--
+
+	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_ammo_half_that")
+	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_ammo_half_that")			
+			
+	self.wpn_fps_lmg_m60_npc.uses_parts = deep_clone(self.wpn_fps_lmg_m60.uses_parts)			
+
+end)
+
+--R700
+Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(self)
+
+	--Short Barrel
+	self.parts.wpn_fps_snp_r700_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_r700_b_short.stats = {
+		value = 3,
+		concealment = 1,
+		spread = -1
+	}
+	
+	--Sniper Suppressor
+	self.parts.wpn_fps_snp_r700_b_medium.pcs = {
+		10,
+		20,
+		30,
+		40	
+	}
+	self.parts.wpn_fps_snp_r700_b_medium.stats = {
+		value = 3,
+		suppression = 10,
+		alert_size = 10,
+		spread = -1,
+		recoil = 1
+	}
+	self.parts.wpn_fps_snp_r700_b_medium.perks = {"silencer"}
+	
+	--Tactical Body
+	self.parts.wpn_fps_snp_r700_s_tactical.pcs = {
+		10,
+		20,
+		30,
+		40		
+	}
+	self.parts.wpn_fps_snp_r700_s_tactical.stats = {
+		value = 0,
+		recoil = 1,
+		spread = -1
+	}
+	
+	--Military Stock
+	self.parts.wpn_fps_snp_r700_s_military.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_r700_s_military.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 5
+	}
+	self.parts.wpn_fps_snp_r700_s_military.override = {}
+	self.parts.wpn_fps_snp_r700_s_military.override.wpn_fps_snp_model70_iron_sight = {
+		adds = {"wpn_fps_m4_uupg_o_flipup", "wpn_fps_shot_r870_s_nostock_single"}
+	}		
+	
+	--Default Wood Body
+	self.parts.wpn_fps_snp_r700_s_standard.override = {}
+	self.parts.wpn_fps_snp_r700_s_standard.override.wpn_fps_snp_model70_iron_sight = {
+		adds = {"wpn_fps_m4_uupg_o_flipup", "wpn_fps_shot_r870_s_nostock_single"}
+	}
+	
+	--Override Table
+	self.wpn_fps_snp_r700.override = {}
+	self.wpn_fps_snp_r700.override.wpn_fps_snp_model70_iron_sight = { 
+		adds = {"wpn_fps_m4_uupg_o_flipup"}
+	}	
+	self.wpn_fps_snp_r700.override.wpn_fps_shot_r870_s_nostock_single = { a_obj = "a_b" }
+	
+	self.wpn_fps_snp_r700.adds.wpn_fps_snp_model70_iron_sight = {
+		"wpn_fps_snp_r700_o_rail"
+	}
+
+	table.insert(self.wpn_fps_snp_r700.uses_parts, "wpn_fps_snp_model70_iron_sight")
+	table.insert(self.wpn_fps_snp_r700_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
+			
+	self.wpn_fps_snp_r700_npc.uses_parts = deep_clone(self.wpn_fps_snp_r700.uses_parts)		
+
+end)
 					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 	self.parts.wpn_fps_upg_i_slower_rof = {
@@ -30817,6 +31145,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			wpn_fps_ass_m14_body_jae = {
 				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
 				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",
+			},
+			wpn_fps_ass_m14_body_ruger = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_third_ass_m14_body_legendary",			
 			},
 			wpn_fps_ass_m14_body_upper = {
 				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_ass_m14_legendary_pts/wpn_fps_ass_m14_body_upper_legendary",

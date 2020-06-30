@@ -413,8 +413,7 @@ function PlayerTweakData:_init_m249()
 	self.stances.m249.bipod.vel_overshot.pitch_pos = 0
 	self.stances.m249.bipod.shakers = {breathing = {amplitude = 0}}		
 end
- 
- 
+  
 -- RPK
 local default_init_rpk = PlayerTweakData._init_rpk
 function PlayerTweakData:_init_rpk()
@@ -434,7 +433,6 @@ function PlayerTweakData:_init_rpk()
 	self.stances.rpk.bipod.vel_overshot.pitch_pos = 0
 	self.stances.rpk.bipod.shakers = {breathing = {amplitude = 0}}		
 end
- 
  
 -- BUZZSAW
 local default_init_mg42 = PlayerTweakData._init_mg42
@@ -473,4 +471,24 @@ function PlayerTweakData:_init_par()
 	self.stances.par.bipod.vel_overshot.pitch_neg = 0
 	self.stances.par.bipod.vel_overshot.pitch_pos = 0
 	self.stances.par.bipod.shakers = {breathing = {amplitude = 0}}		
+end
+
+-- KSP
+local default_init_m60 = PlayerTweakData._init_m60
+function PlayerTweakData:_init_m60()
+	default_init_m60(self)
+	local pivot_shoulder_translation = Vector3(10.716, 4, -0.1)
+	local pivot_shoulder_rotation = Rotation(0.106596, -0.0844502, 0.629187)    
+	local pivot_head_translation = Vector3(0, 12, 0)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.m60.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.m60.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	self.stances.m60.bipod.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.m60.bipod.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+	self.stances.m60.bipod.vel_overshot.pivot = pivot_shoulder_translation + Vector3(0, 0, 0)
+	self.stances.m60.bipod.vel_overshot.yaw_neg = 0
+	self.stances.m60.bipod.vel_overshot.yaw_pos = 0
+	self.stances.m60.bipod.vel_overshot.pitch_neg = 0
+	self.stances.m60.bipod.vel_overshot.pitch_pos = 0
+	self.stances.m60.bipod.shakers = {breathing = {amplitude = 0}}		
 end

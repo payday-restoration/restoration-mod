@@ -109,12 +109,14 @@ function WeaponTweakData:_set_normal()
 	self.desertfox_crew.DAMAGE = 15
 	self.tti_crew.DAMAGE = 15
 	self.siltstone_crew.DAMAGE = 15
+	self.r700_crew.DAMAGE = 15
 	self.ching_crew.DAMAGE = 15
 	self.par_crew.DAMAGE = 0.6
 	self.rpk_crew.DAMAGE = 0.6
 	self.m249_crew.DAMAGE = 0.6
 	self.hk21_crew.DAMAGE = 0.6
 	self.mg42_crew.DAMAGE = 0.6
+	self.m60_crew.DAMAGE = 0.6
 end
 
 function WeaponTweakData:_set_hard()
@@ -168,12 +170,14 @@ function WeaponTweakData:_set_hard()
 	self.desertfox_crew.DAMAGE = 15
 	self.tti_crew.DAMAGE = 15
 	self.siltstone_crew.DAMAGE = 15
+	self.r700_crew.DAMAGE = 15
 	self.ching_crew.DAMAGE = 15
 	self.par_crew.DAMAGE = 0.6
 	self.rpk_crew.DAMAGE = 0.6
 	self.m249_crew.DAMAGE = 0.6
 	self.hk21_crew.DAMAGE = 0.6
 	self.mg42_crew.DAMAGE = 0.6
+	self.m60_crew.DAMAGE = 0.6
 end
 
 function WeaponTweakData:_set_overkill()
@@ -227,12 +231,14 @@ function WeaponTweakData:_set_overkill()
 	self.desertfox_crew.DAMAGE = 16
 	self.tti_crew.DAMAGE = 16
 	self.siltstone_crew.DAMAGE = 16
+	self.r700_crew.DAMAGE = 16
 	self.ching_crew.DAMAGE = 16
 	self.par_crew.DAMAGE = 1.6
 	self.rpk_crew.DAMAGE = 1.6
 	self.m249_crew.DAMAGE = 1.6
 	self.hk21_crew.DAMAGE = 1.6
 	self.mg42_crew.DAMAGE = 1.6
+	self.m60_crew.DAMAGE = 1.6
 end
 
 function WeaponTweakData:_set_overkill_145()
@@ -286,12 +292,14 @@ function WeaponTweakData:_set_overkill_145()
 	self.desertfox_crew.DAMAGE = 17
 	self.tti_crew.DAMAGE = 17
 	self.siltstone_crew.DAMAGE = 17
+	self.r700_crew.DAMAGE = 17
 	self.ching_crew.DAMAGE = 17
 	self.par_crew.DAMAGE = 2.6
 	self.rpk_crew.DAMAGE = 2.6
 	self.m249_crew.DAMAGE = 2.6
 	self.hk21_crew.DAMAGE = 2.6
 	self.mg42_crew.DAMAGE = 2.6
+	self.m60_crew.DAMAGE = 2.6
 	
 	if job == "chew" or job == "glace" then
 		self.swat_van_turret_module.HEALTH_INIT = 675
@@ -2443,6 +2451,22 @@ function WeaponTweakData:_init_data_siltstone_crew()
 	self.siltstone_crew.FIRE_MODE = "single"
 end
 
+function WeaponTweakData:_init_data_r700_crew()
+	self.r700_crew.categories = clone(self.r700.categories)
+	self.r700_crew.sounds.prefix = "r700_npc"
+	self.r700_crew.use_data.selection_index = 2
+	self.r700_crew.DAMAGE = 18
+	self.r700_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+	self.r700_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+	self.r700_crew.CLIP_AMMO_MAX = 10
+	self.r700_crew.NR_CLIPS_MAX = 2
+	self.r700_crew.auto.fire_rate = 0.6
+	self.r700_crew.hold = "rifle"
+	self.r700_crew.alert_size = 5000
+	self.r700_crew.suppression = 3.4
+	self.r700_crew.FIRE_MODE = "single"
+end
+
 function WeaponTweakData:_init_data_ching_crew()
 	self.ching_crew.categories = clone(self.ching.categories)
 	self.ching_crew.sounds.prefix = "ching_npc"
@@ -2546,6 +2570,22 @@ function WeaponTweakData:_init_data_mg42_crew()
 	self.mg42_secondary_crew = deep_clone(self.mg42_crew)
 	self.mg42_secondary_crew.use_data.selection_index = 1
 	self.mg42_secondary_crew.armor_piercing = true
+end
+
+function WeaponTweakData:_init_data_m60_crew()
+	self.m60_crew.categories = clone(self.m60.categories)
+	self.m60_crew.sounds.prefix = "m60_npc"
+	self.m60_crew.use_data.selection_index = 2
+	self.m60_crew.DAMAGE = 3.6
+	self.m60_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+	self.m60_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
+	self.m60_crew.CLIP_AMMO_MAX = 100
+	self.m60_crew.NR_CLIPS_MAX = 3
+	self.m60_crew.auto.fire_rate = 0.075
+	self.m60_crew.hold = "rifle"
+	self.m60_crew.alert_size = 5000
+	self.m60_crew.suppression = 2
+	self.m60_crew.FIRE_MODE = "auto"
 end
 			
 function WeaponTweakData:_init_data_x_basset_crew()
@@ -3455,12 +3495,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
 	end
-	local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech'}
+	local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt'}
 	for i, wep_id in ipairs(tact_akimbo_pistol) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].recategorize = "akimbo"
@@ -8469,6 +8509,116 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.x_stech.stats_modifiers = nil
 	self.x_stech.panic_suppression_chance = 0.0			
+	
+	--Holt 9mm
+	self.holt.fire_mode_data.fire_rate = 0.08571428571
+	self.holt.single.fire_rate = 0.08571428571
+	self.holt.CLIP_AMMO_MAX = 10
+	self.holt.AMMO_MAX = 75
+	self.holt.AMMO_PICKUP = self:_pickup_chance(75, 1)
+	self.holt.kick.standing = self.glock_17.kick.standing
+	self.holt.kick.crouching = self.glock_17.kick.crouching
+	self.holt.kick.steelsight = self.glock_17.kick.steelsight
+	self.holt.stats = {
+		damage = 24,
+		spread = 18,
+		recoil = 23,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 29,
+		suppression = 8,
+		alert_size = 8,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.holt.stats_modifiers = nil
+	self.holt.panic_suppression_chance = 0.0	
+	
+	--Akimbo Holt 9mm
+	self.x_holt.fire_mode_data.fire_rate = 0.08571428571
+	self.x_holt.single.fire_rate = 0.08571428571
+	self.x_holt.CLIP_AMMO_MAX = 20
+	self.x_holt.AMMO_MAX = 150
+	self.x_holt.AMMO_PICKUP = self:_pickup_chance(150, 2)
+	self.x_holt.kick.standing = self.glock_17.kick.standing
+	self.x_holt.kick.crouching = self.glock_17.kick.crouching
+	self.x_holt.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_holt.stats = {
+		damage = 24,
+		spread = 18,
+		recoil = 23,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 29,
+		suppression = 8,
+		alert_size = 8,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.x_holt.stats_modifiers = nil
+	self.x_holt.panic_suppression_chance = 0.0		
+	
+	--M60
+	self.m60.categories = {
+		"lmg",
+		"smg"
+	}
+	self.m60.CLIP_AMMO_MAX = 150
+	self.m60.AMMO_MAX = 150
+	self.m60.AMMO_PICKUP = self:_pickup_chance(150, 2)
+	self.m60.fire_mode_data.fire_rate = 0.10909090909
+	self.m60.auto.fire_rate = 0.10909090909
+	self.m60.kick.standing = self.new_m4.kick.standing
+	self.m60.kick.crouching = self.new_m4.kick.crouching
+	self.m60.kick.steelsight = self.new_m4.kick.steelsight
+	self.m60.stats = {
+		damage = 24,
+		spread = 12,
+		recoil = 25,
+		spread_moving = 9,
+		zoom = 1,
+		concealment = 20,
+		suppression = 10,
+		alert_size = 10,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 9,
+		reload = 20
+	}
+	self.m60.stats_modifiers = nil
+	self.m60.panic_suppression_chance = 0.05	
+	
+	--R700
+	self.r700.upgrade_blocks = nil
+	self.r700.has_description = true
+	self.r700.desc_id = "bm_ap_weapon_sc_desc"
+	self.r700.CLIP_AMMO_MAX = 10
+	self.r700.AMMO_MAX = 40
+	self.r700.AMMO_PICKUP = self:_pickup_chance(40, 2)
+	self.r700.fire_mode_data.fire_rate = 0.8
+	self.r700.kick.standing = self.huntsman.kick.standing
+	self.r700.kick.crouching = self.huntsman.kick.crouching
+	self.r700.kick.steelsight = self.huntsman.kick.steelsight
+	self.r700.stats = {
+		damage = 90,
+		spread = 21,
+		recoil = 13,
+		spread_moving = 8,
+		zoom = 1,
+		concealment = 24,
+		suppression = 4,
+		alert_size = 4,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 9,
+		reload = 20
+	}
+	self.r700.stats_modifiers = nil
+	self.r700.panic_suppression_chance = 0.0	
 	
 	--Restoration Weapons--
 	

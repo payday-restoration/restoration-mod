@@ -54,14 +54,22 @@ function NewFlamethrowerBase:_update_stats_values()
 	self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 1)
 end
 
-function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
+function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
+	local pm = managers.player
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
 	local inc_range_mul = 1
+	local inc_range_addend = pm:upgrade_value("weapon", "silencer_spread_index_addend", 0) * 75
 	local current_state = user_unit:movement()._current_state
+
 	if current_state and current_state:in_steelsight() then
-		inc_range_mul = managers.player:upgrade_value("shotgun", "steelsight_range_inc", 1)
+		inc_range_mul = pm:upgrade_value("shotgun", "steelsight_range_inc", 1)
 	end
-	return (1 - math.min(1, math.max(0, distance - self._damage_near * inc_range_mul) / (self._damage_far * inc_range_mul))) * damage
+
+	if current_state and not current_state._moving then
+		inc_range_addend = inc_range_addend + pm:upgrade_value("player", "not_moving_accuracy_increase", 0) * 75
+	end
+
+	return (1 - math.min(1, math.max(0, distance - (self._damage_near + inc_range_addend) * inc_range_mul) / ((self._damage_far + 2*inc_range_addend) * inc_range_mul))) * damage
 end
 
 local mvec_temp = Vector3()

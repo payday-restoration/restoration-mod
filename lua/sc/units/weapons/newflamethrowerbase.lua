@@ -54,7 +54,7 @@ function NewFlamethrowerBase:_update_stats_values()
 	self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 1)
 end
 
-function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
+function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
 	local pm = managers.player
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
 	local inc_range_mul = 1

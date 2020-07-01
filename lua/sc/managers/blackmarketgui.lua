@@ -1523,6 +1523,19 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				pc_btn = "menu_preview_item",
 				callback = callback(self, self, "preview_suit_variation_callback")
 			},
+			hnd_equip = {	
+				btn = "BTN_A",	
+				prio = 1,	
+				name = "bm_menu_btn_equip_gloves",	
+				callback = callback(self, self, "equip_gloves_callback")	
+			},	
+			hnd_preview = {	
+				btn = "BTN_STICK_R",	
+				name = "bm_menu_btn_preview_gloves",	
+				prio = 3,	
+				pc_btn = "menu_preview_item",	
+				callback = callback(self, self, "preview_gloves_callback")	
+			},
 			m_equip = {
 				btn = "BTN_A",
 				prio = 1,
@@ -1723,6 +1736,20 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				name = "bm_menu_btn_equip_melee_weapon",
 				callback = callback(self, self, "lo_equip_melee_weapon_callback")
 			},
+			lo_d_sentry_ap_rounds = {	
+				btn = "BTN_Y",	
+				name = "bm_menu_btn_sentry_ap_rounds",	
+				prio = 3,	
+				pc_btn = "menu_modify_item",	
+				callback = callback(self, self, "set_sentry_ap_rounds_callback")	
+			},	
+			lo_d_sentry_default_rounds = {	
+				btn = "BTN_Y",	
+				name = "bm_menu_btn_sentry_default_rounds",	
+				prio = 3,	
+				pc_btn = "menu_modify_item",	
+				callback = callback(self, self, "set_sentry_default_rounds_callback")	
+			},
 			lo_mw_preview = {
 				btn = "BTN_STICK_R",
 				name = "bm_menu_btn_preview_melee_weapon",
@@ -1888,6 +1915,10 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			BlackMarketGui.blur_panel(self._weapon_info_panel)
 			BlackMarketGui.blur_panel(self._detection_panel)
 			BlackMarketGui.blur_panel(self._btn_panel)
+
+			if alive(self._extra_options_panel) then	
+				BlackMarketGui.blur_panel(self._extra_options_panel)	
+			end
 		end
 
 		local scale = 0.75
@@ -4190,6 +4221,36 @@ function BlackMarketGui:update_info_text()
 		end
 
 		local desc_id = suit_variation_tweak and suit_variation_tweak.desc_id or "menu_default"
+		local desc_colors = {}
+		updated_texts[4].text = desc_id and managers.localization:text(desc_id) or ""
+
+		if slot_data.global_value and slot_data.global_value ~= "normal" then
+			local gvalue_tweak = tweak_data.lootdrop.global_values[slot_data.global_value]
+
+			if gvalue_tweak.desc_id then
+				updated_texts[4].text = updated_texts[4].text .. "\n##" .. managers.localization:to_upper_text(gvalue_tweak.desc_id) .. "##"
+
+				table.insert(desc_colors, gvalue_tweak.color)
+			end
+		end
+
+		if #desc_colors == 1 then
+			updated_texts[4].resource_color = desc_colors[1]
+		else
+			updated_texts[4].resource_color = desc_colors
+		end
+	elseif identifier == self.identifiers.glove then
+		local glove_id = slot_data.name
+		local glove_tweak = tweak_data.blackmarket.gloves[glove_id]
+		updated_texts[1].text = slot_data.name_localized
+
+		if not slot_data.unlocked then
+			updated_texts[2].text = "##" .. managers.localization:to_upper_text("bm_menu_item_locked") .. "##"
+			updated_texts[2].resource_color = tweak_data.screen_colors.important_1
+			updated_texts[3].text = slot_data.dlc_locked and managers.localization:to_upper_text(slot_data.dlc_locked) or managers.localization:to_upper_text("bm_menu_dlc_locked")
+		end
+
+		local desc_id = glove_tweak.desc_id
 		local desc_colors = {}
 		updated_texts[4].text = desc_id and managers.localization:text(desc_id) or ""
 

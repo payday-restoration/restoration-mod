@@ -19,7 +19,6 @@ function ShotgunBase:_update_stats_values()
 		if self._ammo_data.damage_far_mul ~= nil then
 			self._damage_far = self._damage_far + self._ammo_data.damage_far_mul
 		end
-		self._range = self._damage_far
 	end
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
@@ -30,6 +29,7 @@ function ShotgunBase:_update_stats_values()
 			self._damage_far = self._damage_far + stats.damage_far_mul
 		end
 	end
+	self._range = self._damage_far
 	
 	if self._ammo_data then
 		if self._ammo_data.rays ~= 1 then

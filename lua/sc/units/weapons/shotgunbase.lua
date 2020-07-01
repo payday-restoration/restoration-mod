@@ -33,7 +33,7 @@ function ShotgunBase:_update_stats_values()
 	
 	if self._ammo_data then
 		if self._ammo_data.rays ~= 1 then
-			self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 1)
+			self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 0)
 		end
 	end
 	

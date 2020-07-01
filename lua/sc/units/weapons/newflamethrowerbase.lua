@@ -22,25 +22,9 @@ end
 
 function NewFlamethrowerBase:_update_stats_values()
 	NewFlamethrowerBase.super._update_stats_values(self)
-	--self:setup_default()
-	if self._ammo_data then
-		if self._ammo_data.rays ~= nil then
-			self._rays = self._ammo_data.rays
-		end
-		if self._ammo_data.damage_near ~= nil then
-			self._damage_near = self._ammo_data.damage_near
-		end
-		if self._ammo_data.damage_near_mul ~= nil then
-			self._damage_near = self._damage_near + self._ammo_data.damage_near_mul
-		end
-		if self._ammo_data.damage_far ~= nil then
-			self._damage_far = self._ammo_data.damage_far
-		end
-		if self._ammo_data.damage_far_mul ~= nil then
-			self._damage_far = self._damage_far + self._ammo_data.damage_far_mul
-		end
-		self._range = self._damage_far
-	end
+	self._damage_near = tweak_data.weapon[self._name_id].damage_near
+	self._damage_far = tweak_data.weapon[self._name_id].damage_far
+
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
 		if stats.damage_near_mul then
@@ -50,8 +34,7 @@ function NewFlamethrowerBase:_update_stats_values()
 			self._damage_far = self._damage_far + stats.damage_far_mul
 		end
 	end
-	
-	self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 1)
+	self._range = self._damage_far
 end
 
 function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
@@ -68,7 +51,7 @@ function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
 	if current_state and not current_state._moving then
 		inc_range_addend = inc_range_addend + pm:upgrade_value("player", "not_moving_accuracy_increase", 0) * 75
 	end
-
+	
 	return (1 - math.min(1, math.max(0, distance - (self._damage_near + inc_range_addend) * inc_range_mul) / ((self._damage_far + 2*inc_range_addend) * inc_range_mul))) * damage
 end
 

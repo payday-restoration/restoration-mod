@@ -166,14 +166,14 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	}
 	
 	self.nmh.ai_group_type = nypd
-	self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/lapdassets"}
+	self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
 	self.nmh.ghost_bonus = nil
 	
 	self.skm_run.ai_group_type = nypd
-	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/lapdassets"}
+	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
 	
 	self.skm_red2.ai_group_type = nypd
-	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/lapdassets"}
+	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
 	
 	--///LAPD LEVELS\\\--			
 	self.jolly.ai_group_type = lapd

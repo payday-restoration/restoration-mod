@@ -8654,8 +8654,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shatters_fury.can_shoot_through_wall = true
 	self.shatters_fury.armor_piercing_chance = 1
 	--self.shatters_fury.animations.reload_name_id = "chinchilla"
-	self.shatters_fury.timers.reload_not_empty = 2.97
-	self.shatters_fury.timers.reload_empty = 2.97
+	self.shatters_fury.timers.reload_not_empty = 2.4
+	self.shatters_fury.timers.reload_empty = 2.4
 	self.shatters_fury.swap_speed_multiplier = 0.6
 	--this line doesn't do shit
 	--self.shatters_fury.custom = true

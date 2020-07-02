@@ -29,6 +29,12 @@ function ShotgunBase:_update_stats_values()
 			self._damage_far = self._damage_far + stats.damage_far_mul
 		end
 	end
+
+	if self._silencer then
+		self._damage_near = self._damage_near + managers.player:upgrade_value("weapon", "silencer_spread_index_addend", 0) * 75
+		self._damage_far = self._damage_far + managers.player:upgrade_value("weapon", "silencer_spread_index_addend", 0) * 150
+	end
+
 	self._range = self._damage_far
 	
 	if self._ammo_data then
@@ -379,10 +385,6 @@ function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 
 	if current_state and current_state:in_steelsight() then
 		inc_range_mul = pm:upgrade_value("shotgun", "steelsight_range_inc", 1)
-	end
-
-	if self._silencer then
-		inc_range_addend = inc_range_addend + pm:upgrade_value("weapon", "silencer_spread_index_addend", 0) * 75
 	end
 
 	if current_state and not current_state._moving then

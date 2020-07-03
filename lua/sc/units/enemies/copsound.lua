@@ -130,7 +130,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		ch4 = "saw", -- could add these lines to our units
 		t01 = "flank",
 		pus = "gogo",
-		g90 = "contact",
+		g90 = "buddy_died",
 		civ = "hostage",
 		bak = "ready",
 		p01 = "hostage",

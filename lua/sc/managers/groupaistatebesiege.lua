@@ -222,9 +222,9 @@ function GroupAIStateBesiege:_upd_assault_areas(current_area)
 		return current_area
 	end
 
-	if assault_candidates then
+	if assault_candidates and self._char_criminals then
 		for criminal_key, criminal_data in pairs(self._char_criminals) do
-			if not criminal_data.status then
+			if criminal_key and not criminal_data.status then
 				local nav_seg = criminal_data.tracker:nav_segment()
 				local area = self:get_area_from_nav_seg_id(nav_seg)
 				found_areas[area] = true
@@ -247,12 +247,14 @@ function GroupAIStateBesiege:_upd_assault_areas(current_area)
 		local nr_police = table.size(area.police.units)
 		local nr_criminals = table.size(area.criminal.units)
 
-		if assault_candidates then
+		if assault_candidates and self._player_criminals then
 			for criminal_key, _ in pairs(area.criminal.units) do
-				if not self._criminals[criminal_key].is_deployable then
-					table.insert(assault_candidates, area)
+				if criminal_key and self._player_criminals[criminal_key] then
+					if not self._player_criminals[criminal_key].is_deployable then
+						table.insert(assault_candidates, area)
 
-					break
+						break
+					end
 				end
 			end
 		end

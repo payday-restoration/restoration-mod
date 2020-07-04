@@ -634,3 +634,197 @@ function CopLogicIdle._upd_enemy_detection(data)
 
 	return delay
 end
+
+
+function CopLogicIdle._chk_relocate(data)
+	local my_nav_seg = data.unit:movement():nav_tracker():nav_segment()
+	local my_area = managers.groupai:state():get_area_from_nav_seg_id(data.unit:movement():nav_tracker():nav_segment())
+	
+	if not CopLogicAttack.is_available_for_assignment(data, data.objective) then
+		return
+	end
+	
+	if data.objective and data.objective.type == "follow" then
+		if data.is_converted then
+			if TeamAILogicIdle._check_should_relocate(data, data.internal_data, data.objective) then
+				data.objective.in_place = nil
+
+				data.logic._exit(data.unit, "travel")
+
+				return true
+			end
+
+			return
+		end
+
+		if data.is_tied and data.objective.lose_track_dis and data.objective.lose_track_dis * data.objective.lose_track_dis < mvector3.distance_sq(data.m_pos, data.objective.follow_unit:movement():m_pos()) then
+			data.brain:set_objective(nil)
+
+			return true
+		end
+
+		local relocate = nil
+		local follow_unit = data.objective.follow_unit
+		local advance_pos = follow_unit:brain() and follow_unit:brain():is_advancing()
+		local follow_unit_pos = advance_pos or follow_unit:movement():m_pos()
+
+		if data.objective.relocated_to and mvector3.equal(data.objective.relocated_to, follow_unit_pos) then
+			return
+		end
+
+		if data.objective.distance and data.objective.distance < mvector3.distance(data.m_pos, follow_unit_pos) then
+			relocate = true
+		end
+
+		if not relocate then
+			local ray_params = {
+				tracker_from = data.unit:movement():nav_tracker(),
+				pos_to = follow_unit_pos
+			}
+			local ray_res = managers.navigation:raycast(ray_params)
+
+			if ray_res then
+				relocate = true
+			end
+		end
+
+		if relocate then
+			data.objective.in_place = nil
+			data.objective.nav_seg = follow_unit:movement():nav_tracker():nav_segment()
+			data.objective.relocated_to = mvector3.copy(follow_unit_pos)
+
+			data.logic._exit(data.unit, "travel")
+
+			return true
+		end
+	elseif data.objective and data.objective.type == "defend_area" then
+		local recon_group = data.objective and data.objective.grp_objective and data.objective.grp_objective == "recon_area" or data.tactics and data.tactics.flank
+		
+		local current_assault_target_area_navsegs = managers.groupai:state()._current_target_area and managers.groupai:state()._current_target_area.nav_segs or nil
+		
+		if managers.groupai:state():chk_assault_active_atm() and not recon_group then
+			if current_assault_target_area_navsegs then -- this code is so awful i am fully convinced it is self-aware
+				--log("pog")
+				data.objective.in_place = nil
+				data.objective.nav_seg = next(current_assault_target_area_navsegs)
+				data.objective.path_data = {
+					{
+						data.objective.nav_seg
+					}
+				}
+				data.logic._exit(data.unit, "travel")
+							
+				return true
+			end
+					
+			local area = data.objective.area
+
+			if area and not next(area.criminal.units) then
+				local found_areas = {
+					[area] = true
+				}
+				local areas_to_search = {
+					area
+				}
+				local target_area = nil
+
+				while next(areas_to_search) do
+					local current_area = table.remove(areas_to_search)
+						
+					if next(current_area.criminal.units) then
+						target_area = current_area
+
+						break
+					end
+
+					for _, n_area in pairs(current_area.neighbours) do
+						if not found_areas[n_area] then
+							found_areas[n_area] = true
+
+							table.insert(areas_to_search, n_area)
+						end
+					end
+				end
+
+				if target_area then
+					data.objective.in_place = nil
+					data.objective.nav_seg = next(target_area.nav_segs)
+					data.objective.path_data = {
+						{
+							data.objective.nav_seg
+						}
+					}
+
+					data.logic._exit(data.unit, "travel")
+
+					return true
+				end
+			end
+		else
+			local area = data.objective.area
+			
+			if area then
+				if area.loot and next(area.loot) or area.hostages and next(area.hostages) then
+					return
+				else
+					local found_areas = {
+						[area] = true
+					}
+					local areas_to_search = {
+						area
+					}
+					local target_area = nil
+
+					while next(areas_to_search) do
+						local current_area = table.remove(areas_to_search)
+								
+						if current_area.loot and next(current_area.loot) or current_area.hostages and next(current_area.hostages) then
+							target_area = current_area
+
+							break
+						end
+
+						for _, n_area in pairs(current_area.neighbours) do
+							if not found_areas[n_area] then
+								found_areas[n_area] = true
+
+								table.insert(areas_to_search, n_area)
+							end
+						end
+					end
+
+					if target_area then
+						data.objective.bagjob = target_area.loot or nil
+						data.objective.hostagejob = target_area.hostages or nil
+						data.objective.in_place = nil
+						data.objective.nav_seg = next(target_area.nav_segs)
+						data.objective.path_data = {
+							{
+								data.objective.nav_seg
+							}
+						}
+
+						data.logic._exit(data.unit, "travel")
+
+						return true
+					else
+						if current_assault_target_area_navsegs then
+							data.objective.bagjob = managers.groupai:state()._current_target_area.loot or nil
+							data.objective.hostagejob = managers.groupai:state()._current_target_area.hostages or nil
+							data.objective.in_place = nil
+							data.objective.nav_seg = next(current_assault_target_area_navsegs)
+							data.objective.path_data = {
+								{
+									data.objective.nav_seg
+								}
+							}
+							data.logic._exit(data.unit, "travel")
+										
+							return true
+						end
+					end
+				end
+			end
+		end
+	end
+end

@@ -1051,6 +1051,7 @@ function CopLogicBase._chk_nearly_visible_chk_needed(data, attention_info, u_key
 	return attention_info.is_person and attention_info.verified_t and dis < 2000
 end
 
+
 function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 	local my_data = data.internal_data
 	attention = attention or data.attention_obj
@@ -1066,11 +1067,18 @@ function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 	if objective.interrupt_suppression and data.is_suppressed then
 		return true, true
 	end
+	
+	local health_ratio = data.unit:character_damage():health_ratio()
+	local is_dead = data.unit:character_damage():dead() or health_ratio <= 0
+
+	if is_dead then
+		return true, true
+	end
 
 	local strictness_mul = strictness and 1 - strictness
 
 	if objective.interrupt_health then
-		local health_ratio = data.unit:character_damage():health_ratio()
+																						
 
 		if health_ratio < 1 then
 			local too_much_damage = nil
@@ -1083,12 +1091,12 @@ function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 
 			if too_much_damage then
 				return true, true
-			else
-				local is_dead = data.unit:character_damage():dead() or health_ratio <= 0
+	   
+																													  
 
-				if is_dead then
-					return true, true
-				end
+				   
+					  
+	   
 			end
 		end
 	end
@@ -1783,111 +1791,3 @@ function CopLogicBase._chk_alert_obstructed(my_listen_pos, alert_data)
 		end
 	end
 end
-
---[[function CopLogicBase._upd_stance_and_pose(data, my_data, objective)
-	if my_data ~= data.internal_data then
-		--log("how is this man")
-		return
-	end
-
-	if data.char_tweak.allowed_poses or data.is_converted or my_data.tasing or my_data.spooc_attack or data.unit:in_slot(managers.slot:get_mask("criminals")) then
-		return
-	end
-
-	if data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.unit:movement():chk_action_forbidden("walk") then
-		return
-	end
-
-	local obj_has_stance, obj_has_pose, agg_pose = nil
-	local can_stand_or_crouch = nil
-
-	if not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch then
-		if not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.stand then
-			if data.char_tweak.crouch_move then
-				can_stand_or_crouch = true
-			end
-		end
-	end
-
-	if can_stand_or_crouch then
-		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
-
-		if data.is_suppressed then
-			if diff_index <= 5 then
-				if data.unit:anim_data().stand then
-					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
-						if CopLogicAttack._chk_request_action_crouch(data) then
-							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
-							agg_pose = true
-						end
-					end
-				end
-			else
-				if data.unit:anim_data().stand then
-					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
-						if CopLogicAttack._chk_request_action_crouch(data) then
-							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
-							agg_pose = true
-						end
-					end
-				elseif data.unit:anim_data().crouch then
-					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
-						if CopLogicAttack._chk_request_action_stand(data) then
-							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
-							agg_pose = true
-						end
-					end
-				end
-			end
-		elseif data.attention_obj and data.attention_obj.aimed_at and data.attention_obj.reaction and data.attention_obj.reaction >= AIAttentionObject.REACT_COMBAT and data.attention_obj.verified then
-			if diff_index > 5 then
-				if data.unit:anim_data().stand then
-					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
-						if CopLogicAttack._chk_request_action_crouch(data) then
-							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
-							agg_pose = true
-						end
-					end
-				elseif data.unit:anim_data().crouch then
-					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
-						if CopLogicAttack._chk_request_action_stand(data) then
-							my_data.next_allowed_stance_t = data.t + math.random(1.5, 7)
-							agg_pose = true
-						end
-					end
-				end
-			end
-		end
-	end
-	
-	if agg_pose then
-		return
-	end
-
-	if data.char_tweak.allowed_poses and can_stand_or_crouch and not obj_has_pose and not agg_pose then
-		for pose_name, state in pairs(data.char_tweak.allowed_poses) do
-			if state then
-			
-				if pose_name == "stand" then
-					CopLogicAttack._chk_request_action_stand(data)
-
-					break
-				end
-				
-				if pose_name == "crouch" then
-					CopLogicAttack._chk_request_action_crouch(data)
-
-					break
-				end
-			end
-		end
-	end
-end
-
-function CopLogicBase.action_taken(data, my_data)
-	return my_data.turning or my_data.moving_to_cover or my_data.walking_to_cover_shoot_pos or my_data.surprised or my_data.has_old_action or data.unit:movement():chk_action_forbidden("walk")
-end
-
-function CopLogicBase.chk_should_turn(data, my_data)
-	return not my_data.turning and not my_data.has_old_action and not data.unit:movement():chk_action_forbidden("walk") and not my_data.moving_to_cover and not my_data.walking_to_cover_shoot_pos and not my_data.surprised
-end]]

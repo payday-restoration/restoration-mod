@@ -228,7 +228,6 @@
 		<hook file="sc/managers/dialogmanager.lua" source_file="lib/managers/dialogmanager"/>
 		<hook file="sc/units/player/playerequipment.lua" source_file="lib/units/beings/player/playerequipment"/>
 		<hook file="sc/managers/modifiersmanager.lua" source_file="lib/managers/modifiersmanager"/>
-		<hook file="sc/managers/criminalsmanager.lua" source_file="lib/managers/criminalsmanager"/>
 		<hook file="sc/managers/menu/skilltreeguinew.lua" source_file="lib/managers/menu/skilltreeguinew"/>
 		<hook file="sc/units/weapons/weaponliongadget1.lua" source_file="lib/units/weapons/weaponliongadget1"/>
 		<hook file="sc/units/enemies/logics/coplogicsniper.lua" source_file="lib/units/enemies/cop/logics/coplogicsniper"/>	
@@ -288,7 +287,6 @@
 		<!--///PDTH Challenges\\\-->
 		<hook file="sc/managers/menu/items/CoreItemChallenges.lua" source_file="lib/managers/menu/items/menuitemchallenge"/>
 		<hook file="sc/setups/Setup.lua" source_file="lib/setups/setup"/>
-        <hook file="Psc/setups/MenuSetup.lua" source_file="lib/setups/menusetup"/>
 		<!--///INGAME MANUAL\\\-->
 		<hook file="managers/menu/IngameManualGUI.lua" source_file="lib/managers/menu/IngameManualGUI"/>
 		<!--///Outfit crash debugging, delete when fixed.\\\-->

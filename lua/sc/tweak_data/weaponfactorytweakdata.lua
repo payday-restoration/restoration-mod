@@ -6875,632 +6875,160 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	
 end)
 
-function WeaponFactoryTweakData:_init_m1928()
-	self.parts.wpn_fps_smg_thompson_barrel = {
-		type = "barrel",
-		name_id = "bm_wp_m1928_b_medium",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_barrel",
-		stats = {value = 1},
-		texture_bundle_folder = "pines"
+--Chicago Typewriter
+Hooks:PostHook(WeaponFactoryTweakData, "_init_m1928", "resmod_m1928", function(self)
+	
+	--Long Barrel
+	self.parts.wpn_fps_smg_thompson_barrel_long.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_smg_thompson_barrel_long = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_m1928_b_long",
-		a_obj = "a_b",
-		dlc = "pd2_clan",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_barrel_long",
-		stats = {
-			value = 4,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		texture_bundle_folder = "pines"
+	self.parts.wpn_fps_smg_thompson_barrel_long.stats = {
+		value = 4,
+		spread = 1,
+		recoil = -1,
+		concealment = -1
 	}
-	self.parts.wpn_fps_smg_thompson_barrel_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_m1928_b_short",
-		a_obj = "a_b",
-		dlc = "pd2_clan",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_barrel_short",
-		stats = {
-			value = 2,
-			spread = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "pines",
-		override = {
-			wpn_fps_smg_thompson_ns_standard = {
-				unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_ns_no",
-				third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_ns_no"
-			}
-		}
+	
+	--Stubby Barrel
+	self.parts.wpn_fps_smg_thompson_barrel_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_smg_thompson_body = {
-		type = "upper_reciever",
-		name_id = "bm_wp_m1928_b_medium",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_body",
-		stats = {value = 1},
-		texture_bundle_folder = "pines",
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload_not_empty",
-			fire_steelsight = "recoil",
-			fire = "recoil"
-		},
-		forbids = {
-			"wpn_fps_addon_ris"
-		}
+	self.parts.wpn_fps_smg_thompson_barrel_short.stats = {
+		value = 2,
+		spread = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_smg_thompson_drummag = {
-		type = "magazine",
-		name_id = "bm_wp_m1928_b_medium",
-		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		a_obj = "a_m",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_drummag",
-		stats = {value = 1},
-		texture_bundle_folder = "pines",
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload_not_empty"
-		}
-	}
-	self.parts.wpn_fps_smg_thompson_fl_adapter = {
-		type = "extra",
-		name_id = "bm_wp_m1928_b_medium",
-		a_obj = "a_fl",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_fl_adapter",
-		stats = {value = 1},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_foregrip = {
-		type = "foregrip",
-		name_id = "bm_wp_m1928_b_medium",
-		a_obj = "a_fg",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_foregrip",
-		stats = {value = 1},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_foregrip_discrete = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "foregrip",
-		name_id = "bm_wp_m1928_fg_discrete",
-		a_obj = "a_fg",
-		dlc = "pd2_clan",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_foregrip_discrete",
-		stats = {
-			value = 2,
-			recoil = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_grip = {
-		type = "grip",
-		name_id = "bm_wp_m1928_b_medium",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_grip",
-		stats = {value = 1},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_grip_discrete = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "grip",
-		name_id = "bm_wp_m1928_g_discrete",
-		a_obj = "a_g",
-		dlc = "pd2_clan",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_grip_discrete",
-		stats = {
-			value = 2,
-			recoil = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_ns_standard = {
-		type = "barrel_ext",
-		name_id = "bm_wp_m1928_b_medium",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_ns_standard",
-		stats = {value = 1},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_o_adapter = {
-		type = "extra",
-		name_id = "bm_wp_m1928_b_medium",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_o_adapter",
-		stats = {value = 1},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_stock = {
-		type = "stock",
-		name_id = "bm_wp_m1928_b_medium",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_stock",
-		stats = {value = 1},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_stock_discrete = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_m1928_s_discrete",
-		a_obj = "a_s",
-		dlc = "pd2_clan",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_stock_discrete",
-		stats = {
-			value = 3,
-			recoil = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_stock_nostock = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_m1928_s_nostock",
-		a_obj = "a_s",
-		dlc = "pd2_clan",
-		unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_fps_smg_thompson_stock_nostock",
-		stats = {
-			value = 1,
-			recoil = -2,
-			concealment = 2
-		},
-		texture_bundle_folder = "pines"
-	}
-	self.parts.wpn_fps_smg_thompson_barrel.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_barrel"
-	self.parts.wpn_fps_smg_thompson_barrel_long.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_barrel_long"
-	self.parts.wpn_fps_smg_thompson_barrel_short.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_barrel_short"
-	self.parts.wpn_fps_smg_thompson_body.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_body"
-	self.parts.wpn_fps_smg_thompson_drummag.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_drummag"
-	self.parts.wpn_fps_smg_thompson_fl_adapter.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_fl_adapter"
-	self.parts.wpn_fps_smg_thompson_foregrip.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_foregrip"
-	self.parts.wpn_fps_smg_thompson_foregrip_discrete.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_foregrip_discrete"
-	self.parts.wpn_fps_smg_thompson_grip.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_grip"
-	self.parts.wpn_fps_smg_thompson_grip_discrete.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_grip_discrete"
-	self.parts.wpn_fps_smg_thompson_ns_standard.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_ns_standard"
-	self.parts.wpn_fps_smg_thompson_o_adapter.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_o_adapter"
-	self.parts.wpn_fps_smg_thompson_stock.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_stock"
-	self.parts.wpn_fps_smg_thompson_stock_discrete.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_stock_discrete"
-	self.parts.wpn_fps_smg_thompson_stock_nostock.third_unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928_pts/wpn_third_smg_thompson_stock_nostock"
-	self.wpn_fps_smg_thompson = {}
-	self.wpn_fps_smg_thompson.unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928/wpn_fps_smg_thompson"
-	self.wpn_fps_smg_thompson.optional_types = {
-		"gadget",
-		"sight",
-		"barrel_ext"
-	}
-	self.wpn_fps_smg_thompson.adds = {
-		wpn_fps_upg_o_specter = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_aimpoint = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_aimpoint_2 = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_docter = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_eotech = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_t1micro = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_cmore = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_acog = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_cs = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_eotech_xps = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_reflex = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_rx01 = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_rx30 = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_fl_ass_smg_sho_surefire = {
-			"wpn_fps_smg_thompson_fl_adapter"
-		},
-		wpn_fps_upg_fl_ass_smg_sho_peqbox = {
-			"wpn_fps_smg_thompson_fl_adapter"
-		},
-		wpn_fps_upg_fl_ass_peq15 = {
-			"wpn_fps_smg_thompson_fl_adapter"
-		},
-		wpn_fps_upg_fl_ass_laser = {
-			"wpn_fps_smg_thompson_fl_adapter"
-		},
-		wpn_fps_upg_fl_ass_utg = {
-			"wpn_fps_smg_thompson_fl_adapter"
-		},
-		wpn_fps_upg_o_spot = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_bmg = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_uh = {
-			"wpn_fps_smg_thompson_o_adapter"
-		},
-		wpn_fps_upg_o_fc1 = {
-			"wpn_fps_smg_thompson_o_adapter"
-		}			
-	}
-	self.wpn_fps_smg_thompson.default_blueprint = {
-		"wpn_fps_smg_thompson_barrel",
-		"wpn_fps_smg_thompson_body",
-		"wpn_fps_smg_thompson_drummag",
-		"wpn_fps_smg_thompson_foregrip",
-		"wpn_fps_smg_thompson_grip",
-		"wpn_fps_smg_thompson_stock",
-		"wpn_fps_smg_thompson_ns_standard"
-	}
-	self.wpn_fps_smg_thompson.uses_parts = {
-		"wpn_fps_smg_thompson_barrel",
-		"wpn_fps_smg_thompson_barrel_long",
-		"wpn_fps_smg_thompson_barrel_short",
-		"wpn_fps_smg_thompson_body",
-		"wpn_fps_smg_thompson_drummag",
-		"wpn_fps_smg_thompson_fl_adapter",
-		"wpn_fps_smg_thompson_foregrip",
-		"wpn_fps_smg_thompson_foregrip_discrete",
-		"wpn_fps_smg_thompson_grip",
-		"wpn_fps_smg_thompson_grip_discrete",
-		"wpn_fps_smg_thompson_ns_standard",
-		"wpn_fps_smg_thompson_o_adapter",
-		"wpn_fps_smg_thompson_stock",
-		"wpn_fps_smg_thompson_stock_discrete",
-		"wpn_fps_smg_thompson_stock_nostock",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_i_slower_rof",
-		"wpn_fps_upg_i_faster_rof"					
-	}
-	self.wpn_fps_smg_thompson_npc = deep_clone(self.wpn_fps_smg_thompson)
-	self.wpn_fps_smg_thompson_npc.unit = "units/pd2_dlc_pines/weapons/wpn_fps_smg_m1928/wpn_fps_smg_thompson_npc"
-end
 
-function WeaponFactoryTweakData:_init_l85a2()
-	self.parts.wpn_fps_ass_l85a2_body_standard = {
-		type = "upper_reciever",
-		name_id = "bm_wp_l85a2_b_medium",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_body_standard",
-		stats = {value = 1},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover",
-		animations = {
-			reload = "reload",
-			fire_steelsight = "recoil",
-			fire = "recoil"
-		},
-		forbids = {
-			"wpn_fps_addon_ris"
-		}
+	--Discrete Foregrip
+	self.parts.wpn_fps_smg_thompson_foregrip_discrete.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_ass_l85a2_m_emag = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "magazine",
-		name_id = "bm_wp_l85a2_m_emag",
-		desc_id = "bm_sc_blank",
-		bullet_objects = {prefix = "g_bullet_", amount = 28},
-		a_obj = "a_m",
-		has_description = true,
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_m_emag",
-		stats = {
-			value = 0,
-			extra_ammo = 0
-		},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	self.parts.wpn_fps_smg_thompson_foregrip_discrete.stats = {
+		value = 2,
+		recoil = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_ass_l85a2_fg_medium = {
-		type = "foregrip",
-		name_id = "bm_wp_l85a2_fg_medium",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_fg_medium",
-		stats = {value = 1},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	
+	--Discrete Grip
+	self.parts.wpn_fps_smg_thompson_grip_discrete.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_ass_l85a2_fg_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "foregrip",
-		name_id = "bm_wp_l85a2_fg_short",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_fg_short",
-		stats = {
-			value = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	self.parts.wpn_fps_smg_thompson_grip_discrete.stats = {
+		value = 2,
+		recoil = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_ass_l85a2_b_long = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_l85a2_b_long",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_b_long",
-		stats = {
-			value = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	
+	--Discrete Stock
+	self.parts.wpn_fps_smg_thompson_stock_discrete.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_ass_l85a2_b_medium = {
-		type = "barrel",
-		name_id = "bm_wp_l85a2_b_medium",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_b_medium",
-		stats = {value = 1},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	self.parts.wpn_fps_smg_thompson_stock_discrete.stats = {
+		value = 3,
+		recoil = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_ass_l85a2_b_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_l85a2_b_short",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_b_short",
-		stats = {value = 1, concealment = 1, spread = -1},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	
+	--QD Sling Stock
+	self.parts.wpn_fps_smg_thompson_stock_nostock.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_ass_l85a2_g_standard = {
-		type = "grip",
-		name_id = "bm_wp_l85a2_b_medium",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_g_standard",
-		stats = {value = 1},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	self.parts.wpn_fps_smg_thompson_stock_nostock.stats = {
+		value = 1,
+		recoil = -2,
+		concealment = 2
 	}
-	self.parts.wpn_fps_ass_l85a2_g_worn = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "grip",
-		name_id = "bm_wp_l85a2_g_worn",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_g_worn",
-		stats = {value = 1, recoil = 1, spread = -1},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	
+end)
+
+--Queen's Wrath
+Hooks:PostHook(WeaponFactoryTweakData, "_init_l85a2", "resmod_l85a2", function(self)
+	
+	--Expert Mag
+	self.parts.wpn_fps_ass_l85a2_m_emag.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_ass_l85a2_ns_standard = {
-		type = "barrel_ext",
-		name_id = "bm_wp_l85a2_b_medium",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_ns_standard",
-		stats = {value = 1},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover"
+	self.parts.wpn_fps_ass_l85a2_m_emag.stats = {
+		value = 0,
+		extra_ammo = 0
 	}
-	self.parts.wpn_fps_ass_l85a2_o_standard = {
-		type = "sight",
-		name_id = "bm_wp_l85a2_b_medium",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2_pts/wpn_fps_ass_l85a2_o_standard",
-		stats = {value = 1},
-		texture_bundle_folder = "character_pack_clover",
-		dlc = "character_pack_clover",
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds",
-			"wpn_fps_upg_o_45rds_v2"				
-		}
+	
+	--Versatile Foregrip
+	self.parts.wpn_fps_ass_l85a2_fg_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_ass_l85a2_body_standard.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_body_standard"
-	self.parts.wpn_fps_ass_l85a2_m_emag.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_m_emag"
-	self.parts.wpn_fps_ass_l85a2_fg_medium.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_fg_medium"
-	self.parts.wpn_fps_ass_l85a2_fg_short.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_fg_short"
-	self.parts.wpn_fps_ass_l85a2_b_long.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_b_long"
-	self.parts.wpn_fps_ass_l85a2_b_medium.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_b_medium"
-	self.parts.wpn_fps_ass_l85a2_b_short.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_b_short"
-	self.parts.wpn_fps_ass_l85a2_g_standard.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_g_standard"
-	self.parts.wpn_fps_ass_l85a2_g_worn.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_g_worn"
-	self.parts.wpn_fps_ass_l85a2_ns_standard.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_ns_standard"
-	self.parts.wpn_fps_ass_l85a2_o_standard.third_unit = "units/pd2_dlc_clover/weapons/wpn_third_ass_l85a2_pts/wpn_third_ass_l85a2_o_standard"
-	self.wpn_fps_ass_l85a2 = {}
-	self.wpn_fps_ass_l85a2.unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2/wpn_fps_ass_l85a2"
-	self.wpn_fps_ass_l85a2.optional_types = {
-		"gadget",
-		"sight",
-		"barrel_ext"
+	self.parts.wpn_fps_ass_l85a2_fg_short.stats = {
+		value = 1,
+		spread = 1,
+		recoil = -1,
+		concealment = -1
 	}
-	self.wpn_fps_ass_l85a2.animations = {
-		reload = "reload",
-		reload_not_empty = "reload_not_empty"
+	
+	--Prodigious Barrel
+	self.parts.wpn_fps_ass_l85a2_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.wpn_fps_ass_l85a2.adds = {}
-	self.wpn_fps_ass_l85a2.default_blueprint = {
-		"wpn_fps_ass_l85a2_body_standard",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_ass_l85a2_fg_medium",
-		"wpn_fps_ass_l85a2_b_medium",
-		"wpn_fps_ass_l85a2_g_standard",
-		"wpn_fps_ass_l85a2_ns_standard",
-		"wpn_fps_ass_l85a2_o_standard"
+	self.parts.wpn_fps_ass_l85a2_b_long.stats = {
+		value = 1,
+		spread = 1,
+		recoil = -1,
+		concealment = -1
 	}
-	self.wpn_fps_ass_l85a2.uses_parts = {
-		"wpn_fps_ass_l85a2_body_standard",
-		"wpn_fps_ass_l85a2_fg_medium",
-		"wpn_fps_ass_l85a2_fg_short",
-		"wpn_fps_ass_l85a2_b_long",
-		"wpn_fps_ass_l85a2_b_medium",
-		"wpn_fps_ass_l85a2_b_short",
-		"wpn_fps_ass_l85a2_g_standard",
-		"wpn_fps_ass_l85a2_g_worn",
-		"wpn_fps_ass_l85a2_ns_standard",
-		"wpn_fps_ass_l85a2_o_standard",
-		"wpn_fps_ass_l85a2_m_emag",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_m_drum",
-		"wpn_fps_upg_m4_m_pmag",
-		"wpn_fps_upg_m4_m_straight",
-		"wpn_fps_upg_m4_m_quad",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_m4_m_l5",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_45iron",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_m4_upg_m_quick",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_45rds_v2",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_45steel",
-		"wpn_fps_upg_i_slower_rof",
-		"wpn_fps_upg_i_faster_rof"	
+	
+	--Diminutive Barrel
+	self.parts.wpn_fps_ass_l85a2_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.wpn_fps_ass_l85a2_npc = deep_clone(self.wpn_fps_ass_l85a2)
-	self.wpn_fps_ass_l85a2_npc.unit = "units/pd2_dlc_clover/weapons/wpn_fps_ass_l85a2/wpn_fps_ass_l85a2_npc"
-end
+	self.parts.wpn_fps_ass_l85a2_b_short.stats = {
+		value = 1, 
+		concealment = 1, 
+		spread = -1
+	}
+	
+	--Delightful Grip
+	self.parts.wpn_fps_ass_l85a2_g_worn.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_ass_l85a2_g_worn.stats = {
+		value = 1, 
+		recoil = 1, 
+		spread = -1
+	}
+		
+end)
 
 function WeaponFactoryTweakData:_init_vhs()
 	self.parts.wpn_fps_ass_vhs_body = {

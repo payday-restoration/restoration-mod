@@ -8,6 +8,74 @@ function DialogManager:queue_dialog(id, ...)
 			
 	if Global.game_settings and Global.game_settings.one_down then
 	
+		--Framing Frame Day 1--				
+		if id == "pln_framing_stage1_09" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end		
+		end	
+	
+		--Framing Frame Day 2--				
+		if id == "pln_framing_stage2_13" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end		
+		end	
+	
+		--Framing Frame Day 3--				
+		if id == "pln_framing_stage3_43" then
+			if difficulty_index <= 2 then
+				escape_time = 450
+			elseif difficulty_index == 3 then
+				escape_time = 420
+			elseif difficulty_index == 4 then
+				escape_time = 390
+			elseif difficulty_index == 5 then
+				escape_time = 360	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 330						
+			else
+				escape_time = 300
+			end	
+		end	
+	
+		--Border Crossing--				
+		if id == "Play_loc_mex_63" then
+			if difficulty_index <= 2 then
+				escape_time = 1650 
+			elseif difficulty_index == 3 then
+				escape_time = 1620
+			elseif difficulty_index == 4 then
+				escape_time = 1590
+			elseif difficulty_index == 5 then
+				escape_time = 1560	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 1530					
+			else
+				escape_time = 1500
+			end		
+		end	
+	
 		--Train Heist--				
 		if id == "Play_pln_tr1b_02" then
 			if difficulty_index <= 2 then

@@ -196,10 +196,12 @@ function GroupAIStateBesiege:_begin_new_tasks()
 	local assault_data = task_data.assault
 
 	if not self:whisper_mode() and assault_data.next_dispatch_t and assault_data.next_dispatch_t < t and not task_data.regroup.active then
+		--log("fuckoff")
 		assault_candidates = {}
 	end
-	
-	if not self:whisper_mode() and not self:chk_assault_active_atm() and recon_data.next_dispatch_t and recon_data.next_dispatch_t < t then
+
+	if recon_data.next_dispatch_t and recon_data.next_dispatch_t < t and not task_data.assault.active and not task_data.regroup.active then
+		--log("fuckoff2")
 		recon_candidates = {}
 	end
 	
@@ -323,12 +325,14 @@ function GroupAIStateBesiege:_begin_new_tasks()
 
 	if assault_candidates and #assault_candidates > 0 then
 		self:_begin_assault_task(assault_candidates)
+		--log("fuckoff3")
 	end
 
 	if recon_candidates and #recon_candidates > 0 then
 		local recon_area = recon_candidates[math.random(#recon_candidates)]
 
 		self:_begin_recon_task(recon_area)
+		--log("fuckoff4")
 	end
 
 	if reenforce_candidates and #reenforce_candidates > 0 then
@@ -650,7 +654,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 		return
 	end
 	local t = self._t
-	self:_assign_recon_groups_to_retire()
+	--self:_assign_recon_groups_to_retire()
 	local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul)
 	local task_spawn_allowance = force_pool - (self._hunt_mode and 0 or task_data.force_spawned)
 	if task_data.phase == "anticipation" then

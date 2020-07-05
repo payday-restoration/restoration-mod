@@ -179,6 +179,166 @@ function GroupAIStateBesiege:chk_anticipation()
 	return
 end
 
+function GroupAIStateBesiege:_begin_new_tasks()
+	local all_areas = self._area_data
+	local nav_manager = managers.navigation
+	local all_nav_segs = nav_manager._nav_segments
+	local task_data = self._task_data
+	local t = self._t
+	
+	local reenforce_candidates = nil
+	local reenforce_data = task_data.reenforce
+
+	local recon_candidates, are_recon_candidates_safe = nil
+	local recon_data = task_data.recon
+
+	local assault_candidates = nil
+	local assault_data = task_data.assault
+
+	if not self:whisper_mode() and assault_data.next_dispatch_t and assault_data.next_dispatch_t < t and not task_data.regroup.active then
+		assault_candidates = {}
+	end
+	
+	if not self:whisper_mode() and not self:chk_assault_active_atm() and recon_data.next_dispatch_t and recon_data.next_dispatch_t < t then
+		recon_candidates = {}
+	end
+	
+	if reenforce_data.next_dispatch_t and reenforce_data.next_dispatch_t < t then
+		reenforce_candidates = {}
+	end
+
+	if not reenforce_candidates and not recon_candidates and not assault_candidates then
+		return
+	end
+
+	local found_areas = {}
+	local to_search_areas = {}
+
+	for area_id, area in pairs(all_areas) do
+		if area.spawn_points then
+			for _, sp_data in pairs(area.spawn_points) do
+				if sp_data.delay_t <= t and not all_nav_segs[sp_data.nav_seg].disabled then
+					table.insert(to_search_areas, area)
+
+					found_areas[area_id] = true
+
+					break
+				end
+			end
+		end
+
+		if not found_areas[area_id] and area.spawn_groups then
+			for _, sp_data in pairs(area.spawn_groups) do
+				if sp_data.delay_t <= t and not all_nav_segs[sp_data.nav_seg].disabled then
+					table.insert(to_search_areas, area)
+
+					found_areas[area_id] = true
+
+					break
+				end
+			end
+		end
+	end
+
+	if #to_search_areas == 0 then
+		return
+	end
+
+	if assault_candidates then
+		for criminal_key, criminal_data in pairs(self._char_criminals) do
+			if not criminal_data.status then
+				local nav_seg = criminal_data.tracker:nav_segment()
+				local area = self:get_area_from_nav_seg_id(nav_seg)
+				found_areas[area] = true
+				
+				for _, nbr in pairs(area.neighbours) do
+					found_areas[nbr] = true
+				end
+
+				table.insert(assault_candidates, area)
+			end
+		end
+	end
+
+	local i = 1
+
+	repeat
+		local area = to_search_areas[i]
+		local force_factor = area.factors.force
+		local demand = force_factor and force_factor.force
+		local nr_police = table.size(area.police.units)
+		local nr_criminals = table.size(area.criminal.units)
+
+		if reenforce_candidates and demand and demand > 0 then
+			local area_free = true
+
+			if area_free then
+				table.insert(reenforce_candidates, area)
+			end
+		end
+
+		if recon_candidates and area.loot or recon_candidates and area.hostages then
+			local occupied = nil
+
+			if not occupied then
+				local is_area_safe = nr_criminals == 0
+
+				if is_area_safe then
+					if are_recon_candidates_safe then
+						table.insert(recon_candidates, area)
+					else
+						are_recon_candidates_safe = true
+						recon_candidates = {
+							area
+						}
+					end
+				elseif not are_recon_candidates_safe then
+					table.insert(recon_candidates, area)
+				end
+			end
+		end
+
+		if assault_candidates then
+			for criminal_key, _ in pairs(area.criminal.units) do
+				if self._player_criminals and self._player_criminals[criminal_key] and not self._player_criminals[criminal_key].is_deployable then
+					table.insert(assault_candidates, area)
+
+					break
+				end
+			end
+		end
+
+		if nr_criminals == 0 then
+			for neighbour_area_id, neighbour_area in pairs(area.neighbours) do
+				if not found_areas[neighbour_area_id] then
+					table.insert(to_search_areas, neighbour_area)
+
+					found_areas[neighbour_area_id] = true
+				end
+			end
+		end
+
+		i = i + 1
+	until i > #to_search_areas
+
+	if assault_candidates and #assault_candidates > 0 then
+		self:_begin_assault_task(assault_candidates)
+	end
+
+	if recon_candidates and #recon_candidates > 0 then
+		local recon_area = recon_candidates[math.random(#recon_candidates)]
+
+		self:_begin_recon_task(recon_area)
+	end
+
+	if reenforce_candidates and #reenforce_candidates > 0 then
+		local lucky_i_candidate = math.random(#reenforce_candidates)
+		local reenforce_area = reenforce_candidates[lucky_i_candidate]
+
+		self:_begin_reenforce_task(reenforce_area)
+	end
+end
+
 function GroupAIStateBesiege:_upd_assault_areas(current_area)
 	local all_areas = self._area_data
 	local nav_manager = managers.navigation

@@ -76,8 +76,59 @@ function DialogManager:queue_dialog(id, ...)
 			end		
 		end	
 	
+		--Biker Heist Day 1--				
+		if id == "Play_pln_brn_11" then
+			if difficulty_index <= 2 then
+				escape_time = 1050
+			elseif difficulty_index == 3 then
+				escape_time = 1020
+			elseif difficulty_index == 4 then
+				escape_time = 990
+			elseif difficulty_index == 5 then
+				escape_time = 960	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 930					
+			else
+				escape_time = 900
+			end		
+		end	
+	
+		--Biker Heist Day 2--				
+		if id == "Play_pln_chw_01" then
+			if difficulty_index <= 2 then
+				escape_time = 1050
+			elseif difficulty_index == 3 then
+				escape_time = 1020
+			elseif difficulty_index == 4 then
+				escape_time = 990
+			elseif difficulty_index == 5 then
+				escape_time = 960	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 930					
+			else
+				escape_time = 900
+			end		
+		end		
+	
 		--Alaskan Deal--				
 		if id == "Play_cpt_wwh_16" then
+			if difficulty_index <= 2 then
+				escape_time = 1050
+			elseif difficulty_index == 3 then
+				escape_time = 1020
+			elseif difficulty_index == 4 then
+				escape_time = 990
+			elseif difficulty_index == 5 then
+				escape_time = 960	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 930					
+			else
+				escape_time = 900
+			end		
+		end	
+	
+		--The Alesso Heist--				
+		if id == "Play_pln_al1_49" then
 			if difficulty_index <= 2 then
 				escape_time = 1050
 			elseif difficulty_index == 3 then
@@ -143,6 +194,40 @@ function DialogManager:queue_dialog(id, ...)
 				escape_time = 300
 			end
 		end	
+	
+		--Brook 10-10 on crackhead mode? This brings new insanity--				
+		if id == "Play_cha_spa_14" then
+			if difficulty_index <= 2 then
+				escape_time = 450 
+			elseif difficulty_index == 3 then
+				escape_time = 420
+			elseif difficulty_index == 4 then
+				escape_time = 390
+			elseif difficulty_index == 5 then
+				escape_time = 360	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 330						
+			else
+				escape_time = 300
+			end
+		end	
+	
+		--Brooklyn Bank--				
+		if id == "Play_loc_brb_53" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end	
+		end
 	
 		--Jewelery Store & Ukrainian Job--				
 		if id == "Play_pln_ukranian_stage1_28" then
@@ -314,6 +399,57 @@ function DialogManager:queue_dialog(id, ...)
 			end
 		end	
 	
+		--Goat Simulator Day 1--		
+		if id == "Play_vld_pt1_05b" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end
+		end
+	
+		--Goat Simulator Day 2--		
+		if id == "Play_pln_pt2_16" then
+			if difficulty_index <= 2 then
+				escape_time = 1200 
+			elseif difficulty_index == 3 then
+				escape_time = 1170
+			elseif difficulty_index == 4 then
+				escape_time = 1140
+			elseif difficulty_index == 5 then
+				escape_time = 1080	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 1080						
+			else
+				escape_time = 1050
+			end
+		end
+	
+		--Golden Grin Casino--		
+		if id == "Play_pln_ca1_158" then
+			if difficulty_index <= 2 then
+				escape_time = 1200 
+			elseif difficulty_index == 3 then
+				escape_time = 1170
+			elseif difficulty_index == 4 then
+				escape_time = 1140
+			elseif difficulty_index == 5 then
+				escape_time = 1080	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 1080						
+			else
+				escape_time = 1050
+			end
+		end
+	
 		--Highland Mortuary--		
 		if id == "Play_loc_rvd_14" then
 			if difficulty_index <= 2 then
@@ -330,6 +466,40 @@ function DialogManager:queue_dialog(id, ...)
 				escape_time = 300
 			end	
 		end	
+	
+		--Garnet Group Boutique--		
+		if id == "Play_pln_rvd_48a" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end
+		end	
+	
+		--Shacklethorne Auction--		
+		if id == "Play_loc_sah_85" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end
+		end	
 		
 		--Beneath The Mountain--			
 		if id == "Play_loc_jr1_49" then
@@ -345,6 +515,23 @@ function DialogManager:queue_dialog(id, ...)
 				escape_time = 330						
 			else
 				escape_time = 300
+			end	
+		end
+		
+		--Birth of Sky--			
+		if id == "Play_loc_jr2_27" then
+			if difficulty_index <= 2 then
+				escape_time = 1050
+			elseif difficulty_index == 3 then
+				escape_time = 1020
+			elseif difficulty_index == 4 then
+				escape_time = 990
+			elseif difficulty_index == 5 then
+				escape_time = 960	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 930					
+			else
+				escape_time = 900
 			end	
 		end	
 	
@@ -367,6 +554,57 @@ function DialogManager:queue_dialog(id, ...)
 	
 		--Boiling Point--
 		if id == "Play_pln_mad_45" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end
+		end	
+	
+		--San Martin Bank--
+		if id == "Play_loc_bex_108" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end
+		end	
+	
+		--Breakfast In Tijuana--
+		if id == "Play_loc_pex_102" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end
+		end	
+	
+		--Henry's Rock--
+		if id == "Play_loc_des_84" then
 			if difficulty_index <= 2 then
 				escape_time = 690
 			elseif difficulty_index == 3 then
@@ -552,7 +790,24 @@ function DialogManager:queue_dialog(id, ...)
 			else
 				escape_time = 300
 			end
-		end				
+		end					
+
+		--Aftershock--
+		if id == "Play_plt_as1_01" then
+			if difficulty_index <= 2 then
+				escape_time = 510
+			elseif difficulty_index == 3 then
+				escape_time = 480
+			elseif difficulty_index == 4 then
+				escape_time = 540
+			elseif difficulty_index == 5 then
+				escape_time = 420	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 390					
+			else
+				escape_time = 360
+			end			
+		end		
 	
 		--H&T Bank Heist (all versions)--
 		if id == "pln_branchbank_stage1_08" or id == "pln_branchbank_stage1_13" or id == "pln_branchbank_stage1_44" or id == "pln_branchbank_stage1_29" then
@@ -573,6 +828,23 @@ function DialogManager:queue_dialog(id, ...)
 		
 		--Hoxton Revenge--
 		if id == "Play_pln_hb3_42" then
+			if difficulty_index <= 2 then
+				escape_time = 570
+			elseif difficulty_index == 3 then
+				escape_time = 540
+			elseif difficulty_index == 4 then
+				escape_time = 510
+			elseif difficulty_index == 5 then
+				escape_time = 480	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 450						
+			else
+				escape_time = 420
+			end			
+		end		
+		
+		--Stealing Xmas--
+		if id == "Play_pln_moon_27" then
 			if difficulty_index <= 2 then
 				escape_time = 570
 			elseif difficulty_index == 3 then

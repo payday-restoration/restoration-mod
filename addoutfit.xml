@@ -16,30 +16,6 @@
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_nm" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit_gsma" />
     
-	<!--///Prison Suit FPS Chains\\\-->
-	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" />
-	<object path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" />
-	<model path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" />
-	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" />
-	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains_df" />
-    
-	<!--///Prison Suit FPS Syndey\\\-->
-	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" />
-	<object path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" />
-	<model path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" />
-	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" />
-	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney_df" />
-    
-	<!--///Prison Suit FPS Sangres\\\-->
-	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" />
-	<object path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" />
-	<model path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" />
-	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" />
-	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres_df" />
-    
 	<!--///Prison Suit\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" />
 	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit" />
@@ -53,7 +29,6 @@
 	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_pale_df" />	
     
 	<!--///Prison Suit Big\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" />
@@ -61,30 +36,6 @@
 	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_big/res_acc_prison_suit_big" />
-    
-	<!--///Prison Suit Chains\\\-->
-	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" />
-	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" />
-	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" />
-	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" />
-	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains_df" />
-    
-	<!--///Prison Suit Sydney\\\-->
-	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" />
-	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" />
-	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" />
-	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" />
-	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney_df" />
-    
-	<!--///Prison Suit Sangres\\\-->
-	<unit path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" />
-	<object path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" />
-	<model path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" />
-	<material_config path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" />
-	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres_df" />
     
 	<!--///Sunny-Side Robber FPS Chains\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains" />
@@ -152,7 +103,6 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_df" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit_nm" />
     
 	<!--///Sunny-Side Robber Big\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big" />
@@ -190,8 +140,6 @@
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_df" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket_nm" />
     
 	<!--///Sunny-Side Robber Bodhi\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
@@ -200,7 +148,6 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_df" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_nm" />
     
 	<!--///Sunny-Side Robber Rust\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" />
@@ -209,7 +156,6 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" />	
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust_df" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust_nm" />
     
 	<!--///Sunny-Side Robber Joy\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" />
@@ -217,7 +163,6 @@
 	<model path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" />
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy_df" />
     
 	<!--///Sunny-Side Robber Sangres\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" />
@@ -226,7 +171,6 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres_df" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres_nm" />
     
 	<!--///COMBAT OUTFIT\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit" />
@@ -244,18 +188,6 @@
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_df" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_nm" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit/player_tactical_outfit_fp_gsma" />
-	
-	
-	<unit path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
-	<object path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
-	<model path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
-	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
-	<material_config path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/fps_arms_jacket_df" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/fps_arms_jacket_nm" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/player_tactical_outfit_fp_df" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/player_tactical_outfit_fp_nm" />
-	<texture path="units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/player_tactical_outfit_fp_gsma" />
 
 	<unit path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" />
 	<object path="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" />

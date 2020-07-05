@@ -43,10 +43,10 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 			chains = "set_arms_male_chains",
 			sydney = "set_arms_female_sydney"
 		},
-		--deal with loud suit clipping you fucking cunts i cant chose between hiding the clipping in third OR having wrists in first not like overkill care about clipping so why not stoop to their level FUCK YOU FUCK YOU
+        --this is for FPS
 		player_style_exclude_list = {
 			"none",
-			"suit_sunny", --doesnt fucking work for literally no reason i hate this fucking update im going to go and live in the woods
+			"suit_sunny",
 			"suit_prison",
 			"slaughterhouse"
 		}
@@ -76,7 +76,7 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 		suit_sunny = "heist_default",
 		loud_suit = "none",
 		poggers = "esport",
-		suit_prison = "none"
+		suit_prison = "saints"
 	}
 	self.gloves.default = {
 		name_id = "bm_gloves_default",
@@ -758,6 +758,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		vest = true
 	}	
 	local body_replacement_standard = {
+		arms = true,
 		head = false,
 		armor = true,
 		body = true,
@@ -767,13 +768,13 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 	local body_replacement_armor = {
 		arms = true,
 		head = false,
-		head = false,
 		armor = false,
 		body = true,
 		hands = true,
 		vest = true
 	}
 	local body_replacement_hands = {
+		arms = true,
 		head = false,
 		armor = true,
 		body = true,
@@ -781,6 +782,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		vest = true
 	}
 	local body_replacement_hands_bodhi = {
+		arms = true,
 		head = false,
 		armor = true,
 		body = false,
@@ -964,7 +966,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 			achievement = "glace_1"
 		},
 		texture_bundle_folder = "trd",
-		body_replacement = body_replacement_fuck_the_new_raincoat,
+		body_replacement = body_replacement_hands,
 		third_body_replacement = body_replacement_fuck_the_new_raincoat,
 		characters = {}
 	}
@@ -1064,7 +1066,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 	})
 	set_characters_data("loud_suit", characters_bodhi, {
-		body_replacement = body_replacement_hands_bodhi,
+		body_replacement = body_replacement_hands,
 		third_body_replacement = body_replacement_armor,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
@@ -1083,16 +1085,16 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 	})
 	set_characters_data("loud_suit", characters_sangres, {
-		body_replacement = body_replacement_fuck_the_new_raincoat ,
+		body_replacement = body_replacement_hands,
 		third_body_replacement = body_replacement_armor,
 		keep_wrists = false,
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit/res_acc_fps_loud_suit",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 	})
 	set_characters_data("loud_suit", characters_jacket, {
-		body_replacement = body_replacement_standard,
+		body_replacement = body_replacement_hands,
 		third_body_replacement = body_replacement_armor,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit_jacket/res_acc_fps_loud_suit_jacket",
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_loud_suit_2/res_acc_fps_loud_suit_2",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit"
 	})
 	set_characters_data("loud_suit", characters_male_big, {
@@ -1248,12 +1250,12 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 	})
 	set_characters_data("suit_prison", characters_chains, {
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit_chains/res_acc_fps_prison_suit_chains",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_chains/res_acc_prison_suit_chains"
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 	})
 	set_characters_data("suit_prison", characters_sangres, {
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sangres/res_acc_fps_prison_suit_sangres",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_sangres/res_acc_prison_suit_sangres"
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit/res_acc_prison_suit"
 	})
 	set_characters_data("suit_prison", characters_bodhi, {
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
@@ -1280,8 +1282,8 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female"
 	})
 	set_characters_data("suit_prison", characters_sydney, {
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit_sydney/res_acc_fps_prison_suit_sydney",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_sydney/res_acc_prison_suit_sydney"
+		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_prison_suit_female/res_acc_prison_suit_female"
 	})
 	set_characters_data("suit_prison", characters_joy, {
 		unit = "units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit",

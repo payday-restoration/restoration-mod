@@ -4,7 +4,7 @@ function DialogManager:queue_dialog(id, ...)
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 	
-	log("SC: Found Event! " .. id)
+	--log("SC: Found Event! " .. id)
 			
 	if Global.game_settings and Global.game_settings.one_down then
 	

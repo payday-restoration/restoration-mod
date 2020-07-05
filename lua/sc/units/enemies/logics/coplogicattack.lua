@@ -656,7 +656,13 @@ function CopLogicAttack._chk_request_action_walk_to_cover(data, my_data)
 		--randomize enemy crouching to make enemies feel less easy to aim at, the fact they're always crouching all over the place always bugged me, plus, they shouldn't need to crouch so often when you're at long distances from them
 		
 		if not data.unit:movement():cool() and not managers.groupai:state():whisper_mode() then
-			if stand_chance ~= 1 and crouch_roll > stand_chance and pose_chk or data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.crouch then
+			if data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.crouch then
+				end_pose = "crouch"
+				pose = "crouch"
+			elseif data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.stand then
+				end_pose = "stand"
+				pose = "stand"
+			elseif stand_chance ~= 1 and crouch_roll > stand_chance then
 				end_pose = "crouch"
 				pose = "crouch"
 			else
@@ -793,7 +799,13 @@ function CopLogicAttack._chk_request_action_walk_to_cover_shoot_pos(data, my_dat
 		--randomize enemy crouching to make enemies feel less easy to aim at, the fact they're always crouching all over the place always bugged me, plus, they shouldn't need to crouch so often when you're at long distances from them
 		
 		if not data.unit:movement():cool() and not managers.groupai:state():whisper_mode() then
-			if stand_chance ~= 1 and crouch_roll > stand_chance and pose_chk or data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.crouch then
+			if data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.crouch then
+				end_pose = "crouch"
+				pose = "crouch"
+			elseif data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.stand then
+				end_pose = "stand"
+				pose = "stand"
+			elseif stand_chance ~= 1 and crouch_roll > stand_chance then
 				end_pose = "crouch"
 				pose = "crouch"
 			else

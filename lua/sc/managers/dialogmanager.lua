@@ -60,7 +60,7 @@ function DialogManager:queue_dialog(id, ...)
 		end	
 	
 		--Border Crossing--				
-		if id == "Play_loc_mex_63" then
+		if id == "Play_loc_mex_66" then
 			if difficulty_index <= 2 then
 				escape_time = 1650 
 			elseif difficulty_index == 3 then

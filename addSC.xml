@@ -1203,9 +1203,8 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_contour" force="false"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_husk" force="false" load="true"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_head_df" force="false"/>
+	<!-- <texture path="units/pd2_dlc_vip/characters/ene_summers/summers_head_df" force="false"/> -->
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_body_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_body_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_df" force="false"/>
@@ -1231,7 +1230,7 @@
 	<texture path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/dragon_df" force="false"/>
 	<unit path="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2/wpn_fps_fla_mk2_summers_npc" load="false" force="false"/>
 
-	<!--Summer's Gang-->
+	<!--Summers' Gang-->
 	<object path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
 	<model path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
@@ -1241,7 +1240,6 @@
 	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_husk" force="false" load="true"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_nm" force="false"/>	
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_nm" force="false"/>	
@@ -1255,10 +1253,7 @@
 	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_husk" force="false" load="true"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_nm" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_face_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_face_nm" force="false"/>	
 
 	<unit path="units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_summers_npc" load="false" force="false"/>
 
@@ -1272,8 +1267,6 @@
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_head_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_nm" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_face_df" force="false"/>	
 	
 

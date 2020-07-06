@@ -26,7 +26,6 @@ function PlayerCarry:_get_max_walk_speed(...)
 	return PlayerCarry.super._get_max_walk_speed(self, ...) * multiplier
 end
 
---Temporarily disabled due to detection going way too fast.
 function PlayerCarry:_upd_attention()
 	if managers.groupai:state():whisper_mode() and not self._state_data.ducking then
 		local preset = {

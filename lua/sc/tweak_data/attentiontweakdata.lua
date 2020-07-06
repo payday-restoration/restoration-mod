@@ -26,7 +26,7 @@ end)
 
 Hooks:PostHook(AttentionTweakData, "_init_player", "resmod_civilian", function(self)
 	self.settings.pl_mask_on_foe_combatant_whisper_mode_stand_bag = {
-		max_range = 2800,
+		max_range = 3000,
 		reaction = "REACT_COMBAT",
 		notice_delay_mul = 1.5,
 		relation = "foe",
@@ -38,7 +38,7 @@ Hooks:PostHook(AttentionTweakData, "_init_player", "resmod_civilian", function(s
 		release_delay = 1
 	}
 	self.settings.pl_mask_on_foe_non_combatant_whisper_mode_stand_bag = {
-		uncover_range = 1000,
+		uncover_range = 1200,
 		reaction = "REACT_COMBAT",
 		notice_delay_mul = 1,
 		notice_requires_FOV = true,

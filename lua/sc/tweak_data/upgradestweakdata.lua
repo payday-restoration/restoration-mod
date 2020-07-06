@@ -826,7 +826,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.recoil_index_addend = {1}
 					self.values.assault_rifle.recoil_index_addend = {1}
 				--Ace
-					self.values.player.not_moving_accuracy_increase = {1}
+					self.values.player.not_moving_accuracy_increase = {2}
 				
 			--Kilmer
 				--Basic
@@ -844,8 +844,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.weapon.enter_steelsight_speed_multiplier = {1.5}
 				--Ace
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.6}
-					self.values.snp.steelsight_accuracy_inc = {0.6}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.65}
+					self.values.snp.steelsight_accuracy_inc = {0.65}
 					
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {

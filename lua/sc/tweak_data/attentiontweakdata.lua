@@ -24,6 +24,31 @@ Hooks:PostHook(AttentionTweakData, "_init_drill", "resmod_drill", function(self)
 
 end)
 
+Hooks:PostHook(AttentionTweakData, "_init_player", "resmod_civilian", function(self)
+	self.settings.pl_mask_on_foe_combatant_whisper_mode_stand_bag = {
+		max_range = 2800,
+		reaction = "REACT_COMBAT",
+		notice_delay_mul = 1.5,
+		relation = "foe",
+		filter = "combatant",
+		uncover_range = 300,
+		notice_requires_FOV = true,
+		notice_clbk = "clbk_attention_notice_sneak",
+		verification_interval = 0.1,
+		release_delay = 1
+	}
+	self.settings.pl_mask_on_foe_non_combatant_whisper_mode_stand_bag = {
+		uncover_range = 1000,
+		reaction = "REACT_COMBAT",
+		notice_delay_mul = 1,
+		notice_requires_FOV = true,
+		notice_clbk = "clbk_attention_notice_sneak",
+		verification_interval = 0.1,
+		release_delay = 1,
+		filter = "non_combatant"
+	}
+end)
+
 Hooks:PostHook(AttentionTweakData, "_init_civilian", "resmod_civilian", function(self)
 
 	self.settings.civ_enemy_cbt = {

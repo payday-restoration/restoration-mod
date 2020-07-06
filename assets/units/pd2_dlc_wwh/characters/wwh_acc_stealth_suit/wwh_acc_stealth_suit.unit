@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="wwh" slot="1">
+	<object file="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit" />
+
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_vox" />
+	</dependencies>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="PlayerBodyBoneMergeBase">
+			<var name="original_material" value="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit" />
+			<var name="contour_material" value="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit_contour" />
+			<var name="bonemerge_success_sequence" value="int_seq_hide_body"/>
+		</extension>
+		<extension name="contour" class="ContourExt"/>
+	</extensions>
+
+</unit>

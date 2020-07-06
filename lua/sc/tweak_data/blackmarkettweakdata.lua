@@ -45,6 +45,7 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 		},
 		player_style_exclude_list = {
 			"none",
+			"two_piece_suit",
 			"suit_sunny",
 			"suit_prison",
 			"slaughterhouse"
@@ -73,7 +74,7 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 		murky_suit = "murky",
 		tux = "heist_default",
 		suit_sunny = "heist_default",
-		loud_suit = "none",
+		loud_suit = "heist_default",
 		poggers = "esport",
 		suit_prison = "saints"
 	}

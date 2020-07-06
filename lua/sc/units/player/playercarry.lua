@@ -29,10 +29,10 @@ end
 function PlayerCarry:_upd_attention()
 	if managers.groupai:state():whisper_mode() and not self._state_data.ducking then
 		local preset = {
-			"pl_mask_on_friend_combatant_whisper_mode",
-			"pl_mask_on_friend_non_combatant_whisper_mode",
-			"pl_mask_on_foe_combatant_whisper_mode_stand_bag",
-			"pl_mask_on_foe_non_combatant_whisper_mode_stand_bag"
+			"pl_friend_combatant_cbt",
+			"pl_friend_non_combatant_cbt",
+			"pl_foe_combatant_cbt_stand",
+			"pl_foe_non_combatant_cbt_stand"
 		}
 
 		self._ext_movement:set_attention_settings(preset)

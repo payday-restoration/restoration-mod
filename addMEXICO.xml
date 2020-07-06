@@ -52,7 +52,7 @@
 	<object path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
 	<model path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
 	<unit path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" load="true"/>
-	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_sc_df" />
+	<texture path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_df" />
 	<material_config path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc"/>	
 	<!--Smol-->
 	<object path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />

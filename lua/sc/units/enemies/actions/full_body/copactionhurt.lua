@@ -894,6 +894,13 @@ function CopActionHurt:init(action_desc, common_data)
 			end
 		elseif action_type == "death" then
 			common_data.unit:sound():say("x02a_any_3p")
+	        if self._unit:base():char_tweak()["custom_voicework"] then
+	        	local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
+	        	if voicelines and voicelines["death"] then
+	        		local line_to_use = voicelines.death[math.random(#voicelines.death)]
+	        		self._unit:base():play_voiceline(line_to_use, true)
+	        	end
+	        end
 		elseif action_type == "counter_tased" or action_type == "taser_tased" or action_desc.variant == "tase" then
 			if common_data.ext_base:has_tag("taser") or common_data.ext_base:has_tag("taser_titan") then
 				common_data.unit:sound():say("tasered")

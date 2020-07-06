@@ -59,6 +59,23 @@ function DialogManager:queue_dialog(id, ...)
 			end	
 		end	
 	
+		--Metldown--				
+		if id == "Play_vld_ko1b_03" then
+			if difficulty_index <= 2 then
+				escape_time = 1650 
+			elseif difficulty_index == 3 then
+				escape_time = 1620
+			elseif difficulty_index == 4 then
+				escape_time = 1590
+			elseif difficulty_index == 5 then
+				escape_time = 1560	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 1530					
+			else
+				escape_time = 1500
+			end		
+		end	
+	
 		--Border Crossing--				
 		if id == "Play_loc_mex_66" then
 			if difficulty_index <= 2 then

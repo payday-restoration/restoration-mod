@@ -43,7 +43,6 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 			chains = "set_arms_male_chains",
 			sydney = "set_arms_female_sydney"
 		},
-        --this is for FPS
 		player_style_exclude_list = {
 			"none",
 			"suit_sunny",
@@ -774,8 +773,8 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		vest = true
 	}
 	local body_replacement_hands = {
-		arms = true,
-		head = false,
+		arms = false,
+		head = true,
 		armor = true,
 		body = true,
 		hands = false,
@@ -790,6 +789,7 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		vest = true
 	}
 	local body_replacement_fps = {
+		arms = true,
 		head = true,
 		armor = true,
 		body = false,
@@ -1038,7 +1038,6 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 		texture_bundle_folder = "mods",
 		unlocked = true,
 		global_value = "sc",
-		keep_wrists = true,
 		characters = {}
 	}
 	set_characters_data("loud_suit", characters_male, {

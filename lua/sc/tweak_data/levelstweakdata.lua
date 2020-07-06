@@ -37,7 +37,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
 	
-	self.pex.package = {"packages/mexicoassets", "packages/job_pex"}
+	self.pex.package = {"packages/mexicoassets", "packages/addslaughter", "packages/job_pex"}
+	self.pex.player_style = "slaughterhouse"
 	
 	--///MURKYWATER LEVELS\\\--
 	self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}

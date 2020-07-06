@@ -8661,6 +8661,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--self.shatters_fury.custom = true
 	
 	--OICW
+	self.osipr.use_data.selection_index = 4	--Hey, you're not supposed to know I exist... yet.	
 	self.osipr.tactical_reload = 1		
 	self.osipr.AMMO_MAX = 120
 	self.osipr.AMMO_PICKUP = self:_pickup_chance(120, 2)

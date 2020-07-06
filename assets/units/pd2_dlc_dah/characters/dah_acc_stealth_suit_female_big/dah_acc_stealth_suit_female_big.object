@@ -3,7 +3,7 @@
 	<diesel materials="units/pd2_dlc_dah/characters/dah_acc_stealth_suit_female_big/dah_acc_stealth_suit_female_big" orientation_object="root_point" />
 
 <graphics>
-		<object name="g_body_female_big" enabled="true" />
+		<object name="g_body" enabled="true" />
 
 	</graphics>
 

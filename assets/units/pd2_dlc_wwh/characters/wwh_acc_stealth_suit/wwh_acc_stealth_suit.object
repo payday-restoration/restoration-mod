@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<dynamic_object>
-	<diesel materials="units/pd2_dlc_wwh/characters/wwh_acc_stealth_suit/wwh_acc_stealth_suit" orientation_object="root_point" />
-
-<graphics>
-		<object name="g_body" enabled="true" />
-	</graphics>
-
-</dynamic_object>

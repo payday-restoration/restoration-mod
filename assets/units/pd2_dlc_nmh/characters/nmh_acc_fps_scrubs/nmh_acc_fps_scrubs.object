@@ -3,7 +3,7 @@
 	<diesel materials="units/pd2_dlc_nmh/characters/nmh_acc_fps_scrubs/nmh_acc_fps_scrubs" orientation_object="root_point" />
 
 <graphics>
-	<graphic_group name="GraphicGroupName" enabled="true" culling_object="co_box">
+	<graphic_group name="GraphicGroupName" enabled="true" culling_object="c_cull">
 		<object name="g_scrubs" enabled="true" />
 	</graphic_group>
 </graphics>

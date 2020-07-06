@@ -5,7 +5,6 @@
 
 <graphics>
 		<object name="g_g" enabled="true" />
-		<object name="g_hands" enabled="true" />
 		<object name="g_stethoscope" enabled="true" />	
 		<object name="g_anna" enabled="true" />
 		<object name="g_melanie" enabled="false" />

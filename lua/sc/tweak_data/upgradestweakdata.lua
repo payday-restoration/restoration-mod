@@ -368,7 +368,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
 	self.values.player.extra_revive_health = {0.25} --Bonus health % to add when getting up. Used by Muscle and Stoic.
-	self.values.player.no_deflection = {true} --Removes health DR. Used by Grinder and Stoic.
+	self.values.player.no_deflection = {true} --Removes health DR. Used by Stoic.
 	
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
@@ -1370,7 +1370,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Hey you're getting your grinder on my grinder
-	self.values.player.level_5_armor_addend = {-5}
+	self.values.player.level_5_armor_addend = {-7}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,

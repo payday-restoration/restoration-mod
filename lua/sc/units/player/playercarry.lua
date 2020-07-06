@@ -26,9 +26,10 @@ function PlayerCarry:_get_max_walk_speed(...)
 	return PlayerCarry.super._get_max_walk_speed(self, ...) * multiplier
 end
 
+--Temporarily disabled due to detection going way too fast.
 function PlayerCarry:_upd_attention()
 	if managers.groupai:state():whisper_mode() and not self._state_data.ducking then
-		preset = {
+		local preset = {
 			"pl_mask_on_friend_combatant_whisper_mode",
 			"pl_mask_on_friend_non_combatant_whisper_mode",
 			"pl_mask_on_foe_combatant_whisper_mode_stand_bag",

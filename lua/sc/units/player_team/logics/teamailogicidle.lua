@@ -55,6 +55,15 @@ function TeamAILogicIdle.enter(data, new_logic_name, enter_params)
 
 	if data.unit:movement():stance_name() == "cbt" then
 		data.unit:movement():set_stance("hos")
+
+		if not data.unit:anim_data().reload then
+			local new_action = {
+				body_part = 3,
+				type = "idle"
+			}
+
+			data.brain:action_request(new_action)
+		end
 	end
 
 	data.unit:movement():set_allow_fire(false)

@@ -597,6 +597,8 @@
 	"gm_gms_free_of_charge_message" : "{1} is free of charge and can be applied to as many weapons as you wish.",
 	"gm_gms_cannot_afford_message" : "You cannot purchase {1}, as you do not have enough {3} to afford it. To purchase {1}, you need {2} {3}",
 
+	"bm_menu_amount_locked" : "NONE IN STOCK",
+
 	"pdth_hud_challenges" : "Challenges",
 	"pdth_hud_challenges_hint" : "View your completed and active challenges",
 	"pdth_hud_active_challenges" : "Active Challenges",

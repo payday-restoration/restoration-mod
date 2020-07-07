@@ -5659,29 +5659,35 @@ function BlackMarketGui.populate_masks(self, data)
 
 end
 
-local populate_choose_mask_mod1 = BlackMarketGui.populate_choose_mask_mod
 Hooks:RegisterHook("BlackMarketGUIOnPopulateMaskMods")
 Hooks:RegisterHook("BlackMarketGUIOnPopulateMaskModsActionList")
 function BlackMarketGui.populate_choose_mask_mod(self, data)
-populate_choose_mask_mod1(self, data)
+
 	Hooks:Call("BlackMarketGUIOnPopulateMaskMods", self, data)
 
 	local new_data = {}
 	local index = 1
 	local equipped_mod = managers.blackmarket:customize_mask_category_id(data.category)
-	local guis_catalog = "guis/"
+	local num_data = #data
+
+	for i = 1, num_data, 1 do
+		data[i] = nil
+	end
+
 	local type_func = type
+	local guis_catalog = "guis/"
 
-	for k, mods in pairs(data.on_create_data) do
-
+	for type, mods in pairs(data.on_create_data) do
 		guis_catalog = "guis/"
 		local bundle_folder = tweak_data.blackmarket[data.category][mods.id] and tweak_data.blackmarket[data.category][mods.id].texture_bundle_folder
+
 		if bundle_folder then
 			guis_catalog = guis_catalog .. "dlcs/" .. tostring(bundle_folder) .. "/"
 		end
 
-		new_data = {}
-		new_data.name = mods.id
+		new_data = {
+			name = mods.id
+		}
 		new_data.name_localized = managers.localization:text(tweak_data.blackmarket[data.category][new_data.name].name_id)
 		new_data.category = data.category
 		new_data.slot = index
@@ -5694,26 +5700,31 @@ populate_choose_mask_mod1(self, data)
 		new_data.stream = data.category ~= "colors"
 		new_data.global_value = mods.global_value
 		local is_locked = false
+
 		if new_data.amount < 1 and mods.id ~= "plastic" and mods.id ~= "no_color_full_material" and not mods.free_of_charge then
-			if type(new_data.unlocked) == "number" then
-				new_data.unlocked = -math.abs(new_data.unlocked)
-			end
 			new_data.lock_texture = true
 			new_data.dlc_locked = "bm_menu_amount_locked"
 			is_locked = true
 		end
+
 		if new_data.unlocked and type_func(new_data.unlocked) == "number" and tweak_data.lootdrop.global_values[new_data.global_value] and tweak_data.lootdrop.global_values[new_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(new_data.global_value) then
 			new_data.unlocked = -math.abs(new_data.unlocked)
 			new_data.lock_texture = self:get_lock_icon(new_data)
 			new_data.dlc_locked = tweak_data.lootdrop.global_values[new_data.global_value].unlock_id or "bm_menu_dlc_locked"
 			is_locked = true
 		end
+
+		local active = true
+
 		if data.category == "colors" then
 			new_data.bitmap_texture = "guis/textures/pd2/blackmarket/icons/colors/color_bg"
 			new_data.extra_bitmaps = {}
+
 			table.insert(new_data.extra_bitmaps, "guis/textures/pd2/blackmarket/icons/colors/color_02")
 			table.insert(new_data.extra_bitmaps, "guis/textures/pd2/blackmarket/icons/colors/color_01")
+
 			new_data.extra_bitmaps_colors = {}
+
 			table.insert(new_data.extra_bitmaps_colors, tweak_data.blackmarket.colors[new_data.name].colors[2])
 			table.insert(new_data.extra_bitmaps_colors, tweak_data.blackmarket.colors[new_data.name].colors[1])
 		elseif data.category == "textures" then
@@ -5721,23 +5732,22 @@ populate_choose_mask_mod1(self, data)
 			new_data.render_template = Idstring("VertexColorTexturedPatterns")
 		else
 			new_data.bitmap_texture = guis_catalog .. "textures/pd2/blackmarket/icons/" .. tostring(data.category) .. "/" .. new_data.name
-			if mods.bitmap_texture_override then
-				new_data.bitmap_texture = guis_catalog .. "textures/pd2/blackmarket/icons/" .. tostring(data.category) .. "/" .. mods.bitmap_texture_override
-			end
 		end
 
 		if managers.blackmarket:got_new_drop(new_data.global_value or "normal", new_data.category, new_data.name) then
 			new_data.mini_icons = new_data.mini_icons or {}
+
 			table.insert(new_data.mini_icons, {
-				name = "new_drop",
 				texture = "guis/textures/pd2/blackmarket/inv_newdrop",
-				right = 0,
+				name = "new_drop",
+				h = 16,
+				w = 16,
 				top = 0,
 				layer = 1,
-				w = 16,
-				h = 16,
-				stream = false
+				stream = false,
+				right = 0
 			})
+
 			new_data.new_drop_data = {
 				new_data.global_value or "normal",
 				new_data.category,
@@ -5748,11 +5758,10 @@ populate_choose_mask_mod1(self, data)
 		new_data.btn_text_params = {
 			type = managers.localization:text("bm_menu_" .. data.category)
 		}
-		if not is_locked then
 
+		if not is_locked and active then
 			table.insert(new_data, "mp_choose")
 			table.insert(new_data, "mp_preview")
-
 		end
 
 		if managers.blackmarket:can_finish_customize_mask() and managers.blackmarket:can_afford_customize_mask() then
@@ -5763,34 +5772,38 @@ populate_choose_mask_mod1(self, data)
 
 		data[index] = new_data
 		index = index + 1
-
 	end
 
 	if #data == 0 then
-		new_data = {}
-		new_data.name = "bm_menu_nothing"
-		new_data.empty_slot = true
-		new_data.category = data.category
-		new_data.slot = 1
-		new_data.unlocked = true
-		new_data.can_afford = true
-		new_data.equipped = false
+		new_data = {
+			name = "bm_menu_nothing",
+			empty_slot = true,
+			category = data.category,
+			slot = 1,
+			unlocked = true,
+			can_afford = true,
+			equipped = false
+		}
+
+		table.insert(new_data, "mm_preview")
+
 		data[1] = new_data
 	end
 
 	local max_mask_mods = #data.on_create_data
-	for i = 1, math.ceil(max_mask_mods / data.override_slots[1]) * data.override_slots[1] do
+
+	for i = 1, math.ceil(max_mask_mods / data.override_slots[1]) * data.override_slots[1], 1 do
 		if not data[i] then
-			new_data = {}
-			new_data.name = "empty"
-			new_data.name_localized = ""
-			new_data.category = data.category
-			new_data.slot = i
-			new_data.unlocked = true
-			new_data.equipped = false
+			new_data = {
+				name = "empty",
+				name_localized = "",
+				category = data.category,
+				slot = i,
+				unlocked = true,
+				equipped = false
+			}
 			data[i] = new_data
 		end
-
 	end
 
 end

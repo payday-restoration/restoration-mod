@@ -967,7 +967,7 @@ function CopActionHurt:init(action_desc, common_data)
 	CopActionAct._create_blocks_table(self, action_desc.blocks)
 	common_data.ext_movement:enable_update()
 
-	if self._is_server then
+	if self._is_server and action_type ~= "death" then
 		if action_desc.body_part == 1 or action_desc.body_part == 2 then
 			local stand_rsrv = common_data.ext_brain:get_pos_rsrv("stand")
 

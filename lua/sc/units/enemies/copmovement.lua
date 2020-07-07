@@ -189,25 +189,32 @@ end
 function CopMovement:_upd_actions(t)
 	local a_actions = self._active_actions
 	local has_no_action = true
+
 	for i_action, action in ipairs(a_actions) do
 		if action then
 			if action.update then
 				action:update(t)
 			end
+
 			if not self._need_upd and action.need_upd then
 				self._need_upd = action:need_upd()
 			end
+
 			if action.expired and action:expired() then
 				a_actions[i_action] = false
+
 				if action.on_exit then
 					action:on_exit()
 				end
+
 				self._ext_brain:action_complete_clbk(action)
 				self._ext_base:chk_freeze_anims()
+
 				for _, action in ipairs(a_actions) do
 					if action then
 						has_no_action = nil
-					else
+
+						break
 					end
 				end
 			else
@@ -215,22 +222,57 @@ function CopMovement:_upd_actions(t)
 			end
 		end
 	end
-	if has_no_action and (not self._queued_actions or not next(self._queued_actions)) then
-		self:action_request({type = "idle", body_part = 1})
+
+	if has_no_action then
+		if not self._queued_actions or not next(self._queued_actions) then
+			self:action_request({
+				body_part = 1,
+				type = "idle"
+			})
+		end
 	end
-	if not a_actions[1] and not a_actions[2] and (not self._queued_actions or not next(self._queued_actions)) and not self:chk_action_forbidden("action") then
-		if a_actions[3] then
-			self:action_request({type = "idle", body_part = 2})
-		else
-			self:action_request({type = "idle", body_part = 1})
+
+	if not a_actions[1] then
+		if not self._queued_actions or not next(self._queued_actions) then
+			if not a_actions[2] then
+				if not a_actions[3] or a_actions[3]:type() == "idle" then
+					if not self:chk_action_forbidden("action") then
+						self:action_request({
+							body_part = 1,
+							type = "idle"
+						})
+					end
+				elseif not self:chk_action_forbidden("action") then
+					self:action_request({
+						body_part = 2,
+						type = "idle"
+					})
+				end
+			elseif a_actions[2]:type() == "idle" then
+				if not a_actions[3] or a_actions[3]:type() == "idle" then
+					if not self:chk_action_forbidden("action") then
+						self:action_request({
+							body_part = 1,
+							type = "idle"
+						})
+					end
+				end
+			elseif not a_actions[3] and not self:chk_action_forbidden("action") then
+				self:action_request({
+					body_part = 3,
+					type = "idle"
+				})
+			end
 		end
 	end
 
 	self:_upd_stance(t)
 
-	--removing the check pretty much fixes panic + other systems that can cause enemies
-	--to become stuck or take too long to respond, no downsides found yet
-	self._need_upd = true
+	if not self._need_upd then
+		if self._ext_anim.base_need_upd or self._ext_anim.upper_need_upd or self._ext_anim.fumble or self._stance.transition or self._suppression.transition then
+			self._need_upd = true
+		end
+	end
 
 	if self._tweak_data.do_omnia then
 		if not self._unit:character_damage():dead() then			
@@ -871,62 +913,13 @@ function CopMovement:anim_clbk_enemy_spawn_melee_item()
 	end
 end
 
+local _equip_item_original = CopMovement._equip_item
 function CopMovement:_equip_item(item_type, align_place, droppable)
 	if item_type == "needle" then
 		align_place = "hand_l"
 	end
 
-	local align_name = self._gadgets.aligns[align_place]
-
-	if not align_name then
-		--print("[CopMovement:anim_clbk_equip_item] non existent align place:", align_place)
-
-		return
-	end
-
-	local align_obj = self._unit:get_object(align_name)
-	local available_items = self._gadgets[item_type]
-
-	if not available_items then
-		--print("[CopMovement:anim_clbk_equip_item] non existent item_type:", item_type)
-
-		return
-	end
-
-	local item_name = available_items[math.random(available_items)]
-
-	if self._spawneditems[item_type] ~= nil then
-		return
-	end
-
-	self._spawneditems[item_type] = true
-
-	if item_type == "needle" then
-		align_place = "hand_l"
-	end
-
-	--print("[CopMovement]Spawning: " .. item_type)
-
-	local item_unit = World:spawn_unit(item_name, align_obj:position(), align_obj:rotation())
-
-	self._unit:link(align_name, item_unit, item_unit:orientation_object():name())
-
-	self._equipped_gadgets = self._equipped_gadgets or {}
-	self._equipped_gadgets[align_place] = self._equipped_gadgets[align_place] or {}
-
-	table.insert(self._equipped_gadgets[align_place], item_unit)
-
-	if droppable then
-		self._droppable_gadgets = self._droppable_gadgets or {}
-
-		table.insert(self._droppable_gadgets, item_unit)
-	end
-end
-
-local drop_held_items_original = CopMovement.drop_held_items
-function CopMovement:drop_held_items()
-	self._spawneditems = {}
-	drop_held_items_original(self)
+	_equip_item_original(self, item_type, align_place, droppable)
 end
 
 function CopMovement:sync_action_act_start(index, blocks_hurt, clamp_to_graph, needs_full_blend, start_rot, start_pos)

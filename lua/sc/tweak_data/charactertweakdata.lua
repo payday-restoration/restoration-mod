@@ -10090,7 +10090,8 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.sniper.is_rifle.aim_delay = {2, 2}
 	presets.weapon.sniper.is_rifle.focus_delay = 10
 	presets.weapon.sniper.is_rifle.focus_dis = 200
-	presets.weapon.sniper.is_rifle.spread = 30
+	--As far as I'm aware this line doesn't even do anything, changing it regardless to satisfy my OCD
+	presets.weapon.sniper.is_rifle.spread = 0
 	presets.weapon.sniper.is_rifle.miss_dis = 250
 	presets.weapon.sniper.is_rifle.RELOAD_SPEED = 1
 	presets.weapon.sniper.is_rifle.melee_speed = presets.weapon.normal.is_rifle.melee_speed
@@ -10105,7 +10106,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.sniper.is_rifle.FALLOFF = {
 		{
 			r = 2000,
-			acc = {0.7, 0.95},
+			acc = {1, 1},
 			dmg_mul = 1,
 			recoil = {3, 6},
 			mode = {
@@ -10117,7 +10118,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 4000,
-			acc = {0.7, 0.95},
+			acc = {1, 1},
 			dmg_mul = 1,
 			recoil = {3, 6},
 			mode = {
@@ -10129,7 +10130,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 8000,
-			acc = {0.5, 0.95},
+			acc = {1, 1},
 			dmg_mul = 1,
 			recoil = {4, 6},
 			mode = {
@@ -10141,7 +10142,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 12000,
-			acc = {0.5, 0.85},
+			acc = {1, 1},
 			dmg_mul = 1,
 			recoil = {4, 6},
 			mode = {
@@ -10153,7 +10154,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 16000,
-			acc = {0.5, 0.75},
+			acc = {1, 1},
 			dmg_mul = 1,
 			recoil = {4, 6},
 			mode = {
@@ -10169,7 +10170,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.sniper_good.is_rifle.FALLOFF = {
 		{
 			r = 2000,
-			acc = {0.7, 0.95},
+			acc = {1, 1},
 			dmg_mul = 2,
 			recoil = {3, 6},
 			mode = {
@@ -10181,7 +10182,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 4000,
-			acc = {0.7, 0.95},
+			acc = {1, 1},
 			dmg_mul = 2,
 			recoil = {3, 6},
 			mode = {
@@ -10193,7 +10194,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 8000,
-			acc = {0.5, 0.95},
+			acc = {1, 1},
 			dmg_mul = 2,
 			recoil = {4, 6},
 			mode = {
@@ -10205,7 +10206,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 12000,
-			acc = {0.5, 0.85},
+			acc = {1, 1},
 			dmg_mul = 1,
 			recoil = {4, 6},
 			mode = {
@@ -10217,7 +10218,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 16000,
-			acc = {0.5, 0.75},
+			acc = {1, 1},
 			dmg_mul = 1,
 			recoil = {4, 6},
 			mode = {
@@ -10233,7 +10234,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.sniper_expert.is_rifle.FALLOFF = {
 		{
 			r = 1000,
-			acc = {0.7, 1},
+			acc = {1, 1},
 			dmg_mul = 2.3,
 			recoil = {3, 5},
 			mode = {
@@ -10245,7 +10246,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 1800,
-			acc = {0.7, 1},
+			acc = {1, 1},
 			dmg_mul = 2.1,
 			recoil = {3, 5},
 			mode = {
@@ -10257,7 +10258,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},		
 		{
 			r = 4000,
-			acc = {0.7, 1},
+			acc = {1, 1},
 			dmg_mul = 2.1,
 			recoil = {3, 5},
 			mode = {
@@ -10269,7 +10270,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 8000,
-			acc = {0.6, 0.95},
+			acc = {1, 1},
 			dmg_mul = 2.1,
 			recoil = {3, 5},
 			mode = {
@@ -10281,7 +10282,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 12000,
-			acc = {0.6, 0.85},
+			acc = {1, 1},
 			dmg_mul = 1.05,
 			recoil = {3, 5},
 			mode = {
@@ -10293,7 +10294,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 16000,
-			acc = {0.6, 0.75},
+			acc = {1, 1},
 			dmg_mul = 1.05,
 			recoil = {3, 5},
 			mode = {
@@ -10309,7 +10310,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.sniper_deathwish.is_rifle.FALLOFF = {
 		{
 			r = 1000,
-			acc = {0.7, 1},
+			acc = {1, 1},
 			dmg_mul = 2.875,
 			recoil = {3, 5},
 			mode = {
@@ -10321,7 +10322,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 1800,
-			acc = {0.7, 1},
+			acc = {1, 1},
 			dmg_mul = 2.625,
 			recoil = {3, 5},
 			mode = {
@@ -10333,7 +10334,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 4000,
-			acc = {0.7, 1},
+			acc = {1, 1},
 			dmg_mul = 2.625,
 			recoil = {3, 5},
 			mode = {
@@ -10345,7 +10346,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 8000,
-			acc = {0.6, 0.95},
+			acc = {1, 1},
 			dmg_mul = 2.625,
 			recoil = {3, 5},
 			mode = {
@@ -10357,7 +10358,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 12000,
-			acc = {0.6, 0.85},
+			acc = {1, 1},
 			dmg_mul = 1.05,
 			recoil = {3, 5},
 			mode = {
@@ -10369,7 +10370,7 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		{
 			r = 16000,
-			acc = {0.6, 0.75},
+			acc = {1, 1},
 			dmg_mul = 1.05,
 			recoil = {3, 5},
 			mode = {

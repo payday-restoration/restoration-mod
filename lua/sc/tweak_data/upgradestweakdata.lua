@@ -1585,13 +1585,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.damage_control_passive = {{
 		30,
-		7.14286
+		12.5
 	}}
 	self.values.player.damage_control_auto_shrug = {
 		4
 	}
 	self.values.player.damage_control_healing = {
-		300
+		400
 	}
 
 	self.values.player.damage_control_cooldown_drain = {

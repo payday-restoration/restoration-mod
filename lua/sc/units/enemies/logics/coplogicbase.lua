@@ -82,7 +82,7 @@ function CopLogicBase._update_haste(data, my_data)
 		return
 	end
 
-	local path = my_data.chase_path or my_data.charge_path or my_data.advance_path or my_data.cover_path or my_data.expected_pos_path or my_data.hunt_path or my_data.flank_path
+	local path = my_data.optimal_path or my_data.advance_path or my_data.cover_path
 
 	if not path then
 		return
@@ -104,45 +104,11 @@ function CopLogicBase._update_haste(data, my_data)
 	-- no, but you sure leave a lot of empty spaces that make me angery
 
 	local is_mook = nil
-	
-	local mook_units = {
-		"security",
-		"security_undominatable",
-		"cop",
-		"cop_scared",
-		"cop_female",
-		"gensec",
-		"fbi",
-		"fbi_xc45",
-		"swat",
-		"heavy_swat",
-		"fbi_swat",
-		"fbi_heavy_swat",
-		"city_swat",
-		"gangster",
-		"biker",
-		"mobster",
-		"bolivian",
-		"bolivian_indoors",
-		"medic",
-		"taser",
-		"spooc",
-		"shadow_spooc",
-		"spooc_heavy",
-		"tank_ftsu",
-		"tank_mini",
-		"tank",
-		"tank_medic"
-	}
 
-	for _, name in pairs(mook_units) do
-		if data.unit:base()._tweak_table == name then
-			is_mook = true
-
-			break
-		end
+	if not data.is_converted and data.unit:base():has_tag("law") then
+		is_mook = true
 	end
-
+	
 	if not is_mook then
 		return
 	end
@@ -214,20 +180,22 @@ function CopLogicBase._update_haste(data, my_data)
 	--randomize enemy crouching to make enemies feel less easy to aim at, the fact they're always crouching all over the place always bugged me, plus, they shouldn't need to crouch so often when you're at long distances from them
 
 	if not data.unit:movement():cool() and not managers.groupai:state():whisper_mode() then
-		if data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.crouch then
-			end_pose = "crouch"
-			pose = "crouch"
-			should_crouch = true
-		elseif data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.stand then
-			end_pose = "stand"
-			pose = "stand"
-		elseif stand_chance ~= 1 and crouch_roll > stand_chance and can_crouch then
-			end_pose = "crouch"
-			pose = "crouch"
-			should_crouch = true
-		else
-			end_pose = "stand"
-			pose = "stand"
+		if not data.unit:movement():cool() and not managers.groupai:state():whisper_mode() then
+			if data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.crouch then
+				end_pose = "crouch"
+				pose = "crouch"
+				should_crouch = true
+			elseif data.char_tweak.allowed_poses and data.char_tweak.allowed_poses.stand then
+				end_pose = "stand"
+				pose = "stand"
+			elseif stand_chance ~= 1 and crouch_roll > stand_chance and can_crouch then
+				end_pose = "crouch"
+				pose = "crouch"
+				should_crouch = true
+			else
+				end_pose = "stand"
+				pose = "stand"
+			end
 		end
 	end
 
@@ -1079,7 +1047,6 @@ end
 function CopLogicBase._chk_nearly_visible_chk_needed(data, attention_info, u_key)
 	return attention_info.is_person and attention_info.verified_t and dis < 2000
 end
-
 
 function CopLogicBase.is_obstructed(data, objective, strictness, attention)
 	local my_data = data.internal_data

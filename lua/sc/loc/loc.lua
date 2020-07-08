@@ -340,8 +340,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		--["menu_challenge_monthly_reward"] = "Random Primary Weapon Mod Kit or Midas Touch Weapon Mod Kit.",
 		["bm_menu_suppression"] = "Noise Range(M)",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
-		["menu_ecp_female"] = "Raze",
-		["ecp_female_desc"] = "Raze. Jackal's partner in crime, and a skilled fighter.\n\nBorn in 1995, she escaped her family at the age of 15, and ran to the life of crime, never looking back. So Epic.",
 		--["dialog_new_tradable_item_bonus"] = "",
 		--["steam_inventory_team_boost"] = "",
 		--["steam_inventory_boost_xp_cash"] = "",

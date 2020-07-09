@@ -35,6 +35,7 @@
 		<extension name="damage" class="UnitDamage" >
 			<var name="_skip_save_anim_state_machine" value="true" />
 		</extension>
+		<extension name="contour" class="ContourExt" />
 		<extension name="sound" class="CopSound" />
 	</extensions>
 

@@ -37,6 +37,17 @@ function RaycastWeaponBase:setup(...)
 		end
 		self._spread_moving = tweak_data.weapon.stats.spread_moving[moving_spread_index] or 0
 	end
+
+	self._bullets_until_free = nil
+	for _, category in ipairs(self:weapon_tweak_data().categories) do
+		if managers.player:has_category_upgrade(category, "full_auto_free_ammo") then
+			self._bullets_until_free = managers.player:upgrade_value(category, "full_auto_free_ammo")
+			break
+		end
+	end
+	self._shots_without_releasing_trigger = 0
+
+	self._ammo_overflow = 0 --Amount of non-integer ammo picked up.
 end
 
 function FlameBulletBase:bullet_slotmask()
@@ -208,52 +219,37 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	return result
 end
 
+--Refactored from vanilla code for consistency and simplicity.
 function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 	local _add_ammo = function(ammo_base, ratio, add_amount_override)
-		if ammo_base:get_ammo_max() == ammo_base:get_ammo_total() then
+		if ammo_base:get_ammo_max() == ammo_base:get_ammo_total() then --pickup>50 check in there because the second akimbo gun makes things explode because reasons
 			return false, 0
 		end
-		local multiplier_min = 1
-		local multiplier_max = 1
-		local ammo_min = ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_min_mul
-		local ammo_max = ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_max_mul
-		if ammo_min then
-			multiplier_min = multiplier_min * ammo_min
-		end
-		multiplier_min = multiplier_min * managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-		multiplier_min = multiplier_min * managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1)
-		--multiplier_min = multiplier_min + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-		
-		if ammo_max then
-			multiplier_max = multiplier_max * ammo_max
-		end
-		multiplier_max = multiplier_max * managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-		multiplier_max = multiplier_max * managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1)
-		--multiplier_max = multiplier_max + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-		
-		local add_amount = add_amount_override
-		local picked_up = true
 
-		if not add_amount then
-			local rng_ammo = math.lerp(ammo_base._ammo_pickup[1] * multiplier_min, ammo_base._ammo_pickup[2] * multiplier_max, math.random())
-			picked_up = rng_ammo > 0
-			add_amount = math.max(0, math.round(rng_ammo))
+		local ammo_gained_raw = add_amount_override or math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) * (ratio or 1) + self._ammo_overflow
+		log("Picked up " .. tostring(ammo_gained_raw) .. " ammo, of which " .. tostring(self._ammo_overflow) .. " was left over from last pickup.")
+		if ammo_gained_raw <= 0 then --Handle weapons with 0 pickup.
+			return false, 0
 		end
-		add_amount = math.floor(add_amount * (ratio or 1))
-		ammo_base:set_ammo_total(math.clamp(ammo_base:get_ammo_total() + add_amount, 0, ammo_base:get_ammo_max()))
-		return picked_up, add_amount
+
+		local ammo_gained = math.max(0, math.floor(ammo_gained_raw))
+
+		--Apply akimbo rounding.
+		if self.AKIMBO then
+			local akimbo_rounding = ammo_gained % 2 + #self._fire_callbacks
+			ammo_gained = ammo_gained + akimbo_rounding
+		end
+
+		self._ammo_overflow = math.max(ammo_gained_raw - ammo_gained, 0)
+		log("Gained: " .. tostring(ammo_gained) .. " real ammo, leaving overflow of " .. tostring(self._ammo_overflow))
+		ammo_base:set_ammo_total(math.clamp(ammo_base:get_ammo_total() + ammo_gained, 0, ammo_base:get_ammo_max()))
+		return true, ammo_gained
 	end
+
 	local picked_up, add_amount
 	picked_up, add_amount = _add_ammo(self, ratio, add_amount_override)
 	
-	if self.AKIMBO then
-		local akimbo_rounding = self:get_ammo_total() % 2 + #self._fire_callbacks
-
-		if akimbo_rounding > 0 then
-			_add_ammo(self, nil, akimbo_rounding)
-		end
-	end		
-	
+	--Weapons with other weapons attached. Basically, The Little Friend.
 	for _, gadget in ipairs(self:get_all_override_weapon_gadgets()) do
 		if gadget and gadget.ammo_base then
 			local p, a = _add_ammo(gadget:ammo_base(), ratio, add_amount_override)
@@ -481,23 +477,121 @@ function RaycastWeaponBase:_fire_sound(...)
 	end
 end
 
-local orig_fire = RaycastWeaponBase.fire
-function RaycastWeaponBase:fire(...)
-	local result = orig_fire(self, ...)
-	if self:_soundfix_should_play_normal() then
-		return result
+--Adds auto fire sound fix and MG Specialist skill.
+function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit)
+	if managers.player:has_activate_temporary_upgrade("temporary", "no_ammo_cost_buff") then
+		managers.player:deactivate_temporary_upgrade("temporary", "no_ammo_cost_buff")
+
+		if managers.player:has_category_upgrade("temporary", "no_ammo_cost") then
+			managers.player:activate_temporary_upgrade("temporary", "no_ammo_cost")
+		end
 	end
 
-	if result and self._setup.user_unit == managers.player:player_unit() then
+	local is_player = self._setup.user_unit == managers.player:player_unit()
+	local consume_ammo = not managers.player:has_active_temporary_property("bullet_storm") and (not managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier") or not managers.player:has_category_upgrade("player", "berserker_no_ammo_cost")) or not is_player
+
+	--MG Specialist Skill
+	if self._shots_without_releasing_trigger then
+		self._shots_without_releasing_trigger = self._shots_without_releasing_trigger + 1
+		if self._bullets_until_free and self._shots_without_releasing_trigger % self._bullets_until_free == 0 then
+			consume_ammo = false
+		end
+	end
+
+	if consume_ammo and (is_player or Network:is_server()) then
+		local base = self:ammo_base()
+
+		if base:get_ammo_remaining_in_clip() == 0 then
+			return
+		end
+
+		local ammo_usage = 1
+
+		if is_player then
+			for _, category in ipairs(self:weapon_tweak_data().categories) do
+				if managers.player:has_category_upgrade(category, "consume_no_ammo_chance") then
+					local roll = math.rand(1)
+					local chance = managers.player:upgrade_value(category, "consume_no_ammo_chance", 0)
+
+					if roll < chance then
+						ammo_usage = 0
+
+						print("NO AMMO COST")
+					end
+				end
+			end
+		end
+
+		local mag = base:get_ammo_remaining_in_clip()
+		local remaining_ammo = mag - ammo_usage
+
+		if mag > 0 and remaining_ammo <= (self.AKIMBO and 1 or 0) then
+			local w_td = self:weapon_tweak_data()
+
+			if w_td.animations and w_td.animations.magazine_empty then
+				self:tweak_data_anim_play("magazine_empty")
+			end
+
+			if w_td.sounds and w_td.sounds.magazine_empty then
+				self:play_tweak_data_sound("magazine_empty")
+			end
+
+			if w_td.effects and w_td.effects.magazine_empty then
+				self:_spawn_tweak_data_effect("magazine_empty")
+			end
+
+			self:set_magazine_empty(true)
+		end
+
+		base:set_ammo_remaining_in_clip(base:get_ammo_remaining_in_clip() - ammo_usage)
+		self:use_ammo(base, ammo_usage)
+	end
+
+	local user_unit = self._setup.user_unit
+
+	self:_check_ammo_total(user_unit)
+
+	if alive(self._obj_fire) then
+		self:_spawn_muzzle_effect(from_pos, direction)
+	end
+
+	self:_spawn_shell_eject_effect()
+
+	local ray_res = self:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, target_unit)
+
+	if self._alert_events and ray_res.rays then
+		self:_check_alert(ray_res.rays, from_pos, direction, user_unit)
+	end
+
+	if ray_res.enemies_in_cone then
+		for enemy_data, dis_error in pairs(ray_res.enemies_in_cone) do
+			if not enemy_data.unit:movement():cool() then
+				enemy_data.unit:character_damage():build_suppression(suppr_mul * dis_error * self._suppression, self._panic_suppression_chance)
+			end
+		end
+	end
+
+	managers.player:send_message(Message.OnWeaponFired, nil, self._unit, ray_res)
+
+	--Autofire soundfix integration.
+	if self:_soundfix_should_play_normal() then
+		return ray_res
+	end
+
+	if ray_res and self._setup.user_unit == managers.player:player_unit() then
 		self:play_tweak_data_sound("fire_single","fire")
 		self:play_tweak_data_sound("stop_fire")
 	end
-	
-	return result
+
+	return ray_res
 end
 
 local orig_stop_shooting = RaycastWeaponBase.stop_shooting
 function RaycastWeaponBase:stop_shooting(...)
+	if self._shots_without_releasing_trigger then
+		self._shots_without_releasing_trigger = 0
+	end
+
 	if self:_soundfix_should_play_normal() then
 		orig_stop_shooting(self,...)
 	end

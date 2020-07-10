@@ -868,13 +868,25 @@ end
 
 --Professional aced extra ammo when killing specials while using silenced weapons.
 function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, killed_unit)
-	if tweak_data.character[killed_unit:base()._tweak_table].priority_shout and equipped_unit:base():got_silencer() and variant == "bullet" then
+	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and equipped_unit:base():got_silencer() and variant == "bullet" then
 		if Network:is_client() then
 			managers.network:session():send_to_host("sync_spawn_extra_ammo", killed_unit)
 		else
 			self:spawn_extra_ammo(killed_unit)
 		end
 	end
+end
+
+--The vanilla version of this function is actually nonfunctional. No wonder it's never used.
+--This fixes it to fulfill its intended purpose of letting active temporary upgrade durations be changed.
+function PlayerManager:extend_temporary_upgrade(category, upgrade, time)
+	local upgrade_value = self:upgrade_value(category, upgrade)
+
+	if upgrade_value == 0 then
+		return
+	end
+
+	self._temporary_upgrades[category][upgrade].expire_time = self._temporary_upgrades[category][upgrade].expire_time + time
 end
 
 --Restores 1 down when enough assaults have passed and bots have the skill. Counter is paused when player is in custody or has max revives; or if the crew loses access to the skill.

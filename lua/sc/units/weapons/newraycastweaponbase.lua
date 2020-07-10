@@ -573,9 +573,22 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 				}					
 			end
 		end					
-
 	end
-						
+
+	--Precalculate ammo pickup values.
+	if self:weapon_tweak_data().AMMO_PICKUP then --Filters out npc guns.
+		self._ammo_pickup = {self:weapon_tweak_data().AMMO_PICKUP[1], self:weapon_tweak_data().AMMO_PICKUP[2]} --Get base pickup % values. Make sure these are grabbed individually so you don't accidentally pass in the table by reference.
+		local total_ammo = self:get_ammo_max() * (tweak_data.weapon[self._name_id].use_data.selection_index == 1 and 2 or 1) --Total ammo as if the weapon was a primary. 7200/total_ammo used as proxy for damage.
+
+		--Pickup multiplier
+		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills
+			* managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
+			* ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1) --Offset from weapon mods, especially ones that may modify total ammo without changing damage tiers.
+
+		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
+		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(self._damage * 10)) * pickup_multiplier * total_ammo
+		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(self._damage * 10)) * pickup_multiplier * total_ammo, self._ammo_pickup[1])
+	end
 end
 					
 --[[	fire rate multipler in-game stuff	]]--

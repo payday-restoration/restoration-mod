@@ -1891,9 +1891,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
-				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				can_shoot_through_wall = false
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -1906,9 +1904,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -1921,9 +1917,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -1940,9 +1934,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -2860,9 +2852,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
 				can_shoot_through_wall = true,
-				use_heavy_kick = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				use_heavy_kick = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -2876,9 +2866,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage_near_mul = -75,
 				damage_far_mul = -150,
 				rays = 6,
-				use_heavy_kick = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				use_heavy_kick = true
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -2892,9 +2880,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage_near_mul = -75,
 				damage_far_mul = -150,
 				rays = 6,
-				use_heavy_kick = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				use_heavy_kick = true
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -2913,9 +2899,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
 				use_heavy_kick = true,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -3059,9 +3043,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				use_heavy_kick = true,
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -3075,9 +3057,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				damage_near_mul = -75,
 				damage_far_mul = -150,
 				rays = 6,
-				use_heavy_kick = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				use_heavy_kick = true
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -3091,9 +3071,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				damage_near_mul = -75,
 				damage_far_mul = -150,
 				rays = 6,
-				use_heavy_kick = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				use_heavy_kick = true
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -3112,9 +3090,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -3337,9 +3313,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 				rays = 1,
 				damage_near_mul = 9999999999,
 				damage_far_mul = 9999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -3580,9 +3554,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			rays = 1,
 			damage_near_mul = 9999999999,
 			damage_far_mul = 9999999999,
-			bullet_class = "InstantExplosiveBulletBase",
-			ammo_pickup_min_mul = 0.4,
-			ammo_pickup_max_mul = 0.4
+			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = {
@@ -3602,12 +3574,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			damage_near_mul = 999999999,
 			damage_far_mul = 999999999,
 			rays = 1,
-			ammo_pickup_min_mul = 0.75,
-			ammo_pickup_max_mul = 0.75,
 			armor_piercing_add = 1,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
+			can_shoot_through_wall = true
 		},
 	}
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom = {
@@ -3620,9 +3590,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		custom_stats = {
 			damage_near_mul = -75,
 			damage_far_mul = -150,
-			rays = 6,
-			ammo_pickup_min_mul = 0.75,
-			ammo_pickup_max_mul = 0.75
+			rays = 6
 		}
 	}
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = {
@@ -3635,9 +3603,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		custom_stats = {
 			damage_near_mul = -75,
 			damage_far_mul = -150,
-			rays = 6,
-			ammo_pickup_min_mul = 0.75,
-			ammo_pickup_max_mul = 0.75
+			rays = 6
 		}
 	}			
 	
@@ -4213,7 +4179,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
+			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
 		}
 	}		
 	
@@ -4321,7 +4287,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
+			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
 		}
 	}
 	
@@ -4453,7 +4419,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
+			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
 		}			
 	}
 	
@@ -4848,9 +4814,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
-				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				can_shoot_through_wall = false
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -4863,9 +4827,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -4878,9 +4840,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -4898,9 +4858,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -4973,9 +4931,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
-				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				can_shoot_through_wall = false
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -4988,9 +4944,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -5003,9 +4957,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},				
 		wpn_fps_upg_a_explosive = {
@@ -5023,9 +4975,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,	
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -5080,9 +5030,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true,
-			use_heavy_kick = true,
-			ammo_pickup_min_mul = 0.666666666667,
-			ammo_pickup_max_mul = 0.666666666667
+			use_heavy_kick = true
 		}
 	}
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom = {
@@ -5096,9 +5044,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			damage_near_mul = -75,
 			damage_far_mul = -150,
 			rays = 6,
-			use_heavy_kick = true,
-			ammo_pickup_min_mul = 0.666666666667,
-			ammo_pickup_max_mul = 0.666666666667
+			use_heavy_kick = true
 		}
 	}
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free = {
@@ -5112,9 +5058,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			damage_near_mul = -75,
 			damage_far_mul = -150,
 			rays = 6,
-			use_heavy_kick = true,
-			ammo_pickup_min_mul = 0.666666666667,
-			ammo_pickup_max_mul = 0.666666666667
+			use_heavy_kick = true
 		}
 	}			
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive = {
@@ -5133,9 +5077,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			damage_near_mul = 999999999,
 			damage_far_mul = 999999999,
 			use_heavy_kick = true,
-			bullet_class = "InstantExplosiveBulletBase",
-			ammo_pickup_min_mul = 0.5,
-			ammo_pickup_max_mul = 0.5
+			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
 
@@ -5944,12 +5886,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		damage_near_mul = 999999999,
 		damage_far_mul = 999999999,
 		rays = 1,
-		ammo_pickup_min_mul = 0.75,
-		ammo_pickup_max_mul = 0.75,
 		armor_piercing_add = 1,
 		can_shoot_through_enemy = true,
 		can_shoot_through_shield = true,
-		can_shoot_through_wall = true,
+		can_shoot_through_wall = true
 	}
 	
 	--000 Buck
@@ -5963,9 +5903,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
 		damage_near_mul = -75,
 		damage_far_mul = -150,
-		rays = 6,
-		ammo_pickup_min_mul = 0.75,
-		ammo_pickup_max_mul = 0.75
+		rays = 6
 	}
 	
 	--000 Buck (Free)
@@ -5992,9 +5930,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		block_b_storm = true,
 		damage_near_mul = 999999999,
 		damage_far_mul = 999999999,
-		bullet_class = "InstantExplosiveBulletBase",
-		ammo_pickup_min_mul = 0.3,
-		ammo_pickup_max_mul = 0.3
+		bullet_class = "InstantExplosiveBulletBase"
 	}
 	
 	--Flechettes
@@ -6521,9 +6457,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
-				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				can_shoot_through_wall = false
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -6536,9 +6470,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},		
 		wpn_fps_upg_a_custom_free = {
@@ -6551,9 +6483,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},				
 		wpn_fps_upg_a_explosive = {
@@ -6571,9 +6501,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -6615,7 +6543,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
+			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
 		}
 	}
 	
@@ -9329,7 +9257,7 @@ function WeaponFactoryTweakData:_init_m134()
 				extra_ammo = 60,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.87},	
+			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
 		}
 	}				
 	self.wpn_fps_lmg_m134.default_blueprint = {
@@ -9941,9 +9869,7 @@ function WeaponFactoryTweakData:_init_b682()
 				rays = 1,
 				damage_near_mul = 9999999999,
 				damage_far_mul = 9999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -10020,10 +9946,6 @@ function WeaponFactoryTweakData:_init_butchermodpack()
 			damage = -30,
 			total_ammo_mod = 50
 		},
-		custom_stats = {
-			ammo_pickup_min_mul = 1.5,
-			ammo_pickup_max_mul = 1.5
-		},			
 		texture_bundle_folder = "butcher_pack_mods",
 		dlc = "butch_pack_free",
 		animations = {
@@ -10045,10 +9967,6 @@ function WeaponFactoryTweakData:_init_butchermodpack()
 			damage = 30,
 			total_ammo_mod = -25
 		},
-		custom_stats = {
-			ammo_pickup_min_mul = 0.75,
-			ammo_pickup_max_mul = 0.75
-		},				
 		texture_bundle_folder = "butcher_pack_mods",
 		has_description = false,
 		desc_id = "bm_ap_saw_blade_sc_desc",
@@ -11334,9 +11252,7 @@ function WeaponFactoryTweakData:_init_aa12()
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
-				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				can_shoot_through_wall = false
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -11349,9 +11265,7 @@ function WeaponFactoryTweakData:_init_aa12()
 			custom_stats = {
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				rays = 6,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -11364,9 +11278,7 @@ function WeaponFactoryTweakData:_init_aa12()
 			custom_stats = {
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				rays = 6,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -11383,9 +11295,7 @@ function WeaponFactoryTweakData:_init_aa12()
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -11886,7 +11796,6 @@ function WeaponFactoryTweakData:_init_plainsrider()
 		stats = {damage = 60, total_ammo_mod = -50, spread = -6},
 		custom_stats = {
 			launcher_grenade = "west_arrow_exp",
-			ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5,
 			block_b_storm = true
 		},
 		dlc = "west",
@@ -13397,7 +13306,6 @@ function WeaponFactoryTweakData:_init_hunter()
 		is_a_unlockable = true,
 		custom_stats = {
 			launcher_grenade = "crossbow_poison_arrow",
-			ammo_pickup_min_mul = 1, ammo_pickup_max_mul = 1,
 			dot_data = {
 				type = "poison",
 				custom_data = {dot_length = nil, hurt_animation_chance = nil}
@@ -13418,7 +13326,6 @@ function WeaponFactoryTweakData:_init_hunter()
 		stats = {damage = 120, total_ammo_mod = -50, spread = -8, recoil = -5},
 		custom_stats = {
 			launcher_grenade = "crossbow_arrow_exp",
-			ammo_pickup_min_mul = 0.5, ammo_pickup_max_mul = 0.5,
 			block_b_storm = true
 		},
 		texture_bundle_folder = "turtles",
@@ -13834,8 +13741,6 @@ function WeaponFactoryTweakData:_init_arblast()
 		third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_arblast_pts/wpn_third_bow_arblast_m_explosive",
 		stats = {damage = 60, total_ammo_mod = -40, spread = -3, recoil = -6},
 		custom_stats = {
-			ammo_pickup_min_mul = 0.6,
-			ammo_pickup_max_mul = 0.6,
 			launcher_grenade = "arblast_arrow_exp",
 			block_b_storm = true
 		},
@@ -13940,8 +13845,6 @@ function WeaponFactoryTweakData:_init_frankish()
 		third_unit = "units/pd2_dlc_steel/weapons/wpn_fps_bow_frankish_pts/wpn_third_bow_frankish_m_explosive",
 		stats = {damage = 60, total_ammo_mod = -50, spread = -6, recoil = -6},
 		custom_stats = {
-			ammo_pickup_min_mul = 0.5, 
-			ammo_pickup_max_mul = 0.5,
 			launcher_grenade = "frankish_arrow_exp",
 			block_b_storm = true
 		},
@@ -14025,8 +13928,6 @@ function WeaponFactoryTweakData:_init_long()
 		stats = {damage = 60, total_ammo_mod = -40, spread = -3},
 		custom_stats = {
 			launcher_grenade = "long_arrow_exp",
-			ammo_pickup_min_mul = 0.6, 
-			ammo_pickup_max_mul = 0.6,
 			block_b_storm = true
 		},
 		texture_bundle_folder = "steel",
@@ -14185,7 +14086,7 @@ function WeaponFactoryTweakData:_init_par()
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
+			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
 		}
 	}		
 	self.wpn_fps_lmg_par.default_blueprint = {
@@ -14998,9 +14899,7 @@ function WeaponFactoryTweakData:_init_m37()
 				use_heavy_kick = true,
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -15014,9 +14913,7 @@ function WeaponFactoryTweakData:_init_m37()
 				damage_near_mul = -75,
 				damage_far_mul = -150,
 				rays = 6,
-				use_heavy_kick = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				use_heavy_kick = true
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -15030,9 +14927,7 @@ function WeaponFactoryTweakData:_init_m37()
 				damage_near_mul = -75,
 				damage_far_mul = -150,
 				rays = 6,
-				use_heavy_kick = true,
-				ammo_pickup_min_mul = 0.666666666667,
-				ammo_pickup_max_mul = 0.666666666667
+				use_heavy_kick = true
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -15051,9 +14946,7 @@ function WeaponFactoryTweakData:_init_m37()
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
 		wpn_fps_upg_fl_ass_smg_sho_peqbox = {parent = "foregrip", a_obj = "a_fl"},
@@ -16093,7 +15986,7 @@ function WeaponFactoryTweakData:_init_tecci()
 				concealment = -3,
 				recoil = 0
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8, movement_speed = 1.25},	
+			custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 1.25},	
 		}			
 	}	
 	self.wpn_fps_ass_tecci.default_blueprint = {
@@ -16568,9 +16461,7 @@ function WeaponFactoryTweakData:_init_boot()
 				rays = 1,
 				damage_near_mul = 9999999999,
 				damage_far_mul = 9999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -17510,9 +17401,7 @@ function WeaponFactoryTweakData:_init_rota()
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
-				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				can_shoot_through_wall = false
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -17525,9 +17414,7 @@ function WeaponFactoryTweakData:_init_rota()
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -17540,9 +17427,7 @@ function WeaponFactoryTweakData:_init_rota()
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},				
 		wpn_fps_upg_a_explosive = {
@@ -17560,9 +17445,7 @@ function WeaponFactoryTweakData:_init_rota()
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,	
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}
@@ -21209,9 +21092,7 @@ function WeaponFactoryTweakData:_init_ecp()
 		},
 		stats = {damage = 45, total_ammo_mod = -50, spread = -3, recoil = -6},
 		custom_stats = {
-			launcher_grenade = "ecp_arrow_exp",
-			ammo_pickup_min_mul = 0.5, 
-			ammo_pickup_max_mul = 0.5
+			launcher_grenade = "ecp_arrow_exp"
 		}
 	}
 	self.parts.wpn_fps_bow_ecp_m_arrows_poison = {
@@ -21849,9 +21730,7 @@ function WeaponFactoryTweakData:_init_basset()
 					armor_piercing_add = 0,
 					can_shoot_through_enemy = false,
 					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					can_shoot_through_wall = false
 				}
 			},
 			wpn_fps_upg_a_custom = {
@@ -21864,9 +21743,7 @@ function WeaponFactoryTweakData:_init_basset()
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					rays = 6
 				}
 			},
 			wpn_fps_upg_a_custom_free = {
@@ -21879,9 +21756,7 @@ function WeaponFactoryTweakData:_init_basset()
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					rays = 6
 				}
 			},					
 			wpn_fps_upg_a_explosive = {
@@ -21898,9 +21773,7 @@ function WeaponFactoryTweakData:_init_basset()
 					rays = 1,
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
-					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.5,
-					ammo_pickup_max_mul = 0.5
+					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
 			wpn_upg_saiga_m_20rnd = {
@@ -22004,9 +21877,7 @@ function WeaponFactoryTweakData:_init_x_basset()
 					armor_piercing_add = 0,
 					can_shoot_through_enemy = false,
 					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					can_shoot_through_wall = false
 				}
 			},
 			wpn_fps_upg_a_custom = {
@@ -22019,9 +21890,7 @@ function WeaponFactoryTweakData:_init_x_basset()
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					rays = 6
 				}
 			},
 			wpn_fps_upg_a_custom_free = {
@@ -22034,9 +21903,7 @@ function WeaponFactoryTweakData:_init_x_basset()
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.666666666667,
-					ammo_pickup_max_mul = 0.666666666667
+					rays = 6
 				}
 			},					
 			wpn_fps_upg_a_explosive = {
@@ -22053,9 +21920,7 @@ function WeaponFactoryTweakData:_init_x_basset()
 					rays = 1,
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
-					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.5,
-					ammo_pickup_max_mul = 0.5
+					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
 			wpn_fps_sho_basset_m_extended = {
@@ -24705,9 +24570,7 @@ function WeaponFactoryTweakData:_init_x_judge()
 					rays = 1,
 					damage_near_mul = 9999999999,
 					damage_far_mul = 9999999999,
-					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
 			wpn_fps_upg_a_slug = {
@@ -24728,8 +24591,6 @@ function WeaponFactoryTweakData:_init_x_judge()
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75,
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
@@ -24746,9 +24607,7 @@ function WeaponFactoryTweakData:_init_x_judge()
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					rays = 6
 				}
 			},
 			wpn_fps_upg_a_custom_free = {
@@ -24761,9 +24620,7 @@ function WeaponFactoryTweakData:_init_x_judge()
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					rays = 6
 				}
 			},	
 			wpn_fps_pis_judge_body_standard = {},
@@ -24905,9 +24762,7 @@ function WeaponFactoryTweakData:_init_x_rota()
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
 				can_shoot_through_shield = false,
-				can_shoot_through_wall = false,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				can_shoot_through_wall = false
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -24920,9 +24775,7 @@ function WeaponFactoryTweakData:_init_x_rota()
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -24935,9 +24788,7 @@ function WeaponFactoryTweakData:_init_x_rota()
 			custom_stats = {
 				damage_near_mul = -75,
 				damage_far_mul = -150,
-				rays = 6,
-				ammo_pickup_min_mul = 0.75,
-				ammo_pickup_max_mul = 0.75
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -24955,9 +24806,7 @@ function WeaponFactoryTweakData:_init_x_rota()
 				rays = 1,
 				damage_near_mul = 999999999,
 				damage_far_mul = 999999999,
-				bullet_class = "InstantExplosiveBulletBase",
-				ammo_pickup_min_mul = 0.5,
-				ammo_pickup_max_mul = 0.5
+				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}		
@@ -25117,7 +24966,7 @@ function WeaponFactoryTweakData:_init_shuno()
 				extra_ammo = 60,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.87},	
+			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
 		}
 	}				
 	self.wpn_fps_lmg_shuno_npc = deep_clone(self.wpn_fps_lmg_shuno)
@@ -25894,9 +25743,7 @@ function WeaponFactoryTweakData:_init_elastic()
 		},
 		stats = {damage = 60, total_ammo_mod = -40, spread = -3},
 		custom_stats = {
-			launcher_grenade = "elastic_arrow_exp",
-			ammo_pickup_min_mul = 0.6, 
-			ammo_pickup_max_mul = 0.6
+			launcher_grenade = "elastic_arrow_exp"
 		}
 	}
 	self.parts.wpn_fps_bow_elastic_m_poison = {
@@ -26503,9 +26350,7 @@ function WeaponFactoryTweakData:_init_coach()
 					rays = 1,
 					damage_near_mul = 9999999999,
 					damage_far_mul = 9999999999,
-					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = 0.4
+					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
 			wpn_fps_upg_a_slug = {
@@ -26525,8 +26370,6 @@ function WeaponFactoryTweakData:_init_coach()
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					rays = 1,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75,
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
@@ -26543,9 +26386,7 @@ function WeaponFactoryTweakData:_init_coach()
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					rays = 6
 				}
 			},
 			wpn_fps_upg_a_custom_free = {
@@ -26558,9 +26399,7 @@ function WeaponFactoryTweakData:_init_coach()
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					rays = 6
 				}
 			}	
 		},
@@ -28734,7 +28573,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.2, ammo_pickup_max_mul = 1.2, movement_speed = 0.9},	
+			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
 		}
 	}
 	
@@ -30066,9 +29905,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					rays = 1,
 					damage_near_mul = 9999999999,
 					damage_far_mul = 9999999999,
-					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.375,
-					ammo_pickup_max_mul = 0.375
+					bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
 	}		
@@ -30285,9 +30122,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				damage_near_mul = 3.333333333333333,
 				damage_far_mul = 5,
 				rays = 1,
-				heavy_AP = true,
-				ammo_pickup_min_mul = 0.67,
-				ammo_pickup_max_mul = 0.67
+				heavy_AP = true
 			}
 		self.parts.wpn_fps_upg_ks23_barrel_short.stats = {
 				value = 1,
@@ -30314,9 +30149,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.custom_stats = {
 				damage_near_mul = 2,
 				damage_far_mul = 1.33,
-				rays = 8,
-				ammo_pickup_min_mul = 0.67,
-				ammo_pickup_max_mul = 0.67
+				rays = 8
 			}																
 		end		
 		
@@ -31138,9 +30971,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					armor_piercing_add = 0,
 					can_shoot_through_enemy = false,
 					can_shoot_through_shield = false,
-					can_shoot_through_wall = false,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					can_shoot_through_wall = false
 				}
 			},
 			wpn_fps_upg_a_custom = {
@@ -31153,9 +30984,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					rays = 6
 				}
 			},
 			wpn_fps_upg_a_custom_free = {
@@ -31168,9 +30997,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				custom_stats = {
 					damage_near_mul = -75,
 					damage_far_mul = -150,
-					rays = 6,
-					ammo_pickup_min_mul = 0.75,
-					ammo_pickup_max_mul = 0.75
+					rays = 6
 				}
 			},			
 			wpn_fps_upg_a_explosive = {
@@ -31187,9 +31014,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					rays = 1,
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
-					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.5,
-					ammo_pickup_max_mul = 0.5
+					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
 		}
@@ -31209,9 +31034,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					rays = 1,
 					damage_near_mul = 9999999999,
 					damage_far_mul = 9999999999,
-					bullet_class = "InstantExplosiveBulletBase",
-					ammo_pickup_min_mul = 0.5,
-					ammo_pickup_max_mul = 0.5
+					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
 		}
@@ -31686,8 +31509,6 @@ self.wpn_fps_ass_osipr.uses_parts = {
 			damage_near_mul = 999999999,
 			damage_far_mul = 999999999,
 			rays = 1,
-			ammo_pickup_min_mul = 0.75,
-			ammo_pickup_max_mul = 0.75,
 			armor_piercing_add = 1,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
@@ -31723,7 +31544,7 @@ self.wpn_fps_ass_osipr.uses_parts = {
 			concealment = -3,
 			total_ammo_mod = 20
 		},
-		custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 0.9},
+		custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},
 		internal_part = true
 	}
 	self.parts.wpn_lmg_rpk_m_ban = {
@@ -31872,7 +31693,6 @@ self.wpn_fps_ass_osipr.uses_parts = {
 		has_description = true,
 		alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 		dlc = "sc",
-		custom_stats = {ammo_pickup_min_mul = 0.8, ammo_pickup_max_mul = 0.8},
 		stats = {
 			value = 10,
 			alert_size = -1,
@@ -31895,7 +31715,6 @@ self.wpn_fps_ass_osipr.uses_parts = {
 		has_description = true,
 		alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 		dlc = "sc",
-		custom_stats = {ammo_pickup_min_mul = 0.53, ammo_pickup_max_mul = 0.53},
 		stats = {
 			value = 10,
 			alert_size = -2,

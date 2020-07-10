@@ -145,6 +145,31 @@ function CopBrain:sync_net_event(event_id, peer)
 			att_obj_data.handler:remove_listener("detect_" .. tostring(self._logic_data.key))
 
 			self._logic_data.detected_attention_objects[peer_unit:key()] = nil
+
+			local my_data = self._logic_data.internal_data
+
+			if self._logic_data.attention_obj and self._logic_data.attention_obj.u_key == peer_unit:key() then
+				CopLogicBase._set_attention_obj(self._logic_data, nil, nil)
+
+				if my_data then
+					if my_data.firing or my_data.firing_on_client then
+						self._unit:movement():set_allow_fire(false)
+
+						my_data.firing = nil
+						my_data.firing_on_client = nil
+					end
+				end
+			end
+
+			if my_data and my_data.arrest_targets then
+				my_data.arrest_targets[peer_unit:key()] = nil
+			end
+
+			local set_attention = self._unit:movement():attention()
+
+			if set_attention and set_attention.u_key == peer_unit:key() then
+				self._unit:movement():set_attention()
+			end
 		end
 	elseif event_id == self._NET_EVENTS.detected_suspected_client then
 		managers.groupai:state():on_criminal_suspicion_progress(peer_unit, self._unit, true, peer_id)

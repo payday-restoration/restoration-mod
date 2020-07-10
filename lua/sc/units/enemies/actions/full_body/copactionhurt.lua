@@ -887,7 +887,7 @@ function CopActionHurt:init(action_desc, common_data)
 	                	local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
 	                	if voicelines and voicelines["burndeath"] then
 	                		local line_to_use = voicelines.burndeath[math.random(#voicelines.burndeath)]
-	                		self._unit:base():play_voiceline(line_to_use, true)
+	                		self._unit:base():play_voiceline(line_to_use, true, true)
 	                	end
 	                end
 				end
@@ -898,7 +898,7 @@ function CopActionHurt:init(action_desc, common_data)
 	        	local voicelines = _G.voiceline_framework.BufferedSounds[self._unit:base():char_tweak().custom_voicework]
 	        	if voicelines and voicelines["death"] then
 	        		local line_to_use = voicelines.death[math.random(#voicelines.death)]
-	        		self._unit:base():play_voiceline(line_to_use, true)
+	        		self._unit:base():play_voiceline(line_to_use, true, true)
 	        	end
 	        end
 		elseif action_type == "counter_tased" or action_type == "taser_tased" or action_desc.variant == "tase" then

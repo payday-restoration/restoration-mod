@@ -222,12 +222,11 @@ end
 --Refactored from vanilla code for consistency and simplicity.
 function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 	local _add_ammo = function(ammo_base, ratio, add_amount_override)
-		if ammo_base:get_ammo_max() == ammo_base:get_ammo_total() then --pickup>50 check in there because the second akimbo gun makes things explode because reasons
+		if ammo_base:get_ammo_max() == ammo_base:get_ammo_total() then
 			return false, 0
 		end
 
 		local ammo_gained_raw = add_amount_override or math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) * (ratio or 1) + self._ammo_overflow
-		log("Picked up " .. tostring(ammo_gained_raw) .. " ammo, of which " .. tostring(self._ammo_overflow) .. " was left over from last pickup.")
 		if ammo_gained_raw <= 0 then --Handle weapons with 0 pickup.
 			return false, 0
 		end
@@ -241,7 +240,6 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 		end
 
 		self._ammo_overflow = math.max(ammo_gained_raw - ammo_gained, 0)
-		log("Gained: " .. tostring(ammo_gained) .. " real ammo, leaving overflow of " .. tostring(self._ammo_overflow))
 		ammo_base:set_ammo_total(math.clamp(ammo_base:get_ammo_total() + ammo_gained, 0, ammo_base:get_ammo_max()))
 		return true, ammo_gained
 	end

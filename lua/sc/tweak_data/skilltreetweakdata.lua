@@ -407,7 +407,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"smg_fire_rate_multiplier_1"
+						"smg_fire_rate_multiplier_1",
+						"smg_full_auto_free_ammo"
 					},
 					cost = self.costs.pro
 				}
@@ -835,8 +836,7 @@ function SkillTreeTweakData:init(tweak_data)
 					},
 					[2] = {
 						upgrades = {
-							"player_pick_up_ammo_multiplier",
-							"player_pick_up_ammo_multiplier_2",
+							"player_fully_loaded_pick_up_multiplier",
 							"player_regain_throwable_from_ammo_1"
 						},
 						cost = self.costs.hightierpro
@@ -2614,21 +2614,21 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_loose_ammo_restore_health_give_team"
+					"temporary_loose_ammo_restore_health_2"
 				},
 				cost = 1000,
-				icon_xy = {6, 5},
-				name_id = "menu_deck10_5",
+				icon_xy = {7, 5},
+				name_id = "menu_deck10_7",
 				desc_id = "menu_deck10_5_desc_sc"
 			},
 			deck6,
 			{
 				upgrades = {
-					"temporary_loose_ammo_restore_health_2"
+					"player_loose_ammo_restore_health_give_team"
 				},
 				cost = 2400,
-				icon_xy = {7, 5},
-				name_id = "menu_deck10_7",
+				icon_xy = {6, 5},
+				name_id = "menu_deck10_5",
 				desc_id = "menu_deck10_7_desc_sc"
 			},
 			deck8,

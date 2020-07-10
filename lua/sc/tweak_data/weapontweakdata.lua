@@ -3070,7 +3070,7 @@ function WeaponTweakData:_init_stats()
     }
 
     --Controls how much total ammo influences pickup Following the formula pickup = (base_pickup% + exponent*sqrt(damage)) * ammo * skill_mults
-    --This exists to allow for consistency to be added to low ammo pool weapons (by pushing min and max pickup closer) and to compensate for lack of rounding eating your pickups.
+    --These changes exist to allow for consistency to be added to low ammo pool weapons (by pushing min and max pickup closer) and to compensate for lack of rounding eating your pickups.
     self.stats.pickup_exponents = {
     	min = -0.0005,
     	max = -0.00125
@@ -3482,7 +3482,7 @@ function WeaponTweakData:_init_stats()
 end
 
 --Sets % of total ammo picked up before any other modifiers (IE: From skills or pickup_exponents).
---Doubled on secondaries.
+--Secondary pickup is compensated in newraycastweaponbase/weaponammo by looking at their total ammo as if they were primaries.
 function WeaponTweakData:_pickup_chance()
 	return {
 		0.03, 0.06

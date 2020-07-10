@@ -578,7 +578,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	--Precalculate ammo pickup values.
 	if self:weapon_tweak_data().AMMO_PICKUP then --Filters out npc guns.
 		self._ammo_pickup = {self:weapon_tweak_data().AMMO_PICKUP[1], self:weapon_tweak_data().AMMO_PICKUP[2]} --Get base pickup % values. Make sure these are grabbed individually so you don't accidentally pass in the table by reference.
-		local total_ammo = self:get_ammo_max() * (tweak_data.weapon[self._name_id].use_data.selection_index == 1 and 2 or 1) --Total ammo as if the weapon was a primary. 7200/total_ammo used as proxy for damage.
+		local total_ammo = self:get_ammo_max() * (tweak_data.weapon[self._name_id].use_data.selection_index == 1 and 2 or 1) --Total ammo used in pickup calcs as if the weapon was a primary. Double this if it's a secondary.
 
 		--Pickup multiplier
 		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills

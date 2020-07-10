@@ -762,6 +762,8 @@ function HuskCopBrain:on_detected_attention_obj_modified(modified_u_key)
 				attention_info.identified = false
 				attention_info.notice_progress = attention_info.uncover_progress or 0
 				attention_info.verified = nil
+			else
+				attention_info.notice_progress = 0
 			end
 
 			if self._suspecting_player then

@@ -30,7 +30,7 @@ local idstr_material = Idstring("material")
 local idstr_contour_color = Idstring("contour_color")
 local idstr_contour_opacity = Idstring("contour_opacity")
 
-function ContourExt:add(type, sync, multiplier, override_color)
+function ContourExt:add(type, sync, multiplier, override_color, add_as_child)
 	if Global.debug_contour_enabled then
 		return
 	end
@@ -47,6 +47,7 @@ function ContourExt:add(type, sync, multiplier, override_color)
 	end
 
 	self._contour_list = self._contour_list or {}
+	self._is_child_contour = add_as_child and true or false
 
 	if sync then
 		local u_id = self._unit:id()

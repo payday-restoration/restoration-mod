@@ -470,7 +470,7 @@
 	"RestorationModExtraOptionsButtonTitleID" : "More HUD options",
 	"RestorationModExtraOptionsButtonDescID" : "Even more options!",
 	"RestorationModRealAmmoTitleID" : "Real Ammo",
-	"RestorationModRealAmmoDescID" : "The Total Ammo Counter Ignores Ammo Currently in Your Weapon",
+	"RestorationModRealAmmoDescID" : "The total ammo counter ignores ammo currently in your weapon.",
 	"RestorationModStealthOrigPosTitleID" : "Vanilla Detection Meter Positioning",
 	"RestorationModStealthOrigPosDescID" : "Places the detection meter in the same area as Vanilla.",
 	"RestorationModLowerBagTitleID" : "Lowered carried bag popup",

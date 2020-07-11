@@ -17,6 +17,7 @@
 	    <hook file="tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
 		<hook file="tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>
 		<hook file="managers/HUDManager.lua" source_file="lib/managers/HUDManager"/>
+		<hook file="managers/HUDManagerpd2.lua" source_file="lib/managers/HUDManagerpd2"/>
 		<hook file="managers/GUIDataManager.lua" source_file="core/lib/managers/coreguidatamanager"/>
 		<hook file="managers/ChatManager.lua" source_file="lib/managers/ChatManager"/>
         <hook file="managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
@@ -333,6 +334,7 @@
 					<merge_data area_bg="half"/>
 					<option type="number" default_value="1" min="0.1" max="1.5" step="0.01" show_value="true" name="Scale"/>
 					<option type="number" default_value="0.936" min="0.1" max="1" step="0.01" show_value="true" name="SizeOnScreen"/>
+					<option type="bool" default_value="false" name="RealAmmo"/>
 					<option type="bool" default_value="false" name="StealthOrigPos"/>
 					<option type="bool" default_value="false" name="LowerBag"/>
 					<!-- <option type="bool" default_value="false" name="CasingTicker"/> -->

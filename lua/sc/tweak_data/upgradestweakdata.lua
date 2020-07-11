@@ -1435,15 +1435,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {
- 		cd = 12, --Cooldown
+ 		cd = 10, --Cooldown
  		cdr = {3 , 5}, --Amount cooldown is reduced on ammo box pickup.
 		{4, 8}, --Amounts healed per level
 		{7, 11},
 		{10, 14}
  	}
-	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
+	self.loose_ammo_give_team_health_ratio = 0.4 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
-	
+	self.values.player.loose_ammo_give_armor = {3}
+
 	--Create actual upgrade table for Gambler.
 	self.values.temporary.loose_ammo_restore_health = {}
 	for i, data in ipairs(self.loose_ammo_restore_health_values) do
@@ -1460,7 +1461,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		true,
 		7
 	}}
-	self.loose_ammo_give_team_ratio = 1.25 --% of ammo given to team.
+	self.loose_ammo_give_team_ratio = 1 --% of ammo given to team.
 
 	--Sociopath more like SocioBAD
 	self.values.player.killshot_regen_armor_bonus = {2.5}
@@ -2458,6 +2459,15 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "fully_loaded_pick_up_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_loose_ammo_give_armor = {
+		name_id = "menu_player_loose_ammo_give_armor",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "loose_ammo_give_armor",
 			category = "player"
 		}
 	}		

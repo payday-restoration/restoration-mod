@@ -2635,6 +2635,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"temporary_loose_ammo_restore_health_3",
+					"player_loose_ammo_give_armor",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

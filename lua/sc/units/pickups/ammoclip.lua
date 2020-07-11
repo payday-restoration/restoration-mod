@@ -75,6 +75,7 @@ function AmmoClip:_pickup(unit)
 							local damage_ext = unit:character_damage()
 							if not damage_ext:need_revive() and not damage_ext:dead() and not damage_ext:is_berserker() then
 								damage_ext:restore_health(heal_amount * 0.1, true) --0.1 done to convert integer healing amount to values actually used by playerdamage.lua
+								damage_ext:restore_armor(player_manager:upgrade_value("player", "loose_ammo_give_armor", 0)) --Armor regen ability
 								unit:sound():play("pickup_ammo_health_boost", nil, true)
 							end
 

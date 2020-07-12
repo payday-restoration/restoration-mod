@@ -33,7 +33,7 @@ function RaidWW2MiniGame:leave(success)
 end
 
 function RaidWW2MiniGame:say(event, no_sound_chance)
-	if not RestorationMod.Options:GetValue("RaidLockPickingVO") then
+	if not restoration.Options:GetValue("RaidLockPickingVO") then
 		return
 	end
 	if event then

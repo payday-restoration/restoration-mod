@@ -1364,7 +1364,7 @@ Hooks:PostHook(PlayerStandard, "_start_action_interact", "RaidMinigameCheckInter
 		local name = object:interaction().tweak_data
 		local tweak = tweak_data.interaction[name]
 		if name ~= "open_door_with_keys" then -- Crashes & is not really lockpicking in the same sense.
-			if tweak and ((tweak.is_lockpicking and RestorationMod.Options:GetValue("RaidLockPicking")) or tweak.special_interaction == "raid") then
+			if tweak and ((tweak.is_lockpicking and restoration.Options:GetValue("RaidLockPicking")) or tweak.special_interaction == "raid") then
 				game_state_machine:change_state_by_name("ingame_special_interaction", {object = object, type = tweak.special_interaction or "raid"})
 				self._interact_expire_t = nil
 				managers.hud:hide_interaction_bar()

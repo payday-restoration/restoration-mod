@@ -649,7 +649,7 @@ end
 
 local raid = RaidMinigame.data
 
-if RestorationMod.Options:GetValue("RaidLockPicking") then
+if restoration.Options:GetValue("RaidLockPicking") then
     local lock_hard = Inter.pick_lock_hard
     lock_hard.failable = true
     lock_hard.number_of_circles = math.clamp(difficulty_index, 3, raid.max_circles)

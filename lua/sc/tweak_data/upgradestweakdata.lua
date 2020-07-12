@@ -774,10 +774,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Bulletproof
 					self.values.player.armor_multiplier = {
 						1.2, --Basic
-						1.5 --Ace
+						1.4 --Ace
 					}
 					--Ace
-						self.values.player.armor_regen_timer_multiplier_tier = {0.95}				
+						self.values.player.armor_regen_timer_multiplier_tier = {0.9}				
 			
 		--Breacher--
 			--Hardware Expert

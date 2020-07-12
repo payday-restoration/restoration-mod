@@ -986,7 +986,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Bulletproof--
 			["menu_iron_man_sc"] = "Bulletproof",
-			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##20%## more armor.\n\nACE: ##$pro##\nYou gain ##30%## more armor.\n\nYour armor recovers ##5%## faster.",																																																																																																																																																																																																																									
+			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYou gain ##20%## more armor.\n\nACE: ##$pro##\nYou gain ##20%## more armor.\n\nYour armor recovers ##10%## faster.",																																																																																																																																																																																																																									
 					
 			--}
 			

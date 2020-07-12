@@ -889,6 +889,10 @@ function CopActionHurt:init(action_desc, common_data)
 
 						local line_to_use = voicelines.burndeath[math_random(#voicelines.burndeath)]
 
+						if common_data.unit:sound()._last_speech then
+							common_data.unit:sound()._last_speech:stop()
+						end
+
 						common_data.ext_base:play_voiceline(line_to_use, true, true)
 					end
 				end
@@ -911,6 +915,10 @@ function CopActionHurt:init(action_desc, common_data)
 					plays_custom_vo = true
 
 					local line_to_use = voicelines.death[math_random(#voicelines.death)]
+
+					if common_data.unit:sound()._last_speech then
+						common_data.unit:sound()._last_speech:stop()
+					end
 
 					common_data.ext_base:play_voiceline(line_to_use, true, true)
 				end

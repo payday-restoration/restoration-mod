@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ind_prop_light_cones_whiteish_small" materials="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks" />
+    <bodies>
+        <body enabled="true" template="editor" name="static_body" >
+			<object name="c_sphere" collision_type="sphere" padding="-2.5"/>
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_light_cone"/>
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,8 @@
+<materials version="3">
+    <material name="wall_1x1" render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/test/gray_noise_df"/>
+    </material>
+    <material name="wall_blank" render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/white_df"/>
+    </material>
+</materials>

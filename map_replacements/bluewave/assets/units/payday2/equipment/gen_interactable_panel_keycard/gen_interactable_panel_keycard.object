@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pickups/pickup_bank_manager_key/pickup_bank_manager_key" orientation_object="rp_gen_interactable_panel_keycard" />
+	<sequence_manager file="units/payday2/equipment/gen_interactable_panel_keycard/gen_interactable_panel_keycard" />
+	<bodies>
+		<body remove_ray_type="walk vis_graph" name="static_body" enabled="true" template="raycoll_static">
+			<object name="rp_gen_interactable_panel_keycard" />
+			<object name="c_control_panel" collision_type="convex" />
+		</body>
+	</bodies>
+
+	</dynamic_object>

@@ -1,0 +1,21 @@
+<unit type="chl" slot="1">
+	<object file="units/pd2_dlc_chill/props/chl_prop_timer_small/chl_prop_timer_small" />
+	<network sync="spawn"/>
+	<dependencies>
+			<depends_on font="fonts/font_digital" />
+	</dependencies>	
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension class="UnitDamage" name="damage" />		
+		<extension class="DigitalGui" name="digital_gui" >
+			<var name="_gui_object" value="g_display" />
+			<var name="TIMER_PRECISION" value="2" />
+			<var name="FONT_SIZE" value="210" />
+			<var name="WIDTH" value="1000" />
+			<var name="HEIGHT" value="300" />
+			<var name="display_format" value="{minutes}:{seconds}:{milliseconds}" />
+		</extension>
+	</extensions>
+	<sounds>
+	</sounds>
+</unit>

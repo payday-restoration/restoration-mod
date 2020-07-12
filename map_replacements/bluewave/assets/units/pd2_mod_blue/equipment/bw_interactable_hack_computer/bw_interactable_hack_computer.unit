@@ -1,0 +1,20 @@
+<unit type="blu" slot="1">
+	<object file="units/pd2_mod_blue/equipment/bw_interactable_hack_computer/bw_interactable_hack_computer" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on gui="guis/timer_gui" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="vit_search_clues" />
+			<var name="drop_in_sync_tweak_data" value="true" />
+			<var name="_interact_object" value="interact" />
+		</extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_vit_interactable_hack_computer"/>
+	</sounds>
+</unit>

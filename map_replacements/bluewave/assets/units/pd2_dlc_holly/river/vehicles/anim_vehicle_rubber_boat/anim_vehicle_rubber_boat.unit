@@ -1,0 +1,26 @@
+<unit type="vhc" slot="1">
+	<object file="units/pd2_dlc_holly/river/vehicles/anim_vehicle_rubber_boat/anim_vehicle_rubber_boat" />
+	<network sync="spawn"/>
+	<anim_state_machine name="anims/units/rubber_boat/rubber_boat" />
+
+	<dependencies>
+		<depends_on animation_def="anims/units/rubber_boat/rubber_boat"/>
+		<depends_on animation_state_machine="anims/units/rubber_boat/rubber_boat"/>
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+
+	<extensions>
+		<extension name="base" class="AnimatedVehicleBase">
+			<var name="_body_name" value="anim_body"/>
+		</extension>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<!-- <extension name="sync_unit_data" class="SyncUnitData" /> -->
+	</extensions>
+
+	<sounds>
+		<default_soundsource source="snd_motor"/>
+		<soundsource name="snd" source="snd_motor" />
+	</sounds>
+
+</unit>

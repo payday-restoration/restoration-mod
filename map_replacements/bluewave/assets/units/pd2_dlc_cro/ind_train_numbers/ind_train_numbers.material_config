@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="Default" render_template="generic" version="2"/>
+    <material name="sign" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc_cro/ind_train_numbers/textures/ind_train_numbers_df"/>
+    </material>
+</materials>
+

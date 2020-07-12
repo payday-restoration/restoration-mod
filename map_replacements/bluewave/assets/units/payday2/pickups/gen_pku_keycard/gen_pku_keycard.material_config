@@ -1,0 +1,8 @@
+<materials version="3" group="gen_pku_keycard">
+    <material name="mtr_card" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/equipment/gen_interactable_door_keycard/keycard_df"/>
+    </material>
+    <material name="mtr_card_generic" render_template="generic:DIFFUSE_TEXTURE" version="2">
+		<diffuse_texture file="units/payday2/pickups/gen_pku_keycard/keycard_generic_df" />
+    </material>
+</materials>

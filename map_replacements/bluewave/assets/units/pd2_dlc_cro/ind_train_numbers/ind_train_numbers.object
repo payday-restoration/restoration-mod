@@ -1,0 +1,23 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ind_train_numbers" materials="units/pd2_dlc_cro/ind_train_numbers/ind_train_numbers" />
+	<sequence_manager file="units/pd2_dlc_cro/ind_train_numbers/ind_train_numbers" />
+    <bodies>
+        <body enabled="true" template="editor" name="static_body">
+            <object name="rp_ind_train_numbers" />
+            <object name="c_box_01" collision_type="box" />
+        </body>
+    </bodies>
+    <decal_surfaces />
+    <graphics>
+        <object name="g_03-g" enabled="true" />
+        <object name="g_08-t" enabled="true" />
+        <object name="g_13-o" enabled="true" />
+        <object name="g_14-i" enabled="true" />
+        <object name="g_17-j" enabled="true" />
+        <object name="g_26-a" enabled="true" />
+        <object name="g_27-i" enabled="true" />
+        <object name="g_33-m" enabled="true" />
+        <object name="g_39-n" enabled="true" />
+        <object name="g_45-r" enabled="true" />
+    </graphics>
+</dynamic_object>

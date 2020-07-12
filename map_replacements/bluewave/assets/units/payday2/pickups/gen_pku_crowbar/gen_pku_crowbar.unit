@@ -1,0 +1,13 @@
+<unit type="gen" slot="1" >
+	<object file="units/payday2/pickups/gen_pku_crowbar/gen_pku_crowbar" />
+	<network sync="spawn" />
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="interaction" class="SpecialEquipmentInteractionExt" >
+			<var name="_special_equipment" value="crowbar" />
+			<var name="_remove_on_interact" value="true" />
+			<var name="tweak_data" value="gen_pku_crowbar" />
+		</extension>
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

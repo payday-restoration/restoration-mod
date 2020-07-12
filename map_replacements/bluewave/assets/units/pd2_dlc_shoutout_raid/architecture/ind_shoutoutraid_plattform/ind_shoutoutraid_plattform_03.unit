@@ -1,0 +1,6 @@
+<unit type="ind" slot="1">
+	<object file="units/pd2_dlc_shoutout_raid/architecture/ind_shoutoutraid_plattform/ind_shoutoutraid_plattform_03" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

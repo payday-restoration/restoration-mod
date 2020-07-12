@@ -1,0 +1,14 @@
+<materials version="3">
+    <material name="mtr_chips" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/ind_prop_dock_box/chips_df"/>
+    </material>
+    <material name="mtr_box" render_template="generic:DIFFUSE_TEXTURE:DOUBLE_SIDED:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/ind_prop_dock_box/boxes_df"/>
+        <bump_normal_texture file="units/payday2/props/ind_prop_dock_box/boxes_nm"/>
+    </material>
+    <material name="mtr_box_wall" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/ind_prop_dock_box/boxes_df"/>
+        <bump_normal_texture file="units/payday2/props/ind_prop_dock_box/boxes_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

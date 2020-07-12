@@ -1,0 +1,11 @@
+<unit type="gen" slot="1" >
+	<network sync="spawn" />
+    <object file="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="UnitDamage" name="damage" />
+        <extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="timelock_panel" />
+		</extension>	
+    </extensions>
+</unit>

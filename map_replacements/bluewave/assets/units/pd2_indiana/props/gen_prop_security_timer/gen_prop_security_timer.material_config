@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="gen_prop_security_timelock_mat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_security_timelock/gen_prop_security_timelock_df"/>
+        <bump_normal_texture file="units/payday2/props/gen_prop_security_timelock/gen_prop_security_timelock_nm"/>
+    </material>
+</materials>
+

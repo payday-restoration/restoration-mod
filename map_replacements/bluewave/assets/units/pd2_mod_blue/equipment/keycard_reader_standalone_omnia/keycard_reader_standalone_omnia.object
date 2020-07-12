@@ -1,0 +1,15 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" orientation_object="rp_rootpoint" />
+	<sequence_manager file="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="c_control_panel" collision_type="convex" padding="-1" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_control_panel"					enabled="true" />
+		<object name="g_control_panel_screen"			enabled="true" />
+		<object name="g_control_panel_screen_access"	enabled="false" />
+		<object name="g_keycard"						enabled="false" />
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<unit type="dev" slot="1">
+	<network sync="spawn"/>
+  <object file="units/dev_tools/level_tools/dev_bag_collision/dev_bag_collision_1x3m" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData">
+      <var name="only_visible_in_editor" value="true" />
+    </extension>
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_mex/props/mex_prop_breaching_detonator/mex_prop_breaching_detonator" orientation_object="rp_mex_prop_breaching_detonator" />
+	<sequence_manager file="units/pd2_dlc_mex/props/mex_prop_breaching_detonator/mex_prop_breaching_detonator" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_mex_prop_breaching_detonator" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_frame" enabled="true" />
+		<object name="g_frame_outline" enabled="false" />
+	</graphics>
+</dynamic_object>

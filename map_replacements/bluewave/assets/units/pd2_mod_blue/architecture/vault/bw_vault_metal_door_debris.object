@@ -1,0 +1,20 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" orientation_object="rp_dest_sec_safe_05x05_door" />
+	
+	<bodies>
+	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9" collision_class="disabled">
+			<object name="rp_dest_sec_safe_05x05_door" />
+			<object name="c_door" collision_type="convex" mass="20" padding="-3"/>
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel">
+	</decal_surfaces>
+
+	<graphics>
+		<object name="g_door" 		enabled="true" />
+		<object name="g_analog" 	enabled="true" />
+		<object name="g_handle" 	enabled="true" />
+	</graphics>
+	
+</dynamic_object>

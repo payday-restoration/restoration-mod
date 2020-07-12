@@ -1,0 +1,16 @@
+<dynamic_object>
+    <diesel orientation_object="rp_bnk_ext_garage_door_button" materials="units/pd2_dlc1/architecture/bnk_ext_garage/bnk_ext_garage_door_button" />
+    <sequence_manager file="units/pd2_dlc1/architecture/bnk_ext_garage/bnk_ext_garage_door_button" />
+
+	<bodies>		
+		<body enabled="true" template="static" name="static_body" >
+			<object name="rp_bnk_ext_garage_door_button" />				
+			<object name="c_box" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+
+	<graphics>
+		<object name="g_g" enabled="true"/>
+		<object name="g_contour" enabled="false"/>
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,27 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_mex/pickups/mex_pku_breaching_charge/mex_pku_breaching_charge" orientation_object="rp_mex_pku_breaching_charge" />
+	<sequence_manager file="units/pd2_dlc_mex/pickups/mex_pku_breaching_charge/mex_pku_breaching_charge" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_mex_pku_breaching_charge" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+	</decal_surfaces>
+	<graphics>
+		<object name="g_light_green" enabled="false" />
+		<object name="g_light_red" enabled="false" />
+	
+		<graphic_group name="grp" enabled="true">
+			<lod_object name="lod_g_charge">
+				<object name="g_charge_lod0" enabled="true" max_distance="1000" />
+				<object name="g_charge_lod1" enabled="true" max_distance="2000" />
+				<object name="g_charge_lod2" enabled="true" />
+			</lod_object>
+
+	
+			<object name="s_s" enabled="true" shadow_caster="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,25 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_blue/architecture/warehouse/warehouse" orientation_object="rp_warehouseinterior" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="g_int_ground"				collision_type="mesh_mopp" padding="-2.5" />
+			<object name="g_int_front_room"			collision_type="mesh_mopp" padding="-2.5" />
+			<object name="g_int_security_room_01"	collision_type="mesh_mopp" padding="-2.5" />
+			<object name="g_int_security_room_02"	collision_type="mesh_mopp" padding="-2.5" />
+			<object name="g_int_vault_room_01"		collision_type="mesh_mopp" padding="-2.5" />
+			<object name="g_int_vault_room_02"		collision_type="mesh_mopp" padding="-2.5" />
+			<object name="c_wareint_001"	collision_type="box" padding="-2.5" />
+			<object name="c_wareint_002"	collision_type="box" padding="-2.5" />
+			<object name="c_wareint_003"	collision_type="box" padding="-2.5" />
+			<object name="c_wareint_004"	collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_int_front_room"			enabled="true" shadow_caster="true" />
+		<object name="g_int_security_room_01"	enabled="true" shadow_caster="true" />
+		<object name="g_int_security_room_02"	enabled="true" shadow_caster="true" />
+		<object name="g_int_vault_room_01"		enabled="true" shadow_caster="true" />
+		<object name="g_int_vault_room_02"		enabled="true" shadow_caster="true" />
+		<object name="g_int_ground"				enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky_1" orientation_object="rp_gen_prop_container" />
+	<sequence_manager file="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky" />
+
+	<bodies>
+		<body name="body_container" enabled="true" template="static">
+			<object name="rp_gen_prop_container" />
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_04" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_metal" 	enabled="true" material="sheet_metal" />
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="grp_container" enabled="true" culling_object="co_cull">
+			<object name="g_1" 		enabled="false" 	shadow_caster="false" />
+			<lod_object name="g_1">
+				<object name="g_1_lod0" enabled="false"  max_distance="6000" />
+				<object name="g_1_lod4" enabled="false" />
+			</lod_object>
+			<object name="g_2" 		enabled="true" 		shadow_caster="false" />
+			<lod_object name="g_2">
+				<object name="g_2_lod0" enabled="true"  max_distance="6000" />
+				<object name="g_2_lod4" enabled="true" />
+			</lod_object>
+			<object name="g_3" 		enabled="false" 	shadow_caster="false" />
+			<lod_object name="g_3">
+				<object name="g_3_lod0" enabled="false"  max_distance="6000" />
+				<object name="g_3_lod4" enabled="false" />
+			</lod_object>
+			<object name="g_logo_lod0"	enabled="true" 		shadow_caster="false" />
+			<object name="s_s" 		enabled="true" 		shadow_caster="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

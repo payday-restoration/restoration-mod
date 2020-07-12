@@ -1,0 +1,8 @@
+<materials version="3" group="gen_pku_circuit_board">
+    <material name="communications" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+        <diffuse_texture file="units/world/props/apartment/communication/communication_df"/>
+        <bump_normal_texture file="units/world/props/apartment/communication/communication_nm"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+</materials>

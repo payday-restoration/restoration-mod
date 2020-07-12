@@ -1,0 +1,8 @@
+<materials version="3">
+    <material name="mat_are_cross" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc_arena/architecture/are_lobby/are_cross_df"/>
+    </material>
+    <material name="mat_are_stripes" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc_arena/architecture/are_lobby/are_stripes_df"/>
+    </material>
+</materials>

@@ -1,0 +1,71 @@
+<table>
+	<unit>
+		<variables>
+			<var_open value="0"/>
+		</variables>
+		<filter name="'filter_open_normal'">
+			<check value="vars.var_open == 0"/>
+		</filter>
+		<filter name="'filter_open_short'">
+			<check value="vars.var_open == 1"/>
+		</filter>
+		
+		<sequence editable_state="true" name="'state_will_open_normal'" triggable="true">
+			<set_variables var_open="0"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_will_open_short'" triggable="true">
+			<set_variables var_open="1"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'enable_interaction'" triggable="true">
+			<interaction enabled="true"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'interact'" triggable="true">
+			<run_sequence filter="'filter_open_normal'" name="'anim_open'"/>
+			<run_sequence filter="'filter_open_short'" name="'anim_open_short'"/>
+			<!-- <attention giveaway="'vault'" object_name="'a_lance_1'" operation="'add'" preset_name="'prop_law_scary'"/> -->
+			<interaction enabled="false"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'anim_open'" triggable="true">
+			<animation_group enabled="true" from="0/30" name="'open'"/>
+			<sound action="'play'" event="'bank_vault_door_light_open'" object="'anim_lock_bottom'"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_open_short'" triggable="true">
+			<animation_group enabled="true" from="0/30" to="180/30" name="'open'"/>
+			<sound action="'play'" event="'bank_vault_door_light_open'" object="'anim_lock_bottom'"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_close'" triggable="true">
+			<animation_group enabled="true" from="200/30" name="'open'" speed="-1" to="0/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_closed'" triggable="true">
+			<animation_group enabled="true" from="0/30" name="'open'" to="0/30"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_opened'" triggable="true">
+			<animation_group enabled="true" from="200/30" name="'open'" to="200/30"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'state_explode'" triggable="true">
+			<body	enabled="false"	name="'body_door'"/>
+			<object	enabled="false"	name="'body_door'"/>
+			<object	enabled="false"	name="'g_box_lock'"/>
+			<object	enabled="false"	name="'g_lock_upper'"/>
+			<object	enabled="false"	name="'g_lock_bottom'"/>
+			<object	enabled="false"	name="'g_wheel'"/>
+			<object	enabled="false"	name="'g_piston_upper'"/>
+			<object	enabled="false"	name="'g_piston_bottom'"/>
+			<object	enabled="false"	name="'g_piston_left'"/>
+			<object	enabled="false"	name="'g_piston_right'"/>
+			<object	enabled="false"	name="'g_door'"/>
+			<object	enabled="false"	name="'g_frame'"/>
+			<object	enabled="false"	name="'g_test_2'"/>
+			<object	enabled="false"	name="'s_s'"/>
+			<decal_mesh	enabled="false"	name="'dm_sheet_metal'"/>
+			<decal_mesh	enabled="false"	name="'dm_metal_door'"/>
+			<decal_mesh	enabled="false"	name="'dm_lock_upper'"/>
+			<decal_mesh	enabled="false"	name="'dm_lock_bottom'"/>
+			<decal_mesh	enabled="false"	name="'dm_frame'"/>
+		</sequence>
+	</unit>
+</table>

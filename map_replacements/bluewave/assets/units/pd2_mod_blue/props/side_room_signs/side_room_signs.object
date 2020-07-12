@@ -1,0 +1,30 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_blue/props/side_room_signs/side_room_signs" orientation_object="rp_nmh_prop_sign_restrooms" />
+	<sequence_manager file="units/pd2_mod_blue/props/side_room_signs/side_room_signs" />
+	<bodies>
+		<body name="body_large" enabled="true" template="static">
+			<object name="rp_nmh_prop_sign_restrooms" />
+			<object name="c_box_01_large" collision_type="box" padding="-2.5" />
+		</body>
+		<body name="body_small" enabled="false" template="static">
+			<object name="rp_nmh_prop_sign_restrooms" />
+			<object name="c_box_02_small" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_metal_large" enabled="true" material="metal" />
+		<decal_mesh name="dm_metal_small" enabled="false" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<graphic_group name="restrooms_main" enabled="true">
+			<object name="g_sign_restroom_main" enabled="true" />
+		</graphic_group>
+		<graphic_group name="restrooms_female" enabled="false">
+			<object name="g_sign_restroom_f" enabled="true" />
+		</graphic_group>
+		<graphic_group name="restrooms_male" enabled="false">
+			<object name="g_sign_restroom_m" enabled="true" />
+		</graphic_group>
+	</graphics>
+
+</dynamic_object>

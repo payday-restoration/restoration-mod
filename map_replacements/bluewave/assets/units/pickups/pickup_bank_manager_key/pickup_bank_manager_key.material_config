@@ -1,0 +1,16 @@
+<materials version="3">
+    <material name="keycard" render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/pickups/pickup_bank_manager_key/pickup_bank_manager_key_df"/>
+    </material>
+    <material name="glow" render_template="generic:CONTOUR:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pickups/pickup_bank_manager_key/pickup_bank_manager_key_df"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <variable value="1 0.5 0.0" type="vector3" name="contour_color"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" decal_material="metal" name="screen_ill" version="2">
+        <diffuse_texture file="units/pickups/pickup_bank_manager_key/pickup_bank_manager_key_df"/>
+<!--         <self_illumination_texture file="units/pickups/pickup_bank_manager_key/pickup_bank_manager_key_df"/> -->
+        <self_illumination_texture file="units/pickups/pickup_bank_manager_key/screen_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

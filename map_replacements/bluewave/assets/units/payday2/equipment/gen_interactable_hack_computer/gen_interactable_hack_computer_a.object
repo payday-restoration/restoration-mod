@@ -1,0 +1,32 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_inter_hack_computer_a" materials="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_a" />
+	<sequence_manager file="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_a" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object name="rp_gen_inter_hack_computer_a" />
+            <object collision_type="box" name="c_bottom_box" />
+            <object collision_type="box" name="c_screen_box" />
+        </body>
+    </bodies>
+    <graphics>
+		<object name="g_off" 			enabled="true"/>
+		<object name="g_computerscreen" enabled="true"/>
+		<object name="g_on" 			enabled="false"/>
+		<object name="g_on_v2" 			enabled="false"/>
+		<object name="g_on_v3" 			enabled="false"/>
+		<object name="g_on_v4" 			enabled="false"/>
+		<object name="g_on_v5" 			enabled="false"/>
+		<object name="g_cmd" 			enabled="false"/>
+		<object name="g_text_01" 		enabled="false"/>
+		<object name="g_text_02" 		enabled="false"/>
+		<object name="g_text_03" 		enabled="false"/>
+		<object name="g_text_04" 		enabled="false"/>
+		<object name="g_text_05" 		enabled="false"/>
+		<object name="g_text_06" 		enabled="false"/>
+		<object name="g_text_07" 		enabled="false"/>
+		<object name="g_text_08" 		enabled="false"/>
+		<object name="g_text_09" 		enabled="false"/>
+		<object name="g_text_10" 		enabled="false"/>
+		<object name="g_scrolling" 		enabled="false"/>
+    </graphics>
+</dynamic_object>

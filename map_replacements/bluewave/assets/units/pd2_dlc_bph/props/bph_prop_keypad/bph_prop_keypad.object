@@ -1,0 +1,56 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_bph/props/bph_prop_keypad/bph_prop_keypad" orientation_object="rp_bph_prop_keypad" />
+	<sequence_manager file="units/pd2_dlc_bph/props/bph_prop_keypad/bph_prop_keypad" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_bph_prop_keypad" />
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_opened" enabled="false" />
+		<object name="g_error" enabled="false" />
+		<object name="g_number_0_pos_04" enabled="false" />
+		<object name="g_number_0_pos_03" enabled="false" />
+		<object name="g_number_0_pos_02" enabled="false" />
+		<object name="g_number_0_pos_01" enabled="false" />
+		<object name="g_number_1_pos_01" enabled="false" />
+		<object name="g_number_1_pos_02" enabled="false" />
+		<object name="g_number_1_pos_03" enabled="false" />
+		<object name="g_number_1_pos_04" enabled="false" />
+		<object name="g_number_2_pos_01" enabled="false" />
+		<object name="g_number_2_pos_02" enabled="false" />
+		<object name="g_number_2_pos_03" enabled="false" />
+		<object name="g_number_2_pos_04" enabled="false" />
+		<object name="g_number_3_pos_01" enabled="false" />
+		<object name="g_number_3_pos_02" enabled="false" />
+		<object name="g_number_3_pos_03" enabled="false" />
+		<object name="g_number_3_pos_04" enabled="false" />
+		<object name="g_number_4_pos_01" enabled="false" />
+		<object name="g_number_4_pos_02" enabled="false" />
+		<object name="g_number_4_pos_03" enabled="false" />
+		<object name="g_number_4_pos_04" enabled="false" />
+		<object name="g_number_5_pos_01" enabled="false" />
+		<object name="g_number_5_pos_02" enabled="false" />
+		<object name="g_number_5_pos_03" enabled="false" />
+		<object name="g_number_5_pos_04" enabled="false" />
+		<object name="g_number_6_pos_01" enabled="false" />
+		<object name="g_number_6_pos_02" enabled="false" />
+		<object name="g_number_6_pos_03" enabled="false" />
+		<object name="g_number_6_pos_04" enabled="false" />
+		<object name="g_number_7_pos_01" enabled="false" />
+		<object name="g_number_7_pos_02" enabled="false" />
+		<object name="g_number_7_pos_03" enabled="false" />
+		<object name="g_number_7_pos_04" enabled="false" />
+		<object name="g_number_8_pos_01" enabled="false" />
+		<object name="g_number_8_pos_02" enabled="false" />
+		<object name="g_number_8_pos_03" enabled="false" />
+		<object name="g_number_8_pos_04" enabled="false" />
+		<object name="g_number_9_pos_01" enabled="false" />
+		<object name="g_number_9_pos_02" enabled="false" />
+		<object name="g_number_9_pos_03" enabled="false" />
+		<object name="g_number_9_pos_04" enabled="false" />
+		<object name="g_keypad" enabled="true" />
+	</graphics>
+</dynamic_object>

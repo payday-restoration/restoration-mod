@@ -1,0 +1,9 @@
+<materials version="3">
+    <material name="mat_mull_desks" render_template="effect:BLEND_MUL:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_desk_mull_decal_df"/>
+        <variable value="dimlight" type="scalar" name="intensity"/>
+    </material>
+    <material name="mat_mull_desks_lod" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_desk_mull_decal_df" mip="3" />
+    </material>
+</materials>

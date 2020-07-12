@@ -1,0 +1,13 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_prop_square_drop_marker_4x15" materials="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" />
+  <sequence_manager file="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" template="editor">
+            <object collision_type="box" name="c_cube" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_goal" />
+        <object enabled="true" name="g_icon" />
+    </graphics>
+</dynamic_object>

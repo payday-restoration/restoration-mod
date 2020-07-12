@@ -1,0 +1,28 @@
+<table>
+	<unit>
+		<sequence editable_state="true" name="'state_hide'" triggable="true">
+			<interaction enabled="false"/>
+			<body enabled="false" name="'static_body'"/>
+			<body enabled="false" name="'animated_body'"/>
+			<object enabled="false" name="'g_door'"/>
+			<object enabled="false" name="'g_g'"/>
+			<object enabled="false" name="'g_outline'"/>
+		</sequence>
+		<sequence editable_state="true" name="'state_show_and_enable_interaction'" triggable="true">
+			<interaction enabled="true"/>
+			<body enabled="true" name="'static_body'"/>
+			<body enabled="true" name="'animated_body'"/>
+			<object enabled="true" name="'g_door'"/>
+			<object enabled="true" name="'g_g'"/>
+		</sequence>
+		<sequence editable_state="true" name="'anim_door_open'" triggable="true">
+			<animation_group enabled="true" from="0/30" name="'anim_door'" to="15/30"/>
+			<sound action="'play'" event="'switch_box_open'" object="'a_align_door'"/>
+		</sequence>
+		<sequence editable_state="false" name="'interact'" triggable="false">
+			<object enabled="false" name="'g_outline'"/>
+			<run_sequence name="'anim_door_open'"/>
+		</sequence>
+		<sequence editable_state="false" name="'done_keys_taken'" triggable="false"/>
+	</unit>
+</table>

@@ -1,0 +1,14 @@
+<table directory="assets">
+	<add path="units/payday2/props/ind_prop_mechanical_water_meter/ind_prop_mechanical_water_meter" type="unit">
+		<unit path="units/payday2/props/ind_prop_mechanical_water_meter/ind_prop_mechanical_water_meter" unload="true"/>
+		<object path="units/payday2/props/ind_prop_mechanical_water_meter/ind_prop_mechanical_water_meter" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_mechanical_water_meter/ind_prop_mechanical_water_meter" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_knockout_gas_canister/gen_prop_knockout_gas_canister" type="unit">
+		<bnk path="soundbanks/regular_sfx" unload="true"/>
+		<material_config path="units/payday2/props/gen_prop_knockout_gas_canister/gen_prop_knockout_gas_canister" unload="true"/>
+		<object path="units/payday2/props/gen_prop_knockout_gas_canister/gen_prop_knockout_gas_canister" unload="true"/>
+		<sequence_manager path="units/payday2/props/gen_prop_knockout_gas_canister/gen_prop_knockout_gas_canister" unload="true"/>
+		<unit path="units/payday2/props/gen_prop_knockout_gas_canister/gen_prop_knockout_gas_canister" unload="true"/>
+	</add>
+</table>

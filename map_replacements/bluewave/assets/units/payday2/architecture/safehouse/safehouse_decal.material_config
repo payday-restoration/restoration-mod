@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="decal_arrow" render_template="effect:DIFFUSE0_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="units/payday2/architecture/safehouse/safehouse_decals_df"/>
+        <variable value="sun" type="scalar" name="intensity"/>
+    </material>
+</materials>

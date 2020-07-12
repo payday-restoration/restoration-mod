@@ -1,0 +1,8 @@
+<unit type="bph" slot="1">
+	<network sync="spawn"/>
+	<object file="units/pd2_dlc_bph/props/bph_prop_keypad/bph_prop_keypad" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

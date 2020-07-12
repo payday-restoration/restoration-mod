@@ -1,0 +1,173 @@
+<table directory="assets">
+	<add unload_on_restart="true">
+		<material_config path="units/pd2_mod_blue/architecture/vault/bw_vault" unload="true"/>
+		<unit path="units/pd2_mod_blue/architecture/vault/bw_container_vault" unload="true"/>
+		<object path="units/pd2_mod_blue/architecture/vault/bw_container_vault" unload="true"/>
+		<model path="units/pd2_mod_blue/architecture/vault/bw_container_vault" unload="true"/>
+		<unit path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<object path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<model path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<material_config path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<sequence_manager path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<texture path="units/pd2_mod_blue/architecture/vault/murkywater_armadillo" unload="true"/>
+		<texture path="units/pd2_mod_blue/guis/hud_pickups_keycard_omnia" unload="true"/>
+		<unit path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<object path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<model path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<material_config path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<sequence_manager path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<texture path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia_df" unload="true"/>
+		<unit path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<object path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<model path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<material_config path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<sequence_manager path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<texture path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia_df" unload="true"/>
+		<cooked_physics path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_container/gen_prop_container" type="unit">
+		<unit path="units/payday2/props/gen_prop_container/gen_prop_container" unload="true"/>
+		<object path="units/payday2/props/gen_prop_container/gen_prop_container" unload="true"/>
+		<material_config path="units/payday2/props/gen_prop_container/gen_prop_container_1" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<sequence_manager path="units/payday2/props/gen_prop_container/gen_prop_container" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_cro/ind_container_mul/mullplan_container" type="unit">
+		<material_config path="units/pd2_dlc_cro/ind_container_mul/mullplan_container" unload="true"/>
+		<object path="units/pd2_dlc_cro/ind_container_mul/mullplan_container" unload="true"/>
+		<unit path="units/pd2_dlc_cro/ind_container_mul/mullplan_container" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky" type="unit">
+		<unit path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky" unload="true"/>
+		<object path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky" unload="true"/>
+		<material_config path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky_1" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_1" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_2" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_3" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open_4" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<object path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<material_config path="units/payday2/props/ind_prop_dock_box/ind_prop_dock_box_wall_open" unload="true"/>
+		<sequence_manager path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky_doors" type="unit">
+		<material_config path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky_1" unload="true"/>
+		<object path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky_doors" unload="true"/>
+		<sequence_manager path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky_doors" unload="true"/>
+		<unit path="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky_doors" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_jolly/pickups/gen_pku_saw/gen_pku_saw" type="unit">
+		<material_config path="units/pd2_dlc_jolly/pickups/gen_pku_saw/gen_pku_saw" unload="true"/>
+		<object path="units/pd2_dlc_jolly/pickups/gen_pku_saw/gen_pku_saw" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_jolly/pickups/gen_pku_saw/gen_pku_saw" unload="true"/>
+		<unit path="units/pd2_dlc_jolly/pickups/gen_pku_saw/gen_pku_saw" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" type="unit">
+		<effect load="true" path="effects/particles/equipment/vault_drill/drill_active" unload="true"/>
+		<effect load="true" path="effects/particles/equipment/apartment_saw/saw_active" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/drill_jammed" unload="true"/>
+		<bnk path="soundbanks/regular_sfx" unload="true"/>
+		<gui path="guis/timer_gui" unload="true"/>
+		<material_config path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" unload="true"/>
+		<object path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" unload="true"/>
+		<unit path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc1/equipment/ind_interactable_shipping_crate_2x1x1m/ind_interactable_shipping_crate_2x1x1m_raytraced" type="unit">
+		<material_config path="units/pd2_dlc1/equipment/ind_interactable_shipping_crate_2x1x1m/ind_interactable_shipping_crate_2x1x1m" unload="true"/>
+		<object path="units/pd2_dlc1/equipment/ind_interactable_shipping_crate_2x1x1m/ind_interactable_shipping_crate_2x1x1m" unload="true"/>
+		<sequence_manager path="units/pd2_dlc1/equipment/ind_interactable_shipping_crate_2x1x1m/ind_interactable_shipping_crate_2x1x1m" unload="true"/>
+		<unit path="units/pd2_dlc1/equipment/ind_interactable_shipping_crate_2x1x1m/ind_interactable_shipping_crate_2x1x1m_raytraced" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_cocaine" type="unit">
+		<effect load="true" path="effects/payday2/particles/grab/grab_coke" unload="true"/>
+		<effect load="true" path="effects/payday2/particles/grab/parts/coke_smoke" unload="true"/>
+		<material_config path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_cocaine" unload="true"/>
+		<object path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_cocaine" unload="true"/>
+		<sequence_manager path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_cocaine" unload="true"/>
+		<unit path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_cocaine" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_gold" type="unit">
+		<effect load="true" path="effects/payday2/particles/grab/grab_gold" unload="true"/>
+		<material_config path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_gold" unload="true"/>
+		<object path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_gold" unload="true"/>
+		<sequence_manager path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_gold" unload="true"/>
+		<unit path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_gold" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_money" type="unit">
+		<material_config path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_money" unload="true"/>
+		<object path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_money" unload="true"/>
+		<sequence_manager path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_money" unload="true"/>
+		<unit path="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_money" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" type="unit">
+		<material_config path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" unload="true"/>
+		<object path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" unload="true"/>
+		<unit path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" type="unit">
+		<material_config path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
+		<object path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
+		<unit path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" type="unit">
+		<material_config path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
+		<object path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
+		<unit path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" type="unit">
+		<material_config path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
+		<object path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
+		<unit path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
+	</add>
+	<add path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board" type="unit">
+		<material_config path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board" unload="true"/>
+		<object path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board" unload="true"/>
+		<sequence_manager path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board" unload="true"/>
+		<unit path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board" unload="true"/>
+	</add>
+	<add path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_pallet_blue" type="unit">
+		<material_config path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_pallet_blue" unload="true"/>
+		<object path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_pallet_blue" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_warehouse_set/ind_prop_warehouse_pallet_blue" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/safehouse/safehouse_decal_arrow" type="unit">
+		<material_config path="units/payday2/architecture/safehouse/safehouse_decal" unload="true"/>
+		<object path="units/payday2/architecture/safehouse/safehouse_decal_arrow" unload="true"/>
+		<unit path="units/payday2/architecture/safehouse/safehouse_decal_arrow" unload="true"/>
+	</add>
+	<add path="units/dev_tools/editable_text_short/editable_text_short" type="unit">
+		<material_config path="units/dev_tools/editable_text_short/editable_text_short" unload="true"/>
+		<object path="units/dev_tools/editable_text_short/editable_text_short" unload="true"/>
+		<unit path="units/dev_tools/editable_text_short/editable_text_short" unload="true"/>
+	</add>
+	<add path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" type="unit">
+		<unit path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" unload="true"/>
+		<object path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" unload="true"/>
+		<material_config path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" unload="true"/>
+		<sequence_manager path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" unload="true"/>
+		<font path="fonts/font_digital" unload="true"/>
+	</add>
+</table>

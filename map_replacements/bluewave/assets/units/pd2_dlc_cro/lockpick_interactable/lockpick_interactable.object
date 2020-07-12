@@ -1,0 +1,22 @@
+<dynamic_object>
+    <diesel orientation_object="rp_lockpick_interactable" materials="units/pd2_dlc_cro/lockpick_interactable/lockpick_interactable" />
+	<sequence_manager file="units/pd2_dlc_cro/lockpick_interactable/lockpick_interactable" />
+    <bodies>
+        <body enabled="true" template="static"  collides_with_mover="false" name="static_body">
+            <object name="rp_lockpick_interactable" />
+            <object name="c_box" collision_type="box" />
+        </body>
+    </bodies>
+    <decal_surfaces />
+    <graphics>
+        <graphic_group name="grp_icon" enabled="true" >
+            <lod_object name="lockpick_icon">
+                <object name="g_icon"   enabled="true"  max_distance="450"  max_draw_lod="0" />
+                <object name="g_icon_lod01"  enabled="true"  lod="1" />
+            </lod_object> 
+        </graphic_group>
+    </graphics>
+</dynamic_object>
+
+
+

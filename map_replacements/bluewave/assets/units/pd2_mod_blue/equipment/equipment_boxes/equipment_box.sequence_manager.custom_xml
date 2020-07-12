@@ -1,0 +1,8 @@
+<table>
+	<unit>
+		<sequence editable_state="true" name="'interact'" triggable="true" once="true">
+			<object enabled="false" name="'g_state_0'"/>
+			<object enabled="true" name="'g_state_1'"/>
+		</sequence>
+	</unit>
+</table>

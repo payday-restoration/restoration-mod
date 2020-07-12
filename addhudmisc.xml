@@ -92,5 +92,15 @@
 	<texture path="fonts/pdth_challenge"/>
 	<merged_font path="fonts/pdth_challenge_mf"/>
 	<texture path="guis/textures/restoration/challenge_progress"/>
+
+	<!-- Raid Lockpicking -->
+	<texture path="ui/interact_lockpick_circle_1"/>
+	<texture path="ui/interact_lockpick_circle_1_fail"/>
+	<texture path="ui/interact_lockpick_circle_2"/>
+	<texture path="ui/interact_lockpick_circle_2_fail"/>
+	<texture path="ui/interact_lockpick_circle_3"/>
+	<texture path="ui/interact_lockpick_circle_3_fail"/>
+	<texture path="ui/interact_lockpick_tool"/>
+	<texture path="ui/raid_secondary_menu_bg"/>
 			
 </table>

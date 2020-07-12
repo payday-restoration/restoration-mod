@@ -1,7 +1,7 @@
 RaidWW2MiniGame = RaidWW2MiniGame or class()
 function RaidWW2MiniGame:init(parent, object)
     self._parent = parent
-    local data = RaidMinigame.data
+    local data = _G.restoration.data
 	self._target_unit = object
 	self._tweak_data = tweak_data.interaction[object:interaction().tweak_data]
 	self._tweak_data.sounds = self._tweak_data.sounds or data.sounds
@@ -33,9 +33,6 @@ function RaidWW2MiniGame:leave(success)
 end
 
 function RaidWW2MiniGame:say(event, no_sound_chance)
-	if not restoration.Options:GetValue("RaidLockPickingVO") then
-		return
-	end
 	if event then
 		local player = managers.player:player_unit()
 		if alive(player) and player:sound() then
@@ -59,7 +56,7 @@ function RaidWW2MiniGame:destroy()
 		self:say(self._tweak_data.sounds.complete)
     end
     if self._tweak_data.grows_each_interaction then
-        self._tweak_data.number_of_circles = math.min(self._tweak_data.number_of_circles + 1, self._tweak_data.grows_each_interaction_max, RaidMinigame.data.max_circles)
+        self._tweak_data.number_of_circles = math.min(self._tweak_data.number_of_circles + 1, self._tweak_data.grows_each_interaction_max, _G.restoration.data.max_circles)
     end
 end
 
@@ -134,7 +131,7 @@ function RaidWW2MiniGame:_check_all_complete()
 	self._completed = completed
 
 	if completed then
-		self._end_t = RaidMinigame.data.completed_delay
+		self._end_t = _G.restoration.data.completed_delay
 	end
 end
 
@@ -178,7 +175,7 @@ function RaidWW2MiniGame:_check_stage_complete(fail)
 		self._hud:set_bar_valid(current_stage, false)
 		circle:set_rotation(math.random() * 360)
 
-		self._cooldown = RaidMinigame.data.failed_cooldown
+		self._cooldown = _G.restoration.data.failed_cooldown
 		self._invalid_stage = current_stage
 
 		self:say(self._tweak_data.sounds.fail)

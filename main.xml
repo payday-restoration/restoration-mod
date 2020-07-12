@@ -5,8 +5,8 @@
 		<class file="hooks.lua"/>
 		<class file="ChallengesManager.lua"/>
         <class file="ChallengesTweakData.lua"/>
-		<!-- <class file="HUDRaidWW2MiniGame.lua"/>
-        <class file="RaidWW2MiniGame.lua"/> -->
+		<class file="HUDRaidWW2MiniGame.lua"/>
+        <class file="RaidWW2MiniGame.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
 	<AssetUpdates id="428" version="9.8" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
@@ -240,7 +240,7 @@
 		<hook file="sc/units/player/playerbase.lua" source_file="lib/units/beings/player/playerbase"/>
 		<hook file="sc/managers/mission/elementsecuritycamera.lua" source_file="lib/managers/mission/elementsecuritycamera"/>
 		<hook file="sc/managers/mission/elementaiglobalevent.lua" source_file="lib/managers/mission/elementaiglobalevent"/>
-		<!-- <hook file="sc/utils/game_state_machine/GSM.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/> -->
+		<hook file="sc/utils/game_state_machine/GSM.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
 		<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>

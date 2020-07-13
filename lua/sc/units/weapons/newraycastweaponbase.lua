@@ -583,7 +583,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		--Pickup multiplier
 		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills
 			* managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
+			* (1 / managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)) --Compensate for fully loaded bonus ammo.
 			* ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1) --Offset from weapon mods, especially ones that may modify total ammo without changing damage tiers.
+
+		for _, category in ipairs(self:weapon_tweak_data().categories) do --Compensate for weapon category based bonus ammo.
+			pickup_multiplier = pickup_multiplier * (1 / managers.player:upgrade_value(category, "extra_ammo_multiplier", 1))
+		end
 
 		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
 		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(self._damage * 10)) * pickup_multiplier * total_ammo

@@ -1,0 +1,7 @@
+<table>	
+	<table search="unit" mode="insert">
+		<sequence editable_state="true" name="'pick_mats_for_cops'" once="true" triggable="true">
+			<material_config name="'units/payday2/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_2/ene_cop_2','ene_cop_3/ene_cop_3','ene_cop_4/ene_cop_4')"/>
+		</sequence>	
+	</table>
+</table>

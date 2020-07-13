@@ -1,5 +1,25 @@
 Month = os.date("%m")
-local job = Global.level_data and Global.level_data.level_id	
+local job = Global.level_data and Global.level_data.level_id
+
+Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
+    -- log("cursed mod xd")
+    self:random_mat_seq_initialization()
+end)
+
+function CopBase:random_mat_seq_initialization()
+    -- log("i shit myself!")
+    local unit_name = self._unit:name()
+        
+    local cops = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1") 
+    or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
+    or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
+    or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
+    
+    if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cops") and cops then
+          -- log("doin youre mom!")    
+        self._unit:damage():run_sequence_simple("pick_mats_for_cops")
+    end
+end	
 
 function CopBase:_chk_spawn_gear()
 	if self._tweak_table == "spooc" then

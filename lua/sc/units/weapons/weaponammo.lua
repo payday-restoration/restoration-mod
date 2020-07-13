@@ -24,11 +24,10 @@ function WeaponAmmo:replenish()
 		--Pickup multiplier
 		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills
 			* managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
+			* (1 / managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)) --Compensate for fully loaded bonus ammo.
 
 		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
 		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(7200/total_ammo)) * pickup_multiplier * total_ammo
 		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(7200/total_ammo)) * pickup_multiplier * total_ammo, self._ammo_pickup[1])
-
-		log("Pickup = " .. tostring(self._ammo_pickup[1]) .. " - " .. tostring(self._ammo_pickup[2]))
 	end
 end

@@ -1482,7 +1482,6 @@
 	<model path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
 	<object path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
 	<cooked_physics path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
-	<texture path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_p1_df" />
 	<material_config path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />	
 	
 	<!--NPC DS Merc Sniper-->

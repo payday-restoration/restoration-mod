@@ -103,10 +103,10 @@ Hooks:Add("radialmenu_released_resutilitymenu","resmod_utility_menu_on_selected"
 end)
 ]]
 
-if restoration.Options:GetValue("OTHER/PDTHChallenges") then
+-- if restoration.Options:GetValue("OTHER/PDTHChallenges") then
 
 Hooks:PostHook(MenuManager, "do_clear_progress", "pdth_hud_reset_challenges", function(ply)
-	managers.challenges:reset_challenges()
+	managers.challenges_res:reset_challenges()
 end)
 
-end
+-- end

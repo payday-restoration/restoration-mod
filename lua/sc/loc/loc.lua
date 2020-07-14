@@ -954,8 +954,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "Fully Loaded",
-			["menu_bandoliers_desc_sc"] = "BASIC: ##$basic##\nYour total ammo capacity is increased by ##25%##.\n\nACE: ##$pro##\nYou pick up ##60%## more ammo.\n\nYou gain a ##5%## chance to get a throwable from an ammo box.",
-									
+			["menu_bandoliers_desc_sc"] = "BASIC: ##$basic##\nYour total ammo capacity is increased by ##25%##.\n\nACE: ##$pro##\nYou pick up ##60%## more ammo.\n\nYou gain a ##4%## chance to get a throwable from an ammo box. This increases by an additional ##2%## every time you do not get a throwable until you get one.",
+		
 			--}
 		--}
 		

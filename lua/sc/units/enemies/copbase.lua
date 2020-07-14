@@ -21,10 +21,12 @@ function CopBase:random_mat_seq_initialization()
 	
     local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5") 
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
 	
     local lapd_cops = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_1/ene_cop_1") 
     or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_2/ene_cop_2")
+    or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_3/ene_cop_3")
     or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_4/ene_cop_4")
 	
     local murkies = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") 

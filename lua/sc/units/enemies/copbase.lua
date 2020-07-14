@@ -14,12 +14,29 @@ function CopBase:random_mat_seq_initialization()
     or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
     or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
     or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
+	
+    local murkies = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") 
     
     if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cops") and cops then
           -- log("doin youre mom!")    
         self._unit:damage():run_sequence_simple("pick_mats_for_cops")
+    elseif self._unit:damage() and self._unit:damage():has_sequence("set_style_murky") and murkies then
+		  -- log("t")
+        self._unit:damage():run_sequence_simple("set_style_murky")
     end
 end	
+
+local material_config_paths = {
+  "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa"
+}
+
+for i, material_config_path in pairs(material_config_paths) do
+  local normal_ids = Idstring(material_config_path)
+  local contour_ids = Idstring(material_config_path .. "_contour")
+
+  CopBase._material_translation_map[tostring(normal_ids:key())] = contour_ids
+  CopBase._material_translation_map[tostring(contour_ids:key())] = normal_ids 
+end
 
 function CopBase:_chk_spawn_gear()
 	if self._tweak_table == "spooc" then

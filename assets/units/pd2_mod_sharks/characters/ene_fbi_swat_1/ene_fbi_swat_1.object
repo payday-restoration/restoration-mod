@@ -204,8 +204,10 @@
 
 			<lod_object name="g_head_lod">
 				<object name="g_head" enabled="true"  max_distance="1000" />
-				<object name="g_head" enabled="true" />
+				<object name="g_head_lod1" enabled="true" />
 			</lod_object>
+			
+			<object name="g_stache" enabled="false"  />
 
 			<lod_object name="g_helmet_lod">
 				<object name="g_helmet_lod1" enabled="true"  max_distance="1000" />

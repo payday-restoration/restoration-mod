@@ -1,12 +1,16 @@
 <table>	
 	<table search="unit">
 	
-		<sequence editable_state="true" name="'pick_mats_for_cops'" once="true" triggable="true">
+		<sequence editable_state="true" name="'coprandom'" once="true" triggable="true">
 			<material_config name="'units/payday2/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_2/ene_cop_2','ene_cop_3/ene_cop_3','ene_cop_4/ene_cop_4')"/>
 		</sequence>
 		
+		<sequence editable_state="true" name="'nypdrandom'" once="true" triggable="true">
+			<material_config name="'units/pd2_mod_nypd/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_3/ene_cop_3','ene_cop_4/ene_cop_4')"/>
+		</sequence>
+		
 		<variables>
-			<var_pick_murky value=""/>
+			<var_pick_murky value="1"/>
 		</variables>
 			  			  
 		<filter name="'filter_pick_normalhead'">

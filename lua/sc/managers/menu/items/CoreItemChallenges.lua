@@ -1,5 +1,3 @@
-if not restoration.Options:GetValue("OTHER/PDTHChallenges") then return end
-
 MenuItemChallenge.TYPE = "challenge"
 
 function MenuItemChallenge:make_fine_text(text)

@@ -13558,8 +13558,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	end
 	self.besiege.assault.force = {
-		3,
 		5,
+		6,
 		7
 	}
 	self.besiege.assault.force_pool = {
@@ -13570,8 +13570,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	for _,t in pairs(restoration.tiny_levels) do
 		if job == t then
 			self.besiege.assault.force = {
-				2,
 				4,
+				5,
 				6
 			}
 			self.besiege.assault.force_pool = {
@@ -13584,9 +13584,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	for _,vt in pairs(restoration.very_tiny_levels) do
 		if job == vt then
 			self.besiege.assault.force = {
-				1,
-				2,
-				3
+				3,
+				4,
+				5
 			}
 			self.besiege.assault.force_pool = {
 				10,

@@ -1,6 +1,47 @@
 Month = os.date("%m")
 local job = Global.level_data and Global.level_data.level_id	
 
+Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
+    -- log("cursed mod xd")
+    self:random_mat_seq_initialization()
+end)
+
+function CopBase:random_mat_seq_initialization()
+    -- log("i shit myself!")
+    local unit_name = self._unit:name()
+        
+    local cops = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1") 
+    or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
+    or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
+    or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
+	
+    local nypd_cops = unit_name == Idstring("units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1") 
+    or unit_name == Idstring("units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3")
+    or unit_name == Idstring("units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4")
+	
+    local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5") 
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
+	
+    local lapd_cops = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_1/ene_cop_1") 
+    or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_2/ene_cop_2")
+    or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_3/ene_cop_3")
+    or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_4/ene_cop_4")
+	
+    local murkies = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") 
+    
+    if self._unit:damage() and self._unit:damage():has_sequence("coprandom") and cops then
+        self._unit:damage():run_sequence_simple("coprandom")
+    elseif self._unit:damage() and self._unit:damage():has_sequence("nypdrandom") and nypd_cops then
+        self._unit:damage():run_sequence_simple("nypdrandom")
+    elseif self._unit:damage() and self._unit:damage():has_sequence("murksecrandom") and murk_sec then
+        self._unit:damage():run_sequence_simple("murksecrandom")				
+    elseif self._unit:damage() and self._unit:damage():has_sequence("lapdrandom") and lapd_cops then
+        self._unit:damage():run_sequence_simple("lapdrandom")				
+    end
+end	
+
 function CopBase:_chk_spawn_gear()
 	if self._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("turn_on_spook_lights")

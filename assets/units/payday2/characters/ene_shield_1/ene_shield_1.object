@@ -204,8 +204,8 @@
 					<material materials="mtr_swat_lod_2" />
 				</object>
 				<object name="g_body_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_city_swat" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_city_swat_lod_2" />
+					<material materials="mtr_swat" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_swat_lod_2" />
 				</object>
 			</lod_object>
 

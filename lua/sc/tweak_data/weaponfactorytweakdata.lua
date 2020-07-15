@@ -4185,7 +4185,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
+			custom_stats = {movement_speed = 0.9},	
 		}
 	}		
 	
@@ -4293,7 +4293,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
+			custom_stats = {movement_speed = 0.9},	
 		}
 	}
 	
@@ -4425,7 +4425,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
+			custom_stats = {movement_speed = 0.9},	
 		}			
 	}
 	
@@ -6549,7 +6549,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
+			custom_stats = {movement_speed = 0.9},	
 		}
 	}
 	
@@ -7327,7 +7327,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m134", "resmod_m134", function(sel
 				extra_ammo = 60,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
+			custom_stats = {movement_speed = 0.9},	
 		}
 	}				
 	
@@ -11654,7 +11654,7 @@ function WeaponFactoryTweakData:_init_par()
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
+			custom_stats = {movement_speed = 0.9},	
 		}
 	}		
 	self.wpn_fps_lmg_par.default_blueprint = {
@@ -22534,7 +22534,7 @@ function WeaponFactoryTweakData:_init_shuno()
 				extra_ammo = 60,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
+			custom_stats = {movement_speed = 0.9},	
 		}
 	}				
 	self.wpn_fps_lmg_shuno_npc = deep_clone(self.wpn_fps_lmg_shuno)
@@ -26141,7 +26141,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 				total_ammo_mod = 20,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},	
+			custom_stats = {movement_speed = 0.9},	
 		}
 	}
 	
@@ -29112,7 +29112,7 @@ self.wpn_fps_ass_osipr.uses_parts = {
 			concealment = -3,
 			total_ammo_mod = 20
 		},
-		custom_stats = {ammo_pickup_min_mul = 0.8333333, ammo_pickup_max_mul = 0.8333333, movement_speed = 0.9},
+		custom_stats = {movement_speed = 0.9},
 		internal_part = true
 	}
 	self.parts.wpn_lmg_rpk_m_ban = {

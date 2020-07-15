@@ -754,6 +754,10 @@ function PlayerManager:_internal_load()
 	end
 
 	--Removed armor kit weirdness.
+
+	--Fully loaded aced checks
+	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
+	self._throwable_chance = self._throwable_chance_data.chance
 end
 
 --Adds rogue health regen stack on dodge.
@@ -910,6 +914,20 @@ function PlayerManager:check_enduring()
 					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assaults Remaining Until Down Restore." } )
 				end
 			end
+		end
+	end
+end
+
+--Replacement for vanilla fully loaded throwable coroutine. The vanilla code has 0 benefits from being a coroutine, and it seems to have issues resetting the chance or firing at all.
+function PlayerManager:regain_throwable_from_ammo()
+	local roll = math.random()
+	
+	if self._throwable_chance then --Fixes bizzare startup crash
+		if roll < self._throwable_chance then
+			self._throwable_chance = self._throwable_chance_data.chance
+			self:add_grenade_amount(1, true)
+		else
+			self._throwable_chance = self._throwable_chance + self._throwable_chance_data.chance_inc
 		end
 	end
 end

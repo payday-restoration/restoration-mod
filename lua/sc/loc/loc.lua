@@ -127,7 +127,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--LMGs/Miniguns--
 		["bm_wp_upg_a_halfthatkit"] = "Super Size Me!", -- lol
 		["bm_wp_m134_body_upper_light"] = "Light Body",
-		["bm_wp_upg_a_halfthatkit_desc"] = "ADDS A 10% MOVEMENT SPEED PENALTY WHILE THE WEAPON IS EQUIPPED.",
+		["bm_wp_upg_a_halfthatkit_desc"] = "Adds a 10% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 20%.",
 		
 		--Thanatos--
 		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n##CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.##",

@@ -559,9 +559,11 @@ function CopDamage:damage_bullet(attack_data)
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
 		local pierce_armor = nil
 
-		if attack_data.armor_piercing then
+		if attack_data.armor_piercing and attack_data.armor_piercing == true then
+			log("ASS")
 			pierce_armor = true
 		elseif attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("bow", "crossbow", "saw") then
+			log("FUCK")
 			pierce_armor = true
 		end
 
@@ -587,6 +589,7 @@ function CopDamage:damage_bullet(attack_data)
 			end
 
 			if armor_pierce_value <= armor_pierce_roll then
+				log("FUGGGG XD")
 				local result_type = nil
 
 				if not self._char_tweak.immune_to_knock_down then

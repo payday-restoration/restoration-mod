@@ -732,7 +732,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.player.fully_loaded_pick_up_multiplier = {1.6}
 					self.values.player.regain_throwable_from_ammo = {
-						{chance = 0.04, chance_inc = 0.02}
+						{chance = 0.05, chance_inc = 0.01}
 					}
 		
 	--TECHNICIAN--

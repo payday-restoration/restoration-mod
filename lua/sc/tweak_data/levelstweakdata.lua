@@ -255,7 +255,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.chew.player_style = "loud_suit"
 	
-	self.pbr2.package = {"packages/narr_jerry2", "packages/miscassets",}
+	self.pbr2.package = {"packages/narr_jerry2", "packages/miscassets"}
 	self.pbr2.player_style = "loud_suit"
 	
 	self.watchdogs_1.player_style = "suit_sunny"

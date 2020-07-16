@@ -7,6 +7,7 @@
         <class file="ChallengesTweakData.lua"/>
 		<class file="HUDRaidWW2MiniGame.lua"/>
         <class file="RaidWW2MiniGame.lua"/>
+		<class file="Networking.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
 	<AssetUpdates id="428" version="9.8" provider="modworkshop" use_local_dir="true" use_local_path="true"/>

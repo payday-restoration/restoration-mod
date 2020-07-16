@@ -8756,8 +8756,9 @@ function WeaponFactoryTweakData:_init_aa12()
 		unit = "units/pd2_dlc_bbq/weapons/wpn_fps_sho_aa12_pts/wpn_fps_sho_aa12_mag_drum",
 		stats = {
 			value = 1,
-			extra_ammo = 12,
+			extra_ammo = 10,
 			reload = -3,
+			spread = -1,
 			concealment = -3
 		},
 		animations = {fire = "recoil", fire_steelsight = "recoil"},
@@ -8803,13 +8804,11 @@ function WeaponFactoryTweakData:_init_aa12()
 			stats = {
 				value = 10,
 				concealment = -5,
-				total_ammo_mod = -33,
-				damage = 15,	
-				recoil = -1,
-				spread = 11,
+				total_ammo_mod = -25,
+				damage = 15,
+				spread = 12,
 				spread_multi = {1, 1},	
-				suppression = -1,
-				alert_size = -1,
+				recoil = -1,
 				moving_spread = 0
 			},
 			custom_stats = {
@@ -8826,36 +8825,37 @@ function WeaponFactoryTweakData:_init_aa12()
 		wpn_fps_upg_a_custom = {
 			stats = {
 				value = 9,
-				total_ammo_mod = -33,
-				damage = 15,	
+				total_ammo_mod = -25,
+				damage = 15,
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
 			stats = {
 				value = 9,
-				total_ammo_mod = -33,
-				damage = 15,	
+				total_ammo_mod = -25,
+				damage = 15,
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = -75,
+				damage_far_mul = -150,
 				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
 			stats = {
 				value = 10,
+				concealment = -5,
 				total_ammo_mod = -50,
 				recoil = -5,
 				spread_multi = {1, 1},	
-				damage = 30
+				damage = 45
 			},
 			custom_stats = {
 				ignore_statistic = true,
@@ -8952,7 +8952,6 @@ function WeaponFactoryTweakData:_init_aa12()
 		"wpn_fps_upg_ns_shot_thick",
 		"wpn_fps_upg_ns_shot_shark",
 		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
 		"wpn_fps_upg_shot_ns_king",
 		"wpn_fps_upg_fl_ass_peq15",
 		"wpn_fps_upg_fl_ass_laser",
@@ -8969,9 +8968,7 @@ function WeaponFactoryTweakData:_init_aa12()
 		"wpn_fps_upg_o_sig",
 		"wpn_fps_upg_o_bmg",
 		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",			
-		"wpn_fps_upg_i_slower_rof",
-		"wpn_fps_upg_i_faster_rof"	
+		"wpn_fps_upg_o_fc1"
 	}
 	self.wpn_fps_sho_aa12_npc = deep_clone(self.wpn_fps_sho_aa12)
 	self.wpn_fps_sho_aa12_npc.unit = "units/pd2_dlc_bbq/weapons/wpn_fps_sho_aa12/wpn_fps_sho_aa12_npc"

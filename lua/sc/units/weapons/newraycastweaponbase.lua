@@ -6,11 +6,12 @@ function NewRaycastWeaponBase:get_add_head_shot_mul()
 end
 
 --Adds ability to define per weapon category AP skills.
-Hooks:PostHook(NewRaycastWeaponBase, "setup", "ResExtraSkills", function(self)
-	if not self._use_armor_piercing then
-		for _, category in ipairs(self:categories()) do
-			self._use_armor_piercing = managers.player:upgrade_value(category, "ap_bullets", false)
+Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
+	for _, category in ipairs(self:categories()) do
+		if self._use_armor_piercing == true then
+			break
 		end
+		self._use_armor_piercing = managers.player:upgrade_value(category, "ap_bullets", false)
 	end
 end)
 

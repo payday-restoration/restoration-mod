@@ -1359,22 +1359,7 @@ function PlayerStandard:interrupt_all_actions()
 	self:_interupt_action_cash_inspect(t)
 end
 
-Hooks:PostHook(PlayerStandard, "_start_action_interact", "RaidMinigameCheckInteraction", function(self, t, input, timer, object)
-	if alive(object) then
-		local name = object:interaction().tweak_data
-		local tweak = tweak_data.interaction[name]
-		if name ~= "open_door_with_keys" then -- Crashes & is not really lockpicking in the same sense.
-			if tweak and (tweak.is_lockpicking or tweak.special_interaction == "raid") then
-				game_state_machine:change_state_by_name("ingame_special_interaction", {object = object, type = tweak.special_interaction or "raid"})
-				self._interact_expire_t = nil
-				managers.hud:hide_interaction_bar()
-				object:interaction():_post_event(self._unit, "sound_interupt")
-			end
-		end
-	end
-end)
-
---Vanilla code, but without it the coroutine for fullyloaded never gets called???
+--Replace coroutine with a playermanager function. The coroutine had issues with randomly not being called- or not having values get reset, and overall being jank???
 function PlayerStandard:_find_pickups(t)
 	local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
 	local grenade_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
@@ -1383,11 +1368,7 @@ function PlayerStandard:_find_pickups(t)
 	for _, pickup in ipairs(pickups) do
 		if pickup:pickup() and pickup:pickup():pickup(self._unit) then
 			if may_find_grenade then
-				local data = managers.player:upgrade_value("player", "regain_throwable_from_ammo", nil)
-
-				if data then
-					managers.player:add_coroutine("regain_throwable_from_ammo", PlayerAction.FullyLoaded, managers.player, data.chance, data.chance_inc)
-				end
+				managers.player:regain_throwable_from_ammo() --Replace vanilla coroutine
 			end
 
 			for id, weapon in pairs(self._unit:inventory():available_selections()) do

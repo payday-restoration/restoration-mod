@@ -10,11 +10,12 @@
 		<class file="Networking.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
-	<AssetUpdates id="428" version="9.8" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="9.8.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
-		<mod file="faces.xml" type="custom_xml" target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge"/>		
+		<mod file="faces.xml" type="custom_xml" target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge"/>				
+
 	</ScriptMods>	
     <Hooks directory="lua">
 		<!--///RESTORATION HUD & UI\\\-->
@@ -173,7 +174,6 @@
 		<hook file="sc/player_actions/skills/playeractiontriggerhappy.lua" source_file="lib/player_actions/skills/playeractiontriggerhappy"/>
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>
 		<hook file="sc/player_actions/skills/playeractionammoefficiency.lua" source_file="lib/player_actions/skills/playeractionammoefficiency"/>
-		<hook file="sc/player_actions/skills/playeractionfullyloaded.lua" source_file="lib/player_actions/skills/playeractionfullyloaded"/>
 		<hook file="sc/units/equipment/ecmjammerbase.lua" source_file="lib/units/equipment/ecm_jammer/ecmjammerbase"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>

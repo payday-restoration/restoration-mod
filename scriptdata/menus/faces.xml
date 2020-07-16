@@ -36,6 +36,7 @@
 			<object filter="'filter_pick_head'" enabled="true" name="'g_stache'" />						
 			<material_config filter="'filter_pick_head'" name="'units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa'"/>
 		</sequence>
+
 				
 	</table>	
 </table>

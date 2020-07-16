@@ -1940,6 +1940,69 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank_medic")
 	
 	self.tank_titan = deep_clone(self.tank)
+	self.tank_titan.weapon = deep_clone(presets.weapon.normal)
+	self.tank_titan.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}	
 	self.tank_titan.tags = {"law", "tank", "special", "tank_titan", "customvo"}	
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
@@ -1985,6 +2048,69 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank_titan_assault")
 	
 	self.tank_hw = deep_clone(self.tank_titan_assault)
+	self.tank_hw.weapon = deep_clone(presets.weapon.normal)
+	self.tank_hw.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}		
 	self.tank_hw.ignore_headshot = false
 	self.tank_hw.melee_anims = nil
 	self.tank_hw.move_speed = presets.move_speed.very_slow
@@ -12719,6 +12845,7 @@ function CharacterTweakData:_set_overkill()
 			}
 		}
 	}		
+		
 	self:_set_characters_dodge_preset("athletic_very_hard")
 	self:_set_characters_melee_preset("2", "1")
 	self.shield.weapon.is_pistol.melee_speed = nil
@@ -12926,6 +13053,135 @@ function CharacterTweakData:_set_overkill_145()
 			}
 		}
 	}	
+	
+	--Titandozer changes
+	self.tank_titan.weapon = deep_clone(self.presets.weapon.good)
+	self.tank_titan.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}	
+	self.tank_hw.weapon = deep_clone(self.presets.weapon.good)
+	self.tank_hw.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}		
+	
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 100
@@ -13117,7 +13373,136 @@ function CharacterTweakData:_set_easy_wish()
 				0
 			}
 		}
-	}		
+	}	
+
+	--Titandozer changes
+	self.tank_titan.weapon = deep_clone(self.presets.weapon.good)
+	self.tank_titan.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}	
+	self.tank_hw.weapon = deep_clone(self.presets.weapon.good)
+	self.tank_hw.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 2,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}	
+	
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
@@ -13200,6 +13585,158 @@ function CharacterTweakData:_set_overkill_290()
 	
 	--Fast Titan HRTs
 	self.swat_titan.move_speed = self.presets.move_speed.lightning
+	
+	--Titandozer changes
+	self.tank_titan.weapon = deep_clone(self.presets.weapon.expert)
+	self.tank_titan.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.3, 0.6},
+			dmg_mul = 2.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 2.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1.05,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}	
+	self.tank_hw.weapon = deep_clone(self.presets.weapon.expert)
+	self.tank_hw.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.3, 0.6},
+			dmg_mul = 2.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 2.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1.05,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}		
 					
 	self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
 	self.omnia_heavy.melee_weapon_dmg_multiplier = 2
@@ -13565,6 +14102,158 @@ function CharacterTweakData:_set_sm_wish()
 	
 	--Winters can now overheal ala LPF
 	self.phalanx_vip.do_omnia = true
+	
+	--Titandozer changes
+	self.tank_titan.weapon = deep_clone(self.presets.weapon.expert)
+	self.tank_titan.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.3, 0.6},
+			dmg_mul = 2.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 2.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1.05,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}	
+	self.tank_hw.weapon = deep_clone(self.presets.weapon.expert)
+	self.tank_hw.weapon.is_lmg.FALLOFF = {
+		{
+			r = 100,
+			acc = {0.7, 0.9},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 500,
+			acc = {0.5, 0.75},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1000,
+			acc = {0.3, 0.6},
+			dmg_mul = 2.3,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 1800,
+			acc = {0.3, 0.6},
+			dmg_mul = 2.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},		
+		{
+			r = 2000,
+			acc = {0.25, 0.55},
+			dmg_mul = 2.1,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		},
+		{
+			r = 3000,
+			acc = {0.15, 0.5},
+			dmg_mul = 1.05,
+			recoil = {0.4, 0.7},
+			mode = {
+				0,
+				0,
+				0,
+				1
+			}
+		}
+	}		
 			
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")

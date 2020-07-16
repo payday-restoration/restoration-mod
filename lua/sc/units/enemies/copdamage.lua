@@ -559,7 +559,7 @@ function CopDamage:damage_bullet(attack_data)
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
 		local pierce_armor = nil
 
-		if attack_data.armor_piercing then
+		if attack_data.armor_piercing and attack_data.armor_piercing == true then
 			pierce_armor = true
 		elseif attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("bow", "crossbow", "saw") then
 			pierce_armor = true

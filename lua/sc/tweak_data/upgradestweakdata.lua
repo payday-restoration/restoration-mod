@@ -732,7 +732,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.player.fully_loaded_pick_up_multiplier = {1.6}
 					self.values.player.regain_throwable_from_ammo = {
-						{chance = 0.04, chance_inc = 0.02}
+						{chance = 0.05, chance_inc = 0.01}
 					}
 		
 	--TECHNICIAN--
@@ -1438,10 +1438,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
  		cd = 10, --Cooldown
  		cdr = {3 , 5}, --Amount cooldown is reduced on ammo box pickup.
 		{4, 8}, --Amounts healed per level
-		{7, 11},
-		{10, 14}
+		{6, 10},
+		{8, 12}
  	}
-	self.loose_ammo_give_team_health_ratio = 0.4 --% of healing given to team.
+	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
 	self.values.player.loose_ammo_give_armor = {3}
 

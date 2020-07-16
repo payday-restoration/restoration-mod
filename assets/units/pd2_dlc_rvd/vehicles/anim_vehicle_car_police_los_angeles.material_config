@@ -44,7 +44,7 @@
         <material_texture file="units/pd2_dlc_rvd/characters/ene_la_cop_texture/ene_la_cop_gsma"/>
     </material>
     <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_BIGPROPS" name="mtr_police_la_head" version="2">
-        <bump_normal_texture file="units/payday2/characters/shared_textures/head_01_nm" mip="1"/>
-        <diffuse_texture file="units/payday2/characters/shared_textures/head_01_df"/>
-    </material>
+        <bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_nm"/>
+        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_df"/>
+	</material>
 </materials>

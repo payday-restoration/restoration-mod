@@ -114,12 +114,12 @@ function MoneyManager:get_money_by_params(params)
 		small_value = tweak_data:get_value("money_manager", "max_small_loot_value")
 	end
 	
-	if managers.skirmish:is_skirmish() or managers.crime_spree:is_active() or on_last_stage then
+	if managers.skirmish:is_skirmish() or managers.crime_spree:is_active() then
 		return get_money_by_params_original(self, params)
 	end
 	
 	if on_last_stage then
-		job_value = self:get_job_payout_by_stars(total_stars) or 0
+		job_value = self:get_job_payout_by_stars(total_stars) / total_stages or 0
 		bonus_bag_value = bonus_bags
 		mandatory_bag_value = mandatory_bags
 		bag_value = bonus_bags

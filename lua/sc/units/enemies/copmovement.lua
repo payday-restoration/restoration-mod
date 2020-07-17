@@ -1036,6 +1036,8 @@ function CopMovement:sync_action_spooc_stop(pos, nav_index, action_id)
 	local spooc_action, is_queued = self:_get_latest_spooc_action(action_id)
 
 	if is_queued then
+		spooc_action.host_expired = true
+
 		if spooc_action.host_stop_pos_inserted then
 			nav_index = nav_index + spooc_action.host_stop_pos_inserted
 		end
@@ -1052,19 +1054,11 @@ function CopMovement:sync_action_spooc_stop(pos, nav_index, action_id)
 			spooc_action.nr_expected_nav_points = nav_index - #nav_path + 1
 		else
 			table.insert(nav_path, pos)
-		end
 
-		spooc_action.path_index = math.max(1, math.min(spooc_action.path_index, #nav_path - 1))
-	elseif spooc_action then
-		if Network:is_server() then
-			self:action_request({
-				sync = true,
-				body_part = 1,
-				type = "idle"
-			})
-		else
-			spooc_action:sync_stop(pos, nav_index)
+			spooc_action.path_index = math.max(1, math.min(spooc_action.path_index, #nav_path - 1))
 		end
+	elseif spooc_action then
+		spooc_action:sync_stop(pos, nav_index)
 	end
 end
 
@@ -1082,6 +1076,39 @@ function CopMovement:sync_action_spooc_strike(pos, action_id)
 		spooc_action.strike = true
 	elseif spooc_action then
 		spooc_action:sync_strike(pos)
+	end
+end
+
+function CopMovement:_get_latest_act_action()
+	if self._queued_actions then
+		for i = #self._queued_actions, 1, -1 do
+			if self._queued_actions[i].type == "act" and not self._queued_actions[i].host_expired then
+				return i, self._queued_actions[i], true
+			end
+		end
+	end
+
+	for body_part, action in ipairs(self._active_actions) do
+		if action and action:type() == "act" then
+			return body_part, self._active_actions[body_part]
+		end
+	end
+end
+
+function CopMovement:sync_action_act_end()
+	local body_part, act_action, queued = self:_get_latest_act_action()
+
+	if queued then
+		act_action.host_expired = true
+	elseif act_action then
+		self._active_actions[body_part] = false
+
+		if act_action.on_exit then
+			act_action:on_exit()
+		end
+
+		self:_chk_start_queued_action()
+		self._ext_brain:action_complete_clbk(act_action)
 	end
 end
 

@@ -1,0 +1,21 @@
+<table>	
+	<table search="unit">
+	
+		<sequence editable_state="true" name="'coprandom'" once="true" triggable="true">
+			<material_config name="'units/payday2/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_2/ene_cop_2','ene_cop_3/ene_cop_3','ene_cop_4/ene_cop_4')"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'nypdrandom'" once="true" triggable="true">
+			<material_config name="'units/pd2_mod_nypd/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_3/ene_cop_3','ene_cop_4/ene_cop_4')"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'murksecrandom'" once="true" triggable="true">
+			<material_config name="'units/pd2_mod_sharks/characters/'..pick('ene_murky_cs_cop_c45/ene_murky_cs_cop_c45','ene_murky_cs_cop_r870/ene_murky_cs_cop_r870','ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5')"/>
+		</sequence>
+		
+		<sequence editable_state="true" name="'lapdrandom'" once="true" triggable="true">
+			<material_config name="'units/pd2_dlc_rvd/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_2/ene_cop_2', 'ene_cop_4/ene_cop_4')"/>
+		</sequence>
+				
+	</table>	
+</table>

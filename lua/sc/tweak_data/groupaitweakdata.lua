@@ -2480,7 +2480,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"),
-					Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")								
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
@@ -8488,33 +8488,63 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "tank_titan_assault"
 	}
-	self.unit_categories.boom_M4203 = {
-		unit_types = {
-			america = {
-				Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
-			},
-			russia = {
-				Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
-			},
-			zombie = {
-				Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
-			},				
-			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
-			},
-			federales = {
-				Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
-			},				
-			nypd = {
-				Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
-			},
-			lapd = {
-				Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
-			}				
-		},
-		access = access_type_all,
-		special_type = "boom"
-	}
+	if difficulty_index <= 7 then 
+	    self.unit_categories.boom_M4203 = {
+		    unit_types = {
+			    america = {
+			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			    },
+			    russia = {
+			    	Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+			    },
+			    zombie = {
+			    	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
+			    },				
+			    murkywater = {
+			    	Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
+			    },
+			    federales = {
+			    	Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
+			    },				
+			    nypd = {
+			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			    },
+			    lapd = {
+			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			    }				
+		    },
+		    access = access_type_all,
+		    special_type = "boom"
+	    }
+	else 
+	    self.unit_categories.boom_M4203 = {
+		    unit_types = {
+			    america = {
+			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			    },
+			    russia = {
+			    	Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+			    },
+			    zombie = {
+			    	Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
+			    },				
+			    murkywater = {
+			    	Idstring("units/pd2_mod_omnia/characters/ene_grenadier_1/ene_grenadier_1")
+			    },
+			    federales = {
+			    	Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
+			    },				
+			    nypd = {
+			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			    },
+			    lapd = {
+			    	Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			    }				
+		    },
+		    access = access_type_all,
+		    special_type = "boom"
+	    }
+	end
 	if difficulty_index <= 5 then
 		self.unit_categories.medic_M4 = {
 			unit_types = {
@@ -13528,8 +13558,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	end
 	self.besiege.assault.force = {
-		3,
 		5,
+		6,
 		7
 	}
 	self.besiege.assault.force_pool = {
@@ -13540,8 +13570,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	for _,t in pairs(restoration.tiny_levels) do
 		if job == t then
 			self.besiege.assault.force = {
-				2,
 				4,
+				5,
 				6
 			}
 			self.besiege.assault.force_pool = {
@@ -13554,9 +13584,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	for _,vt in pairs(restoration.very_tiny_levels) do
 		if job == vt then
 			self.besiege.assault.force = {
-				1,
-				2,
-				3
+				3,
+				4,
+				5
 			}
 			self.besiege.assault.force_pool = {
 				10,

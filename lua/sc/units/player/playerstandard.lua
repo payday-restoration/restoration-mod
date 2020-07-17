@@ -1342,3 +1342,22 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 
 	return self:_get_intimidation_action(prime_target, char_table, intimidation_amount, primary_only, detect_only, secondary)
 end
+
+--Replace coroutine with a playermanager function. The coroutine had issues with randomly not being called- or not having values get reset, and overall being jank???
+function PlayerStandard:_find_pickups(t)
+	local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
+	local grenade_tweak = tweak_data.blackmarket.projectiles[managers.blackmarket:equipped_grenade()]
+	local may_find_grenade = not grenade_tweak.base_cooldown and managers.player:has_category_upgrade("player", "regain_throwable_from_ammo")
+
+	for _, pickup in ipairs(pickups) do
+		if pickup:pickup() and pickup:pickup():pickup(self._unit) then
+			if may_find_grenade then
+				managers.player:regain_throwable_from_ammo() --Replace vanilla coroutine
+			end
+
+			for id, weapon in pairs(self._unit:inventory():available_selections()) do
+				managers.hud:set_ammo_amount(id, weapon.unit:base():ammo_info())
+			end
+		end
+	end
+end

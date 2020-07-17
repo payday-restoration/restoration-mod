@@ -8,6 +8,13 @@
 	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
 	
 	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
+	<!-- opaque copcar windows -->
+	<material_config path="units/payday2/vehicles/bnk_vehicle_police_animated/bnk_vehicle_police_animated" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_4/bnk_vehicle_car_police_anim_4" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_3/bnk_vehicle_car_police_anim_3" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_2/bnk_vehicle_car_police_anim_2" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_1/bnk_vehicle_car_police_anim_1" force="true" />
+	<material_config path="units/payday2/vehicles/anim_vehicle_car_police/anim_vehicle_car_police" force="true" />
 	
 	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
 	
@@ -271,8 +278,6 @@
 	
 	<!--Fixes for Objects not Casting Shadows-->		
 	<object path="units/payday2/architecture/air_hangar_segment/air_shed_welcometothejungle_a" force="true" />	
-	<object path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" force="true" />
-	<object path="units/payday2/vehicles/str_vehicle_swat_van_gensec/str_vehicle_swat_van_gensec" force="true" />	
 	
 	<!--epic hd cloaker eyes thanks jarey-->
 	<texture path="units/payday2/characters/shared_textures/spook_il"/>

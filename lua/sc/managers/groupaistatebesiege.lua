@@ -1576,7 +1576,7 @@ function GroupAIStateBesiege:_begin_new_tasks()
 
 	if assault_candidates and self._hunt_mode and self._char_criminals then
 		for criminal_key, criminal_data in pairs(self._char_criminals) do
-			if not criminal_data.status then
+			if criminal_key and not criminal_data.status then
 				local nav_seg = criminal_data.tracker:nav_segment()
 				local area = self:get_area_from_nav_seg_id(nav_seg)
 				found_areas[area] = true
@@ -1646,7 +1646,7 @@ function GroupAIStateBesiege:_begin_new_tasks()
 
 		if assault_candidates and area.criminal and area.criminal.units and self._criminals then
 			for criminal_key, _ in pairs(area.criminal.units) do
-				if not self._criminals[criminal_key].status and not self._criminals[criminal_key].is_deployable then
+				if criminal_key and self._criminals[criminal_key] and not self._criminals[criminal_key].status and not self._criminals[criminal_key].is_deployable then
 					table.insert(assault_candidates, area)
 
 					break

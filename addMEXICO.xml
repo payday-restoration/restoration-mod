@@ -17,6 +17,8 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df" force="false"/>
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df" force="false"/>
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op" force="false"/>	
+	<texture path="units/pd2_dlc_pex/characters/shared_textures/ene_office_cops_head_atlas_df" />	
+	<texture path="units/pd2_dlc_pex/characters/shared_textures/ene_office_cops_head_atlas_nm" />	
 		
 	<!--Taser-->
 	<object path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true"/>
@@ -157,7 +159,7 @@
 	<material_config path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_throat_3/ene_acc_bulldozer_throat_3" force="true"/>		
 
 	<!--Fixed Beat Cops-->
-	<!--Glock-->
+	<!--Glock-->	
 	<object path="units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01" force="true"/>
 	<!--Bronco-->
 	<object path="units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02" force="true"/>
@@ -170,6 +172,24 @@
 	<unit path="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04" load="true"/>
 	<unit path="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04_husk" load="true"/>	
 	
+	<!--marijuana tijuana office cops with poppable caps -->
+	<unit path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01" force="true" load="true"/>
+	<unit path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01_husk" force="true" load="true"/>
+	<object path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01" force="true" />
+	<model path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01" force="true" />	
+	<material_config path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01" force="true" />
+	<material_config path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01_contour" force="true" />	
+	
+	<unit path="units/pd2_dlc_pex/characters/ene_male_office_cop_02/ene_male_office_cop_02" force="true" load="true"/>
+	<unit path="units/pd2_dlc_pex/characters/ene_male_office_cop_02/ene_male_office_cop_02_husk" force="true" load="true"/>
+	<object path="units/pd2_dlc_pex/characters/ene_male_office_cop_02/ene_male_office_cop_02" force="true" />
+	<model path="units/pd2_dlc_pex/characters/ene_male_office_cop_02/ene_male_office_cop_02" force="true" />	
+	<material_config path="units/pd2_dlc_pex/characters/ene_male_office_cop_02/ene_male_office_cop_02" force="true" />
+	<material_config path="units/pd2_dlc_pex/characters/ene_male_office_cop_02/ene_male_office_cop_02_contour" force="true" />	
+
+	<unit_mat path="units/pd2_dlc_pex/characters/ene_acc_office_cap/ene_acc_office_cap" load="true" />
+	<cooked_physics path="units/pd2_dlc_pex/characters/ene_acc_office_cap/ene_acc_office_cap"/>
+
 	<!--HRT-->	
 	<!--glock-->	
 	<object path="units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1" />

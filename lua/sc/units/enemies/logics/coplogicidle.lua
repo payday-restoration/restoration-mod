@@ -635,7 +635,6 @@ function CopLogicIdle._upd_enemy_detection(data)
 	return delay
 end
 
-
 function CopLogicIdle._chk_relocate(data)
 	local my_nav_seg = data.unit:movement():nav_tracker():nav_segment()
 	local my_area = managers.groupai:state():get_area_from_nav_seg_id(data.unit:movement():nav_tracker():nav_segment())

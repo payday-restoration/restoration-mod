@@ -754,6 +754,10 @@ function PlayerManager:_internal_load()
 	end
 
 	--Removed armor kit weirdness.
+
+	--Fully loaded aced checks
+	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
+	self._throwable_chance = self._throwable_chance_data.chance
 end
 
 --Adds rogue health regen stack on dodge.
@@ -868,13 +872,25 @@ end
 
 --Professional aced extra ammo when killing specials while using silenced weapons.
 function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, killed_unit)
-	if tweak_data.character[killed_unit:base()._tweak_table].priority_shout and equipped_unit:base():got_silencer() and variant == "bullet" then
+	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and equipped_unit:base():got_silencer() and variant == "bullet" then
 		if Network:is_client() then
 			managers.network:session():send_to_host("sync_spawn_extra_ammo", killed_unit)
 		else
 			self:spawn_extra_ammo(killed_unit)
 		end
 	end
+end
+
+--The vanilla version of this function is actually nonfunctional. No wonder it's never used.
+--This fixes it to fulfill its intended purpose of letting active temporary upgrade durations be changed.
+function PlayerManager:extend_temporary_upgrade(category, upgrade, time)
+	local upgrade_value = self:upgrade_value(category, upgrade)
+
+	if upgrade_value == 0 then
+		return
+	end
+
+	self._temporary_upgrades[category][upgrade].expire_time = self._temporary_upgrades[category][upgrade].expire_time + time
 end
 
 --Restores 1 down when enough assaults have passed and bots have the skill. Counter is paused when player is in custody or has max revives; or if the crew loses access to the skill.
@@ -898,6 +914,20 @@ function PlayerManager:check_enduring()
 					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assaults Remaining Until Down Restore." } )
 				end
 			end
+		end
+	end
+end
+
+--Replacement for vanilla fully loaded throwable coroutine. The vanilla code has 0 benefits from being a coroutine, and it seems to have issues resetting the chance or firing at all.
+function PlayerManager:regain_throwable_from_ammo()
+	local roll = math.random()
+	
+	if self._throwable_chance then --Fixes bizzare startup crash
+		if roll < self._throwable_chance then
+			self._throwable_chance = self._throwable_chance_data.chance
+			self:add_grenade_amount(1, true)
+		else
+			self._throwable_chance = self._throwable_chance + self._throwable_chance_data.chance_inc
 		end
 	end
 end

@@ -4,10 +4,13 @@ local mvec3_z = mvector3.z
 local mvec3_cpy = mvector3.copy
 local mvec3_dist_sq = mvector3.distance_sq
 local mvec3_lerp = mvector3.lerp
+
 local mrot_look = mrotation.set_look_at
+
 local math_up = math.UP
 local math_clamp = math.clamp
 local math_point_on_line = math.point_on_line
+
 local table_insert = table.insert
 local table_remove = table.remove
 
@@ -27,10 +30,6 @@ end
 
 local init_original = HuskPlayerMovement.init
 function HuskPlayerMovement:init(unit)
-	self._draw_sync_player_newest_pos = nil
-	self._draw_sync_player_detect_pos = nil
-	self._draw_player_newest_pos = nil
-	self._draw_player_detect_pos = nil
 
 	self._stand_detection_offset_z = mvec3_z(tweak_data.player.stances.default.standard.head.translation)
 
@@ -147,6 +146,9 @@ function HuskPlayerMovement:sync_action_walk_nav_point(pos, speed, action, param
 	end
 end
 
+local draw_sync_player_newest_pos = nil
+local draw_sync_player_detect_pos = nil
+
 function HuskPlayerMovement:_update_real_pos(new_pos, new_pose_code)
 	local newest_pos = self._m_newest_pos
 	local detect_pos = self._m_detect_pos
@@ -170,15 +172,35 @@ function HuskPlayerMovement:_update_real_pos(new_pos, new_pose_code)
 	local m_com = self._m_com
 	mvec3_lerp(m_com, newest_pos, detect_pos, 0.5)
 
-	if self._draw_sync_player_newest_pos then
+	if self._nav_tracker then
+		self._nav_tracker:move(new_pos)
+
+		local nav_seg_id = self._nav_tracker:nav_segment()
+
+		if self._standing_nav_seg_id ~= nav_seg_id then
+			self._standing_nav_seg_id = nav_seg_id
+			local metadata = managers.navigation:get_nav_seg_metadata(nav_seg_id)
+
+			self._unit:base():set_suspicion_multiplier("area", metadata.suspicion_mul)
+			self._unit:base():set_detection_multiplier("area", metadata.detection_mul and 1 / metadata.detection_mul or nil)
+			managers.groupai:state():on_criminal_nav_seg_change(self._unit, nav_seg_id)
+		end
+	end
+
+	if draw_sync_player_newest_pos then
 		local m_brush = Draw:brush(Color.blue:with_alpha(0.5), 0.1)
 		m_brush:sphere(newest_pos, 15)
 	end
 
-	if self._draw_sync_player_detect_pos then
+	if draw_sync_player_detect_pos then
 		local head_brush = Draw:brush(Color.yellow:with_alpha(0.5), 0.1)
 		head_brush:sphere(detect_pos, 15)
 	end
+end
+
+function HuskPlayerMovement:set_position(pos)
+	mvec3_set(self._m_pos, pos)
+	self._unit:set_position(pos)
 end
 
 function HuskPlayerMovement:sync_action_change_pose(pose_code, pos)
@@ -219,7 +241,10 @@ function HuskPlayerMovement:_update_zipline_sled(t, dt)
 	end
 end
 
---[[local update_original = HuskPlayerMovement.update
+--[[local draw_player_newest_pos = nil
+local draw_player_detect_pos = nil
+
+local update_original = HuskPlayerMovement.update
 function HuskPlayerMovement:update(unit, t, dt)
 	update_original(self, unit, t, dt)
 
@@ -227,12 +252,12 @@ function HuskPlayerMovement:update(unit, t, dt)
 		return
 	end
 
-	if self._draw_player_newest_pos then
+	if draw_player_newest_pos then
 		local m_brush = Draw:brush(Color.blue:with_alpha(0.5), 0.1)
 		m_brush:sphere(self._m_newest_pos, 15)
 	end
 
-	if self._draw_player_detect_pos then
+	if draw_player_detect_pos then
 		local head_brush = Draw:brush(Color.yellow:with_alpha(0.5), 0.1)
 		head_brush:sphere(self._m_detect_pos, 15)
 	end

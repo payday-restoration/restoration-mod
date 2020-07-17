@@ -596,6 +596,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.assault_rifle.move_spread_multiplier = {0.35}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
+					self.values.smg.full_auto_free_ammo = {5}
 				
 			--Heavy Impact
 				self.values.weapon.knock_down = {
@@ -729,9 +730,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.player.extra_ammo_multiplier = {1.25}
 				--Ace
-					self.values.player.pick_up_ammo_multiplier = {1.35, 1.75}
+					self.values.player.fully_loaded_pick_up_multiplier = {1.6}
 					self.values.player.regain_throwable_from_ammo = {
-						{chance = 0.05, chance_inc = 0.0}
+						{chance = 0.05, chance_inc = 0.01}
 					}
 		
 	--TECHNICIAN--
@@ -773,10 +774,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Bulletproof
 					self.values.player.armor_multiplier = {
 						1.2, --Basic
-						1.5 --Ace
+						1.4 --Ace
 					}
 					--Ace
-						self.values.player.armor_regen_timer_multiplier_tier = {0.95}				
+						self.values.player.armor_regen_timer_multiplier_tier = {0.9}				
 			
 		--Breacher--
 			--Hardware Expert
@@ -1102,8 +1103,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Gunfighter
 				self.values.pistol.reload_speed_multiplier = {
-					1.15, --Basic
-					1.4 --Ace
+					1.05, --Basic
+					1.3 --Ace
 				}
 				--Basic
 					self.values.pistol.move_spread_multiplier = {0.6}
@@ -1235,6 +1236,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
+	self.values.player.pick_up_ammo_multiplier = {1.25}
 
 	--Burglar
 	self.values.player.crouch_dodge_chance = {0.05, 0.10}
@@ -1433,24 +1435,23 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {
-		base = 2,
- 		cd = 5,
- 		multiplier = 0.2,
-		{0, 2},
-		{2, 4},
-		{4, 6}
+ 		cd = 10, --Cooldown
+ 		cdr = {3 , 5}, --Amount cooldown is reduced on ammo box pickup.
+		{4, 8}, --Amounts healed per level
+		{6, 10},
+		{8, 12}
  	}
-	self.loose_ammo_give_team_health_ratio = 0.5
-	self.loose_ammo_give_team_ratio = 0.5
-	self.values.temporary.loose_ammo_restore_health = {}	
-	
-	for i, data in ipairs(self.loose_ammo_restore_health_values) do
-		local base = self.loose_ammo_restore_health_values.base
+	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
+	self.values.player.loose_ammo_restore_health_give_team = {true}	
+	self.values.player.loose_ammo_give_armor = {3}
 
+	--Create actual upgrade table for Gambler.
+	self.values.temporary.loose_ammo_restore_health = {}
+	for i, data in ipairs(self.loose_ammo_restore_health_values) do
 		table.insert(self.values.temporary.loose_ammo_restore_health, {
 			{
-				base + data[1],
-				base + data[2]
+				data[1],
+				data[2]
 			},
 			self.loose_ammo_restore_health_values.cd
 		})
@@ -1458,9 +1459,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.temporary.loose_ammo_give_team = {{
 		true,
-		5
+		7
 	}}
-	self.values.player.loose_ammo_restore_health_give_team = {true}	
+	self.loose_ammo_give_team_ratio = 1 --% of ammo given to team.
 
 	--Sociopath more like SocioBAD
 	self.values.player.killshot_regen_armor_bonus = {2.5}
@@ -1585,13 +1586,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.values.player.damage_control_passive = {{
 		30,
-		7.14286
+		12.5
 	}}
 	self.values.player.damage_control_auto_shrug = {
 		4
 	}
 	self.values.player.damage_control_healing = {
-		300
+		400
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
@@ -2451,6 +2452,24 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "move_spread_multiplier",
 			category = "pistol"
 		}
+	}
+	self.definitions.player_fully_loaded_pick_up_multiplier = {
+		name_id = "menu_player_fully_loaded_pick_up_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "fully_loaded_pick_up_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_loose_ammo_give_armor = {
+		name_id = "menu_player_loose_ammo_give_armor",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "loose_ammo_give_armor",
+			category = "player"
+		}
 	}		
 	
 	--Passive Perk Deck Dam increases
@@ -2528,7 +2547,16 @@ function UpgradesTweakData:_smg_definitions()
 			upgrade = "fire_rate_multiplier",
 			value = 2
 		}
-	}	
+	}
+	self.definitions.smg_full_auto_free_ammo = {
+		category = "feature",
+		name_id = "menu_smg_full_auto_free_ammo",
+		upgrade = {
+			category = "smg",
+			upgrade = "full_auto_free_ammo",
+			value = 1
+		}
+	}
 	self.definitions.smg_damage_multiplier = {
 		category = "feature",
 		name_id = "menu_smg_fire_rate_multiplier",

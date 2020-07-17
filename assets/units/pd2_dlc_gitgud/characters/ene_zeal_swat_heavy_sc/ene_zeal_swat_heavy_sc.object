@@ -212,7 +212,7 @@
 				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" />
 				<object name="g_head_lod1" 	enabled="true" lod="1" />
 			</lod_object>
-			
+
 			<lod_object name="lod_helmet">
 				<object name="g_helmet_lod1" 	enabled="true"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_ene_acc_swat_helmet"/>					
@@ -227,14 +227,9 @@
 			</lod_object>
 			
 			<object name="s_body" enabled="true" shadow_caster="true"/>        
-		
+			<object name="s_head" enabled="true" shadow_caster="true"/>        
+		    <object name="g_bag" enabled="false" />		
 		</graphic_group>
-		
-		<graphic_group name="pouches_n_shit" enabled="true" culling_object="c_cullblock">
-			<lod_object name="lod_bag">
-		         <object name="g_bag" enabled="true" />
-			</lod_object>	 
-		</graphic_group>	
 	</graphics>
 
 </dynamic_object>

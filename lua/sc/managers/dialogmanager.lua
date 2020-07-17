@@ -724,8 +724,8 @@ function DialogManager:queue_dialog(id, ...)
 		end	
 	
 		--Bomb Dockyard--
-		--pls work this time
-		if id == "Play_pln_cr2_35" then
+		--PLEASE WORK ALL THE TIME NOW
+		if id == "Play_pln_cr2_35" or id == "Play_pln_cr2_104" then
 			if difficulty_index <= 2 then
 				escape_time = 690
 			elseif difficulty_index == 3 then

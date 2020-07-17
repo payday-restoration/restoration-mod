@@ -4434,7 +4434,7 @@ function CharacterTweakData:_presets(tweak_data)
 		mini = {},
 		flamethrower = {}
 	}
-	presets.weapon.normal.is_pistol.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_pistol.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_pistol.focus_delay = 10
 	presets.weapon.normal.is_pistol.focus_dis = 200
 	presets.weapon.normal.is_pistol.spread = 20
@@ -4511,7 +4511,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.normal.akimbo_pistol = presets.weapon.normal.is_pistol
-	presets.weapon.normal.is_rifle.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_rifle.focus_delay = 10
 	presets.weapon.normal.is_rifle.focus_dis = 200
 	presets.weapon.normal.is_rifle.spread = 20
@@ -4592,7 +4592,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.normal.is_bullpup = presets.weapon.normal.is_rifle
-	presets.weapon.normal.is_shotgun_pump.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.normal.is_shotgun_pump.focus_delay = 10
 	presets.weapon.normal.is_shotgun_pump.focus_dis = 200
 	presets.weapon.normal.is_shotgun_pump.spread = 15
@@ -4848,7 +4848,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.is_smg.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_smg.aim_delay = {0.2, 0.2}
 	presets.weapon.normal.is_smg.focus_delay = 10
 	presets.weapon.normal.is_smg.focus_dis = 200
 	presets.weapon.normal.is_smg.spread = 15
@@ -4925,7 +4925,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.mp9.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.mp9.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.mp9.focus_delay = 20
 	presets.weapon.normal.mp9.focus_dis = 200
 	presets.weapon.normal.mp9.spread = 30
@@ -5079,7 +5079,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.is_revolver.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_revolver.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_revolver.focus_delay = 10
 	presets.weapon.normal.is_revolver.focus_dis = 200
 	presets.weapon.normal.is_revolver.spread = 20
@@ -5614,7 +5614,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.good = deep_clone(presets.weapon.normal)
-	presets.weapon.good.is_pistol.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_pistol.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_pistol.focus_delay = 2
 	presets.weapon.good.is_pistol.focus_dis = 200
 	presets.weapon.good.is_pistol.spread = 20
@@ -5687,7 +5687,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.good.akimbo_pistol = presets.weapon.good.is_pistol
-	presets.weapon.good.is_rifle.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_rifle.focus_delay = 3
 	presets.weapon.good.is_rifle.focus_dis = 200
 	presets.weapon.good.is_rifle.spread = 20
@@ -5768,7 +5768,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.good.is_bullpup = presets.weapon.good.is_rifle
-	presets.weapon.good.is_shotgun_pump.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.good.is_shotgun_pump.focus_delay = 5
 	presets.weapon.good.is_shotgun_pump.focus_dis = 200
 	presets.weapon.good.is_shotgun_pump.spread = 15
@@ -6024,7 +6024,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.is_shotgun_mag.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_shotgun_mag.aim_delay = {0.2, 0.2}
 	presets.weapon.good.is_shotgun_mag.focus_delay = 5
 	presets.weapon.good.is_shotgun_mag.focus_dis = 200
 	presets.weapon.good.is_shotgun_mag.spread = 15
@@ -6346,7 +6346,7 @@ function CharacterTweakData:_presets(tweak_data)
 			autofire_rounds = {25, 50}
 		}
 	}
-	presets.weapon.good.is_smg.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_smg.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_smg.focus_delay = 3
 	presets.weapon.good.is_smg.focus_dis = 200
 	presets.weapon.good.is_smg.spread = 20
@@ -6419,7 +6419,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.mp9.aim_delay = {0.1, 0.1}
+	presets.weapon.good.mp9.aim_delay = {0.15, 0.15}
 	presets.weapon.good.mp9.focus_delay = 20
 	presets.weapon.good.mp9.focus_dis = 200
 	presets.weapon.good.mp9.spread = 30
@@ -6569,7 +6569,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.is_revolver.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_revolver.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_revolver.focus_delay = 10
 	presets.weapon.good.is_revolver.focus_dis = 200
 	presets.weapon.good.is_revolver.spread = 20
@@ -6794,7 +6794,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.expert = deep_clone(presets.weapon.good)
-	presets.weapon.expert.is_pistol.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_pistol.aim_delay = {0.15, 0.15}
 	presets.weapon.expert.is_pistol.focus_delay = 1
 	presets.weapon.expert.is_pistol.focus_dis = 300
 	presets.weapon.expert.is_pistol.spread = 20
@@ -6879,7 +6879,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.expert.akimbo_pistol = presets.weapon.expert.is_pistol
-	presets.weapon.expert.is_rifle.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.expert.is_rifle.focus_delay = 2
 	presets.weapon.expert.is_rifle.focus_dis = 300
 	presets.weapon.expert.is_rifle.spread = 20
@@ -6972,7 +6972,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.expert.is_bullpup = presets.weapon.expert.is_rifle
-	presets.weapon.expert.is_shotgun_pump.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.expert.is_shotgun_pump.focus_delay = 2
 	presets.weapon.expert.is_shotgun_pump.focus_dis = 200
 	presets.weapon.expert.is_shotgun_pump.spread = 15
@@ -7228,7 +7228,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.is_shotgun_mag.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_shotgun_mag.aim_delay = {0.2, 0.2}
 	presets.weapon.expert.is_shotgun_mag.focus_delay = 2
 	presets.weapon.expert.is_shotgun_mag.focus_dis = 200
 	presets.weapon.expert.is_shotgun_mag.spread = 15
@@ -7547,7 +7547,7 @@ function CharacterTweakData:_presets(tweak_data)
 			autofire_rounds = {25, 50}
 		}
 	}
-	presets.weapon.expert.is_smg.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_smg.aim_delay = {0.2, 0.2}
 	presets.weapon.expert.is_smg.focus_delay = 1
 	presets.weapon.expert.is_smg.focus_dis = 200
 	presets.weapon.expert.is_smg.spread = 15
@@ -7632,7 +7632,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.mp9.aim_delay = {0, 0.1}
+	presets.weapon.expert.mp9.aim_delay = {0.15, 0.15}
 	presets.weapon.expert.mp9.focus_delay = 20
 	presets.weapon.expert.mp9.focus_dis = 200
 	presets.weapon.expert.mp9.spread = 30

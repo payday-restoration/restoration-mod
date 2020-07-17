@@ -8,7 +8,7 @@ end
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 	for _, category in ipairs(self:categories()) do
-		if self._use_armor_piercing == true then
+		if self._use_armor_piercing then
 			break
 		end
 		self._use_armor_piercing = managers.player:upgrade_value(category, "ap_bullets")

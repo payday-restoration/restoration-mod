@@ -9495,6 +9495,40 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 end
 
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
+--[[
+TACTIC DESCRIPTIONS:
+VANILLA COMMENTS TAKEN FROM EARLY LUA SOURCE
+
+group:
+	deathguard: If possessed by the leader. The whole group aggressively occupies areas with downed criminals.
+	ranged_fire: If possessed by the leader. The group will open fire for about 15 seconds from a nearby position during assault before pushing.	
+personal:
+	shield: If possessed by any member. The member provides cover to other members who possess the "shield_cover" tactic.
+	provide_coverfire: If possessed by any member. The member becomes aggressive when teammates are assaulted.
+	provide_support: If possessed by any member. The member becomes aggressive when teammates become aggressive.
+	shield_cover: If possessed by any member. The member takes cover behind other members who possess the "shield" tactic.
+	smoke_grenade: If possessed by any member. A smoke grenade is detonated right before the group moves in to assault.
+	flash_grenade: If possessed by any member. A flashbang grenade is detonated right before the group moves in to assault.
+
+RESMOD STUFF
+
+changed:
+	flank: Due to assault path changes now causes enemies to focus on freeing hostage, stealing loot and other objectives before attacking players.
+	murder: Enemy will choose one player to target and focus on.
+new:
+    elite_ranged_fire: Similar to ranged_fire enemies will fire at players and back off and strafe when approached.
+    hitnrun: Enemies will attack the player then back off to cover.
+    legday: Enemies can only move via sprinting.
+    obstacle: Enemies position themselves outside the player current map section. (use to make enemies very passive)
+    spoocavoidance: Tries to find a path to the player unseen will run to cover if spotted.
+	groupcsr/grouphrtr: Causes spawngroup to use "assault/rescue x team going in" lines.
+	harass: Target players reloading/interacting/swapping weapons etc. Has an audio queue for spotting players reload.
+	aggressor: Attempt to use cover close to the players position.
+	reloadingretreat: Back up and strafe while reloading.
+	
+	FUGLROE PLEASE CORRECT THESE IF IM WRONG!!! - Rino
+	
+]]
 	self._tactics = {
 		CS_cop = {
 			"provide_coverfire",

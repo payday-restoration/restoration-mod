@@ -632,6 +632,9 @@
 	"menu_me" : "YOU",
 
 	"RestorationModPDTHChallengesTitleID" : "Show PDTH Challenges",
-	"RestorationModPDTHChallengesDescID" : "Toggles the visibility of the PDTH challenges in the menu and the hud"
+	"RestorationModPDTHChallengesDescID" : "Toggles the visibility of the PDTH challenges in the menu and the hud",
+
+	"RestorationModArmorFixTitleID" : "Armor Flash Fix",
+	"RestorationModArmorFixDescID" : "Enable or disable armor flash fix."
 		
 }

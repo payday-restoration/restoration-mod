@@ -115,7 +115,6 @@ function DescriptionItem:init(panel, text, i, saved_descriptions)
 	local briefing_id = managers.job:current_briefing_id()
 	
 	if managers.skirmish:is_skirmish() and not managers.skirmish:is_weekly_skirmish() then
-		name_id = "heist_skm_random_h1"
 		briefing_id = "heist_skm_random_briefing"
 	end
 	

@@ -7148,6 +7148,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		recoil = -1,
 		concealment = 1
 	}
+	self.parts.wpn_fps_upg_ak_g_rk3.forbids = {
+		"wpn_upg_ak_g_standard",
+		"wpn_fps_ass_asval_g_standard"
+	}
 	
 	--Low Drag Magazine
 	self.parts.wpn_fps_upg_ak_m_uspalm.pcs = {}

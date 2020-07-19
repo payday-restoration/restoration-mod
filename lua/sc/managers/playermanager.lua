@@ -380,20 +380,23 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 
 	local current_state = self:get_current_state()
 
-	if current_state and current_state:_interacting() then
-		multiplier = multiplier * self:upgrade_value("player", "interacting_damage_multiplier", 1)
+	if current_state then
+		if current_state:_interacting() then
+			multiplier = multiplier * self:upgrade_value("player", "interacting_damage_multiplier", 1)
+		elseif current_state:in_melee() then
+			local melee_name_id = managers.blackmarket:equipped_melee_weapon()
+			if damage_type == "bullet" then --Counter Strike
+				multiplier = multiplier * self:upgrade_value("player", "deflect_ranged", 1)
+			end
+
+			if tweak_data.blackmarket.melee_weapons[melee_name_id].block then --Buck shield.
+				multiplier = multiplier * tweak_data.blackmarket.melee_weapons[melee_name_id].block
+			end
+		end
 	end
 	
-
-	if current_state and current_state:in_melee() then
-		local melee_name_id = managers.blackmarket:equipped_melee_weapon()
-		if damage_type == "bullet" then --Counter Strike
-			multiplier = multiplier * self:upgrade_value("player", "deflect_ranged", 1)
-		end
-
-		if tweak_data.blackmarket.melee_weapons[melee_name_id].block then --Buck shield.
-			multiplier = multiplier * tweak_data.blackmarket.melee_weapons[melee_name_id].block
-		end
+	if self._current_state == "bipod" then
+		multiplier = multiplier * self:upgrade_value("player", "bipod_damage_reduction", 1)
 	end
 
 	return multiplier
@@ -930,4 +933,43 @@ function PlayerManager:regain_throwable_from_ammo()
 			self._throwable_chance = self._throwable_chance + self._throwable_chance_data.chance_inc
 		end
 	end
+end
+
+--Better rounding behavior on DA. Add 1 to deal with some weird rounding edge cases.
+function PlayerManager:_get_cocaine_damage_absorption_from_data(data)
+	local amount = data.amount or 0
+	local upgrade_level = data.upgrade_level or 1
+
+	if amount == 0 then
+		return 0
+	end
+	log(amount)
+	return math.floor((amount + 1) / (tweak_data.upgrades.cocaine_stacks_convert_levels and tweak_data.upgrades.cocaine_stacks_convert_levels[upgrade_level] or 20)) * (tweak_data.upgrades.cocaine_stacks_dmg_absorption_value or 0.1)
+end
+
+--Makes the multiplier capstone work as described.
+function PlayerManager:get_best_cocaine_damage_absorption(my_peer_id)
+	local data = self._global.synced_cocaine_stacks[my_peer_id] or {}
+	local multiplier = self:upgrade_value("player", "cocaine_stack_absorption_multiplier", 1) --Previously always returned 1.
+	log(multiplier)
+	local absorption = 0
+	local best_peer_id = 0
+
+	if self._global.synced_cocaine_stacks then
+		local peer_absorption = nil
+
+		for peer_id, data in pairs(self._global.synced_cocaine_stacks) do
+			if peer_id == my_peer_id or data.in_use then
+				peer_absorption = self:_get_cocaine_damage_absorption_from_data(data)
+
+				if absorption < peer_absorption then
+					best_peer_id = peer_id or best_peer_id
+				end
+
+				absorption = math.max(absorption, peer_absorption)
+			end
+		end
+	end
+
+	return absorption * multiplier, best_peer_id
 end

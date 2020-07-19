@@ -564,9 +564,6 @@ end
 				},
 				{
 					name = "regen_time"
-				},
-				{
-					name = "damage_shake"
 				}
 			}
 
@@ -2429,9 +2426,6 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				{
 					name = "regen_time",
 					inverted = true
-				},
-				{
-					name = "damage_shake"
 				}
 			}
 			local x = 0

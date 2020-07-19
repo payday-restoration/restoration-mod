@@ -300,15 +300,6 @@ function PlayerDamage:damage_melee(attack_data)
 		})
 	end
 
-	if attack_data.damage > 0 then
-		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("melee")
-		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
-		local damage_absorption = pm:damage_absorption()
-		if damage_absorption > 0 then
-			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
-		end
-	end
-
 	--These are done after god mode checks now, just to save time.
 	--Also done before DR calcs, so that DR going away never causes grace piercing.
 	self._last_received_dmg = attack_data.damage
@@ -320,6 +311,16 @@ function PlayerDamage:damage_melee(attack_data)
 	if self._next_allowed_dmg_t ~= next_allowed_dmg_t_old then
 		self._last_received_dmg = self._last_bullet_damage
 	end
+
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("melee")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
+	end
+
 	
 	--Can't dodge melee.
 
@@ -1063,6 +1064,8 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	if pm:has_category_upgrade("player", "biker_armor_regen") then
 		self:tick_biker_armor_regen(dt)
 	end
+
+	log(pm:damage_absorption())
 end)
 
 --Deals with resmod's health regen changes.

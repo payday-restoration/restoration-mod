@@ -543,7 +543,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 				--Stockholm Syndrome
 					--Basic
-						self.values.player.super_syndrome = {0}
+						self.values.player.civilians_dont_flee = {true}
 					--Ace
 						self.values.player.civilian_reviver = {true}
 						self.values.player.civilian_gives_ammo = {true}
@@ -564,11 +564,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						0.125, --Basic
 						0.25 --Ace
 					}
+
 					--Ace
 						self.values.team.damage = {
 							hostage_absorption = {0.1},
 							hostage_absorption_limit = 4
 						}
+
 			
 		--Assault--
 			--Leadership--
@@ -599,10 +601,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.smg.full_auto_free_ammo = {5}
 				
 			--Heavy Impact
-				self.values.weapon.knock_down = {
-					0.1, --Basic
-					0.25 --Ace
-				}
+				--Basic
+					self.values.weapon.knock_down = {
+						0.4, --Ace
+						0.4 --Unused
+					}
+				--Ace
+					self.values.player.bipod_damage_reduction = {0.5}
 	
 			--Body Expertise
 				self.values.weapon.automatic_head_shot_add = {0.3, 1}
@@ -1463,10 +1468,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.loose_ammo_give_team_ratio = 1 --% of ammo given to team.
 
 	--Sociopath more like SocioBAD
-	self.values.player.killshot_regen_armor_bonus = {2.5}
-	self.values.player.killshot_close_regen_armor_bonus = {2.5}
+	self.values.player.killshot_regen_armor_bonus = {2}
+	self.values.player.killshot_close_regen_armor_bonus = {2}
 	self.values.player.killshot_close_panic_chance = {0.25}
-	self.values.player.melee_kill_life_leech = {0.02}
+	self.values.player.melee_kill_life_leech = {0.05}
 	self.on_killshot_cooldown = 3
 
 	--Anarchist stuff--
@@ -1486,8 +1491,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	self.values.player.armor_increase = {
 		0.50,
-		0.75,
-		1.00
+		1.00,
+		1.50
 	}
 
 	self.values.player.damage_to_armor = {
@@ -1535,21 +1540,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
 	self.cocaine_stacks_convert_levels = {
-		30,
-		25
+		300,
+		240
 	}	
-	self.cocaine_stacks_dmg_absorption_value = 0.125
+	self.cocaine_stacks_dmg_absorption_value = 0.1
 	self.cocaine_stacks_tick_t = 0
-	self.max_cocaine_stacks_per_tick = 300
-	self.max_total_cocaine_stacks = 300
-	self.cocaine_stacks_decay_t = 10
-	self.cocaine_stacks_decay_amount_per_tick = 10
-	self.cocaine_stacks_decay_percentage_per_tick = 0.05
-	self.values.player.cocaine_stacking = {0.05}
+	self.max_cocaine_stacks_per_tick = 2400
+	self.max_total_cocaine_stacks = 2400
+	self.cocaine_stacks_decay_t = 8
+	self.cocaine_stacks_decay_amount_per_tick = 300
+	self.cocaine_stacks_decay_percentage_per_tick = 0
+	self.values.player.cocaine_stacking = {1}
 	self.values.player.sync_cocaine_stacks = {true}
-	self.values.player.cocaine_stacks_decay_multiplier = {0.5}
+	self.values.player.cocaine_stacks_decay_multiplier = {0.8}
 	self.values.player.sync_cocaine_upgrade_level = {2}
-	self.values.player.cocaine_stack_absorption_multiplier = {1.25}
+	self.values.player.cocaine_stack_absorption_multiplier = {1.5}
 	
 	--Chico--
 	--kingpin
@@ -3070,6 +3075,24 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "armor_full_damage_absorb",
+			category = "player"
+		}
+	}
+	self.definitions.player_civilians_dont_flee = {
+		name_id = "menu_player_civilians_dont_flee",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "civilians_dont_flee",
+			category = "player"
+		}
+	}
+	self.definitions.player_bipod_damage_reduction = {
+		name_id = "menu_player_bipod_damage_reduction",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "bipod_damage_reduction",
 			category = "player"
 		}
 	}

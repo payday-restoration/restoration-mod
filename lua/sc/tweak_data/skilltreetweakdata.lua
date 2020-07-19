@@ -274,7 +274,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 8},
 				[1] = {
 					upgrades = {
-						"player_super_syndrome_1"
+						"player_civilians_dont_flee"
 					},
 					cost = self.costs.hightier
 				},
@@ -447,7 +447,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"weapon_knock_down_2"
+						"player_bipod_damage_reduction"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -611,7 +611,6 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 1},
 				[1] = {
 					upgrades = {
-						"player_damage_shake_addend",
 						"player_resist_melee_push"
 					},
 					cost = self.costs.default

@@ -757,3 +757,19 @@ function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
 	ammo = math.floor(ammo)
 	return ammo
 end
+
+--Returns whether or not a bipod is active.
+function RaycastWeaponBase:bipod_active()
+	local bipod_part = managers.weapon_factory:get_parts_from_weapon_by_perk("bipod", self._parts)
+	local bipod_unit = nil
+
+	if bipod_part and bipod_part[1] then
+		bipod_unit = bipod_part[1].unit:base()
+	end
+
+	if bipod_unit then
+		retval = bipod_unit:is_deployed()
+	end
+	
+	return retval
+end

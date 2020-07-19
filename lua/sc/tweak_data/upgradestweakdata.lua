@@ -772,12 +772,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.sentry_gun.quantity = {1, 2}
 
 				--Bulletproof
-					self.values.player.armor_multiplier = {
-						1.2, --Basic
-						1.4 --Ace
-					}
+					--Basic
+						self.values.player.unpierceable_armor = {true}
 					--Ace
-						self.values.player.armor_regen_timer_multiplier_tier = {0.9}				
+						self.values.player.armor_full_damage_absorb = {0.25}
+						self.values.player.armor_regen_timer_multiplier_tier = {0.95}				
 			
 		--Breacher--
 			--Hardware Expert
@@ -3053,6 +3052,24 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "special_double_drop",
+			category = "player"
+		}
+	}
+	self.definitions.player_unpierceable_armor = {
+		name_id = "menu_player_unpierceable_armor",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "unpierceable_armor",
+			category = "player"
+		}
+	}
+	self.definitions.player_armor_full_damage_absorb = {
+		name_id = "menu_player_armor_full_damage_absorb",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "armor_full_damage_absorb",
 			category = "player"
 		}
 	}

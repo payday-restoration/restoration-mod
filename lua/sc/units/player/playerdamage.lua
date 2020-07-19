@@ -71,9 +71,11 @@ function PlayerDamage:init(unit)
 	self._keep_health_on_revive = false --Used for cloaker kicks and taser downs, stops reviving from changing player health.
 	self._biker_armor_regen_t = 0.0 --Used to track the time until the next biker armor regen tick.
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
-	self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0) - managers.player:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
+	self._deflection = 1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
+	self._unpierceable = player_manager:has_category_upgrade("player", "unpierceable_armor")
 	self.tase_time = 0 --Titan Taser slow cooldown.
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
+	managers.player:set_damage_absorption("full_armor_absorption", managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor())
 
 	--The rest of this is unchanged vanilla code.
 	local function revive_player()
@@ -298,8 +300,14 @@ function PlayerDamage:damage_melee(attack_data)
 		})
 	end
 
-	local dmg_mul = pm:damage_reduction_skill_multiplier("melee")
-	attack_data.damage = attack_data.damage * dmg_mul
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("melee")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
+	end
 
 	--These are done after god mode checks now, just to save time.
 	--Also done before DR calcs, so that DR going away never causes grace piercing.
@@ -311,14 +319,6 @@ function PlayerDamage:damage_melee(attack_data)
 	
 	if self._next_allowed_dmg_t ~= next_allowed_dmg_t_old then
 		self._last_received_dmg = self._last_bullet_damage
-	end
-
-	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-
-	local damage_absorption = pm:damage_absorption()
-	if damage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
 	end
 	
 	--Can't dodge melee.
@@ -461,16 +461,16 @@ function PlayerDamage:damage_explosion(attack_data)
 	attack_data.damage = damage
 	attack_data.damage = attack_data.damage * (1 - distance / attack_data.range)
 
-	local dmg_mul = pm:damage_reduction_skill_multiplier("explosion")
-	attack_data.damage = attack_data.damage * dmg_mul
-	attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
-	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage)
-
-	local damage_absorption = pm:damage_absorption()
-
-	if damage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("explosion")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
 	end
+
 
 	if attack_data.attacker_unit and alive(attack_data.attacker_unit) then
 		self:_hit_direction(attack_data.attacker_unit:position())
@@ -487,7 +487,6 @@ function PlayerDamage:damage_explosion(attack_data)
 
 		return
 	else
-		managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
 		if self:get_real_armor() > 0 or attack_data.damage == 0 then
 			self._unit:sound():play("player_hit")
 		else
@@ -510,9 +509,23 @@ function PlayerDamage:damage_explosion(attack_data)
 
 	self:_check_chico_heal(attack_data)
 
+	local armor_reduction_multiplier = 0
+	
+	if 0 >= self:get_real_armor() then
+		armor_reduction_multiplier = 1
+	end
+	
 	local health_subtracted = self:_calc_armor_damage(attack_data)
-
-	attack_data.damage = attack_data.damage - health_subtracted
+	
+	if not self._unpierceable then
+		attack_data.damage = attack_data.damage - health_subtracted
+		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
+			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
+		end
+	else
+		attack_data.damage = attack_data.damage * armor_reduction_multiplier
+	end
+	
 	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data)
 
 	pm:send_message(Message.OnPlayerDamage, nil, attack_data)
@@ -566,14 +579,13 @@ function PlayerDamage:damage_fire(attack_data)
 	self._last_received_dmg = attack_data.damage
 	self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
 
-	local dmg_mul = pm:damage_reduction_skill_multiplier("fire")
-	attack_data.damage = attack_data.damage * dmg_mul
-	attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
-
-	local damage_absorption = pm:damage_absorption()
-
-	if damage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("fire")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
 	end
 
 	if self._bleed_out then
@@ -648,14 +660,13 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 		self._last_received_dmg = self._last_bullet_damage
 	end
 
-	local dmg_mul = pm:damage_reduction_skill_multiplier("bullet")
-	attack_data.damage = attack_data.damage * dmg_mul
-	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-
-	local damage_absorption = pm:damage_absorption()
-	if damage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("bullet")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
 	end
 	
 	self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
@@ -716,7 +727,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	
 	local health_subtracted = self:_calc_armor_damage(attack_data)
 	
-	if attack_data.armor_piercing then
+	if attack_data.armor_piercing and not self._unpierceable then
 		attack_data.damage = attack_data.damage - health_subtracted
 		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
 			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
@@ -1176,6 +1187,10 @@ function PlayerDamage:add_revive()
 	self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
 	self._revive_health_i = math.max(self._revive_health_i - 1, 1)
 	managers.environment_controller:set_last_life(Application:digest_value(self._revives, false) <= 1)
+	managers.player:set_damage_absorption(
+		"down_absorption",
+		managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
+	)
 end
 
 --New trigger for ex-pres. Now occurs when armor regen kicks in any time after armor has been broken. Ignores partial regen from stuff like Bullseye.
@@ -1194,6 +1209,18 @@ function PlayerDamage:set_armor(armor)
 
 	if self._armor then
 		local current_armor = self:get_real_armor()
+
+		if armor == self:_max_armor() then
+			managers.player:set_damage_absorption(
+				"full_armor_absorption",
+				managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor()
+			)
+		else
+			managers.player:set_damage_absorption(
+				"full_armor_absorption",
+				0
+			)
+		end
 
 		if current_armor ~= 0 and armor == 0 and self._dire_need then
 			local function clbk()

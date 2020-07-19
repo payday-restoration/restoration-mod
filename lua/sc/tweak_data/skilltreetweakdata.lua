@@ -955,14 +955,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {6, 4},
 				[1] = {
 					upgrades = {
-						"player_armor_multiplier_1"
+						"player_unpierceable_armor"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
 						"player_armor_regen_timer_multiplier_tier",
-						"player_armor_multiplier_2"
+						"player_armor_full_damage_absorb"
 					},
 					cost = self.costs.hightierpro
 				}

@@ -1064,8 +1064,6 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	if pm:has_category_upgrade("player", "biker_armor_regen") then
 		self:tick_biker_armor_regen(dt)
 	end
-
-	log(pm:damage_absorption())
 end)
 
 --Deals with resmod's health regen changes.

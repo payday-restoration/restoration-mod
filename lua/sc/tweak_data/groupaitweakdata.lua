@@ -9537,11 +9537,11 @@ new:
 			"groupcsr"
 		},
 		CS_cop_stealth = {
-			"grouphrtr",
 			"flank",
 			"provide_coverfire",
 			"provide_support",
-			"hitnrun"
+			"hitnrun",
+			"grouphrtr"
 		},
 		CS_swat_rifle = {
 			"smoke_grenade",
@@ -9604,7 +9604,7 @@ new:
 		CS_shield_flank = {
 			"flank",
 			"charge",
-			--"flash_grenade",
+			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
 			"shield"
@@ -9660,12 +9660,12 @@ new:
 			"murder"
 		},
 		ELITE_boom = {
+			"flash_grenade",
+			"smoke_grenade",
 			"harass",		
 			"elite_ranged_fire",
 			"provide_coverfire",
 			"hitnrun",
-			"flash_grenade",
-			"smoke_grenade",
 			"shield_cover"
 		},			
 		CS_sniper = {
@@ -9690,12 +9690,12 @@ new:
 			"grouphrtr"
 		},
 		FBI_suit_stealth = { 
+			"flank",
 			"hunter",
 			"reloadingretreat",
 			"provide_coverfire",
 			"provide_support",
 			"flash_grenade",
-			"flank",
 			"hitnrun",
 			"elite_ranged_fire",
 			"grouphrtr"
@@ -9752,10 +9752,10 @@ new:
 			"deathguard"
 		},
 		FBI_swat_rifle_flank = {
-			"elite_ranged_fire",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
+			"elite_ranged_fire",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
@@ -9812,20 +9812,20 @@ new:
 			"groupcsr"
 		},
 		MH_swat_rifle_flank = { 
-			"elite_ranged_fire",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
+			"elite_ranged_fire",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover"
 		},
 		MH_swat_shotgun_flank = {
-			"legday",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
+			"legday",
 			"charge",
 			"aggressor",
 			"provide_coverfire",
@@ -9833,10 +9833,10 @@ new:
 			"shield_cover"
 		},
 		MH_heavy_flank = {
-			"elite_ranged_fire",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
+			"elite_ranged_fire",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
@@ -9854,9 +9854,9 @@ new:
 		--death wish tactics
 		DW_swat_rifle = {
 			"ranged_fire",
-			"aggressor",
 			"smoke_grenade",
 			"flash_grenade",
+			"aggressor",
 			"provide_coverfire",
 			"charge",
 			"provide_support",
@@ -9865,19 +9865,19 @@ new:
 		},
 		FBI_shield_flank = {
 			"flank",
-			--"smoke_grenade",
-			--"flash_grenade",
+			"smoke_grenade",
+			"flash_grenade",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"shield"
 		},
 		FBI_tank = { --set up to try and flank the player
+			"flank",
 			"reloadingretreat",
 			"murder",
 			"harass",
 			"hitnrun",
-			"flank",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover"
@@ -9924,9 +9924,9 @@ new:
 			"charge"
 		},
 		Cap_autumn = {
+			"flank",
 			"hunter",
 			"spoocavoidance",
-			"flank",
 			"shield_cover",
 			"smoke_grenade",
 			"provide_coverfire",
@@ -9952,27 +9952,27 @@ new:
 		},			
 		--hunter hrt tactics
 		HRT_attack = { --sneaks up and targets players in bad positions
+			"flank",
 			"hunter",
 			"harass",
 			"provide_coverfire",
 			"provide_support",
 			"smoke_grenade",
 			"flash_grenade",
-			"flank",
 			"hitnrun",
 			"grouphrtr"
 		},
 		--mean DS tactics below
 		ELITE_suit_stealth = { --sneaky as fuck
+			"flank",
+			"smoke_grenade",
+			"flash_grenade",
 			"hunter",
 			"legday",
 			"reloadingretreat",
 			"spoocavoidance",
 			"provide_coverfire",
 			"provide_support",
-			"smoke_grenade",
-			"flash_grenade",
-			"flank",
 			"hitnrun",
 			"grouphrtr"
 		},
@@ -10012,11 +10012,11 @@ new:
 			"groupcsr"
 		},
 		ELITE_swat_rifle_flank = {
-			"elite_ranged_fire",
-			"harass",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
+			"elite_ranged_fire",
+			"harass",
 			"charge",
 			"aggressor",
 			"provide_coverfire",
@@ -10024,11 +10024,11 @@ new:
 			"shield_cover"
 		},
 		ELITE_swat_shotgun_flank = {
-			"legday",
-			"harass",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
+			"legday",
+			"harass",
 			"charge",
 			"aggressor",
 			"provide_coverfire",
@@ -10036,11 +10036,11 @@ new:
 			"shield_cover"
 		},
 		ELITE_heavy_flank = { 
-			"elite_ranged_fire",
-			"harass",
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
+			"elite_ranged_fire",
+			"harass",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
@@ -10056,10 +10056,10 @@ new:
 			"groupcsr"
 		},
 		swat_shotgun_flank = {
+			"flank",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"flank",
 			"deathguard",
 			"hitnrun"
 		},
@@ -10070,10 +10070,10 @@ new:
 			"groupcsr"
 		},
 		swat_rifle_flank = {
+			"flank",
 			"elite_ranged_fire",
 			"provide_coverfire",
-			"provide_support",
-			"flank"
+			"provide_support"
 		},
 		shield_wall_ranged = {
 			"shield",

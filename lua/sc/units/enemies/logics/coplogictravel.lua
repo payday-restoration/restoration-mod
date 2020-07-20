@@ -1460,7 +1460,7 @@ function CopLogicTravel._chk_request_action_walk_to_cover(data, my_data)
 		
 		if data.unit:movement():cool() then
 			haste = "walk"
-		elseif Global.game_settings.one_down then
+		elseif data.tactics and data.tactics.legday then
 			haste = "run"
 		elseif data.attention_obj and data.attention_obj.dis > 10000 or data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) then
 			haste = "run"
@@ -1597,7 +1597,7 @@ function CopLogicTravel._chk_request_action_walk_to_cover_shoot_pos(data, my_dat
 		
 		if data.unit:movement():cool() then
 			haste = "walk"
-		elseif Global.game_settings.one_down then
+		elseif data.tactics and data.tactics.legday then
 			haste = "run"
 		elseif data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) or data.attention_obj and data.attention_obj.dis > 10000 then 
 			haste = "run"
@@ -1816,7 +1816,7 @@ function CopLogicTravel._chk_begin_advance(data, my_data)
 		
 		if data.unit:movement():cool() then
 			haste = "walk"
-		elseif Global.game_settings.one_down then
+		elseif data.tactics and data.tactics.legday then
 			haste = "run"
 		elseif data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) or data.attention_obj and data.attention_obj.dis > 10000 then
 			haste = "run"

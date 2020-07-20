@@ -2018,7 +2018,6 @@
 	<model path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/dah_acc_fps_stealth_suit" force="true"/>	
 	<texture path="units/pd2_dlc_dah/characters/dah_acc_fps_stealth_suit/player_tactical_outfit_fp_df" force="true"/>
 	<model path="units/pd2_dlc_wwh/characters/wwh_acc_fps_stealth_suit/wwh_acc_fps_stealth_suit" force="true"/>
-	<model path="units/pd2_dlc_vit/characters/vit_acc_fps_murky_suit/vit_acc_fps_murky_suit" force="true"/>
 	
 	<!--My son... (NYPD BRONCO COP) -->
 	<object path="units/pd2_mod_nypd/characters/ene_cop_2/ene_cop_2"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_mod_sharks/characters/ene_murky_hrt_1/ene_murky_hrt_1" orientation_object="root_point" />
+	<diesel materials="units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
@@ -196,14 +196,14 @@
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
 			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_body,mtr_head" max_distance="1000" />
-					<material materials="mtr_body_lod1,mtr_head_lod1" max_distance="1500" />
-					<material materials="mtr_body_lod2,mtr_head_lod2" />
+				<object name="g_body" 		enabled="true"  max_distance="3000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_ene_guard_security_heavy_2_body,mtr_ene_guard_security_heavy_2_head" max_distance="1000" />
+					<material materials="mtr_ene_guard_security_heavy_2_body_lod1,mtr_ene_guard_security_heavy_2_head_lod1" max_distance="1500" />
+					<material materials="mtr_ene_guard_security_heavy_2_body_lod2,mtr_ene_guard_security_heavy_2_head_lod2" />
 				</object>
 				<object name="g_body_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_body,mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_body_lod2,mtr_head_lod2" />
+					<material materials="mtr_ene_guard_security_heavy_2_body,mtr_ene_guard_security_heavy_2_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_ene_guard_security_heavy_2_body_lod2,mtr_ene_guard_security_heavy_2_head_lod2" />
 				</object>
 			</lod_object>
 	

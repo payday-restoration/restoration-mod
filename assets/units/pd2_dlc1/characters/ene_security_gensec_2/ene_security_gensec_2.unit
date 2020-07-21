@@ -12,7 +12,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="gensec" />
-			<var name="_default_weapon_id" value="xkill" />
+			<var name="_default_weapon_id" value="m1911_npc" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

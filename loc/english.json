@@ -69,6 +69,8 @@
 	"RestorationModEnv_KosugiDescID" : "Select an environment for Shadow Raid Job.",
 	"RestorationModEnv_PetaTitleID" : "Goat Simulator Day 1",
 	"RestorationModEnv_PetaDescID" : "Select an environment for Goat Simulator Day 1.",
+	"RestorationModEnv_FRIENDTitleID" : "Scarface Mansion",
+	"RestorationModEnv_FRIENDDescID" : "Select an environment for Scarface Mansion.",
 
 
 	"RestorationModAltLastDownColorTitleID" : "Alternative Last Down Color Grading",
@@ -100,6 +102,9 @@
 	"cloudy_day" : "Cloudy Day",
 	"shadowraid_day" : "Shadow Raid Daytime",
 	"shadowraiud_darker" : "Shadow Raid Darker",
+	"friend_pink" : "Pink Sunset",
+	"friend_night" : "Miami Night",
+	
 	
 	"RestorationModPaintingsTitleID" : "Unused Art Gallery Paintings",
 	"RestorationModPaintingsDescID" : "Enable or disable the ability for unused paintings to spawn on Art Gallery. As host only.",

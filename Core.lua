@@ -168,6 +168,7 @@ function restoration:Init()
 		["OTHER/Env_FSD1"] = true,
 		["OTHER/Env_PBR2"] = true,
 		["OTHER/Env_CJ2"] = true,
+		["OTHER/Env_FRIEND"] = true,
 		["OTHER/Env_UnderPass"] = true,
 		["OTHER/Env_MallCrasher"] = true,
 		["OTHER/Env_Mia_1"] = true,
@@ -308,6 +309,13 @@ restoration.environments_choice_pbr2 = {
 	"default",
 	"random",
 	"bos_alt"
+}
+
+restoration.environments_choice_friend = {
+	"default",
+	"random",
+	"friend_pink",
+	"friend_night",
 }
 
 restoration.environments_choice_crojob2 = {

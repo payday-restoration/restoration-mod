@@ -1,7 +1,4 @@
 <table name="GOBank_v2">
-	<AddFiles directory="assets">
-		<texture force="true" path="guis/dlcs/chill/textures/pd2/trophies/safehouse_trophies_preview_csgo01"/>
-	</AddFiles>
 	<level ai_group_type="america" briefing_dialog="Play_pln_cs1_brf" cube="cube_apply_heist_bank" ghost_bonus="0.1" id="roberts_v2" intro_event="Play_pln_cs1_intro_01" max_bags="14" music="heist">
 		<add file="levels/roberts_v2/add.xml"/>
 		<assets>

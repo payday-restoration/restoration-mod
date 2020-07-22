@@ -15138,7 +15138,7 @@ function CharacterTweakData:character_map()
 				"ene_murky_cs_cop_mp5",
 				"ene_murky_cs_cop_r870",
 				"ene_murky_cs_cop_raging_bull",
-				"ene_murky_swat_m4",
+				"ene_fbi_3",
 				"ene_murky_swat_r870",
 				"ene_fbi_1",
 				"ene_fbi_2",

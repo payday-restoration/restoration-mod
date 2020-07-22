@@ -157,12 +157,12 @@ function CopLogicBase.do_smart_grenade(data, my_data, focus_enemy)
 				if focus_enemy.verified and focus_enemy.aimed_at and focus_enemy.dis < 2000 then
 					if my_data.walking_to_optimal_pos and my_data.optimal_pos then
 						if CopLogicBase.do_grenade(data, my_data.optimal_pos + math.UP * 5, flash, nil) then
-							log("reason1")
+							-- log("reason1")
 							do_something_else = nil
 						end
 					elseif my_data.advancing and my_data.advance_pos then
 						if CopLogicBase.do_grenade(data, my_data.advance_pos + math.UP * 5, flash, nil) then
-							log("reason2")
+							-- log("reason2")
 							do_something_else = nil
 						end
 					end
@@ -171,12 +171,12 @@ function CopLogicBase.do_smart_grenade(data, my_data, focus_enemy)
 				if my_data.optimal_pos and my_data.walking_to_optimal_pos and mvec3_dis(my_data.optimal_pos, focus_enemy.m_pos) < 600 then
 					if flash then
 						if CopLogicBase.do_grenade(data, my_data.optimal_pos + math.UP * 10, flash, nil) then
-							log("reason3")
+							-- log("reason3")
 							do_something_else = nil
 						end
 					else
 						if CopLogicBase.do_grenade(data, my_data.optimal_pos + math.UP * 5, flash, nil) then
-							log("reason4")
+							-- log("reason4")
 							do_something_else = nil
 						end
 					end
@@ -193,7 +193,7 @@ function CopLogicBase.do_smart_grenade(data, my_data, focus_enemy)
 				if my_data.firing and focus_enemy.verified then
 					if data.is_suppressed or focus_enemy.criminal_record and focus_enemy.criminal_record.assault_t and data.t - focus_enemy.criminal_record.assault_t < 2 then
 						if CopLogicBase.do_grenade(data, focus_enemy.m_pos + math.UP * 5, flash, nil) then
-							log("reason5")
+							-- log("reason5")
 							do_something_else = nil
 						end
 					end
@@ -203,7 +203,7 @@ function CopLogicBase.do_smart_grenade(data, my_data, focus_enemy)
 					if focus_enemy.is_person then
 						local area = managers.groupai:state():get_area_from_nav_seg_id(focus_enemy.nav_tracker:nav_segment())
 						if CopLogicBase.do_grenade(data, area.pos + math.UP * 10, flash, nil) then
-							log("reason6")
+							-- log("reason6")
 							do_something_else = nil
 						end
 					end
@@ -227,12 +227,12 @@ function CopLogicBase.do_smart_grenade(data, my_data, focus_enemy)
 			if pos_to_use then
 				if flash then
 					if CopLogicBase.do_grenade(data, pos_to_use + math.UP * 10, flash, nil) then
-						log("reason7")
+						-- log("reason7")
 						do_something_else = nil
 					end
 				else
 					if CopLogicBase.do_grenade(data, pos_to_use + math.UP * 5, flash, nil) then
-						log("reason8")
+						-- log("reason8")
 						do_something_else = nil
 					end
 				end

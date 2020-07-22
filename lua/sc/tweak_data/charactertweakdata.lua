@@ -947,7 +947,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.static_dodge_preset = true
 	self.heavy_swat_sniper.static_melee_preset = true	
 	self.heavy_swat_sniper.custom_voicework = nil
-	self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
+	self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
 	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
 	if is_reaper or is_federales then
 		self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()

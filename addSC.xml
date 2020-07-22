@@ -187,6 +187,8 @@
 	<unit path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true" force="true" />	
 	<object path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" force="true" />	
 	<model path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" force="true" />	
+	<!-- <material_config path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" force="true" />	 -->
+	<!-- <material_config path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2_contour" force="true" />	 -->
 	
 	<!--Improved Flashlight-->	
 	<texture path="effects/particles/weapons/flashlight/e_gradient_radial2" force="true"/>	
@@ -2173,6 +2175,17 @@
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_df" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df" force="true"/>	
+	
+	<!--zeal medic-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_husk" load="true"/>	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_contour" />
+	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />
+	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" />	
+	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_body_df" />	
+	<df_nm path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic_head" />	
 	
 	<!--cloaker-->
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/zeal_cloaker_body_df" force="true"/>	

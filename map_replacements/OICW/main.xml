@@ -2,7 +2,7 @@
 	<Localization directory="loc" default="english.txt">
 		<loc file="english.txt" language="english"/>
 	</Localization>
-	<!--WeaponMod id="wpn_fps_ass_osipr_b_standard" based_on="wpn_fps_m4_uupg_b_medium_vanilla" type="barrel" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/-->
+	<WeaponMod id="wpn_fps_ass_osipr_b_standard" based_on="wpn_fps_m4_uupg_b_medium_vanilla" type="barrel" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_body" based_on="wpn_fps_m4_lower_reciever" type="lower_reciever" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_bolt" based_on="wpn_fps_ass_scar_body_standard" type="extra" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	
@@ -16,13 +16,13 @@
 			<adds/>
 			<override/>
 			<default_blueprint>
-				<value_node value="wpn_fps_m4_uupg_b_medium_vanilla"/>
+				<value_node value="wpn_fps_ass_osipr_b_standard"/>
 				<value_node value="wpn_fps_ass_osipr_body"/>
 				<value_node value="wpn_fps_m4_uupg_m_std_vanilla"/>
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
 			</default_blueprint>
 			<uses_parts>
-				<value_node value="wpn_fps_m4_uupg_b_medium_vanilla"/>
+				<value_node value="wpn_fps_ass_osipr_b_standard"/>
 				<value_node value="wpn_fps_ass_osipr_body"/>
 				<value_node value="wpn_fps_m4_uupg_m_std_vanilla"/>
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
@@ -45,7 +45,7 @@
 		<unit_npc path="units/mods/weapons/wpn_fps_ass_osipr/wpn_fps_ass_osipr"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_body"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_bolt"/>
-		<!--unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_b_standard"/-->
+		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_b_standard"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
 		

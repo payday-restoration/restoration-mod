@@ -27,6 +27,8 @@
 		<hook file="managers/ChatManager.lua" source_file="lib/managers/ChatManager"/>
         <hook file="managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
         <hook file="managers/hud/HUDObjectives.lua" source_file="lib/managers/hud/HUDObjectives"/>
+        <hook file="managers/hud/HUDEffect.lua" source_file="lib/managers/hud/HUDTemp"/>
+        <hook file="managers/hud/HUDDodge.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDTemp.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDBlackScreen.lua" source_file="lib/managers/hud/HUDBlackScreen"/>
         <hook file="managers/hud/HUDTeammate.lua" source_file="lib/managers/hud/HUDTeammate"/>

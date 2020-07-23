@@ -171,7 +171,7 @@
 	<!--R870-->
 	<unit path="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04" load="true"/>
 	<unit path="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04_husk" load="true"/>	
-	<!-- teehee peepee poopoo	 -->
+	<!--security fixed materials-->
 	<object path="units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01" force="true"/>
 	<object path="units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02" force="true"/>
 	<object path="units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03" force="true"/>

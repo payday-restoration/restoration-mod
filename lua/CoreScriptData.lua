@@ -97,6 +97,22 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry/pd2_env_jry", "environment")
 				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bos_alt.custom_xml", "custom_xml", "environments/pd2_env_jry_interior_01/pd2_env_jry_interior_01", "environment")
 			end
+		elseif level_id == "friend" then 
+			setting = restoration:get_env_setting("OTHER/Env_FRIEND") 
+			if setting == 1 then 
+				return
+			elseif setting == 2 then 
+				if rnd == 1 then	    
+					BeardLib:ReplaceScriptData(mod_path .. "scriptdata/scarfacenight.custom_xml", "custom_xml", "environments/pd2_friend/pd2_friend", "environment")
+				elseif rnd == 2 then
+					BeardLib:ReplaceScriptData(mod_path .. "scriptdata/scarfacepink.custom_xml", "custom_xml", "environments/pd2_friend/pd2_friend", "environment")
+				end
+			elseif setting == 3 then 
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/scarfacepink.custom_xml", "custom_xml", "environments/pd2_friend/pd2_friend", "environment")
+			elseif setting == 4 then 
+				BeardLib:ReplaceScriptData(mod_path .. "scriptdata/scarfacenight.custom_xml", "custom_xml", "environments/pd2_friend/pd2_friend", "environment")
+			end
+			
 		elseif level_id == "crojob2" then 
 			setting = restoration:get_env_setting("OTHER/Env_CJ2")
 			if setting == 1 then 

@@ -1,0 +1,96 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mat_temp" version="2">
+        <diffuse_texture file="units/pd2_dlc_berry/architecture/temp_textures/white_no_spec_df"/>
+        <bump_normal_texture file="units/pd2_dlc_berry/architecture/temp_textures/white_no_spec_nm"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_GSMA:BLEND_MASK_CONTROL:BLEND_MASK_CROSSBLEND:BLEND_NORMAL:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ext_grass_soil_blend" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_soil_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_soil_nm"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_grass_df"/>
+        <variable type="vector3" name="blend_control" value="0.23999999463558 0.60000002384186 0"/>
+        <normal_layer0_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_grass_nm"/>
+        <material_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_soil_gsma"/>
+        <diffuse_layer2_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_grass_gsma"/>
+        <reflection_texture file="environments/cubemaps/cubemap_bank_01" type="cubemap"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_GSMA:BLEND_MASK_CONTROL:BLEND_MASK_CROSSBLEND:BLEND_NORMAL:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ext_grass_sand_blend" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_nm"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_grass_df"/>
+        <variable type="vector3" name="blend_control" value="0.23999999463558 0.60000002384186 0"/>
+        <normal_layer0_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_grass_nm"/>
+        <material_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_gsma"/>
+        <diffuse_layer2_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_grass_gsma"/>
+        <reflection_texture file="environments/cubemaps/cubemap_bank_01" type="cubemap"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_GSMA:BLEND_MASK_CONTROL:BLEND_MASK_CROSSBLEND:BLEND_NORMAL:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ext_sand_soil_blend" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_soil_df"/>
+        <bump_normal_texture file="units/pd2_dlc_berry/architecture/temp_textures/white_no_spec_nm"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_df"/>
+        <variable type="vector3" name="blend_control" value="0.29999998211861 0.69999998807907 0"/>
+        <normal_layer0_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_nm"/>
+        <material_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_soil_gsma"/>
+        <diffuse_layer2_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_gsma"/>
+        <reflection_texture file="environments/cubemaps/cubemap_bank_01" type="cubemap"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_GSMA:BLEND_MASK_CONTROL:BLEND_MASK_CROSSBLEND:BLEND_NORMAL:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ext_sand_wet_sand_blend" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_wet_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_wet_nm"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_df"/>
+        <variable type="vector3" name="blend_control" value="0.34000000357628 0.5 0"/>
+        <normal_layer0_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_nm"/>
+        <material_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_wet_gsma"/>
+        <diffuse_layer2_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_terrain_sand_gsma"/>
+        <reflection_texture file="environments/cubemaps/cubemap_bank_01" type="cubemap"/>
+    </material>
+    <material render_template="water" name="mat_water" version="2">
+        <diffuse_texture file="units/world/water/water_foam_df"/>
+        <variable type="vector3" name="water_settings_c" value="0.50540000200272 1.8050999641418 0"/>
+        <variable type="vector3" name="water_settings_b" value="0 2.4809999465942 0.20000000298023"/>
+        <bump_normal_texture file="units/world/water/water_2_nm"/>
+        <variable type="vector3" name="water_settings_d" value="392 150 0.60000002384186"/>
+        <variable type="vector3" name="water_color_shallow" value="0.2163347452879 0.48818898200989 0.42884054780006"/>
+        <variable type="vector3" name="water_settings" value="1 3.0999999046326 12016"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+        <variable type="vector3" name="water_color_deep" value="0.19299058616161 0.34120735526085 0.39370077848434"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ext_white_mortar" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_white_mortar_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_white_mortar_nm"/>
+        <material_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_white_mortar_gsma"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_ext_trims" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_trims_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_trims_nm"/>
+        <material_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_trims_gsma"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ext_brick_floor" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_brick_floor_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_brick_floor_nm"/>
+        <material_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_brick_floor_gsma"/>
+    </material>
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP" name="mat_ext_backdrop_foliage" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_backdrop_foliage_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_backdrop_foliage_nm" mip="1"/>
+        <variable type="scalar" name="alpha_ref" value="0.054000002564862"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE" name="mat_glass" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_glass_backdrop_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_ext_roof" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_roof_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_roof_nm"/>
+        <material_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_roof_gsma"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ext_roof_vtx" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_roof_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_roof_nm"/>
+        <material_texture file="units/pd2_dlc_friend/architecture/ext/textures/sfm_ext_roof_gsma"/>
+    </material>
+    <material render_template="shadow_caster_only" name="shadow_caster" version="2"/>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mat_ext_backdrop_terrain" version="2">
+        <diffuse_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_backdrop_terrain_df"/>
+        <bump_normal_texture file="units/pd2_dlc_friend/nature/terrain/textures/sfm_backdrop_terrain_nm"/>
+    </material>
+</materials>

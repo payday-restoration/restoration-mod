@@ -652,6 +652,12 @@ function CopMovement:play_redirect(redirect_name, at_time)
 		end
 	end
 	
+	if redirect_name == "throw_grenade" then 
+		if self._unit:base()._tweak_table == "boom" or self._unit:base()._tweak_table == "shield" or self._unit:base()._tweak_table == "phalanx_minion" or self._unit:base()._tweak_table == "phalanx_minion_assault" or self._unit:base()._tweak_table == "phalanx_vip" then	
+			return 
+		end
+	end
+	
 	local result = self._unit:play_redirect(Idstring(redirect_name), at_time)
 	
 

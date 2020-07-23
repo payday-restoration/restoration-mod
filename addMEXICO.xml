@@ -171,6 +171,10 @@
 	<!--R870-->
 	<unit path="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04" load="true"/>
 	<unit path="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04_husk" load="true"/>	
+	<!-- teehee peepee poopoo	 -->
+	<object path="units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01" force="true"/>
+	<object path="units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02" force="true"/>
+	<object path="units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03" force="true"/>
 	
 	<!--marijuana tijuana office cops with poppable caps -->
 	<unit path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01" force="true" load="true"/>

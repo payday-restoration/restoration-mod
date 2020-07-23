@@ -6,6 +6,7 @@
 	
 	<environment path="environments/pd2_env_night/pd2_env_night" force="true"/>
 	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
+	<material_config path="units/pd2_dlc_friend/nature/terrain/sfm_backdrop" force="true"/>
 	
 	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
 	<!-- opaque copcar windows -->

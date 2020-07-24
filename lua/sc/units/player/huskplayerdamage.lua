@@ -1,26 +1,12 @@
 function HuskPlayerDamage:damage_bullet(attack_data)
 	if Global.game_settings and Global.game_settings.one_down or managers.crime_spree:is_active() or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
 		self:_send_damage_to_owner(attack_data)
-		if attack_data.col_ray then
-			World:effect_manager():spawn({
-				effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
-				position = attack_data.col_ray.position,
-				normal = attack_data.col_ray.ray
-			})
-		end
 	end
 end
 
 function HuskPlayerDamage:damage_melee(attack_data)
 	if Global.game_settings and Global.game_settings.one_down or managers.crime_spree:is_active() or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
 		self:_send_damage_to_owner(attack_data)
-		if attack_data.col_ray then
-			World:effect_manager():spawn({
-				effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
-				position = attack_data.col_ray.position,
-				normal = attack_data.col_ray.ray
-			})
-		end
 	end
 end
 
@@ -86,3 +72,19 @@ function HuskPlayerDamage:_send_damage_to_owner(attack_data)
 		managers.job:set_memory("trophy_flawless", true, false)
 	end
 end
+
+--Adds bloodsplatters.
+Hooks:PostHook(HuskPlayerDamage, "sync_damage_bullet", "resBloodSplat", function(self, attacker_unit, damage, i_body, height_offset)
+    local hit_pos = mvector3.copy(self._unit:movement():m_com())
+    local attack_dir = nil
+
+    if attacker_unit then
+        attack_dir = hit_pos - attacker_unit:position()
+
+        mvector3.normalize(attack_dir)
+    else
+        attack_dir = self._unit:rotation():y()
+    end
+
+    managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
+end)

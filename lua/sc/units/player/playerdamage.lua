@@ -761,6 +761,19 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 		self._kill_taunt_clbk_id = "kill_taunt" .. tostring(self._unit:key())
 		managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_common", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)			
 	end
+
+	local hit_pos = mvector3.copy(self._unit:movement():m_com())
+    local attack_dir = nil
+    local attacker_unit = attack_data.attacker_unit
+
+    if attacker_unit then
+        attack_dir = hit_pos - attacker_unit:position()
+        mvector3.normalize(attack_dir)
+    else
+        attack_dir = self._unit:rotation():y()
+    end
+
+    managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	
 	pm:send_message(Message.OnPlayerDamage, nil, attack_data)
 	self:_call_listeners(damage_info)

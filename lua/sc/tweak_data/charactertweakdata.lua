@@ -689,7 +689,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 		self.omnia_lpf.speech_prefix_count = nil
 		self.omnia_lpf.spawn_sound_event = "rmdc_entrance"
 	else
-		self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.medic()
+		self.omnia_lpf.speech_prefix_p1 = "piss and shit"
 		self.omnia_lpf.speech_prefix_p2 = nil
 		self.omnia_lpf.speech_prefix_count = nil
 		self.omnia_lpf.spawn_sound_event = nil

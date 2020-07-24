@@ -1249,7 +1249,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	if is_reaper or is_federales then
 		self.weekend_lmg.custom_voicework = "tswat_ru"
 	elseif is_murky then
-		self.weekend_lmg.custom_voicework = "bravo_murky"	
+		self.weekend_lmg.custom_voicework = "bravo_murky_elite"	
 	else
 		self.weekend_lmg.custom_voicework = "bravo"
 	end	

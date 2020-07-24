@@ -1354,7 +1354,7 @@ end)
 
 Hooks:PostHook(PlayerStandard, "_get_intimidation_action", "ResInspireUsedCheckHud", function(self, prime_target, char_table, amount, primary_only, detect_only, secondary)
 	if self._inspire_unused and not managers.player:has_enabled_cooldown_upgrade("cooldown", "long_dis_revive") then
-		managers.hud:start_cooldown("inspire")
+		managers.hud:start_cooldown("inspire", self:upgrade_value("cooldown", "long_dis_revive")[2])
 	end
 end)
 

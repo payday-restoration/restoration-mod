@@ -366,8 +366,7 @@ function AmmoBagInteractionExt:interact(player)
 
 	if bullet_storm and bullet_storm ~= false then
 		managers.player:add_to_temporary_property("bullet_storm", bullet_storm, 1)
-		managers.hud:add_skill("bullet_storm", bulletstorm)
-		managers.hud:start_buff("bullet_storm")
+		managers.hud:start_buff("bullet_storm", bulletstorm)
 	end
 
 	return interacted

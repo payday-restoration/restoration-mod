@@ -259,9 +259,9 @@ core:import("CoreEvent")
 	end
 
 	--Functions to interface with the buff tracker.
-	function HUDManager:add_skill(name, duration)
+	function HUDManager:add_skill(name)
 		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:add_skill(name, duration)
+			self._skill_list:add_skill(name)
 		end
 	end
 
@@ -273,7 +273,7 @@ core:import("CoreEvent")
 		self._skill_list:destroy(nil)
 	end
 
-	function HUDManager:start_cooldown(name)
+	function HUDManager:start_cooldown(name, duration)
 		self._skill_list:trigger_cooldown(name)
 	end
 
@@ -281,16 +281,22 @@ core:import("CoreEvent")
 		self._skill_list:change_start_time(name, amount)
 	end
 
-	function HUDManager:start_buff(name)
-		self._skill_list:trigger_buff(name)
+	function HUDManager:start_buff(name, duration)
+		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
+			self._skill_list:trigger_buff(name)
+		end
 	end
 
 	function HUDManager:set_stacks(name, stacks)
-		self._skill_list:set_stacks(name, stacks)
+		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
+			self._skill_list:set_stacks(name, stacks)
+		end
 	end
 
 	function HUDManager:add_stack(name)
-		self._skill_list:add_stack(name)
+		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
+			self._skill_list:add_stack(name)
+		end
 	end
 
 	function HUDManager:remove_stack(name)

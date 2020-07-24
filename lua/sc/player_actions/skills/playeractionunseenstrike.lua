@@ -22,8 +22,7 @@ PlayerAction.UnseenStrike = {
 
 			if target_time <= current_time and can_activate then
 				managers.player:activate_temporary_upgrade("temporary", "unseen_strike")
-				managers.hud:add_skill("unseen_strike", managers.player:upgrade_value("temporary", "unseen_strike")[2])
-				managers.hud:start_buff("unseen_strike")
+				managers.hud:start_buff("unseen_strike", managers.player:upgrade_value("temporary", "unseen_strike")[2])
 				can_activate = false
 			end
 

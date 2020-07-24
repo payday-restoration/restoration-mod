@@ -24,7 +24,7 @@ PlayerAction.TriggerHappy = {
 				end
 				max_time = current_time + add_time
 
-				hud_manager:start_buff("trigger_happy")
+				hud_manager:start_buff("trigger_happy", add_time)
 			end
 		end
 
@@ -35,7 +35,7 @@ PlayerAction.TriggerHappy = {
 
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" and not pistol_unequipped then
 				max_time = current_time + add_time
-				hud_manager:start_buff("trigger_happy")
+				hud_manager:start_buff("trigger_happy", add_time)
 			end
 		end
 
@@ -45,9 +45,8 @@ PlayerAction.TriggerHappy = {
 			player_manager:register_message(Message.OnEnemyShot, co, on_hit)
 		end
 
-		hud_manager:add_skill("trigger_happy", add_time)
+		hud_manager:start_buff("trigger_happy", add_time)
 		hud_manager:add_stack("trigger_happy")
-		hud_manager:start_buff("trigger_happy")
 
 		while current_time < max_time do
 			current_time = Application:time()

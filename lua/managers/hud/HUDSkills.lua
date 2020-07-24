@@ -25,7 +25,7 @@ function HUDSkill:init(hud)
 end
 
 --Adds a new skill to the list.
-function HUDSkill:add_skill(name, duration)
+function HUDSkill:add_skill(name)
 	--Ignore skills already on the list.
 	if self:_check_skill_active(name) then
 		return
@@ -69,7 +69,7 @@ function HUDSkill:add_skill(name, duration)
 
 	--Insert information regarding skill to tables.
 	table.insert(self._active_skills, name)
-	self._durations[name] = duration or 10
+	self._durations[name] = 10 --Default duration, usually overwritten.
 	self._start_times[name] = nil
 	self._stacks[name] = 0
 end
@@ -95,10 +95,11 @@ end
 
 --Trigger the countdown for the skill. When it ends, remove it from the active table.
 --If animation is already running, it resets progress.
-function HUDSkill:trigger_buff(name)
+function HUDSkill:trigger_buff(name, duration)
 	if not self:_check_skill_active(name) then
-		return
+		self:add_skill(name)
 	end
+	self._durations[name] = duration
 	if self._start_times[name] then
 		self._start_times[name] = Application:time()
 	else
@@ -108,10 +109,11 @@ end
 
 --Trigger the cooldown visuals.
 --If animation is already running, it resets progress.
-function HUDSkill:trigger_cooldown(name)
+function HUDSkill:trigger_cooldown(name, duration)
 	if not self:_check_skill_active(name) then
 		return
 	end
+	self._durations[name] = duration
 	if self._start_times[name] then
 		self._start_times[name] = Application:time()
 	else
@@ -132,26 +134,13 @@ end
 --Increases number next to skill icon. If it goes above 9, just displays an X to represent loads of fat staxx.
 function HUDSkill:add_stack(name)
 	if not self:_check_skill_active(name) then
-		return
+		self:add_skill(name)
 	end
 	self._stacks[name] = self._stacks[name] + 1
 	if self._stacks[name] < 10 then
 		self._skill_panel:child(name .. "_stacks"):set_text(tostring(self._stacks[name]))
 	else
 		self._skill_panel:child(name .. "_stacks"):set_text("X")
-	end
-end
-
---Sets number of stacks to a specific value.
-function HUDSkill:set_stacks(name, stacks)
-	if not self:_check_skill_active(name) then
-		return
-	end
-	self._stacks[name] = stacks
-	if self._stacks[name] > 0 then
-		self._skill_panel:child(name .. "_stacks"):set_text(tostring(self._stacks[name]))
-	else
-		self:destroy(name)
 	end
 end
 
@@ -166,6 +155,18 @@ function HUDSkill:remove_stack(name)
 	else
 		self:destroy(name)
 	end
+end
+
+--Sets number of stacks to a specific value.
+function HUDSkill:set_stacks(name, stacks)
+	if stacks <= 0 then
+		self:destroy(name)
+	end
+	if not self:_check_skill_active(name) then
+		self:add_skill(name)
+	end
+	self._stacks[name] = stacks
+	self._skill_panel:child(name .. "_stacks"):set_text(tostring(self._stacks[name]))
 end
 
 --Skill draining animation.

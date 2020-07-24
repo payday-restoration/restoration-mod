@@ -21,7 +21,7 @@ PlayerAction.ExpertHandling = {
 					hud_manager:add_stack("desperado")
 				end
 				max_time = current_time + add_time
-				hud_manager:start_buff("desperado")
+				hud_manager:start_buff("desperado", add_time)
 			end
 
 		end
@@ -33,13 +33,12 @@ PlayerAction.ExpertHandling = {
 
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" and player_manager:is_current_weapon_of_category("pistol") then
 				max_time = current_time + add_time
-				hud_manager:start_buff("desperado")
+				hud_manager:start_buff("desperado", add_time)
 			end
 		end
-
-		hud_manager:add_skill("desperado", add_time)
+		
+		hud_manager:start_buff("desperado", add_time)
 		hud_manager:add_stack("desperado")
-		hud_manager:start_buff("desperado")
 
 		player_manager:mul_to_property("desperado", accuracy_bonus)
 		player_manager:register_message(Message.OnHeadShot, co, on_headshot)

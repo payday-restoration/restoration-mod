@@ -32,9 +32,8 @@ PlayerAction.AmmoEfficiency = {
 
 		--OnLethalHeadshot crashes because attack_data and unit somehow become null. Why? Damned if I know.
 		player_manager:register_message(Message.OnHeadShot, co, on_headshot)
-		hud_manager:add_skill("ammo_efficiency", target_time - time)
+		hud_manager:start_buff("ammo_efficiency", target_time - time)
 		hud_manager:set_stacks("ammo_efficiency", target_headshots - headshots)
-		hud_manager:start_buff("ammo_efficiency")
 		while time < target_time do
 			time = Application:time()
 			weapon_unit = player_manager:equipped_weapon_unit():base()

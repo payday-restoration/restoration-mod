@@ -283,7 +283,7 @@ core:import("CoreEvent")
 
 	function HUDManager:start_buff(name, duration)
 		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:trigger_buff(name)
+			self._skill_list:trigger_buff(name, duration)
 		end
 	end
 

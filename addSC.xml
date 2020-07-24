@@ -48,6 +48,7 @@
 	<texture path="guis/textures/pd2/skilltree/info_overkill" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_quick_fix" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_rogue" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_running_from_death" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_trigger_happy" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_underdog" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_unseen_strike" force="false" load="false"/>

@@ -106,6 +106,8 @@
 	"RestorationModInfo_quick_fixDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_rogueTitleID" : "Killer Instinct (Rogue)",
 	"RestorationModInfo_rogueDescID" : "Enables or disables tracking of this specific skill.",
+	"RestorationModInfo_running_from_deathTitleID" : "Running From Death",
+	"RestorationModInfo_running_from_deathDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_trigger_happyTitleID" : "Trigger Happy",
 	"RestorationModInfo_trigger_happyDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_underdogTitleID" : "Underdog",

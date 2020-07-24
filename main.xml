@@ -380,6 +380,7 @@
 					<option type="bool" default_value="true" name="Info_overkill"/>
 					<option type="bool" default_value="true" name="Info_quick_fix"/>
 					<option type="bool" default_value="true" name="Info_rogue"/>
+					<option type="bool" default_value="true" name="Info_running_from_death"/>
 					<option type="bool" default_value="true" name="Info_trigger_happy"/>
 					<option type="bool" default_value="true" name="Info_underdog"/>
 					<option type="bool" default_value="true" name="Info_unseen_strike"/>

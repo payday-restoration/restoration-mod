@@ -161,6 +161,7 @@ end
 function HUDSkill:set_stacks(name, stacks)
 	if stacks <= 0 then
 		self:destroy(name)
+		return
 	end
 	if not self:_check_skill_active(name) then
 		self:add_skill(name)

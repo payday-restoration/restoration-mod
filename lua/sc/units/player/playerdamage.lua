@@ -846,6 +846,7 @@ function PlayerDamage:revive(silent)
 	end
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "increased_movement_speed") then
 		managers.player:activate_temporary_upgrade("temporary", "increased_movement_speed")
+		managers.hud:start_buff("running_from_death", managers.player:upgrade_value("temporary", "increased_movement_speed")[2])
 	end
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "swap_weapon_faster") then
 		managers.player:activate_temporary_upgrade("temporary", "swap_weapon_faster")

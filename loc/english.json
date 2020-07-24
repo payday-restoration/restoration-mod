@@ -88,6 +88,8 @@
 	"RestorationModInfo_bloodthirstDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_bullet_stormTitleID" : "Bullet Storm",
 	"RestorationModInfo_bullet_stormDescID" : "Enables or disables tracking of this specific skill.",
+	"RestorationModInfo_combat_medicTitleID" : "Combat Medic",
+	"RestorationModInfo_combat_medicDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_desperadoTitleID" : "Desperado",
 	"RestorationModInfo_desperadoDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_grinderTitleID" : "Histamine (Grinder)",
@@ -106,6 +108,8 @@
 	"RestorationModInfo_rogueDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_trigger_happyTitleID" : "Trigger Happy",
 	"RestorationModInfo_trigger_happyDescID" : "Enables or disables tracking of this specific skill.",
+	"RestorationModInfo_underdogTitleID" : "Underdog",
+	"RestorationModInfo_underdogDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_unseen_strikeTitleID" : "Unseen Strike",
 	"RestorationModInfo_unseen_strikeDescID" : "Enables or disables tracking of this specific skill.",
 

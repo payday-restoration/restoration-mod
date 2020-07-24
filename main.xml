@@ -371,6 +371,7 @@
 					<option type="bool" default_value="true" name="Info_ammo_efficiency"/>
 					<option type="bool" default_value="true" name="Info_bloodthirst"/>
 					<option type="bool" default_value="true" name="Info_bullet_storm"/>
+					<option type="bool" default_value="true" name="Info_combat_medic"/>
 					<option type="bool" default_value="true" name="Info_desperado"/>
 					<option type="bool" default_value="true" name="Info_grinder"/>
 					<option type="bool" default_value="true" name="Info_infiltrator"/>
@@ -380,6 +381,7 @@
 					<option type="bool" default_value="true" name="Info_quick_fix"/>
 					<option type="bool" default_value="true" name="Info_rogue"/>
 					<option type="bool" default_value="true" name="Info_trigger_happy"/>
+					<option type="bool" default_value="true" name="Info_underdog"/>
 					<option type="bool" default_value="true" name="Info_unseen_strike"/>
 				</option_group>
 				<option type="bool" default_value="false" name="MainHUD"/>

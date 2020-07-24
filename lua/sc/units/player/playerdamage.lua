@@ -155,16 +155,20 @@ function PlayerDamage:init(unit)
 
 		local function on_revive_interaction_start()
 			managers.player:set_property("revive_damage_reduction", player_manager:upgrade_value("player", "revive_damage_reduction"), 1)
+			managers.hud:add_skill("combat_medic", managers.player:upgrade_value("temporary", "revive_damage_reduction")[2])
 		end
 
 
 		local function on_exit_interaction()
 			managers.player:remove_property("revive_damage_reduction")
+			managers.hud:remove_skill("combat_medic")
 		end
 
 
 		local function on_revive_interaction_success()
 			managers.player:activate_temporary_upgrade("temporary", "revive_damage_reduction")
+			managers.hud:add_skill("combat_medic", managers.player:upgrade_value("temporary", "revive_damage_reduction")[2])
+			managers.hud:start_buff("combat_medic")
 		end
 
 		self._listener_holder:add("on_revive_interaction_start", {"on_revive_interaction_start"}, on_revive_interaction_start)
@@ -1219,6 +1223,11 @@ Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(se
 		self:consume_armor_stored_health()
 		self._armor_broken = false
 	end
+end)
+
+Hooks:PostHook(PlayerDamage, "_activate_combat_medic_damage_reduction", "ResCombatMedicUI", function(self)
+	managers.hud:add_skill("combat_medic", managers.player:upgrade_value("temporary", "revive_damage_reduction")[2])
+	managers.hud:start_buff("combat_medic")
 end)
 
 --Remove old ex-pres stuff. Technically won't do anything beyond a very tiny performance increase at the cost of a tiny amount of compatability.

@@ -266,51 +266,35 @@ core:import("CoreEvent")
 	end
 
 	function HUDManager:remove_skill(name)
-		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:destroy(name)
-		end
+		self._skill_list:destroy(name)
 	end
 
 	function HUDManager:clear_skills()
-		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") then
-			self._skill_list:destroy(nil)
-		end
+		self._skill_list:destroy(nil)
 	end
 
 	function HUDManager:start_cooldown(name)
-		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:trigger_cooldown(name)
-		end
+		self._skill_list:trigger_cooldown(name)
 	end
 
 	function HUDManager:change_cooldown(name, amount)
-		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:change_start_time(name, amount)
-		end
+		self._skill_list:change_start_time(name, amount)
 	end
 
 	function HUDManager:start_buff(name)
-		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:trigger_buff(name)
-		end
+		self._skill_list:trigger_buff(name)
 	end
 
 	function HUDManager:set_stacks(name, stacks)
-		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:set_stacks(name, stacks)
-		end
+		self._skill_list:set_stacks(name, stacks)
 	end
 
 	function HUDManager:add_stack(name)
-		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:add_stack(name)
-		end
+		self._skill_list:add_stack(name)
 	end
 
 	function HUDManager:remove_stack(name)
-		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
-			self._skill_list:remove_stack(name)
-		end
+		self._skill_list:remove_stack(name)
 	end
 
 function HUDManager:setup_anticipation(total_t)

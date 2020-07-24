@@ -10,11 +10,14 @@ function HUDSkill:init(hud)
 		layer = 0,
 		visible = true,
 		color = Color(0, 0, 255),
-		w = 200,
-		h = 400,
+		w = 1000,
+		h = 1000,
 		y = self._hud_panel:center_y() * 0.3
 	})
 
+	self._icon_size = math.floor(restoration.Options:GetValue("HUD/INFOHUD/Info_Size")) --The "step" field doesn't seem to work???
+	self._row_count = math.floor(restoration.Options:GetValue("HUD/INFOHUD/Info_Count"))
+	self._padding = 2
 	self._active_skills = {}
 	self._durations = {}
 	self._start_times = {}
@@ -28,16 +31,16 @@ function HUDSkill:add_skill(name, duration)
 		return
 	end
 
-	local y_offset = (50 * #self._active_skills) % 400 --Shunt new icon downwards until it's no longer clipping with stuff.
-	local x_offset = 50 * math.floor(#self._active_skills / 8) --Overflow in case there are too many buffs to handle in 1 column.
+	local y_offset = (self._icon_size + self._padding) * (#self._active_skills % self._row_count) --Shunt new icon downwards until it's no longer clipping with stuff.
+	local x_offset = (self._icon_size + self._padding) * math.floor(#self._active_skills / self._row_count) --Overflow in case there are too many buffs to handle in 1 column.
 	local skill_icon = self._skill_panel:bitmap({
 		texture = "guis/textures/pd2/skilltree/info_" .. name,
 		name = name .. "_icon",
 		layer = 2,
 		render_template = "VertexColorTexturedRadial",
 		color = Color(0.8, 1, 1, 1),
-		h = 48,
-		w = 48,
+		h = self._icon_size,
+		w = self._icon_size,
 		x = x_offset,
 		y = y_offset --Move posit
 	})
@@ -47,8 +50,8 @@ function HUDSkill:add_skill(name, duration)
 		layer = 1,
 		render_template = "VertexColorTexturedRadial",
 		color = Color(0.75, 1, 1, 1),
-		w = 48,
-		h = 48,
+		w = self._icon_size,
+		h = self._icon_size,
 		x = x_offset,
 		y = y_offset
 	})
@@ -56,12 +59,12 @@ function HUDSkill:add_skill(name, duration)
 		alpha = 1,
 		name = name .. "_stacks",
 		text = "",
-		x = x_offset + 36, --Move text to corner of icon.
-		y = y_offset - 5,
+		x = x_offset + (0.67 * self._icon_size), --Move text to corner of icon.
+		y = y_offset - (0.1 * self._icon_size),
 		layer = 3,
 		color = Color.white,
 		font = tweak_data.menu.default_font,
-		font_size = tweak_data.hud_corner.numhostages_size
+		font_size = self._icon_size * 0.6
 	})
 
 	--Insert information regarding skill to tables.
@@ -209,13 +212,13 @@ end
 --Moves skills back into their proper positions if one is removed from the table.
 function HUDSkill:_reshuffle_locations()
 	for i, skill in pairs(self._active_skills) do
-		local y_offset = (50 * (i - 1)) % 400 --Shunt new icon downwards until it's no longer clipping with stuff.
-		local x_offset = 50 * math.floor((i - 1) / 8) --Overflow in case there are too many buffs to handle in 1 column.
+		local y_offset = (self._icon_size + self._padding) * ((i - 1) % self._row_count) --Shunt new icon downwards until it's no longer clipping with stuff.
+		local x_offset = (self._icon_size + self._padding) * math.floor((i - 1) / self._row_count) --Overflow in case there are too many buffs to handle in 1 column.
 		self._skill_panel:child(skill .. "_icon"):set_top(y_offset)
 		self._skill_panel:child(skill .. "_icon"):set_left(x_offset)
 		self._skill_panel:child(skill .. "_back"):set_top(y_offset)
 		self._skill_panel:child(skill .. "_back"):set_left(x_offset)
-		self._skill_panel:child(skill .. "_stacks"):set_top(y_offset - 5)
-		self._skill_panel:child(skill .. "_stacks"):set_left(x_offset + 36)
+		self._skill_panel:child(skill .. "_stacks"):set_top(y_offset - (0.1 * self._icon_size))
+		self._skill_panel:child(skill .. "_stacks"):set_left(x_offset + (0.67 * self._icon_size))
 	end
 end

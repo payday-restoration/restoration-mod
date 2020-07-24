@@ -178,7 +178,7 @@
 		<hook file="sc/player_actions/skills/playeractiontriggerhappy.lua" source_file="lib/player_actions/skills/playeractiontriggerhappy"/>
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>
 		<hook file="sc/player_actions/skills/playeractionammoefficiency.lua" source_file="lib/player_actions/skills/playeractionammoefficiency"/>
-		<hook file="sc/player_actions/skillser/playactionunseenstrike.lua" source_file="lib/player_actions/skills/playactionunseenstrike"/>
+		<hook file="sc/player_actions/skills/playeractionunseenstrike.lua" source_file="lib/player_actions/skills/playactionunseenstrike"/>
 		<hook file="sc/units/equipment/ecmjammerbase.lua" source_file="lib/units/equipment/ecm_jammer/ecmjammerbase"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>
@@ -365,6 +365,8 @@
 				</option_group>
 				<option_group name="INFOHUD">
 					<option type="bool" default_value="false" name="Info_Hud"/>
+					<option type="number" default_value="36" min="24" max="48" step="2" show_value="true" name="Info_Size"/>
+					<option type="number" default_value="8" min="1" max="8" step="1" show_value="true" name="Info_Count"/>
 					<option type="bool" default_value="true" name="Info_aggressive_reload"/>
 					<option type="bool" default_value="true" name="Info_ammo_efficiency"/>
 					<option type="bool" default_value="true" name="Info_bloodthirst"/>

@@ -7,7 +7,8 @@ PlayerAction.TriggerHappy = {
 		--Tracker for whether or not the pistol is put away.
 		local pistol_unequipped = false
 		local add_time = player_manager:upgrade_value("pistol", "stacking_hit_damage_multiplier", nil).max_time
-		
+		local hud_manager = managers.hud
+
 		--Headshot stacking + refresh.
 		local function on_headshot(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit
@@ -19,8 +20,11 @@ PlayerAction.TriggerHappy = {
 
 				if current_stacks <= max_stacks then
 					player_manager:mul_to_property("trigger_happy", damage_bonus)
+					hud_manager:add_stack("trigger_happy")
 				end
 				max_time = current_time + add_time
+
+				hud_manager:start_buff("trigger_happy")
 			end
 		end
 
@@ -31,6 +35,7 @@ PlayerAction.TriggerHappy = {
 
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" and not pistol_unequipped then
 				max_time = current_time + add_time
+				hud_manager:start_buff("trigger_happy")
 			end
 		end
 
@@ -39,6 +44,10 @@ PlayerAction.TriggerHappy = {
 		if player_manager:has_category_upgrade("player", "trigger_happy_bodyshot_refresh") then
 			player_manager:register_message(Message.OnEnemyShot, co, on_hit)
 		end
+
+		hud_manager:add_skill("trigger_happy", add_time)
+		hud_manager:add_stack("trigger_happy")
+		hud_manager:start_buff("trigger_happy")
 
 		while current_time < max_time do
 			current_time = Application:time()

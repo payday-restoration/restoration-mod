@@ -41,12 +41,15 @@ function PlayerDamage:init(unit)
 
 	--Load alternate heal over time tweakdata if player is using Infiltrator or Rogue.
 	if player_manager:has_category_upgrade("player", "melee_stacking_heal") then
+		self._hot_type = "infiltrator"
 		self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
 		self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
 	elseif player_manager:has_category_upgrade("player", "dodge_stacking_heal") then
+		self._hot_type = "rogue"
 		self._doh_data = tweak_data.upgrades.dodge_to_hot_data or {}
 		self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
 	else 
+		self._hot_type = "grinder"
 		self._doh_data = tweak_data.upgrades.damage_to_hot_data or {}
 		self._hot_amount = managers.player:upgrade_value("player", "damage_to_hot", 0)
 	end
@@ -1110,6 +1113,9 @@ function PlayerDamage:_upd_health_regen(t, dt)
 			end
 		until done
 	end
+
+	managers.hud:add_skill(self._hot_type)
+	managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
 end
 
 

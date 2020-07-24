@@ -354,3 +354,21 @@ function IntimitateInteractionExt:interact(player)
 		self._unit:brain():on_tied(player, false, managers.player:has_category_upgrade("player", "civilians_dont_flee")) --No longer uses super_syndrome.
 	end
 end
+
+function AmmoBagInteractionExt:interact(player)
+	AmmoBagInteractionExt.super.super.interact(self, player)
+
+	local interacted, bullet_storm = self._unit:base():take_ammo(player)
+
+	for id, weapon in pairs(player:inventory():available_selections()) do
+		managers.hud:set_ammo_amount(id, weapon.unit:base():ammo_info())
+	end
+
+	if bullet_storm and bullet_storm ~= false then
+		managers.player:add_to_temporary_property("bullet_storm", bullet_storm, 1)
+		managers.hud:add_skill("bullet_storm", bulletstorm)
+		managers.hud:start_buff("bullet_storm")
+	end
+
+	return interacted
+end

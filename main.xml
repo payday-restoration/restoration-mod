@@ -27,6 +27,7 @@
 		<hook file="managers/ChatManager.lua" source_file="lib/managers/ChatManager"/>
         <hook file="managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
         <hook file="managers/hud/HUDObjectives.lua" source_file="lib/managers/hud/HUDObjectives"/>
+        <hook file="managers/hud/HUDSkills.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDEffect.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDDodge.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDTemp.lua" source_file="lib/managers/hud/HUDTemp"/>
@@ -176,6 +177,7 @@
 		<hook file="sc/player_actions/skills/playeractiontriggerhappy.lua" source_file="lib/player_actions/skills/playeractiontriggerhappy"/>
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>
 		<hook file="sc/player_actions/skills/playeractionammoefficiency.lua" source_file="lib/player_actions/skills/playeractionammoefficiency"/>
+		<hook file="sc/player_actions/skillser/playactionunseenstrike.lua" source_file="lib/player_actions/skills/playactionunseenstrike"/>
 		<hook file="sc/units/equipment/ecmjammerbase.lua" source_file="lib/units/equipment/ecm_jammer/ecmjammerbase"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>
@@ -359,6 +361,23 @@
 						<option type="bool" default_value="false" name="Loadouts"/>
 						<option type="bool" default_value="false" name="District"/>
 						<option type="bool" default_value="false" name="PeerColors"/>
+				</option_group>
+				<option_group name="INFOHUD">
+					<option type="bool" default_value="false" name="Info_Hud"/>
+					<option type="bool" default_value="true" name="Info_aggressive_reload"/>
+					<option type="bool" default_value="true" name="Info_ammo_efficiency"/>
+					<option type="bool" default_value="true" name="Info_bloodthirst"/>
+					<option type="bool" default_value="true" name="Info_bullet_storm"/>
+					<option type="bool" default_value="true" name="Info_desperado"/>
+					<option type="bool" default_value="true" name="Info_grinder"/>
+					<option type="bool" default_value="true" name="Info_infiltrator"/>
+					<option type="bool" default_value="true" name="Info_inspire"/>
+					<option type="bool" default_value="true" name="Info_messiah"/>
+					<option type="bool" default_value="true" name="Info_overkill"/>
+					<option type="bool" default_value="true" name="Info_quick_fix"/>
+					<option type="bool" default_value="true" name="Info_rogue"/>
+					<option type="bool" default_value="true" name="Info_trigger_happy"/>
+					<option type="bool" default_value="true" name="Info_unseen_strike"/>
 				</option_group>
 				<option type="bool" default_value="false" name="MainHUD"/>
 				<option type="bool" default_value="true" name="Teammate"/>

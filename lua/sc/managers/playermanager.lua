@@ -313,8 +313,10 @@ end
 function PlayerManager:use_messiah_charge()
 	if self:has_category_upgrade("player", "infinite_messiah") then --If player has infinite messiah, set the cooldown timer.
 		self._messiah_cooldown = Application:time() + 120 --Replace with tweakdata once we settle on something.
+		managers.hud:start_cooldown("messiah")
 	elseif self._messiah_charges then --Eat a messiah charge if not infinite.
 		self._messiah_charges = math.max(self._messiah_charges - 1, 0)
+		managers.hud:remove_skill("messiah")
 	end
 end
 
@@ -322,6 +324,7 @@ end
 function PlayerManager:_on_messiah_event()
 	if self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
 		self._messiah_cooldown = self._messiah_cooldown - 10 --Downed kill CDR.
+		managers.hud:change_cooldown("messiah", -10)
 		if self._messiah_charges > 0 and self._messiah_cooldown < Application:time() then
 			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
 		end
@@ -738,6 +741,14 @@ function PlayerManager:_internal_load()
 		player:character_damage():exit_custody(math.max(tweak_data.player.damage.DOWNED_TIME_MIN, self._down_time))
 	end
 
+	if self:has_category_upgrade("player", "messiah_revive_from_bleed_out") then
+		managers.hud:add_skill("messiah", 120)
+	end
+
+	if self:has_category_upgrade("cooldown", "long_dis_revive") then
+		managers.hud:add_skill("inspire", self:upgrade_value("cooldown", "long_dis_revive")[2])
+	end
+
 	if self:has_category_upgrade("player", "cocaine_stacking") then
 		self:update_synced_cocaine_stacks_to_peers(0, self:upgrade_value("player", "sync_cocaine_upgrade_level", 1), self:upgrade_level("player", "cocaine_stack_absorption_multiplier", 0))
 		managers.hud:set_info_meter(nil, {
@@ -971,4 +982,33 @@ function PlayerManager:get_best_cocaine_damage_absorption(my_peer_id)
 	end
 
 	return absorption * multiplier, best_peer_id
+end
+
+function PlayerManager:_on_enemy_killed_bloodthirst(equipped_unit, variant, killed_unit)
+	if variant == "melee" then
+		local data = self:upgrade_value("player", "melee_kill_increase_reload_speed", 0)
+
+		if data ~= 0 then
+			self._temporary_properties:activate_property("bloodthirst_reload_speed", data[2], data[1])
+			managers.hud:add_skill("bloodthirst", data[2])
+			managers.hud:start_buff("bloodthirst")
+		end
+	end
+end
+
+
+function PlayerManager:_on_activate_aggressive_reload_event(attack_data)
+	if attack_data and attack_data.variant ~= "projectile" then
+		local weapon_unit = self:equipped_weapon_unit()
+
+		if weapon_unit then
+			local weapon = weapon_unit:base()
+
+			if weapon and weapon:fire_mode() == "single" and weapon:is_category("smg", "assault_rifle", "snp") then
+				self:activate_temporary_upgrade("temporary", "single_shot_fast_reload")
+				managers.hud:add_skill("aggressive_reload", self:upgrade_value("temporary", "single_shot_fast_reload")[2])
+				managers.hud:start_buff("aggressive_reload")
+			end
+		end
+	end
 end

@@ -163,11 +163,13 @@ function PlayerStandard:_check_action_interact(t, input,...)
 end
 
 function PlayerStandard:_start_action_intimidate(t, secondary)
-	if not self._intimidate_t or tweak_data.player.movement_state.interaction_delay < t - self._intimidate_t and prime_target then
+	if not self._intimidate_t or tweak_data.player.movement_state.interaction_delay < t - self._intimidate_t then
 		local skip_alert = managers.groupai:state():whisper_mode()
 		local voice_type, plural, prime_target = self:_get_unit_intimidation_action(not secondary, not secondary, true, false, true, nil, nil, nil, secondary)
 		
-		if prime_target.unit and prime_target.unit.base and (
+		if not prime_target then
+			return
+		elseif prime_target.unit and prime_target.unit.base and (
 				prime_target.unit:base().unintimidateable
 				or prime_target.unit:anim_data() and prime_target.unit:anim_data().unintimidateable 
 				--Stops undommable enemies from being shouted at.

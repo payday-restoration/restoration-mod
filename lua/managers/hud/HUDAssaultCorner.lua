@@ -358,24 +358,6 @@ function HUDAssaultCorner:init(hud, full_hud)
 		end
 	end
 	
-	local vip_icon_ = buffs_panel:bitmap({
-		halign = "center",
-		valign = "center",
-		color = Color.white,
-		name = "vip_icon_tape",
-		blend_mode = "add",
-		layer = 3,
-		texture = self.buff_icon,
-		visible = false,
-		x = 0,
-		y = 0,
-		w = 38,
-		h = 38
-	})
-	vip_icon_:set_right(buffs_panel:w())
-	vip_icon_:set_rotation(30)
-	vip_icon_:set_top(0)
-
 	local buffs_pad_panel = self._hud_panel:panel({
 		visible = false,
 		name = "buffs_pad_panel",
@@ -393,8 +375,25 @@ function HUDAssaultCorner:init(hud, full_hud)
 		w = 38,
 		h = 38
 	})
-	vip_icon_buff:set_y(45)
+	vip_icon_buff:set_y(15)
 	vip_icon_buff:set_x(0)
+
+	local vip_icon_ = buffs_pad_panel:bitmap({
+		halign = "center",
+		valign = "center",
+		color = Color.white,
+		name = "vip_icon_tape",
+		blend_mode = "add",
+		layer = 3,
+		texture = self.buff_icon,
+		visible = false,
+		x = 0,
+		y = 0,
+		w = 38,
+		h = 38
+	})
+	vip_icon_:set_y(15)
+	vip_icon_:set_x(0)
 	
 	local texture_new = "guis/textures/restoration/objective"
 	local buff_start = buffs_pad_panel:bitmap( { name = "buff_start", texture = texture_new, color = self._vip_assault_color, texture_rect = { 0, 0, 13, 64 }, layer = 1} )
@@ -404,17 +403,17 @@ function HUDAssaultCorner:init(hud, full_hud)
 	buff_end:set_x( buffs_pad_panel:h() * 2 )
 	local buff_text_string = managers.localization:text("hud_assault_vip")
 	local buff_text = buffs_pad_panel:text( { name = "buff_text", visible = true, layer = 2, color = Color( 0, 0, 0 ), text="EAT ASS", font_size = 22, font = tweak_data.hud.medium_font_noshadow, x = 0, y = 10, align = "left", vertical = "top" } )
-	buff_text:set_x( buffs_pad_panel:x() + 12 )
+	buff_text:set_x( buffs_pad_panel:x() + 50 )
 	buff_text:set_y( 21 )
 	buff_text:set_text( utf8.to_upper( buff_text_string ) )
 	local _,_,w,h = buff_text:text_rect()
 	buff_text:set_size( w, h )
-	local panel_w = w + 12*2
+	local panel_w = w + 35*2
 	buffs_pad_panel:set_w( panel_w )
 	buff_start:set_x( 0 )
-	buff_mid:set_x( 13 )
-	buff_mid:set_w( (panel_w - 20) )
-	buff_end:set_x( 13 + (panel_w - 20) )
+	buff_mid:set_x( 50 )
+	buff_mid:set_w( (panel_w - 62) )
+	buff_end:set_x( 50 + (panel_w - 62) )
 
 	RestorationCoreCallbacks:AddValueChangedFunc(callback(self, self, "RestorationValueChanged"))
 	self:RestorationValueChanged()

@@ -130,6 +130,7 @@
 		<hook file="sc/units/player/playerclean.lua" source_file="lib/units/beings/player/states/playerclean"/>
 		<hook file="sc/units/player/playercivilian.lua" source_file="lib/units/beings/player/states/playercivilian"/>
 		<hook file="sc/units/player/recoil.lua" source_file="lib/units/cameras/fpcameraplayerbase"/>
+		<hook file="sc/units/vehicles/animatedvehiclebase.lua" source_file="lib/units/vehicles/animatedvehiclebase"/>
 		<hook file="sc/units/interactions/interactionext.lua" source_file="lib/units/interactions/interactionext"/>
 		<hook file="sc/units/enemies/actionspooc.lua" source_file="lib/units/enemies/spooc/actions/lower_body/actionspooc"/>
 		<hook file="sc/managers/weaponfactorymanager.lua" source_file="lib/managers/weaponfactorymanager"/>
@@ -421,6 +422,7 @@
 				<option type="multichoice" default_value="2" name="Env_RVD2" values_tbl="restoration.environments_choice_rvd2"/>
 				<option type="multichoice" default_value="2" name="Env_FSD1" values_tbl="restoration.environments_choice_firestarter_1"/>
 				<option type="multichoice" default_value="2" name="Env_PBR2" values_tbl="restoration.environments_choice_pbr2"/>
+				<option type="multichoice" default_value="2" name="Env_FRIEND" values_tbl="restoration.environments_choice_friend"/>
 				<option type="multichoice" default_value="2" name="Env_CJ2" values_tbl="restoration.environments_choice_crojob2"/>
 				<option type="multichoice" default_value="2" name="Env_UnderPass" values_tbl="restoration.environments_choice_arm_und"/>
 				<option type="multichoice" default_value="2" name="Env_MallCrasher" values_tbl="restoration.environments_choice_mallcrasher"/>

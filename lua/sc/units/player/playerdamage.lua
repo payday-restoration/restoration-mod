@@ -720,7 +720,21 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	if not attack_data.ignore_suppression and not self:is_suppressed() then
 		return
 	end
-	
+
+	local pos = mvec1
+
+	mvector3.set(pos, self._unit:camera():forward())
+	mvector3.multiply(pos, 20)
+	mvector3.add(pos, self._unit:camera():position())
+
+	local rot = self._unit:camera():rotation():z()
+
+	World:effect_manager():spawn({
+		effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
+		position = pos,
+		normal = rot
+	})
+		
 	self:_check_chico_heal(attack_data) --Remind Ravi to add friendly fire checks to this later.
 
 	local armor_reduction_multiplier = 0

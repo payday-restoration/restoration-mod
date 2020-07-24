@@ -1,12 +1,26 @@
 function HuskPlayerDamage:damage_bullet(attack_data)
 	if Global.game_settings and Global.game_settings.one_down or managers.crime_spree:is_active() or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
 		self:_send_damage_to_owner(attack_data)
+		if attack_data.col_ray then
+			World:effect_manager():spawn({
+				effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
+				position = attack_data.col_ray.position,
+				normal = attack_data.col_ray.ray
+			})
+		end
 	end
 end
 
 function HuskPlayerDamage:damage_melee(attack_data)
 	if Global.game_settings and Global.game_settings.one_down or managers.crime_spree:is_active() or managers.mutators:is_mutator_active(MutatorFriendlyFire) then
 		self:_send_damage_to_owner(attack_data)
+		if attack_data.col_ray then
+			World:effect_manager():spawn({
+				effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
+				position = attack_data.col_ray.position,
+				normal = attack_data.col_ray.ray
+			})
+		end
 	end
 end
 

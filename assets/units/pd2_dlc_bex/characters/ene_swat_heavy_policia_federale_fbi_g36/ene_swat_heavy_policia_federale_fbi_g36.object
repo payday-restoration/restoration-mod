@@ -178,21 +178,21 @@
 			<param damping="1" spring_constant="350" min_restitution="0"/>
 		</constraint>
 
-		<constraint type="limited_hinge" name="RightLeg" enabled="false">
-			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
-			<param pivot="position:RightLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
-			<param plane_axis="yaxis:RightLeg"/>
-			<param damping="1" spring_constant="200" min_restitution="0"/>
-		</constraint>
+        <constraint type="limited_hinge" name="RightLeg" enabled="false">
+            <param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
+            <param pivot="position:RightLeg"/>
+            <param min_angle="20" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
+            <param plane_axis="yaxis:RightLeg"/>
+            <param damping="1" spring_constant="200" min_restitution="0"/>
+        </constraint>
 
-		<constraint type="limited_hinge" name="LeftLeg" enabled="false">
-			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
-			<param pivot="position:LeftLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
-			<param plane_axis="yaxis:LeftLeg"/>
-			<param damping="1" spring_constant="200" min_restitution="0"/>
-		</constraint>
+        <constraint type="limited_hinge" name="LeftLeg" enabled="false">
+            <param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
+            <param pivot="position:LeftLeg"/>
+            <param min_angle="20" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
+            <param plane_axis="yaxis:LeftLeg"/>
+            <param damping="1" spring_constant="200" min_restitution="0"/>
+        </constraint>
 	</constraints>
 
 	<decal_surfaces default_material="flesh" >

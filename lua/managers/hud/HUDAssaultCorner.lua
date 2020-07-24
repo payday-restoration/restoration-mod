@@ -410,7 +410,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	buff_text:set_size( w, h )
 	local panel_w = w + 35*2
 	buffs_pad_panel:set_w( panel_w )
-	buff_start:set_x( 0 )
+	buff_start:set_x( 38 )
 	buff_mid:set_x( 50 )
 	buff_mid:set_w( (panel_w - 62) )
 	buff_end:set_x( 50 + (panel_w - 62) )

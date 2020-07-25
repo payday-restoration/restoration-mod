@@ -178,7 +178,6 @@
 		<hook file="sc/player_actions/skills/playeractiontriggerhappy.lua" source_file="lib/player_actions/skills/playeractiontriggerhappy"/>
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>
 		<hook file="sc/player_actions/skills/playeractionammoefficiency.lua" source_file="lib/player_actions/skills/playeractionammoefficiency"/>
-		<hook file="sc/player_actions/skills/playeractionunseenstrike.lua" source_file="lib/player_actions/skills/playeractionunseenstrike"/>
 		<hook file="sc/units/equipment/ecmjammerbase.lua" source_file="lib/units/equipment/ecm_jammer/ecmjammerbase"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>
@@ -367,22 +366,22 @@
 					<option type="bool" default_value="false" name="Info_Hud"/>
 					<option type="number" default_value="36" min="24" max="48" step="2" show_value="true" name="Info_Size"/>
 					<option type="number" default_value="8" min="1" max="8" step="1" show_value="true" name="Info_Count"/>
-					<option type="bool" default_value="true" name="Info_aggressive_reload"/>
 					<option type="bool" default_value="true" name="Info_ammo_efficiency"/>
+					<option type="bool" default_value="true" name="Info_single_shot_fast_reload"/> <!-- aggressive reload -->
 					<option type="bool" default_value="true" name="Info_bloodthirst"/>
 					<option type="bool" default_value="true" name="Info_bullet_storm"/>
-					<option type="bool" default_value="true" name="Info_combat_medic"/>
+					<option type="bool" default_value="true" name="Info_revive_damage_reduction"/> <!-- Combat Medic -->
 					<option type="bool" default_value="true" name="Info_desperado"/>
 					<option type="bool" default_value="true" name="Info_grinder"/>
 					<option type="bool" default_value="true" name="Info_infiltrator"/>
-					<option type="bool" default_value="true" name="Info_inspire"/>
+					<option type="bool" default_value="true" name="Info_long_dis_revive"/> <!-- inspire -->
 					<option type="bool" default_value="true" name="Info_messiah"/>
 					<option type="bool" default_value="true" name="Info_overkill"/>
-					<option type="bool" default_value="true" name="Info_quick_fix"/>
+					<option type="bool" default_value="true" name="Info_first_aid_damage_reduction"/> <!-- Quick Fix -->
 					<option type="bool" default_value="true" name="Info_rogue"/>
-					<option type="bool" default_value="true" name="Info_running_from_death"/>
+					<option type="bool" default_value="true" name="Info_increased_movement_speed"/> <!-- Running From Death -->
 					<option type="bool" default_value="true" name="Info_trigger_happy"/>
-					<option type="bool" default_value="true" name="Info_underdog"/>
+					<option type="bool" default_value="true" name="Info_dmg_multiplier_outnumbered"/> <!-- Underdog -->
 					<option type="bool" default_value="true" name="Info_unseen_strike"/>
 				</option_group>
 				<option type="bool" default_value="false" name="MainHUD"/>

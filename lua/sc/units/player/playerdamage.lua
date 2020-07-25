@@ -155,19 +155,18 @@ function PlayerDamage:init(unit)
 
 		local function on_revive_interaction_start()
 			managers.player:set_property("revive_damage_reduction", player_manager:upgrade_value("player", "revive_damage_reduction"), 1)
-			managers.hud:add_skill("combat_medic")
+			managers.hud:add_skill("revive_damage_reduction")
 		end
-
 
 		local function on_exit_interaction()
 			managers.player:remove_property("revive_damage_reduction")
-			managers.hud:remove_skill("combat_medic")
+			if not managers.player:has_activate_temporary_upgrade("temporary", "revive_damage_reduction") then
+				managers.hud:remove_skill("revive_damage_reduction")
+			end
 		end
-
 
 		local function on_revive_interaction_success()
 			managers.player:activate_temporary_upgrade("temporary", "revive_damage_reduction")
-			managers.hud:start_buff("combat_medic", managers.player:upgrade_value("temporary", "revive_damage_reduction")[2])
 		end
 
 		self._listener_holder:add("on_revive_interaction_start", {"on_revive_interaction_start"}, on_revive_interaction_start)
@@ -846,7 +845,6 @@ function PlayerDamage:revive(silent)
 	end
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "increased_movement_speed") then
 		managers.player:activate_temporary_upgrade("temporary", "increased_movement_speed")
-		managers.hud:start_buff("running_from_death", managers.player:upgrade_value("temporary", "increased_movement_speed")[2])
 	end
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "swap_weapon_faster") then
 		managers.player:activate_temporary_upgrade("temporary", "swap_weapon_faster")
@@ -1222,10 +1220,6 @@ Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(se
 		self:consume_armor_stored_health()
 		self._armor_broken = false
 	end
-end)
-
-Hooks:PostHook(PlayerDamage, "_activate_combat_medic_damage_reduction", "ResCombatMedicUI", function(self)
-	managers.hud:start_buff("combat_medic", managers.player:upgrade_value("temporary", "revive_damage_reduction")[2])
 end)
 
 --Remove old ex-pres stuff. Technically won't do anything beyond a very tiny performance increase at the cost of a tiny amount of compatability.

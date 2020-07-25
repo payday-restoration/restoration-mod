@@ -66,7 +66,6 @@ function PlayerMovement:_upd_underdog_skill(t)
 
 				if data.has_dmg_mul then
 					managers.player:activate_temporary_upgrade("temporary", "dmg_multiplier_outnumbered")
-					managers.hud:start_buff("underdog", managers.player:upgrade_value("temporary", "dmg_multiplier_outnumbered")[2])
 				end
 
 				if data.has_dmg_dampener then

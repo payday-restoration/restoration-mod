@@ -274,7 +274,7 @@ core:import("CoreEvent")
 	end
 
 	function HUDManager:start_cooldown(name, duration)
-		self._skill_list:trigger_cooldown(name)
+		self._skill_list:trigger_cooldown(name, duration)
 	end
 
 	function HUDManager:change_cooldown(name, amount)

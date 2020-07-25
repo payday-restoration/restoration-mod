@@ -591,9 +591,11 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 			pickup_multiplier = pickup_multiplier * (1 / managers.player:upgrade_value(category, "extra_ammo_multiplier", 1))
 		end
 
+		local damage_multiplier = 20 / managers.player:upgrade_value("player", "passive_damage_multiplier", 1) --Multiplier to move damage values to the listed numbers and compensate for perk deck boosts.
+
 		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
-		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(self._damage * 10)) * pickup_multiplier * total_ammo
-		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(self._damage * 10)) * pickup_multiplier * total_ammo, self._ammo_pickup[1])
+		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo
+		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo, self._ammo_pickup[1])
 	end
 end
 					

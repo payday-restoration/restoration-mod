@@ -1343,21 +1343,6 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 	return self:_get_intimidation_action(prime_target, char_table, intimidation_amount, primary_only, detect_only, secondary)
 end
 
---Infohud stuff for inspire.
-Hooks:PreHook(PlayerStandard, "_get_intimidation_action", "ResInspireInitialCheckHud", function(self, prime_target, char_table, amount, primary_only, detect_only, secondary)
-	if managers.player:has_enabled_cooldown_upgrade("cooldown", "long_dis_revive") then
-		self._inspire_unused = true
-	else
-		self._inspire_unused = nil
-	end
-end)
-
-Hooks:PostHook(PlayerStandard, "_get_intimidation_action", "ResInspireUsedCheckHud", function(self, prime_target, char_table, amount, primary_only, detect_only, secondary)
-	if self._inspire_unused and not managers.player:has_enabled_cooldown_upgrade("cooldown", "long_dis_revive") then
-		managers.hud:start_cooldown("inspire", self:upgrade_value("cooldown", "long_dis_revive")[2])
-	end
-end)
-
 function PlayerStandard:interrupt_all_actions()
 	local t = TimerManager:game():time()
 

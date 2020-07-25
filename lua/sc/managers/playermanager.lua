@@ -746,7 +746,7 @@ function PlayerManager:_internal_load()
 	end
 
 	if self:has_category_upgrade("cooldown", "long_dis_revive") then
-		managers.hud:add_skill("inspire")
+		managers.hud:add_skill("long_dis_revive")
 	end
 
 	if self:has_category_upgrade("player", "cocaine_stacking") then
@@ -995,18 +995,38 @@ function PlayerManager:_on_enemy_killed_bloodthirst(equipped_unit, variant, kill
 	end
 end
 
+--Adds buff tracker call.
+function PlayerManager:disable_cooldown_upgrade(category, upgrade)
+	local upgrade_value = self:upgrade_value(category, upgrade)
 
-function PlayerManager:_on_activate_aggressive_reload_event(attack_data)
-	if attack_data and attack_data.variant ~= "projectile" then
-		local weapon_unit = self:equipped_weapon_unit()
-
-		if weapon_unit then
-			local weapon = weapon_unit:base()
-
-			if weapon and weapon:fire_mode() == "single" and weapon:is_category("smg", "assault_rifle", "snp") then
-				self:activate_temporary_upgrade("temporary", "single_shot_fast_reload")
-				managers.hud:start_buff("aggressive_reload", self:upgrade_value("temporary", "single_shot_fast_reload")[2])
-			end
-		end
+	if upgrade_value == 0 then
+		return
 	end
+
+	local time = upgrade_value[2]
+	self._global.cooldown_upgrades[category] = self._global.cooldown_upgrades[category] or {}
+	self._global.cooldown_upgrades[category][upgrade] = {
+		cooldown_time = Application:time() + time
+	}
+	managers.hud:start_cooldown(upgrade, time)
+end
+
+--Adds buff tracker call.
+function PlayerManager:activate_temporary_upgrade(category, upgrade)
+	local upgrade_value = self:upgrade_value(category, upgrade)
+
+	if upgrade_value == 0 then
+		return
+	end
+
+	local time = upgrade_value[2]
+	self._temporary_upgrades[category] = self._temporary_upgrades[category] or {}
+	self._temporary_upgrades[category][upgrade] = {
+		expire_time = Application:time() + time
+	}
+
+	if self:is_upgrade_synced(category, upgrade) then
+		managers.network:session():send_to_peers("sync_temporary_upgrade_activated", self:temporary_upgrade_index(category, upgrade))
+	end
+	managers.hud:start_buff(upgrade, time)
 end

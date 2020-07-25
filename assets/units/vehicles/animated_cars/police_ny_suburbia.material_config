@@ -18,12 +18,11 @@
         <bump_normal_texture file="units/vehicles/window/glass_shattered_nm"/>
         <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
     </material>
-    <material version="2" decal_material="glass_breakable" name="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE">
-        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+    <material version="2" decal_material="glass_breakable" name="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE">
+		<reflection_texture type="cubemap" global_texture="current_global_texture" />
         <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df"/>
-        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
-        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+		<variable value="0 1 0" type="vector3" name="fresnel_settings"/>
     </material>
     <material name="police_ny_low" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE">
         <variable value="1 0.20000000298023 2" type="vector3" name="environment_settings"/>

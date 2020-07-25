@@ -5,6 +5,7 @@
 	<WeaponMod id="wpn_fps_ass_osipr_b_standard" based_on="wpn_fps_m4_uupg_b_medium_vanilla" type="barrel" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_body" based_on="wpn_fps_m4_lower_reciever" type="lower_reciever" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_bolt" based_on="wpn_fps_ass_scar_body_standard" type="extra" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
+	<WeaponMod id="wpn_fps_ass_osipr_scope" based_on="wpn_fps_upg_o_cs" type="sight" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	
 	<Weapon>
 		<weapon id="osipr" based_on="new_m4" has_description="true" weapon_hold="oicw" global_value="rest">
@@ -20,12 +21,14 @@
 				<value_node value="wpn_fps_ass_osipr_body"/>
 				<value_node value="wpn_fps_m4_uupg_m_std_vanilla"/>
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
+				<value_node value="wpn_fps_ass_osipr_scope"/>
 			</default_blueprint>
 			<uses_parts>
 				<value_node value="wpn_fps_ass_osipr_b_standard"/>
 				<value_node value="wpn_fps_ass_osipr_body"/>
 				<value_node value="wpn_fps_m4_uupg_m_std_vanilla"/>
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
+				<value_node value="wpn_fps_ass_osipr_scope"/>
 			</uses_parts>
 		</factory>
 		<stance>
@@ -33,7 +36,7 @@
 				<shoulders rotation="-0.000745315 0.00548101 0.00093835 -0.999984" translation="-4.248 2.504 -5.217"/>
 			</crouched>
 			<steelsight>
-				<shoulders rotation="-0.000745315 0.00548101 0.00093835 -0.999984" translation="-10.748 2.004 -4.217"/>
+				<shoulders rotation="-0.000745315 0.00548101 0.00093835 -0.999984" translation="-10.8 -3 -4.5"/>
 			</steelsight>
 			<standard>
 				<shoulders rotation="-0.000745315 0.00548101 0.00093835 -0.999984" translation="-2.248 2.004 -5.217"/>
@@ -46,8 +49,11 @@
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_body"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_bolt"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_b_standard"/>
+		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_scope"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
+		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/green_glass_df"/>
+		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/green_glass_texture_df"/>
 		
 		<animation path="anims/fps/oicw/oicw_reload" load="true"/>
 		<animation path="anims/fps/oicw/oicw_reload_not_empty" load="true"/>

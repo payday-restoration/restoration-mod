@@ -177,7 +177,7 @@
 		<constraint type="limited_hinge" name="RightLeg" enabled="false">
 			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
 			<param pivot="position:RightLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
+			<param min_angle="20" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
 			<param plane_axis="yaxis:RightLeg"/>
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
@@ -185,7 +185,7 @@
 		<constraint type="limited_hinge" name="LeftLeg" enabled="false">
 			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
 			<param pivot="position:LeftLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
+			<param min_angle="20" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
 			<param plane_axis="yaxis:LeftLeg"/>
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
@@ -200,40 +200,48 @@
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="5000"  max_draw_lod="0" />
-				<object name="g_body_lod1" 	enabled="true" lod="1" />
+				<object name="g_body" enabled="true"  max_distance="2000" max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod1" max_distance="1500" />
+					<material materials="mtr_body_lod2" />
+				</object>
+				<object name="g_body_lod1" enabled="true" lod="1">
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2" />
+				</object>
 			</lod_object>
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-			<object name="g_il" 		enabled="false" />
+			<object name="g_il"  enabled="false" />
 			<object name="g_nvg" enabled="true"/>
 		</graphic_group>
 
-		<graphic_group name="grp_body_no_head" enabled="false" >
-			<!-- <lod_object name="lod_no_head"> -->
-				<object name="g_body_no_head" enabled="true"  max_distance="2000" cpy_material_vars="contour_color, contour_opacity">
+		<graphic_group name="grp_body_no_head" enabled="false" culling_object="g_body_no_head">
+			<lod_object name="lod_no_head">
+				<object name="g_body_no_head" enabled="true"  max_draw_lod="0" max_distance="2000" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_body" max_distance="1000" />
 					<material materials="mtr_body_lod1" max_distance="1500" />
 					<material materials="mtr_body_lod2" />
 				</object>
-				<object name="g_body_no_head_lod1" enabled="true" >
+				<object name="g_body_no_head_lod1" enabled="true" lod="1" >
 					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_lod2" />
 				</object>
-			<!-- </lod_object> -->
+			</lod_object>
 			<object name="s_body_no_head" enabled="true" shadow_caster="true"/>
 		</graphic_group>
-		<graphic_group name="grp_body_bottom" enabled="false" >
-			<!-- <lod_object name="lod_bottom"> -->
-				<object name="g_body_bottom" enabled="true"  max_distance="2000" cpy_material_vars="contour_color, contour_opacity">
+		
+		<graphic_group name="grp_body_bottom" enabled="false" culling_object="g_body_bottom">
+			 <lod_object name="lod_bottom">
+				<object name="g_body_bottom" enabled="true" max_draw_lod="0" max_distance="2000" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_body" max_distance="1000" />
 					<material materials="mtr_body_lod1" max_distance="1500" />
 					<material materials="mtr_body_lod2" />
 				</object>
-				<object name="g_body_bottom_lod1" enabled="true" >
+				<object name="g_body_bottom_lod1" enabled="true" lod="1" >
 					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_body_lod2" />
 				</object>
-			<!-- </lod_object> -->
+			</lod_object>
 
 			<object name="s_body_bottom" enabled="true" shadow_caster="true"/>
 		</graphic_group>

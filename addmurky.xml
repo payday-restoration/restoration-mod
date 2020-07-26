@@ -445,8 +445,6 @@
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk" force="false" load="true"/> 
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/taser_body_df"/>
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/tyler1_df"/>
-	<texture path="units/pd2_mod_omnia/characters/shared_textures/tyler1_nm"/>		
-		
 	
 	<!--OMNIA Cloaker Debris-->
 	<!--head-->

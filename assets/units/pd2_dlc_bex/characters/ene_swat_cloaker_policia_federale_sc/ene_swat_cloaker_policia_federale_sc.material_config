@@ -8,6 +8,11 @@
 		<bump_normal_texture 			file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="1" />
 		<diffuse_texture 				file="units/pd2_dlc_bex/characters/shared_textures/spook_heavy_df" mip="1" />
 	</material>
+	
+	<material name="mtr_body_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 			file="units/payday2/characters/shared_textures/spook_heavy_nm" mip="4" />
+		<diffuse_texture 				file="units/pd2_dlc_bex/characters/shared_textures/spook_heavy_df" mip="4" />
+	</material>
 
 	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
 		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
@@ -15,6 +20,7 @@
 		<opacity_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
 		<variable 						value="reddot" type="scalar" name="il_multiplier"/>
 	</material>
+	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 	
 	<!--BEBRIS REQUIRES THIS-->
@@ -23,4 +29,5 @@
 		<bump_normal_texture 			file="units/payday2/characters/shared_textures/spook_heavy_nm"/>
 		<diffuse_texture 				file="units/pd2_dlc_bex/characters/shared_textures/spook_heavy_df"/>
 	</material>
+	
 </materials>

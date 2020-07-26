@@ -81,6 +81,7 @@
   "ene_zeal_swat_heavy_sc" : "ZEAL Heavy SWAT",        
   "ene_zeal_swat_heavy_r870_sc" : "ZEAL Heavy SWAT",    
   "ene_swat_cloaker_policia_federale_sc" : "Cloaker",  
+  "ene_swat_shield_policia_federale_mp9_sc" : "Shield",  
   "ene_swat_dozer_policia_federale_minigun" : "Benellidozer",
   "ene_male_office_cop" : "Policía",
   "ene_policia" : "Policía",
@@ -94,5 +95,6 @@
   "ene_swat_policia_federale_fbi" : "Policía Federal Elite",
   "ene_swat_policia_federale_city" : "Policía Federal Elite",
   "ene_swat_policia_federale_zeal" : "Ejército Mexicano",
+  "ene_swat_policia_federale_sc" : "Policía Federal",      
   "ene_swat_heavy_policia_federale_fbi" : "Policía Federal Elite Heavy"
 }

@@ -1,5 +1,15 @@
 <table directory="assets">	
 	
+	<!--NPC M60 (Placeholder RPK)-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false" load="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_df" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_nm" force="false"/>	
+	
 	<!--Murky Security, just clones of the normal 'cops' for the sake of scripted spawn access flags. They function the exact same otherwise-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45" force="false" load="true"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45_husk" force="false" load="true"/>	

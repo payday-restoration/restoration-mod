@@ -412,7 +412,7 @@
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
-				<option type="bool" default_value="true" name="PONRTrack"/>
+				<option type="multichoice" default_value="1" name="PONRTracks" values_tbl="restoration.ponrtracks"/>
 				<option type="bool" default_value="false" name="MusicShuffle"/>
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<option type="bool" default_value="true" name="Holiday"/>

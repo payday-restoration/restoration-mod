@@ -148,6 +148,9 @@
 	"friend_pink" : "Pink Sunset",
 	"friend_night" : "Miami Night",
 	
+	"off" : "Off",
+	"windowofoppurtunity" : "Window Of Opportunity",
+	"wheresthevan" : "Where's The Van",
 	
 	"RestorationModPaintingsTitleID" : "Unused Art Gallery Paintings",
 	"RestorationModPaintingsDescID" : "Enable or disable the ability for unused paintings to spawn on Art Gallery. As host only.",
@@ -497,8 +500,8 @@
 	"RestorationModMaskOnTextTitleID" : "Mask on text",
 	"RestorationModStopAllBotsTitleID" : "Stop All Bots",
 	"RestorationModStopAllBotsDescID" : "Stops all bots by holding the stop bot key",
-	"RestorationModPONRTrackTitleID" : "Point Of No Return Pro-Jobs Track",
-	"RestorationModPONRTrackDescID" : "Changes the music track on Pro-Jobs when the point of no return starts",
+	"RestorationModPONRTracksTitleID" : "Point Of No Return Pro-Jobs Tracks",
+	"RestorationModPONRTracksDescID" : "Select the music track for Pro-Jobs when the point of no return starts",
 	"RestorationModMusicShuffleTitleID" : "Music Shuffle",
 	"RestorationModMusicShuffleDescID" : "Changes the music track after assault ends",
 	"RestorationModScaleTitleID" : "HUD scaling",

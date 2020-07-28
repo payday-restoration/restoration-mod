@@ -30,11 +30,19 @@ function MusicManager:jukebox_heist_specific()
     if managers.job:interupt_stage() then
 		return self:track_attachment("escape") or "all"
     end
-    if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTrack") and not restoration.Options:GetValue("OTHER/MusicShuffle") then
-        if ponr_random1 then
+    if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and not restoration.Options:GetValue("OTHER/MusicShuffle") then
+        if restoration.Options:GetValue("OTHER/PONRTracks") == 1 then
+            return
+        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 2 then
             return self:track_attachment("ponr")
-        elseif ponr_random2 then
+        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 3 then
             return self:track_attachment("track_16")
+        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 4 then
+            if ponr_random1 then
+                return self:track_attachment("ponr")
+            elseif ponr_random2 then
+                return self:track_attachment("track_16")
+            end
         end
     end
 

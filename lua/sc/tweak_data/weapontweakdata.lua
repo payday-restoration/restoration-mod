@@ -1441,6 +1441,7 @@ function WeaponTweakData:_init_data_m249_npc()
 	
 	--M60
 	self.m60_npc = deep_clone(self.m249_npc)	
+	self.m60_npc.sounds.prefix = "m60_npc"
 
 	--Bravo LMG--
 	self.m249_bravo_npc = deep_clone(self.hk23_sc_npc)	
@@ -1449,7 +1450,7 @@ function WeaponTweakData:_init_data_m249_npc()
 	
 	--Murky Bravo M60
 	self.m60_bravo_npc = deep_clone(self.hk23_sc_npc)
-	self.m60_bravo_npc.sounds_prefix = "m249_npc"
+	self.m60_bravo_npc.sounds.prefix = "m60_npc"
 	self.m60_bravo_npc.CLIP_AMMO_MAX = 200
 end
 

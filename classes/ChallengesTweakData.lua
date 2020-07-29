@@ -1,4 +1,4 @@
-ChallengesTweakData = ChallengesTweakData or class()
+ChallengesTweakDataRes = ChallengesTweakDataRes or class()
 
 local tiny_xp = 800
 local small_xp = 1000
@@ -10,7 +10,7 @@ local gigantic_xp = 5000
 local ten_steps = { "size08", "size10", "size12", "size12", "size14", "size16", "size18", "size20", "size20", "size20" }
 local five_steps = { "size12", "size14", "size16", "size18", "size20" }
 
-function ChallengesTweakData:init()
+function ChallengesTweakDataRes:init()
 	--self.categories	= {}
 	self.character = {}
 	self.character.deploy_ammobag = {
@@ -64,7 +64,7 @@ function ChallengesTweakData:init()
     self:weapon_challenges()
 end
 
-function ChallengesTweakData:GetCategories()
+function ChallengesTweakDataRes:GetCategories()
     local categories = {}
     for id, weap in pairs(tweak_data.weapon) do
         local cat = tweak_data.gui.buy_weapon_category_aliases[weap.category] and tweak_data.gui.buy_weapon_category_aliases[weap.category] or weap.category
@@ -77,7 +77,7 @@ function ChallengesTweakData:GetCategories()
     return categories
 end
 
-function ChallengesTweakData:weapon_challenges()
+function ChallengesTweakDataRes:weapon_challenges()
     local createVS = function(i, id, eneType, count, xp)
         local name = id .. "_vs_" .. eneType .. "_" .. i
         local challenges = { (i - 1) > 0 and id .. "_vs_" .. eneType .. "_" .. (i - 1) or nil }

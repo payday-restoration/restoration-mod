@@ -19,7 +19,7 @@ function ChallengesManagerRes:_setup( reset )
 	self._challenges_map_res = {}
 	self._reset_map = {}
 	self._session_stopped_map = {}
-	for category,challenges in pairs( tweak_data.challenges ) do
+	for category,challenges in pairs( tweak_data.challenges_res ) do
 		for name,challenge in pairs( challenges ) do
 			--if managers.dlc:has_full_game() or (not challenge.awards_achievment and challenge.in_trial) then
 				self._challenges_map_res[ name ] = challenge

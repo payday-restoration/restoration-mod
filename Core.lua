@@ -386,6 +386,13 @@ restoration.environments_choice_peta = {
 	"cloudy_day"
 }
 
+restoration.ponrtracks = {
+	"off",
+	"windowofoppurtunity",
+	"wheresthevan",
+	"random"
+}
+
 -- restoration.environments_choice_shadow_raid = {
 -- 	"default",
 -- 	"random",

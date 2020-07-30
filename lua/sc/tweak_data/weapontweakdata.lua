@@ -1452,6 +1452,10 @@ function WeaponTweakData:_init_data_m249_npc()
 	self.m60_bravo_npc = deep_clone(self.hk23_sc_npc)
 	self.m60_bravo_npc.sounds.prefix = "m60_npc"
 	self.m60_bravo_npc.CLIP_AMMO_MAX = 200
+	
+	--M60 Omnia
+	self.m60_om_npc = deep_clone(self.m249_npc)	
+	self.m60_om_npc.sounds.prefix = "m60_npc"	
 end
 
 function WeaponTweakData:_init_data_contraband_npc()

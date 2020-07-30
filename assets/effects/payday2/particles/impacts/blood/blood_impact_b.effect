@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<effect force_synch="false">
+    <use_random/>
+    <atom name="locked_flash" min_size="1" max_size="1" lifetime="2" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="-1 20 -1" max="1 20 1"/>
+            <boxrandomangle min="0" max="0"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+            <boxrandomsize min="50 150" max="70 250"/>
+            <boxrandomrotation relative="effect" min="0 0.00010000000474975 0" max="0 0.00010000000474975 0" min_rot="0" max_rot="365"/>
+        </initializerstack>
+        <simulatorstack>
+            <rotationbyvelocity velocity="9000"/>
+            <worldtransform transform_rotations="false"/>
+            <velocityintegrator channel="local"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/blood_impacts_df" intensity="identity" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="add" render_template="effect_blood" origo="0.5 1" per_particle_age="false" size_input="channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 0" uv_size="0.25 0.5" uv_offset_input="channel">
+                <opacity_keys loop="false">
+                    <key t="0" v="25"/>
+                    <key t="0.086058519780636" v="50"/>
+                    <key t="1.9965577125549" v="255"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="facing_flash" min_size="1" max_size="1" lifetime="0.5" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 12 0" max="0 12 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomrotation relative="effect" min="0 0.00010000000474975 0" max="0 0.00010000000474975 0" min_rot="0" max_rot="0"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.75" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+            <boxrandomaspectsize size="0.5 0.5" min="100" max="120"/>
+        </initializerstack>
+        <simulatorstack>
+            <worldtransform transform_rotations="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/blood_impacts_df" intensity="identity" billboard_type="normal_facing" rotation_channel="world_rotation" blend_mode="add" render_template="effect_blood" origo="0.5 0.5" per_particle_age="false" size_input="channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 0" uv_size="0.25 0.25" uv_offset_input="channel">
+                <opacity_keys loop="false">
+                    <key t="0" v="25"/>
+                    <key t="0.49913901090622" v="255"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/blood_impacts_df" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="add" render_template="effect_blood" origo="0.5 0.5" per_particle_age="false" size_input="constant" size="50 50" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 0" uv_size="0.25 0.25" uv_offset_input="channel">
+                <opacity_keys loop="false">
+                    <key t="0" v="25"/>
+                    <key t="0.5" v="255"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="locked_flash0" min_size="1" max_size="1" lifetime="2" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="0 0 3" max="0 0 3"/>
+            <boxrandomangle min="0" max="0"/>
+            <boxrandomvelocity relative="effect" min="-1 20 -1" max="1 20 1"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="3"/>
+            <boxrandomsize min="20 200" max="30 350"/>
+            <boxrandomrotation relative="effect" min="0 0.00010000000474975 0" max="0 0.00010000000474975 0" min_rot="0" max_rot="365"/>
+        </initializerstack>
+        <simulatorstack>
+            <worldtransform transform_rotations="false"/>
+            <rotationbyvelocity velocity="9000"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/blood_impacts_df" intensity="identity" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="add" render_template="effect_blood" origo="0.5 1" per_particle_age="false" size_input="channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 0" uv_size="0.25 0.5" uv_offset_input="channel">
+                <opacity_keys loop="false">
+                    <key t="0" v="25"/>
+                    <key t="0.086058519780636" v="50"/>
+                    <key t="1.9965577125549" v="255"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="Dust Puff" min_size="1" max_size="1" lifetime="1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 500 200" max="0 1000 200"/>
+            <boxrandomangle min="0" max="0"/>
+            <boxrandomaspectsize size="50 50" min="0.5" max="1"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <constantacceleration relative="world" acceleration="0 0 -982"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/blood_impacts_df" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_blood" origo="0.5 0.5" per_particle_age="false" size_input="scaled_channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 0" uv_size="0.25 0.25" uv_offset_input="channel">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.2 0.2"/>
+                    <key t="1" v="0.4 0.4"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="25"/>
+                    <key t="1" v="255"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

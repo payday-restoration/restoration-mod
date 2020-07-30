@@ -12030,7 +12030,8 @@ function CharacterTweakData:_create_table_structure()
 		"m1911_npc",
 		"vet_cop_boss_pistol",
 		"m60",
-		"m60_bravo"
+		"m60_bravo",
+		"m60_om"		
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -12093,7 +12094,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_1911/wpn_npc_1911"),
 		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
 		Idstring("units/payday2/weapons/wpn_npc_m60/wpn_npc_m60"),
-		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo")
+		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"),
+		Idstring("units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om")		
 	}
 end
 

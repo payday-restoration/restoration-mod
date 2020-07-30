@@ -1,0 +1,9 @@
+<materials version="3">
+	<material name="npc_rpk" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om_df" />
+		<bump_normal_texture file="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om_nm" />
+	</material>
+    <material name="weapon_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
+		<diffuse_texture file="units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om_df" />
+    </material>
+</materials>

@@ -468,4 +468,5 @@
 	<Package id="packages/rex_gold" file="rex_gold.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
+	<Package id="packages/addrain" file="addRAIN.xml"/>
 </mod>

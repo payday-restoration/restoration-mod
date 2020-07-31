@@ -1359,7 +1359,8 @@ function PlayerStandard:interrupt_all_actions()
 	self:_interupt_action_cash_inspect(t)
 end
 
-Hooks:PostHook(PlayerStandard, "_start_action_interact", "RaidMinigameCheckInteraction", function(self, t, input, timer, object)
+--RAID minigames.  Disabled for the time being.
+--[[Hooks:PostHook(PlayerStandard, "_start_action_interact", "RaidMinigameCheckInteraction", function(self, t, input, timer, object)
 	if alive(object) then
 		local name = object:interaction().tweak_data
 		local tweak = tweak_data.interaction[name]
@@ -1372,7 +1373,7 @@ Hooks:PostHook(PlayerStandard, "_start_action_interact", "RaidMinigameCheckInter
 			end
 		end
 	end
-end)
+end)]]--
 
 --Replace coroutine with a playermanager function. The coroutine had issues with randomly not being called- or not having values get reset, and overall being jank???
 function PlayerStandard:_find_pickups(t)

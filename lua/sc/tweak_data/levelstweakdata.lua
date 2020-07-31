@@ -101,8 +101,13 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.flat.ai_group_type = nypd
 	self.flat.package = {"packages/narr_flat", "packages/nypdassets"}
 	
-	self.glace.ai_group_type = nypd
-	self.glace.package = {"packages/narr_glace", "packages/addrain", "packages/nypdassets"}
+	if restoration and restoration.Options:GetValue("OTHER/QuietRain") then
+		self.glace.ai_group_type = nypd
+		self.glace.package = {"packages/narr_glace", "packages/addrain", "packages/nypdassets"}
+	else
+		self.glace.ai_group_type = nypd
+		self.glace.package = {"packages/narr_glace", "packages/nypdassets"}
+	end
 	
 	self.dah.ai_group_type = nypd
 	self.dah.package = {"packages/lvl_dah", "packages/nypdassets"}

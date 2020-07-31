@@ -418,8 +418,8 @@
 				<option type="bool" default_value="true" name="Holiday"/>
 				<option type="bool" default_value="false" name="ClassicMovies"/>
 				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
-				<!-- <option type="bool" default_value="true" hidden="true" name="RaidLockPicking"/>
-				<option type="bool" default_value="true" hidden="true" name="RaidLockPickingVO"/> -->
+				<!-- <option type="bool" default_value="true" hidden="true" name="RaidLockPicking"/> -->
+				<option type="bool" default_value="true" name="QuietRain"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>

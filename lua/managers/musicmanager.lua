@@ -30,18 +30,18 @@ function MusicManager:jukebox_heist_specific()
     if managers.job:interupt_stage() then
 		return self:track_attachment("escape") or "all"
     end
-    if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and not restoration.Options:GetValue("OTHER/MusicShuffle") then
+    if not restoration.Options:GetValue("OTHER/MusicShuffle") then
         if restoration.Options:GetValue("OTHER/PONRTracks") == 1 then
             return
-        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 2 then
+        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 2 and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down then
             return self:track_attachment("ponr")
-        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 3 then
-            return self:track_attachment("track_16")
-        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 4 then
-            if ponr_random1 then
+        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 3 and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down then
+            return self:track_attachment("escape")
+        elseif restoration.Options:GetValue("OTHER/PONRTracks") == 4 and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down then
+            if ponr_random1 == 1 then
                 return self:track_attachment("ponr")
-            elseif ponr_random2 then
-                return self:track_attachment("track_16")
+            elseif ponr_random1 == 2 then
+                return self:track_attachment("escape")
             end
         end
     end
@@ -74,7 +74,7 @@ end
 local current_track_string_orig = MusicManager.current_track_string
 function MusicManager:current_track_string()
 	
-	if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTrack") then
+	if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTracks") == 2 or restoration.Options:GetValue("OTHER/PONRTracks") == 4 and ponr_random1 == 1 then
 		return utf8.to_upper(managers.localization:text("menu_jukebox_screen_resmusic_ponr"))
 	end
 

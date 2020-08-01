@@ -596,6 +596,7 @@ function BlackMarketTweakData:_init_masks(tweak_data)
 		desc_id = "bm_msk_secret_richard_desc",
 		pcs = {},
 		value = 0,
+		type = "helmet",	
 		global_value = "rest",
 		texture_bundle_folder = "mods"
 	}

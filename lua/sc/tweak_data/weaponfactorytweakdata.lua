@@ -28987,6 +28987,26 @@ self.wpn_fps_pis_shatters_fury.uses_parts = {
 	"wpn_fps_upg_o_uh",
 	"wpn_fps_upg_o_fc1"		
 }
+
+--OICW
+self.parts.wpn_fps_ass_osipr_scope.material_parameters = {
+	gfx_reddot = {
+		{
+			id = Idstring("holo_reticle_scale"),
+			value = Vector3(0.2, 1.5, 40),
+			condition = function ()
+				return not _G.IS_VR
+			end
+		},
+		{
+			id = Idstring("holo_reticle_scale"),
+			value = Vector3(0.2, 1, 20),
+			condition = function ()
+				return _G.IS_VR
+			end
+		}
+	}
+}
 	
 --SC mod shit below--
 

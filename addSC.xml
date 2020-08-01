@@ -780,6 +780,37 @@
 	
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_clover"/> 
    
+    <!--secret bonnie-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_bonnie_secret/bonnie_secret_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_bonnie"/> 
+   
+    <!--secret sydney-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_sydney_secret/sydney_secret_df"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_sydney_secret/sydney_secret_nm"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_sydney"/> 
+    
+	<!--secret richard-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_richard_secret/richard_secret_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_richard"/> 
+   
     <!--secret dev mask ssshhh-->
     <cooked_physics path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
     <model path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>

@@ -556,11 +556,44 @@ function BlackMarketTweakData:_init_masks(tweak_data)
 		texture_bundle_folder = "mods"
 	}
 	
-	--Secret clover
+	--Secret Clover
 	self.masks.secret_clover = {
 		unit = "units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret",
 		name_id = "bm_msk_secret_clover",
 		desc_id = "bm_msk_secret_clover_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Secret Bonnie
+	self.masks.secret_bonnie = {
+		unit = "units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret",
+		name_id = "bm_msk_secret_bonnie",
+		desc_id = "bm_msk_secret_bonnie_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Secret Sydney
+	self.masks.secret_sydney = {
+		unit = "units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret",
+		name_id = "bm_msk_secret_syndey",
+		desc_id = "bm_msk_secret_syndey_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Secret Richard
+	self.masks.secret_richard = {
+		unit = "units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret",
+		name_id = "bm_msk_secret_richard",
+		desc_id = "bm_msk_secret_richard_desc",
 		pcs = {},
 		value = 0,
 		global_value = "rest",

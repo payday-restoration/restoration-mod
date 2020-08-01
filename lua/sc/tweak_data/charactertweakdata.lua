@@ -454,8 +454,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.can_slide_on_suppress = true
 	self.fbi_vet.HEALTH_INIT = 12
 	self.fbi_vet.headshot_dmg_mul = 3.4
-	self.fbi_vet.damage.bullet_dodge_chance = 65
-	self.fbi_vet.smoke_dodge_increase = 10
+	self.fbi_vet.damage.bullet_damage_mul = 0.05
 	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.access = "spooc"
 	self.fbi_vet.damage.hurt_severity = presets.hurt_severities.elite

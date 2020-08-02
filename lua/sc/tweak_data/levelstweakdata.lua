@@ -90,7 +90,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.brb.ai_group_type = nypd
 	self.brb.package = {"packages/lvl_brb", "packages/nypdassets"}
-	self.brb.player_style = "winter_suit"
+	self.brb.player_style = "peacoat"
 	
 	self.red2.ai_group_type = nypd
 	self.red2.package = {"packages/narr_red2", "packages/nypdassets"}
@@ -211,16 +211,16 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.fish.player_style = "tux"
 	
 	self.arm_cro.package = {"packages/narr_arm_cro"}
-	self.arm_cro.player_style = "slaughterhouse"
+	self.arm_cro.player_style = "jumpsuit"
 	
 	self.arm_hcm.package = {"packages/narr_arm_hcm"}
-	self.arm_hcm.player_style = "slaughterhouse"	
+	self.arm_hcm.player_style = "jumpsuit"	
 	
 	self.arm_fac.package = {"packages/narr_arm_fac"}
-	self.arm_fac.player_style = "slaughterhouse"
+	self.arm_fac.player_style = "jumpsuit"
 	
 	self.arm_par.package = {"packages/narr_arm_par"}
-	self.arm_par.player_style = "slaughterhouse"		
+	self.arm_par.player_style = "jumpsuit"		
 	
 	self.arm_und.package = {"packages/narr_arm_und"}
 	self.arm_und.player_style = "scrub"
@@ -269,8 +269,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.watchdogs_1_night.player_style = "suit_sunny"
 	self.watchdogs_2_day.player_style = "loud_suit"
 	
-	self.mia_1.player_style = "suit_sunny"
-	self.mia_2.player_style = "suit_sunny"
+	self.mia_1.player_style = "miami"
+	self.mia_2.player_style = "miami"
 
 	self.mia_2.teams = {
 		criminal1 = {

@@ -1,0 +1,18 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" name="mat_ceilingtiles01_beams" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_ceilingtiles01_beams_df"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ceilingtiles_01" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_nm"/>
+        <material_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="decal:DIFFUSE_TEXTURE" name="mat_floor_dust" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_floor_dust_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_plaster_dest_01" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_nm"/>
+    </material>
+</materials>

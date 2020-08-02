@@ -1,0 +1,47 @@
+<materials version="3">
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_wall_hole_04" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_df"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_urban_plasterwall_05b_df"/>
+        <diffuse_layer1_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_mask"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_nm"/>
+        <normal_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_urban_plasterwall_05b_nm"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_generic_painted_wall" version="2">
+        <diffuse_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_df"/>
+        <bump_normal_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_nm"/>
+        <material_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mat_plaster_dest_01" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_nm"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_trimsheet_1" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_nm"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_wall_hole_03" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_df"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_sheetrock_02_df"/>
+        <diffuse_layer1_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_mask"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_nm"/>
+        <normal_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_urban_plasterwall_05b_nm"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_wall_hole_02" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_df"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_urban_plasterwall_05a_df"/>
+        <diffuse_layer1_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_mask"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_nm"/>
+        <normal_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_urban_plasterwall_05a_nm"/>
+    </material>
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="mat_wall_hole_01" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_df"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_urban_plasterwall_05f_df"/>
+        <diffuse_layer1_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_mask"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_plaster_dest_01_nm"/>
+        <normal_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_urban_plasterwall_05f_nm"/>
+    </material>
+    <material render_template="shadow_caster_only" name="shadow_caster" version="2"/>
+</materials>

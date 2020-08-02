@@ -5,10 +5,12 @@
 	<WeaponMod id="wpn_fps_ass_osipr_b_standard" based_on="wpn_fps_m4_uupg_b_medium_vanilla" type="barrel" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_body" based_on="wpn_fps_m4_lower_reciever" type="lower_reciever" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_bolt" based_on="wpn_fps_ass_scar_body_standard" type="extra" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
-	<WeaponMod id="wpn_fps_ass_osipr_scope" based_on="wpn_fps_upg_o_cs" type="sight" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
+	<WeaponMod id="wpn_fps_ass_osipr_scope" based_on="wpn_fps_upg_o_cs" type="sight" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
+		<stats zoom="10"/>
+	</WeaponMod>
 	
 	<Weapon>
-		<weapon id="osipr" based_on="new_m4" has_description="true" weapon_hold="oicw" global_value="rest">
+		<weapon id="osipr" based_on="new_m4" has_description="true" weapon_hold="oicw" unlock_level="50" global_value="rest">
 			<stats/>
 			<animations reload_name_id="oicw"/>
 		</weapon>
@@ -29,6 +31,33 @@
 				<value_node value="wpn_fps_m4_uupg_m_std_vanilla"/>
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
 				<value_node value="wpn_fps_ass_osipr_scope"/>
+				<value_node value="wpn_fps_upg_ns_ass_smg_large"/>
+				<value_node value="wpn_fps_upg_ns_ass_smg_medium"/>
+				<value_node value="wpn_fps_upg_ns_ass_smg_small"/>
+				<value_node value="wpn_fps_upg_m4_m_straight"/>
+				<value_node value="wpn_fps_upg_m4_m_drum"/>
+				<value_node value="wpn_fps_upg_m4_m_pmag"/>
+				<value_node value="wpn_fps_upg_fl_ass_smg_sho_peqbox"/>
+				<value_node value="wpn_fps_upg_fl_ass_smg_sho_surefire"/>
+				<value_node value="wpn_fps_upg_ns_ass_smg_firepig"/>
+				<value_node value="wpn_fps_upg_ns_ass_smg_stubby"/>
+				<value_node value="wpn_fps_upg_ns_ass_smg_tank"/>
+				<value_node value="wpn_fps_upg_i_singlefire"/>
+				<value_node value="wpn_fps_upg_i_autofire"/>
+				<value_node value="wpn_fps_upg_m4_m_quad"/>
+				<value_node value="wpn_fps_ass_l85a2_m_emag"/>
+				<value_node value="wpn_fps_upg_fl_ass_peq15"/>
+				<value_node value="wpn_fps_upg_fl_ass_laser"/>
+				<value_node value="wpn_fps_upg_ass_ns_jprifles"/>
+				<value_node value="wpn_fps_upg_ass_ns_linear"/>
+				<value_node value="wpn_fps_upg_ass_ns_surefire"/>
+				<value_node value="wpn_fps_upg_m4_m_l5"/>
+				<value_node value="wpn_fps_upg_ass_ns_battle"/>
+				<value_node value="wpn_fps_upg_fl_ass_utg"/>
+				<value_node value="wpn_fps_m4_upg_m_quick"/>
+				<value_node value="wpn_fps_upg_ns_ass_smg_v6"/>
+				<value_node value="wpn_fps_upg_i_slower_rof"/>
+				<value_node value="wpn_fps_upg_i_faster_rof"/>
 			</uses_parts>
 		</factory>
 		<stance>

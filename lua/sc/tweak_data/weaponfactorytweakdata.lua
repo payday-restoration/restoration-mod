@@ -28988,69 +28988,25 @@ self.wpn_fps_pis_shatters_fury.uses_parts = {
 	"wpn_fps_upg_o_fc1"		
 }
 
---OICW--
-self.wpn_fps_ass_osipr.uses_parts = {
-	"wpn_fps_m4_uupg_b_medium_vanilla",
-	"wpn_fps_ass_osipr_body",
-	"wpn_fps_m4_uupg_m_std_vanilla",
-	"wpn_fps_upg_ns_ass_smg_large",
-	"wpn_fps_upg_ns_ass_smg_medium",
-	"wpn_fps_upg_ns_ass_smg_small",
-	"wpn_fps_upg_m4_m_straight",
-	"wpn_fps_upg_m4_m_drum",
-	"wpn_fps_upg_m4_m_pmag",
-	"wpn_fps_upg_o_specter",
-	"wpn_fps_upg_o_aimpoint",
-	"wpn_fps_upg_o_docter",
-	"wpn_fps_upg_o_eotech",
-	"wpn_fps_upg_o_t1micro",
-	"wpn_fps_upg_o_cmore",
-	"wpn_fps_upg_o_aimpoint_2",
-	"wpn_fps_upg_o_acog",
-	"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-	"wpn_fps_upg_fl_ass_smg_sho_surefire",
-	"wpn_fps_upg_m4_g_standard_vanilla",
-	"wpn_fps_upg_m4_g_ergo",
-	"wpn_fps_upg_m4_g_sniper",
-	"wpn_fps_upg_ns_ass_smg_firepig",
-	"wpn_fps_upg_ns_ass_smg_stubby",
-	"wpn_fps_upg_ns_ass_smg_tank",
-	"wpn_fps_upg_m4_g_hgrip",
-	"wpn_fps_upg_m4_g_mgrip",
-	"wpn_fps_upg_i_singlefire",
-	"wpn_fps_upg_i_autofire",
-	"wpn_fps_upg_m4_m_quad",
-	"wpn_fps_ass_l85a2_m_emag",
-	"wpn_fps_upg_fl_ass_peq15",
-	"wpn_fps_upg_fl_ass_laser",
-	"wpn_fps_upg_ass_ns_jprifles",
-	"wpn_fps_upg_ass_ns_linear",
-	"wpn_fps_upg_ass_ns_surefire",
-	"wpn_fps_upg_o_cs",
-	"wpn_fps_upg_o_rx30",
-	"wpn_fps_upg_o_rx01",
-	"wpn_fps_upg_o_reflex",
-	"wpn_fps_upg_o_eotech_xps",
-	"wpn_fps_upg_m4_m_l5",
-	"wpn_fps_upg_ass_ns_battle",
-	"wpn_fps_upg_fl_ass_utg",
-	"wpn_fps_upg_o_45rds",
-	"wpn_fps_upg_o_spot",
-	"wpn_fps_m4_upg_m_quick",
-	"wpn_fps_snp_tti_g_grippy",
-	"wpn_fps_upg_o_xpsg33_magnifier",
-	"wpn_fps_upg_o_45rds_v2",
-	"wpn_fps_upg_ns_ass_smg_v6",
-	"wpn_fps_upg_g_m4_surgeon",
-	"wpn_fps_upg_o_sig",
-	"wpn_fps_upg_o_bmg",
-	"wpn_fps_upg_o_uh",
-	"wpn_fps_upg_o_fc1",
-	"wpn_fps_upg_o_45steel",
-	--Stuff--
-	"wpn_fps_upg_i_slower_rof",
-	"wpn_fps_upg_i_faster_rof"		
-}	
+--OICW
+self.parts.wpn_fps_ass_osipr_scope.material_parameters = {
+	gfx_reddot = {
+		{
+			id = Idstring("holo_reticle_scale"),
+			value = Vector3(0.2, 1.5, 40),
+			condition = function ()
+				return not _G.IS_VR
+			end
+		},
+		{
+			id = Idstring("holo_reticle_scale"),
+			value = Vector3(0.2, 1, 20),
+			condition = function ()
+				return _G.IS_VR
+			end
+		}
+	}
+}
 	
 --SC mod shit below--
 

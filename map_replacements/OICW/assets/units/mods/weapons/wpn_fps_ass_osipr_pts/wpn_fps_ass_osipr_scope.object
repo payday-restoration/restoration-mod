@@ -8,6 +8,7 @@
         <object enabled="true" name="g_gfx_lens" />
         <object enabled="true" name="g_gfx_lens_2" />
         <object enabled="true" name="g_gfx_lens_3" />
+		<object enabled="true" name="g_inner" />
         <object enabled="false" name="g_screen" />
         <object enabled="false" name="g_vr_lens" />
         <object enabled="false" name="g_vr_gfx_lens" />

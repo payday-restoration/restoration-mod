@@ -8698,6 +8698,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.osipr.stats_modifiers = nil
+	self.osipr.timers.reload_not_empty = 2.16
 	self.osipr.timers.reload_empty = 3.5		
 	self.osipr.panic_suppression_chance = 0.0		
 	self.osipr.has_description = true

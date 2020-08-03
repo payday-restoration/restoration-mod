@@ -26,6 +26,10 @@
         <reflection_texture global_texture="current_global_texture" type="cubemap"/>
         <variable value="0.91999995708466 0 1" type="vector3" name="fresnel_settings"/>
     </material>
+    <material render_template="effect:DIFFUSE0_TEXTURE" name="mtr_display" version="2">
+        <variable type="scalar" name="intensity" value="reddot"/>
+        <diffuse_texture file="units/mods/weapons/wpn_fps_ass_osipr_pts/oicw_rangefinder_df"/>
+    </material>
     <material render_template="effect:BLEND_ADD:SCOPE:SCOPE_INNER_RETICLE:SCOPE_LENSE_DISTORTION" name="screen" version="2">
         <diffuse_texture file="units/pd2_dlc1/weapons/wpn_effects_textures/wpn_sight_reticle_1_il"/>
         <variable type="scalar" name="scope_fadeout" value="0"/>

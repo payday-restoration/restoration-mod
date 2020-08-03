@@ -251,7 +251,6 @@ function CopDamage:damage_fire(attack_data)
 
 		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and alive(attack_data.weapon_unit) and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
-			managers.hud:start_buff("overkill", managers.player:upgrade_value("temporary", "overkill_damage_multiplier")[2])
 		end
 
 		if attacker_unit == managers.player:player_unit() then
@@ -868,7 +867,6 @@ function CopDamage:damage_bullet(attack_data)
 
 			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
-				managers.hud:start_buff("overkill", managers.player:upgrade_value("temporary", "overkill_damage_multiplier")[2])
 			end
 
 			if is_civilian then
@@ -1942,7 +1940,6 @@ function CopDamage:damage_explosion(attack_data)
 
 		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
-			managers.hud:start_buff("overkill", managers.player:upgrade_value("temporary", "overkill_damage_multiplier")[2])
 		end
 
 		if attacker_unit == managers.player:player_unit() then
@@ -2285,7 +2282,6 @@ function CopDamage:damage_simple(attack_data)
 
 		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
-			managers.hud:start_buff("overkill", managers.player:upgrade_value("temporary", "overkill_damage_multiplier")[2])
 		end
 
 		if attacker_unit == managers.player:player_unit() then

@@ -479,9 +479,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.temporary.first_aid_damage_reduction = {{0.5, 5}}
 
 			--Painkillers--
-				self.values.temporary.passive_revive_damage_reduction = {
+				self.first_aid_kit.revived_damage_reduction = {
 					{0.75, 5}, --Basic
-					{0.5, 5}   --Ace
+					{0.5, 5} --Ace
 				}
 
 			--Uppers

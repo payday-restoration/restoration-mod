@@ -984,17 +984,6 @@ function PlayerManager:get_best_cocaine_damage_absorption(my_peer_id)
 	return absorption * multiplier, best_peer_id
 end
 
-function PlayerManager:_on_enemy_killed_bloodthirst(equipped_unit, variant, killed_unit)
-	if variant == "melee" then
-		local data = self:upgrade_value("player", "melee_kill_increase_reload_speed", 0)
-
-		if data ~= 0 then
-			self._temporary_properties:activate_property("bloodthirst_reload_speed", data[2], data[1])
-			managers.hud:start_buff("bloodthirst", data[2])
-		end
-	end
-end
-
 --Adds buff tracker call.
 function PlayerManager:disable_cooldown_upgrade(category, upgrade)
 	local upgrade_value = self:upgrade_value(category, upgrade)

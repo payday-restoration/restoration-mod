@@ -368,7 +368,7 @@
 					<option type="number" default_value="8" min="1" max="8" step="1" show_value="true" name="Info_Count"/>
 					<option type="bool" default_value="true" name="Info_ammo_efficiency"/>
 					<option type="bool" default_value="true" name="Info_single_shot_fast_reload"/> <!-- aggressive reload -->
-					<option type="bool" default_value="true" name="Info_bloodthirst"/>
+					<option type="bool" default_value="true" name="Info_bloodthirst_reload_speed"/>
 					<option type="bool" default_value="true" name="Info_bullet_storm"/>
 					<option type="bool" default_value="true" name="Info_revive_damage_reduction"/> <!-- Combat Medic -->
 					<option type="bool" default_value="true" name="Info_desperado"/>
@@ -376,7 +376,8 @@
 					<option type="bool" default_value="true" name="Info_infiltrator"/>
 					<option type="bool" default_value="true" name="Info_long_dis_revive"/> <!-- inspire -->
 					<option type="bool" default_value="true" name="Info_messiah"/>
-					<option type="bool" default_value="true" name="Info_overkill"/>
+					<option type="bool" default_value="true" name="Info_overkill_damage_multiplier"/>
+					<option type="bool" default_value="true" name="Info_revived_damage_reduction"/> <!-- Painkillers -->
 					<option type="bool" default_value="true" name="Info_first_aid_damage_reduction"/> <!-- Quick Fix -->
 					<option type="bool" default_value="true" name="Info_rogue"/>
 					<option type="bool" default_value="true" name="Info_increased_movement_speed"/> <!-- Running From Death -->

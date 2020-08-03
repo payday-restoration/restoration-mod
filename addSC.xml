@@ -48,7 +48,7 @@
 	<!--Info Hud Skill Icons-->
 	<texture path="guis/textures/pd2/skilltree/info_ammo_efficiency" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_single_shot_fast_reload" force="false" load="false"/> <!-- Aggressive Reload -->
-	<texture path="guis/textures/pd2/skilltree/info_bloodthirst" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_bloodthirst_reload_speed" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_bullet_storm" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_revive_damage_reduction" force="false" load="false"/> <!-- Combat Medic -->
 	<texture path="guis/textures/pd2/skilltree/info_desperado" force="false" load="false"/>
@@ -56,7 +56,8 @@
 	<texture path="guis/textures/pd2/skilltree/info_infiltrator" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_long_dis_revive" force="false" load="false"/> <!-- inspire -->
 	<texture path="guis/textures/pd2/skilltree/info_messiah" force="false" load="false"/>
-	<texture path="guis/textures/pd2/skilltree/info_overkill" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_overkill_damage_multiplier" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_revived_damage_reduction" force="false" load="false"/> <!-- Painkillers -->
 	<texture path="guis/textures/pd2/skilltree/info_first_aid_damage_reduction" force="false" load="false"/> <!-- Quick Fix -->
 	<texture path="guis/textures/pd2/skilltree/info_rogue" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_increased_movement_speed" force="false" load="false"/> <!-- Running From Death -->

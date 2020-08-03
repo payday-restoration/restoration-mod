@@ -11,7 +11,7 @@ Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 		if self._use_armor_piercing then
 			break
 		end
-		self._use_armor_piercing = managers.player:upgrade_value(category, "ap_bullets")
+		self._use_armor_piercing = managers.player:upgrade_value_nil(category, "ap_bullets")
 	end
 end)
 

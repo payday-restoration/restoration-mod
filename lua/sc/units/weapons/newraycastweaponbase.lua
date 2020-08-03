@@ -403,9 +403,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		if stats.ads_speed_mult then
 			self._ads_speed_mult = self._ads_speed_mult * stats.ads_speed_mult
 		end
-		if stats.rof_mult then
-			self._fire_rate_multiplier = (self._fire_rate_multiplier or 1) * stats.rof_mult
-		end
 		if stats.hipfire_mod then
 			self._hipfire_mod = self._hipfire_mod * stats.hipfire_mod 
 		end

@@ -44,19 +44,6 @@ function BlackMarketManager:fire_rate_multiplier(name, categories, silencer, det
 	return multiplier
 end
 
-function BlackMarketManager:fire_rate_multiplier(name, categories, silencer, detection_risk, current_state, blueprint)
-	local multiplier = 1
-	multiplier = multiplier + 1 - managers.player:upgrade_value(name, "fire_rate_multiplier", 1)
-	multiplier = multiplier + 1 - managers.player:upgrade_value("weapon", "fire_rate_multiplier", 1)
-
-	for _, category in ipairs(categories) do
-		multiplier = multiplier + 1 - managers.player:upgrade_value(category, "fire_rate_multiplier", 1)
-	end
-
-	return self:_convert_add_to_mul(multiplier)
-end
-
-
 function BlackMarketManager:damage_multiplier(name, categories, silencer, detection_risk, current_state, blueprint)
 	local multiplier = 1
 	if tweak_data.weapon[name] and tweak_data.weapon[name].ignore_damage_upgrades then

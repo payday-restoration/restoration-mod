@@ -83,6 +83,7 @@
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/green_glass_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/green_glass_texture_df"/>
+		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/oicw_rangefinder_df"/>
 		
 		<animation path="anims/fps/oicw/oicw_reload" load="true"/>
 		<animation path="anims/fps/oicw/oicw_reload_not_empty" load="true"/>

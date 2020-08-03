@@ -1297,7 +1297,10 @@ function CopDamage:damage_melee(attack_data)
 
 				local job = Global.level_data and Global.level_data.level_id
 
-				if job ~= "short1_stage1" or job ~= "short1_stage2" then
+				if job == "short1_stage1" or job == "short1_stage2" then
+					--Just in case, cause otherwise it apparently screws everything up
+					snatch_pager = false
+				else
 					if managers.player:upgrade_value("player", "melee_kill_snatch_pager_chance", 0) > math.rand(1) then
 						if self._unit:movement():cool() then
 							snatch_pager = true

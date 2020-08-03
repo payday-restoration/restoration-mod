@@ -1031,7 +1031,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			
 			--Rifleman
 			["menu_rifleman_sc"] = "Rifleman",
-			["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour snap to zoom is ##50%## faster with all weapons.\n\nACE: ##$pro##\nYou gain a ##35%## accuracy bonus while aiming down sights with all rifles.",		
+			["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour snap to zoom is ##50%## faster with all weapons.\n\nACE: ##$pro##\nYou gain a ##30%## accuracy bonus while aiming down sights with all rifles.",		
 
 			--Aggressive Reload
 			["menu_engineering_beta_sc"] = "Aggressive Reload",
@@ -1118,7 +1118,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
-		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability is increased with all rifles by ##4.##\n\nACE: ##$pro##\nYou gain ##10## weapon accuracy while standing still.",
+		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability is increased with all rifles by ##4.##\n\nACE: ##$pro##\nAny killing headshot will increase your rate of fire by ##20%## for ##6## seconds. Can only be triggered by rifles and SMGs set to semi-auto.",
 
 		--Kilmer--	
 		["menu_heavy_impact_beta_sc"] = "Kilmer",

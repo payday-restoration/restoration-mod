@@ -574,6 +574,12 @@ function PlayerManager:check_skills()
 	else
 		self._message_system:unregister(Message.OnEnemyKilled, "special_double_ammo_drop")
 	end
+
+	if self:has_category_upgrade("temporary", "headshot_fire_rate_mult") then
+		self._message_system:register(Message.OnHeadShot, "sharpshooter", callback(self, self, "_trigger_sharpshooter"))
+	else
+		self._message_system:unregister(Message.OnHeadShot, "sharpshooter")
+	end
 end
 
 --The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.
@@ -797,6 +803,17 @@ function PlayerManager:_dodge_healing_no_armor()
 	local damage_ext = self:player_unit():character_damage()
 	if not (damage_ext:get_real_armor() > 0) then
 		damage_ext:restore_health(self:upgrade_value("player", "dodge_heal_no_armor"), false)
+	end
+end
+
+--Boosts ROF on headshot gills with single fire guns.
+function PlayerManager:_trigger_sharpshooter(unit, attack_data)
+	local weapon_unit = self:equipped_weapon_unit()
+	local attacker_unit = attack_data.attacker_unit
+	local variant = attack_data.variant
+
+	if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") and attack_data.result.type == "death" then
+		self:activate_temporary_upgrade("temporary", "headshot_fire_rate_mult")
 	end
 end
 

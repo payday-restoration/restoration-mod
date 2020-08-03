@@ -26,7 +26,7 @@ core:import("CoreEvent")
 		_setup_player_info_hud_pd2_original(self,...)
 		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
 		self._skill_list = HUDSkill:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
-		self._bloody_screen = HUDEffectScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
+		self._effect_screen = HUDEffectScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
 			--managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel
 			--[[
 --setup radial mouse menu
@@ -255,7 +255,7 @@ core:import("CoreEvent")
 
 	function HUDManager:activate_effect_screen(duration, color)
 		--Apply the effect screen with a color over a duration.
-		self._bloody_screen:do_effect_screen(duration, color)
+		self._effect_screen:do_effect_screen(duration, color)
 	end
 
 	--Functions to interface with the buff tracker.

@@ -110,6 +110,8 @@
 	"RestorationModInfo_rogueDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_increased_movement_speedTitleID" : "Running From Death",
 	"RestorationModInfo_increased_movement_speedDescID" : "Enables or disables tracking of this specific skill.",
+	"RestorationModInfo_headshot_fire_rate_multTitleID" : "Sharpshooter",
+	"RestorationModInfo_headshot_fire_rate_multDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_trigger_happyTitleID" : "Trigger Happy",
 	"RestorationModInfo_trigger_happyDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_dmg_multiplier_outnumberedTitleID" : "Underdog",

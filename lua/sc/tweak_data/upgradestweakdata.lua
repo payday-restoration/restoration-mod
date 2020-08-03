@@ -831,7 +831,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.recoil_index_addend = {1}
 					self.values.assault_rifle.recoil_index_addend = {1}
 				--Ace
-					self.values.player.not_moving_accuracy_increase = {2}
+					self.values.temporary.headshot_fire_rate_mult = {{1.2, 6}}
 				
 			--Kilmer
 				--Basic
@@ -849,8 +849,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.weapon.enter_steelsight_speed_multiplier = {1.5}
 				--Ace
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.65}
-					self.values.snp.steelsight_accuracy_inc = {0.65}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.7}
+					self.values.snp.steelsight_accuracy_inc = {0.7}
 					
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
@@ -2138,7 +2138,16 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "passive_health_multiplier",
 			value = 10
 		}
-	}	
+	}
+	self.definitions.temporary_headshot_fire_rate_mult = {
+		category = "temporary",
+		name_id = "menu_temporary_headshot_fire_rate_mult",
+		upgrade = {
+			category = "temporary",
+			upgrade = "headshot_fire_rate_mult",
+			value = 1
+		}
+	}
 	self.definitions.temporary_damage_speed_multiplier_1 = {
 		category = "temporary",
 		name_id = "menu_temporary_damage_speed_1",

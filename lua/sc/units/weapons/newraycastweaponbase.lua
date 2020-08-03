@@ -340,7 +340,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	
 	self._reload_speed_mult = self._reload_speed_mult or 1
 	self._ads_speed_mult = self._ads_speed_mult or 1
-	self._rof_mult = 1
 	self._hipfire_mod = 1
 	self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
 	
@@ -405,7 +404,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 			self._ads_speed_mult = self._ads_speed_mult * stats.ads_speed_mult
 		end
 		if stats.rof_mult then
-			self._rof_mult = self._rof_mult * stats.rof_mult
+			self._fire_rate_multiplier = (self._fire_rate_multiplier or 1) * stats.rof_mult
 		end
 		if stats.hipfire_mod then
 			self._hipfire_mod = self._hipfire_mod * stats.hipfire_mod 
@@ -601,30 +600,16 @@ end
 					
 --[[	fire rate multipler in-game stuff	]]--
 function NewRaycastWeaponBase:fire_rate_multiplier()
-	local multiplier = self._rof_mult or 1
+	local multiplier = self._fire_rate_multiplier or 1
 	
 	if self:in_burst_mode() then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 	end		
-			
-	if not self:upgrade_blocked(tweak_data.weapon[self._name_id].category, "fire_rate_multiplier") then
-		if (self._name_id == "tec9" or self._name_id == "c96") and self._block_eq_aced then
-		else
-			multiplier = multiplier * managers.player:upgrade_value(self:weapon_tweak_data().category, "fire_rate_multiplier", 1)
-		end
-	end
-	if not self:upgrade_blocked("weapon", "fire_rate_multiplier") then
-		if (self._name_id == "tec9" or self._name_id == "c96") and self._block_eq_aced then
-		else
-			multiplier = multiplier * managers.player:upgrade_value("weapon", "fire_rate_multiplier", 1)
-		end
-	end
-	if not self:upgrade_blocked(self._name_id, "fire_rate_multiplier") then
-		if (self._name_id == "tec9" or self._name_id == "c96") and self._block_eq_aced then
-		else
-			multiplier = multiplier * managers.player:upgrade_value(self._name_id, "fire_rate_multiplier", 1)
-		end
-	end
+	
+	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
+		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+	end 
+
 	return multiplier
 end
 

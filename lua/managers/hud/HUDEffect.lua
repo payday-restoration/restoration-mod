@@ -21,14 +21,16 @@ function HUDEffectScreen:init(hud)
 end
 
 function HUDEffectScreen:do_effect_screen(duration, color)
-	self._effect_panel:set_alpha(1)
-	self._duration = duration
-	self._effect_panel:set_color(Color(color[1], color[2], color[3]))
-	if self._active == true then
-		self._effect_panel:stop()
+	if not _G.is_vr then
+		self._effect_panel:set_alpha(1)
+		self._duration = duration
+		self._effect_panel:set_color(Color(color[1], color[2], color[3]))
+		if self._active == true then
+			self._effect_panel:stop()
+		end
+		self._active = true
+		self._effect_panel:animate(callback(self, self, "_fadeout_effect_screen"))
 	end
-	self._active = true
-	self._effect_panel:animate(callback(self, self, "_fadeout_effect_screen"))
 end
 
 function HUDEffectScreen:_fadeout_effect_screen()

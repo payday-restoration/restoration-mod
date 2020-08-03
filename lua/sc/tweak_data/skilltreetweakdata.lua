@@ -1112,7 +1112,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_not_moving_accuracy_increase_bonus_1"
+						"temporary_headshot_fire_rate_mult"
 					},
 					cost = self.costs.pro
 				}

@@ -61,6 +61,7 @@
 	<texture path="guis/textures/pd2/skilltree/info_first_aid_damage_reduction" force="false" load="false"/> <!-- Quick Fix -->
 	<texture path="guis/textures/pd2/skilltree/info_rogue" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_increased_movement_speed" force="false" load="false"/> <!-- Running From Death -->
+	<texture path="guis/textures/pd2/skilltree/info_headshot_fire_rate_mult" force="false" load="false"/> <!-- Sharpshooter Ace -->
 	<texture path="guis/textures/pd2/skilltree/info_trigger_happy" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_dmg_multiplier_outnumbered" force="false" load="false"/> <!-- Underdog -->
 	<texture path="guis/textures/pd2/skilltree/info_unseen_strike" force="false" load="false"/>

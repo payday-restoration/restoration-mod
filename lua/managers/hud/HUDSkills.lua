@@ -96,6 +96,9 @@ end
 --Trigger the countdown for the skill. When it ends, remove it from the active table.
 --If animation is already running, it resets progress.
 function HUDSkill:trigger_buff(name, duration)
+	if not duration or duration == 0 then
+		return
+	end
 	if not self:_check_skill_active(name) then
 		self:add_skill(name)
 	end
@@ -110,6 +113,9 @@ end
 --Trigger the cooldown visuals.
 --If animation is already running, it resets progress.
 function HUDSkill:trigger_cooldown(name, duration)
+	if not duration or duration == 0 then
+		return
+	end
 	if not self:_check_skill_active(name) then
 		return
 	end

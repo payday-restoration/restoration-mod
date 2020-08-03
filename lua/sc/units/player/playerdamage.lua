@@ -800,6 +800,45 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	return 
 end
 
+--Include deflection in calcs. Doesn't work in cases where armor is pierced, but I don't feel like testing those atm.
+function PlayerDamage:_check_chico_heal(attack_data)
+	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
+		local dmg_to_hp_ratio = managers.player:temporary_upgrade_value("temporary", "chico_injector", 0)
+
+		if managers.player:has_category_upgrade("player", "chico_injector_low_health_multiplier") then
+			local upg_values = managers.player:upgrade_value("player", "chico_injector_low_health_multiplier")
+
+			if self:health_ratio() < upg_values[1] then
+				dmg_to_hp_ratio = dmg_to_hp_ratio + upg_values[2]
+			end
+		end
+
+		local health_received = attack_data.damage * dmg_to_hp_ratio
+
+		if self._armor_broken then
+			health_received = health_received * self._deflection
+		end
+
+		if managers.player:has_category_upgrade("player", "chico_injector_health_to_speed") and self:_max_health() < self:get_real_health() + health_received then
+			self._injector_overflow = self._injector_overflow or 0
+			local diff = self:_max_health() - self:get_real_health()
+
+			self:restore_health(diff, true)
+
+			health_received = health_received - diff
+			self._injector_overflow = self._injector_overflow + health_received
+			local upg_values = managers.player:upgrade_value("player", "chico_injector_health_to_speed")
+			local times = math.floor(self._injector_overflow / upg_values[1])
+
+			managers.player:speed_up_grenade_cooldown(upg_values[2] * times)
+
+			self._injector_overflow = self._injector_overflow - upg_values[1] * times
+		else
+			self:restore_health(health_received, true)
+		end
+	end
+end
+
 --This mechanic is disabled to give players predictable armor regen.
 function PlayerDamage:_upd_suppression(t, dt)
 	--nothing
@@ -1218,7 +1257,7 @@ end
 Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(self, no_sound)
 	if self._armor_broken then
 		self:consume_armor_stored_health()
-		self._armor_broken = false
+		self._armor_broken = nil
 	end
 end)
 

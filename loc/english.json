@@ -515,7 +515,7 @@
 	"RestorationModMaskOnTextTitleID" : "Mask on text",
 	"RestorationModStopAllBotsTitleID" : "Stop All Bots",
 	"RestorationModStopAllBotsDescID" : "Stops all bots by holding the stop bot key",
-	"RestorationModPONRTracksTitleID" : "Point Of No Return Pro-Jobs Tracks",
+	"RestorationModPONRTracksTitleID" : "Point Of No Return Music",
 	"RestorationModPONRTracksDescID" : "Select the music track for Pro-Jobs when the point of no return starts",
 	"RestorationModMusicShuffleTitleID" : "Music Shuffle",
 	"RestorationModMusicShuffleDescID" : "Changes the music track after assault ends",

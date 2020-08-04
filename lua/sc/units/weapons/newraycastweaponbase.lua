@@ -160,6 +160,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	if current_state._moving then
 		--Get spread area from stability stat.
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
+
 		--Add moving spread penalty reduction.
 		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
 		spread_area = spread_area + moving_spread
@@ -740,20 +741,4 @@ function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
 	end
 	ammo = math.floor(ammo)
 	return ammo
-end
-
---Returns whether or not a bipod is active.
-function RaycastWeaponBase:bipod_active()
-	local bipod_part = managers.weapon_factory:get_parts_from_weapon_by_perk("bipod", self._parts)
-	local bipod_unit = nil
-
-	if bipod_part and bipod_part[1] then
-		bipod_unit = bipod_part[1].unit:base()
-	end
-
-	if bipod_unit then
-		retval = bipod_unit:is_deployed()
-	end
-	
-	return retval
 end

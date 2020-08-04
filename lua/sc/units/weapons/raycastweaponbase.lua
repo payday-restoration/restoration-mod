@@ -189,7 +189,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 
 		if not blank then
 			--Knock down skill now checks for whether or not a bipod is active.
-			local knock_down = weapon_unit:base()._knock_down and weapon_unit:base().bipod_active and weapon_unit:base():bipod_active() and weapon_unit:base()._knock_down > 0 and math.random() < weapon_unit:base()._knock_down
+			local knock_down = weapon_unit:base()._knock_down and managers.player._current_state == "bipod" and weapon_unit:base()._knock_down > 0 and math.random() < weapon_unit:base()._knock_down
 			result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, weapon_unit:base()._use_armor_piercing, false, knock_down, weapon_unit:base()._stagger, weapon_unit:base()._variant)
 		end
 

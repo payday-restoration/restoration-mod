@@ -3079,7 +3079,8 @@ function WeaponTweakData:_init_stats()
     	moving_crouching = 3,
     	crouching = 3,
     	moving_steelsight = 1,
-    	steelsight = 1
+    	steelsight = 1,
+    	bipod = 1
     }
 
     --Controls how much total ammo influences pickup Following the formula pickup = (base_pickup% + exponent*sqrt(damage)) * ammo * skill_mults

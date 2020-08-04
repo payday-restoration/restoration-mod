@@ -254,3 +254,7 @@ function PlayerBipod:_update_check_actions(t, dt)
 	self:_check_action_night_vision(t, input)
 	self:_find_pickups(t)
 end
+
+function PlayerBipod:get_movement_state()
+	return "bipod"
+end

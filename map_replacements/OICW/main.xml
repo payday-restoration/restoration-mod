@@ -5,6 +5,9 @@
 	<WeaponMod id="wpn_fps_ass_osipr_b_standard" based_on="wpn_fps_m4_uupg_b_medium_vanilla" type="barrel" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_body" based_on="wpn_fps_m4_lower_reciever" type="lower_reciever" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_bolt" based_on="wpn_fps_ass_scar_body_standard" type="extra" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
+	<WeaponMod id="wpn_fps_ass_osipr_gl" based_on="wpn_fps_ass_contraband_gl_m203" type="underbarrel" a_obj="a_g" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
+		<bullet_objects amount="0"/> <!--temp-->
+	</WeaponMod>
 	<WeaponMod id="wpn_fps_ass_osipr_scope" based_on="wpn_fps_upg_o_cs" type="sight" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
 		<stats zoom="10"/>
 	</WeaponMod>
@@ -24,6 +27,7 @@
 				<value_node value="wpn_fps_m4_uupg_m_std_vanilla"/>
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
 				<value_node value="wpn_fps_ass_osipr_scope"/>
+				<value_node value="wpn_fps_ass_osipr_gl"/>
 			</default_blueprint>
 			<uses_parts>
 				<value_node value="wpn_fps_ass_osipr_b_standard"/>
@@ -31,6 +35,7 @@
 				<value_node value="wpn_fps_m4_uupg_m_std_vanilla"/>
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
 				<value_node value="wpn_fps_ass_osipr_scope"/>
+				<value_node value="wpn_fps_ass_osipr_gl"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_large"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_medium"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_small"/>
@@ -72,6 +77,21 @@
 			</standard>
 		</stance>
 	</Weapon>
+	<Weapon>
+		<weapon id="osipr_gl" based_on="contraband_m203" CLIP_AMMO_MAX="6" NR_CLIPS_MAX="2">
+			<stats/>
+			<animations/>
+			<sounds fire="arbiter_fire"/>
+			<timers reload_not_empty="3.34" reload_empty="4.5" equip_underbarrel="0" unequip_underbarrel="0"/>
+		</weapon>
+		<factory id="wpn_fps_ass_osipr_gl" unit="units/mods/weapons/wpn_fps_ass_osipr/wpn_fps_ass_osipr_gl">
+			<animations/>
+			<adds/>
+			<override/>
+			<default_blueprint/>
+			<uses_parts/>
+		</factory>
+	</Weapon>
 	
 	<AddFiles directory="assets">
 		<unit_npc path="units/mods/weapons/wpn_fps_ass_osipr/wpn_fps_ass_osipr"/>
@@ -79,6 +99,7 @@
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_bolt"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_b_standard"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_scope"/>
+		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/green_glass_df"/>
@@ -107,6 +128,9 @@
 		<animation path="anims/fps/oicw/oicw_get_up" load="true"/>
 		<animation path="anims/fps/oicw/oicw_gogo" load="true"/>
 		<animation path="anims/fps/oicw/oicw_inspect" load="true"/>
+		<animation path="anims/fps/oicw/oicw_bipod_recoil" load="true"/>
+		<animation path="anims/fps/oicw/oicw_bipod_reload" load="true"/>
+		<animation path="anims/fps/oicw/oicw_bipod_reload_not_empty" load="true"/>
 
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/osipr"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/outline/osipr"/>

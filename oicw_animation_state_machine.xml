@@ -7,6 +7,7 @@
 		</search>
 		<target mode="append">
 			<global name="oicw" value="0"/>
+			<global name="osipr_underbarrel" value="0"/>
 		</target>
 	</tweak>
 </tweaks>

@@ -31,6 +31,31 @@
 			<anim name="oicw_tased_boost" 							file="anims/fps/m4/m4_tased_boost" blend_set="all"/>
 			<anim name="oicw_tased_exit" 							file="anims/fps/m4/m4_tased_exit" blend_set="all"/>
 			<anim name="oicw_inspect" 								file="anims/fps/oicw/oicw_inspect" blend_set="all"/>
+			
+			<anim name="osipr_underbarrel_com_get_up" 				file="anims/fps/oicw/oicw_get_up" blend_set="all"/>
+			<anim name="osipr_underbarrel_com_inspect" 				file="anims/fps/oicw/oicw_inspect" blend_set="all"/>
+			<anim name="osipr_underbarrel_com_down" 				file="anims/fps/oicw/oicw_com_var1" blend_set="all"/>
+			<anim name="osipr_underbarrel_com_stop" 				file="anims/fps/oicw/oicw_com_var5" blend_set="all"/>
+			<anim name="osipr_underbarrel_com_come" 				file="anims/fps/oicw/oicw_com_var6" blend_set="all"/>
+			<anim name="osipr_underbarrel_com_point" 				file="anims/fps/oicw/oicw_com_var7" blend_set="all"/>
+			<anim name="osipr_underbarrel_enter" 					file="anims/fps/oicw/oicw_idle" blend_set="all"/>
+			<anim name="osipr_underbarrel_equip" 					file="anims/fps/oicw/oicw_equip" blend_set="all"/>
+			<anim name="osipr_underbarrel_exit" 					file="anims/fps/oicw/oicw_idle" blend_set="all"/>
+			<anim name="osipr_underbarrel_gogo" 					file="anims/fps/oicw/oicw_gogo" blend_set="all"/>
+			<anim name="osipr_underbarrel_idle" 					file="anims/fps/oicw/oicw_idle" blend_set="all"/>
+			<anim name="osipr_underbarrel_melee" 					file="anims/fps/oicw/oicw_melee" blend_set="all"/>
+			<anim name="osipr_underbarrel_melee_miss" 				file="anims/fps/oicw/oicw_melee_miss" blend_set="all"/>
+			<anim name="osipr_underbarrel_recoil" 					file="anims/fps/oicw/oicw_bipod_recoil" blend_set="all"/>
+			<anim name="osipr_underbarrel_recoil_enter" 			file="anims/fps/oicw/oicw_bipod_recoil" blend_set="all"/>
+			<anim name="osipr_underbarrel_recoil_exit" 				file="anims/fps/oicw/oicw_bipod_recoil" blend_set="all"/>
+			<anim name="osipr_underbarrel_recoil_loop" 				file="anims/fps/oicw/oicw_bipod_recoil" blend_set="all"/>
+			<anim name="osipr_underbarrel_reload" 					file="anims/fps/oicw/oicw_bipod_reload" blend_set="all"/>
+			<anim name="osipr_underbarrel_reload_not_empty" 		file="anims/fps/oicw/oicw_bipod_reload_not_empty" blend_set="all"/>
+			<anim name="osipr_underbarrel_use" 						file="anims/fps/oicw/oicw_use" blend_set="all"/>
+			<anim name="osipr_underbarrel_sprint" 					file="anims/fps/oicw/oicw_sprint" blend_set="all"/>
+			<anim name="osipr_underbarrel_sprint_enter" 			file="anims/fps/oicw/oicw_sprint_enter" blend_set="all"/>
+			<anim name="osipr_underbarrel_sprint_exit" 				file="anims/fps/oicw/oicw_sprint_exit" blend_set="all"/>
+			<anim name="osipr_underbarrel_unequip" 					file="anims/fps/oicw/oicw_unequip" blend_set="all"/>
 		</target>
 	</tweak>
 </tweaks>

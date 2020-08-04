@@ -1,0 +1,10 @@
+<materials version="3" group="weapon_contraband">
+	<material name="mtr_m203" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+		<diffuse_texture file="units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/m203_df" />
+		<bump_normal_texture file="units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/m203_nm" />
+	</material>
+    <material name="mtr_grenade" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP:NORMALMAP_UV1" version="2">
+        <diffuse_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_gre_m79_pts/m79_grenade_df"/>
+        <bump_normal_texture file="units/pd2_dlc_gage_assault/weapons/wpn_fps_gre_m79_pts/m79_grenade_nm"/>
+    </material>
+</materials>

@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl" orientation_object="rp_wpn_fps_ass_contraband_gl_m203" />
+	<animations>
+		<animation_group name="reload_ul">
+			<object name="a_reload_grenade" enabled="true" />
+			<object name="a_reload_barrel" enabled="true" />
+		</animation_group>
+	</animations>
+	<graphics>
+		<object name="g_lock" enabled="false" />
+		<object name="g_b" enabled="false" />
+		<object name="g_base" enabled="false" />
+		<object name="g_grenade_shell" 	enabled="false" />
+		<object name="g_grenade_1" 		enabled="false" />
+	</graphics>
+</dynamic_object>

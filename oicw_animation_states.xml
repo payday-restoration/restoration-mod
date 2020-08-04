@@ -8,6 +8,21 @@
 		<target mode="attach">
 			<to name="reload_oicw" 						redirect="fps/reload/oicw"/>
 			<to name="reload_not_empty_oicw" 			redirect="fps/reload_not_empty/oicw"/>
+			
+			<to name="underbarrel_enter_osipr" redirect="fps/enter/underbarrel/osipr"/>
+			<to name="underbarrel_exit_osipr" redirect="fps/exit/underbarrel/osipr"/>
+			<to name="underbarrel_idle_osipr" redirect="fps/idle/underbarrel/osipr"/>
+			<to name="underbarrel_recoil_osipr" redirect="fps/recoil/underbarrel/osipr"/>
+			<to name="underbarrel_recoil_enter_osipr" redirect="fps/recoil_enter/underbarrel/osipr"/>
+			<to name="underbarrel_recoil_exit_osipr" redirect="fps/recoil_exit/underbarrel/osipr"/>
+			<to name="underbarrel_recoil_loop_osipr" redirect="fps/recoil_loop/underbarrel/osipr"/>
+			<to name="underbarrel_reload_osipr" redirect="fps/reload/underbarrel/osipr"/>
+			<to name="underbarrel_reload_not_empty_osipr" redirect="fps/reload_not_empty/underbarrel/osipr"/>
+			<to name="underbarrel_melee_osipr" redirect="fps/melee/underbarrel/osipr"/>
+			<to name="underbarrel_melee_miss_osipr" redirect="fps/melee_miss/underbarrel/osipr"/>
+			<to name="underbarrel_start_running_osipr" redirect="fps/start_running/underbarrel/osipr"/>
+			<to name="underbarrel_running_osipr" redirect="fps/running/underbarrel/osipr"/>
+			<to name="underbarrel_stop_running_osipr" redirect="fps/stop_running/underbarrel/osipr"/>
 		</target>
 	</tweak>
 	
@@ -18,7 +33,8 @@
 			<anim name="m4_idle" weight="m4"/>
 		</search>
 		<target mode="append">
-			<anim name="oicw_idle" weight="oicw"/>
+			<anim name="oicw_idle" weight="oicw * (1-steelsight_weight)"/>
+			<anim name="osipr_underbarrel_idle" weight="osipr_underbarrel * (1-steelsight_weight)"/>
 		</target>
 	</tweak>
 	
@@ -83,6 +99,141 @@
 				</keys>
 				<exit name="fps/idle"/>
 			</state>
+		
+		<!--OICW Grenade Launcher-->
+		<state name="fps/enter/underbarrel/osipr" type="once" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_enter"/>
+			<keys>
+				<key at="trigger" trigger="contraband_back_in_hand" callback="play_sound" class_name="base" param1="contraband_back_in_hand"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt_soft" callback="play_sound" class_name="base" param1="wp_foley_generic_tilt_soft"/>
+			</keys>
+			<exit name="fps/idle/underbarrel/osipr"/>
+		</state>
+
+		<state name="fps/exit/underbarrel/osipr" type="once" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_exit"/>
+			<keys>
+				<key at="trigger" trigger="wp_foley_generic_back_in_hand_soft" callback="play_sound" class_name="base" param1="wp_foley_generic_back_in_hand_soft"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt_soft" callback="play_sound" class_name="base" param1="wp_foley_generic_tilt_soft"/>
+			</keys>
+			<exit name="fps/idle"/>
+		</state>
+
+		<state name="fps/equip/underbarrel/osipr" type="mix" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_equip"/>
+		</state>
+
+		<state name="fps/unequip/underbarrel/osipr" type="mix" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_unequip"/>
+		</state>
+
+		<state name="fps/start_running/underbarrel/osipr" type="mix" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_sprint_enter"/>
+			<exit name="fps/running/underbarrel/osipr"/>
+		</state>
+
+		<state name="fps/running/underbarrel/osipr" type="mixloop" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_sprint"/>
+		</state>
+
+		<state name="fps/stop_running/underbarrel/osipr" type="mix" segment="base" speed="2.0">
+			<anim name="osipr_underbarrel_sprint_exit"/>
+			<exit name="fps/idle/underbarrel/osipr"/>
+		</state>
+
+		<state name="fps/melee/underbarrel/osipr" type="mix" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_melee"/>
+			<keys>
+				<key at="enter" callback="anim_clbk_stop_weapon_anim" class_name="base" param1="reload"/>
+				<key at="enter" callback="play_sound" class_name="base" param1="m4_melee_attack"/>
+			</keys>
+			<exit name="fps/idle/underbarrel/osipr"/>
+		</state>
+
+		<state name="fps/melee_miss/underbarrel/osipr" type="mix" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_melee_miss"/>
+			<keys>
+				<key at="enter" callback="anim_clbk_stop_weapon_anim" class_name="base" param1="reload"/>
+				<key at="enter" callback="play_sound" class_name="base" param1="m4_melee_attack"/>
+			</keys>
+			<exit name="fps/idle/underbarrel/osipr"/>
+		</state>
+
+		<state name="fps/idle/underbarrel/osipr" type="mixloop" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_idle"/>
+		</state>
+
+		<state name="fps/recoil/underbarrel/osipr" type="mixloop" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_recoil"/>
+		</state>
+
+		<state name="fps/recoil_enter/underbarrel/osipr" type="once" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_recoil_enter"/>
+			<exit name="fps/idle/underbarrel/osipr"/>
+		</state>
+
+		<state name="fps/recoil_exit/underbarrel/osipr" type="once" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_recoil_exit"/>
+			<exit name="fps/idle/underbarrel/osipr"/>
+		</state>
+
+		<state name="fps/recoil_loop/underbarrel/osipr" type="mixloop" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_recoil_loop"/>
+		</state>
+
+		<state name="fps/reload/underbarrel/osipr" type="once" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_reload"/>
+			<keys>
+				<key at="trigger" trigger="wp_foley_generic_lever_release" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_release"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_grab" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_grab"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_throw" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_throw"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_take_new" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_take_new"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_in_connect" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_in_connect"/>
+				<key at="trigger" trigger="wp_foley_generic_lever_grab" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_grab"/>
+				<key at="trigger" trigger="wp_foley_generic_lever_pull" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_pull"/>
+				<key at="trigger" trigger="wp_foley_generic_back_in_hand" callback="play_sound" class_name="base" param1="wp_foley_generic_back_in_hand"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt_back" callback="play_sound" class_name="base" param1="wp_ak47_tilt_back"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt" callback="play_sound" class_name="base" param1="wp_ak47_tilt"/>
+				<key at="trigger" trigger="hajk_push_mag_release" callback="play_sound" class_name="base" param1="hajk_push_mag_release"/>
+				<key at="trigger" trigger="arbiter_mag_out" callback="play_sound" class_name="base" param1="arbiter_mag_out"/>
+				<key at="trigger" trigger="arbiter_mag_contact" callback="play_sound" class_name="base" param1="arbiter_mag_contact"/>
+				<key at="trigger" trigger="arbiter_mag_in" callback="play_sound" class_name="base" param1="arbiter_mag_in"/>
+				<key at="trigger" trigger="arbiter_mag_slap" callback="play_sound" class_name="base" param1="arbiter_mag_slap"/>
+				<key at="trigger" trigger="arbiter_pull_lever" callback="play_sound" class_name="base" param1="arbiter_pull_lever"/>
+				<key at="trigger" trigger="arbiter_push_button" callback="play_sound" class_name="base" param1="arbiter_push_button"/>
+				<key at="trigger" trigger="arbiter_release_lever" callback="play_sound" class_name="base" param1="arbiter_release_lever"/>				
+				<key at="trigger" trigger="bullet_show" callback="anim_clbk_check_bullet_object" class_name="base" />
+				<key at="trigger" trigger="wp_clip_generic_ass_center" callback="play_sound" class_name="base" param1="wp_clip_generic_ass_center"/>
+			</keys>
+			<exit name="fps/idle/underbarrel/osipr"/>
+		</state>
+		
+		<state name="fps/reload_not_empty/underbarrel/osipr" type="once" segment="base" speed="1.0">
+			<anim name="osipr_underbarrel_reload_not_empty"/>
+			<keys>
+				<key at="trigger" trigger="wp_foley_generic_lever_release" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_release"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_grab" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_grab"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_throw" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_throw"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_take_new" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_take_new"/>
+				<key at="trigger" trigger="wp_foley_generic_clip_in_connect" callback="play_sound" class_name="base" param1="wp_foley_generic_clip_in_connect"/>
+				<key at="trigger" trigger="wp_foley_generic_lever_grab" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_grab"/>
+				<key at="trigger" trigger="wp_foley_generic_lever_pull" callback="play_sound" class_name="base" param1="wp_foley_generic_lever_pull"/>
+				<key at="trigger" trigger="wp_foley_generic_back_in_hand" callback="play_sound" class_name="base" param1="wp_foley_generic_back_in_hand"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt_back" callback="play_sound" class_name="base" param1="wp_ak47_tilt_back"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt" callback="play_sound" class_name="base" param1="wp_ak47_tilt"/>
+				<key at="trigger" trigger="hajk_push_mag_release" callback="play_sound" class_name="base" param1="hajk_push_mag_release"/>
+				<key at="trigger" trigger="arbiter_mag_out" callback="play_sound" class_name="base" param1="arbiter_mag_out"/>
+				<key at="trigger" trigger="arbiter_mag_contact" callback="play_sound" class_name="base" param1="arbiter_mag_contact"/>
+				<key at="trigger" trigger="arbiter_mag_in" callback="play_sound" class_name="base" param1="arbiter_mag_in"/>
+				<key at="trigger" trigger="arbiter_mag_slap" callback="play_sound" class_name="base" param1="arbiter_mag_slap"/>
+				<key at="trigger" trigger="arbiter_pull_lever" callback="play_sound" class_name="base" param1="arbiter_pull_lever"/>
+				<key at="trigger" trigger="arbiter_release_lever" callback="play_sound" class_name="base" param1="arbiter_release_lever"/>				
+				<key at="trigger" trigger="wp_clip_generic_ass_center" callback="play_sound" class_name="base" param1="wp_clip_generic_ass_center"/>
+				<key at="trigger" trigger="arbiter_push_button" callback="play_sound" class_name="base" param1="arbiter_push_button"/>
+				<key at="trigger" trigger="bullet_show" callback="anim_clbk_check_bullet_object" class_name="base" />
+			</keys>
+			<exit name="fps/idle/underbarrel/osipr"/>
+		</state>
 		</target>
 	</tweak>
 	
@@ -94,6 +245,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_equip" weight="oicw"/>
+			<anim name="osipr_underbarrel_equip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -105,6 +257,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_unequip" weight="oicw"/>
+			<anim name="osipr_underbarrel_unequip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -116,6 +269,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_recoil" weight="oicw"/>
+			<anim name="osipr_underbarrel_recoil" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -127,6 +281,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_recoil" weight="oicw"/>
+			<anim name="osipr_underbarrel_recoil" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -138,6 +293,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_recoil_enter" weight="oicw"/>
+			<anim name="osipr_underbarrel_recoil_enter" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -149,6 +305,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_recoil_loop" weight="oicw"/>
+			<anim name="osipr_underbarrel_recoil_loop" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -160,6 +317,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_recoil_exit" weight="oicw"/>
+			<anim name="osipr_underbarrel_recoil_exit" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -171,6 +329,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_sprint_enter" weight="oicw"/>
+			<anim name="osipr_underbarrel_sprint_enter" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -182,6 +341,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_sprint" weight="oicw"/>
+			<anim name="osipr_underbarrel_sprint" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -193,6 +353,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_sprint_exit" weight="oicw"/>
+			<anim name="osipr_underbarrel_sprint_exit" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -204,6 +365,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_unequip" weight="oicw"/>
+			<anim name="osipr_underbarrel_unequip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -215,6 +377,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_equip" weight="oicw"/>
+			<anim name="osipr_underbarrel_equip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -226,6 +389,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_melee" weight="oicw"/>
+			<anim name="osipr_underbarrel_melee" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -237,6 +401,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_melee_miss" weight="oicw"/>
+			<anim name="osipr_underbarrel_melee_miss" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -248,6 +413,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_use" weight="oicw"/>
+			<anim name="osipr_underbarrel_use" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -259,6 +425,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_com_down_var1" weight="oicw"/>
+			<anim name="osipr_underbarrel_com_down" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -270,6 +437,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_com_stop" weight="oicw"/>
+			<anim name="osipr_underbarrel_com_stop" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -281,6 +449,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_com_come" weight="oicw"/>
+			<anim name="osipr_underbarrel_com_come" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -292,6 +461,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_com_point" weight="oicw"/>
+			<anim name="osipr_underbarrel_com_point" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -303,6 +473,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_get_up" weight="oicw"/>
+			<anim name="osipr_underbarrel_get_up" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -314,6 +485,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_gogo" weight="oicw"/>
+			<anim name="osipr_underbarrel_gogo" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -325,6 +497,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_unequip" weight="oicw"/>
+			<anim name="osipr_underbarrel_unequip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -336,6 +509,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_equip" weight="oicw"/>
+			<anim name="osipr_underbarrel_equip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -347,6 +521,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_unequip" weight="oicw"/>
+			<anim name="osipr_underbarrel_unequip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -358,6 +533,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_unequip" weight="oicw"/>
+			<anim name="osipr_underbarrel_unequip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -369,6 +545,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_unequip" weight="oicw"/>
+			<anim name="osipr_underbarrel_unequip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -380,6 +557,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_unequip" weight="oicw"/>
+			<anim name="osipr_underbarrel_unequip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -391,6 +569,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_equip" weight="oicw"/>
+			<anim name="osipr_underbarrel_equip" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -402,6 +581,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_tased" weight="oicw"/>
+			<anim name="oicw_tased" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -413,6 +593,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_tased_boost" weight="oicw"/>
+			<anim name="oicw_tased_boost" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -424,6 +605,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_tased_exit" weight="oicw"/>
+			<anim name="oicw_tased_exit" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -435,6 +617,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_tased_exit" weight="oicw"/>
+			<anim name="oicw_tased_exit" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 	
@@ -446,6 +629,7 @@
 		</search>
 		<target mode="append">
 			<anim name="oicw_inspect" weight="oicw"/>
+			<anim name="osipr_underbarrel_com_inspect" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
 </tweaks>

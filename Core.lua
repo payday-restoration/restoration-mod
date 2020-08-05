@@ -86,6 +86,7 @@ function restoration:Init()
 		"dinner",
 		"wwh",
 		"born",
+		"nmh_res", --Resmod edit of no mercy.
 		"flat",
 		"dah",
 		"run",
@@ -115,9 +116,7 @@ function restoration:Init()
 		"hvh",
 		-- :^)
 		--"chew",	
-		"nail",		
-		"nmh",
-		"nmh_res", --Resmod edit of no mercy.
+		"nail",				
 		"cane",		
 		"pbr2",		
 		"rvd2",		

@@ -337,7 +337,7 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 			},
 			{
 				stage_id = "nmh_res",
-				add = 8,
+				add = 12,
 				id = "nmh_res",
 				icon = "csm_nmh",
 				level = tweak_data.narrative.stages.nmh_res

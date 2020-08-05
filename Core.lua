@@ -116,7 +116,8 @@ function restoration:Init()
 		-- :^)
 		--"chew",	
 		"nail",		
-		"nmh",	
+		"nmh",
+		"nmh_res", --Resmod edit of no mercy.
 		"cane",		
 		"pbr2",		
 		"rvd2",		

@@ -1613,7 +1613,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.dodge_regen_damage_health_ratio_multiplier = {
-		0.10
+		0.08
 	}
 
 	self.values.player.melee_kill_dodge_regen = {

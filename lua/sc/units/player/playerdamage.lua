@@ -804,6 +804,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 end
 
 --Include deflection in calcs. Doesn't work in cases where armor is pierced, but I can't be assed to fix it.
+--Also ignores temp hp in max health calcs. Not important for now, but may be in the future.
 function PlayerDamage:_check_chico_heal(attack_data)
 	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
 		local dmg_to_hp_ratio = managers.player:temporary_upgrade_value("temporary", "chico_injector", 0)
@@ -822,9 +823,9 @@ function PlayerDamage:_check_chico_heal(attack_data)
 			health_received = health_received * self._deflection
 		end
 
-		if managers.player:has_category_upgrade("player", "chico_injector_health_to_speed") and self:_max_health() < self:get_real_health() + health_received then
+		if managers.player:has_category_upgrade("player", "chico_injector_health_to_speed") and self:_max_health_orig() < self:get_real_health() + health_received then
 			self._injector_overflow = self._injector_overflow or 0
-			local diff = self:_max_health() - self:get_real_health()
+			local diff = self:_max_health_orig() - self:get_real_health()
 
 			self:restore_health(diff, true)
 
@@ -1038,6 +1039,7 @@ function PlayerDamage:_update_regenerate_timer(t, dt)
 	end
 end
 
+--Init function for dodge points to cache the value.
 function PlayerDamage:set_dodge_points()
 	self._dodge_points = (tweak_data.player.damage.DODGE_INIT 
 		+managers.player:body_armor_value("dodge")
@@ -1065,6 +1067,7 @@ function PlayerDamage:fill_dodge_meter(dodge_added, overfill)
 	end
 end
 
+--Adjusts dodge meter fill based on health ratio, used for Yakuza stuff.
 function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
 	self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
 end
@@ -1143,8 +1146,8 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	end
 
 	if not self._health_regen_update_timer then
-		local base_max_health = self:has_temp_health() and self:_raw_max_health() or self:_max_health() --Stops temp health from increasing % regen. 
-		local real_max_health = self:has_temp_health() and self:_raw_max_health() + self._temp_health or self:_max_health()
+		local base_max_health = self:_max_health_orig() --Stops temp health from increasing % regen. 
+		local real_max_health = self:_max_health_orig() + self._temp_health
 		if self:get_real_health() < real_max_health then
 			--No need to do health nonsense twice.
 			self:restore_health(managers.player:health_regen() * base_max_health + managers.player:fixed_health_regen(), true)
@@ -1198,7 +1201,7 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 	end
 end)
 
---Starts biker regen when there is missing armor. Notify ex-pres that armor has broken to get around dumb interaction with bullseye.
+--Starts biker regen when there is missing armor. Also notifies ex-pres when armor has broken to get around dumb interaction with bullseye.
 Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
 	if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
 		self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
@@ -1252,6 +1255,7 @@ function PlayerDamage:exit_custody(down_timer)
 	})
 end
 
+--Restores one life. Used by Enduring.
 function PlayerDamage:add_revive()
 	self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
 	self._revive_health_i = math.max(self._revive_health_i - 1, 1)
@@ -1304,22 +1308,28 @@ function PlayerDamage:has_temp_health()
 	return self._temp_health > 0
 end
 
---Hitman requires some fairly meaty changes to the health system that can be hard to account for 100%. Pls report bugs.
---Hack to let temp hp go above normal hp, important for displaying properly in the HUD.
-local max_health_orig = PlayerDamage._max_health
-function PlayerDamage:_max_health()
-	return math.max(max_health_orig(self), self._temp_health + self._health_without_temp) 
+--Changes to the core health system are moslty done to support temp health.
+--Original method for getting max health. Is overwritten to support temp health, but certain cases (mostly involving healing) require the old code.
+function PlayerDamage:_max_health_orig()
+	local max_health = self:_raw_max_health()
+
+	if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
+		local max_armor = self:_raw_max_armor()
+		local conversion_factor = managers.player:upgrade_value("player", "armor_to_health_conversion") * 0.01
+		max_health = max_health + max_armor * conversion_factor
+	end
+
+	return max_health
 end
 
---Makes modifications to handle temporary HP.
+--Makes modifications to handle temporary HP proparly.
 function PlayerDamage:set_health(health)
 	self:_check_update_max_health()
 
 	local prev_health = self._health and Application:digest_value(self._health, false) or health
 
-	--Somehow max_health_orig() returns the wrong values if temp hp brings you above your original max.
-	--Thankfully, the added info in _max_health() is only needed for Anarchist calcs.
-	local max_health = self:has_temp_health() and self:_raw_max_health() * self._max_health_reduction + self._temp_health or max_health_orig(self) * self._max_health_reduction
+	--Add temp hp to max health.
+	local max_health = self:_max_health_orig() * self._max_health_reduction + self._temp_health
 	health = math.clamp(health, 0, max_health) --Removed useless floor before clamp.
 
 	if health < prev_health then --Reduce temp health if health was reduced.
@@ -1350,6 +1360,7 @@ function PlayerDamage:set_health(health)
 	return prev_health ~= Application:digest_value(self._health, false)
 end
 
+--Use old max health function to ignore temporary HP for % healing.
 function PlayerDamage:restore_health(health_restored, is_static, chk_health_ratio)
 	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) then
 		return false
@@ -1358,10 +1369,15 @@ function PlayerDamage:restore_health(health_restored, is_static, chk_health_rati
 	if is_static then
 		return self:change_health(health_restored * self._healing_reduction)
 	else
-		local max_health = self:has_temp_health() and self:_raw_max_health() or self:_max_health() --Ignore temporary HP for % healing.
+		local max_health = self:_max_health_orig() --Just use the original function.
 
 		return self:change_health(max_health * health_restored * self._healing_reduction)
 	end
+end
+
+--Hack to let temp hp go above normal hp, mostly important for displaying properly in the HUD.
+function PlayerDamage:_max_health()
+	return math.max(self:_max_health_orig(), self._temp_health + self._health_without_temp) 
 end
 
 --New trigger for ex-pres. Now occurs when armor regen kicks in any time after armor has been broken. Ignores partial regen from stuff like Bullseye.

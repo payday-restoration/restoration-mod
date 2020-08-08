@@ -1054,7 +1054,7 @@ end
 
 --Adds to/Subtracts from dodge meter and updates hud element.
 function PlayerDamage:fill_dodge_meter(dodge_added, overfill)
-	if self._dodge_points > 0 and not self:is_downed() then
+	if self._dodge_points and self._dodge_points > 0 and not self:is_downed() then
 		if overfill or (self._dodge_meter >= 1.5 and dodge_added < 0) then
 			self._dodge_meter = math.max(self._dodge_meter + dodge_added, 0.0)
 		elseif self._dodge_meter < 1.5 then
@@ -1358,6 +1358,7 @@ Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(se
 		end
 		self._armor_broken = nil
 	end
+	self:fill_dodge_meter(managers.player:upgrade_value("player", "armor_regen_dodge", 0) * (self._dodge_points or 0))
 end)
 
 --Remove old ex-pres stuff.

@@ -1117,11 +1117,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.akimbo.extra_ammo_multiplier = {1.25, 1.25}
 
-				--Also used by Hitman, unfortunately.
 				self.values.akimbo.recoil_index_addend = {
 					0,
-					2,
-					4,
+					2, --Basic
+					4, --Ace
 					6,
 					8
 				}
@@ -1262,6 +1261,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.temp_health_max = 24
 	self.values.player.active_temp_health_speed = { 1.2 }
 	self.values.player.active_temp_health_damage_reduction = { 1.2 }
+	self.values.player.armor_regen_dodge = { 0.75, 1.5 }
 
 	self.values.player.level_2_dodge_addend = {
 		0.05,
@@ -1581,7 +1581,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.15
 	}
 	self.values.player.chico_injector_low_health_multiplier = {
-		{0.25, 0.55}
+		{0.25, 0.6}
 	}	
 	self.values.player.chico_injector_health_to_speed = {
 		{0.5, 2}
@@ -3147,6 +3147,24 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "active_temp_health_damage_reduction",
+			category = "player"
+		}
+	}
+	self.definitions.player_armor_regen_dodge_1 = {
+		name_id = "menu_player_armor_regen_dodge",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "armor_regen_dodge",
+			category = "player"
+		}
+	}
+	self.definitions.player_armor_regen_dodge_2 = {
+		name_id = "menu_player_armor_regen_dodge",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "armor_regen_dodge",
 			category = "player"
 		}
 	}

@@ -1273,9 +1273,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Killing an enemy outside of melee stores ##25## temporary health. You can store up to ##75## temporary health.\n\nKilling an enemy in melee turns that stored temporary health into temporary health that decays at a rate of ##5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to ##240## temporary health at once.\n\nNote: Frenzy will reduce temporary health gained, the rate it decays, and the cap to ##25%.##",
-		["menu_deck5_3_desc_sc"] = "You gain ##5## dodge points.",
+		["menu_deck5_3_desc_sc"] = "Your dodge meter fills up by ##75%## of your dodge when your armor regenerates.\n\nYou gain ##5## dodge points.",
 		["menu_deck5_5_desc_sc"] = "Killing an enemy outside of melee stores an additional ##15## temporary health.\n\nYou can store an additional ##45## temporary health.\n\nYou gain an additional ##5## dodge points.",
-		["menu_deck5_7_desc_sc"] = "You gain an additional ##5## dodge points.",
+		["menu_deck5_7_desc_sc"] = "Your dodge meter fills up by an additional ##75%## of your dodge when your armor regenerates.\n\nYou gain an additional ##5## dodge points.",
 		["menu_deck5_9_desc_sc"] = "While you have temporary health your movement speed is increased by ##20%## and damage taken is reduced by ##20%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
@@ -1355,7 +1355,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_1_desc_sc"] = "Unlocks and equips the Kingpin Injector. Changing to another perk deck will make the Injector unavailable again. The Injector replaces your current throwable, is equipped in your throwable slot and can be switched out if desired.\n\nWhile in game you can use the throwable key to activate the injector. Activating the injector will heal you for ##30%## of all damage taken for ##4## seconds.\n\nYou can still take damage during the effect. The Injector can only be used once every ##30## seconds.",
 		["menu_deck17_3_desc_sc"] = "Your movement speed is increased by ##20%## while the Kingpin Injector is active.",
 		["menu_deck17_5_desc_sc"] = "You are now healed for ##30%## of all damage taken for ##6## seconds while the Kingpin Injector is active.\n\nEnemies nearby will prefer targeting you, whenever possible, while the Injector is active.",
-		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##55%## while below ##25%## health.",
+		["menu_deck17_7_desc_sc"] = "The amount of health received during the Injector effect is increased by ##60%## while below ##25%## health.",
 		["menu_deck17_9_desc_sc"] = "For every ##5## health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--

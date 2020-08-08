@@ -2285,7 +2285,7 @@ function SkillTreeTweakData:init(tweak_data)
 			desc_id = "menu_st_spec_5_desc",
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_1"
+					"player_store_temp_health_1"
 				},
 				cost = 200,
 				icon_xy = {6, 2},
@@ -2295,7 +2295,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"akimbo_recoil_index_addend_2"
+					"player_passive_dodge_chance_1",
+					"player_damage_dampener_close_contact_1"
 				},
 				cost = 400,
 				icon_xy = {7, 2},
@@ -2305,7 +2306,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_2"
+					"player_store_temp_health_2"
 				},
 				cost = 1000,
 				icon_xy = {0, 3},
@@ -2315,7 +2316,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_3"
+					"player_passive_dodge_chance_2",
+					"player_damage_dampener_close_contact_2"
 				},
 				cost = 2400,
 				icon_xy = {1, 3},
@@ -2325,9 +2327,9 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_perk_armor_regen_timer_multiplier_4",
-					"player_passive_loot_drop_multiplier",
-					"akimbo_recoil_index_addend_3"
+					"player_active_temp_health_damage_reduction",
+					"player_active_temp_health_speed",
+					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
 				icon_xy = {3, 3},

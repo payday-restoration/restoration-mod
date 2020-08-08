@@ -48,7 +48,7 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	multiplier = multiplier + self:num_local_minions() * (self:upgrade_value("player", "minion_master_speed_multiplier", 1) - 1)
 
 	--Kingpin movespeed bonus.
-	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
+	if self:has_activate_temporary_upgrade("temporary", "chico_injector") then
 		multiplier = multiplier + self:upgrade_value("player", "chico_injector_speed", 1) - 1
 	end
 
@@ -57,11 +57,16 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 		multiplier = multiplier + self:detection_risk_movement_speed_bonus()
 	end
 
-	--Grinder speed bonus.
+	--Grinder and hitman speed bonuses.
 	local player_unit = self:player_unit()
 	if alive(player_unit) then
 		local hot_stacks = player_unit:character_damage()._damage_to_hot_stack
 		multiplier = multiplier + self:upgrade_value("player", "hot_speed_bonus", 0) * #hot_stacks or 0
+
+		--Hitman movespeed bonus
+		if player_unit:character_damage():has_temp_health() then
+			multiplier = multiplier + self:upgrade_value("player", "active_temp_health_speed", 1) - 1
+		end
 	end
 
 	--Removed unused "secured_bags_multiplier" nonsense.
@@ -397,6 +402,11 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 			end
 		end
 	end
+
+	--Hitman damage reduction bonus
+	if self:player_unit():character_damage():has_temp_health() then
+		multiplier = multiplier * self:upgrade_value("player", "active_temp_health_damage_reduction", 1)
+	end
 	
 	if self._current_state == "bipod" then
 		multiplier = multiplier * self:upgrade_value("player", "bipod_damage_reduction", 1)
@@ -580,6 +590,13 @@ function PlayerManager:check_skills()
 	else
 		self._message_system:unregister(Message.OnHeadShot, "sharpshooter")
 	end
+
+	if self:has_category_upgrade("player", "store_temp_health") then
+		self._message_system:register(Message.OnEnemyKilled, "hitman_temp_health", callback(self, self, "_trigger_hitman")) --Triggers include killing his dog and stealing his car.
+	else
+		self._message_system:unregister(Message.OnEnemyKilled, "hitman_temp_health")
+	end
+
 end
 
 --The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.
@@ -908,6 +925,17 @@ function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, kill
 			managers.network:session():send_to_host("sync_spawn_extra_ammo", killed_unit)
 		else
 			self:spawn_extra_ammo(killed_unit)
+		end
+	end
+end
+
+function PlayerManager:_trigger_hitman(equipped_unit, variant, killed_unit)
+	local player_unit = self:player_unit()
+	if alive(player_unit) then
+		if variant == "melee" then
+			player_unit:character_damage():consume_temp_stored_health()
+		else
+			player_unit:character_damage():add_armor_stored_health(self:upgrade_value("player", "store_temp_health", {0, 0})[2])
 		end
 	end
 end

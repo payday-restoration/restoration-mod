@@ -11,6 +11,11 @@ function PlayerDamage:init(unit)
 	self._revives = Application:digest_value(0, true)
 	self._uppers_elapsed = 0
 
+	--Unique resmod stuff, needs to be declared earlier.
+	self._temp_health = 0 --Hitman temporary health.
+	self._health_without_temp = 0 --Health below temp hp. Needed for correct max health calculations.
+	self._next_temp_health_decay_t = 0 --When to hit hitman temp health with decay next.
+
 	self:replenish() --Sets a number of things, mostly resetting armor, health, and ui stuff. Vanilla code.
 
 	local player_manager = managers.player
@@ -788,8 +793,6 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 			if alive(player_unit) then
 				if not self._unit:movement():current_state().driving then
 					attack_data.attacker_unit:sound():say("post_tasing_taunt")
-					--player_unit:movement():on_non_lethal_electrocution() --old titan taser effect.
-					--managers.player:set_player_state("tased")
 					managers.player:activate_titan_tased() --Apply slow from titan taser.
 					self.tase_time = _time + 1 --Update cooldown
 				end
@@ -800,7 +803,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	return 
 end
 
---Include deflection in calcs. Doesn't work in cases where armor is pierced, but I don't feel like testing those atm.
+--Include deflection in calcs. Doesn't work in cases where armor is pierced, but I can't be assed to fix it.
 function PlayerDamage:_check_chico_heal(attack_data)
 	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
 		local dmg_to_hp_ratio = managers.player:temporary_upgrade_value("temporary", "chico_injector", 0)
@@ -1121,6 +1124,12 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	if pm:has_category_upgrade("player", "biker_armor_regen") then
 		self:tick_biker_armor_regen(dt)
 	end
+
+	--Hitman temporary hp drain over time.
+	if self:has_temp_health() and self._next_temp_health_decay_t < t then
+		self._next_temp_health_decay_t = t + 1
+		self:change_health(-math.min(tweak_data.upgrades.temp_health_decay * self._max_health_reduction, self._temp_health))
+	end
 end)
 
 --Deals with resmod's health regen changes.
@@ -1134,11 +1143,11 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	end
 
 	if not self._health_regen_update_timer then
-		local max_health = self:_max_health()
-
-		if self:get_real_health() < max_health then
+		local base_max_health = self:has_temp_health() and self:_raw_max_health() or self:_max_health() --Stops temp health from increasing % regen. 
+		local real_max_health = self:has_temp_health() and self:_raw_max_health() + self._temp_health or self:_max_health()
+		if self:get_real_health() < real_max_health then
 			--No need to do health nonsense twice.
-			self:restore_health(managers.player:health_regen() * max_health + managers.player:fixed_health_regen(), true)
+			self:restore_health(managers.player:health_regen() * base_max_health + managers.player:fixed_health_regen(), true)
 			self._health_regen_update_timer = 4
 		end
 	end
@@ -1253,15 +1262,104 @@ function PlayerDamage:add_revive()
 	)
 end
 
+--Lets hitman piggy bank off of ex-pres UI elements.
+local max_armor_stored_health_orig = PlayerDamage.max_armor_stored_health
+function PlayerDamage:max_armor_stored_health()
+	if managers.player:has_category_upgrade("player", "store_temp_health") then
+		return managers.player:upgrade_value("player", "store_temp_health")[1]
+	else
+		return max_armor_stored_health_orig(self)
+	end
+end
+
+--Turns stored health from hitman into temporary health.
+function PlayerDamage:consume_temp_stored_health()
+	if self._armor_stored_health and not self._dead and not self._bleed_out and not self._check_berserker_done then
+		self._next_temp_health_decay_t = Application:time() + 1
+		self._health_without_temp = self:get_real_health() - self._temp_health
+		self:_change_temp_health(self._armor_stored_health * self._max_health_reduction)
+		local max_health = self:_max_health()
+		self._health = Application:digest_value(math.clamp(self._health_without_temp + self._temp_health, 0, max_health), true)
+		self:_send_set_health()
+		self:_set_health_effect()
+		managers.hud:set_player_health({
+			current = self:get_real_health(),
+			total = self:_max_health(),
+			revives = Application:digest_value(self._revives, false)
+		})
+		self:clear_armor_stored_health()
+	end
+end
+
+--Generic function for changing the amount of health to be treated as temp health.
+function PlayerDamage:_change_temp_health(amount)
+	self._temp_health = math.max(self._temp_health + amount, 0)
+	self:_check_update_max_health()
+	managers.hud:set_teammate_delayed_damage(HUDManager.PLAYER_PANEL, self._temp_health)
+end
+
+--Returns whether or not the player has temporary health.
+function PlayerDamage:has_temp_health()
+	return self._temp_health > 0
+end
+
+--Hitman requires some fairly meaty changes to the health system that can be hard to account for 100%. Pls report bugs.
+--Hack to let temp hp go above normal hp, important for displaying properly in the HUD.
+local max_health_orig = PlayerDamage._max_health
+function PlayerDamage:_max_health()
+	return math.max(max_health_orig(self), self._temp_health + self._health_without_temp) 
+end
+
+--Makes modifications to handle temporary HP.
+function PlayerDamage:set_health(health)
+	self:_check_update_max_health()
+
+	local prev_health = self._health and Application:digest_value(self._health, false) or health
+
+	--Somehow max_health_orig() returns the wrong values if temp hp brings you above your original max.
+	--Thankfully, the added info in _max_health() is only needed for Anarchist calcs.
+	local max_health = self:has_temp_health() and self:_raw_max_health() * self._max_health_reduction + self._temp_health or max_health_orig(self) * self._max_health_reduction
+	health = math.clamp(health, 0, max_health) --Removed useless floor before clamp.
+
+	if health < prev_health then --Reduce temp health if health was reduced.
+		self:_change_temp_health(health - prev_health)
+	end
+
+	self._health_without_temp = health - self._temp_health --Keep this updated to ensure that _max_health() remains accurate.
+	self._health = Application:digest_value(health, true)
+
+	self:_send_set_health()
+	self:_set_health_effect()
+
+	if self._said_hurt and self:get_real_health() / self:_max_health() > 0.2 then
+		self._said_hurt = false
+	end
+
+	if self:health_ratio() < 0.3 then
+		self._heartbeat_start_t = TimerManager:game():time()
+		self._heartbeat_t = self._heartbeat_start_t + tweak_data.vr.heartbeat_time
+	end
+
+	managers.hud:set_player_health({
+		current = self:get_real_health(),
+		total = self:_max_health(),
+		revives = Application:digest_value(self._revives, false)
+	})
+
+	return prev_health ~= Application:digest_value(self._health, false)
+end
+
 --New trigger for ex-pres. Now occurs when armor regen kicks in any time after armor has been broken. Ignores partial regen from stuff like Bullseye.
 Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(self, no_sound)
 	if self._armor_broken then
-		self:consume_armor_stored_health()
+		if managers.player:has_category_upgrade("player", "armor_health_store_amount") then
+			self:consume_armor_stored_health()
+		end
 		self._armor_broken = nil
 	end
 end)
 
---Remove old ex-pres stuff. Technically won't do anything beyond a very tiny performance increase at the cost of a tiny amount of compatability.
+--Remove old ex-pres stuff.
 function PlayerDamage:set_armor(armor)
 	self:_check_update_max_armor()
 

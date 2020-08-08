@@ -1245,7 +1245,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Burglar
 	self.values.player.crouch_dodge_chance = {0.05, 0.10}
 
-	--Hitman
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,
 		0.8,
@@ -1253,6 +1252,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.65,
 		0.6
 	}
+
+	--Hitman
+	self.values.player.store_temp_health = { 
+		{10, 1},
+		{15, 1.5}
+	}
+	self.temp_health_decay = 1.5
+	self.values.player.active_temp_health_speed = { 1.2 }
+	self.values.player.active_temp_health_damage_reduction = { 1.2 }
 
 	self.values.player.level_2_dodge_addend = {
 		0.05,
@@ -3102,6 +3110,42 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "bipod_damage_reduction",
+			category = "player"
+		}
+	}
+	self.definitions.player_store_temp_health_1 = {
+		name_id = "menu_player_store_temp_health",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "store_temp_health",
+			category = "player"
+		}
+	}
+	self.definitions.player_store_temp_health_2 = {
+		name_id = "menu_player_store_temp_health",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "store_temp_health",
+			category = "player"
+		}
+	}
+	self.definitions.player_active_temp_health_speed = {
+		name_id = "menu_player_active_temp_health_speed",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "active_temp_health_speed",
+			category = "player"
+		}
+	}
+	self.definitions.player_active_temp_health_damage_reduction = {
+		name_id = "menu_player_active_temp_health_damage_reduction",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "active_temp_health_damage_reduction",
 			category = "player"
 		}
 	}

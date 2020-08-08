@@ -1272,11 +1272,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck4_9_desc_sc"] = "Dodging an attack causes you to regenerate ##1## health every ##2## seconds for the next ##20## seconds. This effect can stack, but all stacks are lost whenever you take health damage.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Hitman--
-		["menu_deck5_1_desc_sc"] = "Your armor recovery rate is increased by ##10%##.",
-		["menu_deck5_3_desc_sc"] = "You gain ##8## stability with akimbo weapons.",
-		["menu_deck5_5_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.",
-		["menu_deck5_7_desc_sc"] = "Your armor recovery rate is increased by an additional ##10%##.",
-		["menu_deck5_9_desc_sc"] = "Your armor recovery rate is increased by an additional ##5%##.\n\nYou gain an additional ##8## stability with Akimbo weapons.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck5_1_desc_sc"] = "Killing an enemy outside of melee stores ##9## temporary health. You can store up to ##90## temporary health.\n\nKilling an enemy in melee turns that stored temporary health into temporary health that decays at a rate of ##15## per second.\n\nTemporary health can exceed your normal maximum health.\n\nNote: Frenzy will reduce temporary health gained to ##25%##, but will also reduce the rate it decreases to ##25%.##",
+		["menu_deck5_3_desc_sc"] = "When you are within ##12## meters of an enemy, you receive ##5%## less damage. You gain ##5## dodge points.",
+		["menu_deck5_5_desc_sc"] = "Killing an enemy outside of melee stores an additional ##6## temporary health.\n\nYou can store an additional ##60## temporary health.",
+		["menu_deck5_7_desc_sc"] = "When you are within ##12## meters of an enemy, you receive an additional ##5%## less damage. You gain an additional ##5## dodge points.",
+		["menu_deck5_9_desc_sc"] = "While you have temporary health your movement speed is increased by ##20%## and damage taken is reduced by ##20%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",

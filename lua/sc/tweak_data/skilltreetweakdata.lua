@@ -2295,8 +2295,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_1",
-					"player_damage_dampener_close_contact_1"
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {7, 2},
@@ -2317,8 +2316,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_3",
-					"player_damage_dampener_close_contact_2"
+					"player_passive_dodge_chance_3"
 				},
 				cost = 2400,
 				icon_xy = {1, 3},

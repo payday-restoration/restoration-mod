@@ -793,7 +793,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Combat Medic
 			["menu_combat_medic_beta_sc"] = "Combat Medic",
-			["menu_combat_medic_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##10%## damage reduction for ##5## seconds both after and during reviving another player.\nYou gain a ##10%## damage reduction for ##5## seconds when you are revived.\n\nACE: ##$pro##\nReviving a crew member gives them ##30%## more health.",
+			["menu_combat_medic_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##10%## damage reduction for ##5## seconds both after and during reviving another player.\n\nYou gain a ##10%## damage reduction for ##5## seconds when you are revived.\n\nACE: ##$pro##\nReviving a crew member gives them ##30%## more health.",
 			
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "Quick Fix",

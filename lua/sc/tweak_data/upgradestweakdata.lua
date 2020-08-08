@@ -1256,7 +1256,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Hitman
 	self.values.player.store_temp_health = { 
 		{7.5, 2.5},
-		{12, 4.5}
+		{12, 4}
 	}
 	self.temp_health_decay = 0.6
 	self.temp_health_max = 24

@@ -2306,6 +2306,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
+					"player_passive_dodge_chance_2",
 					"player_store_temp_health_2"
 				},
 				cost = 1000,
@@ -2316,7 +2317,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_2",
+					"player_passive_dodge_chance_3",
 					"player_damage_dampener_close_contact_2"
 				},
 				cost = 2400,

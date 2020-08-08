@@ -1274,7 +1274,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Hitman--
 		["menu_deck5_1_desc_sc"] = "Killing an enemy outside of melee stores ##20## temporary health. You can store up to ##60## temporary health.\n\nKilling an enemy in melee turns that stored temporary health into temporary health that decays at a rate of ##6## per second.\n\nTemporary health can exceed your normal maximum health.\n\nNote: Frenzy will reduce temporary health gained to ##25%##, but will also reduce the rate it decays to ##25%.##",
 		["menu_deck5_3_desc_sc"] = "When you are within ##12## meters of an enemy, you receive ##5%## less damage.\n\nYou gain ##5## dodge points.",
-		["menu_deck5_5_desc_sc"] = "Killing an enemy outside of melee stores an additional ##10## temporary health.\n\nYou can store an additional ##30## temporary health.",
+		["menu_deck5_5_desc_sc"] = "Killing an enemy outside of melee stores an additional ##10## temporary health.\n\nYou can store an additional ##30## temporary health.\n\nYou gain an additional ##5## dodge points.",
 		["menu_deck5_7_desc_sc"] = "When you are within ##12## meters of an enemy, you receive an additional ##5%## less damage.\n\nYou gain an additional ##5## dodge points.",
 		["menu_deck5_9_desc_sc"] = "While you have temporary health your movement speed is increased by ##20%## and damage taken is reduced by ##20%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		

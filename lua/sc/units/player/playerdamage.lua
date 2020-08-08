@@ -1276,7 +1276,7 @@ end
 function PlayerDamage:consume_temp_stored_health()
 	if self._armor_stored_health and not self._dead and not self._bleed_out and not self._check_berserker_done then
 		self._next_temp_health_decay_t = Application:time() + 1
-		self._armor_stored_health = math.min((self._armor_stored_health + self._temp_health) * self._max_health_reduction, tweak_data.upgrades.temp_health_max * self._max_health_reduction) - self._temp_health
+		self._armor_stored_health = math.min(self._armor_stored_health * self._max_health_reduction + self._temp_health, tweak_data.upgrades.temp_health_max * self._max_health_reduction) - self._temp_health
 		self._health_without_temp = self:get_real_health() - self._temp_health
 		self:_change_temp_health(self._armor_stored_health)
 		local max_health = self:_max_health()

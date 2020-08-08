@@ -1581,10 +1581,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.15
 	}
 	self.values.player.chico_injector_low_health_multiplier = {
-		{0.25, 0.5}
+		{0.25, 0.55}
 	}	
 	self.values.player.chico_injector_health_to_speed = {
-		{0.3, 1}
+		{0.5, 2}
 	}
 	--Are these the dreamers we were told about?--
 	--sicario

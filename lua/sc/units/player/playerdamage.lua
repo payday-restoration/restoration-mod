@@ -1350,7 +1350,22 @@ function PlayerDamage:set_health(health)
 	return prev_health ~= Application:digest_value(self._health, false)
 end
 
+function PlayerDamage:restore_health(health_restored, is_static, chk_health_ratio)
+	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) then
+		return false
+	end
+
+	if is_static then
+		return self:change_health(health_restored * self._healing_reduction)
+	else
+		local max_health = self:has_temp_health() and self:_raw_max_health() or self:_max_health() --Ignore temporary HP for % healing.
+
+		return self:change_health(max_health * health_restored * self._healing_reduction)
+	end
+end
+
 --New trigger for ex-pres. Now occurs when armor regen kicks in any time after armor has been broken. Ignores partial regen from stuff like Bullseye.
+--Also includes trigger for Hitman dodge regen bonus.
 Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(self, no_sound)
 	if self._armor_broken then
 		if managers.player:has_category_upgrade("player", "armor_health_store_amount") then

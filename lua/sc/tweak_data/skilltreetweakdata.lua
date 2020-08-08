@@ -2289,7 +2289,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				cost = 200,
 				icon_xy = {6, 2},
-				name_id = "menu_deck5_1",
+				name_id = "menu_deck5_1_sc",
 				desc_id = "menu_deck5_1_desc_sc"
 			},
 			deck2,
@@ -2300,7 +2300,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				cost = 400,
 				icon_xy = {7, 2},
-				name_id = "menu_deck5_3",
+				name_id = "menu_deck5_3_sc",
 				desc_id = "menu_deck5_3_desc_sc"
 			},
 			deck4,
@@ -2311,7 +2311,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				cost = 1000,
 				icon_xy = {0, 3},
-				name_id = "menu_deck5_5",
+				name_id = "menu_deck5_5_sc",
 				desc_id = "menu_deck5_5_desc_sc"
 			},
 			deck6,
@@ -2322,7 +2322,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				cost = 2400,
 				icon_xy = {1, 3},
-				name_id = "menu_deck5_7",
+				name_id = "menu_deck5_7_sc",
 				desc_id = "menu_deck5_7_desc_sc"
 			},
 			deck8,

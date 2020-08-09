@@ -14,6 +14,9 @@
     <depends_on effect="effects/payday2/particles/impacts/dirt_explosion_impact_pd2" />
     <depends_on effect="effects/payday2/particles/impacts/concrete_explosion_impact_pd2" />
     <depends_on bnk="soundbanks/weapon_grenade" />
+    <depends_on bnk="soundbanks/weapon_rpg" />
+    <depends_on bnk="soundbanks/regular_weapon_sfx" />
+    <depends_on bnk="soundbanks/weapon_trip_mine" />	
 	</dependencies>
 	<extensions>
     <extension name="base" class="FragGrenade" >
@@ -33,7 +36,7 @@
 	<sounds>
 		<default_soundsource source="rp_grenade" />
     <soundsource name="snd" source="rp_grenade" />
-    <spawn_event source="snd" name="wp_rpg_rocket_flyby" stop_when_killed="true"/>
+    <spawn_event source="snd" name="c4_beep_loop" stop_when_killed="true"/>
 	</sounds>		
 	
 </unit>

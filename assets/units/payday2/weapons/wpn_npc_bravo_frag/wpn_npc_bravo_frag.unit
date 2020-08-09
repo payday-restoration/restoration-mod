@@ -25,7 +25,15 @@
     	<var name="_collision_sfx_quite_time" value="0.1" />
     </extension>
 	</extensions>
+	<!--original in case-->
+<!-- 	<sounds>
+		<default_soundsource source="rp_grenade" />
+	</sounds> -->
+	
 	<sounds>
 		<default_soundsource source="rp_grenade" />
-	</sounds>
+    <soundsource name="snd" source="rp_grenade" />
+    <spawn_event source="snd" name="wp_rpg_rocket_flyby" stop_when_killed="true"/>
+	</sounds>		
+	
 </unit>

@@ -3713,6 +3713,10 @@ function BlackMarketGui:update_info_text()
 		}
 	}
 	local ignore_lock = false
+	local desc_macros = {
+        BTN_GADGET = managers.localization:btn_macro("weapon_gadget", true),
+        BTN_BIPOD = managers.localization:btn_macro("deploy_bipod", true)
+    }
 
 	self._stats_text_modslist:set_text("")
 
@@ -3832,7 +3836,11 @@ function BlackMarketGui:update_info_text()
 				end
 
 				if weapon_tweak.has_description then
-					updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id)
+					if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
+						updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+					else
+						updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+					end
 					updated_texts[4].below_stats = true
 				end
 			end

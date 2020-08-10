@@ -8,6 +8,17 @@ function PlayerStandard:init(unit)
 		self._slotmask_bullet_impact_targets = managers.mutators:modify_value("PlayerStandard:init:melee_slot_mask", self._slotmask_bullet_impact_targets)
 		self._slotmask_bullet_impact_targets = managers.modifiers:modify_value("PlayerStandard:init:melee_slot_mask", self._slotmask_bullet_impact_targets)
 	end
+	
+	--Getting rid of unique underbarrel anim states. Unnecessary and only causes custom underbarrel animations to break.
+	PlayerStandard.ANIM_STATES.underbarrel = {
+		equip = Idstring("equip"),
+		unequip = Idstring("unequip"),
+		start_running = Idstring("start_running"),
+		stop_running = Idstring("stop_running"),
+		melee = Idstring("melee"),
+		melee_miss = Idstring("melee_miss"),
+		idle = Idstring("idle")
+	}
 end
 
 --Allows night vision to be used with any mask.

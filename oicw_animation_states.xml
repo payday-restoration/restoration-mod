@@ -8,21 +8,8 @@
 		<target mode="attach">
 			<to name="reload_oicw" 						redirect="fps/reload/oicw"/>
 			<to name="reload_not_empty_oicw" 			redirect="fps/reload_not_empty/oicw"/>
-			
-			<to name="underbarrel_enter_osipr" redirect="fps/enter/underbarrel/osipr"/>
-			<to name="underbarrel_exit_osipr" redirect="fps/exit/underbarrel/osipr"/>
-			<to name="underbarrel_idle_osipr" redirect="fps/idle/underbarrel/osipr"/>
-			<to name="underbarrel_recoil_osipr" redirect="fps/recoil/underbarrel/osipr"/>
-			<to name="underbarrel_recoil_enter_osipr" redirect="fps/recoil_enter/underbarrel/osipr"/>
-			<to name="underbarrel_recoil_exit_osipr" redirect="fps/recoil_exit/underbarrel/osipr"/>
-			<to name="underbarrel_recoil_loop_osipr" redirect="fps/recoil_loop/underbarrel/osipr"/>
 			<to name="underbarrel_reload_osipr" redirect="fps/reload/underbarrel/osipr"/>
 			<to name="underbarrel_reload_not_empty_osipr" redirect="fps/reload_not_empty/underbarrel/osipr"/>
-			<to name="underbarrel_melee_osipr" redirect="fps/melee/underbarrel/osipr"/>
-			<to name="underbarrel_melee_miss_osipr" redirect="fps/melee_miss/underbarrel/osipr"/>
-			<to name="underbarrel_start_running_osipr" redirect="fps/start_running/underbarrel/osipr"/>
-			<to name="underbarrel_running_osipr" redirect="fps/running/underbarrel/osipr"/>
-			<to name="underbarrel_stop_running_osipr" redirect="fps/stop_running/underbarrel/osipr"/>
 		</target>
 	</tweak>
 	

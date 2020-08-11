@@ -117,15 +117,15 @@ function ChallengesTweakData:weapon_challenges()
     local definition = {}
     definition.law = {}
 	definition.law.vs = {
-		{ count = 50, xp = tiny_xp },
-		{ count = 200, xp = small_xp },
-		{ count = 400, xp = mid_xp },
-		{ count = 600, xp = large_xp },
-		{ count = 800, xp = large_xp },
-		{ count = 1000, xp = large_xp },
-		{ count = 2000, xp = large_xp },
-		{ count = 5000, xp = large_xp },
-		{ count = 10000, xp = large_xp },
+		{ count = 150, xp = tiny_xp },
+		{ count = 300, xp = small_xp },
+		{ count = 500, xp = mid_xp },
+		{ count = 700, xp = large_xp },
+		{ count = 900, xp = large_xp },
+		{ count = 1100, xp = large_xp },
+		{ count = 2100, xp = large_xp },
+		{ count = 5100, xp = large_xp },
+		{ count = 10100, xp = large_xp },
 	}
 	definition.law.head_shots = {
 		{ count = 75, xp = small_xp },
@@ -181,34 +181,34 @@ function ChallengesTweakData:weapon_challenges()
 		{ count = 500, xp = large_xp },
 	}
 
-    for id, weap in pairs(tweak_data.weapon) do
-        if weap.category then
-            for ene, ch_groups in pairs(definition) do
-                if ch_groups.vs then
-                    for i, def in pairs(ch_groups.vs) do
-                        createVS(i, id, ene, def.count, def.xp)
-                    end
-                end
-                if ch_groups.head_shots then
-                    for i, def in pairs(ch_groups.head_shots) do
-                        createVSHS(i, id, ene, def.count, def.xp)
-                    end
-                end
-            end
-            if definition[id] then
-                for ene, ch_groups in pairs(definition[id]) do
-                    if ch_groups.vs then
-                        for i, def in pairs(ch_groups.vs) do
-                            createVS(i, id, ene, def.count, def.xp)
-                        end
-                    end
-                    if ch_groups.head_shots then
-                        for i, def in pairs(ch_groups.head_shots) do
-                            createVSHS(i, id, ene, def.count, def.xp)
-                        end
-                    end
-                end
-            end
-        end
-    end
+    -- for id, weap in pairs(tweak_data.weapon) do
+    --     if weap.category then
+    --         for ene, ch_groups in pairs(definition) do
+    --             if ch_groups.vs then
+    --                 for i, def in pairs(ch_groups.vs) do
+    --                     createVS(i, id, ene, def.count, def.xp)
+    --                 end
+    --             end
+    --             if ch_groups.head_shots then
+    --                 for i, def in pairs(ch_groups.head_shots) do
+    --                     createVSHS(i, id, ene, def.count, def.xp)
+    --                 end
+    --             end
+    --         end
+    --         if definition[id] then
+    --             for ene, ch_groups in pairs(definition[id]) do
+    --                 if ch_groups.vs then
+    --                     for i, def in pairs(ch_groups.vs) do
+    --                         createVS(i, id, ene, def.count, def.xp)
+    --                     end
+    --                 end
+    --                 if ch_groups.head_shots then
+    --                     for i, def in pairs(ch_groups.head_shots) do
+    --                         createVSHS(i, id, ene, def.count, def.xp)
+    --                     end
+    --                 end
+    --             end
+    --         end
+    --     end
+    -- end
 end

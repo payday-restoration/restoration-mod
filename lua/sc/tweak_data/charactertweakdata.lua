@@ -454,7 +454,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.can_slide_on_suppress = true
 	self.fbi_vet.HEALTH_INIT = 12
 	self.fbi_vet.headshot_dmg_mul = 3.4
-	self.fbi_vet.damage.bullet_damage_mul = 0.05
+	self.fbi_vet.DAMAGE_CLAMP_BULLET = 3
 	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.access = "spooc"
 	self.fbi_vet.damage.hurt_severity = presets.hurt_severities.elite
@@ -507,7 +507,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.HEALTH_INIT = 500
 	self.meme_man.headshot_dmg_mul = 12.5		
 	self.meme_man.can_shoot_while_dodging = true
-	self.meme_man.damage.bullet_dodge_chance = 65
 	self.meme_man.smoke_dodge_increase = 10
 	self.meme_man.priority_shout = "f30"
 	self.meme_man.bot_priority_shout = "f30x_any"
@@ -2629,11 +2628,10 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.immune_to_concussion = true		
 	self.autumn.HEALTH_INIT = 120
 	self.autumn.headshot_dmg_mul = 2.925
-	self.autumn.damage.bullet_damage_mul = 0.75
+	self.autumn.damage.bullet_damage_mul = 0.65
 	self.autumn.damage.fire_damage_mul = 0.75
 	self.autumn.flammable = false
 	self.autumn.damage.explosion_damage_mul = 0.25
-	self.autumn.damage.bullet_dodge_chance = 10
 	self.autumn.move_speed = presets.move_speed.lightning
 	self.autumn.can_cloak = true
 	self.autumn.no_retreat = true
@@ -12106,7 +12104,7 @@ function CharacterTweakData:_set_easy()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
-	self.autumn.damage.bullet_dodge_chance = 10
+	self.autumn.damage.bullet_damage_mul = 0.65
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
@@ -12290,7 +12288,7 @@ function CharacterTweakData:_set_normal()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
-	self.autumn.damage.bullet_dodge_chance = 10
+	self.autumn.damage.bullet_damage_mul = 0.65
 	
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat.melee_weapon_dmg_multiplier = 1
@@ -12487,7 +12485,7 @@ function CharacterTweakData:_set_hard()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
-	self.autumn.damage.bullet_dodge_chance = 10
+	self.autumn.damage.bullet_damage_mul = 0.65
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
@@ -12684,7 +12682,7 @@ function CharacterTweakData:_set_overkill()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("good", "normal")
-	self.autumn.damage.bullet_dodge_chance = 10
+	self.autumn.damage.bullet_damage_mul = 0.65
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
@@ -12992,7 +12990,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self.autumn.damage.bullet_dodge_chance = 15
+	self.autumn.damage.bullet_damage_mul = 0.6
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 6
@@ -13519,7 +13517,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.good)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
-	self.autumn.damage.bullet_dodge_chance = 20	
+	self.autumn.damage.bullet_damage_mul = 0.5
 	self.presets.gang_member_damage.HEALTH_INIT = 100
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.old_hoxton_mission.HEALTH_INIT = 100
@@ -13749,7 +13747,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-	self.autumn.damage.bullet_dodge_chance = 25
+	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 125
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.old_hoxton_mission.HEALTH_INIT = 125
@@ -14098,7 +14096,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-	self.autumn.damage.bullet_dodge_chance = 30	
+	self.autumn.damage.bullet_damage_mul = 0.4
 	
 	--LPF DR from ranged attacks--
 	self.omnia_lpf.damage.bullet_damage_mul = 0.75

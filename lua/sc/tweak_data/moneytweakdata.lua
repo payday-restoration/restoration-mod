@@ -23,7 +23,8 @@ function MoneyTweakData:init(tweak_data, presets)
 	self.max_small_loot_value = 1000000000  --this is stupid but it works
 	--MONEY CHANGES--
 	self.bag_values.counterfeit_money = 1565
-	self.bag_values.diamonds = 2265
+	--vvv this is actually jewelry as well.  in the alpha/pre-release, they were named 'Diamonds' but it was changed to 'Jewelry' for release.  but the ID of it didn't change.  fix their mistake later
+	--self.bag_values.diamonds = 2265 
 	self.bag_values.red_diamond = 21000
 	self.bag_values.meth = 11500
 end

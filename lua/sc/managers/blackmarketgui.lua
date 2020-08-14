@@ -108,6 +108,8 @@ function BlackMarketGui:populate_mods(data)
 				new_data.lock_texture = "guis/textures/pd2/lock_achievement"
 			elseif managers.dlc:is_content_skirmish_locked("weapon_mods", new_data.name) then
 				new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
+				elseif managers.dlc:is_content_crimespree_locked("weapon_mods", new_data.name) then
+				new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
 			else
 				local selected_text = managers.localization:text("bm_menu_no_items")
 				new_data.corner_text = {
@@ -460,7 +462,59 @@ end
 					name = "stamina"
 				},
 				{
-					name = "regen_time"
+					name = "regen_time",
+					inverted = true
+				}
+			}
+
+			--Insert swap speed into weapon stats table.
+			--Also make reload not use table.insert because that's stupid.
+			self._stats_shown = {
+				{
+					round_value = true,
+					name = "magazine",
+					stat_name = "extra_ammo"
+				},
+				{
+					round_value = true,
+					name = "totalammo",
+					stat_name = "total_ammo_mod"
+				},
+				{
+					round_value = true,
+					name = "fire_rate"
+				},
+				{
+					name = "damage"
+				},
+				{
+					percent = true,
+					name = "spread",
+					offset = true,
+					revert = true
+				},
+				{
+					percent = true,
+					name = "recoil",
+					offset = true,
+					revert = true
+				},
+				{
+					index = true,
+					name = "concealment"
+				},
+				{
+					percent = false,
+					name = "suppression",
+					offset = true
+				},
+				{
+					inverted = true,
+					name = "reload"
+				},
+				{
+					inverted = true,
+					name = "swap_speed"
 				}
 			}
 
@@ -1417,18 +1471,18 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				pc_btn = "menu_preview_item",
 				callback = callback(self, self, "preview_suit_variation_callback")
 			},
-			hnd_equip = {	
-				btn = "BTN_A",	
-				prio = 1,	
-				name = "bm_menu_btn_equip_gloves",	
-				callback = callback(self, self, "equip_gloves_callback")	
-			},	
-			hnd_preview = {	
-				btn = "BTN_STICK_R",	
-				name = "bm_menu_btn_preview_gloves",	
-				prio = 3,	
-				pc_btn = "menu_preview_item",	
-				callback = callback(self, self, "preview_gloves_callback")	
+			hnd_equip = {
+				btn = "BTN_A",
+				prio = 1,
+				name = "bm_menu_btn_equip_gloves",
+				callback = callback(self, self, "equip_gloves_callback")
+			},
+			hnd_preview = {
+				btn = "BTN_STICK_R",
+				name = "bm_menu_btn_preview_gloves",
+				prio = 3,
+				pc_btn = "menu_preview_item",
+				callback = callback(self, self, "preview_gloves_callback")
 			},
 			m_equip = {
 				btn = "BTN_A",
@@ -1547,6 +1601,18 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				pc_btn = "menu_preview_item",
 				callback = callback(self, self, "preview_customized_mask_with_mod_callback")
 			},
+			mp_choose_first = {
+				btn = "BTN_A",
+				prio = 1,
+				name = "bm_menu_btn_choose_color_a",
+				callback = callback(self, self, "choose_mask_color_a_callback")
+			},
+			mp_choose_second = {
+				btn = "BTN_A",
+				prio = 1,
+				name = "bm_menu_btn_choose_color_b",
+				callback = callback(self, self, "choose_mask_color_b_callback")
+			},
 			bm_buy = {
 				btn = "BTN_A",
 				prio = 1,
@@ -1624,25 +1690,25 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				pc_btn = "menu_remove_item",
 				callback = callback(self, self, "lo_unequip_deployable_callback")
 			},
+			lo_d_sentry_ap_rounds = {
+				btn = "BTN_Y",
+				name = "bm_menu_btn_sentry_ap_rounds",
+				prio = 3,
+				pc_btn = "menu_modify_item",
+				callback = callback(self, self, "set_sentry_ap_rounds_callback")
+			},
+			lo_d_sentry_default_rounds = {
+				btn = "BTN_Y",
+				name = "bm_menu_btn_sentry_default_rounds",
+				prio = 3,
+				pc_btn = "menu_modify_item",
+				callback = callback(self, self, "set_sentry_default_rounds_callback")
+			},
 			lo_mw_equip = {
 				btn = "BTN_A",
 				prio = 1,
 				name = "bm_menu_btn_equip_melee_weapon",
 				callback = callback(self, self, "lo_equip_melee_weapon_callback")
-			},
-			lo_d_sentry_ap_rounds = {	
-				btn = "BTN_Y",	
-				name = "bm_menu_btn_sentry_ap_rounds",	
-				prio = 3,	
-				pc_btn = "menu_modify_item",	
-				callback = callback(self, self, "set_sentry_ap_rounds_callback")	
-			},	
-			lo_d_sentry_default_rounds = {	
-				btn = "BTN_Y",	
-				name = "bm_menu_btn_sentry_default_rounds",	
-				prio = 3,	
-				pc_btn = "menu_modify_item",	
-				callback = callback(self, self, "set_sentry_default_rounds_callback")	
 			},
 			lo_mw_preview = {
 				btn = "BTN_STICK_R",
@@ -1810,8 +1876,8 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			BlackMarketGui.blur_panel(self._detection_panel)
 			BlackMarketGui.blur_panel(self._btn_panel)
 
-			if alive(self._extra_options_panel) then	
-				BlackMarketGui.blur_panel(self._extra_options_panel)	
+			if alive(self._extra_options_panel) then
+				BlackMarketGui.blur_panel(self._extra_options_panel)
 			end
 		end
 
@@ -2295,7 +2361,6 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				end
 			end
 
-			--Add deflection to table, and also reorganize stats to a more helpful order where relevant stats are lumped near eachother.
 			self._armor_stats_shown = {
 				{
 					name = "armor"
@@ -4255,6 +4320,8 @@ function BlackMarketGui:update_info_text()
 				end
 			elseif managers.dlc:is_content_skirmish_locked("masks", mask_id) and (type(slot_data.unlocked) ~= "number" and not slot_data.unlocked or slot_data.unlocked == 0) then
 				updated_texts[3].text = managers.localization:to_upper_text("bm_menu_skirmish_content_reward")
+			elseif managers.dlc:is_content_crimespree_locked("masks", mask_id) and (type(slot_data.unlocked) ~= "number" and not slot_data.unlocked or slot_data.unlocked == 0) then
+				updated_texts[3].text = managers.localization:to_upper_text("bm_menu_crimespree_content_reward")
 			end
 
 			if mask_id then
@@ -4373,6 +4440,9 @@ function BlackMarketGui:update_info_text()
 				end
 			elseif managers.dlc:is_content_skirmish_locked("weapon_mods", slot_data.name) then
 				updated_texts[3].text = managers.localization:to_upper_text("bm_menu_skirmish_content_reward")
+				updated_texts[3].below_stats = true
+			elseif managers.dlc:is_content_crimespree_locked("weapon_mods", slot_data.name) then
+				updated_texts[3].text = managers.localization:to_upper_text("bm_menu_crimespree_content_reward")
 				updated_texts[3].below_stats = true
 			end
 		end
@@ -4532,11 +4602,20 @@ function BlackMarketGui:update_info_text()
 		end
 
 		local mask_mod_info = managers.blackmarket:info_customize_mask()
-		updated_texts[2].text = managers.localization:to_upper_text("bm_menu_mask_customization") .. "\n"
+		local mask_base_price = managers.blackmarket:get_customize_mask_base_value()
+		updated_texts[2].text = updated_texts[2].text .. managers.localization:to_upper_text("bm_menu_masks") .. ": " .. self._data.topic_params.mask_name
+
+		if mask_base_price and mask_base_price > 0 then
+			updated_texts[2].text = updated_texts[2].text .. " " .. managers.experience:cash_string(mask_base_price)
+		end
+
+		updated_texts[2].text = updated_texts[2].text .. "\n"
 		local resource_color = {}
 		local material_text = managers.localization:to_upper_text("bm_menu_materials")
 		local pattern_text = managers.localization:to_upper_text("bm_menu_textures")
 		local colors_text = managers.localization:to_upper_text("bm_menu_colors")
+		local color_a_text = managers.localization:to_upper_text("bm_menu_color_a")
+		local color_b_text = managers.localization:to_upper_text("bm_menu_color_b")
 
 		if mask_mod_info[1].overwritten then
 			updated_texts[2].text = updated_texts[2].text .. material_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_overwritten") .. "##" .. "\n"
@@ -4574,22 +4653,62 @@ function BlackMarketGui:update_info_text()
 			table.insert(resource_color, tweak_data.screen_colors.important_1)
 		end
 
-		if mask_mod_info[3].overwritten then
-			updated_texts[2].text = updated_texts[2].text .. colors_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_overwritten") .. "##" .. "\n"
+		local should_show_one_color = mask_mod_info[4].is_same or mask_mod_info[3].overwritten and mask_mod_info[4].overwritten
 
-			table.insert(resource_color, tweak_data.screen_colors.risk)
-		elseif mask_mod_info[3].is_good then
-			updated_texts[2].text = updated_texts[2].text .. colors_text .. ": " .. managers.localization:text(mask_mod_info[3].text)
+		if should_show_one_color then
+			if mask_mod_info[3].overwritten then
+				updated_texts[2].text = updated_texts[2].text .. colors_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_overwritten") .. "##" .. "\n"
 
-			if mask_mod_info[3].price and mask_mod_info[3].price > 0 then
-				updated_texts[2].text = updated_texts[2].text .. " " .. managers.experience:cash_string(mask_mod_info[3].price)
+				table.insert(resource_color, tweak_data.screen_colors.risk)
+			elseif mask_mod_info[3].is_good then
+				updated_texts[2].text = updated_texts[2].text .. colors_text .. ": " .. managers.localization:text(mask_mod_info[3].text)
+
+				if mask_mod_info[3].price and mask_mod_info[3].price > 0 then
+					updated_texts[2].text = updated_texts[2].text .. " " .. managers.experience:cash_string(mask_mod_info[3].price)
+				end
+
+				updated_texts[2].text = updated_texts[2].text .. "\n"
+			else
+				updated_texts[2].text = updated_texts[2].text .. colors_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_not_selected") .. "##" .. "\n"
+
+				table.insert(resource_color, tweak_data.screen_colors.important_1)
+			end
+		else
+			if mask_mod_info[3].overwritten then
+				updated_texts[2].text = updated_texts[2].text .. color_a_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_overwritten") .. "##" .. "\n"
+
+				table.insert(resource_color, tweak_data.screen_colors.risk)
+			elseif mask_mod_info[3].is_good then
+				updated_texts[2].text = updated_texts[2].text .. color_a_text .. ": " .. managers.localization:text(mask_mod_info[3].text)
+
+				if mask_mod_info[3].price and mask_mod_info[3].price > 0 then
+					updated_texts[2].text = updated_texts[2].text .. " " .. managers.experience:cash_string(mask_mod_info[3].price)
+				end
+
+				updated_texts[2].text = updated_texts[2].text .. "\n"
+			else
+				updated_texts[2].text = updated_texts[2].text .. color_a_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_not_selected") .. "##" .. "\n"
+
+				table.insert(resource_color, tweak_data.screen_colors.important_1)
 			end
 
-			updated_texts[2].text = updated_texts[2].text .. "\n"
-		else
-			updated_texts[2].text = updated_texts[2].text .. colors_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_not_selected") .. "##" .. "\n"
+			if mask_mod_info[4].overwritten then
+				updated_texts[2].text = updated_texts[2].text .. color_b_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_overwritten") .. "##" .. "\n"
 
-			table.insert(resource_color, tweak_data.screen_colors.important_1)
+				table.insert(resource_color, tweak_data.screen_colors.risk)
+			elseif mask_mod_info[4].is_good then
+				updated_texts[2].text = updated_texts[2].text .. color_b_text .. ": " .. managers.localization:text(mask_mod_info[4].text)
+
+				if mask_mod_info[4].price and mask_mod_info[4].price > 0 then
+					updated_texts[2].text = updated_texts[2].text .. " " .. managers.experience:cash_string(mask_mod_info[4].price)
+				end
+
+				updated_texts[2].text = updated_texts[2].text .. "\n"
+			else
+				updated_texts[2].text = updated_texts[2].text .. color_b_text .. ": " .. "##" .. managers.localization:to_upper_text("menu_bm_not_selected") .. "##" .. "\n"
+
+				table.insert(resource_color, tweak_data.screen_colors.important_1)
+			end
 		end
 
 		updated_texts[2].text = updated_texts[2].text .. "\n"
@@ -4630,6 +4749,8 @@ function BlackMarketGui:update_info_text()
 				materials = 1,
 				textures = 2
 			}
+			index.mask_colors = index.colors
+			index.colors = nil
 			index = index[slot_data.category]
 
 			if index == 1 then
@@ -5140,6 +5261,8 @@ function BlackMarketGui.populate_buy_mask(self, data)
 			new_data.lock_texture = "guis/textures/pd2/lock_achievement"
 		elseif managers.dlc:is_content_skirmish_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
 			new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
+		elseif managers.dlc:is_content_crimespree_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
+			new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
 		end
 
 		if tweak_data.blackmarket.masks[new_data.name].infamy_lock then
@@ -5567,6 +5690,13 @@ function BlackMarketGui.populate_choose_mask_mod(self, data)
 	local new_data = {}
 	local index = 1
 	local equipped_mod = managers.blackmarket:customize_mask_category_id(data.category)
+	local equipped_first, equipped_second = nil
+
+	if data.category == "mask_colors" then
+		equipped_first = data.is_first_color and managers.blackmarket:customize_mask_category_id("color_a")
+		equipped_second = not data.is_first_color and managers.blackmarket:customize_mask_category_id("color_b")
+	end
+
 	local num_data = #data
 
 	for i = 1, num_data, 1 do
@@ -5611,21 +5741,23 @@ function BlackMarketGui.populate_choose_mask_mod(self, data)
 			new_data.lock_texture = self:get_lock_icon(new_data)
 			new_data.dlc_locked = tweak_data.lootdrop.global_values[new_data.global_value].unlock_id or "bm_menu_dlc_locked"
 			is_locked = true
+		elseif managers.dlc:is_content_achievement_locked(data.category, new_data.name) or managers.dlc:is_content_achievement_milestone_locked(data.category, new_data.name) then
+			new_data.unlocked = -math.abs(new_data.unlocked)
+			new_data.lock_texture = "guis/textures/pd2/lock_achievement"
+		elseif managers.dlc:is_content_skirmish_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
+			new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
+		elseif managers.dlc:is_content_crimespree_locked(data.category, new_data.name) and (not new_data.unlocked or new_data.unlocked == 0) then
+			new_data.lock_texture = "guis/textures/pd2/skilltree/padlock"
 		end
 
 		local active = true
+		new_data.equipped_text = ""
 
-		if data.category == "colors" then
-			new_data.bitmap_texture = "guis/textures/pd2/blackmarket/icons/colors/color_bg"
-			new_data.extra_bitmaps = {}
-
-			table.insert(new_data.extra_bitmaps, "guis/textures/pd2/blackmarket/icons/colors/color_02")
-			table.insert(new_data.extra_bitmaps, "guis/textures/pd2/blackmarket/icons/colors/color_01")
-
-			new_data.extra_bitmaps_colors = {}
-
-			table.insert(new_data.extra_bitmaps_colors, tweak_data.blackmarket.colors[new_data.name].colors[2])
-			table.insert(new_data.extra_bitmaps_colors, tweak_data.blackmarket.colors[new_data.name].colors[1])
+		if data.category == "mask_colors" then
+			new_data.equipped = equipped_first == new_data.name or equipped_second == new_data.name
+			new_data.bitmap_texture = "guis/dlcs/mcu/textures/pd2/blackmarket/icons/mask_color/mask_color_icon"
+			new_data.bitmap_color = tweak_data.blackmarket.mask_colors[new_data.name].color
+			new_data.is_first_color = data.is_first_color
 		elseif data.category == "textures" then
 			new_data.bitmap_texture = tweak_data.blackmarket[data.category][mods.id].texture
 			new_data.render_template = Idstring("VertexColorTexturedPatterns")
@@ -5642,7 +5774,7 @@ function BlackMarketGui.populate_choose_mask_mod(self, data)
 				h = 16,
 				w = 16,
 				top = 0,
-				layer = 1,
+				layer = 3,
 				stream = false,
 				right = 0
 			})
@@ -5659,7 +5791,16 @@ function BlackMarketGui.populate_choose_mask_mod(self, data)
 		}
 
 		if not is_locked and active then
-			table.insert(new_data, "mp_choose")
+			if data.category == "mask_colors" then
+				if data.is_first_color then
+					table.insert(new_data, "mp_choose_first")
+				else
+					table.insert(new_data, "mp_choose_second")
+				end
+			else
+				table.insert(new_data, "mp_choose")
+			end
+
 			table.insert(new_data, "mp_preview")
 		end
 

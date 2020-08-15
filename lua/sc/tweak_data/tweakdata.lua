@@ -258,9 +258,35 @@ tweak_data.projectiles.bravo_frag = {
 	range = 500
 }
 
-if difficulty_index <= 4 then --Grenades deal reduced damage on lower difficulties.
+--Spring Cluster Grenades.
+tweak_data.projectiles.cluster_fuck = {
+	name_id = "bm_cluster_fuck",
+	damage = 15.0, --150 damage at point blank.
+	player_damage = 15.0,
+	curve_pow = 0.25,
+	range = 500,
+	cluster = "child_grenade",
+	cluster_count = 3
+}
+
+tweak_data.projectiles.child_grenade = {
+	name_id = "bm_child_grenade",
+	init_timer = 1,
+	damage = 10.0, --100 damage at point blank.
+	player_damage = 10.0,
+	curve_pow = 0.25,
+	range = 500,
+	launch_speed = 125
+}
+
+if difficulty_index <= 4 then --Enemy grenades deal reduced damage on lower difficulties.
 	tweak_data.projectiles.bravo_frag.damage = 9.0
 	tweak_data.projectiles.bravo_frag.player_damage = 9.0
+	tweak_data.projectiles.cluster_fuck.damage = 9.0
+	tweak_data.projectiles.cluster_fuck.player_damage = 9.0
+	tweak_data.projectiles.cluster_fuck.cluster_count = 2
+	tweak_data.projectiles.child_grenade.damage = 6.0
+	tweak_data.projectiles.child_grenade.player_damage = 6.0
 end
 
 --But why--

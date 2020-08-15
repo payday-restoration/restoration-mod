@@ -58,6 +58,10 @@
 		{
 			"hook_id" : "lib/utils/temporarypropertymanager"
 			"script_path" : "lua/sc/utils/temporarypropertymanager.lua"
+		},
+		{
+			"hook_id" : "lib/units/weapons/projectiles/fraggrenade"
+			"script_path" : "lua/sc/units/weapons/frag.lua"
 		}
 	]
 }

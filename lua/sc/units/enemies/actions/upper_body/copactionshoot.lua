@@ -555,7 +555,7 @@ function CopActionShoot:set_sniper_focus_sound(sound_progress)
 end
 
 function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, grenade_type)
-	if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "molotov" then
+	if grenade_type == "frag" or grenade_type == "bravo_frag" or "cluster_fuck" or grenade_type == "molotov" then
 		if ProjectileBase.throw_projectile(grenade_type, shoot_from_pos, target_vec, nil, self._unit, true) then
 			return true
 		end
@@ -654,21 +654,20 @@ function CopActionShoot:update(t)
 
 		if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
 			if self._throw_frag and self._ext_brain._throw_frag_t < t and 1600 >= mvec3_dis(target_pos, shoot_from_pos) then
-				local is_spring = self._ext_base._tweak_table == "spring"	
-				local frag_cooldown = 6
+				local is_spring = self._ext_base._tweak_table == "spring"
+				local frag_cooldown = 6 --This stuff should really be defined via tweakdata in the future.
 				if is_spring then
 					frag_cooldown = 12
 				end
 				
 				local frag_roll_chance = is_spring and 1 or 0.3
 				local frag_roll = math_random() <= frag_roll_chance	
-				local grenade_type = "bravo_frag"
+				local grenade_type = is_spring and "cluster_fuck" or "bravo_frag"
 									
 				
 				self._ext_brain._throw_frag_t = t + frag_cooldown
 
 				if frag_roll then
-					log(grenade_type)
 					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type) then
 						self._ext_movement:play_redirect("throw_grenade")
 						self._unit:sound():say("use_gas", true, nil, true)

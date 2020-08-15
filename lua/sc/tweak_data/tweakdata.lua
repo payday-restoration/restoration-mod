@@ -27,7 +27,7 @@ tweak_data.concealment_cap = 32
 tweak_data.projectiles.launcher_rocket.damage = 120
 tweak_data.projectiles.launcher_rocket.player_damage = 60
 tweak_data.projectiles.launcher_rocket.range = 500
-tweak_data.projectiles.launcher_rocket.curve_pow = 1
+tweak_data.projectiles.launcher_rocket.curve_pow = 0.1
 
 --Grenade launcher stuff--
 tweak_data.projectiles.launcher_frag.damage = 80
@@ -209,7 +209,7 @@ tweak_data.dot_types.poison = {
 
 --Stun nades--
 tweak_data.projectiles.concussion.damage = 0
-tweak_data.projectiles.concussion.curve_pow = 1
+tweak_data.projectiles.concussion.curve_pow = 0.8
 tweak_data.projectiles.concussion.range = 1000
 tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 0}
 

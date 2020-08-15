@@ -254,7 +254,7 @@ tweak_data.projectiles.bravo_frag = {
 	name_id = "bm_bravo_frag",
 	damage = 15.0, --150 damage at point blank.
 	player_damage = 15.0,
-	curve_pow = 0.25,
+	curve_pow = 0.1,
 	range = 500
 }
 
@@ -263,7 +263,7 @@ tweak_data.projectiles.cluster_fuck = {
 	name_id = "bm_cluster_fuck",
 	damage = 15.0, --150 damage at point blank.
 	player_damage = 15.0,
-	curve_pow = 0.25,
+	curve_pow = 0.1,
 	range = 500,
 	cluster = "child_grenade",
 	cluster_count = 3
@@ -274,7 +274,7 @@ tweak_data.projectiles.child_grenade = {
 	init_timer = 1,
 	damage = 10.0, --100 damage at point blank.
 	player_damage = 10.0,
-	curve_pow = 0.25,
+	curve_pow = 0.1,
 	range = 500,
 	launch_speed = 125
 }

@@ -1429,7 +1429,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.bravo_frag = {}
 	self.projectiles.bravo_frag.damage = 12 --120 damage at point blank.
 	self.projectiles.bravo_frag.player_damage = 12
-	self.projectiles.bravo_frag.curve_pow = 0.25
+	self.projectiles.bravo_frag.curve_pow = 0.1
 	self.projectiles.bravo_frag.range = 500
 	self.projectiles.bravo_frag.name_id = "bm_bravo_frag"
 	self.projectiles.bravo_frag.unit = "units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"
@@ -1442,7 +1442,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.cluster_fuck = {}
 	self.projectiles.cluster_fuck.damage = 12 --120 damage at point blank.
 	self.projectiles.cluster_fuck.player_damage = 12
-	self.projectiles.cluster_fuck.curve_pow = 0.25
+	self.projectiles.cluster_fuck.curve_pow = 0.1
 	self.projectiles.cluster_fuck.range = 500
 	self.projectiles.cluster_fuck.name_id = "bm_cluster_fuck"
 	self.projectiles.cluster_fuck.unit = "units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"
@@ -1455,7 +1455,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.child_grenade = {}
 	self.projectiles.child_grenade.damage = 10 --100 damage at point blank.
 	self.projectiles.child_grenade.player_damage = 10
-	self.projectiles.child_grenade.curve_pow = 0.25
+	self.projectiles.child_grenade.curve_pow = 0.1
 	self.projectiles.child_grenade.init_timer = 1.0
 	self.projectiles.child_grenade.range = 500
 	self.projectiles.child_grenade.name_id = "bm_child_grenade"

@@ -76,7 +76,8 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 		suit_sunny = "heist_default",
 		loud_suit = "heist_default",
 		poggers = "esport",
-		suit_prison = "saints"
+		suit_prison = "saints",
+		continental = "continental"		
 	}
 	self.gloves.default = {
 		name_id = "bm_gloves_default",
@@ -176,7 +177,14 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 		unit = "units/pd2_dlc_hnd/characters/hnd_glv_esport/hnd_glv_esport",
 		third_material = "units/pd2_dlc_hnd/characters/hnd_glv_esport/hnd_glv_esport_third"
 	}
-	
+	self.gloves.continental = {
+		name_id = "bm_gloves_continental",
+		desc_id = "bm_gloves_continental_desc",
+		texture_bundle_folder = "anv",
+		global_value = "anv",
+		unit = "units/pd2_dlc_anv/characters/anv_glv_continental/anv_glv_continental",
+		third_material = "units/pd2_dlc_anv/characters/anv_glv_continental/anv_glv_continental_third"
+	}	
 end
 
 --This is a helmet, not a mask--

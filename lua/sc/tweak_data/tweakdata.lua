@@ -276,7 +276,7 @@ tweak_data.projectiles.child_grenade = {
 	player_damage = 10.0,
 	curve_pow = 0.1,
 	range = 500,
-	launch_speed = 125
+	launch_speed = 100
 }
 
 if difficulty_index <= 4 then --Enemy grenades deal reduced damage on lower difficulties.

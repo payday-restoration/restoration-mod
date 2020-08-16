@@ -561,8 +561,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 							
 				--Hostage Taker
 					self.values.player.hostage_health_regen_addend = {
-						0.125, --Basic
-						0.25 --Ace
+						0.1, --Basic
+						0.2 --Ace
 					}
 
 					--Ace

@@ -345,6 +345,33 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	
+	--//CHRISTMAS HEISTS\\--
+	
+	--hoxton breakout xmas day 1
+	table.insert(self._level_index, "xmn_hox_1")
+	self.xmn_hox_1 = deep_clone(self.hox_1)
+	self.xmn_hox_1.name_id = "heist_xmn_hox_1_name"
+	self.xmn_hox_1.player_style = "loud_suit"
+	self.xmn_hox_1.world_name = "narratives/dentist/hox/stage_1_xmn"
+	self.xmn_hox_1.load_screen = "guis/dlcs/xmn/textures/loading/job_hox_1_xmn_df"
+	--self.xmn_hox_1.music_overrides = {track_20 = "track_66"} --what's the point of doing this lmao
+	
+	--hoxton breakout xmas day 2
+	table.insert(self._level_index, "xmn_hox_2")
+	self.xmn_hox_2 = deep_clone(self.hox_2)
+	self.xmn_hox_2.name_id = "heist_xmn_hox_2_name"
+	self.xmn_hox_2.player_style = "loud_suit"
+	self.xmn_hox_2.world_name = "narratives/dentist/hox/stage_2_xmn"
+	self.xmn_hox_2.load_screen = "guis/dlcs/xmn/textures/loading/job_hox_2_xmn_df"
+	--self.xmn_hox_2.music_overrides = {track_21 = "track_67"}
+	
+	--breakin' feds xmas
+	table.insert(self._level_index, "xmn_tag")
+	self.xmn_tag = deep_clone(self.tag)
+	self.xmn_tag.name_id = "heist_xmn_tag_name"
+	self.xmn_tag.world_name = "narratives/locke/tag_xmn"
+	self.xmn_tag.load_screen = "guis/dlcs/xmn/textures/loading/job_tag_xmn_df"
+	
 	--///ZOMBIE LEVELS\\\--
 	self.haunted.package = {"packages/zombieassets", "packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 	self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}

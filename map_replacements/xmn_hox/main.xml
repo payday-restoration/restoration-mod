@@ -1,0 +1,66 @@
+<table name="xmn_hox">
+	<Localization default="english.json" directory="loc"/>
+	<narrative briefing_event="dentist_hb1_cbf_01" contact="events" dlc="pd2_clan" id="xmn_hox" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_breakout_01" icon="guis/dlcs/bro/textures/pd2/crimenet/hoxton_breakout_01" region="street">
+		<chain>
+			<table dlc="pd2_clan" level_id="xmn_hox_1" type="d" type_id="heist_type_assault"/>
+			<table dlc="pd2_clan" level_id="xmn_hox_2" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="62000"/>
+			<value_node value="124000"/>
+			<value_node value="310000"/>
+			<value_node value="620000"/>
+			<value_node value="800000"/>
+			<value_node value="800000"/>
+			<value_node value="800000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="dentist_hb1_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_hox1"/>
+			<value_node value="cn_hox2"/>
+			<value_node value="cn_hox3"/>
+			<value_node value="cn_hox4"/>
+			<value_node value="cn_big1"/>
+			<value_node value="cn_big2"/>
+			<value_node value="cn_big3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="2.14"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="53400"/>
+			<value_node value="53400"/>
+			<value_node value="53400"/>
+			<value_node value="53400"/>
+			<value_node value="53400"/>
+			<value_node value="53400"/>
+			<value_node value="53400"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="48800"/>
+			<value_node value="48800"/>
+			<value_node value="48800"/>
+			<value_node value="48800"/>
+			<value_node value="48800"/>
+			<value_node value="48800"/>
+			<value_node value="48800"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="250000"/>
+			<value_node value="500000"/>
+			<value_node value="1.25e+006"/>
+			<value_node value="2.5e+006"/>
+			<value_node value="3.2e+006"/>
+			<value_node value="3.2e+006"/>
+			<value_node value="3.2e+006"/>
+		</payout>
+	</narrative>
+</table>

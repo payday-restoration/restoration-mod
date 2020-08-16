@@ -1544,6 +1544,7 @@
 	<!--swat-->
 	<material_config path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_contour" force="true"/>
 	<material_config path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>		
 	<model path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" force="true"/>

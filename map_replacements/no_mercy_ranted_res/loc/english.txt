@@ -6,7 +6,7 @@
 	"heist_nmh_res_brief": "Our client needs a blood sample from a patient being kept in the isolation ward of Mercy Hospital. You gotta go in there, take out the surveillance, subdue the civilians and get me into the patient database so I can ID the guy. With the security in this place, it should be a nice clean job. I'll get you out via the roof when you're done. This job is a little shady, brokered through a third part, got some some serious shadow-company military industrial vibes, but worth the risk. The payday is something we're gonna need in the future, plus a nice cash bonus."
 	
 	"heist_nmh_new":"Draw and analyze patient's blood",
-	"heist_nmh_new_desc":"You gotta find a centrifuge to validate the blood samples."
+	"heist_nmh_new_desc":"You gotta find a sentrifuge to validate the blood samples."
 	
 	"heist_nmh_new2":"Call the elevator",
 	"heist_nmh_new2_desc":"Press the button and wait for the elevator"

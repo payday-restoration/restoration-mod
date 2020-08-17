@@ -6,7 +6,7 @@
 	<Localization default="english.txt" directory="loc">
 		<loc file="english.txt" language="english"/>
 	</Localization>
-	<level ai_group_type="nypd" brief_id="heist_nmh_briefing" briefing_dialog="Play_pln_nmh_brf" cube="cube_apply_heist_bank" failure_event="Play_pln_nmh_end_fail" id="nmh_res" intro_event="Play_old_ban_nmh_intro" load_screen="guis/dlcs/nmh/textures/loading/job_nmh_df" max_bags="0" narrator="bain">
+	<level ai_group_type="nypd" briefing_dialog="Play_pln_nmh_brf" cube="cube_apply_heist_bank" failure_event="Play_pln_nmh_end_fail" id="nmh_res" intro_event="Play_old_ban_nmh_intro" load_screen="guis/dlcs/nmh/textures/loading/job_nmh_df" max_bags="0" narrator="bain">
 		<add file="levels/nmh_res/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
@@ -56,7 +56,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative brief_id="heist_nmh_crimenet" name_id="heist_nmh" briefing_event="Play_rb1_nmh_cbf_01" contact="classic" hide_from_crimenet="false" icon="guis/mercy/icon_nmh" id="nmh" jc="30" region="street">
+	<narrative briefing_event="Play_rb1_nmh_cbf_01" contact="classic" hide_from_crimenet="false" icon="guis/mercy/icon_nmh" id="no_mercy_ranted" jc="30" region="street">
 		<chain>
 			<table level_id="nmh_res" type="d" type_id="heist_type_assault"/>
 		</chain>

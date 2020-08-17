@@ -2378,10 +2378,20 @@
 	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_df"/>	
 	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_nm"/>
 	<effect path="effects/payday2/particles/explosions/wpn_npc_bravo_frag_flash"/>
+	<effect path="effects/payday2/particles/explosions/wpn_npc_spring_frag_flash"/>	
 
 	<!-- Spring Cluster Grenades -->
-	<!-- NEEDS ASSETS -->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"/>
+	<material_config path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"/>
+	<model path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"/>
+	<object path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"/>
 	<unit path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck" load="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck_df"/>
+	<texture path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck_il"/>
+	
+	<cooked_physics path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"/>
+	<model path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"/>
+	<object path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"/>
 	<unit path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade" load="true"/>
 	
 	<!--cool hat bro-vo-->

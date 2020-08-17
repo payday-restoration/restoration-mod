@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck" orientation_object="rp_grenade" />
+  <sequence_manager file="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" />
+  <bodies>
+  	<!-- collision_script_tag="bounce" -->
+  	 <body name="static_body" enabled="true" template="dynamic" collision_class="projectile" friction="0.5" sweep="true" restitution="0.4" ang_damping="0.1" pushed_by_mover="false" collides_with_mover="false" > <!--error in havok forces pushed_by_mover="false" to be used to not collide with mover-->
+    	<object name="rp_grenade" />
+      	<object name="c_sphere" enabled="true" collision_type="sphere" mass="0.4" padding="-2.5" />
+      	<object name="c_sphere_2" enabled="true" collision_type="sphere" mass="0.1" padding="-2.5" />
+      	<object name="g_grenade" enabled="true" />
+    </body>
+  </bodies>
+  <graphics>
+    <object name="g_grenade" enabled="true" />
+  </graphics>
+  
+ 	<effects>
+		<effect_spawner name="flasher" enabled="true" object="rp_grenade" effect="effects/payday2/particles/explosions/wpn_npc_spring_frag_flash" />
+	</effects> 
+  
+</dynamic_object>

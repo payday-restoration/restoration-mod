@@ -1284,7 +1284,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_3_desc_sc"] = "Your dodge meter fills up by ##75%## of your dodge when your armor is restored.\n\nYou gain ##5## dodge points.",
 		["menu_deck5_5_desc_sc"] = "Killing an enemy outside of melee stores an additional ##15## health.\n\nYou can store an additional ##45## health.\n\nYou gain an additional ##5## dodge points.",
 		["menu_deck5_7_desc_sc"] = "Your dodge meter fills up by an additional ##75%## of your dodge when your armor is restored.\n\nYou gain an additional ##5## dodge points.",
-		["menu_deck5_9_desc_sc"] = "While you have temporary health your movement speed is increased by ##20%##, and damage taken is reduced by ##20%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
+		["menu_deck5_9_desc_sc"] = "While you have temporary health your movement speed is increased by ##15%##, and damage taken is reduced by ##15%##.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 		
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",

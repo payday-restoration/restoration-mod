@@ -2315,7 +2315,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_passive_dodge_chance_3",
+					"player_passive_dodge_chance_2",
 					"player_revive_temp_health"
 				},
 				cost = 2400,

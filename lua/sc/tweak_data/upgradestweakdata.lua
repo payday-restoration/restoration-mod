@@ -1261,7 +1261,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.temp_health_decay = 0.6
 	self.temp_health_max = 24
 	self.values.player.revive_temp_health = { 12 }
-	self.values.player.max_stored_health_speed = { 1.2 }
+	self.values.player.max_stored_health_speed = { 1.15 }
 	self.values.player.temp_health_damage_reduction = { 1.2 }
 	self.values.player.armor_regen_dodge = { 1 }
 

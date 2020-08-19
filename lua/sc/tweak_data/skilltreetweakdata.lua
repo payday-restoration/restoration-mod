@@ -2295,7 +2295,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
-					"player_armor_regen_dodge_1"
+					"player_armor_regen_dodge"
 				},
 				cost = 400,
 				icon_xy = {7, 2},

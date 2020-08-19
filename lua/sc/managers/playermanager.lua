@@ -847,11 +847,14 @@ function PlayerManager:health_regen()
 	return health_regen
 end
 
---Move hostage taker to flat # regen from % regen.
+--Move hostage taker to flat # regen from % regen. Add max hostage regen bonus.
 function PlayerManager:fixed_health_regen()
 	local health_regen = 0
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
 	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")
+	if (managers.groupai and managers.groupai:state():hostage_count() or 0) >= tweak_data:get_raw_value("upgrades", "hostage_max_num", "health_regen") then
+		health_regen = health_regen + self:get_hostage_bonus_addend("health_regen") * self:upgrade_value("player", "hostage_health_regen_max_mult", 0)
+	end
 
 	return health_regen
 end

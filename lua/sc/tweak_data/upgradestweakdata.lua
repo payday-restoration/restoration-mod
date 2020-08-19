@@ -562,10 +562,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Hostage Taker
 					self.values.player.hostage_health_regen_addend = {
 						0.1, --Basic
-						0.2 --Ace
+						0.2 --Unused
 					}
 
 					--Ace
+						self.values.player.hostage_health_regen_max_mult = { 1 }
 						self.values.team.damage = {
 							hostage_absorption = {0.1},
 							hostage_absorption_limit = 4
@@ -2531,7 +2532,16 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "passive_damage_multiplier",
 			category = "weapon"
 		}
-	}	
+	}
+	self.definitions.player_hostage_health_regen_max_mult = {
+		name_id = "menu_player_hostage_health_regen_max_mult",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hostage_health_regen_max_mult",
+			category = "player"
+		}
+	}
 end
 
 function UpgradesTweakData:_smg_definitions()

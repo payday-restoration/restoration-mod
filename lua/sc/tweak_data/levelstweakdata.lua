@@ -195,7 +195,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.kenaz.ai_group_type = lapd
 	self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/lapdassets", "packages/rex_gold"}	
-	self.kenaz.player_style = "tux"				
+	self.kenaz.player_style = "continental"				
 	
 	self.rvd1.ai_group_type = lapd
 	self.rvd1.package = {"packages/job_rvd", "packages/lapdassets"}	

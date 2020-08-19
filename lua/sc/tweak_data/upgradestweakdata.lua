@@ -309,13 +309,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.6
 	}
 	self.values.player.body_armor.dodge = {
-		0.2,
-		0.1,
-		0,
+		0.25,
+		0.15,
+		0.05,
+		-0.05,
 		-0.1,
 		-0.15,
-		-0.2,
-		-0.3
+		-0.25
 	}
 	self.values.player.body_armor.concealment = {
 		30,
@@ -1259,9 +1259,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	self.temp_health_decay = 0.6
 	self.temp_health_max = 24
-	self.values.player.active_temp_health_speed = { 1.15 }
-	self.values.player.active_temp_health_damage_reduction = { 1.15 }
-	self.values.player.armor_regen_dodge = { 0.75, 1.5 }
+	self.values.player.revive_temp_health = { 12 }
+	self.values.player.max_stored_health_speed = { 1.2 }
+	self.values.player.temp_health_damage_reduction = { 1.2 }
+	self.values.player.armor_regen_dodge = { 1 }
 
 	self.values.player.level_2_dodge_addend = {
 		0.05,
@@ -3132,38 +3133,38 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.player_active_temp_health_speed = {
-		name_id = "menu_player_active_temp_health_speed",
+	self.definitions.player_revive_temp_health = {
+		name_id = "menu_player_revive_temp_health",
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "active_temp_health_speed",
+			upgrade = "revive_temp_health",
 			category = "player"
 		}
 	}
-	self.definitions.player_active_temp_health_damage_reduction = {
-		name_id = "menu_player_active_temp_health_damage_reduction",
+	self.definitions.player_max_stored_health_speed = {
+		name_id = "menu_player_max_stored_health_speed",
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "active_temp_health_damage_reduction",
+			upgrade = "max_stored_health_speed",
 			category = "player"
 		}
 	}
-	self.definitions.player_armor_regen_dodge_1 = {
+	self.definitions.player_temp_health_damage_reduction = {
+		name_id = "menu_player_temp_health_damage_reduction",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "temp_health_damage_reduction",
+			category = "player"
+		}
+	}
+	self.definitions.player_armor_regen_dodge = {
 		name_id = "menu_player_armor_regen_dodge",
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "armor_regen_dodge",
-			category = "player"
-		}
-	}
-	self.definitions.player_armor_regen_dodge_2 = {
-		name_id = "menu_player_armor_regen_dodge",
-		category = "feature",
-		upgrade = {
-			value = 2,
 			upgrade = "armor_regen_dodge",
 			category = "player"
 		}

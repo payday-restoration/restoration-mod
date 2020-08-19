@@ -64,8 +64,8 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 		multiplier = multiplier + self:upgrade_value("player", "hot_speed_bonus", 0) * #hot_stacks or 0
 
 		--Hitman movespeed bonus
-		if player_unit:character_damage():has_temp_health() then
-			multiplier = multiplier + self:upgrade_value("player", "active_temp_health_speed", 1) - 1
+		if player_unit:character_damage():max_armor_stored_health() == player_unit:character_damage():armor_stored_health() then
+			multiplier = multiplier + self:upgrade_value("player", "max_stored_health_speed", 1) - 1
 		end
 	end
 
@@ -405,7 +405,7 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 
 	--Hitman damage reduction bonus
 	if self:player_unit():character_damage():has_temp_health() then
-		multiplier = multiplier * self:upgrade_value("player", "active_temp_health_damage_reduction", 1)
+		multiplier = multiplier * self:upgrade_value("player", "temp_health_damage_reduction", 1)
 	end
 	
 	if self._current_state == "bipod" then

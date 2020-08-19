@@ -899,6 +899,8 @@ function PlayerDamage:revive(silent)
 		self:fill_dodge_meter(3.0, true)
 	end
 
+	self:_change_temp_health(managers.player:upgrade_value("player", "revive_temp_health", 0)) --Hitman temp health on revive.
+
 	--Update What Doesn't Kill
 	managers.player:set_damage_absorption(
 		"down_absorption",

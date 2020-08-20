@@ -2327,7 +2327,7 @@ function SkillTreeTweakData:init(tweak_data)
 			{
 				upgrades = {
 					"player_temp_health_deflection",
-					"player_max_stored_health_speed",
+					"player_temp_health_speed",
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,

@@ -402,11 +402,6 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 			end
 		end
 	end
-
-	--Hitman damage reduction bonus
-	if self:player_unit():character_damage():has_temp_health() then
-		multiplier = multiplier * self:upgrade_value("player", "temp_health_damage_reduction", 1)
-	end
 	
 	if self._current_state == "bipod" then
 		multiplier = multiplier * self:upgrade_value("player", "bipod_damage_reduction", 1)

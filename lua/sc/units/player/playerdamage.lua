@@ -873,6 +873,10 @@ function PlayerDamage:revive(silent)
 	end
 	self._keep_health_on_revive = false --reset cloaker kick/taser shock flag.
 	self:_regenerate_armor()
+	local revive_temp_health = managers.player:upgrade_value("player", "revive_temp_health", 0)
+	self:_change_temp_health(revive_temp_health)
+	local max_health = self:_max_health()
+	self._health = Application:digest_value(math.clamp(self._health_without_temp + self._temp_health, 0, max_health), true)
 	managers.hud:set_player_health({
 		current = self:get_real_health(),
 		total = self:_max_health(),
@@ -898,8 +902,6 @@ function PlayerDamage:revive(silent)
 	if managers.player:has_category_upgrade("player", "dodge_on_revive") then --Rogue dodge meter bonus on revive.
 		self:fill_dodge_meter(3.0, true)
 	end
-
-	self:_change_temp_health(managers.player:upgrade_value("player", "revive_temp_health", 0)) --Hitman temp health on revive.
 
 	--Update What Doesn't Kill
 	managers.player:set_damage_absorption(
@@ -936,7 +938,12 @@ end
 function PlayerDamage:_calc_health_damage(attack_data)
 	local health_subtracted = 0
 	health_subtracted = self:get_real_health()
-	attack_data.damage = attack_data.damage * self._deflection --Apply Deflection DR.
+	local deflection = self._deflection
+	if self:has_temp_health() then --Hitman deflection bonus.
+		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+	end
+
+	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
 
 	if managers.player:has_category_upgrade("player", "dodge_stacking_heal") and attack_data.damage > 0.0 then --End Rogue health regen.
 		self._damage_to_hot_stack = {}
@@ -1133,7 +1140,7 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	--Hitman temporary hp drain over time.
 	if self:has_temp_health() and self._next_temp_health_decay_t < t then
 		self._next_temp_health_decay_t = t + 1
-		self:change_health(-math.min(tweak_data.upgrades.temp_health_decay * self._max_health_reduction, self._temp_health))
+		self:change_health(-math.min(tweak_data.upgrades.temp_health_decay, self._temp_health))
 	end
 end)
 

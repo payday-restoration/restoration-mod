@@ -2326,7 +2326,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck8,
 			{
 				upgrades = {
-					"player_temp_health_damage_reduction",
+					"player_temp_health_deflection",
 					"player_max_stored_health_speed",
 					"player_passive_loot_drop_multiplier"
 				},

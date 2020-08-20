@@ -873,7 +873,7 @@ function PlayerDamage:revive(silent)
 	end
 	self._keep_health_on_revive = false --reset cloaker kick/taser shock flag.
 	self:_regenerate_armor()
-	local revive_temp_health = managers.player:upgrade_value("player", "revive_temp_health", 0)
+	local revive_temp_health = managers.player:upgrade_value("player", "revive_temp_health", 0) * self._max_health_reduction
 	self:_change_temp_health(revive_temp_health)
 	local max_health = self:_max_health()
 	self._health = Application:digest_value(math.clamp(self._health_without_temp + self._temp_health, 0, max_health), true)

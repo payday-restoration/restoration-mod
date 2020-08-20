@@ -10,18 +10,9 @@ local show_point_of_no_return_timer_orig = HUDManager.show_point_of_no_return_ti
 function HUDManager:show_point_of_no_return_timer()
 	show_point_of_no_return_timer_orig(self)
 	if not restoration.Options:GetValue("OTHER/MusicShuffle") then
-		if restoration.Options:GetValue("OTHER/PONRTracks") == 2 and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down then
-			managers.music:track_listen_start("music_heist_assault", "resmusic_ponr")
-		elseif restoration.Options:GetValue("OTHER/PONRTracks") == 3 and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down then
-			managers.music:track_listen_start("music_heist_assault", "track_16")
-		elseif restoration.Options:GetValue("OTHER/PONRTracks") == 4 and managers.groupai:state()._ponr_is_on and Global.game_settings.one_down then
-			if ponr_random1 == 1 then
-                managers.music:track_listen_start("music_heist_assault", "resmusic_ponr")
-            elseif ponr_random1 == 2 then
-                managers.music:track_listen_start("music_heist_assault", "track_16")
-			end
+		if managers.groupai:state()._ponr_is_on and Global.game_settings.one_down and restoration.Options:GetValue("OTHER/PONRTrack") then
+			local ponr_track = managers.music:jukebox_heist_track("ponr")
+			managers.music:post_event(managers.music:track_listen_start("music_heist_assault", ponr_track))
 		end
-	-- else
-	-- 	managers.music:stop_custom()
 	end
 end

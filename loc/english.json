@@ -157,6 +157,7 @@
 	"off" : "Off",
 	"windowofoppurtunity" : "Window Of Opportunity",
 	"wheresthevan" : "Where's The Van",
+	"menu_jukebox_heist_ponr" : "Point Of No Return",
 	
 	"RestorationModPaintingsTitleID" : "Unused Art Gallery Paintings",
 	"RestorationModPaintingsDescID" : "Enable or disable the ability for unused paintings to spawn on Art Gallery. As host only.",
@@ -515,6 +516,8 @@
 	"RestorationModMaskOnTextTitleID" : "Mask on text",
 	"RestorationModStopAllBotsTitleID" : "Stop All Bots",
 	"RestorationModStopAllBotsDescID" : "Stops all bots by holding the stop bot key",
+	"RestorationModPONRTrackTitleID" : "Point Of No Return Music",
+	"RestorationModPONRTrackDescID" : "Changes the music track on Pro-Jobs when the point of no return starts",
 	"RestorationModPONRTracksTitleID" : "Point Of No Return Music",
 	"RestorationModPONRTracksDescID" : "Select the music track for Pro-Jobs when the point of no return starts",
 	"RestorationModMusicShuffleTitleID" : "Music Shuffle",

@@ -59,6 +59,7 @@ function ChallengesTweakData:init()
 		xp = mid_xp,
     }
     
+	--[[
     self.session = {}
     self.session.branch_bank_sm_wish = {
 		title_id = "ch_branch_bank_sm_wish_hl",
@@ -92,8 +93,12 @@ function ChallengesTweakData:init()
 		level_id = "glace",
 		xp = small_xp,
 		awards_achievment = "duck_hunting"
-
+	}
+	
+	]]--
+		
 	self.weapon = {}
+	
 
     self:weapon_challenges()
 end

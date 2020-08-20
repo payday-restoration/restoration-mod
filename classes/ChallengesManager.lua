@@ -66,7 +66,7 @@ end
 function ChallengesManagerRes:add_already_awarded_challenge( name )
 	local challenge = self._challenges_map_res[ name ]
 	if challenge and not self._global.active[ name ] then
-		if managers.experience:current_level() >= challenge.unlock_level then
+		-- if managers.experience:current_level() >= challenge.unlock_level then
 			if self:_check_depends_on( name ) then
 				local t = {}
 				if challenge.counter_id then
@@ -88,7 +88,7 @@ function ChallengesManagerRes:add_already_awarded_challenge( name )
 					end
 				end
 			end
-		end
+		-- end
 	end
 end
 

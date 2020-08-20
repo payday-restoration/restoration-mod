@@ -57,7 +57,41 @@ function ChallengesTweakData:init()
 		count = 100,
 		--No visible counter?
 		xp = mid_xp,
-	}
+    }
+    
+    self.session = {}
+    self.session.branch_bank_sm_wish = {
+		title_id = "ch_branch_bank_sm_wish_hl",
+		description_id = "ch_branch_bank_sm_wish",
+		xp = gigantic_xp,
+		level_id = "branchbank_cash",
+		difficulty = "sm_wish",
+		session_stopped = {
+			callback = "overkill_success"
+		}
+    }
+    self.session.bridge_no_bleedouts_hard = {
+		title_id = "ch_bridge_no_bleedouts_hl",
+		description_id = "ch_bridge_no_bleedouts",
+		xp = huge_xp,
+		level_id = "glace",
+		difficulty = {
+			"hard",
+			"overkill",
+			"overkill_145"
+		},
+		session_stopped = {
+			callback = "never_bleedout"
+		}
+    }
+    self.achievment = {}
+    self.achievment.duck_hunting = {
+		title_id = "ch_duck_hunting_hl",
+		description_id = "ch_duck_hunting",
+		flag_id = "duck_hunting",
+		level_id = "glace",
+		xp = small_xp,
+		awards_achievment = "duck_hunting"
 
 	self.weapon = {}
 

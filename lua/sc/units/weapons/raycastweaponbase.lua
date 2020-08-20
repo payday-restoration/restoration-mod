@@ -357,6 +357,12 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 			hit_through_shield = hit_through_shield or alive(hit.unit:parent())
 		end
 
+		--Damage reduction when shooting through shields.
+		--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
+		if hit_through_shield then
+			damage = damage * (self._shield_damage_mult or 0.5)
+		end
+
 		if hit_result and hit_result.type == "death" and cop_kill_count > 0 then
 			local unit_type = hit.unit:base() and hit.unit:base()._tweak_table
 			local multi_kill, enemy_pass, obstacle_pass, weapon_pass, weapons_pass, weapon_type_pass = nil

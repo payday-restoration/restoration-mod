@@ -739,7 +739,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.weapon = presets.weapon.normal
 	self.swat.detection = presets.detection.normal
 	self.swat.HEALTH_INIT = 8
-	self.swat.headshot_dmg_mul = 4.5
+	self.swat.headshot_dmg_mul = 3.5
 	self.swat.move_speed = presets.move_speed.very_fast
 	self.swat.surrender_break_time = {6, 10}
 	self.swat.suppression = presets.suppression.hard_agg
@@ -774,7 +774,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat_titan.move_speed = presets.move_speed.very_fast
 	self.swat_titan.dodge = presets.dodge.elite
 	self.swat_titan.HEALTH_INIT = 12
-	self.swat_titan.headshot_dmg_mul = 4.5		
+	self.swat_titan.headshot_dmg_mul = 3.5
 	self.swat_titan.surrender = nil
 	self.swat_titan.unintimidateable = true	
 	self.swat_titan.custom_voicework = nil

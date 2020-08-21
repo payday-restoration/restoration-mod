@@ -414,7 +414,7 @@ function GroupAITweakData:_init_chatter_data()
 		radius = 2000,
 	    max_nr = 4,
 	    duration = {0.5, 0.5},
-	    interval = {1.75, 2.5},
+	    interval = {4, 5},
 	    group_min = 0,
 	    queue = "lk3b"
 	}
@@ -422,7 +422,7 @@ function GroupAITweakData:_init_chatter_data()
 		radius = 2000,
 	    max_nr = 4,
 	    duration = {0.5, 0.5},
-	    interval = {1.75, 2.5},
+	    interval = {4, 5},
 	    group_min = 0,
 	    queue = "hlp"
 	}

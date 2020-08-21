@@ -137,8 +137,8 @@ function PlayerTweakData:init()
 	is_vr = _G.IS_VR
 	self.arrest = {arrest_timeout = 240, aggression_timeout = 60}
 	self.put_on_mask_time = 0
-	self.gravity = -982
-	self.terminal_velocity = -5500
+	self.gravity = -982 
+	self.terminal_velocity = -7000 --these numbers are never used afaik, but just to be safe...
 	self.damage = {}
 	self.damage.ARMOR_INIT = 2
 	self.damage.DODGE_INIT = 0
@@ -331,6 +331,8 @@ function PlayerTweakData:init()
 		},
 		multiplier = {}
 	}
+	self.movement_state.standard.gravity = 982 --used in the calculation in playerstandard for applying correct damping, does not actually change gravity
+	self.movement_state.standard.terminal_velocity = 7000 --used in the calculation in playerstandard for proper falling, change as you will it
 	self.movement_state.standard.movement.speed.STANDARD_MAX = 350
 	self.movement_state.standard.movement.speed.RUNNING_MAX = 575
 	self.movement_state.standard.movement.speed.CROUCHING_MAX = 225

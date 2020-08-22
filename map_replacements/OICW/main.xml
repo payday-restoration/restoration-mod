@@ -11,6 +11,10 @@
 	<WeaponMod id="wpn_fps_ass_osipr_scope" based_on="wpn_fps_upg_o_cs" type="sight" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
 		<stats zoom="10"/>
 	</WeaponMod>
+	<WeaponMod id="wpn_fps_ass_osipr_m_gl" based_on="wpn_fps_ass_scar_body_standard" type="ammo" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
+		<animations bipod_reload="reload" bipod_reload_not_empty="reload_not_empty" reload="" reload_not_empty=""/>
+		<bullet_objects amount="3" prefix="g_bullet_"/>
+	</WeaponMod>
 	
 	<Weapon>
 		<weapon id="osipr" based_on="new_m4" has_description="true" weapon_hold="oicw" unlock_level="50" global_value="rest">
@@ -28,6 +32,7 @@
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
 				<value_node value="wpn_fps_ass_osipr_scope"/>
 				<value_node value="wpn_fps_ass_osipr_gl"/>
+				<value_node value="wpn_fps_ass_osipr_m_gl"/>
 			</default_blueprint>
 			<uses_parts>
 				<value_node value="wpn_fps_ass_osipr_b_standard"/>
@@ -36,6 +41,7 @@
 				<value_node value="wpn_fps_ass_osipr_bolt"/>
 				<value_node value="wpn_fps_ass_osipr_scope"/>
 				<value_node value="wpn_fps_ass_osipr_gl"/>
+				<value_node value="wpn_fps_ass_osipr_m_gl"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_large"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_medium"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_small"/>
@@ -100,6 +106,7 @@
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_b_standard"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_scope"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl"/>
+		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/green_glass_df"/>

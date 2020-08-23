@@ -9534,6 +9534,7 @@ if self.toym16 then --Gambyt's Toy M16
 		0,
 		0
 	}
+	self.toym16.panic_suppression_chance = 0.00
 end
 
 if self.toy1911 then --Gambyt's Toy M1911
@@ -9572,8 +9573,54 @@ if self.toy1911 then --Gambyt's Toy M1911
 		0
 	}
 	self.toy1911.swap_speed_multiplier = 2
+	self.toy1911.panic_suppression_chance = 0.00
 end
 
+--Vanilla Mod Pack Volume 2
+if self.bdgr then --Hornet .300
+	self.bdgr.tactical_reload = 1
+	self.bdgr.AMMO_MAX = 120
+	self.bdgr.AMMO_PICKUP = self:_pickup_chance()
+	self.bdgr.stats = {
+		damage = 30,
+		spread = 17,
+		recoil = 15,
+		zoom = 1,
+		concealment = 24,
+		alert_size = 19,
+		suppression = 19,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 6
+	}
+	self.bdgr.kick = self.new_m4.kick
+	self.bdgr.panic_suppression_chance = 0.00
+	self.bdgr.stats_modifiers = nil
+end
+
+if self.minibeck then --Reinbeck Auto
+	self.minibeck.AMMO_MAX = 30
+	self.minibeck.AMMO_PICKUP = self:_pickup_chance()
+	self.minibeck.stats = {
+		damage = 60,
+		spread = 6,
+		recoil = 7,
+		zoom = 1,
+		concealment = 23,
+		alert_size = 5,
+		suppression = 5,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 7
+	}
+	self.minibeck.kick = self.huntsman.kick
+	self.minibeck.panic_suppression_chance = 0.00
+	self.minibeck.stats_modifiers = nil
+	self.minibeck.rays = 9
+	self.minibeck.swap_speed_multiplier = 0.8
+end
 
 
 	--Set damage falloff on shotguns.

@@ -28453,8 +28453,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		--Sport Grip
 		self.parts.wpn_fps_ass_m4_g_fancy.stats = {
 			value = 1,
-			recoil = 1,
-			concealment = -2
+			spread = 1,
+			concealment = -3
 		}
 
 		--(AMR-16) Aftermarket Marksman Foregrip
@@ -29192,7 +29192,322 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			zoom = 30
 			}															
 		end	
-		
+
+	--Vanilla Mod Pack Volume 2 Support
+	if self.parts.wpn_fps_smg_uzi_b_longue then
+		--(Uzi) Striker Barrel
+		self.parts.wpn_fps_smg_uzi_b_longue.stats = {
+			value = 4,
+			spread = 2,
+			recoil = -2,
+			concealment = -2
+		}
+
+		--(RPK) Lightweight combo Magazine
+		self.parts.wpn_lmg_rpk_m_jungle.stats = {
+			value = 6,
+			concealment = 1,
+			reload = 4,
+			spread = -1,
+			extra_ammo = -40
+		}
+
+		--(Holt 9mm) Luxury Grip
+		self.parts.wpn_fps_pis_holt_g_wrap.stats = {
+			value = 6,
+			recoil = 1,
+			concealment = 1,
+			spread = -2
+		}
+
+		--(R700) Hunting Stock
+		self.parts.wpn_fps_snp_r700_s_redwood.stats = {
+			value = 4,
+			concealment = 1,
+			recoil = -1
+		}
+
+		--(R700) Low Profile Iron Sight
+		self.parts.wpn_fps_snp_r700_o_is.stats = {
+			value = 1,
+			zoom = 1
+		}
+
+		--(Czech 92) Angled Grip
+		self.parts.wpn_fps_pis_czech_body_afg.stats = {
+			value = 3,
+			recoil = -1,
+			concealment = 1
+		}
+
+		--(Heather) Aftermarket Vertical Grip
+		self.parts.wpn_fps_smg_sr2_vg_custom.stats = {
+			value = 3,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Compact 5) Combat Stock
+		self.parts.wpn_fps_smg_mp5_s_m4.stats = {
+			value = 5,
+			spread = 1,
+			concealment = -3
+		}
+
+		--(Hornet .300) Bumblebee Foregrip
+		self.parts.wpn_fps_bdgr_uupg_fg_railed.stats = {
+			value = 4,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Hornet .300) Wasp foregrip
+		self.parts.wpn_fps_bdgr_uupg_fg_small.stats = {
+			value = 3,
+			spread = -1,
+			concealment = -1
+		}
+
+		--(M60) Long Barrel
+		self.parts.wpn_fps_lmg_m60_b_longer.stats = {
+			value = 4,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--Wrapped Grip
+		self.parts.wpn_fps_m4_g_wrap.stats = {
+			value = 2,
+			recoil = 1,
+			concealment = -2
+		}
+
+		--Polygonal Suppressor
+		self.parts.wpn_fps_upg_ns_shot_flat.stats = {
+			value = 5,
+			spread = 2,
+			recoil = -2,
+			concealment = -2,
+			suppression = 11,
+			alert_size = 11
+		}
+
+		--Professional Suppressor
+		self.parts.wpn_fps_upg_ns_ass_smg_pro.stats = {
+			value = 5,
+			recoil = 2,
+			spread = -1,
+			concealment = -2,
+			alert_size = 12,
+			suppression = 12
+		}
+
+		--(Jacket's Piece) Foldable Stock
+		self.parts.wpn_fps_smg_cobray_s_custom.stats = {
+			value = 2,
+			recoil = 1,
+			spread = -1
+		}
+
+		--Modern Bolt
+		self.parts.wpn_fps_ak_bolt_chrome.stats = {
+			value = 2,
+			recoil = 1,
+			concealment = -2
+		}
+
+		--(Patchett L2A1) Extended Barrel
+		self.parts.wpn_fps_smg_sterling_b_poke.stats = {
+			value = 5,
+			spread = 2,
+			recoil = -2,
+			concealment = -2
+		}
+
+		--(Parabellum) Langer Barrel
+		self.parts.wpn_fps_pis_breech_b_length.stats = {
+			value = 4,
+			spread = 2,
+			recoil = -2,
+			concealment = -2
+		}
+
+		--Constrictor Nozzle
+		self.parts.wpn_fps_upg_ns_shot_close.stats = {
+			value = 4,
+			spread = 1,
+			concealment = -3
+		}
+
+		--(OVE9000 Saw) Ripper Blade
+		self.parts.wpn_fps_saw_m_blade_scream.stats = {
+			value = 1,
+			extra_ammo = -5,
+			damage = 30,
+			total_ammo_mod = -25
+		}
+
+		--(Compact-5) Package Deal Magazines
+		self.parts.wpn_fps_smg_mp5_m_dos.stats = {
+			value = 6,
+			spread = -1,
+			concealment = -1,
+			reload = 2
+		}
+
+		--(GSPS 12G) High Capacity Barrel
+		self.parts.wpn_fps_shot_m37_b_extend.stats = {
+			value = 7,
+			extra_ammo = 1,
+			reload = -1,
+			concealment = -1
+		}
+
+		--(MP40) Langer Barrel
+		self.parts.wpn_fps_smg_erma_b_langer.stats = {
+			value = 4,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(MP40) Kurz Barrel
+		self.parts.wpn_fps_smg_erma_b_kurz.stats = {
+			value = 4,
+			spread = -1,
+			concealment = 1
+		}
+
+		--(Pistol Crossbow) Ergo Handle
+		self.parts.wpn_fps_bow_hunter_body_swift.stats = {
+			value = 5,
+			reload = 1,
+			concealment = -2
+		}
+
+		--(Repeater 1874) Outlaw Frame
+		self.parts.wpn_fps_snp_winchester_body_bling.stats = {
+			value = 2
+		}
+
+		--(Bernetti Auto) Expert Slide
+		self.parts.wpn_fps_pis_beer_sl_expert.stats = {
+			value = 2
+		}
+
+		--(Locomotive 12G) Trench Boom Barrel
+		self.parts.wpn_fps_shot_r870_b_ithaca.stats = {
+			value = 6,
+			spread = 2,
+			concealment = -6
+		}
+
+		--(Reinbeck Auto) Shell Rack
+		self.parts.wpn_fps_shot_minibeck_shells.stats = {
+			value = 2,
+			spread = -1,
+			concealment = -1,
+			reload = 2
+		}
+
+		--(Reinbeck Auto) Extended Tube
+		self.parts.wpn_fps_shot_minibeck_ext.stats = {
+			value = 3,
+			extra_ammo = 1,
+			concealment = -1,
+			reload = -1
+		}
+
+		--(Reinbeck Auto) Solid Stock
+		self.parts.wpn_fps_shot_minibeck_s_solid.stats = {
+			value = 5,
+			recoil = 2,
+			concealment = -4
+		}
+
+		--(Holt 9mm) Silver Slide
+		self.parts.wpn_fps_pis_holt_b_silver.stats = {
+			value = 7
+		}
+
+		self.wpn_fps_shot_minibeck.override = {
+			wpn_fps_upg_a_slug = {
+				stats = {
+					value = 10,
+					total_ammo_mod = -33,
+					damage = 30,
+					recoil = -2,
+					spread = 12,
+					spread_multi = {1, 1},	
+					moving_spread = 0,
+					suppression = -1,
+					alert_size = -1,
+					concealment = -5
+				},
+				custom_stats = {				
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
+					rays = 1,
+					armor_piercing_add = 1,
+					can_shoot_through_enemy = true,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true,
+					use_heavy_kick = true
+				}
+			},
+			wpn_fps_upg_a_custom = {
+				stats = {
+					value = 9,
+					spread = -1,
+					total_ammo_mod = -33,
+					damage = 30
+				},
+				custom_stats = {
+					damage_near_mul = -75,
+					damage_far_mul = -150,
+					rays = 6,
+					use_heavy_kick = true
+				}
+			},	
+			wpn_fps_upg_a_custom_free = {
+				stats = {
+					value = 9,
+					spread = -1,
+					total_ammo_mod = -33,
+					damage = 30
+				},
+				custom_stats = {
+					damage_near_mul = -75,
+					damage_far_mul = -150,
+					rays = 6,
+					use_heavy_kick = true
+				}
+			},			
+			wpn_fps_upg_a_explosive = {
+				stats = {
+					value = 10,
+					total_ammo_mod = -50,
+					recoil = -5,
+					spread_multi = {1, 1},	
+					concealment = -7,
+					damage = 60
+				},
+				custom_stats = {
+					ignore_statistic = true,
+					block_b_storm = true,
+					rays = 1,
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					use_heavy_kick = true,
+					bullet_class = "InstantExplosiveBulletBase"
+				}
+			}
+		}
+	end
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

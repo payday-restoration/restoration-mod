@@ -6,6 +6,7 @@ local warned_mods = {
     ["Iter"] = "Iter",
     ["SilentAssassin"] = "Silent Assassin",
     ["PD2THHSHIN"] = "Hyper Heisting",
+    ["IreNFist"] = "IreNFist",
     ["SGO"] = "Seamlink's Gameplay Overhaul",
     ["deathvox"] = "Crackdown"
 }

@@ -8706,6 +8706,32 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.desc_id = "bm_w_osipr_desc"
 	--self.osipr.custom = false
 	
+	self.osipr_gl.AMMO_MAX = 6
+	self.osipr_gl.AMMO_PICKUP = self:_pickup_chance()
+	self.osipr_gl.CLIP_AMMO_MAX = 6
+	self.osipr_gl.fire_mode_data.fire_rate = 0.75
+	self.osipr_gl.kick.standing = self.huntsman.kick.standing
+	self.osipr_gl.kick.crouching = self.huntsman.kick.crouching
+	self.osipr_gl.kick.steelsight = self.huntsman.kick.steelsight
+	self.osipr_gl.stats = {
+		damage = 60,
+		spread = 6,
+		recoil = 8,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 15,
+		suppression = 20,
+		alert_size = 20,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.osipr_gl.stats_modifiers = nil
+	self.osipr_gl.timers.reload_not_empty = 3.34
+	self.osipr_gl.timers.reload_empty = 4.5		
+	self.osipr_gl.panic_suppression_chance = 0.0
+	
 	--Anubis .45
 	self.socom.timers = {
 		reload_not_empty = 1.5435,

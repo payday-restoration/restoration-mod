@@ -1,5 +1,6 @@
-<table name="xmn_hox">
+<table name="xmn">
 	<Localization default="english.json" directory="loc"/>
+	<!--HOXOUT XMAS-->
 	<narrative briefing_event="dentist_hb1_cbf_01" contact="events" dlc="pd2_clan" id="xmn_hox" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_breakout_01" icon="guis/dlcs/bro/textures/pd2/crimenet/hoxton_breakout_01" region="street">
 		<chain>
 			<table dlc="pd2_clan" level_id="xmn_hox_1" type="d" type_id="heist_type_assault"/>
@@ -61,6 +62,69 @@
 			<value_node value="3.2e+006"/>
 			<value_node value="3.2e+006"/>
 			<value_node value="3.2e+006"/>
+		</payout>
+	</narrative>
+	
+	<!--BREAKIN FEDS XMAS-->
+	<narrative briefing_event="Play_loc_tag_cbf_01" contact="events" id="xmn_tag" jc="30" region="street" brief_id="heist_tag_crimenet" icon="guis/dlcs/tag/textures/pd2/crimenet/tag">
+		<chain>
+			<table level_id="xmn_tag" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_loc_tag_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="codex/locke1"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
+		</date_added>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="23000"/>
+			<value_node value="23000"/>
+			<value_node value="23000"/>
+			<value_node value="23000"/>
+			<value_node value="23000"/>
+			<value_node value="23000"/>
+			<value_node value="23000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="11000"/>
+			<value_node value="11000"/>
+			<value_node value="11000"/>
+			<value_node value="11000"/>
+			<value_node value="11000"/>
+			<value_node value="11000"/>
+			<value_node value="11000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="20000"/>
+			<value_node value="30000"/>
+			<value_node value="40000"/>
+			<value_node value="70000"/>
+			<value_node value="80000"/>
+			<value_node value="80000"/>
+			<value_node value="80000"/>
 		</payout>
 	</narrative>
 </table>

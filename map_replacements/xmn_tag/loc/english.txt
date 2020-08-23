@@ -1,4 +1,0 @@
-{
-	"heist_xmn_tag_name" : "Breakin' Feds Xmas"
-	
-}

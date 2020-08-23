@@ -38,9 +38,9 @@
 			<anim name="osipr_underbarrel_com_stop" 				file="anims/fps/oicw/oicw_com_var5" blend_set="all"/>
 			<anim name="osipr_underbarrel_com_come" 				file="anims/fps/oicw/oicw_com_var6" blend_set="all"/>
 			<anim name="osipr_underbarrel_com_point" 				file="anims/fps/oicw/oicw_com_var7" blend_set="all"/>
-			<anim name="osipr_underbarrel_enter" 					file="anims/fps/oicw/oicw_idle" blend_set="all"/>
+			<anim name="osipr_underbarrel_enter" 					file="anims/fps/oicw/oicw_bipod_enter" blend_set="all"/>
 			<anim name="osipr_underbarrel_equip" 					file="anims/fps/oicw/oicw_equip" blend_set="all"/>
-			<anim name="osipr_underbarrel_exit" 					file="anims/fps/oicw/oicw_idle" blend_set="all"/>
+			<anim name="osipr_underbarrel_exit" 					file="anims/fps/oicw/oicw_bipod_enter" blend_set="all"/>
 			<anim name="osipr_underbarrel_gogo" 					file="anims/fps/oicw/oicw_gogo" blend_set="all"/>
 			<anim name="osipr_underbarrel_idle" 					file="anims/fps/oicw/oicw_idle" blend_set="all"/>
 			<anim name="osipr_underbarrel_melee" 					file="anims/fps/oicw/oicw_melee" blend_set="all"/>

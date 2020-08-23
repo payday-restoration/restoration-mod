@@ -11,7 +11,5 @@
     <graphics>
         <object enabled="true" name="g_mag" />
 		<object enabled="true" name="g_bullet_1" />
-		<object enabled="true" name="g_bullet_2" />
-		<object enabled="true" name="g_bullet_3" />
     </graphics>
 </dynamic_object>

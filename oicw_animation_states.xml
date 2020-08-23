@@ -10,6 +10,8 @@
 			<to name="reload_not_empty_oicw" 			redirect="fps/reload_not_empty/oicw"/>
 			<to name="underbarrel_reload_osipr" redirect="fps/reload/underbarrel/osipr"/>
 			<to name="underbarrel_reload_not_empty_osipr" redirect="fps/reload_not_empty/underbarrel/osipr"/>
+			<to name="underbarrel_enter_osipr" redirect="fps/enter/underbarrel/osipr"/>
+			<to name="underbarrel_exit_osipr" redirect="fps/exit/underbarrel/osipr"/>
 		</target>
 	</tweak>
 	
@@ -91,8 +93,9 @@
 		<state name="fps/enter/underbarrel/osipr" type="once" segment="base" speed="1.0">
 			<anim name="osipr_underbarrel_enter"/>
 			<keys>
-				<key at="trigger" trigger="contraband_back_in_hand" callback="play_sound" class_name="base" param1="contraband_back_in_hand"/>
-				<key at="trigger" trigger="wp_foley_generic_tilt_soft" callback="play_sound" class_name="base" param1="wp_foley_generic_tilt_soft"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt" callback="play_sound" class_name="base" param1="wp_foley_generic_tilt"/>
+				<key at="trigger" trigger="selector_switch" callback="play_sound" class_name="base" param1="arbiter_push_button"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt_back" callback="play_sound" class_name="base" param1="wp_foley_generic_tilt_back"/>
 			</keys>
 			<exit name="fps/idle/underbarrel/osipr"/>
 		</state>
@@ -100,8 +103,9 @@
 		<state name="fps/exit/underbarrel/osipr" type="once" segment="base" speed="1.0">
 			<anim name="osipr_underbarrel_exit"/>
 			<keys>
-				<key at="trigger" trigger="wp_foley_generic_back_in_hand_soft" callback="play_sound" class_name="base" param1="wp_foley_generic_back_in_hand_soft"/>
-				<key at="trigger" trigger="wp_foley_generic_tilt_soft" callback="play_sound" class_name="base" param1="wp_foley_generic_tilt_soft"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt" callback="play_sound" class_name="base" param1="wp_foley_generic_tilt"/>
+				<key at="trigger" trigger="selector_switch" callback="play_sound" class_name="base" param1="arbiter_push_button"/>
+				<key at="trigger" trigger="wp_foley_generic_tilt_back" callback="play_sound" class_name="base" param1="wp_foley_generic_tilt_back"/>
 			</keys>
 			<exit name="fps/idle"/>
 		</state>
@@ -182,6 +186,7 @@
 				<key at="trigger" trigger="wp_foley_generic_tilt_back" callback="play_sound" class_name="base" param1="wp_ak47_tilt_back"/>
 				<key at="trigger" trigger="wp_foley_generic_tilt" callback="play_sound" class_name="base" param1="wp_ak47_tilt"/>
 				<key at="trigger" trigger="hajk_push_mag_release" callback="play_sound" class_name="base" param1="hajk_push_mag_release"/>
+				<key at="trigger" trigger="lever_back" callback="play_sound" class_name="base" param1="arbiter_release_lever"/>		
 				<key at="trigger" trigger="arbiter_mag_out" callback="play_sound" class_name="base" param1="arbiter_mag_out"/>
 				<key at="trigger" trigger="arbiter_mag_contact" callback="play_sound" class_name="base" param1="arbiter_mag_contact"/>
 				<key at="trigger" trigger="arbiter_mag_in" callback="play_sound" class_name="base" param1="arbiter_mag_in"/>

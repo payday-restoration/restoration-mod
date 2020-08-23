@@ -68,7 +68,6 @@
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
-		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
 		<hook file="sc/managers/navigationmanager.lua" source_file="lib/managers/navigationmanager"/>
 		<hook file="sc/tweak_data/charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>

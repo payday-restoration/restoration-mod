@@ -9391,8 +9391,7 @@ function WeaponFactoryTweakData:_init_plainsrider()
 			dot_data = {
 				type = "poison",
 				custom_data = {dot_length = nil, hurt_animation_chance = nil}
-			},
-
+			}
 		},
 		texture_bundle_folder = "turtles",
 		sub_type = "ammo_poison",

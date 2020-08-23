@@ -1368,6 +1368,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	table.insert(self._projectiles_index, "bravo_frag")
 	table.insert(self._projectiles_index, "cluster_fuck")
 	table.insert(self._projectiles_index, "child_grenade")
+	table.insert(self._projectiles_index, "launcher_frag_osipr")
+	table.insert(self._projectiles_index, "launcher_incendiary_osipr")
 
 	--Throwables--
 	self.projectiles.wpn_prj_four.max_amount = 9
@@ -1465,6 +1467,27 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.child_grenade.is_a_grenade = true
 	self.projectiles.child_grenade.is_explosive = true
 	self.projectiles.child_grenade.add_trail_effect = true
+
+--SABR Grenade Launcher.
+	self.projectiles.launcher_frag_osipr = {
+		name_id = "bm_launcher_frag",
+		unit = "units/mods/weapons/wpn_osipr_frag_grenade/wpn_osipr_frag_grenade",
+		weapon_id = "osipr_gl",
+		no_cheat_count = true,
+		impact_detonation = true,
+		is_explosive = true,
+		time_cheat = 0,
+		adjust_z = 0
+	}
+	self.projectiles.launcher_incendiary_osipr = {
+		name_id = "bm_launcher_incendiary",
+		unit = "units/mods/weapons/wpn_osipr_frag_incendiary_grenade/wpn_osipr_frag_incendiary_grenade",
+		weapon_id = "osipr_gl",
+		no_cheat_count = true,
+		impact_detonation = true,
+		time_cheat = 0,
+		adjust_z = 0
+	}
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins

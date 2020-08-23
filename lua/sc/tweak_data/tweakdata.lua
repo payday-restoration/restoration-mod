@@ -289,6 +289,43 @@ if difficulty_index <= 4 then --Enemy grenades deal reduced damage on lower diff
 	tweak_data.projectiles.child_grenade.player_damage = 6.0
 end
 
+--SABR Grenade Launcher.
+tweak_data.projectiles.launcher_frag_osipr = {
+	damage = 60,
+	launch_speed = 2500,
+	curve_pow = 1,
+	player_damage = 30,
+	range = 250,
+	init_timer = 2.5,
+	mass_look_up_modifier = 1,
+	sound_event = "gl_explode",
+	name_id = "bm_launcher_frag"
+}
+tweak_data.projectiles.launcher_incendiary_osipr = {
+	damage = 2,
+	launch_speed = 2500,
+	curve_pow = 1,
+	player_damage = 2,
+	fire_dot_data = {
+		dot_trigger_chance = 50,
+		dot_damage = 1,
+		dot_length = 3.1,
+		dot_trigger_max_distance = 3000,
+		dot_tick_period = 0.5
+	},
+	range = 350,
+	init_timer = 2.5,
+	mass_look_up_modifier = 1,
+	sound_event = "gl_explode",
+	sound_event_impact_duration = 0.25,
+	name_id = "bm_launcher_incendiary",
+	burn_duration = 5,
+	burn_tick_period = 0.5
+}
+
+tweak_data.weapon_disable_crit_for_damage.launcher_frag_osipr.explosion = "false"
+tweak_data.weapon_disable_crit_for_damage.launcher_frag_osipr.fire = "false"
+
 --But why--
 tweak_data.team_ai.stop_action.delay = 0.8
 tweak_data.team_ai.stop_action.distance = 9999999999999999999999999999999999

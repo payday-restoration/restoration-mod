@@ -9,5 +9,6 @@
   <graphics>
         <object name="g_body" enabled="true" />
 		<object name="g_charging_handle" enabled="true" />
+		<object name="g_fire_selector" enabled="true" />
   </graphics>
 </dynamic_object>

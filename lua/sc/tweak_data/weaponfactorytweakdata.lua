@@ -27782,7 +27782,12 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				recoil = 1,
 				spread = -1
 			}																				
-		end					
+		end
+
+	--Gambyt's Toy M16
+	if self.parts.wpn_fps_ass_toym16_b_standard then
+		self.parts.wpn_fps_ass_toym16_b_standard.pcs = nil
+	end
 
 	--Gambyt's Vanilla Mod Pack
 	if self.parts.wpn_fps_ass_flint_b_long then

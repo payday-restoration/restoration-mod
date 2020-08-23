@@ -9499,6 +9499,83 @@ if self.hpb then --Gambyt's Browning HP
 	self.hpb.panic_suppression_chance = 0.0
 end	
 
+if self.toym16 then --Gambyt's Toy M16
+	self.toym16.CLIP_AMMO_MAX = 150
+	self.toym16.AMMO_MAX = 900
+	self.toym16.AMMO_PICKUP = self:_pickup_chance()
+	self.toym16.stats = {
+		damage = 4,
+		spread = 21,
+		recoil = 26,
+		zoom = 1,
+		concealment = 32,
+		suppression = 21,
+		alert_size = 21,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.toym16.kick.standing = {
+		0,
+		0,
+		0,
+		0
+	}
+	self.toym16.kick.crouching = {
+		0,
+		0,
+		0,
+		0
+	}
+	self.toym16.kick.steelsight = {
+		0,
+		0,
+		0,
+		0
+	}
+end
+
+if self.toy1911 then --Gambyt's Toy M1911
+	self.toy1911.CLIP_AMMO_MAX = 90
+	self.toy1911.AMMO_MAX = 450
+	self.toy1911.AMMO_PICKUP = self:_pickup_chance()
+	self.toy1911.stats = {
+		damage = 4,
+		spread = 21,
+		recoil = 26,
+		zoom = 1,
+		concealment = 32,
+		suppression = 21,
+		alert_size = 21,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.toy1911.kick.standing = {
+		0,
+		0,
+		0,
+		0
+	}
+	self.toy1911.kick.crouching = {
+		0,
+		0,
+		0,
+		0
+	}
+	self.toy1911.kick.steelsight = {
+		0,
+		0,
+		0,
+		0
+	}
+	self.toy1911.swap_speed_multiplier = 2
+end
+
+
+
 	--Set damage falloff on shotguns.
 	for i, weap in pairs(self) do
 		if weap.categories then

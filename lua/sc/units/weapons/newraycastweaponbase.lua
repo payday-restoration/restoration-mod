@@ -582,17 +582,22 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills
 			* managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 			* (1 / managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)) --Compensate for fully loaded bonus ammo.
-			* ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1) --Offset from weapon mods, especially ones that may modify total ammo without changing damage tiers.
 
 		for _, category in ipairs(self:weapon_tweak_data().categories) do --Compensate for weapon category based bonus ammo.
 			pickup_multiplier = pickup_multiplier * (1 / managers.player:upgrade_value(category, "extra_ammo_multiplier", 1))
 		end
 
-		local damage_multiplier = 20 / managers.player:upgrade_value("player", "passive_damage_multiplier", 1) --Multiplier to move damage values to the listed numbers and compensate for perk deck boosts.
+		--Compensate for perk deck damage boosts and damage being /10 overall. Treat damage as if you have the max level.
+		local damage_multiplier = 10
+		local primary_category = self:weapon_tweak_data().categories[1] --The perk deck damage boost doesn't apply to most special weapons.
+		if primary_category ~= "grenade_launcher" and primary_category ~= "rocket_frag" and primary_category ~= "bow" and primary_category ~= "crossbow" then
+			damage_multiplier = damage_multiplier / managers.player:upgrade_value("player", "passive_damage_multiplier", 1)
+		end
 
 		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
-		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo
-		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo, self._ammo_pickup[1])
+		--self._ammo_data.ammo_pickup_min_mul corresponds to a multiplier from weapon mods, especially ones that may modify total ammo without changing damage tiers or add DOT effects.
+		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
+		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1), self._ammo_pickup[1])
 	end
 end
 					

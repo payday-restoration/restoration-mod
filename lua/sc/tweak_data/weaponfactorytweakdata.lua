@@ -5988,14 +5988,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.has_description = true
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.stats = {damage = -77}
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.custom_stats = {
-		launcher_grenade = "launcher_incendiary"
+		launcher_grenade = "launcher_incendiary",
+		ammo_pickup_min_mul = 0.5592,
+		ammo_pickup_max_mul = 0.4336
 	}
 
 	--Incendiary Round (Arbiter)
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.pcs = {}
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.stats = {damage = -58}
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.custom_stats = {
-		launcher_grenade = "launcher_incendiary_arbiter"
+		launcher_grenade = "launcher_incendiary_arbiter",
+		ammo_pickup_min_mul = 0.6114,
+		ammo_pickup_max_mul = 0.5035
 	}
 	
 	--You're pretty good
@@ -9387,7 +9391,8 @@ function WeaponFactoryTweakData:_init_plainsrider()
 			dot_data = {
 				type = "poison",
 				custom_data = {dot_length = nil, hurt_animation_chance = nil}
-			}
+			},
+
 		},
 		texture_bundle_folder = "turtles",
 		sub_type = "ammo_poison",

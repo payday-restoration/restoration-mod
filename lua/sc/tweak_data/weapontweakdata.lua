@@ -8907,8 +8907,8 @@ if self.amr12 then --Gambyt's AMR 12G Shotgun
 	self.amr12.kick.steelsight = self.new_m4.kick.steelsight
 	self.amr12.stats = {
 		damage = 30,
-		spread = 8,
-		recoil = 18,
+		spread = 9,
+		recoil = 17,
 		zoom = 1,
 		concealment = 25,
 		suppression = 5,
@@ -8919,7 +8919,8 @@ if self.amr12 then --Gambyt's AMR 12G Shotgun
 		reload = 20
 	}
 	self.amr12.panic_suppression_chance = 0.0
-	self.amr12.stats_modifiers = {damage = 1}	
+	self.amr12.stats_modifiers = {damage = 1}
+	self.amr12.swap_speed_multiplier = 1.2
 end
 
 if self.owen then -- Silent Enforcer's Owen Gun
@@ -9190,7 +9191,7 @@ if self.lebman then --Gambyt's Vendetta 38 Pistol
 	self.lebman.stats = {
 		damage = 30,
 		spread = 17,
-		recoil = 20,
+		recoil = 19,
 		zoom = 1,
 		concealment = 26,
 		suppression = 7,
@@ -9301,8 +9302,8 @@ if self.car9 then --Gambyt's ACAR 9
 		spread_moving = 6,
 		zoom = 1,
 		concealment = 29,
-		suppression = 9,
-		alert_size = 9,
+		suppression = 19,
+		alert_size = 19,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -9377,7 +9378,7 @@ if self.cold then --Gambyt's VMP Classic Crosskill
 	self.cold.kick.steelsight = self.glock_17.kick.steelsight
 	self.cold.stats = {
 		damage = 45,
-		spread = 18,
+		spread = 19,
 		recoil = 19,
 		spread_moving = 5,
 		zoom = 1,
@@ -9391,6 +9392,7 @@ if self.cold then --Gambyt's VMP Classic Crosskill
 	}
 	self.cold.stats_modifiers = nil
 	self.cold.panic_suppression_chance = 0.0
+	self.cold.swap_speed_multiplier = 0.8
 end
 
 if self.aknato then --Gambyt's Mamba 5.56 / Ak-101

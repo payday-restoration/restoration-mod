@@ -2184,6 +2184,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				},
 				{
 					percent = false,
+					inverted = true,
 					name = "suppression",
 					offset = true
 				},

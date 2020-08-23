@@ -27784,10 +27784,13 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			}																				
 		end					
 
-	if self.parts.wpn_fps_ass_flint_b_long then --Gambyt's Vanilla Mod Pack		
+	--Gambyt's Vanilla Mod Pack
+	if self.parts.wpn_fps_ass_flint_b_long then
+		self.parts.wpn_fps_aug_b_big.pcs = nil
+		self.parts.wpn_fps_ass_s552_m_ak.pcs = nil
 		self.parts.wpn_fps_ass_m4_m_stick_amcar.pcs = nil
 		self.parts.wpn_fps_ass_m4_m_stick_sg.pcs = nil
-		self.parts.wpn_fps_ass_m4_m_stick_heavy.pcs = nil			
+		self.parts.wpn_fps_ass_m4_m_stick_heavy.pcs = nil
 		self.parts.wpn_fps_ass_m4_m_stick.pcs = nil	--caliber conversions STINK	
 		table.insert(self.parts.wpn_upg_ak_s_psl.forbids, "wpn_fps_ass_flint_g_custom")			
 		table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_cqb")			
@@ -27798,550 +27801,758 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.wpn_fps_lmg_rpk.adds.wpn_fps_upg_o_cqb = {"wpn_fps_ak_extra_ris"} --hk21 only meme is over
 		self.wpn_fps_lmg_mg42.adds.wpn_fps_upg_o_cqb = {"wpn_fps_snp_mosin_rail"}
 		self.wpn_fps_lmg_hk21.adds.wpn_fps_upg_o_cqb = {"wpn_fps_ass_g3_body_rail"}
+
+		--Theia Micro Sight
 		self.parts.wpn_fps_upg_o_cqb.stats = {
 			value = 5,
 			zoom = 1
 		}
+
+		--Reaper Custom Frame (White Streak)
 		self.parts.wpn_fps_pis_pl14_body_custom.stats = {
 			value = 3,
 			spread = -1,
 			recoil = 1,
 			concealment = -1
 		}
+
+		--Kalashnikov Ninja Stock
 		self.parts.wpn_fps_upg_ak_s_polymerstock.stats = {
 			value = 6,
 			spread = 1,
-			concealment = -4
+			concealment = -2
 		}
+
+		--Fugitive Foregrip
 		self.parts.wpn_fps_ass_amcar_fg_covers_base.stats = {
 			recoil = -1,
 			concealment =1,
 			value = 4
 		}
+
+		--(Reinbeck) SWAT Pump
 		self.parts.wpn_fps_shot_beck_pump_swat.stats = {
 			value = 1,
 			recoil = -2,
 			spread = 1,
 			concealment = -2
 		}
-		self.parts.wpn_upg_ak_g_titanium.stats = {
-			spread = -1,
-			recoil = -1,
-			concealment = 2,
-			value = 1
-		}									
-		self.parts.wpn_fps_pis_czech_sl_chrome.stats = {
-			value = 6
-		}
-		self.parts.wpn_fps_pis_lebman_m_extended.stats = {
-			value = 3,
-			extra_ammo = 6,
-			spread = -1,
-			recoil = -1,
-			concealment = -1,
-			reload = -1
-		}
-		self.parts.wpn_fps_pis_beer_s_std.stats = {
-			value = 7,
-			recoil = 1,
-			concealment = -1
-		}
-		self.parts.wpn_fps_pis_lebman_body_classic.stats = {
-			value = 6,
-			spread = -1,
-			recoil = 2,
-			concealment = -4
-		}			
-		self.parts.wpn_fps_pis_lebman_b_chrome.stats = { --quatruple quitraple platinum
-			value = 6
-		}
-		self.parts.wpn_fps_ass_s552_g_sniper.stats = {
-			value = 2,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}									
-		self.parts.wpn_fps_ass_s552_s_sniper.stats = {
-			value = 1,
-			recoil = 2,
-			spread = -1,
-			concealment = -4
-		}						
-		self.parts.wpn_fps_sho_rota_b_longer.stats = {
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}
-		self.parts.wpn_fps_ass_s552_fg_tac.stats = {
-			value = 7,
-			spread = -2,
-			recoil = 3,
-			concealment = -3
-		}			
-		self.parts.wpn_fps_pis_g17_b_bling.stats = {
-			value = 1
-		}
-		self.parts.wpn_fps_sho_saiga_upper_receiver_smooth.stats = {
-			value = 1
-		}			
-		self.parts.wpn_fps_lmg_shuno_body_red.stats = {
-			value = 0
-		}
-		self.parts.wpn_fps_ass_amcar_fg_cylinder.stats = {
-			value = 5,
-			spread_moving = 1,
-			concealment = -4,
-			spread = 1
-		}
-		self.parts.wpn_fps_pis_2006m_g_pearl.stats = {
-			value = 2
-		}
+
+		--(Reinfeld) Swat Pump
 		self.parts.wpn_fps_shot_r870_fg_swat.stats = {
 			value = 1,
 			recoil = -1,
 			spread = 1,
 			concealment = -2
+		}		
+
+		--Titanium Skeleton Grip
+		self.parts.wpn_upg_ak_g_titanium.stats = {
+			spread = -1,
+			recoil = -1,
+			concealment = 2,
+			value = 1
+		}
+
+		--(Czech 92) Argent Slide
+		self.parts.wpn_fps_pis_czech_sl_chrome.stats = {
+			value = 6
+		}
+
+		--(Vendetta .38) Extended Magazine
+		self.parts.wpn_fps_pis_lebman_m_extended.stats = {
+			value = 3,
+			extra_ammo = 6,
+			concealment = -1,
+			reload = -3
+		}
+
+		--(Vendetta .38) Room Broom Kit
+		self.parts.wpn_fps_pis_lebman_body_classic.stats = {
+			value = 6,
+			spread = -2,
+			recoil = 2
+		}
+
+		--(Vendetta .38) Chrome Slide
+		self.parts.wpn_fps_pis_lebman_b_chrome.stats = {
+			value = 6
+		}
+
+		--(Commando 553) Sniper Grip
+		self.parts.wpn_fps_ass_s552_g_sniper.stats = {
+			value = 2,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Commando 553) Tactical Foregrip
+		self.parts.wpn_fps_ass_s552_fg_tac.stats = {
+			value = 7,
+			spread = -2,
+			recoil = 3,
+			concealment = -2
+		}
+
+		--(Commando 553) Sniper Stock		
+		self.parts.wpn_fps_ass_s552_s_sniper.stats = {
+			value = 1,
+			spread = 2,
+			recoil = -1,
+			concealment = -4
+		}
+
+
+		--(Goliath 12G) Long Barrel
+		self.parts.wpn_fps_sho_rota_b_longer.stats = {
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Chimano 88) Bling Slide
+		self.parts.wpn_fps_pis_g17_b_bling.stats = {
+			value = 1
+		}
+
+		--(IZHMA 12G) Smooth Receiver
+		self.parts.wpn_fps_sho_saiga_upper_receiver_smooth.stats = {
+			value = 1
 		}			
+
+		--(Microgun) Red Body
+		self.parts.wpn_fps_lmg_shuno_body_red.stats = {
+			value = 0
+		}
+
+		--Cylinder Foregrip
+		self.parts.wpn_fps_ass_amcar_fg_cylinder.stats = {
+			value = 5,
+			concealment = -3,
+			spread = 1
+		}
+
+		--(Matever) Spiked Grip
+		self.parts.wpn_fps_pis_2006m_g_pearl.stats = {
+			value = 2
+		}
+
+		--(Specops) Long Barrel
 		self.parts.wpn_fps_smg_mp7_b_long.stats = {
 			value = 1,
 			spread = 1,
 			recoil = -1,
 			concealment = -1
 		}
+
+		--(Uzi) Carbine Barrel
 		self.parts.wpn_fps_smg_uzi_b_carbine.stats = {
 			value = 1,
 			spread = 1,
 			recoil = -1,
 			concealment = -1
 		}
+
+		--(Jacket's Piece) Clean Hit Kit
 		self.parts.wpn_fps_smg_cobray_body_upper_long.stats = {
 			value = 1,
 			spread = 1,
 			recoil = -1,
 			concealment = -1
 		}
+
+		--(Leo Pistol) HS Convert Frame
 		self.parts.wpn_fps_pis_hs2000_body_stealth.stats = {
 			value = 1
 		}
+
+		--(Signature .40) Signature Chrome Frame
 		self.parts.wpn_fps_pis_p226_body_silver.stats = {
 			value = 1
 		}
+
+		--(Jackal) Medium Barrel
 		self.parts.wpn_fps_smg_schakal_b_uncivil.stats = {
 			value = 1,
 			recoil = 1,
-			spread = -1,
-			concealment = -1
+			spread = -1
 		}
+
+		--(Kross Vertex) Long Barrel
 		self.parts.wpn_fps_smg_polymer_barrel_long.stats = {
 			value = 1,
 			spread = 1,
 			recoil = -1,
 			concealment = -1
 		}
+
+		--(Micro Uzi) Long Barrel
 		self.parts.wpn_fps_smg_baka_b_long.stats = {
 			value = 1,
 			spread = 1,
 			recoil = -1,
 			concealment = -1
-		}			
+		}
+
+		--Heavy Compensator
 		self.parts.wpn_fps_upg_ns_ass_smg_heavy.stats = {
 			value = 1,
 			spread = 1,
-			concealment = -6
+			concealment = -3
 		}
+
+		--(Claire 12G) Huntsman Barrel
 		self.parts.wpn_fps_sho_coach_b_long.stats = {
 			value = 1,
 			spread = 2,
-			recoil = -4,
-			concealment = -3
-		}						
+			recoil = -2,
+			concealment = -2
+		}
+
+		--(Lion's Roar) Urban Heat Kit
 		self.parts.wpn_fps_ass_vhs_body_camo.stats = {
 			value = 1,
 			spread = 1,
-			recoil = -1,
-			concealment = -1
-		}			
+			recoil = 1,
+			concealment = -5
+		}
+
+		--HeistEye Target Marker
 		self.parts.wpn_fps_upg_fl_ass_smg_sho_marker.stats = {
 			value = 3,
-			concealment = -1
-		}			
+			concealment = -2
+		}
+
+		--(Castigo) Smooth Cylinder
 		self.parts.wpn_fps_pis_chinchilla_cylinder_smooth.stats = {
 			value = 1				
 		}
+
+		--(M13) Chrome Slide
 		self.parts.wpn_fps_pis_legacy_sl_chrome.stats = {
 			value = 1
 		}
+
+		--(White Streak) Chrome Slide
 		self.parts.wpn_fps_pis_pl14_sl_chrome.stats = {
 			value = 1
 		}
+
+		--(Castigo) Largo Barrel
 		self.parts.wpn_fps_pis_chinchilla_b_longboy.stats = {
 			value = 5,
 			spread = 2,
 			recoil = -2,
-			concealment = -3
-		}									
+			concealment = -2
+		}
+
+		--Valkyrie Stock
 		self.parts.wpn_fps_ass_m16_s_op.stats = {
 			value = 2,
 			spread = -1,
 			recoil = 2,
-			concealment = -4
+			concealment = -2
 		}
+
+		--(Deagle) Steady Wooden Grip
 		self.parts.wpn_fps_pis_deagle_g_wooden.stats = {
 			value = 1,
 			recoil = 3,
 			spread = -1,
-			concealment = -6
+			concealment = -8 --Pistols have doubled swap speed, so concealment mods have to be *really* fucking harsh.
 		}
-		self.parts.wpn_fps_sho_saiga_upper_receiver_smooth.stats = {
-			value = 1
-		}				
+		
+		--(Peacemaker) Polymer Grip
 		self.parts.wpn_fps_pis_peacemaker_g_black.stats = {
 			value = 1
-		}								
+		}
+
+		--Rutted Receiver
 		self.parts.wpn_fps_ass_74_upper_receiver_bump.stats = {
 			value = 1
 		}
+
+		--Plastic Handguard.
 		self.parts.wpn_fps_ass_ak_fg_waffle.stats = {
 			value = 1,
-			spread = -2,
-			recoil = -1,
+			spread = -1,
+			recoil = -2,
 			concealment = 3
-		}							
+		}
+
+		--(Stryk) Striking Slide
 		self.parts.wpn_fps_pis_g18c_b_long.stats = {
 			value = 4,
 			spread = 1,
 			recoil = -1,
-			concealment = -1,
-			spread_moving = 1
-		}			
+			concealment = -1
+		}
+
+		--(Bootleg) Anarchist Grip
 		self.parts.wpn_fps_ass_tecci_vg_ergo.stats = {
 			value = 1,
 			spread = -1,
 			concealment = 1
-		}		
+		}
+
+		--(Loco) Railed Pump
 		self.parts.wpn_fps_shot_shorty_fg_rail.stats = {
 			value = 1,
 			recoil = -1,
 			concealment = 1				
-		}															
+		}					
+
+		--(Bootleg) SG Compact Stock
 		self.parts.wpn_fps_ass_tecci_s_minicontra.stats = {
 			value = 2,
 			recoil = 1,
 			spread = 2,
 			concealment = -8
-		}							
+		}
+
+		--(AK17) Smooth Grip
 		self.parts.wpn_fps_ass_flint_g_custom.stats = {
 			value = 2,
 			recoil = -1,
 			concealment = 1
 		}
+
+		--Ratnik Stock
 		self.parts.wpn_fps_ass_m4_s_russian.stats = {
 			value = 1,
 			spread = 1,
 			recoil = -1,
 			concealment = -1
 		}
+
+		--(Castigo) Corto Barrel
 		self.parts.wpn_fps_pis_chinchilla_b_short.stats = {
 			value = 1,
 			spread = -1,
 			recoil = -1,				
 			concealment = 2
 		}
+
+		--(Castigo) Pearl Grip
 		self.parts.wpn_fps_pis_chinchilla_g_pearl.stats = {
 			value = 1
 		}
+
+		--(Platypus) Discrete Stock
 		self.parts.wpn_fps_snp_model70_s_discrete.stats = {
 			value = 1,
-			recoil = -2,
+			recoil = -1,
 			concealment = 1
-		}				
+		}
+
+		--(Platypus) Scout Barrel
 		self.parts.wpn_fps_snp_model70_b_smol.stats = {
 			value = 1,
 			spread = -1,
 			recoil = -1,
 			concealment = 2
-		}								
+		}
+
+		--(Union 5.56) Medium Barrel
 		self.parts.wpn_fps_ass_corgi_b_medium.stats = {
 			value = 2,
 			recoil = 1,
 			spread = -1
 		}
+
+		--(Contractor) Long Barrel
 		self.parts.wpn_fps_snp_tti_b_long.stats = {
 			value = 3,
 			recoil = 1,
 			spread = 1,
 			concealment = -5
 		}
+
+		--(Jacket's Piece) Overdose Magazine
 		self.parts.wpn_fps_smg_cobray_m_extended.stats = {
 			value = 2,
-			recoil = 1,
-			spread = -1,
 			extra_ammo = 12,
 			concealment = -2,				
-			reload = -2
-		}				
+			reload = -3
+		}
 		self.parts.wpn_fps_smg_cobray_m_extended_akimbo.stats = {
 			value = 2,
-			recoil = 2,
-			spread = -2,
 			extra_ammo = 24,
-			concealment = -4,				
+			concealment = -2,				
 			reload = -3
-		}				
+		}
+
+		--(Eagle Heavy) Extended Magazine
 		self.parts.wpn_fps_ass_scar_m_extended.stats = {
 			value = 2,
-			spread = -1,
 			extra_ammo = 10,
 			concealment = -1,
-			reload = -2
-		}						
+			reload = -3
+		}
+
+		--(Broomstick) Snub Barrel
+		--Doesn't actually seem to appear???
 		self.parts.wpn_fps_pis_c96_b_short.stats = {
 			value = 1,
 			spread = -1,
 			recoil = -2,
 			concealment = 2
 		}
+		--self.parts.wpn_fps_pis_c96_b_short.custom_stats = nil -- just making sure these are removed.
+
+		--(Chicago Typewriter) Refurbished Foregrip
 		self.parts.wpn_fps_smg_thompson_fg_custom.stats = {
 			value = 1,
 			spread = 1,
 			recoil = 1,
 			concealment = -5
 		}
+
+		--(Chicago Typewriter) Folding Stock
 		self.parts.wpn_fps_smg_thompson_stock_fold.stats = {
 			value = 1,
-			spread = -1,
+			recoil = -1,
 			concealment = 1
 		}
+
+		--(GSPS 12G) Ergo Stock
 		self.parts.wpn_fps_shot_m37_s_ergo.stats = {
 			spread = -1,
 			value = 1,
 			recoil = 1
 		}
+
+		--(GSPS 12G) Tactical Pump
 		self.parts.wpn_fps_shot_m37_fg_tactical.stats = {
 			value = 1,
 			recoil = -1,
 			concealment = 1
 		}
+
+		--(GSPS 12G) Combat Pump
 		self.parts.wpn_fps_shot_m37_fg_long.stats = {
-			value = 0
+			value = 1,
+			recoil = 1,
+			concealment = -2
 		}
+
+		--Schäfer Grip
 		self.parts.wpn_fps_ass_m4_g_sg.stats = {
 			value = 2,
 			recoil = -1,
 			concealment = 1
 		}
-		self.parts.wpn_fps_snp_mosin_body_grip.stats = { ---TEACYN TEACYN TEACYN TEACYN TEACYN TEACYN I left off here
+
+		--(Nagant) Comfort Stock
+		self.parts.wpn_fps_snp_mosin_body_grip.stats = {
 			value = 1,
-			recoil = 1
-		}			
+			recoil = 1,
+			concealment = -2
+		}
+
+		--(Broomstick) Finned Barrel
 		self.parts.wpn_fps_pis_c96_b_finned.stats = {
 			value = 2,
 			spread = 1,
 			recoil = -1,
 			concealment = -1
 		}
+
+		--(Peacemaker) Smooth Cylinder
 		self.parts.wpn_fps_pis_peacemaker_m_smooth.stats = {
-			value = 5,
-			concealment = 1
+			value = 2
 		}
+
+		--(Compact 5) Match Magazine
 		self.parts.wpn_fps_smg_mp5_m_custom.stats = {
-			value = 0
+			value = 4,
+			reload = 1,
+			recoil = -1
 		}
+
+		--Grievky Nozzle
 		self.parts.wpn_fps_upg_ns_ass_smg_russian.stats = {
 			value = 4,
 			suppression = -2,
 			alert_size = -2,
 			recoil = 1,
-			concealment = -2
+			accuracy = -1
 		}
+
+		--Assassin Suppressor
 		self.parts.wpn_fps_upg_ns_pis_cloth.stats = {
 			value = 7,
 			suppression = 10,
-			alert_size = 10,
-			concealment = 1
-		}			
+			alert_size = 10
+		}
+
+		--(Galant) Prototype Carbine Stock
 		self.parts.wpn_fps_ass_ching_s_why.stats = {
 			value = 1,
 			spread = -1,
+			recoil = -1,
 			concealment = 2
-		}						
-		self.parts.wpn_fps_shot_m37_b_ridge.stats = { --I mean, this and the riot barrel are nearly the exact same length :)
+		}
+
+		--(GSPS 12G) Hunting Barrel
+		self.parts.wpn_fps_shot_m37_b_ridge.stats = {
 			value = 1,
-			concealment = 1
-		}			
+			accuracy = -1,
+			recoil = 1
+		}
+
+		--(GSPS 12G) Folding Stock
 		self.parts.wpn_fps_shot_m37_s_tactical.stats = {
 			value = 1,
+			recoil = -1,
 			concealment = 1
-		}			
+		}
+
+		--Trench Sweeper Nozzle
 		self.parts.wpn_fps_upg_ns_shot_grinder.stats = {
 			value = 5,
 			suppression = -2,
-			recoil = -1,
+			alert_size = -2,
+			recoil = -2,
 			spread = 2
-		}									
-		self.parts.wpn_fps_pis_c96_b_short.custom_stats = nil -- just making sure these are removed.
+		}
+
+		--(Parabellum) Discrete Grip
 		self.parts.wpn_fps_pis_breech_g_stealth.stats = {
 			value = 2,
-			concealment = 1
-		}	
+			concealment = 1,
+			recoil = -1
+		}
+
+		--(Repeater 1874) Mare's Leg Barrel
 		self.parts.wpn_fps_snp_winchester_b_short.stats = {
 			value = 2,
-			extra_ammo = -1,	
-			concealment = 2
-		}	
+			extra_ammo = -3,
+			concealment = 1,
+			recoil = 1
+		}
+
+		--(Contractor) Bling Slide
 		self.parts.wpn_fps_pis_packrat_sl_silver.stats = {
 			value = 6
-		}									
+		}
+
+		--(AK17) Flint Magazine
 		self.parts.wpn_fps_ass_flint_m_long.stats = {
 			value = 4,
 			extra_ammo = 15,
 			reload = -2,
 			concealment = -2
-		}						
+		}
+
+		--(AK17) Short Barrel
 		self.parts.wpn_fps_ass_flint_b_short.stats = {
 			value = 1,
-			concealment = 1
-		}		
+			concealment = 1,
+			recoil = -1
+		}
+
+		--(Little Friend) Skeletal Stock
 		self.parts.wpn_fps_ass_contraband_s_tecci.stats = {
 			value = 3,
-			spread_moving = 2,
-			recoil = -1,
-			concealment = 2
-		}				
+			accuracy = -1,
+			concealment = 1
+		}
+
+		--(5/7 AP) Sport Barrel
 		self.parts.wpn_fps_pis_lemming_b_long.stats = {
 			value = 3,
-			spread = 2,
-			concealment = -3
-		}
-		self.parts.wpn_fps_pis_cold_g_wood.stats = {
-			value = 3,
 			spread = 1,
-			concealment = -2
+			recoil = -1,
+			concealment = -1
 		}
+
+		--(Crosskill Classic) Wooden Grip
+		self.parts.wpn_fps_pis_cold_g_wood.stats = {
+			value = 3
+		}
+
+		--(Crosskill Classic) Sneaky Frame
 		self.parts.wpn_fps_pis_cold_body_custom.stats = {
 			value = 2,
+			recoil = -1,
 			concealment = 1
 		}
+
+		--(Crosskill Classic) Equalizer Compensator
 		self.parts.wpn_fps_pis_cold_sl_comp1.stats = {
 			value = 7,
-			concealment = -1,
-			spread = -1,
+			spread = -2,
 			recoil = 2
 		}
+
+		--(Crosskill Classic) Stonecold Compensator
 		self.parts.wpn_fps_pis_cold_sl_comp2.stats = {
 			value = 4,
-			spread = 2,
+			spread = 1,
 			recoil = -1,
-			concealment = -4
-		}						
+			concealment = -1
+		}
+
+		--(Crosskill Classic) Extended Magazine
 		self.parts.wpn_fps_pis_cold_m_extended.stats = {
 			value = 2,
-			concealment = -2,
-			extra_ammo = 4,
-			spread = -1,
-			recoil = 1,			
+			concealment = -1,
+			extra_ammo = 4,		
 			reload = -2
-		}						
+		}
+
+		--(Grom) Short Barrel
 		self.parts.wpn_fps_snp_siltstone_b_short.stats = {
 			value = 1,
-			concealment = 1
-		}									
+			concealment = 1,
+			recoil = -1
+		}
+
+		--(5/7 AP) Striking Kit
 		self.parts.wpn_fps_pis_lemming_body_silver.stats = {
 			value = 4
-		}													
+		}
+
+		--(Microgun) XL Barrel
 		self.parts.wpn_fps_lmg_shuno_b_long.stats = {
 			value = 3,
-			spread = 2,
-			recoil = 1,
-			concealment = -3
-		}														
+			recoil = 3,
+			concealment = -6
+		}
+
+		--(Signature) Long Foregrip
 		self.parts.wpn_fps_smg_shepheard_body_long.stats = {
 			value = 2,
-			spread = 1,	
+			spread = 1,
+			recoil = -1,
 			concealment = -1
-		}		
+		}
+
+		--(Tempest 21) Long Barrel
 		self.parts.wpn_fps_ass_komodo_b_long.stats = {
 			value = 1,
 			spread = 1,	
-			concealment = -1
+			concealment = -1,
+			recoil = -1
 		}
+
+		--(Crosskill) Classic Grip
 		self.parts.wpn_fps_pis_1911_g_classic.stats = {
 			value = 2,
 			spread = 1,
-			concealment = -1			
+			recoil = -1			
 		}
+
+		--Sport Grip
 		self.parts.wpn_fps_ass_m4_g_fancy.stats = {
 			value = 1,
-			recoil = 1	
-		}					
+			recoil = 1,
+			concealment = -2
+		}
+
+		--(AMR-16) Aftermarket Marksman Foregrip
 		self.parts.wpn_fps_ass_m16_fg_smooth.stats = {
 			value = 5,
-			spread_moving = -1,
 			concealment = 1,
-			spread = 1
-		}		
+			recoil = -1
+		}
+
+		--(AK17) Marksman Stock
 		self.parts.wpn_fps_ass_flint_s_solid.stats = {
 			value = 1,
 			recoil = -1,
-			concealment = 1,				
+			concealment = -1,				
 			spread = 1
-		}						
+		}
+
+		--(Little Friend) Long Barrel
 		self.parts.wpn_fps_ass_contraband_b_long.stats = {
 			value = 1,
 			spread = 1,	
-			concealment = -1
-		}					
+			concealment = -1,
+			recoil = -1
+		}
+
+		--(Little Friend) Short Barrel
 		self.parts.wpn_fps_ass_contraband_b_short.stats = {
 			value = 1,
 			spread = -1,	
 			concealment = 1
-		}																		
+		}
+
+		--(AK17) Long Barrel
 		self.parts.wpn_fps_ass_flint_b_long.stats = {
 			value = 1,
 			spread = 1,
+			recoil = -1,
 			concealment = -1
-		}							
+		}
+
+		--(GSPS 12G) Riot Sight 
 		self.parts.wpn_fps_shot_m37_o_expert.stats = {
-			value = 0
+			value = 1
 		}	
+
+		--(Predator 12G) Short Barrel
 		self.parts.wpn_fps_sho_b_spas12_small.stats = {
 			value = 1,
 			spread = -1,
-			concealment = 2
-		}		
+			concealment = 1
+		}
 		self.parts.wpn_fps_sho_b_spas12_small.custom_stats = {
 			damage_near_mul = -75,
 			damage_far_mul = -150			
 		}
+
+		--Modern Magazine
 		self.parts.wpn_fps_ass_ak_m_proto.stats = {
-			value = 1
+			value = 2,
+			reload = 1,
+			recoil = -1
 		}
+
+		--(AMR-12G) Big Brother Magazine
 		self.parts.wpn_fps_shot_amr12_m_extended.stats = {
 			value = 1, 
 			extra_ammo = 3, 
 			reload = -1,
 			concealment = -1
 		}
+
+		--(AMR-12G) Wire Stock
 		self.parts.wpn_fps_shot_amr12_s_wire.stats = {
 			value = 5,
 			spread = -1,
-			concealment = 1
+			recoil = -1,
+			concealment = 2
 		}
+
+		--(SG-416) Long Barrel
 		self.parts.wpn_fps_ass_sg416_b_long.stats = {
 			value = 4,
 			spread = 1,
-			concealment = -2
+			recoil = -1,
+			concealment = -1
 		}
+
+		--(Spiker 7.62) Long Foregrip
 		self.parts.wpn_fps_ass_spike_fg_long.stats = {
 			value = 5,
 			recoil = 1,
-			concealment = -2
+			spread = -1
 		}
+
+		--(Spiker 7.62) Long Barrel 
 		self.parts.wpn_fps_ass_spike_b_long.stats = {
 			value = 4,
 			spread = 1,
-			concealment = -2
-		}			
+			recoil = -1,
+			concealment = -1
+		}
+
+		--SG416 default parts...
 		self.parts.wpn_fps_ass_sg416_s_standard.stats = {
 			value = 1	
 		}
@@ -28351,157 +28562,229 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_ass_sg416_dh_custom.stats = {
 			value = 0
 		}
-		table.insert(self.wpn_fps_ass_sg416.uses_parts, "wpn_fps_m4_uupg_m_std")	
+		table.insert(self.wpn_fps_ass_sg416.uses_parts, "wpn_fps_m4_uupg_m_std")
 		self.wpn_fps_ass_sg416.override.wpn_fps_m4_uupg_m_std = {
 			stats = {
 				value = 1
 			}
 		}
+
+		--(SG 416) Schäfer Prototype Foregrip
 		self.parts.wpn_fps_ass_sg416_fg_custom.stats = {
 			value = 2,
-			recoil = 2,
+			recoil = 1,
 			concealment = -2
-		}						
+		}
+
+		--(Automat-5) Long Barrel
 		self.parts.wpn_fps_smg_ak5s_b_long.stats = {
 			value = 3,
 			spread = 1,
-			concealment = -2
-		}
-		self.parts.wpn_fps_smg_ak5s_m_new.stats = {
-			value = 5,
-			damage = 6,
-			total_ammo_mod = -16,
-			spread = 1, 
 			recoil = -1,
-			concealment = -2
-		}
-		self.parts.wpn_fps_smg_ak5s_m_curve.stats = {
-			value = 1,
-			reload = 3,
-			spread = -1, 
 			concealment = -1
 		}
+
+		--(Automat-5) Aftermarket Magazine
 		self.parts.wpn_fps_smg_ak5s_m_new.stats = {
 			value = 1,
-			reload = 3,
-			spread = -1, 
-			concealment = -1
-		}			
+			reload = 1,
+			recoil = -1
+		}
+
+		--(Automat-5) Curved Magazine
+		self.parts.wpn_fps_smg_ak5s_m_curve.stats = {
+			value = 1
+		}
+
+		--(Automat-5) Match Magazine
+		self.parts.wpn_fps_smg_ak5s_m_smol.stats = {
+			value = 1
+		}
+		
+		--(Automat-5) Wrist Breaker Stock
 		self.parts.wpn_fps_smg_ak5s_nostock.stats = {
 			value = 1,
-			recoil = -2,
+			recoil = -3,
 			concealment = 3
 		}
+
+		--(Acar-9) Steel Barrel
 		self.parts.wpn_fps_smg_car9_b_long.stats = {
 			value = 3,
 			spread = 1,
-			recoil = -2
+			recoil = -1,
+			concealment = -1,
+			alert_size = 1,
+			suppression = 1
 		}
+
+		self.parts.wpn_fps_smg_car9_b_standard.stats = {
+			value = 1
+		}
+
+		--(ACAR-9) Extended Magazine
 		self.parts.wpn_fps_smg_car9_m_extended.stats = {
 			value = 1,
 			extra_ammo = 10,
 			reload = -2,
 			concealment = -1
 		}
+
+		--(ACAR-9) Hush Foregrip
 		self.parts.wpn_fps_smg_car9_fg_rail.stats = {
 			value = 2,
-			spread = -1,
-			recoil = 1
-		}						
-		self.parts.wpn_fps_shot_beck_b_heat_dummy.stats = {
-			value = 0
+			recoil = -1,
+			concealment = 1
 		}
+
+		--(Reinbeck) Classic Heat Barrel
+		self.parts.wpn_fps_shot_beck_b_heat_dummy.stats = {
+			value = 2,
+			recoil = 1,
+			concealment = -2
+		}
+
+		--(Reinbeck) Enforcer Stock
 		self.parts.wpn_fps_shot_beck_s_tac.stats = {
 			value = 3,
 			spread = 1,
 			spread_moving = 1,
 			concealment = -2
 		}
+		self.parts.wpn_fps_shot_beck_s_tac.custom_stats = {
+			damage_far_mul = 150,
+			damage_near_mul = 75
+		}
+
+		--(Reinbeck) Ghost Stock
 		self.parts.wpn_fps_shot_beck_s_wrist.stats = {
 			value = 4,
-			concealment = 1
+			concealment = 1,
+			recoil = -1
 		}
+
+		--Continental Mag
 		self.parts.wpn_fps_ass_m4_m_wick.stats = {
 			value = 2,
-			concealment = 1,
-			reload = 2,
+			concealment = 2,
+			reload = 1,
 			extra_ammo = -10
-		}									
+		}
+
+		--(Reinbeck) Extended Tube
 		self.parts.wpn_fps_shot_beck_ext.stats = {
 			value = 7,
 			concealment = -1,
 			extra_ammo = 2
 		}
+
+		--(Breaker 12G) Tactical Stock
 		self.parts.wpn_fps_sho_boot_s_black.stats = {
 			value = 2,
 			concealment = -2,
-			spread = 1
+			recoil = 1
 		}
+
+		--(JP36) Sniper Grip
 		self.parts.wpn_fps_ass_g36_g_sniper.stats = {
-			spread = 1
-		}
-		self.parts.wpn_fps_aug_b_big.stats = {
-			value = 1,
-			spread = 2,
+			value = 2,
+			spread = 1,
 			recoil = -1,
-			concealment = -3
+			concealment = -1
 		}
+
+
 		self.parts.wpn_fps_ass_s552_o_custom.stats = {
 			value = 0
 		}
+
+		--(HRL-7) Very Subtble Grip
 		self.parts.wpn_fps_rpg7_body_subtle.stats = {
-			value = 0
+			value = 2,
+			spread = -1,
+			concealment = 1
 		}
+
+		--(Eagle Heavy) Eagle Aftermarket Grip
 		self.parts.wpn_fps_ass_scar_g_tan.stats = {
 			value = 1,
-			recoil = 1
+			recoil = 1,
+			concealment = -2
 		}			
-		self.parts.wpn_fps_ass_s552_m_ak.pcs = nil
+		
+		--Low Profile Compensator
 		self.parts.wpn_fps_upg_pis_ns_edge.stats = {
 			value = 4,
 			recoil = -1,
 			concealment = 2,
 			spread = -1
-		}			
+		}
+
+		--(Reinbeck) Shell Rack
 		self.parts.wpn_fps_shot_beck_shells.stats = {
 			value = 2,
 			spread = -1,
 			concealment = -1,
-			reload = 3
-		}			
+			reload = 1
+		}
+
+		--(Draco) Swift Magazine
 		self.parts.wpn_fps_pis_smolak_m_custom.stats = {
 			value = 1,
-			concealment = 1
+			spread = -1,
+			concealment = -1,
+			reload = 3
 		}
+
+		--(Guerilla .308) Sniper Stock
 		self.parts.wpn_fps_snp_sgs_s_sniper.stats = { 
 			value = 2,
 			spread = 1,
-			concealment = -2
+			concealment = -3
 		}
+
+		--(Guerilla .308) Marksman Grip
 		self.parts.wpn_fps_snp_sgs_g_black.stats = { 
 			value = 2,
-			spread = 1
+			spread = 1,
+			recoil = -1,
+			concealment = -1
 		}
+
+		--(Guerilla .308) Extended Barrel
 		self.parts.wpn_fps_snp_sgs_b_long.stats = { 
 			value = 2,
 			spread = 1,
-			concealment = -2
+			concealment = -1,
+			recoil = -1
 		}
+
+		--(Guerilla .308) Suppressed Barrel
 		self.parts.wpn_fps_snp_sgs_b_sil.stats = { 
 			value = 1,
-			suppression = 13,
-			alert_size = 13,
-			spread = -1,
-			recoil = 1
-		}								
+			suppression = 14,
+			alert_size = 14,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Guerilla .308) Scout foregrip
 		self.parts.wpn_fps_snp_sgs_fg_rail.stats = { 
 			value = 2,
-			concealment = 1
-		}											
+			concealment = 1,
+			recoil = 1,
+			accuracy = -2
+		}
+
+		--(Draco Pistol) Discreet Foregrip
 		self.parts.wpn_fps_pis_smolak_fg_polymer.stats = {
 			value = 1,
-			concealment = 1
-		}						
+			concealment = 1,
+			recoil = -1
+		}
+
+		--(AMR-12G) Enforcer Grip
 		self.parts.wpn_fps_shot_amr12_fg_railed.stats = {
 			value = 7,
 			spread = 1,
@@ -28512,6 +28795,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			damage_near_mul = 75,
 			damage_far_mul = 150			
 		}
+
+		--(AMG-12G) Breacher Foregrip
 		self.parts.wpn_fps_shot_amr12_fg_short.stats = {
 			value = 4,
 			spread = -1,
@@ -28522,6 +28807,12 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			damage_near_mul = -75,
 			damage_far_mul = -150			
 		}
+
+		self.parts.wpn_fps_shot_amr12_b_standard.stats = {
+			value = 1,
+		}
+		self.parts.wpn_fps_shot_amr12_b_standard.custom_stats = nil
+
 		self.wpn_fps_shot_amr12.override = {
 			wpn_fps_upg_a_slug = {
 				name_id = "bm_wp_upg_a_slug_sc",

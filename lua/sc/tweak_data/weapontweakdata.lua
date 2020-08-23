@@ -8706,7 +8706,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.desc_id = "bm_w_osipr_desc"
 	--self.osipr.custom = false
 	
-	self.osipr_gl.AMMO_MAX = 6
+	self.osipr_gl.AMMO_MAX = 9
 	self.osipr_gl.AMMO_PICKUP = self:_pickup_chance()
 	self.osipr_gl.CLIP_AMMO_MAX = 6
 	self.osipr_gl.fire_mode_data.fire_rate = 0.75

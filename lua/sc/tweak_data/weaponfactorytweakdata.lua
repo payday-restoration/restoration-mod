@@ -5244,7 +5244,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_galil", "resmod_galil", function(s
 		value = 0,
 		spread = 2,
 		recoil = -1,
-		concealment = -8
+		concealment = -4
 	}
 	
 	--Sniper Grip

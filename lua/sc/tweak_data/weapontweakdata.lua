@@ -9984,6 +9984,9 @@ end
 						concealment = concealment - 2
 					elseif weap.CLIP_AMMO_MAX > 30 then
 						concealment = concealment - 1
+					elseif weap.CLIP_AMMO_MAX <= 2 then
+						spread = spread + 3
+						concealment = concealment + 3
 					end
 				else --Certain custom shotguns fall under here.
 					if weap.CLIP_AMMO_MAX > 10 then
@@ -9994,9 +9997,12 @@ end
 						concealment = concealment - 2
 					elseif weap.CLIP_AMMO_MAX > 6 then
 						concealment = concealment -  1
+					elseif weap.CLIP_AMMO_MAX > 4 then
+						spread = spread + 1
+						concealment = concealment + 1
 					elseif weap.CLIP_AMMO_MAX <= 2 then
-						spread = spread + 2
-						concealment = concealment + 2
+						spread = spread + 3
+						concealment = concealment + 3
 					end
 				end
 

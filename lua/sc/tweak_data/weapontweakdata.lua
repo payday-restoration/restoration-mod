@@ -9838,6 +9838,7 @@ end
 				--Perform magic stat generation for unsupported custom weapons.
 				--Pretty much just look at various features of the passed in weapon and set damage/acc/stab/concealment to reasonable-ish values.
 				--Many of these values have been arbitrarily chosen and tweaked until most custom weapons from MWS give passable looking stats.
+				weap.has_description = true
 				weap.desc_id = "bm_auto_generated_sc_desc"
 				weap.AMMO_PICKUP = self:_pickup_chance()
 				--Near max baseline stats.

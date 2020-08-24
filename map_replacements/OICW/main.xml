@@ -8,7 +8,10 @@
 	</WeaponMod>
 	<WeaponMod id="wpn_fps_ass_osipr_bolt" based_on="wpn_fps_ass_scar_body_standard" type="extra" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2"/>
 	<WeaponMod id="wpn_fps_ass_osipr_gl" based_on="wpn_fps_ass_contraband_gl_m203" type="underbarrel" a_obj="a_g" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
-		<bullet_objects amount="0"/> <!--temp-->
+		<bullet_objects amount="0"/>
+	</WeaponMod>
+	<WeaponMod id="wpn_fps_ass_osipr_gl_incendiary" based_on="wpn_fps_ass_contraband_gl_m203" type="underbarrel" a_obj="a_g" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
+		<bullet_objects amount="0"/>
 	</WeaponMod>
 	<WeaponMod id="wpn_fps_ass_osipr_scope" based_on="wpn_fps_upg_o_cs" type="sight" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
 		<stats zoom="10"/>
@@ -16,6 +19,13 @@
 	<WeaponMod id="wpn_fps_ass_osipr_m_gl" based_on="wpn_fps_ass_scar_body_standard" type="ammo" wpn_pts="wpn_fps_ass_osipr" hidden="true" ver="2">
 		<animations bipod_reload="reload" bipod_reload_not_empty="reload_not_empty" reload="" reload_not_empty=""/>
 		<bullet_objects amount="1" prefix="g_bullet_"/>
+	</WeaponMod>
+	<WeaponMod id="wpn_fps_ass_osipr_m_gl_incendiary" based_on="wpn_fps_ass_scar_body_standard" type="ammo" sub_type="ammo_dragons_breath" wpn_pts="wpn_fps_ass_osipr" hidden="false" name_id="bm_wp_upg_a_grenade_launcher_incendiary" desc_id="bm_wp_upg_a_grenade_launcher_incendiary_desc_sc" has_description="true" alt_icon="guis/dlcs/bbq/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_grenade_launcher_incendiary" ver="2">
+		<animations bipod_reload="reload" bipod_reload_not_empty="reload_not_empty" reload="" reload_not_empty=""/>
+		<bullet_objects amount="1" prefix="g_bullet_"/>
+		<override>
+			<wpn_fps_ass_osipr_gl unit="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_incendiary"/>
+		</override>
 	</WeaponMod>
 	
 	<Weapon>
@@ -44,6 +54,8 @@
 				<value_node value="wpn_fps_ass_osipr_scope"/>
 				<value_node value="wpn_fps_ass_osipr_gl"/>
 				<value_node value="wpn_fps_ass_osipr_m_gl"/>
+				<value_node value="wpn_fps_ass_osipr_gl_incendiary"/>
+				<value_node value="wpn_fps_ass_osipr_m_gl_incendiary"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_large"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_medium"/>
 				<value_node value="wpn_fps_upg_ns_ass_smg_small"/>
@@ -86,11 +98,11 @@
 		</stance>
 	</Weapon>
 	<Weapon>
-		<weapon id="osipr_gl" based_on="contraband_m203" use_stance="osipr_gl">
+		<weapon id="osipr_gl" based_on="contraband_m203" CLIP_AMMO_MAX="6" NR_CLIPS_MAX="2" use_stance="osipr_gl">
 			<stats/>
 			<animations/>
 			<sounds fire="arbiter_fire"/>
-			<timers reload_not_empty="3.34" reload_empty="4.5" equip_underbarrel="2.06" unequip_underbarrel="2.06"/>
+			<timers reload_not_empty="3.34" reload_empty="4.5" equip_underbarrel="1.8" unequip_underbarrel="1.8"/>
 		</weapon>
 		<factory id="wpn_fps_ass_osipr_gl" unit="units/mods/weapons/wpn_fps_ass_osipr/wpn_fps_ass_osipr_gl">
 			<animations/>
@@ -118,14 +130,19 @@
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_bolt"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_b_standard"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_scope"/>
-		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl"/>
+		<unit_obj path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl"/>
+		<unit path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_incendiary"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl"/>
+		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl_incendiary"/>
+		<unit path="units/mods/weapons/wpn_osipr_frag_grenade/wpn_osipr_frag_grenade"/>
+		<unit path="units/mods/weapons/wpn_osipr_frag_incendiary_grenade/wpn_osipr_frag_incendiary_grenade"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/green_glass_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/green_glass_texture_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/oicw_rangefinder_df"/>
 		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/shell_df"/>
+		<texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/shell_incen_df"/>
 		
 		<animation path="anims/fps/oicw/oicw_reload" load="true"/>
 		<animation path="anims/fps/oicw/oicw_reload_not_empty" load="true"/>

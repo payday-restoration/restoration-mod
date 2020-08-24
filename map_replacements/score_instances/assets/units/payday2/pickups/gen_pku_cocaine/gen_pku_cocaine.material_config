@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="coke" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP">
+        <diffuse_texture file="units/world/props/apartment/cocaine/cocaine_atlas_df"/>
+        <bump_normal_texture file="units/world/props/apartment/cocaine/cocaine_atlas_nm"/>
+    </material>
+</materials>

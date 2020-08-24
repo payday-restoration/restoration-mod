@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc1/equipment/ind_interactable_shipping_crate/ind_interactable_shipping_crate" orientation_object="rp_ind_interactable_shipping_crate" />
+	<sequence_manager file="units/pd2_dlc1/equipment/ind_interactable_shipping_crate/ind_interactable_shipping_crate" />
+
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_ind_interactable_shipping_crate" />
+			<object name="c_c" collision_type="mesh_mopp" />
+		</body>
+		<body name="body_static_open" enabled="true" template="static">
+			<object name="rp_ind_interactable_shipping_crate" />
+			<object name="c_c_open" collision_type="mesh_mopp" />
+		</body>
+		<body name="body_mover_blocker" enabled="true" template="mover_blocker">
+			<object name="rp_ind_interactable_shipping_crate" />
+			<object name="c_mover_blocker" collision_type="box" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="hardwood">
+		<decal_mesh name="dm_wood" 				enabled="true" material="hardwood" />
+		<decal_mesh name="dm_metal" 			enabled="true" material="metal" />
+		<decal_mesh name="dm_wood_open" 		enabled="false" material="hardwood" />
+		<decal_mesh name="dm_metal_open" 		enabled="false" material="metal" />
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="grp_crate" enabled="true" culling_object="g_g">
+			<object name="g_g" 			enabled="true" shadow_caster="false" />
+			<object name="s_s" 			enabled="true" shadow_caster="true" />
+			<object name="g_g_open" 	enabled="false" shadow_caster="false" />
+			<object name="s_s_open" 	enabled="false" shadow_caster="true" />
+			<!-- DECALS -->
+			<object name="g_decal_e" 	enabled="false" shadow_caster="false"/>
+			<object name="g_decal_n" 	enabled="false" shadow_caster="false"/>
+			<object name="g_decal_s" 	enabled="false" shadow_caster="false"/>
+			<object name="g_decal_w" 	enabled="false" shadow_caster="false"/>
+		</graphic_group>
+	</graphics>
+</dynamic_object>

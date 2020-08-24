@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+    <object file="units/payday2/pickups/gen_pku_tf2_turret_ammo/gen_pku_tf2_turret_ammo_open" />
+	<network sync="spawn" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="take_ammo" />
+			<var name="_interact_object" value="interact"/>
+			<var name="_remove_on_interact" value="true" />
+			<!-- <var name="_global_event" value="pku_money" /> --> <!--what is this -->
+			<var name="_ray_object_names" type="table" >
+				<var value="interact"/>
+				<!-- <var value="a_ray_object_2"/> -->
+			</var>
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="ammo" />
+		</extension>
+	</extensions>
+</unit>

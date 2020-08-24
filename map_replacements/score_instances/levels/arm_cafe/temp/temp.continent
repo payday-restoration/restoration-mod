@@ -1,0 +1,416 @@
+<table>
+	<editor_groups>
+		<table continent="temp" name="mt_changes" reference="400045">
+			<units>
+				<value_node value="400045"/>
+				<value_node value="400044"/>
+				<value_node value="400026"/>
+				<value_node value="400033"/>
+				<value_node value="400032"/>
+				<value_node value="400029"/>
+				<value_node value="400039"/>
+				<value_node value="400038"/>
+				<value_node value="400037"/>
+				<value_node value="400015"/>
+				<value_node value="400034"/>
+				<value_node value="400009"/>
+				<value_node value="400035"/>
+				<value_node value="400040"/>
+				<value_node value="400010"/>
+				<value_node value="400027"/>
+				<value_node value="400052"/>
+				<value_node value="400043"/>
+				<value_node value="400011"/>
+				<value_node value="400053"/>
+				<value_node value="400054"/>
+				<value_node value="400022"/>
+				<value_node value="400055"/>
+				<value_node value="400056"/>
+				<value_node value="400016"/>
+				<value_node value="400024"/>
+				<value_node value="400057"/>
+				<value_node value="400036"/>
+				<value_node value="400041"/>
+				<value_node value="400014"/>
+				<value_node value="400001"/>
+				<value_node value="400058"/>
+				<value_node value="400059"/>
+				<value_node value="400060"/>
+				<value_node value="400061"/>
+				<value_node value="400062"/>
+				<value_node value="400063"/>
+				<value_node value="400004"/>
+				<value_node value="400008"/>
+				<value_node value="400042"/>
+				<value_node value="400023"/>
+				<value_node value="400003"/>
+				<value_node value="400002"/>
+				<value_node value="400051"/>
+				<value_node value="400069"/>
+				<value_node value="400068"/>
+				<value_node value="400067"/>
+				<value_node value="400066"/>
+				<value_node value="400007"/>
+				<value_node value="400070"/>
+				<value_node value="400065"/>
+				<value_node value="400064"/>
+				<value_node value="400071"/>
+				<value_node value="400072"/>
+				<value_node value="400028"/>
+				<value_node value="400073"/>
+				<value_node value="400046"/>
+				<value_node value="400074"/>
+				<value_node value="400075"/>
+				<value_node value="400012"/>
+				<value_node value="400049"/>
+				<value_node value="400021"/>
+				<value_node value="400018"/>
+				<value_node value="400017"/>
+				<value_node value="400019"/>
+				<value_node value="400020"/>
+				<value_node value="400031"/>
+				<value_node value="400030"/>
+				<value_node value="400076"/>
+				<value_node value="400047"/>
+				<value_node value="400025"/>
+				<value_node value="400005"/>
+			</units>
+		</table>
+		<table continent="temp" name="garagedoors" reference="400050">
+			<units>
+				<value_node value="400050"/>
+				<value_node value="400077"/>
+				<value_node value="400078"/>
+				<value_node value="400079"/>
+				<value_node value="400080"/>
+				<value_node value="400081"/>
+			</units>
+		</table>
+	</editor_groups>
+	<statics>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/com_int_store_mensware/com_int_store_mensware_8x8m_corner_a" name_id="com_int_store_mensware_8x8m_corner_a_001" position="-400 -2000 525" rotation="0 0 -2.68221e-007 -1" unit_id="400001"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_mall_manikin/com_prop_mall_manikin_civ_bank_1" name_id="com_prop_mall_manikin_civ_bank_1_001" position="-651.87 -1337.23 575" rotation="0 0 0.92388 0.382683" unit_id="400002"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_mall_manikin/com_prop_mall_manikin_civ_bank_2" name_id="com_prop_mall_manikin_civ_bank_2_001" position="-550 -1433.03 575" rotation="0 0 0.92388 0.382683" unit_id="400003"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="low_tfn_omni_01" position="1425 3366 1500" rotation="-1.05367e-008 5.26836e-008 -2.5332e-007 -1" unit_id="400007">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.509804 0.152941 0.133333" enabled="true" falloff_exponent="4" far_range="600" multiplier="@IDd07c4dc12188729d@" name="lo_omni" near_range="80" spot_angle_end="1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="avalon_omni_001" position="1725 0 611.102" rotation="0 0 0 -1" unit_id="400009">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.223529 0.560784 0.901961" enabled="true" falloff_exponent="4" far_range="850" multiplier="@ID887b55da4c42f626@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_spot/light_spot" name_id="building_spot_01" position="975 0 1000.23" rotation="0 -0.182236 0 -0.983255" unit_id="400010">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.890196 0.478431 0.176471" enabled="true" falloff_exponent="5" far_range="3000" multiplier="@IDd07c4dc12188729d@" name="ls_spot" near_range="80" spot_angle_end="80" spot_angle_start="39"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_009" position="2300 3900 725" rotation="0 0 0 -1" unit_id="400012">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.937255 0.745098 0.294118" enabled="true" falloff_exponent="1" far_range="1200" multiplier="@IDd07c4dc12188729d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_014" position="2075 1725 675" rotation="0 0 0 -1" unit_id="400014">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.545098 0.945098 0.854902" enabled="true" falloff_exponent="1" far_range="1200" multiplier="@IDd07c4dc12188729d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/com_int_store_mensware/com_int_store_mensware_8x8m_corner_a" name_id="com_int_store_mensware_8x8m_corner_a_002" position="2400 2400 525" rotation="0 0 -0.707107 -0.707107" unit_id="400008"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_spotlight/com_prop_store_spot_light_a" name_id="com_prop_store_spot_light_a_001" position="1544 0 1322.91" rotation="-0.5 -0.5 -0.5 -0.5" unit_id="400015"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_spotlight/com_prop_store_spot_light_a" name_id="com_prop_store_spot_light_a_002" position="-432.322 -1232.32 1230.89" rotation="0.653282 -0.270598 0.270598 -0.653281" unit_id="400016"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_015" position="-548.223 -1348.22 675" rotation="0 0 -0.382683 -0.92388" unit_id="400004">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.545098 0.945098 0.854902" enabled="true" falloff_exponent="1" far_range="600" multiplier="@IDd07c4dc12188729d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_spot/light_spot" name_id="building_spot_001" position="-5550 600 800.23" rotation="-0.12059 0.0499502 0.915976 0.37941" unit_id="400017">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.913726 0.509804 0.262745" enabled="true" falloff_exponent="5" far_range="4500" multiplier="@IDd07c4dc12188729d@" name="ls_spot" near_range="80" spot_angle_end="25" spot_angle_start="39"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_spot/light_spot" name_id="building_spot_002" position="-5550 -600 800.23" rotation="-0.120591 -0.0499502 0.915975 -0.37941" unit_id="400018">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.913726 0.509804 0.262745" enabled="true" falloff_exponent="5" far_range="4500" multiplier="@IDd07c4dc12188729d@" name="ls_spot" near_range="80" spot_angle_end="25" spot_angle_start="39"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_016" position="-7675 -500.001 3175" rotation="0 0 1 -5.96046e-008" unit_id="400019">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.568627 0.807843 0.984314" enabled="true" falloff_exponent="1" far_range="800" multiplier="@IDd07c4dc12188729d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_017" position="-7675 499.999 3175" rotation="0 0 1 -5.96046e-008" unit_id="400020">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.568627 0.807843 0.984314" enabled="true" falloff_exponent="1" far_range="800" multiplier="@IDd07c4dc12188729d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_spot/light_spot" name_id="building_spot_003" position="-2775 -875 -599.77" rotation="-0.0616284 -0.0616284 0.704416 -0.704416" unit_id="400021">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.976471 0.752941 0.301961" enabled="true" falloff_exponent="5" far_range="4000" multiplier="@IDd07c4dc12188729d@" name="ls_spot" near_range="80" spot_angle_end="37" spot_angle_start="39"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/com_inte_store_tshirt/com_int_store_tshirt_8x8m_a" name_id="com_int_store_tshirt_8x8m_a_002" position="-399.999 -2800 525" rotation="0 0 -2.38419e-007 -1" unit_id="400022"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/com_inte_store_tshirt/com_int_store_tshirt_8x8m_a" name_id="com_int_store_tshirt_8x8m_a_001" position="1600 1600 525" rotation="0 0 1 -0" unit_id="400023"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_019" position="-625 -2800 650" rotation="0 0 5.96046e-007 -1" unit_id="400024">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.980392 0.909804 0.505882" enabled="true" falloff_exponent="4.8" far_range="900" multiplier="@IDd07c4dc12188729d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoe/com_int_store_shoe_8x8m_a" name_id="com_int_store_shoe_8x8m_a_001" position="-399.999 -3600 525" rotation="0 0 -2.38419e-007 -1" unit_id="400027"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoe/com_int_store_shoe_8x8m_a" name_id="com_int_store_shoe_8x8m_a_002" position="-1200 -1200 525" rotation="0 0 -0.707107 -0.707107" unit_id="400028"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/com_int_store_barber/com_int_store_barber_8x16m_d" name_id="com_int_store_barber_8x16m_d_001" position="1594 -2400 525" rotation="0 0 1 7.7486e-007" unit_id="400029"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/com_inte_store_tshirt/com_int_store_tshirt_8x8m_a" name_id="com_int_store_tshirt_8x8m_a_003" position="-8175 800 525" rotation="0 0 0.707107 -0.707107" unit_id="400030"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoe/com_int_store_shoe_8x8m_a" name_id="com_int_store_shoe_8x8m_a_003" position="-7375 -800 525" rotation="0 0 -0.707107 -0.707107" unit_id="400031"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/com_int_store_sushi/com_int_store_sushi_8x16m_d" name_id="com_int_store_sushi_8x16m_d_001" position="1593.99 -4000 525" rotation="0 0 1 7.7486e-007" unit_id="400032"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_021" position="1925 -4800 714.966" rotation="0 0 1 -1.19209e-007" unit_id="400026">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.8 0.545098 0.356863" enabled="true" falloff_exponent="1" far_range="800" multiplier="@ID5035addc43a80b74@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_022" position="1925 -3200 714.966" rotation="0 0 1 -1.19209e-007" unit_id="400033">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.8 0.545098 0.356863" enabled="true" falloff_exponent="1" far_range="800" multiplier="@ID5035addc43a80b74@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_spot/light_spot" name_id="building_spot_004" position="275 -4875 -599.77" rotation="-0.0871557 3.72529e-009 0.996195 1.78814e-007" unit_id="400011">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.976471 0.752941 0.301961" enabled="true" falloff_exponent="5" far_range="4000" multiplier="@IDd07c4dc12188729d@" name="ls_spot" near_range="80" spot_angle_end="37" spot_angle_start="39"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_barista_lamp_hanging/com_prop_barista_lamp_hanging" name_id="com_prop_barista_lamp_hanging_007" position="-1477 -1575 2901.64" rotation="0 0 0 -1" unit_id="400035"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_barista_lamp_hanging/com_prop_barista_lamp_hanging" name_id="com_prop_barista_lamp_hanging_009" position="-1128 -1575 2880.64" rotation="0 0 0 -1" unit_id="400034"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_barista_lamp_hanging/com_prop_barista_lamp_hanging" name_id="com_prop_barista_lamp_hanging_010" position="-752 -1575 2955.64" rotation="0 0 -0.707107 -0.707107" unit_id="400037"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_barista_lamp_hanging/com_prop_barista_lamp_hanging" name_id="com_prop_barista_lamp_hanging_011" position="-752 -1951 2880.64" rotation="0 0 -0.707107 -0.707107" unit_id="400038"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_barista_lamp_hanging/com_prop_barista_lamp_hanging" name_id="com_prop_barista_lamp_hanging_012" position="-752 -2300 2916.64" rotation="0 0 -0.707107 -0.707107" unit_id="400039"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/off_prop_officehigh_lamp_floor/off_prop_officehigh_lamp_floor" name_id="off_prop_officehigh_lamp_floor_001" position="-800 -1500 1359" rotation="0 0 0 -1" unit_id="400036"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_lamp_hanging/com_prop_store_lamp_hanging" name_id="com_prop_store_lamp_hanging_001" position="-1000 -2602 1732" rotation="0 0 0 -1" unit_id="400040"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_lamp_hanging/com_prop_store_lamp_hanging" name_id="com_prop_store_lamp_hanging_002" position="-1300 -1852 1732" rotation="0 0 0 -1" unit_id="400041"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_lamp_hanging/com_prop_store_lamp_hanging" name_id="com_prop_store_lamp_hanging_003" position="-1750 -1852 1732" rotation="0 0 0 -1" unit_id="400042"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/off_prop_officehigh_lamp_floor/off_prop_officehigh_lamp_floor" name_id="off_prop_officehigh_lamp_floor_002" position="-800 -2250 1359" rotation="0 0 0 -1" unit_id="400043"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_sign_avalon/com_prop_sign_avalon_7x2m_il" name_id="com_prop_sign_avalon_7x2m_il_002" position="1600 349 3612.01" rotation="0 0 -0.707106 -0.707107" unit_id="400044"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/str_prop_street_sign_roof/str_prop_street_sign_roof2" name_id="str_prop_street_sign_roof2_002" position="1839 -1650 2975.01" rotation="0 0 -0.707107 -0.707107" unit_id="400045"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_sign_tfn/com_prop_sign_tfn_3x2m_il" name_id="com_prop_sign_tfn_3x2m_il_004" position="-2649 -1223 2401.64" rotation="0 0 0 -1" unit_id="400046"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/hcm/hcm_ext_8x1m_corner_a" name_id="hcm_ext_8x1m_corner_a_004" position="1650 5600 1325" rotation="4.21468e-008 0.707107 -0.707107 -4.21468e-008" unit_id="400049"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_mall_manikin/com_prop_mall_manikin_civ_bank_1" name_id="com_prop_mall_manikin_civ_bank_1_002" position="1773.95 2197.36 574" rotation="0 0 0.92388 -0.382683" unit_id="400051"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_001" position="-594 -3554 639" rotation="0 0 1 -1.19209e-007" unit_id="400052"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_002" position="-661 -3554 639" rotation="0 0 1 -1.19209e-007" unit_id="400053"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_003" position="-728 -3554 639" rotation="0 0 1 -1.19209e-007" unit_id="400054"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_004" position="-798 -3554 639" rotation="0 0 1 -1.19209e-007" unit_id="400055"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_005" position="-865 -3554 639" rotation="0 0 1 -1.19209e-007" unit_id="400056"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_006" position="-932 -3554 639" rotation="0 0 1 -1.19209e-007" unit_id="400057"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_007" position="-1076 -3372 639" rotation="0 0 -0.707107 -0.707107" unit_id="400058"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_008" position="-1076 -3305 639" rotation="0 0 -0.707107 -0.707107" unit_id="400059"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_009" position="-1076 -3238 639" rotation="0 0 -0.707107 -0.707107" unit_id="400060"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_010" position="-1076 -3168 639" rotation="0 0 -0.707107 -0.707107" unit_id="400061"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_011" position="-1076 -3101 639" rotation="0 0 -0.707107 -0.707107" unit_id="400062"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_012" position="-1076 -3034 639" rotation="0 0 -0.707107 -0.707107" unit_id="400063"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_013" position="-1246 -1394 639" rotation="0 0 0.707107 -0.707107" unit_id="400064"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_014" position="-1246 -1461 639" rotation="0 0 0.707107 -0.707107" unit_id="400065"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_015" position="-1246 -1528 639" rotation="0 0 0.707107 -0.707107" unit_id="400066"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_016" position="-1246 -1598 639" rotation="0 0 0.707107 -0.707107" unit_id="400067"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_017" position="-1246 -1665 639" rotation="0 0 0.707107 -0.707107" unit_id="400068"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_018" position="-1246 -1732 639" rotation="0 0 0.707107 -0.707107" unit_id="400069"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_019" position="-1428 -1876 639" rotation="0 0 1 -1.78814e-007" unit_id="400070"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_020" position="-1495 -1876 639" rotation="0 0 1 -1.78814e-007" unit_id="400071"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_021" position="-1562 -1876 639" rotation="0 0 1 -1.78814e-007" unit_id="400072"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_022" position="-1632 -1876 639" rotation="0 0 1 -1.78814e-007" unit_id="400073"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_023" position="-1699 -1876 639" rotation="0 0 1 -1.78814e-007" unit_id="400074"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_store_shoes/com_prop_store_shoes_stack_05" name_id="com_prop_store_shoes_stack_05_024" position="-1766 -1876 639" rotation="0 0 1 -1.78814e-007" unit_id="400075"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_sign_triceraopt/com_prop_sign_triceraopt_4x2m_il" name_id="com_prop_sign_triceraopt_4x2m_il_001" position="-1594 -1223 3004.46" rotation="0 0 0 -1" unit_id="400076"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_sign_kranich/com_prop_sign_kranich_8x2m_il" name_id="com_prop_sign_kranich_8x2m_il_001" position="-5800 -1846 5576.61" rotation="0 0 0.707107 -0.707107" unit_id="400047"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_sign_triceraopt/com_prop_sign_triceraopt_4x2m_il" name_id="com_prop_sign_triceraopt_4x2m_il_002" position="-632 8619 3348.1" rotation="0 0 1 -1.19209e-007" unit_id="400048"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_clean_a" name_id="ind_ext_rollupgaragedoor_clean_a_001" position="2362 -1725 539.966" rotation="0 0 1 -4.37114e-008" unit_id="400050"/>
+		</table>
+		<table>
+			<unit_data continent="temp" mesh_variation="iluminated" name="units/world/props/gym/stn_lamp_garage/stn_prop_lamp_garage" name_id="stn_prop_lamp_garage_001" position="1962 -1825 807" rotation="0 0 0.707107 -0.707107" unit_id="400077"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_clean_a" name_id="ind_ext_rollupgaragedoor_clean_a_002" position="-2922 -2018 539.966" rotation="0 0 -0.707107 -0.707107" unit_id="400078"/>
+		</table>
+		<table>
+			<unit_data continent="temp" mesh_variation="iluminated" name="units/world/props/gym/stn_lamp_garage/stn_prop_lamp_garage" name_id="stn_prop_lamp_garage_002" position="-3022 -1618 807" rotation="0 0 1 -4.37114e-008" unit_id="400079"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_clean_a" name_id="ind_ext_rollupgaragedoor_clean_a_003" position="-4482 1593 539.966" rotation="0 0 0.707107 -0.707107" unit_id="400080"/>
+		</table>
+		<table>
+			<unit_data continent="temp" mesh_variation="iluminated" name="units/world/props/gym/stn_lamp_garage/stn_prop_lamp_garage" name_id="stn_prop_lamp_garage_003" position="-4382 1193 807" rotation="0 0 0 -1" unit_id="400081"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_023" position="-4282 1193 707" rotation="0 0 0.707107 -0.707107" unit_id="400013">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.972549 0.8 0.447059" enabled="true" falloff_exponent="1" far_range="400" multiplier="@ID5035addc43a80b74@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_024" position="-3122 -1618 707" rotation="0 0 -0.707107 -0.707107" unit_id="400082">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.972549 0.8 0.447059" enabled="true" falloff_exponent="1" far_range="400" multiplier="@ID5035addc43a80b74@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="core/units/light_omni/light_omni" name_id="light_omni_025" position="1962 -1925 707" rotation="0 0 0 -1" unit_id="400083">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.972549 0.8 0.447059" enabled="true" falloff_exponent="1" far_range="400" multiplier="@ID5035addc43a80b74@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_sign_dcmenswear_street/com_prop_sign_dcmenswear_street_5x1m_il" name_id="com_prop_sign_dcmenswear_street_5x1m_il_001" position="-650.001 -1200 821" rotation="0 0 -4.17233e-007 -1" unit_id="400025"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_sign_dcmenswear_street/com_prop_sign_dcmenswear_street_5x1m_il" name_id="com_prop_sign_dcmenswear_street_5x1m_il_002" position="-400 -1933 821" rotation="0 0 0.707107 -0.707107" unit_id="400005"/>
+		</table>
+		<table>
+			<unit_data continent="temp" name="units/payday2/props/com_prop_sign_tfn/com_prop_sign_tfn_3x2m_il" name_id="com_prop_sign_tfn_3x2m_il_005" position="1550 3291 1375" rotation="0.5 -0.5 -0.5 -0.5" unit_id="400000"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

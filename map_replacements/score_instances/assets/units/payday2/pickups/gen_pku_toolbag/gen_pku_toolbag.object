@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/pickups/gen_pku_toolbag/gen_pku_toolbag" orientation_object="rp_loot_bag" />
+  <sequence_manager file="units/payday2/pickups/gen_pku_toolbag/gen_pku_toolbag" />
+  <bodies>
+    <body  name="hinge_body_1" enabled="true" template="small_prop" collision_class="bag" pushed_by_mover="false" friction="0.01" sweep="true" keyframed="false" tag="bag" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" restitution="0">
+        <object name="rp_loot_bag" />
+        <object name="c_hinge_body_1" collision_type="box" mass="50" />
+    </body>
+    <body  name="hinge_body_2" enabled="true" template="small_prop" collision_class="bag" pushed_by_mover="false" friction="0.01" sweep="true" keyframed="false" tag="bag" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.4" ang_damping="20" restitution="0">
+        <object name="a_hinge_body_2" />
+        <object name="c_hinge_body_2" collision_type="box" mass="1" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="cloth" />
+  <graphics>
+    <object name="g_bag" enabled="true"/>
+  </graphics>
+
+  <constraints>
+    <constraint name="bag" enabled="true" type="ragdoll">
+      <param body_a="hinge_body_1" body_b="hinge_body_2"/>
+      <param pivot="position:a_hinge_body_2"/>
+      <param twist_axis="yaxis:a_hinge_body_2" twist_min="-5" twist_max="5" twist_freedom="2"/>
+      <param plane_axis="xaxis:a_hinge_body_2"/>
+      <param cone_y="50" cone_z="50" cone_freedom="4"/>
+      <param damping="8" spring_constant="1000" min_restitution="0"/>
+    </constraint>
+  </constraints>
+</dynamic_object>

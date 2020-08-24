@@ -1,0 +1,32 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_1x1/drk_interactable_weapon_case_1x1" orientation_object="rp_drk_interactable_weapon_case_1x1" />
+	<sequence_manager file="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_1x1/drk_interactable_weapon_case_1x1" />
+	<animations>
+		<animation_group name="anim" enabled="false">
+			<object name="jt_box" />
+			<object name="anim_hinge" />
+			<object name="anim_lock" />
+		</animation_group>
+	</animations>
+	<bodies>
+		<body name="body_closed" enabled="true" template="static">
+			<object name="jt_box" />
+			<object name="g_weapon_case" collision_type="box" />
+		</body>
+		<body name="body_open" enabled="false" template="static">
+			<object name="rp_drk_interactable_weapon_case_1x1" />
+			<object name="c_medium_open" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="plastic">
+		<decal_mesh name="g_weapon_case" 	enabled="true" material="plastic" />
+		<decal_mesh name="dm_medium_open" 	enabled="false" material="plastic" />
+		<decal_mesh name="dm_foam" 			enabled="false" material="cloth_stuffed" />
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="grp_wpn" enabled="true" culling_object="co_cull">
+			<object name="g_weapon_case" enabled="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

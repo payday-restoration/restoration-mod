@@ -1,0 +1,8 @@
+<unit type="jfr" slot="14">
+	<network sync="bodies" remote_unit=""/>
+	<object file="units/pd2_dlc_jfr/props/jfr_crate_wine_bag/jfr_crate_wine_bag" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

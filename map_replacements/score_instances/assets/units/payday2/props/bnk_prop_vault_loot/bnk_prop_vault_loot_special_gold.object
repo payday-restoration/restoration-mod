@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_gold" orientation_object="rp_gold_bar" />
+  <sequence_manager file="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_gold" />
+  
+  <bodies>
+    <body name="gold_bar" enabled="true" template="static">
+      <object name="rp_gold_bar"/>
+      <object name="c_box_gold" collision_type="box" padding="-2.5" />
+    </body>	
+ </bodies>
+	
+  <decal_surfaces default_material="steel" static="true">
+    <decal_mesh name="g_gold_bar_01" enabled="true" material="steel"/>
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_gold_bar_01" enabled="true" />
+     <graphic_group name="grp_outline" enabled="true" >
+         <lod_object name="lod_outline">
+             <object name="g_outline_lod0" enabled="true"  max_distance="300" />
+             <object name="g_outline_lod1" enabled="true" />
+         </lod_object>
+     </graphic_group>
+  </graphics>
+  
+</dynamic_object>

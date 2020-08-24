@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mtr_statue" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/pickups/gen_pku_artifact_statue/sculpture_df"/>
+        <bump_normal_texture file="units/payday2/pickups/gen_pku_artifact_statue/sculpture_nm"/>
+    </material>
+</materials>

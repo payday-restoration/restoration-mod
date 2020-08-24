@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="14">
+	<object file="units/payday2/pickups/gen_pku_toolbag/gen_pku_toolbag" />
+	<network sync="spawn" />
+	<dependencies>		
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="carry_drop" />
+			<var name="_remove_on_interact" value="true" />
+			<var name="_ray_object_names" type="table" >
+				<var value="a_ray_object_1"/>
+				<var value="a_ray_object_2"/>
+			</var>
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="lance_bag" />
+		</extension>
+		<extension name="attention" class="AIAttentionObject" >
+			<var name="_initial_settings" value="prop_carry_bag" />
+		</extension>
+	</extensions>
+	<sounds>
+	<default_soundsource source="sound"/>
+		<soundsource name="sound" source="sound" />
+	</sounds>
+</unit>

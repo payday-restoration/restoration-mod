@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+  <network sync="spawn" />
+  <object file="units/payday2/pickups/gen_pku_diamonds/gen_pku_diamonds" />
+  
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+    <extension name="interaction" class="CarryInteractionExt">
+      <var name="tweak_data" value="gen_pku_jewelry" />
+      <var name="_remove_on_interact" value="true" />
+      <var name="_global_event" value="pku_jewelry" />
+    </extension>
+    <extension name="carry_data" class="CarryData">
+		<var name="_carry_id" value="diamonds" />
+	</extension>
+  </extensions>
+</unit>

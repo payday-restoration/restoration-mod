@@ -1,0 +1,22 @@
+<materials version="3">
+    <material version="2" decal_material="glass_unbreakable" name="mtr_shimmer" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP">
+        <diffuse_texture file="units/world/props/diamondheist_diamond_pickups/gems_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="36" type="scalar" name="falloff_exp"/>
+    </material>
+    <material version="2" decal_material="glass_unbreakable" name="mtr_diamond_pickups" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE">
+        <diffuse_texture file="units/world/props/diamondheist_diamond_pickups/gems_df"/>
+        <opacity_texture file="units/world/props/diamondheist_diamond_pickups/gems_op"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="0.44999998807907 0.62000000476837 0.8299999833107" type="vector3" name="fresnel_settings"/>
+    </material>
+    <material version="2" decal_material="glass_unbreakable" name="mtr_caustics" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE">
+        <diffuse_texture file="units/world/props/diamondheist_diamond_pickups/gems_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+    <material name="mtr_jewelrybox_material" render_template="generic:CONTOUR:DIFFUSE_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/world/props/luxury_props/jewelrybox_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+</materials>

@@ -3611,6 +3611,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		-0.6667,
 		0.6667
 	}		
+	self.new_m4.supported = true
 	self.new_m4.stats = {
 		damage = 24,
 		spread = 17,
@@ -3652,6 +3653,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		-0.6667,
 		0.6667
 	}
+	self.glock_17.supported = true
 	self.glock_17.stats = {
 		damage = 20,
 		spread = 18,
@@ -3677,6 +3679,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mp9.kick.standing = self.new_m4.kick.standing
 	self.mp9.kick.crouching = self.new_m4.kick.crouching
 	self.mp9.kick.steelsight = self.new_m4.kick.steelsight
+	self.mp9.supported = true
 	self.mp9.stats = {
 		damage = 18,
 		spread = 17,
@@ -3704,6 +3707,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r870.fire_mode_data.fire_rate = 0.5
 	self.r870.AMMO_MAX = 60
 	self.r870.AMMO_PICKUP = self:_pickup_chance()
+	self.r870.supported = true
 	self.r870.stats = {
 		damage = 60,
 		spread = 9,
@@ -3729,6 +3733,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.glock_18c.kick.standing = self.new_m4.kick.standing
 	self.glock_18c.kick.crouching = self.new_m4.kick.crouching
 	self.glock_18c.kick.steelsight = self.new_m4.kick.steelsight
+	self.glock_18c.supported = true
 	self.glock_18c.stats = {
 		damage = 18,
 		spread = 17,
@@ -3754,6 +3759,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.amcar.kick.standing = self.new_m4.kick.standing
 	self.amcar.kick.crouching = self.new_m4.kick.crouching
 	self.amcar.kick.steelsight = self.new_m4.kick.steelsight
+	self.amcar.supported = true
 	self.amcar.stats = {
 		damage = 20,
 		spread = 17,
@@ -3783,6 +3789,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m16.kick.standing = self.new_m4.kick.standing
 	self.m16.kick.crouching = self.new_m4.kick.crouching
 	self.m16.kick.steelsight = self.new_m4.kick.steelsight		
+	self.m16.supported = true
 	self.m16.stats = {
 		damage = 30,
 		spread = 17,
@@ -3812,6 +3819,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.olympic.kick.standing = self.new_m4.kick.standing
 	self.olympic.kick.crouching = self.new_m4.kick.crouching
 	self.olympic.kick.steelsight = self.new_m4.kick.steelsight		
+	self.olympic.supported = true
 	self.olympic.stats = {
 		damage = 20,
 		spread = 17,
@@ -3835,6 +3843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ak74.kick.standing = self.new_m4.kick.standing
 	self.ak74.kick.crouching = self.new_m4.kick.crouching
 	self.ak74.kick.steelsight = self.new_m4.kick.steelsight
+	self.ak74.supported = true
 	self.ak74.stats = {
 		damage = 24,
 		spread = 18,
@@ -3859,6 +3868,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akm.kick.standing = self.new_m4.kick.standing
 	self.akm.kick.crouching = self.new_m4.kick.crouching
 	self.akm.kick.steelsight = self.new_m4.kick.steelsight		
+	self.akm.supported = true
 	self.akm.stats = {
 		damage = 30,
 		spread = 17,
@@ -3885,6 +3895,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akm_gold.fire_mode_data.fire_rate = 0.1
 	self.akm_gold.auto.fire_rate = 0.1
 	self.akm_gold.timers.reload_not_empty = 2
+	self.akm_gold.supported = true
 	self.akm_gold.stats = {
 		damage = 30,
 		spread = 17,
@@ -3912,6 +3923,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akmsu.kick.standing = self.new_m4.kick.standing
 	self.akmsu.kick.crouching = self.new_m4.kick.crouching
 	self.akmsu.kick.steelsight = self.new_m4.kick.steelsight			
+	self.akmsu.supported = true
 	self.akmsu.stats = {
 		damage = 30,
 		spread = 17,
@@ -3941,6 +3953,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saiga.kick.standing = self.new_m4.kick.standing
 	self.saiga.kick.crouching = self.new_m4.kick.crouching
 	self.saiga.kick.steelsight = self.new_m4.kick.steelsight
+	self.saiga.supported = true
 	self.saiga.stats = {
 		damage = 30,
 		spread = 7,
@@ -3962,6 +3975,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ak5.kick.standing = self.new_m4.kick.standing
 	self.ak5.kick.crouching = self.new_m4.kick.crouching
 	self.ak5.kick.steelsight = self.new_m4.kick.steelsight
+	self.ak5.supported = true
 	self.ak5.stats = {
 		damage = 24,
 		spread = 16,
@@ -3986,6 +4000,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aug.kick.standing = self.new_m4.kick.standing
 	self.aug.kick.crouching = self.new_m4.kick.crouching
 	self.aug.kick.steelsight = self.new_m4.kick.steelsight
+	self.aug.supported = true
 	self.aug.stats = {
 		damage = 24,
 		spread = 17,
@@ -4014,6 +4029,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g36.kick.standing = self.new_m4.kick.standing
 	self.g36.kick.crouching = self.new_m4.kick.crouching
 	self.g36.kick.steelsight = self.new_m4.kick.steelsight
+	self.g36.supported = true
 	self.g36.stats = {
 		damage = 20,
 		spread = 19,
@@ -4040,6 +4056,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.p90.kick.standing = self.new_m4.kick.standing
 	self.p90.kick.crouching = self.new_m4.kick.crouching
 	self.p90.kick.steelsight = self.new_m4.kick.steelsight
+	self.p90.supported = true
 	self.p90.stats = {
 		damage = 18,
 		spread = 15,
@@ -4064,6 +4081,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_m14.kick.steelsight = self.new_m4.kick.steelsight
 	self.new_m14.AMMO_MAX = 60
 	self.new_m14.AMMO_PICKUP = self:_pickup_chance()
+	self.new_m14.supported = true
 	self.new_m14.stats = {
 		damage = 60,
 		spread = 20,
@@ -4091,6 +4109,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.deagle.CLIP_AMMO_MAX = 8
 	self.deagle.AMMO_MAX = 30
 	self.deagle.AMMO_PICKUP = self:_pickup_chance()
+	self.deagle.supported = true
 	self.deagle.stats = {
 		damage = 60,
 		spread = 18,
@@ -4117,6 +4136,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_mp5.kick.steelsight = self.new_m4.kick.steelsight
 	self.new_mp5.AMMO_MAX = 90
 	self.new_mp5.AMMO_PICKUP = self:_pickup_chance()
+	self.new_mp5.supported = true
 	self.new_mp5.stats = {
 		damage = 20,
 		spread = 17,
@@ -4141,6 +4161,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.colt_1911.kick.standing = self.glock_17.kick.standing
 	self.colt_1911.kick.crouching = self.glock_17.kick.crouching
 	self.colt_1911.kick.steelsight = self.glock_17.kick.steelsight
+	self.colt_1911.supported = true
 	self.colt_1911.stats = {
 		damage = 45,
 		spread = 18,
@@ -4165,6 +4186,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mac10.kick.standing = self.new_m4.kick.standing
 	self.mac10.kick.crouching = self.new_m4.kick.crouching
 	self.mac10.kick.steelsight = self.new_m4.kick.steelsight
+	self.mac10.supported = true
 	self.mac10.stats = {
 		damage = 30,
 		spread = 15,
@@ -4193,6 +4215,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.serbu.kick.standing = self.new_m4.kick.standing
 	self.serbu.kick.crouching = self.new_m4.kick.crouching 
 	self.serbu.kick.steelsight = self.new_m4.kick.steelsight	
+	self.serbu.supported = true
 	self.serbu.stats = {
 		damage = 60,
 		spread = 8,
@@ -4246,6 +4269,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		-0.11,
 		-0.11
 	}
+	self.huntsman.supported = true
 	self.huntsman.stats = {
 		damage = 90,
 		spread = 12,
@@ -4271,6 +4295,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b92fs.kick.standing = self.glock_17.kick.standing
 	self.b92fs.kick.crouching = self.glock_17.kick.crouching
 	self.b92fs.kick.steelsight = self.glock_17.kick.steelsight
+	self.b92fs.supported = true
 	self.b92fs.stats = {
 		damage = 20,
 		spread = 19,
@@ -4296,6 +4321,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_raging_bull.kick.crouching = self.glock_17.kick.crouching
 	self.new_raging_bull.kick.steelsight = self.glock_17.kick.steelsight
 	self.new_raging_bull.AMMO_PICKUP = self:_pickup_chance()
+	self.new_raging_bull.supported = true
 	self.new_raging_bull.stats = {
 		damage = 60,
 		spread = 17,
@@ -4327,6 +4353,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.saw.kick.crouching = self.saw.kick.standing
 	self.saw.kick.steelsight = self.saw.kick.standing
+	self.saw.supported = true
 	self.saw.stats = {
 		alert_size = 7,
 		suppression = 7,
@@ -4356,6 +4383,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saw_secondary.CLIP_AMMO_MAX = 20
 	self.saw_secondary.AMMO_MAX = 20
 	self.saw_secondary.AMMO_PICKUP = self:_pickup_chance()
+	self.saw_secondary.supported = true
 	self.saw_secondary.stats = {
 		alert_size = 7,
 		suppression = 7,
@@ -4386,6 +4414,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.usp.kick.crouching = self.glock_17.kick.crouching
 	self.usp.kick.steelsight = self.glock_17.kick.steelsight
 	self.usp.CLIP_AMMO_MAX = 12
+	self.usp.supported = true
 	self.usp.stats = {
 		damage = 30,
 		spread = 17,
@@ -4416,6 +4445,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g22c.kick.crouching = self.glock_17.kick.crouching
 	self.g22c.kick.steelsight = self.glock_17.kick.steelsight
 	self.g22c.CLIP_AMMO_MAX = 16
+	self.g22c.supported = true
 	self.g22c.stats = {
 		damage = 24,
 		spread = 18,
@@ -4440,6 +4470,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.judge.AMMO_MAX = 20
 	self.judge.AMMO_PICKUP = self:_pickup_chance()
+	self.judge.supported = true
 	self.judge.stats = {
 		damage = 90,
 		spread = 5,
@@ -4468,6 +4499,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m45.kick.standing = self.new_m4.kick.standing
 	self.m45.kick.crouching = self.new_m4.kick.crouching
 	self.m45.kick.steelsight = self.new_m4.kick.steelsight
+	self.m45.supported = true
 	self.m45.stats = {
 		damage = 24,
 		spread = 15,
@@ -4495,6 +4527,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.s552.kick.crouching = self.new_m4.kick.crouching
 	self.s552.kick.steelsight = self.new_m4.kick.steelsight
 	self.s552.AMMO_MAX = 150
+	self.s552.supported = true
 	self.s552.stats = {
 		damage = 24,
 		spread = 15,
@@ -4526,6 +4559,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ppk.kick.standing = self.glock_17.kick.standing
 	self.ppk.kick.crouching = self.glock_17.kick.crouching
 	self.ppk.kick.steelsight = self.glock_17.kick.steelsight
+	self.ppk.supported = true
 	self.ppk.stats = {
 		damage = 20,
 		spread = 20,
@@ -4554,6 +4588,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mp7.kick.standing = self.new_m4.kick.standing
 	self.mp7.kick.crouching = self.new_m4.kick.crouching
 	self.mp7.kick.steelsight = self.new_m4.kick.steelsight			
+	self.mp7.supported = true
 	self.mp7.stats = {
 		damage = 24,
 		spread = 13,
@@ -4580,6 +4615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.scar.kick.standing = self.new_m4.kick.standing
 	self.scar.kick.crouching = self.new_m4.kick.crouching
 	self.scar.kick.steelsight = self.new_m4.kick.steelsight		
+	self.scar.supported = true
 	self.scar.stats = {
 		damage = 45,
 		spread = 18,
@@ -4605,6 +4641,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.p226.kick.standing = self.glock_17.kick.standing
 	self.p226.kick.crouching = self.glock_17.kick.crouching
 	self.p226.kick.steelsight = self.glock_17.kick.steelsight
+	self.p226.supported = true
 	self.p226.stats = {
 		damage = 24,
 		spread = 18,
@@ -4634,6 +4671,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hk21.kick.crouching = self.new_m4.kick.crouching
 	self.hk21.kick.steelsight = self.new_m4.kick.steelsight
 	self.hk21.panic_suppression_chance = 0.05
+	self.hk21.supported = true
 	self.hk21.stats = {
 		damage = 20,
 		spread = 13,
@@ -4662,6 +4700,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m249.kick.standing = self.new_m4.kick.standing
 	self.m249.kick.crouching = self.new_m4.kick.crouching
 	self.m249.kick.steelsight = self.new_m4.kick.steelsight
+	self.m249.supported = true
 	self.m249.stats = {
 		damage = 18,
 		spread = 14,
@@ -4694,6 +4733,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpk.kick.standing = self.new_m4.kick.standing
 	self.rpk.kick.crouching = self.new_m4.kick.crouching
 	self.rpk.kick.steelsight = self.new_m4.kick.steelsight
+	self.rpk.supported = true
 	self.rpk.stats = {
 		damage = 24,
 		spread = 13,
@@ -4719,6 +4759,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m95.kick.standing = self.huntsman.kick.standing
 	self.m95.kick.crouching = self.huntsman.kick.crouching
 	self.m95.kick.steelsight = self.huntsman.kick.steelsight
+	self.m95.supported = true
 	self.m95.stats = {
 		damage = 180,
 		spread = 19,
@@ -4749,6 +4790,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.msr.kick.standing = self.huntsman.kick.standing
 	self.msr.kick.crouching = self.huntsman.kick.crouching
 	self.msr.kick.steelsight = self.huntsman.kick.steelsight
+	self.msr.supported = true
 	self.msr.stats = {
 		damage = 90,
 		spread = 19,
@@ -4775,6 +4817,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r93.kick.standing = self.huntsman.kick.standing
 	self.r93.kick.crouching = self.huntsman.kick.crouching
 	self.r93.kick.steelsight = self.huntsman.kick.steelsight
+	self.r93.supported = true
 	self.r93.stats = {
 		damage = 120,
 		spread = 18,
@@ -4802,6 +4845,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.fal.kick.standing = self.new_m4.kick.standing
 	self.fal.kick.crouching = self.new_m4.kick.crouching
 	self.fal.kick.steelsight = self.new_m4.kick.steelsight		
+	self.fal.supported = true
 	self.fal.stats = {
 		damage = 30,
 		spread = 16,
@@ -4829,6 +4873,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.benelli.kick.standing = self.new_m4.kick.standing
 	self.benelli.kick.crouching = self.new_m4.kick.crouching
 	self.benelli.kick.steelsight = self.new_m4.kick.steelsight
+	self.benelli.supported = true
 	self.benelli.stats = {
 		damage = 45,
 		spread = 8,
@@ -4857,6 +4902,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.striker.kick.standing = self.new_m4.kick.standing
 	self.striker.kick.crouching = self.new_m4.kick.crouching
 	self.striker.kick.steelsight = self.new_m4.kick.steelsight
+	self.striker.supported = true
 	self.striker.stats = {
 		damage = 45,
 		spread = 7,
@@ -4884,6 +4930,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ksg.kick.crouching = self.new_m4.kick.crouching
 	self.ksg.kick.steelsight = self.new_m4.kick.steelsight		
 	self.ksg.AMMO_PICKUP = self:_pickup_chance()
+	self.ksg.supported = true
 	self.ksg.stats = {
 		damage = 60,
 		spread = 8,
@@ -4913,6 +4960,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.gre_m79.kick.steelsight = self.huntsman.kick.steelsight
 	self.gre_m79.AMMO_MAX = 9
 	self.gre_m79.AMMO_PICKUP = self:_pickup_chance()
+	self.gre_m79.supported = true
 	self.gre_m79.stats = {
 		damage = 80,
 		spread = 21,
@@ -4939,6 +4987,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g3.kick.standing = self.new_m4.kick.standing
 	self.g3.kick.crouching = self.new_m4.kick.crouching
 	self.g3.kick.steelsight = self.new_m4.kick.steelsight		
+	self.g3.supported = true
 	self.g3.stats = {
 		damage = 60,
 		spread = 18,
@@ -4966,6 +5015,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.galil.kick.standing = self.new_m4.kick.standing
 	self.galil.kick.crouching = self.new_m4.kick.crouching
 	self.galil.kick.steelsight = self.new_m4.kick.steelsight
+	self.galil.supported = true
 	self.galil.stats = {
 		damage = 24,
 		spread = 18,
@@ -4994,6 +5044,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.famas.kick.standing = self.new_m4.kick.standing
 	self.famas.kick.crouching = self.new_m4.kick.crouching
 	self.famas.kick.steelsight = self.new_m4.kick.steelsight
+	self.famas.supported = true
 	self.famas.stats = {
 		damage = 20,
 		spread = 19,
@@ -5024,6 +5075,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.scorpion.kick.standing = self.new_m4.kick.standing
 	self.scorpion.kick.crouching = self.new_m4.kick.crouching
 	self.scorpion.kick.steelsight = self.new_m4.kick.steelsight
+	self.scorpion.supported = true
 	self.scorpion.stats = {
 		damage = 20,
 		spread = 15,
@@ -5053,6 +5105,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tec9.kick.standing = self.new_m4.kick.standing
 	self.tec9.kick.crouching = self.new_m4.kick.crouching
 	self.tec9.kick.steelsight = self.new_m4.kick.steelsight
+	self.tec9.supported = true
 	self.tec9.stats = {
 		damage = 24,
 		spread = 15,
@@ -5081,6 +5134,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.uzi.kick.standing = self.new_m4.kick.standing
 	self.uzi.kick.crouching = self.new_m4.kick.crouching
 	self.uzi.kick.steelsight = self.new_m4.kick.steelsight
+	self.uzi.supported = true
 	self.uzi.stats = {
 		damage = 30,
 		spread = 15,
@@ -5107,6 +5161,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.jowi.fire_mode_data.fire_rate = 0.08571428571
 	self.jowi.single = {}
 	self.jowi.single.fire_rate = 0.08571428571
+	self.jowi.supported = true
 	self.jowi.stats = {
 		damage = 20,
 		spread = 18,
@@ -5132,6 +5187,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_1911.kick.standing = self.glock_17.kick.standing
 	self.x_1911.kick.crouching = self.glock_17.kick.crouching
 	self.x_1911.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_1911.supported = true
 	self.x_1911.stats = {
 		damage = 45,
 		spread = 16,
@@ -5156,6 +5212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_b92fs.FIRE_MODE = "single"
 	self.x_b92fs.fire_mode_data.fire_rate = 0.08571428571
 	self.x_b92fs.single.fire_rate = 0.08571428571
+	self.x_b92fs.supported = true
 	self.x_b92fs.stats = {
 		damage = 20,
 		spread = 17,
@@ -5186,6 +5243,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_deagle.kick.crouching = self.glock_17.kick.crouching
 	self.x_deagle.kick.steelsight = self.glock_17.kick.steelsight
 	self.x_deagle.animations.has_steelsight_stance = true
+	self.x_deagle.supported = true
 	self.x_deagle.stats = {
 		damage = 60,
 		spread = 16,
@@ -5209,6 +5267,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g26.kick.steelsight = self.glock_17.kick.steelsight
 	self.g26.fire_mode_data.fire_rate = 0.08571428571
 	self.g26.single.fire_rate = 0.08571428571
+	self.g26.supported = true
 	self.g26.stats = {
 		damage = 20,
 		spread = 20,
@@ -5237,6 +5296,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.spas12.kick.standing = self.new_m4.kick.standing
 	self.spas12.kick.crouching = self.new_m4.kick.crouching
 	self.spas12.kick.steelsight = self.new_m4.kick.steelsight
+	self.spas12.supported = true
 	self.spas12.stats = {
 		damage = 45,
 		spread = 8,
@@ -5264,6 +5324,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mg42.kick.standing = self.new_m4.kick.standing
 	self.mg42.kick.crouching = self.new_m4.kick.crouching
 	self.mg42.kick.steelsight = self.new_m4.kick.steelsight
+	self.mg42.supported = true
 	self.mg42.stats = {
 		damage = 24,
 		spread = 17,
@@ -5299,6 +5360,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.kick.standing = self.new_m4.kick.standing
 	self.c96.kick.crouching = self.new_m4.kick.crouching
 	self.c96.kick.steelsight = self.new_m4.kick.steelsight
+	self.c96.supported = true
 	self.c96.stats = {
 		damage = 30,
 		spread = 16,
@@ -5326,6 +5388,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sterling.kick.standing = self.new_m4.kick.standing
 	self.sterling.kick.crouching = self.new_m4.kick.crouching
 	self.sterling.kick.steelsight = self.new_m4.kick.steelsight
+	self.sterling.supported = true
 	self.sterling.stats = {
 		damage = 24,
 		spread = 15,
@@ -5351,6 +5414,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mosin.kick.standing = self.huntsman.kick.standing
 	self.mosin.kick.crouching = self.huntsman.kick.crouching
 	self.mosin.kick.steelsight = self.huntsman.kick.steelsight
+	self.mosin.supported = true
 	self.mosin.stats = {
 		damage = 120,
 		spread = 19,
@@ -5379,6 +5443,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1928.kick.crouching = self.new_m4.kick.crouching
 	self.m1928.kick.steelsight = self.new_m4.kick.steelsight
 	self.m1928.panic_suppression_chance = 0.05
+	self.m1928.supported = true
 	self.m1928.stats = {
 		damage = 24,
 		spread = 14,
@@ -5409,6 +5474,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.l85a2.kick.standing = self.new_m4.kick.standing
 	self.l85a2.kick.crouching = self.new_m4.kick.crouching
 	self.l85a2.kick.steelsight = self.new_m4.kick.steelsight
+	self.l85a2.supported = true
 	self.l85a2.stats = {
 		damage = 24,
 		spread = 18,
@@ -5437,6 +5503,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.vhs.kick.standing = self.new_m4.kick.standing
 	self.vhs.kick.crouching = self.new_m4.kick.crouching
 	self.vhs.kick.steelsight = self.new_m4.kick.steelsight
+	self.vhs.supported = true
 	self.vhs.stats = {
 		damage = 20,
 		spread = 20,
@@ -5465,6 +5532,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hs2000.kick.standing = self.glock_17.kick.standing
 	self.hs2000.kick.crouching = self.glock_17.kick.crouching
 	self.hs2000.kick.steelsight = self.glock_17.kick.steelsight
+	self.hs2000.supported = true
 	self.hs2000.stats = {
 		damage = 30,
 		spread = 16,
@@ -5500,6 +5568,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m134.kick.crouching = self.new_m4.kick.crouching
 	self.m134.kick.steelsight = self.new_m4.kick.steelsight
 	self.m134.panic_suppression_chance = 0.05
+	self.m134.supported = true
 	self.m134.stats = {
 		damage = 18,
 		spread = 15,
@@ -5530,6 +5599,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.AMMO_PICKUP = self:_pickup_chance()
 	self.rpg7.timers.reload_not_empty = 3.25
 	self.rpg7.timers.reload_empty = 3.25
+	self.rpg7.supported = true
 	self.rpg7.stats = {
 		damage = 400,
 		spread = 16,
@@ -5560,6 +5630,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.cobray.CAN_TOGGLE_FIREMODE = true
 	self.cobray.auto = {}
 	self.cobray.auto.fire_rate = 0.06
+	self.cobray.supported = true
 	self.cobray.stats = {
 		damage = 30,
 		spread = 17,
@@ -5592,6 +5663,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b682.kick.standing = self.huntsman.kick.standing
 	self.b682.kick.crouching = self.huntsman.kick.crouching
 	self.b682.kick.steelsight = self.huntsman.kick.steelsight		
+	self.b682.supported = true
 	self.b682.stats = {
 		damage = 90,
 		spread = 13,
@@ -5620,6 +5692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g22c.fire_mode_data.fire_rate = 0.08571428571
 	self.x_g22c.single = {}
 	self.x_g22c.single.fire_rate = 0.08571428571
+	self.x_g22c.supported = true
 	self.x_g22c.stats = {
 		damage = 24,
 		spread = 16,
@@ -5645,6 +5718,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g17.FIRE_MODE = "single"
 	self.x_g17.fire_mode_data.fire_rate = 0.08571428571
 	self.x_g17.single.fire_rate = 0.08571428571
+	self.x_g17.supported = true
 	self.x_g17.stats = {
 		damage = 20,
 		spread = 16,
@@ -5670,6 +5744,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_usp.fire_mode_data.fire_rate = 0.08571428571
 	self.x_usp.single = {}
 	self.x_usp.single.fire_rate = 0.08571428571
+	self.x_usp.supported = true
 	self.x_usp.stats = {
 		damage = 30,
 		spread = 15,
@@ -5718,6 +5793,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		dot_length = 3.1,
 		dot_tick_period = 0.5
 	}
+	self.flamethrower_mk2.supported = true
 	self.flamethrower_mk2.stats = {
 		damage = 25,
 		spread = 7,
@@ -5745,6 +5821,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m32.fire_mode_data.fire_rate = 1.0
 	self.m32.AMMO_MAX = 9
 	self.m32.AMMO_PICKUP = self:_pickup_chance()
+	self.m32.supported = true
 	self.m32.stats = {
 		damage = 80,
 		spread = 6,
@@ -5772,6 +5849,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aa12.kick.steelsight = self.new_m4.kick.steelsight
 	self.aa12.FIRE_MODE = "auto"				
 	self.aa12.CAN_TOGGLE_FIREMODE = false
+	self.aa12.supported = true
 	self.aa12.stats = {
 		damage = 45,
 		spread = 6,
@@ -5793,6 +5871,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.peacemaker.kick.standing = self.huntsman.kick.standing
 	self.peacemaker.kick.crouching = self.huntsman.kick.crouching
 	self.peacemaker.kick.steelsight = self.huntsman.kick.steelsight
+	self.peacemaker.supported = true
 	self.peacemaker.stats = {
 		damage = 90,
 		spread = 20,
@@ -5830,6 +5909,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.winchester1874.kick.standing = self.huntsman.kick.standing
 	self.winchester1874.kick.crouching = self.huntsman.kick.crouching
 	self.winchester1874.kick.steelsight = self.huntsman.kick.steelsight
+	self.winchester1874.supported = true
 	self.winchester1874.stats = {
 		damage = 90,
 		spread = 17,
@@ -5876,6 +5956,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.plainsrider.AMMO_PICKUP = self:_pickup_chance()
 	self.plainsrider.charge_data.max_t = 0.5
 	self.plainsrider.not_allowed_in_bleedout = false
+	self.plainsrider.supported = true
 	self.plainsrider.stats = {
 		damage = 60,
 		spread = 21,
@@ -5902,6 +5983,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mateba.kick.standing = self.glock_17.kick.standing
 	self.mateba.kick.crouching = self.glock_17.kick.crouching
 	self.mateba.kick.steelsight = self.glock_17.kick.steelsight
+	self.mateba.supported = true
 	self.mateba.stats = {
 		damage = 60,
 		spread = 20,
@@ -5934,6 +6016,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.asval.kick.standing = self.new_m4.kick.standing
 	self.asval.kick.crouching = self.new_m4.kick.crouching
 	self.asval.kick.steelsight = self.new_m4.kick.steelsight
+	self.asval.supported = true
 	self.asval.stats = {
 		damage = 45,
 		spread = 18,
@@ -5971,6 +6054,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sub2000.kick.standing = self.glock_17.kick.standing
 	self.sub2000.kick.crouching = self.glock_17.kick.crouching
 	self.sub2000.kick.steelsight = self.glock_17.kick.steelsight
+	self.sub2000.supported = true
 	self.sub2000.stats = {
 		damage = 30,
 		spread = 17,
@@ -6000,6 +6084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.wa2000.kick.standing = self.huntsman.kick.standing
 	self.wa2000.kick.crouching = self.huntsman.kick.crouching
 	self.wa2000.kick.steelsight = self.huntsman.kick.steelsight
+	self.wa2000.supported = true
 	self.wa2000.stats = {
 		damage = 90,
 		spread = 19,
@@ -6032,6 +6117,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.polymer.kick.standing = self.new_m4.kick.standing
 	self.polymer.kick.crouching = self.new_m4.kick.crouching
 	self.polymer.kick.steelsight = self.new_m4.kick.steelsight
+	self.polymer.supported = true
 	self.polymer.stats = {
 		damage = 30,
 		spread = 14,
@@ -6063,6 +6149,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hunter.kick.standing = self.huntsman.kick.standing
 	self.hunter.kick.crouching = self.huntsman.kick.crouching
 	self.hunter.kick.steelsight = self.huntsman.kick.steelsight	
+	self.hunter.supported = true
 	self.hunter.stats = {
 		damage = 120,
 		spread = 20,
@@ -6093,6 +6180,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.baka.kick.standing = self.new_m4.kick.standing
 	self.baka.kick.crouching = self.new_m4.kick.crouching
 	self.baka.kick.steelsight = self.new_m4.kick.steelsight
+	self.baka.supported = true
 	self.baka.stats = {
 		damage = 20,
 		spread = 15,
@@ -6123,6 +6211,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arblast.kick.crouching = self.huntsman.kick.crouching
 	self.arblast.kick.steelsight = self.huntsman.kick.steelsight
 	self.arblast.panic_suppression_chance = 0.0
+	self.arblast.supported = true
 	self.arblast.stats = {
 		damage = 90,
 		spread = 21,
@@ -6155,6 +6244,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.frankish.AMMO_PICKUP = self:_pickup_chance()
 	self.frankish.panic_suppression_chance = 0.0
 	self.frankish.ignore_damage_upgrades = true
+	self.frankish.supported = true
 	self.frankish.stats = {
 		damage = 60,
 		spread = 19,
@@ -6203,6 +6293,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.long.AMMO_PICKUP = self:_pickup_chance()
 	self.long.panic_suppression_chance = 0.0
 	self.long.ignore_damage_upgrades = true
+	self.long.supported = true
 	self.long.stats = {
 		damage = 90,
 		spread = 21,
@@ -6234,6 +6325,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.par.kick.crouching = self.new_m4.kick.crouching
 	self.par.kick.steelsight = self.new_m4.kick.steelsight
 	self.par.panic_suppression_chance = 0.05
+	self.par.supported = true
 	self.par.stats = {
 		damage = 20,
 		spread = 14,
@@ -6258,6 +6350,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sparrow.kick.steelsight = self.glock_17.kick.steelsight
 	self.sparrow.fire_mode_data.fire_rate = 0.08571428571
 	self.sparrow.single.fire_rate = 0.08571428571
+	self.sparrow.supported = true
 	self.sparrow.stats = {
 		damage = 24,
 		spread = 19,
@@ -6283,6 +6376,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.model70.kick.standing = self.huntsman.kick.standing
 	self.model70.kick.crouching = self.huntsman.kick.crouching
 	self.model70.kick.steelsight = self.huntsman.kick.steelsight
+	self.model70.supported = true
 	self.model70.stats = {
 		damage = 120,
 		spread = 19,
@@ -6311,6 +6405,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m37.kick.crouching = self.new_m4.kick.standing
 	self.m37.kick.steelsight = self.new_m4.kick.standing
 	self.m37.panic_suppression_chance = 0.0
+	self.m37.supported = true
 	self.m37.stats = {
 		damage = 60,
 		spread = 9,
@@ -6340,6 +6435,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.china.kick.crouching = self.huntsman.kick.crouching
 	self.china.kick.steelsight = self.huntsman.kick.steelsight
 	self.china.AMMO_PICKUP = self:_pickup_chance()
+	self.china.supported = true
 	self.china.stats = {
 		damage = 80,
 		spread = 6,
@@ -6366,6 +6462,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sr2.kick.standing = self.new_m4.kick.standing
 	self.sr2.kick.crouching = self.new_m4.kick.crouching
 	self.sr2.kick.steelsight = self.new_m4.kick.steelsight
+	self.sr2.supported = true
 	self.sr2.stats = {
 		damage = 20,
 		spread = 18,
@@ -6391,6 +6488,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_sr2.kick.steelsight = self.new_m4.kick.steelsight
 	self.x_sr2.AMMO_MAX = 180
 	self.x_sr2.AMMO_PICKUP = self:_pickup_chance()
+	self.x_sr2.supported = true
 	self.x_sr2.stats = {
 		damage = 20,
 		spread = 16,
@@ -6415,6 +6513,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.pl14.kick.standing = self.glock_17.kick.standing
 	self.pl14.kick.crouching = self.glock_17.kick.crouching
 	self.pl14.kick.steelsight = self.glock_17.kick.steelsight
+	self.pl14.supported = true
 	self.pl14.stats = {
 		damage = 24,
 		spread = 19,
@@ -6439,6 +6538,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp5.kick.steelsight = self.new_m4.kick.steelsight
 	self.x_mp5.AMMO_MAX = 180
 	self.x_mp5.AMMO_PICKUP = self:_pickup_chance()
+	self.x_mp5.supported = true
 	self.x_mp5.stats = {
 		damage = 20,
 		spread = 14,
@@ -6464,6 +6564,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_akmsu.kick.standing = self.new_m4.kick.standing
 	self.x_akmsu.kick.crouching = self.new_m4.kick.crouching
 	self.x_akmsu.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_akmsu.supported = true
 	self.x_akmsu.stats = {
 		damage = 30,
 		spread = 15,
@@ -6495,6 +6596,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tecci.CAN_TOGGLE_FIREMODE = true
 	self.tecci.auto.fire_rate = 0.075
 	self.tecci.panic_suppression_chance = 0.05
+	self.tecci.supported = true
 	self.tecci.stats = {
 		damage = 18,
 		spread = 16,
@@ -6523,6 +6625,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"assault_rifle"
 	}
 	self.hajk.panic_suppression_chance = 0.0
+	self.hajk.supported = true
 	self.hajk.stats = {
 		damage = 24,
 		spread = 17,
@@ -6551,6 +6654,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.boot.kick.crouching = self.huntsman.kick.crouching
 	self.boot.kick.steelsight = self.huntsman.kick.steelsight
 	self.boot.timers.shotgun_reload_first_shell_offset = 0.15
+	self.boot.supported = true
 	self.boot.stats = {
 		damage = 90,
 		spread = 10,
@@ -6576,6 +6680,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.packrat.kick.crouching = self.glock_17.kick.crouching
 	self.packrat.kick.steelsight = self.glock_17.kick.steelsight
 	self.packrat.panic_suppression_chance = 0.0
+	self.packrat.supported = true
 	self.packrat.stats = {
 		damage = 20,
 		spread = 19,
@@ -6602,6 +6707,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.schakal.kick.crouching = self.new_m4.kick.crouching
 	self.schakal.kick.steelsight = self.new_m4.kick.steelsight
 	self.schakal.panic_suppression_chance = 0.05
+	self.schakal.supported = true
 	self.schakal.stats = {
 		damage = 30,
 		spread = 15,
@@ -6627,6 +6733,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.desertfox.kick.crouching = self.huntsman.kick.crouching
 	self.desertfox.kick.steelsight = self.huntsman.kick.steelsight
 	self.desertfox.panic_suppression_chance = 0.0
+	self.desertfox.supported = true
 	self.desertfox.stats = {
 		damage = 120,
 		spread = 19,
@@ -6650,6 +6757,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_packrat.kick.crouching = self.glock_17.kick.crouching
 	self.x_packrat.kick.steelsight = self.glock_17.kick.steelsight
 	self.x_packrat.panic_suppression_chance = 0.0
+	self.x_packrat.supported = true
 	self.x_packrat.stats = {
 		damage = 20,
 		spread = 17,
@@ -6676,6 +6784,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rota.fire_mode_data.fire_rate = 0.13953488372
 	self.rota.single.fire_rate = 0.13953488372
 	self.rota.panic_suppression_chance = 0.0
+	self.rota.supported = true
 	self.rota.stats = {
 		damage = 45,
 		spread = 5,
@@ -6701,6 +6810,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arbiter.CLIP_AMMO_MAX = 6
 	self.arbiter.AMMO_MAX = 6
 	self.arbiter.AMMO_PICKUP = self:_pickup_chance()
+	self.arbiter.supported = true
 	self.arbiter.stats = {
 		damage = 60,
 		spread = 6,
@@ -6733,6 +6843,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.contraband.kick.standing = self.new_m4.kick.standing
 	self.contraband.kick.crouching = self.new_m4.kick.crouching
 	self.contraband.kick.steelsight = self.new_m4.kick.steelsight
+	self.contraband.supported = true
 	self.contraband.stats = {
 		damage = 45,
 		spread = 18,
@@ -6760,6 +6871,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.contraband_m203.panic_suppression_chance = 0.0
 	self.contraband_m203.ignore_damage_upgrades = true
 	self.contraband_m203.AMMO_MAX = 6
+	self.contraband_m203.supported = true
 	self.contraband_m203.stats = {
 		damage = 80,
 		spread = 19,
@@ -6791,6 +6903,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ray.CLIP_AMMO_MAX = 4
 	self.ray.AMMO_MAX = 6
 	self.ray.AMMO_PICKUP = self:_pickup_chance()
+	self.ray.supported = true
 	self.ray.stats = {
 		damage = 400,
 		spread = 16,
@@ -6825,6 +6938,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tti.can_shoot_through_enemy = true
 	self.tti.can_shoot_through_shield = true
 	self.tti.can_shoot_through_wall = true
+	self.tti.supported = true
 	self.tti.stats = {
 		damage = 90,
 		spread = 16,
@@ -6852,6 +6966,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.siltstone.kick.standing = self.huntsman.kick.standing
 	self.siltstone.kick.crouching = self.huntsman.kick.crouching
 	self.siltstone.kick.steelsight = self.huntsman.kick.steelsight
+	self.siltstone.supported = true
 	self.siltstone.stats = {
 		damage = 90,
 		spread = 18,
@@ -6879,6 +6994,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flint.kick.standing = self.new_m4.kick.standing
 	self.flint.kick.crouching = self.new_m4.kick.crouching
 	self.flint.kick.steelsight = self.new_m4.kick.steelsight
+	self.flint.supported = true
 	self.flint.stats = {
 		damage = 24,
 		spread = 17,
@@ -6904,6 +7020,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coal.kick.standing = self.new_m4.kick.standing
 	self.coal.kick.crouching = self.new_m4.kick.crouching
 	self.coal.kick.steelsight = self.new_m4.kick.steelsight
+	self.coal.supported = true
 	self.coal.stats = {
 		damage = 18,
 		spread = 16,
@@ -6933,6 +7050,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.lemming.can_shoot_through_shield = false
 	self.lemming.can_shoot_through_wall = false
 	self.lemming.armor_piercing_chance = nil
+	self.lemming.supported = true
 	self.lemming.stats = {
 		damage = 24,
 		spread = 17,
@@ -6955,6 +7073,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.chinchilla.kick.crouching = self.glock_17.kick.crouching
 	self.chinchilla.kick.steelsight = self.glock_17.kick.steelsight
 	self.chinchilla.AMMO_PICKUP = self:_pickup_chance()
+	self.chinchilla.supported = true
 	self.chinchilla.stats = {
 		damage = 60,
 		spread = 19,
@@ -6980,6 +7099,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_chinchilla.kick.crouching = self.glock_17.kick.crouching
 	self.x_chinchilla.kick.steelsight = self.glock_17.kick.steelsight
 	self.x_chinchilla.AMMO_PICKUP = self:_pickup_chance()
+	self.x_chinchilla.supported = true
 	self.x_chinchilla.stats = {
 		damage = 60,
 		spread = 17,
@@ -7012,6 +7132,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.breech.kick.standing = self.glock_17.kick.standing
 	self.breech.kick.crouching = self.glock_17.kick.crouching
 	self.breech.kick.steelsight = self.glock_17.kick.steelsight
+	self.breech.supported = true
 	self.breech.stats = {
 		damage = 20,
 		spread = 19,
@@ -7043,6 +7164,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ching.kick.standing = self.new_m4.kick.standing
 	self.ching.kick.crouching = self.new_m4.kick.crouching
 	self.ching.kick.steelsight = self.new_m4.kick.steelsight			
+	self.ching.supported = true
 	self.ching.stats = {
 		damage = 60,
 		spread = 18,
@@ -7074,6 +7196,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.erma.kick.standing = self.new_m4.kick.standing
 	self.erma.kick.crouching = self.new_m4.kick.crouching
 	self.erma.kick.steelsight = self.new_m4.kick.steelsight
+	self.erma.supported = true
 	self.erma.stats = {
 		damage = 24,
 		spread = 16,
@@ -7104,6 +7227,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ecp.AMMO_PICKUP = self:_pickup_chance()
 	self.ecp.panic_suppression_chance = 0.0
 	self.ecp.ignore_damage_upgrades = true
+	self.ecp.supported = true
 	self.ecp.stats = {
 		damage = 45,
 		spread = 17,
@@ -7127,6 +7251,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shrew.kick.standing = self.glock_17.kick.standing
 	self.shrew.kick.crouching = self.glock_17.kick.crouching
 	self.shrew.kick.steelsight = self.glock_17.kick.steelsight
+	self.shrew.supported = true
 	self.shrew.stats = {
 		damage = 45,
 		spread = 19,
@@ -7152,6 +7277,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_shrew.kick.standing = self.glock_17.kick.standing
 	self.x_shrew.kick.crouching = self.glock_17.kick.crouching
 	self.x_shrew.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_shrew.supported = true
 	self.x_shrew.stats = {
 		damage = 45,
 		spread = 17,
@@ -7179,6 +7305,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.basset.kick.crouching = self.new_m4.kick.crouching
 	self.basset.kick.steelsight = self.new_m4.kick.steelsight
 	self.basset.panic_suppression_chance = 0.0
+	self.basset.supported = true
 	self.basset.stats = {
 		zoom = 1,
 		total_ammo_mod = 100,
@@ -7207,6 +7334,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_basset.kick.crouching = self.new_m4.kick.crouching
 	self.x_basset.kick.steelsight = self.new_m4.kick.steelsight
 	self.x_basset.panic_suppression_chance = 0.0
+	self.x_basset.supported = true
 	self.x_basset.stats = {
 		zoom = 1,
 		total_ammo_mod = 100,
@@ -7232,6 +7360,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.corgi.kick.standing = self.new_m4.kick.standing
 	self.corgi.kick.crouching = self.new_m4.kick.crouching
 	self.corgi.kick.steelsight = self.new_m4.kick.steelsight
+	self.corgi.supported = true
 	self.corgi.stats = {
 		damage = 20,
 		spread = 17,
@@ -7261,6 +7390,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.slap.kick.steelsight = self.huntsman.kick.steelsight
 	self.slap.AMMO_MAX = 5
 	self.slap.AMMO_PICKUP = self:_pickup_chance()
+	self.slap.supported = true
 	self.slap.stats = {
 		damage = 80,
 		spread = 19,
@@ -7288,6 +7418,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_coal.kick.standing = self.new_m4.kick.standing
 	self.x_coal.kick.crouching = self.new_m4.kick.crouching
 	self.x_coal.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_coal.supported = true
 	self.x_coal.stats = {
 		damage = 18,
 		spread = 14,
@@ -7319,6 +7450,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_baka.kick.standing = self.new_m4.kick.standing
 	self.x_baka.kick.crouching = self.new_m4.kick.crouching
 	self.x_baka.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_baka.supported = true
 	self.x_baka.stats = {
 		damage = 20,
 		spread = 13,
@@ -7349,6 +7481,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_cobray.fire_mode_data.fire_rate = 0.06
 	self.x_cobray.CAN_TOGGLE_FIREMODE = true
 	self.x_cobray.single.fire_rate = 0.06
+	self.x_cobray.supported = true
 	self.x_cobray.stats = {
 		damage = 30,
 		spread = 15,
@@ -7376,6 +7509,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_erma.kick.standing = self.new_m4.kick.standing
 	self.x_erma.kick.crouching = self.new_m4.kick.crouching
 	self.x_erma.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_erma.supported = true
 	self.x_erma.stats = {
 		damage = 24,
 		spread = 14,
@@ -7405,6 +7539,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_hajk.kick.crouching = self.new_m4.kick.standing
 	self.x_hajk.kick.steelsight = self.new_m4.kick.standing
 	self.x_hajk.panic_suppression_chance = 0.0
+	self.x_hajk.supported = true
 	self.x_hajk.stats = {
 		damage = 24,
 		spread = 15,
@@ -7428,6 +7563,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_m45.kick.standing = self.new_m4.kick.standing
 	self.x_m45.kick.crouching = self.new_m4.kick.crouching
 	self.x_m45.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_m45.supported = true
 	self.x_m45.stats = {
 		damage = 24,
 		spread = 13,
@@ -7455,6 +7591,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_m1928.kick.standing = self.new_m4.kick.standing
 	self.x_m1928.kick.crouching = self.new_m4.kick.crouching
 	self.x_m1928.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_m1928.supported = true
 	self.x_m1928.stats = {
 		damage = 24,
 		spread = 12,
@@ -7480,6 +7617,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mac10.kick.standing = self.new_m4.kick.standing
 	self.x_mac10.kick.crouching = self.new_m4.kick.crouching
 	self.x_mac10.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_mac10.supported = true
 	self.x_mac10.stats = {
 		damage = 30,
 		spread = 13,
@@ -7507,6 +7645,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp7.kick.standing = self.new_m4.kick.standing
 	self.x_mp7.kick.crouching = self.new_m4.kick.crouching
 	self.x_mp7.kick.steelsight = self.new_m4.kick.steelsight		
+	self.x_mp7.supported = true
 	self.x_mp7.stats = {
 		damage = 24,
 		spread = 11,
@@ -7533,6 +7672,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp9.kick.standing = self.new_m4.kick.standing
 	self.x_mp9.kick.crouching = self.new_m4.kick.crouching
 	self.x_mp9.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_mp9.supported = true
 	self.x_mp9.stats = {
 		damage = 18,
 		spread = 15,
@@ -7557,6 +7697,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_olympic.single.fire_rate = 0.075
 	self.x_olympic.AMMO_PICKUP = self:_pickup_chance()
 	self.x_olympic.panic_suppression_chance = 0.0
+	self.x_olympic.supported = true
 	self.x_olympic.stats = {
 		damage = 20,
 		spread = 12,
@@ -7582,6 +7723,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_p90.kick.standing = self.new_m4.kick.standing
 	self.x_p90.kick.crouching = self.new_m4.kick.crouching
 	self.x_p90.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_p90.supported = true
 	self.x_p90.stats = {
 		damage = 18,
 		spread = 13,
@@ -7610,6 +7752,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_polymer.kick.standing = self.new_m4.kick.standing
 	self.x_polymer.kick.crouching = self.new_m4.kick.crouching
 	self.x_polymer.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_polymer.supported = true
 	self.x_polymer.stats = {
 		damage = 30,
 		spread = 12,
@@ -7639,6 +7782,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_schakal.kick.crouching = self.new_m4.kick.standing
 	self.x_schakal.kick.steelsight = self.new_m4.kick.standing
 	self.x_schakal.panic_suppression_chance = 0.05
+	self.x_schakal.supported = true
 	self.x_schakal.stats = {
 		damage = 30,
 		spread = 15,
@@ -7664,6 +7808,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_scorpion.kick.standing = self.new_m4.kick.standing
 	self.x_scorpion.kick.crouching = self.new_m4.kick.crouching
 	self.x_scorpion.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_scorpion.supported = true
 	self.x_scorpion.stats = {
 		damage = 20,
 		spread = 13,
@@ -7690,6 +7835,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_sterling.kick.standing = self.new_m4.kick.standing
 	self.x_sterling.kick.crouching = self.new_m4.kick.crouching
 	self.x_sterling.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_sterling.supported = true
 	self.x_sterling.stats = {
 		damage = 24,
 		spread = 13,
@@ -7716,6 +7862,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_tec9.kick.standing = self.new_m4.kick.standing
 	self.x_tec9.kick.crouching = self.new_m4.kick.crouching
 	self.x_tec9.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_tec9.supported = true
 	self.x_tec9.stats = {
 		damage = 24,
 		spread = 13,
@@ -7742,6 +7889,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_uzi.kick.standing = self.new_m4.kick.standing
 	self.x_uzi.kick.crouching = self.new_m4.kick.crouching
 	self.x_uzi.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_uzi.supported = true
 	self.x_uzi.stats = {
 		damage = 30,
 		spread = 13,
@@ -7766,6 +7914,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_2006m.kick.standing = self.glock_17.kick.standing
 	self.x_2006m.kick.crouching = self.glock_17.kick.crouching
 	self.x_2006m.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_2006m.supported = true
 	self.x_2006m.stats = {
 		damage = 60,
 		spread = 18,
@@ -7798,6 +7947,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_breech.kick.standing = self.glock_17.kick.standing
 	self.x_breech.kick.crouching = self.glock_17.kick.crouching
 	self.x_breech.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_breech.supported = true
 	self.x_breech.stats = {
 		damage = 20,
 		spread = 17,
@@ -7829,6 +7979,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_c96.kick.standing = self.new_m4.kick.standing
 	self.x_c96.kick.crouching = self.new_m4.kick.crouching
 	self.x_c96.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_c96.supported = true
 	self.x_c96.stats = {
 		damage = 30,
 		spread = 14,
@@ -7854,6 +8005,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g18c.kick.standing = self.new_m4.kick.standing
 	self.x_g18c.kick.crouching = self.new_m4.kick.crouching
 	self.x_g18c.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_g18c.supported = true
 	self.x_g18c.stats = {
 		damage = 18,
 		spread = 15,
@@ -7883,6 +8035,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_hs2000.kick.standing = self.glock_17.kick.standing
 	self.x_hs2000.kick.crouching = self.glock_17.kick.crouching
 	self.x_hs2000.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_hs2000.supported = true
 	self.x_hs2000.stats = {
 		damage = 30,
 		spread = 14,
@@ -7909,6 +8062,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_p226.kick.standing = self.glock_17.kick.standing
 	self.x_p226.kick.crouching = self.glock_17.kick.crouching
 	self.x_p226.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_p226.supported = true
 	self.x_p226.stats = {
 		damage = 40,
 		spread = 16,
@@ -7934,6 +8088,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_pl14.kick.standing = self.glock_17.kick.standing
 	self.x_pl14.kick.crouching = self.glock_17.kick.crouching
 	self.x_pl14.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_pl14.supported = true
 	self.x_pl14.stats = {
 		damage = 24,
 		spread = 17,
@@ -7960,6 +8115,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_ppk.kick.standing = self.glock_17.kick.standing
 	self.x_ppk.kick.crouching = self.glock_17.kick.crouching
 	self.x_ppk.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_ppk.supported = true
 	self.x_ppk.stats = {
 		damage = 20,
 		spread = 18,
@@ -7984,6 +8140,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_rage.kick.crouching = self.glock_17.kick.crouching
 	self.x_rage.kick.steelsight = self.glock_17.kick.steelsight
 	self.x_rage.AMMO_PICKUP = self:_pickup_chance()
+	self.x_rage.supported = true
 	self.x_rage.stats = {
 		damage = 60,
 		spread = 15,
@@ -8015,6 +8172,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_sparrow.kick.steelsight = self.glock_17.kick.steelsight
 	self.x_sparrow.fire_mode_data.fire_rate = 0.08571428571
 	self.x_sparrow.single.fire_rate = 0.08571428571
+	self.x_sparrow.supported = true
 	self.x_sparrow.stats = {
 		damage = 24,
 		spread = 17,
@@ -8039,6 +8197,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_judge.BURST_FIRE = true
 	self.x_judge.AMMO_MAX = 40
 	self.x_judge.AMMO_PICKUP = self:_pickup_chance()
+	self.x_judge.supported = true
 	self.x_judge.stats = {
 		damage = 90,
 		spread = 3,
@@ -8074,6 +8233,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_rota.fire_mode_data.fire_rate = 0.13953488372
 	self.x_rota.single.fire_rate = 0.13953488372
 	self.x_rota.panic_suppression_chance = 0.0
+	self.x_rota.supported = true
 	self.x_rota.stats = {
 		damage = 45,
 		spread = 3,
@@ -8108,6 +8268,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shuno.kick.crouching = self.new_m4.kick.crouching
 	self.shuno.kick.steelsight = self.new_m4.kick.steelsight
 	self.shuno.panic_suppression_chance = 0.05
+	self.shuno.supported = true
 	self.shuno.stats = {
 		damage = 18,
 		spread = 16,
@@ -8156,6 +8317,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		dot_length = 3.1,
 		dot_tick_period = 0.5
 	}
+	self.system.supported = true
 	self.system.stats = {
 		damage = 25,
 		spread = 6,
@@ -8182,6 +8344,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shepheard.kick.steelsight = self.new_m4.kick.steelsight
 	self.shepheard.AMMO_MAX = 180
 	self.shepheard.AMMO_PICKUP = self:_pickup_chance()
+	self.shepheard.supported = true
 	self.shepheard.stats = {
 		damage = 20,
 		spread = 15,
@@ -8209,6 +8372,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_shepheard.kick.steelsight = self.new_m4.kick.steelsight
 	self.x_shepheard.AMMO_MAX = 180
 	self.x_shepheard.AMMO_PICKUP = self:_pickup_chance()
+	self.x_shepheard.supported = true
 	self.x_shepheard.stats = {
 		damage = 20,
 		spread = 13,
@@ -8239,6 +8403,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.komodo.kick.standing = self.new_m4.kick.standing
 	self.komodo.kick.crouching = self.new_m4.kick.standing
 	self.komodo.kick.steelsight = self.new_m4.kick.standing		
+	self.komodo.supported = true
 	self.komodo.stats = {
 		damage = 20,
 		spread = 18,
@@ -8291,6 +8456,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.elastic.AMMO_PICKUP = self:_pickup_chance()
 	self.elastic.panic_suppression_chance = 0.0
 	self.elastic.ignore_damage_upgrades = true
+	self.elastic.supported = true
 	self.elastic.stats = {
 		damage = 90,
 		spread = 20,
@@ -8326,6 +8492,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coach.single.fire_rate = 0.06	
 	self.coach.auto = {}		
 	self.coach.auto.fire_rate = 0.06		
+	self.coach.supported = true
 	self.coach.stats = {
 		damage = 90,
 		spread = 10,
@@ -8350,6 +8517,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.legacy.kick.standing = self.glock_17.kick.standing
 	self.legacy.kick.crouching = self.glock_17.kick.crouching
 	self.legacy.kick.steelsight = self.glock_17.kick.steelsight
+	self.legacy.supported = true
 	self.legacy.stats = {
 		damage = 24,
 		spread = 19,
@@ -8382,6 +8550,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_legacy.kick.standing = self.glock_17.kick.standing
 	self.x_legacy.kick.crouching = self.glock_17.kick.crouching
 	self.x_legacy.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_legacy.supported = true
 	self.x_legacy.stats = {
 		damage = 24,
 		spread = 79,
@@ -8407,6 +8576,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.beer.kick.standing = self.new_m4.kick.standing
 	self.beer.kick.crouching = self.new_m4.kick.crouching
 	self.beer.kick.steelsight = self.new_m4.kick.steelsight
+	self.beer.supported = true
 	self.beer.stats = {
 		damage = 20,
 		spread = 16,
@@ -8433,6 +8603,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.czech.kick.standing = self.new_m4.kick.standing
 	self.czech.kick.crouching = self.new_m4.kick.crouching
 	self.czech.kick.steelsight = self.new_m4.kick.steelsight
+	self.czech.supported = true
 	self.czech.stats = {
 		damage = 20,
 		spread = 16,
@@ -8457,6 +8628,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_czech.kick.standing = self.new_m4.kick.standing
 	self.x_czech.kick.crouching = self.new_m4.kick.crouching
 	self.x_czech.kick.steelsight = self.new_m4.kick.steelsight
+	self.x_czech.supported = true
 	self.x_czech.stats = {
 		damage = 20,
 		spread = 14,
@@ -8482,6 +8654,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.stech.kick.crouching = self.new_m4.kick.crouching
 	self.stech.kick.steelsight = self.new_m4.kick.steelsight
 	self.stech.CLIP_AMMO_MAX = 20
+	self.stech.supported = true
 	self.stech.stats = {
 		damage = 24,
 		spread = 17,
@@ -8507,6 +8680,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_stech.kick.crouching = self.new_m4.kick.crouching
 	self.x_stech.kick.steelsight = self.new_m4.kick.steelsight
 	self.x_stech.CLIP_AMMO_MAX = 20
+	self.x_stech.supported = true
 	self.x_stech.stats = {
 		damage = 24,
 		spread = 15,
@@ -8533,6 +8707,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.holt.kick.standing = self.glock_17.kick.standing
 	self.holt.kick.crouching = self.glock_17.kick.crouching
 	self.holt.kick.steelsight = self.glock_17.kick.steelsight
+	self.holt.supported = true
 	self.holt.stats = {
 		damage = 24,
 		spread = 18,
@@ -8559,6 +8734,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_holt.kick.standing = self.glock_17.kick.standing
 	self.x_holt.kick.crouching = self.glock_17.kick.crouching
 	self.x_holt.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_holt.supported = true
 	self.x_holt.stats = {
 		damage = 24,
 		spread = 18,
@@ -8589,6 +8765,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m60.kick.standing = self.new_m4.kick.standing
 	self.m60.kick.crouching = self.new_m4.kick.crouching
 	self.m60.kick.steelsight = self.new_m4.kick.steelsight
+	self.m60.supported = true
 	self.m60.stats = {
 		damage = 24,
 		spread = 12,
@@ -8617,6 +8794,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r700.kick.standing = self.huntsman.kick.standing
 	self.r700.kick.crouching = self.huntsman.kick.crouching
 	self.r700.kick.steelsight = self.huntsman.kick.steelsight
+	self.r700.supported = true
 	self.r700.stats = {
 		damage = 90,
 		spread = 21,
@@ -8645,6 +8823,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shatters_fury.kick.standing = self.huntsman.kick.standing
 	self.shatters_fury.kick.crouching = self.huntsman.kick.crouching
 	self.shatters_fury.kick.steelsight = self.huntsman.kick.steelsight
+	self.shatters_fury.supported = true
 	self.shatters_fury.stats = {
 		damage = 90,
 		spread = 17,
@@ -8684,6 +8863,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.kick.standing = self.new_m4.kick.standing
 	self.osipr.kick.crouching = self.new_m4.kick.crouching
 	self.osipr.kick.steelsight = self.new_m4.kick.steelsight
+	self.osipr.supported = true
 	self.osipr.stats = {
 		damage = 24,
 		spread = 17,
@@ -8713,6 +8893,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr_gl.kick.standing = self.huntsman.kick.standing
 	self.osipr_gl.kick.crouching = self.huntsman.kick.crouching
 	self.osipr_gl.kick.steelsight = self.huntsman.kick.steelsight
+	self.osipr_gl.supported = true
 	self.osipr_gl.stats = {
 		damage = 60,
 		spread = 6,
@@ -8748,6 +8929,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.socom.kick.standing = self.glock_17.kick.standing
 	self.socom.kick.crouching = self.glock_17.kick.crouching
 	self.socom.kick.steelsight = self.glock_17.kick.steelsight
+	self.socom.supported = true
 	self.socom.stats = {
 		damage = 45,
 		spread = 18,
@@ -8775,6 +8957,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_socom.kick.standing = self.glock_17.kick.standing
 	self.x_socom.kick.crouching = self.glock_17.kick.crouching
 	self.x_socom.kick.steelsight = self.glock_17.kick.steelsight
+	self.x_socom.supported = true
 	self.x_socom.stats = {
 		damage = 45,
 		spread = 16,
@@ -8805,6 +8988,7 @@ if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
 	self.amt.CLIP_AMMO_MAX = 8
 	self.amt.AMMO_MAX = 60
 	self.amt.AMMO_PICKUP = self:_pickup_chance()
+	self.amt.supported = true
 	self.amt.stats = {
 		damage = 60,
 		spread = 18,
@@ -8836,6 +9020,7 @@ if self.tilt then --Gambyt's AN 92
 	self.tilt.kick.standing = self.new_m4.kick.standing
 	self.tilt.kick.crouching = self.new_m4.kick.crouching
 	self.tilt.kick.steelsight = self.new_m4.kick.steelsight
+	self.tilt.supported = true
 	self.tilt.stats = {
 		damage = 24,
 		spread = 18,
@@ -8872,6 +9057,7 @@ if self.ks23 then --Pawcio's KS23
 	self.ks23.kick.crouching = self.huntsman.kick.crouching
 	self.ks23.kick.steelsight = self.huntsman.kick.steelsight
 	self.ks23.AMMO_PICKUP = self:_pickup_chance() --{0.12, 0.43}
+	self.ks23.supported = true
 	self.ks23.stats = {
 		damage = 120, --250,
 		spread = 16,
@@ -8905,6 +9091,7 @@ if self.amr12 then --Gambyt's AMR 12G Shotgun
 	self.amr12.kick.standing = self.new_m4.kick.standing
 	self.amr12.kick.crouching = self.new_m4.kick.crouching
 	self.amr12.kick.steelsight = self.new_m4.kick.steelsight
+	self.amr12.supported = true
 	self.amr12.stats = {
 		damage = 30,
 		spread = 9,
@@ -8938,6 +9125,7 @@ if self.owen then -- Silent Enforcer's Owen Gun
 	self.owen.kick.standing = self.new_m4.kick.standing
 	self.owen.kick.crouching = self.new_m4.kick.crouching
 	self.owen.kick.steelsight = self.new_m4.kick.steelsight
+	self.owen.supported = true
 	self.owen.stats = {
 		damage = 30,
 		spread = 17,
@@ -8964,6 +9152,7 @@ if self.aek971 then --Pawcio's AEK 971
 	self.aek971.kick.standing = self.new_m4.kick.standing
 	self.aek971.kick.crouching = self.new_m4.kick.crouching
 	self.aek971.kick.steelsight = self.new_m4.kick.steelsight
+	self.aek971.supported = true
 	self.aek971.stats = {
 		damage = 20,
 		spread = 17,
@@ -8995,6 +9184,7 @@ if self.czevo then --Gambyt's Scorpion EVO
 	self.czevo.kick.standing = self.new_m4.kick.standing
 	self.czevo.kick.crouching = self.new_m4.kick.crouching
 	self.czevo.kick.steelsight = self.new_m4.kick.steelsight		
+	self.czevo.supported = true
 	self.czevo.stats = {
 		damage = 20,
 		spread = 16,
@@ -9029,6 +9219,7 @@ if self.winchester1894 then --Pawcio's Winchester 1894
 	self.winchester1894.kick.standing = self.huntsman.kick.standing
 	self.winchester1894.kick.crouching = self.huntsman.kick.crouching
 	self.winchester1894.kick.steelsight = self.huntsman.kick.steelsight
+	self.winchester1894.supported = true
 	self.winchester1894.stats = {
 		damage = 90,
 		spread = 17,
@@ -9064,6 +9255,7 @@ if self.moss464spx then --Pawcio's SPX Centerfire
 	self.moss464spx.kick.standing = self.huntsman.kick.standing
 	self.moss464spx.kick.crouching = self.huntsman.kick.crouching
 	self.moss464spx.kick.steelsight = self.huntsman.kick.steelsight
+	self.moss464spx.supported = true
 	self.moss464spx.stats = {
 		damage = 90,
 		spread = 18,
@@ -9093,6 +9285,7 @@ if self.sg416 then --Gambyt's SG416
 	self.sg416.kick.standing = self.new_m4.kick.standing
 	self.sg416.kick.crouching = self.new_m4.kick.crouching
 	self.sg416.kick.steelsight = self.new_m4.kick.steelsight
+	self.sg416.supported = true
 	self.sg416.stats = {
 		damage = 24,
 		spread = 17,
@@ -9123,6 +9316,7 @@ if self.spike then --Gambyt's Spike Rifle
 	self.spike.kick.standing = self.new_m4.kick.standing
 	self.spike.kick.crouching = self.new_m4.kick.crouching
 	self.spike.kick.steelsight = self.new_m4.kick.steelsight		
+	self.spike.supported = true
 	self.spike.stats = {
 		damage = 30,
 		spread = 15,
@@ -9158,6 +9352,7 @@ if self.ak5s then --Gambyt's Automat-5/AK5 SMG
 	self.ak5s.kick.steelsight = self.new_m4.kick.steelsight
 	self.ak5s.AMMO_MAX = 180
 	self.ak5s.AMMO_PICKUP = self:_pickup_chance()
+	self.ak5s.supported = true
 	self.ak5s.stats = {
 		damage = 20,
 		spread = 14,
@@ -9188,6 +9383,7 @@ if self.lebman then --Gambyt's Vendetta 38 Pistol
 	self.lebman.kick.standing = self.new_m4.kick.standing
 	self.lebman.kick.crouching = self.new_m4.kick.crouching
 	self.lebman.kick.steelsight = self.new_m4.kick.steelsight
+	self.lebman.supported = true
 	self.lebman.stats = {
 		damage = 30,
 		spread = 17,
@@ -9226,6 +9422,7 @@ if self.sgs then --Gambyt's Guerilla 308.
 	self.sgs.can_shoot_through_enemy = true
 	self.sgs.can_shoot_through_shield = true
 	self.sgs.can_shoot_through_wall = true
+	self.sgs.supported = true
 	self.sgs.stats = {
 		damage = 90,
 		spread = 16,
@@ -9267,6 +9464,7 @@ if self.beck then --Gambyt's Reinbeck M1 Shotgun
 	self.beck.fire_mode_data.fire_rate = 0.5
 	self.beck.AMMO_MAX = 40 
 	self.beck.AMMO_PICKUP = self:_pickup_chance()
+	self.beck.supported = true
 	self.beck.stats = {
 		damage = 90,
 		spread = 5,
@@ -9295,6 +9493,7 @@ if self.car9 then --Gambyt's ACAR 9
 	self.car9.kick.standing = self.new_m4.kick.standing
 	self.car9.kick.crouching = self.new_m4.kick.crouching
 	self.car9.kick.steelsight = self.new_m4.kick.steelsight
+	self.car9.supported = true
 	self.car9.stats = {
 		damage = 20,
 		spread = 18,
@@ -9330,6 +9529,7 @@ if self.smolak then --Gambyt's AK Draco Pistol
 	self.smolak.kick.standing = self.new_m4.kick.standing
 	self.smolak.kick.crouching = self.new_m4.kick.crouching
 	self.smolak.kick.steelsight = self.new_m4.kick.steelsight		
+	self.smolak.supported = true
 	self.smolak.stats = {
 		damage = 45,
 		spread = 18,
@@ -9376,6 +9576,7 @@ if self.cold then --Gambyt's VMP Classic Crosskill
 	self.cold.kick.standing = self.glock_17.kick.standing
 	self.cold.kick.crouching = self.glock_17.kick.crouching
 	self.cold.kick.steelsight = self.glock_17.kick.steelsight
+	self.cold.supported = true
 	self.cold.stats = {
 		damage = 45,
 		spread = 19,
@@ -9413,6 +9614,7 @@ if self.aknato then --Gambyt's Mamba 5.56 / Ak-101
 	self.aknato.kick.standing = self.new_m4.kick.standing
 	self.aknato.kick.crouching = self.new_m4.kick.crouching
 	self.aknato.kick.steelsight = self.new_m4.kick.steelsight		
+	self.aknato.supported = true
 	self.aknato.stats = {
 		damage = 24,
 		spread = 18,
@@ -9453,6 +9655,7 @@ if self.m590 then --Silent Enforcer and GT's Mossberg 590
 	self.m590.fire_mode_data.fire_rate = 0.8
 	self.m590.AMMO_MAX = 40 
 	self.m590.AMMO_PICKUP = self:_pickup_chance()
+	self.m590.supported = true
 	self.m590.stats = {
 		damage = 90,
 		spread = 9,
@@ -9481,6 +9684,7 @@ if self.hpb then --Gambyt's Browning HP
 	self.hpb.kick.standing = self.glock_17.kick.standing
 	self.hpb.kick.crouching = self.glock_17.kick.crouching
 	self.hpb.kick.steelsight = self.glock_17.kick.steelsight
+	self.hpb.supported = true
 	self.hpb.stats = {
 		damage = 45,
 		spread = 17,
@@ -9503,6 +9707,7 @@ if self.toym16 then --Gambyt's Toy M16
 	self.toym16.CLIP_AMMO_MAX = 150
 	self.toym16.AMMO_MAX = 900
 	self.toym16.AMMO_PICKUP = self:_pickup_chance()
+	self.toym16.supported = true
 	self.toym16.stats = {
 		damage = 4,
 		spread = 21,
@@ -9541,6 +9746,7 @@ if self.toy1911 then --Gambyt's Toy M1911
 	self.toy1911.CLIP_AMMO_MAX = 90
 	self.toy1911.AMMO_MAX = 450
 	self.toy1911.AMMO_PICKUP = self:_pickup_chance()
+	self.toy1911.supported = true
 	self.toy1911.stats = {
 		damage = 4,
 		spread = 21,
@@ -9581,6 +9787,7 @@ if self.bdgr then --Hornet .300
 	self.bdgr.tactical_reload = 1
 	self.bdgr.AMMO_MAX = 120
 	self.bdgr.AMMO_PICKUP = self:_pickup_chance()
+	self.bdgr.supported = true
 	self.bdgr.stats = {
 		damage = 30,
 		spread = 17,
@@ -9602,6 +9809,7 @@ end
 if self.minibeck then --Reinbeck Auto
 	self.minibeck.AMMO_MAX = 30
 	self.minibeck.AMMO_PICKUP = self:_pickup_chance()
+	self.minibeck.supported = true
 	self.minibeck.stats = {
 		damage = 60,
 		spread = 6,
@@ -9623,9 +9831,231 @@ if self.minibeck then --Reinbeck Auto
 end
 
 
-	--Set damage falloff on shotguns.
+	--Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.
 	for i, weap in pairs(self) do
 		if weap.categories then
+			if not weap.supported and weap.stats then
+				--Perform magic stat generation for unsupported custom weapons.
+				--Pretty much just look at various features of the passed in weapon and set damage/acc/stab/concealment to reasonable-ish values.
+				--Many of these values have been arbitrarily chosen and tweaked until most custom weapons from MWS give passable looking stats.
+				weap.desc_id = "bm_auto_generated_sc_desc"
+				weap.AMMO_PICKUP = self:_pickup_chance()
+				--Near max baseline stats.
+				local spread = 20
+				local recoil = 25
+				local concealment = 31
+				local quietness = 0
+				weap.kick = self.new_m4.kick
+
+				--Apply category multipliers.
+				for _, value in pairs(weap.categories) do
+					if value == "lmg" then
+						table.insert(weap.categories, "smg") --LMGs are treated like SMGs in resmod. Filter them out before anything else to avoid weird quirk
+						spread = spread - 1
+						concealment = concealment - 2
+						recoil = recoil + 2
+						weap.stats.damage = weap.stats.damage / 2 --Vanilla LMGs deal extreme damage compared to RM LMGs.
+					elseif value == "shotgun" then
+						quietness = quietness - 1
+						spread = spread - 12
+						recoil = recoil - 7
+						weap.rays = 9
+						weap.concealment = concealment - 2
+						weap.kick = self.huntsman.kick
+						weap.stats.damage = weap.stats.damage * 1.5 --Vanilla Shotguns deal less damage than RM shotguns (until falloff range).
+					elseif value == "smg" then
+						spread = spread - 1
+						recoil = recoil + 1
+					elseif value == "pistol" then
+						recoil = recoil - 1
+						concealment = concealment + 1
+					elseif value == "snp" then
+						spread = spread + 1
+						recoil = recoil - 1
+						concealment = concealment - 1
+						weap.kick = self.huntsman.kick
+					elseif value == "akimbo" then
+						spread = spread - 2
+						recoil = recoil - 10
+					end
+				end
+				
+				--The original weapon damage.
+				local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
+
+				--Approximate weapon damage tier and total ammo
+				if damage <= 40 then
+					weap.stats.damage = 18
+					quietness = quietness + 10
+					spread = spread + 1
+					weap.AMMO_MAX = 200
+				elseif damage <= 50 then
+					weap.stats.damage = 20
+					quietness = quietness + 9
+					concealment = concealment - 2
+					recoil = recoil - 1
+					weap.AMMO_MAX = 180
+				elseif damage <= 65 then
+					weap.stats.damage = 24
+					quietness = quietness + 8
+					concealment = concealment - 4
+					recoil = recoil - 2
+					weap.AMMO_MAX = 150
+				elseif damage <= 95 then
+					weap.stats.damage = 30
+					quietness = quietness + 7
+					concealment = concealment - 7
+					recoil = recoil - 3
+					weap.AMMO_MAX = 120
+				elseif damage <= 150 then
+					weap.stats.damage = 45
+					quietness = quietness + 6
+					concealment = concealment - 9
+					recoil = recoil - 5
+					weap.AMMO_MAX = 80
+				elseif damage <= 220 then
+					weap.stats.damage = 60
+					quietness = quietness + 5
+					concealment = concealment - 11
+					recoil = recoil - 6
+					weap.AMMO_MAX = 60
+				elseif damage <= 300 then
+					weap.stats.damage = 90
+					quietness = quietness + 4
+					concealment = concealment - 13
+					recoil = recoil - 7
+					weap.AMMO_MAX = 40
+				elseif damage <= 600 then
+					weap.stats.damage = 120
+					quietness = quietness + 3
+					concealment = concealment - 15
+					recoil = recoil - 8
+					weap.AMMO_MAX = 30
+				else
+					weap.stats.damage = 180
+					quietness = quietness + 2
+					concealment = concealment - 18
+					recoil = recoil - 9
+					weap.AMMO_MAX = 20
+				end
+
+				--Adjust ammo count for secondaries.
+				if weap.use_data.selection_index == 1 then
+					weap.AMMO_MAX = weap.AMMO_MAX * 0.5
+				end
+
+				--Adjust accuracy based on reload ability.
+				if weap.timers.reload_not_empty and weap.timers.reload_empty then
+					local average_reload = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+					local adjusted_mag_size = (weap.CLIP_AMMO_MAX + 30) / 2 --The formula would otherwise be too kind to revolvers and too mean to LMGs.
+					local reload_quality = adjusted_mag_size / average_reload --How generally pleasant reloading the weapon is. Attempts to average out reload stuff to work with most cases.
+
+					if reload_quality <= 5.5 then
+						concealment = concealment + 2
+						spread = spread + 2
+					elseif reload_quality <= 6 then
+						concealment = concealment + 2
+						spread = spread + 1
+					elseif reload_quality <= 7 then
+						concealment = concealment + 2
+					elseif reload_quality <= 7.5 then
+						concealment = concealment + 1
+						spread = spread - 1
+					elseif reload_quality <= 8 then
+						spread = spread - 2
+					elseif reload_quality <= 9 then
+						spread = spread - 3
+					elseif reload_quality <= 10 then
+						spread = spread - 4
+					elseif reload_quality <= 12 then
+						spread = spread - 5
+					elseif reload_quality <= 15 then
+						spread = spread - 6
+					else
+						spread = spread - 7
+					end
+
+					--Big mag concealment penalties.
+					if weap.CLIP_AMMO_MAX > 120 then
+						concealment = concealment - 5
+					elseif weap.CLIP_AMMO_MAX > 90 then
+						concealment = concealment - 3
+					elseif weap.CLIP_AMMO_MAX > 60 then
+						concealment = concealment - 2
+					elseif weap.CLIP_AMMO_MAX > 30 then
+						concealment = concealment - 1
+					end
+				else --Certain custom shotguns fall under here.
+					if weap.CLIP_AMMO_MAX > 10 then
+						spread = spread - 2
+						concealment = concealment - 2
+					elseif weap.CLIP_AMMO_MAX > 8 then
+						spread = spread - 1
+						concealment = concealment - 2
+					elseif weap.CLIP_AMMO_MAX > 6 then
+						concealment = concealment -  1
+					elseif weap.CLIP_AMMO_MAX <= 2 then
+						spread = spread + 2
+						concealment = concealment + 2
+					end
+				end
+
+				--Adjust stats based on rate of fire.
+				local rpm = 60 / weap.fire_mode_data.fire_rate --Rounds per minute.
+				if not weap.auto then --Semi Auto Stuff
+					--Recoil bonuses for awful rates of fire.
+					if rpm <= 50 then
+						recoil = recoil + 2
+					elseif rpm <= 100 then
+						recoil = recoil + 1
+					end
+
+					--Gives extra shitty pistols a boost.
+					if weap.stats.damage <= 36 then
+						concealment = concealment + 3
+						spread = spread + 3
+						recoil = recoil + 3
+					elseif weap.stats.damage <= 40 then
+						concealment = concealment + 2
+						spread = spread + 2
+						recoil = recoil + 2
+					elseif weap.stats.damage <= 60 then
+						concealment = concealment + 1
+						spread = spread + 1
+						recoil = recoil + 1
+					end
+
+					--Compensates for piercing. Would baseline into sniper, but some custom weapons might be in that category without piercing because reasons.
+					if weap.can_shoot_through_shield and weap.can_shoot_through_shield == true then
+						if weap.stats.damage <= 120 then
+							spread = spread - 1
+							concealment = concealment - 1
+							recoil = recoil - 3
+						else
+							weap.can_shoot_through_titan_shield = true
+							spread = spread - 2
+							concealment = concealment - 2
+							recoil = recoil - 9
+						end
+					end
+				else --Full Auto Stuff
+					recoil = recoil - math.min(math.max(rpm - 500, 0)/50, 12)
+				end
+
+				--Math.ceil prevents a stupid fucking crash because floats are fun.
+				weap.stats.recoil = math.ceil(math.clamp(recoil, 1, #self.stats.recoil))
+				weap.stats.spread = math.ceil(math.clamp(spread, 1, #self.stats.spread))
+				weap.stats.concealment = math.ceil(math.clamp(concealment, 1, #self.stats.concealment))
+				weap.stats.alert_size = math.ceil(math.clamp(quietness, 1, #self.stats.alert_size))
+				weap.stats.suppression =  math.ceil(math.clamp(quietness, 1, #self.stats.suppression))
+				weap.stats.extra_ammo = 101
+				weap.stats.total_ammo_mod = 100
+				weap.stats.zoom = weap.stats.zoom or 1
+				weap.stats.value = weap.stats.value or 7
+				weap.stats_modifiers = nil
+			end
+
+			--Calculate shotgun falloff ranges.
 			for _, value in pairs(weap.categories) do
 				if value == "shotgun" and weap.stats then
 					weap.damage_near = 200 + 75 * (weap.stats.spread - 1)

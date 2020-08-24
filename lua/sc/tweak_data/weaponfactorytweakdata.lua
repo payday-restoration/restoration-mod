@@ -29268,7 +29268,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_bdgr_uupg_fg_small.stats = {
 			value = 3,
 			spread = -1,
-			concealment = -1
+			concealment = 1
 		}
 
 		--(M60) Long Barrel

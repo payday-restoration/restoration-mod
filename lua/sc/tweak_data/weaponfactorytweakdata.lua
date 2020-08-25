@@ -13946,8 +13946,8 @@ function WeaponFactoryTweakData:_init_boot()
 		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_s_long",
 		stats = {
 			value = 1,
-			recoil = 1,
-			concealment = -1
+			recoil = 2,
+			concealment = -4
 		},
 		dlc = "wild",
 		texture_bundle_folder = "wild"
@@ -28283,7 +28283,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			suppression = -2,
 			alert_size = -2,
 			recoil = 1,
-			accuracy = -1
+			spread = -1
 		}
 
 		--Assassin Suppressor

@@ -55,13 +55,13 @@ elseif ai_type == r then
 elseif ai_type == m then
 	replacement_table = {
 		--Murky FBI Rifle
-		["units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		--Murky FBI Shotgun
-		["units/pd2_mod_sharks/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		--Murky FBI Heavy Rifle
-		["units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		--Murky FBI Heavy Shotgun
-		["units/pd2_mod_sharks/characters/ene_murky_yellow_r870/ene_murky_yellow_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		["units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
 		--Murky Bravo Rifle
 		["units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",

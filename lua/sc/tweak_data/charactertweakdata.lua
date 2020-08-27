@@ -15150,8 +15150,8 @@ function CharacterTweakData:character_map()
 				"ene_fbi_swat_3",
 				"ene_fbi_heavy_1",
 				"ene_fbi_heavy_r870",
-				"ene_murky_yellow_m4",
-				"ene_murky_yellow_r870",
+				"ene_swat_heavy_1",
+				"ene_swat_heavy_r870",
 				"ene_murky_shield_yellow",
 				"ene_murky_shield_fbi",
 				"ene_city_swat_1",
@@ -15166,7 +15166,8 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",
 				"ene_murky_medic_m4",
 				"ene_murky_tazer",
-				"ene_murkywater_light",
+				"ene_swat_1",
+				"ene_swat_2",
 				"ene_murky_sniper"
 			}
 		},

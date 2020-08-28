@@ -102,7 +102,6 @@ function WeaponTweakData:generate_assault_rifle(weap)
 
 	--How generally pleasant the weapon is to reload.
 	local reload_quality = math.clamp(weap.CLIP_AMMO_MAX, 10, 50) / ((weap.timers.reload_not_empty + weap.timers.reload_empty) / 2)
-	log(weap.name_id .. ":" .. tostring(weap.CLIP_AMMO_MAX) .. "/" ..  tostring((weap.timers.reload_not_empty + weap.timers.reload_empty) / 2) .. "=" .. tostring(reload_quality))
 	--Rounds per minute.
 	local rpm = 60 / weap.fire_mode_data.fire_rate
 

@@ -8594,7 +8594,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.beer.stats_modifiers = nil
 	self.beer.panic_suppression_chance = 0.0
 	--Disabled
-	self.x_beer.use_data.selection_index = 4	
+	self.x_beer.use_data.selection_index = 4
+	self.x_beer.supported = true
 
 	--CZ 75
 	self.czech.AMMO_MAX = 90
@@ -9400,7 +9401,8 @@ if self.lebman then --Gambyt's Vendetta 38 Pistol
 	self.lebman.stats_modifiers = nil				
 	self.lebman.panic_suppression_chance = 0.0
 	--Disabled
-	self.x_lebman.use_data.selection_index = 4			
+	self.x_lebman.use_data.selection_index = 4
+	self.x_lebman.supported = true
 end
 
 if self.sgs then --Gambyt's Guerilla 308.
@@ -9552,18 +9554,22 @@ end
 
 if self.x_car9 then --disabled vmp akimbos
 	self.x_car9.use_data.selection_index = 4
+	self.x_car9.supported = true
 end	
 
 if self.x_smolak then --disabled vmp akimbos
 	self.x_smolak.use_data.selection_index = 4
+	self.x_smolak.supported = true
 end	
 
 if self.x_ak5s then --disabled vmp akimbos
 	self.x_ak5s.use_data.selection_index = 4
+	self.x_ak5s.supported = true
 end	
 
 if self.x_cold then --disabled vmp akimbos
 	self.x_cold.use_data.selection_index = 4
+	self.x_cold.supported = true
 end		
 
 if self.cold then --Gambyt's VMP Classic Crosskill

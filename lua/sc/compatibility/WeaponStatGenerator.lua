@@ -1,111 +1,350 @@
 function WeaponTweakData:generate_custom_weapon_stats(weap)
+	log("Generating stats for: " .. weap.name_id)
+
 	--Perform magic stat generation for unsupported custom weapons.
-	--Pretty much just look at various features of the passed in weapon and set damage/acc/stab/concealment to reasonable-ish values.
-	--Many of these values have been arbitrarily chosen and tweaked until most custom weapons from MWS give passable looking stats.
 	weap.has_description = true
 	weap.desc_id = "bm_auto_generated_sc_desc"
-	weap.AMMO_PICKUP = self:_pickup_chance()
-	--Near max baseline stats.
-	local spread = 20
-	local recoil = 25
-	local concealment = 31
-	local quietness = 0
-	weap.kick = self.new_m4.kick
 
-	--Apply category multipliers.
+	--Set some stuff that's generic to all weapons.
+	weap.AMMO_PICKUP = self:_pickup_chance()
+	weap.kick = self.new_m4.kick
+	local apply_akimbo_penalties = nil
+	local move_lmg_to_smg = nil
+	local stats = {}
+
+	--Apply weapons stats based on category. Usually just one of these with akimbo maybe added on top.
 	for _, value in pairs(weap.categories) do
 		if value == "lmg" then
-			table.insert(weap.categories, "smg") --LMGs are treated like SMGs in resmod. Filter them out before anything else to avoid weird quirk
-			spread = spread - 1
-			concealment = concealment - 2
-			recoil = recoil + 2
-			weap.stats.damage = weap.stats.damage / 2 --Vanilla LMGs deal extreme damage compared to RM LMGs.
+			move_lmg_to_smg = true
+			--stats = self:generate_lmg(weap)
 		elseif value == "shotgun" then
-			quietness = quietness - 1
-			spread = spread - 12
-			recoil = recoil - 7
+			weap.kick = self.huntsman.kick
 			weap.rays = 9
-			weap.concealment = concealment - 2
-			weap.kick = self.huntsman.kick
-			weap.stats.damage = weap.stats.damage * 1.5 --Vanilla Shotguns deal less damage than RM shotguns (until falloff range).
+			--stats = self:generate_shotgun(weap)
 		elseif value == "smg" then
-			spread = spread - 1
-			recoil = recoil + 1
+			stats = self:generate_smg(weap)
 		elseif value == "pistol" then
-			recoil = recoil - 1
-			concealment = concealment + 1
+			--stats = self:generate_pistol(weap)
 		elseif value == "snp" then
-			spread = spread + 1
-			recoil = recoil - 1
-			concealment = concealment - 1
 			weap.kick = self.huntsman.kick
+			--stats = self:generate_snp(weap)
+		elseif value == "assault_rifle" then
+			log("Assault Rifle Found")
+			stats = self:generate_assault_rifle(weap)
 		elseif value == "akimbo" then
-			spread = spread - 2
-			recoil = recoil - 10
+			apply_akimbo_penalties = true
 		end
 	end
 	
+	--If stats were generated. Uses last category.
+	if stats.spread then
+		--Akimbo weapons get shittier handling.
+		if apply_akimbo_penalties then
+			stats.recoil = stats.recoil - 10
+			stats.spread = stats.spread - 2
+		end
+
+		--LMGs are treated like SMGs for skills in resmod.
+		if move_lmg_to_smg then
+			table.insert(weap.categories, "smg")
+		end
+
+		--Adjust ammo on secondaries.
+		if weap.use_data.selection_index == 1 then
+			stats.AMMO_MAX = stats.AMMO_MAX * 0.5
+		end
+
+		--Apply stats table to weapon tweakdata.
+		weap.stats.damage = stats.damage
+		weap.AMMO_MAX = stats.AMMO_MAX
+		weap.stats.recoil = stats.recoil
+		weap.stats.spread = stats.spread
+		weap.stats.concealment = stats.concealment
+		weap.stats.alert_size = stats.quietness
+		weap.stats.suppression = stats.quietness
+		weap.stats.extra_ammo = 101
+		weap.stats.total_ammo_mod = 100
+		weap.stats.zoom = weap.stats.zoom or 1
+		weap.stats.value = weap.stats.value or 7
+		weap.swap_speed_multiplier = stats.swap_speed_multiplier
+		weap.stats_modifiers = nil
+	end
+	return weap
+end
+
+--Returns a value from results that corresponds to the first value in inputs >= stat.
+function WeaponTweakData:generate_stat_from_table(results, inputs, stat)
+	for i, value in pairs(inputs) do
+		if value >= stat then
+			return results[i]
+		end
+	end
+	return results[#results]
+end
+
+--Removes any potential floating point errors from weapon stats. Leaving any in results in crashes.
+function WeaponTweakData:clean_stats(stats)
+	stats.recoil = math.ceil(math.clamp(stats.recoil, 1, #self.stats.recoil))
+	stats.spread = math.ceil(math.clamp(stats.spread, 1, #self.stats.spread))
+	stats.concealment = math.ceil(math.clamp(stats.concealment, 1, #self.stats.concealment))
+	stats.quietness = math.ceil(math.clamp(stats.quietness, 1, #self.stats.suppression))
+	return stats
+end
+
+function WeaponTweakData:generate_assault_rifle(weap)
+	local stats = {
+		damage = 0,
+		AMMO_MAX = 0,
+		spread = 0,
+		recoil = 0,
+		concealment = 0,
+		quietness = 0,
+		swap_speed_multiplier = 1
+	}
+
+	--How generally pleasant the weapon is to reload.
+	local reload_quality = math.clamp(weap.CLIP_AMMO_MAX, 10, 50) / ((weap.timers.reload_not_empty + weap.timers.reload_empty) / 2)
+	log(weap.name_id .. ":" .. tostring(weap.CLIP_AMMO_MAX) .. "/" ..  tostring((weap.timers.reload_not_empty + weap.timers.reload_empty) / 2) .. "=" .. tostring(reload_quality))
+	--Rounds per minute.
+	local rpm = 60 / weap.fire_mode_data.fire_rate
+
+	--Give bullpups -4 stab, +1 concealment.
+	local is_bullpup = nil
+	for _, value in pairs(weap.categories) do
+		if value == "bullpup" then
+			is_bullpup = true
+		end
+	end
+
 	--The original weapon damage.
 	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
-	--Approximate weapon damage tier and total ammo
-	if damage <= 40 then
-		weap.stats.damage = 18
-		quietness = quietness + 10
-		spread = spread + 1
-		weap.AMMO_MAX = 200
-	elseif damage <= 50 then
-		weap.stats.damage = 20
-		quietness = quietness + 9
-		concealment = concealment - 2
-		recoil = recoil - 1
-		weap.AMMO_MAX = 180
+	if damage <= 35 then --36 damage Carbine Tier
+		stats.damage = 18
+		stats.AMMO_MAX = 200
+		stats.quietness = 10
+		stats.recoil = 22 - math.floor((rpm - 800)/50)
+		stats.spread = self:generate_stat_from_table(
+			{20,19,18,17,16,15,14},
+			{8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{32,30,29,29,27,25},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 40 then
+		stats.damage = 20
+		stats.AMMO_MAX = 180
+		stats.quietness = 9
+		stats.recoil = 21 - math.floor((rpm - 800)/50)
+		stats.spread = self:generate_stat_from_table(
+			{20,19,18,17,16,15,14},
+			{8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{31,29,28,27,25,23},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
 	elseif damage <= 65 then
-		weap.stats.damage = 24
-		quietness = quietness + 8
-		concealment = concealment - 4
-		recoil = recoil - 2
-		weap.AMMO_MAX = 150
-	elseif damage <= 95 then
-		weap.stats.damage = 30
-		quietness = quietness + 7
-		concealment = concealment - 7
-		recoil = recoil - 3
-		weap.AMMO_MAX = 120
-	elseif damage <= 150 then
-		weap.stats.damage = 45
-		quietness = quietness + 6
-		concealment = concealment - 9
-		recoil = recoil - 5
-		weap.AMMO_MAX = 80
-	elseif damage <= 220 then
-		weap.stats.damage = 60
-		quietness = quietness + 5
-		concealment = concealment - 11
-		recoil = recoil - 6
-		weap.AMMO_MAX = 60
-	elseif damage <= 300 then
-		weap.stats.damage = 90
-		quietness = quietness + 4
-		concealment = concealment - 13
-		recoil = recoil - 7
-		weap.AMMO_MAX = 40
-	elseif damage <= 600 then
-		weap.stats.damage = 120
-		quietness = quietness + 3
-		concealment = concealment - 15
-		recoil = recoil - 8
-		weap.AMMO_MAX = 30
-	else
-		weap.stats.damage = 180
-		quietness = quietness + 2
-		concealment = concealment - 18
-		recoil = recoil - 9
-		weap.AMMO_MAX = 20
+		stats.damage = 24
+		stats.AMMO_MAX = 150
+		stats.quietness = 8
+		stats.recoil = 20 - math.floor((rpm - 700)/50)
+		stats.spread = self:generate_stat_from_table(
+			{20,19,18,17,16,15,14,13},
+			{7.5,8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{29,27,26,25,23,21},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 80 then
+		stats.damage = 30
+		stats.AMMO_MAX = 120
+		stats.quietness = 7
+		stats.recoil = 19 - math.floor((rpm - 700)/50)
+		stats.spread = self:generate_stat_from_table(
+			{19,18,17,16,15,14,13,12},
+			{7.5,8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{27,25,24,23,21,19},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 90 then
+		stats.damage = 45
+		stats.AMMO_MAX = 80
+		stats.quietness = 6
+		stats.recoil = 18 - math.floor((rpm - 700)/50)
+		stats.spread = self:generate_stat_from_table(
+			{20,19,18,17,16,15,14,13,12,11},
+			{6,7,7.5,8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{24,22,21,20,18,16},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 160 then
+		stats.damage = 60
+		stats.AMMO_MAX = 60
+		stats.quietness = 5
+		stats.recoil = 14 - math.floor((rpm - 700)/50)
+		stats.spread = self:generate_stat_from_table(
+			{21,20,19,18,17,16,15,14,13,12},
+			{6,7,7.5,8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{22,20,19,18,16,14},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
 	end
-	--Adjust ammo count for secondaries.
-	if weap.use_data.selection_index == 1 then
-		weap.AMMO_MAX = weap.AMMO_MAX * 0.5
+
+	--Additional stat modifiers
+	if not weap.auto then --Give buffs to guns that lack automatic fire.
+		log("Semi-Auto")
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{3,2,0},
+			{24,30,45},
+			stats.damage)
+		stats.recoil = stats.recoil + 1
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{2,1,0},
+			{24,30,45},
+			stats.damage)
+		stats.swap_speed_multiplier = self:generate_stat_from_table(
+			{1.2,1.1,1.05,1},
+			{24,30,45},
+			stats.damage)
 	end
+
+	if is_bullpup then
+		log("Bullpup!")
+		stats.spread = stats.spread - 1
+		stats.concealment = stats.concealment + 1
+	end
+
+	if weap.timers.reload_empty < 2.5 then
+		stats.concealment = stats.concealment - 1
+	elseif weap.timers.reload_empty > 4 then
+		stats.spread = stats.spread + 1
+	end
+
+	return self:clean_stats(stats)
+end
+
+function WeaponTweakData:generate_smg(weap)
+	local stats = {
+		damage = 0,
+		AMMO_MAX = 0,
+		spread = 0,
+		recoil = 0,
+		concealment = 0,
+		quietness = 0,
+		swap_speed_multiplier = 1
+	}
+
+	--How generally pleasant the weapon is to reload.
+	local reload_quality = math.clamp(weap.CLIP_AMMO_MAX, 10, 50) / ((weap.timers.reload_not_empty + weap.timers.reload_empty) / 2)
+	
+	--Rounds per minute.
+	local rpm = 60 / weap.fire_mode_data.fire_rate
+
+	--Give bullpups -4 stab, +1 concealment.
+	local is_bullpup = nil
+	for _, value in pairs(weap.categories) do
+		if value == "bullpup" then
+			is_bullpup = true
+		end
+	end
+
+	--The original weapon damage.
+	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
+	if damage <= 36 then --36 damage Carbine Tier
+		stats.damage = 18
+		stats.AMMO_MAX = 200
+		stats.quietness = 10
+		stats.recoil = 23 - math.floor((rpm - 900)/50)
+		stats.spread = self:generate_stat_from_table(
+			{19,18,17,16,15,14,13},
+			{8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{32,30,29,29,27,25},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 40 then
+		stats.damage = 20
+		stats.AMMO_MAX = 180
+		stats.quietness = 9
+		stats.recoil = 23 - math.floor((rpm - 800)/50)
+		stats.spread = self:generate_stat_from_table(
+			{19,18,17,16,15,14,13},
+			{8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{31,29,28,27,25,23},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 42 then
+		stats.damage = 24
+		stats.AMMO_MAX = 150
+		stats.quietness = 8
+		stats.recoil = 19 - math.floor((rpm - 800)/50)
+		stats.spread = self:generate_stat_from_table(
+			{19,18,17,16,15,14,13,12},
+			{7.5,8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{29,27,26,25,23,21},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 80 then
+		stats.damage = 30
+		stats.AMMO_MAX = 120
+		stats.quietness = 7
+		stats.recoil = 23 - math.floor((rpm - 600)/50)
+		stats.spread = self:generate_stat_from_table(
+			{18,17,16,15,14,13,12,11},
+			{7.5,8,8.5,10,12,15,20},
+			reload_quality)
+		stats.concealment = self:generate_stat_from_table(
+			{27,25,24,23,21,19},
+			{10,20,30,40,60},
+			weap.CLIP_AMMO_MAX)
+	end
+
+	--Additional stat modifiers
+	if not weap.auto then --Give buffs to guns that lack automatic fire.
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{3,2},
+			{24,30},
+			stats.damage)
+		stats.recoil = stats.recoil + 1
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{2,1},
+			{24,30},
+			stats.damage)
+		stats.swap_speed_multiplier = self:generate_stat_from_table(
+			{1.2,1.1},
+			{24,30},
+			stats.damage)
+	end
+
+	if is_bullpup then
+		stats.spread = stats.spread - 1
+		stats.concealment = stats.concealment + 1
+	end
+
+	if weap.timers.reload_empty < 2.5 then
+		stats.concealment = stats.concealment - 1
+	elseif weap.timers.reload_empty > 4 then
+		stats.spread = stats.spread + 1
+	end
+
+	return self:clean_stats(stats)
+end
+
+--[[--Adjust ammo count for secondaries.
+	
 	--Adjust accuracy based on reload ability.
 	if weap.timers.reload_not_empty and weap.timers.reload_empty then
 		local average_reload = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
@@ -204,15 +443,5 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 	else --Full Auto Stuff
 		recoil = recoil - math.min(math.max(rpm - 500, 0)/50, 12)
 	end
-	--Math.ceil prevents a stupid fucking crash because floats are fun.
-	weap.stats.recoil = math.ceil(math.clamp(recoil, 1, #self.stats.recoil))
-	weap.stats.spread = math.ceil(math.clamp(spread, 1, #self.stats.spread))
-	weap.stats.concealment = math.ceil(math.clamp(concealment, 1, #self.stats.concealment))
-	weap.stats.alert_size = math.ceil(math.clamp(quietness, 1, #self.stats.alert_size))
-	weap.stats.suppression =  math.ceil(math.clamp(quietness, 1, #self.stats.suppression))
-	weap.stats.extra_ammo = 101
-	weap.stats.total_ammo_mod = 100
-	weap.stats.zoom = weap.stats.zoom or 1
-	weap.stats.value = weap.stats.value or 7
-	weap.stats_modifiers = nil
-end
+	return stats
+end]]--

@@ -29,7 +29,6 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 			weap.kick = self.huntsman.kick
 			--stats = self:generate_snp(weap)
 		elseif value == "assault_rifle" then
-			log("Assault Rifle Found")
 			stats = self:generate_assault_rifle(weap)
 		elseif value == "akimbo" then
 			apply_akimbo_penalties = true
@@ -199,7 +198,6 @@ function WeaponTweakData:generate_assault_rifle(weap)
 
 	--Additional stat modifiers
 	if not weap.auto then --Give buffs to guns that lack automatic fire.
-		log("Semi-Auto")
 		stats.spread = stats.spread + self:generate_stat_from_table(
 			{3,2,0},
 			{24,30,45},
@@ -216,7 +214,6 @@ function WeaponTweakData:generate_assault_rifle(weap)
 	end
 
 	if is_bullpup then
-		log("Bullpup!")
 		stats.spread = stats.spread - 1
 		stats.concealment = stats.concealment + 1
 	end
@@ -363,7 +360,6 @@ function WeaponTweakData:generate_lmg(weap)
 	--The original weapon damage.
 	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
 	if damage <= 60 then
-		log("1")
 		stats.damage = 18
 		stats.AMMO_MAX = 200
 		stats.quietness = 10
@@ -381,7 +377,6 @@ function WeaponTweakData:generate_lmg(weap)
 			{40,50,75,100,150},
 			weap.CLIP_AMMO_MAX)
 	elseif damage <= 80 then
-		log("2")
 		stats.damage = 20
 		stats.AMMO_MAX = 180
 		stats.quietness = 9
@@ -399,7 +394,6 @@ function WeaponTweakData:generate_lmg(weap)
 			{40,50,75,100,150},
 			weap.CLIP_AMMO_MAX)
 	else
-		log("3")
 		stats.damage = 24
 		stats.AMMO_MAX = 150
 		stats.quietness = 8

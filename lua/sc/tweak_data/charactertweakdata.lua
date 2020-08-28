@@ -970,9 +970,9 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	if is_reaper or is_federales then
 		self.weekend_dmr.custom_voicework = "tswat_ru"
 	elseif is_murky then
-		self.weekend_dmr.custom_voicework = "bravo_murky"	
+		self.weekend_dmr.custom_voicework = "bravo_murky_elite"	
 	else
-		self.weekend_dmr.custom_voicework = "bravo"
+		self.weekend_dmr.custom_voicework = "bravo_elite"
 	end	
 	self.weekend_dmr.HEALTH_INIT = 11.25
 	self.weekend_dmr.headshot_dmg_mul = 4.25
@@ -1249,7 +1249,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	elseif is_murky then
 		self.weekend_lmg.custom_voicework = "bravo_murky_elite"	
 	else
-		self.weekend_lmg.custom_voicework = "bravo"
+		self.weekend_lmg.custom_voicework = "bravo_elite"
 	end	
 	self.weekend_lmg.HEALTH_INIT = 28.125
 	self.weekend_lmg.headshot_dmg_mul = 3.75		
@@ -15150,8 +15150,8 @@ function CharacterTweakData:character_map()
 				"ene_fbi_swat_3",
 				"ene_fbi_heavy_1",
 				"ene_fbi_heavy_r870",
-				"ene_murky_yellow_m4",
-				"ene_murky_yellow_r870",
+				"ene_swat_heavy_1",
+				"ene_swat_heavy_r870",
 				"ene_murky_shield_yellow",
 				"ene_murky_shield_fbi",
 				"ene_city_swat_1",
@@ -15166,7 +15166,8 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",
 				"ene_murky_medic_m4",
 				"ene_murky_tazer",
-				"ene_murkywater_light",
+				"ene_swat_1",
+				"ene_swat_2",
 				"ene_murky_sniper"
 			}
 		},

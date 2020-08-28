@@ -58,7 +58,6 @@
 		<hook file="managers/UserManager.lua" source_file="lib/managers/usermanager"/>
 		<hook file="managers/musicmanager.lua" source_file="lib/managers/musicmanager"/>
 		<hook file="managers/hud/HUDArmorFix.lua" source_file="lib/managers/hud/HUDTeammate"/>
-		<hook file="managers/hud/HUDHitman.lua" source_file="lib/managers/hud/HUDTeammate"/>
 		<!--///SCRIPTDATA\\\-->
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
 		<!--///NOTIFICATIONS\\\-->
@@ -302,8 +301,9 @@
 		<hook file="sc/setups/Setup.lua" source_file="lib/setups/setup"/>
 		<!--///INGAME MANUAL\\\-->
 		<hook file="managers/menu/IngameManualGUI.lua" source_file="lib/managers/menu/IngameManualGUI"/>
-		<!--///Outfit crash debugging, delete when fixed.\\\-->
-		<hook file="sc/units/props/managespawnedunits.lua" source_file="lib/units/props/managespawnedunits"/>
+		<!--///Comptatibility.\\\-->
+		<hook file="sc/compatibility/HUDHitman.lua" source_file="lib/managers/hud/HUDTeammate"/>
+		<hook file="sc/compatibility/WeaponStatGenerator.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<!--///MOD SAVE DATA\\\-->
 		<!--DO NOT MODIFY-->
 		<hook file="sc/managers/savefilemanager.lua" source_file="lib/managers/savefilemanager"/>

@@ -1942,6 +1942,8 @@ function CopDamage:damage_explosion(attack_data)
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 		end
 
+		self:chk_killshot(attacker_unit, "explosion")
+
 		if attacker_unit == managers.player:player_unit() then
 			if alive(attacker_unit) then
 				self:_comment_death(attacker_unit, self._unit)

@@ -9,14 +9,14 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 	weap.AMMO_PICKUP = self:_pickup_chance()
 	weap.kick = self.new_m4.kick
 	local apply_akimbo_penalties = nil
-	local move_lmg_to_smg = nil
+	local add_to_smgs = nil
 	local stats = {}
 
 	--Apply weapons stats based on category. Usually just one of these with akimbo maybe added on top.
 	for _, value in pairs(weap.categories) do
 		if value == "lmg" then
-			move_lmg_to_smg = true
-			--stats = self:generate_lmg(weap)
+			stats = self:generate_lmg(weap)
+			add_to_smgs = true
 		elseif value == "shotgun" then
 			weap.kick = self.huntsman.kick
 			weap.rays = 9
@@ -44,9 +44,8 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 			stats.spread = stats.spread - 2
 		end
 
-		--LMGs are treated like SMGs for skills in resmod.
-		if move_lmg_to_smg then
-			table.insert(weap.categories, "smg")
+		if add_to_smgs then
+			table.insert(weap.categories, "smg") --LMGs in resmod are treated like SMGs for skill related stuff.
 		end
 
 		--Adjust ammo on secondaries.
@@ -118,7 +117,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 
 	--The original weapon damage.
 	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
-	if damage <= 35 then --36 damage Carbine Tier
+	if damage <= 35 then
 		stats.damage = 18
 		stats.AMMO_MAX = 200
 		stats.quietness = 10
@@ -183,7 +182,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 			{24,22,21,20,18,16},
 			{10,20,30,40,60},
 			weap.CLIP_AMMO_MAX)
-	elseif damage <= 160 then
+	else
 		stats.damage = 60
 		stats.AMMO_MAX = 60
 		stats.quietness = 5
@@ -257,8 +256,9 @@ function WeaponTweakData:generate_smg(weap)
 	end
 
 	--The original weapon damage.
+	--The original weapon damage.
 	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
-	if damage <= 36 then --36 damage Carbine Tier
+	if damage <= 50 then --36 damage Carbine Tier
 		stats.damage = 18
 		stats.AMMO_MAX = 200
 		stats.quietness = 10
@@ -271,7 +271,7 @@ function WeaponTweakData:generate_smg(weap)
 			{32,30,29,29,27,25},
 			{10,20,30,40,60},
 			weap.CLIP_AMMO_MAX)
-	elseif damage <= 40 then
+	elseif damage <= 60 then
 		stats.damage = 20
 		stats.AMMO_MAX = 180
 		stats.quietness = 9
@@ -284,7 +284,7 @@ function WeaponTweakData:generate_smg(weap)
 			{31,29,28,27,25,23},
 			{10,20,30,40,60},
 			weap.CLIP_AMMO_MAX)
-	elseif damage <= 42 then
+	elseif damage <= 80 then
 		stats.damage = 24
 		stats.AMMO_MAX = 150
 		stats.quietness = 8
@@ -297,7 +297,7 @@ function WeaponTweakData:generate_smg(weap)
 			{29,27,26,25,23,21},
 			{10,20,30,40,60},
 			weap.CLIP_AMMO_MAX)
-	elseif damage <= 80 then
+	else
 		stats.damage = 30
 		stats.AMMO_MAX = 120
 		stats.quietness = 7
@@ -338,6 +338,84 @@ function WeaponTweakData:generate_smg(weap)
 		stats.concealment = stats.concealment - 1
 	elseif weap.timers.reload_empty > 4 then
 		stats.spread = stats.spread + 1
+	end
+
+	return self:clean_stats(stats)
+end
+
+function WeaponTweakData:generate_lmg(weap)
+	local stats = {
+		damage = 0,
+		AMMO_MAX = 0,
+		spread = 0,
+		recoil = 0,
+		concealment = 0,
+		quietness = 0,
+		swap_speed_multiplier = 1
+	}
+
+	--How generally pleasant the weapon is to reload.
+	local reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	
+	--Rounds per minute.
+	local rpm = 60 / weap.fire_mode_data.fire_rate
+
+	--The original weapon damage.
+	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
+	if damage <= 60 then
+		log("1")
+		stats.damage = 18
+		stats.AMMO_MAX = 200
+		stats.quietness = 10
+		stats.recoil = 23 - math.floor((rpm - 800)/50)
+		stats.spread = self:generate_stat_from_table(
+			{12,13,14,15,16,17},
+			{4.5,5.0,5.5,6.0,6.5},
+			reload_time)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{4,3,2,1,0},
+			{50,75,100,150},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = self:generate_stat_from_table(
+			{29,28,27,25,23,21},
+			{40,50,75,100,150},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 80 then
+		log("2")
+		stats.damage = 20
+		stats.AMMO_MAX = 180
+		stats.quietness = 9
+		stats.recoil = 23 - math.floor((rpm - 800)/50)
+		stats.spread = self:generate_stat_from_table(
+			{12,13,14,15,16,17},
+			{4.5,5.0,5.5,6.0,6.5},
+			reload_time)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{4,3,2,1,0},
+			{50,75,100,150},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = self:generate_stat_from_table(
+			{26,25,24,22,20,18},
+			{40,50,75,100,150},
+			weap.CLIP_AMMO_MAX)
+	else
+		log("3")
+		stats.damage = 24
+		stats.AMMO_MAX = 150
+		stats.quietness = 8
+		stats.recoil = 21 - math.floor((rpm - 800)/50)
+		stats.spread = self:generate_stat_from_table(
+			{12,13,14,15,16,17},
+			{4.5,5.0,5.5,6.0,6.5},
+			reload_time)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{4,3,2,1,0},
+			{50,75,100,150},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = self:generate_stat_from_table(
+			{26,25,24,22,20,18},
+			{40,50,75,100,150},
+			weap.CLIP_AMMO_MAX)
 	end
 
 	return self:clean_stats(stats)

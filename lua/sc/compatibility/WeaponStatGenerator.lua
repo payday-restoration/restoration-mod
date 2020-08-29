@@ -24,7 +24,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		elseif value == "smg" then
 			stats = self:generate_smg(weap)
 		elseif value == "pistol" then
-			--stats = self:generate_pistol(weap)
+			stats = self:generate_pistol(weap)
 		elseif value == "snp" then
 			weap.kick = self.huntsman.kick
 			--stats = self:generate_snp(weap)
@@ -54,6 +54,8 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 
 		--Apply stats table to weapon tweakdata.
 		weap.stats.damage = stats.damage
+		weap.fire_mode_data.fire_rate = stats.fire_rate or weap.fire_mode_data.fire_rate
+		weap.fire_mode_data.single = stats.fire_rate or weap.fire_mode_data.single
 		weap.AMMO_MAX = stats.AMMO_MAX
 		weap.stats.recoil = stats.recoil
 		weap.stats.spread = stats.spread
@@ -65,6 +67,16 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		weap.stats.zoom = weap.stats.zoom or 1
 		weap.stats.value = weap.stats.value or 7
 		weap.swap_speed_multiplier = stats.swap_speed_multiplier
+		weap.can_shoot_through_shield = stats.piercing
+		weap.can_shoot_through_wall = stats.piercing
+		weap.can_shoot_through_enemy = stats.piercing
+		if stats.piercing then
+			weap.desc_id = "bm_auto_generated_ap_sc_desc"
+		end
+		weap.can_shoot_through_titan_shield = stats.super_piercing
+		if stats.super_piercing then
+			weap.desc_id = "bm_auto_generated_sap_sc_desc"
+		end
 		weap.stats_modifiers = nil
 	end
 	return weap
@@ -119,7 +131,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 18
 		stats.AMMO_MAX = 200
 		stats.quietness = 10
-		stats.recoil = 22 - math.floor((rpm - 800)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 600)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14},
 			{8,8.5,10,12,15,20},
@@ -132,7 +144,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 20
 		stats.AMMO_MAX = 180
 		stats.quietness = 9
-		stats.recoil = 21 - math.floor((rpm - 800)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 550)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14},
 			{8,8.5,10,12,15,20},
@@ -145,7 +157,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 24
 		stats.AMMO_MAX = 150
 		stats.quietness = 8
-		stats.recoil = 20 - math.floor((rpm - 700)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 500)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14,13},
 			{7.5,8,8.5,10,12,15,20},
@@ -158,7 +170,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 30
 		stats.AMMO_MAX = 120
 		stats.quietness = 7
-		stats.recoil = 19 - math.floor((rpm - 700)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 450)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13,12},
 			{7.5,8,8.5,10,12,15,20},
@@ -171,7 +183,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 45
 		stats.AMMO_MAX = 80
 		stats.quietness = 6
-		stats.recoil = 18 - math.floor((rpm - 700)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 400)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14,13,12,11},
 			{6,7,7.5,8,8.5,10,12,15,20},
@@ -184,7 +196,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 60
 		stats.AMMO_MAX = 60
 		stats.quietness = 5
-		stats.recoil = 14 - math.floor((rpm - 700)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 200)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{21,20,19,18,17,16,15,14,13,12},
 			{6,7,7.5,8,8.5,10,12,15,20},
@@ -258,7 +270,7 @@ function WeaponTweakData:generate_smg(weap)
 		stats.damage = 18
 		stats.AMMO_MAX = 200
 		stats.quietness = 10
-		stats.recoil = 23 - math.floor((rpm - 900)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 750)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13},
 			{8,8.5,10,12,15,20},
@@ -271,7 +283,7 @@ function WeaponTweakData:generate_smg(weap)
 		stats.damage = 20
 		stats.AMMO_MAX = 180
 		stats.quietness = 9
-		stats.recoil = 23 - math.floor((rpm - 800)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 650)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13},
 			{8,8.5,10,12,15,20},
@@ -284,7 +296,7 @@ function WeaponTweakData:generate_smg(weap)
 		stats.damage = 24
 		stats.AMMO_MAX = 150
 		stats.quietness = 8
-		stats.recoil = 19 - math.floor((rpm - 800)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 600)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13,12},
 			{7.5,8,8.5,10,12,15,20},
@@ -297,7 +309,7 @@ function WeaponTweakData:generate_smg(weap)
 		stats.damage = 30
 		stats.AMMO_MAX = 120
 		stats.quietness = 7
-		stats.recoil = 23 - math.floor((rpm - 600)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 550)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{18,17,16,15,14,13,12,11},
 			{7.5,8,8.5,10,12,15,20},
@@ -362,14 +374,14 @@ function WeaponTweakData:generate_lmg(weap)
 		stats.damage = 18
 		stats.AMMO_MAX = 200
 		stats.quietness = 10
-		stats.recoil = 23 - math.floor((rpm - 800)/50)
+		stats.recoil = 26 - math.max(math.floor((rpm - 650)/50), 0)
 		stats.spread = self:generate_stat_from_table(
-			{12,13,14,15,16,17},
-			{4.5,5.0,5.5,6.0,6.5},
+			{10,11,12,13,14},
+			{5.0,5.5,6.0,6.5},
 			reload_time)
 		stats.spread = stats.spread + self:generate_stat_from_table(
-			{4,3,2,1,0},
-			{50,75,100,150},
+			{5,4,3,2,1,0},
+			{50,60,75,100,150},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = self:generate_stat_from_table(
 			{29,28,27,25,23,21},
@@ -379,14 +391,14 @@ function WeaponTweakData:generate_lmg(weap)
 		stats.damage = 20
 		stats.AMMO_MAX = 180
 		stats.quietness = 9
-		stats.recoil = 23 - math.floor((rpm - 800)/50)
+		stats.recoil = 26 - math.floor((rpm - 650)/50)
 		stats.spread = self:generate_stat_from_table(
-			{12,13,14,15,16,17},
-			{4.5,5.0,5.5,6.0,6.5},
+			{10,11,12,13,14},
+			{5.0,5.5,6.0,6.5},
 			reload_time)
 		stats.spread = stats.spread + self:generate_stat_from_table(
-			{4,3,2,1,0},
-			{50,75,100,150},
+			{5,4,3,2,1,0},
+			{50,60,75,100,150},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = self:generate_stat_from_table(
 			{26,25,24,22,20,18},
@@ -396,19 +408,182 @@ function WeaponTweakData:generate_lmg(weap)
 		stats.damage = 24
 		stats.AMMO_MAX = 150
 		stats.quietness = 8
-		stats.recoil = 21 - math.floor((rpm - 800)/50)
+		stats.recoil = 26 - math.floor((rpm - 500)/50)
 		stats.spread = self:generate_stat_from_table(
-			{12,13,14,15,16,17},
-			{4.5,5.0,5.5,6.0,6.5},
+			{10,11,12,13,14},
+			{5.0,5.5,6.0,6.5},
 			reload_time)
 		stats.spread = stats.spread + self:generate_stat_from_table(
-			{4,3,2,1,0},
-			{50,75,100,150},
+			{5,4,3,2,1,0},
+			{50,60,75,100,150},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = self:generate_stat_from_table(
 			{26,25,24,22,20,18},
 			{40,50,75,100,150},
 			weap.CLIP_AMMO_MAX)
+	end
+
+	return self:clean_stats(stats)
+end
+
+function WeaponTweakData:generate_pistol(weap)
+	local stats = {
+		damage = 0,
+		AMMO_MAX = 0,
+		spread = 0,
+		recoil = 0,
+		concealment = 0,
+		quietness = 0,
+		swap_speed_multiplier = 1
+	}
+
+	local reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	local rpm = 60 / weap.fire_mode_data.fire_rate
+	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
+	if weap.auto then --Auto Pistols.
+		if damage <= 40 then
+			stats.damage = 18
+			stats.AMMO_MAX = 200
+			stats.quietness = 10
+			stats.recoil = 26 - math.floor((rpm - 750)/50)
+			stats.spread = self:generate_stat_from_table(
+				{18,17,16,15,14,13},
+				{10,15,20,25,30},
+				weap.CLIP_AMMO_MAX)
+			stats.spread = stats.spread + self:generate_stat_from_table(
+				{0,1,2,3},
+				{1.8,2.3,2.7},
+				reload_time)
+			stats.concealment = self:generate_stat_from_table(
+				{30,29,28,27},
+				{10,15,20},
+				weap.CLIP_AMMO_MAX)
+		elseif damage <= 70 then
+			stats.damage = 20
+			stats.AMMO_MAX = 180
+			stats.quietness = 9
+			stats.recoil = 26 - math.floor((rpm - 700)/50)
+			stats.spread = self:generate_stat_from_table(
+				{17,16,15,14,13,12},
+				{10,15,20,25,30},
+				weap.CLIP_AMMO_MAX)
+			stats.spread = stats.spread + self:generate_stat_from_table(
+				{0,1,2,3},
+				{1.8,2.3,2.7},
+				reload_time)
+			stats.concealment = self:generate_stat_from_table(
+				{30,29,28,27},
+				{10,15,20},
+				weap.CLIP_AMMO_MAX)
+		elseif damage <= 120 then
+			stats.damage = 24
+			stats.AMMO_MAX = 150
+			stats.quietness = 8
+			stats.recoil = 26 - math.floor((rpm - 600)/50)
+			stats.spread = self:generate_stat_from_table(
+				{17,16,15,14,13,12},
+				{10,15,20,25,30},
+				weap.CLIP_AMMO_MAX)
+			stats.spread = stats.spread + self:generate_stat_from_table(
+				{0,1,2,3},
+				{1.8,2.3,2.7},
+				reload_time)
+			stats.concealment = self:generate_stat_from_table(
+				{28,27,26,25},
+				{10,15,20},
+				weap.CLIP_AMMO_MAX)
+		else
+			stats.damage = 30
+			stats.AMMO_MAX = 120
+			stats.quietness = 7
+			stats.recoil = 26 - math.floor((rpm - 550)/50)
+			stats.spread = self:generate_stat_from_table(
+				{17,16,15,14,13,12},
+				{10,15,20,25,30},
+				weap.CLIP_AMMO_MAX)
+			stats.spread = stats.spread + self:generate_stat_from_table(
+				{0,1,2,3},
+				{1.8,2.3,2.7},
+				reload_time)
+			stats.concealment = self:generate_stat_from_table(
+				{26,25,24,23},
+				{10,15,20},
+				weap.CLIP_AMMO_MAX)
+		end
+	else --Semi-Auto Pistols
+		if damage <= 40 then
+			stats.damage = 20
+			stats.AMMO_MAX = 180
+			stats.quietness = 9
+			stats.fire_rate = 0.08571428571
+			stats.recoil = self:generate_stat_from_table(
+				{23,24,25,26},
+				{1.8,2.3,2.7},
+				reload_time)
+			stats.spread = self:generate_stat_from_table(
+				{20,19,18,17,16,15},
+				{10,15,20,25,30},
+				weap.CLIP_AMMO_MAX)
+			stats.concealment = 31
+		elseif damage <= 50 then
+			stats.damage = 24
+			stats.AMMO_MAX = 150
+			stats.quietness = 8
+			stats.fire_rate = 0.08571428571
+			stats.recoil = self:generate_stat_from_table(
+				{22,23,24,25},
+				{1.8,2.3,2.7},
+				reload_time)
+			stats.spread = self:generate_stat_from_table(
+				{19,18,17,16,15,14},
+				{10,15,20,25,30},
+				weap.CLIP_AMMO_MAX)
+			stats.concealment = 29
+		elseif damage <= 70 then
+			stats.damage = 30
+			stats.AMMO_MAX = 120
+			stats.quietness = 7
+			stats.fire_rate = 0.08571428571
+			stats.recoil = self:generate_stat_from_table(
+				{20,21,22,23},
+				{1.8,2.3,2.7},
+				reload_time)
+			stats.spread = self:generate_stat_from_table(
+				{18,17,16,15,14,13},
+				{10,15,20,25,30},
+				weap.CLIP_AMMO_MAX)
+			stats.concealment = 27
+		elseif damage <= 120 then
+			stats.damage = 45
+			stats.AMMO_MAX = 80
+			stats.quietness = 6
+			stats.fire_rate = 0.1
+			stats.recoil = self:generate_stat_from_table(
+				{17,18,19,20},
+				{1.8,2.3,2.7},
+				reload_time)
+			stats.spread = self:generate_stat_from_table(
+				{18,17,16,15,14,13},
+				{10,15,20,25,30},
+				weap.CLIP_AMMO_MAX)
+			stats.concealment = 26
+		else
+			stats.damage = 60
+			stats.AMMO_MAX = 60
+			stats.quietness = 5
+			stats.recoil = 26 - math.floor((rpm + 50)/50)
+			stats.spread = stats.spread + self:generate_stat_from_table(
+				{17,18,19,20,21},
+				{2.3,2.8,3.3,3.8},
+				reload_time)
+			stats.concealment = self:generate_stat_from_table(
+				{26,25,24,22,20},
+				{4,5,6,8},
+				weap.CLIP_AMMO_MAX)
+			if weap.CLIP_AMMO_MAX <= 4 or reload_time >= 4 then
+				stats.piercing = true
+			end
+		end
 	end
 
 	return self:clean_stats(stats)

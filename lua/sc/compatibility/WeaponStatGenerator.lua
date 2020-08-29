@@ -20,7 +20,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		elseif value == "shotgun" then
 			weap.kick = self.huntsman.kick
 			weap.rays = 9
-			--stats = self:generate_shotgun(weap)
+			stats = self:generate_shotgun(weap)
 		elseif value == "smg" then
 			stats = self:generate_smg(weap)
 		elseif value == "pistol" then
@@ -647,8 +647,8 @@ function WeaponTweakData:generate_snp(weap)
 			{6,10,15,20},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = stats.concealment + self:generate_stat_from_table(
-			{2, 1, 0},
-			{80,100},
+			{3,2,1,0},
+			{60,80,100},
 			rpm)
 	elseif damage <= 480 then
 		stats.damage = 120
@@ -668,8 +668,8 @@ function WeaponTweakData:generate_snp(weap)
 			{5,8,12,15},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = stats.concealment + self:generate_stat_from_table(
-			{2, 1, 0},
-			{60,120},
+			{3,2,1,0},
+			{40,60,120},
 			rpm)
 	else
 		stats.damage = 180
@@ -678,8 +678,8 @@ function WeaponTweakData:generate_snp(weap)
 		stats.super_piercing = true
 		stats.recoil = 14 - math.max(math.floor(rpm/20), 0)
 		stats.spread = self:generate_stat_from_table(
-			{15,16,17,18},
-			{3,3.5,4,4.5},
+			{12,13,14,15},
+			{3.5,4,4.5,5},
 			reload_time)
 		stats.spread = stats.spread + self:generate_stat_from_table(
 			{4,3,2,1,0},
@@ -690,113 +690,129 @@ function WeaponTweakData:generate_snp(weap)
 			{5,8,12,15},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = stats.concealment + self:generate_stat_from_table(
-			{2, 1, 0},
-			{60,120},
+			{3,2,1,0},
+			{40,60,120},
 			rpm)
 	end
 
 	return self:clean_stats(stats)
 end
 
---[[--Adjust ammo count for secondaries.
-	
-	--Adjust accuracy based on reload ability.
+function WeaponTweakData:generate_shotgun(weap)
+	local stats = {
+		damage = 0,
+		AMMO_MAX = 0,
+		spread = 0,
+		recoil = 0,
+		concealment = 0,
+		quietness = 0,
+		swap_speed_multiplier = 1
+	}
+
+	--How generally pleasant the weapon is to reload.
+	local reload_time = 4
 	if weap.timers.reload_not_empty and weap.timers.reload_empty then
-		local average_reload = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
-		local adjusted_mag_size = (weap.CLIP_AMMO_MAX + 30) / 2 --The formula would otherwise be too kind to revolvers and too mean to LMGs.
-		local reload_quality = adjusted_mag_size / average_reload --How generally pleasant reloading the weapon is. Attempts to average out reload stuff to work with most cases.
-		if reload_quality <= 5.5 then
-			concealment = concealment + 2
-			spread = spread + 2
-		elseif reload_quality <= 6 then
-			concealment = concealment + 2
-			spread = spread + 1
-		elseif reload_quality <= 7 then
-			concealment = concealment + 2
-		elseif reload_quality <= 7.5 then
-			concealment = concealment + 1
-			spread = spread - 1
-		elseif reload_quality <= 8 then
-			spread = spread - 2
-		elseif reload_quality <= 9 then
-			spread = spread - 3
-		elseif reload_quality <= 10 then
-			spread = spread - 4
-		elseif reload_quality <= 12 then
-			spread = spread - 5
-		elseif reload_quality <= 15 then
-			spread = spread - 6
-		else
-			spread = spread - 7
-		end
-		--Big mag concealment penalties.
-		if weap.CLIP_AMMO_MAX > 120 then
-			concealment = concealment - 5
-		elseif weap.CLIP_AMMO_MAX > 90 then
-			concealment = concealment - 3
-		elseif weap.CLIP_AMMO_MAX > 60 then
-			concealment = concealment - 2
-		elseif weap.CLIP_AMMO_MAX > 30 then
-			concealment = concealment - 1
-		elseif weap.CLIP_AMMO_MAX <= 2 then
-			spread = spread + 3
-			concealment = concealment + 3
-		end
-	else --Certain custom shotguns fall under here.
-		if weap.CLIP_AMMO_MAX > 10 then
-			spread = spread - 2
-			concealment = concealment - 2
-		elseif weap.CLIP_AMMO_MAX > 8 then
-			spread = spread - 1
-			concealment = concealment - 2
-		elseif weap.CLIP_AMMO_MAX > 6 then
-			concealment = concealment -  1
-		elseif weap.CLIP_AMMO_MAX > 4 then
-			spread = spread + 1
-			concealment = concealment + 1
-		elseif weap.CLIP_AMMO_MAX <= 2 then
-			spread = spread + 3
-			concealment = concealment + 3
+		reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	end
+
+	--Rounds per minute.
+	local rpm = 60 / weap.fire_mode_data.fire_rate
+
+	--The original weapon damage.
+	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
+	if damage <= 45 then
+		stats.damage = 30
+		stats.AMMO_MAX = 120
+		stats.quietness = 7
+		stats.recoil = 20 - math.max(math.floor((rpm - 480)/40), 0)
+		stats.recoil = stats.recoil + self:generate_stat_from_table(
+			{13,10,7,4,2,0},
+			{1,2,3,4,6},
+			weap.CLIP_AMMO_MAX)
+		stats.spread = self:generate_stat_from_table(
+			{17,14,11,9,7,6,5,4},
+			{1,2,3,4,6,8,10},
+			weap.CLIP_AMMO_MAX)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{0,1,2,3,4,5,6,7},
+			{2.6,3.1,3.6,4.1,4.6,5.1},
+			reload_time)
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{27,26,25,24,23,22,21},
+			{1,3,5,7,9,11},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 60 then
+		stats.damage = 45
+		stats.AMMO_MAX = 80
+		stats.quietness = 6
+		stats.recoil = 18 - math.max(math.floor((rpm - 300)/40), 0)
+		stats.recoil = stats.recoil + self:generate_stat_from_table(
+			{13,10,7,4,2,0},
+			{1,2,3,4,6},
+			weap.CLIP_AMMO_MAX)
+		stats.spread = self:generate_stat_from_table(
+			{17,14,11,9,6,5,4,3},
+			{1,2,3,4,6,8,10},
+			weap.CLIP_AMMO_MAX)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{0,1,2,3,4,5,6,7},
+			{2.6,3.1,3.6,4.1,4.6,5.1},
+			reload_time)
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{27,26,24,23,22,21,20},
+			{1,3,5,7,9,11},
+			weap.CLIP_AMMO_MAX)
+	elseif damage <= 90 then
+		stats.damage = 60
+		stats.AMMO_MAX = 60
+		stats.quietness = 5
+		stats.recoil = 18 - math.max(math.floor((rpm - 100)/40), 0)
+		stats.recoil = stats.recoil + self:generate_stat_from_table(
+			{16,12,8,4,2,0},
+			{1,2,3,4,6},
+			weap.CLIP_AMMO_MAX)
+		stats.spread = self:generate_stat_from_table(
+			{16,13,10,8,6,4,3,2},
+			{1,2,3,4,6,8,10},
+			weap.CLIP_AMMO_MAX)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{0,1,2,3,4,5,6,7},
+			{2.6,3.1,3.6,4.1,4.6,5.1},
+			reload_time)
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{27,26,24,23,22,21,20},
+			{1,3,5,7,9,11},
+			weap.CLIP_AMMO_MAX)
+	else
+		stats.damage = 90
+		stats.AMMO_MAX = 40
+		stats.quietness = 3
+		stats.recoil = 10 - math.max(math.floor((rpm - 100)/40), 0)
+		stats.recoil = stats.recoil + self:generate_stat_from_table(
+			{19,14,9,4,2,0},
+			{1,2,3,4,6},
+			weap.CLIP_AMMO_MAX)
+		stats.spread = self:generate_stat_from_table(
+			{15,12,9,6,4,3,2,1},
+			{1,2,3,4,6,8,10},
+			weap.CLIP_AMMO_MAX)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{0,1,2,3,4,5,6,7},
+			{2.6,3.1,3.6,4.1,4.6},
+			reload_time)
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{22,21,20,19,18,17},
+			{1,3,5,7,9,11},
+			weap.CLIP_AMMO_MAX)
+		if weap.CLIP_AMMO_MAX > 3 then
+			stats.swap_speed_multiplier = 0.8
 		end
 	end
-	--Adjust stats based on rate of fire.
-	local rpm = 60 / weap.fire_mode_data.fire_rate --Rounds per minute.
-	if not weap.auto then --Semi Auto Stuff
-		--Recoil bonuses for awful rates of fire.
-		if rpm <= 50 then
-			recoil = recoil + 2
-		elseif rpm <= 100 then
-			recoil = recoil + 1
-		end
-		--Gives extra shitty pistols a boost.
-		if weap.stats.damage <= 36 then
-			concealment = concealment + 3
-			spread = spread + 3
-			recoil = recoil + 3
-		elseif weap.stats.damage <= 40 then
-			concealment = concealment + 2
-			spread = spread + 2
-			recoil = recoil + 2
-		elseif weap.stats.damage <= 60 then
-			concealment = concealment + 1
-			spread = spread + 1
-			recoil = recoil + 1
-		end
-		--Compensates for piercing. Would baseline into sniper, but some custom weapons might be in that category without piercing because reasons.
-		if weap.can_shoot_through_shield and weap.can_shoot_through_shield == true then
-			if weap.stats.damage <= 120 then
-				spread = spread - 1
-				concealment = concealment - 1
-				recoil = recoil - 3
-			else
-				weap.can_shoot_through_titan_shield = true
-				spread = spread - 2
-				concealment = concealment - 2
-				recoil = recoil - 9
-			end
-		end
-	else --Full Auto Stuff
-		recoil = recoil - math.min(math.max(rpm - 500, 0)/50, 12)
+
+	if weap.auto then
+		stats.spread = stats.spread - 2
+		stats.concealment = stats.concealment - 1
 	end
-	return stats
-end]]--
+
+	return self:clean_stats(stats)
+end

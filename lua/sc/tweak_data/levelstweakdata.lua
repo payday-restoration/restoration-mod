@@ -210,6 +210,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.fish.package = {"packages/lvl_fish", "packages/nypdassets"}
 	self.fish.player_style = "tux"
 	
+	self.born.player_style = "punk"
+	
 	self.arm_cro.package = {"packages/narr_arm_cro"}
 	self.arm_cro.player_style = "jumpsuit"
 	

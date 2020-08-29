@@ -10,6 +10,8 @@ function CopSound:init(unit)
 	if char_tweak.speech_prefix_p1 == "l5d" then
 		self._prefix = (char_tweak.speech_prefix_p1 or "") .. "_"	
 	elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2") then
+		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"		
+	elseif self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"				
 	elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"			
@@ -40,6 +42,8 @@ function CopSound:init(unit)
 	
 	--husks		
 	elseif self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1_husk") or self._unit:name() == Idstring("units/payday2/characters/ene_swat_2/ene_swat_2_husk") then
+		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"		
+	elseif self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1_husk") or self._unit:name() == Idstring("units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2_husk") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"				
 	elseif self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1_husk") or self._unit:name() == Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2_husk") then
 		self._prefix = ("l") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. ("d") .. "_"			

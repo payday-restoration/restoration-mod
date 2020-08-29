@@ -247,3 +247,186 @@ function MissionEndState:at_enter(old_state, params)
 
 	Telemetry:on_end_heist(self._type, total_exp_gained)
 end
+
+local on_statistics_result_ori = MissionEndState.on_statistics_result
+
+function MissionEndState:on_statistics_result(best_kills_peer_id, best_kills_score, best_special_kills_peer_id, best_special_kills_score, best_accuracy_peer_id, best_accuracy_score, most_downs_peer_id, most_downs_score, total_kills, total_specials_kills, total_head_shots, group_accuracy, group_downs)
+	on_statistics_result_ori(self, best_kills_peer_id, best_kills_score, best_special_kills_peer_id, best_special_kills_score, best_accuracy_peer_id, best_accuracy_score, most_downs_peer_id, most_downs_score, total_kills, total_specials_kills, total_head_shots, group_accuracy, group_downs)
+	print("on_statistics_result begin")
+
+	if managers.network and managers.network:session() then
+		local best_kills_peer = managers.network:session():peer(best_kills_peer_id)
+		local best_special_kills_peer = managers.network:session():peer(best_special_kills_peer_id)
+		local best_accuracy_peer = managers.network:session():peer(best_accuracy_peer_id)
+		local most_downs_peer = managers.network:session():peer(most_downs_peer_id)
+		local best_kills = best_kills_peer and best_kills_peer:name() or "N/A"
+		local best_special_kills = best_special_kills_peer and best_special_kills_peer:name() or "N/A"
+		local best_accuracy = best_accuracy_peer and best_accuracy_peer:name() or "N/A"
+		local most_downs = most_downs_peer and most_downs_peer:name() or "N/A"
+		local stage_cash_summary_string = nil
+
+		if self._success and managers.job._global.next_interupt_stage then
+			local victory_cash_postponed_id = "victory_cash_postponed"
+
+			if tweak_data.levels[managers.job._global.next_interupt_stage].bonus_escape then
+				victory_cash_postponed_id = "victory_cash_postponed_bonus"
+			end
+
+			stage_cash_summary_string = managers.localization:text(victory_cash_postponed_id)
+		elseif self._success then
+			local payouts = managers.money:get_payouts()
+			local stage_payout = payouts.stage_payout
+			local job_payout = payouts.job_payout
+			local bag_payout = payouts.bag_payout
+			local vehicle_payout = payouts.vehicle_payout
+			local small_loot_payout = payouts.small_loot_payout
+			local crew_payout = payouts.crew_payout
+			local bonus_bags = managers.loot:get_secured_bonus_bags_amount() + managers.loot:get_secured_mandatory_bags_amount()
+			local bag_cash = bag_payout
+			local vehicle_amount = managers.loot:get_secured_bonus_bags_amount(true) + managers.loot:get_secured_mandatory_bags_amount(true)
+			local vehicle_cash = vehicle_payout
+			local loose_cash = small_loot_payout or 0
+			local cleaner_cost = math.min(managers.money:get_civilian_deduction() * (managers.statistics:session_total_civilian_kills() or 0), managers.money:total() - managers.money:heist_spending())
+			local assets_cost =  managers.assets:get_money_spent()
+
+			if job_payout > 0 then
+				local job_string = managers.localization:text("victory_stage_cash_summary_name_job", {
+					stage_cash = managers.experience:cash_string(stage_payout),
+					job_cash = managers.experience:cash_string(job_payout)
+				})
+				stage_cash_summary_string = job_string
+			else
+				local stage_string = managers.localization:text("victory_stage_cash_summary_name", {
+					stage_cash = managers.experience:cash_string(stage_payout)
+				})
+				stage_cash_summary_string = stage_string
+			end
+
+			if managers.skirmish:is_skirmish() then
+				local skirmish_payout = payouts.skirmish_payout
+				stage_cash_summary_string = managers.localization:text("victory_stage_cash_summary_name_skirmish", {
+					wave = managers.skirmish:current_wave_number(),
+					skirmish_cash = managers.experience:cash_string(skirmish_payout)
+				})
+			end
+
+			if bonus_bags > 0 and bag_cash > 0 then
+				stage_cash_summary_string = stage_cash_summary_string .. " " .. managers.localization:text("victory_stage_cash_summary_name_bags", {
+					bag_cash = managers.experience:cash_string(bag_cash),
+					bag_amount = bonus_bags,
+					bonus_bags = bonus_bags
+				})
+			end
+
+			if vehicle_amount and vehicle_payout > 0 then
+				stage_cash_summary_string = stage_cash_summary_string .. " " .. managers.localization:text("victory_stage_cash_summary_name_vehicles", {
+					vehicle_cash = managers.experience:cash_string(vehicle_cash),
+					vehicle_amount = vehicle_amount
+				})
+			end
+
+			if self._criminals_completed and crew_payout > 0 then
+				stage_cash_summary_string = stage_cash_summary_string .. " " .. managers.localization:text("victory_stage_cash_summary_name_crew", {
+					winners = tostring(self._criminals_completed),
+					crew_cash = managers.experience:cash_string(crew_payout)
+				})
+			end
+
+			if loose_cash > 0 then
+				stage_cash_summary_string = stage_cash_summary_string .. " " .. managers.localization:text("victory_stage_cash_summary_name_loose", {
+					loose_cash = managers.experience:cash_string(loose_cash)
+				})
+			end
+
+			stage_cash_summary_string = stage_cash_summary_string .. "\n"
+
+			if cleaner_cost > 0 then
+				stage_cash_summary_string = stage_cash_summary_string .. managers.localization:text("victory_stage_cash_summary_name_civ_kill", {
+					civ_killed_cash = managers.experience:cash_string(cleaner_cost)
+				}) .. " "
+			end
+
+			if assets_cost > 0 then
+				stage_cash_summary_string = stage_cash_summary_string .. managers.localization:text("victory_stage_cash_summary_name_assets", {
+					asset_cash = managers.experience:cash_string(assets_cost)
+				}) .. " "
+			end
+
+			if cleaner_cost > 0 or assets_cost > 0 then
+				stage_cash_summary_string = stage_cash_summary_string .. "\n"
+			end
+
+			stage_cash_summary_string = stage_cash_summary_string .. "\n"
+			local offshore_string = managers.localization:text("victory_stage_cash_summary_name_offshore", {
+				offshore = managers.localization:text("hud_offshore_account"),
+				cash = managers.experience:cash_string(managers.money:heist_offshore())
+			})
+			local spending_string = managers.localization:text("victory_stage_cash_summary_name_spending", {
+				cash = "##" .. managers.experience:cash_string(managers.money:heist_spending()) .. "##"
+			})
+			stage_cash_summary_string = stage_cash_summary_string .. offshore_string .. "\n"
+			stage_cash_summary_string = stage_cash_summary_string .. spending_string .. "\n"
+		else
+			stage_cash_summary_string = managers.localization:text("failed_summary_name")
+		end
+
+		self._statistics_data = {
+			best_killer = managers.localization:text("victory_best_killer_name", {
+				PLAYER_NAME = best_kills,
+				SCORE = best_kills_score
+			}),
+			best_special = managers.localization:text("victory_best_special_name", {
+				PLAYER_NAME = best_special_kills,
+				SCORE = best_special_kills_score
+			}),
+			best_accuracy = managers.localization:text("victory_best_accuracy_name", {
+				PLAYER_NAME = best_accuracy,
+				SCORE = best_accuracy_score
+			}),
+			most_downs = managers.localization:text("victory_most_downs_name", {
+				PLAYER_NAME = most_downs,
+				SCORE = most_downs_score
+			}),
+			total_kills = total_kills,
+			total_specials_kills = total_specials_kills,
+			total_head_shots = total_head_shots,
+			group_hit_accuracy = group_accuracy .. "%",
+			group_total_downed = group_downs,
+			stage_cash_summary = stage_cash_summary_string
+		}
+	end
+
+	print("on_statistics_result end")
+
+	local level_id, all_pass, total_kill_pass, total_accuracy_pass, total_headshots_pass, total_downed_pass, level_pass, levels_pass, num_players_pass, diff_pass, one_down_pass, is_dropin_pass, success_pass = nil
+
+	for achievement, achievement_data in pairs(tweak_data.achievement.complete_heist_statistics_achievements or {}) do
+		level_id = managers.job:has_active_job() and managers.job:current_level_id() or ""
+		diff_pass = not achievement_data.difficulty or table.contains(achievement_data.difficulty, Global.game_settings.difficulty)
+		one_down_pass = achievement_data.one_down == nil or achievement.one_down == Global.game_settings.one_down
+		num_players_pass = not achievement_data.num_players or achievement_data.num_players <= managers.network:session():amount_of_players()
+		level_pass = not achievement_data.level_id or achievement_data.level_id == level_id
+		levels_pass = not achievement_data.levels or table.contains(achievement_data.levels, level_id)
+		total_kill_pass = not achievement_data.total_kills or achievement_data.total_kills <= total_kills
+		total_accuracy_pass = not achievement_data.total_accuracy or achievement_data.total_accuracy <= group_accuracy
+		total_downed_pass = not achievement_data.total_downs or group_downs <= achievement_data.total_downs
+		is_dropin_pass = achievement_data.is_dropin == nil or achievement_data.is_dropin == managers.statistics:is_dropin()
+		success_pass = not achievement_data.success or self._success
+
+		if achievement_data.total_headshots then
+			if achievement_data.total_headshots.invert then
+				total_headshots_pass = total_head_shots <= (achievement_data.total_headshots.amount or 0)
+			else
+				total_headshots_pass = total_head_shots >= (achievement_data.total_headshots.amount or 0)
+			end
+		else
+			total_headshots_pass = true
+		end
+
+		all_pass = diff_pass and one_down_pass and num_players_pass and level_pass and levels_pass and total_kill_pass and total_accuracy_pass and total_downed_pass and is_dropin_pass and total_headshots_pass and managers.challenge:check_equipped(achievement_data) and managers.challenge:check_equipped_team(achievement_data) and success_pass
+
+		if all_pass and not managers.achievment:award_data(achievement_data) then
+			Application:debug("[MissionEndState] complete_heist_achievements:", achievement)
+		end
+	end
+end

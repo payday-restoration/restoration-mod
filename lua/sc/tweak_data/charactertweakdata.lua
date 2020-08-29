@@ -229,7 +229,7 @@ function CharacterTweakData:_init_security(presets)
 	self.mute_security_undominatable.speech_prefix_p1 = "bb"
 	self.mute_security_undominatable.speech_prefix_p2 = "n"
 	self.mute_security_undominatable.speech_prefix_count = 1
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.mute_security_undominatable.failure_on_death = true
 		self.mute_security_undominatable.unintimidateable = true
 	end
@@ -12275,7 +12275,7 @@ function CharacterTweakData:_set_easy()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")		
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end
 end
@@ -12472,7 +12472,7 @@ function CharacterTweakData:_set_normal()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -12669,7 +12669,7 @@ function CharacterTweakData:_set_hard()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -12865,7 +12865,7 @@ function CharacterTweakData:_set_overkill()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -13196,7 +13196,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -13529,7 +13529,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -13759,7 +13759,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -14261,7 +14261,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end

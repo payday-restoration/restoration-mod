@@ -204,7 +204,7 @@ function CopLogicAttack._upd_aim(data, my_data)
 	local tase = focus_enemy and focus_enemy.reaction >= AIAttentionObject.REACT_SPECIAL_ATTACK
 
 	if focus_enemy then
-		if tase and data.unit:base():has_tag("taser") then
+		if tase and data.unit:base():has_tag("taser") and data.unit:base():has_tag("taser_titan") then
 			shoot = true
 		elseif AIAttentionObject.REACT_AIM <= focus_enemy.reaction then
 			if focus_enemy.verified or focus_enemy.nearly_visible then
@@ -410,6 +410,7 @@ function CopLogicAttack._upd_aim(data, my_data)
 	end
 	
 	local is_moving = my_data.walking_to_cover_shoot_pos or my_data.moving_to_cover or data.unit:anim_data().run or data.unit:anim_data().move
+	
 	if tase and is_moving and not data.unit:movement():chk_action_forbidden("walk") then
 		local new_action = {
 			body_part = 2,
@@ -443,7 +444,7 @@ function CopLogicAttack._upd_aim(data, my_data)
 		
 		local nottasingortargetwrong = not my_data.tasing or my_data.tasing.target_u_data ~= focus_enemy
 		
-		if tase then
+		if tase and not data.unit:base():has_tag("taser_titan") then
 			if nottasingortargetwrong and not data.unit:movement():chk_action_forbidden("walk") and not focus_enemy.unit:movement():zipline_unit() then
 				if my_data.attention_unit ~= focus_enemy.u_key then
 					CopLogicBase._set_attention(data, focus_enemy)

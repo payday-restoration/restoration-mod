@@ -4238,7 +4238,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.huntsman.AMMO_PICKUP = self:_pickup_chance()
 	self.huntsman.sounds.fire_single = "huntsman_fire"
 	self.huntsman.sounds.fire_auto = "huntsman_fire"
-	self.huntsman.BURST_FIRE = 2			
+	self.huntsman.BURST_FIRE = 2
 	self.huntsman.BURST_FIRE_RATE_MULTIPLIER = 120				
 	self.huntsman.ADAPTIVE_BURST_SIZE = false	
 	self.huntsman.CAN_TOGGLE_FIREMODE = false			

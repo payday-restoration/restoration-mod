@@ -162,7 +162,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 24
 		stats.AMMO_MAX = 150
 		stats.quietness = 8
-		stats.recoil = 26 - math.max(math.floor((rpm - 500)/50), 0)
+		stats.recoil = 26 - math.max(math.floor((rpm - 400)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14,13},
 			{7.5,8,8.5,10,12,15,20},
@@ -175,7 +175,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 30
 		stats.AMMO_MAX = 120
 		stats.quietness = 7
-		stats.recoil = 26 - math.max(math.floor((rpm - 450)/50), 0)
+		stats.recoil = 26 - math.max(math.floor((rpm - 350)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13,12},
 			{7.5,8,8.5,10,12,15,20},
@@ -188,7 +188,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 45
 		stats.AMMO_MAX = 80
 		stats.quietness = 6
-		stats.recoil = 26 - math.max(math.floor((rpm - 400)/50), 0)
+		stats.recoil = 26 - math.max(math.floor((rpm - 300)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14,13,12,11},
 			{6,7,7.5,8,8.5,10,12,15,20},
@@ -201,7 +201,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		stats.damage = 60
 		stats.AMMO_MAX = 60
 		stats.quietness = 5
-		stats.recoil = 26 - math.max(math.floor((rpm - 200)/50), 0)
+		stats.recoil = 26 - math.max(math.floor((rpm - 100)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{21,20,19,18,17,16,15,14,13,12},
 			{6,7,7.5,8,8.5,10,12,15,20},

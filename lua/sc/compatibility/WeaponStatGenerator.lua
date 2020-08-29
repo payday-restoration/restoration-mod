@@ -1,9 +1,6 @@
 function WeaponTweakData:generate_custom_weapon_stats(weap)
-	log("Generating stats for: " .. weap.name_id)
-
 	--Perform magic stat generation for unsupported custom weapons.
-	weap.has_description = true
-	weap.desc_id = "bm_auto_generated_sc_desc"
+	log("Generating stats for: " .. weap.name_id)
 
 	--Set some stuff that's generic to all weapons.
 	weap.AMMO_PICKUP = self:_pickup_chance()
@@ -53,6 +50,8 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		end
 
 		--Apply stats table to weapon tweakdata.
+		weap.has_description = true
+		weap.desc_id = "bm_auto_generated_sc_desc"
 		weap.stats.damage = stats.damage
 		weap.stats_modifiers = nil
 		weap.fire_mode_data.fire_rate = stats.fire_rate or weap.fire_mode_data.fire_rate

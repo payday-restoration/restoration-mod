@@ -27,7 +27,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 			stats = self:generate_pistol(weap)
 		elseif value == "snp" then
 			weap.kick = self.huntsman.kick
-			--stats = self:generate_snp(weap)
+			stats = self:generate_snp(weap)
 		elseif value == "assault_rifle" then
 			stats = self:generate_assault_rifle(weap)
 		elseif value == "akimbo" then
@@ -54,6 +54,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 
 		--Apply stats table to weapon tweakdata.
 		weap.stats.damage = stats.damage
+		weap.stats_modifiers = nil
 		weap.fire_mode_data.fire_rate = stats.fire_rate or weap.fire_mode_data.fire_rate
 		weap.fire_mode_data.single = stats.fire_rate or weap.fire_mode_data.single
 		weap.AMMO_MAX = stats.AMMO_MAX
@@ -112,8 +113,12 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		swap_speed_multiplier = 1
 	}
 
+	local reload_time = 4
+	if weap.timers.reload_not_empty and weap.timers.reload_empty then
+		reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	end
 	--How generally pleasant the weapon is to reload.
-	local reload_quality = math.clamp(weap.CLIP_AMMO_MAX, 10, 50) / ((weap.timers.reload_not_empty + weap.timers.reload_empty) / 2)
+	local reload_quality = math.clamp(weap.CLIP_AMMO_MAX, 10, 50) / reload_time
 	--Rounds per minute.
 	local rpm = 60 / weap.fire_mode_data.fire_rate
 
@@ -250,7 +255,11 @@ function WeaponTweakData:generate_smg(weap)
 	}
 
 	--How generally pleasant the weapon is to reload.
-	local reload_quality = math.clamp(weap.CLIP_AMMO_MAX, 10, 50) / ((weap.timers.reload_not_empty + weap.timers.reload_empty) / 2)
+	local reload_time = 4
+	if weap.timers.reload_not_empty and weap.timers.reload_empty then
+		reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	end
+	local reload_quality = math.clamp(weap.CLIP_AMMO_MAX, 10, 50) / reload_time
 	
 	--Rounds per minute.
 	local rpm = 60 / weap.fire_mode_data.fire_rate
@@ -363,7 +372,10 @@ function WeaponTweakData:generate_lmg(weap)
 	}
 
 	--How generally pleasant the weapon is to reload.
-	local reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	local reload_time = 6
+	if weap.timers.reload_not_empty and weap.timers.reload_empty then
+		reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	end
 	
 	--Rounds per minute.
 	local rpm = 60 / weap.fire_mode_data.fire_rate
@@ -437,7 +449,10 @@ function WeaponTweakData:generate_pistol(weap)
 		swap_speed_multiplier = 1
 	}
 
-	local reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	local reload_time = 4
+	if weap.timers.reload_not_empty and weap.timers.reload_empty then
+		reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	end
 	local rpm = 60 / weap.fire_mode_data.fire_rate
 	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
 	if weap.auto then --Auto Pistols.
@@ -584,6 +599,100 @@ function WeaponTweakData:generate_pistol(weap)
 				stats.piercing = true
 			end
 		end
+	end
+
+	return self:clean_stats(stats)
+end
+
+function WeaponTweakData:generate_snp(weap)
+	local stats = {
+		damage = 0,
+		AMMO_MAX = 0,
+		spread = 0,
+		recoil = 0,
+		concealment = 0,
+		quietness = 0,
+		swap_speed_multiplier = 1,
+		piercing = true
+	}
+
+	--How generally pleasant the weapon is to reload.
+	local reload_time = 4
+	if weap.timers.reload_not_empty and weap.timers.reload_empty then
+		reload_time = (weap.timers.reload_not_empty + weap.timers.reload_empty) / 2
+	end
+
+
+
+	--Rounds per minute.
+	local rpm = 60 / weap.fire_mode_data.fire_rate
+
+	--The original weapon damage.
+	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
+	if damage <= 250 then
+		stats.damage = 90
+		stats.AMMO_MAX = 40
+		stats.quietness = 4
+		stats.recoil = 14 - math.max(math.floor((rpm - 80)/40), 0)
+		stats.spread = self:generate_stat_from_table(
+			{15,16,17,18},
+			{3,3.5,4,4.5},
+			reload_time)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{4,3,2,1,0},
+			{6,10,15,20},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = self:generate_stat_from_table(
+			{22,21,20,19,18},
+			{6,10,15,20},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{2, 1, 0},
+			{80,100},
+			rpm)
+	elseif damage <= 480 then
+		stats.damage = 120
+		stats.AMMO_MAX = 30
+		stats.quietness = 3
+		stats.recoil = 12 - math.max(math.floor((rpm - 60)/30), 0)
+		stats.spread = self:generate_stat_from_table(
+			{15,16,17,18},
+			{3,3.5,4,4.5},
+			reload_time)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{4,3,2,1,0},
+			{6,10,15,20},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = self:generate_stat_from_table(
+			{19,18,17,16,15},
+			{5,8,12,15},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{2, 1, 0},
+			{60,120},
+			rpm)
+	else
+		stats.damage = 180
+		stats.AMMO_MAX = 20
+		stats.quietness = 2
+		stats.super_piercing = true
+		stats.recoil = 12 - math.max(math.floor((rpm - 60)/20), 0)
+		stats.spread = self:generate_stat_from_table(
+			{15,16,17,18},
+			{3,3.5,4,4.5},
+			reload_time)
+		stats.spread = stats.spread + self:generate_stat_from_table(
+			{4,3,2,1,0},
+			{6,10,15,20},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = self:generate_stat_from_table(
+			{14,13,12,11,10},
+			{5,8,12,15},
+			weap.CLIP_AMMO_MAX)
+		stats.concealment = stats.concealment + self:generate_stat_from_table(
+			{2, 1, 0},
+			{60,120},
+			rpm)
 	end
 
 	return self:clean_stats(stats)

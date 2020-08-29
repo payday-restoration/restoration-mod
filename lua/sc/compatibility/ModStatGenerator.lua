@@ -5,4 +5,5 @@ function WeaponFactoryTweakData:generate_custom_mod_stats(mod)
 	}
 	mod.custom_stats = nil
 	mod.desc_id = "bm_auto_generated_mod_sc_desc"
+	mod.has_description = true
 end

@@ -31084,6 +31084,7 @@ self.parts.wpn_fps_ass_osipr_scope.material_parameters = {
 --Deal with legendary and semi-hidden mods so they don't waste time triggering custom mod stat generation.
 --The game seems to ignore some of these because reasons???
 self.parts.wpn_fps_shot_r870_s_nostock_single.supported = true
+self.parts.wpn_fps_pis_1911_fl_legendary.supported = true
 self.parts.wpn_fps_pis_deagle_b_long.supported = true
 self.parts.wpn_fps_sho_boot_fg_legendary.supported = true
 self.parts.wpn_fps_ass_74_b_legend.supported = true
@@ -31104,7 +31105,7 @@ self.parts.wpn_fps_shot_shorty_b_legendary.supported = true
 self.parts.wpn_fps_ass_m14_b_legendary.supported = true
 
 for _, part in pairs(self.parts) do
-	if not part.supported and part.stats and part.name_id then
+	if not part.supported and part.stats then
 		local cosmetic_part = true
 		for name, stat in pairs(part.stats) do
 			if name ~= "value" and name ~= "zoom" and name ~= "gadget_zoom" and name ~= "spread_moving" and stat ~= 0 then

@@ -1,5 +1,10 @@
 function WeaponFactoryTweakData:generate_custom_mod_stats(mod)
-	log("Removing stats from: " .. mod.name_id)
+	if mod.name_id then
+		log("Removing stats from: " .. mod.name_id)
+	else
+		log("Removing stats from: Unknown Mod")
+	end
+
 	mod.stats = {
 		value = mod.stats.value
 	}

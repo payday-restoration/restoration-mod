@@ -633,7 +633,7 @@ function WeaponTweakData:generate_snp(weap)
 		stats.damage = 90
 		stats.AMMO_MAX = 40
 		stats.quietness = 4
-		stats.recoil = 14 - math.max(math.floor((rpm - 80)/40), 0)
+		stats.recoil = 16 - math.max(math.floor(rpm/40), 0)
 		stats.spread = self:generate_stat_from_table(
 			{15,16,17,18},
 			{3,3.5,4,4.5},
@@ -654,7 +654,7 @@ function WeaponTweakData:generate_snp(weap)
 		stats.damage = 120
 		stats.AMMO_MAX = 30
 		stats.quietness = 3
-		stats.recoil = 12 - math.max(math.floor((rpm - 60)/30), 0)
+		stats.recoil = 14 - math.max(math.floor(rpm/30), 0)
 		stats.spread = self:generate_stat_from_table(
 			{15,16,17,18},
 			{3,3.5,4,4.5},
@@ -676,7 +676,7 @@ function WeaponTweakData:generate_snp(weap)
 		stats.AMMO_MAX = 20
 		stats.quietness = 2
 		stats.super_piercing = true
-		stats.recoil = 12 - math.max(math.floor((rpm - 60)/20), 0)
+		stats.recoil = 14 - math.max(math.floor(rpm/20), 0)
 		stats.spread = self:generate_stat_from_table(
 			{15,16,17,18},
 			{3,3.5,4,4.5},

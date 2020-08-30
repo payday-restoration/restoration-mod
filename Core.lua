@@ -90,7 +90,6 @@ function restoration:Init()
 		"nmh_res", --Resmod edit of no mercy.
 		"flat",
 		"dah",
-		"run",
 		"framing_frame_3",
 		"spa",
 		"des",	
@@ -123,6 +122,7 @@ function restoration:Init()
 		"peta2",	
 		"vit",
 		"street",		--whurr's hs edit
+		"run",
 		"mex_cooking",		
 		--Custom Heists below--
 		"Victor Romeo",

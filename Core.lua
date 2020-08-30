@@ -122,7 +122,7 @@ function restoration:Init()
 		"rvd2",		
 		"peta2",	
 		"vit",
-		"street"		--whurr's hs edit
+		"street",		--whurr's hs edit
 		"mex_cooking",		
 		--Custom Heists below--
 		"Victor Romeo",

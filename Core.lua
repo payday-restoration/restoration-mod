@@ -79,6 +79,7 @@ function restoration:Init()
 		"skm_mus",
 		"skm_red2",
 		"skm_run",
+		"run_res", --Whurr's Heat Street Edit
 		"skm_watchdogs_stage2",
 		"bph",
 		"glace",
@@ -121,8 +122,6 @@ function restoration:Init()
 		"rvd2",		
 		"peta2",	
 		"vit",
-		"street",		--whurr's hs edit
-		"run",
 		"mex_cooking",		
 		--Custom Heists below--
 		"Victor Romeo",

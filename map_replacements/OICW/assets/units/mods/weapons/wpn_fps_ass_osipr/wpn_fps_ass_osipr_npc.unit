@@ -1,0 +1,12 @@
+<unit type="static" slot="1" >
+    <object file="units/mods/weapons/wpn_fps_ass_osipr/wpn_fps_ass_osipr" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_m4"/>
+	</dependencies>
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData" />
+        <extension name="base" class="NewNPCRaycastWeaponBase" >
+			<var name="name_id" value="m4_crew" />
+		</extension>
+    </extensions>
+</unit>

@@ -1,0 +1,16 @@
+<unit type="static" slot="1" >
+    <object file="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_scope" />
+	<dependencies>
+		<depends_on font="fonts/font_digital" />
+	</dependencies>	
+	
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension class="DigitalGui" name="digital_gui" >
+			<var name="TYPE" value="number" />
+			<var name="COLOR_TYPE" value="red" />
+			<var name="HEIGHT" value="200" />
+			<var name="_gui_object" value="g_display" />		
+		</extension>
+	</extensions>
+</unit>

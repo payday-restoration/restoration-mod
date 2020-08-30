@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_body" orientation_object="rp_wpn_fps_m4_lower_reciever" />
+	<animations>
+		<animation_group name="reload">
+			<object name="anim_chargin_handle_reload" enabled="true" />
+		</animation_group>
+	</animations>
+  <graphics>
+        <object name="g_body" enabled="true" />
+		<object name="g_charging_handle" enabled="true" />
+		<object name="g_fire_selector" enabled="true" />
+  </graphics>
+</dynamic_object>

@@ -8,10 +8,23 @@ local america_very_hard = {
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 	}	
 local america_dw = {
+		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2",
 		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
 	}		
 local america_zeal = {
+		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
+		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault", --sshh don't tell anyone i did this :>
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer",
+		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_cloaker",
+		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+		["units/payday2/characters/ene_fbi_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+		["units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
+		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
@@ -70,10 +83,12 @@ local murkywater = {
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",
 		--Scripted Spawns Only
-		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
-		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",	
-		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",	
+		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",	
+		["units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security"] = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",	
+		["units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1"] = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",	
+		["units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"] = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",	
+		["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870",	
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
@@ -127,8 +142,13 @@ local murkywater_2 = {
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",
 		--Scripted Spawns Only
+		--Elite Murky Guards
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",	
 		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
+		["units/pd2_dlc_des/characters/ene_murkywater_no_light_not_security/ene_murkywater_no_light_not_security"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
+		["units/pd2_dlc_des/characters/ene_murkywater_not_security_1/ene_murkywater_not_security_1"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
+		["units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
+		["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",	
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
@@ -350,8 +370,9 @@ local nypd = {
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1",
 		--Scripted Spawns Only
-		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2"		
+		--Green Guys For SH
+		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
+		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"		
 	}
 
 --LAPD Scripted Spawn Replacements
@@ -400,7 +421,7 @@ function ElementSpawnEnemyDummy:init(...)
 
 	--Murkywater
 	if ai_type == "murkywater" then
-		if job == "crojob2" then
+		if job == "crojob2" or job == "vit" or job == "dark" then
 			if murkywater_2[self._values.enemy] then
 				self._values.enemy = murkywater_2[self._values.enemy]
 			end

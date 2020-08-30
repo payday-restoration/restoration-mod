@@ -79,7 +79,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dark.ai_group_type = murkywater	
 	self.dark.player_style = "sneak_suit"
 	
-	self.kosugi.package = {"packages/kosugi", "packages/miscassets"}
+	self.kosugi.package = {"packages/kosugi", "packages/murkyassets"}
 	self.kosugi.ai_group_type = murkywater	
 	self.kosugi.player_style = "sneak_suit"			
 	

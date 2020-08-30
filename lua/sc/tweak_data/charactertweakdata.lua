@@ -759,6 +759,11 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.chatter = presets.enemy_chatter.swat
 	self.swat.melee_weapon = nil
 	self.swat.melee_weapon_dmg_multiplier = 1
+	if is_murky then
+	    self.swat.has_alarm_pager = true
+	else
+	    self.swat.has_alarm_pager = false
+	end
 	if job == "chill_combat" then
 		self.swat.steal_loot = true
 	else
@@ -828,6 +833,11 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat.steal_loot = nil
 	else
 		self.heavy_swat.steal_loot = true
+	end
+	if is_murky then
+	    self.heavy_swat.has_alarm_pager = true
+	else
+	    self.heavy_swat.has_alarm_pager = false
 	end
 	self.heavy_swat.static_weapon_preset = false
 	self.heavy_swat.static_dodge_preset = true

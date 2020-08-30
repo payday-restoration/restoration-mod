@@ -1,6 +1,4 @@
-local at_enter_ori = MissionEndState.at_enter
 function MissionEndState:at_enter(old_state, params)
-	at_enter_ori(self, old_state, params)
 	managers.environment_effects:stop_all()
 
 	local is_safe_house = managers.job:current_job_data() and managers.job:current_job_id() == "safehouse"

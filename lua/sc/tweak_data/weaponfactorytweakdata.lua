@@ -2827,7 +2827,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 		recoil = 1,
 		spread = -1
 	}
-
+	
+	table.insert(self.wpn_fps_smg_mac10.uses_parts, "wpn_fps_smg_mac10_s_no")
+	table.insert(self.wpn_fps_smg_mac10_npc.uses_parts, "wpn_fps_smg_mac10_s_no")		
+	
+	self.wpn_fps_smg_mac10_npc.uses_parts = deep_clone(self.wpn_fps_smg_mac10.uses_parts)	
+	
 end)
 
 --Reinfeld 880
@@ -3116,7 +3121,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		"wpn_fps_upg_o_sig",
 		"wpn_fps_upg_o_bmg",
 		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1"
+		"wpn_fps_upg_o_fc1",
+		--Custom stuff
+		"wpn_fps_shot_r870_s_folding_ext"
 	}
 	
 	self.wpn_fps_shot_r870_npc.uses_parts = deep_clone(self.wpn_fps_shot_r870.uses_parts)
@@ -3313,7 +3320,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		"wpn_fps_upg_o_sig",
 		"wpn_fps_upg_o_bmg",
 		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1"
+		"wpn_fps_upg_o_fc1",
+		--Custom stuff
+		"wpn_fps_shot_r870_s_folding_ext"
 	}	
 	
 	self.wpn_fps_shot_serbu_npc.uses_parts = deep_clone(self.wpn_fps_shot_serbu.uses_parts)
@@ -3444,9 +3453,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 		damage_far_mul = -300
 	}
 	
-	--Base reload mult to better match timers
-	self.parts.wpn_fps_shot_huntsman_body_standard.custom_stats = {reload_speed_mult = 1.25}
-
 	--Gangsta Special Stock
 	self.parts.wpn_fps_shot_huntsman_s_short.pcs = {
 		10,
@@ -4390,20 +4396,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 		wpn_fps_upg_o_uh = { "wpn_fps_ass_g3_body_rail" },
 		wpn_fps_upg_o_fc1 = { "wpn_fps_ass_g3_body_rail" },		
 	}
-	
-	--Override Table
-	self.wpn_fps_lmg_hk21.override = {
-		wpn_fps_upg_ammo_half_that = {
-			supported = true,
-			stats = {
-				value = 1,
-				total_ammo_mod = 20,
-				concealment = -2
-			},
-			custom_stats = {movement_speed = 0.9},	
-		}
-	}		
-	
+		
 	--HK21 Part Additions
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_lmg_hk21_npc.uses_parts, "wpn_fps_upg_o_specter")	
@@ -4449,9 +4442,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_hk21_npc.uses_parts, "wpn_fps_upg_o_fc1")		
-
-	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_ammo_half_that")
-	table.insert(self.wpn_fps_lmg_hk21_npc.uses_parts, "wpn_fps_upg_ammo_half_that")			
 			
 	self.wpn_fps_lmg_hk21_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk21.uses_parts)		
 		
@@ -4502,19 +4492,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 		recoil = 1,
 		spread = -1
 	}
-
-	--Override Table
-	self.wpn_fps_lmg_m249.override = {
-		wpn_fps_upg_ammo_half_that = {
-			supported = true,
-			stats = {
-				value = 1,
-				total_ammo_mod = 20,
-				concealment = -2
-			},
-			custom_stats = {movement_speed = 0.9},	
-		}
-	}
 	
 	--M249 Part Additions
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_specter")
@@ -4561,9 +4538,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m249", "resmod_m249", function(sel
 
 	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_o_fc1")		
-
-	table.insert(self.wpn_fps_lmg_m249.uses_parts, "wpn_fps_upg_ammo_half_that")
-	table.insert(self.wpn_fps_lmg_m249_npc.uses_parts, "wpn_fps_upg_ammo_half_that")			
 			
 	self.wpn_fps_lmg_m249_npc.uses_parts = deep_clone(self.wpn_fps_lmg_m249.uses_parts)			
 
@@ -4640,16 +4614,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 					reload = 2,
 					extra_ammo = -40,
 				}
-		},
-		wpn_fps_upg_ammo_half_that = {
-			supported = true,
-			stats = {
-				value = 1,
-				total_ammo_mod = 20,
-				concealment = -2
-			},
-			custom_stats = {movement_speed = 0.9},	
-		}			
+		}		
 	}
 	
 	--Fuck
@@ -4741,9 +4706,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_o_fc1")		
-
-	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_fps_upg_ammo_half_that")
-	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_fps_upg_ammo_half_that")		
 
 	table.insert(self.wpn_fps_lmg_rpk.uses_parts, "wpn_upg_ak_s_psl")
 	table.insert(self.wpn_fps_lmg_rpk_npc.uses_parts, "wpn_upg_ak_s_psl")		
@@ -6900,19 +6862,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	}				
 	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = {"silencer"}
 	
-	--Override Tables
-	self.wpn_fps_lmg_mg42.override = {
-		wpn_fps_upg_ammo_half_that = {
-			supported = true,
-			stats = {
-				value = 1,
-				total_ammo_mod = 20,
-				concealment = -2
-			},
-			custom_stats = {movement_speed = 0.9},	
-		}
-	}
-	
 	--Rails
 	self.wpn_fps_lmg_mg42.adds = { 
 		wpn_fps_upg_o_specter = { "wpn_fps_snp_mosin_rail" },
@@ -6981,9 +6930,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_fc1")
 	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_o_fc1")		
-
-	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ammo_half_that")
-	table.insert(self.wpn_fps_lmg_mg42_npc.uses_parts, "wpn_fps_upg_ammo_half_that")			
 			
 	self.wpn_fps_lmg_mg42_npc.uses_parts = deep_clone(self.wpn_fps_lmg_mg42.uses_parts)			
 
@@ -7874,7 +7820,6 @@ function WeaponFactoryTweakData:_init_b682()
 		stats = {value = 1},
 		texture_bundle_folder = "character_pack_bonnie",
 		dlc = "pd2_clan",
-		custom_stats = {reload_speed_mult = 1.25},
 		animations = {
 			reload = "reload",
 			reload_not_empty = "reload_not_empty"
@@ -12252,17 +12197,7 @@ function WeaponFactoryTweakData:_init_par()
 		"sight",
 		"vertical_grip"
 	}
-	self.wpn_fps_lmg_par.override = {
-		wpn_fps_upg_ammo_half_that = {
-			supported = true,
-			stats = {
-				value = 1,
-				total_ammo_mod = 20,
-				concealment = -2
-			},
-			custom_stats = {movement_speed = 0.9},	
-		}
-	}		
+	self.wpn_fps_lmg_par.override = {}		
 	self.wpn_fps_lmg_par.default_blueprint = {
 		"wpn_fps_lmg_par_b_standard",
 		"wpn_fps_lmg_par_body_standard",
@@ -14228,13 +14163,13 @@ function WeaponFactoryTweakData:_init_tecci()
 		},
 		wpn_fps_upg_ammo_half_that = {
 			supported = true,
+			desc_id = "bm_wp_upg_a_halfthatkit_tecci_desc",
 			stats = {
 				value = 1,
-				total_ammo_mod = -20,
-				concealment = -3,
-				recoil = 0
+				total_ammo_mod = 50,
+				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.25, ammo_pickup_max_mul = 1.25, movement_speed = 1.25},	
+			custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5, movement_speed = 1.25},	
 		}			
 	}	
 	self.wpn_fps_ass_tecci.default_blueprint = {
@@ -14330,7 +14265,7 @@ function WeaponFactoryTweakData:_init_tecci()
 		"wpn_fps_upg_vg_ass_smg_afg",
 		"wpn_fps_upg_i_slower_rof",
 		"wpn_fps_upg_i_faster_rof",	
-		--"wpn_fps_upg_ammo_half_that"
+		"wpn_fps_upg_ammo_half_that"
 	}
 	self.wpn_fps_ass_tecci_npc = deep_clone(self.wpn_fps_ass_tecci)
 	self.wpn_fps_ass_tecci_npc.unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci/wpn_fps_ass_tecci_npc"
@@ -24895,7 +24830,6 @@ function WeaponFactoryTweakData:_init_coach()
 		a_obj = "a_body",
 		type = "lower_reciever",
 		name_id = "bm_wp_coach_body_standard",
-		custom_stats = {reload_speed_mult = 1.25},
 		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_body_standard",
 		supported = true,
 		stats = {value = 1}
@@ -27191,6 +27125,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	}
 	self.parts.wpn_fps_lmg_m60_fg_tactical.supported = true
 	self.parts.wpn_fps_lmg_m60_fg_tactical.stats = {
+		value = 1,
 		spread = -1,
 		recoil = 1
 	}
@@ -27220,22 +27155,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	self.parts.wpn_fps_lmg_m60_fg_keymod.stats = {
 		spread = 1,
 		recoil = -1,
+		concealment = -1,
 		value = 1
 	}
-	
-	--Override Table
-	self.wpn_fps_lmg_m60.override = {
-		wpn_fps_upg_ammo_half_that = {
-			supported = true,
-			stats = {
-				value = 1,
-				total_ammo_mod = 20,
-				concealment = -2
-			},
-			custom_stats = {movement_speed = 0.9},	
-		}
-	}
-	
+		
 	--M60 Part Additions
 	
 	--[[
@@ -27285,9 +27208,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_fc1")		
 	
 	]]--
-
-	table.insert(self.wpn_fps_lmg_m60.uses_parts, "wpn_fps_upg_ammo_half_that")
-	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_ammo_half_that")			
 			
 	self.wpn_fps_lmg_m60_npc.uses_parts = deep_clone(self.wpn_fps_lmg_m60.uses_parts)			
 
@@ -28496,7 +28416,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
 				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
 				forbids = {}
-			}
+			},
+			wpn_fps_shot_r870_s_folding_ext = {
+				unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_fps_shot_shorty_s_legendary",
+				third_unit = "units/payday2_cash/safes/lones/weapons/wpn_fps_shot_shorty_legendary_pts/wpn_third_shot_shorty_s_legendary",
+				forbids = {}
+			}			
 		}
 	}
 	table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_upg_serbu_legend")
@@ -31177,12 +31102,8 @@ end
 		alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
 		dlc = "sc",
 		supported = true,
-		stats = {
-			value = 1,
-			concealment = -3,
-			total_ammo_mod = 20
-		},
-		custom_stats = {movement_speed = 0.9},
+		stats = {},
+		custom_stats = {},
 		internal_part = true
 	}
 	self.parts.wpn_lmg_rpk_m_ban = {
@@ -31375,21 +31296,6 @@ end
 		internal_part = true,
 		forbids = {"wpn_fps_upg_extra_mp_unlock"}
 	}
-	table.list_append(self.wpn_fps_lmg_hk21.uses_parts, {
-		"wpn_fps_upg_ammo_half_that"
-	})
-	table.list_append(self.wpn_fps_lmg_m249.uses_parts, {
-		"wpn_fps_upg_ammo_half_that"
-	})
-	table.list_append(self.wpn_fps_lmg_rpk.uses_parts, {
-		"wpn_fps_upg_ammo_half_that"
-	})
-	table.list_append(self.wpn_fps_lmg_mg42.uses_parts, {
-		"wpn_fps_upg_ammo_half_that"
-	})
-	table.list_append(self.wpn_fps_lmg_par.uses_parts, {
-		"wpn_fps_upg_ammo_half_that"
-	})
 	table.list_append(self.wpn_fps_lmg_hk21.uses_parts, {
 		"wpn_fps_upg_i_slower_rof"
 	})

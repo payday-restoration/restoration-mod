@@ -4019,7 +4019,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aug.timers.reload_empty = 3.4
 	self.aug.panic_suppression_chance = 0.0
 	self.aug.CLIP_AMMO_MAX = 30
-	self.g36.BURST_FIRE = 2
+	self.g36.BURST_FIRE = 3
 	self.g36.ADAPTIVE_BURST_SIZE = false																	
 	self.g36.auto.fire_rate = 0.08
 	self.g36.fire_mode_data.fire_rate = 0.08
@@ -4238,7 +4238,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.huntsman.AMMO_PICKUP = self:_pickup_chance()
 	self.huntsman.sounds.fire_single = "huntsman_fire"
 	self.huntsman.sounds.fire_auto = "huntsman_fire"
-	self.huntsman.BURST_FIRE = 2
+	self.huntsman.BURST_FIRE = 3
 	self.huntsman.BURST_FIRE_RATE_MULTIPLIER = 120				
 	self.huntsman.ADAPTIVE_BURST_SIZE = false	
 	self.huntsman.CAN_TOGGLE_FIREMODE = false			
@@ -4663,7 +4663,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"smg"
 	}
 	self.hk21.CLIP_AMMO_MAX = 100
-	self.hk21.AMMO_MAX = 180
+	self.hk21.AMMO_MAX = 270
 	self.hk21.AMMO_PICKUP = self:_pickup_chance()
 	self.hk21.fire_mode_data.fire_rate = 0.075
 	self.hk21.auto.fire_rate = 0.075
@@ -4678,7 +4678,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 24,
 		spread_moving = 8,
 		zoom = 1,
-		concealment = 22,
+		concealment = 20,
 		suppression = 9,
 		alert_size = 9,
 		extra_ammo = 101,
@@ -4686,6 +4686,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		value = 9,
 		reload = 20
 	}
+	self.hk21.swap_speed_multiplier = 0.9
 	self.hk21.stats_modifiers = nil
 	self.m249.categories = {
 		"lmg",
@@ -4693,7 +4694,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.m249.desc_id = "bm_menu_sc_m249_desc"
 	self.m249.CLIP_AMMO_MAX = 200
-	self.m249.AMMO_MAX = 200
+	self.m249.AMMO_MAX = 300
 	self.m249.AMMO_PICKUP = self:_pickup_chance()
 	self.m249.fire_mode_data.fire_rate = 0.075
 	self.m249.auto.fire_rate = 0.075
@@ -4707,7 +4708,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 23,
 		spread_moving = 9,
 		zoom = 1,
-		concealment = 21,
+		concealment = 19,
 		suppression = 10,
 		alert_size = 10,
 		extra_ammo = 101,
@@ -4719,12 +4720,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m249.timers.reload_not_empty = 5.5
 	self.m249.timers.reload_empty = 5.5	
 	self.m249.panic_suppression_chance = 0.05
+	self.m249.swap_speed_multiplier = 0.9
 	self.rpk.categories = {
 		"lmg",
 		"smg"
 	}
 	self.rpk.CLIP_AMMO_MAX = 100
-	self.rpk.AMMO_MAX = 150
+	self.rpk.AMMO_MAX = 225
 	self.rpk.AMMO_PICKUP = self:_pickup_chance()
 	self.rpk.fire_mode_data.fire_rate = 0.0923076923
 	self.rpk.CAN_TOGGLE_FIREMODE = false
@@ -4740,7 +4742,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 24,
 		spread_moving = 6,
 		zoom = 1,
-		concealment = 23,
+		concealment = 21,
 		suppression = 8,
 		alert_size = 8,
 		extra_ammo = 101,
@@ -4750,6 +4752,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.rpk.stats_modifiers = nil
 	self.rpk.panic_suppression_chance = 0.055
+	self.rpk.swap_speed_multiplier = 0.9
 	self.m95.upgrade_blocks = nil
 	self.m95.has_description = true
 	self.m95.desc_id = "bm_heavy_ap_weapon_sc_desc"
@@ -5319,7 +5322,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"smg"
 	}
 	self.mg42.CLIP_AMMO_MAX = 75
-	self.mg42.AMMO_MAX = 150
+	self.mg42.AMMO_MAX = 225
 	self.mg42.AMMO_PICKUP = self:_pickup_chance()
 	self.mg42.kick.standing = self.new_m4.kick.standing
 	self.mg42.kick.crouching = self.new_m4.kick.crouching
@@ -5331,7 +5334,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 16,
 		spread_moving = 9,
 		zoom = 1,
-		concealment = 20,
+		concealment = 18,
 		suppression = 8,
 		alert_size = 8,
 		extra_ammo = 101,
@@ -5343,6 +5346,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mg42.timers.reload_not_empty = 6.25
 	self.mg42.timers.reload_empty = 6.25	
 	self.mg42.panic_suppression_chance = 0.05
+	self.mg42.swap_speed_multiplier = 0.9
 	self.c96.sounds.fire = "c96_fire"
 	self.c96.sounds.fire_single = "c96_fire"
 	self.c96.sounds.fire_auto = "g18c_fire"
@@ -6112,7 +6116,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.polymer.CAN_TOGGLE_FIREMODE = true
 	self.polymer.auto = {}
 	self.polymer.auto.fire_rate = 0.05
-	self.polymer.BURST_FIRE = 2
+	self.polymer.BURST_FIRE = 3
 	self.polymer.ADAPTIVE_BURST_SIZE = false													
 	self.polymer.kick.standing = self.new_m4.kick.standing
 	self.polymer.kick.crouching = self.new_m4.kick.crouching
@@ -6316,7 +6320,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.par.CLIP_AMMO_MAX = 100
 	self.par.fire_mode_data.fire_rate = 0.075
 	self.par.auto.fire_rate = 0.075
-	self.par.AMMO_MAX = 180
+	self.par.AMMO_MAX = 270
 	self.par.AMMO_PICKUP = self:_pickup_chance()
 	self.par.timers.reload_not_empty = 6.5
 	self.par.timers.reload_empty = 6.5
@@ -6332,7 +6336,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 24,
 		spread_moving = 9,
 		zoom = 1,
-		concealment = 22,
+		concealment = 20,
 		suppression = 9,
 		alert_size = 9,
 		extra_ammo = 101,
@@ -6341,6 +6345,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.par.stats_modifiers = nil
+	self.par.swap_speed_multiplier = 0.9
 	--See you, Space Cowboy
 	self.sparrow.AMMO_MAX = 75
 	self.sparrow.AMMO_PICKUP = self:_pickup_chance()
@@ -6615,7 +6620,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hajk.fire_mode_data.fire_rate = 0.075
 	self.hajk.auto.fire_rate = 0.075
 	self.hajk.AMMO_MAX = 75
-	self.hajk.BURST_FIRE = 2
+	self.hajk.BURST_FIRE = 3
 	self.hajk.ADAPTIVE_BURST_SIZE = false											
 	self.hajk.AMMO_PICKUP = self:_pickup_chance()
 	self.hajk.kick.standing = self.new_m4.kick.standing
@@ -6700,7 +6705,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.schakal.auto.fire_rate = 0.1
 	self.schakal.AMMO_MAX = 60
 	self.schakal.CLIP_AMMO_MAX = 25
-	self.schakal.BURST_FIRE = 2
+	self.schakal.BURST_FIRE = 3
 	self.schakal.ADAPTIVE_BURST_SIZE = false											
 	self.schakal.AMMO_PICKUP = self:_pickup_chance()
 	self.schakal.kick.standing = self.new_m4.kick.standing
@@ -8481,7 +8486,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coach.AMMO_PICKUP = self:_pickup_chance()
 	self.coach.sounds.fire_single = "coach_fire"
 	self.coach.sounds.fire_auto = "coach_fire"		
-	self.coach.BURST_FIRE = 2			
+	self.coach.BURST_FIRE = 3			
 	self.coach.CAN_TOGGLE_FIREMODE = false								
 	self.coach.BURST_FIRE_RATE_MULTIPLIER = 120
 	self.coach.DELAYED_BURST_RECOIL = true
@@ -8758,8 +8763,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"lmg",
 		"smg"
 	}
-	self.m60.CLIP_AMMO_MAX = 150
-	self.m60.AMMO_MAX = 150
+	self.m60.CLIP_AMMO_MAX = 90
+	self.m60.AMMO_MAX = 180
 	self.m60.AMMO_PICKUP = self:_pickup_chance()
 	self.m60.fire_mode_data.fire_rate = 0.10909090909
 	self.m60.auto.fire_rate = 0.10909090909
@@ -8768,14 +8773,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m60.kick.steelsight = self.new_m4.kick.steelsight
 	self.m60.supported = true
 	self.m60.stats = {
-		damage = 24,
-		spread = 12,
-		recoil = 25,
+		damage = 30,
+		spread = 15,
+		recoil = 22,
 		spread_moving = 9,
 		zoom = 1,
-		concealment = 20,
-		suppression = 10,
-		alert_size = 10,
+		concealment = 18,
+		suppression = 7,
+		alert_size = 7,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -8783,6 +8788,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.m60.stats_modifiers = nil
 	self.m60.panic_suppression_chance = 0.05	
+	self.m60.swap_speed_multiplier = 0.9
 	
 	--R700
 	self.r700.upgrade_blocks = nil
@@ -8854,7 +8860,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--this line doesn't do shit
 	--self.shatters_fury.custom = true
 	
-	--[[
 	--OICW
 	self.osipr.tactical_reload = 1		
 	self.osipr.AMMO_MAX = 120
@@ -8914,9 +8919,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr_gl.timers.reload_not_empty = 3.34
 	self.osipr_gl.timers.reload_empty = 4.5		
 	self.osipr_gl.panic_suppression_chance = 0.0
-	
-	]]--
-	
+		
 	--Anubis .45
 	self.socom.timers = {
 		reload_not_empty = 1.5435,
@@ -8936,8 +8939,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.socom.supported = true
 	self.socom.stats = {
 		damage = 45,
-		spread = 18,
-		recoil = 19,
+		spread = 16,
+		recoil = 21,
 		spread_moving = 5,
 		zoom = 1,
 		concealment = 25,
@@ -8950,6 +8953,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.socom.stats_modifiers = nil
 	self.socom.panic_suppression_chance = 0.0	
+	self.socom.swap_speed_multiplier = 0.95
 	
 	--Akimbo Anubis .45
 	self.x_socom.tactical_reload = 2
@@ -8964,8 +8968,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_socom.supported = true
 	self.x_socom.stats = {
 		damage = 45,
-		spread = 16,
-		recoil = 9,
+		spread = 14,
+		recoil = 11,
 		spread_moving = 5,
 		zoom = 1,
 		concealment = 25,
@@ -8977,7 +8981,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.x_socom.stats_modifiers = nil
-	self.x_socom.panic_suppression_chance = 0.0		
+	self.x_socom.panic_suppression_chance = 0.0	
+	self.x_socom.swap_speed_multiplier = 0.95	
 	
 	--Custom weapons below--
 if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44
@@ -9016,7 +9021,7 @@ if self.tilt then --Gambyt's AN 92
 	self.tilt.tactical_reload = 1
 	self.tilt.AMMO_MAX = 150
 	self.tilt.AMMO_PICKUP = self:_pickup_chance()
-	self.tilt.BURST_FIRE = 2
+	self.tilt.BURST_FIRE = 3
 	self.tilt.BURST_FIRE_RATE_MULTIPLIER = 3		
 	self.tilt.ADAPTIVE_BURST_SIZE = false														
 	self.tilt.fire_mode_data.fire_rate = 0.1

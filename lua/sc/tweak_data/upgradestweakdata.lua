@@ -285,7 +285,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Weapon Based Movement Modifiers--
 	self.weapon_movement_penalty.minigun = 0.75
-	self.weapon_movement_penalty.lmg = 1
+	self.weapon_movement_penalty.lmg = 0.75
 
 	--Armor Stats--
 	--Add 20 to the values in this table to get in game amounts.

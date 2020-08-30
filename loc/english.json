@@ -71,7 +71,6 @@
 	"RestorationModEnv_PetaDescID" : "Select an environment for Goat Simulator Day 1.",
 	"RestorationModEnv_FRIENDTitleID" : "Scarface Mansion",
 	"RestorationModEnv_FRIENDDescID" : "Select an environment for Scarface Mansion.",
-
 	"RestorationModINFOHUDOptionsButtonTitleID" : "Buff Tracker",
 	"RestorationModINFOHUDOptionsButtonDescID" : "Displays icons to reflect information about active skills on the left side of the screen. Does not require Alpha UI to be enabled.",
 	"RestorationModInfo_HudTitleID" : "Enable Buff Tracker",
@@ -118,8 +117,6 @@
 	"RestorationModInfo_dmg_multiplier_outnumberedDescID" : "Enables or disables tracking of this specific skill.",
 	"RestorationModInfo_unseen_strikeTitleID" : "Unseen Strike",
 	"RestorationModInfo_unseen_strikeDescID" : "Enables or disables tracking of this specific skill.",
-
-
 	"RestorationModAltLastDownColorTitleID" : "Alternative Last Down Color Grading",
 	"RestorationModAltLastDownColorDescID" : "Switches the last down color grading to color_sin_classic.",
 	"RestorationModNoBleedoutTiltTitleID" : "Disable Bleedout Camera Tilt",
@@ -153,12 +150,10 @@
 	"shadowraiud_darker" : "Shadow Raid Darker",
 	"friend_pink" : "Pink Sunset",
 	"friend_night" : "Miami Night",
-	
 	"off" : "Off",
 	"windowofoppurtunity" : "Window Of Opportunity",
 	"wheresthevan" : "Where's The Van",
-	"menu_jukebox_heist_ponr" : "Point Of No Return",
-	
+	"menu_jukebox_heist_ponr" : "Point Of No Return",	
 	"RestorationModPaintingsTitleID" : "Unused Art Gallery Paintings",
 	"RestorationModPaintingsDescID" : "Enable or disable the ability for unused paintings to spawn on Art Gallery. As host only.",
 	"RestorationModMainHUDTitleID" : "Alpha HUD ON/OFF",

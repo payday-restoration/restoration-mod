@@ -12,7 +12,7 @@
 			<param key="sun_ray_color_scale" value="2.194000005722"/>
 			<param key="global_world_overlay_texture" value=""/>
 			<param key="sun_ray_color" value="1 0.59215688705444 0.30196079611778"/>
-			<param key="global_texture" value="environments/cubemaps/cubemap_afternoon_hcm"/>
+			<param key="global_texture" value="levels/mods/skm_street/cubemaps/5"/>
 		</others>
 		<post_effect>
 			<deferred>
@@ -24,14 +24,14 @@
 						<param key="effect_light_scale" value="1"/>
 						<param key="fog_far_low_color" value="0.71372550725937 0.79215687513351 0.94117647409439"/>
 						<param key="ambient_falloff_scale" value="0"/>
-						<param key="sky_bottom_color_scale" value="0.46799999475479"/>
+						<param key="sky_bottom_color_scale" value="0.70300000905991"/>
 						<param key="ambient_color_scale" value="0"/>
 						<param key="ambient_color" value="0 0 0"/>
-						<param key="fog_max_range" value="200000"/>
+						<param key="fog_max_range" value="300000"/>
 						<param key="bloom_threshold" value="1"/>
-						<param key="sky_top_color_scale" value="4"/>
+						<param key="sky_top_color_scale" value="4.5"/>
 						<param key="sky_top_color" value="0.054901961237192 0.062745101749897 0.031372550874949"/>
-						<param key="fog_min_range" value="806"/>
+						<param key="fog_min_range" value="3000"/>
 						<param key="fog_max_density" value="0.20000000298023"/>
 					</apply_ambient>
 				</deferred_lighting>

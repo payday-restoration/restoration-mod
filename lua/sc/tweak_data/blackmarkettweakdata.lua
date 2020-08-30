@@ -184,8 +184,7 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 		global_value = "anv",
 		unit = "units/pd2_dlc_anv/characters/anv_glv_continental/anv_glv_continental",
 		third_material = "units/pd2_dlc_anv/characters/anv_glv_continental/anv_glv_continental_third"
-	}
-	
+	}	
 end
 
 --This is a helmet, not a mask--

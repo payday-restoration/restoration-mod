@@ -1,0 +1,15 @@
+<unit type="gen" slot="1">
+	<object file="units/pd2_dlc_mex/pickups/mex_pku_breaching_charge/mex_pku_breaching_charge" />
+	<network sync="spawn"/>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="hold_pku_breaching_charges" />
+			<var name="_remove_on_interact" value="true" />
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="breaching_charges" />
+		</extension>
+	</extensions>
+</unit>

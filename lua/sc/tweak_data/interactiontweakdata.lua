@@ -1,8 +1,4 @@
-InteractionTweakData.restoration = InteractionTweakData.init
-
-function InteractionTweakData:init(...)
-	InteractionTweakData:restoration(...)
-
+Hooks:PostHook( InteractionTweakData, "init", "SC_interact", function(self)
 	--Safehouse Boost for returning LVL100+ users	
 	self.res_saveboost = {}
 	self.res_saveboost.text_id = "res_saveboost"
@@ -593,4 +589,4 @@ function InteractionTweakData:init(...)
 	self.gage_assignment.sound_event = "money_grab"	
 	self.gage_assignment.sound_done = "money_grab"	
 
-end
+end)

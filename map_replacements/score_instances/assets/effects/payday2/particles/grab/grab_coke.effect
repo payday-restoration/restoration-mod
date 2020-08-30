@@ -1,0 +1,39 @@
+<effect force_synch="false">
+    <use name="effects/payday2/particles/grab/parts/coke_smoke"/>
+    <atom name="Sparks Sparkling" min_size="10" max_size="10" lifetime="2.5" random_start_time="false" start_time="0.3" preroll="0" inherit_velocity_multiplier="1" fade_in_start="0" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="-1 -1 -1" max="1 1 1"/>
+            <boxrandomvelocity relative="effect" min="-4 -4 0" max="4 5 10"/>
+            <boxrandomage min="0" max="1"/>
+            <boxrandomaspectsize size="0.1 0.1" min="0.5" max="1"/>
+            <boxrandomangle min="-3.14" max="3.14"/>
+            <boxrandomrotation relative="effect" min="1 0 0" max="1 0 0" min_rot="0" max_rot="365"/>
+            <boxrandomanglevelocity min="8" max="-8"/>
+            <boxrandomuvoffset uv_size="0.0625 0.0625" frame_start="0 0.935" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <scaledvelocityintegrator channel="world" per_particle_age="false">
+                <scale_keys loop="false">
+                    <key t="0" v="120"/>
+                    <key t="0.075657896697521" v="5"/>
+                    <key t="0.23026315867901" v="1"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <constantacceleration relative="world" acceleration="0 0 -15"/>
+            <ager/>
+            <anglevelocityintegrator/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/effects_atlas" intensity="match" billboard_type="camera_facing" rotation_channel="rotation" blend_mode="add" render_template="effect_op_glow" origo="0.5 3.4" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="1 0 0" uv_size="0.0625 0.0625" uv_offset_input="channel">
+                <size_scale_keys loop="true">
+                    <key t="0" v="14 14"/>
+                    <key t="3.7435898780823" v="0 0"/>
+                </size_scale_keys>
+                <opacity_keys loop="true">
+                    <key t="0" v="255"/>
+                    <key t="1.0153846740723" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

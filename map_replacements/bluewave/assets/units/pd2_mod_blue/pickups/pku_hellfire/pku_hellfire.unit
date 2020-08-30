@@ -1,0 +1,16 @@
+<unit type="blu" slot="1">
+	<object file="units/pd2_mod_blue/pickups/pku_hellfire/pku_hellfire" />
+	<network sync="spawn" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+		<extension class="UnitDamage" name="damage"/>
+		<extension name="interaction" class="CarryInteractionExt">
+		  <var name="tweak_data" value="gen_pku_hellfire" />
+		  <var name="_remove_on_interact" value="true" />
+		  <var name="_global_event" value="pku_hellfire" />
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="warhead" />
+		</extension>
+    </extensions>
+</unit>

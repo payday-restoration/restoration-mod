@@ -1,0 +1,14 @@
+<unit type="gen" slot="1" >
+    <object file="units/payday2/props/gen_prop_knockout_gas_canister/gen_prop_knockout_gas_canister" />
+    <dependencies>
+    	<depends_on bnk="soundbanks/regular_sfx" />
+    </dependencies>
+    <extensions>
+    	<extension name="interaction" class="UseInteractionExt">
+    		<var name="tweak_data" value="hold_turn_off_gas" />
+    		<var name="_interact_object" value="interact"/>
+    	</extension>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension name="damage" class="UnitDamage" />
+    </extensions>
+</unit>

@@ -1,0 +1,17 @@
+<!-- If the animation finishes inside the viewable area and does not finish outside of the viewable area,
+	 you must animate the root point. Or else the animation will not sync at drop in.
+	 For eample the police car arrives and stop in the viewable area, here the root point shoul be animated.
+	 The heicopter arrives and leaves the the viewable area, here all_no_root is allowed. -->
+
+<xml>
+	<anim	name="anim_boat_left"				file="anims/rubber_boat/boat_left"					blend_set="all"/>
+	<anim	name="anim_boat_right"				file="anims/rubber_boat/boat_right"					blend_set="all"/>
+	
+	
+	<anim	name="anim_drk_boat_arrive_1"		file="anims/rubber_boat/drk_boat_arrive_1"			blend_set="all"/>
+	
+	
+	<anim	name="anim_lxy_boat_arrive"			file="anims/rubber_boat/lxy_boat_arrive"			blend_set="all"/>
+	<anim	name="anim_lxy_boat_exit"			file="anims/rubber_boat/lxy_boat_exit"				blend_set="all"/>
+	
+</xml>

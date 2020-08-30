@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/pickups/gen_pku_methbag_static/gen_pku_methbag_static" orientation_object="rp_loot_bag" />
+  <sequence_manager file="units/payday2/pickups/gen_pku_methbag_static/gen_pku_methbag_static" />
+  <bodies>
+    <body  name="hinge_body_1" enabled="true" template="static">
+        <object name="rp_loot_bag" />
+        <object name="c_hinge_body_1" collision_type="box" />
+    </body>
+    <body  name="hinge_body_2" enabled="true" template="static">
+        <object name="a_hinge_body_2" />
+        <object name="c_hinge_body_2" collision_type="box"  />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="cloth" />
+  <graphics>
+    <object name="g_bag" enabled="true"/>
+  </graphics>
+</dynamic_object>

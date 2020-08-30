@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<effect force_synch="false">
+    <use_random>
+        <effect name="effects/particles/bullet_hit/flesh/bullet_impact_flesh_01"/>
+        <effect name="effects/particles/bullet_hit/flesh/bullet_impact_flesh_02"/>
+        <effect name="effects/particles/bullet_hit/flesh/bullet_impact_flesh_03"/>
+        <effect name="effects/particles/bullet_hit/flesh/bullet_impact_flesh_04"/>
+    </use_random>
+
+</effect>

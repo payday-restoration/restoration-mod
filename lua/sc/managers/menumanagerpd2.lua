@@ -126,7 +126,7 @@ function MenuManager:enable_overhaul_dialog(func)
 end
 
 function MenuCallbackHandler:PDTHChall()
-	if restoration and restoration.Options:GetValue("OTHER/PDTHChallenges") then
+	if restoration and restoration.Options:GetValue("OTHER/ResModChallenges") then
 		return true
 	end
 end
@@ -144,7 +144,7 @@ end
 PDTHHudCompletedChallenges = PDTHHudCompletedChallenges or class(PDTHHudChallenges)
 function PDTHHudCompletedChallenges:modify_node(node, data)
 	node:clean_items()
-    for _,data in pairs(managers.challenges:get_completed()) do
+    for _,data in pairs(managers.challenges_res:get_completed()) do
         local params = {
                 name = data.id,
                 text_id	= string.upper(data.name),
@@ -163,9 +163,9 @@ end
 PDTHHudActiveChallenges = PDTHHudActiveChallenges or class(PDTHHudChallenges)
 function PDTHHudActiveChallenges:modify_node(node, data)
 	node:clean_items()
-	for _,data in pairs(managers.challenges:get_near_completion()) do
-		local title_text = managers.challenges:get_title_text(data.id)
-		local description_text = managers.challenges:get_description_text(data.id)
+	for _,data in pairs(managers.challenges_res:get_near_completion()) do
+		local title_text = managers.challenges_res:get_title_text(data.id)
+		local description_text = managers.challenges_res:get_description_text(data.id)
 		local params = {
 			name = data.id,
 			text_id	= string.upper(title_text),

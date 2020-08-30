@@ -1,0 +1,14 @@
+	<dynamic_object>
+    <diesel orientation_object="rp_gov_d_int_decal_mull_3x3m" materials="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_desks" />
+    <bodies>
+        <body enabled="true" template="editor" name="editor_body" >
+            <object collision_type="box" name="c_box_editor" />
+        </body>
+    </bodies>
+    <graphics>
+        <lod_object name="g_lod_grp">
+            <object enabled="true" name="g_g_lod0" max_distance="10000" />
+            <object enabled="true" name="g_g_lod1" />
+        </lod_object>
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,25 @@
+<materials version="3">
+    <material name="mat_gen_prop_long_lamp" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_long_lamp/gen_prop_long_lamp_df"/>
+        <bump_normal_texture file="units/payday2/props/gen_prop_long_lamp/gen_prop_long_lamp_nm"/>
+    </material>
+    <material name="mat_gen_prop_long_lamp_il" render_template="effect:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_long_lamp/gen_prop_long_lamp_il"/>
+        <variable value="inside of borg queen" type="scalar" name="intensity"/>
+    </material>
+    <material name="mat_gen_prop_long_lamp_glow" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_long_lamp/gen_prop_long_lamp_glow_df"/>
+        <variable value="dimlight" type="scalar" name="intensity"/>
+        <variable value="1.5" type="scalar" name="falloff_exp"/>
+    </material>    
+    <material name="mat_gen_prop_long_lamp_glow_v2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_long_lamp/gen_prop_long_lamp_glow_v2_df"/>
+        <variable value="dimlight" type="scalar" name="intensity"/>
+        <variable value="1.5" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_gen_prop_long_lamp_glow_v3" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_long_lamp/gen_prop_long_lamp_glow_v3_df"/>
+        <variable value="neonsign" type="scalar" name="intensity"/>
+        <variable value="1.5" type="scalar" name="falloff_exp"/>
+    </material>
+</materials>

@@ -1,0 +1,29 @@
+<table>
+	<editor_groups/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="100 -600 0" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_001" position="0 -600 0" rotation="-0 0 -0 -1" unit_id="200000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -600 0" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_002" position="0 -200 0" rotation="0 0 0 -1" unit_id="200001"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -200 0" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_003" position="0 200 0" rotation="0 0 0 -1" unit_id="200002"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="142.773 -285.532 0" _prev_rot="-0 0 -0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" name_id="pku_keycard_omnia_001" position="142.773 -285.532 0" rotation="-0 0 -0 -1" unit_id="200003"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -200 0" _prev_rot="-0 0 -0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/dev_tools/level_tools/dev_nav_splitter/dev_nav_splitter_2x3m" name_id="dev_nav_splitter_2x3m_001" only_exists_in_editor="true" position="0 -100 0" rotation="-0 0 -0 -1" unit_id="200004"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -600 0" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_004" position="0 -1000 0" rotation="0 0 0 -1" unit_id="200005"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -1400 0" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_005" position="0 -1400 0" rotation="0 0 0 -1" unit_id="200006"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

@@ -25,7 +25,8 @@ core:import("CoreEvent")
 		self:_create_level_suspicion_hud(managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2))
 		_setup_player_info_hud_pd2_original(self,...)
 		self._dodge_meter = HUDDodgeMeter:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
-		self._bloody_screen = HUDEffectScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
+		self._skill_list = HUDSkill:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)))
+		self._effect_screen = HUDEffectScreen:new((managers.hud:script(PlayerBase.PLAYER_INFO_HUD_FULLSCREEN_PD2)))
 			--managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel
 			--[[
 --setup radial mouse menu
@@ -254,7 +255,52 @@ core:import("CoreEvent")
 
 	function HUDManager:activate_effect_screen(duration, color)
 		--Apply the effect screen with a color over a duration.
-		self._bloody_screen:do_effect_screen(duration, color)
+		self._effect_screen:do_effect_screen(duration, color)
+	end
+
+	--Functions to interface with the buff tracker.
+	function HUDManager:add_skill(name)
+		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
+			self._skill_list:add_skill(name)
+		end
+	end
+
+	function HUDManager:remove_skill(name)
+		self._skill_list:destroy(name)
+	end
+
+	function HUDManager:clear_skills()
+		self._skill_list:destroy(nil)
+	end
+
+	function HUDManager:start_cooldown(name, duration)
+		self._skill_list:trigger_cooldown(name, duration)
+	end
+
+	function HUDManager:change_cooldown(name, amount)
+		self._skill_list:change_start_time(name, amount)
+	end
+
+	function HUDManager:start_buff(name, duration)
+		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
+			self._skill_list:trigger_buff(name, duration)
+		end
+	end
+
+	function HUDManager:set_stacks(name, stacks)
+		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
+			self._skill_list:set_stacks(name, stacks)
+		end
+	end
+
+	function HUDManager:add_stack(name)
+		if restoration.Options:GetValue("HUD/INFOHUD/Info_Hud") and name and restoration.Options:GetValue("HUD/INFOHUD/Info_" .. name) then
+			self._skill_list:add_stack(name)
+		end
+	end
+
+	function HUDManager:remove_stack(name)
+		self._skill_list:remove_stack(name)
 	end
 
 function HUDManager:setup_anticipation(total_t)

@@ -1,0 +1,13 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser" orientation_object="rp_are_prop_laser_2m" />
+	<bodies>
+		<body name="body_static" enabled="true" template="editor">
+			<object name="rp_are_prop_laser_2m" />
+			<object name="c_capsule_01" collision_type="capsule" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_02" enabled="true" />
+		<object name="g_01" enabled="true" />
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,61 @@
+<dynamic_object>
+    <diesel orientation_object="rp_bnk_vault_door_light_steel_wall" materials="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" />
+	<sequence_manager file="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only"/>
+	
+	<animations>
+		<animation_group name="open" enabled="false" >
+			<object name="anim_door_open" />
+			<object name="anim_lock_upper" />
+			<object name="anim_lock_bottom" />
+			<object name="anim_wheel" />
+			<object name="anim_piston_upper" />
+			<object name="anim_piston_bottom" />
+			<object name="anim_piston_left" />
+			<object name="anim_piston_right" />
+			<object name="anim_lock_box" />
+		</animation_group>		
+	</animations>
+	
+    <bodies>
+        <body enabled="false" template="static" name="body0" >
+            <object name="a_door" />
+            <object collision_type="box" name="c_box_01" />
+            <object collision_type="mesh_mopp" name="c_frame" />
+            <object collision_type="convex" name="c_convex_01" />
+            <object collision_type="convex" name="c_convex_02" />
+        </body>
+		<body name="body_door" enabled="true" template="animated" >
+            <object name="anim_door_open" />
+            <object collision_type="convex" name="c_convex_door" />
+		</body>
+		<body name="body_door" enabled="true" template="animated" collides_with_mover="false" >
+            <object name="anim_door_open" />
+            <object collision_type="mesh_mopp" name="c_mesh_mopp_door" />
+		</body>
+		<body name="body_door" enabled="true" template="animated" collides_with_mover="false" >
+            <object name="anim_wheel" />
+            <object collision_type="mesh_mopp" name="c_mesh_mopp_wheel" />
+		</body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="false" name="dm_sheet_metal" material="sheet_metal" />
+        <decal_mesh enabled="true" name="dm_metal_door" material="metal" />
+        <decal_mesh enabled="true" name="dm_lock_upper" material="metal" />
+        <decal_mesh enabled="true" name="dm_lock_bottom" material="metal" />
+        <decal_mesh enabled="false" name="dm_frame" material="metal" />
+    </decal_surfaces>
+    <graphics>
+        <object name="g_box_lock" 				enabled="true" />
+        <object name="g_lock_upper" 			enabled="true" />
+        <object name="g_lock_bottom" 			enabled="true" />
+        <object name="g_wheel" 					enabled="true" />
+        <object name="g_piston_upper" 			enabled="true" />
+        <object name="g_piston_bottom" 			enabled="true" />
+        <object name="g_piston_left" 			enabled="true" />
+        <object name="g_piston_right" 			enabled="true" />
+        <object name="g_door" 					enabled="true" />
+        <object name="g_frame" 					enabled="false" />
+        <object name="g_test_2" 				enabled="false" />
+        <object name="s_s" 						enabled="false" />
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,15 @@
+<materials version="3">
+    <material name="mat_gen_prop_crate_wood" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_crate_wood/gen_prop_crate_wood_df"/>
+        <bump_normal_texture file="units/payday2/props/gen_prop_crate_wood/gen_prop_crate_wood_nm"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_zero_df"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+	<material name="mat_gen_prop_crate_wood_green" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_crate_wood/gen_prop_crate_wood_green_df"/>
+        <bump_normal_texture file="units/payday2/props/gen_prop_crate_wood/gen_prop_crate_wood_nm"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_zero_df"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

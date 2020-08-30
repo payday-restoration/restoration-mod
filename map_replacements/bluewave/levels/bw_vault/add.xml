@@ -1,0 +1,185 @@
+<table directory="assets">
+	<add unload_on_restart="true">
+		<material_config path="units/pd2_mod_blue/architecture/vault/bw_vault" unload="true"/>
+		<unit path="units/pd2_mod_blue/architecture/vault/bw_vault_doorway" unload="true"/>
+		<object path="units/pd2_mod_blue/architecture/vault/bw_vault_doorway" unload="true"/>
+		<model path="units/pd2_mod_blue/architecture/vault/bw_vault_doorway" unload="true"/>
+		<unit path="units/pd2_mod_blue/architecture/vault/bw_vault_wall" unload="true"/>
+		<object path="units/pd2_mod_blue/architecture/vault/bw_vault_wall" unload="true"/>
+		<model path="units/pd2_mod_blue/architecture/vault/bw_vault_wall" unload="true"/>
+		<unit path="units/pd2_mod_blue/architecture/vault/bw_vault_window" unload="true"/>
+		<object path="units/pd2_mod_blue/architecture/vault/bw_vault_window" unload="true"/>
+		<model path="units/pd2_mod_blue/architecture/vault/bw_vault_window" unload="true"/>
+		<unit path="units/pd2_mod_blue/architecture/vault/bw_vault_room" unload="true"/>
+		<object path="units/pd2_mod_blue/architecture/vault/bw_vault_room" unload="true"/>
+		<model path="units/pd2_mod_blue/architecture/vault/bw_vault_room" unload="true"/>
+		<unit path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<object path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<model path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<material_config path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<sequence_manager path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+		<texture path="units/pd2_mod_blue/architecture/vault/murkywater_armadillo" unload="true"/>
+		<texture path="units/pd2_mod_blue/guis/hud_pickups_keycard_omnia" unload="true"/>
+		<material_config path="units/pd2_mod_blue/architecture/warehouse/warehouse" unload="true"/>
+		<unit path="units/pd2_mod_blue/architecture/warehouse/warehouse_vault_cap" unload="true"/>
+		<object path="units/pd2_mod_blue/architecture/warehouse/warehouse_vault_cap" unload="true"/>
+		<model path="units/pd2_mod_blue/architecture/warehouse/warehouse_vault_cap" unload="true"/>
+		<unit path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<object path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<model path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<material_config path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<sequence_manager path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" unload="true"/>
+		<texture path="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia_df" unload="true"/>
+		<unit path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<object path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<model path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<material_config path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<sequence_manager path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" unload="true"/>
+		<texture path="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia_df" unload="true"/>
+		<cooked_physics path="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_security_servers/gen_prop_security_server_hightech" type="unit">
+		<material_config path="units/payday2/props/gen_prop_security_servers/gen_prop_security_server" unload="true"/>
+		<object path="units/payday2/props/gen_prop_security_servers/gen_prop_security_server_hightech" unload="true"/>
+		<unit path="units/payday2/props/gen_prop_security_servers/gen_prop_security_server_hightech" unload="true"/>
+	</add>
+	<add path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" type="unit">
+		<font path="fonts/font_digital" unload="true"/>
+		<material_config path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" unload="true"/>
+		<object path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" unload="true"/>
+		<sequence_manager path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" unload="true"/>
+		<unit path="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_interactable_panel_keycard/gen_interactable_panel_keycard" type="unit">
+		<material_config path="units/pickups/pickup_bank_manager_key/pickup_bank_manager_key" unload="true"/>
+		<object path="units/payday2/equipment/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+		<sequence_manager path="units/payday2/equipment/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+		<unit path="units/payday2/equipment/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" type="unit">
+		<material_config path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+		<object path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+		<sequence_manager path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+		<unit path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" type="unit">
+		<material_config path="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" unload="true"/>
+		<object path="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" unload="true"/>
+		<sequence_manager path="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" unload="true"/>
+		<unit path="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_interactable_lance_large/gen_interactable_lance_large" type="unit">
+		<effect load="true" path="effects/payday2/environment/drill" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/parts/drill_sparks_particles" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/parts/drill_sparks" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/drill_jammed" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/thermal_lance" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/parts/thermal_fire" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/parts/thermal_spark" unload="true"/>
+		<gui path="guis/timer_gui" unload="true"/>
+		<material_config path="units/payday2/equipment/gen_interactable_lance_large/gen_interactable_lance_large" unload="true"/>
+		<object path="units/payday2/equipment/gen_interactable_lance_large/gen_interactable_lance_large" unload="true"/>
+		<sequence_manager path="units/payday2/equipment/gen_interactable_lance_large/gen_interactable_lance_large" unload="true"/>
+		<unit path="units/payday2/equipment/gen_interactable_lance_large/gen_interactable_lance_large" unload="true"/>
+	</add>
+	<add path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board_axis" type="unit">
+		<material_config path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board" unload="true"/>
+		<object path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board" unload="true"/>
+		<sequence_manager path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board" unload="true"/>
+		<unit path="units/payday2/pickups/gen_pku_circuit_board/gen_pku_circuit_board_axis" unload="true"/>
+	</add>
+	<add path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" type="unit">
+		<unit path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+		<object path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+		<unit path="units/payday2/characters/civ_acc_keycard_clipped/civ_acc_keycard_clipped" unload="true"/>
+		<object path="units/payday2/characters/civ_acc_keycard_clipped/civ_acc_keycard_clipped" unload="true"/>
+		<material_config path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+		<sequence_manager path="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" unload="true"/>
+	</add>
+	<add path="units/payday2/pickups/gen_pku_gold/gen_pku_gold" type="unit">
+		<effect load="true" path="effects/payday2/particles/grab/grab_gold" unload="true"/>
+		<material_config path="units/payday2/pickups/gen_pku_gold/gen_pku_gold" unload="true"/>
+		<object path="units/payday2/pickups/gen_pku_gold/gen_pku_gold" unload="true"/>
+		<sequence_manager path="units/payday2/pickups/gen_pku_gold/gen_pku_gold" unload="true"/>
+		<unit path="units/payday2/pickups/gen_pku_gold/gen_pku_gold" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" type="unit">
+		<material_config path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" unload="true"/>
+		<object path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" unload="true"/>
+		<unit path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" type="unit">
+		<material_config path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
+		<object path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
+		<unit path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" type="unit">
+		<material_config path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
+		<object path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
+		<unit path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" type="unit">
+		<material_config path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
+		<object path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
+		<unit path="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_mad/pickups/mad_pku_master_server_value_4/mad_pku_master_server_value_4" type="unit">
+		<material_config path="units/pd2_dlc_mad/pickups/mad_pku_master_server_value_1/mad_pku_master_server_value_1" unload="true"/>
+		<object path="units/pd2_dlc_mad/pickups/mad_pku_master_server_value_1/mad_pku_master_server_value_1" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_mad/pickups/mad_pku_master_server_value_1/mad_pku_master_server_value_1" unload="true"/>
+		<unit path="units/pd2_dlc_mad/pickups/mad_pku_master_server_value_4/mad_pku_master_server_value_4" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x2x3" type="unit">
+		<material_config path="core/material_configs/hub_elements" unload="true"/>
+		<object path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x2x3" unload="true"/>
+		<unit path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x2x3" unload="true"/>
+	</add>
+	<add path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_whiteish_small" type="unit">
+		<material_config path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_docks" unload="true"/>
+		<object path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_whiteish_small" unload="true"/>
+		<unit path="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_whiteish_small" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_short/props/gen_fbi_usb_stick/gen_fbi_usb_stick" type="unit">
+		<bnk path="soundbanks/regular_sfx" unload="true"/>
+		<material_config path="units/pd2_dlc_short/props/gen_fbi_usb_stick/gen_fbi_usb_stick" unload="true"/>
+		<object path="units/pd2_dlc_short/props/gen_fbi_usb_stick/gen_fbi_usb_stick" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_short/props/gen_fbi_usb_stick/gen_fbi_usb_stick" unload="true"/>
+		<unit path="units/pd2_dlc_short/props/gen_fbi_usb_stick/gen_fbi_usb_stick" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_mex/props/mex_prop_breaching_detonator/mex_prop_breaching_detonator" type="unit">
+		<material_config path="units/pd2_dlc_mex/props/mex_prop_breaching_detonator/mex_prop_breaching_detonator" unload="true"/>
+		<object path="units/pd2_dlc_mex/props/mex_prop_breaching_detonator/mex_prop_breaching_detonator" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_mex/props/mex_prop_breaching_detonator/mex_prop_breaching_detonator" unload="true"/>
+		<unit path="units/pd2_dlc_mex/props/mex_prop_breaching_detonator/mex_prop_breaching_detonator" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_berry/props/bry_prop_breaching_charge/bry_prop_breaching_charge" type="unit">
+		<material_config path="units/pd2_dlc_berry/props/bry_prop_breaching_charge/bry_prop_breaching_charge" unload="true"/>
+		<object path="units/pd2_dlc_berry/props/bry_prop_breaching_charge/bry_prop_breaching_charge" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_berry/props/bry_prop_breaching_charge/bry_prop_breaching_charge" unload="true"/>
+		<unit path="units/pd2_dlc_berry/props/bry_prop_breaching_charge/bry_prop_breaching_charge" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_brb/equipment/thermite_interactable_no_consume/thermite_interactable_no_consume" type="unit">
+		<material_config path="units/pd2_dlc_cro/thermite_interactable/thermite_interactable" unload="true"/>
+		<object path="units/pd2_dlc_brb/equipment/thermite_interactable_no_consume/thermite_interactable_no_consume" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_brb/equipment/thermite_interactable_no_consume/thermite_interactable_no_consume" unload="true"/>
+		<unit path="units/pd2_dlc_brb/equipment/thermite_interactable_no_consume/thermite_interactable_no_consume" unload="true"/>
+	</add>
+	<add path="effects/payday2/particles/explosions/breaching_charge_explosion" type="effect">
+		<effect load="true" path="effects/payday2/particles/explosions/breaching_charge_explosion" unload="true"/>
+		<effect load="true" path="effects/payday2/particles/equipment/sparks_random_slow" unload="true"/>
+		<effect load="true" path="effects/cinematics/sparks_random_02_slow" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_3x3m" type="unit">
+		<material_config path="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_desks" unload="true"/>
+		<object path="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_3x3m" unload="true"/>
+		<unit path="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_3x3m" unload="true"/>
+	</add>
+	<add path="effects/payday2/environment/gas_vent_branchbank" type="effect">
+		<effect load="true" path="effects/payday2/environment/gas_vent_branchbank" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" type="unit">
+		<unit path="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" unload="true"/>
+		<object path="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" unload="true"/>
+		<material_config path="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser" unload="true"/>
+	</add>
+</table>

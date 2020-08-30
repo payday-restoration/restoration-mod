@@ -1,0 +1,12 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_arena/architecture/are_lobby/are_cross" orientation_object="rp_are_cross" />
+	<bodies>
+		<body name="body_static" enabled="true" template="editor">
+			<object name="rp_are_cross" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+</dynamic_object>

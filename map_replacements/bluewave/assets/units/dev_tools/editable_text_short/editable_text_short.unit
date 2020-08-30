@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<unit type="dev" slot="1">
+  <object file="units/dev_tools/editable_text_short/editable_text_short" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="editable_gui" class="EditableGui">
+      <var name="_gui_object" value="g_editable_text" />
+      <var name="_text" value="SHORT" />
+      <var name="_font" value="fonts/font_medium_shadow_mf" />
+    </extension>
+  </extensions>
+</unit>

@@ -27,7 +27,7 @@ tweak_data.concealment_cap = 32
 tweak_data.projectiles.launcher_rocket.damage = 120
 tweak_data.projectiles.launcher_rocket.player_damage = 60
 tweak_data.projectiles.launcher_rocket.range = 500
-tweak_data.projectiles.launcher_rocket.curve_pow = 1
+tweak_data.projectiles.launcher_rocket.curve_pow = 0.1
 
 --Grenade launcher stuff--
 tweak_data.projectiles.launcher_frag.damage = 80
@@ -209,7 +209,7 @@ tweak_data.dot_types.poison = {
 
 --Stun nades--
 tweak_data.projectiles.concussion.damage = 0
-tweak_data.projectiles.concussion.curve_pow = 1
+tweak_data.projectiles.concussion.curve_pow = 0.8
 tweak_data.projectiles.concussion.range = 1000
 tweak_data.projectiles.concussion.duration = {min = 7.5, additional = 0}
 
@@ -254,14 +254,77 @@ tweak_data.projectiles.bravo_frag = {
 	name_id = "bm_bravo_frag",
 	damage = 15.0, --150 damage at point blank.
 	player_damage = 15.0,
-	curve_pow = 0.25,
+	curve_pow = 0.1,
 	range = 500
 }
 
-if difficulty_index <= 4 then --Grenades deal reduced damage on lower difficulties.
+--Spring Cluster Grenades.
+tweak_data.projectiles.cluster_fuck = {
+	name_id = "bm_cluster_fuck",
+	damage = 15.0, --150 damage at point blank.
+	player_damage = 15.0,
+	curve_pow = 0.1,
+	range = 500,
+	cluster = "child_grenade",
+	cluster_count = 3
+}
+
+tweak_data.projectiles.child_grenade = {
+	name_id = "bm_child_grenade",
+	init_timer = 1,
+	damage = 10.0, --100 damage at point blank.
+	player_damage = 10.0,
+	curve_pow = 0.1,
+	range = 500,
+	launch_speed = 100
+}
+
+if difficulty_index <= 4 then --Enemy grenades deal reduced damage on lower difficulties.
 	tweak_data.projectiles.bravo_frag.damage = 9.0
 	tweak_data.projectiles.bravo_frag.player_damage = 9.0
+	tweak_data.projectiles.cluster_fuck.damage = 9.0
+	tweak_data.projectiles.cluster_fuck.player_damage = 9.0
+	tweak_data.projectiles.cluster_fuck.cluster_count = 2
+	tweak_data.projectiles.child_grenade.damage = 6.0
+	tweak_data.projectiles.child_grenade.player_damage = 6.0
 end
+
+--SABR Grenade Launcher.
+tweak_data.projectiles.launcher_frag_osipr = {
+	damage = 60,
+	launch_speed = 2500,
+	curve_pow = 1,
+	player_damage = 30,
+	range = 250,
+	init_timer = 2.5,
+	mass_look_up_modifier = 1,
+	sound_event = "gl_explode",
+	name_id = "bm_launcher_frag"
+}
+tweak_data.projectiles.launcher_incendiary_osipr = {
+	damage = 2,
+	launch_speed = 2500,
+	curve_pow = 1,
+	player_damage = 2,
+	fire_dot_data = {
+		dot_trigger_chance = 50,
+		dot_damage = 1,
+		dot_length = 3.1,
+		dot_trigger_max_distance = 3000,
+		dot_tick_period = 0.5
+	},
+	range = 350,
+	init_timer = 2.5,
+	mass_look_up_modifier = 1,
+	sound_event = "gl_explode",
+	sound_event_impact_duration = 0.25,
+	name_id = "bm_launcher_incendiary",
+	burn_duration = 5,
+	burn_tick_period = 0.5
+}
+
+--tweak_data.weapon_disable_crit_for_damage.launcher_frag_osipr.explosion = "false"
+--tweak_data.weapon_disable_crit_for_damage.launcher_frag_osipr.fire = "false"
 
 --But why--
 tweak_data.team_ai.stop_action.delay = 0.8
@@ -588,3 +651,67 @@ tweak_data.player.stances.model70.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.tti.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.siltstone.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.r700.steelsight.shakers.breathing.amplitude = 0
+
+if not Global.game_settings then
+    return
+end
+
+local Inter = tweak_data.interaction
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
+_G.restoration.data = {
+    sounds = {
+        start = {"g92", "g10", "a01x_any", "g72", "p29"},
+        success = {"g28", "v46", "p17"},
+        halfway = {"t02x_sin"},
+        fail = {"g60", "g29"},
+        complete = {"v46", "v07"},
+    },
+    circles = {
+        "ui/interact_lockpick_circle_1",
+        "ui/interact_lockpick_circle_2",
+        "ui/interact_lockpick_circle_3",
+    },
+    circle_radius = {
+        133,
+        134,
+        270,
+        320,
+        360,
+        400,
+    },
+    difficulty = {
+        0.9,
+        0.93,
+        0.94,
+        0.95,
+        0.96,
+        0.97
+    },
+    speed = {
+		160,
+		180,
+        190,
+        220,
+        300,
+        400
+    },
+    failed_cooldown = 1,
+    completed_delay = 0.5,
+    num_of_circles = difficulty_index < 7 and 2 or 3,
+    direction = {1, -1, 1, -1, 1, -1},
+    max_circles = 6
+}
+
+if difficulty_index == 5 then
+    difficulty_index = 4
+elseif difficulty_index == 6 or difficulty_index == 7 then
+    difficulty_index = 5
+end
+
+local raid = _G.restoration.data
+
+local lock_hard = Inter.pick_lock_hard
+lock_hard.failable = true
+lock_hard.number_of_circles = math.clamp(difficulty_index, 3, raid.max_circles)

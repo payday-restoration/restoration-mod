@@ -1,0 +1,21 @@
+<dynamic_object>
+    <diesel materials="units/payday2/props/gen_prop_knockout_gas_canister/gen_prop_knockout_gas_canister" orientation_object="rp_gen_prop_knockout_gas_canister" />
+    <sequence_manager file="units/payday2/props/gen_prop_knockout_gas_canister/gen_prop_knockout_gas_canister" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object collision_type="mesh_mopp" name="c_c" />
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_dm" material="sheet_metal" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_canister" />
+    <graphic_group name="grp_outline" enabled="true">
+        <lod_object name="g_lod">
+            <object name="g_outline_lod0" enabled="true"  max_distance="300" />
+            <object name="g_outline_lod1" enabled="true"/>
+        </lod_object>
+    </graphic_group>
+    </graphics>
+</dynamic_object>

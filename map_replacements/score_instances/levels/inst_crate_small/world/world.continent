@@ -1,0 +1,57 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_cocaine" name_id="ind_interactable_hardcase_loot_cocaine_001" position="0 0 65" rotation="0 0 0 -1" unit_id="100001"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_money" name_id="ind_interactable_hardcase_loot_money_001" position="0 0 65" rotation="0 0 0 -1" unit_id="100002"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/equipment/ind_interactable_hardcase_loot/ind_interactable_hardcase_loot_gold" name_id="ind_interactable_hardcase_loot_gold_001" position="0 0 65" rotation="0 0 0 -1" unit_id="100003"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 70" _prev_rot="0 0 0 -1" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 5" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_dark/equipment/drk_interactable_weapon_case_1x1/drk_interactable_weapon_case_1x1" name_id="drk_interactable_weapon_case_1x1_001" position="0 0 70" rotation="0 0 0 -1" unit_id="100006"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 50" _prev_rot="0 0 0.707107 -0.707107" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 -15" local_rot="0 0 -0.707107 0.707107" mesh_variation="" name="units/pd2_dlc_pal/pickups/pal_pku_money_stack_huge/pal_pku_money_stack_huge" name_id="pal_pku_money_stack_huge_001" position="0 0 50" rotation="0 0 0.707107 -0.707107" unit_id="100007"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0 -1" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/pickups/gen_pku_tf2_turret_ammo/gen_pku_tf2_turret_ammo_closed" name_id="gen_pku_tf2_turret_ammo_closed_001" position="0 0 65" rotation="0 0 0 -1" unit_id="100008"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/pickups/gen_pku_tf2_turret_ammo/gen_pku_tf2_turret_ammo_open" name_id="gen_pku_tf2_turret_ammo_open_001" position="0 0 65" rotation="0 0 0 -1" unit_id="100009"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0 -1" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_jfr/props/jfr_crate_wine/jfr_crate_wine" name_id="jfr_crate_wine_001" position="0 0 65" rotation="0 0 0 -1" unit_id="100010"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0 -1" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_mcmansion/props/mcm_prop_evidence_box/mcm_prop_evidence_box" name_id="mcm_prop_evidence_box_001" position="0 0 65" rotation="0 0 0 -1" unit_id="100012"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0.707107 -0.707107" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 -0.707107 0.707107" mesh_variation="" name="units/payday2/pickups/gen_pku_cocaine/gen_pku_cocaine" name_id="gen_pku_cocaine_001" position="0 0 65" rotation="0 0 0.707107 -0.707107" unit_id="100013"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -50 65" _prev_rot="0 0 0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 -0.707107 0.707107" mesh_variation="" name="units/payday2/pickups/gen_pku_cocaine/gen_pku_cocaine_pure" name_id="gen_pku_cocaine_pure_001" position="0 0 65" rotation="0 0 0.707107 -0.707107" unit_id="100014"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -30 73" _prev_rot="0 0 0 -1" continent="world" local_pos="-15 20 8" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/com_prop_jewelry_jewels/spawn_prop_jewelry_box_01" name_id="spawn_prop_jewelry_box_01_001" position="-15 20 73" rotation="0 0 0 -1" unit_id="100015"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -30 73" _prev_rot="0 0 0 -1" continent="world" local_pos="-15 20 8" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/com_prop_jewelry_jewels/spawn_prop_jewelry_box_03" name_id="spawn_prop_jewelry_box_03_001" position="-15 20 73" rotation="0 0 0 -1" unit_id="100017"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -30 73" _prev_rot="0 0 0 -1" continent="world" local_pos="-15 20 8" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/com_prop_jewelry_jewels/spawn_prop_jewelry_box_04" name_id="spawn_prop_jewelry_box_04_001" position="-15 20 73" rotation="0 0 0 -1" unit_id="100016"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -30 73" _prev_rot="0 0 0 -1" continent="world" local_pos="-15 20 8" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/com_prop_jewelry_jewels/spawn_prop_jewelry_box_02" name_id="spawn_prop_jewelry_box_02_001" position="-15 20 73" rotation="0 0 0 -1" unit_id="100018"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc1/equipment/ind_interactable_shipping_crate/ind_interactable_shipping_crate" name_id="CRATE" position="0 0 0" rotation="-0 0 -0 -1" unit_id="100000"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

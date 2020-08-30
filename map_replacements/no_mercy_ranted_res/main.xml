@@ -1,0 +1,124 @@
+<table name="no_mercy_ranted">
+	<AddFiles directory="assets">
+		<texture path="guis/mercy/icon_nmh"/>
+	</AddFiles>
+	<AssetUpdates id="-1" provider="modworkshop" use_local_dir="true" version="1"/>
+	<Localization default="english.txt" directory="loc">
+		<loc file="english.txt" language="english"/>
+	</Localization>
+	<level ai_group_type="nypd" briefing_dialog="Play_pln_nmh_brf" cube="cube_apply_heist_bank" failure_event="Play_pln_nmh_end_fail" id="nmh_res" intro_event="Play_old_ban_nmh_intro" load_screen="guis/dlcs/nmh/textures/loading/job_nmh_df" max_bags="0" narrator="bain">
+		<add file="levels/nmh_res/add.xml"/>
+		<assets>
+			<asset name="ammo_bag"/>
+			<asset name="health_bag"/>
+			<asset name="grenade_crate"/>
+		</assets>
+		<include directory="levels/nmh_res">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="art_light/art_light.continent" type="binary"/>
+			<file file="art_light/art_light.mission" type="binary"/>
+			<file file="lights/lights.continent" type="binary"/>
+			<file file="lights/lights.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="env/env.continent" type="binary"/>
+			<file file="env/env.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="environments/newer_darkness.environment" type="custom_xml"/>
+			<file file="environments/no_mercy_default.environment" type="custom_xml"/>
+			<file file="environments/maybe_some_mercy.environment" type="custom_xml"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_pln_nmh_end_win"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/dlcs/nmh/job_nmh"/>
+			<value_node value="packages/nypdassets"/>
+			<value_node value="levels/narratives/classics/nmh/world"/>
+			<value_node value="levels/narratives/classics/nmh/world_sounds"/>
+			<value_node value="levels/narratives/classics/nmh/art_light/art_light"/>
+			<value_node value="levels/narratives/classics/nmh/lights/lights"/>
+			<value_node value="levels/narratives/classics/nmh/world/world"/>
+			<value_node value="levels/narratives/classics/nmh/editor_only/editor_only"/>
+			<value_node value="levels/narratives/classics/nmh/env/env"/>
+			<value_node value="levels/narratives/continental/fish/basement/basement"/>
+		</packages>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<narrative name_id = "heist_nmh" brief_id="heist_nmh_crimenet" briefing_event="Play_rb1_nmh_cbf_01" contact="classic" hide_from_crimenet="false" icon="guis/mercy/icon_nmh" id="nmh" jc="30" region="street">
+		<chain>
+			<table level_id="nmh_res" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="31000"/>
+			<value_node value="62000"/>
+			<value_node value="155000"/>
+			<value_node value="310000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+			<value_node value="400000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="Play_pln_nmh_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_branchbank1"/>
+			<value_node value="cn_branchbank3"/>
+		</crimenet_videos>
+		<date_added>
+			<value_node value="2018"/>
+			<value_node value="10"/>
+			<value_node value="30"/>
+		</date_added>
+		<debrief_event>
+			<value_node value=""/>
+		</debrief_event>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="32000"/>
+			<value_node value="32000"/>
+			<value_node value="32000"/>
+			<value_node value="32000"/>
+			<value_node value="32000"/>
+			<value_node value="32000"/>
+			<value_node value="32000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="22400"/>
+			<value_node value="22400"/>
+			<value_node value="22400"/>
+			<value_node value="22400"/>
+			<value_node value="22400"/>
+			<value_node value="22400"/>
+			<value_node value="22400"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="60000"/>
+			<value_node value="74000"/>
+			<value_node value="125000"/>
+			<value_node value="185000"/>
+			<value_node value="260000"/>
+			<value_node value="260000"/>
+			<value_node value="260000"/>
+		</payout>
+	</narrative>
+</table>

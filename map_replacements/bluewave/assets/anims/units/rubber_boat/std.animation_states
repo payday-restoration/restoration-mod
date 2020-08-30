@@ -1,0 +1,59 @@
+<xml>
+	<state name="std" type="template_state" segment="base">
+		<default blend="0"/>
+
+		<to	name="boat_left"						redirect="std/drive/boat_left"/>
+		<to	name="boat_right"						redirect="std/drive/boat_right"/>
+		
+		
+		<to	name="drk_boat_arrive_1"				redirect="std/drive/drk_boat_arrive_1"/>
+		
+		
+		<to	name="lxy_boat_arrive"					redirect="std/drive/lxy_boat_arrive"/>
+		<to	name="lxy_boat_exit"					redirect="std/drive/lxy_boat_exit"/>
+		
+	</state>
+
+	<state name="std/empty" type="emptyloop" segment="base">
+		<keys>
+			<key at="9" callback="anim_clbk_empty_full_blend" class_name="base"/>
+			<key at="exit" callback="anim_clbk_empty_exit" class_name="base"/>
+		</keys>
+	</state>
+
+	<state name="std/drive" type="template_state" segment="base">
+		<keys>
+			<key at="enter" callback="anim_clbk_animated_driving" class_name="base" param1="true"/>
+			<key at="exit" callback="anim_clbk_animated_driving" class_name="base" param1="false"/>
+		</keys>
+	</state>
+
+	<!-- General -->
+	<state name="std/drive/boat_left" type="once" segment="base">
+		<anim name="anim_boat_left"/>
+		<exit name="std/empty"/>
+	</state>
+
+	<state name="std/drive/boat_right" type="once" segment="base">
+		<anim name="anim_boat_right"/>
+		<exit name="std/empty"/>
+	</state>
+
+	
+	<state name="std/drive/drk_boat_arrive_1" type="once" segment="base">
+		<anim name="anim_drk_boat_arrive_1"/>
+		<exit name="std/empty"/>
+	</state>
+	
+	
+	<state name="std/drive/lxy_boat_arrive" type="once" segment="base">
+		<anim name="anim_lxy_boat_arrive"/>
+		<exit name="std/empty"/>
+	</state>
+	<state name="std/drive/lxy_boat_exit" type="once" segment="base">
+		<anim name="anim_lxy_boat_exit"/>
+		<exit name="std/empty"/>
+	</state>
+	
+
+</xml>

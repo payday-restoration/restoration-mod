@@ -1,0 +1,210 @@
+<table>
+	<statics>
+		<table>
+			<unit_data continent="pc_only" name="units/payday2/architecture/com_ext_parking_garage/com_ext_parking_garage_concrete_decal_edge_a" name_id="com_ext_parking_garage_concrete_decal_edge_a_001" position="300 -2095 525" rotation="0 0 0.707107 -0.707107" unit_id="300000"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole_big" name_id="decal_ground_manhole_big_001" position="595 -1834 506" rotation="0 0 0 -1" unit_id="300042"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate3" name_id="decal_ground_grate3_001" position="-65 -1700 525" rotation="0 0 -0.707107 -0.707107" unit_id="300043"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate4" name_id="decal_ground_grate4_001" position="-391 -1352 526" rotation="0 0 -0.707107 -0.707107" unit_id="300044"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate4" name_id="decal_ground_grate4_002" position="-447 -1191 526" rotation="0 0 1 -1.19209e-007" unit_id="300045"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_001" position="84 -1899 525" rotation="0 0 0 -1" unit_id="300046"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_002" position="-85 -1899 525" rotation="0 0 0 -1" unit_id="300047"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_001" position="-225 -1918 525" rotation="0 0 0 -1" unit_id="300048"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_002" position="-18 -2621 525" rotation="0 0 0 -1" unit_id="300049"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_003" position="170 -3420 525" rotation="0 0 0 -1" unit_id="300050"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_004" position="-20 -4622 525" rotation="0 0 0 -1" unit_id="300051"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate4" name_id="decal_ground_grate4_003" position="-391 -2752 526" rotation="0 0 -0.707107 -0.707107" unit_id="300052"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate4" name_id="decal_ground_grate4_004" position="-391 -2952 526" rotation="0 0 -0.707107 -0.707107" unit_id="300053"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate4" name_id="decal_ground_grate4_005" position="-391 -4552 526" rotation="0 0 -0.707107 -0.707107" unit_id="300054"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate4" name_id="decal_ground_grate4_006" position="-391 -4952 526" rotation="0 0 -0.707107 -0.707107" unit_id="300055"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_003" position="84 -3499 525" rotation="0 0 0 -1" unit_id="300056"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_004" position="-85 -3499 525" rotation="0 0 0 -1" unit_id="300057"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_005" position="-775 -641 525" rotation="0 0 -0.707107 -0.707107" unit_id="300058"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_006" position="-775 -810 525" rotation="0 0 -0.707107 -0.707107" unit_id="300059"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_007" position="-2075 -641 525" rotation="0 0 -0.707107 -0.707107" unit_id="300060"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_008" position="-2075 -810 525" rotation="0 0 -0.707107 -0.707107" unit_id="300061"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_009" position="-3725 -641.001 525" rotation="0 0 -0.707107 -0.707107" unit_id="300062"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_010" position="-3725 -810 525" rotation="0 0 -0.707107 -0.707107" unit_id="300063"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_011" position="-5325 -641.001 525" rotation="0 0 -0.707107 -0.707107" unit_id="300064"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_012" position="-5325 -810.001 525" rotation="0 0 -0.707107 -0.707107" unit_id="300065"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_013" position="-1725 890.999 525" rotation="0 0 -0.707107 -0.707107" unit_id="300066"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_014" position="-1725 722 525" rotation="0 0 -0.707107 -0.707107" unit_id="300067"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_015" position="-500 891 525" rotation="0 0 -0.707107 -0.707107" unit_id="300068"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_016" position="-500 722 525" rotation="0 0 -0.707107 -0.707107" unit_id="300069"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_017" position="184 1401 525" rotation="0 0 0 -1" unit_id="300070"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_018" position="15 1401 525" rotation="0 0 0 -1" unit_id="300071"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_019" position="184 2476 525" rotation="0 0 0 -1" unit_id="300072"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_020" position="15 2476 525" rotation="0 0 0 -1" unit_id="300073"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_021" position="184 3751 525" rotation="0 0 0 -1" unit_id="300074"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_022" position="15 3751 525" rotation="0 0 0 -1" unit_id="300075"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_023" position="184 4826 525" rotation="0 0 0 -1" unit_id="300076"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate1" name_id="decal_ground_grate1_024" position="15 4826 525" rotation="0 0 0 -1" unit_id="300077"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate3" name_id="decal_ground_grate3_002" position="-102 1135 525" rotation="0 0 0 -1" unit_id="300078"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_005" position="-82 2078 525" rotation="0 0 -0.707107 -0.707107" unit_id="300131"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_006" position="111 2720 525" rotation="0 0 1 -1.19209e-007" unit_id="300132"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate3" name_id="decal_ground_grate3_003" position="196 3250 525" rotation="0 0 0 -1" unit_id="300133"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate3" name_id="decal_ground_grate3_004" position="-750 604 525" rotation="0 0 -0.707107 -0.707107" unit_id="300134"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_007" position="-18 -724 525" rotation="0 0 0 -1" unit_id="300135"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate4" name_id="decal_ground_grate4_007" position="-229 1548 525" rotation="0 0 0.707107 -0.707107" unit_id="300136"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole" name_id="decal_ground_manhole_001" position="-150 659 525" rotation="0 0 0 -1" unit_id="300137"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole" name_id="decal_ground_manhole_002" position="-145 -1052 525" rotation="0 0 0 -1" unit_id="300138"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole_big" name_id="decal_ground_manhole_big_002" position="600 -400 505.186" rotation="0 0 0 -1" unit_id="300139"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole_big" name_id="decal_ground_manhole_big_003" position="550 1850 506.001" rotation="0 0 0 -1" unit_id="300140"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole_big" name_id="decal_ground_manhole_big_004" position="550 -3150 506.001" rotation="0 0 0 -1" unit_id="300141"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole_big" name_id="decal_ground_manhole_big_005" position="-1100 900 526" rotation="0 0 0 -1" unit_id="300142"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole" name_id="decal_ground_manhole_003" position="-1949 660 525" rotation="0 0 0 -1" unit_id="300143"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate3" name_id="decal_ground_grate3_005" position="1548 901 525" rotation="0 0 -0.707107 -0.707107" unit_id="300144"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_008" position="-1218 -915 525" rotation="0 0 0 -1" unit_id="300145"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate2" name_id="decal_ground_grate2_009" position="-3019 -628 525" rotation="0 0 0 -1" unit_id="300146"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_grate3" name_id="decal_ground_grate3_006" position="-1747 2097 525" rotation="0 0 -0.707107 -0.707107" unit_id="300147"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole_big" name_id="decal_ground_manhole_big_006" position="1700 2700 526" rotation="0 0 0 -1" unit_id="300148"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/world/architecture/street/decals/ground/decal_ground_manhole_big" name_id="decal_ground_manhole_big_007" position="3500 2900 526" rotation="0 0 -0.382683 -0.92388" unit_id="300149"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/payday2/props/shadow_mullplan/mullplan_vehicle" name_id="mullplan_vehicle_001" position="962.292 -657.465 506" rotation="0 0 0.992546 -0.121869" unit_id="300009"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/payday2/props/shadow_mullplan/mullplan_vehicle" name_id="mullplan_vehicle_002" position="976.094 458.312 505" rotation="0 0 0.979925 0.199368" unit_id="300010"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/payday2/props/shadow_mullplan/mullplan_vehicle" name_id="mullplan_vehicle_003" position="413 3324 507" rotation="0 0 0 -1" unit_id="300011"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="813.149 2662.88 505.001" _prev_rot="0 0 -0.224951 -0.97437" continent="pc_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/shadow_mullplan/mullplan_vehicle" name_id="van01_mul" position="813.149 2662.88 505.001" rotation="0 0 -0.224951 -0.97437" unit_id="300012"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/payday2/props/shadow_mullplan/mullplan_vehicle" name_id="mullplan_vehicle_005" position="399 2508 507" rotation="0 0 -2.68221e-007 -1" unit_id="300013"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/payday2/props/shadow_mullplan/mullplan_vehicle" name_id="mullplan_vehicle_006" position="-2983 250 505" rotation="0 0 0.707107 -0.707107" unit_id="300014"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/payday2/props/shadow_mullplan/mullplan_vehicle" name_id="mullplan_vehicle_007" position="580.576 1145.4 506" rotation="0 0 0.130526 -0.991445" unit_id="300015"/>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="core/units/light_omni/light_omni" name_id="light_omni_001" position="-2906 1505 1854" rotation="0 0 0 -1" unit_id="300016">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="0.34902 0.854902 0.909804" enabled="true" falloff_exponent="4" far_range="1100" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="pc_only" name="units/payday2/props/shadow_mullplan/mullplan_vehicle" name_id="mullplan_vehicle_008" position="-553.965 254.283 508" rotation="0 0 0.688354 -0.725375" unit_id="300017"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+	<editor_groups/>
+</table>

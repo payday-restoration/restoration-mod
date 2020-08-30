@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<modelscript>
+	
+	<!--///////////////-->
+	<!--Welcome to Hell-->
+	<!--///////////////-->
+	
+    <import file="keycard_reader_standalone_omnia.glb" type="gltf" create_objects="true"/>
+	
+	
+</modelscript>

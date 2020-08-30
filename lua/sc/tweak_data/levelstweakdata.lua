@@ -37,7 +37,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
 	
-	self.pex.package = {"packages/mexicoassets", "packages/addslaughter", "packages/job_pex"}
+	self.pex.package = {"packages/mexicoassets", "packages/job_pex"}
 	self.pex.player_style = "slaughterhouse"
 	
 	--///MURKYWATER LEVELS\\\--
@@ -63,7 +63,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.wwh.package = {"packages/murkyassets", "packages/lvl_wwh"}
 	self.wwh.ai_group_type = murkywater 
 	
-	self.arm_for.package = {"packages/murkyassets", "packages/narr_arm_for", "packages/addbdu"}
+	self.arm_for.package = {"packages/murkyassets", "packages/narr_arm_for"}
 	self.arm_for.ai_group_type = murkywater 
 	self.arm_for.player_style = "sneak_suit"
 	
@@ -71,26 +71,26 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"	
 
-	self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/addslaughter", "packages/murkyassets"}
+	self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/murkyassets"}
 	self.crojob2.ai_group_type = murkywater			
 	self.crojob2.player_style = "slaughterhouse"	
 
-	self.dark.package = {"packages/job_dark", "packages/addbdu", "packages/murkyassets"}
+	self.dark.package = {"packages/job_dark", "packages/murkyassets"}
 	self.dark.ai_group_type = murkywater	
 	self.dark.player_style = "sneak_suit"
 	
-	self.kosugi.package = {"packages/kosugi", "packages/addbdu", "packages/murkyassets"}
+	self.kosugi.package = {"packages/kosugi", "packages/miscassets"}
 	self.kosugi.ai_group_type = murkywater	
 	self.kosugi.player_style = "sneak_suit"			
 	
 	--///NYPD LEVELS\\\--
 	self.spa.ai_group_type = nypd
-	self.spa.package = {"packages/job_spa", "packages/nypdassets", "packages/addslaughter", "levels/narratives/dentist/mia/stage2/world_sounds"}
+	self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.spa.player_style = "slaughterhouse"
 	
 	self.brb.ai_group_type = nypd
-	self.brb.package = {"packages/lvl_brb", "packages/nypdassets", "packages/addsnow"}
-	self.brb.player_style = "winter_suit"
+	self.brb.package = {"packages/lvl_brb", "packages/nypdassets"}
+	self.brb.player_style = "peacoat"
 	
 	self.red2.ai_group_type = nypd
 	self.red2.package = {"packages/narr_red2", "packages/nypdassets"}
@@ -101,18 +101,23 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.flat.ai_group_type = nypd
 	self.flat.package = {"packages/narr_flat", "packages/nypdassets"}
 	
-	self.glace.ai_group_type = nypd
-	self.glace.package = {"packages/narr_glace", "packages/nypdassets"}
+	if restoration and restoration.Options:GetValue("OTHER/QuietRain") then
+		self.glace.ai_group_type = nypd
+		self.glace.package = {"packages/narr_glace", "packages/addrain", "packages/nypdassets"}
+	else
+		self.glace.ai_group_type = nypd
+		self.glace.package = {"packages/narr_glace", "packages/nypdassets"}
+	end
 	
 	self.dah.ai_group_type = nypd
-	self.dah.package = {"packages/lvl_dah", "packages/nypdassets", "packages/addslaughter"}
+	self.dah.package = {"packages/lvl_dah", "packages/nypdassets"}
 	self.dah.player_style = "slaughterhouse"
 	
 	self.dinner.ai_group_type = nypd
-	self.dinner.package = {"packages/narr_dinner", "packages/nypdassets", "packages/addslaughter"}
+	self.dinner.package = {"packages/narr_dinner", "packages/nypdassets", "packages/miscassets"}
 	self.dinner.player_style = "slaughterhouse"
 	
-	self.man.package = {"packages/narr_man", "packages/addslaughter", "packages/secret_stash"}
+	self.man.package = {"packages/narr_man", "packages/secret_stash"}
 	self.man.player_style = "slaughterhouse"
 	self.man.teams = {
 		criminal1 = {
@@ -189,8 +194,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.friend.player_style = "suit_sunny"
 	
 	self.kenaz.ai_group_type = lapd
-	self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/lapdassets", "packages/addtux", "packages/rex_gold"}	
-	self.kenaz.player_style = "tux"				
+	self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/lapdassets", "packages/rex_gold"}	
+	self.kenaz.player_style = "continental"				
 	
 	self.rvd1.ai_group_type = lapd
 	self.rvd1.package = {"packages/job_rvd", "packages/lapdassets"}	
@@ -202,59 +207,62 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 	--///NEW OUTFITS\\\--
 	
-	self.fish.package = {"packages/lvl_fish", "packages/nypdassets", "packages/addtux"}
+	self.fish.package = {"packages/lvl_fish", "packages/nypdassets"}
 	self.fish.player_style = "tux"
 	
-	self.arm_cro.package = {"packages/narr_arm_cro", "packages/addslaughter"}
-	self.arm_cro.player_style = "slaughterhouse"
+	self.born.player_style = "punk"
 	
-	self.arm_hcm.package = {"packages/narr_arm_hcm", "packages/addslaughter"}
-	self.arm_hcm.player_style = "slaughterhouse"	
+	self.arm_cro.package = {"packages/narr_arm_cro"}
+	self.arm_cro.player_style = "jumpsuit"
 	
-	self.arm_fac.package = {"packages/narr_arm_fac", "packages/addslaughter"}
-	self.arm_fac.player_style = "slaughterhouse"
+	self.arm_hcm.package = {"packages/narr_arm_hcm"}
+	self.arm_hcm.player_style = "jumpsuit"	
 	
-	self.arm_par.package = {"packages/narr_arm_par", "packages/addslaughter"}
-	self.arm_par.player_style = "slaughterhouse"		
+	self.arm_fac.package = {"packages/narr_arm_fac"}
+	self.arm_fac.player_style = "jumpsuit"
 	
-	self.arm_und.package = {"packages/narr_arm_und", "packages/addscrubs"}
+	self.arm_par.package = {"packages/narr_arm_par"}
+	self.arm_par.player_style = "jumpsuit"		
+	
+	self.arm_und.package = {"packages/narr_arm_und"}
 	self.arm_und.player_style = "scrub"
 							
-	self.hox_1.package = {"packages/narr_hox_1", "packages/addslaughter"}
+	self.hox_1.package = {"packages/narr_hox_1"}
 	self.hox_1.player_style = "slaughterhouse"
-	self.hox_2.package = {"packages/narr_hox_2", "packages/addslaughter"}
+	self.hox_2.package = {"packages/narr_hox_2"}
 	self.hox_2.player_style = "slaughterhouse"
-	self.hox_3.package = {"packages/narr_hox_3", "packages/addslaughter"}
+	self.hox_3.package = {"packages/narr_hox_3"}
 	self.hox_3.player_style = "slaughterhouse"
 	
 	self.rat.player_style = "suit_sunny"
 	
-	self.election_day_1.package = {"packages/narr_election1", "packages/addbdu"}
+	self.election_day_1.package = {"packages/narr_election1"}
 	self.election_day_1.player_style = "sneak_suit"	
-	self.election_day_2.package = {"packages/narr_election2", "packages/addbdu"}
+	self.election_day_2.package = {"packages/narr_election2"}
 	self.election_day_2.player_style = "sneak_suit"
 	
-	self.gallery.package = {"packages/narr_framing_1", "packages/addbdu"}
+	self.gallery.package = {"packages/narr_framing_1"}
 	self.gallery.player_style = "sneak_suit"
 	self.framing_frame_1.player_style = "sneak_suit"
-	self.framing_frame_1.package = {"packages/narr_framing_1", "packages/addbdu"}
+	self.framing_frame_1.package = {"packages/narr_framing_1"}
 	self.framing_frame_3.player_style = "sneak_suit"
-	self.framing_frame_3.package = {"packages/narr_framing_3", "packages/addbdu"}
+	self.framing_frame_3.package = {"packages/narr_framing_3"}
 			
 	self.alex_1.player_style = "suit_sunny"
 	self.alex_2.player_style = "suit_sunny"
-	self.alex_3.package = {"packages/narr_alex3", "packages/addslaughter"}
+	self.alex_3.package = {"packages/narr_alex3"}
 	self.alex_3.player_style = "slaughterhouse"
 	
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 	
-	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/addbdu", "packages/murkyassets",}
+	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/murkyassets",}
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 	
 	self.chew.player_style = "loud_suit"
 	
+	self.pbr2.package = {"packages/narr_jerry2", "packages/miscassets"}
 	self.pbr2.player_style = "loud_suit"
 	
 	self.watchdogs_1.player_style = "suit_sunny"
@@ -263,8 +271,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.watchdogs_1_night.player_style = "suit_sunny"
 	self.watchdogs_2_day.player_style = "loud_suit"
 	
-	self.mia_1.player_style = "suit_sunny"
-	self.mia_2.player_style = "suit_sunny"
+	self.mia_1.player_style = "miami"
+	self.mia_2.player_style = "miami"
 
 	self.mia_2.teams = {
 		criminal1 = {
@@ -329,15 +337,42 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 	self.mia2_new.teams = self.mia_2.teams
 
-	self.cane.package = {"packages/cane", "packages/addsnow", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
+	self.cane.package = {"packages/cane", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 	self.cane.player_style = "winter_suit"
 							
-	self.mus.package = {"packages/narr_mus", "packages/addbdu"}
+	self.mus.package = {"packages/narr_mus"}
 	self.mus.player_style = "sneak_suit"
 	
 	--///GANGSTER VOICEOVER\\\--
 	self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
+	
+	--//CHRISTMAS HEISTS\\--
+	
+	--hoxton breakout xmas day 1
+	table.insert(self._level_index, "xmn_hox_1")
+	self.xmn_hox_1 = deep_clone(self.hox_1)
+	self.xmn_hox_1.name_id = "heist_xmn_hox_1_name"
+	self.xmn_hox_1.player_style = "loud_suit"
+	self.xmn_hox_1.world_name = "narratives/dentist/hox/stage_1_xmn"
+	self.xmn_hox_1.load_screen = "guis/dlcs/xmn/textures/loading/job_hox_1_xmn_df"
+	--self.xmn_hox_1.music_overrides = {track_20 = "track_66"} --what's the point of doing this lmao
+	
+	--hoxton breakout xmas day 2
+	table.insert(self._level_index, "xmn_hox_2")
+	self.xmn_hox_2 = deep_clone(self.hox_2)
+	self.xmn_hox_2.name_id = "heist_xmn_hox_2_name"
+	self.xmn_hox_2.player_style = "loud_suit"
+	self.xmn_hox_2.world_name = "narratives/dentist/hox/stage_2_xmn"
+	self.xmn_hox_2.load_screen = "guis/dlcs/xmn/textures/loading/job_hox_2_xmn_df"
+	--self.xmn_hox_2.music_overrides = {track_21 = "track_67"}
+	
+	--breakin' feds xmas
+	table.insert(self._level_index, "xmn_tag")
+	self.xmn_tag = deep_clone(self.tag)
+	self.xmn_tag.name_id = "heist_xmn_tag_name"
+	self.xmn_tag.world_name = "narratives/locke/tag_xmn"
+	self.xmn_tag.load_screen = "guis/dlcs/xmn/textures/loading/job_tag_xmn_df"
 	
 	--///ZOMBIE LEVELS\\\--
 	self.haunted.package = {"packages/zombieassets", "packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
@@ -361,7 +396,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mallcrasher.ghost_bonus = 0.05
 	
 	--///REAPER LEVELS\\\--
-	self.mad.package = {"packages/akanassets", "packages/lvl_mad", "packages/addsnow"}
+	self.mad.package = {"packages/akanassets", "packages/lvl_mad"}
 	self.mad.player_style = "winter_suit"
 	--We're never actually told where the forest is ;)
 	self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}

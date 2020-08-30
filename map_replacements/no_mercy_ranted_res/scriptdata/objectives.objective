@@ -1,0 +1,5 @@
+<table>
+	<objective description="heist_nmh_new_desc" id="heist_nmh_new" text="heist_nmh_new"/>
+	<objective description="heist_nmh_new2_desc" id="heist_nmh_new2" text="heist_nmh_new2"/>
+	<objective description="heist_nmh_new3_desc" id="heist_nmh_new3" text="heist_nmh_new3"/>
+</table>

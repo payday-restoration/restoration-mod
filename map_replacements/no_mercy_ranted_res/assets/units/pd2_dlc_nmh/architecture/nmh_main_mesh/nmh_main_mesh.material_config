@@ -1,0 +1,61 @@
+<materials version="3">
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_ceiling_tiles" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_nm"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+        <material_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_gsma"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_crome" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_tiling_crome_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_tiling_metallics_nm"/>
+        <material_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_tiling_crome_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_generic_painted_wall" version="2">
+        <diffuse_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_df"/>
+        <bump_normal_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_nm"/>
+        <material_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_metal2" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_starwell/nmh_stairwell_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_starwell/nmh_stairwell_nm"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_starwell/nmh_stairwell_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_vinyl_floor" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_int_hospital_floor_linoleum/nmh_int_hospital_floor_linoleum_df"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_int_hospital_floor_linoleum/nmh_int_hospital_floor_linoleum_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_int_hospital_floor_linoleum/nmh_int_hospital_floor_linoleum_nm"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="shadow_caster_only" name="shadow_caster" version="2"/>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_plaster_board" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_plasterboard_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_plasterboard_nm"/>
+        <material_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_plasterboard_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_concrete" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_int_concrete_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_int_concrete_nm"/>
+        <material_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_int_concrete_floor_01_gsma"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_trimsheet_1" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_nm"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_trimsheet_2" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_dark_brushed_metal_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_dark_brushed_metal_nm"/>
+        <material_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_dark_brushed_metal_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_wood" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/props/nmh_lobby_table/nmh_lobby_table_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/props/nmh_lobby_table/nmh_lobby_table_nm"/>
+        <material_texture file="units/pd2_dlc_nmh/props/nmh_lobby_table/nmh_lobby_table_gsma"/>
+    </material>
+</materials>

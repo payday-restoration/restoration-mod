@@ -1,0 +1,15 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="-1.80006e-005 -6.10352e-005 115" _prev_rot="1.2666e-007 5.21541e-008 -1.49012e-008 -1" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="true" disable_shadows="false" hide_on_projection_light="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_mod_blue/equipment/keycard_security_box/keycard_security_box" name_id="keycard_security_box_001" position="-1.80006e-005 -6.10352e-005 115" rotation="1.2666e-007 5.21541e-008 -1.49012e-008 -1" unit_id="100000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0.97 -2 132.749" _prev_rot="-0.684584 -0.177045 0.177045 -0.684584" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="true" disable_shadows="false" hide_on_projection_light="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="hide" name="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia" name_id="pku_keycard_omnia_001" position="0.969982 -2.00006 132.749" rotation="-0.684584 -0.177045 0.177045 -0.684584" unit_id="100001"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

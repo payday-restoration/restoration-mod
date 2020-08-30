@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<unit type="item" slot="1">
+	<object file="units/payday2/equipment/gen_interactable_panel_keycard/gen_interactable_panel_keycard" />
+	<network sync="spawn"/>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="mission_door_device" class="MissionDoorDevice"/>
+			<extension name="interaction" class="MissionDoorDeviceInteractionExt">
+				<var name="tweak_data" value="key" />
+			</extension>
+	</extensions>
+</unit>

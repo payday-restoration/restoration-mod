@@ -1,0 +1,11 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_blue/architecture/warehouse/warehouse" orientation_object="rp_vault_cap" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="c_vault_cap" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_vault_cap" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

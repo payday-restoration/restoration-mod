@@ -1,0 +1,38 @@
+<table>
+	<editor_groups/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="0 -200 0" _prev_rot="-0 0 -0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_001" position="0 -200 0" rotation="-0 0 -0 -1" unit_id="200000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -200 0" _prev_rot="0 0 0 -1" continent="editor_only" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/mkp/mkp_int_floor_4x4m_a" name_id="mkp_int_floor_4x4m_a_002" position="-400 -200 0" rotation="0 0 0 -1" unit_id="200001"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-313.84 72.5715 0" _prev_rot="0 0 0 -1" continent="editor_only" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/dev_tools/level_tools/ai_coverpoint" name_id="ai_coverpoint_001" only_exists_in_editor="true" position="-313.84 72.571 0" rotation="-0 0 -0 -1" unit_id="200002"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-319.533 -62.3435 0" _prev_rot="0 0 0 -1" continent="editor_only" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="-5.69315 -134.915 0" local_rot="-0 0 0 1" name="units/dev_tools/level_tools/ai_coverpoint" name_id="ai_coverpoint_002" only_exists_in_editor="true" position="-319.533 -62.3439 0" rotation="0 0 0 -1" unit_id="200003"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-219.475 53.0254 0" _prev_rot="0 0 0 -1" continent="editor_only" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="94.365 -19.5461 0" local_rot="-0 0 0 1" name="units/dev_tools/level_tools/ai_coverpoint" name_id="ai_coverpoint_003" only_exists_in_editor="true" position="-219.475 53.0249 0" rotation="0 0 0 -1" unit_id="200004"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-206.556 -64.4374 0" _prev_rot="0 0 0 -1" continent="editor_only" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="107.284 -137.009 0" local_rot="-0 0 0 1" name="units/dev_tools/level_tools/ai_coverpoint" name_id="ai_coverpoint_004" only_exists_in_editor="true" position="-206.556 -64.4379 0" rotation="0 0 0 -1" unit_id="200005"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="166.897 123.731 0" _prev_rot="0 0 0 -1" continent="editor_only" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="480.737 51.159 0" local_rot="-0 0 0 1" name="units/dev_tools/level_tools/ai_coverpoint" name_id="ai_coverpoint_005" only_exists_in_editor="true" position="166.897 123.73 0" rotation="0 0 0 -1" unit_id="200006"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="236.99 131.641 0" _prev_rot="0 0 0 -1" continent="editor_only" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="550.83 59.0697 0" local_rot="-0 0 0 1" name="units/dev_tools/level_tools/ai_coverpoint" name_id="ai_coverpoint_006" only_exists_in_editor="true" position="236.99 131.641 0" rotation="0 0 0 -1" unit_id="200007"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="285.38 122.849 0" _prev_rot="0 0 0 -1" continent="editor_only" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="599.22 50.278 0" local_rot="-0 0 0 1" name="units/dev_tools/level_tools/ai_coverpoint" name_id="ai_coverpoint_007" only_exists_in_editor="true" position="285.38 122.849 0" rotation="0 0 0 -1" unit_id="200008"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="327.921 133.063 0" _prev_rot="0 0 0 -1" continent="editor_only" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="641.76 60.4916 0" local_rot="-0 0 0 1" name="units/dev_tools/level_tools/ai_coverpoint" name_id="ai_coverpoint_008" only_exists_in_editor="true" position="327.921 133.063 0" rotation="0 0 0 -1" unit_id="200009"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

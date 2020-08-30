@@ -1,0 +1,69 @@
+<table directory="assets">
+	<add unload_on_restart="true">
+		<material_config	path="units/pd2_mod_blue/architecture/warehouse/warehouse_dock_door_1" unload="true"/>
+		<material_config	path="units/pd2_mod_blue/architecture/warehouse/warehouse_dock_door_2" unload="true"/>
+		<cooked_physics		path="units/pd2_mod_blue/architecture/warehouse/warehouse_dock_door" unload="true"/>
+		<sequence_manager	path="units/pd2_mod_blue/architecture/warehouse/warehouse_dock_door" unload="true"/>
+		<model				path="units/pd2_mod_blue/architecture/warehouse/warehouse_dock_door" unload="true"/>
+		<object				path="units/pd2_mod_blue/architecture/warehouse/warehouse_dock_door" unload="true"/>
+		<unit				path="units/pd2_mod_blue/architecture/warehouse/warehouse_dock_door" unload="true"/>
+	</add>
+	<add path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x4x3" type="unit">
+		<material_config path="core/material_configs/hub_elements" unload="true"/>
+		<object path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x4x3" unload="true"/>
+		<unit path="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x4x3" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_cro/lockpick_interactable/lockpick_interactable" type="unit">
+		<material_config path="units/pd2_dlc_cro/lockpick_interactable/lockpick_interactable" unload="true"/>
+		<object path="units/pd2_dlc_cro/lockpick_interactable/lockpick_interactable" unload="true"/>
+		<sequence_manager path="units/pd2_dlc_cro/lockpick_interactable/lockpick_interactable" unload="true"/>
+		<unit path="units/pd2_dlc_cro/lockpick_interactable/lockpick_interactable" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc1/architecture/bnk_ext_garage/bnk_ext_garage_door_button" type="unit">
+		<material_config path="units/pd2_dlc1/architecture/bnk_ext_garage/bnk_ext_garage_door_button" unload="true"/>
+		<object path="units/pd2_dlc1/architecture/bnk_ext_garage/bnk_ext_garage_door_button" unload="true"/>
+		<sequence_manager path="units/pd2_dlc1/architecture/bnk_ext_garage/bnk_ext_garage_door_button" unload="true"/>
+		<unit path="units/pd2_dlc1/architecture/bnk_ext_garage/bnk_ext_garage_door_button" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/ind/ind_ext_dock_bld/dock_door_01" type="unit">
+		<unit path="units/payday2/architecture/ind/ind_ext_dock_bld/dock_door_01" unload="true"/>
+		<object path="units/payday2/architecture/ind/ind_ext_dock_bld/dock_door_01" unload="true"/>
+		<material_config path="units/payday2/architecture/ind/mat_ind_ext_dock_door_01" unload="true"/>
+		<sequence_manager path="units/payday2/architecture/ind/ind_ext_dock_bld/dock_door_01" unload="true"/>
+		<unit path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<object path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<material_config path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<sequence_manager path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<effect load="true" path="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" unload="true"/>
+		<effect load="true" path="effects/particles/explosions/explosion_grenade" unload="true"/>
+		<bnk path="soundbanks/regular_sfx" unload="true"/>
+	</add>
+	<add path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" type="unit">
+		<material_config path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+		<object path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+		<sequence_manager path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+		<unit path="units/payday2/props/gen_interactable_panel_keycard/gen_interactable_panel_keycard" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_alarm_box_01" type="unit">
+		<material_config path="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_details" unload="true"/>
+		<object path="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_alarm_box_01" unload="true"/>
+		<unit path="units/pd2_dlc1/props/ind_ext_prop_details/ind_ext_prop_alarm_box_01" unload="true"/>
+	</add>
+	<add path="core/units/light_omni/light_omni" type="unit">
+		<material_config path="core/material_configs/hub_elements" unload="true"/>
+		<object path="core/units/light_omni/light_omni" unload="true"/>
+		<unit path="core/units/light_omni/light_omni" unload="true"/>
+	</add>
+	<add path="units/payday2/equipment/gen_interactable_drill_small/gen_interactable_drill_small" type="unit">
+		<unit path="units/payday2/equipment/gen_interactable_drill_small/gen_interactable_drill_small" unload="true"/>
+		<object path="units/payday2/equipment/gen_interactable_drill_small/gen_interactable_drill_small" unload="true"/>
+		<material_config path="units/payday2/equipment/gen_interactable_drill_small/gen_interactable_drill_small" unload="true"/>
+		<sequence_manager path="units/payday2/equipment/gen_interactable_drill_small/gen_interactable_drill_small" unload="true"/>
+		<gui path="guis/timer_gui" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/drill" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/parts/drill_sparks_particles" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/parts/drill_sparks" unload="true"/>
+		<effect load="true" path="effects/payday2/environment/drill_jammed" unload="true"/>
+		<bnk path="soundbanks/regular_sfx" unload="true"/>
+	</add>
+</table>

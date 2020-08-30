@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<unit type="item" slot="1">
+	<object file="units/payday2/equipment/gen_interactable_weapon_case_2x1/spawn_ak47" />
+	<network sync="spawn"/>
+
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="CarryInteractionExt">
+			<var name="tweak_data" value="take_weapons" />
+			<var name="_remove_on_interact" value="true" />
+			<var name="_global_event" value="pku_weapons" />
+		</extension>
+		<extension name="carry_data" class="CarryData">
+			<var name="_carry_id" value="weapon" />
+		</extension>
+	</extensions>
+</unit>

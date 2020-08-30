@@ -1,0 +1,8 @@
+<materials version="3">
+    <material name="mat_laser" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="0.10000000149012 0 0" type="vector3" name="uv0_speed"/>
+        <variable value="2" type="scalar" name="falloff_exp"/>
+    </material>
+</materials>

@@ -1,0 +1,7 @@
+{
+	"heist_contact_scores_name":"Score Jobs"
+	"heist_contact_scores_desc":"A list of avaliable scores.",
+	"heist_arm_cafe_name":"Armored Transport: Cafe",
+	"heist_arm_cafe_brief":"Arm TP Cafe Desc",
+	"end":"end"
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<modelscript>
+	
+	<!--///////////////-->
+	<!--Welcome to Hell-->
+	<!--///////////////-->
+	
+    <import file="bw_container_vault.glb" type="gltf" create_objects="true"/>
+	
+	
+</modelscript>

@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_short/props/gen_fbi_usb_stick/gen_fbi_usb_stick" orientation_object="rp_gen_fbi_usb_stick" />
+	<sequence_manager file="units/pd2_dlc_short/props/gen_fbi_usb_stick/gen_fbi_usb_stick" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_gen_fbi_usb_stick" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<graphic_group name="grp_stick" enabled="true" >
+		<object name="g_g" enabled="true" />
+		<object name="g_g_il" enabled="true" />
+		</graphic_group>
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_blue/architecture/warehouse/ind_double_doorway" orientation_object="rp_ind_double_doorway" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="c_ind_double_doorway_001"	collision_type="box" padding="-2.5" />
+			<object name="c_ind_double_doorway_002"	collision_type="box" padding="-2.5" />
+			<object name="c_ind_double_doorway_003"	collision_type="box" padding="-2.5" />
+			<object name="c_ind_double_doorway_004"	collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_ind_double_doorway"	enabled="true" />
+	</graphics>
+</dynamic_object>

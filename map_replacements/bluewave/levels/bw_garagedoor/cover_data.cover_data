@@ -1,0 +1,22 @@
+<table>
+	<positions>
+		<value_node value="167 124 0"/>
+		<value_node value="-207 -64 0"/>
+		<value_node value="-219 53 0"/>
+		<value_node value="237 132 0"/>
+		<value_node value="285 123 0"/>
+		<value_node value="-314 73 0"/>
+		<value_node value="-320 -62 0"/>
+		<value_node value="328 133 0"/>
+	</positions>
+	<rotations>
+		<value_node value="0"/>
+		<value_node value="0"/>
+		<value_node value="0"/>
+		<value_node value="0"/>
+		<value_node value="0"/>
+		<value_node value="0"/>
+		<value_node value="0"/>
+		<value_node value="0"/>
+	</rotations>
+</table>

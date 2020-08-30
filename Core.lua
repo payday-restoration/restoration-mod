@@ -86,6 +86,7 @@ function restoration:Init()
 		"dinner",
 		"wwh",
 		"born",
+		"nmh_res", --Resmod edit of no mercy.
 		"flat",
 		"dah",
 		"run",
@@ -115,8 +116,7 @@ function restoration:Init()
 		"hvh",
 		-- :^)
 		--"chew",	
-		"nail",		
-		"nmh",	
+		"nail",				
 		"cane",		
 		"pbr2",		
 		"rvd2",		
@@ -277,15 +277,6 @@ restoration.environments_choice_bank = {
 	"env_trailer_bank"
 }
 
-restoration.environments_choice_bank = {
-	"default",
-	"random",
-	"mellowday",
-	"xbox_bank",
-	"bank_day",
-	"env_trailer_bank"
-}
-
 restoration.environments_choice_rvd1 = {
 	"default",
 	"random",
@@ -393,6 +384,13 @@ restoration.environments_choice_ukrainian_job = {
 restoration.environments_choice_peta = {
 	"default",
 	"cloudy_day"
+}
+
+restoration.ponrtracks = {
+	"off",
+	"windowofoppurtunity",
+	"wheresthevan",
+	"random"
 }
 
 -- restoration.environments_choice_shadow_raid = {

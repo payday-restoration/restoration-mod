@@ -1,0 +1,18 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_prop_crate_wood_a" materials="units/payday2/props/gen_prop_crate_wood/gen_prop_crate_wood" />
+ <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_gen_prop_crate_wood_a"/>
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="metal" static="true">
+		<decal_mesh name="dm_wood" material="wood" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_g" />
+        <object enabled="true" shadow_caster="true" name="s_s" />
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,18 @@
+<materials version="3">
+    <material name="mat_monitor_hack_ecm" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+        <bump_normal_texture file="units/payday2/props/off_prop_appliance_monitor/monitor_nm"/>
+        <diffuse_texture file="units/payday2/props/off_prop_appliance_monitor/monitor_df"/>
+        <variable value="1 0.5 0" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" name="mat_screen_hack_a">
+        <diffuse_texture file="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_screen_a_df"/>
+        <self_illumination_texture file="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_screen_a_il"/>
+        <variable value="monitor" type="scalar" name="il_multiplier"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" name="mat_screen_hack_a_v2">
+        <diffuse_texture file="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_screen_a_background_variations_df"/>
+        <self_illumination_texture file="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_screen_a_background_variations_df"/>
+        <variable value="monitor" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

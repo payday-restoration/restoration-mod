@@ -1,0 +1,6 @@
+<table>
+	<coverpoints file="coverpoints/coverpoints"/>
+	<editor_only file="editor_only/editor_only"/>
+	<lighting_blockers file="lighting_blockers/lighting_blockers"/>
+	<world file="world/world"/>
+</table>

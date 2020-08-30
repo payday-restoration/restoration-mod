@@ -1,0 +1,11 @@
+<unit type="com" slot="1" >
+    <object file="units/pd2_dlc1/architecture/bnk_ext_garage/bnk_ext_garage_door_button" />	
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="UnitDamage" name="damage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="push_button" />
+			<var name="_interact_object" value="interact"/>
+		</extension>
+    </extensions>
+</unit>

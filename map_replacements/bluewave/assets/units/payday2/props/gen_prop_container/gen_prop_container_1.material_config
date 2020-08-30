@@ -1,0 +1,8 @@
+<materials version="3" group="gen_prop_container">
+    <material name="mat_gen_prop_container_a" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_container_a/gen_prop_container_a_df"/>
+        <bump_normal_texture file="units/payday2/props/gen_prop_container_a/gen_prop_container_a_nm"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_steel"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

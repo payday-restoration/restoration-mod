@@ -1,0 +1,13 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_blue/equipment/equipment_boxes/equipment_box" orientation_object="rp_rootpoint" />
+	<sequence_manager file="units/pd2_mod_blue/equipment/equipment_boxes/equipment_box" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="c_c" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_state_0"	enabled="true" />
+		<object name="g_state_1"	enabled="false" />
+	</graphics>
+</dynamic_object>

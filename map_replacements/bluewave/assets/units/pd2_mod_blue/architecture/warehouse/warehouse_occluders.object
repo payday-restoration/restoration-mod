@@ -1,0 +1,117 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_blue/architecture/warehouse/warehouse_occluders" orientation_object="rp_occluders" />
+	<bodies>
+		<body name="body_static" enabled="true" template="editor">
+			<object name="rp_occluders" />
+			
+		</body>
+	</bodies>
+    <occluders>
+        <occluder name="oc_plane_001" />
+        <occluder name="oc_plane_002" />
+        <occluder name="oc_plane_003" />
+        <occluder name="oc_plane_004" />
+        <occluder name="oc_plane_005" />
+        <occluder name="oc_plane_006" />
+        <occluder name="oc_plane_007" />
+        <occluder name="oc_plane_008" />
+        <occluder name="oc_plane_009" />
+        <occluder name="oc_plane_010" />
+        <occluder name="oc_plane_011" />
+        <occluder name="oc_plane_012" />
+        <occluder name="oc_plane_013" />
+        <occluder name="oc_plane_014" />
+        <occluder name="oc_plane_015" />
+        <occluder name="oc_plane_016" />
+        <occluder name="oc_plane_017" />
+        <occluder name="oc_plane_018" />
+        <occluder name="oc_plane_019" />
+        <occluder name="oc_plane_020" />
+        <occluder name="oc_plane_021" />
+        <occluder name="oc_plane_022" />
+        <occluder name="oc_plane_023" />
+        <occluder name="oc_plane_024" />
+        <occluder name="oc_plane_025" />
+        <occluder name="oc_plane_026" />
+        <occluder name="oc_plane_027" />
+        <occluder name="oc_plane_028" />
+        <occluder name="oc_plane_029" />
+        <occluder name="oc_plane_030" />
+        <occluder name="oc_plane_031" />
+        <occluder name="oc_plane_032" />
+        <occluder name="oc_plane_033" />
+        <occluder name="oc_plane_034" />
+        <occluder name="oc_plane_035" />
+        <occluder name="oc_plane_036" />
+        <occluder name="oc_plane_037" />
+        <occluder name="oc_plane_038" />
+        <occluder name="oc_plane_039" />
+        <occluder name="oc_plane_040" />
+        <occluder name="oc_plane_041" />
+        <occluder name="oc_plane_042" />
+        <occluder name="oc_plane_043" />
+        <occluder name="oc_plane_044" />
+        <occluder name="oc_plane_045" />
+        <occluder name="oc_plane_046" />
+        <occluder name="oc_plane_047" />
+        <occluder name="oc_plane_048" />
+        <occluder name="oc_plane_049" />
+        <occluder name="oc_plane_050" />
+        <occluder name="oc_plane_051" />
+        <occluder name="oc_plane_052" />
+    </occluders>
+	<graphics>
+		<object name="oc_plane_001" enabled="true"/>
+		<object name="oc_plane_002" enabled="true"/>
+		<object name="oc_plane_003" enabled="true"/>
+		<object name="oc_plane_004" enabled="true"/>
+		<object name="oc_plane_005" enabled="true"/>
+		<object name="oc_plane_006" enabled="true"/>
+		<object name="oc_plane_007" enabled="true"/>
+		<object name="oc_plane_008" enabled="true"/>
+		<object name="oc_plane_009" enabled="true"/>
+		<object name="oc_plane_010" enabled="true"/>
+		<object name="oc_plane_011" enabled="true"/>
+		<object name="oc_plane_012" enabled="true"/>
+		<object name="oc_plane_013" enabled="true"/>
+		<object name="oc_plane_014" enabled="true"/>
+		<object name="oc_plane_015" enabled="true"/>
+		<object name="oc_plane_016" enabled="true"/>
+		<object name="oc_plane_017" enabled="true"/>
+		<object name="oc_plane_018" enabled="true"/>
+		<object name="oc_plane_019" enabled="true"/>
+		<object name="oc_plane_020" enabled="true"/>
+		<object name="oc_plane_021" enabled="true"/>
+		<object name="oc_plane_022" enabled="true"/>
+		<object name="oc_plane_023" enabled="true"/>
+		<object name="oc_plane_024" enabled="true"/>
+		<object name="oc_plane_025" enabled="true"/>
+		<object name="oc_plane_026" enabled="true"/>
+		<object name="oc_plane_027" enabled="true"/>
+		<object name="oc_plane_028" enabled="true"/>
+		<object name="oc_plane_029" enabled="true"/>
+		<object name="oc_plane_030" enabled="true"/>
+		<object name="oc_plane_031" enabled="true"/>
+		<object name="oc_plane_032" enabled="true"/>
+		<object name="oc_plane_033" enabled="true"/>
+		<object name="oc_plane_034" enabled="true"/>
+		<object name="oc_plane_035" enabled="true"/>
+		<object name="oc_plane_036" enabled="true"/>
+		<object name="oc_plane_037" enabled="true"/>
+		<object name="oc_plane_038" enabled="true"/>
+		<object name="oc_plane_039" enabled="true"/>
+		<object name="oc_plane_040" enabled="true"/>
+		<object name="oc_plane_041" enabled="true"/>
+		<object name="oc_plane_042" enabled="true"/>
+		<object name="oc_plane_043" enabled="true"/>
+		<object name="oc_plane_044" enabled="true"/>
+		<object name="oc_plane_045" enabled="true"/>
+		<object name="oc_plane_046" enabled="true"/>
+		<object name="oc_plane_047" enabled="true"/>
+		<object name="oc_plane_048" enabled="true"/>
+		<object name="oc_plane_049" enabled="true"/>
+		<object name="oc_plane_050" enabled="true"/>
+		<object name="oc_plane_051" enabled="true"/>
+		<object name="oc_plane_052" enabled="true"/>
+	</graphics>
+</dynamic_object>

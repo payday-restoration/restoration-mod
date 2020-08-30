@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<effect force_synch="false">
+
+    <atom name="spray" min_size="1" max_size="1" lifetime="0.3" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 -15" max="0 0 -15"/>
+            <boxrandomvelocity relative="effect" min="0 0 1" max="0 0 1"/>
+            <boxrandomangle min="0" max="360"/>
+            <boxrandomanglevelocity min="-5" max="5"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <anglevelocityintegrator/>
+            <rotationbyvelocity velocity="5000"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/particles/bullet_hit/flesh/textures/e_bullet_impact_blood_02_df" intensity="desklight" billboard_type="normal_locked" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op" origo="0.5 1" per_particle_age="false" size_input="keys" color_input="constant" color="166 29.000001907349 26.000001907349" opacity_input="keys" rotation_input="constant" rotation="0" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <size_keys loop="false">
+                    <key t="0" v="0 0"/>
+                    <key t="0.21658205986023" v="70 300"/>
+                </size_keys>
+                <opacity_keys loop="false">
+                    <key t="0.11464968323708" v="255"/>
+                    <key t="0.29299363493919" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="head chunks small" min_size="4" max_size="4" lifetime="1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="initialize" cull_policy="kill" cull_gracetime="4" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="-200 -200 200" max="200 200 400"/>
+            <boxrandomanglevelocity min="-30" max="30"/>
+            <boxrandomangle min="-10" max="-410"/>
+            <boxrandomuvoffset uv_size="0.25 1" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="2"/>
+            <boxrandomaspectsize size="1 1" min="1" max="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <constantacceleration relative="world" acceleration="0 0 -1500"/>
+            <velocityintegrator channel="world"/>
+            <anglevelocityintegrator/>
+            <eventtick frequency="100" jitter="0" use_velocity="false" use_rotation="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/particles/bullet_hit/flesh/textures/e_head_chunks_01_df" intensity="match" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="add" render_template="effect_op" origo="0.5 0.5" per_particle_age="false" size_input="scaled_channel" color_input="constant" color="255 255 255" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 1" uv_offset_input="channel">
+                <size_scale_keys loop="false">
+                    <key t="0" v="1 1"/>
+                    <key t="0.46127399802208" v="1 1"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="0.54985338449478" v="255"/>
+                    <key t="1.0850440263748" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

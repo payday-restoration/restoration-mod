@@ -72,3 +72,19 @@ function HuskPlayerDamage:_send_damage_to_owner(attack_data)
 		managers.job:set_memory("trophy_flawless", true, false)
 	end
 end
+
+--Adds bloodsplatters.
+Hooks:PostHook(HuskPlayerDamage, "sync_damage_bullet", "resBloodSplat", function(self, attacker_unit, damage, i_body, height_offset)
+    local hit_pos = mvector3.copy(self._unit:movement():m_com())
+    local attack_dir = nil
+
+    if attacker_unit then
+        attack_dir = hit_pos - attacker_unit:position()
+
+        mvector3.normalize(attack_dir)
+    else
+        attack_dir = self._unit:rotation():y()
+    end
+
+    managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
+end)

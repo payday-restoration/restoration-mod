@@ -366,7 +366,7 @@
 		</sounds>
 	</level>
 	<AddFiles directory="assets">
-		<texture force="true" path="guis/dlcs/big_bank/textures/pd2/pre_planning/preplan_icon_types"/>
+		<!-- <texture force="true" path="guis/dlcs/big_bank/textures/pd2/pre_planning/preplan_icon_types"/> -->
 		<texture force="true" path="guis/textures/customheist_gui/junk"/>
 		<texture force="true" path="guis/textures/customheist_gui/junk_loading"/>
 		<texture force="true" path="guis/textures/customheist_gui/wetwork"/>

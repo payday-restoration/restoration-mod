@@ -559,7 +559,7 @@ function CopDamage:damage_bullet(attack_data)
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
 		local pierce_armor = nil
 
-		if attack_data.armor_piercing and attack_data.armor_piercing == true then
+		if attack_data.armor_piercing then
 			pierce_armor = true
 		elseif attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("bow", "crossbow", "saw") then
 			pierce_armor = true
@@ -1295,7 +1295,10 @@ function CopDamage:damage_melee(attack_data)
 
 				local job = Global.level_data and Global.level_data.level_id
 
-				if job ~= "short1_stage1" or job ~= "short1_stage2" then
+				if job == "short1_stage1" or job == "short1_stage2" then
+					--Just in case, cause otherwise it apparently screws everything up
+					snatch_pager = false
+				else
 					if managers.player:upgrade_value("player", "melee_kill_snatch_pager_chance", 0) > math.rand(1) then
 						if self._unit:movement():cool() then
 							snatch_pager = true
@@ -1938,6 +1941,8 @@ function CopDamage:damage_explosion(attack_data)
 		if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base().weapon_tweak_data and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
 			managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 		end
+
+		self:chk_killshot(attacker_unit, "explosion")
 
 		if attacker_unit == managers.player:player_unit() then
 			if alive(attacker_unit) then

@@ -1,0 +1,11 @@
+<unit type="bry" slot="1">
+	<object file="units/pd2_dlc_berry/props/bry_prop_breaching_charge/bry_prop_breaching_charge" />
+	<network sync="spawn"/>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="hold_plant_breaching_charge" />
+		</extension>
+	</extensions>
+</unit>

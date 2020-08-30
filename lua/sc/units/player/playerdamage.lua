@@ -11,6 +11,11 @@ function PlayerDamage:init(unit)
 	self._revives = Application:digest_value(0, true)
 	self._uppers_elapsed = 0
 
+	--Unique resmod stuff, needs to be declared earlier.
+	self._temp_health = 0 --Hitman temporary health.
+	self._health_without_temp = 0 --Health below temp hp. Needed for correct max health calculations.
+	self._next_temp_health_decay_t = 0 --When to hit hitman temp health with decay next.
+
 	self:replenish() --Sets a number of things, mostly resetting armor, health, and ui stuff. Vanilla code.
 
 	local player_manager = managers.player
@@ -41,12 +46,15 @@ function PlayerDamage:init(unit)
 
 	--Load alternate heal over time tweakdata if player is using Infiltrator or Rogue.
 	if player_manager:has_category_upgrade("player", "melee_stacking_heal") then
+		self._hot_type = "infiltrator"
 		self._doh_data = tweak_data.upgrades.melee_to_hot_data or {}
 		self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
 	elseif player_manager:has_category_upgrade("player", "dodge_stacking_heal") then
+		self._hot_type = "rogue"
 		self._doh_data = tweak_data.upgrades.dodge_to_hot_data or {}
 		self._hot_amount = managers.player:upgrade_value("player", "heal_over_time", 0)
 	else 
+		self._hot_type = "grinder"
 		self._doh_data = tweak_data.upgrades.damage_to_hot_data or {}
 		self._hot_amount = managers.player:upgrade_value("player", "damage_to_hot", 0)
 	end
@@ -71,9 +79,11 @@ function PlayerDamage:init(unit)
 	self._keep_health_on_revive = false --Used for cloaker kicks and taser downs, stops reviving from changing player health.
 	self._biker_armor_regen_t = 0.0 --Used to track the time until the next biker armor regen tick.
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
-	self._deflection = 1 - managers.player:body_armor_value("deflection", nil, 0) - managers.player:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
+	self._deflection = 1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
+	self._unpierceable = player_manager:has_category_upgrade("player", "unpierceable_armor")
 	self.tase_time = 0 --Titan Taser slow cooldown.
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
+	managers.player:set_damage_absorption("full_armor_absorption", managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor())
 
 	--The rest of this is unchanged vanilla code.
 	local function revive_player()
@@ -150,13 +160,15 @@ function PlayerDamage:init(unit)
 
 		local function on_revive_interaction_start()
 			managers.player:set_property("revive_damage_reduction", player_manager:upgrade_value("player", "revive_damage_reduction"), 1)
+			managers.hud:add_skill("revive_damage_reduction")
 		end
-
 
 		local function on_exit_interaction()
 			managers.player:remove_property("revive_damage_reduction")
+			if not managers.player:has_activate_temporary_upgrade("temporary", "revive_damage_reduction") then
+				managers.hud:remove_skill("revive_damage_reduction")
+			end
 		end
-
 
 		local function on_revive_interaction_success()
 			managers.player:activate_temporary_upgrade("temporary", "revive_damage_reduction")
@@ -298,9 +310,6 @@ function PlayerDamage:damage_melee(attack_data)
 		})
 	end
 
-	local dmg_mul = pm:damage_reduction_skill_multiplier("melee")
-	attack_data.damage = attack_data.damage * dmg_mul
-
 	--These are done after god mode checks now, just to save time.
 	--Also done before DR calcs, so that DR going away never causes grace piercing.
 	self._last_received_dmg = attack_data.damage
@@ -313,13 +322,15 @@ function PlayerDamage:damage_melee(attack_data)
 		self._last_received_dmg = self._last_bullet_damage
 	end
 
-	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-
-	local damage_absorption = pm:damage_absorption()
-	if damage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("melee")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
 	end
+
 	
 	--Can't dodge melee.
 
@@ -461,16 +472,16 @@ function PlayerDamage:damage_explosion(attack_data)
 	attack_data.damage = damage
 	attack_data.damage = attack_data.damage * (1 - distance / attack_data.range)
 
-	local dmg_mul = pm:damage_reduction_skill_multiplier("explosion")
-	attack_data.damage = attack_data.damage * dmg_mul
-	attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
-	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage)
-
-	local damage_absorption = pm:damage_absorption()
-
-	if damage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("explosion")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
 	end
+
 
 	if attack_data.attacker_unit and alive(attack_data.attacker_unit) then
 		self:_hit_direction(attack_data.attacker_unit:position())
@@ -487,7 +498,6 @@ function PlayerDamage:damage_explosion(attack_data)
 
 		return
 	else
-		managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
 		if self:get_real_armor() > 0 or attack_data.damage == 0 then
 			self._unit:sound():play("player_hit")
 		else
@@ -510,9 +520,23 @@ function PlayerDamage:damage_explosion(attack_data)
 
 	self:_check_chico_heal(attack_data)
 
+	local armor_reduction_multiplier = 0
+	
+	if 0 >= self:get_real_armor() then
+		armor_reduction_multiplier = 1
+	end
+	
 	local health_subtracted = self:_calc_armor_damage(attack_data)
-
-	attack_data.damage = attack_data.damage - health_subtracted
+	
+	if not self._unpierceable then
+		attack_data.damage = attack_data.damage - health_subtracted
+		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
+			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
+		end
+	else
+		attack_data.damage = attack_data.damage * armor_reduction_multiplier
+	end
+	
 	health_subtracted = health_subtracted + self:_calc_health_damage(attack_data)
 
 	pm:send_message(Message.OnPlayerDamage, nil, attack_data)
@@ -566,14 +590,13 @@ function PlayerDamage:damage_fire(attack_data)
 	self._last_received_dmg = attack_data.damage
 	self._next_allowed_dmg_t = Application:digest_value(pm:player_timer():time() + self._dmg_interval, true)
 
-	local dmg_mul = pm:damage_reduction_skill_multiplier("fire")
-	attack_data.damage = attack_data.damage * dmg_mul
-	attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
-
-	local damage_absorption = pm:damage_absorption()
-
-	if damage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("fire")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
 	end
 
 	if self._bleed_out then
@@ -648,14 +671,13 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 		self._last_received_dmg = self._last_bullet_damage
 	end
 
-	local dmg_mul = pm:damage_reduction_skill_multiplier("bullet")
-	attack_data.damage = attack_data.damage * dmg_mul
-	attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
-
-	local damage_absorption = pm:damage_absorption()
-	if damage_absorption > 0 then
-		attack_data.damage = math.max(0, attack_data.damage - damage_absorption)
+	if attack_data.damage > 0 then
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("bullet")
+		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
+		local damage_absorption = pm:damage_absorption()
+		if damage_absorption > 0 then
+			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
+		end
 	end
 	
 	self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
@@ -705,7 +727,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	if not attack_data.ignore_suppression and not self:is_suppressed() then
 		return
 	end
-	
+
 	self:_check_chico_heal(attack_data) --Remind Ravi to add friendly fire checks to this later.
 
 	local armor_reduction_multiplier = 0
@@ -716,7 +738,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	
 	local health_subtracted = self:_calc_armor_damage(attack_data)
 	
-	if attack_data.armor_piercing then
+	if attack_data.armor_piercing and not self._unpierceable then
 		attack_data.damage = attack_data.damage - health_subtracted
 		if not _G.IS_VR then --Add screen effect to signify armor piercing attack.
 			managers.hud:activate_effect_screen(0.75, {1, 0.2, 0})
@@ -746,6 +768,19 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 		self._kill_taunt_clbk_id = "kill_taunt" .. tostring(self._unit:key())
 		managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_common", attack_data), TimerManager:game():time() + 0.1 + 0.1 + 0.1)			
 	end
+
+	local hit_pos = mvector3.copy(self._unit:movement():m_com())
+    local attack_dir = nil
+    local attacker_unit = attack_data.attacker_unit
+
+    if attacker_unit then
+        attack_dir = hit_pos - attacker_unit:position()
+        mvector3.normalize(attack_dir)
+    else
+        attack_dir = self._unit:rotation():y()
+    end
+
+    managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
 	
 	pm:send_message(Message.OnPlayerDamage, nil, attack_data)
 	self:_call_listeners(damage_info)
@@ -758,8 +793,6 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 			if alive(player_unit) then
 				if not self._unit:movement():current_state().driving then
 					attack_data.attacker_unit:sound():say("post_tasing_taunt")
-					--player_unit:movement():on_non_lethal_electrocution() --old titan taser effect.
-					--managers.player:set_player_state("tased")
 					managers.player:activate_titan_tased() --Apply slow from titan taser.
 					self.tase_time = _time + 1 --Update cooldown
 				end
@@ -768,6 +801,46 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	end
 	
 	return 
+end
+
+--Include deflection in calcs. Doesn't work in cases where armor is pierced, but I can't be assed to fix it.
+--Also ignores temp hp in max health calcs. Not important for now, but may be in the future.
+function PlayerDamage:_check_chico_heal(attack_data)
+	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
+		local dmg_to_hp_ratio = managers.player:temporary_upgrade_value("temporary", "chico_injector", 0)
+
+		if managers.player:has_category_upgrade("player", "chico_injector_low_health_multiplier") then
+			local upg_values = managers.player:upgrade_value("player", "chico_injector_low_health_multiplier")
+
+			if self:health_ratio() < upg_values[1] then
+				dmg_to_hp_ratio = dmg_to_hp_ratio + upg_values[2]
+			end
+		end
+
+		local health_received = attack_data.damage * dmg_to_hp_ratio
+
+		if self._armor_broken then
+			health_received = health_received * self._deflection
+		end
+
+		if managers.player:has_category_upgrade("player", "chico_injector_health_to_speed") and self:_max_health_orig() < self:get_real_health() + health_received then
+			self._injector_overflow = self._injector_overflow or 0
+			local diff = self:_max_health_orig() - self:get_real_health()
+
+			self:restore_health(diff, true)
+
+			health_received = health_received - diff
+			self._injector_overflow = self._injector_overflow + health_received
+			local upg_values = managers.player:upgrade_value("player", "chico_injector_health_to_speed")
+			local times = math.floor(self._injector_overflow / upg_values[1])
+
+			managers.player:speed_up_grenade_cooldown(upg_values[2] * times)
+
+			self._injector_overflow = self._injector_overflow - upg_values[1] * times
+		else
+			self:restore_health(health_received, true)
+		end
+	end
 end
 
 --This mechanic is disabled to give players predictable armor regen.
@@ -800,6 +873,10 @@ function PlayerDamage:revive(silent)
 	end
 	self._keep_health_on_revive = false --reset cloaker kick/taser shock flag.
 	self:_regenerate_armor()
+	local revive_temp_health = managers.player:upgrade_value("player", "revive_temp_health", 0) * self._max_health_reduction
+	self:_change_temp_health(revive_temp_health)
+	local max_health = self:_max_health()
+	self._health = Application:digest_value(math.clamp(self._health_without_temp + self._temp_health, 0, max_health), true)
 	managers.hud:set_player_health({
 		current = self:get_real_health(),
 		total = self:_max_health(),
@@ -861,7 +938,12 @@ end
 function PlayerDamage:_calc_health_damage(attack_data)
 	local health_subtracted = 0
 	health_subtracted = self:get_real_health()
-	attack_data.damage = attack_data.damage * self._deflection --Apply Deflection DR.
+	local deflection = self._deflection
+	if self:has_temp_health() then --Hitman deflection bonus.
+		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+	end
+
+	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
 
 	if managers.player:has_category_upgrade("player", "dodge_stacking_heal") and attack_data.damage > 0.0 then --End Rogue health regen.
 		self._damage_to_hot_stack = {}
@@ -966,6 +1048,7 @@ function PlayerDamage:_update_regenerate_timer(t, dt)
 	end
 end
 
+--Init function for dodge points to cache the value.
 function PlayerDamage:set_dodge_points()
 	self._dodge_points = (tweak_data.player.damage.DODGE_INIT 
 		+managers.player:body_armor_value("dodge")
@@ -982,7 +1065,7 @@ end
 
 --Adds to/Subtracts from dodge meter and updates hud element.
 function PlayerDamage:fill_dodge_meter(dodge_added, overfill)
-	if self._dodge_points > 0 and not self:is_downed() then
+	if self._dodge_points and self._dodge_points > 0 and not self:is_downed() then
 		if overfill or (self._dodge_meter >= 1.5 and dodge_added < 0) then
 			self._dodge_meter = math.max(self._dodge_meter + dodge_added, 0.0)
 		elseif self._dodge_meter < 1.5 then
@@ -993,6 +1076,7 @@ function PlayerDamage:fill_dodge_meter(dodge_added, overfill)
 	end
 end
 
+--Adjusts dodge meter fill based on health ratio, used for Yakuza stuff.
 function PlayerDamage:fill_dodge_meter_yakuza(percent_added)
 	self:fill_dodge_meter(percent_added * self._dodge_points * (1 - self:health_ratio()))
 end
@@ -1052,6 +1136,12 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 	if pm:has_category_upgrade("player", "biker_armor_regen") then
 		self:tick_biker_armor_regen(dt)
 	end
+
+	--Hitman temporary hp drain over time.
+	if self:has_temp_health() and self._next_temp_health_decay_t < t then
+		self._next_temp_health_decay_t = t + 1
+		self:change_health(-math.min(tweak_data.upgrades.temp_health_decay, self._temp_health))
+	end
 end)
 
 --Deals with resmod's health regen changes.
@@ -1065,11 +1155,11 @@ function PlayerDamage:_upd_health_regen(t, dt)
 	end
 
 	if not self._health_regen_update_timer then
-		local max_health = self:_max_health()
-
-		if self:get_real_health() < max_health then
+		local base_max_health = self:_max_health_orig() --Stops temp health from increasing % regen. 
+		local real_max_health = self:_max_health_orig() + self._temp_health
+		if self:get_real_health() < real_max_health then
 			--No need to do health nonsense twice.
-			self:restore_health(managers.player:health_regen() * max_health + managers.player:fixed_health_regen(), true)
+			self:restore_health(managers.player:health_regen() * base_max_health + managers.player:fixed_health_regen(), true)
 			self._health_regen_update_timer = 4
 		end
 	end
@@ -1098,6 +1188,8 @@ function PlayerDamage:_upd_health_regen(t, dt)
 			end
 		until done
 	end
+
+	managers.hud:set_stacks(self._hot_type, #self._damage_to_hot_stack)
 end
 
 
@@ -1118,7 +1210,7 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 	end
 end)
 
---Starts biker regen when there is missing armor. Notify ex-pres that armor has broken to get around dumb interaction with bullseye.
+--Starts biker regen when there is missing armor. Also notifies ex-pres when armor has broken to get around dumb interaction with bullseye.
 Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(self, attack_data)
 	if self._biker_armor_regen_t == 0.0 and managers.player:has_category_upgrade("player", "biker_armor_regen") then
 		self._biker_armor_regen_t = managers.player:upgrade_value("player", "biker_armor_regen")[2]
@@ -1172,21 +1264,144 @@ function PlayerDamage:exit_custody(down_timer)
 	})
 end
 
+--Restores one life. Used by Enduring.
 function PlayerDamage:add_revive()
 	self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
 	self._revive_health_i = math.max(self._revive_health_i - 1, 1)
 	managers.environment_controller:set_last_life(Application:digest_value(self._revives, false) <= 1)
+	managers.player:set_damage_absorption(
+		"down_absorption",
+		managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
+	)
+end
+
+--Lets hitman piggy bank off of ex-pres UI elements.
+local max_armor_stored_health_orig = PlayerDamage.max_armor_stored_health
+function PlayerDamage:max_armor_stored_health()
+	if managers.player:has_category_upgrade("player", "store_temp_health") then
+		return managers.player:upgrade_value("player", "store_temp_health")[1]
+	else
+		return max_armor_stored_health_orig(self)
+	end
+end
+
+--Turns stored health from hitman into temporary health.
+function PlayerDamage:consume_temp_stored_health()
+	if self._armor_stored_health and not self._dead and not self._bleed_out and not self._check_berserker_done then
+		self._next_temp_health_decay_t = Application:time() + 1
+		self._armor_stored_health = math.min(self._armor_stored_health * self._max_health_reduction + self._temp_health, tweak_data.upgrades.temp_health_max * self._max_health_reduction) - self._temp_health
+		self._health_without_temp = self:get_real_health() - self._temp_health
+		self:_change_temp_health(self._armor_stored_health)
+		local max_health = self:_max_health()
+		self._health = Application:digest_value(math.clamp(self._health_without_temp + self._temp_health, 0, max_health), true)
+		self:_send_set_health()
+		self:_set_health_effect()
+		managers.hud:set_player_health({
+			current = self:get_real_health(),
+			total = self:_max_health(),
+			revives = Application:digest_value(self._revives, false)
+		})
+		self:clear_armor_stored_health()
+	end
+end
+
+--Generic function for changing the amount of health to be treated as temp health.
+function PlayerDamage:_change_temp_health(amount)
+	self._temp_health = math.max(self._temp_health + amount, 0)
+	self:_check_update_max_health()
+	managers.hud:set_teammate_delayed_damage(HUDManager.PLAYER_PANEL, self._temp_health)
+end
+
+--Returns whether or not the player has temporary health.
+function PlayerDamage:has_temp_health()
+	return self._temp_health > 0
+end
+
+--Changes to the core health system are moslty done to support temp health.
+--Original method for getting max health. Is overwritten to support temp health, but certain cases (mostly involving healing) require the old code.
+function PlayerDamage:_max_health_orig()
+	local max_health = self:_raw_max_health()
+
+	if managers.player:has_category_upgrade("player", "armor_to_health_conversion") then
+		local max_armor = self:_raw_max_armor()
+		local conversion_factor = managers.player:upgrade_value("player", "armor_to_health_conversion") * 0.01
+		max_health = max_health + max_armor * conversion_factor
+	end
+
+	return max_health
+end
+
+--Makes modifications to handle temporary HP proparly.
+function PlayerDamage:set_health(health)
+	self:_check_update_max_health()
+
+	local prev_health = self._health and Application:digest_value(self._health, false) or health
+
+	--Add temp hp to max health.
+	local max_health = self:_max_health_orig() * self._max_health_reduction + self._temp_health
+	health = math.clamp(health, 0, max_health) --Removed useless floor before clamp.
+
+	if health < prev_health then --Reduce temp health if health was reduced.
+		self:_change_temp_health(health - prev_health)
+	end
+
+	self._health_without_temp = health - self._temp_health --Keep this updated to ensure that _max_health() remains accurate.
+	self._health = Application:digest_value(health, true)
+
+	self:_send_set_health()
+	self:_set_health_effect()
+
+	if self._said_hurt and self:get_real_health() / self:_max_health() > 0.2 then
+		self._said_hurt = false
+	end
+
+	if self:health_ratio() < 0.3 then
+		self._heartbeat_start_t = TimerManager:game():time()
+		self._heartbeat_t = self._heartbeat_start_t + tweak_data.vr.heartbeat_time
+	end
+
+	managers.hud:set_player_health({
+		current = self:get_real_health(),
+		total = self:_max_health(),
+		revives = Application:digest_value(self._revives, false)
+	})
+
+	return prev_health ~= Application:digest_value(self._health, false)
+end
+
+--Use old max health function to ignore temporary HP for % healing.
+function PlayerDamage:restore_health(health_restored, is_static, chk_health_ratio)
+	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) then
+		return false
+	end
+
+	if is_static then
+		return self:change_health(health_restored * self._healing_reduction)
+	else
+		local max_health = self:_max_health_orig() --Just use the original function.
+
+		return self:change_health(max_health * health_restored * self._healing_reduction)
+	end
+end
+
+--Hack to let temp hp go above normal hp, mostly important for displaying properly in the HUD.
+function PlayerDamage:_max_health()
+	return math.max(self:_max_health_orig(), self._temp_health + self._health_without_temp) 
 end
 
 --New trigger for ex-pres. Now occurs when armor regen kicks in any time after armor has been broken. Ignores partial regen from stuff like Bullseye.
+--Also includes trigger for Hitman dodge regen bonus.
 Hooks:PreHook(PlayerDamage, "_regenerate_armor", "ResTriggerExPres", function(self, no_sound)
 	if self._armor_broken then
-		self:consume_armor_stored_health()
-		self._armor_broken = false
+		if managers.player:has_category_upgrade("player", "armor_health_store_amount") then
+			self:consume_armor_stored_health()
+		end
+		self._armor_broken = nil
 	end
+	self:fill_dodge_meter(managers.player:upgrade_value("player", "armor_regen_dodge", 0) * (self._dodge_points or 0))
 end)
 
---Remove old ex-pres stuff. Technically won't do anything beyond a very tiny performance increase at the cost of a tiny amount of compatability.
+--Remove old ex-pres stuff.
 function PlayerDamage:set_armor(armor)
 	self:_check_update_max_armor()
 
@@ -1194,6 +1409,18 @@ function PlayerDamage:set_armor(armor)
 
 	if self._armor then
 		local current_armor = self:get_real_armor()
+
+		if armor == self:_max_armor() then
+			managers.player:set_damage_absorption(
+				"full_armor_absorption",
+				managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor()
+			)
+		else
+			managers.player:set_damage_absorption(
+				"full_armor_absorption",
+				0
+			)
+		end
 
 		if current_armor ~= 0 and armor == 0 and self._dire_need then
 			local function clbk()

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/pickups/gen_pku_diamonds/gen_pku_diamonds" orientation_object="rp_gen_pku_diamonds" />
+  <sequence_manager file="units/payday2/pickups/gen_pku_diamonds/gen_pku_diamonds" />
+  
+  <bodies>
+    <body name="body_diamonds" enabled="true" template="static">
+      <object name="rp_gen_pku_diamonds"/>
+      <object name="c_diamond" collision_type="mesh_mopp" />
+    </body>	
+ </bodies>
+	
+  <decal_surfaces default_material="glass_no_decal" static="true">
+    <decal_mesh name="g_diamond" enabled="true" material="glass_no_decal"/>
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_diamond" enabled="true" />
+  </graphics>
+  
+</dynamic_object>

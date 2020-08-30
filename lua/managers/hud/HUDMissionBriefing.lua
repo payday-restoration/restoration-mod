@@ -739,7 +739,7 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
 		the_continental = "guis/textures/restoration/mission_briefing/the_continental",
 		events = "guis/textures/restoration/mission_briefing/event",
 		shatter = "guis/textures/restoration/mission_briefing/shatter",
-		sin = "guis/textures/pd2/mission_briefing/hector/contact"
+		akashic = "guis/textures/pd2/mission_briefing/hector/contact"
     }
 	local image = "guis/textures/restoration/mission_briefing/classic"
 	if set_image[contact] then
@@ -755,7 +755,7 @@ function HUDMissionBriefing:set_contact_info(contact, interupt)
         the_dentist = "guis/dlcs/big_bank/textures/pd2/mission_briefing/bd_pattern",
 		the_continental = "guis/textures/pd2/mission_briefing/bain/bd_pattern",
 		shatter = "guis/textures/restoration/mission_briefing/shatter_pattern",
-		sin = "guis/textures/pd2/mission_briefing/hector/bd_pattern"
+		akashic = "guis/textures/pd2/mission_briefing/hector/bd_pattern"
     }
 	local pattern = "guis/textures/pd2/mission_briefing/".. contact .."/bd_pattern"
 	if set_pattern[contact] then

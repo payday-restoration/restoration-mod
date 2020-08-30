@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<unit type="ind" slot="1">
+	<object file="units/pd2_dlc1/equipment/ind_interactable_shipping_crate_2x1x1m/ind_interactable_shipping_crate_2x1x1m" />
+	<network sync="spawn"/>
+	<extensions>
+		<extension name="unit_data" 	class="ScriptUnitData" />
+		<extension name="damage" 		class="UnitDamage" />
+		<!--<extension name="attention" class="AIAttentionObject" />-->
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="crate_loot" />
+			<var name="_interact_object" value="spawn"/>
+			<var name="drop_in_sync_tweak_data" value="true" />
+		</extension>
+	</extensions>
+</unit>

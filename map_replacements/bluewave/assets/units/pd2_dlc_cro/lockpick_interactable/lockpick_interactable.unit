@@ -1,0 +1,12 @@
+<unit type="dev" slot="1">
+    <object file="units/pd2_dlc_cro/lockpick_interactable/lockpick_interactable" />
+    <network sync="spawn"/>
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="pick_lock_easy_no_skill" />
+			<var name="_interact_object" value="int_location"/>
+		</extension>
+    </extensions>
+</unit>

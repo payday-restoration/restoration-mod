@@ -279,6 +279,11 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.sniper_spot_rats3.stages, "alex_3_res")		
 	table.insert(self.rat_3_pilot.stages, "alex_3_res")
 	
+	--Xmas FBI heist assets
+	table.insert(self.hox_1.stages, "xmn_hox_1")
+	table.insert(self.hox_2.stages, "xmn_hox_2")
+	table.insert(self.bodybags_bag.stages, "xmn_tag")
+	
 	--Pro Job changes--
 	if Global.game_settings and Global.game_settings.one_down then
 	

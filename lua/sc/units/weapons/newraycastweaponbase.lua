@@ -8,10 +8,10 @@ end
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 	for _, category in ipairs(self:categories()) do
-		if self._use_armor_piercing == true then
+		if self._use_armor_piercing then
 			break
 		end
-		self._use_armor_piercing = managers.player:upgrade_value(category, "ap_bullets", false)
+		self._use_armor_piercing = managers.player:upgrade_value_nil(category, "ap_bullets")
 	end
 end)
 
@@ -160,6 +160,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	if current_state._moving then
 		--Get spread area from stability stat.
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
+
 		--Add moving spread penalty reduction.
 		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
 		spread_area = spread_area + moving_spread
@@ -340,7 +341,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	
 	self._reload_speed_mult = self._reload_speed_mult or 1
 	self._ads_speed_mult = self._ads_speed_mult or 1
-	self._rof_mult = 1
 	self._hipfire_mod = 1
 	self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
 	
@@ -403,9 +403,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		end
 		if stats.ads_speed_mult then
 			self._ads_speed_mult = self._ads_speed_mult * stats.ads_speed_mult
-		end
-		if stats.rof_mult then
-			self._rof_mult = self._rof_mult * stats.rof_mult
 		end
 		if stats.hipfire_mod then
 			self._hipfire_mod = self._hipfire_mod * stats.hipfire_mod 
@@ -585,44 +582,37 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills
 			* managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 			* (1 / managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)) --Compensate for fully loaded bonus ammo.
-			* ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1) --Offset from weapon mods, especially ones that may modify total ammo without changing damage tiers.
 
 		for _, category in ipairs(self:weapon_tweak_data().categories) do --Compensate for weapon category based bonus ammo.
 			pickup_multiplier = pickup_multiplier * (1 / managers.player:upgrade_value(category, "extra_ammo_multiplier", 1))
 		end
 
+		--Compensate for perk deck damage boosts and damage being /10 overall. Treat damage as if you have the max level.
+		local damage_multiplier = 10
+		local primary_category = self:weapon_tweak_data().categories[1] --The perk deck damage boost doesn't apply to most special weapons.
+		if primary_category ~= "grenade_launcher" and primary_category ~= "rocket_frag" and primary_category ~= "bow" and primary_category ~= "crossbow" then
+			damage_multiplier = damage_multiplier / managers.player:upgrade_value("player", "passive_damage_multiplier", 1)
+		end
+
 		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
-		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(self._damage * 10)) * pickup_multiplier * total_ammo
-		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(self._damage * 10)) * pickup_multiplier * total_ammo, self._ammo_pickup[1])
+		--self._ammo_data.ammo_pickup_xxx_mul corresponds to a multiplier from weapon mods, especially ones that may modify total ammo without changing damage tiers or add DOT effects.
+		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stats.pickup_exponents.min * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
+		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1), self._ammo_pickup[1])
 	end
 end
 					
 --[[	fire rate multipler in-game stuff	]]--
 function NewRaycastWeaponBase:fire_rate_multiplier()
-	local multiplier = self._rof_mult or 1
+	local multiplier = self._fire_rate_multiplier or 1
 	
 	if self:in_burst_mode() then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 	end		
-			
-	if not self:upgrade_blocked(tweak_data.weapon[self._name_id].category, "fire_rate_multiplier") then
-		if (self._name_id == "tec9" or self._name_id == "c96") and self._block_eq_aced then
-		else
-			multiplier = multiplier * managers.player:upgrade_value(self:weapon_tweak_data().category, "fire_rate_multiplier", 1)
-		end
-	end
-	if not self:upgrade_blocked("weapon", "fire_rate_multiplier") then
-		if (self._name_id == "tec9" or self._name_id == "c96") and self._block_eq_aced then
-		else
-			multiplier = multiplier * managers.player:upgrade_value("weapon", "fire_rate_multiplier", 1)
-		end
-	end
-	if not self:upgrade_blocked(self._name_id, "fire_rate_multiplier") then
-		if (self._name_id == "tec9" or self._name_id == "c96") and self._block_eq_aced then
-		else
-			multiplier = multiplier * managers.player:upgrade_value(self._name_id, "fire_rate_multiplier", 1)
-		end
-	end
+	
+	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
+		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+	end 
+
 	return multiplier
 end
 

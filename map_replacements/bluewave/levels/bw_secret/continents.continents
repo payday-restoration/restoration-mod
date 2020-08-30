@@ -1,0 +1,4 @@
+<table>
+	<editor_only base_id="200000" editor_only="true" name="editor_only"/>
+	<world base_id="100000" editor_only="false" name="world"/>
+</table>

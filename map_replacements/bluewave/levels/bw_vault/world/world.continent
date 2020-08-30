@@ -1,0 +1,258 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/vault/bw_vault_wall" name_id="bw_vault_doorway_002" position="0 -600 0" rotation="0 0 -0.707107 -0.707107" unit_id="100013"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 100 0" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="100 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/vault/bw_vault_window" name_id="bw_vault_window_001" position="0 -500 0" rotation="0 0 -0.707107 -0.707107" unit_id="100014"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 300 0" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="300 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/vault/bw_vault_wall" name_id="bw_vault_doorway_005" position="0 -300 0" rotation="0 0 -0.707107 -0.707107" unit_id="100015"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 -200 0" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/vault/bw_vault_doorway" name_id="bw_vault_doorway_001" position="0 -200 0" rotation="0 0 -0.707107 -0.707107" unit_id="100016"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="13.5 -200 0" _prev_rot="0 0 0.707107 -0.707107" continent="world" disable_on_ai_graph="true" hide_on_projection_light="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_mod_blue/architecture/vault/bw_vault_metal_door_only" name_id="vaultdoor" position="13.5 -200 0" rotation="0 0 0.707107 -0.707107" unit_id="100017"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 200 0" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/vault/bw_vault_wall" name_id="bw_vault_doorway_004" position="0 200 0" rotation="0 0 -0.707107 -0.707107" unit_id="100018"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 900 0" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="900 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/vault/bw_vault_window" name_id="bw_vault_window_002" position="0 300 0" rotation="0 0 -0.707107 -0.707107" unit_id="100019"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 1100 0" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="1100 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/vault/bw_vault_wall" name_id="bw_vault_doorway_003" position="0 500 0" rotation="0 0 -0.707107 -0.707107" unit_id="100020"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-532 -138 25" _prev_rot="0 0 0.707107 -0.707107" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_security_servers/gen_prop_security_server_hightech" name_id="gen_prop_security_server_hightech_001" position="-532 -138 25" rotation="0 0 0.71934 -0.694658" unit_id="100024"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/vault/bw_vault_room" name_id="bw_vault_room_001" position="0 0 0" rotation="0 0 -0.707107 -0.707107" unit_id="100025"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="10 -140 165" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="light_yellow_on_black" name="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" name_id="gen_prop_security_timer_001" position="10 -140 155" rotation="0 0 -0.707107 -0.707107" unit_id="100027"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="50 0 0" _prev_rot="0 0 0.707107 -0.707107" continent="world" disable_on_ai_graph="true" hide_on_projection_light="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" name_id="gen_prop_square_drop_marker_4x15_001" position="50 0 0" rotation="0 0 0.707107 -0.707107" unit_id="100000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="10 -38 55" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="state_hide" name="units/payday2/equipment/gen_interactable_lance_large/gen_interactable_lance_large" name_id="lance" position="10 -38 55" rotation="0 0 -0.707107 -0.707107" unit_id="100001"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-273 -260 85" _prev_rot="0 0 0 -1" continent="world" local_pos="33 9 0" local_rot="0 0 0.707107 0.707107" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_001" position="-273 -254 85" rotation="0 0 0 -1" unit_id="100004"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-211 -251 85" _prev_rot="0 0 1 -4.37114e-008" continent="world" local_pos="24 71 0" local_rot="0 0 -0.707107 0.707107" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_002" position="-211 -245 85" rotation="0 0 1 -4.37114e-008" unit_id="100005"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-325 -251 85" _prev_rot="0 0 1 4.37114e-008" continent="world" local_pos="24 -43 0" local_rot="0 0 -0.707107 0.707107" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_005" position="-325 -245 85" rotation="0 0 1 4.37114e-008" unit_id="100006"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-387 -260 85" _prev_rot="0 0 0 -1" continent="world" local_pos="33 -105 0" local_rot="0 0 0.707107 0.707107" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_004" position="-387 -254 85" rotation="0 0 0 -1" unit_id="100007"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-387 240 85" _prev_rot="0 0 0 -1" continent="world" local_pos="62 9.00001 0" local_rot="0 0 1 -4.37114e-008" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_009" position="-387 246 85" rotation="0 0 0 -1" unit_id="100008"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-273 240 85" _prev_rot="0 0 0 -1" continent="world" local_pos="-52 9 0" local_rot="0 0 1 -4.37114e-008" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_006" position="-273 246 85" rotation="0 0 0 -1" unit_id="100009"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-325 249 85" _prev_rot="0 0 1 4.37114e-008" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_010" position="-325 255 85" rotation="0 0 1 4.37114e-008" unit_id="100010"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-211 255 85" _prev_rot="0 0 1 4.37114e-008" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_007" position="-211 255 85" rotation="0 0 1 4.37114e-008" unit_id="100011"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-282 -227 85" _prev_rot="0 0 0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_003" position="-282 -221 85" rotation="0 0 0.707107 -0.707107" unit_id="100012"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-282 273 85" _prev_rot="0 0 0.707107 -0.707107" continent="world" local_pos="-43 -24 0" local_rot="0 0 0.707107 0.707107" mesh_variation="" name="units/payday2/pickups/gen_pku_gold/gen_pku_gold" name_id="pku_gold_008" position="-282 279 85" rotation="0 0 0.707107 -0.707107" unit_id="100028"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="50 -600 0" _prev_rot="0 0 0 -1" continent="world" disable_on_ai_graph="true" hide_on_projection_light="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_mod_blue/architecture/warehouse/warehouse_vault_cap" name_id="warehouse_vault_cap_001" position="50 -600 0" rotation="-0 0 -0 -1" unit_id="100029"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="10 -140 120" _prev_rot="0 0 -0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia" name_id="keycard_reader_standalone_omnia_001" position="10 -140 120" rotation="0 0 -0.707107 -0.707107" unit_id="100030"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-444.514 -549.943 1.49012e-006" _prev_rot="0 0 0 -1" continent="world" local_pos="-291 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" name_id="drk_prop_mobile_server_rack_a_001" position="-444.514 -549.943 1.49012e-006" rotation="0 0 0 -1" unit_id="100026"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-524.514 -549.943 0" _prev_rot="0 0 0 -1" continent="world" local_pos="-371 0 -1.49012e-006" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" name_id="drk_prop_mobile_server_rack_a_002" position="-524.514 -549.943 0" rotation="0 0 0 -1" unit_id="100031"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-443.514 -549.943 34" _prev_rot="0 0 1 4.37114e-008" continent="world" local_pos="-290 0.000366211 34" local_rot="0 0 -1 -4.37114e-008" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_003" position="-443.514 -549.943 34" rotation="0 0 1 4.37114e-008" unit_id="100032"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-524.514 -549.943 34" _prev_rot="0 0 0.999657 -0.0261769" continent="world" local_pos="-371 0.000366211 34" local_rot="0 0 -0.999657 0.0261769" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_004" position="-524.514 -549.943 34" rotation="0 0 0.999657 -0.0261769" unit_id="100033"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-443.514 -549.943 92" _prev_rot="0 0 0.999962 0.00872658" continent="world" local_pos="-290 0.000366211 92" local_rot="0 0 -0.999962 -0.00872658" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_005" position="-443.514 -549.943 92" rotation="0 0 0.999962 0.00872658" unit_id="100034"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-153.514 -549.943 1.49012e-006" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" name_id="drk_prop_mobile_server_rack_a_004" position="-153.514 -549.943 1.49012e-006" rotation="0 0 0 -1" unit_id="100035"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-152.514 -549.943 34" _prev_rot="0 0 1 4.37114e-008" continent="world" local_pos="0.999969 0.000366211 34" local_rot="0 0 -1 -4.37114e-008" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_006" position="-152.514 -549.943 34" rotation="0 0 1 4.37114e-008" unit_id="100036"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-152.514 -549.943 92" _prev_rot="0 0 0.999962 0.00872658" continent="world" local_pos="0.999969 0.000366211 92" local_rot="0 0 -0.999962 -0.00872658" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_007" position="-152.514 -549.943 92" rotation="0 0 0.999962 0.00872658" unit_id="100037"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-70.514 -549.943 0" _prev_rot="0 0 0.999848 0.0174524" continent="world" local_pos="83 0.000366211 -1.49012e-006" local_rot="0 0 -0.999848 -0.0174524" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_008" position="-70.514 -549.943 0" rotation="0 0 0.999848 0.0174524" unit_id="100038"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-153.514 542.057 1.49012e-006" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" name_id="drk_prop_mobile_server_rack_a_005" position="-153.514 542.057 1.49012e-006" rotation="0 0 0 -1" unit_id="100039"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-70.514 542.057 0" _prev_rot="0 0 0.999848 0.0174524" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_009" position="-70.514 542.057 0" rotation="0 0 -0.0174524 0.999848" unit_id="100040"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-152.514 542.057 34" _prev_rot="0 0 1 4.37114e-008" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_010" position="-152.514 542.057 34" rotation="0 0 0 -1" unit_id="100041"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-152.514 542.057 92" _prev_rot="-0 -0 0.00872663 -0.999962" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_011" position="-152.514 542.057 92" rotation="0 0 -0.0697564 -0.997564" unit_id="100042"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-444.514 542.057 1.49012e-006" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" name_id="drk_prop_mobile_server_rack_a_006" position="-444.514 542.057 1.49012e-006" rotation="0 0 -1 4.37114e-008" unit_id="100043"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-524.514 542.057 0" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" name_id="drk_prop_mobile_server_rack_a_007" position="-524.514 542.057 0" rotation="0 0 -1 4.37114e-008" unit_id="100044"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-524.514 542.057 34" _prev_rot="0 0 0.999657 -0.0261769" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_012" position="-524.514 542.057 34" rotation="0 0 -0.0261769 -0.999657" unit_id="100045"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-443.514 542.057 34" _prev_rot="0 0 0.382683 -0.92388" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_013" position="-443.514 542.057 34" rotation="0 0 0 -1" unit_id="100046"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-515.503 543.314 92" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" name_id="drk_prop_mobile_server_rack_d_001" position="-486.503 543.314 92" rotation="-0 0 -0 -1" unit_id="100048"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-260.514 -549.943 0" _prev_rot="0 0 1 -4.37114e-008" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_014" position="-260.514 -549.943 0" rotation="0 0 1 -4.37114e-008" unit_id="100002"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-341.514 -549.943 0" _prev_rot="0 0 0.999657 -0.026177" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="81 -7.08124e-006 0" local_rot="0 0 0.0261769 0.999657" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_015" position="-341.514 -549.943 0" rotation="0 0 0.999657 -0.026177" unit_id="100049"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-258.399 548.618 0" _prev_rot="0 0 0.0174524 -0.999848" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_016" position="-258.399 548.618 0" rotation="0 0 0.0174524 -0.999848" unit_id="100021"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-153.514 542.057 1.49012e-006" _prev_rot="0 0 0 -1" continent="world" local_pos="-82.9494 -2.89666 1.49012e-006" local_rot="0 0 0.0174524 0.999848" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_a" name_id="drk_prop_mobile_server_rack_a_008" position="-341.399 548.618 1.49012e-006" rotation="0 0 0 -1" unit_id="100022"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-340.399 558.618 75" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_c" name_id="drk_prop_mobile_server_rack_a_017" position="-340.399 558.618 80" rotation="-0 0 -0 -1" unit_id="100050"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-292.271 -552.742 80" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_d" name_id="drk_prop_mobile_server_rack_d_002" position="-292.271 -552.742 80" rotation="-0 0 -0 -1" unit_id="100051"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-557 -66 163" _prev_rot="0 0 -0.707107 -0.707107" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 -25 138" local_rot="0 0 1 0" mesh_variation="disable_interaction" name="units/pd2_dlc_mad/pickups/mad_pku_master_server_value_4/mad_pku_master_server_value_4" name_id="gen_pku_circuit_board_axis_002" position="-557 -66 163" rotation="0 0 -0.707107 -0.707107" unit_id="100003"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-50 -100 0" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/dev_tools/level_tools/dev_door_blocker/dev_door_blocker_1x2x3" name_id="dev_door_blocker_1x2x3_001" only_visible_in_editor="true" position="-50 -100 0" rotation="-0 0 -0 -1" unit_id="100055"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-307.5 -250 350" _prev_rot="0 0 0.707107 -0.707107" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="500 0 0" local_rot="0 0 0 1" name="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_whiteish_small" name_id="ind_prop_light_cones_whiteish_small_001" position="-307.5 -250 350" rotation="0 0 0.707107 -0.707107" unit_id="100056"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-307.5 250 350" _prev_rot="0 0 0.707107 -0.707107" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/ind_prop_light_cones/ind_prop_light_cones_whiteish_small" name_id="ind_prop_light_cones_whiteish_small_002" position="-307.5 250 350" rotation="0 0 0.707107 -0.707107" unit_id="100057"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-299.906 -205.454 87" _prev_rot="0 0 -0.66262 -0.748956" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_short/props/gen_fbi_usb_stick/gen_fbi_usb_stick" name_id="gen_fbi_usb_stick_001" position="-299.906 -205.454 87" rotation="0 0 -0.66262 -0.748956" unit_id="100058"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="17.035 -31.001 -2" _prev_rot="0 0 -0.694658 -0.71934" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_mex/props/mex_prop_breaching_detonator/mex_prop_breaching_detonator" name_id="mex_prop_breaching_detonator_001" position="17.035 -31.001 -2" rotation="0 0 -0.694658 -0.71934" unit_id="100059"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="14.238 -59.922 185.159" _prev_rot="0.0370071 -0.706138 0.0370071 -0.706138" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_berry/props/bry_prop_breaching_charge/bry_prop_breaching_charge" name_id="bry_prop_breaching_charge_001" position="14.238 -59.922 185.159" rotation="0.0370071 -0.706138 0.0370071 -0.706138" unit_id="100060"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="21.238 29.0261 192.594" _prev_rot="0.508651 -0.491198 0.50865 -0.491198" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_berry/props/bry_prop_breaching_charge/bry_prop_breaching_charge" name_id="bry_prop_breaching_charge_002" position="21.238 29.026 192.594" rotation="0.50865 -0.491198 0.50865 -0.491198" unit_id="100061"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="32 -55 150" _prev_rot="0 0 0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_brb/equipment/thermite_interactable_no_consume/thermite_interactable_no_consume" name_id="thermite_interactable_no_consume_001" position="32 -55 150" rotation="0 0 0.707107 -0.707107" unit_id="100062"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="32 -55 72" _prev_rot="0 0 0.707107 -0.707107" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_brb/equipment/thermite_interactable_no_consume/thermite_interactable_no_consume" name_id="thermite_interactable_no_consume_002" position="32 -55 72" rotation="0 0 0.707107 -0.707107" unit_id="100063"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="32 55 72" _prev_rot="0 0 0.707107 -0.707107" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_brb/equipment/thermite_interactable_no_consume/thermite_interactable_no_consume" name_id="thermite_interactable_no_consume_003" position="32 55 72" rotation="0 0 0.707107 -0.707107" unit_id="100064"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="32 55 150" _prev_rot="0 0 0.707107 -0.707107" continent="world" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_brb/equipment/thermite_interactable_no_consume/thermite_interactable_no_consume" name_id="thermite_interactable_no_consume_004" position="32 55 150" rotation="0 0 0.707107 -0.707107" unit_id="100065"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="16.0356 -30.9661 113" _prev_rot="0 0 -0.694658 -0.71934" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="black_on_light_blue" name="units/pd2_indiana/props/gen_prop_security_timer/gen_prop_security_timer" name_id="breaching_charge_timer" position="17.035 -31.001 113" rotation="0 0 -0.694658 -0.71934" unit_id="100066"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-532 -66 25" _prev_rot="0 0 0.707107 -0.707107" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_security_servers/gen_prop_security_server_hightech" name_id="gen_prop_security_server_hightech_002" position="-532 -66 25" rotation="0 0 0.707107 -0.707107" unit_id="100023"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-532 134 25" _prev_rot="0 0 0.707107 -0.707107" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_security_servers/gen_prop_security_server_hightech" name_id="gen_prop_security_server_hightech_003" position="-532 134 25" rotation="0 0 0.688355 -0.725374" unit_id="100047"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-532 62 25" _prev_rot="0 0 0.707107 -0.707107" continent="world" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/props/gen_prop_security_servers/gen_prop_security_server_hightech" name_id="gen_prop_security_server_hightech_004" position="-532 62 25" rotation="0 0 0.707107 -0.707107" unit_id="100052"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-300 250 0" _prev_rot="0 0 0 -1" continent="world" local_pos="0 500 0" local_rot="0 0 0 1" name="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_3x3m" name_id="gov_d_int_decal_mull_3x3m_001" position="-300 250 0" rotation="0 0 0 -1" unit_id="100053"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-300 -250 0" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc2/architecture/gov_d_int/gov_d_int_decal_mull_3x3m" name_id="gov_d_int_decal_mull_3x3m_002" position="-300 -250 0" rotation="0 0 0 -1" unit_id="100054"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 50" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_001" position="-15 -400 50" rotation="-0 0 -0 -1" unit_id="100067"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 100" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 50" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_002" position="-15 -400 100" rotation="-0 0 -0 -1" unit_id="100068"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 150" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 100" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_003" position="-15 -400 150" rotation="-0 0 -0 -1" unit_id="100069"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 200" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 150" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_004" position="-15 -400 200" rotation="-0 0 -0 -1" unit_id="100070"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 250" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 200" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_005" position="-15 -400 250" rotation="-0 0 -0 -1" unit_id="100071"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 300" _prev_rot="-0 0 -0 -1" continent="world" local_pos="0 0 250" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_006" position="-15 -400 300" rotation="-0 0 -0 -1" unit_id="100072"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 50" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_007" position="-15 400 50" rotation="0 0 0 -1" unit_id="100073"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 100" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 50" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_008" position="-15 400 100" rotation="0 0 0 -1" unit_id="100074"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 150" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 100" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_009" position="-15 400 150" rotation="0 0 0 -1" unit_id="100075"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 200" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 150" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_010" position="-15 400 200" rotation="0 0 0 -1" unit_id="100076"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 250" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 200" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_011" position="-15 400 250" rotation="0 0 0 -1" unit_id="100077"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 -400 300" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 250" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_012" position="-15 400 300" rotation="0 0 0 -1" unit_id="100078"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 800 50" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_013" position="-15 0 50" rotation="0 0 0 -1" unit_id="100079"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 800 100" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 50" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_014" position="-15 0 100" rotation="0 0 0 -1" unit_id="100080"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 800 150" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 100" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_015" position="-15 0 150" rotation="0 0 0 -1" unit_id="100081"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-15 800 200" _prev_rot="0 0 0 -1" continent="world" local_pos="0 0 150" local_rot="0 0 0 1" name="units/pd2_dlc_arena/props/are_prop_laser/are_prop_laser_2m" name_id="are_prop_laser_2m_016" position="-15 0 200" rotation="0 0 0 -1" unit_id="100082"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

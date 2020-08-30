@@ -1,0 +1,16 @@
+<materials version="3">
+    <material name="mat_keycard_omnia" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture		file="units/pd2_mod_blue/pickups/pku_keycard_omnia/pku_keycard_omnia_df"/>
+        <bump_normal_texture	file="units/pd2_dlc_vit/props/vit_prop_presidential_keycard/vit_prop_presidential_keycard_nm"/>
+        <material_texture		file="units/pd2_dlc_vit/props/vit_prop_presidential_keycard/vit_prop_presidential_keycard_gsma"/>
+    </material>
+    <material name="mat_control" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture		file="units/payday2/equipment/gen_interactable_door_keycard/reader_df"/>
+        <bump_normal_texture	file="units/payday2/equipment/gen_interactable_door_keycard/reader_nm"/>
+    </material>
+    <material name="mat_screen" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture			file="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia_df"/>
+        <self_illumination_texture	file="units/pd2_mod_blue/equipment/keycard_reader_standalone_omnia/keycard_reader_standalone_omnia_df"/>
+        <variable					value="monitor" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_bph/props/bph_prop_keypad/bph_prop_keypad" orientation_object="rp_bph_interactable_button" />
+	<sequence_manager file="units/pd2_dlc_bph/props/bph_prop_keypad/bph_interactable_button" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_bph_interactable_button" />
+			<object name="c_box" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<lod_object name="lod_button">
+			<object name="g_lod0" enabled="true" max_distance="1500" />
+			<object name="g_lod1" enabled="true" />
+		</lod_object>
+	</graphics>
+</dynamic_object>

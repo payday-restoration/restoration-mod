@@ -1,0 +1,9 @@
+
+<state_machine name="rubber_boat" timebase="frames">
+	<segment name="base"/>
+	
+	<default state="std/empty"/>
+	
+	<states file="anims/units/rubber_boat/std"/>
+	
+</state_machine>

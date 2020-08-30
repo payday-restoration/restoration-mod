@@ -1,0 +1,6 @@
+<materials version="3" group="gen_pku_methbag_static">
+    <material name="mtr_lootbag" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/payday2/pickups/gen_pku_lootbag/gen_pku_lootbag_df"/>
+        <bump_normal_texture file="units/payday2/pickups/gen_pku_lootbag/gen_pku_lootbag_nm"/>
+    </material>
+</materials>

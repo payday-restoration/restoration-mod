@@ -1,0 +1,26 @@
+<table>
+	<unit>
+		<sequence editable_state="true" name="'unbreak_fences'" triggable="true">
+			<object		enabled="false" name="'g_fence_broken_001'"/>
+			<object		enabled="false" name="'g_fence_broken_002'"/>
+			<body		enabled="false" name="'body_fence_01_broken'"/>
+			<body		enabled="false" name="'body_fence_02_broken'"/>
+			<object		enabled="true" name="'g_fence_unbroken_001'"/>
+			<object		enabled="true" name="'g_fence_unbroken_002'"/>
+			<body		enabled="true" name="'body_fence_01_unbroken'"/>
+			<body		enabled="true" name="'body_fence_02_unbroken'"/>
+		</sequence>
+		<sequence editable_state="true" name="'break_fence_1'" triggable="true">
+			<object		enabled="true" name="'g_fence_broken_001'"/>
+			<body		enabled="true" name="'body_fence_01_broken'"/>
+			<object		enabled="false" name="'g_fence_unbroken_001'"/>
+			<body		enabled="false" name="'body_fence_01_unbroken'"/>
+		</sequence>
+		<sequence editable_state="true" name="'break_fence_2'" triggable="true">
+			<object		enabled="true" name="'g_fence_broken_002'"/>
+			<body		enabled="true" name="'body_fence_02_broken'"/>
+			<object		enabled="false" name="'g_fence_unbroken_002'"/>
+			<body		enabled="false" name="'body_fence_02_unbroken'"/>
+		</sequence>
+	</unit>
+</table>

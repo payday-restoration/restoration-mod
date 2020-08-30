@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+	<network sync="spawn"/>
+	<object file="units/payday2/props/gen_prop_container_murky/gen_prop_container_murky_doors" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="atm_interaction" />
+			<var name="_interact_object" value="interact"/>
+		</extension>
+		<extension name="sync_unit_data" class="SyncUnitData" />
+	</extensions>
+</unit>

@@ -1,0 +1,36 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_shoutout_raid/props/gen_prop_ramp_flat/gen_prop_ramp_flat" orientation_object="rp_gen_prop_ramp_flat" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_gen_prop_ramp_flat" />
+			<object name="c_convex_01" collision_type="convex" padding="-2.5"/>
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_04" collision_type="box" padding="-2.5"/>
+			<object name="c_box_05" collision_type="box" padding="-2.5"/>
+			<object name="c_box_06" collision_type="box" padding="-2.5"/>
+			<object name="c_box_07" collision_type="box" padding="-2.5"/>
+			<object name="c_box_08" collision_type="box" padding="-2.5"/>
+			<object name="c_box_09" collision_type="box" padding="-2.5"/>
+			<object name="c_box_10" collision_type="box" padding="-2.5"/>
+			<object name="c_box_11" collision_type="box" padding="-2.5"/>
+			<object name="c_box_12" collision_type="box" padding="-2.5"/>
+			<object name="c_box_13" collision_type="box" padding="-2.5"/>
+			<object name="c_box_14" collision_type="box" padding="-2.5"/>
+			<object name="c_box_15" collision_type="box" padding="-2.5"/>
+			<object name="c_box_16" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal_catwalk">
+		<decal_mesh name="dm_metal_catwalk" enabled="true" material="metal_catwalk" />
+		<decal_mesh name="dm_rubber" enabled="true" material="rubber" />
+	</decal_surfaces>
+	<graphics>
+		<lod_object name="lod_g_g">
+			<object name="g_g_lod0" enabled="true" max_distance="3000" />
+			<object name="g_g_lod1" enabled="true" />
+		</lod_object>
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

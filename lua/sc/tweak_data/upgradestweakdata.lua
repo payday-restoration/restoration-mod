@@ -309,13 +309,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.6
 	}
 	self.values.player.body_armor.dodge = {
-		0.2,
-		0.1,
-		0,
+		0.25,
+		0.15,
+		0.05,
+		-0.05,
 		-0.1,
 		-0.15,
-		-0.2,
-		-0.3
+		-0.25
 	}
 	self.values.player.body_armor.concealment = {
 		30,
@@ -479,9 +479,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.temporary.first_aid_damage_reduction = {{0.5, 5}}
 
 			--Painkillers--
-				self.values.temporary.passive_revive_damage_reduction = {
+				self.first_aid_kit.revived_damage_reduction = {
 					{0.75, 5}, --Basic
-					{0.5, 5}   --Ace
+					{0.5, 5} --Ace
 				}
 
 			--Uppers
@@ -543,7 +543,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 				--Stockholm Syndrome
 					--Basic
-						self.values.player.super_syndrome = {0}
+						self.values.player.civilians_dont_flee = {true}
 					--Ace
 						self.values.player.civilian_reviver = {true}
 						self.values.player.civilian_gives_ammo = {true}
@@ -561,14 +561,17 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 							
 				--Hostage Taker
 					self.values.player.hostage_health_regen_addend = {
-						0.125, --Basic
-						0.25 --Ace
+						0.1, --Basic
+						0.2 --Unused
 					}
+
 					--Ace
+						self.values.player.hostage_health_regen_max_mult = { 1 }
 						self.values.team.damage = {
 							hostage_absorption = {0.1},
 							hostage_absorption_limit = 4
 						}
+
 			
 		--Assault--
 			--Leadership--
@@ -599,10 +602,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.smg.full_auto_free_ammo = {5}
 				
 			--Heavy Impact
-				self.values.weapon.knock_down = {
-					0.1, --Basic
-					0.25 --Ace
-				}
+				--Basic
+					self.values.weapon.knock_down = {
+						0.4, --Ace
+						0.4 --Unused
+					}
+				--Ace
+					self.values.player.bipod_damage_reduction = {0.5}
 	
 			--Body Expertise
 				self.values.weapon.automatic_head_shot_add = {0.3, 1}
@@ -772,11 +778,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.sentry_gun.quantity = {1, 2}
 
 				--Bulletproof
-					self.values.player.armor_multiplier = {
-						1.2, --Basic
-						1.4 --Ace
-					}
+					--Basic
+						self.values.player.unpierceable_armor = {true}
 					--Ace
+						self.values.player.armor_full_damage_absorb = {0.25}
 						self.values.player.armor_regen_timer_multiplier_tier = {0.9}				
 			
 		--Breacher--
@@ -827,7 +832,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.recoil_index_addend = {1}
 					self.values.assault_rifle.recoil_index_addend = {1}
 				--Ace
-					self.values.player.not_moving_accuracy_increase = {2}
+					self.values.temporary.headshot_fire_rate_mult = {{1.2, 6}}
 				
 			--Kilmer
 				--Basic
@@ -845,8 +850,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.weapon.enter_steelsight_speed_multiplier = {1.5}
 				--Ace
-					self.values.assault_rifle.steelsight_accuracy_inc = {0.65}
-					self.values.snp.steelsight_accuracy_inc = {0.65}
+					self.values.assault_rifle.steelsight_accuracy_inc = {0.7}
+					self.values.snp.steelsight_accuracy_inc = {0.7}
 					
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
@@ -1113,11 +1118,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.akimbo.extra_ammo_multiplier = {1.25, 1.25}
 
-				--Also used by Hitman, unfortunately.
 				self.values.akimbo.recoil_index_addend = {
 					0,
-					2,
-					4,
+					2, --Basic
+					4, --Ace
 					6,
 					8
 				}
@@ -1241,7 +1245,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Burglar
 	self.values.player.crouch_dodge_chance = {0.05, 0.10}
 
-	--Hitman
 	self.values.player.perk_armor_regen_timer_multiplier = {
 		0.9,
 		0.8,
@@ -1249,6 +1252,18 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		0.65,
 		0.6
 	}
+
+	--Hitman
+	self.values.player.store_temp_health = { 
+		{7.5, 2.5},
+		{12, 4}
+	}
+	self.temp_health_decay = 0.6
+	self.temp_health_max = 24
+	self.values.player.revive_temp_health = { 12 }
+	self.values.player.temp_health_speed = { 1.1 }
+	self.values.player.temp_health_deflection = { 0.2 }
+	self.values.player.armor_regen_dodge = { 1 }
 
 	self.values.player.level_2_dodge_addend = {
 		0.05,
@@ -1464,10 +1479,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.loose_ammo_give_team_ratio = 1 --% of ammo given to team.
 
 	--Sociopath more like SocioBAD
-	self.values.player.killshot_regen_armor_bonus = {2.5}
-	self.values.player.killshot_close_regen_armor_bonus = {2.5}
+	self.values.player.killshot_regen_armor_bonus = {2}
+	self.values.player.killshot_close_regen_armor_bonus = {2}
 	self.values.player.killshot_close_panic_chance = {0.25}
-	self.values.player.melee_kill_life_leech = {0.02}
+	self.values.player.melee_kill_life_leech = {0.05}
 	self.on_killshot_cooldown = 3
 
 	--Anarchist stuff--
@@ -1487,8 +1502,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	self.values.player.armor_increase = {
 		0.50,
-		0.75,
-		1.00
+		1.00,
+		1.50
 	}
 
 	self.values.player.damage_to_armor = {
@@ -1536,21 +1551,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
 	self.cocaine_stacks_convert_levels = {
-		30,
-		25
+		300,
+		240
 	}	
-	self.cocaine_stacks_dmg_absorption_value = 0.125
+	self.cocaine_stacks_dmg_absorption_value = 0.1
 	self.cocaine_stacks_tick_t = 0
-	self.max_cocaine_stacks_per_tick = 300
-	self.max_total_cocaine_stacks = 300
-	self.cocaine_stacks_decay_t = 10
-	self.cocaine_stacks_decay_amount_per_tick = 10
-	self.cocaine_stacks_decay_percentage_per_tick = 0.05
-	self.values.player.cocaine_stacking = {0.05}
+	self.max_cocaine_stacks_per_tick = 2400
+	self.max_total_cocaine_stacks = 2400
+	self.cocaine_stacks_decay_t = 8
+	self.cocaine_stacks_decay_amount_per_tick = 300
+	self.cocaine_stacks_decay_percentage_per_tick = 0
+	self.values.player.cocaine_stacking = {1}
 	self.values.player.sync_cocaine_stacks = {true}
-	self.values.player.cocaine_stacks_decay_multiplier = {0.5}
+	self.values.player.cocaine_stacks_decay_multiplier = {0.8}
 	self.values.player.sync_cocaine_upgrade_level = {2}
-	self.values.player.cocaine_stack_absorption_multiplier = {1.25}
+	self.values.player.cocaine_stack_absorption_multiplier = {1.5}
 	
 	--Chico--
 	--kingpin
@@ -1568,10 +1583,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		1.15
 	}
 	self.values.player.chico_injector_low_health_multiplier = {
-		{0.25, 0.5}
+		{0.25, 0.6}
 	}	
 	self.values.player.chico_injector_health_to_speed = {
-		{0.3, 1}
+		{0.5, 2}
 	}
 	--Are these the dreamers we were told about?--
 	--sicario
@@ -1609,7 +1624,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 
 	self.values.player.dodge_regen_damage_health_ratio_multiplier = {
-		0.10
+		0.08
 	}
 
 	self.values.player.melee_kill_dodge_regen = {
@@ -2134,7 +2149,16 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "passive_health_multiplier",
 			value = 10
 		}
-	}	
+	}
+	self.definitions.temporary_headshot_fire_rate_mult = {
+		category = "temporary",
+		name_id = "menu_temporary_headshot_fire_rate_mult",
+		upgrade = {
+			category = "temporary",
+			upgrade = "headshot_fire_rate_mult",
+			value = 1
+		}
+	}
 	self.definitions.temporary_damage_speed_multiplier_1 = {
 		category = "temporary",
 		name_id = "menu_temporary_damage_speed_1",
@@ -2508,7 +2532,16 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "passive_damage_multiplier",
 			category = "weapon"
 		}
-	}	
+	}
+	self.definitions.player_hostage_health_regen_max_mult = {
+		name_id = "menu_player_hostage_health_regen_max_mult",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hostage_health_regen_max_mult",
+			category = "player"
+		}
+	}
 end
 
 function UpgradesTweakData:_smg_definitions()
@@ -3053,6 +3086,96 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "special_double_drop",
+			category = "player"
+		}
+	}
+	self.definitions.player_unpierceable_armor = {
+		name_id = "menu_player_unpierceable_armor",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "unpierceable_armor",
+			category = "player"
+		}
+	}
+	self.definitions.player_armor_full_damage_absorb = {
+		name_id = "menu_player_armor_full_damage_absorb",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "armor_full_damage_absorb",
+			category = "player"
+		}
+	}
+	self.definitions.player_civilians_dont_flee = {
+		name_id = "menu_player_civilians_dont_flee",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "civilians_dont_flee",
+			category = "player"
+		}
+	}
+	self.definitions.player_bipod_damage_reduction = {
+		name_id = "menu_player_bipod_damage_reduction",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "bipod_damage_reduction",
+			category = "player"
+		}
+	}
+	self.definitions.player_store_temp_health_1 = {
+		name_id = "menu_player_store_temp_health",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "store_temp_health",
+			category = "player"
+		}
+	}
+	self.definitions.player_store_temp_health_2 = {
+		name_id = "menu_player_store_temp_health",
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "store_temp_health",
+			category = "player"
+		}
+	}
+	self.definitions.player_revive_temp_health = {
+		name_id = "menu_player_revive_temp_health",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "revive_temp_health",
+			category = "player"
+		}
+	}
+	self.definitions.player_temp_health_speed = {
+		name_id = "menu_player_temp_health_speed",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "temp_health_speed",
+			category = "player"
+		}
+	}
+	self.definitions.player_temp_health_deflection = {
+		name_id = "menu_player_temp_health_deflection",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "temp_health_deflection",
+			category = "player"
+		}
+	}
+	self.definitions.player_armor_regen_dodge = {
+		name_id = "menu_player_armor_regen_dodge",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "armor_regen_dodge",
 			category = "player"
 		}
 	}

@@ -86,6 +86,7 @@ function restoration:Init()
 		"dinner",
 		"wwh",
 		"born",
+		"nmh",
 		"nmh_res", --Resmod edit of no mercy.
 		"flat",
 		"dah",
@@ -109,7 +110,6 @@ function restoration:Init()
 		"skmc_ovengrill",
 		"spa_CD",		
 		"wwh_CD",		
-		"street"		--whurr's hs edit
 	}
 	--Mostly for stuff like Cursed Killed Room and other crap heists
 	restoration.very_tiny_levels = {
@@ -121,7 +121,8 @@ function restoration:Init()
 		"pbr2",		
 		"rvd2",		
 		"peta2",	
-		"vit",	
+		"vit",
+		"street"		--whurr's hs edit
 		"mex_cooking",		
 		--Custom Heists below--
 		"Victor Romeo",

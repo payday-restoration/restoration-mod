@@ -1,8 +1,0 @@
-<materials version="3">
-    <material name="mat_door" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP">
-        <bump_normal_texture file="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_nm"/>
-        <diffuse_texture file="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_df"/>
-        <reflection_texture file="units/payday2/cubemaps/cubemap_steel" type="cubemap"/>
-        <variable value="1 0 2" type="vector3" name="environment_settings"/>
-    </material>
-</materials>

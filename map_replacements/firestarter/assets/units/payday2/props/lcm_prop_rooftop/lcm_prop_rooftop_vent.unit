@@ -1,6 +1,0 @@
-<unit type="und" slot="1" >
-    <object file="units/payday2/props/lcm_prop_rooftop/lcm_prop_rooftop_vent" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

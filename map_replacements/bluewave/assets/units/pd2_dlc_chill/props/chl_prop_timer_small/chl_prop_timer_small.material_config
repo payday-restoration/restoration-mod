@@ -1,7 +1,0 @@
-<materials version="3">
-    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="chl_prop_timer_small_mat" version="2">
-        <diffuse_texture file="units/pd2_dlc_chill/architecture/chl_whole_building/mad_building_trims_01_df" mip="4"/>
-        <bump_normal_texture file="units/pd2_dlc_chill/architecture/chl_whole_building/mad_building_trims_01_nm" mip="4"/>
-        <material_texture file="units/pd2_dlc_chill/architecture/chl_whole_building/mad_building_trims_01_gsma" mip="4"/>
-    </material>
-</materials>

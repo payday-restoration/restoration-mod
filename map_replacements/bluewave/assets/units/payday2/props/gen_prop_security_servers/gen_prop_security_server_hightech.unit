@@ -1,6 +1,0 @@
-<unit type="gen" slot="1" >
-    <object file="units/payday2/props/gen_prop_security_servers/gen_prop_security_server_hightech" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

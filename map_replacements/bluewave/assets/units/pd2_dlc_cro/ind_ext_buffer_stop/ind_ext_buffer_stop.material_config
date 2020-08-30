@@ -1,7 +1,0 @@
-<materials version="3">
-    <material name="beam" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-        <diffuse_texture file="units/pd2_dlc_cro/ind_ext_buffer_stop/buffer_stop_diffuse"/>
-        <bump_normal_texture file="units/pd2_dlc_cro/ind_ext_buffer_stop/buffer_stop_normal"/>
-    </material>
-    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
-</materials>

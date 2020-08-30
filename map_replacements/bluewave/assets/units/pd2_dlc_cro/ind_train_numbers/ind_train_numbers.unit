@@ -1,7 +1,0 @@
-<unit type="ind" slot="1">
-    <object file="units/pd2_dlc_cro/ind_train_numbers/ind_train_numbers" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-		<extension name="damage" class="UnitDamage" />
-    </extensions>
-</unit>

@@ -1,6 +1,0 @@
-<unit type="wpn" slot="1" >
-    <object file="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl_incendiary" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

@@ -1,6 +1,0 @@
-<table>
-	<coverpoints base_id="400000" editor_only="true" name="coverpoints"/>
-	<editor_only base_id="200000" editor_only="true" name="editor_only"/>
-	<lighting_blockers base_id="300000" editor_only="true" name="lighting_blockers"/>
-	<world base_id="100000" editor_only="false" name="world"/>
-</table>

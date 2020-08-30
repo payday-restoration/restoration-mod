@@ -1,9 +1,0 @@
-<unit type="gen" slot="1" >
-    <object file="units/payday2/props/gen_prop_glow/gen_prop_glow_window_011" />
-	<dependencies>
-    	<depends_on effect="effects/payday2/particles/flares/street_light_flare_window_01" />
-    </dependencies>
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

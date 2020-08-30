@@ -1,8 +1,0 @@
-<unit type="gen" slot="1" >
-    <object file="units/payday2/props/gen_prop_square_drop_marker_4x15/gen_prop_square_drop_marker_4x15" />
-    <network sync="spawn"/>
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-		<extension name="damage" class="UnitDamage" />
-    </extensions>
-</unit>

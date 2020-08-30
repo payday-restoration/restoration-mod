@@ -1,6 +1,0 @@
-<unit type="gen" slot="1" >
-    <object file="units/pd2_mod_blue/nature/warehouse_water/warehouse_water" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

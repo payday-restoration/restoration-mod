@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<unit type="dev" slot="1">
-  <object file="units/test/jocke/oneplanetorulethemall" />
-  <extensions>
-    <extension name="unit_data" class="ScriptUnitData" />
-  </extensions>
-</unit>

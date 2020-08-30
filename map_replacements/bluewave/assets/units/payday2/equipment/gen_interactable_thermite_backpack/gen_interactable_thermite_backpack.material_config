@@ -1,8 +1,0 @@
-<materials version="3" group="mat_backpack_thermite">
-    <material name="mtr_backpack" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-        <diffuse_texture file="units/payday2/equipment/gen_interactable_thermite_backpack/backpack_df"/>
-        <bump_normal_texture file="units/payday2/equipment/gen_interactable_thermite_backpack/backpack_nm"/>
-        <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
-    </material>
-</materials>

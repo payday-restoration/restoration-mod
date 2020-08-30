@@ -1,9 +1,0 @@
-<unit type="gen" slot="1" >
-    <object file="units/payday2/equipment/gen_interactable_hack_computer/gen_interactable_hack_computer_a" />
-	<network sync="spawn"/>
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-        <extension class="UnitDamage" name="damage" />
-        <extension name="attention" class="AIAttentionObject" />
-    </extensions>
-</unit>

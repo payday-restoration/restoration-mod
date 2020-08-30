@@ -39,8 +39,6 @@
 			<value_node value="levels/narratives/skm/skm_run/backdrop/backdrop"/>
 			<value_node value="levels/narratives/skm/skm_run/world/world"/>
 			<value_node value="levels/narratives/skm/skm_run/lights/lights"/>
-			<value_node value="levels/narratives/classics/run/world/world"/>
-			<value_node value="levels/narratives/classics/dinner/world_sounds"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
@@ -50,7 +48,7 @@
 	</level>
 	<narrative briefing_event="pln_fwb_cbf_01" contact="skirmish" debrief_event="pln_fwb_34" id="skm_heat_street" jc="60" max_mission_xp="135900" min_mission_xp="8000" region="street">
 		<chain>
-			<table level_id="skm_street" type="b" type_id="heist_type_assault"/>
+			<table level_id="skm_street" type="d" type_id="heist_type_assault"/>
 		</chain>
 		<contract_cost>
 			<value_node value="16000"/>
@@ -68,9 +66,9 @@
 			<value_node value="codex/locke1"/>
 		</crimenet_videos>
 		<date_added>
-			<value_node value="2020"/>
-			<value_node value="8"/>
-			<value_node value="3"/>
+			<value_node value="2018"/>
+			<value_node value="4"/>
+			<value_node value="23"/>
 		</date_added>
 		<experience_mul>
 			<value_node value="1"/>

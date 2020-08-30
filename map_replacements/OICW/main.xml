@@ -167,7 +167,6 @@
 		<animation path="anims/fps/oicw/oicw_get_up" load="true"/>
 		<animation path="anims/fps/oicw/oicw_gogo" load="true"/>
 		<animation path="anims/fps/oicw/oicw_inspect" load="true"/>
-		<animation path="anims/fps/oicw/oicw_bipod_recoil" load="true"/>
 		<animation path="anims/fps/oicw/oicw_bipod_reload" load="true"/>
 		<animation path="anims/fps/oicw/oicw_bipod_reload_not_empty" load="true"/>
 		<animation path="anims/fps/oicw/oicw_bipod_enter" load="true"/>

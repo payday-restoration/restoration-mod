@@ -541,26 +541,11 @@ function GroupAIStateBase:smoke_and_flash_grenades()
 	return self._smoke_grenades
 end
 
+--No longer increases with more players, also ignores converts.
 function GroupAIStateBase:has_room_for_police_hostage()
 	local nr_hostages_allowed = 4
-	for u_key, u_data in pairs(self._player_criminals) do
-		if u_data.unit:base().is_local_player then
-			if managers.player:has_category_upgrade("player", "intimidate_enemies") then
-				if Global.game_settings.single_player then
-					nr_hostages_allowed = 4
-				else
-					nr_hostages_allowed = 4
-				end
-			end
-		elseif u_data.unit:base():upgrade_value("player", "intimidate_enemies") then
-			if Global.game_settings.single_player then
-				nr_hostages_allowed = 4
-			else
-				nr_hostages_allowed = 4
-			end
-		end
-	end
-	return nr_hostages_allowed > self._police_hostage_headcount + table.size(self._converted_police)
+
+	return nr_hostages_allowed > self._police_hostage_headcount
 end
 
 function GroupAIStateBase:sync_event(event_id, blame_id)

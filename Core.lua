@@ -79,6 +79,7 @@ function restoration:Init()
 		"skm_mus",
 		"skm_red2",
 		"skm_run",
+		"run_res", --Whurr's Heat Street Edit
 		"skm_watchdogs_stage2",
 		"bph",
 		"glace",
@@ -86,9 +87,10 @@ function restoration:Init()
 		"dinner",
 		"wwh",
 		"born",
+		"nmh",
+		"nmh_res", --Resmod edit of no mercy.
 		"flat",
 		"dah",
-		"run",
 		"framing_frame_3",
 		"spa",
 		"des",	
@@ -108,20 +110,18 @@ function restoration:Init()
 		"skmc_ovengrill",
 		"spa_CD",		
 		"wwh_CD",		
-		"street"		--whurr's hs edit
 	}
 	--Mostly for stuff like Cursed Killed Room and other crap heists
 	restoration.very_tiny_levels = {
 		"hvh",
 		-- :^)
 		--"chew",	
-		"nail",		
-		"nmh",	
+		"nail",				
 		"cane",		
 		"pbr2",		
 		"rvd2",		
 		"peta2",	
-		"vit",	
+		"vit",
 		"mex_cooking",		
 		--Custom Heists below--
 		"Victor Romeo",
@@ -168,6 +168,7 @@ function restoration:Init()
 		["OTHER/Env_FSD1"] = true,
 		["OTHER/Env_PBR2"] = true,
 		["OTHER/Env_CJ2"] = true,
+		["OTHER/Env_FRIEND"] = true,
 		["OTHER/Env_UnderPass"] = true,
 		["OTHER/Env_MallCrasher"] = true,
 		["OTHER/Env_Mia_1"] = true,
@@ -276,15 +277,6 @@ restoration.environments_choice_bank = {
 	"env_trailer_bank"
 }
 
-restoration.environments_choice_bank = {
-	"default",
-	"random",
-	"mellowday",
-	"xbox_bank",
-	"bank_day",
-	"env_trailer_bank"
-}
-
 restoration.environments_choice_rvd1 = {
 	"default",
 	"random",
@@ -308,6 +300,13 @@ restoration.environments_choice_pbr2 = {
 	"default",
 	"random",
 	"bos_alt"
+}
+
+restoration.environments_choice_friend = {
+	"default",
+	"random",
+	"friend_pink",
+	"friend_night",
 }
 
 restoration.environments_choice_crojob2 = {
@@ -385,6 +384,13 @@ restoration.environments_choice_ukrainian_job = {
 restoration.environments_choice_peta = {
 	"default",
 	"cloudy_day"
+}
+
+restoration.ponrtracks = {
+	"off",
+	"windowofoppurtunity",
+	"wheresthevan",
+	"random"
 }
 
 -- restoration.environments_choice_shadow_raid = {

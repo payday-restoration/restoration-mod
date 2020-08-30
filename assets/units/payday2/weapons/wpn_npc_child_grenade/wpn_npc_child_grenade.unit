@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<unit type="item" slot="14">
+	<network sync="spawn" />
+  <!-- <network sync="unit" remote_unit="units/weapons/frag_grenade/frag_grenade" sync_rotation="false" sync_position="true"/> -->
+  <object file="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade" />
+	<dependencies>
+    <depends_on effect="effects/particles/explosions/explosion_grenade" />
+    <depends_on effect="effects/payday2/particles/explosions/wpn_npc_spring_frag_flash" />
+	<depends_on unit="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" />	
+    <depends_on effect="effects/payday2/particles/explosions/grenade_explosion" />
+    <depends_on effect="effects/particles/fire/small_light_fire" />
+    <depends_on effect="effects/payday2/particles/impacts/stone_explosion_impact_pd2" />
+    <depends_on effect="effects/payday2/particles/impacts/metal_explosion_impact_pd2" />
+    <depends_on effect="effects/payday2/particles/impacts/dirt_explosion_impact_pd2" />
+    <depends_on effect="effects/payday2/particles/impacts/concrete_explosion_impact_pd2" />
+    <depends_on bnk="soundbanks/weapon_grenade" />
+    <depends_on bnk="soundbanks/weapon_rpg" />
+    <depends_on bnk="soundbanks/regular_weapon_sfx" />
+    <depends_on bnk="soundbanks/weapon_trip_mine" />	
+	</dependencies>
+	<extensions>
+    <extension name="base" class="FragGrenade" >
+      <var name="_tweak_projectile_entry" value="child_grenade" />
+    </extension>
+    <extension name="unit_data" class="ScriptUnitData" />
+     <extension name="damage" class="UnitDamage" >
+    </extension>
+	</extensions>
+	<!--original in case-->
+<!-- 	<sounds>
+		<default_soundsource source="rp_grenade" />
+	</sounds> -->
+	
+	<sounds>
+		<default_soundsource source="rp_grenade" />
+    <soundsource name="snd" source="rp_grenade" />
+    <spawn_event source="snd" name="c4_beep_loop" stop_when_killed="true"/>
+	</sounds>		
+	
+</unit>

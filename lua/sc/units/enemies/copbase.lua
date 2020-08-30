@@ -1,5 +1,5 @@
 Month = os.date("%m")
-local job = Global.level_data and Global.level_data.level_id	
+local job = Global.level_data and Global.level_data.level_id
 
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
     -- log("cursed mod xd")
@@ -39,8 +39,23 @@ function CopBase:random_mat_seq_initialization()
         self._unit:damage():run_sequence_simple("murksecrandom")				
     elseif self._unit:damage() and self._unit:damage():has_sequence("lapdrandom") and lapd_cops then
         self._unit:damage():run_sequence_simple("lapdrandom")				
+    elseif self._unit:damage() and self._unit:damage():has_sequence("set_style_murky") and murkies then
+		  -- log("t")
+        self._unit:damage():run_sequence_simple("set_style_murky")
     end
 end	
+
+local material_config_paths = {
+  "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa"
+}
+
+for i, material_config_path in pairs(material_config_paths) do
+  local normal_ids = Idstring(material_config_path)
+  local contour_ids = Idstring(material_config_path .. "_contour")
+
+  CopBase._material_translation_map[tostring(normal_ids:key())] = contour_ids
+  CopBase._material_translation_map[tostring(contour_ids:key())] = normal_ids 
+end
 
 function CopBase:_chk_spawn_gear()
 	if self._tweak_table == "spooc" then
@@ -75,8 +90,7 @@ function CopBase:default_weapon_name()
 
 	--M1911 Users--
 	if self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_1/ene_secret_service_1") 
-	or self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2") 
-	or self._unit:name() == Idstring("units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2") then
+	or self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2") then
 		default_weapon_id = "m1911_npc"
 	end
 	

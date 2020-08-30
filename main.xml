@@ -5,13 +5,17 @@
 		<class file="hooks.lua"/>
 		<class file="ChallengesManager.lua"/>
         <class file="ChallengesTweakData.lua"/>
+		<class file="HUDRaidWW2MiniGame.lua"/>
+        <class file="RaidWW2MiniGame.lua"/>
+		<class file="Networking.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
-	<AssetUpdates id="428" version="9.8.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="9.9" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="faces.xml" type="custom_xml" target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge"/>				
+
 	</ScriptMods>	
     <Hooks directory="lua">
 		<!--///RESTORATION HUD & UI\\\-->
@@ -23,6 +27,9 @@
 		<hook file="managers/ChatManager.lua" source_file="lib/managers/ChatManager"/>
         <hook file="managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
         <hook file="managers/hud/HUDObjectives.lua" source_file="lib/managers/hud/HUDObjectives"/>
+        <hook file="managers/hud/HUDSkills.lua" source_file="lib/managers/hud/HUDTemp"/>
+        <hook file="managers/hud/HUDEffect.lua" source_file="lib/managers/hud/HUDTemp"/>
+        <hook file="managers/hud/HUDDodge.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDTemp.lua" source_file="lib/managers/hud/HUDTemp"/>
         <hook file="managers/hud/HUDBlackScreen.lua" source_file="lib/managers/hud/HUDBlackScreen"/>
         <hook file="managers/hud/HUDTeammate.lua" source_file="lib/managers/hud/HUDTeammate"/>
@@ -50,15 +57,16 @@
 		<hook file="managers/menu/NewsFeedGUI.lua" source_file="lib/managers/menu/NewsFeedGUI"/>
 		<hook file="managers/UserManager.lua" source_file="lib/managers/usermanager"/>
 		<hook file="managers/musicmanager.lua" source_file="lib/managers/musicmanager"/>
+		<hook file="managers/hud/HUDArmorFix.lua" source_file="lib/managers/hud/HUDTeammate"/>
 		<!--///SCRIPTDATA\\\-->
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
+		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
-		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
 		<hook file="sc/managers/navigationmanager.lua" source_file="lib/managers/navigationmanager"/>
 		<hook file="sc/tweak_data/charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
@@ -122,6 +130,7 @@
 		<hook file="sc/units/player/playerclean.lua" source_file="lib/units/beings/player/states/playerclean"/>
 		<hook file="sc/units/player/playercivilian.lua" source_file="lib/units/beings/player/states/playercivilian"/>
 		<hook file="sc/units/player/recoil.lua" source_file="lib/units/cameras/fpcameraplayerbase"/>
+		<hook file="sc/units/vehicles/animatedvehiclebase.lua" source_file="lib/units/vehicles/animatedvehiclebase"/>
 		<hook file="sc/units/interactions/interactionext.lua" source_file="lib/units/interactions/interactionext"/>
 		<hook file="sc/units/enemies/actionspooc.lua" source_file="lib/units/enemies/spooc/actions/lower_body/actionspooc"/>
 		<hook file="sc/managers/weaponfactorymanager.lua" source_file="lib/managers/weaponfactorymanager"/>
@@ -165,7 +174,6 @@
 		<hook file="sc/units/props/timergui.lua" source_file="lib/units/props/timergui"/>
 		<hook file="sc/units/props/texttemplatebase.lua" source_file="lib/units/props/texttemplatebase"/>		
 		<hook file="sc/units/pickups/ammoclip.lua" source_file="lib/units/pickups/ammoclip"/>
-		<hook file="sc/player_actions/skills/playeractionstockholmsyndrometrade.lua" source_file="lib/player_actions/skills/playeractionstockholmsyndrometrade"/>
 		<hook file="sc/player_actions/skills/playeractiondamagecontrol.lua" source_file="lib/player_actions/skills/playeractiondamagecontrol"/>
 		<hook file="sc/player_actions/skills/playeractiontriggerhappy.lua" source_file="lib/player_actions/skills/playeractiontriggerhappy"/>
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>
@@ -239,6 +247,7 @@
 		<hook file="sc/units/player/playerbase.lua" source_file="lib/units/beings/player/playerbase"/>
 		<hook file="sc/managers/mission/elementsecuritycamera.lua" source_file="lib/managers/mission/elementsecuritycamera"/>
 		<hook file="sc/managers/mission/elementaiglobalevent.lua" source_file="lib/managers/mission/elementaiglobalevent"/>
+		<hook file="sc/utils/game_state_machine/GSM.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
 		<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
@@ -292,8 +301,10 @@
 		<hook file="sc/setups/Setup.lua" source_file="lib/setups/setup"/>
 		<!--///INGAME MANUAL\\\-->
 		<hook file="managers/menu/IngameManualGUI.lua" source_file="lib/managers/menu/IngameManualGUI"/>
-		<!--///Outfit crash debugging, delete when fixed.\\\-->
-		<hook file="sc/units/props/managespawnedunits.lua" source_file="lib/units/props/managespawnedunits"/>
+		<!--///Comptatibility.\\\-->
+		<hook file="sc/compatibility/HUDHitman.lua" source_file="lib/managers/hud/HUDTeammate"/>
+		<hook file="sc/compatibility/WeaponStatGenerator.lua" source_file="lib/tweak_data/weapontweakdata"/>
+		<hook file="sc/compatibility/ModStatGenerator.lua" source_file="lib/tweak_data/weaponfactorytweakdata"/>
 		<!--///MOD SAVE DATA\\\-->
 		<!--DO NOT MODIFY-->
 		<hook file="sc/managers/savefilemanager.lua" source_file="lib/managers/savefilemanager"/>
@@ -338,6 +349,7 @@
 					<option type="bool" default_value="false" name="RealAmmo"/>
 					<option type="bool" default_value="false" name="StealthOrigPos"/>
 					<option type="bool" default_value="false" name="LowerBag"/>
+					<option type="bool" default_value="false" name="ArmorFix"/>
 					<!-- <option type="bool" default_value="false" name="CasingTicker"/> -->
 				</option_group>
 				<option_group name="UI">
@@ -351,6 +363,30 @@
 						<option type="bool" default_value="false" name="Loadouts"/>
 						<option type="bool" default_value="false" name="District"/>
 						<option type="bool" default_value="false" name="PeerColors"/>
+				</option_group>
+				<option_group name="INFOHUD">
+					<option type="bool" default_value="false" name="Info_Hud"/>
+					<option type="number" default_value="36" min="24" max="48" step="2" show_value="true" name="Info_Size"/>
+					<option type="number" default_value="8" min="1" max="8" step="1" show_value="true" name="Info_Count"/>
+					<option type="bool" default_value="true" name="Info_ammo_efficiency"/>
+					<option type="bool" default_value="true" name="Info_single_shot_fast_reload"/> <!-- aggressive reload -->
+					<option type="bool" default_value="true" name="Info_bloodthirst_reload_speed"/>
+					<option type="bool" default_value="true" name="Info_bullet_storm"/>
+					<option type="bool" default_value="true" name="Info_revive_damage_reduction"/> <!-- Combat Medic -->
+					<option type="bool" default_value="true" name="Info_desperado"/>
+					<option type="bool" default_value="true" name="Info_grinder"/>
+					<option type="bool" default_value="true" name="Info_infiltrator"/>
+					<option type="bool" default_value="true" name="Info_long_dis_revive"/> <!-- inspire -->
+					<option type="bool" default_value="true" name="Info_messiah"/>
+					<option type="bool" default_value="true" name="Info_overkill_damage_multiplier"/>
+					<option type="bool" default_value="true" name="Info_revived_damage_reduction"/> <!-- Painkillers -->
+					<option type="bool" default_value="true" name="Info_first_aid_damage_reduction"/> <!-- Quick Fix -->
+					<option type="bool" default_value="true" name="Info_rogue"/>
+					<option type="bool" default_value="true" name="Info_increased_movement_speed"/> <!-- Running From Death -->
+					<option type="bool" default_value="true" name="Info_headshot_fire_rate_mult"/> <!-- Sharpshooter -->
+					<option type="bool" default_value="true" name="Info_trigger_happy"/>
+					<option type="bool" default_value="true" name="Info_dmg_multiplier_outnumbered"/> <!-- Underdog -->
+					<option type="bool" default_value="true" name="Info_unseen_strike"/>
 				</option_group>
 				<option type="bool" default_value="false" name="MainHUD"/>
 				<option type="bool" default_value="true" name="Teammate"/>
@@ -380,18 +416,22 @@
 				<option type="bool" default_value="false" name="AltLastDownColor"/>
 				<option type="bool" default_value="false" name="NoBleedoutTilt"/>
 				<option type="bool" default_value="false" name="StopAllBots"/>
+				<!-- <option type="multichoice" default_value="1" name="PONRTracks" values_tbl="restoration.ponrtracks"/> -->
 				<option type="bool" default_value="true" name="PONRTrack"/>
 				<option type="bool" default_value="false" name="MusicShuffle"/>
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<option type="bool" default_value="true" name="Holiday"/>
 				<option type="bool" default_value="false" name="ClassicMovies"/>
-				<option type="bool" default_value="false" hidden="true" name="PDTHChallenges"/>
+				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
+				<!-- <option type="bool" default_value="true" hidden="true" name="RaidLockPicking"/> -->
+				<option type="bool" default_value="true" name="QuietRain"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>
 				<option type="multichoice" default_value="2" name="Env_RVD2" values_tbl="restoration.environments_choice_rvd2"/>
 				<option type="multichoice" default_value="2" name="Env_FSD1" values_tbl="restoration.environments_choice_firestarter_1"/>
 				<option type="multichoice" default_value="2" name="Env_PBR2" values_tbl="restoration.environments_choice_pbr2"/>
+				<option type="multichoice" default_value="2" name="Env_FRIEND" values_tbl="restoration.environments_choice_friend"/>
 				<option type="multichoice" default_value="2" name="Env_CJ2" values_tbl="restoration.environments_choice_crojob2"/>
 				<option type="multichoice" default_value="2" name="Env_UnderPass" values_tbl="restoration.environments_choice_arm_und"/>
 				<option type="multichoice" default_value="2" name="Env_MallCrasher" values_tbl="restoration.environments_choice_mallcrasher"/>
@@ -420,8 +460,8 @@
 	<Package id="packages/mexicoassets" file="addMEXICO.xml" use_clbk="self:DebugLoadAssets"/>	
 	<Package id="packages/akanassets" file="addakan.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/murkyassets" file="addmurky.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/miscassets" file="addMISC.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
-	<!--<Package id="packages/outfitassets2" file="addoutfit_2.xml" use_clbk="self:DebugLoadAssets"/>--> 
 	<Package id="packages/addbdu" file="addbdu.xml" use_clbk="self:DebugLoadAssets"/> 
 	<Package id="packages/addscrubs" file="addscrubs.xml" use_clbk="self:DebugLoadAssets"/> 
 	<Package id="packages/addsnow" file="addsnow.xml" use_clbk="self:DebugLoadAssets"/> 
@@ -433,4 +473,5 @@
 	<Package id="packages/rex_gold" file="rex_gold.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
+	<Package id="packages/addrain" file="addRAIN.xml"/>
 </mod>

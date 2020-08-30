@@ -1,5 +1,3 @@
-if not restoration.Options:GetValue("OTHER/PDTHChallenges") then return end
-
 MenuItemChallenge.TYPE = "challenge"
 
 function MenuItemChallenge:make_fine_text(text)
@@ -12,8 +10,8 @@ function MenuItemChallenge:setup_gui( node, row_item )
 	--Definitions
 	local safe_rect = managers.gui_data:scaled_size()
 
-	local challenge_data = managers.challenges:challenge( self:parameter( "challenge" ) )
-	local progress_data = managers.challenges:active_challenge( self:parameter( "challenge" ) )
+	local challenge_data = managers.challenges_res:challenge( self:parameter( "challenge" ) )
+	local progress_data = managers.challenges_res:active_challenge( self:parameter( "challenge" ) )
 
 	if not progress_data then
 		progress_data = { amount = challenge_data.count }

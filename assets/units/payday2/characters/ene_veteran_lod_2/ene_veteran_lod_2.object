@@ -97,7 +97,7 @@
 		<constraint type="limited_hinge" name="RightForeArm" enabled="false">
 			<param body_a="rag_RightArm" body_b="rag_RightForeArm"/>
 			<param pivot="position:RightForeArm"/>
-			<param min_angle="-60" max_angle="60" axis="yaxis:RightForeArm" twist_freedom="5"/> <!-- X axis -->
+			<param min_angle="-120" max_angle="60" axis="yaxis:RightForeArm" twist_freedom="5"/> <!-- X axis -->
 			<param plane_axis="xaxis:RightForeArm"/> <!-- Y axis -->
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
@@ -114,7 +114,7 @@
 		<constraint type="limited_hinge" name="LeftForeArm" enabled="false">
 			<param body_a="rag_LeftArm" body_b="rag_LeftForeArm"/>
 			<param pivot="position:LeftForeArm"/>
-			<param min_angle="-60" max_angle="60" axis="yaxis:LeftForeArm" twist_freedom="5"/> <!-- X axis -->
+			<param min_angle="-120" max_angle="60" axis="yaxis:LeftForeArm" twist_freedom="5"/> <!-- X axis -->
 			<param plane_axis="xaxis:LeftForeArm"/> <!-- Y axis -->
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>

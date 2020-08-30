@@ -16,6 +16,27 @@
 		<sequence editable_state="true" name="'lapdrandom'" once="true" triggable="true">
 			<material_config name="'units/pd2_dlc_rvd/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_2/ene_cop_2', 'ene_cop_4/ene_cop_4')"/>
 		</sequence>
+		
+		<variables>
+			<var_pick_murky value="1"/>
+		</variables>
+			  			  
+		<filter name="'filter_pick_normalhead'">
+            <check value="vars.var_pick_murky >= 0"/>
+            <check value="vars.var_pick_murky <= 2000"/>
+		</filter>
+			  
+		<filter name="'filter_pick_head'">
+            <check value="vars.var_pick_murky <= 1"/>
+		</filter>
+			  
+		<sequence editable_state="true" once="true" triggable="true" name="'set_style_murky'">        
+			<set_variables var_pick_murky="rand()*2000"/>
+			<material_config filter="'filter_pick_normalhead'" name="'units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1'"/>
+			<object filter="'filter_pick_head'" enabled="true" name="'g_stache'" />						
+			<material_config filter="'filter_pick_head'" name="'units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa'"/>
+		</sequence>
+
 				
 	</table>	
 </table>

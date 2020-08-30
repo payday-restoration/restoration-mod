@@ -1,0 +1,79 @@
+<materials version="3">
+    <material render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" name="bank_ground_blend1" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_ground_ras_df"/>
+        <diffuse_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_ground_blend_df_ras_df"/>
+        <diffuse_layer1_texture file="core/textures/default_texture_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_ground_ras_nm"/>
+        <normal_layer0_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_ground_ras_nm"/>
+    </material>
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:VERTEX_COLOR" name="bank_ground_decals" version="2">
+        <diffuse_texture file="units/world/architecture/street/ground/ground_lines_df"/>
+        <variable type="scalar" name="alpha_ref" value="0"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_brick_tiles" version="2">
+        <diffuse_texture file="units/pd2_dlc_rvd/architecture/rvd_ext/ext_textures/rvd_ext_white_brick_parking_df"/>
+        <bump_normal_texture file="units/pd2_dlc_rvd/architecture/rvd_ext/ext_textures/rvd_ext_white_brick_parking_nm"/>
+    </material>
+    <material render_template="shadow_caster_only" name="shadow_caster" version="2"/>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mat_celling" version="2">
+        <diffuse_texture file="units/pd2_dlc_rvd/architecture/rvd_int/int_textures/rvd_int_concrete_df"/>
+        <bump_normal_texture file="units/pd2_dlc_rvd/architecture/rvd_int/int_textures/rvd_int_concrete_nm"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_celling_beam" version="2">
+        <diffuse_texture file="units/payday2/architecture/com_int_parking_garage/com_int_parking_garage_concrete_df"/>
+        <bump_normal_texture file="units/payday2/architecture/com_int_parking_garage/com_int_parking_garage_concrete_nm"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_floor" version="2">
+        <diffuse_texture file="units/payday2/architecture/com_int_parking_garage/com_int_parking_garage_concrete_floor_df"/>
+        <bump_normal_texture file="units/payday2/architecture/com_int_parking_garage/com_int_parking_garage_concrete_floor_nm"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" name="mat_concretefloor" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_concretefloor_construct01_ras_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" name="mat_concretewall011c1" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_concretewall011c_ras_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:VERTEX_COLOR" name="mat_nuke_metaltrims_02" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_nuke_metaltrims_01_ras_df"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_ceilingtiles" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_nm"/>
+        <material_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/dah_office_ceiling_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_morgue_tilefloor" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_int_hospital_morgue/nmh_int_hospital_morgue_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_int_hospital_morgue/nmh_int_hospital_morgue_nm"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_int_hospital_morgue/nmh_int_hospital_morgue_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_morgue_tilewall" src="ERROR">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_morgue_tilewall_01_ras_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_morgue_tilewall_01_ras_nm"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_morgue_tilewall_01_ras_gsma"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mat_morgue_details" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_morgue_details_01_ras_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/textures/nmh_architecture_morgue_details_01_ras_nm"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_trim" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_nm"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_trimsheet_1/nmh_trimsheet_1_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_wall_paint" version="2">
+        <diffuse_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_df"/>
+        <material_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_brb/architecture/tiling_textures/generic_painted_wall/brb_generic_painted_wall_nm"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_trim_02" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_dark_brushed_metal_df"/>
+        <material_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_dark_brushed_metal_gsma"/>
+        <bump_normal_texture file="units/pd2_dlc_dah/architecture/dah_int_textures/metallics/dah_dark_brushed_metal_nm"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+</materials>

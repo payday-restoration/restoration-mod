@@ -229,7 +229,7 @@ function CharacterTweakData:_init_security(presets)
 	self.mute_security_undominatable.speech_prefix_p1 = "bb"
 	self.mute_security_undominatable.speech_prefix_p2 = "n"
 	self.mute_security_undominatable.speech_prefix_count = 1
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.mute_security_undominatable.failure_on_death = true
 		self.mute_security_undominatable.unintimidateable = true
 	end
@@ -454,8 +454,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.can_slide_on_suppress = true
 	self.fbi_vet.HEALTH_INIT = 12
 	self.fbi_vet.headshot_dmg_mul = 3.4
-	self.fbi_vet.damage.bullet_dodge_chance = 65
-	self.fbi_vet.smoke_dodge_increase = 10
+	self.fbi_vet.DAMAGE_CLAMP_BULLET = 3
 	self.fbi_vet.dodge = presets.dodge.veteran
 	self.fbi_vet.access = "spooc"
 	self.fbi_vet.damage.hurt_severity = presets.hurt_severities.elite
@@ -508,7 +507,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.HEALTH_INIT = 500
 	self.meme_man.headshot_dmg_mul = 12.5		
 	self.meme_man.can_shoot_while_dodging = true
-	self.meme_man.damage.bullet_dodge_chance = 65
 	self.meme_man.smoke_dodge_increase = 10
 	self.meme_man.priority_shout = "f30"
 	self.meme_man.bot_priority_shout = "f30x_any"
@@ -689,7 +687,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 		self.omnia_lpf.speech_prefix_count = nil
 		self.omnia_lpf.spawn_sound_event = "rmdc_entrance"
 	else
-		self.omnia_lpf.speech_prefix_p1 = self._prefix_data_p1.medic()
+		self.omnia_lpf.speech_prefix_p1 = "piss and shit"
 		self.omnia_lpf.speech_prefix_p2 = nil
 		self.omnia_lpf.speech_prefix_count = nil
 		self.omnia_lpf.spawn_sound_event = nil
@@ -741,7 +739,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.weapon = presets.weapon.normal
 	self.swat.detection = presets.detection.normal
 	self.swat.HEALTH_INIT = 8
-	self.swat.headshot_dmg_mul = 4.5
+	self.swat.headshot_dmg_mul = 3.5
 	self.swat.move_speed = presets.move_speed.very_fast
 	self.swat.surrender_break_time = {6, 10}
 	self.swat.suppression = presets.suppression.hard_agg
@@ -761,6 +759,11 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.chatter = presets.enemy_chatter.swat
 	self.swat.melee_weapon = nil
 	self.swat.melee_weapon_dmg_multiplier = 1
+	if is_murky then
+	    self.swat.has_alarm_pager = true
+	else
+	    self.swat.has_alarm_pager = false
+	end
 	if job == "chill_combat" then
 		self.swat.steal_loot = true
 	else
@@ -776,7 +779,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat_titan.move_speed = presets.move_speed.very_fast
 	self.swat_titan.dodge = presets.dodge.elite
 	self.swat_titan.HEALTH_INIT = 12
-	self.swat_titan.headshot_dmg_mul = 4.5		
+	self.swat_titan.headshot_dmg_mul = 3.5
 	self.swat_titan.surrender = nil
 	self.swat_titan.unintimidateable = true	
 	self.swat_titan.custom_voicework = nil
@@ -830,6 +833,11 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat.steal_loot = nil
 	else
 		self.heavy_swat.steal_loot = true
+	end
+	if is_murky then
+	    self.heavy_swat.has_alarm_pager = true
+	else
+	    self.heavy_swat.has_alarm_pager = false
 	end
 	self.heavy_swat.static_weapon_preset = false
 	self.heavy_swat.static_dodge_preset = true
@@ -947,7 +955,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.static_dodge_preset = true
 	self.heavy_swat_sniper.static_melee_preset = true	
 	self.heavy_swat_sniper.custom_voicework = nil
-	self.heavy_swat_sniper.spawn_sound_event_2 = "cloaker_spawn"
+	self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
 	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
 	if is_reaper or is_federales then
 		self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
@@ -972,9 +980,9 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	if is_reaper or is_federales then
 		self.weekend_dmr.custom_voicework = "tswat_ru"
 	elseif is_murky then
-		self.weekend_dmr.custom_voicework = "bravo_murky"	
+		self.weekend_dmr.custom_voicework = "bravo_murky_elite"	
 	else
-		self.weekend_dmr.custom_voicework = "bravo"
+		self.weekend_dmr.custom_voicework = "bravo_elite"
 	end	
 	self.weekend_dmr.HEALTH_INIT = 11.25
 	self.weekend_dmr.headshot_dmg_mul = 4.25
@@ -1249,9 +1257,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	if is_reaper or is_federales then
 		self.weekend_lmg.custom_voicework = "tswat_ru"
 	elseif is_murky then
-		self.weekend_lmg.custom_voicework = "bravo_murky"	
+		self.weekend_lmg.custom_voicework = "bravo_murky_elite"	
 	else
-		self.weekend_lmg.custom_voicework = "bravo"
+		self.weekend_lmg.custom_voicework = "bravo_elite"
 	end	
 	self.weekend_lmg.HEALTH_INIT = 28.125
 	self.weekend_lmg.headshot_dmg_mul = 3.75		
@@ -2630,11 +2638,10 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.immune_to_concussion = true		
 	self.autumn.HEALTH_INIT = 120
 	self.autumn.headshot_dmg_mul = 2.925
-	self.autumn.damage.bullet_damage_mul = 0.75
+	self.autumn.damage.bullet_damage_mul = 0.65
 	self.autumn.damage.fire_damage_mul = 0.75
 	self.autumn.flammable = false
 	self.autumn.damage.explosion_damage_mul = 0.25
-	self.autumn.damage.bullet_dodge_chance = 10
 	self.autumn.move_speed = presets.move_speed.lightning
 	self.autumn.can_cloak = true
 	self.autumn.no_retreat = true
@@ -4434,7 +4441,7 @@ function CharacterTweakData:_presets(tweak_data)
 		mini = {},
 		flamethrower = {}
 	}
-	presets.weapon.normal.is_pistol.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_pistol.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_pistol.focus_delay = 10
 	presets.weapon.normal.is_pistol.focus_dis = 200
 	presets.weapon.normal.is_pistol.spread = 20
@@ -4511,7 +4518,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.normal.akimbo_pistol = presets.weapon.normal.is_pistol
-	presets.weapon.normal.is_rifle.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_rifle.focus_delay = 10
 	presets.weapon.normal.is_rifle.focus_dis = 200
 	presets.weapon.normal.is_rifle.spread = 20
@@ -4592,7 +4599,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.normal.is_bullpup = presets.weapon.normal.is_rifle
-	presets.weapon.normal.is_shotgun_pump.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.normal.is_shotgun_pump.focus_delay = 10
 	presets.weapon.normal.is_shotgun_pump.focus_dis = 200
 	presets.weapon.normal.is_shotgun_pump.spread = 15
@@ -4848,7 +4855,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.is_smg.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_smg.aim_delay = {0.2, 0.2}
 	presets.weapon.normal.is_smg.focus_delay = 10
 	presets.weapon.normal.is_smg.focus_dis = 200
 	presets.weapon.normal.is_smg.spread = 15
@@ -4925,7 +4932,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.mp9.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.mp9.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.mp9.focus_delay = 20
 	presets.weapon.normal.mp9.focus_dis = 200
 	presets.weapon.normal.mp9.spread = 30
@@ -5079,7 +5086,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.is_revolver.aim_delay = {0.1, 0.1}
+	presets.weapon.normal.is_revolver.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_revolver.focus_delay = 10
 	presets.weapon.normal.is_revolver.focus_dis = 200
 	presets.weapon.normal.is_revolver.spread = 20
@@ -5614,7 +5621,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.good = deep_clone(presets.weapon.normal)
-	presets.weapon.good.is_pistol.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_pistol.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_pistol.focus_delay = 2
 	presets.weapon.good.is_pistol.focus_dis = 200
 	presets.weapon.good.is_pistol.spread = 20
@@ -5687,7 +5694,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.good.akimbo_pistol = presets.weapon.good.is_pistol
-	presets.weapon.good.is_rifle.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_rifle.focus_delay = 3
 	presets.weapon.good.is_rifle.focus_dis = 200
 	presets.weapon.good.is_rifle.spread = 20
@@ -5768,7 +5775,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.good.is_bullpup = presets.weapon.good.is_rifle
-	presets.weapon.good.is_shotgun_pump.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.good.is_shotgun_pump.focus_delay = 5
 	presets.weapon.good.is_shotgun_pump.focus_dis = 200
 	presets.weapon.good.is_shotgun_pump.spread = 15
@@ -6024,7 +6031,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.is_shotgun_mag.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_shotgun_mag.aim_delay = {0.2, 0.2}
 	presets.weapon.good.is_shotgun_mag.focus_delay = 5
 	presets.weapon.good.is_shotgun_mag.focus_dis = 200
 	presets.weapon.good.is_shotgun_mag.spread = 15
@@ -6346,7 +6353,7 @@ function CharacterTweakData:_presets(tweak_data)
 			autofire_rounds = {25, 50}
 		}
 	}
-	presets.weapon.good.is_smg.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_smg.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_smg.focus_delay = 3
 	presets.weapon.good.is_smg.focus_dis = 200
 	presets.weapon.good.is_smg.spread = 20
@@ -6419,7 +6426,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.mp9.aim_delay = {0.1, 0.1}
+	presets.weapon.good.mp9.aim_delay = {0.15, 0.15}
 	presets.weapon.good.mp9.focus_delay = 20
 	presets.weapon.good.mp9.focus_dis = 200
 	presets.weapon.good.mp9.spread = 30
@@ -6569,7 +6576,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.is_revolver.aim_delay = {0.1, 0.1}
+	presets.weapon.good.is_revolver.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_revolver.focus_delay = 10
 	presets.weapon.good.is_revolver.focus_dis = 200
 	presets.weapon.good.is_revolver.spread = 20
@@ -6794,7 +6801,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.expert = deep_clone(presets.weapon.good)
-	presets.weapon.expert.is_pistol.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_pistol.aim_delay = {0.15, 0.15}
 	presets.weapon.expert.is_pistol.focus_delay = 1
 	presets.weapon.expert.is_pistol.focus_dis = 300
 	presets.weapon.expert.is_pistol.spread = 20
@@ -6879,7 +6886,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.expert.akimbo_pistol = presets.weapon.expert.is_pistol
-	presets.weapon.expert.is_rifle.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.expert.is_rifle.focus_delay = 2
 	presets.weapon.expert.is_rifle.focus_dis = 300
 	presets.weapon.expert.is_rifle.spread = 20
@@ -6972,7 +6979,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.expert.is_bullpup = presets.weapon.expert.is_rifle
-	presets.weapon.expert.is_shotgun_pump.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_shotgun_pump.aim_delay = {0.2, 0.2}
 	presets.weapon.expert.is_shotgun_pump.focus_delay = 2
 	presets.weapon.expert.is_shotgun_pump.focus_dis = 200
 	presets.weapon.expert.is_shotgun_pump.spread = 15
@@ -7228,7 +7235,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.is_shotgun_mag.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_shotgun_mag.aim_delay = {0.2, 0.2}
 	presets.weapon.expert.is_shotgun_mag.focus_delay = 2
 	presets.weapon.expert.is_shotgun_mag.focus_dis = 200
 	presets.weapon.expert.is_shotgun_mag.spread = 15
@@ -7547,7 +7554,7 @@ function CharacterTweakData:_presets(tweak_data)
 			autofire_rounds = {25, 50}
 		}
 	}
-	presets.weapon.expert.is_smg.aim_delay = {0, 0.1}
+	presets.weapon.expert.is_smg.aim_delay = {0.2, 0.2}
 	presets.weapon.expert.is_smg.focus_delay = 1
 	presets.weapon.expert.is_smg.focus_dis = 200
 	presets.weapon.expert.is_smg.spread = 15
@@ -7632,7 +7639,7 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.mp9.aim_delay = {0, 0.1}
+	presets.weapon.expert.mp9.aim_delay = {0.15, 0.15}
 	presets.weapon.expert.mp9.focus_delay = 20
 	presets.weapon.expert.mp9.focus_dis = 200
 	presets.weapon.expert.mp9.spread = 30
@@ -12028,7 +12035,10 @@ function CharacterTweakData:_create_table_structure()
 		"flamethrower_mk2_flamer_summers",
 		"scar_npc",
 		"m1911_npc",
-		"vet_cop_boss_pistol"
+		"vet_cop_boss_pistol",
+		"m60",
+		"m60_bravo",
+		"m60_om"		
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -12089,7 +12099,10 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"),
 		Idstring("units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light"),
 		Idstring("units/payday2/weapons/wpn_npc_1911/wpn_npc_1911"),
-		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc")
+		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
+		Idstring("units/payday2/weapons/wpn_npc_m60/wpn_npc_m60"),
+		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"),
+		Idstring("units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om")		
 	}
 end
 
@@ -12101,7 +12114,7 @@ function CharacterTweakData:_set_easy()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
-	self.autumn.damage.bullet_dodge_chance = 10
+	self.autumn.damage.bullet_damage_mul = 0.65
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
@@ -12272,7 +12285,7 @@ function CharacterTweakData:_set_easy()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")		
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end
 end
@@ -12285,7 +12298,7 @@ function CharacterTweakData:_set_normal()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
-	self.autumn.damage.bullet_dodge_chance = 10
+	self.autumn.damage.bullet_damage_mul = 0.65
 	
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat.melee_weapon_dmg_multiplier = 1
@@ -12469,7 +12482,7 @@ function CharacterTweakData:_set_normal()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -12482,7 +12495,7 @@ function CharacterTweakData:_set_hard()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
-	self.autumn.damage.bullet_dodge_chance = 10
+	self.autumn.damage.bullet_damage_mul = 0.65
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
@@ -12666,7 +12679,7 @@ function CharacterTweakData:_set_hard()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -12679,7 +12692,7 @@ function CharacterTweakData:_set_overkill()
 	self:_multiply_weapon_delay(self.presets.weapon.sniper, 0)
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("good", "normal")
-	self.autumn.damage.bullet_dodge_chance = 10
+	self.autumn.damage.bullet_damage_mul = 0.65
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
@@ -12862,7 +12875,7 @@ function CharacterTweakData:_set_overkill()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -12987,7 +13000,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self.autumn.damage.bullet_dodge_chance = 15
+	self.autumn.damage.bullet_damage_mul = 0.6
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_good)
 	self.heavy_swat_sniper.weapon = deep_clone(self.presets.weapon.good)
 	self.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 6
@@ -13193,7 +13206,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -13514,7 +13527,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.good)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
-	self.autumn.damage.bullet_dodge_chance = 20	
+	self.autumn.damage.bullet_damage_mul = 0.5
 	self.presets.gang_member_damage.HEALTH_INIT = 100
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.old_hoxton_mission.HEALTH_INIT = 100
@@ -13526,7 +13539,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -13744,7 +13757,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-	self.autumn.damage.bullet_dodge_chance = 25
+	self.autumn.damage.bullet_damage_mul = 0.45
 	self.presets.gang_member_damage.HEALTH_INIT = 125
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
 	self.old_hoxton_mission.HEALTH_INIT = 125
@@ -13756,7 +13769,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -14093,7 +14106,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
-	self.autumn.damage.bullet_dodge_chance = 30	
+	self.autumn.damage.bullet_damage_mul = 0.4
 	
 	--LPF DR from ranged attacks--
 	self.omnia_lpf.damage.bullet_damage_mul = 0.75
@@ -14258,7 +14271,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
-	if job == "tag" then
+	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
 end
@@ -14827,6 +14840,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",
 				"ene_zeal_city_3",
+				"ene_zeal_medic",				
 				"ene_zeal_sniper",
 				"ene_zeal_swat_heavy",
 				"ene_zeal_heavy_shield",
@@ -15137,22 +15151,22 @@ function CharacterTweakData:character_map()
 				"ene_murky_cs_cop_mp5",
 				"ene_murky_cs_cop_r870",
 				"ene_murky_cs_cop_raging_bull",
-				"ene_murky_swat_m4",
+				"ene_fbi_3",
 				"ene_murky_swat_r870",
-				"ene_murky_hrt_1",
-				"ene_murky_hrt_2",
-				"ene_murky_heavy_m4",
-				"ene_murky_heavy_r870",
-				"ene_murky_heavy_ump",
-				"ene_murky_fbi_heavy_m4",
-				"ene_murky_fbi_heavy_r870",
-				"ene_murky_yellow_m4",
-				"ene_murky_yellow_r870",
+				"ene_fbi_1",
+				"ene_fbi_2",
+				"ene_fbi_swat_1",
+				"ene_fbi_swat_2",
+				"ene_fbi_swat_3",
+				"ene_fbi_heavy_1",
+				"ene_fbi_heavy_r870",
+				"ene_swat_heavy_1",
+				"ene_swat_heavy_r870",
 				"ene_murky_shield_yellow",
 				"ene_murky_shield_fbi",
-				"ene_murky_city_ump",
-				"ene_murky_city_bnl",
-				"ene_murky_city_m4",
+				"ene_city_swat_1",
+				"ene_city_swat_2",
+				"ene_city_swat_3",
 				"ene_murky_fbi_tank_m249",
 				"ene_murky_fbi_tank_medic",
 				"ene_murky_fbi_tank_saiga",
@@ -15162,7 +15176,8 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",
 				"ene_murky_medic_m4",
 				"ene_murky_tazer",
-				"ene_murkywater_light",
+				"ene_swat_1",
+				"ene_swat_2",
 				"ene_murky_sniper"
 			}
 		},

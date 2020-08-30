@@ -18,8 +18,6 @@
 			<lod_object name="lod_ene_acc_swat_heavy_helmet">
 				<object name="g_helmet" enabled="true" >
 					<material materials="mtr_helmet" max_distance="1000" />
-					<material materials="mtr_helmet_lod_1" max_distance="1500" />
-					<material materials="mtr_helmet_lod_2" />
 				</object>
 			</lod_object>
 	</graphics>

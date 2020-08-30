@@ -26,7 +26,7 @@ function ElementPointOfNoReturn:on_executed(instigator)
 			managers.groupai:state():set_point_of_no_return_timer(240, self._id)
 		end				
 	--Done so you can actually hear the entirety of the 'loud' music
-	elseif job == "tag" or job == "run" or job == "kosugi" or job == "dark" or job == "fish" then 	
+	elseif job == "tag" or job == "xmn_tag" or job == "run" or job == "kosugi" or job == "dark" or job == "fish" then 	
 		if diff == "easy" then
 			managers.groupai:state():set_point_of_no_return_timer(60, self._id)
 		elseif diff == "normal" then

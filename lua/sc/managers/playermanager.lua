@@ -48,7 +48,7 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 	multiplier = multiplier + self:num_local_minions() * (self:upgrade_value("player", "minion_master_speed_multiplier", 1) - 1)
 
 	--Kingpin movespeed bonus.
-	if managers.player:has_activate_temporary_upgrade("temporary", "chico_injector") then
+	if self:has_activate_temporary_upgrade("temporary", "chico_injector") then
 		multiplier = multiplier + self:upgrade_value("player", "chico_injector_speed", 1) - 1
 	end
 
@@ -57,11 +57,16 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 		multiplier = multiplier + self:detection_risk_movement_speed_bonus()
 	end
 
-	--Grinder speed bonus.
+	--Grinder and hitman speed bonuses.
 	local player_unit = self:player_unit()
 	if alive(player_unit) then
 		local hot_stacks = player_unit:character_damage()._damage_to_hot_stack
 		multiplier = multiplier + self:upgrade_value("player", "hot_speed_bonus", 0) * #hot_stacks or 0
+
+		--Hitman movespeed bonus
+		if player_unit:character_damage():has_temp_health() then
+			multiplier = multiplier + self:upgrade_value("player", "temp_health_speed", 1) - 1
+		end
 	end
 
 	--Removed unused "secured_bags_multiplier" nonsense.
@@ -313,8 +318,10 @@ end
 function PlayerManager:use_messiah_charge()
 	if self:has_category_upgrade("player", "infinite_messiah") then --If player has infinite messiah, set the cooldown timer.
 		self._messiah_cooldown = Application:time() + 120 --Replace with tweakdata once we settle on something.
+		managers.hud:start_cooldown("messiah", 120)
 	elseif self._messiah_charges then --Eat a messiah charge if not infinite.
 		self._messiah_charges = math.max(self._messiah_charges - 1, 0)
+		managers.hud:remove_skill("messiah")
 	end
 end
 
@@ -322,6 +329,7 @@ end
 function PlayerManager:_on_messiah_event()
 	if self._current_state == "bleed_out" and not self._coroutine_mgr:is_running("get_up_messiah") then
 		self._messiah_cooldown = self._messiah_cooldown - 10 --Downed kill CDR.
+		managers.hud:change_cooldown("messiah", -10)
 		if self._messiah_charges > 0 and self._messiah_cooldown < Application:time() then
 			self._coroutine_mgr:add_coroutine("get_up_messiah", PlayerAction.MessiahGetUp, self)
 		end
@@ -380,20 +388,23 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 
 	local current_state = self:get_current_state()
 
-	if current_state and current_state:_interacting() then
-		multiplier = multiplier * self:upgrade_value("player", "interacting_damage_multiplier", 1)
+	if current_state then
+		if current_state:_interacting() then
+			multiplier = multiplier * self:upgrade_value("player", "interacting_damage_multiplier", 1)
+		elseif current_state:in_melee() then
+			local melee_name_id = managers.blackmarket:equipped_melee_weapon()
+			if damage_type == "bullet" then --Counter Strike
+				multiplier = multiplier * self:upgrade_value("player", "deflect_ranged", 1)
+			end
+
+			if tweak_data.blackmarket.melee_weapons[melee_name_id].block then --Buck shield.
+				multiplier = multiplier * tweak_data.blackmarket.melee_weapons[melee_name_id].block
+			end
+		end
 	end
 	
-
-	if current_state and current_state:in_melee() then
-		local melee_name_id = managers.blackmarket:equipped_melee_weapon()
-		if damage_type == "bullet" then --Counter Strike
-			multiplier = multiplier * self:upgrade_value("player", "deflect_ranged", 1)
-		end
-
-		if tweak_data.blackmarket.melee_weapons[melee_name_id].block then --Buck shield.
-			multiplier = multiplier * tweak_data.blackmarket.melee_weapons[melee_name_id].block
-		end
+	if self._current_state == "bipod" then
+		multiplier = multiplier * self:upgrade_value("player", "bipod_damage_reduction", 1)
 	end
 
 	return multiplier
@@ -568,6 +579,19 @@ function PlayerManager:check_skills()
 	else
 		self._message_system:unregister(Message.OnEnemyKilled, "special_double_ammo_drop")
 	end
+
+	if self:has_category_upgrade("temporary", "headshot_fire_rate_mult") then
+		self._message_system:register(Message.OnHeadShot, "sharpshooter", callback(self, self, "_trigger_sharpshooter"))
+	else
+		self._message_system:unregister(Message.OnHeadShot, "sharpshooter")
+	end
+
+	if self:has_category_upgrade("player", "store_temp_health") then
+		self._message_system:register(Message.OnEnemyKilled, "hitman_temp_health", callback(self, self, "_trigger_hitman")) --Triggers include killing his dog and stealing his car.
+	else
+		self._message_system:unregister(Message.OnEnemyKilled, "hitman_temp_health")
+	end
+
 end
 
 --The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.
@@ -735,6 +759,14 @@ function PlayerManager:_internal_load()
 		player:character_damage():exit_custody(math.max(tweak_data.player.damage.DOWNED_TIME_MIN, self._down_time))
 	end
 
+	if self:has_category_upgrade("player", "messiah_revive_from_bleed_out") then
+		managers.hud:add_skill("messiah")
+	end
+
+	if self:has_category_upgrade("cooldown", "long_dis_revive") then
+		managers.hud:add_skill("long_dis_revive")
+	end
+
 	if self:has_category_upgrade("player", "cocaine_stacking") then
 		self:update_synced_cocaine_stacks_to_peers(0, self:upgrade_value("player", "sync_cocaine_upgrade_level", 1), self:upgrade_level("player", "cocaine_stack_absorption_multiplier", 0))
 		managers.hud:set_info_meter(nil, {
@@ -786,6 +818,17 @@ function PlayerManager:_dodge_healing_no_armor()
 	end
 end
 
+--Boosts ROF on headshot gills with single fire guns.
+function PlayerManager:_trigger_sharpshooter(unit, attack_data)
+	local weapon_unit = self:equipped_weapon_unit()
+	local attacker_unit = attack_data.attacker_unit
+	local variant = attack_data.variant
+
+	if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") and attack_data.result.type == "death" then
+		self:activate_temporary_upgrade("temporary", "headshot_fire_rate_mult")
+	end
+end
+
 --Adds doctor bag health regen.
 function PlayerManager:health_regen()
 	local health_regen = tweak_data.player.damage.HEALTH_REGEN
@@ -799,11 +842,14 @@ function PlayerManager:health_regen()
 	return health_regen
 end
 
---Move hostage taker to flat # regen from % regen.
+--Move hostage taker to flat # regen from % regen. Add max hostage regen bonus.
 function PlayerManager:fixed_health_regen()
 	local health_regen = 0
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
 	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")
+	if (managers.groupai and managers.groupai:state():hostage_count() or 0) >= tweak_data:get_raw_value("upgrades", "hostage_max_num", "health_regen") then
+		health_regen = health_regen + self:get_hostage_bonus_addend("health_regen") * self:upgrade_value("player", "hostage_health_regen_max_mult", 0)
+	end
 
 	return health_regen
 end
@@ -881,6 +927,17 @@ function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, kill
 	end
 end
 
+function PlayerManager:_trigger_hitman(equipped_unit, variant, killed_unit)
+	local player_unit = self:player_unit()
+	if alive(player_unit) then
+		if variant == "melee" then
+			player_unit:character_damage():consume_temp_stored_health()
+		else
+			player_unit:character_damage():add_armor_stored_health(self:upgrade_value("player", "store_temp_health", {0, 0})[2])
+		end
+	end
+end
+
 --The vanilla version of this function is actually nonfunctional. No wonder it's never used.
 --This fixes it to fulfill its intended purpose of letting active temporary upgrade durations be changed.
 function PlayerManager:extend_temporary_upgrade(category, upgrade, time)
@@ -930,4 +987,78 @@ function PlayerManager:regain_throwable_from_ammo()
 			self._throwable_chance = self._throwable_chance + self._throwable_chance_data.chance_inc
 		end
 	end
+end
+
+--Better rounding behavior on DA. Add 1 to deal with some weird rounding edge cases.
+function PlayerManager:_get_cocaine_damage_absorption_from_data(data)
+	local amount = data.amount or 0
+	local upgrade_level = data.upgrade_level or 1
+
+	if amount == 0 then
+		return 0
+	end
+	
+	return math.floor((amount + 1) / (tweak_data.upgrades.cocaine_stacks_convert_levels and tweak_data.upgrades.cocaine_stacks_convert_levels[upgrade_level] or 20)) * (tweak_data.upgrades.cocaine_stacks_dmg_absorption_value or 0.1)
+end
+
+--Makes the multiplier capstone work as described.
+function PlayerManager:get_best_cocaine_damage_absorption(my_peer_id)
+	local data = self._global.synced_cocaine_stacks[my_peer_id] or {}
+	local multiplier = self:upgrade_value("player", "cocaine_stack_absorption_multiplier", 1) --Previously always returned 1.
+	local absorption = 0
+	local best_peer_id = 0
+
+	if self._global.synced_cocaine_stacks then
+		local peer_absorption = nil
+
+		for peer_id, data in pairs(self._global.synced_cocaine_stacks) do
+			if peer_id == my_peer_id or data.in_use then
+				peer_absorption = self:_get_cocaine_damage_absorption_from_data(data)
+
+				if absorption < peer_absorption then
+					best_peer_id = peer_id or best_peer_id
+				end
+
+				absorption = math.max(absorption, peer_absorption)
+			end
+		end
+	end
+
+	return absorption * multiplier, best_peer_id
+end
+
+--Adds buff tracker call.
+function PlayerManager:disable_cooldown_upgrade(category, upgrade)
+	local upgrade_value = self:upgrade_value(category, upgrade)
+
+	if upgrade_value == 0 then
+		return
+	end
+
+	local time = upgrade_value[2]
+	self._global.cooldown_upgrades[category] = self._global.cooldown_upgrades[category] or {}
+	self._global.cooldown_upgrades[category][upgrade] = {
+		cooldown_time = Application:time() + time
+	}
+	managers.hud:start_cooldown(upgrade, time)
+end
+
+--Adds buff tracker call.
+function PlayerManager:activate_temporary_upgrade(category, upgrade)
+	local upgrade_value = self:upgrade_value(category, upgrade)
+
+	if upgrade_value == 0 then
+		return
+	end
+
+	local time = upgrade_value[2]
+	self._temporary_upgrades[category] = self._temporary_upgrades[category] or {}
+	self._temporary_upgrades[category][upgrade] = {
+		expire_time = Application:time() + time
+	}
+
+	if self:is_upgrade_synced(category, upgrade) then
+		managers.network:session():send_to_peers("sync_temporary_upgrade_activated", self:temporary_upgrade_index(category, upgrade))
+	end
+	managers.hud:start_buff(upgrade, time)
 end

@@ -115,7 +115,6 @@ function DescriptionItem:init(panel, text, i, saved_descriptions)
 	local briefing_id = managers.job:current_briefing_id()
 	
 	if managers.skirmish:is_skirmish() and not managers.skirmish:is_weekly_skirmish() then
-		name_id = "heist_skm_random_h1"
 		briefing_id = "heist_skm_random_briefing"
 	end
 	
@@ -308,8 +307,15 @@ function MissionBriefingGui:init(saferect_ws, fullrect_ws, node)
 		table.insert(self._items, self._mutators_item)
 		index = index + 1
 	end
-	if tweak_data.levels[Global.level_data.level_id].music ~= "no_music" then
+	local music_type = tweak_data.levels:get_music_style(Global.level_data.level_id)
+
+	if music_type == "heist" then
 		self._jukebox_item = JukeboxItem:new(self._panel, utf8.to_upper(managers.localization:text("menu_jukebox")), index)
+		table.insert(self._items, self._jukebox_item)
+		index = index + 1
+	elseif music_type == "ghost" then
+		self._jukebox_item = JukeboxGhostItem:new(self._panel, utf8.to_upper(managers.localization:text("menu_jukebox")), index)
+
 		table.insert(self._items, self._jukebox_item)
 		index = index + 1
 	end
@@ -579,7 +585,7 @@ function MissionBriefingGui:reload_loadout()
 end
 
 function MissionBriefingGui:close()
-	managers.music:track_listen_stop()
+	managers.music:stop_listen_all()
 	self:close_asset()
 	local requested_asset_textures = self._assets_item and self._assets_item:get_requested_textures()
 	if requested_asset_textures then

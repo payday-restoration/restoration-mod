@@ -188,8 +188,8 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 		local is_alive = not hit_unit:character_damage():dead()
 
 		if not blank then
-			local knock_down = weapon_unit:base()._knock_down and weapon_unit:base()._knock_down > 0 and math.random() < weapon_unit:base()._knock_down
-
+			--Knock down skill now checks for whether or not a bipod is active.
+			local knock_down = weapon_unit:base()._knock_down and managers.player._current_state == "bipod" and weapon_unit:base()._knock_down > 0 and math.random() < weapon_unit:base()._knock_down
 			result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, weapon_unit:base()._use_armor_piercing, false, knock_down, weapon_unit:base()._stagger, weapon_unit:base()._variant)
 		end
 
@@ -355,6 +355,12 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 			hit_through_wall = true
 		elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
 			hit_through_shield = hit_through_shield or alive(hit.unit:parent())
+		end
+
+		--Damage reduction when shooting through shields.
+		--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
+		if hit_through_shield then
+			damage = damage * (self._shield_damage_mult or 0.5)
 		end
 
 		if hit_result and hit_result.type == "death" and cop_kill_count > 0 then

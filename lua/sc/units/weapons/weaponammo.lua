@@ -31,3 +31,17 @@ function WeaponAmmo:replenish()
 		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stats.pickup_exponents.max * math.sqrt(7200/total_ammo)) * pickup_multiplier * total_ammo, self._ammo_pickup[1])
 	end
 end
+
+--Ensures that ensures that OICW magazine size increases don't result in broken decimal values.
+function WeaponAmmo:calculate_ammo_max_per_clip()
+	local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + (self._extra_ammo or 0)
+	ammo = ammo * managers.player:upgrade_value(self._name_id, "clip_ammo_increase", 1)
+	if not self:upgrade_blocked("weapon", "clip_ammo_increase") then
+		ammo = ammo * managers.player:upgrade_value("weapon", "clip_ammo_increase", 1)
+	end
+	if not self:upgrade_blocked(tweak_data.weapon[self._name_id].category, "clip_ammo_increase") then
+		ammo = ammo * managers.player:upgrade_value(tweak_data.weapon[self._name_id].category, "clip_ammo_increase", 1)
+	end
+	ammo = math.floor(ammo)
+	return ammo
+end

@@ -1,0 +1,27 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_doormainmetalwindow01" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/nmh_prop_doormain01/nmh_prop_doormainmetalwindow01_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/nmh_prop_doormain01/nmh_prop_doormainmetalwindow01_nm"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/nmh_prop_doormain01/nmh_prop_doormainmetalwindow01_gsma"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" name="mat_metal" version="2">
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/nmh_prop_doormain01/nmh_prop_doormainmetalwindow01_df"/>
+        <bump_normal_texture file="units/pd2_dlc_nmh/architecture/nmh_prop_doormain01/nmh_prop_doormainmetalwindow01_nm"/>
+        <material_texture file="units/pd2_dlc_nmh/architecture/nmh_prop_doormain01/nmh_prop_doormainmetalwindow01_gsma"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE" name="mat_glass" version="2">
+        <opacity_texture file="units/glass/window_glass/windows_op_texture_04_op"/>
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/glasswindow007a_df"/>
+        <variable type="vector3" name="opacity_fade" value="259 10000 0"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+        <variable type="vector3" name="fresnel_settings" value="0.50999999046326 0.29999998211861 0"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE" name="mat_glass_dmg" version="2">
+        <opacity_texture file="units/pd2_dlc_nmh/architecture/textures/glasswindow007a_op"/>
+        <diffuse_texture file="units/pd2_dlc_nmh/architecture/textures/glasswindow007a_df"/>
+        <variable type="vector3" name="opacity_fade" value="0 10000 0"/>
+        <reflection_texture file="current_global_texture" type="cubemap"/>
+        <variable type="vector3" name="fresnel_settings" value="0.79999995231628 0.19999998807907 0"/>
+    </material>
+</materials>

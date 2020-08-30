@@ -76,7 +76,8 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 		suit_sunny = "heist_default",
 		loud_suit = "heist_default",
 		poggers = "esport",
-		suit_prison = "saints"
+		suit_prison = "saints",
+		continental = "continental"		
 	}
 	self.gloves.default = {
 		name_id = "bm_gloves_default",
@@ -176,7 +177,14 @@ function BlackMarketTweakData:_init_gloves(tweak_data)
 		unit = "units/pd2_dlc_hnd/characters/hnd_glv_esport/hnd_glv_esport",
 		third_material = "units/pd2_dlc_hnd/characters/hnd_glv_esport/hnd_glv_esport_third"
 	}
-	
+	self.gloves.continental = {
+		name_id = "bm_gloves_continental",
+		desc_id = "bm_gloves_continental_desc",
+		texture_bundle_folder = "anv",
+		global_value = "anv",
+		unit = "units/pd2_dlc_anv/characters/anv_glv_continental/anv_glv_continental",
+		third_material = "units/pd2_dlc_anv/characters/anv_glv_continental/anv_glv_continental_third"
+	}	
 end
 
 --This is a helmet, not a mask--
@@ -556,13 +564,47 @@ function BlackMarketTweakData:_init_masks(tweak_data)
 		texture_bundle_folder = "mods"
 	}
 	
-	--Secret clover
+	--Secret Clover
 	self.masks.secret_clover = {
 		unit = "units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret",
 		name_id = "bm_msk_secret_clover",
 		desc_id = "bm_msk_secret_clover_desc",
 		pcs = {},
 		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Secret Bonnie
+	self.masks.secret_bonnie = {
+		unit = "units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret",
+		name_id = "bm_msk_secret_bonnie",
+		desc_id = "bm_msk_secret_bonnie_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Secret Sydney
+	self.masks.secret_sydney = {
+		unit = "units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret",
+		name_id = "bm_msk_secret_syndey",
+		desc_id = "bm_msk_secret_syndey_desc",
+		pcs = {},
+		value = 0,
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--Secret Richard
+	self.masks.secret_richard = {
+		unit = "units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret",
+		name_id = "bm_msk_secret_richard",
+		desc_id = "bm_msk_secret_richard_desc",
+		pcs = {},
+		value = 0,
+		type = "helmet",	
 		global_value = "rest",
 		texture_bundle_folder = "mods"
 	}
@@ -1148,32 +1190,32 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 	}
 	set_characters_data("suit_sunny", characters_male, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit"
 	})
 	set_characters_data("suit_sunny", characters_black_gloves, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
 	set_characters_data("suit_sunny", characters_wholesome_100, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
 	set_characters_data("suit_sunny", characters_tony, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust", -- fuck you and your stupid fucking long tight ass gloves
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
 	set_characters_data("suit_sunny", characters_jimmy, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit"
 	})
 	set_characters_data("suit_sunny", characters_chains, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_chains/res_acc_fps_sunny_suit_chains",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains"
 	})
 	set_characters_data("suit_sunny", characters_sangres, {
@@ -1183,42 +1225,42 @@ function BlackMarketTweakData:_init_player_styles(tweak_data)
 	})
 	set_characters_data("suit_sunny", characters_bodhi, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_bodhi/res_acc_fps_sunny_suit_bodhi",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi"
 	})
 	set_characters_data("suit_sunny", characters_jacket, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_jacket/res_acc_fps_sunny_suit_jacket",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket"
 	})
 	set_characters_data("suit_sunny", characters_male_big, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_rust/res_acc_fps_sunny_suit_rust",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
 	})
 	set_characters_data("suit_sunny", characters_worst_addition, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit/res_acc_fps_sunny_suit",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
 	})
 	set_characters_data("suit_sunny", characters_female, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female"
 	})
 	set_characters_data("suit_sunny", characters_sydney, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female_2",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney"
 	})
 	set_characters_data("suit_sunny", characters_joy, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_joy/res_acc_fps_sunny_suit_joy",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy"
 	})
 	set_characters_data("suit_sunny", characters_female_big, {
 		body_replacement = body_replacement_standard,
-		unit = "units/pd2_mod_suits/characters/res_acc_fps_sunny_suit_female/res_acc_fps_sunny_suit_female",
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
 	})	
 	
@@ -1323,6 +1365,10 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	]]--
 
 	table.insert(self._projectiles_index, "bravo_frag")
+	table.insert(self._projectiles_index, "cluster_fuck")
+	table.insert(self._projectiles_index, "child_grenade")
+	table.insert(self._projectiles_index, "launcher_frag_osipr")
+	table.insert(self._projectiles_index, "launcher_incendiary_osipr")
 
 	--Throwables--
 	self.projectiles.wpn_prj_four.max_amount = 9
@@ -1384,7 +1430,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.bravo_frag = {}
 	self.projectiles.bravo_frag.damage = 12 --120 damage at point blank.
 	self.projectiles.bravo_frag.player_damage = 12
-	self.projectiles.bravo_frag.curve_pow = 0.5
+	self.projectiles.bravo_frag.curve_pow = 0.1
 	self.projectiles.bravo_frag.range = 500
 	self.projectiles.bravo_frag.name_id = "bm_bravo_frag"
 	self.projectiles.bravo_frag.unit = "units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"
@@ -1393,6 +1439,54 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.bravo_frag.is_a_grenade = true
 	self.projectiles.bravo_frag.is_explosive = true
 	self.projectiles.bravo_frag.add_trail_effect = true
+
+	self.projectiles.cluster_fuck = {}
+	self.projectiles.cluster_fuck.damage = 12 --120 damage at point blank.
+	self.projectiles.cluster_fuck.player_damage = 12
+	self.projectiles.cluster_fuck.curve_pow = 0.1
+	self.projectiles.cluster_fuck.range = 500
+	self.projectiles.cluster_fuck.name_id = "bm_cluster_fuck"
+	self.projectiles.cluster_fuck.unit = "units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"
+	self.projectiles.cluster_fuck.unit_dummy = "units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck_husk"
+	self.projectiles.cluster_fuck.throwable = false
+	self.projectiles.cluster_fuck.is_a_grenade = true
+	self.projectiles.cluster_fuck.is_explosive = true
+	self.projectiles.cluster_fuck.add_trail_effect = true
+
+	self.projectiles.child_grenade = {}
+	self.projectiles.child_grenade.damage = 10 --100 damage at point blank.
+	self.projectiles.child_grenade.player_damage = 10
+	self.projectiles.child_grenade.curve_pow = 0.1
+	self.projectiles.child_grenade.init_timer = 1.0
+	self.projectiles.child_grenade.range = 500
+	self.projectiles.child_grenade.name_id = "bm_child_grenade"
+	self.projectiles.child_grenade.unit = "units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"
+	self.projectiles.child_grenade.unit_dummy = "units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"
+	self.projectiles.child_grenade.throwable = false
+	self.projectiles.child_grenade.is_a_grenade = true
+	self.projectiles.child_grenade.is_explosive = true
+	self.projectiles.child_grenade.add_trail_effect = true
+
+--SABR Grenade Launcher.
+	self.projectiles.launcher_frag_osipr = {
+		name_id = "bm_launcher_frag",
+		unit = "units/mods/weapons/wpn_osipr_frag_grenade/wpn_osipr_frag_grenade",
+		weapon_id = "osipr_gl",
+		no_cheat_count = true,
+		impact_detonation = true,
+		is_explosive = true,
+		time_cheat = 0,
+		adjust_z = 0
+	}
+	self.projectiles.launcher_incendiary_osipr = {
+		name_id = "bm_launcher_incendiary",
+		unit = "units/mods/weapons/wpn_osipr_frag_incendiary_grenade/wpn_osipr_frag_incendiary_grenade",
+		weapon_id = "osipr_gl",
+		no_cheat_count = true,
+		impact_detonation = true,
+		time_cheat = 0,
+		adjust_z = 0
+	}
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins

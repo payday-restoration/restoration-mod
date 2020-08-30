@@ -6,6 +6,7 @@ PlayerAction.AmmoEfficiency = {
 		local headshots = 1
 		local weapon_unit = player_manager:equipped_weapon_unit():base()
 		local to_magazine = player_manager:upgrade_value("player", "head_shot_ammo_return", nil).to_magazine
+		local hud_manager = managers.hud
 
 		local function on_headshot(unit, attack_data)
 			local attacker_unit = attack_data.attacker_unit
@@ -13,7 +14,8 @@ PlayerAction.AmmoEfficiency = {
 			--Filter out melee attacks, along with any other niche things that might proc headshots. Require said attacks to be lethal to match skill description since onlethalheadshot doesn't work properly
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" and attack_data.result.type == "death" then
 				headshots = headshots + 1
-
+				hud_manager:remove_stack("ammo_efficiency")
+				
 				if headshots == target_headshots then
 					--Amount of ammo to refund. bullet_refund corresponds to % of ammo to refund. If amount would be less than 1 bullet, clamp it to 1 bullet.
 					local refund = math.floor(math.max(bullet_refund * weapon_unit:get_ammo_max(), 1))
@@ -30,7 +32,8 @@ PlayerAction.AmmoEfficiency = {
 
 		--OnLethalHeadshot crashes because attack_data and unit somehow become null. Why? Damned if I know.
 		player_manager:register_message(Message.OnHeadShot, co, on_headshot)
-
+		hud_manager:start_buff("ammo_efficiency", target_time - time)
+		hud_manager:set_stacks("ammo_efficiency", target_headshots - headshots)
 		while time < target_time do
 			time = Application:time()
 			weapon_unit = player_manager:equipped_weapon_unit():base()

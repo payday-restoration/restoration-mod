@@ -165,7 +165,7 @@
 		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/socom_df_cc"/>
 		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/socom_nm"/>
 		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_df"/>
-		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_df_cc"/>
+		<!-- <texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_df_cc"/> -->
 		<texture path="units/mods/weapons/wpn_fps_pis_socom_pts/lam_nm"/>
 
 		<cooked_physics path="units/mods/weapons/wpn_fps_pis_socom/wpn_fps_pis_socom"/>
@@ -229,7 +229,7 @@
 
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/socom"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/x_socom"/>
-		<texture path="guis/socom"/>
+		<!-- <texture path="guis/socom"/> -->
 	</AddFiles>
 	
 	<Hooks directory="Hooks">

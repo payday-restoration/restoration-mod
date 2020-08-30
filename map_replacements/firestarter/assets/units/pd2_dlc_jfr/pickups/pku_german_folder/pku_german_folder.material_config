@@ -1,7 +1,0 @@
-<materials version="3">
-    <material name="mat_folder" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" version="2">
-        <diffuse_texture 		file="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder_df"/>
-        <bump_normal_texture 	file="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder_nm"/>
-        <material_texture 		file="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder_gsm"/>
-    </material>
-</materials>

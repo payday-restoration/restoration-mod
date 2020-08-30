@@ -1,6 +1,0 @@
-<unit type="ind" slot="1" >
-    <object file="units/pd2_dlc_cro/ind_container_mul/mullplan_container" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

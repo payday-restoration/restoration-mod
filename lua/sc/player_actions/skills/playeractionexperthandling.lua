@@ -5,6 +5,7 @@ PlayerAction.ExpertHandling = {
 		local current_time = Application:time()
 		local current_stacks = 1
 		local add_time = player_manager:upgrade_value("pistol", "stacked_accuracy_bonus", nil).max_time
+		local hud_manager = managers.hud
 
 		--Headshot stacking + refresh
 		local function on_headshot(unit, attack_data)
@@ -17,8 +18,10 @@ PlayerAction.ExpertHandling = {
 
 				if current_stacks <= max_stacks then
 					player_manager:mul_to_property("desperado", accuracy_bonus)
+					hud_manager:add_stack("desperado")
 				end
 				max_time = current_time + add_time
+				hud_manager:start_buff("desperado", add_time)
 			end
 
 		end
@@ -30,8 +33,12 @@ PlayerAction.ExpertHandling = {
 
 			if attacker_unit == player_manager:player_unit() and variant == "bullet" and player_manager:is_current_weapon_of_category("pistol") then
 				max_time = current_time + add_time
+				hud_manager:start_buff("desperado", add_time)
 			end
 		end
+		
+		hud_manager:start_buff("desperado", add_time)
+		hud_manager:add_stack("desperado")
 
 		player_manager:mul_to_property("desperado", accuracy_bonus)
 		player_manager:register_message(Message.OnHeadShot, co, on_headshot)

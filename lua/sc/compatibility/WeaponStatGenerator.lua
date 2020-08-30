@@ -40,10 +40,6 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 			stats.spread = stats.spread - 2
 		end
 
-		if add_to_smgs then
-			table.insert(weap.categories, "smg") --LMGs in resmod are treated like SMGs for skill related stuff.
-		end
-
 		--Adjust ammo on secondaries.
 		if weap.use_data.selection_index == 1 then
 			stats.AMMO_MAX = stats.AMMO_MAX * 0.5
@@ -76,6 +72,10 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		weap.can_shoot_through_titan_shield = stats.super_piercing
 		if stats.super_piercing then
 			weap.desc_id = "bm_auto_generated_sap_sc_desc"
+		end
+		if add_to_smgs then
+			table.insert(weap.categories, "smg") --LMGs in resmod are treated like SMGs for skill related stuff.
+			weap.desc_id = "bm_auto_generated_lmg_sc_desc"
 		end
 		weap.stats_modifiers = nil
 	end
@@ -367,7 +367,7 @@ function WeaponTweakData:generate_lmg(weap)
 		recoil = 0,
 		concealment = 0,
 		quietness = 0,
-		swap_speed_multiplier = 1
+		swap_speed_multiplier = 0.9
 	}
 
 	--How generally pleasant the weapon is to reload.
@@ -383,7 +383,7 @@ function WeaponTweakData:generate_lmg(weap)
 	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
 	if damage <= 60 then
 		stats.damage = 18
-		stats.AMMO_MAX = 200
+		stats.AMMO_MAX = 300
 		stats.quietness = 10
 		stats.recoil = 26 - math.max(math.floor((rpm - 650)/50), 0)
 		stats.spread = self:generate_stat_from_table(
@@ -400,7 +400,7 @@ function WeaponTweakData:generate_lmg(weap)
 			weap.CLIP_AMMO_MAX)
 	elseif damage <= 80 then
 		stats.damage = 20
-		stats.AMMO_MAX = 180
+		stats.AMMO_MAX = 270
 		stats.quietness = 9
 		stats.recoil = 26 - math.floor((rpm - 650)/50)
 		stats.spread = self:generate_stat_from_table(
@@ -417,7 +417,7 @@ function WeaponTweakData:generate_lmg(weap)
 			weap.CLIP_AMMO_MAX)
 	else
 		stats.damage = 24
-		stats.AMMO_MAX = 150
+		stats.AMMO_MAX = 180
 		stats.quietness = 8
 		stats.recoil = 26 - math.floor((rpm - 500)/50)
 		stats.spread = self:generate_stat_from_table(

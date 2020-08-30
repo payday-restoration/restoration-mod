@@ -9607,7 +9607,7 @@ if self.cold then --Gambyt's VMP Classic Crosskill
 	}
 	self.cold.stats_modifiers = nil
 	self.cold.panic_suppression_chance = 0.0
-	self.cold.swap_speed_multiplier = 0.8
+	self.cold.swap_speed_multiplier = 0.75
 end
 
 if self.aknato then --Gambyt's Mamba 5.56 / Ak-101

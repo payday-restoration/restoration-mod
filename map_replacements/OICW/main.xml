@@ -104,7 +104,7 @@
 			<sounds fire="arbiter_fire"/>
 			<timers reload_not_empty="3.34" reload_empty="4.5" equip_underbarrel="1.8" unequip_underbarrel="1.8"/>
 		</weapon>
-		<factory id="wpn_fps_ass_osipr_gl" unit="units/mods/weapons/wpn_fps_ass_osipr/wpn_fps_ass_osipr_gl">
+		<factory id="wpn_fps_ass_osipr_gl" unit="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl">
 			<animations/>
 			<adds/>
 			<override/>
@@ -116,6 +116,7 @@
 				<shoulders rotation="-0.0704717 -0.0466794 0.00424314 -0.996412" translation="-4.248 2.504 -10.217"/>
 			</crouched>
 			<steelsight>
+				<vel_overshot yaw_neg="3" yaw_pos="-3" pitch_neg="-10" pitch_pos="2"/>
 				<shoulders rotation="-0.000745315 0.00548101 0.00093835 -0.999984" translation="-10.8 -24 -4.5"/>
 			</steelsight>
 			<standard>
@@ -173,5 +174,7 @@
 
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/osipr"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/outline/osipr"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/osipr_gl"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_osipr_m_gl_incendiary"/>
 	</AddFiles>
 </mod>

@@ -8854,6 +8854,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--this line doesn't do shit
 	--self.shatters_fury.custom = true
 	
+	--[[
 	--OICW
 	self.osipr.tactical_reload = 1		
 	self.osipr.AMMO_MAX = 120
@@ -8913,6 +8914,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr_gl.timers.reload_not_empty = 3.34
 	self.osipr_gl.timers.reload_empty = 4.5		
 	self.osipr_gl.panic_suppression_chance = 0.0
+	
+	]]--
 	
 	--Anubis .45
 	self.socom.timers = {

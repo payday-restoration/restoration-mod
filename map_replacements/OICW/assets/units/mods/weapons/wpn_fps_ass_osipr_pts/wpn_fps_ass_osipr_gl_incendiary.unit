@@ -1,5 +1,5 @@
 <unit type="wpn" slot="1">
-	<object file="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl" />
+	<object file="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_incendiary" />
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
         <extension name="base" class="WeaponUnderbarrelLauncher">

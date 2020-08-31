@@ -395,7 +395,7 @@ function WeaponTweakData:generate_lmg(weap)
 			{50,60,75,100,150},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = self:generate_stat_from_table(
-			{29,28,27,25,23,21},
+			{27,26,25,23,21,19},
 			{40,50,75,100,150},
 			weap.CLIP_AMMO_MAX)
 	elseif damage <= 80 then
@@ -412,7 +412,7 @@ function WeaponTweakData:generate_lmg(weap)
 			{50,60,75,100,150},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = self:generate_stat_from_table(
-			{26,25,24,22,20,18},
+			{24,23,22,20,18,16},
 			{40,50,75,100,150},
 			weap.CLIP_AMMO_MAX)
 	else
@@ -429,7 +429,7 @@ function WeaponTweakData:generate_lmg(weap)
 			{50,60,75,100,150},
 			weap.CLIP_AMMO_MAX)
 		stats.concealment = self:generate_stat_from_table(
-			{26,25,24,22,20,18},
+			{24,23,22,20,18,16},
 			{40,50,75,100,150},
 			weap.CLIP_AMMO_MAX)
 	end

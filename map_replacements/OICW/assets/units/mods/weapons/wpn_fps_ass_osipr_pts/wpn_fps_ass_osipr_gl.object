@@ -1,3 +1,3 @@
 <dynamic_object>
-	<diesel orientation_object="rp_wpn_fps_ass_contraband_gl_m203" />
+	<diesel materials="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl" orientation_object="rp_wpn_fps_ass_contraband_gl_m203" />
 </dynamic_object>

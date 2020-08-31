@@ -131,8 +131,8 @@
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_bolt"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_b_standard"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_scope"/>
-		<unit_obj path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl"/>
-		<unit path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_incendiary"/>
+		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl"/>
+		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_gl_incendiary"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl"/>
 		<unit_mat_thq path="units/mods/weapons/wpn_fps_ass_osipr_pts/wpn_fps_ass_osipr_m_gl_incendiary"/>
 		<unit path="units/mods/weapons/wpn_osipr_frag_grenade/wpn_osipr_frag_grenade"/>

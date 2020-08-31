@@ -414,7 +414,7 @@
 	"bm_msk_sweettooth_desc" : "Sweet Tooth, real name Marcus \'Needles\' Kane, is a character from the Twisted Metal video game series. Sweet Tooth is best known for being a killer clown that drives a combat ice cream truck.\n\nIt\'s said that he once had escaped from a mental institution. Now he leads a life of crime.",	
 	
 	"bm_msk_wolf_stone" : "Stonecold Wolf",
-	"bm_msk_wolf_stone_desc" : "Wolf's original mask from when he first tipped over the edge, acting out crimes from his favourite media. The mask was thought lost in a robbery, inspired by the video game 'Hyper Heisting.'\n\nIn the wake of the gang's early jobs, the mask resurfaced, and was brought to the safehouse by one of Bain's associates.\n\nThe mask's original pattern has partially worn away over time, perhaps mirroring Wolf's own decline in sanity.",	
+	"bm_msk_wolf_stone_desc" : "Wolf's original mask from when he first tipped over the edge, acting out crimes from his favourite media. The mask was thought lost in a robbery, inspired by the video game 'Hyper Heisting.'\n\nIn the wake of the gang's early jobs, the mask resurfaced, and was brought to the safehouse by one of Bain's associates.\n\nThe mask's original pattern has partially worn away over time, perhaps mirroring the decline in Wolf's mental stability.",	
    
     "bm_msk_dallas_aged" : "Aged Dallas",
 	"bm_msk_dallas_aged_desc" : "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.",
@@ -471,7 +471,7 @@
 	"bm_cube_desc" : "Push the placeholder, we'll get around to it.",
 	
 	"bm_j4" : "J-4",
-	"bm_j4_desc" : "Jackal's mask. Or at least, a recreation.\n\nThe real mask is important to Jackal, and some say the real thing is loaded with sensitive data.\n\nThis recreation, however, the system running the display is very rudimentary, and only seeks to replicate the real thing.",
+	"bm_j4_desc" : "Jackal's mask. Or at least, a recreation.\n\nThe real mask is important to Jackal, and some say the real thing is loaded with sensitive data.\n\nThis recreation, however, the system running the display is very rudimentary, and only seeks to replicate the real thing.\n\nA gift for your efforts.",
 	 
 	 
 	"bm_msk_finger" : "The Griefer",
@@ -569,7 +569,7 @@
 	"heist_junk_brief" : "The construction area is just ahead. Cops haven't arrived yet but they'll be here shortly. Vlad's guys will give you backup but they likely won't last too long.\n\nReports are that there's a meth lab on site apparently, so feel free to make a little extra money if you can keep Vlad's stuff safe at the same time.",
 	"junk_01" : "DEFEND AGAINST THE COPS",
 	"junk_01_desc" : "Keep the cops away from the loot!  Both the coke and the money need to be defended.",
-	"junk_02" : "PLACE AND LIGHT GAS CANS",
+	"junk_02" : "PLACE AND SHOOT EACH GAS CAN TO LIGHT THEM",
 	"junk_02_desc" : "Light a fire, it'll alert the pilot of your position.",
 	"junk_03" : "DEFEND THE GOODS",
 	"junk_03_desc" : "Don't let the cops secure any of Vlad's product! Lose too many bags, and the operation will be a failure!",
@@ -644,8 +644,6 @@
 	"menu_jukebox_screen_m5" : "Fortress",
 	"menu_jukebox_screen_m6" : "Payday Royale Theme",
 	
-	"look_dad" : "no_errors",
-	
 	"menu_color_plus" : "E3 PAYDAY+",
 	"menu_color_rvd1" : "Inverted",
 	"menu_color_e3nice" : "E3 Nice",
@@ -661,37 +659,37 @@
 	"gm_gms_purchase_window_message" : "Do you really want to buy '{1}'?\n\nIt will cost you {2} {3}.",
 	"gm_gms_purchase_failed" : "Cannot Purchase",
 	"gm_gms_free_of_charge_message" : "{1} is free of charge and can be applied to as many weapons as you wish.",
-	"gm_gms_cannot_afford_message" : "You cannot purchase {1}, as you do not have enough {3} to afford it. To purchase {1}, you need {2} {3}",
+	"gm_gms_cannot_afford_message" : "You cannot purchase {1}, as you do not have enough {3} to afford it. To purchase {1}, you will need {2} {3}",
 
 	"bm_menu_amount_locked" : "NONE IN STOCK",
 
 	"pdth_hud_challenges" : "Challenges",
-	"pdth_hud_challenges_hint" : "View your completed and active challenges",
+	"pdth_hud_challenges_hint" : "View completed and active challenges.",
 	"pdth_hud_active_challenges" : "Active Challenges",
-	"pdth_hud_active_challenges_hint" : "Your current Challenges",
+	"pdth_hud_active_challenges_hint" : "Current and active challenges.",
 	"pdth_hud_completed_challenges" : "Completed Challenges",
-	"pdth_hud_completed_challenges_hint" : "Your current completed Challenges",
+	"pdth_hud_completed_challenges_hint" : "Completed and rewarded challenges.",
 
 	"ch_deploy_ammobag_hl" : "Last Bullet!",
-	"ch_deploy_ammobag" : "Deploy $count Ammo Bags",
-	"ch_plant_tripmine_hl" : "Trip Mine Plantation",
-	"ch_plant_tripmine" : "Deploy $count Trip Mines",
-	"ch_deploy_medicbag_hl" : "I neeeeeeeed a medic bag!",
-	"ch_deploy_medicbag" : "Deploy $count Medic Bags",
-	"ch_deploy_ecm_hl" : "Electric Bomb",
-	"ch_deploy_ecm" : "Deploy $count Ecm's",
-	"ch_deploy_fak_hl" : "Cupcakes are nice",
-	"ch_deploy_fak" : "Deploy $count First Aid Kits",
+	"ch_deploy_ammobag" : "Deploy $count Ammo Bags.",
+	"ch_plant_tripmine_hl" : "Laser Show",
+	"ch_plant_tripmine" : "Deploy $count Trip Mines.",
+	"ch_deploy_medicbag_hl" : "Insurance Benefits",
+	"ch_deploy_medicbag" : "Deploy $count Medic Bags.",
+	"ch_deploy_ecm_hl" : "System Crasher",
+	"ch_deploy_ecm" : "Deploy $count ECM's.",
+	"ch_deploy_fak_hl" : "Lifeline",
+	"ch_deploy_fak" : "Deploy $count First Aid Kits.",
 	"ch_deploy_sentry_hl" : "NEED A SENTRY HERE",
-	"ch_deploy_sentry" : "Deploy $count Sentries",
+	"ch_deploy_sentry" : "Deploy $count Sentries.",
 
-	"ch_vs_desc" : "Using the $weapon, defeat $count $eneType. Using melee does not contribute to this",
+	"ch_vs_desc" : "Using the $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
 	"ch_vs_head_shots_desc" : "Using the $weapon, defeat $count $eneType with Headshots.",
 	"ch_vs" : "$weapon VS. $eneType $no",
 	"ch_vs_head_shots" : "$weapon VS. $eneType HEADSHOTS $no",
 
-	"ene_law" : "THE LAW",
-    "ene_law_desc" : "law enforcers",
+	"ene_law" : "THE FOE",
+    "ene_law_desc" : "hostile units",
  
 	"menu_me" : "YOU",
 

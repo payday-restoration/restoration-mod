@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/architecture/desert/des_vil_house_rooftop/des_vil_house_rooftop" orientation_object="rp_des_vil_house_rooftop_02" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="c_convex" collision_type="convex" padding="-2.5"/>
+		</body>
+	</bodies>
+	
+	<decal_surfaces default_material="concrete"/>
+	
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+</dynamic_object>

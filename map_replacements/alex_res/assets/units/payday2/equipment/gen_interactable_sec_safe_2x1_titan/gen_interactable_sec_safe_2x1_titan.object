@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/equipment/gen_interactable_sec_safe_2x1_titan/gen_interactable_sec_safe_2x1_titan" orientation_object="rp_gen_interactable_sec_safe_2x1_titan" />
+	<sequence_manager file="units/payday2/equipment/gen_interactable_sec_safe_2x1_titan/gen_interactable_sec_safe_2x1_titan" />
+
+	<animations>
+		<animation_group name="anim_open_close" enabled="false">
+			<object name="anim_open_close" />
+			<object name="anim_handle" />
+		</animation_group>
+		<animation_group name="anim_explosion_in_out" enabled="false">
+			<object name="anim_explosion_in_out" />
+		</animation_group>
+	</animations>
+
+	<bodies>
+		<body name="body_frame" enabled="true" template="static" >
+			<object name="rp_gen_interactable_sec_safe_2x1_titan"/>
+			<object name="c_safe" collision_type="mesh_mopp"  />
+		</body>
+		<body name="body_door" enabled="true" template="animated">
+			<object name="anim_explosion_in_out" />
+			<object name="c_door" collision_type="mesh_mopp" />
+		</body>
+		<body name="body_hitbox_door_handle_out" enabled="true" template="static">
+			<object name="rp_gen_interactable_sec_safe_2x1_titan" />
+			<object name="c_hitbox_door_handle_out" collision_type="box" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel" static="false">
+		<decal_mesh name="g_safe" 		enabled="true" 	material="steel" />
+		<decal_mesh name="g_door" 		enabled="true" 	material="steel" />
+	</decal_surfaces>
+
+	<graphics>
+		<!-- <graphic_group name="ghosticongroup" 	enabled="true" culling_object="g_lockpick_ghost">
+			<lod_object name="ghost_icon">
+					<object name="g_lockpick_ghost" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
+					<object name="g_lockpick_ghost_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group> -->
+		<graphic_group name="safe" enabled="true" culling_object="co_door">
+			<object name="g_safe" 		enabled="true" 	shadow_caster="false"/>
+			<object name="g_door" 		enabled="true" 	shadow_caster="false"/>
+			<object name="g_logo" 		enabled="true" 	shadow_caster="false"/>
+			<object name="g_handle" 	enabled="true" 	shadow_caster="false"/>
+		</graphic_group>
+	</graphics>
+</dynamic_object>
+
+

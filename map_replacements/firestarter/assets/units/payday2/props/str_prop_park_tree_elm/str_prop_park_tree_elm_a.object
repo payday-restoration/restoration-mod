@@ -1,0 +1,19 @@
+<dynamic_object>
+    <diesel orientation_object="rp_tree_american_elm" materials="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+		<object name="rp_tree_american_elm" />
+            <object collision_type="capsule" name="c_cylinder_000" padding="-2"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="wood">
+        <decal_mesh enabled="true" name="dm_wood" material="wood" />
+    </decal_surfaces>
+	
+    <graphics>
+        <object enabled="true" name="g_leafs" instance_struct="world_tm" shadow_caster="true" />
+        <object enabled="true" name="g_tree" instance_struct="world_tm"/>
+		<object enabled="true" name="s_s" shadow_caster="true"/>
+    </graphics>
+</dynamic_object>

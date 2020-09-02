@@ -1,0 +1,52 @@
+<materials version="3">
+	<material name="mat_air_beams01" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_SMOOTH:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/architecture/air_hangar_segment/air_beams01_b_df"/>
+		<diffuse_layer0_texture file="units/payday2/architecture/air_hangar_segment/air_beams01_a_df"/>
+		<diffuse_layer1_texture file="units/payday2/architecture/air_hangar_segment/air_beams01_mask_df"/>
+		<reflection_texture file="environments/cubemaps/cubemap_secret_stash_ext" type="cubemap"/>
+		<bump_normal_texture file="units/payday2/architecture/air_hangar_segment/air_beams01_nm"/>
+		<variable value="1 0 2" type="vector3" name="environment_settings"/>
+	</material>
+	<material name="mat_air_conc01" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_SMOOTH:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/architecture/air_hangar_segment/air_conc01_b_df"/>
+		<diffuse_layer0_texture file="units/payday2/architecture/air_hangar_segment/air_conc01_a_df"/>
+		<diffuse_layer1_texture file="units/payday2/architecture/air_hangar_segment/air_conc01_mask_df"/>
+		<reflection_texture file="environments/cubemaps/cubemap_secret_stash_ext" type="cubemap"/>
+		<bump_normal_texture file="units/payday2/architecture/air_hangar_segment/air_conc01_nm"/>
+		<variable value="1 0 2" type="vector3" name="environment_settings"/>
+	</material>
+	<material name="mat_air_corr01" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_SMOOTH:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/architecture/air_hangar_segment/air_corr01_b_df"/>
+		<diffuse_layer0_texture file="units/payday2/architecture/air_hangar_segment/air_corr01_a_df"/>
+		<diffuse_layer1_texture file="units/payday2/architecture/air_hangar_segment/air_corr01_mask_df"/>
+		<reflection_texture file="environments/cubemaps/cubemap_secret_stash_ext" type="cubemap"/>
+		<bump_normal_texture file="units/payday2/architecture/air_hangar_segment/air_corr01_nm"/>
+		<variable value="1 0 2" type="vector3" name="environment_settings"/>
+	</material>
+	<material name="mat_air_corr02" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_SMOOTH:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/architecture/air_hangar_segment/air_corr02_b_df"/>
+		<diffuse_layer0_texture file="units/payday2/architecture/air_hangar_segment/air_corr02_a_df"/>
+		<diffuse_layer1_texture file="units/payday2/architecture/air_hangar_segment/air_corr02_mask_df"/>
+		<reflection_texture file="environments/cubemaps/cubemap_secret_stash_ext" type="cubemap"/>
+		<bump_normal_texture file="units/payday2/architecture/air_hangar_segment/air_corr02_nm"/>
+		<variable value="1 0 2" type="vector3" name="environment_settings"/>
+	</material>
+	<material name="mat_air_grassdirt01" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/architecture/air_hangar_segment/air_grassdirt01_b_df"/>
+		<diffuse_layer0_texture file="units/payday2/architecture/air_hangar_segment/air_grassdirt01_a_df"/>
+		<diffuse_layer1_texture file="units/payday2/architecture/air_hangar_segment/air_grassdirt01_mask_df"/>
+		<bump_normal_texture file="units/payday2/architecture/air_hangar_segment/air_grassdirt01_a_nm"/>
+		<normal_layer0_texture file="units/payday2/architecture/air_hangar_segment/air_grassdirt01_b_nm"/>
+	</material>
+	<material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" name="mat_air_hangar_doors">
+		<diffuse_texture file="units/payday2/architecture/air_hangar_segment/air_hangar_doors_df"/>
+		<bump_normal_texture file="units/payday2/architecture/air_hangar_segment/air_hangar_doors_nm"/>
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+	<material name="mat_air_hangar_doors_glass" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/payday2/architecture/air_hangar_segment/air_hangar_doors_df"/>
+		<bump_normal_texture file="units/payday2/architecture/air_hangar_segment/air_hangar_doors_nm"/>
+		<reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_silver_df"/>
+		<variable value="1 0 2" type="vector3" name="environment_settings"/>
+	</material>
+</materials>

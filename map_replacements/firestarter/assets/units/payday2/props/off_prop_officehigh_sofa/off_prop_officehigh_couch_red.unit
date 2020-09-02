@@ -1,0 +1,6 @@
+<unit type="off" slot="1" >
+    <object file="units/payday2/props/off_prop_officehigh_sofa/off_prop_officehigh_couch_red" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

@@ -1,0 +1,15 @@
+<unit type="gen" slot="1" >
+	<network sync="spawn" />
+    <object file="units/pd2_dlc_casino/props/cas_skylight_barrier_hack/cas_skylight_barrier_hack" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="UnitDamage" name="damage" />
+        <extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="hack_skylight_barrier" />
+		</extension>	
+    </extensions>
+    <sounds>
+    	<default_soundsource source="rp_gen_panel_keycard_hack"/>
+    	<soundsource name="snd" source="rp_gen_panel_keycard_hack" />
+    </sounds>
+</unit>

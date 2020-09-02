@@ -1,0 +1,98 @@
+<dynamic_object>
+    <diesel orientation_object="rp_atm_standing" materials="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" />
+	<sequence_manager file="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing"/>
+	<animations>
+		<animation_group name="door" enabled="false">
+			<object name="anim_door"/>
+		</animation_group>
+		<animation_group name="upper_door" enabled="false">
+			<object name="anim_upper_door"/>
+		</animation_group>
+	</animations>
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="c_body" collision_type="mesh_mopp" />
+		</body>
+		
+        <body enabled="false" template="debris" pushed_by_mover="false" collides_with_mover="false" name="security_door" >
+            <object name="c_security" collision_type="box" mass="300" />
+        </body>
+        <body enabled="true" template="static" name="first_lock" >
+            <object name="c_lock" collision_type="box" />
+        </body>
+		
+		
+		<body name="door" enabled="true" template="animated">
+			<object name="c_door" collision_type="convex" />
+		</body>
+		<body name="upper_door" enabled="true" template="animated">
+			<object name="c_upper_door" collision_type="convex" />
+		</body>
+		<body name="security_br" enabled="false" template="static">
+			<object name="c_security_br" collision_type="box" />
+		</body>
+		<body name="security_bl" enabled="false" template="static">
+			<object name="c_security_bl" collision_type="box" />
+		</body>
+		<body name="security_ur" enabled="false" template="static">
+			<object name="c_security_ur" collision_type="box" />
+		</body>
+		<body name="security_ul" enabled="false" template="static">
+			<object name="c_security_ul" collision_type="box" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal_chassis">
+		<decal_mesh name="g_body" enabled="true" material="metal_chassis"/>
+		<decal_mesh name="g_door" enabled="true" material="metal_chassis"/>
+		<decal_mesh name="g_upper_door" enabled="true" material="metal_chassis"/>
+		<decal_mesh name="g_security_door" enabled="true" material="metal"/>
+	</decal_surfaces>
+    <graphics>
+		<graphic_group name="sawicongroup" 	enabled="true" culling_object="g_icon_saw">
+			<lod_object name="saw_icon">
+					<object name="g_icon_saw" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
+					<object name="g_icon_saw_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+		<graphic_group name="iconbr" 	enabled="false" culling_object="g_icon_saw_br">
+			<lod_object name="saw_icon_br">
+					<object name="g_icon_saw_br" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
+					<object name="g_icon_saw_br_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+		<graphic_group name="iconbl" 	enabled="false" culling_object="g_icon_saw_bl">
+			<lod_object name="saw_icon_bl">
+					<object name="g_icon_saw_bl" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
+					<object name="g_icon_saw_bl_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+		<graphic_group name="iconur" 	enabled="false" culling_object="g_icon_saw_ur">
+			<lod_object name="saw_icon_ur">
+					<object name="g_icon_saw_ur" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
+					<object name="g_icon_saw_ur_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+		<graphic_group name="iconul" 	enabled="false" culling_object="g_icon_saw_ul">
+			<lod_object name="saw_icon_ul">
+					<object name="g_icon_saw_ul" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
+					<object name="g_icon_saw_ul_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+        <object name="g_door" enabled="true" />
+        <object name="g_upper_door" enabled="true" />
+        <object name="g_security_door" enabled="true" />
+        <object name="g_security_ul" enabled="true" />
+        <object name="g_security_ul_broken" enabled="false" />
+        <object name="g_security_bl" enabled="true" />
+        <object name="g_security_bl_broken" enabled="false" />
+        <object name="g_security_ur" enabled="true" />
+        <object name="g_security_ur_broken" enabled="false" />
+        <object name="g_security_br" enabled="true" />
+        <object name="g_security_br_broken" enabled="false" />
+        <object name="g_body" enabled="true" />
+        <object enabled="true" name="g_money_box_1" />
+        <object enabled="true" name="g_money_box_2" />
+        <object enabled="true" name="g_money_box_3" />
+        <object enabled="true" name="g_money_box_4" />
+    </graphics>
+</dynamic_object>

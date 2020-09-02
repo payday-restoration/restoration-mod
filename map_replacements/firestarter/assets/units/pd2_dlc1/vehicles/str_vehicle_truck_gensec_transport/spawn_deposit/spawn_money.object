@@ -1,0 +1,41 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/str_vehicle_truck_gensec_transport_deposit_box" orientation_object="rp_str_gensec_deposit_box" />
+	<sequence_manager file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/spawn_deposit/spawn_money" />
+	<animations>
+		<animation_group name="anim">
+			<object name="jt_1" />
+			<object name="jt_2" />
+			<object name="jt_3" />
+			<object name="jt_4" />
+			<object name="jt_5" />
+		</animation_group>
+	</animations>
+	<bodies>
+		<body name="body_frame" enabled="true" template="static">
+			<object name="rp_str_gensec_deposit_box" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />
+			<object name="c_box_03" collision_type="box" padding="-2.5" />
+			<object name="c_box_04" collision_type="box" padding="-2.5" />
+			<object name="c_box_05" collision_type="box" padding="-2.5" />
+		</body>
+		<body name="body_door" enabled="true" template="static" >
+			<object name="jt_all" />
+			<object name="c_box_door_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="steel_no_decal">
+		<decal_mesh name="dm_metal" 		enabled="true" material="steel_no_decal" />
+		<decal_mesh name="dm_metal_door" 	enabled="true" material="steel_no_decal" />
+	</decal_surfaces>
+	<graphics>
+		<graphic_group name="drillicongroup" 	enabled="true" culling_object="g_icon">
+			<lod_object name="drill_icon">
+					<object name="g_icon" 		enabled="true"  max_distance="150"  max_draw_lod="0" />
+					<object name="g_icon_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+		<object name="g_bnk_int_deposit_box_door" 		enabled="true" shadow_caster="true" />
+		<object name="g_bnk_int_deposit_box_inside" 	enabled="true"  />
+	</graphics>
+</dynamic_object>

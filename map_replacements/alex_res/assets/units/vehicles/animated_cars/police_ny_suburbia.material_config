@@ -1,0 +1,62 @@
+<materials version="3">
+    <material name="police_force_lod2" version="2" render_template="generic:VERTEX_COLOR:VERTEX_COLOR_ALPHA"/>
+    <material name="police_lights_on_red" version="2" render_template="generic"/>
+    <material name="police_lights_on_blue" version="2" render_template="generic"/>
+    <material name="police_il" version="2" render_template="generic"/>
+    <material name="police_il2" version="2" render_template="generic"/>
+    <material name="police_ny" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP">
+        <variable value="4 0.20000000298023 4" type="vector3" name="environment_settings"/>
+        <diffuse_texture file="units/vehicles/police_ny/vehicle_police_ny_df"/>
+        <bump_normal_texture file="units/vehicles/police_ny/vehicle_police_ny_nm"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+    <material name="glass_shattered" decal_material="glass_breakable" version="2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP:OPACITY_FADE">
+        <variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/vehicles/window/glass_shattered_2_op"/>
+        <diffuse_texture file="units/vehicles/window/glass_shattered_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/vehicles/window/glass_shattered_nm"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" name="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE">
+        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="police_ny_low" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE">
+        <variable value="1 0.20000000298023 2" type="vector3" name="environment_settings"/>
+        <diffuse_texture file="units/vehicles/police_ny/vehicle_police_ny_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+    <material render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2" name="illum">
+        <self_illumination_texture file="units/vehicles/police_ny/vehicle_police_ny_df"/>
+        <diffuse_texture file="units/vehicles/police_ny/vehicle_police_ny_df"/>
+        <variable value="match" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="glow" version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:VIEW_ANGLE_FALLOFF_OP">
+        <variable value="identity" type="scalar" name="intensity"/>
+        <diffuse_texture file="units/vehicles/police_ny/vehicle_police_ny_df"/>
+        <variable value="5.4300999641418" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="siren_plate" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/vehicles/police_ny/saftblandare_df"/>
+    </material>
+    <material name="siren_glass" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/vehicles/police_ny/saftblandare_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="1.8000000715256 0.26700001955032 8.8999996185303" type="vector3" name="environment_settings"/>
+    </material>
+    <material version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM" name="siren_illum">
+        <variable value="identity" type="scalar" name="intensity"/>
+        <diffuse_texture file="units/vehicles/police_ny/saftblandare_edf"/>
+        <variable value="-1.6000000238419 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" name="siren_plate_illum">
+        <diffuse_texture file="units/vehicles/police_ny/saftblandare_df"/>
+        <self_illumination_texture file="units/vehicles/police_ny/saftblandare_edf"/>
+        <variable value="candle" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

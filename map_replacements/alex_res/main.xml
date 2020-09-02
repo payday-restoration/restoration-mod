@@ -1,0 +1,178 @@
+<table name="alex_res">
+	<level ai_group_type="america" brief_id="heist_alex_1_briefing" briefing_dialog="Play_pln_rat_stage1_brief" cube="cube_apply_heist_bank" id="alex_1_res" intro_event="Play_pln_rat_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats01" max_bags="11" music="heist" name_id="heist_alex_1_hl">
+		<add file="levels/alex_1_res/add.xml"/>
+		<assets/>
+		<include directory="levels/alex_1_res">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="interior_01/interior_01.continent" type="binary"/>
+			<file file="interior_01/interior_01.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_pln_rat_stage1_end_a"/>
+			<value_node value="Play_pln_rat_stage1_end_b"/>
+			<value_node value="Play_pln_rat_stage1_end_c"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_alex1"/>
+			<value_node value="packages/job_rats"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_1/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_1/world_sounds"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_1/world/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_1/editor_only/editor_only"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_1/interior_01/interior_01"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_2/world/world"/>
+			<value_node value="levels/narratives/short1/stage1/lighting/lighting"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<level ai_group_type="america" brief_id="heist_alex_2_briefing" briefing_dialog="Play_pln_rat_stage2_brief" cube="cube_apply_heist_bank" id="alex_2_res" intro_event="Play_pln_rat_stage2_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats02" max_bags="19" music="heist" name_id="heist_alex_2_hl" repossess_bags="true">
+		<add file="levels/alex_2_res/add.xml"/>
+		<assets/>
+		<include directory="levels/alex_2_res">
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="pc_only/pc_only.continent" type="binary"/>
+			<file file="pc_only/pc_only.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_pln_rat_stage2_end_a"/>
+			<value_node value="Play_pln_rat_stage2_end_b"/>
+			<value_node value="Play_pln_rat_stage2_end_c"/>
+			<value_node value="Play_pln_rat_stage2_end_d"/>
+			<value_node value="Play_pln_rat_stage2_end_e"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_alex2"/>
+			<value_node value="packages/job_rats"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_2/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_2/world_sounds"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_2/pc_only/pc_only"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_2/world/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_2/editor_only/editor_only"/>
+			<value_node value="levels/narratives/classics/flat/world_sounds"/>
+			<value_node value="levels/instances/unique/hvh/hvh_event/world/world"/>
+			<value_node value="levels/instances/unique/brb/brb_deposit_room/world/world"/>
+			<value_node value="levels/narratives/classics/man/world/world"/>
+			<value_node value="levels/narratives/classics/man/world_sounds"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<level ai_group_type="america" brief_id="heist_alex_3_briefing" briefing_dialog="Play_pln_rat_stage3_brief" cube="cube_apply_heist_bank" id="alex_3_res" intro_event="Play_pln_rat_stage3_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats03" max_bags="34" music="heist" name_id="heist_alex_3_hl">
+		<add file="levels/alex_3_res/add.xml"/>
+		<assets/>
+		<include directory="levels/alex_3_res">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="pc_only/pc_only.continent" type="binary"/>
+			<file file="pc_only/pc_only.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="backdrop/backdrop.continent" type="binary"/>
+			<file file="backdrop/backdrop.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+		</include>
+		<outro_event>
+			<value_node value="Play_pln_rat_stage3_end_a"/>
+			<value_node value="Play_pln_rat_stage3_end_b"/>
+			<value_node value="Play_pln_rat_stage3_end_c"/>
+		</outro_event>
+		<packages>
+			<value_node value="packages/narr_alex3"/>
+			<value_node value="packages/job_rats"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_3/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_3/world_sounds"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_3/pc_only/pc_only"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_3/world/world"/>
+			<value_node value="levels/narratives/h_alex_must_die/stage_3/editor_only/editor_only"/>
+			<value_node value="levels/narratives/e_welcome_to_the_jungle/stage_2/backdrop/backdrop"/>
+			<value_node value="levels/narratives/classics/flat/world/world"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</level>
+	<Localization default="english.txt" directory="loc"/>
+	<narrative brief_id="heist_alex_crimenet" briefing_event="hct_rats_brf_speak" contact="hector" custom="true" debrief_event="hct_rats_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/rats_01" id="alex" jc="40" name_id="heist_alex">
+		<chain>
+			<table level_id="alex_1_res" type="d" type_id="heist_type_survive"/>
+			<table level_id="alex_2_res" type="d" type_id="heist_type_survive"/>
+			<table level_id="alex_3_res" type="d" type_id="heist_type_assault"/>
+		</chain>
+		<contract_cost>
+			<value_node value="24000"/>
+			<value_node value="48000"/>
+			<value_node value="120000"/>
+			<value_node value="240000"/>
+			<value_node value="300000"/>
+			<value_node value="300000"/>
+			<value_node value="300000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="hct_rats_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_rat1"/>
+			<value_node value="cn_rat2"/>
+			<value_node value="cn_rat3"/>
+		</crimenet_videos>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1.5"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="96000"/>
+			<value_node value="96000"/>
+			<value_node value="96000"/>
+			<value_node value="96000"/>
+			<value_node value="96000"/>
+			<value_node value="96000"/>
+			<value_node value="96000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+			<value_node value="24000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="10000"/>
+			<value_node value="15000"/>
+			<value_node value="20000"/>
+			<value_node value="30000"/>
+			<value_node value="50000"/>
+			<value_node value="50000"/>
+			<value_node value="50000"/>
+		</payout>
+	</narrative>
+</table>

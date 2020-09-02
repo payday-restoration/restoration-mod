@@ -1,0 +1,24 @@
+<unit type="spawn" slot="1" >
+	<object file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/str_vehicle_truck_gensec_transport_deposit_box" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_a" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_b" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_c" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_d" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_e" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_a" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_b" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_c" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_d" />
+		<depends_on unit="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_e" />
+	</dependencies>
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="pick_lock_deposit_transport" />
+			<var name="_interact_object" value="int_location"/>
+		</extension>
+	</extensions>
+</unit>

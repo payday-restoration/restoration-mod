@@ -1,0 +1,10 @@
+<materials version="3">
+	<material name="tra_backdrop_near_bridgestone" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/world/environment/train/vista/tra_backdrop_near_tunnel/tra_backdrop_near_tunnel_df" />
+		<bump_normal_texture file="units/world/environment/train/vista/tra_backdrop_near_tunnel/tra_backdrop_near_tunnel_nm" />
+	</material>
+	<material name="tra_backdrop_near_bridgestone_tracks" render_template="generic:DIFFUSE_TEXTURE" version="2">
+		<diffuse_texture file="units/world/environment/train/vista/tra_backdrop_near_tracks/tra_backdrop_near_tracks_df" />
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2" />
+</materials>

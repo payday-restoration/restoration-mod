@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/hwy_prop_sign_construction_mobile/hwy_prop_sign_construction_mobile" orientation_object="rp_hwy_prop_sign_construction_mobile" />
+	<sequence_manager file="units/payday2/props/hwy_prop_sign_construction_mobile/hwy_prop_sign_construction_mobile"/>
+    <bodies>
+        <body name="mover_body" template="mover_blocker" enabled="true" >
+            <object name="rp_hwy_prop_sign_construction_mobile"/>
+			<object name="c_box_mover" collision_type="box" padding="-2.5"/>
+		</body>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_hwy_prop_sign_construction_mobile"/>
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_04" collision_type="box" padding="-2.5"/>
+			<object name="c_box_05" collision_type="box" padding="-2.5"/>
+			<object name="c_box_06" collision_type="box" padding="-2.5"/>
+			<object name="c_box_07" collision_type="box" padding="-2.5"/>
+			<object name="c_box_08" collision_type="box" padding="-2.5"/>
+			<object name="c_box_09" collision_type="box" padding="-2.5"/>
+			<object name="c_box_10" collision_type="box" padding="-2.5"/>
+			<object name="c_box_11" collision_type="box" padding="-2.5"/>
+			<object name="c_box_12" collision_type="box" padding="-2.5"/>
+			<object name="c_box_13" collision_type="box" padding="-2.5"/>
+			<object name="c_box_14" collision_type="box" padding="-2.5"/>
+			<object name="c_box_15" collision_type="box" padding="-2.5"/>
+			<object name="c_box_16" collision_type="box" padding="-2.5"/>
+			<object name="c_box_17" collision_type="box" padding="-2.5"/>
+			<object name="c_box_18" collision_type="box" padding="-2.5"/>
+			<object name="c_capsule_01" collision_type="capsule" padding="-2.5"/>
+			<object name="c_convex_01" collision_type="convex" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<animations>
+		<animation_group name="flicker_loop" enabled="true" loop="true" from="0/30" to="12/30">
+			<object name="a_illumination"/>
+		</animation_group>
+	</animations>
+	
+	<decal_surfaces default_material="metal" static="true">
+		<decal_mesh name="dm_rubber" enabled="true" material="rubber"/>
+		<decal_mesh name="dm_sheet_metal" enabled="true" material="sheet_metal"/>
+	</decal_surfaces> 
+	
+    <graphics>
+		<object name="g_g" enabled="true"/>
+		<object name="g_il" enabled="true"/>
+		<object name="s_s" enabled="true" shadow_caster="true"/>
+    </graphics>
+</dynamic_object> 

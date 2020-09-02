@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" orientation_object="rp_str_prop_alley_trash_container" />
+	<sequence_manager file="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" />
+	<animations>
+	<animation_group name="left_lid_anim" enabled="false">
+		<object name="a_trash_container_lid_1"/>
+	</animation_group>		
+	<animation_group name="right_lid_anim" enabled="false">
+		<object name="a_trash_container_lid_2"/>
+	</animation_group>	
+  </animations>
+  
+  <bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_str_prop_alley_trash_container" />
+			<object name="c_mesh_mopp_container" collision_type="mesh_mopp" padding="-2.5"/>
+			<object name="c_convex_01" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_02" collision_type="convex" padding="-2.5"/>
+		</body>
+		<!--animated bodies-->
+		<body name="right_lid_body" enabled="true" template="animated">
+			<object name= "c_trash_container_lid_2" collision_type="convex"/>
+		</body>
+		<body name="left_lid_body" enabled="true" template="animated">
+			<object name= "c_trash_container_lid_1" collision_type="convex"/>
+		</body>
+		<body name="right_lid_body_ragdoll" enabled="false" template="animated" >
+			<object name= "c_trash_container_lid_2" collision_type="convex"/>
+		</body>
+		<body name="left_lid_body_ragdoll" enabled="false" template="animated" >
+			<object name= "c_trash_container_lid_1" collision_type="convex"/>
+		</body>
+		<body name="body_blocker_mover" enabled="true" template="mover_blocker">
+			<object name="rp_str_prop_alley_trash_container" />
+			<object name="c_mover_blocker" collision_type="convex" />
+		</body>
+		<body name="body_bag_blocker" enabled="true" template="bag" collision_class="bag_blocker">
+			<object name="c_convex_bag_blocker" collision_type="convex" />
+		</body>
+	</bodies>
+  
+	<decal_surfaces static="true" default_material="metal">
+		<decal_mesh name="dm_container" enabled="true" material="metal"/>
+		<decal_mesh name="g_trash_container_lid_1" enabled ="true" material="plastic"/>
+		<decal_mesh name="g_trash_container_lid_2" enabled ="true" material="plastic"/>
+	</decal_surfaces>
+  
+	<graphics>
+	    <lod_object name="lod_container">
+	      	<object enabled="true" name="g_trash_container">
+		        <material materials="mtr_trash_container" max_distance="2000"/>
+				<material materials="mtr_trash_container_lod_1" max_distance="3000"/>
+				<material materials="mtr_trash_container_lod_2" />
+			</object>
+		</lod_object>
+	    <lod_object name="lod_container_lid_1">
+	      	<object enabled="true" name="g_trash_container_lid_1">
+		        <material materials="mtr_trash_container" max_distance="2000"/>
+				<material materials="mtr_trash_container_lod_1" max_distance="3000"/>
+				<material materials="mtr_trash_container_lod_2" />
+			</object>
+		</lod_object>
+	    <lod_object name="lod_container_lid_2">
+	      	<object enabled="true" name="g_trash_container_lid_2">
+		        <material materials="mtr_trash_container" max_distance="2000"/>
+				<material materials="mtr_trash_container_lod_1" max_distance="3000"/>
+				<material materials="mtr_trash_container_lod_2" />
+			</object>
+		</lod_object>
+		<!--graphic meshes-->
+		<!--
+		    <object name="g_trash_container" enabled="true" instance_struct="world_tm"/>
+			<object name="g_trash_container_lid_1" enabled="true" instance_struct="world_tm"/>
+			<object name="g_trash_container_lid_2" enabled="true" instance_struct="world_tm"/> 
+		-->
+		<!--shadow meshes-->
+		<object name="s_trash_container" enabled="true" shadow_caster="true" />
+		<object name="s_trash_container_lid_1" enabled="true" shadow_caster="true" />	
+		<object name="s_trash_container_lid_2" enabled="true" shadow_caster="true" />
+	</graphics>
+  
+</dynamic_object>

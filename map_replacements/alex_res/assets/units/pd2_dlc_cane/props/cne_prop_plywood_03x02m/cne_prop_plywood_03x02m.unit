@@ -1,0 +1,7 @@
+<unit type="cne" slot="1">
+	<object file="units/pd2_dlc_cane/props/cne_prop_plywood_03x02m/cne_prop_plywood_03x02m" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

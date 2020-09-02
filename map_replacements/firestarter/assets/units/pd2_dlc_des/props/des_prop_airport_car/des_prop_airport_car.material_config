@@ -1,0 +1,8 @@
+<materials version="3">
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_des_prop_airport_car" version="2">
+        <diffuse_texture file="units/pd2_dlc_des/props/des_prop_airport_car/des_prop_airport_car_df"/>
+        <bump_normal_texture file="units/pd2_dlc_des/props/des_prop_airport_car/des_prop_airport_car_nm"/>
+        <reflection_texture file="units/pd2_dlc_dah/environments/cubemaps/cubemap_white_highlight_blurry" type="cubemap"/>
+        <material_texture file="units/pd2_dlc_des/props/des_prop_airport_car/des_prop_airport_car_gsma"/>
+    </material>
+</materials>

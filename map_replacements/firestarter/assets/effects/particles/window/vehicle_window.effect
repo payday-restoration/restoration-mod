@@ -1,0 +1,330 @@
+<effect force_synch="false">
+    <atom name="Debris - Large" min_size="20" max_size="20" lifetime="1.5" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 -30 -20" max="0 30 25"/>
+            <boxrandomvelocity relative="effect" min="-150 -100 -50" max="150 100 300"/>
+            <boxrandomanglevelocity min="-2" max="2"/>
+            <boxrandomangle min="0" max="60"/>
+            <boxrandomaspectsize size="20 20" min="0.4" max="1"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8"/>
+            <boxrandomage min="0" max="1.5"/>
+        </initializerstack>
+        <simulatorstack>
+            <constantacceleration relative="world" acceleration="0 0 -2000"/>
+            <anglevelocityintegrator/>
+            <scaledvelocityintegrator channel="world" per_particle_age="false">
+                <scale_keys loop="false">
+                    <key t="0.010126582346857" v="1"/>
+                    <key t="0.035443037748337" v="0.5"/>
+                    <key t="1.9966442584991" v="0"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <ager/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="match" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="Smoke - thin" min_size="20" max_size="20" lifetime="2" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 -30 -20" max="0 30 20"/>
+            <boxrandomvelocity relative="effect" min="20 -30 -50" max="20 30 50"/>
+            <boxrandomangle min="-3.14" max="3.14"/>
+            <boxrandomage min="0" max="1.5"/>
+            <boxrandomaspectsize size="80 80" min="0.5" max="1.5"/>
+        </initializerstack>
+        <simulatorstack>
+            <scaledvelocityintegrator channel="world" per_particle_age="true">
+                <scale_keys loop="false">
+                    <key t="0" v="8"/>
+                    <key t="0.09808811545372" v="0.18000000715256"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <ager/>
+            <constantacceleration relative="world" acceleration="50 0 100"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/smoke/e_smoke_01" intensity="identity" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="constant" color="218.00001525879 218.00001525879 216.00001525879" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 1" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0 0"/>
+                    <key t="0.097851999104023" v="1 1"/>
+                    <key t="2" v="2 2"/>
+                </size_scale_keys>
+                <opacity_keys loop="false">
+                    <key t="0.24956971406937" v="30"/>
+                    <key t="2" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="false">
+                    <key t="0" v="1.25"/>
+                    <key t="2" v="0"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="Debris - Small" min_size="200" max_size="200" lifetime="1.5" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 -30 -20" max="0 30 20"/>
+            <boxrandomvelocity relative="effect" min="-150 -100 -50" max="150 100 250"/>
+            <boxrandomanglevelocity min="-3" max="3"/>
+            <boxrandomangle min="0" max="60"/>
+            <boxrandomaspectsize size="10 10" min="0.2" max="0.6"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8"/>
+            <boxrandomage min="0" max="1.25"/>
+        </initializerstack>
+        <simulatorstack>
+            <constantacceleration relative="world" acceleration="0 0 -1200"/>
+            <anglevelocityintegrator/>
+            <scaledvelocityintegrator channel="world" per_particle_age="false">
+                <scale_keys loop="false">
+                    <key t="0.010126582346857" v="1"/>
+                    <key t="0.035443037748337" v="0.5"/>
+                    <key t="1.9966442584991" v="0"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <ager/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="match" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="Debris -MultiBillboard" min_size="1" max_size="1" lifetime="1.5" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 -20 -20" max="0 20 20"/>
+            <boxrandomvelocity relative="effect" min="-50 -100 -30" max="50 100 100"/>
+            <boxrandomanglevelocity min="-1" max="1"/>
+            <boxrandomangle min="0" max="60"/>
+            <boxrandomaspectsize size="8 8" min="0.5" max="0.8"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="-3.14" max_rot="3.14"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8"/>
+            <boxrandomage min="0" max="1.25"/>
+        </initializerstack>
+        <simulatorstack>
+            <constantacceleration relative="world" acceleration="0 0 -1200"/>
+            <anglevelocityintegrator/>
+            <scaledvelocityintegrator channel="world" per_particle_age="false">
+                <scale_keys loop="false">
+                    <key t="0.010126582346857" v="1"/>
+                    <key t="0.035443037748337" v="0.5"/>
+                    <key t="1.9966442584991" v="0"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <ager/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="4 4" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="-4 -4" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="-4 4" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="4 -4" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="2 1" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="3 -1" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="4 -2" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="-3 2" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="-6 -4" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="4 7" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0 7" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="-5 1" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="flashlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0 -3" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.25" v="150"/>
+                    <key t="1.5" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+    <atom name="Debris - Micro" min_size="100" max_size="100" lifetime="2" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="-1" spawn_cull_policy="kill" cull_policy="kill" cull_gracetime="1" max_particle_radius="-1" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 -25 -25" max="0 25 28"/>
+            <boxrandomvelocity relative="effect" min="-30 0 0" max="40 0 0"/>
+            <boxrandomanglevelocity min="-5" max="5"/>
+            <boxrandomangle min="0" max="60"/>
+            <boxrandomaspectsize size="5 5" min="0.5" max="1.5"/>
+            <boxrandomrotation relative="effect" min="-10 -10 1" max="10 10 1" min_rot="0" max_rot="365"/>
+            <boxrandomuvoffset uv_size="0.25 0.5" frame_start="0 0" primary_step_direction="+x" secondary_step_direction="+y" num_frames="8"/>
+            <boxrandomage min="0" max="1.5"/>
+        </initializerstack>
+        <simulatorstack>
+            <constantacceleration relative="world" acceleration="0 0 -300"/>
+            <anglevelocityintegrator/>
+            <scaledvelocityintegrator channel="world" per_particle_age="true">
+                <scale_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0" v="0"/>
+                    <key t="0.80000001192093" v="0"/>
+                    <key t="0.81999999284744" v="1"/>
+                </scale_keys>
+            </scaledvelocityintegrator>
+            <ager/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/bullet_hit/e_debris_glass_01_4x2" intensity="candle" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="normal" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="true" size_input="channel" color_input="keys" opacity_input="keys" rotation_input="channel" rotation_axis="0 0 1" uv_size="0.25 0.5" uv_offset_input="channel">
+                <color_keys loop="true">
+                    <key t="0" v="255 255 255"/>
+                    <key t="0.047890536487103" v="150 150 150"/>
+                    <key t="0.095781072974205" v="255 255 255"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="1.75" v="150"/>
+                    <key t="2" v="0"/>
+                </opacity_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

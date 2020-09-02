@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/airport/airport_camera/airport_camera" orientation_object="rp_airport_camera" />
+  <bodies>
+    <body name="new_body" enabled="true" template="static">
+      <object name="rp_airport_camera" />
+      <object name="dm_sheet_metal" enabled="true" collision_type="mesh_mopp" />
+      <object name="dm_glas" enabled="true" collision_type="mesh_mopp" />
+      <object name="dm_metal" enabled="true" collision_type="mesh_mopp" />
+      <object name="dm_concrete" enabled="true" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces>
+    <decal_mesh name="dm_sheet_metal" enabled="true" material="sheet_metal" />
+    <decal_mesh name="dm_concrete" enabled="true" material="concrete" />
+    <decal_mesh name="dm_metal" enabled="true" material="metal" />
+    <decal_mesh name="dm_glas" enabled="true" material="glass_unbreakable" />
+  </decal_surfaces>
+  <graphics>
+   <object name="s_airport_camera" enabled="true" shadow_caster="true" />
+    <object name="g_airport_camera" enabled="true" />
+  </graphics>
+</dynamic_object>

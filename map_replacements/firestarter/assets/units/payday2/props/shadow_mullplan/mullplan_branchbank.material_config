@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="mat_mull" render_template="effect:BLEND_MUL:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/shadow_mullplan/mullplan_branchbank_df"/>
+        <variable value="sun" type="scalar" name="intensity"/>
+    </material>
+</materials>

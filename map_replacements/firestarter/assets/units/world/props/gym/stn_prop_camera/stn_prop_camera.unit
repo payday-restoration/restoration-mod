@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<unit type="stn" slot="1">
+  <object file="units/world/props/gym/stn_prop_camera/stn_prop_camera" />
+  <network sync="spawn"/>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+    <extension 	name="interaction" 			class="UseInteractionExt">
+			<var 	name="tweak_data" 			value="activate_camera" />
+			<var 	name="_interact_object" 	value="g_stn_prop_camera"/>
+	</extension>
+  </extensions>
+</unit>

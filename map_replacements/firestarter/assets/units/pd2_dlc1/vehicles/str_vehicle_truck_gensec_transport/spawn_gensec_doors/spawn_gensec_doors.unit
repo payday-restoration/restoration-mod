@@ -1,0 +1,6 @@
+<unit type="spawn" slot="18" >
+	<object file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/spawn_gensec_doors/spawn_gensec_doors" />
+	<extensions>
+		<extension name="unit_data" 	class="ScriptUnitData"  />
+	</extensions>
+</unit>

@@ -1,0 +1,6 @@
+<unit type="gen" slot="1" >
+    <object file="units/payday2/architecture/gen_watchdog_2_water/gen_watchdog_2_water" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

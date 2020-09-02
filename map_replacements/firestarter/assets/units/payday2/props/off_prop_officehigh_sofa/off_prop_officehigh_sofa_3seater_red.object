@@ -1,0 +1,21 @@
+ <dynamic_object>
+    <diesel orientation_object="rp_off_prop_officehigh_sofa_3seater_red" materials="units/payday2/props/off_prop_officehigh_sofa/off_prop_officehigh_sofa" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object name="rp_off_prop_officehigh_sofa_3seater_red" />
+            <object collision_type="box" name="c_box1" padding="-2.5"/>
+            <object collision_type="box" name="c_box2" padding="-2.5"/>
+			<object collision_type="box" name="c_box3" padding="-2.5"/>
+			<object collision_type="box" name="c_box4" padding="-2.5"/>
+			<object collision_type="box" name="c_box5" padding="-2.5"/>
+			<object collision_type="box" name="c_box6" padding="-2.5"/>
+			<object collision_type="box" name="c_box7" padding="-2.5"/>
+         </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_sofa" material="cloth" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_sofa" />
+    </graphics>
+</dynamic_object>

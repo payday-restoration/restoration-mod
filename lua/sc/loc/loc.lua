@@ -1295,7 +1295,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_5_desc_sc"] = "You gain an additional ##10%## more health.",
-		["menu_deck2_7_desc_sc"] = "Every shot you fire with light machine guns and submachine guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.",
+		["menu_deck2_7_desc_sc"] = "Every shot you fire with your guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.",
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##10%## more health.\n\nYou gain ##25%## of your maximum health when getting up.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\nIncreases your shout distance by ##25%##.\n\nNote: Crew perks do not stack.",

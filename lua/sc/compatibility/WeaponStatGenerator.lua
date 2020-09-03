@@ -77,6 +77,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 			table.insert(weap.categories, "smg") --LMGs in resmod are treated like SMGs for skill related stuff.
 			weap.desc_id = "bm_auto_generated_lmg_sc_desc"
 		end
+		weap.panic_suppression_chance = 0.05
 		weap.stats_modifiers = nil
 	end
 	return weap

@@ -551,6 +551,15 @@ function SentryGunDamage:damage_explosion(attack_data)
 
 	local dmg_shield, damage_percent = nil
 
+	if not self._ignore_client_damage and attacker_unit == managers.player:player_unit() then
+		managers.hud:on_hit_confirmed()
+		--Lets Rocket Launchers instantly *DELETE* Turrets.
+		if managers.player:get_current_state()._equipped_unit:base():weapon_tweak_data().turret_instakill then
+			self._shield_health = 0
+			damage = math.huge
+		end
+	end
+
 	if self._shield_health > 0 then
 		dmg_shield = true
 
@@ -579,6 +588,7 @@ function SentryGunDamage:damage_explosion(attack_data)
 		damage = damage_percent * self._HEALTH_INIT_PERCENT
 	end
 
+
 	local damage_post_apply = damage == 0 and 0 or self:_apply_damage(damage, dmg_shield, not dmg_shield, true, attacker_unit, "explosion")
 	attack_data.damage = damage_post_apply
 
@@ -591,10 +601,6 @@ function SentryGunDamage:damage_explosion(attack_data)
 
 	if damage_post_apply == 0 then
 		return result
-	end
-
-	if not self._ignore_client_damage and attacker_unit == managers.player:player_unit() then
-		managers.hud:on_hit_confirmed()
 	end
 
 	local attacker = attack_data.attacker_unit

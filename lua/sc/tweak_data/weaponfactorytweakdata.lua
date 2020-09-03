@@ -7713,7 +7713,14 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpg7", "resmod_rpg7", function(self)
 	
 	--Default Body
-	self.parts.wpn_fps_rpg7_body.custom_stats = {reload_speed_mult = 1.2}
+	self.parts.wpn_fps_rpg7_body.custom_stats = {reload_speed_mult = 1.2, movement_speed = 0.8}
+	
+end)
+
+--Commando 101
+Hooks:PostHook(WeaponFactoryTweakData, "_init_ray", "resmod_ray", function(self)
+	--Default Body
+	self.parts.wpn_fps_gre_ray_body.custom_stats = {movement_speed = 0.8}
 	
 end)
 
@@ -28989,9 +28996,9 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_shot_beck_pump_swat.supported = true
 		self.parts.wpn_fps_shot_beck_pump_swat.stats = {
 			value = 1,
-			recoil = -2,
+			recoil = -1,
 			spread = 1,
-			concealment = -2
+			concealment = -1
 		}
 
 		--(Reinfeld) Swat Pump
@@ -29000,7 +29007,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			value = 1,
 			recoil = -1,
 			spread = 1,
-			concealment = -2
+			concealment = -1
 		}		
 
 		--Titanium Skeleton Grip
@@ -29985,6 +29992,9 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			value = 2,
 			spread = -1,
 			concealment = 1
+		}
+		self.parts.wpn_fps_rpg7_body_subtle.custom_stats = {
+			movement_speed = 0.8
 		}
 
 		--(Eagle Heavy) Eagle Aftermarket Grip

@@ -5597,9 +5597,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.kick.standing = self.huntsman.kick.standing
 	self.rpg7.kick.crouching = self.huntsman.kick.crouching
 	self.rpg7.kick.steelsight = self.huntsman.kick.steelsight
-	self.rpg7.has_description = false
-	self.rpg7.fire_mode_data.fire_rate = 3
-	self.rpg7.AMMO_MAX = 3
+	self.rpg7.has_description = true
+	self.rpg7.desc_id = "bm_rocket_launcher_sc_desc"
+	self.rpg7.fire_mode_data.fire_rate = 2
+	self.rpg7.AMMO_MAX = 4
 	self.rpg7.AMMO_PICKUP = self:_pickup_chance()
 	self.rpg7.timers.reload_not_empty = 3.25
 	self.rpg7.timers.reload_empty = 3.25
@@ -5621,6 +5622,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.panic_suppression_chance = 0.05
 	self.rpg7.stats_modifiers = {damage = 3}
 	self.rpg7.swap_speed_multiplier = 1.45
+	self.rpg7.turret_instakill = true
 	self.cobray.timers.reload_not_empty = 2
 	self.cobray.timers.reload_empty = 4.25
 	self.cobray.CLIP_AMMO_MAX = 30
@@ -6898,15 +6900,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 	}			
 	self.ray.use_data.selection_index = 2
+	self.ray.has_description = true
+	self.ray.desc_id = "bm_rocket_launcher_sc_desc"
 	self.ray.kick.standing = self.huntsman.kick.standing
 	self.ray.kick.crouching = self.huntsman.kick.crouching
 	self.ray.kick.steelsight = self.huntsman.kick.steelsight
 	self.ray.timers.reload_not_empty = 6
 	self.ray.timers.reload_empty = 6
-	self.ray.has_description = false
-	self.ray.fire_mode_data.fire_rate = 2
+	self.ray.fire_mode_data.fire_rate = 1
 	self.ray.CLIP_AMMO_MAX = 4
-	self.ray.AMMO_MAX = 6
+	self.ray.AMMO_MAX = 8
 	self.ray.AMMO_PICKUP = self:_pickup_chance()
 	self.ray.supported = true
 	self.ray.stats = {
@@ -6926,6 +6929,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ray.panic_suppression_chance = 0.05
 	self.ray.stats_modifiers = {damage = 3}
 	self.ray.swap_speed_multiplier = 1.4
+	self.ray.turret_instakill = true
 	self.tti.upgrade_blocks = nil
 	self.tti.has_description = true
 	self.tti.desc_id = "bm_ap_weapon_sc_desc"

@@ -17,8 +17,8 @@ tweak_data.ammo.ricochet.autohit = {
 }
 
 --Swap Speed Multipliers
-tweak_data.pistol = {swap_bonus = 1.5}
-tweak_data.akimbo = {swap_bonus = 0.6}
+tweak_data.pistol = {swap_bonus = 1.35}
+tweak_data.akimbo = {swap_bonus = 0.65}
 
 --Max concealment for guns.
 tweak_data.concealment_cap = 32

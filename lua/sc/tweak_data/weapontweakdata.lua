@@ -8883,7 +8883,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.panic_suppression_chance = 0.05
 	self.osipr.has_description = true
 	self.osipr.desc_id = "bm_w_osipr_desc"
-	--self.osipr.custom = false
+	self.osipr.custom = false	--TEMP fix for BeardLib sync
 	
 	self.osipr_gl.AMMO_MAX = 9
 	self.osipr_gl.AMMO_PICKUP = self:_pickup_chance()
@@ -8911,6 +8911,21 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr_gl.timers.reload_not_empty = 3.34
 	self.osipr_gl.timers.reload_empty = 4.5		
 	self.osipr_gl.panic_suppression_chance = 0.05
+	self.osipr_gl.custom = false	--Temp fix for BeardLib sync 
+	self.osipr_gl_npc.sounds.prefix = "contrabandm203_npc"
+	self.osipr_gl_npc.use_data.selection_index = 2
+	self.osipr_gl_npc.DAMAGE = 2
+	self.osipr_gl_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+	self.osipr_gl_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+	self.osipr_gl_npc.no_trail = true
+	self.osipr_gl_npc.CLIP_AMMO_MAX = 3
+	self.osipr_gl_npc.NR_CLIPS_MAX = 1
+	self.osipr_gl_npc.auto.fire_rate = 0.1
+	self.osipr_gl_npc.hold = "rifle"
+	self.osipr_gl_npc.alert_size = 2800
+	self.osipr_gl_npc.suppression = 1
+	self.osipr_gl_npc.FIRE_MODE = "auto"
+
 	--Anubis .45
 	self.socom.timers = {
 		reload_not_empty = 1.5435,
@@ -9900,6 +9915,12 @@ function WeaponTweakData:_create_table_structure()
 	self.mp9_npc = {
 		usage = "mp9",
 		anim_usage = "is_smg",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}
+	self.osipr_gl_npc = {
+		usage = "is_rifle",
 		sounds = {},
 		use_data = {},
 		auto = {}

@@ -31005,6 +31005,14 @@ self.parts.wpn_fps_ass_osipr_scope.material_parameters = {
 		}
 	}
 }
+self.parts.wpn_fps_ass_osipr_b_standard.custom = false
+self.parts.wpn_fps_ass_osipr_body.custom = false
+self.parts.wpn_fps_ass_osipr_bolt.custom = false
+self.parts.wpn_fps_ass_osipr_gl.custom = false
+self.parts.wpn_fps_ass_osipr_gl_incendiary.custom = false
+self.parts.wpn_fps_ass_osipr_scope.custom = false
+self.parts.wpn_fps_ass_osipr_m_gl.custom = false
+self.parts.wpn_fps_ass_osipr_m_gl_incendiary.custom = false
 
 --Deal with legendary and semi-hidden mods so they don't waste time triggering custom mod stat generation.
 --The game seems to ignore some of these because reasons???

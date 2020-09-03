@@ -5621,7 +5621,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.rpg7.panic_suppression_chance = 0.05
 	self.rpg7.stats_modifiers = {damage = 3}
-	self.rpg7.swap_speed_multiplier = 1.45
+	self.rpg7.swap_speed_multiplier = 1.25
 	self.rpg7.turret_instakill = true
 	self.cobray.timers.reload_not_empty = 2
 	self.cobray.timers.reload_empty = 4.25
@@ -6928,7 +6928,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.ray.panic_suppression_chance = 0.05
 	self.ray.stats_modifiers = {damage = 3}
-	self.ray.swap_speed_multiplier = 1.4
+	self.ray.swap_speed_multiplier = 1.2
 	self.ray.turret_instakill = true
 	self.tti.upgrade_blocks = nil
 	self.tti.has_description = true

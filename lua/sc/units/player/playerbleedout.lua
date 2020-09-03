@@ -5,7 +5,7 @@ function PlayerBleedOut:enter(state_data, enter_data)
 
 	self:_start_action_bleedout(managers.player:player_timer():time())
 
-	self._tilt_wait_t = managers.player:player_timer():time() + 1
+	self._tilt_wait_t = managers.player:player_timer():time() + 0.2
 	self._old_selection = nil
 
 	if (not managers.player:has_category_upgrade("player", "primary_weapon_when_downed") or self._unit:inventory():equipped_unit():base():weapon_tweak_data().not_allowed_in_bleedout) and self._unit:inventory():equipped_selection() ~= 1 then
@@ -23,9 +23,6 @@ function PlayerBleedOut:enter(state_data, enter_data)
 		self._unit:inventory():unit_by_selection(1):base():on_reload()
 	end
 		
-	if restoration.Options:GetValue("OTHER/NoBleedoutTilt") then
-		self._unit:camera():camera_unit():base():set_target_tilt(35)
-	end
 	if not restoration.Options:GetValue("OTHER/NoBleedoutTilt") then
 		self._unit:camera():play_shaker("player_bleedout_land")
 	end

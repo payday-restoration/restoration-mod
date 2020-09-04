@@ -1,6 +1,6 @@
 HUDDodgeMeter = HUDDodgeMeter or class()
 function HUDDodgeMeter:init(hud)
-	self._hud_panel = hud
+	self._hud_panel = hud.panel
 	
 	self._dodge_meter_panel = managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel:panel({
 		name = "dodge_meter_init",

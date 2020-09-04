@@ -1,6 +1,0 @@
-<materials version="3">
-    <material name="bank_flag_usa" decal_material="cloth" render_template="generic:DIFFUSE_TEXTURE" version="2">
-        <variable value="0" type="scalar" name="specular_power"/>
-        <diffuse_texture file="units/world/props/bank/bank_flag/bank_flag_usa_df"/>
-    </material>
-</materials>

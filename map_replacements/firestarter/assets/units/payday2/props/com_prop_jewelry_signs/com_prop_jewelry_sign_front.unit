@@ -1,6 +1,0 @@
-<unit type="com" slot="1" >
-    <object file="units/payday2/props/com_prop_jewelry_signs/com_prop_jewelry_sign_front" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

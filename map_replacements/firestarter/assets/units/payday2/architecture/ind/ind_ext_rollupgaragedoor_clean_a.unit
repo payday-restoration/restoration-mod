@@ -1,6 +1,0 @@
-<unit type="ind" slot="1" >
-    <object file="units/payday2/architecture/ind/ind_ext_rollupgaragedoor_clean_a" />
-    <extensions>
-        <extension class="ScriptUnitData" name="unit_data" />
-    </extensions>
-</unit>

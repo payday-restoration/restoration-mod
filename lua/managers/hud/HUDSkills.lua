@@ -3,7 +3,7 @@ local skill_atlas = 'guis/textures/pd2/skilltree/icons_atlas'
 local perk_atlas = 'guis/textures/pd2/specialization/icons_atlas'
 
 function HUDSkill:init(hud)
-	self._hud_panel = hud.panel
+	self._hud_panel = hud
 
 	self._skill_panel = managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2).panel:panel({ --Parent panel to hold skills.
 		name = "skill_panel",

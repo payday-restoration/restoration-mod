@@ -1,8 +1,8 @@
 HUDEffectScreen = HUDEffectScreen or class()
 function HUDEffectScreen:init(hud)
-	self._hud_panel = hud.panel
+	self._hud_panel = hud
 	
-	self._effect_panel = hud.panel:bitmap({
+	self._effect_panel = hud:bitmap({
 		name = "effect_panel",
 		visible = true,
 		texture = "guis/textures/restoration/bloodyscreen",
@@ -10,8 +10,8 @@ function HUDEffectScreen:init(hud)
 		color = Color(1, 1, 1),
 		alpha = 0,
 		blend_mode = "add",
-		w = hud.panel:w(),
-		h = hud.panel:h(),
+		w = hud:w(),
+		h = hud:h(),
 		x = 0,
 		y = 0 
 	})

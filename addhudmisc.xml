@@ -34,6 +34,7 @@
 	<texture path="guis/textures/restoration/throwables"/>
 	<texture path="guis/textures/restoration/equipment"/>
 	<texture path="guis/textures/restoration/objective"/>
+	<texture path="guis/textures/restoration/exp_ring"/>
 	<texture path="guis/textures/restoration/risklevel_blackscreen"/>
 	<gui path="guis/mask_off_hud" force="true"/>
 	<texture path="guis/textures/restoration/mission_briefing/bain"/>

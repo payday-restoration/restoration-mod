@@ -22,10 +22,6 @@ function PlayerBleedOut:enter(state_data, enter_data)
 		self:_start_action_unequip_weapon(managers.player:player_timer():time(), {selection_wanted = 1})
 		self._unit:inventory():unit_by_selection(1):base():on_reload()
 	end
-		
-	if not restoration.Options:GetValue("OTHER/NoBleedoutTilt") then
-		self._unit:camera():play_shaker("player_bleedout_land")
-	end
 	
 	local effect_id_world = "world_downed_Peer" .. tostring(managers.network:session():local_peer():id())
 

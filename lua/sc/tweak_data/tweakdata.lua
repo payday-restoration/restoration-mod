@@ -28,6 +28,7 @@ tweak_data.projectiles.launcher_rocket.damage = 120
 tweak_data.projectiles.launcher_rocket.player_damage = 60
 tweak_data.projectiles.launcher_rocket.range = 500
 tweak_data.projectiles.launcher_rocket.curve_pow = 0.1
+tweak_data.projectiles.launcher_rocket.turret_instakill = true
 
 --Grenade launcher stuff--
 tweak_data.projectiles.launcher_frag.damage = 80
@@ -58,6 +59,7 @@ tweak_data.projectiles.rocket_ray_frag.damage = 120
 tweak_data.projectiles.rocket_ray_frag.player_damage = 60
 tweak_data.projectiles.rocket_ray_frag.range = 500
 tweak_data.projectiles.rocket_ray_frag.curve_pow = 1
+tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 
 --Arbiter--
 tweak_data.projectiles.launcher_frag_arbiter.damage = 60

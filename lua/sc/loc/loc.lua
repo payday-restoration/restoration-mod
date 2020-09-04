@@ -172,7 +172,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
 		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP.",
 		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle Flip Up Sight.",
-		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 20%. ROCKETS FIRED BY THIS WEAPON INSTANTLY DESTROY TURRETS.",
+		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 15%. ROCKETS FIRED BY THIS WEAPON INSTANTLY DESTROY TURRETS.",
 		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
 		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
 		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",

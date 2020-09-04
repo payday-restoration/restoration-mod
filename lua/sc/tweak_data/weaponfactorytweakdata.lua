@@ -7711,16 +7711,14 @@ end)
 
 --HRL-7
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpg7", "resmod_rpg7", function(self)
-	
 	--Default Body
-	self.parts.wpn_fps_rpg7_body.custom_stats = {reload_speed_mult = 1.2, movement_speed = 0.8}
-	
+	self.parts.wpn_fps_rpg7_body.custom_stats = {reload_speed_mult = 1.2, movement_speed = 0.85}
 end)
 
 --Commando 101
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ray", "resmod_ray", function(self)
 	--Default Body
-	self.parts.wpn_fps_gre_ray_body.custom_stats = {movement_speed = 0.8}
+	self.parts.wpn_fps_gre_ray_body.custom_stats = {movement_speed = 0.85}
 	
 end)
 
@@ -29994,7 +29992,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = 1
 		}
 		self.parts.wpn_fps_rpg7_body_subtle.custom_stats = {
-			movement_speed = 0.8
+			movement_speed = 0.85
 		}
 
 		--(Eagle Heavy) Eagle Aftermarket Grip

@@ -5602,8 +5602,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.fire_mode_data.fire_rate = 2
 	self.rpg7.AMMO_MAX = 4
 	self.rpg7.AMMO_PICKUP = self:_pickup_chance()
-	self.rpg7.timers.reload_not_empty = 3.25
-	self.rpg7.timers.reload_empty = 3.25
+	self.rpg7.timers.reload_not_empty = 4.7
+	self.rpg7.timers.reload_empty = 4.7
 	self.rpg7.supported = true
 	self.rpg7.stats = {
 		damage = 400,

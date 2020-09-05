@@ -3453,6 +3453,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 		damage_far_mul = -300
 	}
 	
+	--Base reload mult to better match timers
+	self.parts.wpn_fps_shot_huntsman_body_standard.custom_stats = {reload_speed_mult = 1.1}	
+	
 	--Gangsta Special Stock
 	self.parts.wpn_fps_shot_huntsman_s_short.pcs = {
 		10,
@@ -7712,7 +7715,7 @@ end)
 --HRL-7
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpg7", "resmod_rpg7", function(self)
 	--Default Body
-	self.parts.wpn_fps_rpg7_body.custom_stats = {reload_speed_mult = 1.2, movement_speed = 0.85}
+	self.parts.wpn_fps_rpg7_body.custom_stats = {reload_speed_mult = 1.1, movement_speed = 0.85}
 end)
 
 --Commando 101
@@ -7823,6 +7826,7 @@ function WeaponFactoryTweakData:_init_b682()
 		unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_body_standard",
 		supported = true,
 		stats = {value = 1},
+		custom_stats = {reload_speed_mult = 1.1},
 		texture_bundle_folder = "character_pack_bonnie",
 		dlc = "pd2_clan",
 		animations = {
@@ -14630,7 +14634,7 @@ function WeaponFactoryTweakData:_init_boot()
 		a_obj = "a_m",
 		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_m_standard",
 		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		custom_stats = {reload_speed_mult = 0.8},
+		custom_stats = {reload_speed_mult = 0.9},
 		supported = true,
 		stats = {value = 1}
 	}
@@ -24835,6 +24839,7 @@ function WeaponFactoryTweakData:_init_coach()
 		a_obj = "a_body",
 		type = "lower_reciever",
 		name_id = "bm_wp_coach_body_standard",
+		custom_stats = {reload_speed_mult = 1.1},
 		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_body_standard",
 		supported = true,
 		stats = {value = 1}

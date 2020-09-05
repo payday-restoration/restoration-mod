@@ -2213,7 +2213,7 @@ function SkillTreeTweakData:init(tweak_data)
 					"player_passive_loot_drop_multiplier"
 				},
 				cost = 4000,
-				icon_xy = {0, 3},
+				icon_xy = {0, 2},
 				name_id = "menu_deck3_9",
 				desc_id = "menu_deck3_9_desc_sc"
 			}

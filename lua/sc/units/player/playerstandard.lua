@@ -1536,3 +1536,25 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 
 	return new_action
 end
+
+function PlayerStandard:_interupt_action_reload(t)
+	if alive(self._equipped_unit) then
+		self._equipped_unit:base():check_bullet_objects()
+	end
+
+	if self:_is_reloading() then
+		self._equipped_unit:base():tweak_data_anim_stop("reload_enter")
+		self._equipped_unit:base():tweak_data_anim_stop("reload")
+		self._equipped_unit:base():tweak_data_anim_stop("reload_not_empty")
+		self._equipped_unit:base():tweak_data_anim_stop("reload_exit")
+	end
+
+	self._state_data.reload_enter_expire_t = nil
+	self._state_data.reload_expire_t = nil
+	self._state_data.reload_exit_expire_t = nil
+	--Fixes weapons using shotgun-style reloads occasionally only loading one shell in
+	self._queue_reload_interupt = nil
+
+	managers.player:remove_property("shock_and_awe_reload_multiplier")
+	self:send_reload_interupt()
+end

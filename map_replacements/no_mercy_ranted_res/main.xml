@@ -56,7 +56,7 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative name_id = "heist_nmh" brief_id="heist_nmh_crimenet" briefing_event="Play_rb1_nmh_cbf_01" contact="classic" hide_from_crimenet="false" icon="guis/mercy/icon_nmh" id="nmh" jc="30" region="street">
+	<narrative brief_id="heist_nmh_crimenet" briefing_event="Play_rb1_nmh_cbf_01" contact="classic" hide_from_crimenet="false" icon="guis/mercy/icon_nmh" id="nmh" jc="30" name_id="heist_nmh" region="street">
 		<chain>
 			<table level_id="nmh_res" type="d" type_id="heist_type_assault"/>
 		</chain>

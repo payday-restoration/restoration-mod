@@ -1014,7 +1014,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Concealment stuff same as vanilla.
 				--Ace
 					self.values.player.dodge_heal_no_armor = {
-						0.05 --% of maximum health
+						0.04 --% of maximum health
 					}
 			
 		--Silent Killer--

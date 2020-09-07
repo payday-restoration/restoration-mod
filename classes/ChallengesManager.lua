@@ -98,7 +98,7 @@ function ChallengesManagerRes:check_active_challenges()
 
 	for name,challenge in pairs( self._challenges_map_res ) do
 		if not self._global.active[ name ] and not self._global.completed[ name ] then -- If not completed or activated
-			if current_level >= challenge.unlock_level then
+			-- if current_level >= challenge.unlock_level then
 				if self:_check_depends_on( name ) then
 					local t = {}
 					if challenge.counter_id then
@@ -110,7 +110,7 @@ function ChallengesManagerRes:check_active_challenges()
 					self._global.active[ name ] = t
 					added = true
 				end
-			end
+			-- end
 		end
 	end
 
@@ -132,16 +132,58 @@ function ChallengesManagerRes:_check_depends_on( name )
 			end
 		end
 	end
-	if self._challenges_map_res[ name ].depends_on.weapons then
-		for _,weapon in ipairs( self._challenges_map_res[ name ].depends_on.weapons ) do
-			if not managers.player:has_weapon( weapon ) then
+	if self._challenges_map_res[ name ].depends_on.equipment then
+		for _,equipment in ipairs( self._challenges_map_res[ name ].depends_on.equipment ) do
+			if not managers.player:has_aquired_equipment( equipment ) then
 				--return false
 			end
 		end
 	end
-	if self._challenges_map_res[ name ].depends_on.equipment then
-		for _,equipment in ipairs( self._challenges_map_res[ name ].depends_on.equipment ) do
-			if not managers.player:has_aquired_equipment( equipment ) then
+	if self._challenges_map_res[ name ].depends_on.primaries then
+		for _,primaries in ipairs( self._challenges_map_res[ name ].depends_on.primaries ) do
+			if not managers.blackmarket:equipped_primary( primaries ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.secondaries then
+		for _,secondaries in ipairs( self._challenges_map_res[ name ].depends_on.secondaries ) do
+			if not managers.blackmarket:equipped_secondary( secondaries ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.masks then
+		for _,masks in ipairs( self._challenges_map_res[ name ].depends_on.masks ) do
+			if not managers.blackmarket:equipped_mask( masks ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.character then
+		for _,character in ipairs( self._challenges_map_res[ name ].depends_on.character ) do
+			if not managers.blackmarket:equipped_character( character ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.armors then
+		for _,armors in ipairs( self._challenges_map_res[ name ].depends_on.armors ) do
+			if not managers.blackmarket:equipped_armor( armors ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.melee_weapons then
+		for _,melee_weapons in ipairs( self._challenges_map_res[ name ].depends_on.melee_weapons ) do
+			if not managers.blackmarket:equipped_melee_weapon( melee_weapons ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.grenades then
+		for _,grenades in ipairs( self._challenges_map_res[ name ].depends_on.grenades ) do
+			if not managers.blackmarket:equipped_grenade( grenades ) then
 				--return false
 			end
 		end

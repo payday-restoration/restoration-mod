@@ -127,28 +127,28 @@ function ChallengesTweakData:init()
 			callback = "never_bleedout"
 		}
     }
-    self.session.watchdogs_d1_heavy_wpn1 = {
-		title_id = "HEAVY ARMOR, AND HEAVIER WEAPONS..",
-		description_id = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge.",
-		xp = gigantic_xp,
-		level_id = "watchdogs_1",
-        difficulty = overkill_and_above,
-        depends_on = {
-            primaries = {
-                "m134",
-                "m95"
-            },
-            secondaries = {
-                "rpg7"
-            },
-            armors = {
-                "level_7"
-            }
-		},
-		session_stopped = {
-			callback = "overkill_success"
-		}
-    }
+    -- self.session.watchdogs_d1_heavy_wpn1 = {
+	-- 	title_id = "HEAVY ARMOR, AND HEAVIER WEAPONS..",
+	-- 	description_id = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge.",
+	-- 	xp = gigantic_xp,
+	-- 	level_id = "watchdogs_1",
+    --     difficulty = overkill_and_above,
+    --     depends_on = {
+    --         primaries = {
+    --             "m134",
+    --             "m95"
+    --         },
+    --         secondaries = {
+    --             "rpg7"
+    --         },
+    --         armors = {
+    --             "level_7"
+    --         }
+	-- 	},
+	-- 	session_stopped = {
+	-- 		callback = "overkill_success"
+	-- 	}
+    -- }
     self.achievment = {}
     self.achievment.duck_hunting = {
 		title_id = "ch_duck_hunting_hl",

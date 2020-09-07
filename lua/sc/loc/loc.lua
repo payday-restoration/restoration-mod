@@ -122,7 +122,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
 		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "Doubles the burn duration on ignited enemies, but halves damage over time.",
 		["bm_wp_fla_mk2_mag_well_desc_sc"] = "Halves the burn duration on ignited enemies, but doubles damage over time.",
-		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH BODY ARMOR.", --used by both flamethrowers, decouple later?--
+		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH ##BODY ARMOR##.", --used by both flamethrowers, decouple later?--
 		
 		--LMGs/Miniguns--
 		["bm_wp_upg_a_halfthatkit"] = "Super Size Me!", -- lol
@@ -131,7 +131,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
 		
 		--Thanatos--
-		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n##CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.##",
+		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
 				
 		--Kobus 90--
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
@@ -166,17 +166,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m203_weapon_sc_desc_pc"] = "Press $BTN_BIPOD to switch to the mounted Grenade Launcher.",
 		["bm_m203_weapon_sc_desc"] = "Hold $BTN_BIPOD to switch to the mounted Grenade Launcher.",
 		
+		--Mosin--
+		["bm_mosin_sc_desc"] = "This weapon reloads in clips of ##5## bullets at a time.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
+		
+		--Broomstick--
+		["bm_c96_sc_desc"] = "Powerful German pistol from WW2. Capable of firing in full-auto at an insane rate, but will decimate your ammo reserves.\nThis weapon reloads in clips of ##10## bullets at a time.",
+		
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
-		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
-		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
-		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP.",
-		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle Flip Up Sight.",
-		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 15%. ROCKETS FIRED BY THIS WEAPON INSTANTLY DESTROY TURRETS.",
-		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
-		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
-		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
-		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 25%.",
+		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
+		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
+		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR##. ##ARROWS CAN BE RESTORED BY PICKING THEM UP##, AND ##RANGE INCREASES THE LONGER AN ARROW IS DRAWN##.",
+		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR##. ##ARROWS CAN BE RESTORED BY PICKING THEM UP##.",
+		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle ##Flip Up Sight##.",
+		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL ##REDUCE YOUR MOVEMENT SPEED## BY ##15%##. ROCKETS FIRED BY THIS WEAPON ##INSTANTLY DESTROY TURRETS##.",
+		["bm_auto_generated_sc_desc"] = "This weapon is using ##automatically generated stats##, and may not fit the creators intent or be perfectly balanced.",
+		["bm_auto_generated_ap_sc_desc"] = "This weapon is using ##automatically generated stats##, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
+		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
+		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL ##REDUCE YOUR MOVEMENT SPEED## BY ##25%##.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 
 		--Overhaul Content Indicators--
@@ -222,16 +228,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	--	["hud_instruct_mask_on"] = "[G] TO BECOME A SQUID NOW",
 	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
 	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
-		
-		["bm_wp_upg_a_mag_msr"] = ".338 MAG rounds", --rip these
-		["bm_wp_upg_a_mag_msr_desc"] = "",
-		["bm_sc_silencers_med_desc"] = "SLOWS YOUR RATE OF FIRE BY 30%",
-		["bm_sc_silencers_small_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
-		["bm_wp_wpn_fps_upg_cbjms_ammo_cbj_desc"] = "Rechambers the CBJ-MS with 6.5x25mm CBJ ammunition, adding AP capability and increasing damage slightly. However, stability, total ammo, and concealment is reduced.",		
-		["bm_sc_silencers_large_desc"] = "SLOWS YOUR RATE OF FIRE BY 45%",
-		["bm_wp_upg_extra_mp_unlock"] = "MX4 Conversion Kit",
-		["bm_wp_upg_extra_mp_unlock_desc"] = "Allows toggling fire modes and the installation of Cyclic mods at the cost of slightly more kick.",
-		["bm_wp_upg_a_op_sc"] = "+P Rounds",
+
 		["bm_wp_upg_i_singlefire_sc"] = "Slower Cyclic",
 		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%", --RIP RoF mods
 		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
@@ -245,43 +242,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_gadget_plural"] = "Gadgets",
 		["menu_pistol_carbine"] = "Pistol Carbine",
 		["menu_battle_rifle"] = "Battle Rifle",
-		
-		["bm_wp_upg_a_slug_sc_fire"] = "Incendiary Slug",
-		["bm_menu_sc_m4_desc"] = "Modern take on the M16 service rifle. Good rate of fire and decent damage, however plastic parts make for shoddy stability.",
-		["bm_menu_sc_glock17_desc"] = "Easy to control recoil and reliable. The perfect sidearm to start a heisting career.",
-		["bm_menu_sc_mp9_desc"] = "A firearm made popular by its insane rate of fire. With this you can invite everyone to a bullet party nearly instantly.",
-		["bm_menu_sc_r870_desc"] = "",
-		["bm_menu_sc_glock18c_desc"] = "",
-		["bm_menu_sc_m16_desc"] = "Powerful, accurate, and with a crazy rate of fire. The drawback? The vintage 20 round magazines.",
-		["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an identity crisis that shoots bullets.",
-		["bm_menu_sc_amcar_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle, just don't forget your cleaning kit.",
-		["bm_menu_sc_ak74_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.",
-		["bm_menu_sc_akm_desc"] = "",
-		["bm_menu_sc_akm_gold_desc"] = "A blank slate.",
-		["bm_menu_sc_m249_desc"] = "Firing 5.56 Surplus ammo at an extreme capacity! Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
-		["bm_menu_sc_saiga_desc"] = "This high capacity, box magazine fed, fully automatic shotgun is perfect for those days you just don't feel like aiming.",
-		["bm_menu_sc_spas12_desc"] = "Top of the line tactical shotgun. Perfect for clearing particularly busy rooms.",
-		["bm_menu_sc_m45_desc"] = "Ergonomics was not the strong suit of this weapon's design, mind the heat coming off the barrel.",
-		["bm_menu_sc_mp5_desc"] = "Made popular with the cops for one reason: It is very good at what it does.",
-		["bm_menu_sc_asval_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun. The ASVAL is both brutal and compact.",
-		["bm_menu_sc_g36_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",
-		["bm_menu_sc_c96_desc"] = "The pistol that almost took over the world. Twice. This German artifact is sleek, accurate and unfortunately obsolete.",
-		["bm_menu_sc_m79_desc"] = "This weapon will disperse the crowds with ease. Mind the range, however, these 'nades don't feature range safety.",
-		["bm_menu_sc_mg42_desc"] = "Throw out your shoulder in style with this German made bullet hose. At 1200 RPM it's sure to clear a room fast, at least until you empty its vintage 50 round magazine.",
-		["bm_wp_upg_a_slug_fire_desc"] = "Fires a single slug that goes up in sparks and flames. Burns through body armor, shields, and walls.",
-		["bm_wp_upg_a_slug_fire_sc_desc"] = "Fires a single slug that goes up in sparks and flames.",
-		["bm_wp_upg_a_46custom"] = ".460 Rowland",
-		["bm_wp_upg_a_46custom_desc"] = "When .45acp isn't enough, reach for this custom 1911A1 chambered in the powerful .460 Rowland Magnum. Top shelf brutality.",
-		["bm_wp_upg_a_762_sterling"] = "7.62mm Conversion Kit",
-		["bm_wp_upg_a_762_sterling_desc"] =  "You asked me to cram 7.62 rounds into a 27-inch submachine gun, and I delivered. I don't know why, but I did. Say goodbye to your magazine size and recoil management and say hello to heavy-caliber lead projectile vomiting. I never asked for this, but you did, and I aim to please.",
-		["bm_wp_upg_a_65grendel"] = "6.5mm Grendel",
-		["bm_wp_upg_a_65grendel_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this ammunition.",
-		["bm_wp_upg_a_p"] = "+P Rounds",
-		["bm_wp_upg_a_p_desc"] = "These rounds are designed to fire at a higher internal pressure than standard ammunition.",
-		["bm_wp_upg_a_40sw"] = ".40S&W Conversion Kit",
-		["bm_wp_upg_a_40sw_desc"] = "",		
-		["bm_wp_upg_a_storm_40acp"] = ".45ACP Conversion Kit",
-		["bm_wp_upg_a_storm_40acp_desc"] = "",
 				
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",

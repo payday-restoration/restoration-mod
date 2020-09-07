@@ -5347,6 +5347,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mg42.timers.reload_empty = 6.25	
 	self.mg42.panic_suppression_chance = 0.05
 	self.mg42.swap_speed_multiplier = 0.9
+	--Broomstick--
 	self.c96.sounds.fire = "c96_fire"
 	self.c96.sounds.fire_single = "c96_fire"
 	self.c96.sounds.fire_auto = "g18c_fire"
@@ -5355,6 +5356,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.sounds.enter_steelsight = "pistol_steel_sight_enter"
 	self.c96.sounds.leave_steelsight = "pistol_steel_sight_exit"
 	self.c96.sounds.magazine_empty = "wp_pistol_slide_lock"		
+	self.c96.has_description = true
+	self.c96.desc_id = "bm_c96_sc_desc"
 	self.c96.AMMO_MAX = 60
 	self.c96.AMMO_PICKUP = self:_pickup_chance()
 	self.c96.FIRE_MODE = "auto"
@@ -5382,6 +5385,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.stats_modifiers = nil
 	self.c96.timers.reload_not_empty = 3.7
 	self.c96.panic_suppression_chance = 0.05
+	
 	self.sterling.CLIP_AMMO_MAX = 20
 	self.sterling.AMMO_MAX = 75
 	self.sterling.AMMO_PICKUP = self:_pickup_chance()
@@ -5409,8 +5413,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.sterling.stats_modifiers = nil
 	self.sterling.panic_suppression_chance = 0.05
+	--Mosin--
 	self.mosin.has_description = true
-	self.mosin.desc_id = "bm_ap_weapon_sc_desc"
+	self.mosin.desc_id = "bm_mosin_sc_desc"
 	self.mosin.CLIP_AMMO_MAX = 5
 	self.mosin.AMMO_MAX = 30
 	self.mosin.AMMO_PICKUP = self:_pickup_chance()
@@ -5435,6 +5440,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.mosin.stats_modifiers = nil
 	self.mosin.panic_suppression_chance = 0.05
+	
 	self.m1928.use_data.selection_index = 1
 	self.m1928.fire_mode_data.fire_rate = 0.075
 	self.m1928.CAN_TOGGLE_FIREMODE = true

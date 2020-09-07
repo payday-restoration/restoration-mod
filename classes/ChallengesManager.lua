@@ -640,6 +640,28 @@ function ChallengesManagerRes:overkill_success( name, data )
 		return
 	end
 
+	if not managers.blackmarket:equipped_primary( self._challenges_map_res[ name ].primaries ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_secondary( self._challenges_map_res[ name ].secondaries ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_mask( self._challenges_map_res[ name ].masks ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_character( self._challenges_map_res[ name ].character ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_armor( self._challenges_map_res[ name ].armors ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_melee_weapon( self._challenges_map_res[ name ].melee_weapons ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_grenade( self._challenges_map_res[ name ].grenades ) then
+		--return false
+	end
+
 	return true
 end
 

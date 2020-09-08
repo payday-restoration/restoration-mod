@@ -2,7 +2,7 @@
 <dynamic_object>
 	<diesel materials="units/pd2_mod_suits/characters/res_acc_loud_suit/res_acc_loud_suit" orientation_object="root_point" />
 
-<graphics>
+	<graphics>
 		<object name="g_body" enabled="true" />
 	</graphics>
 

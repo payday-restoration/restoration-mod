@@ -136,6 +136,7 @@ function restoration:Init()
 		"hntn",
 		"bookmakers_office",
 		"thechase",
+		"office_strike",
 		"santa_pain"
 	}	
 	--Christmas Effects Heists

@@ -435,7 +435,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.team.stamina.multiplier = {1.5}
 	self.values.player.civ_calming_alerts = {true}
 	self.values.carry.throw_distance_multiplier = {1.5}
-	self.values.sentry_gun.cost_reduction = {2, 3}
 	self.values.sentry_gun.spread_multiplier = {2}
 	self.values.sentry_gun.rot_speed_multiplier = {2}
 	self.values.sentry_gun.extra_ammo_multiplier = {2}

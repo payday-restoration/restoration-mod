@@ -45,3 +45,20 @@ function WeaponAmmo:calculate_ammo_max_per_clip()
 	ammo = math.floor(ammo)
 	return ammo
 end
+
+--Makes sentries take a fixed amount of ammo.
+function WeaponAmmo:remove_ammo(percent)
+	local total_ammo = self:get_ammo_total()
+	local max_ammo = self:get_ammo_max()
+	local ammo = math.max(math.floor(total_ammo - max_ammo * percent), 0)
+
+	self:set_ammo_total(ammo)
+
+	local ammo_in_clip = self:get_ammo_remaining_in_clip()
+
+	if self:get_ammo_total() < ammo_in_clip then
+		self:set_ammo_remaining_in_clip(ammo)
+	end
+
+	return total_ammo - ammo
+end

@@ -751,7 +751,7 @@ function PlayerManager:_internal_load()
 	else --If someone is respawning from custody, apply relevant penalties.
 		for id, weapon in pairs(player:inventory():available_selections()) do
 			if alive(weapon.unit) then
-				weapon.unit:base():remove_ammo(tweak_data.player.damage.custody_ammo_kept)
+				weapon.unit:base():remove_ammo(tweak_data.player.damage.custody_ammo_drained)
 				managers.hud:set_ammo_amount(id, weapon.unit:base():ammo_info())
 			end
 		end

@@ -83,6 +83,7 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_df" />
+	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_nm" />
     
 	<!--///Sunny-Side Robber Rust\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" />

@@ -3015,7 +3015,11 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian.access = "civ_male"
 	self.civilian.intimidateable = true
 	self.civilian.challenges = {type = "civilians"}
-	self.civilian.calls_in = true
+	if job == "nmh" or job == "nmh_res" then
+		self.civilian.calls_in = false
+	else
+		self.civilian.calls_in = true
+	end
 	self.civilian.hostage_move_speed = 1.5
 	self.civilian_female = deep_clone(self.civilian)
 	self.civilian_female.die_sound_event = "a02x_any"

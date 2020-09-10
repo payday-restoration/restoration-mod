@@ -105,6 +105,6 @@
 	<texture path="ui/raid_secondary_menu_bg"/>
 
 	<!-- Drill Screen Bloom Improvement -->
-	<texture path="guis/textures/drill_screen_background" force="true"/>
+	<!-- texture path="guis/textures/drill_screen_background" force="true"/ -->
 			
 </table>

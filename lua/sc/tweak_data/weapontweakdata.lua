@@ -846,7 +846,7 @@ function WeaponTweakData:_init_data_r870_npc()
 	self.r870_npc.categories = clone(self.r870.categories)
 	self.r870_npc.sounds.prefix = "remington_npc"
 	self.r870_npc.use_data.selection_index = 2
-	self.r870_npc.DAMAGE = 9
+	self.r870_npc.DAMAGE = 6
 	self.r870_npc.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.r870_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 	self.r870_npc.CLIP_AMMO_MAX = 8
@@ -883,7 +883,7 @@ function WeaponTweakData:_init_data_mossberg_npc()
 	self.mossberg_npc.categories = {"shotgun"}
 	self.mossberg_npc.sounds.prefix = "remington_npc"
 	self.mossberg_npc.use_data.selection_index = 2
-	self.mossberg_npc.DAMAGE = 12
+	self.mossberg_npc.DAMAGE = 9
 	self.mossberg_npc.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.mossberg_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 	self.mossberg_npc.CLIP_AMMO_MAX = 2
@@ -1029,7 +1029,7 @@ function WeaponTweakData:_init_data_saiga_npc()
 	self.saiga_npc.categories = clone(self.saiga.categories)
 	self.saiga_npc.sounds.prefix = "saiga_npc"
 	self.saiga_npc.use_data.selection_index = 2
-	self.saiga_npc.DAMAGE = 4.5
+	self.saiga_npc.DAMAGE = 3
 	self.saiga_npc.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.saiga_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 	self.saiga_npc.auto.fire_rate = 0.1
@@ -1040,7 +1040,7 @@ function WeaponTweakData:_init_data_saiga_npc()
 	self.saiga_npc.suppression = 3.2
 	self.saiga_npc.is_shotgun = true
 	self.saiga_npc.rays = 6
-	self.saiga_npc.spread = 6
+	self.saiga_npc.spread = 3
 	self.saiga_npc.FIRE_MODE = "auto"
 end
 

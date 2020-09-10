@@ -331,7 +331,11 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.cop.speech_prefix_p2 = "n"
 	self.cop.speech_prefix_count = 4
-	self.cop.access = "fbi"
+	if job == "wwh" then
+		self.cop.access = "cop"
+	else
+		self.cop.access = "fbi"
+	end
 	self.cop.silent_priority_shout = "f37"
 	self.cop.dodge = presets.dodge.average
 	self.cop.deathguard = true
@@ -764,11 +768,19 @@ function CharacterTweakData:_init_swat(presets)
 	else
 	    self.swat.has_alarm_pager = false
 	end
+	if job == "kosugi" or job == "dark" then
+		self.swat.shooting_death = false
+		self.swat.radio_prefix = "fri_"
+		self.swat.use_radio = "dsp_radio_russian"
+	else
+		self.swat.shooting_death = true
+	end		
 	if job == "chill_combat" then
 		self.swat.steal_loot = true
 	else
 		self.swat.steal_loot = true
 	end		
+	self.swat.silent_priority_shout = "f37"
 	self.swat.heal_cooldown = 5
 	table.insert(self._enemy_list, "swat")
 	
@@ -839,6 +851,14 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 	    self.heavy_swat.has_alarm_pager = false
 	end
+	if job == "kosugi" or job == "dark" then
+		self.heavy_swat.shooting_death = false
+		self.heavy_swat.radio_prefix = "fri_"
+		self.heavy_swat.use_radio = "dsp_radio_russian"
+	else
+		self.heavy_swat.shooting_death = true
+	end			
+	self.heavy_swat.silent_priority_shout = "f37"
 	self.heavy_swat.static_weapon_preset = false
 	self.heavy_swat.static_dodge_preset = true
 	self.heavy_swat.static_melee_preset = false	

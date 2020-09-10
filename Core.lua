@@ -75,7 +75,6 @@ function restoration:Init()
 		"brb",
 		"mus",
 		"hox_1",
-		"chew",
 		"skm_mus",
 		"skm_red2",
 		"skm_run",
@@ -94,7 +93,6 @@ function restoration:Init()
 		"framing_frame_3",
 		"spa",
 		"des",	
-		"help",	
 		"mia_2",
 		"arena",
 		"shoutout_raid", --Scripted spawns out the ass, doing this just to even it out
@@ -115,7 +113,8 @@ function restoration:Init()
 	restoration.very_tiny_levels = {
 		"hvh",
 		-- :^)
-		--"chew",	
+		"chew",	
+		"help",			
 		"nail",				
 		"cane",		
 		"pbr2",		

@@ -7,6 +7,8 @@ local large_xp = 2400
 local huge_xp = 3600
 local gigantic_xp = 5000
 
+local simple_cc = 3
+
 local ten_steps = { "size08", "size10", "size12", "size12", "size14", "size16", "size18", "size20", "size20", "size20" }
 local five_steps = { "size12", "size14", "size16", "size18", "size20" }
 
@@ -103,11 +105,16 @@ function ChallengesTweakData:init()
     }
     
     self.session = {}
-    self.session.branch_bank_sm_wish = {
+    self.session.testing1 = {
 		title_id = "ch_branch_bank_sm_wish_hl",
 		description_id = "ch_branch_bank_sm_wish",
 		xp = gigantic_xp,
-		level_id = "branchbank_cash",
+		cc = simple_cc,
+		level_id = {
+            "four_stores",
+            "rat",
+            "ukrainian_job_res"
+        },
 		difficulty = "sm_wish",
 		session_stopped = {
 			callback = "overkill_success"
@@ -128,8 +135,8 @@ function ChallengesTweakData:init()
 		}
     }
     self.session.watchdogs_d1_heavy_wpn1 = {
-		title_id = "HEAVY ARMOR, AND HEAVIER WEAPONS..",
-		description_id = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge.",
+		title_id = "ch_watchdogs_d1_heavy_wpn1_hl",
+		description_id = "ch_watchdogs_d1_heavy_wpn1",
 		xp = gigantic_xp,
 		level_id = "watchdogs_1",
         difficulty = overkill_and_above,

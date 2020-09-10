@@ -281,6 +281,7 @@ function ChallengesManagerRes:_completed_challenge( name )
 			managers.hud:present_mid_text( { title = title, text = text, time = 4, icon = nil, event = "stinger_objectivecomplete", type = "challenge" } )
 		end
 
+		managers.custom_safehouse:add_coins( self._challenges_map_res[ name ].cc, true )
 		-- managers.experience:add_points( self._challenges_map_res[ name ].xp, true )
 	end
 
@@ -494,10 +495,31 @@ function ChallengesManagerRes:_check_level_completed( data )
 end
 
 function ChallengesManagerRes:_correct_level( level_id )
-	if not (Global.level_data and Global.level_data.level_id) then
+	-- if not (Global.level_data and Global.level_data.level_id) then
+	-- 	return false
+	-- end
+	-- return Global.level_data.level_id == level_id
+
+	if not Global.load_level then 
+		return
+	end
+
+	local current_level = Global.game_settings.level_id
+	if type( level_id ) == "table" then
+		for _, diff in ipairs( level_id ) do
+			if diff == current_level then
+				return true
+			end
+		end
+
 		return false
 	end
-	return Global.level_data.level_id == level_id
+
+	if level_id ~= current_level then
+		return false
+	end
+
+	return true
 end
 
 

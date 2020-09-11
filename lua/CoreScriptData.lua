@@ -335,6 +335,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
 		end
 	end
+	BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bettercoredefault.custom_xml", "custom_xml", "core/environments/default", "environment")
 end)
 
 --Restoration Levels

@@ -132,6 +132,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Thanatos--
 		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
+		
+		--Galant--
+		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when the magazine is empty.",
 				
 		--Kobus 90--
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",

@@ -7164,14 +7164,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.breech.stats_modifiers = nil
 	self.breech.panic_suppression_chance = 0.05
+	--Galant--
 	self.ching.categories = {"assault_rifle"}
 	self.ching.recategorize = "rifle"
 	self.ching.FIRE_MODE = "single"
 	self.ching.fire_mode_data = {fire_rate = 0.1}
 	self.ching.CAN_TOGGLE_FIREMODE = false
 	self.ching.single = {fire_rate = 0.1}	
-	self.ching.has_description = false
-	self.ching.desc_id = "bm_ap_weapon_sc_desc"
+	self.ching.has_description = true
+	self.ching.desc_id = "bm_galant_sc_desc"
 	self.ching.CLIP_AMMO_MAX = 8
 	self.ching.AMMO_MAX = 60
 	self.ching.AMMO_PICKUP = self:_pickup_chance()
@@ -7200,6 +7201,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ching.can_shoot_through_shield = false
 	self.ching.can_shoot_through_wall = false	
 	self.ching.panic_suppression_chance = 0.05
+	
 	self.erma.use_data.selection_index = 2
 	self.erma.CLIP_AMMO_MAX = 32
 	self.erma.BURST_FIRE = false

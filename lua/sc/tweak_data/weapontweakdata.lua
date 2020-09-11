@@ -6407,6 +6407,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.model70.stats_modifiers = nil
 	self.model70.timers.reload_empty = 4.3	
 	self.model70.panic_suppression_chance = 0.05
+--GSPS--
 	self.m37.rays = 9
 	self.m37.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.m37.CLIP_AMMO_MAX = 6
@@ -6434,6 +6435,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.m37.stats_modifiers = nil
+--China Puff--
 	self.china.upgrade_blocks = {
 		weapon = {
 			"clip_ammo_increase"
@@ -6451,11 +6453,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.china.supported = true
 	self.china.stats = {
 		damage = 80,
-		spread = 6,
-		recoil = 9,
+		spread = 9,
+		recoil = 7,
 		spread_moving = 6,
 		zoom = 1,
-		concealment = 18,
+		concealment = 14,
 		suppression = 20,
 		alert_size = 20,
 		extra_ammo = 101,
@@ -6813,6 +6815,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.rota.stats_modifiers = nil
+	--Arbiter, duh--
 	self.arbiter.upgrade_blocks = {
 		weapon = {
 			"clip_ammo_increase"
@@ -6826,11 +6829,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arbiter.supported = true
 	self.arbiter.stats = {
 		damage = 60,
-		spread = 6,
-		recoil = 8,
+		spread = 15,
+		recoil = 6,
 		spread_moving = 6,
 		zoom = 1,
-		concealment = 15,
+		concealment = 12,
 		suppression = 20,
 		alert_size = 20,
 		extra_ammo = 101,

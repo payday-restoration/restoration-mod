@@ -436,7 +436,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.civ_calming_alerts = {true}
 	self.values.carry.throw_distance_multiplier = {1.5}
 	self.values.sentry_gun.spread_multiplier = {2}
-	self.values.sentry_gun.rot_speed_multiplier = {2}
 	self.values.sentry_gun.extra_ammo_multiplier = {2}
 	self.values.player.sec_camera_highlight_mask_off = {true}
 	self.values.player.special_enemy_highlight_mask_off = {true}

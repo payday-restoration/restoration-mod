@@ -21,7 +21,7 @@ function EquipmentsTweakData:init()
 	self.ecm_jammer.deploy_time = 1
 	self.specials.cable_tie.max_quantity = 9
 	
-	self.sentry_gun.repair_time_init = 30
+	self.sentry_gun.repair_time_init = 60
 	self.sentry_gun.repair_time_min = 10
 	self.sentry_gun.repair_blink_interval = 0.5
 	

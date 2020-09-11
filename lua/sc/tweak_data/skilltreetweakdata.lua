@@ -88,7 +88,6 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_pick_lock_easy_speed_multiplier_1",
 		"player_counter_strike_melee",
 		"sentry_gun_spread_multiplier",
-		"sentry_gun_rot_speed_multiplier",
 		"sentry_gun_extra_ammo_multiplier_1",
 		"sentry_gun_silent",
 		"player_tape_loop_duration_1",

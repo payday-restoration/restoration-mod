@@ -430,7 +430,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.ecm_feedback_retrigger_interval = 240
 
 	--Sentry Guns
-	self.sentry_gun_base_armor = 60
+	self.sentry_gun_base_armor = 16
 	self.sentry_gun_base_ammo = 200
 
 	--"Baked In" upgrades
@@ -759,9 +759,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Engineering
 				--Basic
-					self.values.sentry_gun.armor_multiplier = {1.5}
+					self.values.sentry_gun.armor_multiplier = {1.4}
 				--Ace
-					self.values.sentry_gun.armor_multiplier2 = {2}	
+					self.values.sentry_gun.armor_multiplier2 = {1.6}
 		
 			--Jack of All Trades
 				--Basic

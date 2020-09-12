@@ -14,7 +14,7 @@ function WeaponTweakData:_init_data_sentry_gun_npc()
 	self.sentry_gun.DAMAGE = 2.4
 	self.sentry_gun.SUPPRESSION = 1
 	self.sentry_gun.SPREAD = 2
-	self.sentry_gun.FIRE_RANGE = 5000
+	self.sentry_gun.FIRE_RANGE = 2800
 	self.sentry_gun.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 	self.sentry_gun.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 	self.sentry_gun.auto.fire_rate = 0.125

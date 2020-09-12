@@ -22,14 +22,6 @@ Hooks:PostHook(SentryGunBase, "update", "sentrybase_update_repairsentries", func
 			end
 		end
 	end
-	local health = self._unit:character_damage()._health
-	if not self._prev_health then
-		self._prev_health = health
-		log("HP: " .. tostring(health))
-	elseif health ~= self._prev_health then
-		log("HP: " .. tostring(health) .. "  |  Change: " .. tostring(self._prev_health - health))
-		self._prev_health = health
-	end
 end)
 
 function SentryGunBase:unregister()

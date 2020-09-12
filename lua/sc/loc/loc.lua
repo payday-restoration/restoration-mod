@@ -592,12 +592,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["hud_int_hold_take_pardons"] = "PRESS $BTN_INTERACT TO TAKE THE PARDON",
 		["debug_interact_gage_assignment_take"] = "PRESS $BTN_INTERACT TO PICK UP THE PACKAGE",
 		
-		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",
 		["far_repair_sentry_macro"] = "Sentry critically damaged, repairs needed.",
 		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT%",
-		["pickup_sentry_macro"] = "Hold $BTN_INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
-		["firemode_sentry_macro"] = "Press $BTN_INTERACT to change fire modes. $AMMO_LEFT ammo left.",
-		["hud_interact_pickup_sentry_gun"] = "$AMMO_LEFT", --$AMMO_LEFT macro is replaced with a string with the actually wanted string in it.
+		--Are concatenated to the related button prompts. Using Macros results in controller prompts at the wrong times.
+		["repair_sentry_macro"] = " to start sentry auto-repair sequence",
+		["pickup_sentry_macro"] = " to retrieve sentry.\n$AMMO_LEFT ammo left. ", --Gets % health remaining appended to the end.
+		["firemode_sentry_macro"] = " to change fire modes.\n$AMMO_LEFT ammo left.",
+		["hud_interact_pickup_sentry_gun"] = "$AMMO_LEFT", --$AMMO_LEFT macro is a dummy macro to be replaced with desired string, since changing interaction objects is slightly cursed.
 		["hud_interact_sentry_gun_switch_fire_mode"] = "$AMMO_LEFT",
 		["hud_repair_sentry"] = "$AMMO_LEFT",
 		
@@ -960,7 +961,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "Engineering",
-			["menu_eco_sentry_beta_desc_sc"] = "BASIC: ##$basic##\nYour sentry guns gain ##50%## increased health.\n\nACE: ##$pro##\nYour sentry guns gain an additional ##100%## health.",
+			["menu_eco_sentry_beta_desc_sc"] = "BASIC: ##$basic##\nYour sentry guns gain ##40%## more health.\n\nACE: ##$pro##\nYour sentry guns gain an additional ##60%## more health.",
 
 			--Jack of all Trades
 			["menu_jack_of_all_trades_beta_sc"] = "Jack of All Trades",

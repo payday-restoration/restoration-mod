@@ -98,73 +98,66 @@ function BaseInteractionExt:interact_start(player, data,...)
 end
 
 
---Sets up the AMMO_LEFT macro. Nearly identical to vanilla, except it adjustes the number to match Resmod sentries not having 100 bullets.
+--Sets up the AMMO_LEFT macro. Similar to vanilla but without the useless branching. It adjustes the AMMO_LEFT to match the actual number of bullets in the gun.
 local function sentry_gun_interaction_add_string_macros(macros, ammo_ratio)
 	macros.BTN_INTERACT = managers.localization:btn_macro("interact")
-
-	if ammo_ratio == 1 then
-		macros.AMMO_LEFT = tweak_data.upgrades.sentry_gun_base_ammo
-	elseif ammo_ratio > 0 then
-		macros.AMMO_LEFT = tostring(math.floor(tweak_data.upgrades.sentry_gun_base_ammo * ammo_ratio))
-	else
-		macros.AMMO_LEFT = 0
-	end
+	macros.AMMO_LEFT = tostring(math.max(math.floor(tweak_data.upgrades.sentry_gun_base_ammo * ammo_ratio), 0))
 end
 
---	"hud_interact_sentry_gun_switch_fire_mode" : "Press $BTN_INTERACT to switch fire mode. $AMMO_LEFT ammo left",
+--Fill in macros to generate string to display on screen, workaround to avoid more complicated stuff.
+--String concatenation is used for macros.BTN_INTERACT because otherwise it displays as controller prompts all the time.
+--If this gets to be a performance problem (IE: Notable frame drops while sentry text is on-screen), look into caching the strings.
 function SentryGunFireModeInteractionExt:_add_string_macros(macros)
--- used a localization workaround in order to hide the localization text, since there are issues with
---deleting the firemode unit object and recreating it as client
 	local sentryweapon = self._sentry_gun_weapon
 	local sentry = sentryweapon._unit:base()
-	if sentry._is_repairing then
+	if sentry._is_repairing then --Repair progress indicator.
 		local repair_ratio = 1 - ((sentry._repair_done_t - Application:time())/sentry._repair_time_total)
-		local new_macro	= string.gsub(managers.localization:text("fixing_sentry_macro"),"$BTN_INTERACT", macros.BTN_INTERACT)
+		local new_macro	= managers.localization:text("fixing_sentry_macro")
 		new_macro = string.gsub(new_macro,"$AMMO_LEFT",math.floor(tostring(repair_ratio * 100))) --todo use string.format
 		macros.AMMO_LEFT = new_macro
-	elseif sentry._unit:character_damage() and sentry._unit:character_damage():dead() then 
-	--don't show interaction text when dead. todo replace interaction text with "you must repair this sentry" or something?
+	elseif sentry._unit:character_damage() and sentry._unit:character_damage():dead() then --Repairs needed indicator.
 		macros.AMMO_LEFT = managers.localization:text("far_repair_sentry_macro")
 	else
 		local ammo_ratio = Network:is_server() and sentryweapon:ammo_ratio() or sentryweapon:get_virtual_ammo_ratio()
 		sentry_gun_interaction_add_string_macros(macros, ammo_ratio)
-		local new_macro	= string.gsub(managers.localization:text("firemode_sentry_macro"),"$BTN_INTERACT", macros.BTN_INTERACT)
+		local new_macro	= "Press " .. macros.BTN_INTERACT .. managers.localization:text("firemode_sentry_macro")
 		new_macro = string.gsub(new_macro,"$AMMO_LEFT",macros.AMMO_LEFT)
 		macros.AMMO_LEFT = new_macro
 	end
 end
 
---	"hud_interact_sentry_gun_switch_fire_mode" : "$AMMO_LEFT ammo left",
---	"hud_interact_pickup_sentry_gun" : "Hold $BTN_INTERACT to retrieve sentry gun. $AMMO_LEFT",
---"Hold $BTN_INTERACT to start sentry auto-repair sequence $AMMO_LEFT"	
 function SentryGunInteractionExt:_add_string_macros(macros)
-	local sentry = self._unit:base()--self._sentry_gun_weapon._unit:base()
-	if sentry._is_repairing then
+	local sentry = self._unit:base()
+	if sentry._is_repairing then --Repair progress indicator
 		macros.BTN_INTERACT = managers.localization:btn_macro("interact")
 		local repair_ratio = 1 - ((sentry._repair_done_t - Application:time())/sentry._repair_time_total)
-		local new_macro	= string.gsub(managers.localization:text("fixing_sentry_macro"),"$BTN_INTERACT", macros.BTN_INTERACT)
-		new_macro = string.gsub(new_macro,"$AMMO_LEFT",math.floor(tostring(repair_ratio * 100))) --todo use string.format
+		local new_macro	= managers.localization:text("fixing_sentry_macro")
+		new_macro = string.gsub(new_macro,"$AMMO_LEFT",math.floor(tostring(repair_ratio * 100))) --Repair progress indicator
 		macros.AMMO_LEFT = new_macro
-	elseif self._unit:character_damage() and self._unit:character_damage():dead() then
+	elseif self._unit:character_damage() and self._unit:character_damage():dead() then --Prompt to repair sentry.
 		macros.BTN_INTERACT = managers.localization:btn_macro("interact")
-		macros.AMMO_LEFT = string.gsub(managers.localization:text("repair_sentry_macro"),"$BTN_INTERACT",macros.BTN_INTERACT)
-	else
+		macros.AMMO_LEFT = "Hold " .. macros.BTN_INTERACT .. managers.localization:text("repair_sentry_macro")
+	else --Pickup sentry dialogue. Also displays ammo count + % of health remaining.
 		local ammo_ratio = Network:is_server() and self._unit:weapon():ammo_ratio() or self._unit:weapon():get_virtual_ammo_ratio()
 		sentry_gun_interaction_add_string_macros(macros, ammo_ratio)
-		local new_macro = string.gsub(managers.localization:text("pickup_sentry_macro"),"$BTN_INTERACT",macros.BTN_INTERACT)
-		new_macro = string.gsub(new_macro,"$AMMO_LEFT",macros.AMMO_LEFT)
+		local health_ratio = math.floor(100 * sentry._unit:character_damage():health_ratio()) --% of health remaining.
+		local new_macro = "Hold " .. macros.BTN_INTERACT .. managers.localization:text("pickup_sentry_macro") .. tostring(health_ratio) .. "%% Health Remaining."
+		new_macro = string.gsub(new_macro,"$AMMO_LEFT",macros.AMMO_LEFT) --# of bullets remaining.
+		--new_macro = string.gsub(new_macro,"$BTN_INTERACT",macros.BTN_INTERACT) --Using macros to add the health_ratio ate the entire string. Will investigate later.
 		macros.AMMO_LEFT = new_macro
 	end
 end
 
-function SentryGunInteractionExt:_on_death_event() --don't remove interaction on death
+--Don't remove interaction on death, since we want to be able to interact with sentries to repair them.
+function SentryGunInteractionExt:_on_death_event()
 end
 
+--If interacting with a dead (rip) sentry, put it in repair mode.
 function SentryGunInteractionExt:interact(player)
 	local rip = (self.tweak_data == "start_sentrygun_repairmode") or self._unit:character_damage():dead()
 
 	SentryGunInteractionExt.super.super.interact(self, player)
-	self._unit:base():on_interaction(rip) -- i could make a new function. meh. it works fine this way
+	self._unit:base():on_interaction(rip)
 
 	return true
 end

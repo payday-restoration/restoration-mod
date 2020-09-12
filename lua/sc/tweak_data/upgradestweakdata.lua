@@ -770,8 +770,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Tower Defense
 				--Basic
 					self.values.sentry_gun.ap_bullets = {true}
-					self.values.sentry_gun.fire_rate_reduction = {4}
-					self.values.sentry_gun.damage_multiplier = {1}	
+					--See SentrygunWeapon.lua under the units/weapons for AP bullet stats.
 				--Ace
 					self.values.sentry_gun.quantity = {1, 2}
 

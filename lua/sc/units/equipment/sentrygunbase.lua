@@ -1,9 +1,13 @@
-SentryGunBase.DEPLOYEMENT_COST = {
-	0.3,
-	0.3,
-	0.3
+SentryGunBase.DEPLOYEMENT_COST = { --Deploying a sentry eats up 35% of your *maximum* ammo.
+	0.35,
+	0.35,
+	0.35
 }
-SentryGunBase.MIN_DEPLOYEMENT_COST = 0.3
+SentryGunBase.MIN_DEPLOYEMENT_COST = 0.35
+SentryGunBase.AMMO_MUL = { --Gives sentries 200 bullets baseline.
+	2,
+	2
+}
 
 Hooks:PostHook(SentryGunBase, "post_init", "sentrybase_postinit_repairsentries", function(self)
 	self._is_repairing = false

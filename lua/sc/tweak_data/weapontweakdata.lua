@@ -11,13 +11,13 @@ local PICKUP = {
 function WeaponTweakData:_init_data_sentry_gun_npc()
 	self.sentry_gun.categories = {}
 	self.sentry_gun.name_id = "debug_sentry_gun"
-	self.sentry_gun.DAMAGE = 2.5
+	self.sentry_gun.DAMAGE = 1.8
 	self.sentry_gun.SUPPRESSION = 1
-	self.sentry_gun.SPREAD = 5
+	self.sentry_gun.SPREAD = 1
 	self.sentry_gun.FIRE_RANGE = 5000
 	self.sentry_gun.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 	self.sentry_gun.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-	self.sentry_gun.auto.fire_rate = 0.25
+	self.sentry_gun.auto.fire_rate = 0.125
 	self.sentry_gun.alert_size = 2500
 	self.sentry_gun.BAG_DMG_MUL = 0.25
 	self.sentry_gun.SHIELD_DMG_MUL = 0

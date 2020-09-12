@@ -11,7 +11,7 @@ local PICKUP = {
 function WeaponTweakData:_init_data_sentry_gun_npc()
 	self.sentry_gun.categories = {}
 	self.sentry_gun.name_id = "debug_sentry_gun"
-	self.sentry_gun.DAMAGE = 1.8
+	self.sentry_gun.DAMAGE = 24
 	self.sentry_gun.SUPPRESSION = 1
 	self.sentry_gun.SPREAD = 1
 	self.sentry_gun.FIRE_RANGE = 5000

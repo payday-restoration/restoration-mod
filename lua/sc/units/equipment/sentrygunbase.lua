@@ -1,9 +1,9 @@
-SentryGunBase.DEPLOYEMENT_COST = { --Deploying a sentry eats up 35% of your *maximum* ammo.
-	0.35,
-	0.35,
-	0.35
+SentryGunBase.DEPLOYEMENT_COST = { --Deploying a sentry eats up 40% of your *maximum* ammo.
+	0.4,
+	0.4,
+	0.4
 }
-SentryGunBase.MIN_DEPLOYEMENT_COST = 0.35
+SentryGunBase.MIN_DEPLOYEMENT_COST = 0.4
 SentryGunBase.AMMO_MUL = { --Gives sentries 200 bullets baseline.
 	2,
 	2

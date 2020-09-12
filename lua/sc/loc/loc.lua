@@ -834,7 +834,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Handling
 			["menu_scavenger_sc"] = "MG Handling",	
-			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs and LMGs and Assault Rifles by ##20%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
+			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs, LMGs and Assault Rifles by ##20%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	

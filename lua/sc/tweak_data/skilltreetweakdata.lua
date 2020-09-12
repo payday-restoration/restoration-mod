@@ -896,8 +896,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"sentry_gun_armor_multiplier2",
-						"sentry_gun_cost_reduction_1"
+						"sentry_gun_armor_multiplier2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -935,7 +934,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"sentry_gun_quantity_1"
+						"sentry_gun_quantity_1",
+						"sentry_gun_cost_reduction_1"
 					},
 					cost = self.costs.hightierpro
 				}

@@ -403,7 +403,9 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"smg_fire_rate_multiplier_1",
-						"smg_full_auto_free_ammo"
+						"assault_rifle_fire_rate_multiplier_1",
+						"smg_full_auto_free_ammo",
+						"assault_rifle_full_auto_free_ammo"
 					},
 					cost = self.costs.pro
 				}

@@ -595,11 +595,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.35}
-					self.values.assault_rifle.move_spread_multiplier = {0.35}
+					self.values.smg.move_spread_multiplier = {0.4}
+					self.values.assault_rifle.move_spread_multiplier = {0.4}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 					self.values.smg.full_auto_free_ammo = {5}
+					self.values.assault_rifle.fire_rate_multiplier = {1.15, 1.15}
+					self.values.assault_rifle.full_auto_free_ammo = {5}
 				
 			--Heavy Impact
 				--Basic
@@ -2587,6 +2589,33 @@ function UpgradesTweakData:_smg_definitions()
 			category = "smg",
 			upgrade = "full_auto_free_ammo",
 			value = 1
+		}
+	}
+	self.definitions.assault_rifle_full_auto_free_ammo = {
+		category = "feature",
+		name_id = "menu_assault_rifle_full_auto_free_ammo",
+		upgrade = {
+			category = "assault_rifle",
+			upgrade = "full_auto_free_ammo",
+			value = 1
+		}
+	}
+	self.definitions.assault_rifle_fire_rate_multiplier_1 = {
+		category = "feature",
+		name_id = "menu_assault_rifle_fire_rate_multiplier",
+		upgrade = {
+			category = "assault_rifle",
+			upgrade = "fire_rate_multiplier",
+			value = 1
+		}
+	}
+	self.definitions.assault_rifle_fire_rate_multiplier_2 = {
+		category = "feature",
+		name_id = "menu_assault_rifle_fire_rate_multiplier",
+		upgrade = {
+			category = "assault_rifle",
+			upgrade = "fire_rate_multiplier",
+			value = 2
 		}
 	}
 	self.definitions.smg_damage_multiplier = {

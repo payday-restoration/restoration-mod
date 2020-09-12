@@ -834,11 +834,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Handling
 			["menu_scavenger_sc"] = "MG Handling",	
-			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs, LMGs and Assault Rifles by ##20%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
+			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs and LMGs and Assault Rifles by ##20%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##65%## for SMGs, LMGs, and Assault Rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##\n\nEvery ##5th## bullet fired by an SMG or LMG without releasing the trigger consumes no ammo.",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##60%## for SMGs, LMGs, and Assault Rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs, LMGs, and Assault Rifles by ##15%.##\n\nEvery ##5th## bullet fired by an SMG, LMG, or Assault Rifle without releasing the trigger consumes no ammo.",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",

@@ -87,8 +87,6 @@ function SkillTreeTweakData:init(tweak_data)
 		"player_small_loot_multiplier_1",
 		"player_pick_lock_easy_speed_multiplier_1",
 		"player_counter_strike_melee",
-		"sentry_gun_spread_multiplier",
-		"sentry_gun_extra_ammo_multiplier_1",
 		"sentry_gun_silent",
 		"player_tape_loop_duration_1",
 		"player_civ_calming_alerts"
@@ -898,7 +896,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"sentry_gun_shield"
+						"sentry_gun_armor_multiplier2",
+						"sentry_gun_cost_reduction_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -930,9 +929,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {9, 5},
 				[1] = {
 					upgrades = {
-						"sentry_gun_ap_bullets",
-						"sentry_gun_damage_multiplier",
-						"sentry_gun_fire_rate_reduction_1"
+						"sentry_gun_ap_bullets"
 					},
 					cost = self.costs.hightier
 				},

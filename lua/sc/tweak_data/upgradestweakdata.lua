@@ -429,14 +429,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.ecm_feedback_interval = 1.5
 	self.ecm_feedback_retrigger_interval = 240
 
+	--Sentry Guns
+	self.sentry_gun_base_armor = 60
+	self.sentry_gun_base_ammo = 200
+
 	--"Baked In" upgrades
 	self.values.cable_tie.interact_speed_multiplier = {0.25}
 	self.values.player.stamina_multiplier = {2}
 	self.values.team.stamina.multiplier = {1.5}
 	self.values.player.civ_calming_alerts = {true}
 	self.values.carry.throw_distance_multiplier = {1.5}
-	self.values.sentry_gun.spread_multiplier = {2}
-	self.values.sentry_gun.extra_ammo_multiplier = {2}
 	self.values.player.sec_camera_highlight_mask_off = {true}
 	self.values.player.special_enemy_highlight_mask_off = {true}
 	self.values.player.mask_off_pickup = {true}
@@ -757,9 +759,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Engineering
 				--Basic
-					self.values.sentry_gun.armor_multiplier = {2.5}
+					self.values.sentry_gun.armor_multiplier = {1.5}
 				--Ace
-					self.values.sentry_gun.shield = {true}	
+					self.values.sentry_gun.armor_multiplier2 = {2}	
 		
 			--Jack of All Trades
 				--Basic

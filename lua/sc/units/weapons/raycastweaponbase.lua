@@ -9,7 +9,7 @@ function RaycastWeaponBase:init(...)
 		from = Vector3()
 	}
 	
-	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+	--self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 
 	if Global.game_settings and Global.game_settings.one_down then
 		self._bullet_slotmask = self._bullet_slotmask + 3
@@ -21,7 +21,7 @@ end
 
 function RaycastWeaponBase:setup(...)
 	setup_original(self, ...)
-	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+	--self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 
 	--Use stability stat to get the moving accuracy penalty.
 	if self._current_stats_indices and self._current_stats_indices.recoil then

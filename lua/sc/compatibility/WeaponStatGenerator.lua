@@ -213,7 +213,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 	end
 
 	--Additional stat modifiers
-	if not weap.auto then --Give buffs to guns that lack automatic fire.
+	if not weap.FIRE_MODE == "auto" then --Give buffs to guns that lack automatic fire.
 		stats.spread = stats.spread + self:generate_stat_from_table(
 			{3,2,0},
 			{24,30,45},
@@ -330,7 +330,7 @@ function WeaponTweakData:generate_smg(weap)
 	end
 
 	--Additional stat modifiers
-	if not weap.auto then --Give buffs to guns that lack automatic fire.
+	if not weap.FIRE_MODE == "auto" then --Give buffs to guns that lack automatic fire.
 		stats.spread = stats.spread + self:generate_stat_from_table(
 			{3,2},
 			{24,30},
@@ -455,7 +455,7 @@ function WeaponTweakData:generate_pistol(weap)
 	end
 	local rpm = 60 / weap.fire_mode_data.fire_rate
 	local damage = weap.stats.damage * (weap.stats_modifiers and weap.stats_modifiers.damage or 1)
-	if weap.auto then --Auto Pistols.
+	if weap.FIRE_MODE == "auto" then --Auto Pistols.
 		if damage <= 40 then
 			stats.damage = 18
 			stats.AMMO_MAX = 200
@@ -809,7 +809,7 @@ function WeaponTweakData:generate_shotgun(weap)
 		end
 	end
 
-	if weap.auto then
+	if weap.FIRE_MODE == "auto" then
 		stats.spread = stats.spread - 2
 		stats.concealment = stats.concealment - 1
 	end

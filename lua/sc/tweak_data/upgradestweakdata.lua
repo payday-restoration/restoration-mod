@@ -431,7 +431,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	--Sentry Guns
 	self.sentry_gun_base_armor = 16
-	self.sentry_gun_base_ammo = 200
+	self.sentry_gun_base_ammo = 140
 
 	--"Baked In" upgrades
 	self.values.cable_tie.interact_speed_multiplier = {0.25}

@@ -1,2 +1,2 @@
-SentryGunWeapon._AP_ROUNDS_FIRE_RATE = 4 --Overkill can't math. 1/3.5 != 0.25. Multiplies the delay between shots while in AP mode.
+SentryGunWeapon._AP_ROUNDS_FIRE_RATE = 3 --Multiplies the delay between shots while in AP mode.
 SentryGunWeapon._AP_ROUNDS_DAMAGE_MULTIPLIER = 1 --AP Rounds deal no bonus damage.

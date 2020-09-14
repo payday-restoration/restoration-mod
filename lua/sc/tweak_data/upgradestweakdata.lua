@@ -654,8 +654,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					{1.5, 10} --Ace
 				}
 				--Ace
-					self.values.shotgun.swap_speed_multiplier = {1.8}
-					self.values.saw.swap_speed_multiplier = {1.8}
+					self.values.shotgun.swap_speed_multiplier = {1.5}
+					self.values.saw.swap_speed_multiplier = {1.5}
 			
 		--Juggernaut--
 			--Stun Resistance
@@ -695,7 +695,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						--Unlock ICTV
 					--Ace
 						self.values.player.shield_knock = {true}
-						self.values.player.armor_regen_timer_multiplier = {0.95}
+						self.values.player.armor_regen_timer_multiplier = {0.9}
 			
 		--Support--
 			--Scavenger
@@ -1447,7 +1447,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.dodge_stacking_heal = {true}
-	self.values.player.dodge_on_revive = {true}	
+	self.values.player.dodge_on_revive = {true}
+	self.values.weapon.passive_swap_speed_multiplier = {
+		1.3,
+		2 --Unused
+	}
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {

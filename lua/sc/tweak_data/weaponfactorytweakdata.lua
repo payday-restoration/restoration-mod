@@ -8515,7 +8515,7 @@ function WeaponFactoryTweakData:_init_m32()
 		unit = "units/pd2_dlc_bbq/weapons/wpn_fps_gre_m32_pts/wpn_fps_gre_m32_upper_reciever",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {reload_speed_mult = 1.2},
+		custom_stats = {reload_speed_mult = 1.15},
 		texture_bundle_folder = "bbq",
 		dlc = "bbq"
 	}

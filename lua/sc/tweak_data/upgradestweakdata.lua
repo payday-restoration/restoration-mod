@@ -430,7 +430,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.ecm_feedback_retrigger_interval = 240
 
 	--Sentry Guns
-	self.sentry_gun_base_armor = 16
+	self.sentry_gun_base_armor = 15
 	self.sentry_gun_base_ammo = 140
 
 	--"Baked In" upgrades

@@ -30381,6 +30381,53 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			value = 7
 		}
 
+		--(Signature SMG) Ergo Grip
+		self.parts.wpn_fps_smg_shepheard_g_ergo.supported = true
+		self.parts.wpn_fps_smg_shepheard_g_ergo.stats = {
+			value = 4,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Gruber Kurz) Expert Barrel
+		self.parts.wpn_fps_pis_ppk_b_standard_expert.supported = true
+		self.parts.wpn_fps_pis_ppk_b_standard_expert.stats = {
+			value = 4,
+			recoil = 1,
+			spread = -1
+		}
+
+		--(Bronco .44) Arbitrator Grip
+		self.parts.wpn_fps_pis_rage_g_fancy.supported = true
+		self.parts.wpn_fps_pis_rage_g_fancy.stats = {
+			value = 4,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Castigo .44) Feroz Barrel
+		self.parts.wpn_fps_pis_chinchilla_b_rage.supported = true
+		self.parts.wpn_fps_pis_chinchilla_b_rage.stats = {
+			value = 4,
+			recoil = 1,
+			spread = -1
+		}
+
+		--(Piglet) Overcompensating Barrel
+		self.parts.wpn_fps_gre_m32_barrel_extreme.supported = true
+		self.parts.wpn_fps_gre_m32_barrel_extreme.stats = {
+			value = 6,
+			spread = 1,
+			concealment = -3
+		}
+
+		self.parts.wpn_fps_ass_asval_o_oldrail.supported = true
+		self.parts.wpn_fps_ass_asval_o_oldrail.stats = {
+			value = 2
+		}
+
 		self.wpn_fps_shot_minibeck.override = {
 			wpn_fps_upg_a_slug = {
 				supported = true,
@@ -30459,6 +30506,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 				}
 			}
 		}
+
+
 	end
 --Resmod Custom Weapon stuff
 

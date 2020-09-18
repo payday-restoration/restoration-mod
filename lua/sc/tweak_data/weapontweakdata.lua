@@ -9998,7 +9998,7 @@ if self.qsho then
 	self.qsho.supported = true
 	self.qsho.stats = {
 		damage = 90,
-		spread = 3,
+		spread = 4,
 		recoil = 4,
 		zoom = 1,
 		concealment = 25,

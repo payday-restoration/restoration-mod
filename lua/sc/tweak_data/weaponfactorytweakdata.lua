@@ -30570,6 +30570,11 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
 	end
 
+	--Quake Weapon Pack shotgun
+	if self.parts.wpn_fps_sho_qsho_body then
+		self.parts.wpn_fps_sho_qsho_body.supported = true
+		self.parts.wpn_fps_sho_qsho_body.custom_stats = {reload_speed_mult = 1.2}
+	end
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

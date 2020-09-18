@@ -9965,6 +9965,59 @@ if self.max9 then
 	self.max9.swap_speed_multiplier = 1.1
 end
 
+--Quake Weapon Pack Rocket Launcher
+if self.qrl then
+	self.qrl.AMMO_MAX = 20
+	self.qsho.AMMO_PICKUP = self:_pickup_chance()
+	self.qrl.CLIP_AMMO_MAX = 4
+	self.qrl.stats = {
+		damage = 240,
+		spread = 21,
+		recoil = 8,
+		zoom = 1,
+		concealment = 10,
+		alert_size = 3,
+		suppression = 3,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 7
+	}
+	self.qrl.timers.reload_not_empty = 3
+	self.qrl.timers.reload_empty = 3
+	self.qrl.swap_speed_multiplier = 2
+	self.qrl.stats_modifiers = {damage = 2}
+end
+
+--Quake Weapon Pack Shotgun
+if self.qsho then
+	self.qsho.has_description = true
+	self.qsho.desc_id = "bm_quake_shotgun_sc_desc"
+	self.qsho.AMMO_MAX = 20
+	self.qsho.AMMO_PICKUP = self:_pickup_chance()
+	self.qsho.supported = true
+	self.qsho.stats = {
+		damage = 90,
+		spread = 5,
+		recoil = 4,
+		zoom = 1,
+		concealment = 25,
+		alert_size = 4,
+		suppression = 4,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 7
+	}
+	self.qsho.kick = self.huntsman.kick
+	self.qsho.panic_suppression_chance = 0.05
+	self.qsho.timers.reload_not_empty = 1.2
+	self.qsho.timers.reload_empty = 1.2
+	self.qsho.stats_modifiers = nil
+	self.qsho.rays = 16
+	self.qsho.swap_speed_multiplier = 2
+end
+
 --Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.
 for i, weap in pairs(self) do
 	if weap.categories then

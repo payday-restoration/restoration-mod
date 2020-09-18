@@ -30506,9 +30506,70 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 				}
 			}
 		}
-
-
 	end
+
+	--Silent Killer Pack Welrod
+	if self.parts.wpn_fps_pis_welrod_a_ap then
+		self.parts.wpn_fps_pis_welrod_a_ap.pcs = nil --Disable AP bullets.
+
+		--Short barrel
+		self.parts.wpn_fps_pis_welrod_b_short.supported = true
+		self.parts.wpn_fps_pis_welrod_b_short.stats = {
+			value = 3,
+			alert_size = -1,
+			suppression = -1,
+			spread = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_pis_welrod_b_short.has_description = nil
+
+		--Trigger Guard
+		self.parts.wpn_fps_pis_welrod_trigger_guard.supported = true
+		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
+			value = 1
+		}
+
+		--Illuminated Iron Sights
+		self.parts.wpn_fps_pis_welrod_glow.supported = true
+	end
+
+	--Silent Killer Pack PB
+	if self.parts.wpn_fps_pis_pb_ns_std then
+		self.parts.wpn_fps_pis_pb_ns_std.supported = true
+		self.parts.wpn_fps_pis_pb_ns_std.stats = {
+			value = 4,
+			alert_size = 1,
+			suppression = 1,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+	end
+
+	--Silent Killer Pack Max9
+	if self.parts.wpn_fps_pis_max9_b_short then
+		self.parts.wpn_fps_pis_max9_b_short.supported = true
+		self.parts.wpn_fps_pis_max9_b_short.stats = {
+			value = 5,
+			alert_size = -1,
+			suppression = -1,
+			recoil = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_pis_max9_b_short.has_description = nil
+
+		self.parts.wpn_fps_pis_max9_b_nosup.supported = true
+		self.parts.wpn_fps_pis_max9_b_nosup.stats = {
+			value = 5,
+			alert_size = -12,
+			suppression = -12,
+			recoil = -1,
+			spread = -1,
+			concealment = 2
+		}
+		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

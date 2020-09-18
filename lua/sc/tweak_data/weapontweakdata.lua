@@ -9866,23 +9866,121 @@ if self.minibeck then --Reinbeck Auto
 	self.minibeck.swap_speed_multiplier = 0.8
 end
 
+--Silent Killer Pack
+if self.welrod then --Welrod
+	self.welrod.AMMO_MAX = 30
+	self.welrod.AMMO_PICKUP = self:_pickup_chance()
+	self.welrod.supported = true
+	self.welrod.stats = {
+		damage = 60,
+		spread = 20,
+		recoil = 21,
+		concealment = 26,
+		suppression = 18,
+		alert_size = 18,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 5
+	}
+	self.welrod.kick = self.new_m4.kick
+	self.welrod.panic_suppression_chance = 0.05
+	self.welrod.stats_modifiers = nil
+	self.welrod.swap_speed_multiplier = 1.1
+end
 
-	--Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.
-	for i, weap in pairs(self) do
-		if weap.categories then
-			if not weap.supported and weap.stats then
-				self:generate_custom_weapon_stats(weap)	
-			end
+--Silent Killer Pack PB
+if self.pb then
+	self.pb.AMMO_MAX = 75
+	self.pb.ammo_pickup = self:_pickup_chance()
+	self.pb.supported = true
+	self.pb.fire_mode_data.fire_rate = 0.08571428571
+	self.pb.single.fire_rate = 0.08571428571
+	self.pb.stats = {
+		damage = 24,
+		spread = 20,
+		recoil = 23,
+		concealment = 30,
+		alert_size = 20,
+		suppression = 20,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 4
+	}
+	self.pb.kick = self.new_m4.kick
+	self.pb.panic_suppression_chance = 0.05
+	self.pb.stats_modifiers = nil
+	self.pb.swap_speed_multiplier = 1.1
+end
 
-			--Calculate shotgun falloff ranges.
-			for _, value in pairs(weap.categories) do
-				if value == "shotgun" and weap.stats then
-					weap.damage_near = 200 + 75 * (weap.stats.spread - 1)
-					weap.damage_far = weap.damage_near * 2
-				end
+--Silent Killer Pack High Standard HDM
+if self.hshdm then
+	self.hshdm.AMMO_MAX = 90
+	self.hshdm.ammo_pickup = self:_pickup_chance()
+	self.hshdm.supported = true
+	self.hshdm.fire_mode_data.fire_rate = 0.08571428571
+	self.hshdm.single.fire_rate = 0.08571428571
+	self.hshdm.stats = {
+		damage = 20,
+		spread = 19,
+		recoil = 24,
+		concealment = 31,
+		alert_size = 21,
+		suppression = 21,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 4
+	}
+	self.hshdm.kick = self.new_m4.kick
+	self.hshdm.panic_suppression_chance = 0.05
+	self.hshdm.stats_modifiers = nil
+	self.hshdm.swap_speed_multiplier = 1.1
+	self.x_hshdm.selection_index = 4 --No akimbos
+end
+
+--Silent Killer Pack Maxim 9
+if self.max9 then
+	self.max9.AMMO_MAX = 75
+	self.max9.ammo_pickup = self:_pickup_chance()
+	self.max9.supported = true
+	self.max9.fire_mode_data.fire_rate = 0.08571428571
+	self.max9.single.fire_rate = 0.08571428571
+	self.max9.stats = {
+		damage = 24,
+		spread = 18,
+		recoil = 23,
+		concealment = 27,
+		alert_size = 20,
+		suppression = 20,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 5
+	}
+	self.max9.kick = self.new_m4.kick
+	self.max9.panic_suppression_chance = 0.05
+	self.max9.stats_modifiers = nil
+	self.max9.swap_speed_multiplier = 1.1
+end
+
+--Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.
+for i, weap in pairs(self) do
+	if weap.categories then
+		if not weap.supported and weap.stats then
+			self:generate_custom_weapon_stats(weap)	
+		end
+
+		--Calculate shotgun falloff ranges.
+		for _, value in pairs(weap.categories) do
+			if value == "shotgun" and weap.stats then
+				weap.damage_near = 200 + 75 * (weap.stats.spread - 1)
+				weap.damage_far = weap.damage_near * 2
 			end
 		end
 	end
+end
 	
 end)
 

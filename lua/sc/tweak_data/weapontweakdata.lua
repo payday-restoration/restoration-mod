@@ -9972,8 +9972,8 @@ if self.qrl then
 	self.qrl.CLIP_AMMO_MAX = 4
 	self.qrl.stats = {
 		damage = 240,
-		spread = 21,
-		recoil = 8,
+		spread = 16,
+		recoil = 4,
 		zoom = 1,
 		concealment = 10,
 		alert_size = 3,
@@ -9983,9 +9983,9 @@ if self.qrl then
 		reload = 20,
 		value = 7
 	}
-	self.qrl.timers.reload_not_empty = 3
-	self.qrl.timers.reload_empty = 3
-	self.qrl.swap_speed_multiplier = 2
+	self.qrl.timers.reload_not_empty = 4
+	self.qrl.timers.reload_empty = 4
+	self.qrl.swap_speed_multiplier = 1.5
 	self.qrl.stats_modifiers = {damage = 2}
 end
 

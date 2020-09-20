@@ -185,7 +185,6 @@
 	<texture path="units/pd2_mod_sharks/characters/shared_textures/swat_helmets_atlas_df" force="false"/>	
 	<texture path="units/pd2_mod_sharks/characters/shared_textures/swat_heavy_df" force="false"/>	
 	
-	
 	<!--OLD MURKIES AND OMNIA BELOW-->	
 	<!--Murky Bulldozer M249-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" load="true"/>
@@ -329,8 +328,8 @@
 	
 	<!--OMNIA Crew Textures-->
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/caps_crew_df" />	
-	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_crew_df" />	
-	
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/ene_omnia_crew_df" />
+	<texture path="units/pd2_mod_omnia/characters/shared_textures/heads_omnia_crew_df" />
 	<!--OMNIA City SWAT-->
 	<object path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false"/>
 	<cooked_physics path="units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city" force="false"/>

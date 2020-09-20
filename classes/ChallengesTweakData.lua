@@ -7,8 +7,53 @@ local large_xp = 2400
 local huge_xp = 3600
 local gigantic_xp = 5000
 
+local simple_cc = 3
+
 local ten_steps = { "size08", "size10", "size12", "size12", "size14", "size16", "size18", "size20", "size20", "size20" }
 local five_steps = { "size12", "size14", "size16", "size18", "size20" }
+
+local normal_and_above = {
+    "normal",
+    "hard",
+    "overkill",
+    "overkill_145",
+    "easy_wish",
+    "overkill_290",
+    "sm_wish"
+}
+local hard_and_above = {
+    "hard",
+    "overkill",
+    "overkill_145",
+    "easy_wish",
+    "overkill_290",
+    "sm_wish"
+}
+local veryhard_and_above = {
+    "overkill",
+    "overkill_145",
+    "easy_wish",
+    "overkill_290",
+    "sm_wish"
+}
+local overkill_and_above = {
+    "overkill_145",
+    "easy_wish",
+    "overkill_290",
+    "sm_wish"
+}
+local easywish_and_above = {
+    "easy_wish",
+    "overkill_290",
+    "sm_wish"
+}
+local deathwish_and_above = {
+    "overkill_290",
+    "sm_wish"
+}
+local sm_wish_and_above = {
+    "sm_wish"
+}
 
 function ChallengesTweakData:init()
 	--self.categories	= {}
@@ -59,13 +104,17 @@ function ChallengesTweakData:init()
 		xp = mid_xp,
     }
     
-	--[[
     self.session = {}
-    self.session.branch_bank_sm_wish = {
+    self.session.testing1 = {
 		title_id = "ch_branch_bank_sm_wish_hl",
 		description_id = "ch_branch_bank_sm_wish",
 		xp = gigantic_xp,
-		level_id = "branchbank_cash",
+		cc = simple_cc,
+		level_id = {
+            "four_stores",
+            "rat",
+            "ukrainian_job_res"
+        },
 		difficulty = "sm_wish",
 		session_stopped = {
 			callback = "overkill_success"
@@ -85,6 +134,26 @@ function ChallengesTweakData:init()
 			callback = "never_bleedout"
 		}
     }
+    self.session.watchdogs_d1_heavy_wpn1 = {
+		title_id = "ch_watchdogs_d1_heavy_wpn1_hl",
+		description_id = "ch_watchdogs_d1_heavy_wpn1",
+		xp = gigantic_xp,
+		level_id = "watchdogs_1",
+        difficulty = overkill_and_above,
+        primaries = {
+            "m134",
+            "m95"
+        },
+        secondaries = {
+            "rpg7"
+        },
+        armors = {
+            "level_7"
+        },
+		session_stopped = {
+			callback = "overkill_success"
+		}
+    }
     self.achievment = {}
     self.achievment.duck_hunting = {
 		title_id = "ch_duck_hunting_hl",
@@ -94,8 +163,6 @@ function ChallengesTweakData:init()
 		xp = small_xp,
 		awards_achievment = "duck_hunting"
 	}
-	
-	]]--
 		
 	self.weapon = {}
 	

@@ -1,0 +1,8 @@
+<dynamic_object>
+    <diesel materials="units/mods/masks/msk_hoxton_halloween/msk_hoxton_halloween" orientation_object="rp_hoxton_halloween"/>
+    <graphics>
+        <object enabled="true" name="g_back" />
+		<object enabled="true" name="g_eyes" />
+		<object enabled="true" name="g_halloween_hoxton" />
+    </graphics>
+</dynamic_object>

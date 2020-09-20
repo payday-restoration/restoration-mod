@@ -11,13 +11,13 @@ local PICKUP = {
 function WeaponTweakData:_init_data_sentry_gun_npc()
 	self.sentry_gun.categories = {}
 	self.sentry_gun.name_id = "debug_sentry_gun"
-	self.sentry_gun.DAMAGE = 2.5
+	self.sentry_gun.DAMAGE = 2.8
 	self.sentry_gun.SUPPRESSION = 1
-	self.sentry_gun.SPREAD = 5
-	self.sentry_gun.FIRE_RANGE = 5000
+	self.sentry_gun.SPREAD = 2
+	self.sentry_gun.FIRE_RANGE = 2800
 	self.sentry_gun.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 	self.sentry_gun.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-	self.sentry_gun.auto.fire_rate = 0.15
+	self.sentry_gun.auto.fire_rate = 0.175
 	self.sentry_gun.alert_size = 2500
 	self.sentry_gun.BAG_DMG_MUL = 0.25
 	self.sentry_gun.SHIELD_DMG_MUL = 0
@@ -846,7 +846,7 @@ function WeaponTweakData:_init_data_r870_npc()
 	self.r870_npc.categories = clone(self.r870.categories)
 	self.r870_npc.sounds.prefix = "remington_npc"
 	self.r870_npc.use_data.selection_index = 2
-	self.r870_npc.DAMAGE = 9
+	self.r870_npc.DAMAGE = 6
 	self.r870_npc.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.r870_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 	self.r870_npc.CLIP_AMMO_MAX = 8
@@ -883,7 +883,7 @@ function WeaponTweakData:_init_data_mossberg_npc()
 	self.mossberg_npc.categories = {"shotgun"}
 	self.mossberg_npc.sounds.prefix = "remington_npc"
 	self.mossberg_npc.use_data.selection_index = 2
-	self.mossberg_npc.DAMAGE = 12
+	self.mossberg_npc.DAMAGE = 9
 	self.mossberg_npc.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.mossberg_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug_semi"
 	self.mossberg_npc.CLIP_AMMO_MAX = 2
@@ -1029,7 +1029,7 @@ function WeaponTweakData:_init_data_saiga_npc()
 	self.saiga_npc.categories = clone(self.saiga.categories)
 	self.saiga_npc.sounds.prefix = "saiga_npc"
 	self.saiga_npc.use_data.selection_index = 2
-	self.saiga_npc.DAMAGE = 4.5
+	self.saiga_npc.DAMAGE = 3
 	self.saiga_npc.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.saiga_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_slug"
 	self.saiga_npc.auto.fire_rate = 0.1
@@ -1040,7 +1040,7 @@ function WeaponTweakData:_init_data_saiga_npc()
 	self.saiga_npc.suppression = 3.2
 	self.saiga_npc.is_shotgun = true
 	self.saiga_npc.rays = 6
-	self.saiga_npc.spread = 6
+	self.saiga_npc.spread = 3
 	self.saiga_npc.FIRE_MODE = "auto"
 end
 
@@ -4286,7 +4286,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.huntsman.stats_modifiers = nil
 	self.huntsman.timers.reload_not_empty = 2.3
-	self.huntsman.timers.reload_empty = 2.3	
+	self.huntsman.timers.reload_empty = 2.3
+	self.huntsman.reload_speed_multiplier = 1.1
 	self.huntsman.panic_suppression_chance = 0.05
 	self.b92fs.AMMO_MAX = 90
 	self.b92fs.AMMO_PICKUP = self:_pickup_chance()
@@ -4493,6 +4494,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.judge.kick.standing = self.huntsman.kick.standing
 	self.judge.kick.crouching = self.huntsman.kick.crouching
 	self.judge.kick.steelsight = self.huntsman.kick.steelsight
+	self.judge.reload_speed_multiplier = 0.85
 	self.m45.CLIP_AMMO_MAX = 30
 	self.m45.AMMO_MAX = 75
 	self.m45.AMMO_PICKUP = self:_pickup_chance()
@@ -5347,6 +5349,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mg42.timers.reload_empty = 6.25	
 	self.mg42.panic_suppression_chance = 0.05
 	self.mg42.swap_speed_multiplier = 0.9
+	--Broomstick--
 	self.c96.sounds.fire = "c96_fire"
 	self.c96.sounds.fire_single = "c96_fire"
 	self.c96.sounds.fire_auto = "g18c_fire"
@@ -5355,6 +5358,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.sounds.enter_steelsight = "pistol_steel_sight_enter"
 	self.c96.sounds.leave_steelsight = "pistol_steel_sight_exit"
 	self.c96.sounds.magazine_empty = "wp_pistol_slide_lock"		
+	self.c96.has_description = true
+	self.c96.desc_id = "bm_c96_sc_desc"
 	self.c96.AMMO_MAX = 60
 	self.c96.AMMO_PICKUP = self:_pickup_chance()
 	self.c96.FIRE_MODE = "auto"
@@ -5382,6 +5387,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.stats_modifiers = nil
 	self.c96.timers.reload_not_empty = 3.7
 	self.c96.panic_suppression_chance = 0.05
+	
 	self.sterling.CLIP_AMMO_MAX = 20
 	self.sterling.AMMO_MAX = 75
 	self.sterling.AMMO_PICKUP = self:_pickup_chance()
@@ -5409,8 +5415,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.sterling.stats_modifiers = nil
 	self.sterling.panic_suppression_chance = 0.05
+	--Mosin--
 	self.mosin.has_description = true
-	self.mosin.desc_id = "bm_ap_weapon_sc_desc"
+	self.mosin.desc_id = "bm_mosin_sc_desc"
 	self.mosin.CLIP_AMMO_MAX = 5
 	self.mosin.AMMO_MAX = 30
 	self.mosin.AMMO_PICKUP = self:_pickup_chance()
@@ -5435,6 +5442,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.mosin.stats_modifiers = nil
 	self.mosin.panic_suppression_chance = 0.05
+	
 	self.m1928.use_data.selection_index = 1
 	self.m1928.fire_mode_data.fire_rate = 0.075
 	self.m1928.CAN_TOGGLE_FIREMODE = true
@@ -5622,6 +5630,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.panic_suppression_chance = 0.05
 	self.rpg7.stats_modifiers = {damage = 3}
 	self.rpg7.swap_speed_multiplier = 1.25
+	self.rpg7.reload_speed_multiplier = 1.1
 	self.rpg7.turret_instakill = true
 	self.cobray.timers.reload_not_empty = 2
 	self.cobray.timers.reload_empty = 4.25
@@ -5687,6 +5696,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b682.stats_modifiers = nil
 	self.b682.panic_suppression_chance = 0.05
 	self.b682.stats_modifiers = {damage = 1}
+	self.b682.reload_speed_multiplier = 1.1
 	self.x_g22c.kick.standing = self.glock_17.kick.standing
 	self.x_g22c.kick.crouching = self.glock_17.kick.crouching
 	self.x_g22c.kick.steelsight = self.glock_17.kick.steelsight
@@ -5824,7 +5834,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m32.kick.standing = self.huntsman.kick.standing
 	self.m32.kick.crouching = self.huntsman.kick.crouching
 	self.m32.kick.steelsight = self.huntsman.kick.steelsight
-	self.m32.fire_mode_data.fire_rate = 1.0
+	self.m32.fire_mode_data.fire_rate = 0.75
+	self.m32.single.fire_rate = 0.75
 	self.m32.AMMO_MAX = 9
 	self.m32.AMMO_PICKUP = self:_pickup_chance()
 	self.m32.supported = true
@@ -5846,6 +5857,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m32.panic_suppression_chance = 0.05
 	self.m32.timers.shotgun_reload_first_shell_offset = 1
 	self.m32.swap_speed_multiplier = 1.2
+	self.m32.reload_speed_multiplier = 1.15
 	self.aa12.rays = 9
 	self.aa12.AMMO_MAX = 80
 	self.aa12.CLIP_AMMO_MAX = 10
@@ -6401,6 +6413,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.model70.stats_modifiers = nil
 	self.model70.timers.reload_empty = 4.3	
 	self.model70.panic_suppression_chance = 0.05
+--GSPS--
 	self.m37.rays = 9
 	self.m37.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.m37.CLIP_AMMO_MAX = 6
@@ -6428,6 +6441,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.m37.stats_modifiers = nil
+--China Puff--
 	self.china.upgrade_blocks = {
 		weapon = {
 			"clip_ammo_increase"
@@ -6679,6 +6693,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.boot.stats_modifiers = nil
 	self.boot.panic_suppression_chance = 0.05
 	self.boot.stats_modifiers = {damage = 1}
+	self.boot.reload_speed_multiplier = 0.9
 	self.packrat.AMMO_MAX = 90
 	self.packrat.AMMO_PICKUP = self:_pickup_chance()
 	self.packrat.fire_mode_data.fire_rate = 0.08571428571
@@ -6807,6 +6822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.rota.stats_modifiers = nil
+	--Arbiter, duh--
 	self.arbiter.upgrade_blocks = {
 		weapon = {
 			"clip_ammo_increase"
@@ -6837,6 +6853,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arbiter.kick.standing = self.huntsman.kick.standing
 	self.arbiter.kick.crouching = self.huntsman.kick.crouching
 	self.arbiter.kick.steelsight = self.huntsman.kick.steelsight
+	self.arbiter.reload_speed_multiplier = 0.85
 	self.contraband.desc_id = "bm_m203_weapon_sc_desc"
 	self.contraband.has_description = true
 	self.contraband.AMMO_MAX = 60
@@ -7158,14 +7175,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.breech.stats_modifiers = nil
 	self.breech.panic_suppression_chance = 0.05
+	--Galant--
 	self.ching.categories = {"assault_rifle"}
 	self.ching.recategorize = "rifle"
 	self.ching.FIRE_MODE = "single"
 	self.ching.fire_mode_data = {fire_rate = 0.1}
 	self.ching.CAN_TOGGLE_FIREMODE = false
 	self.ching.single = {fire_rate = 0.1}	
-	self.ching.has_description = false
-	self.ching.desc_id = "bm_ap_weapon_sc_desc"
+	self.ching.has_description = true
+	self.ching.desc_id = "bm_galant_sc_desc"
 	self.ching.CLIP_AMMO_MAX = 8
 	self.ching.AMMO_MAX = 60
 	self.ching.AMMO_PICKUP = self:_pickup_chance()
@@ -7194,6 +7212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ching.can_shoot_through_shield = false
 	self.ching.can_shoot_through_wall = false	
 	self.ching.panic_suppression_chance = 0.05
+	
 	self.erma.use_data.selection_index = 2
 	self.erma.CLIP_AMMO_MAX = 32
 	self.erma.BURST_FIRE = false
@@ -8518,6 +8537,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.coach.stats_modifiers = nil
 	self.coach.panic_suppression_chance = 0.05
+	self.coach.reload_speed_multiplier = 1.1
 	self.legacy.fire_mode_data.fire_rate = 0.08571428571
 	self.legacy.single.fire_rate = 0.08571428571
 	self.legacy.CLIP_AMMO_MAX = 12
@@ -9854,23 +9874,175 @@ if self.minibeck then --Reinbeck Auto
 	self.minibeck.swap_speed_multiplier = 0.8
 end
 
+--Silent Killer Pack
+if self.welrod then --Welrod
+	self.welrod.AMMO_MAX = 30
+	self.welrod.AMMO_PICKUP = self:_pickup_chance()
+	self.welrod.supported = true
+	self.welrod.stats = {
+		damage = 60,
+		spread = 20,
+		recoil = 21,
+		concealment = 26,
+		suppression = 18,
+		alert_size = 18,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 5
+	}
+	self.welrod.kick = self.new_m4.kick
+	self.welrod.panic_suppression_chance = 0.05
+	self.welrod.stats_modifiers = nil
+	self.welrod.swap_speed_multiplier = 1.1
+end
 
-	--Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.
-	for i, weap in pairs(self) do
-		if weap.categories then
-			if not weap.supported and weap.stats then
-				self:generate_custom_weapon_stats(weap)	
-			end
+--Silent Killer Pack PB
+if self.pb then
+	self.pb.AMMO_MAX = 75
+	self.pb.ammo_pickup = self:_pickup_chance()
+	self.pb.supported = true
+	self.pb.fire_mode_data.fire_rate = 0.08571428571
+	self.pb.single.fire_rate = 0.08571428571
+	self.pb.stats = {
+		damage = 24,
+		spread = 20,
+		recoil = 23,
+		concealment = 30,
+		alert_size = 20,
+		suppression = 20,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 4
+	}
+	self.pb.kick = self.new_m4.kick
+	self.pb.panic_suppression_chance = 0.05
+	self.pb.stats_modifiers = nil
+	self.pb.swap_speed_multiplier = 1.1
+end
 
-			--Calculate shotgun falloff ranges.
-			for _, value in pairs(weap.categories) do
-				if value == "shotgun" and weap.stats then
-					weap.damage_near = 200 + 75 * (weap.stats.spread - 1)
-					weap.damage_far = weap.damage_near * 2
-				end
+--Silent Killer Pack High Standard HDM
+if self.hshdm then
+	self.hshdm.AMMO_MAX = 90
+	self.hshdm.ammo_pickup = self:_pickup_chance()
+	self.hshdm.supported = true
+	self.hshdm.fire_mode_data.fire_rate = 0.08571428571
+	self.hshdm.single.fire_rate = 0.08571428571
+	self.hshdm.stats = {
+		damage = 20,
+		spread = 19,
+		recoil = 24,
+		concealment = 31,
+		alert_size = 21,
+		suppression = 21,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 4
+	}
+	self.hshdm.kick = self.new_m4.kick
+	self.hshdm.panic_suppression_chance = 0.05
+	self.hshdm.stats_modifiers = nil
+	self.hshdm.swap_speed_multiplier = 1.1
+	self.x_hshdm.selection_index = 4 --No akimbos
+end
+
+--Silent Killer Pack Maxim 9
+if self.max9 then
+	self.max9.AMMO_MAX = 75
+	self.max9.ammo_pickup = self:_pickup_chance()
+	self.max9.supported = true
+	self.max9.fire_mode_data.fire_rate = 0.08571428571
+	self.max9.single.fire_rate = 0.08571428571
+	self.max9.stats = {
+		damage = 24,
+		spread = 18,
+		recoil = 23,
+		concealment = 27,
+		alert_size = 20,
+		suppression = 20,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 5
+	}
+	self.max9.kick = self.new_m4.kick
+	self.max9.panic_suppression_chance = 0.05
+	self.max9.stats_modifiers = nil
+	self.max9.swap_speed_multiplier = 1.1
+end
+
+--Quake Weapon Pack Rocket Launcher
+if self.qrl then
+	self.qrl.AMMO_MAX = 20
+	self.qsho.AMMO_PICKUP = self:_pickup_chance()
+	self.qrl.CLIP_AMMO_MAX = 4
+	self.qrl.stats = {
+		damage = 240,
+		spread = 16,
+		recoil = 4,
+		zoom = 1,
+		concealment = 10,
+		alert_size = 3,
+		suppression = 3,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 7
+	}
+	self.qrl.timers.reload_not_empty = 4
+	self.qrl.timers.reload_empty = 4
+	self.qrl.swap_speed_multiplier = 1.5
+	self.qrl.stats_modifiers = {damage = 2}
+end
+
+--Quake Weapon Pack Shotgun
+if self.qsho then
+	self.qsho.has_description = true
+	self.qsho.desc_id = "bm_quake_shotgun_sc_desc"
+	self.qsho.AMMO_MAX = 20
+	self.qsho.AMMO_PICKUP = self:_pickup_chance()
+	self.qsho.supported = true
+	self.qsho.stats = {
+		damage = 90,
+		spread = 4,
+		recoil = 4,
+		zoom = 1,
+		concealment = 25,
+		alert_size = 4,
+		suppression = 4,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		reload = 20,
+		value = 7
+	}
+	self.qsho.kick = self.huntsman.kick
+	self.qsho.panic_suppression_chance = 0.05
+	self.qsho.timers.reload_not_empty = 1.2
+	self.qsho.timers.reload_empty = 1.2
+	self.qsho.stats_modifiers = nil
+	self.qsho.rays = 16
+	self.qsho.swap_speed_multiplier = 2
+	self.qsho.reload_speed_multiplier = 1.2
+end
+
+--Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.
+for i, weap in pairs(self) do
+	if weap.categories then
+		if not weap.supported and weap.stats then
+			self:generate_custom_weapon_stats(weap)	
+		end
+
+		--Calculate shotgun falloff ranges.
+		for _, value in pairs(weap.categories) do
+			if value == "shotgun" and weap.stats then
+				weap.damage_near = 200 + 75 * (weap.stats.spread - 1)
+				weap.damage_far = weap.damage_near * 2
 			end
 		end
 	end
+end
 	
 end)
 

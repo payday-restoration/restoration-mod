@@ -40,6 +40,7 @@ function restoration:Init()
 	restoration.captain_murderdozer = {
 		"dah", --diamond heist
 		"hox_2", --Hoxout Day 2
+		"xmn_hox_2", --Hoxout Day 2, christmas
 		"firestarter_1", --firestarter day 1
 		"arm_for",	--train heist
 		"big", --big bank
@@ -75,7 +76,7 @@ function restoration:Init()
 		"brb",
 		"mus",
 		"hox_1",
-		"chew",
+		"xmn_hox_1",
 		"skm_mus",
 		"skm_red2",
 		"skm_run",
@@ -94,17 +95,18 @@ function restoration:Init()
 		"framing_frame_3",
 		"spa",
 		"des",	
-		"help",	
 		"mia_2",
 		"arena",
 		"shoutout_raid", --Scripted spawns out the ass, doing this just to even it out
 		"sah",
 		"mex",
 		"chill_combat",	
+		"man", --Undercover
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn",
 		"hardware_store",
+		"man_res", --Undercover resmod edit		
 		"skmc_mad", --rex's holdout maps
 		"skmc_fish",
 		"skmc_ovengrill",
@@ -115,7 +117,8 @@ function restoration:Init()
 	restoration.very_tiny_levels = {
 		"hvh",
 		-- :^)
-		--"chew",	
+		"chew",	
+		"help",			
 		"nail",				
 		"cane",		
 		"pbr2",		
@@ -136,6 +139,7 @@ function restoration:Init()
 		"hntn",
 		"bookmakers_office",
 		"thechase",
+		"office_strike",
 		"santa_pain"
 	}	
 	--Christmas Effects Heists

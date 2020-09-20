@@ -10,7 +10,7 @@
 		<class file="Networking.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
-	<AssetUpdates id="428" version="9.9.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="9.9.9" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -112,6 +112,7 @@
 		<hook file="sc/units/weapons/flamethrowereffectextension.lua" source_file="lib/units/weapons/flamethrowereffectextension"/>
 		<hook file="sc/units/weapons/shotgunbase.lua" source_file="lib/units/weapons/shotgun/shotgunbase"/>
 		<hook file="sc/units/weapons/raycastweaponbase.lua" source_file="lib/units/weapons/raycastweaponbase"/>
+		<hook file="sc/units/weapons/sentrygunweapon.lua" source_file="lib/units/weapons/sentrygunweapon"/>
 		<hook file="sc/units/weapons/projectileweaponbase.lua" source_file="lib/units/weapons/projectileweaponbase"/>
 		<hook file="sc/units/weapons/weaponunderbarrellauncher.lua" source_file="lib/units/weapons/weaponunderbarrellauncher"/>
 		<hook file="sc/units/weapons/arrowbase.lua" source_file="lib/units/weapons/projectiles/arrowbase"/>

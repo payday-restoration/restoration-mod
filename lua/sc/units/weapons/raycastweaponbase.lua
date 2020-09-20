@@ -9,7 +9,7 @@ function RaycastWeaponBase:init(...)
 		from = Vector3()
 	}
 	
-	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+	--self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 
 	if Global.game_settings and Global.game_settings.one_down then
 		self._bullet_slotmask = self._bullet_slotmask + 3
@@ -21,7 +21,7 @@ end
 
 function RaycastWeaponBase:setup(...)
 	setup_original(self, ...)
-	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
+	--self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 
 	--Use stability stat to get the moving accuracy penalty.
 	if self._current_stats_indices and self._current_stats_indices.recoil then
@@ -671,4 +671,20 @@ function RaycastWeaponBase:_get_spread(user_unit)
 	local spread_y = spread_x
 
 	return spread_x, spread_y
+end
+
+function RaycastWeaponBase:remove_ammo(percent)
+	local total_ammo = self:get_ammo_total()
+	local max_ammo = self:get_ammo_max()
+	local ammo = math.max(math.floor(total_ammo - max_ammo * percent), 0)
+
+	self:set_ammo_total(ammo)
+
+	local ammo_in_clip = self:get_ammo_remaining_in_clip()
+
+	if self:get_ammo_total() < ammo_in_clip then
+		self:set_ammo_remaining_in_clip(ammo)
+	end
+
+	return total_ammo - ammo
 end

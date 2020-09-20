@@ -27,7 +27,7 @@ function PlayerTweakData:_set_overkill()
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
-	self.damage.custody_ammo_kept  = 0.5
+	self.damage.custody_ammo_drained  = 0.5
 	self.damage.DOWNED_TIME_DEC = 5
 end
 
@@ -36,7 +36,7 @@ function PlayerTweakData:_set_overkill_145()
 	self.suspicion.max_value = 8
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1
-	self.damage.custody_ammo_kept  = 0.5
+	self.damage.custody_ammo_drained  = 0.5
 	self.damage.DOWNED_TIME_DEC = 5
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.70,
@@ -52,7 +52,7 @@ function PlayerTweakData:_set_easy_wish()
 	self.suspicion.range_mul = 1
 	self.suspicion.buildup_mul = 1	
 	self.damage.MIN_DAMAGE_INTERVAL = 0.3
-	self.damage.custody_ammo_kept  = 0.25
+	self.damage.custody_ammo_drained  = 0.75
 	self.damage.DOWNED_TIME_DEC = 5
 	self.damage.REVIVE_HEALTH_STEPS = {
 		0.70,
@@ -90,7 +90,7 @@ function PlayerTweakData:_set_overkill_290()
 			0
 		}
 	}
-	self.damage.custody_ammo_kept  = 0.25
+	self.damage.custody_ammo_drained = 0.75
 	self.damage.DOWNED_TIME_DEC = 5
 end
 
@@ -120,7 +120,7 @@ function PlayerTweakData:_set_sm_wish()
 			0
 		}
 	}
-	self.damage.custody_ammo_kept  = 0.25
+	self.damage.custody_ammo_drained  = 0.75
 	self.damage.DOWNED_TIME_DEC = 10
 end
 
@@ -167,8 +167,8 @@ function PlayerTweakData:init()
 		0.45,
 		0.30
 	}
-	self.damage.CUSTODY_LIVES = 3 --Number of downs left when leaving damage.
-	self.damage.custody_ammo_kept = 1 --% of remaining ammo kept when leaving damage.
+	self.damage.CUSTODY_LIVES = 3 --Number of lives left when leaving custody. (downs = lives - 1)
+	self.damage.custody_ammo_drained = 0 --% of ammo confiscated when leaving custody.
 	self.damage.BLEED_OT_TIME = 40
 	self.damage.TASED_TIME = 10
 	self.damage.STUN_TIME = 1

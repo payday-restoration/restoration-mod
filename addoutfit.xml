@@ -1,10 +1,4 @@
 <table directory="assets">
-
-	<!--Blank FPS Model-->
-	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
-	<model path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
-	<object path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
-	<unit path="units/pd2_mod_suits/characters/res_acc_fps_blank/res_acc_fps_blank" force="true"/>
     
 	<!--///Prison Suit FPS\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_fps_prison_suit/res_acc_fps_prison_suit" />
@@ -89,6 +83,7 @@
 	<material_config path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
 	<cooked_physics path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi" />
 	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_df" />
+	<texture path="units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi_nm" />
     
 	<!--///Sunny-Side Robber Rust\\\-->
 	<unit path="units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust" />
@@ -173,28 +168,16 @@
 	<texture path="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_gsma" force="true"/>
 	
 	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn"/>
-	
-	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_big/trd_acc_jumpsuit_female_big_flecktarn"/>
-
-	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_average/trd_acc_jumpsuit_female_average_flecktarn"/>
 
 	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/trd_acc_jumpsuit_male_average_flecktarn"/>
-
-	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_big/trd_acc_jumpsuit_male_big_flecktarn"/>
 	
 	<texture path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn_df"/>
 	<texture path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_flecktarn_df"/>
 	
 	<!-- DA FLAT GREEN BOILAHSUIT -->
 	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flatgreen"/>
-	
-	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_big/trd_acc_jumpsuit_female_big_flatgreen"/>
-
-	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_female_average/trd_acc_jumpsuit_female_average_flatgreen"/>
 
 	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/trd_acc_jumpsuit_male_average_flatgreen"/>
-
-	<material_config path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_jumpsuit_male_big/trd_acc_jumpsuit_male_big_flatgreen"/>
 	
 	<texture path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flatgreen_df"/>
 	<texture path="units/pd2_mod_suits/characters/trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_flatgreen_df"/>

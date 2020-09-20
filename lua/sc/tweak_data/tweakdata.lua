@@ -52,6 +52,8 @@ tweak_data.projectiles.launcher_m203.player_damage = 80
 tweak_data.projectiles.launcher_m203.curve_pow = 1
 tweak_data.projectiles.launcher_m203.range = 500
 tweak_data.projectiles.launcher_frag_m32.damage = 80
+tweak_data.projectiles.launcher_frag_m32.time_cheat = 0.7
+tweak_data.projectiles.launcher_incendiary_m32.time_cheat = 0.7
 tweak_data.projectiles.launcher_frag_china.damage = 80
 
 --M202--

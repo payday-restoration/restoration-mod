@@ -98,7 +98,7 @@ function ChallengesManagerRes:check_active_challenges()
 
 	for name,challenge in pairs( self._challenges_map_res ) do
 		if not self._global.active[ name ] and not self._global.completed[ name ] then -- If not completed or activated
-			if current_level >= challenge.unlock_level then
+			-- if current_level >= challenge.unlock_level then
 				if self:_check_depends_on( name ) then
 					local t = {}
 					if challenge.counter_id then
@@ -110,7 +110,7 @@ function ChallengesManagerRes:check_active_challenges()
 					self._global.active[ name ] = t
 					added = true
 				end
-			end
+			-- end
 		end
 	end
 
@@ -132,16 +132,58 @@ function ChallengesManagerRes:_check_depends_on( name )
 			end
 		end
 	end
-	if self._challenges_map_res[ name ].depends_on.weapons then
-		for _,weapon in ipairs( self._challenges_map_res[ name ].depends_on.weapons ) do
-			if not managers.player:has_weapon( weapon ) then
+	if self._challenges_map_res[ name ].depends_on.equipment then
+		for _,equipment in ipairs( self._challenges_map_res[ name ].depends_on.equipment ) do
+			if not managers.player:has_aquired_equipment( equipment ) then
 				--return false
 			end
 		end
 	end
-	if self._challenges_map_res[ name ].depends_on.equipment then
-		for _,equipment in ipairs( self._challenges_map_res[ name ].depends_on.equipment ) do
-			if not managers.player:has_aquired_equipment( equipment ) then
+	if self._challenges_map_res[ name ].depends_on.primaries then
+		for _,primaries in ipairs( self._challenges_map_res[ name ].depends_on.primaries ) do
+			if not managers.blackmarket:equipped_primary( primaries ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.secondaries then
+		for _,secondaries in ipairs( self._challenges_map_res[ name ].depends_on.secondaries ) do
+			if not managers.blackmarket:equipped_secondary( secondaries ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.masks then
+		for _,masks in ipairs( self._challenges_map_res[ name ].depends_on.masks ) do
+			if not managers.blackmarket:equipped_mask( masks ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.character then
+		for _,character in ipairs( self._challenges_map_res[ name ].depends_on.character ) do
+			if not managers.blackmarket:equipped_character( character ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.armors then
+		for _,armors in ipairs( self._challenges_map_res[ name ].depends_on.armors ) do
+			if not managers.blackmarket:equipped_armor( armors ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.melee_weapons then
+		for _,melee_weapons in ipairs( self._challenges_map_res[ name ].depends_on.melee_weapons ) do
+			if not managers.blackmarket:equipped_melee_weapon( melee_weapons ) then
+				--return false
+			end
+		end
+	end
+	if self._challenges_map_res[ name ].depends_on.grenades then
+		for _,grenades in ipairs( self._challenges_map_res[ name ].depends_on.grenades ) do
+			if not managers.blackmarket:equipped_grenade( grenades ) then
 				--return false
 			end
 		end
@@ -239,6 +281,12 @@ function ChallengesManagerRes:_completed_challenge( name )
 			managers.hud:present_mid_text( { title = title, text = text, time = 4, icon = nil, event = "stinger_objectivecomplete", type = "challenge" } )
 		end
 
+		local cc_reward = self._challenges_map_res[ name ].cc
+		if cc_reward then
+			managers.custom_safehouse:add_coins( cc_reward, true )
+		else
+			return
+		end
 		-- managers.experience:add_points( self._challenges_map_res[ name ].xp, true )
 	end
 
@@ -452,10 +500,31 @@ function ChallengesManagerRes:_check_level_completed( data )
 end
 
 function ChallengesManagerRes:_correct_level( level_id )
-	if not (Global.level_data and Global.level_data.level_id) then
+	-- if not (Global.level_data and Global.level_data.level_id) then
+	-- 	return false
+	-- end
+	-- return Global.level_data.level_id == level_id
+
+	if not Global.load_level then 
+		return
+	end
+
+	local current_level = Global.game_settings.level_id
+	if type( level_id ) == "table" then
+		for _, diff in ipairs( level_id ) do
+			if diff == current_level then
+				return true
+			end
+		end
+
 		return false
 	end
-	return Global.level_data.level_id == level_id
+
+	if level_id ~= current_level then
+		return false
+	end
+
+	return true
 end
 
 
@@ -596,6 +665,28 @@ function ChallengesManagerRes:overkill_success( name, data )
 
 	if not self:_correct_difficulty( self._challenges_map_res[ name ].difficulty ) then
 		return
+	end
+
+	if not managers.blackmarket:equipped_primary( self._challenges_map_res[ name ].primaries ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_secondary( self._challenges_map_res[ name ].secondaries ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_mask( self._challenges_map_res[ name ].masks ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_character( self._challenges_map_res[ name ].character ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_armor( self._challenges_map_res[ name ].armors ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_melee_weapon( self._challenges_map_res[ name ].melee_weapons ) then
+		--return false
+	end
+	if not managers.blackmarket:equipped_grenade( self._challenges_map_res[ name ].grenades ) then
+		--return false
 	end
 
 	return true

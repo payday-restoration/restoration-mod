@@ -365,6 +365,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_m60 = {
 		translation = Vector3(0, -3, -2.95),
 	}	
+	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_winchester = {
+		translation = Vector3(0, -7, -3.3)
+	}	
 	self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_pis_shatters_fury = {
 		translation = Vector3(-0.05, -10, -4.65)
 	}	
@@ -481,6 +484,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 		translation = Vector3(-3.4, 5, -13.5),
 		rotation = Rotation(0, 0, -45)
 	}
+	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_snp_winchester = {
+		translation = Vector3(-5.5, -5, -15),
+		rotation = Rotation(0, 0, -45)
+	}	
 	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_ass_amcar = { translation = Vector3(-2.85, 14, -10.4),rotation = Rotation(0.1, 0, -45) }
 	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_ass_74 = { translation = Vector3(-3.4, 5, -13.5),rotation = Rotation(0, -0, -45) }
 	self.parts.wpn_fps_upg_o_45iron.stance_mod.wpn_fps_ass_m4 = { translation = Vector3(-2.85, 14, -10.4),rotation = Rotation(0.1, 0, -45) }
@@ -673,6 +680,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2_dec16", "resmod_conte
 	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_pis_shatters_fury = {
 		translation = Vector3(-0.05, -15, -4.65)
 	}		
+	self.parts.wpn_fps_upg_o_acog.stance_mod.wpn_fps_snp_winchester = { 
+		translation = Vector3(0, -7, -3.3)
+	}
 
 end)
 
@@ -3453,9 +3463,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 		damage_far_mul = -300
 	}
 	
-	--Base reload mult to better match timers
-	self.parts.wpn_fps_shot_huntsman_body_standard.custom_stats = {reload_speed_mult = 1.1}	
-	
 	--Gangsta Special Stock
 	self.parts.wpn_fps_shot_huntsman_s_short.pcs = {
 		10,
@@ -3728,10 +3735,6 @@ end)
 
 --The Judge
 Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(self)
-	
-	--Judge Reload Speed Penalty
-	self.parts.wpn_fps_pis_judge_body_standard.custom_stats = {reload_speed_mult = 0.85}
-
 	--Judge Override Table
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = {
 		supported = true,
@@ -7715,7 +7718,7 @@ end)
 --HRL-7
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpg7", "resmod_rpg7", function(self)
 	--Default Body
-	self.parts.wpn_fps_rpg7_body.custom_stats = {reload_speed_mult = 1.1, movement_speed = 0.85}
+	self.parts.wpn_fps_rpg7_body.custom_stats = {movement_speed = 0.85}
 end)
 
 --Commando 101
@@ -7775,129 +7778,64 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_cobray", "resmod_cobray", function
 	
 end)
 
-function WeaponFactoryTweakData:_init_b682()
-	self.parts.wpn_fps_shot_b682_b_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_b682_b_short",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_b_short",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -2,
-			concealment = 2
-		},
-		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
-		},
-		texture_bundle_folder = "character_pack_bonnie",
-		dlc = "pd2_clan",
-		sound_switch = {suppressed = "regular_b"},
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload_not_empty"
-		}
+--Joceline
+Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(self)
+	
+	--Sawed Off Barrel
+	self.parts.wpn_fps_shot_b682_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_shot_b682_b_long = {
-		type = "barrel",
-		name_id = "bm_wp_b682_b_long",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_b_long",
-		supported = true,
-		stats = {value = 1},
-		texture_bundle_folder = "character_pack_bonnie",
-		dlc = "pd2_clan",
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload_not_empty"
-		}
+	self.parts.wpn_fps_shot_b682_b_short.supported = true
+	self.parts.wpn_fps_shot_b682_b_short.stats = {
+		value = 1,
+		spread = -2,
+		concealment = 2
 	}
-	self.parts.wpn_fps_shot_b682_body_standard = {
-		type = "lower_reciever",
-		name_id = "bm_wp_b682_body_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_body_standard",
-		supported = true,
-		stats = {value = 1},
-		custom_stats = {reload_speed_mult = 1.1},
-		texture_bundle_folder = "character_pack_bonnie",
-		dlc = "pd2_clan",
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload_not_empty"
-		}
+	self.parts.wpn_fps_shot_b682_b_short.custom_stats = {
+		damage_near_mul = -75,
+		damage_far_mul = -150
 	}
-	self.parts.wpn_fps_shot_b682_s_long = {
-		type = "stock",
-		name_id = "bm_wp_b682_s_long",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_s_long",
-		supported = true,
-		stats = {value = 1},
-		texture_bundle_folder = "character_pack_bonnie",
-		dlc = "pd2_clan"
+
+	--Standard body
+	self.parts.wpn_fps_shot_b682_body_standard.supported = true
+
+	--Wrist Wrecker Stock
+	self.parts.wpn_fps_shot_b682_s_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_shot_b682_s_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_b682_s_short",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_s_short",
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "character_pack_bonnie",
-		dlc = "pd2_clan"
+	self.parts.wpn_fps_shot_b682_s_short.supported = true
+	self.parts.wpn_fps_shot_b682_s_short.stats = {
+		value = 1,
+		recoil = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_shot_b682_s_ammopouch = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_b682_s_ammopouch",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_fps_shot_b682_s_ammopouch",
-		supported = true,
-		stats = {
-			value = 2,
-			spread = -1,
-			concealment = -1,
-			reload = 4
-		},
-		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
-		},
-		texture_bundle_folder = "character_pack_bonnie",
-		dlc = "pd2_clan"
+	
+	--Luxurious Ammo Pouch
+	self.parts.wpn_fps_shot_b682_s_ammopouch.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_shot_b682_b_short.third_unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_third_shot_b682_b_short"
-	self.parts.wpn_fps_shot_b682_b_long.third_unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_third_shot_b682_b_long"
-	self.parts.wpn_fps_shot_b682_body_standard.third_unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_third_shot_b682_body_standard"
-	self.parts.wpn_fps_shot_b682_s_long.third_unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_third_shot_b682_s_long"
-	self.parts.wpn_fps_shot_b682_s_short.third_unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_third_shot_b682_s_short"
-	self.parts.wpn_fps_shot_b682_s_ammopouch.third_unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682_pts/wpn_third_shot_b682_s_ammopouch"
-	self.wpn_fps_shot_b682 = {}
-	self.wpn_fps_shot_b682.unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682/wpn_fps_shot_b682"
-	self.wpn_fps_shot_b682.optional_types = {"barrel_ext", "gadget"}
+	self.parts.wpn_fps_shot_b682_s_ammopouch.supported = true
+	self.parts.wpn_fps_shot_b682_s_ammopouch.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 4
+	}
+	self.parts.wpn_fps_shot_b682_s_ammopouch.custom_stats = {
+		damage_near_mul = -75,
+		damage_far_mul = -150
+	}
+	
+	--Override table
 	self.wpn_fps_shot_b682.override = {
 		wpn_fps_upg_a_explosive = {
 			supported = true,
@@ -7918,607 +7856,217 @@ function WeaponFactoryTweakData:_init_b682()
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
-	}
-	self.wpn_fps_shot_b682.default_blueprint = {
-		"wpn_fps_shot_b682_body_standard",
-		"wpn_fps_shot_b682_b_long",
-		"wpn_fps_shot_b682_s_long"
-	}
-	self.wpn_fps_shot_b682.uses_parts = {
-		"wpn_fps_shot_b682_body_standard",
-		"wpn_fps_shot_b682_b_long",
-		"wpn_fps_shot_b682_s_long",
-		"wpn_fps_shot_b682_b_short",
-		"wpn_fps_shot_b682_s_short",
-		"wpn_fps_shot_b682_s_ammopouch"
-	}
-	self.wpn_fps_shot_b682_npc = deep_clone(self.wpn_fps_shot_b682)
-	self.wpn_fps_shot_b682_npc.unit = "units/pd2_dlc_bonnie/weapons/wpn_fps_shot_b682/wpn_fps_shot_b682_npc"
-end
+	}	
+	
+end)
 
-function WeaponFactoryTweakData:_init_butchermodpack()
-	self.parts.wpn_fps_saw_body_silent = {
-		pcs = {},
-		type = "lower_reciever",
-		name_id = "bm_wp_saw_body_silent",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_body_silent/wpn_fps_saw_body_silent",
-		supported = true,
-		stats = {
-			value = 1,
-			concealment = 1,
-			suppression = 20,
-			alert_size = 20
-		},
-		custom_stats = {
-			rof_mult = 0.85
-		},	
-		perks = {"silencer"},			
-		has_description = true,
-		desc_id = "bm_slow_motor_sc_desc",			
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free",
-		sound_switch = {
-			suppressed = "suppressed_a"
-		}
+--Butcher Mod Pack
+Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermodpack", function(self)
+
+	--Silent Motor
+	self.parts.wpn_fps_saw_body_silent.pcs = {}
+	self.parts.wpn_fps_saw_body_silent.supported = true
+	self.parts.wpn_fps_saw_body_silent.stats = {
+		value = 1,
+		concealment = 1,
+		suppression = 20,
+		alert_size = 20
 	}
-	self.parts.wpn_fps_saw_body_speed = {
-		pcs = {},
-		type = "lower_reciever",
-		name_id = "bm_wp_saw_body_speed",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_body_speed/wpn_fps_saw_body_speed",
-		supported = true,
-		stats = {
-			value = 1,
-			concealment = -1
-		},
-		custom_stats = {
-			rof_mult = 1.15
-		},
-		has_description = true,
-		desc_id = "bm_fast_motor_sc_desc",
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free",
-		sound_switch = {suppressed = "regular_b"}
+	self.parts.wpn_fps_saw_body_silent.custom_stats = {
+		rof_mult = 0.85
 	}
-	self.parts.wpn_fps_saw_m_blade_durable = {
-		pcs = {},
-		type = "magazine",
-		name_id = "bm_wp_saw_m_blade_durable",
-		a_obj = "a_m",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_m_blade_durable/wpn_fps_saw_m_blade_durable",
-		supported = true,
-		stats = {
-			value = 1,
-			extra_ammo = 10,
-			damage = -30,
-			total_ammo_mod = 50
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free",
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload",
-			fire = "recoil",
-			fire_steelsight = "recoil"
-		}
+	self.parts.wpn_fps_saw_body_silent.perks = {"silencer"}	
+	self.parts.wpn_fps_saw_body_silent.has_description = true
+	self.parts.wpn_fps_saw_body_silent.desc_id = "bm_slow_motor_sc_desc"
+	
+	--Fast Motor
+	self.parts.wpn_fps_saw_body_speed.pcs = {}
+	self.parts.wpn_fps_saw_body_speed.supported = true
+	self.parts.wpn_fps_saw_body_speed.stats = {
+		value = 1,
+		concealment = -1
 	}
-	self.parts.wpn_fps_saw_m_blade_sharp = {
-		pcs = {},
-		type = "magazine",
-		name_id = "bm_wp_saw_m_blade_sharp",
-		a_obj = "a_m",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_saw_m_blade_sharp/wpn_fps_saw_m_blade_sharp",
-		supported = true,
-		stats = {
-			value = 1,
-			extra_ammo = -5,
-			damage = 30,
-			total_ammo_mod = -25
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		has_description = false,
-		desc_id = "bm_ap_saw_blade_sc_desc",
-		dlc = "butch_pack_free",
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload",
-			fire = "recoil",
-			fire_steelsight = "recoil"
-		}
+	self.parts.wpn_fps_saw_body_speed.custom_stats = {
+		rof_mult = 1.15
 	}
-	self.parts.wpn_fps_aug_body_f90 = {
-		pcs = {},
-		type = "lower_reciever",
-		name_id = "bm_wp_aug_body_f90",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_aug_body_f90/wpn_fps_aug_body_f90",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -1,
-			recoil = 1
-		},
-		adds = {
-			"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free",
-		animations = {
-			fire = "recoil",
-			reload = "reload",
-			fire_steelsight = "recoil",
-			magazine_empty = "last_recoil"
-		}
+	self.parts.wpn_fps_saw_body_speed.has_description = true
+	self.parts.wpn_fps_saw_body_speed.desc_id = "bm_fast_motor_sc_desc"
+	
+	--Durable Blade
+	self.parts.wpn_fps_saw_m_blade_durable.pcs = {}
+	self.parts.wpn_fps_saw_m_blade_durable.supported = true
+	self.parts.wpn_fps_saw_m_blade_durable.stats = {
+		value = 1,
+		extra_ammo = 10,
+		damage = -30,
+		total_ammo_mod = 50
 	}
-	self.parts.wpn_fps_ass_ak5_b_short = {
-		pcs = {},
-		type = "barrel",
-		name_id = "bm_wp_ak5_b_short",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_ass_ak5_b_short/wpn_fps_ass_ak5_b_short",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	
+	--Sharp Blade
+	self.parts.wpn_fps_saw_m_blade_sharp.pcs = {}
+	self.parts.wpn_fps_saw_m_blade_sharp.supported = true
+	self.parts.wpn_fps_saw_m_blade_sharp.stats = {
+		value = 1,
+		extra_ammo = -5,
+		damage = 30,
+		total_ammo_mod = -25
 	}
-	self.parts.wpn_fps_smg_mp5_m_straight = {
-		pcs = {},
-		type = "magazine",
-		name_id = "bm_wp_mp5_m_straight",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_mp5_m_straight/wpn_fps_smg_mp5_m_straight",
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = -2,
-			spread = 2
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	
+	--Raptor Polymer Body
+	self.parts.wpn_fps_aug_body_f90.pcs = {}
+	self.parts.wpn_fps_aug_body_f90.supported = true
+	self.parts.wpn_fps_aug_body_f90.stats = {
+		value = 1,
+		spread = -1,
+		recoil = 1
 	}
-	self.parts.wpn_fps_smg_mp9_b_suppressed = {
-		pcs = {},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_mp9_b_suppressed",
-		texture_bundle_folder = "butcher_pack_mods",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_mp9_b_suppressed/wpn_fps_smg_mp9_b_suppressed",
-		supported = true,
-		stats = {
-			value = 5,
-			suppression = 12,
-			alert_size = 12,
-			spread = 2,
-			recoil = -2,
-			concealment = -2
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_b"
-		},
-		dlc = "butch_pack_free"
+	self.parts.wpn_fps_aug_body_f90.adds = {
+		"wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
 	}
-	self.parts.wpn_fps_smg_p90_b_civilian = {
-		pcs = {},
-		type = "barrel",
-		name_id = "bm_wp_p90_b_civilian",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_p90_b_civilian/wpn_fps_smg_p90_b_civilian",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	
+	--CQB Barrel
+	self.parts.wpn_fps_ass_ak5_b_short.pcs = {}
+	self.parts.wpn_fps_ass_ak5_b_short.supported = true
+	self.parts.wpn_fps_ass_ak5_b_short.stats = {
+		value = 1,
+		spread = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_smg_p90_b_ninja = {
-		pcs = {},
-		type = "barrel",
-		sub_type = "silencer",
-		name_id = "bm_wp_p90_b_ninja",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_smg_p90_b_ninja/wpn_fps_smg_p90_b_ninja",
-		supported = true,
-		stats = {
-			value = 10,
-			suppression = 10,
-			alert_size = 10,
-			spread = -1,
-			recoil = 1
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free",
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_c"
-		},
-		forbids = {
-			"wpn_fps_upg_ns_ass_smg_large",
-			"wpn_fps_upg_ns_ass_smg_medium",
-			"wpn_fps_upg_ns_ass_smg_small",
-			"wpn_fps_upg_ns_ass_smg_firepig",
-			"wpn_fps_upg_ns_ass_smg_stubby",
-			"wpn_fps_upg_ns_ass_smg_tank",
-			"wpn_fps_upg_ass_ns_jprifles",
-			"wpn_fps_upg_ass_ns_linear",
-			"wpn_fps_upg_ass_ns_surefire",
-			"wpn_fps_upg_ass_ns_battle",
-			"wpn_fps_upg_ns_ass_smg_v6"
-		},
-		override = {
-			wpn_fps_ass_vhs_ns_vhs = {
-				unit = "units/pd2_dlc_dragan/weapons/wpn_fps_ass_vhs_pts/wpn_fps_ass_vhs_ns_vhs_no",
-				third_unit = "units/pd2_dlc_dragan/weapons/wpn_fps_ass_vhs_pts/wpn_fps_ass_vhs_ns_vhs_no"
-			}
-		}
+	
+	--Straight Magazine
+	self.parts.wpn_fps_smg_mp5_m_straight.pcs = {}
+	self.parts.wpn_fps_smg_mp5_m_straight.supported = true
+	self.parts.wpn_fps_smg_mp5_m_straight.stats = {
+		value = 1,
+		recoil = -2,
+		spread = 2
 	}
-	self.parts.wpn_fps_upg_o_m14_scopemount = {
-		pcs = {},
-		type = "extra",
-		name_id = "bm_wp_upg_o_m14_scopemount",
-		depends_on = "sight",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_o_m14_scopemount/wpn_fps_upg_o_m14_scopemount",
-		supported = true,
-		stats = {
-			value = 0,
-			spread = 0,
-			concealment = 0
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free",
-		override = {
-			wpn_fps_upg_o_specter = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_aimpoint = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_aimpoint_2 = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_docter = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_eotech = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_t1micro = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_cmore = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_cs = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_eotech_xps = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_reflex = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_rx01 = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_rx30 = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_acog = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 6, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_spot = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_xpsg33_magnifier = {
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				}
-			},
-			wpn_fps_upg_o_uh = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_fc1 = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_bmg = {
-				a_obj = "a_o_sm",
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 12, -5.21)
-					}
-				},
-				override = {}
-			},
-			wpn_fps_upg_o_sig = {
-				stance_mod = {
-					wpn_fps_ass_m14 = {
-						translation = Vector3(-0.03, 0, -5.21)
-					}
-				}
-			}
-		}
+	
+	--Tactical Suppressor
+	self.parts.wpn_fps_smg_mp9_b_suppressed.pcs = {}
+	self.parts.wpn_fps_smg_mp9_b_suppressed.supported = true
+	self.parts.wpn_fps_smg_mp9_b_suppressed.stats = {
+		value = 5,
+		suppression = 12,
+		alert_size = 12,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
 	}
-	self.parts.wpn_fps_pis_1911_g_engraved = {
-		pcs = {},
-		type = "grip",
-		name_id = "bm_wp_1911_g_engraved",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_pis_1911_g_engraved/wpn_fps_pis_1911_g_engraved",
-		supported = true,
-		stats = {value = 3, recoil = -1, spread = 1, concealment = -1},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	self.parts.wpn_fps_smg_mp9_b_suppressed.perks = {"silencer"}
+	
+	--Civilian Market Barrel
+	self.parts.wpn_fps_smg_p90_b_civilian.pcs = {}
+	self.parts.wpn_fps_smg_p90_b_civilian.supported = true
+	self.parts.wpn_fps_smg_p90_b_civilian.stats = {
+		value = 1,
+		spread = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_pis_beretta_g_engraved = {
-		pcs = {},
-		type = "grip",
-		name_id = "bm_wp_beretta_g_engraved",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_pis_beretta_g_engraved/wpn_fps_pis_beretta_g_engraved",
-		supported = true,
-		stats = {value = 3, recoil = -1, spread = 1, concealment = -1},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	
+	--Mall Ninja Barrel
+	self.parts.wpn_fps_smg_p90_b_ninja.pcs = {}
+	self.parts.wpn_fps_smg_p90_b_ninja.supported = true
+	self.parts.wpn_fps_smg_p90_b_ninja.stats = {
+		value = 10,
+		suppression = 10,
+		alert_size = 10,
+		spread = -1,
+		recoil = 1
 	}
-	self.parts.wpn_fps_upg_fl_ass_utg = {
-		pcs = {},
-		type = "gadget",
-		sub_type = "laser",
-		name_id = "bm_wp_upg_fl_ass_utg",
-		a_obj = "a_fl",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_fl_ass_utg/wpn_fps_upg_fl_ass_utg",
-		supported = true,
-		stats = {
-			value = 5,
-			concealment = -1
-		},
-		dlc = "butch_pack_free",
-		texture_bundle_folder = "butcher_pack_mods",
-		perks = {"gadget"},
-		adds = {
-			"wpn_fps_addon_ris",
-			"wpn_fps_upg_fl_ass_peq15_flashlight"
-		}
+	self.parts.wpn_fps_smg_p90_b_ninja.perks = {"silencer"}
+	
+	--Scope Mount
+	self.parts.wpn_fps_upg_o_m14_scopemount.pcs = {}
+	self.parts.wpn_fps_upg_o_m14_scopemount.supported = true
+	self.parts.wpn_fps_upg_o_m14_scopemount.stats = {
+		value = 0,
+		spread = 0,
+		concealment = 0
 	}
-	self.parts.wpn_fps_upg_fl_pis_m3x = {
-		pcs = {},
-		type = "gadget",
-		sub_type = "flashlight",
-		name_id = "bm_wp_upg_fl_pis_m3x",
-		a_obj = "a_fl",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_fl_pis_m3x/wpn_fps_upg_fl_pis_m3x",
-		supported = true,
-		stats = {
-			value = 3
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	
+	--Engraved Crosskill Grips
+	self.parts.wpn_fps_pis_1911_g_engraved.pcs = {}
+	self.parts.wpn_fps_pis_1911_g_engraved.supported = true
+	self.parts.wpn_fps_pis_1911_g_engraved.stats = {value = 3, recoil = -1, spread = 1, concealment = -1}
+	
+	--Engraved Bernetti Grips
+	self.parts.wpn_fps_pis_beretta_g_engraved.pcs = {}
+	self.parts.wpn_fps_pis_beretta_g_engraved.supported = true
+	self.parts.wpn_fps_pis_beretta_g_engraved.stats = {value = 3, recoil = -1, spread = 1, concealment = -1}
+
+	--LED Combo
+	self.parts.wpn_fps_upg_fl_ass_utg.pcs = {}
+	self.parts.wpn_fps_upg_fl_ass_utg.supported = true
+	self.parts.wpn_fps_upg_fl_ass_utg.stats = {
+		value = 5,
+		concealment = -1
 	}
-	self.parts.wpn_fps_upg_ass_ns_battle = {
-		pcs = {},
-		type = "barrel_ext",
-		name_id = "bm_wp_ns_battle",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_ass_ns_battle/wpn_fps_upg_ass_ns_battle",
-		supported = true,
-		stats = {
-			value = 5,
-			recoil = -2,
-			spread = 2,
-			concealment = -2
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	self.parts.wpn_fps_upg_fl_ass_utg.perks = {"gadget"}
+	
+	--Polymer Flashlight
+	self.parts.wpn_fps_upg_fl_pis_m3x.pcs = {}
+	self.parts.wpn_fps_upg_fl_pis_m3x.supported = true
+	self.parts.wpn_fps_upg_fl_pis_m3x.stats = {
+		value = 3
 	}
-	self.parts.wpn_fps_upg_ns_ass_filter = {
-		pcs = {},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_ass_filter",
-		a_obj = "a_ns",
-		parent = "slide",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_ns_ass_filter/wpn_fps_upg_ns_ass_filter",
-		supported = true,
-		stats = {
-			value = 3,
-			suppression = 10,
-			alert_size = 10,
-			recoil = 1,				
-			spread = -1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_a"
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	
+	--Ported Compensator
+	self.parts.wpn_fps_upg_ass_ns_battle.pcs = {}
+	self.parts.wpn_fps_upg_ass_ns_battle.supported = true
+	self.parts.wpn_fps_upg_ass_ns_battle.stats = {
+		value = 5,
+		recoil = -2,
+		spread = 2,
+		concealment = -2
 	}
-	self.parts.wpn_fps_upg_ns_pis_jungle = {
-		pcs = {},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_pis_jungle",
-		a_obj = "a_ns",
-		parent = "slide",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_ns_pis_jungle/wpn_fps_upg_ns_pis_jungle",
-		supported = true,
-		stats = {
-			value = 5,
-			suppression = 12,
-			alert_size = 12,
-			spread = 2,
-			recoil = -2,
-			concealment = -2
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_b"
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	
+	--Budget Suppressor
+	self.parts.wpn_fps_upg_ns_ass_filter.pcs = {}
+	self.parts.wpn_fps_upg_ns_ass_filter.supported = true
+	self.parts.wpn_fps_upg_ns_ass_filter.stats = {
+		value = 0,
+		suppression = 10,
+		alert_size = 10,
+		recoil = 3,				
+		spread = -3
 	}
-	self.parts.wpn_fps_upg_ns_sho_salvo_large = {
-		pcs = {},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_upg_ns_sho_salvo_large",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_butcher_mods/weapons/wpn_fps_upg_ns_sho_salvo/wpn_fps_upg_ns_sho_salvo_large",
-		supported = true,
-		stats = {
-			value = 2,
-			suppression = 11,
-			alert_size = 11,
-			recoil = -1,
-			spread = 1,
-			concealment = -1
-		},
-		custom_stats = {
-			damage_near_mul = 75,
-			damage_far_mul = 150
-		},
-		perks = {"silencer"},
-		forbids = {
-			"wpn_fps_upg_a_explosive"
-		},
-		sound_switch = {
-			suppressed = "suppressed_a"
-		},
-		texture_bundle_folder = "butcher_pack_mods",
-		dlc = "butch_pack_free"
+	self.parts.wpn_fps_upg_ns_ass_filter.perks = {"silencer"}
+	
+	--Jungle Ninja Suppressor
+	self.parts.wpn_fps_upg_ns_pis_jungle.pcs = {}
+	self.parts.wpn_fps_upg_ns_pis_jungle.supported = true
+	self.parts.wpn_fps_upg_ns_pis_jungle.stats = {
+		value = 5,
+		suppression = 12,
+		alert_size = 12,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
 	}
-	self.parts.wpn_fps_saw_body_silent.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_saw_body_silent/wpn_third_saw_body_silent"
-	self.parts.wpn_fps_saw_body_speed.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_saw_body_speed/wpn_third_saw_body_speed"
-	self.parts.wpn_fps_saw_m_blade_durable.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_saw_m_blade_durable/wpn_third_saw_m_blade_durable"
-	self.parts.wpn_fps_saw_m_blade_sharp.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_saw_m_blade_sharp/wpn_third_saw_m_blade_sharp"
-	self.parts.wpn_fps_aug_body_f90.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_aug_body_f90/wpn_third_aug_body_f90"
-	self.parts.wpn_fps_ass_ak5_b_short.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_ass_ak5_b_short/wpn_third_ass_ak5_b_short"
-	self.parts.wpn_fps_smg_mp5_m_straight.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_smg_mp5_m_straight/wpn_third_smg_mp5_m_straight"
-	self.parts.wpn_fps_smg_mp9_b_suppressed.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_smg_mp9_b_suppressed/wpn_third_smg_mp9_b_suppressed"
-	self.parts.wpn_fps_smg_p90_b_civilian.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_smg_p90_b_civilian/wpn_third_smg_p90_b_civilian"
-	self.parts.wpn_fps_smg_p90_b_ninja.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_smg_p90_b_ninja/wpn_third_smg_p90_b_ninja"
-	self.parts.wpn_fps_upg_o_m14_scopemount.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_upg_o_m14_scopemount/wpn_third_upg_o_m14_scopemount"
-	self.parts.wpn_fps_pis_1911_g_engraved.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_pis_1911_g_engraved/wpn_third_pis_1911_g_engraved"
-	self.parts.wpn_fps_pis_beretta_g_engraved.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_pis_beretta_g_engraved/wpn_third_pis_beretta_g_engraved"
-	self.parts.wpn_fps_upg_fl_ass_utg.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_upg_fl_ass_utg/wpn_third_upg_fl_ass_utg"
-	self.parts.wpn_fps_upg_fl_pis_m3x.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_upg_fl_pis_m3x/wpn_third_upg_fl_pis_m3x"
-	self.parts.wpn_fps_upg_ass_ns_battle.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_upg_ass_ns_battle/wpn_third_upg_ass_ns_battle"
-	self.parts.wpn_fps_upg_ns_ass_filter.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_upg_ns_ass_filter/wpn_third_upg_ns_ass_filter"
-	self.parts.wpn_fps_upg_ns_pis_jungle.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_upg_ns_pis_jungle/wpn_third_upg_ns_pis_jungle"
-	self.parts.wpn_fps_upg_ns_sho_salvo_large.third_unit = "units/pd2_dlc_butcher_mods/weapons/wpn_third_upg_ns_sho_salvo/wpn_third_upg_ns_sho_salvo_large"
-end
+	self.parts.wpn_fps_upg_ns_pis_jungle.perks = {"silencer"}
+	
+	--Shh!
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.pcs = {}
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.supported = true
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.stats = {
+		value = 2,
+		suppression = 11,
+		alert_size = 11,
+		recoil = -1,
+		spread = 1,
+		concealment = -1
+	}
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.custom_stats = {
+		damage_near_mul = 75,
+		damage_far_mul = 150
+	}
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.perks = {"silencer"}
+	self.parts.wpn_fps_upg_ns_sho_salvo_large.forbids = {
+		"wpn_fps_upg_a_explosive"
+	}
+
+end)
 
 function WeaponFactoryTweakData:_init_x_g22c()
 	self.wpn_fps_pis_x_g22c = {}
@@ -8959,7 +8507,6 @@ function WeaponFactoryTweakData:_init_m32()
 		unit = "units/pd2_dlc_bbq/weapons/wpn_fps_gre_m32_pts/wpn_fps_gre_m32_upper_reciever",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {reload_speed_mult = 1.2},
 		texture_bundle_folder = "bbq",
 		dlc = "bbq"
 	}
@@ -9789,7 +9336,6 @@ function WeaponFactoryTweakData:_init_plainsrider()
 		unit = "units/pd2_dlc_west/weapons/wpn_fps_bow_plainsrider_pts/wpn_fps_bow_plainsrider_body_standard",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {reload_speed_mult = 1},
 		animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil",
@@ -9993,7 +9539,6 @@ function WeaponFactoryTweakData:_init_mateba()
 		unit = "units/pd2_dlc_arena/weapons/wpn_fps_pis_2006m_pts/wpn_fps_pis_2006m_m_standard",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {reload_speed_mult = 1},
 		animations = {
 			reload = "reload",
 			reload_not_empty = "reload_not_empty"
@@ -14178,7 +13723,7 @@ function WeaponFactoryTweakData:_init_tecci()
 				total_ammo_mod = 50,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5, movement_speed = 1.25},	
+			custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5, movement_speed = 0.75},	
 		}			
 	}	
 	self.wpn_fps_ass_tecci.default_blueprint = {
@@ -14634,7 +14179,6 @@ function WeaponFactoryTweakData:_init_boot()
 		a_obj = "a_m",
 		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_m_standard",
 		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		custom_stats = {reload_speed_mult = 0.9},
 		supported = true,
 		stats = {value = 1}
 	}
@@ -16577,7 +16121,6 @@ function WeaponFactoryTweakData:_init_arbiter()
 		name_id = "bm_wp_l85a2_fg_medium",
 		a_obj = "a_m",
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
-		custom_stats = {reload_speed_mult = 0.85},
 		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_m_standard",
 		supported = true,
 		stats = {value = 1}
@@ -22104,7 +21647,6 @@ function WeaponFactoryTweakData:_init_x_2006m()
 			wpn_fps_pis_2006m_body_standard = {},
 			wpn_fps_pis_2006m_m_standard = {
 				animations = {},
-				custom_stats = {reload_speed_mult = 1},		
 			}
 		},
 		default_blueprint = {
@@ -24839,7 +24381,6 @@ function WeaponFactoryTweakData:_init_coach()
 		a_obj = "a_body",
 		type = "lower_reciever",
 		name_id = "bm_wp_coach_body_standard",
-		custom_stats = {reload_speed_mult = 1.1},
 		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_body_standard",
 		supported = true,
 		stats = {value = 1}
@@ -30825,6 +30366,53 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			value = 7
 		}
 
+		--(Signature SMG) Ergo Grip
+		self.parts.wpn_fps_smg_shepheard_g_ergo.supported = true
+		self.parts.wpn_fps_smg_shepheard_g_ergo.stats = {
+			value = 4,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Gruber Kurz) Expert Barrel
+		self.parts.wpn_fps_pis_ppk_b_standard_expert.supported = true
+		self.parts.wpn_fps_pis_ppk_b_standard_expert.stats = {
+			value = 4,
+			recoil = 1,
+			spread = -1
+		}
+
+		--(Bronco .44) Arbitrator Grip
+		self.parts.wpn_fps_pis_rage_g_fancy.supported = true
+		self.parts.wpn_fps_pis_rage_g_fancy.stats = {
+			value = 4,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Castigo .44) Feroz Barrel
+		self.parts.wpn_fps_pis_chinchilla_b_rage.supported = true
+		self.parts.wpn_fps_pis_chinchilla_b_rage.stats = {
+			value = 4,
+			recoil = 1,
+			spread = -1
+		}
+
+		--(Piglet) Overcompensating Barrel
+		self.parts.wpn_fps_gre_m32_barrel_extreme.supported = true
+		self.parts.wpn_fps_gre_m32_barrel_extreme.stats = {
+			value = 6,
+			spread = 1,
+			concealment = -3
+		}
+
+		self.parts.wpn_fps_ass_asval_o_oldrail.supported = true
+		self.parts.wpn_fps_ass_asval_o_oldrail.stats = {
+			value = 2
+		}
+
 		self.wpn_fps_shot_minibeck.override = {
 			wpn_fps_upg_a_slug = {
 				supported = true,
@@ -30904,6 +30492,69 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			}
 		}
 	end
+
+	--Silent Killer Pack Welrod
+	if self.parts.wpn_fps_pis_welrod_a_ap then
+		self.parts.wpn_fps_pis_welrod_a_ap.pcs = nil --Disable AP bullets.
+
+		--Short barrel
+		self.parts.wpn_fps_pis_welrod_b_short.supported = true
+		self.parts.wpn_fps_pis_welrod_b_short.stats = {
+			value = 3,
+			alert_size = -1,
+			suppression = -1,
+			spread = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_pis_welrod_b_short.has_description = nil
+
+		--Trigger Guard
+		self.parts.wpn_fps_pis_welrod_trigger_guard.supported = true
+		self.parts.wpn_fps_pis_welrod_trigger_guard.stats = {
+			value = 1
+		}
+
+		--Illuminated Iron Sights
+		self.parts.wpn_fps_pis_welrod_glow.supported = true
+	end
+
+	--Silent Killer Pack PB
+	if self.parts.wpn_fps_pis_pb_ns_std then
+		self.parts.wpn_fps_pis_pb_ns_std.supported = true
+		self.parts.wpn_fps_pis_pb_ns_std.stats = {
+			value = 4,
+			alert_size = 1,
+			suppression = 1,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+	end
+
+	--Silent Killer Pack Max9
+	if self.parts.wpn_fps_pis_max9_b_short then
+		self.parts.wpn_fps_pis_max9_b_short.supported = true
+		self.parts.wpn_fps_pis_max9_b_short.stats = {
+			value = 5,
+			alert_size = -1,
+			suppression = -1,
+			recoil = -1,
+			concealment = 1
+		}
+		self.parts.wpn_fps_pis_max9_b_short.has_description = nil
+
+		self.parts.wpn_fps_pis_max9_b_nosup.supported = true
+		self.parts.wpn_fps_pis_max9_b_nosup.stats = {
+			value = 5,
+			alert_size = -12,
+			suppression = -12,
+			recoil = -1,
+			spread = -1,
+			concealment = 2
+		}
+		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
+	end
+	
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

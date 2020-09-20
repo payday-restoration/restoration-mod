@@ -103,5 +103,8 @@
 	<texture path="ui/interact_lockpick_circle_3_fail"/>
 	<texture path="ui/interact_lockpick_tool"/>
 	<texture path="ui/raid_secondary_menu_bg"/>
+
+	<!-- Drill Screen Bloom Improvement -->
+	<!-- texture path="guis/textures/drill_screen_background" force="true"/ -->
 			
 </table>

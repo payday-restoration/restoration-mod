@@ -429,16 +429,16 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.ecm_feedback_interval = 1.5
 	self.ecm_feedback_retrigger_interval = 240
 
+	--Sentry Guns
+	self.sentry_gun_base_armor = 15
+	self.sentry_gun_base_ammo = 140
+
 	--"Baked In" upgrades
 	self.values.cable_tie.interact_speed_multiplier = {0.25}
 	self.values.player.stamina_multiplier = {2}
 	self.values.team.stamina.multiplier = {1.5}
 	self.values.player.civ_calming_alerts = {true}
 	self.values.carry.throw_distance_multiplier = {1.5}
-	self.values.sentry_gun.cost_reduction = {2, 3}
-	self.values.sentry_gun.spread_multiplier = {2}
-	self.values.sentry_gun.rot_speed_multiplier = {2}
-	self.values.sentry_gun.extra_ammo_multiplier = {2}
 	self.values.player.sec_camera_highlight_mask_off = {true}
 	self.values.player.special_enemy_highlight_mask_off = {true}
 	self.values.player.mask_off_pickup = {true}
@@ -595,11 +595,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--MG Specialist
 				--Basic
-					self.values.smg.move_spread_multiplier = {0.35}
-					self.values.assault_rifle.move_spread_multiplier = {0.35}
+					self.values.smg.move_spread_multiplier = {0.4}
+					self.values.assault_rifle.move_spread_multiplier = {0.4}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 					self.values.smg.full_auto_free_ammo = {5}
+					self.values.assault_rifle.fire_rate_multiplier = {1.15, 1.15}
+					self.values.assault_rifle.full_auto_free_ammo = {5}
 				
 			--Heavy Impact
 				--Basic
@@ -652,8 +654,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					{1.5, 10} --Ace
 				}
 				--Ace
-					self.values.shotgun.swap_speed_multiplier = {1.8}
-					self.values.saw.swap_speed_multiplier = {1.8}
+					self.values.shotgun.swap_speed_multiplier = {1.5}
+					self.values.saw.swap_speed_multiplier = {1.5}
 			
 		--Juggernaut--
 			--Stun Resistance
@@ -693,7 +695,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						--Unlock ICTV
 					--Ace
 						self.values.player.shield_knock = {true}
-						self.values.player.armor_regen_timer_multiplier = {0.95}
+						self.values.player.armor_regen_timer_multiplier = {0.9}
 			
 		--Support--
 			--Scavenger
@@ -759,9 +761,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Engineering
 				--Basic
-					self.values.sentry_gun.armor_multiplier = {2.5}
+					self.values.sentry_gun.armor_multiplier = {1.4}
 				--Ace
-					self.values.sentry_gun.shield = {true}	
+					self.values.sentry_gun.armor_multiplier2 = {1.6}
 		
 			--Jack of All Trades
 				--Basic
@@ -772,8 +774,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Tower Defense
 				--Basic
 					self.values.sentry_gun.ap_bullets = {true}
-					self.values.sentry_gun.fire_rate_reduction = {4}
-					self.values.sentry_gun.damage_multiplier = {1}	
+					--See SentrygunWeapon.lua under the units/weapons for AP bullet stats.
 				--Ace
 					self.values.sentry_gun.quantity = {1, 2}
 
@@ -1014,7 +1015,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Concealment stuff same as vanilla.
 				--Ace
 					self.values.player.dodge_heal_no_armor = {
-						0.05 --% of maximum health
+						0.04 --% of maximum health
 					}
 			
 		--Silent Killer--
@@ -1446,7 +1447,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		}
 	}
 	self.values.player.dodge_stacking_heal = {true}
-	self.values.player.dodge_on_revive = {true}	
+	self.values.player.dodge_on_revive = {true}
+	self.values.weapon.passive_swap_speed_multiplier = {
+		1.3,
+		2 --Unused
+	}
 
 	--Gambler
  	self.loose_ammo_restore_health_values = {
@@ -2588,6 +2593,33 @@ function UpgradesTweakData:_smg_definitions()
 			category = "smg",
 			upgrade = "full_auto_free_ammo",
 			value = 1
+		}
+	}
+	self.definitions.assault_rifle_full_auto_free_ammo = {
+		category = "feature",
+		name_id = "menu_assault_rifle_full_auto_free_ammo",
+		upgrade = {
+			category = "assault_rifle",
+			upgrade = "full_auto_free_ammo",
+			value = 1
+		}
+	}
+	self.definitions.assault_rifle_fire_rate_multiplier_1 = {
+		category = "feature",
+		name_id = "menu_assault_rifle_fire_rate_multiplier",
+		upgrade = {
+			category = "assault_rifle",
+			upgrade = "fire_rate_multiplier",
+			value = 1
+		}
+	}
+	self.definitions.assault_rifle_fire_rate_multiplier_2 = {
+		category = "feature",
+		name_id = "menu_assault_rifle_fire_rate_multiplier",
+		upgrade = {
+			category = "assault_rifle",
+			upgrade = "fire_rate_multiplier",
+			value = 2
 		}
 	}
 	self.definitions.smg_damage_multiplier = {

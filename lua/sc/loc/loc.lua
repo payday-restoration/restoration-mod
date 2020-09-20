@@ -12,6 +12,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_hud_cheater"] = "",
 		["menu_inspect_player"] = "Inspect Player",
 		["menu_inspect_player_desc"] = "Inspect player's stats",
+		["menu_toggle_one_down_lobbies"] = "Allow Pro-Job Lobbies",
 		--["menu_player_inventory"] = "Career",
 		
 		--Holdout--
@@ -50,7 +51,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Heist Breifings--
 		["heist_pines_briefing"] = "We need you there fast, because it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.\n\nNOTE FROM JACKAL:\nThe explosion from that crash alerted nearby Reaper teams. Don't expect a police response.",	
-		
+				
 		----Weapons + Mods Descriptions/names----
 		
 		--Reinfield--
@@ -65,7 +66,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_explosive_desc_sc"] = "High-explosive slugs. Fires one explosive charge that kills or stuns targets. Cannot headshot.",
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to spread horizontally instead of clustering.",
-		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that give more impact and increase damage.",
+		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that increase damage at the cost of some consistency and ammo.",
 		["bm_wp_upg_a_piercing_desc"] = "Long range and tight pellet spread.",
 		["bm_wp_upg_a_dragons_breath_desc_sc"] = "Fires pellets that go up in sparks and flames. The fire deals damage over time, has a chance to interrupt enemies, and burns through body armor.",
 		
@@ -85,7 +86,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_wp_upg_vintage_desc"] = "",
 		
-		--Scorpion (get in-game-name later)
+		--Scorpion (get in-game-name later)--
 		["bm_wp_scorpion_m_extended_sc"] = "Double Magazine",
 		["bm_sc_scorpion_double_mag"] = "", --Unsure what this one is?--
 		
@@ -122,7 +123,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
 		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "Doubles the burn duration on ignited enemies, but halves damage over time.",
 		["bm_wp_fla_mk2_mag_well_desc_sc"] = "Halves the burn duration on ignited enemies, but doubles damage over time.",
-		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH BODY ARMOR.", --used by both flamethrowers, decouple later?--
+		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH ##BODY ARMOR##.", --used by both flamethrowers, decouple later?--
 		
 		--LMGs/Miniguns--
 		["bm_wp_upg_a_halfthatkit"] = "Super Size Me!", -- lol
@@ -131,7 +132,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
 		
 		--Thanatos--
-		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n##CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.##",
+		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
+		
+		--Galant--
+		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when the magazine is empty.",
 				
 		--Kobus 90--
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
@@ -147,7 +151,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nHold $BTN_BIPOD to switch to the Grenade Launcher.",
 		
 		--socom deez nuts--
-		["bm_w_socom_desc"] = "Jackal's sidearm of choice.",
+		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45ACP handgun with a stylish design.",
 		
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -166,17 +170,24 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m203_weapon_sc_desc_pc"] = "Press $BTN_BIPOD to switch to the mounted Grenade Launcher.",
 		["bm_m203_weapon_sc_desc"] = "Hold $BTN_BIPOD to switch to the mounted Grenade Launcher.",
 		
+		--Mosin--
+		["bm_mosin_sc_desc"] = "Classic, Powerful bolt-action rifle. This weapon reloads in clips of ##5## bullets at a time.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
+		
+		--Broomstick--
+		["bm_c96_sc_desc"] = "Revolutionary German machine pistol. Capable of firing in full-auto at an insane rate, but will decimate your ammo reserves.\nThis weapon reloads in clips of ##10## bullets at a time.",
+		
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
-		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
-		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
-		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP.",
-		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle Flip Up Sight.",
-		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 15%. ROCKETS FIRED BY THIS WEAPON INSTANTLY DESTROY TURRETS.",
-		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
-		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
-		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
-		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 25%.",
+		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
+		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
+		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR##. ##ARROWS CAN BE RESTORED BY PICKING THEM UP##, AND ##RANGE INCREASES THE LONGER AN ARROW IS DRAWN##.",
+		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR##. ##ARROWS CAN BE RESTORED BY PICKING THEM UP##.",
+		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle ##Flip Up Sight##.",
+		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL ##REDUCE YOUR MOVEMENT SPEED## BY ##15%##. ROCKETS FIRED BY THIS WEAPON ##INSTANTLY DESTROY TURRETS##.",
+		["bm_quake_shotgun_sc_desc"] = "FIRES BOTH BARRELS AT ONCE, DOUBLING THE NUMBER OF PELLETS.",
+		["bm_auto_generated_sc_desc"] = "This weapon is using ##automatically generated stats##, and may not fit the creators intent or be perfectly balanced.",
+		["bm_auto_generated_ap_sc_desc"] = "This weapon is using ##automatically generated stats##, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
+		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
+		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL ##REDUCE YOUR MOVEMENT SPEED## BY ##25%##.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 
 		--Overhaul Content Indicators--
@@ -222,16 +233,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	--	["hud_instruct_mask_on"] = "[G] TO BECOME A SQUID NOW",
 	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
 	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
-		
-		["bm_wp_upg_a_mag_msr"] = ".338 MAG rounds", --rip these
-		["bm_wp_upg_a_mag_msr_desc"] = "",
-		["bm_sc_silencers_med_desc"] = "SLOWS YOUR RATE OF FIRE BY 30%",
-		["bm_sc_silencers_small_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%",
-		["bm_wp_wpn_fps_upg_cbjms_ammo_cbj_desc"] = "Rechambers the CBJ-MS with 6.5x25mm CBJ ammunition, adding AP capability and increasing damage slightly. However, stability, total ammo, and concealment is reduced.",		
-		["bm_sc_silencers_large_desc"] = "SLOWS YOUR RATE OF FIRE BY 45%",
-		["bm_wp_upg_extra_mp_unlock"] = "MX4 Conversion Kit",
-		["bm_wp_upg_extra_mp_unlock_desc"] = "Allows toggling fire modes and the installation of Cyclic mods at the cost of slightly more kick.",
-		["bm_wp_upg_a_op_sc"] = "+P Rounds",
+
 		["bm_wp_upg_i_singlefire_sc"] = "Slower Cyclic",
 		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%", --RIP RoF mods
 		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
@@ -245,43 +247,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_gadget_plural"] = "Gadgets",
 		["menu_pistol_carbine"] = "Pistol Carbine",
 		["menu_battle_rifle"] = "Battle Rifle",
-		
-		["bm_wp_upg_a_slug_sc_fire"] = "Incendiary Slug",
-		["bm_menu_sc_m4_desc"] = "Modern take on the M16 service rifle. Good rate of fire and decent damage, however plastic parts make for shoddy stability.",
-		["bm_menu_sc_glock17_desc"] = "Easy to control recoil and reliable. The perfect sidearm to start a heisting career.",
-		["bm_menu_sc_mp9_desc"] = "A firearm made popular by its insane rate of fire. With this you can invite everyone to a bullet party nearly instantly.",
-		["bm_menu_sc_r870_desc"] = "",
-		["bm_menu_sc_glock18c_desc"] = "",
-		["bm_menu_sc_m16_desc"] = "Powerful, accurate, and with a crazy rate of fire. The drawback? The vintage 20 round magazines.",
-		["bm_menu_sc_olympic_desc"] = "A grossly oversized pistol firing a rifle round in a fully automatic manner. This gun is an identity crisis that shoots bullets.",
-		["bm_menu_sc_amcar_desc"] = "The most mass produced .223 rifle the world has ever seen. A great all-purpose rifle, just don't forget your cleaning kit.",
-		["bm_menu_sc_ak74_desc"] = "This rifle will be a handy thing to have around when body armor starts getting popular in DC.",
-		["bm_menu_sc_akm_desc"] = "",
-		["bm_menu_sc_akm_gold_desc"] = "A blank slate.",
-		["bm_menu_sc_m249_desc"] = "Firing 5.56 Surplus ammo at an extreme capacity! Reloading is a pain in the ass, but chances are that everybody will be dead before you even need to reload.",
-		["bm_menu_sc_saiga_desc"] = "This high capacity, box magazine fed, fully automatic shotgun is perfect for those days you just don't feel like aiming.",
-		["bm_menu_sc_spas12_desc"] = "Top of the line tactical shotgun. Perfect for clearing particularly busy rooms.",
-		["bm_menu_sc_m45_desc"] = "Ergonomics was not the strong suit of this weapon's design, mind the heat coming off the barrel.",
-		["bm_menu_sc_mp5_desc"] = "Made popular with the cops for one reason: It is very good at what it does.",
-		["bm_menu_sc_asval_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun. The ASVAL is both brutal and compact.",
-		["bm_menu_sc_g36_desc"] = "Another top shelf contender for the 'best plastic rifle' award.",
-		["bm_menu_sc_c96_desc"] = "The pistol that almost took over the world. Twice. This German artifact is sleek, accurate and unfortunately obsolete.",
-		["bm_menu_sc_m79_desc"] = "This weapon will disperse the crowds with ease. Mind the range, however, these 'nades don't feature range safety.",
-		["bm_menu_sc_mg42_desc"] = "Throw out your shoulder in style with this German made bullet hose. At 1200 RPM it's sure to clear a room fast, at least until you empty its vintage 50 round magazine.",
-		["bm_wp_upg_a_slug_fire_desc"] = "Fires a single slug that goes up in sparks and flames. Burns through body armor, shields, and walls.",
-		["bm_wp_upg_a_slug_fire_sc_desc"] = "Fires a single slug that goes up in sparks and flames.",
-		["bm_wp_upg_a_46custom"] = ".460 Rowland",
-		["bm_wp_upg_a_46custom_desc"] = "When .45acp isn't enough, reach for this custom 1911A1 chambered in the powerful .460 Rowland Magnum. Top shelf brutality.",
-		["bm_wp_upg_a_762_sterling"] = "7.62mm Conversion Kit",
-		["bm_wp_upg_a_762_sterling_desc"] =  "You asked me to cram 7.62 rounds into a 27-inch submachine gun, and I delivered. I don't know why, but I did. Say goodbye to your magazine size and recoil management and say hello to heavy-caliber lead projectile vomiting. I never asked for this, but you did, and I aim to please.",
-		["bm_wp_upg_a_65grendel"] = "6.5mm Grendel",
-		["bm_wp_upg_a_65grendel_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this ammunition.",
-		["bm_wp_upg_a_p"] = "+P Rounds",
-		["bm_wp_upg_a_p_desc"] = "These rounds are designed to fire at a higher internal pressure than standard ammunition.",
-		["bm_wp_upg_a_40sw"] = ".40S&W Conversion Kit",
-		["bm_wp_upg_a_40sw_desc"] = "",		
-		["bm_wp_upg_a_storm_40acp"] = ".45ACP Conversion Kit",
-		["bm_wp_upg_a_storm_40acp_desc"] = "",
 				
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
@@ -623,17 +588,21 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback will have a chance to incapacitate your enemies within a 25 meter radius. Feedback lasts for 20 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
 		["bm_equipment_first_aid_kit_desc"] = "To use the first aid kit, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 100 health. First aid kits can only be used once.\n\nThe first aid kit is a collection of supplies and equipment for use in rapidly giving first aid in emergency situations.",
 		["bm_equipment_doctor_bag_desc"] = "To use the doctor bag, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 20% of their maximum health and 4% maximum health every 4 seconds for 3 minutes. Doctor bags can be used twice.\n\nThe doctor dag is a portable bag, usually used by a physician or other medical professional to transport medical supplies and medicine.",
+		["bm_equipment_sentry_gun_desc"] = "To use the sentry gun, you need to place it by holding $BTN_USE_ITEM. Upon deployment it will use 40% of your maximum ammo. Upon taking too much damage, it will shut off. While in this state, interacting with it by holding $BTN_INTERACT will place it into an automatic repair mode. Picking up sentries will refund their remaining ammo and repair them. Sentry guns terrify civilians, forcing them to the ground.\n\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention away from you and your team.",
+		["bm_equipment_sentry_gun_silent_desc"] = "To use the sentry gun, you need to place it by holding $BTN_USE_ITEM. Upon deployment it will use 40% of your maximum ammo. Upon taking too much damage, it will shut off. While in this state, interacting with it by holding $BTN_INTERACT will place it into an automatic repair mode. Picking up sentries will refund their remaining ammo and repair them. Sentry guns terrify civilians, forcing them to the ground.\n\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction.",
 
 		["hud_int_hold_take_pardons"] = "PRESS $BTN_INTERACT TO TAKE THE PARDON",
 		["debug_interact_gage_assignment_take"] = "PRESS $BTN_INTERACT TO PICK UP THE PACKAGE",
 		
-		["hud_repair_sentry"] = "$BTN_INTERACT $AMMO_LEFT",
-		["repair_sentry_macro"] = "Hold $BTN_INTERACT to start sentry auto-repair sequence",
+		["far_repair_sentry_macro"] = "Sentry critically damaged, repairs needed.",
 		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT%",
-		["pickup_sentry_macro"] = "Hold $BTN_INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
-		["firemode_sentry_macro"] = "Hold $BTN_INTERACT to retrieve sentry. $AMMO_LEFT ammo left.",
-		["hud_interact_sentry_gun_switch_fire_mode"] = "$BTN_INTERACT $AMMO_LEFT",
-		["hud_action_repair_sentry"] = "Repairing sentry...",		
+		--Are concatenated to the related button prompts. Using Macros results in controller prompts at the wrong times.
+		["repair_sentry_macro"] = " to start sentry auto-repair sequence",
+		["pickup_sentry_macro"] = " to retrieve sentry.\n$AMMO_LEFT ammo left. ", --Gets % health remaining appended to the end.
+		["firemode_sentry_macro"] = " to change fire modes.\n$AMMO_LEFT ammo left.",
+		["hud_interact_pickup_sentry_gun"] = "$AMMO_LEFT", --$AMMO_LEFT macro is a dummy macro to be replaced with desired string, since changing interaction objects is slightly cursed.
+		["hud_interact_sentry_gun_switch_fire_mode"] = "$AMMO_LEFT",
+		["hud_repair_sentry"] = "$AMMO_LEFT",
 		
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
@@ -871,7 +840,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--MG Specialist
 			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##65%## for SMGs, LMGs, and Assault Rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs and LMGs by ##15%.##\n\nEvery ##5th## bullet fired by an SMG or LMG without releasing the trigger consumes no ammo.",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##60%## for SMGs, LMGs, and Assault Rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs, LMGs, and Assault Rifles by ##15%.##\n\nEvery ##5th## bullet fired by an SMG, LMG, or Assault Rifle without releasing the trigger consumes no ammo.",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -915,7 +884,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Overkill
 			["menu_overkill_sc"] = "OVERKILL",
-			["menu_overkill_desc_sc"] = "BASIC: ##$basic##\nKills using a shotgun, flamethrower, or the OVE9000 portable saw grants them a ##50%## damage boost for ##2## seconds.\n\nACE: ##$pro##\nThe damage bonus now applies to all weapons and lasts ##10## seconds. Skill must still be activated using a shotgun or the OVE9000 portable saw.\n\nNote: Does not apply to grenade launchers.\n\nDecreases the time it takes to pull and put away shotguns and the saw by ##80%##.",
+			["menu_overkill_desc_sc"] = "BASIC: ##$basic##\nKills using a shotgun, flamethrower, or the OVE9000 portable saw grants them a ##50%## damage boost for ##2## seconds.\n\nACE: ##$pro##\nThe damage bonus now applies to all weapons and lasts ##10## seconds. Skill must still be activated using a shotgun or the OVE9000 portable saw.\n\nNote: Does not apply to grenade launchers.\n\nDecreases the time it takes to pull and put away shotguns and the saw by ##50%##.",
 
 			--}
 			
@@ -944,7 +913,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
-			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nYour armor recovers ##5%## faster.",																																																																																																																																																																																																
+			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nYour armor recovers ##10%## faster.",																																																																																																																																																																																																
 		
 
 			--}
@@ -994,7 +963,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "Engineering",
-			["menu_eco_sentry_beta_desc_sc"] = "BASIC: ##$basic##\nYour sentry guns gain ##150%## increased health.\n\nACE: ##$pro##\nYour sentry guns gain a protective shield.",
+			["menu_eco_sentry_beta_desc_sc"] = "BASIC: ##$basic##\nYour sentry guns gain ##40%## more health.\n\nACE: ##$pro##\nYour sentry guns gain an additional ##60%## more health.",
 
 			--Jack of all Trades
 			["menu_jack_of_all_trades_beta_sc"] = "Jack of All Trades",
@@ -1002,7 +971,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Sentry Tower Defense--
 			["menu_tower_defense_beta_sc"] = "Tower Defense",	
-			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##75%## and allowing it to pierce through enemies and shields.\n\nACE: ##$pro##\nYou can now carry a maximum of ##2## sentry guns.",																								
+			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##66%## and allowing it to pierce through enemies and shields.\n\nACE: ##$pro##\nYou can now carry a maximum of ##2## sentry guns.\n\nSentry guns now cost ##35%## of your maximum ammo to place.",																								
 			
 			--Bulletproof--
 			["menu_iron_man_sc"] = "Bulletproof",
@@ -1124,7 +1093,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##10%## of your dodge every second while sprinting.\n\nYour dodge meter fills up by ##30%## of your dodge every second while on a zipline.",																								
 
 		--Sneaky Bastard--
-		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nWhile your armor is broken, dodging an attack restores ##5%## of your maximum health.",
+		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nWhile your armor is broken, dodging an attack restores ##4%## of your maximum health.",
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
@@ -1275,7 +1244,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck6_9_desc_sc"] = "Your armor is increased by an additional ##20%## for ballistic vests.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Rogue
-		["menu_deck4_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYou swap between your weapons ##80%## faster.",
+		["menu_deck4_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYou swap between your weapons ##30%## faster.",
 		["menu_deck4_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck4_5_desc_sc"] = "Your dodge meter will be filled to ##200%## of its normal maximum when you are revived.",
 		["menu_deck4_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",

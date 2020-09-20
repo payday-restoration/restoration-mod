@@ -1,3 +1,10 @@
+SentryGunBase.DEPLOYEMENT_COST = { --Deploying a sentry eats up 40% of your *maximum* ammo.
+	0.4,
+	0.35,
+	0.3
+}
+SentryGunBase.MIN_DEPLOYEMENT_COST = 0.35
+
 Hooks:PostHook(SentryGunBase, "post_init", "sentrybase_postinit_repairsentries", function(self)
 	self._is_repairing = false
 end)
@@ -7,14 +14,9 @@ Hooks:PostHook(SentryGunBase, "update", "sentrybase_update_repairsentries", func
 		if self._unit:interaction() then
 			self._unit:interaction():set_dirty(true) --allows refreshing repair % progress for host
 		end
-		if self._removed then return end
-	--	if self._removed or not self:get_owner_id() then return end --kool kids only, no swat turrets allowed >:(
-
-		--[[ if afflicted by autumn, extend completion time each frame (i opted for repair cancellation instead)
-			self._repair_done_t = self._repair_done_t + dt
-		--]]
-	
-		if self._is_repairing then 
+		if self._removed then 
+			return
+		elseif self._is_repairing then 
 			if self._repair_done_t <= Application:time() then
 				self:finish_repairmode()
 			end

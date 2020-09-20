@@ -482,6 +482,20 @@
     
 	"bm_msk_unforsaken" : "The Unforsaken",
 	"bm_msk_unforsaken_desc" : "This legendary mask is a token of our appreciation of our community's dedication, understanding and continued support. From us in the OVERKILL crew - we salute you.\n\nThrough thick and thin, let those helmets fly.",
+
+	"bm_msk_chains_halloween" : "Shatter Shield",
+	"bm_msk_chains_halloween_desc" : "Being a mercenary for hire, you see lots of pain, and death. Even if you feel invincible, unstoppable... sometimes it all comes back to haunt you.\n\nOn a lovely, bright and snowy October afternoon in 2008, Chains was sleeping in. Fresh off an assassination job on behalf of Murkywater, he did the tough stuff, got paid, and got a sweet hotel room to sleep in.\n\nFor the first time in years, he suffered a nightmare. He can't recall what it was, but he woke up, paralyzed, and a figure that was more skeleton than man standing over him, and he was unable to move.\n\nEach time he held his gun after that day, the following nights would each be restless, and terrible.\n\nEventually, he had to say, 'enough.' Got out of the merc-for-hire business, and saw a therapist. Had medication to help. Life was good for a year...\n\nExactly a year later, on October 31st, 2009, Murkywater was sure that a man out to fix his life would expose secrets, try to hurt the company. They couldn't have that.\n\nChains was thrust into the criminal life to protect himself, becoming a soldier once more.\n\nThis time, though? It was different. The nightmares and sleep paralysis didn't return. He wasn't out to hurt others.\n\nThis time, it was about protecting himself.",
+
+	"bm_msk_dallas_halloween" : "Monster's Reflection",
+	"bm_msk_dallas_halloween_desc" : "Spend so many years constructing false identities, lies, and stories, you start to lose yourself.\n\nYou start bouncing from person to person, picking up traits and quirks from your various friends, lovers, and flings. Maybe they start to blend together, and you feel like an amalgamation.\n\nDallas woke one October morning, walking to the mirror -- hair dyed an ugly blonde and patchy shave. A tacky suit, stained with sweat from restless nightmares. A throbbing headache after a weekend of jumping from liquor to liquor.\n\nStaring at himself, all he could think is that he was more like a Frankenstein's monster than a person: just bits and pieces convincing enough to make it further in his criminal career.\n\nIt was a turning point, but sometimes, he still can't shake the feeling that his pieces aren't all his.",
+
+	"bm_msk_hoxton_halloween" : "Halloween Dream",
+	"bm_msk_hoxton_halloween_desc" : "One of Hoxton's Halloween memories was traveling to the states one October with his extended relatives, off to see NYC as a sort of special getaway.\n\nHe was never a big fan of candy, but loved the pumpkin pie being served at his relative's party.\n\nWhile wandering the halls outside the party hall, he saw a big vault door, and trinkets and riches of all sorts being wheeled in.\n\nSince then, he always was fond of hitting places during holidays.",
+	
+	"bm_msk_wolf_halloween" : "Devil's Cry",
+	"bm_msk_wolf_halloween_desc" : "On a cold October evening in 2010, Wolf was still recovering from the financial fallout from his company going defunct.\n\nLaying alone in a motel room, he thought about his family, how he felt he failed them, and how he might never see them again -- a whole country away and stranded after his last lifeline cut him away.\n\nHaving spent the last of his savings on a trip to the states, in a bid to secure enough money to start fresh with a new home, he was crushed.\n\nWeeks later, bouncing from friends places, motels, and shelters, he received the first call from his significant other in weeks.\n\nThe relationship was no more. 'I don't see this working out well any longer.'\n\nMaybe there was a fresh start.\n\nMaybe there was a new profession to pursue.",
+	
+	
 	
 	"pattern_jkl_patt01_title" : "Jackals",
 	"pattern_jkl_patt02_title" : "Company",
@@ -670,19 +684,6 @@
 	"pdth_hud_completed_challenges" : "Completed Challenges",
 	"pdth_hud_completed_challenges_hint" : "Completed and rewarded challenges.",
 
-	"ch_deploy_ammobag_hl" : "Last Bullet!",
-	"ch_deploy_ammobag" : "Deploy $count Ammo Bags.",
-	"ch_plant_tripmine_hl" : "Laser Show",
-	"ch_plant_tripmine" : "Deploy $count Trip Mines.",
-	"ch_deploy_medicbag_hl" : "Insurance Benefits",
-	"ch_deploy_medicbag" : "Deploy $count Medic Bags.",
-	"ch_deploy_ecm_hl" : "System Crasher",
-	"ch_deploy_ecm" : "Deploy $count ECM's.",
-	"ch_deploy_fak_hl" : "Lifeline",
-	"ch_deploy_fak" : "Deploy $count First Aid Kits.",
-	"ch_deploy_sentry_hl" : "White Mesa Enthusiast",
-	"ch_deploy_sentry" : "Deploy $count Sentries.",
-
 	"ch_vs_desc" : "Using the $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
 	"ch_vs_head_shots_desc" : "Using the $weapon, defeat $count $eneType with Headshots.",
 	"ch_vs" : "$weapons VS. $eneType $no",
@@ -704,5 +705,23 @@
     "hud_legend_persuade_interact": "$BTN_INTERACT Persuade",
     "hud_legend_exit": "$BTN_CANCEL Exit",
 	"RestorationModArmorFixTitleID" : "Armor Flash Fix",
-	"RestorationModArmorFixDescID" : "Enable or disable armor flash fix."
+	"RestorationModArmorFixDescID" : "Enable or disable armor flash fix.",
+
+	"challenges_header" : "/// Challenges Below ///",
+
+	"ch_deploy_ammobag_hl" : "Last Bullet!",
+	"ch_deploy_ammobag" : "Deploy $count Ammo Bags.",
+	"ch_plant_tripmine_hl" : "Laser Show",
+	"ch_plant_tripmine" : "Deploy $count Trip Mines.",
+	"ch_deploy_medicbag_hl" : "Insurance Benefits",
+	"ch_deploy_medicbag" : "Deploy $count Medic Bags.",
+	"ch_deploy_ecm_hl" : "System Crasher",
+	"ch_deploy_ecm" : "Deploy $count ECM's.",
+	"ch_deploy_fak_hl" : "Lifeline",
+	"ch_deploy_fak" : "Deploy $count First Aid Kits.",
+	"ch_deploy_sentry_hl" : "White Mesa Enthusiast",
+	"ch_deploy_sentry" : "Deploy $count Sentries.",
+
+	"ch_watchdogs_d1_heavy_wpn1_hl" : "HEAVY ARMOR, AND HEAVIER WEAPONS",
+    "ch_watchdogs_d1_heavy_wpn1" : "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge."
 }

@@ -1,59 +1,32 @@
-Hooks:PostHook(MusicManager, "jukebox_ghost_specific", "ResMod_MusicManagerJukeBoxGhostSpecific", function(self)
-	if not Global.music_manager.track_attachment.xmn_tag then
-        Global.music_manager.track_attachment.xmn_tag = "music_xmn"
-    end
-	
-	if managers.job:current_level_id() == "xmn_tag" then
-        return self:track_attachment("xmn_tag") or "heist"
-    end
-end)
+local jukebox_default_tracks_ori = MusicManager.jukebox_default_tracks
+function MusicManager:jukebox_default_tracks()
+    local default_options = jukebox_default_tracks_ori(self)
+
+    default_options.ponr = "resmusic_ponr"
+    default_options.heist_xmn_tag_name = "music_xmn"
+    default_options.heist_int_dock_name = "resmusic_wetwork"
+    default_options.heist_junker_name = "resmusic_madvlad"
+    default_options.heist_int_dock_burn_name = "resmusic_burnout"
+    -- default_options.heist_xmn_hox_1_name = "track_66"
+    -- default_options.heist_xmn_hox_2_name = "track_67"
+    return default_options
+end
 
 Hooks:PostHook(MusicManager, "jukebox_heist_specific", "ResMod_MusicManagerJukeBoxHeistSpecific", function(self)
-	if not Global.music_manager.track_attachment.int_dock then
-        Global.music_manager.track_attachment.int_dock = "resmusic_wetwork"
+	if not Global.music_manager.track_attachment.heist_xmn_hox_1_name then
+        Global.music_manager.track_attachment.heist_xmn_hox_1_name = "track_66"
     end
-    if not Global.music_manager.track_attachment.junker then
-        Global.music_manager.track_attachment.junker = "resmusic_madvlad"
-    end
-    if not Global.music_manager.track_attachment.int_dock_burn then
-        Global.music_manager.track_attachment.int_dock_burn = "resmusic_burnout"
-    end
-    if not Global.music_manager.track_attachment.ponr then
-        Global.music_manager.track_attachment.ponr = "resmusic_ponr"
-    end
-	
-	if not Global.music_manager.track_attachment.xmn_hox_1 then
-        Global.music_manager.track_attachment.xmn_hox_1 = "track_66"
-    end
-	if not Global.music_manager.track_attachment.xmn_hox_2 then
-        Global.music_manager.track_attachment.xmn_hox_2 = "track_67"
+	if not Global.music_manager.track_attachment.heist_xmn_hox_2_name then
+        Global.music_manager.track_attachment.heist_xmn_hox_2_name = "track_67"
     end
     
-    -- local job_data = Global.job_manager.current_job
-    if managers.job:current_level_id() == "wetwork" then
-        return self:track_attachment("int_dock") or "all"
-    end
-    if managers.job:current_level_id() == "junk" then
-        return self:track_attachment("junker") or "all"
-    end
-    if managers.job:current_level_id() == "wetwork_burn" then
-        return self:track_attachment("int_dock_burn") or "all"
-    end
-    if managers.job:interupt_stage() then
-		return self:track_attachment("escape") or "all"
-    end
-	
 	if managers.job:current_level_id() == "xmn_hox_1" then
-        return self:track_attachment("xmn_hox_1") or "all"
+        return self:track_attachment("heist_xmn_hox_1_name") or "all"
     end
 	
 	if managers.job:current_level_id() == "xmn_hox_2" then
-        return self:track_attachment("xmn_hox_2") or "all"
+        return self:track_attachment("heist_xmn_hox_2_name") or "all"
     end
-	
-    if managers.job:check_ponr_active() then
-        return self:track_attachment("ponr") or "all"
-	end
 end)
 
 function MusicManager:jukebox_heist_track(name)

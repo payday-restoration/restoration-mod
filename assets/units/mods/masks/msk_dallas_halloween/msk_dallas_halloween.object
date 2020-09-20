@@ -1,0 +1,8 @@
+<dynamic_object>
+    <diesel materials="units/mods/masks/msk_dallas_halloween/msk_dallas_halloween" orientation_object="rp_dallas_halloween"/>
+    <graphics>
+        <object enabled="true" name="g_back" />
+		<object enabled="true" name="g_eyes" />
+		<object enabled="true" name="g_halloween_dallas" />
+    </graphics>
+</dynamic_object>

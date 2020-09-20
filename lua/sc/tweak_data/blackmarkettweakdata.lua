@@ -9,10 +9,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_gloves", "ResGloves", function(self,
 end)
 
 --This is a helmet, not a mask--
-local old_masks = BlackMarketTweakData._init_masks
-function BlackMarketTweakData:_init_masks(tweak_data)
-	old_masks(self, tweak_data)
-	
+Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, tweak_data)	
 	--Shatter
 	self.masks.shatter_true = {
 		unit = "units/mods/masks/msk_shatter_true/msk_shatter_true",
@@ -473,9 +470,55 @@ function BlackMarketTweakData:_init_masks(tweak_data)
 			global_value = "rest_omnia",
 			texture_bundle_folder = "mods"
 		}		
-	end		
+	end
 	
-end
+	--PDTH Halloween Chains
+	self.masks.chains_halloween = {
+		unit = "units/mods/masks/msk_chains_halloween/msk_chains_halloween",
+		name_id = "bm_msk_chains_halloween",
+		desc_id = "bm_msk_chains_halloween_desc",
+		--pcs = {},
+		value = 0,
+		type = "helmet",	
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--PDTH Halloween Dallas
+	self.masks.dallas_halloween = {
+		unit = "units/mods/masks/msk_dallas_halloween/msk_dallas_halloween",
+		name_id = "bm_msk_dallas_halloween",
+		desc_id = "bm_msk_dallas_halloween_desc",
+		--pcs = {},
+		value = 0,
+		type = "helmet",	
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	
+	--PDTH Halloween Hoxton
+	self.masks.hoxton_halloween = {
+		unit = "units/mods/masks/msk_hoxton_halloween/msk_hoxton_halloween",
+		name_id = "bm_msk_hoxton_halloween",
+		desc_id = "bm_msk_hoxton_halloween_desc",
+		--pcs = {},
+		value = 0,
+		type = "helmet",	
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+	--PDTH Halloween Wolf
+	self.masks.wolf_halloween = {
+		unit = "units/mods/masks/msk_wolf_halloween/msk_wolf_halloween",
+		name_id = "bm_msk_wolf_halloween",
+		desc_id = "bm_msk_wolf_halloween_desc",
+		--pcs = {},
+		value = 0,
+		type = "helmet",	
+		global_value = "rest",
+		texture_bundle_folder = "mods"
+	}
+end)
 
 --we all know alligator skin's the best material right--
 local old_mat = BlackMarketTweakData._init_materials

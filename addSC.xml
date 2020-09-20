@@ -843,6 +843,16 @@
 	
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/cube"/> 		
 	
+	<!--PDTH Halloween Masks-->
+	<unit_tex path="units/mods/masks/msk_chains_halloween/msk_chains_halloween"/>
+    <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/chains_halloween"/>
+    <unit_tex path="units/mods/masks/msk_dallas_halloween/msk_dallas_halloween"/>
+    <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/dallas_halloween"/>
+	<unit_tex path="units/mods/masks/msk_hoxton_halloween/msk_hoxton_halloween"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/hoxton_halloween"/>
+	<unit_tex path="units/mods/masks/msk_wolf_halloween/msk_wolf_halloween"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/wolf_halloween"/>
+	
 	<!--Santa Hat-->
 	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>
 	<model path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>

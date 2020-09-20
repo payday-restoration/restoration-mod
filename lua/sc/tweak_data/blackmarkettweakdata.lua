@@ -975,6 +975,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	}
 
 	self.projectiles.launcher_frag_m32.time_cheat = 0.7
+	self.projectiles.launcher_incendiary_m32.time_cheat = 0.7
 end
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins

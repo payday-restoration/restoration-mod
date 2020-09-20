@@ -1,0 +1,7 @@
+<unit type="msk" slot="1" >
+    <object file="units/mods/masks/msk_hoxton_halloween/msk_hoxton_halloween" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+        <extension class="MaskExt" name="base" />
+    </extensions>
+</unit>

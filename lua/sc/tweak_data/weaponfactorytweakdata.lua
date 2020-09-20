@@ -3463,9 +3463,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 		damage_far_mul = -300
 	}
 	
-	--Base reload mult to better match timers
-	self.parts.wpn_fps_shot_huntsman_body_standard.custom_stats = {reload_speed_mult = 1.1}	
-	
 	--Gangsta Special Stock
 	self.parts.wpn_fps_shot_huntsman_s_short.pcs = {
 		10,
@@ -3738,10 +3735,6 @@ end)
 
 --The Judge
 Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(self)
-	
-	--Judge Reload Speed Penalty
-	self.parts.wpn_fps_pis_judge_body_standard.custom_stats = {reload_speed_mult = 0.85}
-
 	--Judge Override Table
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_explosive = {
 		supported = true,
@@ -7725,7 +7718,7 @@ end)
 --HRL-7
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rpg7", "resmod_rpg7", function(self)
 	--Default Body
-	self.parts.wpn_fps_rpg7_body.custom_stats = {reload_speed_mult = 1.1, movement_speed = 0.85}
+	self.parts.wpn_fps_rpg7_body.custom_stats = {movement_speed = 0.85}
 end)
 
 --Commando 101
@@ -7808,7 +7801,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 
 	--Standard body
 	self.parts.wpn_fps_shot_b682_body_standard.supported = true
-	self.parts.wpn_fps_shot_b682_body_standard.custom_stats = {reload_speed_mult = 1.1}
 
 	--Wrist Wrecker Stock
 	self.parts.wpn_fps_shot_b682_s_short.pcs = {
@@ -8515,7 +8507,6 @@ function WeaponFactoryTweakData:_init_m32()
 		unit = "units/pd2_dlc_bbq/weapons/wpn_fps_gre_m32_pts/wpn_fps_gre_m32_upper_reciever",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {reload_speed_mult = 1.15},
 		texture_bundle_folder = "bbq",
 		dlc = "bbq"
 	}
@@ -9345,7 +9336,6 @@ function WeaponFactoryTweakData:_init_plainsrider()
 		unit = "units/pd2_dlc_west/weapons/wpn_fps_bow_plainsrider_pts/wpn_fps_bow_plainsrider_body_standard",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {reload_speed_mult = 1},
 		animations = {
 			fire = "recoil",
 			fire_steelsight = "recoil",
@@ -9549,7 +9539,6 @@ function WeaponFactoryTweakData:_init_mateba()
 		unit = "units/pd2_dlc_arena/weapons/wpn_fps_pis_2006m_pts/wpn_fps_pis_2006m_m_standard",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {reload_speed_mult = 1},
 		animations = {
 			reload = "reload",
 			reload_not_empty = "reload_not_empty"
@@ -14190,7 +14179,6 @@ function WeaponFactoryTweakData:_init_boot()
 		a_obj = "a_m",
 		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_m_standard",
 		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		custom_stats = {reload_speed_mult = 0.9},
 		supported = true,
 		stats = {value = 1}
 	}
@@ -16133,7 +16121,6 @@ function WeaponFactoryTweakData:_init_arbiter()
 		name_id = "bm_wp_l85a2_fg_medium",
 		a_obj = "a_m",
 		bullet_objects = {prefix = "g_bullet_", amount = 1},
-		custom_stats = {reload_speed_mult = 0.85},
 		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_m_standard",
 		supported = true,
 		stats = {value = 1}
@@ -21660,7 +21647,6 @@ function WeaponFactoryTweakData:_init_x_2006m()
 			wpn_fps_pis_2006m_body_standard = {},
 			wpn_fps_pis_2006m_m_standard = {
 				animations = {},
-				custom_stats = {reload_speed_mult = 1},		
 			}
 		},
 		default_blueprint = {
@@ -24395,7 +24381,6 @@ function WeaponFactoryTweakData:_init_coach()
 		a_obj = "a_body",
 		type = "lower_reciever",
 		name_id = "bm_wp_coach_body_standard",
-		custom_stats = {reload_speed_mult = 1.1},
 		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_body_standard",
 		supported = true,
 		stats = {value = 1}
@@ -30569,12 +30554,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
 	end
-
-	--Quake Weapon Pack shotgun
-	if self.parts.wpn_fps_sho_qsho_body then
-		self.parts.wpn_fps_sho_qsho_body.supported = true
-		self.parts.wpn_fps_sho_qsho_body.custom_stats = {reload_speed_mult = 1.2}
-	end
+	
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

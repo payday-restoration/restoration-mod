@@ -2,6 +2,98 @@ table.insert(WeaponDescription._stats_shown, {
 	name = "swap_speed"
 })
 
+--Add support for .reload_speed_multiplier
+function WeaponDescription._get_base_stats(name)
+	local base_stats = {}
+	local index = nil
+	local tweak_stats = tweak_data.weapon.stats
+	local modifier_stats = tweak_data.weapon[name].stats_modifiers
+
+	for _, stat in pairs(WeaponDescription._stats_shown) do
+		base_stats[stat.name] = {}
+
+		if stat.name == "magazine" then
+			base_stats[stat.name].index = 0
+			base_stats[stat.name].value = tweak_data.weapon[name].CLIP_AMMO_MAX
+		elseif stat.name == "totalammo" then
+			index = math.clamp(tweak_data.weapon[name].stats.total_ammo_mod, 1, #tweak_stats.total_ammo_mod)
+			base_stats[stat.name].index = tweak_data.weapon[name].stats.total_ammo_mod
+			base_stats[stat.name].value = tweak_data.weapon[name].AMMO_MAX
+		elseif stat.name == "fire_rate" then
+			local fire_rate = 60 / tweak_data.weapon[name].fire_mode_data.fire_rate
+			base_stats[stat.name].value = fire_rate / 10 * 10
+		elseif stat.name == "reload" then
+			index = math.clamp(tweak_data.weapon[name].stats[stat.name], 1, #tweak_stats[stat.name])
+			base_stats[stat.name].index = tweak_data.weapon[name].stats[stat.name]
+			local reload_time = managers.blackmarket:get_reload_time(name) / (tweak_data.weapon[name].reload_speed_multiplier or 1)
+			local mult = 1 / tweak_data.weapon.stats[stat.name][index]
+			base_stats[stat.name].value = reload_time * mult
+		elseif tweak_stats[stat.name] then
+			index = math.clamp(tweak_data.weapon[name].stats[stat.name], 1, #tweak_stats[stat.name])
+			base_stats[stat.name].index = index
+			base_stats[stat.name].value = stat.index and index or tweak_stats[stat.name][index] * tweak_data.gui.stats_present_multiplier
+			local offset = math.min(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier
+
+			if stat.offset then
+				base_stats[stat.name].value = base_stats[stat.name].value - offset
+			end
+
+			if stat.revert then
+				local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier
+
+				if stat.offset then
+					max_stat = max_stat - offset
+				end
+
+				base_stats[stat.name].value = max_stat - base_stats[stat.name].value
+			end
+
+			if modifier_stats and modifier_stats[stat.name] then
+				local mod = modifier_stats[stat.name]
+
+				if stat.revert and not stat.index then
+					local real_base_value = tweak_stats[stat.name][index]
+					local modded_value = real_base_value * mod
+					local offset = math.min(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]])
+
+					if stat.offset then
+						modded_value = modded_value - offset
+					end
+
+					local max_stat = math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]])
+
+					if stat.offset then
+						max_stat = max_stat - offset
+					end
+
+					local new_value = (max_stat - modded_value) * tweak_data.gui.stats_present_multiplier
+
+					if mod ~= 0 and (tweak_stats[stat.name][1] < modded_value or modded_value < tweak_stats[stat.name][#tweak_stats[stat.name]]) then
+						new_value = (new_value + base_stats[stat.name].value / mod) / 2
+					end
+
+					base_stats[stat.name].value = new_value
+				else
+					base_stats[stat.name].value = base_stats[stat.name].value * mod
+				end
+			end
+
+			if stat.percent then
+				local max_stat = stat.index and #tweak_stats[stat.name] or math.max(tweak_stats[stat.name][1], tweak_stats[stat.name][#tweak_stats[stat.name]]) * tweak_data.gui.stats_present_multiplier
+
+				if stat.offset then
+					max_stat = max_stat - offset
+				end
+
+				local ratio = base_stats[stat.name].value / max_stat
+				base_stats[stat.name].value = ratio * 100
+			end
+		end
+	end
+
+	return base_stats
+end
+
 function WeaponDescription._get_skill_stats(name, category, slot, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint)
 	local skill_stats = {}
 	local tweak_stats = tweak_data.weapon.stats
@@ -337,4 +429,25 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	skill_stats.swap_speed.skill_in_effect, skill_stats.swap_speed.value = WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats, silencer)
 
 	return base_stats, mods_stats, skill_stats
+end
+
+--Identical to vanilla function, but including it somehow fixes incorrect reload speeds showing up on the attachment selection screen for weapons with reload_speed_multiplier.
+function WeaponDescription.get_stats_for_mod(mod_name, weapon_name, category, slot)
+	local equipped_mods = nil
+	local blueprint = managers.blackmarket:get_weapon_blueprint(category, slot)
+
+	if blueprint then
+		equipped_mods = deep_clone(blueprint)
+		local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(weapon_name)
+		local default_blueprint = managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
+
+		for _, default_part in ipairs(default_blueprint) do
+			table.delete(equipped_mods, default_part)
+		end
+	end
+
+	local base_stats = WeaponDescription._get_base_stats(weapon_name)
+	local mods_stats = WeaponDescription._get_mods_stats(weapon_name, base_stats, equipped_mods)
+
+	return WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_stats, mods_stats, equipped_mods)
 end

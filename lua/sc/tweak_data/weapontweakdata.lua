@@ -4286,7 +4286,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.huntsman.stats_modifiers = nil
 	self.huntsman.timers.reload_not_empty = 2.3
-	self.huntsman.timers.reload_empty = 2.3	
+	self.huntsman.timers.reload_empty = 2.3
+	self.huntsman.reload_speed_multiplier = 1.1
 	self.huntsman.panic_suppression_chance = 0.05
 	self.b92fs.AMMO_MAX = 90
 	self.b92fs.AMMO_PICKUP = self:_pickup_chance()
@@ -4493,6 +4494,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.judge.kick.standing = self.huntsman.kick.standing
 	self.judge.kick.crouching = self.huntsman.kick.crouching
 	self.judge.kick.steelsight = self.huntsman.kick.steelsight
+	self.judge.reload_speed_multiplier = 0.85
 	self.m45.CLIP_AMMO_MAX = 30
 	self.m45.AMMO_MAX = 75
 	self.m45.AMMO_PICKUP = self:_pickup_chance()
@@ -5628,6 +5630,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.panic_suppression_chance = 0.05
 	self.rpg7.stats_modifiers = {damage = 3}
 	self.rpg7.swap_speed_multiplier = 1.25
+	self.rpg7.reload_speed_multiplier = 1.1
 	self.rpg7.turret_instakill = true
 	self.cobray.timers.reload_not_empty = 2
 	self.cobray.timers.reload_empty = 4.25
@@ -5693,6 +5696,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b682.stats_modifiers = nil
 	self.b682.panic_suppression_chance = 0.05
 	self.b682.stats_modifiers = {damage = 1}
+	self.b682.reload_speed_multiplier = 1.1
 	self.x_g22c.kick.standing = self.glock_17.kick.standing
 	self.x_g22c.kick.crouching = self.glock_17.kick.crouching
 	self.x_g22c.kick.steelsight = self.glock_17.kick.steelsight
@@ -5853,6 +5857,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m32.panic_suppression_chance = 0.05
 	self.m32.timers.shotgun_reload_first_shell_offset = 1
 	self.m32.swap_speed_multiplier = 1.2
+	self.m32.reload_speed_multiplier = 1.15
 	self.aa12.rays = 9
 	self.aa12.AMMO_MAX = 80
 	self.aa12.CLIP_AMMO_MAX = 10
@@ -6688,6 +6693,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.boot.stats_modifiers = nil
 	self.boot.panic_suppression_chance = 0.05
 	self.boot.stats_modifiers = {damage = 1}
+	self.boot.reload_speed_multiplier = 0.9
 	self.packrat.AMMO_MAX = 90
 	self.packrat.AMMO_PICKUP = self:_pickup_chance()
 	self.packrat.fire_mode_data.fire_rate = 0.08571428571
@@ -6847,6 +6853,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arbiter.kick.standing = self.huntsman.kick.standing
 	self.arbiter.kick.crouching = self.huntsman.kick.crouching
 	self.arbiter.kick.steelsight = self.huntsman.kick.steelsight
+	self.arbiter.reload_speed_multiplier = 0.85
 	self.contraband.desc_id = "bm_m203_weapon_sc_desc"
 	self.contraband.has_description = true
 	self.contraband.AMMO_MAX = 60
@@ -8530,6 +8537,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.coach.stats_modifiers = nil
 	self.coach.panic_suppression_chance = 0.05
+	self.coach.reload_speed_multiplier = 1.1
 	self.legacy.fire_mode_data.fire_rate = 0.08571428571
 	self.legacy.single.fire_rate = 0.08571428571
 	self.legacy.CLIP_AMMO_MAX = 12
@@ -10016,6 +10024,7 @@ if self.qsho then
 	self.qsho.stats_modifiers = nil
 	self.qsho.rays = 16
 	self.qsho.swap_speed_multiplier = 2
+	self.qsho.reload_speed_multiplier = 1.2
 end
 
 --Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.

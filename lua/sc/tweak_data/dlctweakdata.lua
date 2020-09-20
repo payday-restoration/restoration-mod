@@ -226,7 +226,7 @@ function DLCTweakData:init(...)
 			type_items = "textures",
 			item_entry = "jkl_patt02",
 			amount = 1
-		},
+		}
 		--[[
 		{
 			type_items = "masks",

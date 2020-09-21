@@ -7,27 +7,10 @@ function MusicManager:jukebox_default_tracks()
     default_options.heist_int_dock_name = "resmusic_wetwork"
     default_options.heist_junker_name = "resmusic_madvlad"
     default_options.heist_int_dock_burn_name = "resmusic_burnout"
-    -- default_options.heist_xmn_hox_1_name = "track_66"
-    -- default_options.heist_xmn_hox_2_name = "track_67"
+    default_options.heist_xmn_hox1 = "track_66"
+    default_options.heist_xmn_hox2 = "track_67"
     return default_options
 end
-
-Hooks:PostHook(MusicManager, "jukebox_heist_specific", "ResMod_MusicManagerJukeBoxHeistSpecific", function(self)
-	if not Global.music_manager.track_attachment.heist_xmn_hox_1_name then
-        Global.music_manager.track_attachment.heist_xmn_hox_1_name = "track_66"
-    end
-	if not Global.music_manager.track_attachment.heist_xmn_hox_2_name then
-        Global.music_manager.track_attachment.heist_xmn_hox_2_name = "track_67"
-    end
-    
-	if managers.job:current_level_id() == "xmn_hox_1" then
-        return self:track_attachment("heist_xmn_hox_1_name") or "all"
-    end
-	
-	if managers.job:current_level_id() == "xmn_hox_2" then
-        return self:track_attachment("heist_xmn_hox_2_name") or "all"
-    end
-end)
 
 function MusicManager:jukebox_heist_track(name)
 	local track = self:track_attachment(name)

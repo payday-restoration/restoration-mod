@@ -2222,7 +2222,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.can_be_tased = true
 	self.spooc.static_dodge_preset = true
 	self.spooc.is_special = true
-	self.spooc.kick_damage = 5.0 --Amount of damage dealt when cloakers hick players.
+	self.spooc.kick_damage = 8.0 --Amount of damage dealt when cloakers hick players.
 	self.spooc.spawn_sound_event_2 = "clk_c01x_plu"
 	self.spooc.spooc_sound_events = {
 		detect_stop = "cloaker_detect_stop",
@@ -2773,7 +2773,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.priority_shout_max_dis = 3000
 	self.taser.rescue_hostages = false
 	self.taser.deathguard = true
-	self.taser.shock_damage = 4.0 --Amount of damage dealt when taser shocks down.
+	self.taser.shock_damage = 8.0 --Amount of damage dealt when taser shocks down.
 	self.taser.chatter = {
 		aggressive = true,
 		retreat = true,
@@ -12341,8 +12341,8 @@ function CharacterTweakData:_set_normal()
 	self.omnia.melee_weapon_dmg_multiplier = 1
 	
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 3.0
-	self.taser.shock_damage = 2.0
+	self.spooc.kick_damage = 4.0
+	self.taser.shock_damage = 4.0
 
 	--No normal tase for Elektra on lower difficulties
 	self.taser_summers.weapon.is_rifle.tase_distance = 0
@@ -12530,8 +12530,8 @@ function CharacterTweakData:_set_hard()
 	self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 3.0
-	self.taser.shock_damage = 2.0
+	self.spooc.kick_damage = 5.0
+	self.taser.shock_damage = 5.0
 
 	--No normal tase for Elektra on lower difficulties
 	self.taser_summers.weapon.is_rifle.tase_distance = 0	
@@ -12727,8 +12727,8 @@ function CharacterTweakData:_set_overkill()
 	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 4.0
-	self.taser.shock_damage = 2.0
+	self.spooc.kick_damage = 6.0
+	self.taser.shock_damage = 6.0
 
 	--No normal tase for Elektra on lower difficulties
 	self.taser_summers.weapon.is_rifle.tase_distance = 0		
@@ -12929,8 +12929,8 @@ function CharacterTweakData:_set_overkill_145()
 	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 4.0
-	self.taser.shock_damage = 2.0
+	self.spooc.kick_damage = 6.0
+	self.taser.shock_damage = 6.0
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.good)
@@ -13248,8 +13248,8 @@ function CharacterTweakData:_set_easy_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 5.0
-	self.taser.shock_damage = 3.0
+	self.spooc.kick_damage = 6.0
+	self.taser.shock_damage = 6.0
 
 	self:_set_characters_weapon_preset("expert", "good")
 	self:_set_characters_dodge_preset("athletic_overkill")
@@ -13590,8 +13590,8 @@ function CharacterTweakData:_set_overkill_290()
 	self.city_swat.can_slide_on_suppress = true		
 			
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 5.0
-	self.taser.shock_damage = 3.0
+	self.spooc.kick_damage = 6.0
+	self.taser.shock_damage = 6.0
 
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
@@ -13824,8 +13824,8 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi_heavy_swat.can_slide_on_suppress = true		
 				
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 5.0
-	self.taser.shock_damage = 3.0
+	self.spooc.kick_damage = 8.0
+	self.taser.shock_damage = 8.0
 	
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil

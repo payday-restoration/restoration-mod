@@ -384,6 +384,8 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 
 	if damage_type == "melee" then
 		multiplier = multiplier * self:upgrade_value("player", "melee_damage_dampener", 1)
+	elseif damage_type == "kick_or_shock" then --Cloaker kicks/taser shocks
+		multiplier = multiplier * self:upgrade_value("player", "spooc_damage_resist", 1.0)
 	end
 
 	local current_state = self:get_current_state()

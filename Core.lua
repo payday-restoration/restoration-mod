@@ -67,9 +67,12 @@ function restoration:Init()
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
 	}
+	restoration.headless_hatman = {}
+	
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
+	
 	restoration.tiny_levels = {
 		"welcome_to_the_jungle_2",
 		"election_day_2",

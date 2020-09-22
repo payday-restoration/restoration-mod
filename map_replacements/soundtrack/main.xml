@@ -59,4 +59,5 @@
 	<MenuMusic id="m4" source="m4.ogg" volume="0.6"/>
 	<MenuMusic id="m5" source="m5.ogg" volume="0.6"/>
 	<MenuMusic id="m6" source="m6.ogg" volume="0.6"/>
+	<MenuMusic id="m_holiday" source="m_holiday.ogg" volume="0.6"/>
 </table>

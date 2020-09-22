@@ -226,8 +226,7 @@ function DLCTweakData:init(...)
 			type_items = "textures",
 			item_entry = "jkl_patt02",
 			amount = 1
-		}
-		--[[
+		},
 		{
 			type_items = "masks",
 			item_entry = "chains_halloween",
@@ -248,7 +247,6 @@ function DLCTweakData:init(...)
 			item_entry = "wolf_halloween",
 			amount = 1
 		}
-		]]--
 	}
 	
 	self.sc = {}

@@ -1083,7 +1083,12 @@ end
 
 --Called when players get kicked/tased. Applies damage and sets flag to true.
 function PlayerDamage:cloak_or_shock_incap(damage)
-	self:change_health(-1.0 * damage * managers.player:upgrade_value("player", "spooc_damage_resist", 1.0) or 0.0)
+	local deflection = self._deflection
+	if self:has_temp_health() then --Hitman deflection bonus.
+		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+	end
+
+	self:change_health(-1.0 * deflection * damage * managers.player:upgrade_value("player", "spooc_damage_resist", 1.0) or 0.0)
 
 	if self:get_real_health() == 0 then
 		self:change_health(0.1)

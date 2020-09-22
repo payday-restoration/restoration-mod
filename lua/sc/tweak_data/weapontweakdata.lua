@@ -3499,7 +3499,7 @@ end
 --Secondary pickup is compensated in newraycastweaponbase/weaponammo by looking at their total ammo as if they were primaries.
 function WeaponTweakData:_pickup_chance()
 	return {
-		0.028, 0.056
+		0.026, 0.052
 	}
 end
 

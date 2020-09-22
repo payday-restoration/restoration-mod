@@ -3662,4 +3662,5 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.chac.stats.concealment = 29
 	self.melee_weapons.chac.melee_damage_delay = 0.2
 	self.melee_weapons.chac.expire_t = 1.1		
+
 end

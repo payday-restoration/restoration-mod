@@ -201,14 +201,6 @@ function BlackMarketManager:accuracy_index_addend(name, categories, silencer, cu
 		index = index + pm:upgrade_value("weapon", "silencer_spread_index_addend", 0)
 	end
 
-	if fire_mode == "single" and table.contains_any(tweak_data.upgrades.sharpshooter_categories, categories) then
-		index = index + pm:upgrade_value("weapon", "single_spread_index_addend", 0)
-	end
-
-	if not current_state._moving then
-		index = index + pm:upgrade_value("player", "not_moving_accuracy_increase", 0)
-	end
-
 	return index
 end
 

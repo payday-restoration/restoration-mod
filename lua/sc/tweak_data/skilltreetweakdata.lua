@@ -375,8 +375,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 3},
 				[1] = {
 					upgrades = {
-						"smg_hip_fire_spread_multiplier",
-						"assault_rifle_hip_fire_spread_multiplier",
+						"smg_hip_fire_spread_multiplier"
 					},
 					cost = self.costs.default
 				},
@@ -395,17 +394,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 0},
 				[1] = {
 					upgrades = {
-						"smg_move_spread_multiplier",
-						"assault_rifle_move_spread_multiplier",
+						"smg_move_spread_multiplier"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
 						"smg_fire_rate_multiplier_1",
-						"assault_rifle_fire_rate_multiplier_1",
-						"smg_full_auto_free_ammo",
-						"assault_rifle_full_auto_free_ammo"
+						"smg_full_auto_free_ammo"
 					},
 					cost = self.costs.pro
 				}
@@ -1121,7 +1117,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 9},
 				[1] = {
 					upgrades = {
-						"weapon_single_spread_index_addend"
+						"assault_rifle_spread_index_addend",
+						"snp_spread_index_addend"
 					},
 					cost = self.costs.default
 				},

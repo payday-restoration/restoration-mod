@@ -583,7 +583,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--MG Handling
 				--Basic
 					self.values.smg.hip_fire_spread_multiplier = {0.8}
-					self.values.assault_rifle.hip_fire_spread_multiplier = {0.8}
 				--Ace
 					self.values.smg.reload_speed_multiplier = {1.25}
 				
@@ -596,12 +595,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--MG Specialist
 				--Basic
 					self.values.smg.move_spread_multiplier = {0.4}
-					self.values.assault_rifle.move_spread_multiplier = {0.4}
 				--Ace
 					self.values.smg.fire_rate_multiplier = {1.15, 1.15}
 					self.values.smg.full_auto_free_ammo = {5}
-					self.values.assault_rifle.fire_rate_multiplier = {1.15, 1.15}
-					self.values.assault_rifle.full_auto_free_ammo = {5}
 				
 			--Heavy Impact
 				--Basic
@@ -614,8 +610,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 			--Body Expertise
 				self.values.weapon.automatic_head_shot_add = {0.3, 1}
-				--Run and Shoot
-		
+				self.values.player.universal_body_expertise = {true}
+						
 	--ENFORCER--
 		--Shotgunner--
 			--Shotgun Impact
@@ -833,16 +829,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.snp.recoil_index_addend = {1}
 					self.values.assault_rifle.recoil_index_addend = {1}
 				--Ace
-					self.values.temporary.headshot_fire_rate_mult = {{1.2, 6}}
+					self.values.temporary.headshot_fire_rate_mult = {{1.2, 10}}
 				
 			--Kilmer
 				--Basic
-					self.values.weapon.single_spread_index_addend = {1}
-					self.sharpshooter_categories = { --Determines what weapons benefit.
-						"assault_rifle",
-						"smg",
-						"snp"
-					}
+					self.values.snp.spread_index_addend = {1}
+					self.values.assault_rifle.spread_index_addend = {1}
 				--Ace
 					self.values.snp.reload_speed_multiplier = {1.25}
 					self.values.assault_rifle.reload_speed_multiplier = {1.25}
@@ -874,19 +866,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Ammo Efficiency
 				self.values.player.head_shot_ammo_return = {
-					{ ammo = 0.035, time = 6, headshots = 3, to_magazine = false }, --Basic
-					{ ammo = 0.035, time = 6, headshots = 2, to_magazine = true } --Ace
+					{ ammo = 0.03, time = 6, headshots = 3, to_magazine = false }, --Basic
+					{ ammo = 0.03, time = 6, headshots = 2, to_magazine = true } --Ace
 				}
 
 			--Aggressive Reload
 				self.values.temporary.single_shot_fast_reload = {
 					{ --Basic
 						1.25,
-						6
+						10,
+						false --Whether or not to allow full-auto
 					},
 					{ --Ace
 						1.5,
-						12
+						10,
+						true
 					},
 				}
 
@@ -1770,6 +1764,24 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "damage_control_auto_shrug",
 			category = "player"
 		}
+	}
+	self.definitions.assault_rifle_spread_index_addend = {
+		name_id = "menu_assault_rifle_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "spread_index_addend",
+			category = "assault_rifle"
+		}
+	}
+	self.definitions.snp_spread_index_addend = {
+		name_id = "menu_snp_spread_index_addend",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "spread_index_addend",
+			category = "snp"
+		}
 	}	
 	self.definitions.akimbo_spread_index_addend_1 = {
 		name_id = "menu_pistol_spread_index_addend",
@@ -2595,33 +2607,6 @@ function UpgradesTweakData:_smg_definitions()
 			value = 1
 		}
 	}
-	self.definitions.assault_rifle_full_auto_free_ammo = {
-		category = "feature",
-		name_id = "menu_assault_rifle_full_auto_free_ammo",
-		upgrade = {
-			category = "assault_rifle",
-			upgrade = "full_auto_free_ammo",
-			value = 1
-		}
-	}
-	self.definitions.assault_rifle_fire_rate_multiplier_1 = {
-		category = "feature",
-		name_id = "menu_assault_rifle_fire_rate_multiplier",
-		upgrade = {
-			category = "assault_rifle",
-			upgrade = "fire_rate_multiplier",
-			value = 1
-		}
-	}
-	self.definitions.assault_rifle_fire_rate_multiplier_2 = {
-		category = "feature",
-		name_id = "menu_assault_rifle_fire_rate_multiplier",
-		upgrade = {
-			category = "assault_rifle",
-			upgrade = "fire_rate_multiplier",
-			value = 2
-		}
-	}
 	self.definitions.smg_damage_multiplier = {
 		category = "feature",
 		name_id = "menu_smg_fire_rate_multiplier",
@@ -3211,6 +3196,16 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
+	self.definitions.player_universal_body_expertise = {
+		name_id = "menu_player_universal_body_expertise",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "universal_body_expertise",
+			category = "player"
+		}
+	}
+
 end
 
 Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", function(self)

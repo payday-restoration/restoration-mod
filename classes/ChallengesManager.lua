@@ -281,12 +281,12 @@ function ChallengesManagerRes:_completed_challenge( name )
 			managers.hud:present_mid_text( { title = title, text = text, time = 4, icon = nil, event = "stinger_objectivecomplete", type = "challenge" } )
 		end
 
-		local cc_reward = self._challenges_map_res[ name ].cc
-		if cc_reward then
-			managers.custom_safehouse:add_coins( cc_reward, true )
-		else
-			return
-		end
+		-- local cc_reward = self._challenges_map_res[ name ].cc
+		-- if cc_reward then
+		-- 	managers.custom_safehouse:add_coins( cc_reward, true )
+		-- else
+		-- 	return
+		-- end
 		-- managers.experience:add_points( self._challenges_map_res[ name ].xp, true )
 	end
 

@@ -22,6 +22,7 @@ StatisticsManager.special_unit_ids = {
 	"tank_titan",
 	"tank_titan_assault",
 	"spring",
+	"headless_hatman",
 	"summers",
 	"omnia_lpf",
 	"swat_turret",
@@ -118,6 +119,13 @@ function StatisticsManager:init()
 			explosion = 0,
 			tied = 0
 		}
+	self._defaults.killed.headless_hatman = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}		
 	self._defaults.killed.summers = {
 			count = 0,
 			head_shots = 0,

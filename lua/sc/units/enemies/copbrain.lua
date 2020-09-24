@@ -233,6 +233,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.meme_man_shield.flee = nil	
 	CopBrain._logic_variants.spring = clone(security_variant)
 	CopBrain._logic_variants.spring.attack = TankCopLogicAttack
+	CopBrain._logic_variants.headless_hatman = clone(security_variant)
+	CopBrain._logic_variants.headless_hatman.attack = TankCopLogicAttack	
 	CopBrain._logic_variants.summers = clone(security_variant)
 	CopBrain._logic_variants.summers.attack = TankCopLogicAttack
 	CopBrain._logic_variants.tank_titan = clone(security_variant)
@@ -240,6 +242,7 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.tank_titan_assault = clone(security_variant)
 	CopBrain._logic_variants.tank_titan_assault.attack = TankCopLogicAttack
 	CopBrain._logic_variants.spring.phalanx = CopLogicPhalanxVip
+	CopBrain._logic_variants.headless_hatman.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.summers.phalanx = CopLogicPhalanxVip
 	CopBrain._logic_variants.taser_summers.attack = TaserLogicAttack
 	CopBrain._logic_variants.omnia_lpf = security_variant

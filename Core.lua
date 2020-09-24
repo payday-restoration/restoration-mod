@@ -2,6 +2,10 @@ if not ModCore then
 	restoration.log_shit("[ERROR] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
 	return
 end
+
+Month = os.date("%m")
+Day = os.date("%d")	
+
 restoration._mod_path = restoration:GetPath()
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
@@ -67,7 +71,7 @@ function restoration:Init()
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
 	}
-	restoration.headless_hatman = {}
+	restoration.what_a_horrible_heist_to_have_a_curse = {}
 	
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7

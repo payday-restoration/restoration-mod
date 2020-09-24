@@ -33,6 +33,7 @@ local group_timestamps = {}
 local group_cooldowns = {
 	Cap_Winters = 2700,
 	Cap_Spring = 2700,
+	HVH_Boss = 2700,
 	Cap_Summers = 2700,
 	Cap_Autumn = 900
 }
@@ -42,6 +43,7 @@ if Global.game_settings and Global.game_settings.one_down then
 	group_cooldowns = {
 		Cap_Winters = 1800,
 		Cap_Spring = 1800,
+		HVH_Boss = 1800,
 		Cap_Summers = 1800,
 		Cap_Autumn = 600
 	}
@@ -49,6 +51,7 @@ else
 	group_cooldowns = {
 		Cap_Winters = 2700,
 		Cap_Spring = 2700,
+		HVH_Boss = 2700,
 		Cap_Summers = 2700,
 		Cap_Autumn = 900
 	}

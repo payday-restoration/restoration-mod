@@ -44,6 +44,7 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.meme_man_shield.hurt = ShieldActionHurt
 	CopMovement._action_variants.meme_man_shield.walk = ShieldCopActionWalk		
 	CopMovement._action_variants.spring = clone(security_variant)
+	CopMovement._action_variants.headless_hatman = clone(security_variant)
 	CopMovement._action_variants.summers = clone(security_variant)
 	CopMovement._action_variants.boom_summers = clone(security_variant)
 	CopMovement._action_variants.boom_summers.heal = MedicActionHeal

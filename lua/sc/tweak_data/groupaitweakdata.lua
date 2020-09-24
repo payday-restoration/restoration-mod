@@ -615,6 +615,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 0,
 			phalanx_vip = 0,
 			spring = 0,
+			headless_hatman = 0,
 			autumn = 0,
 			summers = 0
 		}
@@ -628,6 +629,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 0,
 			phalanx_vip = 0,
 			spring = 0,
+			headless_hatman = 0,
 			autumn = 0,
 			summers = 0
 		}
@@ -641,6 +643,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 2,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}
@@ -654,6 +657,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 3,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}
@@ -667,6 +671,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 3,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}	
@@ -680,6 +685,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 3,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}				
@@ -693,6 +699,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 3,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}
@@ -9801,7 +9808,126 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 			is_captain = true
 		}
 	end
-			
+	
+	--Headless Titandozer Boss
+	self.unit_categories.HVH_Boss = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},
+			russia = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},
+			federales = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},
+			lapd = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},				
+		},
+		max_amount = 1,
+		access = access_type_all,
+		special_type = "headless_hatman"
+	}	
+	--Headless Titandozers that spawn with boss
+	if difficulty_index <= 6 then
+		self.unit_categories.HVH_Boss_Headless = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},
+				zombie = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},					
+				russia = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},
+				murkywater = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},
+				federales = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},				
+				nypd = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},	
+				lapd = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				}				
+			},
+			access = access_type_all,
+			special_type = "tank",
+			is_captain = true
+		}
+	else
+		self.unit_categories.HVH_Boss_Headless = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},
+				zombie = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},					
+				russia = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},
+				murkywater = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},
+				federales = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},				
+				nypd = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},	
+				lapd = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				}				
+			},
+			access = access_type_all,
+			special_type = "tank",
+			is_captain = true
+		}	
+	end
+	--Ghost Titancloakers that spawn with boss
+	self.unit_categories.HVH_Boss_Spooc = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},
+			zombie = {
+				Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},					
+			russia = {
+				Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},
+			murkywater = {
+				Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},
+			federales = {
+				Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},					
+			nypd = {
+				Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			}				
+		},
+		access = access_type_all,
+		special_type = "spooc",
+		is_captain = true
+	}	
+
 end
 
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
@@ -10228,6 +10354,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"aggressor",
 			"charge"
 		},
+		HVH_boss = {
+			"aggressor",
+			"charge"
+		},		
 		Cap_summers = {
 			"aggressor",
 			"charge"
@@ -12355,6 +12485,73 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}			
 	end
+	if difficulty_index <= 5 then
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = {1, 1},
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				}
+			}
+		}	
+	elseif difficulty_index == 6 or difficulty_index == 7 then
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = {3, 3},
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}				
+	else
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = {7, 7},
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				},					
+			}
+		}			
+	end	
 	if difficulty_index <= 7 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {1, 1},
@@ -14503,6 +14700,37 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			break
 		end
 	end
+	--HVH Boss stuff--
+	for _,v in pairs(restoration.what_a_horrible_heist_to_have_a_curse) do
+		if job == v then
+			if difficulty_index <= 3 then
+				self.besiege.assault.groups.HVH_Boss = {
+					0,
+					0,
+					0
+				}
+			elseif difficulty_index == 4 then
+				self.besiege.assault.groups.HVH_Boss = {
+					0,
+					0.08,
+					0.16
+				}
+			elseif difficulty_index == 5 then
+				self.besiege.assault.groups.HVH_Boss = {
+					0,
+					0.08,
+					0.16
+				}
+			else
+				self.besiege.assault.groups.HVH_Boss = {
+					1,
+					1,
+					1
+				}
+			end
+			break
+		end
+	end	
 	--Captain Winters stuff here--
 	for _,v in pairs(restoration.captain_camper) do
 		if job == v then

@@ -2567,6 +2567,11 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.static_dodge_preset = true
 	self.spring.is_special = true
 	table.insert(self._enemy_list, "spring")
+	
+	--Headless Titandozer Boss 
+	self.headless_hatman = deep_clone(self.spring)
+	self.headless_hatman.custom_voicework = "tdozer"
+	table.insert(self._enemy_list, "headless_hatman")
 end
 
 function CharacterTweakData:_init_summers(presets)
@@ -12153,6 +12158,7 @@ function CharacterTweakData:_set_easy()
 	
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false
+	self.headless_hatman.can_throw_frag = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12349,6 +12355,7 @@ function CharacterTweakData:_set_normal()
 	
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false		
+	self.headless_hatman.can_throw_frag = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12538,6 +12545,7 @@ function CharacterTweakData:_set_hard()
 
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false		
+	self.headless_hatman.can_throw_frag = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12734,7 +12742,8 @@ function CharacterTweakData:_set_overkill()
 	self.taser_summers.weapon.is_rifle.tase_distance = 0		
 	
 	--No Frags on Spring on lower difficulties
-	self.spring.can_throw_frag = false		
+	self.spring.can_throw_frag = false	
+	self.headless_hatman.can_throw_frag = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.good)
@@ -15327,7 +15336,8 @@ function CharacterTweakData:character_map()
 				"ene_shield_gensec",
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_heavy_r870_sc",
-				"ene_swat_heavy_r870_sc"
+				"ene_swat_heavy_r870_sc",
+				"ene_headless_hatman"
 			}
 		}			
 	}

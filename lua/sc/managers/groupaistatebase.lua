@@ -71,6 +71,7 @@ function GroupAIStateBase:_init_misc_data()
 		omnia_LPF = true,
 		phalanx_vip = true,
 		spring = true,
+		headless_hatman = true,
 		summers = true,
 		autumn = true
 	}
@@ -138,6 +139,7 @@ function GroupAIStateBase:on_simulation_started()
 		omnia_LPF = true,
 		phalanx_vip = true,
 		spring = true,
+		headless_hatman = true,
 		summers = true,
 		autumn = true
 	}

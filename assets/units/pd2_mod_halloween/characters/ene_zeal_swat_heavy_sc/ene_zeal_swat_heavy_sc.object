@@ -201,7 +201,7 @@
 	</decal_surfaces>
 
 	<graphics>
-		<graphic_group name="character" enabled="true">
+		<graphic_group name="character" enabled="true" culling_object="c_cullblock">
 
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" />
@@ -214,18 +214,22 @@
 			</lod_object>
 
 			<lod_object name="lod_helmet">
-				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" />
-				<object name="g_helmet_lod2" 	enabled="true" lod="1"/>
+				<object name="g_helmet_lod1" 	enabled="true"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_ene_acc_swat_helmet"/>					
+				</object>
 			</lod_object>
+			
+			<lod_object name="lod_helmet2">			
+				<object name="g_helmet_lod2" 	enabled="true"  max_draw_lod="0">
+					<material materials="mtr_ene_acc_swat_helmet" max_distance="0"/>
+					<material materials="mtr_ene_acc_swat_helmet_lod2" max_distance="1500" />
+				</object>
+			</lod_object>
+			
 			<object name="s_body" enabled="true" shadow_caster="true"/>        
-		
+			<object name="s_head" enabled="true" shadow_caster="true"/>        
+		    <object name="g_bag" enabled="false" />		
 		</graphic_group>
-		
-		<graphic_group name="pouches_n_shit" enabled="true" culling_object="g_head">
-			<lod_object name="lod_bag">
-		         <object name="g_bag" enabled="true" />
-			</lod_object>	 
-		</graphic_group>	
 	</graphics>
 
 </dynamic_object>

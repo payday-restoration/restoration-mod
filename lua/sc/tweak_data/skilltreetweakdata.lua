@@ -460,7 +460,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"weapon_automatic_head_shot_add_2"
+						"weapon_automatic_head_shot_add_2",
+						"player_universal_body_expertise"
 					},
 					cost = self.costs.hightierpro
 				}

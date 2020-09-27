@@ -14723,9 +14723,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				}
 			else
 				self.besiege.assault.groups.HVH_Boss = {
-					1,
-					1,
-					1
+					0,
+					0.08,
+					0.16
 				}
 			end
 			break

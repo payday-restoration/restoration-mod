@@ -73,6 +73,26 @@ function restoration:Init()
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {}
 	
+	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
+	
+		restoration.captain_murderdozer = {}
+		
+		restoration.what_a_horrible_heist_to_have_a_curse = {
+			"dah", --diamond heist
+			"hox_2", --Hoxout Day 2
+			"xmn_hox_2", --Hoxout Day 2, christmas
+			"firestarter_1", --firestarter day 1
+			"arm_for",	--train heist
+			"big", --big bank
+			"dinner", --Slaughterhouse
+			"kenaz",--Golden Grin Casino
+			"cas", --Golden Grin Casino
+			--custom heists		
+			"firestarter_1_res" --firestarter day 1 res edit version
+		}		
+	
+	end
+	
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--

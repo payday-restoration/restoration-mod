@@ -1959,7 +1959,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["beta_assault"] = "Alpha Tape",
 
 		["menu_ingame_manual"] = "Overhaul Guide",
-		["menu_ingame_manual_help"] = "View the guide for Restoration's Overhaul.",
+		["menu_ingame_manual_help"] = "Открыть руководство по переработке геймплея Restoration",
 
 		["menu_asset_wet_add_saw"] = "Additional Saw",
 		["menu_asset_wet_add_saw_desc"] = "Buy an additional saw",

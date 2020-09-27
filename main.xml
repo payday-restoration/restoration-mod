@@ -101,7 +101,7 @@
 		<hook file="sc/units/weapons/saw.lua" source_file="lib/units/weapons/sawweaponbase"/>
 		<hook file="sc/units/weapons/weaponflashlight.lua" source_file="lib/units/weapons/weaponflashlight"/>
 		<hook file="sc/tweak_data/groupaitweakdata.lua" source_file="lib/tweak_data/groupaitweakdata"/>
-		<hook file="sc/loc/loc.lua" source_file="lib/managers/localizationmanager"/>
+		<hook file="sc/loc/coreloc.lua" source_file="lib/managers/localizationmanager"/>
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
 		<hook file="sc/units/weapons/smokescreengrenade.lua" source_file="lib/units/weapons/grenades/smokescreengrenade"/>

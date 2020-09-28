@@ -1606,7 +1606,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4
 	}
 	self.values.player.damage_control_healing = {
-		400
+		300
 	}
 
 	self.values.player.damage_control_cooldown_drain = {

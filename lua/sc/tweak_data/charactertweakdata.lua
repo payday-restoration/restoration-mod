@@ -1361,8 +1361,8 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.experience = {}
 	self.gangster.weapon = presets.weapon.normal
 	self.gangster.detection = presets.detection.normal
-	self.gangster.HEALTH_INIT = 2
-	self.gangster.headshot_dmg_mul = 2.3
+	self.gangster.HEALTH_INIT = 4
+	self.gangster.headshot_dmg_mul = 2.25
 	self.gangster.move_speed = presets.move_speed.normal
 	self.gangster.suspicious = nil
 	self.gangster.suppression = presets.suppression.easy
@@ -1430,8 +1430,8 @@ function CharacterTweakData:_init_biker(presets)
 	else
 		self.biker.access = "gangster"
 	end		
-	self.biker.HEALTH_INIT = 2
-	self.biker.headshot_dmg_mul = 2.3	
+	self.biker.HEALTH_INIT = 4
+	self.biker.headshot_dmg_mul = 2.25
 	self.biker.calls_in = true
 	self.biker.speech_prefix_p1 = "bik"
 	self.biker.speech_prefix_p2 = nil
@@ -1509,8 +1509,8 @@ function CharacterTweakData:_init_mobster(presets)
 	self.mobster = deep_clone(self.gangster)
 	self.mobster.calls_in = true
 	self.mobster.melee_weapon = "fists"
-	self.mobster.HEALTH_INIT = 2
-	self.mobster.headshot_dmg_mul = 2.3
+	self.mobster.HEALTH_INIT = 4
+	self.mobster.headshot_dmg_mul = 2.25
 	self.mobster.speech_prefix_p1 = "rt"
 	self.mobster.speech_prefix_p2 = nil
 	self.mobster.speech_prefix_count = 2
@@ -4392,7 +4392,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.base = {}
-	presets.base.HEALTH_INIT = 2.5
+	presets.base.HEALTH_INIT = 2
 	presets.base.headshot_dmg_mul = 2
 	presets.base.use_animation_on_fire_damage = true
 	presets.base.SPEED_WALK = {

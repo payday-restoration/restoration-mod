@@ -49,8 +49,6 @@ function restoration:Init()
 		"arm_for",	--train heist
 		"big", --big bank
 		"dinner", --Slaughterhouse
-		"kenaz",--Golden Grin Casino
-		"cas", --Golden Grin Casino
 		--custom heists		
 		"firestarter_1_res" --firestarter day 1 res edit version
 	}
@@ -85,8 +83,6 @@ function restoration:Init()
 			"arm_for",	--train heist
 			"big", --big bank
 			"dinner", --Slaughterhouse
-			"kenaz",--Golden Grin Casino
-			"cas", --Golden Grin Casino
 			--custom heists		
 			"firestarter_1_res" --firestarter day 1 res edit version
 		}		

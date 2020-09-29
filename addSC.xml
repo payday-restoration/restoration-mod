@@ -1,4 +1,13 @@
 <table directory="assets">
+	<!--Murky Taser Helmet -->
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>	
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false" load="true"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
+	<texture path="units/pd2_mod_sharks/characters/ene_murky_tazer/helmets_heavy_taser_atlas_df" force="false"/>	
+	
 	<!--these guys have to be in here or you get stuck on the blackscreen idfk anymore-->
     <unit path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36" load="true"/>
     <unit path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk" load="true"/>
@@ -1831,7 +1840,7 @@
 	<texture path="units/payday2/characters/shared_textures/nvg_df"/>
 	<texture path="units/payday2/characters/shared_textures/titan_il"/>
 	<texture path="units/payday2/characters/shared_textures/spook_cloak_nm"/>
-	<texture path="units/payday2/characters/shared_textures/spook_cloak_glow_df" load="true"/>
+	<texture path="units/payday2/characters/shared_textures/spook_cloak_glow_df" load="true"/> 
 	
 	<!--Cloaked Cloaker Debris-->
 	<!--head-->

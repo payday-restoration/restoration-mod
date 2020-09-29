@@ -49,12 +49,12 @@
   <graphics>
     <object name="g_helmet" enabled="false" />
     <object name="g_helmet_lod1" enabled="true" />	
-    <object name="g_dmg1" enabled="true" />
-    <object name="g_dmg2" enabled="true" />
-    <object name="g_dmg4" enabled="true" />
-    <object name="g_dmg5" enabled="true" />
-    <object name="g_dmg6" enabled="true" />
-    <object name="g_dmg3" enabled="true" />
+    <object name="g_dmg1" enabled="false" />
+    <object name="g_dmg2" enabled="false" />
+    <object name="g_dmg4" enabled="false" />
+    <object name="g_dmg5" enabled="false" />
+    <object name="g_dmg6" enabled="false" />
+    <object name="g_dmg3" enabled="false" />
   </graphics>
 	<graphics>
 		<graphic_group name="helmetculling" enabled="true" culling_object="g_helmet">

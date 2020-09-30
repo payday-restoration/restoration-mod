@@ -78,6 +78,8 @@
 	<unit path="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870_husk" force="true" load="true"/>
 	
 	<texture path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/swat_body_hvh_df" force="true" />
+	
+	<model path="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2" force="true" />
 
 	<unit path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1" force="true" load="true"/>
 	<unit path="units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1_husk" force="true" load="true"/>

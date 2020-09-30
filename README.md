@@ -93,4 +93,8 @@ MarioInATopHat: voicing Big Dave
 
 Nikolas Pascal: creating the art that inspired the Sunny-Side Robber custom outfit
 
+easterunit100: creating the code for enemies commenting on certain deployables
+
+Marcel Kamisso: For the multicam used on Murky units
+
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale

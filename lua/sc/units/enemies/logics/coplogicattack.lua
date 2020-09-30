@@ -37,6 +37,12 @@ local temp_vec1 = Vector3()
 local temp_vec2 = Vector3()
 local temp_vec3 = Vector3()
 
+local _CopLogicAttack_update = CopLogicAttack.update
+function CopLogicAttack.update(data)
+	_CopLogicAttack_update(data)
+	restoration:inform_law_enforcements(data)	
+end
+
 function CopLogicAttack.enter(data, new_logic_name, enter_params)
 	CopLogicBase.enter(data, new_logic_name, enter_params)
 	data.unit:brain():cancel_all_pathing_searches()

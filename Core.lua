@@ -50,7 +50,8 @@ function restoration:Init()
 		"big", --big bank
 		"dinner", --Slaughterhouse
 		--custom heists		
-		"firestarter_1_res" --firestarter day 1 res edit version
+		"firestarter_1_res", --firestarter day 1 res edit version
+		"lvl_friday" --Crashing Capitol
 	}
 	restoration.captain_stelf = {
 		"alex_1", --Rats Day 1
@@ -84,7 +85,8 @@ function restoration:Init()
 			"big", --big bank
 			"dinner", --Slaughterhouse
 			--custom heists		
-			"firestarter_1_res" --firestarter day 1 res edit version
+			"firestarter_1_res", --firestarter day 1 res edit version
+			"lvl_friday" --Crashing Capitol
 		}		
 	
 	end

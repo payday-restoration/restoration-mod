@@ -592,13 +592,31 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
 		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
 
-		--Woo Hints--
-		["loading_gameplay_118"] = "You have a 25% chance to pick up cable ties from ammo boxes, make the most of them!",
-		["loading_gameplay_12"] = "Know your enemy. Cloakers have distinct green, glowing night vision goggles on, and are completely silent. Check your corners and maintain vigilance!",
+		--Loading Hints--
+		--Restoration Gameplay Hints--
+		["loading_gameplay_res_title"] = "Restoration Gameplay Tips",
+		["loading_gameplay_res_1"] = "Cloakers make a 'wheezing' sound when aggressive towards heisters. Use this to locate them.",
+		["loading_gameplay_res_2"] = "Cloakers no longer make an ambient humming sound or screech when charging. Pay attention to your surroundings, as their goggles are now always lit up.",
+		["loading_gameplay_res_3"] = "On Death Sentence, enemies may charge you if you reload. Make sure that you're in good cover or far from enemies. It might be better to swap weapons sometimes, especially if using a pistol as your secondary.",
+		["loading_gameplay_res_4"] = "Tasers no longer reload your weapons. Try to stay topped up when possible, or switch to a secondary if you're about to be tased.",
+		["loading_gameplay_res_5"] = "Cloakers will actively go after lone heisters, stick together or go to jail alone.",
+		["loading_gameplay_res_6"] = "Cloakers now remove a set percentage of your HP when they kick you. No free healing anymore, but they also don't immediately wreck you from full HP.",
+		["loading_gameplay_res_7"] = "Green Bulldozers will attempt to flank players and will run in, unload, and then run away. Be careful not to get overwhelmed or surprised.",
+		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers are hyper-aggressive and will charge at the player. This makes them easy to predict, but highly dangerous if you aren't prepared.",
+		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers will attempt to provide covering fire for other units, but will still charge in various circumstances and have very high DPS.",
+		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers. They only spawn in Crime Spree and alongside Captain Spring on Death Sentence. They are very very dangerous.",
+		["loading_gameplay_res_11"] = "All Dozers except Titan Dozers will charge reloading players.",
+		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 15%.",
+		["loading_gameplay_res_13"] = "Cloakers perform their iconic screech when they are about to jump kick you, dodge to the side when you hear it.",
+		["loading_gameplay_res_14"] = "Cloaker Jump Kicks will cuff you instead of down you.",
+		["loading_gameplay_res_15"] = "Flashbangs cannot be broken on Death Sentence. Your opinion, my choice.",
+		["loading_gameplay_res_16"] = "You can parry melee attacks by charging your own. This can be upgraded to work against cloaker kicks.",
+		["loading_gameplay_res_17"] = "Enemy melee attacks are vastly more effective than before. Don't expect to simply walk passed a horde.",
+		["loading_gameplay_res_18"] = "You know what's better than smacking enemies with a baseball bat? Smacking them in the head with a baseball bat for headshot damage.",
+		["loading_gameplay_res_19"] = "Snipers take a brief period of time to focus before firing. You'll know when you are being focused if all of your audio begins to fade away.",
+		["loading_gameplay_res_20"] = "Your Jokers aren't safe from being kicked by Cloakers.",
+		["loading_gameplay_res_21"] = "Regular enemies will come at you wielding a variety of weapons. You can tell who is carrying what by watching for details in their uniforms.",
 
-		["loading_sc_tip_title"] = "SC's Mod Tips",
-		["loading_sc_tip_1"] = "Know your enemy. Grenadiers use tear gas grenades to flush heisters out of cover and are resistant to explosives themselves. Take them out quickly!",
-		["loading_sc_tip_2"] = "Know your enemy. The Veteran Cop automatically dodges 50% of incoming gunfire. Try using damage types that he can't dodge like explosives, fire, or your melee weapon!",
 
 		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
 		--["skill_uppers_revive"] = "Downs restored!",

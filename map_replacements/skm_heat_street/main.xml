@@ -39,6 +39,7 @@
 			<value_node value="levels/narratives/skm/skm_run/backdrop/backdrop"/>
 			<value_node value="levels/narratives/skm/skm_run/world/world"/>
 			<value_node value="levels/narratives/skm/skm_run/lights/lights"/>
+			<value_node value="levels/narratives/classics/run/world/world"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">

@@ -706,6 +706,8 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.steal_loot = nil
 	if is_reaper or is_federales then
 		self.omnia_lpf.custom_voicework = nil
+	elseif is_zombie then
+		self.omnia_lpf.custom_voicework = "awoolpf"
 	else
 		self.omnia_lpf.custom_voicework = "olpf"
 	end			

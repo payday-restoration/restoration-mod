@@ -156,6 +156,7 @@ function PlayerDamage:init(unit)
 
 		local function on_revive_interaction_start()
 			managers.player:set_property("revive_damage_reduction", player_manager:upgrade_value("player", "revive_damage_reduction"), 1)
+			managers.hud:remove_skill("revive_damage_reduction")
 			managers.hud:add_skill("revive_damage_reduction")
 		end
 

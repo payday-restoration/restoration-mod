@@ -1741,8 +1741,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_temp_swap_weapon_faster_1",
-						"player_temp_reload_weapon_faster_1"
+						"player_revived_damage_resist_1",
+						"player_revive_reload"
 					},
 					cost = self.costs.hightierpro
 				}

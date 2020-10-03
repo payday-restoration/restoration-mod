@@ -874,7 +874,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Combat Medic
 			["menu_combat_medic_beta_sc"] = "Combat Medic",
-			["menu_combat_medic_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##10%## damage reduction for ##5## seconds both after and during reviving another player.\n\nYou gain a ##10%## damage reduction for ##5## seconds when you are revived.\n\nACE: ##$pro##\nReviving a crew member gives them ##30%## more health.",
+			["menu_combat_medic_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##10%## damage reduction for ##5## seconds both after and during reviving another player.\n\nACE: ##$pro##\nReviving a crew member gives them ##30%## more health.",
 
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "Quick Fix",
@@ -1257,7 +1257,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Unseen Strike",
-		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not lose any armor or health for ##3## seconds, you gain ##15%## critical hit chance for ##3## seconds.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nThe critical hit chance duration is increased to ##6## seconds.",
+		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance pesists for ##5## seconds after taking damage.",
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",
@@ -1293,7 +1293,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "Running from Death",
-		["menu_nine_lives_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##25%## faster for ##10## seconds after getting up.\n\nACE: ##$pro##\nYou reload and swap weapons ##25%## faster for ##10## seconds after getting up.",
+		["menu_nine_lives_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##25%## faster for ##10## seconds after getting up.\n\nACE: ##$pro##\nYou gain a ##20%## damage reduction for ##10## seconds after getting up.\n\nYour weapons are instantly reloaded when getting up.",
 
 		--Undying--
 		["menu_running_from_death_beta_sc"] = "Undying",

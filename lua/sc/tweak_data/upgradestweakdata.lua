@@ -1038,22 +1038,22 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.values.temporary.unseen_strike = {
 					{ --Basic
 						1.15,
-						3
+						0.01 --Workaround for Buff Tracker sanity checks.
 					},
 					{ --Ace
 						1.15,
-						6
+						5
 					}
 				}
 				self.values.player.unseen_increased_crit_chance = {
 					{ --Basic
 						min_time = 3,
-						max_duration = 3,
+						max_duration = 0, --Unused field, holdover from vanilla.
 						crit_chance = 1.15
 					},
 					{ --Ace
 						min_time = 3,
-						max_duration = 6,
+						max_duration = 5,
 						crit_chance = 1.15
 					}
 				}				
@@ -1150,8 +1150,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.temporary.increased_movement_speed = {{1.25, 10}}
 				--Ace
-				self.values.temporary.swap_weapon_faster = {{1.25, 10}}
-				self.values.temporary.reload_weapon_faster = {{1.25, 10}}
+					self.values.temporary.revived_damage_resist = {{0.8, 10}}
+					self.values.player.revive_reload = {true}
 				
 			--Undying (Formerly Nine Lives, Formerly Running From Death)
 				self.values.player.bleed_out_health_multiplier = {
@@ -3205,7 +3205,15 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
-
+	self.definitions.player_revive_reload = {
+		name_id = "menu_player_revive_reload",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "revive_reload",
+			category = "player"
+		}
+	}
 end
 
 Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", function(self)

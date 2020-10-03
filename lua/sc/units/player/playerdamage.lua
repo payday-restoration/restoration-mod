@@ -152,10 +152,6 @@ function PlayerDamage:init(unit)
 		self:_init_standard_listeners()
 	end
 
-	if player_manager:has_category_upgrade("temporary", "revive_damage_reduction") then
-		self._listener_holder:add("combat_medic_damage_reduction", {"on_revive"}, callback(self, self, "_activate_combat_medic_damage_reduction"))
-	end
-
 	if player_manager:has_category_upgrade("player", "revive_damage_reduction") and player_manager:has_category_upgrade("player", "revive_damage_reduction") then
 
 		local function on_revive_interaction_start()
@@ -893,14 +889,11 @@ function PlayerDamage:revive(silent)
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "increased_movement_speed") then
 		managers.player:activate_temporary_upgrade("temporary", "increased_movement_speed")
 	end
-	if managers.player:has_inactivate_temporary_upgrade("temporary", "swap_weapon_faster") then
-		managers.player:activate_temporary_upgrade("temporary", "swap_weapon_faster")
-	end
-	if managers.player:has_inactivate_temporary_upgrade("temporary", "reload_weapon_faster") then
-		managers.player:activate_temporary_upgrade("temporary", "reload_weapon_faster")
-	end
 	if managers.player:has_category_upgrade("player", "dodge_on_revive") then --Rogue dodge meter bonus on revive.
 		self:fill_dodge_meter(3.0, true)
+	end
+	if managers.player:has_category_upgrade("player", "revive_reload") then
+		managers.player:reload_weapons()
 	end
 
 	--Update What Doesn't Kill

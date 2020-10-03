@@ -1035,6 +1035,24 @@ function PlayerManager:check_enduring()
 	end
 end
 
+--Instantly reloads all equipped weapons. Used by Running from Death Ace.
+function PlayerManager:reload_weapons()
+	local weapons = {
+		self:player_unit():inventory():unit_by_selection(1), --Secondary
+		self:player_unit():inventory():unit_by_selection(2), --Primary
+		self:player_unit():inventory():unit_by_selection(3) --Underbarrels
+	}
+
+	for _, weapon in pairs(weapons) do
+		if weapon and weapon.base then
+			local weapon_base = weapon:base()
+			weapon_base:on_reload(nil)
+			managers.statistics:reloaded()
+			managers.hud:set_ammo_amount(weapon_base:selection_index(), weapon_base:ammo_info())
+		end
+	end
+end
+
 --Replacement for vanilla fully loaded throwable coroutine. The vanilla code has 0 benefits from being a coroutine, and it seems to have issues resetting the chance or firing at all.
 function PlayerManager:regain_throwable_from_ammo()
 	local roll = math.random()
@@ -1121,4 +1139,21 @@ function PlayerManager:activate_temporary_upgrade(category, upgrade)
 		managers.network:session():send_to_peers("sync_temporary_upgrade_activated", self:temporary_upgrade_index(category, upgrade))
 	end
 	managers.hud:start_buff(upgrade, time)
+end
+
+--Activates a temporary upgrade 'forever' until otherwise noted.
+--Currently only used for unseen strike, so syncing support isn't implemented.
+function PlayerManager:activate_temporary_upgrade_indefinitely(category, upgrade)
+	local upgrade_value = self:upgrade_value(category, upgrade)
+
+	if upgrade_value == 0 then
+		return
+	end
+
+	self._temporary_upgrades[category] = self._temporary_upgrades[category] or {}
+	self._temporary_upgrades[category][upgrade] = {
+		expire_time = math.huge
+	}
+	managers.hud:remove_skill(upgrade)
+	managers.hud:add_skill(upgrade)
 end

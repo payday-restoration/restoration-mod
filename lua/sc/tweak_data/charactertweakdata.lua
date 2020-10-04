@@ -15339,7 +15339,12 @@ function CharacterTweakData:character_map()
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_heavy_r870_sc",
 				"ene_swat_heavy_r870_sc",
-				"ene_headless_hatman"
+				"ene_headless_hatman",				
+				"ene_spook_cloak_1",	
+				"ene_omnia_lpf",
+				"ene_fbi_titan_1",
+				"ene_titan_sniper",
+				"ene_titan_taser"
 			}
 		}			
 	}

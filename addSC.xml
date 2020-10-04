@@ -1,4 +1,4 @@
-<table directory="assets">
+<table directory="assets">	
 	<!--Murky Taser Helmet -->
 	<object path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>	
@@ -1083,6 +1083,19 @@
 	<!--Headless TitanDozer (Boss)-->	
 	<unit path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman" force="true" load="true"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman_husk" force="true" load="true"/>		
+	
+	<!--Titan Cloaca-->	
+	<model path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<effect path="effects/payday2/particles/spook_cloak/spook_cloak_smoke" load="true"/>
+	<effect path="effects/particles/character/titan_goggle" load="true"/>
+	<object path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<sequence_manager path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<unit path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
+	<cooked_physics path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
+	<material_config path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
+	<unit path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
 	
 	<!--Halloween Sword-->
 	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>

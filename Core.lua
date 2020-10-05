@@ -127,6 +127,8 @@ function restoration:Init()
 		"mex",
 		"chill_combat",	
 		"man", --Undercover
+		"peta", --Goat Sim Day 1
+		"jolly", --aftershock		
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn",

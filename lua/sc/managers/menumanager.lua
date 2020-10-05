@@ -316,7 +316,7 @@ function restoration:inform_law_enforcements(data, debug_enemy)
 		return
 	end
 	
-	if enemy_target.dis > 100000 then
+	if not enemy_target or enemy_target.dis > 100000 then
 		return
 	end
 	

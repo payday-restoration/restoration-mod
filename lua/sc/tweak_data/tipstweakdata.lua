@@ -171,61 +171,61 @@ function TipsTweakData:init()
 		},
 		{
 			cat_index = 1,
-			image = "tactics_headshot",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 2,
-			image = "weapon_melee",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 3,
-			image = "enemy_medic",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 4,
-			image = "enemy_cloaker",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 5,
-			image = "enemy_bulldozer",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 6,
-			image = "enemy_sniper",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 7,
-			image = "enemy_sniper",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 8,
-			image = "enemy_shield",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 9,
-			image = "enemy_bulldozer",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 10,
-			image = "enemy_tazer",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
@@ -243,37 +243,37 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 13,
-			image = "weapon_melee",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 14,
-			image = "tactics_convert",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},		
 		{
 			cat_index = 15,
-			image = "weapon_shotgun",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 16,
-			image = "crimenet_difficulty",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 17,
-			image = "weapon_explosives",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 18,
-			image = "crimenet_heists",
+			image = "generic_tip",
 			consoles = true,
 			category = "new_units_res"
 		},	
@@ -285,55 +285,55 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 1,
-			image = "general_difficulty",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 2,
-			image = "general_difficulty",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 3,
-			image = "weapon_explosives",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 4,
-			image = "weapon_explosives",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 5,
-			image = "tactics_cover",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 6,
-			image = "general_difficulty",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 7,
-			image = "general_difficulty",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 8,
-			image = "general_equipment",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 9,
-			image = "weapon_melee",
+			image = "generic_tip",
 			consoles = true,
 			category = "captains_res"
 		},
@@ -666,13 +666,169 @@ function TipsTweakData:init()
 			image = "general_perks",
 			consoles = true,
 			category = "equip_skills_res"
-		},		
+		},	
 		{
 			cat_index = 1,
 			image = "crimenet_heists",
 			consoles = true,
 			category = "misc_res"
-		}		
+		},		
+		{
+			cat_index = 2,
+			image = "generic_tip",
+			consoles = true,
+			category = "misc_res"
+		},		
+		{
+			cat_index = 3,
+			image = "generic_tip",
+			consoles = true,
+			category = "misc_res"
+		},	
+		{
+			cat_index = 1,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 2,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 3,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 4,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},
+		{
+			cat_index = 5,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},			
+		{
+			cat_index = 6,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 7,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 8,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 9,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 10,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 11,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 12,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 13,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},		
+		{
+			cat_index = 14,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 15,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 16,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},		
+		{
+			cat_index = 17,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 18,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},		
+		{
+			cat_index = 19,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 20,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},		
+		{
+			cat_index = 21,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 22,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 23,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		},	
+		{
+			cat_index = 24,
+			image = "generic_tip",
+			consoles = true,
+			category = "fluff_res"
+		}				
 	}
 	self.category_totals = {}
 

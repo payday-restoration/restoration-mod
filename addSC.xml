@@ -1559,6 +1559,7 @@
 	<!--Loading Screen Tips-->
 	<texture path="guis/textures/loading/hints/grenadier_load" force="false"/>	
 	<texture path="guis/textures/loading/hints/vet_cop_loading" force="false"/>	
+	<texture path="guis/textures/loading/hints/generic_tip" force="false"/>	
 
 	<!--Optimized gas-->
 	<effect path="effects/particles/explosions/cs_grenade_smoke_sc" force="false"/>

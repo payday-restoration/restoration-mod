@@ -1,11 +1,5 @@
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
-		["bm_menu_suicidal_description"] =  "There's a crazy gang of Russian mercenaries who are out for blood, and not even the cops will touch them. But our business calls, and that business is picking up in this chaos.",
-		--I NEED SCISSORS--
-		["bm_menu_bain_sop"] =  "la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo ",
-		["bm_menu_bain_akan"] =  "We are formless. We have no defined bodies or characteristics. We are the American way of life manifested as an influential power.",
-		["bm_menu_bain_crazy"] =  "$preferredcharacter$ TURN OFF THE COMPUTER NOW",
-
 		["bm_sc_blank"] = "", --assumedly this is a debug thing, but I'm not going to touch it--
 
 		--Menu Stuff--
@@ -13,7 +7,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_inspect_player"] = "Inspect Player",
 		["menu_inspect_player_desc"] = "Inspect player's stats",
 		["menu_toggle_one_down_lobbies"] = "Allow Pro-Job Lobbies",
-		--["menu_player_inventory"] = "Career",
 
 		--Holdout--
 		["menu_cn_skirmish"] = "Skirmish",
@@ -177,12 +170,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_c96_sc_desc"] = "Revolutionary German machine pistol. Capable of firing in full-auto at an insane rate, but will decimate your ammo reserves.\nThis weapon reloads in clips of ##10## bullets at a time.",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
-		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
-		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR##. ##ARROWS CAN BE RESTORED BY PICKING THEM UP##, AND ##RANGE INCREASES THE LONGER AN ARROW IS DRAWN##.",
-		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR##. ##ARROWS CAN BE RESTORED BY PICKING THEM UP##.",
-		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle ##Flip Up Sight##.",
-		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL ##REDUCE YOUR MOVEMENT SPEED## BY ##15%##. ROCKETS FIRED BY THIS WEAPON ##INSTANTLY DESTROY TURRETS##.",
+		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
+		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
+		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP.",
+		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle Flip Up Sight.",
+		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 15%. ROCKETS FIRED BY THIS WEAPON INSTANTLY DESTROY TURRETS.",
 		["bm_quake_shotgun_sc_desc"] = "FIRES BOTH BARRELS AT ONCE, DOUBLING THE NUMBER OF PELLETS.",
 		["bm_auto_generated_sc_desc"] = "This weapon is using ##automatically generated stats##, and may not fit the creators intent or be perfectly balanced.",
 		["bm_auto_generated_ap_sc_desc"] = "This weapon is using ##automatically generated stats##, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
@@ -197,42 +190,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_l_global_value_omnia"] = "OMNIA",
 		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",
 
-		--Depreciated stuff? (please confirm before removal)--
-		["sc_menu"] = "SC's Mod",
-		["sc_menu_desc"] = "Options for SC's mod.",
-		["sc_deploy_title"] = "Deployable Changes",
-		["sc_player_weapon_title"] = "Player Weapon Changes",
-		["sc_ai_title"] = "SC's Mod Main Changes",
-		["sc_classic_smoke_title"] = "Alternative Tear Gas Visuals",
-		["sc_classic_smoke_desc"] = "Toggle the alternative Tear Gas visuals. This will provide a performance boost if the normal visuals cause performance issues.",
-		["sc_spawn_title"] = "Spawn Rate Changes",
-		["sc_player_title"] = "Player/Skill changes",
-		["sc_perk_title"] = "Perk Deck changes",
-		["sc_sp_title"] = "Single Player changes",
-		["sc_flash_title"] = "Flashbang Indicator",
-		["sc_stealth_title"] = "Stealth Changes",
-		["sc_deploy_desc"] = "Turn this off if you don't want deployable changes from SC's mod. This is useful if you're worried about the anti-cheat. (Requires restart)",
-		["sc_player_weapon_desc"] = "Turn this off if you don't want player weapon changes from SC's mod, usually for when you want to use ANOTHER weapon overhaul. (Requires restart)",
-		["sc_spawn_desc"] = "Turn this off if you don't want enemy spawn rate changes from SC's mod. (Requires restart)",
-		["sc_sp_desc"] = "Turn this off if you don't want single player changes from SC's mod. (Requires restart)",
-		["sc_ai_desc"] = "Toggle for SC's Mod Main changes. Useful for quickly toggling back to the vanilla game. Note: Having this on locks your online play to only other SC mod users. (Requires restart)",
-		["sc_player_desc"] = "Turn this off if you don't want Player/Skill changes from SC's mod. (Requires restart)",
-		["sc_perk_desc"] = "Turn this off if you don't want Perk Deck changes from SC's mod. (Requires restart)",
-		["sc_flash_desc"] = "Turn this off if you don't want a flashbang HUD indicator... wait why wouldn't you? (Requires restart)",
-		["sc_stealth_desc"] = "Turn this off if you don't want stealth changes from SC's mod.(Requires restart)",
-
-		--you can't be funny any more
-	--	["menu_difficulty_apocalypse"] = "Death Life",
-	--	["menu_difficulty_sm_wish"] = "Parking Violation",
-
 		["menu_rifle"] = "RIFLES",
 		["menu_jowi"] = "Wick",
 		["menu_moving_target_sc"] = "Subtle",
-
-
-	--	["hud_instruct_mask_on"] = "[G] TO BECOME A SQUID NOW",
-	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
-	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
 
 		["bm_wp_upg_i_singlefire_sc"] = "Slower Cyclic",
 		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%", --RIP RoF mods
@@ -311,16 +271,10 @@ end)
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_bonus"] = "Modifiers",
-		--["menu_challenge_stat_boost"] = "Random Mod Kit",
-		--["menu_challenge_monthly_reward"] = "Random Primary Weapon Mod Kit or Midas Touch Weapon Mod Kit.",
 		["bm_menu_suppression"] = "Noise Range(M)",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
-		--["dialog_new_tradable_item_bonus"] = "",
-		--["steam_inventory_team_boost"] = "",
-		--["steam_inventory_boost_xp_cash"] = "",
 
 		--Safe House--
-		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
 		["dialog_safehouse_text"] = "You haven't visited the safe house yet.\n\nYou should, as you might find something new.\n\nWould you like to go there now?",
 
 		["bm_menu_custom_plural"] = "WEAPON ATTACHMENTS IN THE CUSTOM CATEGORY", --unused?--
@@ -402,10 +356,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_x_1911"] = "Mustang & Sally",
 		["bm_w_tec9"] = "T3K Urban Submachine Gun",
 		["bm_w_x_tec9"] = "Akimbo T3K Urban Submachine Guns",
-
-		--sGnrrnsfNGDSNgdnsfDNSGDFNGHhDFHDFNH
-		--["bm_w_deagle"] = "Big Pistol",
-		--["bm_w_sparrow"] = "Big Pistol (Smaller)",
 
 		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",
 		["bm_wp_hs2000_sl_long"] = "Elite Slide",
@@ -717,10 +667,36 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
 		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal and Raze' Contractor, as well as 'Doghouse' under Vlad.",	
+		["loading_misc_res_2"] = "Restoration Mod has a Steam Guide! This should be your resource for more detailed information. Check the Main Menu.",	
+		["loading_misc_res_3"] = "Restoration Mod has a Discord server! Join for discussion, balance feedback, and matchmaking! Check the Main Menu.",	
+		--Trivia Hints
+		["loading_fluff_res_title"] = "Restoration Trivia",
+		["loading_fluff_res_1"] = "OMNIA spends a fortune reviving failed weapon projects.",	
+		["loading_fluff_res_2"] = "The LPF is owed a lot of beers.",	
+		["loading_fluff_res_3"] = "The LPF and Titan Sniper are Australian.",	
+		["loading_fluff_res_4"] = "The NYPD Bronco Cop loves donuts.",	
+		["loading_fluff_res_5"] = "The ZEAL UMP Elite SWAT's name is Chad.",	
+		["loading_fluff_res_6"] = "Titan Dozers have glowing eyes thanks to extensive genetic engineering, human experiments, and combat drugs.",	
+		["loading_fluff_res_7"] = "Captain Spring is not human. He might have been, once upon a time.",	
+		["loading_fluff_res_8"] = "Restoration Mod is often nicknamed 'resmod', 'SCmod', 'furry mod' and 'mememod', by various members of the community and the dev team.",	
+		["loading_fluff_res_9"] = "OMNIA has been developing reinforced security doors to protect against dinosaur attacks.",	
+		["loading_fluff_res_10"] = "The Grenadier used to work in pest control.",	
+		["loading_fluff_res_11"] = "You have never seen this Titan Cloaker.",
+		["loading_fluff_res_12"] = "Omnia is a self-described 'neoceltic pagan folk' band based in the Netherlands and whose members have had Irish, Dutch, Cornish, Belgian, Indonesian and Persian backgrounds. Connection to the organization OMNIA unconfirmed.",	
+		["loading_fluff_res_13"] = "Whatever happened that caused Jackal to get involved with Crime.Net and leave GenSec, he refuses to talk about it. He seems to have been 'disturbed' by the event.",	
+		["loading_fluff_res_14"] = "HAHAHAHAHA.",
+		["loading_fluff_res_15"] = "Captain Summers and his crew used to be a crew of four heisters, much like a multinational equivalent of the Payday Crew. They are now a strike team for OMNIA.",
+		["loading_fluff_res_16"] = "Captain Summers and his crew officially died in a building collapse while trying to rob a bank. This was a ruse.",
+		["loading_fluff_res_17"] = "Captain Autumn spends a fortune on handcuffs.",
+		["loading_fluff_res_18"] = "Captain Summers spends a fortune on gas gas gas.",
+		["loading_fluff_res_19"] = "Captain Spring spends a fortune on bullets and grenades.",
+		["loading_fluff_res_20"] = "Captain Winters spends a fortune on shields and duct tape.",
+		["loading_fluff_res_21"] = "The Grenadier division spends a fortune on Diphoterine due to several friendly fire incidents.",
+		["loading_fluff_res_22"] = "You may or may not have met Captain Summers before.",
+		["loading_fluff_res_23"] = "The Policía Federal have a special chupacabra hunting division.",
+		["loading_fluff_res_24"] = "Captains don’t die, they go into custody.",
 
 		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
-		--["skill_uppers_revive"] = "Downs restored!",
-		--["hud_ai_traded_in"] = "",
 		["skill_stockholm_syndrome_trade"] = "Down Restored!",
 		["hint_short_max_pagers"] = "Neglecting pagers will significantly increase guard suspicion.",
 

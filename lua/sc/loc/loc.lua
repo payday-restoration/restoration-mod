@@ -694,7 +694,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_21"] = "The Grenadier division spends a fortune on Diphoterine due to several friendly fire incidents.",
 		["loading_fluff_res_22"] = "You may or may not have met Captain Summers before.",
 		["loading_fluff_res_23"] = "The Policía Federal have a special chupacabra hunting division.",
-		["loading_fluff_res_24"] = "Captains don’t die, they go into custody.",
+		["loading_fluff_res_24"] = "Captains don't die, they go into custody.",
 
 		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
 		["skill_stockholm_syndrome_trade"] = "Down Restored!",

@@ -1092,17 +1092,19 @@
 	<unit path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman_husk" force="true" load="true"/>		
 	
 	<!--Titan Cloaca-->	
-	<model path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<effect path="effects/payday2/particles/spook_cloak/spook_cloak_smoke" load="true"/>
-	<effect path="effects/particles/character/titan_goggle" load="true"/>
-	<object path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<sequence_manager path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<unit path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
-	<cooked_physics path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<model path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<effect path="effects/pd2_mod_halloween/particles/spook_cloak/spook_cloak_smoke" load="true"/>
+	<object path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<sequence_manager path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
-	<material_config path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
-	<unit path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
+	<unit path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_dead_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df" load="true"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op" load="true"/>
 	
 	<!--Halloween Sword-->
 	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>

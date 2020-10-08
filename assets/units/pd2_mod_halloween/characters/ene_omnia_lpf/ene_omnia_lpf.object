@@ -214,7 +214,7 @@
 			</lod_object>
 
 				<object name="g_helmet_lod1" 	enabled="true"/>
-				<object name="g_helmet_lod2" 	enabled="true" />
+				<object name="g_helmet_lod2" 	enabled="false" />
 
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 

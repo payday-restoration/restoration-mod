@@ -15344,7 +15344,8 @@ function CharacterTweakData:character_map()
 				"ene_omnia_lpf",
 				"ene_fbi_titan_1",
 				"ene_titan_sniper",
-				"ene_titan_taser"
+				"ene_titan_taser",
+				"ene_phalanx_1_assault"
 			}
 		}			
 	}

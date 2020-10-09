@@ -1562,6 +1562,31 @@
 	<texture path="guis/textures/loading/hints/grenadier_load" force="false"/>	
 	<texture path="guis/textures/loading/hints/vet_cop_loading" force="false"/>	
 	<texture path="guis/textures/loading/hints/generic_tip" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_akantits" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_autumn" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_bex" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_bravos" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_chad" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_doc" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_gear" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_keith" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_lpf" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_murkies" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_spring" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_squad" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_summers" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tdozer" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_thrt" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tshield" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tsniper" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tspook" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tswat" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_ttaser" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_winters_sc" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_zeal_sc" force="false"/>	
+	<texture path="guis/textures/loading/hints/loading_australia" force="false"/>	
+	<texture path="guis/textures/loading/hints/loading_jackal" force="false"/>	
+	<texture path="guis/textures/loading/hints/loading_omnia" force="false"/>	
 
 	<!--Optimized gas-->
 	<effect path="effects/particles/explosions/cs_grenade_smoke_sc" force="false"/>

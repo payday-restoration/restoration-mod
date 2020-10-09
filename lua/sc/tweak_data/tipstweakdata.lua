@@ -15,7 +15,7 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 3,
-			image = "enemy_zeal",
+			image = "enemy_zeal_sc",
 			consoles = true,
 			category = "gameplay_res"
 		},
@@ -63,7 +63,7 @@ function TipsTweakData:init()
 		},
 		{
 			cat_index = 11,
-			image = "enemy_bulldozer",
+			image = "enemy_tdozer",
 			consoles = true,
 			category = "gameplay_res"
 		},	
@@ -123,13 +123,13 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 21,
-			image = "enemy_gensec",
+			image = "enemy_gear",
 			consoles = true,
 			category = "gameplay_res"
 		},	
 		{
 			cat_index = 22,
-			image = "weapon_shotgun",
+			image = "enemy_gear",
 			consoles = true,
 			category = "gameplay_res"
 		},	
@@ -141,13 +141,13 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 24,
-			image = "crimenet_difficulty",
+			image = "enemy_squad",
 			consoles = true,
 			category = "gameplay_res"
 		},	
 		{
 			cat_index = 25,
-			image = "enemy_zeal",
+			image = "enemy_zeal_sc",
 			consoles = true,
 			category = "gameplay_res"
 		},		
@@ -159,7 +159,7 @@ function TipsTweakData:init()
 		},		
 		{
 			cat_index = 27,
-			image = "crimenet_heists",
+			image = "enemy_murkies",
 			consoles = true,
 			category = "gameplay_res"
 		},
@@ -171,61 +171,61 @@ function TipsTweakData:init()
 		},
 		{
 			cat_index = 1,
-			image = "generic_tip",
+			image = "enemy_thrt",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 2,
-			image = "generic_tip",
+			image = "enemy_lpf",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 3,
-			image = "generic_tip",
+			image = "enemy_lpf",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 4,
-			image = "generic_tip",
+			image = "enemy_tpsook",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 5,
-			image = "generic_tip",
+			image = "enemy_tdozer",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 6,
-			image = "generic_tip",
+			image = "enemy_tsniper",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 7,
-			image = "generic_tip",
+			image = "enemy_tsniper",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 8,
-			image = "generic_tip",
+			image = "enemy_tshield",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 9,
-			image = "generic_tip",
+			image = "enemy_spring",
 			consoles = true,
 			category = "new_units_res"
 		},
 		{
 			cat_index = 10,
-			image = "generic_tip",
+			image = "enemy_ttaser",
 			consoles = true,
 			category = "new_units_res"
 		},	
@@ -243,37 +243,37 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 13,
-			image = "generic_tip",
+			image = "enemy_tswat",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 14,
-			image = "generic_tip",
+			image = "enemy_tswat",
 			consoles = true,
 			category = "new_units_res"
 		},		
 		{
 			cat_index = 15,
-			image = "generic_tip",
+			image = "enemy_tswat",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 16,
-			image = "generic_tip",
+			image = "enemy_bravos",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 17,
-			image = "generic_tip",
+			image = "enemy_bravos",
 			consoles = true,
 			category = "new_units_res"
 		},	
 		{
 			cat_index = 18,
-			image = "generic_tip",
+			image = "enemy_akantits",
 			consoles = true,
 			category = "new_units_res"
 		},	
@@ -285,73 +285,73 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 1,
-			image = "generic_tip",
+			image = "enemy_summers",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 2,
-			image = "generic_tip",
+			image = "enemy_summers",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 3,
-			image = "generic_tip",
+			image = "enemy_spring",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 4,
-			image = "generic_tip",
+			image = "enemy_spring",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 5,
-			image = "generic_tip",
+			image = "enemy_spring",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 6,
-			image = "generic_tip",
+			image = "enemy_autumn",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 7,
-			image = "generic_tip",
+			image = "enemy_autumn",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 8,
-			image = "generic_tip",
+			image = "enemy_autumn",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 9,
-			image = "generic_tip",
+			image = "enemy_autumn",
 			consoles = true,
 			category = "captains_res"
 		},
 		{
 			cat_index = 10,
-			image = "enemy_winters",
+			image = "enemy_winters_sc",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 11,
-			image = "enemy_winters",
+			image = "enemy_winters_sc",
 			consoles = true,
 			category = "captains_res"
 		},	
 		{
 			cat_index = 12,
-			image = "enemy_winters",
+			image = "enemy_winters_sc",
 			consoles = true,
 			category = "captains_res"
 		},	
@@ -687,43 +687,43 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 1,
-			image = "generic_tip",
+			image = "loading_omnia",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 2,
-			image = "generic_tip",
+			image = "enemy_lpf",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 3,
-			image = "generic_tip",
+			image = "loading_australia",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 4,
-			image = "generic_tip",
+			image = "enemy_keith",
 			consoles = true,
 			category = "fluff_res"
 		},
 		{
 			cat_index = 5,
-			image = "generic_tip",
+			image = "enemy_chad",
 			consoles = true,
 			category = "fluff_res"
 		},			
 		{
 			cat_index = 6,
-			image = "generic_tip",
+			image = "enemy_tdozer",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 7,
-			image = "generic_tip",
+			image = "enemy_spring",
 			consoles = true,
 			category = "fluff_res"
 		},	
@@ -735,91 +735,91 @@ function TipsTweakData:init()
 		},	
 		{
 			cat_index = 9,
-			image = "generic_tip",
+			image = "loading_omnia",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 10,
-			image = "generic_tip",
+			image = "grenadier_load",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 11,
-			image = "generic_tip",
+			image = "enemy_tpsook",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 12,
-			image = "generic_tip",
+			image = "loading_omnia",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 13,
-			image = "generic_tip",
+			image = "loading_jackal",
 			consoles = true,
 			category = "fluff_res"
 		},		
 		{
 			cat_index = 14,
-			image = "generic_tip",
+			image = "enemy_autumn",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 15,
-			image = "generic_tip",
+			image = "enemy_summers",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 16,
-			image = "generic_tip",
+			image = "enemy_summers",
 			consoles = true,
 			category = "fluff_res"
 		},		
 		{
 			cat_index = 17,
-			image = "generic_tip",
+			image = "enemy_autumn",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 18,
-			image = "generic_tip",
+			image = "enemy_summers",
 			consoles = true,
 			category = "fluff_res"
 		},		
 		{
 			cat_index = 19,
-			image = "generic_tip",
+			image = "enemy_spring",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 20,
-			image = "generic_tip",
+			image = "enemy_winters_sc",
 			consoles = true,
 			category = "fluff_res"
 		},		
 		{
 			cat_index = 21,
-			image = "generic_tip",
+			image = "grenadier_load",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 22,
-			image = "generic_tip",
+			image = "enemy_summers",
 			consoles = true,
 			category = "fluff_res"
 		},	
 		{
 			cat_index = 23,
-			image = "generic_tip",
+			image = "enemy_bex",
 			consoles = true,
 			category = "fluff_res"
 		},	

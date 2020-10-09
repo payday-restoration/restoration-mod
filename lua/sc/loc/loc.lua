@@ -655,7 +655,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_20"] = "The higher a weapon's concealment is, the faster you can draw and holster it.",	
 		["loading_equip_skills_res_21"] = "The Chainsaw and Kazaguruma deal damage to enemies in front of you while held.",	
 		["loading_equip_skills_res_22"] = "The Butterfly Knife and Switchblade do increased damage on backstabs. The butterfly knife is almost useless on normal attacks but deadly when backstabbing, while the switchblade is a more modest in-between weapon.",	
-		["loading_equip_skills_res_23"] = "The Icepick and You're Mine do increased headshot damage in exchange for poor bodyshot damage.",	
+		["loading_equip_skills_res_23"] = "The Icepick and Gold Fever do increased headshot damage in exchange for poor bodyshot damage.",	
 		["loading_equip_skills_res_24"] = "Poison deals only moderate damage, acting mostly as a stun mechanic rather than as a DoT champ.",	
 		["loading_equip_skills_res_25"] = "Stun Grenades provide very potent disruption, even against bulldozers.",	
 		["loading_equip_skills_res_26"] = "Aiming down sights grants significantly increased accuracy and reduced recoil, even with LMGs.",	

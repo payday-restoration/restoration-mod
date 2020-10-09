@@ -10346,7 +10346,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"hunter",
 			"flank",
 			"spoocavoidance",
-			"shield_cover",
 			"smoke_grenade",
 			"flash_grenade"
 		},
@@ -10374,10 +10373,12 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"hitnrun"
 		},
 		Cap_winters = {
+			"shield",
 			"aggressor",
 			"charge"
 		},	
 		Cap_winters_minion = {
+			"shield",
 			"aggressor",
 			"charge"
 		},			

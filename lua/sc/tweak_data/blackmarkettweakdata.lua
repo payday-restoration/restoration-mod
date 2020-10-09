@@ -5,7 +5,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_gloves", "ResGloves", function(self,
 	self.suit_default_gloves.suit_sunny = "heist_default"
 	self.suit_default_gloves.loud_suit = "heist_default"
 	self.suit_default_gloves.poggers = "esport"
-	self.suit_default_gloves.suit_prison = "saints"
+	self.suit_default_gloves.suit_prison = "heist_default"
 end)
 
 --This is a helmet, not a mask--

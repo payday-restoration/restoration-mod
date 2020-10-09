@@ -10374,20 +10374,12 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"hitnrun"
 		},
 		Cap_winters = {
-			"obstacle",
-			"elite_ranged_fire",
-			"hitnrun",
-			"spoocavoidance",
-			"reloadingretreat",
-			"shield"
+			"aggressor",
+			"charge"
 		},	
 		Cap_winters_minion = {
-			"obstacle",
-			"elite_ranged_fire",
-			"hitnrun",
-			"spoocavoidance",
-			"reloadingretreat",
-			"shield_cover"
+			"aggressor",
+			"charge"
 		},			
 		--hunter hrt tactics
 		HRT_attack = { --sneaks up and targets players in bad positions

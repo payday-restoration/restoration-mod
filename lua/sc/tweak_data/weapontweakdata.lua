@@ -8659,7 +8659,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.toym16.kick = self.stat_info.kick_tables.none
 		self.toym16.panic_suppression_chance = 0.05
-		self.toym16.shake = 0.01
+		self.toym16.shake = {
+			fire_multiplier = 0.01,
+			fire_steelsight_multiplier = 0.01
+		}
 	end
 
 	if self.toy1911 then --Gambyt's Toy M1911
@@ -8683,7 +8686,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.toy1911.kick = self.stat_info.kick_tables.none
 		self.toy1911.swap_speed_multiplier = 2
 		self.toy1911.panic_suppression_chance = 0.05
-		self.toy1911.shake = 0.01
+		self.toy1911.shake = {
+			fire_multiplier = 0.01,
+			fire_steelsight_multiplier = 0.01
+		}
 	end
 
 	--Vanilla Mod Pack Volume 2

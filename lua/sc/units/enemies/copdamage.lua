@@ -740,7 +740,7 @@ function CopDamage:damage_bullet(attack_data)
 	end
 
 	if not head and attack_data.attacker_unit == managers.player:player_unit() and not self._char_tweak.must_headshot and self._char_tweak.headshot_dmg_mul then
-		if attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("smg", "lmg", "assault_rifle", "minigun", "pistol") and managers.player:has_category_upgrade("weapon", "automatic_head_shot_add") then
+				if attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("smg", "lmg", "minigun") and managers.player:has_category_upgrade("weapon", "automatic_head_shot_add") or managers.player:has_category_upgrade("player", "universal_body_expertise") then
 			attack_data.add_head_shot_mul = managers.player:upgrade_value("weapon", "automatic_head_shot_add", nil)
 		end
 

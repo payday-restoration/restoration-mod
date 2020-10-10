@@ -167,7 +167,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	end
 
 	--Apply skill and stance multipliers to overall spread area.
-	local multiplier = tweak_data.weapon.stats.stance_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
 	spread_area = spread_area * multiplier
 
 	--Convert spread area to degrees.
@@ -239,6 +239,11 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 	
 	if self._name_id == "m134" and not self._vulcan_firing then
 		return 0
+	end
+
+	local current_state = managers.player:player_unit():movement()._current_state
+	if current_state then
+		mult = mult * tweak_data.weapon.stat_info.stance_recoil_mults[current_state:get_movement_state()]
 	end
 
 	return recoil_multiplier_original(self, ...)
@@ -470,78 +475,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 			self._can_shoot_through_enemies = false
 			self:weapon_tweak_data().armor_piercing_chance = 0
 		end
-
-		--Leaving in case we ever want to give pistols their own kick
-		if stats.use_pistol_kick then
-			if self:weapon_tweak_data().kick then
-				self:weapon_tweak_data().kick.standing = {
-								0.6,
-								0.8,
-								-1,
-								1
-				}
-				self:weapon_tweak_data().kick.crouching = {
-								0.40002,
-								0.53336,
-								-0.6667,
-								0.6667
-				}
-				self:weapon_tweak_data().kick.steelsight = {
-								0.40002,
-								0.53336,
-								-0.6667,
-								0.6667
-				}
-			end
-		end
-
-		--Basically give it new_m4 kick
-		if stats.use_auto_kick then
-			if self:weapon_tweak_data().kick then
-				self:weapon_tweak_data().kick.standing = {
-								0.6,
-								0.8,
-								-1,
-								1
-				}
-				self:weapon_tweak_data().kick.crouching = {
-								0.40002,
-								0.53336,
-								-0.6667,
-								0.6667
-				}
-				self:weapon_tweak_data().kick.steelsight = {
-								0.40002,
-								0.53336,
-								-0.6667,
-								0.6667
-				}
-			end
-		end
-		
-		--Ditto, give it Huntsman kick profile
-		if stats.use_heavy_kick then
-			if self:weapon_tweak_data().kick then
-				self:weapon_tweak_data().kick.standing = {
-								1.5,
-								1.58,
-								-0.16,
-								0.16
-				}
-				self:weapon_tweak_data().kick.crouching = {
-								1.06,
-								1.12,
-								-0.11,
-								-0.11
-				}
-				self:weapon_tweak_data().kick.steelsight = {
-								1.06,
-								1.12,
-								-0.11,
-								-0.11
-				}
-			end
-		end	
 
 		--Flamethrower stuff, since fire DOT data doesn't like being changed in a normal custom stat
 		if stats.use_rare_dot then

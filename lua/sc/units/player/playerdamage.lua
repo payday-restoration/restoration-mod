@@ -1336,7 +1336,7 @@ function PlayerDamage:_max_health_orig()
 	return max_health
 end
 
---Makes modifications to handle temporary HP proparly.
+--Makes modifications to handle temporary HP properly.
 function PlayerDamage:set_health(health)
 	self:_check_update_max_health()
 

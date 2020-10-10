@@ -3,8 +3,8 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 	log("Generating stats for: " .. weap.name_id)
 
 	--Set some stuff that's generic to all weapons.
-	weap.AMMO_PICKUP = self:_pickup_chance()
-	weap.kick = self.new_m4.kick
+	weap.AMMO_PICKUP = self.stat_info._pickup_chance
+	weap.kick = self.stat_info.kick_tables.even_recoil
 	local apply_akimbo_penalties = nil
 	local add_to_smgs = nil
 	local stats = {}
@@ -15,7 +15,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 			stats = self:generate_lmg(weap)
 			add_to_smgs = true
 		elseif value == "shotgun" then
-			weap.kick = self.huntsman.kick
+			weap.kick = self.stat_info.kick_tables.vertical_kick
 			weap.rays = 9
 			stats = self:generate_shotgun(weap)
 		elseif value == "smg" then
@@ -23,7 +23,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		elseif value == "pistol" then
 			stats = self:generate_pistol(weap)
 		elseif value == "snp" then
-			weap.kick = self.huntsman.kick
+			weap.kick = self.stat_info.kick_tables.vertical_kick
 			stats = self:generate_snp(weap)
 		elseif value == "assault_rifle" then
 			stats = self:generate_assault_rifle(weap)

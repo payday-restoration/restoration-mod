@@ -2857,24 +2857,24 @@ function WeaponTweakData:_init_stats()
 
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
 		moderate_kick = {
-			0.85,
-			1.13,
-			-0.71,
-			0.71
+			0.8,
+			1.0,
+			-0.8,
+			0.8
 		},
 
 		moderate_left_kick = {
-			0.85,
-			1.13,
-			-0.41,
-			1.01
+			0.8,
+			1.0,
+			-1.05,
+			0.55
 		},
 
 		moderate_right_kick = {
-			0.85,
-			1.13,
-			-1.01,
-			0.41
+			0.8,
+			1.0,
+			-0.55,
+			1.05
 		},
 
 		--DMRs, Sniper Rifles, and heavy shotguns will be around here.
@@ -3476,9 +3476,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.deagle.desc_id = "bm_ap_weapon_sc_desc"
 	self.deagle.fire_mode_data.fire_rate = 0.1
 	self.deagle.single.fire_rate = 0.1
-	self.deagle.kick.standing = self.glock_17.kick.standing
-	self.deagle.kick.crouching = self.glock_17.kick.crouching
-	self.deagle.kick.steelsight = self.glock_17.kick.steelsight
+	self.deagle.kick = self.stat_info.kick_tables.even_recoil
 	self.deagle.CLIP_AMMO_MAX = 8
 	self.deagle.AMMO_MAX = 30
 	self.deagle.AMMO_PICKUP = self.stats._pickup_chance
@@ -3664,9 +3662,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b92fs.AMMO_PICKUP = self.stats._pickup_chance
 	self.b92fs.fire_mode_data.fire_rate = 0.08571428571
 	self.b92fs.single.fire_rate = 0.08571428571
-	self.b92fs.kick.standing = self.glock_17.kick.standing
-	self.b92fs.kick.crouching = self.glock_17.kick.crouching
-	self.b92fs.kick.steelsight = self.glock_17.kick.steelsight
+	self.b92fs.kick = self.stat_info.kick_tables.even_recoil
 	self.b92fs.supported = true
 	self.b92fs.stats = {
 		damage = 20,
@@ -3782,9 +3778,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.usp.single.fire_rate = 0.08571428571
 	self.usp.AMMO_MAX = 60
 	self.usp.AMMO_PICKUP = self.stats._pickup_chance
-	self.usp.kick.standing = self.glock_17.kick.standing
-	self.usp.kick.crouching = self.glock_17.kick.crouching
-	self.usp.kick.steelsight = self.glock_17.kick.steelsight
+	self.usp.kick = self.stat_info.kick_tables.even_recoil
 	self.usp.CLIP_AMMO_MAX = 12
 	self.usp.supported = true
 	self.usp.stats = {
@@ -3813,9 +3807,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g22c.single.fire_rate = 0.08571428571
 	self.g22c.AMMO_MAX = 75
 	self.g22c.AMMO_PICKUP = self.stats._pickup_chance
-	self.g22c.kick.standing = self.glock_17.kick.standing
-	self.g22c.kick.crouching = self.glock_17.kick.crouching
-	self.g22c.kick.steelsight = self.glock_17.kick.steelsight
+	self.g22c.kick = self.stat_info.kick_tables.even_recoil
 	self.g22c.CLIP_AMMO_MAX = 16
 	self.g22c.supported = true
 	self.g22c.stats = {
@@ -3923,9 +3915,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ppk.AMMO_PICKUP = self.stats._pickup_chance
 	self.ppk.fire_mode_data.fire_rate = 0.08571428571
 	self.ppk.single.fire_rate = 0.08571428571
-	self.ppk.kick.standing = self.glock_17.kick.standing
-	self.ppk.kick.crouching = self.glock_17.kick.crouching
-	self.ppk.kick.steelsight = self.glock_17.kick.steelsight
+	self.ppk.kick = self.stat_info.kick_tables.even_recoil
 	self.ppk.supported = true
 	self.ppk.stats = {
 		damage = 20,
@@ -4001,9 +3991,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.p226.AMMO_PICKUP = self.stats._pickup_chance
 	self.p226.fire_mode_data.fire_rate = 0.08571428571
 	self.p226.single.fire_rate = 0.08571428571
-	self.p226.kick.standing = self.glock_17.kick.standing
-	self.p226.kick.crouching = self.glock_17.kick.crouching
-	self.p226.kick.steelsight = self.glock_17.kick.steelsight
+	self.p226.kick = self.stat_info.kick_tables.even_recoil
 	self.p226.supported = true
 	self.p226.stats = {
 		damage = 24,
@@ -4487,9 +4475,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.uzi.panic_suppression_chance = 0.05
 	self.uzi.timers.reload_not_empty = 2.40
 	self.uzi.timers.reload_empty = 3.6
-	self.jowi.kick.standing = self.glock_17.kick.standing
-	self.jowi.kick.crouching = self.glock_17.kick.crouching
-	self.jowi.kick.steelsight = self.glock_17.kick.steelsight
+	self.jowi.kick = self.stat_info.kick_tables.even_recoil
 	self.jowi.AMMO_MAX = 180
 	self.jowi.AMMO_PICKUP = self.stats._pickup_chance
 	self.jowi.fire_mode_data.fire_rate = 0.08571428571
@@ -4596,9 +4582,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_deagle.panic_suppression_chance = 0.05
 	self.g26.AMMO_MAX = 90
 	self.g26.AMMO_PICKUP = self.stats._pickup_chance
-	self.g26.kick.standing = self.glock_17.kick.standing
-	self.g26.kick.crouching = self.glock_17.kick.crouching
-	self.g26.kick.steelsight = self.glock_17.kick.steelsight
+	self.g26.kick = self.stat_info.kick_tables.even_recoil
 	self.g26.fire_mode_data.fire_rate = 0.08571428571
 	self.g26.single.fire_rate = 0.08571428571
 	self.g26.supported = true
@@ -4854,9 +4838,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hs2000.fire_mode_data.fire_rate = 0.08571428571
 	self.hs2000.single = {}
 	self.hs2000.single.fire_rate = 0.08571428571
-	self.hs2000.kick.standing = self.glock_17.kick.standing
-	self.hs2000.kick.crouching = self.glock_17.kick.crouching
-	self.hs2000.kick.steelsight = self.glock_17.kick.steelsight
+	self.hs2000.kick = self.stat_info.kick_tables.even_recoil
 	self.hs2000.supported = true
 	self.hs2000.stats = {
 		damage = 30,
@@ -5295,9 +5277,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mateba.AMMO_PICKUP = self.stats._pickup_chance
 	self.mateba.timers.reload_not_empty = 3.6
 	self.mateba.timers.reload_empty = 3.6
-	self.mateba.kick.standing = self.glock_17.kick.standing
-	self.mateba.kick.crouching = self.glock_17.kick.crouching
-	self.mateba.kick.steelsight = self.glock_17.kick.steelsight
+	self.mateba.kick = self.stat_info.kick_tables.even_recoil
 	self.mateba.supported = true
 	self.mateba.stats = {
 		damage = 60,
@@ -5364,9 +5344,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sub2000.single = {}
 	self.sub2000.single.fire_rate = 0.07142857142
 	self.sub2000.kick = {}
-	self.sub2000.kick.standing = self.glock_17.kick.standing
-	self.sub2000.kick.crouching = self.glock_17.kick.crouching
-	self.sub2000.kick.steelsight = self.glock_17.kick.steelsight
+	self.sub2000.kick = self.stat_info.kick_tables.even_recoil
 	self.sub2000.supported = true
 	self.sub2000.stats = {
 		damage = 30,
@@ -5645,9 +5623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sparrow.AMMO_MAX = 75
 	self.sparrow.AMMO_PICKUP = self.stats._pickup_chance
 	self.sparrow.kick = {}
-	self.sparrow.kick.standing = self.glock_17.kick.standing
-	self.sparrow.kick.crouching = self.glock_17.kick.crouching
-	self.sparrow.kick.steelsight = self.glock_17.kick.steelsight
+	self.sparrow.kick = self.stat_info.kick_tables.even_recoil
 	self.sparrow.fire_mode_data.fire_rate = 0.08571428571
 	self.sparrow.single.fire_rate = 0.08571428571
 	self.sparrow.supported = true
@@ -5804,9 +5780,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.pl14.CLIP_AMMO_MAX = 10
 	self.pl14.AMMO_MAX = 75
 	self.pl14.AMMO_PICKUP = self.stats._pickup_chance
-	self.pl14.kick.standing = self.glock_17.kick.standing
-	self.pl14.kick.crouching = self.glock_17.kick.crouching
-	self.pl14.kick.steelsight = self.glock_17.kick.steelsight
+	self.pl14.kick = self.stat_info.kick_tables.even_recoil
 	self.pl14.supported = true
 	self.pl14.stats = {
 		damage = 24,
@@ -5965,9 +5939,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.packrat.AMMO_PICKUP = self.stats._pickup_chance
 	self.packrat.fire_mode_data.fire_rate = 0.08571428571
 	self.packrat.single.fire_rate = 0.08571428571
-	self.packrat.kick.standing = self.glock_17.kick.standing
-	self.packrat.kick.crouching = self.glock_17.kick.crouching
-	self.packrat.kick.steelsight = self.glock_17.kick.steelsight
+	self.packrat.kick = self.stat_info.kick_tables.even_recoil
 	self.packrat.panic_suppression_chance = 0.05
 	self.packrat.supported = true
 	self.packrat.stats = {
@@ -6315,9 +6287,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.lemming.AMMO_PICKUP = self.stats._pickup_chance
 	self.lemming.fire_mode_data.fire_rate = 0.08571428571
 	self.lemming.single.fire_rate = 0.08571428571
-	self.lemming.kick.standing = self.glock_17.kick.standing
-	self.lemming.kick.crouching = self.glock_17.kick.crouching
-	self.lemming.kick.steelsight = self.glock_17.kick.steelsight
+	self.lemming.kick = self.stat_info.kick_tables.even_recoil
 	self.lemming.panic_suppression_chance = 0.05
 	self.lemming.can_shoot_through_enemy = false
 	self.lemming.can_shoot_through_shield = false
@@ -6342,9 +6312,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.chinchilla.fire_mode_data.fire_rate = 0.19047619
 	self.chinchilla.single.fire_rate = 0.19047619
 	self.chinchilla.AMMO_MAX = 30
-	self.chinchilla.kick.standing = self.glock_17.kick.standing
-	self.chinchilla.kick.crouching = self.glock_17.kick.crouching
-	self.chinchilla.kick.steelsight = self.glock_17.kick.steelsight
+	self.chinchilla.kick = self.stat_info.kick_tables.even_recoil
 	self.chinchilla.AMMO_PICKUP = self.stats._pickup_chance
 	self.chinchilla.supported = true
 	self.chinchilla.stats = {
@@ -6402,9 +6370,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.breech.AMMO_PICKUP = self.stats._pickup_chance
 	self.breech.fire_mode_data.fire_rate = 0.08571428571
 	self.breech.single.fire_rate = 0.08571428571
-	self.breech.kick.standing = self.glock_17.kick.standing
-	self.breech.kick.crouching = self.glock_17.kick.crouching
-	self.breech.kick.steelsight = self.glock_17.kick.steelsight
+	self.breech.kick = self.stat_info.kick_tables.even_recoil
 	self.breech.supported = true
 	self.breech.stats = {
 		damage = 20,
@@ -6517,9 +6483,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shrew.CLIP_AMMO_MAX = 6
 	self.shrew.AMMO_MAX = 40
 	self.shrew.AMMO_PICKUP = self.stats._pickup_chance
-	self.shrew.kick.standing = self.glock_17.kick.standing
-	self.shrew.kick.crouching = self.glock_17.kick.crouching
-	self.shrew.kick.steelsight = self.glock_17.kick.steelsight
+	self.shrew.kick = self.stat_info.kick_tables.even_recoil
 	self.shrew.supported = true
 	self.shrew.stats = {
 		damage = 45,
@@ -7768,9 +7732,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.legacy.CLIP_AMMO_MAX = 12
 	self.legacy.AMMO_MAX = 75
 	self.legacy.AMMO_PICKUP = self.stats._pickup_chance
-	self.legacy.kick.standing = self.glock_17.kick.standing
-	self.legacy.kick.crouching = self.glock_17.kick.crouching
-	self.legacy.kick.steelsight = self.glock_17.kick.steelsight
+	self.legacy.kick = self.stat_info.kick_tables.even_recoil
 	self.legacy.supported = true
 	self.legacy.stats = {
 		damage = 24,
@@ -7948,9 +7910,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.holt.CLIP_AMMO_MAX = 10
 	self.holt.AMMO_MAX = 75
 	self.holt.AMMO_PICKUP = self.stats._pickup_chance
-	self.holt.kick.standing = self.glock_17.kick.standing
-	self.holt.kick.crouching = self.glock_17.kick.crouching
-	self.holt.kick.steelsight = self.glock_17.kick.steelsight
+	self.holt.kick = self.stat_info.kick_tables.even_recoil
 	self.holt.supported = true
 	self.holt.stats = {
 		damage = 24,
@@ -8176,9 +8136,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.socom.CLIP_AMMO_MAX = 12
 	self.socom.AMMO_MAX = 40
 	self.socom.AMMO_PICKUP = self.stats._pickup_chance
-	self.socom.kick.standing = self.glock_17.kick.standing
-	self.socom.kick.crouching = self.glock_17.kick.crouching
-	self.socom.kick.steelsight = self.glock_17.kick.steelsight
+	self.socom.kick = self.stat_info.kick_tables.even_recoil
 	self.socom.supported = true
 	self.socom.stats = {
 		damage = 45,
@@ -8234,9 +8192,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amt.has_description = false
 		self.amt.fire_mode_data.fire_rate = 0.1
 		self.amt.single.fire_rate = 0.1
-		self.amt.kick.standing = self.glock_17.kick.standing
-		self.amt.kick.crouching = self.glock_17.kick.crouching
-		self.amt.kick.steelsight = self.glock_17.kick.steelsight
+	self.amt.kick = self.stat_info.kick_tables.even_recoil
 		self.amt.CLIP_AMMO_MAX = 8
 		self.amt.AMMO_MAX = 60
 		self.amt.AMMO_PICKUP = self.stats._pickup_chance
@@ -8798,9 +8754,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cold.CLIP_AMMO_MAX = 8
 		self.cold.AMMO_MAX = 40
 		self.cold.AMMO_PICKUP = self.stats._pickup_chance
-		self.cold.kick.standing = self.glock_17.kick.standing
-		self.cold.kick.crouching = self.glock_17.kick.crouching
-		self.cold.kick.steelsight = self.glock_17.kick.steelsight
+	self.cold.kick = self.stat_info.kick_tables.even_recoil
 		self.cold.supported = true
 		self.cold.stats = {
 			damage = 45,
@@ -8902,9 +8856,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hpb.CLIP_AMMO_MAX = 10
 		self.hpb.AMMO_MAX = 40
 		self.hpb.AMMO_PICKUP = self.stats._pickup_chance
-		self.hpb.kick.standing = self.glock_17.kick.standing
-		self.hpb.kick.crouching = self.glock_17.kick.crouching
-		self.hpb.kick.steelsight = self.glock_17.kick.steelsight
+	self.hpb.kick = self.stat_info.kick_tables.even_recoil
 		self.hpb.supported = true
 		self.hpb.stats = {
 			damage = 45,

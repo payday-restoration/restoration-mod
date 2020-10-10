@@ -681,7 +681,7 @@ end
 --Adds stance mults.
 local orig_recoil_multiplier = RaycastWeaponBase.recoil_multiplier
 function RaycastWeaponBase:recoil_multiplier()
-	local multiplier = orig_recoil_multiplier(self, ...)
+	local multiplier = orig_recoil_multiplier(self)
 
 	local current_state = managers.player:player_unit():movement()._current_state
 	if not current_state then

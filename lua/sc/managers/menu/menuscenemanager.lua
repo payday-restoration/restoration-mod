@@ -1,6 +1,12 @@
 Month = os.date("%m")
 Day = os.date("%d")	
 
+Hooks:PostHook(MenuSceneManager, "_set_up_environments", "ResHalloweenColorGrade", function(self)
+	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
+		self._environments.standard.color_grading = "color_halloween"
+	end
+end)
+
 function MenuSceneManager:_setup_bg()
 	local yaw = 180
 	self._bg_unit = World:spawn_unit(Idstring("units/menu/menu_scene/menu_cylinder"), Vector3(0, 0, 0), Rotation(yaw, 0, 0))

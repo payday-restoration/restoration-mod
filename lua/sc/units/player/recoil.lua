@@ -24,9 +24,7 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local r_value = 0
 
 	if self._recoil_kick.h.current and self._episilon < math.abs(self._recoil_kick.h.accumulated - self._recoil_kick.h.current) then
-		log("Horz Movement = " .. math.max(40, 100 * math.abs(self._recoil_kick.h.accumulated - self._recoil_kick.h.current)))
 		local n = math.step(self._recoil_kick.h.current, self._recoil_kick.h.accumulated, 80 * dt)
-		log(n)
 		r_value = n - self._recoil_kick.h.current
 		self._recoil_kick.h.current = n
 	elseif self._recoil_wait then

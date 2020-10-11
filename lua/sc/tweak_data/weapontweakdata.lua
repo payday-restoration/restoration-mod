@@ -2823,7 +2823,7 @@ function WeaponTweakData:_init_stats()
 				0,
 				0
 			}
-		}
+		},
 
 		--Big, low damage bullet hoses will be around here.
 		horizontal_recoil = {

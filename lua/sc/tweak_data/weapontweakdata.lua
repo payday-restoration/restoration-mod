@@ -2626,90 +2626,90 @@ function WeaponTweakData:_init_stats()
 
 	self.stats.alert_size = {}
 	for i = 4200, 199.99, -200 do --Middle value slightly off to avoid floating point shenanigans.
-    	table.insert(self.stats.alert_size, i)
-    end
+		table.insert(self.stats.alert_size, i)
+	end
 
-    self.stats.suppression = {}
-    for i = 4.2, 0.199, -0.2 do --Middle value slightly off to avoid floating point shenanigans.
-    	table.insert(self.stats.suppression, i)
-    end
+	self.stats.suppression = {}
+	for i = 4.2, 0.199, -0.2 do --Middle value slightly off to avoid floating point shenanigans.
+		table.insert(self.stats.suppression, i)
+	end
 
 	self.stats.damage = {}
 	for i = 0.1, 40.01, 0.1 do
-    	table.insert(self.stats.damage, i)
-    end
+		table.insert(self.stats.damage, i)
+	end
 
-    self.stats.zoom = {}
-    for i = 1, 12.1, 0.1 do
-        table.insert(self.stats.zoom, 65 / i)
-    end
+	self.stats.zoom = {}
+	for i = 1, 12.1, 0.1 do
+		table.insert(self.stats.zoom, 65 / i)
+	end
 
-    --Stance multipliers for weapon spread.
-    self.stat_info.stance_spread_mults = {
-    	moving_standing = 5,
-    	standing = 5,
-    	moving_crouching = 2.5,
-    	crouching = 2.5,
-    	moving_steelsight = 1,
-    	steelsight = 1,
-    	bipod = 1
-    }
+	--Stance multipliers for weapon spread.
+	self.stat_info.stance_spread_mults = {
+		moving_standing = 5,
+		standing = 5,
+		moving_crouching = 2.5,
+		crouching = 2.5,
+		moving_steelsight = 1,
+		steelsight = 1,
+		bipod = 1
+	}
 
-    --Controls how much total ammo influences pickup Following the formula pickup = (base_pickup% + exponent*sqrt(damage)) * ammo * skill_mults
-    --These changes exist to allow for consistency to be added to low ammo pool weapons (by pushing min and max pickup closer) and to compensate for lack of rounding eating your pickups.
-    self.stat_info.pickup_exponents = {
-    	min = -0.0005,
-    	max = -0.00125
-    }
+	--Controls how much total ammo influences pickup Following the formula pickup = (base_pickup% + exponent*sqrt(damage)) * ammo * skill_mults
+	--These changes exist to allow for consistency to be added to low ammo pool weapons (by pushing min and max pickup closer) and to compensate for lack of rounding eating your pickups.
+	self.stat_info.pickup_exponents = {
+		min = -0.0005,
+		max = -0.00125
+	}
 
 	--Sets % of total ammo picked up before any other modifiers (IE: From skills or pickup_exponents).
 	--Secondary pickup is compensated in newraycastweaponbase/weaponammo by looking at their total ammo as if they were primaries.
-    self.stat_info._pickup_chance = {
-    	0.026, 0.052
-    }
+	self.stat_info._pickup_chance = {
+		0.026, 0.052
+	}
 
-    --Multiplier for spread on multi-pellet shotguns. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
-    self.stat_info.shotgun_spread_increase = 2.5
+	--Multiplier for spread on multi-pellet shotguns. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
+	self.stat_info.shotgun_spread_increase = 2.5
 
 
-    self.stat_info.base_spread = 6.5 --How much spread area you have at 0 accuracy.
-    self.stat_info.spread_per_accuracy = -0.32 --How much each point of accuracy reduces spread area.
-    self.stats.spread = {}
-    for i = 0, 20, 1 do
-    	table.insert(self.stats.spread, self.stat_info.base_spread + (i * self.stat_info.spread_per_accuracy))
-    end
+	self.stat_info.base_spread = 6.5 --How much spread area you have at 0 accuracy.
+	self.stat_info.spread_per_accuracy = -0.32 --How much each point of accuracy reduces spread area.
+	self.stats.spread = {}
+	for i = 0, 20, 1 do
+		table.insert(self.stats.spread, self.stat_info.base_spread + (i * self.stat_info.spread_per_accuracy))
+	end
 
-    --Generate table for moving_spread and how it relates to stability.
-    --The values in the table correspond to the area of spread.
-    --These are added to the area for accuracy while moving before determining the final angles.
+	--Generate table for moving_spread and how it relates to stability.
+	--The values in the table correspond to the area of spread.
+	--These are added to the area for accuracy while moving before determining the final angles.
 	self.stat_info.base_move_spread = 3.75
-    self.stat_info.spread_per_stability = -0.15
+	self.stat_info.spread_per_stability = -0.15
 	self.stats.spread_moving = {}
-    for i = 0, 25, 1 do
-    	table.insert(self.stats.spread_moving, self.stat_info.base_move_spread + (i * self.stat_info.spread_per_stability))
-    end
+	for i = 0, 25, 1 do
+		table.insert(self.stats.spread_moving, self.stat_info.base_move_spread + (i * self.stat_info.spread_per_stability))
+	end
 
-    --Stance multipliers for weapon recoil.
-    self.stat_info.stance_recoil_mults = {
-    	moving_standing = 1,
-    	standing = 1,
-    	moving_crouching = 0.8,
-    	crouching = 0.8,
-    	moving_steelsight = 0.6,
-    	steelsight = 0.6,
-    	bipod = 0.2
-    }
+	--Stance multipliers for weapon recoil.
+	self.stat_info.stance_recoil_mults = {
+		moving_standing = 1,
+		standing = 1,
+		moving_crouching = 0.8,
+		crouching = 0.8,
+		moving_steelsight = 0.6,
+		steelsight = 0.6,
+		bipod = 0.2
+	}
 
-    --Recoil multiplier. Used for stability.
-    self.stats.recoil = {}
-    for i = 4, 0.49, -0.14 do
+	--Recoil multiplier. Used for stability.
+	self.stats.recoil = {}
+	for i = 4, 0.49, -0.14 do
 		table.insert(self.stats.recoil, i)
-    end
+	end
 
-    self.stats.value = {}
-    for i = 1, 10.01, 1 do
-    	table.insert(self.stats.value, i)
-    end
+	self.stats.value = {}
+	for i = 1, 10.01, 1 do
+		table.insert(self.stats.value, i)
+	end
 
 	self.stats.concealment = {
 		0.3,
@@ -2788,117 +2788,299 @@ function WeaponTweakData:_init_stats()
 	end
 
 	self.stats.total_ammo_mod = {}
-	    for i = -0.99, 1.155, 0.01 do
-    	table.insert(self.stats.total_ammo_mod, clamp_near_zero(i))
-    end
+		for i = -0.99, 1.155, 0.01 do
+		table.insert(self.stats.total_ammo_mod, clamp_near_zero(i))
+	end
 
 	self.stats.reload = {}
 	for i = 0.05, 2.01, 0.05 do
-    	table.insert(self.stats.reload, clamp_near_zero(i - 1) + 1)
-    end
+		table.insert(self.stats.reload, clamp_near_zero(i - 1) + 1)
+	end
 
-    --Different recoil tables.
-    --With the exception of the none table, all of them average out to '0.85'
-    --'Heavier' recoils tend to move your screen vertically more than lighter ones, and vice versa for horizontal.
-    --This means that they feel meatier, but can also be more reliably controlled by a skilled player.
-    --On the flip side, 'lighter' recoils will cancel themselves out more.
-    self.stat_info.kick_tables = {
-    	--No recoil at all, used for bows and shit.
-    	none = {
-    		0,
-    		0,
-    		0,
-    		0
-    	},
+	--Different recoil tables.
+	--With the exception of the none table, all of them average out to '0.85'
+	--'Heavier' recoils tend to move your screen vertically more than lighter ones, and vice versa for horizontal.
+	--This means that they feel meatier, but can also be more reliably controlled by a skilled player.
+	--On the flip side, 'lighter' recoils will cancel themselves out more.
+	self.stat_info.kick_tables = {
+		--No recoil at all, used for bows and shit.
+		none = {
+			standing = {
+				0,
+				0,
+				0,
+				0
+			},
+			crouching = {
+				0,
+				0,
+				0,
+				0
+			},
+			steelsight = {
+				0,
+				0,
+				0,
+				0
+			}
+		}
 
-    	--Big, low damage bullet hoses will be around here.
-    	horizontal_recoil = {
-			0.5,
-			0.6,
-			-1.15,
-			1.15
+		--Big, low damage bullet hoses will be around here.
+		horizontal_recoil = {
+			standing = {
+				0.5,
+				0.6,
+				-1.15,
+				1.15
+			},
+			crouching = {
+				0.5,
+				0.6,
+				-1.15,
+				1.15
+			},
+			steelsight = {
+				0.5,
+				0.6,
+				-1.15,
+				1.15
+			}
 		},
 
 		horizontal_left_recoil = {
-			0.5,
-			0.6,
-			-1.4,
-			0.9
+			standing = {
+				0.5,
+				0.6,
+				-1.4,
+				0.9
+			},
+			crouching = {
+				0.5,
+				0.6,
+				-1.4,
+				0.9
+			},
+			steelsight = {
+				0.5,
+				0.6,
+				-1.4,
+				0.9
+			}
 		},
 
 		horizontal_right_recoil = {
-			0.5,
-			0.6,
-			-0.9,
-			1.4
+			standing = {
+				0.5,
+				0.6,
+				-0.9,
+				1.4
+			},
+			crouching = {
+				0.5,
+				0.6,
+				-0.9,
+				1.4
+			},
+			steelsight = {
+				0.5,
+				0.6,
+				-0.9,
+				1.4
+			}
 		},
 
 		--Your average SMG and Pistol will be around here.
-    	even_recoil = {
-			0.6,
-			0.8,
-			-1,
-			1
+		even_recoil = {
+			standing = {
+				0.6,
+				0.8,
+				-1,
+				1
+			},
+			crouching = {
+				0.6,
+				0.8,
+				-1,
+				1
+			},
+			steelsight = {
+				0.6,
+				0.8,
+				-1,
+				1
+			}
 		},
 
 		left_recoil = {
-			0.6,
-			0.8,
-			-1.3,
-			0.7
+			standing = {
+				0.6,
+				0.8,
+				-1.3,
+				0.7
+			},
+			crouching = {
+				0.6,
+				0.8,
+				-1.3,
+				0.7
+			},
+			steelsight = {
+				0.6,
+				0.8,
+				-1.3,
+				0.7
+			}
 		},
 
 		right_recoil = {
-			0.6,
-			0.8,
-			-0.7,
-			1.3
+			standing = {
+				0.6,
+				0.8,
+				-0.7,
+				1.3
+			},
+			crouching = {
+				0.6,
+				0.8,
+				-0.7,
+				1.3
+			},
+			steelsight = {
+				0.6,
+				0.8,
+				-0.7,
+				1.3
+			}
 		},
 
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
 		moderate_kick = {
-			0.8,
-			1.0,
-			-0.8,
-			0.8
+			standing = {
+				0.8,
+				1.0,
+				-0.8,
+				0.8
+			},
+			crouching = {
+				0.8,
+				1.0,
+				-0.8,
+				0.8
+			},
+			steelsight = {
+				0.8,
+				1.0,
+				-0.8,
+				0.8
+			}
 		},
 
 		moderate_left_kick = {
-			0.8,
-			1.0,
-			-1.05,
-			0.55
+			standing = {
+				0.8,
+				1.0,
+				-1.05,
+				0.55
+			},
+			crouching = {
+				0.8,
+				1.0,
+				-1.05,
+				0.55
+			},
+			steelsight = {
+				0.8,
+				1.0,
+				-1.05,
+				0.55
+			}
 		},
 
 		moderate_right_kick = {
-			0.8,
-			1.0,
-			-0.55,
-			1.05
+			standing = {
+				0.8,
+				1.0,
+				-0.55,
+				1.05
+			},
+			crouching = {
+				0.8,
+				1.0,
+				-0.55,
+				1.05
+			},
+			steelsight = {
+				0.8,
+				1.0,
+				-0.55,
+				1.05
+			}
 		},
 
 		--DMRs, Sniper Rifles, and heavy shotguns will be around here.
 		vertical_kick = {
-			1.5,
-			1.58,
-			-0.16,
-			0.16
+			standing = {
+				1.5,
+				1.58,
+				-0.16,
+				0.16
+			},
+			crouching = {
+				1.5,
+				1.58,
+				-0.16,
+				0.16
+			},
+			steelsight = {
+				1.5,
+				1.58,
+				-0.16,
+				0.16
+			}
 		},
 
 		left_kick = {
-			1.5,
-			1.58,
-			-0.32,
-			0.0
+			standing = {
+				1.5,
+				1.58,
+				-0.32,
+				0.0
+			},
+			crouching = {
+				1.5,
+				1.58,
+				-0.32,
+				0.0
+			},
+			steelsight = {
+				1.5,
+				1.58,
+				-0.32,
+				0.0
+			}
 		},
 
 		right_kick = {
-			1.5,
-			1.58,
-			-0.0,
-			0.32
+			standing = {
+				1.5,
+				1.58,
+				-0.0,
+				0.32
+			},
+			crouching = {
+				1.5,
+				1.58,
+				-0.0,
+				0.32
+			},
+			steelsight = {
+				1.5,
+				1.58,
+				-0.0,
+				0.32
+			}
 		}
-    }
+	}
 
 end
 

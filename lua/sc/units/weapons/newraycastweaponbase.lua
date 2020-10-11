@@ -1,10 +1,3 @@
-function NewRaycastWeaponBase:get_add_head_shot_mul()
-	if self:is_category("smg", "lmg", "assault_rifle", "minigun", "pistol") and self._fire_mode == ids_auto then
-		return self._add_head_shot_mul
-	end
-	return nil
-end
-
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
 	for _, category in ipairs(self:categories()) do
@@ -25,7 +18,8 @@ else
 			return self:ammo_base():get_ammo_remaining_in_clip() == self:ammo_base():get_ammo_max_per_clip()
 		end
 	end
-			
+	
+	--Handle guns that can hold bullets in the chamber.
 	local original_on_reload = NewRaycastWeaponBase.on_reload
 	function NewRaycastWeaponBase:on_reload(...)
 		if not self._setup.expend_ammo then
@@ -109,10 +103,12 @@ NewRaycastWeaponBase.IDSTRING_AUTO = Idstring("auto")
 function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 	local mul = 1
 
-	--Multi-pellet spread increase.gi
+	--Multi-pellet spread increase.
 	if self._rays and self._rays > 1 then
 		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
 	end
+
+	mul = mul * pm:get_property("desperado", 1)
 
 	if not current_state then
 		return mul
@@ -129,8 +125,6 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 			mul = mul * pm:upgrade_value(category, "hip_fire_spread_multiplier", 1)
 		end
 	end
-
-	mul = mul * pm:get_property("desperado", 1)
 
 	return mul
 end
@@ -346,36 +340,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	
 	self._reload_speed_mult = self:weapon_tweak_data().reload_speed_multiplier or 1
 	self._ads_speed_mult = self._ads_speed_mult or 1
-	self._hipfire_mod = 1
 	self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
 	
 	self._deploy_anim_override = self:weapon_tweak_data().deploy_anim_override or nil
 	self._deploy_ads_stance_mod = self:weapon_tweak_data().deploy_ads_stance_mod or {translation = Vector3(0, 0, 0), rotation = Rotation(0, 0, 0)}		
 		
 	self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
-	if self:weapon_tweak_data().heavy_AP then --for convenience
-		self._can_shoot_through_titan_shield = true
-		self._can_shoot_through_shield = true
-		self._can_shoot_through_wall = true
-		self._can_shoot_through_enemies = true
-		self:weapon_tweak_data().armor_piercing_chance = 1
-	end
-
-	if self:weapon_tweak_data().standard_AP then --for convenience
-		self._can_shoot_through_titan_shield = false
-		self._can_shoot_through_shield = true
-		self._can_shoot_through_wall = true
-		self._can_shoot_through_enemies = true
-		self:weapon_tweak_data().armor_piercing_chance = 1
-	end
-
-	if self:weapon_tweak_data().no_AP then --for convenience
-		self._can_shoot_through_titan_shield = false
-		self._can_shoot_through_shield = false
-		self._can_shoot_through_wall = false
-		self._can_shoot_through_enemies = false
-		self:weapon_tweak_data().armor_piercing_chance = 0
-	end
 	
 	if not self:is_npc() then
 		local weapon = {
@@ -405,9 +375,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	for part_id, stats in pairs(custom_stats) do
 		if stats.ads_speed_mult then
 			self._ads_speed_mult = self._ads_speed_mult * stats.ads_speed_mult
-		end
-		if stats.hipfire_mod then
-			self._hipfire_mod = self._hipfire_mod * stats.hipfire_mod 
 		end
 		if self._flame_max_range and stats.flame_max_range_set then
 			self._flame_max_range = stats.flame_max_range_set
@@ -450,30 +417,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 			if self:weapon_tweak_data().categories then
 				self:weapon_tweak_data().categories = {"pistol"}
 			end
-		end
-
-		if stats.heavy_AP then --for convenience
-			self._can_shoot_through_titan_shield = true
-			self._can_shoot_through_shield = true
-			self._can_shoot_through_wall = true
-			self._can_shoot_through_enemies = true
-			self:weapon_tweak_data().armor_piercing_chance = 1
-		end
-
-		if stats.standard_AP then --for convenience
-			self._can_shoot_through_titan_shield = false
-			self._can_shoot_through_shield = true
-			self._can_shoot_through_wall = true
-			self._can_shoot_through_enemies = true
-			self:weapon_tweak_data().armor_piercing_chance = 1
-		end
-
-		if stats.no_AP then --for convenience
-			self._can_shoot_through_titan_shield = false
-			self._can_shoot_through_shield = false
-			self._can_shoot_through_wall = false
-			self._can_shoot_through_enemies = false
-			self:weapon_tweak_data().armor_piercing_chance = 0
 		end
 
 		--Flamethrower stuff, since fire DOT data doesn't like being changed in a normal custom stat

@@ -16,8 +16,8 @@ ModifierHeavies.zombie = {
 	Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1")
 }	
 ModifierHeavies.murky = {
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4"),
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4"),
+	Idstring("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
+	Idstring("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
 	Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city")
 }	
 --just to make sure the original doesn't do anything
@@ -41,7 +41,7 @@ function ModifierHeavies:modify_value(id, value)
 		elseif is_zombie and math.random(0,100) < 15 then
 			return Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3")	
 		elseif is_murky and math.random(0,100) < 15 then
-			return Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump")				
+			return Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3")				
 		end
 	end
 	return value

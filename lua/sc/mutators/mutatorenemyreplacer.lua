@@ -365,7 +365,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1")					
 				},
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murkywater_light/ene_murkywater_light")							
+					Idstring("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1")							
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale")							
@@ -395,8 +395,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")								
 				},							
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")							
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")						
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale")							
@@ -427,7 +427,7 @@ function MutatorNoTitans:setup(data)
 				Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870")						
 			},					
 			murkywater = {
-				Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_r870/ene_murky_yellow_r870")			
+				Idstring("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")			
 			},
 			federales = {
 				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870")			
@@ -616,8 +616,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")								
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")							
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")						
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
@@ -650,8 +650,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")							
 				},							
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2"),
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")						
+					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1"),
+					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2")					
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
@@ -684,7 +684,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")								
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")							
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")							
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")							
@@ -711,7 +711,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4")
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")							
@@ -744,8 +744,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1")								
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4"),	
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")							
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
+					Idstring("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1")										
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),	
@@ -775,7 +775,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1")							
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4")						
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1")						
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi")
@@ -805,8 +805,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4"),
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_m4/ene_murky_heavy_m4")
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),	
@@ -836,7 +836,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_city_m4/ene_murky_city_m4")
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city")
@@ -896,8 +896,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3")							
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870"),
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_ump/ene_murky_heavy_ump")						
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
@@ -930,8 +930,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3")							
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_heavy_r870/ene_murky_heavy_r870"),
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump")						
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3")					
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
@@ -964,8 +964,8 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3")								
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_city_bnl/ene_murky_city_bnl"),
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_city_ump/ene_murky_city_ump")							
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3")							
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"),
@@ -1032,7 +1032,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870")
 				},							
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
+					Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870")
@@ -1059,7 +1059,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc")
 				},							
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870")
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870")

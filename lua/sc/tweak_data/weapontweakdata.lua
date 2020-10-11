@@ -2802,6 +2802,7 @@ function WeaponTweakData:_init_stats()
 	--'Heavier' recoils tend to move your screen vertically more than lighter ones, and vice versa for horizontal.
 	--This means that they feel meatier, but can also be more reliably controlled by a skilled player.
 	--On the flip side, 'lighter' recoils will cancel themselves out more.
+	--The stance specific stuff isn't used in these. It exists for compatibility purposes.
 	self.stat_info.kick_tables = {
 		--No recoil at all, used for bows and shit.
 		none = {

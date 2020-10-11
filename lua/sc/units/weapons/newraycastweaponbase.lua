@@ -108,13 +108,14 @@ function NewRaycastWeaponBase:conditional_accuracy_multiplier(current_state)
 		mul = mul * tweak_data.weapon.stat_info.shotgun_spread_increase
 	end
 
+	local pm = managers.player
+	
 	mul = mul * pm:get_property("desperado", 1)
 
 	if not current_state then
 		return mul
 	end
 
-	local pm = managers.player
 
 	if current_state:in_steelsight() then
 		for _, category in ipairs(self:categories()) do

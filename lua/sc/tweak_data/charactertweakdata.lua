@@ -2572,7 +2572,7 @@ function CharacterTweakData:_init_spring(presets)
 	
 	--Headless Titandozer Boss 
 	self.headless_hatman = deep_clone(self.spring)
-	self.headless_hatman.custom_voicework = "tdozer"
+	self.headless_hatman.custom_voicework = "hatman"
 	table.insert(self._enemy_list, "headless_hatman")
 end
 

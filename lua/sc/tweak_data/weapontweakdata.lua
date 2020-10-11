@@ -591,6 +591,14 @@ function WeaponTweakData:_init_data_npc_melee()
 	self.npc_melee.helloween_sword.player_blood_effect = true
 	self.npc_melee.helloween_sword.armor_piercing = true
 	
+	--Halloween Dozer Axe
+	self.npc_melee.helloween_axe = {}
+	self.npc_melee.helloween_axe.unit_name = Idstring("units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword")
+	self.npc_melee.helloween_axe.damage = 5
+	self.npc_melee.helloween_axe.animation_param = "melee_fireaxe"
+	self.npc_melee.helloween_axe.player_blood_effect = true
+	self.npc_melee.helloween_axe.armor_piercing = true	
+	
 	--Summers' Buzzer
 	self.npc_melee.buzzer_summer = {}
 	self.npc_melee.buzzer_summer.unit_name = Idstring("units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1")

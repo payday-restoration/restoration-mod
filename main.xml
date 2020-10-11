@@ -252,6 +252,7 @@
 		<hook file="sc/utils/game_state_machine/GSM.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
 		<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<hook file="sc/tweak_data/carrytweakdata.lua" source_file="lib/tweak_data/carrytweakdata"/>
+		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

@@ -26,7 +26,7 @@
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskTankCopDamage" >
-			<var name="_head_body_name" value="head" />
+			<var name="_head_body_name" value="body_helmet_glass" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="bulldozer" />

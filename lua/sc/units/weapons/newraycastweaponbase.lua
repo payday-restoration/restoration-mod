@@ -235,11 +235,6 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		return 0
 	end
 
-	local current_state = managers.player:player_unit():movement()._current_state
-	if current_state then
-		mult = mult * tweak_data.weapon.stat_info.stance_recoil_mults[current_state:get_movement_state()]
-	end
-
 	return recoil_multiplier_original(self, ...)
 end
 

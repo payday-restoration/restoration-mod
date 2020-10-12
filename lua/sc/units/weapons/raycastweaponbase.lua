@@ -678,21 +678,6 @@ function RaycastWeaponBase:_get_spread(user_unit)
 	return spread_x, spread_y
 end
 
---Adds stance mults.
-local orig_recoil_multiplier = RaycastWeaponBase.recoil_multiplier
-function RaycastWeaponBase:recoil_multiplier()
-	local multiplier = orig_recoil_multiplier(self)
-
-	local current_state = managers.player:player_unit():movement()._current_state
-	if not current_state then
-		return multiplier
-	end
-
-	multiplier = multiplier * tweak_data.weapon.stat_info.stance_recoil_mults[current_state:get_movement_state()]
-
-	return multiplier
-end
-
 function RaycastWeaponBase:remove_ammo(percent)
 	local total_ammo = self:get_ammo_total()
 	local max_ammo = self:get_ammo_max()

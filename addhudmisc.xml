@@ -71,6 +71,7 @@
 	<texture path="core/textures/cg_force"/>
 	<texture path="core/textures/cg_e3nice"/>
 	<texture path="core/textures/cg_halloween"/>
+	<texture path="core/textures/cg_halloween2"/>
 
 	<!-- Banners -->
 	<!--<texture path="guis/textures/restoration/discord"/>

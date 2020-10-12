@@ -2148,11 +2148,15 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_color_rvd1"] = "Inverted",
 		["menu_color_e3nice"] = "E3 Nice",
 		["menu_color_force"] = "E3 BHD",
+		["menu_color_halloween"] = "Change",
+		["menu_color_halloween2"] = "Pumpkin Spice",
 
 		["color_plus"] = "E3 PAYDAY+",
 		["color_rvd1"] = "Inverted",
 		["color_e3nice"] = "E3 Nice",
 		["color_force"] = "E3 BHD",
+		["color_halloween"] = "Change",
+		["color_halloween2"] = "Pumpkin Spice",
 
 		["gm_gms_purchase"] = "Purchase with Continental Coins",
 		["gm_gms_purchase_window_title"] = "Are you sure?",

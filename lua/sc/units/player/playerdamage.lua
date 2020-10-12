@@ -1346,7 +1346,7 @@ function PlayerDamage:set_health(health)
 	local max_health = self:_max_health_orig() * self._max_health_reduction + self._temp_health
 	health = math.clamp(health, 0, max_health) --Removed useless floor before clamp.
 
-	if health < prev_health then --Reduce temp health if health was reduced.
+	if health < prev_health and self._temp_health > 0 then --Reduce temp health if health was reduced.
 		self:_change_temp_health(health - prev_health)
 	end
 

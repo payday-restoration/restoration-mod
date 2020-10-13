@@ -1,4 +1,6 @@
 Month = os.date("%m")
+Day = os.date("%d")	
+
 --///LEVEL TYPES\\\--
 LevelsTweakData.LevelType = {}
 LevelsTweakData.LevelType.America = "america"
@@ -407,6 +409,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 	self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 	self.hvh.package = {"packages/zombieassets", "packages/narr_hvh"}
+	
+	--Zombies on H&T for the holidays--
+	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
+		self.branchbank.package = {"packages/zombieassets", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds", "packages/narr_firestarter3"}
+		self.branchbank.ai_group_type = zombie
+	end
 	
 	self.haunted.ai_group_type = zombie		
 	self.nail.ai_group_type = zombie

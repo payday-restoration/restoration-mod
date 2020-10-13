@@ -1,3 +1,6 @@
+Month = os.date("%m")
+Day = os.date("%d")	
+
 local old_init_risk_assets = AssetsTweakData._init_risk_assets
 function AssetsTweakData:_init_risk_assets(tweak_data)
 	old_init_risk_assets(self, tweak_data)
@@ -172,7 +175,7 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.mad_russian_merc_cameras.stages, "pines")
 	table.insert(self.mad_russian_merc_cameras.stages, "crojob3")
 	table.insert(self.mad_russian_merc_cameras.stages, "crojob3_night")
-	
+			
 	self.risk_easy_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc"
 	self.risk_death_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc"
 	self.risk_sm_wish.texture = "guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc"
@@ -199,6 +202,22 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"mex_cooking",
 		"bex"
 	}			
+	
+	--Holiday Exclusive Stuff--
+	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
+
+		--Zombies on Bank Heist (H&T)
+		table.insert(self.risk_pd.exclude_stages, "branchbank")
+		table.insert(self.risk_swat.exclude_stages, "branchbank")
+		table.insert(self.risk_fbi.exclude_stages, "branchbank")
+		table.insert(self.risk_death_squad.exclude_stages, "branchbank")
+		table.insert(self.risk_easy_wish.exclude_stages, "branchbank")
+		table.insert(self.risk_death_wish.exclude_stages, "branchbank")
+		table.insert(self.risk_sm_wish.exclude_stages, "branchbank")
+		
+		table.insert(self.risk_zombie.stages, "branchbank")
+	
+	end	
 
 	--Adding Bikers to Biker heist cause it makes sense--
 	self.jungle_1_bikers.stages = {

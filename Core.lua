@@ -74,8 +74,25 @@ function restoration:Init()
 	
 	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 	
+		--No Spring During holidays
 		restoration.captain_murderdozer = {}
-		
+		--Autumn loses a few heists
+		restoration.captain_stelf = {
+			"alex_1", --Rats Day 1
+			"rat",	--cook off
+			"nightclub", --and Autumn stay off the dance floor
+			"family", --diamond store
+			"framing_frame_1", --art gallery but ff
+			"framing_frame_3", --Powerbox simulator
+			"jewelry_store", --Jewelry Store
+			"ukrainian_job", --Ukrainian Job
+			--custom heists
+			"wetwork", --res map package wetworks
+			"alex_1_res", --Rats Day 1 res edit version
+			"lvl_fourmorestores", --four more stores
+			"ukrainian_job_res", --Ukrainian Job res edit version
+			"hntn" --harvest and trustee north
+		}		
 		restoration.what_a_horrible_heist_to_have_a_curse = {
 			"dah", --diamond heist
 			"hox_2", --Hoxout Day 2
@@ -84,6 +101,7 @@ function restoration:Init()
 			"arm_for",	--train heist
 			"big", --big bank
 			"dinner", --Slaughterhouse
+			"branchbank", --Gets Branchbank from Autumn		
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"lvl_friday" --Crashing Capitol

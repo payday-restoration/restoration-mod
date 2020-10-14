@@ -113,6 +113,7 @@
 	<!-- <sequence_manager	path="units/payday2/equipment/gen_equipment_security_camera/gen_equipment_security_camera" force="true"/> -->
 	
 	<environment path="environments/pd2_env_night/pd2_env_night" force="true"/>
+	<environment path="environments/pd2_env_mid_day/pd2_env_mid_day" force="true"/>
 	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
 	<material_config path="units/pd2_dlc_friend/nature/terrain/sfm_backdrop" force="true"/>
 	

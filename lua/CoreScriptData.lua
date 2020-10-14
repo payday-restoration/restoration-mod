@@ -337,9 +337,9 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 	end
 end)
 
-	Hooks:Add("BeardLibCreateScriptDataMods", "NonLevelCallBeardLibSequenceFuncs", function()
-		BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bettercoredefault.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
-	end)
+	-- Hooks:Add("BeardLibCreateScriptDataMods", "NonLevelCallBeardLibSequenceFuncs", function()
+	-- 	BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bettercoredefault.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+	-- end)
 
 --Restoration Levels
 Hooks:Add("BeardLibCreateScriptDataMods", "RESMapsCallBeardLibSequenceFuncs", function()

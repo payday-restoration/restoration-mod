@@ -505,6 +505,7 @@ end
 				},
 				{
 					percent = false,
+					inverted = true,
 					name = "suppression",
 					offset = true
 				},
@@ -5891,7 +5892,7 @@ ModShop.NonDLCGlobalValues = {
 ModShop.MaskMods = {
 	["materials"] = true,
 	["textures"] = true,
-	["colors"] = true,
+	["mask_colors"] = true,
 }
 
 ModShop.NamePriceOverrides = {

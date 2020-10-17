@@ -1490,6 +1490,7 @@ function CopActionShoot:anim_clbk_melee_strike()
 				if tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon == "hard_counter" then
 					local dmg_multiplier = 1
 					local player_state = character_unit:movement()._current_state
+					local t = Application:time()
 
 					dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
 
@@ -1497,7 +1498,7 @@ function CopActionShoot:anim_clbk_melee_strike()
 						player_state._state_data.stacking_dmg_mul = player_state._state_data.stacking_dmg_mul or {}
 						player_state._state_data.stacking_dmg_mul.melee = player_state._state_data.stacking_dmg_mul.melee or {nil, 0}
 						local stack = player_state._state_data.stacking_dmg_mul.melee
-						if stack[1] and Application:time() < stack[1] then
+						if stack[1] and t < stack[1] then
 							dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("melee", "stacking_hit_damage_multiplier", 0) * stack[2])
 						else
 							stack[2] = 0

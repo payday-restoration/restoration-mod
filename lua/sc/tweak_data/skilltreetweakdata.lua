@@ -1984,7 +1984,7 @@ function SkillTreeTweakData:init(tweak_data)
 		upgrades = {
 			"weapon_passive_headshot_damage_multiplier",
 			"weapon_passive_damage_multiplier_1",
-			"player_non_special_melee_multiplier_1",
+			"player_non_special_melee_multiplier_1", --This bonus doesn't actually do anything, but it is what's displayed in menus.
 			"player_melee_damage_multiplier_1"
 		},
 		cost = 300,

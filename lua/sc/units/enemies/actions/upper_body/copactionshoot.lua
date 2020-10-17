@@ -1517,7 +1517,6 @@ function CopActionShoot:anim_clbk_melee_strike()
 					end
 
 					counter_data.damage = 12 * managers.player:get_melee_dmg_multiplier() * dmg_multiplier
-					log(counter_data.damage)
 				end
 
 				self._unit:character_damage():damage_melee(counter_data)

@@ -3126,16 +3126,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.taser.melee_damage_delay = 0.2
 	
 	--Thanks Boss--	
-	self.melee_weapons.fight.stats.min_damage = 2
-	self.melee_weapons.fight.stats.max_damage = 3.1
-	self.melee_weapons.fight.stats.min_damage_effect = 6
-	self.melee_weapons.fight.stats.max_damage_effect = 7
-	self.melee_weapons.fight.stats.charge_time = 0.5
+	self.melee_weapons.fight.stats.min_damage = 1
+	self.melee_weapons.fight.stats.max_damage = 1.55
+	self.melee_weapons.fight.stats.min_damage_effect = 12
+	self.melee_weapons.fight.stats.max_damage_effect = 14
+	self.melee_weapons.fight.stats.charge_time = 1
 	self.melee_weapons.fight.stats.range = 150
 	self.melee_weapons.fight.repeat_expire_t = 0.4
 	self.melee_weapons.fight.melee_damage_delay = 0.2
 	self.melee_weapons.fight.stats.concealment = 30
 	self.melee_weapons.fight.expire_t = 1.1
+	self.melee_weapons.fight.special_weapon = "hard_counter"
+	self.melee_weapons.fight.info_id = "bm_melee_fight_info"
 	
 	--Can't fight nature jack--	
 	self.melee_weapons.twins.stats.min_damage = 4.5

@@ -1467,6 +1467,8 @@ function CopActionShoot:anim_clbk_melee_strike()
 				self._common_data.melee_countered_t = TimerManager:game():time()
 
 				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
+				local melee_entry = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
+
 				mvec3_norm(attack_dir)
 
 				local counter_data = {
@@ -1480,8 +1482,15 @@ function CopActionShoot:anim_clbk_melee_strike()
 						body = self._unit:body("body"),
 						ray = attack_dir
 					},
-					name_id = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
+					name_id = melee_entry
 				}
+
+				--Empty Palm Kata gimmick to reflect 
+				--This bit of code *should* only occur client side, so it's probably fine.
+				if tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon == "hard_counter" then
+					--TODO: make skills work. Currently having troubles with Infiltrator's damage buff.
+					counter_data.damage = 24
+				end
 
 				self._unit:character_damage():damage_melee(counter_data)
 			else

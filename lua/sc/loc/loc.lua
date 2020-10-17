@@ -223,6 +223,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves instantly refill your stamina.", -- OVERKILL Boxing Gloves
 		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 extra damage over three seconds.", --Alabama Razor
 		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 extra damage and carries a chance to interrupt over three seconds.", --Kunai, Syringe
+		["bm_melee_fight_info"] = "Be water, my friend.\n\nCounter attacks deal 120 damage.", --Empty Palm Kata
 
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",

@@ -262,16 +262,14 @@ function PlayerDamage:damage_melee(attack_data)
 	--Unit specific shenanigans.
 	local _time = math.floor(TimerManager:game():time())
 	local player_unit = managers.player:player_unit()
-	if alive(attack_data.attacker_unit) then
+	if alive(attack_data.attacker_unit) and can_counter_strike == false then
 		--Titan Taser tase.
 		if alive(player_unit) and not self._unit:movement():current_state().driving and (attack_data.attacker_unit:base()._tweak_table == "taser_titan" or attack_data.attacker_unit:base()._tweak_table == "taser_summers" or attack_data.attacker_unit:base()._tweak_table == "summers" or attack_data.attacker_unit:base()._tweak_table == "fbi_vet_boss") then
 			attack_data.attacker_unit:sound():say("post_tasing_taunt")
 			attack_data.variant = "taser_tased" --they give you an actual tase on a melee attack.
-			can_counter_strike = false
 		elseif attack_data.attacker_unit:base()._tweak_table == "autumn" then
 			attack_data.attacker_unit:sound():say("i03", true, nil, true)
 			pm:set_player_state("arrested")
-			can_counter_strike = false
 		end
 	end
 

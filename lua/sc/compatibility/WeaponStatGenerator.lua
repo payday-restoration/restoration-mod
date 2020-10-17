@@ -418,7 +418,7 @@ function WeaponTweakData:generate_lmg(weap)
 			weap.CLIP_AMMO_MAX)
 	else
 		stats.damage = 24
-		stats.AMMO_MAX = 180
+		stats.AMMO_MAX = 225
 		stats.quietness = 8
 		stats.recoil = 26 - math.floor((rpm - 500)/50)
 		stats.spread = self:generate_stat_from_table(

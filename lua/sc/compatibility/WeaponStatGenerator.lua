@@ -12,6 +12,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 	--Apply weapons stats based on category. Usually just one of these with akimbo maybe added on top.
 	for _, value in pairs(weap.categories) do
 		if value == "lmg" then
+			self.stat_info.kick_tables.horizontal_recoil
 			stats = self:generate_lmg(weap)
 			add_to_smgs = true
 		elseif value == "shotgun" then
@@ -26,6 +27,7 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 			weap.kick = self.stat_info.kick_tables.vertical_kick
 			stats = self:generate_snp(weap)
 		elseif value == "assault_rifle" then
+			self.stat_info.kick_tables.moderate_kick
 			stats = self:generate_assault_rifle(weap)
 		elseif value == "akimbo" then
 			apply_akimbo_penalties = true

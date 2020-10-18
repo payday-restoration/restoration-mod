@@ -2495,13 +2495,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--Payday DLC? Nah it's a walking dead game you cunts.--
 	self.melee_weapons.barbedwire.anim_global_param = "melee_baseballbat"
 	self.melee_weapons.barbedwire.type = "axe"
+	self.melee_weapons.clean.dot_data = {
+		type = "poison",
+		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.0}
+	}
+	self.melee_weapons.barbedwire.info_id = "bm_melee_barbedwire_info"
 	self.melee_weapons.barbedwire.align_objects = {"a_weapon_right"}
 	self.melee_weapons.barbedwire.anim_attack_vars = {"var1","var2"}
 	self.melee_weapons.barbedwire.stats.min_damage = 4.5
 	self.melee_weapons.barbedwire.stats.max_damage = 9.1
-	self.melee_weapons.barbedwire.stats.min_damage_effect = 4.5
-	self.melee_weapons.barbedwire.stats.max_damage_effect = 5
-	self.melee_weapons.barbedwire.stats.charge_time = 2.1
+	self.melee_weapons.barbedwire.stats.max_damage_effect = 4
+	self.melee_weapons.barbedwire.stats.min_damage_effect = 3.5
+	self.melee_weapons.barbedwire.stats.charge_time = 2.3
 	self.melee_weapons.barbedwire.stats.range = 210
 	self.melee_weapons.barbedwire.repeat_expire_t = 1.05
 	self.melee_weapons.barbedwire.expire_t = 1.2
@@ -3127,9 +3132,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--Thanks Boss--	
 	self.melee_weapons.fight.stats.min_damage = 1
-	self.melee_weapons.fight.stats.max_damage = 1.55
+	self.melee_weapons.fight.stats.max_damage = 2
 	self.melee_weapons.fight.stats.min_damage_effect = 12
-	self.melee_weapons.fight.stats.max_damage_effect = 14
+	self.melee_weapons.fight.stats.max_damage_effect = 10.85
 	self.melee_weapons.fight.stats.charge_time = 1
 	self.melee_weapons.fight.stats.range = 150
 	self.melee_weapons.fight.repeat_expire_t = 0.4
@@ -3581,7 +3586,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.clean.stats.min_damage_effect = 0.4
 	self.melee_weapons.clean.stats.max_damage_effect = 0.4
 	self.melee_weapons.clean.stats.charge_time = 0.00001
-	self.melee_weapons.clean.stats.range = 140
+	self.melee_weapons.clean.stats.range = 150
 	self.melee_weapons.clean.stats.concealment = 30
 	self.melee_weapons.clean.repeat_expire_t = 0.5
 	self.melee_weapons.clean.melee_damage_delay = 0

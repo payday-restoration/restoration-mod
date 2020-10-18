@@ -3136,7 +3136,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.fight.melee_damage_delay = 0.2
 	self.melee_weapons.fight.stats.concealment = 30
 	self.melee_weapons.fight.expire_t = 1.1
-	self.melee_weapons.fight.special_weapon = "hard_counter"
+	self.melee_weapons.fight.counter_damage = 12
 	self.melee_weapons.fight.info_id = "bm_melee_fight_info"
 	
 	--Can't fight nature jack--	

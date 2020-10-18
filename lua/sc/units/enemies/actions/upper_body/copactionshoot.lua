@@ -1468,6 +1468,7 @@ function CopActionShoot:anim_clbk_melee_strike()
 
 				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
 				local melee_entry = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
+				local melee_tweak = tweak_data.blackmarket.melee_weapons[melee_entry]
 
 				mvec3_norm(attack_dir)
 
@@ -1485,9 +1486,9 @@ function CopActionShoot:anim_clbk_melee_strike()
 					name_id = melee_entry
 				}
 
-				--Empty Palm Kata gimmick to reflect 
+				--Empty Palm Kata gimmick to deal counterstrike damage.
 				--This bit of code *should* only occur client side, so it's probably fine.
-				if tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon == "hard_counter" then
+				if melee_tweak.counter_damage then
 					local dmg_multiplier = 1
 					local player_state = character_unit:movement()._current_state
 					local t = Application:time()
@@ -1517,7 +1518,7 @@ function CopActionShoot:anim_clbk_melee_strike()
 						self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
 					end
 
-					counter_data.damage = 12 * managers.player:get_melee_dmg_multiplier() * dmg_multiplier
+					counter_data.damage = melee_tweak.counter_damage * managers.player:get_melee_dmg_multiplier() * dmg_multiplier
 				end
 
 				self._unit:character_damage():damage_melee(counter_data)

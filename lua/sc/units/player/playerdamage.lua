@@ -1367,7 +1367,7 @@ end
 
 --Use old max health function to ignore temporary HP for % healing.
 function PlayerDamage:restore_health(health_restored, is_static, chk_health_ratio)
-	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) then
+	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) and not self:is_downed() then
 		return false
 	end
 

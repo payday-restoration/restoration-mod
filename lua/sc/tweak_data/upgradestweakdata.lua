@@ -1010,7 +1010,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.temporary.dodge_heal_no_armor = {
 						{
-							0.05, --% of maximum health
+							0.06, --% of maximum health
 						 	3 --cooldown
 						 }
 					}

@@ -9219,7 +9219,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20,
 			value = 6
 		}
-		self.bdgr.kick = self.stat_info.kick_tables.even_recoil
+		self.bdgr.kick = self.stat_info.kick_tables.moderate_kick
 		self.bdgr.panic_suppression_chance = 0.05
 		self.bdgr.stats_modifiers = nil
 	end

@@ -802,9 +802,9 @@ function PlayerManager:_internal_load()
 
 	--Reset when players are spawned, just in case.
 	self._slow_data = {
-		duration = duration,
-		power = power,
-		start_time = Application:time()
+		duration = 0,
+		power = 0,
+		start_time = 0
 	}
 end
 

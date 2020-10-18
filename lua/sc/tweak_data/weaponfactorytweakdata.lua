@@ -12299,7 +12299,7 @@ function WeaponFactoryTweakData:_init_tecci()
 				total_ammo_mod = 50,
 				concealment = -2
 			},
-			custom_stats = {ammo_pickup_min_mul = 1.5, ammo_pickup_max_mul = 1.5, movement_speed = 0.75},	
+			custom_stats = {movement_speed = 0.75},	
 		}			
 	}	
 	self.wpn_fps_ass_tecci.default_blueprint = {

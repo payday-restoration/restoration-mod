@@ -780,7 +780,7 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	self:_call_listeners(damage_info)
 	
 	--Attacks with slow debuffs.
-	if alive(attack_data.attacker_unit) and tweak_data.character[attack_data.attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
+	if alive(attack_data.attacker_unit) and tweak_data.character[attack_data.attacker_unit:base()._tweak_table] and tweak_data.character[attack_data.attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
 		local slow_data = tweak_data.character[attack_data.attacker_unit:base()._tweak_table].slowing_bullets
 		if slow_data.taunt then
 			attack_data.attacker_unit:sound():say("post_tasing_taunt")

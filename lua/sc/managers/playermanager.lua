@@ -822,7 +822,7 @@ end
 function PlayerManager:add_backstab_dodge()
 	if self.player_unit then
 		local damage_ext = self:player_unit():character_damage()
-		damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * self:upgrade_value("player", "backstab_dodge", 0))
+		damage_ext:fill_dodge_meter(damage_ext:get_dodge_points() * self:upgrade_value("player", "backstab_dodge," 0))
 	end
 end
 

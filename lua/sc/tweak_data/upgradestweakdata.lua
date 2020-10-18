@@ -1008,8 +1008,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Sneaky Bastard
 				--Concealment stuff same as vanilla.
 				--Ace
-					self.values.player.dodge_heal_no_armor = {
-						0.04 --% of maximum health
+					self.values.temporary.dodge_heal_no_armor = {
+						{
+							0.06, --% of maximum health
+						 	3 --cooldown
+						 }
 					}
 			
 		--Silent Killer--
@@ -1590,7 +1593,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Are these the dreamers we were told about?--
 	--sicario
 	self.smoke_screen_armor_regen = {2.0} --Multiplier for armor regen speed.
-	self.values.player.sicario_multiplier = {0.35} --Multiplier for dodge gained per second while inside grenade.
+	self.values.player.sicario_multiplier = {0.4} --Multiplier for dodge gained per second while inside grenade.
 	self.values.player.bomb_cooldown_reduction = {1} --Cooldown reduction on smoke bomb for dodging.
 	
 	--alcoholism is no joke
@@ -3061,13 +3064,13 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.player_dodge_heal_no_armor = {
-		name_id = "menu_player_dodge_heal_no_armor",
+	self.definitions.temporary_dodge_heal_no_armor = {
+		name_id = "menu_temporary_dodge_heal_no_armor",
 		category = "feature",
 		upgrade = {
 			value = 1,
 			upgrade = "dodge_heal_no_armor",
-			category = "player"
+			category = "temporary"
 		}
 	}
 	self.definitions.player_backstab_dodge = {

@@ -250,7 +250,7 @@ tweak_data.projectiles.smoke_screen_grenade.name_id = "bm_smoke_screen_grenade"
 tweak_data.projectiles.smoke_screen_grenade.duration = 12
 tweak_data.projectiles.smoke_screen_grenade.dodge_chance = 0.1
 tweak_data.projectiles.smoke_screen_grenade.init_timer = 0
-tweak_data.projectiles.smoke_screen_grenade.accuracy_roll_chance = 0.5
+tweak_data.projectiles.smoke_screen_grenade.accuracy_roll_chance = 0.75
 tweak_data.projectiles.smoke_screen_grenade.accuracy_fail_spread = {5, 10}
 
 --Bravo grenades.

@@ -28,6 +28,15 @@ local function get_as_digested(amount)
 	return list
 end
 
+Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
+	--Info for slow debuff, usually caused by Titan Tasers.
+	self._slow_data = {
+		duration = 0, --Amount of time the slow should decay over.
+		power = 0, --% slow when first started.
+		start_time = 0 --Time when slow was started.
+	}
+end)
+
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	local multiplier = 1
 	local armor_penalty = self:mod_movement_penalty(self:body_armor_value("movement", upgrade_level, 1))
@@ -81,10 +90,8 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 
 	--Removed unused Yakuza nonsense.
 
-	--Titan Taser Slow
-	if self:_is_titan_tased() then
-		multiplier = multiplier * self:_titan_tase_speed_mult()
-	end
+	--Apply any slowing debuffs.
+	multiplier = multiplier * self:_slow_debuff_mult()
 	
 	return multiplier
 end
@@ -792,6 +799,13 @@ function PlayerManager:_internal_load()
 	--Fully loaded aced checks
 	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
 	self._throwable_chance = self._throwable_chance_data.chance
+
+	--Reset when players are spawned, just in case.
+	self._slow_data = {
+		duration = duration,
+		power = power,
+		start_time = Application:time()
+	}
 end
 
 --Adds rogue health regen stack on dodge.
@@ -887,21 +901,27 @@ function PlayerManager:is_db_regen_active()
 	return false
 end
 
---Titan taser effect, will make more generic later when needed.
-function PlayerManager:activate_titan_tased()
-	self._titan_tase_time = 3 + Application:time()
-	managers.hud:activate_effect_screen(3, {0.0, 0.2, 1})
+--Slows the player by a % that decays linearly over a duration, along with a visual.
+--Power should be between 1 and 0. Corresponds to % speed is slowed on start.
+function PlayerManager:apply_slow_debuff(duration, power)
+	if power > 1 - self:_slow_debuff_mult() then
+		self._slow_data = {
+			duration = duration,
+			power = power,
+			start_time = Application:time()
+		}
+		managers.hud:activate_effect_screen(duration, {0.0, 0.2, power})
+	end
 end
 
-function PlayerManager:_is_titan_tased()
-	if self._titan_tase_time and self._titan_tase_time > Application:time() then
-		return true
-	end 
-	return false
-end
+function PlayerManager:_slow_debuff_mult()
+	local time = Application:time()
+	
+	if self._slow_data.start_time + self._slow_data.duration < time then
+		return 1 --no slow
+	end
 
-function PlayerManager:_titan_tase_speed_mult()
-	return 1 / (self._titan_tase_time - Application:time() + 1)
+	return math.clamp(1 - self._slow_data.power * (1 - ((time - self._slow_data.start_time) / self._slow_data.duration)), 0, 1)
 end
 
 --Called when psychoknife kills are performed.

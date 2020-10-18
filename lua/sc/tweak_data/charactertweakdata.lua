@@ -1289,8 +1289,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.speech_prefix_count = nil 
 	self.weekend_lmg.heal_cooldown = 7.5
 	self.weekend_lmg.can_throw_frag = true
-	table.insert(self._enemy_list, "weekend_lmg")						
-			
+	table.insert(self._enemy_list, "weekend_lmg")
+
 	--Temp Solution
 	if job == "haunted" then
 		self.city_swat = deep_clone(self.skeleton_swat_titan)
@@ -2573,6 +2573,10 @@ function CharacterTweakData:_init_spring(presets)
 	--Headless Titandozer Boss 
 	self.headless_hatman = deep_clone(self.spring)
 	self.headless_hatman.custom_voicework = "hatman"
+	self.headless_hatman.slowing_bullets = {
+		duration = 1,
+		power = 0.5
+	}
 	table.insert(self._enemy_list, "headless_hatman")
 end
 
@@ -2835,6 +2839,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.custom_voicework = nil
 	self.taser_summers.is_special = true	
 	self.taser_summers.follower = true
+	self.taser_summers.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		taunt = true
+	}
 	table.insert(self._enemy_list, "taser_summers")
 	
 	self.taser_titan = deep_clone(self.taser)
@@ -2861,6 +2870,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.is_special = true	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 45
+	self.taser_titan.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		taunt = true
+	}
 	table.insert(self._enemy_list, "taser_titan")
 end
 

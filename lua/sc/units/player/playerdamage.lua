@@ -81,7 +81,6 @@ function PlayerDamage:init(unit)
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
 	self._deflection = 1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
 	self._unpierceable = player_manager:has_category_upgrade("player", "unpierceable_armor")
-	self.tase_time = 0 --Titan Taser slow cooldown.
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
 	managers.player:set_damage_absorption("full_armor_absorption", managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor())
 
@@ -780,19 +779,14 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	pm:send_message(Message.OnPlayerDamage, nil, attack_data)
 	self:_call_listeners(damage_info)
 	
-	--Titan Taser shenanigans.
-	local _time = math.floor(TimerManager:game():time())
-	local player_unit = managers.player:player_unit()
-	if alive(attack_data.attacker_unit) then
-		if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
-			if alive(player_unit) then
-				if not self._unit:movement():current_state().driving then
-					attack_data.attacker_unit:sound():say("post_tasing_taunt")
-					managers.player:activate_titan_tased() --Apply slow from titan taser.
-					self.tase_time = _time + 1 --Update cooldown
-				end
-			end
-		end		
+	--Attacks with slow debuffs.
+	if alive(attack_data.attacker_unit) and tweak_data.character[attack_data.attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
+		log("Try slow!")
+		local slow_data = tweak_data.character[attack_data.attacker_unit:base()._tweak_table].slowing_bullets
+		if slow_data.taunt then
+			attack_data.attacker_unit:sound():say("post_tasing_taunt")
+		end
+		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power) --Apply slow from titan taser.
 	end
 	
 	return 

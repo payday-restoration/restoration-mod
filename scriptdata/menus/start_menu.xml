@@ -26,7 +26,7 @@
         <node align_line="0.75" modifier="PDTHHudActiveChallenges" refresh="PDTHHudActiveChallenges" name="pdth_hud_active_challenges"/>
         <node align_line="0.75" modifier="PDTHHudCompletedChallenges" refresh="PDTHHudCompletedChallenges" name="pdth_hud_completed_challenges"/>
 
-        <node align_line="0.75" modifier="" name="pdth_hud_challenges" stencil_align="center" stencil_image="bg_options" sync_state="options" topic_id="menu_options">
+        <node align_line="0.75" modifier="" name="pdth_hud_challenges" stencil_align="center" stencil_image="bg_options" sync_state="skilltree" scene_state="res_challenges" topic_id="menu_options">
             <item next_node="pdth_hud_active_challenges" name="active_challenges" text_id="pdth_hud_active_challenges" help_id="pdth_hud_active_challenges_hint"/>
             <item next_node="pdth_hud_completed_challenges" name="completed_challenges" text_id="pdth_hud_completed_challenges" help_id="pdth_hud_completed_challenges_hint"/>
             <item back="true" name="back" previous_node="true" text_id="menu_back" visible_callback="is_pc_controller"/>

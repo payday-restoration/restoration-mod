@@ -12,6 +12,7 @@
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_throat_4/ene_acc_bulldozer_throat_4" />
 		<depends_on unit="units/pd2_halloween/weapons/wpn_mel_titan_hammer/wpn_mel_titan_hammer" />
+		<depends_on effect="effects/payday2/particles/explosions/summers_footstep" />			
 	</dependencies>
 
 	<extensions>

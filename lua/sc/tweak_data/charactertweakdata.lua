@@ -2672,7 +2672,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.damage.bullet_damage_mul = 0.65
 	self.autumn.damage.fire_damage_mul = 0.75
 	self.autumn.flammable = false
-	self.autumn.damage.explosion_damage_mul = 0.25
+	self.autumn.damage.explosion_damage_mul = 1
 	self.autumn.move_speed = presets.move_speed.lightning
 	self.autumn.can_cloak = true
 	self.autumn.no_retreat = true

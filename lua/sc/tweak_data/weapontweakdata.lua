@@ -593,7 +593,7 @@ function WeaponTweakData:_init_data_npc_melee()
 	
 	--Halloween Dozer Axe
 	self.npc_melee.helloween_axe = {}
-	self.npc_melee.helloween_axe.unit_name = Idstring("units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword")
+	self.npc_melee.helloween_axe.unit_name = Idstring("units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe")
 	self.npc_melee.helloween_axe.damage = 5
 	self.npc_melee.helloween_axe.animation_param = "melee_fireaxe"
 	self.npc_melee.helloween_axe.player_blood_effect = true

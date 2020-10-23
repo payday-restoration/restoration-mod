@@ -1,0 +1,6 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" orientation_object="rp_wpn_third_mel_beardy" />
+	<graphics>
+		<object name="g_beardy" enabled="true" />
+	</graphics>
+</dynamic_object>

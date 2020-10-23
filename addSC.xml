@@ -1128,6 +1128,13 @@
 	<model path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>
 	<unit path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false" load="false"/>
 	<material_config path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>
+	
+	<!--Halloween Molotov-->
+	<object path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
+	<model path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
+	<unit path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false" load="false"/>
+	<material_config path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
 
 	<!--FBI Vet w/ UMP-->
 	<object path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>

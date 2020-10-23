@@ -1,0 +1,18 @@
+<unit type="item" slot="14">
+	<network sync="spawn" />
+    <object file="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" />
+   <dependencies>
+    <depends_on bnk="soundbanks/weapon_white" />
+  </dependencies>
+	<extensions>
+  	<extension name="base" class="MolotovGrenade" >
+		<var name="_tweak_projectile_entry" value="hatman_molotov" />
+	</extension>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" >
+    </extension>
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_chl_prop_pumpkin_small" />
+	</sounds>
+</unit>

@@ -555,7 +555,7 @@ function CopActionShoot:set_sniper_focus_sound(sound_progress)
 end
 
 function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, grenade_type)
-	if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "cluster_fuck" or grenade_type == "molotov" then
+	if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "cluster_fuck" or grenade_type == "molotov" or grenade_type == "hatman_molotov" then
 		if ProjectileBase.throw_projectile(grenade_type, shoot_from_pos, target_vec, nil, self._unit, true) then
 			return true
 		end
@@ -680,8 +680,10 @@ function CopActionShoot:update(t)
 
 			if proceed_as_usual and self._throw_molotov and self._ext_brain._throw_molotov_t < t then
 				self._ext_brain._throw_molotov_t = t + 10
+				local is_hatman = self._ext_base._tweak_table == "headless_hatman"
+				local grenade_type = is_hatman and "hatman_molotov" or "molotov"	--Really should be handled by tweakdata.
 
-				if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "molotov") then
+				if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type) then
 					self._ext_movement:play_redirect("throw_grenade")
 					managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
 					self._unit:sound():say("use_gas", true, nil, true)

@@ -853,6 +853,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	table.insert(self._projectiles_index, "bravo_frag")
 	table.insert(self._projectiles_index, "cluster_fuck")
 	table.insert(self._projectiles_index, "child_grenade")
+	table.insert(self._projectiles_index, "hatman_molotov")
 	table.insert(self._projectiles_index, "launcher_frag_osipr")
 	table.insert(self._projectiles_index, "launcher_incendiary_osipr")
 
@@ -952,6 +953,15 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.child_grenade.is_a_grenade = true
 	self.projectiles.child_grenade.is_explosive = true
 	self.projectiles.child_grenade.add_trail_effect = true
+	
+	self.projectiles.hatman_molotov = {}
+	self.projectiles.hatman_molotov.unit = "units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov"
+	self.projectiles.hatman_molotov.unit_dummy = "units/pd2_dlc_bbq/weapons/molotov_cocktail/wpn_molotov_husk"
+	self.projectiles.hatman_molotov.physic_effect = Idstring("physic_effects/molotov_throw")
+	self.projectiles.hatman_molotov.throwable = false
+	self.projectiles.hatman_molotov.is_a_grenade = true
+	self.projectiles.hatman_molotov.add_trail_effect = true
+	self.projectiles.hatman_molotov.impact_detonation = true
 
 --SABR Grenade Launcher.
 	self.projectiles.launcher_frag_osipr = {

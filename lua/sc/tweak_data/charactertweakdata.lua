@@ -2577,6 +2577,8 @@ function CharacterTweakData:_init_spring(presets)
 		duration = 1,
 		power = 0.5
 	}
+	self.headless_hatman.can_throw_frag = false
+	self.headless_hatman.can_throw_molotov = true
 	table.insert(self._enemy_list, "headless_hatman")
 end
 
@@ -12174,7 +12176,7 @@ function CharacterTweakData:_set_easy()
 	
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false
-	self.headless_hatman.can_throw_frag = false
+	self.headless_hatman.can_throw_molotov = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12371,7 +12373,7 @@ function CharacterTweakData:_set_normal()
 	
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false		
-	self.headless_hatman.can_throw_frag = false
+	self.headless_hatman.can_throw_molotov = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12561,7 +12563,7 @@ function CharacterTweakData:_set_hard()
 
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false		
-	self.headless_hatman.can_throw_frag = false
+	self.headless_hatman.can_throw_molotov = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12759,7 +12761,7 @@ function CharacterTweakData:_set_overkill()
 	
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false	
-	self.headless_hatman.can_throw_frag = false
+	self.headless_hatman.can_throw_molotov = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.good)

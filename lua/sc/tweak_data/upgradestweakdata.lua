@@ -1008,12 +1008,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Sneaky Bastard
 				--Concealment stuff same as vanilla.
 				--Ace
-					self.values.temporary.dodge_heal_no_armor = {
-						{
-							0.06, --% of maximum health
-						 	3 --cooldown
-						 }
-					}
+					self.values.player.dodge_heal_no_armor = {0.06}
 			
 		--Silent Killer--
 			--Second Wind--
@@ -3064,13 +3059,13 @@ function UpgradesTweakData:_saw_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.temporary_dodge_heal_no_armor = {
-		name_id = "menu_temporary_dodge_heal_no_armor",
+	self.definitions.player_dodge_heal_no_armor = {
+		name_id = "menu_player_dodge_heal_no_armor",
 		category = "feature",
 		upgrade = {
 			value = 1,
 			upgrade = "dodge_heal_no_armor",
-			category = "temporary"
+			category = "player"
 		}
 	}
 	self.definitions.player_backstab_dodge = {

@@ -557,7 +557,7 @@ function PlayerManager:check_skills()
 		self:unregister_message(Message.OnPlayerDodge, "dodge_smokebomb_cdr")
 	end
 
-	if self:has_category_upgrade("temporary", "dodge_heal_no_armor") then
+	if self:has_category_upgrade("player", "dodge_heal_no_armor") then
 		self:register_message(Message.OnPlayerDodge, "dodge_healing_no_armor", callback(self, self, "_dodge_healing_no_armor"))
 	else
 		self:unregister_message(Message.OnPlayerDodge, "dodge_healing_no_armor")
@@ -829,9 +829,8 @@ end
 --Sneaky Bastard Aced healing stuff.
 function PlayerManager:_dodge_healing_no_armor()
 	local damage_ext = self:player_unit():character_damage()
-	if not (damage_ext:get_real_armor() > 0) and not self:has_activate_temporary_upgrade("temporary", "dodge_heal_no_armor") then
-		self:activate_temporary_upgrade("temporary", "dodge_heal_no_armor")
-		damage_ext:restore_health(self:temporary_upgrade_value("temporary", "dodge_heal_no_armor"), false)
+	if not (damage_ext:get_real_armor() > 0) and damage_ext:can_dodge_heal() then
+		damage_ext:restore_health(self:upgrade_value("player", "dodge_heal_no_armor"), false)
 	end
 end
 

@@ -1214,8 +1214,19 @@ Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(
 
 	if self:get_real_armor() == 0 then
 		self._armor_broken = true
+		self._can_dodge_heal = true
 	end
 end)
+
+--Whether the player can proc Sneaky Bastard.
+function PlayerDamage:can_dodge_heal()
+	if self._can_dodge_heal then
+		self._can_dodge_heal = nil
+		return true
+	end
+
+	return nil
+end
 
 function PlayerDamage:tick_biker_armor_regen(amount)
 	if self:get_real_armor() == self:_max_armor() then --End biker regen when armor returns.

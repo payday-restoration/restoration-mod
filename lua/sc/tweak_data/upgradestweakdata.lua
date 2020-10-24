@@ -1045,7 +1045,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					},
 					{ --Ace
 						1.15,
-						5
+						4
 					}
 				}
 				self.values.player.unseen_increased_crit_chance = {

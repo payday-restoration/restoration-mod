@@ -3,6 +3,15 @@ local old_update_stats_values = ShotgunBase._update_stats_values
 function ShotgunBase:_update_stats_values()
 	ShotgunBase.super._update_stats_values(self)
 	self:setup_default()
+
+	self._is_real_shotgun = false --Stop the HX25 from mooching off of shotgun skills.
+	for _, category in ipairs(self:categories()) do
+		if category == "shotgun" then
+			self._is_real_shotgun = true
+			break
+		end
+	end
+
 	if self._ammo_data then
 		if self._ammo_data.rays ~= nil then
 			self._rays = self._ammo_data.rays
@@ -38,7 +47,7 @@ function ShotgunBase:_update_stats_values()
 	self._range = self._damage_far
 	
 	if self._ammo_data then
-		if self._ammo_data.rays ~= 1 then
+		if self._ammo_data.rays ~= 1 and self._is_real_shotgun then
 			self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 0)
 		end
 	end
@@ -376,6 +385,13 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	return result
 end
 
+--Stops XM25 from working with this skill.
+function ShotgunBase:run_and_shoot_allowed()
+	local allowed = ShotgunBase.super.run_and_shoot_allowed(self)
+
+	return allowed or managers.player:has_category_upgrade("shotgun", "hip_run_and_shoot") and self._is_real_shotgun
+end
+
 function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 	local pm = managers.player
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
@@ -383,7 +399,7 @@ function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 	local inc_range_addend = 0
 	local current_state = user_unit:movement()._current_state
 
-	if current_state and current_state:in_steelsight() then
+	if current_state and current_state:in_steelsight() and self._is_real_shotgun then
 		inc_range_mul = pm:upgrade_value("shotgun", "steelsight_range_inc", 1)
 	end
 

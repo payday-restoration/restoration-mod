@@ -2690,8 +2690,8 @@ function WeaponTweakData:_init_stats()
 	--Generate table for moving_spread and how it relates to stability.
 	--The values in the table correspond to the area of spread.
 	--These are added to the area for accuracy while moving before determining the final angles.
-	self.stat_info.base_move_spread = 3.75
-	self.stat_info.spread_per_stability = -0.15
+	self.stat_info.base_move_spread = 4
+	self.stat_info.spread_per_stability = -0.16
 	self.stats.spread_moving = {}
 	for i = 0, 25, 1 do
 		table.insert(self.stats.spread_moving, self.stat_info.base_move_spread + (i * self.stat_info.spread_per_stability))
@@ -9400,6 +9400,61 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.qsho.rays = 16
 		self.qsho.swap_speed_multiplier = 2
 		self.qsho.reload_speed_multiplier = 1.2
+	end
+
+	if self.derringer then
+		self.derringer.AMMO_MAX = 20
+		self.derringer.AMMO_PICKUP = self.stat_info._pickup_chance
+		self.derringer.kick = self.stat_info.kick_tables.right_kick
+		self.derringer.supported = true
+		self.derringer.stats = {
+			damage = 90,
+			spread = 18,
+			recoil = 10,
+			zoom = 1,
+			concealment = 26,
+			suppression = 4,
+			alert_size = 4,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.derringer.stats_modifiers = nil
+		self.derringer.panic_suppression_chance = 0.05
+		self.derringer.has_description = true
+		self.derringer.desc_id = "bm_ap_weapon_sc_desc"
+		self.derringer.can_shoot_through_enemy = true
+		self.derringer.can_shoot_through_shield = true
+		self.derringer.can_shoot_through_wall = true
+		self.derringer.armor_piercing_chance = 1
+	end
+
+	if self.hx25 then
+		self.hx25.AMMO_MAX = 6
+		self.hx25.AMMO_PICKUP = self.stat_info._pickup_chance
+		self.hx25.supported = true
+		self.hx25.stats = {
+			damage = 60,
+			spread = 9,
+			recoil = 7,
+			zoom = 1,
+			concealment = 26,
+			alert_size = 20,
+			suppression = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 7
+		}
+		self.hx25.kick = self.stat_info.kick_tables.right_kick
+		self.hx25.panic_suppression_chance = 0.05
+		self.hx25.rays = 9
+		self.hx25.stats_modifiers = {damage = 10}
+		self.hx25.reload_speed_multiplier = 1.25
+		self.hx25.swap_speed_multiplier = 1.25
+		self.hx25.damage_near = 500
+		self.hx25.damage_far = 1000
 	end
 
 	--Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.

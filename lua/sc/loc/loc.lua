@@ -177,6 +177,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle Flip Up Sight.",
 		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 15%. ROCKETS FIRED BY THIS WEAPON INSTANTLY DESTROY TURRETS.",
 		["bm_quake_shotgun_sc_desc"] = "FIRES BOTH BARRELS AT ONCE, DOUBLING THE NUMBER OF PELLETS.",
+		["bm_hx25_buck_sc_desc"] = "FIRES 12 PELLETS IN A WIDE SPREAD.\n\nSTILL TREATED AS A GRENADE LAUNCHER BY SKILLS.",
 		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
 		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
 		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
@@ -1235,7 +1236,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Unseen Strike",
-		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance pesists for ##5## seconds after taking damage.",
+		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance pesists for ##4## seconds after taking damage.",
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",

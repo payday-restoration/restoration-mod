@@ -28984,6 +28984,36 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			concealment = -3
 		}
 
+		--(Valkyria Rifle) Heatsinked Barrel
+		self.parts.wpn_fps_ass_asval_b_heat.supported = true
+		self.parts.wpn_fps_ass_asval_b_heat.stats = {
+			value = 4,
+			spread = -1,
+			recoil = 1
+		}
+
+		--(M1014) Wrist Remover Grip
+		self.parts.wpn_fps_sho_ben_s_fracture.supported = true
+		self.parts.wpn_fps_sho_ben_s_fracture.stats = {
+			recoil = -2,
+			spread = -1,
+			concealment = 3
+		}
+
+		self.parts.wpn_fps_m4_uupg_m_extend.supported = true
+		self.parts.wpn_fps_m4_uupg_m_extend.stats = {
+			extra_ammo = 5,
+			concealment = -1,
+			spread = -1
+		}
+
+		self.parts.wpn_fps_m4_uupg_m_extend_akimbo.supported = true
+		self.parts.wpn_fps_m4_uupg_m_extend_akimbo.stats = {
+			extra_ammo = 10,
+			concealment = -1,
+			spread = -1
+		}
+
 		self.parts.wpn_fps_ass_asval_o_oldrail.supported = true
 		self.parts.wpn_fps_ass_asval_o_oldrail.stats = {
 			value = 2
@@ -29130,7 +29160,49 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		}
 		self.parts.wpn_fps_pis_max9_b_nosup.has_description = nil
 	end
-	
+
+	--HX25 Grenade Launcher
+	if self.parts.wpn_fps_upg_hx25_sight_iron_il then
+		self.parts.wpn_fps_upg_hx25_sight_iron_il.supported = true
+		self.parts.wpn_fps_upg_hx25_sight_iron_il.stats = {
+			value = 1
+		}
+
+		self.parts.wpn_fps_upg_hx25_buckshot_ammo.supported = true
+		self.parts.wpn_fps_upg_hx25_buckshot_ammo.desc_id = "bm_hx25_buck_sc_desc"
+
+		self.wpn_fps_gre_hx25.override = {
+			wpn_fps_upg_hx25_buckshot_ammo = {
+				supported = true,
+				stats = {
+					value = 9,
+					spread = -4,
+					total_ammo_mod = 30,
+					alert_size = -19,
+					suppression = -19,
+					damage = -12
+				},
+					custom_stats = {
+					rays = 12
+				}
+			},
+			wpn_fps_gre_hx25_explosive_ammo = {
+				supported = true,
+				stats = {
+					value = 10
+				},
+				custom_stats = {
+					ignore_statistic = true,
+					block_b_storm = true,
+					rays = 1,
+					damage_near_mul = 999999999,
+					damage_far_mul = 999999999,
+					bullet_class = "InstantExplosiveBulletBase"
+				}
+			}
+		}
+	end
+
 --Resmod Custom Weapon stuff
 
 --Raze's Fury

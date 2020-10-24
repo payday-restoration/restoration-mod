@@ -9431,11 +9431,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end
 
 	if self.hx25 then
-		self.hx25.AMMO_MAX = 6
+		self.hx25.AMMO_MAX = 8
 		self.hx25.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.hx25.supported = true
 		self.hx25.stats = {
-			damage = 60,
+			damage = 48,
 			spread = 9,
 			recoil = 7,
 			zoom = 1,

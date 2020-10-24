@@ -29177,10 +29177,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 				stats = {
 					value = 9,
 					spread = -4,
-					total_ammo_mod = 30,
 					alert_size = -19,
-					suppression = -19,
-					damage = -12
+					suppression = -19
 				},
 					custom_stats = {
 					rays = 12
@@ -29194,7 +29192,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 				custom_stats = {
 					ignore_statistic = true,
 					block_b_storm = true,
-					rays = 1,
+					rays = 7,
 					damage_near_mul = 999999999,
 					damage_far_mul = 999999999,
 					bullet_class = "InstantExplosiveBulletBase"

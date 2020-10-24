@@ -4419,6 +4419,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.benelli.stats_modifiers = nil
 	self.benelli.panic_suppression_chance = 0.05
+	self.benelli.timers = {
+		shotgun_reload_enter = 0.5333333333333333,
+		shotgun_reload_exit_empty = 0.4,
+		shotgun_reload_exit_not_empty = 0.4,
+		shotgun_reload_shell = 0.6,
+		shotgun_reload_first_shell_offset = 0.13333333333333333,
+		unequip = 0.85,
+		equip = 0.85
+	}
 
 	--Street Sweeper
 	self.striker.rays = 9
@@ -9233,7 +9242,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread = 6,
 			recoil = 7,
 			zoom = 1,
-			concealment = 23,
+			concealment = 21,
 			alert_size = 5,
 			suppression = 5,
 			extra_ammo = 101,
@@ -9246,6 +9255,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.minibeck.stats_modifiers = nil
 		self.minibeck.rays = 9
 		self.minibeck.swap_speed_multiplier = 0.8
+		self.minibeck.reload_speed_multiplier = 0.9
+		self.minibeck.timers = {
+			shotgun_reload_enter = 0.54,
+			shotgun_reload_exit_empty = 1.3,
+			shotgun_reload_exit_not_empty = 0.4,
+			shotgun_reload_shell = 0.5,
+			shotgun_reload_first_shell_offset = 0.33666667,
+			unequip = 0.85,
+			equip = 0.85
+		}
+
 	end
 
 	--Silent Killer Pack

@@ -1214,7 +1214,6 @@ Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(
 
 	if self:get_real_armor() == 0 then
 		self._armor_broken = true
-		self._can_dodge_heal = true
 	end
 end)
 
@@ -1416,6 +1415,10 @@ function PlayerDamage:set_armor(armor)
 
 	if self._armor then
 		local current_armor = self:get_real_armor()
+
+		if current_armor ~= 0 and armor == 0 then
+			self._can_dodge_heal = true
+		end
 
 		if armor == self:_max_armor() then
 			managers.player:set_damage_absorption(

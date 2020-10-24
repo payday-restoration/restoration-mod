@@ -359,7 +359,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 	end
 	for _,j4 in ipairs(restoration.what_a_horrible_heist_to_have_a_curse) do
 		if job == j4 then
-			self.buff_icon = "guis/textures/pd2/hud_buff_skull"
+			self.buff_icon = "guis/textures/pd2/hud_buff_halloween"
 			break
 		end
 	end		

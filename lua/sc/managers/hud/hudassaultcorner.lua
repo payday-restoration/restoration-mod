@@ -21,7 +21,7 @@ Hooks:PostHook(HUDAssaultCorner, "init", "SCHUDAssaultInit", function(self)
 	end		
 	for _,j4 in ipairs(restoration.what_a_horrible_heist_to_have_a_curse) do
 		if job == j4 then
-			buff_icon = "guis/textures/pd2/hud_buff_skull"
+			buff_icon = "guis/textures/pd2/hud_buff_halloween"
 			break
 		end
 	end	

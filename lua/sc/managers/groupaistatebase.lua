@@ -94,10 +94,10 @@ function GroupAIStateBase:_init_misc_data()
 		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.8
 	elseif diff_index == 7 then
-		self._weapons_hot_threshold = 0.40
+		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.85
 	else
-		self._weapons_hot_threshold = 0.30
+		self._weapons_hot_threshold = 0.40
 		self._suspicion_threshold = 0.9
 	end
 	self._blackout_units = {} --offy wuz hear
@@ -162,10 +162,10 @@ function GroupAIStateBase:on_simulation_started()
 		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.8
 	elseif diff_index == 7 then
-		self._weapons_hot_threshold = 0.40
+		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.85
 	else
-		self._weapons_hot_threshold = 0.30
+		self._weapons_hot_threshold = 0.40
 		self._suspicion_threshold = 0.9
 	end
 	

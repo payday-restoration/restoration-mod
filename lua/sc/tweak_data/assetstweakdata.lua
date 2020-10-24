@@ -203,6 +203,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"bex"
 	}			
 	
+	--[[
+	
 	--Holiday Exclusive Stuff--
 	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 
@@ -218,6 +220,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		table.insert(self.risk_zombie.stages, "branchbank")
 	
 	end	
+	
+	]]--
 
 	--Adding Bikers to Biker heist cause it makes sense--
 	self.jungle_1_bikers.stages = {

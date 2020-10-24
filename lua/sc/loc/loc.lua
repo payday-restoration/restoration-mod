@@ -225,7 +225,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 extra damage over three seconds.", --Alabama Razor
 		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals 120 extra damage over three seconds.", --Lucille Baseball Bat
 		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 extra damage and carries a chance to interrupt over three seconds.", --Kunai, Syringe
-		["bm_melee_fight_info"] = "Be water, my friend.\n\nCounter attacks deal 120 melee damage. This can be increased with skills.", --Empty Palm Kata
+		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals 120 melee damage to them. This can be increased with skills.", --Empty Palm Kata
 
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",

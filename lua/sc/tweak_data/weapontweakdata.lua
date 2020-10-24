@@ -8539,7 +8539,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.rays = 12
 		self.ks23.AMMO_MAX = 30
 		self.ks23.CLIP_AMMO_MAX = 3		
-	self.ks23.kick = self.stat_info.kick_tables.vertical_kick
+		self.ks23.kick = self.stat_info.kick_tables.vertical_kick
 		self.ks23.AMMO_PICKUP = self.stat_info._pickup_chance --{0.12, 0.43}
 		self.ks23.supported = true
 		self.ks23.stats = {

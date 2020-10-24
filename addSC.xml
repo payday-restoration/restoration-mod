@@ -1133,7 +1133,7 @@
 	<object path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
 	<cooked_physics path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
 	<model path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
-	<unit path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false" load="false"/>
+	<unit path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false" load="true"/>
 	<material_config path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
 
 	<!--FBI Vet w/ UMP-->

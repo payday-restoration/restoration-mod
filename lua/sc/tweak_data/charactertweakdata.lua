@@ -3656,7 +3656,7 @@ function CharacterTweakData:_init_myh(presets)
 	self.myh.damage = presets.gang_member_damage
 	self.myh.weapon = deep_clone(presets.weapon.gang_member)
 	self.myh.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_74_npc",
+		primary = "wpn_fps_ass_ching_npc",
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.myh.detection = presets.detection.gang_member
@@ -3730,7 +3730,7 @@ function CharacterTweakData:_init_joy(presets)
 		weapon = deep_clone(presets.weapon.gang_member)
 	}
 	self.joy.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_m4_npc",
+		primary = "wpn_fps_smg_shepheard_npc",
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.joy.always_face_enemy = true

@@ -509,7 +509,7 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dan
 
 	attack_data.result = result
 	attack_data.is_synced = true
-	weapon_unit = attack_data.weapon_unit
+	weapon_unit = attack_data.weapon_unit or weapon_unit
 
 	if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
 		weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)

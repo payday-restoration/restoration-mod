@@ -352,6 +352,7 @@ end
 tweak_data.medic.disabled_units = {
 	"phalanx_vip",
 	"spring",
+	"headless_hatman",
 	"taser_summers",
 	"boom_summers",
 	"medic_summers",

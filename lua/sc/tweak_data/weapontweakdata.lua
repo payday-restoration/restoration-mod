@@ -1403,7 +1403,7 @@ function WeaponTweakData:_init_data_m249_npc()
 	self.m249_npc.categories = clone(self.m249.categories)
 	self.m249_npc.sounds.prefix = "m249_npc"
 	self.m249_npc.use_data.selection_index = 2
-	self.m249_npc.DAMAGE = 2.7
+	self.m249_npc.DAMAGE = 2.25
 	self.m249_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 	self.m249_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 	self.m249_npc.CLIP_AMMO_MAX = 200
@@ -1425,7 +1425,7 @@ function WeaponTweakData:_init_data_m249_npc()
 	self.hk21_sc_npc.DAMAGE = 3
 	self.hk21_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 	self.hk21_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-	self.hk21_sc_npc.CLIP_AMMO_MAX = 150
+	self.hk21_sc_npc.CLIP_AMMO_MAX = 100
 	self.hk21_sc_npc.NR_CLIPS_MAX = 5
 	self.hk21_sc_npc.auto.fire_rate = 0.075
 	self.hk21_sc_npc.hold = "rifle"
@@ -1494,7 +1494,7 @@ function WeaponTweakData:_init_data_mini_npc()
 	self.mini_npc.categories = clone(self.m134.categories)
 	self.mini_npc.sounds.prefix = "minigun_npc"
 	self.mini_npc.use_data.selection_index = 2
-	self.mini_npc.DAMAGE = 2.2
+	self.mini_npc.DAMAGE = 2.25
 	self.mini_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 	self.mini_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 	self.mini_npc.CLIP_AMMO_MAX = 300
@@ -1513,7 +1513,7 @@ function WeaponTweakData:_init_data_mini_npc()
 	}	
 	self.x_mini_npc.sounds.prefix = "minigun_npc"
 	self.x_mini_npc.use_data.selection_index = 1
-	self.x_mini_npc.DAMAGE = 2.2
+	self.x_mini_npc.DAMAGE = 2.25
 	self.x_mini_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 	self.x_mini_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 	self.x_mini_npc.CLIP_AMMO_MAX = 600

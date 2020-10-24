@@ -70,7 +70,9 @@ function restoration:Init()
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
 	}
-	restoration.what_a_horrible_heist_to_have_a_curse = {}
+	restoration.what_a_horrible_heist_to_have_a_curse = {
+		"help" --Prison Nightmare
+	}
 	
 	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
 	
@@ -102,6 +104,7 @@ function restoration:Init()
 			"big", --big bank
 			"dinner", --Slaughterhouse
 			"branchbank", --Gets Branchbank from Autumn		
+			"help", --Prison Nightmare			
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"lvl_friday" --Crashing Capitol

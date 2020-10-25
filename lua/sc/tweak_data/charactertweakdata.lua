@@ -15361,6 +15361,7 @@ function CharacterTweakData:character_map()
 				"ene_fbi_titan_1",
 				"ene_titan_sniper",
 				"ene_titan_taser",
+				"ene_veteran_cop_1",
 				"ene_phalanx_1_assault"
 			}
 		}			

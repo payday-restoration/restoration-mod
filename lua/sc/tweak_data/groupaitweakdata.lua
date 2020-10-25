@@ -1123,7 +1123,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.fbi_vet = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
+					Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1")
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2")
@@ -3774,7 +3774,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
-					Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+					Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
 					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
@@ -3858,7 +3858,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),	
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),					
-					Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+					Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
 					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {

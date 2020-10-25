@@ -10,7 +10,7 @@
 		<class file="Networking.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
-	<AssetUpdates id="428" version="9.9.9" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="10" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -63,6 +63,7 @@
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
+		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
 		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
@@ -101,7 +102,7 @@
 		<hook file="sc/units/weapons/saw.lua" source_file="lib/units/weapons/sawweaponbase"/>
 		<hook file="sc/units/weapons/weaponflashlight.lua" source_file="lib/units/weapons/weaponflashlight"/>
 		<hook file="sc/tweak_data/groupaitweakdata.lua" source_file="lib/tweak_data/groupaitweakdata"/>
-		<hook file="sc/loc/loc.lua" source_file="lib/managers/localizationmanager"/>
+		<hook file="sc/loc/coreloc.lua" source_file="lib/managers/localizationmanager"/>
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>
 		<hook file="sc/units/weapons/quickcsgrenade.lua" source_file="lib/units/weapons/grenades/quickcsgrenade"/>
 		<hook file="sc/units/weapons/smokescreengrenade.lua" source_file="lib/units/weapons/grenades/smokescreengrenade"/>
@@ -179,6 +180,7 @@
 		<hook file="sc/player_actions/skills/playeractiontriggerhappy.lua" source_file="lib/player_actions/skills/playeractiontriggerhappy"/>
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>
 		<hook file="sc/player_actions/skills/playeractionammoefficiency.lua" source_file="lib/player_actions/skills/playeractionammoefficiency"/>
+		<hook file="sc/player_actions/skills/playeractionunseenstrike.lua" source_file="lib/player_actions/skills/playeractionunseenstrike"/>
 		<hook file="sc/units/equipment/ecmjammerbase.lua" source_file="lib/units/equipment/ecm_jammer/ecmjammerbase"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>
@@ -250,6 +252,8 @@
 		<hook file="sc/managers/mission/elementaiglobalevent.lua" source_file="lib/managers/mission/elementaiglobalevent"/>
 		<hook file="sc/utils/game_state_machine/GSM.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
 		<hook file="sc/entry.lua" source_file="lib/entry"/>
+		<hook file="sc/tweak_data/carrytweakdata.lua" source_file="lib/tweak_data/carrytweakdata"/>
+		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
@@ -314,8 +318,8 @@
 		<hook file="sc/managers/customsafehousemanager.lua" source_file="lib/managers/customsafehousemanager"/>
 		
     </Hooks>
-    <Localization directory="loc" default="english.json">
-    </Localization>
+    <!-- <Localization directory="loc" default="english.json">
+    </Localization> -->
 	<!--///MOD SETTINGS\\\-->
 	<!-- <<Keybind keybind_id="radialmousemenu_keybind" name="menu_utility_radial_menu_name" description="menu_utility_radial_menu_desc" localized="true" script_path="menu/radialmousemenu_keybind.lua"/> -->
     <Options name="Options" auto_build_menu="true" auto_load="true" save_file="restoration.txt" value_changed="RestorationCoreCallbacks:ValueChanged">

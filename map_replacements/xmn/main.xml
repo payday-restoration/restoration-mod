@@ -1,10 +1,10 @@
 <table name="xmn">
 	<Localization default="english.json" directory="loc"/>
 	<!--HOXOUT XMAS-->
-	<narrative briefing_event="dentist_hb1_cbf_01" contact="events" dlc="pd2_clan" id="xmn_hox" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_breakout_01" icon="guis/dlcs/bro/textures/pd2/crimenet/hoxton_breakout_01" region="street">
+	<narrative briefing_event="dentist_hb1_cbf_01" contact="events" dlc="pd2_clan" id="xmn_hox" name_id="heist_xmn_hox" jc="60" load_screen="guis/dlcs/pic/textures/loading/job_breakout_01" icon="guis/dlcs/bro/textures/pd2/crimenet/hoxton_breakout_01" region="street">
 		<chain>
-			<table dlc="pd2_clan" level_id="xmn_hox_1" type="d" type_id="heist_type_assault"/>
-			<table dlc="pd2_clan" level_id="xmn_hox_2" type="d" type_id="heist_type_assault"/>
+			<table dlc="pd2_clan" level_id="xmn_hox1" type="d" type_id="heist_type_assault"/>
+			<table dlc="pd2_clan" level_id="xmn_hox2" type="d" type_id="heist_type_assault"/>
 		</chain>
 		<contract_cost>
 			<value_node value="62000"/>

@@ -18,6 +18,8 @@ local america_mayhem = {
 	}			
 local america_dw = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
+		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
+		["units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/payday2/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2",
 		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
@@ -30,7 +32,7 @@ local america_zeal = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-		["units/payday2/characters/ene_fbi_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
@@ -662,4 +664,74 @@ function ElementSpawnEnemyDummy:init(...)
 	self._units = {}
 	self._events = {}
 	self:_finalize_values()
+end
+
+--Adds logging.
+function ElementSpawnEnemyDummy:produce(params)
+	if not managers.groupai:state():is_AI_enabled() then
+		return
+	end
+
+	local unit = nil
+
+	if params and params.name then
+		log("Producing: " .. tostring(params.name))
+		unit = safe_spawn_unit(params.name, self:get_orientation())
+		local spawn_ai = self:_create_spawn_AI_parametric(params.stance, params.objective, self._values)
+
+		unit:brain():set_spawn_ai(spawn_ai)
+	else
+		local enemy_name = self:value("enemy") or self._enemy_name
+		if enemy_name then
+			log("Producing: " .. tostring(enemy_name))
+		else
+			log("Producing: nil")
+		end
+		unit = safe_spawn_unit(enemy_name, self:get_orientation())
+		local objective = nil
+		local action = self._create_action_data(CopActionAct._act_redirects.enemy_spawn[self._values.spawn_action])
+		local stance = managers.groupai:state():enemy_weapons_hot() and "cbt" or "ntl"
+
+		if action.type == "act" then
+			objective = {
+				type = "act",
+				action = action,
+				stance = stance
+			}
+		end
+
+		local spawn_ai = {
+			init_state = "idle",
+			objective = objective
+		}
+
+		unit:brain():set_spawn_ai(spawn_ai)
+
+		local team_id = params and params.team or self._values.team or tweak_data.levels:get_default_team_ID(unit:base():char_tweak().access == "gangster" and "gangster" or "combatant")
+
+		if self._values.participate_to_group_ai then
+			managers.groupai:state():assign_enemy_to_group_ai(unit, team_id)
+		else
+			managers.groupai:state():set_char_team(unit, team_id)
+		end
+
+		if self._values.voice then
+			unit:sound():set_voice_prefix(self._values.voice)
+		end
+	end
+
+	unit:base():add_destroy_listener(self._unit_destroy_clbk_key, callback(self, self, "clbk_unit_destroyed"))
+
+	unit:unit_data().mission_element = self
+
+	table.insert(self._units, unit)
+	self:event("spawn", unit)
+
+	if self._values.force_pickup and self._values.force_pickup ~= "none" then
+		local pickup_name = self._values.force_pickup ~= "no_pickup" and self._values.force_pickup or nil
+
+		unit:character_damage():set_pickup(pickup_name)
+	end
+
+	return unit
 end

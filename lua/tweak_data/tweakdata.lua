@@ -15,6 +15,12 @@ if gradient_filter then
 	table.insert(gradient_filter.colour_gradings, 
 		"color_rvd1"
 	)
+	table.insert(gradient_filter.colour_gradings, 
+		"color_halloween"
+	)
+	table.insert(gradient_filter.colour_gradings, 
+		"color_halloween2"
+	)
 	table.insert(gradient_filter.heist_colour_gradings, 
 		"color_plus"
 	)
@@ -26,6 +32,12 @@ if gradient_filter then
 	)
 	table.insert(gradient_filter.heist_colour_gradings, 
 		"color_rvd1"
+	)
+	table.insert(gradient_filter.heist_colour_gradings, 
+		"color_halloween"
+	)
+	table.insert(gradient_filter.heist_colour_gradings, 
+		"color_halloween2"
 	)
 end
 
@@ -56,6 +68,22 @@ table.insert(tweak_data.color_grading,
 	{
 		value = "color_rvd1",
 		text_id = "menu_color_rvd1"		
+	}
+)
+
+--Halloween Green
+table.insert(tweak_data.color_grading,
+	{
+		value = "color_halloween",
+		text_id = "menu_color_halloween"		
+	}
+)
+
+--Halloween Orange
+table.insert(tweak_data.color_grading,
+	{
+		value = "color_halloween2",
+		text_id = "menu_color_halloween2"		
 	}
 )
 

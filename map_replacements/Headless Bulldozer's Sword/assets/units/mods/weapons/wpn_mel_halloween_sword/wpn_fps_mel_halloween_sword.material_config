@@ -1,0 +1,6 @@
+<materials version="3">
+	<material name="mtr_bat" render_template="generic:DEPTH_SCALING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_head_4_df" />
+		<bump_normal_texture file="units/payday2/characters/shared_textures/bulldozer_head_4_nm" />
+	</material>
+</materials>

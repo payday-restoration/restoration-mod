@@ -1,19 +1,12 @@
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
-		["bm_menu_suicidal_description"] =  "There's a crazy gang of Russian mercenaries who are out for blood, and not even the cops will touch them. But our business calls, and that business is picking up in this chaos.",
-		--I NEED SCISSORS--
-		["bm_menu_bain_sop"] =  "la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo la li lu le lo ",
-		["bm_menu_bain_akan"] =  "We are formless. We have no defined bodies or characteristics. We are the American way of life manifested as an influential power.",
-		["bm_menu_bain_crazy"] =  "$preferredcharacter$ TURN OFF THE COMPUTER NOW",
-		
 		["bm_sc_blank"] = "", --assumedly this is a debug thing, but I'm not going to touch it--
-		
+
 		--Menu Stuff--
 		["menu_hud_cheater"] = "",
 		["menu_inspect_player"] = "Inspect Player",
 		["menu_inspect_player_desc"] = "Inspect player's stats",
 		["menu_toggle_one_down_lobbies"] = "Allow Pro-Job Lobbies",
-		--["menu_player_inventory"] = "Career",
 		
 		--Holdout--
 		["menu_cn_skirmish"] = "Skirmish",
@@ -33,7 +26,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_skirmish_map_selection"] = "Target Locations",
 		["menu_skirmish_selected_briefing"] = "In this scenario, you & your crew can select any SKIRMISH.\n\nA SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash, experience, and loot reward with each wave completed.\n\nYou will fail if anyone in your crew -- including yourself -- is taken into custody, or if the target hostage is rescued by hostiles.",
 		["menu_skirmish_selected"] = "Skirmish",
-		
+
 		--Skirmish Heists--
 		["heist_skm_mallcrasher"] = "Shield Mall",
 		["heist_skm_mallcrasher_h1"] = "Shield Mall",
@@ -47,20 +40,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_skm_mus_h1"] = "Andersonian Museum",
 		["heist_skm_run"] = "Uptown - Inkwell Industrial",
 		["heist_skm_run_h1"] = "Uptown - Inkwell Industrial",
-		
-		
+
+
 		--Heist Breifings--
-		["heist_pines_briefing"] = "We need you there fast, because it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.\n\nNOTE FROM JACKAL:\nThe explosion from that crash alerted nearby Reaper teams. Don't expect a police response.",	
-				
+		["heist_pines_briefing"] = "We need you there fast, because it's really out in the sticks, so you're going in like the paras. Find the pilot - he's probably near the wreck, and then we'll send in a chopper to extract him. Stay with him til he's safely out, Also, Vlad says that plane was loaded with product, Search the forest and get as much out as you can. We could always use a little extra cash during Christmas.\n\nNOTE FROM JACKAL:\nThe explosion from that crash alerted nearby Reaper teams. Don't expect a police response.",
+
 		----Weapons + Mods Descriptions/names----
-		
+
 		--Reinfield--
-		["bm_wp_r870_s_folding_ext"] = "Extended Muldon Stock",	
-		
+		["bm_wp_r870_s_folding_ext"] = "Extended Muldon Stock",
+
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
 		["bm_wp_upg_i_93r_desc"] = "Enables a 3 round burst firemode, at the cost of extra kick.", --still need to do the one for the primary bernetti--
-		
+
 		--Shotgun Generic Mods--
 		["bm_wp_upg_a_slug_sc"] = "Slug",
 		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
@@ -69,90 +62,90 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that increase damage at the cost of some consistency and ammo.",
 		["bm_wp_upg_a_piercing_desc"] = "Long range and tight pellet spread.",
 		["bm_wp_upg_a_dragons_breath_desc_sc"] = "Fires pellets that go up in sparks and flames. The fire deals damage over time, has a chance to interrupt enemies, and burns through body armor.",
-		
+
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",
 		["bm_wp_upg_vg_stubby"] = "Stubby Vertical Grip",
 		["bm_wp_upg_vg_tac"] = "TAC Vertical Grip",
-		
+
 		["bm_wp_upg_vintage_sc"] = "Vintage Mag",
 		["bm_wp_upg_mil_sc"] = "Milspec Mag",
 		["bm_wp_upg_tac_sc"] = "Tactical Mag",
-		
+
 		["bm_wp_upg_mil_desc"] = "", --These didn't do anything when edited, maybe they aren't actually called?--
 		["bm_wp_upg_drum_desc"] = "",
 		["bm_wp_upg_drum2_desc"] = "",
 		["bm_wp_upg_quad_desc"] = "",
 		["bm_wp_upg_quad2_desc"] = "",
 		["bm_wp_upg_vintage_desc"] = "",
-		
+
 		--Scorpion (get in-game-name later)--
 		["bm_wp_scorpion_m_extended_sc"] = "Double Magazine",
 		["bm_sc_scorpion_double_mag"] = "", --Unsure what this one is?--
-		
+
 		--RPK--
 		["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
-		
+
 		--Buzzsaw--
 		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800",
-		
+
 		--Saw--
 		["bm_ap_saw_sc_desc"] = "CUTS THROUGH BODY ARMOR.",
 		["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to cut through body armor.",
 		["bm_fast_motor_sc_desc"] = "Increases Rotations Per Minute by 15%.",
 		["bm_slow_motor_sc_desc"] = "Decreases Rotations Per Minute by 15%.",
-		
+
 		--Weapon Sights--
 		["bm_wp_upg_o_leupold_desc_sc"] = "Automatically marks special enemies, as well as guards in Stealth, while aiming.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
 
 		--Generic Optic Zoom Descriptions--
-		["bm_wp_upg_o_tiny"] = "1.1x MAGNIFICATION.",	
-		["bm_wp_upg_o_small"] = "1.2x MAGNIFICATION.",	
-		["bm_wp_upg_o_cs_desc"] = "1.5x MAGNIFICATION.",	
-		["bm_wp_upg_o_aim"] = "2x MAGNIFICATION.",	
-		["bm_wp_upg_o_med"] = "3x MAGNIFICATION.",	
-		["bm_wp_upg_o_large"] = "4x MAGNIFICATION.",	
+		["bm_wp_upg_o_tiny"] = "1.1x MAGNIFICATION.",
+		["bm_wp_upg_o_small"] = "1.2x MAGNIFICATION.",
+		["bm_wp_upg_o_cs_desc"] = "1.5x MAGNIFICATION.",
+		["bm_wp_upg_o_aim"] = "2x MAGNIFICATION.",
+		["bm_wp_upg_o_med"] = "3x MAGNIFICATION.",
+		["bm_wp_upg_o_large"] = "4x MAGNIFICATION.",
 		["bm_wp_upg_o_huge"] = "5x MAGNIFICATION.",
 		--;)
 		["bm_wp_upg_o_overkill"] = "6x MAGNIFICATION.",
-		
+
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that causes a fire at point of impact. The fire deals damage over time and has a chance to interrupt enemies.",
-		
+
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",
 		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "Doubles the burn duration on ignited enemies, but halves damage over time.",
 		["bm_wp_fla_mk2_mag_well_desc_sc"] = "Halves the burn duration on ignited enemies, but doubles damage over time.",
-		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH ##BODY ARMOR##.", --used by both flamethrowers, decouple later?--
-		
+		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH BODY ARMOR.", --used by both flamethrowers, decouple later?--
+
 		--LMGs/Miniguns--
 		["bm_wp_upg_a_halfthatkit"] = "Super Size Me!", -- lol
 		["bm_wp_m134_body_upper_light"] = "Light Body",
 		["bm_wp_upg_a_halfthatkit_desc"] = "Adds a 10% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 20%.",
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "Adds a 25% movement speed penalty while the weapon is equipped.\n\nIncreases weapon's ammo pickup by 50%.",
-		
+
 		--Thanatos--
-		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
-		
+		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
+
 		--Galant--
 		["bm_galant_sc_desc"] = "A classic WW2 battle rifle. Reliable, accurate, and quick to reload.\n\nReloads faster when the magazine is empty.",
-				
+
 		--Kobus 90--
 		["bm_wp_p90_body_p90_tan"] = "Tan Body",
 		["bm_ap_weapon_mod_sc_desc"] = "ADDS BODY ARMOR PENETRATION, SHIELD PENETRATION, AND WALL PENETRATION.",
-		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",		
+		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
-		
+
 		--Raze's Fury--
-		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Raze's weapon of choice.\n##CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.##",
-		
+		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Raze's weapon of choice.\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
 		["bm_w_osipr_desc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nHold $BTN_BIPOD to switch to the Grenade Launcher.",
-		
+
 		--socom deez nuts--
 		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45ACP handgun with a stylish design.",
-		
+
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
 		["bm_menu_sc_legendary_flamethrower"] = "Dragon Lord",
@@ -165,89 +158,57 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
 		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
-		
+
 		--Little Friend--
 		["bm_m203_weapon_sc_desc_pc"] = "Press $BTN_BIPOD to switch to the mounted Grenade Launcher.",
 		["bm_m203_weapon_sc_desc"] = "Hold $BTN_BIPOD to switch to the mounted Grenade Launcher.",
-		
+
 		--Mosin--
-		["bm_mosin_sc_desc"] = "Classic, Powerful bolt-action rifle. This weapon reloads in clips of ##5## bullets at a time.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
-		
+		["bm_mosin_sc_desc"] = "Classic, Powerful bolt-action rifle. This weapon reloads in clips of 5 bullets at a time.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+
 		--Broomstick--
-		["bm_c96_sc_desc"] = "Revolutionary German machine pistol. Capable of firing in full-auto at an insane rate, but will decimate your ammo reserves.\nThis weapon reloads in clips of ##10## bullets at a time.",
-		
+		["bm_c96_sc_desc"] = "Revolutionary German machine pistol. Capable of firing in full-auto at an insane rate, but will decimate your ammo reserves.\nThis weapon reloads in clips of 10 bullets at a time.",
+
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
-		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
-		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR##. ##ARROWS CAN BE RESTORED BY PICKING THEM UP##, AND ##RANGE INCREASES THE LONGER AN ARROW IS DRAWN##.",
-		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE ##BODY ARMOR##. ##ARROWS CAN BE RESTORED BY PICKING THEM UP##.",
-		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle ##Flip Up Sight##.",
-		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL ##REDUCE YOUR MOVEMENT SPEED## BY ##15%##. ROCKETS FIRED BY THIS WEAPON ##INSTANTLY DESTROY TURRETS##.",
+		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
+		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
+		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP.",
+		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle Flip Up Sight.",
+		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 15%. ROCKETS FIRED BY THIS WEAPON INSTANTLY DESTROY TURRETS.",
 		["bm_quake_shotgun_sc_desc"] = "FIRES BOTH BARRELS AT ONCE, DOUBLING THE NUMBER OF PELLETS.",
-		["bm_auto_generated_sc_desc"] = "This weapon is using ##automatically generated stats##, and may not fit the creators intent or be perfectly balanced.",
-		["bm_auto_generated_ap_sc_desc"] = "This weapon is using ##automatically generated stats##, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, AND THIN WALLS##.",
-		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE ##BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS##.",
-		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL ##REDUCE YOUR MOVEMENT SPEED## BY ##25%##.",
+		["bm_hx25_buck_sc_desc"] = "FIRES 12 PELLETS IN A WIDE SPREAD.\n\nSTILL TREATED AS A GRENADE LAUNCHER BY SKILLS.",
+		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
+		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
+		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
 		["loot_sc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM!",
-		
+
 		["menu_l_global_value_omnia"] = "OMNIA",
-		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",		
-		
-		--Depreciated stuff? (please confirm before removal)--
-		["sc_menu"] = "SC's Mod",
-		["sc_menu_desc"] = "Options for SC's mod.",
-		["sc_deploy_title"] = "Deployable Changes",
-		["sc_player_weapon_title"] = "Player Weapon Changes",
-		["sc_ai_title"] = "SC's Mod Main Changes",
-		["sc_classic_smoke_title"] = "Alternative Tear Gas Visuals",
-		["sc_classic_smoke_desc"] = "Toggle the alternative Tear Gas visuals. This will provide a performance boost if the normal visuals cause performance issues.",
-		["sc_spawn_title"] = "Spawn Rate Changes",
-		["sc_player_title"] = "Player/Skill changes",
-		["sc_perk_title"] = "Perk Deck changes",
-		["sc_sp_title"] = "Single Player changes",
-		["sc_flash_title"] = "Flashbang Indicator",
-		["sc_stealth_title"] = "Stealth Changes",
-		["sc_deploy_desc"] = "Turn this off if you don't want deployable changes from SC's mod. This is useful if you're worried about the anti-cheat. (Requires restart)",
-		["sc_player_weapon_desc"] = "Turn this off if you don't want player weapon changes from SC's mod, usually for when you want to use ANOTHER weapon overhaul. (Requires restart)",
-		["sc_spawn_desc"] = "Turn this off if you don't want enemy spawn rate changes from SC's mod. (Requires restart)",
-		["sc_sp_desc"] = "Turn this off if you don't want single player changes from SC's mod. (Requires restart)",
-		["sc_ai_desc"] = "Toggle for SC's Mod Main changes. Useful for quickly toggling back to the vanilla game. Note: Having this on locks your online play to only other SC mod users. (Requires restart)",
-		["sc_player_desc"] = "Turn this off if you don't want Player/Skill changes from SC's mod. (Requires restart)",
-		["sc_perk_desc"] = "Turn this off if you don't want Perk Deck changes from SC's mod. (Requires restart)",
-		["sc_flash_desc"] = "Turn this off if you don't want a flashbang HUD indicator... wait why wouldn't you? (Requires restart)",
-		["sc_stealth_desc"] = "Turn this off if you don't want stealth changes from SC's mod.(Requires restart)",
-		
-		--you can't be funny any more
-	--	["menu_difficulty_apocalypse"] = "Death Life",
-	--	["menu_difficulty_sm_wish"] = "Parking Violation",
-		
+		["menu_l_global_value_omnia_desc"] = "THIS IS AN OMNIA ITEM!",
+
 		["menu_rifle"] = "RIFLES",
 		["menu_jowi"] = "Wick",
 		["menu_moving_target_sc"] = "Subtle",
-		
-		
-	--	["hud_instruct_mask_on"] = "[G] TO BECOME A SQUID NOW",
-	--	["hud_casing_mode_ticker"] = "YOU ARE A KID NOW. BECOME A SQUID NOW TO START THE HEIST.",
-	--	["hud_assault_end_line"] = "YOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUIDYOUREAKIDYOUREASQUID",
 
 		["bm_wp_upg_i_singlefire_sc"] = "Slower Cyclic",
 		["bm_wp_upg_i_singlefire_sc_desc"] = "SLOWS YOUR RATE OF FIRE BY 15%", --RIP RoF mods
 		["bm_wp_upg_i_autofire_sc"] = "Faster Cyclic",
 		["bm_wp_upg_i_autofire_sc_desc"] = "INCREASES YOUR RATE OF FIRE BY 15%",
-		
+
 		["bm_hint_titan_60"] = "The Titandozer leaves in 60 seconds!",
-		["bm_hint_titan_10"] = "The Titandozer leaves in 10 seconds!",		
+		["bm_hint_titan_10"] = "The Titandozer leaves in 10 seconds!",
 		["bm_hint_titan_end"] = "The Titandozer left to haunt another world!",
 
 		["bm_hint_titan_end"] = "The Titandozer left to haunt another world!",
 		["bm_menu_gadget_plural"] = "Gadgets",
 		["menu_pistol_carbine"] = "Pistol Carbine",
 		["menu_battle_rifle"] = "Battle Rifle",
-				
+
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield
@@ -256,43 +217,46 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals double damage when attacking enemies from behind.",-- Switchblade Knife
 		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic.", -- Psycho Knife
+		["bm_melee_headless_sword_info"] = "A sword forged from nightmares.\n\nFully charged hits spread panic.", -- Headless Dozer Sword
 		["bm_melee_nin_info"] = "Fires nails which have a short effective range and instant travel. Still counts as a melee kill.", -- Pounder
 		["bm_melee_iceaxe_info"] = "Deals 50% more headshot damage.", -- Icepick
 		["bm_melee_mining_pick_info"] = "Deals 50% more headshot damage.", --Gold Fever (Pickaxe)
 		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves instantly refill your stamina.", -- OVERKILL Boxing Gloves
 		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 extra damage over three seconds.", --Alabama Razor
+		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals 120 extra damage over three seconds.", --Lucille Baseball Bat
 		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 extra damage and carries a chance to interrupt over three seconds.", --Kunai, Syringe
-		
+		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals 120 melee damage to them. This can be increased with skills.", --Empty Palm Kata
+
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
 		["menu_asset_bomb_inside_info"] = "Insider Info",
 		["menu_asset_mad_cyborg_test_subject"] = "Test Subjects",
-		
-		--Player Outfits--					
+
+		--Player Outfits--
 		["bm_suit_two_piece_sc"] = "Two-piece Suit",
-		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!'\n\nSelecting this option will make sure you wear your Default outfit, regardless of any heist's own outfit.",				
-		
+		["bm_suit_two_piece_desc_sc"] = "The classy approach to heisting. Never hurts to look sharp when yelling, 'down on the ground!'\n\nSelecting this option will make sure you wear your Default outfit, regardless of any heist's own outfit.",
+
 		["bm_suit_loud_suit"] = "Combat Harness",
-		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",		
+		["bm_suit_loud_suit_desc"] = "This is a suit for when you don't mind the heat. It's lightweight, easy to move in, and built for utility. Good choice for going in for a smash and grab, or when hitting heavily fortified mercenary facilities.",
 
 		["bm_suit_jackal_track"] = "Special Merchandise",
-		["bm_suit_jackal_track_desc"] = "A special-made tracksuit, with both the Jackal logo, and a variation on the VERITAS logo.\n\nThe crew received them in unmarked boxes, but Jackal confirms he never sent them, or has seen them before.\nIt's unknown where they came from.\n\n\n\n...Inside the packages, was one note:\n\n''##A TOKEN OF APPRECIATION, FOR THOSE WITH DEDICATION.\nXOXO\n--S.N.##''\n\n",		
-		
+		["bm_suit_jackal_track_desc"] = "A special-made tracksuit, with both the Jackal logo, and a variation on the VERITAS logo.\n\nThe crew received them in unmarked boxes, but Jackal confirms he never sent them, or has seen them before.\nIt's unknown where they came from.\n\n\n\n...Inside the packages, was one note:\n\n''##A TOKEN OF APPRECIATION, FOR THOSE WITH DEDICATION.\nXOXO\n--S.N.##''\n\n",
+
 		["bm_suit_sunny"] = "Sunny-Side Robber",
-		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",		
-		
+		["bm_suit_sunny_desc"] = "Sometimes you just want to roll up your sleeves and do a little heisting.",
+
 		["bm_suit_pool"] = "Bodhi's Pool Repair Uniform",
-		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",	
-		
+		["bm_suit_pool_desc"] = "Sharp threads for pool repair men...",
+
 		["bm_suit_prison"] = "Prison Suit",
-		["bm_suit_prison_desc"] = "You've been taken into custody!",		
+		["bm_suit_prison_desc"] = "You've been taken into custody!",
 
 		["bm_suit_var_jumpsuit_flecktarn"] = "Flecktarn Camo",
-		["bm_suit_var_jumpsuit_flecktarn_desc"] = "A classic camo used by two European countries, proven battle-effective by its ability to blend into forested environments easily. It sure as hell doesn't work in urban areas, but in rural ones it does wonders to trick people's eyes.",		
+		["bm_suit_var_jumpsuit_flecktarn_desc"] = "A classic camo used by two European countries, proven battle-effective by its ability to blend into forested environments easily. It sure as hell doesn't work in urban areas, but in rural ones it does wonders to trick people's eyes.",
 
 		["bm_suit_var_jumpsuit_flatgreen"] = "Gooey Green",
-		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",	
-		
+		["bm_suit_var_jumpsuit_flatgreen_desc"] = "This suit was rumored to have belonged to one member of a trio of psychotic criminals, having been recovered near a destroyed garbage truck that was presumed to have been involved in a bloody heist on a GenSec armored car, which left numerous SWAT members dead and quite a few wounded. The identity of these criminals are still shrouded in mystery, as most evidence was destroyed with the Garbage Truck, only leaving this jumpsuit.",
+
 		--New menu stats--
 		["bm_menu_deflection"] = "Deflection",
 		["bm_menu_regen_time"] = "Regen Delay",
@@ -310,116 +274,106 @@ end)
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_bonus"] = "Modifiers",
-		--["menu_challenge_stat_boost"] = "Random Mod Kit",
-		--["menu_challenge_monthly_reward"] = "Random Primary Weapon Mod Kit or Midas Touch Weapon Mod Kit.",
 		["bm_menu_suppression"] = "Noise Range(M)",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
-		--["dialog_new_tradable_item_bonus"] = "",
-		--["steam_inventory_team_boost"] = "",
-		--["steam_inventory_boost_xp_cash"] = "",
-		
+
 		--Safe House--
-		--["dialog_safehouse_text"] = "You haven't visited the safe house yet. Would you like to go there now?",
 		["dialog_safehouse_text"] = "You haven't visited the safe house yet.\n\nYou should, as you might find something new.\n\nWould you like to go there now?",
-		
+
 		["bm_menu_custom_plural"] = "WEAPON ATTACHMENTS IN THE CUSTOM CATEGORY", --unused?--
-		
+
 		----Custom Weapon Mod Descriptions----
-		
+
 		--Is there a reason these have to be down here? If not, I'll move them up with the others (custom weapons in their own section dw)--
-		
+
 		--Triad Chi-Revolver [Custom]--
-		["bm_wp_wpn_fps_upg_triad_bullets_44normal_desc"] = "Why would you use outdated post-Collision ammunition with Chi-Revolvers? Why the fuck do dogs lick their balls?\nMin and max ammo pickup rate: 1.33x",		
+		["bm_wp_wpn_fps_upg_triad_bullets_44normal_desc"] = "Why would you use outdated post-Collision ammunition with Chi-Revolvers? Why the fuck do dogs lick their balls?\nMin and max ammo pickup rate: 1.33x",
 		["bm_wp_wpn_fps_upg_triad_bullets_44ap_desc"] = "Assblast your enemies through walls, armor, and shields with these rounds.\nEnables armor, shield, and wall piercing at the cost of damage.",
-		["bm_wp_wpn_fps_upg_triad_bullets_44hollow_desc"] = "Chi-fussed hollow rounds stolen from a place of unknown origin. The only thing you need to know is that this shit KICKS hard and the fact that anything on the other end of the barrel is practically vaporized after the gun kicks. Good shit, ain't it?\nThis ammunition is much harder to find in ammo drops.\nEverything else lowered in favor of damage, and pickup rate.\nMin and max ammo pickup rate: 0.33x",	
-		
+		["bm_wp_wpn_fps_upg_triad_bullets_44hollow_desc"] = "Chi-fussed hollow rounds stolen from a place of unknown origin. The only thing you need to know is that this shit KICKS hard and the fact that anything on the other end of the barrel is practically vaporized after the gun kicks. Good shit, ain't it?\nThis ammunition is much harder to find in ammo drops.\nEverything else lowered in favor of damage, and pickup rate.\nMin and max ammo pickup rate: 0.33x",
+
 		--DECK-ARD [Custom]--
 		["bm_wp_wpn_fps_upg_deckard_ammo_damage_high_desc"] = "Shoot them so dead they'll die in hell.\nMassive damage at the cost of everything else.\nCapable of piercing through armor, walls and shields.\nThis ammunition is much harder to find in ammo drops.\nMin and max ammo pickup rate: 0.33x",
 		["bm_wp_wpn_fps_upg_deckard_ammo_damage_med_desc"] = "Shoot them dead.\nThis ammunition is substantially easier to find in ammo drops.\nMin and max ammo pickup rate: 1.33x",
-		
+
 		--Unknown Weapon--
-		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit", 	
+		["bm_wp_wpn_fps_ass_tilt_a_fuerte"] = "7.62mm Conversion Kit",
 		["bm_wp_wpn_fps_ass_tilt_a_fuerte_desc"] =  "Converts the weapon's caliber to 7.62mm, which slightly decreases firerate and stability in favor of increased damage and accuracy.",
-		
+
 		--MK18 Specialist [Custom]--
 		["bm_wp_wpn_fps_ass_mk18s_a_weak_desc"] = "An ammunition type that mimics medium tier rifles. Lowers ammo count and stability in trade for higher damage and accuracy.",
-		["bm_wp_wpn_fps_ass_mk18s_vg_magwell"] = "Magwell Grip",				
-		
+		["bm_wp_wpn_fps_ass_mk18s_vg_magwell"] = "Magwell Grip",
+
 		--Unknown Weapon--
-		["bm_wp_wpn_fps_pis_noodle_m_8"] = "Extended Magazine",	
+		["bm_wp_wpn_fps_pis_noodle_m_8"] = "Extended Magazine",
 		["bm_wp_wpn_fps_pis_noodle_m_10"] = "Extend-o Magazine",
-		
+
 		--Jackal SMG(these are unused though)--
 		["bm_wp_wpn_fps_upg_schakal_m_atai_desc"] = "Converts the Jackal into the Mastiff, something of the younger sister in the Jackal family. Not as stable as the Coyote, and not as deadly as the Jackal, but atleast it fires rounds that can penetrate both armor and walls.",
-		
+
 		--Unknown weapon--
-		["bm_wp_wpn_fps_upg_am_hollow_large_desc"] = "Open-tipped rounds that, thanks to physics, create larger and more painful wound cavities in their enemies. Although HP rounds are harder to find on enemies and have more recoil, they are thankfully more effective against the head and somewhat more accurate than normal rounds.",								
+		["bm_wp_wpn_fps_upg_am_hollow_large_desc"] = "Open-tipped rounds that, thanks to physics, create larger and more painful wound cavities in their enemies. Although HP rounds are harder to find on enemies and have more recoil, they are thankfully more effective against the head and somewhat more accurate than normal rounds.",
 		--Unknown Weapon--
-		["bm_menu_weirdmagthing"] = "Magwell Grip",	
-		
+		["bm_menu_weirdmagthing"] = "Magwell Grip",
+
 		--Gecko 7.62--
 		["bm_wp_wpn_fps_ass_galil_m_drum"] = "75 Round Drum Magazine",
-		
+
 		--Cavity 9mm--
 		["bm_wp_wpn_fps_smg_calico_body_full_desc"] = "Converts to medium pistol tier.\nMin and Max pickup rate: 0.8x",
-		
+
 		--DP-28 [Custom]--
 		["bm_wp_wpn_fps_lmg_dp28_tripod_top_desc"] = "A tripod with additional ammo mounted on its side.\nReduces movement speed by 20% when equipped.",
-		
+
 		--Arbiter--
 		["bm_wp_wpn_fps_gre_arbiter_o_smart_desc"] = "Experimental scope that provides airburst capabilites to the Arbiter.\nIncompatible with incendiary rounds.", --this weapon mod isn't vanilla though iirc--
-		
+
 		--Itachi [Custom]--
 		["bm_wp_wpn_fps_upg_bajur_m_pants"] = "NO",
 		["bm_wp_wpn_fps_upg_bajur_fg_dmr_desc"] = "Replaces the upper receiver of the Itachi with a .50 Beowulf variant, making the weapon kick a hell of a lot harder, but increasing the size of bulletholes made on law enforcers ten-fold.\n Reduces all stats, except for accuracy and power.",
-		
+
 		--Union 5.56--
 		["bm_wp_corgi_b_short"] = "MSG Barrel",
-		
+
 		--Bipod--
 		["bm_sc_bipod_desc_pc"] = "Deploy/Undeploy by pressing $BTN_BIPOD on a valid surface.\n\nEliminates recoil while deployed.",
 		["bm_sc_bipod_desc"] = "Deploy/Undeploy by holding $BTN_BIPOD on a valid surface.\n\nEliminates recoil while deployed.",
-		
+
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Device that electrocutes and interrupts targets on touch when fully charged.",
-		
+
 		-- Renamed default weapons and mods + descriptions-- --move all these to their respective weapons--
 
-		["bm_wp_pis_usp_b_match"] = "Freeman Slide",		
+		["bm_wp_pis_usp_b_match"] = "Freeman Slide",
 		["bm_wp_1911_m_big"] = "Casket Magazine",
-		["bm_wp_usp_m_big"] = "Casket Magazine",		
+		["bm_wp_usp_m_big"] = "Casket Magazine",
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
-		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",		
-		["bm_wp_p90_b_ninja"] = "Ninja Barrel",	
-		
-		["menu_es_rep_upgrade"] = "",	--???--			
-		
+		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
+		["bm_wp_p90_b_ninja"] = "Ninja Barrel",
+
+		["menu_es_rep_upgrade"] = "",	--???--
+
 		["bm_w_lemming"] = "5/7 Pistol",
-		
+
 		["bm_w_x_judge"] = "Judge & Jury", --really wish weaponlib's right_only worked w/ the Judges so that we could have the 'right' one be the reinforced frame. a real shame.
 		["bm_w_x_shrew"] = "Barry & Paul",
 		["bm_w_x_1911"] = "Mustang & Sally",
 		["bm_w_tec9"] = "T3K Urban Submachine Gun",
 		["bm_w_x_tec9"] = "Akimbo T3K Urban Submachine Guns",
-		
-		--sGnrrnsfNGDSNgdnsfDNSGDFNGHhDFHDFNH
-		--["bm_w_deagle"] = "Big Pistol",
-		--["bm_w_sparrow"] = "Big Pistol (Smaller)",						
-			
-		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",				
-		["bm_wp_hs2000_sl_long"] = "Elite Slide",				
+
+		["bm_wp_mp5_fg_mp5sd"] = "SPOOC Foregrip",
+		["bm_wp_hs2000_sl_long"] = "Elite Slide",
 		["bm_wp_vhs_b_sniper"] = "Hyper Barrel",
 		["bm_w_r0991"] = "AR-15 Varmint Pistol",
 		["bm_wp_vhs_b_silenced"] = "Bad Dragan Barrel",
-		["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",				
+		["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Red Body",
 		["bm_wp_g3_b_sniper"] = "Macro Barrel",
 		["bm_wp_g3_b_short"] = "Micro Barrel",
-		
+
 		["bm_w_m590"] = "Reinbeck 890 Shotgun",
-		["bm_w_m590_desc"] = "The spiritual successor to the criminal syndicate's most popular shotgun has arrived. Although it retains the power of the original Reinbeck, it makes a few small deviations from the original design, making it easier to pump but less stable.",		
+		["bm_w_m590_desc"] = "The spiritual successor to the criminal syndicate's most popular shotgun has arrived. Although it retains the power of the original Reinbeck, it makes a few small deviations from the original design, making it easier to pump but less stable.",
 		["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
-		
-								
+
+
 
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
 		["bm_menu_bonus_concealment_p1"] = "Small Concealment bonus and Accuracy/Stability penalty",
@@ -435,16 +389,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_recoil_p1"] = "Small Stability bonus and Accuracy penalty",
 		["bm_menu_bonus_recoil_p1_mod"] = "Small Stability Modifier",
 		["bm_menu_bonus_recoil_p2"] = "Large Stability bonus and Accuracy penalty",
-		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+5% Experience reward for you and your crew, -10% Money reward for you and your crew",	
+		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+5% Experience reward for you and your crew, -10% Money reward for you and your crew",
 		["bm_menu_spread"] = "Accuracy\n",
-		["bm_menu_recoil"] = "Stability\n",	
+		["bm_menu_recoil"] = "Stability\n",
 		["bm_menu_concealment"] = "Concealment\n",
 		["bm_menu_bonus_spread_p2_mod"] = "Large Accuracy Modifier",
 		["bm_menu_bonus_spread_p3_mod"] = "Massive Accuracy Modifier",
 		["bm_menu_bonus_recoil_p2_mod"] = "Large Stability Modifier",
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "Money Boost",
-		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+10% Money reward for you and your crew, -5% Experience reward for you and your crew.",	
-		
+		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+10% Money reward for you and your crew, -5% Experience reward for you and your crew.",
+
 		["bm_wp_upg_i_singlefire_desc"] = "LOCKS YOUR WEAPON TO SINGLE-FIRE MODE.",
 		["bm_wp_upg_i_autofire_desc"] = "LOCKS YOUR WEAPON TO AUTO-FIRE MODE.",
 
@@ -453,9 +407,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov Rifle",
 		["bm_w_x_akmsu"] = "Akimbo Krinkov Rifles",
 		["bm_w_hajk"] = "CR 805B Rifle",
-		
+
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
-		
+
 		--Throwables--
 		["bm_concussion_desc"] = "Capacity: 3 \nRange: 10m \nStuns enemy for up to 4s \nEnemy accuracy reduced by 50% for 7s \nStuns all enemies, excluding Titan-Shields, Titan-Bulldozers and Captains \n \nThis stunning little beauty will take everyone's breath away, giving you that extra moment to kill them.",
 		["bm_grenade_smoke_screen_grenade_desc"] = "Range: 8m \nDuration: 12s \n \nDrop one of these and you'll vanish in a cloud of smoke, leaving your enemies struggling to take aim at you.",
@@ -463,23 +417,23 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_dynamite_desc"] = "Capacity: 3\nDamage: 800 \nRange: 4m \nDoes not bounce or roll from impact point, but deals less splash damage than similar explosives.\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
 		["bm_grenade_frag_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \n \nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
 		["bm_grenade_dada_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \n \nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
-		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage: 700 per pool over 10s \nRange: 3.75m \nDuration: 10s \nDetonates on impact \n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",	
-		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage: 840 per pool over 12s \nRange: 3.75m \nDuration: 12s \nDetonates after 2.5s \n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",			
-		["bm_wpn_prj_ace_desc"] = "Capacity: 9 \nDamage: 240 \n \nThrowing cards with added weight and a razor edge. A real killer hand of cards.",		
-		["bm_wpn_prj_four_desc"] = "Capacity: 9 \nDamage: 200 (Impact) \nDamage: 200 over 5s (Poison) \nInterrupts enemy actions \n \nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",		
-		["bm_wpn_prj_target_desc"] = "Capacity: 9 \nDamage: 240 \n \nA solid backup plan and a reliable tactic for a precise and silent kill.",		
-		["bm_wpn_prj_jav_desc"] = "Capacity: 6 \nDamage: 360 \n \nWith its origins lost in cloudy pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day.",		
-		["bm_wpn_prj_hur_desc"] = "Capacity: 6 \nDamage: 360 \n \nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",				
-			
+		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage: 700 per pool over 10s \nRange: 3.75m \nDuration: 10s \nDetonates on impact \n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
+		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage: 840 per pool over 12s \nRange: 3.75m \nDuration: 12s \nDetonates after 2.5s \n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",
+		["bm_wpn_prj_ace_desc"] = "Capacity: 9 \nDamage: 240 \n \nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
+		["bm_wpn_prj_four_desc"] = "Capacity: 9 \nDamage: 200 (Impact) \nDamage: 200 over 5s (Poison) \nInterrupts enemy actions \n \nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",
+		["bm_wpn_prj_target_desc"] = "Capacity: 9 \nDamage: 240 \n \nA solid backup plan and a reliable tactic for a precise and silent kill.",
+		["bm_wpn_prj_jav_desc"] = "Capacity: 6 \nDamage: 360 \n \nWith its origins lost in cloudy pre-history, the javelin is a simple weapon. After all, it's a thrown stick with a pointy end that ruins someone's day.",
+		["bm_wpn_prj_hur_desc"] = "Capacity: 6 \nDamage: 360 \n \nThey say a sharp axe is never wrong. A thrown sharp axe couldn't be any more right.",
+
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
 		["bm_wp_wpn_fps_upg_scar_m203_flechette"] = "40MM Flechette Rounds",
-		["bm_wp_wpn_fps_upg_scar_m203_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",		
+		["bm_wp_wpn_fps_upg_scar_m203_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
 
 		["bm_wp_wpn_fps_upg_g3m203_gre_buckshot"] = "40MM Buckshot Rounds",
 		["bm_wp_wpn_fps_upg_g3m203_gre_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "40MM Flechette Rounds",
-		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",				
+		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
 	})
 end)
 
@@ -490,78 +444,60 @@ local m = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Mur
 local z = tweak_data.levels.ai_groups.zombie --LevelsTweakData.LevelType.Zombie
 local f = tweak_data.levels.ai_groups.federales
 local ai_type = tweak_data.levels:get_ai_group_type()
-local russia_guide = Idstring("russian"):key() == SystemInfo:language():key()
-local english_guide = Idstring("english"):key() == SystemInfo:language():key()
-
-if russia_guide then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_RU_Guide", function(loc)
-		LocalizationManager:add_localized_strings({
-			["menu_ingame_manual"] = "Overhaul Guide",
-			["menu_ingame_manual_help"] = "Открыть руководство по переработке геймплея Restoration"
-		})
-	end)
-elseif english_guide then
-	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_EN_Guide", function(loc)
-		LocalizationManager:add_localized_strings({
-			["menu_ingame_manual"] = "Overhaul Guide",
-			["menu_ingame_manual_help"] = "View the guide for Restoration's Overhaul."
-		})
-	end)
-end
 
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "ИДЁТ ЩТУРМ НАЁМНИКОВ",
-			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",			
+			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
 			["hud_assault_alpha"] = "ЩTУPM HAЁMHИKOB"
 		})
 	end)
-elseif ai_type == z then	
+elseif ai_type == z then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Pciloe Asuaslt in Prergoss",
-			["hud_assault_cover"] = "STYA IN COVRE...FLESH",						
+			["hud_assault_cover"] = "STYA IN COVRE...FLESH",
 			["hud_assault_alpha"] = "PCILOE ASUASLT"
 		})
 	end)
-elseif ai_type == f then	
+elseif ai_type == f then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Asalto Federal En Marcha",
 			["hud_assault_cover"] = "MANTENTE A CUBIERTO",
 			["hud_assault_alpha"] = "ASALTO FEDERAL"
 		})
-	end)		
-elseif ai_type == m and difficulty_index <= 7 then	
+	end)
+elseif ai_type == m and difficulty_index <= 7 then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "Murkywater Assault in Progress",
 			["hud_assault_alpha"] = "MURKYWATER ASSAULT"
 		})
-	end)	
-elseif ai_type == m then	
+	end)
+elseif ai_type == m then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
 			["hud_assault_assault"] = "OMNIA Incursion Underway",
 			["hud_assault_alpha"] = "OMNIA INCURSION"
 		})
-	end)		
+	end)
 end
 
  if _G.HopLib then
-	local ai_type = tweak_data.levels:get_ai_group_type() 
+	local ai_type = tweak_data.levels:get_ai_group_type()
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
-	
+
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
-	end)	
-	
+	end)
+
 	if ai_type == murkywetew then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
-			-- log("awesome! loaded!")		
+			-- log("awesome! loaded!")
 			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
-		end)	
+		end)
 	end
  end
 
@@ -570,16 +506,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
 		["menu_es_extra_bonus"] = "Pro-Job Bonus",
-		
+
 		["menu_asset_lock_additional_assets_pro"] = "NOT AVAILABLE IN PRO-JOBS!",
 
 		["cn_menu_contract_daypay_header"] = "Day Rate:",
 		["cn_menu_contract_jobpay_header"] = "Contract Pay:",
 		["victory_stage_cash_summary_name_job"] = "You earned $stage_cash on your contract day rate and an additional $job_cash for completing the contract.",
-		
+
 		["debug_interact_grenade_crate_take_grenades"] = "HOLD $BTN_INTERACT TO REFILL YOUR THROWABLES",
 		["debug_interact_bodybags_bag_take_bodybag"] = "HOLD $BTN_INTERACT TO REFILL YOUR BODY BAGS",
-		
+
 		["menu_equipment_armor_kit"] = "Throwable Case",
 		["bm_equipment_armor_kit"] = "Throwable Case",
 		["debug_equipment_armor_kit"] = "Throwable Case",
@@ -593,7 +529,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["hud_int_hold_take_pardons"] = "PRESS $BTN_INTERACT TO TAKE THE PARDON",
 		["debug_interact_gage_assignment_take"] = "PRESS $BTN_INTERACT TO PICK UP THE PACKAGE",
-		
+
 		["far_repair_sentry_macro"] = "Sentry critically damaged, repairs needed.",
 		["fixing_sentry_macro"] = "Repair progress: $AMMO_LEFT%",
 		--Are concatenated to the related button prompts. Using Macros results in controller prompts at the wrong times.
@@ -603,22 +539,167 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["hud_interact_pickup_sentry_gun"] = "$AMMO_LEFT", --$AMMO_LEFT macro is a dummy macro to be replaced with desired string, since changing interaction objects is slightly cursed.
 		["hud_interact_sentry_gun_switch_fire_mode"] = "$AMMO_LEFT",
 		["hud_repair_sentry"] = "$AMMO_LEFT",
-		
+		["hud_action_repair_sentry"] = "Repairing sentry...",
+
 		--More fitting descriptions of difficulties--
 		["menu_risk_elite"] = "DEATH WISH. FOR YOU, ACTION IS THE JUICE.",
-		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",		
-	
-		--Woo Hints--
-		["loading_gameplay_118"] = "You have a 25% chance to pick up cable ties from ammo boxes, make the most of them!",
-		["loading_gameplay_12"] = "Know your enemy. Cloakers have distinct green, glowing night vision goggles on, and are completely silent. Check your corners and maintain vigilance!",
-		
-		["loading_sc_tip_title"] = "SC's Mod Tips",
-		["loading_sc_tip_1"] = "Know your enemy. Grenadiers use tear gas grenades to flush heisters out of cover and are resistant to explosives themselves. Take them out quickly!",
-		["loading_sc_tip_2"] = "Know your enemy. The Veteran Cop automatically dodges 50% of incoming gunfire. Try using damage types that he can't dodge like explosives, fire, or your melee weapon!",
+		["menu_risk_sm_wish"] = "DEATH SENTENCE. NOW SHOW THEM THAT YOU CAN'T BE STOPPED.",
+
+		--Loading Hints--
+		--Restoration Gameplay Hints--
+		["loading_gameplay_res_title"] = "Restoration Gameplay Tips",
+		["loading_gameplay_res_1"] = "Cloakers make a 'wheezing' sound when aggressive towards heisters. Use this to locate them.",
+		["loading_gameplay_res_2"] = "Cloakers no longer make an ambient humming sound or screech when charging. Pay attention to your surroundings, as their goggles are now always lit up.",
+		["loading_gameplay_res_3"] = "On Death Sentence, enemies may charge you if you reload. Make sure that you're in good cover or far from enemies. It might be better to swap weapons sometimes, especially if using a pistol as your secondary.",
+		["loading_gameplay_res_4"] = "Tasers no longer reload your weapons. Try to stay topped up when possible, or switch to a secondary if you're about to be tased.",
+		["loading_gameplay_res_5"] = "Cloakers will actively go after lone heisters, stick together or go to jail alone.",
+		["loading_gameplay_res_6"] = "Cloakers deal direct health damage when they kick you. This can be reduced with Deflection or the Counter Strike skill.",
+		["loading_gameplay_res_7"] = "Green Bulldozers will attempt to flank players and will run in, unload, and then run away. Be careful not to get overwhelmed or surprised.",
+		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers are hyper-aggressive and will charge at the player. This makes them easy to predict, but highly dangerous if you aren't prepared.",
+		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers will attempt to provide covering fire for other units, but will still charge in various circumstances and have very high DPS.",
+		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers. They only spawn in Crime Spree and alongside Captain Spring on Death Sentence. They are very, very dangerous.",
+		["loading_gameplay_res_11"] = "All Dozers except Titan Dozers will charge reloading players.",
+		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 15%.",
+		["loading_gameplay_res_13"] = "Cloakers perform their iconic screech when they are about to jump kick you, dodge to the side when you hear it.",
+		["loading_gameplay_res_14"] = "Cloaker Jump Kicks will cuff you instead of down you.",
+		["loading_gameplay_res_15"] = "Flashbangs cannot be broken on Death Sentence. Your opinion, my choice.",
+		["loading_gameplay_res_16"] = "You can parry melee attacks by charging your own. This can be upgraded to work against cloaker kicks.",
+		["loading_gameplay_res_17"] = "Enemy melee attacks are vastly more effective than before. Don't expect to simply walk past a horde.",
+		["loading_gameplay_res_18"] = "You know what's better than smacking enemies with a baseball bat? Smacking them in the head with a baseball bat for headshot damage.",
+		["loading_gameplay_res_19"] = "Snipers take a brief period of time to focus before firing. You'll know when you are being focused if all of your audio begins to fade away.",
+		["loading_gameplay_res_20"] = "Your Jokers aren't safe from being kicked by Cloakers.",
+		["loading_gameplay_res_21"] = "Regular enemies will come at you wielding a variety of weapons. You can tell who is carrying what by watching for details in their uniforms.",
+		["loading_gameplay_res_22"] = "Shotgun-wielding enemies are deadly. Up close, they may take you down in two shots if you don't have much armor. However, they have very limited range.",
+		["loading_gameplay_res_23"] = "Enemies try to hide behind Shields on higher difficulties.",
+		["loading_gameplay_res_24"] = "Enemies will behave significantly smarter and are less predictable on higher difficulties.",
+		["loading_gameplay_res_25"] = "Death Sentence difficulty has gone through a full design overhaul from vanilla to make it harder and meaner without being unfair. Check the Guide.",
+		["loading_gameplay_res_26"] = "Pro Jobs forbid you from buying generic assets before the heist (such as the Medic Bag, Ammo Bag or the Body Bag Case), toggle friendly fire on (even with your bots) and may trigger a PONR in the final stretch of the mission with special Bravo enemies joining the ranks.",
+		["loading_gameplay_res_27"] = "Restoration Mod provides different factions, such as Murkywater mercenaries and enforcers from other states. They function the same, but add a nice flavor to heists that canonically take place away from Washington DC.",
+		["loading_gameplay_res_28"] = "Cloakers will throw smoke grenades at you before charging.",
+		--New Units Hints
+		["loading_new_units_res_title"] = "Restoration Unit Tips",
+		["loading_new_units_res_1"] = "Titan HRTs are lightning-fast units that will free hostages and steal loot before you know they were there. Also, they will drop a tear gas grenade when killed without a Headshot or melee.",
+		["loading_new_units_res_2"] = "LPFs are weak to melee.",
+		["loading_new_units_res_3"] = "Lighter units will be Overhealed by the LPF. Overhealed enemies are outlined in purple. Overhealed units will always survive at least one shot.",
+		["loading_new_units_res_4"] = "Titan Cloakers have advanced cloaking gear that renders them nearly invisible, but it still has the ambient hum of older models of standard Cloaker gear. Listen for them.",
+		["loading_new_units_res_5"] = "Titan Dozers will actively attempt to avoid direct combat whenever possible and lay suppressive fire on you from a safe distance.",
+		["loading_new_units_res_6"] = "Titan Snipers trade damage-per-shot and armor-piercing from their standard counterparts for a higher rate of fire and being able to shoot while moving.",
+		["loading_new_units_res_7"] = "Instead of using a laser sight, Titan Sniper shots leave behind purple tracers. Use these to track them down.",
+		["loading_new_units_res_8"] = "Titan Shields can only be pierced with the Thanatos, OVE9000 Saw when using Rip and Tear basic, and special AP rounds in Sentry Guns.",
+		["loading_new_units_res_9"] = "Captain Spring and Titan Dozers take bonus headshot damage at all times.",
+		["loading_new_units_res_10"] = "Titan Tasers fire electric rounds that severely restrict your movement temporarily. Your screen will glow blue when shot by one.",
+		["loading_new_units_res_11"] = "Veteran Cops have quick reflexes that limit how much damage any given shot can deal. They cannot dodge melee, fire, or explosives. Alternatively, pick something with a high rate of fire and lower damage.",
+		["loading_new_units_res_12"] = "Veteran Cops physically dodge and jump all over the place to make themselves harder to hit. They also drop smoke grenades frequently.",
+		["loading_new_units_res_13"] = "Titan SWAT are lightly resistant to melee, but it still works well as a finisher.",
+		["loading_new_units_res_14"] = "Titan SWAT cannot be taken hostage or converted to fight on your side.",
+		["loading_new_units_res_15"] = "Titan SWAT boast LMGs and automatic shotguns. They are a major threat to your well-being.",
+		["loading_new_units_res_16"] = "The dreaded Bravo units spawn on Pro Jobs only, when a PONR is triggered. They are powerful no-nonsense enemies with enhanced body armor, and more powerful weapons.",
+		["loading_new_units_res_17"] = "Bravo units can throw frag grenades. Look for the flashers and listen for the beep.",
+		["loading_new_units_res_18"] = "AKAN fields their own Titan units, which look different but behave the same way. Their overall color scheme and visual characteristics are the same, though, so that they may be easily identified.",
+		["loading_new_units_res_19"] = "The Grenadier launches tear gas grenades at range with his underbarrel attachment, damaging players that stand in the cloud. On Death Sentence he instead comes armed with deadlier, stamina-draining nerve gas grenades.",
+		--Captain Hints
+		["loading_captains_res_title"] = "Restoration Captain Tips",
+		["loading_captains_res_1"] = "To take Captain Summers down, target his crew first starting with Doc. He's unkillable until his entire crew is dead, and the other two are nearly invulnerable until Doc is dead.",		
+		["loading_captains_res_2"] = "Don't hug Captain Summers. He WILL melt you with his flamethrower, and he has a Buzzer that he will electrocute you with.",		
+		["loading_captains_res_3"] = "Captain Spring can take a ton of damage but will eventually go down. Watch for his grenades and try to lead him around, as he's very slow.",	
+		["loading_captains_res_4"] = "Captain Spring throws Cluster HE grenades periodically. Don't stay close to him for long.",	
+		["loading_captains_res_5"] = "Captain Spring may be dangerous, but he is incredibly slow and has poor range.",	
+		["loading_captains_res_6"] = "Captain Autumn will loudly taunt when he attacks. Use this to locate him.",	
+		["loading_captains_res_7"] = "Unlike other Captains, the police will not announce Autumn's arrival, as to not ruin the element of surprise.",	
+		["loading_captains_res_8"] = "Captain Autumn will progressively disable your deployables if he's allowed to stay undetected in the map for a while. Disabled deployables are outlined in purple and can only be restored if Autumn is found and defeated.",	
+		["loading_captains_res_9"] = "You will probably not beat Captain Autumn in a fist fight. Don't even try.",	
+		["loading_captains_res_10"] = "Captain Winters is nearly immune to explosives and fire, and has strong bullet resistance, but is somewhat vulnerable to melee.",	
+		["loading_captains_res_11"] = "Captain Winters' shield is completely unpierceable.",	
+		["loading_captains_res_12"] = "Captain Winters has been overhauled. He now wanders around the map healing enemies in a large area around him while staying somewhat away from you. Back away from him if he's hiding somewhere.",	
+		--Stealth Hints
+		["loading_stealth_res_title"] = "Restoration Stealth Tips",
+		["loading_stealth_res_1"] = "Guards will no longer be instantly alerted by seeing broken cameras. A specific guard will be made to inspect the camera, allowing it to be used as a lure.",	
+		["loading_stealth_res_2"] = "Killing unalerted guards with melee or taking them hostage will not set off a pager. Melee killing a guard a split second after he was alerted will still prevent the pager from being set off.",	
+		["loading_stealth_res_3"] = "Melee killing unalerted guards or taking them hostage will still trigger guard replacements and map events.",	
+		["loading_stealth_res_4"] = "Guards with no pagers do not increase suspicion when killed.",	
+		["loading_stealth_res_5"] = "Unsupressed gunfire will not instantly alert the entire map. You and enemies have different sound ranges based on the weapon type and their attachments. Conversely, silenced guns are not all equally quiet, and may alert close-by enemies if their Noise stat is still high enough.",	
+		["loading_stealth_res_6"] = "Civilians will get down in response to gunfire in both loud and stealth. Guns that are not fully silenced still trigger this, so for some heists one may be useful for controlling civilians.",	
+		["loading_stealth_res_7"] = "Sentry Guns will pacify any civilians in a notable radius around them.",	
+		["loading_stealth_res_8"] = "While carrying any bag, you can be seen from much farther away, and will also be detected much faster while standing, sprinting, or jumping. Stay low and slow.",	
+		["loading_stealth_res_9"] = "You get up to 4 ECMs instead of 2 like in vanilla, but they have half duration. Make sure to use them for objectives.",	
+		["loading_stealth_res_10"] = "Suppressors do not fully silence weapons. Check your 'Noise Range' stat.",	
+		["loading_stealth_res_11"] = "You can take up to 4 cops hostage in stealth, just like in loud. This will NOT activate their pager or increase suspicion, but will if you later kill them.",	
+		["loading_stealth_res_12"] = "Most instant fail states for stealth (such as alerted cameras, or exceeding the maximum level of pagers) have been removed or severely toned down. Check the Guide for more detailed information.",	
+		["loading_stealth_res_13"] = "Guards will no longer instantly die from any source of damage while unalerted. Aim for the head, and bring something more damaging than your fists.",	
+		["loading_stealth_res_14"] = "When the suspicion meter is full, you have 60 seconds to finish up what you started before the alarm is raised.",	
+		["loading_stealth_res_15"] = "The higher the suspicion meter is, the easier it is to be detected by guards.",	
+		["loading_stealth_res_16"] = "You can carry more body bags with you than in the base game, and even more so if you are playing solo.",	
+		["loading_stealth_res_17"] = "In Crime.net Offline Mode, you will be given extra cable ties to make up for missing players. The amount still increases if you have the right skills.",	
+		["loading_stealth_res_18"] = "Guards who set off pagers will increase suspicion more than those who die without doing so, even if you're under the pager limit.",	
+		["loading_stealth_res_19"] = "The number of pagers you are allowed is much lower than in the base game. On Death Sentence, you only get one. Your last pager is indicated by use of a special voice line.",	
+		["loading_stealth_res_20"] = "Answering pagers beyond your allowed limit massively increases suspicion, but not as much as dropping or not answering.",	
+		["loading_stealth_res_21"] = "Pagers take longer to answer and expire faster on the ground on higher difficulties.",	
+		--Equipment/Skill Hints
+		["loading_equip_skills_res_title"] = "Restoration Equipment/Skill Tips",
+		["loading_equip_skills_res_1"] = "Shotguns lose range as their accuracy gets lower, experiment and see what works best! Be careful not to leave yourself unable to deal with snipers, though; consider a non-shotgun secondary.",	
+		["loading_equip_skills_res_2"] = "Pistols are very fast to swap to and are generally accurate and stable. They work very well as backup weapons if you aren't specialized in something else.",	
+		["loading_equip_skills_res_3"] = "Weapons in Restoration fall under a variety of classes with different pros and cons. Higher damage weapons may kill enemies faster, but they may run dry on you before you know it!",	
+		["loading_equip_skills_res_4"] = "Higher-damage weapons are generally less concealable unless they have significant downsides, such as Accuracy or Rate of Fire.",	
+		["loading_equip_skills_res_5"] = "Wolf has upgraded our Sentry Guns to allow field repairs. It takes some time, but they will automatically repair once you initiate it.",	
+		["loading_equip_skills_res_6"] = "If you have Sentry AP rounds unlocked, you can choose your default ammo type in the Equipment menu.",	
+		["loading_equip_skills_res_7"] = "Perk Decks give significant damage bonuses and many of them provide rare and precious healing abilities. Make sure not to neglect upgrading them if you want to play higher difficulties.",	
+		["loading_equip_skills_res_8"] = "Crew Chief, Armorer, Muscle, Crook, Gambler, and Biker are basic but consistent perk decks. They're great first choices for a perk deck to build into.",	
+		["loading_equip_skills_res_9"] = "Hitman has been reworked into a low long-term survivability and consistency perk deck, but in exchange allows you to gain huge stores of 'Temporary HP' to power through tough spots.",	
+		["loading_equip_skills_res_10"] = "Crew Chief is a team-focused perk deck that grants small but useful buffs to you and your teammates and more buffs if you have multiple hostages. It pairs well with The Controller tree in Mastermind.",	
+		["loading_equip_skills_res_11"] = "Gambler is a team-focused perk deck that grants a little HP and bonus ammo to teammates when you pick ammo up. Pairs well with skills that grant extra ammo drops.",	
+		["loading_equip_skills_res_12"] = "Maniac is a fast team-focused perk deck that reduces incoming damage for you and teammates as long as you keep up consistent killing. Pairs well with high-damage-output builds and builds with Damage Resist.",	
+		["loading_equip_skills_res_13"] = "Hacker's Pocket ECM provides team wide healing and powerful crowd control, but takes a long time to recharge. It is also effective in stealth.",	
+		["loading_equip_skills_res_14"] = "Burglar is a perk deck that provides small bonuses to Stealth in exchange for being a bit weaker than other decks in Loud.",	
+		["loading_equip_skills_res_15"] = "Kingpin is a versatile perk deck. The injector can be used for self sustain, surviving heavy damage, or drawing fire away from your team.",	
+		["loading_equip_skills_res_16"] = "Tag Team is a team-focused perk deck that allows you to provide a lot of healing to a specific teammate as long as the two of you keep up consistent killing.",	
+		["loading_equip_skills_res_17"] = "Shotgun slugs on Semi-Automatic and Automatic Shotguns do not pierce armor, enemies, walls, or shields.",	
+		["loading_equip_skills_res_18"] = "The Peacemaker and Phoenix .500 Revolvers are able to pierce like a sniper rifle.",	
+		["loading_equip_skills_res_19"] = "If you have a blue meter on the side of your screen, then you have built up some dodge. When it's flashing, you will dodge the next bullet. Please refer to the Guide for an in-depth explanation of our dodge rework.",	
+		["loading_equip_skills_res_20"] = "The higher a weapon's concealment is, the faster you can draw and holster it.",	
+		["loading_equip_skills_res_21"] = "The Chainsaw and Kazaguruma deal damage to enemies in front of you while held.",	
+		["loading_equip_skills_res_22"] = "The Butterfly Knife and Switchblade do increased damage on backstabs. The butterfly knife is almost useless on normal attacks but deadly when backstabbing, while the switchblade is a more modest in-between weapon.",	
+		["loading_equip_skills_res_23"] = "The Icepick and Gold Fever do increased headshot damage in exchange for poor bodyshot damage.",	
+		["loading_equip_skills_res_24"] = "Poison deals only moderate damage, but induces vomiting which interrupts other actions.",	
+		["loading_equip_skills_res_25"] = "Stun Grenades provide very potent disruption, even against bulldozers.",	
+		["loading_equip_skills_res_26"] = "Aiming down sights grants significantly increased accuracy and reduced recoil, even with LMGs.",	
+		["loading_equip_skills_res_27"] = "The Pounder Nailgun melee weapon has an incredibly long range, making it useful for taking out Cloakers and light swat and the occasional 'ranged melee' kill in Stealth, if you can build your concealment around it.",	
+		["loading_equip_skills_res_28"] = "Leveling up perk decks unlocks the Throwables Case.",	
+		["loading_equip_skills_res_29"] = "Replenishing your throwables in the Equipment Case now refills your entire stock with each use.",	
+		["loading_equip_skills_res_30"] = "Inspire Ace now has a much longer cooldown and requires Line of Sight. Save your ranged revive for when things have really gone sideways, or you might not have it when you actually need it.",	
+		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks (Wildcard and Blank) which provide only the common perks and no perks whatsoever, respectively. They are meant for self-imposed challenges.",
+		--Misc Hints
+		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
+		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal and Raze' Contractor, as well as 'Doghouse' under Vlad.",	
+		["loading_misc_res_2"] = "Restoration Mod has a Steam Guide! This should be your resource for more detailed information. Check the Main Menu.",	
+		["loading_misc_res_3"] = "Restoration Mod has a Discord server! Join for discussion, balance feedback, and matchmaking! Check the Main Menu.",	
+		--Trivia Hints
+		["loading_fluff_res_title"] = "Restoration Trivia",
+		["loading_fluff_res_1"] = "OMNIA spends a fortune reviving failed weapon projects.",	
+		["loading_fluff_res_2"] = "The LPF is owed a lot of beers.",	
+		["loading_fluff_res_3"] = "The LPF and Titan Sniper are Australian.",	
+		["loading_fluff_res_4"] = "The NYPD Bronco Cop loves donuts.",	
+		["loading_fluff_res_5"] = "The ZEAL UMP Elite SWAT's name is Chad.",	
+		["loading_fluff_res_6"] = "Titan Dozers have glowing eyes thanks to extensive genetic engineering, human experiments, and combat drugs.",	
+		["loading_fluff_res_7"] = "Captain Spring is not human. He might have been, once upon a time.",	
+		["loading_fluff_res_8"] = "Restoration Mod is often nicknamed 'resmod', 'SCmod', 'furry mod' and 'mememod', by various members of the community and the dev team.",	
+		["loading_fluff_res_9"] = "OMNIA has been developing reinforced security doors to protect against dinosaur attacks.",	
+		["loading_fluff_res_10"] = "The Grenadier used to work in pest control.",	
+		["loading_fluff_res_11"] = "You have never seen a Titan Cloaker.",
+		["loading_fluff_res_12"] = "Omnia is a self-described 'neoceltic pagan folk' band based in the Netherlands and whose members have had Irish, Dutch, Cornish, Belgian, Indonesian and Persian backgrounds. Connection to the organization OMNIA unconfirmed.",	
+		["loading_fluff_res_13"] = "Whatever happened that caused Jackal to get involved with Crime.Net and leave GenSec, he refuses to talk about it. He seems to have been 'disturbed' by the event.",	
+		["loading_fluff_res_14"] = "HAHAHAHAHA.",
+		["loading_fluff_res_15"] = "Captain Summers and his crew used to be a crew of four heisters, much like a multinational equivalent of the Payday Crew. They are now a strike team for OMNIA.",
+		["loading_fluff_res_16"] = "Captain Summers and his crew officially died in a building collapse while trying to rob a bank. This was a ruse.",
+		["loading_fluff_res_17"] = "Captain Autumn spends a fortune on handcuffs.",
+		["loading_fluff_res_18"] = "Captain Summers spends a fortune on gas gas gas.",
+		["loading_fluff_res_19"] = "Captain Spring spends a fortune on bullets and grenades.",
+		["loading_fluff_res_20"] = "Captain Winters spends a fortune on shields and duct tape.",
+		["loading_fluff_res_21"] = "The Grenadier division spends a fortune on Diphoterine due to several friendly fire incidents.",
+		["loading_fluff_res_22"] = "You may or may not have met Captain Summers before.",
+		["loading_fluff_res_23"] = "The Policía Federal has a special chupacabra hunting division.",
+		["loading_fluff_res_24"] = "Captains don't die, they go into custody.",
 
 		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
-		--["skill_uppers_revive"] = "Downs restored!",
-		--["hud_ai_traded_in"] = "",
 		["skill_stockholm_syndrome_trade"] = "Down Restored!",
 		["hint_short_max_pagers"] = "Neglecting pagers will significantly increase guard suspicion.",
 
@@ -636,10 +717,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
 		["hud_instruct_mask_on_alpha"] = "Press $BTN_USE_ITEM to put on your mask",
-		
+
 		--Default Suit String
-		["bm_suit_none_desc"] = "This is the heister's default outfit with the selected armor. Will automatically change from the Two-piece Suit depending on the selected heist!",				
-		
+		["bm_suit_none_desc"] = "This is the heister's default outfit with the selected armor. Will automatically change from the Two-piece Suit depending on the selected heist!",
+
 		-- Ad Banner Change
 		["menu_changelog"] = "Latest Changelog",
 		["menu_discord"] = "Discord Server",
@@ -647,7 +728,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_captains"] = "Information on Captains",
 		["menu_content_updates"] = "Guide/Support",
 		["menu_content_updates_previous"] = "",
-				
+
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "Mutators that reduce Experience and Money gained will also disable the earning of achievements, most trophies, and level completions!",
 		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
@@ -661,7 +742,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_mememanonly"] = "HAHAHA, FOOLED YOU GUYS!",
 		["mutator_mememanonly_desc"] = "SUFFERING",
-		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes on some maps.",		
+		["mutator_mememanonly_longdesc"] = "CANTRUNNOESCAPEHELPHELPHELP\n\n WARNING: This mutator may cause crashes on some maps.",
 
 		["MutatorMoreDonutsPlus"] = "More Donuts+",
 		["MutatorMoreDonutsPlus_desc"] = "All common enemies replaced by NYPD Bronco Cops, and all specials are replaced by OMNIA LPFs.",
@@ -669,12 +750,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["MutatorJungleInferno"] = "Jungle Inferno",
 		["MutatorJungleInferno_desc"] = "All enemies are replaced by Captain Summers.",
-		["MutatorJungleInferno_longdesc"] = "All non-scripted spawn enemies are replaced by clones of Captain Summers.",						
-		
+		["MutatorJungleInferno_longdesc"] = "All non-scripted spawn enemies are replaced by clones of Captain Summers.",
+
 		["mutator_minidozers"] = "Semi-Auto Shotgun Bulldozers",
 		["mutator_minidozers_desc"] = "Semi-Auto Shotgun Bulldozers can now spawn.",
 		["mutator_minidozers_longdesc"] = "Whenever a Black Bulldozer spawns, there is a 50% chance that it will be replaced by a Bulldozer wielding an M1014.\n\nNote: If the Medic Bulldozer mutator is enabled, then the Semi-Auto Shotgun Bulldozer will have a 33.3% chance of replacing a Black Bulldozer.",
-		
+
 		["mutator_fatroll"] = "Fat Roll",
 		["mutator_fatroll_desc"] = "Damage Grace disabled.",
 		["mutator_fatroll_longdesc"] = "Damage grace on players and AI crew members is set to 0, meaning that there is no delay on instances of damage.",
@@ -695,7 +776,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_faction_override_nypd"] = "NYPD",
 		["mutator_faction_override_lapd"] = "LAPD",
 		["faction_selector_choice"] = "Faction: ",
-				
+
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete. After risk level 600, the amount of i-frames that player have starts to decrease and bravo units begin to spawn normally.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",
@@ -717,7 +798,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_cloaker_smoke"] = "Cloakers will drop a smokebomb when they kick a player.",
 		["menu_cs_modifier_taser_overcharge"] = "All Taser units have an additional 15% chance to become a Titan Taser.",
 		["menu_cs_modifier_dozer_rage"] = "When a Bulldozer's faceplate is destroyed, the Bulldozer enters a berserker rage, receiving a 10% increase to their base damage resistance.",
-		["menu_cs_modifier_medic_adrenaline"] = "All Medic units have an additional 15% chance to become an OMNIA LPF.",	
+		["menu_cs_modifier_medic_adrenaline"] = "All Medic units have an additional 15% chance to become an OMNIA LPF.",
 		["menu_cs_modifier_cloaker_arrest"] = "Cloakers executing a successful jump kick now downs the player instead of cuffing them.",
 		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 15% chance to become a Titan Cloaker.",
 		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 15% chance to become a Titan HRT.",
@@ -764,7 +845,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 --[[   SKILLTREES   ]]--
 	--{
-	
+
 		--[[   MASTERMIND   ]]--
 		--{
 			--[[   MEDIC SUBTREE   ]]--
@@ -772,8 +853,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Combat Medic
 			["menu_combat_medic_beta_sc"] = "Combat Medic",
-			["menu_combat_medic_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##10%## damage reduction for ##5## seconds both after and during reviving another player.\n\nYou gain a ##10%## damage reduction for ##5## seconds when you are revived.\n\nACE: ##$pro##\nReviving a crew member gives them ##30%## more health.",
-			
+			["menu_combat_medic_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##10%## damage reduction for ##5## seconds both after and during reviving another player.\n\nACE: ##$pro##\nReviving a crew member gives them ##30%## more health.",
+
 			--Quick Fix
 			["menu_tea_time_beta_sc"] = "Quick Fix",
 			["menu_tea_time_beta_desc_sc"] = "BASIC: ##$basic##\nDecreases your First Aid Kit and Doctor Bag deploy time by ##50%.##\n\nACE: ##$pro##\nCrew members that use your First Aid Kits take ##50%## less damage for ##5## seconds.",
@@ -788,59 +869,59 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Combat Doctor
 			["menu_medic_2x_beta_sc"] = "Combat Doctor",
-			["menu_medic_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYour doctor bags have ##1## more charge.\n\nACE: ##$pro##\nYou can now deploy ##2## Doctor Bags instead of just one.",																								
+			["menu_medic_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYour doctor bags have ##1## more charge.\n\nACE: ##$pro##\nYou can now deploy ##2## Doctor Bags instead of just one.",
 
 			--Inspire
 			["menu_inspire_beta_sc"] = "Inspire",
-			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster.\n\nShouting at your teammates will increase their movement and reload speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nYou can revive crew members with ##clear line of sight## at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##90## seconds.",																								
+			["menu_inspire_beta_desc_sc"] = "BASIC: ##$basic##\nYou revive crew members ##50%## faster.\n\nShouting at your teammates will increase their movement and reload speed by ##20%## for ##10## seconds.\n\nACE: ##$pro##\nYou can revive crew members with ##clear line of sight## at a distance of ##9 meters## by shouting at them. This cannot occur more than once every ##90## seconds.",
 
 
 			--}
-			
+
 			--[[   CONTROLLER SUBTREE   ]]--
 			--{
-	
+
 			--Cable Guy
 			["menu_triathlete_beta_sc"] = "Cable Guy",
-			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4##.\n\nACE: ##$pro##\nYour chance to pick up cable ties from ammo boxes is increased to ##30%.##\n\nIncreases your maximum cable ties by ##3.##",																								
+			["menu_triathlete_beta_desc_sc"] = "BASIC: ##$basic##\nIncreases your supply of cable ties by ##4##.\n\nACE: ##$pro##\nYour chance to pick up cable ties from ammo boxes is increased to ##30%.##\n\nIncreases your maximum cable ties by ##3.##",
 
 			--Clowns are Scary
 			["menu_cable_guy_beta_sc"] = "Clowns are Scary",
-			["menu_cable_guy_beta_desc_sc"] = "BASIC: ##$basic##\nCivilians remain intimidated ##50%## longer.\n\nACE: ##$pro##\nThe power and range of your intimidation is increased by ##50%.##",																								
+			["menu_cable_guy_beta_desc_sc"] = "BASIC: ##$basic##\nCivilians remain intimidated ##50%## longer.\n\nACE: ##$pro##\nThe power and range of your intimidation is increased by ##50%.##",
 
-			--Stockholm Syndrome	
+			--Stockholm Syndrome
 			["menu_joker_beta_sc"] = "Stockholm Syndrome",
-			["menu_joker_beta_desc_sc"] = "BASIC: ##$basic##\nYour hostages will not flee when they have been rescued by law enforcers.\n\nACE: ##$pro##\nNearby civilians and jokers have a chance of reviving you if you interact with them, and have a chance of giving you ammo.",																								
+			["menu_joker_beta_desc_sc"] = "BASIC: ##$basic##\nYour hostages will not flee when they have been rescued by law enforcers.\n\nACE: ##$pro##\nNearby civilians and jokers have a chance of reviving you if you interact with them, and have a chance of giving you ammo.",
 
-			--Joker	
-			["menu_stockholm_syndrome_beta_sc"] = "Joker",	
+			--Joker
+			["menu_stockholm_syndrome_beta_sc"] = "Joker",
 			["menu_stockholm_syndrome_beta_desc_sc"] = "BASIC: ##$basic##\nYou can convert a non-special enemy to fight on your side. This can not be done during stealth and enemies must surrender before you can convert them. You can only convert one enemy at a time.\n\nACE: ##$pro##\nThe converted enemy deals ##45%## more damage.\n\nYou can now have ##2## converted enemies at the same time.",
 
-			--Partners in Crime	
-			["menu_control_freak_beta_sc"] = "Partners in Crime",	
+			--Partners in Crime
+			["menu_control_freak_beta_sc"] = "Partners in Crime",
 			["menu_control_freak_beta_desc_sc"] = "BASIC: ##$basic##\nEach converted enemy you control increases your movement speed by ##5%##.\n\nYour converted enemy takes ##50%## less damage.\n\nACE: ##$pro##\nEach converted enemy you control increases your health by ##15%##.\n\nYour converted enemy takes an additional ##30%## less damage.",
 
 			--Hostage Taker
-			["menu_black_marketeer_beta_sc"] = "Hostage Taker",	
+			["menu_black_marketeer_beta_sc"] = "Hostage Taker",
 			["menu_black_marketeer_beta_desc_sc"] = "BASIC: ##$basic##\nYou regenerate ##1## health every ##4## seconds for each hostage up to ##4## times.\n\nACE: ##$pro##\nHealth regen from Hostage Taker is increased by ##100%## when you have ##4## or more hostages.\n\nIncoming damage is reduced by ##1## point for you and your crew for each hostage up to ##4## times.\n\nNote: Hostage Taker does not stack.",
-		
+
 
 			--}
-			
+
 			--[[   ASSAULT SUBTREE, FORMERLY SHARPSHOOTER   ]]--
 			--{
 
 			--Leadership
-			["menu_stable_shot_beta_sc"] = "Leadership",	
-			["menu_stable_shot_beta_desc_sc"] = "BASIC: ##$basic##\nYour stability rating for all SMGs and LMGs is increased by ##4.##\n\nACE: ##$pro##\nYou and your crew's stability rating for all weapons is increased by ##4.##",
+			["menu_stable_shot_beta_sc"] = "Leadership",
+			["menu_stable_shot_beta_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs gain ##4## stability.\n\nACE: ##$pro##\nYou and your crews' stability rating for all weapons is increased by ##4.##",
 
 			--MG Handling
-			["menu_scavenger_sc"] = "MG Handling",	
-			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs, LMGs and Assault Rifles by ##20%##\n\nACE: ##$pro##\nYou reload SMGs and LMGs ##25%## faster.",
+			["menu_scavenger_sc"] = "MG Handling",
+			["menu_scavenger_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of SMGs and LMGs by ##20%##\n\nACE: ##$pro##\nSMGs and LMGs reload ##25%## faster.",
 
 			--MG Specialist
-			["menu_sharpshooter_sc"] = "MG Specialist",	
-			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##60%## for SMGs, LMGs, and Assault Rifles.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nIncreases the rate of fire of SMGs, LMGs, and Assault Rifles by ##15%.##\n\nEvery ##5th## bullet fired by an SMG, LMG, or Assault Rifle without releasing the trigger consumes no ammo.",
+			["menu_sharpshooter_sc"] = "MG Specialist",
+			["menu_sharpshooter_desc_sc"] = "BASIC: ##$basic##\nThe movement penalty to accuracy is reduced by ##60%## for SMGs and LMGs.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nSMGs and LMGs fire ##15%## faster.\n\nEvery ##5th## bullet fired by an SMG or LMG without releasing the trigger consumes no ammo.",
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
@@ -852,11 +933,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
-			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\n##30%## of the enemy's headshot multiplier is applied to the enemy's body.\n\nNote: This skill is only activated by Submachine Guns, Light Machineguns, Rifles or Pistols fired in automatic mode and does not apply to Bulldozers.\n\nACE: ##$pro##\n##100%## of the enemy's headshot multiplier is applied to the enemy's body.",
+			["menu_body_expertise_beta_desc_sc"] = "BASIC: ##$basic##\nYour bullets can ##now pierce body armor.##\n\nSMGs and LMGs fired in full auto apply ##30%## of the enemy's headshot damage multiplier to their body.\n\nNote: Does not apply to Bulldozers.\n\nACE: ##$pro##\nAll guns fired in full auto apply ##100%## of the enemy's headshot damage multiplier to their body.",
 
 			--}
 		--}
-		
+
 		--[[   ENFORCER   ]]--
 		--{
 			--[[   SHOTGUNNER SUBTREE   ]]--
@@ -864,19 +945,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Underdog--
 			["menu_underdog_beta_sc"] = "Underdog",
-			["menu_underdog_beta_desc_sc"] = "BASIC: ##$basic##\nWhen three or more enemies are within ##18## meters of you, you receive a ##10%## damage bonus that lasts for ##7## seconds.\n\nACE: ##$pro##\nWhen three or more enemies are within ##18## meters of you, you also receive a ##10%## damage reduction that lasts for ##7## seconds.",																								
+			["menu_underdog_beta_desc_sc"] = "BASIC: ##$basic##\nWhen three or more enemies are within ##18## meters of you, you receive a ##10%## damage bonus that lasts for ##7## seconds.\n\nACE: ##$pro##\nWhen three or more enemies are within ##18## meters of you, you also receive a ##10%## damage reduction that lasts for ##7## seconds.",
 
-			--Shotgun CQB	
+			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##75%## faster with shotguns and flamethrowers.\n\nACE: ##$pro##\nYou reload shotguns and flamethrowers ##25%## faster.",																								
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers aim down sights ##75%## faster.\n\nACE: ##$pro##\nShotguns and Flamethrowers reload ##25%## faster.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
-			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability with all shotguns and flamethrowers is increased by ##4.##\n\nACE: ##$pro##\nYou gain ##3## extra pellets with every shotgun shot.\n\nNote: Does not apply to slugs or explosive rounds.",																																																																																																																																																																																																
+			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers gain ##4## stability.\n\nACE: ##$pro##\nShotguns fire ##3## extra pellets.\n\nNote: Does not apply to slugs or explosive rounds.",
 
-			--Pigeon Shooting	
+			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
-			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYour accuracy with shotguns and flamethrowers is increased by ##40%## while aiming down sights.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nYour range with shotguns and flamethrowers is increased by ##50%## while aiming down sights.",																																																																																																																																																																																																
+			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers are ##40%## more accurate while aiming down sights.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nShotguns and Flamethrower range is increased by ##50%## while aiming down sights.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",
@@ -887,7 +968,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_overkill_desc_sc"] = "BASIC: ##$basic##\nKills using a shotgun, flamethrower, or the OVE9000 portable saw grants them a ##50%## damage boost for ##2## seconds.\n\nACE: ##$pro##\nThe damage bonus now applies to all weapons and lasts ##10## seconds. Skill must still be activated using a shotgun or the OVE9000 portable saw.\n\nNote: Does not apply to grenade launchers.\n\nDecreases the time it takes to pull and put away shotguns and the saw by ##50%##.",
 
 			--}
-			
+
 			--[[   ARMORER SUBTREE   ]]--
 			--{
 
@@ -897,69 +978,69 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Die Hard
 			["menu_show_of_force_sc"] = "Die Hard",
-			["menu_show_of_force_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## deflection.\n\nEach point of deflection makes you take ##1%## less health damage, and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nYou gain an additional ##5## deflection.",																																																																																																																																																																																																
-			
+			["menu_show_of_force_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## deflection.\n\nEach point of deflection makes you take ##1%## less health damage, and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nYou gain an additional ##5## deflection.",
+
 			--Transporter
 			["menu_pack_mule_beta_sc"] = "Transporter",
-			["menu_transporter_beta_desc_sc"] = "BASIC: ##$basic##\nFor each ##10## armor points the bag movement penalty is reduced by ##0.5%##.\n\nACE: ##$pro##\nYou can now sprint with any bag.\n\nNote: The movement penalty from the bag still applies.",																																																																																																																																																																																																
+			["menu_transporter_beta_desc_sc"] = "BASIC: ##$basic##\nFor each ##10## armor points the bag movement penalty is reduced by ##0.5%##.\n\nACE: ##$pro##\nYou can now sprint with any bag.\n\nNote: The movement penalty from the bag still applies.",
 
 			--More Blood to Bleed--
 			["menu_iron_man_beta_sc"] = "More Blood to Bleed",
-			["menu_iron_man_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##15%## extra health.\n\nACE: ##$pro##\nYou gain an additional ##25%## extra health.",																								
+			["menu_iron_man_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##15%## extra health.\n\nACE: ##$pro##\nYou gain an additional ##25%## extra health.",
 
 			--Bullseye--
 			["menu_prison_wife_beta_sc"] = "Bullseye",
-			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nHeadshots regenerate ##5## armor once every ##3## seconds.\n\nACE: ##$pro##\nHeadshots regenerate an additional ##30## armor once every ##3## seconds.",																								
+			["menu_prison_wife_beta_desc_sc"] = "BASIC: ##$basic##\nHeadshots regenerate ##5## armor once every ##3## seconds.\n\nACE: ##$pro##\nHeadshots regenerate an additional ##30## armor once every ##3## seconds.",
 
 			--Iron Man
 			["menu_juggernaut_beta_sc"] = "Iron Man",
-			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nYour armor recovers ##10%## faster.",																																																																																																																																																																																																
-		
+			["menu_juggernaut_beta_desc_sc"] = "BASIC: ##$basic##\nUnlocks the ability to wear the Improved Combined Tactical Vest.\n\nACE: ##$pro##\nWhen you melee Shield enemies, they get knocked back by the sheer force.\n\nEnables your ranged weapons to have a chance to knock back Shield enemies when attacking them. Knock back chance is increased the higher the total damage of the weapon is.\n\nYour armor recovers ##10%## faster.",
+
 
 			--}
-			
+
 			--[[   AMMO SPECIALIST SUBTREE   ]]--
 			--{
-			
+
 			--Scavenger
 			["menu_scavenging_sc"] = "Scavenger",
-			["menu_scavenging_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##50%## increased ammo box pick up range.\n\nACE: ##$pro##\nEvery ##5th## enemy you kill will drop an extra ammo box.",																																																																																																																																																																																																
+			["menu_scavenging_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##50%## increased ammo box pick up range.\n\nACE: ##$pro##\nEvery ##5th## enemy you kill will drop an extra ammo box.",
 
 			--Bulletstorm--
 			["menu_ammo_reservoir_beta_sc"] = "Bulletstorm",
-			["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: ##$basic##\nAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to ##5## seconds after interacting with it. The more ammo players replenish, the longer the duration of the effect.\n\nACE: ##$pro##\nIncreases the base duration of the effect by up to ##15## seconds.",																								
+			["menu_ammo_reservoir_beta_desc_sc"] = "BASIC: ##$basic##\nAmmo bags placed by you grant players the ability to shoot without depleting their ammunition for up to ##5## seconds after interacting with it. The more ammo players replenish, the longer the duration of the effect.\n\nACE: ##$pro##\nIncreases the base duration of the effect by up to ##15## seconds.",
 
 			--Specialist Equipment formally Rip and Tear
 			["menu_portable_saw_beta_sc"] = "Specialist Equipment",
-			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nReduces the wear down of saw blades by ##50%.##\n\nACE: ##$pro##\nYou reload Saws, Crossbows, Bows, Grenade Launchers, and Rocket Launchers ##25%## faster.",																																																																																																																																																																																																
+			["menu_portable_saw_beta_desc_sc"] = "BASIC: ##$basic##\nReduces the wear down of saw blades by ##50%.##\n\nACE: ##$pro##\nSaws, Crossbows, Bows, Grenade Launchers, and Rocket Launchers reload ##25%## faster.",
 
 			--Extra Lead
 			["menu_ammo_2x_beta_sc"] = "Extra Lead",
-			["menu_ammo_2x_beta_desc_sc"] = "BASIC: ##$basic##\nEach ammo bag contains additional ##200%## ammunition.\n\nACE: ##$pro##\nYou can now place ##2## ammo bags instead of just one.",																								
+			["menu_ammo_2x_beta_desc_sc"] = "BASIC: ##$basic##\nEach ammo bag contains additional ##200%## ammunition.\n\nACE: ##$pro##\nYou can now place ##2## ammo bags instead of just one.",
 
 			--Rip and Tear formally Carbon Blade
 			["menu_carbon_blade_beta_sc"] = "Rip and Tear",
-			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nWhen killing an enemy with the Saw, Crossbows, Bows, Grenade Launchers, or Rocket Launchers you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",																								
+			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nKills with the Saw, Crossbows, Bows, Grenade Launchers, or Rocket Launchers you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "Fully Loaded",
-			["menu_bandoliers_desc_sc"] = "BASIC: ##$basic##\nYour total ammo capacity is increased by ##25%##.\n\nACE: ##$pro##\nYou pick up ##60%## more ammo.\n\nYou gain a ##5%## chance to get a throwable from an ammo box. This increases by an additional ##1%## every time you do not get a throwable until you get one.",
-		
+			["menu_bandoliers_desc_sc"] = "BASIC: ##$basic##\nYour total ammo capacity is increased by ##25%##.\n\nACE: ##$pro##\nYou pick up ##50%## more ammo.\n\nYou gain a ##5%## chance to get a throwable from an ammo box. This increases by an additional ##1%## every time you do not get a throwable until you get one.",
+
 			--}
 		--}
-		
+
 		--[[   TECHNICIAN   ]]--
 		--{
 			--[[   ENGINEER SUBTREE   ]]--
 			--{
-	
+
 			--Logistician
 			["menu_defense_up_beta_sc"] = "Logistician",
 			["menu_defense_up_beta_desc_sc"] = "BASIC: ##$basic##\nYou deploy and interact with all deployables ##25%## faster.\n\nACE: ##$pro##\nYou and your crew deploy and interact with all deployables ##50%## faster.",
 
-			--Nerves of Steel--	
+			--Nerves of Steel--
 			["menu_fast_fire_beta_sc"] = "Nerves of Steel",
-			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sights while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",																																																																																																																																																																																																																									
+			["menu_fast_fire_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now ##use steel sights while in bleedout.##\n\nACE: ##$pro##\nYou take ##50%## less damage while interacting with objects.",
 
 			--Engineering
 			["menu_eco_sentry_beta_sc"] = "Engineering",
@@ -970,25 +1051,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_jack_of_all_trades_beta_desc_sc"] = "BASIC: ##$basic##\nYou carry ##50%## more throwables.\n\nACE: ##$pro##\nYou can now equip a second deployable to bring with you. Pressing the ##'X'## key will allow you to toggle between deployables.\n\nThe second deployable has ##50%## less uses than normal.",
 
 			--Sentry Tower Defense--
-			["menu_tower_defense_beta_sc"] = "Tower Defense",	
-			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##66%## and allowing it to pierce through enemies and shields.\n\nACE: ##$pro##\nYou can now carry a maximum of ##2## sentry guns.\n\nSentry guns now cost ##35%## of your maximum ammo to place.",																								
-			
+			["menu_tower_defense_beta_sc"] = "Tower Defense",
+			["menu_tower_defense_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now toggle AP rounds on your sentry guns, lowering the rate of fire by ##66%## and allowing it to pierce through enemies and shields.\n\nACE: ##$pro##\nYou can now carry a maximum of ##2## sentry guns.\n\nSentry guns now cost ##35%## of your maximum ammo to place.",
+
 			--Bulletproof--
 			["menu_iron_man_sc"] = "Bulletproof",
-			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYour armor cannot be pierced.\n\nACE: ##$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to ##25%## of your maximum armor.\n\nYour armor recovers ##10%## faster.",																																																																																																																																																																																																																									
-					
+			["menu_iron_man_desc_sc"] = "BASIC: ##$basic##\nYour armor cannot be pierced.\n\nACE: ##$pro##\nWhile your armor is full, damage taken is reduced by a number of points equal to ##25%## of your maximum armor.\n\nYour armor recovers ##10%## faster.",
+
 			--}
-			
+
 			--[[   BREACHER SUBTREE   ]]--
 			--{
 
 			--Hardware Expert--
 			["menu_hardware_expert_beta_sc"] = "Hardware Expert",
-			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##20%## faster.\n\nYour drill makes ##65%## less noise. Civilians and guards are less likely to hear your drill and sound the alarm.\n\nACE: ##$pro##\nYou fix drills and saws an additional ##30%## faster.\n\nYour drills and saws are now silent. Civilians and guards have to see the drill or saw in order to get alerted.",
+			["menu_hardware_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou fix drills and saws ##20%## faster.\n\nYour drill makes ##65%## less noise.\n\nACE: ##$pro##\nYou fix drills and saws an additional ##30%## faster.\n\nYour drills and saws are now silent. Civilians and guards have to see the drill or saw in order to be alerted.",
 
 			--Danger Close
 			["menu_trip_mine_expert_beta_sc"] = "Danger Close",
-			["menu_combat_engineering_desc_sc"] = "BASIC: ##$basic##\nThe radius of trip mine explosion is increased by ##30%.##\n\nACE: ##$pro##\nYour trip mine deals ##50%## more damage.",																								
+			["menu_combat_engineering_desc_sc"] = "BASIC: ##$basic##\nThe radius of trip mine explosion is increased by ##30%.##\n\nACE: ##$pro##\nYour trip mine deals ##50%## more damage.",
 
 			--Drill Sawgeant
 			["menu_drill_expert_beta_sc"] = "Drill Sawgeant",
@@ -996,7 +1077,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Demoman--
 			["menu_more_fire_power_sc"] = "Demoman",
-			["menu_more_fire_power_desc_sc"] = "BASIC: ##$basic##\nYou can now carry ##6## shaped charges and ##6## trip mines.\n\nYou deploy shaped charges and trip mines ##20%## faster.\n\nACE: ##$pro##\nYou can now carry ##8## shaped charges and ##10## trip mines.\n\nYou deploy shaped charges and trip mines an additional ##20%## faster.",																								
+			["menu_more_fire_power_desc_sc"] = "BASIC: ##$basic##\nYou can now carry ##6## shaped charges and ##6## trip mines.\n\nYou deploy shaped charges and trip mines ##20%## faster.\n\nACE: ##$pro##\nYou can now carry ##8## shaped charges and ##10## trip mines.\n\nYou deploy shaped charges and trip mines an additional ##20%## faster.",
 
 
 			--Kickstarter
@@ -1004,21 +1085,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 
 			--}
-			
+
 			--[[  BATTLE SAPPER  SUBTREE   ]]--
 			--{
-			
-			--Rifleman
-			["menu_rifleman_sc"] = "Rifleman",
-			["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour snap to zoom is ##50%## faster with all weapons.\n\nACE: ##$pro##\nYou gain a ##30%## accuracy bonus while aiming down sights with all rifles.",		
 
-			--Aggressive Reload
-			["menu_engineering_beta_sc"] = "Aggressive Reload",
-			["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nAny killing headshot will reduce your reload time by ##25%## for ##6## seconds. Can only be triggered by rifles and SMGs set to semi-auto.\n\nACE: ##$pro##\nThe reload speed bonus increases to ##50%## and now lasts ##12## seconds.",					
-			
+
+
 			--}
 		--}
-		
+
 		--[[   GHOST   ]]--
 		--{
 			--[[   COVERT OPS SUBTREE   ]]--
@@ -1026,7 +1101,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 
 			--}
-			
+
 			--[[   COMMANDO SUBTREE   ]]--
 			--{
 
@@ -1034,9 +1109,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_insulation_beta_sc"] = "Shockproof",
 			["menu_insulation_beta_desc_sc"] = "BASIC: ##$basic##\nA Taser's shock attack has a ##15%## chance to backfire when targeted at you, knocking back the Taser in the process.\n\nACE: ##$pro##\nInteracting with an enemy Taser within ##2## seconds of him electrocuting you will counter-electrocute him, dealing ##50%## damage to his health.",
 
-			
+
 			--}
-			
+
 			--[[   SILENT KILLER SUBTREE   ]]--
 			--{
 
@@ -1048,16 +1123,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--}
 		--}
-		
+
 		--[[   FUGITIVE   ]]--
 		--{
 			--[[   GUNSLINGER SUBTREE   ]]--
 			--{
 
-		
+
 
 			--}
-			
+
 			--[[   RELENTLESS SUBTREE   ]]--
 			--{
 
@@ -1067,17 +1142,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 
 			--}
-			
+
 			--[[   BRAWLER SUBTREE   ]]--
 			--{
 
 			--Counter-Strike--
 			["menu_drop_soap_beta_sc"] = "Counter Strike",
-			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to counter attack cloakers and their kicks, knocking them down.\n\nYou take ##20%## less damage from cloaker kicks and taser shocks.\n\nACE: ##$pro##\nRanged damage against you is reduced by ##10%## while charging your melee weapon.\n\nYou take an additional ##30%## less damage from cloaker kicks and taser shocks.",																						
+			["menu_drop_soap_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now parry cloaker kicks while you have your melee weapon drawn, knocking them down.\n\nYou take ##20%## less damage from cloaker kicks and taser shocks.\n\nACE: ##$pro##\nRanged damage against you is reduced by ##10%## while charging your melee weapon.\n\nYou take an additional ##30%## less damage from cloaker kicks and taser shocks.",
 
 			--Bloodthirst--
 			["menu_bloodthirst_sc"] = "Bloodthirst",
-			["menu_bloodthirst_desc_sc"] = "BASIC: ##$basic##\nWhenever you kill an enemy with a melee attack, you will gain a ##25%## increase in reload speed for ##10## seconds.\n\nACE: ##$pro##\nEvery kill you get will increase your next melee attack damage by ##25%##, up to a maximum of ##100%.##\n\nThis effect gets reset when striking an enemy with a melee attack.",																																																																																																																																																																																																																																					
+			["menu_bloodthirst_desc_sc"] = "BASIC: ##$basic##\nWhenever you kill an enemy with a melee attack, you will gain a ##25%## increase in reload speed for ##10## seconds.\n\nACE: ##$pro##\nEvery kill you get will increase your next melee attack damage by ##25%##, up to a maximum of ##100%.##\n\nThis effect gets reset when striking an enemy with a melee attack.",
 
 
 			--}
@@ -1090,110 +1165,118 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Duck and Cover--
 		["menu_sprinter_beta_sc"] = "Duck and Cover",
-		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##10%## of your dodge every second while sprinting.\n\nYour dodge meter fills up by ##30%## of your dodge every second while on a zipline.",																								
+		["menu_sprinter_beta_desc_sc"] = "BASIC: ##$basic##\nYour stamina starts regenerating ##25%## earlier and ##25%## faster.\n\nACE: ##$pro##\nYour dodge meter fills up by ##10%## of your dodge every second while sprinting.\n\nYour dodge meter fills up by ##30%## of your dodge every second while on a zipline.",
 
 		--Sneaky Bastard--
-		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nWhile your armor is broken, dodging an attack restores ##4%## of your maximum health.",
+		["menu_jail_diet_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## point of dodge for every ##3## points of concealment under ##35## up to a maximum of ##10##\n\nACE: ##$pro##\nYou gain ##1## point of dodge for every ##1## point of concealment under ##35## up to a maximum of ##10##.\n\nWhile your armor is broken, dodging an attack restores ##6%## of your maximum health. This can only occur once every time your armor breaks.",
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "Sharpshooter",
-		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nYour weapon stability is increased with all rifles by ##4.##\n\nACE: ##$pro##\nAny killing headshot will increase your rate of fire by ##20%## for ##6## seconds. Can only be triggered by rifles and SMGs set to semi-auto.",
+		["menu_discipline_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##4## stability.\n\nACE: ##$pro##\nLethal headshots using Rifles set to semi-auto increase your rate of fire by ##20%## for ##10## seconds.",
 
-		--Kilmer--	
+		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "Kilmer",
-		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapon accuracy is increased with rifles and SMGs set to semi-auto by ##5.##\n\nACE: ##$pro##\nYou reload rifles ##25%## faster.",
+		["menu_heavy_impact_beta_desc_sc"] = "BASIC: ##$basic##\nRifles gain ##5## accuracy.\n\nACE: ##$pro##\nRifles reload ##25%## faster.",
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "Mind Blown",
-		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots deal ##70%## of the damage dealt to the closest enemy in a ##4## meter radius. Can only be triggered by rifles and SMGs set to semi-auto.\n\nFor every ##7## meters away you are from the enemy, the effect chains to an additional enemy; up to ##4## times.\n\nACE: ##$pro##\nThe radius of Mind Blown is increased by ##1## meter.\n\nFor every ##7## meters away you are from the enemy, the chaining effect deals an additional ##10%## damage; up to a total of ##110%## of the damage dealt.",
+		["menu_kilmer_desc_sc"] = "BASIC: ##$basic##\nHeadshots with Rifles set to semi-auto deal ##70%## of the damage dealt to the closest enemy in a ##4## meter radius.\n\nFor every ##7## meters away you are from the enemy, the effect chains to an additional enemy; up to ##4## times.\n\nACE: ##$pro##\nThe radius of Mind Blown is increased by ##1## meter.\n\nFor every ##7## meters away you are from the enemy, the chaining effect deals an additional ##10%## damage; up to a total of ##110%## of the damage dealt.",
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "Ammo Efficiency",
-		["menu_single_shot_ammo_return_desc_sc"] = "BASIC: ##$basic##\nGetting ##3## lethal headshots in less than ##6## seconds will grant ##1## bullet or ##3.5%## of your total ammo, whichever is higher, to your used weapon. Can only be triggered by rifles and SMGs set to semi-auto.\n\nACE: ##$pro##\nThe effect is now triggered upon landing ##2## lethal headshots, and the ammo is refunded directly into your magazine whenever possible.",
+		["menu_single_shot_ammo_return_desc_sc"] = "BASIC: ##$basic##\nGetting ##3## lethal headshots with Rifles in less than ##8## seconds will grant ##1## bullet or ##3%## of your total ammo, whichever is higher, to the Rifle.\n\nACE: ##$pro##\nThe effect is now triggered upon landing ##2## lethal headshots, and the ammo is refunded directly into your magazine whenever possible.",
+
+		--Rifleman
+		["menu_rifleman_sc"] = "Rifleman",
+		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##50%## faster.\n\nACE: ##$pro##\nRifles are ##30%## more accurate while aiming down sights.",
+
+		--Aggressive Reload
+		["menu_engineering_beta_sc"] = "Aggressive Reload",
+		["menu_engineering_beta_desc_sc"] = "BASIC: ##$basic##\nLethal headshots using Rifles set to semi-auto will increase your reload speed by ##25%## for ##10## seconds.\n\nACE: ##$pro##\nThe reload speed bonus increases to ##50%##, and can be triggered regardless of fire mode.",
 
 		--Cleaner--
 		["menu_jail_workout_sc"] = "Cleaner",
-		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nYou deal ##5%## more damage against special enemies.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases.\n\nYou deal an additional ##10%## damage against special enemies.",	
+		["menu_jail_workout_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1## additional body bag in your inventory.\n\nYou deal ##5%## more damage against special enemies.\n\nACE: ##$pro##\nYou gain the ability to place ##2## body bag cases.\n\nYou deal an additional ##10%## damage against special enemies.",
 
 		--Nimble--
 		["menu_cleaner_beta_sc"] = "Nimble",
-		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou pick all locks and handcuffs ##50%## faster.\n\nACE: ##$pro##\nYou can now ##silently crack safes by hand.##",	
-																																																																																																																																																																																																																								
+		["menu_cleaner_beta_desc_sc"] = "BASIC: ##$basic##\nYou pick all locks and handcuffs ##50%## faster.\n\nACE: ##$pro##\nYou can now ##silently crack safes by hand.##",
+
 		--Sixth Sense--
 		["menu_chameleon_beta_sc"] = "Sixth Sense",
-		["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",	
+		["menu_chameleon_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain the ability to automatically mark enemies within a ##10## meter radius around you after standing still for ##3.5## seconds.\n\nACE: ##$pro##\nYou ##gain access to all insider assets.##",
 
 		--Systems Specialist--
 		["menu_second_chances_beta_sc"] = "Systems Specialist",
-		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYour camera loop duration is increased by ##20## seconds.\n\nYou interact with all computers, hacks, cameras, and ECMs ##25%## faster.\n\nACE: ##$pro##\nIncreases the duration of marked enemies by ##100%## and you can now mark specials and guards in stealth by aiming at them with any weapon.\n\nYou interact with all computers, hacks, cameras, and ECMs an additional ##50%## faster.",	
-		
+		["menu_second_chances_beta_desc_sc"] = "BASIC: ##$basic##\nYour camera loop duration is increased by ##20## seconds.\n\nYou interact with all computers, hacks, cameras, and ECMs ##25%## faster.\n\nACE: ##$pro##\nIncreases the duration of marked enemies by ##100%## and you can now mark specials and guards in stealth by aiming at them with any weapon.\n\nYou interact with all computers, hacks, cameras, and ECMs an additional ##50%## faster.",
+
 		--ECM Specialist--
 		["menu_ecm_booster_beta_sc"] = "ECM Specialist",
-		["menu_ecm_booster_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##3## ECM jammers instead of just two.\n\nACE: ##$pro##\nYou can now place ##4## ECM jammers instead of just three.",	
-		
+		["menu_ecm_booster_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now place ##3## ECM jammers instead of just two.\n\nACE: ##$pro##\nYou can now place ##4## ECM jammers instead of just three.",
+
 		--ECM Overdrive--
 		["menu_ecm_2x_beta_sc"] = "ECM Overdrive",
-		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYour ECM jammer can ##now be used to open certain electronic doors.##\n\nYour ECM jammer and feedback duration is increased by ##25%.##\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.\n\nPagers are delayed by the ECM jammer.",	
-																																																																																																																																																																																																																																															
+		["menu_ecm_2x_beta_desc_sc"] = "BASIC: ##$basic##\nYour ECM jammer can ##now be used to open certain electronic doors.##\n\nYour ECM jammer and feedback duration is increased by ##25%.##\n\nACE: ##$pro##\nThe ECM jammer duration is increased by an additional ##25%## and the ECM feedback duration lasts ##25%## longer.\n\nPagers are delayed by the ECM jammer.",
+
 		--Evasion--
 		["menu_awareness_beta_sc"] = "Evasion",
-		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed.\n\nYour fall damage is reduced by ##75%##.\n\nACE: ##$pro##\nRun and reload - you can reload your weapons while sprinting.",																								
+		["menu_awareness_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5%## additional movement speed.\n\nYour fall damage is reduced by ##75%##.\n\nACE: ##$pro##\nRun and reload - you can reload your weapons while sprinting.",
 
 		--Moving Target--
 		["menu_dire_need_beta_sc"] = "Moving Target",
-		["menu_dire_need_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1.5%## extra movement speed for every ##3## points of concealment under ##35##, up to ##15%.##\n\nACE: ##$pro##\nYou gain ##1.5%## extra movement speed for every ##1## point of concealment under ##35##, up to ##15%.##\n\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.",																								
+		["menu_dire_need_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##1.5%## extra movement speed for every ##3## points of concealment under ##35##, up to ##15%.##\n\nACE: ##$pro##\nYou gain ##1.5%## extra movement speed for every ##1## point of concealment under ##35##, up to ##15%.##\n\nKilling an enemy from behind with guns or melee fills your dodge meter by ##75%## of your dodge.",
 
 		--Optical Illusions--
 		["menu_optic_illusions_sc"] = "Optical Illusions",
-		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nSilenced weapons gain ##1## concealment.\n\nACE: ##$pro##\nSilenced weapons gain an additional ##1## concealment.\n\nYou draw and holster silenced weapons ##25%## faster.",																								
+		["menu_optic_illusions_desc_sc"] = "BASIC: ##$basic##\nSilenced weapons gain ##1## concealment.\n\nACE: ##$pro##\nSilenced weapons gain an additional ##1## concealment.\n\nYou draw and holster silenced weapons ##25%## faster.",
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "The Professional",
-		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an extra ammo box.",																								
+		["menu_silence_expert_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain ##5## accuracy with silenced weapons.\n\nACE: ##$pro##\nSpecial enemies killed with silenced weapons drop an extra ammo box.",
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Unseen Strike",
-		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not lose any armor or health for ##3## seconds, you gain ##15%## critical hit chance for ##3## seconds.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nThe critical hit chance duration is increased to ##6## seconds.",																								
+		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance pesists for ##4## seconds after taking damage.",
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",
-		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##30%## damage when further than ##20## meters.",																								
+		["menu_hitman_beta_desc_sc"] = "BASIC: ##$basic##\nEnemies you mark take ##15%## more damage.\n\nACE: ##$pro##\nEnemies you mark take an additional ##30%## damage when further than ##20## meters.",
 
 		--Low Blow--
 		["menu_unseen_strike_beta_sc"] = "Low Blow",
-		["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##\n\nYour critical hit chance is increased by an additional ##50%## when attacking enemies from behind with guns or melee.",																								
+		["menu_unseen_strike_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##3%## critical hit chance for every ##3## points of concealment under ##35## up to a maximum of ##30%.##\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nYou gain a ##3%## critical hit chance for every ##1## point of concealment under ##35## up to a maximum of ##30%.##\n\nYour critical hit chance is increased by an additional ##50%## when attacking enemies from behind with guns or melee.",
 
 		--Equilibrium--
 		["menu_equilibrium_beta_sc"] = "Equilibrium",
-		["menu_equilibrium_beta_desc_sc"] = "BASIC: ##$basic##\nYou and your crew's weapon stability with pistols is increased by ##4.##\n\nACE: ##$pro##\nDecreases the time it takes to draw and holster pistols by ##100%.##",																								
+		["menu_equilibrium_beta_desc_sc"] = "BASIC: ##$basic##\nYou and your crew's weapon stability with pistols is increased by ##4.##\n\nACE: ##$pro##\nYou draw and holster pistols ##100%## faster.",
 
 		--Gun Nut--
 		["menu_dance_instructor_sc"] = "Gun Nut",
-		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of Pistols by ##20%##.\n\nACE: ##$pro##\nYou gain a ##15%## increased rate of fire with pistols.\n\nYour pistols can ##now pierce body armor.##",																								
+		["menu_dance_instructor_desc_sc"] = "BASIC: ##$basic##\nTightens the hipfire accuracy of Pistols by ##20%##.\n\nACE: ##$pro##\nPistols fire ##15%## faster.\n\nPistols ##now pierce body armor.##",
 
 		--Over Pressurized/Gunfighter--
 		["menu_gun_fighter_sc"] = "Gunfighter",
-		["menu_gun_fighter_desc_sc"] = "BASIC: ##$basic##\nYou reload pistols ##5%## faster.\n\nThe movement penalty to accuracy is reduced by ##40%## for Pistols.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nYou reload pistols an additional ##25%## faster.",																								
+		["menu_gun_fighter_desc_sc"] = "BASIC: ##$basic##\nPistols reload ##5%## faster.\n\nThe movement penalty to accuracy is reduced by ##40%## for Pistols.\n\nThe movement penalty to accuracy is determined by stability.\n\nACE: ##$pro##\nPistols reload an additional ##25%## faster.",
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
-		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nYou gain ##8## stability with Akimbo weapons.\n\nACE: ##$pro##\nYou gain an additional ##8## stability with akimbo weapons, and you also carry ##25%## more total ammo for them.",																																																																																																																																																																																																																																		
+		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nAkibmo weapons gain ##8## stability.\n\nACE: ##$pro##\nAkimbo weapons gain an additional ##8## stability and ##25%## more total ammo capacity.",
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
-		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##10%## accuracy boost for ##5## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##10## seconds, and all pistol hits refresh the duration.",																																																																																																																																																																																																																																		
+		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##10%## accuracy boost for ##5## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##10## seconds, and all pistol hits refresh the duration.",
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "Trigger Happy",
-		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants them a ##10%## damage boost for ##5## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##10## seconds, and all pistol hits refresh the duration.",																								
-				
+		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants them a ##10%## damage boost for ##5## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##10## seconds, and all pistol hits refresh the duration.",
+
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "Running from Death",
-		["menu_nine_lives_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##25%## faster for ##10## seconds after getting up.\n\nACE: ##$pro##\nYou reload and swap weapons ##25%## faster for ##10## seconds after getting up.",																																																																																																																																																																																																																																		
+		["menu_nine_lives_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##25%## faster for ##10## seconds after reviving.\n\nACE: ##$pro##\nYou gain a ##20%## damage reduction for ##10## seconds after reviving.\n\nYour weapons are instantly reloaded after reviving.",
 
 		--Undying--
 		["menu_running_from_death_beta_sc"] = "Undying",
-		["menu_running_from_death_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##100%## increase to bleedout health.\n\nACE: ##$pro##\nYou gain an additional ##100%## increase to bleedout health.\n\nYou may use your primary weapon while in bleedout.",																																																																																																																																																																																																																																		
+		["menu_running_from_death_beta_desc_sc"] = "BASIC: ##$basic##\nYou gain a ##100%## increase to bleedout health.\n\nACE: ##$pro##\nYou gain an additional ##100%## increase to bleedout health.\n\nYou may use your primary weapon while in bleedout.",
 
 		--What Doesn't Kill You Only Makes You Stronger--
 		["menu_what_doesnt_kill_beta_sc"] = "What Doesn't Kill",
@@ -1201,27 +1284,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Haunt--
 		["menu_haunt_sc"] = "Haunt",
-		["menu_haunt_desc_sc"] = "BASIC: ##$basic##\nKilling an enemy within ##18## meters has a ##5%## chance to spread panic for each down you are closer to custody.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nACE: ##$pro##\nEnemy panic chance is increased by an additional ##15%## at all times.",																																																																																																																																																																																																																																		
+		["menu_haunt_desc_sc"] = "BASIC: ##$basic##\nKilling an enemy within ##18## meters has a ##5%## chance to spread panic for each down you are closer to custody.\n\nPanic makes enemies go into short bursts of uncontrollable fear.\n\nACE: ##$pro##\nEnemy panic chance is increased by an additional ##15%## at all times.",
 
 		--Messiah--
 		["menu_pistol_beta_messiah_sc"] = "Messiah",
-		["menu_pistol_beta_messiah_desc_sc"] = "BASIC: ##$basic##\nWhile in bleedout, killing an enemy will allow you to revive yourself.\n\nYou only have ##1## charge which is replenished when leaving custody.\n\nACE: ##$pro##\nYou can be downed ##1## additional time before going into custody for the first time.\n\nMessiah now has infinite charges, but has a ##120## second cooldown. Kills while downed reduce the cooldown by ##10## seconds.",																																																																																																																																																																																																																																		
+		["menu_pistol_beta_messiah_desc_sc"] = "BASIC: ##$basic##\nWhile in bleedout, killing an enemy will allow you to revive yourself.\n\nYou only have ##1## charge which is replenished when leaving custody.\n\nACE: ##$pro##\nYou can be downed ##1## additional time before going into custody for the first time.\n\nMessiah now has infinite charges, but has a ##120## second cooldown. Kills while downed reduce the cooldown by ##10## seconds.",
 
 		--Martial Arts--
 		["menu_martial_arts_beta_sc"] = "Martial Arts",
-		["menu_martial_arts_beta_desc_sc"] = "BASIC: ##$basic##\nYou take ##50%## less damage from all melee attacks because of training.\n\nACE: ##$pro##\nYou are ##50%## more likely to knock down enemies with a melee strike because of training.",																																																																																																																																																																																																																																		
+		["menu_martial_arts_beta_desc_sc"] = "BASIC: ##$basic##\nYou take ##50%## less damage from all melee attacks because of training.\n\nACE: ##$pro##\nYou are ##50%## more likely to knock down enemies with a melee strike because of training.",
 
 		--Pumping Iron--
 		["menu_steroids_beta_sc"] = "Pumping Iron",
-		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing and charge melee weapons ##20%## faster.\n\nACE: ##$pro##\nYou swing and charge melee weapons an additional ##30%## faster.",																																																																																																																																																																																																																																		
+		["menu_steroids_beta_desc_sc"] = "BASIC: ##$basic##\nYou swing and charge melee weapons ##20%## faster.\n\nACE: ##$pro##\nYou swing and charge melee weapons an additional ##30%## faster.",
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "Frenzy",
-		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nYou start with and cannot heal above ##25%## of your maximum health.\n\nYou gain ##20## deflection but ##you can no longer heal##.\n\nEach point of deflection makes you take ##1%## less health damage, and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nYou gain an additional ##25## deflection, and healing is instead reduced by ##75%##.",																																																																																																																																																																																																																																		
+		["menu_wolverine_beta_desc_sc"] = "BASIC: ##$basic##\nYou start with and cannot heal above ##25%## of your maximum health.\n\nYou gain ##20## deflection but ##you can no longer heal##.\n\nEach point of deflection makes you take ##1%## less health damage, and is applied after other forms of damage reduction.\n\nACE: ##$pro##\nYou gain an additional ##25## deflection, and healing is instead reduced by ##75%##.",
 
 		--Berserker--
 		["menu_frenzy_sc"] = "Berserker",
-		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##150%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##75%## more damage with firearms."																																																																																																																																																																																																																																	
+		["menu_frenzy_desc_sc"] = "BASIC: ##$basic##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##150%## more melee and saw damage.\n\nACE: ##$pro##\nThe lower your health, the more damage you do.\n\nWhen your health is below ##50%##, you will do up to ##75%## more damage with firearms."
 
 	})
 end)
@@ -1229,13 +1312,13 @@ end)
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_dodge"] = "Dodge",
-	
+
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by ##25%.##\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_4_desc_sc"] = "You gain ##+1## increased concealment.\n\nWhen wearing armor, your movement speed is ##15%## less affected.\n\nYou gain ##45%## more experience when you complete days and jobs.\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_6_desc_sc"] = "Unlocks a Throwable Case equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nIncreases your ammo pickup to ##125%## of the normal rate.\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_8_desc_sc"] = "Increases your doctor bag interaction speed by ##20%.##\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
-	
+
 		--Crook--
 		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYour armor is increased by ##15%## for ballistic vests.",
 		["menu_deck6_3_desc_sc"] = "Your dodge is increased by an additional ##5## points for ballistic vests.",
@@ -1261,12 +1344,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_5_desc_sc"] = "You store ##60%## more health.",
 		["menu_deck5_7_desc_sc"] = "You gain ##120## temporary health when you are revived.\n\nYou gain an additional ##5## dodge points.",
 		["menu_deck5_9_desc_sc"] = "While you have temporary health, you gain ##20## deflection and ##20%## additional movement speed.\n\nEach point of deflection makes you take ##1%## less health damage, and is applied after other forms of damage reduction.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
-		
+
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_5_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_7_desc_sc"] = "Every shot you fire with your guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.",
-		["menu_deck2_9_desc_sc"] = "You gain an additional ##10%## more health.\n\nYou gain ##25%## of your maximum health when getting up.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck2_9_desc_sc"] = "You gain an additional ##10%## more health.\n\nYou gain ##25%## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\nIncreases your shout distance by ##25%##.\n\nNote: Crew perks do not stack.",
 		["menu_deck1_5_desc_sc"] = "You and your crew gain ##5%## more health.\n\nNote: Crew perks do not stack.",
@@ -1315,15 +1398,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## health every second.",
 		["menu_deck11_9_desc_sc"] = "Every stack increases your movement speed by ##5%##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
-		
-		--Open your mind--	
+
+		--Open your mind--
 		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by ##5## points.",
-		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.",			
+		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.",
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by an additional ##5## points.",
-		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equipped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
-		
+		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equipped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+
 		--THIS IS WAR BABY--
-		["menu_deck14_1_desc_sc"] = "Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##2400##.\n\nHysteria Stacks:\nIncoming damage is reduced by ##1## point for every ##300## stacks of Hysteria. Hysteria Stacks decay by ##300## every ##8## seconds.",	
+		["menu_deck14_1_desc_sc"] = "Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##2400##.\n\nHysteria Stacks:\nIncoming damage is reduced by ##1## point for every ##300## stacks of Hysteria. Hysteria Stacks decay by ##300## every ##8## seconds.",
 		["menu_deck14_5_desc_sc"] = "Changes the decay of your Hysteria Stacks to ##240## every ##8## seconds.",
 		["menu_deck14_7_desc_sc"] = "Incoming damage is now reduced by ##1## point for every ##240## stacks of Hysteria.",
 		["menu_deck14_9_desc_sc"] = "Hysteria stacks are ##50%## more potent for you.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
@@ -1343,39 +1426,39 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck17_9_desc_sc"] = "For every ##5## health gained during the injector effect while at maximum health, the recharge time of the injector is reduced by ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--10 feet higher--
-		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##50%##.\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",
+		["menu_deck18_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nUnlocks and equips the throwable ##Smoke Bomb.##\n\nWhen deployed, the smoke bomb creates a smoke screen that lasts for ##12## seconds. While standing inside the smoke screen, you and your allies regenerate armor ##100%## faster. Any enemies that stand in the smoke will see their accuracy reduced by ##75%##.\n\nThe Smoke Bomb has a ##40## second cooldown, but killing enemies will reduce this cooldown by ##1## second.",
 		["menu_deck18_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck18_5_desc_sc"] = "Dodging an attack reduces the smoke bomb's cooldown by ##1## second.",
 		["menu_deck18_7_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
-		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##35%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##40%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n##30%## of damage taken is applied over time (##8## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##400%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\nAll of your ##armor is converted to 50% health.##\n\n##Deflection is disabled while using this perk deck.##",	
-		["menu_deck19_3_desc_sc"] = "The cooldown of your flask will be reduced by ##1## second for each enemy you kill.",	
+		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n##30%## of damage taken is applied over time (##8## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##300%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\nAll of your ##armor is converted to 50% health.##\n\n##Deflection is disabled while using this perk deck.##",
+		["menu_deck19_3_desc_sc"] = "The cooldown of your flask will be reduced by ##1## second for each enemy you kill.",
 		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any remaining damage-over-time will be negated.",
 		["menu_deck19_7_desc_sc"] = "When your health is below ##50%##, the cooldown of your flask will be reduced by ##6## seconds for each enemy you kill.",
-		["menu_deck19_9_desc_sc"] = "You gain ##25%## of your maximum health when getting up.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck19_9_desc_sc"] = "You gain ##25%## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--it's not a war crime if they're not people--
 		["menu_deck20_1_desc_sc"] = "Unlocks and equips the ##Gas Dispenser.##\n\nTo activate the Gas Dispenser you need to look at another allied unit within a ##18## meter radius with clear line of sight and press the throwable key to tag them.\n\nEach enemy you or the tagged unit kills will now heal you for ##15## health and the tagged unit for ##7.5## health.\n\nEnemies you kill will extend the duration by ##2## seconds.\n\nThe effect will last for a duration of ##12## seconds and has a cooldown of ##60## seconds.",
 		["menu_deck20_3_desc_sc"] = "Enemies you kill will now reduce the cooldown timer by ##2## seconds.",
-		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills reduce damage taken by ##0.5## points up to a maximum of ##20##.\n\nThis effect will last until the perk deck item goes out of cooldown.",		
-		["menu_deck20_7_desc_sc"] = "Each enemy you or the tagged unit kills reduce damage taken by an additional ##0.5## points up to a maximum of ##20##.\n\nThis effect will last until the perk deck item goes out of cooldown.",	
+		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills reduce damage taken by ##0.5## points up to a maximum of ##20##.\n\nThis effect will last until the perk deck item goes out of cooldown.",
+		["menu_deck20_7_desc_sc"] = "Each enemy you or the tagged unit kills reduce damage taken by an additional ##0.5## points up to a maximum of ##20##.\n\nThis effect will last until the perk deck item goes out of cooldown.",
 		["menu_deck20_9_desc_sc"] = "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by ##2## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
-		
+
 		--Biker--
 		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##2## health. This can only occur once every ##2## seconds.",
 		["menu_deck16_3_desc_sc"] = "You regenerate ##10## armor every ##3## seconds.",
 		["menu_deck16_5_desc_sc"] = "Every ##25%## armor missing reduces cooldown to kill regen by ##0.5## seconds.",
 		["menu_deck16_7_desc_sc"] = "You now regenerate ##20## armor every ##2.5## seconds.\n\nKilling an enemy with a melee weapon instantly triggers this effect and causes the next armor regen tick to occur ##1## second sooner.",
 		["menu_deck16_9_desc_sc"] = "Every ##25%## armor missing increases the number of health gained from kills by ##2##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
-		
+
 		--Yakuza--
-		["menu_deck12_1_desc_sc"] = "The lower your health, the faster your dodge meter will passively fill up. When your health is below ##50%##, your dodge meter fills by up to ##8%## of your dodge every second.\n\nYour dodge is increased by ##5## points.",	
+		["menu_deck12_1_desc_sc"] = "The lower your health, the faster your dodge meter will passively fill up. When your health is below ##50%##, your dodge meter fills by up to ##8%## of your dodge every second.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck12_3_desc_sc"] = "The lower your health the more your dodge meter is filled when you kill an enemy. When your health is below ##50%##, your meter fills by up to ##50%## of your dodge.",
 		["menu_deck12_5_desc_sc"] = "The lower your health, the less damage you take. When your health is below ##50%##, you will take up to ##20%## less damage.",
 		["menu_deck12_7_desc_sc"] = "The lower your health the more your dodge meter is filled when you kill an enemy in melee. When your health is below ##50%##, your meter fills by up to ##50%## of your dodge.\n\nThis effect stacks with Hebi Irezumi.",
-		["menu_deck12_9_desc_sc"] = "Once per down, if you would be downed you instead survive with ##1## health and you regain ##50## armor.\n\nNote: This effect does not apply to, nor is it refreshed by, downs caused by cloaker kicks and taser shocks.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",	
+		["menu_deck12_9_desc_sc"] = "Once per down, if you would be downed you instead survive with ##1## health and you regain ##50## armor.\n\nNote: This effect does not apply to, nor is it refreshed by, downs caused by cloaker kicks and taser shocks.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Hacker--
 		["menu_deck21_1_desc_sc"] = "Unlocks and equips the ##Pocket ECM Device##.\n\nWhile in game you can use the throwable key to activate the Pocket ECM Device.\n\nActivating the Pocket ECM Device before the alarm is raised will trigger the jamming effect, disabling all electronics and pagers for a ##12## second duration.\n\nActivating the Pocket ECM Device after the alarm is raised will trigger the feedback effect, granting a chance to stun enemies on the map every second for a ##12## second duration.\n\nThe Pocket ECM Device has ##1## charge with a ##80## second cooldown timer, but each kill you perform will shorten the cooldown timer by ##3## seconds.",
@@ -1386,12 +1469,766 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Blank Deck",
-		["menu_st_spec_22"] = "Blank Deck",		
+		["menu_st_spec_22"] = "Blank Deck",
 		["menu_st_spec_0_desc"] = "This deck has no benefits at all.",
 		["menu_st_spec_00"] = "Wildcard Deck",
-		["menu_st_spec_23"] = "Wildcard Deck",				
+		["menu_st_spec_23"] = "Wildcard Deck",
 		["menu_st_spec_00_desc"] = "This deck only has the shared skills.",
 		["menu_deck0_1"] = "",
-		["menu_deck0_1_desc"] = "",		
+		["menu_deck0_1_desc"] = "",
 	})
+end)
+
+
+-- ResMod english.json
+Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
+	LocalizationManager:add_localized_strings({
+		["menu_es_boost"] = "Boost",
+		["menu_es_crew"] = "Crew",
+		["menu_es_personal"] = "Personal",
+		["menu_es_bad"] = "Bad",
+		["menu_es_other"] = "Other",
+		["RestorationPDTHHudNeeded"] = "PD:TH HUD REBORN IS REQUIRED!",
+		["menu_paygrade"] = "Pay grade: ",
+		["menu_diffgrade"] = "Difficulty: ",
+		["menu_utility_radial_menu_name"] = "Utility Radial Menu",
+		["menu_utility_radial_menu_desc"] = "Open the Utility Menu",
+
+		["res_credits"] = "Restoration Mod Credits",
+		["res_credits_help"] = "View the credits for RESTORATION MOD.",
+
+		["Warning_overhaul_title"] = "WARNING: Game closing to prevent save corruption.",
+		["dialog_show_overhaul_dialog"] = "You are DISABLING the Complete Overhaul. It is typically NOT RECOMMENDED to do this, and you should instead REMOVE the mod from your mods folder if you intend not to use the Overhaul actively.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
+		["dialog_enable_overhaul_dialog"] = "You are ENABLING the Complete Overhaul. The Overhaul should typically remain ON at all times, and only be disabled by removing the mod from your mods folder.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
+
+		["res_saveboost"] = "HOLD $BTN_INTERACT TO BOOST TO LEVEL 100",
+
+		["RestorationModOptionsButtonTitleID"] = "Restoration Mod Options",
+		["RestorationModOptionsButtonDescID"] = "Restoration Mod's Options.",
+		["RestorationModHUDOptionsButtonTitleID"] = "Restoration HUD & UI Options",
+		["RestorationModHUDOptionsButtonDescID"] = "Restoration's HUD & UI Options.",
+		["RestorationModOTHEROptionsButtonTitleID"] = "Extra Restoration Mod Options",
+		["RestorationModOTHEROptionsButtonDescID"] = "Extra Restoration Mod options.",
+		["RestorationModUIOptionsButtonTitleID"] = "Alpha UI",
+		["RestorationModUIOptionsButtonDescID"] = "Alpha UI options.",
+		["RestorationModTimeOfDayTitleID"] = "New + Randomized Time-of-days",
+		["RestorationModTimeOfDayDescID"] = "Allows you to customize the time-of-day on certain heists.",
+
+		["restoration_level_data_unknown"] = "TIME UNKNOWN, LOCATION UNKNOWN",
+		["RestorationModEnv_BanksTitleID"] = "Branch Bank",
+		["RestorationModEnv_BanksDescID"] = "Select an environment for Branch Bank.",
+		["RestorationModEnv_RVD1TitleID"] = "Reservoir Dogs Day 1",
+		["RestorationModEnv_RVD1DescID"] = "Select an environment for  Reservoir Dogs Day 1.",
+		["RestorationModEnv_RVD2TitleID"] = "Reservoir Dogs Day 2",
+		["RestorationModEnv_RVD2DescID"] = "Select an environment for  Reservoir Dogs Day 2.",
+		["RestorationModEnv_FSD1TitleID"] = "Firestarter Day 1",
+		["RestorationModEnv_FSD1DescID"] = "Select an environment for Firestarter Day 1.",
+		["RestorationModEnv_PBR2TitleID"] = "Birth of Sky",
+		["RestorationModEnv_PBR2DescID"] = "Select an environment for Birth of Sky.",
+		["RestorationModEnv_CJ2TitleID"] = "The Bomb: Dockyard",
+		["RestorationModEnv_CJ2DescID"] = "Select an environment for The Bomb: Dockyard.",
+		["RestorationModEnv_UnderPassTitleID"] = "Transport Underpass",
+		["RestorationModEnv_UnderPassDescID"] = "Select an environment for Transport Underpass.",
+		["RestorationModEnv_MallCrasherTitleID"] = "Mallcrasher",
+		["RestorationModEnv_MallCrasherDescID"] = "Select an environment for Mallcrasher.",
+		["RestorationModEnv_Mia_1TitleID"] = "Hotline Miami Day 1",
+		["RestorationModEnv_Mia_1DescID"] = "Select an environment for Hotline Miami Day 1.",
+		["RestorationModEnv_FSD3TitleID"] = "Firestarter Day 3",
+		["RestorationModEnv_FSD3DescID"] = "Select an environment for Firestarter Day 3.",
+		["RestorationModEnv_WDD1NTitleID"] = "Watchdogs Day 1 (Night)",
+		["RestorationModEnv_WDD1NDescID"] = "Select an environment for Watchdogs Day 1 (Night).",
+		["RestorationModEnv_WDD1DTitleID"] = "Watchdogs Day 1 (Day)",
+		["RestorationModEnv_WDD1DDescID"] = "Select an environment for Watchdogs Day 1 (Day).",
+		["RestorationModEnv_WDD2DTitleID"] = "Watchdogs Day 2 (Day)",
+		["RestorationModEnv_WDD2DDescID"] = "Select an environment for Watchdogs Day 2 (Day).",
+		["RestorationModEnv_Alex3TitleID"] = "Rats Day 3",
+		["RestorationModEnv_Alex3DescID"] = "Select an environment for Rats Day 3.",
+		["RestorationModEnv_BigTitleID"] = "Big Bank",
+		["RestorationModEnv_BigDescID"] = "Select an environment for Big Bank.",
+		["RestorationModEnv_FSTitleID"] = "Four Stores",
+		["RestorationModEnv_FSDescID"] = "Select an environment for Four Stores.",
+		["RestorationModEnv_UkraTitleID"] = "Ukrainian Job",
+		["RestorationModEnv_UkraDescID"] = "Select an environment for Ukrainian Job.",
+		["RestorationModEnv_KosugiTitleID"] = "Shadow Raid",
+		["RestorationModEnv_KosugiDescID"] = "Select an environment for Shadow Raid Job.",
+		["RestorationModEnv_PetaTitleID"] = "Goat Simulator Day 1",
+		["RestorationModEnv_PetaDescID"] = "Select an environment for Goat Simulator Day 1.",
+		["RestorationModEnv_FRIENDTitleID"] = "Scarface Mansion",
+		["RestorationModEnv_FRIENDDescID"] = "Select an environment for Scarface Mansion.",
+		["RestorationModINFOHUDOptionsButtonTitleID"] = "Buff Tracker",
+		["RestorationModINFOHUDOptionsButtonDescID"] = "Displays icons to reflect information about active skills on the left side of the screen. Does not require Alpha UI to be enabled.",
+		["RestorationModInfo_HudTitleID"] = "Enable Buff Tracker",
+		["RestorationModInfo_HudDescID"] = "Enables or disables the entire buff tracking UI.",
+		["RestorationModInfo_SizeTitleID"] = "Icon Size",
+		["RestorationModInfo_SizeDescID"] = "Controls the size of icons on the buff tracker.",
+		["RestorationModInfo_CountTitleID"] = "Row Count",
+		["RestorationModInfo_CountDescID"] = "Controls the number of rows the buff tracker displays before adding a new column.",
+		["RestorationModInfo_single_shot_fast_reloadTitleID"] = "Aggressive Reload",
+		["RestorationModInfo_single_shot_fast_reloadDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_ammo_efficiencyTitleID"] = "Ammo Efficiency",
+		["RestorationModInfo_ammo_efficiencyDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_bloodthirst_reload_speedTitleID"] = "Bloodthirst",
+		["RestorationModInfo_bloodthirst_reload_speedDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_bullet_stormTitleID"] = "Bullet Storm",
+		["RestorationModInfo_bullet_stormDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_revive_damage_reductionTitleID"] = "Combat Medic",
+		["RestorationModInfo_revive_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_desperadoTitleID"] = "Desperado",
+		["RestorationModInfo_desperadoDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_grinderTitleID"] = "Histamine (Grinder)",
+		["RestorationModInfo_grinderDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_infiltratorTitleID"] = "Life Drain (Infiltrator)",
+		["RestorationModInfo_infiltratorDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_long_dis_reviveTitleID"] = "Inspire",
+		["RestorationModInfo_long_dis_reviveDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_messiahTitleID"] = "Messiah",
+		["RestorationModInfo_messiahDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_overkill_damage_multiplierTitleID"] = "Overkill",
+		["RestorationModInfo_overkill_damage_multiplierDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_revived_damage_reductionTitleID"] = "Painkillers",
+		["RestorationModInfo_revived_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_first_aid_damage_reductionTitleID"] = "Quick Fix",
+		["RestorationModInfo_first_aid_damage_reductionDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_rogueTitleID"] = "Killer Instinct (Rogue)",
+		["RestorationModInfo_rogueDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_increased_movement_speedTitleID"] = "Running From Death",
+		["RestorationModInfo_increased_movement_speedDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_headshot_fire_rate_multTitleID"] = "Sharpshooter",
+		["RestorationModInfo_headshot_fire_rate_multDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_trigger_happyTitleID"] = "Trigger Happy",
+		["RestorationModInfo_trigger_happyDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_dmg_multiplier_outnumberedTitleID"] = "Underdog",
+		["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModInfo_unseen_strikeTitleID"] = "Unseen Strike",
+		["RestorationModInfo_unseen_strikeDescID"] = "Enables or disables tracking of this specific skill.",
+		["RestorationModAltLastDownColorTitleID"] = "Alternative Last Down Color Grading",
+		["RestorationModAltLastDownColorDescID"] = "Switches the last down color grading to color_sin_classic.",
+		["RestorationModNoBleedoutTiltTitleID"] = "Disable Bleedout Camera Tilt",
+		["RestorationModNoBleedoutTiltDescID"] = "Disables the camera tilt that happens while in bleedout.",
+		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
+		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
+		["RestorationModQuietRainTitleID"] = "Quiet Rain",
+		["RestorationModQuietRainDescID"] = "Makes the rain quieter on rainy heists.",
+
+		["default"] = "Default",
+		["random"] = "Random",
+		["mellowday"] = "Mellow Day",
+		["xbox_bank"] = "E3 2013",
+		["bank_day"] = "Improved Default",
+		["env_trailer_bank"] = "Trailer Bank",
+		["rvd1_alt1"] = "Nightlife",
+		["rvd1_alt2"] = "Pink Smog",
+		["rvd2_alt"] = "Overcast",
+		["fsd1_eve"] = "Evening",
+		["bos_alt"] = "Pink Skies",
+		["dockyard_alt"] = "Night Shift",
+		["underpass_foggyday"] = "Foggy Day",
+		["mall_alt"] = "Afternoon Shopping",
+		["hlm_morn"] = "Morning Call",
+		["funny_and_epic_synthwave_very_eighties"] = "Retro",
+		["brightnight"] = "Bright Night",
+		["docks"] = "Docks",
+		["bank_green"] = "Beta Green",
+		["cloudy_day"] = "Cloudy Day",
+		["shadowraid_day"] = "Shadow Raid Daytime",
+		["shadowraiud_darker"] = "Shadow Raid Darker",
+		["friend_pink"] = "Pink Sunset",
+		["friend_night"] = "Miami Night",
+		["off"] = "Off",
+		["windowofoppurtunity"] = "Window Of Opportunity",
+		["wheresthevan"] = "Where's The Van",
+		["menu_jukebox_heist_ponr"] = "Point Of No Return",
+		["RestorationModPaintingsTitleID"] = "Unused Art Gallery Paintings",
+		["RestorationModPaintingsDescID"] = "Enable or disable the ability for unused paintings to spawn on Art Gallery. As host only.",
+		["RestorationModMainHUDTitleID"] = "Alpha HUD ON/OFF",
+		["RestorationModMainHUDDescID"] = "Enable or disable the alpha HUD entirely.",
+		["RestorationModWaypointsTitleID"] = "Alpha Waypoints",
+		["RestorationModWaypointsDescID"] = "Enable or disable Alpha Waypoints.",
+		["RestorationModAssaultPanelTitleID"] = "Alpha Assault Tape",
+		["RestorationModAssaultPanelDescID"] = "Enable or disable the Alpha Assault Tape.",
+		["RestorationModAltAssaultTitleID"] = "Early Alpha Assault Indicator",
+		["RestorationModAltAssaultDescID"] = "Enable or disable the Early Alpha Assault Indicator. Replaces tape.",
+		["RestorationModObjectivesPanelTitleID"] = "Alpha Objectives Panel",
+		["RestorationModObjectivesPanelDescID"] = "Enable or disable the Alpha Objectives Panel.",
+		["RestorationModPresenterTitleID"] = "Alpha Presenter",
+		["RestorationModPresenterDescID"] = "Enable or disable the Alpha Presenter, which is used for loot secure and objective reminder dialogue.",
+		["RestorationModInteractionTitleID"] = "Alpha Interaction Meter",
+		["RestorationModInteractionDescID"] = "Enable or disable the Alpha Interaction meter.",
+		["RestorationModStealthTitleID"] = "Alpha Stealth Meter",
+		["RestorationModStealthDescID"] = "Enable or disable the Alpha Stealth meter.",
+		["RestorationModDownTitleID"] = "Alpha Downed Timer",
+		["RestorationModDownDescID"] = "Enable or disable the Alpha Downed timer.",
+		["RestorationModBagTitleID"] = "Alpha Bag Panel",
+		["RestorationModBagDescID"] = "Enable or disable the Alpha Bag panel.",
+		["RestorationModHostageTitleID"] = "Hide Hostage Panel",
+		["RestorationModHostageDescID"] = "If enabled, hides the hostage panel when an assault begins, if assault tape or early alpha indicator are on.",
+		["RestorationModDifficultyMarkersTitleID"] = "Pre-Release Difficulty Markers",
+		["RestorationModDifficultyMarkersDescID"] = "Enable or disable the Pre-Release Difficulty Markers.",
+		["RestorationModStaminaIndicatorTitleID"] = "Debug Stamina Indicator",
+		["RestorationModStaminaIndicatorDescID"] = "Enable or disable the Debug Stamina Indicator.",
+		["RestorationModBlackScreenTitleID"] = "Restoration Blackscreen",
+		["RestorationModBlackScreenDescID"] = "Enable or disable the Restoration Blackscreen.",
+		["RestorationModLoadoutsTitleID"] = "Alpha Loadouts",
+		["RestorationModLoadoutsDescID"] = "Enable or disable the Alpha Loadouts screen.",
+		["RestorationModDistrictTitleID"] = "CRIME.NET District Descriptions",
+		["RestorationModDistrictDescID"] = "Enable or disable district descriptions in CRIME.NET.  Not gameplay accurate.",
+		["RestorationModSCOptionsButtonTitleID"] = "Restoration Overhaul Options",
+		["RestorationModSCOptionsButtonDescID"] = "Restoration Overhaul Options",
+		["RestorationModSCTitleID"] = "Complete Overhaul (DEBUG)",
+		["RestorationModSCDescID"] = "Enable or disable Restoration's complete game overhaul. Toggling this option will automatically exit your game to prevent save corruption.",
+		["RestorationModHolidayTitleID"] = "Holiday Effects",
+		["RestorationModHolidayDescID"] = "Enable or disable Holiday effects for the overhaul.",
+		["RestorationModNotifyTitleID"] = "Feature Notification",
+		["RestorationModNotifyDescID"] = "Enable or disable the notification for this feature.",
+		["RestorationModPauseTitleID"] = "Alpha Pause Menu",
+		["RestorationModPauseDescID"] = "Enable or disable the Alpha Pause Menu.",
+
+		["menu_support"] = "Overhaul Guide/Support",
+		["menu_support_help"] = "View the guide for Restoration Mod's Overhaul, get support, find crew mates.",
+		["menu_manual_header"] = "Placeholder Text",
+		["hud_instruct_mask_on_alpha"] = "Hold $BTN_USE_ITEM to put on your mask",
+		["hud_assault_alpha"] = "POLICE ASSAULT",
+		["hud_loot_secured_title"] = "LOOT SECURED!",
+		["debug_none"] = "OBJECTIVE",
+
+		["restoration_level_data_welcome_to_the_jungle_1"] = "6:24 PM, 'Overkill MC' Bikers HQ",
+		["restoration_level_data_welcome_to_the_jungle_1_night"] = "1:32 AM, 'Overkill MC' Bikers HQ",
+		["restoration_level_data_welcome_to_the_jungle_2"] = "6:00 PM, Villa Vivaldi",
+		["restoration_level_data_framing_frame_1"] = "11:30 PM, Capitol Art Gallery",
+		["restoration_level_data_framing_frame_2"] = "12:30 PM, Abandoned Trainyard",
+		["restoration_level_data_framing_frame_3"] = "2:20 AM, Highrise Apartments",
+		["restoration_level_data_election_day_1"] = "12:37 PM, Pier 39",
+		["restoration_level_data_election_day_2"] = "8:10 AM, Storage Warehouse",
+		["restoration_level_data_election_day_3"] = "Hi! If you see this string during gameplay, report it to Restoration! Thank you!",
+		["restoration_level_data_election_day_3_skip1"] = "4:25 PM, Capitol Savings Bank",
+		["restoration_level_data_election_day_3_skip2"] = "3:25 PM, Capitol Savings Bank",
+		["restoration_level_data_watchdogs_1"] = "4:10 PM, Meat Truck",
+		["restoration_level_data_watchdogs_1_res"] = "9:10 PM, Meat Truck",
+		["restoration_level_data_watchdogs_2"] = "12:25 AM, Almendia Dockyard",
+		["restoration_level_data_watchdogs_2_res"] = "12:25 AM, Almendia Dockyard",
+		["restoration_level_data_watchdogs_1_night"] = "11:10 PM, Meat Truck",
+		["restoration_level_data_watchdogs_2_day"] = "6:05 PM, Almendia Dockyard",
+		["restoration_level_data_watchdogs_3_res"] = "12:20 AM, Washington Justice Bridge",
+		["restoration_level_data_alex_1"] = "3:30 AM, Quiet Hill",
+		["restoration_level_data_alex_2"] = "5:55 AM, Projects",
+		["restoration_level_data_alex_3"] = "7:20 AM, Washington Justice Bridge",
+		["restoration_level_data_alex_1_res"] = "3:30 AM, Quiet Hill",
+		["restoration_level_data_alex_2_res"] = "5:55 AM, Projects",
+		["restoration_level_data_alex_3_res"] = "7:20 AM, Washington Justice Bridge",
+		["restoration_level_data_firestarter_1"] = "9:25 AM, Private Airport",
+		["restoration_level_data_firestarter_1_res"] = "9:25 AM, Private Airport",
+		["restoration_level_data_firestarter_2"] = "10:05 AM, FBI Branch Office",
+		["restoration_level_data_firestarter_2_res"] = "10:05 AM, FBI Branch Office",
+		["restoration_level_data_firestarter_3"] = "12:15 PM, Harvest & Trustee Bank",
+		["restoration_level_data_firestarter_3_res"] = "12:15 PM, Harvest & Trustee Bank",
+		["restoration_level_data_ukrainian_job"] = "2:50 PM, Precious Things",
+		["restoration_level_data_ukrainian_job_res"] = "2:50 PM, Precious Things",
+		["restoration_level_data_jewelry_store"] = "2:50 PM, Precious Things",
+		["restoration_level_data_four_stores"] = "1:20 PM, Storefronts",
+		["restoration_level_data_mallcrasher"] = "12:50 PM, Shield Mall",
+		["restoration_level_data_nightclub"] = "8:00 PM, The Tasteful Club",
+		["restoration_level_data_branchbank"] = "12:15 PM, Harvest & Trustee Bank",
+		["restoration_level_data_escape_cafe"] = "Escape!",
+		["restoration_level_data_escape_park"] = "Escape!",
+		["restoration_level_data_escape_cafe_day"] = "Escape!",
+		["restoration_level_data_escape_park_day"] = "Escape!",
+		["restoration_level_data_escape_street"] = "Escape!",
+		["restoration_level_data_escape_overpass"] = "Escape!",
+		["restoration_level_data_escape_garage"] = "Escape!",
+		["restoration_level_data_escape_overpass_night"] = "Escape!",
+		["restoration_level_data_safehouse"] = "12:00 PM, The Safehouse",
+		["restoration_level_data_arm_fac"] = "9:30 AM, Harbour",
+		["restoration_level_data_arm_par"] = "2:25 PM, Downtown District",
+		["restoration_level_data_arm_hcm"] = "2:15 PM, Downtown District",
+		["restoration_level_data_arm_cro"] = "12:55 PM, McCarthy and James Street Intersection",
+		["restoration_level_data_arm_und"] = "8:15 PM, Underpass",
+		["restoration_level_data_arm_for"] = "12:25 PM, Armadillo Train",
+		["restoration_level_data_family"] = "11:25 AM, Gioelli di Famiglia",
+		["restoration_level_data_family_res"] = "11:25 AM, Gioelli di Famiglia",
+		["restoration_level_data_big"] = "2:15 PM, Benevolent Bank",
+		["restoration_level_data_big_res"] = "2:15 PM, Benevolent Bank",
+		["restoration_level_data_roberts"] = "8:47 AM, Robert's Bank of Savings & Trust",
+		["restoration_level_data_roberts_v2"] = "8:47 AM, Robert's Bank of Savings & Trust",
+		["restoration_level_data_mia_1"] = "9:30 PM, Commissar's Motel",
+		["restoration_level_data_mia_2"] = "11:45 AM, Commissar's Apartment Complex",
+		["restoration_level_data_mia2_new"] = "11:45 AM, Commissar's Apartment Complex",
+		["restoration_level_data_kosugi"] = "4:00 AM, Terminal Warehouse",
+		["restoration_level_data_gallery"] = "11:45 PM, Capitol Art Gallery",
+		["restoration_level_data_hox_1"] = "10:30 AM, Underground Courthouse Pathway",
+		["restoration_level_data_hox_2"] = "4:10 PM, J. Edgar Hoover Building",
+		["restoration_level_data_pines"] = "5:52 PM, Deep in the Forest",
+		["restoration_level_data_mus"] = "8:15 PM, McKendrick Museum of Ancient Art",
+		["restoration_level_data_crojob2"] = "6:10 PM, Port of Washington",
+		["restoration_level_data_crojob3"] = "3:35 PM, Forest Outskirts",
+		["restoration_level_data_crojob3_night"] = "8:35 PM, Forest Outskirts",
+		["restoration_level_data_cage"] = "7:55 PM, Teuer Automotives",
+		["restoration_level_data_hox_3"] = "11:55 PM, FBI Safehouse",
+		["restoration_level_data_rat"] = "7:55 AM, Quiet Hill",
+		["restoration_level_data_shoutout_raid"] = "9:00 AM, Terminal Warehouse",
+		["restoration_level_data_arena"] = "9:00 PM, GENSEC Arena",
+		["restoration_level_data_kenaz"] = "8:00 PM, Las Vegas Strip - Golden Grin Casino",
+		["restoration_level_data_jolly"] = "4:00 PM, Los Angeles - Disaster Zone",
+		["restoration_level_data_red2"] = "2:15 PM, DOWNTOWN - FIRST WORLD BANK",
+		["restoration_level_data_dinner"] = "8:01 AM, Slaughterhouse District - Ambush!",
+		["restoration_level_data_nail"] = "0:00 PM, Quiet Hill",
+		["restoration_level_data_haunted"] = "??:?? PM, The 'Safe' House",
+		["restoration_level_data_pbr"] = "4:40 AM, Nevada - Black Ridge Facility",
+		["restoration_level_data_pbr2"] = "TIME UNKNOWN, Z-170 'ZEUS' - Murkywater Cargo Plane",
+		["restoration_level_data_cane"] = "3:15 PM, Santa's Workshop",
+		["restoration_level_data_peta"] = "12:00 PM, Downtown District",
+		["restoration_level_data_peta2"] = "5:43 PM, Wrecked barn",
+		["restoration_level_data_man"] = "6:00 PM, The District - Abandoned Building",
+		["restoration_level_data_pal"] = "12:00 PM, Suburbs - Bodhi's Pool Repair",
+		["restoration_level_data_short1_stage1"] = "TIME UNKNOWN, LOCATION CLASSIFIED",
+		["restoration_level_data_short1_stage2"] = "TIME UNKNOWN, LOCATION CLASSIFIED",
+		["restoration_level_data_short2_stage1"] = "TIME UNKNOWN, LOCATION CLASSIFIED",
+		["restoration_level_data_short2_stage2"] = "TIME UNKNOWN, LOCATION CLASSIFIED",
+		["restoration_level_data_short2_stage2b"] = "TIME UNKNOWN, LOCATION CLASSIFIED",
+		["restoration_level_data_dark"] = "2:21 AM, Hidden Trainyard",
+		["restoration_level_data_mad"] = "TIME UNKNOWN, Somewhere Over Russia...",
+		["restoration_level_data_born"] = "10:15 AM, OVERKILL MC Club & Bar",
+		["restoration_level_data_chew"] = "5:25 PM, Outside D.C. - Moving Train!",
+		["restoration_level_data_flat"] = "4:02 PM, Projects - Chavez's Crib",
+		["restoration_level_data_chill"] = "1:00 PM, The Safehouse",
+		["restoration_level_data_chill_combat"] = "1:00 PM, The Safehouse - Police Raid!",
+		["restoration_level_data_help"] = "DON'T TOUCH THAT DIAL, WE'RE JUST GETTING STARTED",
+		["restoration_level_data_friend"] = "4:30 PM, Miami - El Fureidis Mansion",
+		["restoration_level_data_fish"] = "7:30 PM, Outside New York City - 'Lethe' Yacht",
+		["restoration_level_data_spa"] = "7:00 PM, New York City - Ambush!",
+		["restoration_level_data_moon"] = "11:00 PM, Murica Mall",
+		["restoration_level_data_run"] = "11:00 AM, Uptown - Double Crossed",
+		["restoration_level_data_glace"] = "10:45 PM, Green Bridge - Southbound",
+		["restoration_level_data_dah"] = "1:30 AM, 22nd Floor - Garnet Group Skyscraper",
+		["restoration_level_data_hvh"] = "TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK. TICK, TOCK.",
+		["restoration_level_data_wwh"] = "TIME UNKNOWN, Somewhere in Alaska...",
+		["restoration_level_data_rvd1"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
+		["restoration_level_data_rvd2"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
+		["restoration_level_data_brb"] = "6:53 PM, New York, BROOKLYN - Harvest & Trustee Branch Bank",
+		["restoration_level_data_des"] = "TIME CLASSIFIED, Nevada - Henry's Rock",
+		["restoration_level_data_sah"] = "TIME CLASSIFIED, Massachusetts - Shacklethorne Estate",
+		["restoration_level_data_tag"] = "12:43 AM, J. Edgar Hoover Building",
+		["restoration_level_data_bph"] = "TIME CLASSIFIED, Fort Clatsop Prison",
+		["restoration_level_data_nmh"] = "8:24 PM, Mercy Hospital - Isolation Ward",
+		["restoration_level_data_vit"] = "1:07 PM, Washington D.C. - The White House",
+		["restoration_level_data_mex"] = "TIME CLASSIFIED, United States - Southern Border",
+		["restoration_level_data_mex_cooking"] = "TIME CLASSIFIED, Mexico - Coyopa Compound",
+		["restoration_level_data_bex"] = "TIME CLASSIFIED, Mexico - San Martín Bank",
+		["restoration_level_data_pex"] = "TIME CLASSIFIED, Mexico - Police Station",
+		["restoration_level_data_wetwork"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
+		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
+		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
+		["restoration_level_data_lvl_friday"] = "5:00 PM, Shield Mall",
+
+		["heist_greattrain_name"] = "Time Window",
+		["heist_easystore_name"] = "Twenty-Four Seven",
+		["heist_sin_villa_name"] = "SCORE: Villa Vivaldi",
+		["heist_dragon_name"] = "Stonefist",
+		["heist_jkl_base_name"] = "Jackal's Safehouse",
+		["heist_junger_name"] = "Distorted Angels",
+		["heist_deep_name"] = "Deep Six",
+		["heist_blood_name"] = "Body/Prison",
+		["heist_crystal_name"] = "Slaves of Fear",
+		["heist_gold_name"] = "Remains of Nothing",
+		["heist_titanium_name"] = "Turf War",
+		["heist_airport_name"] = "Dead Reckoning",
+		["heist_platinum_name"] = "Surface Tension",
+		["heist_cursed_name"] = "Green Harvest",
+		["heist_holly_name"] = "Blockbuster Night",
+
+		["heist_platinum_brief"] = "stir the boat",
+		["heist_jackal_surface_tension_name"] = "OMNIA Research Vessel SN-XR-LETHE",
+		["heist_jackal_surface_tension_brief"] = "PLACEHOLDER",
+
+		["heist_vivinite_name"] = "Zero Day",
+
+		["heist_contact_shatter"] = "Jackal & Raze",
+		["heist_contact_akashic"] = "Nico",
+
+		["menu_contacts_shatter"] = "CRIMENET Affiliates",
+		["heist_contact_shatter_description"] = "Jackal & Raze. CRIMENET's asset and fighting force handlers. They have a healthy hatred for OMNIA Technologies and GenSec.",
+		["heist_contact_jackal_description"] = "Jackal started out working for GenSec, but quit after an incident with human trafficking, tied to GenSec and OMNIA.\n\nNow, he works for CRIMENET, bringing the fight to their front door.",
+		["heist_contact_raze_description"] = "Raze. Jackal's partner in crime, and a skilled fighter.\n\nBorn in 1995, she escaped her family at the age of 15, and ran to the life of crime, never looking back.",
+		["heist_contact_akashic_description"] = "Formerly a high ranking lieutenant working under Hector Morales, Nicolas 'Nico' René is now commanding the remnants of the Sinaloan Cartel operating in the USA.\nTheir numbers are small, and the larger Colombian cartel has no intention of helping them -- or repairing the relationship with CRIMENET.\n\nAbsorbing various smaller gangs operating on the east coast and allying with CRIMENET, he'll provide his resources in exchange for their services.",
+
+		["bm_msk_shatter_true"] = "Raze",
+		["bm_msk_shatter_true_desc"] = "The mask of Raze, Jackal's partner in crime. The Phoenix represents rebirth. Each death bringing about new life. Raze believes that the mask is her 'lucky charm', and often doesn't work without it.",
+
+		["menu_l_global_value_veritas"] = "Restoration Mod",
+		["menu_l_global_value_veritas_desc"] = "This is a Restoration Mod item!",
+
+		["menu_alex_1_zipline"] = "Bag Zipline",
+
+		["menu_asset_wet_intel"] = "Intel",
+		["menu_asset_risk_murky"] = "Murkywater Mercenaries",
+		["menu_asset_risk_bexico"] = "Policía Federal",
+		["menu_asset_risk_zombie"] = "zOmbIe rEpsondERs",
+		["menu_asset_wet_boat"] = "Boat",
+		["menu_asset_wet_boat_desc"] = "Buy an additional boat drop-off and escape",
+
+		["bm_msk_canada"] = "Hockey Hell",
+		["bm_msk_canada_desc"] = "Leave nothing behind -- even when the heat arrives, you fight for what you want, when you want it. (even if it's a thermobaric explosive.)",
+		["bm_msk_jsr"] = "Mrs. Graffiti",
+		["bm_msk_jsr_desc"] = "Made by a true artist. Cleaning up graffiti is like burning a book, yeah?\n\nArt is art, respect that.",
+		["bm_msk_jsrf"] = "Mr. Graffiti",
+		["bm_msk_jsrf_desc"] = "Graffiti tells tales. Being an artist in the cold city can be a painful story.\n\nGraffiti tells these tales like a book. You'd best read them.",
+		["bm_msk_courier_stash"] = "The Lootbag",
+		["bm_msk_courier_stash_desc"] = "In case you wanna grab a few extra hundred dollar bills, and you don't have the room in your pockets, this mask will do the trick.",
+
+		["bm_msk_female_mask"] = "Standard Issue Mask (Female)",
+		["bm_msk_female_mask_desc"] = "A standard issue mask, provided by CRIMENET.\n\nMade of a dense material, it's not flimsy, but it's not easy to wear, either.",
+		["bm_msk_female_mask_blood"] = "Recovered Mask (Female)",
+		["bm_msk_female_mask_blood_desc"] = "A standard issue mask, provided by CRIMENET.\n\nMade of a dense material, it's not flimsy, but it's not easy to wear, either.\n\nThis was found in the aftermath of a botched robbery on an OMNIA depot, and all the remained were bodies & blood.\n\nThe crew's last message before going dark, was ''ERIT PREMIUM SANGUINE SANCTUM''.",
+		["bm_msk_female_mask_clown"] = "Rosie",
+		["bm_msk_female_mask_clown_desc"] = "A standard issue mask, provided by CRIMENET.\n\nMade of a dense material, it's not flimsy, but it's not easy to wear, either.\n\nThis was worn by a heister by the alias of Rosie, though she now wears a new mask these days.\n\nCaught on footage, she was seen taking down a whole squad of SWAT's totally unarmed.",
+		["bm_msk_male_mask"] = "Standard Issue Mask (Male)",
+		["bm_msk_male_mask_desc"] = "A standard issue mask, provided by CRIMENET.\n\nMade of a dense material, it's not flimsy, but it's not easy to wear, either.",
+		["bm_msk_male_mask_blood"] = "Recovered Mask (Male)",
+		["bm_msk_male_mask_blood_desc"] = "A standard issue mask, provided by CRIMENET.\n\nMade of a dense material, it's not flimsy, but it's not easy to wear, either.\n\nThis was found in the aftermath of a botched robbery on an OMNIA depot, and all the remained were bodies & blood.\n\nThe crew's last message before going dark, was ''ERIT PREMIUM SANGUINE SANCTUM''.",
+		["bm_msk_male_mask_clown"] = "Cross",
+		["bm_msk_male_mask_clown_desc"] = "A standard issue mask, provided by CRIMENET.\n\nMade of a dense material, it's not flimsy, but it's not easy to wear, either.\n\nThis was worn by a heister by the alias of Cross, though he now wears a new mask these days.\n\nA talented marksman, he once took out four armored transports in the span of 5 seconds.",
+
+		["bm_msk_twister_mask"] = "Mystery Man",
+		["bm_msk_twister_mask_desc"] = "Whomever is behind this mask, is a mystery.\n\nIt could be somebody unknown, or somebody you've known all along.",
+		["bm_msk_voodoo_mask"] = "Black Magic",
+		["bm_msk_voodoo_mask_desc"] = "Found in the jungle ruins of a bombing raid, this mask withstood the elements and carnage, and now is known as an omen.\n\nIt will most likely find you when you need it most, and imbue the luck to withstand destruction.\n\nOne must ask, though -- at what cost?",
+
+		["bm_msk_f1"] = "X1 Helmet",
+		["bm_msk_f1_desc"] = "When speeding down highways & burning rubber through crowded streets, make sure you wear protection.\n\nIt might protect you from a nasty fall -- but definitely not bullets.",
+		["bm_msk_f1_b"] = "X1 Helmet (Clean)",
+		["bm_msk_f1_b_desc"] = "When speeding down highways & burning rubber through crowded streets, make sure you wear protection.\n\nIt might protect you from a nasty fall -- but definitely not bullets.\n\nThis is a duplicate of the helmet, without those brand stickers on it, found in a lockup with a bunch of fancy vehicles.\n\nKeep this handy, and you might get the chance to drive one of your own.",
+		["bm_msk_sweettooth"] = "Sweet Tooth",
+		["bm_msk_sweettooth_desc"] = "Sweet Tooth, real name Marcus 'Needles' Kane, is a character from the Twisted Metal video game series. Sweet Tooth is best known for being a killer clown that drives a combat ice cream truck.\n\nIt\'s said that he once had escaped from a mental institution. Now he leads a life of crime.",
+
+		["bm_msk_wolf_stone"] = "Stonecold Wolf",
+		["bm_msk_wolf_stone_desc"] = "Wolf's original mask from when he first tipped over the edge, acting out crimes from his favourite media. The mask was thought lost in a robbery, inspired by the video game 'Hyper Heisting.'\n\nIn the wake of the gang's early jobs, the mask resurfaced, and was brought to the safehouse by one of Bain's associates.\n\nThe mask's original pattern has partially worn away over time, perhaps mirroring the decline in Wolf's mental stability.",
+
+		["bm_msk_dallas_aged"] = "Aged Dallas",
+		["bm_msk_dallas_aged_desc"] = "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.",
+		["bm_msk_chains_aged"] = "Aged Chains",
+		["bm_msk_chains_aged_desc"] = "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.",
+		["bm_msk_hoxton_aged"] = "Aged Hoxton",
+		["bm_msk_hoxton_aged_desc"] = "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.",
+		["bm_msk_wolf_aged"] = "Aged Wolf",
+		["bm_msk_wolf_aged_desc"] = "You & your crew found these masks in the strange Egyptian box at Henry's Rock. The box itself was later intercepted in transit, and the remaining contents delivered to you.\n\nSomething about these masks... it's unusual. There's no information on where they possibly came from.\n\nJackal suggests that it might be a practical joke, or some kind of attempt to freak the crew out.\n\nAs far as you can tell, though? These seem very, very old.",
+
+		["bm_msk_beef_dallas"] = "Beeef Dallas",
+		["bm_msk_beef_dallas_desc"] = "The Crew used these masks when doing the Slaughterhouse heist.\n\nDallas chose to keep the design similar to his iconic clown mask.",
+		["bm_msk_beef_chains"] = "Beeef Chains",
+		["bm_msk_beef_chains_desc"] = "The Crew used these masks when doing the Slaughterhouse heist.\n\nChains, being the enforcer type, wanted an intimidating animal for his design. What's more intimidating than a friggin' dinosaur?",
+		["bm_msk_beef_hoxton"] = "Beeef Hoxton",
+		["bm_msk_beef_hoxton_desc"] = "The Crew used these masks when doing the Slaughterhouse heist.\n\nHoxton had a simple list for his mask:\n- Protective!\n- Efficient!\n- Stylish!\n\nAnd thus, this mask was born.",
+		["bm_msk_beef_wolf"] = "Beeef Wolf",
+		["bm_msk_beef_wolf_desc"] = "The Crew used these masks when doing the Slaughterhouse heist.\n\nWolf's design was inspired by one of his favourite character designs from his game developer days.",
+
+		["bm_msk_vyse_dallas"] = "The Source",
+		["bm_msk_vyse_dallas_desc"] = "Vyse stood face to face with the devil of pepper extracts and survived, this mask was made out of the bones of that devil.",
+		["bm_msk_vyse_chains"] = "Childs Play",
+		["bm_msk_vyse_chains_desc"] = "Although Vyse stole more money and gold than Fort Knox could hold, he had a decency to show some of share some of the contents with sick children.\n\nBain reportedly visited some of those children, and this mask is their thanks for Vyse.",
+		["bm_msk_vyse_hoxton"] = "The Three Stooges",
+		["bm_msk_vyse_hoxton_desc"] = "They say when you mess up, you should face the pain, and try again. Not Vyse, though. Every time he fucked up, he got slapped by the hands of former military, and kept going. Not even Larry, Curley, and Moe could take such a beating.",
+		["bm_msk_vyse_wolf"] = "Bear Grylls",
+		["bm_msk_vyse_wolf_desc"] = "Vyse challenged Bear Grylls to a piss drinking completion... Vyse won, and Mr. Grylls used his survival skills to help make this mask.",
+
+		["bm_msk_secret_old_hoxton"] = "Secret Hoxton Reborn",
+		["bm_msk_secret_old_hoxton_desc"] = "Hoxton left the Old Country to get his Payday in the new. When Bain first told him about the Secret, he fancied the idea of going after ancient items for their potential value, never really caring whether or not the legendary power Bain talked about was real or not.",
+
+		["bm_msk_secret_clover"] = "Secret Clover",
+		["bm_msk_secret_clover_desc"] = "When Bain told Clover about the secret, she was skeptical; Bain's talk of ancient objects with mythical power always seemed farfetched, but when she came face to face with the assembly from the three boxes, all doubt left her mind.",
+
+		["bm_msk_secret_dragan"] = "Secret Dragan",
+		["bm_msk_secret_dragan_desc"] = "Being an ex-cop, Dragan had an eye for evidence, and when Bain showed him his research for the secret he was prepared to hunt for ancient objects of power.",
+
+		["bm_msk_secret_bonnie"] = "Secret Bonnie",
+		["bm_msk_secret_bonnie_desc"] = "Bonnie, upon being told of the secret by Bain, took a huge swig of her favourite whiskey and was raring to go fuck Kataru up.",
+
+		["bm_msk_secret_syndey"] = "Secret Sydney",
+		["bm_msk_secret_syndey_desc"] = "When told of the secret by Bain, Sydney disbelieved tales of ancient powers. Regardless the opportunity to challenge an unknown yet overarching authority was enough to get her onboard.",
+
+		["bm_msk_secret_richard"] = "Secret Richard",
+		["bm_msk_secret_richard_desc"] = "Rumours circulating the criminal underworld talk of the killer who inspired Jacket; a killer who met a grizzly end at the hands of an unknown organization. When Jacket was told of the secret by Bain, he later appeared with what seemed to be the mask of his greatest inspiration.",
+
+		["bm_all_seeing"] = "The All Seeing Anchor",
+		["bm_all_seeing_desc"] = "A horrifying vision, a nightmarish sight.\n\nThe powers that be have seen you, and ensure you are rewarded for your contributions.",
+
+		["bm_msk_classic_helmet"] = "The Classic Enforcer",
+		["bm_msk_classic_helmet_desc"] = "A gift given by an ex-SWAT enforcer. Before retiring, he found Jackal... and offered only the gear he had access to, to aid in Jackal's efforts.\n\nHis curious offer was due to one reason: he saw himself, what OMNIA was doing in secret. But he himself, refused to divulge those secrets, and left soon after, never to be seen again.\n\nJackal sent these helmets forward. A reward for your contributions.",
+
+		["bm_cube"] = "devmask.model",
+		["bm_cube_desc"] = "Push the placeholder, we'll get around to it.",
+
+		["bm_j4"] = "J-4",
+		["bm_j4_desc"] = "Jackal's mask. Or at least, a recreation.\n\nThe real mask is important to Jackal, and some say the real thing is loaded with sensitive data.\n\nThis recreation, however, the system running the display is very rudimentary, and only seeks to replicate the real thing.\n\nA gift for your efforts.",
+
+
+		["bm_msk_finger"] = "The Griefer",
+		["bm_msk_finger_desc"] = "The Griefer is a mythical beast, known to have been a part of this world long ago. The beast deliberately chased and harassed common folk in villages and towns, hunting them down in unsuspecting ways. The Griefer derived pleasure from these acts and was a threat to the peace until the King's men finally found him and destroyed him.",
+
+		["bm_msk_instinct"] = "The Intuition",
+		["bm_msk_instinct_desc"] = "This mask belonged to a mysterious warrior from far away place. He walked the lands, guided by his intuition, hunting evil forces across the world. He ventured to dungeons and slew thousands of evil beings he came across. In the end, he found peace, knowing that the next generation would continue as he did.",
+
+		["bm_msk_unforsaken"] = "The Unforsaken",
+		["bm_msk_unforsaken_desc"] = "This legendary mask is a token of our appreciation of our community's dedication, understanding and continued support. From us in the OVERKILL crew - we salute you.\n\nThrough thick and thin, let those helmets fly.",
+
+		["bm_msk_chains_halloween"] = "Shatter Shield",
+		["bm_msk_chains_halloween_desc"] = "Being a mercenary for hire, you see lots of pain, and death. Even if you feel invincible, unstoppable... sometimes it all comes back to haunt you.\n\nOn a lovely, bright and snowy October afternoon in 2008, Chains was sleeping in. Fresh off an assassination job on behalf of Murkywater, he did the tough stuff, got paid, and got a sweet hotel room to sleep in.\n\nFor the first time in years, he suffered a nightmare. He can't recall what it was, but he woke up, paralyzed, and a figure that was more skeleton than man standing over him, and he was unable to move.\n\nEach time he held his gun after that day, the following nights would each be restless, and terrible.\n\nEventually, he had to say, 'enough.' Got out of the merc-for-hire business, and saw a therapist. Had medication to help. Life was good for a year...\n\nExactly a year later, on October 31st, 2009, Murkywater was sure that a man out to fix his life would expose secrets, try to hurt the company. They couldn't have that.\n\nChains was thrust into the criminal life to protect himself, becoming a soldier once more.\n\nThis time, though? It was different. The nightmares and sleep paralysis didn't return. He wasn't out to hurt others.\n\nThis time, it was about protecting himself.",
+
+		["bm_msk_dallas_halloween"] = "Monster's Reflection",
+		["bm_msk_dallas_halloween_desc"] = "Spend so many years constructing false identities, lies, and stories, you start to lose yourself.\n\nYou start bouncing from person to person, picking up traits and quirks from your various friends, lovers, and flings. Maybe they start to blend together, and you feel like an amalgamation.\n\nDallas woke one October morning, walking to the mirror -- hair dyed an ugly blonde and patchy shave. A tacky suit, stained with sweat from restless nightmares. A throbbing headache after a weekend of jumping from liquor to liquor.\n\nStaring at himself, all he could think is that he was more like a Frankenstein's monster than a person: just bits and pieces convincing enough to make it further in his criminal career.\n\nIt was a turning point, but sometimes, he still can't shake the feeling that his pieces aren't all his.",
+
+		["bm_msk_hoxton_halloween"] = "Halloween Dream",
+		["bm_msk_hoxton_halloween_desc"] = "One of Hoxton's Halloween memories was traveling to the states one October with his extended relatives, off to see NYC as a sort of special getaway.\n\nHe was never a big fan of candy, but loved the pumpkin pie being served at his relative's party.\n\nWhile wandering the halls outside the party hall, he saw a big vault door, and trinkets and riches of all sorts being wheeled in.\n\nSince then, he always was fond of hitting places during holidays.",
+
+		["bm_msk_wolf_halloween"] = "Devil's Cry",
+		["bm_msk_wolf_halloween_desc"] = "On a cold October evening in 2010, Wolf was still recovering from the financial fallout from his company going defunct.\n\nLaying alone in a motel room, he thought about his family, how he felt he failed them, and how he might never see them again -- a whole country away and stranded after his last lifeline cut him away.\n\nHaving spent the last of his savings on a trip to the states, in a bid to secure enough money to start fresh with a new home, he was crushed.\n\nWeeks later, bouncing from friends places, motels, and shelters, he received the first call from his significant other in weeks.\n\nThe relationship was no more. 'I don't see this working out well any longer.'\n\nMaybe there was a fresh start.\n\nMaybe there was a new profession to pursue.",
+
+
+		["pattern_jkl_patt01_title"] = "Jackals",
+		["pattern_jkl_patt02_title"] = "Company",
+		["material_jkl_matt01_title"] = "Fighting Feathers",
+		["material_jkl_matt02_title"] = "Veritas Gold",
+
+		["menu_scores"] = "SCORES",
+
+		["RestorationModColorOption"] = "Change the color of this HUD element to your own liking",
+		["RestorationModColorsOptionsButtonTitleID"] = "Color settings",
+		["RestorationModColorsOptionsButtonDescID"] = "Change the color of many HUD objects.",
+		["RestorationModObjectivesBGTitleID"] = "Objectives background",
+		["RestorationModObjectivesFGTitleID"] = "Objectives foreground",
+		["RestorationModAssaultBGTitleID"] = "Assault background",
+		["RestorationModAssaultFGTitleID"] = "Assault foreground",
+		["RestorationModNoReturnTitleID"] = "Point of no return text",
+		["RestorationModTimerTextTitleID"] = "Heist timer text",
+		["RestorationModAssaultEndlessBGTitleID"] = "Captain assault background",
+		["RestorationModAssaultSurvivedBGTitleID"] = "Survived Assault background",
+		["RestorationModStaminaTitleID"] = "Stamina",
+		["RestorationModStaminaThresholdTitleID"] = "Stamina threshold",
+		["RestorationModBagBitmapTitleID"] = "Bag",
+		["RestorationModBagTextTitleID"] = "Bag text",
+		["RestorationModNoReturnTextTitleID"] = "No point of return text",
+		["RestorationModHostagesTextTitleID"] = "Hostages text",
+		["RestorationModHintTextTitleID"] = "Hint text",
+		["RestorationModMaskOnTextTitleID"] = "Mask on text",
+		["RestorationModStopAllBotsTitleID"] = "Stop All Bots",
+		["RestorationModStopAllBotsDescID"] = "Stops all bots by holding the stop bot key.",
+		["RestorationModPONRTrackTitleID"] = "Point Of No Return Music",
+		["RestorationModPONRTrackDescID"] = "Changes the music track on Pro-Jobs when the point of no return starts.",
+		["RestorationModPONRTracksTitleID"] = "Point Of No Return Music",
+		["RestorationModPONRTracksDescID"] = "Select the music track for Pro-Jobs when the point of no return starts.",
+		["RestorationModMusicShuffleTitleID"] = "Music Shuffle",
+		["RestorationModMusicShuffleDescID"] = "Changes the music track after assault ends.",
+		["RestorationModScaleTitleID"] = "HUD scaling",
+		["RestorationModScaleDescID"] = "Changes HUD scaling. May require a restart.",
+		["RestorationModSizeOnScreenTitleID"] = "HUD size on screen",
+		["RestorationModSizeOnScreenDescID"] = "Changes the size of the HUD on the screen. May require a restart.",
+		["RestorationModTeammateTitleID"] = "Alpha teammates panel",
+		["RestorationModTeammateDescID"] = "Enable or disable the alpha teammates panel, which displays you & your team's statistics.",
+		["RestorationModHeistTimerTitleID"] = "Alpha heist timer",
+		["RestorationModHeistTimerDescID"] = "Enable or disable the alpha heist timer.",
+		["RestorationModMaskOnTitleID"] = "Alpha mask on text",
+		["RestorationModMaskOnDescID"] = "Enable or disable the alpha mask on text.",
+		["RestorationModNameLabelsTitleID"] = "Alpha name labels",
+		["RestorationModNameLabelsDescID"] = "Enable or disable the alpha name labels.",
+		["RestorationModHintTitleID"] = "Alpha hint panel",
+		["RestorationModHintDescID"] = "Enable or disable the alpha hint panel.",
+		["RestorationModExtraOptionsButtonTitleID"] = "More HUD options",
+		["RestorationModExtraOptionsButtonDescID"] = "Even more options!",
+		["RestorationModRealAmmoTitleID"] = "Real Ammo",
+		["RestorationModRealAmmoDescID"] = "The total ammo counter ignores ammo currently in your weapon.",
+		["RestorationModStealthOrigPosTitleID"] = "Vanilla Detection Meter Positioning",
+		["RestorationModStealthOrigPosDescID"] = "Places the detection meter in the same area as Vanilla.",
+		["RestorationModLowerBagTitleID"] = "Lowered carried bag popup",
+		["RestorationModLowerBagDescID"] = "Lowers the pop-up that appears when grabbing a bag.",
+		["RestorationModAssaultStyleTitleID"] = "Assault Panel Style",
+		["RestorationModAssaultStyleDescID"] = "Allows you to choose the style of assault panel you want to use.",
+		["RestorationModCasingTickerTitleID"] = "Alpha Casing Tape",
+		["RestorationModCasingTickerDescID"] = "Enable or disable the Alpha Casing Tape (Requires Alpha Tape Style).",
+		["RestorationModCustodyTitleID"] = "Alpha Custody",
+		["RestorationModCustodyDescID"] = "Enable or disable alpha custody panel.",
+		["RestorationModCrimenetTitleID"] = "Alpha CRIMENET (WIP)",
+		["RestorationModCrimenetDescID"] = "Enable or disable alpha CRIMENET.",
+		["RestorationModProfileTitleID"] = "Alpha Profile Box",
+		["RestorationModProfileDescID"] = "Enable or disable alpha Profile Box.",
+		["RestorationModNewsfeedTitleID"] = "Alpha Newsfeed",
+		["RestorationModNewsfeedDescID"] = "Enable or disable alpha Newsfeed.",
+		["RestorationModUppercaseNamesTitleID"] = "Uppercase names",
+		["RestorationModUppercaseNamesDescID"] = "Enable or disable uppercase names.",
+		["RestorationModPeerColorsTitleID"] = "Alpha Peer Colors",
+		["RestorationModPeerColorsDescID"] = "Enable or disable the alpha peer colors.",
+		["alpha_assault"] = "Early Alpha Corner",
+		["beta_assault"] = "Alpha Tape",
+
+		["menu_ingame_manual"] = "Overhaul Guide",
+		["menu_ingame_manual_help"] = "View the guide for Restoration's Overhaul.",
+
+		["menu_asset_wet_add_saw"] = "Additional Saw",
+		["menu_asset_wet_add_saw_desc"] = "Buy an additional saw",
+		["menu_rush_asset_sentrygun"] = "Sentry Package",
+		["menu_rush_asset_sentrygun_desc"] = "Buy a Sentry Package",
+
+		["heist_junker_name"] = "Doghouse",
+		["heist_junker_brief"] = "This is a job for Vlad. Apparently, a botched trade deal has left his men & the goods they brought in a bad situation -- Feds are nearly on the case. We have a vehicle ready to get you to the location, and then you can provide backup. We'll secure support chopper, and get you & the essentials out of there.\n\nThis should be short, but don't underestimate the police. Bring your fighting gear.",
+		["heist_junk_name"] = "Watchful Eyes",
+		["heist_junk_brief"] = "The construction area is just ahead. Cops haven't arrived yet but they'll be here shortly. Vlad's guys will give you backup but they likely won't last too long.\n\nReports are that there's a meth lab on site apparently, so feel free to make a little extra money if you can keep Vlad's stuff safe at the same time.",
+		["junk_01"] = "DEFEND THE CASH & DRUGS",
+		["junk_01_desc"] = "Keep the cops away from the loot!  Both the coke and the money need to be defended.",
+		["junk_02"] = "PLACE & SHOOT EACH GAS CAN TO LIGHT THEM",
+		["junk_02_desc"] = "Light a fire, it'll alert the pilot of your position.",
+		["junk_03"] = "DEFEND THE CASH & DRUGS",
+		["junk_03_desc"] = "Don't let the cops secure any of Vlad's product! Lose too many bags, and the operation will be a failure!",
+		["junk_04"] = "SECURE VLAD'S PRODUCT",
+		["junk_04_desc"] = "Secure Vlad's cocaine. His own men will make sure the money is secured.",
+		["junk_05"] = "EXTRACTION AVAILABLE",
+		["junk_05_desc"] = "Leave as soon as you're satisfied with the take.",
+
+		["heist_int_dock_name"] = "Wetworks",
+		["heist_int_dock_brief"] = "This warehouse is owned by Murkywater Logistics.  At least, for the moment. They've been using it as a loot lockup for a while, but recently, they were spotted moving some 'classified' servers. Intel suggests that they're holding some information regarding the alliance between them, and OMNIA.\n\nLoud or silent, the only objective here is to get to those servers, and retrieve the data. Expect resistance no matter the method.",
+		["heist_wetwork_name"] = "Wetworks",
+		["heist_wetwork_brief"] = "This warehouse is owned by Murkywater Logistics.  At least, for the moment. They've been using it as a loot lockup for a while, but recently, they were spotted moving some 'classified' servers. Intel suggests that they're holding some information regarding the alliance between them, and OMNIA.\n\nLoud or silent, the only objective here is to get to those servers, and retrieve the data. Expect resistance no matter the method.",
+		["obj1_enterwarehouse"] = "ENTER THE WAREHOUSE",
+		["obj1_enterwarehouse_desc"] = "Enter the warehouse.",
+		["obj2_findsecuritydoor"] = "LOCATE THE SERVER ROOM",
+		["obj2_findsecuritydoor_desc"] = "Locate the server room. It should be somewhere in the warehouse, likely behind a locked door.",
+		["obj3_getsecuritydooropen"] = "GET THE DOOR OPEN",
+		["obj3_getsecuritydooropen_desc"] = "Find a way to open the door.",
+		["obj4_openseconddoor"] = "BREAK INTO THE SERVER ROOM",
+		["obj4_openseconddoor_desc"] = "Break into the server room. A keycard or drill might help.",
+		["obj5_hack"] = "HACK THE LAPTOP",
+		["obj5_hack_desc"] = "Hack the laptop with Jackal's provided software.",
+		["obj5b_explode"] = "DEFUSE THE C4!",
+		["obj5b_explode_desc"] = "C4! Defuse them or run!",
+		["obj6_wait"] = "SEND THE DATA",
+		["obj6_wait_desc"] = "Hack is finished. Send the data to Jackal.",
+		["obj7_escapeorloot"] = "EXTRACTION AVAILABLE",
+		["obj7_escapeorloot_desc"] = "Leave the area as soon as you're satisfied with the take.",
+
+		["heist_int_dock_burn_name"] = "Burnout",
+		["heist_int_dock_burn_brief"] = "No time for detailed plans, they're going to move the additional master servers.\nThe driver is going to park a truck full of armed clowns in their doorstep.",
+		["heist_wetwork_burn_name"] = "Burnout",
+		["heist_wetwork_burn_brief"] = "Alright, we're almost at the site. You've been here before, but we're going in hot this time.\nMight be some loot still stashed around, but that's secondary.\n\nKeep an eye out for anything you can use to see whats inside the closed containers. Cameras, objects around the containers, whiteboards and so on.",
+		["wwburn_01"] = "READY UP",
+		["wwburn_01_desc"] = "Were in the front gate, Murkywater will be all over so get your guns out.",
+		["wwburn_02"] = "LOCATE SERVERS",
+		["wwburn_02_desc"] = "Locate the three shipping containers that hold master servers.",
+		["wwburn_03"] = "BURN THE BACKUPS",
+		["wwburn_03_desc"] = "Burn the backups of the master servers, they'll be in the same containers.",
+		["wwburn_04"] = "EXTRACTION AVAILABLE",
+		["wwburn_04_desc"] = "Escape, or secure more loot if you feel greedy.",
+
+		["wwburn_serverpku"] = "Secure",
+		["wwburn_gaspku"] = "Collect",
+		["wwburn_defend"] = "Defend",
+		["wwburn_container"] = "Shipping Container",
+
+		["menu_jukebox_resmusic_wetwork"] = "Spectre Shark",
+		["menu_jukebox_screen_resmusic_wetwork"] = "Spectre Shark",
+		["menu_jukebox_resmusic_bluewave"] = "Spectre Shark 2020",
+		["menu_jukebox_screen_resmusic_bluewave"] = "Spectre Shark 2020",
+		["menu_jukebox_resmusic_burnout"] = "Brute Force",
+		["menu_jukebox_screen_resmusic_burnout"] = "Brute Force",
+		["menu_jukebox_resmusic_doghouse"] = "Bleeding Edge",
+		["menu_jukebox_screen_resmusic_doghouse"] = "Bleeding Edge",
+		["menu_jukebox_resmusic_lethalforce"] = "Lethal Force",
+		["menu_jukebox_screen_resmusic_lethalforce"] = "Lethal Force",
+		["menu_jukebox_resmusic_redmarks"] = "Red Marks",
+		["menu_jukebox_screen_resmusic_redmarks"] = "Red Marks",
+		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
+		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
+		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
+		["menu_jukebox_screen_resmusic_speciesnova"] = "Species Nova",
+		["menu_jukebox_resmusic_madvlad"] = "Mad Vlad",
+		["menu_jukebox_screen_resmusic_madvlad"] = "Mad Vlad",
+		["menu_jukebox_resmusic_proto"] = "Jackknife",
+		["menu_jukebox_screen_resmusic_proto"] = "Jackknife",
+		["menu_jukebox_screen_m1"] = "Criminal Intent (Old Version)",
+		["menu_jukebox_screen_m2"] = "Preparations (Old Version)",
+		["menu_jukebox_screen_m3"] = "Blueprints (Prototype Version)",
+		["menu_jukebox_screen_m4"] = "Resistance",
+		["menu_jukebox_screen_m5"] = "Fortress",
+		["menu_jukebox_screen_m6"] = "Payday Royale Theme",
+		["menu_jukebox_screen_m_holiday"] = "The Headless Bulldozer",
+
+		["menu_color_plus"] = "E3 PAYDAY+",
+		["menu_color_rvd1"] = "Inverted",
+		["menu_color_e3nice"] = "E3 Nice",
+		["menu_color_force"] = "E3 BHD",
+		["menu_color_halloween"] = "Change",
+		["menu_color_halloween2"] = "Pumpkin Spice",
+
+		["color_plus"] = "E3 PAYDAY+",
+		["color_rvd1"] = "Inverted",
+		["color_e3nice"] = "E3 Nice",
+		["color_force"] = "E3 BHD",
+		["color_halloween"] = "Change",
+		["color_halloween2"] = "Pumpkin Spice",
+
+		["gm_gms_purchase"] = "Purchase with Continental Coins",
+		["gm_gms_purchase_window_title"] = "Are you sure?",
+		["gm_gms_purchase_window_message"] = "Do you really want to buy '{1}'?\n\nIt will cost you {2} {3}.",
+		["gm_gms_purchase_failed"] = "Cannot Purchase",
+		["gm_gms_free_of_charge_message"] = "{1} is free of charge and can be applied to as many weapons as you wish.",
+		["gm_gms_cannot_afford_message"] = "You cannot purchase {1}, as you do not have enough {3} to afford it. To purchase {1}, you will need {2} {3}",
+
+		["bm_menu_amount_locked"] = "NONE IN STOCK",
+
+		["pdth_hud_challenges"] = "Challenges",
+		["pdth_hud_challenges_hint"] = "View completed and active challenges.",
+		["pdth_hud_active_challenges"] = "Active Challenges",
+		["pdth_hud_active_challenges_hint"] = "Current and active challenges.",
+		["pdth_hud_completed_challenges"] = "Completed Challenges",
+		["pdth_hud_completed_challenges_hint"] = "Completed and rewarded challenges.",
+
+		["ch_vs_desc"] = "Using the $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
+		["ch_vs_head_shots_desc"] = "Using the $weapon, defeat $count $eneType with Headshots.",
+		["ch_vs"] = "$weapons VS. $eneType $no",
+		["ch_vs_head_shots"] = "$weapon VS. $eneType HEADSHOTS $no",
+
+		["ene_law"] = "THE WORLD",
+		["ene_law_desc"] = "hostile units",
+
+		["menu_me"] = "HEISTER",
+
+		["RestorationModPDTHChallengesTitleID"] = "Show PDTH Challenges",
+		["RestorationModPDTHChallengesDescID"] = "Toggles the visibility of the PDTH challenges in the menu and the hud",
+
+		["RestorationModRaidLockPickingTitleID"] = "Modify Lockpicks",
+		["RestorationModRaidLockPickingDescID"] = "Should the mod modify lockpicks? This changes the gameplay revolving lockpicks",
+		["RestorationModRaidLockPickingVOTitleID"] = "Play Voice Lines",
+		["RestorationModRaidLockPickingVODescID"] = "Should the mod play voice lines when picking a lock?",
+		["hud_legend_lockpicking_interact"] = "$BTN_INTERACT Lockpick",
+		["hud_legend_persuade_interact"] = "$BTN_INTERACT Persuade",
+		["hud_legend_exit"] = "$BTN_CANCEL Exit",
+		["RestorationModArmorFixTitleID"] = "Armor Flash Fix",
+		["RestorationModArmorFixDescID"] = "Enable or disable armor flash fix.",
+
+		-- /// Challenges Below ///
+
+		["ch_deploy_ammobag_hl"] = "Last Bullet!",
+		["ch_deploy_ammobag"] = "Deploy $count Ammo Bags.",
+		["ch_plant_tripmine_hl"] = "Laser Show",
+		["ch_plant_tripmine"] = "Deploy $count Trip Mines.",
+		["ch_deploy_medicbag_hl"] = "Insurance Benefits",
+		["ch_deploy_medicbag"] = "Deploy $count Medic Bags.",
+		["ch_deploy_ecm_hl"] = "System Crasher",
+		["ch_deploy_ecm"] = "Deploy $count ECM's.",
+		["ch_deploy_fak_hl"] = "Lifeline",
+		["ch_deploy_fak"] = "Deploy $count First Aid Kits.",
+		["ch_deploy_sentry_hl"] = "White Mesa Enthusiast",
+		["ch_deploy_sentry"] = "Deploy $count Sentries.",
+
+
+		["ch_watchdogs_d1_heavy_wpn1_hl"] = "HEAVY ARMOR, AND HEAVIER WEAPONS",
+		["ch_watchdogs_d1_heavy_wpn1"] = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge."
+	})
+
+	local job = Global.level_data and Global.level_data.level_id
+	for _,j4 in ipairs(restoration.what_a_horrible_heist_to_have_a_curse) do
+		if job == j4 then
+			log("Spooky!")
+			LocalizationManager:add_localized_strings({	
+				["hud_assault_vip"] = "FACE YOUR NIGHTMARES AND WAKE UP",
+			})
+			break
+		end
+	end			
+	
 end)

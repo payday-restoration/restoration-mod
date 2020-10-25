@@ -250,7 +250,7 @@ tweak_data.projectiles.smoke_screen_grenade.name_id = "bm_smoke_screen_grenade"
 tweak_data.projectiles.smoke_screen_grenade.duration = 12
 tweak_data.projectiles.smoke_screen_grenade.dodge_chance = 0.1
 tweak_data.projectiles.smoke_screen_grenade.init_timer = 0
-tweak_data.projectiles.smoke_screen_grenade.accuracy_roll_chance = 0.5
+tweak_data.projectiles.smoke_screen_grenade.accuracy_roll_chance = 0.75
 tweak_data.projectiles.smoke_screen_grenade.accuracy_fail_spread = {5, 10}
 
 --Bravo grenades.
@@ -327,8 +327,9 @@ tweak_data.projectiles.launcher_incendiary_osipr = {
 	burn_tick_period = 0.5
 }
 
---tweak_data.weapon_disable_crit_for_damage.launcher_frag_osipr.explosion = "false"
---tweak_data.weapon_disable_crit_for_damage.launcher_frag_osipr.fire = "false"
+--Hatman Molotov
+tweak_data.projectiles.hatman_molotov = {}
+tweak_data.projectiles.hatman_molotov.env_effect = "hatman_molotov_fire"
 
 --But why--
 tweak_data.team_ai.stop_action.delay = 0.8
@@ -351,6 +352,7 @@ end
 tweak_data.medic.disabled_units = {
 	"phalanx_vip",
 	"spring",
+	"headless_hatman",
 	"taser_summers",
 	"boom_summers",
 	"medic_summers",

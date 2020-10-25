@@ -27,6 +27,7 @@ function RaycastWeaponBase:setup(...)
 	if self._current_stats_indices and self._current_stats_indices.recoil then
 		self._spread_moving = tweak_data.weapon.stats.spread_moving[self._current_stats_indices.recoil] or 0
 	else --Fallback method for getting stability moving accuracy penalty, in case the indices somehow don't get set.
+		log("Using fallback")
 		local moving_spread_index = 0
 		local recoil_table = tweak_data.weapon.stats.recoil
 		for i = 0, 25, 1 do
@@ -38,6 +39,7 @@ function RaycastWeaponBase:setup(...)
 		self._spread_moving = tweak_data.weapon.stats.spread_moving[moving_spread_index] or 0
 	end
 
+	--Trackers for MG Specialist Ace
 	self._bullets_until_free = nil
 	for _, category in ipairs(self:weapon_tweak_data().categories) do
 		if managers.player:has_category_upgrade(category, "full_auto_free_ammo") then
@@ -50,19 +52,22 @@ function RaycastWeaponBase:setup(...)
 	self._ammo_overflow = 0 --Amount of non-integer ammo picked up.
 end
 
+--Fire no longer memes on shields.
 function FlameBulletBase:bullet_slotmask()
 	return managers.slot:get_mask("bullet_impact_targets")
 end	
 
+--Minor fixes and making Winters unpiercable.
 function RaycastWeaponBase:_collect_hits(from, to)
 	local can_shoot_through = self._can_shoot_through_wall or self._can_shoot_through_shield or self._can_shoot_through_enemy
-	local ray_hits = nil
 	local hit_enemy = false
 	local enemy_mask = managers.slot:get_mask("enemies")
 	local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
 	local shield_mask = managers.slot:get_mask("enemy_shield_check")
 	local ai_vision_ids = Idstring("ai_vision")
-	ray_hits = self._can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask) or World:raycast_all("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units)
+	--Just set this immediately.
+	local ray_hits = self._can_shoot_through_wall and World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
+		or World:raycast_all("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units)
 	local units_hit = {}
 	local unique_hits = {}
 
@@ -79,9 +84,9 @@ function RaycastWeaponBase:_collect_hits(from, to)
 				break
 			elseif not self._can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
 				break
-			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' and not self._can_shoot_through_titan_shield  then
+			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == 'af254947f0288a6c' and not self._can_shoot_through_titan_shield  then --Titan shields
 				break
-			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then
+			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then --Winters being a shit.
 				break						
 			end
 			
@@ -270,7 +275,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local ray_distance = self:weapon_range()
 	local right = direction:cross(Vector3(0, 0, 1)):normalized()
 	local up = direction:cross(right):normalized()
-	local r = math.pow(math.random(), tweak_data.weapon.spread.dispersion)
+	local r = math.random()
 	local theta = math.random() * 360
 	local ax = math.tan(r * spread_x * (spread_mul or 1)) * math.cos(theta)
 	local ay = math.tan(r * spread_y * (spread_mul or 1)) * math.sin(theta) * -1
@@ -662,7 +667,7 @@ function RaycastWeaponBase:_get_spread(user_unit)
 	end
 
 	--Apply skill and stance multipliers to overall spread area.
-	local multiplier = tweak_data.weapon.stats.stance_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
 	spread_area = spread_area * multiplier
 
 

@@ -1,0 +1,9 @@
+<materials version="3">
+    <material name="mat_pumpkin" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
+        <diffuse_texture file="units/pd2_dlc_chill/props/chl_prop_pumpkin/chl_prop_pumpkin_df" mip="2"/>
+        <bump_normal_texture file="units/pd2_dlc_chill/props/chl_prop_pumpkin/chl_prop_pumpkin_nm" mip="1"/>
+        <self_illumination_texture file="units/pd2_dlc_chill/props/chl_prop_pumpkin/chl_prop_pumpkin_il"/>
+		<variable value="2" type="scalar" name="il_bloom"/>
+        <variable value="sun" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

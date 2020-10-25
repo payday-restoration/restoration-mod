@@ -28,6 +28,15 @@ local function get_as_digested(amount)
 	return list
 end
 
+Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
+	--Info for slow debuff, usually caused by Titan Tasers.
+	self._slow_data = {
+		duration = 0, --Amount of time the slow should decay over.
+		power = 0, --% slow when first started.
+		start_time = 0 --Time when slow was started.
+	}
+end)
+
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	local multiplier = 1
 	local armor_penalty = self:mod_movement_penalty(self:body_armor_value("movement", upgrade_level, 1))
@@ -81,10 +90,8 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 
 	--Removed unused Yakuza nonsense.
 
-	--Titan Taser Slow
-	if self:_is_titan_tased() then
-		multiplier = multiplier * self:_titan_tase_speed_mult()
-	end
+	--Apply any slowing debuffs.
+	multiplier = multiplier * self:_slow_debuff_mult()
 	
 	return multiplier
 end
@@ -384,6 +391,8 @@ function PlayerManager:damage_reduction_skill_multiplier(damage_type)
 
 	if damage_type == "melee" then
 		multiplier = multiplier * self:upgrade_value("player", "melee_damage_dampener", 1)
+	elseif damage_type == "kick_or_shock" then --Cloaker kicks/taser shocks
+		multiplier = multiplier * self:upgrade_value("player", "spooc_damage_resist", 1.0)
 	end
 
 	local current_state = self:get_current_state()
@@ -627,7 +636,7 @@ function PlayerManager:_on_enter_ammo_efficiency_event(unit, attack_data)
 		local attacker_unit = attack_data.attacker_unit
 		local variant = attack_data.variant
 
-		if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") and attack_data.result.type == "death" then
+		if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():is_category("assault_rifle", "snp") and attack_data.result.type == "death" then
 			self._coroutine_mgr:add_coroutine("ammo_efficiency", PlayerAction.AmmoEfficiency, self, self._ammo_efficiency.headshots, self._ammo_efficiency.ammo, Application:time() + self._ammo_efficiency.time)
 		end
 	end
@@ -790,6 +799,13 @@ function PlayerManager:_internal_load()
 	--Fully loaded aced checks
 	self._throwable_chance_data = self:upgrade_value("player", "regain_throwable_from_ammo", {chance = 0, chance_inc = 0})
 	self._throwable_chance = self._throwable_chance_data.chance
+
+	--Reset when players are spawned, just in case.
+	self._slow_data = {
+		duration = 0,
+		power = 0,
+		start_time = 0
+	}
 end
 
 --Adds rogue health regen stack on dodge.
@@ -813,7 +829,7 @@ end
 --Sneaky Bastard Aced healing stuff.
 function PlayerManager:_dodge_healing_no_armor()
 	local damage_ext = self:player_unit():character_damage()
-	if not (damage_ext:get_real_armor() > 0) then
+	if not (damage_ext:get_real_armor() > 0) and damage_ext:can_dodge_heal() then
 		damage_ext:restore_health(self:upgrade_value("player", "dodge_heal_no_armor"), false)
 	end
 end
@@ -824,8 +840,22 @@ function PlayerManager:_trigger_sharpshooter(unit, attack_data)
 	local attacker_unit = attack_data.attacker_unit
 	local variant = attack_data.variant
 
-	if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("smg", "assault_rifle", "snp") and attack_data.result.type == "death" then
+	if attacker_unit == self:player_unit() and variant == "bullet" and weapon_unit and weapon_unit:base():fire_mode() == "single" and weapon_unit:base():is_category("assault_rifle", "snp") and attack_data.result.type == "death" then
 		self:activate_temporary_upgrade("temporary", "headshot_fire_rate_mult")
+	end
+end
+
+function PlayerManager:_on_activate_aggressive_reload_event(attack_data)
+	if attack_data and attack_data.variant ~= "projectile" then
+		local weapon_unit = self:equipped_weapon_unit()
+
+		if weapon_unit then
+			local weapon = weapon_unit:base()
+
+			if weapon and (weapon:fire_mode() == "single" or self:upgrade_value("temporary", "single_shot_fast_reload")[3] == true) and weapon:is_category("assault_rifle", "snp") then
+				self:activate_temporary_upgrade("temporary", "single_shot_fast_reload")
+			end
+		end
 	end
 end
 
@@ -870,21 +900,27 @@ function PlayerManager:is_db_regen_active()
 	return false
 end
 
---Titan taser effect, will make more generic later when needed.
-function PlayerManager:activate_titan_tased()
-	self._titan_tase_time = 3 + Application:time()
-	managers.hud:activate_effect_screen(3, {0.0, 0.2, 1})
+--Slows the player by a % that decays linearly over a duration, along with a visual.
+--Power should be between 1 and 0. Corresponds to % speed is slowed on start.
+function PlayerManager:apply_slow_debuff(duration, power)
+	if power > 1 - self:_slow_debuff_mult() then
+		self._slow_data = {
+			duration = duration,
+			power = power,
+			start_time = Application:time()
+		}
+		managers.hud:activate_effect_screen(duration, {0.0, 0.2, power})
+	end
 end
 
-function PlayerManager:_is_titan_tased()
-	if self._titan_tase_time and self._titan_tase_time > Application:time() then
-		return true
-	end 
-	return false
-end
+function PlayerManager:_slow_debuff_mult()
+	local time = Application:time()
+	
+	if self._slow_data.start_time + self._slow_data.duration < time then
+		return 1 --no slow
+	end
 
-function PlayerManager:_titan_tase_speed_mult()
-	return 1 / (self._titan_tase_time - Application:time() + 1)
+	return math.clamp(1 - self._slow_data.power * (1 - ((time - self._slow_data.start_time) / self._slow_data.duration)), 0, 1)
 end
 
 --Called when psychoknife kills are performed.
@@ -919,12 +955,56 @@ end
 --Professional aced extra ammo when killing specials while using silenced weapons.
 function PlayerManager:_on_spawn_special_ammo_event(equipped_unit, variant, killed_unit)
 	if killed_unit.base and tweak_data.character[killed_unit:base()._tweak_table].priority_shout and equipped_unit:base():got_silencer() and variant == "bullet" then
+		local tracker = killed_unit:movement():nav_tracker()
+	    local position = tracker:lost() and tracker:field_position() or tracker:position()
+	    local rotation = killed_unit:rotation()
 		if Network:is_client() then
-			managers.network:session():send_to_host("sync_spawn_extra_ammo", killed_unit)
+			managers.network:session():send_to_host("sync_spawn_extra_ammo", position, rotation)
 		else
-			self:spawn_extra_ammo(killed_unit)
+			self:spawn_extra_ammo(position, rotation)
 		end
 	end
+end
+
+function PlayerManager:_on_spawn_extra_ammo_event(equipped_unit, variant, killed_unit)
+	if self._num_kills % self._target_kills == 0 then
+		local tracker = killed_unit:movement():nav_tracker()
+	    local position = tracker:lost() and tracker:field_position() or tracker:position()
+	    local rotation = killed_unit:rotation()
+		if Network:is_client() then
+			managers.network:session():send_to_host("sync_spawn_extra_ammo", position, rotation)
+		else
+			self:spawn_extra_ammo(position, rotation)
+		end
+	end
+end
+
+function PlayerManager:spawn_extra_ammo(position, rotation)
+	local mvec_1 = Vector3()
+	local mvec_2 = Vector3()
+	mvector3.set(mvec_1, position)
+    mvector3.set_static(mvec_2, math.random(20, 50) * (math.random(1, 2) * 2 - 3), math.random(20, 50) * (math.random(1, 2) * 2 - 3), 0)
+    mvector3.add(mvec_1, mvec_2)
+
+    local level_data = tweak_data.levels[managers.job:current_level_id()]
+
+    if level_data and level_data.drop_pickups_to_ground then
+        mvector3.set(mvec_2, math.UP)
+        mvector3.multiply(mvec_2, -200)
+        mvector3.add(mvec_2, mvec_1)
+
+        local ray = self._unit:raycast("ray", mvec_1, mvec_2, "slot_mask", managers.slot:get_mask("bullet_impact_targets"))
+
+        if ray then
+            mvector3.set(mvec_1, ray.hit_position)
+        end
+    end
+
+    managers.game_play_central:spawn_pickup({
+        name = "ammo",
+        position = mvec_1,
+        rotation = rotation
+    })
 end
 
 function PlayerManager:_trigger_hitman(equipped_unit, variant, killed_unit)
@@ -971,6 +1051,24 @@ function PlayerManager:check_enduring()
 					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assaults Remaining Until Down Restore." } )
 				end
 			end
+		end
+	end
+end
+
+--Instantly reloads all equipped weapons. Used by Running from Death Ace.
+function PlayerManager:reload_weapons()
+	local weapons = {
+		self:player_unit():inventory():unit_by_selection(1), --Secondary
+		self:player_unit():inventory():unit_by_selection(2), --Primary
+		self:player_unit():inventory():unit_by_selection(3) --Underbarrels
+	}
+
+	for _, weapon in pairs(weapons) do
+		if weapon and weapon.base then
+			local weapon_base = weapon:base()
+			weapon_base:on_reload(nil)
+			managers.statistics:reloaded()
+			managers.hud:set_ammo_amount(weapon_base:selection_index(), weapon_base:ammo_info())
 		end
 	end
 end
@@ -1061,4 +1159,21 @@ function PlayerManager:activate_temporary_upgrade(category, upgrade)
 		managers.network:session():send_to_peers("sync_temporary_upgrade_activated", self:temporary_upgrade_index(category, upgrade))
 	end
 	managers.hud:start_buff(upgrade, time)
+end
+
+--Activates a temporary upgrade 'forever' until otherwise noted.
+--Currently only used for unseen strike, so syncing support isn't implemented.
+function PlayerManager:activate_temporary_upgrade_indefinitely(category, upgrade)
+	local upgrade_value = self:upgrade_value(category, upgrade)
+
+	if upgrade_value == 0 then
+		return
+	end
+
+	self._temporary_upgrades[category] = self._temporary_upgrades[category] or {}
+	self._temporary_upgrades[category][upgrade] = {
+		expire_time = math.huge
+	}
+	managers.hud:remove_skill(upgrade)
+	managers.hud:add_skill(upgrade)
 end

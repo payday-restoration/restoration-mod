@@ -706,6 +706,8 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.steal_loot = nil
 	if is_reaper or is_federales then
 		self.omnia_lpf.custom_voicework = nil
+	elseif is_zombie then
+		self.omnia_lpf.custom_voicework = "awoolpf"
 	else
 		self.omnia_lpf.custom_voicework = "olpf"
 	end			
@@ -1287,8 +1289,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.speech_prefix_count = nil 
 	self.weekend_lmg.heal_cooldown = 7.5
 	self.weekend_lmg.can_throw_frag = true
-	table.insert(self._enemy_list, "weekend_lmg")						
-			
+	table.insert(self._enemy_list, "weekend_lmg")
+
 	--Temp Solution
 	if job == "haunted" then
 		self.city_swat = deep_clone(self.skeleton_swat_titan)
@@ -1361,8 +1363,8 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.experience = {}
 	self.gangster.weapon = presets.weapon.normal
 	self.gangster.detection = presets.detection.normal
-	self.gangster.HEALTH_INIT = 2
-	self.gangster.headshot_dmg_mul = 2.3
+	self.gangster.HEALTH_INIT = 4
+	self.gangster.headshot_dmg_mul = 2.25
 	self.gangster.move_speed = presets.move_speed.normal
 	self.gangster.suspicious = nil
 	self.gangster.suppression = presets.suppression.easy
@@ -1430,8 +1432,8 @@ function CharacterTweakData:_init_biker(presets)
 	else
 		self.biker.access = "gangster"
 	end		
-	self.biker.HEALTH_INIT = 2
-	self.biker.headshot_dmg_mul = 2.3	
+	self.biker.HEALTH_INIT = 4
+	self.biker.headshot_dmg_mul = 2.25
 	self.biker.calls_in = true
 	self.biker.speech_prefix_p1 = "bik"
 	self.biker.speech_prefix_p2 = nil
@@ -1509,8 +1511,8 @@ function CharacterTweakData:_init_mobster(presets)
 	self.mobster = deep_clone(self.gangster)
 	self.mobster.calls_in = true
 	self.mobster.melee_weapon = "fists"
-	self.mobster.HEALTH_INIT = 2
-	self.mobster.headshot_dmg_mul = 2.3
+	self.mobster.HEALTH_INIT = 4
+	self.mobster.headshot_dmg_mul = 2.25
 	self.mobster.speech_prefix_p1 = "rt"
 	self.mobster.speech_prefix_p2 = nil
 	self.mobster.speech_prefix_count = 2
@@ -2222,7 +2224,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.can_be_tased = true
 	self.spooc.static_dodge_preset = true
 	self.spooc.is_special = true
-	self.spooc.kick_damage = 5.0 --Amount of damage dealt when cloakers hick players.
+	self.spooc.kick_damage = 8.0 --Amount of damage dealt when cloakers hick players.
 	self.spooc.spawn_sound_event_2 = "clk_c01x_plu"
 	self.spooc.spooc_sound_events = {
 		detect_stop = "cloaker_detect_stop",
@@ -2567,6 +2569,17 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.static_dodge_preset = true
 	self.spring.is_special = true
 	table.insert(self._enemy_list, "spring")
+	
+	--Headless Titandozer Boss 
+	self.headless_hatman = deep_clone(self.spring)
+	self.headless_hatman.custom_voicework = "hatman"
+	self.headless_hatman.slowing_bullets = {
+		duration = 1,
+		power = 0.5
+	}
+	self.headless_hatman.can_throw_frag = false
+	self.headless_hatman.can_throw_molotov = true
+	table.insert(self._enemy_list, "headless_hatman")
 end
 
 function CharacterTweakData:_init_summers(presets)
@@ -2661,7 +2674,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.damage.bullet_damage_mul = 0.65
 	self.autumn.damage.fire_damage_mul = 0.75
 	self.autumn.flammable = false
-	self.autumn.damage.explosion_damage_mul = 0.25
+	self.autumn.damage.explosion_damage_mul = 1
 	self.autumn.move_speed = presets.move_speed.lightning
 	self.autumn.can_cloak = true
 	self.autumn.no_retreat = true
@@ -2773,7 +2786,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.priority_shout_max_dis = 3000
 	self.taser.rescue_hostages = false
 	self.taser.deathguard = true
-	self.taser.shock_damage = 4.0 --Amount of damage dealt when taser shocks down.
+	self.taser.shock_damage = 8.0 --Amount of damage dealt when taser shocks down.
 	self.taser.chatter = {
 		aggressive = true,
 		retreat = true,
@@ -2828,6 +2841,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.custom_voicework = nil
 	self.taser_summers.is_special = true	
 	self.taser_summers.follower = true
+	self.taser_summers.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		taunt = true
+	}
 	table.insert(self._enemy_list, "taser_summers")
 	
 	self.taser_titan = deep_clone(self.taser)
@@ -2854,6 +2872,11 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.is_special = true	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 45
+	self.taser_titan.slowing_bullets = {
+		duration = 3,
+		power = 1,
+		taunt = true
+	}
 	table.insert(self._enemy_list, "taser_titan")
 end
 
@@ -3633,7 +3656,7 @@ function CharacterTweakData:_init_myh(presets)
 	self.myh.damage = presets.gang_member_damage
 	self.myh.weapon = deep_clone(presets.weapon.gang_member)
 	self.myh.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_74_npc",
+		primary = "wpn_fps_ass_ching_npc",
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.myh.detection = presets.detection.gang_member
@@ -3707,7 +3730,7 @@ function CharacterTweakData:_init_joy(presets)
 		weapon = deep_clone(presets.weapon.gang_member)
 	}
 	self.joy.weapon.weapons_of_choice = {
-		primary = "wpn_fps_ass_m4_npc",
+		primary = "wpn_fps_smg_shepheard_npc",
 		secondary = Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92")
 	}
 	self.joy.always_face_enemy = true
@@ -4387,7 +4410,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.base = {}
-	presets.base.HEALTH_INIT = 2.5
+	presets.base.HEALTH_INIT = 2
 	presets.base.headshot_dmg_mul = 2
 	presets.base.use_animation_on_fire_damage = true
 	presets.base.SPEED_WALK = {
@@ -12153,6 +12176,7 @@ function CharacterTweakData:_set_easy()
 	
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false
+	self.headless_hatman.can_throw_molotov = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12341,14 +12365,15 @@ function CharacterTweakData:_set_normal()
 	self.omnia.melee_weapon_dmg_multiplier = 1
 	
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 3.0
-	self.taser.shock_damage = 2.0
+	self.spooc.kick_damage = 4.0
+	self.taser.shock_damage = 4.0
 
 	--No normal tase for Elektra on lower difficulties
 	self.taser_summers.weapon.is_rifle.tase_distance = 0
 	
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false		
+	self.headless_hatman.can_throw_molotov = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12530,14 +12555,15 @@ function CharacterTweakData:_set_hard()
 	self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 3.0
-	self.taser.shock_damage = 2.0
+	self.spooc.kick_damage = 5.0
+	self.taser.shock_damage = 5.0
 
 	--No normal tase for Elektra on lower difficulties
 	self.taser_summers.weapon.is_rifle.tase_distance = 0	
 
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false		
+	self.headless_hatman.can_throw_molotov = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -12727,14 +12753,15 @@ function CharacterTweakData:_set_overkill()
 	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 4.0
-	self.taser.shock_damage = 2.0
+	self.spooc.kick_damage = 6.0
+	self.taser.shock_damage = 6.0
 
 	--No normal tase for Elektra on lower difficulties
 	self.taser_summers.weapon.is_rifle.tase_distance = 0		
 	
 	--No Frags on Spring on lower difficulties
-	self.spring.can_throw_frag = false		
+	self.spring.can_throw_frag = false	
+	self.headless_hatman.can_throw_molotov = false
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.good)
@@ -12929,8 +12956,8 @@ function CharacterTweakData:_set_overkill_145()
 	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 4.0
-	self.taser.shock_damage = 2.0
+	self.spooc.kick_damage = 6.0
+	self.taser.shock_damage = 6.0
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.good)
@@ -13248,8 +13275,8 @@ function CharacterTweakData:_set_easy_wish()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 5.0
-	self.taser.shock_damage = 3.0
+	self.spooc.kick_damage = 6.0
+	self.taser.shock_damage = 6.0
 
 	self:_set_characters_weapon_preset("expert", "good")
 	self:_set_characters_dodge_preset("athletic_overkill")
@@ -13590,8 +13617,8 @@ function CharacterTweakData:_set_overkill_290()
 	self.city_swat.can_slide_on_suppress = true		
 			
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 5.0
-	self.taser.shock_damage = 3.0
+	self.spooc.kick_damage = 6.0
+	self.taser.shock_damage = 6.0
 
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
@@ -13824,8 +13851,8 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi_heavy_swat.can_slide_on_suppress = true		
 				
 	--Set damage dealt for false downs.
-	self.spooc.kick_damage = 5.0
-	self.taser.shock_damage = 3.0
+	self.spooc.kick_damage = 8.0
+	self.taser.shock_damage = 8.0
 	
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
@@ -15327,7 +15354,15 @@ function CharacterTweakData:character_map()
 				"ene_shield_gensec",
 				"ene_fbi_heavy_r870_sc",
 				"ene_city_heavy_r870_sc",
-				"ene_swat_heavy_r870_sc"
+				"ene_swat_heavy_r870_sc",
+				"ene_headless_hatman",				
+				"ene_spook_cloak_1",	
+				"ene_omnia_lpf",
+				"ene_fbi_titan_1",
+				"ene_titan_sniper",
+				"ene_titan_taser",
+				"ene_veteran_cop_1",
+				"ene_phalanx_1_assault"
 			}
 		}			
 	}

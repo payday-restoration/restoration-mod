@@ -36,7 +36,7 @@ function LootDropTweakData:init(tweak_data)
     self.global_values.rest.track = false
     self.global_values.rest.sort_number = 30
     self.global_values.rest.category = "rest"	
-
+	
     self.global_values.rest_omnia = {}
     self.global_values.rest_omnia.name_id = "menu_l_global_value_omnia"
     self.global_values.rest_omnia.desc_id = "menu_l_global_value_omnia_desc"

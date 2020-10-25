@@ -1,18 +1,17 @@
 {
-  "ene_fbi" : "Murkywater SRT",
-  "ene_fbi_swat" : "Murkywater Marine", 
-  "ene_city_swat" : "Murkywater Elite",  
-  "ene_murky_veteran" : "Ray Shatter",    
-  "ene_murky_tazer" : "Taser",  
+  "ene_murky_security" : "Murkywater Security",
+  "ene_swat" : "Murkywater Tactical Security",
+  "ene_swat_heavy" : "Murkywater Heavy Security",
+  "ene_fbi" : "Murkywater S&RT",
+  "ene_murky_hrt" : "Murkywater S&RT",  
+  "ene_fbi_swat" : "Murkywater Marine",
+  "ene_fbi_heavy" : "Murkywater Heavy Marine" 
+  "ene_city_swat" : "Murkywater Elite",
+  "ene_murky_veteran" : "Ray Shatter",
+  "ene_murky_tazer" : "Taser",
   "ene_murky_medic" : "Medic",
-  "ene_murky_cs_cop" : "Murkywater Security",      
-  "ene_murky_spook" : "Cloaker",  
+  "ene_murky_spook" : "Cloaker",
   "ene_murky_sniper" : "Sniper",
-  "ene_murky_shield_fbi" : "Shield", 
-  "ene_murky_shield_yellow" : "Shield",    
-  "ene_murky_yellow" : "Murkywater Heavy Recruit",
-  "ene_murky_hrt" : "Murkywater SRT",  
-  "ene_murkywater_light" : "Murkywater Recruit",   
-  "ene_murky_swat" : "Murkywater Private",  
-  "ene_fbi_heavy" : "Murkywater Heavy Marine"  
+  "ene_murky_shield_fbi" : "Shield",
+  "ene_murky_shield_yellow" : "Shield"
 }

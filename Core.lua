@@ -2,6 +2,10 @@ if not ModCore then
 	restoration.log_shit("[ERROR] Unable to find ModCore from BeardLib! Is BeardLib installed correctly?")
 	return
 end
+
+Month = os.date("%m")
+Day = os.date("%d")	
+
 restoration._mod_path = restoration:GetPath()
 function restoration:Init()
 	restoration.log_shit("SC: LOADING: " .. self.ModPath)
@@ -45,10 +49,9 @@ function restoration:Init()
 		"arm_for",	--train heist
 		"big", --big bank
 		"dinner", --Slaughterhouse
-		"kenaz",--Golden Grin Casino
-		"cas", --Golden Grin Casino
 		--custom heists		
-		"firestarter_1_res" --firestarter day 1 res edit version
+		"firestarter_1_res", --firestarter day 1 res edit version
+		"lvl_friday" --Crashing Capitol
 	}
 	restoration.captain_stelf = {
 		"alex_1", --Rats Day 1
@@ -67,9 +70,52 @@ function restoration:Init()
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
 	}
+	restoration.what_a_horrible_heist_to_have_a_curse = {
+		"help" --Prison Nightmare
+	}
+	
+	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
+	
+		--No Spring During holidays
+		restoration.captain_murderdozer = {}
+		--Autumn loses a few heists
+		restoration.captain_stelf = {
+			"alex_1", --Rats Day 1
+			"rat",	--cook off
+			"nightclub", --and Autumn stay off the dance floor
+			"family", --diamond store
+			"framing_frame_1", --art gallery but ff
+			"framing_frame_3", --Powerbox simulator
+			"jewelry_store", --Jewelry Store
+			"ukrainian_job", --Ukrainian Job
+			--custom heists
+			"wetwork", --res map package wetworks
+			"alex_1_res", --Rats Day 1 res edit version
+			"lvl_fourmorestores", --four more stores
+			"ukrainian_job_res", --Ukrainian Job res edit version
+			"hntn" --harvest and trustee north
+		}		
+		restoration.what_a_horrible_heist_to_have_a_curse = {
+			"dah", --diamond heist
+			"hox_2", --Hoxout Day 2
+			"xmn_hox_2", --Hoxout Day 2, christmas
+			"firestarter_1", --firestarter day 1
+			"arm_for",	--train heist
+			"big", --big bank
+			"dinner", --Slaughterhouse
+			"branchbank", --Gets Branchbank from Autumn		
+			"help", --Prison Nightmare			
+			--custom heists		
+			"firestarter_1_res", --firestarter day 1 res edit version
+			"lvl_friday" --Crashing Capitol
+		}		
+	
+	end
+	
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
+	
 	restoration.tiny_levels = {
 		"welcome_to_the_jungle_2",
 		"election_day_2",
@@ -102,6 +148,8 @@ function restoration:Init()
 		"mex",
 		"chill_combat",	
 		"man", --Undercover
+		"peta", --Goat Sim Day 1
+		"jolly", --aftershock		
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn",

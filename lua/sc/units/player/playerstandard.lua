@@ -537,14 +537,8 @@ function PlayerStandard:_do_chainsaw_damage(t)
 
 		if character_unit:character_damage() and character_unit:character_damage().damage_melee then
 			local dmg_multiplier = 1
-
-			if not managers.enemy:is_civilian(character_unit) and not managers.groupai:state():is_enemy_special(character_unit) then
-				dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "non_special_melee_multiplier", 1)
-			else
-				dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
-			end
-
-			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[melee_entry].stats.weapon_type) .. "_damage_multiplier", 1)
+			
+			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
 
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
@@ -561,17 +555,13 @@ function PlayerStandard:_do_chainsaw_damage(t)
 				end
 			end
 
-			local health_ratio = self._ext_damage:health_ratio()
-			local damage_health_ratio = managers.player:get_damage_health_ratio(health_ratio, "melee")
-
+			local damage_health_ratio = managers.player:get_damage_health_ratio(self._ext_damage:health_ratio(), "melee")
 			if damage_health_ratio > 0 then
-				local damage_ratio = damage_health_ratio
-				dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("player", "melee_damage_health_ratio_multiplier", 0) * damage_ratio)
+				dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("player", "melee_damage_health_ratio_multiplier", 0) * damage_health_ratio)
 			end
 
-			dmg_multiplier = dmg_multiplier * managers.player:temporary_upgrade_value("temporary", "berserker_damage_multiplier", 1)
 			local target_dead = character_unit:character_damage().dead and not character_unit:character_damage():dead()
-			local target_hostile = managers.enemy:is_enemy(character_unit) and not tweak_data.character[character_unit:base()._tweak_table].is_escort and character_unit:brain():is_hostile()
+			local target_hostile = managers.enemy:is_enemy(character_unit) and not tweak_data.character[character_unit:base()._tweak_table].is_escort
 			local life_leach_available = managers.player:has_category_upgrade("temporary", "melee_life_leech") and not managers.player:has_activate_temporary_upgrade("temporary", "melee_life_leech")
 
 			if target_dead and target_hostile and life_leach_available then
@@ -992,12 +982,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		character_unit = character_unit or hit_unit
 		if character_unit:character_damage() and character_unit:character_damage().damage_melee then
 			local dmg_multiplier = 1
-			if not managers.enemy:is_civilian(character_unit) and not managers.groupai:state():is_enemy_special(character_unit) then
-				dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "non_special_melee_multiplier", 1)
-			else
-				dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
-			end
-			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_" .. tostring(tweak_data.blackmarket.melee_weapons[melee_entry].stats.weapon_type) .. "_damage_multiplier", 1)
+
+			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
+
 			if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
 				self._state_data.stacking_dmg_mul = self._state_data.stacking_dmg_mul or {}
 				self._state_data.stacking_dmg_mul.melee = self._state_data.stacking_dmg_mul.melee or {nil, 0}
@@ -1008,13 +995,12 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 					stack[2] = 0
 				end
 			end
-			local health_ratio = self._ext_damage:health_ratio()
-			local damage_health_ratio = managers.player:get_damage_health_ratio(health_ratio, "melee")
+
+			local damage_health_ratio = managers.player:get_damage_health_ratio(self._ext_damage:health_ratio(), "melee")
 			if damage_health_ratio > 0 then
-				local damage_ratio = damage_health_ratio
-				dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("player", "melee_damage_health_ratio_multiplier", 0) * damage_ratio)
+				dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("player", "melee_damage_health_ratio_multiplier", 0) * damage_health_ratio)
 			end
-			dmg_multiplier = dmg_multiplier * managers.player:temporary_upgrade_value("temporary", "berserker_damage_multiplier", 1)
+
 			if character_unit:character_damage().dead and not character_unit:character_damage():dead() and managers.enemy:is_enemy(character_unit) and managers.player:has_category_upgrade("temporary", "melee_life_leech") and not managers.player:has_activate_temporary_upgrade("temporary", "melee_life_leech") then
 				managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
 				self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))

@@ -1,4 +1,6 @@
 Month = os.date("%m")
+Day = os.date("%d")	
+
 --///LEVEL TYPES\\\--
 LevelsTweakData.LevelType = {}
 LevelsTweakData.LevelType.America = "america"
@@ -350,22 +352,50 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	--//CHRISTMAS HEISTS\\--
 	
 	--hoxton breakout xmas day 1
-	table.insert(self._level_index, "xmn_hox_1")
-	self.xmn_hox_1 = deep_clone(self.hox_1)
-	self.xmn_hox_1.name_id = "heist_xmn_hox_1_name"
-	self.xmn_hox_1.player_style = "loud_suit"
-	self.xmn_hox_1.world_name = "narratives/dentist/hox/stage_1_xmn"
-	self.xmn_hox_1.load_screen = "guis/dlcs/xmn/textures/loading/job_hox_1_xmn_df"
-	--self.xmn_hox_1.music_overrides = {track_20 = "track_66"} --what's the point of doing this lmao
+	table.insert(self._level_index, "xmn_hox1")
 	
+	self.xmn_hox1 = {
+		name_id = "heist_xmn_hox1",
+		briefing_id = "heist_hox_1_briefing",
+		briefing_dialog = "Play_pln_hb1_brf_01",
+		world_name = "narratives/dentist/hox/stage_1_xmn",
+		intro_event = "Play_pln_hb1_intro_01",
+		outro_event = {
+			"Play_pln_hb1_end_01"
+		},
+		music = "heist",
+		package = "packages/narr_hox_1",
+		cube = "cube_apply_heist_bank",
+		block_AIs = {
+			old_hoxton = true
+		},
+		ai_group_type = america,
+		player_style = "loud_suit",
+		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_1_xmn_df"
+	}
+
 	--hoxton breakout xmas day 2
-	table.insert(self._level_index, "xmn_hox_2")
-	self.xmn_hox_2 = deep_clone(self.hox_2)
-	self.xmn_hox_2.name_id = "heist_xmn_hox_2_name"
-	self.xmn_hox_2.player_style = "loud_suit"
-	self.xmn_hox_2.world_name = "narratives/dentist/hox/stage_2_xmn"
-	self.xmn_hox_2.load_screen = "guis/dlcs/xmn/textures/loading/job_hox_2_xmn_df"
-	--self.xmn_hox_2.music_overrides = {track_21 = "track_67"}
+	table.insert(self._level_index, "xmn_hox2")
+
+	self.xmn_hox2 = {
+		name_id = "heist_xmn_hox2",
+		briefing_id = "heist_hox_2_briefing",
+		briefing_dialog = "Play_rb5_hb2_brf_01",
+		world_name = "narratives/dentist/hox/stage_2_xmn",
+		intro_event = "Play_rb5_hb2_intro_01",
+		outro_event = {
+			"Play_rb5_hb2_end_01"
+		},
+		music = "heist",
+		package = "packages/narr_hox_2",
+		cube = "cube_apply_heist_bank",
+		block_AIs = {
+			old_hoxton = true
+		},
+		ai_group_type = america,
+		player_style = "loud_suit",
+		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_2_xmn_df"
+	}
 	
 	--breakin' feds xmas
 	table.insert(self._level_index, "xmn_tag")
@@ -379,6 +409,16 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 	self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
 	self.hvh.package = {"packages/zombieassets", "packages/narr_hvh"}
+	
+	--[[
+	
+	--Zombies on H&T for the holidays--
+	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
+		self.branchbank.package = {"packages/zombieassets", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds", "packages/narr_firestarter3"}
+		self.branchbank.ai_group_type = zombie
+	end
+	
+	]]--
 	
 	self.haunted.ai_group_type = zombie		
 	self.nail.ai_group_type = zombie

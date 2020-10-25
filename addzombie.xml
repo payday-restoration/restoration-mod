@@ -1,13 +1,107 @@
 <table directory="assets">
 	<!--spooky shit below-->
-	<!--swat cloaker-->	
-	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" load="true"/>
-	<unit path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_husk" force="true" load="true"/>
-	<model path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
-	<cooked_physics path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
-	<material_config path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />
-	<material_config path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1_contour" force="true" />
-	<object path="units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1" force="true" />	
+	
+	<!--TODO
+	TITAN SHIELDS SHIELD
+	THE BOSS
+	TITAN HRT
+	-->
+	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_dead_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/lycan_il" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/lycan_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_taser_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_fbi_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_fbi_head_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_snp_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_body_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/veteran_cop_2_df" />
+	
+	<!--Veteran Cop-->	
+	<object path="units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1_contour" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1_husk" force="false" load="true"/>
+
+	<!--Titan Shield-->	
+	<unit path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_contour" force="false"/>
+
+	<!--Titan Shotgunner-->	
+	<unit path="units/pd2_mod_halloween/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_halloween/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
+	
+	<!--Titan Rifle-->	
+	<unit path="units/pd2_mod_halloween/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
+	<object path="units/pd2_mod_halloween/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_rifle_df" force="false"/>
+	
+	<!--Titan HRT-->	
+	<unit path="units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
+	
+    <!--Titan Taser-->	
+	<unit path="units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser_contour" force="false"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/mask_nm" force="false"/>	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/mask_df" force="false"/>		
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_taser_df" force="false"/>	
+
+    <!--Titan Sniper-->	
+	<unit path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmets_snp_df" force="false"/>	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_snp_df" force="false"/>			
+
+	<!--Omnia LPF-->
+	<object path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_lightsout" force="false"/>	
+	<material_config path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_contour" force="false"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_husk" force="false" load="true"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_df" force="false"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_nm" force="false"/>
+	<sequence_manager path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf"/> 
+	<unit path="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" force="false" load="false"/>	
+	
 	<!--FBI UMP Zombie-->
 	<object path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
@@ -148,14 +242,6 @@
 	<model path="units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_contour"/>
-	<!--city heavy g36-->
-    <unit path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36" load="true"/>
-    <unit path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk" load="true"/>
-    <object path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
-	<cooked_physics path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
-	<model path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36_contour"/>
 	<!--swat heavy r870-->
     <unit path="units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc" load="true"/>
     <unit path="units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk" load="true"/>
@@ -221,7 +307,6 @@
 	<object path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>		
-	
 	
 	<!--dozer 2-->
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"/>
@@ -307,6 +392,17 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_3_helmet_plate/ene_acc_bulldozer_helmet_plate" load="false"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_3_helmet_plate/ene_acc_bulldozer_helmet_plate" force="false"/>		
 	
+	<!--zmedic-->
+	<object path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"/>
+	<model path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic" load="true"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic_contour"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic_husk" load="true"/>	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic_head_df" load="true"/>	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic_body_df" load="true"/>	
+	
 	<!--ztaser-->
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"/>
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"/>
@@ -315,13 +411,6 @@
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_contour"/>
 	<unit path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_husk" load="true"/>
-	
-	<!--ztaser helmets (gotta make duplicates when fucking with the stupid zeal faction assets-->
-	<object path="units/pd2_mod_halloween/characters/ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet"/>
-	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet"/>
-	<model path="units/pd2_mod_halloween/characters/ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet"/>
-	<unit path="units/pd2_mod_halloween/characters/ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet" load="true"/>
-	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_tazer_helmet/ene_acc_zeal_tazer_helmet"/>
 
 	<!--zcloaker-->
 	<object path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
@@ -368,6 +457,41 @@
 	<cooked_physics path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet"/>
 	<model path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet"/>
 	<material_config path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet"/>	
-	<unit path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" load="true"/>	
+	<unit path="units/pd2_mod_halloween/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" load="true"/>		
+	
+	<!--textures-->	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_city_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/swat_heavy_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/swat_city_df_sc" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_city_head_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmets_shotgun_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmet_shotgun_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/swat_heavy_head_df" />
+	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/spine_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/spine_nm" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/skull_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/skull_nm" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/mcm_hector_helmet_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_df" />	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_skele_swat_2_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/genshill_helm_df" />
+	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/grenadier_body_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_city_heavy_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_soldier_zeal_head_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_soldier_zeal_head_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_fbi_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_fbi_head_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/mask_df" />
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/zeal_cloaker_body_df" />	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/zeal_cloaker_head_df" />	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_df" />	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_head_df" />
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_df" />	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_2/bulldozer_2_df" />	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer_3/bulldozer_3_df" />	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_bulldozer/bulldozer_df" />	
+	<texture path="units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/swat_heavy_head_df" />	
 	
 </table>

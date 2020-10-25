@@ -3,8 +3,8 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 	log("Generating stats for: " .. weap.name_id)
 
 	--Set some stuff that's generic to all weapons.
-	weap.AMMO_PICKUP = self:_pickup_chance()
-	weap.kick = self.new_m4.kick
+	weap.AMMO_PICKUP = self.stat_info._pickup_chance
+	weap.kick = self.stat_info.kick_tables.even_recoil
 	local apply_akimbo_penalties = nil
 	local add_to_smgs = nil
 	local stats = {}
@@ -12,10 +12,11 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 	--Apply weapons stats based on category. Usually just one of these with akimbo maybe added on top.
 	for _, value in pairs(weap.categories) do
 		if value == "lmg" then
+			weap.kick = self.stat_info.kick_tables.horizontal_recoil
 			stats = self:generate_lmg(weap)
 			add_to_smgs = true
 		elseif value == "shotgun" then
-			weap.kick = self.huntsman.kick
+			weap.kick = self.stat_info.kick_tables.vertical_kick
 			weap.rays = 9
 			stats = self:generate_shotgun(weap)
 		elseif value == "smg" then
@@ -23,9 +24,10 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		elseif value == "pistol" then
 			stats = self:generate_pistol(weap)
 		elseif value == "snp" then
-			weap.kick = self.huntsman.kick
+			weap.kick = self.stat_info.kick_tables.vertical_kick
 			stats = self:generate_snp(weap)
 		elseif value == "assault_rifle" then
+			weap.kick = self.stat_info.kick_tables.moderate_kick
 			stats = self:generate_assault_rifle(weap)
 		elseif value == "akimbo" then
 			apply_akimbo_penalties = true
@@ -418,7 +420,7 @@ function WeaponTweakData:generate_lmg(weap)
 			weap.CLIP_AMMO_MAX)
 	else
 		stats.damage = 24
-		stats.AMMO_MAX = 180
+		stats.AMMO_MAX = 225
 		stats.quietness = 8
 		stats.recoil = 26 - math.floor((rpm - 500)/50)
 		stats.spread = self:generate_stat_from_table(

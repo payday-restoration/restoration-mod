@@ -1,0 +1,32 @@
+<materials version="3" group="ene_akan_fbi_spooc_asval_smg">
+	<material name="mtr_body" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture 				file="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_dead_df"/>
+		<variable name="uv0_speed" value="0 0 0" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+	</material>
+
+	<material name="mtr_body_lod1" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/spook_cloak_glow_df"/>
+        <variable name="uv0_speed" value="0 1 0" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+    </material>	
+	<material name="mtr_body_lod2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/payday2/characters/shared_textures/spook_cloak_glow_df"/>
+        <variable name="uv0_speed" value="0 1 0" type="vector3"/>
+		<variable value="1" type="scalar" name="intensity"/>
+    </material>
+	<material name="mtr_night_vision" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op"/>
+        <diffuse_texture file="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+	</material>
+
+	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/titan_il" mip="1"/>
+		<self_illumination_texture 		file="units/payday2/characters/shared_textures/titan_il" mip="1"/>
+		<opacity_texture 				file="units/payday2/characters/shared_textures/titan_il" mip="1"/>
+		<variable 						value="dimlight" type="scalar" name="il_multiplier"/>   
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

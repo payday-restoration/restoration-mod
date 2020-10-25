@@ -81,7 +81,6 @@ function PlayerDamage:init(unit)
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
 	self._deflection = 1 - player_manager:body_armor_value("deflection", nil, 0) - player_manager:get_deflection_from_skills() --Damage reduction for health. Crashes here mean there is a syntax error in playermanager.
 	self._unpierceable = player_manager:has_category_upgrade("player", "unpierceable_armor")
-	self.tase_time = 0 --Titan Taser slow cooldown.
 	managers.player:set_damage_absorption("absorption_addend", managers.player:upgrade_value("player", "damage_absorption_addend", 0))
 	managers.player:set_damage_absorption("full_armor_absorption", managers.player:upgrade_value("player", "armor_full_damage_absorb", 0) * self:_max_armor())
 
@@ -152,14 +151,11 @@ function PlayerDamage:init(unit)
 		self:_init_standard_listeners()
 	end
 
-	if player_manager:has_category_upgrade("temporary", "revive_damage_reduction") then
-		self._listener_holder:add("combat_medic_damage_reduction", {"on_revive"}, callback(self, self, "_activate_combat_medic_damage_reduction"))
-	end
-
 	if player_manager:has_category_upgrade("player", "revive_damage_reduction") and player_manager:has_category_upgrade("player", "revive_damage_reduction") then
 
 		local function on_revive_interaction_start()
 			managers.player:set_property("revive_damage_reduction", player_manager:upgrade_value("player", "revive_damage_reduction"), 1)
+			managers.hud:remove_skill("revive_damage_reduction")
 			managers.hud:add_skill("revive_damage_reduction")
 		end
 
@@ -265,16 +261,14 @@ function PlayerDamage:damage_melee(attack_data)
 	--Unit specific shenanigans.
 	local _time = math.floor(TimerManager:game():time())
 	local player_unit = managers.player:player_unit()
-	if alive(attack_data.attacker_unit) then
+	if alive(attack_data.attacker_unit) and can_counter_strike == false then
 		--Titan Taser tase.
 		if alive(player_unit) and not self._unit:movement():current_state().driving and (attack_data.attacker_unit:base()._tweak_table == "taser_titan" or attack_data.attacker_unit:base()._tweak_table == "taser_summers" or attack_data.attacker_unit:base()._tweak_table == "summers" or attack_data.attacker_unit:base()._tweak_table == "fbi_vet_boss") then
 			attack_data.attacker_unit:sound():say("post_tasing_taunt")
 			attack_data.variant = "taser_tased" --they give you an actual tase on a melee attack.
-			can_counter_strike = false
 		elseif attack_data.attacker_unit:base()._tweak_table == "autumn" then
 			attack_data.attacker_unit:sound():say("i03", true, nil, true)
 			pm:set_player_state("arrested")
-			can_counter_strike = false
 		end
 	end
 
@@ -785,19 +779,13 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	pm:send_message(Message.OnPlayerDamage, nil, attack_data)
 	self:_call_listeners(damage_info)
 	
-	--Titan Taser shenanigans.
-	local _time = math.floor(TimerManager:game():time())
-	local player_unit = managers.player:player_unit()
-	if alive(attack_data.attacker_unit) then
-		if attack_data.attacker_unit:base()._tweak_table == "taser_titan" and self.tase_time < _time or attack_data.attacker_unit:base()._tweak_table == "taser_summers" and self.tase_time < _time then
-			if alive(player_unit) then
-				if not self._unit:movement():current_state().driving then
-					attack_data.attacker_unit:sound():say("post_tasing_taunt")
-					managers.player:activate_titan_tased() --Apply slow from titan taser.
-					self.tase_time = _time + 1 --Update cooldown
-				end
-			end
-		end		
+	--Attacks with slow debuffs.
+	if alive(attack_data.attacker_unit) and tweak_data.character[attack_data.attacker_unit:base()._tweak_table] and tweak_data.character[attack_data.attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
+		local slow_data = tweak_data.character[attack_data.attacker_unit:base()._tweak_table].slowing_bullets
+		if slow_data.taunt then
+			attack_data.attacker_unit:sound():say("post_tasing_taunt")
+		end
+		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power) --Apply slow from titan taser.
 	end
 	
 	return 
@@ -893,14 +881,11 @@ function PlayerDamage:revive(silent)
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "increased_movement_speed") then
 		managers.player:activate_temporary_upgrade("temporary", "increased_movement_speed")
 	end
-	if managers.player:has_inactivate_temporary_upgrade("temporary", "swap_weapon_faster") then
-		managers.player:activate_temporary_upgrade("temporary", "swap_weapon_faster")
-	end
-	if managers.player:has_inactivate_temporary_upgrade("temporary", "reload_weapon_faster") then
-		managers.player:activate_temporary_upgrade("temporary", "reload_weapon_faster")
-	end
 	if managers.player:has_category_upgrade("player", "dodge_on_revive") then --Rogue dodge meter bonus on revive.
 		self:fill_dodge_meter(3.0, true)
+	end
+	if managers.player:has_category_upgrade("player", "revive_reload") then
+		managers.player:reload_weapons()
 	end
 
 	--Update What Doesn't Kill
@@ -1083,7 +1068,18 @@ end
 
 --Called when players get kicked/tased. Applies damage and sets flag to true.
 function PlayerDamage:cloak_or_shock_incap(damage)
-	self:change_health(-1.0 * damage * managers.player:upgrade_value("player", "spooc_damage_resist", 1.0) or 0.0)
+	damage = damage * managers.player:damage_reduction_skill_multiplier("kick_or_shock")
+	local damage_absorption = managers.player:damage_absorption()
+	if damage_absorption > 0 then
+		damage = math.max(0.1, damage - damage_absorption)
+	end
+	
+	local deflection = self._deflection
+	if self:has_temp_health() then --Hitman deflection bonus.
+		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+	end
+
+	self:change_health(-1.0 * deflection * damage or 0.0)
 
 	if self:get_real_health() == 0 then
 		self:change_health(0.1)
@@ -1221,6 +1217,16 @@ Hooks:PostHook(PlayerDamage, "_calc_armor_damage", "ResBikerCooldown", function(
 	end
 end)
 
+--Whether the player can proc Sneaky Bastard.
+function PlayerDamage:can_dodge_heal()
+	if self._can_dodge_heal then
+		self._can_dodge_heal = nil
+		return true
+	end
+
+	return nil
+end
+
 function PlayerDamage:tick_biker_armor_regen(amount)
 	if self:get_real_armor() == self:_max_armor() then --End biker regen when armor returns.
 		self._biker_armor_regen_t = 0.0
@@ -1331,7 +1337,7 @@ function PlayerDamage:_max_health_orig()
 	return max_health
 end
 
---Makes modifications to handle temporary HP proparly.
+--Makes modifications to handle temporary HP properly.
 function PlayerDamage:set_health(health)
 	self:_check_update_max_health()
 
@@ -1341,7 +1347,7 @@ function PlayerDamage:set_health(health)
 	local max_health = self:_max_health_orig() * self._max_health_reduction + self._temp_health
 	health = math.clamp(health, 0, max_health) --Removed useless floor before clamp.
 
-	if health < prev_health then --Reduce temp health if health was reduced.
+	if health < prev_health and self._temp_health > 0 then --Reduce temp health if health was reduced.
 		self:_change_temp_health(health - prev_health)
 	end
 
@@ -1371,7 +1377,7 @@ end
 
 --Use old max health function to ignore temporary HP for % healing.
 function PlayerDamage:restore_health(health_restored, is_static, chk_health_ratio)
-	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) then
+	if chk_health_ratio and managers.player:is_damage_health_ratio_active(self:health_ratio()) and not self:is_downed() then
 		return false
 	end
 
@@ -1409,6 +1415,10 @@ function PlayerDamage:set_armor(armor)
 
 	if self._armor then
 		local current_armor = self:get_real_armor()
+
+		if current_armor ~= 0 and armor == 0 then
+			self._can_dodge_heal = true
+		end
 
 		if armor == self:_max_armor() then
 			managers.player:set_damage_absorption(

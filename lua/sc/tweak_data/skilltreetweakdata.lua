@@ -375,8 +375,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {3, 3},
 				[1] = {
 					upgrades = {
-						"smg_hip_fire_spread_multiplier",
-						"assault_rifle_hip_fire_spread_multiplier",
+						"smg_hip_fire_spread_multiplier"
 					},
 					cost = self.costs.default
 				},
@@ -395,17 +394,14 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {10, 0},
 				[1] = {
 					upgrades = {
-						"smg_move_spread_multiplier",
-						"assault_rifle_move_spread_multiplier",
+						"smg_move_spread_multiplier"
 					},
 					cost = self.costs.default
 				},
 				[2] = {
 					upgrades = {
 						"smg_fire_rate_multiplier_1",
-						"assault_rifle_fire_rate_multiplier_1",
-						"smg_full_auto_free_ammo",
-						"assault_rifle_full_auto_free_ammo"
+						"smg_full_auto_free_ammo"
 					},
 					cost = self.costs.pro
 				}
@@ -464,7 +460,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"weapon_automatic_head_shot_add_2"
+						"weapon_automatic_head_shot_add_2",
+						"player_universal_body_expertise"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1121,7 +1118,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 9},
 				[1] = {
 					upgrades = {
-						"weapon_single_spread_index_addend"
+						"assault_rifle_spread_index_addend",
+						"snp_spread_index_addend"
 					},
 					cost = self.costs.default
 				},
@@ -1743,8 +1741,8 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"player_temp_swap_weapon_faster_1",
-						"player_temp_reload_weapon_faster_1"
+						"player_revived_damage_resist_1",
+						"player_revive_reload"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1986,7 +1984,7 @@ function SkillTreeTweakData:init(tweak_data)
 		upgrades = {
 			"weapon_passive_headshot_damage_multiplier",
 			"weapon_passive_damage_multiplier_1",
-			"player_non_special_melee_multiplier_1",
+			"player_non_special_melee_multiplier_1", --This bonus doesn't actually do anything, but it is what's displayed in menus.
 			"player_melee_damage_multiplier_1"
 		},
 		cost = 300,

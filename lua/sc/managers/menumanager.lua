@@ -1,3 +1,5 @@
+restoration._cop_comment_cooldown_t = {}
+
 --Fix for Grenade Cases on Pro Jobs
 function MenuPrePlanningInitiator:set_locks_to_param(params, key, index)
 	local data = tweak_data:get_raw_value("preplanning", key, index) or {}
@@ -181,6 +183,153 @@ function MenuCallbackHandler:jukebox_option_heist_tracks(item)
 
 	managers.savefile:setting_changed()
 end
+
+function restoration:_game_t()
+	return TimerManager:game():time()
+end
+
+function restoration:start_inform_ene_cooldown(cooldown_t, msg_type)
+	local t = self:_game_t()
+	self._cop_comment_cooldown_t[msg_type] = self._cop_comment_cooldown_t[msg_type] or {}
+	self._cop_comment_cooldown_t[msg_type]._cooldown_t = cooldown_t + t
+	self._cooldown_delay_t = t + 5
+end
+
+function restoration:ene_inform_has_cooldown_met(msg_type)
+	local t = TimerManager:game():time()
+	
+	if not self._cop_comment_cooldown_t[msg_type] then
+		return true
+	end
+	
+	if self._cooldown_delay_t and self._cooldown_delay_t > t then
+		return false
+	end
+	
+	if self._cop_comment_cooldown_t[msg_type]._cooldown_t < t then
+		return true
+	end
+	
+	return false
+end
+
+
+function restoration:_has_deployable_type(unit, deployable)
+	local peer_id = managers.criminals:character_peer_id_by_unit(unit)
+	if not peer_id then
+		return false
+	end
+	
+	local synced_deployable_equipment = managers.player:get_synced_deployable_equipment(peer_id)
+	
+	if synced_deployable_equipment then
+	
+		if not synced_deployable_equipment.deployable or synced_deployable_equipment.deployable ~= deployable then
+			return false
+		end
+		
+		--[[if synced_deployable_equipment.amount and synced_deployable_equipment.amount <= 0 then
+			return false
+		end]]--
+		
+		
+		return true		
+	end
+	
+	return false
+end
+
+function restoration:_next_to_cops(data, amount)
+	local close_peers = {}
+	local range = 5000
+	amount = amount or 4
+	for u_key, u_data in pairs(managers.enemy:all_enemies()) do
+		if data.key ~= u_key then
+			if u_data.unit and alive(u_data.unit) and not u_data.unit:character_damage():dead() then
+				local anim_data = u_data.unit:anim_data()
+				if not anim_data.surrender and not anim_data.hands_tied and not anim_data.hands_back then
+					if mvector3.distance_sq(data.m_pos, u_data.m_pos) < range * range then
+						table.insert(close_peers, u_data.unit)
+					end
+				end
+			end
+		end
+	end
+	return #close_peers >= amount
+end
+
+function restoration:inform_law_enforcements(data, debug_enemy)
+	if managers.groupai:state()._special_unit_types[data.unit:base()._tweak_table] then
+		return
+	end
+	if data.unit:in_slot(16) or not data.char_tweak.chatter then
+		return
+	end
+	
+	local sound_name, cooldown_t, msg_type
+	local enemy_target = data.attention_obj
+	
+	if debug_enemy then
+		enemy_target = {
+			unit = debug_enemy,
+			dis = 0,
+			is_deployable = false
+		}	
+	end
+	
+	if enemy_target then
+		if enemy_target.is_deployable then
+			msg_type = "sentry_detected"
+			sound_name = "ch2"
+			cooldown_t = 30
+		elseif enemy_target.unit:in_slot(managers.slot:get_mask("all_criminals")) then
+			local weapon = enemy_target.unit.inventory and enemy_target.unit:inventory():equipped_unit()
+			if weapon and weapon:base():is_category("saw") then
+				msg_type = "saw_maniac"
+				sound_name = "ch4"
+				cooldown_t = 30
+			elseif self:_has_deployable_type(enemy_target.unit, "doctor_bag") then
+				msg_type = "doc_bag"
+				sound_name = "med"
+				cooldown_t = 30
+				--log("they have a medic >:c")
+			elseif self:_has_deployable_type(enemy_target.unit, "first_aid_kit") then
+				msg_type = "first_aid_kit"
+				sound_name = "med"
+				cooldown_t = 30
+				--log("they have a medic >:c")
+			elseif self:_has_deployable_type(enemy_target.unit, "ammo_bag") then
+				msg_type = "ammo_bag"
+				sound_name = "amm"
+				cooldown_t = 30
+				--log("they have an ammy bag")
+			elseif self:_has_deployable_type(enemy_target.unit, "trip_mine") then
+				msg_type = "trip_mine"
+				sound_name = "ch1"
+				cooldown_t = 30
+				--log("watch out for the trip mines")
+			end
+		end
+	end
+	
+	if self:_next_to_cops(data) then
+		return
+	end
+	
+	if not enemy_target or enemy_target.dis > 100000 then
+		return
+	end
+	
+	if not msg_type or not self:ene_inform_has_cooldown_met(msg_type) then
+		return
+	end
+	
+	if data.unit then
+		data.unit:sound():say(sound_name, true)
+		self:start_inform_ene_cooldown(cooldown_t, msg_type)
+	end
+end
+
 --[[
 Hooks:Add("radialmenu_released_resutilitymenu","resmod_utility_menu_on_selected",function(item)
 	if item == 1 then 

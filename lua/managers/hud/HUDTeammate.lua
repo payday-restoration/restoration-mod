@@ -366,7 +366,7 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 		name = "radial_delayed_damage_armor",
 		visible = false,
 		render_template = "VertexColorTexturedRadialFlex",
-		layer = 5,
+		layer = 6,
 		w = radial_delayed_damage_panel:w(),
 		h = radial_delayed_damage_panel:h()
 	})
@@ -375,7 +375,7 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 		name = "radial_delayed_damage_health",
 		visible = false,
 		render_template = "VertexColorTexturedRadialFlex",
-		layer = 5,
+		layer = 6,
 		w = radial_delayed_damage_panel:w(),
 		h = radial_delayed_damage_panel:h()
 	})

@@ -12,8 +12,8 @@ ModifierDozerMedic.russia = {
 }	
 
 ModifierDozerMedic.murky = {
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_swat_m4/ene_murky_swat_m4"),
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_hrt_2/ene_murky_hrt_2")
+	Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+	Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2")
 }		
 
 ModifierDozerMedic.zombie = {

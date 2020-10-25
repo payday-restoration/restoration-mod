@@ -8,7 +8,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_swat_heavy_helmet/ene_acc_swat_heavy_helmet" />
 		<depends_on unit="units/payday2/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_mac11/wpn_npc_mac11" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
 
 	<extensions>

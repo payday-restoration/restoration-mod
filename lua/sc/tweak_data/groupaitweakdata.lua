@@ -615,6 +615,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 0,
 			phalanx_vip = 0,
 			spring = 0,
+			headless_hatman = 0,
 			autumn = 0,
 			summers = 0
 		}
@@ -628,6 +629,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 0,
 			phalanx_vip = 0,
 			spring = 0,
+			headless_hatman = 0,
 			autumn = 0,
 			summers = 0
 		}
@@ -641,6 +643,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 2,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}
@@ -654,6 +657,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 3,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}
@@ -667,6 +671,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 3,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}	
@@ -680,6 +685,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 3,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}				
@@ -693,6 +699,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			medic = 3,
 			phalanx_vip = 1,
 			spring = 1,
+			headless_hatman = 1,
 			autumn = 1,
 			summers = 1
 		}
@@ -796,7 +803,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),	
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+					Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
 				},
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
@@ -1062,7 +1069,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf")
 			},
 			zombie = {
-				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+				Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")
 			},
 			murkywater = {
 				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
@@ -1116,7 +1123,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.fbi_vet = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")
+					Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1")
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2")
@@ -1210,7 +1217,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")						
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")						
 				},
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"),
@@ -1362,7 +1369,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")						
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")						
 				},
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"),
@@ -1492,9 +1499,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"),							
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"),							
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1"),
@@ -1646,7 +1653,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -1748,7 +1755,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -2149,7 +2156,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")							
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
@@ -2301,7 +2308,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")							
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
@@ -2462,9 +2469,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),					
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),	
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"),	
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
@@ -2653,7 +2660,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),		
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),						
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")							
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
@@ -2713,7 +2720,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")								
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
@@ -2944,7 +2951,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -3226,7 +3233,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),								
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -3464,11 +3471,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"),	
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"),							
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"),							
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -3678,7 +3685,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -3767,8 +3774,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
-					Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -3851,8 +3858,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),	
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),					
-					Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2"),
@@ -4026,7 +4033,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -4266,7 +4273,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),								
 					Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -4482,11 +4489,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"),	
 					Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"),							
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"),							
 					Idstring("units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -4696,7 +4703,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -4786,7 +4793,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
@@ -4870,7 +4877,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),						
 					Idstring("units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_2/ene_omnia_hrt_2"),
@@ -4984,7 +4991,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
@@ -5114,7 +5121,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
@@ -5232,9 +5239,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")									
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1"),
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")									
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
@@ -5349,7 +5356,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
@@ -5401,7 +5408,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),		
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),								
-					Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1"),
@@ -6977,7 +6984,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")				
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper")				
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
@@ -7107,7 +7114,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")				
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper")				
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
@@ -7255,9 +7262,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),					
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),	
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),	
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper")
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
@@ -7485,9 +7492,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
 					Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
 					Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),						
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper")
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
@@ -7642,7 +7649,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
-					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+					Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper")
 				},							
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
@@ -7909,7 +7916,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),	
 					Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),			
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+					Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
@@ -8041,7 +8048,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+					Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
@@ -8132,7 +8139,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
 					Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
 					Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+					Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
@@ -8251,9 +8258,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
 					Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"),
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),	
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),	
-					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+					Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),	
+					Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 				},								
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield"),
@@ -8950,7 +8957,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
 					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),		
 					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")							
+					Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")							
 				},					
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
@@ -9111,7 +9118,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
 					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),		
 					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")							
+					Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")							
 				},					
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
@@ -9233,16 +9240,16 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf")
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),		
-					Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
-					Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")							
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),		
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_medic/ene_zeal_medic"),
+					Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")							
 				},					
 				murkywater = {
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic"),
@@ -9801,7 +9808,126 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 			is_captain = true
 		}
 	end
-			
+	
+	--Headless Titandozer Boss
+	self.unit_categories.HVH_Boss = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},
+			russia = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},
+			federales = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},
+			lapd = {
+				Idstring("units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman")
+			},				
+		},
+		max_amount = 1,
+		access = access_type_all,
+		special_type = "headless_hatman"
+	}	
+	--Headless Titandozers that spawn with boss
+	if difficulty_index <= 6 then
+		self.unit_categories.HVH_Boss_Headless = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},
+				zombie = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},					
+				russia = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},
+				murkywater = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},
+				federales = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},				
+				nypd = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				},	
+				lapd = {
+					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+				}				
+			},
+			access = access_type_all,
+			special_type = "tank",
+			is_captain = true
+		}
+	else
+		self.unit_categories.HVH_Boss_Headless = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},
+				zombie = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},					
+				russia = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},
+				murkywater = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},
+				federales = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},				
+				nypd = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				},	
+				lapd = {
+					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
+				}				
+			},
+			access = access_type_all,
+			special_type = "tank",
+			is_captain = true
+		}	
+	end
+	--Ghost Titancloakers that spawn with boss
+	self.unit_categories.HVH_Boss_Spooc = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},					
+			russia = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},
+			murkywater = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},
+			federales = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			},	
+			lapd = {
+				Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+			}				
+		},
+		access = access_type_all,
+		special_type = "spooc",
+		is_captain = true
+	}	
+
 end
 
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
@@ -10220,7 +10346,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"hunter",
 			"flank",
 			"spoocavoidance",
-			"shield_cover",
 			"smoke_grenade",
 			"flash_grenade"
 		},
@@ -10228,6 +10353,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"aggressor",
 			"charge"
 		},
+		HVH_boss = {
+			"aggressor",
+			"charge"
+		},		
 		Cap_summers = {
 			"aggressor",
 			"charge"
@@ -10244,20 +10373,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"hitnrun"
 		},
 		Cap_winters = {
-			"obstacle",
-			"elite_ranged_fire",
-			"hitnrun",
-			"spoocavoidance",
-			"reloadingretreat",
-			"shield"
+			"shield",
+			"aggressor",
+			"charge"
 		},	
 		Cap_winters_minion = {
-			"obstacle",
-			"elite_ranged_fire",
-			"hitnrun",
-			"spoocavoidance",
-			"reloadingretreat",
-			"shield_cover"
+			"shield",
+			"aggressor",
+			"charge"
 		},			
 		--hunter hrt tactics
 		HRT_attack = { --sneaks up and targets players in bad positions
@@ -12355,6 +12478,73 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}			
 	end
+	if difficulty_index <= 5 then
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = {1, 1},
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				}
+			}
+		}	
+	elseif difficulty_index == 6 or difficulty_index == 7 then
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = {3, 3},
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				}
+			}
+		}				
+	else
+		self.enemy_spawn_groups.HVH_Boss = {
+			amount = {7, 7},
+			spawn = {
+				{
+					unit = "HVH_Boss",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.HVH_boss,
+					rank = 1
+				},
+				{
+					unit = "HVH_Boss_Headless",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				},
+				{
+					unit = "HVH_Boss_Spooc",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = self._tactics.HVH_boss,
+					rank = 2
+				},					
+			}
+		}			
+	end	
 	if difficulty_index <= 7 then
 		self.enemy_spawn_groups.Cap_Autumn = {
 			amount = {1, 1},
@@ -14503,6 +14693,37 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			break
 		end
 	end
+	--HVH Boss stuff--
+	for _,v in pairs(restoration.what_a_horrible_heist_to_have_a_curse) do
+		if job == v then
+			if difficulty_index <= 3 then
+				self.besiege.assault.groups.HVH_Boss = {
+					0,
+					0,
+					0
+				}
+			elseif difficulty_index == 4 then
+				self.besiege.assault.groups.HVH_Boss = {
+					0,
+					0.08,
+					0.16
+				}
+			elseif difficulty_index == 5 then
+				self.besiege.assault.groups.HVH_Boss = {
+					0,
+					0.08,
+					0.16
+				}
+			else
+				self.besiege.assault.groups.HVH_Boss = {
+					0,
+					0.08,
+					0.16
+				}
+			end
+			break
+		end
+	end	
 	--Captain Winters stuff here--
 	for _,v in pairs(restoration.captain_camper) do
 		if job == v then

@@ -1,0 +1,6 @@
+<materials version="3">
+	<material name="mtr_beardy" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_steel/weapons/wpn_fps_mel_beardy/wpn_third_mel_beardy_df" />
+		<bump_normal_texture file="units/pd2_dlc_steel/weapons/wpn_fps_mel_beardy/wpn_third_mel_beardy_nm" />
+	</material>
+</materials>

@@ -565,6 +565,16 @@ function CopLogicBase._upd_attention_obj_detection(data, min_reaction, max_react
 	local groupai_state_manager = managers.groupai:state()
 	local all_attention_objects = groupai_state_manager:get_AI_attention_objects_by_filter(data.SO_access_str, data.team)
 	local is_detection_persistent = groupai_state_manager:is_detection_persistent()
+	
+    if not my_data.detection then
+        local is_cool = data.unit:movement():cool()
+
+        if is_cool then
+            my_data.detection = data.char_tweak.detection.ntl
+        else
+            my_data.detection = data.char_tweak.detection.combat
+        end
+    end	
 
 	for u_key, attention_info in pairs(all_attention_objects) do
 		if u_key ~= my_key and not detected_obj[u_key] then

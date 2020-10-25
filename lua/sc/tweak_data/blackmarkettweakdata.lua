@@ -5,7 +5,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_gloves", "ResGloves", function(self,
 	self.suit_default_gloves.suit_sunny = "heist_default"
 	self.suit_default_gloves.loud_suit = "heist_default"
 	self.suit_default_gloves.poggers = "esport"
-	self.suit_default_gloves.suit_prison = "saints"
+	self.suit_default_gloves.suit_prison = "heist_default"
 end)
 
 --This is a helmet, not a mask--
@@ -477,7 +477,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 		unit = "units/mods/masks/msk_chains_halloween/msk_chains_halloween",
 		name_id = "bm_msk_chains_halloween",
 		desc_id = "bm_msk_chains_halloween_desc",
-		--pcs = {},
+		pcs = {},
 		value = 0,
 		type = "helmet",	
 		global_value = "rest",
@@ -489,7 +489,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 		unit = "units/mods/masks/msk_dallas_halloween/msk_dallas_halloween",
 		name_id = "bm_msk_dallas_halloween",
 		desc_id = "bm_msk_dallas_halloween_desc",
-		--pcs = {},
+		pcs = {},
 		value = 0,
 		type = "helmet",	
 		global_value = "rest",
@@ -501,7 +501,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 		unit = "units/mods/masks/msk_hoxton_halloween/msk_hoxton_halloween",
 		name_id = "bm_msk_hoxton_halloween",
 		desc_id = "bm_msk_hoxton_halloween_desc",
-		--pcs = {},
+		pcs = {},
 		value = 0,
 		type = "helmet",	
 		global_value = "rest",
@@ -512,7 +512,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_masks", "ResMasks", function(self, t
 		unit = "units/mods/masks/msk_wolf_halloween/msk_wolf_halloween",
 		name_id = "bm_msk_wolf_halloween",
 		desc_id = "bm_msk_wolf_halloween_desc",
-		--pcs = {},
+		pcs = {},
 		value = 0,
 		type = "helmet",	
 		global_value = "rest",
@@ -853,6 +853,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	table.insert(self._projectiles_index, "bravo_frag")
 	table.insert(self._projectiles_index, "cluster_fuck")
 	table.insert(self._projectiles_index, "child_grenade")
+	table.insert(self._projectiles_index, "hatman_molotov")
 	table.insert(self._projectiles_index, "launcher_frag_osipr")
 	table.insert(self._projectiles_index, "launcher_incendiary_osipr")
 
@@ -952,6 +953,15 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.child_grenade.is_a_grenade = true
 	self.projectiles.child_grenade.is_explosive = true
 	self.projectiles.child_grenade.add_trail_effect = true
+	
+	self.projectiles.hatman_molotov = {}
+	self.projectiles.hatman_molotov.unit = "units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov"
+	self.projectiles.hatman_molotov.unit_dummy = "units/pd2_dlc_bbq/weapons/molotov_cocktail/wpn_molotov_husk"
+	self.projectiles.hatman_molotov.physic_effect = Idstring("physic_effects/molotov_throw")
+	self.projectiles.hatman_molotov.throwable = false
+	self.projectiles.hatman_molotov.is_a_grenade = true
+	self.projectiles.hatman_molotov.add_trail_effect = true
+	self.projectiles.hatman_molotov.impact_detonation = true
 
 --SABR Grenade Launcher.
 	self.projectiles.launcher_frag_osipr = {
@@ -2495,13 +2505,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--Payday DLC? Nah it's a walking dead game you cunts.--
 	self.melee_weapons.barbedwire.anim_global_param = "melee_baseballbat"
 	self.melee_weapons.barbedwire.type = "axe"
+	self.melee_weapons.clean.dot_data = {
+		type = "poison",
+		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.0}
+	}
+	self.melee_weapons.barbedwire.info_id = "bm_melee_barbedwire_info"
 	self.melee_weapons.barbedwire.align_objects = {"a_weapon_right"}
 	self.melee_weapons.barbedwire.anim_attack_vars = {"var1","var2"}
 	self.melee_weapons.barbedwire.stats.min_damage = 4.5
 	self.melee_weapons.barbedwire.stats.max_damage = 9.1
-	self.melee_weapons.barbedwire.stats.min_damage_effect = 4.5
-	self.melee_weapons.barbedwire.stats.max_damage_effect = 5
-	self.melee_weapons.barbedwire.stats.charge_time = 2.1
+	self.melee_weapons.barbedwire.stats.max_damage_effect = 4
+	self.melee_weapons.barbedwire.stats.min_damage_effect = 3.5
+	self.melee_weapons.barbedwire.stats.charge_time = 2.3
 	self.melee_weapons.barbedwire.stats.range = 210
 	self.melee_weapons.barbedwire.repeat_expire_t = 1.05
 	self.melee_weapons.barbedwire.expire_t = 1.2
@@ -3126,16 +3141,18 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.taser.melee_damage_delay = 0.2
 	
 	--Thanks Boss--	
-	self.melee_weapons.fight.stats.min_damage = 2
-	self.melee_weapons.fight.stats.max_damage = 3.1
-	self.melee_weapons.fight.stats.min_damage_effect = 6
-	self.melee_weapons.fight.stats.max_damage_effect = 7
-	self.melee_weapons.fight.stats.charge_time = 0.5
+	self.melee_weapons.fight.stats.min_damage = 1
+	self.melee_weapons.fight.stats.max_damage = 2
+	self.melee_weapons.fight.stats.min_damage_effect = 12
+	self.melee_weapons.fight.stats.max_damage_effect = 10.85
+	self.melee_weapons.fight.stats.charge_time = 1
 	self.melee_weapons.fight.stats.range = 150
 	self.melee_weapons.fight.repeat_expire_t = 0.4
 	self.melee_weapons.fight.melee_damage_delay = 0.2
 	self.melee_weapons.fight.stats.concealment = 30
 	self.melee_weapons.fight.expire_t = 1.1
+	self.melee_weapons.fight.counter_damage = 12
+	self.melee_weapons.fight.info_id = "bm_melee_fight_info"
 	
 	--Can't fight nature jack--	
 	self.melee_weapons.twins.stats.min_damage = 4.5
@@ -3579,7 +3596,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.clean.stats.min_damage_effect = 0.4
 	self.melee_weapons.clean.stats.max_damage_effect = 0.4
 	self.melee_weapons.clean.stats.charge_time = 0.00001
-	self.melee_weapons.clean.stats.range = 140
+	self.melee_weapons.clean.stats.range = 150
 	self.melee_weapons.clean.stats.concealment = 30
 	self.melee_weapons.clean.repeat_expire_t = 0.5
 	self.melee_weapons.clean.melee_damage_delay = 0
@@ -3662,4 +3679,5 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.chac.stats.concealment = 29
 	self.melee_weapons.chac.melee_damage_delay = 0.2
 	self.melee_weapons.chac.expire_t = 1.1		
+
 end

@@ -555,7 +555,7 @@ function CopActionShoot:set_sniper_focus_sound(sound_progress)
 end
 
 function CopActionShoot:throw_grenade(shoot_from_pos, target_vec, target_pos, grenade_type)
-	if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "cluster_fuck" or grenade_type == "molotov" then
+	if grenade_type == "frag" or grenade_type == "bravo_frag" or grenade_type == "cluster_fuck" or grenade_type == "molotov" or grenade_type == "hatman_molotov" then
 		if ProjectileBase.throw_projectile(grenade_type, shoot_from_pos, target_vec, nil, self._unit, true) then
 			return true
 		end
@@ -680,8 +680,10 @@ function CopActionShoot:update(t)
 
 			if proceed_as_usual and self._throw_molotov and self._ext_brain._throw_molotov_t < t then
 				self._ext_brain._throw_molotov_t = t + 10
+				local is_hatman = self._ext_base._tweak_table == "headless_hatman"
+				local grenade_type = is_hatman and "hatman_molotov" or "molotov"	--Really should be handled by tweakdata.
 
-				if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), "molotov") then
+				if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type) then
 					self._ext_movement:play_redirect("throw_grenade")
 					managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
 					self._unit:sound():say("use_gas", true, nil, true)
@@ -1467,6 +1469,9 @@ function CopActionShoot:anim_clbk_melee_strike()
 				self._common_data.melee_countered_t = TimerManager:game():time()
 
 				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
+				local melee_entry = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
+				local melee_tweak = tweak_data.blackmarket.melee_weapons[melee_entry]
+
 				mvec3_norm(attack_dir)
 
 				local counter_data = {
@@ -1480,8 +1485,43 @@ function CopActionShoot:anim_clbk_melee_strike()
 						body = self._unit:body("body"),
 						ray = attack_dir
 					},
-					name_id = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
+					name_id = melee_entry
 				}
+
+				--Empty Palm Kata gimmick to deal counterstrike damage.
+				--This bit of code *should* only occur client side, so it's probably fine.
+				if melee_tweak.counter_damage then
+					local dmg_multiplier = 1
+					local player_state = character_unit:movement()._current_state
+					local t = Application:time()
+
+					dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
+
+					if managers.player:has_category_upgrade("melee", "stacking_hit_damage_multiplier") then
+						player_state._state_data.stacking_dmg_mul = player_state._state_data.stacking_dmg_mul or {}
+						player_state._state_data.stacking_dmg_mul.melee = player_state._state_data.stacking_dmg_mul.melee or {nil, 0}
+						local stack = player_state._state_data.stacking_dmg_mul.melee
+						if stack[1] and t < stack[1] then
+							dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("melee", "stacking_hit_damage_multiplier", 0) * stack[2])
+						else
+							stack[2] = 0
+						end
+						stack[1] = t + managers.player:upgrade_value(primary_category, "stacking_hit_expire_t", 1)
+						stack[2] = math.min(stack[2] + 1, tweak_data.upgrades.max_weapon_dmg_mul_stacks or 5)
+					end
+
+					local damage_health_ratio = managers.player:get_damage_health_ratio(character_unit:character_damage():health_ratio(), "melee")
+					if damage_health_ratio > 0 then
+						dmg_multiplier = dmg_multiplier * (1 + managers.player:upgrade_value("player", "melee_damage_health_ratio_multiplier", 0) * damage_health_ratio)
+					end
+
+					if self._unit:character_damage().dead and not self._unit:character_damage():dead() and managers.enemy:is_enemy(self._unit) and not tweak_data.character[self._unit:base()._tweak_table].is_escort and managers.player:has_category_upgrade("temporary", "melee_life_leech") and not managers.player:has_activate_temporary_upgrade("temporary", "melee_life_leech") then
+						managers.player:activate_temporary_upgrade("temporary", "melee_life_leech")
+						self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
+					end
+
+					counter_data.damage = melee_tweak.counter_damage * managers.player:get_melee_dmg_multiplier() * dmg_multiplier
+				end
 
 				self._unit:character_damage():damage_melee(counter_data)
 			else

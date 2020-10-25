@@ -1,0 +1,48 @@
+<materials version="3" group="ene_swat_heavy_1">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df" mip="1"/>
+	</material>
+	<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df" mip="4"/>
+	</material>
+
+	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_df"/>
+	</material>
+	<material name="mtr_swat_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_df" mip="1"/>
+	</material>
+	<material name="mtr_swat_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_halloween/characters/shared_textures/ene_omnia_lpf_df" mip="4"/>
+	</material>
+
+	<material name="mtr_ene_acc_swat_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
+		<diffuse_texture 			file="units/pd2_mod_halloween/characters/shared_textures/lycan_df"/>
+		<bump_normal_texture 		file="units/pd2_humble_halloween/masks/lycan/lycan_nm"/>
+        <variable type="scalar" name="il_bloom" value="10"/>
+        <variable type="scalar" name="il_multiplier" value="reddot"/>	
+	</material>
+	<material name="mtr_ene_acc_swat_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
+		<diffuse_texture 			file="units/pd2_mod_halloween/characters/shared_textures/lycan_df" mip="1"/>
+		<bump_normal_texture 		file="units/pd2_humble_halloween/masks/lycan/lycan_nm" mip="1"/>
+        <variable type="scalar" name="il_bloom" value="10"/>
+        <variable type="scalar" name="il_multiplier" value="reddot"/>	
+	</material>
+	<material name="mtr_ene_acc_swat_helmet_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" version="2">
+		<diffuse_texture 			file="units/pd2_mod_halloween/characters/shared_textures/lycan_df" mip="4"/>
+		<bump_normal_texture 		file="units/pd2_humble_halloween/masks/lycan/lycan_nm" mip="4"/>
+        <variable type="scalar" name="il_bloom" value="10"/>
+        <variable type="scalar" name="il_multiplier" value="reddot"/>	
+	</material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

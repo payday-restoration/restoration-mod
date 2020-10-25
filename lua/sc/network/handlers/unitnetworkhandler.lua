@@ -449,3 +449,8 @@ function UnitNetworkHandler:sync_friendly_fire_damage(peer_id, unit, damage, var
 		managers.job:set_memory("trophy_flawless", true, false)
 	end
 end
+
+--Function clients invoke just tells host to do above.
+function UnitNetworkHandler:sync_spawn_extra_ammo(position, rotation)
+    managers.player:spawn_extra_ammo(position, rotation)
+end

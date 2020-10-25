@@ -1,0 +1,15 @@
+<dynamic_object>
+    <diesel orientation_object="rp_chl_prop_pumpkin_small" materials="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" />
+    <bodies>
+		<body name="static_body" collision_class="projectile" collision_script_tag="impact" enabled="true" template="small_prop" friction="0.5" sweep="true" restitution="0.4" ang_damping="0.1" pushed_by_mover="false">
+            <object name="rp_chl_prop_pumpkin_small" />
+            <object name="c_sphere" enabled="true" collision_type="sphere" mass="0.4" padding="-2.5" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+	<effects>
+		<effect_spawner name="fire" enabled="true" object="e_fire" fadekill="true" effect="effects/payday2/particles/character/overkillpack/dallas_eyes" />
+	</effects>
+</dynamic_object>

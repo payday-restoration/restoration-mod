@@ -8174,7 +8174,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_stech.AMMO_MAX = 150
 	self.x_stech.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_stech.kick = self.stat_info.kick_tables.moderate_kick
-	self.x_stech.CLIP_AMMO_MAX = 20
+	self.x_stech.CLIP_AMMO_MAX = 40
 	self.x_stech.supported = true
 	self.x_stech.stats = {
 		damage = 24,

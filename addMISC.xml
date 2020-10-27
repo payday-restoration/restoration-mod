@@ -16,7 +16,11 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false" load="true"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour" force="false"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>		
+	<unit path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>	
+
+	<!--UMPSTER CAP-->	
+	<unit_mat path="units/pd2_mod_sharks/characters/ene_acc_murky_hat_ump/ene_acc_murky_hat_ump" load="true"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_hat_ump/ene_acc_murky_hat_ump" />	
 	
 	<!--Shared textures-->	
 	<texture path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_df" force="false"/>	

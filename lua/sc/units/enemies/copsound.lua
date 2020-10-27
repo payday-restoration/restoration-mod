@@ -146,7 +146,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		p03 = "gogo",
 		m01 = "retreat",
 		h01 = "rescue_civ",
-		cr1 = "rescue_civ",
+		cr1 = "hostage",
 		rdy = "ready",
 		r01 = "ready",
 		clr = "clear",

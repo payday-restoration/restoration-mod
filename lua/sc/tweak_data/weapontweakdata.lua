@@ -5454,7 +5454,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.winchester1874.CAN_TOGGLE_FIREMODE = false
 	self.winchester1874.single = {}
 	self.winchester1874.single.fire_rate = 0.6
-	self.winchester1874.kick = self.stat_info.kick_tables.vertical_left_kick
+	self.winchester1874.kick = self.stat_info.kick_tables.left_kick
 	self.winchester1874.supported = true
 	self.winchester1874.stats = {
 		damage = 90,

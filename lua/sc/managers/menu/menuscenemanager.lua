@@ -7,11 +7,11 @@ Hooks:PostHook(MenuSceneManager, "_set_up_environments", "ResHalloweenColorGrade
 	end
 end)
 
-Hooks:PostHook(MenuSceneManager, "_set_up_templates", "ResChallengesTemplate", function(self)
-	self._scene_templates.res_challenges = {
-		hide_menu_logo = true
-	}
-end)
+-- Hooks:PostHook(MenuSceneManager, "_set_up_templates", "ResChallengesTemplate", function(self)
+-- 	self._scene_templates.res_challenges = {
+-- 		hide_menu_logo = true
+-- 	}
+-- end)
 
 function MenuSceneManager:_setup_bg()
 	local yaw = 180

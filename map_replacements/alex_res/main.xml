@@ -115,7 +115,7 @@
 		<script_data_mods directory="scriptdata"/>
 	</level>
 	<Localization default="english.txt" directory="loc"/>
-	<narrative brief_id="heist_alex_crimenet" briefing_event="hct_rats_brf_speak" contact="hector" custom="true" debrief_event="hct_rats_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/rats_01" id="alex" jc="40" name_id="heist_alex">
+	<!--<narrative brief_id="heist_alex_crimenet" briefing_event="hct_rats_brf_speak" contact="hector" custom="true" debrief_event="hct_rats_debrief" icon="guis/dlcs/bro/textures/pd2/crimenet/rats_01" id="alex" jc="40" name_id="heist_alex">
 		<chain>
 			<table level_id="alex_1_res" type="d" type_id="heist_type_survive"/>
 			<table level_id="alex_2_res" type="d" type_id="heist_type_survive"/>
@@ -174,5 +174,5 @@
 			<value_node value="50000"/>
 			<value_node value="50000"/>
 		</payout>
-	</narrative>
+	</narrative> -->
 </table>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_nails/vehicles/nls_vehicle_drop_off_plane/nls_vehicle_drop_off_plane" orientation_object="rp_plane" />
+	<sequence_manager file="units/pd2_dlc_nails/vehicles/nls_vehicle_drop_off_plane/nls_vehicle_drop_off_plane" />
+	<animations>		
+		<animation_group name="fly" enabled="false">
+			<object name="anim" />
+			<object name="a_right_door" />			
+			<object name="a_left_door" />			
+		</animation_group>
+		
+		<animation_group name="propeller" enabled="false">
+			<object name="a_propeller" />	
+		</animation_group>
+  </animations>
+
+	<bodies>
+		<body name="animated_body" enabled="true" template="animated">
+			<object name="anim"/>
+			<object name="c_airplane" collision_type="box" />
+		</body>
+	</bodies>
+  
+	<graphics>
+		<object name="g_red_halo_wing"   enabled="true" />
+		<object name="g_green_halo_wing" enabled="true" />
+		<object name="g_white_halo_rear" enabled="true" />
+		
+		<object name="g_airplane" 		 	enabled="true"/>
+		<object name="g_left_door_glass" 	enabled="true"/>
+		<object name="g_airplane_glass"  	enabled="true"/>
+		<object name="g_propeller" 		 	enabled="true"/>
+		<object name="g_right_door" 	 	enabled="true"/>
+		<object name="g_right_door_glass"	enabled="true"/>
+		<object name="g_left_door"			enabled="true"/>
+		<object name="g_left_door_glass" 	enabled="true"/>
+	</graphics>
+
+	<decal_surfaces default_material="metal_chassis">
+		<decal_mesh name="g_airplane" enabled="true" material="metal_chassis" />
+		<decal_mesh name="g_propeller" enabled="true" material="metal_chassis" />
+		<decal_mesh name="g_airplane_glass" enabled="true" material="glass_breakable" />
+	</decal_surfaces>
+</dynamic_object> 

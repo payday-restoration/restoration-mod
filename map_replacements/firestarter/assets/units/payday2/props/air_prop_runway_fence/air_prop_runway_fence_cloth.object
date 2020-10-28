@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_air_prop_runway_fence_cloth" materials="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence_cloth" />
+    <bodies>
+        <body name="mover_blocker_body" enabled="true" template="static"  collision_class="bag_blocker">
+            <object name="c_box_editor" collision_type="box" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_cloth" shadow_caster="true"/>
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,17 @@
+<dynamic_object>
+    <diesel orientation_object="rp_res_int_motel_vending_machine_01_illum" materials="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+			<object name="rp_res_int_motel_vending_machine_01_illum"/>
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+    <decal_surfaces>
+		<decal_mesh name="dm_plastic" enabled="true" material="plastic"/>
+		<decal_mesh name="dm_metal" enabled="true" material="sheet_metal"/>
+    </decal_surfaces>
+    <graphics>
+		<object name="g_g" enabled="true"/>
+		<object name="s_s" enabled="true" shadow_caster="true"/>
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,13 @@
+<dynamic_object>
+	<diesel materials="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" orientation_object="rp_spawn_shield_front" />
+	<bodies>
+		<body name="body_debris" enabled="true" template="debris" collides_with_mover="false"  collides_with_wheels="false">
+			<object name="rp_spawn_shield_front"/>
+			<object name="c_convex" collision_type="convex" mass="125"/>
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="g_glass" enabled="true" />
+	</graphics>
+</dynamic_object>

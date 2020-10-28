@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_big" orientation_object="rp_tree_oak_big" />
+	<bodies>
+		
+		<body name="editor_body" enabled="true" template="static">
+			<object name="rp_tree_oak_big" enabled="true" />
+			<object name="c_trunk" enabled="true" collision_type="mesh_mopp"/>
+			<!--<object name="c_leaf" enabled="true" collision_type="mesh_mopp"/>-->
+		</body>
+		<body name="body_mover_blocker" enabled="true" template="mover_blocker">
+			<object name="rp_tree_oak_big" />
+			<object name="c_box_01" collision_type="convex" />
+		</body>
+	</bodies>
+  
+	<decal_surfaces default_material="wood" static="true">
+		<decal_mesh name="c_leaf" enabled="true" material="foliage" />
+		<decal_mesh name="dm_trunk" enabled="true" material="wood" />
+	</decal_surfaces>
+	
+	<graphics>
+		<object name="g_g" enabled="true" shadow_caster="true" instance_struct="world_tm"/>
+	</graphics>
+</dynamic_object>

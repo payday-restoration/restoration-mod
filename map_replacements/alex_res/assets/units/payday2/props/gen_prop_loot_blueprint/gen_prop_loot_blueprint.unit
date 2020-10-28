@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<unit type="gen" slot="1">
+	<network sync="spawn"/>
+	<object file="units/payday2/props/gen_prop_loot_blueprint/gen_prop_loot_blueprint" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="hold_take_blueprints" />
+			<var name="_global_event" value="special_event_a" />
+		</extension>
+	</extensions>
+</unit>

@@ -1,0 +1,6 @@
+<unit type="rvd" slot="1">
+	<object file="units/payday2/props/shadow_mullplan/mullplan_vehicle_small" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

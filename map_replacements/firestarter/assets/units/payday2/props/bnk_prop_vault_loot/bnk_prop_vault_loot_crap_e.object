@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel orientation_object="rp_bnk_prop_vault_loot_crap_e" materials="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_e" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object collision_type="box" name="c_box_001" />
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_book" material="thin_layer" />
+    </decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_book" />
+    </graphics>
+</dynamic_object>

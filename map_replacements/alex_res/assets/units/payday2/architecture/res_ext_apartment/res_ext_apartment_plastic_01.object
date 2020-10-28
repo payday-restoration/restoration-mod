@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" orientation_object="rp_res_ext_apartment_plastic_01" />
+	<bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_res_ext_apartment_plastic_01"/>
+			<object name="g_g" collision_type="mesh_mopp" />
+        </body>
+    </bodies>
+
+	<decal_surfaces default_material="plastic">
+        <decal_mesh enabled="true" name="g_g" material="plastic" />
+    </decal_surfaces>
+
+    <graphics>
+			<object enabled="true" name="g_g" shadow_caster="true" instance_struct="world_tm" />
+    </graphics>
+
+</dynamic_object>

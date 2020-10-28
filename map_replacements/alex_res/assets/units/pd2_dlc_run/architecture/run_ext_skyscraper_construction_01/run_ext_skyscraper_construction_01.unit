@@ -1,0 +1,6 @@
+<unit type="run" slot="1">
+	<object file="units/pd2_dlc_run/architecture/run_ext_skyscraper_construction_01/run_ext_skyscraper_construction_01" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<unit type="storm" slot="1">
+	<network sync="spawn"/>
+	<anim_state_machine name="anims/units/helicopter/helicopter" />
+  <object file="units/vehicles/helicopter/helicopter_ranger/helicopter_cops" />
+  <dependencies>
+  	<depends_on animation_state_machine="anims/units/helicopter/helicopter" animation_def="anims/units/helicopter/helicopter" />
+  	<depends_on effect="effects/particles/weapons/flashlight/flashlight" />
+    <depends_on effect="effects/particles/window/vehicle_window" />
+		<depends_on bnk="soundbanks/effects" />
+		<depends_on bnk="soundbanks/police_helicopter" />
+  </dependencies>
+  <extensions>
+    <extension name="base" class="AnimatedVehicleBase">
+      <var name="_body_name" value="a_body" />
+    </extension>
+    <extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+  </extensions>  
+  <sounds>
+  	<default_soundsource source="a_body"/>
+  	<soundsource name="body" source="a_body" />
+  </sounds>
+</unit>

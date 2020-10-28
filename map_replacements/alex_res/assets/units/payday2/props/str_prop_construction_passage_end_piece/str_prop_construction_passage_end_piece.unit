@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+	<object file="units/payday2/props/str_prop_construction_passage_end_piece/str_prop_construction_passage_end_piece" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

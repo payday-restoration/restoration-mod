@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/box/box_evidence" orientation_object="rp_box_evidence" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_box_evidence" />
+      <object name="c_box_evidence" collision_type="convex" padding="-2"/>
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="plastic">
+    <decal_mesh name="g_box_evidence" enabled="true" material="plastic"/>
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_box_evidence" enabled="true" shadow_caster="false" instance_struct="world_tm"/>
+  </graphics>
+</dynamic_object> 

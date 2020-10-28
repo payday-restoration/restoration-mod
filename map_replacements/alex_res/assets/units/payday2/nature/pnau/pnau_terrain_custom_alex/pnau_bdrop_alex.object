@@ -1,0 +1,15 @@
+<dynamic_object>
+    <diesel orientation_object="rp_brop_alex" materials="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_terrain_custom_alex" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+			<object name="c_c" collision_type="mesh_mopp" />
+        </body>
+    </bodies>
+	<decal_surfaces>
+		<decal_mesh name="g_g" enabled="true" material="stone"/>
+	</decal_surfaces>
+    <graphics>
+        <object enabled="true" name="g_g" />
+		<object name="g_trees" enabled="true"/>
+    </graphics>
+</dynamic_object>

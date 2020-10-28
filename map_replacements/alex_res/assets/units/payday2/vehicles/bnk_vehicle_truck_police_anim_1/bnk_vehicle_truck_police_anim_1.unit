@@ -1,0 +1,18 @@
+<unit type="deprecated" slot="39" >
+	<object file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on unit="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" />
+	</dependencies>
+	<extensions>
+		<extension name="base" class="AnimatedVehicleBase">
+			<var name="_body_name" value="anim_body"/>
+		</extension>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="sync_unit_data" class="SyncUnitData" />
+	</extensions>
+	<sounds>
+		<soundsource name="snd" source="anim_body" />
+	</sounds>
+</unit>

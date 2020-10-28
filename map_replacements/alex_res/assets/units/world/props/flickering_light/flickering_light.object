@@ -1,0 +1,21 @@
+<dynamic_object>
+    <diesel orientation_object="rp_flickering_light" materials="units/world/props/flickering_light/flickering_light" />
+    <sequence_manager file="units/world/props/flickering_light/flickering_light" />
+    <animations>
+        <animation_group name="flickering" >
+            <object enabled="true" name="lo_light_flicker" />
+        </animation_group>
+    </animations>
+	<bodies>
+        <body enabled="true" template="editor" name="editor_body" >
+            <object name="rp_flickering_light" />
+            <object collision_type="box" name="c_editor" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_light" />
+    </graphics>
+    <lights>
+        <light editable="true" projection="true" multiplier="identity" depth_fade_end="20" type="cube_projection|omni|specular" name="lo_light_flicker" />
+    </lights>
+</dynamic_object>

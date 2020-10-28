@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/pd2_dlc1/vehicles/str_vehicle_car_ford_open/str_vehicle_car_ford_open" />
+  <dependencies>
+    <depends_on effect="effects/payday2/particles/window/storefront_window_small" />
+	
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

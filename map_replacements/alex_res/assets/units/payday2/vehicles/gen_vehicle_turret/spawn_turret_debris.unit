@@ -1,0 +1,6 @@
+<unit type="debris" slot="18">
+	<object file="units/payday2/vehicles/gen_vehicle_turret/spawn_turret_debris" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

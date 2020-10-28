@@ -1,0 +1,24 @@
+<dynamic_object>
+    <diesel orientation_object="rp_air_backdrop_v2" materials="units/payday2/architecture/air_backdrop/air_backdrop" />
+    
+	<bodies>
+        <body enabled="true" template="editor" name="editor_body" >
+            <object name="rp_air_backdrop_v2" />
+            <object collision_type="box" padding="-2"name="c_editor" />
+            <object collision_type="mesh_mopp" name="g_ground_far" />
+        </body>
+    </bodies>
+
+	<graphics>
+        <object enabled="true" name="g_ground_far" />
+		<object enabled="true" name="g_ground_close" />
+        <object enabled="true" name="g_river" />
+        <object enabled="true" name="g_backdrop" />
+        <object enabled="true" name="g_backdrop_mid" />
+        <object enabled="true" name="g_backdrop_mid_glow" />
+        <object enabled="true" name="g_ronald_airport" />
+		<object name="g_flares" enabled="true"/>
+		<object name="g_cars" enabled="true"/>
+    </graphics>
+	
+</dynamic_object>

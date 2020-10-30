@@ -1,0 +1,6 @@
+<unit type="hlp" slot="1">
+	<object file="units/pd2_dlc_help/props/hlp_tra_backdrop_near_bridgestone/hlp_tra_backdrop_near_bridgestone_destroyed" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

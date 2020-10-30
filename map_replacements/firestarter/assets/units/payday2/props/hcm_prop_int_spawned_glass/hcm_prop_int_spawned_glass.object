@@ -1,0 +1,17 @@
+<dynamic_object>
+    <diesel orientation_object="rp_spawned_hcm_int_glass" materials="units/payday2/props/hcm_prop_int_spawned_glass/hcm_prop_int_spawned_glass" />
+	<sequence_manager file="units/payday2/props/hcm_prop_int_spawned_glass/hcm_prop_int_spawned_glass" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" remove_ray_type="vis_graph ai_vision">
+            <object name="rp_spawned_hcm_int_glass"/>
+            <object name="c_box" collision_type="box"/>
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh name="dm_glass_breakable" material="thin_layer" enabled="true"/>
+    </decal_surfaces>
+    <graphics>
+        <object name="g_glass" enabled="true" instance_struct="world_tm"/>
+        <object name="g_glass_dmg" enabled="false" instance_struct="world_tm"/>
+    </graphics>
+</dynamic_object>

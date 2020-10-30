@@ -10315,7 +10315,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"hitnrun",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover"
+			"shield"
 		},
 		BLACK_tank = { --set up to be hyper aggressive and charge the player
 			"reloadingretreat",
@@ -10323,14 +10323,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"harass",
 			"aggressor",
-			"shield_cover"
+			"shield"
 		},
 		SKULL_tank = { --slightly more passive than the other dozers will stand his ground if charged
 			"reloadingretreat",
 			"ranged_fire",
 			"murder",
 			"harass",
-			"shield_cover"
+			"shield"
 		},
 		TIT_tank = { --set up to use passive suppressive fire against players :)
 			"obstacle",
@@ -10340,7 +10340,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"murder",
 			"elite_ranged_fire",
 			"harass",
-			"shield_cover"
+			"shield"
 		},
 		spooc = {
 			"hunter",

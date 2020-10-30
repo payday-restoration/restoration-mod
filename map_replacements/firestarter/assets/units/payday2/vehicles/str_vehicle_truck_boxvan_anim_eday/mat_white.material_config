@@ -1,0 +1,71 @@
+<materials version="3" group="str_vehicle_truck_boxvan_anim_eday_tinted">
+    <material name="str_vehicle_truck_boxvan_Mat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan/str_vehicle_truck_boxvan_nm"/>
+    </material>
+    <material name="mat_back_door" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan/str_vehicle_truck_boxvan_door_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan/str_vehicle_truck_boxvan_door_nm"/>
+    </material>
+    <material name="mtr_tint" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SIMPLE_TINT" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan/str_vehicle_truck_boxvan_nm"/>
+        <variable value="0.97653239965439 0.98425197601318 0.97653239965439" type="vector3" name="tint_color"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP:OPACITY_FADE" decal_material="glass_breakable" name="mtr_glass_dmg" version="2">
+        <variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_2_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE" decal_material="glass_breakable" version="2" name="mtr_glass">
+        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+    <material name="logo_mtr_decal_1" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_logo_1_avalon_df"/>
+    </material>
+    <material name="logo_mtr_decal_2" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_logo_2_kranich_df"/>
+    </material>
+    <material name="logo_mtr_decal_3" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_logo_3_omni_df"/>
+    </material>
+    <material name="logo_mtr_decal_4" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_logo_4_hefty_df"/>
+    </material>
+    <material name="hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_saw" render_template="effect:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/sawblade_indicator_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="2" type="scalar" name="falloff_exp"/>
+        <variable value="3 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+
+    <material name="mtr_c4" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gps_indicator_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_contour" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+</materials>

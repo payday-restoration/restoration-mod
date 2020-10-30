@@ -1,0 +1,32 @@
+<dynamic_object>
+    <diesel orientation_object="rp_str_prop_construction_portable_compressor" materials="units/payday2/props/str_prop_construction_portable_compressor/str_prop_construction_portable_compressor" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+			<object name="rp_str_prop_construction_portable_compressor" />
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+			<object name="c_convex_01" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_02" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_03" collision_type="convex" padding="-2.5"/>
+			<object name="c_mesh_mopp_01" collision_type="mesh_mopp" />
+        </body>
+	    <body enabled="true" template="fence" name="fence_body" >
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+			<object name="c_convex_03" collision_type="convex" padding="-2.5"/>
+        </body>	
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_metal" material="metal" />
+        <decal_mesh enabled="true" name="dm_sheet_metal" material="sheet_metal" />
+        <decal_mesh enabled="true" name="dm_rubber" material="rubber" />		
+    </decal_surfaces>
+    <graphics>
+		<lod_object name="compressor">
+			<object enabled="true" name="g_str_prop_construction_portable_compressor_lod0" lod="0" max_distance="1500"/>
+			<object enabled="true" name="g_str_prop_construction_portable_compressor_lod1" lod="1" max_distance="3750"/>
+			<object enabled="true" name="g_str_prop_construction_portable_compressor_lod2" lod="2"/>
+		</lod_object>			
+        <object enabled="true" shadow_caster="true" name="s_s" />
+    </graphics>
+</dynamic_object>

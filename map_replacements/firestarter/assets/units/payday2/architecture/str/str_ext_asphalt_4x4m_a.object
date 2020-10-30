@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/str/str_ext_ground_asphalt" orientation_object="rp_str_ext_asphalt_4x4m_a" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_str_ext_asphalt_4x4m_a"/>
+			<object name="c_box" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="stone" static="true">
+		<decal_mesh name="g_str_ext_asphalt_4x4m_a" material="stone" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_str_ext_asphalt_4x4m_a" />
+    </graphics>
+</dynamic_object> 

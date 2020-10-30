@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_interactable_zipline_mount_wall" materials="units/payday2/equipment/gen_interactable_zipline/gen_interactable_zipline_mount_wall" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object collision_type="box" name="c_box" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_mount" shadow_caster="true" />
+    </graphics>
+</dynamic_object>

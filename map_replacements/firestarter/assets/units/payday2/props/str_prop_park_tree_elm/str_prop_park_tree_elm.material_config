@@ -1,0 +1,15 @@
+<materials version="3">
+    <material name="american_elm_leafs" decal_material="foliage" version="2" render_template="generic:ALIGN_NORMAL_WORLD_Z:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:INSTANCED:VEGETATION_BENDING">
+        <diffuse_texture file="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_leafs_df"/>
+        <variable value="104.6070022583 0 0" type="vector3" name="branch_settings"/>
+        <variable value="0.020999999716878" type="scalar" name="alpha_ref"/>
+        <variable value="0.72100001573563" type="scalar" name="speed"/>
+        <variable value="70.672004699707 0.096000000834465 0" type="vector3" name="detail_settings"/>
+        <variable value="0" type="scalar" name="normal_world_z_blend"/>
+    </material>
+    <material name="american_elm_trunk" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_trunk_df"/>
+        <bump_normal_texture file="units/payday2/props/str_prop_park_tree_elm/str_prop_park_tree_elm_trunk_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

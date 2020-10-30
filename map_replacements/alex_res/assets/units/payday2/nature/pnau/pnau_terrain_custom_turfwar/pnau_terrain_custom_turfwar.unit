@@ -1,0 +1,6 @@
+<unit type="fst" slot="1" >
+    <object file="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_terrain_custom_turfwar" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

@@ -1,0 +1,92 @@
+<table directory="assets">
+	<texture path="levels/mods/alex_3_res/cube_lights/100137"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/101409"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100024"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100032"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100966"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100023"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100964"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100965"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100029"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100963"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/dome_occlusion"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100027"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/101385"/>
+	<texture path="levels/mods/alex_3_res/cube_lights/100136"/>
+	<add path="units/pd2_mcmansion/nature/mcm_ext_landscape/mcm_water" type="unit">
+		<material_config force="true" path="units/pd2_mcmansion/nature/mcm_ext_landscape/mcm_water" unload="true"/>
+		<object force="true" path="units/pd2_mcmansion/nature/mcm_ext_landscape/mcm_water" unload="true"/>
+		<unit force="true" path="units/pd2_mcmansion/nature/mcm_ext_landscape/mcm_water" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_terrain_custom_turfwar" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_terrain_custom_turfwar" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_terrain_custom_turfwar" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_terrain_custom_turfwar" unload="true"/>
+	</add>
+	<add path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_start" type="unit">
+		<material_config force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_near_bridgestone" unload="true"/>
+		<object force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_start" unload="true"/>
+		<unit force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_start" unload="true"/>
+	</add>
+	<add path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_left" type="unit">
+		<material_config force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_near_bridgestone" unload="true"/>
+		<object force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_left" unload="true"/>
+		<unit force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_left" unload="true"/>
+	</add>
+	<add path="units/world/environment/train/vista/tra_backdrop_near_bridgesteel/tra_backdrop_near_bridgesteel_mid" type="unit">
+		<material_config force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgesteel/tra_near_bridgesteel" unload="true"/>
+		<object force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgesteel/tra_backdrop_near_bridgesteel_mid" unload="true"/>
+		<unit force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgesteel/tra_backdrop_near_bridgesteel_mid" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/ind/ind_ext_tunnel/ind_ext_tunnel" type="unit">
+		<material_config force="true" path="units/payday2/architecture/ind/ind_ext_tunnel/ind_ext_tunnel" unload="true"/>
+		<object force="true" path="units/payday2/architecture/ind/ind_ext_tunnel/ind_ext_tunnel" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/ind/ind_ext_tunnel/ind_ext_tunnel" unload="true"/>
+	</add>
+	<add path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_destroyed_pillar" type="unit">
+		<material_config force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_near_bridgestone" unload="true"/>
+		<object force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_destroyed_pillar" unload="true"/>
+		<unit force="true" path="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_backdrop_near_bridgestone_destroyed_pillar" unload="true"/>
+	</add>
+	<add path="units/pd2_dlc_help/props/hlp_tra_backdrop_near_bridgestone/hlp_tra_backdrop_near_bridgestone_destroyed" type="unit">
+		<material_config force="true" path="units/pd2_dlc_help/props/hlp_tra_backdrop_near_bridgestone/hlp_tra_backdrop_near_bridgestone_destroyed" unload="true"/>
+		<object force="true" path="units/pd2_dlc_help/props/hlp_tra_backdrop_near_bridgestone/hlp_tra_backdrop_near_bridgestone_destroyed" unload="true"/>
+		<unit force="true" path="units/pd2_dlc_help/props/hlp_tra_backdrop_near_bridgestone/hlp_tra_backdrop_near_bridgestone_destroyed" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/gen_watchdog_2_water/gen_watchdog_2_water" type="unit">
+		<material_config force="true" path="units/payday2/architecture/gen_watchdog_2_water/gen_watchdog_2_water" unload="true"/>
+		<object force="true" path="units/payday2/architecture/gen_watchdog_2_water/gen_watchdog_2_water" unload="true"/>
+		<unit force="true" path="units/payday2/architecture/gen_watchdog_2_water/gen_watchdog_2_water" unload="true"/>
+	</add>
+	<add path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_02_il" type="unit">
+		<effect force="true" load="true" path="effects/payday2/particles/flares/street_light_flare_big" unload="true"/>
+		<material_config force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost" unload="true"/>
+		<object force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_02_il" unload="true"/>
+		<unit force="true" path="units/payday2/props/str_prop_street_lamppost/str_prop_street_lamppost_double_02_il" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_bdrop_alex" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_terrain_custom_alex" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_bdrop_alex" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_bdrop_alex" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_c_v2" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_c_v2" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_c_v2" unload="true"/>
+	</add>
+	<add path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_a" type="unit">
+		<material_config force="true" path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment" unload="true"/>
+		<object force="true" path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_a" unload="true"/>
+		<unit force="true" path="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_a" unload="true"/>
+	</add>
+	<add path="units/payday2/architecture/air_backdrop/air_backdrop_v2" type="unit">
+		<unit force="true" path="units/payday2/architecture/air_backdrop/air_backdrop_v2" unload="true"/>
+		<object force="true" path="units/payday2/architecture/air_backdrop/air_backdrop_v2" unload="true"/>
+		<material_config force="true" path="units/payday2/architecture/air_backdrop/air_backdrop" unload="true"/>
+	</add>
+</table>

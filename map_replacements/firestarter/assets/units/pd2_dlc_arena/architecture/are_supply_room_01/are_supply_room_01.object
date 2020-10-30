@@ -1,0 +1,38 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_arena/architecture/are_supply_room_01/are_supply_room_01" orientation_object="rp_are_supply_room_01" />
+	<sequence_manager file="units/pd2_dlc_arena/architecture/are_supply_room_01/are_supply_room" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_are_supply_room_01" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />
+			<object name="c_box_03" collision_type="box" padding="-2.5" />
+			<object name="c_box_04" collision_type="box" padding="-2.5" />
+			<object name="c_box_05" collision_type="box" padding="-2.5" />
+			<object name="c_box_06" collision_type="box" padding="-2.5" />
+			<object name="c_box_07" collision_type="box" padding="-2.5" />
+			<object name="c_box_08" collision_type="box" padding="-2.5" />
+			<object name="c_box_09" collision_type="box" padding="-2.5" />
+			<object name="c_box_10" collision_type="box" padding="-2.5" />
+			<object name="c_box_11" collision_type="box" padding="-2.5" />
+			<object name="c_box_12" collision_type="box" padding="-2.5" />
+			<object name="c_box_13" collision_type="box" padding="-2.5" />
+			<object name="c_box_14" collision_type="box" padding="-2.5" />
+			<object name="c_box_15" collision_type="box" padding="-2.5" />
+			<object name="c_box_16" collision_type="box" padding="-2.5" />
+			<object name="c_box_17" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="thin_layer">
+		<decal_mesh name="dm_ceiling" enabled="true" material="concrete" />
+		<decal_mesh name="dm_floor" enabled="true" material="thin_layer" />
+		<decal_mesh name="dm_stone" enabled="true" material="stone" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_room01"			enabled="true" />
+		<object name="g_red_stripe"		enabled="false" />
+		<object name="g_green_stripe"	enabled="false" />
+		<object name="g_yellow_stripe"	enabled="false" />
+		<object name="g_blue_stripe"	enabled="false" />
+	</graphics>
+</dynamic_object>

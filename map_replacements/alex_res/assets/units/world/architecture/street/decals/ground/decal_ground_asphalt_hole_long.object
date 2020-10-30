@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles_io" orientation_object="rp_street_decal_apshalt_hole_long" />
+  <graphics>
+    <object name="g_ground_hole_long" enabled="true"/>
+  </graphics>
+</dynamic_object> 

@@ -1,0 +1,20 @@
+<materials version="3">
+    <material name="mtr_hub_elements" render_template="generic:DIFFUSE_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="core/textures/hub_elements_df"/>
+    </material>
+    <material name="mtr_cover_point" render_template="generic:DIFFUSE_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="units/dev_tools/level_tools/ai_coverpoint_df"/>
+    </material>
+    <material name="mtr_omni" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:SELF_ILLUMINATION" version="2">
+        <variable value="light::color" type="listener" name="il_tint" object="lo_omni"/>
+        <diffuse_texture file="core/textures/hub_elements_df"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <self_illumination_texture file="core/textures/hub_elements_df"/>
+    </material>
+    <material name="mtr_spot" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:SELF_ILLUMINATION" version="2">
+        <variable value="light::color" type="listener" name="il_tint" object="ls_spot"/>
+        <diffuse_texture file="core/textures/hub_elements_df"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <self_illumination_texture file="core/textures/hub_elements_df"/>
+    </material>
+</materials>

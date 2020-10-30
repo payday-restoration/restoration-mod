@@ -1,0 +1,10 @@
+<materials version="3">
+	<material name="str_prop_construction_container" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2" >
+			<diffuse_texture file="units/payday2/props/str_prop_construction_container/str_prop_construction_container_df"/>
+			<bump_normal_texture file="units/payday2/props/str_prop_construction_container/str_prop_construction_container_nm"/>
+	</material>
+    <material name="mat_mull" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/shadow_mullplan/shadow_mullplan_df"/>
+    </material>
+	<material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

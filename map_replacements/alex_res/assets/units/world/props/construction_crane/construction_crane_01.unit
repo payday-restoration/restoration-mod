@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/world/props/construction_crane/construction_crane_01" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit> 

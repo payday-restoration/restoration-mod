@@ -1,0 +1,12 @@
+<unit type="glc" slot="1">
+	<network sync="spawn"/>
+	<object file="units/pd2_dlc_glace/pickups/glc_pku_handcuffs/glc_pku_handcuffs" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="glc_hold_take_handcuffs" />
+			<var name="_interact_object" value="rp_chl_props_trophy_handcuffs"/>
+		</extension>
+	</extensions>
+</unit>

@@ -1,0 +1,14 @@
+<materials version="3">
+    <material name="mat_pnau_backdrop_forest_segment_01" render_template="generic:ALIGN_NORMAL_WORLD_Z:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:INSTANCED:OPACITY_TEXTURE" version="2">
+        <opacity_texture file="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_01_op"/>
+        <diffuse_texture file="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_01_df"/>
+        <variable value="0.31800001859665" type="scalar" name="alpha_ref"/>
+        <variable value="0" type="scalar" name="normal_world_z_blend"/>
+    </material>
+    <material name="mat_pnau_backdrop_forest_segment_02" render_template="generic:ALIGN_NORMAL_WORLD_Z:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:INSTANCED:OPACITY_TEXTURE" version="2">
+        <opacity_texture file="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_op"/>
+        <diffuse_texture file="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment_02_df"/>
+        <variable value="0.5" type="scalar" name="alpha_ref"/>
+        <variable value="0" type="scalar" name="normal_world_z_blend"/>
+    </material>
+</materials>

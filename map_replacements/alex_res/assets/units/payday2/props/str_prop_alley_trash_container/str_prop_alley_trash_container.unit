@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" />
+  <network sync="spawn"/>
+  <dependencies>
+  	<depends_on bnk="soundbanks/regular_sfx" />
+  </dependencies>
+  <extensions>
+	<extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+	<extension name="interaction" class="UseInteractionExt">
+		<var name="tweak_data" value="open_slash_close" />
+		<var name="_interact_object" value="int_location"/>
+	</extension>
+  </extensions>
+</unit>

@@ -1,0 +1,10 @@
+<unit type="str" slot="1" >
+    <object file="units/payday2/props/str_prop_construction_nailgun/str_prop_construction_nailgun" />
+  	<mass>
+		<spawn in="500" method="enable" out="1000" />
+	</mass> 
+  <extensions>
+	<extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

@@ -1,0 +1,35 @@
+<materials version="3">
+    <material name="mtr_deposit_box" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/deposit_box_transport_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/deposit_box_transport_nm"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="mtr_deposit_box_skinned" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/deposit_box_transport_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/deposit_box_transport_nm"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+    <material name="hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="reddot" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_lockpick" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/lockpick_indicator_df"/>
+        <variable value="reddot" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_saw" render_template="effect:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/sawblade_indicator_df"/>
+        <variable value="reddot" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+        <variable value="3 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material name="mat_contour" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+</materials>

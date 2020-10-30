@@ -1,0 +1,85 @@
+<unit type="weapon" slot="25">
+	<object file="units/payday2/vehicles/gen_vehicle_turret/gen_vehicle_turret" />
+	<network sync="spawn" />
+	<dependencies>
+		<depends_on effect="effects/particles/weapons/flashlight/flashlight" />
+		<depends_on effect="effects/payday2/particles/weapons/big_762_auto" />
+		<depends_on effect="effects/payday2/particles/weapons/shells/shell_556_lmg" />
+		<depends_on effect="effects/payday2/particles/explosions/sentry_aftersmoke" />
+		<depends_on effect="effects/payday2/particles/explosions/sentry_explosion" />
+		<depends_on effect="effects/payday2/particles/explosions/sentry_damage_smoke" />
+		<depends_on effect="effects/payday2/particles/explosions/sentry_damage_smoke_med" />
+		<depends_on effect="effects/payday2/particles/explosions/sentry_damage_smoke_large" />
+		<depends_on effect="effects/payday2/particles/explosions/sparks/sparks_loop" />
+		<depends_on unit="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_front" />
+		<depends_on unit="units/payday2/vehicles/gen_vehicle_turret/spawn_shield_upper" />
+		<depends_on unit="units/payday2/vehicles/gen_vehicle_turret/spawn_turret_debris" />
+		<depends_on physic_effect="physic_effects/push_sphere" />
+		<depends_on bnk="soundbanks/weapon_swatturret" />
+	</dependencies>
+	
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="event_listener" class="EventListenerHolder" />
+		<extension name="base" class="SentryGunBase" >
+			<var name="_type" value="swat_turret" />
+			<var name="can_be_marked" value="true" />
+			<var name="sentry_gun" value="true" />
+			<var name="_tweak_table_id" value="sentry_gun" />
+			<var name="_difficulty_sequences" value="normal_difficulty;normal_difficulty;normal_difficulty;normal_difficulty;hard_difficulty;hard_difficulty" />
+			<var name="_skip_authentication" value="true" />
+		</extension>
+		<extension name="network" class="NetworkBaseExtension" />
+		<extension name="brain" class="SentryGunBrain" />
+		<extension name="movement" class="SentryGunMovement" >
+			<var name="_spin_obj_name" value="anim_z_base" />
+			<var name="_pitch_obj_name" value="anim_y_gun" />
+			<var name="_activation_anim_group_name" value="anim" />
+			<var name="_pitch_min" value="-60" />
+			<var name="_pitch_max" value="85" />
+			<var name="_lights_on_sequence_name" value="state_light_on" />
+			<var name="_spin_start_snd_event" value="swatturret_spin_start" />
+			<var name="_spin_stop_snd_event" value="swatturret_spin_stop" />
+			<var name="_attention_acquired_snd_event" value="swatturret_alert" />
+			<var name="_rearm_snd_event" value="swatturret_reload" />
+			<var name="_rearm_complete_snd_event" value="swatturret_reload_end" />
+			<var name="_hacked_start_snd_event" value="swatturret_disarmed_loop" />
+			<var name="_hacked_stop_snd_event" value="swatturret_disarmed_stop" />
+			<var name="_repair_start_seq" value="repair_start_seq" />
+			<var name="_repair_complete_seq" value="repair_complete_seq" />
+		</extension>
+		<extension name="weapon" class="SentryGunWeapon" >
+			<var name="_laser_align_name" value="a_lazer" />
+			<var name="_fire_start_snd_event" value="swatturret_fire" />
+			<var name="_fire_stop_snd_event" value="swatturret_fire_end" />
+			<var name="_fire_cooldown_snd_event" value="swatturret_cooldown" />
+      		<var name="_muzzle_flash_parent" value="fire" />
+		</extension>
+		
+		<extension name="contour" class="ContourExt" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="character_damage" class="SentryGunDamage" ><!-- IMPORTANT: This extension must always be last -->
+			<var name="_invulnerable_body_names" value="body_base body_side_plating body_shelter body_pillar" />
+			<var name="_shield_body_name" value="body_shields" />
+			<var name="_bag_body_name" value="body_weakspot" />
+			<var name="_shield_destroyed_sequence_name" value="int_seq_shield_detach" />
+			<var name="_shield_repaired_sequence_name" value="int_seq_shield_attach" />
+			<var name="_damaged_sequence_name" value="int_seq_medium_damage" />
+			<var name="_shield_smoke_level_0" value="int_seq_no_damage" />
+			<var name="_shield_smoke_level_1" value="int_seq_small_damage" />
+			<var name="_shield_smoke_level_2" value="int_seq_medium_damage" />
+			<var name="_shield_smoke_level_3" value="int_seq_large_damage" />
+			<var name="_shield_sparks_enable" value="int_seq_sparks_enable" />
+			<var name="_shield_sparks_disable" value="int_seq_sparks_disable" />
+			<var name="_death_sequence_name" value="explode" />
+			<var name="_breakdown_snd_event" value="swatturret_destroy" />
+			<var name="_shield_destroyed_snd_event" value="swatturret_plate_off" />
+			<var name="_bag_hit_snd_event" value="swatturret_weakspot_hit" />
+			<var name="_stats_name" value="swat_turret" />
+		</extension>
+	</extensions>
+	
+	<sounds>
+		<default_soundsource source="anim_y_gun"/>
+	</sounds>
+</unit>

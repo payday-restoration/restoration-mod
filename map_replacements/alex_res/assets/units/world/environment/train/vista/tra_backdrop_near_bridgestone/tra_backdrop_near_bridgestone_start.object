@@ -1,0 +1,22 @@
+<dynamic_object>
+	<diesel materials="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_near_bridgestone" orientation_object="rp_tra_backdrop_near_bridgestone_start" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_tra_backdrop_near_bridgestone_start" />
+			<object name="c_convex_01" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_02" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_03" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_04" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_05" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_06" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_07" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_08" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_09" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_10" collision_type="convex" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

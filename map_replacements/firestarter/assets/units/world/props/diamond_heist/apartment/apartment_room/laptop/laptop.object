@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" orientation_object="rp_laptop" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_laptop" />
+      <object name="c_laptop" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="plastic">
+    <decal_mesh name="g_laptop" enabled="true" material="plastic" />
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_laptop" enabled="true"  />
+  </graphics>
+</dynamic_object>

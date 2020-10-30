@@ -1,0 +1,5 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:INSTANCED" decal_material="wood" version="2" name="a4paperbox_etc">
+        <diffuse_texture file="units/world/props/box/a4box_df"/>
+    </material>
+</materials>

@@ -1,0 +1,8 @@
+<unit type="run" slot="1">
+	<network sync="spawn"/>
+	<object file="units/pd2_dlc_run/props/run_prop_construction_crane_01/run_prop_construction_crane_top_01" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

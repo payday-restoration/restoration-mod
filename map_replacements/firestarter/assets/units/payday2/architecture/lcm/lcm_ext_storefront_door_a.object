@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/lcm/lcm" orientation_object="rp_lcm_ext_storefront_door_a" />
+	<sequence_manager file="units/payday2/architecture/lcm/lcm_ext_storefront_door_a" />
+
+	<animations>
+		<animation_group name="anim" enabled="false">
+			<object name="anim_open_close" />
+			<object name="anim_knob" />
+		</animation_group>
+	</animations>
+
+	<bodies>
+		<body name="body_frame" enabled="true" template="static" >
+			<object name="rp_lcm_ext_storefront_door_a"/>
+			<object name="g_lcm_ext_storefront_door_a_frame" collision_type="mesh_mopp"  />
+		</body>
+		<body name="body_door" enabled="true" template="animated">
+			<object name="anim_open_close" />
+			<object name="c_box_storefront_door_a" collision_type="mesh_mopp" />
+		</body>
+		<body name="body_knob" enabled="true" template="animated">
+			<object name="anim_knob" />
+			<object name="g_lcm_ext_storefront_door_a_knob" collision_type="box" />
+		</body>
+		<body name="body_window" enabled="true" template="animated">
+			<object name="anim_open_close" />
+			<object name="c_window" collision_type="box" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="wood" static="true">
+		<decal_mesh name="dm_wood" 		enabled="true" 	material="wood" />
+		<decal_mesh name="dm_metal" 	enabled="true" 	material="metal" />
+		<decal_mesh name="dm_glass" 	enabled="true" 	material="glass_breakable" />
+	</decal_surfaces>
+
+	<graphics>
+		<object name="g_window"								enabled="true" shadow_caster="false"/>
+		<object name="g_lcm_ext_storefront_door_a" 			enabled="true" shadow_caster="false"/>
+		<object name="g_lcm_ext_storefront_door_a_frame" 	enabled="true" shadow_caster="true"/>
+		<object name="g_lcm_ext_storefront_door_a_knob" 	enabled="true" shadow_caster="true"/>
+		<object name="s_s" 									enabled="true" shadow_caster="true"/>
+	</graphics>
+</dynamic_object>
+
+

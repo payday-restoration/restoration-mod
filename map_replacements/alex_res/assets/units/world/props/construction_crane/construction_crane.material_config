@@ -1,0 +1,32 @@
+<materials version="3" group="crane_tint_group">
+    <material name="construction_crane_upperStairs" version="2" render_template="generic:BLUE_MASK_TINT:DIFFUSE_TEXTURE">
+        <variable value="0.75590550899506 0.72922652959824 0.72033351659775" type="vector3" name="tint_color"/>
+        <diffuse_texture file="units/world/props/construction_crane/construction_crane_df"/>
+    </material>
+    <material name="construction_crane" version="2" render_template="generic:BLUE_MASK_TINT:DIFFUSE_TEXTURE:RL_BACKDROP">
+        <variable value="1 0.72156864404678 0.37254902720451" type="vector3" name="tint_color"/>
+        <diffuse_texture file="units/world/props/construction_crane/construction_crane_df"/>
+    </material>
+    <material name="construction_crane_planes" version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP:SIMPLE_TINT">
+        <bump_normal_texture file="units/world/props/construction_crane/construction_crane_planes_nm"/>
+        <diffuse_texture file="units/world/props/construction_crane/construction_crane_planes_df"/>
+        <variable value="0.22100001573563" type="scalar" name="alpha_ref"/>
+        <variable value="0.88976377248764 0.55479389429092 0.24773815274239" type="vector3" name="tint_color"/>
+    </material>
+    <material name="construction_crane_lights" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/world/props/construction_crane/construction_crane_lights_df"/>
+        <self_illumination_texture file="units/world/props/construction_crane/construction_crane_lights_df"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="light_cone" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/world/street/street_lights/cone_light_df"/>
+        <variable value="2" type="scalar" name="falloff_exp"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+    <material name="light_dome" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="effects/textures/red_add_edf"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

@@ -6057,11 +6057,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp5.supported = true
 	self.x_mp5.stats = {
 		damage = 20,
-		spread = 14,
-		recoil = 11,
+		spread = 15,
+		recoil = 13,
 		spread_moving = 8,
 		zoom = 1,
-		concealment = 24,
+		concealment = 28,
 		suppression = 9,
 		alert_size = 9,
 		extra_ammo = 101,

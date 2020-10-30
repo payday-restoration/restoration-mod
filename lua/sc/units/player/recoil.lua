@@ -26,6 +26,7 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local r_value = 0
 
 	if player_state == "bipod" then
+		self._recoil_kick.accumulated = 0
 		return 0
 	end
 
@@ -51,6 +52,7 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local r_value = 0
 
 	if player_state == "bipod" then
+		self._recoil_kick.h.accumulated = 0
 		return 0
 	end
 

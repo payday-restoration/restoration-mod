@@ -23,12 +23,10 @@ end
 --Simplified vanilla function to remove auto-correction weirdness.
 function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local player_state = managers.player:current_state()
-	local multiplier = 1
 	local r_value = 0
 
-	--Let Bipods join the recoil fun.
 	if player_state == "bipod" then
-		multiplier = tweak_data.weapon.stat_info.stance_recoil_mults.bipod
+		return 0
 	end
 
 	if self._recoil_kick.accumulated and self._episilon < self._recoil_kick.accumulated then
@@ -43,19 +41,17 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 		end
 	end
 
-	return r_value * multiplier
+	return r_value
 end
 
 --Simplified vanilla function to remove auto-correction weirdness.
 --Also adds more aggressive tracking for horizontal recoil.
 function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local player_state = managers.player:current_state()
-	local multiplier = 1
 	local r_value = 0
 
-	--Let Bipods join the recoil fun.
 	if player_state == "bipod" then
-		multiplier = tweak_data.weapon.stat_info.stance_recoil_mults.bipod
+		return 0
 	end
 
 	if self._recoil_kick.h.accumulated and self._episilon < math.abs(self._recoil_kick.h.accumulated) then
@@ -70,5 +66,5 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 		end
 	end
 
-	return r_value * multiplier
+	return r_value
 end

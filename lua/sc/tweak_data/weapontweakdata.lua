@@ -2701,8 +2701,7 @@ function WeaponTweakData:_init_stats()
 	self.stat_info.stance_recoil_mults = {
 		standing = 1,
 		crouching = 0.8,
-		steelsight = 0.6,
-		bipod = 0.4
+		steelsight = 0.6
 	}
 
 	--Recoil multiplier. Used for stability.

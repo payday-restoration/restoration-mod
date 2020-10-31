@@ -601,6 +601,11 @@ function PlayerManager:check_skills()
 		self._message_system:unregister(Message.OnEnemyKilled, "hitman_temp_health")
 	end
 
+	if self:has_category_upgrade("player", "armor_health_store_amount") then
+		self._message_system:register(Message.OnEnemyKilled, "expres_store_health", callback(self, self, "_trigger_expres"))
+	else
+		self._message_system:unregister(Message.OnEnemyKilled, "expres_store_health")
+	end
 end
 
 --The OnHeadShot message must now pass in attack data and unit info to let certains skills work as expected.
@@ -1007,8 +1012,25 @@ function PlayerManager:spawn_extra_ammo(position, rotation)
     })
 end
 
-function PlayerManager:_trigger_hitman(equipped_unit, variant, killed_unit)
+function PlayerManager:_trigger_expres(equipped_unit, variant, killed_unit)
+	if CopDamage.is_civilian(killed_unit:base()._tweak_table) then
+		return
+	end
+
 	local player_unit = self:player_unit()
+
+	if alive(player_unit) then
+		player_unit:character_damage():add_armor_stored_health(self:upgrade_value("player", "armor_health_store_amount", 0))
+	end
+end
+
+function PlayerManager:_trigger_hitman(equipped_unit, variant, killed_unit)
+	if CopDamage.is_civilian(killed_unit:base()._tweak_table) then
+		return
+	end
+	
+	local player_unit = self:player_unit()
+
 	if alive(player_unit) then
 		if variant == "melee" then
 			player_unit:character_damage():consume_temp_stored_health()

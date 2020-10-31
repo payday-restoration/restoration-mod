@@ -1400,6 +1400,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck11_9_desc_sc"] = "Every stack increases your movement speed by ##5%##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Open your mind--
+		["menu_deck13_1_desc_sc"] = "While your armor is up, you will store ##4## health for every enemy you kill.\n\nWhen your armor starts to regenerate after being completely depleted, you will gain health equal to the stored health amount.\n\nMaximum amount of stored health depends on your equipped armor, with heavier armors being able to store less health than lighter armors.",
 		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.",
 		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by an additional ##5## points.",

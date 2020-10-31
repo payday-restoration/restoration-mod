@@ -1013,7 +1013,6 @@ function PlayerManager:spawn_extra_ammo(position, rotation)
 end
 
 function PlayerManager:_trigger_expres(equipped_unit, variant, killed_unit)
-
 	if CopDamage.is_civilian(killed_unit:base()._tweak_table) then
 		return
 	end
@@ -1026,11 +1025,11 @@ function PlayerManager:_trigger_expres(equipped_unit, variant, killed_unit)
 end
 
 function PlayerManager:_trigger_hitman(equipped_unit, variant, killed_unit)
-	local player_unit = self:player_unit()
-
 	if CopDamage.is_civilian(killed_unit:base()._tweak_table) then
 		return
 	end
+	
+	local player_unit = self:player_unit()
 
 	if alive(player_unit) then
 		if variant == "melee" then

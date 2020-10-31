@@ -1,7 +1,0 @@
-<unit type="debris" slot="18">
-	<object file="units/payday2/props/str_prop_street_lamppost_corner/str_prop_street_lamppost_corner_02_il_debris" />
-	<extensions>
-		<extension name="unit_data" class="ScriptUnitData" />
-		<extension name="damage" class="UnitDamage" />
-	</extensions>
-</unit>

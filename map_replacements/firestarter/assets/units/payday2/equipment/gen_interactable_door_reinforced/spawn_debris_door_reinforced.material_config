@@ -1,6 +1,0 @@
-<materials version="3">
-	<material name="mat_door_pieces" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-		<diffuse_texture file="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_df" />
-		<bump_normal_texture file="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_nm" />
-	</material>
-</materials>

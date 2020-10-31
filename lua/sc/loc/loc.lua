@@ -610,7 +610,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_captains_res_9"] = "You will probably not beat Captain Autumn in a fist fight. Don't even try.",	
 		["loading_captains_res_10"] = "Captain Winters is nearly immune to explosives and fire, and has strong bullet resistance, but is somewhat vulnerable to melee.",	
 		["loading_captains_res_11"] = "Captain Winters' shield is completely unpierceable.",	
-		["loading_captains_res_12"] = "Captain Winters has been overhauled. He now wanders around the map healing enemies in a large area around him while staying somewhat away from you. Back away from him if he's hiding somewhere.",	
+		["loading_captains_res_12"] = "Captain Winters has been overhauled. He now wanders around the map healing enemies in a large area around him while aggressively charging when the opportunity arises.",	
 		--Stealth Hints
 		["loading_stealth_res_title"] = "Restoration Stealth Tips",
 		["loading_stealth_res_1"] = "Guards will no longer be instantly alerted by seeing broken cameras. A specific guard will be made to inspect the camera, allowing it to be used as a lure.",	

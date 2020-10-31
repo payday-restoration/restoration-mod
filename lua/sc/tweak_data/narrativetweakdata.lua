@@ -35,16 +35,15 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 	}
 
 	self.stages.firestarter_3_res = {
-			type = "d",
-			level_id = "firestarter_3_res",
-			type_id = "heist_type_knockover",
-			mission = "default",
-			mission_filter = {
-				5
-			}
+		type = "d",
+		level_id = "firestarter_3_res",
+		type_id = "heist_type_knockover",
+		mission = "default",
+		mission_filter = {
+			5
 		}
 	}
-	
+
 	self.jobs.firestarter.chain = {
 		self.stages.firestarter_1_res,
 		self.stages.firestarter_2_res,

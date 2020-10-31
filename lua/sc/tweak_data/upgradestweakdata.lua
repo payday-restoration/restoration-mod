@@ -718,7 +718,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.ammo_bag.quantity = {1}
 
-			--Saw Massacre
+			--Rip and Tear
 				--Basic
 					self.values.saw.ignore_shields = {true}
 				--Ace

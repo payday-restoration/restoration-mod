@@ -297,7 +297,7 @@ Hooks:PostHook(StatisticsManager, "killed", "PDTHHudkilled", function(self, data
 		local by_melee = data.variant == "melee"
 		local by_explosion = data.variant == "explosion"
 		if by_bullet then
-			local name_id = data.weapon_unit:base():get_name_id()
+			local name_id, throwable_id = self:_get_name_id_and_throwable_id(data.weapon_unit)
 			self:_bullet_challenges( data )
 			--[[if name_id == "sentry_gun" then
 				managers.challenges_res:count_up( "sentry_gun_law_row_kills" )
@@ -354,8 +354,8 @@ function StatisticsManager:_bullet_challenges( data )
 		end]]--
 		local name_id
 		if data.weapon_unit then
-			if data.weapon_unit:base() and data.weapon_unit:base().grenade_entry then
-				name_id = tweak_data.blackmarket.grenades[data.weapon_unit:base():grenade_entry()].weapon_id
+			if data.weapon_unit:base() and data.weapon_unit:base().projectile_entry then
+				name_id = tweak_data.blackmarket.grenades[data.weapon_unit:base():projectile_entry()].weapon_id
 			else
 				name_id = data.weapon_unit and data.weapon_unit:base().get_name_id and data.weapon_unit:base():get_name_id()
 			end

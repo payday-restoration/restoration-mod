@@ -56,6 +56,6 @@
 		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" mip="4"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
-	</material> mip="1"
+	</material> 
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

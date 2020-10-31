@@ -2154,6 +2154,7 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 
 	attack_data.result = result
 	attack_data.is_synced = true
+	weapon_unit = attack_data.weapon_unit or weapon_unit
 
 	if damage > 0 and variant ~= "stun" and attacker == managers.player:player_unit() and alive(attacker) then
 		managers.hud:on_hit_confirmed()
@@ -3198,7 +3199,10 @@ function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)
 	end
 end
 
-Hooks:PostHook(CopDamage, "_on_death", "SCRemoveJoker", function(self)
+function CopDamage:_on_death(variant)
+	--Remove Ex-Pres
+	managers.player:chk_wild_kill_counter(self._unit, variant)
+
 	if self._char_tweak and self._char_tweak.do_autumn_blackout then --clear all equipment and re-enable them when autumn dies
 		managers.enemy:end_autumn_blackout()
 	end
@@ -3210,8 +3214,7 @@ Hooks:PostHook(CopDamage, "_on_death", "SCRemoveJoker", function(self)
 			end
 		end
 	end
-
-end)
+end
 
 function CopDamage.is_hrt(type)
 	return type == "swat" or type == "fbi" or type == "cop" or type == "security"

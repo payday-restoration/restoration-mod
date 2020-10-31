@@ -20,5 +20,5 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		700000,
 		700000,
 		700000
-		}			
+		}	
 end)

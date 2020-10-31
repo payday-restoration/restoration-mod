@@ -91,7 +91,11 @@ function SawWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, sh
 		col_ray = World:raycast_all("ray", from_pos, mvec_to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "ray_type", "body bullet lock")
 		for i, hit in ipairs(col_ray) do
 			local is_shield = hit.unit:in_slot(8) and alive(hit.unit:parent())
-			local is_enemy = hit.unit:character_damage() ~= nil
+			
+			if is_shield and hit.unit:name():key() == '4a4a5e0034dd5340' then --Make Winter's shield unpiercable.
+				break
+			end
+
 			if not ray_table_contains(hits, hit.unit) then
 				table.insert(hits, hit)
 			elseif hit.unit:character_damage() and hit.unit:character_damage().is_head and hit.unit:character_damage().is_head(hit.body) then

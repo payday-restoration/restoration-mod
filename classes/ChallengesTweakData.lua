@@ -105,6 +105,7 @@ function ChallengesTweakData:init()
     }
     
     self.session = {}
+	--[[
     self.session.testing1 = {
 		title_id = "ch_branch_bank_sm_wish_hl",
 		description_id = "ch_branch_bank_sm_wish",
@@ -120,6 +121,7 @@ function ChallengesTweakData:init()
 			callback = "overkill_success"
 		}
     }
+	]]--
     self.session.bridge_no_bleedouts_hard = {
 		title_id = "ch_bridge_no_bleedouts_hl",
 		description_id = "ch_bridge_no_bleedouts",

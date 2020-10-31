@@ -2154,6 +2154,7 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 
 	attack_data.result = result
 	attack_data.is_synced = true
+	weapon_unit = attack_data.weapon_unit or weapon_unit
 
 	if damage > 0 and variant ~= "stun" and attacker == managers.player:player_unit() and alive(attacker) then
 		managers.hud:on_hit_confirmed()

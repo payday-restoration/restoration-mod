@@ -21,19 +21,20 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		700000,
 		700000
 		}	
-		
-	self.stages = {
-		firestarter_1_res = {
-			type = "d",
-			type_id = "heist_type_hijack",
-			level_id = "firestarter_1_res"
-		},
-		firestarter_2_res = {
-			type = "d",
-			type_id = "heist_type_stealth",
-			level_id = "firestarter_2_res"
-		},
-		firestarter_3_res = {
+
+	self.stages.firestarter_1_res = {
+		type = "d",
+		type_id = "heist_type_hijack",
+		level_id = "firestarter_1_res"
+	}
+
+	self.stages.firestarter_2_res = {
+		type = "d",
+		type_id = "heist_type_stealth",
+		level_id = "firestarter_2_res"
+	}
+
+	self.stages.firestarter_3_res = {
 			type = "d",
 			level_id = "firestarter_3_res",
 			type_id = "heist_type_knockover",
@@ -43,6 +44,7 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 			}
 		}
 	}
+	
 	self.jobs.firestarter.chain = {
 		self.stages.firestarter_1_res,
 		self.stages.firestarter_2_res,

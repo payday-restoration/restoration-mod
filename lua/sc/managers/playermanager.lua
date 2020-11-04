@@ -998,11 +998,7 @@ function PlayerManager:spawn_extra_ammo(position, rotation)
         mvector3.multiply(mvec_2, -200)
         mvector3.add(mvec_2, mvec_1)
 
-        local player_unit = self:player_unit()
-        
-        if alive(player_unit) then
-        	local ray = player_unit():raycast("ray", mvec_1, mvec_2, "slot_mask", managers.slot:get_mask("bullet_impact_targets"))
-		end
+        local ray = self._unit:raycast("ray", mvec_1, mvec_2, "slot_mask", managers.slot:get_mask("bullet_impact_targets"))
 
         if ray then
             mvector3.set(mvec_1, ray.hit_position)

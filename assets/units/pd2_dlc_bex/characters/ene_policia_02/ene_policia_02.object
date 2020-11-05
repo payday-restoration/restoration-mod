@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02" orientation_object="root_point" />
+	<diesel materials="units/pd2_dlc_bex/characters/ene_policia_01/ene_policia_01" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
@@ -10,7 +10,7 @@
 		</body>
 		<body name="head" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_sphere_head" collision_type="sphere" padding="-8" />
+			<object name="c_sphere_head" collision_type="sphere"/>
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
@@ -20,7 +20,7 @@
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />
-			<object collision_type="sphere" mass="4" padding="-15" name="c_sphere_head_ragdoll"/>
+			<object collision_type="sphere" mass="4" padding="-5" name="c_sphere_head_ragdoll"/>
 		</body>
 
 		<body name="rag_Hips" enabled="false" template="corpse" friction="0.6" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="large" ray="block" lin_damping="0.4" ang_damping="20" collision_group="1" collides_with="0" tag="flesh" restitution="0">
@@ -173,21 +173,21 @@
 			<param damping="1" spring_constant="350" min_restitution="0"/>
 		</constraint>
 
-		<constraint type="limited_hinge" name="RightLeg" enabled="false">
-			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
-			<param pivot="position:RightLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
-			<param plane_axis="yaxis:RightLeg"/>
-			<param damping="1" spring_constant="200" min_restitution="0"/>
-		</constraint>
+        <constraint type="limited_hinge" name="RightLeg" enabled="false">
+            <param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
+            <param pivot="position:RightLeg"/>
+            <param min_angle="20" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
+            <param plane_axis="yaxis:RightLeg"/>
+            <param damping="1" spring_constant="200" min_restitution="0"/>
+        </constraint>
 
-		<constraint type="limited_hinge" name="LeftLeg" enabled="false">
-			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
-			<param pivot="position:LeftLeg"/>
-			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
-			<param plane_axis="yaxis:LeftLeg"/>
-			<param damping="1" spring_constant="200" min_restitution="0"/>
-		</constraint>
+        <constraint type="limited_hinge" name="LeftLeg" enabled="false">
+            <param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
+            <param pivot="position:LeftLeg"/>
+            <param min_angle="20" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
+            <param plane_axis="yaxis:LeftLeg"/>
+            <param damping="1" spring_constant="200" min_restitution="0"/>
+        </constraint>
 	</constraints>
 
 	<decal_surfaces default_material="flesh" />
@@ -197,20 +197,37 @@
 
 			<lod_object name="lod_body">
 				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_police_body" max_distance="1000" />
-					<material materials="mtr_police_body_lod_1" max_distance="1500" />
-					<material materials="mtr_police_body_lod_2" />
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod1" max_distance="1500" />
+					<material materials="mtr_body_lod2" />
+				</object>
+				<object name="g_body_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2" />
 				</object>
 			</lod_object>
 
 			<lod_object name="lod_head">
 				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_police_head" max_distance="1000" />
-					<material materials="mtr_police_head_lod_1" max_distance="1500" />
-					<material materials="mtr_police_head_lod_2" />
+					<material materials="mtr_head" max_distance="1000" />
+					<material materials="mtr_head_lod1" max_distance="1500" />
+					<material materials="mtr_head_lod2" />
+				</object>
+				<object name="g_head_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod2" />
 				</object>
 			</lod_object>
-			<object name="s_body" 			enabled="true" shadow_caster="true"/>
+
+			<lod_object name="lod_hat">
+					<object name="g_hat_lod1" 		enabled="true"  max_distance="3000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				</object>
+					<object name="g_hat_lod2" 		enabled="true" lod="1" >
+				</object>
+			</lod_object>
+			
+			<object name="s_body" enabled="true" shadow_caster="true"/>
+			
 		</graphic_group>
 	</graphics>
 

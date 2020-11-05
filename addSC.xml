@@ -324,6 +324,9 @@
 	<unit path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" load="true" force="true" />
 	<object path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
 	<unit path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
+
+	<!-- COP 3 :))))))))))))))))))))))))))))))))))))))))))))))))))))))-->
+	<model path="units/payday2/characters/ene_cop_3/ene_cop_3" force="true"/>	
 	
 	<!-- Gensec Security: Beret Poppin' -->
 	<unit path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" load="true" force="true" />
@@ -1145,6 +1148,9 @@
 	<material_config path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour" force="false"/>
 	<unit path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>	
 
+	<!-- FBI 3 :))))))))))))))))))))))))))))))))))))))))))))))))))))))-->
+	<model path="units/payday2/characters/ene_fbi_3/ene_fbi_3" force="true"/>	
+	
 	<!--NPC Peacemaker-->	
 	<object path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
     <cooked_physics path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
@@ -2069,7 +2075,6 @@
 	<unit path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" load="true" />		
 	<object path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />
 	<model path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />	
-	
 	
 	<!--new zeals start-->
 	<!--sg553-->

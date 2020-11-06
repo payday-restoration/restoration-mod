@@ -201,7 +201,7 @@
 	</constraints>
 
 	<decal_surfaces default_material="flesh" >
-		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+		<decal_mesh name="dm_helmet" 				enabled="true" material="steel_no_decal" />
 		<decal_mesh name="c_body_plate" 			enabled="false" material="heavy_swat_steel_no_decal" />
 	</decal_surfaces>
 
@@ -217,14 +217,10 @@
 				<object name="g_body_lod1" 	enabled="true" lod="1" />
 			</lod_object>
 
-<!-- 			<lod_object name="lod_head">
+ 			<lod_object name="lod_head">
 				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>
 				<object name="g_head_lod1" 	enabled="true" lod="1" />
-			</lod_object> -->
-
-			<object name="g_head" 		enabled="true"/>
-			<object name="g_head_lod1" 	enabled="true"/>
-		
+			</lod_object>		
 
 			<lod_object name="lod_helmet">
 				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0"/>
@@ -232,6 +228,7 @@
 			</lod_object>
 
 			<object name="s_body" enabled="true" shadow_caster="true"/>
+			<object name="g_glass" enabled="true" />
 
 		</graphic_group>
 	</graphics>

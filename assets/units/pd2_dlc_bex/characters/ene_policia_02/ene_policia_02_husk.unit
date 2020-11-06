@@ -5,19 +5,23 @@
 
 	<dependencies>
 		
+		<depends_on unit="units/payday2/characters/ene_acc_cop_hat/ene_acc_cop_hat" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="_tweak_table" value="cop" />
-			<var name="_default_weapon_id" value="raging_bull" />
+			<var name="_default_weapon_id" value="raging_bull"/>
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
+			<var name="_head_gear_object" value="g_hat_lod" />
+			<var name="_nr_head_gear_objects" value="2" />
+			<var name="_head_gear" value="units/payday2/characters/ene_acc_cop_hat/ene_acc_cop_hat" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >
 			<var name="_footwear" value="hardsole" />

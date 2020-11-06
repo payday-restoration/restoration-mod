@@ -1208,7 +1208,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.custom_voicework = nil
 	self.city_swat.heal_cooldown = 5
 	table.insert(self._enemy_list, "city_swat")
-	
+		
 	self.omnia = deep_clone(self.city_swat)	
 	if is_reaper then
 		self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
@@ -12085,7 +12085,8 @@ function CharacterTweakData:_create_table_structure()
 		"vet_cop_boss_pistol",
 		"m60",
 		"m60_bravo",
-		"m60_om"		
+		"m60_om",
+		"deagle"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -12149,7 +12150,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc"),
 		Idstring("units/payday2/weapons/wpn_npc_m60/wpn_npc_m60"),
 		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"),
-		Idstring("units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om")		
+		Idstring("units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om"),
+		Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	}
 end
 
@@ -14622,7 +14624,10 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_biker_1",
 				"ene_guard_biker_1",
 				"ene_murky_heavy_m4",
-				"ene_murky_heavy_r870"
+				"ene_murky_heavy_r870",
+				"ene_city_guard_1",
+				"ene_city_guard_2",
+				"ene_city_guard_3"
 			}
 		},
 		dlc1 = {
@@ -14635,7 +14640,8 @@ function CharacterTweakData:character_map()
 				"civ_male_paramedic_1",
 				"civ_male_paramedic_2",
 				"ene_security_gensec_1",
-				"ene_security_gensec_2"
+				"ene_security_gensec_2",
+				"ene_security_gensec_3"
 			}
 		},
 		dlc2 = {

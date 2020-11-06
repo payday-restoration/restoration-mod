@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<modelscript>
-	<object3d name="interact" mode="add">
-		<parent name="rp_atm_standing" />
-		<position x="-30" y="25" z="92" />
-		<rotation w="1" x="0" y="0" z="0" />
-	</object3d>
-</modelscript>

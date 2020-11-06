@@ -22,7 +22,11 @@ local america_dw = {
 		["units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"] = "units/payday2/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_2/ene_sniper_2",
-		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4",
+		--Security Guards get replaced with GenSec reds
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3",		
 	}		
 local america_zeal = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
@@ -41,7 +45,11 @@ local america_zeal = {
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
-		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"
+		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4",
+		--Security Guards get replaced with FTSU Agents
+		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
+		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2",
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3",			
 	}	
 		
 --Murkywater Scripted Spawn Replacements, try to use these as templates to work from

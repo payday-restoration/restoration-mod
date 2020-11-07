@@ -792,6 +792,9 @@ function CopDamage:damage_bullet(attack_data)
 				if self._unit:base()._tweak_table == "boom" then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
+					if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
+						self._unit:damage():run_sequence_simple("squelch")
+					end
 					self:_spawn_head_gadget({
 						position = attack_data.col_ray.body:position(),
 						rotation = attack_data.col_ray.body:rotation(),
@@ -998,6 +1001,9 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			if self._unit:base()._tweak_table == "boom" then
 				self._unit:damage():run_sequence_simple("grenadier_glass_break")
 			else
+				if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
+					self._unit:damage():run_sequence_simple("squelch")
+				end			
 				self:_spawn_head_gadget({
 					position = body:position(),
 					rotation = body:rotation(),

@@ -17,6 +17,13 @@
 			<material_config name="'units/pd2_dlc_rvd/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_2/ene_cop_2', 'ene_cop_4/ene_cop_4')"/>
 		</sequence>
 		
+		<sequence editable_state="true" name="'squelch'" once="true" triggable="true">
+			<effect name="'effects/payday2/particles/impacts/blood/blood_impact_katana'" parent="object( 'Head' )" position="v()"/>	
+			<sound action="'play'" event="'expl_gen_head'" object="'Head'"/>
+			<sound action="'play'" event="'expl_gen_head'" object="'Head'"/>
+			<sound action="'play'" event="'expl_gen_head'" object="'Head'"/>
+		</sequence>
+		
 		<variables>
 			<var_pick_murky value="1"/>
 		</variables>

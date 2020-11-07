@@ -1,0 +1,23 @@
+<materials version="3" group="wpn_npc_degle">
+	<material name="barrel" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_pis_deagle_pts/barrel_df"/>
+    </material>	
+	<material name="base" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_pis_deagle_pts/frame_df"/>
+    </material>		
+	<material name="rear" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_pis_deagle_pts/rear_df"/>
+    </material>
+	<material name="mag" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_pis_deagle_pts/mag_df"/>
+    </material>		
+	<material name="grip" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_pis_deagle_pts/grip_df"/>
+    </material>		
+	<material name="front1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_pis_deagle_pts/front_df"/>
+    </material>		
+	<material name="slide" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_pis_deagle_pts/slide_df"/>
+    </material>		
+</materials>

@@ -710,9 +710,19 @@ function WeaponTweakData:_init_data_raging_bull_npc()
 	self.m1911_npc.use_data.selection_index = 2
 	self.m1911_npc.CLIP_AMMO_MAX = 8
 	self.m1911_npc.sounds.prefix = "c45_npc"
+	self.m1911_npc.anim_usage = "is_pistol"
+	self.m1911_npc.hold = "pistol"
+	self.m1911_npc.reload = "pistol"		
 	self.m1911_npc.alert_size = 3000
 	self.m1911_npc.suppression = 3		
 	self.m1911_npc.DAMAGE = 4.5		
+	
+	self.deagle_npc = deep_clone(self.raging_bull_npc)
+	self.deagle_npc.CLIP_AMMO_MAX = 8
+	self.deagle_npc.anim_usage = "is_pistol"
+	self.deagle_npc.hold = "pistol"
+	self.deagle_npc.reload = "pistol"	
+	self.deagle_npc.sounds.prefix = "deagle_npc"
 	
 	self.peacemaker_npc = deep_clone(self.raging_bull_npc)
 	self.peacemaker_npc.DAMAGE = 14.1

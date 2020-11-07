@@ -349,6 +349,9 @@
 	<!--FTSU Guards (placeholders) -->
 	<unit path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1" load="true" />
 	<unit path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1_husk" load="true" />	
+	
+	<unit_mat path="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle" load="true" />
+	<cooked_physics path="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle" />
 
 	<unit path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2" load="true" />
 	<unit path="units/payday2/characters/ene_city_guard_2/ene_city_guard_2_husk" load="true" />	

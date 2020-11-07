@@ -2080,6 +2080,7 @@
 	<unit path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc_husk" load="true"/>	
 	<!--textures-->
 	<texture path="units/payday2/characters/shared_textures/swat_city_df_sc" />	
+	<texture path="units/payday2/characters/shared_textures/swat_city_df_guard" />	
 	<texture path="units/payday2/characters/shared_textures/helmets_city_df" />	
 		
 	<!--ben and ump override since ovenkill forgot about them-->

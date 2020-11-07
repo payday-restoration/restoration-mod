@@ -479,6 +479,9 @@
 	<!--epic hd cloaker eyes thanks jarey-->
 	<texture path="units/payday2/characters/shared_textures/spook_il"/>
 
+	<!--epic hd ggc casino civs-->
+	<texture path="units/pd2_dlc_casino/characters/civ_male_casino_1/civ_male_casino_1_head_df" force="true"/>
+	
 	<!--Zeal Heavy Shield Illumination Fix (Thanks Wekk!!!!)-->		
 	<texture path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" force="true" />
 

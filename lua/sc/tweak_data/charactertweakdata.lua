@@ -292,6 +292,11 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.steal_loot = nil
 	self.gensec.heal_cooldown = 2.5
 	table.insert(self._enemy_list, "gensec")
+	
+	--Guard variant, different entry type as a failsafe
+	self.gensec_guard = deep_clone(self.gensec)	
+	self.gensec_guard.access = "security"
+	table.insert(self._enemy_list, "gensec_guard")
 end
 
 function CharacterTweakData:_init_cop(presets)
@@ -1208,6 +1213,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.custom_voicework = nil
 	self.city_swat.heal_cooldown = 5
 	table.insert(self._enemy_list, "city_swat")
+	
+	--Guard variant, different entry type as a failsafe
+	self.city_swat_guard = deep_clone(self.city_swat)	
+	self.city_swat_guard.access = "security"
+	table.insert(self._enemy_list, "city_swat_guard")
 		
 	self.omnia = deep_clone(self.city_swat)	
 	if is_reaper then
@@ -12168,6 +12178,13 @@ function CharacterTweakData:_set_easy()
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
+	
+	--Guard City
+	self.city_swat_guard.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_guard.dodge = self.presets.dodge.athletic_very_hard
+	self.city_swat_guard.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+	self.city_swat_guard.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
+	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
@@ -12355,6 +12372,13 @@ function CharacterTweakData:_set_normal()
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
+	
+	--FTSU Guard
+	self.city_swat_guard.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_guard.melee_weapon_dmg_multiplier = 1
+	self.city_swat_guard.dodge = self.presets.dodge.athletic_very_hard
+	self.city_swat_guard.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+	self.city_swat_guard.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1
@@ -12547,10 +12571,17 @@ function CharacterTweakData:_set_hard()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("normal", "normal")
 	self.autumn.damage.bullet_damage_mul = 0.65
+	
 	self.city_swat.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
+	
+	self.city_swat_guard.weapon = deep_clone(self.presets.weapon.normal)
+	self.city_swat_guard.dodge = self.presets.dodge.athletic_very_hard
+	self.city_swat_guard.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.normal.is_shotgun_mag)
+	self.city_swat_guard.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
@@ -12577,6 +12608,7 @@ function CharacterTweakData:_set_hard()
 	
 	--Melee Mults
 	self.city_swat.melee_weapon_dmg_multiplier = 1
+	self.city_swat_guard.melee_weapon_dmg_multiplier = 1
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
@@ -12745,10 +12777,17 @@ function CharacterTweakData:_set_overkill()
 	self:_multiply_weapon_delay(self.presets.weapon.gang_member, 0)
 	self:_set_characters_weapon_preset("good", "normal")
 	self.autumn.damage.bullet_damage_mul = 0.65
+	
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
-	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
+	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
+
+	self.city_swat_guard.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat_guard.dodge = self.presets.dodge.athletic_very_hard
+	self.city_swat_guard.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+	self.city_swat_guard.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
@@ -12775,6 +12814,7 @@ function CharacterTweakData:_set_overkill()
 	
 	--Melee Mults
 	self.city_swat.melee_weapon_dmg_multiplier = 2
+	self.city_swat_guard.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
@@ -12948,10 +12988,17 @@ function CharacterTweakData:_set_overkill_145()
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.good)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
+	
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
+	
+	self.city_swat_guard.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat_guard.dodge = self.presets.dodge.athletic_very_hard
+	self.city_swat_guard.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+	self.city_swat_guard.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
@@ -12971,6 +13018,7 @@ function CharacterTweakData:_set_overkill_145()
 	
 	--Melee Mults
 	self.city_swat.melee_weapon_dmg_multiplier = 2
+	self.city_swat_guard.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
@@ -13288,6 +13336,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.swat.can_slide_on_suppress = true		
 	self.fbi_swat.can_slide_on_suppress = true		
 	self.city_swat.can_slide_on_suppress = true		
+	self.city_swat_guard.can_slide_on_suppress = true	
 	self:_set_characters_melee_preset("2.8", "2")
 	
 	--Weekend Rifles/Shotguns
@@ -13300,6 +13349,7 @@ function CharacterTweakData:_set_easy_wish()
 	
 	--Melee Mults
 	self.city_swat.melee_weapon_dmg_multiplier = 2
+	self.city_swat_guard.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
@@ -13572,7 +13622,13 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat.dodge = self.presets.dodge.athletic_very_hard
 	self.city_swat.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
-	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25				
+	self.city_swat.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+
+	self.city_swat_guard.weapon = deep_clone(self.presets.weapon.good)
+	self.city_swat_guard.dodge = self.presets.dodge.athletic_very_hard
+	self.city_swat_guard.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
+	self.city_swat_guard.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25			
+	
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)			
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
@@ -13616,7 +13672,8 @@ function CharacterTweakData:_set_overkill_290()
 	self.fbi.can_slide_on_suppress = true		
 	self.swat.can_slide_on_suppress = true		
 	self.fbi_swat.can_slide_on_suppress = true		
-	self.city_swat.can_slide_on_suppress = true		
+	self.city_swat.can_slide_on_suppress = true
+	self.city_swat_guard.can_slide_on_suppress = true			
 			
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -13850,6 +13907,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.swat.can_slide_on_suppress = true		
 	self.fbi_swat.can_slide_on_suppress = true		
 	self.city_swat.can_slide_on_suppress = true		
+	self.city_swat_guard.can_slide_on_suppress = true	
 	self.fbi_heavy_swat.can_slide_on_suppress = true		
 				
 	--Set damage dealt for false downs.
@@ -14057,6 +14115,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 
 	self.city_swat.can_shoot_while_dodging = true
+	self.city_swat_guard.can_shoot_while_dodging = true
 	self.omnia.can_shoot_while_dodging = true		
 	
 	self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)

@@ -5,13 +5,13 @@
 
 	<dependencies>
 		
-		<depends_on unit="units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
-			<var name="_tweak_table" value="city_swat" />
+			<var name="_tweak_table" value="city_swat_guard" />
 			<var name="_default_weapon_id" value="deagle" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />

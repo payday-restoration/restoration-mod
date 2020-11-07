@@ -22,11 +22,12 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.dave = security_variant
 	CopMovement._action_variants.cop_civ = security_variant
 	CopMovement._action_variants.cop_forest = security_variant
+	CopMovement._action_variants.gensec_guard = security_variant
 	CopMovement._action_variants.fbi_female = security_variant
 	CopMovement._action_variants.hrt = security_variant
 	CopMovement._action_variants.fbi_swat_vet = security_variant
 	CopMovement._action_variants.swat_titan = security_variant
-	CopMovement._action_variants.swat_assault = security_variant
+	CopMovement._action_variants.city_swat_guard = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan_assault = security_variant
 	CopMovement._action_variants.skeleton_swat_titan = security_variant

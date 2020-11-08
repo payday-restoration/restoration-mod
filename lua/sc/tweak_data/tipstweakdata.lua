@@ -828,7 +828,13 @@ function TipsTweakData:init()
 			image = "generic_tip",
 			consoles = true,
 			category = "fluff_res"
-		}				
+		},	
+		{
+			cat_index = 25,
+			image = "enemy_akantits",
+			consoles = true,
+			category = "fluff_res"
+		}			
 	}
 	self.category_totals = {}
 

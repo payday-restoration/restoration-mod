@@ -698,6 +698,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_22"] = "You may or may not have met Captain Summers before.",
 		["loading_fluff_res_23"] = "The Policía Federal has a special chupacabra hunting division.",
 		["loading_fluff_res_24"] = "Captains don't die, they go into custody.",
+		["loading_fluff_res_25"] = "REAPER offered a 'quick and brutal crackdown on cartels' at a price cheaper than OMNIA, which led to the Policía Federal adopting their version of TITAN units. This was a ploy to get their forces closer to OMNIA and Murky operations both in Mexico and the US.",
 
 		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
 		["skill_stockholm_syndrome_trade"] = "Down Restored!",

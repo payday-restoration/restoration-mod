@@ -2999,6 +2999,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 
 	--Manly Miner Men--
 	self.melee_weapons.mining_pick.info_id = "bm_melee_mining_pick_info"
+	self.melee_weapons.mining_pick.anim_speed_mult = 0.9
 	self.melee_weapons.mining_pick.make_decal = true
 	self.melee_weapons.mining_pick.make_effect = true
 	self.melee_weapons.mining_pick.stats.min_damage = 4.5
@@ -3008,9 +3009,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.mining_pick.stats.charge_time = 1.75
 	self.melee_weapons.mining_pick.stats.range = 205
 	self.melee_weapons.mining_pick.stats.concealment = 25
-	self.melee_weapons.mining_pick.repeat_expire_t = 0.9
-	self.melee_weapons.mining_pick.melee_damage_delay = 0.1
-	self.melee_weapons.mining_pick.expire_t = 1.2
+	self.melee_weapons.mining_pick.repeat_expire_t = 1.2
+	self.melee_weapons.mining_pick.melee_damage_delay = 0.15
+	self.melee_weapons.mining_pick.expire_t = 1.35
 	self.melee_weapons.mining_pick.headshot_damage_multiplier = 1.5
 
 	--Who's up for rockin the mic?--	
@@ -3296,16 +3297,17 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 
 	--Reminds me of how HL2 was gonna have an ice axe--
 	self.melee_weapons.iceaxe.info_id = "bm_melee_iceaxe_info"
+	self.melee_weapons.iceaxe.anim_speed_mult = 0.8
 	self.melee_weapons.iceaxe.stats.min_damage = 4.5
 	self.melee_weapons.iceaxe.stats.max_damage = 9.1
 	self.melee_weapons.iceaxe.stats.min_damage_effect = 0.46667
 	self.melee_weapons.iceaxe.stats.max_damage_effect = 0.53297
 	self.melee_weapons.iceaxe.stats.charge_time = 1.55
-	self.melee_weapons.iceaxe.stats.range = 185
+	self.melee_weapons.iceaxe.stats.range = 180
 	self.melee_weapons.iceaxe.stats.concealment = 27
-	self.melee_weapons.iceaxe.repeat_expire_t = 0.8
-	self.melee_weapons.iceaxe.melee_damage_delay = 0.1
-	self.melee_weapons.iceaxe.expire_t = 1.2
+	self.melee_weapons.iceaxe.repeat_expire_t = 1.0
+	self.melee_weapons.iceaxe.melee_damage_delay = 0.125
+	self.melee_weapons.iceaxe.expire_t = 1.1
 	self.melee_weapons.iceaxe.headshot_damage_multiplier = 1.5
 
 	--Even more pokey knives--

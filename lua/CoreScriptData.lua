@@ -264,7 +264,8 @@ if restoration.Options:GetValue("OTHER/TimeOfDay") then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/bb_skm_new.custom_xml", "custom_xml", "environments/pd2_env_bigbank/pd2_env_bigbank", "environment")
 		elseif level_id == "kosugi" then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/shadowraid_darker.custom_xml", "custom_xml", "environments/pd2_kosugi/pd2_kosugi", "environment")
-			
+		elseif level_id == "run" then
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/heatstreettweak.custom_xml", "custom_xml", "environments/pd2_run/run_outside", "environment")
 		-- elseif level_id == "kosugi" then 
 			-- setting = restoration:get_env_setting("OTHER/Env_Kosugi")
 			-- if setting == 1 then

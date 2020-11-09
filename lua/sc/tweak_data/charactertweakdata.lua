@@ -15323,6 +15323,7 @@ function CharacterTweakData:character_map()
 			path = "units/pd2_mod_nypd/characters/",
 			list = {
 				"ene_shield_1",
+				"ene_sniper_1",
 				"ene_fbi_swat_1",
 				"ene_fbi_swat_2",
 				"ene_fbi_swat_3",

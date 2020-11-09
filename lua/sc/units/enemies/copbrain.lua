@@ -505,13 +505,6 @@ function CopBrain:on_alarm_pager_interaction(status, player)
 				self._unit:sound():play(self:_get_radio_id("dsp_radio_fooled_" .. tostring(cue_index)), nil, true)
 			end
 			
-			--Suspicion Increase from a 'convincing' pager call
-			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.02
-			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.02
-			managers.groupai:state():_delay_whisper_suspicion_mul_decay()					
-
 			if is_last then
 				-- Nothing
 			end
@@ -522,7 +515,7 @@ function CopBrain:on_alarm_pager_interaction(status, player)
 			managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.15
 			managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
 			managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
-			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.25
+			managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.15
 			managers.groupai:state():_delay_whisper_suspicion_mul_decay()					
 
 			if is_dead then
@@ -542,8 +535,8 @@ function CopBrain:on_alarm_pager_interaction(status, player)
 		--Suspicion Increase from an interrupted pager
 		managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
 		managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-		managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.7
-		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.3
+		managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.2
 		managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
 		
 		--Tutorial Heists will sound an alarm to prevent a soft lock
@@ -619,8 +612,8 @@ function CopBrain:clbk_alarm_pager(ignore_this, data)
 		--Suspicion Increase from a dropped pager
 		managers.groupai:state()._old_guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw + 0.2
 		managers.groupai:state()._guard_detection_mul_raw = managers.groupai:state()._old_guard_detection_mul_raw
-		managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.7
-		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.3
+		managers.groupai:state()._decay_target = managers.groupai:state()._old_guard_detection_mul_raw * 0.75
+		managers.groupai:state()._guard_delay_deduction = managers.groupai:state()._guard_delay_deduction + 0.2
 		managers.groupai:state():_delay_whisper_suspicion_mul_decay()		
 
 		--Tutorial Heists will sound an alarm to prevent a soft lock
@@ -653,5 +646,3 @@ function CopBrain:clbk_alarm_pager(ignore_this, data)
 		managers.enemy:add_delayed_clbk(self._alarm_pager_data.pager_clbk_id, callback(self, self, "clbk_alarm_pager"), TimerManager:game():time() + call_delay)
 	end
 end
-
-

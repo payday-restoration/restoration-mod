@@ -10050,7 +10050,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"smoke_grenade",
 			"shield_cover",
-			"murder"
+			"murder",
+			"tunnel"
 		},
 		CS_boom = {
 			"harass",		
@@ -10092,7 +10093,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"smoke_grenade",
 			"shield_cover",
-			"murder"
+			"murder",
+			"tunnel"
 		},
 		ELITE_boom = {
 			"flash_grenade",
@@ -10333,6 +10335,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"reloadingretreat",
 			"murder",
+			"tunnel",
 			"harass",
 			"hitnrun",
 			"provide_coverfire",
@@ -10342,6 +10345,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		BLACK_tank = { --set up to be hyper aggressive and charge the player
 			"reloadingretreat",
 			"murder",
+			"tunnel",
 			"charge",
 			"harass",
 			"aggressor",
@@ -10351,6 +10355,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"reloadingretreat",
 			"ranged_fire",
 			"murder",
+			"tunnel",
 			"harass",
 			"shield"
 		},
@@ -10360,6 +10365,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"reloadingretreat",
 			"spoocavoidance",
 			"murder",
+			"tunnel",
 			"elite_ranged_fire",
 			"harass"
 		},
@@ -10554,6 +10560,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"ranged_fire",
 			"provide_support",
 			"murder",
+			"tunnel",
 			"deathguard"
 		},
 		tazer_flanking = {
@@ -10563,6 +10570,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"smoke_grenade",
+			"tunnel",
 			"murder"
 		},
 		tazer_charge = {
@@ -10570,11 +10578,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"legday",
 			"aggressor",
 			"provide_coverfire",
+			"tunnel",
 			"murder"
 		},
 		tank_rush = {
 			"charge",
 			"provide_coverfire",
+			"tunnel",
 			"murder"
 		}
 	}

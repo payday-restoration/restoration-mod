@@ -239,7 +239,14 @@ function CharacterTweakData:_init_security(presets)
 	self.security_mex.speech_prefix_p1 = "m"
 	self.security_mex.radio_prefix = "mex_"
 
-	table.insert(self._enemy_list, "security_mex")		
+	table.insert(self._enemy_list, "security_mex")	
+	
+	self.security_mex_no_pager = deep_clone(self.security)
+	self.security_mex_no_pager.speech_prefix_p1 = "m"
+	self.security_mex_no_pager.radio_prefix = "mex_"
+	self.security_mex_no_pager.has_alarm_pager = false
+
+	table.insert(self._enemy_list, "security_mex_no_pager")		
 end
 
 function CharacterTweakData:_init_gensec(presets)

@@ -42,8 +42,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pex.package = {"packages/mexicoassets", "packages/job_pex"}
 	self.pex.player_style = "slaughterhouse"
 	
-	-- self.fex.package = {"packages/mexicoassets", "packages/job_fex"}
-	-- self.fex.player_style = "suit_sunny"
+	self.fex.package = {"packages/mexicoassets", "packages/job_fex"}
+	self.fex.player_style = "suit_sunny"
 	
 	--///MURKYWATER LEVELS\\\--
 	self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}

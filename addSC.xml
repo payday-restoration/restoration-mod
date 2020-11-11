@@ -2815,6 +2815,9 @@
 	<effect path="effects/payday2/particles/impacts/blood/blood_collection_a" force="true"/>	
 	<effect path="effects/payday2/particles/impacts/blood/blood_impact_a" force="true"/>	
 	<effect path="effects/payday2/particles/impacts/blood/blood_impact_b" force="true"/>		
+	<!--Headshot effect-->
+	<effect path="effects/payday2/particles/impacts/blood/brain_splat" />		
+	<texture path="effects/textures/brain_impacts_df" />
 	
 
 	

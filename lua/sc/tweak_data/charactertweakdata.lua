@@ -1249,6 +1249,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.speech_prefix_count = nil 
 	self.weekend.heal_cooldown = 5
 	self.weekend.can_throw_frag = true
+	self.weekend.surrender = presets.surrender.bravo
 	table.insert(self._enemy_list, "weekend")				
 	
 	self.city_swat_titan = deep_clone(self.city_swat)
@@ -11979,6 +11980,30 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
+	presets.surrender.bravo = {
+		base_chance = 0.3,
+		significant_chance = 0.35,
+		violence_timeout = 2,
+		reasons = {
+			health = {
+				[1] = 0.25,
+				[0.75] = 0.5,
+				[0.5] = 0.75,
+			},
+			weapon_down = 0.5,
+			pants_down = 1,
+			isolated = 0.08
+		},
+		factors = {
+			flanked = 0.05,
+			unaware_of_aggressor = 0.1,
+			enemy_weap_cold = 0.11,
+			aggressor_dis = {
+				[1000] = 0,
+				[300] = 0.2
+			}
+		}
+	}	
 	presets.surrender.special = {
 		base_chance = 0.25,
 		significant_chance = 0.35,

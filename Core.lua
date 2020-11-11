@@ -115,7 +115,9 @@ function restoration:Init()
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
-	
+	--Increased spawns, should only be reserved for HUGE maps. Likely custom heists if anything (WIP)
+	restoration.large_levels = {}			
+	--Slightly reduced spawns, usually due to proximity to spawns or anything else like that
 	restoration.tiny_levels = {
 		"welcome_to_the_jungle_2",
 		"election_day_2",
@@ -161,22 +163,25 @@ function restoration:Init()
 		"spa_CD",		
 		"wwh_CD",		
 	}
-	--Mostly for stuff like Cursed Killed Room and other crap heists
+	--For levels that have aggressive spawns that are right on top of the player at all times
 	restoration.very_tiny_levels = {
-		"hvh",
-		-- :^)
-		"chew",	
-		"help",			
-		"nail",				
+		"help",					
 		"cane",		
 		"pbr2",		
 		"rvd2",		
-		"peta2",	
 		"vit",
 		"mex_cooking",		
 		--Custom Heists below--
-		"Victor Romeo",
 		"thechase"
+	}	
+	--Mostly for stuff like Cursed Killed Room and other crap puny heists
+	restoration.extremely_tiny_levels = {
+		"hvh", --CKR
+		"chew", --Biker day 2		
+		"nail",	--Lab Rats. Fuck this heist	
+		"peta2", --Goats day 2. Fuck this heist too		
+		--Custom Heists below--
+		"Victor Romeo"
 	}	
 	--For custom heists that seem to be broken with our normal spawn setup
 	restoration.bad_spawn_heists = {

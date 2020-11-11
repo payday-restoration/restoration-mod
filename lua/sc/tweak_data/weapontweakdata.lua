@@ -1071,7 +1071,7 @@ function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 	self.swat_van_turret_module.CAN_GO_IDLE = true
 	self.swat_van_turret_module.IDLE_WAIT_TIME = 5
 	self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 2
-	self.swat_van_turret_module.AUTO_REPAIR_DURATION = 30
+	self.swat_van_turret_module.AUTO_REPAIR_DURATION = 120
 	self.swat_van_turret_module.ECM_HACKABLE = true
 	self.swat_van_turret_module.FLASH_GRENADE = {
 		range = 300,
@@ -1153,7 +1153,7 @@ function WeaponTweakData:_init_data_crate_turret_module_npc()
 	self.crate_turret_module.IDLE_WAIT_TIME = 5
 	self.crate_turret_module.AUTO_REPAIR = false
 	self.crate_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
-	self.crate_turret_module.AUTO_REPAIR_DURATION = 30
+	self.crate_turret_module.AUTO_REPAIR_DURATION = 120
 	self.crate_turret_module.ECM_HACKABLE = true
 	self.crate_turret_module.HACKABLE_WITH_ECM = true
 	self.crate_turret_module.VELOCITY_COMPENSATION = {
@@ -1234,7 +1234,7 @@ function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 	self.ceiling_turret_module.IDLE_WAIT_TIME = 5
 	self.ceiling_turret_module.AUTO_REPAIR = false
 	self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 2
-	self.ceiling_turret_module.AUTO_REPAIR_DURATION = 30
+	self.ceiling_turret_module.AUTO_REPAIR_DURATION = 120
 	self.ceiling_turret_module.ECM_HACKABLE = true
 	self.ceiling_turret_module.FLASH_GRENADE = {
 		range = 300,
@@ -1314,7 +1314,7 @@ function WeaponTweakData:_init_data_aa_turret_module_npc()
 	self.aa_turret_module.IDLE_WAIT_TIME = 5
 	self.aa_turret_module.AUTO_REPAIR = true
 	self.aa_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
-	self.aa_turret_module.AUTO_REPAIR_DURATION = 30
+	self.aa_turret_module.AUTO_REPAIR_DURATION = 120
 	self.aa_turret_module.ECM_HACKABLE = true
 	self.aa_turret_module.FLASH_GRENADE = {
 		range = 300,

@@ -1,6 +1,6 @@
 local old_eco_init = EconomyTweakData.init
-function EconomyTweakData:init()
-	old_eco_init(self)
+function EconomyTweakData:init(tweak_data)
+	old_eco_init(self, tweak_data)
 
 	--Modifiers are neat I guess--
 	self.bonuses.concealment_p1.name_id = "bm_menu_bonus_concealment_p1"

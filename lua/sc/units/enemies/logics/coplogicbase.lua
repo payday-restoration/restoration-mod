@@ -329,9 +329,16 @@ function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
 		if contact_chatter_time_ok and data.char_tweak.chatter and data.char_tweak.chatter.contact and new_att_obj.is_person and new_att_obj.verified and REACT_COMBAT <= new_reaction then
 			if data.unit:anim_data().idle or data.unit:anim_data().move then
 				local tweak_table = data.unit:base()._tweak_table
-
-				if tweak_table == "gensec" or tweak_table == "security" then
+				if tweak_table == "phalanx_vip" then
 					data.unit:sound():say("a01", true)
+				elseif tweak_table == "spring" then
+					data.unit:sound():say("a01", true)						
+				elseif tweak_table == "gensec" then
+					data.unit:sound():say("a01", true)			
+				elseif tweak_table == "security" then
+					data.unit:sound():say("a01", true)		
+				elseif tweak_table == "spooc" then
+					data.unit:sound():say("clk_c01x_plu", true, true)
 				elseif data.unit:base().has_tag and data.unit:base():has_tag("shield") then
 					if not data.attack_sound_t or data.t - data.attack_sound_t > 40 then
 						data.attack_sound_t = data.t
@@ -1774,7 +1781,14 @@ function CopLogicBase.chk_start_action_dodge(data, reason)
 		action_data.blocks.hurt = -1
 		action_data.blocks.heavy_hurt = -1
 	end
+
+		if data.unit:base()._tweak_table == "fbi_vet" then	
+			action_data.body_part = 2
+			action_data.blocks.action = nil
+			action_data.blocks.aim = nil
+		end
 	local action = data.unit:movement():action_request(action_data)
+	
 	if action then
 		local my_data = data.internal_data
 		CopLogicAttack._cancel_cover_pathing(data, my_data)

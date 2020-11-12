@@ -406,7 +406,7 @@ function CopLogicBase._upd_stance_and_pose(data, my_data, objective)
 		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 
 		if data.is_suppressed then
-			if diff_index <= 5 and not managers.modifiers and managers.modifiers:check_boolean("TotalAnarchy") then
+			if diff_index <= 5 then
 				if data.unit:anim_data().stand then
 					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
 						if CopLogicAttack._chk_request_action_crouch(data) then
@@ -433,7 +433,7 @@ function CopLogicBase._upd_stance_and_pose(data, my_data, objective)
 				end
 			end
 		elseif data.attention_obj and data.attention_obj.aimed_at and data.attention_obj.reaction and data.attention_obj.reaction >= REACT_COMBAT and data.attention_obj.verified then
-			if diff_index > 5 or managers.modifiers and managers.modifiers:check_boolean("TotalAnarchy") then
+			if diff_index > 5 then
 				if data.unit:anim_data().stand then
 					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
 						if CopLogicAttack._chk_request_action_crouch(data) then

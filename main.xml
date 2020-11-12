@@ -80,7 +80,7 @@
 		<hook file="sc/tweak_data/customsafehousetweakdata.lua" source_file="lib/tweak_data/customsafehousetweakdata"/>
 		<hook file="sc/tweak_data/soundtweakdata.lua" source_file="lib/tweak_data/soundtweakdata"/>
 		<hook file="sc/units/equipment/grenadecratebase.lua" source_file="lib/units/equipment/grenade_crate/grenadecratebase"/>
-		<hook file="sc/tweak_data/infamytweakdata.lua" source_file="lib/tweak_data/infamytweakdata"/>
+		<hook file="sc/tweak_data/infamynewtweakdata.lua" source_file="lib/tweak_data/infamynewtweakdata"/>
 		<hook file="sc/tweak_data/interactiontweakdata.lua" source_file="lib/tweak_data/interactiontweakdata"/>
 		<hook file="sc/tweak_data/levelstweakdata.lua" source_file="lib/tweak_data/levelstweakdata"/>
 		<hook file="sc/tweak_data/dlctweakdata.lua" source_file="lib/tweak_data/dlctweakdata"/>

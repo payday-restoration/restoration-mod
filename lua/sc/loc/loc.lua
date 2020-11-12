@@ -704,11 +704,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["skill_stockholm_syndrome_trade"] = "Down Restored!",
 		["hint_short_max_pagers"] = "Neglecting pagers will significantly increase guard suspicion.",
 
-		--Nuking infamy shit because it's gay--
-		["menu_infamy_desc_ghost"] = "Modern assassin that carries out death sentences - for the right price.\n\nBONUSES:\nExperience gained is increased by ##5%##.",
-		["menu_infamy_desc_enforcer"] = "Used in crimes that requires the Enforcer to get his hands dirty.\n\nBONUSES:\nExperience gained is increased by ##5%##.",
-		["menu_infamy_desc_technician"] = "Cold, calculating and a master of forced disappearances, dead or alive.\n\nBONUSES:\nExperience gained is increased by ##5%##.",
-		["menu_infamy_desc_mastermind"] = "Known to cause moral chaos and sway even the most devoted lawman.\n\nBONUSES:\nExperience gained is increased by ##5%##.",
+		--And now we're doing it again--
+		["menu_infamy_desc_root_new"] = "As a new arrival to the criminal elite, the first order of business is for you to get gear and fanfare befitting someone of your status.\n\nBONUSES:\nYour infamous base drop rate is increased from ##0.3%## to ##0.6%##\nExperience gained is increased by ##5%##.",
 
 		--Renaming some of the skill subtrees--
 		["st_menu_mastermind_single_shot"] = "Assault",

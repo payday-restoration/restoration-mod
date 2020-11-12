@@ -89,6 +89,8 @@ function HUDMissionBriefing:init(hud, workspace)
 			})
 			local infamy = slot_panel:bitmap({
 				name = "infamy",
+				w = 16,
+				h = 16,
 				visible = false,
 				layer = 2,
 				color = color,

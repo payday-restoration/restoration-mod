@@ -350,15 +350,6 @@ function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
 				end
 			end
 		end
-
-		if data.char_tweak.weapon[data.unit:inventory():equipped_unit():base():weapon_tweak_data().usage].use_laser and not data.weapon_laser_on then
-			data.unit:inventory():equipped_unit():base():set_laser_enabled(true)
-
-			data.weapon_laser_on = true
-
-			managers.enemy:_destroy_unit_gfx_lod_data(data.key)
-			managers.network:session():send_to_peers_synched("sync_unit_event_id_16", data.unit, "brain", HuskCopBrain._NET_EVENTS.weapon_laser_on)
-		end
 	elseif old_att_obj and old_att_obj.criminal_record then
 		managers.groupai:state():on_enemy_disengaging(data.unit, old_att_obj.u_key)
 	end

@@ -10875,7 +10875,10 @@ function WeaponFactoryTweakData:_init_model70()
 			},
 			wpn_fps_snp_r700 = {
 				translation = Vector3(0, 0, -3)
-			}			
+			},	
+			wpn_fps_snp_sbl = {
+				translation = Vector3(0, 0, -0.75)
+			}		
 		},
 		texture_bundle_folder = "berry",
 		is_a_unlockable = true,
@@ -25428,6 +25431,67 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 	table.insert(self.wpn_fps_snp_r700_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
 			
 	self.wpn_fps_snp_r700_npc.uses_parts = deep_clone(self.wpn_fps_snp_r700.uses_parts)		
+
+end)
+
+--Bernetti Rangerhitter
+Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
+
+	--BIG Barrel
+	self.parts.wpn_fps_snp_sbl_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_sbl_b_long.supported = true
+	self.parts.wpn_fps_snp_sbl_b_long.stats = {
+		value = 3,
+		concealment = -1,
+		spread = 1,
+		recoil = -1
+	}
+	
+	--Sniper Suppressor
+	self.parts.wpn_fps_snp_sbl_b_short.pcs = {
+		10,
+		20,
+		30,
+		40	
+	}
+	self.parts.wpn_fps_snp_sbl_b_short.supported = true
+	self.parts.wpn_fps_snp_sbl_b_short.stats = {
+		value = 3,
+		suppression = 10,
+		alert_size = 10,
+		spread = -1,
+		recoil = 1
+	}
+	self.parts.wpn_fps_snp_sbl_b_short.perks = {"silencer"}
+	
+	--Club Stock
+	self.parts.wpn_fps_snp_sbl_s_saddle.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_sbl_s_saddle.supported = true
+	self.parts.wpn_fps_snp_sbl_s_saddle.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 3
+	}
+	
+	--Override Table
+	self.wpn_fps_snp_sbl.override = {}
+	self.wpn_fps_snp_sbl.adds = {}
+
+	table.insert(self.wpn_fps_snp_sbl.uses_parts, "wpn_fps_snp_model70_iron_sight")
+	table.insert(self.wpn_fps_snp_sbl_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
+			
+	self.wpn_fps_snp_sbl_npc.uses_parts = deep_clone(self.wpn_fps_snp_sbl.uses_parts)		
 
 end)
 					

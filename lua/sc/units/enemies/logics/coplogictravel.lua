@@ -2767,7 +2767,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 	end	
 end
 
-function CopLogicTravel._find_cover(data, search_nav_seg, near_pos)
+--[[function CopLogicTravel._find_cover(data, search_nav_seg, near_pos)
 	local cover = nil
 	local search_area = managers.groupai:state():get_area_from_nav_seg_id(search_nav_seg)
 	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
@@ -2870,7 +2870,7 @@ function CopLogicTravel._find_cover(data, search_nav_seg, near_pos)
 	end
 
 	return cover
-end
+end]]--
 
 function CopLogicTravel.get_pathing_prio(data)
     local prio = nil

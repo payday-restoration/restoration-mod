@@ -15291,7 +15291,30 @@ function CharacterTweakData:character_map()
 				"civ_male_mariachi_03",
 				"civ_male_mariachi_04"
 			}
-		},			
+		},		
+		fex = {
+			path = "units/pd2_dlc_fex/characters/",
+			list = {
+				"civ_female_masquerade_1",
+				"civ_female_masquerade_2",
+				"civ_female_masquerade_3",
+				"civ_female_masquerade_4",
+				"civ_male_masquerade_1",
+				"civ_male_masquerade_2",
+				"civ_male_masquerade_3",
+				"civ_male_masquerade_4",
+				"ene_guard_dog_mask",
+				"ene_guard_dog_mask_no_pager",
+				"ene_guard_jaguar_mask",
+				"ene_guard_jaguar_mask_no_pager",
+				"ene_guard_owl_mask",
+				"ene_guard_owl_mask_no_pager",
+				"ene_guard_serpent_mask",
+				"ene_guard_serpent_mask_no_pager",
+				"ene_thug_outdoor_fex",
+				"ene_secret_service_fex"
+			}
+		},
 		sharks = {
 			path = "units/pd2_mod_sharks/characters/",
 			list = {

@@ -152,6 +152,7 @@ function restoration:Init()
 		"man", --Undercover
 		"peta", --Goat Sim Day 1
 		"jolly", --aftershock		
+		"fex", --Buluc's Mansion
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn",

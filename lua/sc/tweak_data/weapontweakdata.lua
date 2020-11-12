@@ -8361,6 +8361,89 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sbl.stats_modifiers = nil
 	self.sbl.panic_suppression_chance = 0.05
 	
+	--Frenchman Model 87
+	self.model3.fire_mode_data = {}
+	self.model3.fire_mode_data.fire_rate = 0.15789473684
+	self.model3.single = {}
+	self.model3.single.fire_rate = 0.15789473684
+	self.model3.AMMO_MAX = 30
+	self.model3.kick = self.stat_info.kick_tables.moderate_kick
+	self.model3.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.model3.supported = true
+	self.model3.stats = {
+		damage = 60,
+		spread = 17,
+		recoil = 17,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 23,
+		suppression = 5,
+		alert_size = 5,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.model3.stats_modifiers = nil
+	self.model3.timers.reload_not_empty = 2.4
+	self.model3.timers.reload_empty = 2.4		
+	self.model3.panic_suppression_chance = 0.05	
+	
+	--Akimbo Model 87
+	self.x_model3.fire_mode_data = {}
+	self.x_model3.fire_mode_data.fire_rate = 0.15789473684
+	self.x_model3.single = {}
+	self.x_model3.single.fire_rate = 0.15789473684
+	self.x_model3.AMMO_MAX = 60
+	self.x_model3.kick = self.stat_info.kick_tables.moderate_kick
+	self.x_model3.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.x_model3.supported = true
+	self.x_model3.stats = {
+		damage = 60,
+		spread = 15,
+		recoil = 7,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 23,
+		suppression = 5,
+		alert_size = 5,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.x_model3.stats_modifiers = nil
+	self.x_model3.timers.reload_not_empty = 2.4
+	self.x_model3.timers.reload_empty = 2.4		
+	self.x_model3.panic_suppression_chance = 0.05		
+	
+	--Reinfeld 88
+	self.m1897.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+	self.m1897.rays = 9
+	self.m1897.CLIP_AMMO_MAX = 7
+	self.m1897.kick = self.stat_info.kick_tables.vertical_kick
+	self.m1897.single.fire_rate = 0.5
+	self.m1897.fire_mode_data.fire_rate = 0.5
+	self.m1897.AMMO_MAX = 60
+	self.m1897.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.m1897.supported = true
+	self.m1897.stats = {
+		damage = 60,
+		spread = 10,
+		recoil = 17,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 25,
+		suppression = 5,
+		alert_size = 5,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}		
+	self.m1897.stats_modifiers = nil
+	self.m1897.panic_suppression_chance = 0.05
+		
 	--Restoration Weapons--
 	
 	--Raze's Fury

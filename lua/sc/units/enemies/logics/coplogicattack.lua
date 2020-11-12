@@ -2704,17 +2704,17 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 							local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)	
 							my_data.shield_knock_cooldown = data.t + shield_knock_cooldown
 									
-							if diff_index < 8 then
-								data.unit:sound():play("shield_identification", nil, true)
-							else
+							if data.unit:base()._tweak_table == "phalanx_minion" or data.unit:base()._tweak_table == "phalanx_minion_assault" then
 								data.unit:sound():play("hos_shield_indication_sound_terminator_style", nil, true)
+							else
+								data.unit:sound():play("shield_identification", nil, true)
 							end
 						end
 					else
 						managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "contact")
 					end
-				elseif data.unit:base()._tweak_table == "akuma" then
-					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "contact")
+				elseif data.unit:base()._tweak_table == "security" or data.unit:base()._tweak_table == "gensec" or data.unit:base()._tweak_table == "city_swat_guard" or data.unit:base()._tweak_table == "spring" or data.unit:base()._tweak_table == "phalanx_vip" then
+				    data.unit:sound():say("a01", true)
 				else
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "contact")
 				end

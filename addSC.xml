@@ -2544,10 +2544,14 @@
 	<!--fbi swat 1-->
 	<model path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="true"/>	
 	<object path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="true"/>	
+	<unit path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="true"/>	
+	<unit path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk" force="true"/>	
 	<material_config path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="true"/>	
 	<material_config path="units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1_contour" force="true"/>	
 	
 	<!--fbi swat 2-->
+	<unit path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>	
+	<unit path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" force="true"/>	
 	<model path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>	
 	<object path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>		
 	

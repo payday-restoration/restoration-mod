@@ -372,6 +372,7 @@
 	<unit path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3" load="true" />
 	<unit path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3_husk" load="true"  />	
 	<object path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3"  />	
+	<sequence_manager path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3"  />	
 	<model path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3"  />
 	<cooked_physics path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3"  />		
 	<material_config path="units/payday2/characters/ene_city_guard_3/ene_city_guard_3" />	
@@ -1181,8 +1182,6 @@
 	<cooked_physics path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 	<model path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 	<unit path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false" load="true"/>
-	<material_config path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
-	<material_config path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour" force="false"/>
 	<unit path="units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>	
 
 	<!-- FBI 3 :))))))))))))))))))))))))))))))))))))))))))))))))))))))-->
@@ -2551,8 +2550,6 @@
 	<!--fbi swat 2-->
 	<model path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>	
 	<object path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>		
-	<material_config path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="true"/>	
-	<material_config path="units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour" force="true"/>	
 	
 	<!--vanilla unit texture overrides-->	
 	<texture path="units/payday2/characters/shared_textures/genshill_helm_df"/>

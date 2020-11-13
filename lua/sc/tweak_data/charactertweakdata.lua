@@ -3974,6 +3974,12 @@ function CharacterTweakData:_presets(tweak_data)
 				{none = 1}
 			}
 		},
+			health_reference = 1,
+		bleed = {
+			zones = {
+				{none = 1}
+			}
+		},
 		tase = false
 	}
 	presets.hurt_severities.only_light_hurt_no_explode = {

@@ -123,9 +123,7 @@ end
 function UnitNetworkHandler:sync_add_doted_enemy(enemy_unit, variant, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation, rpc)
 	if variant == 0 then
 		managers.fire:sync_add_fire_dot(enemy_unit, nil, weapon_unit, dot_length, dot_damage, user_unit, is_molotov_or_hurt_animation)
-	else
-		log("SYNCING")
-		
+	else	
 		if variant == 1 then
 			variant = "poison"
 		elseif variant == 2 then
@@ -135,8 +133,6 @@ function UnitNetworkHandler:sync_add_doted_enemy(enemy_unit, variant, weapon_uni
 		else
 			variant = nil
 		end
-
-
 
 		if weapon_unit and alive(weapon_unit) and weapon_unit:base() then
 			if weapon_unit:base().is_husk_player then

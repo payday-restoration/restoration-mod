@@ -3974,8 +3974,8 @@ function CharacterTweakData:_presets(tweak_data)
 				{none = 1}
 			}
 		},
-			health_reference = 1,
 		bleed = {
+			health_reference = 1,
 			zones = {
 				{none = 1}
 			}
@@ -4008,6 +4008,12 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		poison = {
+			health_reference = 1,
+			zones = {
+				{none = 1}
+			}
+		},
+		bleed = {
 			health_reference = 1,
 			zones = {
 				{none = 1}
@@ -4090,6 +4096,12 @@ function CharacterTweakData:_presets(tweak_data)
 				{none = 1}
 			}
 		},
+		bleed = {
+			health_reference = 1,
+			zones = {
+				{none = 1}
+			}
+		},
 		tase = true
 	}
 	presets.hurt_severities.only_light_hurt_and_fire = {
@@ -4118,6 +4130,12 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		},
 		poison = {
+			health_reference = 1,
+			zones = {
+				{none = 1}
+			}
+		},
+		bleed = {
 			health_reference = 1,
 			zones = {
 				{none = 1}
@@ -4283,6 +4301,12 @@ function CharacterTweakData:_presets(tweak_data)
 				{none = 1}
 			}
 		},
+		bleed = {
+			health_reference = 1,
+			zones = {
+				{none = 1}
+			}
+		},
 		tase = true
 	}
 	presets.hurt_severities.only_fire_and_poison_hurts = {
@@ -4314,6 +4338,12 @@ function CharacterTweakData:_presets(tweak_data)
 			health_reference = 1,
 			zones = {
 				{poison = 1}
+			}
+		},
+		bleed = {
+			health_reference = 1,
+			zones = {
+				{none = 1}
 			}
 		},
 		tase = true
@@ -4405,6 +4435,12 @@ function CharacterTweakData:_presets(tweak_data)
 				{none = 0, poison = 1}
 			}
 		}
+		bleed = {
+			health_reference = "current",
+			zones = {
+				{none = 1}
+			}
+		},
 	}
 	presets.hurt_severities.spooc = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.spooc_titan = deep_clone(presets.hurt_severities.base)

@@ -1,4 +1,4 @@
-	local _setup_player_info_hud_pd2_original = HUDManager._setup_player_info_hud_pd2
+local _setup_player_info_hud_pd2_original = HUDManager._setup_player_info_hud_pd2
 
 HUDManager = HUDManager or class()
 HUDManager.WAITING_SAFERECT = Idstring("guis/waiting_saferect")
@@ -393,7 +393,9 @@ if restoration.Options:GetValue("HUD/NameLabels") then
 			local level = data.unit:network():peer():level()
 			rank = data.unit:network():peer():rank()
 			if level then
-				local experience = (rank > 0 and managers.experience:rank_string(rank) .. "-" or "") .. level
+				local color_range_offset = utf8.len(data.name) + 2
+				local experience, color_ranges = managers.experience:gui_string(level, rank, color_range_offset)
+				data.name_color_ranges = color_ranges
 				data.name = data.name .. " [" .. experience .. "]"
 			end
 		end
@@ -466,19 +468,23 @@ if restoration.Options:GetValue("HUD/NameLabels") then
 			w = 256,
 			h = 18
 		})
-		--[[
 		if rank > 0 then
-			local infamy_icon = tweak_data.hud_icons:get_icon_data("infamy_icon")
+			local texture, texture_rect = managers.experience:rank_icon_data(rank)
 			panel:bitmap({
 				name = "infamy",
-				texture = infamy_icon,
 				layer = 0,
+				h = 16,
 				w = 16,
-				h = 32,
+				texture = texture,
+				texture_rect = texture_rect,
 				color = crim_color
 			})
 		end
-		]]
+
+		for _, color_range in ipairs(data.name_color_ranges or {}) do
+			text:set_range_color(color_range.start, color_range.stop, color_range.color)
+		end
+
 		self:align_teammate_name_label(panel, interact)
 		table.insert(self._hud.name_labels, {
 			movement = data.unit:movement(),

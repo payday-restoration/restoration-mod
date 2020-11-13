@@ -2505,7 +2505,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--Payday DLC? Nah it's a walking dead game you cunts.--
 	self.melee_weapons.barbedwire.anim_global_param = "melee_baseballbat"
 	self.melee_weapons.barbedwire.type = "axe"
-	self.melee_weapons.clean.dot_data = {
+	self.melee_weapons.barbedwire.dot_data = {
 		type = "bleed",
 		custom_data = {
 			dot_damage = 2,

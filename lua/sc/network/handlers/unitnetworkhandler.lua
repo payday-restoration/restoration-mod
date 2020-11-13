@@ -128,6 +128,8 @@ function UnitNetworkHandler:sync_add_doted_enemy(enemy_unit, variant, weapon_uni
 			variant = "poison"
 		elseif variant == 2 then
 			variant = "dot"
+		elseif variant == 3 then
+			varant = "bleed"
 		else
 			variant = nil
 		end

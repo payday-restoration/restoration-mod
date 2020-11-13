@@ -466,6 +466,7 @@ if restoration.Options:GetValue("HUD/NameLabels") then
 			w = 256,
 			h = 18
 		})
+		--[[
 		if rank > 0 then
 			local infamy_icon = tweak_data.hud_icons:get_icon_data("infamy_icon")
 			panel:bitmap({
@@ -477,6 +478,7 @@ if restoration.Options:GetValue("HUD/NameLabels") then
 				color = crim_color
 			})
 		end
+		]]
 		self:align_teammate_name_label(panel, interact)
 		table.insert(self._hud.name_labels, {
 			movement = data.unit:movement(),

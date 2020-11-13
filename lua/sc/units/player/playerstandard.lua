@@ -449,9 +449,9 @@ Hooks:PostHook(PlayerStandard, "_start_action_melee", "ResPlayerStandardPostStar
 	end
 
 	--Start chainsaw timer.
-	local melee_entry = managers.blackmarket:equipped_melee_weapon()
-	if tweak_data.blackmarket.melee_weapons[melee_entry].chainsaw == true then
-		self._state_data.chainsaw_t = t + 0.8
+	local melee_tweak = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
+	if melee_tweak.chainsaw then
+		self._state_data.chainsaw_t = t + melee_tweak.chainsaw.start_delay
 	end
 end)
 
@@ -474,7 +474,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 	if col_ray and alive(col_ray.unit) then
 		local damage, damage_effect = managers.blackmarket:equipped_melee_weapon_damage_info(0)
 		local damage_effect_mul = math.max(managers.player:upgrade_value("player", "melee_knockdown_mul", 1), managers.player:upgrade_value(self._equipped_unit:base():weapon_tweak_data().categories and self._equipped_unit:base():weapon_tweak_data().categories[1], "melee_knockdown_mul", 1))
-		damage = tweak_data.blackmarket.melee_weapons[melee_entry].stats.tick_damage or damage --Use tickdamage if possible.
+		damage = tweak_data.blackmarket.melee_weapons[melee_entry].chainsaw.tick_damage
 		damage = damage * managers.player:get_melee_dmg_multiplier()
 		damage_effect = damage_effect * damage_effect_mul
 		col_ray.sphere_cast_radius = sphere_cast_radius
@@ -569,19 +569,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 				self._unit:character_damage():restore_health(managers.player:temporary_upgrade_value("temporary", "melee_life_leech", 1))
 			end
 
-			local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
-			local action_data = {
-				variant = "melee"
-			}
-
-			if special_weapon == "taser" then
-				action_data.variant = "taser_tased"
-			end
-
-			if _G.IS_VR and melee_entry == "weapon" and not bayonet_melee then
-				dmg_multiplier = 0.1
-			end
-
+			local action_data = {}
 			action_data.damage = shield_knock and 0 or damage * dmg_multiplier
 			action_data.damage_effect = damage_effect
 			action_data.attacker_unit = self._unit
@@ -613,7 +601,6 @@ function PlayerStandard:_do_chainsaw_damage(t)
 
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
 
-			self:_check_melee_dot_damage(col_ray, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage)
 
 			return defense_data
@@ -635,12 +622,9 @@ function PlayerStandard:_do_chainsaw_damage(t)
 
 	return col_ray
 end
-		
 
-Hooks:PreHook(PlayerStandard, "_update_melee_timers", "ResPlayerStandardPreUpdateMeleeTimers", function(self, t, input)
-	local melee_weapon = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
-	local instant = melee_weapon.instant
-	
+--Updated version of vanilla function, adding in melee sprinting, chainsaw, and repeat_hit functionality.
+function PlayerStandard:_update_melee_timers(t, input)
 	--Resume normal sprinting animations once melee attack is done.
 	--Making it not cancel the equip animation will require a fair amount more work, since it doesn't set the timers. Is a job for another day.
 	if self._running and not self._end_running_expire_t and not self._state_data.meleeing and self._state_data.melee_expire_t and t >= self._state_data.melee_expire_t and not self:_is_charging_weapon() and (not self:_is_reloading() or not self.RUN_AND_RELOAD) and (instant or not self._state_data.melee_repeat_expire_t) then
@@ -649,15 +633,69 @@ Hooks:PreHook(PlayerStandard, "_update_melee_timers", "ResPlayerStandardPreUpdat
 		else
 			self._ext_camera:play_redirect(self:get_animation("idle"))
 		end
+	elseif self._state_data.meleeing then
+		local lerp_value = self:_get_melee_charge_lerp_value(t)
+
+		self._camera_unit:anim_state_machine():set_parameter(self:get_animation("melee_charge_state"), "charge_lerp", math.bezier({
+			0,
+			0,
+			1,
+			1
+		}, lerp_value))
+
+		if self._state_data.melee_charge_shake then
+			self._ext_camera:shaker():set_parameter(self._state_data.melee_charge_shake, "amplitude", math.bezier({
+				0,
+				0,
+				1,
+				1
+			}, lerp_value))
+		end
 	end
 
-	--Do chainsaw stuff.
-	if melee_weapon.chainsaw == true and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
+	local melee_weapon = tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()]
+	local instant = melee_weapon.instant
+	
+	--Trigger chainsaw damage and update timer.
+	if melee_weapon.chainsaw and self._state_data.chainsaw_t and self._state_data.chainsaw_t < t then
 		self:_do_chainsaw_damage(t)
-		self._state_data.chainsaw_t = t + 0.2
-	end			
+		self._state_data.chainsaw_t = t + melee_weapon.chainsaw.tick_delay
+	end
 
-end)
+	if self._state_data.melee_damage_delay_t and self._state_data.melee_damage_delay_t <= t then
+		self:_do_melee_damage(t, nil, self._state_data.melee_hit_ray)
+
+		self._state_data.melee_damage_delay_t = nil
+		self._state_data.melee_hit_ray = nil
+	end
+
+	if self._state_data.melee_attack_allowed_t and self._state_data.melee_attack_allowed_t <= t then
+		self._state_data.melee_start_t = t
+		local melee_charge_shaker = melee_weapon.melee_charge_shaker or "player_melee_charge"
+		self._state_data.melee_charge_shake = self._ext_camera:play_shaker(melee_charge_shaker, 0)
+		self._state_data.melee_attack_allowed_t = nil
+	end
+
+	if self._state_data.melee_repeat_expire_t and self._state_data.melee_repeat_expire_t <= t then
+		self._state_data.melee_repeat_expire_t = nil
+
+		if input.btn_meleet_state then
+			self._state_data.melee_charge_wanted = not instant and true
+		end
+	end
+
+	if self._state_data.melee_expire_t and self._state_data.melee_expire_t <= t then
+		self._state_data.melee_expire_t = nil
+		self._state_data.melee_repeat_expire_t = nil
+		self._melee_repeat_damage_bonus = nil --Clear melee repeat bonus (from specialist knives and such) when melee is over.
+
+		self:_stance_entered()
+
+		if self._equipped_unit and input.btn_steelsight_state then
+			self._steelsight_wanted = true
+		end
+	end
+end
 
 Hooks:PostHook(PlayerStandard, "_interupt_action_melee", "ResPlayerStandardPostInteruptActionMelee", function(self, t)
 	--Interrupting melee attacks also interrupt melee sprinting.
@@ -669,6 +707,9 @@ Hooks:PostHook(PlayerStandard, "_interupt_action_melee", "ResPlayerStandardPostI
 	
 	--Stop chainsaw stuff if also no longer in melee.
 	self._state_data.chainsaw_t = nil
+
+	--Same goes for the melee repeat hitter bonus.
+	self._melee_repeat_damage_bonus = nil
 end)	
 
 function PlayerStandard:_start_action_jump(t, action_start_data)
@@ -902,8 +943,10 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, charge_lerp_value))
 	local sphere_cast_radius = 20
 	local col_ray = nil
+	--Melee weapon tweakdata.
+	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 	--Holds info for certain melee gimmicks (IE: Taser Shock, Psycho Knife Panic, ect)
-	local special_weapon = tweak_data.blackmarket.melee_weapons[melee_entry].special_weapon
+	local special_weapon = melee_weapon.special_weapon
 	if melee_hit_ray then
 		col_ray = melee_hit_ray ~= true and melee_hit_ray or nil
 	else
@@ -981,7 +1024,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 		end
 		character_unit = character_unit or hit_unit
 		if character_unit:character_damage() and character_unit:character_damage().damage_melee then
-			local dmg_multiplier = 1
+			local dmg_multiplier = self._melee_repeat_damage_bonus or 1
 
 			dmg_multiplier = dmg_multiplier * managers.player:upgrade_value("player", "melee_damage_multiplier", 1)
 
@@ -1007,9 +1050,17 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			end
 
 			--Do melee gimmick stuff. Might be worth it to use function references instead of branching later on if we get more of these.
-			local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 			local action_data = {}
 			action_data.variant = "melee"
+
+			if special_weapon == "repeat_hitter" then
+				self._melee_repeat_damage_bonus = 2.0
+			elseif special_weapon == "hyper_crit" and math.random() <= 0.05 then
+				dmg_multiplier = dmg_multiplier * 10
+				damage_effect = damage_effect * 10
+				--Should probably get an audio que at some point.
+			end
+			
 			if charge_lerp_value >= 0.99 then
 				if special_weapon == "taser" then
 					action_data.variant = "taser_tased"

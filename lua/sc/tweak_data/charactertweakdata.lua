@@ -4434,13 +4434,13 @@ function CharacterTweakData:_presets(tweak_data)
 			zones = {
 				{none = 0, poison = 1}
 			}
-		}
+		},
 		bleed = {
 			health_reference = "current",
 			zones = {
 				{none = 1}
 			}
-		},
+		}
 	}
 	presets.hurt_severities.spooc = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.spooc_titan = deep_clone(presets.hurt_severities.base)

@@ -206,9 +206,16 @@ tweak_data.projectiles.wpn_prj_hur.adjust_z = 120
 
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",
-	dot_length = 5,
+	dot_length = 3.1,
 	dot_damage = 2,
-	hurt_animation_chance = 0.5
+	hurt_animation_chance = 0.75
+}
+
+tweak_data.dot_types.bleed = {
+	damage_class = "BleedBulletBase",
+	dot_length = 3.1,
+	dot_damage = 2,
+	hurt_animation_chance = 0
 }
 
 --Stun nades--

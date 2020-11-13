@@ -222,8 +222,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_iceaxe_info"] = "Deals 50% more headshot damage.", -- Icepick
 		["bm_melee_mining_pick_info"] = "Deals 50% more headshot damage.", --Gold Fever (Pickaxe)
 		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves instantly refill your stamina.", -- OVERKILL Boxing Gloves
-		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 extra damage over three seconds.", --Alabama Razor
-		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals 120 extra damage over three seconds.", --Lucille Baseball Bat
+		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 bleed damage over three seconds.", --Alabama Razor
+		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals 120 bleed damage over three seconds.", --Lucille Baseball Bat
 		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 extra damage and carries a chance to interrupt over three seconds.", --Kunai, Syringe
 		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals 120 melee damage to them. This can be increased with skills.", --Empty Palm Kata
 		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a 5% chance to deal ten times the damage and knockdown.",
@@ -1020,7 +1020,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Rip and Tear formally Carbon Blade
 			["menu_carbon_blade_beta_sc"] = "Rip and Tear",
-			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nKills with the Saw, Crossbows, Bows, Grenade Launchers, or Rocket Launchers you have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",
+			["menu_carbon_blade_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now saw through shield enemies with your OVE9000 portable saw.\n\nACE: ##$pro##\nKills with the Saw, Crossbows, Bows, Grenade Launchers, or Rocket Launchers have a ##50%## chance to cause nearby enemies in a ##10## meter radius to panic.\n\nPanic makes enemies go into short bursts of uncontrollable fear.",
 
 			--Fully Loaded--
 			["menu_bandoliers_beta_sc"] = "Fully Loaded",
@@ -1236,7 +1236,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "Unseen Strike",
-		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance pesists for ##4## seconds after taking damage.",
+		["menu_backstab_beta_desc_sc"] = "BASIC: ##$basic##\nIf you do not take damage for ##3## seconds, you gain a ##15%## critical hit chance until you take damage.\n\nCritical hits deal ##100%## additional damage.\n\nACE: ##$pro##\nUnseen Strike's critical hit chance persists for ##4## seconds after taking damage.",
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "Spotter",
@@ -1393,7 +1393,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries, fire, or poison does not grant stacks.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##1## health every second.",
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## health every second.",

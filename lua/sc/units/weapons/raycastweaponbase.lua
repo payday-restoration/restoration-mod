@@ -693,3 +693,48 @@ function RaycastWeaponBase:remove_ammo(percent)
 
 	return total_ammo - ammo
 end
+
+BleedBulletBase = BleedBulletBase or class(DOTBulletBase)
+BleedBulletBase.VARIANT = "bleed"
+ProjectilesBleedBulletBase = ProjectilesBleedBulletBase or class(BleedBulletBase)
+ProjectilesBleedBulletBase.NO_BULLET_INPACT_SOUND = true
+
+--Allow easier hotloading of data.
+function ProjectilesBleedBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank)
+	local result = DOTBulletBase.super.on_collision(self, col_ray, weapon_unit, user_unit, damage, blank, self.NO_BULLET_INPACT_SOUND)
+	local hit_unit = col_ray.unit
+
+	if hit_unit:character_damage() and hit_unit:character_damage().damage_dot and not hit_unit:character_damage():dead() and alive(weapon_unit) then
+		local dot_data = tweak_data.projectiles[weapon_unit:base()._projectile_entry].dot_data
+
+		if not dot_data then
+			return
+		end
+
+		local dot_type_data = tweak_data:get_dot_type_data(dot_data.type)
+
+		if not dot_type_data then
+			return
+		end
+
+		result = self:start_dot_damage(col_ray, nil, {
+			dot_damage = dot_type_data.dot_damage,
+			dot_length = dot_data.custom_length or dot_type_data.dot_length
+		})
+	end
+
+	return result
+end
+
+--Adds a blood splat effect every time the bleed deals damage.
+function BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, hurt_animation, weapon_id)
+	if col_ray.unit.movement and col_ray.unit:movement()._obj_spine then
+		World:effect_manager():spawn({
+			effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
+			position = col_ray.unit:movement()._obj_spine:position(),
+			normal = Vector3(math.random(-1, 1), math.random(-1, 1), math.random(-1, 1))
+		})
+	end
+	
+	return DOTBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, hurt_animation, weapon_id)
+end

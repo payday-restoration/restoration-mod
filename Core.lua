@@ -152,7 +152,6 @@ function restoration:Init()
 		"man", --Undercover
 		"peta", --Goat Sim Day 1
 		"jolly", --aftershock		
-		"fex", --Buluc's Mansion
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn",
@@ -172,6 +171,7 @@ function restoration:Init()
 		"rvd2",		
 		"vit",
 		"mex_cooking",		
+		"fex", --Buluc's Mansion		
 		--Custom Heists below--
 		"thechase"
 	}	
@@ -187,6 +187,7 @@ function restoration:Init()
 	--For custom heists that seem to be broken with our normal spawn setup
 	restoration.bad_spawn_heists = {
 		"help",
+		"fex", --Buluc's Mansion			
 		--Custom Heists--
 		"Victor Romeo",
 		"hardware_store",

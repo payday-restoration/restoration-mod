@@ -173,13 +173,21 @@ function ContractBoxGui:create_contract_box()
 	local font_size = tweak_data.menu.pd2_small_font_size
 
 	if contact_data then
+		local contact_text = utf8.to_upper(managers.localization:text(contact_data.name_id) .. ": " .. managers.localization:text(job_data.name_id))
 		self._contract_text_header = self._panel:text({
-			text = utf8.to_upper(managers.localization:text(contact_data.name_id) .. ": " .. managers.localization:text(job_data.name_id)),
+			text = contact_text,
 			font_size = tweak_data.menu.pd2_medium_font_size,
 			font = tweak_data.menu.pd2_medium_font,
 			color = tweak_data.screen_colors.text,
 			blend_mode = "add"
 		})
+
+		if Global.game_settings.one_down then
+			local pro_text = contact_text .. " " .. managers.localization:to_upper_text("menu_one_down")
+			self._contract_text_header:set_text(pro_text)
+			-- pro_text:set_color(tweak_data.screen_colors.one_down)
+		end
+
 		local length_text_header = self._contract_panel:text({
 			text = managers.localization:to_upper_text("cn_menu_contract_length_header"),
 			font_size = font_size,

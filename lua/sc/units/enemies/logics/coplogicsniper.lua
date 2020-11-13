@@ -1,5 +1,3 @@
---[[
-
 function CopLogicSniper.enter(data, new_logic_name, enter_params)
 	CopLogicBase.enter(data, new_logic_name, enter_params)
 
@@ -81,5 +79,3 @@ function CopLogicSniper.exit(data, new_logic_name, enter_params)
 		managers.navigation:release_cover(my_data.best_cover[1])
 	end
 end
-
-]]--

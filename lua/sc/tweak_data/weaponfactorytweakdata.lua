@@ -10875,7 +10875,10 @@ function WeaponFactoryTweakData:_init_model70()
 			},
 			wpn_fps_snp_r700 = {
 				translation = Vector3(0, 0, -3)
-			}			
+			},	
+			wpn_fps_snp_sbl = {
+				translation = Vector3(0, 0, -0.75)
+			}		
 		},
 		texture_bundle_folder = "berry",
 		is_a_unlockable = true,
@@ -25428,6 +25431,257 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 	table.insert(self.wpn_fps_snp_r700_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
 			
 	self.wpn_fps_snp_r700_npc.uses_parts = deep_clone(self.wpn_fps_snp_r700.uses_parts)		
+
+end)
+
+--Bernetti Rangerhitter
+Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
+
+	--BIG Barrel
+	self.parts.wpn_fps_snp_sbl_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_sbl_b_long.supported = true
+	self.parts.wpn_fps_snp_sbl_b_long.stats = {
+		value = 3,
+		concealment = -1,
+		spread = 1,
+		recoil = -1
+	}
+	
+	--Sniper Suppressor
+	self.parts.wpn_fps_snp_sbl_b_short.pcs = {
+		10,
+		20,
+		30,
+		40	
+	}
+	self.parts.wpn_fps_snp_sbl_b_short.supported = true
+	self.parts.wpn_fps_snp_sbl_b_short.stats = {
+		value = 3,
+		suppression = 10,
+		alert_size = 10,
+		spread = -1,
+		recoil = 1
+	}
+	self.parts.wpn_fps_snp_sbl_b_short.perks = {"silencer"}
+	
+	--Club Stock
+	self.parts.wpn_fps_snp_sbl_s_saddle.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_snp_sbl_s_saddle.supported = true
+	self.parts.wpn_fps_snp_sbl_s_saddle.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 3
+	}
+	
+	--Override Table
+	self.wpn_fps_snp_sbl.override = {}
+	self.wpn_fps_snp_sbl.adds = {}
+
+	table.insert(self.wpn_fps_snp_sbl.uses_parts, "wpn_fps_snp_model70_iron_sight")
+	table.insert(self.wpn_fps_snp_sbl_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
+			
+	self.wpn_fps_snp_sbl_npc.uses_parts = deep_clone(self.wpn_fps_snp_sbl.uses_parts)		
+
+end)
+
+--Frenchman Model 87
+Hooks:PostHook(WeaponFactoryTweakData, "_init_model3", "resmod_model3", function(self)
+
+	--Short Barrel
+	self.parts.wpn_fps_pis_model3_b_short.pcs = {
+		10,
+		20,
+		30,
+		40	
+	}
+	self.parts.wpn_fps_pis_model3_b_short.supported = true
+	self.parts.wpn_fps_pis_model3_b_short.stats = {
+		value = 2,
+		spread = -1,
+		concealment = 1
+	}
+
+	--Long barrel
+	self.parts.wpn_fps_pis_model3_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_model3_b_long.supported = true
+	self.parts.wpn_fps_pis_model3_b_long.stats = {
+		value = 3,
+		concealment = -1,
+		spread = 1,
+		recoil = -1
+	}
+		
+	--Bling Grip
+	self.parts.wpn_fps_pis_model3_g_bling.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_model3_g_bling.supported = true
+	self.parts.wpn_fps_pis_model3_g_bling.stats = {
+		value = 2,
+		spread = 1,
+		concealment = -1,
+		recoil = -1
+	}
+	
+end)
+
+--Akimbo Frenchman Model 87
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_model3", "resmod_x_model3", function(self)
+
+--Nothing!
+
+end)
+
+--Reinfeld 88
+Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(self)
+
+	--Short Barrel
+	self.parts.wpn_fps_shot_m1897_b_short.pcs = {
+		10,
+		20,
+		30,
+		40	
+	}
+	self.parts.wpn_fps_shot_m1897_b_short.supported = true
+	self.parts.wpn_fps_shot_m1897_b_short.stats = {
+		value = 2,
+		spread = -1,
+		concealment = 1
+	}
+	self.parts.wpn_fps_shot_m1897_b_short.custom_stats = {
+		damage_near_mul = -75,
+		damage_far_mul = -150
+	}	
+	
+	--Long barrel
+	self.parts.wpn_fps_shot_m1897_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_shot_m1897_b_long.supported = true
+	self.parts.wpn_fps_shot_m1897_b_long.stats = {
+		value = 3,
+		concealment = -1,
+		spread = 1,
+		recoil = -1
+	}
+	self.parts.wpn_fps_shot_m1897_b_long.custom_stats = {
+		damage_near_mul = 75,
+		damage_far_mul = 150
+	}		
+	
+	--Short Stock
+	self.parts.wpn_fps_shot_m1897_s_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_shot_m1897_s_short.supported = true
+	self.parts.wpn_fps_shot_m1897_s_short.stats = {
+		value = 1,
+		concealment = 1,
+		recoil = -1
+	}
+
+	--Override Table
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug = {
+		supported = true,
+		stats = {
+			value = 10,
+			total_ammo_mod = -33,
+			damage = 30,
+			recoil = -2,
+			spread = 12,
+			spread_multi = {1, 1},	
+			moving_spread = 0,
+			suppression = -1,
+			alert_size = -1,
+			concealment = -5
+		},
+		custom_stats = {				
+			damage_near_mul = 999999999,
+			damage_far_mul = 999999999,
+			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
+			rays = 1,
+			armor_piercing_add = 1,
+			can_shoot_through_enemy = true,
+			can_shoot_through_shield = true,
+			can_shoot_through_wall = true,
+			use_heavy_kick = true
+		}
+	}
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom = {
+		supported = true,
+		stats = {
+			value = 9,
+			spread = -1,
+			total_ammo_mod = -33,
+			damage = 30
+		},
+		custom_stats = {
+			damage_near_mul = -75,
+			damage_far_mul = -150,
+			rays = 6,
+			use_heavy_kick = true
+		}
+	}
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free = {
+		supported = true,
+		stats = {
+			value = 9,
+			spread = -1,
+			total_ammo_mod = -33,
+			damage = 30
+		},
+		custom_stats = {
+			damage_near_mul = -75,
+			damage_far_mul = -150,
+			rays = 6,
+			use_heavy_kick = true
+		}
+	}		
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive = {
+		supported = true,
+		stats = {
+			value = 10,
+			total_ammo_mod = -50,
+			recoil = -5,
+			spread_multi = {1, 1},	
+			concealment = -7,
+			damage = 60
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			block_b_storm = true,
+			rays = 1,
+			damage_near_mul = 999999999,
+			damage_far_mul = 999999999,
+			use_heavy_kick = true,
+			bullet_class = "InstantExplosiveBulletBase"
+		}
+	}
 
 end)
 					

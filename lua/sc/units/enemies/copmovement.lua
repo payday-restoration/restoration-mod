@@ -22,11 +22,12 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.dave = security_variant
 	CopMovement._action_variants.cop_civ = security_variant
 	CopMovement._action_variants.cop_forest = security_variant
+	CopMovement._action_variants.gensec_guard = security_variant
 	CopMovement._action_variants.fbi_female = security_variant
 	CopMovement._action_variants.hrt = security_variant
 	CopMovement._action_variants.fbi_swat_vet = security_variant
 	CopMovement._action_variants.swat_titan = security_variant
-	CopMovement._action_variants.swat_assault = security_variant
+	CopMovement._action_variants.city_swat_guard = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan_assault = security_variant
 	CopMovement._action_variants.skeleton_swat_titan = security_variant
@@ -1295,7 +1296,7 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 	end
 
 	if hurt_type ~= "death" then
-		if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "dot" or damage_info.variant == "graze" then
+		if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "bleed" or damage_info.variant == "dot" or damage_info.variant == "graze" then
 			hurt_type = managers.modifiers:modify_value("CopMovement:HurtType", hurt_type)
 
 			if not hurt_type then

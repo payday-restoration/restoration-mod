@@ -115,7 +115,9 @@ function restoration:Init()
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
-	
+	--Increased spawns, should only be reserved for HUGE maps. Likely custom heists if anything (WIP)
+	restoration.large_levels = {}			
+	--Slightly reduced spawns, usually due to proximity to spawns or anything else like that
 	restoration.tiny_levels = {
 		"welcome_to_the_jungle_2",
 		"election_day_2",
@@ -123,11 +125,7 @@ function restoration:Init()
 		"mus",
 		"hox_1",
 		"xmn_hox_1",
-		"skm_mus",
-		"skm_red2",
-		"skm_run",
 		"run_res", --Whurr's Heat Street Edit
-		"skm_watchdogs_stage2",
 		"bph",
 		"glace",
 		"pbr",
@@ -155,32 +153,47 @@ function restoration:Init()
 		"wetwork_burn",
 		"hardware_store",
 		"man_res", --Undercover resmod edit		
-		"skmc_mad", --rex's holdout maps
-		"skmc_fish",
-		"skmc_ovengrill",
 		"spa_CD",		
 		"wwh_CD",		
 	}
-	--Mostly for stuff like Cursed Killed Room and other crap heists
+	--For levels that have aggressive spawns that are right on top of the player at all times
 	restoration.very_tiny_levels = {
-		"hvh",
-		-- :^)
-		"chew",	
-		"help",			
-		"nail",				
+		"help",					
 		"cane",		
 		"pbr2",		
 		"rvd2",		
-		"peta2",	
 		"vit",
 		"mex_cooking",		
+		"fex", --Buluc's Mansion	
+		"skm_mus",
+		"skm_red2",
+		"skm_run",		
+		"skm_watchdogs_stage2",	
+		"skm_cas",
+		"skm_big2",
+		"skm_mallcrasher",
+		"skm_arena",
+		"skm_bex",
 		--Custom Heists below--
-		"Victor Romeo",
-		"thechase"
+		"thechase",
+		"skm_street",		
+		"skmc_mad", --rex's holdout maps
+		"skmc_fish",
+		"skmc_ovengrill"		
+	}	
+	--Mostly for stuff like Cursed Killed Room and other crap puny heists
+	restoration.extremely_tiny_levels = {
+		"hvh", --CKR
+		"chew", --Biker day 2		
+		"nail",	--Lab Rats. Fuck this heist	
+		"peta2", --Goats day 2. Fuck this heist too		
+		--Custom Heists below--
+		"Victor Romeo"
 	}	
 	--For custom heists that seem to be broken with our normal spawn setup
 	restoration.bad_spawn_heists = {
 		"help",
+		"fex", --Buluc's Mansion			
 		--Custom Heists--
 		"Victor Romeo",
 		"hardware_store",
@@ -208,7 +221,9 @@ function restoration:Init()
 		"jolly", --aftershock
 		"ukrainian_job", --uk joj
 		"ukrainian_job_res", --ditto
-		"sah" --shacklethorne
+		"sah", --shacklethorne
+		"hox_1", --Hoxout D1
+		"xmn_hox_1" --Xmas edition
 	}	
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below

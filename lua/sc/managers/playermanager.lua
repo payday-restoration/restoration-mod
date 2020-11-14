@@ -991,20 +991,6 @@ function PlayerManager:spawn_extra_ammo(position, rotation)
     mvector3.set_static(mvec_2, math.random(20, 50) * (math.random(1, 2) * 2 - 3), math.random(20, 50) * (math.random(1, 2) * 2 - 3), 0)
     mvector3.add(mvec_1, mvec_2)
 
-    local level_data = tweak_data.levels[managers.job:current_level_id()]
-
-    if level_data and level_data.drop_pickups_to_ground then
-        mvector3.set(mvec_2, math.UP)
-        mvector3.multiply(mvec_2, -200)
-        mvector3.add(mvec_2, mvec_1)
-
-        local ray = self._unit:raycast("ray", mvec_1, mvec_2, "slot_mask", managers.slot:get_mask("bullet_impact_targets"))
-
-        if ray then
-            mvector3.set(mvec_1, ray.hit_position)
-        end
-    end
-
     managers.game_play_central:spawn_pickup({
         name = "ammo",
         position = mvec_1,

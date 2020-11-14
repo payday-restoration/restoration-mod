@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_dlc_bex/characters/ene_policia_02/ene_policia_02" />
+	<object file="units/pd2_dlc_bex/characters/ene_policia_04/ene_policia_04" />
 
 	<dependencies>
-		
 	</dependencies>
 
 	<extensions>

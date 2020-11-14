@@ -1,7 +1,0 @@
-<dynamic_object>
-    <diesel orientation_object="rp_atm_standing_spawn" materials="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" />
-    <sequence_manager file="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn" />
-    <graphics>
-        <object enabled="true" name="g_money_box_1" />
-    </graphics>
-</dynamic_object>

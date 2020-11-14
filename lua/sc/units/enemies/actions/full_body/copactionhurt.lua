@@ -455,7 +455,7 @@ function CopActionHurt:init(action_desc, common_data)
 
 				self:_start_enemy_fire_effect_on_death(variant)
 				managers.fire:check_achievemnts(common_data.unit, t)
-			elseif action_desc.variant == "poison" or action_desc.variant == "dot" then
+			elseif action_desc.variant == "poison" or action_desc.variant == "bleed" or action_desc.variant == "dot" then
 				keep_checking = nil
 				self:force_ragdoll()
 			elseif not common_data.char_tweak.no_run_death_anim then

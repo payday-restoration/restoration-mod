@@ -90,7 +90,8 @@ function CopBase:default_weapon_name()
 
 	--M1911 Users--
 	if self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_1/ene_secret_service_1") 
-	or self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2") then
+	or self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2")
+	or self._unit:name() == Idstring("units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service")	then
 		default_weapon_id = "m1911_npc"
 	end
 	

@@ -926,10 +926,10 @@ function GroupAIStateBase:on_enemy_unregistered(unit)
 	
 	if dead and char_tweak.has_alarm_pager and managers.groupai:state():whisper_mode() then
 		self._next_whisper_susp_mul_t = self._t + 5
-		self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.04
+		self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.05
 		self._decay_target = self._old_guard_detection_mul_raw * 0.75			
 		self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
-		self._guard_delay_deduction = self._guard_delay_deduction + 0.04
+		self._guard_delay_deduction = self._guard_delay_deduction + 0.05
 	end		
 
 	if e_data.assigned_area and dead then
@@ -998,10 +998,10 @@ function GroupAIStateBase:on_civilian_unregistered(unit)
 	--*Big* suspicion increase from dead civs. Watch your background!--
 	if dead and managers.groupai:state():whisper_mode() then
 		self._next_whisper_susp_mul_t = self._t + 5
-		self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.1
+		self._old_guard_detection_mul_raw = self._old_guard_detection_mul_raw + 0.05
 		self._decay_target = self._old_guard_detection_mul_raw * 0.75			
 		self._guard_detection_mul_raw = self._old_guard_detection_mul_raw 
-		self._guard_delay_deduction = self._guard_delay_deduction + 0.1
+		self._guard_delay_deduction = self._guard_delay_deduction + 0.05
 	end		
 	
 end	
@@ -1604,6 +1604,40 @@ function GroupAIStateBase:_merge_coarse_path_by_area(coarse_path)
 
 		i_nav_seg = i_nav_seg - 1
 	end
+end
+
+local _upd_criminal_suspicion_progress_original = GroupAIStateBase._upd_criminal_suspicion_progress
+ 
+function GroupAIStateBase:_upd_criminal_suspicion_progress(...)
+	if self._ai_enabled then
+		for obs_key, obs_susp_data in pairs(self._suspicion_hud_data or {}) do
+			local unit = obs_susp_data.u_observer
+			
+			if managers.enemy:is_civilian(unit) then
+				local waypoint = managers.hud._hud.waypoints["susp1" .. tostring(obs_key)]
+				
+				if waypoint then
+					if unit:anim_data().drop then
+						if not obs_susp_data._subdued_civ then
+							obs_susp_data._alerted_civ = nil
+							obs_susp_data._subdued_civ = true
+							waypoint.bitmap:set_color(Color(0.0, 1.0, 0.0))
+							waypoint.arrow:set_color(Color(0.75, 0, 0.3, 0))
+						end
+					elseif obs_susp_data.alerted then
+						if not obs_susp_data._alerted_civ then
+							obs_susp_data._subdued_civ = nil
+							obs_susp_data._alerted_civ = true
+							waypoint.bitmap:set_color(Color.white)
+							waypoint.arrow:set_color(tweak_data.hud.detected_color:with_alpha(0.75))
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	return _upd_criminal_suspicion_progress_original(self, ...)
 end
 
 --Procs Enduring (Down restore with bots) at end of assaults for host.

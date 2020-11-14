@@ -245,13 +245,20 @@ function StatisticsManager:init()
 			explosion = 0,
 			tied = 0
 		}		
-	self._defaults.killed.swat_assault = {
+	self._defaults.killed.city_swat_guard = {
 			count = 0,
 			head_shots = 0,
 			melee = 0,
 			explosion = 0,
 			tied = 0
 		}	
+	self._defaults.killed.gensec_guard = {
+			count = 0,
+			head_shots = 0,
+			melee = 0,
+			explosion = 0,
+			tied = 0
+		}			
 		
 	--Weekend	
 	self._defaults.killed.weekend_dmr = {

@@ -53,6 +53,8 @@ Teacyn: Writing the overhaul steam guide and providing valuable feedback to over
 
 Nelson01023: Setting up many enemy accessories and adding support for many custom weapons. Fixing various issues with vanilla assets. Creating various Minor Heist Edits.
 
+Sgt. Joe: Providing the basis for the Federales Beatcops. Blue SWAT Goggles resource.
+
 Iamgoofball: Creating the Voiceline Framework and contributing to the development of Captain Summers and his team.
 
 Finale: Providing feedback during development.

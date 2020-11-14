@@ -97,6 +97,7 @@ function WeaponTweakData:_set_normal()
 	self.m95_crew.DAMAGE = 15
 	self.mosin_crew.DAMAGE = 15
 	self.winchester1874_crew.DAMAGE = 15
+	self.sbl_crew.DAMAGE = 15
 	self.wa2000_crew.DAMAGE = 15
 	self.desertfox_crew.DAMAGE = 15
 	self.tti_crew.DAMAGE = 15
@@ -158,6 +159,7 @@ function WeaponTweakData:_set_hard()
 	self.m95_crew.DAMAGE = 15
 	self.mosin_crew.DAMAGE = 15
 	self.winchester1874_crew.DAMAGE = 15
+	self.sbl_crew.DAMAGE = 15
 	self.wa2000_crew.DAMAGE = 15
 	self.desertfox_crew.DAMAGE = 15
 	self.tti_crew.DAMAGE = 15
@@ -219,6 +221,7 @@ function WeaponTweakData:_set_overkill()
 	self.m95_crew.DAMAGE = 16
 	self.mosin_crew.DAMAGE = 16
 	self.winchester1874_crew.DAMAGE = 16
+	self.sbl_crew.DAMAGE = 16
 	self.wa2000_crew.DAMAGE = 16
 	self.desertfox_crew.DAMAGE = 16
 	self.tti_crew.DAMAGE = 16
@@ -280,6 +283,7 @@ function WeaponTweakData:_set_overkill_145()
 	self.m95_crew.DAMAGE = 17
 	self.mosin_crew.DAMAGE = 17
 	self.winchester1874_crew.DAMAGE = 17
+	self.sbl_crew.DAMAGE = 17
 	self.wa2000_crew.DAMAGE = 17
 	self.desertfox_crew.DAMAGE = 17
 	self.tti_crew.DAMAGE = 17
@@ -710,9 +714,19 @@ function WeaponTweakData:_init_data_raging_bull_npc()
 	self.m1911_npc.use_data.selection_index = 2
 	self.m1911_npc.CLIP_AMMO_MAX = 8
 	self.m1911_npc.sounds.prefix = "c45_npc"
+	self.m1911_npc.anim_usage = "is_pistol"
+	self.m1911_npc.hold = "pistol"
+	self.m1911_npc.reload = "pistol"		
 	self.m1911_npc.alert_size = 3000
 	self.m1911_npc.suppression = 3		
 	self.m1911_npc.DAMAGE = 4.5		
+	
+	self.deagle_npc = deep_clone(self.raging_bull_npc)
+	self.deagle_npc.CLIP_AMMO_MAX = 8
+	self.deagle_npc.anim_usage = "is_pistol"
+	self.deagle_npc.hold = "pistol"
+	self.deagle_npc.reload = "pistol"	
+	self.deagle_npc.sounds.prefix = "deagle_npc"
 	
 	self.peacemaker_npc = deep_clone(self.raging_bull_npc)
 	self.peacemaker_npc.DAMAGE = 14.1
@@ -1061,7 +1075,7 @@ function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 	self.swat_van_turret_module.CAN_GO_IDLE = true
 	self.swat_van_turret_module.IDLE_WAIT_TIME = 5
 	self.swat_van_turret_module.AUTO_REPAIR_MAX_COUNT = 2
-	self.swat_van_turret_module.AUTO_REPAIR_DURATION = 30
+	self.swat_van_turret_module.AUTO_REPAIR_DURATION = 120
 	self.swat_van_turret_module.ECM_HACKABLE = true
 	self.swat_van_turret_module.FLASH_GRENADE = {
 		range = 300,
@@ -1143,7 +1157,7 @@ function WeaponTweakData:_init_data_crate_turret_module_npc()
 	self.crate_turret_module.IDLE_WAIT_TIME = 5
 	self.crate_turret_module.AUTO_REPAIR = false
 	self.crate_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
-	self.crate_turret_module.AUTO_REPAIR_DURATION = 30
+	self.crate_turret_module.AUTO_REPAIR_DURATION = 120
 	self.crate_turret_module.ECM_HACKABLE = true
 	self.crate_turret_module.HACKABLE_WITH_ECM = true
 	self.crate_turret_module.VELOCITY_COMPENSATION = {
@@ -1224,7 +1238,7 @@ function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 	self.ceiling_turret_module.IDLE_WAIT_TIME = 5
 	self.ceiling_turret_module.AUTO_REPAIR = false
 	self.ceiling_turret_module.AUTO_REPAIR_MAX_COUNT = 2
-	self.ceiling_turret_module.AUTO_REPAIR_DURATION = 30
+	self.ceiling_turret_module.AUTO_REPAIR_DURATION = 120
 	self.ceiling_turret_module.ECM_HACKABLE = true
 	self.ceiling_turret_module.FLASH_GRENADE = {
 		range = 300,
@@ -1304,7 +1318,7 @@ function WeaponTweakData:_init_data_aa_turret_module_npc()
 	self.aa_turret_module.IDLE_WAIT_TIME = 5
 	self.aa_turret_module.AUTO_REPAIR = true
 	self.aa_turret_module.AUTO_REPAIR_MAX_COUNT = math.huge
-	self.aa_turret_module.AUTO_REPAIR_DURATION = 30
+	self.aa_turret_module.AUTO_REPAIR_DURATION = 120
 	self.aa_turret_module.ECM_HACKABLE = true
 	self.aa_turret_module.FLASH_GRENADE = {
 		range = 300,
@@ -2389,6 +2403,25 @@ function WeaponTweakData:_init_data_winchester1874_crew()
 	self.winchester1874_crew.FIRE_MODE = "single"
 	self.winchester1874_secondary_crew = deep_clone(self.winchester1874_crew)
 	self.winchester1874_secondary_crew.use_data.selection_index = 1
+end
+
+function WeaponTweakData:_init_data_sbl_crew()
+	self.sbl_crew.categories = clone(self.sbl.categories)
+	self.sbl_crew.sounds.prefix = "sbl_npc"
+	self.sbl_crew.use_data.selection_index = 2
+	self.sbl_crew.DAMAGE = 18
+	self.sbl_crew.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+	self.sbl_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_sniper"
+	self.sbl_crew.CLIP_AMMO_MAX = 10
+	self.sbl_crew.NR_CLIPS_MAX = 8
+	self.sbl_crew.looped_reload_speed = 0.7407407
+	self.sbl_crew.auto.fire_rate = 0.6
+	self.sbl_crew.hold = "rifle"
+	self.sbl_crew.alert_size = 5000
+	self.sbl_crew.suppression = 3.4
+	self.sbl_crew.FIRE_MODE = "auto"
+	self.sbl_secondary_crew = deep_clone(self.sbl_crew)
+	self.sbl_secondary_crew.use_data.selection_index = 1
 end
 
 function WeaponTweakData:_init_data_wa2000_crew()
@@ -4544,7 +4577,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g3.panic_suppression_chance = 0.05
 
 	--Gecko 7.62
-	self.galil.AMMO_MAX = 150
+	self.galil.AMMO_MAX = 80
 	self.galil.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.galil.FIRE_MODE = "auto"
 	self.galil.fire_mode_data = {}
@@ -4552,17 +4585,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.galil.CAN_TOGGLE_FIREMODE = true
 	self.galil.auto = {}
 	self.galil.auto.fire_rate = 0.08
-	self.galil.kick = self.stat_info.kick_tables.horizontal_left_recoil
+	self.galil.kick = self.stat_info.kick_tables.left_recoil
 	self.galil.supported = true
 	self.galil.stats = {
-		damage = 24,
-		spread = 18,
-		recoil = 19,
+		damage = 45,
+		spread = 17,
+		recoil = 16,
 		spread_moving = 6,
 		zoom = 1,
-		concealment = 24,
-		suppression = 8,
-		alert_size = 8,
+		concealment = 20,
+		suppression = 6,
+		alert_size = 6,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -8296,6 +8329,121 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.r700.stats_modifiers = nil
 	self.r700.panic_suppression_chance = 0.05
+	
+	--Bernetti Rangehitter
+	self.sbl.upgrade_blocks = nil
+	self.sbl.has_description = true
+	self.sbl.desc_id = "bm_ap_weapon_sc_desc"
+	self.sbl.AMMO_MAX = 30
+	self.sbl.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.sbl.FIRE_MODE = "single"
+	self.sbl.fire_mode_data = {}
+	self.sbl.fire_mode_data.fire_rate = 0.5
+	self.sbl.CAN_TOGGLE_FIREMODE = false
+	self.sbl.single = {}
+	self.sbl.single.fire_rate = 0.5
+	self.sbl.kick = self.stat_info.kick_tables.left_kick
+	self.sbl.supported = true
+	self.sbl.stats = {
+		damage = 120,
+		spread = 15,
+		recoil = 7,
+		spread_moving = 9,
+		zoom = 1,
+		concealment = 28,
+		suppression = 3,
+		alert_size = 3,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 9,
+		reload = 20
+	}	
+	self.sbl.stats_modifiers = nil
+	self.sbl.panic_suppression_chance = 0.05
+	
+	--Frenchman Model 87
+	self.model3.fire_mode_data = {}
+	self.model3.fire_mode_data.fire_rate = 0.15789473684
+	self.model3.single = {}
+	self.model3.single.fire_rate = 0.15789473684
+	self.model3.AMMO_MAX = 30
+	self.model3.kick = self.stat_info.kick_tables.moderate_kick
+	self.model3.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.model3.supported = true
+	self.model3.stats = {
+		damage = 60,
+		spread = 17,
+		recoil = 17,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 23,
+		suppression = 5,
+		alert_size = 5,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.model3.stats_modifiers = nil
+	self.model3.timers.reload_not_empty = 2.4
+	self.model3.timers.reload_empty = 2.4		
+	self.model3.panic_suppression_chance = 0.05	
+	
+	--Akimbo Model 87
+	self.x_model3.fire_mode_data = {}
+	self.x_model3.fire_mode_data.fire_rate = 0.15789473684
+	self.x_model3.single = {}
+	self.x_model3.single.fire_rate = 0.15789473684
+	self.x_model3.AMMO_MAX = 60
+	self.x_model3.kick = self.stat_info.kick_tables.moderate_kick
+	self.x_model3.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.x_model3.supported = true
+	self.x_model3.stats = {
+		damage = 60,
+		spread = 15,
+		recoil = 7,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 23,
+		suppression = 5,
+		alert_size = 5,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.x_model3.stats_modifiers = nil
+	self.x_model3.timers.reload_not_empty = 2.4
+	self.x_model3.timers.reload_empty = 2.4		
+	self.x_model3.panic_suppression_chance = 0.05		
+	
+	--Reinfeld 88
+	self.m1897.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+	self.m1897.rays = 9
+	self.m1897.CLIP_AMMO_MAX = 7
+	self.m1897.kick = self.stat_info.kick_tables.vertical_kick
+	self.m1897.single.fire_rate = 0.5
+	self.m1897.fire_mode_data.fire_rate = 0.5
+	self.m1897.AMMO_MAX = 60
+	self.m1897.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.m1897.supported = true
+	self.m1897.stats = {
+		damage = 60,
+		spread = 10,
+		recoil = 17,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 25,
+		suppression = 5,
+		alert_size = 5,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}		
+	self.m1897.stats_modifiers = nil
+	self.m1897.panic_suppression_chance = 0.05
+		
 	--Restoration Weapons--
 	
 	--Raze's Fury

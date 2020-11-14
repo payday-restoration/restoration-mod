@@ -35,7 +35,12 @@ local group_cooldowns = {
 	Cap_Spring = 2700,
 	HVH_Boss = 2700,
 	Cap_Summers = 2700,
-	Cap_Autumn = 900
+	Cap_Autumn = 900,
+	CS_tanks = 45,
+	FBI_tanks = 45,
+	BLACK_tanks = 45,
+	SKULL_tanks = 45,
+	TIT_tanks = 45
 }
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
@@ -45,7 +50,12 @@ if Global.game_settings and Global.game_settings.one_down then
 		Cap_Spring = 1800,
 		HVH_Boss = 1800,
 		Cap_Summers = 1800,
-		Cap_Autumn = 600
+		Cap_Autumn = 600,
+		CS_tanks = 45,
+		FBI_tanks = 45,
+		BLACK_tanks = 45,
+		SKULL_tanks = 45,
+		TIT_tanks = 45
 	}
 else
 	group_cooldowns = {
@@ -53,7 +63,12 @@ else
 		Cap_Spring = 2700,
 		HVH_Boss = 2700,
 		Cap_Summers = 2700,
-		Cap_Autumn = 900
+		Cap_Autumn = 900,
+		CS_tanks = 45,
+		FBI_tanks = 45,
+		BLACK_tanks = 45,
+		SKULL_tanks = 45,
+		TIT_tanks = 45
 	}
 end
 -- Ditto, adjust as desired. Affects all groups not listed in group_cooldowns above
@@ -149,6 +164,18 @@ function GroupAIStateBesiege:get_hostage_count_for_chatter()
 	end
 	
 	return 0
+end
+
+function GroupAIStateBesiege:chk_heat_bonus_retreat()
+	local assault_task = self._task_data.assault
+	
+	if assault_task and assault_task.phase == "build" or assault_task and assault_task.phase == "sustain" then
+		if self._activeassaultbreak then
+			return true
+		end
+	end
+	
+	return	
 end
 
 function GroupAIStateBesiege:chk_has_civilian_hostages()

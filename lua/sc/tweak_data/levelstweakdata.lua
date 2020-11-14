@@ -42,6 +42,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pex.package = {"packages/mexicoassets", "packages/job_pex"}
 	self.pex.player_style = "slaughterhouse"
 	
+	self.fex.package = {"packages/mexicoassets", "packages/job_fex"}
+	self.fex.player_style = "suit_sunny"
+	
 	--///MURKYWATER LEVELS\\\--
 	self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
 	self.shoutout_raid.ai_group_type = murkywater
@@ -212,47 +215,49 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.fish.package = {"packages/lvl_fish", "packages/nypdassets"}
 	self.fish.player_style = "tux"
 	
+	self.arena.player_style = "hiphop"
+	
 	self.born.player_style = "punk"
 	
-	self.arm_cro.package = {"packages/narr_arm_cro"}
+	
 	self.arm_cro.player_style = "jumpsuit"
 	
-	self.arm_hcm.package = {"packages/narr_arm_hcm"}
+	
 	self.arm_hcm.player_style = "jumpsuit"	
 	
-	self.arm_fac.package = {"packages/narr_arm_fac"}
+	
 	self.arm_fac.player_style = "jumpsuit"
 	
-	self.arm_par.package = {"packages/narr_arm_par"}
+	
 	self.arm_par.player_style = "jumpsuit"		
 	
-	self.arm_und.package = {"packages/narr_arm_und"}
+	
 	self.arm_und.player_style = "scrub"
 							
-	self.hox_1.package = {"packages/narr_hox_1"}
+	
 	self.hox_1.player_style = "slaughterhouse"
-	self.hox_2.package = {"packages/narr_hox_2"}
+	
 	self.hox_2.player_style = "slaughterhouse"
-	self.hox_3.package = {"packages/narr_hox_3"}
+	
 	self.hox_3.player_style = "slaughterhouse"
 	
 	self.rat.player_style = "suit_sunny"
 	
-	self.election_day_1.package = {"packages/narr_election1"}
+	
 	self.election_day_1.player_style = "sneak_suit"	
-	self.election_day_2.package = {"packages/narr_election2"}
+	
 	self.election_day_2.player_style = "sneak_suit"
 	
-	self.gallery.package = {"packages/narr_framing_1"}
+	
 	self.gallery.player_style = "sneak_suit"
 	self.framing_frame_1.player_style = "sneak_suit"
-	self.framing_frame_1.package = {"packages/narr_framing_1"}
+	
 	self.framing_frame_3.player_style = "sneak_suit"
-	self.framing_frame_3.package = {"packages/narr_framing_3"}
+	
 			
 	self.alex_1.player_style = "suit_sunny"
 	self.alex_2.player_style = "suit_sunny"
-	self.alex_3.package = {"packages/narr_alex3"}
+	
 	self.alex_3.player_style = "slaughterhouse"
 	
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"

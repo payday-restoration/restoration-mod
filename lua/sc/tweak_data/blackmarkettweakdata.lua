@@ -2505,9 +2505,13 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--Payday DLC? Nah it's a walking dead game you cunts.--
 	self.melee_weapons.barbedwire.anim_global_param = "melee_baseballbat"
 	self.melee_weapons.barbedwire.type = "axe"
-	self.melee_weapons.clean.dot_data = {
-		type = "poison",
-		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.0}
+	self.melee_weapons.barbedwire.dot_data = {
+		type = "bleed",
+		custom_data = {
+			dot_damage = 2,
+			dot_length = 3.1,
+			hurt_animation_chance = 0.0
+		}
 	}
 	self.melee_weapons.barbedwire.info_id = "bm_melee_barbedwire_info"
 	self.melee_weapons.barbedwire.align_objects = {"a_weapon_right"}
@@ -2999,6 +3003,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 
 	--Manly Miner Men--
 	self.melee_weapons.mining_pick.info_id = "bm_melee_mining_pick_info"
+	self.melee_weapons.mining_pick.anim_speed_mult = 0.9
 	self.melee_weapons.mining_pick.make_decal = true
 	self.melee_weapons.mining_pick.make_effect = true
 	self.melee_weapons.mining_pick.stats.min_damage = 4.5
@@ -3008,9 +3013,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.mining_pick.stats.charge_time = 1.75
 	self.melee_weapons.mining_pick.stats.range = 205
 	self.melee_weapons.mining_pick.stats.concealment = 25
-	self.melee_weapons.mining_pick.repeat_expire_t = 0.9
-	self.melee_weapons.mining_pick.melee_damage_delay = 0.1
-	self.melee_weapons.mining_pick.expire_t = 1.2
+	self.melee_weapons.mining_pick.repeat_expire_t = 1.2
+	self.melee_weapons.mining_pick.melee_damage_delay = 0.15
+	self.melee_weapons.mining_pick.expire_t = 1.35
 	self.melee_weapons.mining_pick.headshot_damage_multiplier = 1.5
 
 	--Who's up for rockin the mic?--	
@@ -3083,16 +3088,19 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.hockey.expire_t = 1.2
 
 	--It's a 1% chance to win the slots asshats keep an eye on the fucking BFD--
+	self.melee_weapons.slot_lever.info_id = "bm_melee_slot_lever_info"
+	self.melee_weapons.slot_lever.special_weapon = "hyper_crit"
+	self.melee_weapons.slot_lever.anim_speed_mult = 0.9
 	self.melee_weapons.slot_lever.stats.min_damage = 2.4
 	self.melee_weapons.slot_lever.stats.max_damage = 4.6
-	self.melee_weapons.slot_lever.stats.min_damage_effect = 5.5
-	self.melee_weapons.slot_lever.stats.max_damage_effect = 6
-	self.melee_weapons.slot_lever.stats.charge_time = 1.1
+	self.melee_weapons.slot_lever.stats.min_damage_effect = 4.375
+	self.melee_weapons.slot_lever.stats.max_damage_effect = 5.305
+	self.melee_weapons.slot_lever.stats.charge_time = 1.3
 	self.melee_weapons.slot_lever.stats.range = 180
-	self.melee_weapons.slot_lever.repeat_expire_t = 0.6
+	self.melee_weapons.slot_lever.repeat_expire_t = 0.65
 	self.melee_weapons.slot_lever.stats.concealment = 27
-	self.melee_weapons.slot_lever.melee_damage_delay = 0.2
-	self.melee_weapons.slot_lever.expire_t = 1.1
+	self.melee_weapons.slot_lever.melee_damage_delay = 0.22
+	self.melee_weapons.slot_lever.expire_t = 1.15
 
 	--Another baton reskin, thanks Overkill--
 	self.melee_weapons.croupier_rake.stats.min_damage = 2.4
@@ -3130,8 +3138,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.switchblade.backstab_damage_multiplier = 2
 
 	--RIP Buzzer meta--
-	self.melee_weapons.taser.stats.min_damage = 0.5
-	self.melee_weapons.taser.stats.max_damage = 1
+	self.melee_weapons.taser.stats.min_damage = 1
+	self.melee_weapons.taser.stats.max_damage = 2
 	self.melee_weapons.taser.stats.min_damage_effect = 0
 	self.melee_weapons.taser.stats.max_damage_effect = 0
 	self.melee_weapons.taser.stats.charge_time = 0.75
@@ -3167,8 +3175,10 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.twins.expire_t = 1.1	
 
 	--Basically just a really short knife--	
-	self.melee_weapons.tiger.stats.min_damage = 3
-	self.melee_weapons.tiger.stats.max_damage = 6.1
+	self.melee_weapons.tiger.info_id = "bm_melee_specialist_info"
+	self.melee_weapons.tiger.special_weapon = "repeat_hitter"
+	self.melee_weapons.tiger.stats.min_damage = 2.4
+	self.melee_weapons.tiger.stats.max_damage = 4.6
 	self.melee_weapons.tiger.stats.min_damage_effect = 0.5
 	self.melee_weapons.tiger.stats.max_damage_effect = 0.6
 	self.melee_weapons.tiger.stats.charge_time = 0.65
@@ -3181,7 +3191,11 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--REMEMBER THE BASICS OF--
 	self.melee_weapons.cqc.dot_data = {
 		type = "poison",
-		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.75}
+		custom_data = {
+			dot_damage = 2,
+			dot_length = 3.1,
+			hurt_animation_chance = 0.75
+		}
 	}	
 	self.melee_weapons.cqc.stats.min_damage = 1
 	self.melee_weapons.cqc.stats.max_damage = 2
@@ -3296,16 +3310,17 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 
 	--Reminds me of how HL2 was gonna have an ice axe--
 	self.melee_weapons.iceaxe.info_id = "bm_melee_iceaxe_info"
+	self.melee_weapons.iceaxe.anim_speed_mult = 0.8
 	self.melee_weapons.iceaxe.stats.min_damage = 4.5
 	self.melee_weapons.iceaxe.stats.max_damage = 9.1
 	self.melee_weapons.iceaxe.stats.min_damage_effect = 0.46667
 	self.melee_weapons.iceaxe.stats.max_damage_effect = 0.53297
 	self.melee_weapons.iceaxe.stats.charge_time = 1.55
-	self.melee_weapons.iceaxe.stats.range = 185
+	self.melee_weapons.iceaxe.stats.range = 180
 	self.melee_weapons.iceaxe.stats.concealment = 27
-	self.melee_weapons.iceaxe.repeat_expire_t = 0.8
-	self.melee_weapons.iceaxe.melee_damage_delay = 0.1
-	self.melee_weapons.iceaxe.expire_t = 1.2
+	self.melee_weapons.iceaxe.repeat_expire_t = 1.0
+	self.melee_weapons.iceaxe.melee_damage_delay = 0.125
+	self.melee_weapons.iceaxe.expire_t = 1.1
 	self.melee_weapons.iceaxe.headshot_damage_multiplier = 1.5
 
 	--Even more pokey knives--
@@ -3387,27 +3402,29 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.nin.melee_damage_delay = 0.15
 
 	--A ballistic knife we can't even fire--
+	self.melee_weapons.ballistic.info_id = "bm_melee_specialist_info"
+	self.melee_weapons.ballistic.special_weapon = "repeat_hitter"
 	self.melee_weapons.ballistic.sounds.equip = "knife_equip"
 	self.melee_weapons.ballistic.sounds.hit_air = "knife_hit_air"
 	self.melee_weapons.ballistic.sounds.hit_gen = "knife_hit_gen"
 	self.melee_weapons.ballistic.sounds.hit_body = "knife_hit_body"
 	self.melee_weapons.ballistic.sounds.charge = "knife_charge"
-	self.melee_weapons.ballistic.stats.min_damage = 4.5
-	self.melee_weapons.ballistic.stats.max_damage = 9.1
+	self.melee_weapons.ballistic.stats.min_damage = 3
+	self.melee_weapons.ballistic.stats.max_damage = 6.1
 	self.melee_weapons.ballistic.stats.min_damage_effect = 0.5
 	self.melee_weapons.ballistic.stats.max_damage_effect = 0.6
 	self.melee_weapons.ballistic.stats.charge_time = 1.05
-	self.melee_weapons.ballistic.stats.range = 160
+	self.melee_weapons.ballistic.stats.range = 155
 	self.melee_weapons.ballistic.repeat_expire_t = 0.6
-	self.melee_weapons.ballistic.stats.concealment = 29
+	self.melee_weapons.ballistic.stats.concealment = 28
 	self.melee_weapons.ballistic.melee_damage_delay = 0.1
 	self.melee_weapons.ballistic.expire_t = 1.1
 
 	--woo free tasers--
 	self.melee_weapons.zeus.special_weapon = "taser"
 	self.melee_weapons.zeus.info_id = "bm_melee_taser_info"
-	self.melee_weapons.zeus.stats.min_damage = 0.5
-	self.melee_weapons.zeus.stats.max_damage = 1
+	self.melee_weapons.zeus.stats.min_damage = 1
+	self.melee_weapons.zeus.stats.max_damage = 2
 	self.melee_weapons.zeus.stats.min_damage_effect = 0
 	self.melee_weapons.zeus.stats.max_damage_effect = 0
 	self.melee_weapons.zeus.stats.charge_time = 0.75
@@ -3441,12 +3458,15 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.road.stats.concealment = 26
 	self.melee_weapons.road.repeat_expire_t = 0.85
 	self.melee_weapons.road.melee_damage_delay = 0.1
-	self.melee_weapons.road.expire_t = 1.2	
+	self.melee_weapons.road.expire_t = 1.2
 
 	--Chainsaw + Gun--
 	self.melee_weapons.cs.info_id = "bm_melee_cs_info"
-	self.melee_weapons.cs.chainsaw = true	
-	self.melee_weapons.cs.stats.tick_damage = 4
+	self.melee_weapons.cs.chainsaw = {
+		tick_damage = 3,
+		tick_delay = 0.25,
+		start_delay = 0.8
+	}
 	self.melee_weapons.cs.stats.min_damage = 9
 	self.melee_weapons.cs.stats.max_damage = 9
 	self.melee_weapons.cs.stats.min_damage_effect = 0.9
@@ -3470,7 +3490,11 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 
 	--how does this spin when it has a handle--
 	self.melee_weapons.ostry.info_id = "bm_melee_ostry_info"
-	self.melee_weapons.ostry.chainsaw = true	
+	self.melee_weapons.ostry.chainsaw = {
+		tick_damage = 1.8,
+		tick_delay = 0.25,
+		start_delay = 0.4
+	}
 	self.melee_weapons.ostry.stats.tick_damage = 2	
 	self.melee_weapons.ostry.stats.min_damage = 6
 	self.melee_weapons.ostry.stats.max_damage = 6
@@ -3531,26 +3555,30 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.agave.melee_damage_delay = 0.1	
 
 	--Not one but TWO pokers--
+	self.melee_weapons.push.info_id = "bm_melee_specialist_info"
+	self.melee_weapons.push.special_weapon = "repeat_hitter"
 	self.melee_weapons.push.stats.min_damage = 3
 	self.melee_weapons.push.stats.max_damage = 6.1
 	self.melee_weapons.push.stats.min_damage_effect = 0.5
 	self.melee_weapons.push.stats.max_damage_effect = 0.6
-	self.melee_weapons.push.stats.charge_time = 0.65
+	self.melee_weapons.push.stats.charge_time = 1.05
 	self.melee_weapons.push.stats.range = 155
-	self.melee_weapons.push.stats.concealment = 30
-	self.melee_weapons.push.repeat_expire_t = 0.45
+	self.melee_weapons.push.stats.concealment = 28
+	self.melee_weapons.push.repeat_expire_t = 0.6
 	self.melee_weapons.push.expire_t = 1.1
 	self.melee_weapons.push.melee_damage_delay = 0.1
 
 	--Unlike Sonic I don't chuckle
-	self.melee_weapons.grip.stats.min_damage = 4.5
-	self.melee_weapons.grip.stats.max_damage = 9.1
+	self.melee_weapons.grip.info_id = "bm_melee_specialist_info"
+	self.melee_weapons.grip.special_weapon = "repeat_hitter"
+	self.melee_weapons.grip.stats.min_damage = 3
+	self.melee_weapons.grip.stats.max_damage = 6.1
 	self.melee_weapons.grip.stats.min_damage_effect = 0.5
 	self.melee_weapons.grip.stats.max_damage_effect = 0.6
 	self.melee_weapons.grip.stats.charge_time = 1.05
-	self.melee_weapons.grip.stats.range = 160
+	self.melee_weapons.grip.stats.range = 155
 	self.melee_weapons.grip.repeat_expire_t = 0.6
-	self.melee_weapons.grip.stats.concealment = 29
+	self.melee_weapons.grip.stats.concealment = 28
 	self.melee_weapons.grip.melee_damage_delay = 0.1
 	self.melee_weapons.grip.expire_t = 1.1
 	
@@ -3586,9 +3614,13 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--Clowns to the left of me, jokers to the right--
 	self.melee_weapons.clean.dot_data = {
-		type = "poison",
-		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.0}
-	}	
+		type = "bleed",
+		custom_data = {
+			dot_damage = 2,
+			dot_length = 3.1,
+			hurt_animation_chance = 0.0
+		}
+	}
 	self.melee_weapons.clean.info_id = "bm_melee_clean_info"
 	self.melee_weapons.clean.stats.weapon_type = "sharp"
 	self.melee_weapons.clean.stats.min_damage = 3
@@ -3654,8 +3686,12 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--LET'S GO PRACTICE MEDICINE--
 	self.melee_weapons.fear.dot_data = {
 		type = "poison",
-		custom_data = {dot_length = 3.1, hurt_animation_chance = 0.75}
-	}	
+		custom_data = {
+			dot_damage = 2,
+			dot_length = 3.1,
+			hurt_animation_chance = 0.75
+		}
+	}
 	self.melee_weapons.fear.stats.min_damage = 1
 	self.melee_weapons.fear.stats.max_damage = 2
 	self.melee_weapons.fear.stats.min_damage_effect = 0.5

@@ -38,6 +38,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_pd.exclude_stages, "bex")				
 	table.insert(self.risk_pd.exclude_stages, "mex_cooking")
 	table.insert(self.risk_pd.exclude_stages, "welcome_to_the_jungle_2")	
+	table.insert(self.risk_pd.exclude_stages, "pex")	
+	table.insert(self.risk_pd.exclude_stages, "fex")	
 
 	--SWAT--		
 	table.insert(self.risk_swat.exclude_stages, "shoutout_raid")
@@ -60,6 +62,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_swat.exclude_stages, "bex")				
 	table.insert(self.risk_swat.exclude_stages, "mex_cooking")		
 	table.insert(self.risk_swat.exclude_stages, "welcome_to_the_jungle_2")	
+	table.insert(self.risk_swat.exclude_stages, "pex")
+	table.insert(self.risk_swat.exclude_stages, "fex")
 	
 	--FBI--		
 	table.insert(self.risk_fbi.exclude_stages, "shoutout_raid")
@@ -82,6 +86,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_fbi.exclude_stages, "bex")				
 	table.insert(self.risk_fbi.exclude_stages, "mex_cooking")	
 	table.insert(self.risk_fbi.exclude_stages, "welcome_to_the_jungle_2")	
+	table.insert(self.risk_fbi.exclude_stages, "pex")
+	table.insert(self.risk_fbi.exclude_stages, "fex")
 
 	--Overkill--		
 	table.insert(self.risk_death_squad.exclude_stages, "shoutout_raid")
@@ -103,7 +109,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_squad.exclude_stages, "crojob3_night")				
 	table.insert(self.risk_death_squad.exclude_stages, "bex")				
 	table.insert(self.risk_death_squad.exclude_stages, "mex_cooking")
-	table.insert(self.risk_death_squad.exclude_stages, "welcome_to_the_jungle_2")	
+	table.insert(self.risk_death_squad.exclude_stages, "welcome_to_the_jungle_2")
+	table.insert(self.risk_death_squad.exclude_stages, "pex")
+	table.insert(self.risk_death_squad.exclude_stages, "fex")
 
 	--Mayhem--		
 	table.insert(self.risk_easy_wish.exclude_stages, "shoutout_raid")
@@ -126,6 +134,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_easy_wish.exclude_stages, "bex")				
 	table.insert(self.risk_easy_wish.exclude_stages, "mex_cooking")	
 	table.insert(self.risk_easy_wish.exclude_stages, "welcome_to_the_jungle_2")
+	table.insert(self.risk_easy_wish.exclude_stages, "pex")
+	table.insert(self.risk_easy_wish.exclude_stages, "fex")
 
 	--Deathwish--		
 	table.insert(self.risk_death_wish.exclude_stages, "shoutout_raid")
@@ -148,6 +158,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_death_wish.exclude_stages, "bex")				
 	table.insert(self.risk_death_wish.exclude_stages, "mex_cooking")
 	table.insert(self.risk_death_wish.exclude_stages, "welcome_to_the_jungle_2")
+	table.insert(self.risk_death_wish.exclude_stages, "pex")
+	table.insert(self.risk_death_wish.exclude_stages, "fex")
 	
 	--One Down--		
 	table.insert(self.risk_sm_wish.exclude_stages, "shoutout_raid")
@@ -170,6 +182,8 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	table.insert(self.risk_sm_wish.exclude_stages, "bex")				
 	table.insert(self.risk_sm_wish.exclude_stages, "mex_cooking")		
 	table.insert(self.risk_sm_wish.exclude_stages, "welcome_to_the_jungle_2")
+	table.insert(self.risk_sm_wish.exclude_stages, "pex")
+	table.insert(self.risk_sm_wish.exclude_stages, "fex")
 	
 	-- Reaper Risk Asset
 	table.insert(self.mad_russian_merc_cameras.stages, "pines")
@@ -200,7 +214,9 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 	}		
 	self.risk_bexico.stages = {
 		"mex_cooking",
-		"bex"
+		"bex",
+		"pex",
+		"fex"
 	}			
 	
 	--[[

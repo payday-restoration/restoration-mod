@@ -63,8 +63,10 @@ function DOTManager:add_doted_enemy(enemy_unit, dot_damage_received_time, weapon
 
 	if variant == "poison" then
 		variant = 1
-	elseif variant == "dot" then
+	elseif variant == "bleed" then
 		variant = 2
+	elseif variant == "dot" then
+		variant = 3
 	else
 		variant = nil
 	end
@@ -79,7 +81,7 @@ end
 function DOTManager:sync_add_dot_damage(enemy_unit, variant, weapon_unit, dot_length, dot_damage, user_unit, hurt_animation, variant, weapon_id)
 	if enemy_unit then
 		local t = TimerManager:game():time()
-
+		log("Syncing!")
 		self:_add_doted_enemy(enemy_unit, t, weapon_unit, dot_length, dot_damage, hurt_animation, variant, weapon_id, user_unit)
 	end
 end
@@ -124,7 +126,7 @@ function DOTManager:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapo
 				weapon_id = weapon_id,
 				user_unit = user_unit
 			}
-
+			
 			table_insert(self._doted_enemies, dot_info)
 			self:check_achievemnts(enemy_unit, dot_damage_received_time)
 		end
@@ -142,8 +144,25 @@ function DOTManager:_damage_dot(dot_info)
 		local weapon_unit = dot_info.weapon_unit
 		local weapon_id = dot_info.weapon_id
 
-		if dot_info.variant and dot_info.variant == "poison" then
-			PoisonBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
+		if dot_info.variant then
+			if dot_info.variant == "poison" then
+				PoisonBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
+			elseif dot_info.variant == "bleed" then
+				BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, dot_info.hurt_animation, weapon_id)
+			end
 		end
 	end
+end
+
+--Allows for custom dot_damage to be defined.
+function DOTManager:create_dot_data(type, custom_data)
+	local dot_data = deep_clone(tweak_data:get_dot_type_data(type))
+
+	if custom_data then
+		dot_data.dot_length = custom_data.dot_length or dot_data.dot_length
+		dot_data.hurt_animation_chance = custom_data.hurt_animation_chance or dot_data.hurt_animation_chance
+		dot_data.dot_damage = custom_data.dot_damage or dot_data.dot_damage
+	end
+
+	return dot_data
 end

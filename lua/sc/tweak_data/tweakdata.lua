@@ -206,9 +206,16 @@ tweak_data.projectiles.wpn_prj_hur.adjust_z = 120
 
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",
-	dot_length = 5,
+	dot_length = 3.1,
 	dot_damage = 2,
-	hurt_animation_chance = 0.5
+	hurt_animation_chance = 0.75
+}
+
+tweak_data.dot_types.bleed = {
+	damage_class = "BleedBulletBase",
+	dot_length = 3.1,
+	dot_damage = 2,
+	hurt_animation_chance = 0
 }
 
 --Stun nades--
@@ -657,6 +664,8 @@ tweak_data.player.stances.model70.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.tti.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.siltstone.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.r700.steelsight.shakers.breathing.amplitude = 0
+tweak_data.player.stances.sbl.steelsight.shakers.breathing.amplitude = 0
+tweak_data.player.stances.desertfox.steelsight.shakers.breathing.amplitude = 0
 
 if not Global.game_settings then
     return

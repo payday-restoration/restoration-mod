@@ -9931,28 +9931,26 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 end
 
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
-	-- The below summarizes the functions of new or revised tactics in Crackdown.
+	-- The below summarizes the functions of new or revised tactics in Restoration.
 	--charge
 	--unit moves to player position and engages per conventional rules. Primary driver for most units.
 	--ranged_fire 
-	--unit engages from longer range location with line of sight. Will eventually close with player. Limited use in swat groups.
+	--unit engages from longer range location with line of sight. Will eventually close with player.
 	--elite_ranged_fire 
-	--Ranged_fire but with a forced retreat if player closer than closer than 20m. Potentially aggravating, consider for grenadier groups.
-	--flank
-	--basically works now. Unit takes alternate route to player location. Used in swat and "pincer" groups.
+	--Ranged_fire but with a forced retreat if player closer than closer than 8m (i think that's what we changed it to).
 	--obstacle 
-	--Unit attempts to position themselves in neighboring room near entrance closest to player. Intended for shields, ambush units.
-	--reloadingretreat (i think its implemented, at least)
-	--if player is visible and unit is reloading, attempt to retreat into cover. Consider for Dozers. 
+	--Unit attempts to position themselves in neighboring room near entrance closest to player.
+	--reloadingretreat
+	--if player is visible and unit is reloading, attempt to retreat into cover.
 	--hitnrun
-	-- Approach enemies and engage for a short time, then, back away from the fight. Uses 10m retreat range. Consider for light units.
-	--murder
+	-- Approach enemies and engage for a short time, then, back away from the fight. Uses 10m retreat range.
+	--Tunnel
 	--Unit almost entirely targets one player until down, then moves on to next. Special-oriented.
 	--spoocavoidance
 	--If enemy aimed at or seen within 20m, they retreat away from the fight.
 	--harass
-	--Player entering non-combat state (such as task interaction) become priority target. Use sparingly due to limited feedback.
-	--hunter (intended for cloakers)
+	--Player entering non-combat state (such as task interactions or reloading) become priority target.
+	--hunter
 	--If a player is not within 15 meters of another player, becomes target. MUST NOT be used with deathguard - will cause crashes.
 	--deathguard
 	--Camps downed player. MUST NOT be used with Hunter - will cause crashes.
@@ -10050,7 +10048,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"smoke_grenade",
 			"shield_cover",
-			"murder"
+			"murder",
+			"tunnel"
 		},
 		CS_boom = {
 			"harass",		
@@ -10092,7 +10091,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"smoke_grenade",
 			"shield_cover",
-			"murder"
+			"murder",
+			"tunnel"
 		},
 		ELITE_boom = {
 			"flash_grenade",
@@ -10333,6 +10333,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"reloadingretreat",
 			"murder",
+			"tunnel",
 			"harass",
 			"hitnrun",
 			"provide_coverfire",
@@ -10342,6 +10343,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		BLACK_tank = { --set up to be hyper aggressive and charge the player
 			"reloadingretreat",
 			"murder",
+			"tunnel",
 			"charge",
 			"harass",
 			"aggressor",
@@ -10351,6 +10353,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"reloadingretreat",
 			"ranged_fire",
 			"murder",
+			"tunnel",
 			"harass",
 			"shield"
 		},
@@ -10360,9 +10363,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"reloadingretreat",
 			"spoocavoidance",
 			"murder",
+			"tunnel",
 			"elite_ranged_fire",
-			"harass",
-			"shield"
+			"harass"
 		},
 		spooc = {
 			"hunter",
@@ -10555,6 +10558,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"ranged_fire",
 			"provide_support",
 			"murder",
+			"tunnel",
 			"deathguard"
 		},
 		tazer_flanking = {
@@ -10564,6 +10568,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"smoke_grenade",
+			"tunnel",
 			"murder"
 		},
 		tazer_charge = {
@@ -10571,11 +10576,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"legday",
 			"aggressor",
 			"provide_coverfire",
+			"tunnel",
 			"murder"
 		},
 		tank_rush = {
 			"charge",
 			"provide_coverfire",
+			"tunnel",
 			"murder"
 		}
 	}
@@ -14121,7 +14128,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		30,
 		40,
 		50
-	}			
+	}
+	for _,t in pairs(restoration.large_levels) do
+		if job == t then
+			self.besiege.assault.force = {
+				5,
+				6,
+				7
+			}
+			self.besiege.assault.force_pool = {
+				30,
+				40,
+				50
+			}	
+		end
+	end	
 	for _,t in pairs(restoration.tiny_levels) do
 		if job == t then
 			self.besiege.assault.force = {
@@ -14149,7 +14170,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				30
 			}	
 		end
-	end		
+	end	
+	for _,vt in pairs(restoration.extremely_tiny_levels) do
+		if job == vt then
+			self.besiege.assault.force = {
+				2,
+				3,
+				4
+			}
+			self.besiege.assault.force_pool = {
+				10,
+				20,
+				30
+			}	
+		end
+	end			
 	if difficulty_index <= 2 then
 		self.besiege.assault.force_balance_mul = {
 			0.9,

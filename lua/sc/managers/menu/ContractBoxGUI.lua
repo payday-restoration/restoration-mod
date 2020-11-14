@@ -183,9 +183,11 @@ function ContractBoxGui:create_contract_box()
 		})
 
 		if Global.game_settings.one_down then
-			local pro_text = contact_text .. " " .. managers.localization:to_upper_text("menu_one_down")
-			self._contract_text_header:set_text(pro_text)
-			-- pro_text:set_color(tweak_data.screen_colors.one_down)
+			local contact_text = utf8.to_upper(managers.localization:text(contact_data.name_id) .. ": " .. managers.localization:text(job_data.name_id))
+			local pro_text = managers.localization:to_upper_text("menu_one_down")
+			local text_string = contact_text .. " " .. pro_text
+			self._contract_text_header:set_text(text_string)
+			self._contract_text_header:set_range_color(utf8.len(contact_text), utf8.len(text_string), tweak_data.screen_colors.one_down)
 		end
 
 		local length_text_header = self._contract_panel:text({

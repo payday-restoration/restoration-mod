@@ -238,6 +238,11 @@ function CharacterTweakData:_init_security(presets)
 	self.security_mex = deep_clone(self.security)
 	self.security_mex.speech_prefix_p1 = "m"
 	self.security_mex.radio_prefix = "mex_"
+	if job == "fex" then
+		self.security_mex.melee_weapon = "fists"
+	else
+		self.security_mex.melee_weapon = "baton"
+	end
 
 	table.insert(self._enemy_list, "security_mex")	
 	
@@ -245,6 +250,11 @@ function CharacterTweakData:_init_security(presets)
 	self.security_mex_no_pager.speech_prefix_p1 = "m"
 	self.security_mex_no_pager.radio_prefix = "mex_"
 	self.security_mex_no_pager.has_alarm_pager = false
+	if job == "fex" then
+		self.security_mex_no_pager.melee_weapon = "fists"
+	else
+		self.security_mex_no_pager.melee_weapon = "baton"
+	end
 
 	table.insert(self._enemy_list, "security_mex_no_pager")		
 end

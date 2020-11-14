@@ -714,6 +714,13 @@ local lapd_ds = {
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3",		
 	}	
+	
+local federales = {
+		--Scripted Spawns Only
+		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",
+		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",	
+		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
+	}	
 
 function ElementSpawnEnemyDummy:init(...)
 	ElementSpawnEnemyDummy.super.init(self, ...)
@@ -749,6 +756,7 @@ function ElementSpawnEnemyDummy:init(...)
 			end
 			self._values.enemy = russia[self._values.enemy] or self._values.enemy		
 		end
+	--Zombies
 	elseif ai_type == "zombie" then
 		if job == "haunted" then
 			if difficulty_index <= 2 then
@@ -820,7 +828,12 @@ function ElementSpawnEnemyDummy:init(...)
 				self._values.enemy = lapd_ds[self._values.enemy]
 			end
 			self._values.enemy = lapd_ds[self._values.enemy] or self._values.enemy			
-		end				
+		end			
+	elseif ai_type == "federales" then
+		if federales[self._values.enemy] then
+			self._values.enemy = federales[self._values.enemy]
+		end
+		self._values.enemy = federales[self._values.enemy] or self._values.enemy	
 	--America (default)
 	else
 		--Hard and Below

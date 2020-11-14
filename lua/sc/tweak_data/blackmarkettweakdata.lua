@@ -3414,9 +3414,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.ballistic.stats.min_damage_effect = 0.5
 	self.melee_weapons.ballistic.stats.max_damage_effect = 0.6
 	self.melee_weapons.ballistic.stats.charge_time = 1.05
-	self.melee_weapons.ballistic.stats.range = 160
+	self.melee_weapons.ballistic.stats.range = 155
 	self.melee_weapons.ballistic.repeat_expire_t = 0.6
-	self.melee_weapons.ballistic.stats.concealment = 29
+	self.melee_weapons.ballistic.stats.concealment = 28
 	self.melee_weapons.ballistic.melee_damage_delay = 0.1
 	self.melee_weapons.ballistic.expire_t = 1.1
 
@@ -3561,10 +3561,10 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.push.stats.max_damage = 6.1
 	self.melee_weapons.push.stats.min_damage_effect = 0.5
 	self.melee_weapons.push.stats.max_damage_effect = 0.6
-	self.melee_weapons.push.stats.charge_time = 0.65
+	self.melee_weapons.push.stats.charge_time = 1.05
 	self.melee_weapons.push.stats.range = 155
-	self.melee_weapons.push.stats.concealment = 30
-	self.melee_weapons.push.repeat_expire_t = 0.45
+	self.melee_weapons.push.stats.concealment = 28
+	self.melee_weapons.push.repeat_expire_t = 0.6
 	self.melee_weapons.push.expire_t = 1.1
 	self.melee_weapons.push.melee_damage_delay = 0.1
 
@@ -3572,13 +3572,13 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.grip.info_id = "bm_melee_specialist_info"
 	self.melee_weapons.grip.special_weapon = "repeat_hitter"
 	self.melee_weapons.grip.stats.min_damage = 3
-	self.melee_weapons.grip.stats.max_damage = 6
+	self.melee_weapons.grip.stats.max_damage = 6.1
 	self.melee_weapons.grip.stats.min_damage_effect = 0.5
 	self.melee_weapons.grip.stats.max_damage_effect = 0.6
 	self.melee_weapons.grip.stats.charge_time = 1.05
-	self.melee_weapons.grip.stats.range = 160
+	self.melee_weapons.grip.stats.range = 155
 	self.melee_weapons.grip.repeat_expire_t = 0.6
-	self.melee_weapons.grip.stats.concealment = 29
+	self.melee_weapons.grip.stats.concealment = 28
 	self.melee_weapons.grip.melee_damage_delay = 0.1
 	self.melee_weapons.grip.expire_t = 1.1
 	

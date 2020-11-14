@@ -125,11 +125,7 @@ function restoration:Init()
 		"mus",
 		"hox_1",
 		"xmn_hox_1",
-		"skm_mus",
-		"skm_red2",
-		"skm_run",
 		"run_res", --Whurr's Heat Street Edit
-		"skm_watchdogs_stage2",
 		"bph",
 		"glace",
 		"pbr",
@@ -157,9 +153,6 @@ function restoration:Init()
 		"wetwork_burn",
 		"hardware_store",
 		"man_res", --Undercover resmod edit		
-		"skmc_mad", --rex's holdout maps
-		"skmc_fish",
-		"skmc_ovengrill",
 		"spa_CD",		
 		"wwh_CD",		
 	}
@@ -171,9 +164,22 @@ function restoration:Init()
 		"rvd2",		
 		"vit",
 		"mex_cooking",		
-		"fex", --Buluc's Mansion		
+		"fex", --Buluc's Mansion	
+		"skm_mus",
+		"skm_red2",
+		"skm_run",		
+		"skm_watchdogs_stage2",	
+		"skm_cas",
+		"skm_big2",
+		"skm_mallcrasher",
+		"skm_arena",
+		"skm_bex",
 		--Custom Heists below--
-		"thechase"
+		"thechase",
+		"skm_street",		
+		"skmc_mad", --rex's holdout maps
+		"skmc_fish",
+		"skmc_ovengrill"		
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
 	restoration.extremely_tiny_levels = {

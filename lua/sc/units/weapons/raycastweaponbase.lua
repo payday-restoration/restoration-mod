@@ -461,9 +461,6 @@ local afsf_blacklist = {
 	["saw"] = true,
 	["saw_secondary"] = true,
 	["flamethrower_mk2"] = true,
-	["m134"] = true,
-	["mg42"] = true,
-	["shuno"] = true,
 	["system"] = true
 }
 

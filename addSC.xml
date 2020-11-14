@@ -2136,9 +2136,10 @@
 	<!--textures to always load-->
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
-        <!--murky glass-->
-        <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
-        <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
+	
+    <!--murky glass-->
+     <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
+     <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
 		
 	<!--Zeal Heavy Swat Shield-->
 	<!-- Disabled, since he's no longer in use.
@@ -2213,6 +2214,7 @@
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>			
 	
 	<!--textures city -->
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/zomnia_glass_op" force="false"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" />	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />	

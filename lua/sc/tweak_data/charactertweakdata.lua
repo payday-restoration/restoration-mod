@@ -1226,6 +1226,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_guard.access = "security"
 	self.city_swat_guard.chatter = presets.enemy_chatter.guard
 	self.city_swat_guard.melee_weapon = "baton"
+	self.city_swat_guard.use_radio = nil
 	table.insert(self._enemy_list, "city_swat_guard")
 		
 	self.omnia = deep_clone(self.city_swat)	

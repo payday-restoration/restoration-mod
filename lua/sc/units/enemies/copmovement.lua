@@ -1296,7 +1296,7 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 	end
 
 	if hurt_type ~= "death" then
-		if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "dot" or damage_info.variant == "graze" then
+		if damage_info.variant == "bullet" or damage_info.variant == "explosion" or damage_info.variant == "fire" or damage_info.variant == "poison" or damage_info.variant == "bleed" or damage_info.variant == "dot" or damage_info.variant == "graze" then
 			hurt_type = managers.modifiers:modify_value("CopMovement:HurtType", hurt_type)
 
 			if not hurt_type then

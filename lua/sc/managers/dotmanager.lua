@@ -106,6 +106,7 @@ function DOTManager:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapo
 
 				dot_info.weapon_unit = weapon_unit
 				dot_info.hurt_animation = dot_info.hurt_animation or hurt_animation
+				log(variant)
 				dot_info.variant = variant
 				dot_info.weapon_id = weapon_id
 				dot_info.user_unit = user_unit

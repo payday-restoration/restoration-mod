@@ -736,5 +736,20 @@ function BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, da
 		})
 	end
 	
-	return DOTBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, hurt_animation, weapon_id)
+	local action_data = {
+		variant = self.VARIANT,
+		damage = damage,
+		weapon_unit = weapon_unit,
+		attacker_unit = attacker_unit,
+		col_ray = col_ray,
+		hurt_animation = hurt_animation,
+		weapon_id = weapon_id
+	}
+	local defense_data = {}
+
+	if col_ray and col_ray.unit and alive(col_ray.unit) and col_ray.unit:character_damage() then
+		defense_data = col_ray.unit:character_damage():damage_dot(action_data)
+	end
+
+	return defense_data
 end

@@ -86,6 +86,10 @@
 	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
 	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_contour"/>
 	
+	<!--opscore-->
+	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
+
 	<!--fbi swat 2-->
     <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2" load="true"/>
     <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>

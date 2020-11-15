@@ -2072,21 +2072,16 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.immune_to_concussion = true
 	self.tank_titan.immune_to_knock_down = true
 	self.tank_titan.priority_shout_max_dis = 3000
-	self.tank_titan.ecm_vulnerability = 0
-	if is_reaper or is_federales then
-		self.tank_titan.die_sound_event_2 = nil
-	else
-		self.tank_titan.die_sound_event_2 = nil
-	end			
+	self.tank_titan.ecm_vulnerability = 0		
 	if is_reaper or is_federales then
 		self.tank_titan.custom_voicework = "tdozer_ru"
 	else
 		self.tank_titan.custom_voicework = "tdozer"
 	end			
 	if is_reaper or is_federales then
-		self.tank_titan.spawn_sound_event = "rbdz_entrance_elite"
+		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
 	else
-		self.tank_titan.spawn_sound_event = "bdz_entrance"
+		self.tank_titan.spawn_sound_event = "bdz_entrance_elite"
 	end		
 	if is_reaper then
 		self.tank.speech_prefix_p1 = self._prefix_data_p1.bulldozer()
@@ -2187,19 +2182,17 @@ end
 
 function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker = deep_clone(self.tank)
+	self.tank_biker.spawn_sound_event = nil
+	self.tank_biker.spawn_sound_event_2 = nil
 	self.tank_biker.access = "gangster"
 	self.tank_biker.rescue_hostages = false
 	self.tank_biker.use_radio = nil
 	self.tank_biker.speech_prefix_p1 = "bik"
 	self.tank_biker.speech_prefix_p2 = nil
 	self.tank_biker.speech_prefix_count = 2	
-	self.tank_biker.chatter = {
-		aggressive = true,
-		retreat = true,
-		contact = true,
-		go_go = true,
-		suppress = true
-	}
+	self.tank_biker.die_sound_event = "x02_any_3p"	
+	self.tank_biker.die_sound_event_2 = "l1n_burndeath"	
+	self.tank_biker.chatter = presets.enemy_chatter.swat
 end
 
 function CharacterTweakData:_init_spooc(presets)
@@ -2281,6 +2274,7 @@ function CharacterTweakData:_init_spooc(presets)
 	table.insert(self._enemy_list, "spooc")
 
 	self.spooc_titan = deep_clone(self.spooc)
+	self.spooc_titan.tags = {"law", "custom", "special", "spooc"}
 	self.spooc_titan.special_deaths = nil
 	self.spooc_titan.HEALTH_INIT = 90
 	self.spooc_titan.headshot_dmg_mul = 5.85	

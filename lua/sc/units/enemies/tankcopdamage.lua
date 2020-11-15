@@ -15,6 +15,8 @@ function TankCopDamage:seq_clbk_vizor_shatter()
 			self._unit:sound():play("clk_turn", nil, nil)
 			self._unit:base():add_buff("base_damage", 10 * 0.01)
 			self._unit:movement():play_redirect("use_syringe")
+		elseif self._unit:base()._tweak_table == "tank_biker" then
+			self._unit:sound():say("g90")
 		else
 			self._unit:sound():say("visor_lost")
 		end		

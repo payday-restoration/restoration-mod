@@ -1600,8 +1600,8 @@ function CopDamage:die(attack_data)
 		managers.groupai:state():unregister_blackout_source(self._unit)
 	end
 
-	if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") and self._char_tweak.die_sound_event_2 then
-		self._unit:sound():play(self._char_tweak.die_sound_event_2, nil, nil)
+	if self._char_tweak.die_sound_event_2 then
+		self._unit:sound():play(self._char_tweak.die_sound_event_2, nil, true)
 	end
 
 	if self._unit:base()._tweak_table == "boom" then

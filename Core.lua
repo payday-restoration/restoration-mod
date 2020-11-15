@@ -139,7 +139,6 @@ function restoration:Init()
 		"framing_frame_3",
 		"spa",
 		"des",	
-		"mia_2",
 		"arena",
 		"shoutout_raid", --Scripted spawns out the ass, doing this just to even it out
 		"sah",
@@ -164,6 +163,7 @@ function restoration:Init()
 		"rvd2",		
 		"vit",
 		"mex_cooking",		
+		"mia_2",		
 		"fex", --Buluc's Mansion	
 		"skm_mus",
 		"skm_red2",

@@ -1607,7 +1607,8 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.static_dodge_preset = true
 	self.mobster_boss.is_special = true
 	self.mobster_boss.always_drop = true
-	self.mobster.heal_cooldown = 135
+	self.mobster_boss.heal_cooldown = 135
+	self.mobster_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "mobster_boss")
 end
 
@@ -1659,6 +1660,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.always_drop = true
 	self.biker_boss.is_special = true
 	self.biker_boss.heal_cooldown = 135
+	self.biker_boss.die_sound_event = "f1n_x01a_any_3p"
 	table.insert(self._enemy_list, "biker_boss")
 end
 
@@ -1675,6 +1677,7 @@ function CharacterTweakData:_init_hector_boss(presets)
 	self.hector_boss.is_special = true
 	self.hector_boss.always_drop = true
 	self.hector_boss.heal_cooldown = 135
+	self.hector_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "hector_boss")
 end
 
@@ -1694,6 +1697,7 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.can_be_tased = true
 	self.hector_boss_no_armor.always_drop = true
 	self.hector_boss_no_armor.heal_cooldown = 2.5
+	self.hector_boss_no_armor.die_sound_event = "l2n_x01a_any_3p"
 	table.insert(self._enemy_list, "hector_boss_no_armor")
 end
 
@@ -1746,6 +1750,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.is_special = true
 	self.chavez_boss.always_drop = true
 	self.chavez_boss.heal_cooldown = 135
+	self.chavez_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "chavez_boss")
 end
 
@@ -1861,6 +1866,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.is_special = true
 	self.drug_lord_boss.always_drop = true
 	self.drug_lord_boss.heal_cooldown = 135
+	self.drug_lord_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
 
@@ -1902,6 +1908,7 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.immune_to_concussion = false
 	self.drug_lord_boss_stealth.always_drop = true
 	self.drug_lord_boss_stealth.heal_cooldown = 2.5
+	self.drug_lord_boss_stealth.die_sound_event = "l2n_x01a_any_3p"
 	table.insert(self._enemy_list, "drug_lord_boss_stealth")
 end
 

@@ -561,7 +561,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers will attempt to provide covering fire for other units, but will still charge in various circumstances and have very high DPS.",
 		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers. They only spawn in Crime Spree and alongside Captain Spring on Death Sentence. They are very, very dangerous.",
 		["loading_gameplay_res_11"] = "All Dozers except Titan Dozers will charge reloading players.",
-		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 15%.",
+		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 10%.",
 		["loading_gameplay_res_13"] = "Cloakers perform their iconic screech when they are about to jump kick you, dodge to the side when you hear it.",
 		["loading_gameplay_res_14"] = "Cloaker Jump Kicks will cuff you instead of down you.",
 		["loading_gameplay_res_15"] = "Flashbangs cannot be broken on Death Sentence. Your opinion, my choice.",

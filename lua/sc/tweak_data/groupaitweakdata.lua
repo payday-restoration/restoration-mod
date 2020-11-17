@@ -2787,6 +2787,35 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "shield"
 	}	
+	self.unit_categories.FBI_suit_C45 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1")
+			},				
+			nypd = {
+				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
+			},
+			omnia_skm = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1")
+			}			
+		},
+		access = access_type_all
+	}		
 	self.unit_categories.FBI_suit_C45_M4 = {
 		unit_types = {
 			america = {
@@ -10689,6 +10718,31 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}
+	--For high Diff Hard
+	self.enemy_spawn_groups.CS_FBI = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				tactics = self._tactics.CS_swat_rifle,
+				rank = 2
+			},
+			{
+				unit = "CS_swat_R870",
+				freq = 0.5,
+				amount_max = 1,
+				tactics = self._tactics.CS_swat_shotgun,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 0.33,
+				tactics = self._tactics.CS_swat_rifle_flank_hard,
+				rank = 3
+			}
+		}
+	}	
 	self.enemy_spawn_groups.CS_heavys = {
 		amount = {3, 4},
 		spawn = {
@@ -11242,7 +11296,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}
-	end		
+	end			
 	if difficulty_index <= 6 then
 		self.enemy_spawn_groups.FBI_stealth_b = {
 			amount = {2, 3},
@@ -11322,6 +11376,32 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end
+	--For Hard only
+	self.enemy_spawn_groups.FBI_stealth_c = {
+		amount = {2, 3},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.FBI_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_C45",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			},						
+			{
+				unit = "medic_M4",
+				freq = 0.2,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.FBI_swats = {
 			amount = {3, 4},
@@ -14179,9 +14259,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				4
 			}
 			self.besiege.assault.force_pool = {
+				5,
 				10,
-				20,
-				30
+				15
 			}	
 		end
 	end			
@@ -14306,16 +14386,28 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			},
 			CS_shields = {
 				0,
-				0,
+				0.075,
 				0.15
 			}
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.groups = {
-			CS_swats = {
+			--Will participate in first assault, then pull out
+			CS_cops = {
+				0.5,
 				0,
+				0		
+			},
+			CS_swats = {
+				0.5,
 				1,
-				1
+				0.75
+			},
+			--Pretty much only a thing on max diff, idential stats to Mp5 SWATs
+			CS_FBI = {
+				0,
+				0,
+				0.25
 			},
 			CS_heavys = {
 				0,
@@ -14323,13 +14415,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.7
 			},
 			CS_shields = {
-				0,
-				0.02,
+				0.05,
+				0.1,
 				0.2
 			},
 			CS_tazers = {
 				0,
-				0.05,
+				0.075,
 				0.15
 			},
 			FBI_spoocs = {
@@ -14951,7 +15043,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.recon.groups = {
 			CS_stealth_a = {
 				1,
-				0,
+				0.5,
 				0
 			},
 			CS_tazers = {
@@ -14959,11 +15051,16 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.1,
 				0.15
 			},
-			FBI_stealth_b = {
+			FBI_stealth_a = {
 				0,
+				0.25,
+				0.5
+			},
+			FBI_stealth_c = {
 				0,
-				0.1
-			}
+				0.25,
+				0.5
+			}			
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.recon.groups = {

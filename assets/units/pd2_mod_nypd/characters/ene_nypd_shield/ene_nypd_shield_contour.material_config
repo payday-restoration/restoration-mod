@@ -1,13 +1,13 @@
-<materials version="3" group="ene_akan_fbi_heavy_g36">
+<materials version="3" group="ene_nypd_shield">
 	<material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_df"/>
+		<bump_normal_texture 	file="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
 	<material name="mtr_head_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_df"/>
+		<bump_normal_texture 	file="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
@@ -19,8 +19,8 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
 	<material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
-		<bump_normal_texture 	file="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm"/>
-		<diffuse_texture 		file="units/pd2_mod_nypd/characters/ene_nypd_shield/taser_body_df"/>
+		<bump_normal_texture 	file="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_nypd/characters/ene_nypd_shield/taser_body_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
@@ -33,8 +33,8 @@
 	</material>
 	
 	<material name="mtr_helmet_lod1" unique="true" render_template="CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_2_nm"/>
-		<diffuse_texture 		file="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df"/>
+		<bump_normal_texture 	file="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_2_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
 	</material>

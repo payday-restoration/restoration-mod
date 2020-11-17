@@ -231,6 +231,7 @@
 	<texture path="units/pd2_mod_nypd/characters/ene_nypd_shield/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" />		
+	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" />		
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" />
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />		

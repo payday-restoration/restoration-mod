@@ -208,6 +208,18 @@
 					<material materials="mtr_swat_lod_2" />
 				</object>
 			</lod_object>
+			<!-- really sorry. i didn't feel like adding stuff to the uv so i felt this was the best -->
+			<lod_object name="lod_pouches">
+				<object name="g_pouches" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_pouches" max_distance="1000" />
+					<material materials="mtr_pouches_lod_1" max_distance="1500" />
+					<material materials="mtr_pouches_lod_2" />
+				</object>
+				<object name="g_pouches_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_pouches" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_pouches_lod_2" />
+				</object>
+			</lod_object>
 
 			<lod_object name="lod_head">
 				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
@@ -234,6 +246,8 @@
 			</lod_object>
 			
 			<object name="s_body" enabled="true" shadow_caster="true"/>
+			
+			<object name="g_helmet_lod3" enabled="true" />
 			
 		</graphic_group>
 	</graphics>

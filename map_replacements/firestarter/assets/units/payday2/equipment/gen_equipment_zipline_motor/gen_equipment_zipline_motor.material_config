@@ -1,0 +1,12 @@
+<materials version="3">
+    <material name="mtr_mat" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" version="2" unique="true" >
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor_df"/>
+        <bump_normal_texture file="units/payday2/equipment/gen_equipment_zipline_motor/gen_equipment_zipline_motor_nm"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="rope_material" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_zipline_motor/metal_wire_01_df"/>
+        <bump_normal_texture file="units/payday2/equipment/gen_equipment_zipline_motor/metal_wire_01_nm"/>
+    </material>
+</materials>

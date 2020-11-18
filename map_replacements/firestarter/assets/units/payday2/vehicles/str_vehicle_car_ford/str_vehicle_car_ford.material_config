@@ -1,0 +1,87 @@
+<materials group="ford" version="3">
+    <!-- Glass materials -->
+	<material decal_material="glass_breakable" name="glass_shattered" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:OPACITY_FADE" version="2">
+		<variable name="fresnel_settings" type="vector3" value="2 1 0.59999996423721" />
+		<opacity_texture file="units/payday2/glass/glass_shattered_op" />
+		<diffuse_texture file="units/payday2/glass/glass_shattered_df" />
+		<bump_normal_texture file="units/payday2/glass/glass_shattered_nm" />
+		<reflection_texture global_texture="current_global_texture" type="cubemap" />
+		<variable name="opacity_fade" type="vector3" value="10 4000 0" />
+	</material>
+	<material decal_material="glass_breakable" name="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:INSTANCED:OPACITY_FADE" version="2">
+		<variable name="fresnel_settings" type="vector3" value="0.55000001192093 1 0.37000000476837" />
+		<opacity_texture file="units/payday2/glass/glass_clear_vehicle_op" />
+		<diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df" />
+		<reflection_texture global_texture="current_global_texture" type="cubemap" />
+		<variable name="opacity_fade" type="vector3" value="10 4000 0" />
+	</material>
+
+    <!-- Body materials -->
+	<material name="ford" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:RL_BIGPROPS" version="2">
+		<bump_normal_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_nm" />
+		<diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_df" />
+	</material>
+	<material name="ford_low" render_template="generic:BLUE_MASK_TINT:DIFFUSE_TEXTURE:INSTANCED:RL_BIGPROPS" version="2">
+		<variable name="tint_color" type="vector3" value="0.10196078568697 0.10196078568697 0.10196078568697" />
+		<diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_df" />
+	</material>
+
+    <!-- Light materials -->
+        <!--Lights without self-illumination-->
+    <material name="mtr_ls_left" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <variable value="2" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_il"/>
+    </material>
+    <material name="mtr_ls_right" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <variable value="2" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_il"/>
+    </material>
+    <material name="mtr_ls_rear" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <variable value="3" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_il"/>
+    </material>
+
+        <!-- Lights with self-illumination-->
+    <material name="mtr_ls_left_il" version="2" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_TINT">
+        <variable value="light::color" type="listener" name="il_tint" object="ls_left"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_df"/>
+        <self_illumination_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <variable value="0" type="scalar" name="specular_power"/>
+    </material>
+    <material name="mtr_ls_right_il" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_TINT" version="2" >
+        <variable value="light::color" type="listener" name="il_tint" object="ls_right"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_df"/>
+        <self_illumination_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <variable value="0" type="scalar" name="specular_power"/>
+    </material>
+    <material name="mtr_ls_rear_il" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_TINT" version="2" >
+        <variable value="light::color" type="listener" name="il_tint" object="ls_rear"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_df"/>
+        <self_illumination_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_il"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+        <variable value="0" type="scalar" name="specular_power"/>
+    </material>
+        <!--Glow planes-->
+    <material name="mtr_lights_rear_glow" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <variable value="2" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+        <diffuse_texture file="units/pd2_dlc_cage/vehicles/fps_vehicle_falcogini_1/car_rear_light_flare_df"/>
+    </material>
+    <material name="mtr_lights_left_glow" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <variable value="2" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_headlights"/>
+    </material>
+    <material name="mtr_lights_right_glow" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <variable value="2" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_car_ford/str_vehicle_car_ford_headlights"/>
+    </material>
+    <!-- Shadow caster material -->
+	<material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2" />
+</materials>

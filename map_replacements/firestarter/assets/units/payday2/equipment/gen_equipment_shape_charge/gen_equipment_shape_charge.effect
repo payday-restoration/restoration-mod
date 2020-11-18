@@ -1,0 +1,19 @@
+<effect force_synch="false">
+    <atom name="spot_light" min_size="1" max_size="1" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="0" fade_out_start="10" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="0" max_particle_radius="50" soundbank="" cue="" ambient="false" grab_relative="effect" grab_pos="0 0 0" grab_radius="200" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <localboxrandomposition min="-1 10 20" max="1 10 20"/>
+        </initializerstack>
+        <simulatorstack>
+            <worldtransform transform_rotations="false"/>
+        </simulatorstack>
+        <visualizerstack>
+            <light per_particle_age="false" shadow_caster="false" specular="true" color_input="constant" color="249.00001525879 226.00001525879 151" multiplier_input="keys" far_range_input="constant" far_range="100">
+                <multiplier_keys loop="true">
+                    <key t="0" v="0"/>
+                    <key t="0.096989966928959" v="0.00010000000474975"/>
+                    <key t="0.29765886068344" v="0.003000000026077"/>
+                </multiplier_keys>
+            </light>
+        </visualizerstack>
+    </atom>
+</effect>

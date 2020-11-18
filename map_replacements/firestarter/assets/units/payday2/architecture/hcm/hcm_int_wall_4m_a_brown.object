@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/hcm/hcm_int" orientation_object="rp_hcm_int_wall_4m_a_brown" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_hcm_int_wall_4m_a_brown"/>
+            <object name="c_box_00" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="plaster" static="true">
+		<decal_mesh name="dm_hcm_int_wall_4m_a_brown_wood" material="wood" enabled="true"/>
+		<decal_mesh name="dm_hcm_int_wall_4m_a_brown_plaster" material="plaster" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_hcm_int_wall_4m_a_brown" shadow_caster="false" />
+        <!--<object enabled="true" name="s_hcm_int_wall_4m_a_brown" shadow_caster="true" />-->
+    </graphics>
+</dynamic_object> 

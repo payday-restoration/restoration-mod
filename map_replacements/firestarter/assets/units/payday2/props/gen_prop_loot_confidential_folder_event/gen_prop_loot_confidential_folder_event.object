@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/gen_prop_loot_confidential_folder_event/gen_prop_loot_confidential_folder_event" orientation_object="rp_gen_prop_loot_confidential_folder" />
+	<sequence_manager file="units/payday2/props/gen_prop_loot_confidential_folder_event/gen_prop_loot_confidential_folder_event" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_gen_prop_loot_confidential_folder" />
+			<object name="c_folder" collision_type="box" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="thin_layer">
+	</decal_surfaces>
+	<graphics>
+		<object name="g_folder" enabled="true"  />
+	</graphics>
+</dynamic_object>

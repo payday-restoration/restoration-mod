@@ -14267,10 +14267,10 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	end			
 	if difficulty_index <= 2 then
 		self.besiege.assault.force_balance_mul = {
-			0.9,
+			1,
 			1.5,
 			2,
-			2.25
+			2.5
 		}
 		self.besiege.assault.force_pool_balance_mul = {
 			1,
@@ -14281,93 +14281,93 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force_balance_mul = {
 			1,
-			1.4,
-			1.6,
-			1.9
+			1.5,
+			2,
+			2.5
 		}
 		self.besiege.assault.force_pool_balance_mul = {
-			1.2,
-			1.4,
-			1.6,
-			1.9
+			1,
+			1.5,
+			2,
+			2.5
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force_balance_mul = {
-			1.4,
-			1.8,
+			1,
+			1.5,
 			2,
-			2.4
+			2.5
 		}
 		self.besiege.assault.force_pool_balance_mul = {
-			1.7,
+			1,
+			1.5,
 			2,
-			2.2,
 			2.5
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force_balance_mul = {
+			1.5,
 			2,
 			2.5,
-			2.9,
-			3.2
+			3
 		}
 		self.besiege.assault.force_pool_balance_mul = {
-			2.2,
-			2.4,
-			2.6,
+			1.5,
+			2,
+			2.5,
 			3
 		}
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force_balance_mul = {
+			2.5,
 			3,
-			3.2,
 			3.5,
-			3.9
+			4
 		}
 		self.besiege.assault.force_pool_balance_mul = {
-			2.7,
-			2.9,
-			3.1,
-			3.3
+			2,
+			2.5,
+			3,
+			3.5
 		}
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force_balance_mul = {
+			2.5,
 			3,
-			3.2,
 			3.5,
-			3.9
+			4
 		}
 		self.besiege.assault.force_pool_balance_mul = {
-			2.7,
-			2.9,
-			3.1,
-			3.3
+			2,
+			2.5,
+			3,
+			3.5
 		}
 	elseif difficulty_index == 8 then
 		self.besiege.assault.force_balance_mul = {
+			2.5,
 			3,
-			3.2,
 			3.5,
-			3.9
+			4
 		}
 		self.besiege.assault.force_pool_balance_mul = {
-			2.7,
-			2.9,
-			3.1,
-			3.3
+			2,
+			2.5,
+			3,
+			3.5
 		}
 	else		
 		self.besiege.assault.force_balance_mul = {
+			3.5,
 			4,
-			4.2,
 			4.5,
-			4.9
+			5
 		}
 		self.besiege.assault.force_pool_balance_mul = {
-			3.2,
-			3.4,
-			3.6,
-			3.8
+			2.5,
+			3,
+			3.5,
+			4
 		}
 	end
 	

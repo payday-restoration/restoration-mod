@@ -154,6 +154,7 @@ function restoration:Init()
 		"man_res", --Undercover resmod edit		
 		"spa_CD",		
 		"wwh_CD",		
+		"lvl_friday" --Crashing Capitol	
 	}
 	--For levels that have aggressive spawns that are right on top of the player at all times
 	restoration.very_tiny_levels = {

@@ -362,7 +362,7 @@ function StatisticsManager:_bullet_challenges( data )
 		local name_id
 		if data.weapon_unit then
 			if data.weapon_unit:base() and data.weapon_unit:base().projectile_entry then
-				name_id = tweak_data.blackmarket.grenades[data.weapon_unit:base():projectile_entry()].weapon_id
+				name_id = tweak_data.blackmarket.projectiles[data.weapon_unit:base():projectile_entry()].weapon_id
 			else
 				name_id = data.weapon_unit and data.weapon_unit:base().get_name_id and data.weapon_unit:base():get_name_id()
 			end

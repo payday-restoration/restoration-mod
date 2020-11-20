@@ -1,5 +1,9 @@
 MenuItemChallenge.TYPE = "challenge"
 
+if not PackageManager:loaded("packages/custom_fonts") then
+	PackageManager:load("packages/custom_fonts")
+end
+
 function MenuItemChallenge:make_fine_text(text)
 	local x, y, w, h = text:text_rect()
 	text:set_size(w, h)
@@ -7,13 +11,16 @@ function MenuItemChallenge:make_fine_text(text)
 end
 
 function MenuItemChallenge:setup_gui( node, row_item )
+	local font_check
 	local russian = Idstring("russian"):key() == SystemInfo:language():key()
-	local font_check = russian and tweak_data.menu.small_font or "fonts/pdth_challenge"
-	if not russian then
-		if not PackageManager:loaded("packages/custom_fonts") then
-			PackageManager:load("packages/custom_fonts")
-		end
+	local english = Idstring("english"):key() == SystemInfo:language():key()
+
+	if russian then
+		font_check = tweak_data.menu.pd2_small_font
+	else
+		font_check = "fonts/pdth_challenge"
 	end
+	
 	--Definitions
 	local safe_rect = managers.gui_data:scaled_size()
 

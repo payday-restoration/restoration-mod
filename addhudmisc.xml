@@ -57,9 +57,7 @@
 	<movie path="movies/codex/shatter1" force="true"/>
 	<movie path="movies/contact_shatter1" force="true"/>
 	<movie path="movies/cn_veritasgroup1" force="true"/>
-	<font path="fonts/font_medium_shadow" force="true"/>
-	<merged_font path="fonts/font_medium_shadow_mf" force="true"/>
-
+	
 	<!--Assets-->
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_intel" force="false"/>
 	<texture path="guis/textures/pd2/mission_briefing/assets/wetwork_boat" force="false"/>
@@ -93,9 +91,6 @@
 	<movie path="movies/level_suburbia" force="true"/>
 
 	<!-- PDTH Challenges -->
-	<font path="fonts/pdth_challenge" load="true"/>
-	<texture path="fonts/pdth_challenge"/>
-	<merged_font path="fonts/pdth_challenge_mf"/>
 	<texture path="guis/textures/restoration/challenge_progress"/>
 
 	<!-- Raid Lockpicking -->

@@ -7,6 +7,13 @@ function MenuItemChallenge:make_fine_text(text)
 end
 
 function MenuItemChallenge:setup_gui( node, row_item )
+	local russian = Idstring("russian"):key() == SystemInfo:language():key()
+	local font_check = russian and tweak_data.menu.small_font or "fonts/pdth_challenge"
+	if not russian then
+		if not PackageManager:loaded("packages/custom_fonts") then
+			PackageManager:load("packages/custom_fonts")
+		end
+	end
 	--Definitions
 	local safe_rect = managers.gui_data:scaled_size()
 
@@ -29,7 +36,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 
 		row_item.challenge_name = node._text_item_part(node, row_item, row_item.gui_panel, node._left_align(node), "left")
 		row_item.challenge_name:set_layer(node.layers.items + 1)
-		row_item.challenge_name:set_font(Idstring("fonts/pdth_challenge"))
+		row_item.challenge_name:set_font(Idstring(font_check))
 		row_item.challenge_name:set_font_size(tweak_data.menu.small_font_size + 3)
 		row_item.challenge_name:set_x(row_item.challenge_name:x() + tweak_data.menu.info_padding)
 		row_item.challenge_name:set_blend_mode("normal")
@@ -71,7 +78,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 
 		row_item.progress_text = row_item.progress_panel:text( {
 			font_size = row_item.challenge_name:font_size() - 2,
-			font = "fonts/pdth_challenge",
+			font = font_check,
 			layer = 2
 		})
 		if challenge_data.count then
@@ -110,7 +117,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 		row_item.challenge_hl = row_item.gui_info_panel:text({
 			text = row_item.text,
 			layer = 1,
-			font = "fonts/pdth_challenge",
+			font = font_check,
 			font_size = tweak_data.menu.challenges_font_size,
 			wrap = true,
 			word_wrap = true
@@ -122,7 +129,7 @@ function MenuItemChallenge:setup_gui( node, row_item )
 		row_item.description_text = row_item.gui_info_panel:text({
 			text = self:parameter("description"),
 			layer = 1,
-			font = "fonts/pdth_challenge",
+			font = font_check,
 			font_size = tweak_data.menu.small_font_size,
 			wrap = true,
 			word_wrap = true

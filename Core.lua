@@ -331,6 +331,12 @@ function restoration:LoadClassicMovies()
 	end
 end
 
+function restoration:LoadFonts()
+	if not Idstring("russian"):key() == SystemInfo:language():key() then
+		return true
+	end
+end
+
 restoration.assault_style = {
 	"beta_assault",
 	"alpha_assault"

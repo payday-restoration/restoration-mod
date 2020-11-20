@@ -212,7 +212,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "При игре за Джиро, убийство Клокера полностью заряженной атакой вызовет особую анимацию.",
 		["bm_melee_buck_info"] = "Удивительно эффективен против современного оружия.\n\nУменьшает получаемый урон на 10% во время зарядки.", --Buckler Shield
-		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nНаносит 30 урона каждые 0.25 секунд тому, кто стоит впереди вас во время зарядки. Может быть улучшена навыками.", -- ROAMING FR-
+		["bm_melee_cs_info"] = "Рви их в клочья, пока не уничтожих всех.\n\nНаносит 30 урона каждые 0.25 секунд тому, кто стоит впереди вас во время зарядки. Может быть улучшена навыками.", -- ROAMING FR-
 		["bm_melee_ostry_info"] = "Вжуууууух.\n\nНаносит 18 урона каждые 0.25 секунд тому, кто стоит впереди вас во время зарядки. Может быть улучшена навыками.", --Kazaguruma
 		["bm_melee_wing_info"] = "Хорошо подходит к набору маскировки!\n\nНаносит четырёхкратный урон при атаке сзади.",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "Придуманный для насилия, смертельный как револьвер - это выкидной нож!\n\nНаносит двойной урон при атаке сзади.",-- Switchblade Knife
@@ -575,11 +575,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_23"] = "На высоких сложностях, противники попытаются прятаться за Щитами.",
 		["loading_gameplay_res_24"] = "На высоких сложностях, противники действуют хитрее и непредсказуемее.",
 		["loading_gameplay_res_25"] = "'Смертный приговор' был полностью переработан по сравнению с ванильной игрой, чтобы сделать его сложным, но честным. Больше информации в Гайде.",
-		["loading_gameplay_res_26"] = "Pro Job - режим, который запрещает покупать стандартные активы (Медицинскую сумку, сумку с патронами и мешки для трупов), включает огонь по своим (даже по ботам) и может вызвать Точку невозврата в финале ограбления, во время которой к врагам присоединятся усиленные отряды Браво.",
+		["loading_gameplay_res_26"] = "Pro Job - режим, который запрещает покупать активы со снаряжением, включает огонь по своим и может вызвать Точку невозврата в финале ограбления, во время которой к врагам присоединятся усиленные отряды Браво.",
 		["loading_gameplay_res_27"] = "В Restoration Mod присутствуют разные фракции врагов, например, наёмники Murkywater и полиция разных штатов. Они функционируют одинаково, но добавляют больше стиля ограблениям, которые происходят не в Вашингтоне.",
 		["loading_gameplay_res_28"] = "Клокеры бросают дымовую завесу перед атакой. ",
 		--New Units Hints
-	    ["loading_new_units_res_title"] = "Restoration - советы о новых противниках",
+	        ["loading_new_units_res_title"] = "Restoration - советы о новых противниках",
 		["loading_new_units_res_1"] = "Титановые HRT (агенты по спасению заложников) - сверхбыстрые противники, которые незаметно освобождают заложников и уносят сумки с добычей. При смерти они выронят гранату со слезоточивым газом, если убить их не в голову или не в ближнем бою.",
 		["loading_new_units_res_2"] = "LPF получает больше урона от оружия ближнего боя.",
 		["loading_new_units_res_3"] = "Слабые противники получают дополнительное здоровье от LPF. В этом случае они помечаются фиолетовым цветом. Они всегда переживут как минимум один выстрел.",
@@ -624,7 +624,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_stealth_res_7"] = "Турели заставляют лежать всех гражданских в достаточно высоком радиусе.",
 		["loading_stealth_res_8"] = "Когда вы несёте сумку, вас будут замечать с гораздо большей дистанции, а также гораздо быстрее, если вы стоите, бежите или прыгаете. Двигайтесь медленно и вприсядку.",
 		["loading_stealth_res_9"] = "Вы можете брать до 4 Генераторов помех вместо 2 из ванильной игры, но их время действия сокращено в два раза. Используйте их для выполнения целей.",
-		["loading_stealth_res_10"] = "Глушители могут не сделать оружие полностью бесшумным. Проверяйте характеристику 'Расстояние шума'.",
+		["loading_stealth_res_10"] = "Не все глушители делают оружие полностью бесшумным. Проверяйте характеристику 'Расстояние шума'.",
 		["loading_stealth_res_11"] = "Вы можете взять в заложники до 4 охранников. Это не активирует их пейджеры и не повысит шкалу подозрения; но это произойдёт, если вы их убьёте после доминации.",	
 		["loading_stealth_res_12"] = "Большинство событий, которые приводили к мгновенному провалу стелса (засечение камерой, или превышение лимита пейджеров), было убрано или ослаблено. Смотрите в Гайд для более детальной информации.",
 		["loading_stealth_res_13"] = "Охранники больше не погибают мгновенно от любого урона, если они не встревожены. Цельтесь в голову или используйте оружие ближнего боя с высоким уроном.",
@@ -1106,7 +1106,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			--{
 
 			--Shockproof
-			["menu_insulation_beta_sc"] = "Шокостойкий",
+			["menu_insulation_beta_sc"] = "Заземлённый",
 			["menu_insulation_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nШоковая атака Тазера имеет ##15%## шанс отскочить от вас, оглушая Тазера.\n\nПИКОВЫЙ: ##$pro##\nВзаимодействие с вражеским Тазером в течение ##2## секунд после шоковой атаки контр-атакует его, нанося ##50%## урона его здоровью.",
 
 
@@ -1353,7 +1353,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		["menu_deck1_3_desc_sc"] = "Выносливость вас и вашей команды увеличена на ##50%##.\n\nРасстояние ваших криков увеличено на ##25%##.\n\nКомандные бонусы не складываются.",
 		["menu_deck1_5_desc_sc"] = "Здоровье вас и вашей команды увеличено на ##5%##.\n\nКомандные бонусы не складываются.",
-		["menu_deck1_7_desc_sc"] = "Ваша броня увеличена на ##15%##.\n\nБроня вашей команды увеличена на ##5%#.\n\nКомандные бонусы не складываются.",
+		["menu_deck1_7_desc_sc"] = "Ваша броня увеличена на ##15%##.\n\nБроня вашей команды увеличена на ##5%##.\n\nКомандные бонусы не складываются.",
 		["menu_deck1_9_desc_sc"] = "Каждый заложник увеличивает здоровье на ##2.5%## и выносливость на ##10%## для вас и вашей команды, до 4 заложников.\n\nКомандные бонусы не складываются.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
@@ -1484,11 +1484,11 @@ end)
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_es_boost"] = "Boost",
-		["menu_es_crew"] = "Crew",
-		["menu_es_personal"] = "Personal",
-		["menu_es_bad"] = "Bad",
-		["menu_es_other"] = "Other",
+		["menu_es_boost"] = "Лучшие",
+		["menu_es_crew"] = "Командные",
+		["menu_es_personal"] = "Личные",
+		["menu_es_bad"] = "Плохие",
+		["menu_es_other"] = "Прочие",
 		["RestorationPDTHHudNeeded"] = "PD:TH HUD REBORN IS REQUIRED!",
 		["menu_paygrade"] = "Степень оплаты: ",
 		["menu_diffgrade"] = "Сложность: ",
@@ -1564,11 +1564,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_SizeDescID"] = "Регулирует размер отображаемых иконок навыков.",
 		["RestorationModInfo_CountTitleID"] = "Число рядов",
 		["RestorationModInfo_CountDescID"] = "Регулирует количество рядов иконок навыков, которые будут отображаться, прежде чем добавится новый столбик.",
-		["RestorationModInfo_single_shot_fast_reloadTitleID"] = "Aggressive Reload",
+		["RestorationModInfo_single_shot_fast_reloadTitleID"] = "Агрессивная перезарядка",
 		["RestorationModInfo_single_shot_fast_reloadDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_ammo_efficiencyTitleID"] = "Ammo Efficiency",
+		["RestorationModInfo_ammo_efficiencyTitleID"] = "Эффективный расход",
 		["RestorationModInfo_ammo_efficiencyDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_bloodthirst_reload_speedTitleID"] = "Bloodthirst",
+		["RestorationModInfo_bloodthirst_reload_speedTitleID"] = "Кровожадность",
 		["RestorationModInfo_bloodthirst_reload_speedDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_bullet_stormTitleID"] = "Свинцовый ливень",
 		["RestorationModInfo_bullet_stormDescID"] = "Включает или выключает отображение иконки данного навыка.",
@@ -1578,7 +1578,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_desperadoDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_grinderTitleID"] = "Гистамин (Нападающий)",
 		["RestorationModInfo_grinderDescID"] = "Включает или выключает отображение иконки данного навыка.",
-		["RestorationModInfo_infiltratorTitleID"] = "Life Drain (Infiltrator)",
+		["RestorationModInfo_infiltratorTitleID"] = "Похититель жизней (Интервент)",
 		["RestorationModInfo_infiltratorDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_long_dis_reviveTitleID"] = "Вдохновление",
 		["RestorationModInfo_long_dis_reviveDescID"] = "Включает или выключает отображение иконки данного навыка.",
@@ -1922,9 +1922,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_beef_wolf_desc"] = "Банда использовала эти маски во время ограбления 'Скотобойня'.\n\nДизайн Вульфа был вдохновлён его любимым персонажем, которого он придумал, когда ещё разрабатывал игры.",
 
 		["bm_msk_vyse_dallas"] = "Источник",
-		["bm_msk_vyse_dallas_desc"] = "Vyse сразился лицом-к-лицу с самым дьявольским из дьяволов. Вайз выжил, а из костей дьявола сделали эту маску.",
+		["bm_msk_vyse_dallas_desc"] = "Vyse сразился лицом-к-лицу с самым дьявольским из дьяволов. Vyse выжил, а из костей дьявола сделали эту маску.",
 		["bm_msk_vyse_chains"] = "Детская игра",
-		["bm_msk_vyse_chains_desc"] = "Хоть Vyse и украл больше денег и золота, чем поместится в Форт-Нокс, у него хватает сердца, что бы поделиться частью добычи с больными детьми.\n\nОднажды, Бейн посетил некоторых из этих детей - эта маска была их благодарностью Вайзу.",
+		["bm_msk_vyse_chains_desc"] = "Хоть Vyse и украл больше денег и золота, чем поместится в Форт-Нокс, у него хватает сердца, что бы поделиться частью добычи с больными детьми.\n\nОднажды, Бейн посетил этих детей - эта маска была их благодарностью для Vyse.",
 		["bm_msk_vyse_hoxton"] = "Три балбеса",
 		["bm_msk_vyse_hoxton_desc"] = "Говорят, если провалишься - нужно перетерпеть боль и попытаться снова. Vyse не был согласен. Каждый раз, когда он проигрывал, он шёл вперёд, не смотря ни на что. Даже Ларри, Кёрли и Мо не выдержали бы такого.",
 		["bm_msk_vyse_wolf"] = "Беар Гриллс",
@@ -2010,7 +2010,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModHintTextTitleID"] = "Текст подсказок",
 		["RestorationModMaskOnTextTitleID"] = "Текст надевания маски",
 		["RestorationModStopAllBotsTitleID"] = "Останавливать всех ботов",
-		["RestorationModStopAllBotsDescID"] = "Останавливать всех ботов, удерживая кнопнку остановки бота.",
+		["RestorationModStopAllBotsDescID"] = "Останавливать всех ботов, если удержана кнопка остановки бота.",
 		["RestorationModPONRTrackTitleID"] = "Музыка во время Точки невозврата",
 		["RestorationModPONRTrackDescID"] = "Изменяет музыку во время Точки невозврата в режиме Pro-Job.",
 		["RestorationModPONRTracksTitleID"] = "Музыка во время Точки невозврата",
@@ -2036,7 +2036,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModRealAmmoTitleID"] = "Действительный счётчик патронов",
 		["RestorationModRealAmmoDescID"] = "Счётчик патронов в запасе будет игнорировать патроны, которые уже заряжены.",
 		["RestorationModStealthOrigPosTitleID"] = "Стандартное расположение обнаружения",
-		["RestorationModStealthOrigPosDescID"] = "Полоска обнаружения будет в том же месте, что и в ваниальной игре.",
+		["RestorationModStealthOrigPosDescID"] = "Полоска обнаружения будет в том же месте, что и в ванильной игре.",
 		["RestorationModLowerBagTitleID"] = "Понизить текст о подобранной сумке",
 		["RestorationModLowerBagDescID"] = "Текст, который появляется, если подобрать сумку, будет расположен ниже.",
 		["RestorationModAssaultStyleTitleID"] = "Стиль панели штурма",
@@ -2055,8 +2055,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModUppercaseNamesDescID"] = "Включить или выключить отображение ников игроков заглавными буквами.",
 		["RestorationModPeerColorsTitleID"] = "Цвета товарищей из Альфы",
 		["RestorationModPeerColorsDescID"] = "Включить или выключить цвета товарищей из альфа-версии игры.",
-		["alpha_assault"] = "Уголок из ранней альфа-версии",
-		["beta_assault"] = "Лента из альфа-версии",
+		["alpha_assault"] = "Уголок",
+		["beta_assault"] = "Лента",
 
 		["menu_ingame_manual"] = "Гайд по Restoration",
 		["menu_ingame_manual_help"] = "Просмотреть гайд по Restoration.",

@@ -1281,6 +1281,18 @@ function PlayerDamage:add_revive()
 	)
 end
 
+--Make Ex-Pres only consume stored health that actually goes to healing.
+function PlayerDamage:consume_armor_stored_health(amount)
+	if self._armor_stored_health and not self._dead and not self._bleed_out and not self._check_berserker_done then
+		local old_health = self:get_real_health()
+		self:change_health(self._armor_stored_health)
+		local new_health = self:get_real_health()
+		self._armor_stored_health = self._armor_stored_health - (new_health - old_health)
+	end
+
+	self:update_armor_stored_health()
+end
+
 --Lets hitman piggy bank off of ex-pres UI elements.
 local max_armor_stored_health_orig = PlayerDamage.max_armor_stored_health
 function PlayerDamage:max_armor_stored_health()

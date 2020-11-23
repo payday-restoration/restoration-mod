@@ -1380,7 +1380,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Hey you're getting your grinder on my grinder
-	self.values.player.level_5_armor_addend = {-7}
+	self.values.player.level_5_armor_addend = {-8}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
@@ -1519,21 +1519,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Ex President
 	self.values.player.armor_health_store_amount = {
 		0.4,
-		0.7,
-		1.0
+		0.6,
+		0.8
 	}	
 	self.values.player.armor_max_health_store_multiplier = {
 		1.25
 	}
 
 	self.values.player.body_armor.skill_max_health_store = {
-		8,
-		7.2,
 		6.4,
+		6.0,
 		5.6,
+		5.2,
 		4.8,
-		4,
-		3.2
+		4.4,
+		4.0
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
@@ -1605,7 +1605,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4
 	}
 	self.values.player.damage_control_healing = {
-		300
+		250
 	}
 
 	self.values.player.damage_control_cooldown_drain = {

@@ -1393,7 +1393,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##80## armor while wearing the Flak Jacket.",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##1## health every second.",
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## health every second.",
@@ -1401,9 +1401,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Open your mind--
 		["menu_deck13_1_desc_sc"] = "While your armor is up, you will store ##4## health for every enemy you kill.\n\nWhen your armor starts to regenerate after being completely depleted, you will gain health equal to the stored health amount.\n\nMaximum amount of stored health depends on your equipped armor, with heavier armors being able to store less health than lighter armors.",
-		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by ##5## points.",
+		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##2##.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.",
-		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by an additional ##5## points.",
+		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##2##.\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equipped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--THIS IS WAR BABY--
@@ -1434,7 +1434,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##40%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n##30%## of damage taken is applied over time (##8## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##300%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\nAll of your ##armor is converted to 50% health.##\n\n##Deflection is disabled while using this perk deck.##",
+		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n##30%## of damage taken is applied over time (##8## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##250%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\nAll of your ##armor is converted to 50% health.##\n\n##Deflection is disabled while using this perk deck.##",
 		["menu_deck19_3_desc_sc"] = "The cooldown of your flask will be reduced by ##1## second for each enemy you kill.",
 		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any remaining damage-over-time will be negated.",
 		["menu_deck19_7_desc_sc"] = "When your health is below ##50%##, the cooldown of your flask will be reduced by ##6## seconds for each enemy you kill.",

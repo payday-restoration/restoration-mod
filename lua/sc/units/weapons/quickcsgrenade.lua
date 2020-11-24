@@ -5,7 +5,7 @@ function QuickCsGrenade:_setup_from_tweak_data()
 	self._tweak_data = tweak_data.projectiles[grenade_entry]
 	self._radius = self._tweak_data.radius or 300
 	self._radius_blurzone_multiplier = self._tweak_data.radius_blurzone_multiplier or 1.3
-	self._damage_per_tick = 0.3
+	self._damage_per_tick = 0.6
 	self._stamina_per_tick = 0.0
 	if difficulty_index <= 2 then
 		self._damage_tick_period = 0.5
@@ -17,14 +17,11 @@ function QuickCsGrenade:_setup_from_tweak_data()
 		self._damage_tick_period = 0.35
 	elseif difficulty_index == 6 then
 		self._damage_tick_period = 0.3
-		self._damage_per_tick = 0.45
 	elseif difficulty_index == 7 then
-		self._damage_tick_period = 0.3
-		self._damage_per_tick = 0.6			
+		self._damage_tick_period = 0.3	
 	else
 		self._damage_tick_period = 0.25
 		self._stamina_per_tick = 2.5
-		self._damage_per_tick = 0.75
 	end
 end
 

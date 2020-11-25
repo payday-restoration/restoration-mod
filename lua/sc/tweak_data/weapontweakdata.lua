@@ -654,7 +654,16 @@ function WeaponTweakData:_init_data_c45_npc()
 	self.colt_1911_primary_npc.use_data.selection_index = 2
 	self.colt_1911_primary_npc.CLIP_AMMO_MAX = 8
 	self.colt_1911_primary_npc.sounds.prefix = "c45_fire"
-	self.colt_1911_primary_npc.DAMAGE = 4.5		
+	self.colt_1911_primary_npc.DAMAGE = 4.5	
+
+	self.beretta92_titan_npc = deep_clone(self.c45_npc)
+	self.beretta92_titan_npc.usage = "is_revolver"
+	self.beretta92_titan_npc.sounds.prefix = "beretta_npc"
+	self.beretta92_titan_npc.DAMAGE = 2
+	self.beretta92_titan_npc.CLIP_AMMO_MAX = 14
+	self.beretta92_titan_npc.alert_size = 0
+	self.beretta92_titan_npc.suppression = 0.1
+	self.beretta92_titan_npc.has_suppressor = "suppressed_a"	
 end
 
 function WeaponTweakData:_init_data_x_c45_npc()
@@ -1465,7 +1474,7 @@ function WeaponTweakData:_init_data_m249_npc()
 	self.hk23_sc_npc = deep_clone(self.hk21_sc_npc)	
 	self.hk23_sc_npc.DAMAGE = 2
 	self.hk23_sc_npc.auto.fire_rate = 0.08
-	self.hk23_sc_npc.CLIP_AMMO_MAX = 50	
+	self.hk23_sc_npc.CLIP_AMMO_MAX = 50
 	
 	--M60
 	self.m60_npc = deep_clone(self.m249_npc)	

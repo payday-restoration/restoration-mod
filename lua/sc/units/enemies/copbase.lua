@@ -190,6 +190,11 @@ function CopBase:default_weapon_name()
 	elseif self._unit:name() == Idstring("units/pd2_dlc_berry/characters/npc_locke/npc_locke") then
 		default_weapon_id = "beretta92"					
 	end
+	
+	--Giving Vanilla Titanshields their silent pistols
+	if self._unit:name() == Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1") then
+		default_weapon_id = "beretta92_titan"	
+	end	
 
 	for i_weap_id, weap_id in ipairs(weap_ids) do
 		if default_weapon_id == weap_id then

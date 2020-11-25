@@ -1285,11 +1285,13 @@
 	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false" load="true"/>
 	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" force="false" load="true"/>
 	
+	<unit path="units/payday2/weapons/wpn_npc_beretta92_titan/wpn_npc_beretta92_titan" force="false" load="true"/>
+	
 	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="false"/>
 	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="false"/>
 	<texture path="guis/textures/pd2/hud_buff_spooc" force="false" load="false"/>
     <texture path="guis/textures/pd2/hud_buff_shield" force="true" load="false"/>   
-	<texture path="guis/textures/pd2/hud_buff_halloween" force="true" load="false"/>   
+	<texture path="guis/textures/pd2/hud_buff_halloween" force="false" load="false"/>   
 	<texture path="guis/textures/restoration/bloodyscreen" force="false" load="false"/>
 	
     <!--Titan Taser-->	

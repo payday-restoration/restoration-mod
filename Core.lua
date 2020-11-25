@@ -201,6 +201,7 @@ function restoration:Init()
 		--Custom Heists--
 		"Victor Romeo",
 		"hardware_store",
+		"tj_htsb",
 		"hntn",
 		"bookmakers_office",
 		"thechase",

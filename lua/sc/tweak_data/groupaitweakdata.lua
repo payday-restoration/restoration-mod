@@ -11376,7 +11376,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end
-	--For Hard only
+	--For lower difficulties only
 	self.enemy_spawn_groups.FBI_stealth_c = {
 		amount = {2, 3},
 		spawn = {
@@ -14280,10 +14280,10 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force_balance_mul = {
-			1,
 			1.5,
 			2,
-			2.5
+			2.5,
+			3
 		}
 		self.besiege.assault.force_pool_balance_mul = {
 			1,
@@ -14293,10 +14293,10 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force_balance_mul = {
-			1,
 			1.5,
 			2,
-			2.5
+			2.5,
+			3
 		}
 		self.besiege.assault.force_pool_balance_mul = {
 			1,
@@ -14306,10 +14306,10 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force_balance_mul = {
-			1.5,
 			2,
 			2.5,
-			3
+			3,
+			3.5
 		}
 		self.besiege.assault.force_pool_balance_mul = {
 			1.5,
@@ -14437,20 +14437,37 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.groups = {
-			FBI_swats = {
+			--Assist FBI SWATs for a short while, pull out by the last diff increase
+			CS_swats = {
 				0.1,
-				1,
+				0.5,
+				0
+			},		
+			CS_heavys = {
+				0.05,
+				0,
+				0
+			},
+			FBI_swats = {
+				0,
+				0.5,
 				1
 			},
 			FBI_heavys = {
-				0.05,
+				0,
 				0.25,
 				0.5
 			},
 			FBI_shields = {
+				0,
 				0.1,
-				0.2,
 				0.2
+			},		
+			--Ditto
+			CS_shields = {
+				0.1,
+				0.1,
+				0
 			},
 			FBI_tanks = {
 				0,
@@ -15067,13 +15084,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			FBI_stealth_a = {
 				1,
 				0.5,
-				0
+				0.25
 			},
 			FBI_stealth_b = {
 				0,
 				0,
 				1
-			}
+			},
+			--Show up for first few recons, slowly replaced
+			FBI_stealth_c = {
+				1,
+				0.5,
+				0.25
+			}			
 		}
 	else
 		self.besiege.recon.groups = {

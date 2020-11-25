@@ -962,6 +962,21 @@ function WeaponTweakData:_init_data_mp5_npc()
 	self.mpx_npc = deep_clone(self.mp5_tactical_npc)
 	self.mpx_npc.auto.fire_rate = 0.07058823529
 	self.mpx_npc.DAMAGE = 3.5
+	
+	--Titan HRT MP9
+	self.mp9_titan_npc = deep_clone(self.mp5_npc)
+	self.mp9_titan_npc.sounds.prefix = "mp9_npc"
+	self.mp9_titan_npc.DAMAGE = 1.8
+	self.mp9_titan_npc.CLIP_AMMO_MAX = 20
+	self.mp9_titan_npc.auto.fire_rate = 0.06666666666
+	self.mp9_titan_npc.hold = "pistol"
+	self.mp9_titan_npc.alert_size = 2200
+	self.mp9_titan_npc.suppression = 2.2
+	self.mp9_titan_npc.anim_usage = "is_pistol"
+	
+	--Titan HRT SR2
+	self.sr2_smg_titan_npc = deep_clone(self.mp9_titan_npc)
+	self.sr2_smg_titan_npc.sounds.prefix = "sr2_npc"			
 end
 
 function WeaponTweakData:_init_data_smoke_npc()

@@ -147,6 +147,8 @@ function restoration:Init()
 		"man", --Undercover
 		"peta", --Goat Sim Day 1
 		"jolly", --aftershock		
+		"branchbank", --Bank heist
+		"firestarter_3", --firestarter day 3		
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn",
@@ -154,6 +156,7 @@ function restoration:Init()
 		"man_res", --Undercover resmod edit		
 		"spa_CD",		
 		"wwh_CD",		
+		"firestarter_3_res", --firestarter day 3, res edit		
 		"lvl_friday" --Crashing Capitol	
 	}
 	--For levels that have aggressive spawns that are right on top of the player at all times

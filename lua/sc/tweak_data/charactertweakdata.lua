@@ -1697,7 +1697,6 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.can_be_tased = true
 	self.hector_boss_no_armor.always_drop = true
 	self.hector_boss_no_armor.heal_cooldown = 2.5
-	self.hector_boss_no_armor.die_sound_event = "l2n_x01a_any_3p"
 	table.insert(self._enemy_list, "hector_boss_no_armor")
 end
 
@@ -2492,7 +2491,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
 	if is_reaper or is_federales then
-		self.phalanx_minion.custom_voicework = "tswat_ru"
+		self.phalanx_minion.custom_voicework = "tshield_ru"
 	else
 		self.phalanx_minion.custom_voicework = "tsniper"
 	end		

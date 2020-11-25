@@ -2705,7 +2705,7 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 							my_data.shield_knock_cooldown = data.t + shield_knock_cooldown
 									
 							if data.unit:base()._tweak_table == "phalanx_minion" or data.unit:base()._tweak_table == "phalanx_minion_assault" then
-								data.unit:sound():play("hos_shield_indication_sound_terminator_style", nil, true)
+								data.unit:sound():say("use_gas", true, nil, true)
 							else
 								data.unit:sound():play("shield_identification", nil, true)
 							end

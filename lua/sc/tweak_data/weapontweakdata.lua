@@ -1007,7 +1007,6 @@ function WeaponTweakData:_init_data_mac11_npc()
 	self.mac11_npc.CLIP_AMMO_MAX = 20
 	self.mac11_npc.NR_CLIPS_MAX = 5
 	self.mac11_npc.auto.fire_rate = 0.06
-	self.mac11_npc.hold = "pistol"
 	self.mac11_npc.alert_size = 2800
 	self.mac11_npc.hold = {"uzi", "pistol"}
 	self.mac11_npc.suppression = 2.8

@@ -32,6 +32,7 @@
 	
 	<texture path="units/pd2_mod_nypd/characters/ene_nypd_shield/taser_body_df" />	
 	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df"/>
+	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm"/>
 	
 	<!--0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55… AAARGH THE BELLWEATHER NOOOOOO-->
 	<object path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>

@@ -4475,15 +4475,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.benelli.stats_modifiers = nil
 	self.benelli.panic_suppression_chance = 0.05
-	self.benelli.timers = {
-		shotgun_reload_enter = 0.5333333333333333,
-		shotgun_reload_exit_empty = 0.4,
-		shotgun_reload_exit_not_empty = 0.4,
-		shotgun_reload_shell = 0.6,
-		shotgun_reload_first_shell_offset = 0.13333333333333333,
-		unequip = 0.85,
-		equip = 0.85
-	}
 
 	--Street Sweeper
 	self.striker.rays = 9

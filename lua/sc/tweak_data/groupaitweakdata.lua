@@ -14488,10 +14488,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 5 then
 		self.besiege.assault.groups = {
 			FBI_swats = {
-				0.2,
-				1,
+				0.1,
+				0.9,
 				1
 			},
+			--Only here just for the first few assaults, pull out ASAP
+			CS_swats = {
+				0.05,
+				0.05,
+				0
+			},		
+			CS_heavys = {
+				0.05,
+				0.05,
+				0
+			},			
 			FBI_heavys = {
 				0.06,
 				0.3,
@@ -14549,10 +14560,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 6 then
 		self.besiege.assault.groups = {
 			FBI_swats = {
-				0.2,
-				1,
+				0.1,
+				0.9,
 				1
 			},
+			--Only here just for the first few assaults, pull out ASAP
+			CS_swats = {
+				0.05,
+				0.05,
+				0
+			},		
+			CS_heavys = {
+				0.05,
+				0.05,
+				0
+			},	
 			FBI_heavys = {
 				0.06,
 				0.3,
@@ -15111,10 +15133,16 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.4
 			},			
 			FBI_stealth_b = {
-				0.25,
-				0.5,
+				0.15,
+				0.3,
 				1
-			}
+			},
+			--Show up for first few recons, slowly replaced
+			FBI_stealth_c = {
+				0.1,
+				0.2,
+				0
+			}		
 		}
 	end
 	self.besiege.recon.groups.single_spooc = {

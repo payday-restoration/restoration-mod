@@ -1687,7 +1687,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_support"] = "Overhaul Guide/Support",
 		["menu_support_help"] = "View the guide for Restoration Mod's Overhaul, get support, find crew mates.",
 		["menu_manual_header"] = "Placeholder Text",
-		["hud_instruct_mask_on_alpha"] = "Hold $BTN_USE_ITEM to put on your mask",
 		["hud_assault_alpha"] = "POLICE ASSAULT",
 		["hud_loot_secured_title"] = "LOOT SECURED!",
 		["debug_none"] = "OBJECTIVE",

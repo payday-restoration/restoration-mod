@@ -5359,6 +5359,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 		concealment = -1
 	}
 	self.parts.wpn_fps_ass_g3_b_sniper.adds = {}
+	self.parts.wpn_fps_ass_g3_b_sniper.override = {}
 	
 	--Just in case
 	self.parts.wpn_fps_ammo_type.supported = true

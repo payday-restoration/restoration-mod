@@ -229,7 +229,6 @@
 			<value_node value="levels/instances/unique/crojob/meth_lab/world/world"/>
 			<value_node value="levels/instances/unique/crojob/meth_lab/world_sounds"/>
 			<value_node value="levels/instances/unique/friend/painting_stack_burn/world/world"/>
-			<value_node value="levels/narratives/vlad/mallcrasher/world"/>
 			<value_node value="packages/job_bex"/>
 			<value_node value="levels/instances/unique/des/des_chest/world"/>
 			<value_node value="levels/narratives/vlad/fex/backdrop/backdrop"/>
@@ -240,7 +239,7 @@
 			<value_node value="levels/instances/unique/fex/fex_masked_guards/world"/>
 			<value_node value="levels/instances/unique/mad/mad_gas_intake/world/world"/>
 			<value_node value="levels/narratives/e_framing_frame/stage_2/world/world"/>
-			<value_node value="packages/jolly"/>
+			<value_node value="packages/job_short2_stage1"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">

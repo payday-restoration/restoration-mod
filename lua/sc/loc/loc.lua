@@ -2217,7 +2217,100 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 
 		["ch_watchdogs_d1_heavy_wpn1_hl"] = "HEAVY ARMOR, AND HEAVIER WEAPONS",
-		["ch_watchdogs_d1_heavy_wpn1"] = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge."
+		["ch_watchdogs_d1_heavy_wpn1"] = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge.",
+		
+		-- ///Stuff ripped from the various locale files we had ///
+		
+		--Halloween Dozer Sword
+		["bm_melee_halloween_sword"] = "Headless Bulldozer's Sword",
+		["menu_l_global_value_halloween_sword"] = "This is a Halloween 2013 item!",
+		
+		--S&W .500
+		["bm_w_shatters_fury"] = "Phoenix .500",
+		
+		["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Shatter Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Hathor Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Firebird Barrel",
+		
+		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Ergo Grip",
+		
+		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
+
+		["menu_l_global_value_shatters_fury"] = "This is a VERITAS item!",
+		
+		--MK-23
+		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
+		["bm_w_socom"] = "Anubis .45",
+		["bm_w_x_socom"] = "Akimbo Anubis .45's",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra Combined Module",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Turn it on/off by pressing $BTN_GADGET.",
+
+		--Ranted NMH
+		["heist_no_mercy_ranted_name"] = "No Mercy",
+		["heist_no_mercy_ranted_brief"] = "We are hitting up the Mercy Hospital in a heist for blood. The source is carrying some kind of rare virus and we need to get it out of him. Let nothing stop us as the paycheck is a hefty one. Spilling some blood for this kind of cash is not the end of the world.",
+
+		["heist_nmh_res_name"] = "Mercy Hospital",
+		["heist_nmh_res_brief"] = "Our client needs a blood sample from a patient being kept in the isolation ward of Mercy Hospital. You gotta go in there, take out the surveillance, subdue the civilians and get me into the patient database so I can ID the guy. With the security in this place, it should be a nice clean job. I'll get you out via the roof when you're done. This job is a little shady, brokered through a third part, got some some serious shadow-company military industrial vibes, but worth the risk. The payday is something we're gonna need in the future, plus a nice cash bonus.",
+		
+		["heist_nmh_new"] = "Draw and analyze patient's blood",
+		["heist_nmh_new_desc"] = "You gotta find a centrifuge to validate the blood samples.",
+		
+		["heist_nmh_new2"] = "Call the elevator",
+		["heist_nmh_new2_desc"] = "Press the button and wait for the elevator",
+		
+		["heist_nmh_new3"] = "Call the elevator",
+		["heist_nmh_new3_desc"] = "Press the button and wait for the elevator",	
+		
+		--OICW--
+		["bm_w_osipr"] = "SABR",
+		["bm_w_osipr_gl"] = "SABR Grenade Launcher",
+		
+		--GO Bank remastered
+		["menu_nh_mod_gobank_v2"] = "GO Bank Remastered",
+		
+		["heist_gobank_v2_name"] = "GO Bank Remastered",
+		["heist_gobank_v2_brief"] = "This is a classic bank job. Break the vault, empty the deposit boxes and get the loot out. Simple. Bain's intel says this branch has the lowest hit-rate in the country. It's time to change that.\n\n» Search the environment for keycards. Two are needed for the vault\n» Failing that, use a drill on the vault\n» Crack open the deposit boxes\n» Assemble the skyhook\n» Get the money out",
+		
+		["heist_roberts_v2_name"] = "Robert's Bank",
+		["heist_roberts_v2_brief"] = "We got a bank here. Not a big branch but I've learned the vault is temporarily holding stacks of cash in transit. Foreign exchange notes.\n\nAnyway, you know how to do it - your way. Sneak in silent, or unleash hell. Either way, I got a little idea for how to lift the money out of there. You'll see what I mean. I think you'll like it.",
+
+		["csgo_plane_timer_text"] = "Wait for the plane &&TIMER",
+		["csgo_plane_timer_desc"] = "Wait for the plane &&TIMER",
+		
+		["hud_equipment_pickup_spraycan"] = "Press $BTN_INTERACT to pickup Spraycan",
+		["hud_action_spraypaint"] = "Press $BTN_INTERACT to Spraypaint",
+		["hud_action_spraypaint_none"] = "Spraycan Required",
+		["spraycan_obtained"] = "Spraycan Obtained",
+		["hud_equipment_obtained_spraycan"] = "Spraycan Obtained",
+		
+		["trophy_csgo01"] = "Graffiti Box",
+		["trophy_csgo01_desc"] = "And you didnt even have to buy this one",
+		["trophy_csgo01_objective"] = "Find spraypaint and spray graffiti in the vault on GO Bank Remastered.",
+
+		["END"] = "END",	
+		
+		--Whurr Heat Street Edit
+		["heist_heat_street_new_name"] = "Heat Street True Classic",
+		["heist_heat_street_new_brief"] = "Someone once said there is no such thing as a sure thing, but this job looks easy: get in, get the briefcase, get out. Your trusted wheelman Matt will be waiting for you in the alley and as long as you get to the van there is no way you can fail. Is there?",
+		["heist_street_new_name"] = "Heat Street: The Heist",
+		["heist_street_new_brief"] = "Someone once said there is no such thing as a sure thing, but this job looks easy: get in, get the briefcase, get out. Your trusted wheelman Matt will be waiting for you in the alley and as long as you get to the van there is no way you can fail. Is there?",
+
+		--Heat Street, Skirmish edition
+		["heist_skm_heat_street_name"] = "Uptown - Inkwell Industrial",
+		["heist_skm_heat_street_brief"] = "The kerels recently interrogated a prisoner that claims to have seen the face of Bain and can identify him. While we know it isn't true, the kerels don't, and neither do our rivals, so we're going to use the situation to gain some cash. Intercept the chop while they're transferring him to witness protection, near the old factory storage yard where that dumkop Matt crashed his car while trying to get away from us.",
+		["heist_skm_street_name"] = "Skirmish: Uptown - Inkwell Industrial",
+		["heist_skm_street_brief"] = "The kerels recently interrogated a prisoner that claims to have seen the face of Bain and can identify him. While we know it isn't true, the kerels don't, and neither do our rivals, so we're going to use the situation to gain some cash. Intercept the chop while they're transferring him to witness protection, near the old factory storage yard where that dumkop Matt crashed his car while trying to get away from us.",	
+
+		--Xmas Hoxout and Breaking Feds
+		["heist_xmn_hox"] = "Hoxton Breakout Xmas",
+		["heist_xmn_hox1"] = "The Breakout Xmas",
+		["heist_xmn_hox_1_brief"] = "The Dentist got Hoxton a re-trial. Uh, not you, Hox - I mean Old... Look, we'll sort out names later. The trial will be quick. With his record, he ain't gonna walk, but that's not the point. The point is he's moving, and we can hit him in transit. We're going to grab him right after the hearing. A nice little screw you to the US justice system.$NL;$NL;The plan is as loud as it gets: we blast a wall in the courthouse, grab Hox and get him the hell out.$NL;$NL;Area's locked down for blocks around. They'll be expecting trouble. Have your guns ready and pack a lot of ammo.",
+		["heist_xmn_hox2"] = "The Search Xmas",
+		["heist_xmn_hox_2_brief"] = "Well, lads, thanks for breakin' me out. But I shouldn't have been there to begin with. Someone set me up. I'm sure of it. The Feds had too much on me. Way more than those mingebag wankers could dig up. Someone ratted. Someone fucked me. And I'm gonna find out who.$NL;$NL;Now, it ain't gonna be easy. No fannying about around the edges, right? No shadowy deals or contacts, or that bollocks. We're going to the source. The biggest FBI nest. Gonna find out who screwed me.",
+		["heist_xmn_hox_brief"] = "The Dentist got Hoxton a re-trial. We're going to grab him right after the hearing. The plan is as loud as it gets: we blow up a wall, grab Hoxton and get him the hell out.$NL;$NL;» Free Hoxton$NL;» Take Hoxton to the armored truck$NL;» Escort the armored truck with Hoxton in it$NL;» Escape with Hoxton.",
+		
+		["heist_xmn_tag_name"] = "Breakin' Feds Xmas"
 	})
 
 	local job = Global.level_data and Global.level_data.level_id

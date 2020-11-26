@@ -1,6 +1,0 @@
-{
-    "bm_w_socom" : "Anubis .45",
-    "bm_w_x_socom" : "Akimbo Anubis .45's",
-    "bm_wp_wpn_fps_upg_fl_pis_socomlam" : "Ra Combined Module",
-	"bm_wp_wpn_fps_upg_fl_pis_socomlam_desc" : "Turn it on/off by pressing $BTN_GADGET."
-}

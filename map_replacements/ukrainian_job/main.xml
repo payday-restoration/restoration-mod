@@ -1,5 +1,4 @@
 <table name="ukrainian_job">
-	<Localization default="english.txt" directory="loc"/>
 	<level ai_group_type="america" brief_id="heist_ukrainian_job_briefing" briefing_assets_gui="@IDbf70ce3b3bc4ae52@" briefing_dialog="Play_pln_ukranian_stage1_brief" cube="cube_apply_heist_bank" ghost_bonus="0.05" group_ai_preset="small_urban" id="ukrainian_job_res" intro_event="Play_pln_ukranian_stage1_intro_a" max_bags="16" music="heist" name_id="heist_ukrainian_job_hl">
 		<add file="levels/ukrainian_job_res/add.xml"/>
 		<assets/>

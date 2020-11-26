@@ -2,7 +2,6 @@
 	<AddFiles directory="assets">
 		<texture load="true" path="guis/textures/street_icon"/>
 	</AddFiles>
-	<Localization default="english.txt" directory="loc"/>
 	<level ai_group_type="nypd" brief_id="heist_run_briefing" briefing_dialog="Play_pln_run_brf" cube="cube_apply_heist_street" id="run_res" intro_event="Play_pln_run_intro" max_bags="0" music="heist" name_id="heist_run_hl">
 		<add file="levels/run_res/add.xml"/>
 		<assets>

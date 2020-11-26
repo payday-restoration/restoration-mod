@@ -1,6 +1,0 @@
-{
-	"heist_skm_heat_street_name" : "Uptown - Inkwell Industrial",
-	"heist_skm_heat_street_brief" : "The kerels recently interrogated a prisoner that claims to have seen the face of Bain and can identify him. While we know it isn't true, the kerels don't, and neither do our rivals, so we're going to use the situation to gain some cash. Intercept the chop while they're transferring him to witness protection, near the old factory storage yard where that dumkop Matt crashed his car while trying to get away from us.",
-	"heist_skm_street_name" : "Skirmish: Uptown - Inkwell Industrial",
-	"heist_skm_street_brief" : "The kerels recently interrogated a prisoner that claims to have seen the face of Bain and can identify him. While we know it isn't true, the kerels don't, and neither do our rivals, so we're going to use the situation to gain some cash. Intercept the chop while they're transferring him to witness protection, near the old factory storage yard where that dumkop Matt crashed his car while trying to get away from us."
-}

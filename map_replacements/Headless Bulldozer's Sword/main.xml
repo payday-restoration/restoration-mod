@@ -1,7 +1,4 @@
 <table name="halloween_sword">
-    <Localization directory="Localization" default="english.txt">
-    </Localization>
-    
     <GlobalValue id="halloween_sword" color="Color(1, 0.5, 0)"/>
 
       

@@ -1,43 +1,88 @@
-<materials version="3" group="ene_akan_fbi_heavy_g36">
+<materials version="3" group="ene_bravo_shotgun">
 	<material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
-		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm" />
-		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df" />
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
 	</material>
 	<material name="mtr_head_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
 		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm" mip="1"/>
 		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+	<material name="mtr_head_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+	
+	<material name="mtr_arms" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_01_nm"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/head_01_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+	<material name="mtr_arms_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_01_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/head_01_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+	<material name="mtr_arms_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/head_01_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/head_01_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
 	</material>
 
-	<material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true"  version="2">
+	<material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
 		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
 		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_shotgun_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
 	</material>
 	<material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
 		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm" mip="1"/>
 		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_shotgun_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
 	</material>
-
-	<material name="mtr_helmet_lod0" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
-		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_nm" />
-		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_df" />
+	<material name="mtr_body_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_shotgun_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
 	
-	<material name="mtr_helmet_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+	
+	<material name="mtr_hat" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_nm" />
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_df" />
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+	<material name="mtr_hat_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
 		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_nm" mip="1"/>
 		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
-        <variable value="0" type="scalar" name="contour_opacity"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+	<material name="mtr_hat_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
 	</material>
 
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE:TAKE_FOG" version="2">
+        <variable value="0 1 0.66999995708466" type="vector3" name="fresnel_settings"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
+        <opacity_texture file="units/pd2_dlc_infamy/masks/msk_aviator/msk_aviator_glass_op"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture" />
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>                
+	</material>		
+	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

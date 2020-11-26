@@ -428,6 +428,7 @@
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<option type="bool" default_value="true" name="Holiday"/>
 				<option type="bool" default_value="false" name="ClassicMovies"/>
+				<option type="bool" default_value="false" name="RestoreHitFlash"/>
 				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
 				<!-- <option type="bool" default_value="true" hidden="true" name="RaidLockPicking"/> -->
 				<option type="bool" default_value="true" name="QuietRain"/>

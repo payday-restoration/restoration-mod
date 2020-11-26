@@ -1001,15 +1001,11 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.custom_voicework = nil
 	self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
 	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
-	if is_reaper or is_federales then
+	if is_federales then
 		self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
 		self.heavy_swat_sniper.speech_prefix_count = 4
-	else
-		self.heavy_swat_sniper.speech_prefix_p1 = "hek"
-		self.heavy_swat_sniper.speech_prefix_p2 = nil
-		self.heavy_swat_sniper.speech_prefix_count = nil
-	end			
+	end	
 	if is_reaper or is_federales then
 		self.heavy_swat_sniper.custom_voicework = "tswat_ru"
 	else
@@ -1021,17 +1017,26 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	
 	--Weekend Snipers
 	self.weekend_dmr = deep_clone(self.heavy_swat_sniper)	
-	if is_reaper or is_federales then
+	if is_federales then
+		self.weekend_dmr.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.weekend_dmr.speech_prefix_p2 = self._speech_prefix_p2
+		self.weekend_dmr.speech_prefix_count = 4
+	else
+		self.weekend_dmr.speech_prefix_p1 = "cum"
+		self.weekend_dmr.speech_prefix_p2 = nil
+		self.weekend_dmr.speech_prefix_count = nil
+	end	
+	if is_reaper then
 		self.weekend_dmr.custom_voicework = "tswat_ru"
 	elseif is_murky then
 		self.weekend_dmr.custom_voicework = "bravo_murky_elite"	
+	elseif is_federales then
+		self.weekend_dmr.custom_voicework = nil
 	else
 		self.weekend_dmr.custom_voicework = "bravo_elite"
 	end	
 	self.weekend_dmr.HEALTH_INIT = 11.25
-	self.weekend_dmr.headshot_dmg_mul = 4.25
-	self.weekend_dmr.speech_prefix_p1 = "uwu"
-	self.weekend_dmr.speech_prefix_count = nil    
+	self.weekend_dmr.headshot_dmg_mul = 4.25  
 	self.weekend_dmr.heal_cooldown = 15
 	self.weekend_dmr.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_dmr")
@@ -1256,17 +1261,26 @@ function CharacterTweakData:_init_city_swat(presets)
 	
 	--Weekend
 	self.weekend = deep_clone(self.city_swat)
-	if is_reaper or is_federales then
+	if is_reaper then
 		self.weekend.custom_voicework = "tswat_ru"
 	elseif is_murky then
 		self.weekend.custom_voicework = "bravo_murky"	
+	elseif is_federales then
+		self.weekend_dmr.custom_voicework = nil
 	else
 		self.weekend.custom_voicework = "bravo"
 	end	
 	self.weekend.HEALTH_INIT = 18.75
 	self.weekend.headshot_dmg_mul = 3.75		
-	self.weekend.speech_prefix_p1 = "uwu"
-	self.weekend.speech_prefix_count = nil 
+	if is_federales then
+		self.weekend.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.weekend.speech_prefix_p2 = self._speech_prefix_p2
+		self.weekend.speech_prefix_count = 4
+	else
+		self.weekend.speech_prefix_p1 = "cum"
+		self.weekend.speech_prefix_p2 = nil
+		self.weekend.speech_prefix_count = nil
+	end	
 	self.weekend.heal_cooldown = 5
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo
@@ -1274,9 +1288,15 @@ function CharacterTweakData:_init_city_swat(presets)
 	
 	self.city_swat_titan = deep_clone(self.city_swat)
 	self.city_swat_titan.can_slide_on_suppress = true
-	self.city_swat_titan.speech_prefix_p1 = "are you team cum pisser"
-	self.city_swat_titan.speech_prefix_p2 = "or team poop shitter"
-	self.city_swat_titan.speech_prefix_count = nil		
+	if is_federales then
+		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
+		self.city_swat_titan.speech_prefix_count = 4
+	else
+	    self.city_swat_titan.speech_prefix_p1 = "are you team cum pisser"
+	    self.city_swat_titan.speech_prefix_p2 = "or team poop shitter"
+	    self.city_swat_titan.speech_prefix_count = nil	
+	end		
 	if is_reaper or is_federales then
 		self.city_swat_titan.custom_voicework = "tswat_ru"
 	else
@@ -1307,17 +1327,26 @@ function CharacterTweakData:_init_city_swat(presets)
 	
 	--Weekend LMG
 	self.weekend_lmg = deep_clone(self.city_swat_titan)		
-	if is_reaper or is_federales then
+	if is_reaper then
 		self.weekend_lmg.custom_voicework = "tswat_ru"
 	elseif is_murky then
 		self.weekend_lmg.custom_voicework = "bravo_murky_elite"	
+	elseif is_federales then
+		self.weekend_lmg.custom_voicework = nil
 	else
 		self.weekend_lmg.custom_voicework = "bravo_elite"
+	end		
+	if is_federales then
+		self.weekend_lmg.speech_prefix_p1 = self._prefix_data_p1.swat()
+		self.weekend_lmg.speech_prefix_p2 = self._speech_prefix_p2
+		self.weekend_lmg.speech_prefix_count = 4
+	else
+		self.weekend_lmg.speech_prefix_p1 = "cum"
+		self.weekend_lmg.speech_prefix_p2 = nil
+		self.weekend_lmg.speech_prefix_count = nil
 	end	
 	self.weekend_lmg.HEALTH_INIT = 28.125
 	self.weekend_lmg.headshot_dmg_mul = 3.75		
-	self.weekend_lmg.speech_prefix_p1 = "uwu"
-	self.weekend_lmg.speech_prefix_count = nil 
 	self.weekend_lmg.heal_cooldown = 7.5
 	self.weekend_lmg.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_lmg")
@@ -15506,7 +15535,11 @@ function CharacterTweakData:character_map()
 				"ene_bravo_dmr_murky",
 				"ene_bravo_lmg_murky",
 				"ene_bravo_rifle_murky",
-				"ene_bravo_shotgun_murky"
+				"ene_bravo_shotgun_murky",
+				"ene_bravo_dmr_mex",
+				"ene_bravo_lmg_mex",
+				"ene_bravo_rifle_mex",
+				"ene_bravo_shotgun_mex"
 			}
 		},
 		dave = {

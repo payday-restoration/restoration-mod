@@ -14445,7 +14445,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			},		
 			CS_heavys = {
 				0.05,
-				0,
+				0.125,
 				0
 			},
 			FBI_swats = {
@@ -14455,7 +14455,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			},
 			FBI_heavys = {
 				0,
-				0.25,
+				0.125,
 				0.5
 			},
 			FBI_shields = {
@@ -15120,7 +15120,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.25
 			}			
 		}
-	else
+	elseif difficulty_index == 5 then
 		self.besiege.recon.groups = {
 			FBI_stealth_a = {
 				0.3,
@@ -15142,6 +15142,48 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.1,
 				0.2,
 				0
+			}		
+		}	
+	elseif difficulty_index == 6 then
+		self.besiege.recon.groups = {
+			FBI_stealth_a = {
+				0.3,
+				0.6,
+				0.6
+			},
+			FBI_stealth_a_boom = {
+				0.2,
+				0.4,
+				0.4
+			},			
+			FBI_stealth_b = {
+				0.15,
+				0.3,
+				1
+			},
+			--Show up for first few recons, slowly replaced
+			FBI_stealth_c = {
+				0.1,
+				0.2,
+				0
+			}		
+		}		
+	else
+		self.besiege.recon.groups = {
+			FBI_stealth_a = {
+				0.3,
+				0.6,
+				0.6
+			},
+			FBI_stealth_a_boom = {
+				0.2,
+				0.4,
+				0.4
+			},			
+			FBI_stealth_b = {
+				0.25,
+				0.5,
+				1
 			}		
 		}
 	end

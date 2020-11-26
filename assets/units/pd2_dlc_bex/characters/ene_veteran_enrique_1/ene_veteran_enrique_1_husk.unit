@@ -18,7 +18,7 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="HuskCopDamage" >
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_hat" />
+			<var name="_head_gear_object" value="g_head_lod1" />
 			<var name="_head_gear" value="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>

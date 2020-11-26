@@ -510,7 +510,7 @@ function CharacterTweakData:_init_fbi(presets)
 		end
 	}	
 	self.fbi_vet.static_dodge_preset = true
-	if is_reaper then
+	if is_reaper or is_federales then
 		self.fbi_vet.speech_prefix_p1 = self._prefix_data_p1.swat()
 		self.fbi_vet.speech_prefix_p2 = self._speech_prefix_p2
 		self.fbi_vet.speech_prefix_count = 4

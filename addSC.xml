@@ -1471,6 +1471,15 @@
 	<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2" load="true" force="true"/>
 	<unit path="units/payday2/characters/ene_sniper_2/ene_sniper_2_husk" load="true" force="true"/>			
 
+	<!-- GenSec SNIPER -->
+	<unit path="units/payday2/characters/ene_sniper_3/ene_sniper_3" load="true" />
+	<unit path="units/payday2/characters/ene_sniper_3/ene_sniper_3_husk" load="true" />
+	<model  path="units/payday2/characters/ene_sniper_3/ene_sniper_3" />	
+	<object path="units/payday2/characters/ene_sniper_3/ene_sniper_3" />	
+	<material_config path="units/payday2/characters/ene_sniper_3/ene_sniper_3" />	
+	<material_config path="units/payday2/characters/ene_sniper_3/ene_sniper_3_contour" />	
+	<cooked_physics  path="units/payday2/characters/ene_sniper_3/ene_sniper_3" />
+	
 	<!--National Guard-->
 	<!--never ever ;)-->
 	

@@ -9,13 +9,11 @@ Mods required for Restoration to function
 
 SuperBLT: https://superblt.znix.xyz
 
-Voiceline Framework: https://modworkshop.net/mydownloads.php?action=view_down&did=22076
-
-Beardlib: https://modworkshop.net/mydownloads.php?action=view_down&did=14924
+Beardlib: https://modworkshop.net/mod/14924
 
 Other Restoration Links
 
-Mod Workshop download (links to Gold branch): https://modworkshop.net/mydownloads.php?action=view_down&did=428
+Mod Workshop download (links to Gold branch): https://modworkshop.net/mod/428
 
 Restoration Mod discord: https://discord.gg/YmQkDyY
 

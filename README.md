@@ -83,7 +83,7 @@ Hoppip: Created the Mind Blown graze rework.
 
 Baddy: Major asset contributions.
 
-Hoxi: for ungodly numbers of fixes and general code improvements. You the man!
+Hoxi: for ungodly numbers of fixes and general code improvements. Amazing work!
 
 Luffy: For improving the HUD/UI code and adding more HUD/UI options
 

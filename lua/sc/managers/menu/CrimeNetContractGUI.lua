@@ -544,7 +544,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		color = tweak_data.screen_colors.text,
 		x = 10
 	})
-	
+
 	self:make_fine_text(paygrade_title)
 	paygrade_title:set_top(math.round(potential_rewards_title:bottom() + 4))
 	self._potential_rewards_title = potential_rewards_title
@@ -555,10 +555,10 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		color = tweak_data.screen_colors.text,
 		x = 10
 	})
-	
+
 	self:make_fine_text(experience_title)
 	experience_title:set_top(math.round(paygrade_title:bottom()))
-	
+
 	local stage_cash_title = self._contract_panel:text({
 		font = font,
 		font_size = font_size,
@@ -566,10 +566,10 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		color = tweak_data.screen_colors.text,
 		x = 10
 	})
-	
+
 	self:make_fine_text(stage_cash_title)
 	stage_cash_title:set_top(math.round(experience_title:bottom()))
-	
+
 	local cash_title = self._contract_panel:text({
 		font = font,
 		font_size = font_size,
@@ -577,14 +577,14 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		color = tweak_data.screen_colors.text,
 		x = 10
 	})
-	
+
 	self:make_fine_text(cash_title)
 	cash_title:set_top(math.round(stage_cash_title:bottom()))
-	
+
 	local sx = math.max(paygrade_title:w(), experience_title:w())
 	sx = math.max(sx, stage_cash_title:w())
 	sx = math.max(sx, cash_title:w()) + 24
-	
+
 	local filled_star_rect = {
 		0,
 		32,
@@ -602,10 +602,10 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		32,
 		32
 	}
-	
+
 	local cy = paygrade_title:center_y()
 	local texture, rect = tweak_data.hud_icons:get_icon_data("risk_death_squad")
-	
+
 	local level_data = {
 		texture = "guis/textures/pd2/mission_briefing/difficulty_icons",
 		texture_rect = filled_star_rect,
@@ -614,7 +614,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		color = tweak_data.screen_colors.text,
 		alpha = 0
 	}
-	
+
 	local risk_data = {
 		texture = texture,
 		texture_rect = rect,
@@ -623,7 +623,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		color = tweak_data.screen_colors.text,
 		alpha = 0
 	}
-	
+
 	local max_stars_text = self._contract_panel:text({
 		name = "max_stars_text",
 		w = 100,
@@ -636,9 +636,9 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		font_size = tweak_data.menu.pd2_small_font_size,
 		text = managers.localization:to_upper_text("menu_cn_max_jc")
 	})
-	
+
 	self:make_fine_text(max_stars_text)
-	
+
 	for i = 1, 13 do
 		local is_risk = job_stars < i
 		local num_risk = math.max(i - job_stars - 1, 0)
@@ -694,7 +694,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	stage_add_cash:set_x(math.round(stage_cash:right()))
 	stage_add_cash:set_center_y(math.round(cy))
 	cy = cash_title:center_y()
-	
+
 	local job_cash = self._contract_panel:text({
 		name = "job_cash",
 		font = font,
@@ -702,11 +702,11 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		text = managers.experience:cash_string(0),
 		color = tweak_data.screen_colors.text
 	})
-	
+
 	self:make_fine_text(job_cash)
 	job_cash:set_x(sx)
 	job_cash:set_center_y(math.round(cy))
-	
+
 	local add_cash = self._contract_panel:text({
 		name = "job_add_cash",
 		font = font,
@@ -714,7 +714,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		text = "",
 		color = risk_color
 	})
-	
+
 	add_cash:set_text(" +" .. managers.experience:cash_string(math.round(0)))
 	self:make_fine_text(add_cash)
 	add_cash:set_x(math.round(job_cash:right()))
@@ -1870,27 +1870,27 @@ function CrimeNetContractGui:set_all(t, dt)
 	self:_update_xp_appendices()
 
 	local stage_cash = stage_risk_value
-		local gui_stage_add_cash = gui_panel:child("stage_add_cash")
-		gui_stage_add_cash:set_text(" +" .. num_stages_string .. managers.experience:cash_string(stage_cash))
-		self:make_fine_text(gui_stage_add_cash)
-		local job_cash = job_risk_value
-		local gui_job_add_cash = gui_panel:child("job_add_cash")
-		gui_job_add_cash:set_text(" +" .. managers.experience:cash_string(job_cash))
-		self:make_fine_text(gui_job_add_cash)
-		local max_num_stars = managers.job:get_max_jc_for_player() / 10
-		local max_stars_text = gui_panel:child("max_stars_text")
-		for i = 1, 13 do
-			local star = gui_panel:child("star" .. tostring(i))
-			star:set_alpha(1)
-			star:set_color(job_stars < i and tweak_data.screen_colors.risk or Color.white)
-			star:set_visible(i <= job_stars + difficulty_stars)
-			if i == max_num_stars then
-				max_stars_text:set_left(star:right() + 2)
-				max_stars_text:set_center_y(star:center_y())
-				max_stars_text:set_y(math.round(max_stars_text:y()) + 1)
-				max_stars_text:set_visible(i ~= 10 and i == job_stars + difficulty_stars and difficulty_stars < 3)
-			end
+	local gui_stage_add_cash = gui_panel:child("stage_add_cash")
+	gui_stage_add_cash:set_text(" +" .. num_stages_string .. managers.experience:cash_string(stage_cash))
+	self:make_fine_text(gui_stage_add_cash)
+	local job_cash = job_risk_value
+	local gui_job_add_cash = gui_panel:child("job_add_cash")
+	gui_job_add_cash:set_text(" +" .. managers.experience:cash_string(job_cash))
+	self:make_fine_text(gui_job_add_cash)
+	local max_num_stars = managers.job:get_max_jc_for_player() / 10
+	local max_stars_text = gui_panel:child("max_stars_text")
+	for i = 1, 13 do
+		local star = gui_panel:child("star" .. tostring(i))
+		star:set_alpha(1)
+		star:set_color(job_stars < i and tweak_data.screen_colors.risk or Color.white)
+		star:set_visible(i <= job_stars + difficulty_stars)
+		if i == max_num_stars then
+			max_stars_text:set_left(star:right() + 2)
+			max_stars_text:set_center_y(star:center_y())
+			max_stars_text:set_y(math.round(max_stars_text:y()) + 1)
+			max_stars_text:set_visible(i ~= 10 and i == job_stars + difficulty_stars and difficulty_stars < 3)
 		end
+	end
 
 	local risks = {
 		"risk_swat",
@@ -1957,17 +1957,19 @@ function CrimeNetContractGui:set_all(t, dt)
 	end
 
 	text_string = string.gsub(text_string, "##", "")
-	gui_panel:child("premium_text"):set_text(text_string)
-	gui_panel:child("premium_text"):clear_range_color(1, utf8.len(text_string))
+	if alive(gui_panel:child("premium_text")) then
+		gui_panel:child("premium_text"):set_text(text_string)
+		gui_panel:child("premium_text"):clear_range_color(1, utf8.len(text_string))
 
-	if #start_ci ~= #end_ci then
-		Application:error("CrimeNetContractGui: Not even amount of ##'s in skill description string!", #start_ci, #end_ci)
-	else
-		for i = 1, #start_ci do
-			gui_panel:child("premium_text"):set_range_color(start_ci[i], end_ci[i], i == 1 and not can_afford and tweak_data.screen_colors.pro_color or tweak_data.screen_colors.button_stage_2)
+		if #start_ci ~= #end_ci then
+			Application:error("CrimeNetContractGui: Not even amount of ##'s in skill description string!", #start_ci, #end_ci)
+		else
+			for i = 1, #start_ci do
+				gui_panel:child("premium_text"):set_range_color(start_ci[i], end_ci[i], i == 1 and not can_afford and tweak_data.screen_colors.pro_color or tweak_data.screen_colors.button_stage_2)
+			end
 		end
 	end
-	
+
 	if self._step == 1 then
 		self._step = self._step + 1
 	end

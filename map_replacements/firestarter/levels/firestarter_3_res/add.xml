@@ -623,4 +623,6 @@
 	<model path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 	<object path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
 	<sequence_manager path="units/world/props/red_diamond_room/big_red_security_door" unload="true"/>
+	<texture path="levels/mods/firestarter_3_res/cube_lights/101797"/>
+	<texture path="levels/mods/firestarter_3_res/cube_lights/101948"/>
 </table>

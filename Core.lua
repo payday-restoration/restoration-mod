@@ -123,8 +123,6 @@ function restoration:Init()
 		"election_day_2",
 		"brb",
 		"mus",
-		"hox_1",
-		"xmn_hox_1",
 		"run_res", --Whurr's Heat Street Edit
 		"bph",
 		"glace",
@@ -132,8 +130,6 @@ function restoration:Init()
 		"dinner",
 		"wwh",
 		"born",
-		"nmh",
-		"nmh_res", --Resmod edit of no mercy.
 		"flat",
 		"dah",
 		"framing_frame_3",
@@ -178,6 +174,10 @@ function restoration:Init()
 		"skm_mallcrasher",
 		"skm_arena",
 		"skm_bex",
+		"nmh",
+		"nmh_res", --Resmod edit of no mercy.
+		"hox_1",
+		"xmn_hox_1",
 		--Custom Heists below--
 		"thechase",
 		"skm_street",		
@@ -227,8 +227,8 @@ function restoration:Init()
 		"ukrainian_job", --uk joj
 		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne
-		"hox_1", --Hoxout D1
-		"xmn_hox_1" --Xmas edition
+		--"hox_1", --Hoxout D1
+		--"xmn_hox_1" --Xmas edition
 	}	
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below

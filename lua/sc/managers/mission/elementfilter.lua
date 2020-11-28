@@ -43,7 +43,14 @@ function ElementFilter:_check_difficulty()
 	end
 
 	return false
+	
+	if self._values.one_down and Global.game_settings.one_down then
+            return true
+        end
+	
 end
+
+	
 
 local job = Global.level_data and Global.level_data.level_id
 if job == "cage" then 

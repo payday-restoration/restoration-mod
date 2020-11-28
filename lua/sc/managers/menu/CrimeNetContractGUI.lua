@@ -589,6 +589,8 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		0,
 		32,
 		32,
+		32,
+		32,
 		32
 	}
 
@@ -596,8 +598,11 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		32,
 		32,
 		32,
+		32,
+		32,
 		32
 	}
+	
 	local cy = paygrade_title:center_y()
 	local texture, rect = tweak_data.hud_icons:get_icon_data("risk_death_squad")
 	
@@ -634,7 +639,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	
 	self:make_fine_text(max_stars_text)
 	
-	for i = 1, 10 do
+	for i = 1, 13 do
 		local is_risk = job_stars < i
 		local num_risk = math.max(i - job_stars - 1, 0)
 		local star_data = is_risk and risk_data or level_data
@@ -1874,7 +1879,7 @@ function CrimeNetContractGui:set_all(t, dt)
 		self:make_fine_text(gui_job_add_cash)
 		local max_num_stars = managers.job:get_max_jc_for_player() / 10
 		local max_stars_text = gui_panel:child("max_stars_text")
-		for i = 1, 10 do
+		for i = 1, 13 do
 			local star = gui_panel:child("star" .. tostring(i))
 			star:set_alpha(1)
 			star:set_color(job_stars < i and tweak_data.screen_colors.risk or Color.white)
@@ -1932,42 +1937,38 @@ function CrimeNetContractGui:set_all(t, dt)
 	for i, c in ipairs(text_dissected) do
 		if Idstring(c) == idsp then
 			local next_c = text_dissected[i + 1]
-
 			if next_c and Idstring(next_c) == idsp then
 				if first_ci then
 					table.insert(start_ci, i)
 				else
 					table.insert(end_ci, i)
 				end
-
 				first_ci = not first_ci
 			end
 		end
 	end
 
-	if #start_ci == #end_ci then
-		for i = 1, #start_ci, 1 do
+	if #start_ci ~= #end_ci then
+	else
+		for i = 1, #start_ci do
 			start_ci[i] = start_ci[i] - ((i - 1) * 4 + 1)
 			end_ci[i] = end_ci[i] - (i * 4 - 1)
 		end
 	end
 
 	text_string = string.gsub(text_string, "##", "")
+	gui_panel:child("premium_text"):set_text(text_string)
+	gui_panel:child("premium_text"):clear_range_color(1, utf8.len(text_string))
 
-	if alive(gui_panel:child("premium_text")) then
-		gui_panel:child("premium_text"):set_text(text_string)
-		gui_panel:child("premium_text"):clear_range_color(1, utf8.len(text_string))
-
-		if #start_ci ~= #end_ci then
-			Application:error("CrimeNetContractGui: Not even amount of ##'s in skill description string!", #start_ci, #end_ci)
-		else
-			for i = 1, #start_ci, 1 do
-				gui_panel:child("premium_text"):set_range_color(start_ci[i], end_ci[i], i == 1 and not can_afford and tweak_data.screen_colors.pro_color or tweak_data.screen_colors.button_stage_2)
-			end
+	if #start_ci ~= #end_ci then
+		Application:error("CrimeNetContractGui: Not even amount of ##'s in skill description string!", #start_ci, #end_ci)
+	else
+		for i = 1, #start_ci do
+			gui_panel:child("premium_text"):set_range_color(start_ci[i], end_ci[i], i == 1 and not can_afford and tweak_data.screen_colors.pro_color or tweak_data.screen_colors.button_stage_2)
 		end
 	end
-
-	if self._step == 2 then
+	
+	if self._step == 1 then
 		self._step = self._step + 1
 	end
 end

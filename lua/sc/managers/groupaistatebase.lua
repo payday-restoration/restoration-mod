@@ -1469,7 +1469,7 @@ end
 
 --this function has been repurposed. instead of overriding any previous value, this ADDS diff
 --this is set to 0.5 on loud, while other events increase it
---+0.05 on civilian kill (watch your fire!), +0.2 on assault end
+--+0.05 on civilian kill (watch your fire!), +0.3 on assault end
 --script value is used by the base game, we usually ignore it after the beginning of a level
 --thanks (again) to hoxi for helping out with this
 --perhaps modify these values at one point in crime spree? who knows
@@ -1488,7 +1488,7 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 
 			return
 		elseif not self._loud_diff_set and script_value > 0  then
-			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.2
+			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
 			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
 			--should fix armored transport and its jank mission scripts	(ovk why)
 			--also, add 0.1 here instead of setting so you cant bypass civ penalty on some heists

@@ -10295,6 +10295,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"charge",
 			"provide_coverfire",
+			"lonewolf",
 			"provide_support"
 		},
 		CS_swat_shotgun_flank = {
@@ -10304,6 +10305,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"hitnrun"
 		},
 		CS_swat_heavy_flank = {
@@ -10313,6 +10315,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		CS_shield_flank = {
@@ -10397,6 +10400,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"elite_ranged_fire",
+			"lonewolf",
 			"provide_support"
 		},
 		FBI_suit = {
@@ -10475,6 +10479,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		FBI_swat_shotgun_flank = {
@@ -10485,6 +10490,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover",
+			"lonewolf",
 			"hitnrun"
 		},
 		FBI_heavy_flank = {
@@ -10494,6 +10500,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		--mayhem tactics
@@ -10535,6 +10542,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		MH_swat_shotgun_flank = {
@@ -10546,6 +10554,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"aggressor",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		MH_heavy_flank = {
@@ -10556,6 +10565,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		MH_heavy_shotgun_flank = {
@@ -10565,6 +10575,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		--death wish tactics
@@ -10588,6 +10599,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"harass",
+			"lonewolf",
 			"shield_cover"
 		},
 		DW_heavy_flank = {
@@ -10599,6 +10611,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"harass",
+			"lonewolf",
 			"shield_cover"
 		},
 		FBI_shield_flank = {
@@ -10608,6 +10621,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield"
 		},
 		FBI_tank = { --set up to try and flank the player
@@ -10759,6 +10773,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"aggressor",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		ELITE_swat_shotgun_flank = {
@@ -10771,6 +10786,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"aggressor",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		ELITE_heavy_flank = { 
@@ -10782,6 +10798,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		--Vanilla shit below
@@ -10799,6 +10816,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
+			"lonewolf",
 			"hitnrun"
 		},
 		swat_rifle = {

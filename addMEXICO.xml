@@ -4,6 +4,19 @@
 	<texture path="units/pd2_mod_sharks/characters/shared_textures/fbi_heads_atlas_nm" force="false"/>
 	<texture path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_df" force="false"/>
 	<texture path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_nm" force="false"/>
+	
+	<!--NPC M60-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false" load="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_df" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_nm" force="false"/>	
+	
+	<!--bravo M60-->
+	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"  load="true"/>
 
 	
 	<!--Mexico shared_textures crap-->

@@ -35,13 +35,22 @@ local group_cooldowns = {
 	Cap_Spring = 2700,
 	HVH_Boss = 2700,
 	Cap_Summers = 2700,
-	Cap_Autumn = 900,
+	Cap_Autumn = 1350,
 	CS_tanks = 45,
 	FBI_tanks = 45,
 	BLACK_tanks = 45,
 	SKULL_tanks = 45,
 	TIT_tanks = 45
 }
+
+local group_min_diff = {
+	Cap_Winters = 0.5,
+	Cap_Spring = 0.5,
+	HVH_Boss = 0.5,
+	Cap_Summers = 0.5,
+	Cap_autumn = 0.5
+}
+
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 if Global.game_settings and Global.game_settings.one_down then
@@ -50,19 +59,6 @@ if Global.game_settings and Global.game_settings.one_down then
 		Cap_Spring = 1800,
 		HVH_Boss = 1800,
 		Cap_Summers = 1800,
-		Cap_Autumn = 600,
-		CS_tanks = 45,
-		FBI_tanks = 45,
-		BLACK_tanks = 45,
-		SKULL_tanks = 45,
-		TIT_tanks = 45
-	}
-else
-	group_cooldowns = {
-		Cap_Winters = 2700,
-		Cap_Spring = 2700,
-		HVH_Boss = 2700,
-		Cap_Summers = 2700,
 		Cap_Autumn = 900,
 		CS_tanks = 45,
 		FBI_tanks = 45,
@@ -83,13 +79,15 @@ function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types
 	for group_type, cat_weights in pairs(allowed_groups) do
 		local previoustimestamp = group_timestamps[group_type]
 		local cooldown = group_cooldowns[group_type] or default_cooldown
-			if previoustimestamp == nil or (currenttime - previoustimestamp) > cooldown then
-			-- Cooldown has expired for this group type, copy the subtable reference to the new_allowed_groups table (the same
+		local cooldown_over = previoustimestamp == nil or (currenttime - previoustimestamp) > cooldown
+		local valid_diff = self._difficulty_value > (group_min_diff[group_type] or 0)
+		if cooldown_over == true and valid_diff == true then
+			-- This group type if off cooldown and can spawn on this diff, copy the subtable reference to the new_allowed_groups table (the same
 			-- rule applies - do not modify the subtable or you'll be affecting global state, which will make debugging the cause
 			-- a nightmare)
 			new_allowed_groups[group_type] = cat_weights
-			end
 		end
+	end
 
 	-- Call the original function with the manipulated list
 	return _choose_best_groups_actual(self, best_groups, group, group_types, new_allowed_groups, weight, ...)
@@ -698,7 +696,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			self:_begin_regroup_task(force_regroup)
 			--add diff on assault end (game normally does this through mission scripts, we have to do it manually here)
 			--log("assault over!!!")
-			self:set_difficulty(nil, 0.166667)
+			self:set_difficulty(nil, 0.3)
 			return
 		end
 	end

@@ -5882,7 +5882,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	end
 	
 	--GenSec SWATs (rifle)
-	if difficulty_index <= 6 then
+	if difficulty_index <= 7 then
 		self.unit_categories.GS_swat_M4 = {
 			unit_types = {
 				america = {

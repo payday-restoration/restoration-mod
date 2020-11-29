@@ -247,14 +247,14 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 	}}
 	skirmish_data.assault.build_duration = 15
 	skirmish_data.assault.sustain_duration_min = {
-		120,
-		120,
-		120
+		999999,
+		999999,
+		999999
 	}
 	skirmish_data.assault.sustain_duration_max = {
-		120,
-		120,
-		120
+		999999,
+		999999,
+		999999
 	}
 	skirmish_data.assault.sustain_duration_balance_mul = {
 		1,
@@ -267,6 +267,17 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 		25,
 		25,
 		25
+	}
+	skirmish_data.assault.force_pool = {
+		1,
+		1,
+		1
+	}
+	skirmish_data.assault.force_pool_balance_mul = {
+		1,
+		1,
+		1,
+		1
 	}
 end
 

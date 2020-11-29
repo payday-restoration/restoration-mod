@@ -289,10 +289,10 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 		blend_mode = "add",
 		render_template = "VertexColorTexturedRadial",
 		texture_rect = {
-			64,
+			128,
 			0,
-			-64,
-			64
+			-128,
+			128
 		},
 		color = Color(1, 0, 1, 1),
 		w = radial_health_panel:w(),
@@ -305,10 +305,10 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 		blend_mode = "add",
 		render_template = "VertexColorTexturedRadial",
 		texture_rect = {
-			64,
+			128,
 			0,
-			-64,
-			64
+			-128,
+			128
 		},
 		color = Color(1, 0, 1, 1),
 		w = radial_health_panel:w(),
@@ -389,10 +389,10 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 			visible = false,
 			render_template = "VertexColorTexturedRadial",
 			texture_rect = {
-				64,
+				128,
 				0,
-				-64,
-				64
+				-128,
+				128
 			},
 			color = Color(1, 0, 0, 0),
 			w = radial_health_panel:w(),
@@ -405,10 +405,10 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 			visible = false,
 			render_template = "VertexColorTexturedRadial",
 			texture_rect = {
-				64,
+				128,
 				0,
-				-64,
-				64
+				-128,
+				128
 			},
 			color = Color(1, 0, 0, 0),
 			w = radial_health_panel:w(),
@@ -457,10 +457,10 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 		visible = false,
 		render_template = "VertexColorTexturedRadial",
 		texture_rect = {
-			64,
+			128,
 			0,
-			-64,
-			64
+			-128,
+			128
 		},
 		color = Color(1, 0, 0, 0),
 		w = radial_health_panel:w(),

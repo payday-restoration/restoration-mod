@@ -42,7 +42,7 @@ function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types
 		local previoustimestamp = group_timestamps[group_type]
 		local cooldown = self._tweak_data.group_cooldowns[group_type] or 0
 		local cooldown_over = previoustimestamp == nil or (currenttime - previoustimestamp) > cooldown
-		local valid_diff = (self._tweak_data.group_max_diff[group_type] or 1) > self._difficulty_value and self._difficulty_value > (self._tweak_data.group_min_diff[group_type] or 0)
+		local valid_diff = (self._tweak_data.group_max_diff[group_type] or 1) >= self._difficulty_value and self._difficulty_value > (self._tweak_data.group_min_diff[group_type] or 0)
 		if cooldown_over == true and valid_diff == true then
 			-- This group type if off cooldown and can spawn on this diff, copy the subtable reference to the new_allowed_groups table
 			-- rule applies - do not modify the subtable or you'll be affecting global state, which will make debugging the cause

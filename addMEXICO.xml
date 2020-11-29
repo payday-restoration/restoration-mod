@@ -48,7 +48,9 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op" force="false"/>	
 	<texture path="units/pd2_dlc_pex/characters/shared_textures/ene_office_cops_head_atlas_df" />	
 	<texture path="units/pd2_dlc_pex/characters/shared_textures/ene_office_cops_head_atlas_nm" />	
-		
+	<texture path="units/pd2_dlc_bex/characters/shared_textures/helmets_city_atlas_df" />
+	<texture path="units/pd2_dlc_bex/characters/shared_textures/mask_city_df" />	
+
 	<!--Taser-->
 	<object path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true"/>
 	<model path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" force="true"/>

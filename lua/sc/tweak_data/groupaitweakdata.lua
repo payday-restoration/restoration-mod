@@ -15322,6 +15322,47 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			1
 		}
 	}
+
+	self.besiege.group_cooldowns = {
+		Cap_Winters = 2700,
+		Cap_Spring = 2700,
+		HVH_Boss = 2700,
+		Cap_Summers = 2700,
+		Cap_Autumn = 1350,
+		CS_tanks = 45,
+		FBI_tanks = 45,
+		BLACK_tanks = 45,
+		SKULL_tanks = 45,
+		TIT_tanks = 45
+	}
+
+	if Global.game_settings and Global.game_settings.one_down then
+		self.besiege.group_cooldowns = {
+			Cap_Winters = 1800,
+			Cap_Spring = 1800,
+			HVH_Boss = 1800,
+			Cap_Summers = 1800,
+			Cap_Autumn = 900,
+			CS_tanks = 45,
+			FBI_tanks = 45,
+			BLACK_tanks = 45,
+			SKULL_tanks = 45,
+			TIT_tanks = 45
+		}
+	end
+
+	self.besiege.group_min_diff = {
+		Cap_Winters = 0.5,
+		Cap_Spring = 0.5,
+		HVH_Boss = 0.5,
+		Cap_Summers = 0.5,
+		Cap_autumn = 0.5
+	}
+
+	self.besiege.group_max_diff = {
+		--nothing yet
+	}
+
 	self.street = deep_clone(self.besiege)
 	self.phalanx.minions.min_count = 0
 	self.phalanx.minions.amount = 10

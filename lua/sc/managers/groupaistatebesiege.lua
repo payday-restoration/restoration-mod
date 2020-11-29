@@ -29,46 +29,8 @@ end]]--
 -- Tracks the cooldowns of each group type, will be populated by the GroupAIStateBesiege:_spawn_in_group() hook 
 local group_timestamps = {}
 
--- Example contents with haphazardly chosen cooldowns, add more group types and adjust as desired
-local group_cooldowns = {
-	Cap_Winters = 2700,
-	Cap_Spring = 2700,
-	HVH_Boss = 2700,
-	Cap_Summers = 2700,
-	Cap_Autumn = 1350,
-	CS_tanks = 45,
-	FBI_tanks = 45,
-	BLACK_tanks = 45,
-	SKULL_tanks = 45,
-	TIT_tanks = 45
-}
-
-local group_min_diff = {
-	Cap_Winters = 0.5,
-	Cap_Spring = 0.5,
-	HVH_Boss = 0.5,
-	Cap_Summers = 0.5,
-	Cap_autumn = 0.5
-}
-
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-if Global.game_settings and Global.game_settings.one_down then
-	group_cooldowns = {
-		Cap_Winters = 1800,
-		Cap_Spring = 1800,
-		HVH_Boss = 1800,
-		Cap_Summers = 1800,
-		Cap_Autumn = 900,
-		CS_tanks = 45,
-		FBI_tanks = 45,
-		BLACK_tanks = 45,
-		SKULL_tanks = 45,
-		TIT_tanks = 45
-	}
-end
--- Ditto, adjust as desired. Affects all groups not listed in group_cooldowns above
-local default_cooldown = 0
 
 local _choose_best_groups_actual = GroupAIStateBesiege._choose_best_groups
 function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types, allowed_groups, weight, ...)
@@ -78,11 +40,11 @@ function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types
 	-- tweak_data.group_ai.besiege.recon.groups instead
 	for group_type, cat_weights in pairs(allowed_groups) do
 		local previoustimestamp = group_timestamps[group_type]
-		local cooldown = group_cooldowns[group_type] or default_cooldown
+		local cooldown = self._tweak_data.besiege.group_cooldowns[group_type] or 0
 		local cooldown_over = previoustimestamp == nil or (currenttime - previoustimestamp) > cooldown
-		local valid_diff = self._difficulty_value > (group_min_diff[group_type] or 0)
+		local valid_diff = (self._tweak_data.besiege.group_max_diff[group_type] or 1) > self._difficulty_value and self._difficulty_value > (self._tweak_data.besiege.group_min_diff[group_type] or 0)
 		if cooldown_over == true and valid_diff == true then
-			-- This group type if off cooldown and can spawn on this diff, copy the subtable reference to the new_allowed_groups table (the same
+			-- This group type if off cooldown and can spawn on this diff, copy the subtable reference to the new_allowed_groups table
 			-- rule applies - do not modify the subtable or you'll be affecting global state, which will make debugging the cause
 			-- a nightmare)
 			new_allowed_groups[group_type] = cat_weights

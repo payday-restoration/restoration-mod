@@ -2769,16 +2769,19 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.baseballbat.expire_t = 1.2
 
 	--Throwing knives when?--
-	self.melee_weapons.cleaver.stats.min_damage = 3
-	self.melee_weapons.cleaver.stats.max_damage = 6.1
+	self.melee_weapons.cleaver.info_id = "bm_melee_cleaver_info"
+	self.melee_weapons.cleaver.anim_speed_mult = 1.25
+	self.melee_weapons.cleaver.stats.min_damage = 4.5
+	self.melee_weapons.cleaver.stats.max_damage = 9.1
 	self.melee_weapons.cleaver.stats.min_damage_effect = 0.8
 	self.melee_weapons.cleaver.stats.max_damage_effect = 0.9
-	self.melee_weapons.cleaver.stats.charge_time = 0.9
-	self.melee_weapons.cleaver.repeat_expire_t = 0.6
+	self.melee_weapons.cleaver.stats.charge_time = 0.7
+	self.melee_weapons.cleaver.repeat_expire_t = 0.5
 	self.melee_weapons.cleaver.stats.range = 185
 	self.melee_weapons.cleaver.stats.concealment = 27
 	self.melee_weapons.cleaver.melee_damage_delay = 0.1
-	self.melee_weapons.cleaver.expire_t = 1.1	
+	self.melee_weapons.cleaver.expire_t = 1.1
+	self.melee_weapons.cleaver.headshot_damage_multiplier = 0.5
 
 	--Because we didn't have enough fucking machetes--
 	self.melee_weapons.machete.stats.min_damage = 4.5
@@ -2904,16 +2907,19 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.shillelagh.expire_t = 1.2	
 
 	--Dragan's Meat...Cleaver--
-	self.melee_weapons.meat_cleaver.stats.min_damage = 4.5
-	self.melee_weapons.meat_cleaver.stats.max_damage = 9.1
+	self.melee_weapons.meat_cleaver.info_id = "bm_melee_cleaver_info"
+	self.melee_weapons.meat_cleaver.anim_speed_mult = 1.25
+	self.melee_weapons.meat_cleaver.stats.min_damage = 6.8
+	self.melee_weapons.meat_cleaver.stats.max_damage = 13.6
 	self.melee_weapons.meat_cleaver.stats.min_damage_effect = 0.8
 	self.melee_weapons.meat_cleaver.stats.max_damage_effect = 0.9
-	self.melee_weapons.meat_cleaver.stats.charge_time = 1.35
+	self.melee_weapons.meat_cleaver.stats.charge_time = 1.1
 	self.melee_weapons.meat_cleaver.stats.range = 190
-	self.melee_weapons.meat_cleaver.repeat_expire_t = 0.75
+	self.melee_weapons.meat_cleaver.repeat_expire_t = 0.6
 	self.melee_weapons.meat_cleaver.stats.concealment = 26
 	self.melee_weapons.meat_cleaver.melee_damage_delay = 0.1
-	self.melee_weapons.meat_cleaver.expire_t = 1.1	
+	self.melee_weapons.meat_cleaver.expire_t = 1.1
+	self.melee_weapons.meat_cleaver.headshot_damage_multiplier = 0.5
 
 	--MotherFUCKER--	
 	self.melee_weapons.fork.anim_global_param = "melee_stab"

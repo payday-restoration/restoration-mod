@@ -1136,15 +1136,17 @@ function CopDamage:damage_melee(attack_data)
 		end
 
 		if head then
-			managers.player:on_headshot_dealt(self._unit, attack_data)
 			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+			managers.player:on_headshot_dealt(self._unit, attack_data)
 		end
 	end
 
 	if head and not self._damage_reduction_multiplier then
 		if self._char_tweak.headshot_dmg_mul then
-			damage = damage * self._char_tweak.headshot_dmg_mul * headshot_multiplier
-			damage_effect = damage_effect * self._char_tweak.headshot_dmg_mul * headshot_multiplier
+			--Use math.max to cover edge cases (mostly Capt. Summers) where cleaver type weapons would deal *less* damage on a headshot than a bodyshot.
+			headshot_multiplier = math.max(self._char_tweak.headshot_dmg_mul * headshot_multiplier, 1)
+			damage = damage * headshot_multiplier
+			damage_effect = damage_effect * headshot_multiplier
 		else
 			damage = self._health * 10
 			damage_effect = self._health * 10

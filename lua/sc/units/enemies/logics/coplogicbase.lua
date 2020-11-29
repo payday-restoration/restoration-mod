@@ -1818,7 +1818,7 @@ function CopLogicBase.queue_task(internal_data, id, func, data, exec_t, asap)
 		qd_tasks[id] = true
 	else
 		internal_data.queued_tasks = {
-			[id] = true
+			id = true
 		}
 	end
 	

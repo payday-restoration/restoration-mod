@@ -517,8 +517,17 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0.12
 		},			
 		FBI_tanks = {
-			0.03,
-			0.105,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
 			0.12
 		},
 		BLACK_tanks = {
@@ -579,7 +588,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		},
 		CS_booms = {
 			0.14,
-			0.14,
+			1000.14,
 			0.14,
 			0.14,
 			0.14,

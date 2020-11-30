@@ -447,18 +447,18 @@ end
 function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	local assault_groups = {
 		GS_swats = {
+			0.9, --Unused
+			0.9, --Wave 1
+			0.9, --Wave 2
+			0.9, --...
 			0.9,
 			0.9,
 			0.9,
 			0.9,
 			0.9,
 			0.9,
-			0.9,
-			0.9,
-			0.9,
-			0.9,
-			0.9,
-			0.9
+			0.9, --"Wave 10" (Inactive, needs map edits)
+			0.9  --Scales ever closer to over time post wave 10.
 		},
 		FBI_heavys = {
 			0.39,
@@ -588,7 +588,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		},
 		CS_booms = {
 			0.14,
-			1000.14,
+			0.14,
 			0.14,
 			0.14,
 			0.14,

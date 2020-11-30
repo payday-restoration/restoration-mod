@@ -480,6 +480,7 @@
 	<Package id="packages/zombieassetsnew" file="addzombienew.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/secret_stash" file="secret_stash.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/rex_gold" file="rex_gold.xml" use_clbk="self:DebugLoadAssets"/>
+	<Package id="packages/sm_wish_sc_zombie" file="addzealzombies.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/custom_fonts" file="fonts.xml" use_clbk="self:LoadFonts"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>

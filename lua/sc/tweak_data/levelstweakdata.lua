@@ -410,10 +410,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.xmn_tag.load_screen = "guis/dlcs/xmn/textures/loading/job_tag_xmn_df"
 	
 	--///ZOMBIE LEVELS\\\--
-	self.haunted.package = {"packages/zombieassets", "packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-	self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-	self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-	self.hvh.package = {"packages/zombieassets", "packages/narr_hvh"}
+	self.haunted.package = {"packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+	self.nail.package = {"packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+	self.help.package = {"packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
+	self.hvh.package = {"packages/narr_hvh"}
 	
 	--[[
 	

@@ -51,22 +51,17 @@ function GameSetup:load_packages()
 
 			load_difficulty_package(diff_package)
         end
-        --Tested You can split the diffixulty with faction packages (Remove custom packages from levelstweakdata)
+    --Tested You can split the diffixulty with faction packages
+	elseif tweak_data.levels.ai_groups.zombie and Global.game_settings and Global.game_settings.difficulty == "sm_wish" then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_zombie" or "normal")
+
+		load_difficulty_package(diff_package)
 	else
-		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc" or "normal")
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty or "normal")
 
-        load_difficulty_package(diff_package)
-        -- Untested
-    -- elseif tweak_data.levels.ai_groups.america then
-	-- 	local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_america" or "normal")
-
-    --     load_difficulty_package(diff_package)
-    -- else
-    --     local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc" or "normal")
-
-	-- 	load_difficulty_package(diff_package)
+		load_difficulty_package(diff_package)
 	end
-
+    
 	local level_package = nil
 
 	if not Global.level_data or not Global.level_data.level_id then

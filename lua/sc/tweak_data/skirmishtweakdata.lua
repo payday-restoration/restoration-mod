@@ -237,53 +237,395 @@ end
 function SkirmishTweakData:_init_group_ai_data(tweak_data)
 	local skirmish_data = deep_clone(tweak_data.group_ai.besiege)
 	tweak_data.group_ai.skirmish = skirmish_data
+
+	self.required_kills = {
+		20,
+		25,
+		30,
+		33,
+		36,
+		39,
+		42,
+		45,
+		48,
+		50,
+		75
+	}
+
+	self.required_kills_balance_mul = {
+		1,
+		1.33,
+		1.66,
+		2
+	}
 end
 
 function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 	local skirmish_data = tweak_data.group_ai.skirmish
-	skirmish_data.assault.anticipation_duration = {{
-		15,
-		1
-	}}
+
+	skirmish_data.assault.anticipation_duration = {
+		{15, 1}
+	}
+
 	skirmish_data.assault.build_duration = 15
 	skirmish_data.assault.sustain_duration_min = {
-		999999,
-		999999,
-		999999
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999
 	}
+
 	skirmish_data.assault.sustain_duration_max = {
-		999999,
-		999999,
-		999999
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999
 	}
+
 	skirmish_data.assault.sustain_duration_balance_mul = {
 		1,
 		1,
 		1,
 		1
 	}
+
 	skirmish_data.assault.fade_duration = 5
 	skirmish_data.assault.delay = {
-		25,
-		25,
-		25
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30
 	}
+
+	skirmish_data.regroup.duration = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
+
+	skirmish_data.hostage_hesitation_delay = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
+
+	--Assaults have infinite resources, end based on kills.
 	skirmish_data.assault.force_pool = {
-		1,
-		1,
-		1
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999
 	}
+
+	--Temp
+	skirmish_data.assault.force = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
+
+	skirmish_data.recon.force = {
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4
+	}
+
+	skirmish_data.recon.interval = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
+
+	skirmish_data.assault.force_balance_mul = {
+		1,
+		1.5,
+		2,
+		2.5
+	}
+
 	skirmish_data.assault.force_pool_balance_mul = {
 		1,
 		1,
 		1,
 		1
 	}
+
+	skirmish_data.reenforce.interval = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
 end
 
+
 function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
-	local skirmish_data = deep_clone(tweak_data.group_ai.besiege.assault)
-	setmetatable(tweak_data.group_ai.skirmish.assault, skirmish_data)
+	local assault_groups = {
+		GS_swats = {
+			0.9,
+			0.9,
+			0.9,
+			0.9,
+			0.9,
+			0.9,
+			0.9,
+			0.9,
+			0.9,
+			0.9,
+			0.9,
+			0.9
+		},
+		FBI_heavys = {
+			0.39,
+			0.39,
+			0.39,
+			0.39,
+			0.39,
+			0.39,
+			0.39,
+			0.39,
+			0.39,
+			0.39,
+			0.39,
+			0.39
+		},
+		FBI_heavys_boom = {
+			0.26,
+			0.26,
+			0.26,
+			0.26,
+			0.26,
+			0.26,
+			0.26,
+			0.26,
+			0.26,
+			0.26,
+			0.26,
+			0.26
+		},			
+		FBI_shields = {
+			0.18,
+			0.18,
+			0.18,
+			0.18,
+			0.18,
+			0.18,
+			0.18,
+			0.18,
+			0.18,
+			0.18,
+			0.18,
+			0.18
+		},
+		FBI_shields_boom = {
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12
+		},			
+		FBI_tanks = {
+			0.03,
+			0.105,
+			0.12
+		},
+		BLACK_tanks = {
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12
+		},
+		SKULL_tanks = {
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12
+		},
+		TIT_tanks = {
+			0.04,
+			0.04,
+			0.04,
+			0.04,
+			0.04,
+			0.04,
+			0.04,
+			0.04,
+			0.04,
+			0.04,
+			0.04,
+			0.04
+		},					
+		CS_tazers = {
+			0.21,
+			0.21,
+			0.21,
+			0.21,
+			0.21,
+			0.21,
+			0.21,
+			0.21,
+			0.21,
+			0.21,
+			0.21,
+			0.21
+		},
+		CS_booms = {
+			0.14,
+			0.14,
+			0.14,
+			0.14,
+			0.14,
+			0.14,
+			0.14,
+			0.14,
+			0.14,
+			0.14,
+			0.14,
+			0.14
+		},			
+		FBI_spoocs = {
+			0.3,
+			0.3,
+			0.3,
+			0.3,
+			0.3,
+			0.3,
+			0.3,
+			0.3,
+			0.3,
+			0.3,
+			0.3,
+			0.3
+		}
+	}
+
+	local reenforce_groups = {
+		FBI_defend_d = {
+			1,
+			1,
+			1,
+			1,
+			1,
+			1,
+			1,
+			1,
+			1,
+			1,
+			1,
+			1
+		}
+	}
+
+	tweak_data.group_ai.skirmish.assault.groups = assault_groups
+	tweak_data.group_ai.skirmish.reenforce.groups = reenforce_groups
 end
 
 function SkirmishTweakData:_init_wave_modifiers()

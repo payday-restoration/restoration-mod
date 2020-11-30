@@ -1554,7 +1554,11 @@ end
 
 local old_death = CopDamage.die
 function CopDamage:die(attack_data)
-	
+	--Increment skirmish kill counter.
+	if managers.skirmish:is_skirmish() then
+		managers.skirmish:do_kill()
+	end
+
 	if not self._char_tweak.always_drop then
 		local attacker_unit = attack_data.attacker_unit
 

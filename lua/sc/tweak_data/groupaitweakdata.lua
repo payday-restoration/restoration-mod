@@ -14134,6 +14134,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	local is_console = SystemInfo:platform() ~= Idstring("WIN32")
 	self.max_nr_simultaneous_boss_types = 0
 	self.difficulty_curve_points = {0.5}
+	self.skirmish_difficulty_curve_points = {
+		--0 unused
+		0.05, --wave 1
+		0.1, --wave 2
+		0.15, --wave 3
+		0.2, --wave 4
+		0.25, --wave 5
+		0.3, --wave 6
+		0.35, --wave 7
+		0.4, --wave 8
+		0.45, --wave 9
+		0.5, --wave 10
+		--1 eventually
+	}
+
 	if difficulty_index <= 2 then
 		self.smoke_and_flash_grenade_timeout = {19, 20}
 	elseif difficulty_index == 3 then

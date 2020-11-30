@@ -197,6 +197,7 @@
 		<hook file="sc/tweak_data/achievementstweakdata.lua" source_file="lib/tweak_data/achievementstweakdata"/>
 		<hook file="sc/units/load/enemyunitgroups.lua" source_file="lib/units/load/enemyunitgroups"/>
 		<hook file="sc/managers/crimespreemanager.lua" source_file="lib/managers/crimespreemanager"/>
+		<hook file="sc/managers/skirmishmanager.lua" source_file="lib/managers/skirmishmanager"/>
 		<hook file="sc/units/player_team/actions/lower_body/criminalactionwalk.lua" source_file="lib/units/player_team/actions/lower_body/criminalactionwalk"/>
 		<hook file="sc/managers/mission/elementspawngrenade.lua" source_file="lib/managers/mission/elementspawngrenade"/>
 		<hook file="sc/managers/jobmanager.lua" source_file="lib/managers/jobmanager"/>

@@ -2316,9 +2316,8 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.damage.bullet_damage_mul = 1.5
 	self.spooc_titan.damage.explosion_damage_mul = 1.75
 	if is_reaper or is_federales then	
-		self.spooc.speech_prefix_p1 = self._prefix_data_p1.cloaker()
-		self.spooc.speech_prefix_count = nil
-		self.spooc.access = "spooc"
+		self.spooc_titan.speech_prefix_p1 = self._prefix_data_p1.cloaker()
+		self.spooc_titan.speech_prefix_count = nil
 	else
 		self.spooc_titan.speech_prefix_p1 = "t_spk"
 		self.spooc_titan.speech_prefix_count = nil

@@ -410,13 +410,13 @@ function MenuCallbackHandler:accept_skirmish_contract(item)
 
     local job_id = (node:parameters().menu_component_data or {}).job_id
     local job_data = {
-        difficulty = "overkill_145",
+        difficulty = "sm_wish",
         customize_contract = true,
         job_id = job_id or managers.skirmish:random_skirmish_job_id(),
         difficulty_id = tweak_data:difficulty_to_index("sm_wish")
     }
 
-    managers.job:on_buy_job(job_data.job_id, job_data.difficulty_id or 3)
+    managers.job:on_buy_job(job_data.job_id, job_data.difficulty_id)
 
     if Global.game_settings.single_player then
         MenuCallbackHandler:start_single_player_job(job_data)

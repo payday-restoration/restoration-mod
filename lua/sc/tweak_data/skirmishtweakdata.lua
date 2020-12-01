@@ -1,26 +1,26 @@
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 	self.special_unit_spawn_limits = {
 		{
-			tank = 3,
-			taser = 4,
-			boom = 2,
-			spooc = 3,
+			tank = 0,
+			taser = 0,
+			boom = 0,
+			spooc = 0,
 			shield = 5,
-			medic = 3,
-			spring = 1,
-			autumn = 1,
-			summers = 1
+			medic = 0,
+			spring = 0,
+			autumn = 0,
+			summers = 0
 		},
 		{
-			tank = 3,
+			tank = 0,
 			taser = 4,
 			boom = 2,
-			spooc = 3,
+			spooc = 0,
 			shield = 5,
 			medic = 3,
-			spring = 1,
-			autumn = 1,
-			summers = 1
+			spring = 0,
+			autumn = 0,
+			summers = 0
 		},
 		{
 			tank = 3,
@@ -237,141 +237,510 @@ end
 function SkirmishTweakData:_init_group_ai_data(tweak_data)
 	local skirmish_data = deep_clone(tweak_data.group_ai.besiege)
 	tweak_data.group_ai.skirmish = skirmish_data
+
+	self.required_kills = {
+		20,
+		15,
+		17,
+		19,
+		21,
+		23,
+		25,
+		27,
+		29,
+		31,
+		40
+	}
+
+	self.required_kills_balance_mul = {
+		1,
+		1.33,
+		1.66,
+		2
+	}
 end
 
 function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 	local skirmish_data = tweak_data.group_ai.skirmish
-	skirmish_data.assault.anticipation_duration = {{
-		15,
-		1
-	}}
+
+	skirmish_data.assault.anticipation_duration = {
+		{15, 1}
+	}
+
 	skirmish_data.assault.build_duration = 15
 	skirmish_data.assault.sustain_duration_min = {
-		999999,
-		999999,
-		999999
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999
 	}
+
 	skirmish_data.assault.sustain_duration_max = {
-		999999,
-		999999,
-		999999
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999
 	}
+
 	skirmish_data.assault.sustain_duration_balance_mul = {
 		1,
 		1,
 		1,
 		1
 	}
+
 	skirmish_data.assault.fade_duration = 5
 	skirmish_data.assault.delay = {
-		25,
-		25,
-		25
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30,
+		30
 	}
+
+	skirmish_data.regroup.duration = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
+
+	skirmish_data.hostage_hesitation_delay = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
+
+	--Assaults have infinite resources, end based on kills.
 	skirmish_data.assault.force_pool = {
-		1,
-		1,
-		1
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999,
+		99999
 	}
+
+	--Temp
+	skirmish_data.assault.force = {
+		4,
+		4,
+		4,
+		4,
+		5,
+		5,
+		5,
+		6,
+		6,
+		6,
+		7,
+		7
+	}
+
+	skirmish_data.recon.force = {
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4,
+		4
+	}
+
+	skirmish_data.recon.interval = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
+
+	skirmish_data.assault.force_balance_mul = {
+		1,
+		1.5,
+		2,
+		2.5
+	}
+
 	skirmish_data.assault.force_pool_balance_mul = {
 		1,
 		1,
 		1,
 		1
 	}
+
+	skirmish_data.reenforce.interval = {
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5,
+		5
+	}
 end
 
+
 function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
-	local skirmish_data = deep_clone(tweak_data.group_ai.besiege.assault)
-	setmetatable(tweak_data.group_ai.skirmish.assault, skirmish_data)
+	local assault_groups = {
+		--Wave 1
+		SKM_Light_Swat_W1 = {
+			0.3, --Unused
+			0.3, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		SKM_Heavy_Swat_W1 = {
+			0.5, --Unused
+			0.5, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W1 = {
+			0.2, --Unused
+			0.2, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		--Wave 2
+		SKM_Light_Swat_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.25, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Heavy_Swat_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.4, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.15, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Tazers_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.14, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Booms_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.06, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		--Wave 3
+		SKM_Light_Swat_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.22, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Heavy_Swat_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.35, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.13, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Tazers_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.12, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Booms_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.06, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_HRTs_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.12, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		}		
+	}
+
+	local reenforce_groups = {
+		nil
+	}
+
+	tweak_data.group_ai.skirmish.assault.groups = assault_groups
+	tweak_data.group_ai.skirmish.reenforce.groups = reenforce_groups
 end
 
 function SkirmishTweakData:_init_wave_modifiers()
 	self.wave_modifiers = {}
 	local health_damage_multipliers = {
 		{
-			damage = 1,
-			health = 1
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1,
-			health = 1
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1,
-			health = 1
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.05,
-			health = 1.2
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.05,
-			health = 1.2
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.1,
-			health = 1.4
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.1,
-			health = 1.4
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.1,
-			health = 1.4
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		}
 	}
 	self.wave_modifiers[1] = {

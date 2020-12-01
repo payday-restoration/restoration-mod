@@ -6,6 +6,28 @@ local mvec3_dir = mvector3.direction
 local mvec3_l_sq = mvector3.length_sq
 local tmp_vec1 = Vector3()
 
+function GroupAIStateBase:_calculate_difficulty_ratio()
+	local ramp = tweak_data.group_ai.difficulty_curve_points
+
+	--Use alternate curve points for skirmish difficulty ratio.
+	if managers.skirmish:is_skirmish() then
+		ramp = tweak_data.group_ai.skirmish_difficulty_curve_points
+	end
+
+	local diff = self._difficulty_value
+	local i = 1
+
+	while diff > (ramp[i] or 1) do
+		i = i + 1
+	end
+
+	self._difficulty_point_index = i
+	self._difficulty_ramp = (diff - (ramp[i - 1] or 0)) / ((ramp[i] or 1) - (ramp[i - 1] or 0))
+	--log("Diff = " .. tostring(diff))
+	--log("Index = " .. tostring(self._difficulty_point_index))
+	--log("Value = " .. tostring(self._difficulty_ramp + self._difficulty_point_index))
+end
+
 function GroupAIStateBase:_check_assault_panic_chatter()
 	if self._t and self._last_killed_cop_t and self._t - self._last_killed_cop_t < math.random(1, 3.5) then
 		return true
@@ -1474,6 +1496,11 @@ end
 --thanks (again) to hoxi for helping out with this
 --perhaps modify these values at one point in crime spree? who knows
 function GroupAIStateBase:set_difficulty(script_value, manual_value)
+	if managers.skirmish:is_skirmish() then
+		self:set_skirmish_difficulty()
+		return
+	end
+
     if self._difficulty_value == 1 then
         return
     end
@@ -1505,11 +1532,26 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
         return
     end
 
-
 	--note that this ADDS, not replaces. only way to replace is with a script_value of 0
     self._difficulty_value = math.min(self._difficulty_value + manual_value, 1)
 
     self:_calculate_difficulty_ratio()
+end
+
+--Skirmish's custom diff scaling.
+--First 10 waves correspond directly to array values in its groupai tweakdata, after that it switches to an infinite scaling function.
+function GroupAIStateBase:set_skirmish_difficulty()
+	--Current_wave_number is always 1 lower than the actual wave number for a new assault.
+	local wave = managers.skirmish:current_wave_number() + 1
+	local skirmish_ramp = tweak_data.group_ai.skirmish_difficulty_curve_points
+
+	if not self._difficulty_value or self._difficulty_value < skirmish_ramp[10] then
+		self._difficulty_value = wave * 0.05
+	else
+		self._difficulty_value = 1 - (1/(0.2*wave)) --Get infinitely closer to 1 over time.
+	end
+
+	self:_calculate_difficulty_ratio()
 end
 
 --below stuff is used to handle autumn's deployable blackout effect

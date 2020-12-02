@@ -30,5 +30,6 @@
 	<graphics>
 		<object name="g_lights_01" enabled="true" />
 		<object name="g_shield" enabled="false" />
+		<object name="g_glass" enabled="true" />
 	</graphics>
 </dynamic_object>

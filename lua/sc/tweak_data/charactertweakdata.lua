@@ -3840,7 +3840,6 @@ function CharacterTweakData:_presets(tweak_data)
 			incomming_shield = true,
 			incomming_taser = true,
 			entry = true,
-			aggressive = true,
 			aggressive_assault = true,
 			retreat = true,
 			contact = true,
@@ -3876,7 +3875,6 @@ function CharacterTweakData:_presets(tweak_data)
 			incomming_shield = true,
 			incomming_taser = true,
 			entry = true,
-			aggressive = true,
 			aggressive_assault = true,
 			retreat = true,
 			contact = true,
@@ -3952,7 +3950,6 @@ function CharacterTweakData:_presets(tweak_data)
 			incomming_spooc = true,
 			incomming_taser = true,
 			entry = true,
-			aggressive = true,
 			aggressive_assault = true,
 			retreat = true,
 			contact = true,
@@ -3976,6 +3973,8 @@ function CharacterTweakData:_presets(tweak_data)
 		},
 		cloaker = {
 			contact = true,
+			cloakercontact = true,
+			cloakeravoidance = true,
 			aggressive = true
 		},			
 	}

@@ -262,7 +262,7 @@ function GroupAITweakData:_init_chatter_data()
 		radius = 700,
 		max_nr = 20,
 		duration = {2, 4},
-		interval = {0.75, 1.5},
+		interval = {2, 4},
 		group_min = 0,
 		queue = "t01"
 	}
@@ -474,14 +474,6 @@ function GroupAITweakData:_init_chatter_data()
 		group_min = 0,
 		queue = "m01"
 	}		
-	self.enemy_chatter.deathguard = { --this isnt actually kill lines those are done in playerdamage
-		radius = 2000,
-		max_nr = 5,
-		duration = {2, 4},
-		interval = {2, 3},
-		group_min = 0,
-		queue = "rdy"
-	}
 	self.enemy_chatter.cuffed = {
 		radius = 1000,
 	    max_nr = 1,

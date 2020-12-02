@@ -1817,6 +1817,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_mex_cooking"] = "TIME CLASSIFIED, Mexico - Coyopa Compound",
 		["restoration_level_data_bex"] = "TIME CLASSIFIED, Mexico - San Martín Bank",
 		["restoration_level_data_pex"] = "TIME CLASSIFIED, Mexico - Police Station",
+		["restoration_level_data_fex"] = "TIME CLASSIFIED, Mexico - Buluc's Mansion",
 		["restoration_level_data_wetwork"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",

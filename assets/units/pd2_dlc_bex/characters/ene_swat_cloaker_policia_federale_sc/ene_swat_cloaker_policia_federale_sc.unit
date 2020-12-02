@@ -19,7 +19,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="spooc" />
-			<var name="_default_weapon_id" value="mp5_tactical" />
+			<var name="_default_weapon_id" value="uzi_cop" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

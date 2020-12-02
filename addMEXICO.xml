@@ -16,8 +16,8 @@
 	<texture path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_nm" force="false"/>	
 	
 	<!--UZI Suzie i hate animations-->
-	<!-- <unit_mat path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />	 -->
-	<!-- <cooked_physics path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" /> -->
+	<unit_mat path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />
+	<cooked_physics path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />
 	
 	<!--Bren Steven-->
 	<unit_obj path="units/pd2_dlc_bex/weapons/wpn_npc_hajk/wpn_npc_hajk" />	

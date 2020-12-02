@@ -960,13 +960,9 @@ function WeaponTweakData:_init_data_mp5_npc()
 	
 	--Los Federales UZI
 	self.uzi_npc = deep_clone(self.mp5_npc)
-	self.uzi_npc.DAMAGE = 3
-	self.uzi_npc.auto.fire_rate = 0.083
-	self.uzi_npc.sounds.prefix = "mp5_npc"	
 	self.uzi_npc.has_suppressor = "suppressed_c"
-	self.uzi_npc.CLIP_AMMO_MAX = 25
-	self.uzi_npc.alert_size = 2800 --its not really silenced ok
-	self.uzi_npc.suppression = 2.8
+	self.mp5_tactical_npc.alert_size = 0
+	self.mp5_tactical_npc.suppression = 0.1
 	
 	--Krinkov
 	self.asval_smg_npc = deep_clone(self.mp5_npc)		

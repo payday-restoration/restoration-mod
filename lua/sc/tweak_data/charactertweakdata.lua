@@ -981,9 +981,9 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		ears = {min_duration = 10, max_duration = 10}
 	}
 	self.heavy_swat_sniper.experience.cable_tie = "tie_swat"
-	self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
-	self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
-	self.heavy_swat_sniper.speech_prefix_count = 4
+	self.heavy_swat_sniper.speech_prefix_p1 = "fug"
+	self.heavy_swat_sniper.speech_prefix_p2 = nil
+	self.heavy_swat_sniper.speech_prefix_count = 1
 	self.heavy_swat_sniper.access = "swat"
 	self.heavy_swat_sniper.damage.hurt_severity = presets.hurt_severities.elite
 	self.heavy_swat_sniper.use_animation_on_fire_damage = false
@@ -1001,11 +1001,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.custom_voicework = nil
 	self.heavy_swat_sniper.spawn_sound_event = "cloaker_spawn"
 	self.heavy_swat_sniper.die_sound_event = "mga_death_scream"
-	if is_federales then
-		self.heavy_swat_sniper.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.heavy_swat_sniper.speech_prefix_p2 = self._speech_prefix_p2
-		self.heavy_swat_sniper.speech_prefix_count = 4
-	end	
 	if is_reaper or is_federales then
 		self.heavy_swat_sniper.custom_voicework = "tswat_ru"
 	else
@@ -2518,6 +2513,9 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.spawn_sound_event = "shield_identification"
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
+	self.phalanx_minion.speech_prefix_p1 = "fug"
+	self.phalanx_minion.speech_prefix_p2 = nil
+	self.phalanx_minion.speech_prefix_count = 1	
 	if is_reaper or is_federales then
 		self.phalanx_minion.custom_voicework = "tshield_ru"
 	else
@@ -14047,14 +14045,14 @@ function CharacterTweakData:_set_sm_wish()
 			r = 500,
 			acc = {0.3, 0.6},
 			dmg_mul = 2.3,
-			recoil = {0.4, 0.8},
+			recoil = {0.1, 0.1},
 			mode = {
 				1,
 				0,
 				0,
 				0
 			}
-		},			
+		},				
 		{
 			r = 1000,
 			acc = {0.6, 0.9},
@@ -14135,7 +14133,7 @@ function CharacterTweakData:_set_sm_wish()
 			r = 500,
 			acc = {0.3, 0.6},
 			dmg_mul = 2.3,
-			recoil = {0.4, 0.8},
+			recoil = {0.1, 0.1},
 			mode = {
 				1,
 				0,

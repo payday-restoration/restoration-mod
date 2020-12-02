@@ -9960,6 +9960,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	-- The below summarizes the functions of new or revised tactics in Restoration.
 	--charge
 	--unit moves to player position and engages per conventional rules. Primary driver for most units.
+	--enemies will go into the room and get into sight of you.
 	--ranged_fire 
 	--unit engages from longer range location with line of sight. Will eventually close with player.
 	--elite_ranged_fire 
@@ -9988,6 +9989,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--Unit will copy the leader's objective, but behave separately from the group. Useful for pinch groups and to separate flankers from chargers, but still technically have them be part of the same group.
 	--skirmish
 	--system function for retreating in holdout mode. MUST be last tactic for all units. Do not touch.
+	--flank
+	--flank enemies will get around you and try to either, run past you, or to your side, so that you're not facing them. if they are walking, and they're within 15-10 meters, they'll crouch.
 	self._tactics = {
 		CS_cop = {
 			"provide_coverfire",

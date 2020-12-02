@@ -84,9 +84,13 @@
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi_husk" load="true"/>	
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" load="true"/>	
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"/>	
-	
+		
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45_husk" force="true" load="true"/>	
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45" force="true" load="true"/>	
+	<!--zeal-->
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal_husk" load="true"/>	
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal" load="true"/>		
+	
 	<!--Big-->
 	<sequence_manager path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
@@ -100,6 +104,16 @@
 	<model path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
 	<unit path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small"  load="true"/>
 	<material_config path="units/pd2_dlc_bex/characters/ene_acc_shield_small/shield_small" />
+	<!--Zeal-->
+	<model path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
+	<object path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
+	<unit path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal" load="true"/>
+	<cooked_physics path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
+	<sequence_manager path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
+	<texture path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_df"/>
+	<texture path="units/payday2/characters/ene_acc_shield_city/shield_il"/>
+	<texture path="units/payday2/characters/ene_acc_shield_city/shield_nm"/>	
 	
 	<!--Vet Cops-->	
 	<!--1-->	

@@ -541,7 +541,15 @@
 	<!--OMNIA Shield-->
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield" force="false" load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk" force="false" load="true"/>
-			
+	<!--Omnia Riotshield-->
+	<model path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<object path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia" load="true"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<sequence_manager path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<texture path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/shield_df"/>	
+
 	<!--OICW-->
 	<object path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>

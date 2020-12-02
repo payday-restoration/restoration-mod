@@ -496,9 +496,6 @@
 
 	<!--epic hd ggc casino civs-->
 	<texture path="units/pd2_dlc_casino/characters/civ_male_casino_1/civ_male_casino_1_head_df" force="true"/>
-	
-	<!--Zeal Heavy Shield Illumination Fix (Thanks Wekk!!!!)-->		
-	<texture path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" force="true" />
 
 	<!--More Cop Facial Variety (Thanks AGAIN Wekk!!!!)-->			
 	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1" force="true" />
@@ -2155,17 +2152,12 @@
      <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
      <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
 		
-	<!--Zeal Heavy Swat Shield-->
-	<!-- Disabled, since he's no longer in use.
-	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
-	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_contour" force="false"/>
-	<model path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
-	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
-	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" force="false"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield" load="true" force="false"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_heavy_shield/ene_zeal_heavy_shield_husk" load="true" force="false"/>
-	-->		
-
+	<!--Zeal RiotShield-->
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" force="true"/>	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" force="true" />	 <!--Thanks Wekk-->	
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" force="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" force="true"/>	
+	
 	<!--zeal sniper-->
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper" load="true"/>
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper_husk" load="true"/>	

@@ -45,13 +45,19 @@ function GameSetup:load_packages()
 		end
     end
 
+    local r = tweak_data.levels.ai_groups.russia
+    local m = tweak_data.levels.ai_groups.murkywater
+    local z = tweak_data.levels.ai_groups.zombie
+    local f = tweak_data.levels.ai_groups.federales
+    local ai_type = tweak_data.levels:get_ai_group_type()
+    
 	if job_tweak_package_data and job_tweak_package_data.load_all_difficulty_packages then
 		for i, difficulty in ipairs(tweak_data.difficulties) do
 			local diff_package = "packages/" .. (difficulty or "normal")
 
 			load_difficulty_package(diff_package)
         end
-	elseif tweak_data.levels.ai_groups.zombie then
+	elseif ai_type == z then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_zombie" or "normal")
 
 		load_difficulty_package(diff_package)
@@ -63,21 +69,27 @@ function GameSetup:load_packages()
     
     self._loaded_faction_packages = {}
 
-    local faction_package = nil
-    if tweak_data.levels.ai_groups.zombie then
+    local faction_package
+
+    if not Global.level_data or not Global.level_data.level_id then
+		if not Application:editor() then
+			faction_package = "packages/production/level_debug"
+		end
+    end
+
+    if ai_type == z then
         faction_package = {
             "packages/zombieassets",
             "packages/narr_hvh", 
             "levels/narratives/bain/hvh/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
-    end
-
-	local function load_faction_package(package_name)
-		if PackageManager:package_exists(package_name) and not PackageManager:loaded(package_name) then
-			table.insert(self._loaded_faction_packages, package_name)
-			PackageManager:load(package_name)
-		end
+    elseif ai_type == r then
+        faction_package = {
+            "packages/akanassets", 
+            "packages/lvl_mad"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
     end
 
     if faction_package then

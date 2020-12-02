@@ -1,26 +1,26 @@
 function SkirmishTweakData:_init_special_unit_spawn_limits()
 	self.special_unit_spawn_limits = {
 		{
-			tank = 3,
-			taser = 4,
-			boom = 2,
-			spooc = 3,
+			tank = 0,
+			taser = 0,
+			boom = 0,
+			spooc = 0,
 			shield = 5,
-			medic = 3,
-			spring = 1,
-			autumn = 1,
-			summers = 1
+			medic = 0,
+			spring = 0,
+			autumn = 0,
+			summers = 0
 		},
 		{
-			tank = 3,
+			tank = 0,
 			taser = 4,
 			boom = 2,
-			spooc = 3,
+			spooc = 0,
 			shield = 5,
 			medic = 3,
-			spring = 1,
-			autumn = 1,
-			summers = 1
+			spring = 0,
+			autumn = 0,
+			summers = 0
 		},
 		{
 			tank = 3,
@@ -369,18 +369,18 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	--Temp
 	skirmish_data.assault.force = {
+		4,
+		4,
+		4,
+		4,
 		5,
 		5,
 		5,
-		5,
-		5,
-		5,
-		5,
-		5,
-		5,
-		5,
-		5,
-		5
+		6,
+		6,
+		6,
+		7,
+		7
 	}
 
 	skirmish_data.recon.force = {
@@ -446,191 +446,209 @@ end
 
 function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	local assault_groups = {
-		GS_swats = {
-			0.9, --Unused
-			0.9, --Wave 1
-			0.9, --Wave 2
-			0.9, --...
-			0.9,
-			0.9,
-			0.9,
-			0.9,
-			0.9,
-			0.9,
-			0.9, --"Wave 10" (Inactive, needs map edits)
-			0.9  --Scales ever closer to over time post wave 10.
+		--Wave 1
+		SKM_Light_Swat_W1 = {
+			0.3, --Unused
+			0.3, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
 		},
-		FBI_heavys = {
-			0.39,
-			0.39,
-			0.39,
-			0.39,
-			0.39,
-			0.39,
-			0.39,
-			0.39,
-			0.39,
-			0.39,
-			0.39,
-			0.39
+		SKM_Heavy_Swat_W1 = {
+			0.5, --Unused
+			0.5, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W1 = {
+			0.2, --Unused
+			0.2, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
 		},
-		FBI_heavys_boom = {
-			0.26,
-			0.26,
-			0.26,
-			0.26,
-			0.26,
-			0.26,
-			0.26,
-			0.26,
-			0.26,
-			0.26,
-			0.26,
-			0.26
-		},			
-		FBI_shields = {
-			0.18,
-			0.18,
-			0.18,
-			0.18,
-			0.18,
-			0.18,
-			0.18,
-			0.18,
-			0.18,
-			0.18,
-			0.18,
-			0.18
+		--Wave 2
+		SKM_Light_Swat_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.25, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Heavy_Swat_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.4, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.15, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Tazers_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.14, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Booms_W2 = {
+			0, --Unused
+			0, --Wave 1
+			0.06, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
 		},
-		FBI_shields_boom = {
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12
-		},			
-		FBI_tanks = {
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12
-		},
-		BLACK_tanks = {
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12
-		},
-		SKULL_tanks = {
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12,
-			0.12
-		},
-		TIT_tanks = {
-			0.04,
-			0.04,
-			0.04,
-			0.04,
-			0.04,
-			0.04,
-			0.04,
-			0.04,
-			0.04,
-			0.04,
-			0.04,
-			0.04
-		},					
-		CS_tazers = {
-			0.21,
-			0.21,
-			0.21,
-			0.21,
-			0.21,
-			0.21,
-			0.21,
-			0.21,
-			0.21,
-			0.21,
-			0.21,
-			0.21
-		},
-		CS_booms = {
-			0.14,
-			0.14,
-			0.14,
-			0.14,
-			0.14,
-			0.14,
-			0.14,
-			0.14,
-			0.14,
-			0.14,
-			0.14,
-			0.14
-		},			
-		FBI_spoocs = {
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3
-		}
+		--Wave 3
+		SKM_Light_Swat_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.22, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Heavy_Swat_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.35, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.13, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Tazers_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.12, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Booms_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.06, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_HRTs_W3 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0.12, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		}		
 	}
 
 	local reenforce_groups = {
-		FBI_defend_d = {
-			1,
-			1,
-			1,
-			1,
-			1,
-			1,
-			1,
-			1,
-			1,
-			1,
-			1,
-			1
-		}
+		nil
 	}
 
 	tweak_data.group_ai.skirmish.assault.groups = assault_groups
@@ -641,88 +659,88 @@ function SkirmishTweakData:_init_wave_modifiers()
 	self.wave_modifiers = {}
 	local health_damage_multipliers = {
 		{
-			damage = 1,
-			health = 1
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1,
-			health = 1
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1,
-			health = 1
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.05,
-			health = 1.2
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.05,
-			health = 1.2
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.1,
-			health = 1.4
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.1,
-			health = 1.4
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.1,
-			health = 1.4
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		},
 		{
-			damage = 1.15,
-			health = 1.5
+			damage = 1.0,
+			health = 1.0
 		}
 	}
 	self.wave_modifiers[1] = {

@@ -12845,6 +12845,355 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	}
 	self.enemy_spawn_groups.FBI_spoocs = self.enemy_spawn_groups.single_spooc
 	
+	--Skirmish Spawngroups Below
+	
+	--Wave 1
+	self.enemy_spawn_groups.SKM_Light_Swat_W1 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},					
+			{
+				unit = "GS_swat_R870",
+				amount_min = 1,
+				amount_max = 1,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W1 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},
+			{
+				unit = "FBI_heavy_R870",
+				amount_min = 1,
+				amount_max = 1,
+				freq = 1,
+				tactics = self._tactics.FBI_swat_shotgun,
+				rank = 3
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Shields_W1 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			}			
+		}
+	}	
+	
+	--Wave 2
+	self.enemy_spawn_groups.SKM_Light_Swat_W2 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,				
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "GS_swat_R870",
+				amount_min = 1,
+				amount_max = 1,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W2 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},
+			{
+				unit = "FBI_heavy_R870",
+				amount_min = 1,
+				amount_max = 1,
+				freq = 1,
+				tactics = self._tactics.FBI_swat_shotgun,
+				rank = 3
+			},					
+			{
+				unit = "medic_M4",
+				freq = 0.1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_W2 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},		
+			{
+				unit = "medic_M4",
+				freq = 0.1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}			
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Tazers_W2 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "CS_tazer",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics_ = self._tactics.CS_tazer,
+				rank = 1
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Booms_W2 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "boom_M4203",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics_ = self._tactics.CS_boom,
+				rank = 1
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+
+	--Wave 3
+	self.enemy_spawn_groups.SKM_Light_Swat_W3 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,				
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "GS_swat_R870",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.2,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W3 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},
+			{
+				unit = "FBI_heavy_R870",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.FBI_swat_shotgun,
+				rank = 3
+			},					
+			{
+				unit = "medic_M4",
+				freq = 0.2,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_W3 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},		
+			{
+				unit = "medic_M4",
+				freq = 0.2,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}			
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Tazers_W3 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "CS_tazer",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.CS_tazer,
+				rank = 1
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Booms_W3 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "boom_M4203",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.CS_boom,
+				rank = 1
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_HRTs_W3 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			}
+		}
+	}	
 			
 	--Vanilla shit below--
 	if difficulty_index <= 2 then
@@ -15374,7 +15723,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		Cap_Spring = 0.5,
 		HVH_Boss = 0.5,
 		Cap_Summers = 0.5,
-		Cap_autumn = 0.5
+		Cap_Autumn = 0.5
 	}
 
 	self.besiege.group_max_diff = {

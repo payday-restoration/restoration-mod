@@ -23,9 +23,9 @@ function GroupAIStateBase:_calculate_difficulty_ratio()
 
 	self._difficulty_point_index = i
 	self._difficulty_ramp = (diff - (ramp[i - 1] or 0)) / ((ramp[i] or 1) - (ramp[i - 1] or 0))
-	log("Diff = " .. tostring(diff))
-	log("Index = " .. tostring(self._difficulty_point_index))
-	log("Value = " .. tostring(self._difficulty_ramp + self._difficulty_point_index))
+	--log("Diff = " .. tostring(diff))
+	--log("Index = " .. tostring(self._difficulty_point_index))
+	--log("Value = " .. tostring(self._difficulty_ramp + self._difficulty_point_index))
 end
 
 function GroupAIStateBase:_check_assault_panic_chatter()

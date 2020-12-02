@@ -51,8 +51,7 @@ function GameSetup:load_packages()
 
 			load_difficulty_package(diff_package)
         end
-    --Tested You can split the diffixulty with faction packages
-	elseif tweak_data.levels.ai_groups.zombie and Global.game_settings and Global.game_settings.difficulty == "sm_wish" then
+	elseif tweak_data.levels.ai_groups.zombie then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_zombie" or "normal")
 
 		load_difficulty_package(diff_package)
@@ -60,8 +59,39 @@ function GameSetup:load_packages()
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty or "normal")
 
 		load_difficulty_package(diff_package)
-	end
+    end
     
+    self._loaded_faction_packages = {}
+
+    local faction_package = nil
+    if tweak_data.levels.ai_groups.zombie then
+        faction_package = {
+            "packages/zombieassets",
+            "packages/narr_hvh", 
+            "levels/narratives/bain/hvh/world_sounds"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
+    end
+
+	local function load_faction_package(package_name)
+		if PackageManager:package_exists(package_name) and not PackageManager:loaded(package_name) then
+			table.insert(self._loaded_faction_packages, package_name)
+			PackageManager:load(package_name)
+		end
+    end
+
+    if faction_package then
+        if type(faction_package) == "table" then
+            self._loaded_faction_packages = faction_package
+            
+            for _, package in ipairs(faction_package) do
+				if not PackageManager:loaded(package) then
+					PackageManager:load(package)
+				end
+			end
+        end
+	end
+
 	local level_package = nil
 
 	if not Global.level_data or not Global.level_data.level_id then
@@ -142,5 +172,86 @@ function GameSetup:load_packages()
 		self._mutators_package = MutatorsManager.package
 
 		PackageManager:load(MutatorsManager.package)
+	end
+end
+
+function GameSetup:gather_packages_to_unload()
+	Setup.unload_packages(self)
+
+	self._started_unloading_packages = true
+	self._packages_to_unload = self._packages_to_unload or {}
+
+	if not Global.load_level then
+		local prefix = "packages/dlcs/"
+		local sufix = "/game_base"
+		local package = ""
+
+		for dlc_package, bundled in pairs(tweak_data.BUNDLED_DLC_PACKAGES) do
+			package = prefix .. tostring(dlc_package) .. sufix
+
+			if bundled and (bundled == true or bundled == 2) and PackageManager:package_exists(package) and PackageManager:loaded(package) then
+				table.insert(self._packages_to_unload, package)
+			end
+		end
+	end
+
+	if self._loaded_level_package then
+		if type(self._loaded_level_package) == "table" then
+			for _, package in ipairs(self._loaded_level_package) do
+				if PackageManager:loaded(package) then
+					table.insert(self._packages_to_unload, package)
+				end
+			end
+		elseif PackageManager:loaded(self._loaded_level_package) then
+			table.insert(self._packages_to_unload, self._loaded_level_package)
+		end
+
+		self._loaded_level_package = nil
+	end
+
+	if PackageManager:loaded(self._loaded_contact_package) then
+		table.insert(self._packages_to_unload, self._loaded_contact_package)
+
+		self._loaded_contact_package = nil
+	end
+
+	if PackageManager:loaded(self._loaded_contract_package) then
+		table.insert(self._packages_to_unload, self._loaded_contract_package)
+
+		self._loaded_contract_package = nil
+	end
+
+	if self._loaded_job_packages then
+		for _, package in ipairs(self._loaded_job_packages) do
+			if PackageManager:loaded(package) then
+				table.insert(self._packages_to_unload, package)
+			end
+		end
+	end
+
+	if self._loaded_diff_packages then
+		for i, package in ipairs(self._loaded_diff_packages) do
+			if PackageManager:loaded(package) then
+				table.insert(self._packages_to_unload, package)
+			end
+		end
+
+		self._loaded_diff_packages = {}
+    end
+    
+    if self._loaded_faction_packages then
+		for i, package in ipairs(self._loaded_faction_packages) do
+			if PackageManager:loaded(package) then
+				table.insert(self._packages_to_unload, package)
+			end
+		end
+
+		self._loaded_faction_packages = {}
+	end
+
+	if self._mutators_package and PackageManager:loaded(self._mutators_package) then
+		table.insert(self._packages_to_unload, self._mutators_package)
+
+		self._mutators_package = nil
 	end
 end

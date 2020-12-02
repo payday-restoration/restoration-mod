@@ -1171,6 +1171,26 @@ function CrimeNetGui:_create_polylines()
 end
 
 function CrimeNetGui:_create_locations()
+
+	if restoration.Options:GetValue("HUD/UI/PocoCrimenetAlignSort") then
+		self._locations = deep_clone( self._tweak_data.locations ) or {}
+		local newDots = {}
+		local xx,yy = 12,10
+		for i=1,xx do -- 224~1666 1442
+			for j=1,yy do -- 165~945 780
+				--local newX = 150+ 1642*i/xx
+				--local newY = 150+ 680*(i % 2 == 0 and j or j - 0.5)/yy
+				local newX = 180+ 1642*i/xx
+				local newY = 180+ 680*(i % 2 == 0 and j or j - 0.5)/yy
+				if  (i >= 3) or ( j < 7 ) then
+					-- avoiding fixed points
+					table.insert(newDots,{ newX, newY })
+				end
+			end
+		end
+		self._locations[1][1].dots = newDots
+	end
+
 	self._locations = deep_clone( self._tweak_data.locations ) or {}
 	tweak_data.gui:create_narrative_locations( self._locations )
 	self:_create_polylines()
@@ -1770,7 +1790,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		text = "",
 		vertical = "center",
 		font = tweak_data.menu.medium_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
+		font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale"),
 		color = color,
 		blend_mode = "add",
 		layer = 0
@@ -1782,7 +1802,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		layer = 0,
 		text = managers.localization:to_upper_text("menu_one_down"),
 		font = tweak_data.menu.pd2_small_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
+		font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale"),
 		color = tweak_data.screen_colors.one_down
 	})
 	local heat_name = side_panel:text({
@@ -1790,7 +1810,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		text = "",
 		vertical = "center",
 		font = tweak_data.menu.medium_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
+		font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale"),
 		color = color,
 		blend_mode = "add",
 		layer = 0
@@ -1985,7 +2005,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		text = host_string,
 		vertical = "center",
 		font = tweak_data.menu.pd2_small_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
+		font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale"),
 		color = data.is_friend and friend_color or is_server and regular_color or pro_color,
 		blend_mode = "add",
 		layer = 0
@@ -1995,7 +2015,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		text = job_string,
 		vertical = "center",
 		font = tweak_data.menu.medium_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
+		font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale"),
 		color = tweak_data.screen_color_yellow,
 		blend_mode = "add",
 		layer = 0
@@ -2005,7 +2025,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		text = contact_string,
 		vertical = "center",
 		font = tweak_data.menu.medium_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
+		font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale"),
 		color = tweak_data.screen_color_yellow,
 		blend_mode = "add",
 		layer = 0
@@ -2015,7 +2035,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		text = info_string,
 		vertical = "center",
 		font = tweak_data.menu.medium_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
+		font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale"),
 		color = tweak_data.screen_color_yellow,
 		blend_mode = "add",
 		layer = 0
@@ -2042,7 +2062,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 					level = managers.experience:cash_string(managers.crime_spree:spree_level(), "")
 				}),
 				font = tweak_data.menu.pd2_small_font,
-				font_size = tweak_data.menu.pd2_small_font_size,
+				font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale"),
 				color = tweak_data.screen_colors.crime_spree_risk
 			})
 		end
@@ -2605,7 +2625,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 			visible = true,
 			name = "spree_panel",
 			layer = -1,
-			h = tweak_data.menu.pd2_small_font_size
+			h = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale")
 		})
 
 		spree_panel:set_bottom(side_panel:h())
@@ -2624,7 +2644,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 				text = managers.experience:cash_string(level or 0, "") .. managers.localization:get_default_macro("BTN_SPREE_TICKET"),
 				color = tweak_data.screen_colors.crime_spree_risk,
 				font = tweak_data.menu.pd2_small_font,
-				font_size = tweak_data.menu.pd2_small_font_size
+				font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale")
 			})
 		end
 	end
@@ -2636,7 +2656,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 			visible = true,
 			name = "skirmish_panel",
 			layer = -1,
-			h = tweak_data.menu.pd2_small_font_size
+			h = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale")
 		})
 
 		skirmish_panel:set_bottom(side_panel:h())
@@ -2662,11 +2682,43 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 			text = text,
 			color = tweak_data.screen_colors.skirmish_color,
 			font = tweak_data.menu.pd2_small_font,
-			font_size = tweak_data.menu.pd2_small_font_size
+			font_size = tweak_data.menu.pd2_small_font_size * restoration.Options:GetValue("HUD/UI/PocoCrimenetScale")
 		})
 	end
 
 	self:update_job_gui(job, 3)
 
 	return job
+end
+
+local _get_job_location_original = CrimeNetGui._get_job_location
+function CrimeNetGui:_get_job_location(data)
+	if restoration.Options:GetValue("HUD/UI/PocoCrimenetAlignSort") then
+		_get_job_location_original(self, data)
+		local diff = (data and data.difficulty_id or 2) - 2
+		local diffX = 236 + ( 1700 / 7 ) * diff
+		local locations = self:_get_contact_locations()
+		local sorted = {}
+			for k,dot in pairs(locations[1].dots) do
+			if not dot[3] then
+				table.insert(sorted,dot)
+			end
+		end
+		if #sorted > 0 then
+			local abs = math.abs
+			table.sort(sorted,function(a,b)
+				return abs(diffX-a[1]) < abs(diffX-b[1])
+			end)
+			local dot = sorted[1]
+			local x,y = dot[1],dot[2]
+			local tw = math.max(self._map_panel:child("map"):texture_width(), 1)
+			local th = math.max(self._map_panel:child("map"):texture_height(), 1)
+			x = math.round(x / tw * self._map_size_w)
+			y = math.round(y / th * self._map_size_h)
+
+			return x,y,dot
+		end
+	else
+		return _get_job_location_original(self, data)
+	end
 end

@@ -2058,6 +2058,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModUppercaseNamesDescID"] = "Enable or disable uppercase names.",
 		["RestorationModPeerColorsTitleID"] = "Alpha Peer Colors",
 		["RestorationModPeerColorsDescID"] = "Enable or disable the alpha peer colors.",
+		["RestorationModPocoCrimenetAlignSortTitleID"] = "Poco Align and Sort CRIMENET",
+		["RestorationModPocoCrimenetAlignSortDescID"] = "Aligns and sorts CRIMENET by difficulty.",
+		["RestorationModPocoCrimenetScaleTitleID"] = "Poco CRIMENET Scale",
+		["RestorationModPocoCrimenetScaleDescID"] = "Allows you to set the scale of CRIMENET.",
 		["alpha_assault"] = "Early Alpha Corner",
 		["beta_assault"] = "Alpha Tape",
 

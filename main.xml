@@ -370,6 +370,8 @@
 						<option type="bool" default_value="false" name="Loadouts"/>
 						<option type="bool" default_value="false" name="District"/>
 						<option type="bool" default_value="false" name="PeerColors"/>
+						<option type="bool" default_value="false" name="PocoCrimenetAlignSort"/>
+						<option type="number" default_value="1" min="0.7" max="1.2" step="0.1" show_value="true" name="PocoCrimenetScale"/>
 				</option_group>
 				<option_group name="INFOHUD">
 					<option type="bool" default_value="false" name="Info_Hud"/>

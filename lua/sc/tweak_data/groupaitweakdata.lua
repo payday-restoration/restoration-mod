@@ -12986,7 +12986,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	self.enemy_spawn_groups.SKM_Tazers_W2 = {
-		amount = {3, 4},
+		amount = {2, 3},
 		spawn = {
 			{
 				unit = "CS_tazer",
@@ -13006,7 +13006,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}		
 	self.enemy_spawn_groups.SKM_Booms_W2 = {
-		amount = {3, 4},
+		amount = {2, 3},
 		spawn = {
 			{
 				unit = "boom_M4203",
@@ -13120,7 +13120,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}		
 	self.enemy_spawn_groups.SKM_Tazers_W3 = {
-		amount = {3, 4},
+		amount = {2, 3},
 		spawn = {
 			{
 				unit = "CS_tazer",
@@ -13140,7 +13140,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}		
 	self.enemy_spawn_groups.SKM_Booms_W3 = {
-		amount = {3, 4},
+		amount = {2, 3},
 		spawn = {
 			{
 				unit = "boom_M4203",

@@ -30,6 +30,7 @@
 		</outro_event>
 		<packages>
 			<value_node value="packages/dlcs/skm/job_skm"/>
+			<value_node value="packages/nypdassets"/>
 			<value_node value="levels/narratives/skm/skm_run/world"/>
 			<value_node value="levels/narratives/skm/skm_run/world_sounds"/>
 			<value_node value="levels/narratives/skm/skm_run/collision/collision"/>

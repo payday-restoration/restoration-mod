@@ -9949,7 +9949,7 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 end
 
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
-	-- The below summarizes the functions of new or revised tactics in Restoration.
+	--The below summarizes the functions of new or revised tactics in Restoration.
 	--charge
 	--unit moves to player position and engages per conventional rules. Primary driver for most units.
 	--enemies will go into the room and get into sight of you.
@@ -9962,7 +9962,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--reloadingretreat
 	--if player is visible and unit is reloading, attempt to retreat into cover.
 	--hitnrun
-	-- Approach enemies and engage for a short time, then, back away from the fight. Uses 10m retreat range.
+	--Approach enemies and engage for a short time, then, back away from the fight. Uses 10m retreat range.
 	--Tunnel
 	--Unit almost entirely targets one player until down, then moves on to next. Special-oriented.
 	--spoocavoidance
@@ -10102,7 +10102,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		MH_shield = { 
 			"legday",
 			"charge",
-			"aggressor",
 			"provide_coverfire",
 			"provide_support",
 			"shield",
@@ -10111,7 +10110,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		DW_tazer = { --tries to get as close as possible to tase players easily
 			"legday",
 			"charge",
-			"aggressor",
 			"flash_grenade",
 			"smoke_grenade",
 			"shield_cover",
@@ -10291,7 +10289,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"legday",
 			"charge",
-			"aggressor",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -10323,7 +10320,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
-			"aggressor",
 			"provide_coverfire",
 			"charge",
 			"provide_support",
@@ -10381,7 +10377,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"tunnel",
 			"charge",
 			"harass",
-			"aggressor",
 			"shield"
 		},
 		SKULL_tank = { --slightly more passive than the other dozers will stand his ground if charged
@@ -10398,7 +10393,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"reloadingretreat",
 			"spoocavoidance",
 			"murder",
-			"tunnel",
 			"elite_ranged_fire",
 			"harass"
 		},
@@ -10410,15 +10404,19 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade"
 		},
 		Cap_spring = {
-			"aggressor",
+			"shield",
 			"charge"
 		},
 		HVH_boss = {
-			"aggressor",
+			"shield",
 			"charge"
 		},		
+		Cap_summers_minion = {
+			"shield_cover",
+			"charge"
+		},	
 		Cap_summers = {
-			"aggressor",
+			"shield",
 			"charge"
 		},
 		Cap_autumn = {
@@ -10434,12 +10432,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		Cap_winters = {
 			"shield",
-			"aggressor",
 			"charge"
 		},	
 		Cap_winters_minion = {
 			"shield",
-			"aggressor",
 			"charge"
 		},			
 		--hunter hrt tactics
@@ -10497,7 +10493,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"charge",
 			"harass",
-			"aggressor",
 			"provide_coverfire",
 			"shield_cover",
 			"provide_support",
@@ -10510,7 +10505,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"harass",
 			"charge",
-			"aggressor",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -10523,7 +10517,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"legday",
 			"harass",
 			"charge",
-			"aggressor",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -10603,7 +10596,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		tazer_flanking = {
 			"flank",
 			"legday",
-			"aggressor",
 			"charge",
 			"provide_coverfire",
 			"smoke_grenade",
@@ -10613,7 +10605,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		tazer_charge = {
 			"charge",
 			"legday",
-			"aggressor",
 			"provide_coverfire",
 			"tunnel",
 			"murder"
@@ -12802,7 +12793,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,
-				tactics = self._tactics.Cap_summers,
+				tactics = self._tactics.Cap_summers_minion,
 				rank = 1
 			},
 			{
@@ -12810,7 +12801,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,
-				tactics = self._tactics.Cap_summers,
+				tactics = self._tactics.Cap_summers_minion,
 				rank = 1
 			},
 			{
@@ -12818,7 +12809,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,
-				tactics = self._tactics.Cap_summers,
+				tactics = self._tactics.Cap_summers_minion,
 				rank = 1
 			}
 		}

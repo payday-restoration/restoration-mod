@@ -281,6 +281,18 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 					full_sound = "mdc_x02a_any_3p"
 				end
 			end
+				
+			if self._unit:base():has_tag("tank") then
+			       if sound_name == "burndeath" then				
+				    full_sound = "l1d_burndeath"
+				end	
+			end
+			
+			if self._unit:base():has_tag("tank") then
+			       if sound_name == "burnhurt" then				
+				    full_sound = "l1d_burnhurt"
+				end	
+			end
 			
 			if sound_name == "x01a_any_3p" then
 				if self._unit:base():has_tag("spooc") then

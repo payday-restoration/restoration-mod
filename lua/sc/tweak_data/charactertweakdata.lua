@@ -3134,7 +3134,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.robbers_safehouse.ignores_aggression = true
 	self.robbers_safehouse.calls_in = nil
 	self.robbers_safehouse.ignores_contours = true
-	self.robbers_safehouse.HEALTH_INIT = 50
+	self.robbers_safehouse.HEALTH_INIT = 20
 	self.robbers_safehouse.headshot_dmg_mul = 1
 	self.robbers_safehouse.use_ik = true	
 end
@@ -3201,15 +3201,20 @@ end
 function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission = deep_clone(presets.base)
 	self.old_hoxton_mission.experience = {}
-	self.old_hoxton_mission.no_run_start = true
-	self.old_hoxton_mission.no_run_stop = true
+	--Ugly ass fix to an ugly ass bug
+	--self.old_hoxton_mission.no_run_start = true
+	--self.old_hoxton_mission.no_run_stop = true
 	self.old_hoxton_mission.weapon = presets.weapon.gang_member
-	self.old_hoxton_mission.detection = presets.detection.gang_member
+	--No more Hoxton or Charon helping us out
+	--self.old_hoxton_mission.detection = presets.detection.gang_member
+	self.old_hoxton_mission.detection = presets.detection.blind
 	self.old_hoxton_mission.damage = presets.gang_member_damage
 	self.old_hoxton_mission.damage.explosion_damage_mul = 0
-	self.old_hoxton_mission.HEALTH_INIT = 100
+	self.old_hoxton_mission.HEALTH_INIT = 20
 	self.old_hoxton_mission.headshot_dmg_mul = 1
 	self.old_hoxton_mission.move_speed = presets.move_speed.gang_member
+	--Cause they don't like being told what to do
+	self.old_hoxton_mission.allowed_poses = {stand = true}
 	self.old_hoxton_mission.surrender_break_time = {6, 10}
 	self.old_hoxton_mission.suppression = nil
 	self.old_hoxton_mission.surrender = false
@@ -3227,6 +3232,9 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.rescue_hostages = false
 	self.old_hoxton_mission.crouch_move = false
 	self.old_hoxton_mission.static_dodge_preset = true
+	--No more being mean to Hoxton
+	self.old_hoxton_mission.is_escort = true
+	self.old_hoxton_mission.escort_idle_talk = false	
 	
 	self.anubis = deep_clone(self.old_hoxton_mission)	
 end
@@ -4552,7 +4560,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.static_dodge_preset = false
 	presets.base.static_melee_preset = false
 	presets.gang_member_damage = {}
-	presets.gang_member_damage.HEALTH_INIT = 25
+	presets.gang_member_damage.HEALTH_INIT = 20
 	presets.gang_member_damage.no_run_start = true
 	presets.gang_member_damage.no_run_stop = true
 	presets.gang_member_damage.headshot_dmg_mul = 1
@@ -4562,7 +4570,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.gang_member_damage.REGENERATE_TIME_AWAY = 1.5
 	presets.gang_member_damage.DOWNED_TIME = tweak_data.player.damage.DOWNED_TIME
 	presets.gang_member_damage.TASED_TIME = tweak_data.player.damage.TASED_TIME
-	presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 25
+	presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 20
 	presets.gang_member_damage.ARRESTED_TIME = 30
 	presets.gang_member_damage.INCAPACITATED_TIME = tweak_data.player.damage.INCAPACITATED_TIME
 	presets.gang_member_damage.hurt_severity = deep_clone(presets.hurt_severities.no_hurts)
@@ -12465,11 +12473,11 @@ function CharacterTweakData:_set_easy()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 17.5
+	self.presets.gang_member_damage.HEALTH_INIT = 20
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
-	self.old_hoxton_mission.HEALTH_INIT = 17.5
-	self.spa_vip.HEALTH_INIT = 17.5
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 17.5
+	self.old_hoxton_mission.HEALTH_INIT = 20
+	self.spa_vip.HEALTH_INIT = 20
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 20
 	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
@@ -12670,11 +12678,11 @@ function CharacterTweakData:_set_normal()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 35
+	self.presets.gang_member_damage.HEALTH_INIT = 40
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
-	self.old_hoxton_mission.HEALTH_INIT = 35
-	self.spa_vip.HEALTH_INIT = 35
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 35
+	self.old_hoxton_mission.HEALTH_INIT = 40
+	self.spa_vip.HEALTH_INIT = 40
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 40
 	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
@@ -12875,11 +12883,11 @@ function CharacterTweakData:_set_hard()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 52.5
+	self.presets.gang_member_damage.HEALTH_INIT = 60
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
-	self.old_hoxton_mission.HEALTH_INIT = 52.5
-	self.spa_vip.HEALTH_INIT = 52.5
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 52.5
+	self.old_hoxton_mission.HEALTH_INIT = 60
+	self.spa_vip.HEALTH_INIT = 60
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 60
 	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
@@ -13081,11 +13089,11 @@ function CharacterTweakData:_set_overkill()
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 70
+	self.presets.gang_member_damage.HEALTH_INIT = 80
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
-	self.old_hoxton_mission.HEALTH_INIT = 70
-	self.spa_vip.HEALTH_INIT = 70
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 70
+	self.old_hoxton_mission.HEALTH_INIT = 80
+	self.spa_vip.HEALTH_INIT = 80
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 80
 	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
@@ -13420,11 +13428,11 @@ function CharacterTweakData:_set_overkill_145()
 	
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self.presets.gang_member_damage.HEALTH_INIT = 87.5
+	self.presets.gang_member_damage.HEALTH_INIT = 100
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
-	self.old_hoxton_mission.HEALTH_INIT = 87.5
-	self.spa_vip.HEALTH_INIT = 87.5
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 87.5
+	self.old_hoxton_mission.HEALTH_INIT = 100
+	self.spa_vip.HEALTH_INIT = 100
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self:_multiply_all_speeds(1, 1.05)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
@@ -13759,11 +13767,11 @@ function CharacterTweakData:_set_easy_wish()
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
 	self.autumn.damage.bullet_damage_mul = 0.5
-	self.presets.gang_member_damage.HEALTH_INIT = 105
+	self.presets.gang_member_damage.HEALTH_INIT = 120
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-	self.old_hoxton_mission.HEALTH_INIT = 105
-	self.spa_vip.HEALTH_INIT = 105
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 105
+	self.old_hoxton_mission.HEALTH_INIT = 120
+	self.spa_vip.HEALTH_INIT = 120
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 120
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1, 1.05)
@@ -13990,11 +13998,11 @@ function CharacterTweakData:_set_overkill_290()
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.autumn.damage.bullet_damage_mul = 0.45
-	self.presets.gang_member_damage.HEALTH_INIT = 122.5
+	self.presets.gang_member_damage.HEALTH_INIT = 140
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.3
-	self.old_hoxton_mission.HEALTH_INIT = 122.5
-	self.spa_vip.HEALTH_INIT = 122.5
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 122.5
+	self.old_hoxton_mission.HEALTH_INIT = 140
+	self.spa_vip.HEALTH_INIT = 140
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 140
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self:_multiply_all_speeds(1.05, 1.1)
@@ -14245,11 +14253,11 @@ function CharacterTweakData:_set_sm_wish()
 	self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 	
 	self:_multiply_all_speeds(1.1, 1.15)
-	self.presets.gang_member_damage.HEALTH_INIT = 140
+	self.presets.gang_member_damage.HEALTH_INIT = 160
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
-	self.old_hoxton_mission.HEALTH_INIT = 140
-	self.spa_vip.HEALTH_INIT = 140
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 140
+	self.old_hoxton_mission.HEALTH_INIT = 160
+	self.spa_vip.HEALTH_INIT = 160
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 160
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	

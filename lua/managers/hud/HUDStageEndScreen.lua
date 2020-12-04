@@ -7,7 +7,7 @@ local function make_fine_text(text)
 
 	return x, y, w, h
 end
-
+if restoration.Options:GetValue("HUD/UI/Loadouts") then
 function HUDPackageUnlockedItem:init(panel, row, params, hud_stage_end_screen)
 	local num_unlocks = math.clamp(params.unlocks, HUDPackageUnlockedItem.MIN_DISPLAYED, HUDPackageUnlockedItem.MAX_DISPLAYED)
 	self._panel = panel:panel({
@@ -135,7 +135,7 @@ function HUDPackageUnlockedItem:init(panel, row, params, hud_stage_end_screen)
 		end
 	elseif ghost_bonus then
 		local on_last_stage = managers.job:on_last_stage()
-		bitmap_texture = "guis/textures/pd2/endscreen/stealth_bonus"
+		bitmap_texture = "guis/textures/restoration/stealth_bonus"
 		local string_id = on_last_stage and "menu_es_ghost_bonus_job" or "menu_es_ghost_bonus_day"
 		text_string = managers.localization:to_upper_text(string_id, {
 			bonus = ghost_bonus
@@ -929,6 +929,8 @@ function HUDStageEndScreen:set_statistics( criminals_completed, success )
 	
 	total_completion_bonus:set_text( managers.experience:cash_string( 0 ) .. xp_postfix )
 	]]
+end
+
 end
 
 --[[

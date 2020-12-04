@@ -35,6 +35,7 @@
 	<texture path="guis/textures/restoration/equipment"/>
 	<texture path="guis/textures/restoration/objective"/>
 	<texture path="guis/textures/restoration/exp_ring"/>
+	<texture path="guis/textures/restoration/stealth_bonus"/>
 	<texture path="guis/textures/restoration/hud_radial_rim_base_fix"/>
 	<texture path="guis/textures/restoration/hud_radialbg_base_fix"/>
 	<texture path="guis/textures/restoration/risklevel_blackscreen"/>
@@ -76,7 +77,6 @@
 	<texture path="guis/textures/restoration/discord_new"/>-->
 
 	<!-- Credits -->
-	<credits path="gamedata/trial"/>
 	<texture path="guis/textures/restoration/credits"/>
 
 	<!-- Classic Movies -->

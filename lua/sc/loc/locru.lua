@@ -2226,8 +2226,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["ch_watchdogs_d1_heavy_wpn1_hl"] = "ТОЛСТАЯ БРОНЯ, БОЛЬШИЕ ПУШКИ",
 		["ch_watchdogs_d1_heavy_wpn1"] = "Пройти первый день ограбления 'Сторожевые псы', используя только УКТЖ, миниганы, ракетомёты или снайперскую винтоку Thanatos, на уровни сложности OVERKILL или выше. Для выполнения этого испытания, ограбление нужно играть с самого начала.",
+		
+		["test_net"] = "Fast.Net",
+		["menu_test"] = "",
+		["state_filter"] = "State",
+		["menu_state_filter"] = "State Filter",
+		["menu_state_filter_help"] = "Shows the lobby state",
+		["menu_state_lobby"] = "Lobby",
+		["menu_state_loading"] = "Loading",
+		["menu_state_ingame"] = "Ingame",
 				
-				-- ///Stuff ripped from the various locale files we had ///
+		-- ///Stuff ripped from the various locale files we had ///
 
 		--Halloween Dozer Sword
 		["bm_melee_halloween_sword"] = "Меч Безголового Бульдозера",

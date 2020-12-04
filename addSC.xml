@@ -1488,8 +1488,7 @@
 	<cooked_physics path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<sequence_manager path="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" force="false"/>
 	<texture path="units/payday2/characters/ene_acc_shield_city/shield_df" force="false"/>
-	<texture path="units/payday2/characters/ene_acc_shield_city/shield_il" force="false"/>
-	<texture path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>
+	<texture path="units/payday2/characters/ene_acc_shield_city/shield_nm" force="false"/>	
 	
 	<!--Gensec Shield-->
 	<material_config path="units/payday2/characters/ene_shield_gensec/ene_shield_gensec" force="false"/>

@@ -1,6 +1,6 @@
 <materials version="3" group="wpn_npc_uzi_and_hajk">
     <material name="uzi_and_hajk_mtr" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
-        <bump_normal_texture file="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump_nm"/>
-        <diffuse_texture file="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump_df"/>
+        <bump_normal_texture file="units/pd2_dlc_bex/weapons/wpn_npc_uzi/hajk_uzi_atlas_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bex/weapons/wpn_npc_uzi/hajk_uzi_atlas_df"/>
     </material>
 </materials>

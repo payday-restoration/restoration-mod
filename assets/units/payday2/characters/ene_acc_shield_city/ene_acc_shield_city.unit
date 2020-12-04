@@ -1,5 +1,5 @@
-<unit type="chl" slot="8">
-	<object file="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
+<unit type="items" slot="8" >
+    <object file="units/payday2/characters/ene_acc_shield_city/ene_acc_shield_city" />
 	
 	<dependencies>
 		<depends_on effect="effects/particles/dest/security_camera_dest"/>

@@ -122,8 +122,8 @@
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<sequence_manager path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
 	<texture path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_df"/>
-	<texture path="units/payday2/characters/ene_acc_shield_city/shield_il"/>
-	<texture path="units/payday2/characters/ene_acc_shield_city/shield_nm"/>	
+	<texture path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_nm"/>
+	<texture path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_il"/>	
 	
 	<!--Vet Cops-->	
 	<!--1-->	

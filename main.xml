@@ -57,7 +57,7 @@
 		<hook file="managers/menu/NewsFeedGUI.lua" source_file="lib/managers/menu/NewsFeedGUI"/>
 		<hook file="managers/UserManager.lua" source_file="lib/managers/usermanager"/>
 		<hook file="managers/musicmanager.lua" source_file="lib/managers/musicmanager"/>
-		<!-- <hook file="managers/hud/HUDArmorFix.lua" source_file="lib/managers/hud/HUDTeammate"/> -->
+		<hook file="managers/hud/HUDArmorFix.lua" source_file="lib/managers/hud/HUDTeammate"/>
 		<!--///SCRIPTDATA\\\-->
 		<hook file="CoreScriptData.lua" source_file="core/lib/managers/coresequencemanager"/>
 		<!--///NOTIFICATIONS\\\-->
@@ -356,7 +356,7 @@
 					<option type="bool" default_value="false" name="RealAmmo"/>
 					<option type="bool" default_value="false" name="StealthOrigPos"/>
 					<option type="bool" default_value="false" name="LowerBag"/>
-					<!-- <option type="bool" default_value="false" name="ArmorFix"/> -->
+					<option type="bool" default_value="false" name="ArmorFix"/>
 					<!-- <option type="bool" default_value="false" name="CasingTicker"/> -->
 				</option_group>
 				<option_group name="UI">

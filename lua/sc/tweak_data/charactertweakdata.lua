@@ -12221,7 +12221,11 @@ function CharacterTweakData:_create_table_structure()
 		"sr2_titan",
 		"beretta92_titan",
 		"hajk_cop",
-		"uzi_cop"
+		"uzi_cop",
+		"m4_blue",
+		"ak_blue",
+		"amcar",
+		"ak102"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -12292,6 +12296,10 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_beretta92_titan/wpn_npc_beretta92_titan"),
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hajk/wpn_npc_hajk"),
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi"),
+		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
+		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu"),
+		Idstring("units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar"),
+		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak102/wpn_npc_ak102")
 	}
 end
 
@@ -12474,7 +12482,7 @@ function CharacterTweakData:_set_easy()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 20
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.55
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
 	self.old_hoxton_mission.HEALTH_INIT = 20
 	self.spa_vip.HEALTH_INIT = 20
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 20
@@ -12679,7 +12687,7 @@ function CharacterTweakData:_set_normal()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 40
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.5
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
 	self.old_hoxton_mission.HEALTH_INIT = 40
 	self.spa_vip.HEALTH_INIT = 40
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 40
@@ -12884,7 +12892,7 @@ function CharacterTweakData:_set_hard()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 60
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.45
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
 	self.old_hoxton_mission.HEALTH_INIT = 60
 	self.spa_vip.HEALTH_INIT = 60
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 60
@@ -12892,7 +12900,9 @@ function CharacterTweakData:_set_hard()
 	self.weap_unit_names[6] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
-	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
+	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
+	self.weap_unit_names[69] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")	
+	self.weap_unit_names[70] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")
 	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		
@@ -13090,7 +13100,7 @@ function CharacterTweakData:_set_overkill()
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
 	self.presets.gang_member_damage.HEALTH_INIT = 80
-	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.4
+	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.35
 	self.old_hoxton_mission.HEALTH_INIT = 80
 	self.spa_vip.HEALTH_INIT = 80
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 80
@@ -13098,6 +13108,8 @@ function CharacterTweakData:_set_overkill()
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
+	self.weap_unit_names[69] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")	
+	self.weap_unit_names[70] = Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47")	
 	if job == "tag" or job == "xmn_tag" then
 		self.weap_unit_names[59] = Idstring("units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull")
 	end		

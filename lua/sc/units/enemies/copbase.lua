@@ -95,6 +95,17 @@ function CopBase:default_weapon_name()
 		default_weapon_id = "m1911_npc"
 	end
 	
+	--Blue SWAT Weapon Changes (test)--
+	if self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") then
+		default_weapon_id = "m4_blue"	
+	elseif self._unit:name() == Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1") then
+		default_weapon_id = "m4_blue"	
+	end		
+	
+	--Yellow Heavy SWAT Weapon Changes (test)
+	if self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass") then
+		default_weapon_id = "ak102"		
+	end		
 	
 	--Biker Weapon Changes--
 	if self._unit:name() == Idstring("units/payday2/characters/ene_biker_1/ene_biker_1") then

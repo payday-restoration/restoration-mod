@@ -14662,14 +14662,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	for _,t in pairs(restoration.large_levels) do
 		if job == t then
 			self.besiege.assault.force = {
-				5,
 				6,
-				7
+				7,
+				8
 			}
 			self.besiege.assault.force_pool = {
-				30,
 				40,
-				50
+				50,
+				60
 			}	
 		end
 	end	
@@ -14821,22 +14821,22 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	end
 	
-	--assault groups
+	--Assault groups
 	if difficulty_index <= 2 then
 		self.besiege.assault.groups = {
 			CS_cops = {
-				0,
-				1,
-				0.85
+				0.85,
+				0.6,
+				0.45
 			},
 			CS_swats = {
-				0,
-				0.1,
-				0.35
+				0.15,
+				0.35,
+				0.4
 			},
 			CS_shields = {
 				0,
-				0.075,
+				0.05,
 				0.15
 			}
 		}
@@ -14844,95 +14844,89 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.assault.groups = {
 			--Will participate in first assault, then pull out
 			CS_cops = {
-				0.5,
+				0.4,
 				0,
 				0		
 			},
 			CS_swats = {
+				0.45,
 				0.5,
-				1,
-				0.75
-			},
-			--Pretty much only a thing on max diff, idential stats to Mp5 SWATs
-			CS_FBI = {
-				0,
-				0,
-				0.25
+				0.35
 			},
 			CS_heavys = {
-				0,
+				0.05,
 				0.2,
-				0.7
+				0.3
 			},
 			CS_shields = {
-				0.05,
 				0.1,
-				0.2
+				0.1,
+				0.15
 			},
 			CS_tazers = {
 				0,
-				0.075,
-				0.15
+				0.1,
+				0.1
 			},
 			FBI_spoocs = {
 				0,
 				0.05,
-				0.1
+				0.05
 			},
 			CS_tanks = {
 				0,
 				0.05,
-				0.1
+				0.05
 			}
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.groups = {
 			--Assist FBI SWATs for a short while, pull out by the last diff increase
 			CS_swats = {
-				0.1,
-				0.5,
+				0.4,
+				0.25,
 				0
 			},		
 			CS_heavys = {
-				0.05,
-				0.125,
+				0.15,
+				0.15,
 				0
 			},
 			FBI_swats = {
 				0,
-				0.5,
-				1
+				0.25,
+				0.45
 			},
 			FBI_heavys = {
 				0,
-				0.125,
-				0.5
-			},
-			FBI_shields = {
-				0,
-				0.1,
-				0.2
+				0.075,
+				0.25
 			},		
 			--Ditto
 			CS_shields = {
-				0.1,
-				0.1,
+				0.25,
+				0.05,
 				0
 			},
+			FBI_shields = {
+				0,
+				0.05,
+				0.1
+			},			
 			FBI_tanks = {
 				0,
-				0.1,
-				0.15
+				0.05,
+				0.05
 			},
 			FBI_spoocs = {
 				0,
-				0.1,
-				0.2
+				0.05,
+				0.05
 			},
 			CS_tazers = {
-				0.05,
-				0.15,
-				0.2
+				0.2,
+				0.075,
+				0.1
 			}
 		}
 	elseif difficulty_index == 5 then
@@ -15402,19 +15396,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			},
 			CS_defend_b = {
 				0,
-				1,
+				0.8,
 				1
 			}
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.reenforce.groups = {
 			CS_defend_a = {
-				1,
+				0.35,
 				0,
 				0
 			},
 			CS_defend_b = {
-				2,
+				0.65,
 				1,
 				0
 			},
@@ -15427,29 +15421,29 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 4 then
 		self.besiege.reenforce.groups = {
 			CS_defend_a = {
-				1,
+				0.35,
 				0,
 				0
 			},
 			CS_defend_b = {
-				2,
-				1,
+				0.65,
+				0.5,
 				0
 			},
 			CS_defend_c = {
 				0,
 				0,
-				1
+				0.5
 			},
 			FBI_defend_a = {
 				0,
-				1,
+				0.5,
 				0
 			},
 			FBI_defend_b = {
 				0,
 				0,
-				1
+				0.5
 			}
 		}
 	elseif difficulty_index == 5 then
@@ -15537,12 +15531,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.recon.groups = {
 			CS_stealth_a = {
 				1,
-				1,
+				0.5,
 				0
 			},
 			CS_cops = {
 				0,
-				1,
+				0.5,
 				1
 			}
 		}
@@ -15550,7 +15544,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.recon.groups = {
 			CS_stealth_a = {
 				1,
-				0.5,
+				0.4,
 				0
 			},
 			CS_tazers = {
@@ -15561,7 +15555,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			FBI_stealth_a = {
 				0,
 				0.25,
-				0.5
+				0.35
 			},
 			FBI_stealth_c = {
 				0,
@@ -15572,18 +15566,18 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 4 then
 		self.besiege.recon.groups = {
 			FBI_stealth_a = {
-				1,
+				0.5,
 				0.5,
 				0.25
 			},
 			FBI_stealth_b = {
 				0,
 				0,
-				1
+				0.5
 			},
 			--Show up for first few recons, slowly replaced
 			FBI_stealth_c = {
-				1,
+				0.5,
 				0.5,
 				0.25
 			}			

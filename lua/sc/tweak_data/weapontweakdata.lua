@@ -803,6 +803,19 @@ function WeaponTweakData:_init_data_m4_npc()
 	
 	--M4/203 used by Grenadier
 	self.m4_boom_npc = deep_clone(self.m4_npc)
+	
+	--AMCAR
+	self.amcar_npc = deep_clone(self.m4_npc)
+	self.amcar_npc.sounds.prefix = "amcar_npc"
+	self.amcar_npc.DAMAGE = 2
+	self.amcar_npc.CLIP_AMMO_MAX = 30
+	self.amcar_npc.auto.fire_rate = 0.075
+	self.amcar_npc.alert_size = 2400
+	self.amcar_npc.suppression = 2.4
+	
+	--AK102
+	self.ak102_npc = deep_clone(self.amcar_npc)
+	self.ak102_npc.sounds.prefix = "ak74_npc"
 end
 
 function WeaponTweakData:_init_data_m4_yellow_npc()

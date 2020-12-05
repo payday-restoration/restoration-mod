@@ -2548,6 +2548,9 @@
 	<material_config path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1" force="true"/>	
 	<material_config path="units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1_contour" force="true"/>
 	
+	<!--AMCAR-->	
+	<unit path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>
+	
 	<!--swat 1-->
 	<model path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>	
 	<object path="units/payday2/characters/ene_swat_1/ene_swat_1" force="true"/>	

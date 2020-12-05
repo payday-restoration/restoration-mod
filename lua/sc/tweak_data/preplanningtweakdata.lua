@@ -13,6 +13,23 @@ function PrePlanningTweakData:init(tweak_data)
 	
 	self.locations.branchbank.mission_briefing_texture = "guis/textures/pd2/pre_planning/mission_briefing_branchbank"
 	
+	--Sniper, now requires Insider assets
+	self.types.sniper.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}
+	
+	self.types.crojob3_sniper.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}	
+	
+	--Safe escape, ditto
+	self.types.safe_escape.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}		
+	
 	--Pro Job Changes
 	
 	if Global.game_settings and Global.game_settings.one_down then

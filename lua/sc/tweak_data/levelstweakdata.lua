@@ -31,95 +31,95 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.lapd = lapd
 	
 	--///MEXICAN LEVELS\\\--
-	self.bex.package = {"packages/mexicoassets", "packages/job_bex"}
+	self.bex.package = {"packages/job_bex"}
 	
-	self.skm_bex.package = {"packages/mexicoassets", "packages/dlcs/skm/job_bex_skm"}
+	self.skm_bex.package = {"packages/dlcs/skm/job_bex_skm"}
 
-	self.mex_cooking.package = {"packages/mexicoassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
+	self.mex_cooking.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
 	self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
 	
-	self.pex.package = {"packages/mexicoassets", "packages/job_pex"}
+	self.pex.package = {"packages/job_pex"}
 	self.pex.player_style = "slaughterhouse"
 	
-	self.fex.package = {"packages/mexicoassets", "packages/job_fex"}
+	self.fex.package = {"packages/job_fex"}
 	self.fex.player_style = "suit_sunny"
 	
 	--///MURKYWATER LEVELS\\\--
-	self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
+	self.shoutout_raid.package = {"packages/vlad_shout"}
 	self.shoutout_raid.ai_group_type = murkywater
 	self.shoutout_raid.player_style = "loud_suit" --using this until we sort out the coats
 	
-	self.pbr.package = {"packages/murkyassets", "packages/narr_jerry1"}
+	self.pbr.package = {"packages/narr_jerry1"}
 	self.pbr.ai_group_type = murkywater
 	self.pbr.player_style = "loud_suit"
 	
-	self.des.package = {"packages/murkyassets", "packages/job_des"}
+	self.des.package = {"packages/job_des"}
 	self.des.ai_group_type = murkywater 
 	self.des.player_style = "loud_suit"
 	
-	self.bph.package = {"packages/murkyassets", "packages/dlcs/bph/job_bph"}
+	self.bph.package = {"packages/dlcs/bph/job_bph"}
 	self.bph.ai_group_type = murkywater 
 	self.bph.player_style = "loud_suit"
 	
-	self.vit.package = {"packages/murkyassets", "packages/dlcs/vit/job_vit"}
+	self.vit.package = {"packages/dlcs/vit/job_vit"}
 	self.vit.ai_group_type = murkywater 
 	
-	self.wwh.package = {"packages/murkyassets", "packages/lvl_wwh"}
+	self.wwh.package = {"packages/lvl_wwh"}
 	self.wwh.ai_group_type = murkywater 
 	
-	self.arm_for.package = {"packages/murkyassets", "packages/narr_arm_for"}
+	self.arm_for.package = {"packages/narr_arm_for"}
 	self.arm_for.ai_group_type = murkywater 
 	self.arm_for.player_style = "sneak_suit"
 	
-	self.mex.package = {"packages/murkyassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex"}
+	self.mex.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex"}
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"	
 
-	self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2", "packages/murkyassets"}
+	self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2"}
 	self.crojob2.ai_group_type = murkywater			
 	self.crojob2.player_style = "slaughterhouse"	
 
-	self.dark.package = {"packages/job_dark", "packages/murkyassets"}
+	self.dark.package = {"packages/job_dark"}
 	self.dark.ai_group_type = murkywater	
 	self.dark.player_style = "sneak_suit"
 	
-	self.kosugi.package = {"packages/kosugi", "packages/murkyassets"}
+	self.kosugi.package = {"packages/kosugi"}
 	self.kosugi.ai_group_type = murkywater	
 	self.kosugi.player_style = "sneak_suit"			
 	
 	--///NYPD LEVELS\\\--
 	self.spa.ai_group_type = nypd
-	self.spa.package = {"packages/job_spa", "packages/nypdassets", "levels/narratives/dentist/mia/stage2/world_sounds"}
+	self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.spa.player_style = "slaughterhouse"
 	
 	self.brb.ai_group_type = nypd
-	self.brb.package = {"packages/lvl_brb", "packages/nypdassets"}
+	self.brb.package = {"packages/lvl_brb"}
 	self.brb.player_style = "peacoat"
 	
 	self.red2.ai_group_type = nypd
-	self.red2.package = {"packages/narr_red2", "packages/nypdassets"}
+	self.red2.package = {"packages/narr_red2"}
 	
 	self.run.ai_group_type = nypd
-	self.run.package = {"packages/narr_run", "packages/nypdassets"}
+	self.run.package = {"packages/narr_run"}
 	
 	self.flat.ai_group_type = nypd
-	self.flat.package = {"packages/narr_flat", "packages/nypdassets"}
+	self.flat.package = {"packages/narr_flat"}
 	
 	if restoration and restoration.Options:GetValue("OTHER/QuietRain") then
 		self.glace.ai_group_type = nypd
-		self.glace.package = {"packages/narr_glace", "packages/addrain", "packages/nypdassets"}
+		self.glace.package = {"packages/narr_glace", "packages/addrain"}
 	else
 		self.glace.ai_group_type = nypd
-		self.glace.package = {"packages/narr_glace", "packages/nypdassets"}
+		self.glace.package = {"packages/narr_glace"}
 	end
 	
 	self.dah.ai_group_type = nypd
-	self.dah.package = {"packages/lvl_dah", "packages/nypdassets"}
+	self.dah.package = {"packages/lvl_dah"}
 	self.dah.player_style = "slaughterhouse"
 	
 	self.dinner.ai_group_type = nypd
-	self.dinner.package = {"packages/narr_dinner", "packages/nypdassets", "packages/miscassets"}
+	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
 	self.dinner.player_style = "slaughterhouse"
 	
 	self.man.package = {"packages/narr_man", "packages/secret_stash"}
@@ -177,42 +177,42 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	}
 	
 	self.nmh.ai_group_type = nypd
-	self.nmh.package = {"packages/dlcs/nmh/job_nmh", "packages/nypdassets"}
+	self.nmh.package = {"packages/dlcs/nmh/job_nmh"}
 	self.nmh.ghost_bonus = nil
 	
 	self.skm_run.ai_group_type = nypd
-	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
+	self.skm_run.package = {"packages/dlcs/skm/job_skm"}
 	
 	self.skm_red2.ai_group_type = nypd
-	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
+	self.skm_red2.package = {"packages/dlcs/skm/job_skm"}
 	
 	--///LAPD LEVELS\\\--			
 	self.jolly.ai_group_type = lapd
-	self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/lapdassets"}
+	self.jolly.package = {"packages/jolly", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.jolly.player_style = "suit_sunny"
 	
 	self.pal.ai_group_type = lapd
-	self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/lapdassets"}	
+	self.pal.package = {"packages/narr_pal"}	
 	
 	self.friend.ai_group_type = lapd
-	self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/lapdassets", "packages/narr_rvd"}
+	self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend"}
 	self.friend.player_style = "suit_sunny"
 	
 	self.kenaz.ai_group_type = lapd
-	self.kenaz.package = {"packages/kenaz", "packages/narr_rvd", "packages/lapdassets", "packages/rex_gold"}	
+	self.kenaz.package = {"packages/kenaz", "packages/rex_gold"}	
 	self.kenaz.player_style = "continental"				
 	
 	self.rvd1.ai_group_type = lapd
-	self.rvd1.package = {"packages/job_rvd", "packages/lapdassets"}	
+	self.rvd1.package = {"packages/job_rvd"}	
 	self.rvd1.player_style = "suit_sunny"		
 	
 	self.rvd2.ai_group_type = lapd
-	self.rvd2.package = {"packages/job_rvd2", "packages/lapdassets"}
+	self.rvd2.package = {"packages/job_rvd2"}
 	self.rvd2.player_style = "suit_sunny"
 
 	--///NEW OUTFITS\\\--
 	
-	self.fish.package = {"packages/lvl_fish", "packages/nypdassets"}
+	self.fish.package = {"packages/lvl_fish"}
 	self.fish.player_style = "tux"
 	
 	self.arena.player_style = "hiphop"
@@ -263,7 +263,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 	
-	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/murkyassets",}
+	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2"}
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 	

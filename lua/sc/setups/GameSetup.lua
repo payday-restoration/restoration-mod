@@ -45,10 +45,13 @@ function GameSetup:load_packages()
 		end
     end
 
+    local a = tweak_data.levels.ai_groups.america
     local r = tweak_data.levels.ai_groups.russia
     local m = tweak_data.levels.ai_groups.murkywater
     local z = tweak_data.levels.ai_groups.zombie
     local f = tweak_data.levels.ai_groups.federales
+    local la = tweak_data.levels.ai_groups.lapd
+    local ny = tweak_data.levels.ai_groups.nypd
     local ai_type = tweak_data.levels:get_ai_group_type()
     
 	if job_tweak_package_data and job_tweak_package_data.load_all_difficulty_packages then
@@ -57,8 +60,32 @@ function GameSetup:load_packages()
 
 			load_difficulty_package(diff_package)
         end
+    elseif ai_type == a then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_america" or "normal")
+
+		load_difficulty_package(diff_package)
 	elseif ai_type == z then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_zombie" or "normal")
+
+        load_difficulty_package(diff_package)
+    elseif ai_type == r then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_russia" or "normal")
+
+        load_difficulty_package(diff_package)
+    elseif ai_type == m then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_murkywater" or "normal")
+
+        load_difficulty_package(diff_package)
+    elseif ai_type == f then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_federales" or "normal")
+
+        load_difficulty_package(diff_package)
+    elseif ai_type == la then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_lapd" or "normal")
+
+        load_difficulty_package(diff_package)
+    elseif ai_type == ny then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_nypd" or "normal")
 
 		load_difficulty_package(diff_package)
 	else
@@ -88,6 +115,27 @@ function GameSetup:load_packages()
         faction_package = {
             "packages/akanassets", 
             "packages/lvl_mad"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
+    elseif ai_type == m then
+        faction_package = {
+            "packages/murkyassets"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
+    elseif ai_type == f then
+        faction_package = {
+            "packages/mexicoassets"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
+    elseif ai_type == la then
+        faction_package = {
+            "packages/lapdassets",
+            "packages/narr_rvd"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
+    elseif ai_type == ny then
+        faction_package = {
+            "packages/nypdassets"
         }
         table.insert(self._loaded_faction_packages, faction_package)
     end

@@ -181,7 +181,7 @@
 		</payout>
 	</narrative>
 	<level ai_group_type="federales" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
-		<add file="levels/junk/add.xml"/>
+		<add file="levels/junk/add.xml" player_style="suit_sunny"/>
 		<assets>
 			<asset name="ammo_bag"/>
 			<asset name="health_bag"/>

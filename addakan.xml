@@ -315,4 +315,7 @@
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_ru_df"/>
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_helmet_ru_df"/>
 	
+	<!--AK102-->	
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_ak102/wpn_npc_ak102" load="false" force="false"/>		
+	
 </table>

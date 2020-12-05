@@ -375,7 +375,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 			old_hoxton = true
 		},
 		ai_group_type = america,
-		player_style = "loud_suit",
+		player_style = "xmas_tuxedo",
 		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_1_xmn_df"
 	}
 
@@ -398,7 +398,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 			old_hoxton = true
 		},
 		ai_group_type = america,
-		player_style = "loud_suit",
+		player_style = "xmas_tuxedo",
 		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_2_xmn_df"
 	}
 	
@@ -407,6 +407,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.xmn_tag = deep_clone(self.tag)
 	self.xmn_tag.name_id = "heist_xmn_tag_name"
 	self.xmn_tag.world_name = "narratives/locke/tag_xmn"
+	self.xmn_tag.player_style = "xmas_tuxedo"
 	self.xmn_tag.load_screen = "guis/dlcs/xmn/textures/loading/job_tag_xmn_df"
 	
 	--///ZOMBIE LEVELS\\\--

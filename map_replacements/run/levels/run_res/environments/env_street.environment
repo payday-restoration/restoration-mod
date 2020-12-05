@@ -7,32 +7,32 @@
 		</sky_orientation>
 		<others>
 			<param key="sky_texture" value="core/environments/skies/default/default"/>
-			<param key="global_world_overlay_mask_texture" value=""/>
+			<param key="global_world_overlay_mask_texture" value="units/pd2_dlc_jerry/terrain/jry_terrain_weight_df"/>
 			<param key="underlay" value="core/environments/skies/default/default"/>
-			<param key="sun_ray_color_scale" value="2.194000005722"/>
-			<param key="global_world_overlay_texture" value=""/>
-			<param key="sun_ray_color" value="0.90196079015732 0.85490196943283 0.70588237047195"/>
+			<param key="sun_ray_color_scale" value="2.7000000476837"/>
+			<param key="global_world_overlay_texture" value="units/pd2_dlc_jerry/terrain/jry_terrain_df"/>
+			<param key="sun_ray_color" value="0.90196079015732 0.85490196943283 0.75686275959015"/>
 			<param key="global_texture" value="levels/mods/run_res/cubemaps/100109"/>
 		</others>
 		<post_effect>
 			<deferred>
 				<deferred_lighting>
 					<apply_ambient>
-						<param key="ambient_scale" value="0"/>
+						<param key="ambient_scale" value="0.22871741652489"/>
 						<param key="sky_bottom_color" value="0.93725490570068 0.9450980424881 1"/>
 						<param key="fog_start_color" value="0.74117648601532 0.839215695858 1"/>
 						<param key="effect_light_scale" value="1"/>
 						<param key="fog_far_low_color" value="0.71372550725937 0.79215687513351 0.94117647409439"/>
 						<param key="ambient_falloff_scale" value="0"/>
 						<param key="sky_bottom_color_scale" value="0.40000000596046"/>
-						<param key="ambient_color_scale" value="0"/>
-						<param key="ambient_color" value="0 0 0"/>
-						<param key="fog_max_range" value="300000"/>
+						<param key="ambient_color_scale" value="0.20000000298023"/>
+						<param key="ambient_color" value="0.90980392694473 0.89803922176361 0.76470589637756"/>
+						<param key="fog_max_range" value="200000"/>
 						<param key="bloom_threshold" value="1"/>
 						<param key="sky_top_color_scale" value="0.30000001192093"/>
 						<param key="sky_top_color" value="0.81176471710205 0.85882353782654 1"/>
-						<param key="fog_min_range" value="3000"/>
-						<param key="fog_max_density" value="0.11200000345707"/>
+						<param key="fog_min_range" value="2000"/>
+						<param key="fog_max_density" value="0.25"/>
 					</apply_ambient>
 				</deferred_lighting>
 			</deferred>
@@ -48,6 +48,10 @@
 					</shadow_modifier>
 				</shadow_rendering>
 			</shadow_processor>
+			<fog_processor>
+			</fog_processor>
+			<hdr_post_processor>
+			</hdr_post_processor>
 			<bloom_combine_post_processor>
 				<bloom_combine>
 					<bloom_lense>

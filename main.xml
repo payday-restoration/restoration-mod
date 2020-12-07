@@ -257,6 +257,7 @@
 		<hook file="sc/tweak_data/carrytweakdata.lua" source_file="lib/tweak_data/carrytweakdata"/>
 		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
 		<hook file="sc/setups/GameSetup.lua" source_file="lib/setups/gamesetup"/>
+		<hook file="sc/setups/MenuSetup.lua" source_file="lib/setups/menusetup"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
@@ -484,7 +485,7 @@
 	<Package id="packages/custom_fonts" file="fonts.xml" use_clbk="self:LoadFonts"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 	<Package id="packages/addrain" file="addRAIN.xml"/>
-	<Package id="packages/uicosmetics" file="packages/uicosmetics/UICosmetics.xml" use_clbk="self:LoadSCAssets"/>
+	<Package id="packages/uicosmetics" file="packages/uicosmetics/UICosmetics.xml"/>
 	<!--///DIFF PACKAGES\\\-->
 	<Package id="packages/sm_wish_sc_zombie" file="packages/zombie_diff/sm_wish_sc_zombie.xml" use_clbk="self:DebugLoadAssets"/>
 </mod>

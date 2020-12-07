@@ -484,6 +484,7 @@
 	<Package id="packages/custom_fonts" file="fonts.xml" use_clbk="self:LoadFonts"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 	<Package id="packages/addrain" file="addRAIN.xml"/>
+	<Package id="packages/uicosmetics" file="packages/uicosmetics/UICosmetics.xml" use_clbk="self:LoadSCAssets"/>
 	<!--///DIFF PACKAGES\\\-->
 	<Package id="packages/sm_wish_sc_zombie" file="packages/zombie_diff/sm_wish_sc_zombie.xml" use_clbk="self:DebugLoadAssets"/>
 </mod>

@@ -24,11 +24,22 @@ function PrePlanningTweakData:init(tweak_data)
 		category = "player"
 	}	
 	
-	--Safe escape, ditto
-	self.types.safe_escape.upgrade_lock = {
+	--Bank Heist vault keys, now requires Inside Man
+	self.types.branchbank_vault_key.upgrade_lock = {
 		upgrade = "additional_assets",
 		category = "player"
-	}		
+	}
+	self.types.branchbank_vault_key.category = "insider_help"
+	
+	--Safe escape, doesn't need upgrades anymore
+	self.types.safe_escape.upgrade_lock = nil
+	self.types.safe_escape.category = "hired_help"
+	
+	--Bodybag case, no upgrade lock on non-pro jobs now
+	self.types.bodybags_bag.upgrade_lock = nil
+	
+	--Making vantage point only one favor because god damn it's worthless
+	self.types.sniper_spot.budget_cost = 1
 	
 	--Pro Job Changes
 	

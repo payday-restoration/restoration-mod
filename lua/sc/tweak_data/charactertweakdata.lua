@@ -467,6 +467,8 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.steal_loot = true
 	self.fbi.no_arrest = false
 	self.fbi.heal_cooldown = 2.5
+	--Always rescue hostages
+	self.fbi.rescue_hostages = true
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_female = deep_clone(self.fbi)
 	self.fbi_female.speech_prefix_p1 = "fl"
@@ -787,6 +789,8 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.chatter = presets.enemy_chatter.swat
 	self.swat.melee_weapon = nil
 	self.swat.melee_weapon_dmg_multiplier = 1
+	--Always rescue hostages
+	self.swat.rescue_hostages = true
 	if is_murky then
 	    self.swat.has_alarm_pager = true
 	else
@@ -4536,7 +4540,11 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.speech_prefix = "po"
 	presets.base.speech_prefix_count = 1
 	presets.base.follower = false
-	presets.base.rescue_hostages = true
+	if managers.skirmish and managers.skirmish:is_skirmish() then
+		presets.base.rescue_hostages = false
+	else
+		presets.base.rescue_hostages = true
+	end
 	presets.base.use_radio = self._default_chatter
 	presets.base.dodge = nil
 	presets.base.challenges = {type = "law"}

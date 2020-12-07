@@ -15010,10 +15010,10 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			},
 			--Slowly get replaced by GenSec boys
 			GS_swats = {
-                0,
-                0.185,
-                0.345
-            },		
+				0,
+				0.185,
+				0.345
+			},		
 			FBI_heavys = {
 				0.12,
 				0.12,
@@ -15076,145 +15076,145 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 7 then
 		self.besiege.assault.groups = {
 			GS_swats = {
-				0.2,
-				0.9,
-				0.9
+				0.332,
+				0.34,
+				0.31
 			},
 			FBI_heavys = {
-				0.06,
-				0.24,
-				0.39
+				0.1,
+				0.091,
+				0.134
 			},
 			FBI_heavys_boom = {
-				0.04,
-				0.16,
-				0.26
+				0.067,
+				0.06,
+				0.09
 			},			
 			FBI_shields = {
-				0.06,
-				0.24,
-				0.18
+				0.1,
+				0.091,
+				0.062
 			},
 			FBI_shields_boom = {
-				0.04,
-				0.16,
-				0.12
+				0.067,
+				0.06,
+				0.041
 			},	
 			--[[
 			--Baseline numbers to think about, work from this as an array for determining dozer types
 			FBI_tanks = {
-				0.1,
-				0.35,
-				0.4
+				0.167,
+				0.132,
+				0.138
 			},			
 			]]--			
 			FBI_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.05288333333,
+				0.0418,
+				0.0437
 			},
 			BLACK_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.05288333333,
+				0.0418,
+				0.0437
 			},
 			SKULL_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.05288333333,
+				0.0418,
+				0.0437
 			},
 			TIT_tanks = {
-				0.005,
-				0.0175,
-				0.02
+				0.00835,
+				0.0066,
+				0.0069
 			},					
 			CS_tazers = {
-				0.06,
-				0.24,
-				0.21
+				0.1,
+				0.091,
+				0.072
 			},
 			CS_booms = {
-				0.04,
-				0.16,
-				0.14
+				0.067,
+				0.06,
+				0.048
 			},			
 			FBI_spoocs = {
 				0,
-				0.2,
-				0.3
+				0.075,
+				0.105
 			}
 		}
 	else
 		self.besiege.assault.groups = {
 			GS_swats = {
-				0.2,
-				0.9,
-				0.9
+				0.332,
+				0.34,
+				0.31
 			},
 			FBI_heavys = {
-				0.06,
-				0.24,
-				0.39
+				0.1,
+				0.091,
+				0.134
 			},
 			FBI_heavys_boom = {
-				0.04,
-				0.16,
-				0.26
+				0.067,
+				0.06,
+				0.09
 			},			
 			FBI_shields = {
-				0.06,
-				0.24,
-				0.18
+				0.1,
+				0.091,
+				0.062
 			},
 			FBI_shields_boom = {
-				0.04,
-				0.16,
-				0.12
-			},			
+				0.067,
+				0.06,
+				0.041
+			},	
 			--[[
 			--Baseline numbers to think about, work from this as an array for determining dozer types
 			FBI_tanks = {
-				0.1,
-				0.35,
-				0.4
+				0.167,
+				0.132,
+				0.138
 			},			
-			]]--
+			]]--			
 			FBI_tanks = {
-				0.03,
-				0.105,
-				0.12
+				0.0501,
+				0.0396,
+				0.0414
 			},
 			BLACK_tanks = {
-				0.03,
-				0.105,
-				0.12
+				0.0501,
+				0.0396,
+				0.0414
 			},
 			SKULL_tanks = {
-				0.03,
-				0.105,
-				0.12
+				0.0501,
+				0.0396,
+				0.0414
 			},
 			TIT_tanks = {
-				0.01,
-				0.035,
-				0.04
+				0.0167,
+				0.0132,
+				0.0138
 			},					
 			CS_tazers = {
-				0.06,
-				0.24,
-				0.21
+				0.1,
+				0.091,
+				0.072
 			},
 			CS_booms = {
-				0.04,
-				0.16,
-				0.14
+				0.067,
+				0.06,
+				0.048
 			},			
 			FBI_spoocs = {
 				0,
-				0.2,
-				0.3
+				0.075,
+				0.105
 			}
-		}			
+		}
 	end
 			
 	self.besiege.assault.groups.single_spooc = {
@@ -15500,13 +15500,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0
 			},
 			GS_defend_b = {
-				1,
-				1,
+				0.9,
+				0.5,
 				0
 			},
 			GS_defend_c = {
 				0,
-				1,
+				0.5,
 				0
 			},
 			FBI_defend_d = {
@@ -15633,19 +15633,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	else
 		self.besiege.recon.groups = {
 			FBI_stealth_a = {
-				0.3,
-				0.6,
-				0.6
+				0.4,
+				0.4,
+				0.3
 			},
 			FBI_stealth_a_boom = {
-				0.2,
-				0.4,
-				0.4
+				0.267,
+				0.267,
+				0.2
 			},			
 			FBI_stealth_b = {
-				0.25,
-				0.5,
-				1
+				0.333,
+				0.333,
+				0.5
 			}		
 		}
 	end

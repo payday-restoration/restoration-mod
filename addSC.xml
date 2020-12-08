@@ -1,4 +1,12 @@
 <table directory="assets">	
+
+	<!--zeal city 3 and sniper hat-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>		
+	
 	<!--Murky Taser Helmet -->
 	<object path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murkytazer_helmet/ene_acc_murkytazer_helmet" force="false"/>	

@@ -55,14 +55,7 @@
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3" load="true"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"/>
 	<material_config path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_contour"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
-
-	<!--zeal city 3 hat-->
-	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
-	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
-	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
-	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false" load="true"/>
-	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>			
+	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>		
 	
 	<!--textures city -->
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/zomnia_glass_op" force="false"/>	

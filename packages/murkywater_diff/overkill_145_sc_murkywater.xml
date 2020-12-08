@@ -1,4 +1,97 @@
 <table directory="assets">	
+
+	<!--Summers-->
+	<object path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_husk" force="false" load="true"/>
+	<!-- <texture path="units/pd2_dlc_vip/characters/ene_summers/summers_head_df" force="false"/> -->
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_body_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_nm" force="false"/>	
+	<effect path="effects/payday2/particles/explosions/summers_footstep" load="false"/>	
+
+	<!--Summers Flamethrower-->
+	<cooked_physics path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<model path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<object path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers" load="false"/>		
+	<texture path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/flamethrower_summers_df"/>
+	<texture path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/flamethrower_summers_nm"/>
+	
+	<material_config path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<model path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<object path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<material_config path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers_thq" force="false"/>
+	<cooked_physics path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<unit path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" load="false" force="false"/>
+	<texture path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/dragon_df" force="false"/>
+	<unit path="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2/wpn_fps_fla_mk2_summers_npc" load="false" force="false"/>
+
+	<!--Summers' Gang-->
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_nm" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_nm" force="false"/>	
+
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_face_df" force="false"/>
+
+	<unit path="units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_summers_npc" load="false" force="false"/>
+
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_face_df" force="false"/>	
+	
+
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />	
+	
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />		
+
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />			
+
 	<!--Murky FBI SWAT M4-->
 	<object path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>

@@ -275,5 +275,17 @@
 	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_sight_nm" force="false"/>	 -->
 	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_lod_df" force="false"/>
 	<!-- <texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df" force="false"/> -->
-	<!-- <texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm" force="false"/>	 -->	
+	<!-- <texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm" force="false"/>	 -->
+	
+	<!--Murky Vet Cop (bloody)-->
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false" load="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1_husk" force="false" load="true"/>
+	<object path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1" force="false"/>
+	<material_config path="units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1_contour" force="false"/>	
+
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_body_2_df" force="false"/>
+	<texture path="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_head_1_df" force="false"/>		
 </table>

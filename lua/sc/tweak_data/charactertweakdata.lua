@@ -3205,13 +3205,10 @@ end
 function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission = deep_clone(presets.base)
 	self.old_hoxton_mission.experience = {}
-	--Ugly ass fix to an ugly ass bug
-	--self.old_hoxton_mission.no_run_start = true
-	--self.old_hoxton_mission.no_run_stop = true
+	self.old_hoxton_mission.no_run_start = true
+	self.old_hoxton_mission.no_run_stop = true
 	self.old_hoxton_mission.weapon = presets.weapon.gang_member
-	--No more Hoxton or Charon helping us out
-	--self.old_hoxton_mission.detection = presets.detection.gang_member
-	self.old_hoxton_mission.detection = presets.detection.blind
+	self.old_hoxton_mission.detection = presets.detection.gang_member
 	self.old_hoxton_mission.damage = presets.gang_member_damage
 	self.old_hoxton_mission.damage.explosion_damage_mul = 0
 	self.old_hoxton_mission.HEALTH_INIT = 20
@@ -3238,6 +3235,7 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.static_dodge_preset = true
 	--No more being mean to Hoxton
 	self.old_hoxton_mission.is_escort = true
+	self.old_hoxton_mission.speech_escort = "f38"
 	self.old_hoxton_mission.escort_idle_talk = false	
 	
 	self.anubis = deep_clone(self.old_hoxton_mission)	

@@ -3902,7 +3902,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.huntsman.stats_modifiers = nil
 	self.huntsman.timers.reload_not_empty = 2.3
 	self.huntsman.timers.reload_empty = 2.3
-	self.huntsman.reload_speed_multiplier = 1.1
+	self.huntsman.reload_speed_multiplier = 1.2
 	self.huntsman.panic_suppression_chance = 0.05
 
 	--Bernetti 9
@@ -5294,7 +5294,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b682.stats_modifiers = nil
 	self.b682.panic_suppression_chance = 0.05
 	self.b682.stats_modifiers = {damage = 1}
-	self.b682.reload_speed_multiplier = 1.1
+	self.b682.reload_speed_multiplier = 1.2
 
 	--Akimbo Chimano Custom
 	self.x_g22c.kick = self.stat_info.kick_tables.even_recoil
@@ -8085,7 +8085,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.coach.stats_modifiers = nil
 	self.coach.panic_suppression_chance = 0.05
-	self.coach.reload_speed_multiplier = 1.1
+	self.coach.reload_speed_multiplier = 1.2
 
 	--M13
 	self.legacy.fire_mode_data.fire_rate = 0.08571428571

@@ -464,7 +464,7 @@
     </Options>
 	<!--///PACKAGES\\\-->
 	<Package id="packages/scassets" file="addSC.xml" use_clbk="self:LoadSCAssets"/>
-	<Package id="packages/zombieassets" file="addzombie.xml"use_clbk="self:DebugLoadAssets"/>
+<!-- 	<Package id="packages/zombieassets" file="addzombie.xml"use_clbk="self:DebugLoadAssets"/> -->
 	<Package id="packages/nypdassets" file="addNYPD.xml" use_clbk="self:DebugLoadAssets"/>	
 	<Package id="packages/lapdassets" file="addLAPD.xml" use_clbk="self:DebugLoadAssets"/>	
 	<Package id="packages/mexicoassets" file="addMEXICO.xml" use_clbk="self:DebugLoadAssets"/>	
@@ -486,6 +486,60 @@
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 	<Package id="packages/addrain" file="addRAIN.xml"/>
 	<Package id="packages/uicosmetics" file="packages/uicosmetics/UICosmetics.xml"/>
-	<!--///DIFF PACKAGES\\\-->
-	<Package id="packages/sm_wish_sc_zombie" file="packages/zombie_diff/sm_wish_sc_zombie.xml" use_clbk="self:DebugLoadAssets"/>
+	<!--///DIFF PACKAGES ZOMBIE\\\-->
+    <!-- <Package id="packages/normal_sc_zombie" file="packages/zombie_diff/normal_sc_zombie.xml"/>
+    <Package id="packages/hard_sc_zombie" file="packages/zombie_diff/hard_sc_zombie.xml"/>
+    <Package id="packages/overkill_sc_zombie" file="packages/zombie_diff/overkill_sc_zombie.xml"/>
+    <Package id="packages/overkill_145_sc_zombie" file="packages/zombie_diff/overkill_145_sc_zombie.xml"/>
+    <Package id="packages/easy_wish_sc_zombie" file="packages/zombie_diff/easy_wish_sc_zombie.xml"/>
+    <Package id="packages/overkill_290_sc_zombie" file="packages/zombie_diff/overkill_290_sc_zombie.xml"/> -->
+    <!-- <Package id="packages/sm_wish_sc_zombie" file="packages/zombie_diff/sm_wish_sc_zombie.xml"/> -->
+    <!-- ///DIFF PACKAGES AMERICA\\\ -->
+    <Package id="packages/normal_sc_america" file="packages/america_diff/normal_sc_america.xml"/>
+    <Package id="packages/hard_sc_america" file="packages/america_diff/hard_sc_america.xml"/>
+    <Package id="packages/overkill_sc_america" file="packages/america_diff/overkill_sc_america.xml"/>
+    <Package id="packages/overkill_145_sc_america" file="packages/america_diff/overkill_145_sc_america.xml"/>
+    <Package id="packages/easy_wish_sc_america" file="packages/america_diff/easy_wish_sc_america.xml"/>
+    <Package id="packages/overkill_290_sc_america" file="packages/america_diff/overkill_290_sc_america.xml"/>
+    <Package id="packages/sm_wish_sc_america" file="packages/america_diff/sm_wish_sc_america.xml"/>
+    <!-- ///DIFF PACKAGES MURKYWATER\\\ -->
+    <!-- <Package id="packages/normal_sc_murkywater" file="packages/murkywater_diff/normal_sc_murkywater.xml"/>
+    <Package id="packages/hard_sc_murkywater" file="packages/murkywater_diff/hard_sc_murkywater.xml"/>
+    <Package id="packages/overkill_sc_murkywater" file="packages/murkywater_diff/overkill_sc_murkywater.xml"/>
+    <Package id="packages/overkill_145_sc_murkywater" file="packages/murkywater_diff/overkill_145_sc_murkywater.xml"/>
+    <Package id="packages/easy_wish_sc_murkywater" file="packages/murkywater_diff/easy_wish_sc_murkywater.xml"/>
+    <Package id="packages/overkill_290_sc_murkywater" file="packages/murkywater_diff/overkill_290_sc_murkywater.xml"/>
+    <Package id="packages/sm_wish_sc_murkywater" file="packages/murkywater_diff/sm_wish_sc_murkywater.xml"/> -->
+    <!-- ///DIFF PACKAGES RUSSIA\\\ -->
+    <!-- <Package id="packages/normal_sc_russia" file="packages/russia_diff/normal_sc_russia.xml"/>
+    <Package id="packages/hard_sc_russia" file="packages/russia_diff/hard_sc_russia.xml"/>
+    <Package id="packages/overkill_sc_russia" file="packages/russia_diff/overkill_sc_russia.xml"/>
+    <Package id="packages/overkill_145_sc_russia" file="packages/russia_diff/overkill_145_sc_russia.xml"/>
+    <Package id="packages/easy_wish_sc_russia" file="packages/russia_diff/easy_wish_sc_russia.xml"/>
+    <Package id="packages/overkill_290_sc_russia" file="packages/russia_diff/overkill_290_sc_russia.xml"/>
+    <Package id="packages/sm_wish_sc_russia" file="packages/russia_diff/sm_wish_sc_russia.xml"/> -->
+    <!-- ///DIFF PACKAGES MEXICO\\\ -->
+    <!-- <Package id="packages/normal_sc_federales" file="packages/federales_diff/normal_sc_federales.xml"/>
+    <Package id="packages/hard_sc_federales" file="packages/federales_diff/hard_sc_federales.xml"/>
+    <Package id="packages/overkill_sc_federales" file="packages/federales_diff/overkill_sc_federales.xml"/>
+    <Package id="packages/overkill_145_sc_federales" file="packages/federales_diff/overkill_145_sc_federales.xml"/>
+    <Package id="packages/easy_wish_sc_federales" file="packages/federales_diff/easy_wish_sc_federales.xml"/>
+    <Package id="packages/overkill_290_sc_federales" file="packages/federales_diff/overkill_290_sc_federales.xml"/>
+    <Package id="packages/sm_wish_sc_federales" file="packages/federales_diff/sm_wish_sc_federales.xml"/> -->
+    <!-- ///DIFF PACKAGES NYPD\\\ -->
+    <!-- <Package id="packages/normal_sc_nypd" file="packages/nypd_diff/normal_sc_nypd.xml"/>
+    <Package id="packages/hard_sc_nypd" file="packages/nypd_diff/hard_sc_nypd.xml"/>
+    <Package id="packages/overkill_sc_nypd" file="packages/nypd_diff/overkill_sc_nypd.xml"/>
+    <Package id="packages/overkill_145_sc_nypd" file="packages/nypd_diff/overkill_145_sc_nypd.xml"/>
+    <Package id="packages/easy_wish_sc_nypd" file="packages/nypd_diff/easy_wish_sc_nypd.xml"/>
+    <Package id="packages/overkill_290_sc_nypd" file="packages/nypd_diff/overkill_290_sc_nypd.xml"/>
+    <Package id="packages/sm_wish_sc_nypd" file="packages/nypd_diff/sm_wish_sc_nypd.xml"/> -->
+    <!-- ///DIFF PACKAGES LAPD\\\ -->
+    <!-- <Package id="packages/normal_sc_lapd" file="packages/lapd_diff/normal_sc_lapd.xml"/>
+    <Package id="packages/hard_sc_lapd" file="packages/lapd_diff/hard_sc_lapd.xml"/>
+    <Package id="packages/overkill_sc_lapd" file="packages/lapd_diff/overkill_sc_lapd.xml"/>
+    <Package id="packages/overkill_145_sc_lapd" file="packages/lapd_diff/overkill_145_sc_lapd.xml"/>
+    <Package id="packages/easy_wish_sc_lapd" file="packages/lapd_diff/easy_wish_sc_lapd.xml"/>
+    <Package id="packages/overkill_290_sc_lapd" file="packages/lapd_diff/overkill_290_sc_lapd.xml"/>
+    <Package id="packages/sm_wish_sc_lapd" file="packages/lapd_diff/sm_wish_sc_lapd.xml"/> -->
 </mod>

@@ -644,15 +644,386 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
+		},
+		--Wave 4
+		SKM_Light_Swat_W4 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0.3,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Heavy_Swat_W4 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0.25,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W4 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0.1,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Tazers_W4 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0.1,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Booms_W4 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0.05,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_HRTs_W4 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0.1,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_BLACK_Tank_W4 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0.1,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		--Wave 5
+		SKM_Light_Swat_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.3,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Heavy_Swat_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.25,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.1,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Tazers_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.1,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Booms_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.05,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_HRTs_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.1,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_BLACK_Tank_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.05,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		SKM_GREEN_Tank_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.05,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		--Wave 6
+		SKM_Light_Swat_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.3,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Heavy_Swat_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.2,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.06,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_Booms_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.04,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},		
+		SKM_Tazers_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.085,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Booms_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.065,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_HRTs_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.1,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_BLACK_Tank_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.045,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		SKM_GREEN_Tank_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.045,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_SKULL_Tank_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.045,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		SKM_TIT_Tank_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.015,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
 		}		
 	}
 
 	local reenforce_groups = {
 		nil
 	}
+	local recon_groups = {
+		nil
+	}	
 
 	tweak_data.group_ai.skirmish.assault.groups = assault_groups
 	tweak_data.group_ai.skirmish.reenforce.groups = reenforce_groups
+	tweak_data.group_ai.skirmish.recon.groups = recon_groups
 end
 
 function SkirmishTweakData:_init_wave_modifiers()

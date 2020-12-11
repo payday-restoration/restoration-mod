@@ -466,9 +466,9 @@ function PlayerDamage:damage_explosion(attack_data)
 	attack_data.damage = attack_data.damage * (1 - distance / attack_data.range)
 
 	if attack_data.damage > 0 then
-		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("explosion")
 		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
 		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage)
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("explosion")
 		local damage_absorption = pm:damage_absorption()
 		if damage_absorption > 0 then
 			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
@@ -665,6 +665,8 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	end
 
 	if attack_data.damage > 0 then
+		attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
+		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage, attack_data.attacker_unit:base()._tweak_table)
 		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("bullet")
 		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
 		local damage_absorption = pm:damage_absorption()

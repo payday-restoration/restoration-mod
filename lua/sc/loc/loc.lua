@@ -842,7 +842,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 70 kills.",
 
 		["menu_crew_eager"] = "Accelerator",
-		["menu_crew_eager_desc"] = "Players reload 15% faster.",
+		["menu_crew_eager_desc"] = "Players reload 10% faster.",
 
 --[[   SKILLTREES   ]]--
 	--{

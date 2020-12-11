@@ -1024,7 +1024,7 @@
 	<unit path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc" load="false"/>	
 	
 	<!--S&W .500-->
-	<texture path="guis/textures/pd2/blackmarket/icons/weapons/jeb"/>
+	<!-- <texture path="guis/textures/pd2/blackmarket/icons/weapons/jeb"/> -->
 	<!--
 	<cooked_physics path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
 	<model path="units/mods/weapons/wpn_fps_pis_jeb/wpn_fps_pis_jeb"/>
@@ -2839,7 +2839,8 @@
 	<effect path="effects/payday2/particles/impacts/blood/brain_splat" />		
 	<texture path="effects/textures/brain_impacts_df" />
 	
-
+	<!-- Halloween Sword icon -->
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/>
 	
 	<!-- Actually Good Third Person Animations -->
 	<animation path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>

@@ -3720,6 +3720,29 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.chac.stats.range = 160
 	self.melee_weapons.chac.stats.concealment = 29
 	self.melee_weapons.chac.melee_damage_delay = 0.2
-	self.melee_weapons.chac.expire_t = 1.1		
+	self.melee_weapons.chac.expire_t = 1.1
+	
+	-- Workaround for custom melee bug
+	self.melee_weapons.halloween_sword = deep_clone(self.melee_weapons.great)
+	self.melee_weapons.halloween_sword.name_id = "bm_melee_halloween_sword"
+	self.melee_weapons.halloween_sword.info_id = "bm_melee_headless_sword_info"
+	self.melee_weapons.halloween_sword.special_weapon = "panic"
+	self.melee_weapons.halloween_sword.unit = "units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"
+	self.melee_weapons.halloween_sword.third_unit = "units/mods/weapons/wpn_mel_halloween_sword/wpn_third_halloween_sword"
+	self.melee_weapons.halloween_sword.texture_bundle_folder = "mods"
+	self.melee_weapons.halloween_sword.sounds = {
+		equip = "great_equip",
+		hit_air = "morning_hit_air",
+		hit_gen = "great_hit_gen",
+		hit_body = "great_hit_body",
+		charge = "great_charge"
+	}
+	self.melee_weapons.halloween_sword.dlc = "rest"
+	self.melee_weapons.halloween_sword.stats.concealment = 23
+	self.melee_weapons.halloween_sword.stats.min_damage_effect = 1.9
+	self.melee_weapons.halloween_sword.stats.max_damage_effect = 2
+	self.melee_weapons.halloween_sword.stats.charge_time = 5
+	self.melee_weapons.halloween_sword.free = true
+	self.melee_weapons.halloween_sword.stats.custom = true
 
 end

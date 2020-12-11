@@ -372,10 +372,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
-	self.values.team.crew_add_armor = {1.5}
+	self.values.team.crew_add_armor = {1.1} --Now adds % armor, rather than flat armor.
 	self.values.team.crew_add_dodge = {0.03} --Now adds % of dodge stat every second to meter.
-	self.values.team.crew_add_concealment = {1}
-	self.values.team.crew_add_stamina = {25}
+	self.values.team.crew_add_concealment = {2}
+	self.values.team.crew_add_stamina = {15}
 	self.values.team.crew_reduce_speed_penalty = {1}
 	self.values.team.crew_health_regen = {0.1}
 	self.values.team.crew_throwable_regen = {70}

@@ -212,8 +212,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield
-		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 30 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills.", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals 18 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills.", --Kazaguruma
+		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 30 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills. Cannot parry enemy attacks.", -- ROAMING FR-
+		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals 18 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills. Cannot parry enemy attacks.", --Kazaguruma
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals double damage when attacking enemies from behind.",-- Switchblade Knife
 		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic.", -- Psycho Knife
@@ -656,19 +656,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_15"] = "Kingpin is a versatile perk deck. The injector can be used for self sustain, surviving heavy damage, or drawing fire away from your team.",	
 		["loading_equip_skills_res_16"] = "Tag Team is a team-focused perk deck that allows you to provide a lot of healing to a specific teammate as long as the two of you keep up consistent killing.",	
 		["loading_equip_skills_res_17"] = "Shotgun slugs on Semi-Automatic and Automatic Shotguns do not pierce armor, enemies, walls, or shields.",	
-		["loading_equip_skills_res_18"] = "The Peacemaker and Phoenix .500 Revolvers are able to pierce like a sniper rifle.",	
-		["loading_equip_skills_res_19"] = "If you have a blue meter on the side of your screen, then you have built up some dodge. When it's flashing, you will dodge the next bullet. Please refer to the Guide for an in-depth explanation of our dodge rework.",	
+		["loading_equip_skills_res_18"] = "The Peacemaker and Phoenix .500 Revolvers are able to pierce like a sniper rifle.",
+		["loading_equip_skills_res_19"] = "If you have a blue meter on the side of your screen, then you have dodge. When it's flashing, you will dodge the next bullet. Please refer to the Guide for an in-depth explanation of our dodge rework.",	
 		["loading_equip_skills_res_20"] = "The higher a weapon's concealment is, the faster you can draw and holster it.",	
 		["loading_equip_skills_res_21"] = "The Chainsaw and Kazaguruma deal damage to enemies in front of you while held.",	
-		["loading_equip_skills_res_22"] = "The Butterfly Knife and Switchblade do increased damage on backstabs. The butterfly knife is almost useless on normal attacks but deadly when backstabbing, while the switchblade is a more modest in-between weapon.",	
-		["loading_equip_skills_res_23"] = "The Icepick and Gold Fever do increased headshot damage in exchange for poor bodyshot damage.",	
+		["loading_equip_skills_res_22"] = "The Butterfly Knife and Switchblade deal massive damage when stabbing enemies in the back.",	
+		["loading_equip_skills_res_23"] = "The Icepick and Gold Fever do increased headshot damage in exchange for poor speed.",	
 		["loading_equip_skills_res_24"] = "Poison deals only moderate damage, but induces vomiting which interrupts other actions.",	
 		["loading_equip_skills_res_25"] = "Stun Grenades provide very potent disruption, even against bulldozers.",	
 		["loading_equip_skills_res_26"] = "Aiming down sights grants significantly increased accuracy and reduced recoil, even with LMGs.",	
-		["loading_equip_skills_res_27"] = "The Pounder Nailgun melee weapon has an incredibly long range, making it useful for taking out Cloakers and light swat and the occasional 'ranged melee' kill in Stealth, if you can build your concealment around it.",	
-		["loading_equip_skills_res_28"] = "Leveling up perk decks unlocks the Throwables Case.",	
+		["loading_equip_skills_res_27"] = "The Pounder Nailgun melee weapon has an incredibly long range, far longer than any other melee weapon.",	
+		["loading_equip_skills_res_28"] = "Leveling up perk decks unlocks the Throwables Case.",
 		["loading_equip_skills_res_29"] = "Replenishing your throwables in the Equipment Case now refills your entire stock with each use.",	
-		["loading_equip_skills_res_30"] = "Inspire Ace now has a much longer cooldown and requires Line of Sight. Save your ranged revive for when things have really gone sideways, or you might not have it when you actually need it.",	
+		["loading_equip_skills_res_30"] = "Save Inspire ace for when things have really gone sideways, it has a very long cooldown and requires line of sight.",	
 		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks (Wildcard and Blank) which provide only the common perks and no perks whatsoever, respectively. They are meant for self-imposed challenges.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
@@ -824,25 +824,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_healthy_desc"] = "Players' health is increased by 30.",
 
 		["menu_crew_sturdy"] = "Protector",
-		["menu_crew_sturdy_desc"] = "Players' armor is increased by 15.",
+		["menu_crew_sturdy_desc"] = "Players' armor is increased by 10%.",
 
 		["menu_crew_evasive"] = "Distractor",
 		["menu_crew_evasive_desc"] = "Players' dodge meters are filled by 3% of their dodge every second.",
 
 		["menu_crew_motivated"] = "Invigorator",
-		["menu_crew_motivated_desc"] = "Players have 25 more stamina.",
+		["menu_crew_motivated_desc"] = "Players have 15 more stamina.",
 
 		["menu_crew_regen"] = "Healer",
 		["menu_crew_regen_desc"] = "Players heal 1 health every 4 seconds.",
 
 		["menu_crew_quiet"] = "Concealer",
-		["menu_crew_quiet_desc"] = "Players gain 1 more concealment.",
+		["menu_crew_quiet_desc"] = "Players gain 2 more concealment.",
 
 		["menu_crew_generous"] = "Stockpiler ",
 		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 70 kills.",
 
 		["menu_crew_eager"] = "Accelerator",
-		["menu_crew_eager_desc"] = "Players reload 10% faster.",
+		["menu_crew_eager_desc"] = "Players reload 15% faster.",
 
 --[[   SKILLTREES   ]]--
 	--{

@@ -256,7 +256,6 @@ function PlayerDamage:damage_melee(attack_data)
 	end
 
 	local pm = managers.player
-	local can_counter_strike = pm:has_category_upgrade("player", "counter_strike_melee")
 
 	--Unit specific shenanigans.
 	local _time = math.floor(TimerManager:game():time())
@@ -272,7 +271,7 @@ function PlayerDamage:damage_melee(attack_data)
 		end
 	end
 
-	if can_counter_strike and self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
+	if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
 		if attack_data.attacker_unit and alive(attack_data.attacker_unit) and attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().is_husk_player then
 			local is_dozer = attack_data.attacker_unit:base().has_tag and attack_data.attacker_unit:base():has_tag("tank")
 
@@ -791,6 +790,64 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	return 
 end
 
+--Ignore deflection, just like it should for all other forms of DR.
+function PlayerDamage:damage_killzone(attack_data)
+	local damage_info = {
+		result = {
+			variant = "killzone",
+			type = "hurt"
+		}
+	}
+
+	if self._god_mode or self._invulnerable or self._mission_damage_blockers.invulnerable then
+		self:_call_listeners(damage_info)
+		return
+	elseif self:incapacitated() then
+		return
+	elseif self._unit:movement():current_state().immortal then
+		return
+	end
+	self._unit:sound():play("player_hit")
+
+	if attack_data.instant_death then
+		self:set_armor(0)
+		self:set_health(0)
+		self:_send_set_armor()
+		self:_send_set_health()
+		managers.hud:set_player_health({
+			current = self:get_real_health(),
+			total = self:_max_health(),
+			revives = Application:digest_value(self._revives, false)
+		})
+		self:_set_health_effect()
+		self:_damage_screen()
+		self:_check_bleed_out(nil)
+	else
+		self:_hit_direction(attack_data.col_ray.origin)
+
+		if self._bleed_out then
+			return
+		end
+
+		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
+
+		self:_check_chico_heal(attack_data)
+
+
+		local armor_reduction_multiplier = 0
+		if self:get_real_armor() <= 0 then
+			armor_reduction_multiplier = 1
+		end
+
+		local health_subtracted = self:_calc_armor_damage(attack_data)
+		attack_data.damage = attack_data.damage * armor_reduction_multiplier
+		--Ignore deflection.
+		health_subtracted = health_subtracted + self:_calc_health_damage_no_deflection(attack_data)
+	end
+
+	self:_call_listeners(damage_info)
+end
+
 --Include deflection in calcs. Doesn't work in cases where armor is pierced, but I can't be assed to fix it.
 --Also ignores temp hp in max health calcs. Not important for now, but may be in the future.
 function PlayerDamage:_check_chico_heal(attack_data)
@@ -920,16 +977,9 @@ function PlayerDamage:get_missing_revives()
 	return self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0) - self:get_revives()
 end
 
-function PlayerDamage:_calc_health_damage(attack_data)
+function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	local health_subtracted = 0
 	health_subtracted = self:get_real_health()
-	local deflection = self._deflection
-	if self:has_temp_health() then --Hitman deflection bonus.
-		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
-	end
-
-	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
-
 	if managers.player:has_category_upgrade("player", "dodge_stacking_heal") and attack_data.damage > 0.0 then --End Rogue health regen.
 		self._damage_to_hot_stack = {}
 	end
@@ -960,6 +1010,17 @@ function PlayerDamage:_calc_health_damage(attack_data)
 	self:_set_health_effect()
 	managers.statistics:health_subtracted(health_subtracted)
 	return health_subtracted
+end
+
+function PlayerDamage:_calc_health_damage(attack_data)
+	local deflection = self._deflection
+	if self:has_temp_health() then --Hitman deflection bonus.
+		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+	end
+
+	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
+
+	return self:_calc_health_damage_no_deflection(attack_data)
 end
 
 function PlayerDamage:clbk_kill_taunt_spring(attack_data)

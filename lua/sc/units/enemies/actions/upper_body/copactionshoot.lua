@@ -1466,11 +1466,16 @@ function CopActionShoot:anim_clbk_melee_strike()
 
 		if defense_data and defense_data ~= "friendly_fire" then
 			if defense_data == "countered" then
-				self._common_data.melee_countered_t = TimerManager:game():time()
-
-				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
 				local melee_entry = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
 				local melee_tweak = tweak_data.blackmarket.melee_weapons[melee_entry]
+
+				--Damage-while-charging melee weapons cannot counter melee attacks.
+				if melee_tweak.chainsaw then
+					return
+				end
+
+				self._common_data.melee_countered_t = TimerManager:game():time()
+				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
 
 				mvec3_norm(attack_dir)
 

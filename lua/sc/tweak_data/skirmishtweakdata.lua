@@ -239,24 +239,24 @@ function SkirmishTweakData:_init_group_ai_data(tweak_data)
 	tweak_data.group_ai.skirmish = skirmish_data
 
 	self.required_kills = {
-		20,
-		15,
-		17,
-		19,
-		21,
-		23,
 		25,
-		27,
-		29,
+		25,
+		28,
 		31,
-		40
+		33,
+		35,
+		37,
+		38,
+		39,
+		40,
+		60
 	}
 
 	self.required_kills_balance_mul = {
-		1,
-		1.33,
-		1.66,
-		2
+		0.55,
+		0.7,
+		0.85,
+		1
 	}
 end
 
@@ -307,13 +307,13 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	skirmish_data.assault.fade_duration = 5
 	skirmish_data.assault.delay = {
-		30,
-		30,
-		30,
-		30,
-		30,
-		30,
-		30,
+		20,
+		20,
+		20,
+		20,
+		25,
+		25,
+		25,
 		30,
 		30,
 		30,
@@ -369,18 +369,18 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	--Temp
 	skirmish_data.assault.force = {
-		4,
-		4,
-		4,
-		4,
-		5,
-		5,
-		5,
-		6,
-		6,
-		6,
-		7,
-		7
+		10,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		16,
+		17,
+		18,
+		20,
+		30
 	}
 
 	skirmish_data.recon.force = {
@@ -414,10 +414,10 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 	}
 
 	skirmish_data.assault.force_balance_mul = {
-		1,
-		1.5,
-		2,
-		2.5
+		0.55,
+		0.7,
+		0.85,
+		1
 	}
 
 	skirmish_data.assault.force_pool_balance_mul = {

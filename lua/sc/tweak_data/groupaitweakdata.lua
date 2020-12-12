@@ -15442,175 +15442,118 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			15
 		}
 	end
-	self.besiege.assault.force = {
-		5,
-		6,
-		7
-	}
-	self.besiege.assault.force_pool = {
-		30,
-		40,
-		50
-	}
+
+	local map_scale_factor = 1
 	for _,t in pairs(restoration.large_levels) do
 		if job == t then
-			self.besiege.assault.force = {
-				6,
-				7,
-				8
-			}
-			self.besiege.assault.force_pool = {
-				40,
-				50,
-				60
-			}	
+			map_scale_factor = 1.15
 		end
 	end	
 	for _,t in pairs(restoration.tiny_levels) do
 		if job == t then
-			self.besiege.assault.force = {
-				4,
-				5,
-				6
-			}
-			self.besiege.assault.force_pool = {
-				20,
-				30,
-				40
-			}	
+			map_scale_factor = 0.85
 		end
 	end
 	for _,vt in pairs(restoration.very_tiny_levels) do
 		if job == vt then
-			self.besiege.assault.force = {
-				3,
-				4,
-				5
-			}
-			self.besiege.assault.force_pool = {
-				10,
-				20,
-				30
-			}	
+			map_scale_factor = 0.7
 		end
-	end	
+	end
 	for _,vt in pairs(restoration.extremely_tiny_levels) do
 		if job == vt then
-			self.besiege.assault.force = {
-				2,
-				3,
-				4
-			}
-			self.besiege.assault.force_pool = {
-				5,
-				10,
-				15
-			}	
+			map_scale_factor = 0.55
 		end
-	end			
+	end
+
+	self.besiege.assault.force_balance_mul = {
+		0.55 * map_scale_factor,
+		0.7 * map_scale_factor,
+		0.85 * map_scale_factor,
+		1.0 * map_scale_factor
+	}
+	self.besiege.assault.force_pool_balance_mul = {
+		0.55 * map_scale_factor,
+		0.7 * map_scale_factor,
+		0.85 * map_scale_factor,
+		1.0 * map_scale_factor
+	}
+
 	if difficulty_index <= 2 then
-		self.besiege.assault.force_balance_mul = {
-			1,
-			1.5,
-			2,
-			2.5
+		self.besiege.assault.force = {
+			12,
+			15,
+			18
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1,
-			1.5,
-			2,
-			2.5
-		}
+		self.besiege.assault.force_pool = {
+			75,
+			100,
+			125
+		}	
 	elseif difficulty_index == 3 then
-		self.besiege.assault.force_balance_mul = {
-			1,
-			1.5,
-			2,
-			2.5
+		self.besiege.assault.force = {
+			12,
+			15,
+			18
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1,
-			1.5,
-			2,
-			2.5
+		self.besiege.assault.force_pool = {
+			75,
+			100,
+			125
 		}
 	elseif difficulty_index == 4 then
-		self.besiege.assault.force_balance_mul = {
-			1.5,
-			2,
-			2.5,
-			3
+		self.besiege.assault.force = {
+			15,
+			18,
+			21
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1,
-			1.5,
-			2,
-			2.5
-		}
+		self.besiege.assault.force_pool = {
+			75,
+			100,
+			125
+		}	
 	elseif difficulty_index == 5 then
-		self.besiege.assault.force_balance_mul = {
-			1.5,
-			2,
-			2.5,
-			3
+		self.besiege.assault.force = {
+			15,
+			18,
+			21
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1,
-			1.5,
-			2,
-			2.5
+		self.besiege.assault.force_pool = {
+			75,
+			100,
+			125
 		}
 	elseif difficulty_index == 6 then
-		self.besiege.assault.force_balance_mul = {
-			2,
-			2.5,
-			3,
-			3.5
+		self.besiege.assault.force = {
+			16,
+			21,
+			25
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1.5,
-			2,
-			2.5,
-			3
-		}
+		self.besiege.assault.force_pool = {
+			90,
+			120,
+			150
+		}	
 	elseif difficulty_index == 7 then
-		self.besiege.assault.force_balance_mul = {
-			2,
-			2.5,
-			3,
-			3.5
+		self.besiege.assault.force = {
+			16,
+			21,
+			25
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1.5,
-			2,
-			2.5,
-			3
+		self.besiege.assault.force_pool = {
+			90,
+			120,
+			150
 		}
-	elseif difficulty_index == 8 then
-		self.besiege.assault.force_balance_mul = {
-			2.5,
-			3,
-			3.5,
-			4
+	else
+		self.besiege.assault.force = {
+			20,
+			24,
+			28
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			2,
-			2.5,
-			3,
-			3.5
-		}
-	else		
-		self.besiege.assault.force_balance_mul = {
-			3.5,
-			4,
-			4.5,
-			5
-		}
-		self.besiege.assault.force_pool_balance_mul = {
-			2.5,
-			3,
-			3.5,
-			4
+		self.besiege.assault.force_pool = {
+			105,
+			140,
+			175
 		}
 	end
 	

@@ -175,6 +175,7 @@ function restoration:Init()
 		"skm_arena",
 		"skm_bex",
 		"nmh",
+		"nail",	--Lab Rats. Fuck this heist	
 		"nmh_res", --Resmod edit of no mercy.
 		"hox_1",
 		"xmn_hox_1",
@@ -189,7 +190,6 @@ function restoration:Init()
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"chew", --Biker day 2		
-		"nail",	--Lab Rats. Fuck this heist	
 		"peta2", --Goats day 2. Fuck this heist too		
 		--Custom Heists below--
 		"Victor Romeo"

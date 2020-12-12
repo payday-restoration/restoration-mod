@@ -15524,7 +15524,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
-			16,
+			17,
 			21,
 			25
 		}
@@ -15535,7 +15535,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}	
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
-			16,
+			17,
 			21,
 			25
 		}

@@ -227,7 +227,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			},
 		l50 = {
 				name_id = "lvl_50",
-				upgrades = {}
+				upgrades = {
+					"halloween_sword"
+				}
 			},
 		l51 = {
 				name_id = "weapons",
@@ -273,6 +275,12 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 	end 	
 end)
 
+Hooks:PostHook(UpgradesTweakData, "_melee_weapon_definitions", "ResMeleeDef", function(self)
+	self.definitions.halloween_sword = {
+		dlc = "rest",
+		category = "melee_weapon"
+	}
+end)
 
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)

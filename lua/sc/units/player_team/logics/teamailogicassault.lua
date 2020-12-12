@@ -105,10 +105,10 @@ end
 
 function TeamAILogicAssault.find_enemy_to_mark(attention_objects)
 	local best_nmy, best_nmy_wgt = nil
-	
+
 	for key, attention_info in pairs(attention_objects) do
 		if attention_info.identified then
-			if attention_info.verified then
+			if attention_info.verified or attention_info.nearly_visible then
 				if attention_info.reaction and AIAttentionObject.REACT_COMBAT <= attention_info.reaction and attention_info.unit:contour() then
 					if attention_info.is_deployable or attention_info.is_person and attention_info.char_tweak and attention_info.char_tweak.priority_shout then
 						local in_range = nil
@@ -117,12 +117,13 @@ function TeamAILogicAssault.find_enemy_to_mark(attention_objects)
 							local turret_tweak = attention_info.unit:brain() and attention_info.unit:brain()._tweak_data
 
 							if turret_tweak then
+								local actual_range = math_min(turret_tweak.FIRE_RANGE, turret_tweak.DETECTION_RANGE)
 
-								if attention_info.verified_dis < 2000 then
+								if attention_info.verified_dis < actual_range then
 									in_range = true
 								end
 							end
-						elseif not attention_info.char_tweak.priority_shout_max_dis or attention_info.verified_dis < 3000 then
+						elseif not attention_info.char_tweak.priority_shout_max_dis or attention_info.verified_dis < attention_info.char_tweak.priority_shout_max_dis then
 							in_range = true
 						end
 
@@ -162,25 +163,19 @@ end
 
 function TeamAILogicAssault.mark_enemy(data, criminal, to_mark, play_sound, play_action)
 	if play_sound then
-		local callout = not criminal:brain()._last_mark_shout or tweak_data.sound.criminal_sound.ai_callout_cooldown < TimerManager:game():time() - criminal:brain()._last_mark_shout
-
-		if callout then
-			if to_mark:base().sentry_gun then
-				criminal:sound():say("f44x_any", true)
-			elseif to_mark:base():char_tweak().bot_priority_shout then
-				criminal:sound():say(to_mark:base():char_tweak().bot_priority_shout, true)
-			else
-				criminal:sound():say(to_mark:base():char_tweak().priority_shout .. "x_any", true)
-			end
-
-			criminal:brain()._last_mark_shout = TimerManager:game():time()
+		if to_mark:base().sentry_gun then
+			criminal:sound():say("f44x_any", true)
+		elseif to_mark:base():char_tweak().bot_priority_shout then
+			criminal:sound():say(to_mark:base():char_tweak().bot_priority_shout, true)
+		elseif to_mark:base():char_tweak().priority_shout then
+			criminal:sound():say(to_mark:base():char_tweak().priority_shout .. "x_any", true)
 		end
 	end
 
 	if play_action then
-		local can_play_action = not criminal:anim_data().reload and not data.internal_data.firing and not data.internal_data.shooting
+		local can_play_action = not criminal:movement():chk_action_forbidden("action") and not criminal:anim_data().reload and not data.internal_data.firing and not data.internal_data.shooting
 
-		if can_play_action and not criminal:movement():chk_action_forbidden("action") then
+		if can_play_action then
 			local new_action = {
 				type = "act",
 				variant = "arrest",

@@ -164,6 +164,7 @@
 		<hook file="sc/units/player_team/logics/teamailogicidle.lua" source_file="lib/units/player_team/logics/teamailogicidle"/>
 		<hook file="sc/units/player_team/logics/teamailogictravel.lua" source_file="lib/units/player_team/logics/teamailogictravel"/>
 		<hook file="sc/units/enemies/logics/spooclogicattack.lua" source_file="lib/units/enemies/spooc/logics/spooclogicattack"/>
+		<hook file="sc/units/enemies/logics/shieldlogicattack.lua" source_file="lib/units/enemies/shield/logics/shieldlogicattack"/>
 		<hook file="sc/tweak_data/enveffecttweakdata.lua" source_file="lib/tweak_data/enveffecttweakdata"/>
 		<hook file="sc/tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="sc/units/enemies/copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>

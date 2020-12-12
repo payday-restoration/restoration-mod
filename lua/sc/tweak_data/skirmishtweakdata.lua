@@ -336,7 +336,7 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 		5
 	}
 
-	skirmish_data.hostage_hesitation_delay = {
+	skirmish_data.assault.hostage_hesitation_delay = {
 		5,
 		5,
 		5,

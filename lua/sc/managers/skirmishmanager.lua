@@ -31,3 +31,21 @@ end
 function SkirmishManager:_has_players_in_custody()
 	return false
 end
+
+function SkirmishManager:_apply_modifiers_for_wave(wave_number)
+	local modifiers_data = tweak_data.skirmish.wave_modifiers[wave_number]
+
+	log("MODIFIERS!")
+
+	if not modifiers_data then
+		return
+	end
+
+	for _, modifier_data in ipairs(modifiers_data) do
+		local modifier_class = _G[modifier_data.class]
+		local modifier_opts = modifier_data.data
+		local modifier = modifier_class:new(modifier_opts)
+
+		managers.modifiers:add_modifier(modifier, "skirmish_wave")
+	end
+end

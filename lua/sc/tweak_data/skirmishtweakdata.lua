@@ -793,7 +793,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --Wave 2
 			0, --...
 			0,
-			0.1,
+			0.06,
 			0,
 			0,
 			0,
@@ -807,7 +807,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --Wave 2
 			0, --...
 			0,
-			0.05,
+			0.04,
 			0,
 			0,
 			0,
@@ -857,6 +857,20 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		},
+		SKM_single_spooc_W5 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0.05,
+			0,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},		
 		--Wave 6
 		SKM_Light_Swat_W6 = {
 			0, --Unused
@@ -921,7 +935,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --...
 			0,
 			0,
-			0.085,
+			0.06,
 			0,
 			0,
 			0,
@@ -935,7 +949,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --...
 			0,
 			0,
-			0.065,
+			0.04,
 			0,
 			0,
 			0,
@@ -1006,6 +1020,20 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0,
 			0,
 			0.015,
+			0,
+			0,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		SKM_single_spooc_W6 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0.05,
 			0,
 			0,
 			0,

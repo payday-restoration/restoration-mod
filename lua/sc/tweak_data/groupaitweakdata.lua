@@ -13599,6 +13599,18 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}			
 		}
 	}	
+	self.enemy_spawn_groups.SKM_single_spooc_W5 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}	
 	
 	--Wave 6, more or less just normal DS now
 	self.enemy_spawn_groups.SKM_Light_Swat_W6 = {
@@ -13946,6 +13958,18 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
+	self.enemy_spawn_groups.SKM_single_spooc_W6 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}		
 		
 	--Vanilla shit below--
 	if difficulty_index <= 2 then

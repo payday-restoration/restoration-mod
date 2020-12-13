@@ -1357,7 +1357,7 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 		end
 	end
 
-	if intimidate_teammates and not managers.groupai:state():whisper_mode() then
+	if intimidate_teammates then
 		local criminals = managers.groupai:state():all_char_criminals()
 
 		for u_key, u_data in pairs(criminals) do

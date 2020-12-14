@@ -5541,6 +5541,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.winchester1874.timers.shotgun_reload_first_shell_offset = 0.25		
+	self.winchester1874.tactical_reload = 1
 	self.winchester1874.stats_modifiers = nil
 	self.winchester1874.panic_suppression_chance = 0.05
 
@@ -8380,6 +8381,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sbl.single = {}
 	self.sbl.single.fire_rate = 0.5
 	self.sbl.kick = self.stat_info.kick_tables.left_kick
+	self.sbl.tactical_reload = 1
 	self.sbl.supported = true
 	self.sbl.stats = {
 		damage = 120,

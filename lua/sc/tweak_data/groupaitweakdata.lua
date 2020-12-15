@@ -10534,6 +10534,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"lonewolf",
 			"shield_cover"
 		},
+		--Reinforce groups
+		FBI_defend = {
+			"obstacle",
+			"elite_ranged_fire",
+			"provide_coverfire",
+			"provide_support"
+		},		
 		--Vanilla shit below
 		swat_shotgun_rush = {
 			"charge",
@@ -10623,7 +10630,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			{
 				unit = "CS_cop_C45_R870",
 				freq = 1,
-				tactics = self._tactics.CS_cop,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			}
 		}
@@ -10635,7 +10642,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "CS_swat_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.CS_cop,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			}
 		}
@@ -10647,7 +10654,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "CS_heavy_M4",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.CS_cop,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			}
 		}
@@ -11055,20 +11062,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_C45_M4",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			},					
 			{
 				unit = "CS_cop_C45_R870",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
@@ -11080,20 +11087,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_M4_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			},					
 			{
 				unit = "FBI_swat_M4",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
@@ -11105,20 +11112,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_M4_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			},					
 			{
 				unit = "GS_swat_M4",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
@@ -11129,14 +11136,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			{
 				unit = "FBI_swat_M4",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
@@ -11147,14 +11154,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			{
 				unit = "GS_swat_M4",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
@@ -11165,14 +11172,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			{
 				unit = "FBI_heavy_G36",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}

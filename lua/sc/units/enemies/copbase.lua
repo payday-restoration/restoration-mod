@@ -4,6 +4,14 @@ local job = Global.level_data and Global.level_data.level_id
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
     -- log("cursed mod xd")
     self:random_mat_seq_initialization()
+	
+	if self._tweak_table == "spooc" then
+		self._unit:damage():run_sequence_simple("turn_on_spook_lights")
+	end
+	if self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" then
+		GroupAIStateBesiege:set_assault_endless(true)
+		managers.hud:set_buff_enabled("vip", true)
+	end		
 end)
 
 function CopBase:random_mat_seq_initialization()
@@ -57,25 +65,23 @@ for i, material_config_path in pairs(material_config_paths) do
   CopBase._material_translation_map[tostring(contour_ids:key())] = normal_ids 
 end
 
+--Deleting dozer hats cause it blows people up, pls gib standalone that's always loaded
 function CopBase:_chk_spawn_gear()
-	if self._tweak_table == "spooc" then
-		self._unit:damage():run_sequence_simple("turn_on_spook_lights")
-	end
-	if self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" then
-		GroupAIStateBesiege:set_assault_endless(true)
-		managers.hud:set_buff_enabled("vip", true)
-	end	
+	--Using this only so we can slap this on custom heists
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
 		for _,x in pairs(restoration.christmas_heists) do
 			if job == x or Month == "12" then
-				if self:char_tweak().is_special then
-					if self._tweak_table == "tank_hw" or self._tweak_table == "spooc_titan" or self._tweak_table == "autumn" then
-					else
-						local align_obj_name = Idstring("Head")
-						local align_obj = self._unit:get_object(align_obj_name)
-						self._headwear_unit = World:spawn_unit(Idstring("units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"), Vector3(), Rotation())
-						self._unit:link(align_obj_name, self._headwear_unit, self._headwear_unit:orientation_object():name())
-					end
+				if self._tweak_table == "tank_hw" or self._tweak_table == "spooc_titan" or self._tweak_table == "autumn" then
+					--In case we decide to give these guys a unique hat that has some crazy seq manager stuff
+				elseif self:char_tweak().is_special then
+					self._headwear_unit = safe_spawn_unit("units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc", Vector3(), Rotation())
+				end
+
+				if self._headwear_unit then
+					local align_obj_name = Idstring("Head")
+					local align_obj = self._unit:get_object(align_obj_name)
+
+					self._unit:link(align_obj_name, self._headwear_unit, self._headwear_unit:orientation_object():name())
 				end
 			end
 		end

@@ -1208,7 +1208,176 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
-		}		
+		},
+		--Wave 8
+		SKM_Light_Swat_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.3,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Heavy_Swat_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.2,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.06,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Shields_Booms_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.04,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},		
+		SKM_Tazers_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.06,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_Booms_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.04,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_HRTs_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.1,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_BLACK_Tank_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		SKM_GREEN_Tank_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},	
+		SKM_SKULL_Tank_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		SKM_TIT_Tank_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.015,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		},
+		SKM_single_spooc_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0.05,
+			0,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.
+		}				
 	}
 
 	local reenforce_groups = {
@@ -1255,16 +1424,22 @@ function SkirmishTweakData:_init_wave_modifiers()
 		{
 			class = "ModifierEnemyHealthAndDamageByWave",
 			data = {waves = health_damage_multipliers}
-		},
-		{class = "ModifierCloakerArrest"}
+		}
 	}
-	self.wave_modifiers[3] = {{class = "ModifierSkulldozers"}}
-	self.wave_modifiers[5] = {{
-		class = "ModifierHeavySniper",
-		data = {spawn_chance = 5}
-	}}
-	self.wave_modifiers[7] = {{class = "ModifierDozerMedic"}}
-	self.wave_modifiers[9] = {{class = "ModifierDozerMinigun"}}
+	self.wave_modifiers[2] = {{class = "ModifierNoHurtAnims"}}
+	self.wave_modifiers[4] = {
+		{
+			class = "ModifierHealSpeed",
+			data = {speed = 50}
+		}
+	}
+	self.wave_modifiers[6] = {{class = "ModifierDozerMedic"}}
+	self.wave_modifiers[8] = {
+		{
+			class = "ModifierShieldPhalanx",
+			data = {}
+		}
+	}
 end
 
 function SkirmishTweakData:_init_weekly_modifiers()

@@ -27,21 +27,17 @@ function MenuSceneManager:_setup_bg()
 	self:set_character(managers.blackmarket:get_preferred_character())
 		
 	--Proof of concept, should add more later. 
-	if Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
-	
-		--[[
-		
+	if Month == "12" and restoration.Options:GetValue("OTHER/Holiday") then
+			
 		local a = self._bg_unit:get_object(Idstring("a_reference"))
-		self._xmas_tree = World:spawn_unit(Idstring("units/pd2_dlc2/props/com_props_christmas_tree/com_prop_christmas_tree"), a:position() + Vector3(-150, 250, -50), Rotation(-45 + (math.random(2) - 1) * 180, 0, 0))
-		self._snow_pile = World:spawn_unit(Idstring("units/pd2_dlc_cane/props/cne_prop_snow_pile_01/cne_prop_snow_pile_01"), a:position() + Vector3(-35, 275, -75), Rotation(305, 0, 0))
+		self._xmas_tree = World:spawn_unit(Idstring("units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc"), a:position() + Vector3(-150, 250, -50), Rotation(-45 + (math.random(2) - 1) * 180, 0, 0))
+		self._snow_pile = World:spawn_unit(Idstring("units/pd2_dlc_cane/props/cne_prop_snow_pile_01_sc/cne_prop_snow_pile_01_sc"), a:position() + Vector3(-35, 275, -75), Rotation(305, 0, 0))
 		
 		local e_money = self._bg_unit:effect_spawner(Idstring("e_money"))
 
 		if e_money then
 			e_money:set_enabled(false)
-		end	
-		
-		]]--	
+		end		
 		
 	end
 		

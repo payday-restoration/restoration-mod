@@ -67,14 +67,33 @@ end
 
 --Deleting dozer hats cause it blows people up, pls gib standalone that's always loaded
 function CopBase:_chk_spawn_gear()
+	local region = tweak_data.levels:get_ai_group_type()
+	local difficulty_index = tweak_data:difficulty_to_index(Global and Global.game_settings and Global.game_settings.difficulty or "overkill")
+
 	--Using this only so we can slap this on custom heists
 	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
 		for _,x in pairs(restoration.christmas_heists) do
 			if job == x or Month == "12" then
 				if self._tweak_table == "tank_hw" or self._tweak_table == "spooc_titan" or self._tweak_table == "autumn" then
 					--In case we decide to give these guys a unique hat that has some crazy seq manager stuff
+				elseif self._tweak_table == "tank_medic" or self._tweak_table == "tank_mini" or self._tweak_table == "spring" then
+					self._headwear_unit = safe_spawn_unit("units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc", Vector3(), Rotation())
+				elseif self._tweak_table == "tank_titan" or self._tweak_table == "tank_titan_assault" then
+					if region == "russia" or region == "federales" then
+						self._headwear_unit = safe_spawn_unit("units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc", Vector3(), Rotation())					
+					else
+						self._headwear_unit = safe_spawn_unit("units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc", Vector3(), Rotation())
+					end
+				elseif self._tweak_table == "tank" then
+					if region == "russia" or region == "federales" then
+						self._headwear_unit = safe_spawn_unit("units/pd2_dlc_xm20/characters/ene_acc_dozer_akan_santa_hat_sc/ene_acc_dozer_akan_santa_hat_sc", Vector3(), Rotation())
+					elseif difficulty_index == 8 then
+						self._headwear_unit = safe_spawn_unit("units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc", Vector3(), Rotation())
+					else
+						self._headwear_unit = safe_spawn_unit("units/pd2_dlc_xm20/characters/ene_acc_dozer_santa_hat_sc/ene_acc_dozer_santa_hat_sc", Vector3(), Rotation())
+					end			
 				elseif self:char_tweak().is_special then
-					self._headwear_unit = safe_spawn_unit("units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc", Vector3(), Rotation())
+					self._headwear_unit = safe_spawn_unit("units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc", Vector3(), Rotation())					
 				end
 
 				if self._headwear_unit then

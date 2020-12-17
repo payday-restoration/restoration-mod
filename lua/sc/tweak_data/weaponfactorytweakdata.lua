@@ -423,6 +423,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	self.parts.wpn_fps_upg_o_docter.perks = {"scope"}
 	self.parts.wpn_fps_upg_o_docter.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
 	
+	--Compact Tactical (Fuck off)
+	self.parts.wpn_fps_upg_o_tf90.pcs = {
+		10, 
+		20,
+		30, 
+		40
+	}
+	self.parts.wpn_fps_upg_o_tf90.has_description = true
+	self.parts.wpn_fps_upg_o_tf90.desc_id = "bm_wp_upg_o_large"
+	self.parts.wpn_fps_upg_o_tf90.supported = true
+	self.parts.wpn_fps_upg_o_tf90.stats = {
+		value = 8,
+		zoom = 30
+	}
+	self.parts.wpn_fps_upg_o_tf90.perks = {"scope"}	
+	self.parts.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+	
 	--Holographic Sight
 	self.parts.wpn_fps_upg_o_eotech.pcs = {
 		10,
@@ -10724,10 +10741,7 @@ function WeaponFactoryTweakData:_init_model70()
 			},
 			wpn_fps_snp_r700 = {
 				translation = Vector3(0, 0, -3)
-			},	
-			wpn_fps_snp_sbl = {
-				translation = Vector3(0, 0, -0.75)
-			}		
+			}	
 		},
 		texture_bundle_folder = "berry",
 		is_a_unlockable = true,
@@ -24190,13 +24204,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 		reload = 3
 	}
 	
+	--Iron Sights (Still basically the same as ours)
+	self.parts.wpn_fps_snp_sbl_o_standard.supported = true
+	self.parts.wpn_fps_snp_sbl_o_standard.stats = {
+		value = 1
+	}	
+	
 	--Override Table
 	self.wpn_fps_snp_sbl.override = {}
 	self.wpn_fps_snp_sbl.adds = {}
-
-	table.insert(self.wpn_fps_snp_sbl.uses_parts, "wpn_fps_snp_model70_iron_sight")
-	table.insert(self.wpn_fps_snp_sbl_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
-			
+					
 	self.wpn_fps_snp_sbl_npc.uses_parts = deep_clone(self.wpn_fps_snp_sbl.uses_parts)		
 
 end)

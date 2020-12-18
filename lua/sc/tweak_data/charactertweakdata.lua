@@ -527,6 +527,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet_boss.HEALTH_INIT = 24
 	self.fbi_vet_boss.headshot_dmg_mul = 3.4		
 	self.fbi_vet_boss.melee_weapon = "buzzer_summer"
+	self.fbi_vet_boss.tase_on_melee = true
 	self.fbi_vet_boss.heal_cooldown = 7.5
 	table.insert(self._enemy_list, "fbi_vet_boss")	
 	
@@ -2705,6 +2706,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.can_be_tased = false
 	self.summers.immune_to_concussion = true
 	self.summers.deathguard = true
+	self.summers.tase_on_melee = true
 	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_captain"
 	if is_reaper then
@@ -2903,6 +2905,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.custom_voicework = nil
 	self.taser_summers.is_special = true	
 	self.taser_summers.follower = true
+	self.taser_summers.tase_on_melee = true
 	self.taser_summers.slowing_bullets = {
 		duration = 3,
 		power = 1,
@@ -2934,6 +2937,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.is_special = true	
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 45
+	self.taser_titan.tase_on_melee = true
 	self.taser_titan.slowing_bullets = {
 		duration = 3,
 		power = 1,

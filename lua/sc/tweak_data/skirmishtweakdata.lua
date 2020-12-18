@@ -20,17 +20,18 @@ function SkirmishTweakData:_init_group_ai_data(tweak_data)
 	tweak_data.group_ai.skirmish = skirmish_data
 
 	self.required_kills = {
-		25,
-		25,
-		28,
-		31,
-		33,
-		35,
-		37,
-		38,
-		39,
 		40,
-		60
+		40,
+		44,
+		48,
+		52,
+		56,
+		60,
+		64,
+		68,
+		72,
+		80,
+		120
 	}
 
 	self.required_kills_balance_mul = {

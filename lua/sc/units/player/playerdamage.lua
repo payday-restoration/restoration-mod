@@ -246,29 +246,18 @@ end
 
 --Now has damage_bullet integrated into it with melee specific changes.
 function PlayerDamage:damage_melee(attack_data)
+	local attacker_char_tweak = tweak_data.character[attack_data.attacker_unit:base()._tweak_table]
 	local damage_info = {
 		result = {type = "hurt", variant = "melee"},
 		attacker_unit = attack_data.attacker_unit
 	}
+	
+	self._attacker_char_tweak = attacker_char_tweak
+	
+	local pm = managers.player
 
 	if not self:can_take_damage(attack_data, damage_info) or not self:_chk_can_take_dmg() then
 		return
-	end
-
-	local pm = managers.player
-
-	--Unit specific shenanigans.
-	local _time = math.floor(TimerManager:game():time())
-	local player_unit = managers.player:player_unit()
-	if alive(attack_data.attacker_unit) and can_counter_strike == false then
-		--Titan Taser tase.
-		if alive(player_unit) and not self._unit:movement():current_state().driving and (attack_data.attacker_unit:base()._tweak_table == "taser_titan" or attack_data.attacker_unit:base()._tweak_table == "taser_summers" or attack_data.attacker_unit:base()._tweak_table == "summers" or attack_data.attacker_unit:base()._tweak_table == "fbi_vet_boss") then
-			attack_data.attacker_unit:sound():say("post_tasing_taunt")
-			attack_data.variant = "taser_tased" --they give you an actual tase on a melee attack.
-		elseif attack_data.attacker_unit:base()._tweak_table == "autumn" then
-			attack_data.attacker_unit:sound():say("i03", true, nil, true)
-			pm:set_player_state("arrested")
-		end
 	end
 
 	if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
@@ -283,6 +272,22 @@ function PlayerDamage:damage_melee(attack_data)
 			end
 		end
 	end
+	
+	--Unit specific shenanigans.
+	local _time = math.floor(TimerManager:game():time())
+	local player_unit = managers.player:player_unit()
+	if alive(attack_data.attacker_unit) and not self._unit:movement():current_state().driving then
+		--Titan Taser tase.
+		if alive(player_unit) and (attack_data.attacker_unit:base()._tweak_table == "taser_titan" or attack_data.attacker_unit:base()._tweak_table == "taser_summers" or attack_data.attacker_unit:base()._tweak_table == "summers" or attack_data.attacker_unit:base()._tweak_table == "fbi_vet_boss") then
+			attack_data.attacker_unit:sound():say("post_tasing_taunt")
+			attack_data.variant = "taser_tased" --they give you an actual tase on a melee attack.
+		elseif alive(player_unit) and self._attacker_char_tweak.cuff_on_melee then
+			if attack_data.attacker_unit:base()._tweak_table == "autumn" then
+				attack_data.attacker_unit:sound():say("i03", true, nil, true)
+			end
+			pm:set_player_state("arrested")
+		end
+	end	
 
 	local blood_effect = attack_data.melee_weapon and attack_data.melee_weapon == "weapon"
 	blood_effect = blood_effect or attack_data.melee_weapon and tweak_data.weapon.npc_melee[attack_data.melee_weapon] and tweak_data.weapon.npc_melee[attack_data.melee_weapon].player_blood_effect or false

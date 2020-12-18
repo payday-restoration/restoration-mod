@@ -819,7 +819,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					max_hostages = {4, "none"}
 				}
 			},
-			--Cloaker jumpkicks down players
+			--Cloaker melee cuffs players
 			{
 				id = "cloaker_arrest",
 				class = "ModifierCloakerArrest",

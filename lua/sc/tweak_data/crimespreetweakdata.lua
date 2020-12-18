@@ -672,7 +672,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_no_hurt",
 				data = {}
 			},
-			--Titan Taser spawn chance increase
+			--No more delay on Taser tase attempts
 			{
 				id = "taser_overcharge",
 				class = "ModifierTaserOvercharge",
@@ -738,11 +738,11 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					speed = {25, "add"}
 				}
 			},
-			--30% chance for Semi-auto Dozers
+			--50% chance for more Skulldozers
 			{
 				id = "dozer_lmg",
 				class = "ModifierSkulldozers",
-				icon = "crime_spree_more_dozers",
+				icon = "crime_spree_dozer_lmg",
 				data = {}
 			},
 			--More Omnia LPFs
@@ -775,11 +775,11 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_medic_deathwish",
 				data = {}
 			},
-			--Titan Dozer spawn increase
+			--"Minigun" Dozers have a 50% chance to replace Green/Black Dozers
 			{
 				id = "dozer_minigun",
 				class = "ModifierDozerMinigun",
-				icon = "crime_spree_titandozer",
+				icon = "crime_spree_more_dozers",
 				data = {}
 			},
 			--Higher Medic Cap T2
@@ -800,11 +800,11 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					explosive_resist = {50, "add"}
 				}
 			},
-			--Vet Cop Spawn increase
+			--MedicDozers have a 50% chance to replace other dozer types
 			{
 				id = "dozer_medic",
 				class = "ModifierDozerMedic",
-				icon = "crime_spree_heavies",
+				icon = "crime_spree_dozer_medic",
 				data = {}
 			},
 			--Longer assault waves

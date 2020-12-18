@@ -1,47 +1,51 @@
 ModifierDozerMinigun.default_value = "spawn_chance"
-ModifierDozerMinigun.bulldozers = {
-	Idstring("units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"),
-	Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"),
-	Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"),
-	Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"),
-	Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"),
-	Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"),
-	Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"),
-	Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"),
-	Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2"),
-	Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3"),	
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga"),
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249"),
-	Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"),
-	Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2"),
-	Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"),
-	Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"),
-	Idstring("units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3")	
-}
-
-ModifierDozerMinigun.russiadozers = {
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga"),
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg")
-}	
 
 function ModifierDozerMinigun:init(data)
 	ModifierDozerMinigun.super.init(self, data)
+	
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	
+	local unit_types = tweak_data.group_ai.unit_categories.FBI_tank.unit_types
+	local unit_types_black = tweak_data.group_ai.unit_categories.BLACK_tank.unit_types
+	
+	local mini_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+	local classic_mini_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
+	
+	if difficulty_index <= 7 then 
+		table.insert(unit_types.america, classic_mini_unit_name)
+		table.insert(unit_types.russia, classic_mini_unit_name)
+		table.insert(unit_types.zombie, classic_mini_unit_name)
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))
+		table.insert(unit_types.murkywater, classic_medic_unit_name)
+		table.insert(unit_types.nypd, classic_mini_unit_name)
+		table.insert(unit_types.lapd, classic_mini_unit_name)		
+	
+		table.insert(unit_types_black.america, classic_mini_unit_name)
+		table.insert(unit_types_black.russia, classic_mini_unit_name)
+		table.insert(unit_types_black.zombie, classic_mini_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))
+		table.insert(unit_types_black.murkywater, classic_medic_unit_name)
+		table.insert(unit_types_black.nypd, classic_mini_unit_name)
+		table.insert(unit_types_black.lapd, classic_mini_unit_name)				
+	else	
+		table.insert(unit_types.america, mini_unit_name)
+		table.insert(unit_types.russia, mini_unit_name)
+		table.insert(unit_types.zombie, mini_unit_name)
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))		
+		table.insert(unit_types.murkywater, mini_unit_name)
+		table.insert(unit_types.nypd, mini_unit_name)
+		table.insert(unit_types.lapd, mini_unit_name)	
+	
+		table.insert(unit_types_black.america, mini_unit_name)
+		table.insert(unit_types_black.russia, mini_unit_name)
+		table.insert(unit_types_black.zombie, mini_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))		
+		table.insert(unit_types_black.murkywater, mini_unit_name)
+		table.insert(unit_types_black.nypd, mini_unit_name)
+		table.insert(unit_types_black.lapd, mini_unit_name)		
+	end
 end
 
 function ModifierDozerMinigun:modify_value(id, value)
-	if id == "GroupAIStateBesiege:SpawningUnit" then
-		local is_dozer = table.contains(ModifierDozerMinigun.bulldozers, value)
-		local is_reaper_dozer = table.contains(ModifierDozerMinigun.russiadozers, value)			
-		if is_dozer and math.random(0,100) < 15 then
-			return Idstring("units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault")
-		elseif is_reaper_dozer and math.random(0,100) < 15 then
-			return Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2")				
-		end
-	end
-	return value
 end

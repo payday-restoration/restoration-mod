@@ -7,9 +7,8 @@ ModifierSniperAim.default_value = "speed"
 
 function ModifierSniperAim:modify_value(id, value)
 	if id == "CopActionShoot:ModifierSniperAim" then
-		log(tostring(value[1] / self:value()) .. ", " ,, tostring(value[2] / self:value()))
 		return {value[1] / self:value(), value[2] / self:value()}
 	end
-	
+
 	return value
 end

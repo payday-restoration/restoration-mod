@@ -28,13 +28,12 @@ end
 
 function MenuManager:keep_overhaul_on()
 	local option = true
-	--restoration.Options:SetValue("SC/SC", option)
+
 	managers.menu:post_event("menu_enter")
 end
 
 function MenuManager:keep_overhaul_off()
 	local option = false
-	--restoration.Options:SetValue("SC/SC", option)
 end
 
 function MenuManager:close_game()

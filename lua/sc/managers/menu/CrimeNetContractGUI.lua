@@ -20,6 +20,9 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	self._smart_matchmaking = job_data.smart_matchmaking or false
 	local is_win_32 = SystemInfo:platform() == Idstring("WIN32")
 	local is_nextgen = SystemInfo:platform() == Idstring("PS4") or SystemInfo:platform() == Idstring("XB1")
+	local padding = tweak_data.gui.crime_net.contract_gui.padding
+	local half_padding = 0.5 * padding
+	local double_padding = 2 * padding
 	local width = 900
 	local height = 580
 
@@ -268,7 +271,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	})
 
 	self:make_fine_text(modifiers_text)
-	modifiers_text:set_bottom(math.round(self._contract_panel:h() * 0.5))
+	modifiers_text:set_bottom(math.round(self._contract_panel:h() * 0.5 - font_size))
 
 	local next_top = modifiers_text:bottom()
 	local one_down_active = job_data.one_down == 1
@@ -292,7 +295,7 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	local ghost_bonus_mul = managers.job:get_ghost_bonus()
 	local skill_bonus = managers.player:get_skill_exp_multiplier()
 	local infamy_bonus = managers.player:get_infamy_exp_multiplier()
-	local limited_bonus = tweak_data:get_value("experience_manager", "limited_bonus_multiplier") or 1
+	local limited_bonus = managers.player:get_limited_exp_multiplier(job_data.job_id, nil)
 	local job_ghost = math.round(ghost_bonus_mul * 100)
 	local job_ghost_string = tostring(math.abs(job_ghost))
 	local has_ghost_bonus = ghost_bonus_mul > 0
@@ -392,7 +395,38 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 		next_top = pro_warning_text:bottom()
 	end
 
-	next_top = next_top + 5
+	local is_christmas_job = managers.job:is_christmas_job(job_data.job_id)
+
+	if is_christmas_job then
+		local holiday_potential_bonus = managers.job:get_job_christmas_bonus(job_data.job_id)
+		local holiday_bonus_percentage = math.round(holiday_potential_bonus * 100)
+
+		if holiday_bonus_percentage ~= 0 then
+			local holiday_string = tostring(holiday_bonus_percentage)
+			local holiday_text = self._contract_panel:text({
+				vertical = "top",
+				wrap = true,
+				align = "left",
+				wrap_word = true,
+				blend_mode = "normal",
+				text = managers.localization:to_upper_text("holiday_warning_text", {
+					event_icon = managers.localization:get_default_macro("BTN_XMAS"),
+					bonus = holiday_string
+				}),
+				w = text_w,
+				font_size = font_size,
+				font = font,
+				color = tweak_data.screen_colors.event_color
+			})
+
+			holiday_text:set_position(double_padding, next_top)
+			self:make_fine_text(holiday_text)
+
+			next_top = holiday_text:bottom()
+		end
+	end
+
+	next_top = next_top + half_padding
 
 	modifiers_text:set_visible(heat_warning_text:visible() or one_down_active or pro_warning_text:visible() or ghost_warning_text:visible())
 

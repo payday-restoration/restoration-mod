@@ -457,7 +457,7 @@ tweak_data.experience_manager.pro_day_multiplier = {
 }
 
 if Global.game_settings and Global.game_settings.one_down then
-	tweak_data.experience_manager.limited_bonus_multiplier = 1.2
+	tweak_data.experience_manager.pro_job_new = 1.2
 end
 
 	tweak_data.gui.buy_weapon_categories = {

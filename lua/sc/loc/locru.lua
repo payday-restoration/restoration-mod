@@ -508,7 +508,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
-		["menu_es_extra_bonus"] = "Бонус за Pro-Job",
+		["menu_es_pro_job_bonus"] = "Pro-Job",
 
 		["menu_asset_lock_additional_assets_pro"] = "НЕДОСТУПНО В РЕЖИМЕ PRO-JOB!",
 

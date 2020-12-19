@@ -308,27 +308,29 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 		text = managers.localization:to_upper_text("menu_cn_legend_host")
 	})
 	mw = math.max(mw, self:make_fine_text(host_text))
+	local next_y = host_text:bottom()
 	local join_icon = legend_panel:bitmap({
 		texture = "guis/textures/pd2/crimenet_legend_join",
 		x = 10,
-		y = host_text:bottom()
+		y = next_y
 	})
 	local join_text = legend_panel:text({
 		blend_mode = "add",
 		font = tweak_data.menu.pd2_small_font,
 		font_size = tweak_data.menu.pd2_small_font_size,
 		x = host_text:left(),
-		y = join_icon:top(),
+		y = next_y,
 		text = managers.localization:to_upper_text("menu_cn_legend_join")
 	})
 	mw = math.max(mw, self:make_fine_text(join_text))
 
 	self:make_color_text(join_text, tweak_data.screen_colors.regular_color)
 
+	next_y = join_text:bottom()
 	local friends_icon = legend_panel:bitmap({
 		texture = "guis/textures/pd2/crimenet_legend_join",
 		x = 10,
-		y = join_text:bottom(),
+		y = next_y,
 		color = tweak_data.screen_colors.friend_color
 	})
 	local friends_text = legend_panel:text({
@@ -336,52 +338,21 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 		font = tweak_data.menu.pd2_small_font,
 		font_size = tweak_data.menu.pd2_small_font_size,
 		x = host_text:left(),
-		y = join_text:bottom(),
+		y = next_y,
 		text = managers.localization:to_upper_text("menu_cn_legend_friends")
 	})
 	mw = math.max(mw, self:make_fine_text(friends_text))
 
 	self:make_color_text(friends_text, tweak_data.screen_colors.friend_color)
 
+	next_y = friends_text:bottom()
 	if managers.crimenet:no_servers() or is_xb1 then
 		join_icon:hide()
 		join_text:hide()
 		friends_text:hide()
-		friends_text:set_bottom(host_text:bottom())
+		friends_text:set_bottom(next_y)
 	end
 
-	local risk_icon = legend_panel:bitmap({
-		texture = "guis/textures/pd2/crimenet_legend_risklevel",
-		x = 10,
-		y = friends_text:bottom()
-	})
-	local risk_text = legend_panel:text({
-		blend_mode = "add",
-		font = tweak_data.menu.pd2_small_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
-		x = host_text:left(),
-		y = risk_icon:top(),
-		text = managers.localization:to_upper_text("menu_cn_legend_risk"),
-		color = tweak_data.screen_colors.risk
-	})
-	mw = math.max(mw, self:make_fine_text(risk_text))
-	local ghost_icon = legend_panel:bitmap({
-		texture = "guis/textures/pd2/cn_minighost",
-		x = 7,
-		y = risk_text:bottom() + 2 + 2,
-		color = tweak_data.screen_colors.ghost_color
-	})
-	local ghost_text = legend_panel:text({
-		blend_mode = "add",
-		font = tweak_data.menu.pd2_small_font,
-		font_size = tweak_data.menu.pd2_small_font_size,
-		x = host_text:left(),
-		y = risk_text:bottom(),
-		text = managers.localization:to_upper_text("menu_cn_legend_ghostable"),
-		color = tweak_data.screen_colors.ghost_color
-	})
-	mw = math.max(mw, self:make_fine_text(ghost_text))
-	local next_y = ghost_text:bottom()
 	local mutated_icon = legend_panel:bitmap({
 		texture = "guis/textures/pd2/crimenet_legend_join",
 		x = 10,
@@ -393,7 +364,7 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 		font = tweak_data.menu.pd2_small_font,
 		font_size = tweak_data.menu.pd2_small_font_size,
 		x = host_text:left(),
-		y = ghost_text:bottom(),
+		y = next_y,
 		text = managers.localization:to_upper_text("menu_cn_legend_mutated"),
 		color = tweak_data.screen_colors.mutators_color_text
 	})
@@ -433,6 +404,56 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 	})
 	mw = math.max(mw, self:make_fine_text(skirmish_text))
 	next_y = skirmish_text:bottom()
+	local risk_icon = legend_panel:bitmap({
+		texture = "guis/textures/pd2/crimenet_legend_risklevel",
+		x = 10,
+		y = next_y
+	})
+	local risk_text = legend_panel:text({
+		blend_mode = "add",
+		font = tweak_data.menu.pd2_small_font,
+		font_size = tweak_data.menu.pd2_small_font_size,
+		x = host_text:left(),
+		y = next_y,
+		text = managers.localization:to_upper_text("menu_cn_legend_risk"),
+		color = tweak_data.screen_colors.risk
+	})
+	mw = math.max(mw, self:make_fine_text(risk_text))
+	next_y = risk_text:bottom()
+	local ghost_icon = legend_panel:bitmap({
+		texture = "guis/textures/pd2/cn_minighost",
+		x = 7,
+		y = next_y + 4,
+		color = tweak_data.screen_colors.ghost_color
+	})
+	local ghost_text = legend_panel:text({
+		blend_mode = "add",
+		font = tweak_data.menu.pd2_small_font,
+		font_size = tweak_data.menu.pd2_small_font_size,
+		x = host_text:left(),
+		y = next_y,
+		text = managers.localization:to_upper_text("menu_cn_legend_ghostable"),
+		color = tweak_data.screen_colors.ghost_color
+	})
+	mw = math.max(mw, self:make_fine_text(ghost_text))
+	next_y = ghost_text:bottom()
+	local holiday_icon = legend_panel:bitmap({
+		texture = "guis/textures/pd2/cn_mini_xmas",
+		x = 10,
+		y = next_y + 2,
+		color = tweak_data.screen_colors.event_color
+	})
+	local holiday_text = legend_panel:text({
+		blend_mode = "add",
+		font = tweak_data.menu.pd2_small_font,
+		font_size = tweak_data.menu.pd2_small_font_size,
+		x = host_text:left(),
+		y = next_y,
+		text = managers.localization:to_upper_text("menu_cn_legend_holiday"),
+		color = tweak_data.screen_colors.event_color
+	})
+	mw = math.max(mw, self:make_fine_text(holiday_text))
+	next_y = holiday_text:bottom()
 	local kick_none_icon = legend_panel:bitmap({
 		texture = "guis/textures/pd2/cn_kick_marker",
 		x = 10,
@@ -538,8 +559,8 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 	local global_bonuses_panel = self._panel:panel({
 		y = 10,
 		name = "global_bonuses_panel",
-		h = 30,
-		layer = 40
+		layer = 40,
+		h = tweak_data.menu.pd2_small_font_size * 3
 	})
 
 	local function mul_to_procent_string(multiplier)
@@ -596,7 +617,7 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 			})
 		end
 
-		local limited_bonus = tweak_data:get_value("experience_manager", "limited_bonus_multiplier") or 1
+		local limited_bonus = managers.player:get_limited_exp_multiplier(nil, nil)
 		limited_bonus = limited_bonus - 1
 
 		if limited_bonus > 0 then
@@ -610,6 +631,22 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 				color = tweak_data.screen_colors.button_stage_2
 			})
 		end
+	end
+	local limited_bonus = (tweak_data:get_value("experience_manager", "limited_xmas_bonus_multiplier") or 1) - 1
+
+	if limited_bonus > 0 then
+		local limited_string = mul_to_procent_string(limited_bonus)
+		local limited_text = global_bonuses_panel:text({
+			blend_mode = "add",
+			align = "center",
+			font = tweak_data.menu.pd2_small_font,
+			font_size = tweak_data.menu.pd2_small_font_size,
+			text = managers.localization:to_upper_text("menu_cn_holiday_bonus", {
+				bonus = limited_string,
+				event_icon = managers.localization:get_default_macro("BTN_XMAS")
+			}),
+			color = tweak_data.screen_colors.event_color
+		})
 	end
 
 	if #global_bonuses_panel:children() > 1 then
@@ -1785,6 +1822,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 	local star_size = 16
 	local job_num = 0
 	local job_cash = 0
+	local one_down_active = data.one_down == 1
 	local difficulty_name = side_panel:text({
 		name = "difficulty_name",
 		text = "",
@@ -1870,7 +1908,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 			})
 			got_heat_text = true
 		end
-		local limited_bonus = tweak_data:get_value("experience_manager", "limited_bonus_multiplier") or 1
+		local limited_bonus = managers.player:get_limited_exp_multiplier(data.job_id, data.level_id)
 		limited_bonus = limited_bonus - 1
 		if limited_bonus > 0 then
 			local s = utf8.len(text_string)
@@ -2343,6 +2381,9 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 		h = 64,
 		w = 18
 	})
+	
+	local next_icon_right = 16
+	local side_icons_top = 0
 
 	if data.job_id and managers.job:is_job_ghostable(data.job_id) then
 		local ghost_icon = icon_panel:bitmap({
@@ -2356,6 +2397,39 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 			y = math.max(y, icon_panel:children()[i]:bottom())
 		end
 		ghost_icon:set_y(y)
+	end
+
+	local ghost_icon = nil
+
+	if data.job_id and managers.job:is_job_ghostable(data.job_id) then
+		ghost_icon = icon_panel:bitmap({
+			texture = "guis/textures/pd2/cn_minighost",
+			name = "ghost_icon",
+			blend_mode = "add",
+			color = tweak_data.screen_colors.ghost_color
+		})
+
+		ghost_icon:set_top(side_icons_top)
+		ghost_icon:set_right(next_icon_right)
+
+		next_icon_right = next_icon_right - 12
+	end
+
+	local christmas_icon = nil
+
+	if data.job_id and managers.job:is_christmas_job(data.job_id) then
+		christmas_icon = icon_panel:bitmap({
+			blend_mode = "add",
+			name = "christmas_icon",
+			texture = "guis/textures/pd2/cn_mini_xmas",
+			rotation = 360,
+			color = tweak_data.screen_colors.event_color
+		})
+
+		christmas_icon:set_top(side_icons_top)
+		christmas_icon:set_right(next_icon_right)
+
+		next_icon_right = next_icon_right - 12
 	end
 
 	if one_down_active then

@@ -251,9 +251,7 @@ function PlayerDamage:damage_melee(attack_data)
 		result = {type = "hurt", variant = "melee"},
 		attacker_unit = attack_data.attacker_unit
 	}
-	
-	self._attacker_char_tweak = attacker_char_tweak
-	
+		
 	local pm = managers.player
 
 	if not self:can_take_damage(attack_data, damage_info) or not self:_chk_can_take_dmg() then
@@ -278,10 +276,10 @@ function PlayerDamage:damage_melee(attack_data)
 	local player_unit = managers.player:player_unit()
 	if alive(attack_data.attacker_unit) and not self._unit:movement():current_state().driving then
 		--Titan Taser tase.
-		if alive(player_unit) and self._attacker_char_tweak.tase_on_melee then
+		if alive(player_unit) and attacker_char_tweak and attacker_char_tweak.tase_on_melee then
 			attack_data.attacker_unit:sound():say("post_tasing_taunt")
 			attack_data.variant = "taser_tased" --they give you an actual tase on a melee attack.
-		elseif alive(player_unit) and self._attacker_char_tweak.cuff_on_melee then
+		elseif alive(player_unit) and attacker_char_tweak and attacker_char_tweak.cuff_on_melee then
 			if attack_data.attacker_unit:base()._tweak_table == "autumn" then
 				attack_data.attacker_unit:sound():say("i03", true, nil, true)
 			end

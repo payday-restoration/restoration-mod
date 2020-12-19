@@ -649,7 +649,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_shield_reflect",
 				data = {}
 			},
-			--More Titancloakers
+			--Cloakers dropping Flashbangs
 			{
 				id = "cloaker_smoke",
 				class = "ModifierCloakerKick",

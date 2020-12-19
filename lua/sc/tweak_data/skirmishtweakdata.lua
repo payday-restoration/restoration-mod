@@ -1206,6 +1206,10 @@ function SkirmishTweakData:_init_wave_modifiers()
 		{
 			class = "ModifierEnemyHealthAndDamageByWave",
 			data = {waves = health_damage_multipliers}
+		},
+		{
+			class = "ModifierSniperAim",
+			data = {speed = 2}
 		}
 	}
 	self.wave_modifiers[2] = {{class = "ModifierNoHurtAnims"}}
@@ -1215,7 +1219,6 @@ function SkirmishTweakData:_init_wave_modifiers()
 			data = {speed = 50}
 		}
 	}
-	self.wave_modifiers[6] = {{class = "ModifierDozerMedic"}}
 	self.wave_modifiers[8] = {
 		{
 			class = "ModifierShieldPhalanx",

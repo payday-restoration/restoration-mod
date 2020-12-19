@@ -25,6 +25,22 @@ Hooks:PostHook(HUDAssaultCorner, "init", "SCHUDAssaultInit", function(self)
 			break
 		end
 	end	
+	
+	--Skirmish exclusive stuff
+	if managers.skirmish:is_skirmish() then
+		if tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "summers" then
+			buff_icon = "guis/textures/pd2/hud_buff_fire"
+		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "spring" then
+			buff_icon = "guis/textures/pd2/hud_buff_skull"
+		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "autumn" then
+			buff_icon = "guis/textures/pd2/hud_buff_spooc"
+		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "winters" then
+			buff_icon = "guis/textures/pd2/hud_buff_shield"	
+		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "headless_hatman" then
+			buff_icon = "guis/textures/pd2/hud_buff_halloween"			
+		end
+	end	
+	
 	if alive(self._vip_bg_box) and alive(self._vip_bg_box:child("vip_icon")) then
 		self._vip_bg_box:child("vip_icon"):set_image(buff_icon)
 	end

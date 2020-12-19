@@ -362,7 +362,22 @@ function HUDAssaultCorner:init(hud, full_hud)
 			self.buff_icon = "guis/textures/pd2/hud_buff_halloween"
 			break
 		end
-	end		
+	end	
+
+	--Skirmish exclusive stuff
+	if managers.skirmish:is_skirmish() then
+		if tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "summers" then
+			self.buff_icon = "guis/textures/pd2/hud_buff_fire"
+		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "spring" then
+			self.buff_icon = "guis/textures/pd2/hud_buff_skull"
+		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "autumn" then
+			self.buff_icon = "guis/textures/pd2/hud_buff_spooc"
+		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "winters" then
+			self.buff_icon = "guis/textures/pd2/hud_buff_shield"	
+		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "headless_hatman" then
+			self.buff_icon = "guis/textures/pd2/hud_buff_halloween"			
+		end
+	end
 	
 	local buffs_pad_panel = self._hud_panel:panel({
 		visible = false,

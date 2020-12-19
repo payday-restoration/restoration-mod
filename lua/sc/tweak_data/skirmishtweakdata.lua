@@ -1209,7 +1209,7 @@ function SkirmishTweakData:_init_wave_modifiers()
 		},
 		{
 			class = "ModifierSniperAim",
-			data = {speed = 2}
+			data = {speed = 20}
 		}
 	}
 	self.wave_modifiers[2] = {{class = "ModifierNoHurtAnims"}}

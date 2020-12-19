@@ -30,6 +30,21 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.nypd = nypd
 	self.ai_groups.lapd = lapd
 	
+	--Christmas Dozer/Cloaker jingle bells
+	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
+		if Month == 12 then
+			if not PackageManager:loaded("packages/event_xmas") then
+				PackageManager:load("packages/event_xmas")
+			end		
+			
+			for lvl_id, lvl_data in pairs(self) do
+				if type(lvl_data) == "table" and lvl_data.name_id then
+					self[lvl_id].is_christmas_heist = true
+				end
+			end					
+		end
+	end
+	
 	--///MEXICAN LEVELS\\\--
 	self.bex.package = {"packages/mexicoassets", "packages/job_bex"}
 	

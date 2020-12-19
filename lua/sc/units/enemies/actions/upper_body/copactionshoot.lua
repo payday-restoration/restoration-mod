@@ -392,11 +392,11 @@ function CopActionShoot:on_attention(attention, old_attention)
 			local usage_tweak = self._w_usage_tweak
 			local shoot_hist = self._shoot_history
 			local aim_delay = 0
-			local aim_delay_minmax = managers.modifiers:modify_value("CopActionShoot:ModifierSniperAim", self._aim_delay_minmax)
+			local aim_delay_minmax = self._aim_delay_minmax
 
 			if shoot_hist then
 				if self._use_sniper_focus then
-
+					aim_delay_minmax = managers.modifiers:modify_value("CopActionShoot:ModifierSniperAim", aim_delay_minmax)
 
 					if self._draw_focus_displacement then
 						local line_1 = Draw:brush(Color.blue:with_alpha(0.5), 2)

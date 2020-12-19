@@ -467,8 +467,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.steal_loot = true
 	self.fbi.no_arrest = false
 	self.fbi.heal_cooldown = 2.5
-	--Always rescue hostages
-	self.fbi.rescue_hostages = true
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_female = deep_clone(self.fbi)
 	self.fbi_female.speech_prefix_p1 = "fl"
@@ -784,14 +782,17 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.swat.speech_prefix_p2 = "n"
 	self.swat.speech_prefix_count = 4
-	self.swat.access = "swat"
+	--Just in case, makes them be able to go for the hostage
+	if managers.skirmish and managers.skirmish:is_skirmish() then
+		self.swat.access = "fbi"
+	else
+		self.swat.access = "swat"
+	end
 	self.swat.dodge = presets.dodge.athletic
 	self.swat.no_arrest = false
 	self.swat.chatter = presets.enemy_chatter.swat
 	self.swat.melee_weapon = nil
 	self.swat.melee_weapon_dmg_multiplier = 1
-	--Always rescue hostages
-	self.swat.rescue_hostages = true
 	if is_murky then
 	    self.swat.has_alarm_pager = true
 	else
@@ -1062,7 +1063,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat = deep_clone(presets.base)
 	self.fbi_swat.tags = {"law"}
 	self.fbi_swat.experience = {}
-	self.fbi_swat.weapon = presets.weapon.good
+	self.fbi_swat.weapon = deep_clone(presets.weapon.good)
 	self.fbi_swat.detection = presets.detection.normal
 	self.fbi_swat.HEALTH_INIT = 15
 	self.fbi_swat.headshot_dmg_mul = 3
@@ -1121,7 +1122,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat = deep_clone(presets.base)
 	self.fbi_heavy_swat.tags = {"law"}
 	self.fbi_heavy_swat.experience = {}
-	self.fbi_heavy_swat.weapon = presets.weapon.normal
+	self.fbi_heavy_swat.weapon = deep_clone(presets.weapon.normal)
 	self.fbi_heavy_swat.detection = presets.detection.normal
 	self.fbi_heavy_swat.HEALTH_INIT = 20
 	self.fbi_heavy_swat.headshot_dmg_mul = 2
@@ -4543,11 +4544,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.speech_prefix = "po"
 	presets.base.speech_prefix_count = 1
 	presets.base.follower = false
-	if managers.skirmish and managers.skirmish:is_skirmish() then
-		presets.base.rescue_hostages = false
-	else
-		presets.base.rescue_hostages = true
-	end
+	presets.base.rescue_hostages = true
 	presets.base.use_radio = self._default_chatter
 	presets.base.dodge = nil
 	presets.base.challenges = {type = "law"}
@@ -14262,6 +14259,9 @@ function CharacterTweakData:_set_sm_wish()
 	self.shield.damage.hurt_severity = self.presets.hurt_severities.no_hurts
 	self.shield.damage.explosion_damage_mul = 0.8
 	self.shield.immune_to_concussion = true
+	
+	self.fbi_swat.weapon = deep_clone(self.presets.weapon.expert)
+	self.fbi_swat.melee_weapon_dmg_multiplier = 2.5
 	
 	self.fbi_heavy_swat.weapon = deep_clone(self.presets.weapon.good)
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 2

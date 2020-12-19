@@ -741,7 +741,7 @@ function CopDamage:damage_bullet(attack_data)
 	end
 
 	if not head and attack_data.attacker_unit == managers.player:player_unit() and not self._char_tweak.must_headshot and self._char_tweak.headshot_dmg_mul then
-				if attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("smg", "lmg", "minigun") and managers.player:has_category_upgrade("weapon", "automatic_head_shot_add") or managers.player:has_category_upgrade("player", "universal_body_expertise") then
+		if attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("smg", "lmg", "minigun") and managers.player:has_category_upgrade("weapon", "automatic_head_shot_add") or managers.player:has_category_upgrade("player", "universal_body_expertise") then
 			attack_data.add_head_shot_mul = managers.player:upgrade_value("weapon", "automatic_head_shot_add", nil)
 		end
 
@@ -754,8 +754,12 @@ function CopDamage:damage_bullet(attack_data)
 
 	damage = self:_apply_damage_reduction(damage)
 
+	--Saw+Throwables ignore clamps
 	if self._char_tweak.DAMAGE_CLAMP_BULLET then
-		damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
+		if attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
+		else
+			damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
+		end
 	end
 
 	attack_data.raw_damage = damage

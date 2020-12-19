@@ -1162,6 +1162,94 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 		}				
 	}
 
+	--This portion of the code will need to be cut and reworked once infinite is in progress.
+	--Might be ideal to use/abuse lua virtual tables and vary them based on captain type.
+	local wave_9_captain = math.random()
+
+	if wave_9_captain < 0.24 then --autumn
+		self.captain = "autumn"
+		assault_groups.Cap_Autumn = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			100,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+	elseif wave_9_captain < 0.48 then --summers
+		self.captain = "summers"
+		assault_groups.Cap_Summers = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			100,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+	elseif wave_9_captain < 0.72 then --winters
+		self.captain = "winters"
+		assault_groups.Cap_Winters = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			100,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+	elseif wave_9_captain < 0.96 then --spring
+		self.captain = "spring"
+		assault_groups.Cap_Spring = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			100,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+	else --Spooky halloween boss.
+		self.captain = "headless_hatman"
+		assault_groups.HVH_Boss = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			100,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+	end
+
+	log(self.captain)
+
 	local reenforce_groups = {
 		nil
 	}
@@ -1172,6 +1260,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	tweak_data.group_ai.skirmish.assault.groups = assault_groups
 	tweak_data.group_ai.skirmish.reenforce.groups = reenforce_groups
 	tweak_data.group_ai.skirmish.recon.groups = recon_groups
+	tweak_data.group_ai.skirmish.group_min_diff = {}
 end
 
 function SkirmishTweakData:_init_wave_modifiers()

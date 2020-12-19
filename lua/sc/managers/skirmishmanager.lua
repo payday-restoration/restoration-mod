@@ -9,11 +9,12 @@ end)
 
 --Update kill counter, end assault if kills required reached.
 function SkirmishManager:do_kill()
-	if managers.groupai:state():chk_assault_active_atm() then
+	local groupai = managers.groupai:state()
+	if groupai:chk_assault_active_atm() and not groupai._hunt_mode then
 		self._required_kills = self._required_kills - 1
 
 		if self._required_kills <= 0 then
-			managers.groupai:state():force_end_assault_phase(true)
+			groupai:force_end_assault_phase(true)
 		end
 	end
 end

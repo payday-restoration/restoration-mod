@@ -718,6 +718,15 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_cloaker_tear_gas",
 				data = {}
 			},
+			--Faster Sniper Aim
+			{
+				id = "sniper_faster_aim",
+				class = "ModifierSniperAim",
+				icon = "crime_spree_heavy_sniper",
+				data = {
+					speed = {2, "add"}
+				}
+			},			
 			--Higher Dozer Cap T1
 			{
 				id = "dozer_1",
@@ -742,7 +751,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				class = "ModifierSkulldozers",
 				icon = "crime_spree_dozer_lmg",
 				data = {}
-			},
+			},			
 			--More Omnia LPFs
 			{
 				id = "medic_adrenaline",
@@ -869,7 +878,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				data = {
 					speed = {25, "add"}
 				}
-			}
+			}	
 		},
 		stealth = {
 			{

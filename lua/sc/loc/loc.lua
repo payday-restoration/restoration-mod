@@ -789,6 +789,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_boomboom"] = "Grenadiers now explode on death.",
 		["menu_cs_modifier_friendlyfire"] = "Teammates now take 100% friendly fire damage.",
 		["menu_cs_modifier_dodgethis"] = "Veteran Cops now dodge all bullets.",
+		["menu_cs_modifier_sniper_aim"] = "Snipers now aim their rifles 100% faster.",
 		["menu_cs_modifier_health_damage_total"] = "",
 		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 15% chance to become an elite UMP unit.",
 		["menu_cs_modifier_heavy_sniper"] = "Titan Snipers and Bravo Sharpshooters will now fire their rifles on full auto at close range.",

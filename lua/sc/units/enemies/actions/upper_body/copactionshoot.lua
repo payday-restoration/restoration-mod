@@ -898,7 +898,7 @@ function CopActionShoot:update(t)
 							end
 
 							local aim_delay = 0
-							local aim_delay_minmax = self._aim_delay_minmax
+							local aim_delay_minmax = aim_delay_minmax = managers.modifiers:modify_value("CopActionShoot:ModifierSniperAim", self._aim_delay_minmax)
 
 							if aim_delay_minmax[1] ~= 0 or aim_delay_minmax[2] ~= 0 then
 								if aim_delay_minmax[1] == aim_delay_minmax[2] then

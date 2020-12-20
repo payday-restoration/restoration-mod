@@ -15255,8 +15255,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.ELITE_swat_shotgun,
 				rank = 3
 			}
-		},
-		wave = 1
+		}
 	}
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W1 = {
 		amount = {4, 5},
@@ -15276,8 +15275,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_swat_shotgun,
 				rank = 3
 			}
-		},
-		wave = 1
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Shields_W1 = {
 		amount = {3, 4},
@@ -15297,8 +15295,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.MH_heavy,
 				rank = 1
 			}			
-		},
-		wave = 1
+		}
 	}	
 	
 	--Wave 2
@@ -15336,8 +15333,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 2
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W2 = {
 		amount = {4, 5},
@@ -15365,8 +15361,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 2
+		}
 	}
 	self.enemy_spawn_groups.SKM_Shields_W2 = {
 		amount = {3, 4},
@@ -15394,8 +15389,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}			
-		},
-		wave = 2
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Tazers_W2 = {
 		amount = {2, 3},
@@ -15415,8 +15409,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 2
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Booms_W2 = {
 		amount = {2, 3},
@@ -15436,8 +15429,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 2
+		}
 	}		
 
 	--Wave 3
@@ -15475,8 +15467,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 3
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W3 = {
 		amount = {4, 5},
@@ -15504,8 +15495,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 3
+		}
 	}
 	self.enemy_spawn_groups.SKM_Shields_W3 = {
 		amount = {3, 4},
@@ -15533,8 +15523,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}			
-		},
-		wave = 3
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Tazers_W3 = {
 		amount = {2, 3},
@@ -15554,8 +15543,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 3
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Booms_W3 = {
 		amount = {2, 3},
@@ -15575,8 +15563,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 3
+		}
 	}		
 	self.enemy_spawn_groups.SKM_HRTs_W3 = {
 		amount = {3, 4},
@@ -15594,8 +15581,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_suit,
 				rank = 2
 			}
-		},
-		wave = 3
+		}
 	}	
 	
 	--Wave 4
@@ -15633,8 +15619,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 4
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W4 = {
 		amount = {4, 5},
@@ -15662,8 +15647,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 4
+		}
 	}
 	self.enemy_spawn_groups.SKM_Shields_W4 = {
 		amount = {3, 4},
@@ -15691,8 +15675,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}			
-		},
-		wave = 4
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Tazers_W4 = {
 		amount = {2, 3},
@@ -15712,8 +15695,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 4
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Booms_W4 = {
 		amount = {2, 3},
@@ -15733,8 +15715,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 4
+		}
 	}		
 	self.enemy_spawn_groups.SKM_HRTs_W4 = {
 		amount = {3, 4},
@@ -15752,8 +15733,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_suit,
 				rank = 2
 			}
-		},
-		wave = 4
+		}
 	}		
 	self.enemy_spawn_groups.SKM_BLACK_Tank_W4 = {
 		amount = {3, 4},
@@ -15781,8 +15761,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 4
+		}
 	}	
 	
 	--Wave 5
@@ -15818,8 +15797,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 5
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W5 = {
 		amount = {4, 5},
@@ -15853,8 +15831,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 5
+		}
 	}
 	self.enemy_spawn_groups.SKM_Shields_W5 = {
 		amount = {3, 4},
@@ -15889,8 +15866,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 5
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Tazers_W5 = {
 		amount = {3, 4},
@@ -15918,8 +15894,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 5
+		}
 	}		
 	self.enemy_spawn_groups.SKM_Booms_W5 = {
 		amount = {3, 4},
@@ -15947,8 +15922,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.ELITE_heavy,
 				rank = 1
 			}
-		},
-		wave = 5
+		}
 	}		
 	self.enemy_spawn_groups.SKM_HRTs_W5 = {
 		amount = {3, 4},
@@ -15973,8 +15947,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 5
+		}
 	}		
 	self.enemy_spawn_groups.SKM_BLACK_Tank_W5 = {
 		amount = {3, 4},
@@ -16002,8 +15975,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 5
+		}
 	}		
 	self.enemy_spawn_groups.SKM_GREEN_Tank_W5 = {
 		amount = {3, 4},
@@ -16031,8 +16003,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}			
-		},
-		wave = 5
+		}
 	}	
 	self.enemy_spawn_groups.SKM_single_spooc_W5 = {
 		amount = {1, 1},
@@ -16044,8 +16015,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
-		},
-		wave = 5
+		}
 	}	
 	
 	--Wave 6, more or less just normal DS now
@@ -16081,8 +16051,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W6 = {
 		amount = {4, 5},
@@ -16116,8 +16085,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Shields_W6 = {
 		amount = {3, 4},
@@ -16159,8 +16127,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 6
+		}
 	}
 	self.enemy_spawn_groups.SKM_Shields_Booms_W6 = {
 		amount = {3, 4},
@@ -16202,8 +16169,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Tazers_W6 = {
 		amount = {3, 4},
@@ -16231,8 +16197,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 6
+		}
 	}
 	self.enemy_spawn_groups.SKM_Booms_W6 = {
 		amount = {3, 4},
@@ -16260,8 +16225,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.ELITE_heavy,
 				rank = 1
 			}
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_HRTs_W6 = {
 		amount = {3, 4},
@@ -16286,8 +16250,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_BLACK_Tank_W6 = {
 		amount = {3, 4},
@@ -16315,8 +16278,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_GREEN_Tank_W6 = {
 		amount = {3, 4},
@@ -16344,8 +16306,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}			
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_SKULL_Tank_W6 = {
 		amount = {3, 4},
@@ -16373,8 +16334,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_TIT_Tank_W6 = {
 		amount = {3, 4},
@@ -16402,8 +16362,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 6
+		}
 	}	
 	self.enemy_spawn_groups.SKM_single_spooc_W6 = {
 		amount = {1, 1},
@@ -16415,8 +16374,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
-		},
-		wave = 6
+		}
 	}		
 	
 	--Wave 7, more or less just normal DS now WITH Bravo support
@@ -16452,8 +16410,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W7 = {
 		amount = {4, 5},
@@ -16487,8 +16444,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Shields_W7 = {
 		amount = {3, 4},
@@ -16530,8 +16486,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 7
+		}
 	}
 	self.enemy_spawn_groups.SKM_Shields_Booms_W7 = {
 		amount = {3, 4},
@@ -16573,8 +16528,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Tazers_W7 = {
 		amount = {3, 4},
@@ -16602,8 +16556,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 7
+		}
 	}
 	self.enemy_spawn_groups.SKM_Booms_W7 = {
 		amount = {3, 4},
@@ -16631,8 +16584,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.ELITE_heavy,
 				rank = 1
 			}
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_HRTs_W7 = {
 		amount = {3, 4},
@@ -16657,8 +16609,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_BLACK_Tank_W7 = {
 		amount = {3, 4},
@@ -16686,8 +16637,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_GREEN_Tank_W7 = {
 		amount = {3, 4},
@@ -16715,8 +16665,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}			
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_SKULL_Tank_W7 = {
 		amount = {3, 4},
@@ -16744,8 +16693,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_TIT_Tank_W7 = {
 		amount = {3, 4},
@@ -16773,8 +16721,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 7
+		}
 	}	
 	self.enemy_spawn_groups.SKM_single_spooc_W7 = {
 		amount = {1, 1},
@@ -16786,8 +16733,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
-		},
-		wave = 7
+		}
 	}			
 	
 	--Wave 8, DS but only Bravos
@@ -16823,8 +16769,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W8 = {
 		amount = {4, 5},
@@ -16858,8 +16803,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Shields_W8 = {
 		amount = {3, 4},
@@ -16901,8 +16845,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 8
+		}
 	}
 	self.enemy_spawn_groups.SKM_Shields_Booms_W8 = {
 		amount = {3, 4},
@@ -16944,8 +16887,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Tazers_W8 = {
 		amount = {3, 4},
@@ -16973,8 +16915,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 8
+		}
 	}
 	self.enemy_spawn_groups.SKM_Booms_W8 = {
 		amount = {3, 4},
@@ -17002,8 +16943,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.ELITE_heavy,
 				rank = 1
 			}
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_HRTs_W8 = {
 		amount = {3, 4},
@@ -17028,8 +16968,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_BLACK_Tank_W8 = {
 		amount = {3, 4},
@@ -17057,8 +16996,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_GREEN_Tank_W8 = {
 		amount = {3, 4},
@@ -17086,8 +17024,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}			
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_SKULL_Tank_W8 = {
 		amount = {3, 4},
@@ -17115,8 +17052,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_TIT_Tank_W8 = {
 		amount = {3, 4},
@@ -17144,8 +17080,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 8
+		}
 	}	
 	self.enemy_spawn_groups.SKM_single_spooc_W8 = {
 		amount = {1, 1},
@@ -17157,8 +17092,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
-		},
-		wave = 8
+		}
 	}
 	
 	--Wave 9
@@ -17194,8 +17128,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Heavy_Swat_W9 = {
 		amount = {4, 5},
@@ -17229,8 +17162,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Shields_W9 = {
 		amount = {3, 4},
@@ -17272,8 +17204,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 9
+		}
 	}
 	self.enemy_spawn_groups.SKM_Shields_Booms_W9 = {
 		amount = {3, 4},
@@ -17315,8 +17246,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic,
 				rank = 1
 			}
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_Tazers_W9 = {
 		amount = {3, 4},
@@ -17344,8 +17274,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}
-		},
-		wave = 9
+		}
 	}
 	self.enemy_spawn_groups.SKM_Booms_W9 = {
 		amount = {3, 4},
@@ -17373,8 +17302,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.ELITE_heavy,
 				rank = 1
 			}
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_HRTs_W9 = {
 		amount = {3, 4},
@@ -17399,8 +17327,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_BLACK_Tank_W9 = {
 		amount = {3, 4},
@@ -17428,8 +17355,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_GREEN_Tank_W9 = {
 		amount = {3, 4},
@@ -17457,8 +17383,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}			
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_SKULL_Tank_W9 = {
 		amount = {3, 4},
@@ -17486,8 +17411,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_TIT_Tank_W9 = {
 		amount = {3, 4},
@@ -17515,8 +17439,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.FBI_medic_flank,
 				rank = 2
 			}
-		},
-		wave = 9
+		}
 	}	
 	self.enemy_spawn_groups.SKM_single_spooc_W9 = {
 		amount = {1, 1},
@@ -17528,21 +17451,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				tactics = self._tactics.spooc,
 				rank = 1
 			}
-		},
-		wave = 9
+		}
 	}	
 	
 	--Captains, deep_clone off of the normal ones
 	self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = deep_clone(self.enemy_spawn_groups.Cap_Autumn)
-	self.enemy_spawn_groups.SKM_Cap_Autumn_W9.wave = 9
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = deep_clone(self.enemy_spawn_groups.Cap_Winters)
-	self.enemy_spawn_groups.SKM_Cap_Winters_W9.wave = 9
 	self.enemy_spawn_groups.SKM_Cap_Summers_W9 = deep_clone(self.enemy_spawn_groups.Cap_Summers)
-	self.enemy_spawn_groups.SKM_Cap_Summers_W9.wave = 9
 	self.enemy_spawn_groups.SKM_Cap_Spring_W9 = deep_clone(self.enemy_spawn_groups.Cap_Spring)
-	self.enemy_spawn_groups.SKM_Cap_Spring_W9.wave = 9
 	self.enemy_spawn_groups.SKM_HVH_Boss_W9 = deep_clone(self.enemy_spawn_groups.HVH_Boss)
-	self.enemy_spawn_groups.SKM_HVH_Boss_W9.wave = 9
 
 	--Vanilla shit below--
 	if difficulty_index <= 2 then

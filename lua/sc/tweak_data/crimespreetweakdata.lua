@@ -695,14 +695,12 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					inc = {2, "add"}
 				}
 			},
-			--More Titan Shotgunners
+			--Titan sniper full auto
 			{
 				id = "heavy_sniper",
 				class = "ModifierHeavySniper",
-				icon = "crime_spree_shotgun",
-				data = {
-					spawn_chance = {5, "add"}
-				}
+				icon = "crime_spree_heavy_sniper",
+				data = {}
 			},
 			--Dozer DR on visor break
 			{
@@ -791,7 +789,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					inc = {2, "add"}
 				}
 			},
-			--Dozer Explosion Immunity
+			--Dozer Explosion Resistance
 			{
 				id = "dozer_immunity",
 				class = "ModifierExplosionImmunity",

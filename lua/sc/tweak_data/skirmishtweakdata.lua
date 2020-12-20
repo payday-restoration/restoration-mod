@@ -1168,7 +1168,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 
 	if wave_9_captain < 0.24 then --autumn
 		self.captain = "autumn"
-		assault_groups.Cap_Autumn = {
+		assault_groups.SKM_Cap_Autumn_W9 = {
 			0, --Unused
 			0, --Wave 1
 			0, --Wave 2
@@ -1178,13 +1178,167 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0,
 			0,
 			0,
-			100,
+			1,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.	
 		}
+		assault_groups.SKM_Light_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.35,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Heavy_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.2,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_Shields_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.09,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_Shields_Booms_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.01,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
+		assault_groups.SKM_Tazers_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.09,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Booms_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.01,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_HRTs_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.1,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_BLACK_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_GREEN_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_SKULL_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
+		assault_groups.SKM_TIT_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.015,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
 	elseif wave_9_captain < 0.48 then --summers
 		self.captain = "summers"
-		assault_groups.Cap_Summers = {
+		assault_groups.SKM_Cap_Summers_W9 = {
 			0, --Unused
 			0, --Wave 1
 			0, --Wave 2
@@ -1194,13 +1348,181 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0,
 			0,
 			0,
-			100,
+			1,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.	
 		}
+		assault_groups.SKM_Light_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.35,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Heavy_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.3,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Shields_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.03,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Shields_Booms_W8 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.02,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
+		assault_groups.SKM_Tazers_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.03,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Booms_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.02,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_HRTs_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.15,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_single_spooc_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.025,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_BLACK_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.0225,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_GREEN_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.0225,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_SKULL_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.0225,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
+		assault_groups.SKM_TIT_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.0075,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}					
 	elseif wave_9_captain < 0.72 then --winters
 		self.captain = "winters"
-		assault_groups.Cap_Winters = {
+		assault_groups.SKM_Cap_Winters_W9 = {
 			0, --Unused
 			0, --Wave 1
 			0, --Wave 2
@@ -1210,13 +1532,153 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0,
 			0,
 			0,
-			100,
+			1,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.	
 		}
+		assault_groups.SKM_Light_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.3,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Heavy_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.2,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
+		assault_groups.SKM_Tazers_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.06,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Booms_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.04,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_HRTs_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.2,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_single_spooc_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.05,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_BLACK_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_GREEN_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_SKULL_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.045,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
+		assault_groups.SKM_TIT_Tank_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.015,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}			
 	elseif wave_9_captain < 0.96 then --spring
 		self.captain = "spring"
-		assault_groups.Cap_Spring = {
+		assault_groups.SKM_Cap_Spring_W9 = {
 			0, --Unused
 			0, --Wave 1
 			0, --Wave 2
@@ -1226,13 +1688,125 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0,
 			0,
 			0,
-			100,
+			1,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.	
 		}
+		assault_groups.SKM_Light_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.35,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Heavy_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.25,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_Shields_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.06,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_Shields_Booms_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.04,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
+		assault_groups.SKM_Tazers_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.06,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Booms_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.04,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_HRTs_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.15,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_single_spooc_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.05,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}			
 	else --Spooky halloween boss.
 		self.captain = "headless_hatman"
-		assault_groups.HVH_Boss = {
+		assault_groups.SKM_HVH_Boss_W9 = {
 			0, --Unused
 			0, --Wave 1
 			0, --Wave 2
@@ -1242,10 +1816,122 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0,
 			0,
 			0,
-			100,
+			1,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.	
 		}
+		assault_groups.SKM_Light_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.35,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Heavy_Swat_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.25,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_Shields_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.06,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_Shields_Booms_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.04,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}		
+		assault_groups.SKM_Tazers_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.06,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_Booms_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.04,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}
+		assault_groups.SKM_HRTs_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.15,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}	
+		assault_groups.SKM_single_spooc_W9 = {
+			0, --Unused
+			0, --Wave 1
+			0, --Wave 2
+			0, --...
+			0,
+			0,
+			0,
+			0,
+			0,
+			0.05,
+			0, --"Wave 10" (Inactive, needs map edits)
+			0  --Scales ever closer to over time post wave 10.	
+		}					
 	end
 
 	log(self.captain)

@@ -692,7 +692,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				class = "ModifierMoreMedics",
 				icon = "crime_spree_more_medics",
 				data = {
-					inc = {2, "add"}
+					inc = {1, "add"}
 				}
 			},
 			--Titan sniper full auto
@@ -733,7 +733,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				class = "ModifierMoreDozers",
 				icon = "crime_spree_more_dozers",
 				data = {
-					inc = {2, "add"}
+					inc = {1, "add"}
 				}
 			},
 			--Shorter Medic Cooldown T2
@@ -772,7 +772,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				class = "ModifierMoreDozers",
 				icon = "crime_spree_more_dozers",
 				data = {
-					inc = {2, "add"}
+					inc = {1, "add"}
 				}
 			},
 			--Medic heals everyone around him in AoE on death
@@ -795,7 +795,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				class = "ModifierMoreMedics",
 				icon = "crime_spree_more_medics",
 				data = {
-					inc = {2, "add"}
+					inc = {1, "add"}
 				}
 			},
 			--Dozer Explosion Resistance

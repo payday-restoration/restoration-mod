@@ -24,7 +24,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_contact_skirmish"] = "Skirmish",
 		["menu_skirmish_pick_heist"] = "Jackal Company Entrusts You With This Task",
 		["menu_skirmish_map_selection"] = "Target Locations",
-		["menu_skirmish_selected_briefing"] = "In this scenario, you & your crew can select any SKIRMISH.\n\nA SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash, experience, and loot reward with each wave completed.\n\nYou will fail if anyone in your crew -- including yourself -- is taken into custody, or if the target hostage is rescued by hostiles.",
+		["menu_skirmish_selected_briefing"] = "In this scenario, you & your crew can select any SKIRMISH.\n\nA SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash, experience, and loot reward with each wave completed.\n\nYou will fail if the target hostage is rescued by hostiles.",
 		["menu_skirmish_selected"] = "Skirmish",
 
 		--Skirmish Heists--

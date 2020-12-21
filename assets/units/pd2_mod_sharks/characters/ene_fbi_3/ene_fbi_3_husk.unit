@@ -10,7 +10,7 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
-			<var name="_tweak_table" value="fbi" />
+			<var name="_tweak_table" value="hrt" />
 			<var name="_default_weapon_id" value="mp5" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />

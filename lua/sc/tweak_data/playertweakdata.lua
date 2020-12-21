@@ -82,9 +82,11 @@ function PlayerTweakData:_set_overkill_290()
 		bluff_success_chance = {
 			1,
 			1,
+			1,
 			0
 		},
 		bluff_success_chance_w_skill = {
+			1,
 			1,
 			1,
 			0
@@ -113,9 +115,11 @@ function PlayerTweakData:_set_sm_wish()
 		nr_of_calls = {2, 2},
 		bluff_success_chance = {
 			1,
+			1,
 			0
 		},
 		bluff_success_chance_w_skill = {
+			1,
 			1,
 			0
 		}

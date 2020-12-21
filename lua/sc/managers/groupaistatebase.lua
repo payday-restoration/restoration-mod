@@ -101,16 +101,16 @@ function GroupAIStateBase:_init_misc_data()
 	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 	
 	if diff_index <= 2 then
-		self._weapons_hot_threshold = 0.90
+		self._weapons_hot_threshold = 0.70
 		self._suspicion_threshold = 0.6
 	elseif diff_index == 3 then
-		self._weapons_hot_threshold = 0.80
+		self._weapons_hot_threshold = 0.65
 		self._suspicion_threshold = 0.65
 	elseif diff_index == 4 then
-		self._weapons_hot_threshold = 0.70
+		self._weapons_hot_threshold = 0.60
 		self._suspicion_threshold = 0.7
 	elseif diff_index == 5 then
-		self._weapons_hot_threshold = 0.60
+		self._weapons_hot_threshold = 0.55
 		self._suspicion_threshold = 0.75
 	elseif diff_index == 6 then
 		self._weapons_hot_threshold = 0.50
@@ -119,7 +119,7 @@ function GroupAIStateBase:_init_misc_data()
 		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.85
 	else
-		self._weapons_hot_threshold = 0.40
+		self._weapons_hot_threshold = 0.45
 		self._suspicion_threshold = 0.9
 	end
 	self._blackout_units = {} --offy wuz hear
@@ -169,16 +169,16 @@ function GroupAIStateBase:on_simulation_started()
 	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 	
 	if diff_index <= 2 then
-		self._weapons_hot_threshold = 0.90
+		self._weapons_hot_threshold = 0.70
 		self._suspicion_threshold = 0.6
 	elseif diff_index == 3 then
-		self._weapons_hot_threshold = 0.80
+		self._weapons_hot_threshold = 0.65
 		self._suspicion_threshold = 0.65
 	elseif diff_index == 4 then
-		self._weapons_hot_threshold = 0.70
+		self._weapons_hot_threshold = 0.60
 		self._suspicion_threshold = 0.7
 	elseif diff_index == 5 then
-		self._weapons_hot_threshold = 0.60
+		self._weapons_hot_threshold = 0.55
 		self._suspicion_threshold = 0.75
 	elseif diff_index == 6 then
 		self._weapons_hot_threshold = 0.50
@@ -187,7 +187,7 @@ function GroupAIStateBase:on_simulation_started()
 		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.85
 	else
-		self._weapons_hot_threshold = 0.40
+		self._weapons_hot_threshold = 0.45
 		self._suspicion_threshold = 0.9
 	end
 	

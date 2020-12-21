@@ -19911,7 +19911,26 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		FBI_tanks = 45,
 		BLACK_tanks = 45,
 		SKULL_tanks = 45,
-		TIT_tanks = 45
+		TIT_tanks = 45,
+		SKM_BLACK_Tank_W4 = 45,
+		SKM_BLACK_Tank_W5 = 45,
+		SKM_GREEN_Tank_W5 = 45,
+		SKM_BLACK_Tank_W6 = 45,
+		SKM_GREEN_Tank_W6 = 45,
+		SKM_SKULL_Tank_W6 = 45,
+		SKM_TIT_Tank_W6 = 45,
+		SKM_BLACK_Tank_W7 = 45, 
+		SKM_GREEN_Tank_W7 = 45, 
+		SKM_SKULL_Tank_W7 = 45,
+		SKM_TIT_Tank_W7 = 45,
+		SKM_BLACK_Tank_W8 = 45, 
+		SKM_GREEN_Tank_W8 = 45, 
+		SKM_SKULL_Tank_W8 = 45,
+		SKM_TIT_Tank_W8 = 45,
+		SKM_BLACK_Tank_W9 = 45, 
+		SKM_GREEN_Tank_W9 = 45, 
+		SKM_SKULL_Tank_W9 = 45,
+		SKM_TIT_Tank_W9 = 45	
 	}
 
 	if Global.game_settings and Global.game_settings.one_down then
@@ -19925,7 +19944,26 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			FBI_tanks = 45,
 			BLACK_tanks = 45,
 			SKULL_tanks = 45,
-			TIT_tanks = 45
+			TIT_tanks = 45,
+			SKM_BLACK_Tank_W4 = 45,
+			SKM_BLACK_Tank_W5 = 45,
+			SKM_GREEN_Tank_W5 = 45,
+			SKM_BLACK_Tank_W6 = 45,
+			SKM_GREEN_Tank_W6 = 45,
+			SKM_SKULL_Tank_W6 = 45,
+			SKM_TIT_Tank_W6 = 45,
+			SKM_BLACK_Tank_W7 = 45, 
+			SKM_GREEN_Tank_W7 = 45, 
+			SKM_SKULL_Tank_W7 = 45,
+			SKM_TIT_Tank_W7 = 45,
+			SKM_BLACK_Tank_W8 = 45, 
+			SKM_GREEN_Tank_W8 = 45, 
+			SKM_SKULL_Tank_W8 = 45,
+			SKM_TIT_Tank_W8 = 45,
+			SKM_BLACK_Tank_W9 = 45, 
+			SKM_GREEN_Tank_W9 = 45, 
+			SKM_SKULL_Tank_W9 = 45,
+			SKM_TIT_Tank_W9 = 45			
 		}
 	end
 

@@ -1211,6 +1211,8 @@
 
 	<!-- FBI 3 :))))))))))))))))))))))))))))))))))))))))))))))))))))))-->
 	<model path="units/payday2/characters/ene_fbi_3/ene_fbi_3" force="true"/>	
+	<unit path="units/payday2/characters/ene_fbi_3/ene_fbi_3" force="true"/>
+	<unit path="units/payday2/characters/ene_fbi_3/ene_fbi_3_husk" force="true"/>		
 	
 	<!--NPC Peacemaker-->	
 	<object path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>

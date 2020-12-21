@@ -805,14 +805,14 @@ function CharacterTweakData:_init_swat(presets)
 	else
 		self.swat.shooting_death = true
 	end		
-	if job == "chill_combat" then
-		self.swat.steal_loot = true
-	else
-		self.swat.steal_loot = true
-	end		
+	self.swat.steal_loot = true		
 	self.swat.silent_priority_shout = "f37"
 	self.swat.heal_cooldown = 5
 	table.insert(self._enemy_list, "swat")
+	
+	self.hrt = deep_clone(self.swat)
+	self.hrt.access = "fbi"
+	table.insert(self._enemy_list, "hrt")
 	
 	self.swat_titan = deep_clone(self.swat)
 	self.swat_titan.can_slide_on_suppress = true
@@ -1239,6 +1239,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	
 	--Guard variant, different entry type as a failsafe
 	self.city_swat_guard = deep_clone(self.city_swat)	
+	self.city_swat_guard.headshot_dmg_mul = 8.5
 	self.city_swat_guard.access = "security"
 	self.city_swat_guard.chatter = presets.enemy_chatter.guard
 	self.city_swat_guard.melee_weapon = "baton"
@@ -13245,8 +13246,10 @@ function CharacterTweakData:_set_overkill_145()
 	self:_set_characters_melee_preset("2.8", "2")
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true
+	self.hrt.can_shoot_while_dodging = true
 	self.fbi.can_slide_on_suppress = true		
-	self.swat.can_slide_on_suppress = true		
+	self.swat.can_slide_on_suppress = true	
+	self.hrt.can_slide_on_suppress = true		
 	
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
@@ -13482,8 +13485,10 @@ function CharacterTweakData:_set_easy_wish()
 	self:_set_characters_dodge_preset("athletic_overkill")
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true	
+	self.hrt.can_shoot_while_dodging = true
 	self.fbi.can_slide_on_suppress = true		
 	self.swat.can_slide_on_suppress = true		
+	self.hrt.can_slide_on_suppress = true	
 	self.fbi_swat.can_slide_on_suppress = true		
 	self.city_swat.can_slide_on_suppress = true		
 	self.city_swat_guard.can_slide_on_suppress = true	
@@ -13819,8 +13824,10 @@ function CharacterTweakData:_set_overkill_290()
 	self:_set_characters_melee_preset("3.5", "2.8")
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true	
+	self.hrt.can_shoot_while_dodging = true
 	self.fbi.can_slide_on_suppress = true		
-	self.swat.can_slide_on_suppress = true		
+	self.swat.can_slide_on_suppress = true	
+	self.hrt.can_slide_on_suppress = true	
 	self.fbi_swat.can_slide_on_suppress = true		
 	self.city_swat.can_slide_on_suppress = true
 	self.city_swat_guard.can_slide_on_suppress = true			
@@ -14052,9 +14059,11 @@ function CharacterTweakData:_set_sm_wish()
 	self:_set_characters_dodge_preset("deathwish")
 	self:_set_characters_melee_preset("3.5", "2.8")
 	self.fbi.can_shoot_while_dodging = true
-	self.swat.can_shoot_while_dodging = true	
+	self.swat.can_shoot_while_dodging = true
+	self.hrt.can_shoot_while_dodging = true	
 	self.fbi.can_slide_on_suppress = true		
-	self.swat.can_slide_on_suppress = true		
+	self.swat.can_slide_on_suppress = true	
+	self.hrt.can_slide_on_suppress = true		
 	self.fbi_swat.can_slide_on_suppress = true		
 	self.city_swat.can_slide_on_suppress = true		
 	self.city_swat_guard.can_slide_on_suppress = true	

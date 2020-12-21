@@ -64,9 +64,6 @@ function GroupAIStateBesiege:force_skirmish_captain(spawn_group)
 		cached_spawn_groups = nil
 	end
 
-	--Replace with hook in spawn_unit when possible.
-	managers.network:session():send_to_peers_synched("sync_skm_captain", tweak_data.skirmish.captain)
-
 	local new_spawn_groups = { [spawn_group] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1} }
 	cached_spawn_groups = self._tweak_data.assault.groups
 	self._tweak_data.assault.groups = new_spawn_groups

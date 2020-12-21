@@ -28,7 +28,7 @@ end]]--
 
 -- Tracks the cooldowns of each group type, will be populated by the GroupAIStateBesiege:_spawn_in_group() hook 
 local group_timestamps = {}
-
+local cached_spawn_groups = nil
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
@@ -53,6 +53,20 @@ function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types
 
 	-- Call the original function with the manipulated list
 	return _choose_best_groups_actual(self, best_groups, group, group_types, new_allowed_groups, weight, ...)
+end
+
+--Softly forces the next spawn group type. Used by Skirmish for spawning captains.
+--Might cause wonkiness, so use sparingly.
+--Will update to a more robust solution in the future if needed.
+function GroupAIStateBesiege:force_skirmish_captain(spawn_group)
+	if cached_spawn_groups then --Ignore previous force attempt if ones overlap.
+		self._tweak_data.assault.groups = cached_spawn_groups
+		cached_spawn_groups = nil
+	end
+
+	local new_spawn_groups = { [spawn_group] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1} }
+	cached_spawn_groups = self._tweak_data.assault.groups
+	self._tweak_data.assault.groups = new_spawn_groups
 end
 
 function GroupAIStateBesiege:not_assault_0_check()
@@ -728,6 +742,11 @@ function GroupAIStateBesiege:_upd_assault_task()
 					stance = "hos"
 				}
 				self:_spawn_in_group(spawn_group, spawn_group_type, grp_objective, task_data)
+
+				if cached_spawn_groups then
+					self._tweak_data.assault.groups = cached_spawn_groups
+					cached_spawn_groups = nil
+				end
 			end
 		end
 	end

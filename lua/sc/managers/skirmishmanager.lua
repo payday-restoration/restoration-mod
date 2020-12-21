@@ -1,5 +1,6 @@
 Hooks:PostHook(SkirmishManager, "init_finalize", "ResInitKillCounter", function(self)
 	self._required_kills = 0 --Prevents potential nil crash.
+	log("Finalizing")
 end)
 
 --Refresh kill count required to end new assault.
@@ -32,9 +33,4 @@ function SkirmishManager:current_wave_number()
 	else
 		return self._synced_wave_number or 0
 	end
-end
-
---Fuck off
-function SkirmishManager:_has_players_in_custody()
-	return false
 end

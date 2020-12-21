@@ -456,3 +456,8 @@ end
 function UnitNetworkHandler:sync_spawn_extra_ammo(position, rotation)
     managers.player:spawn_extra_ammo(position, rotation)
 end
+
+--Syncs to match whatever captain type the host has active in skirmish.
+function UnitNetworkHandler:sync_skm_captain(name)
+	tweak_data.skirmish.captain = name
+end

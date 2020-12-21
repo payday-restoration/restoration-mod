@@ -15246,7 +15246,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 2,
 				tactics = self._tactics.ELITE_swat_rifle,
 				rank = 1
-			},					
+			},	
+			{
+				unit = "SKM_FBI_suit_M4_MP5_W2",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,				
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},			
 			{
 				unit = "SKM_Light_SWAT_Shotgun_W1",
 				amount_min = 1,

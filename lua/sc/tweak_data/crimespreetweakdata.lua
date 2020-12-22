@@ -702,13 +702,16 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_heavy_sniper",
 				data = {}
 			},
-			--Dozer DR on visor break
+			--Dozer Damage on visor break
 			{
 				id = "dozer_rage",
 				class = "ModifierDozerRage",
 				icon = "crime_spree_dozer_rage",
 				data = {
-					damage_resistance = {10, "add"}
+					damage = {
+						10,
+						"add"
+					}
 				}
 			},
 			--More Titan HRTs
@@ -884,74 +887,110 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 			{
 				class = "ModifierLessPagers",
 				id = "pagers_1",
-				icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
+				icon = "crime_spree_pager",
 				level = 26,
-				data = {}
+				data = {
+					count = {
+						1,
+						"max"
+					}
+				}
 			},
 			{
 				class = "ModifierCivilianAlarm",
 				id = "civs_1",
 				icon = "crime_spree_civs_killed",
 				level = 26,
-				data = {count = {
-					2,
-					"min"
-				}}
+				data = {
+					count = {
+						6,
+						"min"
+					}
+				}
 			},
 			{
 				class = "ModifierLessConcealment",
 				id = "conceal_1",
-				icon = "crime_spree_dun_dun_dun_dunna",
+				icon = "crime_spree_concealment",
 				level = 26,
-				data = {}
+				data = {
+					conceal = {
+						1,
+						"add"
+					}
+				}
 			},
 			{
 				class = "ModifierCivilianAlarm",
 				id = "civs_2",
 				icon = "crime_spree_civs_killed",
 				level = 52,
-				data = {count = {
-					1,
-					"min"
-				}}
+				data = {
+					count = {
+						4,
+						"min"
+					}
+				}
 			},
 			{
 				class = "ModifierLessPagers",
 				id = "pagers_2",
-				icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
+				icon = "crime_spree_pager",
 				level = 78,
-				data = {}
+				data = {
+					count = {
+						2,
+						"max"
+					}
+				}
 			},
 			{
 				class = "ModifierLessConcealment",
 				id = "conceal_2",
-				icon = "crime_spree_dun_dun_dun_dunna",
+				icon = "crime_spree_concealment",
 				level = 104,
-				data = {}
+				data = {
+					conceal = {
+						1,
+						"add"
+					}
+				}
 			},
 			{
 				class = "ModifierLessPagers",
 				id = "pagers_3",
-				icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
+				icon = "crime_spree_pager",
 				level = 130,
-				data = {}
+				data = {
+					count = {
+						3,
+						"max"
+					}
+				}
 			},
 			{
 				class = "ModifierCivilianAlarm",
 				id = "civs_3",
 				icon = "crime_spree_civs_killed",
 				level = 156,
-				data = {count = {
-					0,
-					"min"
-				}}
+				data = {
+					count = {
+						2,
+						"min"
+					}
+				}
 			},
 			{
 				class = "ModifierLessPagers",
 				id = "pagers_4",
-				icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
+				icon = "crime_spree_pager",
 				level = 182,
-				data = {}
+				data = {
+					count = {
+						4,
+						"max"
+					}
+				}
 			}
 		}
 	}

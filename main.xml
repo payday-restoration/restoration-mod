@@ -266,9 +266,7 @@
 		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
 		<hook file="sc/modifiers/modifiernohurtanims.lua" source_file="lib/modifiers/modifiernohurtanims"/>
 		<hook file="sc/modifiers/modifierlessconcealment.lua" source_file="lib/modifiers/modifierlessconcealment"/>
-		<hook file="sc/modifiers/modifierlesspagers.lua" source_file="lib/modifiers/modifierlesspagers"/>
 		<hook file="sc/modifiers/modifiertaserovercharge.lua" source_file="lib/modifiers/modifiertaserovercharge"/>		
-		<hook file="sc/modifiers/modifierdozerrage.lua" source_file="lib/modifiers/modifierdozerrage"/>	
 		<hook file="sc/modifiers/modifiermedicdeathwish.lua" source_file="lib/modifiers/modifiermedicdeathwish"/>	
 		<hook file="sc/modifiers/modifiermedicadrenaline.lua" source_file="lib/modifiers/modifiermedicadrenaline"/>	
 		<hook file="sc/modifiers/modifiercloakerarrest.lua" source_file="lib/modifiers/modifiercloakerarrest"/>

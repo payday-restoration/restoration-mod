@@ -366,17 +366,7 @@ function HUDAssaultCorner:init(hud, full_hud)
 
 	--Skirmish exclusive stuff
 	if managers.skirmish:is_skirmish() then
-		if tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "SKM_Cap_Summers_W9" then
-			self.buff_icon = "guis/textures/pd2/hud_buff_fire"
-		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "SKM_Cap_Spring_W9" then
-			self.buff_icon = "guis/textures/pd2/hud_buff_skull"
-		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "SKM_Cap_Autumn_W9" then
-			self.buff_icon = "guis/textures/pd2/hud_buff_spooc"
-		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "SKM_Cap_Winters_W9" then
-			self.buff_icon = "guis/textures/pd2/hud_buff_shield"	
-		elseif tweak_data and tweak_data.skirmish and tweak_data.skirmish.captain == "SKM_HVH_Boss_W9" then
-			self.buff_icon = "guis/textures/pd2/hud_buff_halloween"			
-		end
+		self.buff_icon = "guis/textures/pd2/hud_buff_generic"
 	end
 	
 	local buffs_pad_panel = self._hud_panel:panel({

@@ -1310,6 +1310,7 @@
 	<texture path="guis/textures/pd2/hud_buff_spooc" force="false" load="false"/>
     <texture path="guis/textures/pd2/hud_buff_shield" force="true" load="false"/>   
 	<texture path="guis/textures/pd2/hud_buff_halloween" force="false" load="false"/>   
+	<texture path="guis/textures/pd2/hud_buff_generic" force="false" load="false"/>  
 	<texture path="guis/textures/restoration/bloodyscreen" force="false" load="false"/>
 	
     <!--Titan Taser-->	

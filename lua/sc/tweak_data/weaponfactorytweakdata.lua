@@ -28044,6 +28044,59 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 				}
 			}
 		}
+		
+		--Hammer 23 short barrel
+		self.parts.wpn_fps_shot_bs23_barrel_short.supported = true
+		self.parts.wpn_fps_shot_bs23_barrel_short.stats = {
+			concealment = 1,
+			spread = -1
+		}
+		self.parts.wpn_fps_shot_bs23_barrel_short.custom_stats = {
+			damage_near_mul = -75,
+			damage_far_mul = -150
+		}
+
+		--Hammer 23 Sturdy Wooden Stock
+		self.parts.wpn_fps_shot_bs23_stock_full.supported = true
+		self.parts.wpn_fps_shot_bs23_stock_full.stats = {
+			recoil = 1,
+			spread = -1
+		}
+		self.parts.wpn_fps_shot_bs23_stock_full.custom_stats = {
+			damage_near_mul = -75,
+			damage_far_mul = -150
+		}		
+		
+		--Hammer 23 Hazardous stock
+		self.parts.wpn_fps_shot_bs23_stock_none.supported = true
+		self.parts.wpn_fps_shot_bs23_stock_none.stats = {
+			recoil = -1,
+			concealment = 1
+		}		
+		
+		--Hammer 23 ammo stuff
+		self.wpn_fps_shot_bs23.override = {
+			wpn_fps_upg_a_explosive = {
+				supported = true,
+				stats = {
+					value = 10,
+					recoil = -5,
+					concealment = -7,
+					spread_multi = {1, 1},	
+					total_ammo_mod = -50,
+					damage = 90
+				},
+				custom_stats = {
+					ignore_statistic = true,
+					block_b_storm = true,
+					rays = 1,
+					damage_near_mul = 9999999999,
+					damage_far_mul = 9999999999,
+					bullet_class = "InstantExplosiveBulletBase"
+				}
+			}
+		}		
+		
 	end
 
 	--Silent Killer Pack Welrod

@@ -3888,7 +3888,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.huntsman.stats = {
 		damage = 90,
 		spread = 12,
-		recoil = 12,
+		recoil = 13,
 		spread_moving = 6,
 		zoom = 1,
 		concealment = 21,
@@ -5280,7 +5280,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b682.stats = {
 		damage = 90,
 		spread = 13,
-		recoil = 13,
+		recoil = 14,
 		spread_moving = 6,
 		zoom = 1,
 		concealment = 20,
@@ -6245,7 +6245,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.boot.stats = {
 		damage = 90,
 		spread = 10,
-		recoil = 12,
+		recoil = 13,
 		spread_moving = 5,
 		zoom = 1,
 		concealment = 20,
@@ -9453,6 +9453,36 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			equip = 0.85
 		}
 
+	end
+	
+	if self.bs23 then --Reinbeck Auto
+		--Hammer 23
+		self.bs23.tactical_reload = 1
+		self.bs23.AMMO_MAX = 40
+		self.bs23.AMMO_PICKUP = self.stat_info._pickup_chance
+		self.bs23.CLIP_AMMO_MAX = 3
+		self.bs23.fire_mode_data.fire_rate = 1
+		self.bs23.single.fire_rate = 1
+		self.bs23.rays = 9
+		self.bs23.muzzleflash = "effects/particles/shotgun/muzzleflash"
+		self.bs23.kick = self.stat_info.kick_tables.right_kick
+		self.bs23.supported = true
+		self.bs23.stats = {
+			damage = 90,
+			spread = 10,
+			recoil = 16,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 22,
+			suppression = 4,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.bs23.stats_modifiers = nil
+		self.bs23.panic_suppression_chance = 0.05
 	end
 
 	--Silent Killer Pack

@@ -817,6 +817,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat_titan = deep_clone(self.swat)
 	self.swat_titan.can_slide_on_suppress = true
 	self.swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
+	self.swat_titan.gas_on_death = true
 	self.swat_titan.use_animation_on_fire_damage = true
 	self.swat_titan.move_speed = presets.move_speed.very_fast
 	self.swat_titan.dodge = presets.dodge.elite

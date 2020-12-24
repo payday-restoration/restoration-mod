@@ -303,7 +303,7 @@ end
 
 
 if not tweak_data then return end
-if restoration.Options:GetValue("HUD/UI/PeerColors") then
+if restoration.Options:GetValue("HUD/UI/PeerColors") and not _G.BigLobbyGlobals then
 --Alpha Peer Colors
 	local orange = Vector3( 224, 109, 81 )/255 
 	local green = Vector3( 102, 204, 51 )/255 

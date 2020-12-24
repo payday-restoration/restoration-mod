@@ -27662,6 +27662,14 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			value = 1,
 			zoom = 1
 		}
+		
+		--(Bernetti Rangehitter) Mare's Leg Barrel
+		self.parts.wpn_fps_snp_sbl_b_stub.supported = true
+		self.parts.wpn_fps_snp_sbl_b_stub.stats = {
+			value = 3,
+			spread = -1,
+			concealment = 1
+		}		
 
 		--(Czech 92) Angled Grip
 		self.parts.wpn_fps_pis_czech_body_afg.supported = true
@@ -27670,6 +27678,14 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			recoil = -1,
 			concealment = 1
 		}
+		
+		--(Cobra) Solid Wooden Stock
+		self.parts.wpn_fps_smg_scorpion_s_wood.supported = true
+		self.parts.wpn_fps_smg_scorpion_s_wood.stats = {
+			value = 3,
+			recoil = 1,
+			spread = -1
+		}		
 
 		--(Heather) Aftermarket Vertical Grip
 		self.parts.wpn_fps_smg_sr2_vg_custom.supported = true
@@ -27687,7 +27703,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			spread = 1,
 			concealment = -3
 		}
-
+		
 		--(Hornet .300) Bumblebee Foregrip
 		self.parts.wpn_fps_bdgr_uupg_fg_railed.supported = true
 		self.parts.wpn_fps_bdgr_uupg_fg_railed.stats = {
@@ -27713,7 +27729,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			recoil = -1,
 			concealment = -1
 		}
-
+		
 		--Wrapped Grip
 		self.parts.wpn_fps_m4_g_wrap.supported = true
 		self.parts.wpn_fps_m4_g_wrap.stats = {

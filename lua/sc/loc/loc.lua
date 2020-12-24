@@ -277,7 +277,6 @@ end)
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_bonus"] = "Modifiers",
-		["bm_menu_suppression"] = "Noise Range(M)",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
 
 		--Safe House--

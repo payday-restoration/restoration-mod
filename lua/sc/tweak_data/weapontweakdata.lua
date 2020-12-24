@@ -6,7 +6,7 @@ function WeaponTweakData:_init_data_sentry_gun_npc()
 	self.sentry_gun.DAMAGE = 2.8
 	self.sentry_gun.SUPPRESSION = 1
 	self.sentry_gun.SPREAD = 2
-	self.sentry_gun.FIRE_RANGE = 2800
+	self.sentry_gun.FIRE_RANGE = 2500
 	self.sentry_gun.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 	self.sentry_gun.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
 	self.sentry_gun.auto.fire_rate = 0.175
@@ -646,7 +646,7 @@ function WeaponTweakData:_init_data_c45_npc()
 	self.c45_npc.CLIP_AMMO_MAX = 17
 	self.c45_npc.NR_CLIPS_MAX = 5
 	self.c45_npc.hold = "pistol"
-	self.c45_npc.alert_size = 2400
+	self.c45_npc.alert_size = 2500
 	self.c45_npc.suppression = 2.4
 	self.c45_npc.FIRE_MODE = "single"
 	
@@ -680,7 +680,7 @@ function WeaponTweakData:_init_data_x_c45_npc()
 	self.x_c45_npc.CLIP_AMMO_MAX = 34
 	self.x_c45_npc.NR_CLIPS_MAX = 5
 	self.x_c45_npc.hold = "akimbo_pistol"
-	self.x_c45_npc.alert_size = 2400
+	self.x_c45_npc.alert_size = 2500
 	self.x_c45_npc.suppression = 2.4
 	self.x_c45_npc.FIRE_MODE = "single"
 end
@@ -715,7 +715,7 @@ function WeaponTweakData:_init_data_raging_bull_npc()
 	self.raging_bull_npc.CLIP_AMMO_MAX = 6
 	self.raging_bull_npc.NR_CLIPS_MAX = 8
 	self.raging_bull_npc.hold = "pistol"
-	self.raging_bull_npc.alert_size = 3200
+	self.raging_bull_npc.alert_size = 2500
 	self.raging_bull_npc.suppression = 3.2
 	self.raging_bull_npc.FIRE_MODE = "single"
 	
@@ -726,7 +726,7 @@ function WeaponTweakData:_init_data_raging_bull_npc()
 	self.m1911_npc.anim_usage = "is_pistol"
 	self.m1911_npc.hold = "pistol"
 	self.m1911_npc.reload = "pistol"		
-	self.m1911_npc.alert_size = 3000
+	self.m1911_npc.alert_size = 2500
 	self.m1911_npc.suppression = 3		
 	self.m1911_npc.DAMAGE = 4.5		
 	
@@ -765,7 +765,7 @@ function WeaponTweakData:_init_data_m4_npc()
 	self.m4_npc.NR_CLIPS_MAX = 5
 	self.m4_npc.auto.fire_rate = 0.08571428571
 	self.m4_npc.hold = "rifle"
-	self.m4_npc.alert_size = 2600
+	self.m4_npc.alert_size = 2500
 	self.m4_npc.suppression = 2.6
 	self.m4_npc.FIRE_MODE = "auto"
 	
@@ -810,7 +810,7 @@ function WeaponTweakData:_init_data_m4_npc()
 	self.amcar_npc.DAMAGE = 2
 	self.amcar_npc.CLIP_AMMO_MAX = 30
 	self.amcar_npc.auto.fire_rate = 0.075
-	self.amcar_npc.alert_size = 2400
+	self.amcar_npc.alert_size = 2500
 	self.amcar_npc.suppression = 2.4
 	
 	--AK102
@@ -829,7 +829,7 @@ function WeaponTweakData:_init_data_m4_yellow_npc()
 	self.m4_yellow_npc.NR_CLIPS_MAX = 5
 	self.m4_yellow_npc.auto.fire_rate = 0.08571428571
 	self.m4_yellow_npc.hold = "rifle"
-	self.m4_yellow_npc.alert_size = 2600
+	self.m4_yellow_npc.alert_size = 2500
 	self.m4_yellow_npc.suppression = 2.6
 	self.m4_yellow_npc.FIRE_MODE = "auto"
 end
@@ -846,7 +846,7 @@ function WeaponTweakData:_init_data_ak47_npc()
 	self.ak47_npc.NR_CLIPS_MAX = 5
 	self.ak47_npc.auto.fire_rate = 0.1
 	self.ak47_npc.hold = "rifle"
-	self.ak47_npc.alert_size = 2800
+	self.ak47_npc.alert_size = 2500
 	self.ak47_npc.suppression = 2.8
 	self.ak47_npc.FIRE_MODE = "auto"
 end
@@ -865,7 +865,7 @@ function WeaponTweakData:_init_data_m14_sniper_npc()
 	self.m14_sniper_npc.CLIP_AMMO_MAX = 10
 	self.m14_sniper_npc.NR_CLIPS_MAX = 8
 	self.m14_sniper_npc.hold = "rifle"
-	self.m14_sniper_npc.alert_size = 3400
+	self.m14_sniper_npc.alert_size = 2500
 	self.m14_sniper_npc.suppression = 3.4
 	self.m14_sniper_npc.armor_piercing = true
 	self.m14_sniper_npc.FIRE_MODE = "single"
@@ -892,7 +892,7 @@ function WeaponTweakData:_init_data_r870_npc()
 	self.r870_npc.CLIP_AMMO_MAX = 8
 	self.r870_npc.NR_CLIPS_MAX = 4
 	self.r870_npc.hold = "rifle"
-	self.r870_npc.alert_size = 3200
+	self.r870_npc.alert_size = 2500
 	self.r870_npc.suppression = 3.2
 	self.r870_npc.is_shotgun = true
 	self.r870_npc.rays = 6
@@ -903,14 +903,14 @@ function WeaponTweakData:_init_data_r870_npc()
 	self.benelli_npc.sounds.prefix = "benelli_m4_npc"
 	self.benelli_npc.DAMAGE = 4.5
 	self.benelli_npc.CLIP_AMMO_MAX = 10
-	self.benelli_npc.alert_size = 3000
+	self.benelli_npc.alert_size = 2500
 	self.benelli_npc.suppression = 3	
 	
 	self.bayou_npc = deep_clone(self.r870_npc)
 	self.bayou_npc.sounds.prefix = "spas_npc"
 	self.bayou_npc.DAMAGE = 4.5
 	self.bayou_npc.CLIP_AMMO_MAX = 10
-	self.bayou_npc.alert_size = 3000
+	self.bayou_npc.alert_size = 2500
 	self.bayou_npc.suppression = 3		
 	
 	self.r870_taser_npc = deep_clone(self.r870_npc)
@@ -929,7 +929,7 @@ function WeaponTweakData:_init_data_mossberg_npc()
 	self.mossberg_npc.CLIP_AMMO_MAX = 2
 	self.mossberg_npc.NR_CLIPS_MAX = 6
 	self.mossberg_npc.hold = "rifle"
-	self.mossberg_npc.alert_size = 3600
+	self.mossberg_npc.alert_size = 2500
 	self.mossberg_npc.suppression = 3.6
 	self.mossberg_npc.is_shotgun = true
 	self.mossberg_npc.rays = 6
@@ -949,7 +949,7 @@ function WeaponTweakData:_init_data_mp5_npc()
 	self.mp5_npc.NR_CLIPS_MAX = 5
 	self.mp5_npc.auto.fire_rate = 0.075
 	self.mp5_npc.hold = "rifle"
-	self.mp5_npc.alert_size = 2400
+	self.mp5_npc.alert_size = 2500
 	self.mp5_npc.suppression = 2.4
 	self.mp5_npc.FIRE_MODE = "auto"
 	
@@ -968,7 +968,7 @@ function WeaponTweakData:_init_data_mp5_npc()
 	self.ump_npc.auto.fire_rate = 0.083
 	self.ump_npc.sounds.prefix = "schakal_npc"
 	self.ump_npc.CLIP_AMMO_MAX = 25
-	self.ump_npc.alert_size = 2800
+	self.ump_npc.alert_size = 2500
 	self.ump_npc.suppression = 2.8
 	
 	--Los Federales UZI
@@ -983,7 +983,7 @@ function WeaponTweakData:_init_data_mp5_npc()
 	self.asval_smg_npc.auto.fire_rate = 0.083
 	self.asval_smg_npc.CLIP_AMMO_MAX = 25
 	self.asval_smg_npc.suppression = 2.8		
-	self.asval_smg_npc.alert_size = 2800
+	self.asval_smg_npc.alert_size = 2500
 	self.asval_smg_npc.sounds.prefix = "akmsu_npc"
 	
 	--Tatonka
@@ -1002,7 +1002,7 @@ function WeaponTweakData:_init_data_mp5_npc()
 	self.mp9_titan_npc.CLIP_AMMO_MAX = 20
 	self.mp9_titan_npc.auto.fire_rate = 0.06666666666
 	self.mp9_titan_npc.hold = "pistol"
-	self.mp9_titan_npc.alert_size = 2200
+	self.mp9_titan_npc.alert_size = 2500
 	self.mp9_titan_npc.suppression = 2.2
 	self.mp9_titan_npc.anim_usage = "is_pistol"
 	
@@ -1023,7 +1023,7 @@ function WeaponTweakData:_init_data_smoke_npc()
 	self.smoke_npc.NR_CLIPS_MAX = 5
 	self.smoke_npc.auto.fire_rate = 0.075
 	self.smoke_npc.hold = "rifle"
-	self.smoke_npc.alert_size = 2400
+	self.smoke_npc.alert_size = 2500
 	self.smoke_npc.suppression = 2.4
 	self.smoke_npc.FIRE_MODE = "auto"
 end	
@@ -1039,7 +1039,7 @@ function WeaponTweakData:_init_data_mac11_npc()
 	self.mac11_npc.CLIP_AMMO_MAX = 20
 	self.mac11_npc.NR_CLIPS_MAX = 5
 	self.mac11_npc.auto.fire_rate = 0.06
-	self.mac11_npc.alert_size = 2800
+	self.mac11_npc.alert_size = 2500
 	self.mac11_npc.hold = {"uzi", "pistol"}
 	self.mac11_npc.suppression = 2.8
 	self.mac11_npc.FIRE_MODE = "auto"
@@ -1057,7 +1057,7 @@ function WeaponTweakData:_init_data_g36_npc()
 	self.g36_npc.NR_CLIPS_MAX = 5
 	self.g36_npc.auto.fire_rate = 0.08571428571
 	self.g36_npc.hold = "rifle"
-	self.g36_npc.alert_size = 2600
+	self.g36_npc.alert_size = 2500
 	self.g36_npc.suppression = 2.6
 	self.g36_npc.FIRE_MODE = "auto"
 end
@@ -1075,7 +1075,7 @@ function WeaponTweakData:_init_data_mp9_npc()
 	self.mp9_npc.NR_CLIPS_MAX = 5
 	self.mp9_npc.auto.fire_rate = 0.06666666666
 	self.mp9_npc.hold = "pistol"
-	self.mp9_npc.alert_size = 2200
+	self.mp9_npc.alert_size = 2500
 	self.mp9_npc.suppression = 2.2
 	self.mp9_npc.FIRE_MODE = "auto"
 	
@@ -1096,7 +1096,7 @@ function WeaponTweakData:_init_data_saiga_npc()
 	self.saiga_npc.CLIP_AMMO_MAX = 20
 	self.saiga_npc.NR_CLIPS_MAX = 4
 	self.saiga_npc.hold = "rifle"
-	self.saiga_npc.alert_size = 3200
+	self.saiga_npc.alert_size = 2500
 	self.saiga_npc.suppression = 3.2
 	self.saiga_npc.is_shotgun = true
 	self.saiga_npc.rays = 6
@@ -1432,7 +1432,7 @@ function WeaponTweakData:_init_data_s552_npc()
 	self.s552_npc.NR_CLIPS_MAX = 5
 	self.s552_npc.auto.fire_rate = 0.08571428571
 	self.s552_npc.hold = "rifle"
-	self.s552_npc.alert_size = 2600
+	self.s552_npc.alert_size = 2500
 	self.s552_npc.suppression = 2.6
 	self.s552_npc.FIRE_MODE = "auto"
 	self.s552_npc.has_suppressor = "suppressed_c"
@@ -1450,7 +1450,7 @@ function WeaponTweakData:_init_data_scar_npc()
 	self.scar_npc.NR_CLIPS_MAX = 5
 	self.scar_npc.auto.fire_rate = 0.08571428571
 	self.scar_npc.hold = "rifle"
-	self.scar_npc.alert_size = 3400
+	self.scar_npc.alert_size = 2500
 	self.scar_npc.suppression = 2.8
 	self.scar_npc.FIRE_MODE = "single"
 	self.scar_npc.titan_trail = true
@@ -1470,7 +1470,7 @@ function WeaponTweakData:_init_data_m249_npc()
 	self.m249_npc.NR_CLIPS_MAX = 2
 	self.m249_npc.auto.fire_rate = 0.075
 	self.m249_npc.hold = "rifle"
-	self.m249_npc.alert_size = 2600
+	self.m249_npc.alert_size = 2500
 	self.m249_npc.suppression = 2
 	self.m249_npc.FIRE_MODE = "auto"
 	
@@ -1489,7 +1489,7 @@ function WeaponTweakData:_init_data_m249_npc()
 	self.hk21_sc_npc.NR_CLIPS_MAX = 5
 	self.hk21_sc_npc.auto.fire_rate = 0.075
 	self.hk21_sc_npc.hold = "rifle"
-	self.hk21_sc_npc.alert_size = 2800
+	self.hk21_sc_npc.alert_size = 2500
 	self.hk21_sc_npc.suppression = 2.4
 	self.hk21_sc_npc.usage = "is_lmg"
 	
@@ -1530,7 +1530,7 @@ function WeaponTweakData:_init_data_contraband_npc()
 	self.contraband_npc.NR_CLIPS_MAX = 5
 	self.contraband_npc.auto.fire_rate = 0.08571428571
 	self.contraband_npc.hold = "rifle"
-	self.contraband_npc.alert_size = 2600
+	self.contraband_npc.alert_size = 2500
 	self.contraband_npc.suppression = 2.6
 	self.contraband_npc.FIRE_MODE = "auto"	
 
@@ -1546,7 +1546,7 @@ function WeaponTweakData:_init_data_contraband_npc()
 	self.contraband_m203_npc.looped_reload_speed = 0.16666667
 	self.contraband_m203_npc.auto.fire_rate = 0.1
 	self.contraband_m203_npc.hold = "rifle"
-	self.contraband_m203_npc.alert_size = 2800
+	self.contraband_m203_npc.alert_size = 2500
 	self.contraband_m203_npc.suppression = 1
 end
 
@@ -1561,7 +1561,7 @@ function WeaponTweakData:_init_data_mini_npc()
 	self.mini_npc.NR_CLIPS_MAX = 2
 	self.mini_npc.auto.fire_rate = 0.03
 	self.mini_npc.hold = "rifle"
-	self.mini_npc.alert_size = 2600
+	self.mini_npc.alert_size = 2500
 	self.mini_npc.suppression = 2
 	self.mini_npc.FIRE_MODE = "auto"
 	
@@ -1580,7 +1580,7 @@ function WeaponTweakData:_init_data_mini_npc()
 	self.x_mini_npc.NR_CLIPS_MAX = 2
 	self.x_mini_npc.auto.fire_rate = 0.01
 	self.x_mini_npc.hold = "akimbo_pistol"
-	self.x_mini_npc.alert_size = 2600
+	self.x_mini_npc.alert_size = 2500
 	self.x_mini_npc.suppression = 2
 	self.x_mini_npc.FIRE_MODE = "auto"		
 end
@@ -1602,7 +1602,7 @@ function WeaponTweakData:_init_data_flamethrower_mk2_crew()
 	self.flamethrower_mk2_crew.hold = {"bullpup", "rifle"}
 	self.flamethrower_mk2_crew.auto.fire_rate = 0.1
 	self.flamethrower_mk2_crew.hud_icon = "rifle"
-	self.flamethrower_mk2_crew.alert_size = 3500
+	self.flamethrower_mk2_crew.alert_size = 2500
 	self.flamethrower_mk2_crew.suppression = 3.1
 	self.flamethrower_mk2_crew.FIRE_MODE = "auto"
 	
@@ -1629,7 +1629,7 @@ function WeaponTweakData:_init_data_flamethrower_mk2_crew()
 		"bullpup",
 		"rifle"
 	}
-	self.flamethrower_mk2_flamer.alert_size = 3500
+	self.flamethrower_mk2_flamer.alert_size = 2500
 	self.flamethrower_mk2_flamer.suppression = 3.1
 	self.flamethrower_mk2_flamer.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
 	self.flamethrower_mk2_flamer.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
@@ -1652,7 +1652,7 @@ function WeaponTweakData:_init_data_raging_bull_crew()
 	self.raging_bull_crew.NR_CLIPS_MAX = 8
 	self.raging_bull_crew.hold = "pistol"
 	self.raging_bull_crew.reload = "revolver"
-	self.raging_bull_crew.alert_size = 5000
+	self.raging_bull_crew.alert_size = 2500
 	self.raging_bull_crew.suppression = 1.8
 	self.raging_bull_crew.FIRE_MODE = "single"
 	self.raging_bull_primary_crew = deep_clone(self.raging_bull_crew)
@@ -1672,7 +1672,7 @@ function WeaponTweakData:_init_data_shepheard_crew()
 	self.shepheard_crew.auto.fire_rate = 0.08571428571
 	self.shepheard_crew.hold = "rifle"
 	self.shepheard_crew.pull_magazine_during_reload = "smg"
-	self.shepheard_crew.alert_size = 5000
+	self.shepheard_crew.alert_size = 2500
 	self.shepheard_crew.suppression = 2.2
 	self.shepheard_crew.FIRE_MODE = "auto"
 end	
@@ -1691,7 +1691,7 @@ function WeaponTweakData:_init_data_erma_crew()
 	self.erma_crew.pull_magazine_during_reload = "smg"
 	self.erma_crew.auto.fire_rate = 0.08571428571
 	self.erma_crew.hold = "rifle"
-	self.erma_crew.alert_size = 5000
+	self.erma_crew.alert_size = 2500
 	self.erma_crew.suppression = 2.2
 	self.erma_crew.FIRE_MODE = "auto"
 end	
@@ -1713,7 +1713,7 @@ function WeaponTweakData:_init_data_polymer_crew()
 		"bullpup",
 		"rifle"
 	}
-	self.polymer_crew.alert_size = 5000
+	self.polymer_crew.alert_size = 2500
 	self.polymer_crew.suppression = 2.2
 	self.polymer_crew.FIRE_MODE = "auto"
 end
@@ -1730,7 +1730,7 @@ function WeaponTweakData:_init_data_akm_gold_crew()
 	self.akm_gold_crew.pull_magazine_during_reload = "rifle"
 	self.akm_gold_crew.auto.fire_rate = 0.08571428571
 	self.akm_gold_crew.hold = "rifle"
-	self.akm_gold_crew.alert_size = 5000
+	self.akm_gold_crew.alert_size = 2500
 	self.akm_gold_crew.suppression = 2.2
 	self.akm_gold_crew.FIRE_MODE = "auto"
 end
@@ -1747,7 +1747,7 @@ function WeaponTweakData:_init_data_amcar_crew()
 	self.amcar_crew.pull_magazine_during_reload = "rifle"
 	self.amcar_crew.auto.fire_rate = 0.08571428571
 	self.amcar_crew.hold = "rifle"
-	self.amcar_crew.alert_size = 5000
+	self.amcar_crew.alert_size = 2500
 	self.amcar_crew.suppression = 2.2
 	self.amcar_crew.FIRE_MODE = "auto"
 end
@@ -1764,7 +1764,7 @@ function WeaponTweakData:_init_data_ak74_crew()
 	self.ak74_crew.pull_magazine_during_reload = "rifle"
 	self.ak74_crew.auto.fire_rate = 0.08571428571
 	self.ak74_crew.hold = "rifle"
-	self.ak74_crew.alert_size = 5000
+	self.ak74_crew.alert_size = 2500
 	self.ak74_crew.suppression = 2.2
 	self.ak74_crew.FIRE_MODE = "auto"
 	self.ak74_secondary_crew = deep_clone(self.ak74_crew)
@@ -1782,7 +1782,7 @@ function WeaponTweakData:_init_data_m4_crew()
 	self.m4_crew.NR_CLIPS_MAX = 5
 	self.m4_crew.auto.fire_rate = 0.08571428571
 	self.m4_crew.hold = "rifle"
-	self.m4_crew.alert_size = 5000
+	self.m4_crew.alert_size = 2500
 	self.m4_crew.suppression = 2.2
 	self.m4_crew.pull_magazine_during_reload = "rifle"
 	self.m4_crew.FIRE_MODE = "auto"
@@ -1803,7 +1803,7 @@ function WeaponTweakData:_init_data_aug_crew()
 	self.aug_crew.auto.fire_rate = 0.08571428571
 	self.aug_crew.pull_magazine_during_reload = "rifle"
 	self.aug_crew.hold = {"bullpup", "rifle"}
-	self.aug_crew.alert_size = 5000
+	self.aug_crew.alert_size = 2500
 	self.aug_crew.suppression = 2.2
 	self.aug_crew.FIRE_MODE = "auto"
 	self.aug_secondary_crew = deep_clone(self.aug_crew)
@@ -1822,7 +1822,7 @@ function WeaponTweakData:_init_data_akm_crew()
 	self.akm_crew.pull_magazine_during_reload = "rifle"
 	self.akm_crew.auto.fire_rate = 0.08571428571
 	self.akm_crew.hold = "rifle"
-	self.akm_crew.alert_size = 5000
+	self.akm_crew.alert_size = 2500
 	self.akm_crew.suppression = 2.2
 	self.akm_crew.FIRE_MODE = "auto"
 end
@@ -1839,7 +1839,7 @@ function WeaponTweakData:_init_data_g36_crew()
 	self.g36_crew.auto.fire_rate = 0.08571428571
 	self.g36_crew.pull_magazine_during_reload = "rifle"
 	self.g36_crew.hold = "rifle"
-	self.g36_crew.alert_size = 5000
+	self.g36_crew.alert_size = 2500
 	self.g36_crew.suppression = 2.2
 	self.g36_crew.FIRE_MODE = "auto"
 end
@@ -1856,7 +1856,7 @@ function WeaponTweakData:_init_data_m14_crew()
 	self.m14_crew.pull_magazine_during_reload = "rifle"
 	self.m14_crew.auto.fire_rate = 0.08571428571
 	self.m14_crew.hold = "rifle"
-	self.m14_crew.alert_size = 5000
+	self.m14_crew.alert_size = 2500
 	self.m14_crew.suppression = 2.2
 	self.m14_crew.FIRE_MODE = "auto"
 end
@@ -1873,7 +1873,7 @@ function WeaponTweakData:_init_data_ak5_crew()
 	self.ak5_crew.pull_magazine_during_reload = "rifle"
 	self.ak5_crew.auto.fire_rate = 0.08571428571
 	self.ak5_crew.hold = "rifle"
-	self.ak5_crew.alert_size = 5000
+	self.ak5_crew.alert_size = 2500
 	self.ak5_crew.suppression = 2.2
 	self.ak5_crew.FIRE_MODE = "auto"
 end
@@ -1889,7 +1889,7 @@ function WeaponTweakData:_init_data_m16_crew()
 	self.m16_crew.NR_CLIPS_MAX = 8
 	self.m16_crew.auto.fire_rate = 0.08571428571
 	self.m16_crew.hold = "rifle"
-	self.m16_crew.alert_size = 5000
+	self.m16_crew.alert_size = 2500
 	self.m16_crew.suppression = 2.2
 	self.m16_crew.pull_magazine_during_reload = "rifle"
 	self.m16_crew.FIRE_MODE = "auto"
@@ -1906,7 +1906,7 @@ function WeaponTweakData:_init_data_m16_crew()
 	self.m16_crew_summers.NR_CLIPS_MAX = 8
 	self.m16_crew_summers.auto.fire_rate = 0.08571428571
 	self.m16_crew_summers.hold = "rifle"
-	self.m16_crew_summers.alert_size = 5000
+	self.m16_crew_summers.alert_size = 2500
 	self.m16_crew_summers.suppression = 2.8
 	self.m16_crew_summers.pull_magazine_during_reload = "rifle"
 	self.m16_crew_summers.FIRE_MODE = "auto"		
@@ -1924,7 +1924,7 @@ function WeaponTweakData:_init_data_s552_crew()
 	self.s552_crew.pull_magazine_during_reload = "rifle"
 	self.s552_crew.auto.fire_rate = 0.08571428571
 	self.s552_crew.hold = "rifle"
-	self.s552_crew.alert_size = 5000
+	self.s552_crew.alert_size = 2500
 	self.s552_crew.suppression = 2.2
 	self.s552_crew.FIRE_MODE = "auto"
 	self.s552_secondary_crew = deep_clone(self.s552_crew)
@@ -1943,7 +1943,7 @@ function WeaponTweakData:_init_data_scar_crew()
 	self.scar_crew.pull_magazine_during_reload = "rifle"
 	self.scar_crew.auto.fire_rate = 0.08571428571
 	self.scar_crew.hold = "rifle"
-	self.scar_crew.alert_size = 5000
+	self.scar_crew.alert_size = 2500
 	self.scar_crew.suppression = 2.2
 	self.scar_crew.FIRE_MODE = "auto"
 end
@@ -1960,7 +1960,7 @@ function WeaponTweakData:_init_data_fal_crew()
 	self.fal_crew.pull_magazine_during_reload = "rifle"
 	self.fal_crew.auto.fire_rate = 0.08571428571
 	self.fal_crew.hold = "rifle"
-	self.fal_crew.alert_size = 5000
+	self.fal_crew.alert_size = 2500
 	self.fal_crew.suppression = 2.2
 	self.fal_crew.FIRE_MODE = "auto"
 end
@@ -1977,7 +1977,7 @@ function WeaponTweakData:_init_data_famas_crew()
 	self.famas_crew.pull_magazine_during_reload = "rifle"
 	self.famas_crew.auto.fire_rate = 0.08571428571
 	self.famas_crew.hold = {"bullpup", "rifle"}
-	self.famas_crew.alert_size = 5000
+	self.famas_crew.alert_size = 2500
 	self.famas_crew.suppression = 2.2
 	self.famas_crew.FIRE_MODE = "auto"
 end
@@ -1994,7 +1994,7 @@ function WeaponTweakData:_init_data_galil_crew()
 	self.galil_crew.pull_magazine_during_reload = "rifle"
 	self.galil_crew.auto.fire_rate = 0.08571428571
 	self.galil_crew.hold = "rifle"
-	self.galil_crew.alert_size = 5000
+	self.galil_crew.alert_size = 2500
 	self.galil_crew.suppression = 2.2
 	self.galil_crew.FIRE_MODE = "auto"
 end
@@ -2011,7 +2011,7 @@ function WeaponTweakData:_init_data_g3_crew()
 	self.g3_crew.pull_magazine_during_reload = "rifle"
 	self.g3_crew.auto.fire_rate = 0.08571428571
 	self.g3_crew.hold = "rifle"
-	self.g3_crew.alert_size = 5000
+	self.g3_crew.alert_size = 2500
 	self.g3_crew.suppression = 2.2
 	self.g3_crew.FIRE_MODE = "auto"
 end
@@ -2030,7 +2030,7 @@ function WeaponTweakData:_init_data_l85a2_crew()
 	self.l85a2_crew.auto.fire_rate = 0.08571428571
 	self.l85a2_crew.hold = "rifle"
 	self.l85a2_crew.reload = "bullpup"
-	self.l85a2_crew.alert_size = 5000
+	self.l85a2_crew.alert_size = 2500
 	self.l85a2_crew.suppression = 2.2
 	self.l85a2_crew.FIRE_MODE = "auto"
 end
@@ -2048,7 +2048,7 @@ function WeaponTweakData:_init_data_vhs_crew()
 	self.vhs_crew.pull_magazine_during_reload = "rifle"
 	self.vhs_crew.auto.fire_rate = 0.08571428571
 	self.vhs_crew.hold = {"bullpup", "rifle"}
-	self.vhs_crew.alert_size = 5000
+	self.vhs_crew.alert_size = 2500
 	self.vhs_crew.suppression = 2.2
 	self.vhs_crew.FIRE_MODE = "auto"
 end
@@ -2065,7 +2065,7 @@ function WeaponTweakData:_init_data_asval_crew()
 	self.asval_crew.pull_magazine_during_reload = "rifle"
 	self.asval_crew.auto.fire_rate = 0.08571428571
 	self.asval_crew.hold = "rifle"
-	self.asval_crew.alert_size = 5000
+	self.asval_crew.alert_size = 0
 	self.asval_crew.suppression = 3.4
 	self.asval_crew.FIRE_MODE = "auto"
 end
@@ -2082,7 +2082,7 @@ function WeaponTweakData:_init_data_tecci_crew()
 	self.tecci_crew.pull_magazine_during_reload = "large_plastic"
 	self.tecci_crew.auto.fire_rate = 0.08571428571
 	self.tecci_crew.hold = "rifle"
-	self.tecci_crew.alert_size = 5000
+	self.tecci_crew.alert_size = 2500
 	self.tecci_crew.suppression = 2.2
 	self.tecci_crew.FIRE_MODE = "auto"
 end
@@ -2100,7 +2100,7 @@ function WeaponTweakData:_init_data_contraband_crew()
 	self.contraband_crew.auto.fire_rate = 0.08571428571
 	self.contraband_crew.hold = {"bullpup", "rifle"}
 	self.contraband_crew.reload = "rifle"
-	self.contraband_crew.alert_size = 5000
+	self.contraband_crew.alert_size = 2500
 	self.contraband_crew.suppression = 2.2
 	self.contraband_crew.FIRE_MODE = "auto"
 	self.contraband_m203_crew.sounds.prefix = "contrabandm203_npc"
@@ -2114,7 +2114,7 @@ function WeaponTweakData:_init_data_contraband_crew()
 	self.contraband_m203_crew.auto.fire_rate = 0.1
 	self.contraband_m203_crew.hold = "rifle"
 	self.contraband_m203_crew.hold = {"bullpup", "rifle"}
-	self.contraband_m203_crew.alert_size = 2800
+	self.contraband_m203_crew.alert_size = 2500
 	self.contraband_m203_crew.suppression = 1
 	self.contraband_m203_crew.FIRE_MODE = "auto"
 end
@@ -2131,7 +2131,7 @@ function WeaponTweakData:_init_data_flint_crew()
 	self.flint_crew.pull_magazine_during_reload = "rifle"
 	self.flint_crew.auto.fire_rate = 0.08571428571
 	self.flint_crew.hold = "rifle"
-	self.flint_crew.alert_size = 5000
+	self.flint_crew.alert_size = 2500
 	self.flint_crew.suppression = 2.2
 	self.flint_crew.FIRE_MODE = "auto"
 end
@@ -2152,7 +2152,7 @@ function WeaponTweakData:_init_data_corgi_crew()
 		"bullpup",
 		"rifle"
 	}
-	self.corgi_crew.alert_size = 5000
+	self.corgi_crew.alert_size = 2500
 	self.corgi_crew.suppression = 2.2
 	self.corgi_crew.FIRE_MODE = "auto"
 end		
@@ -2173,7 +2173,7 @@ function WeaponTweakData:_init_data_komodo_crew()
 		"bullpup",
 		"rifle"
 	}
-	self.komodo_crew.alert_size = 5000
+	self.komodo_crew.alert_size = 2500
 	self.komodo_crew.suppression = 2.2
 	self.komodo_crew.FIRE_MODE = "auto"
 end		
@@ -2188,7 +2188,7 @@ function WeaponTweakData:_init_data_spas12_crew()
 	self.spas12_crew.CLIP_AMMO_MAX = 20
 	self.spas12_crew.NR_CLIPS_MAX = 4
 	self.spas12_crew.hold = "rifle"
-	self.spas12_crew.alert_size = 5000
+	self.spas12_crew.alert_size = 2500
 	self.spas12_crew.suppression = 3.4
 	self.spas12_crew.rays = 9
 	self.spas12_crew.is_shotgun = true
@@ -2206,7 +2206,7 @@ function WeaponTweakData:_init_data_b682_crew()
 	self.b682_crew.NR_CLIPS_MAX = 4
 	self.b682_crew.looped_reload_speed = 0.2
 	self.b682_crew.hold = "rifle"
-	self.b682_crew.alert_size = 5000
+	self.b682_crew.alert_size = 2500
 	self.b682_crew.suppression = 3.4
 	self.b682_crew.rays = 9
 	self.b682_crew.is_shotgun = true
@@ -2223,7 +2223,7 @@ function WeaponTweakData:_init_data_r870_crew()
 	self.r870_crew.CLIP_AMMO_MAX = 10
 	self.r870_crew.NR_CLIPS_MAX = 4
 	self.r870_crew.hold = "rifle"
-	self.r870_crew.alert_size = 5000
+	self.r870_crew.alert_size = 2500
 	self.r870_crew.suppression = 3.4
 	self.r870_crew.is_shotgun = true
 	self.r870_crew.rays = 9
@@ -2243,7 +2243,7 @@ function WeaponTweakData:_init_data_saiga_crew()
 	self.saiga_crew.NR_CLIPS_MAX = 10
 	self.saiga_crew.pull_magazine_during_reload = "rifle"
 	self.saiga_crew.hold = "rifle"
-	self.saiga_crew.alert_size = 4500
+	self.saiga_crew.alert_size = 2500
 	self.saiga_crew.suppression = 3.4
 	self.saiga_crew.rays = 9
 	self.saiga_crew.is_shotgun = true
@@ -2261,7 +2261,7 @@ function WeaponTweakData:_init_data_huntsman_crew()
 	self.huntsman_crew.NR_CLIPS_MAX = 4
 	self.huntsman_crew.looped_reload_speed = 0.2
 	self.huntsman_crew.hold = "rifle"
-	self.huntsman_crew.alert_size = 5000
+	self.huntsman_crew.alert_size = 2500
 	self.huntsman_crew.suppression = 3.4
 	self.huntsman_crew.is_shotgun = true
 	self.huntsman_crew.rays = 9
@@ -2280,7 +2280,7 @@ function WeaponTweakData:_init_data_ben_crew()
 	self.ben_crew.hold = "rifle"
 	self.ben_crew.reload = "looped"
 	self.ben_crew.looped_reload_speed = 0.8
-	self.ben_crew.alert_size = 5000
+	self.ben_crew.alert_size = 2500
 	self.ben_crew.suppression = 3.4
 	self.ben_crew.is_shotgun = true
 	self.ben_crew.rays = 9
@@ -2298,7 +2298,7 @@ function WeaponTweakData:_init_data_ksg_crew()
 	self.ksg_crew.CLIP_AMMO_MAX = 10
 	self.ksg_crew.NR_CLIPS_MAX = 4
 	self.ksg_crew.hold = "rifle"
-	self.ksg_crew.alert_size = 5000
+	self.ksg_crew.alert_size = 2500
 	self.ksg_crew.suppression = 3.4
 	self.ksg_crew.is_shotgun = true
 	self.ksg_crew.rays = 9
@@ -2317,7 +2317,7 @@ function WeaponTweakData:_init_data_aa12_crew()
 	self.aa12_crew.NR_CLIPS_MAX = 4
 	self.aa12_crew.pull_magazine_during_reload = "large_plastic"
 	self.aa12_crew.hold = "rifle"
-	self.aa12_crew.alert_size = 5000
+	self.aa12_crew.alert_size = 2500
 	self.aa12_crew.suppression = 3.4
 	self.aa12_crew.is_shotgun = true
 	self.aa12_crew.rays = 9
@@ -2336,7 +2336,7 @@ function WeaponTweakData:_init_data_boot_crew()
 	self.boot_crew.NR_CLIPS_MAX = 5
 	self.boot_crew.auto.fire_rate = 0.6
 	self.boot_crew.hold = "rifle"
-	self.boot_crew.alert_size = 5000
+	self.boot_crew.alert_size = 2500
 	self.boot_crew.suppression = 3.4
 	self.boot_crew.is_shotgun = true
 	self.boot_crew.rays = 9
@@ -2354,7 +2354,7 @@ function WeaponTweakData:_init_data_model70_crew()
 	self.model70_crew.NR_CLIPS_MAX = 8
 	self.model70_crew.auto.fire_rate = 1
 	self.model70_crew.hold = "rifle"
-	self.model70_crew.alert_size = 5000
+	self.model70_crew.alert_size = 2500
 	self.model70_crew.suppression = 3.4
 	self.model70.is_sniper = true
 	self.model70_crew.FIRE_MODE = "single"
@@ -2374,7 +2374,7 @@ function WeaponTweakData:_init_data_msr_crew()
 	self.msr_crew.auto.fire_rate = 0.6
 	self.msr_crew.hold = "rifle"
 	self.msr_crew.pull_magazine_during_reload = "rifle"
-	self.msr_crew.alert_size = 5000
+	self.msr_crew.alert_size = 2500
 	self.msr_crew.suppression = 3.4
 	self.msr_crew.FIRE_MODE = "single"
 end
@@ -2391,7 +2391,7 @@ function WeaponTweakData:_init_data_r93_crew()
 	self.r93_crew.pull_magazine_during_reload = "rifle"
 	self.r93_crew.auto.fire_rate = 0.6
 	self.r93_crew.hold = "rifle"
-	self.r93_crew.alert_size = 5000
+	self.r93_crew.alert_size = 2500
 	self.r93_crew.suppression = 3.4
 	self.r93_crew.FIRE_MODE = "single"
 end
@@ -2409,7 +2409,7 @@ function WeaponTweakData:_init_data_m95_crew()
 	self.m95_crew.hold = "rifle"
 	self.m95_crew.reload = "bullpup"
 	self.m95_crew.auto.fire_rate = 0.6
-	self.m95_crew.alert_size = 5000
+	self.m95_crew.alert_size = 2500
 	self.m95_crew.suppression = 3.4
 	self.m95_crew.FIRE_MODE = "single"
 end
@@ -2425,7 +2425,7 @@ function WeaponTweakData:_init_data_mosin_crew()
 	self.mosin_crew.NR_CLIPS_MAX = 8
 	self.mosin_crew.auto.fire_rate = 0.6
 	self.mosin_crew.hold = "rifle"
-	self.mosin_crew.alert_size = 5000
+	self.mosin_crew.alert_size = 2500
 	self.mosin_crew.suppression = 3.4
 	self.mosin_crew.FIRE_MODE = "single"
 	self.mosin_secondary_crew = deep_clone(self.mosin_crew)
@@ -2444,7 +2444,7 @@ function WeaponTweakData:_init_data_winchester1874_crew()
 	self.winchester1874_crew.looped_reload_speed = 0.7407407
 	self.winchester1874_crew.auto.fire_rate = 0.6
 	self.winchester1874_crew.hold = "rifle"
-	self.winchester1874_crew.alert_size = 5000
+	self.winchester1874_crew.alert_size = 2500
 	self.winchester1874_crew.suppression = 3.4
 	self.winchester1874_crew.FIRE_MODE = "single"
 	self.winchester1874_secondary_crew = deep_clone(self.winchester1874_crew)
@@ -2463,7 +2463,7 @@ function WeaponTweakData:_init_data_sbl_crew()
 	self.sbl_crew.looped_reload_speed = 0.7407407
 	self.sbl_crew.auto.fire_rate = 0.6
 	self.sbl_crew.hold = "rifle"
-	self.sbl_crew.alert_size = 5000
+	self.sbl_crew.alert_size = 2500
 	self.sbl_crew.suppression = 3.4
 	self.sbl_crew.FIRE_MODE = "auto"
 	self.sbl_secondary_crew = deep_clone(self.sbl_crew)
@@ -2483,7 +2483,7 @@ function WeaponTweakData:_init_data_wa2000_crew()
 	self.wa2000_crew.pull_magazine_during_reload = "rifle"
 	self.wa2000_crew.auto.fire_rate = 0.6
 	self.wa2000_crew.hold = {"bullpup", "rifle"}
-	self.wa2000_crew.alert_size = 5000
+	self.wa2000_crew.alert_size = 2500
 	self.wa2000_crew.suppression = 3.4
 	self.wa2000_crew.FIRE_MODE = "single"
 end
@@ -2501,7 +2501,7 @@ function WeaponTweakData:_init_data_desertfox_crew()
 	self.desertfox_crew.auto.fire_rate = 0.6
 	self.desertfox_crew.hold = "rifle"
 	self.desertfox_crew.reload = "bullpup"
-	self.desertfox_crew.alert_size = 5000
+	self.desertfox_crew.alert_size = 2500
 	self.desertfox_crew.suppression = 3.4
 	self.desertfox_crew.FIRE_MODE = "single"
 	self.desertfox_secondary_crew = deep_clone(self.desertfox_crew)
@@ -2521,7 +2521,7 @@ function WeaponTweakData:_init_data_tti_crew()
 	self.tti_crew.pull_magazine_during_reload = "rifle"
 	self.tti_crew.auto.fire_rate = 0.6
 	self.tti_crew.hold = "rifle"
-	self.tti_crew.alert_size = 5000
+	self.tti_crew.alert_size = 2500
 	self.tti_crew.suppression = 3.4
 	self.tti_crew.FIRE_MODE = "single"
 end
@@ -2538,7 +2538,7 @@ function WeaponTweakData:_init_data_siltstone_crew()
 	self.siltstone_crew.NR_CLIPS_MAX = 4
 	self.siltstone_crew.auto.fire_rate = 0.6
 	self.siltstone_crew.hold = "rifle"
-	self.siltstone_crew.alert_size = 5000
+	self.siltstone_crew.alert_size = 2500
 	self.siltstone_crew.suppression = 3.4
 	self.siltstone_crew.FIRE_MODE = "single"
 end
@@ -2554,7 +2554,7 @@ function WeaponTweakData:_init_data_r700_crew()
 	self.r700_crew.NR_CLIPS_MAX = 2
 	self.r700_crew.auto.fire_rate = 0.6
 	self.r700_crew.hold = "rifle"
-	self.r700_crew.alert_size = 5000
+	self.r700_crew.alert_size = 2500
 	self.r700_crew.suppression = 3.4
 	self.r700_crew.FIRE_MODE = "single"
 end
@@ -2573,7 +2573,7 @@ function WeaponTweakData:_init_data_ching_crew()
 	self.ching_crew.looped_reload_speed = 1
 	self.ching_crew.auto.fire_rate = 0.6
 	self.ching_crew.hold = "rifle"
-	self.ching_crew.alert_size = 5000
+	self.ching_crew.alert_size = 2500
 	self.ching_crew.suppression = 3.4
 	self.ching_crew.FIRE_MODE = "single"
 end		
@@ -2589,7 +2589,7 @@ function WeaponTweakData:_init_data_par_crew()
 	self.par_crew.NR_CLIPS_MAX = 2
 	self.par_crew.auto.fire_rate = 0.075
 	self.par_crew.hold = "rifle"
-	self.par_crew.alert_size = 5000
+	self.par_crew.alert_size = 2500
 	self.par_crew.suppression = 2
 	self.par_crew.FIRE_MODE = "auto"
 	self.par_secondary_crew = deep_clone(self.par_crew)
@@ -2608,7 +2608,7 @@ function WeaponTweakData:_init_data_rpk_crew()
 	self.rpk_crew.NR_CLIPS_MAX = 5
 	self.rpk_crew.auto.fire_rate = 0.075
 	self.rpk_crew.hold = "rifle"
-	self.rpk_crew.alert_size = 5000
+	self.rpk_crew.alert_size = 2500
 	self.rpk_crew.suppression = 2
 	self.rpk_crew.FIRE_MODE = "auto"
 end
@@ -2624,7 +2624,7 @@ function WeaponTweakData:_init_data_m249_crew()
 	self.m249_crew.NR_CLIPS_MAX = 2
 	self.m249_crew.auto.fire_rate = 0.075
 	self.m249_crew.hold = "rifle"
-	self.m249_crew.alert_size = 5000
+	self.m249_crew.alert_size = 2500
 	self.m249_crew.suppression = 2
 	self.m249_crew.FIRE_MODE = "auto"
 end
@@ -2640,7 +2640,7 @@ function WeaponTweakData:_init_data_hk21_crew()
 	self.hk21_crew.NR_CLIPS_MAX = 5
 	self.hk21_crew.auto.fire_rate = 0.075
 	self.hk21_crew.hold = "rifle"
-	self.hk21_crew.alert_size = 5000
+	self.hk21_crew.alert_size = 2500
 	self.hk21_crew.suppression = 2.4
 	self.hk21_crew.FIRE_MODE = "auto"
 end
@@ -2656,7 +2656,7 @@ function WeaponTweakData:_init_data_mg42_crew()
 	self.mg42_crew.NR_CLIPS_MAX = 3
 	self.mg42_crew.auto.fire_rate = 0.075
 	self.mg42_crew.hold = "rifle"
-	self.mg42_crew.alert_size = 5000
+	self.mg42_crew.alert_size = 2500
 	self.mg42_crew.suppression = 2
 	self.mg42_crew.FIRE_MODE = "auto"
 	self.mg42_secondary_crew = deep_clone(self.mg42_crew)
@@ -2675,7 +2675,7 @@ function WeaponTweakData:_init_data_m60_crew()
 	self.m60_crew.NR_CLIPS_MAX = 3
 	self.m60_crew.auto.fire_rate = 0.075
 	self.m60_crew.hold = "rifle"
-	self.m60_crew.alert_size = 5000
+	self.m60_crew.alert_size = 2500
 	self.m60_crew.suppression = 2
 	self.m60_crew.FIRE_MODE = "auto"
 end
@@ -2711,10 +2711,10 @@ function WeaponTweakData:_init_stats()
 	self.stats = {}
 	self.stat_info = {} --Certain custom RM stuff falls under this for weaponlib compatibility.
 
-	self.stats.alert_size = {}
-	for i = 4200, 199.99, -200 do --Middle value slightly off to avoid floating point shenanigans.
-		table.insert(self.stats.alert_size, i)
-	end
+	self.stats.alert_size = {
+		0,
+		2500
+	}
 
 	self.stats.suppression = {}
 	for i = 4.2, 0.199, -0.2 do --Middle value slightly off to avoid floating point shenanigans.
@@ -3268,7 +3268,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3295,7 +3295,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 30,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3321,7 +3321,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 30,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3349,7 +3349,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3375,7 +3375,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3401,7 +3401,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3431,7 +3431,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3461,7 +3461,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3485,7 +3485,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3510,7 +3510,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3535,7 +3535,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3563,7 +3563,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3593,7 +3593,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3615,7 +3615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3640,7 +3640,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3669,7 +3669,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3696,7 +3696,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3721,7 +3721,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3749,7 +3749,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3776,7 +3776,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3801,7 +3801,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3826,7 +3826,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3855,7 +3855,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3893,7 +3893,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 21,
 		suppression = 3,
-		alert_size = 3,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3920,7 +3920,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 31,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3946,7 +3946,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -3966,7 +3966,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saw.kick = self.stat_info.kick_tables.none
 	self.saw.supported = true
 	self.saw.stats = {
-		alert_size = 7,
+		alert_size = 2,
 		suppression = 7,
 		zoom = 1,
 		spread = 1,
@@ -3989,7 +3989,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saw_secondary.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.saw_secondary.supported = true
 	self.saw_secondary.stats = {
-		alert_size = 7,
+		alert_size = 2,
 		suppression = 7,
 		zoom = 1,
 		spread = 1,
@@ -4027,7 +4027,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4058,7 +4058,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4085,7 +4085,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4113,7 +4113,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 5,
@@ -4141,7 +4141,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4173,7 +4173,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 31,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4202,7 +4202,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -4229,7 +4229,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -4255,7 +4255,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -4285,7 +4285,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -4315,7 +4315,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 19,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -4349,7 +4349,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 21,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -4407,7 +4407,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 23,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -4434,7 +4434,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 19,
 		suppression = 3,
-		alert_size = 3,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -4462,7 +4462,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -4490,7 +4490,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4519,7 +4519,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4547,7 +4547,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 23,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4577,7 +4577,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4604,7 +4604,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -4632,7 +4632,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -4661,7 +4661,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -4692,7 +4692,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -4722,7 +4722,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -4751,7 +4751,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -4778,7 +4778,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 32,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4804,7 +4804,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4829,7 +4829,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 31,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4860,7 +4860,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4884,7 +4884,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 32,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4913,7 +4913,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -4941,7 +4941,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 18,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -4980,7 +4980,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5008,7 +5008,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -5034,7 +5034,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 3,
-		alert_size = 3,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -5063,7 +5063,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -5094,7 +5094,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -5123,7 +5123,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -5152,7 +5152,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -5188,7 +5188,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 10,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -5219,7 +5219,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 12,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5252,7 +5252,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5285,7 +5285,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 3,
-		alert_size = 3,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5315,7 +5315,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5341,7 +5341,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 30,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5367,7 +5367,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5416,7 +5416,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 16,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5445,7 +5445,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 15,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5474,7 +5474,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5496,7 +5496,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5534,7 +5534,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 21,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -5567,7 +5567,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 30,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5594,7 +5594,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5627,7 +5627,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 18,
-		alert_size = 18,
+		alert_size = 1,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5665,7 +5665,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5695,7 +5695,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 21,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -5728,7 +5728,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5760,7 +5760,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5791,7 +5791,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5822,7 +5822,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5855,7 +5855,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5889,7 +5889,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5921,7 +5921,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -5946,7 +5946,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -5972,7 +5972,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 18,
 		suppression = 3,
-		alert_size = 3,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -6001,7 +6001,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6031,7 +6031,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 18,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6058,7 +6058,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6084,7 +6084,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6109,7 +6109,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 30,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6134,7 +6134,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6160,7 +6160,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6192,7 +6192,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6221,7 +6221,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6250,7 +6250,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6277,7 +6277,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 31,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6304,7 +6304,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 23,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6330,7 +6330,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 3,
-		alert_size = 3,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 10,
@@ -6354,7 +6354,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 31,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6381,7 +6381,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6409,7 +6409,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 15,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6441,7 +6441,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 16,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6467,7 +6467,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6500,7 +6500,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 12,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6536,7 +6536,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 19,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -6564,7 +6564,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -6592,7 +6592,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -6618,7 +6618,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6648,7 +6648,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6671,7 +6671,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6696,7 +6696,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6729,7 +6729,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 31,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6761,7 +6761,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -6793,7 +6793,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 5,
@@ -6824,7 +6824,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6848,7 +6848,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6873,7 +6873,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -6897,7 +6897,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		total_ammo_mod = 100,
 		damage = 30,
-		alert_size = 7,
+		alert_size = 2,
 		spread = 7,
 		spread_moving = 8,
 		recoil = 19,
@@ -6926,7 +6926,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		total_ammo_mod = 100,
 		damage = 30,
-		alert_size = 7,
+		alert_size = 2,
 		spread = 5,
 		spread_moving = 8,
 		recoil = 9,
@@ -6956,7 +6956,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -6986,7 +6986,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7015,7 +7015,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7047,7 +7047,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7078,7 +7078,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7106,7 +7106,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 5,
@@ -7136,7 +7136,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 21,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7160,7 +7160,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 5,
@@ -7188,7 +7188,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -7214,7 +7214,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7242,7 +7242,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -7269,7 +7269,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 30,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7297,7 +7297,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7323,7 +7323,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7352,7 +7352,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7382,7 +7382,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 23,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7408,7 +7408,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -7435,7 +7435,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -7462,7 +7462,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -7489,7 +7489,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 7,
@@ -7514,7 +7514,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7547,7 +7547,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 31,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7579,7 +7579,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7605,7 +7605,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 10,
-		alert_size = 10,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7635,7 +7635,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -7662,7 +7662,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 4,
@@ -7688,7 +7688,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 30,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7715,7 +7715,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 31,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7740,7 +7740,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7772,7 +7772,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7799,7 +7799,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7833,7 +7833,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 22,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7868,7 +7868,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 10,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -7917,7 +7917,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 19,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7945,7 +7945,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -7973,7 +7973,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8004,7 +8004,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8042,7 +8042,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 30,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8078,7 +8078,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 21,
 		suppression = 3,
-		alert_size = 3,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8104,7 +8104,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8137,7 +8137,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8161,7 +8161,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 27,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8187,7 +8187,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8209,7 +8209,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 9,
-		alert_size = 9,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8232,7 +8232,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8255,7 +8255,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 26,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8279,7 +8279,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8303,7 +8303,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 29,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8331,7 +8331,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 18,
 		suppression = 7,
-		alert_size = 7,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -8359,7 +8359,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 24,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -8391,7 +8391,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 28,
 		suppression = 3,
-		alert_size = 3,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 9,
@@ -8417,7 +8417,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 23,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8445,7 +8445,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 23,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8474,7 +8474,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 5,
-		alert_size = 5,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8501,7 +8501,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 21,
 		suppression = 4,
-		alert_size = 4,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8539,7 +8539,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 20,
 		suppression = 8,
-		alert_size = 8,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8567,7 +8567,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 15,
 		suppression = 20,
-		alert_size = 20,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8615,7 +8615,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8642,7 +8642,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		zoom = 1,
 		concealment = 25,
 		suppression = 6,
-		alert_size = 6,
+		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8672,7 +8672,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 24,
 			suppression = 5,
-			alert_size = 5,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8702,7 +8702,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 25,
 			suppression = 8,
-			alert_size = 8,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8768,7 +8768,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 25,
 			suppression = 5,
-			alert_size = 5,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8801,7 +8801,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 24,
 			suppression = 7,
-			alert_size = 7,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8826,7 +8826,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 28,
 			suppression = 9,
-			alert_size = 9,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
@@ -8856,7 +8856,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 26,
 			suppression = 9,
-			alert_size = 9,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8889,7 +8889,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 21,
 			suppression = 4,
-			alert_size = 4,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
@@ -8923,7 +8923,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 21,
 			suppression = 4,
-			alert_size = 4,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
@@ -8951,7 +8951,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 22,
 			suppression = 8,
-			alert_size = 8,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -8979,7 +8979,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 25,
 			suppression = 7,
-			alert_size = 7,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9014,7 +9014,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 28,
 			suppression = 9,
-			alert_size = 9,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9042,7 +9042,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 26,
 			suppression = 7,
-			alert_size = 7,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9080,7 +9080,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 18,
 			suppression = 4,
-			alert_size = 4,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
@@ -9120,7 +9120,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 18,
 			suppression = 4,
-			alert_size = 4,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9148,7 +9148,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 29,
 			suppression = 19,
-			alert_size = 19,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9182,7 +9182,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 25,
 			suppression = 6,
-			alert_size = 6,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 9,
@@ -9231,7 +9231,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 26,
 			suppression = 6,
-			alert_size = 6,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9266,7 +9266,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 25,
 			suppression = 8,
-			alert_size = 8,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9306,7 +9306,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 15,
 			suppression = 5,
-			alert_size = 5,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9333,7 +9333,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 25,
 			suppression = 6,
-			alert_size = 6,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9355,7 +9355,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = math.random(0,32),
 			suppression = 21,
-			alert_size = 21,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9381,7 +9381,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = math.random(0,32),
 			suppression = 21,
-			alert_size = 21,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9408,7 +9408,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 15,
 			zoom = 1,
 			concealment = 24,
-			alert_size = 19,
+			alert_size = 2,
 			suppression = 19,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -9430,7 +9430,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 7,
 			zoom = 1,
 			concealment = 21,
-			alert_size = 5,
+			alert_size = 2,
 			suppression = 5,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -9466,7 +9466,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 21,
 			concealment = 26,
 			suppression = 18,
-			alert_size = 18,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			reload = 20,
@@ -9490,7 +9490,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread = 20,
 			recoil = 23,
 			concealment = 30,
-			alert_size = 20,
+			alert_size = 2,
 			suppression = 20,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -9515,7 +9515,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread = 19,
 			recoil = 24,
 			concealment = 31,
-			alert_size = 21,
+			alert_size = 2,
 			suppression = 21,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -9541,7 +9541,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			spread = 18,
 			recoil = 23,
 			concealment = 27,
-			alert_size = 20,
+			alert_size = 2,
 			suppression = 20,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -9565,7 +9565,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 4,
 			zoom = 1,
 			concealment = 10,
-			alert_size = 3,
+			alert_size = 2,
 			suppression = 3,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -9592,7 +9592,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 4,
 			zoom = 1,
 			concealment = 25,
-			alert_size = 4,
+			alert_size = 2,
 			suppression = 4,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
@@ -9621,7 +9621,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			zoom = 1,
 			concealment = 26,
 			suppression = 4,
-			alert_size = 4,
+			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
 			value = 1,
@@ -9647,7 +9647,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 7,
 			zoom = 1,
 			concealment = 26,
-			alert_size = 20,
+			alert_size = 2,
 			suppression = 20,
 			extra_ammo = 101,
 			total_ammo_mod = 100,

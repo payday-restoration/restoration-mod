@@ -1,0 +1,6 @@
+<unit type="cas" slot="1">
+	<object file="units/pd2_dlc_casino/environment/cas_int/cas_security_window_8m/cas_security_window_8m" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

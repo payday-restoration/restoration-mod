@@ -1,0 +1,13 @@
+<dynamic_object>
+    <diesel orientation_object="rp_mullplan_container" materials="units/pd2_dlc_cro/ind_container_mul/mullplan_container" />
+    <bodies>
+        <body name="editor_body" template="editor" enabled="true" >
+            <object name="rp_mullplan_container"/>
+            <object collision_type="box" enabled="true" name="g_g"/>
+        </body>
+    </bodies>
+	
+	<graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

@@ -1,0 +1,9 @@
+<materials version="3">
+    <material name="mat_black" render_template="generic:VERTEX_COLOR:VERTEX_COLOR_ALPHA" version="2"/>
+    <material name="mat_transparent" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <opacity_texture file="units/payday2/architecture/lux/lux_ext_glass_01_op"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <diffuse_texture file="units/pd2_dlc_casino/environment/cas_int/cas_security_window_8m/textures/cas_window_8m_df"/>
+        <variable value="1.039999961853 0.37999999523163 0.35999998450279" type="vector3" name="fresnel_settings"/>
+    </material>
+</materials>

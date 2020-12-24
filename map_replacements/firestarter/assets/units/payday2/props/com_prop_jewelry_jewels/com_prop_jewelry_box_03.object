@@ -1,0 +1,12 @@
+<dynamic_object>
+    <diesel materials="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_box" orientation_object="rp_com_prop_jewelry_box_03"/>
+    <sequence_manager file="units/payday2/props/com_prop_jewelry_jewels/com_prop_jewelry_box"/>
+    <bodies>
+        <body name="static_body" enabled="true" template="static"  >
+			<object name="c_box" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+    <graphics>
+        <object name="g_g" enabled="true"/>
+    </graphics>
+</dynamic_object>

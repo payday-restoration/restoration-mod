@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/hcm/hcm_int" orientation_object="rp_hcm_int_floor_4x4m_a" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_hcm_int_floor_4x4m_a"/>
+            <object name="c_box_00" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="carpet" static="true">
+		<decal_mesh name="g_hcm_int_floor_4x4m_a" material="carpet" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_hcm_int_floor_4x4m_a" shadow_caster="false" />
+    </graphics>
+</dynamic_object> 

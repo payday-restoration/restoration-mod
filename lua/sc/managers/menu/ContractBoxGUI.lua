@@ -263,9 +263,13 @@ function ContractBoxGui:create_contract_box()
 			0,
 			32,
 			32,
+			32,
+			32,
 			32
 		}
 		local empty_star_rect = {
+			32,
+			32,
 			32,
 			32,
 			32,

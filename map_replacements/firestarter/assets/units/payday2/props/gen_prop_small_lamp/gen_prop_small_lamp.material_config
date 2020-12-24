@@ -1,0 +1,9 @@
+<materials version="3">
+    <material name="mat_gen_prop_small_lamp" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_small_lamp/gen_prop_small_lamp_df"/>
+    </material>
+    <material name="mat_gen_prop_small_lamp_il" render_template="effect:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_small_lamp/gen_prop_small_lamp_il"/>
+        <variable value="reddot" type="scalar" name="intensity"/>
+    </material>
+</materials>

@@ -1,0 +1,20 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_fish/lxy_prop_camera_bag/lxy_prop_camera_bag" orientation_object="rp_lxy_prop_camera_bag" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_lxy_prop_camera_bag" />
+			<object name="c_convex_01" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_02" collision_type="convex" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="cloth">
+		<decal_mesh name="dm_cloth" enabled="true" material="cloth" />
+		<decal_mesh name="dm_plastic" enabled="true" material="plastic" />
+	</decal_surfaces>
+	<graphics>
+		<lod_object name="lod_g">
+			<object name="g_lod0" enabled="true" max_distance="1500" />
+			<object name="g_lod1" enabled="true" />
+		</lod_object>
+	</graphics>
+</dynamic_object>

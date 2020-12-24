@@ -1,0 +1,11 @@
+<materials version="3">
+    <material name="mat_value_b" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_c_df"/>
+    </material>
+    <material name="mat_outline" unique="true" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <opacity_texture file="units/transparent_op"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+</materials>

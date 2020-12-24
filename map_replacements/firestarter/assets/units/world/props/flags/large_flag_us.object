@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/props/flags/large_flag_us" orientation_object="rp_large_flag_us" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_large_flag_us"/>
+			<object name="c_flag_mesh_mopp" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal" static="true"/>
+	<graphics>
+		<object name="c_flag_mesh_mopp" enabled="false" />
+
+		<object name="g_object" enabled="true" />
+		<object name="g_flag" enabled="true" shadow_caster="true" />
+		<object name="s_object" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,14 @@
+<materials version="3">
+    <material unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" decal_material="sheet_metal" version="2" name="drill_unit">
+    	<variable value="1" type="scalar" name="contour_opacity"/>
+        <diffuse_texture file="units/equipment/apartment_saw/apartment_saw_df"/>
+        <bump_normal_texture file="units/equipment/apartment_saw/apartment_saw_nm"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+    </material>
+    <material name="drill_outline" unique="true" version="2" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+</materials>

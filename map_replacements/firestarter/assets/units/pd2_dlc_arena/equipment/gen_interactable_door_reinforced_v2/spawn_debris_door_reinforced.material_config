@@ -1,0 +1,5 @@
+<materials version="3">
+	<material name="mat_door_pieces" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/gen_interactable_door_reinforced_v2_df" />
+	</material>
+</materials>

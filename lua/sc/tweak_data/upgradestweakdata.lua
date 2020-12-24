@@ -227,7 +227,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			},
 		l50 = {
 				name_id = "lvl_50",
-				upgrades = {}
+				upgrades = {
+					"halloween_sword"
+				}
 			},
 		l51 = {
 				name_id = "weapons",
@@ -273,6 +275,12 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 	end 	
 end)
 
+Hooks:PostHook(UpgradesTweakData, "_melee_weapon_definitions", "ResMeleeDef", function(self)
+	self.definitions.halloween_sword = {
+		dlc = "rest",
+		category = "melee_weapon"
+	}
+end)
 
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
@@ -372,10 +380,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
-	self.values.team.crew_add_armor = {1.5}
+	self.values.team.crew_add_armor = {1.1} --Now adds % armor, rather than flat armor.
 	self.values.team.crew_add_dodge = {0.03} --Now adds % of dodge stat every second to meter.
-	self.values.team.crew_add_concealment = {1}
-	self.values.team.crew_add_stamina = {25}
+	self.values.team.crew_add_concealment = {2}
+	self.values.team.crew_add_stamina = {15}
 	self.values.team.crew_reduce_speed_penalty = {1}
 	self.values.team.crew_health_regen = {0.1}
 	self.values.team.crew_throwable_regen = {70}
@@ -1380,7 +1388,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Hey you're getting your grinder on my grinder
-	self.values.player.level_5_armor_addend = {-7}
+	self.values.player.level_5_armor_addend = {-8}
 	self.damage_to_hot_data = {
 		armors_allowed = {"level_5"},
 		works_with_armor_kit = true,
@@ -1519,21 +1527,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Ex President
 	self.values.player.armor_health_store_amount = {
 		0.4,
-		0.7,
-		1.0
+		0.6,
+		0.8
 	}	
 	self.values.player.armor_max_health_store_multiplier = {
 		1.25
 	}
 
 	self.values.player.body_armor.skill_max_health_store = {
-		8,
-		7.2,
 		6.4,
+		6.0,
 		5.6,
+		5.2,
 		4.8,
-		4,
-		3.2
+		4.4,
+		4.0
 	}
 	self.kill_change_regenerate_speed_percentage = true
 	self.values.player.body_armor.skill_kill_change_regenerate_speed = {
@@ -1605,7 +1613,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4
 	}
 	self.values.player.damage_control_healing = {
-		300
+		250
 	}
 
 	self.values.player.damage_control_cooldown_drain = {

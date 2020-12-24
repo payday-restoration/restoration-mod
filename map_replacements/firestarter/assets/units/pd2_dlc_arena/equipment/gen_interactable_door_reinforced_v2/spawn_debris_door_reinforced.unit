@@ -1,0 +1,6 @@
+<unit type="debris" slot="18">
+	<object file="units/pd2_dlc_arena/equipment/gen_interactable_door_reinforced_v2/spawn_debris_door_reinforced" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

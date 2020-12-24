@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/airport/airport_cones/airport_tall_cone" orientation_object="rp_tallcone" />
+  <bodies>
+    <body remove_ray_type="walk" name="static_body" enabled="true" template="static">
+      <object name="rp_tallcone" />
+      <object name="g_tallcone" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces>
+    <decal_mesh name="g_tallcone" enabled="true" material="rubber" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_tallcone" enabled="true" />
+  </graphics>
+</dynamic_object>

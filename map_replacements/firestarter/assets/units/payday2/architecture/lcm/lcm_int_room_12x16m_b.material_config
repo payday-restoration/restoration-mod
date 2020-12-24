@@ -1,0 +1,21 @@
+<materials version="3">
+    <material name="mat_lcm_int_01" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/lcm/lcm_int_01_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm/lcm_int_01_nm"/>
+    </material>
+    <material name="mat_lcm_int_03" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/lcm/lcm_int_03_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
+        <bump_normal_texture file="units/payday2/architecture/lcm/lcm_int_03_nm"/>
+    </material>
+    <material name="mat_lcm_glow" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="units/payday2/architecture/lux/lux_int_01_glow"/>
+        <variable value="dimlight" type="scalar" name="intensity"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:SELF_ILLUMINATION:VERTEX_COLOR" name="mat_lcm_il">
+        <diffuse_texture file="units/payday2/architecture/lux/lux_int_01_glow_df"/>
+        <self_illumination_texture file="units/payday2/architecture/lux/lux_int_01_glow"/>
+        <variable value="sun" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

@@ -13,6 +13,7 @@ function CrimeSpreeTweakData:init(tweak_data)
 	self.randomization_cost = 6
 	self.randomization_multiplier = 2
 	self.catchup_bonus = 0.035
+	self.catchup_min_level = 100
 	self.winning_streak = 0.005
 	self.winning_streak_reset_on_failure = false
 	self.continue_cost = {6, 0.7}
@@ -648,7 +649,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_shield_reflect",
 				data = {}
 			},
-			--More Titancloakers
+			--Cloakers dropping Flashbangs
 			{
 				id = "cloaker_smoke",
 				class = "ModifierCloakerKick",
@@ -671,7 +672,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_no_hurt",
 				data = {}
 			},
-			--Titan Taser spawn chance increase
+			--No more delay on Taser tase attempts
 			{
 				id = "taser_overcharge",
 				class = "ModifierTaserOvercharge",
@@ -691,25 +692,26 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				class = "ModifierMoreMedics",
 				icon = "crime_spree_more_medics",
 				data = {
-					inc = {2, "add"}
+					inc = {1, "add"}
 				}
 			},
-			--More Titan Shotgunners
+			--Titan sniper full auto
 			{
 				id = "heavy_sniper",
 				class = "ModifierHeavySniper",
-				icon = "crime_spree_shotgun",
-				data = {
-					spawn_chance = {5, "add"}
-				}
+				icon = "crime_spree_heavy_sniper",
+				data = {}
 			},
-			--Dozer DR on visor break
+			--Dozer Damage on visor break
 			{
 				id = "dozer_rage",
 				class = "ModifierDozerRage",
 				icon = "crime_spree_dozer_rage",
 				data = {
-					damage_resistance = {10, "add"}
+					damage = {
+						10,
+						"add"
+					}
 				}
 			},
 			--More Titan HRTs
@@ -719,13 +721,22 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_cloaker_tear_gas",
 				data = {}
 			},
+			--Faster Sniper Aim
+			{
+				id = "sniper_faster_aim",
+				class = "ModifierSniperAim",
+				icon = "crime_spree_heavy_sniper",
+				data = {
+					speed = {2, "add"}
+				}
+			},			
 			--Higher Dozer Cap T1
 			{
 				id = "dozer_1",
 				class = "ModifierMoreDozers",
 				icon = "crime_spree_more_dozers",
 				data = {
-					inc = {2, "add"}
+					inc = {1, "add"}
 				}
 			},
 			--Shorter Medic Cooldown T2
@@ -737,13 +748,13 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					speed = {25, "add"}
 				}
 			},
-			--30% chance for Semi-auto Dozers
+			--50% chance for more Skulldozers
 			{
 				id = "dozer_lmg",
 				class = "ModifierSkulldozers",
-				icon = "crime_spree_more_dozers",
+				icon = "crime_spree_dozer_lmg",
 				data = {}
-			},
+			},			
 			--More Omnia LPFs
 			{
 				id = "medic_adrenaline",
@@ -764,7 +775,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				class = "ModifierMoreDozers",
 				icon = "crime_spree_more_dozers",
 				data = {
-					inc = {2, "add"}
+					inc = {1, "add"}
 				}
 			},
 			--Medic heals everyone around him in AoE on death
@@ -774,11 +785,11 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				icon = "crime_spree_medic_deathwish",
 				data = {}
 			},
-			--Titan Dozer spawn increase
+			--"Minigun" Dozers have a 50% chance to replace Green/Black Dozers
 			{
 				id = "dozer_minigun",
 				class = "ModifierDozerMinigun",
-				icon = "crime_spree_titandozer",
+				icon = "crime_spree_more_dozers",
 				data = {}
 			},
 			--Higher Medic Cap T2
@@ -787,10 +798,10 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				class = "ModifierMoreMedics",
 				icon = "crime_spree_more_medics",
 				data = {
-					inc = {2, "add"}
+					inc = {1, "add"}
 				}
 			},
-			--Dozer Explosion Immunity
+			--Dozer Explosion Resistance
 			{
 				id = "dozer_immunity",
 				class = "ModifierExplosionImmunity",
@@ -799,11 +810,11 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					explosive_resist = {50, "add"}
 				}
 			},
-			--Vet Cop Spawn increase
+			--MedicDozers have a 50% chance to replace other dozer types
 			{
 				id = "dozer_medic",
 				class = "ModifierDozerMedic",
-				icon = "crime_spree_heavies",
+				icon = "crime_spree_dozer_medic",
 				data = {}
 			},
 			--Longer assault waves
@@ -818,7 +829,7 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					max_hostages = {4, "none"}
 				}
 			},
-			--Cloaker jumpkicks down players
+			--Cloaker melee cuffs players
 			{
 				id = "cloaker_arrest",
 				class = "ModifierCloakerArrest",
@@ -870,80 +881,116 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				data = {
 					speed = {25, "add"}
 				}
-			}
+			}	
 		},
 		stealth = {
 			{
 				class = "ModifierLessPagers",
 				id = "pagers_1",
-				icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
+				icon = "crime_spree_pager",
 				level = 26,
-				data = {}
+				data = {
+					count = {
+						1,
+						"max"
+					}
+				}
 			},
 			{
 				class = "ModifierCivilianAlarm",
 				id = "civs_1",
 				icon = "crime_spree_civs_killed",
 				level = 26,
-				data = {count = {
-					2,
-					"min"
-				}}
+				data = {
+					count = {
+						6,
+						"min"
+					}
+				}
 			},
 			{
 				class = "ModifierLessConcealment",
 				id = "conceal_1",
-				icon = "crime_spree_dun_dun_dun_dunna",
+				icon = "crime_spree_concealment",
 				level = 26,
-				data = {}
+				data = {
+					conceal = {
+						1,
+						"add"
+					}
+				}
 			},
 			{
 				class = "ModifierCivilianAlarm",
 				id = "civs_2",
 				icon = "crime_spree_civs_killed",
 				level = 52,
-				data = {count = {
-					1,
-					"min"
-				}}
+				data = {
+					count = {
+						4,
+						"min"
+					}
+				}
 			},
 			{
 				class = "ModifierLessPagers",
 				id = "pagers_2",
-				icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
+				icon = "crime_spree_pager",
 				level = 78,
-				data = {}
+				data = {
+					count = {
+						2,
+						"max"
+					}
+				}
 			},
 			{
 				class = "ModifierLessConcealment",
 				id = "conceal_2",
-				icon = "crime_spree_dun_dun_dun_dunna",
+				icon = "crime_spree_concealment",
 				level = 104,
-				data = {}
+				data = {
+					conceal = {
+						1,
+						"add"
+					}
+				}
 			},
 			{
 				class = "ModifierLessPagers",
 				id = "pagers_3",
-				icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
+				icon = "crime_spree_pager",
 				level = 130,
-				data = {}
+				data = {
+					count = {
+						3,
+						"max"
+					}
+				}
 			},
 			{
 				class = "ModifierCivilianAlarm",
 				id = "civs_3",
 				icon = "crime_spree_civs_killed",
 				level = 156,
-				data = {count = {
-					0,
-					"min"
-				}}
+				data = {
+					count = {
+						2,
+						"min"
+					}
+				}
 			},
 			{
 				class = "ModifierLessPagers",
 				id = "pagers_4",
-				icon = "crime_spree_call_me_and_tell_me_i_am_not_alone",
+				icon = "crime_spree_pager",
 				level = 182,
-				data = {}
+				data = {
+					count = {
+						4,
+						"max"
+					}
+				}
 			}
 		}
 	}

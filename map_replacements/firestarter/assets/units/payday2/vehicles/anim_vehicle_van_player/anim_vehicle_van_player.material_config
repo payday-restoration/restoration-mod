@@ -1,0 +1,90 @@
+<materials version="3" group="anim_vehicle_van_player">
+    <material name="mtr_exterior" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_BIGPROPS:SKINNED_1WEIGHT" version="2">
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_midday_hcm"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_van_player/exterior_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_van_player/exterior_nm"/>
+    </material>
+    <material name="mtr_exterior_wrecked" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_van_dest/exterior_wrecked_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_van_dest/exterior_wrecked_nm"/>
+    </material>
+    <material name="mtr_interior" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_BIGPROPS:SKINNED_1WEIGHT" version="2">
+        <bump_normal_texture file="units/payday2/vehicles/str_vehicle_van_player/interior_nm"/>
+        <diffuse_texture file="units/payday2/vehicles/str_vehicle_van_player/interior_df"/>
+    </material>
+    <material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:OPACITY_FADE" version="2">
+        <variable value="0 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="mtr_glass_shattered" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:NORMALMAP:OPACITY_FADE" version="2">
+        <variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+    <material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/merit_head_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/merit_head_df"/>
+    </material>
+    <material name="mtr_suite_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/suite_body_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/suite_driver_body_df"/>
+    </material>
+    <material name="mtr_hands" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/criminal_gloves_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/driver_gloves_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_BLOOM" name="glowing" version="2">
+        <variable type="scalar" name="il_multiplier" value="desklight"/>
+        <diffuse_texture file="units/world/props/apartment/facade_light/facade_light_df"/>
+        <self_illumination_texture file="units/world/props/apartment/facade_light/facade_light_il"/>
+        <variable type="scalar" name="il_bloom" value="2.0150000957074"/>
+    </material>
+    <material name="mtr_lootbag" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/pickups/gen_pku_lootbag/gen_pku_lootbag_df"/>
+        <bump_normal_texture file="units/payday2/pickups/gen_pku_lootbag/gen_pku_lootbag_nm"/>
+    </material>
+    <material name="mtr_canvasbag" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/pickups/gen_pku_canvasbag/gen_pku_canvasbag_df"/>
+        <bump_normal_texture file="units/payday2/pickups/gen_pku_canvasbag/gen_pku_canvasbag_nm"/>
+    </material>
+
+    <material name="hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_contour" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+
+    <material name="mat_indicator_driver" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_drive_driver_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_indicator_passenger" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_drive_passenger_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_indicator_trunk" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_drive_trunk_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_indicator_repair" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_drive_repair_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+</materials>

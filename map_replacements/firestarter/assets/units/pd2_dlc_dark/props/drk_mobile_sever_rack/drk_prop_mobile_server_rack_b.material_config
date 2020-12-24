@@ -1,0 +1,29 @@
+<materials version="3">
+    <material name="mat_bry_glow1" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_UVANIM" version="2">
+        <diffuse_texture file="units/pd2_dlc_berry/props/bry_prop_servers/bry_prop_server_glow_df"/>
+        <self_illumination_texture file="units/pd2_dlc_berry/props/bry_prop_servers/bry_prop_server_glow_df"/>
+        <variable value="searchlight" type="scalar" name="il_multiplier"/>
+        <variable value="0 1.1000000238419 0" type="vector3" name="uv_speed"/>
+    </material>
+    <material name="mat_bry_glow2" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_UVANIM" version="2">
+        <diffuse_texture file="units/pd2_dlc_berry/props/bry_prop_servers/bry_prop_server_glow_df"/>
+        <self_illumination_texture file="units/pd2_dlc_berry/props/bry_prop_servers/bry_prop_server_glow_df"/>
+        <variable value="searchlight" type="scalar" name="il_multiplier"/>
+        <variable value="0 -1 0" type="vector3" name="uv_speed"/>
+    </material>
+    <material name="mat_bry_glow3" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_UVANIM" version="2">
+        <diffuse_texture file="units/pd2_dlc_berry/props/bry_prop_servers/bry_prop_server_glow_df"/>
+        <self_illumination_texture file="units/pd2_dlc_berry/props/bry_prop_servers/bry_prop_server_glow_df"/>
+        <variable value="0 -1.1000000238419 0" type="vector3" name="uv_speed"/>
+        <variable value="searchlight" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="mat_drk_prop_mobile_server" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_mobile_server_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_mobile_server_nm"/>
+    </material>
+    <material name="mat_drk_prop_mobile_server_rack" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_dark/props/drk_mobile_sever_rack/prop_mobile_server_rack_df"/>
+        <bump_normal_texture file="units/pd2_dlc_dark/props/drk_mobile_sever_rack/prop_mobile_server_rack_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

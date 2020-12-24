@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92" />
+   <dependencies>
+	<depends_on effect="effects/particles/weapons/silenced/muzzleflash_3dp" />
+		<depends_on bnk="soundbanks/weapon_beretta" />
+  </dependencies>
+  <extensions>
+  	<extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCRaycastWeaponBase" >
+			<var name="name_id" value="beretta92_titan_npc" />
+    </extension>
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+    <soundsource name="root" source="rp_beretta" />
+    <default_soundsource source="rp_beretta" />
+  </sounds>
+</unit>

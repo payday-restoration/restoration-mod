@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor" orientation_object="rp_lcm_prop_securitydoor_01" />
+  <sequence_manager file="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01"/>
+  <animations>
+	<animation_group name="anim" enabled="false" >
+		<object name="a_door" />
+	</animation_group>
+  </animations>
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_lcm_prop_securitydoor_01" />
+			<object name="g_lcm_prop_securitydoor_1" collision_type="mesh_mopp" />
+		</body>
+		<body name="animated_body" enabled="true" template="animated">
+			<object name="a_door" />
+			<object name="g_lcm_prop_securitydoor_1_anim" collision_type="box" />
+		</body>
+		<body name="body_hitbox" enabled="false" template="static" collides_with_mover="false" pushed_by_mover="false">
+			<object name="rp_lcm_prop_securitydoor_01" />
+			<object name="c_hitbox" collision_type="box" />
+		</body>
+	</bodies>
+	
+	<decal_surfaces default_material="metal" static="true">
+		<decal_mesh name="g_lcm_prop_securitydoor_1" enabled="true" material="metal" />
+		<decal_mesh name="g_lcm_prop_securitydoor_1_anim" enabled="true" material="metal" />
+	</decal_surfaces>
+	
+	<graphics>
+		<object name="g_lcm_prop_securitydoor_1" enabled="true" />
+		<object name="g_lcm_prop_securitydoor_1_anim" enabled="true" />
+	</graphics>
+</dynamic_object>

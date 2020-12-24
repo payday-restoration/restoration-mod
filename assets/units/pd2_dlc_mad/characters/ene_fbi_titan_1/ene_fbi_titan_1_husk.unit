@@ -7,6 +7,7 @@
         
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
         <depends_on unit="units/pd2_dlc_mad/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" />
+		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan" />
     </dependencies>
 
     <extensions>
@@ -14,7 +15,7 @@
         <extension name="base" class="HuskCopBase" >
             <var name="can_be_marked" value="true" />
             <var name="_tweak_table" value="swat_titan" />
-            <var name="_default_weapon_id" value="mp5" />
+            <var name="_default_weapon_id" value="sr2_titan" />
         </extension>
         <extension name="inventory" class="HuskCopInventory" />
         <extension name="brain" class="HuskCopBrain" />

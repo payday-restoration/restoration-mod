@@ -1,0 +1,14 @@
+<materials version="3" >
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" name="mat_str_veg_park_tree_redoak_trunk" version="2">
+        <diffuse_texture file="units/payday2/nature/eus/eus_veg_forest_tree_redoak/eus_veg_forest_tree_redoak_df"/>
+        <bump_normal_texture file="units/payday2/nature/eus/eus_veg_forest_tree_redoak/eus_veg_forest_tree_redoak_nm"/>
+    </material>
+    <material render_template="generic:ALIGN_NORMAL_WORLD_Z:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:INSTANCED:NORMALMAP:VEGETATION_BENDING" version="2" name="mat_str_veg_park_tree_redoak">
+        <diffuse_texture file="units/payday2/nature/eus/eus_veg_forest_tree_redoak/eus_veg_forest_tree_redoak_df"/>
+        <bump_normal_texture file="units/payday2/nature/eus/eus_veg_forest_tree_redoak/eus_veg_forest_tree_redoak_nm"/>
+        <variable type="scalar" name="speed" value="1.4980000711512"/>
+        <variable type="vector3" name="detail_settings" value="54.995002746582 0.097000002861023 0"/>
+        <variable type="vector3" name="branch_settings" value="32.397003173828 0.29900002479553 0"/>
+        <variable type="scalar" name="alpha_ref" value="0.032000001519918"/>
+    </material>
+</materials>

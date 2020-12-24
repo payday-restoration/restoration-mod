@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_bnk_prop_vault_loot_crap_d" materials="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_d" />
+    <bodies>
+        <body enabled="true" template="editor" name="static_body" >
+            <object collision_type="box" name="c_box_editor" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

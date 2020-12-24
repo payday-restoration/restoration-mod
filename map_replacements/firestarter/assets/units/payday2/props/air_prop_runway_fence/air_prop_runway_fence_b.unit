@@ -1,0 +1,6 @@
+<unit type="air" slot="1" >
+    <object file="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence_b" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

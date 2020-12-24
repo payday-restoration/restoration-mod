@@ -4,7 +4,7 @@ function ExperienceManager:get_current_job_day_multiplier()
 	end
 	local current_job_day = managers.job:current_stage()
 	local is_current_job_professional = Global.game_settings.one_down
-	if not is_current_job_professional or not tweak_data:get_value("experience_manager", "pro_day_multiplier", current_job_day) then
+	if not is_current_job_professional or not tweak_data:get_value("experience_manager", "pro_job_new", current_job_day) then
 	end
 	return (tweak_data:get_value("experience_manager", "day_multiplier", current_job_day))
 end

@@ -18,3 +18,14 @@ function JobManager:check_ponr_active()
 
 	return false
 end
+
+function JobManager:current_job_and_difficulty_stars()
+	local difficulty = Global.game_settings.difficulty or "easy"
+	local difficulty_id = math.max(0, (tweak_data:difficulty_to_index(difficulty) or 0) - 2)
+
+	return math.clamp(self:current_job_stars() + difficulty_id, 1, 13)
+end
+
+function JobManager:check_add_heat_to_jobs()
+	self:_check_add_heat_to_jobs()
+end

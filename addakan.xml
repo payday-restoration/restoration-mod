@@ -208,6 +208,9 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
 	<material_config path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
 	<texture path="units/pd2_dlc_mad/characters/shared_textures/ene_titan_fbi_df" force="false"/>	
+		
+	<!--Titan HRT SR2-->	
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan" load="false" force="false"/>		
 	
 	<!--Titandozer-->	
 	<object path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
@@ -311,5 +314,8 @@
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df"/>
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_ru_df"/>
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_helmet_ru_df"/>
+	
+	<!--AK102-->	
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_ak102/wpn_npc_ak102" load="false" force="false"/>		
 	
 </table>

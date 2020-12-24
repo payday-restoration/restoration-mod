@@ -13,7 +13,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="heavy_swat" />
-			<var name="_default_weapon_id" value="m4" />
+			<var name="_default_weapon_id" value="amcar" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

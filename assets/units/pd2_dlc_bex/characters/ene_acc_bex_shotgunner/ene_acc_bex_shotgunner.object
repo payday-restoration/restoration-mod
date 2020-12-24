@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump" orientation_object="rp_ene_acc_lzsh_sg" />
+	
+	<bodies>
+		<body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="rp_ene_acc_lzsh_sg" />
+			<object name="c_sphere_front" 	collision_type="sphere" mass="0.6" />
+			<object name="c_sphere_rear" 	collision_type="sphere" mass="0.6" />
+			<object name="c_box" 			collision_type="box" 	mass="0.3" />
+		</body>
+		
+		<body name="gasmask" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
+			<object name="c_gasmask" collision_type="convex" mass="0.3" />
+			<object name="g_gasmask" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel_no_decal"/>
+
+	<graphics>
+		<lod_object name="lod_ene_acc_shotgunner">
+			<object name="g_helmet" enabled="true" >
+				<material materials="mtr_helmet" max_distance="1000" />
+				<material materials="mtr_helmet_lod_1" max_distance="1500" />
+				<material materials="mtr_helmet_lod_2" /> 
+			</object>
+		</lod_object>
+		<lod_object name="lod_ene_acc_gasmask">
+			<object name="g_gasmask" enabled="true" >
+				<material materials="mtr_helmet" max_distance="1000" />
+				<material materials="mtr_helmet_lod_1" max_distance="1500" />
+				<material materials="mtr_helmet_lod_2" /> 
+			</object>
+		</lod_object>		
+	</graphics>
+	
+</dynamic_object>

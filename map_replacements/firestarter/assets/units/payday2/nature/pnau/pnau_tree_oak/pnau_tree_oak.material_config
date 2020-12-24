@@ -1,0 +1,15 @@
+<materials version="3">
+    <material version="2" decal_material="foliage" name="mat_pnau_tree_oak_leafs" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:OPACITY_TEXTURE:VEGETATION_BENDING">
+        <diffuse_texture file="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_leaves_df"/>
+        <variable value="0.5" type="scalar" name="alpha_ref"/>
+        <opacity_texture file="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_leaves_op"/>
+        <variable value="0.5" type="scalar" name="speed"/>
+        <variable value="5 0.5 0" type="vector3" name="detail_settings"/>
+        <variable value="30 0.10000000149012 0" type="vector3" name="branch_settings"/>
+    </material>
+    <material version="2" decal_material="wood" name="mat_pnau_tree_oak_trunk" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR">
+        <bump_normal_texture file="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_bark_nm"/>
+        <diffuse_texture file="units/payday2/nature/pnau/pnau_tree_oak/pnau_tree_oak_bark_df"/>
+    </material>
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+</materials>

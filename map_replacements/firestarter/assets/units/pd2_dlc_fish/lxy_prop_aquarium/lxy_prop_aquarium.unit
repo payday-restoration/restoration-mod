@@ -1,0 +1,20 @@
+<unit type="lxy" slot="1">
+	<object file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on effect="effects/payday2/particles/water/water_bubbles_jet" />
+		<depends_on effect="effects/payday2/particles/water/water_bubbles" />
+		<depends_on effect="effects/payday2/particles/water/water_tank" />
+		<depends_on effect="effects/payday2/particles/water/water_tank3" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+	<sounds>
+		<default_soundsource source="rp_lxy_prop_aquarium"/>
+		<soundsource name="snd_01" source="snd_source_01" />
+		<soundsource name="snd_02" source="snd_source_02" />
+	</sounds>
+</unit>

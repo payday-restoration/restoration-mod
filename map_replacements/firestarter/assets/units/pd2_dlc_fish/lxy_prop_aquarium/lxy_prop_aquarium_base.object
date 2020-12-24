@@ -1,0 +1,63 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium" orientation_object="rp_lxy_prop_aquarium_base" />
+	<sequence_manager file="units/pd2_dlc_fish/lxy_prop_aquarium/lxy_prop_aquarium_base" />
+	
+	<animations>
+		<animation_group name="anim_doors" enabled="false">
+			<object name="anim_door_01" />
+			<object name="anim_door_02" />
+			<object name="anim_door_03" />
+			<object name="anim_door_04" />
+		</animation_group>	
+	</animations>
+
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_lxy_prop_aquarium_base" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />			
+			<object name="c_box_04" collision_type="box" padding="-2.5" />
+			<object name="c_box_05" collision_type="box" padding="-2.5" />
+			<object name="c_box_06" collision_type="box" padding="-2.5" />
+			<object name="c_box_07" collision_type="box" padding="-2.5" />
+			<object name="c_box_08" collision_type="box" padding="-2.5" />
+		</body>	
+		<body name="body_blocker" enabled="true" template="static">
+			<object name="rp_lxy_prop_aquarium_base" />
+			<object name="c_box_blocker" collision_type="box" />
+		</body>
+	</bodies>
+
+	<decal_surfaces >
+		<decal_mesh name="dm_base_wood" 	enabled="true" material="wood" />
+		<decal_mesh name="dm_wood_door_01" 	enabled="true" material="wood" />
+		<decal_mesh name="dm_wood_door_02" 	enabled="true" material="wood" />
+		<decal_mesh name="dm_wood_door_03" 	enabled="true" material="wood" />
+		<decal_mesh name="dm_wood_door_04" 	enabled="true" material="wood" />
+		<decal_mesh name="dm_wood_door_05" 	enabled="true" material="wood" />
+		<decal_mesh name="dm_wood_door_06" 	enabled="true" material="wood" />
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="g_base_grp" enabled="true">
+			<lod_object name="lod_g_base">
+				<object name="g_base_lod0" enabled="true"  max_distance="1000" />
+				<object name="g_base_lod1" enabled="true"  max_distance="2300" />
+				<object name="g_base_lod2" enabled="true" />
+			</lod_object>
+			<object name="s_base" 			enabled="true" shadow_caster="true"/>
+			<object name="g_interior" 		enabled="true" />
+			<object name="g_door_01" 		enabled="true" />
+			<object name="g_door_02" 		enabled="true" />
+			<object name="g_door_03" 		enabled="true" />
+			<object name="g_door_04" 		enabled="true" />
+			<object name="g_panels" 		enabled="true" />
+		</graphic_group>
+		<graphic_group name="icons" enabled="false" >
+			<lod_object name="lod_icons">
+				<object name="g_icon_lod0" enabled="true"  max_distance="400" />
+				<object name="g_icon_lod1" enabled="true" />
+			</lod_object>
+		</graphic_group>
+	</graphics>
+</dynamic_object>

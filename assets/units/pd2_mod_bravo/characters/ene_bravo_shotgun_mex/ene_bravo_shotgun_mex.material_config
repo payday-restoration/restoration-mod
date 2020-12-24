@@ -1,0 +1,42 @@
+<materials version="3" group="ene_bravo_shotgun_mex">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_df" mip="1"/>
+	</material>
+		<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_policia_01/ene_bex_cop_policia_head_atlas_df" mip="4"/>
+	</material>
+
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_mex_df"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_mex_df" mip="1"/>
+	</material>
+	<material name="mtr_body_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_mex_df" mip="4"/>
+	</material>
+	
+	<material name="mtr_hat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_nm" />
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_df" />
+	</material>
+	<material name="mtr_hat_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_df" mip="1"/>
+	</material>
+		<material name="mtr_hat_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_df" mip="4"/>
+	</material>
+	
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

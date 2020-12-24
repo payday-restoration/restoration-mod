@@ -1,6 +1,4 @@
 <table name="shatters_fury">
-    <Localization directory="Localization" default="english.txt">
-    </Localization>
     <GlobalValue id="shatters_fury" color="Color(1, 0.5, 0)"/>
     <WeaponMod based_on="wpn_fps_pis_rage_body_standard" id="wpn_fps_pis_shatters_fury_body_standard" unit="units/mods/weapons/wpn_fps_pis_shatters_fury_pts/wpn_fps_pis_shatters_fury_body_standard" type="body" drop="false" is_a_unlockable="false"/>
     

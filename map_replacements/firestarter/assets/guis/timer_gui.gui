@@ -1,0 +1,16 @@
+<gui>
+	<preload texture="guis/textures/drill_screen_background"/>
+	<preload texture="guis/textures/pd2/skilltree/drillgui_icon_silent"/>
+	<preload texture="guis/textures/pd2/skilltree/drillgui_icon_faster"/>
+	<preload texture="guis/textures/pd2/skilltree/drillgui_icon_restarter"/>
+		
+	<panel name_s="panel" halign_s="grow" valign_s="grow">
+		<rect name_s="timer" color="tweak_data.hud.prime_color" vertical_s="center" layer="4"/>
+		<rect name_s="timer_background" color="Color(0.5, 0, 0, 0)" vertical_s="center" layer="3"/>
+		<bitmap name_s="drill_screen_background" texture_s="guis/textures/drill_screen_background" layer="1" color="Color( 1, 1, 1 )" w="256" h="256"/>
+		<text name_s="working_text" visible="false" color="tweak_data.hud.prime_color" font_s="fonts/font_large_mf" text_s="WORKING" align_s="center" vertical_s="center" layer="3" font_size="2" render_template_s="OverlayVertexColorTextured"/>
+		<text name_s="time_header_text" visible="false" color="tweak_data.hud.prime_color" font_s="fonts/font_large_mf" text_id_s="prop_timer_gui_estimated_time" align_s="center" vertical_s="center" layer="3" font_size="2" render_template_s="OverlayVertexColorTextured"/>
+		<text name_s="time_text" visible="false" color="tweak_data.hud.prime_color" font_s="fonts/font_large_mf" text_s="48 SECONDS" align_s="center" vertical_s="center" layer="3" font_size="2" render_template_s="OverlayVertexColorTextured"/>
+		<rect name_s="bg_rect" color="Color.white" vertical_s="center" visible="false" layer="1"/>
+    </panel>
+</gui>

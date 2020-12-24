@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_dark/props/drk_mobile_sever_rack/drk_prop_mobile_server_rack_b" orientation_object="rp_drk_prop_mobile_server_rack_b" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_drk_prop_mobile_server_rack_b" />
+			<object name="c_box" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="plastic">
+		<decal_mesh name="dm_plastic" enabled="true" material="plastic" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_g" enabled="true" />
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

@@ -1,6 +1,5 @@
 <table name="MK23" image="guis/socom" color="Color(0.01,0.62,0.98)">
 
-	<Localization directory="loc" default="english.txt"/>
 	<GlobalValue id="socom" color="Color(1, 0.5, 0)"/>
 	
 	<WeaponMod id="wpn_fps_pis_socom_frame" based_on="wpn_fps_pis_usp_body_standard" type="lower_reciever" unit="units/mods/weapons/wpn_fps_pis_socom_pts/wpn_fps_pis_socom_frame" drop="false" is_a_unlockable="false"/>

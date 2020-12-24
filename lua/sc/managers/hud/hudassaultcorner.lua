@@ -25,6 +25,12 @@ Hooks:PostHook(HUDAssaultCorner, "init", "SCHUDAssaultInit", function(self)
 			break
 		end
 	end	
+	
+	--Skirmish exclusive stuff
+	if managers.skirmish:is_skirmish() then		
+		buff_icon = "guis/textures/pd2/hud_buff_generic"
+	end	
+	
 	if alive(self._vip_bg_box) and alive(self._vip_bg_box:child("vip_icon")) then
 		self._vip_bg_box:child("vip_icon"):set_image(buff_icon)
 	end

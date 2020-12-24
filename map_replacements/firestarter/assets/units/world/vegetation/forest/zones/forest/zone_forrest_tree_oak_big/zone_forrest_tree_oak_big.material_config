@@ -1,0 +1,20 @@
+<materials version="3">
+    <material render_template="generic:ALIGN_NORMAL_WORLD_Z:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:INSTANCED:VEGETATION_BENDING" version="2" name="tree_oak_leaves">
+        <diffuse_texture file="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_leafs_df"/>
+        <variable value="0.15000000596046" type="scalar" name="normal_world_z_blend"/>
+        <variable value="13.825000762939 0.42400002479553 0" type="vector3" name="branch_settings"/>
+        <variable value="0.035000000149012" type="scalar" name="alpha_ref"/>
+        <variable value="0.69100004434586" type="scalar" name="speed"/>
+        <variable value="7.3730001449585 0.30000001192093 0" type="vector3" name="detail_settings"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:VERTEX_COLOR" name="tree_oak_trunk">
+        <diffuse_texture file="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_trunk_df"/>
+        <bump_normal_texture file="units/world/vegetation/forest/zones/forest/zone_forrest_tree_oak_big/zone_forrest_tree_oak_trunk_nm"/>
+    </material>
+    <material name="mtr_zone_forrest_tree_oak" render_template="generic:DIFFUSE_TEXTURE" version="2" >
+        <diffuse_texture file="units/white_df"/>
+    </material>
+    <material name="mtr_zone_forrest_tree_oak_leafs" render_template="generic:DIFFUSE_TEXTURE" version="2" >
+        <diffuse_texture file="units/white_df"/>
+    </material>
+</materials>

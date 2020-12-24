@@ -1,0 +1,53 @@
+<materials version="3" group="helicopter_variations">
+    <material name="mtr_helicopter" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_BIGPROPS">
+        <diffuse_texture file="units/vehicles/helicopter/helicopter_ranger/police_df"/>
+    </material>
+    <material name="mtr_helicopter_diamond" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_BIGPROPS">
+        <diffuse_texture file="units/vehicles/helicopter/helicopter_ranger/news_df"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" decal_material="glass_breakable" name="mtr_glass_shattered" version="2">
+        <diffuse_texture file="units/glass/vehicle_glass_dark2_df"/>
+        <bump_normal_texture file="units/vehicles/window/glass_shattered_nm"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="2 1 0.59999001026154" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="mtr_glass_breakable" decal_material="glass_breakable" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/glass/vehicle_glass_dark2_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+        <variable value="2 1 0.59999001026154" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="light_cone" decal_material="sheet_metal" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:INSTANCED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/world/street/street_lights/cone_light_df"/>
+        <variable value="2" type="scalar" name="falloff_exp"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+    <material name="blue_diod" decal_material="sheet_metal" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:INSTANCED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/vehicles/helicopter/helicopter_ranger/light_glow_blue_df"/>
+        <variable value="9.9900999069214" type="scalar" name="falloff_exp"/>
+        <variable value="desklight" type="scalar" name="intensity"/>
+        <variable value="-0 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material name="red_diod" decal_material="sheet_metal" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:INSTANCED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/vehicles/helicopter/helicopter_ranger/light_glow_df"/>
+        <variable value="9.9900999069214" type="scalar" name="falloff_exp"/>
+        <variable value="neonsign" type="scalar" name="intensity"/>
+        <variable value="0 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material name="red_diod_blink" decal_material="sheet_metal" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:INSTANCED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/vehicles/helicopter/helicopter_ranger/light_glow_df"/>
+        <variable value="8" type="scalar" name="falloff_exp"/>
+        <variable value="desklight" type="scalar" name="intensity"/>
+        <variable value="1 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material name="white_diod_blink" decal_material="sheet_metal" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:INSTANCED:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/vehicles/helicopter/helicopter_ranger/light_glow_white_df"/>
+        <variable value="7" type="scalar" name="falloff_exp"/>
+        <variable value="match" type="scalar" name="intensity"/>
+        <variable value="0.43300008773804 5 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material version="2" name="rotor_blade" render_template="effect:DIFFUSE0_TEXTURE:DIFFUSE1_TEXTURE">
+        <diffuse_texture file="units/vehicles/helicopter/helicopter_ranger/police_rotor_blur_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <detail_diffuse_texture file="units/vehicles/helicopter/helicopter_ranger/police_rotor_blur_df"/>
+    </material>
+</materials>

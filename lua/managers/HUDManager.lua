@@ -598,118 +598,115 @@ if restoration.Options:GetValue("HUD/Waypoints") then
 	end
 end
 
-if not restoration.Options:GetValue("HUD/Teammate") then
-	return
-end
-
-HUDManager.PLAYER_PANEL = _G.BigLobbyGlobals and BigLobbyGlobals:num_player_slots() or 4
-
-function HUDManager:_create_teammates_panel(hud)
-	hud = hud or managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)
-	self._hud.teammate_panels_data = self._hud.teammate_panels_data or {}
-	self._teammate_panels = {}
-	if hud.panel:child("teammates_panel") then
-		hud.panel:remove(hud.panel:child("teammates_panel"))
-	end
-	local h = 152
-	local teammates_panel = hud.panel:panel({
-		name = "teammates_panel",
-		h = h,
-		y = hud.panel:h() - h,
-		halign = "grow",
-		valign = "bottom"
-	})
-	local teammate_w = 204
-	local player_gap = 240
-	local small_gap = (teammates_panel:w() - player_gap - teammate_w * HUDManager.PLAYER_PANEL) / (HUDManager.PLAYER_PANEL - 1)
-	for i = 1, HUDManager.PLAYER_PANEL do
-		local is_player = i == HUDManager.PLAYER_PANEL
-		self._hud.teammate_panels_data[i] = {
-			taken = false and is_player,
-			special_equipments = {}
-		}
-		local pw = teammate_w
-		local teammate = HUDTeammate:new(i, teammates_panel, is_player, pw)
-		local x = math.floor((pw + small_gap) * (i - 1) + (i == HUDManager.PLAYER_PANEL and player_gap or 0))
-		teammate._panel:set_x(math.floor(x))
-		table.insert(self._teammate_panels, teammate)
-		if is_player then
-			teammate:add_panel()
+if restoration:all_enabled("HUD/MainHUD", "HUD/Teammate") then
+	function HUDManager:_create_teammates_panel(hud)
+		HUDManager.PLAYER_PANEL = _G.BigLobbyGlobals and BigLobbyGlobals:num_player_slots() or 4
+		hud = hud or managers.hud:script(PlayerBase.PLAYER_INFO_HUD_PD2)
+		self._hud.teammate_panels_data = self._hud.teammate_panels_data or {}
+		self._teammate_panels = {}
+		if hud.panel:child("teammates_panel") then
+			hud.panel:remove(hud.panel:child("teammates_panel"))
 		end
-	end
-end
-
-function HUDManager:teammate_progress(peer_id, type_index, enabled, tweak_data_id, timer, success)
-	local name_label = self:_name_label_by_peer_id(peer_id)
-	if name_label then
-		name_label.interact:set_visible(enabled)
-		name_label.panel:child("action"):set_visible(enabled)
-		local action_text = ""
-		if type_index == 1 then
-			action_text = managers.localization:text(tweak_data.interaction[tweak_data_id].action_text_id or "hud_action_generic")
-			--action_text = managers.localization:text("hud_action_generic")
-		elseif type_index == 2 then
-			if enabled then
-				local equipment_name = managers.localization:text(tweak_data.equipments[tweak_data_id].text_id)
-				local deploying_text = tweak_data.equipments[tweak_data_id].deploying_text_id and managers.localization:text(tweak_data.equipments[tweak_data_id].deploying_text_id) or false
-				action_text = deploying_text or managers.localization:text("hud_deploying_equipment", {EQUIPMENT = equipment_name})
+		local h = 152
+		local teammates_panel = hud.panel:panel({
+			name = "teammates_panel",
+			h = h,
+			y = hud.panel:h() - h,
+			halign = "grow",
+			valign = "bottom"
+		})
+		local teammate_w = 204
+		local player_gap = 240
+		local small_gap = (teammates_panel:w() - player_gap - teammate_w * HUDManager.PLAYER_PANEL) / (HUDManager.PLAYER_PANEL - 1)
+		for i = 1, HUDManager.PLAYER_PANEL do
+			local is_player = i == HUDManager.PLAYER_PANEL
+			self._hud.teammate_panels_data[i] = {
+				taken = false and is_player,
+				special_equipments = {}
+			}
+			local pw = teammate_w
+			local teammate = HUDTeammate:new(i, teammates_panel, is_player, pw)
+			local x = math.floor((pw + small_gap) * (i - 1) + (i == HUDManager.PLAYER_PANEL and player_gap or 0))
+			teammate._panel:set_x(math.floor(x))
+			table.insert(self._teammate_panels, teammate)
+			if is_player then
+				teammate:add_panel()
 			end
-		elseif type_index == 3 then
-			action_text = managers.localization:text("hud_starting_heist")
-		end
-		name_label.panel:child("action"):set_text(utf8.to_upper(action_text))
-		name_label.panel:stop()
-		if enabled then
-			name_label.panel:animate(callback(self, self, "_animate_label_interact"), name_label.interact, timer)
-		elseif success then
-			local panel = name_label.panel
-			local bitmap = panel:bitmap({
-				rotation = 360,
-				texture = "guis/textures/restoration/hud_progress_active",
-				blend_mode = "add",
-				align = "center",
-				valign = "center",
-				layer = 2
-			})
-			bitmap:set_size(name_label.interact:size())
-			bitmap:set_position(name_label.interact:position())
-			local radius = name_label.interact:radius()
-			local circle = CircleBitmapGuiObject:new(panel, {
-				rotation = 360,
-				radius = radius,
-				color = Color.white:with_alpha(1),
-				blend_mode = "normal",
-				layer = 3
-			})
-			circle:set_position(name_label.interact:position())
-			bitmap:animate(callback(HUDInteraction, HUDInteraction, "_animate_interaction_complete"), circle)
 		end
 	end
-	local character_data = managers.criminals:character_data_by_peer_id(peer_id)
-	if character_data then
-		self._teammate_panels[character_data.panel_id]:teammate_progress(enabled, tweak_data_id, timer, success)
-	end
-end
 
-function HUDManager:hide_player_gear(panel_id)
-	if self._teammate_panels[panel_id] and self._teammate_panels[panel_id]:panel() and self._teammate_panels[panel_id]:panel():child("player") then
-		local player_panel = self._teammate_panels[panel_id]:panel():child("player")
-		player_panel:child("weapons_panel"):set_visible(false)
-		player_panel:child("deployable_equipment_panel"):set_visible(false)
-		player_panel:child("cable_ties_panel"):set_visible(false)
-        if player_panel:child("grenades_panel") then
-                player_panel:child("grenades_panel"):set_visible(false)
-        end
+	function HUDManager:teammate_progress(peer_id, type_index, enabled, tweak_data_id, timer, success)
+		local name_label = self:_name_label_by_peer_id(peer_id)
+		if name_label then
+			name_label.interact:set_visible(enabled)
+			name_label.panel:child("action"):set_visible(enabled)
+			local action_text = ""
+			if type_index == 1 then
+				action_text = managers.localization:text(tweak_data.interaction[tweak_data_id].action_text_id or "hud_action_generic")
+				--action_text = managers.localization:text("hud_action_generic")
+			elseif type_index == 2 then
+				if enabled then
+					local equipment_name = managers.localization:text(tweak_data.equipments[tweak_data_id].text_id)
+					local deploying_text = tweak_data.equipments[tweak_data_id].deploying_text_id and managers.localization:text(tweak_data.equipments[tweak_data_id].deploying_text_id) or false
+					action_text = deploying_text or managers.localization:text("hud_deploying_equipment", {EQUIPMENT = equipment_name})
+				end
+			elseif type_index == 3 then
+				action_text = managers.localization:text("hud_starting_heist")
+			end
+			name_label.panel:child("action"):set_text(utf8.to_upper(action_text))
+			name_label.panel:stop()
+			if enabled then
+				name_label.panel:animate(callback(self, self, "_animate_label_interact"), name_label.interact, timer)
+			elseif success then
+				local panel = name_label.panel
+				local bitmap = panel:bitmap({
+					rotation = 360,
+					texture = "guis/textures/restoration/hud_progress_active",
+					blend_mode = "add",
+					align = "center",
+					valign = "center",
+					layer = 2
+				})
+				bitmap:set_size(name_label.interact:size())
+				bitmap:set_position(name_label.interact:position())
+				local radius = name_label.interact:radius()
+				local circle = CircleBitmapGuiObject:new(panel, {
+					rotation = 360,
+					radius = radius,
+					color = Color.white:with_alpha(1),
+					blend_mode = "normal",
+					layer = 3
+				})
+				circle:set_position(name_label.interact:position())
+				bitmap:animate(callback(HUDInteraction, HUDInteraction, "_animate_interaction_complete"), circle)
+			end
+		end
+		local character_data = managers.criminals:character_data_by_peer_id(peer_id)
+		if character_data then
+			self._teammate_panels[character_data.panel_id]:teammate_progress(enabled, tweak_data_id, timer, success)
+		end
 	end
-end
-function HUDManager:show_player_gear(panel_id)
-	if self._teammate_panels[panel_id] and self._teammate_panels[panel_id]:panel() and self._teammate_panels[panel_id]:panel():child("player") then
-		local player_panel = self._teammate_panels[panel_id]:panel():child("player")
-		player_panel:child("weapons_panel"):set_visible(true)
-		player_panel:child("deployable_equipment_panel"):set_visible(true)
-		player_panel:child("cable_ties_panel"):set_visible(true)
-        if player_panel:child("grenades_panel") then
-                player_panel:child("grenades_panel"):set_visible(true)
-        end
+
+	function HUDManager:hide_player_gear(panel_id)
+		if self._teammate_panels[panel_id] and self._teammate_panels[panel_id]:panel() and self._teammate_panels[panel_id]:panel():child("player") then
+			local player_panel = self._teammate_panels[panel_id]:panel():child("player")
+			player_panel:child("weapons_panel"):set_visible(false)
+			player_panel:child("deployable_equipment_panel"):set_visible(false)
+			player_panel:child("cable_ties_panel"):set_visible(false)
+			if player_panel:child("grenades_panel") then
+					player_panel:child("grenades_panel"):set_visible(false)
+			end
+		end
+	end
+	function HUDManager:show_player_gear(panel_id)
+		if self._teammate_panels[panel_id] and self._teammate_panels[panel_id]:panel() and self._teammate_panels[panel_id]:panel():child("player") then
+			local player_panel = self._teammate_panels[panel_id]:panel():child("player")
+			player_panel:child("weapons_panel"):set_visible(true)
+			player_panel:child("deployable_equipment_panel"):set_visible(true)
+			player_panel:child("cable_ties_panel"):set_visible(true)
+			if player_panel:child("grenades_panel") then
+					player_panel:child("grenades_panel"):set_visible(true)
+			end
+		end
 	end
 end

@@ -33,13 +33,11 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk" force="false" load="true"/>
 	
 	<!--Murky SWAT Heavy R870-->
+	<unit path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" force="false" load="true"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk" force="false" load="true"/>	
 	<object path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" force="false"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" force="false"/>
 	<model path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" force="false"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" force="false" load="true"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" force="false"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_contour" force="false"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk" force="false" load="true"/>
 	
 	<!--Murky SWAT M4-->
 	<object path="units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1" force="false"/>
@@ -49,6 +47,9 @@
 	<material_config path="units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1" force="false"/>
 	<material_config path="units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1_husk" force="false" load="true"/>
+	
+	<unit_mat path="units/pd2_mod_sharks/characters/ene_acc_murky_swat_helmet/ene_acc_murky_swat_helmet" force="false" load="true"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_swat_helmet/ene_acc_murky_swat_helmet" force="false"/>
 	
 	<!--Murky SWAT R870-->
 	<object path="units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2" force="false"/>
@@ -73,8 +74,6 @@
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="false"/>
 	<model path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="false" load="true"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="false"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" force="false" load="true"/>
 	
 	<!--Murky FBI SWAT UMP-->
@@ -82,8 +81,6 @@
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 	<model path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false" load="true"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" force="false" load="true"/>		
 	
     <!--Murky FBI Heavy M4-->
@@ -114,7 +111,7 @@
 	<unit path="units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1_husk" force="false" load="true"/>   
 	
 	<!--Riflar Helm-->	
-	<unit_mat path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" load="true"/>
+	<unit_obj path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" load="true"/>
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_city_helmet/ene_acc_murky_city_helmet" />
 	
 	<!--Murky City 2-->
@@ -122,8 +119,6 @@
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2" force="false"/>
 	<model path="units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2" force="false" load="true"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2" force="false"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2_husk" force="false" load="true"/>    
 	
 	<!--Murky City 3-->
@@ -131,8 +126,6 @@
 	<cooked_physics path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" force="false"/>
 	<model path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" force="false" load="true"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3" force="false"/>
-	<material_config path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3_contour" force="false"/>
 	<unit path="units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3_husk" force="false" load="true"/>
 	
 	<!--UMPSTER CAP-->	
@@ -548,7 +541,15 @@
 	<!--OMNIA Shield-->
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield" force="false" load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk" force="false" load="true"/>
-			
+	<!--Omnia Riotshield-->
+	<model path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<object path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia" load="true"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<sequence_manager path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/ene_acc_shield_omnia"/>
+	<texture path="units/pd2_mod_omnia/characters/ene_acc_shield_omnia/shield_df"/>	
+
 	<!--OICW-->
 	<object path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
@@ -772,6 +773,7 @@
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky" />
 	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_contour" />
 	<unit path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky_husk"  load="true"/>	
+	
 	<!--textures-->	
 	<texture path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/leaves_df" />	
 	<texture path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/leaves_op" />	

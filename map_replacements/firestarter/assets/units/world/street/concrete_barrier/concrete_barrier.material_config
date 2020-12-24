@@ -1,0 +1,8 @@
+<materials version="3">
+	<material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" decal_material="concrete" version="2" name="mat_concrete_barrier">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/world/street/concrete_barrier/rail_concrete_barrier_01_df"/>
+        <bump_normal_texture file="units/world/street/concrete_barrier/concrete_barrier_01_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

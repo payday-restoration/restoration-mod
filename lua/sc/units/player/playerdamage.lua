@@ -246,33 +246,19 @@ end
 
 --Now has damage_bullet integrated into it with melee specific changes.
 function PlayerDamage:damage_melee(attack_data)
+	local attacker_char_tweak = tweak_data.character[attack_data.attacker_unit:base()._tweak_table]
 	local damage_info = {
 		result = {type = "hurt", variant = "melee"},
 		attacker_unit = attack_data.attacker_unit
 	}
+		
+	local pm = managers.player
 
 	if not self:can_take_damage(attack_data, damage_info) or not self:_chk_can_take_dmg() then
 		return
 	end
 
-	local pm = managers.player
-	local can_counter_strike = pm:has_category_upgrade("player", "counter_strike_melee")
-
-	--Unit specific shenanigans.
-	local _time = math.floor(TimerManager:game():time())
-	local player_unit = managers.player:player_unit()
-	if alive(attack_data.attacker_unit) and can_counter_strike == false then
-		--Titan Taser tase.
-		if alive(player_unit) and not self._unit:movement():current_state().driving and (attack_data.attacker_unit:base()._tweak_table == "taser_titan" or attack_data.attacker_unit:base()._tweak_table == "taser_summers" or attack_data.attacker_unit:base()._tweak_table == "summers" or attack_data.attacker_unit:base()._tweak_table == "fbi_vet_boss") then
-			attack_data.attacker_unit:sound():say("post_tasing_taunt")
-			attack_data.variant = "taser_tased" --they give you an actual tase on a melee attack.
-		elseif attack_data.attacker_unit:base()._tweak_table == "autumn" then
-			attack_data.attacker_unit:sound():say("i03", true, nil, true)
-			pm:set_player_state("arrested")
-		end
-	end
-
-	if can_counter_strike and self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() then
+	if self._unit:movement():current_state().in_melee and self._unit:movement():current_state():in_melee() and not tweak_data.blackmarket.melee_weapons[managers.blackmarket:equipped_melee_weapon()].chainsaw then
 		if attack_data.attacker_unit and alive(attack_data.attacker_unit) and attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().is_husk_player then
 			local is_dozer = attack_data.attacker_unit:base().has_tag and attack_data.attacker_unit:base():has_tag("tank")
 
@@ -284,6 +270,22 @@ function PlayerDamage:damage_melee(attack_data)
 			end
 		end
 	end
+	
+	--Unit specific shenanigans.
+	local _time = math.floor(TimerManager:game():time())
+	local player_unit = managers.player:player_unit()
+	if alive(attack_data.attacker_unit) and not self._unit:movement():current_state().driving then
+		--Titan Taser tase.
+		if alive(player_unit) and attacker_char_tweak and attacker_char_tweak.tase_on_melee then
+			attack_data.attacker_unit:sound():say("post_tasing_taunt")
+			attack_data.variant = "taser_tased" --they give you an actual tase on a melee attack.
+		elseif alive(player_unit) and attacker_char_tweak and attacker_char_tweak.cuff_on_melee then
+			if attack_data.attacker_unit:base()._tweak_table == "autumn" then
+				attack_data.attacker_unit:sound():say("i03", true, nil, true)
+			end
+			pm:set_player_state("arrested")
+		end
+	end	
 
 	local blood_effect = attack_data.melee_weapon and attack_data.melee_weapon == "weapon"
 	blood_effect = blood_effect or attack_data.melee_weapon and tweak_data.weapon.npc_melee[attack_data.melee_weapon] and tweak_data.weapon.npc_melee[attack_data.melee_weapon].player_blood_effect or false
@@ -467,9 +469,9 @@ function PlayerDamage:damage_explosion(attack_data)
 	attack_data.damage = attack_data.damage * (1 - distance / attack_data.range)
 
 	if attack_data.damage > 0 then
-		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("explosion")
 		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
 		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage)
+		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("explosion")
 		local damage_absorption = pm:damage_absorption()
 		if damage_absorption > 0 then
 			attack_data.damage = math.max(0.1, attack_data.damage - damage_absorption)
@@ -666,6 +668,8 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	end
 
 	if attack_data.damage > 0 then
+		attack_data.damage = managers.mutators:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage)
+		attack_data.damage = managers.modifiers:modify_value("PlayerDamage:TakeDamageBullet", attack_data.damage, attack_data.attacker_unit:base()._tweak_table)
 		attack_data.damage = attack_data.damage * pm:damage_reduction_skill_multiplier("bullet")
 		attack_data.damage = pm:modify_value("damage_taken", attack_data.damage, attack_data)
 		local damage_absorption = pm:damage_absorption()
@@ -789,6 +793,64 @@ function PlayerDamage:damage_bullet(attack_data, ...)
 	end
 	
 	return 
+end
+
+--Ignore deflection, just like it should for all other forms of DR.
+function PlayerDamage:damage_killzone(attack_data)
+	local damage_info = {
+		result = {
+			variant = "killzone",
+			type = "hurt"
+		}
+	}
+
+	if self._god_mode or self._invulnerable or self._mission_damage_blockers.invulnerable then
+		self:_call_listeners(damage_info)
+		return
+	elseif self:incapacitated() then
+		return
+	elseif self._unit:movement():current_state().immortal then
+		return
+	end
+	self._unit:sound():play("player_hit")
+
+	if attack_data.instant_death then
+		self:set_armor(0)
+		self:set_health(0)
+		self:_send_set_armor()
+		self:_send_set_health()
+		managers.hud:set_player_health({
+			current = self:get_real_health(),
+			total = self:_max_health(),
+			revives = Application:digest_value(self._revives, false)
+		})
+		self:_set_health_effect()
+		self:_damage_screen()
+		self:_check_bleed_out(nil)
+	else
+		self:_hit_direction(attack_data.col_ray.origin)
+
+		if self._bleed_out then
+			return
+		end
+
+		attack_data.damage = managers.player:modify_value("damage_taken", attack_data.damage, attack_data)
+
+		self:_check_chico_heal(attack_data)
+
+
+		local armor_reduction_multiplier = 0
+		if self:get_real_armor() <= 0 then
+			armor_reduction_multiplier = 1
+		end
+
+		local health_subtracted = self:_calc_armor_damage(attack_data)
+		attack_data.damage = attack_data.damage * armor_reduction_multiplier
+		--Ignore deflection.
+		health_subtracted = health_subtracted + self:_calc_health_damage_no_deflection(attack_data)
+	end
+
+	self:_call_listeners(damage_info)
 end
 
 --Include deflection in calcs. Doesn't work in cases where armor is pierced, but I can't be assed to fix it.
@@ -920,16 +982,9 @@ function PlayerDamage:get_missing_revives()
 	return self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0) - self:get_revives()
 end
 
-function PlayerDamage:_calc_health_damage(attack_data)
+function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	local health_subtracted = 0
 	health_subtracted = self:get_real_health()
-	local deflection = self._deflection
-	if self:has_temp_health() then --Hitman deflection bonus.
-		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
-	end
-
-	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
-
 	if managers.player:has_category_upgrade("player", "dodge_stacking_heal") and attack_data.damage > 0.0 then --End Rogue health regen.
 		self._damage_to_hot_stack = {}
 	end
@@ -960,6 +1015,17 @@ function PlayerDamage:_calc_health_damage(attack_data)
 	self:_set_health_effect()
 	managers.statistics:health_subtracted(health_subtracted)
 	return health_subtracted
+end
+
+function PlayerDamage:_calc_health_damage(attack_data)
+	local deflection = self._deflection
+	if self:has_temp_health() then --Hitman deflection bonus.
+		deflection = deflection - managers.player:upgrade_value("player", "temp_health_deflection", 0)
+	end
+
+	attack_data.damage = attack_data.damage * deflection --Apply Deflection DR.
+
+	return self:_calc_health_damage_no_deflection(attack_data)
 end
 
 function PlayerDamage:clbk_kill_taunt_spring(attack_data)
@@ -1281,6 +1347,18 @@ function PlayerDamage:add_revive()
 	)
 end
 
+--Make Ex-Pres only consume stored health that actually goes to healing.
+function PlayerDamage:consume_armor_stored_health(amount)
+	if self._armor_stored_health and not self._dead and not self._bleed_out and not self._check_berserker_done then
+		local old_health = self:get_real_health()
+		self:change_health(self._armor_stored_health)
+		local new_health = self:get_real_health()
+		self._armor_stored_health = self._armor_stored_health - (new_health - old_health)
+	end
+
+	self:update_armor_stored_health()
+end
+
 --Lets hitman piggy bank off of ex-pres UI elements.
 local max_armor_stored_health_orig = PlayerDamage.max_armor_stored_health
 function PlayerDamage:max_armor_stored_health()
@@ -1442,4 +1520,35 @@ function PlayerDamage:set_armor(armor)
 	end
 
 	self._armor = Application:digest_value(armor, true)
+end
+
+--For people like SC that enjoy being blinded when taking damage
+if restoration and restoration.Options:GetValue("OTHER/RestoreHitFlash") then
+	local _hit_direction_actual = PlayerDamage._hit_direction
+	function PlayerDamage:_hit_direction(position_vector, ...)
+		if position_vector then
+			local dir = (self._unit:camera():position() - position_vector):normalized()
+			local infront = math.dot(self._unit:camera():forward(), dir)
+			if infront < -0.9 then
+				managers.environment_controller:hit_feedback_front()
+			elseif infront > 0.9 then
+				managers.environment_controller:hit_feedback_back()
+			else
+				local polar = self._unit:camera():forward():to_polar_with_reference(-dir, Vector3(0, 0, 1))
+				local direction = Vector3(polar.spin, polar.pitch, 0):normalized()
+				if math.abs(direction.x) > math.abs(direction.y) then
+					if 0 > direction.x then
+						managers.environment_controller:hit_feedback_left()
+					else
+						managers.environment_controller:hit_feedback_right()
+					end
+				elseif 0 > direction.y then
+					managers.environment_controller:hit_feedback_up()
+				else
+					managers.environment_controller:hit_feedback_down()
+				end
+			end
+		end
+		return _hit_direction_actual(self, position_vector, ...)
+	end
 end

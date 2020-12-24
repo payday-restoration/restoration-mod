@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<unit type="deprecated" slot="1" >
+	<object file="units/payday2/vehicles/str_vehicle_truck_boxvan_anim_eday/str_vehicle_truck_boxvan_anim_eday" />
+	<network sync="spawn"/>	
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/window/storefront_window_small" />
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="hold_place_gps_tracker" />
+			<var name="_interact_object" value="anim_body"/>
+		</extension>
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+	<sounds>
+		<soundsource name="snd" source="anim_body" />
+	</sounds>
+</unit>

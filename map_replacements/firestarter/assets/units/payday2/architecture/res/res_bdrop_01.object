@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_res_bdrop_01" materials="units/payday2/architecture/res/res_bdrop_all" />
+    <bodies>
+        <body enabled="true" template="editor" name="body0" >
+            <object collision_type="box" name="c_box_01" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_houses" />
+    </graphics>
+</dynamic_object>

@@ -123,8 +123,6 @@ function restoration:Init()
 		"election_day_2",
 		"brb",
 		"mus",
-		"hox_1",
-		"xmn_hox_1",
 		"run_res", --Whurr's Heat Street Edit
 		"bph",
 		"glace",
@@ -132,8 +130,6 @@ function restoration:Init()
 		"dinner",
 		"wwh",
 		"born",
-		"nmh",
-		"nmh_res", --Resmod edit of no mercy.
 		"flat",
 		"dah",
 		"framing_frame_3",
@@ -147,6 +143,8 @@ function restoration:Init()
 		"man", --Undercover
 		"peta", --Goat Sim Day 1
 		"jolly", --aftershock		
+		"branchbank", --Bank heist
+		"firestarter_3", --firestarter day 3		
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn",
@@ -154,6 +152,8 @@ function restoration:Init()
 		"man_res", --Undercover resmod edit		
 		"spa_CD",		
 		"wwh_CD",		
+		"firestarter_3_res", --firestarter day 3, res edit		
+		"lvl_friday" --Crashing Capitol	
 	}
 	--For levels that have aggressive spawns that are right on top of the player at all times
 	restoration.very_tiny_levels = {
@@ -174,6 +174,11 @@ function restoration:Init()
 		"skm_mallcrasher",
 		"skm_arena",
 		"skm_bex",
+		"nmh",
+		"nail",	--Lab Rats. Fuck this heist	
+		"nmh_res", --Resmod edit of no mercy.
+		"hox_1",
+		"xmn_hox_1",
 		--Custom Heists below--
 		"thechase",
 		"skm_street",		
@@ -185,7 +190,6 @@ function restoration:Init()
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"chew", --Biker day 2		
-		"nail",	--Lab Rats. Fuck this heist	
 		"peta2", --Goats day 2. Fuck this heist too		
 		--Custom Heists below--
 		"Victor Romeo"
@@ -197,6 +201,7 @@ function restoration:Init()
 		--Custom Heists--
 		"Victor Romeo",
 		"hardware_store",
+		"tj_htsb",
 		"hntn",
 		"bookmakers_office",
 		"thechase",
@@ -222,8 +227,8 @@ function restoration:Init()
 		"ukrainian_job", --uk joj
 		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne
-		"hox_1", --Hoxout D1
-		"xmn_hox_1" --Xmas edition
+		--"hox_1", --Hoxout D1
+		--"xmn_hox_1" --Xmas edition
 	}	
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below
@@ -326,6 +331,12 @@ end
 --don't load the fucking classic movies if setting is on.  memory hog
 function restoration:LoadClassicMovies()
 	if restoration and restoration.Options:GetValue("OTHER/ClassicMovies") then
+		return true
+	end
+end
+
+function restoration:LoadFonts()
+	if not Idstring("russian"):key() == SystemInfo:language():key() then
 		return true
 	end
 end

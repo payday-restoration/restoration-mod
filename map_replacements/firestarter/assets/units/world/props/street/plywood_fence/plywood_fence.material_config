@@ -1,0 +1,11 @@
+<materials version="3">
+    <material version="2" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:INSTANCED:NORMALMAP" name="tile">
+        <diffuse_texture file="units/world/props/shared_textures/fence_tile_df"/>
+        <bump_normal_texture file="units/world/props/shared_textures/fence_tile_nm"/>
+        <variable value="0.059999998658895" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="fence" render_template="generic:DIFFUSE_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="units/world/props/street/plywood_fence/plywood_fence_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+</materials>

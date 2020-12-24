@@ -1,0 +1,6 @@
+<unit type="res" slot="1" >
+    <object file="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

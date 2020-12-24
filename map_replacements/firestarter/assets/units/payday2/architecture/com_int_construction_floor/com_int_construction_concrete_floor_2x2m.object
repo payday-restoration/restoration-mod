@@ -1,0 +1,12 @@
+<dynamic_object>
+    <diesel orientation_object="rp_com_int_construction_concrete_floor_2x2m" materials="units/payday2/architecture/com_int_construction_floor/com_int_construction_concrete_floors" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object name="rp_com_int_construction_concrete_floor_2x2m" />
+            <object collision_type="box" name="c_box_000" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

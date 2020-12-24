@@ -6,6 +6,28 @@ local mvec3_dir = mvector3.direction
 local mvec3_l_sq = mvector3.length_sq
 local tmp_vec1 = Vector3()
 
+function GroupAIStateBase:_calculate_difficulty_ratio()
+	local ramp = tweak_data.group_ai.difficulty_curve_points
+
+	--Use alternate curve points for skirmish difficulty ratio.
+	if managers.skirmish:is_skirmish() then
+		ramp = tweak_data.group_ai.skirmish_difficulty_curve_points
+	end
+
+	local diff = self._difficulty_value
+	local i = 1
+
+	while diff > (ramp[i] or 1) do
+		i = i + 1
+	end
+
+	self._difficulty_point_index = i
+	self._difficulty_ramp = (diff - (ramp[i - 1] or 0)) / ((ramp[i] or 1) - (ramp[i - 1] or 0))
+	--log("Diff = " .. tostring(diff))
+	--log("Index = " .. tostring(self._difficulty_point_index))
+	--log("Value = " .. tostring(self._difficulty_ramp + self._difficulty_point_index))
+end
+
 function GroupAIStateBase:_check_assault_panic_chatter()
 	if self._t and self._last_killed_cop_t and self._t - self._last_killed_cop_t < math.random(1, 3.5) then
 		return true
@@ -79,16 +101,16 @@ function GroupAIStateBase:_init_misc_data()
 	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 	
 	if diff_index <= 2 then
-		self._weapons_hot_threshold = 0.90
+		self._weapons_hot_threshold = 0.70
 		self._suspicion_threshold = 0.6
 	elseif diff_index == 3 then
-		self._weapons_hot_threshold = 0.80
+		self._weapons_hot_threshold = 0.65
 		self._suspicion_threshold = 0.65
 	elseif diff_index == 4 then
-		self._weapons_hot_threshold = 0.70
+		self._weapons_hot_threshold = 0.60
 		self._suspicion_threshold = 0.7
 	elseif diff_index == 5 then
-		self._weapons_hot_threshold = 0.60
+		self._weapons_hot_threshold = 0.55
 		self._suspicion_threshold = 0.75
 	elseif diff_index == 6 then
 		self._weapons_hot_threshold = 0.50
@@ -97,7 +119,7 @@ function GroupAIStateBase:_init_misc_data()
 		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.85
 	else
-		self._weapons_hot_threshold = 0.40
+		self._weapons_hot_threshold = 0.45
 		self._suspicion_threshold = 0.9
 	end
 	self._blackout_units = {} --offy wuz hear
@@ -147,16 +169,16 @@ function GroupAIStateBase:on_simulation_started()
 	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 	
 	if diff_index <= 2 then
-		self._weapons_hot_threshold = 0.90
+		self._weapons_hot_threshold = 0.70
 		self._suspicion_threshold = 0.6
 	elseif diff_index == 3 then
-		self._weapons_hot_threshold = 0.80
+		self._weapons_hot_threshold = 0.65
 		self._suspicion_threshold = 0.65
 	elseif diff_index == 4 then
-		self._weapons_hot_threshold = 0.70
+		self._weapons_hot_threshold = 0.60
 		self._suspicion_threshold = 0.7
 	elseif diff_index == 5 then
-		self._weapons_hot_threshold = 0.60
+		self._weapons_hot_threshold = 0.55
 		self._suspicion_threshold = 0.75
 	elseif diff_index == 6 then
 		self._weapons_hot_threshold = 0.50
@@ -165,7 +187,7 @@ function GroupAIStateBase:on_simulation_started()
 		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.85
 	else
-		self._weapons_hot_threshold = 0.40
+		self._weapons_hot_threshold = 0.45
 		self._suspicion_threshold = 0.9
 	end
 	
@@ -1469,11 +1491,16 @@ end
 
 --this function has been repurposed. instead of overriding any previous value, this ADDS diff
 --this is set to 0.5 on loud, while other events increase it
---+0.05 on civilian kill (watch your fire!), +0.125 on assault end
+--+0.05 on civilian kill (watch your fire!), +0.3 on assault end
 --script value is used by the base game, we usually ignore it after the beginning of a level
 --thanks (again) to hoxi for helping out with this
 --perhaps modify these values at one point in crime spree? who knows
 function GroupAIStateBase:set_difficulty(script_value, manual_value)
+	if managers.skirmish:is_skirmish() then
+		self:set_skirmish_difficulty()
+		return
+	end
+
     if self._difficulty_value == 1 then
         return
     end
@@ -1488,36 +1515,44 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 
 			return
 		elseif not self._loud_diff_set and script_value > 0  then
-			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.5
+			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
 			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
 			--should fix armored transport and its jank mission scripts	(ovk why)
-			--also, add 0.5 here instead of setting so you cant bypass civ penalty on some heists
-			self._difficulty_value = self._difficulty_value + 0.5
+			--also, add 0.1 here instead of setting so you cant bypass civ penalty on some heists
+			self._difficulty_value = self._difficulty_value + 0.1
 			self:_calculate_difficulty_ratio()
 			--please kill me
 			self._loud_diff_set = true
 
 			return
         end
-
     end
 
     if not manual_value then
         return
     end
 
-
 	--note that this ADDS, not replaces. only way to replace is with a script_value of 0
-    self._difficulty_value = self._difficulty_value + manual_value
-
-	--cap this to be safe
-    if self._difficulty_value > 1 then
-        self._difficulty_value = 1
-    end
+    self._difficulty_value = math.min(self._difficulty_value + manual_value, 1)
 
     self:_calculate_difficulty_ratio()
 end
 
+--Skirmish's custom diff scaling.
+--First 10 waves correspond directly to array values in its groupai tweakdata, after that it switches to an infinite scaling function.
+function GroupAIStateBase:set_skirmish_difficulty()
+	--Current_wave_number is always 1 lower than the actual wave number for a new assault.
+	local wave = managers.skirmish:current_wave_number() + 1
+	local skirmish_ramp = tweak_data.group_ai.skirmish_difficulty_curve_points
+
+	if not self._difficulty_value or self._difficulty_value < skirmish_ramp[10] then
+		self._difficulty_value = wave * 0.05
+	else
+		self._difficulty_value = 1 - (1/(0.2*wave)) --Get infinitely closer to 1 over time.
+	end
+
+	self:_calculate_difficulty_ratio()
+end
 
 --below stuff is used to handle autumn's deployable blackout effect
 function GroupAIStateBase:register_blackout_source(unit)

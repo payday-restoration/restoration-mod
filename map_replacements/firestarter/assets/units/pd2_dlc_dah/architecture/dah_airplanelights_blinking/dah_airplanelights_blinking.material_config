@@ -1,0 +1,12 @@
+<materials version="3">
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM" name="mat_blinking" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_airplanelights_blinking/dah_backdrop_airplanelights_blinking_df"/>
+        <variable type="scalar" name="intensity" value="megatron"/>
+        <variable type="vector3" name="uv0_speed" value="0.79900026321411 2.3760004043579 0"/>
+    </material>
+    <material render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE" name="mat_lights" version="2">
+        <diffuse_texture file="units/pd2_dlc_dah/architecture/dah_airplanelights_blinking/dah_backdrop_airplanelights_df"/>
+        <variable type="scalar" name="intensity" value="megatron"/>
+    </material>
+    <material version="2" render_template="generic:VERTEX_COLOR" name="mat_plane" decal_m="sheet_metal"/>
+</materials>

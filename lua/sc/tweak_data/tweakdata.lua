@@ -35,7 +35,7 @@ tweak_data.projectiles.launcher_frag.damage = 80
 tweak_data.projectiles.launcher_frag.player_damage = 40
 tweak_data.projectiles.launcher_frag.curve_pow = 1
 tweak_data.projectiles.launcher_frag.range = 500
-tweak_data.projectiles.launcher_incendiary.damage = 3
+tweak_data.projectiles.launcher_incendiary.damage = 6
 tweak_data.projectiles.launcher_incendiary.launch_speed = 1250
 tweak_data.projectiles.launcher_incendiary.curve_pow = 1
 tweak_data.projectiles.launcher_incendiary.player_damage = 3
@@ -71,9 +71,9 @@ tweak_data.projectiles.launcher_frag_arbiter.range = 250
 tweak_data.projectiles.launcher_frag_arbiter.curve_pow = 1
 tweak_data.projectiles.launcher_frag_arbiter.init_timer = nil
 
-tweak_data.projectiles.launcher_incendiary_arbiter.damage = 2
+tweak_data.projectiles.launcher_incendiary_arbiter.damage = 5
 tweak_data.projectiles.launcher_incendiary_arbiter.launch_speed = 2500
-tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2
+tweak_data.projectiles.launcher_incendiary_arbiter.player_damage = 2.5
 tweak_data.projectiles.launcher_incendiary_arbiter.burn_duration = 5
 tweak_data.projectiles.launcher_incendiary_arbiter.init_timer = nil
 tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
@@ -170,7 +170,7 @@ tweak_data.projectiles.molotov.player_damage = 3
 tweak_data.projectiles.molotov.burn_duration = 10
 
 --Incendiary Nades, idea to make em a mollie--
-tweak_data.projectiles.fir_com.damage = 3
+tweak_data.projectiles.fir_com.damage = 6
 tweak_data.projectiles.fir_com.player_damage = 3
 tweak_data.projectiles.fir_com.fire_dot_data = {
 	dot_damage = 1,
@@ -313,10 +313,10 @@ tweak_data.projectiles.launcher_frag_osipr = {
 	name_id = "bm_launcher_frag"
 }
 tweak_data.projectiles.launcher_incendiary_osipr = {
-	damage = 2,
+	damage = 5,
 	launch_speed = 2500,
 	curve_pow = 1,
-	player_damage = 2,
+	player_damage = 2.5,
 	fire_dot_data = {
 		dot_trigger_chance = 50,
 		dot_damage = 1,
@@ -457,7 +457,7 @@ tweak_data.experience_manager.pro_day_multiplier = {
 }
 
 if Global.game_settings and Global.game_settings.one_down then
-	tweak_data.experience_manager.limited_bonus_multiplier = 1.2
+	tweak_data.experience_manager.pro_job_new = 1.2
 end
 
 	tweak_data.gui.buy_weapon_categories = {

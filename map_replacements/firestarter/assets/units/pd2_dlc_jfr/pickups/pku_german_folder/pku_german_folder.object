@@ -1,0 +1,13 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder"  orientation_object="rp_pku_german_folder" />
+	<sequence_manager file="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_pku_german_folder" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+</dynamic_object>

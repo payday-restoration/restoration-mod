@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="mat_gen_prop_private_sign" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/props/gen_prop_private_sign/gen_prop_private_sign_df"/>
+        <self_illumination_texture file="units/payday2/props/gen_prop_private_sign/gen_prop_private_sign_il"/>
+        <variable value="reddot" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

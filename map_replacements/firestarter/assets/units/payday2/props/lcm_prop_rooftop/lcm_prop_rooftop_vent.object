@@ -1,0 +1,20 @@
+<dynamic_object>
+    <diesel materials="units/payday2/props/lcm_prop_rooftop/lcm_prop_rooftop" orientation_object="rp_lcm_prop_rooftop_vent" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+    <decal_surfaces>
+        <decal_mesh enabled="true" name="dm_sheet_metal" material="thin_layer" />
+    </decal_surfaces>
+    <graphics>
+ 
+		 <lod_object name="g_g_lod">
+            <object enabled="true" name="g_g" >
+                <material materials="secret_stash_props_rooftop_1" max_distance="3500"/>
+                <material materials="secret_stash_props_rooftop_1_lod1" />
+            </object>
+        </lod_object>
+    </graphics>
+</dynamic_object>

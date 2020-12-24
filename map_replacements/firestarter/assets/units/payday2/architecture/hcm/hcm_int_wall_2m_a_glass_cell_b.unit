@@ -1,0 +1,7 @@
+<unit type="hcm" slot="1">
+	<object file="units/payday2/architecture/hcm/hcm_int_wall_2m_a_glass_cell_b" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

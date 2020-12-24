@@ -1,0 +1,22 @@
+<unit type="gen" slot="1" >
+	<object file="units/payday2/props/gen_prop_door_ind_01/gen_prop_door_ind_01" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/wood/wood_door_shotgun_dmg_in" />
+		<depends_on effect="effects/payday2/particles/wood/wood_door_shotgun_dmg_out" />
+		<depends_on unit="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on effect="effects/payday2/particles/explosions/shapecharger_explosion" />
+	</dependencies>
+	<extensions>
+		<extension name="base" class="MissionDoor" >
+			<var name="tweak_data" value="reinforced_door" />
+		</extension>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="pick_lock_hard_no_skill" />
+			<var name="_interact_object" value="interact_locator"/>
+		</extension>
+	</extensions>
+</unit>

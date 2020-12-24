@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/pd2_dlc_vit/props/vit_prop_veg_tree_redoak/vit_prop_veg_tree_redoak" orientation_object="rp_str_veg_park_tree_redoak" />
+  
+ <bodies>
+ 	<body name="body" enabled="true" template="static">
+ 		<object name="rp_str_veg_park_tree_redoak" />
+ 		<object name="c_tree" collision_type="capsule" />
+ 	</body>
+ </bodies>
+  
+  <graphics>
+  	<object name="g_str_veg_park_tree_redoak_trunk" enabled="true" shadow_caster="true" />
+  	<object name="g_str_veg_park_tree_redoak" enabled="true" shadow_caster="true" instance_struct="world_tm"/>
+  </graphics>
+
+</dynamic_object>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+  <object file="units/payday2/vehicles/str_vehicle_pickup_truck/str_vehicle_pickup_truck" />
+  <dependencies>
+	<depends_on effect="effects/particles/bullet_hit/misc/misc_tire" />
+    <depends_on effect="effects/payday2/particles/window/storefront_window_small" />
+	
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/vehicles/str_vehicle_pickup_truck/str_vehicle_pickup_truck" orientation_object="rp_vehicle_pickup" />
+  <sequence_manager file="units/payday2/vehicles/str_vehicle_pickup_truck/str_vehicle_pickup_truck" />
+  
+  <animations>
+   <animation_group name="ag_tire_front_right">
+      <object name="a_tire_front_right" />
+    </animation_group>
+    <animation_group name="ag_tire_front_left">
+      <object name="a_tire_front_left" />
+    </animation_group>
+    <animation_group name="ag_tire_rear_right">
+      <object name="a_tire_rear_right" />
+    </animation_group>
+    <animation_group name="ag_tire_rear_left">
+      <object name="a_tire_rear_left" />
+    </animation_group>
+  </animations>
+  
+  <bodies>
+	    <body name="static_body" enabled="true" template="static">
+		<object name="rp_vehicle_pickup" />
+		<object name="c_vehicle_pickup" collision_type="mesh_mopp" />
+		<object name="c_interior" collision_type="mesh_mopp" />
+		<object name="c_lights" collision_type="mesh_mopp" />
+		</body>
+		<body name="graph_blocker" enabled="true" template="graph_blocker">
+      <object name="c_graph_blocker" collision_type="box" />
+	  </body>
+		<body name="window_front" enabled="true" template="static">
+		<object name="c_window_front" collision_type="mesh_mopp" two_sided="true"/>
+	    </body>
+		<body remove_ray_type="ai_vision" name="window_right_1" enabled="true" template="static">
+		<object name="c_window_right_1" collision_type="mesh_mopp" two_sided="true"/>
+	    </body>
+		<body remove_ray_type="ai_vision" name="window_right_2" enabled="true" template="static">
+		<object name="c_window_right_2" collision_type="mesh_mopp" two_sided="true"/>
+	    </body>
+		<body remove_ray_type="ai_vision" name="window_left_1" enabled="true" template="static">
+		<object name="c_window_left_1" collision_type="mesh_mopp" two_sided="true"/>
+	    </body>
+		<body remove_ray_type="ai_vision" name="window_left_2" enabled="true" template="static">
+		<object name="c_window_left_2" collision_type="mesh_mopp" two_sided="true"/>
+	    </body>
+	    <body name="tire_front_left" enabled="true" template="static">
+        <object name="c_tire_front_left" collision_type="mesh_mopp" />
+	    </body>
+	    <body name="tire_rear_left" enabled="true" template="static">
+        <object name="c_tire_rear_left" collision_type="mesh_mopp" />
+	    </body>
+	    <body name="tire_front_right" enabled="true" template="static">
+        <object name="c_tire_front_right" collision_type="mesh_mopp" />
+	    </body>
+	    <body name="tire_rear_right" enabled="true" template="static">
+        <object name="c_tire_rear_right" collision_type="mesh_mopp" />
+    </body>
+	
+	<body name="rims" enabled="true" template="static">
+	  <object name="a_tire_front_left" />
+	  <object name="c_rim_front_left" collision_type="mesh_mopp" />
+	  <object name="c_rim_rear_left" collision_type="mesh_mopp" />
+	  <object name="c_rim_front_right" collision_type="mesh_mopp" />
+	  <object name="c_rim_rear_right" collision_type="mesh_mopp" />
+	</body>
+    </bodies>
+  <decal_surfaces>
+    <decal_mesh name="c_vehicle_pickup" enabled="true" material="sheet_metal" />
+    <decal_mesh name="c_interior" enabled="true" material="cloth" />
+    <decal_mesh name="c_lights" enabled="true" material="glass_breakable" />
+	<decal_mesh name="c_window_front" enabled="true" material="glass_breakable" />
+	<decal_mesh name="c_window_right_1" enabled="true" material="glass_breakable" />
+	<decal_mesh name="c_window_right_2" enabled="true" material="glass_breakable" />
+	<decal_mesh name="c_window_left_1" enabled="true" material="glass_breakable" />
+	<decal_mesh name="c_window_left_2" enabled="true" material="glass_breakable" />
+	<decal_mesh name="c_rim_rear_right" enabled="true" material="metal" />
+	<decal_mesh name="c_rim_rear_left" enabled="true" material="metal" />
+	<decal_mesh name="c_rim_front_right" enabled="true" material="metal" />
+	<decal_mesh name="c_rim_front_left" enabled="true" material="metal" />
+	<decal_mesh name="c_tire_rear_right" enabled="true" material="rubber" />
+	<decal_mesh name="c_tire_rear_left" enabled="true" material="rubber" />
+	<decal_mesh name="c_tire_front_right" enabled="true" material="rubber" />
+	<decal_mesh name="c_tire_front_left" enabled="true" material="rubber" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_vehicle_pickup" enabled="true" shadow_caster="true"  />
+    <object name="g_vehicle_pickup_tires" enabled="true"  />
+    <object name="g_window_front" enabled="true"  />
+    <object name="g_window_left_1" enabled="true"  />
+    <object name="g_window_left_2" enabled="true"  />
+    <object name="g_window_right_1" enabled="true"  />
+    <object name="g_window_right_2" enabled="true"  />
+	<object name="g_window_front_dmg" enabled="false"  />
+	<object name="g_window_right_1_dmg" enabled="false"  />
+	<object name="g_window_right_2_dmg" enabled="false"  />
+	<object name="g_window_left_1_dmg" enabled="false"  />
+	<object name="g_window_left_2_dmg" enabled="false"  />
+  </graphics>
+	<objects> 
+		<align_point name="e_window_front" enabled="true" parent="rp_vehicle_pickup" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_left_1" enabled="true" parent="rp_vehicle_pickup" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_left_2" enabled="true" parent="rp_vehicle_pickup" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_right_1" enabled="true" parent="rp_vehicle_pickup" position="0 0 0" rotation="0 0 0" />
+		<align_point name="e_window_right_2" enabled="true" parent="rp_vehicle_pickup" position="0 0 0" rotation="0 0 0" />
+	</objects>
+</dynamic_object>

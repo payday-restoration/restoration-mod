@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/payday2/props/shadow_mullplan/mullplan_vehicle" orientation_object="rp_mullplan_vehicle_small" />
+
+	<bodies>
+        <body name="editor_body" template="editor" enabled="true" >
+            <object name="rp_mullplan_vehicle_small"/>
+            <object collision_type="box" enabled="true" name="g_g"/>
+        </body>
+    </bodies>
+
+	<graphics>
+		<object name="g_g" enabled="true" />
+	</graphics>
+</dynamic_object>

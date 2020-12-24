@@ -1,0 +1,15 @@
+<dynamic_object>
+    <diesel materials="units/payday2/props/gen_prop_small_lamp/gen_prop_small_lamp" orientation_object="rp_gen_prop_small_lamp" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+      <object name="c_box_01" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	<effects>
+		<effect_spawner name="small_flare_blue" enabled="true" object="e_flare" effect="effects/payday2/particles/flares/small_lamp_flare_blue" />
+    </effects>
+    <graphics>
+        <object enabled="true" name="g_g" />
+        <object enabled="true" name="g_g_glow" />
+    </graphics>
+</dynamic_object>

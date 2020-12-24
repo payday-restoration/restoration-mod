@@ -1,0 +1,6 @@
+<materials version="3" group="stn_prop_camera">		
+    <material name="stn_prop_camera" render_template="effect:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/gui/area_indicator_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+</materials>

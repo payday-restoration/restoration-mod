@@ -1,0 +1,44 @@
+<effect force_synch="false">
+    <atom name="bubbles_small" min_size="50" max_size="80" lifetime="-1" random_start_time="false" start_time="0" preroll="0" inherit_velocity_multiplier="1" fade_in_start="-1" fade_in_length="50" fade_out_start="50" spawn_cull_policy="initialize" cull_policy="freeze" cull_gracetime="0" max_particle_radius="-1" soundbank="" cue="" ambient="true" grab_relative="effect" grab_pos="0 0 0" grab_radius="500" grab_backfacing="false" timeline="">
+        <initializerstack>
+            <boxrandomposition relative="effect" min="0 0 0" max="0 0 0"/>
+            <boxrandomvelocity relative="effect" min="0 0 0" max="0 0 0"/>
+            <constantage age="99999"/>
+            <boxrandomangle min="-3.14" max="3.14"/>
+            <boxrandomaspectsize size="14 14" min="1" max="1.7"/>
+            <boxrandomuvoffset uv_size="0.25 0.25" frame_start="0 0.5" primary_step_direction="+x" secondary_step_direction="+y" num_frames="4"/>
+        </initializerstack>
+        <simulatorstack>
+            <velocityintegrator channel="world"/>
+            <teleporter name="" trigger_teleport="time" lifetime_input="constant" particle_lifetime="0.5" teleport_cap="100" current_position="true" channel="world" normal_variation="0" teleport_event="true" positioner="box">
+                <box min="-3 -3 -3" max="3 3 3" min_normal="0 0 1" max_normal="0 0 1"/>
+                <normal min_velocity="20" max_velocity="100"/>
+            </teleporter>
+            <ager/>
+            <variableacceleration name="" relative="world" acceleration="0 0 140"/>
+        </simulatorstack>
+        <visualizerstack>
+            <billboard texture="effects/textures/liquid/bubble_aquarium_df" intensity="dimlight" billboard_type="camera_facing" rotation_channel="world_rotation" blend_mode="add" render_template="effect_op_add" origo="0.5 0.5" per_particle_age="true" size_input="scaled_channel" color_input="keys" opacity_input="keys" rotation_input="scaled_channel" rotation_axis="0 0 0" uv_size="1 1" uv_offset_input="constant" uv_offset="0 0">
+                <size_scale_keys loop="false">
+                    <key t="0" v="0.10000000149012 0.10000000149012"/>
+                    <key t="0.31669536232948" v="0.20000000298023 0.20000000298023"/>
+                    <key t="0.53700518608093" v="0 0"/>
+                </size_scale_keys>
+                <color_keys loop="false">
+                    <key t="0" v="125 125 125"/>
+                    <key t="1.4543889760971" v="207 207 207"/>
+                </color_keys>
+                <opacity_keys loop="false">
+                    <key t="0" v="0"/>
+                    <key t="0.11187607049942" v="100"/>
+                    <key t="0.34767642617226" v="100"/>
+                    <key t="0.53700518608093" v="0"/>
+                </opacity_keys>
+                <rotation_scale_keys loop="true">
+                    <key t="0" v="0.0099999997764826"/>
+                    <key t="9.7368421554565" v="0.0010000000474975"/>
+                </rotation_scale_keys>
+            </billboard>
+        </visualizerstack>
+    </atom>
+</effect>

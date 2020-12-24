@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/vehicles/str_vehicle_sedan_dmg/str_vehicle_sedan_dmg_dented" orientation_object="rp_rail_sedan01_dented" />
+	<bodies>
+	<body name="static_body" enabled="true" template="static" >
+			<object name="rp_rail_sedan01_dented"/>
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_04" collision_type="box" padding="-2.5"/>
+			<object name="c_box_05" collision_type="box" padding="-2.5"/>
+			<object name="c_box_06" collision_type="box" padding="-2.5"/>
+			<object name="c_convex_01" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_02" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_03" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_04" collision_type="convex" padding="-2.5"/>
+		</body>
+	</bodies>
+	<decal_surfaces>
+		<decal_mesh name="g_rail_sedan01_dented" enabled="true" material="sheet_metal" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_rail_sedan01_dented" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

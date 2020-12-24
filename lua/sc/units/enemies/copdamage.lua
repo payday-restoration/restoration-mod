@@ -234,7 +234,7 @@ function CopDamage:damage_fire(attack_data)
 			end
 		end
 
-		if Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -454,7 +454,7 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dan
 			})
 		end
 
-		if Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -741,7 +741,7 @@ function CopDamage:damage_bullet(attack_data)
 	end
 
 	if not head and attack_data.attacker_unit == managers.player:player_unit() and not self._char_tweak.must_headshot and self._char_tweak.headshot_dmg_mul then
-				if attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("smg", "lmg", "minigun") and managers.player:has_category_upgrade("weapon", "automatic_head_shot_add") or managers.player:has_category_upgrade("player", "universal_body_expertise") then
+		if attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("smg", "lmg", "minigun") and managers.player:has_category_upgrade("weapon", "automatic_head_shot_add") or managers.player:has_category_upgrade("player", "universal_body_expertise") then
 			attack_data.add_head_shot_mul = managers.player:upgrade_value("weapon", "automatic_head_shot_add", nil)
 		end
 
@@ -754,8 +754,12 @@ function CopDamage:damage_bullet(attack_data)
 
 	damage = self:_apply_damage_reduction(damage)
 
+	--Saw+Throwables ignore clamps
 	if self._char_tweak.DAMAGE_CLAMP_BULLET then
-		damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
+		if attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
+		else
+			damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
+		end
 	end
 
 	attack_data.raw_damage = damage
@@ -801,7 +805,7 @@ function CopDamage:damage_bullet(attack_data)
 						dir = attack_data.col_ray.ray
 					})
 				end
-			elseif Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+			elseif Network:is_server() and self._char_tweak.gas_on_death then
 				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 			end
 
@@ -1010,7 +1014,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 					dir = attack_dir
 				})
 			end
-		elseif Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -1136,15 +1140,17 @@ function CopDamage:damage_melee(attack_data)
 		end
 
 		if head then
-			managers.player:on_headshot_dealt(self._unit, attack_data)
 			headshot_multiplier = headshot_multiplier * managers.player:upgrade_value("weapon", "passive_headshot_damage_multiplier", 1)
+			managers.player:on_headshot_dealt(self._unit, attack_data)
 		end
 	end
 
 	if head and not self._damage_reduction_multiplier then
 		if self._char_tweak.headshot_dmg_mul then
-			damage = damage * self._char_tweak.headshot_dmg_mul * headshot_multiplier
-			damage_effect = damage_effect * self._char_tweak.headshot_dmg_mul * headshot_multiplier
+			--Use math.max to cover edge cases (mostly Capt. Summers) where cleaver type weapons would deal *less* damage on a headshot than a bodyshot.
+			headshot_multiplier = math.max(self._char_tweak.headshot_dmg_mul * headshot_multiplier, 1)
+			damage = damage * headshot_multiplier
+			damage_effect = damage_effect * headshot_multiplier
 		else
 			damage = self._health * 10
 			damage_effect = self._health * 10
@@ -1552,7 +1558,11 @@ end
 
 local old_death = CopDamage.die
 function CopDamage:die(attack_data)
-	
+	--Increment skirmish kill counter.
+	if managers.skirmish:is_skirmish() then
+		managers.skirmish:do_kill()
+	end
+
 	if not self._char_tweak.always_drop then
 		local attacker_unit = attack_data.attacker_unit
 
@@ -1600,8 +1610,8 @@ function CopDamage:die(attack_data)
 		managers.groupai:state():unregister_blackout_source(self._unit)
 	end
 
-	if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") and self._char_tweak.die_sound_event_2 then
-		self._unit:sound():play(self._char_tweak.die_sound_event_2, nil, nil)
+	if self._char_tweak.die_sound_event_2 then
+		self._unit:sound():play(self._char_tweak.die_sound_event_2, nil, true)
 	end
 
 	if self._unit:base()._tweak_table == "boom" then
@@ -1941,7 +1951,7 @@ function CopDamage:damage_explosion(attack_data)
 			end
 		end
 
-		if Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -2105,7 +2115,7 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 			end
 		end
 
-		if Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -2960,7 +2970,7 @@ function CopDamage:damage_mission(attack_data)
 	if attack_data.attacker_unit == managers.player:local_player() then
 		if CopDamage.is_civilian(self._unit:base()._tweak_table) then
 			managers.money:civilian_killed()
-		elseif Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 	end

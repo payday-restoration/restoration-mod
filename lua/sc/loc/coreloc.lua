@@ -5,4 +5,6 @@ if english then
     dofile(ModPath .. "lua/sc/loc/loc.lua")
 elseif russian then
     dofile(ModPath .. "lua/sc/loc/locru.lua")
+else
+    dofile(ModPath .. "lua/sc/loc/loc.lua")
 end

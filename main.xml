@@ -10,7 +10,7 @@
 		<class file="Networking.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
-	<AssetUpdates id="428" version="10.0.3" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="11" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
@@ -164,6 +164,7 @@
 		<hook file="sc/units/player_team/logics/teamailogicidle.lua" source_file="lib/units/player_team/logics/teamailogicidle"/>
 		<hook file="sc/units/player_team/logics/teamailogictravel.lua" source_file="lib/units/player_team/logics/teamailogictravel"/>
 		<hook file="sc/units/enemies/logics/spooclogicattack.lua" source_file="lib/units/enemies/spooc/logics/spooclogicattack"/>
+		<hook file="sc/units/enemies/logics/shieldlogicattack.lua" source_file="lib/units/enemies/shield/logics/shieldlogicattack"/>
 		<hook file="sc/tweak_data/enveffecttweakdata.lua" source_file="lib/tweak_data/enveffecttweakdata"/>
 		<hook file="sc/tweak_data/weapontweakdata.lua" source_file="lib/tweak_data/weapontweakdata"/>
 		<hook file="sc/units/enemies/copdamage.lua" source_file="lib/units/enemies/cop/copdamage"/>
@@ -197,6 +198,7 @@
 		<hook file="sc/tweak_data/achievementstweakdata.lua" source_file="lib/tweak_data/achievementstweakdata"/>
 		<hook file="sc/units/load/enemyunitgroups.lua" source_file="lib/units/load/enemyunitgroups"/>
 		<hook file="sc/managers/crimespreemanager.lua" source_file="lib/managers/crimespreemanager"/>
+		<hook file="sc/managers/skirmishmanager.lua" source_file="lib/managers/skirmishmanager"/>
 		<hook file="sc/units/player_team/actions/lower_body/criminalactionwalk.lua" source_file="lib/units/player_team/actions/lower_body/criminalactionwalk"/>
 		<hook file="sc/managers/mission/elementspawngrenade.lua" source_file="lib/managers/mission/elementspawngrenade"/>
 		<hook file="sc/managers/jobmanager.lua" source_file="lib/managers/jobmanager"/>
@@ -255,6 +257,7 @@
 		<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<hook file="sc/tweak_data/carrytweakdata.lua" source_file="lib/tweak_data/carrytweakdata"/>
 		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
+		<hook file="sc/managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>
@@ -263,9 +266,7 @@
 		<hook file="sc/modifiers/modifiershieldphalanx.lua" source_file="lib/modifiers/modifiershieldphalanx"/>
 		<hook file="sc/modifiers/modifiernohurtanims.lua" source_file="lib/modifiers/modifiernohurtanims"/>
 		<hook file="sc/modifiers/modifierlessconcealment.lua" source_file="lib/modifiers/modifierlessconcealment"/>
-		<hook file="sc/modifiers/modifierlesspagers.lua" source_file="lib/modifiers/modifierlesspagers"/>
 		<hook file="sc/modifiers/modifiertaserovercharge.lua" source_file="lib/modifiers/modifiertaserovercharge"/>		
-		<hook file="sc/modifiers/modifierdozerrage.lua" source_file="lib/modifiers/modifierdozerrage"/>	
 		<hook file="sc/modifiers/modifiermedicdeathwish.lua" source_file="lib/modifiers/modifiermedicdeathwish"/>	
 		<hook file="sc/modifiers/modifiermedicadrenaline.lua" source_file="lib/modifiers/modifiermedicadrenaline"/>	
 		<hook file="sc/modifiers/modifiercloakerarrest.lua" source_file="lib/modifiers/modifiercloakerarrest"/>
@@ -273,10 +274,12 @@
 		<hook file="sc/modifiers/modifiercloakerteargas.lua" source_file="lib/modifiers/modifiercloakerteargas"/>
 		<hook file="sc/modifiers/modifierskulldozers.lua" source_file="lib/modifiers/modifierskulldozers"/>
 		<hook file="sc/modifiers/modifierexplosionimmunity.lua" source_file="lib/modifiers/modifierexplosionimmunity"/>
+		<hook file="sc/modifiers/modifierenemyhealthanddamagebywave.lua" source_file="lib/modifiers/modifierenemyhealthanddamagebywave"/>
 		<!--///NEW MODIFIERS FOR CRIME SPREE GO HERE\\\-->
 		<hook file="sc/modifiers/new/modifierbravos.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifiergrace.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifierboomboom.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifiersniperaim.lua" source_file="lib/modifiers/basemodifier"/>
 		<hook file="sc/modifiers/new/modifierletstrygas.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifierdodgethis.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifierfriendlyfire.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
@@ -369,6 +372,8 @@
 						<option type="bool" default_value="false" name="Loadouts"/>
 						<option type="bool" default_value="false" name="District"/>
 						<option type="bool" default_value="false" name="PeerColors"/>
+						<option type="bool" default_value="false" name="PocoCrimenetAlignSort"/>
+						<option type="number" default_value="1" min="0.7" max="1.2" step="0.1" show_value="true" name="PocoCrimenetScale"/>
 				</option_group>
 				<option_group name="INFOHUD">
 					<option type="bool" default_value="false" name="Info_Hud"/>
@@ -428,6 +433,7 @@
 				<option type="bool" default_value="true" name="TimeOfDay"/>
 				<option type="bool" default_value="true" name="Holiday"/>
 				<option type="bool" default_value="false" name="ClassicMovies"/>
+				<option type="bool" default_value="false" name="RestoreHitFlash"/>
 				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
 				<!-- <option type="bool" default_value="true" hidden="true" name="RaidLockPicking"/> -->
 				<option type="bool" default_value="true" name="QuietRain"/>
@@ -478,6 +484,7 @@
 	<Package id="packages/secret_stash" file="secret_stash.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/rex_gold" file="rex_gold.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
+	<Package id="packages/custom_fonts" file="fonts.xml" use_clbk="self:LoadFonts"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
 	<Package id="packages/addrain" file="addRAIN.xml"/>
 </mod>

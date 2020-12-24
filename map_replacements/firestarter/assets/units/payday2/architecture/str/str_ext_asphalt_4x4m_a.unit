@@ -1,0 +1,6 @@
+<unit type="str" slot="1" >
+    <object file="units/payday2/architecture/str/str_ext_asphalt_4x4m_a" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

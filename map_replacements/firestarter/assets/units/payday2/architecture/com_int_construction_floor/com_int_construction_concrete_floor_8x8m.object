@@ -1,0 +1,17 @@
+<dynamic_object>
+    <diesel orientation_object="rp_com_int_construction_concrete_floor_8x8m" materials="units/payday2/architecture/com_int_construction_floor/com_int_construction_concrete_floors" />
+    <bodies>
+        <body enabled="true" template="static" name="body0" >
+            <object name="rp_com_int_construction_concrete_floor_8x8m" />
+            <object collision_type="box" name="c_box_000" padding="-2.5" />
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="concrete" static="true">
+		<decal_mesh name="g_g" enabled="true" material="concrete"/>
+	</decal_surfaces>
+	
+    <graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

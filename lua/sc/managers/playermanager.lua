@@ -37,6 +37,38 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	}
 end)
 
+--Make armor bot boost increase armor by % instead of adding.
+function PlayerManager:body_armor_skill_multiplier(override_armor)
+	local multiplier = 1
+	multiplier = multiplier + self:upgrade_value("player", "tier_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "passive_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "armor_multiplier", 1) - 1
+	multiplier = multiplier + self:team_upgrade_value("armor", "multiplier", 1) - 1
+	multiplier = multiplier + self:get_hostage_bonus_multiplier("armor") - 1
+	multiplier = multiplier + self:upgrade_value("player", "perk_armor_loss_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "chico_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("team", "crew_add_armor", 1) - 1 --Added bot armor boost.
+
+	return multiplier
+end
+
+
+function PlayerManager:body_armor_skill_addend(override_armor)
+	local addend = 0
+	addend = addend + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_armor_addend", 0)
+
+	if self:has_category_upgrade("player", "armor_increase") then
+		local health_multiplier = self:health_skill_multiplier()
+		local max_health = (PlayerDamage._HEALTH_INIT + self:health_skill_addend()) * health_multiplier
+		addend = addend + max_health * self:upgrade_value("player", "armor_increase", 1)
+	end
+
+	--Removed bot armor boost.
+
+	return addend
+end
+
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	local multiplier = 1
 	local armor_penalty = self:mod_movement_penalty(self:body_armor_value("movement", upgrade_level, 1))

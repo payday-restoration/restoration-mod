@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/lcm/lcm_int_door_wood_01" orientation_object="rp_lcm_int_door_wood_01_frame_oneside" />
+    <bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_lcm_int_door_wood_01_frame_oneside"/>
+            <object collision_type="mesh_mopp" enabled="true" name="g_lcm_int_door_01_frame"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="hardwood" static="true">
+		<decal_mesh name="g_lcm_int_door_01_frame" material="hardwood" enabled="true"/>
+	</decal_surfaces> 
+	
+    <graphics>
+        <object enabled="true" name="g_lcm_int_door_01_frame" shadow_caster="true" />
+    </graphics>
+</dynamic_object> 

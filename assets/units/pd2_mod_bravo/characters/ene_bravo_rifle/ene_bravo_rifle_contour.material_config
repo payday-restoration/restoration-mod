@@ -39,5 +39,13 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
 
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE:TAKE_FOG" version="2">
+        <variable value="0 1 0.66999995708466" type="vector3" name="fresnel_settings"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
+        <opacity_texture file="units/pd2_dlc_infamy/masks/msk_aviator/msk_aviator_glass_op"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture" />
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>                
+	</material>			
+
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

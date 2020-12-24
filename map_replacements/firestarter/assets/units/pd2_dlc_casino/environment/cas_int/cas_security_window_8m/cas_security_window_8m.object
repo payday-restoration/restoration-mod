@@ -1,0 +1,15 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_casino/environment/cas_int/cas_security_window_8m/cas_security_window_8m" orientation_object="rp_cas_security_window_8m" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_cas_security_window_8m" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="thin_layer">
+		<decal_mesh name="dm_window" enabled="true" material="thin_layer" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_window" enabled="true" />
+	</graphics>
+</dynamic_object>

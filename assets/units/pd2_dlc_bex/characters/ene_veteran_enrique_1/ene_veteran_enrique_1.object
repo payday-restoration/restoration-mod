@@ -14,9 +14,9 @@
 		</body>
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
-			<object name="c_capsule_body" collision_type="capsule"/>
+			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
 		</body>
-		
+
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
 			<object name="Neck" />
@@ -192,39 +192,45 @@
 
 	<decal_surfaces default_material="flesh" />
 
+	<effects>
+		<!-- <effect_spawner name="es_light" enabled="true" object="e_light" effect="effects/payday2/particles/character/flashlight_ss" /> -->
+	</effects>
+
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
-		<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true">
-					<material materials="mtr_body"            max_distance="500" />
-	                <material materials="mtr_body_lod1"       max_distance="1000" />
-	                <material materials="mtr_body_lod2" />
-	            </object>
+
+			<lod_object name="lod_body">
+				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod1" max_distance="1500" />
+					<material materials="mtr_body_lod2" />
+				</object>
+				<object name="g_body_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2" />
+				</object>
 			</lod_object>
+
 			<lod_object name="lod_head">
 				<object name="g_head" 		enabled="true" >
-					<material materials="mtr_head"            max_distance="500" />
-	                <material materials="mtr_head_lod1"       max_distance="1000" />
-	                <material materials="mtr_head_lod2" />
-	            </object>
+					<material materials="mtr_head" />
+				</object>
 			</lod_object>
+				
 			<lod_object name="lod_hat">
-				<object name="g_hat" 		enabled="true" >
-					<material materials="mtr_hat"            max_distance="500" />
-	                <material materials="mtr_hat_lod1"       max_distance="1000" />
-	                <material materials="mtr_hat_lod2" />
-	            </object>
+				<object name="g_head_lod1" 	enabled="true">
+					<material materials="mtr_head" max_distance="0"/>
+					<material materials="mtr_head_lod2" max_distance="1500" />
+				</object>
 			</lod_object>
-			<lod_object name="lod_hands">
-				<object name="g_gloves" 		enabled="true" >
-					<material materials="mtr_gloves"            max_distance="500" />
-	                <material materials="mtr_gloves_lod1"       max_distance="1000" />
-	                <material materials="mtr_gloves_lod2" />
-	            </object>
-			</lod_object>
+				
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-			<object name="g_hair" enabled="true" shadow_caster="true"/>
+			
 		</graphic_group>
 	</graphics>
+
+	<!-- <lights> -->
+		<!-- <light multiplier="identity" far_range="400" name="ls_light" enabled="true" type="spot|specular" /> -->
+	<!-- </lights> -->
 
 </dynamic_object>

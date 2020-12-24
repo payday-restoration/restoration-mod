@@ -1,0 +1,30 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_wall" orientation_object="rp_jry_ext_plane" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_jry_ext_plane" />
+			<object name="c_box_01" collision_type="box" padding="-2.5" />
+			<object name="c_box_02" collision_type="box" padding="-2.5" />
+			<object name="c_box_03" collision_type="box" padding="-2.5" />
+			<object name="c_convex_01" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_02" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_03" collision_type="convex" padding="-2.5" />
+			<object name="c_convex_04" collision_type="convex" padding="-2.5" />
+			<object name="c_mesh_mopp_01" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+	<effects>
+		<effect_spawner name="engine_01" enabled="true" object="e_effect_01" effect="effects/payday2/particles/fire/plane_jet_engine" />
+		<effect_spawner name="engine_02" enabled="true" object="e_effect_02" effect="effects/payday2/particles/fire/plane_jet_engine" />
+		<effect_spawner name="engine_03" enabled="true" object="e_effect_03" effect="effects/payday2/particles/fire/plane_jet_engine" />
+		<effect_spawner name="engine_04" enabled="true" object="e_effect_04" effect="effects/payday2/particles/fire/plane_jet_engine" />
+	</effects>
+	<graphics>
+		<lod_object name="lod_g">
+			<object name="g_lod0" enabled="true" max_distance="9000" />
+			<object name="g_lod1" enabled="true" max_distance="150000" />
+			<object name="g_lod2" enabled="true" />
+		</lod_object>
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

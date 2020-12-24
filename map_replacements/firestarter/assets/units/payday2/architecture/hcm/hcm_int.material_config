@@ -1,0 +1,52 @@
+<materials version="3">
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+    <material name="mat_hcm_int_a" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_a_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_quick_diamond_ext"/>
+        <bump_normal_texture file="units/payday2/architecture/hcm/hcm_int_01_a_nm"/>
+    </material>
+    <material name="mat_hcm_int_b" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_b_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_quick_diamond_ext"/>
+        <bump_normal_texture file="units/payday2/architecture/hcm/hcm_int_01_b_nm"/>
+    </material>
+    <material name="mat_hcm_int_glass" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <variable value="0 1 0.66999995708466" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/architecture/hcm/hcm_int_01_glass_op"/>
+        <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_glass_df"/>
+        <reflection_texture global_texture="current_global_texture" type="cube"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:SELF_ILLUMINATION" name="mat_hcm_fluorescent">
+        <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_fluorescent_df"/>
+        <self_illumination_texture file="units/payday2/architecture/hcm/hcm_int_01_fluorescent_df"/>
+        <variable value="identity" type="scalar" name="il_multiplier"/>
+    </material>
+    <material version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:INSTANCED:INTERSECTION_FADEOUT:VIEW_ANGLE_FALLOFF_OP" name="mat_hcm_fluorescent_haloglow">
+        <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_fluorescent_df"/>
+        <variable value="9.9999997473788e-005" type="scalar" name="falloff_exp"/>
+        <variable value="0 0 0" type="vector3" name="uv0_speed"/>
+        <variable value="1041" type="scalar" name="fadeout_distance"/>
+        <variable value="match" type="scalar" name="intensity"/>
+    </material>
+    <material version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT:VERTEX_COLOR" name="mat_hcm_int_b_metal">
+        <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_b_df"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_steel"/>
+        <bump_normal_texture file="units/payday2/architecture/hcm/hcm_int_01_b_nm"/>
+    </material>
+    <material version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:INSTANCED" name="mat_hcm_int_01_glow">
+        <diffuse_texture file="units/payday2/architecture/hcm/hcm_int_01_glow_op"/>
+        <variable value="dimlight" type="scalar" name="intensity"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP" name="mat_glass_shattered">
+        <variable value="2 0 0" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:SELF_ILLUMINATION:VERTEX_COLOR" name="mat_hcm_int_01_il">
+        <diffuse_texture file="units/payday2/architecture/lux/lux_int_01_glow_df"/>
+        <self_illumination_texture file="units/payday2/architecture/lux/lux_int_01_glow"/>
+        <variable value="sun" type="scalar" name="il_multiplier"/>
+    </material>
+</materials>

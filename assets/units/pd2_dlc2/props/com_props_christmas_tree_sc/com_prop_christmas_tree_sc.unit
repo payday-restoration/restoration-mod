@@ -1,0 +1,6 @@
+<unit type="com" slot="1" >
+    <object file="units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

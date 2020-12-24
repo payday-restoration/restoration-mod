@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<unit type="vhc" slot="1">
+	<object file="units/payday2/vehicles/anim_vehicle_van_player/anim_vehicle_van_player" />
+	<network sync="spawn"/>
+	<anim_state_machine name="anims/units/van/van" />
+	<dependencies>
+		<depends_on animation_def="anims/units/van/van"/>
+		<depends_on animation_state_machine="anims/units/van/van"/>
+		<depends_on effect="effects/payday2/particles/window/storefront_window_small" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+	</dependencies>
+	<extensions>
+		<extension name="base" class="AnimatedVehicleBase">
+			<var name="_body_name" value="anim_body"/>
+		</extension>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="van_skin" class="VanSkinExt" />
+	</extensions>
+
+	<sounds>
+		<default_soundsource source="anim_body"/>
+		<soundsource name="snd" source="anim_body" />
+	</sounds>
+</unit>

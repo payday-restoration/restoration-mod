@@ -14,10 +14,8 @@
   <graphics>
 	<graphic_group name="lod_group" enabled="true" culling_object="co_weapon">
       <lod_object name="weapon_lod">
-        <object  name="g_body" enabled="true"/>
-<!--       <lod_object name="weapon_lod">
         <object  name="g_body" enabled="true" max_draw_lod="0" max_distance="1000" />
-        <object lod="1" name="g_body_lod1" enabled="true" /> -->		
+        <object lod="1" name="g_body_lod1" enabled="true" />
       </lod_object>
     </graphic_group>
 	</graphics>

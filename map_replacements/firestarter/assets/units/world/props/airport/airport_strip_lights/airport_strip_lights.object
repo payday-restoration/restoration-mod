@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/airport/airport_camera/airport_camera" orientation_object="rp_yellowlamp" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="c_yellowlamp" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces>
+    <decal_mesh name="c_yellowlamp" enabled="true" material="metal" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_yellowlamp" enabled="true" />
+    <object name="s_yellowlamp" enabled="true" shadow_caster="true" />
+  </graphics>
+</dynamic_object>

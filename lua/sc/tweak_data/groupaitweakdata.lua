@@ -262,7 +262,7 @@ function GroupAITweakData:_init_chatter_data()
 		radius = 700,
 		max_nr = 20,
 		duration = {2, 4},
-		interval = {0.75, 1.5},
+		interval = {2, 4},
 		group_min = 0,
 		queue = "t01"
 	}
@@ -474,14 +474,6 @@ function GroupAITweakData:_init_chatter_data()
 		group_min = 0,
 		queue = "m01"
 	}		
-	self.enemy_chatter.deathguard = { --this isnt actually kill lines those are done in playerdamage
-		radius = 2000,
-		max_nr = 5,
-		duration = {2, 4},
-		interval = {2, 3},
-		group_min = 0,
-		queue = "rdy"
-	}
 	self.enemy_chatter.cuffed = {
 		radius = 1000,
 	    max_nr = 1,
@@ -2787,6 +2779,35 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "shield"
 	}	
+	self.unit_categories.FBI_suit_C45 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_1/ene_fbi_hvh_1")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1")
+			},				
+			nypd = {
+				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1")
+			},
+			omnia_skm = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_1/ene_fbi_1")
+			}			
+		},
+		access = access_type_all
+	}		
 	self.unit_categories.FBI_suit_C45_M4 = {
 		unit_types = {
 			america = {
@@ -5438,6 +5459,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all
 		}
 	end		
+	
+	--FBI SWATs (Rifle)
 	if difficulty_index <= 4 then
 		self.unit_categories.FBI_swat_M4 = {
 			unit_types = {
@@ -5688,168 +5711,171 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			access = access_type_all
 		}						
-	elseif difficulty_index == 6 then
+	else
 		self.unit_categories.FBI_swat_M4 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle")
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
 					Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
 					Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
 					Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),	
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),	
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 				},	
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle")
 				},					
 				nypd = {
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 				},	
 				lapd = {
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 				}					
 			},
 			access = access_type_all
-		}			
-	elseif difficulty_index == 7 then
-		self.unit_categories.FBI_swat_M4 = {
+		}
+	end
+	
+	--GenSec SWATs (rifle)
+	if difficulty_index <= 7 then
+		self.unit_categories.GS_swat_M4 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
@@ -6009,7 +6035,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all
 		}	
 	else
-		self.unit_categories.FBI_swat_M4 = {
+		self.unit_categories.GS_swat_M4 = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
@@ -6063,7 +6089,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			access = access_type_all
 		}
-	end
+	end	
+	
+	--FBI Shotgunners/SMG Units
 	if difficulty_index <= 4 then
 		self.unit_categories.FBI_swat_R870 = {
 			unit_types = {
@@ -6524,16 +6552,16 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			access = access_type_all
 		}				
-	elseif difficulty_index == 6 then
+	else
 		self.unit_categories.FBI_swat_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"),			
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
@@ -6541,11 +6569,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump"),
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
@@ -6553,11 +6581,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},
 				zombie = {
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
 					Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
-					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
 					Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
@@ -6565,11 +6593,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},						
 				murkywater = {
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
@@ -6577,11 +6605,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"),		
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
@@ -6589,11 +6617,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),			
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
@@ -6601,11 +6629,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},	
 				lapd = {
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),			
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
@@ -6614,8 +6642,101 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			access = access_type_all
 		}
+	end		
+	
+	--GenSec Shotgunners/SMG units
+	if difficulty_index <= 6 then
+		self.unit_categories.GS_swat_R870 = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),			
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
+				},
+				russia = {
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+					Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+					Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")								
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+					Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
+					Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")							
+				},						
+				murkywater = {
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")							
+				},
+				federales = {
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),		
+					Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+					Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")					
+				},					
+				nypd = {
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),		
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")				
+				},	
+				lapd = {
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),		
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
+				}				
+			},
+			access = access_type_all
+		}
 	elseif difficulty_index == 7 then
-		self.unit_categories.FBI_swat_R870 = {
+		self.unit_categories.GS_swat_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
@@ -6705,7 +6826,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all
 		}					
 	else
-		self.unit_categories.FBI_swat_R870 = {
+		self.unit_categories.GS_swat_R870 = {
 			unit_types = {
 				america = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
@@ -6780,8 +6901,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			access = access_type_all
 		}
-	end
-	if difficulty_index <= 4 then
+	end	
+	
+	--FBI Heavies (Rifle)
+	if difficulty_index <= 6 then
 		self.unit_categories.FBI_heavy_G36 = {
 			unit_types = {
 				america = {
@@ -6807,61 +6930,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				}					
 			},
 			access = access_type_all
-		}
-	elseif difficulty_index == 5 then
-		self.unit_categories.FBI_heavy_G36 = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
-				},
-				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
-				},							
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
-				},					
-				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				}					
-			},
-			access = access_type_all
-		}					
-	elseif difficulty_index == 6 then
-		self.unit_categories.FBI_heavy_G36 = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
-				},
-				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
-				},							
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
-				},						
-				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				}					
-			},
-			access = access_type_all
-		}					
+		}			
 	elseif difficulty_index == 7 then
 		self.unit_categories.FBI_heavy_G36 = {
 			unit_types = {
@@ -6878,7 +6947,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36")
 				},						
 				nypd = {
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
@@ -6905,7 +6974,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36")
 				},							
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc")
@@ -7529,33 +7598,33 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),					
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),					
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),		
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),	
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper")
@@ -7659,10 +7728,10 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")						
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
 					Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper")					
 				},						
 				nypd = {
@@ -7683,7 +7752,9 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all
 		}
 	end		
-	if difficulty_index <= 4 then
+	
+	--FBI Heavy (Rifle, Walk only)
+	if difficulty_index <= 6 then
 		self.unit_categories.FBI_heavy_G36_w = {
 			unit_types = {
 				america = {
@@ -7709,61 +7780,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				}						
 			},
 			access = access_type_all
-		}
-	elseif difficulty_index == 5 then
-		self.unit_categories.FBI_heavy_G36_w = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
-				},
-				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
-				},							
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
-				},							
-				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},		
-				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				}						
-			},
-			access = access_type_all
-		}					
-	elseif difficulty_index == 6 then
-		self.unit_categories.FBI_heavy_G36_w = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
-				},
-				zombie = {
-					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
-				},							
-				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},
-				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
-				},							
-				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				},	
-				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
-				}					
-			},
-			access = access_type_all
-		}					
+		}			
 	elseif difficulty_index == 7 then
 		self.unit_categories.FBI_heavy_G36_w = {
 			unit_types = {
@@ -7780,7 +7797,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36")
 				},							
 				nypd = {
 					Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
@@ -7807,7 +7824,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36")
 				},							
 				nypd = {
 					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc")
@@ -7819,6 +7836,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			access = access_type_all
 		}
 	end
+	
 	if difficulty_index <= 4 then
 		self.unit_categories.FBI_shield = {
 			unit_types = {
@@ -7835,7 +7853,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc")
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi")
 				},					
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1")
@@ -7941,25 +7959,25 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),	
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),	
 					Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")							
 				},					
 				nypd = {
@@ -8063,15 +8081,15 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
 					Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 				},					
 				nypd = {
@@ -8285,23 +8303,23 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
-					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
+					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal"),
 					Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),		
 					Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"),	
 					Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
@@ -9927,13 +9945,2413 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 		special_type = "spooc",
 		is_captain = true
 	}	
+	
+	--Skirmish only unit categories
+	
+	--FBI Light SWATs, for earlier waves
+	self.unit_categories.SKM_Light_SWAT_Rifle_W1 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat")
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),	
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			},	
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle")
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			},	
+			lapd = {
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			}					
+		},
+		access = access_type_all
+	}	
+	
+	--FBI Light SWAT Shotgunners, for earlier waves
+	self.unit_categories.SKM_Light_SWAT_Shotgun_W1 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"),			
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")								
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")							
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")							
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"),		
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")					
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),			
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},	
+			lapd = {
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"),			
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
+			}				
+		},
+		access = access_type_all
+	}	
+	
+	--FBI Heavy SWAT, early wave
+	self.unit_categories.SKM_Heavy_SWAT_Rifle_W1 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1")
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36")
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+			}					
+		},
+		access = access_type_all
+	}	
+		
+	--FBI Shotgunner with Sharpshooters
+	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W1 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),					
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),						
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),					
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),	
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),	
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper")
+			},							
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),					
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),					
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper")
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),					
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+			},
+			lapd = {
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),		
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),					
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+			}					
+		},
+		access = access_type_all
+	}		
+	
+	--FBI Shields for early waves
+	self.unit_categories.SKM_FBI_shield_W1 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"),
+				Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},
+			lapd = {
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			}					
+		},
+		access = access_type_all,
+		special_type = "shield"
+	}		
+
+	--HRTs for Waves 1+2
+	self.unit_categories.SKM_FBI_suit_M4_MP5_W2 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1"),
+				Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+			},							
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			lapd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			}						
+		},
+		access = access_type_all
+	}	
+	
+	--Medics, early waves (FBI tier)
+	self.unit_categories.SKM_medic_W2 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),	
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),		
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")							
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")						
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf")						
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),	
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			lapd = {
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),	
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			}					
+		},
+		access = access_type_all,
+		special_type = "medic"
+	}			
+
+	--FBI/GenSec tier tazers
+	self.unit_categories.SKM_Tazer_W2 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),			
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),		
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser")							
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),		
+				Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),						
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_taser/ene_titan_taser")							
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),					
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),					
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser")								
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"),					
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")						
+			},
+			lapd = {
+				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
+				Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1"),					
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")							
+			},
+			omnia_skm = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser")
+			}				
+		},
+		access = access_type_all,
+		special_type = "taser"
+	}			
+
+	--FBI/GenSec tier Grenadiers
+	self.unit_categories.SKM_Boom_W2 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_grenadier_1/ene_grenadier_1")
+			},				
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_grenadier_1/ene_grenadier_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1")
+			},				
+			nypd = {
+				Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			},
+			lapd = {
+				Idstring("units/payday2/characters/ene_grenadier_1/ene_grenadier_1")
+			}				
+		},
+		access = access_type_all,
+		special_type = "boom"
+	}	
+	
+	--GenSec SWATs with rifles, W3 and W4
+	self.unit_categories.SKM_Light_SWAT_Rifle_W3 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat")
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),	
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle")
+			},						
+			nypd = {
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
+			}					
+		},
+		access = access_type_all
+	}	
+	
+	--GenSec shotgunners, W3 and W4
+	self.unit_categories.SKM_Light_SWAT_Shotgun_W3 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),	
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")								
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"),			
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")								
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3"),							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")							
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"),							
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")					
+			},					
+			nypd = {
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),	
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),	
+				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
+			}					
+		},
+		access = access_type_all
+	}	
+
+	--GenSec heavy, W3+W4
+	self.unit_categories.SKM_Heavy_SWAT_Rifle_W3 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+			},							
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36")
+			},						
+			nypd = {
+				Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+			},
+			lapd = {
+				Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+			}					
+		},
+		access = access_type_all
+	}		
+	
+	--GenSec heavy w/ Shotgun, W3+W4
+	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W3 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),		
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),	
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),						
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),					
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),	
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),						
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper")
+			},							
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),	
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),						
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),					
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),		
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper")
+			},						
+			nypd = {
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),		
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),	
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),						
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+			},
+			lapd = {
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),		
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),	
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),						
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
+			}					
+		},
+		access = access_type_all
+	}	
+
+	--GenSec tier medic, W3+W4
+	self.unit_categories.SKM_medic_W3 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),	
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),		
+				Idstring("units/pd2_mod_halloween/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf")							
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4"),
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")						
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf")						
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),	
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic"),
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			},
+			lapd = {
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),	
+				Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5"),
+				Idstring("units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf")
+			}					
+		},
+		access = access_type_all,
+		special_type = "medic"
+	}	
+
+	--GenSec tier shield
+	self.unit_categories.SKM_FBI_shield_W3 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_dw_sr2_smg/ene_akan_fbi_shield_dw_sr2_smg"),
+				Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")									
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi"),
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},						
+			nypd = {
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
+			}					
+		},
+		access = access_type_all,
+		special_type = "shield"
+	}	
+	
+	--GenSec tier M4/MP5 HRTs, + Bloody Vet Cop. W3+W4
+	self.unit_categories.SKM_FBI_suit_M4_MP5_W3 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2"),
+				Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_mod_halloween/characters/ene_veteran_cop_1/ene_veteran_cop_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+			},							
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1"),
+				Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},	
+			lapd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			}					
+		},
+		access = access_type_all
+	}						
+	
+	--GenSec HRT (mp5) tier, W3+W4
+	self.unit_categories.SKM_FBI_suit_stealth_MP5_W3 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3"),
+				Idstring("units/pd2_mod_halloween/characters/ene_fbi_titan_1/ene_fbi_titan_1")								
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			},
+			lapd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"),
+				Idstring("units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1")							
+			}					
+		},
+		access = access_type_all
+	}	
+
+	--GenSec tier Blackdozer, W4 only
+	self.unit_categories.SKM_BLACK_tank_W4 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")								
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga")								
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2")							
+			},							
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga")					
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga")
+			},						
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2")							
+			},
+			lapd = {
+				Idstring("units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2")								
+			}								
+		},
+		access = access_type_all,
+		special_type = "tank"
+	}	
+
+	--Zeal Light SWATs w/ Bravo Support
+	self.unit_categories.SKM_Light_SWAT_Rifle_W7 = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg")				
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru")				
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg")	
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),	
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"),	
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky")				
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex"),				
+			},					
+			nypd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg")	
+			},	
+			lapd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg")	
+			}					
+		},
+		access = access_type_all
+	}	
+	
+	--Zeal Light Shotgunner with Bravo support
+	self.unit_categories.SKM_Light_SWAT_Shotgun_W7 = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),	
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),								
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),	
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),								
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"),					
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")	
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),								
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),								
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},					
+			nypd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")	
+			},
+			lapd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")	
+			}					
+		},
+		access = access_type_all
+	}	
+	
+	--Zeal Heavies with Bravo Sharpshooters
+	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W7 = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),		
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")				
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru")				
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_titan_sniper/ene_titan_sniper"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")					
+			},							
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),	
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky")						
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper"),	
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex")				
+			},						
+			nypd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),		
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")	
+			},	
+			lapd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),		
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")	
+			}					
+		},
+		access = access_type_all
+	}
+
+	--Bravo Support Lights
+	self.unit_categories.SKM_Light_SWAT_Rifle_W8 = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg")				
+			},
+			russia = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru")				
+			},
+			zombie = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg")	
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"),	
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg_murky/ene_bravo_lmg_murky")				
+			},
+			federales = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg_mex/ene_bravo_lmg_mex"),				
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg")	
+			},	
+			lapd = {
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg")	
+			}					
+		},
+		access = access_type_all
+	}	
+	
+	--Bravo Shotgunners
+	self.unit_categories.SKM_Light_SWAT_Shotgun_W8 = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},
+			russia = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),	
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump"),								
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},
+			zombie = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
+				Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")	
+			},						
+			murkywater = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_murky/ene_bravo_shotgun_murky"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3"),							
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},
+			federales = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun_mex/ene_bravo_shotgun_mex"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump"),								
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")				
+			},					
+			nypd = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")	
+			},
+			lapd = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3"),								
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
+				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")	
+			}					
+		},
+		access = access_type_all
+	}	
+	
+	--Zeal Heavies with only Bravo Sharpshooters
+	self.unit_categories.SKM_Heavy_SWAT_Shotgun_W8 = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")				
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru")				
+			},
+			zombie = {
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")					
+			},							
+			murkywater = {
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/ene_bravo_dmr_murky")						
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex")				
+			},						
+			nypd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")	
+			},	
+			lapd = {	
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")	
+			}					
+		},
+		access = access_type_all
+	}		
 
 end
 
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
-	-- The below summarizes the functions of new or revised tactics in Restoration.
+	--The below summarizes the functions of new or revised tactics in Restoration.
 	--charge
 	--unit moves to player position and engages per conventional rules. Primary driver for most units.
+	--enemies will go into the room and get into sight of you.
 	--ranged_fire 
 	--unit engages from longer range location with line of sight. Will eventually close with player.
 	--elite_ranged_fire 
@@ -9943,7 +12361,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--reloadingretreat
 	--if player is visible and unit is reloading, attempt to retreat into cover.
 	--hitnrun
-	-- Approach enemies and engage for a short time, then, back away from the fight. Uses 10m retreat range.
+	--Approach enemies and engage for a short time, then, back away from the fight. Uses 10m retreat range.
 	--Tunnel
 	--Unit almost entirely targets one player until down, then moves on to next. Special-oriented.
 	--spoocavoidance
@@ -9962,6 +12380,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--Unit will copy the leader's objective, but behave separately from the group. Useful for pinch groups and to separate flankers from chargers, but still technically have them be part of the same group.
 	--skirmish
 	--system function for retreating in holdout mode. MUST be last tactic for all units. Do not touch.
+	--flank
+	--flank enemies will get around you and try to either, run past you, or to your side, so that you're not facing them. if they are walking, and they're within 15-10 meters, they'll crouch.
 	self._tactics = {
 		CS_cop = {
 			"provide_coverfire",
@@ -10014,6 +12434,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"charge",
 			"provide_coverfire",
+			"lonewolf",
 			"provide_support"
 		},
 		CS_swat_shotgun_flank = {
@@ -10023,6 +12444,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"hitnrun"
 		},
 		CS_swat_heavy_flank = {
@@ -10032,6 +12454,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		CS_shield_flank = {
@@ -10078,7 +12501,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		MH_shield = { 
 			"legday",
 			"charge",
-			"aggressor",
 			"provide_coverfire",
 			"provide_support",
 			"shield",
@@ -10087,7 +12509,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		DW_tazer = { --tries to get as close as possible to tase players easily
 			"legday",
 			"charge",
-			"aggressor",
 			"flash_grenade",
 			"smoke_grenade",
 			"shield_cover",
@@ -10116,6 +12537,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"elite_ranged_fire",
+			"lonewolf",
 			"provide_support"
 		},
 		FBI_suit = {
@@ -10194,6 +12616,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		FBI_swat_shotgun_flank = {
@@ -10204,6 +12627,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover",
+			"lonewolf",
 			"hitnrun"
 		},
 		FBI_heavy_flank = {
@@ -10213,6 +12637,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		--mayhem tactics
@@ -10254,6 +12679,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		MH_swat_shotgun_flank = {
@@ -10262,9 +12688,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"legday",
 			"charge",
-			"aggressor",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		MH_heavy_flank = {
@@ -10275,6 +12701,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		MH_heavy_shotgun_flank = {
@@ -10284,6 +12711,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		--death wish tactics
@@ -10291,7 +12719,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
-			"aggressor",
 			"provide_coverfire",
 			"charge",
 			"provide_support",
@@ -10307,6 +12734,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"harass",
+			"lonewolf",
 			"shield_cover"
 		},
 		DW_heavy_flank = {
@@ -10318,6 +12746,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"harass",
+			"lonewolf",
 			"shield_cover"
 		},
 		FBI_shield_flank = {
@@ -10327,6 +12756,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield"
 		},
 		FBI_tank = { --set up to try and flank the player
@@ -10346,7 +12776,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"tunnel",
 			"charge",
 			"harass",
-			"aggressor",
 			"shield"
 		},
 		SKULL_tank = { --slightly more passive than the other dozers will stand his ground if charged
@@ -10363,7 +12792,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"reloadingretreat",
 			"spoocavoidance",
 			"murder",
-			"tunnel",
 			"elite_ranged_fire",
 			"harass"
 		},
@@ -10375,15 +12803,19 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade"
 		},
 		Cap_spring = {
-			"aggressor",
+			"shield",
 			"charge"
 		},
 		HVH_boss = {
-			"aggressor",
+			"shield",
 			"charge"
 		},		
+		Cap_summers_minion = {
+			"shield_cover",
+			"charge"
+		},	
 		Cap_summers = {
-			"aggressor",
+			"shield",
 			"charge"
 		},
 		Cap_autumn = {
@@ -10399,12 +12831,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		Cap_winters = {
 			"shield",
-			"aggressor",
 			"charge"
 		},	
 		Cap_winters_minion = {
 			"shield",
-			"aggressor",
 			"charge"
 		},			
 		--hunter hrt tactics
@@ -10462,7 +12892,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"charge",
 			"harass",
-			"aggressor",
 			"provide_coverfire",
 			"shield_cover",
 			"provide_support",
@@ -10475,9 +12904,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"harass",
 			"charge",
-			"aggressor",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		ELITE_swat_shotgun_flank = {
@@ -10487,9 +12916,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"legday",
 			"harass",
 			"charge",
-			"aggressor",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
 		ELITE_heavy_flank = { 
@@ -10501,8 +12930,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"lonewolf",
 			"shield_cover"
 		},
+		--Reinforce groups
+		FBI_defend = {
+			"obstacle",
+			"elite_ranged_fire",
+			"provide_coverfire",
+			"provide_support"
+		},		
 		--Vanilla shit below
 		swat_shotgun_rush = {
 			"charge",
@@ -10518,6 +12955,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
+			"lonewolf",
 			"hitnrun"
 		},
 		swat_rifle = {
@@ -10564,7 +13002,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		tazer_flanking = {
 			"flank",
 			"legday",
-			"aggressor",
 			"charge",
 			"provide_coverfire",
 			"smoke_grenade",
@@ -10574,7 +13011,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		tazer_charge = {
 			"charge",
 			"legday",
-			"aggressor",
 			"provide_coverfire",
 			"tunnel",
 			"murder"
@@ -10593,7 +13029,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			{
 				unit = "CS_cop_C45_R870",
 				freq = 1,
-				tactics = self._tactics.CS_cop,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			}
 		}
@@ -10605,7 +13041,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "CS_swat_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.CS_cop,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			}
 		}
@@ -10617,7 +13053,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "CS_heavy_M4",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.CS_cop,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			}
 		}
@@ -10689,6 +13125,31 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}
+	--For high Diff Hard
+	self.enemy_spawn_groups.CS_FBI = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				tactics = self._tactics.CS_swat_rifle,
+				rank = 2
+			},
+			{
+				unit = "CS_swat_R870",
+				freq = 0.5,
+				amount_max = 1,
+				tactics = self._tactics.CS_swat_shotgun,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 0.33,
+				tactics = self._tactics.CS_swat_rifle_flank_hard,
+				rank = 3
+			}
+		}
+	}	
 	self.enemy_spawn_groups.CS_heavys = {
 		amount = {3, 4},
 		spawn = {
@@ -11000,20 +13461,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_C45_M4",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			},					
 			{
 				unit = "CS_cop_C45_R870",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
@@ -11025,56 +13486,99 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_M4_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			},					
 			{
 				unit = "FBI_swat_M4",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
 	}
+	self.enemy_spawn_groups.GS_defend_b = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.FBI_defend,
+				rank = 2
+			},					
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				tactics = self._tactics.FBI_defend,
+				rank = 1
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.2,
+				amount_max = 1,
+				tactics = self._tactics.FBI_defend,
+				rank = 2
+			}
+		}
+	}	
 	self.enemy_spawn_groups.FBI_defend_c = {
 		amount = {3, 4},
 		spawn = {
 			{
 				unit = "FBI_swat_M4",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
 	}
+	self.enemy_spawn_groups.GS_defend_c = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				tactics = self._tactics.FBI_defend,
+				rank = 1
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.2,
+				amount_max = 1,
+				tactics = self._tactics.FBI_defend,
+				rank = 2
+			}
+		}
+	}	
 	self.enemy_spawn_groups.FBI_defend_d = {
 		amount = {3, 4},
 		spawn = {
 			{
 				unit = "FBI_heavy_G36",
 				freq = 1,
-				tactics = self._tactics.FBI_suit,
+				tactics = self._tactics.FBI_defend,
 				rank = 1
 			},
 			{
 				unit = "medic_M4",
 				freq = 0.2,
 				amount_max = 1,
-				tactics = self._tactics.FBI_medic,
+				tactics = self._tactics.FBI_defend,
 				rank = 2
 			}
 		}
@@ -11242,7 +13746,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}
-	end		
+	end			
 	if difficulty_index <= 6 then
 		self.enemy_spawn_groups.FBI_stealth_b = {
 			amount = {2, 3},
@@ -11322,6 +13826,32 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	end
+	--For lower difficulties only
+	self.enemy_spawn_groups.FBI_stealth_c = {
+		amount = {2, 3},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.FBI_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_C45",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			},						
+			{
+				unit = "medic_M4",
+				freq = 0.2,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.FBI_swats = {
 			amount = {3, 4},
@@ -11363,7 +13893,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}
-	elseif difficulty_index == 6 then	
+	else	
 		self.enemy_spawn_groups.FBI_swats = {
 			amount = {3, 4},
 			spawn = {
@@ -11404,12 +13934,54 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}
-	elseif difficulty_index == 7 then	
-		self.enemy_spawn_groups.FBI_swats = {
+	end
+	if difficulty_index <= 6 then	
+		self.enemy_spawn_groups.GS_swats = {
 			amount = {3, 4},
 			spawn = {
 				{
-					unit = "FBI_swat_M4",
+					unit = "GS_swat_M4",
+					freq = 1,
+					amount_min = 1,
+					tactics = self._tactics.MH_swat_rifle,
+					rank = 2
+				},
+				{
+					unit = "GS_swat_M4",
+					freq = 0.75,
+					tactics = self._tactics.MH_swat_rifle_flank,
+					rank = 3
+				},
+				{
+					unit = "GS_swat_R870",
+					freq = 0.5,
+					amount_max = 1,
+					tactics = self._tactics.MH_swat_shotgun,
+					rank = 1
+				},
+				{
+					unit = "spooc",
+					freq = 0.15,
+					amount_max = 2,
+					tactics = self._tactics.spooc,
+					rank = 1
+				},
+				{
+					unit = "medic_M4",
+					freq = 0.2,
+					amount_min = 0,
+					amount_max = 1,
+					tactics = self._tactics.FBI_medic,
+					rank = 1
+				}
+			}
+		}
+	elseif difficulty_index == 7 then	
+		self.enemy_spawn_groups.GS_swats = {
+			amount = {3, 4},
+			spawn = {
+				{
+					unit = "GS_swat_M4",
 					freq = 1,
 					amount_min = 2,
 					tactics = self._tactics.DW_swat_rifle,
@@ -11422,7 +13994,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				},					
 				{
-					unit = "FBI_swat_R870",
+					unit = "GS_swat_R870",
 					amount_min = 1,
 					amount_max = 2,
 					freq = 1,
@@ -11440,11 +14012,11 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}		
 	else
-		self.enemy_spawn_groups.FBI_swats = {
+		self.enemy_spawn_groups.GS_swats = {
 			amount = {4, 5},
 			spawn = {
 				{
-					unit = "FBI_swat_M4",
+					unit = "GS_swat_M4",
 					freq = 1,
 					amount_min = 2,
 					tactics = self._tactics.ELITE_swat_rifle,
@@ -11457,7 +14029,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				},					
 				{
-					unit = "FBI_swat_R870",
+					unit = "GS_swat_R870",
 					amount_min = 1,
 					amount_max = 2,
 					freq = 1,
@@ -11474,7 +14046,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}
-	end
+	end	
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.FBI_heavys = {
 			amount = {3, 4},
@@ -11567,7 +14139,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "FBI_swat_M4",
+					unit = "GS_swat_M4",
 					freq = 1,
 					tactics = self._tactics.DW_swat_rifle_flank,
 					rank = 2
@@ -11602,7 +14174,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "FBI_swat_M4",
+					unit = "GS_swat_M4",
 					freq = 1,
 					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
@@ -11718,7 +14290,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "FBI_swat_M4",
+					unit = "GS_swat_M4",
 					freq = 1,
 					tactics = self._tactics.DW_heavy_flank,
 					rank = 2
@@ -11753,7 +14325,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				},
 				{
-					unit = "FBI_swat_M4",
+					unit = "GS_swat_M4",
 					freq = 1,
 					tactics = self._tactics.ELITE_heavy_flank,
 					rank = 2
@@ -12627,7 +15199,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,
-				tactics = self._tactics.Cap_summers,
+				tactics = self._tactics.Cap_summers_minion,
 				rank = 1
 			},
 			{
@@ -12635,7 +15207,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,
-				tactics = self._tactics.Cap_summers,
+				tactics = self._tactics.Cap_summers_minion,
 				rank = 1
 			},
 			{
@@ -12643,7 +15215,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,
-				tactics = self._tactics.Cap_summers,
+				tactics = self._tactics.Cap_summers_minion,
 				rank = 1
 			}
 		}
@@ -12662,7 +15234,2241 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	}
 	self.enemy_spawn_groups.FBI_spoocs = self.enemy_spawn_groups.single_spooc
 	
-			
+	--Skirmish Spawngroups Below
+	
+	--Wave 1
+	self.enemy_spawn_groups.SKM_Light_Swat_W1 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Light_SWAT_Rifle_W1",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},	
+			{
+				unit = "SKM_FBI_suit_M4_MP5_W2",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,				
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},			
+			{
+				unit = "SKM_Light_SWAT_Shotgun_W1",
+				amount_min = 1,
+				amount_max = 1,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W1 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W1",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Shotgun_W1",
+				amount_min = 1,
+				amount_max = 1,
+				freq = 1,
+				tactics = self._tactics.FBI_swat_shotgun,
+				rank = 3
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Shields_W1 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKM_FBI_shield_W1",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W1",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			}			
+		}
+	}	
+	
+	--Wave 2
+	self.enemy_spawn_groups.SKM_Light_Swat_W2 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Light_SWAT_Rifle_W1",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "SKM_FBI_suit_M4_MP5_W2",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,				
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "SKM_Light_SWAT_Shotgun_W1",
+				amount_min = 1,
+				amount_max = 1,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "SKM_medic_W2",
+				freq = 0.1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W2 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W1",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Shotgun_W1",
+				amount_min = 1,
+				amount_max = 1,
+				freq = 1,
+				tactics = self._tactics.FBI_swat_shotgun,
+				rank = 3
+			},					
+			{
+				unit = "SKM_medic_W2",
+				freq = 0.1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_W2 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKM_FBI_shield_W1",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W1",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},		
+			{
+				unit = "SKM_medic_W2",
+				freq = 0.1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}			
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Tazers_W2 = {
+		amount = {2, 3},
+		spawn = {
+			{
+				unit = "SKM_Tazer_W2",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics_ = self._tactics.CS_tazer,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W1",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Booms_W2 = {
+		amount = {2, 3},
+		spawn = {
+			{
+				unit = "SKM_Boom_W2",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 1,
+				tactics_ = self._tactics.CS_boom,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W1",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+
+	--Wave 3
+	self.enemy_spawn_groups.SKM_Light_Swat_W3 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Light_SWAT_Rifle_W3",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "SKM_FBI_suit_M4_MP5_W3",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,				
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "SKM_Light_SWAT_Shotgun_W3",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "SKM_medic_W3",
+				freq = 0.2,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W3 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W3",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Shotgun_W3",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.FBI_swat_shotgun,
+				rank = 3
+			},					
+			{
+				unit = "SKM_medic_W3",
+				freq = 0.2,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_W3 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKM_FBI_shield_W3",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W3",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},		
+			{
+				unit = "SKM_medic_W3",
+				freq = 0.2,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}			
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Tazers_W3 = {
+		amount = {2, 3},
+		spawn = {
+			{
+				unit = "SKM_Tazer_W2",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.CS_tazer,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W3",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Booms_W3 = {
+		amount = {2, 3},
+		spawn = {
+			{
+				unit = "SKM_Boom_W2",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.CS_boom,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W3",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_HRTs_W3 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKM_FBI_suit_stealth_MP5_W3",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "SKM_FBI_suit_M4_MP5_W3",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			}
+		}
+	}	
+	
+	--Wave 4
+	self.enemy_spawn_groups.SKM_Light_Swat_W4 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Light_SWAT_Rifle_W3",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "SKM_FBI_suit_M4_MP5_W2",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,				
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "SKM_Light_SWAT_Shotgun_W3",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "SKM_medic_W3",
+				freq = 0.35,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W4 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W3",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Shotgun_W3",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.FBI_swat_shotgun,
+				rank = 3
+			},					
+			{
+				unit = "SKM_medic_W3",
+				freq = 0.35,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_W4 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKM_FBI_shield_W3",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W3",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.MH_heavy,
+				rank = 1
+			},		
+			{
+				unit = "SKM_medic_W3",
+				freq = 0.35,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}			
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Tazers_W4 = {
+		amount = {2, 3},
+		spawn = {
+			{
+				unit = "SKM_Tazer_W2",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.CS_tazer,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W3",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Booms_W4 = {
+		amount = {2, 3},
+		spawn = {
+			{
+				unit = "SKM_Boom_W2",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.CS_boom,
+				rank = 1
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Rifle_W3",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_HRTs_W4 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKM_FBI_suit_stealth_MP5_W3",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "SKM_FBI_suit_M4_MP5_W2",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_BLACK_Tank_W4 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKM_BLACK_tank_W4",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.BLACK_tank,
+				rank = 3
+			},
+			{
+				unit = "SKM_FBI_shield_W3",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "SKM_medic_W3",
+				freq = 0.35,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	
+	--Wave 5
+	self.enemy_spawn_groups.SKM_Light_Swat_W5 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 1,
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "GS_swat_R870",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.5,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W5 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			},
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_rifle_flank,
+				rank = 2
+			},
+			{
+				unit = "FBI_heavy_R870",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				rank = 3
+			},						
+			{
+				unit = "medic_M4",
+				freq = 0.5,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_W5 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.FBI_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "CS_tazer",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.DW_tazer,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.5,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Tazers_W5 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "CS_tazer",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.DW_tazer,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_Booms_W5 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "boom_M4203",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.ELITE_boom,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_HRTs_W5 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			},							
+			{
+				unit = "medic_M4",
+				freq = 0.35,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_BLACK_Tank_W5 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "BLACK_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.BLACK_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.5,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}		
+	self.enemy_spawn_groups.SKM_GREEN_Tank_W5 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.5,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}			
+		}
+	}	
+	self.enemy_spawn_groups.SKM_single_spooc_W5 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}	
+	
+	--Wave 6, more or less just normal DS now
+	self.enemy_spawn_groups.SKM_Light_Swat_W6 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 1,
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "GS_swat_R870",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W6 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			},
+			{
+				unit = "GS_swat_M4",
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_rifle_flank,
+				rank = 2
+			},
+			{
+				unit = "FBI_heavy_R870",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				rank = 3
+			},						
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Shields_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.FBI_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "spooc",
+				freq = 0.15,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			},
+			{
+				unit = "CS_tazer",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.DW_tazer,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_Booms_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "spooc",
+				freq = 0.15,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			},
+			{
+				unit = "boom_M4203",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_boom,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Tazers_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "CS_tazer",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.DW_tazer,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Booms_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "boom_M4203",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.ELITE_boom,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_HRTs_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			},							
+			{
+				unit = "medic_M4",
+				freq = 0.35,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_BLACK_Tank_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "BLACK_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.BLACK_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_GREEN_Tank_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}			
+		}
+	}	
+	self.enemy_spawn_groups.SKM_SKULL_Tank_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKULL_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.SKULL_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_TIT_Tank_W6 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "TIT_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.TIT_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_single_spooc_W6 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}		
+	
+	--Wave 7, more or less just normal DS now WITH Bravo support
+	self.enemy_spawn_groups.SKM_Light_Swat_W7 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Light_SWAT_Rifle_W7",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 1,
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "SKM_Light_SWAT_Shotgun_W7",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W7 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			},
+			{
+				unit = "SKM_Light_SWAT_Rifle_W7",
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_rifle_flank,
+				rank = 2
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Shotgun_W7",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				rank = 3
+			},						
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Shields_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.FBI_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "spooc",
+				freq = 0.15,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			},
+			{
+				unit = "CS_tazer",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.DW_tazer,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_Booms_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "spooc",
+				freq = 0.15,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			},
+			{
+				unit = "boom_M4203",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_boom,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Tazers_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "CS_tazer",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.DW_tazer,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Booms_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "boom_M4203",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.ELITE_boom,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_HRTs_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			},							
+			{
+				unit = "medic_M4",
+				freq = 0.35,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_BLACK_Tank_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "BLACK_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.BLACK_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_GREEN_Tank_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}			
+		}
+	}	
+	self.enemy_spawn_groups.SKM_SKULL_Tank_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKULL_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.SKULL_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_TIT_Tank_W7 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "TIT_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.TIT_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_single_spooc_W7 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}			
+	
+	--Wave 8, DS but only Bravos
+	self.enemy_spawn_groups.SKM_Light_Swat_W8 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Light_SWAT_Rifle_W8",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 1,
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "SKM_Light_SWAT_Shotgun_W8",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W8 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			},
+			{
+				unit = "SKM_Light_SWAT_Rifle_W8",
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_rifle_flank,
+				rank = 2
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Shotgun_W8",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				rank = 3
+			},						
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Shields_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.FBI_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "spooc",
+				freq = 0.15,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			},
+			{
+				unit = "CS_tazer",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.DW_tazer,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_Booms_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "spooc",
+				freq = 0.15,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			},
+			{
+				unit = "boom_M4203",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_boom,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Tazers_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "CS_tazer",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.DW_tazer,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Booms_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "boom_M4203",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.ELITE_boom,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_HRTs_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			},							
+			{
+				unit = "medic_M4",
+				freq = 0.35,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_BLACK_Tank_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "BLACK_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.BLACK_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_GREEN_Tank_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}			
+		}
+	}	
+	self.enemy_spawn_groups.SKM_SKULL_Tank_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKULL_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.SKULL_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_TIT_Tank_W8 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "TIT_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.TIT_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_single_spooc_W8 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
+	
+	--Wave 9
+	self.enemy_spawn_groups.SKM_Light_Swat_W9 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "SKM_Light_SWAT_Rifle_W8",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_swat_rifle,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 1,
+				tactics = self._tactics.HRT_attack,
+				rank = 2
+			},					
+			{
+				unit = "SKM_Light_SWAT_Shotgun_W8",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Heavy_Swat_W9 = {
+		amount = {4, 5},
+		spawn = {
+			{
+				unit = "FBI_heavy_G36_w",
+				freq = 1,
+				amount_min = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			},
+			{
+				unit = "SKM_Light_SWAT_Rifle_W8",
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_rifle_flank,
+				rank = 2
+			},
+			{
+				unit = "SKM_Heavy_SWAT_Shotgun_W8",
+				amount_min = 1,
+				amount_max = 2,
+				freq = 1,
+				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				rank = 3
+			},						
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Shields_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.FBI_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "spooc",
+				freq = 0.15,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			},
+			{
+				unit = "CS_tazer",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.DW_tazer,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Shields_Booms_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "spooc",
+				freq = 0.15,
+				amount_max = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			},
+			{
+				unit = "boom_M4203",
+				freq = 0.75,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_boom,
+				rank = 2
+			},			
+			{
+				unit = "medic_M4",
+				freq = 0.6,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_Tazers_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "CS_tazer",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.DW_tazer,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_heavy,
+				rank = 1
+			}
+		}
+	}
+	self.enemy_spawn_groups.SKM_Booms_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "boom_M4203",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics_ = self._tactics.ELITE_boom,
+				rank = 1
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "FBI_heavy_G36",
+				freq = 1,
+				amount_max = 2,
+				tactics = self._tactics.ELITE_heavy,
+				rank = 1
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_HRTs_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_suit_stealth_MP5",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.ELITE_suit_stealth,
+				rank = 1
+			},
+			{
+				unit = "FBI_suit_M4_MP5",
+				freq = 0.75,
+				tactics = self._tactics.FBI_suit,
+				rank = 2
+			},							
+			{
+				unit = "medic_M4",
+				freq = 0.35,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_BLACK_Tank_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "BLACK_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.BLACK_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_GREEN_Tank_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "FBI_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.FBI_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}			
+		}
+	}	
+	self.enemy_spawn_groups.SKM_SKULL_Tank_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "SKULL_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.SKULL_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.MH_shield,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_TIT_Tank_W9 = {
+		amount = {3, 4},
+		spawn = {
+			{
+				unit = "TIT_tank",
+				freq = 1,
+				amount_min = 0,
+				amount_max = 1,
+				tactics = self._tactics.TIT_tank,
+				rank = 3
+			},
+			{
+				unit = "FBI_shield",
+				freq = 1,
+				amount_min = 1,
+				amount_max = 2,
+				tactics = self._tactics.FBI_shield_flank,
+				rank = 3
+			},
+			{
+				unit = "medic_M4",
+				freq = 0.75,
+				amount_max = 1,
+				tactics = self._tactics.FBI_medic_flank,
+				rank = 2
+			}
+		}
+	}	
+	self.enemy_spawn_groups.SKM_single_spooc_W9 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}	
+	
+	--Captains, deep_clone off of the normal ones
+	self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = deep_clone(self.enemy_spawn_groups.Cap_Autumn)
+	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = deep_clone(self.enemy_spawn_groups.Cap_Winters)
+	self.enemy_spawn_groups.SKM_Cap_Summers_W9 = deep_clone(self.enemy_spawn_groups.Cap_Summers)
+	self.enemy_spawn_groups.SKM_Cap_Spring_W9 = deep_clone(self.enemy_spawn_groups.Cap_Spring)
+	self.enemy_spawn_groups.SKM_HVH_Boss_W9 = deep_clone(self.enemy_spawn_groups.HVH_Boss)
+
 	--Vanilla shit below--
 	if difficulty_index <= 2 then
 		self.enemy_spawn_groups.tac_swat_shotgun_rush = {
@@ -13954,6 +18760,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	local is_console = SystemInfo:platform() ~= Idstring("WIN32")
 	self.max_nr_simultaneous_boss_types = 0
 	self.difficulty_curve_points = {0.5}
+	self.skirmish_difficulty_curve_points = {
+		--0 unused
+		0.05, --wave 1
+		0.1, --wave 2
+		0.15, --wave 3
+		0.2, --wave 4
+		0.25, --wave 5
+		0.3, --wave 6
+		0.35, --wave 7
+		0.4, --wave 8
+		0.45, --wave 9
+		0.5, --wave 10
+		--1 eventually
+	}
+
 	if difficulty_index <= 2 then
 		self.smoke_and_flash_grenade_timeout = {19, 20}
 	elseif difficulty_index == 3 then
@@ -14119,532 +18940,515 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			15
 		}
 	end
-	self.besiege.assault.force = {
-		5,
-		6,
-		7
-	}
-	self.besiege.assault.force_pool = {
-		30,
-		40,
-		50
-	}
+
+	local map_scale_factor = 1
 	for _,t in pairs(restoration.large_levels) do
 		if job == t then
-			self.besiege.assault.force = {
-				5,
-				6,
-				7
-			}
-			self.besiege.assault.force_pool = {
-				30,
-				40,
-				50
-			}	
+			map_scale_factor = 1.15
 		end
 	end	
 	for _,t in pairs(restoration.tiny_levels) do
 		if job == t then
-			self.besiege.assault.force = {
-				4,
-				5,
-				6
-			}
-			self.besiege.assault.force_pool = {
-				20,
-				30,
-				40
-			}	
+			map_scale_factor = 0.85
 		end
 	end
 	for _,vt in pairs(restoration.very_tiny_levels) do
 		if job == vt then
-			self.besiege.assault.force = {
-				3,
-				4,
-				5
-			}
-			self.besiege.assault.force_pool = {
-				10,
-				20,
-				30
-			}	
+			map_scale_factor = 0.7
 		end
-	end	
+	end
 	for _,vt in pairs(restoration.extremely_tiny_levels) do
 		if job == vt then
-			self.besiege.assault.force = {
-				2,
-				3,
-				4
-			}
-			self.besiege.assault.force_pool = {
-				10,
-				20,
-				30
-			}	
+			map_scale_factor = 0.55
 		end
-	end			
+	end
+
+	self.besiege.assault.force_balance_mul = {
+		0.55 * map_scale_factor,
+		0.7 * map_scale_factor,
+		0.85 * map_scale_factor,
+		1.0 * map_scale_factor
+	}
+	self.besiege.assault.force_pool_balance_mul = {
+		0.55 * map_scale_factor,
+		0.7 * map_scale_factor,
+		0.85 * map_scale_factor,
+		1.0 * map_scale_factor
+	}
+
 	if difficulty_index <= 2 then
-		self.besiege.assault.force_balance_mul = {
-			0.9,
-			1.5,
-			2,
-			2.25
+		self.besiege.assault.force = {
+			12,
+			15,
+			18
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1,
-			1.5,
-			2,
-			2.5
-		}
+		self.besiege.assault.force_pool = {
+			75,
+			100,
+			125
+		}	
 	elseif difficulty_index == 3 then
-		self.besiege.assault.force_balance_mul = {
-			1,
-			1.4,
-			1.6,
-			1.9
+		self.besiege.assault.force = {
+			12,
+			15,
+			18
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1.2,
-			1.4,
-			1.6,
-			1.9
+		self.besiege.assault.force_pool = {
+			75,
+			100,
+			125
 		}
 	elseif difficulty_index == 4 then
-		self.besiege.assault.force_balance_mul = {
-			1.4,
-			1.8,
-			2,
-			2.4
+		self.besiege.assault.force = {
+			15,
+			18,
+			21
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			1.7,
-			2,
-			2.2,
-			2.5
-		}
+		self.besiege.assault.force_pool = {
+			75,
+			100,
+			125
+		}	
 	elseif difficulty_index == 5 then
-		self.besiege.assault.force_balance_mul = {
-			2,
-			2.5,
-			2.9,
-			3.2
+		self.besiege.assault.force = {
+			15,
+			18,
+			21
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			2.2,
-			2.4,
-			2.6,
-			3
+		self.besiege.assault.force_pool = {
+			75,
+			100,
+			125
 		}
 	elseif difficulty_index == 6 then
-		self.besiege.assault.force_balance_mul = {
-			3,
-			3.2,
-			3.5,
-			3.9
+		self.besiege.assault.force = {
+			17,
+			21,
+			25
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			2.7,
-			2.9,
-			3.1,
-			3.3
-		}
+		self.besiege.assault.force_pool = {
+			90,
+			120,
+			150
+		}	
 	elseif difficulty_index == 7 then
-		self.besiege.assault.force_balance_mul = {
-			3,
-			3.2,
-			3.5,
-			3.9
+		self.besiege.assault.force = {
+			17,
+			21,
+			25
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			2.7,
-			2.9,
-			3.1,
-			3.3
+		self.besiege.assault.force_pool = {
+			90,
+			120,
+			150
 		}
-	elseif difficulty_index == 8 then
-		self.besiege.assault.force_balance_mul = {
-			3,
-			3.2,
-			3.5,
-			3.9
+	else
+		self.besiege.assault.force = {
+			20,
+			24,
+			28
 		}
-		self.besiege.assault.force_pool_balance_mul = {
-			2.7,
-			2.9,
-			3.1,
-			3.3
-		}
-	else		
-		self.besiege.assault.force_balance_mul = {
-			4,
-			4.2,
-			4.5,
-			4.9
-		}
-		self.besiege.assault.force_pool_balance_mul = {
-			3.2,
-			3.4,
-			3.6,
-			3.8
+		self.besiege.assault.force_pool = {
+			105,
+			140,
+			175
 		}
 	end
 	
-	--assault groups
+	--Assault groups
 	if difficulty_index <= 2 then
 		self.besiege.assault.groups = {
 			CS_cops = {
-				0,
-				1,
-				0.85
+				0.85,
+				0.6,
+				0.45
 			},
 			CS_swats = {
-				0,
-				0.1,
-				0.35
+				0.15,
+				0.35,
+				0.4
 			},
 			CS_shields = {
 				0,
-				0,
+				0.05,
 				0.15
 			}
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.groups = {
-			CS_swats = {
+			--Will participate in first assault, then pull out
+			CS_cops = {
+				0.4,
 				0,
-				1,
-				1
+				0		
+			},
+			CS_swats = {
+				0.45,
+				0.5,
+				0.35
 			},
 			CS_heavys = {
-				0,
+				0.05,
 				0.2,
-				0.7
+				0.3
 			},
 			CS_shields = {
-				0,
-				0.02,
-				0.2
+				0.1,
+				0.1,
+				0.15
 			},
 			CS_tazers = {
 				0,
-				0.05,
-				0.15
+				0.1,
+				0.1
 			},
 			FBI_spoocs = {
 				0,
 				0.05,
-				0.1
+				0.05
 			},
 			CS_tanks = {
 				0,
 				0.05,
-				0.1
+				0.05
 			}
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.groups = {
+			--Assist FBI SWATs for a short while, pull out by the last diff increase
+			CS_swats = {
+				0.333,
+				0.278,
+				0
+			},		
+			CS_heavys = {
+				0.167,
+				0.069,
+				0
+			},
 			FBI_swats = {
-				0.1,
-				1,
-				1
+				0,
+				0.278,
+				0.444
 			},
 			FBI_heavys = {
-				0.05,
-				0.25,
-				0.5
+				0,
+				0.069,
+				0.222
+			},		
+			--Ditto
+			CS_shields = {
+				0.333,
+				0.056,
+				0
 			},
 			FBI_shields = {
-				0.1,
-				0.2,
-				0.2
-			},
+				0,
+				0.056,
+				0.089
+			},			
 			FBI_tanks = {
 				0,
-				0.1,
-				0.15
+				0.056,
+				0.067
 			},
 			FBI_spoocs = {
 				0,
-				0.1,
-				0.2
+				0.056,
+				0.089
 			},
 			CS_tazers = {
-				0.05,
-				0.15,
-				0.2
+				0.167,
+				0.075,
+				0.089
 			}
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.groups = {
 			FBI_swats = {
 				0.2,
-				1,
-				1
+				0.37,
+				0.345
 			},
+			--Only here just for the first few assaults, pull out ASAP
+			CS_swats = {
+				0.1,
+				0.02,
+				0
+			},		
+			CS_heavys = {
+				0.1,
+				0.02,
+				0
+			},			
 			FBI_heavys = {
-				0.06,
-				0.3,
-				0.45
+				0.12,
+				0.12,
+				0.155
 			},
 			FBI_heavys_boom = {
-				0.04,
-				0.2,
-				0.3
+				0.08,
+				0.08,
+				0.103
 			},			
 			FBI_shields = {
-				0.06,
-				0.18,
-				0.24
+				0.12,
+				0.075,
+				0.083
 			},
 			FBI_shields_boom = {
-				0.04,
-				0.12,
-				0.16
+				0.08,
+				0.05,
+				0.055
 			},	
 			--[[
 			--Base array to consider working with
 			FBI_tanks = {
 				0,
-				0.25,
-				0.3
+				0.1,
+				0.104
 			},			
 			]]--
 			FBI_tanks = {
 				0,
-				0.125,
-				0.15
+				0.05,
+				0.052
 			},
 			BLACK_tanks = {
 				0,
-				0.125,
-				0.15
+				0.05,
+				0.052
 			},			
 			FBI_spoocs = {
 				0,
-				0.1,
-				0.2
+				0.05,
+				0.069
 			},				
 			CS_tazers = {
-				0.06,
-				0.15,
-				0.15,
+				0.12,
+				0.069,
+				0.052,
 			},
 			CS_booms = {
-				0.04,
-				0.1,
-				0.1
+				0.08,
+				0.046,
+				0.034
 			}			
 		}	
 	elseif difficulty_index == 6 then
 		self.besiege.assault.groups = {
 			FBI_swats = {
 				0.2,
-				1,
-				1
+				0.185,
+				0
 			},
+			--Slowly get replaced by GenSec boys
+			GS_swats = {
+				0,
+				0.185,
+				0.345
+			},		
 			FBI_heavys = {
-				0.06,
-				0.3,
-				0.45
+				0.12,
+				0.12,
+				0.155
 			},
 			FBI_heavys_boom = {
-				0.04,
-				0.2,
-				0.3
+				0.08,
+				0.08,
+				0.103
 			},			
 			FBI_shields = {
-				0.06,
-				0.18,
-				0.24
+				0.12,
+				0.075,
+				0.083
 			},
 			FBI_shields_boom = {
-				0.04,
-				0.12,
-				0.16
+				0.08,
+				0.05,
+				0.055
 			},	
 			--[[
 			--Base array to consider working with
 			FBI_tanks = {
 				0,
-				0.25,
-				0.3
+				0.1,
+				0.104
 			},			
-			]]--			
+			]]--
 			FBI_tanks = {
 				0,
-				0.11875,
-				0.285
+				0.0475,
+				0.0494
 			},
 			BLACK_tanks = {
 				0,
-				0.11875,
-				0.285
-			},	
+				0.0475,
+				0.0494
+			},		
 			TIT_tanks = {
 				0,
-				0.0125,
-				0.015
-			},			
+				0.005,
+				0.0052
+			},				
 			FBI_spoocs = {
 				0,
-				0.1,
-				0.2
+				0.05,
+				0.069
 			},				
 			CS_tazers = {
-				0.06,
-				0.15,
-				0.15,
+				0.12,
+				0.069,
+				0.052,
 			},
 			CS_booms = {
-				0.04,
-				0.1,
-				0.1
-			}	
-		}			
+				0.08,
+				0.046,
+				0.034
+			}			
+		}				
 	elseif difficulty_index == 7 then
 		self.besiege.assault.groups = {
-			FBI_swats = {
-				0.2,
-				0.9,
-				0.9
+			GS_swats = {
+				0.332,
+				0.34,
+				0.31
 			},
 			FBI_heavys = {
-				0.06,
-				0.24,
-				0.39
+				0.1,
+				0.091,
+				0.134
 			},
 			FBI_heavys_boom = {
-				0.04,
-				0.16,
-				0.26
+				0.067,
+				0.06,
+				0.09
 			},			
 			FBI_shields = {
-				0.06,
-				0.24,
-				0.18
+				0.1,
+				0.091,
+				0.062
 			},
 			FBI_shields_boom = {
-				0.04,
-				0.16,
-				0.12
+				0.067,
+				0.06,
+				0.041
 			},	
 			--[[
 			--Baseline numbers to think about, work from this as an array for determining dozer types
 			FBI_tanks = {
-				0.1,
-				0.35,
-				0.4
+				0.167,
+				0.132,
+				0.138
 			},			
 			]]--			
 			FBI_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.05288333333,
+				0.0418,
+				0.0437
 			},
 			BLACK_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.05288333333,
+				0.0418,
+				0.0437
 			},
 			SKULL_tanks = {
-				0.03166666666,
-				0.11083333333,
-				0.12666666666
+				0.05288333333,
+				0.0418,
+				0.0437
 			},
 			TIT_tanks = {
-				0.005,
-				0.0175,
-				0.02
+				0.00835,
+				0.0066,
+				0.0069
 			},					
 			CS_tazers = {
-				0.06,
-				0.24,
-				0.21
+				0.1,
+				0.091,
+				0.072
 			},
 			CS_booms = {
-				0.04,
-				0.16,
-				0.14
+				0.067,
+				0.06,
+				0.048
 			},			
 			FBI_spoocs = {
 				0,
-				0.2,
-				0.3
+				0.075,
+				0.105
 			}
 		}
 	else
 		self.besiege.assault.groups = {
-			FBI_swats = {
-				0.2,
-				0.9,
-				0.9
+			GS_swats = {
+				0.332,
+				0.34,
+				0.31
 			},
 			FBI_heavys = {
-				0.06,
-				0.24,
-				0.39
+				0.1,
+				0.091,
+				0.134
 			},
 			FBI_heavys_boom = {
-				0.04,
-				0.16,
-				0.26
+				0.067,
+				0.06,
+				0.09
 			},			
 			FBI_shields = {
-				0.06,
-				0.24,
-				0.18
+				0.1,
+				0.091,
+				0.062
 			},
 			FBI_shields_boom = {
-				0.04,
-				0.16,
-				0.12
-			},			
+				0.067,
+				0.06,
+				0.041
+			},	
 			--[[
 			--Baseline numbers to think about, work from this as an array for determining dozer types
 			FBI_tanks = {
-				0.1,
-				0.35,
-				0.4
+				0.167,
+				0.132,
+				0.138
 			},			
-			]]--
+			]]--			
 			FBI_tanks = {
-				0.03,
-				0.105,
-				0.12
+				0.0501,
+				0.0396,
+				0.0414
 			},
 			BLACK_tanks = {
-				0.03,
-				0.105,
-				0.12
+				0.0501,
+				0.0396,
+				0.0414
 			},
 			SKULL_tanks = {
-				0.03,
-				0.105,
-				0.12
+				0.0501,
+				0.0396,
+				0.0414
 			},
 			TIT_tanks = {
-				0.01,
-				0.035,
-				0.04
+				0.0167,
+				0.0132,
+				0.0138
 			},					
 			CS_tazers = {
-				0.06,
-				0.24,
-				0.21
+				0.1,
+				0.091,
+				0.072
 			},
 			CS_booms = {
-				0.04,
-				0.16,
-				0.14
+				0.067,
+				0.06,
+				0.048
 			},			
 			FBI_spoocs = {
 				0,
-				0.2,
-				0.3
+				0.075,
+				0.105
 			}
-		}			
+		}
 	end
 			
 	self.besiege.assault.groups.single_spooc = {
@@ -14669,20 +19473,20 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			elseif difficulty_index == 4 then
 				self.besiege.assault.groups.Cap_Autumn = {
 					0,
-					0.08,
-					0.16
+					0.1,
+					1
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.Cap_Autumn = {
 					0,
-					0.08,
-					0.16
+					0.15,
+					1
 				}
 			else
 				self.besiege.assault.groups.Cap_Autumn = {
 					0,
-					0.08,
-					0.16
+					0.2,
+					1
 				}
 			end
 			break
@@ -14694,26 +19498,26 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			if difficulty_index <= 3 then
 				self.besiege.assault.groups.Cap_Summers = {
 					0,
-					0.08,
-					0.16
+					0,
+					0
 				}
 			elseif difficulty_index == 4 then
 				self.besiege.assault.groups.Cap_Summers = {
 					0,
-					0.08,
-					0.16
+					0.1,
+					1
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.Cap_Summers = {
 					0,
-					0.08,
-					0.16
+					0.15,
+					1
 				}
 			else
 				self.besiege.assault.groups.Cap_Summers = {
 					0,
-					0.08,
-					0.16
+					0.2,
+					1
 				}
 			end
 			break
@@ -14731,20 +19535,20 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			elseif difficulty_index == 4 then
 				self.besiege.assault.groups.Cap_Spring = {
 					0,
-					0.08,
-					0.16
+					0.1,
+					1
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.Cap_Spring = {
 					0,
-					0.08,
-					0.16
+					0.15,
+					1
 				}
 			else
 				self.besiege.assault.groups.Cap_Spring = {
 					0,
-					0.08,
-					0.16
+					0.2,
+					1
 				}
 			end
 			break
@@ -14762,20 +19566,20 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			elseif difficulty_index == 4 then
 				self.besiege.assault.groups.HVH_Boss = {
 					0,
-					0.08,
-					0.16
+					0.1,
+					1
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.HVH_Boss = {
 					0,
-					0.08,
-					0.16
+					0.15,
+					1
 				}
 			else
 				self.besiege.assault.groups.HVH_Boss = {
 					0,
-					0.08,
-					0.16
+					0.2,
+					1
 				}
 			end
 			break
@@ -14793,20 +19597,20 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			elseif difficulty_index == 4 then
 				self.besiege.assault.groups.Cap_Winters = {
 					0,
-					0.08,
-					0.16
+					0.1,
+					1
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.Cap_Winters = {
 					0,
-					0.08,
-					0.16
+					0.15,
+					1
 				}
 			else
 				self.besiege.assault.groups.Cap_Winters = {
 					0,
-					0.08,
-					0.16
+					0.2,
+					1
 				}
 			end
 			break
@@ -14826,19 +19630,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			},
 			CS_defend_b = {
 				0,
-				1,
+				0.8,
 				1
 			}
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.reenforce.groups = {
 			CS_defend_a = {
-				1,
+				0.35,
 				0,
 				0
 			},
 			CS_defend_b = {
-				2,
+				0.65,
 				1,
 				0
 			},
@@ -14851,29 +19655,29 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 4 then
 		self.besiege.reenforce.groups = {
 			CS_defend_a = {
-				1,
+				0.35,
 				0,
 				0
 			},
 			CS_defend_b = {
-				2,
-				1,
+				0.65,
+				0.5,
 				0
 			},
 			CS_defend_c = {
 				0,
 				0,
-				1
+				0.5
 			},
 			FBI_defend_a = {
 				0,
-				1,
+				0.5,
 				0
 			},
 			FBI_defend_b = {
 				0,
 				0,
-				1
+				0.5
 			}
 		}
 	elseif difficulty_index == 5 then
@@ -14884,13 +19688,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0
 			},
 			FBI_defend_b = {
-				1,
-				1,
+				0.9,
+				0.5,
 				0
 			},
 			FBI_defend_c = {
 				0,
-				1,
+				0.5,
 				0
 			},
 			FBI_defend_d = {
@@ -14899,7 +19703,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				1
 			}
 		}
-	else
+	elseif difficulty_index == 6 then
 		self.besiege.reenforce.groups = {
 			CS_defend_a = {
 				0.1,
@@ -14907,13 +19711,36 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0
 			},
 			FBI_defend_b = {
-				1,
-				1,
+				0.9,
+				0.5,
 				0
 			},
 			FBI_defend_c = {
 				0,
-				1,
+				0.5,
+				0
+			},
+			FBI_defend_d = {
+				0,
+				0,
+				1
+			}
+		}	
+	else
+		self.besiege.reenforce.groups = {
+			CS_defend_a = {
+				0.1,
+				0,
+				0
+			},
+			GS_defend_b = {
+				0.9,
+				0.5,
+				0
+			},
+			GS_defend_c = {
+				0,
+				0.5,
 				0
 			},
 			FBI_defend_d = {
@@ -14938,12 +19765,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.recon.groups = {
 			CS_stealth_a = {
 				1,
-				1,
+				0.5,
 				0
 			},
 			CS_cops = {
 				0,
-				1,
+				0.5,
 				1
 			}
 		}
@@ -14951,7 +19778,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.recon.groups = {
 			CS_stealth_a = {
 				1,
-				0,
+				0.4,
 				0
 			},
 			CS_tazers = {
@@ -14959,42 +19786,101 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.1,
 				0.15
 			},
-			FBI_stealth_b = {
+			FBI_stealth_a = {
 				0,
+				0.25,
+				0.35
+			},
+			FBI_stealth_c = {
 				0,
-				0.1
-			}
+				0.25,
+				0.5
+			}			
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.recon.groups = {
 			FBI_stealth_a = {
-				1,
 				0.5,
-				0
+				0.5,
+				0.25
 			},
 			FBI_stealth_b = {
 				0,
 				0,
-				1
-			}
+				0.5
+			},
+			--Show up for first few recons, slowly replaced
+			FBI_stealth_c = {
+				0.5,
+				0.5,
+				0.25
+			}			
 		}
+	elseif difficulty_index == 5 then
+		self.besiege.recon.groups = {
+			FBI_stealth_a = {
+				0.4,
+				0.4,
+				0.3
+			},
+			FBI_stealth_a_boom = {
+				0.267,
+				0.267,
+				0.2
+			},			
+			FBI_stealth_b = {
+				0.2,
+				0.2,
+				0.5
+			},
+			--Show up for first few recons, slowly replaced
+			FBI_stealth_c = {
+				0.133,
+				0.133,
+				0
+			}		
+		}	
+	elseif difficulty_index == 6 then
+		self.besiege.recon.groups = {
+			FBI_stealth_a = {
+				0.4,
+				0.4,
+				0.3
+			},
+			FBI_stealth_a_boom = {
+				0.267,
+				0.267,
+				0.2
+			},			
+			FBI_stealth_b = {
+				0.2,
+				0.2,
+				0.5
+			},
+			--Show up for first few recons, slowly replaced
+			FBI_stealth_c = {
+				0.133,
+				0.133,
+				0
+			}		
+		}	
 	else
 		self.besiege.recon.groups = {
 			FBI_stealth_a = {
-				0.3,
-				0.6,
-				0.6
+				0.4,
+				0.4,
+				0.3
 			},
 			FBI_stealth_a_boom = {
-				0.2,
-				0.4,
-				0.4
+				0.267,
+				0.267,
+				0.2
 			},			
 			FBI_stealth_b = {
-				0.25,
-				0.5,
-				1
-			}
+				0.333,
+				0.333,
+				0.5
+			}		
 		}
 	end
 	self.besiege.recon.groups.single_spooc = {
@@ -15014,6 +19900,85 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			1
 		}
 	}
+
+	self.besiege.group_cooldowns = {
+		Cap_Winters = 2700,
+		Cap_Spring = 2700,
+		HVH_Boss = 2700,
+		Cap_Summers = 2700,
+		Cap_Autumn = 1350,
+		CS_tanks = 45,
+		FBI_tanks = 45,
+		BLACK_tanks = 45,
+		SKULL_tanks = 45,
+		TIT_tanks = 45,
+		SKM_BLACK_Tank_W4 = 45,
+		SKM_BLACK_Tank_W5 = 45,
+		SKM_GREEN_Tank_W5 = 45,
+		SKM_BLACK_Tank_W6 = 45,
+		SKM_GREEN_Tank_W6 = 45,
+		SKM_SKULL_Tank_W6 = 45,
+		SKM_TIT_Tank_W6 = 45,
+		SKM_BLACK_Tank_W7 = 45, 
+		SKM_GREEN_Tank_W7 = 45, 
+		SKM_SKULL_Tank_W7 = 45,
+		SKM_TIT_Tank_W7 = 45,
+		SKM_BLACK_Tank_W8 = 45, 
+		SKM_GREEN_Tank_W8 = 45, 
+		SKM_SKULL_Tank_W8 = 45,
+		SKM_TIT_Tank_W8 = 45,
+		SKM_BLACK_Tank_W9 = 45, 
+		SKM_GREEN_Tank_W9 = 45, 
+		SKM_SKULL_Tank_W9 = 45,
+		SKM_TIT_Tank_W9 = 45	
+	}
+
+	if Global.game_settings and Global.game_settings.one_down then
+		self.besiege.group_cooldowns = {
+			Cap_Winters = 1800,
+			Cap_Spring = 1800,
+			HVH_Boss = 1800,
+			Cap_Summers = 1800,
+			Cap_Autumn = 900,
+			CS_tanks = 45,
+			FBI_tanks = 45,
+			BLACK_tanks = 45,
+			SKULL_tanks = 45,
+			TIT_tanks = 45,
+			SKM_BLACK_Tank_W4 = 45,
+			SKM_BLACK_Tank_W5 = 45,
+			SKM_GREEN_Tank_W5 = 45,
+			SKM_BLACK_Tank_W6 = 45,
+			SKM_GREEN_Tank_W6 = 45,
+			SKM_SKULL_Tank_W6 = 45,
+			SKM_TIT_Tank_W6 = 45,
+			SKM_BLACK_Tank_W7 = 45, 
+			SKM_GREEN_Tank_W7 = 45, 
+			SKM_SKULL_Tank_W7 = 45,
+			SKM_TIT_Tank_W7 = 45,
+			SKM_BLACK_Tank_W8 = 45, 
+			SKM_GREEN_Tank_W8 = 45, 
+			SKM_SKULL_Tank_W8 = 45,
+			SKM_TIT_Tank_W8 = 45,
+			SKM_BLACK_Tank_W9 = 45, 
+			SKM_GREEN_Tank_W9 = 45, 
+			SKM_SKULL_Tank_W9 = 45,
+			SKM_TIT_Tank_W9 = 45			
+		}
+	end
+
+	self.besiege.group_min_diff = {
+		Cap_Winters = 0.5,
+		Cap_Spring = 0.5,
+		HVH_Boss = 0.5,
+		Cap_Summers = 0.5,
+		Cap_Autumn = 0.5
+	}
+
+	self.besiege.group_max_diff = {
+		--nothing yet
+	}
+
 	self.street = deep_clone(self.besiege)
 	self.phalanx.minions.min_count = 0
 	self.phalanx.minions.amount = 10

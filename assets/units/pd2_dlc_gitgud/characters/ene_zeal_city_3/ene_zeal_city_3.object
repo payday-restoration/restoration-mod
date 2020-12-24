@@ -191,7 +191,7 @@
 	</constraints>
 
 	<decal_surfaces default_material="flesh" >
-		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+		<decal_mesh name="dm_helmet" enabled="false" material="steel_no_decal" />
 	</decal_surfaces>
 
 	<graphics>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<unit type="dev" slot="1">
+	<object file="units/pd2_dlc_berry/props/editable_text_euro_stencil/editable_text_euro_stencil" />
+	<dependencies>
+		<depends_on font="fonts/font_euro_stencil" />
+	</dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="editable_gui" class="EditableGui">
+      <var name="_gui_object" value="g_editable_text" />
+      <var name="_text" value="STENCIL" />
+      <var name="_font" value="fonts/font_euro_stencil" />
+    </extension>
+  </extensions>
+</unit>

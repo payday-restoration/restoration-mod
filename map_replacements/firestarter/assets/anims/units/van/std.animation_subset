@@ -1,0 +1,61 @@
+<!-- If the animation finishes inside the viewable area and does not finish outside of the viewable area, 
+	 you must animate the root point. Or else the animation will not sync at drop in. 
+	 For eample the police car arrives and stop in the viewable area, here the root point shoul be animated.
+	 The heicopter arrives and leaves the the viewable area, here all_no_root is allowed. -->
+
+<xml>
+
+	<!-- BIG BANK -->
+	<anim	name="anim_van_bigbank_leave"				file="anims/car/van_bigbank_leave"				blend_set="all"/>
+
+	<!-- PINES -->
+	<anim	name="anim_van_straight_100m_puncture"		file="anims/car/van_straight_100m_puncture"		blend_set="all"/>
+
+	<!-- MUS -->
+	<anim	name="anim_van_mus_leave"					file="anims/car/van_mus_leave"					blend_set="all"/>
+
+	<!-- RAT -->
+	<anim	name="anim_van_rat_arrive_1"				file="anims/car/van_rat_arrive_1"				blend_set="all"/>
+	<anim	name="anim_van_rat_arrive_2"				file="anims/car/van_rat_arrive_2"				blend_set="all"/>
+	<anim	name="anim_van_rat_leave_1"					file="anims/car/van_rat_leave_1"				blend_set="all"/>
+	<anim	name="anim_van_rat_leave_2"					file="anims/car/van_rat_leave_2"				blend_set="all"/>
+
+	<!-- HOX -->
+	<anim	name="anim_van_hox_leave_1"					file="anims/car/van_hox_leave_1"				blend_set="all"/>
+
+	<!-- // -->
+	<anim	name="anim_van_arrive_hot_100m_1"			file="anims/car/van_arrive_hot_100m_1"			blend_set="all"/>
+
+	<anim	name="anim_van_red_arrive_1"				file="anims/car/van_red_arrive_1"				blend_set="all"/>
+	
+	
+	<anim	name="anim_van_drk_arrive_1"				file="anims/car/van_drk_arrive_1"				blend_set="all"/>
+	
+
+	
+	<anim	name="anim_van_gangster_arrive_01"			file="anims/car/van_shouse_arrive_01"			blend_set="all"/>
+	<anim	name="anim_van_gangster_arrive_02"			file="anims/car/van_shouse_arrive_02"			blend_set="all"/>
+	<anim	name="anim_van_sfm_arrive_01"				file="anims/car/van_sfm_arrive_01"				blend_set="all"/>
+	<anim	name="anim_van_sfm_arrive_02"				file="anims/car/van_sfm_arrive_02"				blend_set="all"/>
+		
+	
+	<anim	name="anim_van_spa_arrive_01"				file="anims/car/van_spa_arrive_01"				blend_set="all"/>
+	<anim	name="anim_van_spa_crash_01"				file="anims/car/van_player_spa_crash_01"		blend_set="all"/>
+	
+
+	
+	<anim	name="anim_van_rvd_arrive_1"				file="anims/car/van_player_rvd_arrive_1"		blend_set="all"/>
+	<anim	name="anim_van_rvd_arrive_2"				file="anims/car/van_player_rvd_arrive_2"		blend_set="all"/>
+	<anim	name="anim_van_rvd_arrive_3"				file="anims/car/van_player_rvd_arrive_3"		blend_set="all"/>
+	
+
+	
+	<anim	name="anim_van_brb_intro_1"				file="anims/car/van_player_brb_intro_1"		blend_set="all"/>
+	<anim	name="anim_van_brb_intro_2"				file="anims/car/van_player_brb_intro_2"		blend_set="all"/>
+	<anim	name="anim_van_brb_intro_3"				file="anims/car/van_player_brb_intro_3"		blend_set="all"/>
+	<anim	name="anim_van_brb_intro_4"				file="anims/car/van_player_brb_intro_4"		blend_set="all"/>
+	
+	
+
+
+</xml>

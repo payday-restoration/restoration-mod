@@ -1,0 +1,16 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_des/props/des_prop_airport_car/des_prop_airport_car" orientation_object="rp_des_prop_airport_car" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_des_prop_airport_car" />
+			<object name="c_baggage_truck_mesh_mopp" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="rubber">
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+		<decal_mesh name="dm_rubber" enabled="true" material="rubber" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_baggage_truck" enabled="true" />
+	</graphics>
+</dynamic_object>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<unit type="lcm" slot="1">
+<network sync="spawn"/>
+  <object file="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" />
+  <dependencies>
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage"/>
+  </extensions>
+</unit>

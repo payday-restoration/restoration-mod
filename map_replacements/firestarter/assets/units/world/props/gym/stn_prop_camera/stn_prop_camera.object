@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/gym/stn_prop_camera/stn_prop_camera_cheeze" orientation_object="rp_stn_prop_camera" />
+  <sequence_manager file="units/world/props/gym/stn_prop_camera/stn_prop_camera" />
+  <bodies>
+    <body name="static_body" enabled="true" template="editor">
+      <object name="c_stn_prop_camera_mesh_mopp" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces>
+    <decal_mesh name="g_stn_prop_camera" enabled="true" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_stn_prop_camera" enabled="true"  />
+  </graphics>
+</dynamic_object>

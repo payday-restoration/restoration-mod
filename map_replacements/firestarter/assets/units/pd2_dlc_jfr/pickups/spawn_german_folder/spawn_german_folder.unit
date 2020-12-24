@@ -1,0 +1,18 @@
+<unit type="spawn" slot="1" >
+	<object file="units/pd2_dlc_jfr/pickups/spawn_german_folder/spawn_german_folder" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on unit="units/pd2_dlc_jfr/pickups/pku_german_folder/pku_german_folder" />
+	</dependencies>
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="pick_lock_deposit_transport" />
+			<var name="_interact_object" value="int_location"/>
+		</extension>
+		<extension name="flagged_unit" class="DLCFlaggedUnit">
+			<var name="dlc" value="jfr" />
+		</extension>
+	</extensions>
+</unit>

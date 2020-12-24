@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/vehicles/anim_vehicle_van_player/anim_vehicle_van_player" orientation_object="rp_anim_car" />
+	<sequence_manager file="units/payday2/vehicles/anim_vehicle_van_player/anim_vehicle_van_player" />
+		
+		<animation_def name="anims/units/van/van" />
+
+		<animations>
+			<animation_group name="anim_door_side_left" enabled="false">
+				<object name="anim_door_side_left" />
+			</animation_group>
+			<animation_group name="anim_door_side_right" enabled="false">
+					<object name="anim_door_side_right" />
+			</animation_group>
+			<animation_group name="anim_door_rear_left" enabled="false">
+					<object name="anim_door_rear_left" />
+			</animation_group>
+			<animation_group name="anim_door_rear_right" enabled="false">
+					<object name="anim_door_rear_right" />
+			</animation_group>
+		</animations>
+
+		<bodies>
+			<!-- Animated Bodies -->
+			<body name="body_vehicle" enabled="true" template="animated">
+				<object name="anim_body" />
+				<object name="c_body" collision_type="mesh_mopp" padding="-2.5"/>
+			</body>
+
+			<body name="body_tire_front_left" enabled="true" template="animated">
+				<object name="anim_tire_front_left" />
+				<object name="c_tire_front_left" 	collision_type="box" padding="-2.5"/>
+			</body>
+
+			<body name="body_tire_front_right" enabled="true" template="animated">
+				<object name="anim_tire_front_right" />
+				<object name="c_tire_front_right" 	collision_type="box" padding="-2.5"/>
+			</body>
+
+			<body name="body_tire_rear_left" enabled="true" template="animated">
+				<object name="anim_tire_rear_left" />
+				<object name="c_tire_rear_left" 	collision_type="box" padding="-2.5"/>
+			</body>
+
+			<body name="body_tire_rear_right" enabled="true" template="animated">
+				<object name="anim_tire_rear_right" />
+				<object name="c_tire_rear_right" 	collision_type="box" padding="-2.5"/>
+			</body>
+
+			<body name="body_windows_front" enabled="true" template="animated">
+				<object name="anim_body" />
+				<object name="c_windows_front" collision_type="convex" padding="-2.5" />
+			</body>
+
+			<body name="body_windows_front_left" enabled="true" template="animated">
+				<object name="anim_body" />
+				<object name="c_windows_front_left" collision_type="convex" padding="-2.5" />
+			</body>
+
+			<body name="body_windows_front_right" enabled="true" template="animated">
+				<object name="anim_body" />
+				<object name="c_windows_front_right" collision_type="convex" padding="-2.5" />
+			</body>
+
+			<body name="body_windows_rear_left" enabled="true" template="animated">
+				<object name="anim_door_rear_left" />
+				<object name="c_windows_rear_left" collision_type="convex" padding="-2.5" />
+			</body>
+
+			<body name="body_windows_rear_right" enabled="true" template="animated">
+				<object name="anim_door_rear_right" />
+				<object name="c_windows_rear_right" collision_type="convex" padding="-2.5" />
+			</body>
+
+			<body name="body_door_rear_left" enabled="true" template="animated">
+				<object name="anim_door_rear_left" />
+				<object name="c_door_rear_left" 	collision_type="mesh_mopp" padding="-2.5"/>
+			</body>
+
+			<body name="body_door_rear_right" enabled="true" template="animated">
+				<object name="anim_door_rear_right" />
+				<object name="c_door_rear_right" 	collision_type="mesh_mopp" padding="-2.5"/>
+			</body>
+
+			<body name="body_door_side_left" enabled="true" template="animated">
+				<object name="anim_door_side_left" />
+				<object name="c_door_side_left" 	collision_type="convex" padding="-2.5"/>
+			</body>
+
+			<body name="body_door_side_right" enabled="true" template="animated">
+				<object name="anim_door_side_right" />
+				<object name="c_door_side_right" 	collision_type="convex" padding="-2.5"/>
+			</body>
+
+			<body name="body_blocker_graph" enabled="true" template="graph_blocker" keyframed="true">
+				<object name="anim_body" />
+				<object name="c_graph_blocker" collision_type="box" padding="25" />
+			</body>
+
+			<body name="body_anim_blocker" enabled="false" template="mover_blocker" keyframed="true">
+				<object name="anim_body" />
+				<object name="c_box_point" 	collision_type="box" />
+				<object name="c_box" 		collision_type="box" />
+			</body>
+
+			<body name="bag_blocker" enabled="true" template="fence" collision_class="bag_blocker" keyframed="true">
+				<object name="c_box_bag_blocker" collision_type="box" />
+			</body>
+		</bodies>
+
+		<decal_surfaces default_material="metal_chassis" static="true">
+			<decal_mesh name="dm_body" 					enabled="true" material="metal_chassis"/>
+			<decal_mesh name="dm_cloth" 				enabled="true" material="cloth"/>
+			<decal_mesh name="dm_glass" 				enabled="true" material="glass_breakable"/>
+			<decal_mesh name="dm_door_rear_left" 		enabled="true" material="metal_chassis"/>
+			<decal_mesh name="dm_door_rear_right" 		enabled="true" material="metal_chassis"/>
+			<decal_mesh name="dm_door_side_left" 		enabled="true" material="metal_chassis"/>
+			<decal_mesh name="dm_door_side_right" 		enabled="true" material="metal_chassis"/>
+			<decal_mesh name="dm_tire_front_left" 		enabled="true" material="rubber"/>
+			<decal_mesh name="dm_tire_front_right" 		enabled="true" material="rubber"/>
+			<decal_mesh name="dm_tire_rear_left" 		enabled="true" material="rubber"/>
+			<decal_mesh name="dm_tire_rear_right" 		enabled="true" material="rubber"/>
+			<decal_mesh name="dm_tire_rim_front_left" 	enabled="true" material="steel"/>
+			<decal_mesh name="dm_tire_rim_front_right" 	enabled="true" material="steel"/>
+			<decal_mesh name="dm_tire_rim_rear_left" 	enabled="true" material="steel"/>
+			<decal_mesh name="dm_tire_rim_rear_right" 	enabled="true" material="steel"/>
+			<decal_mesh name="dm_windows_front" 		enabled="true" material="glass_breakable"/>
+			<decal_mesh name="dm_windows_front_left" 	enabled="true" material="glass_breakable"/>
+			<decal_mesh name="dm_windows_front_right" 	enabled="true" material="glass_breakable"/>
+			<decal_mesh name="dm_windows_rear_left" 	enabled="true" material="glass_breakable"/>
+			<decal_mesh name="dm_windows_rear_right" 	enabled="true" material="glass_breakable"/>	
+		</decal_surfaces>
+
+		<graphics>
+			<graphic_group name="grp_van" enabled="true" culling_object="c_cull">
+				<!-- Graphics Objects -->
+				<object name="g_vehicle" 					enabled="true" 		shadow_caster="false" />
+				<object name="g_windows_front" 				enabled="true" 		shadow_caster="false" />
+				<object name="g_windows_front_left" 		enabled="true" 		shadow_caster="false" />
+				<object name="g_windows_front_right" 		enabled="true" 		shadow_caster="false" />
+				<object name="g_windows_rear_left" 			enabled="true" 		shadow_caster="false" />
+				<object name="g_windows_rear_right" 		enabled="true" 		shadow_caster="false" />
+				<object name="g_driver" 					enabled="true" 		shadow_caster="false" />
+				<object name="g_facade_light" 				enabled="true" 		shadow_caster="false" />
+				<!-- Graphics Objects Loot -->
+				<object name="g_canvasbag_1" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_canvasbag_2" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_canvasbag_3" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_canvasbag_4" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_canvasbag_5" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_canvasbag_6" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_canvasbag_7" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_canvasbag_8" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_canvasbag_9" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_1" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_2" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_3" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_4" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_5" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_6" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_7" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_8" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_9" 					enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_10" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_11" 				enabled="false" 	shadow_caster="false" />
+				<object name="g_lootbag_12" 				enabled="false" 	shadow_caster="false" />
+				<!-- Damage Graphics Objects -->
+				<object name="g_windows_front_dmg" 			enabled="false" 	shadow_caster="false" />
+				<object name="g_windows_front_left_dmg" 	enabled="false" 	shadow_caster="false" />
+				<object name="g_windows_front_right_dmg" 	enabled="false" 	shadow_caster="false" />
+				<object name="g_windows_rear_left_dmg" 		enabled="false" 	shadow_caster="false" />
+				<object name="g_windows_rear_right_dmg" 	enabled="false" 	shadow_caster="false" />
+				<!-- Shaddow Casters -->
+				<object name="s_body" 						enabled="true" 		shadow_caster="true" />
+				<object name="s_door_rear_left" 			enabled="true" 		shadow_caster="true" />
+				<object name="s_door_rear_right" 			enabled="true" 		shadow_caster="true" />
+				<object name="s_door_side_left" 			enabled="true" 		shadow_caster="true" />
+				<object name="s_door_side_right" 			enabled="true" 		shadow_caster="true" />
+				<object name="s_tire_front_left" 			enabled="true" 		shadow_caster="true" />
+				<object name="s_tire_front_right" 			enabled="true" 		shadow_caster="true" />
+				<object name="s_tire_rear_left" 			enabled="true" 		shadow_caster="true" />
+				<object name="s_tire_rear_right" 			enabled="true" 		shadow_caster="true" />
+			</graphic_group>
+		</graphics>
+		<lights>
+			<light multiplier="identity" editable="true" projection="false" falloff="4" far_range="150" name="lo_omni_1" enabled="true" type="omni|specular" />
+			<light multiplier="identity" editable="true" projection="false" falloff="4" far_range="150" name="lo_omni_2" enabled="true" type="omni|specular" />
+		</lights>
+
+</dynamic_object>

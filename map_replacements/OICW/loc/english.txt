@@ -1,4 +1,0 @@
-{
-	"bm_w_osipr" : "SABR",
-	"bm_w_osipr_gl" : "SABR Grenade Launcher"
-}

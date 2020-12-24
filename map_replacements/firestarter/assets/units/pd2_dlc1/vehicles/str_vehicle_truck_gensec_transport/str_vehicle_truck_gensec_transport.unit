@@ -1,0 +1,28 @@
+<unit type="str" slot="1" >
+    <object file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/str_vehicle_truck_gensec_transport" />
+    <network sync="spawn"/>
+    <dependencies>
+		<depends_on unit="units/payday2/equipment/gen_equipment_shape_charge/gen_equipment_shape_charge" />
+		<depends_on unit="units/payday2/equipment/item_door_drill_small/item_door_drill_small" />
+		<depends_on effect="effects/particles/explosions/explosion_grenade" />
+		<depends_on effect="effects/particles/dest/smoke_pocket_puff" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on unit="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/spawn_deposit/spawn_money" />
+		<depends_on unit="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/spawn_deposit/spawn_gold" />
+		<depends_on unit="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/spawn_deposit/spawn_jewelry" />
+        <depends_on unit="units/pd2_dlc_jfr/pickups/spawn_german_folder/spawn_german_folder" />
+		<depends_on unit="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/str_vehicle_truck_gensec_transport_deposit_box" />
+		<depends_on unit="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/str_vehicle_truck_gensec_transport_deposit_box_intel" />
+		<depends_on effect="effects/payday2/environment/arm_money_truck_exp" />
+		<depends_on effect="effects/payday2/environment/arm_truck_vehicle_smoke" />
+		<depends_on unit="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/spawn_gensec_doors/spawn_gensec_doors" />
+		<depends_on physic_effect="physic_effects/push_sphere" />
+	</dependencies>
+    <extensions>
+		<extension name="base" class="MissionDoor" >
+			<var name="tweak_data" value="arm_trans" />
+		</extension>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

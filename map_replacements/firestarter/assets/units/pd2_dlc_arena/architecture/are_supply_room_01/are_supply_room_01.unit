@@ -1,0 +1,8 @@
+<unit type="are" slot="1">
+	<object file="units/pd2_dlc_arena/architecture/are_supply_room_01/are_supply_room_01" />
+	<network sync="spawn"/>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

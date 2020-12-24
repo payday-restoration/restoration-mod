@@ -28,51 +28,9 @@ end]]--
 
 -- Tracks the cooldowns of each group type, will be populated by the GroupAIStateBesiege:_spawn_in_group() hook 
 local group_timestamps = {}
-
--- Example contents with haphazardly chosen cooldowns, add more group types and adjust as desired
-local group_cooldowns = {
-	Cap_Winters = 2700,
-	Cap_Spring = 2700,
-	HVH_Boss = 2700,
-	Cap_Summers = 2700,
-	Cap_Autumn = 900,
-	CS_tanks = 45,
-	FBI_tanks = 45,
-	BLACK_tanks = 45,
-	SKULL_tanks = 45,
-	TIT_tanks = 45
-}
+local cached_spawn_groups = nil
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-if Global.game_settings and Global.game_settings.one_down then
-	group_cooldowns = {
-		Cap_Winters = 1800,
-		Cap_Spring = 1800,
-		HVH_Boss = 1800,
-		Cap_Summers = 1800,
-		Cap_Autumn = 600,
-		CS_tanks = 45,
-		FBI_tanks = 45,
-		BLACK_tanks = 45,
-		SKULL_tanks = 45,
-		TIT_tanks = 45
-	}
-else
-	group_cooldowns = {
-		Cap_Winters = 2700,
-		Cap_Spring = 2700,
-		HVH_Boss = 2700,
-		Cap_Summers = 2700,
-		Cap_Autumn = 900,
-		CS_tanks = 45,
-		FBI_tanks = 45,
-		BLACK_tanks = 45,
-		SKULL_tanks = 45,
-		TIT_tanks = 45
-	}
-end
--- Ditto, adjust as desired. Affects all groups not listed in group_cooldowns above
-local default_cooldown = 0
 
 local _choose_best_groups_actual = GroupAIStateBesiege._choose_best_groups
 function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types, allowed_groups, weight, ...)
@@ -82,17 +40,33 @@ function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types
 	-- tweak_data.group_ai.besiege.recon.groups instead
 	for group_type, cat_weights in pairs(allowed_groups) do
 		local previoustimestamp = group_timestamps[group_type]
-		local cooldown = group_cooldowns[group_type] or default_cooldown
-			if previoustimestamp == nil or (currenttime - previoustimestamp) > cooldown then
-			-- Cooldown has expired for this group type, copy the subtable reference to the new_allowed_groups table (the same
+		local cooldown = self._tweak_data.group_cooldowns[group_type] or 0
+		local cooldown_over = previoustimestamp == nil or (currenttime - previoustimestamp) > cooldown
+		local valid_diff = (self._tweak_data.group_max_diff[group_type] or 1) >= self._difficulty_value and self._difficulty_value > (self._tweak_data.group_min_diff[group_type] or 0)
+		if cooldown_over == true and valid_diff == true then
+			-- This group type if off cooldown and can spawn on this diff, copy the subtable reference to the new_allowed_groups table
 			-- rule applies - do not modify the subtable or you'll be affecting global state, which will make debugging the cause
 			-- a nightmare)
 			new_allowed_groups[group_type] = cat_weights
-			end
 		end
+	end
 
 	-- Call the original function with the manipulated list
 	return _choose_best_groups_actual(self, best_groups, group, group_types, new_allowed_groups, weight, ...)
+end
+
+--Softly forces the next spawn group type. Used by Skirmish for spawning captains.
+--Might cause wonkiness, so use sparingly.
+--Will update to a more robust solution in the future if needed.
+function GroupAIStateBesiege:force_skirmish_captain(spawn_group)
+	if cached_spawn_groups then --Ignore previous force attempt if ones overlap.
+		self._tweak_data.assault.groups = cached_spawn_groups
+		cached_spawn_groups = nil
+	end
+
+	local new_spawn_groups = { [spawn_group] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1} }
+	cached_spawn_groups = self._tweak_data.assault.groups
+	self._tweak_data.assault.groups = new_spawn_groups
 end
 
 function GroupAIStateBesiege:not_assault_0_check()
@@ -698,7 +672,7 @@ function GroupAIStateBesiege:_upd_assault_task()
 			self:_begin_regroup_task(force_regroup)
 			--add diff on assault end (game normally does this through mission scripts, we have to do it manually here)
 			--log("assault over!!!")
-			self:set_difficulty(nil, 0.166667)
+			self:set_difficulty(nil, 0.3)
 			return
 		end
 	end
@@ -768,6 +742,11 @@ function GroupAIStateBesiege:_upd_assault_task()
 					stance = "hos"
 				}
 				self:_spawn_in_group(spawn_group, spawn_group_type, grp_objective, task_data)
+
+				if cached_spawn_groups then
+					self._tweak_data.assault.groups = cached_spawn_groups
+					cached_spawn_groups = nil
+				end
 			end
 		end
 	end

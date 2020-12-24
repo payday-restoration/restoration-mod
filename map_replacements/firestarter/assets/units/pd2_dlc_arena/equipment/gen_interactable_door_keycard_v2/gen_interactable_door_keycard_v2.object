@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_arena/equipment/gen_interactable_door_keycard_v2/gen_interactable_door_keycard_v2" orientation_object="rp_gen_interactable_door_keycard_v2" />
+	<sequence_manager file="units/pd2_dlc_arena/equipment/gen_interactable_door_keycard_v2/gen_interactable_door_keycard_v2" />
+
+	<animations>
+		<animation_group name="anim_open_close" enabled="false">
+			<object name="anim_open_close" />
+		</animation_group>
+		<animation_group name="anim_door_closer" enabled="false">
+			<object name="anim_door_closer_frame" />
+			<object name="anim_door_closer_hinge1" />
+			<object name="anim_door_closer_hinge2" />
+		</animation_group>
+		<animation_group name="anim_explosion_in_out" enabled="false">
+			<object name="anim_explosion_in_out" />
+		</animation_group>
+		<animation_group name="anim_breach_in_out" enabled="false">
+			<object name="anim_breach_in_out" />
+			<object name="door" />
+		</animation_group>
+	</animations>
+
+	<bodies>
+		<body name="body_frame" enabled="true" template="static" remove_ray_type="walk">
+			<object name="rp_gen_interactable_door_keycard_v2"/>
+			<object name="c_box_frame_000" collision_type="box" padding="-2.5"  />
+			<object name="c_box_frame_001" collision_type="box" padding="-2.5"  />
+			<object name="c_box_frame_002" collision_type="box" padding="-2.5"  />
+			<object name="c_box_frame_003" collision_type="box" padding="-2.5"  />
+		</body>
+		<body name="body_door" enabled="true" template="animated">
+			<object name="anim_explosion_in_out" />
+			<object name="c_box_door" collision_type="box" padding="-2.5" />
+		</body>
+		<body name="body_hitbox_door_handle_in" enabled="false" template="static">
+			<object name="rp_gen_interactable_door_keycard_v2" />
+			<object name="c_hitbox_door_handle_in" collision_type="box" padding="-2.5" />
+		</body>
+		<body name="body_hitbox_door_handle_out" enabled="false" template="static">
+			<object name="rp_gen_interactable_door_keycard_v2" />
+			<object name="c_hitbox_door_handle_out" collision_type="box" padding="-2.5" />
+		</body>
+		<!-- <body name="body_control_panel" enabled="true" template="static" remove_ray_type="walk vis_graph">
+			<object name="a_keycard" />
+			<object name="c_control_panel" collision_type="convex" padding="-2.5" />
+		</body> -->
+	</bodies>
+
+	<decal_surfaces default_material="steel" static="false">
+		<decal_mesh name="dm_metal_frame" 		enabled="true" 	material="steel" />
+		<decal_mesh name="dm_metal_door" 		enabled="true" 	material="steel" />
+	</decal_surfaces>
+
+	<graphics>
+		<graphic_group name="sawicongroup" 					enabled="false" culling_object="g_icon">
+			<lod_object name="saw_icon">
+					<object name="g_icon" 		enabled="true"  max_distance="450"  max_draw_lod="0" />
+					<object name="g_icon_lod1" 	enabled="true"  lod="1" />
+			</lod_object>
+		</graphic_group>
+		<graphic_group name="doors" enabled="true" culling_object="co_door">
+			<object name="g_door" 						enabled="true" 	shadow_caster="false"/>
+			<object name="g_door_frame" 				enabled="false" shadow_caster="false"/>
+			<object name="g_door_bullet_dst" 			enabled="false" shadow_caster="false"/>
+			<!--object name="g_door_saw_dst" 				enabled="false" shadow_caster="false"/-->
+			<object name="g_control_panel" 				enabled="false" />
+			<object name="g_ecm" 						enabled="false" />
+			<object name="g_glow_func1_green" 			enabled="false" />
+			<object name="g_glow_func2_green" 			enabled="false" />
+			<object name="g_control_panel_screen" 		enabled="false" /> 
+			<object name="g_control_panel_screen_acces" enabled="false" />
+			<object name="s_frame" 						enabled="true" 	shadow_caster="true"/>
+			<object name="s_door" 						enabled="true" 	shadow_caster="true"/>
+		</graphic_group>
+	</graphics>
+</dynamic_object>
+
+

@@ -1,0 +1,85 @@
+<materials version="3">
+    <material name="mtr_decals" render_template="decal:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/vehicles/ind_vehicle_truck_moneytransport/ind_vehicle_truck_moneytransport_decals_df"/>
+    </material>
+    <material name="mtr_truck" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_nm"/>
+    </material>
+    <material name="mtr_back_windows" version="2" render_template="generic:DIFFUSE_TEXTURE:DOUBLE_SIDED:NORMALMAP">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_nm"/>
+    </material>
+    <material name="mtr_truck_deposit" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_nm"/>
+    </material>
+    <material name="mtr_truck_crashed" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
+        <diffuse_texture file="units/payday2/vehicles/ind_vehicle_truck_moneytransport/ind_vehicle_truck_moneytransport_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/ind_vehicle_truck_moneytransport/ind_vehicle_truck_moneytransport_nm"/>
+    </material>
+    <material version="2" decal_material="glass_breakable" name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:OPACITY_FADE">
+        <variable value="0.61000001430511 0 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 3000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:DOUBLE_SIDED:OPACITY_FADE" decal_material="glass_breakable" name="mtr_glass_dmg" version="2">
+        <variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="com_prop_janitor_shelf" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/com_prop_janitor_shelf/com_prop_janitor_shelf_df"/>
+        <bump_normal_texture file="units/payday2/props/com_prop_janitor_shelf/com_prop_janitor_shelf_nm"/>
+        <variable value="0.017000000923872" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="glowing" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SKINNED_1WEIGHT" version="2">
+        <variable value="sun" type="scalar" name="il_multiplier"/>
+        <diffuse_texture file="units/world/props/apartment/facade_light/facade_light_df"/>
+        <self_illumination_texture file="units/world/props/apartment/facade_light/facade_light_il"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+    <material name="shadow_caster_static" render_template="shadow_caster_only" version="2"/>
+    <material name="hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="match" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_lockpick" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/lockpick_indicator_df"/>
+        <variable value="match" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_saw" render_template="effect:DIFFUSE0_TEXTURE:DIFFUSE0_UVANIM:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/sawblade_indicator_df"/>
+        <variable value="match" type="scalar" name="intensity"/>
+        <variable value="10" type="scalar" name="falloff_exp"/>
+        <variable value="3 0 0" type="vector3" name="uv0_speed"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE" decal_material="metal" version="2" name="fireextinguisher">
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+        <diffuse_texture file="units/world/props/fire_extinguisher/fire_extinguisher_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+    <material name="mtr_blood_splatter" render_template="effect:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/blood_splatter_df"/>
+        <variable value="match" type="scalar" name="intensity"/>
+    </material>
+    <material name="mat_interior" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_interior_df"/>
+        <reflection_texture global_texture="current_global_texture" type="cube"/>
+        <variable value="1 0 2" type="vector3" name="environment_settings"/>
+    </material>
+    <material name="mat_interior_vtxc" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_interior_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_moneytransport_interior_nm"/>
+    </material>
+    <material name="mat_floor" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_interior_floor_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/vehicles/str_vehicle_truck_gensec_transport/ind_vehicle_truck_interior_floor_nm"/>
+    </material>
+</materials>

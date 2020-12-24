@@ -1,5 +1,6 @@
 <table directory="assets">
 	<texture path="units/pd2_mod_csgo/guis/equip_csgo_spraycan" unload="true"/>
+	<texture path="units/payday2/props/tire_pile_05/tire_pile_05" unload="true"/>		
 	<texture path="guis/dlcs/chill/textures/pd2/trophies/safehouse_trophies_preview_csgo01" force="true" />	
 	<add>
 		<material_config path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
@@ -7,6 +8,13 @@
 		<object path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
 		<sequence_manager path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
 		<unit path="units/pd2_mod_csgo/equipment/csgo_equipment_security_camera/csgo_equipment_security_camera" unload="true"/>
+	</add>
+	<add>
+		<unit path="units/payday2/props/tire_pile_05/tire_pile_05" load="true"/>	
+		<object path="units/payday2/props/tire_pile_05/tire_pile_05" />
+		<cooked_physics path="units/payday2/props/tire_pile_05/tire_pile_05" />
+		<model path="units/payday2/props/tire_pile_05/tire_pile_05" />
+		<material_config path="units/payday2/props/tire_pile_05/tire_pile_05" />
 	</add>
 	<add>
 		<material_config path="units/pd2_mod_csgo/pickups/pku_prop_spraycan_color/pku_prop_spraycan_color" unload="true"/>

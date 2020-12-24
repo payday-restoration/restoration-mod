@@ -58,7 +58,7 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="murkywater" briefing_dialog="wetworks_brief" player_style="loud_suit" bonus_escape="true" ghost_bonus="0.2" id="wetwork" load_screen="guis/textures/customheist_gui/wetwork_loading" max_bags="54">
+	<level ai_group_type="murkywater" bonus_escape="true" briefing_dialog="wetworks_brief" ghost_bonus="0.2" id="wetwork" load_screen="guis/textures/customheist_gui/wetwork_loading" max_bags="54" player_style="loud_suit">
 		<add file="levels/wetwork/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
@@ -180,8 +180,8 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="america" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
-		<add file="levels/junk/add.xml"/>
+	<level ai_group_type="federales" player_style="suit_sunny" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
+		<add file="levels/junk/add.xml" />
 		<assets>
 			<asset name="ammo_bag"/>
 			<asset name="health_bag"/>
@@ -206,22 +206,17 @@
 		<intro_event/>
 		<outro_event/>
 		<packages>
+			<value_node value="packages/mexicoassets"/>
+			<value_node value="levels/narratives/vlad/bex/world_sounds"/>
 			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
-			<value_node value="levels/narratives/e_framing_frame/stage_2/world/world"/>
-			<value_node value="levels/narratives/bain/rat/world/world"/>
 			<value_node value="levels/instances/unique/pbr/pbr_ladder_placed/world/world"/>
-			<value_node value="levels/narratives/vlad/cane/new_geo/new_geo"/>
-			<value_node value="levels/narratives/bain/help/exterior/exterior"/>
 			<value_node value="levels/narratives/e_election_day/stage_1/pc_only/pc_only"/>
 			<value_node value="levels/narratives/bain/help/world"/>
 			<value_node value="levels/narratives/vlad/cane/world"/>
 			<value_node value="levels/instances/unique/chill/bodhi_stage_01/world/world"/>
 			<value_node value="levels/narratives/dentist/mia/stage2/world"/>
 			<value_node value="levels/instances/unique/chew/chew_swat_van/world/world"/>
-			<value_node value="levels/instances/unique/mad/mad_gas_intake/world/world"/>
 			<value_node value="levels/narratives/continental/fish/editor_only/editor_only"/>
-			<value_node value="packages/jolly"/>
-			<value_node value="packages/job_spa"/>
 			<value_node value="levels/narratives/h_firestarter/stage_1/world_sounds"/>
 			<value_node value="levels/narratives/butcher/thebomb/stage_2/occluders/occluders"/>
 			<value_node value="levels/instances/unique/chill/pile/world"/>
@@ -235,7 +230,17 @@
 			<value_node value="levels/instances/unique/crojob/meth_lab/world/world"/>
 			<value_node value="levels/instances/unique/crojob/meth_lab/world_sounds"/>
 			<value_node value="levels/instances/unique/friend/painting_stack_burn/world/world"/>
-			<value_node value="levels/narratives/vlad/mallcrasher/world"/>
+			<value_node value="packages/job_bex"/>
+			<value_node value="levels/instances/unique/des/des_chest/world"/>
+			<value_node value="levels/narratives/vlad/fex/backdrop/backdrop"/>
+			<value_node value="levels/narratives/vlad/cane/new_geo/new_geo"/>
+			<value_node value="levels/narratives/bain/rat/world/world"/>
+			<value_node value="levels/narratives/bain/help/exterior/exterior"/>
+			<value_node value="levels/narratives/bain/revenge/terrain02/terrain02"/>
+			<value_node value="levels/instances/unique/fex/fex_masked_guards/world"/>
+			<value_node value="levels/instances/unique/mad/mad_gas_intake/world/world"/>
+			<value_node value="levels/narratives/e_framing_frame/stage_2/world/world"/>
+			<value_node value="packages/job_short2_stage1"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
@@ -302,7 +307,7 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="murkywater" player_style="loud_suit" briefing_dialog="burnout_brief" id="wetwork_burn" load_screen="guis/textures/customheist_gui/wetwork_burn_loading" max_bags="54" mbonus_escape="true">
+	<level ai_group_type="murkywater" briefing_dialog="burnout_brief" id="wetwork_burn" load_screen="guis/textures/customheist_gui/wetwork_burn_loading" max_bags="54" mbonus_escape="true" player_style="loud_suit">
 		<add file="levels/wetwork_burn/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
@@ -366,7 +371,6 @@
 		</sounds>
 	</level>
 	<AddFiles directory="assets">
-		<!-- <texture force="true" path="guis/dlcs/big_bank/textures/pd2/pre_planning/preplan_icon_types"/> -->
 		<texture force="true" path="guis/textures/customheist_gui/junk"/>
 		<texture force="true" path="guis/textures/customheist_gui/junk_loading"/>
 		<texture force="true" path="guis/textures/customheist_gui/wetwork"/>

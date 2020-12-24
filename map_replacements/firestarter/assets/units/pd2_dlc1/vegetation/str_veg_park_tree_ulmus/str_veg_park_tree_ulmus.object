@@ -1,0 +1,15 @@
+<dynamic_object>
+    <diesel orientation_object="rp_str_veg_park_tree_ulmus" materials="units/pd2_dlc1/vegetation/str_veg_park_tree_ulmus/str_veg_park_tree_ulmus" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object name="rp_str_veg_park_tree_ulmus" />
+            <object collision_type="box" name="c_capsule_01" padding="-2.5"/>
+            <object collision_type="box" name="c_capsule_02" padding="-2.5"/>
+            <object collision_type="box" name="c_capsule_03" padding="-2.5"/>
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" shadow_caster="true"/>
+		<object enabled="true" name="g_g_trunk" shadow_caster="true"/>
+    </graphics>
+</dynamic_object>

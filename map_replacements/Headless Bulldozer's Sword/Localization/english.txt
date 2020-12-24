@@ -1,4 +1,0 @@
-{
-    "bm_melee_halloween_sword" : "Headless Bulldozer's Sword",
-    "menu_l_global_value_halloween_sword" : "This is a Halloween 2013 item!"
-}

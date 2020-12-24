@@ -9,13 +9,11 @@ Mods required for Restoration to function
 
 SuperBLT: https://superblt.znix.xyz
 
-Voiceline Framework: https://modworkshop.net/mydownloads.php?action=view_down&did=22076
-
-Beardlib: https://modworkshop.net/mydownloads.php?action=view_down&did=14924
+Beardlib: https://modworkshop.net/mod/14924
 
 Other Restoration Links
 
-Mod Workshop download (links to Gold branch): https://modworkshop.net/mydownloads.php?action=view_down&did=428
+Mod Workshop download (links to Gold branch): https://modworkshop.net/mod/428
 
 Restoration Mod discord: https://discord.gg/YmQkDyY
 
@@ -83,7 +81,7 @@ Hoppip: Created the Mind Blown graze rework.
 
 Baddy: Major asset contributions.
 
-Hoxi: for ungodly numbers of fixes and general code improvements. You the man!
+Hoxi: for ungodly numbers of fixes and general code improvements. Amazing work!
 
 Luffy: For improving the HUD/UI code and adding more HUD/UI options
 

@@ -16,9 +16,6 @@
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
 		</body>
-		<body name="body_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
-			<object name="c_body_plate" collision_type="capsule" />
-		</body>
 
 <!-- RAGDOLL -->
 		<body name="rag_Head" enabled="false" template="corpse" friction="0.01" sweep="true" collision_class="ragdoll" keyframed="false" collision_script_quiet_time="0.5" collision_script_tag="small" ray="block" lin_damping="0.6" ang_damping="20" collides_with="0" tag="flesh" restitution="0">
@@ -193,36 +190,58 @@
 		</constraint>
 	</constraints>
 
-	<decal_surfaces default_material="flesh" >
-		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
-		<decal_mesh name="c_body_plate" 			enabled="false" material="heavy_swat_steel_no_decal" />
-	</decal_surfaces>
+	<decal_surfaces default_material="flesh" />
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
-
+		
 			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>
-				<object name="g_body_lod1" 	enabled="true" lod="1" />
+				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000" />
+					<material materials="mtr_body_lod1" max_distance="1500" />
+					<material materials="mtr_body_lod2" />
+				</object>
+				<object name="g_body_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2"/>
+				</object>				
 			</lod_object>
-
+						
 			<lod_object name="lod_head">
-				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0"/>
-				<object name="g_head_lod1" 	enabled="true" lod="1" />
+				<object name="g_head" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1000"/>
+					<material materials="mtr_head_lod1" max_distance="1500"/>
+					<material materials="mtr_head_lod2"/>
+				</object>
 			</lod_object>
 
-			<lod_object name="lod_helmet">
-				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0"/>
-				<object name="g_helmet_lod2" 	enabled="true" lod="1" />
+			<!-- fuck i hate doing this shit so much but it's so effective -->
+			<lod_object name="lod_arms">
+				<object name="g_arms" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="0" />				
+					<material materials="mtr_arms" max_distance="1000" />
+					<material materials="mtr_arms_lod1" max_distance="1500" />
+					<material materials="mtr_arms_lod2" />
+				</object>
 			</lod_object>
-
+			
+			<lod_object name="lod_hat">
+				<object name="g_hat_lod1" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="0" />
+					<material materials="mtr_hat" max_distance="1000" />
+					<material materials="mtr_hat_lod_1" max_distance="1500" />
+					<material materials="mtr_hat_lod_2" />
+				</object>
+				<object name="g_hat_lod2" 	enabled="true" lod="1" >
+					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_hat_lod_2" />
+				</object>
+			</lod_object>
+			
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-
+			<object name="g_glass" enabled="true" />
+			
 		</graphic_group>
 	</graphics>
-	
-	<lights>
-		<light multiplier="identity" far_range="400" name="ls_light" enabled="false" type="spot|specular" />
-	</lights>
 
 </dynamic_object>

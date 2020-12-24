@@ -1,0 +1,19 @@
+<unit type="gen" slot="1" >
+	<object file="units/payday2/equipment/gen_interactable_door_mus/gen_interactable_door_mus_double" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on effect="effects/payday2/particles/wood/wood_door_shotgun_dmg_in" />
+		<depends_on effect="effects/payday2/particles/wood/wood_door_shotgun_dmg_out" />
+		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on effect="effects/payday2/particles/window/storefront_window_small" />
+	</dependencies>
+	<extensions>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="attention" class="AIAttentionObject" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="pick_lock_easy_no_skill" />
+			<var name="_interact_object" value="interact_locator"/>
+		</extension>
+	</extensions>
+</unit>

@@ -1,0 +1,7 @@
+<materials version="3">
+	<material name="mat_lxy_prop_camera_bag" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_fish/lxy_prop_camera_bag/lxy_prop_camera_bag_df" />
+		<bump_normal_texture file="units/pd2_dlc_fish/lxy_prop_camera_bag/lxy_prop_camera_bag_nm" />
+		<material_texture file="units/pd2_dlc_fish/lxy_prop_camera_bag/lxy_prop_camera_bag_gsma" />
+	</material>
+</materials>

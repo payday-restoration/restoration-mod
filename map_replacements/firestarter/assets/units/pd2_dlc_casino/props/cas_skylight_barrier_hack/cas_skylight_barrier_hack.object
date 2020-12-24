@@ -1,0 +1,24 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_casino/props/cas_skylight_barrier_hack/cas_skylight_barrier_hack" orientation_object="rp_gen_panel_keycard_hack" />
+    <sequence_manager file="units/pd2_dlc_casino/props/cas_skylight_barrier_hack/cas_skylight_barrier_hack" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_gen_panel_keycard_hack" />
+			<object name="c_box" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_base" 				enabled="true" />
+
+		<object name="g_hacking" 			enabled="false" />
+		<object name="g_breaching" 			enabled="false" />
+		<object name="g_in" 				enabled="false" />
+		
+		<object name="g_hacking_done_code" 	enabled="false" />
+		<object name="g_hacking_done" 		enabled="false" />
+		
+		<object name="g_hacking_stopped" 	enabled="false" />
+		<object name="g_hacking_stop" 		enabled="false" />
+		<object name="g_out" 				enabled="true" />
+	</graphics>
+</dynamic_object>

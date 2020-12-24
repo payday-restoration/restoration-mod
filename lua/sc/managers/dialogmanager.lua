@@ -8,6 +8,23 @@ function DialogManager:queue_dialog(id, ...)
 			
 	if Global.game_settings and Global.game_settings.one_down then
 	
+		--Buluc's Mansion--				
+		if id == "Play_loc_fex_58a" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end		
+		end	
+	
 		--Framing Frame Day 1--				
 		if id == "pln_framing_stage1_09" then
 			if difficulty_index <= 2 then

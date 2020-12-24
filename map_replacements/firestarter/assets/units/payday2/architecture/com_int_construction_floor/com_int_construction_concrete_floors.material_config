@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="mat_concrete" version="2" render_template="generic:DIFFUSE_TEXTURE">
+        <diffuse_texture file="units/payday2/architecture/com_int_construction_floor/com_int_construction_floor_concrete_df"/>
+    </material>
+</materials>

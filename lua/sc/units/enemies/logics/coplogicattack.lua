@@ -1659,7 +1659,11 @@ function CopLogicAttack._upd_enemy_detection(data, is_synchronous)
 						local flank_pos = CopLogicAttack._find_flank_pos(data, my_data, new_attention.nav_tracker)
 						
 						if flank_pos then
-							my_data.optimal_pos = flank_pos
+							my_data.optimal_pos = flank_pos		
+		                    if data.char_tweak.chatter and data.char_tweak.chatter.look_for_angle then		
+						        managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "look_for_angle" )
+							    --log("flank chatter")
+		                    end
 							--if my_data.optimal_pos then
 							--	local draw_duration = 2
 							--	local line3 = Draw:brush(Color.blue:with_alpha(0.5), draw_duration)
@@ -1672,7 +1676,7 @@ function CopLogicAttack._upd_enemy_detection(data, is_synchronous)
 						local charge_pos = CopLogicTravel._get_pos_on_wall(new_attention.nav_tracker:field_position(), my_data.weapon_range.close, 45, nil)
 						
 						if charge_pos then
-							my_data.optimal_pos = charge_pos
+							my_data.optimal_pos = charge_pos	
 							--if my_data.optimal_pos then
 							--	local draw_duration = 2
 							--	local line4 = Draw:brush(Color.red:with_alpha(0.5), draw_duration)
@@ -2705,7 +2709,7 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 							my_data.shield_knock_cooldown = data.t + shield_knock_cooldown
 									
 							if data.unit:base()._tweak_table == "phalanx_minion" or data.unit:base()._tweak_table == "phalanx_minion_assault" then
-								data.unit:sound():play("hos_shield_indication_sound_terminator_style", nil, true)
+								data.unit:sound():say("use_gas", true, nil, true)
 							else
 								data.unit:sound():play("shield_identification", nil, true)
 							end

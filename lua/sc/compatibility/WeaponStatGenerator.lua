@@ -58,8 +58,8 @@ function WeaponTweakData:generate_custom_weapon_stats(weap)
 		weap.stats.recoil = stats.recoil
 		weap.stats.spread = stats.spread
 		weap.stats.concealment = stats.concealment
-		weap.stats.alert_size = stats.quietness
-		weap.stats.suppression = stats.quietness
+		weap.stats.alert_size = 2
+		weap.stats.suppression = stats.suppression
 		weap.stats.extra_ammo = 101
 		weap.stats.total_ammo_mod = 100
 		weap.stats.zoom = weap.stats.zoom or 1
@@ -100,7 +100,7 @@ function WeaponTweakData:clean_stats(stats)
 	stats.recoil = math.ceil(math.clamp(stats.recoil, 1, #self.stats.recoil))
 	stats.spread = math.ceil(math.clamp(stats.spread, 1, #self.stats.spread))
 	stats.concealment = math.ceil(math.clamp(stats.concealment, 1, #self.stats.concealment))
-	stats.quietness = math.ceil(math.clamp(stats.quietness, 1, #self.stats.suppression))
+	stats.suppression = math.ceil(math.clamp(stats.suppression, 1, #self.stats.suppression))
 	return stats
 end
 
@@ -111,7 +111,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 		spread = 0,
 		recoil = 0,
 		concealment = 0,
-		quietness = 0,
+		suppression = 0,
 		swap_speed_multiplier = 1
 	}
 
@@ -137,7 +137,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 	if damage <= 35 then
 		stats.damage = 18
 		stats.AMMO_MAX = 200
-		stats.quietness = 10
+		stats.suppression = 10
 		stats.recoil = 26 - math.max(math.floor((rpm - 600)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14},
@@ -150,7 +150,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 	elseif damage <= 40 then
 		stats.damage = 20
 		stats.AMMO_MAX = 180
-		stats.quietness = 9
+		stats.suppression = 9
 		stats.recoil = 26 - math.max(math.floor((rpm - 550)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14},
@@ -163,7 +163,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 	elseif damage <= 65 then
 		stats.damage = 24
 		stats.AMMO_MAX = 150
-		stats.quietness = 8
+		stats.suppression = 8
 		stats.recoil = 26 - math.max(math.floor((rpm - 400)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14,13},
@@ -176,7 +176,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 	elseif damage <= 80 then
 		stats.damage = 30
 		stats.AMMO_MAX = 120
-		stats.quietness = 7
+		stats.suppression = 7
 		stats.recoil = 26 - math.max(math.floor((rpm - 350)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13,12},
@@ -189,7 +189,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 	elseif damage <= 90 then
 		stats.damage = 45
 		stats.AMMO_MAX = 80
-		stats.quietness = 6
+		stats.suppression = 6
 		stats.recoil = 26 - math.max(math.floor((rpm - 300)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{20,19,18,17,16,15,14,13,12,11},
@@ -202,7 +202,7 @@ function WeaponTweakData:generate_assault_rifle(weap)
 	else
 		stats.damage = 60
 		stats.AMMO_MAX = 60
-		stats.quietness = 5
+		stats.suppression = 5
 		stats.recoil = 26 - math.max(math.floor((rpm - 100)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{21,20,19,18,17,16,15,14,13,12},
@@ -252,7 +252,7 @@ function WeaponTweakData:generate_smg(weap)
 		spread = 0,
 		recoil = 0,
 		concealment = 0,
-		quietness = 0,
+		suppression = 0,
 		swap_speed_multiplier = 1
 	}
 
@@ -280,7 +280,7 @@ function WeaponTweakData:generate_smg(weap)
 	if damage <= 50 then --36 damage Carbine Tier
 		stats.damage = 18
 		stats.AMMO_MAX = 200
-		stats.quietness = 10
+		stats.suppression = 10
 		stats.recoil = 26 - math.max(math.floor((rpm - 750)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13},
@@ -293,7 +293,7 @@ function WeaponTweakData:generate_smg(weap)
 	elseif damage <= 60 then
 		stats.damage = 20
 		stats.AMMO_MAX = 180
-		stats.quietness = 9
+		stats.suppression = 9
 		stats.recoil = 26 - math.max(math.floor((rpm - 650)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13},
@@ -306,7 +306,7 @@ function WeaponTweakData:generate_smg(weap)
 	elseif damage <= 80 then
 		stats.damage = 24
 		stats.AMMO_MAX = 150
-		stats.quietness = 8
+		stats.suppression = 8
 		stats.recoil = 26 - math.max(math.floor((rpm - 600)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{19,18,17,16,15,14,13,12},
@@ -319,7 +319,7 @@ function WeaponTweakData:generate_smg(weap)
 	else
 		stats.damage = 30
 		stats.AMMO_MAX = 120
-		stats.quietness = 7
+		stats.suppression = 7
 		stats.recoil = 26 - math.max(math.floor((rpm - 550)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{18,17,16,15,14,13,12,11},
@@ -369,7 +369,7 @@ function WeaponTweakData:generate_lmg(weap)
 		spread = 0,
 		recoil = 0,
 		concealment = 0,
-		quietness = 0,
+		suppression = 0,
 		swap_speed_multiplier = 0.9
 	}
 
@@ -387,7 +387,7 @@ function WeaponTweakData:generate_lmg(weap)
 	if damage <= 60 then
 		stats.damage = 18
 		stats.AMMO_MAX = 300
-		stats.quietness = 10
+		stats.suppression = 10
 		stats.recoil = 26 - math.max(math.floor((rpm - 650)/50), 0)
 		stats.spread = self:generate_stat_from_table(
 			{10,11,12,13,14},
@@ -404,7 +404,7 @@ function WeaponTweakData:generate_lmg(weap)
 	elseif damage <= 80 then
 		stats.damage = 20
 		stats.AMMO_MAX = 270
-		stats.quietness = 9
+		stats.suppression = 9
 		stats.recoil = 26 - math.floor((rpm - 650)/50)
 		stats.spread = self:generate_stat_from_table(
 			{10,11,12,13,14},
@@ -421,7 +421,7 @@ function WeaponTweakData:generate_lmg(weap)
 	else
 		stats.damage = 24
 		stats.AMMO_MAX = 225
-		stats.quietness = 8
+		stats.suppression = 8
 		stats.recoil = 26 - math.floor((rpm - 500)/50)
 		stats.spread = self:generate_stat_from_table(
 			{10,11,12,13,14},
@@ -447,7 +447,7 @@ function WeaponTweakData:generate_pistol(weap)
 		spread = 0,
 		recoil = 0,
 		concealment = 0,
-		quietness = 0,
+		suppression = 0,
 		swap_speed_multiplier = 1
 	}
 
@@ -461,7 +461,7 @@ function WeaponTweakData:generate_pistol(weap)
 		if damage <= 40 then
 			stats.damage = 18
 			stats.AMMO_MAX = 200
-			stats.quietness = 10
+			stats.suppression = 10
 			stats.recoil = 26 - math.floor((rpm - 750)/50)
 			stats.spread = self:generate_stat_from_table(
 				{18,17,16,15,14,13},
@@ -478,7 +478,7 @@ function WeaponTweakData:generate_pistol(weap)
 		elseif damage <= 70 then
 			stats.damage = 20
 			stats.AMMO_MAX = 180
-			stats.quietness = 9
+			stats.suppression = 9
 			stats.recoil = 26 - math.floor((rpm - 700)/50)
 			stats.spread = self:generate_stat_from_table(
 				{17,16,15,14,13,12},
@@ -495,7 +495,7 @@ function WeaponTweakData:generate_pistol(weap)
 		elseif damage <= 120 then
 			stats.damage = 24
 			stats.AMMO_MAX = 150
-			stats.quietness = 8
+			stats.suppression = 8
 			stats.recoil = 26 - math.floor((rpm - 600)/50)
 			stats.spread = self:generate_stat_from_table(
 				{17,16,15,14,13,12},
@@ -512,7 +512,7 @@ function WeaponTweakData:generate_pistol(weap)
 		else
 			stats.damage = 30
 			stats.AMMO_MAX = 120
-			stats.quietness = 7
+			stats.suppression = 7
 			stats.recoil = 26 - math.floor((rpm - 550)/50)
 			stats.spread = self:generate_stat_from_table(
 				{17,16,15,14,13,12},
@@ -531,7 +531,7 @@ function WeaponTweakData:generate_pistol(weap)
 		if damage <= 40 then
 			stats.damage = 20
 			stats.AMMO_MAX = 180
-			stats.quietness = 9
+			stats.suppression = 9
 			stats.fire_rate = 0.08571428571
 			stats.recoil = self:generate_stat_from_table(
 				{23,24,25,26},
@@ -545,7 +545,7 @@ function WeaponTweakData:generate_pistol(weap)
 		elseif damage <= 50 then
 			stats.damage = 24
 			stats.AMMO_MAX = 150
-			stats.quietness = 8
+			stats.suppression = 8
 			stats.fire_rate = 0.08571428571
 			stats.recoil = self:generate_stat_from_table(
 				{22,23,24,25},
@@ -559,7 +559,7 @@ function WeaponTweakData:generate_pistol(weap)
 		elseif damage <= 70 then
 			stats.damage = 30
 			stats.AMMO_MAX = 120
-			stats.quietness = 7
+			stats.suppression = 7
 			stats.fire_rate = 0.08571428571
 			stats.recoil = self:generate_stat_from_table(
 				{20,21,22,23},
@@ -573,7 +573,7 @@ function WeaponTweakData:generate_pistol(weap)
 		elseif damage <= 120 then
 			stats.damage = 45
 			stats.AMMO_MAX = 80
-			stats.quietness = 6
+			stats.suppression = 6
 			stats.fire_rate = 0.1
 			stats.recoil = self:generate_stat_from_table(
 				{17,18,19,20},
@@ -587,7 +587,7 @@ function WeaponTweakData:generate_pistol(weap)
 		else
 			stats.damage = 60
 			stats.AMMO_MAX = 60
-			stats.quietness = 5
+			stats.suppression = 5
 			stats.recoil = 26 - math.floor((rpm + 50)/50)
 			stats.spread = stats.spread + self:generate_stat_from_table(
 				{17,18,19,20,21},
@@ -613,7 +613,7 @@ function WeaponTweakData:generate_snp(weap)
 		spread = 0,
 		recoil = 0,
 		concealment = 0,
-		quietness = 0,
+		suppression = 0,
 		swap_speed_multiplier = 1,
 		piercing = true
 	}
@@ -634,7 +634,7 @@ function WeaponTweakData:generate_snp(weap)
 	if damage <= 250 then
 		stats.damage = 90
 		stats.AMMO_MAX = 40
-		stats.quietness = 4
+		stats.suppression = 4
 		stats.recoil = 16 - math.max(math.floor(rpm/40), 0)
 		stats.spread = self:generate_stat_from_table(
 			{15,16,17,18},
@@ -655,7 +655,7 @@ function WeaponTweakData:generate_snp(weap)
 	elseif damage <= 480 then
 		stats.damage = 120
 		stats.AMMO_MAX = 30
-		stats.quietness = 3
+		stats.suppression = 3
 		stats.recoil = 14 - math.max(math.floor(rpm/30), 0)
 		stats.spread = self:generate_stat_from_table(
 			{15,16,17,18},
@@ -676,7 +676,7 @@ function WeaponTweakData:generate_snp(weap)
 	else
 		stats.damage = 180
 		stats.AMMO_MAX = 20
-		stats.quietness = 2
+		stats.suppression = 2
 		stats.super_piercing = true
 		stats.recoil = 14 - math.max(math.floor(rpm/20), 0)
 		stats.spread = self:generate_stat_from_table(
@@ -707,7 +707,7 @@ function WeaponTweakData:generate_shotgun(weap)
 		spread = 0,
 		recoil = 0,
 		concealment = 0,
-		quietness = 0,
+		suppression = 0,
 		swap_speed_multiplier = 1
 	}
 
@@ -725,7 +725,7 @@ function WeaponTweakData:generate_shotgun(weap)
 	if damage <= 45 then
 		stats.damage = 30
 		stats.AMMO_MAX = 120
-		stats.quietness = 7
+		stats.suppression = 7
 		stats.recoil = 20 - math.max(math.floor((rpm - 480)/40), 0)
 		stats.recoil = stats.recoil + self:generate_stat_from_table(
 			{13,10,7,4,2,0},
@@ -746,7 +746,7 @@ function WeaponTweakData:generate_shotgun(weap)
 	elseif damage <= 60 then
 		stats.damage = 45
 		stats.AMMO_MAX = 80
-		stats.quietness = 6
+		stats.suppression = 6
 		stats.recoil = 18 - math.max(math.floor((rpm - 300)/40), 0)
 		stats.recoil = stats.recoil + self:generate_stat_from_table(
 			{13,10,7,4,2,0},
@@ -767,7 +767,7 @@ function WeaponTweakData:generate_shotgun(weap)
 	elseif damage <= 90 then
 		stats.damage = 60
 		stats.AMMO_MAX = 60
-		stats.quietness = 5
+		stats.suppression = 5
 		stats.recoil = 18 - math.max(math.floor((rpm - 100)/40), 0)
 		stats.recoil = stats.recoil + self:generate_stat_from_table(
 			{16,12,8,4,2,0},
@@ -788,7 +788,7 @@ function WeaponTweakData:generate_shotgun(weap)
 	else
 		stats.damage = 90
 		stats.AMMO_MAX = 40
-		stats.quietness = 3
+		stats.suppression = 3
 		stats.recoil = 10 - math.max(math.floor((rpm - 100)/40), 0)
 		stats.recoil = stats.recoil + self:generate_stat_from_table(
 			{19,14,9,4,2,0},

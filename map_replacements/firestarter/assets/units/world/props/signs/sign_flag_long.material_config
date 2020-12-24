@@ -1,0 +1,8 @@
+<materials version="3">
+    <material version="2" decal_material="cloth" name="mat_flag_long" render_template="generic:DIFFUSE_TEXTURE:DOUBLE_SIDED:VEGETATION_BENDING">
+        <diffuse_texture file="units/world/props/signs/signs_banners_df"/>
+        <variable value="0.4" type="scalar" name="speed"/>
+        <variable value="80 0.2 0" type="vector3" name="detail_settings"/>
+        <variable value="0.01 1 0" type="vector3" name="branch_settings"/>
+    </material>
+</materials>

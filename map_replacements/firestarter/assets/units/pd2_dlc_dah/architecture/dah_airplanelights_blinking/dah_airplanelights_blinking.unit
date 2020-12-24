@@ -1,0 +1,7 @@
+<unit type="dah" slot="1">
+	<object file="units/pd2_dlc_dah/architecture/dah_airplanelights_blinking/dah_airplanelights_blinking" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

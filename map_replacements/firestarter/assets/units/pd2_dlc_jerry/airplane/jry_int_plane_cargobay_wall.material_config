@@ -1,0 +1,226 @@
+<materials version="3">
+    <material name="mat_cargobay_props" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_props_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_props_nm"/>
+    </material>
+    <material name="mat_cargobay_props_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_props_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_props_nm"/>
+    </material>
+    <material name="mat_cargobay_wall" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_wall_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_wall_nm"/>
+    </material>
+    <material name="mat_cargobay_wall_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_wall_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_wall_nm"/>
+    </material>
+    <material name="mat_cargobay_wall_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_wall_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_cargobay_wall_nm"/>
+    </material>
+    <material name="mat_catwalk" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_catwalk_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_catwalk_nm"/>
+    </material>
+    <material name="mat_catwalk_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_catwalk_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_catwalk_nm"/>
+    </material>
+    <material name="mat_catwalk_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_catwalk_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_catwalk_nm"/>
+    </material>
+    <material name="mat_ceiling" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_ceiling_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_ceiling_nm"/>
+    </material>
+    <material name="mat_ceiling_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_ceiling_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_ceiling_nm"/>
+    </material>
+    <material name="mat_floor_a" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_a_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_a_nm"/>
+    </material>
+    <material name="mat_floor_a_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_a_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_a_nm"/>
+    </material>
+    <material name="mat_floor_b" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_b_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_b_nm"/>
+    </material>
+    <material name="mat_floor_b_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_b_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_b_nm"/>
+    </material>
+    <material name="mat_floor_b_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_b_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_b_nm"/>
+    </material>
+    <material name="mat_floor_b_lod_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_b_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_b_nm"/>
+    </material>
+    <material name="mat_plane_a" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_ext_plane_a_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_ext_plane_a_nm"/>
+    </material>
+    <material name="mat_plane_a_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_ext_plane_a_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_ext_plane_a_nm"/>
+    </material>
+    <material name="mat_plane_a_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_ext_plane_a_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_ext_plane_a_nm"/>
+    </material>
+    <material name="mat_plane_a_lod_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_ext_plane_a_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_ext_plane_a_nm"/>
+    </material>
+    <material name="mat_wall_bottom" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_wall_bottom_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_wall_bottom_nm"/>
+    </material>
+    <material name="mat_wall_bottom_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_wall_bottom_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_wall_bottom_nm"/>
+    </material>
+    <material name="mat_wall_cloth" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_wall_cloth_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_wall_cloth_nm"/>
+    </material>
+    <material name="mat_wall_cloth_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_wall_cloth_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_wall_cloth_nm"/>
+    </material>
+    <material name="mat_wall_prop" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_wall_props_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_wall_props_nm"/>
+    </material>
+    <material name="mat_wall_prop_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_wall_props_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_wall_props_nm"/>
+    </material>
+    <material name="mat_wall_prop_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_wall_props_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_wall_props_nm"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+    <material name="mat_cargo_front_a" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_front_a_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_front_a_nm"/>
+    </material>
+    <material name="mat_cargo_front_b" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_front_b_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_front_b_nm"/>
+    </material>
+    <material name="mat_upper_floor" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_upper_floor_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_upper_floor_nm"/>
+    </material>
+    <material name="mat_upper_divider" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_upper_divider_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_upper_divider_nm"/>
+    </material>
+    <material name="mat_upper_divider_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_upper_divider_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_upper_divider_nm"/>
+    </material>
+    <material name="mat_upper_wall" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_upper_wall_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_upper_wall_nm"/>
+    </material>
+    <material name="mat_cargo_front_b_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_front_b_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_front_b_nm"/>
+    </material>
+    <material name="mat_floor_a_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_a_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_a_nm"/>
+    </material>
+    <material name="mat_floor_a_lod_skinned" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_a_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_floor_a_nm"/>
+    </material>
+    <material name="mat_hatch" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_hatch_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_hatch_nm"/>
+    </material>
+    <material name="mat_net" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_net_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_net_nm"/>
+    </material>
+    <material name="mat_net_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_net_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_net_nm"/>
+    </material>
+    <material name="mat_stair" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_stair_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_stair_nm"/>
+    </material>
+    <material name="mat_stair_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_stair_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_stair_nm"/>
+    </material>
+    <material name="mat_crew_seat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_crew_seat_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_crew_seat_nm"/>
+    </material>
+    <material name="mat_crew_seat_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_crew_seat_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_crew_seat_nm"/>
+    </material>
+    <material name="mat_cargo_net" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_cargonet_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_cargonet_nm"/>
+    </material>
+    <material name="mat_cargo_net_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_cargonet_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_cargonet_nm"/>
+    </material>
+    <material name="mat_intpanel" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_intpanel_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_intpanel_nm"/>
+    </material>
+    <material name="mat_intpanel_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_intpanel_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_intpanel_nm"/>
+    </material>
+    <material version="2" unique="true" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" name="mat_intpanel_outline">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_intpanel_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_intpanel_nm"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mat_seat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_seat_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_prop_plane_seat_nm"/>
+    </material>
+    <material name="mat_seat_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_seat_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_prop_plane_seat_nm"/>
+    </material>
+    <material name="mat_plane_b" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_ext_plane_b_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_ext_plane_b_nm"/>
+    </material>
+    <material name="mat_plane_decal" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:OPACITY_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_ext_plane_decal_df"/>
+        <opacity_texture file="units/pd2_dlc_jerry/airplane/jry_ext_plane_decal_op"/>
+        <variable value="0.4040000140667" type="scalar" name="alpha_ref"/>
+    </material>
+    <material name="mat_service_misc" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_service_misc_df"/>
+        <bump_normal_texture file="units/pd2_dlc_jerry/airplane/jry_int_plane_service_misc_nm"/>
+    </material>
+    <material name="mat_service_misc_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_service_misc_df"/>
+        <bump_normal_texture mip="8" file="units/pd2_dlc_jerry/airplane/jry_int_plane_service_misc_nm"/>
+    </material>
+    <material name="mat_jry_plane_seat_shadow" render_template="effect:BLEND_MUL:DIFFUSE0_TEXTURE" version="2">
+        <diffuse_texture file="units/pd2_dlc_jerry/airplane/jry_seats_shadow_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+    </material>
+</materials>

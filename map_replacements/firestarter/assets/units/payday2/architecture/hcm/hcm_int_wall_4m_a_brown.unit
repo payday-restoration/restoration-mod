@@ -1,0 +1,6 @@
+<unit type="hcm" slot="1" >
+    <object file="units/payday2/architecture/hcm/hcm_int_wall_4m_a_brown" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

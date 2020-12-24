@@ -30,6 +30,21 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.nypd = nypd
 	self.ai_groups.lapd = lapd
 	
+	--Christmas Dozer/Cloaker jingle bells
+	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
+		if Month == 12 then
+			if not PackageManager:loaded("packages/event_xmas") then
+				PackageManager:load("packages/event_xmas")
+			end		
+			
+			for lvl_id, lvl_data in pairs(self) do
+				if type(lvl_data) == "table" and lvl_data.name_id then
+					self[lvl_id].is_christmas_heist = true
+				end
+			end					
+		end
+	end
+	
 	--///MEXICAN LEVELS\\\--
 	self.bex.package = {"packages/mexicoassets", "packages/job_bex"}
 	
@@ -375,7 +390,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 			old_hoxton = true
 		},
 		ai_group_type = america,
-		player_style = "loud_suit",
+		player_style = "xmas_tuxedo",
 		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_1_xmn_df"
 	}
 
@@ -398,7 +413,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 			old_hoxton = true
 		},
 		ai_group_type = america,
-		player_style = "loud_suit",
+		player_style = "xmas_tuxedo",
 		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_2_xmn_df"
 	}
 	
@@ -407,6 +422,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.xmn_tag = deep_clone(self.tag)
 	self.xmn_tag.name_id = "heist_xmn_tag_name"
 	self.xmn_tag.world_name = "narratives/locke/tag_xmn"
+	self.xmn_tag.player_style = "xmas_tuxedo"
 	self.xmn_tag.load_screen = "guis/dlcs/xmn/textures/loading/job_tag_xmn_df"
 	
 	--///ZOMBIE LEVELS\\\--

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="dia" slot="1">
+  <object file="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

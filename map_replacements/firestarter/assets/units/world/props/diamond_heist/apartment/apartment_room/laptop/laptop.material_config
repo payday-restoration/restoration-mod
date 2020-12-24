@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="laptop_material" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop_df"/>
+        <bump_normal_texture file="units/world/props/diamond_heist/apartment/apartment_room/laptop/laptop_nm"/>
+    </material>
+</materials>

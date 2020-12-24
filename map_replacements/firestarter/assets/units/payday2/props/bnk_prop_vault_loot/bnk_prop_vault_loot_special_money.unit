@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<unit type="bnk" slot="1">
+  <network sync="spawn" />
+  <object file="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_special_money" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+    <extension name="interaction" class="CarryInteractionExt">
+      <var name="tweak_data" value="money_wrap" />
+      <var name="_interact_object" value="interaction"/>
+			<var name="_ray_object_names" type="table" >
+				<!-- <var value="a_ray_object_1"/> -->
+				<!-- <var value="a_ray_object_2"/> -->
+			</var>
+      <var name="_remove_on_interact" value="true" />
+      <var name="_global_event" value="pku_money" />
+    </extension>
+    <extension name="carry_data" class="CarryData">
+		<var name="_carry_id" value="money" />
+	</extension>
+  </extensions>
+</unit>

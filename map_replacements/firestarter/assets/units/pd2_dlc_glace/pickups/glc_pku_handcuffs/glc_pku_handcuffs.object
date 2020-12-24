@@ -1,0 +1,13 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_glace/pickups/glc_pku_handcuffs/glc_pku_handcuffs" orientation_object="rp_chl_props_trophy_handcuffs" />
+	<sequence_manager file="units/pd2_dlc_glace/pickups/glc_pku_handcuffs/glc_pku_handcuffs" />
+	<bodies>
+		<body name="body_static" enabled="true" template="editor">
+			<object name="rp_chl_props_trophy_handcuffs" />
+			<object name="c_box" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_handcuffs" enabled="true" />
+	</graphics>
+</dynamic_object>

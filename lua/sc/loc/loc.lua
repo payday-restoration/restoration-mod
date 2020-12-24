@@ -24,7 +24,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["heist_contact_skirmish"] = "Skirmish",
 		["menu_skirmish_pick_heist"] = "Jackal Company Entrusts You With This Task",
 		["menu_skirmish_map_selection"] = "Target Locations",
-		["menu_skirmish_selected_briefing"] = "In this scenario, you & your crew can select any SKIRMISH.\n\nA SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash, experience, and loot reward with each wave completed.\n\nYou will fail if anyone in your crew -- including yourself -- is taken into custody, or if the target hostage is rescued by hostiles.",
+		["menu_skirmish_selected_briefing"] = "In this scenario, you & your crew can select any SKIRMISH.\n\nA SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash, experience, and loot reward with each wave completed.\n\nYou will fail if the target hostage is rescued by hostiles.",
 		["menu_skirmish_selected"] = "Skirmish",
 
 		--Skirmish Heists--
@@ -212,8 +212,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		-- Melee weapon descriptions (don't forget to call them in blackmarkettweakdata, not weapontweakdata) --
 		["bm_melee_katana_info"] = "While playing as Jiro, killing a Cloaker with a charged attack triggers a special kill animation.",
 		["bm_melee_buck_info"] = "Surprisingly effective against modern weapons too.\n\nReduces incoming ranged damage by 10% while charging.", --Buckler Shield
-		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 30 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills.", -- ROAMING FR-
-		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals 18 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills.", --Kazaguruma
+		["bm_melee_cs_info"] = "Rip and Tear, until it is done.\n\nDeals 30 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills. Cannot parry enemy attacks.", -- ROAMING FR-
+		["bm_melee_ostry_info"] = "Spiiiiiiiiiin.\n\nDeals 18 damage every 0.25 seconds to targets in front of you while charging. This can be increased with skills. Cannot parry enemy attacks.", --Kazaguruma
 		["bm_melee_wing_info"] = "Goes great with a disguise kit!\n\nDeals quadruple damage when attacking enemies from behind.",-- Wing Butterfly Knife
 		["bm_melee_switchblade_info"] = "Designed for violence, deadly as a revolver - that's the switchblade!\n\nDeals double damage when attacking enemies from behind.",-- Switchblade Knife
 		["bm_melee_chef_info"] = "Not sure if this was used for chopping meat from the supermarket.\n\nFully charged hits spread panic.", -- Psycho Knife
@@ -228,6 +228,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals 120 melee damage to them. This can be increased with skills.", --Empty Palm Kata
 		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a 5% chance to deal ten times the damage and knockdown.",
 		["bm_melee_specialist_info"] = "Twice the blades, twice the fun.\n\nMelee attacks deal double damage every hit after the first while drawn.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
+		["bm_melee_cleaver_info"] = "He's whacking and hacking and slashing.\n\nDeals 50% less headshot damage in exchange for increased overall effectiveness against the body and limbs.",
 
 		--We assets now--
 		["menu_asset_dinner_safe"] = "Safe",
@@ -276,7 +277,6 @@ end)
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
 	LocalizationManager:add_localized_strings({
 		["bm_menu_bonus"] = "Modifiers",
-		["bm_menu_suppression"] = "Noise Range(M)",
 		["steam_inventory_stat_boost"] = "Stat Modifier",
 
 		--Safe House--
@@ -419,8 +419,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_dynamite_desc"] = "Capacity: 3\nDamage: 800 \nRange: 4m \nDoes not bounce or roll from impact point, but deals less splash damage than similar explosives.\n\nDesigned to effectively blast through rock. Even more effective at blasting through people.",
 		["bm_grenade_frag_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \n \nA sleek new look to the classic hand grenade, sure to provide that OVERKILL touch to each blast.",
 		["bm_grenade_dada_com_desc"] = "Capacity: 3 \nDamage: 800 \nRange: 5m \n \nThe doll's outer layers hides its explosive inner workings. A tribute to the Motherland.",
-		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage: 700 per pool over 10s \nRange: 3.75m \nDuration: 10s \nDetonates on impact \n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
-		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage: 840 per pool over 12s \nRange: 3.75m \nDuration: 12s \nDetonates after 2.5s \n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",
+		["bm_grenade_molotov_desc"] = "Capacity: 3 \nDamage: 1200 per pool over 10s \nRange: 3.75m \nDuration: 10s \nDetonates on impact \n \nA breakable bottle of flammable liquid with a burning rag. It is cheap, simple and highly effective. Burn it all down.",
+		["bm_grenade_fir_com_desc"] = "Capacity: 3 \nDamage: 1440 per pool over 12s \nRange: 3.75m \nDuration: 12s \nDetonates after 2.5s \n \nA self igniting phosphorus container. Perfect for bouncing off walls and around corners towards your enemies.",
 		["bm_wpn_prj_ace_desc"] = "Capacity: 9 \nDamage: 240 \n \nThrowing cards with added weight and a razor edge. A real killer hand of cards.",
 		["bm_wpn_prj_four_desc"] = "Capacity: 9 \nDamage: 200 (Impact) \nDamage: 200 over 5s (Poison) \nInterrupts enemy actions \n \nThe throwing star has a long history filled with blood and battle. These poison coated stainless steel stars will pose a lethal threat to anyone in your way.",
 		["bm_wpn_prj_target_desc"] = "Capacity: 9 \nDamage: 240 \n \nA solid backup plan and a reliable tactic for a precise and silent kill.",
@@ -507,7 +507,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_toggle_one_down"] = "Pro-Job",
 		["menu_one_down"] = "Pro-Job",
-		["menu_es_extra_bonus"] = "Pro-Job Bonus",
+		["menu_es_pro_job_bonus"] = "Pro-Job",
 
 		["menu_asset_lock_additional_assets_pro"] = "NOT AVAILABLE IN PRO-JOBS!",
 
@@ -552,7 +552,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_title"] = "Restoration Gameplay Tips",
 		["loading_gameplay_res_1"] = "Cloakers make a 'wheezing' sound when aggressive towards heisters. Use this to locate them.",
 		["loading_gameplay_res_2"] = "Cloakers no longer make an ambient humming sound or screech when charging. Pay attention to your surroundings, as their goggles are now always lit up.",
-		["loading_gameplay_res_3"] = "On Death Sentence, enemies may charge you if you reload. Make sure that you're in good cover or far from enemies. It might be better to swap weapons sometimes, especially if using a pistol as your secondary.",
+		["loading_gameplay_res_3"] = "On Death Sentence, enemies may prioritize you if you reload. Make sure that you're in good cover or far from enemies. It might be better to swap weapons sometimes, especially if using a pistol as your secondary.",
 		["loading_gameplay_res_4"] = "Tasers no longer reload your weapons. Try to stay topped up when possible, or switch to a secondary if you're about to be tased.",
 		["loading_gameplay_res_5"] = "Cloakers will actively go after lone heisters, stick together or go to jail alone.",
 		["loading_gameplay_res_6"] = "Cloakers deal direct health damage when they kick you. This can be reduced with Deflection or the Counter Strike skill.",
@@ -560,8 +560,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_8"] = "Saiga/Black Bulldozers are hyper-aggressive and will charge at the player. This makes them easy to predict, but highly dangerous if you aren't prepared.",
 		["loading_gameplay_res_9"] = "LMG Dozers/Skulldozers will attempt to provide covering fire for other units, but will still charge in various circumstances and have very high DPS.",
 		["loading_gameplay_res_10"] = "Benelli Shotgunner Dozers replace Minigun Dozers. They only spawn in Crime Spree and alongside Captain Spring on Death Sentence. They are very, very dangerous.",
-		["loading_gameplay_res_11"] = "All Dozers except Titan Dozers will charge reloading players.",
-		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 15%.",
+		["loading_gameplay_res_11"] = "All Dozers will prioritize targeting players who are reloading.",
+		["loading_gameplay_res_12"] = "On Death Sentence, Bulldozers enter a berserker rage when their glass visors are broken, increasing their damage by 10%.",
 		["loading_gameplay_res_13"] = "Cloakers perform their iconic screech when they are about to jump kick you, dodge to the side when you hear it.",
 		["loading_gameplay_res_14"] = "Cloaker Jump Kicks will cuff you instead of down you.",
 		["loading_gameplay_res_15"] = "Flashbangs cannot be broken on Death Sentence. Your opinion, my choice.",
@@ -655,19 +655,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_15"] = "Kingpin is a versatile perk deck. The injector can be used for self sustain, surviving heavy damage, or drawing fire away from your team.",	
 		["loading_equip_skills_res_16"] = "Tag Team is a team-focused perk deck that allows you to provide a lot of healing to a specific teammate as long as the two of you keep up consistent killing.",	
 		["loading_equip_skills_res_17"] = "Shotgun slugs on Semi-Automatic and Automatic Shotguns do not pierce armor, enemies, walls, or shields.",	
-		["loading_equip_skills_res_18"] = "The Peacemaker and Phoenix .500 Revolvers are able to pierce like a sniper rifle.",	
-		["loading_equip_skills_res_19"] = "If you have a blue meter on the side of your screen, then you have built up some dodge. When it's flashing, you will dodge the next bullet. Please refer to the Guide for an in-depth explanation of our dodge rework.",	
+		["loading_equip_skills_res_18"] = "The Peacemaker and Phoenix .500 Revolvers are able to pierce like a sniper rifle.",
+		["loading_equip_skills_res_19"] = "If you have a blue meter on the side of your screen, then you have dodge. When it's flashing, you will dodge the next bullet. Please refer to the Guide for an in-depth explanation of our dodge rework.",	
 		["loading_equip_skills_res_20"] = "The higher a weapon's concealment is, the faster you can draw and holster it.",	
 		["loading_equip_skills_res_21"] = "The Chainsaw and Kazaguruma deal damage to enemies in front of you while held.",	
-		["loading_equip_skills_res_22"] = "The Butterfly Knife and Switchblade do increased damage on backstabs. The butterfly knife is almost useless on normal attacks but deadly when backstabbing, while the switchblade is a more modest in-between weapon.",	
-		["loading_equip_skills_res_23"] = "The Icepick and Gold Fever do increased headshot damage in exchange for poor bodyshot damage.",	
+		["loading_equip_skills_res_22"] = "The Butterfly Knife and Switchblade deal massive damage when stabbing enemies in the back.",	
+		["loading_equip_skills_res_23"] = "The Icepick and Gold Fever do increased headshot damage in exchange for poor speed.",	
 		["loading_equip_skills_res_24"] = "Poison deals only moderate damage, but induces vomiting which interrupts other actions.",	
 		["loading_equip_skills_res_25"] = "Stun Grenades provide very potent disruption, even against bulldozers.",	
 		["loading_equip_skills_res_26"] = "Aiming down sights grants significantly increased accuracy and reduced recoil, even with LMGs.",	
-		["loading_equip_skills_res_27"] = "The Pounder Nailgun melee weapon has an incredibly long range, making it useful for taking out Cloakers and light swat and the occasional 'ranged melee' kill in Stealth, if you can build your concealment around it.",	
-		["loading_equip_skills_res_28"] = "Leveling up perk decks unlocks the Throwables Case.",	
+		["loading_equip_skills_res_27"] = "The Pounder Nailgun melee weapon has an incredibly long range, far longer than any other melee weapon.",	
+		["loading_equip_skills_res_28"] = "Leveling up perk decks unlocks the Throwables Case.",
 		["loading_equip_skills_res_29"] = "Replenishing your throwables in the Equipment Case now refills your entire stock with each use.",	
-		["loading_equip_skills_res_30"] = "Inspire Ace now has a much longer cooldown and requires Line of Sight. Save your ranged revive for when things have really gone sideways, or you might not have it when you actually need it.",	
+		["loading_equip_skills_res_30"] = "Save Inspire ace for when things have really gone sideways, it has a very long cooldown and requires line of sight.",	
 		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks (Wildcard and Blank) which provide only the common perks and no perks whatsoever, respectively. They are meant for self-imposed challenges.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
@@ -780,6 +780,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "A Crime Spree is an endless series of randomly selected heists, executed in succession. With each heist you complete, your Rank and Reward will increase! Each 20th or 26th rank you will need to choose a modifier and each 100th rank there is an increase to the risk level, that will make the next heists harder to complete. After risk level 600, the amount of i-frames that player have starts to decrease and bravo units begin to spawn normally.\n\n##If you invite your crew, make sure they started their own Crime Spree before joining in order to gain ranks and Rewards as well.##",
 		["menu_cs_next_modifier_forced"] = "",
+		["menu_cs_modifier_dozers"] = "One additional Bulldozer is allowed into the level.",
+		["menu_cs_modifier_medics"] = "One additional Medic is allowed into the level.",
 		["menu_cs_modifier_no_hurt"] = "Enemies are 50% resistant to knock down.",
 		["menu_cs_modifier_dozer_immune"] = "Bulldozers take 50% less explosive damage.",
 		["menu_cs_modifier_bravos"] = "Enemies have an additional 6.667% chance to become Bravo Units.",
@@ -788,22 +790,20 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_boomboom"] = "Grenadiers now explode on death.",
 		["menu_cs_modifier_friendlyfire"] = "Teammates now take 100% friendly fire damage.",
 		["menu_cs_modifier_dodgethis"] = "Veteran Cops now dodge all bullets.",
+		["menu_cs_modifier_sniper_aim"] = "Snipers now aim their rifles 100% faster.",
 		["menu_cs_modifier_health_damage_total"] = "",
 		["menu_cs_modifier_heavies"] = "All rifle SWAT units have an additional 15% chance to become an elite UMP unit.",
-		["menu_cs_modifier_heavy_sniper"] = "All regular Heavy SWAT units have an additional 15% chance to become a Titan Shotgunner.",
-		["menu_cs_modifier_dozer_medic"] = "All Veteran Agent units have an additional 15% chance to become a Veteran Cop.",
-		["menu_cs_modifier_dozer_minigun"] = "All Bulldozer units have an additional 15% chance to become a Titan Bulldozer.",
+		["menu_cs_modifier_heavy_sniper"] = "Titan Snipers and Bravo Sharpshooters will now fire their rifles on full auto at close range.",
+		["menu_cs_modifier_dozer_medic"] = "Whenever a Bulldozer spawns, there is a chance that it will be a Medic Bulldozer. A Medic Bulldozer counts as both a Medic and a Bulldozer.",
+		["menu_cs_modifier_dozer_minigun"] = "Whenever a Green or Black Bulldozer spawns, there is a chance that it will be replaced by a Bulldozer wielding an M1014.",
 		["menu_cs_modifier_shield_phalanx"] = "All regular Shield units have an additional 15% chance to become a Titan Shield.",
-		["menu_cs_modifier_concealment"] = "Suspicion buildup is increased by 10%.",
-		["menu_cs_modifier_cloaker_smoke"] = "Cloakers will drop a smokebomb when they kick a player.",
-		["menu_cs_modifier_taser_overcharge"] = "All Taser units have an additional 15% chance to become a Titan Taser.",
-		["menu_cs_modifier_dozer_rage"] = "When a Bulldozer's faceplate is destroyed, the Bulldozer enters a berserker rage, receiving a 10% increase to their base damage resistance.",
+		["menu_cs_modifier_taser_overcharge"] = "The tasing knockout effect of the Taser is no longer delayed.",
+		["menu_cs_modifier_dozer_rage"] = "When a Bulldozer's faceplate is destroyed, the Bulldozer enters a berserker rage, receiving a 10% increase to their base damage output.",
 		["menu_cs_modifier_medic_adrenaline"] = "All Medic units have an additional 15% chance to become an OMNIA LPF.",
-		["menu_cs_modifier_cloaker_arrest"] = "Cloakers executing a successful jump kick now downs the player instead of cuffing them.",
-		["menu_cs_modifier_cloaker_smoke"] = "All Cloaker units have an additional 15% chance to become a Titan Cloaker.",
+		["menu_cs_modifier_cloaker_arrest"] = "Cloaker melee strikes will now cuff players.",
+		["menu_cs_modifier_cloaker_smoke"] = "Cloakers will now have a 50% chance to drop a flashbang when they dodge.",
 		["menu_cs_modifier_cloaker_tear_gas"] = "All HRT units have an additional 15% chance to become a Titan HRT.",
-		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green Bulldozer spawns, there is a chance that it will be replaced by a Bulldozer wielding an M1014, and whenever a Black Bulldozer spawns, there is a chance that it will be replaced by a Medic Bulldozer.",
-		["menu_cs_modifier_pagers"] = "Pagers take 1 second longer to answer.",
+		["menu_cs_modifier_dozer_lmg"] = "Whenever a Green or Black Bulldozer spawns, there is a chance that it will be replaced by a Skulldozer.",
 
 		["bm_menu_skill"] = "Crew Boosts",
 
@@ -823,19 +823,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_healthy_desc"] = "Players' health is increased by 30.",
 
 		["menu_crew_sturdy"] = "Protector",
-		["menu_crew_sturdy_desc"] = "Players' armor is increased by 15.",
+		["menu_crew_sturdy_desc"] = "Players' armor is increased by 10%.",
 
 		["menu_crew_evasive"] = "Distractor",
 		["menu_crew_evasive_desc"] = "Players' dodge meters are filled by 3% of their dodge every second.",
 
 		["menu_crew_motivated"] = "Invigorator",
-		["menu_crew_motivated_desc"] = "Players have 25 more stamina.",
+		["menu_crew_motivated_desc"] = "Players have 15 more stamina.",
 
 		["menu_crew_regen"] = "Healer",
 		["menu_crew_regen_desc"] = "Players heal 1 health every 4 seconds.",
 
 		["menu_crew_quiet"] = "Concealer",
-		["menu_crew_quiet_desc"] = "Players gain 1 more concealment.",
+		["menu_crew_quiet_desc"] = "Players gain 2 more concealment.",
 
 		["menu_crew_generous"] = "Stockpiler ",
 		["menu_crew_generous_desc"] = "Players are granted an extra throwable for every 70 kills.",
@@ -1393,7 +1393,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.\n\nThis cannot occur more than once every ##2## seconds.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Grinder--
-		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##70## armor while wearing the Flak Jacket.",
+		["menu_deck11_1_desc_sc"] = "Damaging an enemy heals ##1## health every second for ##3## seconds.\n\nThis effect stacks up to ##5## times but you can only gain a stack every ##0.5## seconds and only while wearing the ##Flak Jacket##. Damaging enemies with sentries or damage over time effects does not grant stacks.\n\nYou lose ##80## armor while wearing the Flak Jacket.",
 		["menu_deck11_3_desc_sc"] = "Stacks heal an additional ##1## health every second.",
 		["menu_deck11_5_desc_sc"] = "Stacks last an additional ##2## seconds.",
 		["menu_deck11_7_desc_sc"] = "Stacks heal an additional ##1## health every second.",
@@ -1401,9 +1401,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Open your mind--
 		["menu_deck13_1_desc_sc"] = "While your armor is up, you will store ##4## health for every enemy you kill.\n\nWhen your armor starts to regenerate after being completely depleted, you will gain health equal to the stored health amount.\n\nMaximum amount of stored health depends on your equipped armor, with heavier armors being able to store less health than lighter armors.",
-		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by ##5## points.",
+		["menu_deck13_3_desc_sc"] = "Increases the amount of health stored from kills by ##2##.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck13_5_desc_sc"] = "Increases the maximum health that can be stored by ##25%##.",
-		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##3##.\n\nYour dodge is increased by an additional ##5## points.",
+		["menu_deck13_7_desc_sc"] = "Increases the amount of health stored from kills by ##2##.\n\nYour dodge is increased by an additional ##5## points.",
 		["menu_deck13_9_desc_sc"] = "Killing an enemy speeds up your armor recovery speed depending on your equipped armor. Heavier armors gain a smaller bonus than lighter armors. This bonus is reset whenever your armor recovers.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--THIS IS WAR BABY--
@@ -1434,7 +1434,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck18_9_desc_sc"] = "Your dodge meter fills up by ##40%## of your dodge every second while you are inside of your smoke screen.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Sweet liquor eases the pain--
-		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n##30%## of damage taken is applied over time (##8## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##300%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\nAll of your ##armor is converted to 50% health.##\n\n##Deflection is disabled while using this perk deck.##",
+		["menu_deck19_1_desc_sc"] = "Unlocks and equips the Stoic Hip Flask.\n\n##30%## of damage taken is applied over time (##8## seconds).\n\nYou can use the throwable key to activate the Stoic Hip Flask and immediately negate any damage-over-time.\n\nWhenever damage-over-time is negated, you heal for ##250%## of the remaining damage-over-time. The flask has a ##30## second cooldown.\n\nAll of your ##armor is converted to 50% health.##\n\n##Deflection is disabled while using this perk deck.##",
 		["menu_deck19_3_desc_sc"] = "The cooldown of your flask will be reduced by ##1## second for each enemy you kill.",
 		["menu_deck19_5_desc_sc"] = "After not taking damage for ##4## seconds any remaining damage-over-time will be negated.",
 		["menu_deck19_7_desc_sc"] = "When your health is below ##50%##, the cooldown of your flask will be reduced by ##6## seconds for each enemy you kill.",
@@ -1679,6 +1679,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModSCDescID"] = "Enable or disable Restoration's complete game overhaul. Toggling this option will automatically exit your game to prevent save corruption.",
 		["RestorationModHolidayTitleID"] = "Holiday Effects",
 		["RestorationModHolidayDescID"] = "Enable or disable Holiday effects for the overhaul.",
+		["RestorationModRestoreHitFlashTitleID"] = "Restore Hit Flash",
+		["RestorationModRestoreHitFlashDescID"] = "Enable or disable the restored hit flash when taking damage.",	
 		["RestorationModNotifyTitleID"] = "Feature Notification",
 		["RestorationModNotifyDescID"] = "Enable or disable the notification for this feature.",
 		["RestorationModPauseTitleID"] = "Alpha Pause Menu",
@@ -1687,7 +1689,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_support"] = "Overhaul Guide/Support",
 		["menu_support_help"] = "View the guide for Restoration Mod's Overhaul, get support, find crew mates.",
 		["menu_manual_header"] = "Placeholder Text",
-		["hud_instruct_mask_on_alpha"] = "Hold $BTN_USE_ITEM to put on your mask",
 		["hud_assault_alpha"] = "POLICE ASSAULT",
 		["hud_loot_secured_title"] = "LOOT SECURED!",
 		["debug_none"] = "OBJECTIVE",
@@ -1815,6 +1816,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_mex_cooking"] = "TIME CLASSIFIED, Mexico - Coyopa Compound",
 		["restoration_level_data_bex"] = "TIME CLASSIFIED, Mexico - San Martín Bank",
 		["restoration_level_data_pex"] = "TIME CLASSIFIED, Mexico - Police Station",
+		["restoration_level_data_fex"] = "TIME CLASSIFIED, Mexico - Buluc's Mansion",
 		["restoration_level_data_wetwork"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
@@ -2055,6 +2057,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModUppercaseNamesDescID"] = "Enable or disable uppercase names.",
 		["RestorationModPeerColorsTitleID"] = "Alpha Peer Colors",
 		["RestorationModPeerColorsDescID"] = "Enable or disable the alpha peer colors.",
+		["RestorationModPocoCrimenetAlignSortTitleID"] = "Poco Align and Sort CRIMENET",
+		["RestorationModPocoCrimenetAlignSortDescID"] = "Aligns and sorts CRIMENET by difficulty.",
+		["RestorationModPocoCrimenetScaleTitleID"] = "Poco CRIMENET Scale",
+		["RestorationModPocoCrimenetScaleDescID"] = "Allows you to set the scale of CRIMENET.",
 		["alpha_assault"] = "Early Alpha Corner",
 		["beta_assault"] = "Alpha Tape",
 
@@ -2218,7 +2224,109 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 
 		["ch_watchdogs_d1_heavy_wpn1_hl"] = "HEAVY ARMOR, AND HEAVIER WEAPONS",
-		["ch_watchdogs_d1_heavy_wpn1"] = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge."
+		["ch_watchdogs_d1_heavy_wpn1"] = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge.",
+		
+		["test_net"] = "Fast.Net",
+		["menu_test"] = "",
+		["state_filter"] = "State",
+		["menu_state_filter"] = "State Filter",
+		["menu_state_filter_help"] = "Shows the lobby state",
+		["menu_state_lobby"] = "Lobby",
+		["menu_state_loading"] = "Loading",
+		["menu_state_ingame"] = "Ingame",
+		
+		-- ///Stuff ripped from the various locale files we had ///
+		
+		--Halloween Dozer Sword
+		["bm_melee_halloween_sword"] = "Headless Bulldozer's Sword",
+		["menu_l_global_value_halloween_sword"] = "This is a Halloween 2013 item!",
+		
+		--S&W .500
+		["bm_w_shatters_fury"] = "Phoenix .500",
+		
+		["bm_wp_wpn_fps_pis_shatters_fury_b_comp1"] = "Horus Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_comp2"] = "Shatter Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_long"] = "Hathor Barrel",
+		["bm_wp_wpn_fps_pis_shatters_fury_b_short"] = "Firebird Barrel",
+		
+		["bm_wp_wpn_fps_pis_shatters_fury_g_ergo"] = "Ergo Grip",
+		
+		["bm_wp_wpn_fps_pis_shatters_fury_body_smooth"] = "Smooth Cylinder",
+
+		["menu_l_global_value_shatters_fury"] = "This is a VERITAS item!",
+		
+		--MK-23
+		--Semi-automatic pistol. Hold down ■ to aim. Release to fire.
+		["bm_w_socom"] = "Anubis .45",
+		["bm_w_x_socom"] = "Akimbo Anubis .45's",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam"] = "Ra Combined Module",
+		["bm_wp_wpn_fps_upg_fl_pis_socomlam_desc"] = "Turn it on/off by pressing $BTN_GADGET.",
+
+		--Ranted NMH
+		["heist_no_mercy_ranted_name"] = "No Mercy",
+		["heist_no_mercy_ranted_brief"] = "We are hitting up the Mercy Hospital in a heist for blood. The source is carrying some kind of rare virus and we need to get it out of him. Let nothing stop us as the paycheck is a hefty one. Spilling some blood for this kind of cash is not the end of the world.",
+
+		["heist_nmh_res_name"] = "Mercy Hospital",
+		["heist_nmh_res_brief"] = "Our client needs a blood sample from a patient being kept in the isolation ward of Mercy Hospital. You gotta go in there, take out the surveillance, subdue the civilians and get me into the patient database so I can ID the guy. With the security in this place, it should be a nice clean job. I'll get you out via the roof when you're done. This job is a little shady, brokered through a third part, got some some serious shadow-company military industrial vibes, but worth the risk. The payday is something we're gonna need in the future, plus a nice cash bonus.",
+		
+		["heist_nmh_new"] = "Draw and analyze patient's blood",
+		["heist_nmh_new_desc"] = "You gotta find a centrifuge to validate the blood samples.",
+		
+		["heist_nmh_new2"] = "Call the elevator",
+		["heist_nmh_new2_desc"] = "Press the button and wait for the elevator",
+		
+		["heist_nmh_new3"] = "Call the elevator",
+		["heist_nmh_new3_desc"] = "Press the button and wait for the elevator",	
+		
+		--OICW--
+		["bm_w_osipr"] = "SABR",
+		["bm_w_osipr_gl"] = "SABR Grenade Launcher",
+		
+		--GO Bank remastered
+		["menu_nh_mod_gobank_v2"] = "GO Bank Remastered",
+		
+		["heist_gobank_v2_name"] = "GO Bank Remastered",
+		["heist_gobank_v2_brief"] = "This is a classic bank job. Break the vault, empty the deposit boxes and get the loot out. Simple. Bain's intel says this branch has the lowest hit-rate in the country. It's time to change that.\n\n» Search the environment for keycards. Two are needed for the vault\n» Failing that, use a drill on the vault\n» Crack open the deposit boxes\n» Assemble the skyhook\n» Get the money out",
+		
+		["heist_roberts_v2_name"] = "Robert's Bank",
+		["heist_roberts_v2_brief"] = "We got a bank here. Not a big branch but I've learned the vault is temporarily holding stacks of cash in transit. Foreign exchange notes.\n\nAnyway, you know how to do it - your way. Sneak in silent, or unleash hell. Either way, I got a little idea for how to lift the money out of there. You'll see what I mean. I think you'll like it.",
+
+		["csgo_plane_timer_text"] = "Wait for the plane &&TIMER",
+		["csgo_plane_timer_desc"] = "Wait for the plane &&TIMER",
+		
+		["hud_equipment_pickup_spraycan"] = "Press $BTN_INTERACT to pickup Spraycan",
+		["hud_action_spraypaint"] = "Press $BTN_INTERACT to Spraypaint",
+		["hud_action_spraypaint_none"] = "Spraycan Required",
+		["spraycan_obtained"] = "Spraycan Obtained",
+		["hud_equipment_obtained_spraycan"] = "Spraycan Obtained",
+		
+		["trophy_csgo01"] = "Graffiti Box",
+		["trophy_csgo01_desc"] = "And you didnt even have to buy this one",
+		["trophy_csgo01_objective"] = "Find spraypaint and spray graffiti in the vault on GO Bank Remastered.",
+
+		["END"] = "END",	
+		
+		--Whurr Heat Street Edit
+		["heist_heat_street_new_name"] = "Heat Street True Classic",
+		["heist_heat_street_new_brief"] = "Someone once said there is no such thing as a sure thing, but this job looks easy: get in, get the briefcase, get out. Your trusted wheelman Matt will be waiting for you in the alley and as long as you get to the van there is no way you can fail. Is there?",
+		["heist_street_new_name"] = "Heat Street: The Heist",
+		["heist_street_new_brief"] = "Someone once said there is no such thing as a sure thing, but this job looks easy: get in, get the briefcase, get out. Your trusted wheelman Matt will be waiting for you in the alley and as long as you get to the van there is no way you can fail. Is there?",
+
+		--Heat Street, Skirmish edition
+		["heist_skm_heat_street_name"] = "Uptown - Inkwell Industrial",
+		["heist_skm_heat_street_brief"] = "The kerels recently interrogated a prisoner that claims to have seen the face of Bain and can identify him. While we know it isn't true, the kerels don't, and neither do our rivals, so we're going to use the situation to gain some cash. Intercept the chop while they're transferring him to witness protection, near the old factory storage yard where that dumkop Matt crashed his car while trying to get away from us.",
+		["heist_skm_street_name"] = "Skirmish: Uptown - Inkwell Industrial",
+		["heist_skm_street_brief"] = "The kerels recently interrogated a prisoner that claims to have seen the face of Bain and can identify him. While we know it isn't true, the kerels don't, and neither do our rivals, so we're going to use the situation to gain some cash. Intercept the chop while they're transferring him to witness protection, near the old factory storage yard where that dumkop Matt crashed his car while trying to get away from us.",	
+
+		--Xmas Hoxout and Breaking Feds
+		["heist_xmn_hox"] = "Hoxton Breakout Xmas",
+		["heist_xmn_hox1"] = "The Breakout Xmas",
+		["heist_xmn_hox_1_brief"] = "The Dentist got Hoxton a re-trial. Uh, not you, Hox - I mean Old... Look, we'll sort out names later. The trial will be quick. With his record, he ain't gonna walk, but that's not the point. The point is he's moving, and we can hit him in transit. We're going to grab him right after the hearing. A nice little screw you to the US justice system.$NL;$NL;The plan is as loud as it gets: we blast a wall in the courthouse, grab Hox and get him the hell out.$NL;$NL;Area's locked down for blocks around. They'll be expecting trouble. Have your guns ready and pack a lot of ammo.",
+		["heist_xmn_hox2"] = "The Search Xmas",
+		["heist_xmn_hox_2_brief"] = "Well, lads, thanks for breakin' me out. But I shouldn't have been there to begin with. Someone set me up. I'm sure of it. The Feds had too much on me. Way more than those mingebag wankers could dig up. Someone ratted. Someone fucked me. And I'm gonna find out who.$NL;$NL;Now, it ain't gonna be easy. No fannying about around the edges, right? No shadowy deals or contacts, or that bollocks. We're going to the source. The biggest FBI nest. Gonna find out who screwed me.",
+		["heist_xmn_hox_brief"] = "The Dentist got Hoxton a re-trial. We're going to grab him right after the hearing. The plan is as loud as it gets: we blow up a wall, grab Hoxton and get him the hell out.$NL;$NL;» Free Hoxton$NL;» Take Hoxton to the armored truck$NL;» Escort the armored truck with Hoxton in it$NL;» Escape with Hoxton.",
+		
+		["heist_xmn_tag_name"] = "Breakin' Feds Xmas"
 	})
 
 	local job = Global.level_data and Global.level_data.level_id

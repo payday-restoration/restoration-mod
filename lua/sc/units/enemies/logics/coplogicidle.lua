@@ -96,13 +96,16 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 		local required_skill = i_am_special and "intimidate_specials" or "intimidate_enemies"
 		local aggressor_can_intimidate = nil
 		local aggressor_intimidation_mul = 1
+		local aggressor_base = aggressor_unit:base()
 
-		if aggressor_unit:base().is_local_player then
+		if aggressor_base.is_local_player then
 			aggressor_can_intimidate = managers.player:has_category_upgrade("player", required_skill)
 			aggressor_intimidation_mul = aggressor_intimidation_mul * managers.player:upgrade_value("player", "empowered_intimidation_mul", 1) * managers.player:upgrade_value("player", "intimidation_multiplier", 1)
+		elseif aggressor_base._is_team_ai then
+			aggressor_can_intimidate = true
 		else
-			aggressor_can_intimidate = aggressor_unit:base():upgrade_value("player", required_skill)
-			aggressor_intimidation_mul = aggressor_intimidation_mul * (aggressor_unit:base():upgrade_value("player", "empowered_intimidation_mul") or 1) * (aggressor_unit:base():upgrade_value("player", "intimidation_multiplier") or 1)
+			aggressor_can_intimidate = aggressor_base:upgrade_value("player", required_skill)
+			aggressor_intimidation_mul = aggressor_intimidation_mul * (aggressor_base:upgrade_value("player", "empowered_intimidation_mul") or 1) * (aggressor_base:upgrade_value("player", "intimidation_multiplier") or 1)
 		end
 
 		if aggressor_can_intimidate then

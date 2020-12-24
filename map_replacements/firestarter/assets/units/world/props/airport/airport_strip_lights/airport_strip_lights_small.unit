@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="air" slot="1">
+  <object file="units/world/props/airport/airport_strip_lights/airport_strip_lights_small" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

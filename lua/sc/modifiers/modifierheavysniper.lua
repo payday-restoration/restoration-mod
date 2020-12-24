@@ -1,54 +1,347 @@
-ModifierHeavySniper.default_value = "spawn_chance"
-ModifierHeavySniper.heavy_units = {
-	Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-	Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"),
-	Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-	Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
-	Idstring("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-	Idstring("units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
-	Idstring("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"),
-	Idstring("units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1"),	
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),	
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),	
-	Idstring("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"),
-	Idstring("units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2"),				
-	Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
-	Idstring("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),		
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_m4/ene_murky_fbi_heavy_m4"),
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_heavy_r870/ene_murky_fbi_heavy_r870"),
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_r870/ene_murky_yellow_r870"),
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_yellow_m4/ene_murky_yellow_m4")		
-}
+ModifierHeavySniper.heavy_units = {}
 
-ModifierHeavySniper.russia_heavy_units = {
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"),
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_r870/ene_akan_cs_heavy_r870"),
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
-}	
+--Full auto on Titan/Bravo Snipers
+function ModifierHeavySniper:init(data)
 
-ModifierHeavySniper.zombie_heavy_units = {
-	Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1"),
-	Idstring("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870"),	
-	Idstring("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),		
-	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),	
-	Idstring("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc")		
-}	
-
-
-function ModifierHeavySniper:modify_value(id, value)
-	if id == "GroupAIStateBesiege:SpawningUnit" then
-		local is_heavy = table.contains(ModifierHeavySniper.heavy_units, value)
-		local is_sans_swat = table.contains(ModifierHeavySniper.zombie_heavy_units, value)
-		local is_russianlad = table.contains(ModifierHeavySniper.russia_heavy_units, value)						
-		if is_heavy and math.random(0,100) < 15 then
-			return Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")
-		elseif is_sans_swat and math.random(0,100) < 15 then
-			return Idstring("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2")
-		elseif is_russianlad and math.random(0,100) < 15 then
-			return Idstring("units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun")								
-		end
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+	
+	--Full auto on Titan Snipers within 10 meters
+	--DW and below, just in case
+	if difficulty_index <= 7 then
+		tweak_data.character.heavy_swat_sniper.weapon = deep_clone(tweak_data.character.presets.weapon.good)
+		tweak_data.character.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 6
+		tweak_data.character.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+			{
+				r = 500,
+				acc = {0.3, 0.6},
+				dmg_mul = 2,
+				recoil = {0.1, 0.1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},			
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}		
+		tweak_data.character.weekend_dmr.weapon = deep_clone(tweak_data.character.presets.weapon.good)
+		tweak_data.character.weekend_dmr.weapon.is_rifle.melee_dmg = 6
+		tweak_data.character.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 500,
+				acc = {0.3, 0.6},
+				dmg_mul = 2,
+				recoil = {0.1, 0.1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},			
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}				
+	else
+		tweak_data.character.heavy_swat_sniper.weapon = deep_clone(tweak_data.character.presets.weapon.expert)
+		tweak_data.character.heavy_swat_sniper.weapon.is_rifle.melee_dmg = 8.4
+		tweak_data.character.heavy_swat_sniper.weapon.is_rifle.FALLOFF = {
+			{
+				r = 500,
+				acc = {0.3, 0.6},
+				dmg_mul = 2.3,
+				recoil = {0.1, 0.1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},				
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.3,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 1800,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2.1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1.05,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1.05,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}	
+		tweak_data.character.weekend_dmr.weapon = deep_clone(tweak_data.character.presets.weapon.expert)
+		tweak_data.character.weekend_dmr.weapon.is_rifle.melee_dmg = 8.4
+		tweak_data.character.weekend_dmr.weapon.is_rifle.FALLOFF = {
+			{
+				r = 500,
+				acc = {0.3, 0.6},
+				dmg_mul = 2.3,
+				recoil = {0.1, 0.1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},			
+			{
+				r = 1000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.3,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 1800,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},		
+			{
+				r = 2000,
+				acc = {0.6, 0.9},
+				dmg_mul = 2.1,
+				recoil = {1, 1},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 4000,
+				acc = {0.5, 0.85},
+				dmg_mul = 2.1,
+				recoil = {1, 1.25},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 6000,
+				acc = {0.5, 0.8},
+				dmg_mul = 1.05,
+				recoil = {1.25, 1.5},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			},
+			{
+				r = 8000,
+				acc = {0.5, 0.7},
+				dmg_mul = 1.05,
+				recoil = {1.5, 2},
+				mode = {
+					1,
+					0,
+					0,
+					0
+				}
+			}
+		}	
 	end
-	return value
+	
+end
+
+--Wiped
+function ModifierHeavySniper:modify_value(id, value)
 end

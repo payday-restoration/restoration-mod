@@ -396,6 +396,8 @@ function CopActionShoot:on_attention(attention, old_attention)
 
 			if shoot_hist then
 				if self._use_sniper_focus then
+					aim_delay_minmax = managers.modifiers:modify_value("CopActionShoot:ModifierSniperAim", aim_delay_minmax)
+
 					if self._draw_focus_displacement then
 						local line_1 = Draw:brush(Color.blue:with_alpha(0.5), 2)
 						line_1:cylinder(self._shoot_from_pos, shoot_hist.m_last_pos, 0.5)
@@ -896,7 +898,7 @@ function CopActionShoot:update(t)
 							end
 
 							local aim_delay = 0
-							local aim_delay_minmax = self._aim_delay_minmax
+							local aim_delay_minmax = managers.modifiers:modify_value("CopActionShoot:ModifierSniperAim", self._aim_delay_minmax)
 
 							if aim_delay_minmax[1] ~= 0 or aim_delay_minmax[2] ~= 0 then
 								if aim_delay_minmax[1] == aim_delay_minmax[2] then
@@ -1466,11 +1468,11 @@ function CopActionShoot:anim_clbk_melee_strike()
 
 		if defense_data and defense_data ~= "friendly_fire" then
 			if defense_data == "countered" then
-				self._common_data.melee_countered_t = TimerManager:game():time()
-
-				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
 				local melee_entry = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
 				local melee_tweak = tweak_data.blackmarket.melee_weapons[melee_entry]
+
+				self._common_data.melee_countered_t = TimerManager:game():time()
+				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
 
 				mvec3_norm(attack_dir)
 

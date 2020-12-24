@@ -1,0 +1,19 @@
+<materials version="3" group="container">
+    <material render_template="generic:BLUE_MASK_TINT:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP:RL_BIGPROPS" version="2" name="container">
+        <diffuse_texture file="units/world/props/container/container_df"/>
+        <bump_normal_texture file="units/world/props/container/container_nm"/>
+        <variable value="0.58039218187332 0.43137255311012 0.41568627953529" type="vector3" name="tint_color"/>
+    </material>
+    <material render_template="decal:DIFFUSE_TEXTURE:INSTANCED" version="2" name="logo">
+        <diffuse_texture file="units/world/props/container/logo_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only:INSTANCED" version="2"/>
+    <material name="crate_pallet" decal_material="wood" render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP" version="2">
+        <bump_normal_texture file="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_box_pallet_nm"/>
+        <diffuse_texture file="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_box_pallet_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:INSTANCED:NORMALMAP" decal_material="metal" version="2" name="mtr_des_prop_con_pipes">
+        <bump_normal_texture file="units/world/props/desert/des_prop_con_pipes/des_prop_con_pipe_nm"/>
+        <diffuse_texture file="units/world/props/desert/des_prop_con_pipes/des_prop_con_pipe_df"/>
+    </material>
+</materials>

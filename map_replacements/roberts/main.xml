@@ -173,7 +173,6 @@
 	<Hooks directory="hooks">
 		<hook file="guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
 	</Hooks>
-	<Localization default="english.txt" directory="loc"/>
 	<narrative brief_id="heist_roberts_crimenet" briefing_event="pln_cs1_cbf_01" contact="bain" icon="guis/dlcs/bro/textures/pd2/crimenet/go_bank" id="roberts" jc="40" load_screen="guis/dlcs/pic/textures/loading/job_go_bank" name_id="heist_roberts" region="street">
 		<chain>
 			<table level_id="roberts_v2" type="d" type_id="heist_type_assault"/>

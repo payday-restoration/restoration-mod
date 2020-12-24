@@ -1,5 +1,4 @@
 <table name="skm_heat_street">
-	<Localization default="english.txt" directory="loc"/>
 	<level ai_group_type="nypd" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_street" intro_event="Play_loc_skm_intro" music="heist" narrator="locke" wave_count="9">
 		<add file="levels/skm_street/add.xml"/>
 		<assets/>
@@ -31,6 +30,7 @@
 		</outro_event>
 		<packages>
 			<value_node value="packages/dlcs/skm/job_skm"/>
+			<value_node value="packages/nypdassets"/>
 			<value_node value="levels/narratives/skm/skm_run/world"/>
 			<value_node value="levels/narratives/skm/skm_run/world_sounds"/>
 			<value_node value="levels/narratives/skm/skm_run/collision/collision"/>

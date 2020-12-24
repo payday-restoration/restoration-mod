@@ -1,0 +1,13 @@
+<materials version="3">
+	<material name="mat_concrete_barrier_stripes_01" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01_df" />
+		<material_texture file="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_01_gsma" />
+		<bump_normal_texture file="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_01_nm" />
+	</material>
+	<material name="mat_concrete_barrier_stripes_01_lod" render_template="generic:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_stripes_01_df" mip="4" />
+		<material_texture file="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_01_gsma" mip="4" />
+		<bump_normal_texture file="units/pd2_dlc_run/props/run_prop_concrete_barrier_01/run_prop_concrete_barrier_01_nm" mip="4" />
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2" />
+</materials>

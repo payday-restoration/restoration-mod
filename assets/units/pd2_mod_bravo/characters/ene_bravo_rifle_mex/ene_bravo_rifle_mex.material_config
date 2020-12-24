@@ -1,0 +1,58 @@
+<materials version="3" group="ene_bravo_rifle_mex">
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_nm"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_df" mip="1"/>
+	</material>
+	<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_nm" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_df" mip="4"/>
+	</material>
+
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_mex_df"/>
+	</material>
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_mex_df" mip="1"/>
+	</material>
+	<material name="mtr_body_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/bravo_mex_df" mip="4"/>
+	</material>
+
+	<material name="mtr_goggles" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_nm"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_df"/>
+	</material>
+
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE:TAKE_FOG" version="2">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_nm"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_df"/>
+		<reflection_texture type="cubemap" global_texture="current_global_texture" />
+        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>                
+	</material>	
+	
+	<material name="mtr_helmet_lod0" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_nm" />
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_df" />
+	</material>
+	
+	<material name="mtr_helmet_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_df" mip="1"/>
+	</material>
+	
+	<material name="mtr_helmet_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_mex_df" mip="4"/>
+	</material>
+
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

@@ -1,0 +1,59 @@
+<materials version="3">
+    <material name="mat_are_off_int_wall_01" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_wall_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_wall_01_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_zero_df" type="cubemap"/>
+    </material>
+    <material name="mat_are_off_int_wall_02" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_wall_02_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_wall_02_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_zero_df" type="cubemap"/>
+    </material>
+    <material name="mat_are_off_int_floor_01" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_floor_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_floor_01_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_lab" type="cubemap"/>
+    </material>
+    <material name="mat_are_off_int_floor_02" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_floor_02_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_floor_02_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_zero_df" type="cubemap"/>
+    </material>
+    <material name="mat_are_off_int_floor_03" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_floor_03_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_floor_03_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_zero_df" type="cubemap"/>
+    </material>
+    <material name="mat_are_off_int_floor_04" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_floor_02_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_floor_02_nm"/>
+        <reflection_texture type="cubemap" file="environments/cubemaps/cubemap_arena_gensec"/>
+    </material>
+    <material name="mat_are_off_int_ceiling_01" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_ceiling_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_ceiling_01_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_lab" type="cubemap"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+    <material name="mat_are_off_int_wall_01_color" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_wall_01_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_wall_01_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_zero_df" type="cubemap"/>
+    </material>
+    <material name="mat_are_off_int_floor_02_color" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_floor_02_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_floor_02_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_zero_df" type="cubemap"/>
+    </material>
+    <material name="mat_window_frame" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_window_frame_lab_df"/>
+        <bump_normal_texture file="units/payday2/architecture/are/are_off_int_window_frame_lab_nm"/>
+        <reflection_texture file="environments/cubemaps/cubemap_arena_gensec" type="cubemap"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" decal_material="glass_unbreakable" name="mat_are_off_int_glass_02" version="2">
+        <variable value="2 0.85 1" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/architecture/are/are_off_int_glass_02_op"/>
+        <diffuse_texture file="units/payday2/architecture/are/are_off_int_glass_02_df"/>
+        <reflection_texture file="environments/cubemaps/cubemap_arena_gensec" type="cubemap"/>
+    </material>
+</materials>

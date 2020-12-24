@@ -1,0 +1,20 @@
+<materials version="3">
+    <material render_template="shadow_caster_only" name="shadow_caster" version="2"/>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" name="mat_motel_vending_machine_01" version="2">
+        <diffuse_texture file="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_nm"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_zero_df"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2" name="mat_motel_vending_machine_01_cubemap">
+        <diffuse_texture file="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_nm"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_window_weak_df"/>
+    </material>
+    <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" name="mat_motel_vending_machine_01_cubemap_illum" version="2">
+        <diffuse_texture file="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_df"/>
+        <bump_normal_texture file="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_nm"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_window_weak_df" type="cubemap"/>
+        <variable type="scalar" name="il_multiplier" value="neonsign"/>
+        <self_illumination_texture file="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_il"/>
+    </material>
+</materials>

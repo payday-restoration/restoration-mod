@@ -1,0 +1,14 @@
+<dynamic_object>
+    <diesel orientation_object="rp_mullplan_branchbank_checktable" materials="units/payday2/props/shadow_mullplan/mullplan_branchbank" />
+    
+	<bodies>
+        <body name="editor_body" template="editor" enabled="true" >
+            <object name="rp_mullplan_branchbank_checktable"/>
+            <object collision_type="box" enabled="true" name="c_box_editor"/>
+        </body>
+    </bodies>
+	
+	<graphics>
+        <object enabled="true" name="g_g" />
+    </graphics>
+</dynamic_object>

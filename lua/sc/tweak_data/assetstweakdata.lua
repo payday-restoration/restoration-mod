@@ -247,6 +247,23 @@ function AssetsTweakData:_init_risk_assets(tweak_data)
 		"chew"
 	}
 	
+	--Bodybag Case, removing Insider asset requirement
+	self.bodybags_bag.upgrade_lock = nil
+	
+	--Expert Driver, ditto. Idea is that now you can opt to have escapes for extra day rate + XP, but more to lose if you screw up.
+	self.safe_escape.upgrade_lock = nil
+	
+	--Sniper asset, adding Insider requirement because of how good this bastard is.
+	self.watchdogs_2_sniper.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}	
+	
+	self.framing_frame_2_sniper.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}		
+	
 	--Alex 1 Zipline
 	self.alex_1_zipline = {}
 	self.alex_1_zipline.name_id = "menu_alex_1_zipline"

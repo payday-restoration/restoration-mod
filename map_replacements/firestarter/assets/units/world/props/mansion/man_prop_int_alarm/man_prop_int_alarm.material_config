@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="alarm" decal_material="metal" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/world/props/mansion/man_prop_int_alarm/man_prop_int_alarm_df"/>
+        <bump_normal_texture file="units/world/props/mansion/man_prop_int_alarm/man_prop_int_alarm_nm"/>
+    </material>
+</materials>

@@ -11712,57 +11712,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						strafe = 60,
+						fwd = 80,
+						bwd = 50
 					},
 					hos = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						bwd = 144
 					},
 					cbt = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						bwd = 144
 					}
 				},
 				run = {
 					hos = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 140,
-						bwd = 113
+						bwd = 144
 					},
 					cbt = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 100,
-						bwd = 125
+						bwd = 144
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						bwd = 144
 					},
 					cbt = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						bwd = 144
 					}
 				},
 				run = {
 					hos = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 130,
-						bwd = 113
+						bwd = 144
 					},
 					cbt = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 100,
-						bwd = 125
+						bwd = 144
 					}
 				}
 			}
@@ -11771,57 +11771,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						strafe = 60,
+						fwd = 80,
+						bwd = 50
 					},
 					hos = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						bwd = 144
 					},
 					cbt = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						bwd = 144
 					}
 				},
 				run = {
 					hos = {
+						strafe = 360,
 						fwd = 360,
-						strafe = 150,
-						bwd = 135
+						bwd = 360
 					},
 					cbt = {
+						strafe = 360,
 						fwd = 360,
-						strafe = 150,
-						bwd = 155
+						bwd = 360
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						bwd = 144
 					},
 					cbt = {
+						strafe = 144,
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						bwd = 144
 					}
 				},
 				run = {
 					hos = {
+						strafe = 360,
 						fwd = 360,
-						strafe = 140,
-						bwd = 150
+						bwd = 360
 					},
 					cbt = {
+						strafe = 360,
 						fwd = 360,
-						strafe = 140,
-						bwd = 155
+						bwd = 360
 					}
 				}
 			}
@@ -11830,57 +11830,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						fwd = 150,
 						strafe = 120,
+						fwd = 150,
 						bwd = 100
 					},
 					hos = {
+						strafe = 220,
 						fwd = 220,
-						strafe = 190,
-						bwd = 170
+						bwd = 220
 					},
 					cbt = {
+						strafe = 220,
 						fwd = 220,
-						strafe = 190,
-						bwd = 170
+						bwd = 220
 					}
 				},
 				run = {
 					hos = {
-						fwd = 450,
-						strafe = 290,
-						bwd = 255
+						strafe = 350,
+						fwd = 350,
+						bwd = 350
 					},
 					cbt = {
-						fwd = 400,
-						strafe = 250,
-						bwd = 255
+						strafe = 350,
+						fwd = 350,
+						bwd = 350
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
+						strafe = 210,
 						fwd = 210,
-						strafe = 170,
-						bwd = 160
+						bwd = 210
 					},
 					cbt = {
+						strafe = 210,
 						fwd = 210,
-						strafe = 170,
-						bwd = 160
+						bwd = 210
 					}
 				},
 				run = {
 					hos = {
-						fwd = 310,
-						strafe = 260,
-						bwd = 235
+						strafe = 250,
+						fwd = 250,
+						bwd = 250
 					},
 					cbt = {
-						fwd = 350,
-						strafe = 260,
-						bwd = 235
+						strafe = 250,
+						fwd = 250,
+						bwd = 250
 					}
 				}
 			}
@@ -11889,57 +11889,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						fwd = 150,
 						strafe = 120,
-						bwd = 110
+						fwd = 150,
+						bwd = 100
 					},
 					hos = {
-						fwd = 270,
-						strafe = 215,
-						bwd = 185
+						strafe = 253,
+						fwd = 253,
+						bwd = 253
 					},
 					cbt = {
-						fwd = 270,
-						strafe = 215,
-						bwd = 185
+						strafe = 253,
+						fwd = 253,
+						bwd = 253
 					}
 				},
 				run = {
 					hos = {
-						fwd = 625,
-						strafe = 315,
-						bwd = 280
+						strafe = 402,
+						fwd = 402,
+						bwd = 402
 					},
 					cbt = {
-						fwd = 450,
-						strafe = 285,
-						bwd = 280
+						strafe = 402,
+						fwd = 402,
+						bwd = 402
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						fwd = 235,
-						strafe = 180,
-						bwd = 170
+						strafe = 242,
+						fwd = 242,
+						bwd = 242
 					},
 					cbt = {
-						fwd = 235,
-						strafe = 180,
-						bwd = 170
+						strafe = 242,
+						fwd = 242,
+						bwd = 242
 					}
 				},
 				run = {
 					hos = {
-						fwd = 330,
-						strafe = 280,
-						bwd = 255
+						strafe = 288,
+						fwd = 288,
+						bwd = 288
 					},
 					cbt = {
-						fwd = 312,
-						strafe = 270,
-						bwd = 255
+						strafe = 288,
+						fwd = 288,
+						bwd = 288
 					}
 				}
 			}
@@ -11948,57 +11948,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						fwd = 150,
 						strafe = 120,
-						bwd = 110
+						fwd = 150,
+						bwd = 100
 					},
 					hos = {
-						fwd = 285,
-						strafe = 225,
-						bwd = 215
+						strafe = 264,
+						fwd = 264,
+						bwd = 264
 					},
 					cbt = {
-						fwd = 285,
-						strafe = 225,
-						bwd = 215
+						strafe = 264,
+						fwd = 264,
+						bwd = 264
 					}
 				},
 				run = {
 					hos = {
-						fwd = 670,
-						strafe = 340,
-						bwd = 325
+						strafe = 420,
+						fwd = 420,
+						bwd = 420
 					},
 					cbt = {
-						fwd = 475,
-						strafe = 325,
-						bwd = 300
+						strafe = 420,
+						fwd = 420,
+						bwd = 420
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						fwd = 245,
-						strafe = 210,
-						bwd = 190
+						strafe = 252,
+						fwd = 252,
+						bwd = 252
 					},
 					cbt = {
-						fwd = 255,
-						strafe = 190,
-						bwd = 190
+						strafe = 252,
+						fwd = 252,
+						bwd = 252
 					}
 				},
 				run = {
 					hos = {
-						fwd = 350,
-						strafe = 282,
-						bwd = 268
+						strafe = 300,
+						fwd = 300,
+						bwd = 300
 					},
 					cbt = {
-						fwd = 312,
-						strafe = 282,
-						bwd = 268
+						strafe = 300,
+						fwd = 300,
+						bwd = 300
 					}
 				}
 			}
@@ -13426,7 +13426,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.old_hoxton_mission.HEALTH_INIT = 100
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
-	self:_multiply_all_speeds(1, 1.05)
+	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -13767,7 +13767,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 120
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self:_multiply_all_speeds(1, 1.05)
+	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -13996,7 +13996,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 140
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self:_multiply_all_speeds(1.05, 1.1)
+	self:_multiply_all_speeds(1.05, 1.05)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
@@ -14065,7 +14065,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.city_swat.can_shoot_while_dodging = true
 	self.city_swat_guard.can_shoot_while_dodging = true	
 		
-	self:_multiply_all_speeds(1.1, 1.15)
+	self:_multiply_all_speeds(1.05, 1.05)
 	self.presets.gang_member_damage.HEALTH_INIT = 160
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.old_hoxton_mission.HEALTH_INIT = 160

@@ -236,6 +236,8 @@
 	
 	<mission path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
 	
+	<mission path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->
+	
 	<continent path="levels/narratives/bain/big/world/world" force="true" unload="true"/><!--you can now drill the small cashbox, money cassettes spawn-->
 
 	<continent path="levels/narratives/classics/dah/world/world" force="true" unload="true"/>

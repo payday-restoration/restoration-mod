@@ -699,7 +699,7 @@ function CopActionShoot:update(t)
 					self._ext_brain._deploy_gas_t = t + 10
 
 					local is_normal_grenadier = self._ext_base._tweak_table == "boom"
-					local roll_chance = is_normal_grenadier and 0.75 or 0.5
+					local roll_chance = self._common_data.char_tweak.chance_use_gas or 0.5
 					local gas_roll = math_random() <= roll_chance
 
 					if gas_roll then
@@ -744,7 +744,7 @@ function CopActionShoot:update(t)
 							end
 						end
 
-						local gas_roll = math_random() <= 0.5
+						local gas_roll = math_random() <= self._common_data.char_tweak.chance_use_gas or 0.3
 
 						if gas_roll then
 							if self:throw_grenade(nil, nil, nil, "tear_gas") then

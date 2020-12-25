@@ -34,8 +34,6 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.weekend = security_variant
 	CopMovement._action_variants.weekend_dmr = security_variant
 	CopMovement._action_variants.weekend_lmg = security_variant
-	CopMovement._action_variants.omnia = security_variant
-	CopMovement._action_variants.omnia_heavy = security_variant
 	CopMovement._action_variants.boom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
 	CopMovement._action_variants.fbi_vet_boss = security_variant

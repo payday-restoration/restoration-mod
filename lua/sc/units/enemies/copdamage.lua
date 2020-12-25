@@ -145,9 +145,16 @@ function CopDamage:damage_fire(attack_data)
 			damage = self._health * 10
 		end
 	end
-
+	
 	if self._char_tweak.damage.fire_damage_mul then
 		damage = damage * self._char_tweak.damage.fire_damage_mul
+	end
+	
+	--For killing the effectiveness of molotovs and other junk	
+	if attack_data.weapon_unit:base() and not attack_data.weapon_unit:base().is_category then
+		if self._char_tweak.damage.fire_pool_damage_mul then
+			damage = damage * self._char_tweak.damage.fire_pool_damage_mul
+		end	
 	end
 
 	if self._marked_dmg_mul then

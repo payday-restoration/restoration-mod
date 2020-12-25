@@ -650,6 +650,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.use_animation_on_fire_damage = false
 	self.medic_summers.damage.explosion_damage_mul = 0.25
 	self.medic_summers.damage.fire_damage_mul = 0.25
+	self.medic_summers.damage.fire_pool_damage_mul = 0.25
 	self.medic_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 	self.medic_summers.ecm_vulnerability = 0
 	self.medic_summers.ecm_hurts = {}			
@@ -1156,19 +1157,6 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.static_melee_preset = true	
 	self.fbi_heavy_swat.heal_cooldown = 7.5
 	table.insert(self._enemy_list, "fbi_heavy_swat")
-	
-	self.omnia_heavy = deep_clone(self.fbi_heavy_swat)	
-	if is_reaper then
-		self.omnia_heavy.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.omnia_heavy.speech_prefix_p2 = self._speech_prefix_p2
-		self.omnia_heavy.speech_prefix_count = 4
-	else
-		self.omnia_heavy.speech_prefix_p1 = "l5d"
-		self.omnia_heavy.speech_prefix_p2 = nil
-		self.omnia_heavy.speech_prefix_count = nil
-	end	
-	self.omnia_heavy.custom_voicework = nil
-	table.insert(self._enemy_list, "omnia_heavy")		
 end
 
 function CharacterTweakData:_init_city_swat(presets)
@@ -1246,22 +1234,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_guard.melee_weapon = "baton"
 	self.city_swat_guard.use_radio = nil
 	table.insert(self._enemy_list, "city_swat_guard")
-		
-	self.omnia = deep_clone(self.city_swat)	
-	if is_reaper then
-		self.omnia.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.omnia.speech_prefix_p2 = self._speech_prefix_p2
-		self.omnia.speech_prefix_count = 4
-	else
-		self.omnia.speech_prefix_p1 = "l5d"
-		self.omnia.speech_prefix_p2 = nil
-		self.omnia.speech_prefix_count = nil
-	end				
-	self.omnia.dodge = presets.dodge.elite
-	self.omnia.move_speed = presets.move_speed.lightning
-	self.omnia.custom_voicework = nil
-	table.insert(self._enemy_list, "omnia")
-	
+			
 	--Weekend
 	self.weekend = deep_clone(self.city_swat)
 	if is_reaper then
@@ -2494,7 +2467,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.headshot_dmg_mul = 2.2
 	self.phalanx_minion.HEALTH_INIT = 19.5
 	self.phalanx_minion.damage.explosion_damage_mul = 0.3
-	self.phalanx_minion.damage.fire_damage_mul = 0.3
+	self.phalanx_minion.damage.fire_pool_damage_mul = 0.3
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
 	self.phalanx_minion.damage.shield_knocked = true
@@ -2545,8 +2518,9 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.HEALTH_INIT = 80
 	self.phalanx_vip.headshot_dmg_mul = 2.5
 	self.phalanx_vip.damage.explosion_damage_mul = 0.05
-	self.phalanx_vip.damage.fire_damage_mul = 0.05
+	self.phalanx_vip.damage.fire_pool_damage_mul = 0.05
 	self.phalanx_vip.damage.bullet_damage_mul = 0.25
+	self.phalanx_vip.damage.fire_damage_mul = 0.25
 	self.phalanx_vip.spawn_sound_event = "cpa_a02_01"	
 	self.phalanx_vip.priority_shout = "f45"
 	self.phalanx_vip.bot_priority_shout = "f45x_any"
@@ -2678,6 +2652,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.damage.bullet_damage_mul = 0.75
 	self.summers.damage.explosion_damage_mul = 0.25
 	self.summers.damage.fire_damage_mul = 0.25
+	self.summers.damage.fire_pool_damage_mul = 0.25
 	self.summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 	self.summers.headshot_dmg_mul = 1.5
 	self.summers.bag_dmg_mul = 6
@@ -2739,6 +2714,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.headshot_dmg_mul = 2.925
 	self.autumn.damage.bullet_damage_mul = 0.65
 	self.autumn.damage.fire_damage_mul = 0.75
+	self.autumn.damage.fire_pool_damage_mul = 0.75
 	self.autumn.flammable = false
 	self.autumn.damage.explosion_damage_mul = 1
 	self.autumn.move_speed = presets.move_speed.lightning
@@ -2760,6 +2736,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.no_damage_mission = true
 	self.autumn.spawn_sound_event_2 = "cloaker_spawn"
 	self.autumn.can_deploy_tear_gas = true
+	self.autumn.chance_use_gas = 0.3
 	self.autumn.cuff_on_melee = true
 	--self.autumn.spawn_sound_event_2 = "cpa_a02_01"--uncomment for testing purposes
 	self.autumn.spooc_attack_use_smoke_chance = 1
@@ -2885,6 +2862,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.use_animation_on_fire_damage = false
 	self.taser_summers.damage.explosion_damage_mul = 0.25
 	self.taser_summers.damage.fire_damage_mul = 0.25
+	self.taser_summers.damage.fire_pool_damage_mul = 0.25
 	self.taser_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 	self.taser_summers.ecm_vulnerability = 0
 	self.taser_summers.ecm_hurts = {}
@@ -2979,7 +2957,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.flammable = true
 	self.boom.use_animation_on_fire_damage = true
 	self.boom.damage.explosion_damage_mul = 0.5
-	self.boom.damage.fire_damage_mul = 1
 	self.boom.damage.hurt_severity = presets.hurt_severities.boom
 	self.boom.headshot_dmg_mul = 2.2
 	self.boom.bag_dmg_mul = 6
@@ -3002,6 +2979,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.dodge = presets.dodge.athletic
 	self.boom.use_gas = true
 	self.boom.can_deploy_tear_gas = true
+	self.boom.chance_use_gas = 0.5
 	self.boom.priority_shout = "g29"
 	self.boom.bot_priority_shout = "g29"
 	self.boom.priority_shout_max_dis = 3000
@@ -3033,6 +3011,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.use_animation_on_fire_damage = false
 	self.boom_summers.damage.explosion_damage_mul = 0.25
 	self.boom_summers.damage.fire_damage_mul = 0.25
+	self.boom_summers.damage.fire_pool_damage_mul = 0.25
 	self.boom_summers.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 	self.boom_summers.chatter = presets.enemy_chatter.summers
 	self.boom_summers.speech_prefix_p1 = "fl"
@@ -12336,7 +12315,6 @@ function CharacterTweakData:_set_easy()
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
-	self.omnia.weapon = deep_clone(self.presets.weapon.normal)
 	
 	--No normal tase for Elektra on lower difficulties
 	self.taser_summers.weapon.is_rifle.tase_distance = 0
@@ -12534,10 +12512,7 @@ function CharacterTweakData:_set_normal()
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
-	
-	self.omnia.weapon = deep_clone(self.presets.weapon.normal)
-	self.omnia.melee_weapon_dmg_multiplier = 1
-	
+		
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 4.0
 	self.taser.shock_damage = 4.0
@@ -12733,8 +12708,7 @@ function CharacterTweakData:_set_hard()
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.normal)
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.normal)
-	self.omnia.weapon = deep_clone(self.presets.weapon.normal)
-
+	
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 5.0
 	self.taser.shock_damage = 5.0
@@ -12760,7 +12734,6 @@ function CharacterTweakData:_set_hard()
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 1
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 1
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 1
-	self.omnia.melee_weapon_dmg_multiplier = 1
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 1
 	
 	--Weekend Snipers
@@ -12941,7 +12914,6 @@ function CharacterTweakData:_set_overkill()
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
-	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -12968,7 +12940,6 @@ function CharacterTweakData:_set_overkill()
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
-	self.omnia.melee_weapon_dmg_multiplier = 2
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 2
 	
 	--Weekend Snipers
@@ -13154,7 +13125,6 @@ function CharacterTweakData:_set_overkill_145()
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
-	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -13174,7 +13144,6 @@ function CharacterTweakData:_set_overkill_145()
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
-	self.omnia.melee_weapon_dmg_multiplier = 2
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 2		
 	
 	--Weekend Snipers
@@ -13509,7 +13478,6 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_titan.melee_weapon_dmg_multiplier = 2
 	self.city_swat_titan_assault.melee_weapon_dmg_multiplier = 2
 	self.skeleton_swat_titan.melee_weapon_dmg_multiplier = 2
-	self.omnia.melee_weapon_dmg_multiplier = 2
 	self.weekend_lmg.melee_weapon_dmg_multiplier = 2		
 	
 	--Weekend Snipers
@@ -13788,7 +13756,6 @@ function CharacterTweakData:_set_easy_wish()
 	self.city_swat_titan.weapon = deep_clone(self.presets.weapon.good)			
 	self.city_swat_titan_assault.weapon = deep_clone(self.presets.weapon.good)	
 	self.skeleton_swat_titan.weapon = deep_clone(self.presets.weapon.good)
-	self.omnia.weapon = deep_clone(self.presets.weapon.good)
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.good)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.good.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25	
@@ -13844,9 +13811,9 @@ function CharacterTweakData:_set_overkill_290()
 	
 	--Less damage from throwables on higher difficulties--
 	self.phalanx_minion.damage.explosion_damage_mul = 0.2
-	self.phalanx_minion.damage.fire_damage_mul = 0.2	
+	self.phalanx_minion.damage.fire_pool_damage_mul = 0.2	
 	self.phalanx_minion_assault.damage.explosion_damage_mul = 0.2
-	self.phalanx_minion_assault.damage.fire_damage_mul = 0.2			
+	self.phalanx_minion_assault.damage.fire_pool_damage_mul = 0.2			
 	
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	
@@ -14018,10 +13985,6 @@ function CharacterTweakData:_set_overkill_290()
 			}
 		}
 	}		
-					
-	self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
-	self.omnia_heavy.melee_weapon_dmg_multiplier = 2
-	self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 	self.tank_mini.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
@@ -14080,9 +14043,9 @@ function CharacterTweakData:_set_sm_wish()
 		
 	--Even less damage from these things--
 	self.phalanx_minion.damage.explosion_damage_mul = 0.1
-	self.phalanx_minion.damage.fire_damage_mul = 0.1
+	self.phalanx_minion.damage.fire_pool_damage_mul = 0.1
 	self.phalanx_minion_assault.damage.explosion_damage_mul = 0.1
-	self.phalanx_minion_assault.damage.fire_damage_mul = 0.1
+	self.phalanx_minion_assault.damage.fire_pool_damage_mul = 0.1
 	
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc")		
@@ -14100,13 +14063,8 @@ function CharacterTweakData:_set_sm_wish()
 	self.fbi_heavy_swat.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
 
 	self.city_swat.can_shoot_while_dodging = true
-	self.city_swat_guard.can_shoot_while_dodging = true
-	self.omnia.can_shoot_while_dodging = true		
-	
-	self.omnia_heavy.weapon = deep_clone(self.presets.weapon.good)
-	self.omnia_heavy.melee_weapon_dmg_multiplier = 2
-	self.omnia_heavy.dodge = deep_clone(self.presets.dodge.heavy_overkill)	
-	
+	self.city_swat_guard.can_shoot_while_dodging = true	
+		
 	self:_multiply_all_speeds(1.1, 1.15)
 	self.presets.gang_member_damage.HEALTH_INIT = 160
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25

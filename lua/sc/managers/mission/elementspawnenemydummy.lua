@@ -36,8 +36,8 @@ local america_dw = {
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_dlc1/characters/ene_security_gensec_guard_3/ene_security_gensec_guard_3",		
 	}		
 local america_zeal = {
-		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/payday2/pd2_dlc_gitgud/ene_zeal_city_1/ene_zeal_city_1",
-		["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/payday2/pd2_dlc_gitgud/ene_zeal_city_2/ene_zeal_city_2",
+		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
+		["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault", --sshh don't tell anyone i did this :>
@@ -879,7 +879,11 @@ function ElementSpawnEnemyDummy:init(...)
 			self._values.enemy = america_zeal[self._values.enemy] or self._values.enemy							
 		end
 	end
-								
+
+	--[[if self._values.enemy then
+		log(self._values.enemy)
+	end--]]
+	
 	self._enemy_name = self._values.enemy and Idstring(self._values.enemy) or Idstring("units/payday2/characters/ene_swat_1/ene_swat_1")
 	self._values.enemy = nil
 	self._units = {}

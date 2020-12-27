@@ -163,6 +163,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		hlp = "buddy_died",
 		buddy_died = "buddy_died",
 		s01x = "surrender",
+		cn1 = "joker",
 		use_gas = "use_gas",
 		spawn = "spawn",
 		tasing = "tasing",

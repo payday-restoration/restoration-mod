@@ -1295,6 +1295,7 @@
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_nm" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/red_glass_df" load="true" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" load="true" force="false"/>
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op" load="true" force="false"/>
 	

@@ -31,6 +31,7 @@
 
 	<decal_surfaces default_material="shield" >
 		<decal_mesh name="dm_metal" 	enabled="true" 	material="shield" />
+		<decal_mesh name="dm_glass" 	enabled="true" 	material="glass_unbreakable" />
 	</decal_surfaces>
 
 	<graphics>
@@ -39,6 +40,7 @@
 			<material materials="mtr_shield_lod_1" max_distance="1500" />
 			<material materials="mtr_shield_lod_2" />
 		</object>
+		<object name="g_glass" 	enabled="true" />
 		<object name="g_light_01" 	enabled="true" >
 			<material materials="mtr_light_il" max_distance="1000" />
 			<material materials="mtr_light_il_lod_1" max_distance="1500" />

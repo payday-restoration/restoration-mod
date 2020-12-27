@@ -11,6 +11,14 @@
         <diffuse_texture file="units/payday2/characters/ene_acc_shield_city/shield_df" mip="4"/>
         <bump_normal_texture file="units/payday2/characters/ene_acc_shield_city/shield_nm" mip="4"/>
     </material>
+	
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE:TAKE_FOG" version="2">
+        <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/red_glass_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>                
+	</material>
 
     <material name="mtr_light_il" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
         <diffuse_texture file="units/payday2/characters/shared_textures/ene_acc_shield_lights_il"/>

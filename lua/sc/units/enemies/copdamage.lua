@@ -146,17 +146,26 @@ function CopDamage:damage_fire(attack_data)
 		end
 	end
 	
-	if self._char_tweak.damage.fire_damage_mul then
-		damage = damage * self._char_tweak.damage.fire_damage_mul
-	end
+	local weap_base = weap_unit:base()
+	local is_grenade_or_ground_fire = nil
+
+	if weap_base then
+		if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "environment_fire" then
+			is_grenade_or_ground_fire = true
+		end
+	end	
 	
 	--For killing the effectiveness of molotovs and other junk	
-	if attack_data.weapon_unit:base() and not attack_data.weapon_unit:base().is_category then
+	if is_grenade_or_ground_fire then
 		if self._char_tweak.damage.fire_pool_damage_mul then
 			damage = damage * self._char_tweak.damage.fire_pool_damage_mul
 		end	
-	end
-
+	else
+		if self._char_tweak.damage.fire_damage_mul then
+			damage = damage * self._char_tweak.damage.fire_damage_mul
+		end	
+	end	
+		
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
 

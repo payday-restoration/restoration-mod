@@ -11712,57 +11712,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						strafe = 60,
-						fwd = 80,
-						bwd = 50
+						fwd = 144,
+						strafe = 120,
+						bwd = 113
 					},
 					hos = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 120,
+						bwd = 113
 					},
 					cbt = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 120,
+						bwd = 113
 					}
 				},
 				run = {
 					hos = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 140,
+						bwd = 113
 					},
 					cbt = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 100,
+						bwd = 125
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 120,
+						bwd = 113
 					},
 					cbt = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 120,
+						bwd = 113
 					}
 				},
 				run = {
 					hos = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 130,
+						bwd = 113
 					},
 					cbt = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 100,
+						bwd = 125
 					}
 				}
 			}
@@ -11771,57 +11771,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						strafe = 60,
-						fwd = 80,
-						bwd = 50
+						fwd = 144,
+						strafe = 120,
+						bwd = 113
 					},
 					hos = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 120,
+						bwd = 113
 					},
 					cbt = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 120,
+						bwd = 113
 					}
 				},
 				run = {
 					hos = {
-						strafe = 360,
 						fwd = 360,
-						bwd = 360
+						strafe = 150,
+						bwd = 135
 					},
 					cbt = {
-						strafe = 360,
 						fwd = 360,
-						bwd = 360
+						strafe = 150,
+						bwd = 155
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 120,
+						bwd = 113
 					},
 					cbt = {
-						strafe = 144,
 						fwd = 144,
-						bwd = 144
+						strafe = 120,
+						bwd = 113
 					}
 				},
 				run = {
 					hos = {
-						strafe = 360,
 						fwd = 360,
-						bwd = 360
+						strafe = 140,
+						bwd = 150
 					},
 					cbt = {
-						strafe = 360,
 						fwd = 360,
-						bwd = 360
+						strafe = 140,
+						bwd = 155
 					}
 				}
 			}
@@ -11830,57 +11830,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						strafe = 120,
 						fwd = 150,
+						strafe = 120,
 						bwd = 100
 					},
 					hos = {
-						strafe = 220,
 						fwd = 220,
-						bwd = 220
+						strafe = 190,
+						bwd = 170
 					},
 					cbt = {
-						strafe = 220,
 						fwd = 220,
-						bwd = 220
+						strafe = 190,
+						bwd = 170
 					}
 				},
 				run = {
 					hos = {
-						strafe = 350,
-						fwd = 350,
-						bwd = 350
+						fwd = 450,
+						strafe = 290,
+						bwd = 255
 					},
 					cbt = {
-						strafe = 350,
-						fwd = 350,
-						bwd = 350
+						fwd = 400,
+						strafe = 250,
+						bwd = 255
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						strafe = 210,
 						fwd = 210,
-						bwd = 210
+						strafe = 170,
+						bwd = 160
 					},
 					cbt = {
-						strafe = 210,
 						fwd = 210,
-						bwd = 210
+						strafe = 170,
+						bwd = 160
 					}
 				},
 				run = {
 					hos = {
-						strafe = 250,
-						fwd = 250,
-						bwd = 250
+						fwd = 310,
+						strafe = 260,
+						bwd = 235
 					},
 					cbt = {
-						strafe = 250,
-						fwd = 250,
-						bwd = 250
+						fwd = 350,
+						strafe = 260,
+						bwd = 235
 					}
 				}
 			}
@@ -11889,57 +11889,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						strafe = 120,
 						fwd = 150,
-						bwd = 100
+						strafe = 120,
+						bwd = 110
 					},
 					hos = {
-						strafe = 253,
-						fwd = 253,
-						bwd = 253
+						fwd = 270,
+						strafe = 215,
+						bwd = 185
 					},
 					cbt = {
-						strafe = 253,
-						fwd = 253,
-						bwd = 253
+						fwd = 270,
+						strafe = 215,
+						bwd = 185
 					}
 				},
 				run = {
 					hos = {
-						strafe = 402,
-						fwd = 402,
-						bwd = 402
+						fwd = 625,
+						strafe = 315,
+						bwd = 280
 					},
 					cbt = {
-						strafe = 402,
-						fwd = 402,
-						bwd = 402
+						fwd = 450,
+						strafe = 285,
+						bwd = 280
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						strafe = 242,
-						fwd = 242,
-						bwd = 242
+						fwd = 235,
+						strafe = 180,
+						bwd = 170
 					},
 					cbt = {
-						strafe = 242,
-						fwd = 242,
-						bwd = 242
+						fwd = 235,
+						strafe = 180,
+						bwd = 170
 					}
 				},
 				run = {
 					hos = {
-						strafe = 288,
-						fwd = 288,
-						bwd = 288
+						fwd = 330,
+						strafe = 280,
+						bwd = 255
 					},
 					cbt = {
-						strafe = 288,
-						fwd = 288,
-						bwd = 288
+						fwd = 312,
+						strafe = 270,
+						bwd = 255
 					}
 				}
 			}
@@ -11948,57 +11948,57 @@ function CharacterTweakData:_presets(tweak_data)
 			stand = {
 				walk = {
 					ntl = {
-						strafe = 120,
 						fwd = 150,
-						bwd = 100
+						strafe = 120,
+						bwd = 110
 					},
 					hos = {
-						strafe = 264,
-						fwd = 264,
-						bwd = 264
+						fwd = 285,
+						strafe = 225,
+						bwd = 215
 					},
 					cbt = {
-						strafe = 264,
-						fwd = 264,
-						bwd = 264
+						fwd = 285,
+						strafe = 225,
+						bwd = 215
 					}
 				},
 				run = {
 					hos = {
-						strafe = 420,
-						fwd = 420,
-						bwd = 420
+						fwd = 670,
+						strafe = 340,
+						bwd = 325
 					},
 					cbt = {
-						strafe = 420,
-						fwd = 420,
-						bwd = 420
+						fwd = 475,
+						strafe = 325,
+						bwd = 300
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						strafe = 252,
-						fwd = 252,
-						bwd = 252
+						fwd = 245,
+						strafe = 210,
+						bwd = 190
 					},
 					cbt = {
-						strafe = 252,
-						fwd = 252,
-						bwd = 252
+						fwd = 255,
+						strafe = 190,
+						bwd = 190
 					}
 				},
 				run = {
 					hos = {
-						strafe = 300,
-						fwd = 300,
-						bwd = 300
+						fwd = 350,
+						strafe = 282,
+						bwd = 268
 					},
 					cbt = {
-						strafe = 300,
-						fwd = 300,
-						bwd = 300
+						fwd = 312,
+						strafe = 282,
+						bwd = 268
 					}
 				}
 			}

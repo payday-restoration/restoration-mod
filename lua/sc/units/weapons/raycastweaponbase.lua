@@ -725,7 +725,8 @@ end
 
 --Adds a blood splat effect every time the bleed deals damage.
 function BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, hurt_animation, weapon_id)
-	if alive(col_ray.unit) and col_ray.unit.movement and col_ray.unit:movement()._obj_spine then
+	--Movement() can return nil, but can also itself be nil. Very fun!
+	if alive(col_ray.unit) and col_ray.unit.movement and col_ray.unit:movement() and col_ray.unit:movement()._obj_spine then
 		World:effect_manager():spawn({
 			effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
 			position = col_ray.unit:movement()._obj_spine:position(),

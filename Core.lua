@@ -164,16 +164,7 @@ function restoration:Init()
 		"vit",
 		"mex_cooking",		
 		"mia_2",		
-		"fex", --Buluc's Mansion	
-		"skm_mus",
-		"skm_red2",
-		"skm_run",		
-		"skm_watchdogs_stage2",	
-		"skm_cas",
-		"skm_big2",
-		"skm_mallcrasher",
-		"skm_arena",
-		"skm_bex",
+		"fex", --Buluc's Mansion
 		"nmh",
 		"nail",	--Lab Rats. Fuck this heist	
 		"nmh_res", --Resmod edit of no mercy.

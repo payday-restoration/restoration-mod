@@ -2783,6 +2783,13 @@ function WeaponTweakData:_init_stats()
 		steelsight = 0.6
 	}
 
+	self.stat_info.shotgun_falloff = {
+		base = 50,
+		max = 1350,
+		acc_bonus = 40,
+		stab_bonus = 20
+	}
+
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 4, 0.49, -0.14 do
@@ -9690,23 +9697,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hx25.stats_modifiers = {damage = 10}
 		self.hx25.reload_speed_multiplier = 1.25
 		self.hx25.swap_speed_multiplier = 1.25
-		self.hx25.damage_near = 500
-		self.hx25.damage_far = 1000
 	end
 
-	--Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.
+	--Automatically generate reasonableish stats for custom weapons.
 	for i, weap in pairs(self) do
 		if weap.categories then
 			if not weap.supported and weap.stats then
 				self:generate_custom_weapon_stats(weap)	
-			end
-
-			--Calculate shotgun falloff ranges.
-			for _, value in pairs(weap.categories) do
-				if value == "shotgun" and weap.stats then
-					weap.damage_near = 200 + 75 * (weap.stats.spread - 1)
-					weap.damage_far = weap.damage_near * 2
-				end
 			end
 		end
 	end

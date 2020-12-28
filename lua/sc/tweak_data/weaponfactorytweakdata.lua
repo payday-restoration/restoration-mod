@@ -124,8 +124,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 	}
 	self.parts.wpn_fps_upg_ns_shot_thick.perks = {"silencer"}
 	self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}			
 	self.parts.wpn_fps_upg_ns_shot_thick.forbids = {
 		"wpn_fps_upg_a_explosive"
@@ -195,8 +195,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_ns_shot_shark.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}			
 
 end)
@@ -592,8 +592,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		spread = 1
 	}
 	self.parts.wpn_fps_upg_i_singlefire.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	self.parts.wpn_fps_upg_i_singlefire.perks = {
 		"fire_mode_single"
@@ -617,8 +617,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		recoil = 1
 	}
 	self.parts.wpn_fps_upg_i_autofire.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}			
 	self.parts.wpn_fps_upg_i_autofire.perks = {
 		"fire_mode_auto"
@@ -642,8 +642,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 		concealment = -2
 	}
 	self.parts.wpn_fps_upg_m4_g_hgrip.custom_stats = {
-		damage_near_mul = 150,
-		damage_far_mul = 300
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 
 	--Vanilla Rubber Grip
@@ -792,8 +792,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ak_g_hgrip.custom_stats = {
-		damage_near_mul = 150,
-		damage_far_mul = 300
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	self.parts.wpn_fps_upg_ak_g_hgrip.forbids = {
 		"wpn_upg_ak_g_standard",
@@ -810,8 +810,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_ak_g_pgrip.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}		
 	self.parts.wpn_fps_upg_ak_g_pgrip.forbids = {
 		"wpn_upg_ak_g_standard",
@@ -827,8 +827,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		recoil = 1
 	}
 	self.parts.wpn_fps_upg_ak_g_wgrip.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}		
 	self.parts.wpn_fps_upg_ak_g_wgrip.forbids = {
 		"wpn_upg_ak_g_standard",
@@ -883,8 +883,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_shot_ns_king.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 		
 	--Asepsis Suppressor
@@ -918,8 +918,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		spread = -2
 	}
 	self.parts.wpn_fps_upg_m4_s_crane.custom_stats = {
-		damage_near_mul = -150,
-		damage_far_mul = -300
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--War-Torn Stock
@@ -932,8 +932,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		spread = 2
 	}
 	self.parts.wpn_fps_upg_m4_s_mk46.custom_stats = {
-		damage_near_mul = 150,
-		damage_far_mul = 300
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 
 	--Pistol Red Dot Sight
@@ -1151,8 +1151,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		recoil = 1
 	}
 	self.parts.wpn_fps_upg_m4_g_ergo.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}	
 
 	--(CAR) Pro Grip
@@ -1170,8 +1170,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_m4_g_sniper.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--(CAR) Drum Magazine 
@@ -1240,8 +1240,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_m4_s_standard.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 
 	--Tactical Stock
@@ -1259,8 +1259,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_m4_s_pts.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--CAR-4 Override Tables
@@ -1861,8 +1861,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		concealment = -3
 	}
 	self.parts.wpn_upg_ak_s_psl.custom_stats = {
-		damage_near_mul = 225,
-		damage_far_mul = 450
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	self.parts.wpn_upg_ak_s_psl.override = {
 		wpn_fps_snp_flint_s_adapter = {
@@ -1961,8 +1961,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		spread = -1
 	}
 	self.parts.wpn_upg_saiga_fg_lowerrail.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}	
 	
 	--(Izhma) Drum Mag
@@ -2002,8 +2002,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				moving_spread = 0
 			},
 			custom_stats = {
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",					
 				rays = 1,
 				armor_piercing_add = 0,
@@ -2021,8 +2021,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},	
@@ -2035,8 +2035,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},			
@@ -2053,8 +2053,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -2873,8 +2873,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		reload = 3
 	}
 	self.parts.wpn_fps_shot_r870_body_rack.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}	
 
 	--Zombie Hunter Pump
@@ -2891,8 +2891,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		spread = -1
 	}
 	self.parts.wpn_fps_shot_r870_fg_wood.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 
 	--Extended Mag.
@@ -2937,8 +2937,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		spread = -1
 	}
 	self.parts.wpn_fps_shot_r870_s_solid.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Short Enough Tactical Stock
@@ -2984,8 +2984,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		concealment = -1
 	}
 	self.parts.wpn_fps_shot_r870_s_solid_big.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--???
@@ -2996,8 +2996,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		spread = -1
 	}
 	self.parts.wpn_fps_shot_r870_s_solid_single.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Override Table
@@ -3016,8 +3016,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				concealment = -5
 			},
 			custom_stats = {				
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 				rays = 1,
 				armor_piercing_add = 1,
@@ -3036,8 +3036,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage = 30
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6,
 				use_heavy_kick = true
 			}
@@ -3051,8 +3051,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage = 30
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6,
 				use_heavy_kick = true
 			}
@@ -3071,8 +3071,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				use_heavy_kick = true,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
@@ -3195,8 +3195,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		concealment = -1
 	}
 	self.parts.wpn_fps_shot_shorty_s_solid_short.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Locomotive 12g override table
@@ -3215,8 +3215,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				concealment = -5
 			},
 			custom_stats = {
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 				rays = 1,
 				armor_piercing_add = 1,
@@ -3235,8 +3235,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6,
 				use_heavy_kick = true
 			}
@@ -3250,8 +3250,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6,
 				use_heavy_kick = true
 			}
@@ -3271,8 +3271,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				block_b_storm = true,
 				use_heavy_kick = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -3466,8 +3466,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 		concealment = 2
 	}
 	self.parts.wpn_fps_shot_huntsman_b_short.custom_stats = {
-		damage_near_mul = -150,
-		damage_far_mul = -300
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Gangsta Special Stock
@@ -3500,8 +3500,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 9999999999,
-				damage_far_mul = 9999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -3756,8 +3756,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			damage_near_mul = 9999999999,
-			damage_far_mul = 9999999999,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
@@ -3775,8 +3775,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		},
 		custom_stats = {
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
-			damage_near_mul = 999999999,
-			damage_far_mul = 999999999,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			rays = 1,
 			armor_piercing_add = 1,
 			can_shoot_through_enemy = true,
@@ -3793,8 +3793,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			rays = 6
 		}
 	}
@@ -3807,8 +3807,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			rays = 6
 		}
 	}			
@@ -5010,8 +5010,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 		spread = -1
 	}
 	self.parts.wpn_fps_sho_ben_s_solid.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 
 	--Override Table
@@ -5032,8 +5032,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 1,
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
@@ -5050,8 +5050,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},
@@ -5064,8 +5064,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},			
@@ -5083,8 +5083,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -5105,8 +5105,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 		concealment = -1
 	}
 	self.parts.wpn_fps_sho_striker_b_long.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Suppressed Barrel
@@ -5121,8 +5121,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 		concealment = -1
 	}
 	self.parts.wpn_fps_sho_striker_b_suppressed.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	self.parts.wpn_fps_sho_striker_b_suppressed.perks = {"silencer"}
 	self.parts.wpn_fps_sho_striker_b_suppressed.forbids = {
@@ -5155,8 +5155,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 1,
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
@@ -5173,8 +5173,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},	
@@ -5187,8 +5187,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},				
@@ -5206,8 +5206,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,	
+				damage_near_mul = 1,
+				damage_far_mul = 1,	
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -5258,8 +5258,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			concealment = -5
 		},
 		custom_stats = {
-			damage_near_mul = 999999999,
-			damage_far_mul = 999999999,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 			rays = 1,
 			armor_piercing_add = 1,
@@ -5278,8 +5278,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			rays = 6,
 			use_heavy_kick = true
 		}
@@ -5293,8 +5293,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			spread = -1
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			rays = 6,
 			use_heavy_kick = true
 		}
@@ -5313,8 +5313,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			damage_near_mul = 999999999,
-			damage_far_mul = 999999999,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			use_heavy_kick = true,
 			bullet_class = "InstantExplosiveBulletBase"
 		}
@@ -5808,8 +5808,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, concealment = 1, spread = -1},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5834,8 +5834,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, concealment = 2, spread = -2},
 		custom_stats = {
-			damage_near_mul = -150,
-			damage_far_mul = -300
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5860,8 +5860,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, concealment = 3, spread = -3},
 		custom_stats = {
-			damage_near_mul = -225,
-			damage_far_mul = -450
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5888,8 +5888,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = 1, recoil = -1, concealment = -1},
 		internal_part = true,
 		custom_stats = {
-			damage_near_mul = 75,
-			damage_far_mul = 150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -5915,8 +5915,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = 2, recoil = -2, concealment = -2},
 		internal_part = true,
 		custom_stats = {
-			damage_near_mul = 150,
-			damage_far_mul = 300
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -5941,8 +5941,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = 3, recoil = -3, concealment = -3},
 		custom_stats = {
-			damage_near_mul = 225,
-			damage_far_mul = 450
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5967,8 +5967,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = -1, recoil = 1},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -5994,8 +5994,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		stats = {value = 1, spread = -2, recoil = 2},
 		internal_part = true,
 		custom_stats = {
-			damage_near_mul = -150,
-			damage_far_mul = -300
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -6019,8 +6019,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = -3, recoil = 3},
 		custom_stats = {
-			damage_near_mul = -225,
-			damage_far_mul = -450
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		internal_part = true,
 		perks = {"bonus"},
@@ -6178,8 +6178,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	}
 	self.parts.wpn_fps_upg_a_slug.custom_stats = {
 		muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",												
-		damage_near_mul = 999999999,
-		damage_far_mul = 999999999,
+		damage_near_mul = 1,
+		damage_far_mul = 1,
 		rays = 1,
 		armor_piercing_add = 1,
 		can_shoot_through_enemy = true,
@@ -6197,8 +6197,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		spread = -1,
 	}
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150,
+		damage_near_mul = 1,
+		damage_far_mul = 1,
 		rays = 6
 	}
 	
@@ -6225,8 +6225,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		ignore_statistic = true,
 		rays = 1,
 		block_b_storm = true,
-		damage_near_mul = 999999999,
-		damage_far_mul = 999999999,
+		damage_near_mul = 1,
+		damage_far_mul = 1,
 		bullet_class = "InstantExplosiveBulletBase"
 	}
 	
@@ -6240,8 +6240,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	}
 	self.parts.wpn_fps_upg_a_piercing.custom_stats = {
 		rays = 6,
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Dragon's Breath
@@ -6758,8 +6758,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 		spread = -1
 	}
 	self.parts.wpn_fps_sho_s_spas12_solid.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Overrides
@@ -6780,8 +6780,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 1,
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
@@ -6798,8 +6798,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},		
@@ -6812,8 +6812,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},				
@@ -6831,8 +6831,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -7628,8 +7628,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 		spread = -2
 	}
 	self.parts.wpn_fps_upg_m4_s_ubr.custom_stats = {
-		damage_near_mul = -150,
-		damage_far_mul = -300
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--DMR Kit
@@ -7851,8 +7851,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 		concealment = 2
 	}
 	self.parts.wpn_fps_shot_b682_b_short.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 
 	--Standard body
@@ -7887,8 +7887,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 		reload = 4
 	}
 	self.parts.wpn_fps_shot_b682_s_ammopouch.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Override table
@@ -7907,8 +7907,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 9999999999,
-				damage_far_mul = 9999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -8114,8 +8114,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_butchermodpack", "resmod_butchermo
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.perks = {"silencer"}
 	self.parts.wpn_fps_upg_ns_sho_salvo_large.forbids = {
@@ -8317,8 +8317,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 		concealment = -1
 	}
 	self.parts.wpn_fps_sho_aa12_barrel_long.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Suppressed Barrel
@@ -8337,8 +8337,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 		recoil = 1
 	}
 	self.parts.wpn_fps_sho_aa12_barrel_silenced.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	self.parts.wpn_fps_sho_aa12_barrel_silenced.perks = {"silencer"}
 	self.parts.wpn_fps_sho_aa12_barrel_silenced.sound_switch = {
@@ -8387,8 +8387,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 1,
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
@@ -8405,8 +8405,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},
@@ -8419,8 +8419,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},			
@@ -8438,8 +8438,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -10906,8 +10906,8 @@ function WeaponFactoryTweakData:_init_m37()
 			concealment = 1
 		},
 		custom_stats = {											
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},			
 		texture_bundle_folder = "peta",
 		dlc = "peta"
@@ -11012,8 +11012,8 @@ function WeaponFactoryTweakData:_init_m37()
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 1,
 				armor_piercing_add = 1,
 				use_heavy_kick = true,
@@ -11031,8 +11031,8 @@ function WeaponFactoryTweakData:_init_m37()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6,
 				use_heavy_kick = true
 			}
@@ -11046,8 +11046,8 @@ function WeaponFactoryTweakData:_init_m37()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6,
 				use_heavy_kick = true
 			}
@@ -11067,8 +11067,8 @@ function WeaponFactoryTweakData:_init_m37()
 				block_b_storm = true,
 				use_heavy_kick = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
@@ -12489,8 +12489,8 @@ function WeaponFactoryTweakData:_init_boot()
 			concealment = 1
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		dlc = "wild",
 		texture_bundle_folder = "wild"
@@ -12514,8 +12514,8 @@ function WeaponFactoryTweakData:_init_boot()
 			concealment = -1
 		},
 		custom_stats = {
-			damage_near_mul = 75,
-			damage_far_mul = 150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		dlc = "wild",
 		texture_bundle_folder = "wild"
@@ -12641,8 +12641,8 @@ function WeaponFactoryTweakData:_init_boot()
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 9999999999,
-				damage_far_mul = 9999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -13481,8 +13481,8 @@ function WeaponFactoryTweakData:_init_rota()
 			concealment = 1
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},			
 		dlc = "rota",
 		texture_bundle_folder = "rota"
@@ -13508,8 +13508,8 @@ function WeaponFactoryTweakData:_init_rota()
 			concealment = -1
 		},
 		custom_stats = {
-			damage_near_mul = 75,
-			damage_far_mul = 150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		perks = {"silencer"},
 		sound_switch = {
@@ -13621,8 +13621,8 @@ function WeaponFactoryTweakData:_init_rota()
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 1,
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
@@ -13639,8 +13639,8 @@ function WeaponFactoryTweakData:_init_rota()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},	
@@ -13653,8 +13653,8 @@ function WeaponFactoryTweakData:_init_rota()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},				
@@ -13672,8 +13672,8 @@ function WeaponFactoryTweakData:_init_rota()
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,	
+				damage_near_mul = 1,
+				damage_far_mul = 1,	
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -13752,8 +13752,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 		concealment = 1
 	}
 	self.parts.wpn_fps_sho_saiga_b_short.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	--Hollow Handle
@@ -13847,8 +13847,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_ns_duck.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
 	
 	self.parts.wpn_fps_pis_usp_m_big.pcs = {}
@@ -14377,8 +14377,8 @@ function WeaponFactoryTweakData:_init_tti()
 			spread = 2
 		},
 		custom_stats = {
-			damage_near_mul = 150,
-			damage_far_mul = 300
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		},
 		adds_type = {
 			"stock_adapter"
@@ -17581,8 +17581,8 @@ function WeaponFactoryTweakData:_init_basset()
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 1,
 					armor_piercing_add = 0,
 					can_shoot_through_enemy = false,
@@ -17599,8 +17599,8 @@ function WeaponFactoryTweakData:_init_basset()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},
@@ -17613,8 +17613,8 @@ function WeaponFactoryTweakData:_init_basset()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},					
@@ -17631,8 +17631,8 @@ function WeaponFactoryTweakData:_init_basset()
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
@@ -17731,8 +17731,8 @@ function WeaponFactoryTweakData:_init_x_basset()
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 1,
 					armor_piercing_add = 0,
 					can_shoot_through_enemy = false,
@@ -17749,8 +17749,8 @@ function WeaponFactoryTweakData:_init_x_basset()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},
@@ -17763,8 +17763,8 @@ function WeaponFactoryTweakData:_init_x_basset()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},					
@@ -17781,8 +17781,8 @@ function WeaponFactoryTweakData:_init_x_basset()
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
@@ -20456,8 +20456,8 @@ function WeaponFactoryTweakData:_init_x_judge()
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 9999999999,
-					damage_far_mul = 9999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
@@ -20476,8 +20476,8 @@ function WeaponFactoryTweakData:_init_x_judge()
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 1,
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
@@ -20494,8 +20494,8 @@ function WeaponFactoryTweakData:_init_x_judge()
 					spread = -1,
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},
@@ -20508,8 +20508,8 @@ function WeaponFactoryTweakData:_init_x_judge()
 					spread = -1,
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},	
@@ -20647,8 +20647,8 @@ function WeaponFactoryTweakData:_init_x_rota()
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 1,
 				armor_piercing_add = 0,
 				can_shoot_through_enemy = false,
@@ -20665,8 +20665,8 @@ function WeaponFactoryTweakData:_init_x_rota()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},
@@ -20679,8 +20679,8 @@ function WeaponFactoryTweakData:_init_x_rota()
 				spread = -1
 			},
 			custom_stats = {
-				damage_near_mul = -75,
-				damage_far_mul = -150,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				rays = 6
 			}
 		},			
@@ -20698,8 +20698,8 @@ function WeaponFactoryTweakData:_init_x_rota()
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 999999999,
-				damage_far_mul = 999999999,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -20902,8 +20902,8 @@ function WeaponFactoryTweakData:_init_system()
 			value = 1
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		}				
 	}
 	self.parts.wpn_fps_fla_system_body_standard = {
@@ -22217,8 +22217,8 @@ function WeaponFactoryTweakData:_init_coach()
 			concealment = 2
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		}			
 	}
 	self.parts.wpn_fps_sho_coach_s_long = {
@@ -22303,8 +22303,8 @@ function WeaponFactoryTweakData:_init_coach()
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 9999999999,
-					damage_far_mul = 9999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
@@ -22322,8 +22322,8 @@ function WeaponFactoryTweakData:_init_coach()
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 1,
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
@@ -22340,8 +22340,8 @@ function WeaponFactoryTweakData:_init_coach()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},
@@ -22354,8 +22354,8 @@ function WeaponFactoryTweakData:_init_coach()
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			}	
@@ -24267,8 +24267,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 		concealment = 1
 	}
 	self.parts.wpn_fps_shot_m1897_b_short.custom_stats = {
-		damage_near_mul = -75,
-		damage_far_mul = -150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}	
 	
 	--Long barrel
@@ -24286,8 +24286,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 		recoil = -1
 	}
 	self.parts.wpn_fps_shot_m1897_b_long.custom_stats = {
-		damage_near_mul = 75,
-		damage_far_mul = 150
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}		
 	
 	--Short Stock
@@ -24319,8 +24319,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			concealment = -5
 		},
 		custom_stats = {				
-			damage_near_mul = 999999999,
-			damage_far_mul = 999999999,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 			rays = 1,
 			armor_piercing_add = 1,
@@ -24339,8 +24339,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			rays = 6,
 			use_heavy_kick = true
 		}
@@ -24354,8 +24354,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			rays = 6,
 			use_heavy_kick = true
 		}
@@ -24374,8 +24374,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			damage_near_mul = 999999999,
-			damage_far_mul = 999999999,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			use_heavy_kick = true,
 			bullet_class = "InstantExplosiveBulletBase"
 		}
@@ -25532,7 +25532,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				spread = 1,
 				concealment = -1
 		}
-		self.parts.wpn_fps_shot_m590_s_wood.custom_stats = {damage_near_mul = 75, damage_far_mul = 150}
+		self.parts.wpn_fps_shot_m590_s_wood.custom_stats = {damage_near_mul = 1, damage_far_mul = 1}
 		self.parts.wpn_fps_shot_m590_s_hdtf.supported = true
 		self.parts.wpn_fps_shot_m590_s_hdtf.stats = {
 				value = 5,
@@ -25545,14 +25545,14 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				recoil = 2,
 				spread = -2
 		}
-		self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = -150, damage_far_mul = -300}
+		self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = 1, damage_far_mul = 1}
 		self.parts.wpn_fps_shot_m590_fg_wood.supported = true
 		self.parts.wpn_fps_shot_m590_fg_wood.stats = {
 				value = 2,
 				recoil = 1,
 				spread = -1
 		}
-		self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = -75, damage_far_mul = -150}			
+		self.parts.wpn_fps_shot_m590_s_old.custom_stats = {damage_near_mul = 1, damage_far_mul = 1}			
 		self.parts.wpn_fps_shot_m590_fg_wood.supported = true			
 		self.parts.wpn_fps_shot_m590_fg_wood.stats = {
 				value = 2,
@@ -25587,7 +25587,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					concealment = -1,
 					reload = 3
 				}, 
-				custom_stats = {damage_near_mul = -75,	damage_far_mul = -150},
+				custom_stats = {damage_near_mul = 1,	damage_far_mul = 1},
 				a_obj="a_rack"
 			},		
 			wpn_fps_upg_a_explosive = {
@@ -25604,8 +25604,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 9999999999,
-					damage_far_mul = 9999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -25808,7 +25808,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				spread = -1,
 				recoil = 1
 			}
-		self.parts.wpn_fps_ass_tilt_g_wood.custom_stats = {damage_near_mul = -75, damage_far_mul = -150}		
+		self.parts.wpn_fps_ass_tilt_g_wood.custom_stats = {damage_near_mul = 1, damage_far_mul = 1}		
 		self.parts.wpn_fps_ass_tilt_stock_wood.supported = true		
 		self.parts.wpn_fps_ass_tilt_stock_wood.stats = {
 				value = 1
@@ -25826,7 +25826,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				recoil = -1,
 				concealment = -1
 		}
-		self.parts.wpn_fps_ass_tilt_stock_tactical.custom_stats = {damage_near_mul = 75, damage_far_mul = 150}
+		self.parts.wpn_fps_ass_tilt_stock_tactical.custom_stats = {damage_near_mul = 1, damage_far_mul = 1}
 		self.parts.wpn_fps_ass_tilt_stock_none.supported = true
 		self.parts.wpn_fps_ass_tilt_stock_none.stats = {
 				value = 3,
@@ -25849,8 +25849,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			}
 		self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																
-				damage_near_mul = 3.333333333333333,
-				damage_far_mul = 5,
+				damage_near_mul = 1.333333333333333,
+				damage_far_mul = 1,
 				rays = 1,
 				heavy_AP = true
 			}
@@ -25881,7 +25881,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				spread = -1
 			}	
 		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.custom_stats = {
-				damage_near_mul = 2,
+				damage_near_mul = 1,
 				damage_far_mul = 1.33,
 				rays = 8
 			}																
@@ -26829,8 +26829,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = 1
 		}
 		self.parts.wpn_fps_sho_b_spas12_small.custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150			
+			damage_near_mul = 1,
+			damage_far_mul = 1			
 		}
 
 		--Modern Magazine
@@ -27001,8 +27001,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = -2
 		}
 		self.parts.wpn_fps_shot_beck_s_tac.custom_stats = {
-			damage_far_mul = 150,
-			damage_near_mul = 75
+			damage_far_mul = 1,
+			damage_near_mul = 1
 		}
 
 		--(Reinbeck) Ghost Stock
@@ -27164,8 +27164,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = -1
 		}
 		self.parts.wpn_fps_shot_amr12_fg_railed.custom_stats = {
-			damage_near_mul = 75,
-			damage_far_mul = 150			
+			damage_near_mul = 1,
+			damage_far_mul = 1			
 		}
 
 		--(AMG-12G) Breacher Foregrip
@@ -27177,8 +27177,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = 2
 		}
 		self.parts.wpn_fps_shot_amr12_fg_short.custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150			
+			damage_near_mul = 1,
+			damage_far_mul = 1			
 		}
 
 		self.parts.wpn_fps_shot_amr12_b_standard.supported = true
@@ -27205,8 +27205,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 1,
 					armor_piercing_add = 0,
 					can_shoot_through_enemy = false,
@@ -27223,8 +27223,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},
@@ -27237,8 +27237,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					spread = -1
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6
 				}
 			},			
@@ -27255,8 +27255,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
@@ -27276,8 +27276,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 9999999999,
-					damage_far_mul = 9999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
@@ -27998,8 +27998,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					concealment = -5
 				},
 				custom_stats = {				
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 					rays = 1,
 					armor_piercing_add = 1,
@@ -28018,8 +28018,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					damage = 30
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6,
 					use_heavy_kick = true
 				}
@@ -28033,8 +28033,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					damage = 30
 				},
 				custom_stats = {
-					damage_near_mul = -75,
-					damage_far_mul = -150,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					rays = 6,
 					use_heavy_kick = true
 				}
@@ -28053,8 +28053,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					use_heavy_kick = true,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
@@ -28068,8 +28068,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			spread = -1
 		}
 		self.parts.wpn_fps_shot_bs23_barrel_short.custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		}
 
 		--Hammer 23 Sturdy Wooden Stock
@@ -28079,8 +28079,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			spread = -1
 		}
 		self.parts.wpn_fps_shot_bs23_stock_full.custom_stats = {
-			damage_near_mul = -75,
-			damage_far_mul = -150
+			damage_near_mul = 1,
+			damage_far_mul = 1
 		}		
 		
 		--Hammer 23 Hazardous stock
@@ -28106,8 +28106,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 9999999999,
-					damage_far_mul = 9999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
@@ -28206,8 +28206,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 7,
-					damage_near_mul = 999999999,
-					damage_far_mul = 999999999,
+					damage_near_mul = 1,
+					damage_far_mul = 1,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
@@ -28398,8 +28398,8 @@ end
 			moving_spread = 0
 		},
 		custom_stats = {
-			damage_near_mul = 999999999,
-			damage_far_mul = 999999999,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
 			rays = 1,
 			armor_piercing_add = 1,
 			can_shoot_through_enemy = true,

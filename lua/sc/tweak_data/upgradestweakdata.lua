@@ -651,7 +651,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.shotgun.steelsight_accuracy_inc = {0.6}
 				--Ace
-					self.values.shotgun.steelsight_range_inc = {1.5}
+					self.values.shotgun.steelsight_range_inc = {1.4}
 
 			--Close By
 				--Basic

@@ -957,7 +957,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
-			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers are ##40%## more accurate while aiming down sights.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nShotguns and Flamethrower range is increased by ##50%## while aiming down sights.",
+			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers are ##40%## more accurate while aiming down sights.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nShotgun and Flamethrower range is increased by ##40%## while aiming down sights.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",

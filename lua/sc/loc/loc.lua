@@ -62,6 +62,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that increase damage at the cost of some consistency and ammo.",
 		["bm_wp_upg_a_piercing_desc"] = "Long range and tight pellet spread.",
 		["bm_wp_upg_a_dragons_breath_desc_sc"] = "Fires pellets that go up in sparks and flames. The fire deals damage over time, has a chance to interrupt enemies, and burns through body armor.",
+		["bm_wp_upg_a_piercing_desc_sc"] = "Fires armor piercing flechettes that inflict bleed damage.",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",

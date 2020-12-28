@@ -438,7 +438,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 					dot_tick_period = 0.5
 				}					
 			end
-		end					
+		end
 	end
 
 	--Precalculate ammo pickup values.

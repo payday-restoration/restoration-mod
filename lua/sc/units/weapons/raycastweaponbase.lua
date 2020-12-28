@@ -694,7 +694,7 @@ end
 BleedBulletBase = BleedBulletBase or class(DOTBulletBase)
 BleedBulletBase.VARIANT = "bleed"
 ProjectilesBleedBulletBase = ProjectilesBleedBulletBase or class(BleedBulletBase)
-ProjectilesBleedBulletBase.NO_BULLET_INPACT_SOUND = true
+ProjectilesBleedBulletBase.NO_BULLET_INPACT_SOUND = false
 
 --Allow easier hotloading of data.
 function ProjectilesBleedBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank)

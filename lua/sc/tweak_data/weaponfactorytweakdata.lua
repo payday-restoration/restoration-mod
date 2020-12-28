@@ -6239,17 +6239,29 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	}
 	
 	--Flechettes
+	self.parts.wpn_fps_upg_a_piercing.name_id = "bm_wp_upg_a_piercing"
+	self.parts.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_desc_sc"
 	self.parts.wpn_fps_upg_a_piercing.pcs = {}
 	self.parts.wpn_fps_upg_a_piercing.supported = true
 	self.parts.wpn_fps_upg_a_piercing.stats = {
 		value = 9,
 		spread = 1,
-		recoil = -1
+		recoil = -1,
+		damage = -5
 	}
 	self.parts.wpn_fps_upg_a_piercing.custom_stats = {
 		rays = 6,
 		damage_near_mul = 1,
-		damage_far_mul = 1
+		damage_far_mul = 1,
+		armor_piercing_add = 1,
+		bullet_class = "BleedBulletBase",
+		dot_data = { --Temporary stats, should be redone per weapon tier.
+			type = "bleed",
+			custom_data = {
+				dot_damage = "2",
+				dot_length = "3.1"
+			}
+		}
 	}
 	
 	--Dragon's Breath

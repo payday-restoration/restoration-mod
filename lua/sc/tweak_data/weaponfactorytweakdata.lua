@@ -1987,29 +1987,29 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		},
 		wpn_upg_o_marksmansight_front = {a_obj = "a_of"},
 		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug_sc",
-			desc_id = "bm_wp_upg_a_slug_sc_desc",
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			supported = true,
 			stats = {
 				value = 10,
 				concealment = -5,
 				total_ammo_mod = -33,
 				damage = 15,
-				recoil = -1,
-				spread = 11,
+				recoil = -2,
+				spread = 8,
 				suppression = -1,
 				spread_multi = {1, 1},	
 				moving_spread = 0
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",					
 				rays = 1,
-				armor_piercing_add = 0,
-				can_shoot_through_enemy = false,
-				can_shoot_through_shield = false,
-				can_shoot_through_wall = false
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -2053,8 +2053,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -3004,20 +3004,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 	self.wpn_fps_shot_r870.override = {
 		wpn_fps_upg_a_slug = {
 			supported = true,
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			stats = {
 				value = 10,
 				total_ammo_mod = -33,
 				damage = 30,
 				recoil = -2,
-				spread = 12,
+				spread = 8,
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
 				concealment = -5
 			},
 			custom_stats = {				
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 				rays = 1,
 				armor_piercing_add = 1,
@@ -3071,8 +3073,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				use_heavy_kick = true,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
@@ -3203,20 +3205,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 	self.wpn_fps_shot_serbu.override = {
 		wpn_fps_upg_a_slug = {
 			supported = true,
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			stats = {
 				value = 10,
 				total_ammo_mod = -33,
 				damage = 30,
 				recoil = -2,
-				spread = 12,
+				spread = 8,
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
 				concealment = -5
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 				rays = 1,
 				armor_piercing_add = 1,
@@ -3271,8 +3275,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				block_b_storm = true,
 				use_heavy_kick = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -3500,8 +3504,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_huntsman", "resmod_huntsman", func
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -3756,27 +3760,29 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 999,
+			damage_far_mul = 999,
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_slug = {
 		supported = true,
+		name_id = "bm_wp_upg_a_slug",
+		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
 			value = 10,
 			concealment = -5,
 			total_ammo_mod = -25,
 			damage = 30,	
 			recoil = -2,
-			spread = 12,
+			spread = 8,
 			spread_multi = {1, 1},	
 			suppression = -1
 		},
 		custom_stats = {
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 999,
+			damage_far_mul = 999,
 			rays = 1,
 			armor_piercing_add = 1,
 			can_shoot_through_enemy = true,
@@ -5017,28 +5023,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 	--Override Table
 	self.wpn_fps_sho_ben.override = {
 		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug_sc",
-			desc_id = "bm_wp_upg_a_slug_sc_desc",
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			supported = true,
 			stats = {
 				value = 10,
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 12,
+				spread = 8,
 				spread_multi = {1, 1},	
 				recoil = -1,
 				moving_spread = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				rays = 1,
-				armor_piercing_add = 0,
-				can_shoot_through_enemy = false,
-				can_shoot_through_shield = false,
-				can_shoot_through_wall = false
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -5083,8 +5089,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -5140,17 +5146,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 		wpn_upg_o_marksmansight_rear_vanilla = {a_obj = "a_o_r"},
 		wpn_upg_o_marksmansight_front = {a_obj = "a_o_f"},
 		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug_sc",
-			desc_id = "bm_wp_upg_a_slug_sc_desc",
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			supported = true,
 			stats = {
 				value = 10,
 				concealment = 0,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 14,
+				spread = 8,
 				spread_multi = {1, 1},	
-				recoil = -3,
+				recoil = -2,
 				moving_spread = 0
 			},
 			custom_stats = {
@@ -5158,10 +5164,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				damage_near_mul = 1,
 				damage_far_mul = 1,
 				rays = 1,
-				armor_piercing_add = 0,
-				can_shoot_through_enemy = false,
-				can_shoot_through_shield = false,
-				can_shoot_through_wall = false
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -5206,8 +5212,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,	
+				damage_near_mul = 999,
+				damage_far_mul = 999,	
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -5246,20 +5252,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 	--Ammunition Overrides
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug = {
 		supported = true,
+		name_id = "bm_wp_upg_a_slug",
+		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
 			value = 10,
 			total_ammo_mod = -33,
 			damage = 30,
 			recoil = -2,
-			spread = 12,
+			spread = 8,
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
 			concealment = -5
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 999,
+			damage_far_mul = 999,
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
 			rays = 1,
 			armor_piercing_add = 1,
@@ -5313,8 +5321,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 999,
+			damage_far_mul = 999,
 			use_heavy_kick = true,
 			bullet_class = "InstantExplosiveBulletBase"
 		}
@@ -6171,15 +6179,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		total_ammo_mod = -25,
 		damage = 30,	
 		recoil = -2,
-		spread = 12,
+		spread = 8,
 		spread_multi = {1, 1},	
 		suppression = -1,
 		moving_spread = 0
 	}
 	self.parts.wpn_fps_upg_a_slug.custom_stats = {
 		muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",												
-		damage_near_mul = 1,
-		damage_far_mul = 1,
+		damage_near_mul = 999,
+		damage_far_mul = 999,
 		rays = 1,
 		armor_piercing_add = 1,
 		can_shoot_through_enemy = true,
@@ -6225,8 +6233,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		ignore_statistic = true,
 		rays = 1,
 		block_b_storm = true,
-		damage_near_mul = 1,
-		damage_far_mul = 1,
+		damage_near_mul = 999,
+		damage_far_mul = 999,
 		bullet_class = "InstantExplosiveBulletBase"
 	}
 	
@@ -6765,28 +6773,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 	--Overrides
 	self.wpn_fps_sho_spas12.override = {
 		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug_sc",
-			desc_id = "bm_wp_upg_a_slug_sc_desc",
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			supported = true,
 			stats = {
 				value = 10,
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 12,
+				spread = 8,
 				spread_multi = {1, 1},	
-				recoil = -1,
+				recoil = -2,
 				moving_spread = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				rays = 1,
-				armor_piercing_add = 0,
-				can_shoot_through_enemy = false,
-				can_shoot_through_shield = false,
-				can_shoot_through_wall = false
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -6831,8 +6839,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -7907,8 +7915,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b682", "resmod_b682", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -8372,28 +8380,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	--Override tables
 	self.wpn_fps_sho_aa12.override = {
 		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug_sc",
-			desc_id = "bm_wp_upg_a_slug_sc_desc",
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			supported = true,
 			stats = {
 				value = 10,
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 12,
+				spread = 8,
 				spread_multi = {1, 1},	
-				recoil = -1,
+				recoil = -2,
 				moving_spread = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				rays = 1,
-				armor_piercing_add = 0,
-				can_shoot_through_enemy = false,
-				can_shoot_through_shield = false,
-				can_shoot_through_wall = false
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -8438,8 +8446,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -10999,12 +11007,14 @@ function WeaponFactoryTweakData:_init_m37()
 	self.wpn_fps_shot_m37.override = {
 		wpn_fps_upg_a_slug = {
 			supported = true,
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			stats = {
 				value = 10,
 				total_ammo_mod = -33,
 				damage = 30,
 				recoil = -2,
-				spread = 12,
+				spread = 8,
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
@@ -11012,8 +11022,8 @@ function WeaponFactoryTweakData:_init_m37()
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				rays = 1,
 				armor_piercing_add = 1,
 				use_heavy_kick = true,
@@ -11067,8 +11077,8 @@ function WeaponFactoryTweakData:_init_m37()
 				block_b_storm = true,
 				use_heavy_kick = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
@@ -12641,8 +12651,8 @@ function WeaponFactoryTweakData:_init_boot()
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -13606,28 +13616,28 @@ function WeaponFactoryTweakData:_init_rota()
 	}
 	self.wpn_fps_sho_rota.override = {
 		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug_sc",
-			desc_id = "bm_wp_upg_a_slug_sc_desc",
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			supported = true,
 			stats = {
 				value = 10,
 				concealment = 0,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 14,
+				spread = 8,
 				spread_multi = {1, 1},	
-				recoil = -3,
+				recoil = -2,
 				moving_spread = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				rays = 1,
-				armor_piercing_add = 0,
-				can_shoot_through_enemy = false,
-				can_shoot_through_shield = false,
-				can_shoot_through_wall = false
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -13672,8 +13682,8 @@ function WeaponFactoryTweakData:_init_rota()
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,	
+				damage_near_mul = 999,
+				damage_far_mul = 999,	
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -17565,29 +17575,29 @@ function WeaponFactoryTweakData:_init_basset()
 		},
 		override = {
 			wpn_fps_upg_a_slug = {
-				name_id = "bm_wp_upg_a_slug_sc",
-				desc_id = "bm_wp_upg_a_slug_sc_desc",
+				name_id = "bm_wp_upg_a_slug",
+				desc_id = "bm_wp_upg_a_slug_desc",
 				supported = true,
 				stats = {
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -25,
 					damage = 15,	
-					recoil = -1,
-					spread = 11,
+					recoil = -2,
+					spread = 8,
 					spread_multi = {1, 1},	
 					suppression = -1,
 					moving_spread = 0
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false
+					armor_piercing_add = 1,
+					can_shoot_through_enemy = true,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true
 				}
 			},
 			wpn_fps_upg_a_custom = {
@@ -17631,8 +17641,8 @@ function WeaponFactoryTweakData:_init_basset()
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
@@ -17715,29 +17725,29 @@ function WeaponFactoryTweakData:_init_x_basset()
 		},
 		override = {
 			wpn_fps_upg_a_slug = {
-				name_id = "bm_wp_upg_a_slug_sc",
-				desc_id = "bm_wp_upg_a_slug_sc_desc",
+				name_id = "bm_wp_upg_a_slug",
+				desc_id = "bm_wp_upg_a_slug_desc",
 				supported = true,
 				stats = {
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -33,
 					damage = 15,	
-					recoil = -1,
-					spread = 11,
+					recoil = -2,
+					spread = 8,
 					spread_multi = {1, 1},	
 					suppression = -1,
 					moving_spread = 0
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false
+					armor_piercing_add = 1,
+					can_shoot_through_enemy = true,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true
 				}
 			},
 			wpn_fps_upg_a_custom = {
@@ -17781,8 +17791,8 @@ function WeaponFactoryTweakData:_init_x_basset()
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
@@ -20456,28 +20466,30 @@ function WeaponFactoryTweakData:_init_x_judge()
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
 			wpn_fps_upg_a_slug = {
 				supported = true,
+				name_id = "bm_wp_upg_a_slug",
+				desc_id = "bm_wp_upg_a_slug_desc",
 				stats = {
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -25,
 					damage = 30,	
 					recoil = -2,
-					spread = 12,
+					spread = 8,
 					spread_multi = {1, 1},	
 					suppression = -1,
 					moving_spread = 0
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					rays = 1,
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
@@ -20632,28 +20644,28 @@ function WeaponFactoryTweakData:_init_x_rota()
 	}
 	self.wpn_fps_sho_x_rota.override = {
 		wpn_fps_upg_a_slug = {
-			name_id = "bm_wp_upg_a_slug_sc",
-			desc_id = "bm_wp_upg_a_slug_sc_desc",
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
 			supported = true,
 			stats = {
 				value = 10,
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 12,
+				spread = 8,
 				spread_multi = {1, 1},	
-				recoil = -1,
+				recoil = -2,
 				moving_spread = 0
 			},
 			custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				rays = 1,
-				armor_piercing_add = 0,
-				can_shoot_through_enemy = false,
-				can_shoot_through_shield = false,
-				can_shoot_through_wall = false
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -20698,8 +20710,8 @@ function WeaponFactoryTweakData:_init_x_rota()
 				ignore_statistic = true,
 				block_b_storm = true,
 				rays = 1,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -22303,27 +22315,29 @@ function WeaponFactoryTweakData:_init_coach()
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
 			wpn_fps_upg_a_slug = {
 				supported = true,
+				name_id = "bm_wp_upg_a_slug",
+				desc_id = "bm_wp_upg_a_slug_desc",
 				stats = {
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -25,
 					damage = 30,	
 					recoil = -2,
-					spread = 12,
+					spread = 8,
 					spread_multi = {1, 1},	
 					suppression = -1
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					rays = 1,
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
@@ -24307,20 +24321,22 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 	--Override Table
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug = {
 		supported = true,
+		name_id = "bm_wp_upg_a_slug",
+		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
 			value = 10,
 			total_ammo_mod = -33,
 			damage = 30,
 			recoil = -2,
-			spread = 12,
+			spread = 8,
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
 			concealment = -5
 		},
 		custom_stats = {				
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 999,
+			damage_far_mul = 999,
 			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 			rays = 1,
 			armor_piercing_add = 1,
@@ -24374,8 +24390,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			ignore_statistic = true,
 			block_b_storm = true,
 			rays = 1,
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 999,
+			damage_far_mul = 999,
 			use_heavy_kick = true,
 			bullet_class = "InstantExplosiveBulletBase"
 		}
@@ -25604,8 +25620,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
@@ -25842,15 +25858,15 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				concealment = -5,
 				total_ammo_mod = -33,
 				damage = 60,
-				spread = 12,
+				spread = 8,
 				spread_multi = {1, 1},	
-				recoil = -1,
+				recoil = -2,
 				moving_spread = 0
 			}
 		self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = {
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",																
-				damage_near_mul = 1.333333333333333,
-				damage_far_mul = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
 				rays = 1,
 				heavy_AP = true
 			}
@@ -27190,28 +27206,28 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 
 		self.wpn_fps_shot_amr12.override = {
 			wpn_fps_upg_a_slug = {
-				name_id = "bm_wp_upg_a_slug_sc",
-				desc_id = "bm_wp_upg_a_slug_sc_desc",
+				name_id = "bm_wp_upg_a_slug",
+				desc_id = "bm_wp_upg_a_slug_desc",
 				supported = true,
 				stats = {
 					value = 10,
 					concealment = -5,
 					total_ammo_mod = -25,
 					damage = 15,
-					spread = 11,
+					spread = 8,
 					spread_multi = {1, 1},	
-					recoil = -1,
+					recoil = -2,
 					moving_spread = 0
 				},
 				custom_stats = {
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					rays = 1,
-					armor_piercing_add = 0,
-					can_shoot_through_enemy = false,
-					can_shoot_through_shield = false,
-					can_shoot_through_wall = false
+					armor_piercing_add = 1,
+					can_shoot_through_enemy = true,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true
 				}
 			},
 			wpn_fps_upg_a_custom = {
@@ -27255,8 +27271,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
@@ -27276,8 +27292,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
@@ -27986,20 +28002,22 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.wpn_fps_shot_minibeck.override = {
 			wpn_fps_upg_a_slug = {
 				supported = true,
+				name_id = "bm_wp_upg_a_slug",
+				desc_id = "bm_wp_upg_a_slug_desc",
 				stats = {
 					value = 10,
 					total_ammo_mod = -33,
 					damage = 30,
 					recoil = -2,
-					spread = 12,
+					spread = 8,
 					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
 					concealment = -5
 				},
 				custom_stats = {				
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 					rays = 1,
 					armor_piercing_add = 1,
@@ -28053,8 +28071,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					use_heavy_kick = true,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
@@ -28106,8 +28124,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 1,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}
@@ -28206,8 +28224,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					ignore_statistic = true,
 					block_b_storm = true,
 					rays = 7,
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 999,
+					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}

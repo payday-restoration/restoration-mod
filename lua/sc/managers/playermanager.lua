@@ -1139,32 +1139,6 @@ function PlayerManager:_get_cocaine_damage_absorption_from_data(data)
 	return math.floor((amount + 1) / (tweak_data.upgrades.cocaine_stacks_convert_levels and tweak_data.upgrades.cocaine_stacks_convert_levels[upgrade_level] or 20)) * (tweak_data.upgrades.cocaine_stacks_dmg_absorption_value or 0.1)
 end
 
---Makes the multiplier capstone work as described.
-function PlayerManager:get_best_cocaine_damage_absorption(my_peer_id)
-	local data = self._global.synced_cocaine_stacks[my_peer_id] or {}
-	local multiplier = self:upgrade_value("player", "cocaine_stack_absorption_multiplier", 1) --Previously always returned 1.
-	local absorption = 0
-	local best_peer_id = 0
-
-	if self._global.synced_cocaine_stacks then
-		local peer_absorption = nil
-
-		for peer_id, data in pairs(self._global.synced_cocaine_stacks) do
-			if peer_id == my_peer_id or data.in_use then
-				peer_absorption = self:_get_cocaine_damage_absorption_from_data(data)
-
-				if absorption < peer_absorption then
-					best_peer_id = peer_id or best_peer_id
-				end
-
-				absorption = math.max(absorption, peer_absorption)
-			end
-		end
-	end
-
-	return absorption * multiplier, best_peer_id
-end
-
 --Adds buff tracker call.
 function PlayerManager:disable_cooldown_upgrade(category, upgrade)
 	local upgrade_value = self:upgrade_value(category, upgrade)

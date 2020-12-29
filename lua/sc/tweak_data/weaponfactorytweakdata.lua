@@ -2062,7 +2062,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -6
+				damage = -6,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -3130,7 +3132,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15
+				damage = -15,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -3378,7 +3382,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15
+				damage = -15,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -5239,7 +5245,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15
+				damage = -15,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -5409,7 +5417,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15
+				damage = -15,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -5566,7 +5576,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 		supported = true,
 		stats = {
 			value = 9,
-			damage = -15
+			damage = -15,
+			spread = 1,
+			recoil = -1
 		},
 		custom_stats = {
 			rays = 6,
@@ -7147,7 +7159,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15
+				damage = -15,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -8801,7 +8815,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15
+				damage = -15,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -11405,7 +11421,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 		supported = true,
 		stats = {
 			value = 9,
-			damage = -15
+			damage = -15,
+			spread = 1,
+			recoil = -1
 		},
 		custom_stats = {
 			rays = 6,
@@ -13952,7 +13970,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15
+				damage = -15,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -17493,7 +17513,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -6
+				damage = -6,
+				spread = 1,
+				recoil = -1
 			},
 			custom_stats = {
 				rays = 6,
@@ -24091,7 +24113,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 		supported = true,
 		stats = {
 			value = 9,
-			damage = -15
+			damage = -15,
+			spread = 1,
+			recoil = -1
 		},
 		custom_stats = {
 			rays = 6,

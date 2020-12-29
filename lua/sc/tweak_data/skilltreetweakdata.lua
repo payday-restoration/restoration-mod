@@ -1069,8 +1069,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Fire Trap--
 			self.skills.fire_trap = {
-				["name_id"] = "menu_fire_trap_beta",
-				["desc_id"] = "menu_fire_trap_beta_desc",
+				["name_id"] = "menu_fire_trap_beta_sc",
+				["desc_id"] = "menu_fire_trap_beta_desc_sc",
 				["icon_xy"] = {9, 9},
 				[1] = {
 					upgrades = {

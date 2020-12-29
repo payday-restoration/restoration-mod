@@ -1085,6 +1085,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 			["menu_kick_starter_beta_sc"] = "Kick Starter",
 			["menu_kick_starter_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВаши дрели и пилы получают ##30%## шанс автоматически починиться при поломке.\n\nПИКОВЫЙ: ##$pro##\nВы получаете возможность чинить дрели и пилы ударом оружия ближнего боя. У вас есть ##1## попытка сделать это при каждой поломке, с ##50%## шансом.",
 
+			--Fire Trap
+			["menu_fire_trap_beta_sc"] = "Fire Trap",
+			["menu_fire_trap_beta_desc_sc"] = "BASIC: ##$basic##\nYour trip mines now spread fire around the area of detonation for ##10## seconds in a ##7.5## meter radius.\n\nACE: ##$pro##\nYour trip mines now spread fire around the area of detonation for ##20## seconds in an ##11.25## meter radius.",
+
 
 			--}
 

@@ -2057,13 +2057,60 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
-		}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -6
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9819,
+				ammo_pickup_max_mul = 0.9764,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "1.6",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -6
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9819,
+				ammo_pickup_max_mul = 0.9764,										
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "1.6",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}			
 	}
 	
 	--Izhma Part Additions
 	--Drum Mag
 	table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_saiga_m_20rnd")
-	table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_saiga_m_20rnd")	
+	table.insert(self.wpn_fps_shot_saiga_npc.uses_parts, "wpn_upg_saiga_m_20rnd")	
 
 	self.wpn_fps_shot_saiga_npc.uses_parts = deep_clone(self.wpn_fps_shot_saiga.uses_parts)
 
@@ -3078,7 +3125,54 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				use_heavy_kick = true,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
-		}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9655,
+				ammo_pickup_max_mul = 0.9543,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "3",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9655,
+				ammo_pickup_max_mul = 0.9543,									
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "3",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}	
 	}
 	
 	--Use Part Table
@@ -3279,7 +3373,54 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
-		}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9655,
+				ammo_pickup_max_mul = 0.9543,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "3",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9655,
+				ammo_pickup_max_mul = 0.9543,									
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "3",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}			
 	}
 	
 	--Use Part Table
@@ -5093,7 +5234,54 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
-		}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "3",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,										
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "3",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}			
 	}
 
 end)	
@@ -5216,7 +5404,54 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				damage_far_mul = 999,	
 				bullet_class = "InstantExplosiveBulletBase"
 			}
-		}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "3",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,										
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "3",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}			
 	}
 
 end)	
@@ -5327,6 +5562,53 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing = {
+		supported = true,
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			rays = 6,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9655,
+			ammo_pickup_max_mul = 0.9543,			
+			bullet_class = "BleedBulletBase",
+			dot_data = { 
+				type = "bleed",
+				custom_data = {
+					dot_damage = "3",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}
+	}
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath = {
+		supported = true,
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			bullet_class = "FlameBulletBase",
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9655,
+			ammo_pickup_max_mul = 0.9543,								
+			can_shoot_through_shield = false,
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+			fire_dot_data = {
+				dot_damage = "3",
+				dot_trigger_max_distance = "99999999",
+				dot_trigger_chance = "50",
+				dot_length = "3.1",
+				dot_tick_period = "0.5"
+			}
+		}
+	}		
 
 end)	
 
@@ -6234,11 +6516,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		rays = 1,
 		block_b_storm = true,
 		damage_near_mul = 999,
-		damage_far_mul = 999,
+		damage_far_mul = 999,		
 		bullet_class = "InstantExplosiveBulletBase"
 	}
 	
-	--Flechettes
+	--Flechettes, balanced around primary break actions without overrides
 	self.parts.wpn_fps_upg_a_piercing.name_id = "bm_wp_upg_a_piercing"
 	self.parts.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_desc_sc"
 	self.parts.wpn_fps_upg_a_piercing.pcs = {}
@@ -6247,40 +6529,45 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		value = 9,
 		spread = 1,
 		recoil = -1,
-		damage = -5
+		damage = -30
 	}
 	self.parts.wpn_fps_upg_a_piercing.custom_stats = {
 		rays = 6,
 		damage_near_mul = 1,
 		damage_far_mul = 1,
 		armor_piercing_add = 1,
+		ammo_pickup_min_mul = 0.9400,
+		ammo_pickup_max_mul = 0.9197,		
 		bullet_class = "BleedBulletBase",
-		dot_data = { --Temporary stats, should be redone per weapon tier.
+		dot_data = { 
 			type = "bleed",
 			custom_data = {
-				dot_damage = "2",
-				dot_length = "3.1"
+				dot_damage = "4",
+				dot_length = "3.1",
+				dot_tick_period = "0.5"
 			}
 		}
 	}
 	
-	--Dragon's Breath
+	--Dragon's Breath, balanced around primary break actions without overrides
 	self.parts.wpn_fps_upg_a_dragons_breath.pcs = {}
 	self.parts.wpn_fps_upg_a_dragons_breath.name_id = "bm_wp_upg_a_dragons_breath"
 	self.parts.wpn_fps_upg_a_dragons_breath.desc_id = "bm_wp_upg_a_dragons_breath_desc_sc"
 	self.parts.wpn_fps_upg_a_dragons_breath.supported = true
 	self.parts.wpn_fps_upg_a_dragons_breath.stats = {
 		value = 9,
-		damage = -5,
+		damage = -30,
 	}
 	self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
 		ignore_statistic = true,
 		bullet_class = "FlameBulletBase",
 		armor_piercing_add = 1,
+		ammo_pickup_min_mul = 0.9400,
+		ammo_pickup_max_mul = 0.9197,				
 		can_shoot_through_shield = false,
 		muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 		fire_dot_data = {
-			dot_damage = "1",
+			dot_damage = "4",
 			dot_trigger_max_distance = "99999999",
 			dot_trigger_chance = "50",
 			dot_length = "3.1",
@@ -6855,7 +7142,54 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
-		}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "3",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,										
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "3",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}			
 	}
 
 end)
@@ -8462,7 +8796,54 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				damage_far_mul = 999,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
-		}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "3",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,										
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "3",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}			
 	}
 
 end)
@@ -10907,240 +11288,215 @@ function WeaponFactoryTweakData:_init_model70()
 	self.wpn_fps_snp_model70_npc.unit = "units/pd2_dlc_berry/weapons/wpn_fps_snp_model70/wpn_fps_snp_model70_npc"
 end
 
-function WeaponFactoryTweakData:_init_m37()
-	self.parts.wpn_fps_shot_m37_b_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_m37_b_short",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37_pts/wpn_fps_shot_m37_b_short",
+--GSPS 12g
+Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
+
+	--Riot Barrel
+	self.parts.wpn_fps_shot_m37_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_shot_m37_b_short.supported = true
+	self.parts.wpn_fps_shot_m37_b_short.stats = {
+		value = 1,
+		spread = -1,
+		concealment = 1
+	}
+	self.parts.wpn_fps_shot_m37_b_short.custom_stats = {											
+		damage_near_mul = 1,
+		damage_far_mul = 1
+	}
+	
+	--Stakeout Stock
+	self.parts.wpn_fps_shot_m37_s_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_shot_m37_s_short.supported = true
+	self.parts.wpn_fps_shot_m37_s_short.stats = {
+		value = 1,
+		recoil = -1,
+		concealment = 1
+	}
+	
+	--Ammo overrides
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug = {
 		supported = true,
+		name_id = "bm_wp_upg_a_slug",
+		desc_id = "bm_wp_upg_a_slug_desc",
 		stats = {
-			value = 1,
-			spread = -1,
-			concealment = 1
+			value = 10,
+			total_ammo_mod = -33,
+			damage = 30,
+			recoil = -2,
+			spread = 8,
+			spread_multi = {1, 1},	
+			moving_spread = 0,
+			suppression = -1,
+			concealment = -5
 		},
-		custom_stats = {											
-			damage_near_mul = 1,
-			damage_far_mul = 1
-		},			
-		texture_bundle_folder = "peta",
-		dlc = "peta"
-	}
-	self.parts.wpn_fps_shot_m37_b_standard = {
-		type = "barrel",
-		name_id = "bm_wp_m37_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37_pts/wpn_fps_shot_m37_b_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_shot_m37_s_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_m37_s_short",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37_pts/wpn_fps_shot_m37_s_short",
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "peta",
-		dlc = "peta"
-	}
-	self.parts.wpn_fps_shot_m37_s_standard = {
-		type = "stock",
-		name_id = "bm_wp_m37_s_standard",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37_pts/wpn_fps_shot_m37_s_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_shot_m37_m_standard = {
-		type = "magazine",
-		name_id = "bm_wp_m37_m_standard",
-		a_obj = "a_m",
-		unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37_pts/wpn_fps_shot_m37_m_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_shot_m37_body_standard = {
-		type = "lower_reciever",
-		name_id = "bm_wp_m37_body_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37_pts/wpn_fps_shot_m37_body_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_shot_m37_fg_standard = {
-		type = "foregrip",
-		name_id = "bm_wp_m37_fg_standard",
-		a_obj = "a_fg",
-		unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37_pts/wpn_fps_shot_m37_fg_standard",
-		supported = true,
-		stats = {value = 1},
-		animations = {
-			reload_exit = "reload_exit",
-			fire = "recoil",
-			fire_steelsight = "recoil"
+		custom_stats = {
+			muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
+			damage_near_mul = 999,
+			damage_far_mul = 999,
+			rays = 1,
+			armor_piercing_add = 1,
+			use_heavy_kick = true,
+			can_shoot_through_enemy = true,
+			can_shoot_through_shield = true,
+			can_shoot_through_wall = true
 		}
 	}
-	self.parts.wpn_fps_shot_m37_b_short.third_unit = "units/pd2_dlc_peta/weapons/wpn_third_shot_m37_pts/wpn_third_shot_m37_b_short"
-	self.parts.wpn_fps_shot_m37_b_standard.third_unit = "units/pd2_dlc_peta/weapons/wpn_third_shot_m37_pts/wpn_third_shot_m37_b_standard"
-	self.parts.wpn_fps_shot_m37_s_short.third_unit = "units/pd2_dlc_peta/weapons/wpn_third_shot_m37_pts/wpn_third_shot_m37_s_short"
-	self.parts.wpn_fps_shot_m37_s_standard.third_unit = "units/pd2_dlc_peta/weapons/wpn_third_shot_m37_pts/wpn_third_shot_m37_s_standard"
-	self.parts.wpn_fps_shot_m37_m_standard.third_unit = "units/pd2_dlc_peta/weapons/wpn_third_shot_m37_pts/wpn_third_shot_m37_m_standard"
-	self.parts.wpn_fps_shot_m37_body_standard.third_unit = "units/pd2_dlc_peta/weapons/wpn_third_shot_m37_pts/wpn_third_shot_m37_body_standard"
-	self.parts.wpn_fps_shot_m37_fg_standard.third_unit = "units/pd2_dlc_peta/weapons/wpn_third_shot_m37_pts/wpn_third_shot_m37_fg_standard"
-	self.wpn_fps_shot_m37 = {}
-	self.wpn_fps_shot_m37.unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37/wpn_fps_shot_m37"
-	self.wpn_fps_shot_m37.animations = {
-		fire = "recoil",
-		reload_exit = "reload_exit",
-		fire_steelsight = "recoil"
-	}
-	self.wpn_fps_shot_m37.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"vertical_grip"
-	}
-	self.wpn_fps_shot_m37.override = {
-		wpn_fps_upg_a_slug = {
-			supported = true,
-			name_id = "bm_wp_upg_a_slug",
-			desc_id = "bm_wp_upg_a_slug_desc",
-			stats = {
-				value = 10,
-				total_ammo_mod = -33,
-				damage = 30,
-				recoil = -2,
-				spread = 8,
-				spread_multi = {1, 1},	
-				moving_spread = 0,
-				suppression = -1,
-				concealment = -5
-			},
-			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
-				damage_near_mul = 999,
-				damage_far_mul = 999,
-				rays = 1,
-				armor_piercing_add = 1,
-				use_heavy_kick = true,
-				can_shoot_through_enemy = true,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true
-			}
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom = {
+		supported = true,
+		stats = {
+			value = 9,
+			total_ammo_mod = -33,
+			damage = 30,
+			spread = -1
 		},
-		wpn_fps_upg_a_custom = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 30,
-				spread = -1
-			},
-			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
-				rays = 6,
-				use_heavy_kick = true
-			}
-		},	
-		wpn_fps_upg_a_custom_free = {
-			supported = true,
-			stats = {
-				value = 9,
-				total_ammo_mod = -33,
-				damage = 30,
-				spread = -1
-			},
-			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
-				rays = 6,
-				use_heavy_kick = true
-			}
-		},			
-		wpn_fps_upg_a_explosive = {
-			supported = true,
-			stats = {
-				value = 10,
-				total_ammo_mod = -50,
-				recoil = -5,
-				spread_multi = {1, 1},	
-				concealment = -7,
-				damage = 60
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				block_b_storm = true,
-				use_heavy_kick = true,
-				rays = 1,
-				damage_near_mul = 999,
-				damage_far_mul = 999,
-				bullet_class = "InstantExplosiveBulletBase"
-			}
+		custom_stats = {
+			damage_near_mul = 1,
+			damage_far_mul = 1,
+			rays = 6,
+			use_heavy_kick = true
+		}
+	}
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free = {
+		supported = true,
+		stats = {
+			value = 9,
+			total_ammo_mod = -33,
+			damage = 30,
+			spread = -1
 		},
-		wpn_fps_upg_fl_ass_smg_sho_peqbox = {parent = "foregrip", a_obj = "a_fl"},
-		wpn_fps_upg_fl_ass_smg_sho_surefire = {parent = "foregrip", a_obj = "a_fl"},
-		wpn_fps_upg_fl_ass_peq15 = {parent = "foregrip", a_obj = "a_fl"},
-		wpn_fps_upg_fl_ass_laser = {parent = "foregrip", a_obj = "a_fl"},
-		wpn_fps_upg_fl_ass_utg = {parent = "foregrip", a_obj = "a_fl"}
+		custom_stats = {
+			damage_near_mul = 1,
+			damage_far_mul = 1,
+			rays = 6,
+			use_heavy_kick = true
+		}
+	}		
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = {
+		supported = true,
+		stats = {
+			value = 10,
+			total_ammo_mod = -50,
+			recoil = -5,
+			spread_multi = {1, 1},	
+			concealment = -7,
+			damage = 60
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			block_b_storm = true,
+			use_heavy_kick = true,
+			rays = 1,
+			damage_near_mul = 999,
+			damage_far_mul = 999,
+			bullet_class = "InstantExplosiveBulletBase"
+		}
 	}
-	self.wpn_fps_shot_m37.default_blueprint = {
-		"wpn_fps_shot_m37_b_standard",
-		"wpn_fps_shot_m37_s_standard",
-		"wpn_fps_shot_m37_m_standard",
-		"wpn_fps_shot_m37_body_standard",
-		"wpn_fps_shot_m37_fg_standard"
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing = {
+		supported = true,
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			rays = 6,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9655,
+			ammo_pickup_max_mul = 0.9543,			
+			bullet_class = "BleedBulletBase",
+			dot_data = { 
+				type = "bleed",
+				custom_data = {
+					dot_damage = "3",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}
 	}
-	self.wpn_fps_shot_m37.uses_parts = {
-		"wpn_fps_shot_m37_b_short",
-		"wpn_fps_shot_m37_b_standard",
-		"wpn_fps_shot_m37_s_short",
-		"wpn_fps_shot_m37_s_standard",
-		"wpn_fps_shot_m37_m_standard",
-		"wpn_fps_shot_m37_body_standard",
-		"wpn_fps_shot_m37_fg_standard",
-		"wpn_fps_upg_ns_shot_thick",
-		"wpn_fps_upg_ns_shot_shark",
-		"wpn_fps_upg_shot_ns_king",
-		"wpn_fps_upg_ns_sho_salvo_large",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_ns_duck"
-	}
-	self.wpn_fps_shot_m37_npc = deep_clone(self.wpn_fps_shot_m37)
-	self.wpn_fps_shot_m37_npc.unit = "units/pd2_dlc_peta/weapons/wpn_fps_shot_m37/wpn_fps_shot_m37_npc"
-end
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath = {
+		supported = true,
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			bullet_class = "FlameBulletBase",
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9655,
+			ammo_pickup_max_mul = 0.9543,				
+			can_shoot_through_shield = false,
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+			fire_dot_data = {
+				dot_damage = "3",
+				dot_trigger_max_distance = "99999999",
+				dot_trigger_chance = "50",
+				dot_length = "3.1",
+				dot_tick_period = "0.5"
+			}
+		}
+	}			
+	
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_specter")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_specter")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_aimpoint")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_aimpoint")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_docter")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_docter")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_eotech")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_eotech")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_t1micro")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_t1micro")		
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_cmore")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_cmore")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_aimpoint_2")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_aimpoint_2")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_cs")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_cs")		
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_rx30")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_rx30")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_rx01")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_rx01")		
+	
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_reflex")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_reflex")		
+	
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_eotech_xps")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_eotech_xps")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_sig")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_sig")	
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_uh")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_uh")		
+
+	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_fc1")
+	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_fc1")			
+	
+	self.wpn_fps_shot_m37_npc.uses_parts = deep_clone(self.wpn_fps_shot_m37.uses_parts)
+
+end)
 
 function WeaponFactoryTweakData:_init_china()
 	self.parts.wpn_fps_gre_china_b_standard = {
@@ -13476,156 +13832,49 @@ function WeaponFactoryTweakData:_init_x_packrat()
 	self.wpn_fps_x_packrat_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_x_packrat/wpn_fps_x_packrat_npc"
 end
 
-function WeaponFactoryTweakData:_init_rota()
-	self.parts.wpn_fps_sho_rota_b_long = {
-		type = "barrel",
-		name_id = "bm_wp_rota_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_b_long",
-		supported = true,
-		stats = {value = 1}
+--Goliath 12G
+Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(self)
+
+	--Short Barrel
+	self.parts.wpn_fps_sho_rota_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_sho_rota_b_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_rota_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_b_short",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -1,
-			concealment = 1
-		},
-		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1
-		},			
-		dlc = "rota",
-		texture_bundle_folder = "rota"
+	self.parts.wpn_fps_sho_rota_b_short.supported = true
+	self.parts.wpn_fps_sho_rota_b_short.stats = {
+		value = 1,
+		spread = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_sho_rota_b_silencer = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_rota_b_silenced",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_b_silencer",
-		supported = true,
-		stats = {
-			value = 2,
-			suppression = 11,
-			alert_size = -1,
-			recoil = -1,
-			spread = 1,
-			concealment = -1
-		},
-		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_c"
-		},
-		forbids = {
-			"wpn_fps_upg_shot_ns_king",
-			"wpn_fps_upg_ns_shot_thick",
-			"wpn_fps_upg_ns_shot_shark",
-			"wpn_fps_upg_ns_sho_salvo_large",
-			"wpn_fps_upg_a_dragons_breath",
-			"wpn_fps_upg_ns_duck"
-		},
-		dlc = "rota",
-		texture_bundle_folder = "rota"
+	self.parts.wpn_fps_sho_rota_b_short.custom_stats = {
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
-	self.parts.wpn_fps_sho_rota_body_lower = {
-		type = "lower_receiver",
-		name_id = "bm_wp_rota_b_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_body_lower",
-		supported = true,
-		stats = {value = 1}
+	
+	--Silenced Barrel
+	self.parts.wpn_fps_sho_rota_b_silencer.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_sho_rota_body_upper = {
-		type = "upper_reciever",
-		name_id = "bm_wp_rota_b_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_body_upper",
-		supported = true,
-		stats = {value = 1}
+	self.parts.wpn_fps_sho_rota_b_silencer.supported = true
+	self.parts.wpn_fps_sho_rota_b_silencer.stats = {
+		value = 2,
+		suppression = 11,
+		alert_size = -1,
+		recoil = -1,
+		spread = 1,
+		concealment = -1
 	}
-	self.parts.wpn_fps_sho_rota_fg_standard = {
-		type = "foregrip",
-		name_id = "bm_wp_rota_b_standard",
-		a_obj = "a_fg",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_fg_standard",
-		supported = true,
-		stats = {value = 1}
+	self.parts.wpn_fps_sho_rota_b_silencer.custom_stats = {
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
-	self.parts.wpn_fps_sho_rota_g_standard = {
-		type = "grip",
-		name_id = "bm_wp_rota_b_standard",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_g_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_rota_m_standard = {
-		type = "magazine",
-		name_id = "bm_wp_rota_b_standard",
-		a_obj = "a_m",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_m_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_rota_mag_realese = {
-		type = "extra",
-		name_id = "bm_wp_rota_b_standard",
-		a_obj = "a_extra",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_mag_realese",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_rota_o_standard = {
-		type = "sight",
-		name_id = "bm_wp_hajk_o_sight",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_fps_sho_rota_o_standard",
-		supported = true,
-		stats = {value = 1},
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_sig"
-		}
-	}
-	self.parts.wpn_fps_sho_rota_b_long.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_b_long"
-	self.parts.wpn_fps_sho_rota_b_short.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_b_short"
-	self.parts.wpn_fps_sho_rota_b_silencer.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_b_silencer"
-	self.parts.wpn_fps_sho_rota_body_lower.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_body_lower"
-	self.parts.wpn_fps_sho_rota_body_upper.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_body_upper"
-	self.parts.wpn_fps_sho_rota_fg_standard.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_fg_standard"
-	self.parts.wpn_fps_sho_rota_g_standard.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_g_standard"
-	self.parts.wpn_fps_sho_rota_m_standard.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_m_standard"
-	self.parts.wpn_fps_sho_rota_mag_realese.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_mag_realese"
-	self.parts.wpn_fps_sho_rota_o_standard.third_unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota_pts/wpn_third_sho_rota_o_standard"
-	self.wpn_fps_sho_rota = {}
-	self.wpn_fps_sho_rota.unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota/wpn_fps_sho_rota"
-	self.wpn_fps_sho_rota.animations = {
-		fire = "recoil",
-		reload = "reload",
-		reload_not_empty = "reload",
-		fire_steelsight = "recoil"
-	}
+	self.parts.wpn_fps_sho_rota_b_silencer.perks = {"silencer"}
+	
 	self.wpn_fps_sho_rota.override = {
 		wpn_fps_upg_a_slug = {
 			name_id = "bm_wp_upg_a_slug",
@@ -13698,69 +13947,57 @@ function WeaponFactoryTweakData:_init_rota()
 				damage_far_mul = 999,	
 				bullet_class = "InstantExplosiveBulletBase"
 			}
-		}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "3",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -15
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9607,
+				ammo_pickup_max_mul = 0.9486,										
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "3",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}			
 	}
-	self.wpn_fps_sho_rota.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"vertical_grip"
-	}
-	self.wpn_fps_sho_rota.default_blueprint = {
-		"wpn_fps_sho_rota_b_long",
-		"wpn_fps_sho_rota_body_lower",
-		"wpn_fps_sho_rota_body_upper",
-		"wpn_fps_sho_rota_fg_standard",
-		"wpn_fps_sho_rota_g_standard",
-		"wpn_fps_sho_rota_m_standard",
-		"wpn_fps_sho_rota_mag_realese",
-		"wpn_fps_sho_rota_o_standard",
-		"wpn_fps_smg_hajk_vg_moe"
-	}
-	self.wpn_fps_sho_rota.uses_parts = {
-		"wpn_fps_sho_rota_b_long",
-		"wpn_fps_sho_rota_b_short",
-		"wpn_fps_sho_rota_b_silencer",
-		"wpn_fps_sho_rota_body_lower",
-		"wpn_fps_sho_rota_body_upper",
-		"wpn_fps_sho_rota_fg_standard",
-		"wpn_fps_sho_rota_g_standard",
-		"wpn_fps_sho_rota_m_standard",
-		"wpn_fps_sho_rota_mag_realese",
-		"wpn_fps_sho_rota_o_standard",
-		"wpn_fps_smg_hajk_vg_moe",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_ns_shot_thick",
-		"wpn_fps_upg_ns_shot_shark",
-		"wpn_fps_upg_shot_ns_king",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_ns_sho_salvo_large",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_ns_duck",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1"			
-	}
-	self.wpn_fps_sho_rota_npc = deep_clone(self.wpn_fps_sho_rota)
-	self.wpn_fps_sho_rota_npc.unit = "units/pd2_dlc_rota/weapons/wpn_fps_sho_rota/wpn_fps_sho_rota_npc"
-end
+	
+end)
 
 --Spec Ops Pack
 Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
@@ -15408,332 +15645,39 @@ function WeaponFactoryTweakData:_init_coal()
 	self.wpn_fps_smg_coal_npc.unit = "units/pd2_dlc_grv/weapons/wpn_fps_smg_coal/wpn_fps_smg_coal_npc"
 end
 
-function WeaponFactoryTweakData:_init_varmods()
-	self.parts.wpn_fps_upg_o_xpsg33_magnifier = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "gadget",
-		name_id = "bm_wpn_fps_upg_o_xpsg33_magnifier",
-		depends_on = "sight",
-		parent = "sight",
-		a_obj = "a_magnifier",
-		sub_type = "second_sight",
-		unit = "units/pd2_dlc_flip/weapons/wpn_fps_upg_o_xpsg33/wpn_fps_upg_o_xpsg33_magnifier",
-		supported = true,
-		stats = {
-			value = 1,
-			gadget_zoom = 9,
-			concealment = -1
-		},
-		texture_bundle_folder = "flip",
-		perks = {"gadget"},
-		stance_mod = {
-			wpn_fps_ass_m4 = {
-				translation = Vector3(0, 6, -0.58)
-			},
-			wpn_fps_ass_amcar = {
-				translation = Vector3(0, 6, -0.1)
-			},
-			wpn_fps_ass_m16 = {
-				translation = Vector3(0, 6, -0.12)
-			},
-			wpn_fps_smg_olympic = {
-				translation = Vector3(0, 6, -0.12)
-			},
-			wpn_fps_ass_74 = {
-				translation = Vector3(0, 6, -3.1)
-			},
-			wpn_fps_ass_akm = {
-				translation = Vector3(0, 6, -3.2)
-			},
-			wpn_fps_ass_akm_gold = {
-				translation = Vector3(0, 6, -3.2)
-			},
-			wpn_fps_shot_saiga = {
-				translation = Vector3(0, 6, -3)
-			},
-			wpn_fps_shot_r870 = {
-				translation = Vector3(0.01, 6, -3.3)
-			},
-			wpn_fps_shot_serbu = {
-				translation = Vector3(0, 6, -3.3)
-			},
-			wpn_fps_smg_akmsu = {
-				translation = Vector3(-0.028, 6, -3.35)
-			},
-			wpn_fps_ass_ak5 = {
-				translation = Vector3(0, 0, -3.5)
-			},
-			wpn_fps_ass_aug = {
-				translation = Vector3(0, 6, -2.8)
-			},
-			wpn_fps_ass_g36 = {
-				translation = Vector3(0, 6, -3)
-			},
-			wpn_fps_smg_p90 = {
-				translation = Vector3(0, 6, -2.97)
-			},
-			wpn_fps_ass_m14 = {
-				translation = Vector3(-0.04, 6, -3.87)
-			},
-			wpn_fps_smg_mp9 = {
-				translation = Vector3(0, 6, -3.47)
-			},
-			wpn_fps_smg_mp5 = {
-				translation = Vector3(0, 6, -3)
-			},
-			wpn_fps_smg_mac10 = {
-				translation = Vector3(0, -4, -3.1)
-			},
-			wpn_fps_ass_s552 = {
-				translation = Vector3(-0.08, 6, -2.1)
-			},
-			wpn_fps_smg_m45 = {
-				translation = Vector3(0, 6, -3.9)
-			},
-			wpn_fps_smg_mp7 = {
-				translation = Vector3(0, 6, -2.8)
-			},
-			wpn_fps_ass_scar = {
-				translation = Vector3(0, 6, -0.25)
-			},
-			wpn_fps_pis_rage = {
-				translation = Vector3(-0.05, -4, -4.65)
-			},
-			wpn_fps_pis_shatters_fury = {
-				translation = Vector3(-0.05, -4, -4.65)
-			},			
-			wpn_fps_pis_deagle = {
-				translation = Vector3(0, -9, -4.25),
-				rotation = Rotation(0, -0.5, 0)
-			},
-			wpn_fps_snp_m95 = {
-				translation = Vector3(0, 10, -3.8)
-			},
-			wpn_fps_snp_msr = {
-				translation = Vector3(0, -1, -3.55)
-			},
-			wpn_fps_snp_r93 = {
-				translation = Vector3(-0.022, -1, -3.782)
-			},
-			wpn_fps_ass_fal = {
-				translation = Vector3(0, 10, -3.5)
-			},
-			wpn_fps_sho_ben = {
-				translation = Vector3(0, 6, -3.2)
-			},
-			wpn_fps_sho_striker = {
-				translation = Vector3(0, 6, -2.8)
-			},
-			wpn_fps_sho_ksg = {
-				translation = Vector3(0, 6, -1.3)
-			},
-			wpn_fps_smg_scorpion = {
-				translation = Vector3(0, -4, -5.2)
-			},
-			wpn_fps_smg_tec9 = {
-				translation = Vector3(0, -2, -5),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_smg_uzi = {
-				translation = Vector3(0, -2, -5.1)
-			},
-			wpn_fps_pis_judge = {
-				translation = Vector3(-0.02, -4, -5.406)
-			},
-			wpn_fps_ass_g3 = {
-				translation = Vector3(0.025, -2, -3.42)
-			},
-			wpn_fps_ass_galil = {
-				translation = Vector3(-0.01, 1, -3.25)
-			},
-			wpn_fps_ass_famas = {
-				translation = Vector3(0, 13, -6.2)
-			},
-			wpn_fps_sho_spas12 = {
-				translation = Vector3(-0.2, 6, -3.9)
-			},
-			wpn_fps_smg_sterling = {
-				translation = Vector3(0, -8, -3.61)
-			},
-			wpn_fps_snp_mosin = {
-				translation = Vector3(0, -22, -4.3)
-			},
-			wpn_fps_smg_thompson = {
-				translation = Vector3(0, -18, -4.2)
-			},
-			wpn_fps_ass_l85a2 = {
-				translation = Vector3(0, 12, 1.85)
-			},
-			wpn_fps_ass_vhs = {
-				translation = Vector3(-0.01, 3, -1.205)
-			},
-			wpn_fps_rpg7 = {
-				translation = Vector3(0, 11, 0.04),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_sho_aa12 = {
-				translation = Vector3(-0.01, 6, 0.07),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_gre_m32 = {
-				translation = Vector3(0, 11, -3.5),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_smg_polymer = {
-				translation = Vector3(0, 8, -0.65),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_snp_wa2000 = {
-				translation = Vector3(0, -4, 0.75),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_snp_model70 = {
-				translation = Vector3(0, -4, -4.05),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_snp_r700 = {
-				translation = Vector3(0, -4, -4.05),
-				rotation = Rotation(0, 0, 0)
-			},				
-			wpn_fps_shot_m37 = {
-				translation = Vector3(0, -4, -4.05),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_smg_sr2 = {
-				translation = Vector3(0, 11, -4.6),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_ass_tecci = {
-				translation = Vector3(-0.01, 11, -1.7),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_smg_hajk = {
-				translation = Vector3(0, 11, -0.5),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_snp_desertfox = {
-				translation = Vector3(0, -6, -3.9),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_smg_schakal = {
-				translation = Vector3(0, 6, -2.8),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_sho_rota = {
-				translation = Vector3(0, 6, -0.4),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_gre_arbiter = {
-				translation = Vector3(0, 6, -0.4),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_ass_contraband = {
-				translation = Vector3(-0.01, 11, -1.7),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_snp_tti = {
-				translation = Vector3(0, 11, -0.1),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_snp_siltstone = {
-				translation = Vector3(0, 11, -4.04),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_ass_flint = {
-				translation = Vector3(0, 11, -2.65),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_shot_ak12_76 = {
-				translation = Vector3(0, 11, -2.65),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_smg_coal = {
-				translation = Vector3(0, 11, -4),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_ass_ching = {
-				translation = Vector3(0, 11, -2.8),
-				rotation = Rotation(0, 0, 0)					
-			},
-			wpn_fps_ass_sub2000 = {
-				translation = Vector3(0, -11, 0)
-			},
-			wpn_fps_sho_basset = {
-				translation = Vector3(0, 11, -0.68),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_ass_corgi = {
-				translation = Vector3(0, 0, -2.3),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_smg_shepheard = {
-				translation = Vector3(0, 5, -0.45),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_ass_komodo = {
-				translation = Vector3(0, 15, 0),
-				rotation = Rotation(0, 0, 0)
-			},
-			wpn_fps_lmg_m249 = {
-				translation = Vector3(0, 1, -3.4)
-			}				
-		},
-		visibility = {{
-			condition = function (self, part, npc)
-				return _G.IS_VR and not npc
-			end,
-			objects = {
-				g_vr_lens = true,
-				g_vr_phong = true,
-				g_glass = false,
-				g_screen = true,
-				g_vr_g33 = true
-			}
-		}},
-		camera = {
-			a_camera = "a_camera",
-			material = "screen",
-			fov = 13,
-			a_screen = "g_screen",
-			channel = "macrodetail_diffuse_texture"
-		}
+--Var Mods
+Hooks:PostHook(WeaponFactoryTweakData, "_init_varmods", "resmod_varmods", function(self)
+
+	--Riktpunkt Magnifier
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_upg_o_45rds_v2 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "gadget",
-		name_id = "bm_wpn_fps_upg_o_45rds_v2",
-		depends_on = "sight",
-		a_obj = "a_o",
-		sub_type = "second_sight",
-		unit = "units/pd2_dlc_flip/weapons/wpn_fps_upg_o_45rds_v2/wpn_fps_upg_o_45rds_v2",
-		supported = true,
-		stats = {
-			value = 1,
-			gadget_zoom = 2,
-			concealment = -1
-		},
-		texture_bundle_folder = "flip",
-		perks = {"gadget"},
-		stance_mod = deep_clone(self.parts.wpn_fps_upg_o_45rds.stance_mod),
-		texture_switch = {
-			material = "gfx_reddot1",
-			channel = "diffuse_texture"
-		},
-		material_parameters = deep_clone(self.parts.wpn_fps_upg_o_specter.material_parameters)
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.supported = true
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.stats = {
+		value = 1,
+		gadget_zoom = 9
 	}
-	self.parts.wpn_fps_upg_o_xpsg33_magnifier.third_unit = "units/pd2_dlc_flip/weapons/wpn_fps_upg_o_xpsg33/wpn_third_upg_o_xpsg33_magnifier"
-	self.parts.wpn_fps_upg_o_45rds_v2.third_unit = "units/pd2_dlc_flip/weapons/wpn_fps_upg_o_45rds_v2/wpn_third_upg_o_45rds_v2"
-end
+	self.parts.wpn_fps_upg_o_xpsg33_magnifier.perks = {"gadget"}
+	
+	--Angled Sight v2
+	self.parts.wpn_fps_upg_o_45rds_v2.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_o_45rds_v2.supported = true
+	self.parts.wpn_fps_upg_o_45rds_v2.stats = {
+		value = 1,
+		gadget_zoom = 2
+	}
+	self.parts.wpn_fps_upg_o_45rds_v2.perks = {"gadget"}
+	self.parts.wpn_fps_upg_o_45rds_v2.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_45rds.stance_mod)
+
+end)
 
 function WeaponFactoryTweakData:_init_lemming()
 	self.parts.wpn_fps_pis_lemming_b_standard = {
@@ -17445,426 +17389,161 @@ function WeaponFactoryTweakData:_init_x_shrew()
 	self.wpn_fps_pis_x_shrew_npc.unit = "units/pd2_dlc_myh/weapons/wpn_fps_pis_x_shrew/wpn_fps_pis_x_shrew_npc"
 end
 
-function WeaponFactoryTweakData:_init_basset()
-	self.parts.wpn_fps_sho_basset_b_short = {
-		a_obj = "a_b",
-		type = "barrel",
-		name_id = "bm_wp_basset_b_standard",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_b_short",
-		supported = true,
-		stats = {value = 1}
+--Grimm 12g
+Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function(self)
+	
+	--Little Brother Foregrip
+	self.parts.wpn_fps_sho_basset_fg_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_sho_basset_b_standard = {
-		a_obj = "a_b",
-		type = "barrel",
-		name_id = "bm_wp_basset_b_standard",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_b_standard",
-		supported = true,
-		stats = {value = 1}
+	self.parts.wpn_fps_sho_basset_fg_short.supported = true
+	self.parts.wpn_fps_sho_basset_fg_short.stats = {
+		value = 1,
+		recoil = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_sho_basset_body_standard = {
-		a_obj = "a_body",
-		type = "lower_receiver",
-		name_id = "bm_wp_basset_b_standard",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_body_standard",
-		supported = true,
-		stats = {value = 1},
-		forbids = {"wpn_fps_addon_ris"}
+	
+	--Big Brother Magazine
+	self.parts.wpn_fps_sho_basset_m_extended.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_sho_basset_bolt = {
-		a_obj = "a_dh",
-		type = "drag_handle",
-		name_id = "bm_wp_basset_b_standard",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_bolt",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_basset_fg_short = {
-		a_obj = "a_fg",
-		type = "foregrip",
-		name_id = "bm_wp_basset_fg_short",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_fg_short",
-		texture_bundle_folder = "dsg",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = -1,
-			concealment = 1
-		},
-		override = {
-			wpn_fps_sho_basset_b_standard = {
-				third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_b_short",
-				unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_b_short"
-			},
-			wpn_fps_sho_basset_o_standard = {
-				third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_o_short",
-				unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_o_short"
-			}
-		}
-	}
-	self.parts.wpn_fps_sho_basset_fg_standard = {
-		a_obj = "a_fg",
-		type = "foregrip",
-		name_id = "bm_wp_basset_b_standard",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_fg_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_basset_g_standard = {
-		a_obj = "a_g",
-		type = "grip",
-		name_id = "bm_wp_basset_b_standard",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_g_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_basset_m_extended = {
-		texture_bundle_folder = "dsg",
-		type = "magazine",
-		name_id = "bm_wp_basset_m_extended",
-		a_obj = "a_m",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_m_extended",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		bullet_objects = {
-			amount = 1,
-			prefix = "g_bullet_"
-		},
-		supported = true,
-		stats = {value = 1, extra_ammo = 2, reload = -1, concealment = -1}
-	}
-	self.parts.wpn_fps_sho_basset_o_standard = {
-		a_obj = "a_o",
-		type = "sight",
-		name_id = "bm_wp_basset_o_standard",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_o_standard",
-		supported = true,
-		stats = {value = 1},
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_sig"
-		}
-	}
-	self.parts.wpn_fps_sho_basset_o_short = {
-		a_obj = "a_o",
-		type = "sight",
-		name_id = "bm_wp_basset_o_standard",
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset_pts/wpn_fps_sho_basset_o_short",
-		supported = true,
-		stats = {value = 1},
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_sig"
-		}
-	}
-	self.parts.wpn_fps_sho_basset_b_short.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_b_short"
-	self.parts.wpn_fps_sho_basset_b_standard.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_b_standard"
-	self.parts.wpn_fps_sho_basset_body_standard.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_body_standard"
-	self.parts.wpn_fps_sho_basset_bolt.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_bolt"
-	self.parts.wpn_fps_sho_basset_fg_short.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_fg_short"
-	self.parts.wpn_fps_sho_basset_fg_standard.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_fg_standard"
-	self.parts.wpn_fps_sho_basset_g_standard.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_g_standard"
-	self.parts.wpn_fps_sho_basset_m_extended.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_m_extended"
-	self.parts.wpn_fps_sho_basset_o_standard.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_o_standard"
-	self.parts.wpn_fps_sho_basset_o_short.third_unit = "units/pd2_dlc_dsg/weapons/wpn_third_sho_basset_pts/wpn_third_sho_basset_o_short"
-	self.wpn_fps_sho_basset = {
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset/wpn_fps_sho_basset",
-		animations = {
-			reload = "reload",
-			fire = "recoil",
-			fire_steelsight = "recoil",
-			reload_not_empty = "reload_not_empty"
-		},
-		override = {
-			wpn_fps_upg_a_slug = {
-				name_id = "bm_wp_upg_a_slug",
-				desc_id = "bm_wp_upg_a_slug_desc",
-				supported = true,
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -25,
-					damage = 15,	
-					recoil = -2,
-					spread = 8,
-					spread_multi = {1, 1},	
-					suppression = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-					damage_near_mul = 999,
-					damage_far_mul = 999,
-					rays = 1,
-					armor_piercing_add = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -25,
-					damage = 15,	
-					spread = -1
-				},
-				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
-					rays = 6
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -33,
-					damage = 15,	
-					spread = -1
-				},
-				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
-					rays = 6
-				}
-			},					
-			wpn_fps_upg_a_explosive = {
-				supported = true,
-				stats = {
-					value = 10,
-					total_ammo_mod = -50,
-					recoil = -5,
-					spread_multi = {1, 1},	
-					damage = 30
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 1,
-					damage_near_mul = 999,
-					damage_far_mul = 999,
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_upg_saiga_m_20rnd = {
-				custom_stats = {is_drum_aa12 = false}
-			}				
-		},
-		default_blueprint = {
-			"wpn_fps_sho_basset_b_standard",
-			"wpn_fps_sho_basset_body_standard",
-			"wpn_fps_sho_basset_bolt",
-			"wpn_fps_sho_basset_fg_standard",
-			"wpn_fps_sho_basset_g_standard",
-			"wpn_fps_shot_saiga_m_5rnd",
-			"wpn_fps_sho_basset_o_standard"
-		},
-		uses_parts = {
-			"wpn_fps_sho_basset_b_short",
-			"wpn_fps_sho_basset_b_standard",
-			"wpn_fps_sho_basset_body_standard",
-			"wpn_fps_sho_basset_bolt",
-			"wpn_fps_sho_basset_fg_short",
-			"wpn_fps_sho_basset_fg_standard",
-			"wpn_fps_sho_basset_g_standard",
-			"wpn_fps_sho_basset_m_extended",
-			"wpn_fps_shot_saiga_m_5rnd",
-			"wpn_fps_sho_basset_o_standard",
-			"wpn_fps_sho_basset_o_short",
-			"wpn_fps_upg_o_specter",
-			"wpn_fps_upg_o_aimpoint",
-			"wpn_fps_upg_o_docter",
-			"wpn_fps_upg_o_eotech",
-			"wpn_fps_upg_o_t1micro",
-			"wpn_fps_upg_o_cmore",
-			"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-			"wpn_fps_upg_fl_ass_smg_sho_surefire",
-			"wpn_fps_upg_o_aimpoint_2",
-			"wpn_fps_upg_o_acog",
-			"wpn_fps_upg_ns_shot_thick",
-			"wpn_fps_upg_ns_shot_shark",
-			"wpn_fps_upg_i_singlefire",
-			"wpn_fps_upg_i_autofire",
-			"wpn_fps_upg_shot_ns_king",
-			"wpn_fps_upg_fl_ass_peq15",
-			"wpn_fps_upg_fl_ass_laser",
-			"wpn_fps_upg_o_eotech_xps",
-			"wpn_fps_upg_o_reflex",
-			"wpn_fps_upg_o_rx01",
-			"wpn_fps_upg_o_rx30",
-			"wpn_fps_upg_o_cs",
-			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_upg_ns_sho_salvo_large",
-			"wpn_fps_upg_o_spot",
-			"wpn_fps_upg_ns_duck",
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_sig",
-			"wpn_fps_upg_o_bmg",
-			"wpn_fps_upg_o_uh",
-			"wpn_fps_upg_o_fc1",
-			--Custom stuff--
-			"wpn_upg_saiga_m_20rnd",
-			"wpn_fps_upg_i_slower_rof",
-			"wpn_fps_upg_i_faster_rof"	
-		}
-	}
-	self.wpn_fps_sho_basset_npc = deep_clone(self.wpn_fps_sho_basset)
-	self.wpn_fps_sho_basset_npc.unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset/wpn_fps_sho_basset_npc"
-end
+	self.parts.wpn_fps_sho_basset_m_extended.supported = true
+	self.parts.wpn_fps_sho_basset_m_extended.stats = {value = 1, extra_ammo = 2, reload = -1, concealment = -1}
 
-function WeaponFactoryTweakData:_init_x_basset()
-	self.wpn_fps_sho_x_basset = {
-		unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_x_basset/wpn_fps_sho_x_basset",
-		optional_types = {
-			"barrel_ext",
-			"gadget"
-		},
-		animations = {
-			fire_steelsight = "recoil",
-			fire = "recoil"
-		},
-		override = {
-			wpn_fps_upg_a_slug = {
-				name_id = "bm_wp_upg_a_slug",
-				desc_id = "bm_wp_upg_a_slug_desc",
-				supported = true,
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -33,
-					damage = 15,	
-					recoil = -2,
-					spread = 8,
-					spread_multi = {1, 1},	
-					suppression = -1,
-					moving_spread = 0
-				},
-				custom_stats = {
-					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
-					damage_near_mul = 999,
-					damage_far_mul = 999,
-					rays = 1,
-					armor_piercing_add = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true
-				}
+	self.wpn_fps_sho_basset.override = {
+		wpn_fps_upg_a_slug = {
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
+			supported = true,
+			stats = {
+				value = 10,
+				concealment = -5,
+				total_ammo_mod = -25,
+				damage = 15,	
+				recoil = -2,
+				spread = 8,
+				spread_multi = {1, 1},	
+				suppression = -1,
+				moving_spread = 0
 			},
-			wpn_fps_upg_a_custom = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -33,
-					damage = 15,	
-					spread = -1
-				},
-				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
-					rays = 6
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -33,
-					damage = 15,	
-					spread = -1
-				},
-				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
-					rays = 6
-				}
-			},					
-			wpn_fps_upg_a_explosive = {
-				supported = true,
-				stats = {
-					value = 10,
-					total_ammo_mod = -50,
-					recoil = -5,
-					spread_multi = {1, 1},	
-					damage = 30
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 1,
-					damage_near_mul = 999,
-					damage_far_mul = 999,
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_sho_basset_m_extended = {
-				supported = true,
-				stats = {
-					extra_ammo = 4,
-					value = 1,
-					reload = -1,
-					concealment = -1
-				}
-			},
-			wpn_upg_saiga_m_20rnd = {
-				supported = true,
-				stats = {value = 1, extra_ammo = 28, reload = -3, concealment = -3},
-				custom_stats = {is_drum_aa12 = false}
-			}	
+			custom_stats = {
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",														
+				damage_near_mul = 999,
+				damage_far_mul = 999,
+				rays = 1,
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
+			}
 		},
-		default_blueprint = {
-			"wpn_fps_sho_basset_b_standard",
-			"wpn_fps_sho_basset_body_standard",
-			"wpn_fps_sho_basset_bolt",
-			"wpn_fps_sho_basset_fg_standard",
-			"wpn_fps_sho_basset_g_standard",
-			"wpn_fps_shot_saiga_m_5rnd",
-			"wpn_fps_sho_basset_o_standard"
+		wpn_fps_upg_a_custom = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -25,
+				damage = 15,	
+				spread = -1
+			},
+			custom_stats = {
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				rays = 6
+			}
 		},
-		uses_parts = {
-			"wpn_fps_sho_basset_b_short",
-			"wpn_fps_sho_basset_b_standard",
-			"wpn_fps_sho_basset_body_standard",
-			"wpn_fps_sho_basset_bolt",
-			"wpn_fps_sho_basset_fg_short",
-			"wpn_fps_sho_basset_fg_standard",
-			"wpn_fps_sho_basset_g_standard",
-			"wpn_fps_sho_basset_m_extended",
-			"wpn_fps_shot_saiga_m_5rnd",
-			"wpn_fps_sho_basset_o_standard",
-			"wpn_fps_sho_basset_o_short",
-			"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-			"wpn_fps_upg_fl_ass_smg_sho_surefire",
-			"wpn_fps_upg_ns_shot_thick",
-			"wpn_fps_upg_ns_shot_shark",
-			"wpn_fps_upg_i_singlefire",
-			"wpn_fps_upg_i_autofire",
-			"wpn_fps_upg_shot_ns_king",
-			"wpn_fps_upg_fl_ass_peq15",
-			"wpn_fps_upg_fl_ass_laser",
-			"wpn_fps_upg_fl_ass_utg",
-			"wpn_fps_upg_ns_sho_salvo_large",
-			"wpn_fps_upg_ns_duck",
-			--Custom stuff--
-			"wpn_upg_saiga_m_20rnd",
-			"wpn_fps_upg_i_slower_rof",
-			"wpn_fps_upg_i_faster_rof"	
+		wpn_fps_upg_a_custom_free = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -33,
+				damage = 15,	
+				spread = -1
+			},
+			custom_stats = {
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				rays = 6
+			}
+		},					
+		wpn_fps_upg_a_explosive = {
+			supported = true,
+			stats = {
+				value = 10,
+				total_ammo_mod = -50,
+				recoil = -5,
+				spread_multi = {1, 1},	
+				damage = 30
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
+				bullet_class = "InstantExplosiveBulletBase"
+			}
+		},
+		wpn_fps_upg_a_piercing = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -6
+			},
+			custom_stats = {
+				rays = 6,
+				damage_near_mul = 1,
+				damage_far_mul = 1,
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9819,
+				ammo_pickup_max_mul = 0.9764,					
+				bullet_class = "BleedBulletBase",
+				dot_data = { 
+					type = "bleed",
+					custom_data = {
+						dot_damage = "1.6",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			supported = true,
+			stats = {
+				value = 9,
+				damage = -6
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				bullet_class = "FlameBulletBase",
+				armor_piercing_add = 1,
+				ammo_pickup_min_mul = 0.9819,
+				ammo_pickup_max_mul = 0.9764,										
+				can_shoot_through_shield = false,
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+				fire_dot_data = {
+					dot_damage = "1.6",
+					dot_trigger_max_distance = "99999999",
+					dot_trigger_chance = "50",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}		
 		}
 	}
-	self.wpn_fps_sho_x_basset_npc = deep_clone(self.wpn_fps_sho_x_basset)
-	self.wpn_fps_sho_x_basset_npc.unit = "units/pd2_dlc_dsg/weapons/wpn_fps_sho_x_basset/wpn_fps_sho_x_basset_npc"
-end
+	
+	table.insert(self.wpn_fps_sho_basset.uses_parts, "wpn_upg_saiga_m_20rnd")
+	table.insert(self.wpn_fps_sho_basset_npc.uses_parts, "wpn_upg_saiga_m_20rnd")	
+
+	self.wpn_fps_sho_basset_npc.uses_parts = deep_clone(self.wpn_fps_sho_basset.uses_parts)
+
+end)
 
 function WeaponFactoryTweakData:_init_icc()
 	self.parts.wpn_fps_smg_p90_body_boxy = {
@@ -24408,6 +24087,53 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_piercing = {
+		supported = true,
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			rays = 6,
+			damage_near_mul = 1,
+			damage_far_mul = 1,
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9655,
+			ammo_pickup_max_mul = 0.9543,			
+			bullet_class = "BleedBulletBase",
+			dot_data = { 
+				type = "bleed",
+				custom_data = {
+					dot_damage = "3",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}
+	}
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath = {
+		supported = true,
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			bullet_class = "FlameBulletBase",
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9655,
+			ammo_pickup_max_mul = 0.9543,				
+			can_shoot_through_shield = false,
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+			fire_dot_data = {
+				dot_damage = "3",
+				dot_trigger_max_distance = "99999999",
+				dot_trigger_chance = "50",
+				dot_length = "3.1",
+				dot_tick_period = "0.5"
+			}
+		}
+	}		
 
 end)
 					

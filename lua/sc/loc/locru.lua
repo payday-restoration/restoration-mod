@@ -714,6 +714,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_enforcer_armor"] = "Джаггернаут",
 		["st_menu_enforcer_ammo"] = "Поддержка",
 		["st_menu_technician_auto"] = "Боевой инженер",
+		["st_menu_technician_breaching"] = "Breacher",
 		["st_menu_technician_sentry"] = "Крепость",
 		["hud_instruct_mask_on"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
 		["hud_instruct_mask_on_alpha"] = "Нажмите $BTN_USE_ITEM чтобы надеть маску",
@@ -1081,6 +1082,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 
 			--Kickstarter
+			["menu_kick_starter_beta_sc"] = "Kick Starter",
 			["menu_kick_starter_beta_desc_sc"] = "БАЗОВЫЙ: ##$basic##\nВаши дрели и пилы получают ##30%## шанс автоматически починиться при поломке.\n\nПИКОВЫЙ: ##$pro##\nВы получаете возможность чинить дрели и пилы ударом оружия ближнего боя. У вас есть ##1## попытка сделать это при каждой поломке, с ##50%## шансом.",
 
 

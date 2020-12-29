@@ -715,6 +715,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_enforcer_armor"] = "Juggernaut",
 		["st_menu_enforcer_ammo"] = "Support",
 		["st_menu_technician_auto"] = "Combat Engineer",
+		["st_menu_technician_breaching"] = "Breacher",
 		["st_menu_technician_sentry"] = "Fortress",
 		["hud_instruct_mask_on"] = "Press $BTN_USE_ITEM To put on Mask",
 		["hud_instruct_mask_on_alpha"] = "Press $BTN_USE_ITEM to put on your mask",
@@ -1082,6 +1083,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 
 			--Kickstarter
+			["menu_kick_starter_beta_sc"] = "Kick Starter",
 			["menu_kick_starter_beta_desc_sc"] = "BASIC: ##$basic##\nYour drills and saws gain a ##30%## chance to automatically restart after breaking.\n\nACE: ##$pro##\nYou gain the ability to restart drills and saws by hitting them with a melee attack. You get ##1## chance for each time it breaks with a ##50%## success rate.",
 
 

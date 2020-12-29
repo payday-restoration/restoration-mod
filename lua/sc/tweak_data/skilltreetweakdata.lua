@@ -1050,7 +1050,7 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Kickstarter--
 			self.skills.kick_starter = {
-				["name_id"] = "menu_kick_starter_beta",
+				["name_id"] = "menu_kick_starter_beta_sc",
 				["desc_id"] = "menu_kick_starter_beta_desc_sc",
 				["icon_xy"] = {9, 8},
 				[1] = {

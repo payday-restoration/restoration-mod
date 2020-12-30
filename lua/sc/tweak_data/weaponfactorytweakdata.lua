@@ -25630,7 +25630,11 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				damage_near_mul = 999,
 				damage_far_mul = 999,
 				rays = 1,
-				heavy_AP = true
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true,
+				can_shoot_through_titan_shield = true
 			}
 		self.parts.wpn_fps_upg_ks23_barrel_short.supported = true
 		self.parts.wpn_fps_upg_ks23_barrel_short.stats = {

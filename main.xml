@@ -5,8 +5,6 @@
 		<class file="hooks.lua"/>
 		<class file="ChallengesManager.lua"/>
         <class file="ChallengesTweakData.lua"/>
-		<class file="HUDRaidWW2MiniGame.lua"/>
-        <class file="RaidWW2MiniGame.lua"/>
 		<class file="Networking.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
@@ -253,7 +251,6 @@
 		<hook file="sc/units/player/playerbase.lua" source_file="lib/units/beings/player/playerbase"/>
 		<hook file="sc/managers/mission/elementsecuritycamera.lua" source_file="lib/managers/mission/elementsecuritycamera"/>
 		<hook file="sc/managers/mission/elementaiglobalevent.lua" source_file="lib/managers/mission/elementaiglobalevent"/>
-		<hook file="sc/utils/game_state_machine/GSM.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
 		<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<hook file="sc/tweak_data/carrytweakdata.lua" source_file="lib/tweak_data/carrytweakdata"/>
 		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
@@ -435,7 +432,6 @@
 				<option type="bool" default_value="false" name="ClassicMovies"/>
 				<option type="bool" default_value="false" name="RestoreHitFlash"/>
 				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
-				<!-- <option type="bool" default_value="true" hidden="true" name="RaidLockPicking"/> -->
 				<option type="bool" default_value="true" name="QuietRain"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>

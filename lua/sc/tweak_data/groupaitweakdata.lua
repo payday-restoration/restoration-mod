@@ -12421,6 +12421,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"groupcsr"
 		},
+		CS_swat_heavy_shotgun = {
+			"smoke_grenade",
+			"charge",
+			"flash_grenade",
+			"provide_coverfire",
+			"provide_support",
+			"groupcsr"
+		},			
 		CS_shield = {
 			"charge",
 			"provide_coverfire",
@@ -12432,7 +12440,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"flash_grenade",
 			"smoke_grenade",
-			"charge",
 			"provide_coverfire",
 			"lonewolf",
 			"provide_support"
@@ -12441,17 +12448,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"flash_grenade",
 			"smoke_grenade",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"lonewolf",
-			"hitnrun"
+			"lonewolf"
 		},
 		CS_swat_heavy_flank = {
 			"flank",
 			"flash_grenade",
 			"smoke_grenade",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12459,7 +12463,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		CS_shield_flank = {
 			"flank",
-			"charge",
+			"charge",	
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
@@ -12534,7 +12538,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"flash_grenade",
 			"smoke_grenade",
-			"charge",
 			"provide_coverfire",
 			"elite_ranged_fire",
 			"lonewolf",
@@ -12561,7 +12564,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
-			"charge",
+			"charge",			
 			"provide_support",
 			"ranged_fire",
 			"groupcsr"
@@ -12584,6 +12587,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
+		FBI_heavy_shotgun = {
+			"smoke_grenade",
+			"flash_grenade",
+			"charge",
+			"provide_coverfire",
+			"provide_support",
+			"deathguard",
+			"groupcsr"
+		},		
 		FBI_shield = {
 			--"smoke_grenade",
 			"charge",
@@ -12613,7 +12625,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12623,18 +12634,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover",
-			"lonewolf",
-			"hitnrun"
+			"lonewolf"
 		},
 		FBI_heavy_flank = {
 			"flank",
 			"smoke_grenade",
-			"flash_grenade",
-			"charge",
+			"flash_grenade",	
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12676,7 +12684,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12687,7 +12694,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"legday",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12697,8 +12703,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			"elite_ranged_fire",
-			"charge",
+			"elite_ranged_fire",	
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12708,7 +12713,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12730,7 +12734,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"harass",
@@ -12742,11 +12745,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"harass",
-			"lonewolf",
+			"lonewolf",		
 			"shield_cover"
 		},
 		FBI_shield_flank = {
@@ -12903,7 +12905,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"elite_ranged_fire",
 			"harass",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12915,7 +12916,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"legday",
 			"harass",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
@@ -12927,12 +12927,21 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"elite_ranged_fire",
 			"harass",
-			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"lonewolf",
 			"shield_cover"
 		},
+		ELITE_heavy_shotgun_flank = {
+			"flank",
+			"smoke_grenade",
+			"flash_grenade",
+			"harass",		
+			"provide_coverfire",
+			"provide_support",
+			"lonewolf",
+			"shield_cover"
+		},		
 		--Reinforce groups
 		FBI_defend = {
 			"obstacle",
@@ -13125,51 +13134,26 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}
-	--For high Diff Hard
-	self.enemy_spawn_groups.CS_FBI = {
-		amount = {3, 4},
-		spawn = {
-			{
-				unit = "FBI_suit_stealth_MP5",
-				freq = 1,
-				tactics = self._tactics.CS_swat_rifle,
-				rank = 2
-			},
-			{
-				unit = "CS_swat_R870",
-				freq = 0.5,
-				amount_max = 1,
-				tactics = self._tactics.CS_swat_shotgun,
-				rank = 1
-			},
-			{
-				unit = "FBI_suit_stealth_MP5",
-				freq = 0.33,
-				tactics = self._tactics.CS_swat_rifle_flank_hard,
-				rank = 3
-			}
-		}
-	}	
 	self.enemy_spawn_groups.CS_heavys = {
 		amount = {3, 4},
 		spawn = {
 			{
 				unit = "CS_heavy_M4",
 				freq = 1,
-				tactics = self._tactics.CS_swat_rifle,
+				tactics = self._tactics.CS_swat_heavy,
 				rank = 2
 			},
 			{
 				unit = "CS_heavy_R870",
 				freq = 0.5,
 				amount_max = 1,
-				tactics = self._tactics.CS_swat_shotgun,
+				tactics = self._tactics.CS_swat_heavy_shotgun,
 				rank = 1
 			},
 			{
 				unit = "CS_heavy_M4",
 				freq = 0.33,
-				tactics = self._tactics.CS_swat_rifle_flank,
+				tactics = self._tactics.CS_swat_heavy_flank,
 				rank = 3
 			}
 		}
@@ -14067,7 +14051,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_heavy_R870",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.FBI_swat_shotgun,
+					tactics = self._tactics.FBI_heavy_shotgun,
 					rank = 1
 				},
 				{
@@ -14107,7 +14091,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_heavy_R870",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.FBI_swat_shotgun,
+					tactics = self._tactics.FBI_heavy_shotgun,
 					rank = 1
 				},
 				{
@@ -14184,7 +14168,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 1,
 					amount_max = 2,
 					freq = 1,
-					tactics = self._tactics.ELITE_swat_shotgun_flank,
+					tactics = self._tactics.ELITE_heavy_shotgun_flank,
 					rank = 3
 				},						
 				{
@@ -14218,7 +14202,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_heavy_R870",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.FBI_swat_shotgun,
+					tactics = self._tactics.FBI_heavy_shotgun,
 					rank = 1
 				},
 				{
@@ -14258,7 +14242,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_heavy_R870",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.FBI_swat_shotgun,
+					tactics = self._tactics.FBI_heavy_shotgun,
 					rank = 1
 				},
 				{
@@ -14292,7 +14276,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "GS_swat_M4",
 					freq = 1,
-					tactics = self._tactics.DW_heavy_flank,
+					tactics = self._tactics.DW_swat_rifle_flank,
 					rank = 2
 				},
 				{
@@ -14300,7 +14284,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 1,
 					amount_max = 2,
 					freq = 1,
-					tactics = self._tactics.FBI_swat_shotgun,
+					tactics = self._tactics.MH_heavy_shotgun_flank,
 					rank = 3
 				},						
 				{
@@ -14312,7 +14296,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 1
 				}
 			}
-		}		
+		}	
 	else
 		self.enemy_spawn_groups.FBI_heavys_boom = {
 			amount = {4, 5},
@@ -14327,7 +14311,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "GS_swat_M4",
 					freq = 1,
-					tactics = self._tactics.ELITE_heavy_flank,
+					tactics = self._tactics.ELITE_swat_rifle_flank,
 					rank = 2
 				},
 				{
@@ -14335,7 +14319,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 1,
 					amount_max = 2,
 					freq = 1,
-					tactics = self._tactics.ELITE_swat_shotgun,
+					tactics = self._tactics.ELITE_heavy_shotgun_flank,
 					rank = 3
 				},						
 				{
@@ -15280,7 +15264,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 1,
 				freq = 1,
-				tactics = self._tactics.FBI_swat_shotgun,
+				tactics = self._tactics.FBI_heavy_shotgun,
 				rank = 3
 			}
 		}
@@ -15358,7 +15342,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 1,
 				freq = 1,
-				tactics = self._tactics.FBI_swat_shotgun,
+				tactics = self._tactics.FBI_heavy_shotgun,
 				rank = 3
 			},					
 			{
@@ -15492,7 +15476,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.FBI_swat_shotgun,
+				tactics = self._tactics.FBI_heavy_shotgun,
 				rank = 3
 			},					
 			{
@@ -15644,7 +15628,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.FBI_swat_shotgun,
+				tactics = self._tactics.FBI_heavy_shotgun,
 				rank = 3
 			},					
 			{
@@ -15828,7 +15812,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun_flank,
 				rank = 3
 			},						
 			{
@@ -16082,7 +16066,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun_flank,
 				rank = 3
 			},						
 			{
@@ -16441,7 +16425,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun_flank,
 				rank = 3
 			},						
 			{
@@ -16800,7 +16784,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun_flank,
 				rank = 3
 			},						
 			{
@@ -17159,7 +17143,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_swat_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun_flank,
 				rank = 3
 			},						
 			{

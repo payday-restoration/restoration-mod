@@ -156,15 +156,17 @@ function CopDamage:damage_fire(attack_data)
 	end	
 	
 	--For killing the effectiveness of molotovs and other junk	
-	if is_grenade_or_ground_fire then
-		if self._char_tweak.damage.fire_pool_damage_mul then
-			damage = damage * self._char_tweak.damage.fire_pool_damage_mul
+	if alive(weap_unit) then
+		if is_grenade_or_ground_fire then
+			if self._char_tweak.damage.fire_pool_damage_mul then
+				damage = damage * self._char_tweak.damage.fire_pool_damage_mul
+			end	
+		else
+			if self._char_tweak.damage.fire_damage_mul then
+				damage = damage * self._char_tweak.damage.fire_damage_mul
+			end	
 		end	
-	else
-		if self._char_tweak.damage.fire_damage_mul then
-			damage = damage * self._char_tweak.damage.fire_damage_mul
-		end	
-	end	
+	end
 		
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul

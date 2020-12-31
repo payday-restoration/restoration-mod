@@ -11640,52 +11640,52 @@ function CharacterTweakData:_presets(tweak_data)
 						bwd = 110
 					},
 					hos = {
-						fwd = 285,
-						strafe = 225,
-						bwd = 215
+						fwd = 350,
+						strafe = 350,
+						bwd = 350
 					},
 					cbt = {
-						fwd = 285,
-						strafe = 225,
-						bwd = 215
+						fwd = 350,
+						strafe = 350,
+						bwd = 350
 					}
 				},
 				run = {
 					hos = {
 						fwd = 800,
-						strafe = 400,
+						strafe = 350,
 						bwd = 350
 					},
 					cbt = {
-						fwd = 750,
-						strafe = 380,
-						bwd = 320
+						fwd = 800,
+						strafe = 350,
+						bwd = 350
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						fwd = 245,
-						strafe = 210,
-						bwd = 190
+						fwd = 225,
+						strafe = 225,
+						bwd = 225
 					},
 					cbt = {
-						fwd = 255,
-						strafe = 190,
-						bwd = 190
+						fwd = 225,
+						strafe = 225,
+						bwd = 225
 					}
 				},
 				run = {
 					hos = {
-						fwd = 420,
-						strafe = 300,
-						bwd = 250
+						fwd = 360,
+						strafe = 225,
+						bwd = 225
 					},
 					cbt = {
-						fwd = 412,
-						strafe = 300,
-						bwd = 280
+						fwd = 360,
+						strafe = 225,
+						bwd = 225
 					}
 				}
 			}
@@ -11696,55 +11696,55 @@ function CharacterTweakData:_presets(tweak_data)
 					ntl = {
 						fwd = 144,
 						strafe = 120,
-						bwd = 113
+						bwd = 110
 					},
 					hos = {
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						strafe = 144,
+						bwd = 144
 					},
 					cbt = {
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						strafe = 144,
+						bwd = 144
 					}
 				},
 				run = {
 					hos = {
 						fwd = 144,
-						strafe = 140,
-						bwd = 113
+						strafe = 144,
+						bwd = 144
 					},
 					cbt = {
 						fwd = 144,
-						strafe = 100,
-						bwd = 125
+						strafe = 144,
+						bwd = 144
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						fwd = 130,
+						strafe = 130,
+						bwd = 130
 					},
 					cbt = {
-						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						fwd = 130,
+						strafe = 130,
+						bwd = 130
 					}
 				},
 				run = {
 					hos = {
-						fwd = 144,
+						fwd = 130,
 						strafe = 130,
-						bwd = 113
+						bwd = 130
 					},
 					cbt = {
-						fwd = 144,
-						strafe = 100,
-						bwd = 125
+						fwd = 130,
+						strafe = 130,
+						bwd = 130
 					}
 				}
 			}
@@ -11755,55 +11755,55 @@ function CharacterTweakData:_presets(tweak_data)
 					ntl = {
 						fwd = 144,
 						strafe = 120,
-						bwd = 113
+						bwd = 110
 					},
 					hos = {
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						strafe = 144,
+						bwd = 144
 					},
 					cbt = {
 						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						strafe = 144,
+						bwd = 144
 					}
 				},
 				run = {
 					hos = {
 						fwd = 360,
-						strafe = 150,
-						bwd = 135
+						strafe = 144,
+						bwd = 144
 					},
 					cbt = {
 						fwd = 360,
-						strafe = 150,
-						bwd = 155
+						strafe = 144,
+						bwd = 144
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						fwd = 130,
+						strafe = 130,
+						bwd = 130
 					},
 					cbt = {
-						fwd = 144,
-						strafe = 120,
-						bwd = 113
+						fwd = 130,
+						strafe = 130,
+						bwd = 130
 					}
 				},
 				run = {
 					hos = {
-						fwd = 360,
-						strafe = 140,
-						bwd = 150
+						fwd = 208,
+						strafe = 130,
+						bwd = 130
 					},
 					cbt = {
-						fwd = 360,
-						strafe = 140,
-						bwd = 155
+						fwd = 208,
+						strafe = 130,
+						bwd = 130
 					}
 				}
 			}
@@ -11814,55 +11814,55 @@ function CharacterTweakData:_presets(tweak_data)
 					ntl = {
 						fwd = 150,
 						strafe = 120,
-						bwd = 100
+						bwd = 110
 					},
 					hos = {
-						fwd = 220,
-						strafe = 190,
-						bwd = 170
+						fwd = 262,
+						strafe = 262,
+						bwd = 262
 					},
 					cbt = {
-						fwd = 220,
-						strafe = 190,
-						bwd = 170
+						fwd = 262,
+						strafe = 262,
+						bwd = 262
 					}
 				},
 				run = {
 					hos = {
-						fwd = 450,
-						strafe = 290,
-						bwd = 255
+						fwd = 431,
+						strafe = 262,
+						bwd = 262
 					},
 					cbt = {
-						fwd = 400,
-						strafe = 250,
-						bwd = 255
+						fwd = 431,
+						strafe = 262,
+						bwd = 262
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						fwd = 210,
-						strafe = 170,
-						bwd = 160
+						fwd = 168,
+						strafe = 168,
+						bwd = 168
 					},
 					cbt = {
-						fwd = 210,
-						strafe = 170,
-						bwd = 160
+						fwd = 168,
+						strafe = 168,
+						bwd = 168
 					}
 				},
 				run = {
 					hos = {
-						fwd = 310,
-						strafe = 260,
-						bwd = 235
+						fwd = 268,
+						strafe = 168,
+						bwd = 168
 					},
 					cbt = {
-						fwd = 350,
-						strafe = 260,
-						bwd = 235
+						fwd = 268,
+						strafe = 168,
+						bwd = 168
 					}
 				}
 			}
@@ -11876,52 +11876,52 @@ function CharacterTweakData:_presets(tweak_data)
 						bwd = 110
 					},
 					hos = {
-						fwd = 270,
-						strafe = 215,
-						bwd = 185
+						fwd = 297,
+						strafe = 297,
+						bwd = 297
 					},
 					cbt = {
-						fwd = 270,
-						strafe = 215,
-						bwd = 185
+						fwd = 297,
+						strafe = 297,
+						bwd = 297
 					}
 				},
 				run = {
 					hos = {
-						fwd = 625,
-						strafe = 315,
-						bwd = 280
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
 					},
 					cbt = {
-						fwd = 450,
-						strafe = 285,
-						bwd = 280
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						fwd = 235,
-						strafe = 180,
-						bwd = 170
+						fwd = 191,
+						strafe = 191,
+						bwd = 191
 					},
 					cbt = {
-						fwd = 235,
-						strafe = 180,
-						bwd = 170
+						fwd = 191,
+						strafe = 191,
+						bwd = 191
 					}
 				},
 				run = {
 					hos = {
-						fwd = 330,
-						strafe = 280,
-						bwd = 255
+						fwd = 305,
+						strafe = 191,
+						bwd = 191
 					},
 					cbt = {
-						fwd = 312,
-						strafe = 270,
-						bwd = 255
+						fwd = 305,
+						strafe = 191,
+						bwd = 191
 					}
 				}
 			}
@@ -11935,52 +11935,52 @@ function CharacterTweakData:_presets(tweak_data)
 						bwd = 110
 					},
 					hos = {
-						fwd = 285,
-						strafe = 225,
-						bwd = 215
+						fwd = 332,
+						strafe = 332,
+						bwd = 332
 					},
 					cbt = {
-						fwd = 285,
-						strafe = 225,
-						bwd = 215
+						fwd = 332,
+						strafe = 332,
+						bwd = 332
 					}
 				},
 				run = {
 					hos = {
-						fwd = 670,
-						strafe = 340,
-						bwd = 325
+						fwd = 546,
+						strafe = 332,
+						bwd = 332
 					},
 					cbt = {
-						fwd = 475,
-						strafe = 325,
-						bwd = 300
+						fwd = 546,
+						strafe = 332,
+						bwd = 332
 					}
 				}
 			},
 			crouch = {
 				walk = {
 					hos = {
-						fwd = 245,
-						strafe = 210,
-						bwd = 190
+						fwd = 213,
+						strafe = 213,
+						bwd = 213
 					},
 					cbt = {
-						fwd = 255,
-						strafe = 190,
-						bwd = 190
+						fwd = 213,
+						strafe = 213,
+						bwd = 213
 					}
 				},
 				run = {
 					hos = {
-						fwd = 350,
-						strafe = 282,
-						bwd = 268
+						fwd = 340,
+						strafe = 213,
+						bwd = 213
 					},
 					cbt = {
-						fwd = 312,
-						strafe = 282,
-						bwd = 268
+						fwd = 340,
+						strafe = 213,
+						bwd = 213
 					}
 				}
 			}

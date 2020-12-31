@@ -1173,7 +1173,8 @@ function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shoot
 		local enemy_vec = temp_vec2
 
 		mvec3_set(enemy_vec, pos)
-		mvec3_sub(enemy_vec, self._common_data.pos)
+		--Calculate miss chance from head position instead of feet position.
+		mvec3_sub(enemy_vec, self._ext_movement:m_head_pos())
 
 		local error_vec = Vector3()
 
@@ -1182,7 +1183,8 @@ function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shoot
 		mvec3_rot(error_vec, temp_rot1)
 
 		local miss_min_dis = shooting_local_player and 31 or 150
-		local error_vec_len = miss_min_dis + self._spread * math_random() + self._miss_dis * math_random() * (1 - focus_prog)
+		--Crackdown fix for spread rng sometimes causing shots that should miss to hit.
+		local error_vec_len = miss_min_dis + self._spread + self._miss_dis * math_random() * (1 - focus_prog)
 
 		mvec3_set_l(error_vec, error_vec_len)
 		mvec3_add(error_vec, pos)

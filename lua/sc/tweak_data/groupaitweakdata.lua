@@ -18760,20 +18760,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 
 	if difficulty_index <= 2 then
-		self.smoke_and_flash_grenade_timeout = {19, 20}
+		self.smoke_and_flash_grenade_timeout = {20, 20}
 	elseif difficulty_index == 3 then
-		self.smoke_and_flash_grenade_timeout = {18, 19}
+		self.smoke_and_flash_grenade_timeout = {19, 19}
 	elseif difficulty_index == 4 then
-		self.smoke_and_flash_grenade_timeout = {17, 18}
+		self.smoke_and_flash_grenade_timeout = {18, 18}
 	elseif difficulty_index == 5 then
-		self.smoke_and_flash_grenade_timeout = {16, 17}
-	elseif difficulty_index == 6 then
-		self.smoke_and_flash_grenade_timeout = {15, 16}
-	elseif difficulty_index == 7 then
-		self.smoke_and_flash_grenade_timeout = {15, 16}
+		self.smoke_and_flash_grenade_timeout = {17, 17}
+	elseif difficulty_index == 6 or difficulty_index == 7 then
+		self.smoke_and_flash_grenade_timeout = {16, 16}
 	else
-		self.smoke_and_flash_grenade_timeout = {14, 15}
+		self.smoke_and_flash_grenade_timeout = {15, 15}
 	end
+	
 	self.smoke_grenade_lifetime = 12
 	self.flash_grenade_lifetime = 7.5
 	self.flash_grenade = {
@@ -18794,54 +18793,44 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	end
 	self.optimal_trade_distance = {0, 0}
 	self.bain_assault_praise_limits = {1, 3}
-	if difficulty_index <= 2 then
+	if difficulty_index <= 3 then
 		self.besiege.recurring_group_SO = {
 			recurring_cloaker_spawn = {
-				interval = {180, 300},
+				interval = {180, 180},
 				retire_delay = 30
 			},
 			recurring_spawn_1 = {
-				interval = {30, 60}
-			}
-		}
-	elseif difficulty_index == 3 then
-		self.besiege.recurring_group_SO = {
-			recurring_cloaker_spawn = {
-				interval = {60, 120},
-				retire_delay = 30
-			},
-			recurring_spawn_1 = {
-				interval = {30, 60}
+				interval = {60, 60}
 			}
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.recurring_group_SO = {
 			recurring_cloaker_spawn = {
-				interval = {45, 60},
+				interval = {150, 150},
 				retire_delay = 30
 			},
 			recurring_spawn_1 = {
-				interval = {30, 60}
+				interval = {60, 60}
 			}
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.recurring_group_SO = {
 			recurring_cloaker_spawn = {
-				interval = {20, 40},
+				interval = {120, 120},
 				retire_delay = 30
 			},
 			recurring_spawn_1 = {
-				interval = {30, 60}
+				interval = {60, 60}
 			}
 		}
 	else
 		self.besiege.recurring_group_SO = {
 			recurring_cloaker_spawn = {
-				interval = {20, 40},
+				interval = {90, 90},
 				retire_delay = 30
 			},
 			recurring_spawn_1 = {
-				interval = {30, 60}
+				interval = {60, 60}
 			}
 		}
 	end

@@ -9144,7 +9144,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	}
 	self.parts.wpn_fps_ass_asval_b_proto.sound_switch = nil
 	self.parts.wpn_fps_ass_asval_b_standard.perks = nil
-	self.parts.wpn_fps_ass_asval_b_standard.type = "barrel_ext"
 	
 	--Standard Barrel
 	self.parts.wpn_fps_ass_asval_b_standard.supported = true

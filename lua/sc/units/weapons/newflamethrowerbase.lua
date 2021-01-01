@@ -36,8 +36,8 @@ function NewFlamethrowerBase:_update_stats_values()
 		end
 	end
 
-	--Maximum range of rays, set to longest possible falloff distance for shotguns.
-	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * 2
+	--Maximum range, set to longest possible falloff distance.
+	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * self._damage_far_mul
 end
 
 function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)

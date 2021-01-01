@@ -1,3 +1,4 @@
+--Modify class to function as a timed molotov.
 IncendiaryBurstGrenade = IncendiaryBurstGrenade or class(GrenadeBase)
 
 function IncendiaryBurstGrenade:init(unit)

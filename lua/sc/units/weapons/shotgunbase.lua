@@ -37,7 +37,7 @@ function ShotgunBase:_update_stats_values()
 	end
 
 	--Maximum range of rays, set to longest possible falloff distance for shotguns.
-	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * 2
+	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * self._damage_far_mul
 	
 	if self._ammo_data then
 		if self._ammo_data.rays ~= 1 and self._is_real_shotgun then

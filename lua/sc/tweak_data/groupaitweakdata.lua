@@ -14356,7 +14356,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_heavy_G36",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.FBI_swat_rifle_flank,
+					tactics = self._tactics.FBI_heavy_flank,
 					rank = 1
 				},
 				{

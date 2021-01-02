@@ -2224,7 +2224,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.bot_priority_shout = "f33x_any"
 	self.spooc.priority_shout_max_dis = 3000
 	self.spooc.rescue_hostages = false
-	self.spooc.spooc_attack_timeout = {3, 3}
+	self.spooc.spooc_attack_timeout = {4, 4}
 	self.spooc.spooc_attack_beating_time = {3, 3}
 	self.spooc.spooc_attack_use_smoke_chance = 0
 	self.spooc.weapon_voice = "3"
@@ -2318,7 +2318,7 @@ function CharacterTweakData:_init_shadow_spooc(presets)
 	self.shadow_spooc.bot_priority_shout = "f33x_any"
 	self.shadow_spooc.priority_shout_max_dis = 3000
 	self.shadow_spooc.rescue_hostages = false
-	self.shadow_spooc.spooc_attack_timeout = {3, 3}
+	self.shadow_spooc.spooc_attack_timeout = {4, 4}
 	self.shadow_spooc.spooc_attack_beating_time = {3, 3}
 	self.shadow_spooc.spooc_attack_use_smoke_chance = 0
 	self.shadow_spooc.weapon_voice = "3"
@@ -2713,7 +2713,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.must_headshot = true
 	self.autumn.priority_shout_max_dis = 3000
 	self.autumn.rescue_hostages = true
-	self.autumn.spooc_attack_timeout = {3, 3}
+	self.autumn.spooc_attack_timeout = {4, 4}
 	self.autumn.spooc_attack_beating_time = {0, 0}
 	self.autumn.no_damage_mission = true
 	self.autumn.spawn_sound_event_2 = "cloaker_spawn"

@@ -1833,7 +1833,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {2, 9},
 				[1] = {
 					upgrades = {
-						"player_messiah_revive_from_bleed_out_1"
+						"player_messiah_revive_from_bleed_out_1",
+						"player_additional_lives_1"
 					},
 					cost = self.costs.hightier
 				},

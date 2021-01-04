@@ -3608,6 +3608,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.saiga.stats_modifiers = nil
 	self.saiga.panic_suppression_chance = 0.05
+	self.saiga.reload_speed_multiplier = 1.25
 
 	--Ak5
 	self.ak5.auto.fire_rate = 0.08571428571
@@ -6915,6 +6916,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		concealment = 24
 	}		
 	self.basset.stats_modifiers = nil
+	self.basset.reload_speed_multiplier = 1.25
 
 	--Disabled--	
 	--Akimbo Grimms
@@ -8766,7 +8768,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amr12.CAN_TOGGLE_FIREMODE = false
 		self.amr12.single = {}
 		self.amr12.single.fire_rate = 0.08571428571
-	self.amr12.kick = self.stat_info.kick_tables.vertical_kick
+		self.amr12.kick = self.stat_info.kick_tables.vertical_kick
 		self.amr12.supported = true
 		self.amr12.stats = {
 			damage = 30,
@@ -8784,6 +8786,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amr12.panic_suppression_chance = 0.05
 		self.amr12.stats_modifiers = {damage = 1}
 		self.amr12.swap_speed_multiplier = 1.2
+		self.amr12.reload_speed_multiplier = 1.25
 	end
 
 	if self.owen then -- Silent Enforcer's Owen Gun

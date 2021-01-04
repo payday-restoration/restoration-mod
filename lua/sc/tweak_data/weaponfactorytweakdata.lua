@@ -1975,7 +1975,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd",
 		unit = "units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd",
 		supported = true,
-		stats = {value = 1, extra_ammo = 14, reload = -3, concealment = -3}
+		stats = {value = 1, extra_ammo = 14, spread = -1, reload = -7, concealment = -3}
 	}
 	self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
 	
@@ -2017,12 +2017,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			stats = {
 				value = 9,
 				total_ammo_mod = -33,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},	
@@ -2031,12 +2030,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			stats = {
 				value = 9,
 				total_ammo_mod = -33,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},			
@@ -2062,14 +2060,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -6,
-				spread = 1,
-				recoil = -1
+				damage = -6
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9819,
 				ammo_pickup_max_mul = 0.9764,					
@@ -3074,38 +3070,33 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				armor_piercing_add = 1,
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				use_heavy_kick = true
+				can_shoot_through_wall = true
 			}
 		},
 		wpn_fps_upg_a_custom = {
 			supported = true,
 			stats = {
 				value = 9,
-				spread = -1,
 				total_ammo_mod = -33,
 				damage = 30
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
-				rays = 6,
-				use_heavy_kick = true
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
 			supported = true,
 			stats = {
 				value = 9,
-				spread = -1,
 				total_ammo_mod = -33,
 				damage = 30
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
-				rays = 6,
-				use_heavy_kick = true
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -3124,7 +3115,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				rays = 1,
 				damage_near_mul = 999,
 				damage_far_mul = 999,
-				use_heavy_kick = true,
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
@@ -3132,14 +3122,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15,
-				spread = 1,
-				recoil = -1
+				damage = -15
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9655,
 				ammo_pickup_max_mul = 0.9543,					
@@ -3322,7 +3310,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
 				rays = 1,
 				armor_piercing_add = 1,
-				use_heavy_kick = true,
 				can_shoot_through_enemy = true,
 				can_shoot_through_shield = true,
 				can_shoot_through_wall = true
@@ -3333,14 +3320,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 			stats = {
 				value = 9,
 				total_ammo_mod = -33,
-				damage = 30,
-				spread = -1
+				damage = 30
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
-				rays = 6,
-				use_heavy_kick = true
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -3348,14 +3333,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 			stats = {
 				value = 9,
 				total_ammo_mod = -33,
-				damage = 30,
-				spread = -1
+				damage = 30
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
-				rays = 6,
-				use_heavy_kick = true
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -3371,7 +3354,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 			custom_stats = {
 				ignore_statistic = true,
 				block_b_storm = true,
-				use_heavy_kick = true,
 				rays = 1,
 				damage_near_mul = 999,
 				damage_far_mul = 999,
@@ -3382,14 +3364,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15,
-				spread = 1,
-				recoil = -1
+				damage = -15
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9655,
 				ammo_pickup_max_mul = 0.9543,					
@@ -3942,12 +3922,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		stats = {
 			value = 9,
 			total_ammo_mod = -25,
-			damage = 30,	
-			spread = -1
+			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 0.75,
+			damage_far_mul = 0.75,
 			rays = 6
 		}
 	}
@@ -3956,12 +3935,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		stats = {
 			value = 9,
 			total_ammo_mod = -25,
-			damage = 30,	
-			spread = -1
+			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 0.75,
+			damage_far_mul = 0.75,
 			rays = 6
 		}
 	}			
@@ -5199,12 +5177,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},
@@ -5213,12 +5190,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},			
@@ -5245,14 +5221,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15,
-				spread = 1,
-				recoil = -1
+				damage = -15
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9607,
 				ammo_pickup_max_mul = 0.9486,					
@@ -5371,12 +5345,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},	
@@ -5385,12 +5358,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},				
@@ -5417,14 +5389,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15,
-				spread = 1,
-				recoil = -1
+				damage = -15
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9607,
 				ammo_pickup_max_mul = 0.9486,					
@@ -5518,8 +5488,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			armor_piercing_add = 1,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			use_heavy_kick = true
+			can_shoot_through_wall = true
 		}
 	}
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom = {
@@ -5527,14 +5496,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 		stats = {
 			value = 9,
 			total_ammo_mod = -33,
-			damage = 30,
-			spread = -1
+			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
-			rays = 6,
-			use_heavy_kick = true
+			damage_near_mul = 0.75,
+			damage_far_mul = 0.75,
+			rays = 6
 		}
 	}
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free = {
@@ -5542,14 +5509,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 		stats = {
 			value = 9,
 			total_ammo_mod = -33,
-			damage = 30,
-			spread = -1
+			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
-			rays = 6,
-			use_heavy_kick = true
+			damage_near_mul = 0.75,
+			damage_far_mul = 0.75,
+			rays = 6
 		}
 	}			
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive = {
@@ -5568,7 +5533,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			rays = 1,
 			damage_near_mul = 999,
 			damage_far_mul = 999,
-			use_heavy_kick = true,
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
@@ -5576,14 +5540,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 		supported = true,
 		stats = {
 			value = 9,
-			damage = -15,
-			spread = 1,
-			recoil = -1
+			damage = -15
 		},
 		custom_stats = {
 			rays = 6,
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 1.25,
+			damage_far_mul = 1.25,
 			armor_piercing_add = 1,
 			ammo_pickup_min_mul = 0.9655,
 			ammo_pickup_max_mul = 0.9543,			
@@ -6495,12 +6457,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_custom.stats = {
 		value = 9,
 		total_ammo_mod = -25,
-		damage = 30,	
-		spread = -1,
+		damage = 30
 	}
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
-		damage_near_mul = 1,
-		damage_far_mul = 1,
+		damage_near_mul = 0.75,
+		damage_far_mul = 0.75,
 		rays = 6
 	}
 	
@@ -6539,14 +6500,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_piercing.supported = true
 	self.parts.wpn_fps_upg_a_piercing.stats = {
 		value = 9,
-		spread = 1,
-		recoil = -1,
 		damage = -30
 	}
 	self.parts.wpn_fps_upg_a_piercing.custom_stats = {
 		rays = 6,
-		damage_near_mul = 1,
-		damage_far_mul = 1,
+		damage_near_mul = 1.25,
+		damage_far_mul = 1.25,
 		armor_piercing_add = 1,
 		ammo_pickup_min_mul = 0.9400,
 		ammo_pickup_max_mul = 0.9197,		
@@ -7113,12 +7072,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},		
@@ -7127,12 +7085,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},				
@@ -7159,14 +7116,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15,
-				spread = 1,
-				recoil = -1
+				damage = -15
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9607,
 				ammo_pickup_max_mul = 0.9486,					
@@ -8732,7 +8687,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	self.parts.wpn_fps_sho_aa12_mag_drum.stats = {
 		value = 1,
 		extra_ammo = 10,
-		reload = -3,
+		reload = -6,
 		spread = -1,
 		concealment = -3
 	}
@@ -8769,12 +8724,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},
@@ -8783,12 +8737,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},			
@@ -8815,14 +8768,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15,
-				spread = 1,
-				recoil = -1
+				damage = -15
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9607,
 				ammo_pickup_max_mul = 0.9486,					
@@ -11360,7 +11311,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			damage_far_mul = 999,
 			rays = 1,
 			armor_piercing_add = 1,
-			use_heavy_kick = true,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
 			can_shoot_through_wall = true
@@ -11371,14 +11321,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 		stats = {
 			value = 9,
 			total_ammo_mod = -33,
-			damage = 30,
-			spread = -1
+			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
-			rays = 6,
-			use_heavy_kick = true
+			damage_near_mul = 0.75,
+			damage_far_mul = 0.75,
+			rays = 6
 		}
 	}
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free = {
@@ -11386,15 +11334,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 		stats = {
 			value = 9,
 			total_ammo_mod = -33,
-			damage = 30,
-			spread = -1
+			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
-			rays = 6,
-			use_heavy_kick = true
-		}
+			damage_near_mul = 0.75,
+			damage_far_mul = 0.75,
+			rays = 6
 	}		
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = {
 		supported = true,
@@ -11409,7 +11354,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 		custom_stats = {
 			ignore_statistic = true,
 			block_b_storm = true,
-			use_heavy_kick = true,
 			rays = 1,
 			damage_near_mul = 999,
 			damage_far_mul = 999,
@@ -11420,14 +11364,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 		supported = true,
 		stats = {
 			value = 9,
-			damage = -15,
-			spread = 1,
-			recoil = -1
+			damage = -15
 		},
 		custom_stats = {
 			rays = 6,
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 1.25,
+			damage_far_mul = 1.25,
 			armor_piercing_add = 1,
 			ammo_pickup_min_mul = 0.9655,
 			ammo_pickup_max_mul = 0.9543,			
@@ -13923,12 +13865,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},	
@@ -13937,12 +13878,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},				
@@ -13969,14 +13909,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -15,
-				spread = 1,
-				recoil = -1
+				damage = -15
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9607,
 				ammo_pickup_max_mul = 0.9486,					
@@ -17433,7 +17371,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 		40
 	}
 	self.parts.wpn_fps_sho_basset_m_extended.supported = true
-	self.parts.wpn_fps_sho_basset_m_extended.stats = {value = 1, extra_ammo = 2, reload = -1, concealment = -1}
+	self.parts.wpn_fps_sho_basset_m_extended.stats = {value = 1, extra_ammo = 2, reload = -2, concealment = -1}
 
 	self.wpn_fps_sho_basset.override = {
 		wpn_fps_upg_a_slug = {
@@ -17467,12 +17405,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,	
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},
@@ -17481,12 +17418,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 			stats = {
 				value = 9,
 				total_ammo_mod = -33,
-				damage = 15,	
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},					
@@ -17512,14 +17448,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 			supported = true,
 			stats = {
 				value = 9,
-				damage = -6,
-				spread = 1,
-				recoil = -1
+				damage = -6
 			},
 			custom_stats = {
 				rays = 6,
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 1.25,
+				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
 				ammo_pickup_min_mul = 0.9819,
 				ammo_pickup_max_mul = 0.9764,					
@@ -20214,12 +20148,11 @@ function WeaponFactoryTweakData:_init_x_judge()
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 30,	
-					spread = -1,
+					damage = 30
 				},
 				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 0.75,
+					damage_far_mul = 0.75,
 					rays = 6
 				}
 			},
@@ -20228,12 +20161,11 @@ function WeaponFactoryTweakData:_init_x_judge()
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 30,	
-					spread = -1,
+					damage = 30
 				},
 				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 0.75,
+					damage_far_mul = 0.75,
 					rays = 6
 				}
 			},	
@@ -20385,12 +20317,11 @@ function WeaponFactoryTweakData:_init_x_rota()
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},
@@ -20399,12 +20330,11 @@ function WeaponFactoryTweakData:_init_x_rota()
 			stats = {
 				value = 9,
 				total_ammo_mod = -25,
-				damage = 15,
-				spread = -1
+				damage = 15
 			},
 			custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1,
+				damage_near_mul = 0.75,
+				damage_far_mul = 0.75,
 				rays = 6
 			}
 		},			
@@ -22062,12 +21992,11 @@ function WeaponFactoryTweakData:_init_coach()
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 30,	
-					spread = -1
+					damage = 30
 				},
 				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 0.75,
+					damage_far_mul = 0.75,
 					rays = 6
 				}
 			},
@@ -22076,12 +22005,11 @@ function WeaponFactoryTweakData:_init_coach()
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 30,	
-					spread = -1
+					damage = 30
 				},
 				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 0.75,
+					damage_far_mul = 0.75,
 					rays = 6
 				}
 			}	
@@ -24054,38 +23982,33 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			armor_piercing_add = 1,
 			can_shoot_through_enemy = true,
 			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			use_heavy_kick = true
+			can_shoot_through_wall = true
 		}
 	}
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom = {
 		supported = true,
 		stats = {
 			value = 9,
-			spread = -1,
 			total_ammo_mod = -33,
 			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
-			rays = 6,
-			use_heavy_kick = true
+			damage_near_mul = 0.75,
+			damage_far_mul = 0.75,
+			rays = 6
 		}
 	}
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free = {
 		supported = true,
 		stats = {
 			value = 9,
-			spread = -1,
 			total_ammo_mod = -33,
 			damage = 30
 		},
 		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1,
-			rays = 6,
-			use_heavy_kick = true
+			damage_near_mul = 0.75,
+			damage_far_mul = 0.75,
+			rays = 6
 		}
 	}		
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive = {
@@ -24104,7 +24027,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			rays = 1,
 			damage_near_mul = 999,
 			damage_far_mul = 999,
-			use_heavy_kick = true,
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
@@ -24112,14 +24034,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 		supported = true,
 		stats = {
 			value = 9,
-			damage = -15,
-			spread = 1,
-			recoil = -1
+			damage = -15
 		},
 		custom_stats = {
 			rays = 6,
-			damage_near_mul = 1,
-			damage_far_mul = 1,
+			damage_near_mul = 1.25,
+			damage_far_mul = 1.25,
 			armor_piercing_add = 1,
 			ammo_pickup_min_mul = 0.9655,
 			ammo_pickup_max_mul = 0.9543,			
@@ -25655,20 +25575,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				recoil = -1							
 			}
 		self.parts.wpn_fps_upg_ks23_ammo_buckshot_20pellet.pcs = nil
-		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.supported = true
-		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.desc_id = "bm_wp_upg_a_custom_desc"
-		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.stats = {
-				value = 9,
-				damage = 60,	
-				total_ammo_mod = -33,												
-				spread = -1
-			}	
-		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.custom_stats = {
-				damage_near_mul = 1,
-				damage_far_mul = 1.33,
-				rays = 8
-			}																
-		end		
+		self.parts.wpn_fps_upg_ks23_ammo_buckshot_8pellet.pcs = nil											
+		end
 		
 	if self.parts.wpn_fps_upg_m4_m_x15drum then --Pawcio's M4 X 15 Drum Magazine
 		self.parts.wpn_fps_upg_m4_m_x15drum.supported = true
@@ -27002,12 +26910,11 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 15,
-					spread = -1
+					damage = 15
 				},
 				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 0.75,
+					damage_far_mul = 0.75,
 					rays = 6
 				}
 			},
@@ -27016,12 +26923,11 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				stats = {
 					value = 9,
 					total_ammo_mod = -25,
-					damage = 15,
-					spread = -1
+					damage = 15
 				},
 				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
+					damage_near_mul = 0.75,
+					damage_far_mul = 0.75,
 					rays = 6
 				}
 			},			
@@ -27790,38 +27696,33 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					armor_piercing_add = 1,
 					can_shoot_through_enemy = true,
 					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					use_heavy_kick = true
+					can_shoot_through_wall = true
 				}
 			},
 			wpn_fps_upg_a_custom = {
 				supported = true,
 				stats = {
 					value = 9,
-					spread = -1,
 					total_ammo_mod = -33,
 					damage = 30
 				},
 				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
-					rays = 6,
-					use_heavy_kick = true
+					damage_near_mul = 0.75,
+					damage_far_mul = 0.75,
+					rays = 6
 				}
 			},	
 			wpn_fps_upg_a_custom_free = {
 				supported = true,
 				stats = {
 					value = 9,
-					spread = -1,
 					total_ammo_mod = -33,
 					damage = 30
 				},
 				custom_stats = {
-					damage_near_mul = 1,
-					damage_far_mul = 1,
-					rays = 6,
-					use_heavy_kick = true
+					damage_near_mul = 0.75,
+					damage_far_mul = 0.75,
+					rays = 6
 				}
 			},			
 			wpn_fps_upg_a_explosive = {
@@ -27840,7 +27741,6 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					rays = 1,
 					damage_near_mul = 999,
 					damage_far_mul = 999,
-					use_heavy_kick = true,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			}

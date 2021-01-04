@@ -2063,7 +2063,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				damage = -6
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -3125,7 +3124,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage = -15
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -3367,7 +3365,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				damage = -15
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -5224,7 +5221,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				damage = -15
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -5392,7 +5388,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				damage = -15
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -5543,7 +5538,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			damage = -15
 		},
 		custom_stats = {
-			rays = 6,
 			damage_near_mul = 1.25,
 			damage_far_mul = 1.25,
 			armor_piercing_add = 1,
@@ -6503,7 +6497,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		damage = -30
 	}
 	self.parts.wpn_fps_upg_a_piercing.custom_stats = {
-		rays = 6,
 		damage_near_mul = 1.25,
 		damage_far_mul = 1.25,
 		armor_piercing_add = 1,
@@ -7119,7 +7112,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				damage = -15
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -8771,7 +8763,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				damage = -15
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -11340,6 +11331,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			damage_near_mul = 0.75,
 			damage_far_mul = 0.75,
 			rays = 6
+		}
 	}		
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = {
 		supported = true,
@@ -11367,7 +11359,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			damage = -15
 		},
 		custom_stats = {
-			rays = 6,
 			damage_near_mul = 1.25,
 			damage_far_mul = 1.25,
 			armor_piercing_add = 1,
@@ -13912,7 +13903,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 				damage = -15
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -17451,7 +17441,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 				damage = -6
 			},
 			custom_stats = {
-				rays = 6,
 				damage_near_mul = 1.25,
 				damage_far_mul = 1.25,
 				armor_piercing_add = 1,
@@ -24037,7 +24026,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			damage = -15
 		},
 		custom_stats = {
-			rays = 6,
 			damage_near_mul = 1.25,
 			damage_far_mul = 1.25,
 			armor_piercing_add = 1,
@@ -26948,7 +26936,53 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					damage_far_mul = 999,
 					bullet_class = "InstantExplosiveBulletBase"
 				}
-			}
+			},
+			wpn_fps_upg_a_piercing = {
+				supported = true,
+				stats = {
+					value = 9,
+					damage = -6
+				},
+				custom_stats = {
+					damage_near_mul = 1.25,
+					damage_far_mul = 1.25,
+					armor_piercing_add = 1,
+					ammo_pickup_min_mul = 0.9819,
+					ammo_pickup_max_mul = 0.9764,					
+					bullet_class = "BleedBulletBase",
+					dot_data = { 
+						type = "bleed",
+						custom_data = {
+							dot_damage = "1.6",
+							dot_length = "3.1",
+							dot_tick_period = "0.5"
+						}
+					}
+				}
+			},
+			wpn_fps_upg_a_dragons_breath = {
+				supported = true,
+				stats = {
+					value = 9,
+					damage = -6
+				},
+				custom_stats = {
+					ignore_statistic = true,
+					bullet_class = "FlameBulletBase",
+					armor_piercing_add = 1,
+					ammo_pickup_min_mul = 0.9819,
+					ammo_pickup_max_mul = 0.9764,										
+					can_shoot_through_shield = false,
+					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+					fire_dot_data = {
+						dot_damage = "1.6",
+						dot_trigger_max_distance = "99999999",
+						dot_trigger_chance = "50",
+						dot_length = "3.1",
+						dot_tick_period = "0.5"
+					}
+				}
+			}	
 		}
 		self.wpn_fps_shot_beck.override = {
 			wpn_fps_upg_a_explosive = {

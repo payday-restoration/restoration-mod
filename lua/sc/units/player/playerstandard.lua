@@ -1356,8 +1356,15 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 			end
 		end
 	end
+	
+	--Failsafe so you can still shout at bots on FFD2 to stop a softlock
+	local can_intimidate_teammates = nil	
+	local job = Global.level_data and Global.level_data.level_id
+	if not managers.groupai:state():whisper_mode() or job == "framing_frame_2" then
+		can_intimidate_teammates = true
+	end
 
-	if intimidate_teammates then
+	if intimidate_teammates and can_intimidate_teammates then
 		local criminals = managers.groupai:state():all_char_criminals()
 
 		for u_key, u_data in pairs(criminals) do

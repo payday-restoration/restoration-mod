@@ -5476,7 +5476,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aa12.stats = {
 		damage = 45,
 		spread = 6,
-		recoil = 19,
+		recoil = 20,
 		spread_moving = 7,
 		zoom = 1,
 		concealment = 20,

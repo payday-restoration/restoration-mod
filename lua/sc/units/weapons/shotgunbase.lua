@@ -36,7 +36,6 @@ function ShotgunBase:_update_stats_values()
 		end
 	end
 
-	--Maximum range of rays, set to longest possible falloff distance for shotguns.
 	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * self._damage_far_mul
 	
 	if self._ammo_data then
@@ -417,6 +416,12 @@ function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 	--Apply multipliers.
 	local falloff_near = base_falloff * falloff_near_mul
 	local falloff_far = base_falloff * falloff_far_mul
+
+	--Cache max distance that dot effects can be applied by the shotgun, rather than recalculating it redundantly.
+	--Min Distance used by Dragon's Breath/Flamethrowers to emulate falloff behavior, used by flechettes by adding to max to cover max real range.
+	--Used by Dragon's Breath, Flamethrowers, and Flechettes.
+	self.near_dot_distance = falloff_near
+	self.far_dot_distance = falloff_far
 
 	--Compute final damage.
 	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)

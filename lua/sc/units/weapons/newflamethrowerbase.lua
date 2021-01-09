@@ -34,7 +34,33 @@ function NewFlamethrowerBase:_update_stats_values()
 		if stats.damage_far_mul then
 			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
 		end
+
+		if stats.use_rare_dot then
+			self._ammo_data = {
+				bullet_class = "FlameBulletBase",
+				fire_dot_data = {
+					dot_damage = 0.8,
+					dot_trigger_chance = 60,
+					dot_length = 6.1,
+					dot_tick_period = 0.5
+				}
+			}
+		end
+
+		--Worst way to eat a steak, seriously what the fuck's wrong with you
+		if stats.use_well_done_dot then
+			self._ammo_data = {
+				bullet_class = "FlameBulletBase",
+				fire_dot_data = {
+					dot_damage = 3.2,
+					dot_trigger_chance = 60,
+					dot_length = 1.6,
+					dot_tick_period = 0.5
+				}					
+			}
+		end
 	end
+
 
 	--Maximum range, set to longest possible falloff distance.
 	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * self._damage_far_mul
@@ -73,6 +99,12 @@ function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
 	--Apply multipliers.
 	local falloff_near = base_falloff * falloff_near_mul
 	local falloff_far = base_falloff * falloff_far_mul
+
+	--Cache max distance that dot effects can be applied by the shotgun, rather than recalculating it redundantly.
+	--Min Distance used by Dragon's Breath/Flamethrowers to emulate falloff behavior, used by flechettes by adding to max to cover max real range.
+	--Used by Dragon's Breath, Flamethrowers, and Flechettes.
+	self.near_dot_distance = falloff_near
+	self.far_dot_distance = falloff_far
 
 	--Compute final damage.
 	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)

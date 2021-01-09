@@ -284,9 +284,13 @@ function CopDamage:damage_fire(attack_data)
 	end
 
 	local weapon_unit = weap_unit
-
-	if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
-		weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+	local weap_base = nil
+	
+	if alive(weapon_unit) and weapon_unit.base then
+		weap_base = weapon_unit:base() 
+		if weap_base and weap_base.add_damage_result then
+			weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+		end
 	end
 
 	if not attack_data.is_fire_dot_damage and attack_data.fire_dot_data and result.type ~= "death" then --DoT never triggers an animation so it shouldn't constantly micro-stun enemies that are vulnerable to fire
@@ -307,12 +311,17 @@ function CopDamage:damage_fire(attack_data)
 				distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
 			end
 
-			local fire_dot_max_distance = tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
+			local fire_dot_max_distance = weap_base and weap_base.far_dot_distance and weap_base.far_dot_distance + weap_base.near_dot_distance or tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
 
 			if distance < fire_dot_max_distance then
 				local start_dot_damage_roll = math.random(1, 100)
-				local fire_dot_trigger_chance = tonumber(fire_dot_data.dot_trigger_chance) or 30
+				local fire_dot_trigger_chance = tonumber(fire_dot_data.dot_trigger_chance)
 
+				--Dragon's breath trigger chance scales with range.
+				if weap_base and weap_base.far_dot_distance then
+					fire_dot_trigger_chance = (1 - math.min(1, math.max(0, distance - weap_base.near_dot_distance) / weap_base.far_dot_distance)) * fire_dot_trigger_chance
+				end
+				
 				if start_dot_damage_roll <= fire_dot_trigger_chance then
 					local dot_damage = fire_dot_data.dot_damage or 25
 					local t = TimerManager:game():time()

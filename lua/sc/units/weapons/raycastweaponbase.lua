@@ -714,14 +714,33 @@ function ProjectilesBleedBulletBase:on_collision(col_ray, weapon_unit, user_unit
 			return
 		end
 
-		result = self:start_dot_damage(col_ray, nil, {
-			dot_damage = dot_type_data.dot_damage,
-			dot_length = dot_data.custom_length or dot_type_data.dot_length
-		})
+		if not weap_base.near_dot_distance or weap_base.far_dot_distance + weap_base.near_dot_distance < (col_ray.distance or col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())) then
+			result = self:start_dot_damage(col_ray, nil, {
+				dot_damage = dot_type_data.dot_damage,
+				dot_length = dot_data.custom_length or dot_type_data.dot_length
+			})
+		end
 	end
 
 	return result
 end
+
+function BleedBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon_id)
+	dot_data = dot_data or self.DOT_DATA
+	local hurt_animation = not dot_data.hurt_animation_chance or math.rand(1) < dot_data.hurt_animation_chance
+
+	--Add range limits for Flechette shotguns.
+	local can_apply_dot = true
+	weap_base = weapon_unit:base()
+	if weap_base.near_dot_distance then
+		can_apply_dot = weap_base.far_dot_distance + weap_base.near_dot_distance > col_ray.distance or 0
+	end
+
+	if can_apply_dot == true then
+		managers.dot:add_doted_enemy(col_ray.unit, TimerManager:game():time(), weapon_unit, dot_data.dot_length, dot_data.dot_damage, hurt_animation, self.VARIANT, weapon_id)
+ 	end
+end
+
 
 --Adds a blood splat effect every time the bleed deals damage.
 function BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, hurt_animation, weapon_id)

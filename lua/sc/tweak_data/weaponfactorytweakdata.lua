@@ -1,3 +1,150 @@
+--Overrides for shotgun ammo types that vary per damage tier.
+	--Indented to make for easy code folding in most editors.
+	--@SC Feel free to define these for the other ammo types if you want, though it may require way more presets to be made since they also touch ammo count.
+	--Flechettes
+	local a_piercing_auto_override = {
+		desc_id = "bm_wp_upg_a_piercing_auto_desc_sc",
+		stats = {
+			value = 9,
+			damage = -6
+		},
+		custom_stats = {
+			damage_near_mul = 1.25,
+			damage_far_mul = 1.25,
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9819,
+			ammo_pickup_max_mul = 0.9764,					
+			bullet_class = "BleedBulletBase",
+			dot_data = { 
+				type = "bleed",
+				custom_data = {
+					dot_damage = "1.6",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}
+	}
+
+	local a_piercing_semi_override = {
+		desc_id = "bm_wp_upg_a_piercing_semi_desc_sc",
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			damage_near_mul = 1.25,
+			damage_far_mul = 1.25,
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9607,
+			ammo_pickup_max_mul = 0.9486,					
+			bullet_class = "BleedBulletBase",
+			dot_data = { 
+				type = "bleed",
+				custom_data = {
+					dot_damage = "2",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}
+	}
+
+	local a_piercing_pump_override = {
+		desc_id = "bm_wp_upg_a_piercing_pump_desc_sc",
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			desc_id = "bm_wp_upg_a_piercing_pump_desc_sc",
+			damage_near_mul = 1.25,
+			damage_far_mul = 1.25,
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9655,
+			ammo_pickup_max_mul = 0.9543,			
+			bullet_class = "BleedBulletBase",
+			dot_data = { 
+				type = "bleed",
+				custom_data = {
+					dot_damage = "3",
+					dot_length = "3.1",
+					dot_tick_period = "0.5"
+				}
+			}
+		}
+	}
+
+	--Dragon's Breath
+	local a_dragons_breath_auto_override = {
+		desc_id = "bm_wp_upg_a_dragons_breath_auto_desc_sc",
+		stats = {
+			value = 9,
+			damage = -6
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			bullet_class = "FlameBulletBase",
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9819,
+			ammo_pickup_max_mul = 0.9764,										
+			can_shoot_through_shield = false,
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+			fire_dot_data = {
+				dot_damage = "1.6",
+				dot_trigger_chance = "60",
+				dot_length = "3.1",
+				dot_tick_period = "0.5"
+			}
+		}
+	}
+
+	local a_dragons_breath_semi_override = {
+		desc_id = "bm_wp_upg_a_dragons_breath_semi_desc_sc",
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			bullet_class = "FlameBulletBase",
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9607,
+			ammo_pickup_max_mul = 0.9486,										
+			can_shoot_through_shield = false,
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+			fire_dot_data = {
+				dot_damage = "3",
+				dot_trigger_chance = "60",
+				dot_length = "3.1",
+				dot_tick_period = "0.5"
+			}
+		}
+	}
+
+	local a_dragons_breath_pump_override = {
+		supported = true,
+		stats = {
+			value = 9,
+			damage = -15
+		},
+		custom_stats = {
+			ignore_statistic = true,
+			bullet_class = "FlameBulletBase",
+			armor_piercing_add = 1,
+			ammo_pickup_min_mul = 0.9655,
+			ammo_pickup_max_mul = 0.9543,									
+			can_shoot_through_shield = false,
+			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
+			fire_dot_data = {
+				dot_damage = "3",
+				dot_trigger_chance = "60",
+				dot_length = "3.1",
+				dot_tick_period = "0.5"
+			}
+		}
+	}
+
 --Vanilla Silencers
 Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", function(self)
 
@@ -2024,7 +2171,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				damage_far_mul = 0.75,
 				rays = 6
 			}
-		},	
+		},
 		wpn_fps_upg_a_custom_free = {
 			supported = true,
 			stats = {
@@ -2037,7 +2184,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				damage_far_mul = 0.75,
 				rays = 6
 			}
-		},			
+		},
 		wpn_fps_upg_a_explosive = {
 			supported = true,
 			stats = {
@@ -2056,52 +2203,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -6
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9819,
-				ammo_pickup_max_mul = 0.9764,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "1.6",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -6
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9819,
-				ammo_pickup_max_mul = 0.9764,										
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "1.6",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}			
+		wpn_fps_upg_a_piercing = a_piercing_auto_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override		
 	}
 	
 	--Izhma Part Additions
@@ -3117,52 +3220,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9655,
-				ammo_pickup_max_mul = 0.9543,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "3",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9655,
-				ammo_pickup_max_mul = 0.9543,									
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "3",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}	
+		wpn_fps_upg_a_piercing = a_piercing_pump_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	}
 	
 	--Use Part Table
@@ -3358,52 +3417,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9655,
-				ammo_pickup_max_mul = 0.9543,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "3",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9655,
-				ammo_pickup_max_mul = 0.9543,									
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "3",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}			
+		wpn_fps_upg_a_piercing = a_piercing_pump_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
 	}
 	
 	--Use Part Table
@@ -5214,52 +5229,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "3",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,										
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "3",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}			
+		wpn_fps_upg_a_piercing = a_piercing_semi_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 	}
 
 end)	
@@ -5381,52 +5352,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "3",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,										
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "3",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}			
+		wpn_fps_upg_a_piercing = a_piercing_semi_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override	
 	}
 
 end)	
@@ -5531,53 +5458,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
-	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing = {
-		supported = true,
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			damage_near_mul = 1.25,
-			damage_far_mul = 1.25,
-			armor_piercing_add = 1,
-			ammo_pickup_min_mul = 0.9655,
-			ammo_pickup_max_mul = 0.9543,			
-			bullet_class = "BleedBulletBase",
-			dot_data = { 
-				type = "bleed",
-				custom_data = {
-					dot_damage = "3",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}
-	}
-	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath = {
-		supported = true,
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			ignore_statistic = true,
-			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 1,
-			ammo_pickup_min_mul = 0.9655,
-			ammo_pickup_max_mul = 0.9543,								
-			can_shoot_through_shield = false,
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-			fire_dot_data = {
-				dot_damage = "3",
-				dot_trigger_max_distance = "99999999",
-				dot_trigger_chance = "50",
-				dot_length = "3.1",
-				dot_tick_period = "0.5"
-			}
-		}
-	}		
-
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 end)	
 
 --GL40
@@ -6487,9 +6369,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		bullet_class = "InstantExplosiveBulletBase"
 	}
 	
-	--Flechettes, balanced around primary break actions without overrides
+	--Flechettes
+	--This part description covers heavy shotguns, other damage tiers are handled via overrides.
 	self.parts.wpn_fps_upg_a_piercing.name_id = "bm_wp_upg_a_piercing"
-	self.parts.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_desc_sc"
+	self.parts.wpn_fps_upg_a_piercing.desc_id = "bm_wp_upg_a_piercing_heavy_desc_sc"
 	self.parts.wpn_fps_upg_a_piercing.pcs = {}
 	self.parts.wpn_fps_upg_a_piercing.supported = true
 	self.parts.wpn_fps_upg_a_piercing.stats = {
@@ -6512,8 +6395,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			}
 		}
 	}
-	
-	--Dragon's Breath, balanced around primary break actions without overrides
+
+	--Dragon's Breath
+	--This part description covers heavy shotguns, other damage tiers are handled via overrides.
 	self.parts.wpn_fps_upg_a_dragons_breath.pcs = {}
 	self.parts.wpn_fps_upg_a_dragons_breath.name_id = "bm_wp_upg_a_dragons_breath"
 	self.parts.wpn_fps_upg_a_dragons_breath.desc_id = "bm_wp_upg_a_dragons_breath_desc_sc"
@@ -6532,8 +6416,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 		fire_dot_data = {
 			dot_damage = "4",
-			dot_trigger_max_distance = "99999999",
-			dot_trigger_chance = "50",
+			dot_trigger_chance = "60",
 			dot_length = "3.1",
 			dot_tick_period = "0.5"
 		}
@@ -7105,54 +6988,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "3",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,										
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "3",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}			
+		wpn_fps_upg_a_piercing = a_piercing_semi_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 	}
-
 end)
 
 --Buzzsaw 42
@@ -8756,54 +8594,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "3",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,										
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "3",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}			
+		wpn_fps_upg_a_piercing = a_piercing_semi_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override
 	}
-
 end)
 
 --Peacemaker
@@ -11352,52 +11145,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
-	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing = {
-		supported = true,
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			damage_near_mul = 1.25,
-			damage_far_mul = 1.25,
-			armor_piercing_add = 1,
-			ammo_pickup_min_mul = 0.9655,
-			ammo_pickup_max_mul = 0.9543,			
-			bullet_class = "BleedBulletBase",
-			dot_data = { 
-				type = "bleed",
-				custom_data = {
-					dot_damage = "3",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}
-	}
-	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath = {
-		supported = true,
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			ignore_statistic = true,
-			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 1,
-			ammo_pickup_min_mul = 0.9655,
-			ammo_pickup_max_mul = 0.9543,				
-			can_shoot_through_shield = false,
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-			fire_dot_data = {
-				dot_damage = "3",
-				dot_trigger_max_distance = "99999999",
-				dot_trigger_chance = "50",
-				dot_length = "3.1",
-				dot_tick_period = "0.5"
-			}
-		}
-	}			
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override		
 	
 	table.insert(self.wpn_fps_shot_m37.uses_parts, "wpn_fps_upg_o_specter")
 	table.insert(self.wpn_fps_shot_m37_npc.uses_parts, "wpn_fps_upg_o_specter")	
@@ -13896,54 +13645,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "3",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -15
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9607,
-				ammo_pickup_max_mul = 0.9486,										
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "3",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}			
+		wpn_fps_upg_a_piercing = a_piercing_semi_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override		
 	}
-	
 end)
 
 --Spec Ops Pack
@@ -17434,52 +17138,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -6
-			},
-			custom_stats = {
-				damage_near_mul = 1.25,
-				damage_far_mul = 1.25,
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9819,
-				ammo_pickup_max_mul = 0.9764,					
-				bullet_class = "BleedBulletBase",
-				dot_data = { 
-					type = "bleed",
-					custom_data = {
-						dot_damage = "1.6",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			supported = true,
-			stats = {
-				value = 9,
-				damage = -6
-			},
-			custom_stats = {
-				ignore_statistic = true,
-				bullet_class = "FlameBulletBase",
-				armor_piercing_add = 1,
-				ammo_pickup_min_mul = 0.9819,
-				ammo_pickup_max_mul = 0.9764,										
-				can_shoot_through_shield = false,
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-				fire_dot_data = {
-					dot_damage = "1.6",
-					dot_trigger_max_distance = "99999999",
-					dot_trigger_chance = "50",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}		
-		}
+		wpn_fps_upg_a_piercing = a_piercing_auto_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override
 	}
 	
 	table.insert(self.wpn_fps_sho_basset.uses_parts, "wpn_upg_saiga_m_20rnd")
@@ -24019,52 +23679,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			bullet_class = "InstantExplosiveBulletBase"
 		}
 	}
-	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_piercing = {
-		supported = true,
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			damage_near_mul = 1.25,
-			damage_far_mul = 1.25,
-			armor_piercing_add = 1,
-			ammo_pickup_min_mul = 0.9655,
-			ammo_pickup_max_mul = 0.9543,			
-			bullet_class = "BleedBulletBase",
-			dot_data = { 
-				type = "bleed",
-				custom_data = {
-					dot_damage = "3",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
-				}
-			}
-		}
-	}
-	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath = {
-		supported = true,
-		stats = {
-			value = 9,
-			damage = -15
-		},
-		custom_stats = {
-			ignore_statistic = true,
-			bullet_class = "FlameBulletBase",
-			armor_piercing_add = 1,
-			ammo_pickup_min_mul = 0.9655,
-			ammo_pickup_max_mul = 0.9543,				
-			can_shoot_through_shield = false,
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-			fire_dot_data = {
-				dot_damage = "3",
-				dot_trigger_max_distance = "99999999",
-				dot_trigger_chance = "50",
-				dot_length = "3.1",
-				dot_tick_period = "0.5"
-			}
-		}
-	}		
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override		
 
 end)
 					
@@ -26937,52 +26553,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
-			wpn_fps_upg_a_piercing = {
-				supported = true,
-				stats = {
-					value = 9,
-					damage = -6
-				},
-				custom_stats = {
-					damage_near_mul = 1.25,
-					damage_far_mul = 1.25,
-					armor_piercing_add = 1,
-					ammo_pickup_min_mul = 0.9819,
-					ammo_pickup_max_mul = 0.9764,					
-					bullet_class = "BleedBulletBase",
-					dot_data = { 
-						type = "bleed",
-						custom_data = {
-							dot_damage = "1.6",
-							dot_length = "3.1",
-							dot_tick_period = "0.5"
-						}
-					}
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				supported = true,
-				stats = {
-					value = 9,
-					damage = -6
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					bullet_class = "FlameBulletBase",
-					armor_piercing_add = 1,
-					ammo_pickup_min_mul = 0.9819,
-					ammo_pickup_max_mul = 0.9764,										
-					can_shoot_through_shield = false,
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					fire_dot_data = {
-						dot_damage = "1.6",
-						dot_trigger_max_distance = "99999999",
-						dot_trigger_chance = "50",
-						dot_length = "3.1",
-						dot_tick_period = "0.5"
-					}
-				}
-			}	
+			wpn_fps_upg_a_piercing = a_piercing_auto_override,
+			wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override
 		}
 		self.wpn_fps_shot_beck.override = {
 			wpn_fps_upg_a_explosive = {
@@ -28128,7 +27700,6 @@ end
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
 				dot_damage = "0",
-				dot_trigger_max_distance = "9999",
 				dot_trigger_chance = "100",
 				dot_length = "3",
 				dot_tick_period = "0.5"

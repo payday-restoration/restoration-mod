@@ -714,12 +714,10 @@ function ProjectilesBleedBulletBase:on_collision(col_ray, weapon_unit, user_unit
 			return
 		end
 
-		if not weap_base.near_dot_distance or weap_base.far_dot_distance + weap_base.near_dot_distance < (col_ray.distance or col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())) then
-			result = self:start_dot_damage(col_ray, nil, {
-				dot_damage = dot_type_data.dot_damage,
-				dot_length = dot_data.custom_length or dot_type_data.dot_length
-			})
-		end
+		result = self:start_dot_damage(col_ray, nil, {
+			dot_damage = dot_type_data.dot_damage,
+			dot_length = dot_data.custom_length or dot_type_data.dot_length
+		})
 	end
 
 	return result

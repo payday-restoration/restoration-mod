@@ -315,13 +315,13 @@ function CopDamage:damage_fire(attack_data)
 
 			if distance < fire_dot_max_distance then
 				local start_dot_damage_roll = math.random(1, 100)
-				local fire_dot_trigger_chance = tonumber(fire_dot_data.dot_trigger_chance)
+				local fire_dot_trigger_chance = tonumber(fire_dot_data.dot_trigger_chance) or 30
 
 				--Dragon's breath trigger chance scales with range.
 				if weap_base and weap_base.far_dot_distance then
 					fire_dot_trigger_chance = (1 - math.min(1, math.max(0, distance - weap_base.near_dot_distance) / weap_base.far_dot_distance)) * fire_dot_trigger_chance
 				end
-				
+
 				if start_dot_damage_roll <= fire_dot_trigger_chance then
 					local dot_damage = fire_dot_data.dot_damage or 25
 					local t = TimerManager:game():time()

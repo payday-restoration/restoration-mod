@@ -607,52 +607,15 @@ function CopDamage:damage_bullet(attack_data)
 			end
 
 			if armor_pierce_value <= armor_pierce_roll then
-				local result_type = nil
-
-				if not self._char_tweak.immune_to_knock_down then
-					if attack_data.knock_down then
-						result_type = "knock_down"
-					elseif attack_data.stagger and not self._has_been_staggered then
-						result_type = "stagger"
-						self._has_been_staggered = true
-					end
-				end
-
-				if not result_type then
-					local damage = attack_data.damage
-					damage = math.clamp(damage, 0, self._HEALTH_INIT)
-					local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
-					damage = damage_percent * self._HEALTH_INIT_PRECENT
-					damage, damage_percent = self:_apply_min_health_limit(damage, damage_percent)
-
-					result_type = self:get_damage_type(damage_percent, "bullet")
-				end
-
-				attack_data.damage = 0
-				attack_data.raw_damage = 0
-
-				local result = {
-					type = result_type,
-					variant = attack_data.variant
-				}
-
-				attack_data.result = result
-				attack_data.pos = attack_data.col_ray.position
-
-				local body_index = self._unit:get_body_index(attack_data.col_ray.body:name())
-				local hit_offset_height = math.clamp(attack_data.col_ray.position.z - self._unit:position().z, 0, 300)
-				local attacker = attack_data.attacker_unit
-
-				if not attacker or not alive(attacker) or attacker:id() == -1 then
-					attacker = self._unit
-				end
-
-				self:_send_bullet_attack_result(attack_data, attacker, 0, body_index, hit_offset_height, 0)
-				self:_on_damage_received(attack_data)
-
-				result.attack_data = attack_data
-
-				return result
+				World:effect_manager():spawn({
+					effect = Idstring("effects/payday2/particles/impacts/steel_no_decal_impact_pd2"),
+					position = attack_data.col_ray.position,
+					normal = attack_data.col_ray.ray
+				})			
+				--Fucking loud, can be subject to change. Just the only sound ID I found on short notice
+				self._unit:sound():play("swatturret_weakspot_hit", nil, nil)
+			
+				return
 			end
 
 			World:effect_manager():spawn({

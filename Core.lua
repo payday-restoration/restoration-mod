@@ -171,11 +171,7 @@ function restoration:Init()
 		"hox_1",
 		"xmn_hox_1",
 		--Custom Heists below--
-		"thechase",
-		"skm_street",		
-		"skmc_mad", --rex's holdout maps
-		"skmc_fish",
-		"skmc_ovengrill"		
+		"thechase"
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
 	restoration.extremely_tiny_levels = {

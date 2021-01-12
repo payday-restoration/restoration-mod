@@ -597,105 +597,6 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	local job = Global.level_data and Global.level_data.level_id
 	Month = os.date("%m")
 	Day = os.date("%d")	
-	if difficulty_index <= 2 then
-		self.special_unit_spawn_limits = {
-			tank = 1,
-			taser = 1,
-			boom = 0,
-			spooc = 0,
-			shield = 2,
-			medic = 0,
-			phalanx_vip = 0,
-			spring = 0,
-			headless_hatman = 0,
-			autumn = 0,
-			summers = 0
-		}
-	elseif difficulty_index == 3 then
-		self.special_unit_spawn_limits = {
-			tank = 1,
-			taser = 2,
-			boom = 0,
-			spooc = 1,
-			shield = 3,
-			medic = 0,
-			phalanx_vip = 0,
-			spring = 0,
-			headless_hatman = 0,
-			autumn = 0,
-			summers = 0
-		}
-	elseif difficulty_index == 4 then
-		self.special_unit_spawn_limits = {
-			tank = 2,
-			taser = 3,
-			boom = 0,
-			spooc = 2,
-			shield = 4,
-			medic = 2,
-			phalanx_vip = 1,
-			spring = 1,
-			headless_hatman = 1,
-			autumn = 1,
-			summers = 1
-		}
-	elseif difficulty_index == 5 then
-		self.special_unit_spawn_limits = {
-			tank = 3,
-			taser = 4,
-			boom = 2,
-			spooc = 3,
-			shield = 5,
-			medic = 3,
-			phalanx_vip = 1,
-			spring = 1,
-			headless_hatman = 1,
-			autumn = 1,
-			summers = 1
-		}
-	elseif difficulty_index == 6 then
-		self.special_unit_spawn_limits = {
-			tank = 3,
-			taser = 4,
-			boom = 2,
-			spooc = 4,
-			shield = 5,
-			medic = 3,
-			phalanx_vip = 1,
-			spring = 1,
-			headless_hatman = 1,
-			autumn = 1,
-			summers = 1
-		}	
-	elseif difficulty_index == 7 then
-		self.special_unit_spawn_limits = {
-			tank = 3,
-			taser = 4,
-			boom = 2,
-			spooc = 4,
-			shield = 5,
-			medic = 3,
-			phalanx_vip = 1,
-			spring = 1,
-			headless_hatman = 1,
-			autumn = 1,
-			summers = 1
-		}				
-	else
-		self.special_unit_spawn_limits = {
-			tank = 3,
-			taser = 4,
-			boom = 2,
-			spooc = 4,
-			shield = 5,
-			medic = 3,
-			phalanx_vip = 1,
-			spring = 1,
-			headless_hatman = 1,
-			autumn = 1,
-			summers = 1
-		}
-	end
 	self.unit_categories = {}
 	if difficulty_index <= 7 then
 		self.unit_categories.spooc = {
@@ -1002,8 +903,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			russia = {
 				Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870")
 			},
-			zombie = {
-				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4")
+			zombie = 
+{				Idstring("units/pd2_dlc_hvh/characters/ene_cop_hvh_4/ene_cop_hvh_4")
 			},				
 			murkywater = {	
 				Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
@@ -18922,17 +18823,17 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	end	
 	for _,t in pairs(restoration.tiny_levels) do
 		if job == t then
-			map_scale_factor = 0.85
+			map_scale_factor = 0.9
 		end
 	end
 	for _,vt in pairs(restoration.very_tiny_levels) do
 		if job == vt then
-			map_scale_factor = 0.7
+			map_scale_factor = 0.8
 		end
 	end
 	for _,vt in pairs(restoration.extremely_tiny_levels) do
 		if job == vt then
-			map_scale_factor = 0.55
+			map_scale_factor = 0.65
 		end
 	end
 
@@ -18959,7 +18860,20 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			75,
 			100,
 			125
-		}	
+		}
+		self.special_unit_spawn_limits = {
+			tank = 1,
+			taser = 1,
+			boom = 0,
+			spooc = 0,
+			shield = math.max(math.floor(2 * map_scale_factor), 1),
+			medic = 0,
+			phalanx_vip = 0,
+			spring = 0,
+			headless_hatman = 0,
+			autumn = 0,
+			summers = 0
+		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
 			12,
@@ -18971,6 +18885,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			100,
 			125
 		}
+		self.special_unit_spawn_limits = {
+			tank = 1,
+			taser = math.max(math.floor(2 * map_scale_factor), 1),
+			boom = 0,
+			spooc = 1,
+			shield = math.max(math.floor(3 * map_scale_factor), 1),
+			medic = 0,
+			phalanx_vip = 1,
+			spring = 1,
+			headless_hatman = 1,
+			autumn = 1,
+			summers = 1
+		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
 			15,
@@ -18981,7 +18908,20 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			75,
 			100,
 			125
-		}	
+		}
+		self.special_unit_spawn_limits = {
+			tank = math.max(math.floor(2 * map_scale_factor), 1),
+			taser = math.max(math.floor(3 * map_scale_factor), 1),
+			boom = 0,
+			spooc = math.max(math.floor(2 * map_scale_factor), 1),
+			shield = math.max(math.floor(4 * map_scale_factor), 1),
+			medic = math.max(math.floor(2 * map_scale_factor), 1),
+			phalanx_vip = 1,
+			spring = 1,
+			headless_hatman = 1,
+			autumn = 1,
+			summers = 1
+		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
 			15,
@@ -18993,6 +18933,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			100,
 			125
 		}
+		self.special_unit_spawn_limits = {
+			tank = math.max(math.floor(3 * map_scale_factor), 1),
+			taser = math.max(math.floor(4 * map_scale_factor), 1),
+			boom = math.max(math.floor(0 * map_scale_factor), 1),
+			spooc = math.max(math.floor(2 * map_scale_factor), 1),
+			shield = math.max(math.floor(4 * map_scale_factor), 1),
+			medic = math.max(math.floor(2 * map_scale_factor), 1),
+			phalanx_vip = 1,
+			spring = 1,
+			headless_hatman = 1,
+			autumn = 1,
+			summers = 1
+		}
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
 			17,
@@ -19003,7 +18956,20 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			90,
 			120,
 			150
-		}	
+		}
+		self.special_unit_spawn_limits = {
+			tank = math.max(math.floor(3 * map_scale_factor), 1),
+			taser = math.max(math.floor(4 * map_scale_factor), 1),
+			boom = math.max(math.floor(2 * map_scale_factor), 1),
+			spooc = math.max(math.floor(3 * map_scale_factor), 1),
+			shield = math.max(math.floor(5 * map_scale_factor), 1),
+			medic = math.max(math.floor(3 * map_scale_factor), 1),
+			phalanx_vip = 1,
+			spring = 1,
+			headless_hatman = 1,
+			autumn = 1,
+			summers = 1
+		}
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
 			17,
@@ -19015,6 +18981,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			120,
 			150
 		}
+		self.special_unit_spawn_limits = {
+			tank = math.max(math.floor(3 * map_scale_factor), 1),
+			taser = math.max(math.floor(4 * map_scale_factor), 1),
+			boom = math.max(math.floor(2 * map_scale_factor), 1),
+			spooc = math.max(math.floor(4 * map_scale_factor), 1),
+			shield = math.max(math.floor(5 * map_scale_factor), 1),
+			medic = math.max(math.floor(3 * map_scale_factor), 1),
+			phalanx_vip = 1,
+			spring = 1,
+			headless_hatman = 1,
+			autumn = 1,
+			summers = 1
+		}
 	else
 		self.besiege.assault.force = {
 			20,
@@ -19025,6 +19004,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			105,
 			140,
 			175
+		}
+		self.special_unit_spawn_limits = {
+			tank = math.max(math.floor(3 * map_scale_factor), 1),
+			taser = math.max(math.floor(4 * map_scale_factor), 1),
+			boom = math.max(math.floor(2 * map_scale_factor), 1),
+			spooc = math.max(math.floor(4 * map_scale_factor), 1),
+			shield = math.max(math.floor(5 * map_scale_factor), 1),
+			medic = math.max(math.floor(3 * map_scale_factor), 1),
+			phalanx_vip = 1,
+			spring = 1,
+			headless_hatman = 1,
+			autumn = 1,
+			summers = 1
 		}
 	end
 	

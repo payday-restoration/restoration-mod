@@ -59,7 +59,7 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op" force="false"/>	
 	<texture path="units/pd2_dlc_pex/characters/shared_textures/ene_office_cops_head_atlas_df" />	
 	<texture path="units/pd2_dlc_pex/characters/shared_textures/ene_office_cops_head_atlas_nm" />	
-	<texture path="units/pd2_dlc_bex/characters/shared_textures/helmets_city_atlas_df" />
+	<df_nm path="units/pd2_dlc_bex/characters/shared_textures/helmets_city_atlas" />
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/mask_city_df" />	
 
 	<!--Taser-->

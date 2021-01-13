@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" orientation_object="root_point" />
+	<diesel materials="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>
@@ -234,6 +234,7 @@
 			</lod_object>
 
 			<object name="g_glass" enabled="true"  />
+			<object name="g_frame" enabled="true"  />
 			
 			<object name="s_body" enabled="true" shadow_caster="true"/>
 			

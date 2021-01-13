@@ -1515,11 +1515,13 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 
 			return
 		elseif not self._loud_diff_set and script_value > 0  then
+			local starting_diff = 0.1
+			starting_diff = managers.modifiers:modify_value("GroupAIStateBase:CheckingDiff", starting_diff)
 			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
 			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
 			--should fix armored transport and its jank mission scripts	(ovk why)
 			--also, add 0.1 here instead of setting so you cant bypass civ penalty on some heists
-			self._difficulty_value = self._difficulty_value + 0.1
+			self._difficulty_value = self._difficulty_value + starting_diff
 			self:_calculate_difficulty_ratio()
 			--please kill me
 			self._loud_diff_set = true

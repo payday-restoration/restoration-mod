@@ -72,7 +72,7 @@ function CopLogicTravel.enter(data, new_logic_name, enter_params)
 	my_data.cover_update_task_key = "CopLogicTravel._update_cover" .. key_str
 
 	if my_data.nearest_cover or my_data.best_cover then
-		CopLogicBase.add_delayed_clbk(my_data, my_data.cover_update_task_key, callback(CopLogicTravel, CopLogicTravel, "_update_cover", data), data.t + 0.01)
+		CopLogicBase.add_delayed_clbk(my_data, my_data.cover_update_task_key, callback(CopLogicTravel, CopLogicTravel, "_update_cover", data), data.t + 1)
 	end
 
 	my_data.advance_path_search_id = "CopLogicTravel_detailed" .. tostring(data.key)

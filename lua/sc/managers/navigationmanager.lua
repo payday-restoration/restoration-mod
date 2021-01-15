@@ -69,23 +69,6 @@ NavigationManager.ACCESS_FLAGS = {
 }
 NavigationManager.ACCESS_FLAGS_OLD = {}
 
-function NavigationManager:release_cover(cover)
-	local reserved = cover[self.COVER_RESERVED]
-	
-	if not reserved then
-		log("cover invalid!!! but probably not reserved!!!")
-		return true
-	end
-	
-	if reserved == 1 then
-		cover[self.COVER_RESERVED] = nil
-
-		self:unreserve_pos(cover[self.COVER_RESERVATION])
-	else
-		cover[self.COVER_RESERVED] = reserved - 1
-	end
-end
-
 function NavigationManager:find_cover_from_threat_2(nav_seg_id, optimal_threat_dis, near_pos, threat_pos, search_start_pos, max_distance, cone_base, cone_angle, rsrv_filter)
 	if type(nav_seg_id) == "table" then
 		nav_seg_id = self._convert_nav_seg_map_to_vec(nav_seg_id)

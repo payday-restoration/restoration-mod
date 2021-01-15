@@ -118,6 +118,13 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.red2
 			},
 			{
+				stage_id = "pex",
+				id = "pex",
+				icon = "csm_pex",
+				add = debug_short_add,
+				level = tweak_data.narrative.stages.pex
+			},			
+			{
 				stage_id = "dah",
 				add = 8,
 				id = "dah",
@@ -335,7 +342,7 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				id = "mia_2",
 				icon = "csm_miami_2",
 				level = tweak_data.narrative.stages.mia_2
-			},
+			},			
 			{
 				stage_id = "nmh_res",
 				add = 12,
@@ -478,6 +485,13 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				icon = "csm_aftershock",
 				level = tweak_data.narrative.stages.jolly
 			},
+			{
+				stage_id = "mad",
+				id = "mad",
+				icon = "csm_mad",
+				add = debug_long_add,
+				level = tweak_data.narrative.stages.mad
+			},			
 			{
 				stage_id = "shoutout_raid",
 				add = debug_long_add,

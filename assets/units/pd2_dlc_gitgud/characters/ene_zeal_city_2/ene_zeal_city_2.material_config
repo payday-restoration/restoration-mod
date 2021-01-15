@@ -34,8 +34,8 @@
 		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" mip="1"/>
 	</material>
 	<material name="mtr_helmet_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="4"/>
-		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" mip="4"/>
+		<bump_normal_texture 	file="units/pd2_dlc_tng/masks/tng_cloaker/tng_cloaker_nm" />
+		<diffuse_texture 		file="units/pd2_dlc_tng/masks/tng_cloaker/tng_cloaker_df" />
 	</material>
 	
 	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE:TAKE_FOG" version="2">

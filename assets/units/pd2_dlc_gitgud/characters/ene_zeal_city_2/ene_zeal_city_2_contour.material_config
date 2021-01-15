@@ -50,8 +50,8 @@
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
 	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_helmet_lod_2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/helmets_atlas_nm" mip="4"/>
-		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" mip="4"/>
+		<bump_normal_texture 	file="units/pd2_dlc_tng/masks/tng_cloaker/tng_cloaker_nm" />
+		<diffuse_texture 		file="units/pd2_dlc_tng/masks/tng_cloaker/tng_cloaker_df" />
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material> 

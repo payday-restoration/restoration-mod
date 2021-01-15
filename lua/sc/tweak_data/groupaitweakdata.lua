@@ -12288,6 +12288,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		spooc = {
 			"hunter",
 			"flank",
+			"lonewolf",
 			"spoocavoidance",
 			"smoke_grenade",
 			"flash_grenade"
@@ -12811,7 +12812,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"grouphrtr"
 		},
 		ELITE_swat_rifle = {
-			"ranged_fire ",
+			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12832,7 +12833,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"groupcsr"
 		},		
 		ELITE_heavy = { 
-			"ranged_fire ",
+			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
 			"harass",
@@ -12842,6 +12843,17 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
+		ELITE_heavy_shotgun = { 
+			"smoke_grenade",
+			"flash_grenade",
+			"harass",
+			"charge",
+			"provide_coverfire",
+			"provide_support",
+			"shield_cover",
+			"deathguard",
+			"groupcsr"
+		},		
 		ELITE_swat_rifle_flank = {
 			"flank",
 			"smoke_grenade",
@@ -12850,7 +12862,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"harass",
 			"provide_coverfire",
 			"provide_support",
-			"lonewolf",
 			"shield_cover"
 		},
 		ELITE_heavy_flank = { 
@@ -12861,7 +12872,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"harass",
 			"provide_coverfire",
 			"provide_support",
-			"lonewolf",
 			"shield_cover"
 		},
 		ELITE_heavy_shotgun_flank = {
@@ -12872,7 +12882,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"lonewolf",
 			"shield_cover"
 		},				
 		
@@ -14375,7 +14384,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_heavy_G36_w",
 					freq = 0.75,
 					amount_min = 1,
-					tactics = self._tactics.ELITE_heavy,
+					tactics = self._tactics.MH_heavy,
 					rank = 1
 				}
 			}
@@ -14612,7 +14621,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 1,
 					amount_max = 2,
 					freq = 1,
-					tactics = self._tactics.ELITE_heavy_shotgun_flank,
+					tactics = self._tactics.ELITE_heavy_shotgun,
 					rank = 2
 				},						
 				{
@@ -15762,7 +15771,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_heavy_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun,
 				rank = 3
 			},						
 			{
@@ -16016,7 +16025,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_heavy_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun,
 				rank = 3
 			},						
 			{
@@ -16375,7 +16384,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_heavy_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun,
 				rank = 3
 			},						
 			{
@@ -16734,7 +16743,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_heavy_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun,
 				rank = 3
 			},						
 			{
@@ -17093,7 +17102,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				freq = 1,
-				tactics = self._tactics.ELITE_heavy_shotgun_flank,
+				tactics = self._tactics.ELITE_heavy_shotgun,
 				rank = 3
 			},						
 			{

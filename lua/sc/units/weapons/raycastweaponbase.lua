@@ -732,7 +732,7 @@ function BleedBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon
 	if alive(weapon_unit) then
 		weap_base = weapon_unit:base()
 		if weap_base.near_dot_distance then
-			can_apply_dot = weap_base.far_dot_distance + weap_base.near_dot_distance > col_ray.distance or 0
+			can_apply_dot = weap_base.far_dot_distance + weap_base.near_dot_distance > (col_ray.distance or 0)
 		end
 	end
 

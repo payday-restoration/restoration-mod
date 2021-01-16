@@ -212,7 +212,7 @@ function CharacterTweakData:_init_security(presets)
 	self.security.steal_loot = nil
 	self.security.static_dodge_preset = true
 	self.security.shooting_death = false
-	self.security.heal_cooldown = 2.5
+	self.security.heal_cooldown = 2
 	table.insert(self._enemy_list, "security")
 	
 	self.security_undominatable = deep_clone(self.security)
@@ -307,7 +307,7 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.has_alarm_pager = true
 	self.gensec.melee_weapon = "baton"
 	self.gensec.steal_loot = nil
-	self.gensec.heal_cooldown = 2.5
+	self.gensec.heal_cooldown = 2
 	table.insert(self._enemy_list, "gensec")
 	
 	--Guard variant, different entry type as a failsafe
@@ -371,7 +371,7 @@ function CharacterTweakData:_init_cop(presets)
 	end
 	self.cop.static_dodge_preset = true
 	self.cop.has_alarm_pager = false
-	self.cop.heal_cooldown = 2.5
+	self.cop.heal_cooldown = 2
 	table.insert(self._enemy_list, "cop")
 	self.cop_scared = deep_clone(self.cop)
 	self.cop_scared.surrender = presets.surrender.always
@@ -419,7 +419,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.dave.access = "fbi"
 	self.dave.speech_prefix_p1 = "fuckyou"
 	self.dave.speech_prefix_count = nil   
-	self.dave.heal_cooldown = 20
+	self.dave.heal_cooldown = 10
 end
 
 function CharacterTweakData:_init_fbi(presets)
@@ -466,7 +466,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.chatter = presets.enemy_chatter.cop
 	self.fbi.steal_loot = true
 	self.fbi.no_arrest = false
-	self.fbi.heal_cooldown = 2.5
+	self.fbi.heal_cooldown = 2
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_female = deep_clone(self.fbi)
 	self.fbi_female.speech_prefix_p1 = "fl"
@@ -518,7 +518,7 @@ function CharacterTweakData:_init_fbi(presets)
 		self.fbi_vet.speech_prefix_p1 = "heck"
 		self.fbi_vet.speech_prefix_count = nil	
 	end
-	self.fbi_vet.heal_cooldown = 3.75
+	self.fbi_vet.heal_cooldown = 2
 	table.insert(self._enemy_list, "fbi_vet")	
 
 	self.fbi_vet_boss = deep_clone(self.fbi_vet)
@@ -526,7 +526,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet_boss.headshot_dmg_mul = 3.4		
 	self.fbi_vet_boss.melee_weapon = "buzzer_summer"
 	self.fbi_vet_boss.tase_on_melee = true
-	self.fbi_vet_boss.heal_cooldown = 7.5
+	self.fbi_vet_boss.heal_cooldown = 3.75
 	table.insert(self._enemy_list, "fbi_vet_boss")	
 	
 	self.meme_man = deep_clone(self.fbi_vet)		
@@ -546,7 +546,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.surrender = nil
 	self.meme_man.is_special = true
 	self.meme_man.unintimidateable = true
-	self.meme_man.heal_cooldown = 90
+	self.meme_man.heal_cooldown = 45
 	table.insert(self._enemy_list, "meme_man")	
 	self.meme_man_shield = deep_clone(self.meme_man)		
 	self.meme_man_shield.tags = {"medic", "special", "shield"}		
@@ -808,7 +808,7 @@ function CharacterTweakData:_init_swat(presets)
 	end		
 	self.swat.steal_loot = true		
 	self.swat.silent_priority_shout = "f37"
-	self.swat.heal_cooldown = 5
+	self.swat.heal_cooldown = 2.5
 	table.insert(self._enemy_list, "swat")
 	
 	self.hrt = deep_clone(self.swat)
@@ -828,7 +828,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat_titan.unintimidateable = true	
 	self.swat_titan.custom_voicework = nil
 	self.swat_titan.static_dodge_preset = true
-	self.swat_titan.heal_cooldown = 7.5
+	self.swat_titan.heal_cooldown = 3.75
 	table.insert(self._enemy_list, "swat_titan")
 end
 
@@ -895,7 +895,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.static_weapon_preset = false
 	self.heavy_swat.static_dodge_preset = true
 	self.heavy_swat.static_melee_preset = false	
-	self.heavy_swat.heal_cooldown = 10
+	self.heavy_swat.heal_cooldown = 5
 	table.insert(self._enemy_list, "heavy_swat")
 	
 	self.heavy_swat_sniper = deep_clone(self.heavy_swat)
@@ -1016,7 +1016,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat_sniper.custom_voicework = "tsniper_real"
 	end		
 	self.heavy_swat_sniper.is_special = true
-	self.heavy_swat_sniper.heal_cooldown = 15
+	self.heavy_swat_sniper.heal_cooldown = 7.5
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 	
 	--Weekend Snipers
@@ -1035,7 +1035,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	end	
 	self.weekend_dmr.HEALTH_INIT = 11.25
 	self.weekend_dmr.headshot_dmg_mul = 4.25  
-	self.weekend_dmr.heal_cooldown = 15
+	self.weekend_dmr.heal_cooldown = 7.5
 	self.weekend_dmr.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_dmr")
 end
@@ -1091,7 +1091,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.static_weapon_preset = true
 	self.fbi_swat.static_dodge_preset = true
 	self.fbi_swat.static_melee_preset = true
-	self.fbi_swat.heal_cooldown = 5
+	self.fbi_swat.heal_cooldown = 2.5
 	table.insert(self._enemy_list, "fbi_swat")
 	
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
@@ -1151,7 +1151,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.static_weapon_preset = true
 	self.fbi_heavy_swat.static_dodge_preset = true
 	self.fbi_heavy_swat.static_melee_preset = true	
-	self.fbi_heavy_swat.heal_cooldown = 7.5
+	self.fbi_heavy_swat.heal_cooldown = 3.75
 	table.insert(self._enemy_list, "fbi_heavy_swat")
 end
 
@@ -1219,7 +1219,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.static_dodge_preset = true
 	self.city_swat.static_melee_preset = true	
 	self.city_swat.custom_voicework = nil
-	self.city_swat.heal_cooldown = 5
+	self.city_swat.heal_cooldown = 2.5
 	table.insert(self._enemy_list, "city_swat")
 	
 	--Guard variant, different entry type as a failsafe
@@ -1247,7 +1247,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend.speech_prefix_p1 = "cum"
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
-	self.weekend.heal_cooldown = 5
+	self.weekend.heal_cooldown = 2.5
 	self.weekend.can_throw_frag = true
 	self.weekend.surrender = presets.surrender.bravo
 	table.insert(self._enemy_list, "weekend")				
@@ -1281,7 +1281,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.static_weapon_preset = true
 	self.city_swat_titan.static_dodge_preset = true
 	self.city_swat_titan.static_melee_preset = true	
-	self.city_swat_titan.heal_cooldown = 7.5
+	self.city_swat_titan.heal_cooldown = 3.75
 	table.insert(self._enemy_list, "city_swat_titan")
 	
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
@@ -1307,7 +1307,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.speech_prefix_count = nil
 	self.weekend_lmg.HEALTH_INIT = 28.125
 	self.weekend_lmg.headshot_dmg_mul = 3.75		
-	self.weekend_lmg.heal_cooldown = 7.5
+	self.weekend_lmg.heal_cooldown = 3.75
 	self.weekend_lmg.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_lmg")
 
@@ -1441,7 +1441,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.static_dodge_preset = true
 	self.gangster.unintimidateable = true
 	self.gangster.always_drop = true
-	self.gangster.heal_cooldown = 2.5
+	self.gangster.heal_cooldown = 2
 	table.insert(self._enemy_list, "gangster")
 end
 
@@ -1467,7 +1467,7 @@ function CharacterTweakData:_init_biker(presets)
 	}
 	self.biker.static_dodge_preset = true
 	self.biker.always_drop = true
-	self.biker.heal_cooldown = 2.5
+	self.biker.heal_cooldown = 2
 	self.biker.melee_weapon = "knife_1"
 	table.insert(self._enemy_list, "biker")
 	self.biker_guard = deep_clone(self.biker)
@@ -1496,7 +1496,7 @@ function CharacterTweakData:_init_biker(presets)
 		suppress = true
 	}
 	self.biker_guard.static_dodge_preset = false
-	self.biker_guard.heal_cooldown = 2.5
+	self.biker_guard.heal_cooldown = 2
 	table.insert(self._enemy_list, "biker_guard")
 end
 
@@ -1545,7 +1545,7 @@ function CharacterTweakData:_init_mobster(presets)
 	}
 	self.mobster.static_dodge_preset = true
 	self.mobster.always_drop = true
-	self.mobster.heal_cooldown = 2.5
+	self.mobster.heal_cooldown = 2
 	table.insert(self._enemy_list, "mobster")
 end
 
@@ -1596,7 +1596,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.static_dodge_preset = true
 	self.mobster_boss.is_special = true
 	self.mobster_boss.always_drop = true
-	self.mobster_boss.heal_cooldown = 135
+	self.mobster_boss.heal_cooldown = 45
 	self.mobster_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "mobster_boss")
 end
@@ -1648,7 +1648,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.static_dodge_preset = true
 	self.biker_boss.always_drop = true
 	self.biker_boss.is_special = true
-	self.biker_boss.heal_cooldown = 135
+	self.biker_boss.heal_cooldown = 45
 	self.biker_boss.die_sound_event = "f1n_x01a_any_3p"
 	table.insert(self._enemy_list, "biker_boss")
 end
@@ -1665,7 +1665,7 @@ function CharacterTweakData:_init_hector_boss(presets)
 	self.hector_boss.priority_shout_max_dis = 3000
 	self.hector_boss.is_special = true
 	self.hector_boss.always_drop = true
-	self.hector_boss.heal_cooldown = 135
+	self.hector_boss.heal_cooldown = 45
 	self.hector_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "hector_boss")
 end
@@ -1685,7 +1685,7 @@ function CharacterTweakData:_init_hector_boss_no_armor(presets)
 	self.hector_boss_no_armor.use_radio = nil
 	self.hector_boss_no_armor.can_be_tased = true
 	self.hector_boss_no_armor.always_drop = true
-	self.hector_boss_no_armor.heal_cooldown = 2.5
+	self.hector_boss_no_armor.heal_cooldown = 2
 	table.insert(self._enemy_list, "hector_boss_no_armor")
 end
 
@@ -1737,7 +1737,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.static_dodge_preset = true
 	self.chavez_boss.is_special = true
 	self.chavez_boss.always_drop = true
-	self.chavez_boss.heal_cooldown = 135
+	self.chavez_boss.heal_cooldown = 45
 	self.chavez_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "chavez_boss")
 end
@@ -1762,7 +1762,7 @@ function CharacterTweakData:_init_bolivians(presets)
 	}
 	self.bolivian.static_dodge_preset = true
 	self.bolivian.always_drop = true
-	self.bolivian.heal_cooldown = 2.5
+	self.bolivian.heal_cooldown = 2
 	table.insert(self._enemy_list, "bolivian")
 	
 	self.bolivian_indoors = deep_clone(self.bolivian)
@@ -1853,7 +1853,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.static_dodge_preset = true
 	self.drug_lord_boss.is_special = true
 	self.drug_lord_boss.always_drop = true
-	self.drug_lord_boss.heal_cooldown = 135
+	self.drug_lord_boss.heal_cooldown = 45
 	self.drug_lord_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
@@ -1895,7 +1895,7 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.immune_to_knock_down = false
 	self.drug_lord_boss_stealth.immune_to_concussion = false
 	self.drug_lord_boss_stealth.always_drop = true
-	self.drug_lord_boss_stealth.heal_cooldown = 2.5
+	self.drug_lord_boss_stealth.heal_cooldown = 2
 	self.drug_lord_boss_stealth.die_sound_event = "l2n_x01a_any_3p"
 	table.insert(self._enemy_list, "drug_lord_boss_stealth")
 end
@@ -1985,7 +1985,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.static_dodge_preset = true
 	self.tank.no_recoil = true
 	self.tank.is_special = true
-	self.tank.heal_cooldown = 90
+	self.tank.heal_cooldown = 45
 	table.insert(self._enemy_list, "tank")
 	
 	self.tank_medic = deep_clone(self.tank)
@@ -2090,7 +2090,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
 	self.tank_titan.is_special = true
-	self.tank_titan.heal_cooldown = 135
+	self.tank_titan.heal_cooldown = 45
 	table.insert(self._enemy_list, "tank_titan")
 	
 	self.tank_titan_assault = deep_clone(self.tank_titan)
@@ -2249,7 +2249,7 @@ function CharacterTweakData:_init_spooc(presets)
 		detect_stop = "cloaker_detect_stop",
 		detect = "cloaker_detect_mono"
 	}
-	self.spooc.heal_cooldown = 45
+	self.spooc.heal_cooldown = 22.5
 	self.spooc.special_deaths = {
 		melee = {
 			[("head"):id():key()] = {
@@ -2296,7 +2296,7 @@ function CharacterTweakData:_init_spooc(presets)
 		self.spooc_titan.custom_voicework = "tspook"
 	end		
 	self.spooc_titan.die_sound_event_2 = "mga_death_scream"
-	self.spooc_titan.heal_cooldown = 67.5
+	self.spooc_titan.heal_cooldown = 30
 	table.insert(self._enemy_list, "spooc_titan")	
 end
 
@@ -2349,7 +2349,7 @@ function CharacterTweakData:_init_shadow_spooc(presets)
 	self.shadow_spooc.can_be_tased = true
 	self.shadow_spooc.static_dodge_preset = true
 	self.shadow_spooc.is_special = true
-	self.shadow_spooc.heal_cooldown = 45
+	self.shadow_spooc.heal_cooldown = 22.5
 	table.insert(self._enemy_list, "shadow_spooc")
 end	
 
@@ -2422,7 +2422,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.immune_to_knock_down = true
 	self.shield.static_dodge_preset = true
 	self.shield.is_special = true
-	self.shield.heal_cooldown = 20
+	self.shield.heal_cooldown = 10
 	table.insert(self._enemy_list, "shield")
 end
 
@@ -2450,8 +2450,8 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.detection = presets.detection.normal
 	self.phalanx_minion.headshot_dmg_mul = 2.2
 	self.phalanx_minion.HEALTH_INIT = 19.5
-	self.phalanx_minion.damage.explosion_damage_mul = 0.3
-	self.phalanx_minion.damage.fire_pool_damage_mul = 0.3
+	self.phalanx_minion.damage.explosion_damage_mul = 0.25
+	self.phalanx_minion.damage.fire_pool_damage_mul = 0.25
 	self.phalanx_minion.damage.hurt_severity = presets.hurt_severities.no_hurts_no_tase
 	self.phalanx_minion.flammable = false
 	self.phalanx_minion.damage.shield_knocked = true
@@ -2486,7 +2486,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	else
 		self.phalanx_minion.custom_voicework = "tsniper"
 	end		
-	self.phalanx_minion.heal_cooldown = 30
+	self.phalanx_minion.heal_cooldown = 15
 	table.insert(self._enemy_list, "phalanx_minion")
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
 	self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"	
@@ -2834,7 +2834,7 @@ function CharacterTweakData:_init_taser(presets)
 		}
 	}
 	self.taser.is_special = true
-	self.taser.heal_cooldown = 30
+	self.taser.heal_cooldown = 15
 	table.insert(self._enemy_list, "taser")
 	
 	self.taser_summers = deep_clone(self.taser)
@@ -2901,7 +2901,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
 	self.taser_titan.move_speed = presets.move_speed.fast
-	self.taser_titan.heal_cooldown = 45
+	self.taser_titan.heal_cooldown = 22.5
 	self.taser_titan.tase_on_melee = true
 	self.taser_titan.slowing_bullets = {
 		duration = 3,
@@ -2988,7 +2988,7 @@ function CharacterTweakData:_init_boom(presets)
 		self.boom.custom_voicework = "grenadier"
 	end
 	self.boom.is_special = true		
-	self.boom.heal_cooldown = 30
+	self.boom.heal_cooldown = 15
 	table.insert(self._enemy_list, "boom")
 	
 	self.boom_summers = deep_clone(self.boom)
@@ -3027,7 +3027,7 @@ function CharacterTweakData:_init_boom(presets)
 	table.insert(self._enemy_list, "boom_summers")		
 	
 	self.boom_titan = deep_clone(self.boom)
-	self.boom_titan.heal_cooldown = 45
+	self.boom_titan.heal_cooldown = 22.5
 	table.insert(self._enemy_list, "boom_titan")		
 end
 
@@ -13818,13 +13818,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-	self.shield.damage.explosion_damage_mul = 0.7
-	
-	--Less damage from throwables on higher difficulties--
-	self.phalanx_minion.damage.explosion_damage_mul = 0.2
-	self.phalanx_minion.damage.fire_pool_damage_mul = 0.2	
-	self.phalanx_minion_assault.damage.explosion_damage_mul = 0.2
-	self.phalanx_minion_assault.damage.fire_pool_damage_mul = 0.2			
+	self.shield.damage.explosion_damage_mul = 0.7		
 	
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	
@@ -14051,12 +14045,6 @@ function CharacterTweakData:_set_sm_wish()
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
 	self.shield.weapon.is_pistol.melee_retry_delay = nil
-		
-	--Even less damage from these things--
-	self.phalanx_minion.damage.explosion_damage_mul = 0.1
-	self.phalanx_minion.damage.fire_pool_damage_mul = 0.1
-	self.phalanx_minion_assault.damage.explosion_damage_mul = 0.1
-	self.phalanx_minion_assault.damage.fire_pool_damage_mul = 0.1
 	
 	self.sniper.weapon = deep_clone(self.presets.weapon.sniper_expert)
 	self.weap_unit_names[13] = Idstring("units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc")		
@@ -14064,7 +14052,6 @@ function CharacterTweakData:_set_sm_wish()
 	
 	self.shield.damage.hurt_severity = self.presets.hurt_severities.no_hurts
 	self.shield.damage.explosion_damage_mul = 0.8
-	self.shield.immune_to_concussion = true
 	
 	self.fbi_swat.weapon = deep_clone(self.presets.weapon.expert)
 	self.fbi_swat.melee_weapon_dmg_multiplier = 2.5

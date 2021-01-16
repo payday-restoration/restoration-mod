@@ -14099,6 +14099,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}	
 	end
+
 	if difficulty_index <= 6 then
 		self.enemy_spawn_groups.GREEN_tanks = {
 			amount = {2, 3},
@@ -14108,44 +14109,65 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_max = 1,
 					tactics = self._tactics.GREEN_tank,
-					rank = 1
+					rank = 2
 				},
 				{
-					unit = "FBI_shield",
-					freq = 0.5,
-					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
-					rank = 3
-				},
-				{
-					unit = "FBI_heavy_G36_w",
-					freq = 0.75,
-					amount_min = 1,
-					tactics = self._tactics.FBI_heavy_flank,
+					unit = "FBI_swat_M4",
+					freq = 1,
+					tactics = self._tactics.FBI_shield_ranged_support,
 					rank = 1
 				}
 			}
 		}
-	elseif difficulty_index == 7 then	
+	elseif difficulty_index == 7 then
 		self.enemy_spawn_groups.GREEN_tanks = {
-			amount = {2, 3},
+			amount = {3, 4},
 			spawn = {
 				{
 					unit = "FBI_tank",
 					freq = 1,
-					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.GREEN_tank,
 					rank = 3
 				},
 				{
-					unit = "FBI_shield",
+					unit = "boom_M4203",
+					freq = 0.5,
+					amount_max = 1,
+					tactics = self._tactics.MH_shield_ranged_support,
+					rank = 2
+				},
+				{
+					unit = "GS_swat_M4",
 					freq = 1,
-					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
+					tactics = self._tactics.MH_shield_ranged_support,
+					rank = 1
+				}
+			}
+		}
+	else	
+		self.enemy_spawn_groups.GREEN_tanks = {
+			amount = {3, 4},
+			spawn = {
+				{
+					unit = "FBI_tank",
+					freq = 1,
+					amount_max = 1,
+					tactics = self._tactics.GREEN_tank,
 					rank = 3
+				},
+				{
+					unit = "boom_M4203",
+					freq = 0.75,
+					amount_max = 1,
+					tactics = self._tactics.MH_shield_ranged_support,
+					rank = 2
+				},
+				{
+					unit = "GS_swat_M4",
+					freq = 1,
+					tactics = self._tactics.ELITE_swat_rifle,
+					rank = 1
 				},
 				{
 					unit = "medic_M4",
@@ -14155,37 +14177,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				}		
 			}
-		}		
-	else
-		self.enemy_spawn_groups.GREEN_tanks = {
-			amount = {3, 4},
-			spawn = {
-				{
-					unit = "FBI_tank",
-					freq = 1,
-					amount_min = 0,
-					amount_max = 1,
-					tactics = self._tactics.GREEN_tank,
-					rank = 3
-				},
-				{
-					unit = "FBI_shield",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
-					rank = 3
-				},
-				{
-					unit = "medic_M4",
-					freq = 0.75,
-					amount_max = 1,
-					tactics = self._tactics.FBI_medic_flank,
-					rank = 2
-				}			
-			}
 		}
 	end
+
 	if difficulty_index <= 6 then
 		self.enemy_spawn_groups.BLACK_tanks = {
 			amount = {2, 3},
@@ -14195,51 +14189,39 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_max = 1,
 					tactics = self._tactics.BLACK_tank,
-					rank = 1
+					rank = 2
 				},
 				{
-					unit = "FBI_shield",
-					freq = 0.5,
-					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
-					rank = 3
-				},
-				{
-					unit = "FBI_heavy_G36_w",
-					freq = 0.75,
-					amount_min = 1,
-					tactics = self._tactics.FBI_heavy_flank,
+					unit = "FBI_swat_M4",
+					freq = 1,
+					tactics = self._tactics.FBI_shield_ranged_support,
 					rank = 1
 				}
 			}
 		}
 	elseif difficulty_index == 7 then	
 		self.enemy_spawn_groups.BLACK_tanks = {
-			amount = {2, 3},
+			amount = {3, 4},
 			spawn = {
 				{
 					unit = "BLACK_tank",
 					freq = 1,
-					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.BLACK_tank,
 					rank = 3
 				},
 				{
-					unit = "FBI_shield",
-					freq = 1,
-					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
-					rank = 3
+					unit = "CS_tazer",
+					freq = 0.5,
+					amount_max = 1,
+					tactics = self._tactics.DW_tazer,
+					rank = 2
 				},
 				{
-					unit = "medic_M4",
-					freq = 0.75,
-					amount_max = 1,
-					tactics = self._tactics.FBI_medic_flank,
-					rank = 2
+					unit = "GS_swat_M4",
+					freq = 1,
+					tactics = self._tactics.MH_shield_ranged_support,
+					rank = 1
 				}
 			}
 		}		
@@ -14250,18 +14232,22 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "BLACK_tank",
 					freq = 1,
-					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.BLACK_tank,
 					rank = 3
 				},
 				{
-					unit = "FBI_shield",
+					unit = "CS_tazer",
+					freq = 0.75,
+					amount_max = 1,
+					tactics = self._tactics.DW_tazer,
+					rank = 2
+				},
+				{
+					unit = "GS_swat_M4",
 					freq = 1,
-					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
-					rank = 3
+					tactics = self._tactics.ELITE_swat_rifle,
+					rank = 1
 				},
 				{
 					unit = "medic_M4",
@@ -14269,10 +14255,11 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_max = 1,
 					tactics = self._tactics.FBI_medic_flank,
 					rank = 2
-				}
+				}		
 			}
 		}
 	end
+
 	if difficulty_index <= 6 then
 		self.enemy_spawn_groups.SKULL_tanks = {
 			amount = {2, 3},
@@ -14282,21 +14269,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_max = 1,
 					tactics = self._tactics.SKULL_tank,
-					rank = 1
+					rank = 2
 				},
 				{
-					unit = "FBI_shield",
-					freq = 0.5,
-					amount_min = 1,
+					unit = "FBI_swat_M4",
+					freq = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield,
-					rank = 3
-				},
-				{
-					unit = "FBI_heavy_G36_w",
-					freq = 0.75,
-					amount_min = 1,
-					tactics = self._tactics.MH_heavy,
+					tactics = self._tactics.FBI_shield_ranged_support,
 					rank = 1
 				}
 			}
@@ -14308,18 +14287,23 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "SKULL_tank",
 					freq = 1,
-					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.SKULL_tank,
 					rank = 3
 				},
 				{
-					unit = "FBI_shield",
+					unit = "CS_tazer",
+					freq = 0.5,
+					amount_max = 1,
+					tactics = self._tactics.CS_tazer,
+					rank = 2
+				},
+				{
+					unit = "GS_swat_M4",
 					freq = 1,
-					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield,
-					rank = 3
+					tactics = self._tactics.MH_shield_ranged_support,
+					rank = 1
 				},
 				{
 					unit = "medic_M4",
@@ -14337,18 +14321,23 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "SKULL_tank",
 					freq = 1,
-					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.SKULL_tank,
 					rank = 3
 				},
 				{
-					unit = "FBI_shield",
+					unit = "CS_tazer",
+					freq = 0.75,
+					amount_max = 1,
+					tactics = self._tactics.CS_tazer,
+					rank = 2
+				},
+				{
+					unit = "GS_swat_R870",
 					freq = 1,
-					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.MH_shield,
-					rank = 3
+					amount_max = 3,
+					tactics = self._tactics.ELITE_swat_shotgun,
+					rank = 1
 				},
 				{
 					unit = "medic_M4",
@@ -14356,7 +14345,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_max = 1,
 					tactics = self._tactics.FBI_medic_flank,
 					rank = 2
-				}
+				}	
 			}
 		}
 	end
@@ -14367,24 +14356,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "TIT_tank",
 					freq = 1,
-					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.TIT_tank,
-					rank = 1
-				},
-				{
-					unit = "FBI_shield",
-					freq = 0.5,
-					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
-					rank = 3
+					rank = 2
 				},
 				{
 					unit = "FBI_heavy_G36_w",
-					freq = 0.75,
+					freq = 1,
 					amount_min = 1,
-					tactics = self._tactics.MH_heavy,
+					tactics = self._tactics.FBI_shield_ranged_support,
 					rank = 1
 				}
 			}
@@ -14396,23 +14376,21 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "TIT_tank",
 					freq = 1,
-					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.TIT_tank,
 					rank = 3
 				},
 				{
-					unit = "FBI_shield",
+					unit = "FBI_heavy_G36_w",
 					freq = 1,
 					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
-					rank = 3
+					tactics = self._tactics.MH_shield_ranged_support,
+					rank = 1
 				},
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_max = 1,
+					amount_max = 2,
 					tactics = self._tactics.FBI_medic_flank,
 					rank = 2
 				}
@@ -14425,23 +14403,21 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "TIT_tank",
 					freq = 1,
-					amount_min = 0,
 					amount_max = 1,
 					tactics = self._tactics.TIT_tank,
 					rank = 3
 				},
 				{
-					unit = "FBI_shield",
+					unit = "FBI_heavy_R870",
 					freq = 1,
 					amount_min = 1,
-					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
-					rank = 3
+					tactics = self._tactics.ELITE_heavy_shotgun,
+					rank = 1
 				},
 				{
 					unit = "medic_M4",
 					freq = 0.75,
-					amount_max = 1,
+					amount_max = 2,
 					tactics = self._tactics.FBI_medic_flank,
 					rank = 2
 				}
@@ -17704,7 +17680,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			taser = 1,
 			boom = 0,
 			spooc = 0,
-			shield = math.max(math.floor(2 * map_scale_factor), 1),
+			shield = math.max(math.round(2 * map_scale_factor), 1),
 			medic = 0,
 			phalanx_vip = 0,
 			spring = 0,
@@ -17725,10 +17701,10 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 		self.special_unit_spawn_limits = {
 			tank = 1,
-			taser = math.max(math.floor(2 * map_scale_factor), 1),
+			taser = math.max(math.round(2 * map_scale_factor), 1),
 			boom = 0,
 			spooc = 1,
-			shield = math.max(math.floor(3 * map_scale_factor), 1),
+			shield = math.max(math.round(3 * map_scale_factor), 1),
 			medic = 0,
 			phalanx_vip = 1,
 			spring = 1,
@@ -17748,12 +17724,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			125
 		}
 		self.special_unit_spawn_limits = {
-			tank = math.max(math.floor(2 * map_scale_factor), 1),
-			taser = math.max(math.floor(3 * map_scale_factor), 1),
+			tank = math.max(math.round(2 * map_scale_factor), 1),
+			taser = math.max(math.round(3 * map_scale_factor), 1),
 			boom = 0,
-			spooc = math.max(math.floor(2 * map_scale_factor), 1),
-			shield = math.max(math.floor(4 * map_scale_factor), 1),
-			medic = math.max(math.floor(2 * map_scale_factor), 1),
+			spooc = math.max(math.round(2 * map_scale_factor), 1),
+			shield = math.max(math.round(3 * map_scale_factor), 1),
+			medic = math.max(math.round(3 * map_scale_factor), 1),
 			phalanx_vip = 1,
 			spring = 1,
 			headless_hatman = 1,
@@ -17772,12 +17748,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			125
 		}
 		self.special_unit_spawn_limits = {
-			tank = math.max(math.floor(3 * map_scale_factor), 1),
-			taser = math.max(math.floor(4 * map_scale_factor), 1),
-			boom = math.max(math.floor(0 * map_scale_factor), 1),
-			spooc = math.max(math.floor(2 * map_scale_factor), 1),
-			shield = math.max(math.floor(4 * map_scale_factor), 1),
-			medic = math.max(math.floor(2 * map_scale_factor), 1),
+			tank = math.max(math.round(3 * map_scale_factor), 1),
+			taser = math.max(math.round(4 * map_scale_factor), 1),
+			boom = math.max(math.round(0 * map_scale_factor), 1),
+			spooc = math.max(math.round(2 * map_scale_factor), 1),
+			shield = math.max(math.round(3 * map_scale_factor), 1),
+			medic = math.max(math.round(3 * map_scale_factor), 1),
 			phalanx_vip = 1,
 			spring = 1,
 			headless_hatman = 1,
@@ -17796,12 +17772,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			150
 		}
 		self.special_unit_spawn_limits = {
-			tank = math.max(math.floor(3 * map_scale_factor), 1),
-			taser = math.max(math.floor(4 * map_scale_factor), 1),
-			boom = math.max(math.floor(2 * map_scale_factor), 1),
-			spooc = math.max(math.floor(3 * map_scale_factor), 1),
-			shield = math.max(math.floor(5 * map_scale_factor), 1),
-			medic = math.max(math.floor(3 * map_scale_factor), 1),
+			tank = math.max(math.round(3 * map_scale_factor), 1),
+			taser = math.max(math.round(4 * map_scale_factor), 1),
+			boom = math.max(math.round(2 * map_scale_factor), 1),
+			spooc = math.max(math.round(3 * map_scale_factor), 1),
+			shield = math.max(math.round(4 * map_scale_factor), 1),
+			medic = math.max(math.round(4 * map_scale_factor), 1),
 			phalanx_vip = 1,
 			spring = 1,
 			headless_hatman = 1,
@@ -17820,12 +17796,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			150
 		}
 		self.special_unit_spawn_limits = {
-			tank = math.max(math.floor(3 * map_scale_factor), 1),
-			taser = math.max(math.floor(4 * map_scale_factor), 1),
-			boom = math.max(math.floor(2 * map_scale_factor), 1),
-			spooc = math.max(math.floor(4 * map_scale_factor), 1),
-			shield = math.max(math.floor(5 * map_scale_factor), 1),
-			medic = math.max(math.floor(3 * map_scale_factor), 1),
+			tank = math.max(math.round(3 * map_scale_factor), 1),
+			taser = math.max(math.round(4 * map_scale_factor), 1),
+			boom = math.max(math.round(2 * map_scale_factor), 1),
+			spooc = math.max(math.round(4 * map_scale_factor), 1),
+			shield = math.max(math.round(4 * map_scale_factor), 1),
+			medic = math.max(math.round(4 * map_scale_factor), 1),
 			phalanx_vip = 1,
 			spring = 1,
 			headless_hatman = 1,
@@ -17844,12 +17820,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			175
 		}
 		self.special_unit_spawn_limits = {
-			tank = math.max(math.floor(3 * map_scale_factor), 1),
-			taser = math.max(math.floor(4 * map_scale_factor), 1),
-			boom = math.max(math.floor(2 * map_scale_factor), 1),
-			spooc = math.max(math.floor(4 * map_scale_factor), 1),
-			shield = math.max(math.floor(5 * map_scale_factor), 1),
-			medic = math.max(math.floor(3 * map_scale_factor), 1),
+			tank = math.max(math.round(3 * map_scale_factor), 1),
+			taser = math.max(math.round(4 * map_scale_factor), 1),
+			boom = math.max(math.round(2 * map_scale_factor), 1),
+			spooc = math.max(math.round(4 * map_scale_factor), 1),
+			shield = math.max(math.round(4 * map_scale_factor), 1),
+			medic = math.max(math.round(4 * map_scale_factor), 1),
 			phalanx_vip = 1,
 			spring = 1,
 			headless_hatman = 1,

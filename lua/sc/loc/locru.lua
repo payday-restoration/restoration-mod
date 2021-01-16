@@ -2073,6 +2073,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetAlignSortDescID"] = "Подгоняет и сортирует CRIMENET по сложности.",
 		["RestorationModPocoCrimenetScaleTitleID"] = "Масштаб CRIMENET",
 		["RestorationModPocoCrimenetScaleDescID"] = "Позволяет менять масштаб CRIMENET.",
+		["RestorationModVoiceIconTitleID"] = "Voice Chat Icon",
+	    ["RestorationModVoiceIconDescID"] = "Displays when a player is using voice chat in-game.",
 		["alpha_assault"] = "Уголок",
 		["beta_assault"] = "Лента",
 

@@ -358,6 +358,7 @@
 					<option type="bool" default_value="false" name="StealthOrigPos"/>
 					<option type="bool" default_value="false" name="LowerBag"/>
 					<option type="bool" default_value="false" name="ArmorFix"/>
+					<option type="bool" default_value="false" name="VoiceIcon"/>
 					<!-- <option type="bool" default_value="false" name="CasingTicker"/> -->
 				</option_group>
 				<option_group name="UI">

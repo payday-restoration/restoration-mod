@@ -1016,7 +1016,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat_sniper.custom_voicework = "tsniper_real"
 	end		
 	self.heavy_swat_sniper.is_special = true
-	self.heavy_swat_sniper.heal_cooldown = 7.5
+	self.heavy_swat_sniper.heal_cooldown = 5
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 	
 	--Weekend Snipers
@@ -1035,7 +1035,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	end	
 	self.weekend_dmr.HEALTH_INIT = 11.25
 	self.weekend_dmr.headshot_dmg_mul = 4.25  
-	self.weekend_dmr.heal_cooldown = 7.5
+	self.weekend_dmr.heal_cooldown = 5
 	self.weekend_dmr.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_dmr")
 end

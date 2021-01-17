@@ -123,6 +123,7 @@
 	}
 
 	local a_dragons_breath_pump_override = {
+		desc_id = "bm_wp_upg_a_dragons_breath_pump_desc_sc",
 		supported = true,
 		stats = {
 			value = 9,
@@ -5933,12 +5934,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 
 	--Small Conceal
 	self.parts.wpn_fps_upg_bonus_concealment_p1 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_concealment_p1_mod",
 		a_obj = "a_body",
@@ -5959,12 +5955,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	
 	--Large Conceal
 	self.parts.wpn_fps_upg_bonus_concealment_p2 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_concealment_p2_mod",
 		a_obj = "a_body",
@@ -5985,12 +5976,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	
 	--Massive Conceal
 	self.parts.wpn_fps_upg_bonus_concealment_p3 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_concealment_p3_mod",
 		a_obj = "a_body",
@@ -6012,12 +5998,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	--This is where it gets messy
 	--Small Accuracy Modifier
 	self.parts.wpn_fps_upg_bonus_damage_p1 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_spread_p1_mod",
 		a_obj = "a_body",
@@ -6039,12 +6020,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	
 	--Large Accuracy Modifier
 	self.parts.wpn_fps_upg_bonus_damage_p2 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_spread_p2_mod",
 		a_obj = "a_body",
@@ -6066,12 +6042,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	
 	--Massive Accuracy Modifier
 	self.parts.wpn_fps_upg_bonus_recoil_p1 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_spread_p3_mod",
 		a_obj = "a_body",
@@ -6092,12 +6063,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	
 	--Small Stability Modifier
 	self.parts.wpn_fps_upg_bonus_spread_n1 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_recoil_p1_mod",
 		a_obj = "a_body",
@@ -6118,12 +6084,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	
 	--Large Stability Modifier		
 	self.parts.wpn_fps_upg_bonus_spread_p1 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_recoil_p2_mod",
 		a_obj = "a_body",
@@ -6144,12 +6105,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 
 	--Massive Recoil Modifier
 	self.parts.wpn_fps_upg_bonus_team_exp_money_p3 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_menu_bonus_recoil_p3_mod",
 		a_obj = "a_body",
@@ -6170,12 +6126,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 	
 	--Team Boost
 	self.parts.wpn_fps_upg_bonus_total_ammo_p3 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_wp_upg_bonus_team_exp_money_p3",
 		desc_id = "bm_wp_upg_bonus_team_exp_money_p3_desc",
@@ -6196,12 +6147,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 
 	--Money Boost
 	self.parts.wpn_fps_upg_bonus_total_ammo_p1 = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "bonus",
 		name_id = "bm_wp_upg_bonus_team_money_exp_p1",
 		a_obj = "a_body",
@@ -6400,7 +6346,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	--This part description covers heavy shotguns, other damage tiers are handled via overrides.
 	self.parts.wpn_fps_upg_a_dragons_breath.pcs = {}
 	self.parts.wpn_fps_upg_a_dragons_breath.name_id = "bm_wp_upg_a_dragons_breath"
-	self.parts.wpn_fps_upg_a_dragons_breath.desc_id = "bm_wp_upg_a_dragons_breath_desc_sc"
+	self.parts.wpn_fps_upg_a_dragons_breath.desc_id = "bm_wp_upg_a_dragons_breath_heavy_desc_sc"
 	self.parts.wpn_fps_upg_a_dragons_breath.supported = true
 	self.parts.wpn_fps_upg_a_dragons_breath.stats = {
 		value = 9,

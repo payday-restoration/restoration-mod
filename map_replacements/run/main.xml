@@ -21,8 +21,6 @@
 			<file file="collision/collision.mission" type="binary"/>
 			<file file="editor only/editor only.continent" type="binary"/>
 			<file file="editor only/editor only.mission" type="binary"/>
-			<file file="aaaa/aaaa.continent" type="binary"/>
-			<file file="aaaa/aaaa.mission" type="binary"/>
 			<file file="dhruva_art/dhruva_art.continent" type="binary"/>
 			<file file="dhruva_art/dhruva_art.mission" type="binary"/>
 			<file file="backdrop/backdrop.continent" type="binary"/>

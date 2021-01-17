@@ -1,0 +1,13 @@
+<dynamic_object>
+    <diesel orientation_object="rp_gen_prop_security_button" materials="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button" />
+	<sequence_manager file="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button" />
+    <bodies>
+        <body name="baddie" enabled="true" template="editor">
+            <object name="g_g" collision_type="box" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" />
+        <object enabled="false" name="g_contour" />
+    </graphics>
+</dynamic_object>

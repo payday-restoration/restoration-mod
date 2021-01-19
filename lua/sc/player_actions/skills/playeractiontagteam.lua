@@ -87,6 +87,7 @@ PlayerAction.TagTeamTagged = {
 		local timer = TimerManager:game()
 		local end_time = timer:time() + base_values.duration
 		local on_damage_key = {}
+		local procs = 0
 
 		local function on_damage(damage_info)
 			local was_killed = damage_info.result.type == "death"

@@ -1680,31 +1680,31 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 1,
+			kill_health_gain = 0.8,
 			radius = 0.6,
 			distance = 18,
 			kill_duration = 0,
 			kill_dropoff = 0,
 			duration = 11,
-			tagged_health_gain_ratio = 0.5
+			tagged_health_gain_ratio = 0.625
 		},
 		{
-			kill_health_gain = 2,
+			kill_health_gain = 0.8,
 			radius = 0.6,
 			distance = 18,
 			kill_duration = 2,
 			kill_dropoff = 0.2,
 			duration = 11,
-			tagged_health_gain_ratio = 0.5
+			tagged_health_gain_ratio = 0.625
 		},
 		{
-			kill_health_gain = 1,
+			kill_health_gain = 1.6,
 			radius = 0.6,
 			distance = 18,
 			kill_duration = 2,
 			kill_dropoff = 0.2,
 			duration = 11,
-			tagged_health_gain_ratio = 0.5
+			tagged_health_gain_ratio = 0.625
 		}
 	}
 
@@ -1722,7 +1722,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.tag_team_damage_absorption = {
 		{
 			kill_gain = 0.1,
-			max = 0.6
+			max = 0.8
 		}	
 	}	
 	

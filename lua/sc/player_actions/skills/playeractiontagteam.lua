@@ -6,6 +6,7 @@ PlayerAction.TagTeam = {
 		local absorption_bonus = managers.player:has_category_upgrade("player", "tag_team_damage_absorption") and managers.player:upgrade_value("player", "tag_team_damage_absorption")
 		local timer = TimerManager:game()
 		local end_time = timer:time() + base_values.duration
+		local duration = base_values.duration
 		local absorption = 0
 		local procs = 0
 		local absorption_key = {}
@@ -15,7 +16,7 @@ PlayerAction.TagTeam = {
 		local function update_ability_radial()
 			local time_left = end_time - timer:time()
 
-			managers.hud:activate_teammate_ability_radial(HUDManager.PLAYER_PANEL, time_left, base_values.duration)
+			managers.hud:activate_teammate_ability_radial(HUDManager.PLAYER_PANEL, time_left, duration)
 		end
 
 		local function on_damage(damage_info)
@@ -24,7 +25,8 @@ PlayerAction.TagTeam = {
 
 			if was_killed and valid_player then
 				procs = procs + 1
-				end_time = math.min(end_time + math.max(base_values.kill_duration - procs * base_values.kill_dropoff, 0), timer:time() + base_values.duration)
+				end_time = end_time + math.max(base_values.kill_duration - procs * base_values.kill_dropoff, 0)
+				duration = math.max(base_values.duration, end_time - timer:time())
 
 				update_ability_radial()
 				owner:character_damage():restore_health(base_values.kill_health_gain, true)
@@ -92,7 +94,7 @@ PlayerAction.TagTeamTagged = {
 
 			if was_killed and valid_player then
 				procs = procs + 1
-				end_time = math.min(end_time + math.max(base_values.kill_duration - procs * base_values.kill_dropoff, 0), timer:time() + base_values.duration)
+				end_time = end_time + math.max(base_values.kill_duration - procs * base_values.kill_dropoff, 0)
 
 				tagged:character_damage():restore_health(kill_health_gain, true)
 			end

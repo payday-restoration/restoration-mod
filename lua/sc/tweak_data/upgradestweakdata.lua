@@ -1685,7 +1685,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			distance = 18,
 			kill_duration = 0,
 			kill_dropoff = 0,
-			duration = 8,
+			duration = 11,
 			tagged_health_gain_ratio = 0.5
 		},
 		{
@@ -1693,8 +1693,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			radius = 0.6,
 			distance = 18,
 			kill_duration = 2,
-			kill_dropoff = 0.25,
-			duration = 8,
+			kill_dropoff = 0.2,
+			duration = 11,
 			tagged_health_gain_ratio = 0.5
 		},
 		{
@@ -1702,8 +1702,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			radius = 0.6,
 			distance = 18,
 			kill_duration = 2,
-			kill_dropoff = 0.25,
-			duration = 8,
+			kill_dropoff = 0.2,
+			duration = 11,
 			tagged_health_gain_ratio = 0.5
 		}
 	}

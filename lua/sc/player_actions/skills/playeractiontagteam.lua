@@ -26,7 +26,7 @@ PlayerAction.TagTeam = {
 			if was_killed and valid_player then
 				procs = procs + 1
 				end_time = end_time + math.max(base_values.kill_duration - procs * base_values.kill_dropoff, 0)
-				duration = math.max(base_values.duration, end_time - timer:time())
+				duration = math.max(duration, end_time - timer:time())
 
 				update_ability_radial()
 				owner:character_damage():restore_health(base_values.kill_health_gain, true)

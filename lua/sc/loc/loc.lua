@@ -1454,11 +1454,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck19_9_desc_sc"] = "You gain ##25%## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--it's not a war crime if they're not people--
-		["menu_deck20_1_desc_sc"] = "Unlocks and equips the ##Gas Dispenser.##\n\nTo activate the Gas Dispenser you need to look at another allied unit within a ##18## meter radius with clear line of sight and press the throwable key to tag them.\n\nEach enemy you or the tagged unit kills will now heal you for ##15## health and the tagged unit for ##7.5## health.\n\nEnemies you kill will extend the duration by ##2## seconds.\n\nThe effect will last for a duration of ##12## seconds and has a cooldown of ##60## seconds.",
-		["menu_deck20_3_desc_sc"] = "Enemies you kill will now reduce the cooldown timer by ##2## seconds.",
-		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills reduce damage taken by ##0.5## points up to a maximum of ##20##.\n\nThis effect will last until the perk deck item goes out of cooldown.",
-		["menu_deck20_7_desc_sc"] = "Each enemy you or the tagged unit kills reduce damage taken by an additional ##0.5## points up to a maximum of ##20##.\n\nThis effect will last until the perk deck item goes out of cooldown.",
-		["menu_deck20_9_desc_sc"] = "Each enemy the tagged unit kills will now reduce your perk deck item cooldown timer by ##2## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
+		["menu_deck20_1_desc_sc"] = "Unlocks and equips the ##Gas Dispenser.##\n\nTo activate the Gas Dispenser you need to look at another allied unit within a ##18## meter radius with clear line of sight and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##10## health and the tagged unit for ##5## health.\n\nThe effect lasts for ##8## seconds, and has a cooldown of ##60## seconds.",
+		["menu_deck20_3_desc_sc"] = "Enemies you or the tagged unit kill extend the duration of the gas dispenser.\n\nThis effect has diminishing returns, and can extend the duration up to a maximum total time of ##15## seconds.",
+		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills reduce damage you take by ##1## point up to a maximum of ##6##.\n\nThis effect will last until the Gas Dispenser's cooldown ends.",
+		["menu_deck20_7_desc_sc"] = "Healing from the Gas Dispenser is increased by ##100%##.",
+		["menu_deck20_9_desc_sc"] = "Each enemy you kill will reduce the cooldown of the Gas Dispenser by ##1## second.\n\nEach enemy the tagged unit kills will reduce the cooldown of the Gas Dispenser by ##3## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Biker--
 		["menu_deck16_1_desc_sc"] = "Every time you or your crew performs a kill you will gain ##2## health. This can only occur once every ##2## seconds.",

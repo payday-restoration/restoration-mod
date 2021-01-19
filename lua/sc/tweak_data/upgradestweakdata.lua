@@ -1680,37 +1680,50 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 1.5,
+			kill_health_gain = 1,
 			radius = 0.6,
 			distance = 18,
-			kill_extension = 2,
-			duration = 12,
+			kill_duration = 0,
+			kill_dropoff = 0,
+			duration = 8,
+			tagged_health_gain_ratio = 0.5
+		},
+		{
+			kill_health_gain = 2,
+			radius = 0.6,
+			distance = 18,
+			kill_duration = 2,
+			kill_dropoff = 0.25,
+			duration = 8,
+			tagged_health_gain_ratio = 0.5
+		},
+		{
+			kill_health_gain = 1,
+			radius = 0.6,
+			distance = 18,
+			kill_duration = 2,
+			kill_dropoff = 0.25,
+			duration = 8,
 			tagged_health_gain_ratio = 0.5
 		}
-	}	
+	}
+
 	self.values.player.tag_team_cooldown_drain = {
 		{
 			tagged = 0,
 			owner = 0
-		},	
-		{
-			tagged = 0,
-			owner = 2
 		},
 		{
-			tagged = 2,
-			owner = 2
+			tagged = 3,
+			owner = 1
 		}
 	}
+
 	self.values.player.tag_team_damage_absorption = {
 		{
-			kill_gain = 0.05,
-			max = 2
-		},
-		{
 			kill_gain = 0.1,
-			max = 2
-		}		
+			max = 0.6
+		}	
 	}	
 	
 	--Hacker
@@ -2103,6 +2116,33 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_tag_team_base_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
+	self.definitions.player_tag_team_base_2 = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
+	self.definitions.player_tag_team_base_3 = {
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
 	self.definitions.player_tag_team_cooldown_drain_1 = {
 		category = "feature",
 		upgrade = {
@@ -2119,14 +2159,6 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.player_tag_team_cooldown_drain_3 = {
-		category = "feature",
-		upgrade = {
-			value = 3,
-			upgrade = "tag_team_cooldown_drain",
-			category = "player"
-		}
-	}		
 	self.definitions.player_passive_health_multiplier_5 = {
 		category = "feature",
 		name_id = "menu_player_health_multiplier",
@@ -2435,18 +2467,10 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
-	self.definitions.player_tag_team_damage_absorption_1 = {
+	self.definitions.player_tag_team_damage_absorption = {
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "tag_team_damage_absorption",
-			category = "player"
-		}
-	}	
-	self.definitions.player_tag_team_damage_absorption_2 = {
-		category = "feature",
-		upgrade = {
-			value = 2,
 			upgrade = "tag_team_damage_absorption",
 			category = "player"
 		}

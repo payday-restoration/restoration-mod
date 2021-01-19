@@ -3217,7 +3217,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck20_1",
 				upgrades = {
 					"tag_team",
-					"player_tag_team_base",
+					"player_tag_team_base_1",
 					"player_tag_team_cooldown_drain_1"
 				},
 				icon_xy = {
@@ -3232,7 +3232,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_3_desc_sc",
 				name_id = "menu_deck20_3",
 				upgrades = {
-					"player_tag_team_cooldown_drain_2"
+					"player_tag_team_base_2"
 				},
 				icon_xy = {
 					0,
@@ -3246,7 +3246,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_5_desc_sc",
 				name_id = "menu_deck20_5",
 				upgrades = {
-					"player_tag_team_damage_absorption_1"
+					"player_tag_team_damage_absorption"
 				},
 				icon_xy = {
 					2,
@@ -3260,7 +3260,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_7_desc_sc",
 				name_id = "menu_deck20_7",
 				upgrades = {
-					"player_tag_team_damage_absorption_2"
+					"player_tag_team_base_3"
 				},
 				icon_xy = {
 					2,
@@ -3275,7 +3275,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck20_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_tag_team_cooldown_drain_3"
+					"player_tag_team_cooldown_drain_2"
 				},
 				icon_xy = {
 					0,

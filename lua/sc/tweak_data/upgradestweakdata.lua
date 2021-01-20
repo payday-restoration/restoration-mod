@@ -1714,8 +1714,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			owner = 0
 		},
 		{
-			tagged = 3,
-			owner = 1
+			tagged = 2,
+			owner = 2
 		}
 	}
 

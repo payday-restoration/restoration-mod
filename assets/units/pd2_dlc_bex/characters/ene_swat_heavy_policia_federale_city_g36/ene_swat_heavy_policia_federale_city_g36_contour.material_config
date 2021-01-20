@@ -62,6 +62,25 @@
         <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
 	</material>
+
+	<material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_mask">
+        <bump_normal_texture    file="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_head_nm"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/shared_textures/mask_city_df"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_mask_lod_1">
+        <bump_normal_texture    file="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_head_nm" mip="1"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/shared_textures/mask_city_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" name="mtr_mask_lod_2">
+        <bump_normal_texture    file="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_head_nm" mip="4"/>
+        <diffuse_texture        file="units/pd2_dlc_bex/characters/shared_textures/mask_city_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>	
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

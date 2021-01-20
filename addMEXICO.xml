@@ -258,11 +258,6 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/sjnp_beatcop_atlas_df" force="false"/>
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/sjnp_beatcop_atlas_nm" force="false"/>
 	
-	<!--security fixed materials-->
-	<object path="units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01" force="true"/>
-	<object path="units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02" force="true"/>
-	<object path="units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03" force="true"/>
-	
 	<!--marijuana tijuana office cops with poppable caps -->
 	<unit path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01" force="true" load="true"/>
 	<unit path="units/pd2_dlc_pex/characters/ene_male_office_cop_01/ene_male_office_cop_01_husk" force="true" load="true"/>
@@ -320,16 +315,12 @@
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870" />
 	<model path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870" />
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"  load="true"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870_contour"/>
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870_husk"  load="true"/>		
 	<!--Ump-->
 	<object path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" />
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" />
 	<model path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" />
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" load="true"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump_contour"/>
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump_husk" load="true"/>	
 	<!--City Heavy Rifle-->	
 	<object path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36"  />
@@ -344,8 +335,6 @@
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870" />
 	<model path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870" />
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"  load="true"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870" />
-	<material_config path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870_contour" />
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870_husk"  load="true"/>	
 	
 	<!--Zeal Tier-->
@@ -359,7 +348,7 @@
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal_husk"  force="true"  load="true"/>	
 	
 	<!-- riflar acc -->
-	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bex_riflar/ene_acc_bex_riflar" />
+	<unit_obj path="units/pd2_dlc_bex/characters/ene_acc_bex_riflar/ene_acc_bex_riflar" />
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_acc_bex_riflar/ene_acc_bex_riflar"/>
 	
 	<!--Shotgun-->
@@ -372,7 +361,7 @@
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870_husk" force="true" load="true"/>	
 	
 	<!-- shotgunner acc -->
-	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bex_shotgunner/ene_acc_bex_shotgunner" />
+	<unit_obj path="units/pd2_dlc_bex/characters/ene_acc_bex_shotgunner/ene_acc_bex_shotgunner" />
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_acc_bex_shotgunner/ene_acc_bex_shotgunner"/>
 	
 	<!--Ump-->
@@ -385,7 +374,7 @@
 	<unit path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump_husk" load="true"/>	
 	
 	<!-- ump acc -->
-	<unit_mat path="units/pd2_dlc_bex/characters/ene_acc_bexret/ene_acc_bexret" />
+	<unit_obj path="units/pd2_dlc_bex/characters/ene_acc_bexret/ene_acc_bexret" />
 	<cooked_physics path="units/pd2_dlc_bex/characters/ene_acc_bexret/ene_acc_bexret"/>
 	
 	<!--ZEAL Heavy Rifle-->	

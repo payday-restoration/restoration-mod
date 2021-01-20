@@ -2,6 +2,16 @@ function TaserLogicAttack.queued_update(data)
 	local my_data = data.internal_data
 
 	TaserLogicAttack._upd_enemy_detection(data)
+
+	--Hackish attempt to fix a crash, *replace with a more proper fix asap*.
+	if not my_data.update_task_key and data.key then
+		local key_str = tostring(data.key)
+		my_data.update_task_key = "TaserLogicAttack.queued_update" .. key_str
+		log("Maybe averted potential crash. update_task_key is nil when it shouldn't be!")
+	else
+		log("Unrecoverable TaserLogicAttack state. Going to return early to see if crash can be avoided.")
+		return
+	end
 	
 	if my_data ~= data.internal_data then
 		CopLogicBase._report_detections(data.detected_attention_objects)

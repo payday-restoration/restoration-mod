@@ -33,13 +33,16 @@ function CopActionTase:clbk_malfunction()
 		normal = math_up
 	})
 
+	--Get accurate attacker position to use in ray.
 	local attacker_pos = managers.player:player_unit() and managers.player:player_unit():movement():m_head_pos() or self._ext_movement:m_com() + self._ext_movement:m_rot():y() * 100
+	--Get proper ray for the counter.
 	local counter_ray = World:raycast("ray", attacker_pos, self._ext_movement:m_com(), "sphere_cast_radius", 20, "target_unit", self._unit)
 	local action_data = {
 		damage_effect = 1,
 		damage = 0,
 		variant = "counter_spooc",
 		attacker_unit = managers.player:player_unit() or self._unit,
+		--More accurate col_ray than vanilla common_data.
 		col_ray = counter_ray,
 		attack_dir = counter_ray.ray,
 	}

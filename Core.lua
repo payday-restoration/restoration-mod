@@ -167,7 +167,6 @@ function restoration:Init()
 		"fex", --Buluc's Mansion
 		"nmh",
 		"nail",	--Lab Rats. Fuck this heist	
-		"nmh_res", --Resmod edit of no mercy.
 		"hox_1",
 		"xmn_hox_1",
 		--Custom Heists below--
@@ -176,7 +175,8 @@ function restoration:Init()
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
-		"chew", --Biker day 2		
+		"chew", --Biker day 2
+		"nmh_res", --Resmod edit of no mercy.
 		"peta2", --Goats day 2. Fuck this heist too		
 		--Custom Heists below--
 		"Victor Romeo"

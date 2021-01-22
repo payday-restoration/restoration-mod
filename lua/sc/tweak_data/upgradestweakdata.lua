@@ -1564,21 +1564,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
 	self.cocaine_stacks_convert_levels = {
-		300,
-		240
+		400,
+		300
 	}	
 	self.cocaine_stacks_dmg_absorption_value = 0.1
 	self.cocaine_stacks_tick_t = 0
 	self.max_cocaine_stacks_per_tick = 2400
 	self.max_total_cocaine_stacks = 2400
 	self.cocaine_stacks_decay_t = 8
-	self.cocaine_stacks_decay_amount_per_tick = 300
+	self.cocaine_stacks_decay_amount_per_tick = 400
 	self.cocaine_stacks_decay_percentage_per_tick = 0
 	self.values.player.cocaine_stacking = {1}
 	self.values.player.sync_cocaine_stacks = {true}
-	self.values.player.cocaine_stacks_decay_multiplier = {0.8}
+	self.values.player.cocaine_stacks_decay_multiplier = {0.75}
 	self.values.player.sync_cocaine_upgrade_level = {2}
-	self.values.player.cocaine_stack_absorption_multiplier = {1.5}
+	self.values.player.cocaine_stack_absorption_multiplier = {2}
 	
 	--Chico--
 	--kingpin
@@ -1721,7 +1721,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 	self.values.player.tag_team_damage_absorption = {
 		{
-			kill_gain = 0.1,
+			kill_gain = 0.05,
 			max = 0.8
 		}	
 	}	

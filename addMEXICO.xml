@@ -1,10 +1,4 @@
-<table directory="assets">
-	<!--temp remember to delete these when we have the finished assets in-->
-	<texture path="units/pd2_mod_sharks/characters/shared_textures/fbi_heads_atlas_df" force="false"/>
-	<texture path="units/pd2_mod_sharks/characters/shared_textures/fbi_heads_atlas_nm" force="false"/>
-	<texture path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_df" force="false"/>
-	<texture path="units/pd2_mod_sharks/characters/shared_textures/fbi_helmets_atlas_nm" force="false"/>
-	
+<table directory="assets">	
 	<!--NPC M60-->
 	<cooked_physics path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
 	<material_config path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>

@@ -377,6 +377,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_lmg_shuno_body_red"] = "Красный корпус",
 		["bm_wp_g3_b_sniper"] = "Макро-ствол",
 		["bm_wp_g3_b_short"] = "Микро-ствол",
+		["bm_wp_g3_m_psg"] = "Präzision Magazine",
 
 		["bm_w_m590"] = "Дробовик Reinbeck 890",
 		["bm_w_m590_desc"] = "Наследник самого популярного дробовика банды. От оригинального Reinbeck осталась убойная сила, но дизайн был немного изменён: Его легче заряжать, но он менее стабилен.",

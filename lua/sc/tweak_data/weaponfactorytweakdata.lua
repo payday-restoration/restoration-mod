@@ -5502,6 +5502,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 		recoil = -1,
 		concealment = -1
 	}
+	self.parts.wpn_fps_ass_g3_b_sniper.override = {}
 	self.parts.wpn_fps_ass_g3_b_sniper.adds = {}
 	
 	--Just in case
@@ -5593,6 +5594,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 		recoil = 1,
 		spread = -1
 	}
+	
+	--PSG Magazine
+	self.parts.wpn_fps_ass_g3_m_psg = {
+		pcs = {},
+		type = "magazine",
+		name_id = "bm_wp_g3_m_psg",
+		a_obj = "a_m",
+		dlc = "sc",
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_straight",
+		unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag_psg",
+		supported = true,
+		stats = {value = 2, extra_ammo = -10, reload = 3, concealment = 2}
+	}
+	self.parts.wpn_fps_ass_g3_m_psg.third_unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_third_ass_g3_m_mag_psg"
+
+	table.insert(self.wpn_fps_ass_g3.uses_parts, "wpn_fps_ass_g3_m_psg")
+	table.insert(self.wpn_fps_ass_g3_npc.uses_parts, "wpn_fps_ass_g3_m_psg")	
+
+	self.wpn_fps_ass_g3_npc.uses_parts = deep_clone(self.wpn_fps_ass_g3.uses_parts)
 	
 end)	
 

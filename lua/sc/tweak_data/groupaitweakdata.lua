@@ -12283,6 +12283,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--system function for retreating in holdout mode. MUST be last tactic for all units. Do not touch.
 	--flank
 	--flank enemies will get around you and try to either, run past you, or to your side, so that you're not facing them. if they are walking, and they're within 15-10 meters, they'll crouch.
+	--Haste
+	--Unit will always have a cover_wait_time of 0
 	self._tactics = {
 		--Cloaker tactics, static. Tries to avoid confrontation
 		spooc = {
@@ -12301,6 +12303,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
+			"charge",
 			"groupcsr"
 		},
 		--Shotgunner variant of Beat Cops, only real difference is they'll charge in
@@ -12317,6 +12320,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
+			"charge",			
 			"groupcsr"
 		},		
 		--Beat Cop, stealth variant. Prefers hit n run tactics and avoiding the front to prioritize hostages
@@ -12333,6 +12337,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
+			"charge",			
 			"deathguard",
 			"groupcsr"
 		},
@@ -12352,6 +12357,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
+			"charge",			
 			"deathguard",
 			"groupcsr"
 		},			
@@ -12361,6 +12367,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
+			"charge",			
 			"deathguard",
 			"groupcsr"
 		},
@@ -12376,10 +12383,11 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Heavy SWAT flanker, leads flank maneuvers. 
 		CS_swat_heavy_flank = {
 			"flank",
-			"flash_grenade",
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
+			"ranged_fire",
+			"charge",				
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12431,8 +12439,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},		
 		--Beat Cop/Blue SWAT/Heavy SWAT defend. Used for reinforce groups
 		CS_defend = {
-			"obstacle",
-			"provide_coverfire",
+			"flank",
+			"elite_ranged_fire",
 			"provide_support"
 		},			
 		--Sniper tactics. (Unused?)
@@ -12470,6 +12478,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",			
 			"provide_support",
 			"ranged_fire",
+			"charge",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12489,6 +12498,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"ranged_fire",
+			"charge",
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
@@ -12501,6 +12511,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
+			"charge",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12521,6 +12532,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",	
 			"provide_coverfire",
 			"provide_support",
+			"ranged_fire",
+			"charge",
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12588,9 +12601,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},	
 		--Reinforce groups
 		FBI_defend = {
-			"obstacle",
+			"flank",
 			"elite_ranged_fire",
-			"provide_coverfire",
 			"provide_support"
 		},		
 		--Greendozer on FBI tier and above, hitnrun tactics and flank a lot
@@ -12620,6 +12632,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Mayhem rifle SWAT
 		MH_swat_rifle = {
 			"ranged_fire",
+			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12640,6 +12653,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Mayhem SWAT Flankers, will disengage when targeted
 		MH_swat_rifle_flank = { 
 			"flank",
+			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
@@ -12651,6 +12665,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Mayhem Heavy
 		MH_heavy = { 
 			"ranged_fire",
+			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12661,6 +12676,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Mayhem Heavy Flank, disengage when targeted
 		MH_heavy_flank = {
 			"flank",
+			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",	
@@ -12738,6 +12754,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--death wish tactics
 		DW_swat_rifle = {
 			"ranged_fire",
+			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12753,12 +12770,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
+			"ranged_fire",	
+			"charge",			
 			"harass",
 			"deathguard",
 			"groupcsr"
 		},
 		DW_heavy = {
 			"ranged_fire",
+			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12768,6 +12788,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},		
 		DW_heavy_flank = {
 			"flank",
+			"ranged_fire",
+			"charge",			
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
@@ -12813,6 +12835,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		ELITE_swat_rifle = {
 			"ranged_fire",
+			"charge",	
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12834,6 +12857,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},		
 		ELITE_heavy = { 
 			"ranged_fire",
+			"charge",	
 			"smoke_grenade",
 			"flash_grenade",
 			"harass",
@@ -12859,6 +12883,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
+			"charge",
 			"harass",
 			"provide_coverfire",
 			"provide_support",
@@ -12869,6 +12894,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
+			"charge",
 			"harass",
 			"provide_coverfire",
 			"provide_support",

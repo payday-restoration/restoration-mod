@@ -21,6 +21,7 @@ end
 
 function RaycastWeaponBase:setup(...)
 	setup_original(self, ...)
+	
 	--self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 
 	--Use stability stat to get the moving accuracy penalty.

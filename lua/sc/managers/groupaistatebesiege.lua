@@ -140,18 +140,6 @@ function GroupAIStateBesiege:get_hostage_count_for_chatter()
 	return 0
 end
 
-function GroupAIStateBesiege:chk_heat_bonus_retreat()
-	local assault_task = self._task_data.assault
-	
-	if assault_task and assault_task.phase == "build" or assault_task and assault_task.phase == "sustain" then
-		if self._activeassaultbreak then
-			return true
-		end
-	end
-	
-	return	
-end
-
 function GroupAIStateBesiege:chk_has_civilian_hostages()
 	if self._police_hostage_headcount and self._hostage_headcount > 0 then
 		if self._hostage_headcount - self._police_hostage_headcount > 0 then

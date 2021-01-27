@@ -1,7 +1,5 @@
 local math_min = math.min
 
-TeamAILogicAssault._COVER_CHK_INTERVAL = 0.1
-
 function TeamAILogicAssault._upd_enemy_detection(data, is_synchronous)
 	managers.groupai:state():on_unit_detection_updated(data.unit)
 
@@ -18,13 +16,12 @@ function TeamAILogicAssault._upd_enemy_detection(data, is_synchronous)
 	local old_att_obj = data.attention_obj
 
 	TeamAILogicBase._set_attention_obj(data, new_attention, new_reaction)
-	
-	TeamAILogicAssault._chk_exit_attack_logic(data, new_reaction)	
-	
+	TeamAILogicAssault._chk_exit_attack_logic(data, new_reaction)
+
 	if my_data ~= data.internal_data then
 		return
 	end
-	
+
 	if data.objective and data.objective.type == "follow" and TeamAILogicIdle._check_should_relocate(data, my_data, data.objective) and not data.unit:movement():chk_action_forbidden("walk") then
 		data.objective.in_place = nil
 
@@ -36,14 +33,6 @@ function TeamAILogicAssault._upd_enemy_detection(data, is_synchronous)
 
 		return
 	end
-	
-    if data.objective and data.objective.type == "follow" and data.objective.taserrescue then
-        if not alive(data.objective.follow_unit) then
-            data.objective_complete_clbk(data.unit, data.objective)
-        elseif data.objective.follow_unit:character_damage():dead() then
-            data.objective_complete_clbk(data.unit, data.objective)
-        end
-    end
 
 	CopLogicAttack._upd_aim(data, my_data)
 
@@ -80,12 +69,8 @@ function TeamAILogicAssault._upd_enemy_detection(data, is_synchronous)
 			if not TeamAILogicAssault._mark_special_t or TeamAILogicAssault._mark_special_t + 3 < data.t then
 				if not data.unit:sound():speaking() then
 					TeamAILogicAssault._mark_special_chk_t = data.t
-					
-					if data.attention_obj and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and data.attention_obj.unit and data.attention_obj.unit:base().has_tag and data.attention_obj.unit:base():has_tag("special") and data.attention_obj.verified and data.attention_obj.verified_dis < 2000 then
-						nmy = data.attention_obj.unit
-					else
-						nmy = TeamAILogicAssault.find_enemy_to_mark(data.detected_attention_objects)
-					end
+
+					local nmy = TeamAILogicAssault.find_enemy_to_mark(data.detected_attention_objects)
 
 					if nmy then
 						TeamAILogicAssault._mark_special_t = data.t

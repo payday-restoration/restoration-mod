@@ -793,7 +793,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					--Basic
 						self.values.player.unpierceable_armor = {true}
 					--Ace
-						self.values.player.armor_full_damage_absorb = {0.25}
+						self.values.player.armor_full_damage_absorb = {0.4}
 						self.values.player.armor_regen_timer_multiplier_tier = {0.9}				
 			
 		--Breacher--

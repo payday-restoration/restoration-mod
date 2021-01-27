@@ -220,12 +220,12 @@
 			<lod_object name="lod_helmet">
 				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_ene_acc_swat_helmet" max_distance="1000"/>
-					<material materials="mtr_ene_acc_swat_helmet_lod1" max_distance="1500"/>
-					<material materials="mtr_ene_acc_swat_helmet_lod2"/>
+					<material materials="mtr_ene_acc_swat_helmet_lod" max_distance="1500"/>
+					<material materials="mtr_ene_acc_swat_helmet_lod1"/>
 				</object>
 				<object name="g_helmet_lod2" 	enabled="true" lod="1" >
 					<material materials="mtr_ene_acc_swat_helmet" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_ene_acc_swat_helmet_lod2"/>
+					<material materials="mtr_ene_acc_swat_helmet_lod1"/>
 				</object>
 			</lod_object>
 			

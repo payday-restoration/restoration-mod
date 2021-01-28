@@ -924,18 +924,6 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 				}
 			},
 			{
-				class = "ModifierLessConcealment",
-				id = "conceal_1",
-				icon = "crime_spree_concealment",
-				level = 26,
-				data = {
-					conceal = {
-						1,
-						"add"
-					}
-				}
-			},
-			{
 				class = "ModifierCivilianAlarm",
 				id = "civs_2",
 				icon = "crime_spree_civs_killed",
@@ -956,18 +944,6 @@ function CrimeSpreeTweakData:init_modifiers(tweak_data)
 					count = {
 						2,
 						"max"
-					}
-				}
-			},
-			{
-				class = "ModifierLessConcealment",
-				id = "conceal_2",
-				icon = "crime_spree_concealment",
-				level = 104,
-				data = {
-					conceal = {
-						1,
-						"add"
 					}
 				}
 			},

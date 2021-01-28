@@ -12490,7 +12490,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
-			"groupcsr"
+			"groupcsr",
+			"haste"
 		},		
 		--FBI Rifle SWATs, flank the player
 		FBI_swat_rifle_flank = {
@@ -12603,7 +12604,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		FBI_defend = {
 			"flank",
 			"elite_ranged_fire",
-			"provide_support"
+			"provide_support",
+			"reloadingretreat"
 		},		
 		--Greendozer on FBI tier and above, hitnrun tactics and flank a lot
 		GREEN_tank = {
@@ -12619,12 +12621,12 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		--Blackdozers, hyper aggressive and unload on the player. 
 		BLACK_tank = {
-			"reloadingretreat",
 			"murder",
 			"tunnel",
 			"charge",
 			"harass",
-			"shield"
+			"shield",
+			"haste"
 		},
 		
 		--Mayhem tactics below
@@ -12648,7 +12650,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
-			"groupcsr"
+			"groupcsr",
+			"haste"
 		},
 		--Mayhem SWAT Flankers, will disengage when targeted
 		MH_swat_rifle_flank = { 
@@ -12729,7 +12732,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"hitnrun",
-			"grouphrtr"
+			"grouphrtr",
+			"haste"
 		},	
 		--DW Taser, tries extremely hard to get up close and personal
 		DW_tazer = {
@@ -12739,7 +12743,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"shield_cover",
 			"murder",
-			"tunnel"
+			"tunnel",
+			"haste"
 		},
 		--DW Grenadier, even more passive and will use hitnrun
 		ELITE_boom = {
@@ -12853,7 +12858,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"shield_cover",
 			"provide_support",
-			"groupcsr"
+			"groupcsr",
+			"haste"
 		},		
 		ELITE_heavy = { 
 			"ranged_fire",
@@ -12876,7 +12882,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield_cover",
 			"deathguard",
-			"groupcsr"
+			"groupcsr",
+			"haste"
 		},		
 		ELITE_swat_rifle_flank = {
 			"flank",
@@ -12908,7 +12915,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover"
+			"shield_cover",
+			"haste"
 		},				
 		
 		--Captains
@@ -12922,7 +12930,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},		
 		Cap_summers_minion = {
 			"shield_cover",
-			"charge"
+			"charge",
+			"haste" --Might help them keep up with Summers a little better.
 		},	
 		Cap_summers = {
 			"shield",
@@ -17764,17 +17773,17 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	end	
 	for _,t in pairs(restoration.tiny_levels) do
 		if job == t then
-			map_scale_factor = 0.9
+			map_scale_factor = 0.85
 		end
 	end
 	for _,vt in pairs(restoration.very_tiny_levels) do
 		if job == vt then
-			map_scale_factor = 0.8
+			map_scale_factor = 0.7
 		end
 	end
 	for _,vt in pairs(restoration.extremely_tiny_levels) do
 		if job == vt then
-			map_scale_factor = 0.65
+			map_scale_factor = 0.55
 		end
 	end
 
@@ -17846,9 +17855,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			21
 		}
 		self.besiege.assault.force_pool = {
-			75,
-			100,
-			125
+			90,
+			120,
+			150
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(2 * map_scale_factor), 1),
@@ -17865,14 +17874,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
-			15,
-			18,
-			21
+			17,
+			21,
+			25
 		}
 		self.besiege.assault.force_pool = {
-			75,
-			100,
-			125
+			105,
+			140,
+			175
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),
@@ -17889,14 +17898,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
-			17,
-			21,
-			25
+			20,
+			24,
+			28
 		}
 		self.besiege.assault.force_pool = {
-			90,
 			120,
-			150
+			160,
+			200
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),
@@ -17913,14 +17922,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
-			17,
-			21,
-			25
+			22,
+			27,
+			32
 		}
 		self.besiege.assault.force_pool = {
-			90,
-			120,
-			150
+			135,
+			180,
+			225
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),
@@ -17937,14 +17946,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	else
 		self.besiege.assault.force = {
-			20,
 			24,
-			28
+			30,
+			36
 		}
 		self.besiege.assault.force_pool = {
-			105,
-			140,
-			175
+			150,
+			200,
+			250
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),

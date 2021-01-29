@@ -209,13 +209,13 @@
 			 	</object>
 		 	</lod_object>
 
- 			<lod_object name="lod_gear"> --Beret, helmet popping
+ 			<lod_object name="lod_gear"> <!--Beret, helmet popping-->
 			<object name="g_gear" enabled="true" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_gear"/>
 			 	</object>
 		 	</lod_object>
 
- 			<lod_object name="lod_mouth"> --Mouth interior + cigar
+ 			<lod_object name="lod_mouth"> <!--Mouth interior + cigar-->
 			<object name="g_mouth" enabled="true" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_mouth"/>
 			 	</object>

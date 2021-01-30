@@ -303,51 +303,61 @@ end
 
 --Generate table used to find spawn-in voicelines.
 function GroupAIStateBesiege:_init_group_entry_lines()
-	local function random_cs(self, leader_unit, leader_pos)
+	local function random_cs()
 		local randomgroupcallout = math.random(1, 100)
 		if randomgroupcallout < 25 then
-			self:chk_say_enemy_chatter(leader_unit, leader_pos, "csalpha")
+			return "csalpha"
 		elseif randomgroupcallout < 50 then
-			self:chk_say_enemy_chatter(leader_unit, leader_pos, "csbravo")
+			return "csbravo"
 		elseif randomgroupcallout < 75 then
-			self:chk_say_enemy_chatter(leader_unit, leader_pos, "cscharlie")
+			return "cscharlie"
 		else
-			self:chk_say_enemy_chatter(leader_unit, leader_pos, "csdelta")
+			return "csdelta"
 		end
 	end
 
-	local function random_hrt(self, leader_unit, leader_pos)
+	local function random_hrt()
 		local randomgroupcallout = math.random(1, 100)
 		if randomgroupcallout < 25 then
-			self:chk_say_enemy_chatter(leader_unit, leader_pos, "hrtalpha")
+			return "hrtalpha"
 		elseif randomgroupcallout < 50 then
-			self:chk_say_enemy_chatter(leader_unit, leader_pos, "hrtbravo")
+			return "hrtbravo"
 		elseif randomgroupcallout < 75 then
-			self:chk_say_enemy_chatter(leader_unit, leader_pos, "hrtcharlie")
+			return "hrtcharlie"
 		else
-			self:chk_say_enemy_chatter(leader_unit, leader_pos, "hrtdelta")
+			return "hrtdelta"
 		end
 	end
 
-	self._group_entry_line_selectors = {
-		groupcs1 = function(self, leader_unit, leader_pos) self:chk_say_enemy_chatter(leader_unit, leader_pos, "csalpha") end,
-		groupcs2 = function(self, leader_unit, leader_pos) self:chk_say_enemy_chatter(leader_unit, leader_pos, "csbravo") end,
-		groupcs3 = function(self, leader_unit, leader_pos) self:chk_say_enemy_chatter(leader_unit, leader_pos, "cscharlie") end,
-		groupcs4 = function(self, leader_unit, leader_pos) self:chk_say_enemy_chatter(leader_unit, leader_pos, "csdelta") end,
-		grouphrt1 = function(self, leader_unit, leader_pos) self:chk_say_enemy_chatter(leader_unit, leader_pos, "hrtalpha") end,
-		grouphrt2 = function(self, leader_unit, leader_pos) self:chk_say_enemy_chatter(leader_unit, leader_pos, "hrtbravo") end,
-		grouphrt3 = function(self, leader_unit, leader_pos) self:chk_say_enemy_chatter(leader_unit, leader_pos, "hrtcharlie") end,
-		grouphrt4 = function(self, leader_unit, leader_pos) self:chk_say_enemy_chatter(leader_unit, leader_pos, "hrtdelta") end,
-		groupcsr = function(self, leader_unit, leader_pos) random_cs(self, leader_unit, leader_pos)	end,
-		grouphrtr = function(self, leader_unit, leader_pos) random_hrt(self, leader_unit, leader_pos) end,
-		groupany = function(self, leader_unit, leader_pos)
-			if self._task_data.assault.active then
-				random_cs(self, leader_unit, leader_pos)
-			else
-				random_hrt(self, leader_unit, leader_pos)
+	--Metatable to handle more complex rng selections.
+	self._group_entry_line_selectors = setmetatable(
+		{
+			groupcs1 = "csalpha",
+			groupcs2 = "csbravo",
+			groupcs3 = "cscharlie",
+			groupcs4 = "csdelta",
+			grouphrt1 = "hrtalpha",
+			grouphrt2 = "hrtbravo",
+			grouphrt3 = "hrtcharlie",
+			grouphrt4 = "hrtdelta"
+		},{
+			__index = function(table, key)
+				if key == "groupcsr" then
+					return random_cs()
+				elseif key == "grouphrtr" then
+					return random_hrt()
+				elseif key == "groupany" then
+					if self._task_data.assault.active then
+						random_cs()
+					else
+						random_hrt()
+					end
+				else
+					return rawget(table, key)
+				end
 			end
-		end
-	}
+		}
+	)
 end
 
 --Plays spawn in chatter.
@@ -357,9 +367,9 @@ function GroupAIStateBesiege:_voice_groupentry(group)
 
 	if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.char_tweak.chatter.entry then
 		for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
-			local line_selector = self._group_entry_line_selectors[tactic_name]
-			if line_selector then
-				line_selector(self, group_leader_u_data.unit, group_leader_u_data.m_pos)
+			local selection = self._group_entry_line_selectors[tactic_name]
+			if selection then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, selection)
 			end
 		end
 	end

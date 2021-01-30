@@ -48,6 +48,10 @@
 			"script_path" : "lua/sc/managers/groupaistatebase.lua"
 		},
 		{
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebesiege"
+			"script_path" : "lua/sc/managers/groupaistatebesiege.lua"
+		},
+		{
 			"hook_id" : "lib/managers/playermanager"
 			"script_path" : "lua/sc/managers/playermanager.lua"
 		},

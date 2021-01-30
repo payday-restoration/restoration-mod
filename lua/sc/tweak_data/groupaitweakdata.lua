@@ -17611,17 +17611,23 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	}
 
 	if difficulty_index <= 2 then
-		self.smoke_and_flash_grenade_timeout = {20, 20}
+		self.smoke_grenade_timeout = {20, 20}
+		self.flash_grenade_timeout = {10, 10}
 	elseif difficulty_index == 3 then
-		self.smoke_and_flash_grenade_timeout = {19, 19}
+		self.smoke_grenade_timeout = {19, 19}
+		self.flash_grenade_timeout = {10, 9}
 	elseif difficulty_index == 4 then
-		self.smoke_and_flash_grenade_timeout = {18, 18}
+		self.smoke_grenade_timeout = {18, 18}
+		self.flash_grenade_timeout = {9, 9}
 	elseif difficulty_index == 5 then
-		self.smoke_and_flash_grenade_timeout = {17, 17}
+		self.smoke_grenade_timeout = {17, 17}
+		self.flash_grenade_timeout = {9, 8}
 	elseif difficulty_index == 6 or difficulty_index == 7 then
-		self.smoke_and_flash_grenade_timeout = {16, 16}
+		self.smoke_grenade_timeout = {16, 16}
+		self.flash_grenade_timeout = {8, 8}
 	else
-		self.smoke_and_flash_grenade_timeout = {15, 15}
+		self.smoke_grenade_timeout = {15, 15}
+		self.flash_grenade_timeout = {8, 7}
 	end
 	
 	self.smoke_grenade_lifetime = 12

@@ -1091,7 +1091,7 @@ function CopLogicAttack.queue_update(data, my_data)
 	end
 
 	local focus_enemy = data.attention_obj
-	local hostage_count = managers.groupai:state():get_hostage_count_for_chatter() --check current hostage count
+	local hostage_count = managers.groupai:state():get_hostage_count() --check current hostage count
 	local chosen_panic_chatter = "controlpanic" --set default generic assault break chatter
 	local objective = data.objective or nil
 	

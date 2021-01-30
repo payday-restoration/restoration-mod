@@ -68,29 +68,23 @@ function CopLogicBase.action_taken(data, my_data)
 end
 
 function CopLogicBase.do_grenade(data, pos, flash, drop)
-	if not managers.groupai:state():is_smoke_grenade_active() or data.unit:base().has_tag and not data.unit:base():has_tag("law") or data.char_tweak.cannot_throw_grenades then --if you're not calling this function from somewhere outside do_smart_grenade, remove this entire check
-		return
-	end
-
 	local duration = tweak_data.group_ai.smoke_grenade_lifetime
 
 	if flash then
 		duration = tweak_data.group_ai.flash_grenade_lifetime
 
-		managers.groupai:state():detonate_smoke_grenade(pos, data.unit:movement():m_head_pos(), duration, flash)
-		managers.groupai:state():apply_grenade_cooldown(flash)
-
 		if not drop and data.char_tweak.chatter and data.char_tweak.chatter.flash_grenade then
 			data.unit:sound():say("d02", true)	
 		end
 	else
-		managers.groupai:state():detonate_smoke_grenade(pos, data.unit:movement():m_head_pos(), duration, flash)
-		managers.groupai:state():apply_grenade_cooldown(flash)
 
 		if not drop and data.char_tweak.chatter and data.char_tweak.chatter.smoke then
 			data.unit:sound():say("d01", true)	
 		end
 	end
+
+	managers.groupai:state():detonate_smoke_grenade(pos, data.unit:movement():m_head_pos(), duration, flash)
+	managers.groupai:state():apply_grenade_cooldown(flash)
 
 	if not drop and not data.unit:movement():chk_action_forbidden("action") and not data.char_tweak.no_grenade_anim then
 		local redir_name = "throw_grenade"

@@ -1202,7 +1202,7 @@ function CopLogicTravel.queued_update(data)
     	delay = 0.35
     end
 	
-	local hostage_count = managers.groupai:state():get_hostage_count_for_chatter() --check current hostage count
+	local hostage_count = managers.groupai:state():get_hostage_count() --check current hostage count
 	local chosen_panic_chatter = "controlpanic" --set default generic assault break chatter
 	
 	if hostage_count > 0 then --make sure the hostage count is actually above zero before replacing any of the lines

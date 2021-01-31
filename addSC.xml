@@ -311,6 +311,18 @@
 	<continent path="levels/narratives/classics/flat/art_dhruva/art_dhruva" force="true" unload="true"/>
 	<continent path="levels/narratives/classics/flat/lights/lights" force="true" unload="true"/>
 	<continent path="levels/narratives/classics/flat/collision/collision" force="true" unload="true"/>
+
+	<!--White House-->
+	<continent path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/backdrop/backdrop" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/collision/collision" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/lights/lights" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/props/props" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/props1/props1" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<mission path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<cover_data path="levels/narratives/locke/vit/cover_data" force="true" unload="true"/>
+	<nav_data path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/>
 	
 	<!--Misc. Changes and Fixes to Base Game Objects-->
 	

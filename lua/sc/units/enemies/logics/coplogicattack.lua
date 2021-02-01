@@ -440,7 +440,7 @@ function CopLogicAttack._upd_aim(data, my_data)
 				local line = Draw:brush(Color.blue:with_alpha(0.5), 0.1)
 				line:cylinder(data.unit:movement():m_head_pos(), look_pos, 5)
 			end]]
-
+			
 			if my_data.attention_unit ~= look_pos then
 				CopLogicBase._set_attention_on_pos(data, mvec3_cpy(look_pos))
 

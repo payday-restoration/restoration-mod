@@ -1,5 +1,3 @@
---[[
-
 function CopLogicArrest._call_the_police(data, my_data, paniced)
 	local action = {
 		variant = "arrest_call",
@@ -19,5 +17,3 @@ function CopLogicArrest._call_the_police(data, my_data, paniced)
 
 	CopLogicArrest._say_call_the_police(data, my_data)
 end
-
-]]--

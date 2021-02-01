@@ -555,7 +555,6 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.priority_shout_max_dis = 3000				
 	self.meme_man_shield.access = "gangster"
 	self.meme_man_shield.use_animation_on_fire_damage = false
-	self.meme_man_shield.move_speed = presets.move_speed.lightning
 	self.meme_man_shield.surrender = nil
 	self.meme_man_shield.is_special = true
 	self.meme_man_shield.unintimidateable = true
@@ -2383,7 +2382,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.allowed_stances = {cbt = true}
 	self.shield.allowed_poses = {crouch = true}
 	self.shield.always_face_enemy = true
-	self.shield.move_speed = presets.move_speed.fast
+	self.shield.move_speed = presets.move_speed.fast_shield
 	self.shield.no_run_start = true
 	self.shield.no_run_stop = true
 	self.shield.no_retreat = true
@@ -2457,7 +2456,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.damage.shield_knocked = true
 	self.phalanx_minion.priority_shout = "f31"
 	self.phalanx_minion.bot_priority_shout = "f31x_any"		
-	self.phalanx_minion.move_speed = presets.move_speed.normal
+	self.phalanx_minion.move_speed = presets.move_speed.normal_shield
 	self.phalanx_minion.priority_shout_max_dis = 3000
 	self.phalanx_minion.weapon_voice = "3"
 	self.phalanx_minion.experience.cable_tie = "tie_swat"
@@ -2488,6 +2487,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	end		
 	self.phalanx_minion.heal_cooldown = 15
 	table.insert(self._enemy_list, "phalanx_minion")
+	
 	self.phalanx_minion_assault = deep_clone(self.phalanx_minion)
 	self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"	
 	table.insert(self._enemy_list, "phalanx_minion_assault")
@@ -11896,6 +11896,70 @@ function CharacterTweakData:_presets(tweak_data)
 				}
 			}
 		},
+		normal_shield = {
+			stand = {
+				walk = {
+					ntl = {
+						fwd = 150,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 262,
+						strafe = 262,
+						bwd = 262
+					},
+					cbt = {
+						fwd = 262,
+						strafe = 262,
+						bwd = 262
+					}
+				},
+				run = {
+					hos = {
+						fwd = 431,
+						strafe = 262,
+						bwd = 262
+					},
+					cbt = {
+						fwd = 431,
+						strafe = 262,
+						bwd = 262
+					}
+				}
+			},
+			crouch = {
+				walk = {
+					ntl = {
+						fwd = 150,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 262,
+						strafe = 262,
+						bwd = 262
+					},
+					cbt = {
+						fwd = 262,
+						strafe = 262,
+						bwd = 262
+					}
+				},
+				run = {
+					hos = {
+						fwd = 431,
+						strafe = 262,
+						bwd = 262
+					},
+					cbt = {
+						fwd = 431,
+						strafe = 262,
+						bwd = 262
+					}
+				}
+			}
+		},		
 		fast = {
 			stand = {
 				walk = {
@@ -11955,6 +12019,70 @@ function CharacterTweakData:_presets(tweak_data)
 				}
 			}
 		},
+		fast_shield = {
+			stand = {
+				walk = {
+					ntl = {
+						fwd = 150,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 297,
+						strafe = 297,
+						bwd = 297
+					},
+					cbt = {
+						fwd = 297,
+						strafe = 297,
+						bwd = 297
+					}
+				},
+				run = {
+					hos = {
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
+					},
+					cbt = {
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
+					}
+				}
+			},
+			crouch = {
+				walk = {
+					ntl = {
+						fwd = 150,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 297,
+						strafe = 297,
+						bwd = 297
+					},
+					cbt = {
+						fwd = 297,
+						strafe = 297,
+						bwd = 297
+					}
+				},
+				run = {
+					hos = {
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
+					},
+					cbt = {
+						fwd = 488,
+						strafe = 297,
+						bwd = 297
+					}
+				}
+			}
+		},		
 		very_fast = {
 			stand = {
 				walk = {
@@ -12013,7 +12141,71 @@ function CharacterTweakData:_presets(tweak_data)
 					}
 				}
 			}
-		}
+		},
+		very_fast_shield = {
+			stand = {
+				walk = {
+					ntl = {
+						fwd = 150,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 332,
+						strafe = 332,
+						bwd = 332
+					},
+					cbt = {
+						fwd = 332,
+						strafe = 332,
+						bwd = 332
+					}
+				},
+				run = {
+					hos = {
+						fwd = 546,
+						strafe = 332,
+						bwd = 332
+					},
+					cbt = {
+						fwd = 546,
+						strafe = 332,
+						bwd = 332
+					}
+				}
+			},
+			crouch = {
+				walk = {
+					ntl = {
+						fwd = 150,
+						strafe = 120,
+						bwd = 110
+					},
+					hos = {
+						fwd = 332,
+						strafe = 332,
+						bwd = 332
+					},
+					cbt = {
+						fwd = 332,
+						strafe = 332,
+						bwd = 332
+					}
+				},
+				run = {
+					hos = {
+						fwd = 546,
+						strafe = 332,
+						bwd = 332
+					},
+					cbt = {
+						fwd = 546,
+						strafe = 332,
+						bwd = 332
+					}
+				}
+			}
+		}		
 	}
 	for speed_preset_name, poses in pairs(presets.move_speed) do
 		for pose, hastes in pairs(poses) do

@@ -306,38 +306,7 @@ function WeaponTweakData:_set_overkill_145()
 		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 180
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
-	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}	
-	self.aa_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.crate_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}			
-	
-
+			
 	self.ceiling_turret_module.HEALTH_INIT = 675
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 90
 	self.ceiling_turret_module_no_idle.HEALTH_INIT = 675
@@ -362,37 +331,6 @@ function WeaponTweakData:_set_easy_wish()
 	end
 	self.swat_van_turret_module.BAG_DMG_MUL = 10
 
-	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.aa_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}	
-	self.crate_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}			
-	
 	self.ceiling_turret_module.HEALTH_INIT = 787.5
 	self.ceiling_turret_module.BAG_DMG_MUL = 10
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
@@ -421,37 +359,6 @@ function WeaponTweakData:_set_overkill_290()
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
 	self.swat_van_turret_module.BAG_DMG_MUL = 10
-	
-	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.aa_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.crate_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
 	
 	self.ceiling_turret_module.HEALTH_INIT = 787.5
 	self.ceiling_turret_module.BAG_DMG_MUL = 10
@@ -485,36 +392,7 @@ function WeaponTweakData:_set_sm_wish()
 	end
 
 	self.swat_van_turret_module.BAG_DMG_MUL = 11.4375
-	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}	
-	self.aa_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}	
-	self.crate_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}			
+			
 	self.ceiling_turret_module.HEALTH_INIT = 900
 	self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
@@ -1106,7 +984,7 @@ end
 
 function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 	self.swat_van_turret_module.name_id = "debug_sentry_gun"
-	self.swat_van_turret_module.DAMAGE = 1.8
+	self.swat_van_turret_module.DAMAGE = 2
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
@@ -1186,7 +1064,7 @@ end
 
 function WeaponTweakData:_init_data_crate_turret_module_npc()
 	self.crate_turret_module.name_id = "debug_sentry_gun"
-	self.crate_turret_module.DAMAGE = 1.6
+	self.crate_turret_module.DAMAGE = 2
 	self.crate_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
@@ -1268,7 +1146,7 @@ end
 
 function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 	self.ceiling_turret_module.name_id = "debug_sentry_gun"
-	self.ceiling_turret_module.DAMAGE = 1.6
+	self.ceiling_turret_module.DAMAGE = 2
 	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
@@ -1348,7 +1226,7 @@ end
 
 function WeaponTweakData:_init_data_aa_turret_module_npc()
 	self.aa_turret_module.name_id = "debug_sentry_gun"
-	self.aa_turret_module.DAMAGE = 1.6
+	self.aa_turret_module.DAMAGE = 2
 	self.aa_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},

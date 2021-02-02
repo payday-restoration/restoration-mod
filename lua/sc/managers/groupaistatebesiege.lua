@@ -63,10 +63,11 @@ function GroupAIStateBesiege:force_spawn_group_hard(spawn_group)
 	end
 
 	--Create new forced spawngroup.
+	local new_spawn_groups
 	if managers.skirmish:is_skirmish() then --Handle Skirmish's custom diff curve.
-		local new_spawn_groups = { [spawn_group] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1} }
+		new_spawn_groups = { [spawn_group] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1} }
 	else
-		local new_spawn_groups = { [spawn_group] = {1, 1, 1} }
+		new_spawn_groups = { [spawn_group] = {1, 1, 1} }
 	end
 
 	--Cache old spawn groups, and apply new forced spawn group table.

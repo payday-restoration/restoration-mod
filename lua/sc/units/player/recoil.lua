@@ -157,11 +157,6 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 	local player_state = managers.player:current_state()
 	local r_value = 0
 
-	if player_state == "bipod" then
-		self._recoil_kick.h.accumulated = 0
-		return 0
-	end
-
 	if self._recoil_kick.h.accumulated and self._episilon < math.abs(self._recoil_kick.h.accumulated) then
 		local degrees_to_move = 80 * dt --Track horizontal recoil twice as aggressively, since it tends to self compensate unlike vertical recoil.
 		r_value = math.min(self._recoil_kick.h.accumulated, degrees_to_move)

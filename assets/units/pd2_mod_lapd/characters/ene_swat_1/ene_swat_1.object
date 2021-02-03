@@ -233,7 +233,6 @@
 				</object>
 			</lod_object>
 			<object name="s_body" enabled="true" shadow_caster="true"/>			
-			<object name="g_glass" enabled="true" />			
 		</graphic_group>
 	</graphics>
 

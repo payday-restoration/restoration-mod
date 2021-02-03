@@ -15,12 +15,60 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 end)
 
 function CopBase:random_mat_seq_initialization()
-    -- log("i shit myself!")
     local unit_name = self._unit:name()
         	
-    local nypd_cops = unit_name == Idstring("units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1") 
-    or unit_name == Idstring("units/pd2_mod_nypd/characters/ene_cop_3/ene_cop_3")
-    or unit_name == Idstring("units/pd2_mod_nypd/characters/ene_cop_4/ene_cop_4")
+	--BEAT COP FACE STUFF STARTS HERE	
+	local cop1_4 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
+	
+	local cop2_3 = unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2") 
+	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
+	
+	local lacop1_4 = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1") 
+	or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3")
+	
+	local lacop2_3 = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2") 
+	or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4")
+	
+	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_1_4") and cop1_4 then
+		self._unit:damage():run_sequence_simple("pick_mats_for_cop_1_4")
+	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_2_3") and cop2_3 then
+		self._unit:damage():run_sequence_simple("pick_mats_for_cop_2_3")	
+	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_lacop_2_3") and lacop2_3 then
+		self._unit:damage():run_sequence_simple("pick_mats_for_lacop_2_3")	
+	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_lacop_1_4") and lacop1_4 then
+		self._unit:damage():run_sequence_simple("pick_mats_for_lacop_1_4")	
+	end	
+	--END BEAT COP FACE STUFF
+
+	
+	--START FBI HRT FACES. fuck this useless enemy! praise jules for removing him!
+	local fbi_1_2 = unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1") 
+	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2")
+	
+	local fbi_3 = unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3") 
+	
+	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbis") and fbi_1_2 then
+		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_1_2")	
+	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_3") and fbi_3 then
+		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_3")	--he is obscured so there's no need to replace him.
+	end	 	
+	--END FBI FACE NONSENSE
+
+	
+	--security $!!SLAT^* insanity	
+	local sec_2_3 = unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2") 
+	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3")
+	
+	local sec_1 = unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1") 
+	
+	
+	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_sec_1") and sec_1 then
+		self._unit:damage():run_sequence_simple("pick_mats_for_sec_1")	
+	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_sec_2_3") and sec_2_3 then
+		self._unit:damage():run_sequence_simple("pick_mats_for_sec_2_3")	
+	end
+	--end security shit
 	
     local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5") 
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
@@ -28,25 +76,6 @@ function CopBase:random_mat_seq_initialization()
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
 		
     local murkies = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") 
-	
-	--sorry but i don't know of any other way to do this
-	if not SystemFS:exists("assets/mod_overrides/Less Clones, More Faces - The Face Randomization v2.5") or SystemFS:exists("assets/mod_overrides/Less Clones, More Faces - The Face Randomization v2") then	
-		local cops = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1") 
-		or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2")
-		or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
-		or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
-	   
-		local lapd_cops = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_1/ene_cop_1") 
-		or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_2/ene_cop_2")
-		or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_3/ene_cop_3")
-		or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_cop_4/ene_cop_4")
-		
-		if self._unit:damage() and self._unit:damage():has_sequence("coprandom") and cops then
-			self._unit:damage():run_sequence_simple("coprandom")
-		elseif self._unit:damage() and self._unit:damage():has_sequence("lapdrandom") and lapd_cops then
-			self._unit:damage():run_sequence_simple("lapdrandom")				
-		end
-	end
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("nypdrandom") and nypd_cops then
         self._unit:damage():run_sequence_simple("nypdrandom")

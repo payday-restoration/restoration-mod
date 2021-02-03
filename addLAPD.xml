@@ -56,6 +56,31 @@
 	<material_config path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1_contour"  />	
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"  />	
 	
+	<!--LAPD Bulldozer -->	
+	<unit path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3" load="true" />
+	<unit path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3_husk" load="true" />
+	<object path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />		
+	<sequence_manager path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />		
+	<model path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />	
+	<material_config path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />		
+	<material_config path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3_contour"  />	
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3"  />	
+	
+	<texture path="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3_df"  />		
+	
+	<!--LAPD Bulldozer Bits-->	
+	<material_config path="units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_static_bulldozer"  />		
+	
+	<unit_obj path="units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet_plate_3/ene_acc_bulldozer_helmet_plate_3" />
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_helmet_plate_3/ene_acc_bulldozer_helmet_plate_3" />
+	
+	<unit_obj path="units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat_3/ene_acc_bulldozer_throat_3" />
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat_3/ene_acc_bulldozer_throat_3" />
+	
+	<unit_obj path="units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck_3/ene_acc_bulldozer_neck_3" />
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck_3/ene_acc_bulldozer_neck_3" />
+	
+
 	<!--FBI Shield guy-->
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"/>
 	<material_config path="units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1" />
@@ -82,16 +107,7 @@
 	<model path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
 	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
 	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_contour" />
-	
-	<!--fbi swat 1-->
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1" load="true"/>
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk" load="true"/>
-    <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_contour"/>
-	
+		
 	<!--opscore-->
 	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
@@ -103,24 +119,6 @@
 	<!--smashframe-->
 	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_smashframe/ene_acc_smashframe" />
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_smashframe/ene_acc_smashframe"/>
-
-	<!--fbi swat 2-->
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2" load="true"/>
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>
-    <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour"/>
-	
-	<!--fbi swat 3-->
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>
-    <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour"/>
 	
 	<!--LAPD swat-->
 	<!--LAPD heavy r870-->	
@@ -154,6 +152,58 @@
 	<model path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
 	<unit path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2" load="true"/>
 	<unit path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>	
+
+	<!--FBI Tier-->
+	<!--fbi swat 1-->
+    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1" load="true"/>
+    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk" load="true"/>
+    <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
+	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_contour"/>
+	
+	<!--fbi swat 2-->
+    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2" load="true"/>
+    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>
+    <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour"/>
+	
+	<!--fbi swat 3-->
+    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
+    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>
+    <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour"/>
+	
+	<!--City Tier-->
+	<!--City swat 1
+    <unit path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1" load="true"/>
+    <unit path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1_husk" load="true"/>
+    <object path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
+	<model path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1_contour"/>-->
+	
+	<!--City swat 2	
+    <unit path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2" load="true"/>
+    <unit path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>
+	<object path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>
+	<model path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>	-->
+	
+	<!--City swat 3
+    <unit path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3" load="true"/>
+    <unit path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>
+    <object path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
+	<model path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>-->
 	
 	<!--LAPD vet 1-->	
 	<object path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"/>
@@ -175,6 +225,7 @@
 	
 	<!--LAPD shared_textures crap-->
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" />	
+	<!-- <texture path="units/pd2_mod_lapd/characters/shared_textures/swat_city_df" />	 -->
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_body_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/spook_heavy_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/opscore_df" />	

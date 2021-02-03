@@ -10,7 +10,7 @@
     <material name="mtr_bulldozer_lod_2" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2">
 	    <reflection_texture type="cubemap" global_texture="current_global_texture"/>
         <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
-        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/red_glass_df"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/bulldozer_city_df"/>
 		<variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
     </material>
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>

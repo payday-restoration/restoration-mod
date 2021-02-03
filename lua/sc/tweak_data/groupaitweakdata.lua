@@ -8578,7 +8578,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")							
 				},
 				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")								
+					Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				}						
 			},
 			access = access_type_all,
@@ -8606,7 +8606,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")							
 				},
 				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")								
+					Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				}				
 			},
 			access = access_type_all,
@@ -8634,7 +8634,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")							
 				},
 				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")								
+					Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3")								
 				}				
 			},
 			access = access_type_all,
@@ -8662,7 +8662,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")							
 				},
 				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3")	
+					Idstring("units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3")	
 				}				
 			},
 			access = access_type_all,

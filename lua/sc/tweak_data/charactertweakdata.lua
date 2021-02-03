@@ -601,8 +601,8 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.experience = {}
 	self.medic.weapon = deep_clone(presets.weapon.normal)
 	self.medic.detection = presets.detection.normal
-	self.medic.HEALTH_INIT = 20
-	self.medic.headshot_dmg_mul = 2
+	self.medic.HEALTH_INIT = 30
+	self.medic.headshot_dmg_mul = 2.2
 	self.medic.suppression = nil
 	self.medic.surrender = presets.surrender.special
 	self.medic.move_speed = presets.move_speed.very_fast

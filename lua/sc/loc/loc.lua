@@ -2320,7 +2320,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--it's not a war crime if they're not people--
 		["menu_deck20_1_desc_sc"] = "Unlocks and equips the ##Gas Dispenser.##\n\nTo activate the Gas Dispenser you need to look at another allied unit within a ##18## meter radius with clear line of sight and press the throwable key to tag them.\n\nKills you or the tagged unit make heal you for ##8## health and the tagged unit for ##5## health.\n\nThe effect lasts for ##11## seconds, and has a cooldown of ##80## seconds.",
 		["menu_deck20_3_desc_sc"] = "Enemies you or the tagged unit kill extend the duration of the gas dispenser by ##2## seconds. This increase is reduced by ##0.2## seconds each time it happens.",
-		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills reduce damage you take by ##0.5## points up to a maximum of ##8## until the Gas Dispenser's effect and cooldown ends.",
+		["menu_deck20_5_desc_sc"] = "Each enemy you or the tagged unit kills reduces damage you take by ##0.5## points up to a maximum of ##8## until the Gas Dispenser's effect and cooldown ends.",
 		["menu_deck20_7_desc_sc"] = "Healing from the Gas Dispenser is increased by ##100%##.",
 		["menu_deck20_9_desc_sc"] = "Each enemy you kill will reduce the cooldown of the Gas Dispenser by ##2## seconds.\n\nEach enemy the tagged unit kills will reduce the cooldown of the Gas Dispenser by ##2## seconds until you are no longer paired.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 

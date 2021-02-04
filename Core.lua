@@ -159,7 +159,7 @@ function restoration:Init()
 		"spa_CD",
 		"wwh_CD"
 	}
-	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are 
+	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
 		"help", --Prison Nightmare
 		"pbr2", --Birth of Sky

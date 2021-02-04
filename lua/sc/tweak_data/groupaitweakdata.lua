@@ -12304,14 +12304,15 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"ranged_fire",
 			"charge",
+			"shield_cover",
 			"groupcsr"
 		},
 		--Shotgunner variant of Beat Cops, only real difference is they'll charge in
 		CS_cop_shotgun = {
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",
 			"charge",
+			"shield_cover",			
 			"groupcsr"
 		},		
 		--Beat Cop, flank variant. Will take control of the squad if they spawn and lead them to flank
@@ -12320,7 +12321,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
-			"charge",			
+			"charge",		
+			"shield_cover",			
 			"groupcsr"
 		},		
 		--Beat Cop, stealth variant. Prefers hit n run tactics and avoiding the front to prioritize hostages
@@ -12337,7 +12339,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
-			"charge",			
+			"charge",		
+			"shield_cover",			
 			"deathguard",
 			"groupcsr"
 		},
@@ -12347,6 +12350,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",			
 			"deathguard",			
 			"groupcsr"
 		},
@@ -12357,7 +12361,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
-			"charge",			
+			"charge",		
+			"shield_cover",			
 			"deathguard",
 			"groupcsr"
 		},			
@@ -12368,6 +12373,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"ranged_fire",
 			"charge",			
+			"shield_cover",			
 			"deathguard",
 			"groupcsr"
 		},
@@ -12378,6 +12384,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
+			"shield_cover",			
 			"groupcsr"
 		},
 		--Heavy SWAT flanker, leads flank maneuvers. 
@@ -12387,7 +12394,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
-			"charge",				
+			"charge",		
+			"shield_cover",			
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12398,15 +12406,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield",
 			"deathguard"
-		},
-		--Back up ranged units to Shields. Will prefer to stay behind the shield and give fire support at range
-		CS_shield_ranged_support = {
-			"ranged_fire",		
-			"provide_coverfire",
-			"provide_support",
-			"shield_cover",
-			"deathguard"
-		},		
+		},	
 		--Tazer, flank around and charge to take down players one at a time. 
 		CS_tazer = {
 			"flank",
@@ -12415,15 +12415,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"shield_cover",
 			"murder",
 			"tunnel"
-		},
-		--Ranged backup for Tazers
-		CS_tazer_ranged_support = {
-			"flank",
-			"charge",			
-			"smoke_grenade",
-			"provide_coverfire",
-			"provide_support",
-			"ranged_fire"
 		},		
 		--Greendozers on Normal/Hard, will try to flank the player
 		CS_tank = {
@@ -12440,8 +12431,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Beat Cop/Blue SWAT/Heavy SWAT defend. Used for reinforce groups
 		CS_defend = {
 			"flank",
-			"elite_ranged_fire",
-			"provide_support"
+			"ranged_fire"
 		},			
 		--Sniper tactics. (Unused?)
 		CS_sniper = {
@@ -12479,6 +12469,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"ranged_fire",
 			"charge",
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12489,6 +12480,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",
 			"deathguard",
 			"groupcsr",
 			"haste"
@@ -12500,6 +12492,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"ranged_fire",
 			"charge",
+			"shield_cover",
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
@@ -12512,6 +12505,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
+			"shield_cover",
 			"charge",
 			"deathguard",
 			"groupcsr"
@@ -12521,6 +12515,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
+			"shield_cover",
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
@@ -12534,6 +12529,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
+			"shield_cover",
 			"charge",
 			"deathguard",
 			"groupcsr"
@@ -12545,25 +12541,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield",
 			"deathguard"
-		},
-		--FBI shield backup units, passive. Now use support grenades
-		FBI_shield_ranged_support = {
-			"ranged_fire",		
-			"smoke_grenade",
-			"flash_grenade",				
-			"provide_coverfire",
-			"provide_support",
-			"shield_cover",
-			"deathguard"
 		},				
-		--FBI Shield, passive. Covers whoever they spawned with
-		FBI_shield_flank = {
-			"flank",
-			"ranged_fire",
-			"provide_coverfire",
-			"provide_support",
-			"shield"
-		},		
 		--Grenadier, passive. Tries to hide behind shields/other units when possible
 		FBI_Boom = {
 			"harass",		
@@ -12572,16 +12550,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"smoke_grenade",
 			"shield_cover"
-		},	
-		--Ranged backup for Tazers
-		FBI_boom_ranged_support = {
-			"flank",
-			"charge",			
-			"smoke_grenade",
-			"provide_coverfire",
-			"provide_support",
-			"ranged_fire"
-		},			
+		},				
 		--Medics, passive. Avoids confrontations.
 		FBI_medic = { 
 			"provide_coverfire",	
@@ -12603,9 +12572,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Reinforce groups
 		FBI_defend = {
 			"flank",
-			"elite_ranged_fire",
-			"provide_support",
-			"reloadingretreat"
+			"ranged_fire"
 		},		
 		--Greendozer on FBI tier and above, hitnrun tactics and flank a lot
 		GREEN_tank = {
@@ -12639,6 +12606,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12649,6 +12617,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",
 			"deathguard",
 			"groupcsr",
 			"haste"
@@ -12662,6 +12631,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12673,6 +12643,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12685,6 +12656,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",	
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12696,27 +12668,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"shield",
-			"deathguard"
-		},
-		--Passive MH Shield
-		MH_shield_flank = { 
-			"legday",
-			"flank",
-			"ranged_fire",
-			"provide_coverfire",
-			"provide_support",
-			"shield",
-			"deathguard"
-		},		
-		--Mayhem shield backup units, passive. Now have legday to keep up
-		MH_shield_ranged_support = {
-			"legday",
-			"ranged_fire",		
-			"smoke_grenade",
-			"flash_grenade",				
-			"provide_coverfire",
-			"provide_support",
-			"shield_cover",
 			"deathguard"
 		},				
 		
@@ -12764,6 +12715,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12778,6 +12730,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"ranged_fire",	
 			"charge",			
 			"harass",
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12788,6 +12741,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12801,6 +12755,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"harass",	
+			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -13116,14 +13071,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "CS_cop_stealth_MP5",
 				freq = 0.5,
 				amount_max = 1,
-				tactics = self._tactics.CS_shield_ranged_support,
+				tactics = self._tactics.CS_cop,
 				rank = 1
 			},
 			{
 				unit = "CS_swat_MP5",
 				freq = 0.75,
 				amount_max = 1,
-				tactics = self._tactics.CS_shield_ranged_support,
+				tactics = self._tactics.CS_swat_rifle,
 				rank = 2
 			}
 		}
@@ -13145,7 +13100,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.CS_tazer_ranged_support,
+					tactics = self._tactics.CS_swat_rifle,
 					rank = 1
 				}
 			}
@@ -13167,7 +13122,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.CS_tazer_ranged_support,
+					tactics = self._tactics.CS_swat_rifle,
 					rank = 1
 				},
 				{
@@ -13218,14 +13173,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 1,
 					amount_max = 2,
 					tactics_ = self._tactics.DW_tazer,
-					rank = 1
+					rank = 2
 				},
 				{
 					unit = "FBI_shield",
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield_flank,
+					tactics = self._tactics.MH_shield,
 					rank = 3
 				},
 				{
@@ -13247,14 +13202,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					amount_min = 1,
 					amount_max = 2,
 					tactics_ = self._tactics.DW_tazer,
-					rank = 1
+					rank = 2
 				},
 				{
 					unit = "FBI_shield",
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield_flank,
+					tactics = self._tactics.MH_shield,
 					rank = 3
 				},
 				{
@@ -13310,7 +13265,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.FBI_boom_ranged_support,
+					tactics = self._tactics.CS_swat_rifle,
 					rank = 1
 				},
 				{
@@ -14011,14 +13966,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "CS_tazer",
 					freq = 0.75,
 					amount_max = 1,
-					tactics = self._tactics.FBI_shield_ranged_support,
+					tactics = self._tactics.CS_Tazer,
 					rank = 2
 				},		
 				{
 					unit = "FBI_heavy_G36",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.FBI_shield_ranged_support,
+					tactics = self._tactics.MH_heavy,
 					rank = 1
 				},
 				{
@@ -14047,14 +14002,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "CS_tazer",
 					freq = 0.75,
 					amount_max = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.CS_Tazer,
 					rank = 2
 				},		
 				{
 					unit = "FBI_heavy_G36",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.MH_heavy,
 					rank = 1
 				},
 				{
@@ -14077,21 +14032,21 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.FBI_shield_flank,
+					tactics = self._tactics.FBI_shield,
 					rank = 3
 				},
 				{
 					unit = "boom_M4203",
 					freq = 0.75,
 					amount_max = 1,
-					tactics = self._tactics.FBI_shield_ranged_support,
+					tactics = self._tactics.FBI_Boom,
 					rank = 2
 				},		
 				{
 					unit = "FBI_heavy_G36",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.FBI_shield_ranged_support,
+					tactics = self._tactics.FBI_heavy,
 					rank = 1
 				},
 				{
@@ -14113,21 +14068,21 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield_flank,
+					tactics = self._tactics.MH_shield,
 					rank = 3
 				},
 				{
 					unit = "boom_M4203",
 					freq = 0.75,
 					amount_max = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.FBI_Boom,
 					rank = 2
 				},		
 				{
 					unit = "FBI_heavy_G36",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.MH_heavy,
 					rank = 1
 				},
 				{
@@ -14157,7 +14112,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "FBI_swat_M4",
 					freq = 1,
-					tactics = self._tactics.FBI_shield_ranged_support,
+					tactics = self._tactics.FBI_swat_rifle,
 					rank = 1
 				}
 			}
@@ -14178,15 +14133,22 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "boom_M4203",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.ELITE_boom,
 					rank = 2
 				},
 				{
 					unit = "GS_swat_M4",
 					freq = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.DW_swat_rifle,
 					rank = 1
-				}
+				},
+				{
+					unit = "medic_M4",
+					freq = 0.75,
+					amount_max = 1,
+					tactics = self._tactics.FBI_medic_flank,
+					rank = 2
+				}					
 			}
 		}
 	else	
@@ -14205,7 +14167,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "boom_M4203",
 					freq = 0.75,
 					amount_max = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.ELITE_boom,
 					rank = 2
 				},
 				{
@@ -14240,7 +14202,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "FBI_swat_M4",
 					freq = 1,
-					tactics = self._tactics.FBI_shield_ranged_support,
+					tactics = self._tactics.FBI_swat_rifle,
 					rank = 1
 				}
 			}
@@ -14267,7 +14229,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "GS_swat_M4",
 					freq = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.DW_swat_rifle,
 					rank = 1
 				},
 				{
@@ -14331,7 +14293,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_swat_M4",
 					freq = 1,
 					amount_max = 2,
-					tactics = self._tactics.FBI_shield_ranged_support,
+					tactics = self._tactics.FBI_swat_rifle,
 					rank = 1
 				}
 			}
@@ -14352,14 +14314,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "CS_tazer",
 					freq = 0.5,
 					amount_max = 1,
-					tactics = self._tactics.CS_tazer,
+					tactics = self._tactics.DW_tazer,
 					rank = 2
 				},
 				{
 					unit = "GS_swat_M4",
 					freq = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.DW_swat_rifle,
 					rank = 1
 				},
 				{
@@ -14387,7 +14349,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "CS_tazer",
 					freq = 0.75,
 					amount_max = 1,
-					tactics = self._tactics.CS_tazer,
+					tactics = self._tactics.DW_tazer,
 					rank = 2
 				},
 				{
@@ -14423,7 +14385,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_heavy_G36_w",
 					freq = 1,
 					amount_min = 1,
-					tactics = self._tactics.FBI_shield_ranged_support,
+					tactics = self._tactics.FBI_heavy,
 					rank = 1
 				}
 			}
@@ -14444,7 +14406,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_heavy_G36_w",
 					freq = 1,
 					amount_min = 1,
-					tactics = self._tactics.MH_shield_ranged_support,
+					tactics = self._tactics.MH_heavy,
 					rank = 1
 				},
 				{
@@ -14702,7 +14664,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_suit_stealth_MP5",
 					freq = 1,
 					amount_min = 1,
-					tactics = self._tactics.FBI_suit_stealth,
+					tactics = self._tactics.HRT_attack,
 					rank = 1
 				},
 				{
@@ -14745,7 +14707,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					unit = "FBI_suit_stealth_MP5",
 					freq = 1,
 					amount_min = 1,
-					tactics = self._tactics.FBI_suit_stealth,
+					tactics = self._tactics.HRT_attack,
 					rank = 1
 				},
 				{
@@ -14783,14 +14745,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield_flank,
+					tactics = self._tactics.MH_shield,
 					rank = 3
 				},
 				{
 					unit = "FBI_suit_stealth_MP5",
 					freq = 1,
 					amount_min = 1,
-					tactics = self._tactics.FBI_suit_stealth,
+					tactics = self._tactics.HRT_attack,
 					rank = 1
 				},
 				{
@@ -14826,14 +14788,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield_flank,
+					tactics = self._tactics.MH_shield,
 					rank = 3
 				},
 				{
 					unit = "FBI_suit_stealth_MP5",
 					freq = 1,
 					amount_min = 1,
-					tactics = self._tactics.ELITE_suit_stealth,
+					tactics = self._tactics.HRT_attack,
 					rank = 1
 				},
 				{
@@ -14880,7 +14842,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield_flank,
+					tactics = self._tactics.MH_shield,
 					rank = 3
 				},
 				{
@@ -14909,7 +14871,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield_flank,
+					tactics = self._tactics.MH_shield,
 					rank = 3
 				},
 				{
@@ -15298,7 +15260,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_Heavy_SWAT_Rifle_W1",
 				freq = 1,
 				amount_min = 2,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			}			
 		}
@@ -15390,7 +15352,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_Heavy_SWAT_Rifle_W1",
 				freq = 1,
 				amount_min = 2,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			},		
 			{
@@ -15412,7 +15374,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 1,
 				tactics_ = self._tactics.CS_tazer,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Rifle_W1",
@@ -15432,7 +15394,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 1,
 				tactics_ = self._tactics.FBI_Boom,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Rifle_W1",
@@ -15530,7 +15492,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_Heavy_SWAT_Rifle_W3",
 				freq = 1,
 				amount_min = 2,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			},		
 			{
@@ -15552,7 +15514,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.CS_tazer,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Rifle_W3",
@@ -15572,7 +15534,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.FBI_Boom,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Rifle_W3",
@@ -15688,7 +15650,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "SKM_Heavy_SWAT_Rifle_W3",
 				freq = 1,
 				amount_min = 2,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.FBI_heavy,
 				rank = 1
 			},		
 			{
@@ -15710,7 +15672,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.CS_tazer,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Rifle_W3",
@@ -15730,7 +15692,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.FBI_Boom,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Rifle_W3",
@@ -15912,7 +15874,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.DW_tazer,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -15926,7 +15888,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_heavy_G36",
 				freq = 1,
 				amount_max = 2,
-				tactics = self._tactics.FBI_heavy,
+				tactics = self._tactics.DW_heavy,
 				rank = 1
 			}
 		}
@@ -15940,7 +15902,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.ELITE_boom,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -16032,7 +15994,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "boom_M4203",
 				freq = 0.75,
 				amount_max = 1,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.ELITE_boom,
 				rank = 2
 			},
 			{
@@ -16153,7 +16115,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_stealth_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit_stealth,
+				tactics = self._tactics.HRT_attack,
 				rank = 1
 			},
 			{
@@ -16195,7 +16157,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_stealth_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.ELITE_suit_stealth,
+				tactics = self._tactics.HRT_attack,
 				rank = 1
 			},
 			{
@@ -16231,7 +16193,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.DW_tazer,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -16245,7 +16207,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_heavy_G36",
 				freq = 1,
 				amount_max = 2,
-				tactics = self._tactics.FBI_heavy,
+				tactics = self._tactics.DW_heavy,
 				rank = 1
 			}
 		}
@@ -16259,7 +16221,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.ELITE_boom,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -16351,7 +16313,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "boom_M4203",
 				freq = 0.75,
 				amount_max = 1,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.ELITE_boom,
 				rank = 2
 			},
 			{
@@ -16533,7 +16495,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_stealth_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit_stealth,
+				tactics = self._tactics.HRT_attack,
 				rank = 1
 			},
 			{
@@ -16575,7 +16537,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_stealth_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.ELITE_suit_stealth,
+				tactics = self._tactics.HRT_attack,
 				rank = 1
 			},
 			{
@@ -16611,7 +16573,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.DW_tazer,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -16625,7 +16587,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_heavy_G36",
 				freq = 1,
 				amount_max = 2,
-				tactics = self._tactics.FBI_heavy,
+				tactics = self._tactics.DW_heavy,
 				rank = 1
 			}
 		}
@@ -16639,7 +16601,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.ELITE_boom,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -16731,7 +16693,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "boom_M4203",
 				freq = 0.75,
 				amount_max = 1,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.ELITE_boom,
 				rank = 2
 			},
 			{
@@ -16913,7 +16875,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_stealth_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit_stealth,
+				tactics = self._tactics.HRT_attack,
 				rank = 1
 			},
 			{
@@ -16955,7 +16917,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_stealth_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.ELITE_suit_stealth,
+				tactics = self._tactics.HRT_attack,
 				rank = 1
 			},
 			{
@@ -16991,7 +16953,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.DW_tazer,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -17005,7 +16967,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_heavy_G36",
 				freq = 1,
 				amount_max = 2,
-				tactics = self._tactics.FBI_heavy,
+				tactics = self._tactics.DW_heavy,
 				rank = 1
 			}
 		}
@@ -17019,7 +16981,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.ELITE_boom,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -17111,7 +17073,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "boom_M4203",
 				freq = 0.75,
 				amount_max = 1,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.ELITE_boom,
 				rank = 2
 			},
 			{
@@ -17293,7 +17255,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_stealth_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.FBI_suit_stealth,
+				tactics = self._tactics.HRT_attack,
 				rank = 1
 			},
 			{
@@ -17335,7 +17297,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_suit_stealth_MP5",
 				freq = 1,
 				amount_min = 1,
-				tactics = self._tactics.ELITE_suit_stealth,
+				tactics = self._tactics.HRT_attack,
 				rank = 1
 			},
 			{
@@ -17371,7 +17333,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.DW_tazer,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -17385,7 +17347,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "FBI_heavy_G36",
 				freq = 1,
 				amount_max = 2,
-				tactics = self._tactics.FBI_heavy,
+				tactics = self._tactics.DW_heavy,
 				rank = 1
 			}
 		}
@@ -17399,7 +17361,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				amount_min = 1,
 				amount_max = 2,
 				tactics_ = self._tactics.ELITE_boom,
-				rank = 1
+				rank = 2
 			},
 			{
 				unit = "FBI_shield",
@@ -17491,7 +17453,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				unit = "boom_M4203",
 				freq = 0.75,
 				amount_max = 1,
-				tactics = self._tactics.MH_shield_ranged_support,
+				tactics = self._tactics.ELITE_boom,
 				rank = 2
 			},
 			{

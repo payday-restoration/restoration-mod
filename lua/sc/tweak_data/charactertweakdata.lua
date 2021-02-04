@@ -639,8 +639,9 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.priority_shout_max_dis = 3000
 	self.medic.is_special = true
 	table.insert(self._enemy_list, "medic")
+	
 	self.medic_summers = deep_clone(self.medic)
-	self.medic_summers.HEALTH_INIT = 40
+	self.medic_summers.HEALTH_INIT = 60
 	self.medic_summers.headshot_dmg_mul = 1.25
 	self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom", "special"}
 	self.medic_summers.ignore_medic_revive_animation = false
@@ -697,8 +698,9 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.experience = {}
 	self.omnia_lpf.weapon = deep_clone(presets.weapon.normal)
 	self.omnia_lpf.detection = presets.detection.normal
-	self.omnia_lpf.HEALTH_INIT = 30
-	self.omnia_lpf.headshot_dmg_mul = 2
+	self.omnia_lpf.HEALTH_INIT = 45
+	self.omnia_lpf.headshot_dmg_mul = 2.2
+	self.omnia_lpf.damage.melee_damage_mul = 1.25
 	self.omnia_lpf.move_speed = presets.move_speed.very_fast
 	self.omnia_lpf.surrender_break_time = {7, 12}
 	self.omnia_lpf.suppression = nil
@@ -13096,7 +13098,7 @@ function CharacterTweakData:_set_overkill()
 	self.old_hoxton_mission.HEALTH_INIT = 80
 	self.spa_vip.HEALTH_INIT = 80
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 80
-	self:_multiply_all_speeds(1, 1)
+	self:_multiply_all_speeds(1, 1.05)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -13437,7 +13439,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.old_hoxton_mission.HEALTH_INIT = 100
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
-	self:_multiply_all_speeds(1, 1.05)
+	self:_multiply_all_speeds(1.05, 1.1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -13778,7 +13780,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 120
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self:_multiply_all_speeds(1, 1.05)
+	self:_multiply_all_speeds(1.05, 1.1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -14001,7 +14003,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 140
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self:_multiply_all_speeds(1.05, 1.1)
+	self:_multiply_all_speeds(1.1, 1.15)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
@@ -14063,7 +14065,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.city_swat.can_shoot_while_dodging = true
 	self.city_swat_guard.can_shoot_while_dodging = true	
 		
-	self:_multiply_all_speeds(1.1, 1.15)
+	self:_multiply_all_speeds(1.15, 1.2)
 	self.presets.gang_member_damage.HEALTH_INIT = 160
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.old_hoxton_mission.HEALTH_INIT = 160
@@ -14160,11 +14162,6 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_mini.weapon.is_shotgun_pump = deep_clone(self.presets.weapon.expert.is_shotgun_mag)
 	self.tank_mini.weapon.is_shotgun_pump.RELOAD_SPEED = 0.25		
 	self.autumn.damage.bullet_damage_mul = 0.4
-	
-	--LPF DR from ranged attacks--
-	self.omnia_lpf.damage.bullet_damage_mul = 0.75
-	self.omnia_lpf.damage.explosion_damage_mul = 0.75
-	self.omnia_lpf.damage.fire_damage_mul = 0.75	
 	
 	--Winters can now overheal ala LPF
 	self.phalanx_vip.do_omnia = true

@@ -115,57 +115,57 @@ function restoration:Init()
 	--[[restoration.captain_viper = {
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
-	--Increased spawns, should only be reserved for HUGE maps. Likely custom heists if anything (WIP)
-	restoration.large_levels = {}			
-	--Slightly reduced spawns, usually due to proximity to spawns or anything else like that
+	--Increased spawns, should only be reserved for larger maps.
+	restoration.large_levels = {
+		"crojob2", --Bomb Dockyard
+		"friend", --Scarface Mansion
+		"dah", --Diamond Heist
+		"peta" --Goatsim 1
+	}			
+	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
-		"welcome_to_the_jungle_2",
-		"election_day_2",
-		"brb",
-		"mus",
+		"welcome_to_the_jungle_2", --Big Oil 2. Scripted cloaker hell.
+		"cane", --Santa's Workshop
+		"brb", --Brooklyn Bank
+		"mus", --The Diamond
+		"run", --Heat Street
 		"run_res", --Whurr's Heat Street Edit
-		"bph",
-		"glace",
-		"pbr",
-		"dinner",
-		"wwh",
-		"born",
+		"bph", --Hell's Island
+		"glace", --Green Bridge
+		"pbr", --Beneath the Mountain
+		"dinner", --Slaughterhouse
+		"born", --Biker 1
 		"flat",
-		"dah",
-		"framing_frame_3",
-		"spa",
-		"des",	
-		"arena",
-		"shoutout_raid", --Scripted spawns out the ass, doing this just to even it out
-		"sah",
-		"mex",
-		"chill_combat",	
+		"framing_frame_3", --Framing Frame 3
+		"spa", --Brooklyn 10-10
+		"des",	--Henry's Rock
+		"sah", --Shacklethorne
+		"chill_combat",	--Safehouse Raid
 		"man", --Undercover
-		"peta", --Goat Sim Day 1
-		"jolly", --aftershock		
+		"man_res", --Undercover resmod edit		
+		"jolly", --Aftershock
 		"branchbank", --Bank heist
-		"firestarter_3", --firestarter day 3		
+		"firestarter_3", --firestarter day 3
+		"firestarter_3_res", --firestarter day 3, res edit
+		"mex_cooking", --Border Crystals
+		"roberts", --Go Bank
+		"family", --Diamond Store
+		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
+		"fex", --Buluc's Mansion
+		"rat", --Cook Off
 		--Custom Heists below--
 		"junk",
-		"wetwork_burn",
-		"hardware_store",
-		"man_res", --Undercover resmod edit		
-		"spa_CD",		
-		"wwh_CD",		
-		"firestarter_3_res", --firestarter day 3, res edit		
-		"lvl_friday" --Crashing Capitol	
+		"wetwork_burn", --Burnout
+		"spa_CD",
+		"wwh_CD"
 	}
-	--For levels that have aggressive spawns that are right on top of the player at all times
+	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are 
 	restoration.very_tiny_levels = {
-		"help",					
-		"cane",		
-		"pbr2",		
-		"rvd2",		
-		"vit",
-		"mex_cooking",		
-		"mia_2",		
-		"fex", --Buluc's Mansion
-		"nmh",
+		"help", --Prison Nightmare
+		"pbr2", --Birth of Sky
+		"rvd2", --Resivoir Dogs 2, has very aggressive scripted spawns.
+		"vit", --White House
+		"mia_2", --Hotline Miami 2
 		"nail",	--Lab Rats. Fuck this heist	
 		"hox_1",
 		"xmn_hox_1",
@@ -176,6 +176,7 @@ function restoration:Init()
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"chew", --Biker day 2
+		"nmh", --No Mercy
 		"nmh_res", --Resmod edit of no mercy.
 		"peta2", --Goats day 2. Fuck this heist too		
 		--Custom Heists below--

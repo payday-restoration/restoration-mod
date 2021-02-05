@@ -234,7 +234,6 @@
 		<hook file="sc/units/enemies/tankcopdamage.lua" source_file="lib/units/enemies/tank/tankcopdamage"/>
 		<hook file="sc/units/enemies/husktankcopdamage.lua" source_file="lib/units/enemies/tank/husktankcopdamage"/>
 		<hook file="sc/units/weapons/trip_mine/tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
-		<hook file="sc/units/equipment/ammobagbase.lua" source_file="lib/units/equipment/ammo_bag/ammobagbase"/>
 		<hook file="sc/units/weapons/concussiongrenade.lua" source_file="lib/units/weapons/grenades/concussiongrenade"/>
 		<hook file="sc/tweak_data/moneytweakdata.lua" source_file="lib/tweak_data/moneytweakdata"/>
 		<hook file="sc/units/contourext.lua" source_file="lib/units/contourext"/>

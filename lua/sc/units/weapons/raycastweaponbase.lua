@@ -49,8 +49,6 @@ function RaycastWeaponBase:setup(...)
 		end
 	end
 	self._shots_without_releasing_trigger = 0
-
-	self._ammo_overflow = 0 --Amount of non-integer ammo picked up.
 end
 
 --Fire no longer memes on shields.
@@ -232,7 +230,7 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			return false, 0
 		end
 
-		local ammo_gained_raw = add_amount_override or math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) * (ratio or 1) + self._ammo_overflow
+		local ammo_gained_raw = add_amount_override or math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) * (ratio or 1) + (ammo_base._ammo_overflow or 0)
 		if ammo_gained_raw <= 0 then --Handle weapons with 0 pickup.
 			return false, 0
 		end
@@ -245,7 +243,7 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			ammo_gained = ammo_gained + akimbo_rounding
 		end
 
-		self._ammo_overflow = math.max(ammo_gained_raw - ammo_gained, 0)
+		ammo_base._ammo_overflow = math.max(ammo_gained_raw - ammo_gained, 0)
 		ammo_base:set_ammo_total(math.clamp(ammo_base:get_ammo_total() + ammo_gained, 0, ammo_base:get_ammo_max()))
 		return true, ammo_gained
 	end

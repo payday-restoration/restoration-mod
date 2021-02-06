@@ -14385,7 +14385,8 @@ function WeaponFactoryTweakData:_init_ecp()
 		supported = true,
 		stats = {
 			value = 1,
-			concealment = 1
+			concealment = 1,
+			recoil = -1
 		}
 	}
 	self.parts.wpn_fps_bow_ecp_b_dummy = {

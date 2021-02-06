@@ -6409,8 +6409,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.stats = {damage = -74}
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary.custom_stats = {
 		launcher_grenade = "launcher_incendiary",
-		ammo_pickup_min_mul = 0.5592,
-		ammo_pickup_max_mul = 0.4336
+		ammo_pickup_min_mul = 0.5359,
+		ammo_pickup_max_mul = 0.3933
 	}
 
 	--Incendiary Round (Arbiter)
@@ -6420,8 +6420,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.stats = {damage = -55}
 	self.parts.wpn_fps_upg_a_grenade_launcher_incendiary_arbiter.custom_stats = {
 		launcher_grenade = "launcher_incendiary_arbiter",
-		ammo_pickup_min_mul = 0.6114,
-		ammo_pickup_max_mul = 0.5035
+		ammo_pickup_min_mul = 0.8163,
+		ammo_pickup_max_mul = 0.6605
 	}
 	
 	--You're pretty good

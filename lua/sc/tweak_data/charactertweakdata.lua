@@ -13098,7 +13098,7 @@ function CharacterTweakData:_set_overkill()
 	self.old_hoxton_mission.HEALTH_INIT = 80
 	self.spa_vip.HEALTH_INIT = 80
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 80
-	self:_multiply_all_speeds(1, 1.05)
+	self:_multiply_all_speeds(1, 1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -13439,7 +13439,7 @@ function CharacterTweakData:_set_overkill_145()
 	self.old_hoxton_mission.HEALTH_INIT = 100
 	self.spa_vip.HEALTH_INIT = 100
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
-	self:_multiply_all_speeds(1.05, 1.1)
+	self:_multiply_all_speeds(1, 1.05)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -13780,7 +13780,7 @@ function CharacterTweakData:_set_easy_wish()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 120
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self:_multiply_all_speeds(1.05, 1.1)
+	self:_multiply_all_speeds(1, 1.05)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")	
@@ -14003,7 +14003,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 140
 	self.flashbang_multiplier = 2
 	self.concussion_multiplier = 1
-	self:_multiply_all_speeds(1.1, 1.15)
+	self:_multiply_all_speeds(1.05, 1.1)
 	self.weap_unit_names[19] = Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4")
 	self.weap_unit_names[23] = Idstring("units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical")
 	self.weap_unit_names[31] = Idstring("units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli")
@@ -14065,7 +14065,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.city_swat.can_shoot_while_dodging = true
 	self.city_swat_guard.can_shoot_while_dodging = true	
 		
-	self:_multiply_all_speeds(1.15, 1.2)
+	self:_multiply_all_speeds(1.1, 1.15)
 	self.presets.gang_member_damage.HEALTH_INIT = 160
 	self.presets.gang_member_damage.MIN_DAMAGE_INTERVAL = 0.25
 	self.old_hoxton_mission.HEALTH_INIT = 160

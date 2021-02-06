@@ -516,7 +516,7 @@ function CopLogicTravel._upd_combat_movement(data, ignore_walks)
 		return
 	end
 	
-	if not data.attention_obj or not data.important then
+	if not data.attention_obj then
 		--if not data.cool and not my_data.advancing then
 		--	CopLogicTravel.upd_advance(data)
 		--end
@@ -1533,7 +1533,9 @@ function CopLogicTravel._chk_request_action_walk_to_cover_shoot_pos(data, my_dat
 		if my_data.walking_to_cover_shoot_pos then
 			--my_data.walking_to_cover_shoot_pos = my_data.advancing
 			my_data.at_cover_shoot_pos = nil
-			my_data.in_cover = nil
+			if data.name == "travel" and my_data.nearest_cover and notdelayclbksornotdlclbks_chk then
+				CopLogicBase.add_delayed_clbk(my_data, my_data.cover_update_task_key, callback(CopLogicTravel, CopLogicTravel, "_update_cover", data), data.t + 0.066)
+			end
 
 			data.brain:rem_pos_rsrv("path")
 		end
@@ -2040,7 +2042,9 @@ function CopLogicTravel.action_complete_clbk(data, action)
 					cover_wait_time = 0
 				end
 
-				my_data.cover_leave_t = data.t
+				if cover_wait_time > 0 then
+					my_data.cover_leave_t = data.t + cover_wait_time
+				end
 				
 				if data.unit:base():has_tag("spooc") or data.unit:base()._tweak_table == "shadow_spooc" then
 					SpoocLogicAttack._upd_spooc_attack(data, my_data)
@@ -2110,7 +2114,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 	elseif action_type == "spooc" then
 		data.spooc_attack_timeout_t = TimerManager:game():time() + math_lerp(data.char_tweak.spooc_attack_timeout[1], data.char_tweak.spooc_attack_timeout[2], math_random())
 
-		if action:complete() and data.char_tweak.spooc_attack_use_smoke_chance > 0 and math_random() <= data.char_tweak.spooc_attack_use_smoke_chance and managers.groupai:state():is_smoke_grenade_active() then
+		if action:complete() and data.char_tweak.spooc_attack_use_smoke_chance > 0 and math_random() <= data.char_tweak.spooc_attack_use_smoke_chance and not managers.groupai:state():is_smoke_grenade_active() then
 			managers.groupai:state():detonate_smoke_grenade(data.m_pos + math_UP * 10, data.unit:movement():m_head_pos(), math_lerp(15, 30, math_random()), false)
 		end
 		

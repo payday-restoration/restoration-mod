@@ -16,22 +16,37 @@ local _choose_best_groups_actual = GroupAIStateBesiege._choose_best_groups
 function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types, allowed_groups, weight, ...)
 	local new_allowed_groups = {} --Replacement table for _choose_best_groups_actual.
 	local currenttime = self._t
-	local group_cooldowns = self._tweak_data.group_cooldowns
-	local group_max_diffs = self._tweak_data.group_max_diff
-	local group_min_diffs = self._tweak_data.group_min_diff
+	local sustain = self._task_data.assault and self._task_data.assault.phase == "sustain"
+	local constraints_tweak = self._tweak_data.group_constraints
 
 	--Check each spawn group and see if it meets filter.
 	for group_type, cat_weights in pairs(allowed_groups) do
 		--Get timestamp from when group was last spawned and make sure that cooldown is complete. 
-		local previoustimestamp = group_timestamps[group_type]
-		local cooldown = group_cooldowns[group_type] or 0
-		local cooldown_over = previoustimestamp == nil or (currenttime - previoustimestamp) > cooldown
+		local constraints = constraints_tweak[group_type]
+		local valid = true
 
-		--Get whether this spawn group can appear on this diff.
-		local valid_diff = (group_max_diffs[group_type] or 1) >= self._difficulty_value and self._difficulty_value > (group_min_diffs[group_type] or 0)
+		--If group had constraints tied to it, then check for them.
+		if constraints then
+			local cooldown = constraints.cooldown
+			local previoustimestamp = group_timestamps[group_type]
+			if cooldown and previoustimestamp and (currenttime - previoustimestamp) < cooldown then
+				valid = nil
+			end
 
-		--If both contitions are met, add it to the replacement table. Otherwise, ignore it.
-		if cooldown_over == true and valid_diff == true then
+			local min_diff = constraints.min_diff
+			local max_diff = constraints.max_diff
+			if (min_diff and self._difficulty_value <= min_diff) or (max_diff and self._difficulty_value >= max_diff) then
+				valid = nil
+			end
+
+			local sustain_only = constraints.sustain_only
+			if sustain_only and sustain == false then
+				valid = nil
+			end
+		end
+
+		--If all constraints are met, add it to the replacement table. Otherwise, ignore it.
+		if valid then
 			new_allowed_groups[group_type] = cat_weights
 		end
 	end

@@ -18347,19 +18347,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				self.besiege.assault.groups.Cap_Autumn = {
 					0,
 					0.1,
-					1
+					0.2
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.Cap_Autumn = {
 					0,
-					0.15,
-					1
+					0.1,
+					0.2
 				}
 			else
 				self.besiege.assault.groups.Cap_Autumn = {
 					0,
-					0.2,
-					1
+					0.1,
+					0.2
 				}
 			end
 			break
@@ -18378,19 +18378,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				self.besiege.assault.groups.Cap_Summers = {
 					0,
 					0.1,
-					1
+					0.2
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.Cap_Summers = {
 					0,
-					0.15,
-					1
+					0.1,
+					0.2
 				}
 			else
 				self.besiege.assault.groups.Cap_Summers = {
 					0,
-					0.2,
-					1
+					0.1,
+					0.2
 				}
 			end
 			break
@@ -18409,19 +18409,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				self.besiege.assault.groups.Cap_Spring = {
 					0,
 					0.1,
-					1
+					0.2
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.Cap_Spring = {
 					0,
-					0.15,
-					1
+					0.1,
+					0.2
 				}
 			else
 				self.besiege.assault.groups.Cap_Spring = {
 					0,
-					0.2,
-					1
+					0.1,
+					0.2
 				}
 			end
 			break
@@ -18440,19 +18440,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				self.besiege.assault.groups.HVH_Boss = {
 					0,
 					0.1,
-					1
+					0.2
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.HVH_Boss = {
 					0,
-					0.15,
-					1
+					0.1,
+					0.2
 				}
 			else
 				self.besiege.assault.groups.HVH_Boss = {
 					0,
-					0.2,
-					1
+					0.1,
+					0.2
 				}
 			end
 			break
@@ -18471,19 +18471,19 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				self.besiege.assault.groups.Cap_Winters = {
 					0,
 					0.1,
-					1
+					0.2
 				}
 			elseif difficulty_index == 5 then
 				self.besiege.assault.groups.Cap_Winters = {
 					0,
-					0.15,
-					1
+					0.1,
+					0.2
 				}
 			else
 				self.besiege.assault.groups.Cap_Winters = {
 					0,
-					0.2,
-					1
+					0.1,
+					0.2
 				}
 			end
 			break
@@ -18774,82 +18774,110 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	}
 
-	self.besiege.group_cooldowns = {
-		Cap_Winters = 2700,
-		Cap_Spring = 2700,
-		HVH_Boss = 2700,
-		Cap_Summers = 2700,
-		Cap_Autumn = 1350,
-		CS_tanks = 45,
-		GREEN_tanks = 45,
-		BLACK_tanks = 45,
-		SKULL_tanks = 45,
-		TIT_tanks = 45,
-		SKM_BLACK_Tank_W4 = 45,
-		SKM_BLACK_Tank_W5 = 45,
-		SKM_GREEN_Tank_W5 = 45,
-		SKM_BLACK_Tank_W6 = 45,
-		SKM_GREEN_Tank_W6 = 45,
-		SKM_SKULL_Tank_W6 = 45,
-		SKM_TIT_Tank_W6 = 45,
-		SKM_BLACK_Tank_W7 = 45, 
-		SKM_GREEN_Tank_W7 = 45, 
-		SKM_SKULL_Tank_W7 = 45,
-		SKM_TIT_Tank_W7 = 45,
-		SKM_BLACK_Tank_W8 = 45, 
-		SKM_GREEN_Tank_W8 = 45, 
-		SKM_SKULL_Tank_W8 = 45,
-		SKM_TIT_Tank_W8 = 45,
-		SKM_BLACK_Tank_W9 = 45, 
-		SKM_GREEN_Tank_W9 = 45, 
-		SKM_SKULL_Tank_W9 = 45,
-		SKM_TIT_Tank_W9 = 45	
-	}
+	local captain_cooldown = 2700
+	local captain_min_diff = 0.5
+	local dozer_cooldown = 45
 
 	if Global.game_settings and Global.game_settings.one_down then
-		self.besiege.group_cooldowns = {
-			Cap_Winters = 1800,
-			Cap_Spring = 1800,
-			HVH_Boss = 1800,
-			Cap_Summers = 1800,
-			Cap_Autumn = 900,
-			CS_tanks = 45,
-			GREEN_tanks = 45,
-			BLACK_tanks = 45,
-			SKULL_tanks = 45,
-			TIT_tanks = 45,
-			SKM_BLACK_Tank_W4 = 45,
-			SKM_BLACK_Tank_W5 = 45,
-			SKM_GREEN_Tank_W5 = 45,
-			SKM_BLACK_Tank_W6 = 45,
-			SKM_GREEN_Tank_W6 = 45,
-			SKM_SKULL_Tank_W6 = 45,
-			SKM_TIT_Tank_W6 = 45,
-			SKM_BLACK_Tank_W7 = 45, 
-			SKM_GREEN_Tank_W7 = 45, 
-			SKM_SKULL_Tank_W7 = 45,
-			SKM_TIT_Tank_W7 = 45,
-			SKM_BLACK_Tank_W8 = 45, 
-			SKM_GREEN_Tank_W8 = 45, 
-			SKM_SKULL_Tank_W8 = 45,
-			SKM_TIT_Tank_W8 = 45,
-			SKM_BLACK_Tank_W9 = 45, 
-			SKM_GREEN_Tank_W9 = 45, 
-			SKM_SKULL_Tank_W9 = 45,
-			SKM_TIT_Tank_W9 = 45			
-		}
+		captain_cooldown = 1800
 	end
 
-	self.besiege.group_min_diff = {
-		Cap_Winters = 0.5,
-		Cap_Spring = 0.5,
-		HVH_Boss = 0.5,
-		Cap_Summers = 0.5,
-		Cap_Autumn = 0.5
-	}
-
-	self.besiege.group_max_diff = {
-		--nothing yet
+	--Table to define various restrictions for how different spawn groups can appear.
+	self.besiege.group_constraints = {
+		Cap_Winters = {
+			cooldown = captain_cooldown,
+			min_diff = captain_min_diff,
+			sustain_only = true
+		},
+		Cap_Spring = {
+			cooldown = captain_cooldown,
+			min_diff = captain_min_diff,
+			sustain_only = true
+		},
+		HVH_Boss = {
+			cooldown = captain_cooldown,
+			min_diff = captain_min_diff,
+			sustain_only = true
+		},
+		Cap_Summers = {
+			cooldown = captain_cooldown,
+			min_diff = captain_min_diff,
+			sustain_only = true
+		},
+		Cap_Autumn = {
+			cooldown = captain_cooldown / 2,
+			min_diff = captain_min_diff,
+			sustain_only = true
+		},
+		GREEN_tanks = {
+			cooldown = dozer_cooldown
+		},
+		BLACK_tanks = {
+			cooldown = dozer_cooldown
+		},
+		SKULL_tank = {
+			cooldown = dozer_cooldown
+		},
+		TIT_tank = {
+			cooldown = dozer_cooldown
+		},
+		SKM_BLACK_Tank_W4 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_BLACK_Tank_W5 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_BLACK_Tank_W6 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_BLACK_Tank_W7 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_BLACK_Tank_W8 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_BLACK_Tank_W9 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_GREEN_Tank_W5 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_GREEN_Tank_W6 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_GREEN_Tank_W7 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_GREEN_Tank_W8 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_GREEN_Tank_W9 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_SKULL_Tank_W6 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_SKULL_Tank_W7 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_SKULL_Tank_W8 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_SKULL_Tank_W9 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_TIT_Tank_W6 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_TIT_Tank_W7 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_TIT_Tank_W8 = {
+			cooldown = dozer_cooldown
+		},
+		SKM_TIT_Tank_W9 = {
+			cooldown = dozer_cooldown
+		}
 	}
 
 	self.street = deep_clone(self.besiege)

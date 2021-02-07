@@ -17,5 +17,8 @@
         <diffuse_texture file="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3_df"/>
 		<variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
     </material>	
+    <material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <diffuse_texture file="units/pd2_mod_lapd/characters/ene_bulldozer_3/ene_bulldozer_3_df" mip="4"/>
+    </material>	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

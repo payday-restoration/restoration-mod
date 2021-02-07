@@ -1,19 +1,19 @@
 <materials version="3" group="ene_swat_1">
     <material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_swat_atlas_nm"/>
-        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/swat_lapd_heads_df"/>
+        <bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_nm"/>
+        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
     <material name="mtr_head_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_swat_atlas_nm" mip="1"/>
-        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/swat_lapd_heads_df" mip="1"/>
+        <bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
     <material name="mtr_head_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
-        <bump_normal_texture file="units/pd2_dlc_bex/characters/shared_textures/heads_swat_atlas_nm" mip="4"/>
-        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/swat_lapd_heads_df" mip="4"/>
+        <bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_nm" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
@@ -62,6 +62,10 @@
         <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
 	</material>
+	
+    <material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" mip="4"/>
+    </material>
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

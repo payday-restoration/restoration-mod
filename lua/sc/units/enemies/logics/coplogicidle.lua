@@ -1,3 +1,90 @@
+local tmp_vec1 = Vector3()
+
+function CopLogicIdle._turn_by_spin(data, my_data, spin)
+	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+	local mook_units = {
+		"security",
+		"security_undominatable",
+		"mute_security_undominatable",
+		"security_mex",
+		"security_mex_no_pager",
+		"cop",
+		"cop_scared",
+		"cop_female",
+		"dave",
+		"gensec",
+		"fbi",
+		"fbi_vet",
+		"fbi_vet_boss",
+		"meme_man",
+		"meme_man_shield",
+		"vetlod",
+		"swat",
+		"swat_titan",
+		"heavy_swat",
+		"heavy_swat_sniper",
+		"weekend_dmr",
+		"fbi_swat",
+		"fbi_heavy_swat",
+		"city_swat",
+		"city_swat_guard",
+		"weekend",
+		"city_swat_titan",
+		"city_swat_titan_assault",
+		"skeleton_swat_titan",
+		"weekend_lmg",
+		"gangster",
+		"biker",
+		"biker_guard",
+		"mobster",
+		"bolivian",
+		"bolivian_indoors",
+		"medic",
+		"taser",
+		"taser_titan",
+		"boom",
+		"spooc",
+		"spooc_titan",
+		"shadow_spooc",
+		"tank_mini",
+		"tank",
+		"tank_medic"
+	}
+	local is_mook = nil
+	for _, name in ipairs(mook_units) do
+		if data.unit:base()._tweak_table == name then
+			is_mook = true
+		end
+	end
+	
+	local speed = nil
+	
+	if data.is_converted or data.unit:in_slot(16) or data.unit:base()._tweak_table == "sniper" then
+		speed = 2.5
+	elseif diff_index == 8 and is_mook then
+		speed = 1.75
+	elseif diff_index == 6 and is_mook or diff_index == 7 and is_mook then
+		speed = 1.5
+	elseif diff_index <= 5 and is_mook then
+		speed = 1.25
+	else
+		speed = 1
+	end
+	
+	local new_action_data = {
+		body_part = 2,
+		type = "turn",
+		angle = spin,
+		speed = speed or 1
+	}
+	
+	my_data.turning = data.unit:brain():action_request(new_action_data)
+
+	if my_data.turning then
+		return true
+	end
+end
+
 function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 	local surrender = false
 	local my_data = data.internal_data
@@ -9,6 +96,16 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 
 	if managers.groupai:state():has_room_for_police_hostage() then
 		local i_am_special = managers.groupai:state():is_enemy_special(data.unit)
+		if i_am_special then
+			local mook_units = {
+				"fbi"
+			}
+			for _, name in ipairs(mook_units) do
+				if data.unit:base()._tweak_table == name then
+					i_am_special = nil
+				end
+			end
+		end
 		local required_skill = i_am_special and "intimidate_specials" or "intimidate_enemies"
 		local aggressor_can_intimidate = nil
 		local aggressor_intimidation_mul = 1
@@ -28,12 +125,18 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 			local hold_chance = CopLogicBase._evaluate_reason_to_surrender(data, my_data, aggressor_unit)
 
 			if hold_chance then
-				hold_chance = hold_chance ^ aggressor_intimidation_mul
-
-				if hold_chance < 1 then
+				hold_chance = hold_chance^aggressor_intimidation_mul
+				local surrender_tweak = data.char_tweak.surrender
+				local dont_surrender = nil
+				
+				if surrender_tweak.significant_chance and hold_chance >= surrender_tweak.significant_chance then
+					dont_surrender = true
+					--log("chance was " .. hold_chance .. "!")
+				end
+				if hold_chance >= 1 or dont_surrender then
+					-- Nothing
+				else
 					local rand_nr = math.random()
-
-					--print("and the winner is: hold_chance", hold_chance, "rand_nr", rand_nr, "rand_nr > hold_chance", hold_chance < rand_nr)
 
 					if hold_chance < rand_nr then
 						surrender = true
@@ -55,84 +158,6 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 	return surrender
 end
 
-function CopLogicIdle.damage_clbk(data, damage_info)
-	local enemy = damage_info.attacker_unit
-	local enemy_data = nil
-
-	if enemy and enemy:in_slot(data.enemy_slotmask) then
-		local my_data = data.internal_data
-		local enemy_key = enemy:key()
-		enemy_data = data.detected_attention_objects[enemy_key]
-		local t = TimerManager:game():time()
-
-		if enemy_data then
-			enemy_data.verified_t = t
-			enemy_data.verified = true
-
-			mvector3.set(enemy_data.verified_pos, enemy:movement():m_stand_pos())
-
-			enemy_data.verified_dis = mvector3.distance(enemy_data.verified_pos, data.unit:movement():m_stand_pos())
-			enemy_data.dmg_t = t
-			enemy_data.alert_t = t
-			enemy_data.notice_delay = nil
-
-			if not enemy_data.identified then
-				enemy_data.identified = true
-				enemy_data.identified_t = t
-				enemy_data.notice_progress = nil
-				enemy_data.prev_notice_chk_t = nil
-
-				if enemy_data.settings.notice_clbk then
-					enemy_data.settings.notice_clbk(data.unit, true)
-				end
-
-				data.logic.on_attention_obj_identified(data, enemy_key, enemy_data)
-			end
-		else
-			local attention_info = managers.groupai:state():get_AI_attention_objects_by_filter(data.SO_access_str)[enemy_key]
-
-			if attention_info then
-				local settings = attention_info.handler:get_attention(data.SO_access, nil, nil, data.team)
-
-				if settings then
-					enemy_data = CopLogicBase._create_detected_attention_object_data(data.t, data.unit, enemy_key, attention_info, settings)
-					enemy_data.verified_t = t
-					enemy_data.verified = true
-					enemy_data.dmg_t = t
-					enemy_data.alert_t = t
-					enemy_data.identified = true
-					enemy_data.identified_t = t
-					enemy_data.notice_progress = nil
-					enemy_data.prev_notice_chk_t = nil
-
-					if enemy_data.settings.notice_clbk then
-						enemy_data.settings.notice_clbk(data.unit, true)
-					end
-
-					data.detected_attention_objects[enemy_key] = enemy_data
-
-					data.logic.on_attention_obj_identified(data, enemy_key, enemy_data)
-				end
-			end
-		end
-	end
-	
-	if not data.unit:movement()._limping and not data.char_tweak.no_limping then
-        local limp_threshold = data.char_tweak.health_ratio_limp_threshold or 0.55
-	    
-        if data.unit:character_damage():health_ratio() < limp_threshold then
-            data.unit:movement():set_stance("wnd")
-            data.unit:movement()._limping = true
-        end
-    end
-
-	if enemy_data and enemy_data.criminal_record then
-		managers.groupai:state():criminal_spotted(enemy)
-		managers.groupai:state():report_aggression(enemy)
-	end
-end
-
---harass enemy priority changes
 function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_func)
 	reaction_func = reaction_func or CopLogicIdle._chk_reaction_to_attention_object
 	local best_target, best_target_priority_slot, best_target_priority, best_target_reaction = nil
@@ -166,6 +191,8 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 			return best_target, 1, AIAttentionObject.REACT_SHOOT
 		end
 	end
+	
+	local has_assault_reaction_target = nil
 
 	for u_key, attention_data in pairs(attention_objects) do
 		local att_unit = attention_data.unit
@@ -247,13 +274,14 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 					distance = distance * weight_mul
 				end
 				
-				local near_threshold = data.internal_data.weapon_range.optimal
-				local too_close_threshold = data.internal_data.weapon_range.close
+				local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+				local near_threshold = data.internal_data.weapon_range and data.internal_data.weapon_range.optimal or 1500
+				local too_close_threshold = data.internal_data.weapon_range and data.internal_data.weapon_range.close or 250
 				local assault_reaction = reaction == AIAttentionObject.REACT_SPECIAL_ATTACK
 				local visible = attention_data.verified or attention_data.nearly_visible
 				local near = distance < near_threshold
 				local too_near = distance < too_close_threshold and math.abs(attention_data.m_pos.z - data.m_pos.z) < 250
-				local free_status = status == nil
+				local free_status = status == "electrified" or status == nil
 				local has_damaged = dmg_dt < 5
 				local reviving = nil
 				local focus_enemy = attention_data
@@ -281,9 +309,9 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 					end
 				end
 				
-				if data.tactics and data.tactics.murder then
+				if data.tactics and data.tactics.tunnel then
 					if attention_data.acquire_t and human_chk and attention_data.verified and data.attention_obj and data.attention_obj.verified and AIAttentionObject.REACT_AIM <= data.attention_obj.reaction and AIAttentionObject.REACT_AIM <= reaction and data.attention_obj.u_key == u_key and human_att_obj_chk and free_status then
-						old_enemy_murder = true
+						old_enemy_tunnel = true
 					end
 				end
 				
@@ -295,7 +323,7 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 				local target_priority_slot = nil
 				
 				if visible then
-					local justmurder = data.tactics and data.tactics.murder
+					local justtunnel = data.tactics and data.tactics.tunnel
 					local justharass = data.tactics and data.tactics.harass
 					local aimed_at = CopLogicIdle.chk_am_i_aimed_at(data, attention_data, attention_data.aimed_at and 0.95 or 0.985)
 					attention_data.aimed_at = aimed_at
@@ -310,7 +338,7 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 						target_priority_slot = 6
 					end
 					
-					if justmurder and human_chk and not human_current_target_chk then
+					if justtunnel and human_chk and not human_current_target_chk then
 						target_priority_slot = 1
 					end
 
@@ -322,39 +350,39 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 						target_priority_slot = target_priority_slot - 1
 					end
 					
-					if old_enemy and not justmurder then
+					if old_enemy and not justtunnel then
 						target_priority_slot = target_priority_slot - 1
 					end
 					
-					if not justmurder and nr_enemies then
-						if nr_enemies > 4 then
-							target_priority_slot = target_priority_slot + 1
-						elseif nr_enemies > 8 then
-							target_priority_slot = target_priority_slot + 2
+					if not justtunnel and nr_enemies then
+						if nr_enemies < 4 then
+							target_priority_slot = target_priority_slot - 1
+						elseif nr_enemies > 17 then
+							target_priority_slot = target_priority_slot + 4
 						elseif nr_enemies > 13 then
 							target_priority_slot = target_priority_slot + 3
-						elseif nr_enemies > 18 then
-							target_priority_slot = target_priority_slot + 4
-						elseif nr_enemies < 4 then
-							target_priority_slot = target_priority_slot - 1
+						elseif nr_enemies > 8 then
+							target_priority_slot = target_priority_slot + 2
+						elseif nr_enemies > 4 then
+							target_priority_slot = target_priority_slot + 1
 						end
 					end
 					
-					if not free_status and not justmurder or pantsdownchk and not justharass then
+					if not free_status and not justtunnel or pantsdownchk and not justharass then
 						target_priority_slot = target_priority_slot + 4
 					end
 					
 					target_priority_slot = math.clamp(target_priority_slot, 1, 10)
 				else
 					target_priority_slot = 10
-					if not free_status and not justmurder or pantsdownchk and not justharass then
+					if not free_status and not justtunnel or pantsdownchk and not justharass then
 						target_priority_slot = target_priority_slot + 10
 					end
 				end
 				
 				if visible then
 					
-					if old_enemy_murder and data.tactics and data.tactics.murder then
+					if old_enemy_tunnel and data.tactics and data.tactics.tunnel then
 						target_priority_slot = 1
 					end
 					
@@ -362,13 +390,13 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 						target_priority_slot = 1
 					end
 						
-					if assault_reaction and distance < 1500 then
-						target_priority_slot = 1
+					if assault_reaction and human_chk then
+						has_assault_reaction_target = true
 					end
 					
 				end
 
-				if AIAttentionObject.REACT_COMBAT > reaction or data.tactics and data.tactics.murder and not old_enemy_murder and not human_chk then
+				if AIAttentionObject.REACT_COMBAT > reaction or data.tactics and data.tactics.tunnel and not old_enemy_tunnel and not human_chk or not assault_reaction and has_assault_reaction_target then
 					target_priority_slot = 20 + target_priority_slot + math.max(0, AIAttentionObject.REACT_COMBAT - reaction)
 				end
 
@@ -397,119 +425,380 @@ function CopLogicIdle._get_priority_attention(data, attention_objects, reaction_
 	return best_target, best_target_priority_slot, best_target_reaction
 end
 
-function CopLogicIdle.queued_update(data)
-	local my_data = data.internal_data
-	local delay = data.logic._upd_enemy_detection(data)
-
-	if data.internal_data ~= my_data then
-		CopLogicBase._report_detections(data.detected_attention_objects)
-
+function CopLogicIdle.on_alert(data, alert_data)
+	local alert_type = alert_data[1]
+	local alert_unit = alert_data[5]
+	
+	data.t = TimerManager:game():time()
+	
+	if CopLogicBase._chk_alert_obstructed(data.unit:movement():m_head_pos(), alert_data) then
 		return
 	end
 
-	local objective = data.objective
+	local was_cool = data.cool
 
-	if my_data.has_old_action then
-		CopLogicIdle._upd_stop_old_action(data, my_data, objective)
-		CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicIdle.queued_update, data, data.t + delay)
-
-		return
+	if CopLogicBase.is_alert_aggressive(alert_type) then
+		data.unit:movement():set_cool(false, managers.groupai:state().analyse_giveaway(data.unit:base()._tweak_table, alert_data[5], alert_data))
 	end
 	
-	local objective_chk = not data.objective or data.objective.type and data.objective.type == "free"
-	local path_fail_chk = not data.path_fail_t or data.t - data.path_fail_t > 3
+	local was_cool_alert_chk = alert_type == "footstep" or alert_type == "bullet" or alert_type == "aggression" or alert_type == "explosion" or alert_type == "vo_cbt" or alert_type == "vo_intimidate" or alert_type == "vo_distress"
 	
-	if data.is_converted and objective_chk and path_fail_chk then
-		managers.groupai:state():on_criminal_jobless(data.unit)
+	if alert_unit and alive(alert_unit) and alert_unit:in_slot(data.enemy_slotmask) then
+		local att_obj_data, is_new = CopLogicBase.identify_attention_obj_instant(data, alert_unit:key())
 
-		if my_data ~= data.internal_data then
+		if not att_obj_data then
 			return
 		end
+
+		if alert_type == "bullet" or alert_type == "aggression" or alert_type == "explosion" then
+			att_obj_data.alert_t = data.t
+		end
+
+		local action_data = nil
+
+		--if is_new and (not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.stand) and AIAttentionObject.REACT_SURPRISED <= att_obj_data.reaction and data.unit:anim_data().idle and not data.unit:movement():chk_action_forbidden("walk") then
+		--	action_data = {
+		--		variant = "surprised",
+		--		body_part = 1,
+		--		type = "act"
+		--	}
+
+		--	data.unit:brain():action_request(action_data)
+		--end
+
+		--if not action_data and alert_type == "bullet" and data.logic.should_duck_on_alert(data, alert_data) then
+			--action_data = CopLogicAttack._chk_request_action_crouch(data)
+		--end
+
+		if att_obj_data.criminal_record then
+			managers.groupai:state():criminal_spotted(alert_unit)
+
+			if alert_type == "bullet" or alert_type == "aggression" or alert_type == "explosion" then
+				managers.groupai:state():report_aggression(alert_unit)
+			end
+		end
+	elseif was_cool and was_cool_alert_chk then
+		local attention_obj = alert_unit and alert_unit:brain() and alert_unit:brain()._logic_data.attention_obj
+
+		if attention_obj then
+			slot6, slot7 = CopLogicBase.identify_attention_obj_instant(data, attention_obj.u_key)
+		end
 	end
-
-	if CopLogicIdle._chk_exit_non_walkable_area(data) then
-		return
-	end
-
-	if CopLogicIdle._chk_relocate(data) then
-		return
-	end
-
-	CopLogicIdle._perform_objective_action(data, my_data, objective)
-	CopLogicBase._upd_stance_and_pose(data, my_data, objective)
-	CopLogicIdle._upd_pathing(data, my_data)
-	CopLogicIdle._upd_scan(data, my_data)
-
-	if data.cool then
-		CopLogicIdle.upd_suspicion_decay(data)
-	end
-
-	if data.internal_data ~= my_data then
-		CopLogicBase._report_detections(data.detected_attention_objects)
-
-		return
-	end
-		
-	CopLogicBase.queue_task(my_data, my_data.detection_task_key, CopLogicIdle.queued_update, data, data.t + delay)
 end
 
-function CopLogicIdle.find_civilian_to_intimidate(data)
-	local best_civ = CopLogicIdle._find_intimidateable_civilians(data)
+function CopLogicIdle.damage_clbk(data, damage_info)
+	local enemy = damage_info.attacker_unit
+	local enemy_data = nil
+	data.t = TimerManager:game():time()
+	if enemy and enemy:in_slot(data.enemy_slotmask) then
+		local my_data = data.internal_data
+		local enemy_key = enemy:key()
+		enemy_data = data.detected_attention_objects[enemy_key]
+		local t = data.t
 
-	return best_civ
-end
+		if enemy_data then
 
-function CopLogicIdle._find_intimidateable_civilians(data)
-	local head_pos = data.unit:movement():m_head_pos()
-	local look_vec = data.unit:movement():m_rot():y()
-	local close_dis = 400
-	local intimidateable_civilians = {}
-	local best_civ = nil
-	local best_civ_wgt = false
-	local best_civ_angle = nil
-	local highest_wgt = 1
-	local my_tracker = data.unit:movement():nav_tracker()
-	local chk_vis_func = my_tracker.check_visibility
-	local my_unit = data.unit
+			enemy_data.dmg_t = t
+			enemy_data.alert_t = t
+			enemy_data.notice_delay = nil
 
-	for key, unit in pairs(managers.groupai:state():fleeing_civilians()) do
-		if chk_vis_func(my_tracker, unit:movement():nav_tracker()) and tweak_data.character[unit:base()._tweak_table].intimidateable and not unit:base().unintimidateable and not unit:anim_data().unintimidateable and not unit:brain():is_tied() and not unit:unit_data().disable_shout then
-			local u_head_pos = unit:movement():m_head_pos() + math.UP * 30
-			local vec = u_head_pos - head_pos
-			local dis = mvector3.normalize(vec)
-			local angle = vec:angle(look_vec)
+			if not enemy_data.identified then
+				enemy_data.identified = true
+				enemy_data.identified_t = t
+				enemy_data.notice_progress = nil
+				enemy_data.prev_notice_chk_t = nil
 
-			max_angle = math.max(8, math.lerp(90, 30, dis / 1200))
-			max_dis = 1200
+				if enemy_data.settings.notice_clbk then
+					enemy_data.settings.notice_clbk(data.unit, true)
+				end
 
-			if dis < close_dis or dis < max_dis and angle < max_angle then
-				local slotmask = managers.slot:get_mask("AI_visibility")
-				local ray = World:raycast("ray", head_pos, u_head_pos, "slot_mask", slotmask, "ray_type", "ai_vision")
+				data.logic.on_attention_obj_identified(data, enemy_key, enemy_data)
+			end
+		else
+			local attention_info = managers.groupai:state():get_AI_attention_objects_by_filter(data.SO_access_str)[enemy_key]
 
-				if not ray then
-					local inv_wgt = dis * dis * (1 - vec:dot(look_vec))
+			if attention_info then
+				local settings = attention_info.handler:get_attention(data.SO_access, nil, nil, data.team)
 
-					table.insert(intimidateable_civilians, {
-						unit = unit,
-						key = key,
-						inv_wgt = inv_wgt
-					})
+				if settings then
+					enemy_data = CopLogicBase._create_detected_attention_object_data(data.t, data.unit, enemy_key, attention_info, settings)
+					enemy_data.dmg_t = t
+					enemy_data.alert_t = t
+					enemy_data.identified = true
+					enemy_data.identified_t = t
+					enemy_data.notice_progress = nil
+					enemy_data.prev_notice_chk_t = nil
 
-					if not best_civ_wgt or inv_wgt < best_civ_wgt then
-						best_civ_wgt = inv_wgt
-						best_civ = unit
-						best_civ_angle = angle
+					if enemy_data.settings.notice_clbk then
+						enemy_data.settings.notice_clbk(data.unit, true)
 					end
 
-					if highest_wgt < inv_wgt then
-						highest_wgt = inv_wgt
-					end
+					data.detected_attention_objects[enemy_key] = enemy_data
+
+					data.logic.on_attention_obj_identified(data, enemy_key, enemy_data)
 				end
 			end
 		end
 	end
 
-	return best_civ, highest_wgt, intimidateable_civilians
+	if enemy_data and enemy_data.criminal_record then
+		managers.groupai:state():criminal_spotted(enemy)
+		managers.groupai:state():report_aggression(enemy)
+	end
+end
+
+function CopLogicIdle._chk_relocate(data)
+	local my_nav_seg = data.unit:movement():nav_tracker():nav_segment()
+	local my_area = managers.groupai:state():get_area_from_nav_seg_id(data.unit:movement():nav_tracker():nav_segment())
+	
+	if data.objective and data.objective.type == "follow" then
+		local check_for_vision = true
+		local range = 240
+		
+		if data.objective and data.objective.tactic then
+			range = 500
+			check_for_vision = nil
+		end
+		
+		if data.is_converted then
+			if TeamAILogicIdle._check_should_relocate(data, data.internal_data, data.objective) then
+				data.objective.in_place = nil
+
+				if data.name ~= "travel" then
+					data.logic._exit(data.unit, "travel")
+				end
+
+				return true
+			end
+
+			return
+		end
+
+		if data.is_tied and data.objective.lose_track_dis and data.objective.lose_track_dis * data.objective.lose_track_dis < mvector3.distance_sq(data.m_pos, data.objective.follow_unit:movement():m_pos()) then
+			data.brain:set_objective(nil)
+
+			return true
+		end
+
+		local relocate = nil
+		local follow_unit = data.objective.follow_unit
+		local advance_pos = follow_unit:brain() and follow_unit:brain():is_advancing()
+		local follow_unit_pos = advance_pos or follow_unit:movement():m_pos()
+
+		--if data.objective.relocated_to and mvector3.equal(data.objective.relocated_to, follow_unit_pos) then
+		--	return
+		--end
+
+		if range < mvector3.distance(data.m_pos, follow_unit_pos) then
+			relocate = true
+		end
+
+		if check_for_vision then
+			if data.unit:raycast("ray", data.unit:movement():m_head_pos(), follow_unit:movement():m_head_pos(), "slot_mask", managers.slot:get_mask("world_geometry", "vehicles", "enemy_shield_check"), "ignore_unit", follow_unit, "report") then
+				relocate = true
+			end
+			
+		end
+
+		if relocate then
+			data.objective.in_place = nil
+			data.objective.nav_seg = follow_unit:movement():nav_tracker():nav_segment()
+			data.objective.relocated_to = mvector3.copy(follow_unit_pos)
+
+			if data.name ~= "travel" then
+				data.logic._exit(data.unit, "travel")
+			end
+
+			return true
+		end
+	elseif data.objective and data.objective.tactic then
+		return 
+	elseif data.objective and data.objective.type == "defend_area" or data.objective and data.objective.type == "hunt" then
+		if not CopLogicAttack.is_available_for_assignment(data, data.objective) then
+			return
+		end
+		
+		local recon_group = data.objective and data.objective.grp_objective and data.objective.grp_objective.type == "recon_area"
+		
+		local current_assault_target_area = managers.groupai:state()._task_data.assault.target_areas and managers.groupai:state()._task_data.assault.target_areas[math.random(#managers.groupai:state()._task_data.assault.target_areas)] or nil
+		
+		if managers.groupai:state():chk_assault_active_atm() and not recon_group or Global.game_settings.one_down then
+			local area = data.objective.area
+
+			if area and not next(area.criminal.units) then
+			
+				if current_assault_target_area and area ~= current_assault_target_area and next(current_assault_target_area.criminal.units) then -- this code is so awful i am fully convinced it is self-aware
+					--log("pog")
+					data.objective.in_place = nil
+					data.objective.area = current_assault_target_area
+					data.objective.nav_seg = next(current_assault_target_area.nav_segs)
+					data.objective.path_data = {
+						{
+							data.objective.nav_seg
+						}
+					}
+					
+					if data.name ~= "travel" then
+						data.logic._exit(data.unit, "travel")
+					end
+					
+					--log("im going")
+						
+					return true
+				end
+			
+				local found_areas = {
+					[area] = true
+				}
+				local areas_to_search = {
+					area
+				}
+				local target_area = nil
+
+				while next(areas_to_search) do
+					local current_area = table.remove(areas_to_search)
+						
+					if next(current_area.criminal.units) then
+						target_area = current_area
+
+						break
+					end
+
+					for _, n_area in pairs(current_area.neighbours) do
+						if not found_areas[n_area] then
+							found_areas[n_area] = true
+
+							table.insert(areas_to_search, n_area)
+						end
+					end
+				end
+
+				if target_area then
+					data.objective.in_place = nil
+					data.objective.area = target_area
+					data.objective.nav_seg = next(target_area.nav_segs)
+					data.objective.path_data = {
+						{
+							data.objective.nav_seg
+						}
+					}
+					
+					if data.name ~= "travel" then
+						data.logic._exit(data.unit, "travel")
+					end
+
+					return true
+				end
+			end
+		else
+			local area = data.objective.area
+			
+			if area then
+				if area.loot and next(area.loot) or area.hostages and next(area.hostages) or current_assault_target_area and area == current_assault_target_area then
+					return
+				else
+					local found_areas = {
+						[area] = true
+					}
+					local areas_to_search = {
+						area
+					}
+					local target_area = nil
+
+					while next(areas_to_search) do
+						local current_area = table.remove(areas_to_search)
+								
+						if current_area.loot and next(current_area.loot) or current_area.hostages and next(current_area.hostages) then
+							target_area = current_area
+
+							break
+						end
+
+						for _, n_area in pairs(current_area.neighbours) do
+							if not found_areas[n_area] then
+								found_areas[n_area] = true
+
+								table.insert(areas_to_search, n_area)
+							end
+						end
+					end
+
+					if target_area then
+						data.objective.bagjob = target_area.loot or nil
+						data.objective.hostagejob = target_area.hostages or nil
+						data.objective.in_place = nil
+						data.objective.area = target_area
+						data.objective.nav_seg = next(target_area.nav_segs)
+						data.objective.path_data = {
+							{
+								data.objective.nav_seg
+							}
+						}
+
+						if data.name ~= "travel" then
+							data.logic._exit(data.unit, "travel")
+						end
+
+						return true
+					else
+						if current_assault_target_area then
+							if current_assault_target_area.criminal and current_assault_target_area.criminal.units and next(current_assault_target_area.criminal.units) or current_assault_target_area.loot and next(current_assault_target_area.loot) or current_assault_target_area.hostages and next(current_assault_target_area.hostages) then
+								data.objective.bagjob = current_assault_target_area.loot or nil
+								data.objective.hostagejob = current_assault_target_area.hostages or nil
+								data.objective.in_place = nil
+								data.objective.area = target_area
+								data.objective.nav_seg = next(current_assault_target_area.nav_segs)
+								data.objective.path_data = {
+									{
+										data.objective.nav_seg
+									}
+								}
+								
+								if data.name ~= "travel" then
+									data.logic._exit(data.unit, "travel")
+								end
+											
+								return true
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+	
+	return
+end
+
+function CopLogicIdle._perform_objective_action(data, my_data, objective)
+	if objective and not my_data.action_started and (data.unit:anim_data().act_idle or not data.unit:movement():chk_action_forbidden("action")) then
+		if objective and objective.action and objective.action.variant then
+			local variant = objective.action.variant
+			if variant == "e_so_ntl_idle_look" or variant == "e_so_ntl_idle_look2" or variant == "e_so_ntl_idle_look3" then
+				objective.action_duration = math.lerp(2, 5, math.random())
+			end
+		end
+	
+		if objective.action then
+			my_data.action_started = data.unit:brain():action_request(objective.action)
+		else
+			my_data.action_started = true
+		end
+
+		if my_data.action_started then
+			if objective.action_duration or objective.action_timeout_t then
+				my_data.action_timeout_clbk_id = "CopLogicIdle_action_timeout" .. tostring(data.key)
+				local action_timeout_t = objective.action_timeout_t or data.t + objective.action_duration
+				objective.action_timeout_t = action_timeout_t
+
+				CopLogicBase.add_delayed_clbk(my_data, my_data.action_timeout_clbk_id, callback(CopLogicIdle, CopLogicIdle, "clbk_action_timeout", data), action_timeout_t)
+			end
+
+			if objective.action_start_clbk then
+				objective.action_start_clbk(data.unit)
+			end
+		end
+	end
 end
 
 function CopLogicIdle.intimidate_civilians(data)
@@ -575,255 +864,4 @@ function CopLogicIdle.intimidate_civilians(data)
 	end
 
 	return primary_target or best_civ
-end
-
-function CopLogicIdle._upd_enemy_detection(data)
-	managers.groupai:state():on_unit_detection_updated(data.unit)
-
-	data.t = TimerManager:game():time()
-	local my_data = data.internal_data
-	local delay = CopLogicBase._upd_attention_obj_detection(data, nil, nil)
-	local new_attention, new_prio_slot, new_reaction = CopLogicIdle._get_priority_attention(data, data.detected_attention_objects)
-
-	CopLogicBase._set_attention_obj(data, new_attention, new_reaction)
-
-	if new_reaction and AIAttentionObject.REACT_SUSPICIOUS < new_reaction then
-		local objective = data.objective
-		local wanted_state = nil
-		local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, objective, nil, new_attention)
-
-		if allow_trans then
-			wanted_state = CopLogicBase._get_logic_state_from_reaction(data)
-		end
-
-		if wanted_state and wanted_state ~= data.name then
-			if obj_failed then
-				data.objective_failed_clbk(data.unit, data.objective)
-			end
-
-			if my_data == data.internal_data then
-				CopLogicBase._exit(data.unit, wanted_state)
-			end
-		end
-	end
-	
-	if (not my_data._intimidate_t or my_data._intimidate_t + 2 < data.t) and not data.cool and not my_data._turning_to_intimidate and not my_data.acting and (not new_attention or AIAttentionObject.REACT_SCARED > new_reaction) and managers.groupai:state():chk_assault_active_atm() then
-		local can_turn = not data.unit:movement():chk_action_forbidden("turn")
-		local civ = CopLogicIdle.find_civilian_to_intimidate(data)
-
-		if civ then
-			my_data._intimidate_t = data.t
-			new_attention, new_prio_slot, new_reaction = nil
-
-			if can_turn and CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, data.m_pos, civ:movement():m_pos()) then
-				my_data._turning_to_intimidate = true
-				my_data._primary_intimidation_target = civ
-			else
-				CopLogicIdle.intimidate_civilians(data)
-			end
-		end
-	end
-	
-	if my_data == data.internal_data then
-		CopLogicBase._chk_call_the_police(data)
-
-		if my_data ~= data.internal_data then
-			return delay
-		end
-	end
-
-	return delay
-end
-
-function CopLogicIdle._chk_relocate(data)
-	local my_nav_seg = data.unit:movement():nav_tracker():nav_segment()
-	local my_area = managers.groupai:state():get_area_from_nav_seg_id(data.unit:movement():nav_tracker():nav_segment())
-	
-	if not CopLogicAttack.is_available_for_assignment(data, data.objective) then
-		return
-	end
-	
-	if data.objective and data.objective.type == "follow" then
-		if data.is_converted then
-			if TeamAILogicIdle._check_should_relocate(data, data.internal_data, data.objective) then
-				data.objective.in_place = nil
-
-				data.logic._exit(data.unit, "travel")
-
-				return true
-			end
-
-			return
-		end
-
-		if data.is_tied and data.objective.lose_track_dis and data.objective.lose_track_dis * data.objective.lose_track_dis < mvector3.distance_sq(data.m_pos, data.objective.follow_unit:movement():m_pos()) then
-			data.brain:set_objective(nil)
-
-			return true
-		end
-
-		local relocate = nil
-		local follow_unit = data.objective.follow_unit
-		local advance_pos = follow_unit:brain() and follow_unit:brain():is_advancing()
-		local follow_unit_pos = advance_pos or follow_unit:movement():m_pos()
-
-		if data.objective.relocated_to and mvector3.equal(data.objective.relocated_to, follow_unit_pos) then
-			return
-		end
-
-		if data.objective.distance and data.objective.distance < mvector3.distance(data.m_pos, follow_unit_pos) then
-			relocate = true
-		end
-
-		if not relocate then
-			local ray_params = {
-				tracker_from = data.unit:movement():nav_tracker(),
-				pos_to = follow_unit_pos
-			}
-			local ray_res = managers.navigation:raycast(ray_params)
-
-			if ray_res then
-				relocate = true
-			end
-		end
-
-		if relocate then
-			data.objective.in_place = nil
-			data.objective.nav_seg = follow_unit:movement():nav_tracker():nav_segment()
-			data.objective.relocated_to = mvector3.copy(follow_unit_pos)
-
-			data.logic._exit(data.unit, "travel")
-
-			return true
-		end
-	elseif data.objective and data.objective.type == "defend_area" then
-		local recon_group = data.objective and data.objective.grp_objective and data.objective.grp_objective == "recon_area" or data.tactics and data.tactics.flank
-		
-		local current_assault_target_area_navsegs = managers.groupai:state()._current_target_area and managers.groupai:state()._current_target_area.nav_segs or nil
-		
-		if managers.groupai:state():chk_assault_active_atm() and not recon_group then
-			if current_assault_target_area_navsegs then -- this code is so awful i am fully convinced it is self-aware
-				--log("pog")
-				data.objective.in_place = nil
-				data.objective.nav_seg = next(current_assault_target_area_navsegs)
-				data.objective.path_data = {
-					{
-						data.objective.nav_seg
-					}
-				}
-				data.logic._exit(data.unit, "travel")
-							
-				return true
-			end
-					
-			local area = data.objective.area
-
-			if area and not next(area.criminal.units) then
-				local found_areas = {
-					[area] = true
-				}
-				local areas_to_search = {
-					area
-				}
-				local target_area = nil
-
-				while next(areas_to_search) do
-					local current_area = table.remove(areas_to_search)
-						
-					if next(current_area.criminal.units) then
-						target_area = current_area
-
-						break
-					end
-
-					for _, n_area in pairs(current_area.neighbours) do
-						if not found_areas[n_area] then
-							found_areas[n_area] = true
-
-							table.insert(areas_to_search, n_area)
-						end
-					end
-				end
-
-				if target_area then
-					data.objective.in_place = nil
-					data.objective.nav_seg = next(target_area.nav_segs)
-					data.objective.path_data = {
-						{
-							data.objective.nav_seg
-						}
-					}
-
-					data.logic._exit(data.unit, "travel")
-
-					return true
-				end
-			end
-		else
-			local area = data.objective.area
-			
-			if area then
-				if area.loot and next(area.loot) or area.hostages and next(area.hostages) then
-					return
-				else
-					local found_areas = {
-						[area] = true
-					}
-					local areas_to_search = {
-						area
-					}
-					local target_area = nil
-
-					while next(areas_to_search) do
-						local current_area = table.remove(areas_to_search)
-								
-						if current_area.loot and next(current_area.loot) or current_area.hostages and next(current_area.hostages) then
-							target_area = current_area
-
-							break
-						end
-
-						for _, n_area in pairs(current_area.neighbours) do
-							if not found_areas[n_area] then
-								found_areas[n_area] = true
-
-								table.insert(areas_to_search, n_area)
-							end
-						end
-					end
-
-					if target_area then
-						data.objective.bagjob = target_area.loot or nil
-						data.objective.hostagejob = target_area.hostages or nil
-						data.objective.in_place = nil
-						data.objective.nav_seg = next(target_area.nav_segs)
-						data.objective.path_data = {
-							{
-								data.objective.nav_seg
-							}
-						}
-
-						data.logic._exit(data.unit, "travel")
-
-						return true
-					else
-						if current_assault_target_area_navsegs then
-							data.objective.bagjob = managers.groupai:state()._current_target_area.loot or nil
-							data.objective.hostagejob = managers.groupai:state()._current_target_area.hostages or nil
-							data.objective.in_place = nil
-							data.objective.nav_seg = next(current_assault_target_area_navsegs)
-							data.objective.path_data = {
-								{
-									data.objective.nav_seg
-								}
-							}
-							data.logic._exit(data.unit, "travel")
-										
-							return true
-						end
-					end
-				end
-			end
-		end
-	end
 end

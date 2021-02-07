@@ -145,6 +145,18 @@ function GroupAIStateBesiege:get_hostage_count()
 	return self._hostage_headcount or 0
 end
 
+function GroupAIStateBesiege:chk_heat_bonus_retreat()
+	local assault_task = self._task_data.assault
+
+	if assault_task and assault_task.phase == "build" or assault_task and assault_task.phase == "sustain" then
+		if self._activeassaultbreak then
+			return true
+		end
+	end
+
+	return	
+end
+
 --Returns whether or not the majority of hostages are civilians.
 --Used for police chatter about hostages.
 function GroupAIStateBesiege:chk_has_civilian_hostages()

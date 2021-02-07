@@ -5911,23 +5911,23 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 				},	
 				lapd = {
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-					Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
@@ -6712,14 +6712,14 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
 				},	
 				lapd = {
-					Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-					Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-					Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),	
-					Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),							
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),	
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),							
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
 				}					
@@ -12283,8 +12283,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--system function for retreating in holdout mode. MUST be last tactic for all units. Do not touch.
 	--flank
 	--flank enemies will get around you and try to either, run past you, or to your side, so that you're not facing them. if they are walking, and they're within 15-10 meters, they'll crouch.
-	--Haste
-	--Unit will always have a cover_wait_time of 0
 	self._tactics = {
 		--Cloaker tactics, static. Tries to avoid confrontation
 		spooc = {
@@ -12303,7 +12301,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
-			"charge",
 			"shield_cover",
 			"groupcsr"
 		},
@@ -12320,8 +12317,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",
-			"charge",		
+			"ranged_fire",	
 			"shield_cover",			
 			"groupcsr"
 		},		
@@ -12338,8 +12334,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",
-			"charge",		
+			"ranged_fire",	
 			"shield_cover",			
 			"deathguard",
 			"groupcsr"
@@ -12360,8 +12355,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",
-			"charge",		
+			"ranged_fire",	
 			"shield_cover",			
 			"deathguard",
 			"groupcsr"
@@ -12371,8 +12365,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",
-			"charge",			
+			"ranged_fire",	
 			"shield_cover",			
 			"deathguard",
 			"groupcsr"
@@ -12393,8 +12386,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",
-			"charge",		
+			"ranged_fire",	
 			"shield_cover",			
 			"deathguard",
 			"groupcsr"
@@ -12468,7 +12460,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",			
 			"provide_support",
 			"ranged_fire",
-			"charge",
 			"shield_cover",
 			"deathguard",
 			"groupcsr"
@@ -12482,8 +12473,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield_cover",
 			"deathguard",
-			"groupcsr",
-			"haste"
+			"groupcsr"
 		},		
 		--FBI Rifle SWATs, flank the player
 		FBI_swat_rifle_flank = {
@@ -12491,7 +12481,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"ranged_fire",
-			"charge",
 			"shield_cover",
 			"provide_coverfire",
 			"provide_support",
@@ -12506,7 +12495,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"ranged_fire",
 			"shield_cover",
-			"charge",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12530,18 +12518,26 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"ranged_fire",
 			"shield_cover",
-			"charge",
 			"deathguard",
 			"groupcsr"
 		},		
 		--FBI Shield, basically the same as the CS shield.
 		FBI_shield = {
 			"charge",
+			"ranged_fire",
 			"provide_coverfire",
 			"provide_support",
 			"shield",
 			"deathguard"
-		},				
+		},	
+		--Passive FBI shield
+		FBI_shield_flank = {
+			"ranged_fire",
+			"provide_coverfire",
+			"provide_support",
+			"shield",
+			"deathguard"
+		},			
 		--Grenadier, passive. Tries to hide behind shields/other units when possible
 		FBI_Boom = {
 			"harass",		
@@ -12592,8 +12588,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"tunnel",
 			"charge",
 			"harass",
-			"shield",
-			"haste"
+			"shield"
 		},
 		
 		--Mayhem tactics below
@@ -12601,7 +12596,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Mayhem rifle SWAT
 		MH_swat_rifle = {
 			"ranged_fire",
-			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12619,13 +12613,11 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield_cover",
 			"deathguard",
-			"groupcsr",
-			"haste"
+			"groupcsr"
 		},
 		--Mayhem SWAT Flankers, will disengage when targeted
 		MH_swat_rifle_flank = { 
 			"flank",
-			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
@@ -12638,7 +12630,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Mayhem Heavy
 		MH_heavy = { 
 			"ranged_fire",
-			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12650,7 +12641,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Mayhem Heavy Flank, disengage when targeted
 		MH_heavy_flank = {
 			"flank",
-			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",	
@@ -12669,7 +12659,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield",
 			"deathguard"
-		},				
+		},		
+		--Passive MH shield
+		MH_shield_flank = { 
+			"legday",
+			"ranged_fire",
+			"provide_coverfire",
+			"provide_support",
+			"shield",
+			"deathguard"
+		},					
 		
 		--Deathwish Tactics below
 		
@@ -12683,8 +12682,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"hitnrun",
-			"grouphrtr",
-			"haste"
+			"grouphrtr"
 		},	
 		--DW Taser, tries extremely hard to get up close and personal
 		DW_tazer = {
@@ -12694,8 +12692,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"shield_cover",
 			"murder",
-			"tunnel",
-			"haste"
+			"tunnel"
 		},
 		--DW Grenadier, even more passive and will use hitnrun
 		ELITE_boom = {
@@ -12710,7 +12707,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--death wish tactics
 		DW_swat_rifle = {
 			"ranged_fire",
-			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12727,8 +12723,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",	
-			"charge",			
+			"ranged_fire",			
 			"harass",
 			"shield_cover",
 			"deathguard",
@@ -12736,7 +12731,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		DW_heavy = {
 			"ranged_fire",
-			"charge",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12747,8 +12741,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},		
 		DW_heavy_flank = {
 			"flank",
-			"ranged_fire",
-			"charge",			
+			"ranged_fire",			
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
@@ -12794,8 +12787,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"grouphrtr"
 		},
 		ELITE_swat_rifle = {
-			"ranged_fire",
-			"charge",	
+			"ranged_fire",	
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12813,12 +12805,10 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"shield_cover",
 			"provide_support",
-			"groupcsr",
-			"haste"
+			"groupcsr"
 		},		
 		ELITE_heavy = { 
 			"ranged_fire",
-			"charge",	
 			"smoke_grenade",
 			"flash_grenade",
 			"harass",
@@ -12837,15 +12827,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"shield_cover",
 			"deathguard",
-			"groupcsr",
-			"haste"
+			"groupcsr"
 		},		
 		ELITE_swat_rifle_flank = {
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
-			"charge",
 			"harass",
 			"provide_coverfire",
 			"provide_support",
@@ -12856,7 +12844,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
-			"charge",
 			"harass",
 			"provide_coverfire",
 			"provide_support",
@@ -12870,8 +12857,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
-			"haste"
+			"shield_cover"
 		},				
 		
 		--Captains
@@ -12885,8 +12871,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},		
 		Cap_summers_minion = {
 			"shield_cover",
-			"charge",
-			"haste" --Might help them keep up with Summers a little better.
+			"charge"
 		},	
 		Cap_summers = {
 			"shield",
@@ -14032,7 +14017,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.FBI_shield,
+					tactics = self._tactics.FBI_shield_flank,
 					rank = 3
 				},
 				{
@@ -14068,7 +14053,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield,
+					tactics = self._tactics.MH_shield_flank,
 					rank = 3
 				},
 				{
@@ -14745,7 +14730,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield,
+					tactics = self._tactics.MH_shield_flank,
 					rank = 3
 				},
 				{
@@ -14788,7 +14773,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					freq = 1,
 					amount_min = 1,
 					amount_max = 2,
-					tactics = self._tactics.MH_shield,
+					tactics = self._tactics.MH_shield_flank,
 					rank = 3
 				},
 				{
@@ -16150,7 +16135,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.MH_shield,
+				tactics = self._tactics.MH_shield_flank,
 				rank = 3
 			},
 			{
@@ -16530,7 +16515,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.MH_shield,
+				tactics = self._tactics.MH_shield_flank,
 				rank = 3
 			},
 			{
@@ -16910,7 +16895,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.MH_shield,
+				tactics = self._tactics.MH_shield_flank,
 				rank = 3
 			},
 			{
@@ -17290,7 +17275,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				freq = 1,
 				amount_min = 1,
 				amount_max = 2,
-				tactics = self._tactics.MH_shield,
+				tactics = self._tactics.MH_shield_flank,
 				rank = 3
 			},
 			{
@@ -17794,14 +17779,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
+			12,
 			15,
-			18,
-			21
+			18
 		}
 		self.besiege.assault.force_pool = {
-			80,
-			110,
-			140
+			75,
+			100,
+			125
 		}
 		self.special_unit_spawn_limits = {
 			tank = 1,
@@ -17818,14 +17803,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
-			17,
-			21,
-			25
+			15,
+			18,
+			21
 		}
 		self.besiege.assault.force_pool = {
-			90,
-			120,
-			150
+			75,
+			100,
+			125
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(2 * map_scale_factor), 1),
@@ -17842,14 +17827,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
-			20,
-			24,
-			28
+			15,
+			18,
+			21
 		}
 		self.besiege.assault.force_pool = {
+			75,
 			100,
-			130,
-			160
+			125
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),
@@ -17866,14 +17851,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
-			22,
-			27,
-			32
+			17,
+			21,
+			25
 		}
 		self.besiege.assault.force_pool = {
-			105,
-			140,
-			175
+			90,
+			120,
+			150
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),
@@ -17890,14 +17875,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
-			22,
-			27,
-			32
+			17,
+			21,
+			25
 		}
 		self.besiege.assault.force_pool = {
-			105,
-			140,
-			175
+			90,
+			120,
+			150
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),
@@ -17914,14 +17899,14 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	else
 		self.besiege.assault.force = {
+			20,
 			24,
-			30,
-			36
+			28
 		}
 		self.besiege.assault.force_pool = {
-			115,
-			150,
-			195
+			105,
+			140,
+			175
 		}
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),

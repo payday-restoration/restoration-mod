@@ -43,7 +43,7 @@
 						<set_variables var_pick_head_b="rand()*100"/>
 						<material_config filter="'filter_pick_head_a'" name="'units/pd2_dlc_rvd/characters/'..pick('ene_la_cop_1/ene_la_cop_1','ene_la_cop_vars/ene_la_cop_var1','ene_la_cop_vars/ene_la_cop_var2','ene_la_cop_vars/ene_la_cop_var3', 'ene_la_cop_vars/ene_la_cop_var6')"/>
 							
-						<material_config filter="'filter_pick_head_b'" name="'units/pd2_dlc_rvd/characters/'..pick('ene_la_cop_vars/ene_la_cop_var4','ene_la_cop_vars/ene_la_cop_var5', 'ene_la_cop_vars/ene_la_cop_var6')"/>
+						<material_config filter="'filter_pick_head_b'" name="'units/pd2_dlc_rvd/characters/'..pick('ene_la_cop_vars/ene_la_cop_var4','ene_la_cop_vars/ene_la_cop_var5')"/>
 							
 						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
 						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										

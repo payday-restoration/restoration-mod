@@ -182,28 +182,32 @@
 	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour"/>
 	
 	<!--City Tier-->
-	<!--City swat 1
+	<!--City swat 1-->
     <unit path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1" load="true"/>
     <unit path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1_husk" load="true"/>
     <object path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
 	<model path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
 	<material_config path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1_contour"/>-->
+	<material_config path="units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1_contour"/>
 	
-	<!--City swat 2	
+	<!--City swat 2-->	
     <unit path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2" load="true"/>
     <unit path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2_husk" load="true"/>
 	<object path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>
-	<model path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>	-->
+	<model path="units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"/>	
 	
-	<!--City swat 3
+	<!--City swat 3-->
     <unit path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3" load="true"/>
     <unit path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>
     <object path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
-	<model path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>-->
+	<model path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
+
+	<!--M416 -->
+	<unit_mat path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416" />
+	<cooked_physics path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416"/>
 	
 	<!--LAPD vet 1-->	
 	<object path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"/>
@@ -225,15 +229,17 @@
 	
 	<!--LAPD shared_textures crap-->
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" />	
-	<!-- <texture path="units/pd2_mod_lapd/characters/shared_textures/swat_city_df" />	 -->
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_city_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_body_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/spook_heavy_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/opscore_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/opscore_nm" />	
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_df" />		
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_nm" />		
+	<texture path="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_df" />		
+	<texture path="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_nm" />		
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_lapd_heads_df" />	
-	<texture path="units/pd2_dlc_bex/characters/shared_textures/heads_swat_atlas_nm" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_helms_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_nm" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_1_df" />	

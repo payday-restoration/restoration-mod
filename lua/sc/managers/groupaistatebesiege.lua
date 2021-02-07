@@ -21,7 +21,7 @@ function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types
 
 	--Check each spawn group and see if it meets filter.
 	for group_type, cat_weights in pairs(allowed_groups) do
-		--Get timestamp from when group was last spawned and make sure that cooldown is complete. 
+		--Get spawn group constraints.
 		local constraints = constraints_tweak[group_type]
 		local valid = true
 

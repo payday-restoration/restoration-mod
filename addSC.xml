@@ -2570,6 +2570,20 @@
 	<object path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_df" force="true"/>	
 	<texture path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df" force="true"/>	
+
+	<!--zeal grenadier-->
+	<unit path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" load="true"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_husk"  load="true"/>	
+	<sequence_manager path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" />	
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" />
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_contour" />
+	<model path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" />
+	<object path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" />	
+	<texture path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_df" />
+	
+	<!-- loaded for the zeal gren mask -->
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_df" force="false"/>
+	<texture path="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_nm" force="false"/>
 	
 	<!--zeal medic-->
 	<unit path="units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic" load="true"/>

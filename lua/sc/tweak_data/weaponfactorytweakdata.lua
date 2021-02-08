@@ -23301,7 +23301,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_upg_ak_s_polymerstock.stats = {
 			value = 6,
 			spread = 1,
-			concealment = -2
+			concealment = -3
 		}
 
 		--Fugitive Foregrip

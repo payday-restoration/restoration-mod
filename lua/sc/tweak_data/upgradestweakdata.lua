@@ -550,6 +550,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						1, --Basic
 						2 --Ace
 					}
+					--Says health multiplier, but actually multiplies damage taken.
+					self.values.player.passive_convert_enemies_health_multiplier = {
+						0.4, --Basic
+						0.2 --Ace
+					}					
 					--Basic
 						self.values.player.convert_enemies = {true}
 					--Ace
@@ -564,15 +569,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.civilian_gives_ammo = {true}
 
 				--Partners in Crime--
-					--Says health multiplier, but actually multiplies damage taken.
-					self.values.player.passive_convert_enemies_health_multiplier = {
-						0.5, --Basic
-						0.2 --Ace
-					}
 					--Basic
-						self.values.player.minion_master_speed_multiplier = {1.05}
+						self.values.player.hostage_speed_multiplier = {1.03}
 					--Ace
-						self.values.player.minion_master_health_multiplier = {1.15}
+						self.values.player.hostage_health_multiplier = {1.1}
 							
 				--Hostage Taker
 					self.values.player.hostage_health_regen_addend = {
@@ -1353,7 +1353,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		stamina = 4,
 		damage_dampener = 1
 	}
-	self.values.team.health.hostage_multiplier = {1.025}
+	self.values.team.health.hostage_multiplier = {1.05}
 	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
 		0.05,
@@ -2594,6 +2594,24 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "hostage_health_regen_max_mult",
+			category = "player"
+		}
+	}
+	self.definitions.player_hostage_health_multiplier = {
+		name_id = "menu_player_hostage_health_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hostage_health_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_hostage_speed_multiplier = {
+		name_id = "menu_player_hostage_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hostage_speed_multiplier",
 			category = "player"
 		}
 	}

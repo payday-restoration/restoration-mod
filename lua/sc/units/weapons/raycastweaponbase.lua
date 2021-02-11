@@ -56,6 +56,114 @@ function FlameBulletBase:bullet_slotmask()
 	return managers.slot:get_mask("bullet_impact_targets")
 end	
 
+--Add shield knocking to FlameBulletBase
+function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank)
+	if Network:is_client() and not blank and user_unit ~= managers.player:player_unit() then
+		blank = true
+	end
+
+	local hit_unit = col_ray.unit
+	local is_shield = hit_unit:in_slot(managers.slot:get_mask("enemy_shield_check")) and alive(hit_unit:parent())
+
+	--Give DB Shield Knock if the player has the skill.
+	if alive(weapon_unit) and is_shield and weapon_unit:base()._shield_knock then
+		local enemy_unit = hit_unit:parent()
+
+		if enemy_unit:character_damage() and enemy_unit:character_damage().dead and not enemy_unit:character_damage():dead() then
+			if enemy_unit:base():char_tweak() then
+				if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
+					local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
+					if weapon_unit:base()._is_team_ai then
+						knock_chance = knock_chance * 0.25 --Bots have reduced knock chances. Usually hovers around 10%, weapons like the Thanatos cap around 25%.
+					end
+
+					if knock_chance > math.random() then
+						local damage_info = {
+							damage = 0,
+							type = "shield_knock",
+							variant = "melee",
+							col_ray = col_ray,
+							result = {
+								variant = "melee",
+								type = "shield_knock"
+							}
+						}
+
+						enemy_unit:character_damage():_call_listeners(damage_info)
+					end
+				end
+			end
+		end
+	end
+
+	if hit_unit:damage() and managers.network:session() and col_ray.body:extension() and col_ray.body:extension().damage then
+		local damage_body_extension = true
+		local character_unit = nil
+
+		if hit_unit:character_damage() then
+			character_unit = hit_unit
+		elseif is_shield and hit_unit:parent():character_damage() then
+			character_unit = hit_unit:parent()
+		end
+
+		if character_unit and character_unit:character_damage().is_friendly_fire and character_unit:character_damage():is_friendly_fire(user_unit) then
+			damage_body_extension = false
+		end
+
+		--do a friendly fire check if the unit hit is a character or a character's shield before damaging the body extension that was hit
+		if damage_body_extension then
+			local sync_damage = not blank and hit_unit:id() ~= -1
+			local network_damage = math.ceil(damage * 163.84)
+			damage = network_damage / 163.84
+
+			if sync_damage then
+				local normal_vec_yaw, normal_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.normal, 128, 64)
+				local dir_vec_yaw, dir_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.ray, 128, 64)
+
+				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage))
+			end
+
+			local local_damage = not blank or hit_unit:id() == -1
+
+			if local_damage then
+				col_ray.body:extension().damage:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
+				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
+
+				if alive(weapon_unit) and weapon_unit:base().categories and weapon_unit:base():categories() then
+					for _, category in ipairs(weapon_unit:base():categories()) do
+						col_ray.body:extension().damage:damage_bullet_type(category, user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
+					end
+				end
+			end
+		end
+	end
+
+	local result = nil
+
+	if alive(weapon_unit) and hit_unit:character_damage() and hit_unit:character_damage().damage_fire then
+		local is_alive = not hit_unit:character_damage():dead()
+		result = self:give_fire_damage(col_ray, weapon_unit, user_unit, damage)
+
+		if not is_dead then
+			if not result or result == "friendly_fire" then
+				play_impact_flesh = false
+			end
+		end
+
+		local push_multiplier = self:_get_character_push_multiplier(weapon_unit, is_alive and is_dead)
+		managers.game_play_central:physics_push(col_ray, push_multiplier)
+	else
+		managers.game_play_central:physics_push(col_ray)
+	end
+
+	--Play Impact flesh is never true on fire bullets. No need for this conditional.
+
+	--DB Always plays impact sound and effects.
+	self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+
+	return result
+end
+
 --Minor fixes and making Winters unpiercable.
 function RaycastWeaponBase:_collect_hits(from, to)
 	local can_shoot_through = self._can_shoot_through_wall or self._can_shoot_through_shield or self._can_shoot_through_enemy
@@ -123,7 +231,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 						knock_chance = knock_chance * 0.25 --Bots have reduced knock chances. Usually hovers around 10%, weapons like the Thanatos cap around 25%.
 					end
 
-					if knock_chance < math.random() then
+					if knock_chance > math.random() then
 						local damage_info = {
 							damage = 0,
 							type = "shield_knock",

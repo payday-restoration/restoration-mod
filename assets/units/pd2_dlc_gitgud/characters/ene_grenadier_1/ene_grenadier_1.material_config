@@ -5,12 +5,13 @@
 	</material>
 	
 	<material name="mtr_head_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/grenadier_atlas_nm"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/grenadier_atlas_df"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/grenadier_atlas_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/grenadier_atlas_df" mip="1"/>
 	</material>
 	
 	<material name="mtr_head_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/grenadier_atlas_df"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/grenadier_atlas_nm" mip="4"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/grenadier_atlas_df" mip="4"/>
 	</material>
 	
 	<material name="mtr_hood" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
@@ -19,12 +20,13 @@
 	</material>
 	
 	<material name="mtr_hood_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture 	file="units/payday2/characters/shared_textures/material_body_nm"/>
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/material_body_df"/>
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/material_body_nm" mip="1"/>
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/material_body_df" mip="1"/>
 	</material>
 	
 	<material name="mtr_hood_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<diffuse_texture 		file="units/payday2/characters/shared_textures/material_body_df"/>
+		<bump_normal_texture 		file="units/payday2/characters/shared_textures/material_body_nm" mip="4"/>		
+		<diffuse_texture 		file="units/payday2/characters/shared_textures/material_body_df" mip="4"/>
 	</material>
 	
 	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
@@ -38,6 +40,7 @@
 	</material>
 	
 	<material name="mtr_body_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture    file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_nm" mip="4"/>	
         <diffuse_texture        file="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1_df" mip="4"/>
 	</material>
 	
@@ -52,19 +55,19 @@
 	</material>
 	
 	<material name="mtr_ene_acc_swat_helmet_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <bump_normal_texture    file="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_nm" mip="4"/>	
         <diffuse_texture        file="units/pd2_dlc_mad/characters/shared_textures/akan_grenadier_helm_df" mip="4"/>
 	</material>
 	
-	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE:TAKE_FOG" version="2">
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
         <variable value="0.5 1 0.5" type="vector3" name="fresnel_settings"/>
         <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
-        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>                
     </material>
 	
     <material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-        <diffuse_texture file="units/payday2/characters/shared_textures/grenadier_atlas_df" mip="4"/>
+        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" mip="4"/>
     </material>
 
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>

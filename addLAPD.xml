@@ -21,20 +21,6 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />	
 	
-	<!--NYPD shield replace this guy later-->
-	<object path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
-	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
-	<model path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
-	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield" load="true"/>
-	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"/>
-	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_contour"/>
-	<unit path="units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield_husk" load="true"/>		
-	
-	<texture path="units/pd2_mod_nypd/characters/ene_nypd_shield/taser_body_df" />	
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm" />	
-	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df"/>
-	<texture path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm"/>
-	
 	<!--0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55… AAARGH THE BELLWEATHER NOOOOOO-->
 	<object path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_acc_shield_lights/ene_acc_shield_lights"/>
@@ -111,6 +97,10 @@
 	<!--opscore-->
 	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
+
+	<!--smashscore-->
+	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_smashscore/ene_acc_smashscore" />
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_smashscore/ene_acc_smashscore"/>
 	
 	<!--brownframe-->
 	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe" />
@@ -204,6 +194,26 @@
     <object path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
 	<model path="units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"/>
+	
+	<!--City Heavy g36-->
+    <unit path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36" load="true"/>
+    <unit path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk" load="true"/>
+    <object path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
+	<model path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"/>
+	<material_config path="units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_contour"/>
+	
+	<!--City Heavy r870-->
+    <unit path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc" load="true"/>
+    <unit path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk" load="true"/>
+    <object path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
+	<cooked_physics path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
+	<model path="units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"/>
+	
+	<!--city shield-->
+	<unit path="units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield" load="true"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield_husk" load="true"/>		
 
 	<!--M416 -->
 	<unit_mat path="units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416" />
@@ -228,6 +238,8 @@
 	<unit path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_husk" load="true"/>			
 	
 	<!--LAPD shared_textures crap-->
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/ene_city_heavy_df" />	
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/ene_city_heavy_nm" />		
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_city_df" />	
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_body_df" />	

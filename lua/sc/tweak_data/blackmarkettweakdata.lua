@@ -2430,6 +2430,20 @@ function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 		}
 	}
 	
+	--Born to steal fix
+	self.weapon_skins.m16_cs4.default_blueprint = {
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_upper_reciever_round",
+		"wpn_fps_amcar_bolt_standard",
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_m16_fg_standard",
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_ass_m16_o_handle_sight",
+		"wpn_fps_m16_s_solid_vanilla"
+	}
+	
 end
 
 local melee_weapons_old = BlackMarketTweakData._init_melee_weapons

@@ -25,10 +25,10 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
 	
 	local lacop1_4 = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1") 
-	or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3")
+	or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4")
 	
 	local lacop2_3 = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2") 
-	or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4")
+	or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3")
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_1_4") and cop1_4 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_cop_1_4")

@@ -1245,7 +1245,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	end	
 	self.weekend.HEALTH_INIT = 18.75
 	self.weekend.headshot_dmg_mul = 3.75		
-	self.weekend.speech_prefix_p1 = "cum"
+	self.weekend.speech_prefix_p1 = "null"
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
 	self.weekend.heal_cooldown = 2.5
@@ -1255,15 +1255,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	
 	self.city_swat_titan = deep_clone(self.city_swat)
 	self.city_swat_titan.can_slide_on_suppress = true
-	if is_federales then
-		self.city_swat_titan.speech_prefix_p1 = self._prefix_data_p1.swat()
-		self.city_swat_titan.speech_prefix_p2 = self._speech_prefix_p2
-		self.city_swat_titan.speech_prefix_count = 4
-	else
-	    self.city_swat_titan.speech_prefix_p1 = "are you team cum pisser"
-	    self.city_swat_titan.speech_prefix_p2 = "or team poop shitter"
-	    self.city_swat_titan.speech_prefix_count = nil	
-	end		
+	self.city_swat_titan.speech_prefix_p1 = "null"
+	self.city_swat_titan.speech_prefix_p2 = nil
+	self.city_swat_titan.speech_prefix_count = nil	
 	if is_reaper or is_federales then
 		self.city_swat_titan.custom_voicework = "tswat_ru"
 	else
@@ -1303,7 +1297,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	else
 		self.weekend_lmg.custom_voicework = "bravo_elite"
 	end		
-	self.weekend_lmg.speech_prefix_p1 = "cum"
+	self.weekend_lmg.speech_prefix_p1 = "null"
 	self.weekend_lmg.speech_prefix_p2 = nil
 	self.weekend_lmg.speech_prefix_count = nil
 	self.weekend_lmg.HEALTH_INIT = 28.125

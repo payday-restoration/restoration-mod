@@ -3491,6 +3491,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Ak5
 	self.ak5.auto.fire_rate = 0.08571428571
 	self.ak5.fire_mode_data.fire_rate = 0.08571428571
+	self.ak5.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ak5.kick = self.stat_info.kick_tables.moderate_right_kick
 	self.ak5.supported = true
 	self.ak5.stats = {

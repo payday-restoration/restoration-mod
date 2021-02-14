@@ -203,14 +203,14 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///LAPD LEVELS\\\--			
 	self.jolly.ai_group_type = lapd
-	self.jolly.package = {"packages/jolly", "packages/narr_rvd", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/lapdassets"}
+	self.jolly.package = {"packages/jolly", "levels/narratives/dentist/mia/stage2/world_sounds", "packages/lapdassets"}
 	self.jolly.player_style = "suit_sunny"
 	
 	self.pal.ai_group_type = lapd
-	self.pal.package = {"packages/narr_pal", "packages/narr_rvd", "packages/lapdassets"}	
+	self.pal.package = {"packages/narr_pal", "packages/lapdassets"}	
 	
 	self.friend.ai_group_type = lapd
-	self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/lapdassets", "packages/narr_rvd"}
+	self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend", "packages/lapdassets"}
 	self.friend.player_style = "suit_sunny"
 	
 	self.kenaz.ai_group_type = lapd

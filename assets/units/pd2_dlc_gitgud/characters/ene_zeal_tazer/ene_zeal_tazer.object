@@ -232,7 +232,8 @@
 			<lod_object name="lod_visor"> <!-- wanted to avoid doing this by adding it as a new object but for some fucking reason when i did that itd be invisible so i had to overwrite the old helm with this wicked ting-->
 				<object name="g_helmet_lod3" 	enabled="true" >
 					<material materials="mtr_ene_acc_swat_helmet" max_distance="0"/>
-					<material materials="mtr_glass" />
+					<material materials="mtr_glass" max_distance="1500" />
+					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 								

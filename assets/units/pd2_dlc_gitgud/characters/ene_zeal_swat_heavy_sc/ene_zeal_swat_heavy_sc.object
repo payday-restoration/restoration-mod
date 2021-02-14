@@ -239,7 +239,12 @@
 				</object>
 			</lod_object>
 			
-			<object name="g_helmet_lod3" enabled="true" />        
+			<lod_object name="lod_glass">
+				<object name="g_helmet_lod3" enabled="true"  max_distance="1500"  max_draw_lod="0" >
+					<material materials="mtr_glass" max_distance="1500" />
+					<material materials="mtr_glass_lod" />
+				</object>
+			</lod_object>			
 			
 			<object name="s_body" enabled="true" shadow_caster="true"/>        
 			<object name="s_head" enabled="true" shadow_caster="true"/>        

@@ -132,10 +132,6 @@
 	<!--NYPD PDTH model-->
 	<material_config path="units/vehicles/animated_cars/police_ny_noinstance" force="true" />
 	<material_config path="units/vehicles/animated_cars/police_ny_suburbia" force="true" />
-	<!--Pensacola / LAPD-->
-	<material_config path="units/pd2_dlc_pal/vehicles/str_vehicle_car_police_pensacola/str_vehicle_car_police_pensacola" force="true" />
-	<material_config path="units/pd2_dlc_rvd/vehicles/anim_vehicle_car_police_los_angeles" force="true" />		
-
 	
 	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
 	
@@ -570,29 +566,6 @@
 	
 	<material_config path="units/payday2/characters/ene_security_5/ene_security_5" force="true" />
 	<material_config path="units/payday2/characters/ene_security_5/ene_security_5_contour" force="true" />	
-	
-	
-	<!--LAPD Dudes-->	
-	<object path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1" />	
-	<model path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1" />	
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1" force="true" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1_contour" force="true" />
-	
-	<object path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2" />
-	<model path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2" />		
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2" force="true" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2_contour" force="true" />
-	
-	<object path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3" />
-	<model path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3" />			
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3" force="true" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3_contour" force="true" />
-	<!-- la cop .objects-->
-	<object path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4" />
-	<model path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4" />				
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4" force="true" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4_contour" force="true" />
-
 
 	<!-- material configs-->
 	<material_config path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1" />
@@ -627,19 +600,6 @@
 	<material_config path="units/payday2/characters/ene_cop_vars/ene_cop_var2_contour" />
 	<material_config path="units/payday2/characters/ene_cop_vars/ene_cop_var3" />
 	<material_config path="units/payday2/characters/ene_cop_vars/ene_cop_var3_contour" />
-	
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var1" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var1_contour" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var2" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var2_contour" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var3" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var3_contour" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var4" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var4_contour" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var5" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var5_contour" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var6" />
-	<material_config path="units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var6_contour" />
 	
 	<texture path="units/payday2/characters/shared_textures/heads_cop_df" />
 	<texture path="units/payday2/characters/shared_textures/heads_cop_nm" />

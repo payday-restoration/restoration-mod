@@ -116,7 +116,7 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 			aggressor_intimidation_mul = aggressor_intimidation_mul * managers.player:upgrade_value("player", "empowered_intimidation_mul", 1) * managers.player:upgrade_value("player", "intimidation_multiplier", 1)
 		elseif aggressor_base._is_team_ai then
 			aggressor_can_intimidate = true
-		else
+		elseif aggressor_base.upgrade_value then --Properly investigate issues in the future,
 			aggressor_can_intimidate = aggressor_base:upgrade_value("player", required_skill)
 			aggressor_intimidation_mul = aggressor_intimidation_mul * (aggressor_base:upgrade_value("player", "empowered_intimidation_mul") or 1) * (aggressor_base:upgrade_value("player", "intimidation_multiplier") or 1)
 		end

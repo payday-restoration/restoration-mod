@@ -403,7 +403,7 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	local wave_9_captain = math.random()
 
 	if wave_9_captain < 0.24 then --autumn
-		self.captain = "SKM_Cap_Autumn_w9"
+		self.captain = "SKM_Cap_Autumn_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.35
 		assault_groups.SKM_Heavy_Swat[10] = 0.25
 		assault_groups.SKM_Shields[10] = 0.14

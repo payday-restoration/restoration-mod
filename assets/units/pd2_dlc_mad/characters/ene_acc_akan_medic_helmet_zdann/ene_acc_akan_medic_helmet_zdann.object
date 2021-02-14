@@ -16,8 +16,11 @@
 
 	<graphics>
 		<lod_object name="g_helmet">
-			<object name="g_helmet" enabled="true"  max_distance="1000" />
-			<object name="g_helmet_lod1" enabled="true" />
+			<object name="g_helmet" enabled="true"/>
+			
+<!-- 			<object name="g_helmet" enabled="true"  max_distance="1000" />
+			<object name="g_helmet_lod1" enabled="true" />		 -->	
+			
 		</lod_object>
 	</graphics>
 	

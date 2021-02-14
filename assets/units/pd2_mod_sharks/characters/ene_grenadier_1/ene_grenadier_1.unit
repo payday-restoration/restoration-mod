@@ -23,6 +23,7 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
+			<var name="_head_gear_decal_mesh" value="dm_helmet" />						
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

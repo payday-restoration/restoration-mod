@@ -6623,13 +6623,13 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},	
 				lapd = {
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),
 					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),		
+					Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),		
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
 					Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")						
 				}				
@@ -6827,7 +6827,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 				},	
 				lapd = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 				}					
 			},
 			access = access_type_all
@@ -10123,7 +10123,7 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 				Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 			},	
 			lapd = {
-				Idstring("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1")
 			}					
 		},
 		access = access_type_all
@@ -10936,23 +10936,23 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
 			},	
 			lapd = {
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
-				Idstring("units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1"),
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle"),
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_rifle/ene_titan_rifle")
@@ -11037,14 +11037,14 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
 			},	
 			lapd = {
-				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),
-				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),	
-				Idstring("units/payday2/characters/ene_city_swat_2/ene_city_swat_2"),
-				Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3"),							
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3"),	
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun"),
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun")					
 			}					
@@ -11074,7 +11074,7 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 				Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
 			},
 			lapd = {
-				Idstring("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36")
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36")
 			}					
 		},
 		access = access_type_all
@@ -11276,33 +11276,33 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
 			},
 			lapd = {
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),		
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),	
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
-				Idstring("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),						
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),		
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),				
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper"),
 				Idstring("units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper")
@@ -11549,15 +11549,15 @@ if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday
 				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 			},	
 			lapd = {
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
-				Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
+				Idstring("units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield"),
 				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")								
 			}					
 		},

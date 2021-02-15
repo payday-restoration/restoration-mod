@@ -22,37 +22,92 @@ end
 
 function NewFlamethrowerBase:_update_stats_values()
 	NewFlamethrowerBase.super._update_stats_values(self)
-	self._damage_near = tweak_data.weapon[self._name_id].damage_near
-	self._damage_far = tweak_data.weapon[self._name_id].damage_far
 
+	--Set range multipliers.
+	self._damage_near_mul = 1
+	self._damage_far_mul = 2	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
 		if stats.damage_near_mul then
-			self._damage_near = self._damage_near + stats.damage_near_mul
+			self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
 		end
 		if stats.damage_far_mul then
-			self._damage_far = self._damage_far + stats.damage_far_mul
+			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
+		end
+
+		if stats.use_rare_dot then
+			self._ammo_data = {
+				bullet_class = "FlameBulletBase",
+				fire_dot_data = {
+					dot_damage = 0.8,
+					dot_trigger_chance = 60,
+					dot_length = 6.1,
+					dot_tick_period = 0.5
+				}
+			}
+		end
+
+		--Worst way to eat a steak, seriously what the fuck's wrong with you
+		if stats.use_well_done_dot then
+			self._ammo_data = {
+				bullet_class = "FlameBulletBase",
+				fire_dot_data = {
+					dot_damage = 3.2,
+					dot_trigger_chance = 60,
+					dot_length = 1.6,
+					dot_tick_period = 0.5
+				}					
+			}
 		end
 	end
-	self._range = self._damage_far
+
+
+	--Maximum range, set to longest possible falloff distance.
+	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * self._damage_far_mul
 end
 
 function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
-	local pm = managers.player
+	--Initialize base info.
+	local falloff_info = tweak_data.weapon.stat_info.shotgun_falloff
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
-	local inc_range_mul = 1
-	local inc_range_addend = 0
 	local current_state = user_unit:movement()._current_state
+	local falloff_far_mul = self._damage_near_mul
+	local falloff_near_mul = self._damage_far_mul
+	local base_falloff = falloff_info.base
 
-	if current_state and current_state:in_steelsight() then
-		inc_range_mul = pm:upgrade_value("shotgun", "steelsight_range_inc", 1)
+	if current_state then
+		--Get bonus from accuracy.
+		local acc_bonus = falloff_info.acc_bonus * (self._current_stats_indices.spread + managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) - 1)
+		
+		--Get bonus from stability.
+		local stab_bonus = falloff_info.stab_bonus * 25
+		if current_state._moving then
+			stab_bonus = falloff_info.stab_bonus * (self._current_stats_indices.recoil + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) - 1)
+		end
+
+		--Apply acc/stab bonuses.
+		base_falloff = base_falloff + stab_bonus + acc_bonus
+
+		--Get ADS multiplier.
+		if current_state:in_steelsight() and self._is_real_shotgun then
+			local range_mul = managers.player:upgrade_value("shotgun", "steelsight_range_inc", 1)
+			falloff_near_mul = falloff_near_mul * range_mul
+			falloff_far_mul = falloff_far_mul * range_mul
+		end
 	end
 
-	if current_state and not current_state._moving then
-		inc_range_addend = inc_range_addend + pm:upgrade_value("player", "not_moving_accuracy_increase", 0) * 75
-	end
-	
-	return (1 - math.min(1, math.max(0, distance - (self._damage_near + inc_range_addend) * inc_range_mul) / ((self._damage_far + 2*inc_range_addend) * inc_range_mul))) * damage
+	--Apply multipliers.
+	local falloff_near = base_falloff * falloff_near_mul
+	local falloff_far = base_falloff * falloff_far_mul
+
+	--Cache max distance that dot effects can be applied by the shotgun, rather than recalculating it redundantly.
+	--Min Distance used by Dragon's Breath/Flamethrowers to emulate falloff behavior, used by flechettes by adding to max to cover max real range.
+	--Used by Dragon's Breath, Flamethrowers, and Flechettes.
+	self.near_dot_distance = falloff_near
+	self.far_dot_distance = falloff_far
+
+	--Compute final damage.
+	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)
 end
 
 local mvec_temp = Vector3()

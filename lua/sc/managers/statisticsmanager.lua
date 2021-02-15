@@ -223,21 +223,7 @@ function StatisticsManager:init()
 			melee = 0,
 			explosion = 0,
 			tied = 0
-		}
-	self._defaults.killed.omnia = {
-			count = 0,
-			head_shots = 0,
-			melee = 0,
-			explosion = 0,
-			tied = 0
-		}			
-	self._defaults.killed.omnia_heavy = {
-			count = 0,
-			head_shots = 0,
-			melee = 0,
-			explosion = 0,
-			tied = 0
-		}		
+		}	
 	self._defaults.killed.autumn = {
 			count = 0,
 			head_shots = 0,

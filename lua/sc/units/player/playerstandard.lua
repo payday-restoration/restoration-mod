@@ -1356,8 +1356,15 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 			end
 		end
 	end
+	
+	--Failsafe so you can still shout at bots on FFD2 to stop a softlock
+	local can_intimidate_teammates = nil	
+	local job = Global.level_data and Global.level_data.level_id
+	if not managers.groupai:state():whisper_mode() or job == "framing_frame_2" then
+		can_intimidate_teammates = true
+	end
 
-	if intimidate_teammates then
+	if intimidate_teammates and can_intimidate_teammates then
 		local criminals = managers.groupai:state():all_char_criminals()
 
 		for u_key, u_data in pairs(criminals) do
@@ -1437,38 +1444,6 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 
 	return self:_get_intimidation_action(prime_target, char_table, intimidation_amount, primary_only, detect_only, secondary)
 end
-
-function PlayerStandard:interrupt_all_actions()
-	local t = TimerManager:game():time()
-
-	self:_interupt_action_reload(t)
-	self:_interupt_action_steelsight(t)
-	self:_interupt_action_running(t)
-	self:_interupt_action_charging_weapon(t)
-	self:_interupt_action_interact(t)
-	self:_interupt_action_ladder(t)
-	self:_interupt_action_melee(t)
-	self:_interupt_action_throw_grenade(t)
-	self:_interupt_action_throw_projectile(t)
-	self:_interupt_action_use_item(t)
-	self:_interupt_action_cash_inspect(t)
-end
-
---RAID minigames.  Disabled for the time being.
---[[Hooks:PostHook(PlayerStandard, "_start_action_interact", "RaidMinigameCheckInteraction", function(self, t, input, timer, object)
-	if alive(object) then
-		local name = object:interaction().tweak_data
-		local tweak = tweak_data.interaction[name]
-		if name ~= "open_door_with_keys" then -- Crashes & is not really lockpicking in the same sense.
-			if tweak and (tweak.is_lockpicking or tweak.special_interaction == "raid") then
-				game_state_machine:change_state_by_name("ingame_special_interaction", {object = object, type = tweak.special_interaction or "raid"})
-				self._interact_expire_t = nil
-				managers.hud:hide_interaction_bar()
-				object:interaction():_post_event(self._unit, "sound_interupt")
-			end
-		end
-	end
-end)]]--
 
 --Replace coroutine with a playermanager function. The coroutine had issues with randomly not being called- or not having values get reset, and overall being jank???
 function PlayerStandard:_find_pickups(t)

@@ -24,7 +24,7 @@
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />
-		<extension name="character_damage" class="HuskTankCopDamage" >
+		<extension name="character_damage" class="HuskTankMedicCopDamage" >
 			<var name="_head_body_name" value="head" />
 		</extension>
 		<extension name="movement" class="HuskCopMovement" >

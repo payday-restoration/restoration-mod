@@ -3,38 +3,52 @@ local tmp_vec1 = Vector3()
 function CopLogicIdle._turn_by_spin(data, my_data, spin)
 	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 	local mook_units = {
-		"weekend",
-		"weekend_dmr",
-		"weekend_lmg",
-		"skeleton_swat_titan",
-		"swat_titan",
-		"tank_titan",
-		"spooc_titan",
-		"taser_titan",
-		"boom_titan",
-		"city_swat_titan",
 		"security",
 		"security_undominatable",
+		"mute_security_undominatable",
+		"security_mex",
+		"security_mex_no_pager",
 		"cop",
 		"cop_scared",
 		"cop_female",
+		"dave",
 		"gensec",
 		"fbi",
+		"fbi_vet",
+		"fbi_vet_boss",
+		"meme_man",
+		"meme_man_shield",
+		"vetlod",
 		"swat",
+		"swat_titan",
 		"heavy_swat",
+		"heavy_swat_sniper",
+		"weekend_dmr",
 		"fbi_swat",
 		"fbi_heavy_swat",
 		"city_swat",
+		"city_swat_guard",
+		"weekend",
+		"city_swat_titan",
+		"city_swat_titan_assault",
+		"skeleton_swat_titan",
+		"weekend_lmg",
 		"gangster",
 		"biker",
+		"biker_guard",
 		"mobster",
 		"bolivian",
 		"bolivian_indoors",
 		"medic",
 		"taser",
+		"taser_titan",
+		"boom",
 		"spooc",
-		"spooc_heavy",
-		"shadow_spooc"
+		"spooc_titan",
+		"shadow_spooc",
+		"tank_mini",
+		"tank",
+		"tank_medic"
 	}
 	local is_mook = nil
 	for _, name in ipairs(mook_units) do
@@ -84,8 +98,7 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 		local i_am_special = managers.groupai:state():is_enemy_special(data.unit)
 		if i_am_special then
 			local mook_units = {
-				"fbi",
-				"fbi_xc45"
+				"fbi"
 			}
 			for _, name in ipairs(mook_units) do
 				if data.unit:base()._tweak_table == name then
@@ -103,7 +116,7 @@ function CopLogicIdle.on_intimidated(data, amount, aggressor_unit)
 			aggressor_intimidation_mul = aggressor_intimidation_mul * managers.player:upgrade_value("player", "empowered_intimidation_mul", 1) * managers.player:upgrade_value("player", "intimidation_multiplier", 1)
 		elseif aggressor_base._is_team_ai then
 			aggressor_can_intimidate = true
-		else
+		elseif aggressor_base.upgrade_value then --Properly investigate issues in the future,
 			aggressor_can_intimidate = aggressor_base:upgrade_value("player", required_skill)
 			aggressor_intimidation_mul = aggressor_intimidation_mul * (aggressor_base:upgrade_value("player", "empowered_intimidation_mul") or 1) * (aggressor_base:upgrade_value("player", "intimidation_multiplier") or 1)
 		end

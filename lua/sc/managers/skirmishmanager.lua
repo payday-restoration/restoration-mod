@@ -17,7 +17,7 @@ function SkirmishManager:do_kill()
 
 		if self._required_kills <= 0 then
 			if self:current_wave_number() == 9 then
-				groupai:force_skirmish_captain(tweak_data.skirmish.captain)
+				groupai:force_spawn_group_hard(tweak_data.skirmish.captain)
 				self._captain_active = true
 			else
 				groupai:force_end_assault_phase(true)

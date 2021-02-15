@@ -1,0 +1,11 @@
+<unit type="are" slot="1" >
+    <object file="units/pd2_dlc_arena/props/are_prop_security_button/are_prop_security_button" />
+    <network sync="spawn"/>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="damage" class="UnitDamage" />
+		<extension name="interaction" class="UseInteractionExt">
+			<var name="tweak_data" value="push_button" />
+		</extension>
+	</extensions>
+</unit>

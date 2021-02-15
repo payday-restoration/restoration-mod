@@ -163,6 +163,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		hlp = "buddy_died",
 		buddy_died = "buddy_died",
 		s01x = "surrender",
+		cn1 = "joker",
 		use_gas = "use_gas",
 		spawn = "spawn",
 		tasing = "tasing",
@@ -345,7 +346,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 			
 		if self._prefix == "f1n_" then
 			if sound_name == "x02a_any_3p" then
-				full_sound = "f1n_x01a_any_3p_01"
+				full_sound = "f1n_x01a_any_3p"
 			end
 		end
 			

@@ -5,18 +5,39 @@
 		<class file="hooks.lua"/>
 		<class file="ChallengesManager.lua"/>
         <class file="ChallengesTweakData.lua"/>
-		<class file="HUDRaidWW2MiniGame.lua"/>
-        <class file="RaidWW2MiniGame.lua"/>
-		<class file="Networking.lua"/>
 		<!-- <class file="radialmousemenu.lua"/> -->
     </Classes>
-	<AssetUpdates id="428" version="11" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
+	<AssetUpdates id="428" version="11.1" provider="modworkshop" use_local_dir="true" use_local_path="true"/>
 	<ScriptMods directory="scriptdata/menus">
 		<mod file="start_menu.xml" type="custom_xml" target_file="gamedata/menus/start_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
-		<mod file="faces.xml" type="custom_xml" target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge"/>				
-
+		<mod file="faces.xml" type="custom_xml" target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge"/>		
+		
+		<!-- i'm not recompiling every single fuckingsequence manager for these guys, fuck off i already dealt with the modded ones-->
+		
+		<!--normal bulldozers -->
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3" target_type="sequence_manager" merge_mode="script_merge"/>				
+						
+		<!-- russian bulldozers -->
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_saiga/ene_akan_fbi_tank_saiga" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_mad/characters/ene_akan_fbi_tank_rpk_lmg/ene_akan_fbi_tank_rpk_lmg" target_type="sequence_manager" merge_mode="script_merge"/>	
+		
+		<!--zombie bulldozers -->		
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_2/ene_bulldozer_hvh_2" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_3/ene_bulldozer_hvh_3" target_type="sequence_manager" merge_mode="script_merge"/>
+						
+		<!--policia federal bulldozers -->				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun" target_type="sequence_manager" merge_mode="script_merge"/>
+		<mod file="bulldozers.xml" type="custom_xml" target_file="units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale" target_type="sequence_manager" merge_mode="script_merge"/>		
 	</ScriptMods>	
+	
     <Hooks directory="lua">
 		<!--///RESTORATION HUD & UI\\\-->
 	    <hook file="tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
@@ -69,7 +90,6 @@
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
 		<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
-		<hook file="sc/managers/navigationmanager.lua" source_file="lib/managers/navigationmanager"/>
 		<hook file="sc/tweak_data/charactertweakdata.lua" source_file="lib/tweak_data/charactertweakdata"/>
 		<hook file="sc/network/matchmaking/networkmatchmakingsteam.lua" source_file="lib/network/matchmaking/networkmatchmakingsteam"/>
 		<hook file="sc/tweak_data/tweakdata.lua" source_file="lib/tweak_data/tweakdata"/>
@@ -146,6 +166,7 @@
 		<hook file="sc/units/enemies/actions/full_body/copactionact.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionact"/>
 		<hook file="sc/units/enemies/actions/full_body/copactiondodge.lua" source_file="lib/units/enemies/cop/actions/full_body/copactiondodge"/>
 		<hook file="sc/units/enemies/copbase.lua" source_file="lib/units/enemies/cop/copbase"/>
+		<hook file="sc/units/enemies/huskcopbase.lua" source_file="lib/units/enemies/cop/huskcopbase"/>
 		<hook file="sc/units/player_team/teamaimovement.lua" source_file="lib/units/player_team/teamaimovement"/>
 		<hook file="sc/units/player_team/huskteamaidamage.lua" source_file="lib/units/player_team/huskteamaidamage"/>
 		<hook file="sc/units/enemies/logics/coplogicinactive.lua" source_file="lib/units/enemies/cop/logics/coplogicinactive"/>
@@ -155,7 +176,6 @@
 		<hook file="sc/units/enemies/logics/coplogicbase.lua" source_file="lib/units/enemies/cop/logics/coplogicbase"/>
 		<hook file="sc/units/enemies/logics/coplogicidle.lua" source_file="lib/units/enemies/cop/logics/coplogicidle"/>
 		<hook file="sc/units/enemies/logics/coplogicattack.lua" source_file="lib/units/enemies/cop/logics/coplogicattack"/>
-		<hook file="sc/units/enemies/logics/coplogicarrest.lua" source_file="lib/units/enemies/cop/logics/coplogicarrest"/>
 		<hook file="sc/units/enemies/medicdamage.lua" source_file="lib/units/enemies/medic/medicdamage"/>
 		<hook file="sc/units/enemies/logics/tankcoplogicattack.lua" source_file="lib/units/enemies/tank/logics/tankcoplogicattack"/>
 		<hook file="sc/units/enemies/logics/taserlogicattack.lua" source_file="lib/units/enemies/taser/logics/taserlogicattack"/>
@@ -173,6 +193,7 @@
 		<hook file="sc/units/enemies/huskcopbrain.lua" source_file="lib/units/enemies/cop/huskcopbrain"/>
 		<hook file="sc/units/civilians/civilianbrain.lua" source_file="lib/units/civilians/civilianbrain"/>
 		<hook file="sc/units/civilians/civiliandamage.lua" source_file="lib/units/civilians/civiliandamage"/>
+		<hook file="sc/units/civilians/huskciviliandamage.lua" source_file="lib/units/civilians/huskciviliandamage"/>
 		<hook file="sc/units/enemies/huskcopdamage.lua" source_file="lib/units/enemies/cop/huskcopdamage"/>
 		<hook file="sc/utils/inventorydescription.lua" source_file="lib/utils/inventorydescription"/>
 		<hook file="sc/units/props/timergui.lua" source_file="lib/units/props/timergui"/>
@@ -183,6 +204,7 @@
 		<hook file="sc/player_actions/skills/playeractionexperthandling.lua" source_file="lib/player_actions/skills/playeractionexperthandling"/>
 		<hook file="sc/player_actions/skills/playeractionammoefficiency.lua" source_file="lib/player_actions/skills/playeractionammoefficiency"/>
 		<hook file="sc/player_actions/skills/playeractionunseenstrike.lua" source_file="lib/player_actions/skills/playeractionunseenstrike"/>
+		<hook file="sc/player_actions/skills/playeractiontagteam.lua" source_file="lib/player_actions/skills/playeractiontagteam"/>
 		<hook file="sc/units/equipment/ecmjammerbase.lua" source_file="lib/units/equipment/ecm_jammer/ecmjammerbase"/>
 		<hook file="sc/units/equipment/sentrygundamage.lua" source_file="lib/units/equipment/sentry_gun/sentrygundamage"/>
 		<hook file="sc/units/equipment/sentrygunequipment.lua" source_file="lib/units/equipment/sentry_gun/sentrygunequipment"/>
@@ -212,7 +234,6 @@
 		<hook file="sc/units/enemies/tankcopdamage.lua" source_file="lib/units/enemies/tank/tankcopdamage"/>
 		<hook file="sc/units/enemies/husktankcopdamage.lua" source_file="lib/units/enemies/tank/husktankcopdamage"/>
 		<hook file="sc/units/weapons/trip_mine/tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
-		<hook file="sc/units/equipment/ammobagbase.lua" source_file="lib/units/equipment/ammo_bag/ammobagbase"/>
 		<hook file="sc/units/weapons/concussiongrenade.lua" source_file="lib/units/weapons/grenades/concussiongrenade"/>
 		<hook file="sc/tweak_data/moneytweakdata.lua" source_file="lib/tweak_data/moneytweakdata"/>
 		<hook file="sc/units/contourext.lua" source_file="lib/units/contourext"/>
@@ -253,7 +274,6 @@
 		<hook file="sc/units/player/playerbase.lua" source_file="lib/units/beings/player/playerbase"/>
 		<hook file="sc/managers/mission/elementsecuritycamera.lua" source_file="lib/managers/mission/elementsecuritycamera"/>
 		<hook file="sc/managers/mission/elementaiglobalevent.lua" source_file="lib/managers/mission/elementaiglobalevent"/>
-		<hook file="sc/utils/game_state_machine/GSM.lua" source_file="lib/utils/game_state_machine/gamestatemachine"/>
 		<hook file="sc/entry.lua" source_file="lib/entry"/>
 		<hook file="sc/tweak_data/carrytweakdata.lua" source_file="lib/tweak_data/carrytweakdata"/>
 		<hook file="sc/managers/menu/menuscenemanager.lua" source_file="lib/managers/menu/menuscenemanager"/>
@@ -283,6 +303,7 @@
 		<hook file="sc/modifiers/new/modifierletstrygas.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifierdodgethis.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<hook file="sc/modifiers/new/modifierfriendlyfire.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
+		<hook file="sc/modifiers/new/modifier10secondsresponsetime.lua" source_file="lib/modifiers/modifierenemyhealthanddamage"/>
 		<!--///MUTATORS\\\-->
 		<hook file="sc/managers/mutatorsmanager.lua" source_file="lib/managers/mutatorsmanager"/>
 		<hook file="sc/mutators/mutatorcloakereffect.lua" source_file="lib/mutators/mutatorcloakereffect"/>
@@ -359,6 +380,7 @@
 					<option type="bool" default_value="false" name="StealthOrigPos"/>
 					<option type="bool" default_value="false" name="LowerBag"/>
 					<option type="bool" default_value="false" name="ArmorFix"/>
+					<option type="bool" default_value="false" name="VoiceIcon"/>
 					<!-- <option type="bool" default_value="false" name="CasingTicker"/> -->
 				</option_group>
 				<option_group name="UI">
@@ -435,7 +457,6 @@
 				<option type="bool" default_value="false" name="ClassicMovies"/>
 				<option type="bool" default_value="false" name="RestoreHitFlash"/>
 				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
-				<!-- <option type="bool" default_value="true" hidden="true" name="RaidLockPicking"/> -->
 				<option type="bool" default_value="true" name="QuietRain"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>

@@ -290,13 +290,14 @@ function SkillTreeTweakData:init(tweak_data)
 				[1] = {
 					upgrades = {
 						"player_convert_enemies",
+						"player_passive_convert_enemies_health_multiplier_1",
 						"player_convert_enemies_max_minions_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_convert_enemies_damage_multiplier_1",
+						"player_passive_convert_enemies_health_multiplier_2",
 						"player_convert_enemies_max_minions_2"
 					},
 					cost = self.costs.hightierpro
@@ -310,15 +311,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 10},
 				[1] = {
 					upgrades = {
-						"player_minion_master_speed_multiplier",
-						"player_passive_convert_enemies_health_multiplier_1"
+						"player_hostage_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_minion_master_health_multiplier",
-						"player_passive_convert_enemies_health_multiplier_2"
+						"player_hostage_health_multiplier"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1050,7 +1049,7 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Kickstarter--
 			self.skills.kick_starter = {
-				["name_id"] = "menu_kick_starter_beta",
+				["name_id"] = "menu_kick_starter_beta_sc",
 				["desc_id"] = "menu_kick_starter_beta_desc_sc",
 				["icon_xy"] = {9, 8},
 				[1] = {
@@ -1069,8 +1068,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Fire Trap--
 			self.skills.fire_trap = {
-				["name_id"] = "menu_fire_trap_beta",
-				["desc_id"] = "menu_fire_trap_beta_desc",
+				["name_id"] = "menu_fire_trap_beta_sc",
+				["desc_id"] = "menu_fire_trap_beta_desc_sc",
 				["icon_xy"] = {9, 9},
 				[1] = {
 					upgrades = {
@@ -1833,7 +1832,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {2, 9},
 				[1] = {
 					upgrades = {
-						"player_messiah_revive_from_bleed_out_1"
+						"player_messiah_revive_from_bleed_out_1",
+						"player_additional_lives_1"
 					},
 					cost = self.costs.hightier
 				},
@@ -2071,9 +2071,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_tier_armor_multiplier_1",
-					"player_tier_armor_multiplier_2",
-					"team_passive_armor_multiplier"
+					"player_tier_armor_multiplier_1"
 				},
 				cost = 2400,
 				icon_xy = {6, 0},
@@ -3216,7 +3214,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck20_1",
 				upgrades = {
 					"tag_team",
-					"player_tag_team_base",
+					"player_tag_team_base_1",
 					"player_tag_team_cooldown_drain_1"
 				},
 				icon_xy = {
@@ -3231,7 +3229,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_3_desc_sc",
 				name_id = "menu_deck20_3",
 				upgrades = {
-					"player_tag_team_cooldown_drain_2"
+					"player_tag_team_base_2"
 				},
 				icon_xy = {
 					0,
@@ -3245,7 +3243,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_5_desc_sc",
 				name_id = "menu_deck20_5",
 				upgrades = {
-					"player_tag_team_damage_absorption_1"
+					"player_tag_team_damage_absorption"
 				},
 				icon_xy = {
 					2,
@@ -3259,7 +3257,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_7_desc_sc",
 				name_id = "menu_deck20_7",
 				upgrades = {
-					"player_tag_team_damage_absorption_2"
+					"player_tag_team_base_3"
 				},
 				icon_xy = {
 					2,
@@ -3274,7 +3272,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck20_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_tag_team_cooldown_drain_3"
+					"player_tag_team_cooldown_drain_2"
 				},
 				icon_xy = {
 					0,

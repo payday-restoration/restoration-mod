@@ -38,13 +38,16 @@
 		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" mip="4"/>
 	</material>
 	
-	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE:TAKE_FOG" version="2">
+	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
         <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>
         <opacity_texture file="units/pd2_dlc_gitgud/characters/shared_textures/zomnia_glass_op"/>
         <diffuse_texture file="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
-        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>                
 	</material>
 	
+	<material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture 		file="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" mip="4"/>
+	</material>
+		
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

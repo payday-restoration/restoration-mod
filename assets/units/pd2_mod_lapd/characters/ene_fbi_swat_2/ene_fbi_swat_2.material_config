@@ -8,7 +8,7 @@
 		<diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" mip="1"/>
 	</material>
 	<material name="mtr_head_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" mip="4"/>
+		<bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" mip="4"/>	
 		<diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" mip="4"/>
 	</material>
 
@@ -21,7 +21,7 @@
 		<diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" mip="1"/>
 	</material>
 	<material name="mtr_swat_fbi_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
-		<bump_normal_texture file="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm" mip="4"/>
+		<bump_normal_texture file="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm" mip="4"/>	
 		<diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" mip="4"/>
 	</material>
 
@@ -34,7 +34,7 @@
 		<diffuse_texture 		file="units/pd2_mod_lapd/characters/shared_textures/opscore_df" mip="1"/>
 	</material>
 	<material name="mtr_helmet_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/pd2_mod_lapd/characters/shared_textures/opscore_nm" mip="4"/>
+		<bump_normal_texture 	file="units/pd2_mod_lapd/characters/shared_textures/opscore_nm" mip="4"/>	
 		<diffuse_texture 		file="units/pd2_mod_lapd/characters/shared_textures/opscore_df" mip="4"/>
 	</material>
 
@@ -49,6 +49,10 @@
         <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df"/>
         <reflection_texture type="cube" global_texture="current_global_texture"/>
     </material>	
+
+    <material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" mip="4"/>
+    </material>
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

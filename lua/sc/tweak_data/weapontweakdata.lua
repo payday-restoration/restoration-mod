@@ -306,38 +306,7 @@ function WeaponTweakData:_set_overkill_145()
 		self.swat_van_turret_module.SHIELD_HEALTH_INIT = 180
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
-	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}	
-	self.aa_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.crate_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}			
-	
-
+			
 	self.ceiling_turret_module.HEALTH_INIT = 675
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 90
 	self.ceiling_turret_module_no_idle.HEALTH_INIT = 675
@@ -362,37 +331,6 @@ function WeaponTweakData:_set_easy_wish()
 	end
 	self.swat_van_turret_module.BAG_DMG_MUL = 10
 
-	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}
-	self.aa_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}	
-	self.crate_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2},
-		{2000, 1},
-		{3000, 1}
-	}			
-	
 	self.ceiling_turret_module.HEALTH_INIT = 787.5
 	self.ceiling_turret_module.BAG_DMG_MUL = 10
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
@@ -421,37 +359,6 @@ function WeaponTweakData:_set_overkill_290()
 		self.swat_van_turret_module.AUTO_REPAIR = true
 	end
 	self.swat_van_turret_module.BAG_DMG_MUL = 10
-	
-	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.aa_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.crate_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
 	
 	self.ceiling_turret_module.HEALTH_INIT = 787.5
 	self.ceiling_turret_module.BAG_DMG_MUL = 10
@@ -485,36 +392,7 @@ function WeaponTweakData:_set_sm_wish()
 	end
 
 	self.swat_van_turret_module.BAG_DMG_MUL = 11.4375
-	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module_no_idle.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}
-	self.ceiling_turret_module_longer_range.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}	
-	self.aa_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}	
-	self.crate_turret_module.DAMAGE_MUL_RANGE = {
-		{1000, 2.3},
-		{1800, 2.1},
-		{3000, 1.05}
-	}			
+			
 	self.ceiling_turret_module.HEALTH_INIT = 900
 	self.ceiling_turret_module.BAG_DMG_MUL = 11.4375
 	self.ceiling_turret_module.SHIELD_HEALTH_INIT = 105
@@ -1106,7 +984,7 @@ end
 
 function WeaponTweakData:_init_data_swat_van_turret_module_npc()
 	self.swat_van_turret_module.name_id = "debug_sentry_gun"
-	self.swat_van_turret_module.DAMAGE = 1.8
+	self.swat_van_turret_module.DAMAGE = 2
 	self.swat_van_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
@@ -1186,7 +1064,7 @@ end
 
 function WeaponTweakData:_init_data_crate_turret_module_npc()
 	self.crate_turret_module.name_id = "debug_sentry_gun"
-	self.crate_turret_module.DAMAGE = 1.6
+	self.crate_turret_module.DAMAGE = 2
 	self.crate_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
@@ -1268,7 +1146,7 @@ end
 
 function WeaponTweakData:_init_data_ceiling_turret_module_npc()
 	self.ceiling_turret_module.name_id = "debug_sentry_gun"
-	self.ceiling_turret_module.DAMAGE = 1.6
+	self.ceiling_turret_module.DAMAGE = 2
 	self.ceiling_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
@@ -1348,7 +1226,7 @@ end
 
 function WeaponTweakData:_init_data_aa_turret_module_npc()
 	self.aa_turret_module.name_id = "debug_sentry_gun"
-	self.aa_turret_module.DAMAGE = 1.6
+	self.aa_turret_module.DAMAGE = 2
 	self.aa_turret_module.DAMAGE_MUL_RANGE = {
 		{1000, 1},
 		{2000, 1},
@@ -2783,6 +2661,13 @@ function WeaponTweakData:_init_stats()
 		steelsight = 0.6
 	}
 
+	self.stat_info.shotgun_falloff = {
+		base = 50,
+		max = 1350,
+		acc_bonus = 40,
+		stab_bonus = 20
+	}
+
 	--Recoil multiplier. Used for stability.
 	self.stats.recoil = {}
 	for i = 4, 0.49, -0.14 do
@@ -3601,10 +3486,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.saiga.stats_modifiers = nil
 	self.saiga.panic_suppression_chance = 0.05
+	self.saiga.reload_speed_multiplier = 1.25
 
 	--Ak5
 	self.ak5.auto.fire_rate = 0.08571428571
 	self.ak5.fire_mode_data.fire_rate = 0.08571428571
+	self.ak5.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ak5.kick = self.stat_info.kick_tables.moderate_right_kick
 	self.ak5.supported = true
 	self.ak5.stats = {
@@ -5401,15 +5288,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flamethrower_mk2.can_shoot_through_wall = false
 	self.flamethrower_mk2.kick = self.stat_info.kick_tables.horizontal_recoil
 	self.flamethrower_mk2.fire_dot_data = {
-		dot_damage = 1,
-		dot_trigger_max_distance = 999999,
-		dot_trigger_chance = 50,
+		dot_damage = 1.6,
+		dot_trigger_chance = 60,
 		dot_length = 3.1,
 		dot_tick_period = 0.5
 	}
 	self.flamethrower_mk2.supported = true
 	self.flamethrower_mk2.stats = {
-		damage = 25,
+		damage = 24,
 		spread = 7,
 		recoil = 23,
 		spread_moving = 6,
@@ -5469,7 +5355,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aa12.stats = {
 		damage = 45,
 		spread = 6,
-		recoil = 21,
+		recoil = 20,
 		spread_moving = 7,
 		zoom = 1,
 		concealment = 20,
@@ -6908,6 +6794,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		concealment = 24
 	}		
 	self.basset.stats_modifiers = nil
+	self.basset.reload_speed_multiplier = 1.25
 
 	--Disabled--	
 	--Akimbo Grimms
@@ -7902,15 +7789,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.system.can_shoot_through_wall = false
 	self.system.kick = self.stat_info.kick_tables.horizontal_recoil
 	self.system.fire_dot_data = {
-		dot_damage = 1,
-		dot_trigger_max_distance = 999999,
-		dot_trigger_chance = 50,
+		dot_damage = 1.6,
+		dot_trigger_chance = 60,
 		dot_length = 3.1,
 		dot_tick_period = 0.5
 	}
 	self.system.supported = true
 	self.system.stats = {
-		damage = 25,
+		damage = 24,
 		spread = 6,
 		recoil = 23,
 		spread_moving = 6,
@@ -8389,7 +8275,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		recoil = 7,
 		spread_moving = 9,
 		zoom = 1,
-		concealment = 28,
+		concealment = 18,
 		suppression = 3,
 		alert_size = 2,
 		extra_ammo = 101,
@@ -8759,7 +8645,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amr12.CAN_TOGGLE_FIREMODE = false
 		self.amr12.single = {}
 		self.amr12.single.fire_rate = 0.08571428571
-	self.amr12.kick = self.stat_info.kick_tables.vertical_kick
+		self.amr12.kick = self.stat_info.kick_tables.vertical_kick
 		self.amr12.supported = true
 		self.amr12.stats = {
 			damage = 30,
@@ -8777,6 +8663,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amr12.panic_suppression_chance = 0.05
 		self.amr12.stats_modifiers = {damage = 1}
 		self.amr12.swap_speed_multiplier = 1.2
+		self.amr12.reload_speed_multiplier = 1.25
 	end
 
 	if self.owen then -- Silent Enforcer's Owen Gun
@@ -9690,23 +9577,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hx25.stats_modifiers = {damage = 10}
 		self.hx25.reload_speed_multiplier = 1.25
 		self.hx25.swap_speed_multiplier = 1.25
-		self.hx25.damage_near = 500
-		self.hx25.damage_far = 1000
 	end
 
-	--Automatically generate reasonableish stats for custom weapons. Also sets damage falloff on shotguns.
+	--Automatically generate reasonableish stats for custom weapons.
 	for i, weap in pairs(self) do
 		if weap.categories then
 			if not weap.supported and weap.stats then
 				self:generate_custom_weapon_stats(weap)	
-			end
-
-			--Calculate shotgun falloff ranges.
-			for _, value in pairs(weap.categories) do
-				if value == "shotgun" and weap.stats then
-					weap.damage_near = 200 + 75 * (weap.stats.spread - 1)
-					weap.damage_far = weap.damage_near * 2
-				end
 			end
 		end
 	end

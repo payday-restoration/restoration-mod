@@ -11,8 +11,7 @@
 		</body>
 	</bodies>
 
-	<decal_surfaces default_material="steel_no_decal">
-	</decal_surfaces>
+	<decal_surfaces default_material="cloth"/>
 
 	<graphics>
 			<lod_object name="lod_ene_acc_swat_heavy_helmet">

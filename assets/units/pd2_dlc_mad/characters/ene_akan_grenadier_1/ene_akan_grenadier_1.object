@@ -3,14 +3,6 @@
 	<diesel materials="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" orientation_object="root_point" />
 	<sequence_manager file="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
-	<effects>
-		<effect_spawner name="fire_torso" enabled="false" object="Spine2" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_arm" enabled="false" object="RightForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_arm" enabled="false" object="LeftForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_leg" enabled="false" object="LeftLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_leg" enabled="false" object="RightLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-	</effects>
-
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Spine1"/>
@@ -23,6 +15,11 @@
 		<body name="mover_blocker" enabled="true" template="mover_blocker" keyframed="true" collision_class="ragdoll">
 			<object name="root_point"/>
 			<object name="c_capsule_mover_blocker" collision_type="capsule"/>
+		</body>
+		
+		<body name="body_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+			<object name="Spine1" />
+			<object name="c_body_plate" collision_type="capsule" />
 		</body>
 
 <!-- RAGDOLL -->
@@ -200,37 +197,78 @@
 
 	<decal_surfaces default_material="flesh" >
 		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+		<decal_mesh name="c_body_plate" enabled="false" material="heavy_swat_steel_no_decal" />
 	</decal_surfaces>
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
-            <lod_object name="lod_body">
-                <object name="g_body"       enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_body" max_distance="1000" />
-                </object>
-                <object name="g_body_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_body" max_distance="0"/>
-                </object>
-            </lod_object>
+			<lod_object name="lod_body">
+				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_body" max_distance="1000"/>
+					<material materials="mtr_body_lod1" max_distance="1500"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+				<object name="g_body_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_body_lod1" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_body_lod2"/>
+				</object>
+			</lod_object>
 
-			<object name="g_helmet_lod1" 	enabled="true" cpy_material_vars="contour_color, contour_opacity" />
+			<lod_object name="lod_head">
+				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1000"/>
+					<material materials="mtr_head_lod1" max_distance="1500"/>
+					<material materials="mtr_head_lod2"/>
+				</object>
+				<object name="g_head_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_head_lod1" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod2"/>
+				</object>
+			</lod_object>
 
-			<object name="g_helmet_lod2" 	enabled="true" cpy_material_vars="contour_color, contour_opacity" />
-	
+			<lod_object name="lod_helmet">
+				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_helmet_lod0" max_distance="1000"/>
+					<material materials="mtr_helmet_lod1" max_distance="1500"/>
+					<material materials="mtr_helmet_lod2"/>
+				</object>
+				<object name="g_helmet_lod2" 	enabled="true" lod="1" >
+					<material materials="mtr_helmet_lod1" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_helmet_lod2"/>
+				</object>
+			</lod_object>
+			
+			<lod_object name="lod_mask">
+				<object name="g_mask" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_mask" max_distance="1000"/>
+					<material materials="mtr_mask_lod1" max_distance="1500"/>
+					<material materials="mtr_mask_lod2"/>
+				</object>
+				<object name="g_mask_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_mask" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_mask_lod2"/>
+				</object>
+			</lod_object>
+			
+			<lod_object name="lod_glass">
+				<object name="g_glass" 	enabled="true"  max_distance="2000"  max_draw_lod="0">
+					<material materials="mtr_glass" max_distance="1500"/>
+					<material materials="mtr_glass_lod" />
+				</object>
+				<object name="g_glass_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_glass" max_distance="0"/>
+					<material materials="mtr_glass_lod" />					
+				</object>
+			</lod_object>			
+			
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-		</graphic_group>
-
-		<graphic_group name="head" enabled="true" culling_object="g_head">
 			
-            <object name="g_head"       enabled="true" cpy_material_vars="contour_color, contour_opacity" />
-			<object name="g_head_lod1"  enabled="false" cpy_material_vars="contour_color, contour_opacity" />
-			
-			<object name="s_head" enabled="true" shadow_caster="true"/>
 		</graphic_group>
-		
-		<object name="g_head_gore1" enabled="false" />
-		<object name="g_head_gore2" enabled="false" />
 	</graphics>
+	
+	<lights>
+		<light multiplier="identity" far_range="400" name="ls_light" enabled="true" type="spot|specular" />
+	</lights>
 
 </dynamic_object>

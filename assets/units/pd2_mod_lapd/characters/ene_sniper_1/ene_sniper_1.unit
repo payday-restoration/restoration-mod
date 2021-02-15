@@ -5,17 +5,17 @@
 
 	<dependencies>
 		
-		<depends_on bnk="soundbanks/regular_vox" />	
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" />		
-        <depends_on unit="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" />
+		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
+			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="sniper" />
 			<var name="_default_weapon_id" value="m14_sniper_npc" />
-			<var name="can_be_marked" value="true" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
@@ -23,7 +23,7 @@
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_cap" />
-			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" />
+			<var name="_head_gear" value="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />			
 		</extension>
 		<extension name="movement" class="CopMovement" >

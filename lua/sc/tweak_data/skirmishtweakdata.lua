@@ -233,12 +233,12 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0.3, --Wave 1
 			0.25, --Wave 2
 			0.22, --...
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
-			0.3,
+			0.32,
+			0.31,
+			0.32,
+			0.32,
+			0.32,
+			0.32,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		},
@@ -247,12 +247,12 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0.5, --Wave 1
 			0.4, --Wave 2
 			0.35, --...
-			0.25,
-			0.25,
-			0.2,
-			0.2,
-			0.2,
-			0.2,
+			0.27,
+			0.26,
+			0.22,
+			0.22,
+			0.22,
+			0.22,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		},	
@@ -261,12 +261,12 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0.2, --Wave 1
 			0.15, --Wave 2
 			0.13, --...
-			0.1,
-			0.1,
-			0.06,
-			0.06,
-			0.06,
-			0.06,
+			0.14,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
+			0.12,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		},
@@ -317,12 +317,12 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --Wave 1
 			0, --Wave 2
 			0, --...
-			0.1,
-			0.05,
-			0.045,
-			0.045,
-			0.045,
-			0.045,
+			0.02,
+			0.02,
+			0.015,
+			0.015,
+			0.015,
+			0.015,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		},
@@ -332,11 +332,11 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --Wave 2
 			0, --...
 			0,
-			0.05,
-			0.045,
-			0.045,
-			0.045,
-			0.045,
+			0.02,
+			0.015,
+			0.015,
+			0.015,
+			0.015,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		},
@@ -375,10 +375,10 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --...
 			0,
 			0,
-			0.045,
-			0.045,
-			0.045,
-			0.045,
+			0.015,
+			0.015,
+			0.015,
+			0.015,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		},
@@ -389,10 +389,10 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 			0, --...
 			0,
 			0,
-			0.015,
-			0.015,
-			0.015,
-			0.015,
+			0.005,
+			0.005,
+			0.005,
+			0.005,
 			0, --"Wave 10" (Inactive, needs map edits)
 			0  --Scales ever closer to over time post wave 10.
 		}
@@ -403,46 +403,46 @@ function SkirmishTweakData:_init_spawn_group_weights(tweak_data)
 	local wave_9_captain = math.random()
 
 	if wave_9_captain < 0.24 then --autumn
-		self.captain = "SKM_Cap_Autumn_w9"
+		self.captain = "SKM_Cap_Autumn_W9"
 		assault_groups.SKM_Light_Swat[10] = 0.35
-		assault_groups.SKM_Heavy_Swat[10] = 0.2
-		assault_groups.SKM_Shields[10] = 0.09
+		assault_groups.SKM_Heavy_Swat[10] = 0.25
+		assault_groups.SKM_Shields[10] = 0.14
 		assault_groups.SKM_Shields_Booms[10] = 0.01
 		assault_groups.SKM_Tazers[10] = 0.09
 		assault_groups.SKM_Booms[10] = 0.01
 		assault_groups.SKM_HRTs[10] = 0.1
-		assault_groups.SKM_BLACK_Tank[10] = 0.045
-		assault_groups.SKM_GREEN_Tank[10] = 0.045
-		assault_groups.SKM_SKULL_Tank[10] = 0.045
-		assault_groups.SKM_TIT_Tank[10] = 0.015
+		assault_groups.SKM_BLACK_Tank[10] = 0.015
+		assault_groups.SKM_GREEN_Tank[10] = 0.015
+		assault_groups.SKM_SKULL_Tank[10] = 0.015
+		assault_groups.SKM_TIT_Tank[10] = 0.005
 		assault_groups.SKM_single_spooc[10] = 0.0
 	elseif wave_9_captain < 0.48 then --summers
 		self.captain = "SKM_Cap_Summers_W9"
-		assault_groups.SKM_Light_Swat[10] = 0.35
-		assault_groups.SKM_Heavy_Swat[10] = 0.3
-		assault_groups.SKM_Shields[10] = 0.03
+		assault_groups.SKM_Light_Swat[10] = 0.37
+		assault_groups.SKM_Heavy_Swat[10] = 0.31
+		assault_groups.SKM_Shields[10] = 0.05
 		assault_groups.SKM_Shields_Booms[10] = 0.02
 		assault_groups.SKM_Tazers[10] = 0.03
 		assault_groups.SKM_Booms[10] = 0.02
 		assault_groups.SKM_HRTs[10] = 0.15
-		assault_groups.SKM_BLACK_Tank[10] = 0.0225
-		assault_groups.SKM_GREEN_Tank[10] = 0.0225
-		assault_groups.SKM_SKULL_Tank[10] = 0.0225
-		assault_groups.SKM_TIT_Tank[10] = 0.0225
+		assault_groups.SKM_BLACK_Tank[10] = 0.0075
+		assault_groups.SKM_GREEN_Tank[10] = 0.0075
+		assault_groups.SKM_SKULL_Tank[10] = 0.0075
+		assault_groups.SKM_TIT_Tank[10] = 0.0025
 		assault_groups.SKM_single_spooc[10] = 0.025
 	elseif wave_9_captain < 0.72 then --winters
 		self.captain = "SKM_Cap_Winters_W9"
-		assault_groups.SKM_Light_Swat[10] = 0.3
-		assault_groups.SKM_Heavy_Swat[10] = 0.2
+		assault_groups.SKM_Light_Swat[10] = 0.35
+		assault_groups.SKM_Heavy_Swat[10] = 0.25
 		assault_groups.SKM_Shields[10] = 0.0
 		assault_groups.SKM_Shields_Booms[10] = 0.0
 		assault_groups.SKM_Tazers[10] = 0.06
 		assault_groups.SKM_Booms[10] = 0.04
 		assault_groups.SKM_HRTs[10] = 0.2
-		assault_groups.SKM_BLACK_Tank[10] = 0.045
-		assault_groups.SKM_GREEN_Tank[10] = 0.045
-		assault_groups.SKM_SKULL_Tank[10] = 0.045
-		assault_groups.SKM_TIT_Tank[10] = 0.015
+		assault_groups.SKM_BLACK_Tank[10] = 0.015
+		assault_groups.SKM_GREEN_Tank[10] = 0.015
+		assault_groups.SKM_SKULL_Tank[10] = 0.015
+		assault_groups.SKM_TIT_Tank[10] = 0.005
 		assault_groups.SKM_single_spooc[10] = 0.05
 	elseif wave_9_captain < 0.96 then --spring
 		self.captain = "SKM_Cap_Spring_W9"

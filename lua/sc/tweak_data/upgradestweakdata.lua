@@ -453,6 +453,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.small_loot_multiplier = {1.3, 1.3}
 	self.values.player.melee_kill_snatch_pager_chance = {1}
 	self.values.player.run_speed_multiplier = {1.25}
+	self.values.player.walk_speed_multiplier = {
+		1.25
+	}
+	self.values.player.crouch_speed_multiplier = {
+		1.1,
+		1.2
+	}	
 	self.values.player.climb_speed_multiplier = {1.2, 1.75}
 	self.values.player.can_free_run = {true}
 	self.values.player.fall_health_damage_multiplier = {0}
@@ -543,6 +550,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						1, --Basic
 						2 --Ace
 					}
+					--Says health multiplier, but actually multiplies damage taken.
+					self.values.player.passive_convert_enemies_health_multiplier = {
+						0.4, --Basic
+						0.2 --Ace
+					}					
 					--Basic
 						self.values.player.convert_enemies = {true}
 					--Ace
@@ -557,15 +569,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.civilian_gives_ammo = {true}
 
 				--Partners in Crime--
-					--Says health multiplier, but actually multiplies damage taken.
-					self.values.player.passive_convert_enemies_health_multiplier = {
-						0.5, --Basic
-						0.2 --Ace
-					}
 					--Basic
-						self.values.player.minion_master_speed_multiplier = {1.05}
+						self.values.player.hostage_speed_multiplier = {1.03}
 					--Ace
-						self.values.player.minion_master_health_multiplier = {1.15}
+						self.values.player.hostage_health_multiplier = {1.1}
 							
 				--Hostage Taker
 					self.values.player.hostage_health_regen_addend = {
@@ -644,7 +651,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Basic
 					self.values.shotgun.steelsight_accuracy_inc = {0.6}
 				--Ace
-					self.values.shotgun.steelsight_range_inc = {1.5}
+					self.values.shotgun.steelsight_range_inc = {1.4}
 
 			--Close By
 				--Basic
@@ -786,8 +793,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					--Basic
 						self.values.player.unpierceable_armor = {true}
 					--Ace
-						self.values.player.armor_full_damage_absorb = {0.25}
-						self.values.player.armor_regen_timer_multiplier_tier = {0.9}				
+						self.values.player.armor_full_damage_absorb = {0.3}
+						self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
 			
 		--Breacher--
 			--Hardware Expert
@@ -1346,7 +1353,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		stamina = 4,
 		damage_dampener = 1
 	}
-	self.values.team.health.hostage_multiplier = {1.025}
+	self.values.team.health.hostage_multiplier = {1.05}
 	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
 		0.05,
@@ -1557,21 +1564,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
 	self.cocaine_stacks_convert_levels = {
-		300,
-		240
+		400,
+		300
 	}	
 	self.cocaine_stacks_dmg_absorption_value = 0.1
 	self.cocaine_stacks_tick_t = 0
 	self.max_cocaine_stacks_per_tick = 2400
 	self.max_total_cocaine_stacks = 2400
 	self.cocaine_stacks_decay_t = 8
-	self.cocaine_stacks_decay_amount_per_tick = 300
+	self.cocaine_stacks_decay_amount_per_tick = 400
 	self.cocaine_stacks_decay_percentage_per_tick = 0
 	self.values.player.cocaine_stacking = {1}
 	self.values.player.sync_cocaine_stacks = {true}
-	self.values.player.cocaine_stacks_decay_multiplier = {0.8}
+	self.values.player.cocaine_stacks_decay_multiplier = {0.75}
 	self.values.player.sync_cocaine_upgrade_level = {2}
-	self.values.player.cocaine_stack_absorption_multiplier = {1.5}
+	self.values.player.cocaine_stack_absorption_multiplier = {2}
 	
 	--Chico--
 	--kingpin
@@ -1673,37 +1680,50 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 1.5,
+			kill_health_gain = 0.8,
 			radius = 0.6,
 			distance = 18,
-			kill_extension = 2,
-			duration = 12,
-			tagged_health_gain_ratio = 0.5
+			kill_duration = 0,
+			kill_dropoff = 0,
+			duration = 11,
+			tagged_health_gain_ratio = 0.625
+		},
+		{
+			kill_health_gain = 0.8,
+			radius = 0.6,
+			distance = 18,
+			kill_duration = 2,
+			kill_dropoff = 0.2,
+			duration = 11,
+			tagged_health_gain_ratio = 0.625
+		},
+		{
+			kill_health_gain = 1.6,
+			radius = 0.6,
+			distance = 18,
+			kill_duration = 2,
+			kill_dropoff = 0.2,
+			duration = 11,
+			tagged_health_gain_ratio = 0.625
 		}
-	}	
+	}
+
 	self.values.player.tag_team_cooldown_drain = {
 		{
 			tagged = 0,
 			owner = 0
-		},	
-		{
-			tagged = 0,
-			owner = 2
 		},
 		{
 			tagged = 2,
 			owner = 2
 		}
 	}
+
 	self.values.player.tag_team_damage_absorption = {
 		{
 			kill_gain = 0.05,
-			max = 2
-		},
-		{
-			kill_gain = 0.1,
-			max = 2
-		}		
+			max = 0.8
+		}	
 	}	
 	
 	--Hacker
@@ -2096,6 +2116,33 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_tag_team_base_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
+	self.definitions.player_tag_team_base_2 = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
+	self.definitions.player_tag_team_base_3 = {
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
 	self.definitions.player_tag_team_cooldown_drain_1 = {
 		category = "feature",
 		upgrade = {
@@ -2112,14 +2159,6 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.player_tag_team_cooldown_drain_3 = {
-		category = "feature",
-		upgrade = {
-			value = 3,
-			upgrade = "tag_team_cooldown_drain",
-			category = "player"
-		}
-	}		
 	self.definitions.player_passive_health_multiplier_5 = {
 		category = "feature",
 		name_id = "menu_player_health_multiplier",
@@ -2428,18 +2467,10 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
-	self.definitions.player_tag_team_damage_absorption_1 = {
+	self.definitions.player_tag_team_damage_absorption = {
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "tag_team_damage_absorption",
-			category = "player"
-		}
-	}	
-	self.definitions.player_tag_team_damage_absorption_2 = {
-		category = "feature",
-		upgrade = {
-			value = 2,
 			upgrade = "tag_team_damage_absorption",
 			category = "player"
 		}
@@ -2563,6 +2594,24 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "hostage_health_regen_max_mult",
+			category = "player"
+		}
+	}
+	self.definitions.player_hostage_health_multiplier = {
+		name_id = "menu_player_hostage_health_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hostage_health_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_hostage_speed_multiplier = {
+		name_id = "menu_player_hostage_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hostage_speed_multiplier",
 			category = "player"
 		}
 	}

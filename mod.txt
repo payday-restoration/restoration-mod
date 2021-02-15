@@ -3,7 +3,7 @@
  "description" : "This restores many HUD, Menu, and other functionality that were abandoned before the release of PAYDAY 2.",
  "author" : "Rhynne, DoktorAkcel, SC, & The Restoration Mod Crew",
  "contact" : "Join the official Steam group",
- "version" : "11",
+ "version" : "11.1",
  "priority" : 46,
  "blt_version" : 2,
  "image" : "res.png",
@@ -46,6 +46,10 @@
 		{
 			"hook_id" : "lib/managers/group_ai_states/groupaistatebase"
 			"script_path" : "lua/sc/managers/groupaistatebase.lua"
+		},
+		{
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebesiege"
+			"script_path" : "lua/sc/managers/groupaistatebesiege.lua"
 		},
 		{
 			"hook_id" : "lib/managers/playermanager"

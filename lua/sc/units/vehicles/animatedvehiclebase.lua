@@ -9,10 +9,9 @@ Hooks:PostHook(AnimatedVehicleBase, "set_enabled", "woohoo_wow", function(self, 
 	local difficulty = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("change_material_to_murkywater") and faction == "murkywater" then
-			self._unit:damage():run_sequence_simple("change_material_to_murkywater")
+		self._unit:damage():run_sequence_simple("change_material_to_murkywater")
+	elseif self._unit:damage() and self._unit:damage():has_sequence("change_material_to_mexican") and faction == "federales"  then
+		self._unit:damage():run_sequence_simple("change_material_to_mexican")	
 	end
 	
-	--[[if self._unit:damage() and self._unit:damage():has_sequence("change_material_to_mexican") and difficulty > 5 then
-				self._unit:damage():run_sequence_simple("change_material_to_mexican")	
-	end--]]
 end)

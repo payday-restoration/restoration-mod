@@ -146,10 +146,20 @@ function CopDamage:damage_fire(attack_data)
 		end
 	end
 
-	if self._char_tweak.damage.fire_damage_mul then
-		damage = damage * self._char_tweak.damage.fire_damage_mul
+	--Allows seperate damage mults for fire pools and fire damage.
+	if alive(weap_unit) then
+		local weap_base = weap_unit:base()
+		if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "environment_fire" then
+			if self._char_tweak.damage.fire_pool_damage_mul then
+				damage = damage * self._char_tweak.damage.fire_pool_damage_mul
+			end	
+		else
+			if self._char_tweak.damage.fire_damage_mul then
+				damage = damage * self._char_tweak.damage.fire_damage_mul
+			end	
+		end	
 	end
-
+		
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
 
@@ -274,9 +284,13 @@ function CopDamage:damage_fire(attack_data)
 	end
 
 	local weapon_unit = weap_unit
-
-	if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
-		weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+	local weap_base = nil
+	
+	if alive(weapon_unit) and weapon_unit.base then
+		weap_base = weapon_unit:base() 
+		if weap_base and weap_base.add_damage_result then
+			weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+		end
 	end
 
 	if not attack_data.is_fire_dot_damage and attack_data.fire_dot_data and result.type ~= "death" then --DoT never triggers an animation so it shouldn't constantly micro-stun enemies that are vulnerable to fire
@@ -297,11 +311,16 @@ function CopDamage:damage_fire(attack_data)
 				distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
 			end
 
-			local fire_dot_max_distance = tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
+			local fire_dot_max_distance = weap_base and weap_base.far_dot_distance and weap_base.far_dot_distance + weap_base.near_dot_distance or tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
 
 			if distance < fire_dot_max_distance then
 				local start_dot_damage_roll = math.random(1, 100)
 				local fire_dot_trigger_chance = tonumber(fire_dot_data.dot_trigger_chance) or 30
+
+				--Dragon's breath trigger chance scales with range.
+				if weap_base and weap_base.far_dot_distance then
+					fire_dot_trigger_chance = (1 - math.min(1, math.max(0, distance - weap_base.near_dot_distance) / weap_base.far_dot_distance)) * fire_dot_trigger_chance
+				end
 
 				if start_dot_damage_roll <= fire_dot_trigger_chance then
 					local dot_damage = fire_dot_data.dot_damage or 25
@@ -588,52 +607,15 @@ function CopDamage:damage_bullet(attack_data)
 			end
 
 			if armor_pierce_value <= armor_pierce_roll then
-				local result_type = nil
-
-				if not self._char_tweak.immune_to_knock_down then
-					if attack_data.knock_down then
-						result_type = "knock_down"
-					elseif attack_data.stagger and not self._has_been_staggered then
-						result_type = "stagger"
-						self._has_been_staggered = true
-					end
-				end
-
-				if not result_type then
-					local damage = attack_data.damage
-					damage = math.clamp(damage, 0, self._HEALTH_INIT)
-					local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
-					damage = damage_percent * self._HEALTH_INIT_PRECENT
-					damage, damage_percent = self:_apply_min_health_limit(damage, damage_percent)
-
-					result_type = self:get_damage_type(damage_percent, "bullet")
-				end
-
-				attack_data.damage = 0
-				attack_data.raw_damage = 0
-
-				local result = {
-					type = result_type,
-					variant = attack_data.variant
-				}
-
-				attack_data.result = result
-				attack_data.pos = attack_data.col_ray.position
-
-				local body_index = self._unit:get_body_index(attack_data.col_ray.body:name())
-				local hit_offset_height = math.clamp(attack_data.col_ray.position.z - self._unit:position().z, 0, 300)
-				local attacker = attack_data.attacker_unit
-
-				if not attacker or not alive(attacker) or attacker:id() == -1 then
-					attacker = self._unit
-				end
-
-				self:_send_bullet_attack_result(attack_data, attacker, 0, body_index, hit_offset_height, 0)
-				self:_on_damage_received(attack_data)
-
-				result.attack_data = attack_data
-
-				return result
+				World:effect_manager():spawn({
+					effect = Idstring("effects/payday2/particles/impacts/steel_no_decal_impact_pd2"),
+					position = attack_data.col_ray.position,
+					normal = attack_data.col_ray.ray
+				})			
+				--Fucking loud, can be subject to change. Just the only sound ID I found on short notice
+				self._unit:sound():play("swatturret_weakspot_hit", nil, nil)
+			
+				return
 			end
 
 			World:effect_manager():spawn({
@@ -1156,6 +1138,10 @@ function CopDamage:damage_melee(attack_data)
 			damage_effect = self._health * 10
 		end
 	end
+	
+	if self._char_tweak.damage.melee_damage_mul then
+		damage = damage * self._char_tweak.damage.melee_damage_mul
+	end		
 
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul

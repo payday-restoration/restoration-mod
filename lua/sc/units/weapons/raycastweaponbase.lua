@@ -21,6 +21,7 @@ end
 
 function RaycastWeaponBase:setup(...)
 	setup_original(self, ...)
+	
 	--self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(16)
 
 	--Use stability stat to get the moving accuracy penalty.
@@ -48,14 +49,120 @@ function RaycastWeaponBase:setup(...)
 		end
 	end
 	self._shots_without_releasing_trigger = 0
-
-	self._ammo_overflow = 0 --Amount of non-integer ammo picked up.
 end
 
 --Fire no longer memes on shields.
 function FlameBulletBase:bullet_slotmask()
 	return managers.slot:get_mask("bullet_impact_targets")
 end	
+
+--Add shield knocking to FlameBulletBase
+function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank)
+	if Network:is_client() and not blank and user_unit ~= managers.player:player_unit() then
+		blank = true
+	end
+
+	local hit_unit = col_ray.unit
+	local is_shield = hit_unit:in_slot(managers.slot:get_mask("enemy_shield_check")) and alive(hit_unit:parent())
+
+	--Give DB Shield Knock if the player has the skill.
+	if alive(weapon_unit) and is_shield and weapon_unit:base()._shield_knock then
+		local enemy_unit = hit_unit:parent()
+
+		if enemy_unit:character_damage() and enemy_unit:character_damage().dead and not enemy_unit:character_damage():dead() then
+			if enemy_unit:base():char_tweak() then
+				if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
+					local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
+					if weapon_unit:base()._is_team_ai then
+						knock_chance = knock_chance * 0.25 --Bots have reduced knock chances. Usually hovers around 10%, weapons like the Thanatos cap around 25%.
+					end
+
+					if knock_chance > math.random() then
+						local damage_info = {
+							damage = 0,
+							type = "shield_knock",
+							variant = "melee",
+							col_ray = col_ray,
+							result = {
+								variant = "melee",
+								type = "shield_knock"
+							}
+						}
+
+						enemy_unit:character_damage():_call_listeners(damage_info)
+					end
+				end
+			end
+		end
+	end
+
+	if hit_unit:damage() and managers.network:session() and col_ray.body:extension() and col_ray.body:extension().damage then
+		local damage_body_extension = true
+		local character_unit = nil
+
+		if hit_unit:character_damage() then
+			character_unit = hit_unit
+		elseif is_shield and hit_unit:parent():character_damage() then
+			character_unit = hit_unit:parent()
+		end
+
+		if character_unit and character_unit:character_damage().is_friendly_fire and character_unit:character_damage():is_friendly_fire(user_unit) then
+			damage_body_extension = false
+		end
+
+		--do a friendly fire check if the unit hit is a character or a character's shield before damaging the body extension that was hit
+		if damage_body_extension then
+			local sync_damage = not blank and hit_unit:id() ~= -1
+			local network_damage = math.ceil(damage * 163.84)
+			damage = network_damage / 163.84
+
+			if sync_damage then
+				local normal_vec_yaw, normal_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.normal, 128, 64)
+				local dir_vec_yaw, dir_vec_pitch = self._get_vector_sync_yaw_pitch(col_ray.ray, 128, 64)
+
+				managers.network:session():send_to_peers_synched("sync_body_damage_bullet", col_ray.unit:id() ~= -1 and col_ray.body or nil, user_unit:id() ~= -1 and user_unit or nil, normal_vec_yaw, normal_vec_pitch, col_ray.position, dir_vec_yaw, dir_vec_pitch, math.min(16384, network_damage))
+			end
+
+			local local_damage = not blank or hit_unit:id() == -1
+
+			if local_damage then
+				col_ray.body:extension().damage:damage_bullet(user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
+				col_ray.body:extension().damage:damage_damage(user_unit, col_ray.normal, col_ray.position, col_ray.ray, damage)
+
+				if alive(weapon_unit) and weapon_unit:base().categories and weapon_unit:base():categories() then
+					for _, category in ipairs(weapon_unit:base():categories()) do
+						col_ray.body:extension().damage:damage_bullet_type(category, user_unit, col_ray.normal, col_ray.position, col_ray.ray, 1)
+					end
+				end
+			end
+		end
+	end
+
+	local result = nil
+
+	if alive(weapon_unit) and hit_unit:character_damage() and hit_unit:character_damage().damage_fire then
+		local is_alive = not hit_unit:character_damage():dead()
+		result = self:give_fire_damage(col_ray, weapon_unit, user_unit, damage)
+
+		if not is_dead then
+			if not result or result == "friendly_fire" then
+				play_impact_flesh = false
+			end
+		end
+
+		local push_multiplier = self:_get_character_push_multiplier(weapon_unit, is_alive and is_dead)
+		managers.game_play_central:physics_push(col_ray, push_multiplier)
+	else
+		managers.game_play_central:physics_push(col_ray)
+	end
+
+	--Play Impact flesh is never true on fire bullets. No need for this conditional.
+
+	--DB Always plays impact sound and effects.
+	self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+
+	return result
+end
 
 --Minor fixes and making Winters unpiercable.
 function RaycastWeaponBase:_collect_hits(from, to)
@@ -124,7 +231,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 						knock_chance = knock_chance * 0.25 --Bots have reduced knock chances. Usually hovers around 10%, weapons like the Thanatos cap around 25%.
 					end
 
-					if knock_chance < math.random() then
+					if knock_chance > math.random() then
 						local damage_info = {
 							damage = 0,
 							type = "shield_knock",
@@ -231,7 +338,7 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			return false, 0
 		end
 
-		local ammo_gained_raw = add_amount_override or math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) * (ratio or 1) + self._ammo_overflow
+		local ammo_gained_raw = add_amount_override or math.lerp(ammo_base._ammo_pickup[1], ammo_base._ammo_pickup[2], math.random()) * (ratio or 1) + (ammo_base._ammo_overflow or 0)
 		if ammo_gained_raw <= 0 then --Handle weapons with 0 pickup.
 			return false, 0
 		end
@@ -244,7 +351,7 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			ammo_gained = ammo_gained + akimbo_rounding
 		end
 
-		self._ammo_overflow = math.max(ammo_gained_raw - ammo_gained, 0)
+		ammo_base._ammo_overflow = math.max(ammo_gained_raw - ammo_gained, 0)
 		ammo_base:set_ammo_total(math.clamp(ammo_base:get_ammo_total() + ammo_gained, 0, ammo_base:get_ammo_max()))
 		return true, ammo_gained
 	end
@@ -694,7 +801,7 @@ end
 BleedBulletBase = BleedBulletBase or class(DOTBulletBase)
 BleedBulletBase.VARIANT = "bleed"
 ProjectilesBleedBulletBase = ProjectilesBleedBulletBase or class(BleedBulletBase)
-ProjectilesBleedBulletBase.NO_BULLET_INPACT_SOUND = true
+ProjectilesBleedBulletBase.NO_BULLET_INPACT_SOUND = false
 
 --Allow easier hotloading of data.
 function ProjectilesBleedBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank)
@@ -723,9 +830,29 @@ function ProjectilesBleedBulletBase:on_collision(col_ray, weapon_unit, user_unit
 	return result
 end
 
+function BleedBulletBase:start_dot_damage(col_ray, weapon_unit, dot_data, weapon_id)
+	dot_data = dot_data or self.DOT_DATA
+	local hurt_animation = not dot_data.hurt_animation_chance or math.rand(1) < dot_data.hurt_animation_chance
+
+	--Add range limits for Flechette shotguns.
+	local can_apply_dot = true
+	if alive(weapon_unit) then
+		weap_base = weapon_unit:base()
+		if weap_base.near_dot_distance then
+			can_apply_dot = weap_base.far_dot_distance + weap_base.near_dot_distance > (col_ray.distance or 0)
+		end
+	end
+
+	if can_apply_dot == true then
+		managers.dot:add_doted_enemy(col_ray.unit, TimerManager:game():time(), weapon_unit, dot_data.dot_length, dot_data.dot_damage, hurt_animation, self.VARIANT, weapon_id)
+ 	end
+end
+
+
 --Adds a blood splat effect every time the bleed deals damage.
 function BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, damage, hurt_animation, weapon_id)
-	if alive(col_ray.unit) and col_ray.unit.movement and col_ray.unit:movement()._obj_spine then
+	--Movement() can return nil, but can also itself be nil. Very fun!
+	if alive(col_ray.unit) and col_ray.unit.movement and col_ray.unit:movement() and col_ray.unit:movement()._obj_spine then
 		World:effect_manager():spawn({
 			effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
 			position = col_ray.unit:movement()._obj_spine:position(),

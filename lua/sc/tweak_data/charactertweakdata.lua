@@ -3074,6 +3074,7 @@ function CharacterTweakData:_init_civilian(presets)
 	self.civilian.damage = {
 		hurt_severity = presets.hurt_severities.no_hurts
 	}
+	self.civilian.flammable = false
 	self.civilian.ecm_vulnerability = nil
 	self.civilian.ecm_hurts = {
 		ears = {min_duration = 0, max_duration = 0}
@@ -3134,6 +3135,7 @@ function CharacterTweakData:_init_bank_manager(presets)
 	self.bank_manager.damage = {
 		hurt_severity = presets.hurt_severities.no_hurts
 	}
+	self.bank_manager.flammable = false
 	self.bank_manager.ecm_vulnerability = nil
 	self.bank_manager.ecm_hurts = {
 		ears = {min_duration = 0, max_duration = 0}

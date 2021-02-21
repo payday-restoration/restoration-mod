@@ -1,8 +1,10 @@
 <materials version="3">
-    <material name="lambert1" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS" version="2">
-        <diffuse_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_lod_df"/>
+    <material name="lambert1" render_template="generic" version="2"/>
+    <material name="mtr_g36_npc" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_df"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_nm"/>
     </material>
     <material name="weapon_lod1" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS" version="2">
-        <diffuse_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_lod_df"/>
+        <diffuse_texture file="units/payday2/weapons/wpn_npc_oicw/oicw_df"/>
     </material>
 </materials>

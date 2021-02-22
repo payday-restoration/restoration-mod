@@ -36,29 +36,7 @@
 							
 						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
 						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										
-					</sequence>
-						
-				<!-- lapd -->
-					<sequence editable_state="true" once="true" triggable="true" name="'pick_mats_for_lacop_1_4'">        
-						<set_variables var_pick_head_b="rand()*100"/>
-						<material_config filter="'filter_pick_head_a'" name="'units/pd2_dlc_rvd/characters/'..pick('ene_la_cop_1/ene_la_cop_1','ene_la_cop_4/ene_la_cop_4','ene_la_cop_vars/ene_la_cop_var1','ene_la_cop_vars/ene_la_cop_var2')"/>
-							
-						<material_config filter="'filter_pick_head_b'" name="'units/pd2_dlc_rvd/characters/'..pick('ene_la_cop_vars/ene_la_cop_var3','ene_la_cop_vars/ene_la_cop_var4')"/>
-							
-						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
-						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										
-					</sequence>
-					
-					<sequence editable_state="true" once="true" triggable="true" name="'pick_mats_for_lacop_2_3'">        
-						<set_variables var_pick_head_b="rand()*100"/>
-							
-						<material_config filter="'filter_pick_head_a'" name="'units/pd2_dlc_rvd/characters/'..pick('ene_la_cop_1/ene_la_cop_1','ene_la_cop_4/ene_la_cop_4','ene_la_cop_vars/ene_la_cop_var1','ene_la_cop_vars/ene_la_cop_var2', 'ene_la_cop_vars/ene_la_cop_var5')"/>
-							
-						<material_config filter="'filter_pick_head_b'" name="'units/pd2_dlc_rvd/characters/'..pick('ene_la_cop_vars/ene_la_cop_var3','ene_la_cop_vars/ene_la_cop_var4')"/>
-							
-						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
-						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										
-					</sequence>
+					</sequence>						
 				<!-- end beatcop stuff -->
 
 					

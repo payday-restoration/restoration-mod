@@ -1361,6 +1361,7 @@ end
  if _G.HopLib then
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
+	local lapd = tweak_data.levels.ai_groups.lapd
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1368,9 +1369,12 @@ end
 
 	if ai_type == murkywetew then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
-			-- log("awesome! loaded!")
 			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
 		end)
+	elseif ai_type == lapd then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+		end)	
 	end
  end
 

@@ -9108,7 +9108,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cold.CLIP_AMMO_MAX = 8
 		self.cold.AMMO_MAX = 40
 		self.cold.AMMO_PICKUP = self.stat_info._pickup_chance
-	self.cold.kick = self.stat_info.kick_tables.even_recoil
+		self.cold.kick = self.stat_info.kick_tables.even_recoil
 		self.cold.supported = true
 		self.cold.stats = {
 			damage = 45,
@@ -9144,7 +9144,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.aknato.FIRE_MODE = "auto"				
 		self.aknato.CAN_TOGGLE_FIREMODE = true
 		self.aknato.AMMO_PICKUP = self.stat_info._pickup_chance
-	self.aknato.kick = self.stat_info.kick_tables.moderate_kick	
+		self.aknato.kick = self.stat_info.kick_tables.moderate_kick	
 		self.aknato.supported = true
 		self.aknato.stats = {
 			damage = 24,
@@ -9163,46 +9163,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.aknato.panic_suppression_chance = 0.05
 	end
 
-	if self.m590 then --Silent Enforcer and GT's Mossberg 590
-		self.m590.has_description = true
-		self.m590.tactical_reload = 1
-		self.m590.desc_id = "bm_w_m590_desc"		
-		self.m590.rays = 9
-		self.m590.timers = {
-			shotgun_reload_enter = 0.4,
-			shotgun_reload_exit_empty = 1.3,
-			shotgun_reload_exit_not_empty = 1,
-			shotgun_reload_shell = 0.6666667,
-			shotgun_reload_first_shell_offset = 0.33666667,
-			unequip = 0.5,
-			equip = 0.5
-		}
-		self.m590.CLIP_AMMO_MAX = 8 * 1
-		self.m590.muzzleflash = "effects/particles/shotgun/muzzleflash"
-		self.m590.kick = self.stat_info.kick_tables.vertical_kick
-		self.m590.single.fire_rate = 0.8
-		self.m590.fire_mode_data.fire_rate = 0.8
-		self.m590.AMMO_MAX = 40 
-		self.m590.AMMO_PICKUP = self.stat_info._pickup_chance
-		self.m590.supported = true
-		self.m590.stats = {
-			damage = 90,
-			spread = 9,
-			recoil = 16,
-			spread_moving = 5,
-			zoom = 1,
-			concealment = 15,
-			suppression = 5,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.m590.stats_modifiers = {damage = 1}
-		self.m590.panic_suppression_chance = 0.05
-	end	
-
 	if self.hpb then --Gambyt's Browning HP	
 		self.hpb.tactical_reload = 1												
 		self.hpb.fire_mode_data.fire_rate = 0.08571428571
@@ -9210,7 +9170,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hpb.CLIP_AMMO_MAX = 10
 		self.hpb.AMMO_MAX = 40
 		self.hpb.AMMO_PICKUP = self.stat_info._pickup_chance
-	self.hpb.kick = self.stat_info.kick_tables.even_recoil
+		self.hpb.kick = self.stat_info.kick_tables.even_recoil
 		self.hpb.supported = true
 		self.hpb.stats = {
 			damage = 45,

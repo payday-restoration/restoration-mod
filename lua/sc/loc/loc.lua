@@ -1242,8 +1242,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_b_short"] = "Micro Barrel",
 		["bm_wp_g3_m_psg"] = "Präzision Magazine",
 
-		["bm_w_m590"] = "Reinbeck 890 Shotgun",
-		["bm_w_m590_desc"] = "The spiritual successor to the criminal syndicate's most popular shotgun has arrived. Although it retains the power of the original Reinbeck, it makes a few small deviations from the original design, making it easier to pump but less stable.",
 		["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
 
 

@@ -1472,6 +1472,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
 	self.values.player.loose_ammo_give_armor = {3}
+	self.values.player.loose_ammo_give_dodge = {1}
 
 	--Create actual upgrade table for Gambler.
 	self.values.temporary.loose_ammo_restore_health = {}
@@ -2549,7 +2550,16 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "loose_ammo_give_armor",
 			category = "player"
 		}
-	}		
+	}
+	self.definitions.player_loose_ammo_give_dodge = {
+		name_id = "menu_player_loose_ammo_give_dodge",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "loose_ammo_give_dodge",
+			category = "player"
+		}
+	}	
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {

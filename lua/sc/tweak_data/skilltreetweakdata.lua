@@ -2592,7 +2592,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"temporary_loose_ammo_give_team"
+					"temporary_loose_ammo_give_team",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {5, 5},
@@ -2602,7 +2603,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"temporary_loose_ammo_restore_health_2"
+					"temporary_loose_ammo_restore_health_2",
+					"player_loose_ammo_give_dodge"
 				},
 				cost = 1000,
 				icon_xy = {7, 5},
@@ -2612,7 +2614,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_loose_ammo_restore_health_give_team"
+					"player_loose_ammo_restore_health_give_team",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 5},

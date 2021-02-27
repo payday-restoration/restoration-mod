@@ -6674,7 +6674,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.erma.stats = {
 		damage = 24,
 		spread = 16,
-		recoil = 24,
+		recoil = 25,
 		spread_moving = 8,
 		zoom = 1,
 		concealment = 26,
@@ -8369,6 +8369,88 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1897.stats_modifiers = nil
 	self.m1897.panic_suppression_chance = 0.05
 		
+	--Crosskill Chunky
+	self.m1911.fire_mode_data.fire_rate = 0.08571428571
+	self.m1911.single.fire_rate = 0.08571428571
+	self.m1911.CLIP_AMMO_MAX = 8
+	self.m1911.AMMO_MAX = 40
+	self.m1911.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.m1911.kick = self.stat_info.kick_tables.even_recoil
+	self.m1911.supported = true
+	self.m1911.stats = {
+		damage = 45,
+		spread = 19,
+		recoil = 17,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 26,
+		suppression = 6,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.m1911.stats_modifiers = nil
+	self.m1911.panic_suppression_chance = 0.05
+	self.m1911.swap_speed_multiplier = 0.9
+
+	--Disable Akimbo Crosskill Chunky
+	self.x_m1911.use_data.selection_index = 4
+	
+	--Mosconi 12G Tactical
+	self.m590.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+	self.m590.rays = 9
+	self.m590.CLIP_AMMO_MAX = 7
+	self.m590.kick = self.stat_info.kick_tables.vertical_kick
+	self.m590.AMMO_MAX = 60
+	self.m590.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.m590.supported = true
+	self.m590.stats = {
+		damage = 60,
+		spread = 9,
+		recoil = 16,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 24,
+		suppression = 5,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}		
+	self.m590.stats_modifiers = nil
+	self.m590.panic_suppression_chance = 0.05
+
+	--AK GEN 21 Tactical
+	self.vityaz.use_data.selection_index = 2
+	self.vityaz.BURST_FIRE = false
+	self.vityaz.AMMO_MAX = 150
+	self.vityaz.AMMO_PICKUP = self.stat_info._pickup_chance
+	self.vityaz.CAN_TOGGLE_FIREMODE = true
+	self.vityaz.kick = self.stat_info.kick_tables.right_recoil
+	self.vityaz.supported = true
+	self.vityaz.stats = {
+		damage = 24,
+		spread = 15,
+		recoil = 23,
+		spread_moving = 8,
+		zoom = 1,
+		concealment = 26,
+		suppression = 8,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 5,
+		reload = 20
+	}
+	self.vityaz.stats_modifiers = nil
+	self.vityaz.panic_suppression_chance = 0.05
+
+	--Disable Akimbo AK Gen 21 Tactical
+	self.x_vityaz.use_data.selection_index = 4
+	
 	--Restoration Weapons--
 	
 	--Raze's Fury

@@ -923,7 +923,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fires a single accurate lead slug that penetrates body armor, enemies, shields, titan shields, and walls.", --For shotguns that can hit Heavy Sniper damage tier--
 		["bm_wp_upg_a_explosive_desc_sc"] = "High-explosive slugs. Fires one explosive charge that kills or stuns targets. Cannot headshot.",
-		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that increase damage at the cost of some consistency and ammo.\n\n25% reduced range.",
+		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that increase damage at the cost of some consistency and ammo.\n\n35% reduced range.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that burn through body armor. Has a chance to set enemies on fire at close range, dealing 96 damage and potentially stunning over three seconds.",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires pellets that burn through body armor. Has a chance to set enemies on fire at close range, dealing 120 damage and potentially stunning over three seconds.",
 		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires pellets that burn through body armor. Has a chance to set enemies on fire at close range, dealing 180 damage and potentially stunning over three seconds.",

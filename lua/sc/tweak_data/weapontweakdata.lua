@@ -8370,6 +8370,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1897.panic_suppression_chance = 0.05
 		
 	--Crosskill Chunky
+	self.m1911.tactical_reload = 1	
 	self.m1911.fire_mode_data.fire_rate = 0.08571428571
 	self.m1911.single.fire_rate = 0.08571428571
 	self.m1911.CLIP_AMMO_MAX = 8
@@ -8399,6 +8400,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_m1911.use_data.selection_index = 4
 	
 	--Mosconi 12G Tactical
+	self.m590.tactical_reload = 1	
 	self.m590.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.m590.rays = 9
 	self.m590.CLIP_AMMO_MAX = 7
@@ -8424,6 +8426,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m590.panic_suppression_chance = 0.05
 
 	--AK GEN 21 Tactical
+	self.vityaz.tactical_reload = 1	
 	self.vityaz.use_data.selection_index = 2
 	self.vityaz.BURST_FIRE = false
 	self.vityaz.AMMO_MAX = 150

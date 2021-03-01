@@ -879,6 +879,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--Fuck off
 	self.projectiles.frag.no_cheat_count = true
 	self.projectiles.concussion.no_cheat_count = true
+	self.projectiles.dynamite.no_cheat_count = true
 	self.projectiles.molotov.no_cheat_count = true
 	self.projectiles.wpn_prj_four.no_cheat_count = true
 	self.projectiles.wpn_prj_ace.no_cheat_count = true

@@ -21624,7 +21624,261 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override		
 
 end)
-					
+
+--Crosskill Chunky Compact
+--Totally not confusing
+Hooks:PostHook(WeaponFactoryTweakData, "_init_m1911", "resmod_m1911", function(self)
+
+	--Extended magazine
+	self.parts.wpn_fps_pis_m1911_m_extended.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_m1911_m_extended.supported = true
+	self.parts.wpn_fps_pis_m1911_m_extended.stats = {
+		value = 3,
+		concealment = -1,
+		extra_ammo = 4,
+		reload = -1
+	}
+	
+	--Crosskill Platinum Bull Slide
+	self.parts.wpn_fps_pis_m1911_sl_match.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_m1911_sl_match.supported = true
+	self.parts.wpn_fps_pis_m1911_sl_match.stats = {
+		value = 5,
+		spread = 1,
+		recoil = -1,
+		concealment = -1
+	}
+	
+	--Chunky Hunter Slide
+	self.parts.wpn_fps_pis_m1911_sl_hardballer.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_m1911_sl_hardballer.supported = true
+	self.parts.wpn_fps_pis_m1911_sl_hardballer.stats = {
+		value = 5,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
+	}
+	
+	self.wpn_fps_pis_m1911.override.wpn_fps_pis_1911_co_1 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_m1911.override.wpn_fps_pis_1911_co_2 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+		
+	
+	table.insert(self.wpn_fps_pis_m1911.uses_parts, "wpn_fps_pis_1911_co_1")
+	table.insert(self.wpn_fps_pis_m1911_npc.uses_parts, "wpn_fps_pis_1911_co_1")	
+
+	table.insert(self.wpn_fps_pis_m1911.uses_parts, "wpn_fps_pis_1911_co_2")
+	table.insert(self.wpn_fps_pis_m1911_npc.uses_parts, "wpn_fps_pis_1911_co_2")	
+
+	self.wpn_fps_pis_m1911_npc.uses_parts = deep_clone(self.wpn_fps_pis_m1911.uses_parts)	
+
+end)
+
+--Mosconi 12G Tactical Shotgun
+Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(self)
+
+	--Suppressed Barrel
+	self.parts.wpn_fps_sho_m590_b_suppressor.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_m590_b_suppressor.supported = true
+	self.parts.wpn_fps_sho_m590_b_suppressor.stats = {
+		value = 2,
+		suppression = 11,
+		alert_size = -1,
+		recoil = -1,
+		spread = 1,
+		concealment = -1
+	}
+	self.parts.wpn_fps_sho_m590_b_suppressor.perks = {
+		"silencer"
+	}
+	
+	--Long Barrel
+	self.parts.wpn_fps_sho_m590_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_m590_b_long.supported = true
+	self.parts.wpn_fps_sho_m590_b_long.stats = {
+		spread = 1,
+		value = 1,
+		concealment = -1,
+		recoil = -1
+	}
+	
+	--CE Rail Stabilizer
+	self.parts.wpn_fps_sho_m590_body_rail.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_m590_body_rail.supported = true
+	self.parts.wpn_fps_sho_m590_body_rail.stats = {
+		recoil = 1,
+		value = 1,
+		concealment = -2
+	}	
+	
+	--Override Table
+	self.wpn_fps_sho_m590.override = {
+		wpn_fps_upg_a_slug = {
+			supported = true,
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
+			stats = {
+				value = 10,
+				total_ammo_mod = -33,
+				damage = 30,
+				recoil = -2,
+				spread = 8,
+				spread_multi = {1, 1},	
+				moving_spread = 0,
+				suppression = -1,
+				concealment = -5
+			},
+			custom_stats = {				
+				damage_near_mul = 999,
+				damage_far_mul = 999,
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",										
+				rays = 1,
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
+			}
+		},
+		wpn_fps_upg_a_custom = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -33,
+				damage = 30
+			},
+			custom_stats = {
+				damage_near_mul = 0.65,
+				damage_far_mul = 0.65,
+				rays = 5
+			}
+		},	
+		wpn_fps_upg_a_custom_free = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -33,
+				damage = 30
+			},
+			custom_stats = {
+				damage_near_mul = 0.65,
+				damage_far_mul = 0.65,
+				rays = 5
+			}
+		},			
+		wpn_fps_upg_a_explosive = {
+			supported = true,
+			stats = {
+				value = 10,
+				total_ammo_mod = -50,
+				recoil = -5,
+				spread_multi = {1, 1},	
+				concealment = -7,
+				damage = 60
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 1,
+				damage_near_mul = 999,
+				damage_far_mul = 999,
+				bullet_class = "InstantExplosiveBulletBase"
+			}
+		},
+		wpn_fps_upg_a_piercing = a_piercing_pump_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
+	}	
+
+end)
+
+--AK Gen 21 Tactical SMG
+Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function(self)
+
+	--Suppressed Barrel
+	self.parts.wpn_fps_smg_vityaz_b_supressed.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_smg_vityaz_b_supressed.supported = true
+	self.parts.wpn_fps_smg_vityaz_b_supressed.stats = {
+		value = 10,
+		suppression = 10,
+		alert_size = -1,
+		spread = -1,
+		recoil = 1
+	}
+	self.parts.wpn_fps_smg_vityaz_b_supressed.perks = {
+		"silencer"
+	}
+
+	--Long Barrel
+	self.parts.wpn_fps_smg_vityaz_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_smg_vityaz_b_long.supported = true
+	self.parts.wpn_fps_smg_vityaz_b_long.stats = {
+		spread = 1,
+		recoil = -1,
+		value = 1,
+		concealment = -1
+	}
+	
+	--Short Stock
+	self.parts.wpn_fps_smg_vityaz_s_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_smg_vityaz_s_short.supported = true
+	self.parts.wpn_fps_smg_vityaz_s_short.stats = {
+		value = 1,
+		recoil = -2,
+		concealment = 2
+	}
+	
+end)
+
+--Resmod Custom Content					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 	self.parts.wpn_fps_upg_i_slower_rof = {
 		type = "custom",

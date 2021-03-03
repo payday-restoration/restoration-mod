@@ -170,6 +170,8 @@
 	<texture path="guis/textures/pd2/skilltree/info_trigger_happy" force="false" load="false"/>
 	<texture path="guis/textures/pd2/skilltree/info_dmg_multiplier_outnumbered" force="false" load="false"/> <!-- Underdog -->
 	<texture path="guis/textures/pd2/skilltree/info_unseen_strike" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_doctor_bag_health_regen" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_survive_one_hit" force="false" load="false"/> <!-- Yakuza Oni Irezumi -->
 
 
 	<model path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>

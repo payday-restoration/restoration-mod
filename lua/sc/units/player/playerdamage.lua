@@ -76,6 +76,9 @@ function PlayerDamage:init(unit)
 	self._dodge_meter_prev = 0.0 --dodge in meter from previous frame.
 	self._in_smoke_bomb = 0.0 --Sicario tracking stuff; 0 = not in smoke, 1 = inside smoke, 2 = inside own smoke. Tfw no explicit enum support in lua :(
 	self._can_survive_one_hit = player_manager:has_category_upgrade("player", "survive_one_hit") --Yakuza ability to survive at 1 hp before going down.
+	if self._can_survive_one_hit then
+		managers.hud:add_skill("survive_one_hit")
+	end
 	self._keep_health_on_revive = false --Used for cloaker kicks and taser downs, stops reviving from changing player health.
 	self._biker_armor_regen_t = 0.0 --Used to track the time until the next biker armor regen tick.
 	self._melee_push_multiplier = 1 - math.min(math.max(player_manager:upgrade_value("player", "resist_melee_push", 0.0) * self:_max_armor(), 0.0), 0.95) --Stun Resistance melee push resist.
@@ -937,6 +940,13 @@ function PlayerDamage:revive(silent)
 	managers.hud:pd_stop_progress()
 	self._revive_health_multiplier = nil
 	self._listener_holder:call("on_revive")
+
+	--Add Yakuza survive one hit icon.
+	--Done on revive for intuitiveness.
+	if self._can_survive_one_hit then
+		managers.hud:add_skill("survive_one_hit")
+	end
+
 	if managers.player:has_inactivate_temporary_upgrade("temporary", "revived_damage_resist") then
 		managers.player:activate_temporary_upgrade("temporary", "revived_damage_resist")
 	end
@@ -974,7 +984,7 @@ function PlayerDamage:recover_health()
 	end
 
 	self:restore_health(tweak_data.upgrades.values.doctor_bag.heal_amount) --Initial % heal.
-	managers.player:activate_db_regen() --Start heal over time.
+	managers.player:activate_temporary_upgrade("temporary", "doctor_bag_health_regen")  --Heal over time.
 end
 
 --Returns number of lives used up. Is relied on for What Doesn't Kill calcs.
@@ -1259,6 +1269,7 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 	if self._check_berserker_done then --Deals with swan song shenanigans.
 		if self._can_survive_one_hit then
 			self._can_survive_one_hit = false
+			managers.hud:remove_skill("survive_one_hit")
 		end
 	end
 	if self:get_real_health() == 0 and not self._check_berserker_done then --If you would be in bleedout but you dont want to, then don't.
@@ -1266,6 +1277,7 @@ Hooks:PreHook(PlayerDamage, "_check_bleed_out", "ResYakuzaCaptstoneCheck", funct
 			self:change_health(0.1)
 			self._can_survive_one_hit = false
 			self:restore_armor(tweak_data.upgrades.values.survive_one_hit_armor[1])
+			managers.hud:remove_skill("survive_one_hit")
 		else
 			self._can_survive_one_hit = managers.player:has_category_upgrade("player", "survive_one_hit")
 		end

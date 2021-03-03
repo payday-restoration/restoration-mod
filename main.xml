@@ -420,6 +420,8 @@
 					<option type="bool" default_value="true" name="Info_trigger_happy"/>
 					<option type="bool" default_value="true" name="Info_dmg_multiplier_outnumbered"/> <!-- Underdog -->
 					<option type="bool" default_value="true" name="Info_unseen_strike"/>
+					<option type="bool" default_value="true" name="Info_doctor_bag_health_regen"/>
+					<option type="bool" default_value="true" name="Info_survive_one_hit"/> <!-- Yakuza Oni Irezumi -->
 				</option_group>
 				<option type="bool" default_value="false" name="MainHUD"/>
 				<option type="bool" default_value="true" name="Teammate"/>

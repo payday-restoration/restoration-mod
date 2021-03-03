@@ -24,6 +24,7 @@ function SkillTreeTweakData:init(tweak_data)
 	}
 
    	self.default_upgrades = {
+   		"player_doctor_bag_health_regen",
 		"carry_interact_speed_multiplier_1",
 		"carry_interact_speed_multiplier_2",
 		"carry_movement_speed_multiplier",

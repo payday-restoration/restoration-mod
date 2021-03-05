@@ -28,22 +28,8 @@ PlayerAction.TriggerHappy = {
 			end
 		end
 
-		--Duration refresh.
-		local function on_hit(unit, attack_data)
-			local attacker_unit = attack_data.attacker_unit
-			local variant = attack_data.variant
-
-			if attacker_unit == player_manager:player_unit() and variant == "bullet" and not pistol_unequipped then
-				max_time = current_time + add_time
-				hud_manager:start_buff("trigger_happy", add_time)
-			end
-		end
-
 		player_manager:mul_to_property("trigger_happy", damage_bonus)
 		player_manager:register_message(Message.OnHeadShot, co, on_headshot)
-		if player_manager:has_category_upgrade("player", "trigger_happy_bodyshot_refresh") then
-			player_manager:register_message(Message.OnEnemyShot, co, on_hit)
-		end
 
 		hud_manager:start_buff("trigger_happy", add_time)
 		hud_manager:add_stack("trigger_happy")

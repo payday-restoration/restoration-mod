@@ -25,26 +25,12 @@ PlayerAction.ExpertHandling = {
 			end
 
 		end
-
-		--Duration refresh.
-		local function on_hit(unit, attack_data)
-			local attacker_unit = attack_data.attacker_unit
-			local variant = attack_data.variant
-
-			if attacker_unit == player_manager:player_unit() and variant == "bullet" and player_manager:is_current_weapon_of_category("pistol") then
-				max_time = current_time + add_time
-				hud_manager:start_buff("desperado", add_time)
-			end
-		end
 		
 		hud_manager:start_buff("desperado", add_time)
 		hud_manager:add_stack("desperado")
 
 		player_manager:mul_to_property("desperado", accuracy_bonus)
 		player_manager:register_message(Message.OnHeadShot, co, on_headshot)
-		if player_manager:has_category_upgrade("player", "desperado_bodyshot_refresh") then
-			player_manager:register_message(Message.OnEnemyShot, co, on_hit)
-		end
 
 		while current_time < max_time do
 			current_time = Application:time()

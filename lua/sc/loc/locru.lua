@@ -1,11 +1,11 @@
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_es_boost"] = "Лучшие",
-		["menu_es_crew"] = "Командные",
-		["menu_es_personal"] = "Личные",
-		["menu_es_bad"] = "Плохие",
-		["menu_es_other"] = "Прочие",
+		["menu_es_boost"] = "Лучшая",
+		["menu_es_crew"] = "Командная",
+		["menu_es_personal"] = "Личная",
+		["menu_es_bad"] = "Плохая",
+		["menu_es_other"] = "Прочая",
 		["RestorationPDTHHudNeeded"] = "PD:TH HUD REBORN IS REQUIRED!",
 		["menu_paygrade"] = "Степень оплаты: ",
 		["menu_diffgrade"] = "Сложность: ",
@@ -119,6 +119,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_unseen_strikeTitleID"] = "Удар исподтишка",
 		["RestorationModInfo_unseen_strikeDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_survive_one_hitTitleID"] = "Татуировка Они (Якудза)",
+		["RestorationModInfo_survive_one_hitDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Лечение от Медицинских сумок",
+		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Включает или выключает отображение лечения от Медицинских сумок.",
 		["RestorationModAltLastDownColorTitleID"] = "Другой фильтр для последнего падения",
 		["RestorationModAltLastDownColorDescID"] = "Переключает цветовой фильтр при последнем падении на color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеру при падении",

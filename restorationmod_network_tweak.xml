@@ -119,17 +119,7 @@
 			<message name="sync_spawn_extra_ammo" delivery="ordered" receiver="unit" check="client_to_server"/>
 		</search>
 		<target mode="attach">
-			<param type="vector3" />
-		</target>
-	</tweak>
-	<tweak version="2" name="settings/network" extension="network_settings">
-		<search>
-			<network/>
-			<rpc/>
-			<message name="sync_spawn_extra_ammo" delivery="ordered" receiver="unit" check="client_to_server"/>
-		</search>
-		<target mode="attach">
-			<param type="vector3" />
+			<param type="rotation" />
 		</target>
 	</tweak>
 	<tweak version="2" name="settings/network" extension="network_settings">

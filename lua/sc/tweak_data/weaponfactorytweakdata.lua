@@ -21846,6 +21846,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 	self.parts.wpn_fps_smg_vityaz_b_supressed.perks = {
 		"silencer"
 	}
+	table.insert(self.parts.wpn_fps_smg_vityaz_b_supressed.forbids, "wpn_fps_upg_ns_ass_pbs1")
 
 	--Long Barrel
 	self.parts.wpn_fps_smg_vityaz_b_long.pcs = {

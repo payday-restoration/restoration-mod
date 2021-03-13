@@ -199,7 +199,6 @@ function CharacterTweakData:_init_security(presets)
 	self.security.speech_prefix_p2 = "n"
 	self.security.speech_prefix_count = 4
 	self.security.access = "security"
-	self.security.rescue_hostages = false
 	self.security.use_radio = nil
 	self.security.silent_priority_shout = "f37"
 	self.security.dodge = presets.dodge.poor
@@ -209,7 +208,6 @@ function CharacterTweakData:_init_security(presets)
 	if is_murky then
 		self.security.radio_prefix = "fri_"
 	end			
-	self.security.steal_loot = nil
 	self.security.static_dodge_preset = true
 	self.security.shooting_death = false
 	self.security.heal_cooldown = 2
@@ -298,7 +296,6 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.speech_prefix_p2 = "n"
 	self.gensec.speech_prefix_count = 4
 	self.gensec.access = "security"
-	self.gensec.rescue_hostages = false
 	self.gensec.use_radio = nil
 	self.gensec.silent_priority_shout = "f37"
 	self.gensec.dodge = presets.dodge.athletic
@@ -306,7 +303,6 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.chatter = presets.enemy_chatter.guard
 	self.gensec.has_alarm_pager = true
 	self.gensec.melee_weapon = "baton"
-	self.gensec.steal_loot = nil
 	self.gensec.heal_cooldown = 2
 	table.insert(self._enemy_list, "gensec")
 	
@@ -364,11 +360,8 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.shooting_death = false
 	self.cop.chatter = presets.enemy_chatter.cop
 	self.cop.melee_weapon = "baton"
-	if job == "chill_combat" then
-		self.cop.steal_loot = true
-	else
-		self.cop.steal_loot = true
-	end
+	self.cop.rescue_hostages = true
+	self.cop.steal_loot = true
 	self.cop.static_dodge_preset = true
 	self.cop.has_alarm_pager = false
 	self.cop.heal_cooldown = 2
@@ -465,6 +458,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.deathguard = true
 	self.fbi.chatter = presets.enemy_chatter.cop
 	self.fbi.steal_loot = true
+	self.fbi.rescue_hostages = true
 	self.fbi.no_arrest = false
 	self.fbi.heal_cooldown = 2
 	table.insert(self._enemy_list, "fbi")
@@ -527,6 +521,8 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet_boss.melee_weapon = "buzzer_summer"
 	self.fbi_vet_boss.tase_on_melee = true
 	self.fbi_vet_boss.heal_cooldown = 3.75
+	self.fbi_vet_boss.rescue_hostages = false
+	self.fbi_vet_boss.steal_loot = false	
 	table.insert(self._enemy_list, "fbi_vet_boss")	
 	
 	self.meme_man = deep_clone(self.fbi_vet)		
@@ -547,6 +543,8 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.is_special = true
 	self.meme_man.unintimidateable = true
 	self.meme_man.heal_cooldown = 45
+	self.meme_man.rescue_hostages = false
+	self.meme_man.steal_loot = false
 	table.insert(self._enemy_list, "meme_man")	
 	self.meme_man_shield = deep_clone(self.meme_man)		
 	self.meme_man_shield.tags = {"medic", "special", "shield"}		
@@ -632,8 +630,6 @@ function CharacterTweakData:_init_medic(presets)
 		contact = true,
 		entrance = true
 	}
-	self.medic.steal_loot = nil
-	self.medic.rescue_hostages = false
 	self.medic.priority_shout = "f47"
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
@@ -659,8 +655,6 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.no_limping = true
 	self.medic_summers.no_retreat = true
 	self.medic_summers.no_arrest = true
-	self.medic_summers.rescue_hostages = false
-	self.medic_summers.steal_loot = nil
 	self.medic_summers.immune_to_knock_down = true
 	self.medic_summers.priority_shout = "f45"
 	self.medic_summers.bot_priority_shout = "f45x_any"
@@ -727,8 +721,6 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.chatter = presets.enemy_chatter.omnia_lpf
 	self.omnia_lpf.melee_weapon = "baton"
 	self.omnia_lpf.melee_weapon_dmg_multiplier = 1
-	self.omnia_lpf.rescue_hostages = false
-	self.omnia_lpf.steal_loot = nil
 	if is_reaper or is_federales then
 		self.omnia_lpf.custom_voicework = nil
 	elseif is_zombie then
@@ -807,13 +799,14 @@ function CharacterTweakData:_init_swat(presets)
 	else
 		self.swat.shooting_death = true
 	end		
-	self.swat.steal_loot = true		
 	self.swat.silent_priority_shout = "f37"
 	self.swat.heal_cooldown = 2.5
 	table.insert(self._enemy_list, "swat")
 	
 	self.hrt = deep_clone(self.swat)
 	self.hrt.access = "fbi"
+	self.hrt.rescue_hostages = true
+	self.hrt.steal_loot = true	
 	table.insert(self._enemy_list, "hrt")
 	
 	self.swat_titan = deep_clone(self.swat)
@@ -830,6 +823,8 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat_titan.custom_voicework = nil
 	self.swat_titan.static_dodge_preset = true
 	self.swat_titan.heal_cooldown = 3.75
+	self.swat_titan.rescue_hostages = true
+	self.swat_titan.steal_loot = true		
 	table.insert(self._enemy_list, "swat_titan")
 end
 
@@ -875,11 +870,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.dodge = presets.dodge.heavy
 	self.heavy_swat.no_arrest = false
 	self.heavy_swat.chatter = presets.enemy_chatter.swat
-	if job == "chill_combat" then
-		self.heavy_swat.steal_loot = nil
-	else
-		self.heavy_swat.steal_loot = true
-	end
 	if is_murky then
 	    self.heavy_swat.has_alarm_pager = true
 	else
@@ -1002,7 +992,6 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.chatter = presets.enemy_chatter.swat
 	self.heavy_swat_sniper.melee_weapon = nil
 	self.heavy_swat_sniper.melee_weapon_dmg_multiplier = 2.5
-	self.heavy_swat_sniper.steal_loot = nil
 	self.heavy_swat_sniper.has_alarm_pager = false
 	self.heavy_swat_sniper.calls_in = true
 	self.heavy_swat_sniper.static_weapon_preset = true
@@ -1084,11 +1073,6 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.chatter = presets.enemy_chatter.swat
 	self.fbi_swat.melee_weapon = "knife_1"
 	self.fbi_swat.melee_weapon_dmg_multiplier = 2
-	if job == "chill_combat" then
-		self.fbi_swat.steal_loot = nil
-	else
-		self.fbi_swat.steal_loot = true
-	end
 	self.fbi_swat.static_weapon_preset = true
 	self.fbi_swat.static_dodge_preset = true
 	self.fbi_swat.static_melee_preset = true
@@ -1144,11 +1128,6 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.melee_weapon = "knife_1"
 	self.fbi_heavy_swat.melee_weapon_dmg_multiplier = 1
 	self.fbi_heavy_swat.chatter = presets.enemy_chatter.swat
-	if job == "chill_combat" then
-		self.fbi_heavy_swat.steal_loot = nil
-	else
-		self.fbi_heavy_swat.steal_loot = true
-	end
 	self.fbi_heavy_swat.static_weapon_preset = true
 	self.fbi_heavy_swat.static_dodge_preset = true
 	self.fbi_heavy_swat.static_melee_preset = true	
@@ -1202,11 +1181,6 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.chatter = presets.enemy_chatter.swat
 	self.city_swat.melee_weapon = "knife_1"
 	self.city_swat.melee_weapon_dmg_multiplier = 2.5
-	if job == "chill_combat" then
-		self.city_swat.steal_loot = nil
-	else
-		self.city_swat.steal_loot = true
-	end
 	if job == "kosugi" or job == "dark" then
 		self.city_swat.shooting_death = false
 		self.city_swat.radio_prefix = "fri_"
@@ -1361,8 +1335,6 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.no_limping = true
 	self.sniper.no_arrest = true
 	self.sniper.chatter = presets.enemy_chatter.no_chatter
-	self.sniper.steal_loot = nil
-	self.sniper.rescue_hostages = false
 	self.sniper.static_weapon_preset = true
 	self.sniper.static_dodge_preset = true
 	self.sniper.crouch_move = nil
@@ -1392,7 +1364,6 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.no_retreat = true
 	self.gangster.weapon_voice = "3"
 	self.gangster.experience.cable_tie = "tie_swat"
-	self.gangster.rescue_hostages = false
 	self.gangster.use_radio = nil		
 	if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
 		self.gangster.speech_prefix_p1 = "rt"
@@ -1571,7 +1542,6 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.speech_prefix_p1 = "l"
 	self.mobster_boss.speech_prefix_p2 = "n"
 	self.mobster_boss.speech_prefix_count = 4
-	self.mobster_boss.rescue_hostages = false
 	self.mobster_boss.melee_weapon = "fists_dozer"
 	self.mobster_boss.steal_loot = nil
 	self.mobster_boss.calls_in = nil
@@ -1622,7 +1592,6 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.speech_prefix_p1 = "bb"
 	self.biker_boss.speech_prefix_p2 = "n"
 	self.biker_boss.speech_prefix_count = 1
-	self.biker_boss.rescue_hostages = false
 	self.biker_boss.melee_weapon = "fists_dozer"
 	self.biker_boss.melee_weapon_dmg_multiplier = 1
 	self.biker_boss.steal_loot = nil
@@ -1715,7 +1684,6 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.speech_prefix_p1 = "bb"
 	self.chavez_boss.speech_prefix_p2 = "n"
 	self.chavez_boss.speech_prefix_count = 1
-	self.chavez_boss.rescue_hostages = false
 	self.chavez_boss.melee_weapon = "fists_dozer"
 	self.chavez_boss.melee_weapon_dmg_multiplier = 1
 	self.chavez_boss.steal_loot = nil
@@ -1826,7 +1794,6 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.speech_prefix_p1 = "bb"
 	self.drug_lord_boss.speech_prefix_p2 = "n"
 	self.drug_lord_boss.speech_prefix_count = 1
-	self.drug_lord_boss.rescue_hostages = false
 	self.drug_lord_boss.silent_priority_shout = "f37"
 	self.drug_lord_boss.melee_weapon = "fists_dozer"
 	self.drug_lord_boss.melee_weapon_dmg_multiplier = 1
@@ -1876,7 +1843,6 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.speech_prefix_p1 = "bb"
 	self.drug_lord_boss_stealth.speech_prefix_p2 = "n"
 	self.drug_lord_boss_stealth.speech_prefix_count = 1
-	self.drug_lord_boss_stealth.rescue_hostages = false
 	self.drug_lord_boss_stealth.silent_priority_shout = "f37"
 	self.drug_lord_boss_stealth.melee_weapon = "fists_dozer"
 	self.drug_lord_boss_stealth.melee_weapon_dmg_multiplier = 1
@@ -1951,7 +1917,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.priority_shout = "f30"
 	self.tank.bot_priority_shout = "f30x_any"
 	self.tank.priority_shout_max_dis = 3000
-	self.tank.rescue_hostages = false
 	self.tank.deathguard = true
 	self.tank.melee_weapon = "fists_dozer"
 	self.tank.melee_weapon_dmg_multiplier = 1
@@ -2175,7 +2140,6 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.spawn_sound_event = nil
 	self.tank_biker.spawn_sound_event_2 = nil
 	self.tank_biker.access = "gangster"
-	self.tank_biker.rescue_hostages = false
 	self.tank_biker.use_radio = nil
 	self.tank_biker.speech_prefix_p1 = "bik"
 	self.tank_biker.speech_prefix_p2 = nil
@@ -2220,7 +2184,6 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.priority_shout = "f33"
 	self.spooc.bot_priority_shout = "f33x_any"
 	self.spooc.priority_shout_max_dis = 3000
-	self.spooc.rescue_hostages = false
 	self.spooc.spooc_attack_timeout = {4, 4}
 	self.spooc.spooc_attack_beating_time = {3, 3}
 	self.spooc.spooc_attack_use_smoke_chance = 0
@@ -2314,7 +2277,6 @@ function CharacterTweakData:_init_shadow_spooc(presets)
 	self.shadow_spooc.priority_shout = "f33"
 	self.shadow_spooc.bot_priority_shout = "f33x_any"
 	self.shadow_spooc.priority_shout_max_dis = 3000
-	self.shadow_spooc.rescue_hostages = false
 	self.shadow_spooc.spooc_attack_timeout = {4, 4}
 	self.shadow_spooc.spooc_attack_beating_time = {3, 3}
 	self.shadow_spooc.spooc_attack_use_smoke_chance = 0
@@ -2393,7 +2355,6 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.priority_shout = "f31"
 	self.shield.bot_priority_shout = "f31x_any"
 	self.shield.priority_shout_max_dis = 3000
-	self.shield.rescue_hostages = false
 	self.shield.deathguard = false
 	self.shield.no_equip_anim = true
 	self.shield.wall_fwd_offset = 100
@@ -2560,7 +2521,6 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.bot_priority_shout = "f45x_any"
 	self.spring.priority_shout_max_dis = 3000
 	self.spring.flammable = true
-	self.spring.rescue_hostages = false
 	self.spring.can_be_tased = false
 	self.spring.ecm_vulnerability = nil
 	self.spring.immune_to_concussion = true
@@ -2660,7 +2620,6 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.access = "taser"
 	self.summers.dodge = presets.dodge.elite
 	self.summers.use_gas = true
-	self.summers.rescue_hostages = false
 	self.summers.can_be_tased = false
 	self.summers.immune_to_concussion = true
 	self.summers.deathguard = true
@@ -2808,7 +2767,6 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.priority_shout = "f32"
 	self.taser.bot_priority_shout = "f32x_any"
 	self.taser.priority_shout_max_dis = 3000
-	self.taser.rescue_hostages = false
 	self.taser.deathguard = true
 	self.taser.shock_damage = 8.0 --Amount of damage dealt when taser shocks down.
 	self.taser.chatter = {
@@ -2849,8 +2807,6 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.chatter = presets.enemy_chatter.summers
 	self.taser_summers.no_retreat = true
 	self.taser_summers.no_limping = true
-	self.taser_summers.rescue_hostages = false
-	self.taser_summers.steal_loot = nil
 	self.taser_summers.immune_to_concussion = true
 	self.taser_summers.no_damage_mission = true
 	self.taser_summers.no_arrest = true
@@ -2964,7 +2920,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.bot_priority_shout = "g29"
 	self.boom.priority_shout_max_dis = 3000
 	self.boom.custom_shout = true
-	self.boom.rescue_hostages = false
 	self.boom.deathguard = true
 	self.boom.chatter = {
 		aggressive = true,
@@ -3015,8 +2970,6 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.priority_shout = "f45"
 	self.boom_summers.bot_priority_shout = "f45x_any"
 	self.boom_summers.custom_shout = false
-	self.boom_summers.rescue_hostages = false
-	self.boom_summers.steal_loot = nil
 	self.boom_summers.follower = true
 	self.boom_summers.ecm_vulnerability = 0
 	self.boom_summers.ecm_hurts = {}		
@@ -3198,8 +3151,6 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.use_radio = nil
 	self.old_hoxton_mission.melee_weapon = "fists"
 	self.old_hoxton_mission.melee_weapon_dmg_multiplier = 1
-	self.old_hoxton_mission.steal_loot = false
-	self.old_hoxton_mission.rescue_hostages = false
 	self.old_hoxton_mission.crouch_move = false
 	self.old_hoxton_mission.static_dodge_preset = true
 	--No more being mean to Hoxton
@@ -4534,7 +4485,8 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.speech_prefix = "po"
 	presets.base.speech_prefix_count = 1
 	presets.base.follower = false
-	presets.base.rescue_hostages = true
+	presets.base.rescue_hostages = false
+	presets.base.steal_loot = false
 	presets.base.use_radio = self._default_chatter
 	presets.base.dodge = nil
 	presets.base.challenges = {type = "law"}
@@ -15322,19 +15274,24 @@ function CharacterTweakData:character_map()
 			list = {
 				"ene_shield_1",
 				"ene_shield_2",
-				"ene_city_shield",
+				"ene_cop_1",
+				"ene_cop_2",
+				"ene_cop_3",
+				"ene_cop_4",				
 				"ene_sniper_1",				
 				"ene_fbi_swat_1",
 				"ene_fbi_swat_2",
+				"ene_fbi_3",
+				"ene_fbi_2",
 				"ene_fbi_swat_3",
 				"ene_city_swat_1",
 				"ene_city_swat_2",
 				"ene_city_swat_3",
-				"ene_fbi_heavy_1",
-				"ene_city_heavy_g36",
 				"ene_bulldozer_3",
+				"ene_fbi_heavy_1",
 				"ene_fbi_heavy_r870",
 				"ene_fbi_heavy_r870_sc",
+				"ene_city_heavy_g36",
 				"ene_city_heavy_r870_sc",
 				"ene_swat_1",
 				"ene_swat_2",

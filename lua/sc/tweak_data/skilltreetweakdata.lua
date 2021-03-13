@@ -24,6 +24,7 @@ function SkillTreeTweakData:init(tweak_data)
 	}
 
    	self.default_upgrades = {
+   		"player_doctor_bag_health_regen",
 		"carry_interact_speed_multiplier_1",
 		"carry_interact_speed_multiplier_2",
 		"carry_movement_speed_multiplier",
@@ -1695,8 +1696,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"pistol_stacked_accuracy_bonus_2",
-						"player_desperado_bodyshot_refresh"
+						"pistol_stacked_accuracy_bonus_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1715,8 +1715,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"pistol_stacking_hit_damage_multiplier_2",
-						"player_trigger_happy_bodyshot_refresh"
+						"pistol_stacking_hit_damage_multiplier_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -2592,7 +2591,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"temporary_loose_ammo_give_team"
+					"temporary_loose_ammo_give_team",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {5, 5},
@@ -2602,7 +2602,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"temporary_loose_ammo_restore_health_2"
+					"temporary_loose_ammo_restore_health_2",
+					"player_loose_ammo_give_dodge"
 				},
 				cost = 1000,
 				icon_xy = {7, 5},
@@ -2612,7 +2613,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_loose_ammo_restore_health_give_team"
+					"player_loose_ammo_restore_health_give_team",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 5},

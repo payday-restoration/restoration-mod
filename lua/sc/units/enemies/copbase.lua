@@ -24,20 +24,10 @@ function CopBase:random_mat_seq_initialization()
 	local cop2_3 = unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2") 
 	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
 	
-	local lacop1_4 = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1") 
-	or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4")
-	
-	local lacop2_3 = unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2") 
-	or unit_name == Idstring("units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3")
-	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_1_4") and cop1_4 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_cop_1_4")
 	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_2_3") and cop2_3 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_cop_2_3")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_lacop_2_3") and lacop2_3 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_lacop_2_3")	
-	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_lacop_1_4") and lacop1_4 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_lacop_1_4")	
 	end	
 	--END BEAT COP FACE STUFF
 
@@ -53,7 +43,6 @@ function CopBase:random_mat_seq_initialization()
 	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_3") and fbi_3 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_3")	--he is obscured so there's no need to replace him.
 	end	 	
-	--END FBI FACE NONSENSE
 
 	
 	--security $!!SLAT^* insanity	
@@ -102,13 +91,18 @@ local material_config_paths = {
   "units/payday2/characters/ene_security_vars/ene_security_var4",
   "units/payday2/characters/ene_security_vars/ene_security_var5",
   "units/payday2/characters/ene_security_vars/ene_security_var6",
-  "units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var1",
-  "units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var2",
-  "units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var3",
-  "units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var4",
-  "units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var5",
-  "units/pd2_dlc_rvd/characters/ene_la_cop_vars/ene_la_cop_var6",
-  "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa"  
+  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var1",
+  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var2",
+  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var3",
+  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var4",
+  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5",
+  "units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var6",
+  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var1",
+  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var2",
+  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var3",
+  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var4",
+  "units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var5",  
+  "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa"
 }
 
 for i, material_config_path in pairs(material_config_paths) do

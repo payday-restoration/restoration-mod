@@ -1,11 +1,11 @@
 -- ResMod english.json
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_es_boost"] = "Лучшие",
-		["menu_es_crew"] = "Командные",
-		["menu_es_personal"] = "Личные",
-		["menu_es_bad"] = "Плохие",
-		["menu_es_other"] = "Прочие",
+		["menu_es_boost"] = "Лучшая",
+		["menu_es_crew"] = "Командная",
+		["menu_es_personal"] = "Личная",
+		["menu_es_bad"] = "Плохая",
+		["menu_es_other"] = "Прочая",
 		["RestorationPDTHHudNeeded"] = "PD:TH HUD REBORN IS REQUIRED!",
 		["menu_paygrade"] = "Степень оплаты: ",
 		["menu_diffgrade"] = "Сложность: ",
@@ -119,6 +119,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "Включает или выключает отображение иконки данного навыка.",
 		["RestorationModInfo_unseen_strikeTitleID"] = "Удар исподтишка",
 		["RestorationModInfo_unseen_strikeDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_survive_one_hitTitleID"] = "Татуировка Они (Якудза)",
+		["RestorationModInfo_survive_one_hitDescID"] = "Включает или выключает отображение иконки данного навыка.",
+		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "Лечение от Медицинских сумок",
+		["RestorationModInfo_doctor_bag_health_regenDescID"] = "Включает или выключает отображение лечения от Медицинских сумок.",
 		["RestorationModAltLastDownColorTitleID"] = "Другой фильтр для последнего падения",
 		["RestorationModAltLastDownColorDescID"] = "Переключает цветовой фильтр при последнем падении на color_sin_classic.",
 		["RestorationModNoBleedoutTiltTitleID"] = "Отключить наклон камеру при падении",
@@ -915,19 +919,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Bernetti--
 		["bm_wp_upg_i_93r"] = "Набор Bernetti 93t",
-		["bm_wp_upg_i_93r_desc"] = "Открывает режим стрельбы очередями по 3 патрона, но увеличивает отдачу.", --still need to do the one for the primary bernetti--
+		["bm_wp_upg_i_93r_desc"] = "Позволяет режим стрельбы очередями по 3 патрона, но увеличивает отдачу.", --still need to do the one for the primary bernetti--
 
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Дробинки будут разлетаться горизонтально, а не распыляться.",
 		["bm_wp_upg_a_slug_sc"] = "Бронебойная пуля",
 		["bm_wp_upg_a_slug_sc_desc"] = "Точные бронебойные пули. Не обладают пробитием.", --Auto/Semi-Auto shotguns--
-		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Использует большие точные бронебойные пули, которые пробивают броню, врагов, щиты, титановые щиты и стены.", --For shotguns that can hit Heavy Sniper damage tier--
+		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Точные бронебойные пули, которые пробивают броню, врагов, щиты, титановые щиты и стены.", --For shotguns that can hit Heavy Sniper damage tier--
 		["bm_wp_upg_a_explosive_desc_sc"] = "Взрывные пули, которые убивают или оглушают врагов. Не имеют попаданий в голову.",
-		["bm_wp_upg_a_custom_desc"] = "Меньше дробинок большего размера, которые наносят повышенный урон, но обладают меньшими надёжностью и боезапасом.\n\nДайльнобойность уменьшена на 25%.",
-                ["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Дробинки, прожигающие броню. Имеет шанс поджечь противников вблизи, что наносит 96 урона и может прервать врагов в течение трёх секунд.",
-		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Дробинки, прожигающие броню. Имеет шанс поджечь противников вблизи, что наносит 120 урона и может прервать врагов в течение трёх секунд.",
-		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Дробинки, прожигающие броню. Имеет шанс поджечь противников вблизи, что наносит 180 урона и может прервать врагов в течение трёх секунд.",
-		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Дробинки, прожигающие броню. Имеет шанс поджечь противников вблизи, что наносит 240 урона и может прервать врагов в течение трёх секунд.",
+		["bm_wp_upg_a_custom_desc"] = "Меньше дробинок большего размера, которые наносят повышенный урон, но обладают меньшими надёжностью и боезапасом.\n\nДальнобойность уменьшена на 35%.",
+                ["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Дробинки, прожигающие броню. На близких расстояниях имеют шанс поджечь, что наносит 96 урона и останавливает врагов в течение трёх секунд.",
+		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Дробинки, прожигающие броню. На близких расстояниях имеют шанс поджечь, что наносит 120 урона и останавливает врагов в течение трёх секунд.",
+		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Дробинки, прожигающие броню. На близких расстояниях имеют шанс поджечь, что наносит 180 урона и останавливает врагов в течение трёх секунд.",
+		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Дробинки, прожигающие броню. На близких расстояниях имеют шанс поджечь, что наносит 240 урона и останавливает врагов в течение трёх секунд.",
 		["bm_wp_upg_a_piercing_auto_desc_sc"] = "Бронебойные дротики, наносящие 96 урона кровотечением.\n\nДальнобойность увеличена на 25%.",
 		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Бронебойные дротики, наносящие 120 урона кровотечением.\n\nДальнобойность увеличена на 25%.",
 		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Бронебойные дротики, наносящие 180 урона кровотечением.\n\nДальнобойность увеличена на 25%.",
@@ -961,7 +965,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Saw--
 		["bm_ap_saw_sc_desc"] = "ПРОРЕЗАЕТ БРОНЮ.",
-		["bm_ap_saw_blade_sc_desc"] = "Лезвия становятся настолько острыми, что прорезают через броню.",
+		["bm_ap_saw_blade_sc_desc"] = "Лезвия становятся настолько острыми, что прорезают броню.",
 		["bm_fast_motor_sc_desc"] = "Увеличивает скорость ротации на 15%.",
 		["bm_slow_motor_sc_desc"] = "Уменьшает скорость ротации на 15%.",
 
@@ -1242,8 +1246,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_b_short"] = "Микро-ствол",
 		["bm_wp_g3_m_psg"] = "Магазин 'Präzision'",
 
-		["bm_w_m590"] = "Дробовик Reinbeck 890",
-		["bm_w_m590_desc"] = "Наследник самого популярного дробовика банды. От оригинального Reinbeck осталась убойная сила, но дизайн был немного изменён: Его легче заряжать, но он менее стабилен.",
 		["bm_w_beck_desc"] = "Самый популярный дробовик в криминальном мире вернулся в погоне за былой славой. Он использовался в оригинальной волне преступности 2011-го года и доказал свою надёждность в практически любой близкой конфронтации.",
 
 
@@ -1368,9 +1370,13 @@ end
 
 	if ai_type == murkywetew then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_murkywetew", function(loc)
-			-- log("awesome! loaded!")
+
 			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
 		end)
+			elseif ai_type == lapd then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+		end)	
 	end
  end
 
@@ -2249,9 +2255,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Gambler--
 		["menu_deck10_1_desc_sc"] = "Коробки с патронами также дают медикаменты, которые восстанавливают от ##4## до ##8## здоровья.\n\nЭффект происходит раз в ##10## секунд, но каждая подобранная коробка патронов уменьшает эту задержку на ##3##-##5## секунд.",
-		["menu_deck10_3_desc_sc"] = "Когда вы лечитесь при помощи коробок с патронами, ваша команда также получает патроны.",
-		["menu_deck10_5_desc_sc"] = "Здоровье, получаемое от коробок с патронами, увеличено ещё на ##2##.",
-		["menu_deck10_7_desc_sc"] = "Когда вы лечитесь при помощи коробок с патронами, ваша команда также лечится на ##50%## от количества полученного здоровья.",
+		["menu_deck10_3_desc_sc"] = "Когда вы лечитесь при помощи коробок с патронами, ваша команда также получает патроны.\n\nВы получаете ##5## уворота.",
+		["menu_deck10_5_desc_sc"] = "Здоровье, получаемое от коробок с патронами, увеличено ещё на ##2##.\n\nКаждый раз, когда вы лечитесь от подбора, ваша полоска уворота получает ##100%## от вашего Уворота.",
+		["menu_deck10_7_desc_sc"] = "Когда вы лечитесь при помощи коробок с патронами, ваша команда также лечится на ##50%## от количества полученного здоровья.\n\nВы получаете ##5## Уворота.",
 		["menu_deck10_9_desc_sc"] = "Здоровье, получаемое от коробок с патронами, увеличено ещё на ##2##.\n\nКогда вы лечитесь при помощи коробок с патронами, вы получаете ##30## брони.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
 		--Infiltrator--

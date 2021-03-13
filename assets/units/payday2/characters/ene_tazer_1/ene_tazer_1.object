@@ -212,7 +212,7 @@
                     <material materials="mtr_body_lod1" />
                 </object>
                 <object name="g_body_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_body" max_distance="0"/>
+                    <material materials="mtr_body_lod" max_distance="0"/>
                     <material materials="mtr_body_lod1" />
                 </object>
             </lod_object>
@@ -224,7 +224,7 @@
                     <material materials="mtr_ene_acc_swat_helmet_lod1" />
                 </object>
 				<object name="g_helmet_lod2" 	enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_ene_acc_swat_helmet" max_distance="0" />
+                    <material materials="mtr_ene_acc_swat_helmet_lod" max_distance="0" />
                     <material materials="mtr_ene_acc_swat_helmet_lod1" />
                 </object>
 			</lod_object>
@@ -241,7 +241,7 @@
                     <material materials="mtr_head_lod1" />
                 </object>
                 <object name="g_head_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_head" max_distance="0" />
+                    <material materials="mtr_head_lod" max_distance="0" />
                     <material materials="mtr_head_lod1" />
                 </object>
             </lod_object>

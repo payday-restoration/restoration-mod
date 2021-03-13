@@ -896,10 +896,7 @@ function PlayerManager:health_regen()
 	local health_regen = tweak_data.player.damage.HEALTH_REGEN
 	health_regen = health_regen + self:temporary_upgrade_value("temporary", "wolverine_health_regen", 0)
 	health_regen = health_regen + self:upgrade_value("player", "passive_health_regen", 0)
-
-	if self:is_db_regen_active() then
-		health_regen = health_regen + tweak_data.upgrades.values.doctor_bag.passive_regen
-	end
+	health_regen = health_regen + self:temporary_upgrade_value("temporary", "doctor_bag_health_regen", 0)
 
 	return health_regen
 end
@@ -915,22 +912,6 @@ function PlayerManager:fixed_health_regen()
 	end
 	
 	return health_regen
-end
-
---DB management.
-function PlayerManager:activate_db_regen()
-	self._db_regen_endtime = Application:time() + tweak_data.upgrades.values.doctor_bag.passive_regen_duration
-end
-
-function PlayerManager:deactivate_db_regen()
-	self._db_regen_endtime = nil
-end
-
-function PlayerManager:is_db_regen_active()
-	if self._db_regen_endtime and Application:time() < self._db_regen_endtime then
-		return true
-	end
-	return false
 end
 
 --Slows the player by a % that decays linearly over a duration, along with a visual.

@@ -66,5 +66,6 @@
 	<text text="Translations" type="title"/>
 	<br/>
 	<text text="MsMarshie" type="name"/>
+	<text text="LR_Daring" type="name"/>
 	<command cmd="stop" offset="220"/>
 </table>

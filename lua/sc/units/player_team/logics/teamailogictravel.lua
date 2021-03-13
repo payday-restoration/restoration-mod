@@ -495,6 +495,148 @@ function TeamAILogicTravel.action_complete_clbk(data, action)
 	end
 end
 
+function TeamAILogicTravel.update(data)
+	if data.objective.type == "revive" and managers.player:is_custom_cooldown_not_active("team", "crew_inspire") then
+		local attention = data.detected_attention_objects[data.objective.follow_unit:key()]
+
+		TeamAILogicTravel.check_inspire(data, attention)
+	end
+
+	return TeamAILogicTravel.upd_advance(data)
+end
+
+--Stops CopLogicTravel changes from changing bot behavior, is copy of vanilla CopLogicTravel function.
+function TeamAILogicTravel.upd_advance(data)
+	local unit = data.unit
+	local my_data = data.internal_data
+	local objective = data.objective
+	local t = TimerManager:game():time()
+	data.t = t
+
+	if my_data.has_old_action then
+		CopLogicAttack._upd_stop_old_action(data, my_data)
+	elseif my_data.warp_pos then
+		local action_desc = {
+			body_part = 1,
+			type = "warp",
+			position = mvector3.copy(objective.pos),
+			rotation = objective.rot
+		}
+
+		if unit:movement():action_request(action_desc) then
+			TeamAILogicTravel._on_destination_reached(data)
+		end
+	elseif my_data.advancing then
+		if my_data.coarse_path then
+			if my_data.announce_t and my_data.announce_t < t then
+				CopLogicTravel._try_anounce(data, my_data)
+			end
+
+			CopLogicTravel._chk_stop_for_follow_unit(data, my_data)
+
+			if my_data ~= data.internal_data then
+				return
+			end
+		end
+	elseif my_data.advance_path then
+		CopLogicTravel._chk_begin_advance(data, my_data)
+
+		if my_data.advancing and my_data.path_ahead then
+			CopLogicTravel._check_start_path_ahead(data)
+		end
+	elseif my_data.processing_advance_path or my_data.processing_coarse_path then
+		TeamAILogicTravel._upd_pathing(data, my_data)
+
+		if my_data ~= data.internal_data then
+			return
+		end
+	elseif my_data.cover_leave_t then
+		if not my_data.turning and not unit:movement():chk_action_forbidden("walk") and not data.unit:anim_data().reload then
+			if my_data.cover_leave_t < t then
+				my_data.cover_leave_t = nil
+			elseif data.attention_obj and AIAttentionObject.REACT_SCARED <= data.attention_obj.reaction and (not my_data.best_cover or not my_data.best_cover[4]) and not unit:anim_data().crouch and (not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch) then
+				CopLogicAttack._chk_request_action_crouch(data)
+			end
+		end
+	elseif objective and (objective.nav_seg or objective.type == "follow") then
+		if my_data.coarse_path then
+			if my_data.coarse_path_index == #my_data.coarse_path then
+				TeamAILogicTravel._on_destination_reached(data)
+
+				return
+			else
+				CopLogicTravel._chk_start_pathing_to_next_nav_point(data, my_data)
+			end
+		else
+			CopLogicTravel._begin_coarse_pathing(data, my_data)
+		end
+	else
+		CopLogicBase._exit(data.unit, "idle")
+
+		return
+	end
+end
+
+--Stops CopLogicTravel changes from changing bot behavior, is copy of vanilla CopLogicTravel function.
+function TeamAILogicTravel._on_destination_reached(data)
+	local objective = data.objective
+	objective.in_place = true
+
+	if objective.type == "free" then
+		if not objective.action_duration then
+			data.objective_complete_clbk(data.unit, objective)
+
+			return
+		end
+	elseif objective.type == "flee" then
+		data.unit:brain():set_active(false)
+		data.unit:base():set_slot(data.unit, 0)
+
+		return
+	elseif objective.type == "defend_area" then
+		if objective.grp_objective and objective.grp_objective.type == "retire" then
+			data.unit:brain():set_active(false)
+			data.unit:base():set_slot(data.unit, 0)
+
+			return
+		else
+			managers.groupai:state():on_defend_travel_end(data.unit, objective)
+		end
+	end
+
+	data.logic.on_new_objective(data)
+end
+
+--Stops CopLogicTravel changes from changing bot behavior, is copy of vanilla CopLogicTravel function.
+function TeamAILogicTravel._update_cover(ignore_this, data)
+	local my_data = data.internal_data
+
+	CopLogicBase.on_delayed_clbk(my_data, my_data.cover_update_task_key)
+
+	local cover_release_dis = 100
+	local nearest_cover = my_data.nearest_cover
+	local best_cover = my_data.best_cover
+	local m_pos = data.m_pos
+
+	if not my_data.in_cover and nearest_cover and cover_release_dis < mvector3.distance(nearest_cover[1][1], m_pos) then
+		managers.navigation:release_cover(nearest_cover[1])
+
+		my_data.nearest_cover = nil
+		nearest_cover = nil
+	end
+
+	if best_cover and cover_release_dis < mvector3.distance(best_cover[1][1], m_pos) then
+		managers.navigation:release_cover(best_cover[1])
+
+		my_data.best_cover = nil
+		best_cover = nil
+	end
+
+	if nearest_cover or best_cover then
+		CopLogicBase.add_delayed_clbk(my_data, my_data.cover_update_task_key, callback(TeamAILogicTravel, TeamAILogicTravel, "_update_cover", data), data.t + 2)
+	end
+end
+
 function TeamAILogicTravel._upd_enemy_detection(data)
 	data.t = TimerManager:game():time()
 	local my_data = data.internal_data

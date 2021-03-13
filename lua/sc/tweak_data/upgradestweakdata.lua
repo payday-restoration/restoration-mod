@@ -425,8 +425,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Doctor Bags: Intended to offer consistent sustain over a long period of time.
 	self.doctor_bag_base = 2 --Starting Number
 	self.values.doctor_bag.heal_amount = 0.2 --Heals 20% of max health on use.
-	self.values.doctor_bag.passive_regen = 0.04
-	self.values.doctor_bag.passive_regen_duration = 180.1 --Heals 4% of max health every 4 seconds for the next 3 minutes or until you enter bleedout.
+	self.values.temporary.doctor_bag_health_regen = {{0.04, 180.1}} --Heals 4% of max health every 4 seconds for the next 3 minutes.
 	
 	--ECMs: They're ECMs
 	self.ecm_jammer_base_battery_life = 10
@@ -1144,7 +1143,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 5}, --Basic
+					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 4}, --Basic
 					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 10} --Ace
 				}
 				--Ace
@@ -1152,11 +1151,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
-					{damage_bonus = 1.1, max_stacks = 5, max_time = 5}, --Basic
+					{damage_bonus = 1.1, max_stacks = 5, max_time = 4}, --Basic
 					{damage_bonus = 1.1, max_stacks = 5, max_time = 10} --Ace
 				}
-				--Ace
-					self.values.player.trigger_happy_bodyshot_refresh = {true}
 			
 		--Revenant
 			--Running From Death
@@ -1472,6 +1469,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
 	self.values.player.loose_ammo_give_armor = {3}
+	self.values.player.loose_ammo_give_dodge = {1}
 
 	--Create actual upgrade table for Gambler.
 	self.values.temporary.loose_ammo_restore_health = {}
@@ -2549,7 +2547,16 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "loose_ammo_give_armor",
 			category = "player"
 		}
-	}		
+	}
+	self.definitions.player_loose_ammo_give_dodge = {
+		name_id = "menu_player_loose_ammo_give_dodge",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "loose_ammo_give_dodge",
+			category = "player"
+		}
+	}	
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {
@@ -2613,6 +2620,15 @@ function UpgradesTweakData:_player_definitions()
 			value = 1,
 			upgrade = "hostage_speed_multiplier",
 			category = "player"
+		}
+	}
+	self.definitions.player_doctor_bag_health_regen = {
+		name_id = "menu_temporary_doctor_bag_health_regen",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "doctor_bag_health_regen",
+			category = "temporary"
 		}
 	}
 end
@@ -2979,24 +2995,6 @@ function UpgradesTweakData:_saw_definitions()
 		upgrade = {
 			value = 2,
 			upgrade = "spooc_damage_resist",
-			category = "player"
-		}
-	}	
-	self.definitions.player_trigger_happy_bodyshot_refresh = {
-		name_id = "menu_player_trigger_happy_bodyshot_refresh",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "trigger_happy_bodyshot_refresh",
-			category = "player"
-		}
-	}
-	self.definitions.player_desperado_bodyshot_refresh = {
-		name_id = "menu_player_desperado_bodyshot_refresh",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "desperado_bodyshot_refresh",
 			category = "player"
 		}
 	}

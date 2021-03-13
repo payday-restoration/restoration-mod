@@ -556,13 +556,8 @@
 	<model path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
 	<unit path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false" load="false"/>
 	<material_config path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
-<!-- 	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_df" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_df" force="false"/>
 	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_nm" force="false"/>	
-	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_sight_df" force="false"/>
-	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_sight_nm" force="false"/>	 -->
-	<texture path="units/payday2/weapons/wpn_npc_oicw/oicw_lod_df" force="false"/>
-	<!-- <texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_df" force="false"/> -->
-	<!-- <texture path="units/mods/weapons/wpn_fps_ass_osipr_pts/osipr_nm" force="false"/>	 -->	
 	
 	<!--BONK BONK BONK fbi-->
 	<unit path="units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi" force="false" load="true"/>

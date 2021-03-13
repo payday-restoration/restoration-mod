@@ -23,7 +23,7 @@ function ProjectileBase:update(unit, t, dt)
 		local col_ray = nil
 		local ignore_units = {}
 
-		if self._thrower_unit then
+		if alive(self._thrower_unit) then
 			--to avoid colliding with the thrower, this prevents NPCs from hitting themselves with the projectile when launching it, along with player husks when FF is enabled
 			table.insert(ignore_units, self._thrower_unit)
 

@@ -199,7 +199,7 @@
 	</constraints>
 
 	<decal_surfaces default_material="flesh" >
-		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
+		<decal_mesh name="dm_helmet" enabled="true" material="glass_no_decal" />
 	</decal_surfaces>
 
 	<graphics>
@@ -208,29 +208,61 @@
             <lod_object name="lod_body">
                 <object name="g_body"       enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
                     <material materials="mtr_body" max_distance="1000" />
+                    <material materials="mtr_body_lod" max_distance="1500" />
+                    <material materials="mtr_body_lod1" />
                 </object>
                 <object name="g_body_lod1"  enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
-                    <material materials="mtr_body" max_distance="0"/>
+                    <material materials="mtr_body_lod" max_distance="0"/>
+                    <material materials="mtr_body_lod1" />
                 </object>
             </lod_object>
 
-			<object name="g_helmet_lod1" 	enabled="true" cpy_material_vars="contour_color, contour_opacity" />
-
-			<object name="g_helmet_lod2" 	enabled="true" cpy_material_vars="contour_color, contour_opacity" />
-	
+			<lod_object name="lod_head">
+				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="1000" />
+					<material materials="mtr_head_lod" max_distance="1500" />
+					<material materials="mtr_head_lod1" />
+				</object>
+				<object name="g_head_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_head_lod" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_head_lod1" />
+				</object>
+			</lod_object>
+			
+			<lod_object name="lod_hood">
+				<object name="g_hood" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="0" />				
+                    <material materials="mtr_hood" max_distance="1000" />
+                    <material materials="mtr_hood_lod" max_distance="1500" />
+                    <material materials="mtr_hood_lod1" />
+                </object>
+				<object name="g_hood_lod1" 	enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_head" max_distance="0" />								
+                    <material materials="mtr_hood_lod1" />
+                </object>
+			</lod_object>
+						
+			<lod_object name="lod_glass">
+				<object name="g_glass" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+                    <material materials="mtr_glass" max_distance="1500" />
+                    <material materials="mtr_glass_lod"  />
+                </object>
+				<object name="g_glass_lod1" enabled="true" lod="1" cpy_material_vars="contour_color, contour_opacity">
+                    <material materials="mtr_glass" max_distance="0" />
+                    <material materials="mtr_glass_lod" />
+                </object>
+			</lod_object>	
+			
+			<lod_object name="lod_glass_crk">
+				<object name="g_glass_crk" 	enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+                    <material materials="mtr_glass" max_distance="1500" />
+                    <material materials="mtr_glass_lod"  />
+                </object>
+			</lod_object>			
+			
 			<object name="s_body" enabled="true" shadow_caster="true"/>
-		</graphic_group>
-
-		<graphic_group name="head" enabled="true" culling_object="g_head">
-			
-            <object name="g_head"       enabled="true" cpy_material_vars="contour_color, contour_opacity" />
-			<object name="g_head_lod1"  enabled="false" cpy_material_vars="contour_color, contour_opacity" />
-			
 			<object name="s_head" enabled="true" shadow_caster="true"/>
 		</graphic_group>
-		
-		<object name="g_head_gore1" enabled="false" />
-		<object name="g_head_gore2" enabled="false" />
 	</graphics>
 
 </dynamic_object>

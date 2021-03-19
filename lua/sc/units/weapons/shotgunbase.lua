@@ -12,9 +12,6 @@ function ShotgunBase:_update_stats_values()
 		end
 	end
 
-	--Set range multipliers.
-	self._damage_near_mul = 1
-	self._damage_far_mul = 2
 	if self._ammo_data then
 		if self._ammo_data.rays ~= nil then
 			self._rays = self._ammo_data.rays
@@ -385,11 +382,9 @@ end
 
 function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 	--Initialize base info.
-	local falloff_info = tweak_data.weapon.stat_info.shotgun_falloff
+	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
 	local current_state = user_unit:movement()._current_state
-	local falloff_far_mul = self._damage_near_mul
-	local falloff_near_mul = self._damage_far_mul
 	local base_falloff = falloff_info.base
 
 	if current_state then
@@ -411,17 +406,20 @@ function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 			falloff_near_mul = falloff_near_mul * range_mul
 			falloff_far_mul = falloff_far_mul * range_mul
 		end
+
+		if self._rays > 1 then
+			base_falloff = base_falloff * falloff_info.shotgun_penalty
+		end
 	end
 
 	--Apply multipliers.
-	local falloff_near = base_falloff * falloff_near_mul
-	local falloff_far = base_falloff * falloff_far_mul
+	local falloff_near = base_falloff * falloff_info.near_mul
+	local falloff_far = base_falloff * falloff_info.far_mul
 
-	--Cache max distance that dot effects can be applied by the shotgun, rather than recalculating it redundantly.
-	--Min Distance used by Dragon's Breath/Flamethrowers to emulate falloff behavior, used by flechettes by adding to max to cover max real range.
-	--Used by Dragon's Breath, Flamethrowers, and Flechettes.
-	self.near_dot_distance = falloff_near
-	self.far_dot_distance = falloff_far
+	--Cache falloff values for usage in hitmarkers.
+	--Also used by Dragon's Breath, Flamethrowers, and Flechettes to limit dot range.
+	self.near_falloff_distance = falloff_near
+	self.far_falloff_distance = falloff_far
 
 	--Compute final damage.
 	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)

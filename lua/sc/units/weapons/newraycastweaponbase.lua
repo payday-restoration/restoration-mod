@@ -605,3 +605,36 @@ function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
 	ammo = math.floor(ammo)
 	return ammo
 end
+
+function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
+	--Initialize base info.
+	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
+	local current_state = user_unit:movement()._current_state
+	local base_falloff = falloff_info.base
+
+	if current_state then
+		--Get bonus from accuracy.
+		local acc_bonus = falloff_info.acc_bonus * (self._current_stats_indices.spread + managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) - 1)
+		
+		--Get bonus from stability.
+		local stab_bonus = falloff_info.stab_bonus * 25
+		if current_state._moving then
+			stab_bonus = falloff_info.stab_bonus * (self._current_stats_indices.recoil + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) - 1)
+		end
+
+		--Apply acc/stab bonuses.
+		base_falloff = base_falloff + stab_bonus + acc_bonus
+	end
+
+	--Apply multipliers.
+	local falloff_near = base_falloff * falloff_info.near_mul
+	local falloff_far = base_falloff * falloff_info.far_mul
+
+	--Cache falloff values for usage in hitmarkers.
+	self.near_falloff_distance = falloff_near
+	self.far_falloff_distance = falloff_far
+
+	--Compute final damage.
+	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)
+end

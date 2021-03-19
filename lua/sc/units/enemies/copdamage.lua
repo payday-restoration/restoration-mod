@@ -311,15 +311,15 @@ function CopDamage:damage_fire(attack_data)
 				distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
 			end
 
-			local fire_dot_max_distance = weap_base and weap_base.far_dot_distance and weap_base.far_dot_distance + weap_base.near_dot_distance or tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
+			local fire_dot_max_distance = weap_base and weap_base.far_falloff_distance and weap_base.far_falloff_distance + weap_base.near_falloff_distance or tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
 
 			if distance < fire_dot_max_distance then
 				local start_dot_damage_roll = math.random(1, 100)
 				local fire_dot_trigger_chance = tonumber(fire_dot_data.dot_trigger_chance) or 30
 
 				--Dragon's breath trigger chance scales with range.
-				if weap_base and weap_base.far_dot_distance then
-					fire_dot_trigger_chance = (1 - math.min(1, math.max(0, distance - weap_base.near_dot_distance) / weap_base.far_dot_distance)) * fire_dot_trigger_chance
+				if weap_base and weap_base.far_falloff_distance then
+					fire_dot_trigger_chance = (1 - math.min(1, math.max(0, distance - weap_base.near_falloff_distance) / weap_base.far_falloff_distance)) * fire_dot_trigger_chance
 				end
 
 				if start_dot_damage_roll <= fire_dot_trigger_chance then
@@ -667,7 +667,7 @@ function CopDamage:damage_bullet(attack_data)
 	local damage = attack_data.damage
 	local headshot_by_player = false
 	local headshot_multiplier = 1
-
+	log(damage)
 	if attack_data.attacker_unit == managers.player:player_unit() then
 		attack_data.backstab = self:check_backstab(attack_data)
 		local critical_hit, crit_damage = self:roll_critical_hit(attack_data)

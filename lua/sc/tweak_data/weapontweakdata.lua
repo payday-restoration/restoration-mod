@@ -2664,11 +2664,14 @@ function WeaponTweakData:_init_stats()
 		steelsight = 0.6
 	}
 
-	self.stat_info.shotgun_falloff = {
-		base = 50,
-		max = 1350,
-		acc_bonus = 40,
-		stab_bonus = 20
+	self.stat_info.damage_falloff = {
+		base = 125,
+		max = 3375,
+		acc_bonus = 100,
+		stab_bonus = 50,
+		near_mul = 1,
+		far_mul = 2,
+		shotgun_penalty = 0.4
 	}
 
 	--Recoil multiplier. Used for stability.

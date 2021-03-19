@@ -2665,8 +2665,8 @@ function WeaponTweakData:_init_stats()
 	}
 
 	self.stat_info.damage_falloff = {
-		base = 125,
-		max = 3375,
+		base = 150,
+		max = 3400,
 		acc_bonus = 100,
 		stab_bonus = 50,
 		near_mul = 1,

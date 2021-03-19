@@ -12,6 +12,9 @@ function ShotgunBase:_update_stats_values()
 		end
 	end
 
+	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
+	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul
+
 	if self._ammo_data then
 		if self._ammo_data.rays ~= nil then
 			self._rays = self._ammo_data.rays
@@ -33,7 +36,7 @@ function ShotgunBase:_update_stats_values()
 		end
 	end
 
-	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * self._damage_far_mul
+	self._range = tweak_data.weapon.stat_info.damage_falloff.max * self._damage_far_mul
 	
 	if self._ammo_data then
 		if self._ammo_data.rays ~= 1 and self._is_real_shotgun then
@@ -385,6 +388,8 @@ function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
 	local current_state = user_unit:movement()._current_state
+	local falloff_far_mul = self._damage_near_mul
+	local falloff_near_mul = self._damage_far_mul
 	local base_falloff = falloff_info.base
 
 	if current_state then

@@ -56,14 +56,21 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 
-	<material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+    <material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
         <variable value="0 1 0" type="vector3" name="fresnel_settings"/>
         <opacity_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op"/>
         <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df"/>
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
-	</material>
+    </material>
 	
-    <material name="mtr_glass_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+    <material name="mtr_glass_lod_1" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
+        <variable value="0 1 0" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" mip="1"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+    </material>
+	
+    <material name="mtr_glass_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
         <diffuse_texture file="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" mip="4"/>
     </material>
 	

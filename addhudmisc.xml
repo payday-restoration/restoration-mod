@@ -54,6 +54,7 @@
 	<texture path="guis/textures/restoration/mission_briefing/event"/>
 	<texture path="guis/textures/restoration/mission_briefing/classic"/>
 	<texture path="guis/textures/restoration/mission_briefing/hector"/>
+	<texture path="guis/textures/restoration/mission_briefing/jiufeng"/>
 	<texture path="guis/textures/restoration/crimenet/crimenet_portrait_gen"/>
 	<movie path="movies/codex/shatter1" force="true"/>
 	<movie path="movies/contact_shatter1" force="true"/>

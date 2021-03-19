@@ -153,18 +153,10 @@
 	<!--opscore-->
 	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
-
-	<!--smashscore-->
-	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_smashscore/ene_acc_smashscore" />
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_smashscore/ene_acc_smashscore"/>
 	
 	<!--brownframe-->
 	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe" />
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe"/>
-	
-	<!--smashframe-->
-	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_smashframe/ene_acc_smashframe" />
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_smashframe/ene_acc_smashframe"/>
 	
 	<!--LAPD swat-->
 	<!--LAPD heavy r870-->	

@@ -1466,6 +1466,14 @@ function CharacterTweakData:_init_biker(presets)
 	table.insert(self._enemy_list, "biker_guard")
 end
 
+function CharacterTweakData:_init_triad(presets)
+	self.triad = deep_clone(self.gangster)
+	self.triad.access = "gangster"
+	self.triad.calls_in = true
+
+	table.insert(self._enemy_list, "triad")
+end
+
 function CharacterTweakData:_init_captain(presets)
 	self.captain = deep_clone(self.gangster)
 	self.captain.calls_in = true
@@ -15175,6 +15183,22 @@ function CharacterTweakData:character_map()
 				"ene_guard_serpent_mask_no_pager",
 				"ene_thug_outdoor_fex",
 				"ene_secret_service_fex"
+			}
+		},
+		chas = {
+			path = "units/pd2_dlc_chas/characters/",
+			list = {
+				"ene_male_triad_gang_1",
+				"ene_male_triad_gang_2",
+				"ene_male_triad_gang_3",
+				"ene_male_triad_gang_4",
+				"ene_male_triad_gang_5",
+				"civ_male_asian_casual_1",
+				"civ_male_asian_casual_2",
+				"civ_male_asian_casual_3",
+				"civ_female_asian_casual_1",
+				"civ_female_asian_storekeeper",
+				"civ_male_auctioneer_2"
 			}
 		},
 		sharks = {

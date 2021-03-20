@@ -2184,12 +2184,6 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					name = "concealment"
 				},
 				{
-					percent = false,
-					inverted = true,
-					name = "suppression",
-					offset = true
-				},
-				{
 					inverted = true,
 					name = "reload"
 				},
@@ -2214,7 +2208,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				x = 10,
 				layer = 1,
 				w = self._weapon_info_panel:w() - 20,
-				h = self._weapon_info_panel:h() - 56
+				h = self._weapon_info_panel:h() - 64
 			})
 			local panel = self._stats_panel:panel({
 				h = 20,
@@ -3017,6 +3011,14 @@ function BlackMarketGui:show_stats()
 			self._stats_texts[stat.name].base:set_alpha(0.75)
 			self._stats_texts[stat.name].mods:set_alpha(0.75)
 			self._stats_texts[stat.name].skill:set_alpha(0.75)
+			
+			--Temporaryish until I can figure out how remove_stats is set up.
+			if base_stats[stat.name].value == -1 then
+				self._stats_texts[stat.name].equip:set_text("")
+				self._stats_texts[stat.name].base:set_text("")
+				self._stats_texts[stat.name].mods:set_text("")
+				self._stats_texts[stat.name].skill:set_text("")
+			end
 
 			if base < value then
 				self._stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
@@ -3136,6 +3138,14 @@ function BlackMarketGui:show_stats()
 				self._stats_texts[stat.name].mods:set_alpha(0.75)
 				self._stats_texts[stat.name].skill:set_alpha(0.75)
 
+				--Temporaryish until I can figure out how remove_stats is set up.
+				if base_stats[stat.name].value == -1 then
+					self._stats_texts[stat.name].equip:set_text("")
+					self._stats_texts[stat.name].base:set_text("")
+					self._stats_texts[stat.name].mods:set_text("")
+					self._stats_texts[stat.name].skill:set_text("")
+				end
+
 				if base < value then
 					self._stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
 				elseif value < base then
@@ -3181,6 +3191,12 @@ function BlackMarketGui:show_stats()
 				self._stats_texts[stat.name].skill:set_text("")
 				self._stats_texts[stat.name].removed:set_text("")
 				self._stats_texts[stat.name].total:set_text(format_round(value, stat.round_value) .. append)
+
+				--Temporaryish until I can figure out how remove_stats is set up.
+				if base_stats[stat.name].value == -1 then
+					self._stats_texts[stat.name].equip:set_text("")
+					self._stats_texts[stat.name].total:set_text("")
+				end
 
 				if equip < value then
 					self._stats_texts[stat.name].total:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
@@ -3689,13 +3705,20 @@ function BlackMarketGui:show_stats()
 			end
 
 			local equip_text = equip == 0 and "" or (equip > 0 and "+" or "") .. format_round(equip, stat.round_value)
+			local append = stat.append or ""
 
 			self._stats_texts[stat.name].base:set_text(equip_text)
 			self._stats_texts[stat.name].base:set_alpha(0.75)
 			self._stats_texts[stat.name].equip:set_alpha(1)
-			self._stats_texts[stat.name].equip:set_text(format_round(total_value, stat.round_value))
+			self._stats_texts[stat.name].equip:set_text(format_round(total_value, stat.round_value) .. append)
 			self._stats_texts[stat.name].skill:set_alpha(1)
-			self._stats_texts[stat.name].skill:set_text(value == 0 and "" or (value > 0 and "+" or "") .. format_round(value, stat.round_value))
+			self._stats_texts[stat.name].skill:set_text(value == 0 and "" or (value > 0 and "+" or "") .. format_round(value, stat.round_value) .. append)
+
+			--Temporaryish until I can figure out how remove_stats is set up.
+			if total_base_stats[stat.name].value == -1 then
+				self._stats_texts[stat.name].equip:set_text("")
+				self._stats_texts[stat.name].skill:set_text("")
+			end
 
 			if remove_stats[stat.name] and remove_stats[stat.name] ~= 0 then
 				local stat_str = remove_stats[stat.name] == 0 and "" or (remove_stats[stat.name] > 0 and "+" or "") .. format_round(remove_stats[stat.name], stat.round_value)

@@ -384,82 +384,121 @@ end
 
 function WeaponDescription._get_base_range(weapon, name, base_stats, consider_stability)
 	local weapon_tweak = tweak_data.weapon[name]
-	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
-	local base_falloff = falloff_info.base
-	local acc_bonus = falloff_info.acc_bonus * base_stats.spread.value * 0.2
-	local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
 
-	if consider_stability then
-		stab_bonus = falloff_info.stab_bonus * base_stats.recoil.value * 0.25
+	local has_range = true
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			has_range = nil
+		end
 	end
 
-	local range = 0.01 * (base_falloff + acc_bonus + stab_bonus)
-	if weapon_tweak.rays and weapon_tweak.rays > 1 then
-		range = range * falloff_info.shotgun_penalty
-	end
+	if has_range then
+		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+		local base_falloff = falloff_info.base
+		local acc_bonus = falloff_info.acc_bonus * base_stats.spread.value * 0.2
+		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
 
-	return range
+		if consider_stability then
+			stab_bonus = falloff_info.stab_bonus * base_stats.recoil.value * 0.25
+		end
+
+		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus)
+		if weapon_tweak.rays and weapon_tweak.rays > 1 then
+			range = range * falloff_info.shotgun_penalty
+		end
+
+		return range
+	else
+		return -1 --Set the text for this to be blank.
+	end
 end
 
 function WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, consider_stability)
 	local weapon_tweak = tweak_data.weapon[name]
-	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
-	local base_falloff = falloff_info.base
-	local acc_bonus = falloff_info.acc_bonus * math.max(base_stats.spread.value + mods_stats.spread.value, 0) * 0.2
-	local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
-	local base_range = base_stats.standing_range.value
 
-	if consider_stability then
-		stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value, 0) * 0.25
-		base_range = base_stats.moving_range.value
+	local has_range = true
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			has_range = nil
+		end
 	end
 
-	local range = 0.01 * (base_falloff + acc_bonus + stab_bonus)
+	if has_range then
+		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+		local base_falloff = falloff_info.base
+		local acc_bonus = falloff_info.acc_bonus * math.max(base_stats.spread.value + mods_stats.spread.value, 0) * 0.2
+		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
+		local base_range = base_stats.standing_range.value
 
-	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
-		range = range * falloff_info.shotgun_penalty
+		if consider_stability then
+			stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value, 0) * 0.25
+			base_range = base_stats.moving_range.value
+		end
+
+		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus)
+
+		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+		if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+			range = range * falloff_info.shotgun_penalty
+		end
+
+		if ammo_data.damage_near_mul then
+			range = range * ammo_data.damage_near_mul
+		end
+
+		return range - base_range
+	else
+		return 0
 	end
-
-	if ammo_data.damage_near_mul then
-		range = range * ammo_data.damage_near_mul
-	end
-
-	return range - base_range
 end
 
 function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, consider_stability)
 	local weapon_tweak = tweak_data.weapon[name]
-	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
-	local base_falloff = falloff_info.base
-	local acc_bonus = falloff_info.acc_bonus * math.max(base_stats.spread.value + mods_stats.spread.value + skill_stats.spread.value, 0) * 0.2
-	local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
-	local base_range = base_stats.standing_range.value
-	local mods_range = mods_stats.standing_range.value
 
-	if consider_stability then
-		stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value + skill_stats.recoil.value, 0) * 0.25
-		base_range = base_stats.moving_range.value
-		mods_range = mods_stats.standing_range.value
+	local has_range = true
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			has_range = nil
+		end
 	end
 
-	local range = 0.01 * (base_falloff + acc_bonus + stab_bonus)
+	if has_range then
+		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+		local base_falloff = falloff_info.base
+		local acc_bonus = falloff_info.acc_bonus * math.max(base_stats.spread.value + mods_stats.spread.value + skill_stats.spread.value, 0) * 0.2
+		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
+		local base_range = base_stats.standing_range.value
+		local mods_range = mods_stats.standing_range.value
 
-	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
-		range = range * falloff_info.shotgun_penalty
-	end
+		if consider_stability then
+			stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value + skill_stats.recoil.value, 0) * 0.25
+			base_range = base_stats.moving_range.value
+			mods_range = mods_stats.standing_range.value
+		end
 
-	if ammo_data.damage_near_mul then
-		range = range * ammo_data.damage_near_mul
-	end
+		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus)
 
-	local skill_range = range - base_range - mods_range
+		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+		if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+			range = range * falloff_info.shotgun_penalty
+		end
 
-	if skill_range >= 0 then
-		return false, 0
+		if ammo_data.damage_near_mul then
+			range = range * ammo_data.damage_near_mul
+		end
+
+		local skill_range = range - base_range - mods_range
+
+		if skill_range >= 0 then
+			return false, 0
+		else
+			return true, skill_range
+		end
 	else
-		return true, skill_range
+		return false, 0
 	end
 end
 

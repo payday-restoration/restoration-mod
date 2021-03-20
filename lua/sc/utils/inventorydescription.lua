@@ -476,7 +476,7 @@ function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats
 		if consider_stability then
 			stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value + skill_stats.recoil.value, 0) * 0.25
 			base_range = base_stats.moving_range.value
-			mods_range = mods_stats.standing_range.value
+			mods_range = mods_stats.moving_range.value
 		end
 
 		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus)

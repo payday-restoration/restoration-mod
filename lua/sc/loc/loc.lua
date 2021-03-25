@@ -1140,6 +1140,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_swap_speed"] = "Swap Time",
 		["bm_menu_standing_range"] = "Range",
 		["bm_menu_moving_range"] = "Range (Moving)",
+		["bm_menu_pickup"] = "Ammo Pickup",
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: $passive_armor_regen",
@@ -2201,7 +2202,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by ##25%.##\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_4_desc_sc"] = "You gain ##+1## increased concealment.\n\nWhen wearing armor, your movement speed is ##15%## less affected.\n\nYou gain ##45%## more experience when you complete days and jobs.\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
-		["menu_deckall_6_desc_sc"] = "Unlocks a Throwable Case equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nIncreases your ammo pickup to ##125%## of the normal rate.\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
+		["menu_deckall_6_desc_sc"] = "Unlocks a Throwable Case equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_8_desc_sc"] = "Increases your doctor bag interaction speed by ##20%.##\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 
 		--Crook--

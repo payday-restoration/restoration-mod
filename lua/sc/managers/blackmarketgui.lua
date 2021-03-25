@@ -2161,6 +2161,9 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					stat_name = "total_ammo_mod"
 				},
 				{
+					name = "pickup"
+				},
+				{
 					round_value = true,
 					name = "fire_rate"
 				},
@@ -2208,7 +2211,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				x = 10,
 				layer = 1,
 				w = self._weapon_info_panel:w() - 20,
-				h = self._weapon_info_panel:h() - 64
+				h = self._weapon_info_panel:h() - 56
 			})
 			local panel = self._stats_panel:panel({
 				h = 20,

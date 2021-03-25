@@ -17,8 +17,12 @@ tweak_data.ammo.ricochet.autohit = {
 }
 
 --Swap Speed Multipliers
-tweak_data.pistol = {swap_bonus = 1.35}
-tweak_data.akimbo = {swap_bonus = 0.65}
+--TODO: Move to stat_info
+tweak_data.pistol = {swap_bonus = 1.35, range_mul = 0.8}
+tweak_data.akimbo = {swap_bonus = 0.65, range_mul = 0.8}
+tweak_data.smg = {range_mul = 0.8}
+tweak_data.lmg = {range_mul = 1.25} --Stacks with smg to give a mul of 1
+tweak_data.snp = {range_mul = 1.25}
 
 --Max concealment for guns.
 tweak_data.concealment_cap = 32

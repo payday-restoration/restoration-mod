@@ -2008,7 +2008,6 @@ function SkillTreeTweakData:init(tweak_data)
 	local deck6 = {
 		upgrades = {
 			"armor_kit",
-			"player_pick_up_ammo_multiplier",
 			"weapon_passive_damage_multiplier_3",
 			"player_non_special_melee_multiplier_3",
 			"player_melee_damage_multiplier_3"			

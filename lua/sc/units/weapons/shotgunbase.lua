@@ -417,6 +417,14 @@ function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
 		end
 	end
 
+	--Apply global range multipilers.
+	base_falloff = base_falloff * (self:weapon_tweak_data().range_mul or 1)
+	for _, category in ipairs(self:categories()) do
+		if tweak_data[category] and tweak_data[category].range_mul then
+			base_falloff = base_falloff * tweak_data[category].range_mul
+		end
+	end
+
 	--Apply multipliers.
 	local falloff_near = base_falloff * falloff_info.near_mul
 	local falloff_far = base_falloff * falloff_info.far_mul

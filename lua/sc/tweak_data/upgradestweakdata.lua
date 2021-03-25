@@ -1245,7 +1245,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
-	self.values.player.pick_up_ammo_multiplier = {1.25}
 
 	--Burglar
 	self.values.player.crouch_dodge_chance = {0.05, 0.10}

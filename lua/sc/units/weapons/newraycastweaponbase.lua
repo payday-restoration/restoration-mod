@@ -423,34 +423,14 @@ end
 function NewRaycastWeaponBase:precalculate_ammo_pickup()
 	--Precalculate ammo pickup values.
 	if self:weapon_tweak_data().AMMO_PICKUP then
-		self._ammo_pickup = {self:weapon_tweak_data().AMMO_PICKUP[1], self:weapon_tweak_data().AMMO_PICKUP[2]} --Get base pickup % values. Make sure these are grabbed individually so you don't accidentally pass in the table by reference.
-		local total_ammo = self:get_ammo_max() * (tweak_data.weapon[self._name_id].use_data.selection_index == 1 and 2 or 1) --Total ammo used in pickup calcs as if the weapon was a primary. Double this if it's a secondary.
-		local stat_info = tweak_data.weapon.stat_info
+		self._ammo_pickup = {self:weapon_tweak_data().AMMO_PICKUP[1], self:weapon_tweak_data().AMMO_PICKUP[2]} --Get base gun ammo pickup.
 
-		--Pickup multiplier
-		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills
-			* managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
-			* (1 / managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)) --Compensate for fully loaded bonus ammo.
+		--Pickup multiplier from skills.
+		local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 
-		for _, category in ipairs(self:weapon_tweak_data().categories) do --Compensate for weapon category based bonus ammo.
-			pickup_multiplier = pickup_multiplier * (1 / managers.player:upgrade_value(category, "extra_ammo_multiplier", 1))
-		end
-
-		--Apply shotgun pickup penalty if gun is valid and using multi-pellet ammo.
-		if self._rays and self._rays > 1 then
-			pickup_multiplier = pickup_multiplier * stat_info.shotgun_pickup_penalty
-		end
-
-		--Compensate for perk deck damage boosts and damage being /10 overall. Treat damage as if you have the max level.
-		local damage_multiplier = 10
-		if not self:is_category("grenade_launcher", "rocket_frag", "bow", "crossbow") then
-			damage_multiplier = damage_multiplier / managers.player:upgrade_value("player", "passive_damage_multiplier", 1)
-		end
-
-		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
-		--self._ammo_data.ammo_pickup_xxx_mul corresponds to a multiplier from weapon mods, especially ones that may modify total ammo without changing damage tiers or add DOT effects.
-		self._ammo_pickup[1] = (self._ammo_pickup[1] + stat_info.pickup_exponents.min * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
-		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + stat_info.pickup_exponents.max * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1), self._ammo_pickup[1])
+		--Apply multiplier from skills and ammo.
+		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
+		self._ammo_pickup[2] = self._ammo_pickup[2] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1)
 	end
 end
 					
@@ -625,6 +605,14 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 
 		--Apply acc/stab bonuses.
 		base_falloff = base_falloff + stab_bonus + acc_bonus
+	end
+
+	--Apply global range multipilers.
+	base_falloff = base_falloff * (self:weapon_tweak_data().range_mul or 1)
+	for _, category in ipairs(self:categories()) do
+		if tweak_data[category] and tweak_data[category].range_mul then
+			base_falloff = base_falloff * tweak_data[category].range_mul
+		end
 	end
 
 	--Apply multipliers.

@@ -515,13 +515,13 @@ function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats
 	end
 end
 
-function WeaponDescription._get_base_pickup(weapon, name, base_stats)
+function WeaponDescription._get_base_pickup(weapon, name)
 	local weapon_tweak = tweak_data.weapon[name]
 	local average_pickup = (weapon_tweak.AMMO_PICKUP[1] + weapon_tweak.AMMO_PICKUP[2]) * 0.5
 	return average_pickup
 end
 
-function WeaponDescription._get_mods_pickup(weapon, name, base_stats, mods_stats)
+function WeaponDescription._get_mods_pickup(weapon, name, base_stats)
 	local weapon_tweak = tweak_data.weapon[name]
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1)
@@ -530,11 +530,15 @@ function WeaponDescription._get_mods_pickup(weapon, name, base_stats, mods_stats
 	return average_pickup - base_stats.pickup.value
 end
 
-function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats, skill_stats)
+function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats)
 	local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 
+	local weapon_tweak = tweak_data.weapon[name]
+	for _, category in ipairs(weapon_tweak.categories) do
+		pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
+	end
+
 	if pickup_multiplier > 1 then
-		local weapon_tweak = tweak_data.weapon[name]
 		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 		local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1) * pickup_multiplier
 		local max_pickup = weapon_tweak.AMMO_PICKUP[2] * (ammo_data.ammo_pickup_max_mul or 1) * pickup_multiplier
@@ -611,9 +615,9 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 
 	--and also pickup.
 	--God this is ugly code.
-	base_stats.pickup.value = WeaponDescription._get_base_pickup(weapon, name, base_stats)
-	mods_stats.pickup.value = WeaponDescription._get_mods_pickup(weapon, name, base_stats, mods_stats)
-	skill_stats.pickup.skill_in_effect, skill_stats.standing_range.value = WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats, skill_stats)
+	base_stats.pickup.value = WeaponDescription._get_base_pickup(weapon, name)
+	mods_stats.pickup.value = WeaponDescription._get_mods_pickup(weapon, name, base_stats)
+	skill_stats.pickup.skill_in_effect, skill_stats.pickup.value = WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats)
 
 	return base_stats, mods_stats, skill_stats
 end

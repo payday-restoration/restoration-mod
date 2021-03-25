@@ -428,6 +428,10 @@ function NewRaycastWeaponBase:precalculate_ammo_pickup()
 		--Pickup multiplier from skills.
 		local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 
+		for _, category in ipairs(self:categories()) do
+			pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
+		end
+
 		--Apply multiplier from skills and ammo.
 		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
 		self._ammo_pickup[2] = self._ammo_pickup[2] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1)
@@ -605,9 +609,22 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 
 		--Apply acc/stab bonuses.
 		base_falloff = base_falloff + stab_bonus + acc_bonus
+
+		--Get ADS multiplier.
+		if current_state:in_steelsight() then
+			for _, category in ipairs(self:categories()) do
+				base_falloff = base_falloff * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
+			end
+		end
+
+		if self._rays and self._rays > 1 then
+			base_falloff = base_falloff * falloff_info.shotgun_penalty
+		end
 	end
 
-	--Apply global range multipilers.
+	--Apply global range multipliers.
+	base_falloff = base_falloff * (1 + 1 - managers.player:get_property("desperado", 1))
+
 	base_falloff = base_falloff * (self:weapon_tweak_data().range_mul or 1)
 	for _, category in ipairs(self:categories()) do
 		if tweak_data[category] and tweak_data[category].range_mul then

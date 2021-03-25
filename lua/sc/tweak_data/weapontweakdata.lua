@@ -9397,7 +9397,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			if not weap.supported then
 				self:generate_custom_weapon_stats(weap)	
 			end
-			log(i)
+
 			self:calculate_ammo_pickup(weap)
 		end
 	end
@@ -9417,6 +9417,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		{damage = 120, pickup = {0.040, 0.022}},
 		{damage = 180, pickup = {0.036, 0.020}},
 		{damage = 240, pickup = {0.031, 0.018}}, --All guns above here.
+		{damage = 360, pickup = {0.029, 0.017}}, --Heavy bows.
 		{damage = 600, pickup = {0.026, 0.016}}, --Light GLs
 		{damage = 800, pickup = {0.021, 0.013}}, --Heavy GLs
 		{damage = 1200, pickup = {0.012, 0.009}} --Rocket Launchers
@@ -9443,7 +9444,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		smg = 1.1,
 		akimbo = 1.1,
 		saw = 1.25, --Compensate for jankiness.
-		lmg = 0.9 --Undoes SMG ammo pickup bonus. These guys already pick up a bunch.
+		lmg = 0.87 --Undoes SMG ammo pickup bonus. These guys already pick up a bunch.
 	}
 
 	--Get weapon category specific pickup multipliers.

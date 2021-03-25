@@ -648,9 +648,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Far Away
 				--Basic
-					self.values.shotgun.steelsight_accuracy_inc = {0.6}
+					self.values.player.steelsight_speed_multiplier = {1.6} --Movement speed while ADSing.
 				--Ace
-					self.values.shotgun.steelsight_range_inc = {1.4}
+					self.values.shotgun.steelsight_accuracy_inc = {0.7}
+					self.values.shotgun.steelsight_range_inc = {1.3}
 
 			--Close By
 				--Basic
@@ -859,6 +860,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.assault_rifle.steelsight_accuracy_inc = {0.7}
 					self.values.snp.steelsight_accuracy_inc = {0.7}
+					self.values.assault_rifle.steelsight_range_inc = {1.3}
+					self.values.snp.steelsight_range_inc = {1.3}
 					
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
@@ -1122,32 +1125,32 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.pistol.move_spread_multiplier = {0.6}
 				
 			--Akimbo
-				--Ace
-					self.values.akimbo.extra_ammo_multiplier = {1.25, 1.25}
-
 				self.values.akimbo.recoil_index_addend = {
 					0,
-					2, --Basic
-					4, --Ace
-					6,
-					8
+					4, --Basic
+					4,
+					4,
+					4
 				}
+
+				--Ace
+					self.values.akimbo.extra_ammo_multiplier = {1.25}
+					self.values.akimbo.pick_up_multiplier = {1.25}
+
 				--Reserved for future use.
 				self.values.akimbo.spread_index_addend = {
 					0,
-					1,
-					2,
-					3,
-					4
+					0,
+					0,
+					0,
+					0
 				}
 
 			--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 4}, --Basic
-					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 10} --Ace
+					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 4}, --Basic
+					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 10} --Ace
 				}
-				--Ace
-					self.values.player.desperado_bodyshot_refresh = {true}
 				
 			--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
@@ -2630,6 +2633,15 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}
+	self.definitions.player_steelsight_speed_multiplier = {
+		name_id = "menu_player_steelsight_speed_multiplier",
+		category = "player",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_speed_multiplier",
+			category = "player"
+		}
+	}
 end
 
 function UpgradesTweakData:_smg_definitions()
@@ -3288,6 +3300,24 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			category = "assault_rifle"
 		}
 	}
+	self.definitions.snp_steelsight_range_inc_1 = {
+		name_id = "menu_snp_steelsight_range_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_range_inc",
+			category = "snp"
+		}
+	}
+	self.definitions.assault_rifle_steelsight_range_inc_1 = {
+		name_id = "menu_assault_rifle_steelsight_range_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_range_inc",
+			category = "assault_rifle"
+		}
+	}
 	self.definitions.pistol_ap_bullets_1 = {
 		name_id = "menu_pistol_ap_bullets_1",
 		category = "feature",
@@ -3295,6 +3325,15 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 1,
 			upgrade = "ap_bullets",
 			category = "pistol"
+		}
+	}
+	self.definitions.akimbo_pick_up_multiplier = {
+		name_id = "menu_akimbo_pick_up_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "pick_up_multiplier",
+			category = "akimbo"
 		}
 	}
 end)

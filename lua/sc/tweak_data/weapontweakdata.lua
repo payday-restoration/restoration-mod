@@ -9444,7 +9444,7 @@ function WeaponTweakData:calculate_ammo_pickup(weapon)
 		smg = 1.1,
 		akimbo = 1.1,
 		saw = 1.25, --Compensate for jankiness.
-		lmg = 0.87 --Undoes SMG ammo pickup bonus. These guys already pick up a bunch.
+		lmg = 0.9 --Undoes SMG ammo pickup bonus. These guys already pick up a bunch.
 	}
 
 	--Get weapon category specific pickup multipliers.

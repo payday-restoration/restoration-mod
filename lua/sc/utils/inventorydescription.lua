@@ -505,14 +505,12 @@ function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats
 
 		local skill_range = range - base_range - mods_range
 
-		if skill_range >= 0 then
-			return false, 0
-		else
+		if skill_range > 0 then
 			return true, skill_range
 		end
-	else
-		return false, 0
 	end
+
+	return false, 0
 end
 
 function WeaponDescription._get_base_pickup(weapon, name)

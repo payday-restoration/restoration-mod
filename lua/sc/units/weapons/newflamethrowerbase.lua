@@ -61,8 +61,7 @@ function NewFlamethrowerBase:_update_stats_values()
 		end
 	end
 
-
-	--Maximum range, set to longest possible falloff distance.
+	--Effect range, set to longest possible falloff distance.
 	self._range = tweak_data.weapon.stat_info.damage_falloff.max * self._damage_far_mul
 end
 
@@ -71,8 +70,6 @@ function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
 	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
 	local current_state = user_unit:movement()._current_state
-	local falloff_far_mul = self._damage_near_mul
-	local falloff_near_mul = self._damage_far_mul
 	local base_falloff = falloff_info.base
 
 	if current_state then
@@ -89,22 +86,35 @@ function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
 		base_falloff = base_falloff + stab_bonus + acc_bonus
 
 		--Get ADS multiplier.
-		if current_state:in_steelsight() and self._is_real_shotgun then
-			local range_mul = managers.player:upgrade_value("shotgun", "steelsight_range_inc", 1)
-			falloff_near_mul = falloff_near_mul * range_mul
-			falloff_far_mul = falloff_far_mul * range_mul
+		if current_state:in_steelsight() then
+			for _, category in ipairs(self:categories()) do
+				base_falloff = base_falloff * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
+			end
+		end
+
+		if self._rays and self._rays > 1 then
+			base_falloff = base_falloff * falloff_info.shotgun_penalty
+		end
+	end
+
+	--Apply global range multipliers.
+	base_falloff = base_falloff * (1 + 1 - managers.player:get_property("desperado", 1))
+
+	base_falloff = base_falloff * (self:weapon_tweak_data().range_mul or 1)
+	for _, category in ipairs(self:categories()) do
+		if tweak_data[category] and tweak_data[category].range_mul then
+			base_falloff = base_falloff * tweak_data[category].range_mul
 		end
 	end
 
 	--Apply multipliers.
-	local falloff_near = base_falloff * falloff_near_mul
-	local falloff_far = base_falloff * falloff_far_mul
+	local falloff_near = base_falloff * falloff_info.near_mul
+	local falloff_far = base_falloff * falloff_info.far_mul
 
-	--Cache max distance that dot effects can be applied by the shotgun, rather than recalculating it redundantly.
-	--Min Distance used by Dragon's Breath/Flamethrowers to emulate falloff behavior, used by flechettes by adding to max to cover max real range.
-	--Used by Dragon's Breath, Flamethrowers, and Flechettes.
-	self.near_dot_distance = falloff_near
-	self.far_dot_distance = falloff_far
+	--Cache falloff values for usage in hitmarkers.
+	self.near_falloff_distance = falloff_near
+	self.far_falloff_distance = falloff_far
+	self._range = falloff_far --Likely going to lead to occasional jank, but oh well.
 
 	--Compute final damage.
 	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)

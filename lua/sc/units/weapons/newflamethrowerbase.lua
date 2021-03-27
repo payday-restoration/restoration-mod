@@ -63,12 +63,12 @@ function NewFlamethrowerBase:_update_stats_values()
 
 
 	--Maximum range, set to longest possible falloff distance.
-	self._range = tweak_data.weapon.stat_info.shotgun_falloff.max * self._damage_far_mul
+	self._range = tweak_data.weapon.stat_info.damage_falloff.max * self._damage_far_mul
 end
 
 function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
 	--Initialize base info.
-	local falloff_info = tweak_data.weapon.stat_info.shotgun_falloff
+	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
 	local current_state = user_unit:movement()._current_state
 	local falloff_far_mul = self._damage_near_mul

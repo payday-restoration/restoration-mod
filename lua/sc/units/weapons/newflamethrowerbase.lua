@@ -24,8 +24,8 @@ function NewFlamethrowerBase:_update_stats_values()
 	NewFlamethrowerBase.super._update_stats_values(self)
 
 	--Set range multipliers.
-	self._damage_near_mul = 1
-	self._damage_far_mul = 2	
+	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
+	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
 		if stats.damage_near_mul then
@@ -108,8 +108,8 @@ function NewFlamethrowerBase:get_damage_falloff(damage, col_ray, user_unit)
 	end
 
 	--Apply multipliers.
-	local falloff_near = base_falloff * falloff_info.near_mul
-	local falloff_far = base_falloff * falloff_info.far_mul
+	local falloff_near = base_falloff * self._damage_near_mul
+	local falloff_far = base_falloff * self._damage_far_mul
 
 	--Cache falloff values for usage in hitmarkers.
 	self.near_falloff_distance = falloff_near

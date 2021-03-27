@@ -364,7 +364,20 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		self._burst_rounds_fired = 0
 	else
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
-	end		
+	end	
+
+	--Set range multipliers.
+	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
+	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul
+
+	if self._ammo_data then
+		if self._ammo_data.damage_near_mul ~= nil then
+			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
+		end
+		if self._ammo_data.damage_far_mul ~= nil then
+			self._damage_far_mul = self._damage_far_mul * self._ammo_data.damage_far_mul
+		end
+	end
 	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
@@ -413,13 +426,19 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 				self:weapon_tweak_data().categories = {"pistol"}
 			end
 		end
+
+		if stats.damage_near_mul then
+			self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
+		end
+
+		if stats.damage_far_mul then
+			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
+		end
 	end
 
 	self:precalculate_ammo_pickup()
 end
 
---TODO: Look into moving calcs to WeaponTweakData.
---Would be less efficient, but would make certain things easier.
 function NewRaycastWeaponBase:precalculate_ammo_pickup()
 	--Precalculate ammo pickup values.
 	if self:weapon_tweak_data().AMMO_PICKUP then
@@ -633,8 +652,8 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	end
 
 	--Apply multipliers.
-	local falloff_near = base_falloff * falloff_info.near_mul
-	local falloff_far = base_falloff * falloff_info.far_mul
+	local falloff_near = base_falloff * self._damage_near_mul
+	local falloff_far = base_falloff * self._damage_far_mul
 
 	--Cache falloff values for usage in hitmarkers.
 	self.near_falloff_distance = falloff_near

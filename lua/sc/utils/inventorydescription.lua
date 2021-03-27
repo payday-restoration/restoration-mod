@@ -545,8 +545,6 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 	else
 		return false, 0
 	end
-
-
 end
 
 function WeaponDescription._get_stats(name, category, slot, blueprint)

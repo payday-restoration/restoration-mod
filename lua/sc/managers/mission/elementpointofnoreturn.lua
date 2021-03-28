@@ -5,6 +5,7 @@ function ElementPointOfNoReturn:on_executed(instigator)
 
 	local diff = Global.game_settings and Global.game_settings.difficulty or "hard"
 	local job = Global.level_data and Global.level_data.level_id
+	local pro = Global.game_settings and Global.game_settings.one_down
 
 	--Done to make the timer more fair
 	if job == "cage" then 
@@ -63,6 +64,10 @@ function ElementPointOfNoReturn:on_executed(instigator)
 		elseif diff == "sm_wish" then
 			managers.groupai:state():set_point_of_no_return_timer(600, self._id)
 		end	
+	--Disabling PONR timer on FWB if you're not on a Pro Job
+	elseif job == "red2" and not pro then 
+		--Disabled
+		return		
 	--Because does it really need one?
 	elseif job == "vit" then 
 		--Disabled

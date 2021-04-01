@@ -59,6 +59,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"colt_1911",
 					"mac10",
 					"hajk",
+					"spoon",
 					"x_mac10"
 				}
 			},	

@@ -41,7 +41,6 @@ function RaycastWeaponBase:setup(...)
 	end
 
 	--Trackers for MG Specialist Ace
-	self._bullets_until_free = nil
 	for _, category in ipairs(self:weapon_tweak_data().categories) do
 		if managers.player:has_category_upgrade(category, "full_auto_free_ammo") then
 			self._bullets_until_free = managers.player:upgrade_value(category, "full_auto_free_ammo")
@@ -604,7 +603,7 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 	local consume_ammo = not managers.player:has_active_temporary_property("bullet_storm") and (not managers.player:has_activate_temporary_upgrade("temporary", "berserker_damage_multiplier") or not managers.player:has_category_upgrade("player", "berserker_no_ammo_cost")) or not is_player
 
 	--MG Specialist Skill
-	if self._shots_without_releasing_trigger then
+	if is_player and self._shots_without_releasing_trigger then
 		self._shots_without_releasing_trigger = self._shots_without_releasing_trigger + 1
 		if self._bullets_until_free and self._shots_without_releasing_trigger % self._bullets_until_free == 0 then
 			consume_ammo = false

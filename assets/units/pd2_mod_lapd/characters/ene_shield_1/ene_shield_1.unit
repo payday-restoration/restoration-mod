@@ -6,7 +6,7 @@
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/regular_vox" />
-		<depends_on unit="units/pd2_mod_lapd/characters/ene_acc_smashframe/ene_acc_smashframe" />
+		<depends_on unit="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe" />
 		<depends_on unit="units/payday2/characters/ene_acc_shield_lights/ene_acc_shield_lights" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
@@ -27,7 +27,7 @@
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_helmet_lod" />
 			<var name="_nr_head_gear_objects" value="4" />
-			<var name="_head_gear" value="units/pd2_mod_lapd/characters/ene_acc_smashframe/ene_acc_smashframe" />
+			<var name="_head_gear" value="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>
 		<extension name="movement" class="CopMovement" >

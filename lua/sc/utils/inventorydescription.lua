@@ -2,6 +2,18 @@ table.insert(WeaponDescription._stats_shown, {
 	name = "swap_speed"
 })
 
+table.insert(WeaponDescription._stats_shown, {
+	name = "standing_range"
+})
+
+table.insert(WeaponDescription._stats_shown, {
+	name = "moving_range"
+})
+
+table.insert(WeaponDescription._stats_shown, {
+	name = "pickup"
+})
+
 --Add support for .reload_speed_multiplier
 function WeaponDescription._get_base_stats(name)
 	local base_stats = {}
@@ -374,6 +386,167 @@ function WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, s
 	end
 end
 
+function WeaponDescription._get_base_range(weapon, name, base_stats, consider_stability)
+	local weapon_tweak = tweak_data.weapon[name]
+
+	local has_range = true
+	local category_mul = 1
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			has_range = nil
+		elseif tweak_data[category] and tweak_data[category].range_mul then
+			category_mul = category_mul * tweak_data[category].range_mul
+		end
+	end
+
+	if has_range then
+		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+		local base_falloff = falloff_info.base
+		local acc_bonus = falloff_info.acc_bonus * base_stats.spread.value * 0.2
+		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
+
+		if consider_stability then
+			stab_bonus = falloff_info.stab_bonus * base_stats.recoil.value * 0.25
+		end
+
+		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus) * category_mul
+		if weapon_tweak.rays and weapon_tweak.rays > 1 then
+			range = range * falloff_info.shotgun_penalty
+		end
+
+		return range
+	else
+		return -1 --Set the text for this to be blank.
+	end
+end
+
+function WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, consider_stability)
+	local weapon_tweak = tweak_data.weapon[name]
+
+	local has_range = true
+	local category_mul = 1
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			has_range = nil
+		elseif tweak_data[category] and tweak_data[category].range_mul then
+			category_mul = category_mul * tweak_data[category].range_mul
+		end
+	end
+
+	if has_range then
+		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+		local base_falloff = falloff_info.base
+		local acc_bonus = falloff_info.acc_bonus * math.max(base_stats.spread.value + mods_stats.spread.value, 0) * 0.2
+		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
+		local base_range = base_stats.standing_range.value
+
+		if consider_stability then
+			stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value, 0) * 0.25
+			base_range = base_stats.moving_range.value
+		end
+
+		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus) * category_mul
+
+		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+		if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+			range = range * falloff_info.shotgun_penalty
+		end
+
+		if ammo_data.damage_near_mul then
+			range = range * ammo_data.damage_near_mul
+		end
+
+		return range - base_range
+	else
+		return 0
+	end
+end
+
+function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, consider_stability)
+	local weapon_tweak = tweak_data.weapon[name]
+
+	local has_range = true
+	local category_mul = 1
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			has_range = nil
+		elseif tweak_data[category] and tweak_data[category].range_mul then
+			category_mul = category_mul * tweak_data[category].range_mul
+		end
+	end
+
+	if has_range then
+		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+		local base_falloff = falloff_info.base
+		local acc_bonus = falloff_info.acc_bonus * math.max(base_stats.spread.value + mods_stats.spread.value + skill_stats.spread.value, 0) * 0.2
+		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
+		local base_range = base_stats.standing_range.value
+		local mods_range = mods_stats.standing_range.value
+
+		if consider_stability then
+			stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value + skill_stats.recoil.value, 0) * 0.25
+			base_range = base_stats.moving_range.value
+			mods_range = mods_stats.moving_range.value
+		end
+
+		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus) * category_mul
+
+		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+		if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+			range = range * falloff_info.shotgun_penalty
+		end
+
+		if ammo_data.damage_near_mul then
+			range = range * ammo_data.damage_near_mul
+		end
+
+		local skill_range = range - base_range - mods_range
+
+		if skill_range > 0 then
+			return true, skill_range
+		end
+	end
+
+	return false, 0
+end
+
+function WeaponDescription._get_base_pickup(weapon, name)
+	local weapon_tweak = tweak_data.weapon[name]
+	local average_pickup = (weapon_tweak.AMMO_PICKUP[1] + weapon_tweak.AMMO_PICKUP[2]) * 0.5
+	return average_pickup
+end
+
+function WeaponDescription._get_mods_pickup(weapon, name, base_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1)
+	local max_pickup = weapon_tweak.AMMO_PICKUP[2] * (ammo_data.ammo_pickup_max_mul or 1)
+	local average_pickup = (min_pickup + max_pickup) * 0.5
+	return average_pickup - base_stats.pickup.value
+end
+
+function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats)
+	local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
+
+	local weapon_tweak = tweak_data.weapon[name]
+	for _, category in ipairs(weapon_tweak.categories) do
+		pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
+	end
+
+	if pickup_multiplier > 1 then
+		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+		local min_pickup = weapon_tweak.AMMO_PICKUP[1] * (ammo_data.ammo_pickup_min_mul or 1) * pickup_multiplier
+		local max_pickup = weapon_tweak.AMMO_PICKUP[2] * (ammo_data.ammo_pickup_max_mul or 1) * pickup_multiplier
+		local average_pickup = (min_pickup + max_pickup) * 0.5
+		return true, average_pickup - mods_stats.pickup.value - base_stats.pickup.value
+	else
+		return false, 0
+	end
+end
+
 function WeaponDescription._get_stats(name, category, slot, blueprint)
 	local equipped_mods = nil
 	local silencer = false
@@ -427,6 +600,20 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	base_stats.swap_speed.value = WeaponDescription._get_base_swap_speed(name, base_stats)
 	mods_stats.swap_speed.value = WeaponDescription._get_mods_swap_speed(name, base_stats, mods_stats)
 	skill_stats.swap_speed.skill_in_effect, skill_stats.swap_speed.value = WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats, silencer)
+
+	--and range.
+	base_stats.standing_range.value = WeaponDescription._get_base_range(weapon, name, base_stats, false)
+	mods_stats.standing_range.value = WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, false)
+	skill_stats.standing_range.skill_in_effect, skill_stats.standing_range.value = WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, false)
+	base_stats.moving_range.value = WeaponDescription._get_base_range(weapon, name, base_stats, true)
+	mods_stats.moving_range.value = WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, true)
+	skill_stats.moving_range.skill_in_effect, skill_stats.moving_range.value = WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, true)
+
+	--and also pickup.
+	--God this is ugly code.
+	base_stats.pickup.value = WeaponDescription._get_base_pickup(weapon, name)
+	mods_stats.pickup.value = WeaponDescription._get_mods_pickup(weapon, name, base_stats)
+	skill_stats.pickup.skill_in_effect, skill_stats.pickup.value = WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats)
 
 	return base_stats, mods_stats, skill_stats
 end

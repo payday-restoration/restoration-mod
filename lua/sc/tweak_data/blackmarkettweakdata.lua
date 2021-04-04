@@ -3762,6 +3762,42 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.chac.melee_damage_delay = 0.2
 	self.melee_weapons.chac.expire_t = 1.1
 	
+	--WHAT IB WE JUZ USED A SPUUUN :DDDDD--
+	self.melee_weapons.spoon.stats.min_damage = 4.5
+	self.melee_weapons.spoon.stats.max_damage = 9.1
+	self.melee_weapons.spoon.stats.min_damage_effect = 4.5
+	self.melee_weapons.spoon.stats.max_damage_effect = 5
+	self.melee_weapons.spoon.stats.charge_time = 2.1
+	self.melee_weapons.spoon.stats.range = 210
+	self.melee_weapons.spoon.stats.concealment = 23
+	self.melee_weapons.spoon.repeat_expire_t = 1.05
+	self.melee_weapons.spoon.melee_damage_delay = 0.2
+	self.melee_weapons.spoon.expire_t = 1.2	
+	
+	--BIRE xddddddd--
+	self.melee_weapons.spoon_gold.anim_global_param = "melee_baseballbat"
+	self.melee_weapons.spoon_gold.type = "axe"
+	self.melee_weapons.spoon_gold.fire_dot_data = {
+		dot_trigger_chance = "50",
+		dot_damage = "2",
+		dot_length = "3.1",
+		dot_trigger_max_distance = "3000",
+		dot_tick_period = "0.5"
+	}	
+	self.melee_weapons.spoon_gold.info_id = "bm_melee_spoon_gold_info"
+	self.melee_weapons.spoon_gold.align_objects = {"a_weapon_right"}
+	self.melee_weapons.spoon_gold.anim_attack_vars = {"var1","var2"}
+	self.melee_weapons.spoon_gold.stats.min_damage = 4.5
+	self.melee_weapons.spoon_gold.stats.max_damage = 9.1
+	self.melee_weapons.spoon_gold.stats.max_damage_effect = 4
+	self.melee_weapons.spoon_gold.stats.min_damage_effect = 3.5
+	self.melee_weapons.spoon_gold.stats.charge_time = 2.3
+	self.melee_weapons.spoon_gold.stats.range = 210
+	self.melee_weapons.spoon_gold.repeat_expire_t = 1.05
+	self.melee_weapons.spoon_gold.expire_t = 1.2
+	self.melee_weapons.spoon_gold.melee_damage_delay = 0.2
+	self.melee_weapons.spoon_gold.stats.concealment = 23	
+	
 	-- Workaround for custom melee bug
 	self.melee_weapons.halloween_sword = deep_clone(self.melee_weapons.great)
 	self.melee_weapons.halloween_sword.name_id = "bm_melee_halloween_sword"

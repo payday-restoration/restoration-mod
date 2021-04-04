@@ -539,12 +539,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {8, 5},
 				[1] = {
 					upgrades = {
-						"shotgun_steelsight_accuracy_inc_1"
+						"player_steelsight_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
+						"shotgun_steelsight_accuracy_inc_1",
 						"shotgun_steelsight_range_inc_1"
 					},
 					cost = self.costs.hightierpro
@@ -1146,7 +1147,9 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"assault_rifle_steelsight_accuracy_inc_1",
-						"snp_steelsight_accuracy_inc_1"
+						"snp_steelsight_accuracy_inc_1",
+						"assault_rifle_steelsight_range_inc_1",
+						"snp_steelsight_range_inc_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1677,7 +1680,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"akimbo_extra_ammo_multiplier_1",
-						"akimbo_recoil_index_addend_3"
+						"akimbo_pick_up_multiplier"
 					},
 					cost = self.costs.hightierpro
 				}	
@@ -2008,7 +2011,6 @@ function SkillTreeTweakData:init(tweak_data)
 	local deck6 = {
 		upgrades = {
 			"armor_kit",
-			"player_pick_up_ammo_multiplier",
 			"weapon_passive_damage_multiplier_3",
 			"player_non_special_melee_multiplier_3",
 			"player_melee_damage_multiplier_3"			

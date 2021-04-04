@@ -364,7 +364,20 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		self._burst_rounds_fired = 0
 	else
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
-	end		
+	end	
+
+	--Set range multipliers.
+	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
+	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul
+
+	if self._ammo_data then
+		if self._ammo_data.damage_near_mul ~= nil then
+			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
+		end
+		if self._ammo_data.damage_far_mul ~= nil then
+			self._damage_far_mul = self._damage_far_mul * self._ammo_data.damage_far_mul
+		end
+	end
 	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
@@ -413,44 +426,34 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 				self:weapon_tweak_data().categories = {"pistol"}
 			end
 		end
+
+		if stats.damage_near_mul then
+			self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
+		end
+
+		if stats.damage_far_mul then
+			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
+		end
 	end
 
 	self:precalculate_ammo_pickup()
 end
 
---TODO: Look into moving calcs to WeaponTweakData.
---Would be less efficient, but would make certain things easier.
 function NewRaycastWeaponBase:precalculate_ammo_pickup()
 	--Precalculate ammo pickup values.
 	if self:weapon_tweak_data().AMMO_PICKUP then
-		self._ammo_pickup = {self:weapon_tweak_data().AMMO_PICKUP[1], self:weapon_tweak_data().AMMO_PICKUP[2]} --Get base pickup % values. Make sure these are grabbed individually so you don't accidentally pass in the table by reference.
-		local total_ammo = self:get_ammo_max() * (tweak_data.weapon[self._name_id].use_data.selection_index == 1 and 2 or 1) --Total ammo used in pickup calcs as if the weapon was a primary. Double this if it's a secondary.
-		local stat_info = tweak_data.weapon.stat_info
+		self._ammo_pickup = {self:weapon_tweak_data().AMMO_PICKUP[1], self:weapon_tweak_data().AMMO_PICKUP[2]} --Get base gun ammo pickup.
 
-		--Pickup multiplier
-		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills
-			* managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
-			* (1 / managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)) --Compensate for fully loaded bonus ammo.
+		--Pickup multiplier from skills.
+		local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 
-		for _, category in ipairs(self:weapon_tweak_data().categories) do --Compensate for weapon category based bonus ammo.
-			pickup_multiplier = pickup_multiplier * (1 / managers.player:upgrade_value(category, "extra_ammo_multiplier", 1))
+		for _, category in ipairs(self:categories()) do
+			pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
 		end
 
-		--Apply shotgun pickup penalty if gun is valid and using multi-pellet ammo.
-		if self._rays and self._rays > 1 then
-			pickup_multiplier = pickup_multiplier * stat_info.shotgun_pickup_penalty
-		end
-
-		--Compensate for perk deck damage boosts and damage being /10 overall. Treat damage as if you have the max level.
-		local damage_multiplier = 10
-		if not self:is_category("grenade_launcher", "rocket_frag", "bow", "crossbow") then
-			damage_multiplier = damage_multiplier / managers.player:upgrade_value("player", "passive_damage_multiplier", 1)
-		end
-
-		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
-		--self._ammo_data.ammo_pickup_xxx_mul corresponds to a multiplier from weapon mods, especially ones that may modify total ammo without changing damage tiers or add DOT effects.
-		self._ammo_pickup[1] = (self._ammo_pickup[1] + stat_info.pickup_exponents.min * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
-		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + stat_info.pickup_exponents.max * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1), self._ammo_pickup[1])
+		--Apply multiplier from skills and ammo.
+		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
+		self._ammo_pickup[2] = self._ammo_pickup[2] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1)
 	end
 end
 					
@@ -604,4 +607,58 @@ function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
 	end
 	ammo = math.floor(ammo)
 	return ammo
+end
+
+function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
+	--Initialize base info.
+	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
+	local current_state = user_unit:movement()._current_state
+	local base_falloff = falloff_info.base
+
+	if current_state then
+		--Get bonus from accuracy.
+		local acc_bonus = falloff_info.acc_bonus * (self._current_stats_indices.spread + managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) - 1)
+		
+		--Get bonus from stability.
+		local stab_bonus = falloff_info.stab_bonus * 25
+		if current_state._moving then
+			stab_bonus = falloff_info.stab_bonus * (self._current_stats_indices.recoil + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) - 1)
+		end
+
+		--Apply acc/stab bonuses.
+		base_falloff = base_falloff + stab_bonus + acc_bonus
+
+		--Get ADS multiplier.
+		if current_state:in_steelsight() then
+			for _, category in ipairs(self:categories()) do
+				base_falloff = base_falloff * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
+			end
+		end
+
+		if self._rays and self._rays > 1 then
+			base_falloff = base_falloff * falloff_info.shotgun_penalty
+		end
+	end
+
+	--Apply global range multipliers.
+	base_falloff = base_falloff * (1 + 1 - managers.player:get_property("desperado", 1))
+
+	base_falloff = base_falloff * (self:weapon_tweak_data().range_mul or 1)
+	for _, category in ipairs(self:categories()) do
+		if tweak_data[category] and tweak_data[category].range_mul then
+			base_falloff = base_falloff * tweak_data[category].range_mul
+		end
+	end
+
+	--Apply multipliers.
+	local falloff_near = base_falloff * self._damage_near_mul
+	local falloff_far = base_falloff * self._damage_far_mul
+
+	--Cache falloff values for usage in hitmarkers.
+	self.near_falloff_distance = falloff_near
+	self.far_falloff_distance = falloff_far
+
+	--Compute final damage.
+	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)
 end

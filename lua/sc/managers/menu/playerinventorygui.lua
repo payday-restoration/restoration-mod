@@ -337,3 +337,181 @@ function PlayerInventoryGui:_update_info_weapon(name)
 		end
 	end
 end
+
+function PlayerInventoryGui:_update_stats(name)
+	if name == self._current_stat_shown then
+		return
+	end
+
+	self._current_stat_shown = name
+
+	self:set_info_text("")
+	self._info_panel:clear()
+
+	if name == "primary" or name == "secondary" then
+		local stats = {
+			{
+				round_value = true,
+				name = "magazine",
+				stat_name = "extra_ammo"
+			},
+			{
+				round_value = true,
+				name = "totalammo",
+				stat_name = "total_ammo_mod"
+			},
+			{
+				round_value = true,
+				name = "fire_rate"
+			},
+			{
+				name = "damage"
+			},
+			{
+				percent = true,
+				name = "spread",
+				offset = true,
+				revert = true
+			},
+			{
+				percent = true,
+				name = "recoil",
+				offset = true,
+				revert = true
+			},
+			{
+				index = true,
+				name = "concealment"
+			}
+		}
+
+		table.insert(stats, {
+			inverted = true,
+			name = "reload"
+		})
+		self:set_weapon_stats(self._info_panel, stats)
+		self:_update_info_weapon(name)
+	elseif name == "outfit_armor" then
+		self:_update_info_armor(name)
+	elseif name == "outfit_player_style" then
+		self:_update_info_player_style(name)
+	elseif name == "melee" then
+		self:set_melee_stats(self._info_panel, {
+			{
+				range = true,
+				name = "damage"
+			},
+			{
+				range = true,
+				name = "damage_effect",
+				multiple_of = "damage"
+			},
+			{
+				inverse = true,
+				name = "charge_time",
+				num_decimals = 1,
+				suffix = managers.localization:text("menu_seconds_suffix_short")
+			},
+			{
+				range = true,
+				name = "range"
+			},
+			{
+				index = true,
+				name = "concealment"
+			}
+		})
+		self:_update_info_melee(name)
+	elseif name == "skilltree" then
+		local skilltrees = {}
+
+		for _, tree in ipairs(tweak_data.skilltree.skill_pages_order) do
+			table.insert(skilltrees, {
+				name = tree,
+				name_s = managers.localization:to_upper_text(tweak_data.skilltree.skilltree[tree].name_id)
+			})
+		end
+
+		self:set_skilltree_stats(self._info_panel, skilltrees)
+		self:_update_info_skilltree(name)
+	elseif name == "specialization" then
+		self:_update_info_specialization(name)
+	elseif name == "character" then
+		self:_update_info_character(name)
+	elseif name == "mask" then
+		self:_update_info_mask(name)
+	elseif name == "throwable" then
+		self:_update_info_throwable(name)
+	elseif name == "deployable_primary" then
+		self:_update_info_deployable(name, 1)
+	elseif name == "deployable_secondary" then
+		self:_update_info_deployable(name, 2)
+	elseif name == "infamy" then
+		self:_update_info_infamy(name)
+	elseif name == "crew" then
+		self:_update_info_crew(name)
+	else
+		local box = self._boxes_by_name[name]
+		local stats = {
+			{
+				round_value = true,
+				name = "magazine",
+				stat_name = "extra_ammo"
+			},
+			{
+				round_value = true,
+				name = "totalammo",
+				stat_name = "total_ammo_mod"
+			},
+			{
+				round_value = true,
+				name = "fire_rate"
+			},
+			{
+				name = "damage"
+			},
+			{
+				percent = true,
+				name = "spread",
+				offset = true,
+				revert = true
+			},
+			{
+				percent = true,
+				name = "recoil",
+				offset = true,
+				revert = true
+			},
+			{
+				index = true,
+				name = "concealment"
+			}
+		}
+
+		table.insert(stats, {
+			inverted = true,
+			name = "reload"
+		})
+
+		if box and box.params and box.params.mod_data then
+			if box.params.mod_data.selected_tab == "weapon_cosmetics" then
+				local cosmetics = managers.blackmarket:get_weapon_cosmetics(box.params.mod_data.category, box.params.mod_data.slot)
+
+				if cosmetics then
+					local c_td = tweak_data.blackmarket.weapon_skins[cosmetics.id] or {}
+
+					if c_td.default_blueprint then
+						self:set_weapon_stats(self._info_panel, stats)
+					end
+
+					self:_update_info_weapon_cosmetics(name, cosmetics)
+				end
+			else
+				self:set_weapon_mods_stats(self._info_panel, stats)
+				self:_update_info_weapon_mod(box)
+			end
+		else
+			self:_update_info_generic(name)
+		end
+	end
+end

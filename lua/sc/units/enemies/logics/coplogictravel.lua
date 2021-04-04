@@ -2562,10 +2562,12 @@ function CopLogicTravel.action_complete_clbk(data, action)
 				my_data.in_cover = true
 				local cover_wait_time = 0.6 + 0.4 * math.random()
 
+				--[[
 				--Setting this to just be a super low value, weird things happen at 0
 				if not CopLogicTravel._chk_close_to_criminal(data, my_data) then
 					cover_wait_time = 0.5
 				end
+				]]--
 
 				my_data.cover_leave_t = data.t + cover_wait_time
 			else

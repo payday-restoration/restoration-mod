@@ -2620,22 +2620,6 @@ function WeaponTweakData:_init_stats()
 		bipod = 1
 	}
 
-	--Controls how much total ammo influences pickup Following the formula pickup = (base_pickup% + exponent*sqrt(damage)) * ammo * skill_mults
-	--These changes exist to allow for consistency to be added to low ammo pool weapons (by pushing min and max pickup closer) and to compensate for lack of rounding eating your pickups.
-	self.stat_info.pickup_exponents = {
-		min = -0.0005,
-		max = -0.00125
-	}
-
-	--Sets % of total ammo picked up before any other modifiers (IE: From skills or pickup_exponents).
-	--Secondary pickup is compensated in newraycastweaponbase/weaponammo by looking at their total ammo as if they were primaries.
-	self.stat_info._pickup_chance = {
-		0.026, 0.052
-	}
-
-	--Reduce pickup on shotguns to compensate for ease of use.
-	self.stat_info.shotgun_pickup_penalty = 0.8
-
 	--Multiplier for spread on multi-pellet shotguns. This compensates for linear spread scaling which would otherwise cripple their multikill potential.
 	self.stat_info.shotgun_spread_increase = 2.5
 
@@ -2664,11 +2648,14 @@ function WeaponTweakData:_init_stats()
 		steelsight = 0.6
 	}
 
-	self.stat_info.shotgun_falloff = {
-		base = 50,
-		max = 1350,
-		acc_bonus = 40,
-		stab_bonus = 20
+	self.stat_info.damage_falloff = {
+		base = 150,
+		max = 3400,
+		acc_bonus = 100,
+		stab_bonus = 50,
+		near_mul = 1,
+		far_mul = 2,
+		shotgun_penalty = 0.4
 	}
 
 	--Recoil multiplier. Used for stability.
@@ -3142,7 +3129,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Car 4
 	self.new_m4.desc_id = "bm_menu_sc_m4_desc"
 	self.new_m4.AMMO_MAX = 150
-	self.new_m4.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.new_m4.CLIP_AMMO_MAX = 30
 	self.new_m4.fire_mode_data.fire_rate = 0.08571428571
 	self.new_m4.auto.fire_rate = 0.08571428571
@@ -3172,7 +3158,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.glock_17.single.fire_rate = 0.08571428571
 	self.glock_17.AMMO_MAX = 90
 	self.glock_17.CLIP_AMMO_MAX = 18
-	self.glock_17.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.glock_17.kick = self.stat_info.kick_tables.even_recoil
 	self.glock_17.supported = true
 	self.glock_17.stats = {
@@ -3198,7 +3183,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mp9.auto.fire_rate = 0.06666666666
 	self.mp9.fire_mode_data.fire_rate = 0.06666666666
 	self.mp9.AMMO_MAX = 100
-	self.mp9.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.mp9.kick = self.stat_info.kick_tables.even_recoil
 	self.mp9.supported = true
 	self.mp9.stats = {
@@ -3227,7 +3211,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r870.single.fire_rate = 0.5
 	self.r870.fire_mode_data.fire_rate = 0.5
 	self.r870.AMMO_MAX = 60
-	self.r870.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.r870.supported = true
 	self.r870.stats = {
 		damage = 60,
@@ -3252,7 +3235,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.glock_18c.auto.fire_rate = 0.05454545454
 	self.glock_18c.CLIP_AMMO_MAX = 18
 	self.glock_18c.AMMO_MAX = 100
-	self.glock_18c.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.glock_18c.kick = self.stat_info.kick_tables.left_recoil
 	self.glock_18c.supported = true
 	self.glock_18c.stats = {
@@ -3276,7 +3258,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.amcar.desc_id = "bm_menu_sc_amcar_desc"
 	self.amcar.CLIP_AMMO_MAX = 30
 	self.amcar.AMMO_MAX = 180
-	self.amcar.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.amcar.fire_mode_data.fire_rate = 0.075
 	self.amcar.auto.fire_rate = 0.075
 	self.amcar.kick = self.stat_info.kick_tables.even_recoil
@@ -3308,7 +3289,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m16.AMMO_MAX = 120
 	self.m16.FIRE_MODE = "auto"				
 	self.m16.CAN_TOGGLE_FIREMODE = true
-	self.m16.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m16.kick = self.stat_info.kick_tables.vertical_kick		
 	self.m16.supported = true
 	self.m16.stats = {
@@ -3337,7 +3317,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.olympic.AMMO_MAX = 90
 	self.olympic.fire_mode_data.fire_rate = 0.075
 	self.olympic.auto.fire_rate = 0.075
-	self.olympic.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.olympic.panic_suppression_chance = 0.05
 	self.olympic.kick = self.stat_info.kick_tables.even_recoil
 	self.olympic.supported = true
@@ -3360,7 +3339,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--AK
 	self.ak74.desc_id = "bm_menu_sc_ak74_desc"
 	self.ak74.AMMO_MAX = 150
-	self.ak74.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ak74.fire_mode_data.fire_rate = 0.0923076923
 	self.ak74.auto.fire_rate = 0.0923076923
 	self.ak74.kick = self.stat_info.kick_tables.right_recoil
@@ -3385,7 +3363,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--AK.762
 	self.akm.desc_id = "bm_menu_sc_akm_desc"
 	self.akm.AMMO_MAX = 120
-	self.akm.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.akm.fire_mode_data.fire_rate = 0.1
 	self.akm.auto.fire_rate = 0.1
 	self.akm.kick = self.stat_info.kick_tables.right_kick		
@@ -3410,7 +3387,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akm_gold.desc_id = "bm_menu_sc_akm_gold_desc"
 	self.akm_gold.kick = self.stat_info.kick_tables.right_kick			
 	self.akm_gold.AMMO_MAX = 120
-	self.akm_gold.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.akm_gold.fire_mode_data.fire_rate = 0.1
 	self.akm_gold.auto.fire_rate = 0.1
 	self.akm_gold.timers.reload_not_empty = 2
@@ -3437,7 +3413,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		"assault_rifle"
 	}
 	self.akmsu.AMMO_MAX = 60
-	self.akmsu.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.akmsu.fire_mode_data.fire_rate = 0.0923076923
 	self.akmsu.auto.fire_rate = 0.0923076923
 	self.akmsu.panic_suppression_chance = 0.05
@@ -3466,7 +3441,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saiga.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.saiga.CLIP_AMMO_MAX = 6
 	self.saiga.AMMO_MAX = 120
-	self.saiga.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.saiga.fire_mode_data.fire_rate = 0.1
 	self.saiga.auto.fire_rate = 0.1
 	self.saiga.shake.fire_multiplier = 1
@@ -3494,7 +3468,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Ak5
 	self.ak5.auto.fire_rate = 0.08571428571
 	self.ak5.fire_mode_data.fire_rate = 0.08571428571
-	self.ak5.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ak5.kick = self.stat_info.kick_tables.moderate_right_kick
 	self.ak5.supported = true
 	self.ak5.stats = {
@@ -3517,7 +3490,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Aug
 	self.aug.AMMO_MAX = 150
-	self.aug.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.aug.auto.fire_rate = 0.08
 	self.aug.fire_mode_data.fire_rate = 0.08
 	self.aug.kick = self.stat_info.kick_tables.moderate_left_kick
@@ -3547,7 +3519,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g36.auto.fire_rate = 0.08
 	self.g36.fire_mode_data.fire_rate = 0.08
 	self.g36.AMMO_MAX = 180
-	self.g36.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.g36.CLIP_AMMO_MAX = 30
 	self.g36.kick = self.stat_info.kick_tables.even_recoil
 	self.g36.supported = true
@@ -3572,7 +3543,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--P90
 	self.p90.desc_id = "bm_ap_weapon_sc_desc"
 	self.p90.AMMO_MAX = 100
-	self.p90.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.p90.fire_mode_data.fire_rate = 0.06666666666
 	self.p90.auto.fire_rate = 0.06666666666
 	self.p90.panic_suppression_chance = 0.05
@@ -3601,7 +3571,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_m14.single.fire_rate = 0.08571428571
 	self.new_m14.kick = self.stat_info.kick_tables.moderate_kick
 	self.new_m14.AMMO_MAX = 60
-	self.new_m14.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.new_m14.supported = true
 	self.new_m14.stats = {
 		damage = 60,
@@ -3629,7 +3598,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.deagle.kick = self.stat_info.kick_tables.moderate_kick
 	self.deagle.CLIP_AMMO_MAX = 8
 	self.deagle.AMMO_MAX = 30
-	self.deagle.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.deagle.supported = true
 	self.deagle.stats = {
 		damage = 60,
@@ -3656,7 +3624,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_mp5.panic_suppression_chance = 0.05
 	self.new_mp5.kick = self.stat_info.kick_tables.even_recoil
 	self.new_mp5.AMMO_MAX = 90
-	self.new_mp5.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.new_mp5.supported = true
 	self.new_mp5.stats = {
 		damage = 20,
@@ -3680,7 +3647,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.colt_1911.single.fire_rate = 0.08571428571
 	self.colt_1911.CLIP_AMMO_MAX = 8
 	self.colt_1911.AMMO_MAX = 40
-	self.colt_1911.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.colt_1911.kick = self.stat_info.kick_tables.even_recoil
 	self.colt_1911.supported = true
 	self.colt_1911.stats = {
@@ -3703,7 +3669,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--MAC-10
 	self.mac10.CLIP_AMMO_MAX = 20
 	self.mac10.AMMO_MAX = 60
-	self.mac10.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.mac10.fire_mode_data.fire_rate = 0.06
 	self.mac10.auto.fire_rate = 0.06
 	self.mac10.kick = self.stat_info.kick_tables.even_recoil
@@ -3732,7 +3697,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.serbu.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.serbu.CLIP_AMMO_MAX = 4
 	self.serbu.AMMO_MAX = 30
-	self.serbu.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.serbu.fire_mode_data.fire_rate = 0.5
 	self.serbu.single.fire_rate = 0.5
 	self.serbu.kick = self.stat_info.kick_tables.moderate_kick
@@ -3758,7 +3722,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.huntsman.rays = 9
 	self.huntsman.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.huntsman.AMMO_MAX = 40
-	self.huntsman.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.huntsman.sounds.fire_single = "huntsman_fire"
 	self.huntsman.sounds.fire_auto = "huntsman_fire"
 	self.huntsman.BURST_FIRE = 3
@@ -3797,7 +3760,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Bernetti 9
 	self.b92fs.AMMO_MAX = 90
-	self.b92fs.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.b92fs.fire_mode_data.fire_rate = 0.08571428571
 	self.b92fs.single.fire_rate = 0.08571428571
 	self.b92fs.kick = self.stat_info.kick_tables.even_recoil
@@ -3826,7 +3788,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_raging_bull.single.fire_rate = 0.19047619047
 	self.new_raging_bull.AMMO_MAX = 30
 	self.new_raging_bull.kick = self.stat_info.kick_tables.moderate_kick
-	self.new_raging_bull.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.new_raging_bull.supported = true
 	self.new_raging_bull.stats = {
 		damage = 60,
@@ -3852,7 +3813,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saw.desc_id = "bm_ap_saw_sc_desc"
 	self.saw.CLIP_AMMO_MAX = 20
 	self.saw.AMMO_MAX = 40
-	self.saw.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.saw.kick = self.stat_info.kick_tables.none
 	self.saw.supported = true
 	self.saw.stats = {
@@ -3876,7 +3836,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.saw_secondary.desc_id = "bm_ap_saw_sc_desc"
 	self.saw_secondary.CLIP_AMMO_MAX = 20
 	self.saw_secondary.AMMO_MAX = 20
-	self.saw_secondary.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.saw_secondary.supported = true
 	self.saw_secondary.stats = {
 		alert_size = 2,
@@ -3905,7 +3864,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.usp.fire_mode_data.fire_rate = 0.08571428571
 	self.usp.single.fire_rate = 0.08571428571
 	self.usp.AMMO_MAX = 60
-	self.usp.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.usp.kick = self.stat_info.kick_tables.right_recoil
 	self.usp.CLIP_AMMO_MAX = 12
 	self.usp.supported = true
@@ -3936,7 +3894,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.g22c.fire_mode_data.fire_rate = 0.08571428571
 	self.g22c.single.fire_rate = 0.08571428571
 	self.g22c.AMMO_MAX = 75
-	self.g22c.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.g22c.kick = self.stat_info.kick_tables.left_recoil
 	self.g22c.CLIP_AMMO_MAX = 16
 	self.g22c.supported = true
@@ -3965,7 +3922,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.judge.rays = 9
 	self.judge.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.judge.AMMO_MAX = 20
-	self.judge.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.judge.supported = true
 	self.judge.stats = {
 		damage = 90,
@@ -3992,7 +3948,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Swedish K
 	self.m45.CLIP_AMMO_MAX = 30
 	self.m45.AMMO_MAX = 75
-	self.m45.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m45.kick = self.stat_info.kick_tables.even_recoil
 	self.m45.supported = true
 	self.m45.stats = {
@@ -4015,7 +3970,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m45.panic_suppression_chance = 0.05
 
 	--Commando 553
-	self.s552.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.s552.fire_mode_data.fire_rate = 0.08571428571
 	self.s552.auto.fire_rate = 0.08571428571
 	self.s552.BURST_FIRE = 3
@@ -4050,7 +4004,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Gruber Kurz
 	self.ppk.AMMO_MAX = 90
 	self.ppk.CLIP_AMMO_MAX = 12
-	self.ppk.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ppk.fire_mode_data.fire_rate = 0.08571428571
 	self.ppk.single.fire_rate = 0.08571428571
 	self.ppk.kick = self.stat_info.kick_tables.right_recoil
@@ -4077,7 +4030,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Spec Ops
 	self.mp7.desc_id = "bm_ap_weapon_sc_desc"
 	self.mp7.AMMO_MAX = 75
-	self.mp7.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.mp7.fire_mode_data.fire_rate = 0.06315789473
 	self.mp7.CAN_TOGGLE_FIREMODE = true
 	self.mp7.auto = {}
@@ -4105,7 +4057,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Eagle Heavy
 	self.scar.AMMO_MAX = 80
-	self.scar.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.scar.fire_mode_data.fire_rate = 0.09523809523
 	self.scar.CAN_TOGGLE_FIREMODE = true
 	self.scar.auto.fire_rate = 0.09523809523
@@ -4132,7 +4083,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Signature .40
 	self.p226.AMMO_MAX = 75
 	self.p226.CLIP_AMMO_MAX = 16
-	self.p226.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.p226.fire_mode_data.fire_rate = 0.08571428571
 	self.p226.single.fire_rate = 0.08571428571
 	self.p226.kick = self.stat_info.kick_tables.even_recoil
@@ -4161,7 +4111,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.hk21.CLIP_AMMO_MAX = 100
 	self.hk21.AMMO_MAX = 270
-	self.hk21.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.hk21.fire_mode_data.fire_rate = 0.075
 	self.hk21.auto.fire_rate = 0.075
 	self.hk21.kick = self.stat_info.kick_tables.horizontal_right_recoil
@@ -4192,7 +4141,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m249.desc_id = "bm_menu_sc_m249_desc"
 	self.m249.CLIP_AMMO_MAX = 200
 	self.m249.AMMO_MAX = 300
-	self.m249.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m249.fire_mode_data.fire_rate = 0.075
 	self.m249.auto.fire_rate = 0.075
 	self.m249.kick = self.stat_info.kick_tables.horizontal_recoil
@@ -4224,7 +4172,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.rpk.CLIP_AMMO_MAX = 100
 	self.rpk.AMMO_MAX = 225
-	self.rpk.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.rpk.fire_mode_data.fire_rate = 0.0923076923
 	self.rpk.CAN_TOGGLE_FIREMODE = false
 	self.rpk.auto = {}
@@ -4253,7 +4200,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m95.upgrade_blocks = nil
 	self.m95.has_description = true
 	self.m95.desc_id = "bm_heavy_ap_weapon_sc_desc"
-	self.m95.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m95.AMMO_MAX = 20
 	self.m95.fire_mode_data.fire_rate = 1.2
 	self.m95.kick = self.stat_info.kick_tables.left_kick
@@ -4285,7 +4231,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.msr.CLIP_AMMO_MAX = 10
 	self.msr.NR_CLIPS_MAX = 5
 	self.msr.AMMO_MAX = 40
-	self.msr.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.msr.fire_mode_data.fire_rate = 0.75
 	self.msr.kick = self.stat_info.kick_tables.vertical_kick
 	self.msr.supported = true
@@ -4312,7 +4257,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r93.desc_id = "bm_ap_weapon_sc_desc"
 	self.r93.CLIP_AMMO_MAX = 6
 	self.r93.AMMO_MAX = 30
-	self.r93.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.r93.fire_mode_data.fire_rate = 1
 	self.r93.kick = self.stat_info.kick_tables.vertical_kick
 	self.r93.supported = true
@@ -4336,7 +4280,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Falcon
 	self.fal.AMMO_MAX = 120
-	self.fal.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.fal.CLIP_AMMO_MAX = 30
 	self.fal.fire_mode_data.fire_rate = 0.08571428571
 	self.fal.CAN_TOGGLE_FIREMODE = true
@@ -4363,7 +4306,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--M1014
 	self.benelli.AMMO_MAX = 80
-	self.benelli.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.benelli.rays = 9
 	self.benelli.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.benelli.fire_mode_data.fire_rate = 0.13953488372
@@ -4393,7 +4335,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.striker.rays = 9
 	self.striker.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.striker.AMMO_MAX = 40
-	self.striker.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.striker.fire_mode_data.fire_rate = 0.13953488372
 	self.striker.CAN_TOGGLE_FIREMODE = false
 	self.striker.single = {}
@@ -4427,7 +4368,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ksg.single.fire_rate = 0.6
 	self.ksg.fire_mode_data.fire_rate = 0.6
 	self.ksg.kick = self.stat_info.kick_tables.vertical_kick		
-	self.ksg.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ksg.supported = true
 	self.ksg.stats = {
 		damage = 60,
@@ -4457,7 +4397,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.gre_m79.fire_mode_data.fire_rate = 1
 	self.gre_m79.kick = self.stat_info.kick_tables.vertical_kick
 	self.gre_m79.AMMO_MAX = 9
-	self.gre_m79.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.gre_m79.supported = true
 	self.gre_m79.stats = {
 		damage = 80,
@@ -4479,7 +4418,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Gewehr 3
 	self.g3.AMMO_MAX = 60
 	self.g3.CLIP_AMMO_MAX = 20
-	self.g3.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.g3.fire_mode_data.fire_rate = 0.1
 	self.g3.CAN_TOGGLE_FIREMODE = true
 	self.g3.auto = {}
@@ -4505,7 +4443,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Gecko 7.62
 	self.galil.AMMO_MAX = 80
-	self.galil.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.galil.FIRE_MODE = "auto"
 	self.galil.fire_mode_data = {}
 	self.galil.fire_mode_data.fire_rate = 0.08
@@ -4535,7 +4472,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Clarion
 	self.famas.AMMO_MAX = 180
-	self.famas.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.famas.CLIP_AMMO_MAX = 25
 	self.famas.fire_mode_data.fire_rate = 0.06
 	self.famas.CAN_TOGGLE_FIREMODE = true
@@ -4565,7 +4501,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Cobra
 	self.scorpion.AMMO_MAX = 90
-	self.scorpion.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.scorpion.FIRE_MODE = "auto"
 	self.scorpion.fire_mode_data = {}
 	self.scorpion.fire_mode_data.fire_rate = 0.07058823529
@@ -4595,7 +4530,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Blaster 9mm
 	self.tec9.AMMO_MAX = 75
 	self.tec9.CLIP_AMMO_MAX = 20
-	self.tec9.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.tec9.FIRE_MODE = "auto"
 	self.tec9.fire_mode_data = {}
 	self.tec9.fire_mode_data.fire_rate = 0.06
@@ -4624,7 +4558,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Uzi
 	self.uzi.AMMO_MAX = 60
 	self.uzi.CLIP_AMMO_MAX = 22
-	self.uzi.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.uzi.FIRE_MODE = "auto"
 	self.uzi.fire_mode_data = {}
 	self.uzi.fire_mode_data.fire_rate = 0.1
@@ -4655,7 +4588,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Akimbo Chimano Compact
 	self.jowi.kick = self.stat_info.kick_tables.even_recoil
 	self.jowi.AMMO_MAX = 180
-	self.jowi.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.jowi.fire_mode_data.fire_rate = 0.08571428571
 	self.jowi.single = {}
 	self.jowi.single.fire_rate = 0.08571428571
@@ -4680,7 +4612,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Akimbo Crosskill
 	self.x_1911.CLIP_AMMO_MAX = 16
 	self.x_1911.AMMO_MAX = 80
-	self.x_1911.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_1911.fire_mode_data.fire_rate = 0.08571428571
 	self.x_1911.single = {}
 	self.x_1911.single.fire_rate = 0.08571428571
@@ -4706,7 +4637,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Akimbo Bernetti 9
 	self.x_b92fs.kick = self.stat_info.kick_tables.even_recoil
 	self.x_b92fs.AMMO_MAX = 180
-	self.x_b92fs.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_b92fs.FIRE_MODE = "single"
 	self.x_b92fs.fire_mode_data.fire_rate = 0.08571428571
 	self.x_b92fs.single.fire_rate = 0.08571428571
@@ -4733,7 +4663,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_deagle.desc_id = "bm_ap_weapon_sc_desc"
 	self.x_deagle.CLIP_AMMO_MAX = 16
 	self.x_deagle.AMMO_MAX = 60
-	self.x_deagle.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_deagle.FIRE_MODE = "single"
 	self.x_deagle.fire_mode_data = {}
 	self.x_deagle.fire_mode_data.fire_rate = 0.1
@@ -4761,7 +4690,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Chimano Compact
 	self.g26.AMMO_MAX = 90
-	self.g26.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.g26.kick = self.stat_info.kick_tables.even_recoil
 	self.g26.fire_mode_data.fire_rate = 0.08571428571
 	self.g26.single.fire_rate = 0.08571428571
@@ -4788,7 +4716,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.spas12.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.spas12.AMMO_MAX = 80
 	self.spas12.CLIP_AMMO_MAX = 8
-	self.spas12.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.spas12.fire_mode_data.fire_rate = 0.13953488372
 	self.spas12.CAN_TOGGLE_FIREMODE = false
 	self.spas12.single = {}
@@ -4820,7 +4747,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.mg42.CLIP_AMMO_MAX = 75
 	self.mg42.AMMO_MAX = 225
-	self.mg42.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.mg42.kick = self.stat_info.kick_tables.horizontal_left_recoil
 	self.mg42.supported = true
 	self.mg42.stats = {
@@ -4855,7 +4781,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.has_description = true
 	self.c96.desc_id = "bm_c96_sc_desc"
 	self.c96.AMMO_MAX = 60
-	self.c96.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.c96.FIRE_MODE = "auto"
 	self.c96.CAN_TOGGLE_FIREMODE = true
 	self.c96.fire_mode_data.fire_rate = 0.06
@@ -4883,7 +4808,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Patchett
 	self.sterling.CLIP_AMMO_MAX = 20
 	self.sterling.AMMO_MAX = 75
-	self.sterling.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.sterling.fire_mode_data.fire_rate = 0.10909090909
 	self.sterling.CAN_TOGGLE_FIREMODE = true
 	self.sterling.auto = {}
@@ -4912,7 +4836,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mosin.desc_id = "bm_mosin_sc_desc"
 	self.mosin.CLIP_AMMO_MAX = 5
 	self.mosin.AMMO_MAX = 30
-	self.mosin.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.mosin.fire_mode_data.fire_rate = 1
 	self.mosin.kick = self.stat_info.kick_tables.vertical_kick
 	self.mosin.supported = true
@@ -4941,7 +4864,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1928.auto.fire_rate = 0.075
 	self.m1928.CLIP_AMMO_MAX = 50
 	self.m1928.AMMO_MAX = 75
-	self.m1928.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m1928.kick = self.stat_info.kick_tables.horizontal_recoil
 	self.m1928.panic_suppression_chance = 0.05
 	self.m1928.supported = true
@@ -4966,7 +4888,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Queen's Wrath
 	self.l85a2.CLIP_AMMO_MAX = 30
 	self.l85a2.AMMO_MAX = 150
-	self.l85a2.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.l85a2.FIRE_MODE = "auto"
 	self.l85a2.fire_mode_data = {}
 	self.l85a2.fire_mode_data.fire_rate = 0.0923076923
@@ -4998,7 +4919,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Lion's Roar
 	self.vhs.CLIP_AMMO_MAX = 30
 	self.vhs.AMMO_MAX = 180
-	self.vhs.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.vhs.fire_mode_data.fire_rate = 0.06976744186
 	self.vhs.CAN_TOGGLE_FIREMODE = true
 	self.vhs.auto = {}
@@ -5026,7 +4946,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Leo
 	self.hs2000.CLIP_AMMO_MAX = 14
 	self.hs2000.AMMO_MAX = 60
-	self.hs2000.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.hs2000.FIRE_MODE = "single"
 	self.hs2000.fire_mode_data = {}
 	self.hs2000.fire_mode_data.fire_rate = 0.08571428571
@@ -5060,7 +4979,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m134.CLIP_AMMO_MAX = 300
 	self.m134.NR_CLIPS_MAX = 1
 	self.m134.AMMO_MAX = 300
-	self.m134.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m134.FIRE_MODE = "auto"
 	self.m134.fire_mode_data = {}
 	self.m134.fire_mode_data.fire_rate = 0.03
@@ -5097,7 +5015,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rpg7.desc_id = "bm_rocket_launcher_sc_desc"
 	self.rpg7.fire_mode_data.fire_rate = 2
 	self.rpg7.AMMO_MAX = 4
-	self.rpg7.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.rpg7.timers.reload_not_empty = 4.7
 	self.rpg7.timers.reload_empty = 4.7
 	self.rpg7.supported = true
@@ -5127,7 +5044,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.cobray.CLIP_AMMO_MAX = 30
 	self.cobray.NR_CLIPS_MAX = 4
 	self.cobray.AMMO_MAX = 60
-	self.cobray.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.cobray.kick = self.stat_info.kick_tables.even_recoil
 	self.cobray.fire_mode_data.fire_rate = 0.06
 	self.cobray.CAN_TOGGLE_FIREMODE = true
@@ -5155,7 +5071,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.b682.rays = 9
 	self.b682.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.b682.AMMO_MAX = 40
-	self.b682.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.b682.fire_mode_data = {}
 	self.b682.CAN_TOGGLE_FIREMODE = false										
 	self.b682.fire_mode_data.fire_rate = 0.075
@@ -5190,7 +5105,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g22c.kick = self.stat_info.kick_tables.even_recoil
 	self.x_g22c.CLIP_AMMO_MAX = 32
 	self.x_g22c.AMMO_MAX = 150
-	self.x_g22c.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_g22c.FIRE_MODE = "single"
 	self.x_g22c.fire_mode_data = {}
 	self.x_g22c.fire_mode_data.fire_rate = 0.08571428571
@@ -5218,7 +5132,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g17.kick = self.stat_info.kick_tables.even_recoil
 	self.x_g17.CLIP_AMMO_MAX = 36
 	self.x_g17.AMMO_MAX = 180
-	self.x_g17.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_g17.FIRE_MODE = "single"
 	self.x_g17.fire_mode_data.fire_rate = 0.08571428571
 	self.x_g17.single.fire_rate = 0.08571428571
@@ -5244,7 +5157,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_usp.kick = self.stat_info.kick_tables.right_recoil
 	self.x_usp.CLIP_AMMO_MAX = 24
 	self.x_usp.AMMO_MAX = 120
-	self.x_usp.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_usp.fire_mode_data.fire_rate = 0.08571428571
 	self.x_usp.single = {}
 	self.x_usp.single.fire_rate = 0.08571428571
@@ -5279,7 +5191,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flamethrower_mk2.rays = 9
 	self.flamethrower_mk2.CLIP_AMMO_MAX = 60
 	self.flamethrower_mk2.AMMO_MAX = 120
-	self.flamethrower_mk2.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.flamethrower_mk2.fire_mode_data.fire_rate = 0.1
 	self.flamethrower_mk2.auto = {}
 	self.flamethrower_mk2.auto.fire_rate = 0.1
@@ -5324,7 +5235,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m32.fire_mode_data.fire_rate = 0.75
 	self.m32.single.fire_rate = 0.75
 	self.m32.AMMO_MAX = 9
-	self.m32.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m32.supported = true
 	self.m32.stats = {
 		damage = 80,
@@ -5350,7 +5260,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.aa12.rays = 9
 	self.aa12.AMMO_MAX = 80
 	self.aa12.CLIP_AMMO_MAX = 10
-	self.aa12.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.aa12.kick = self.stat_info.kick_tables.moderate_kick
 	self.aa12.FIRE_MODE = "auto"				
 	self.aa12.CAN_TOGGLE_FIREMODE = false
@@ -5374,7 +5283,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Wow wow (Peacemaker)
 	self.peacemaker.AMMO_MAX = 20
-	self.peacemaker.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.peacemaker.kick = self.stat_info.kick_tables.right_kick
 	self.peacemaker.supported = true
 	self.peacemaker.stats = {
@@ -5406,7 +5314,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.winchester1874.has_description = true
 	self.winchester1874.desc_id = "bm_ap_weapon_sc_desc"
 	self.winchester1874.AMMO_MAX = 40
-	self.winchester1874.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.winchester1874.FIRE_MODE = "single"
 	self.winchester1874.fire_mode_data = {}
 	self.winchester1874.fire_mode_data.fire_rate = 0.6
@@ -5444,7 +5351,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.plainsrider.desc_id = "bm_ap_2_weapon_sc_desc"
 	self.plainsrider.kick = self.stat_info.kick_tables.none
 	self.plainsrider.AMMO_MAX = 30
-	self.plainsrider.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.plainsrider.charge_data.max_t = 0.5
 	self.plainsrider.not_allowed_in_bleedout = false
 	self.plainsrider.supported = true
@@ -5470,7 +5376,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mateba.single = {}
 	self.mateba.single.fire_rate = 0.15789474
 	self.mateba.AMMO_MAX = 30
-	self.mateba.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.mateba.timers.reload_not_empty = 3.6
 	self.mateba.timers.reload_empty = 3.6
 	self.mateba.kick = self.stat_info.kick_tables.moderate_kick
@@ -5499,7 +5404,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.asval.sounds.stop_fire = "akm_stop"
 	self.asval.sounds.dryfire = "primary_dryfire"
 	self.asval.AMMO_MAX = 80
-	self.asval.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.asval.FIRE_MODE = "auto"
 	self.asval.fire_mode_data = {}
 	self.asval.fire_mode_data.fire_rate = 0.06666666666
@@ -5530,7 +5434,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sub2000.recategorize = "pistol_carbine"
 	self.sub2000.CLIP_AMMO_MAX = 30
 	self.sub2000.AMMO_MAX = 120
-	self.sub2000.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.sub2000.sounds.fire = "sub2k_fire"
 	self.sub2000.sounds.fire_single = "sub2k_fire"
 	self.sub2000.sounds.dryfire = "primary_dryfire"
@@ -5569,7 +5472,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.wa2000.desc_id = "bm_ap_weapon_sc_desc"
 	self.wa2000.CLIP_AMMO_MAX = 10
 	self.wa2000.AMMO_MAX = 40
-	self.wa2000.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.wa2000.fire_mode_data.fire_rate = 0.4
 	self.wa2000.CAN_TOGGLE_FIREMODE = false
 	self.wa2000.single = {}
@@ -5598,7 +5500,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.polymer.use_data.selection_index = 2
 	self.polymer.CLIP_AMMO_MAX = 30
 	self.polymer.AMMO_MAX = 120
-	self.polymer.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.polymer.FIRE_MODE = "auto"
 	self.polymer.fire_mode_data = {}
 	self.polymer.fire_mode_data.fire_rate = 0.05
@@ -5635,7 +5536,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hunter.has_description = true
 	self.hunter.desc_id = "bm_ap_3_weapon_sc_desc"
 	self.hunter.AMMO_MAX = 15
-	self.hunter.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.hunter.panic_suppression_chance = 0.05
 	self.hunter.ignore_damage_upgrades = true
 	self.hunter.fire_mode_data.fire_rate = 1
@@ -5662,7 +5562,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.baka.CLIP_AMMO_MAX = 30
 	self.baka.NR_CLIPS_MAX = 4
 	self.baka.AMMO_MAX = 90
-	self.baka.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.baka.FIRE_MODE = "auto"
 	self.baka.fire_mode_data = {}
 	self.baka.fire_mode_data.fire_rate = 0.06315789473
@@ -5698,7 +5597,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arblast.has_description = true
 	self.arblast.desc_id = "bm_ap_3_weapon_sc_desc"
 	self.arblast.AMMO_MAX = 20
-	self.arblast.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.arblast.fire_mode_data.fire_rate = 1.2
 	self.arblast.kick = self.stat_info.kick_tables.horizontal_recoil
 	self.arblast.panic_suppression_chance = 0.05
@@ -5732,7 +5630,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.frankish.fire_mode_data.fire_rate = 1
 	self.frankish.kick = self.stat_info.kick_tables.horizontal_recoil
 	self.frankish.AMMO_MAX = 30
-	self.frankish.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.frankish.panic_suppression_chance = 0.05
 	self.frankish.ignore_damage_upgrades = true
 	self.frankish.supported = true
@@ -5766,7 +5663,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.long.charge_data.max_t = 1
 	self.long.not_allowed_in_bleedout = false
 	self.long.AMMO_MAX = 20
-	self.long.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.long.panic_suppression_chance = 0.05
 	self.long.ignore_damage_upgrades = true
 	self.long.supported = true
@@ -5795,7 +5691,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.par.fire_mode_data.fire_rate = 0.075
 	self.par.auto.fire_rate = 0.075
 	self.par.AMMO_MAX = 270
-	self.par.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.par.timers.reload_not_empty = 6.5
 	self.par.timers.reload_empty = 6.5
 	self.par.kick = {}
@@ -5821,7 +5716,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Baby Deagle
 	self.sparrow.AMMO_MAX = 75
-	self.sparrow.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.sparrow.kick = {}
 	self.sparrow.kick = self.stat_info.kick_tables.even_recoil
 	self.sparrow.fire_mode_data.fire_rate = 0.08571428571
@@ -5850,7 +5744,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.model70.desc_id = "bm_ap_weapon_sc_desc"
 	self.model70.AMMO_MAX = 30
 	self.model70.CLIP_AMMO_MAX = 6
-	self.model70.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.model70.kick = self.stat_info.kick_tables.vertical_kick
 	self.model70.supported = true
 	self.model70.stats = {
@@ -5876,7 +5769,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m37.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.m37.CLIP_AMMO_MAX = 6
 	self.m37.AMMO_MAX = 30
-	self.m37.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m37.fire_mode_data.fire_rate = 0.4
 	self.m37.single.fire_rate = 0.4
 	self.m37.kick = self.stat_info.kick_tables.right_kick
@@ -5910,7 +5802,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.china.single.fire_rate = 1.5
 	self.china.AMMO_MAX = 5
 	self.china.kick = self.stat_info.kick_tables.vertical_kick
-	self.china.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.china.supported = true
 	self.china.stats = {
 		damage = 80,
@@ -5935,7 +5826,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sr2.fire_mode_data.fire_rate = 0.06666666666
 	self.sr2.CLIP_AMMO_MAX = 30
 	self.sr2.AMMO_MAX = 90
-	self.sr2.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.sr2.kick = {}
 	self.sr2.kick = self.stat_info.kick_tables.even_recoil
 	self.sr2.supported = true
@@ -5963,7 +5853,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_sr2.CLIP_AMMO_MAX = 60
 	self.x_sr2.kick = self.stat_info.kick_tables.even_recoil
 	self.x_sr2.AMMO_MAX = 180
-	self.x_sr2.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_sr2.supported = true
 	self.x_sr2.stats = {
 		damage = 20,
@@ -5987,7 +5876,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.pl14.single.fire_rate = 0.08571428571
 	self.pl14.CLIP_AMMO_MAX = 10
 	self.pl14.AMMO_MAX = 75
-	self.pl14.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.pl14.kick = self.stat_info.kick_tables.left_recoil
 	self.pl14.supported = true
 	self.pl14.stats = {
@@ -6013,7 +5901,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp5.ADAPTIVE_BURST_SIZE = false					
 	self.x_mp5.kick = self.stat_info.kick_tables.moderate_kick
 	self.x_mp5.AMMO_MAX = 180
-	self.x_mp5.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_mp5.supported = true
 	self.x_mp5.stats = {
 		damage = 20,
@@ -6036,7 +5923,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Krinkov
 	self.x_akmsu.AMMO_MAX = 120
-	self.x_akmsu.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_akmsu.fire_mode_data.fire_rate = 0.0923076923
 	self.x_akmsu.panic_suppression_chance = 0.05
 	self.x_akmsu.kick = self.stat_info.kick_tables.right_kick
@@ -6067,7 +5953,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tecci.kick = self.stat_info.kick_tables.horizontal_recoil
 	self.tecci.CLIP_AMMO_MAX = 100
 	self.tecci.AMMO_MAX = 200
-	self.tecci.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.tecci.fire_mode_data.fire_rate = 0.075
 	self.tecci.CAN_TOGGLE_FIREMODE = true
 	self.tecci.auto.fire_rate = 0.075
@@ -6095,7 +5980,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hajk.AMMO_MAX = 75
 	self.hajk.BURST_FIRE = 3
 	self.hajk.ADAPTIVE_BURST_SIZE = false											
-	self.hajk.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.hajk.kick = self.stat_info.kick_tables.moderate_kick
 	self.hajk.categories = {
 		"assault_rifle"
@@ -6122,7 +6006,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Breaker 12g
 	self.boot.AMMO_MAX = 40
-	self.boot.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.boot.CLIP_AMMO_MAX = 6
 	self.boot.fire_mode_data.fire_rate = 0.75
 	self.boot.single.fire_rate = 0.75
@@ -6152,7 +6035,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Contractor Pistol
 	self.packrat.AMMO_MAX = 90
-	self.packrat.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.packrat.fire_mode_data.fire_rate = 0.08571428571
 	self.packrat.single.fire_rate = 0.08571428571
 	self.packrat.kick = self.stat_info.kick_tables.even_recoil
@@ -6181,7 +6063,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.schakal.CLIP_AMMO_MAX = 25
 	self.schakal.BURST_FIRE = 3
 	self.schakal.ADAPTIVE_BURST_SIZE = false											
-	self.schakal.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.schakal.kick = self.stat_info.kick_tables.even_recoil
 	self.schakal.panic_suppression_chance = 0.05
 	self.schakal.supported = true
@@ -6206,7 +6087,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.desertfox.desc_id = "bm_ap_weapon_sc_desc"
 	self.desertfox.CLIP_AMMO_MAX = 5
 	self.desertfox.AMMO_MAX = 30
-	self.desertfox.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.desertfox.fire_mode_data.fire_rate = 0.85714285714
 	self.desertfox.kick = self.stat_info.kick_tables.right_kick
 	self.desertfox.panic_suppression_chance = 0.05
@@ -6229,7 +6109,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Contractor Pistols
 	self.x_packrat.AMMO_MAX = 180
-	self.x_packrat.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_packrat.fire_mode_data.fire_rate = 0.08571428571
 	self.x_packrat.single.fire_rate = 0.08571428571
 	self.x_packrat.kick = self.stat_info.kick_tables.even_recoil
@@ -6254,7 +6133,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Goliath 12G
 	self.rota.upgrade_blocks = nil
 	self.rota.AMMO_MAX = 40
-	self.rota.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.rota.rays = 9
 	self.rota.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.rota.kick = self.stat_info.kick_tables.vertical_kick
@@ -6288,7 +6166,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.arbiter.single.fire_rate = 0.75
 	self.arbiter.CLIP_AMMO_MAX = 6
 	self.arbiter.AMMO_MAX = 6
-	self.arbiter.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.arbiter.supported = true
 	self.arbiter.stats = {
 		damage = 60,
@@ -6314,7 +6191,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.contraband.has_description = true
 	self.contraband.AMMO_MAX = 60
 	self.contraband.tactical_reload = 1
-	self.contraband.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.contraband.FIRE_MODE = "auto"
 	self.contraband.fire_mode_data.fire_rate = 0.1
 	self.contraband.CAN_TOGGLE_FIREMODE = true
@@ -6343,7 +6219,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 	}		
 	self.contraband_m203.kick = self.stat_info.kick_tables.vertical_kick
-	self.contraband_m203.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.contraband_m203.panic_suppression_chance = 0.05
 	self.contraband_m203.ignore_damage_upgrades = true
 	self.contraband_m203.AMMO_MAX = 6
@@ -6379,7 +6254,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ray.fire_mode_data.fire_rate = 1
 	self.ray.CLIP_AMMO_MAX = 4
 	self.ray.AMMO_MAX = 8
-	self.ray.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ray.supported = true
 	self.ray.stats = {
 		damage = 400,
@@ -6406,7 +6280,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.tti.desc_id = "bm_ap_weapon_sc_desc"
 	self.tti.CLIP_AMMO_MAX = 20
 	self.tti.AMMO_MAX = 40
-	self.tti.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.tti.FIRE_MODE = "single"
 	self.tti.fire_mode_data = {}
 	self.tti.fire_mode_data.fire_rate = 0.6
@@ -6441,7 +6314,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.siltstone.desc_id = "bm_ap_weapon_sc_desc"
 	self.siltstone.CLIP_AMMO_MAX = 10
 	self.siltstone.AMMO_MAX = 40
-	self.siltstone.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.siltstone.fire_mode_data.fire_rate = 0.6
 	self.siltstone.kick = self.stat_info.kick_tables.right_kick
 	self.siltstone.supported = true
@@ -6464,7 +6336,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Ak17
 	self.flint.AMMO_MAX = 150
-	self.flint.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.flint.CLIP_AMMO_MAX = 30
 	self.flint.BURST_FIRE = 3
 	self.flint.BURST_FIRE_RATE_MULTIPLIER = 1.42857142857		
@@ -6493,7 +6364,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Tatonka
 	self.coal.AMMO_MAX = 100
 	self.coal.CLIP_AMMO_MAX = 64
-	self.coal.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.coal.fire_mode_data.fire_rate = 0.08823529411
 	self.coal.auto.fire_rate = 0.08823529411
 	self.coal.panic_suppression_chance = 0.05
@@ -6519,7 +6389,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--5/7 AP
 	self.lemming.CLIP_AMMO_MAX = 20
 	self.lemming.AMMO_MAX = 75
-	self.lemming.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.lemming.fire_mode_data.fire_rate = 0.08571428571
 	self.lemming.single.fire_rate = 0.08571428571
 	self.lemming.kick = self.stat_info.kick_tables.even_recoil
@@ -6550,7 +6419,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.chinchilla.single.fire_rate = 0.19047619
 	self.chinchilla.AMMO_MAX = 30
 	self.chinchilla.kick = self.stat_info.kick_tables.moderate_kick
-	self.chinchilla.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.chinchilla.supported = true
 	self.chinchilla.stats = {
 		damage = 60,
@@ -6575,7 +6443,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_chinchilla.single.fire_rate = 0.19047619
 	self.x_chinchilla.AMMO_MAX = 60
 	self.x_chinchilla.kick = self.stat_info.kick_tables.vertical_kick
-	self.x_chinchilla.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_chinchilla.supported = true
 	self.x_chinchilla.stats = {
 		damage = 60,
@@ -6605,7 +6472,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}	
 	self.breech.AMMO_MAX = 90
 	self.breech.CLIP_AMMO_MAX = 12
-	self.breech.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.breech.fire_mode_data.fire_rate = 0.08571428571
 	self.breech.single.fire_rate = 0.08571428571
 	self.breech.kick = self.stat_info.kick_tables.even_recoil
@@ -6638,7 +6504,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ching.desc_id = "bm_galant_sc_desc"
 	self.ching.CLIP_AMMO_MAX = 8
 	self.ching.AMMO_MAX = 60
-	self.ching.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ching.CAN_TOGGLE_FIREMODE = false
 	self.ching.kick = self.stat_info.kick_tables.vertical_kick	
 	self.ching.supported = true
@@ -6668,7 +6533,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.erma.CLIP_AMMO_MAX = 32
 	self.erma.BURST_FIRE = false
 	self.erma.AMMO_MAX = 150
-	self.erma.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.erma.fire_mode_data.fire_rate = 0.10909090909
 	self.erma.auto.fire_rate = 0.10909090909
 	self.erma.CAN_TOGGLE_FIREMODE = true
@@ -6701,7 +6565,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ecp.desc_id = "bm_ap_3_weapon_sc_desc"
 	self.ecp.kick = self.stat_info.kick_tables.right_kick
 	self.ecp.AMMO_MAX = 40
-	self.ecp.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.ecp.panic_suppression_chance = 0.05
 	self.ecp.ignore_damage_upgrades = true
 	self.ecp.supported = true
@@ -6726,7 +6589,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shrew.single.fire_rate = 0.08571428571
 	self.shrew.CLIP_AMMO_MAX = 6
 	self.shrew.AMMO_MAX = 40
-	self.shrew.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.shrew.kick = self.stat_info.kick_tables.moderate_kick
 	self.shrew.supported = true
 	self.shrew.stats = {
@@ -6751,7 +6613,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_shrew.single.fire_rate = 0.08571428571
 	self.x_shrew.CLIP_AMMO_MAX = 12
 	self.x_shrew.AMMO_MAX = 80
-	self.x_shrew.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_shrew.kick = self.stat_info.kick_tables.moderate_kick
 	self.x_shrew.supported = true
 	self.x_shrew.stats = {
@@ -6776,7 +6637,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.basset.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.basset.CLIP_AMMO_MAX = 6
 	self.basset.AMMO_MAX = 60
-	self.basset.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.basset.fire_mode_data = {fire_rate = 0.1}
 	self.basset.auto = {fire_rate = 0.1}
 	self.basset.kick = self.stat_info.kick_tables.moderate_left_kick
@@ -6806,7 +6666,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_basset.rays = 9
 	self.x_basset.CLIP_AMMO_MAX = 12
 	self.x_basset.AMMO_MAX = 120
-	self.x_basset.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_basset.fire_mode_data = {fire_rate = 0.1}
 	self.x_basset.auto = {fire_rate = 0.1}
 	self.x_basset.kick = self.stat_info.kick_tables.moderate_kick
@@ -6831,7 +6690,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Union 5.56
 	self.corgi.CLIP_AMMO_MAX = 30
 	self.corgi.AMMO_MAX = 180
-	self.corgi.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.corgi.fire_mode_data.fire_rate = 0.07058823529
 	self.corgi.CAN_TOGGLE_FIREMODE = true
 	self.corgi.auto = {}
@@ -6866,7 +6724,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.slap.fire_mode_data.fire_rate = 1.2
 	self.slap.kick = self.stat_info.kick_tables.vertical_kick
 	self.slap.AMMO_MAX = 5
-	self.slap.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.slap.supported = true
 	self.slap.stats = {
 		damage = 80,
@@ -6891,7 +6748,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_coal.use_data.selection_index = 4
 	self.x_coal.AMMO_MAX = 200
 	self.x_coal.CLIP_AMMO_MAX = 128
-	self.x_coal.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_coal.fire_mode_data.fire_rate = 0.08823529411
 	self.x_coal.single.fire_rate = 0.08823529411
 	self.x_coal.panic_suppression_chance = 0.05
@@ -6920,7 +6776,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_baka.CLIP_AMMO_MAX = 60
 	self.x_baka.NR_CLIPS_MAX = 4
 	self.x_baka.AMMO_MAX = 180
-	self.x_baka.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_baka.FIRE_MODE = "auto"
 	self.x_baka.fire_mode_data = {}
 	self.x_baka.fire_mode_data.fire_rate = 0.06315789473
@@ -6954,7 +6809,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_cobray.CLIP_AMMO_MAX = 120
 	self.x_cobray.NR_CLIPS_MAX = 4
 	self.x_cobray.AMMO_MAX = 120
-	self.x_cobray.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_cobray.kick = self.stat_info.kick_tables.moderate_kick
 	self.x_cobray.fire_mode_data.fire_rate = 0.06
 	self.x_cobray.CAN_TOGGLE_FIREMODE = true
@@ -6982,7 +6836,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_erma.use_data.selection_index = 4			
 	self.x_erma.CLIP_AMMO_MAX = 64
 	self.x_erma.AMMO_MAX = 150
-	self.x_erma.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_erma.fire_mode_data.fire_rate = 0.10909090909
 	self.x_erma.single.fire_rate = 0.10909090909
 	self.x_erma.CAN_TOGGLE_FIREMODE = true
@@ -7014,7 +6867,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_hajk.AMMO_MAX = 150
 	self.x_hajk.ADAPTIVE_BURST_SIZE = false						
 	self.x_hajk.BURST_FIRE = 4				
-	self.x_hajk.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_hajk.kick = self.stat_info.kick_tables.moderate_kick
 	self.x_hajk.panic_suppression_chance = 0.05
 	self.x_hajk.supported = true
@@ -7039,7 +6891,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_m45.use_data.selection_index = 4				
 	self.x_m45.CLIP_AMMO_MAX = 60
 	self.x_m45.AMMO_MAX = 150
-	self.x_m45.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_m45.kick = self.stat_info.kick_tables.moderate_kick
 	self.x_m45.supported = true
 	self.x_m45.stats = {
@@ -7067,7 +6918,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_m1928.single.fire_rate = 0.075
 	self.x_m1928.CLIP_AMMO_MAX = 100
 	self.x_m1928.AMMO_MAX = 180
-	self.x_m1928.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_m1928.kick = self.stat_info.kick_tables.even_recoil
 	self.x_m1928.supported = true
 	self.x_m1928.stats = {
@@ -7091,7 +6941,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Keeping
 	self.x_mac10.CLIP_AMMO_MAX = 40
 	self.x_mac10.AMMO_MAX = 120
-	self.x_mac10.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_mac10.fire_mode_data.fire_rate = 0.06
 	self.x_mac10.single.fire_rate = 0.06
 	self.x_mac10.kick = self.stat_info.kick_tables.moderate_kick
@@ -7118,7 +6967,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp7.use_data.selection_index = 4		
 	self.x_mp7.CLIP_AMMO_MAX = 40
 	self.x_mp7.AMMO_MAX = 150
-	self.x_mp7.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_mp7.fire_mode_data.fire_rate = 0.06315789473
 	self.x_mp7.CAN_TOGGLE_FIREMODE = true
 	self.x_mp7.single.fire_rate = 0.06315789473
@@ -7148,7 +6996,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_mp9.single.fire_rate = 0.06666666666
 	self.x_mp9.fire_mode_data.fire_rate = 0.06666666666
 	self.x_mp9.AMMO_MAX = 200
-	self.x_mp9.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_mp9.kick = self.stat_info.kick_tables.even_recoil
 	self.x_mp9.supported = true
 	self.x_mp9.stats = {
@@ -7175,7 +7022,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_olympic.AMMO_MAX = 180
 	self.x_olympic.fire_mode_data.fire_rate = 0.075
 	self.x_olympic.single.fire_rate = 0.075
-	self.x_olympic.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_olympic.kick = self.stat_info.kick_tables.even_recoil
 	self.x_olympic.panic_suppression_chance = 0.05
 	self.x_olympic.supported = true
@@ -7199,7 +7045,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Disabled--	
 	self.x_p90.use_data.selection_index = 4			
 	self.x_p90.AMMO_MAX = 200
-	self.x_p90.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_p90.fire_mode_data.fire_rate = 0.06666666666
 	self.x_p90.single.fire_rate = 0.06666666666
 	self.x_p90.panic_suppression_chance = 0.05
@@ -7227,7 +7072,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_polymer.use_data.selection_index = 4			
 	self.x_polymer.CLIP_AMMO_MAX = 60
 	self.x_polymer.AMMO_MAX = 120
-	self.x_polymer.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_polymer.fire_mode_data.fire_rate = 0.05
 	self.x_polymer.single.fire_rate = 0.05
 	self.x_polymer.BURST_FIRE = 4										
@@ -7260,7 +7104,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_schakal.BURST_FIRE = 4
 	self.x_schakal.ADAPTIVE_BURST_SIZE = false				
 	self.x_schakal.CLIP_AMMO_MAX = 50
-	self.x_schakal.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_schakal.kick = self.stat_info.kick_tables.even_recoil
 	self.x_schakal.panic_suppression_chance = 0.05
 	self.x_schakal.supported = true
@@ -7285,7 +7128,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_scorpion.use_data.selection_index = 4				
 	self.x_scorpion.CLIP_AMMO_MAX = 40
 	self.x_scorpion.AMMO_MAX = 180
-	self.x_scorpion.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_scorpion.fire_mode_data.fire_rate = 0.07058823529
 	self.x_scorpion.single.fire_rate = 0.07058823529
 	self.x_scorpion.kick = self.stat_info.kick_tables.even_recoil
@@ -7312,7 +7154,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_sterling.use_data.selection_index = 4				
 	self.x_sterling.CLIP_AMMO_MAX = 40
 	self.x_sterling.AMMO_MAX = 150
-	self.x_sterling.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_sterling.fire_mode_data.fire_rate = 0.10909090909
 	self.x_sterling.single.fire_rate = 0.10909090909
 	self.x_sterling.kick = self.stat_info.kick_tables.right_recoil
@@ -7339,7 +7180,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_tec9.use_data.selection_index = 4			
 	self.x_tec9.AMMO_MAX = 150
 	self.x_tec9.CLIP_AMMO_MAX = 40
-	self.x_tec9.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_tec9.fire_mode_data.fire_rate = 0.06
 	self.x_tec9.single.fire_rate = 0.06
 	self.x_tec9.kick = self.stat_info.kick_tables.even_recoil
@@ -7366,7 +7206,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_uzi.use_data.selection_index = 4		
 	self.x_uzi.AMMO_MAX = 120
 	self.x_uzi.CLIP_AMMO_MAX = 44
-	self.x_uzi.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_uzi.fire_mode_data.fire_rate = 0.086
 	self.x_uzi.single.fire_rate = 0.086
 	self.x_uzi.kick = self.stat_info.kick_tables.even_recoil
@@ -7393,7 +7232,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_2006m.fire_mode_data.fire_rate = 0.15789473684
 	self.x_2006m.single.fire_rate = 0.15789473684
 	self.x_2006m.AMMO_MAX = 60
-	self.x_2006m.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_2006m.kick = self.stat_info.kick_tables.vertical_kick
 	self.x_2006m.supported = true
 	self.x_2006m.stats = {
@@ -7424,7 +7262,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_breech.use_data.selection_index = 4			
 	self.x_breech.AMMO_MAX = 180
 	self.x_breech.CLIP_AMMO_MAX = 24
-	self.x_breech.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_breech.fire_mode_data.fire_rate = 0.08571428571
 	self.x_breech.single.fire_rate = 0.08571428571
 	self.x_breech.kick = self.stat_info.kick_tables.even_recoil
@@ -7450,7 +7287,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Disabled--	
 	self.x_c96.use_data.selection_index = 4				
 	self.x_c96.AMMO_MAX = 120
-	self.x_c96.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_c96.FIRE_MODE = "single"
 	self.x_c96.sounds.fire = "c96_fire"
 	self.x_c96.sounds.fire_single = "c96_fire"
@@ -7484,7 +7320,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_g18c.single.fire_rate = 0.05454545454
 	self.x_g18c.CLIP_AMMO_MAX = 36
 	self.x_g18c.AMMO_MAX = 200
-	self.x_g18c.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_g18c.kick = self.stat_info.kick_tables.moderate_kick
 	self.x_g18c.supported = true
 	self.x_g18c.stats = {
@@ -7509,7 +7344,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_hs2000.use_data.selection_index = 4			
 	self.x_hs2000.CLIP_AMMO_MAX = 28
 	self.x_hs2000.AMMO_MAX = 120
-	self.x_hs2000.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_hs2000.FIRE_MODE = "single"
 	self.x_hs2000.fire_mode_data = {}
 	self.x_hs2000.fire_mode_data.fire_rate = 0.08571428571
@@ -7539,7 +7373,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_p226.use_data.selection_index = 4				
 	self.x_p226.AMMO_MAX = 150
 	self.x_p226.CLIP_AMMO_MAX = 28
-	self.x_p226.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_p226.fire_mode_data.fire_rate = 0.08571428571
 	self.x_p226.single.fire_rate = 0.08571428571
 	self.x_p226.kick = self.stat_info.kick_tables.even_recoil
@@ -7567,7 +7400,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_pl14.single.fire_rate = 0.08571428571
 	self.x_pl14.CLIP_AMMO_MAX = 20
 	self.x_pl14.AMMO_MAX = 150
-	self.x_pl14.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_pl14.kick = self.stat_info.kick_tables.even_recoil
 	self.x_pl14.supported = true
 	self.x_pl14.stats = {
@@ -7592,7 +7424,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_ppk.use_data.selection_index = 4				
 	self.x_ppk.AMMO_MAX = 180
 	self.x_ppk.CLIP_AMMO_MAX = 24
-	self.x_ppk.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_ppk.fire_mode_data.fire_rate = 0.08571428571
 	self.x_ppk.single.fire_rate = 0.08571428571
 	self.x_ppk.kick = self.stat_info.kick_tables.even_recoil
@@ -7620,7 +7451,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_rage.single.fire_rate = 0.19047619047
 	self.x_rage.AMMO_MAX = 60
 	self.x_rage.kick = self.stat_info.kick_tables.vertical_kick
-	self.x_rage.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_rage.supported = true
 	self.x_rage.stats = {
 		damage = 60,
@@ -7649,7 +7479,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Disabled--	
 	self.x_sparrow.use_data.selection_index = 4			
 	self.x_sparrow.AMMO_MAX = 150
-	self.x_sparrow.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_sparrow.kick = self.stat_info.kick_tables.even_recoil
 	self.x_sparrow.fire_mode_data.fire_rate = 0.08571428571
 	self.x_sparrow.single.fire_rate = 0.08571428571
@@ -7679,7 +7508,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_judge.FIRE_MODE = "single"
 	self.x_judge.BURST_FIRE = true
 	self.x_judge.AMMO_MAX = 40
-	self.x_judge.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_judge.supported = true
 	self.x_judge.stats = {
 		damage = 90,
@@ -7702,13 +7530,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_judge.animations.second_gun_versions = self.x_judge.animations.second_gun_versions or {}
 	self.x_judge.animations.second_gun_versions.reload = "reload"
 	self.x_judge.kick = self.stat_info.kick_tables.vertical_kick
+	self.x_judge.range_mul = 1.25
 
 	--Akimbo Goliath 12g
 	--Disabled--	
 	self.x_rota.use_data.selection_index = 4			
 	self.x_rota.upgrade_blocks = nil
 	self.x_rota.AMMO_MAX = 80
-	self.x_rota.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_rota.rays = 9 * 1 * 1 * 1 * 1 * 1 * 1
 	self.x_rota.kick = self.stat_info.kick_tables.vertical_kick
 	self.x_rota.fire_mode_data.fire_rate = 0.13953488372
@@ -7740,7 +7568,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shuno.CLIP_AMMO_MAX = 300
 	self.shuno.NR_CLIPS_MAX = 1
 	self.shuno.AMMO_MAX = 300
-	self.shuno.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.shuno.FIRE_MODE = "auto"
 	self.shuno.fire_mode_data = {}
 	self.shuno.fire_mode_data.fire_rate = 0.05
@@ -7780,7 +7607,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.system.rays = 9
 	self.system.CLIP_AMMO_MAX = 35
 	self.system.AMMO_MAX = 60
-	self.system.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.system.fire_mode_data.fire_rate = 0.1
 	self.system.auto = {}
 	self.system.auto.fire_rate = 0.1
@@ -7824,7 +7650,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.shepheard.panic_suppression_chance = 0.05
 	self.shepheard.kick = self.stat_info.kick_tables.even_recoil
 	self.shepheard.AMMO_MAX = 180
-	self.shepheard.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.shepheard.supported = true
 	self.shepheard.stats = {
 		damage = 20,
@@ -7852,7 +7677,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_shepheard.panic_suppression_chance = 0.05
 	self.x_shepheard.kick = self.stat_info.kick_tables.moderate_kick
 	self.x_shepheard.AMMO_MAX = 180
-	self.x_shepheard.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_shepheard.supported = true
 	self.x_shepheard.stats = {
 		damage = 20,
@@ -7881,7 +7705,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.komodo.AMMO_MAX = 90
 	self.komodo.fire_mode_data.fire_rate = 0.06666666666
 	self.komodo.auto.fire_rate = 0.06666666666
-	self.komodo.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.komodo.panic_suppression_chance = 0.05
 	self.komodo.kick = self.stat_info.kick_tables.moderate_kick	
 	self.komodo.supported = true
@@ -7919,7 +7742,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.elastic.charge_data.max_t = 1
 	self.elastic.not_allowed_in_bleedout = false
 	self.elastic.AMMO_MAX = 20
-	self.elastic.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.elastic.panic_suppression_chance = 0.05
 	self.elastic.ignore_damage_upgrades = true
 	self.elastic.supported = true
@@ -7944,7 +7766,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coach.rays = 9
 	self.coach.kick = self.stat_info.kick_tables.vertical_kick
 	self.coach.AMMO_MAX = 20
-	self.coach.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.coach.sounds.fire_single = "coach_fire"
 	self.coach.sounds.fire_auto = "coach_fire"		
 	self.coach.BURST_FIRE = 3			
@@ -7982,7 +7803,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.legacy.single.fire_rate = 0.08571428571
 	self.legacy.CLIP_AMMO_MAX = 12
 	self.legacy.AMMO_MAX = 75
-	self.legacy.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.legacy.kick = self.stat_info.kick_tables.left_recoil
 	self.legacy.supported = true
 	self.legacy.stats = {
@@ -8015,7 +7835,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_legacy.single.fire_rate = 0.08571428571
 	self.x_legacy.CLIP_AMMO_MAX = 24
 	self.x_legacy.AMMO_MAX = 150
-	self.x_legacy.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_legacy.kick = self.stat_info.kick_tables.left_recoil
 	self.x_legacy.supported = true
 	self.x_legacy.stats = {
@@ -8038,7 +7857,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Beretta Auto
 	self.beer.use_data.selection_index = 2
 	self.beer.AMMO_MAX = 180
-	self.beer.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.beer.fire_mode_data.fire_rate = 0.05454545454
 	self.beer.kick = self.stat_info.kick_tables.even_recoil
 	self.beer.supported = true
@@ -8064,7 +7882,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--CZ 75
 	self.czech.AMMO_MAX = 90
-	self.czech.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.czech.fire_mode_data.fire_rate = 0.06
 	self.czech.kick = self.stat_info.kick_tables.even_recoil
 	self.czech.supported = true
@@ -8086,7 +7903,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.czech.panic_suppression_chance = 0.05
 	--Akimbo CZ 75
 	self.x_czech.AMMO_MAX = 180
-	self.x_czech.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_czech.fire_mode_data.fire_rate = 0.06
 	self.x_czech.kick = self.stat_info.kick_tables.even_recoil
 	self.x_czech.supported = true
@@ -8109,7 +7925,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Igor
 	self.stech.fire_mode_data.fire_rate = 0.08
 	self.stech.AMMO_MAX = 75
-	self.stech.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.stech.kick = self.stat_info.kick_tables.moderate_kick
 	self.stech.CLIP_AMMO_MAX = 20
 	self.stech.supported = true
@@ -8132,7 +7947,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Akimbo Igor
 	self.x_stech.fire_mode_data.fire_rate = 0.08
 	self.x_stech.AMMO_MAX = 150
-	self.x_stech.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_stech.kick = self.stat_info.kick_tables.moderate_kick
 	self.x_stech.CLIP_AMMO_MAX = 40
 	self.x_stech.supported = true
@@ -8157,7 +7971,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.holt.single.fire_rate = 0.08571428571
 	self.holt.CLIP_AMMO_MAX = 10
 	self.holt.AMMO_MAX = 75
-	self.holt.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.holt.kick = self.stat_info.kick_tables.even_recoil
 	self.holt.supported = true
 	self.holt.stats = {
@@ -8181,7 +7994,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_holt.single.fire_rate = 0.08571428571
 	self.x_holt.CLIP_AMMO_MAX = 20
 	self.x_holt.AMMO_MAX = 150
-	self.x_holt.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_holt.kick = self.stat_info.kick_tables.even_recoil
 	self.x_holt.supported = true
 	self.x_holt.stats = {
@@ -8207,7 +8019,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.m60.CLIP_AMMO_MAX = 90
 	self.m60.AMMO_MAX = 180
-	self.m60.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m60.fire_mode_data.fire_rate = 0.10909090909
 	self.m60.auto.fire_rate = 0.10909090909
 	self.m60.kick = self.stat_info.kick_tables.horizontal_recoil
@@ -8236,7 +8047,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.r700.desc_id = "bm_ap_weapon_sc_desc"
 	self.r700.CLIP_AMMO_MAX = 10
 	self.r700.AMMO_MAX = 40
-	self.r700.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.r700.fire_mode_data.fire_rate = 0.8
 	self.r700.kick = self.stat_info.kick_tables.vertical_kick
 	self.r700.supported = true
@@ -8262,7 +8072,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.sbl.has_description = true
 	self.sbl.desc_id = "bm_ap_weapon_sc_desc"
 	self.sbl.AMMO_MAX = 30
-	self.sbl.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.sbl.FIRE_MODE = "single"
 	self.sbl.fire_mode_data = {}
 	self.sbl.fire_mode_data.fire_rate = 0.5
@@ -8296,7 +8105,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.model3.single.fire_rate = 0.15789473684
 	self.model3.AMMO_MAX = 30
 	self.model3.kick = self.stat_info.kick_tables.moderate_kick
-	self.model3.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.model3.supported = true
 	self.model3.stats = {
 		damage = 60,
@@ -8324,7 +8132,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_model3.single.fire_rate = 0.15789473684
 	self.x_model3.AMMO_MAX = 60
 	self.x_model3.kick = self.stat_info.kick_tables.moderate_kick
-	self.x_model3.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_model3.supported = true
 	self.x_model3.stats = {
 		damage = 60,
@@ -8353,7 +8160,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1897.single.fire_rate = 0.5
 	self.m1897.fire_mode_data.fire_rate = 0.5
 	self.m1897.AMMO_MAX = 60
-	self.m1897.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m1897.supported = true
 	self.m1897.stats = {
 		damage = 60,
@@ -8378,7 +8184,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1911.single.fire_rate = 0.08571428571
 	self.m1911.CLIP_AMMO_MAX = 8
 	self.m1911.AMMO_MAX = 40
-	self.m1911.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m1911.kick = self.stat_info.kick_tables.even_recoil
 	self.m1911.supported = true
 	self.m1911.stats = {
@@ -8409,7 +8214,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m590.CLIP_AMMO_MAX = 7
 	self.m590.kick = self.stat_info.kick_tables.vertical_kick
 	self.m590.AMMO_MAX = 60
-	self.m590.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.m590.supported = true
 	self.m590.stats = {
 		damage = 60,
@@ -8433,7 +8237,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.vityaz.use_data.selection_index = 2
 	self.vityaz.BURST_FIRE = false
 	self.vityaz.AMMO_MAX = 150
-	self.vityaz.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.vityaz.CAN_TOGGLE_FIREMODE = true
 	self.vityaz.kick = self.stat_info.kick_tables.right_recoil
 	self.vityaz.supported = true
@@ -8459,12 +8262,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	
 	--Restoration Weapons--
 	
-	--Raze's Fury
+	--Phoenix .500
 	self.shatters_fury.fire_mode_data.fire_rate = 0.25
 	self.shatters_fury.single.fire_rate = 0.25	
-	self.shatters_fury.AMMO_MAX = 30
+	self.shatters_fury.AMMO_MAX = 40
 	self.shatters_fury.CLIP_AMMO_MAX = 5
-	self.shatters_fury.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.shatters_fury.kick = self.stat_info.kick_tables.vertical_kick
 	self.shatters_fury.supported = true
 	self.shatters_fury.stats = {
@@ -8499,7 +8301,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--OICW
 	self.osipr.tactical_reload = 1		
 	self.osipr.AMMO_MAX = 120
-	self.osipr.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.osipr.CLIP_AMMO_MAX = 30
 	self.osipr.fire_mode_data.fire_rate = 0.075
 	self.osipr.auto.fire_rate = 0.075
@@ -8528,7 +8329,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.osipr.custom = false	--TEMP fix for BeardLib sync
 	
 	self.osipr_gl.AMMO_MAX = 9
-	self.osipr_gl.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.osipr_gl.CLIP_AMMO_MAX = 6
 	self.osipr_gl.fire_mode_data.fire_rate = 0.75
 	self.osipr_gl.kick = self.stat_info.kick_tables.vertical_kick
@@ -8578,7 +8378,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.socom.single.fire_rate = 0.08571428571
 	self.socom.CLIP_AMMO_MAX = 12
 	self.socom.AMMO_MAX = 40
-	self.socom.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.socom.kick = self.stat_info.kick_tables.even_recoil
 	self.socom.supported = true
 	self.socom.stats = {
@@ -8605,7 +8404,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_socom.single.fire_rate = 0.08571428571
 	self.x_socom.CLIP_AMMO_MAX = 24
 	self.x_socom.AMMO_MAX = 80
-	self.x_socom.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.x_socom.kick = self.stat_info.kick_tables.even_recoil
 	self.x_socom.supported = true
 	self.x_socom.stats = {
@@ -8636,7 +8434,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.amt.kick = self.stat_info.kick_tables.even_recoil
 		self.amt.CLIP_AMMO_MAX = 8
 		self.amt.AMMO_MAX = 60
-		self.amt.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.amt.supported = true
 		self.amt.stats = {
 			damage = 60,
@@ -8660,7 +8457,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tilt.has_description = false		
 		self.tilt.tactical_reload = 1
 		self.tilt.AMMO_MAX = 150
-		self.tilt.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.tilt.BURST_FIRE = 3
 		self.tilt.BURST_FIRE_RATE_MULTIPLIER = 3		
 		self.tilt.ADAPTIVE_BURST_SIZE = false														
@@ -8701,7 +8497,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ks23.AMMO_MAX = 30
 		self.ks23.CLIP_AMMO_MAX = 3		
 		self.ks23.kick = self.stat_info.kick_tables.vertical_kick
-		self.ks23.AMMO_PICKUP = self.stat_info._pickup_chance --{0.12, 0.43}
 		self.ks23.supported = true
 		self.ks23.stats = {
 			damage = 120, --250,
@@ -8728,7 +8523,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.amr12.AMMO_MAX = 120
 		self.amr12.tactical_reload = 1		
 		self.amr12.CLIP_AMMO_MAX = 5
-		self.amr12.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.amr12.fire_mode_data.fire_rate = 0.08571428571
 		self.amr12.CAN_TOGGLE_FIREMODE = false
 		self.amr12.single = {}
@@ -8765,7 +8559,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.owen.auto.fire_rate = 0.0857
 		self.owen.AMMO_MAX = 120
 		self.owen.CLIP_AMMO_MAX = 33
-		self.owen.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.owen.kick = self.stat_info.kick_tables.even_recoil
 		self.owen.supported = true
 		self.owen.stats = {
@@ -8790,7 +8583,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.aek971.CLIP_AMMO_MAX = 30
 		self.aek971.tactical_reload = 1												
 		self.aek971.AMMO_MAX = 180
-		self.aek971.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.aek971.kick = self.stat_info.kick_tables.moderate_kick
 		self.aek971.supported = true
 		self.aek971.stats = {
@@ -8820,7 +8612,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.czevo.CLIP_AMMO_MAX = 30
 		self.czevo.AMMO_MAX = 180
-		self.czevo.AMMO_PICKUP = self.stat_info._pickup_chance
 	self.czevo.kick = self.stat_info.kick_tables.even_recoil
 		self.czevo.supported = true
 		self.czevo.stats = {
@@ -8847,7 +8638,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.winchester1894.has_description = true
 		self.winchester1894.desc_id = "bm_ap_weapon_sc_desc"
 		self.winchester1894.AMMO_MAX = 40
-		self.winchester1894.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.winchester1894.FIRE_MODE = "single"
 		self.winchester1894.fire_mode_data = {}
 		self.winchester1894.fire_mode_data.fire_rate = 0.5
@@ -8881,7 +8671,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.moss464spx.desc_id = "bm_ap_weapon_sc_desc"
 		self.moss464spx.AMMO_MAX = 40
 		self.moss464spx.tactical_reload = 1					
-		self.moss464spx.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.moss464spx.FIRE_MODE = "single"
 		self.moss464spx.fire_mode_data = {}
 		self.moss464spx.fire_mode_data.fire_rate = 0.4
@@ -8913,7 +8702,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sg416.has_description = false						
 		self.sg416.tactical_reload = 1		
 		self.sg416.AMMO_MAX = 150
-		self.sg416.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.sg416.fire_mode_data.fire_rate = 0.08571428571
 		self.sg416.auto.fire_rate = 0.08571428571
 	self.sg416.kick = self.stat_info.kick_tables.moderate_kick
@@ -8942,7 +8730,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.spike.has_description = false						
 		self.spike.tactical_reload = 1		
 		self.spike.AMMO_MAX = 120
-		self.spike.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.spike.fire_mode_data.fire_rate = 0.1
 		self.spike.auto.fire_rate = 0.1
 	self.spike.kick = self.stat_info.kick_tables.right_kick		
@@ -8973,13 +8760,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.ak5s.use_data.selection_index = 2
 		self.ak5s.CLIP_AMMO_MAX = 35
 		self.ak5s.AMMO_MAX = 180
-		self.ak5s.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.ak5s.auto.fire_rate = 0.08275862068
 		self.ak5s.fire_mode_data.fire_rate = 0.08275862068
 		self.ak5s.panic_suppression_chance = 0.05
 	self.ak5s.kick = self.stat_info.kick_tables.even_recoil
 		self.ak5s.AMMO_MAX = 180
-		self.ak5s.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.ak5s.supported = true
 		self.ak5s.stats = {
 			damage = 20,
@@ -9005,7 +8790,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lebman.use_data.selection_index = 2
 		self.lebman.CLIP_AMMO_MAX = 14		
 		self.lebman.AMMO_MAX = 120
-		self.lebman.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.lebman.fire_mode_data.fire_rate = 0.1
 		self.lebman.auto.fire_rate = 0.1
 	self.lebman.kick = self.stat_info.kick_tables.moderate_kick
@@ -9037,7 +8821,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.sgs.CLIP_AMMO_MAX = 20
 		self.sgs.tactical_reload = 1		
 		self.sgs.AMMO_MAX = 40
-		self.sgs.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.sgs.FIRE_MODE = "single"
 		self.sgs.fire_mode_data = {}
 		self.sgs.fire_mode_data.fire_rate = 0.6
@@ -9086,7 +8869,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.beck.single.fire_rate = 0.5
 		self.beck.fire_mode_data.fire_rate = 0.5
 		self.beck.AMMO_MAX = 40 
-		self.beck.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.beck.supported = true
 		self.beck.stats = {
 			damage = 90,
@@ -9110,7 +8892,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.car9.CLIP_AMMO_MAX = 20
 		self.car9.AMMO_MAX = 90
 		self.car9.tactical_reload = 1		
-		self.car9.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.car9.fire_mode_data.fire_rate = 0.06315789473
 		self.car9.auto.fire_rate = 0.06315789473
 	self.car9.kick = self.stat_info.kick_tables.even_recoil
@@ -9145,7 +8926,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.smolak.fire_mode_data.fire_rate = 0.0923076923
 		self.smolak.auto.fire_rate = 0.0923076923
 		self.smolak.AMMO_MAX = 80
-		self.smolak.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.smolak.CAN_TOGGLE_FIREMODE = true
 	self.smolak.kick = self.stat_info.kick_tables.vertical_kick		
 		self.smolak.supported = true
@@ -9195,7 +8975,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.cold.single.fire_rate = 0.08571428571
 		self.cold.CLIP_AMMO_MAX = 8
 		self.cold.AMMO_MAX = 40
-		self.cold.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.cold.kick = self.stat_info.kick_tables.even_recoil
 		self.cold.supported = true
 		self.cold.stats = {
@@ -9231,7 +9010,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.aknato.AMMO_MAX = 150
 		self.aknato.FIRE_MODE = "auto"				
 		self.aknato.CAN_TOGGLE_FIREMODE = true
-		self.aknato.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.aknato.kick = self.stat_info.kick_tables.moderate_kick	
 		self.aknato.supported = true
 		self.aknato.stats = {
@@ -9257,7 +9035,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hpb.single.fire_rate = 0.08571428571
 		self.hpb.CLIP_AMMO_MAX = 10
 		self.hpb.AMMO_MAX = 40
-		self.hpb.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.hpb.kick = self.stat_info.kick_tables.even_recoil
 		self.hpb.supported = true
 		self.hpb.stats = {
@@ -9281,7 +9058,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.toym16 then --Gambyt's Toy M16
 		self.toym16.CLIP_AMMO_MAX = 150
 		self.toym16.AMMO_MAX = 900
-		self.toym16.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.toym16.supported = true
 		self.toym16.stats = {
 			damage = 4,
@@ -9307,7 +9083,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.toy1911 then --Gambyt's Toy M1911
 		self.toy1911.CLIP_AMMO_MAX = 90
 		self.toy1911.AMMO_MAX = 450
-		self.toy1911.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.toy1911.supported = true
 		self.toy1911.stats = {
 			damage = 4,
@@ -9335,7 +9110,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	if self.bdgr then --Hornet .300
 		self.bdgr.tactical_reload = 1
 		self.bdgr.AMMO_MAX = 120
-		self.bdgr.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.bdgr.supported = true
 		self.bdgr.stats = {
 			damage = 30,
@@ -9357,7 +9131,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.minibeck then --Reinbeck Auto
 		self.minibeck.AMMO_MAX = 30
-		self.minibeck.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.minibeck.supported = true
 		self.minibeck.stats = {
 			damage = 60,
@@ -9394,7 +9167,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Hammer 23
 		self.bs23.tactical_reload = 1
 		self.bs23.AMMO_MAX = 40
-		self.bs23.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.bs23.CLIP_AMMO_MAX = 3
 		self.bs23.fire_mode_data.fire_rate = 1
 		self.bs23.single.fire_rate = 1
@@ -9423,7 +9195,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Silent Killer Pack
 	if self.welrod then --Welrod
 		self.welrod.AMMO_MAX = 30
-		self.welrod.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.welrod.supported = true
 		self.welrod.stats = {
 			damage = 60,
@@ -9446,7 +9217,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Silent Killer Pack PB
 	if self.pb then
 		self.pb.AMMO_MAX = 75
-		self.pb.ammo_pickup = self.stat_info._pickup_chance
 		self.pb.supported = true
 		self.pb.fire_mode_data.fire_rate = 0.08571428571
 		self.pb.single.fire_rate = 0.08571428571
@@ -9471,7 +9241,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Silent Killer Pack High Standard HDM
 	if self.hshdm then
 		self.hshdm.AMMO_MAX = 90
-		self.hshdm.ammo_pickup = self.stat_info._pickup_chance
 		self.hshdm.supported = true
 		self.hshdm.fire_mode_data.fire_rate = 0.08571428571
 		self.hshdm.single.fire_rate = 0.08571428571
@@ -9497,7 +9266,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Silent Killer Pack Maxim 9
 	if self.max9 then
 		self.max9.AMMO_MAX = 75
-		self.max9.ammo_pickup = self.stat_info._pickup_chance
 		self.max9.supported = true
 		self.max9.fire_mode_data.fire_rate = 0.08571428571
 		self.max9.single.fire_rate = 0.08571428571
@@ -9522,7 +9290,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Quake Weapon Pack Rocket Launcher
 	if self.qrl then
 		self.qrl.AMMO_MAX = 20
-		self.qrl.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.qrl.CLIP_AMMO_MAX = 4
 		self.qrl.stats = {
 			damage = 240,
@@ -9549,7 +9316,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.qsho.has_description = true
 		self.qsho.desc_id = "bm_quake_shotgun_sc_desc"
 		self.qsho.AMMO_MAX = 20
-		self.qsho.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.qsho.supported = true
 		self.qsho.stats = {
 			damage = 90,
@@ -9576,7 +9342,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.derringer then
 		self.derringer.AMMO_MAX = 20
-		self.derringer.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.derringer.kick = self.stat_info.kick_tables.right_kick
 		self.derringer.supported = true
 		self.derringer.stats = {
@@ -9604,7 +9369,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	if self.hx25 then
 		self.hx25.AMMO_MAX = 8
-		self.hx25.AMMO_PICKUP = self.stat_info._pickup_chance
 		self.hx25.supported = true
 		self.hx25.stats = {
 			damage = 48,
@@ -9629,13 +9393,75 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Automatically generate reasonableish stats for custom weapons.
 	for i, weap in pairs(self) do
-		if weap.categories then
-			if not weap.supported and weap.stats then
+		if weap.categories and weap.stats then
+			if not weap.supported then
 				self:generate_custom_weapon_stats(weap)	
 			end
+
+			self:calculate_ammo_pickup(weap)
 		end
 	end
 end)
+
+function WeaponTweakData:calculate_ammo_pickup(weapon)
+	--Define % of total ammo to pickup baseline per damage tier.
+	--More damaging guns should pick up less ammo, as a tradeoff for their higher output.
+	local damage_tiers_pickup = {
+		{damage = 18,  pickup = {0.055, 0.028}}, --Low damage/high pickup guns should have high variability, so that they still sometimes feel ammo tension.
+		{damage = 20,  pickup = {0.054, 0.027}},
+		{damage = 24,  pickup = {0.053, 0.027}},
+		{damage = 30,  pickup = {0.052, 0.026}},
+		{damage = 45,  pickup = {0.050, 0.026}},
+		{damage = 60,  pickup = {0.048, 0.025}},
+		{damage = 90,  pickup = {0.044, 0.023}},
+		{damage = 120, pickup = {0.040, 0.022}},
+		{damage = 180, pickup = {0.036, 0.020}},
+		{damage = 240, pickup = {0.031, 0.018}}, --All guns above here.
+		{damage = 360, pickup = {0.029, 0.017}}, --Heavy bows.
+		{damage = 600, pickup = {0.026, 0.016}}, --Light GLs
+		{damage = 800, pickup = {0.021, 0.013}}, --Heavy GLs
+		{damage = 1200, pickup = {0.012, 0.009}} --Rocket Launchers
+	}
+
+	--Determine the damage tier the gun falls under.
+	weapon.AMMO_PICKUP = {0, 0}
+	local damage_mul = weapon.stats_modifiers and weapon.stats_modifiers.damage or 1
+	for i, pickup_tier in ipairs(damage_tiers_pickup) do
+		weapon.AMMO_PICKUP[1] = pickup_tier.pickup[1]
+		weapon.AMMO_PICKUP[2] = pickup_tier.pickup[2]
+		if weapon.stats.damage * damage_mul <= pickup_tier.damage - 1 then --subtract 1 to counteract floating point error.
+			break
+		end
+	end
+
+	--Determine how much to multiply things by.
+	local pickup_multiplier = weapon.AMMO_MAX
+	local category_pickup_muls = { --Different gun categories have different pickup mults to compensate for various factors.
+		shotgun = 0.7, --Compensate for ease of aim+multikills and/or versatility.
+		bow = 0.7, --Compensate for picking arrows back up.
+		crossbow = 0.7,
+		pistol = 1.1, --Compensate for low range.
+		smg = 1.1,
+		akimbo = 1.1,
+		saw = 1.25, --Compensate for jankiness.
+		lmg = 0.9 --Undoes SMG ammo pickup bonus. These guys already pick up a bunch.
+	}
+
+	--Get weapon category specific pickup multipliers.
+	for i = 1, #weapon.categories do
+		local category = weapon.categories[i]
+		pickup_multiplier = pickup_multiplier * (category_pickup_muls[category] or 1)
+	end
+
+	--Double multiplier if gun is a secondary, to compensate for lower total ammo.
+	if weapon.use_data.selection_index == 1 then
+		pickup_multiplier = pickup_multiplier * 2
+	end
+
+	--Set actual pickup values to use.
+	weapon.AMMO_PICKUP[1] = weapon.AMMO_PICKUP[1] * pickup_multiplier
+	weapon.AMMO_PICKUP[2] = weapon.AMMO_PICKUP[2] * pickup_multiplier
+end
 
 WeaponTweakData.clone__create_table_structure = WeaponTweakData._create_table_structure
 function WeaponTweakData:_create_table_structure()

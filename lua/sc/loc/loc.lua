@@ -338,6 +338,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_bex"] = "TIME CLASSIFIED, Mexico - San Martín Bank",
 		["restoration_level_data_pex"] = "TIME CLASSIFIED, Mexico - Police Station",
 		["restoration_level_data_fex"] = "TIME CLASSIFIED, Mexico - Buluc's Mansion",
+		["restoration_level_data_chas"] = "8:30 PM, San Francisco - Chinatown",
 		["restoration_level_data_wetwork"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
@@ -927,15 +928,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fires a single accurate lead slug that penetrates body armor, enemies, shields, titan shields, and walls.", --For shotguns that can hit Heavy Sniper damage tier--
 		["bm_wp_upg_a_explosive_desc_sc"] = "High-explosive slugs. Fires one explosive charge that kills or stuns targets. Cannot headshot.",
-		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that increase damage at the cost of some consistency and ammo.\n\n35% reduced range.",
+		["bm_wp_upg_a_custom_desc"] = "Fewer, bigger pellets that increase damage at the cost of some consistency and ammo.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "Fires pellets that burn through body armor. Has a chance to set enemies on fire at close range, dealing 96 damage and potentially stunning over three seconds.",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "Fires pellets that burn through body armor. Has a chance to set enemies on fire at close range, dealing 120 damage and potentially stunning over three seconds.",
 		["bm_wp_upg_a_dragons_breath_pump_desc_sc"] = "Fires pellets that burn through body armor. Has a chance to set enemies on fire at close range, dealing 180 damage and potentially stunning over three seconds.",
 		["bm_wp_upg_a_dragons_breath_heavy_desc_sc"] = "Fires pellets that burn through body armor. Has a chance to set enemies on fire at close range, dealing 240 damage and potentially stunning over three seconds.",
-		["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires armor piercing flechettes that inflict 96 bleed damage over three seconds.\n\n25% increased range.",
-		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires armor piercing flechettes that inflict 120 bleed damage over three seconds.\n\n25% increased range.",
-		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires armor piercing flechettes that inflict 180 bleed damage over three seconds.\n\n25% increased range.",
-		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires armor piercing flechettes that inflict 240 bleed damage over three seconds.\n\n25% increased range.",
+		["bm_wp_upg_a_piercing_auto_desc_sc"] = "Fires armor piercing flechettes that inflict 96 bleed damage over three seconds.",
+		["bm_wp_upg_a_piercing_semi_desc_sc"] = "Fires armor piercing flechettes that inflict 120 bleed damage over three seconds.",
+		["bm_wp_upg_a_piercing_pump_desc_sc"] = "Fires armor piercing flechettes that inflict 180 bleed damage over three seconds.",
+		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "Fires armor piercing flechettes that inflict 240 bleed damage over three seconds.",
 
 		--Generic Mods--
 		["bm_wp_upg_vg_afg"] = "AFG",
@@ -1098,6 +1099,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nKills performed with the OVERKILL Boxing Gloves instantly refill your stamina.", -- OVERKILL Boxing Gloves
 		["bm_melee_clean_info"] = "Give the cops that extra clean shave they need.\n\nDeals 120 bleed damage over three seconds.", --Alabama Razor
 		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nDeals 120 bleed damage over three seconds.", --Lucille Baseball Bat
+		["bm_melee_spoon_gold_info"] = "Eat 'em up, Eat 'em up, Eat 'em up, Eat 'em up! \n\nHas a 50% chance to deal 120 fire damage and interrupt enemies over 3 seconds.", --Gold Spoon
 		["bm_melee_cqc_info"] = "Contains an exotic poison that deals 120 extra damage and carries a chance to interrupt over three seconds.", --Kunai, Syringe
 		["bm_melee_fight_info"] = "Be water, my friend.\n\nParrying an enemy attack deals 120 melee damage to them. This can be increased with skills.", --Empty Palm Kata
 		["bm_melee_slot_lever_info"] = "GIMME A JACKPOT!\n\nHas a 5% chance to deal ten times the damage and knockdown.",
@@ -1138,6 +1140,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_deflection"] = "Deflection",
 		["bm_menu_regen_time"] = "Regen Delay",
 		["bm_menu_swap_speed"] = "Swap Time",
+		["bm_menu_standing_range"] = "Range",
+		["bm_menu_moving_range"] = "Range (Moving)",
+		["bm_menu_pickup"] = "Ammo Pickup",
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: $passive_armor_regen",
@@ -1836,7 +1841,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
-			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers are ##40%## more accurate while aiming down sights.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nShotgun and Flamethrower range is increased by ##40%## while aiming down sights.",
+			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##60%## faster while aiming down sights.\n\nACE: ##$pro##\nShotgun and Flamethrower accuracy and range is increased by ##30%## while aiming down sights.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",
@@ -2071,7 +2076,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "Rifleman",
-		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##50%## faster.\n\nACE: ##$pro##\nRifles are ##30%## more accurate while aiming down sights.",
+		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##50%## faster.\n\nACE: ##$pro##\nRifles gain ##30%## more accuracy and range while aiming down sights.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Aggressive Reload",
@@ -2143,15 +2148,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
-		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nAkibmo weapons gain ##8## stability.\n\nACE: ##$pro##\nAkimbo weapons gain an additional ##8## stability and ##25%## more total ammo capacity.",
+		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nAkibmo weapons gain ##16## stability.\n\nACE: ##$pro##\nAkimbo weapons gain ##25%## more total ammo capacity and pickup.",
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",
-		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##10%## accuracy boost for ##5## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nNote: This extra accuracy does not increase shotgun or flamethrower range.\n\nACE: ##$pro##\nIncreases the accuracy boost duration to ##10## seconds, and all pistol hits refresh the duration.",
+		["menu_expert_handling_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants your weapons a ##8%## accuracy and range boost for ##4## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nACE: ##$pro##\nIncreases the accuracy and range boost duration to ##10## seconds.",
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "Trigger Happy",
-		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants them a ##10%## damage boost for ##5## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##10## seconds, and all pistol hits refresh the duration.",
+		["menu_trigger_happy_beta_desc_sc"] = "BASIC: ##$basic##\nEach pistol headshot grants them a ##10%## damage boost for ##4## seconds. This effect can stack ##5## times, and the duration of each stack is refreshed on pistol headshots.\n\nACE: ##$pro##\nIncreases the damage boost duration to ##10## seconds.",
 
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "Running from Death",
@@ -2199,7 +2204,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by ##25%.##\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_4_desc_sc"] = "You gain ##+1## increased concealment.\n\nWhen wearing armor, your movement speed is ##15%## less affected.\n\nYou gain ##45%## more experience when you complete days and jobs.\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
-		["menu_deckall_6_desc_sc"] = "Unlocks a Throwable Case equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nIncreases your ammo pickup to ##125%## of the normal rate.\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
+		["menu_deckall_6_desc_sc"] = "Unlocks a Throwable Case equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 		["menu_deckall_8_desc_sc"] = "Increases your doctor bag interaction speed by ##20%.##\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 
 		--Crook--

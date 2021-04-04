@@ -12797,7 +12797,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"groupcsr"
 		},
 		ELITE_swat_shotgun = {
-			"legday",
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
@@ -14500,7 +14499,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},				
 				{
 					unit = "GS_swat_R870",
-					amount_min = 1,
+					amount_min = 0,
 					amount_max = 2,
 					freq = 1,
 					tactics = self._tactics.MH_swat_shotgun,
@@ -14579,7 +14578,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				},
 				{
 					unit = "FBI_heavy_R870",
-					amount_min = 1,
+					amount_min = 0,
 					amount_max = 2,
 					freq = 1,
 					tactics = self._tactics.FBI_heavy_shotgun,
@@ -15202,7 +15201,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},			
 			{
 				unit = "SKM_Light_SWAT_Shotgun_W1",
-				amount_min = 1,
+				amount_min = 0,
 				amount_max = 1,
 				freq = 1,
 				tactics = self._tactics.ELITE_swat_shotgun,
@@ -15222,7 +15221,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Shotgun_W1",
-				amount_min = 1,
+				amount_min = 0,
 				amount_max = 1,
 				freq = 1,
 				tactics = self._tactics.FBI_heavy_shotgun,
@@ -15278,7 +15277,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},			
 			{
 				unit = "SKM_Light_SWAT_Shotgun_W1",
-				amount_min = 1,
+				amount_min = 0,
 				amount_max = 1,
 				freq = 1,
 				tactics = self._tactics.ELITE_swat_shotgun,
@@ -15306,7 +15305,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Shotgun_W1",
-				amount_min = 1,
+				amount_min = 0,
 				amount_max = 1,
 				freq = 1,
 				tactics = self._tactics.FBI_heavy_shotgun,
@@ -15418,7 +15417,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},			
 			{
 				unit = "SKM_Light_SWAT_Shotgun_W3",
-				amount_min = 1,
+				amount_min = 0,
 				amount_max = 2,
 				freq = 1,
 				tactics = self._tactics.ELITE_swat_shotgun,
@@ -15446,7 +15445,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Shotgun_W3",
-				amount_min = 1,
+				amount_min = 0,
 				amount_max = 2,
 				freq = 1,
 				tactics = self._tactics.FBI_heavy_shotgun,
@@ -15576,7 +15575,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},			
 			{
 				unit = "SKM_Light_SWAT_Shotgun_W3",
-				amount_min = 1,
+				amount_min = 0,
 				amount_max = 2,
 				freq = 1,
 				tactics = self._tactics.ELITE_swat_shotgun,
@@ -15604,7 +15603,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			},
 			{
 				unit = "SKM_Heavy_SWAT_Shotgun_W3",
-				amount_min = 1,
+				amount_min = 0,
 				amount_max = 2,
 				freq = 1,
 				tactics = self._tactics.FBI_heavy_shotgun,

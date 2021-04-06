@@ -1099,6 +1099,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_boxing_gloves_info"] = "I didn't hear no bell.\n\nУбийства, совершенные этим оружием, полностью восстановят выносливость.", -- OVERKILL Boxing Gloves
 		["bm_melee_clean_info"] = "Пусть копы побреются.\n\nНаносит 120 урона в течение трёх секунд.", --Alabama Razor
 		["bm_melee_barbedwire_info"] = "There's no afterlife waiting for my sorry ass... and I'm just here... talking to a fucking baseball bat!\n\nНаносит 120 урона в течение трёх секунд.", --Lucille Baseball Bat
+		["bm_melee_spoon_gold_info"] = "Не бойся вилки, бойся ложки, один удар - и череп в крошки. \n\n50% шанс нанести 120 огненного урона и прервать врага на 3 секунды.", --Gold Spoon
 		["bm_melee_cqc_info"] = "Содержит экзотический яд, который наносит 120 урона и имеет шанс прервать врага в течение трёх секунд.", --Kunai, Syringe
 		["bm_melee_fight_info"] = "Будь водой, друг мой.\n\nПарирование противника наносит ему 120 урона в ближем бою.", --Empty Palm Kata
 		["bm_melee_slot_lever_info"] = "Ты кто такой, чтобы это делать?\n\nИмеет шанс 5% нанести десятикратные урон и нокдаун.",

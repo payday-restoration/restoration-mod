@@ -461,6 +461,8 @@ end
 function NewRaycastWeaponBase:fire_rate_multiplier()
 	local multiplier = self._fire_rate_multiplier or 1
 	
+	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
+
 	if self:in_burst_mode() then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 	end		

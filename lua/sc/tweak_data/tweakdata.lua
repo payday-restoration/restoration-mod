@@ -670,3 +670,56 @@ tweak_data.player.stances.siltstone.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.r700.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.sbl.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.desertfox.steelsight.shakers.breathing.amplitude = 0
+
+--Jackal codex entry
+table.insert (tweak_data.gui.crime_net.codex,
+
+		{
+			id = "contacts",
+			name_id = "menu_contacts_shatter",
+			{
+				id = "shatter",
+				name_id = "heist_contact_shatter",
+				{
+					desc_id = "heist_contact_shatter_description",
+					videos = {"shatter1"}
+				},
+				id = "shatter",
+				name_id = "heist_contact_shatter",
+				{
+					desc_id = "heist_contact_raze_description",
+					videos = {"shatter1"}
+				},
+				id = "shatter",
+				name_id = "heist_contact_shatter",
+				{
+					desc_id = "heist_contact_jackal_description",
+					videos = {"shatter1"}
+				}
+			},
+			{
+				id = "akashic",
+				name_id = "heist_contact_akashic",
+				{
+					desc_id = "heist_contact_akashic_description",
+					videos = {"shatter1"}
+				}
+			}
+
+		} )
+
+--Jackal & Raze narrative entry
+tweak_data.narrative.contacts.shatter				= {}
+tweak_data.narrative.contacts.shatter.name_id					= "heist_contact_shatter"
+tweak_data.narrative.contacts.shatter.description_id	= "heist_contact_shatter_description"
+tweak_data.narrative.contacts.shatter.image		= "guis/textures/pd2/crimenet_portrait_interupt"
+tweak_data.narrative.contacts.shatter.package = "packages/contact_interupt"
+tweak_data.narrative.contacts.shatter.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )
+
+--Nicolas narrative entry
+tweak_data.narrative.contacts.akashic				= {}
+tweak_data.narrative.contacts.akashic.name_id					= "heist_contact_akashic"
+tweak_data.narrative.contacts.akashic.description_id	= "heist_contact_akashic_description"
+tweak_data.narrative.contacts.akashic.image		= "guis/textures/pd2/crimenet_portrait_hector"
+tweak_data.narrative.contacts.akashic.package = "packages/contact_hector"
+tweak_data.narrative.contacts.akashic.assets_gui = Idstring( "guis/mission_briefing/preload_contact_hector" )

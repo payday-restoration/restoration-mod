@@ -5316,7 +5316,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.winchester1874.AMMO_MAX = 40
 	self.winchester1874.FIRE_MODE = "single"
 	self.winchester1874.fire_mode_data = {}
-	self.winchester1874.fire_mode_data.fire_rate = 0.6
+	self.winchester1874.fire_mode_data.fire_rate = 1.05
 	self.winchester1874.CAN_TOGGLE_FIREMODE = false
 	self.winchester1874.single = {}
 	self.winchester1874.single.fire_rate = 0.6
@@ -5340,6 +5340,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.winchester1874.tactical_reload = 1
 	self.winchester1874.stats_modifiers = nil
 	self.winchester1874.panic_suppression_chance = 0.05
+	self.winchester1874.fire_rate_multiplier = 1.75
 
 	--Plainsrider bow.
 	self.plainsrider.upgrade_blocks = {

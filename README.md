@@ -97,4 +97,6 @@ easterunit100: creating the code for enemies commenting on certain deployables
 
 Marcel Kamisso: For the multicam used on Murky units
 
+RedFlame: Fixed some iffy scripting for Framing Frame D3
+
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale

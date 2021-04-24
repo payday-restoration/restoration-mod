@@ -1,10 +1,15 @@
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
+	--Since armor piercing chance is no longer used, lets use weapon category to determine armor piercing baseline.
+	if self:is_category("bow", "crossbow", "saw", "snp") then
+		self._use_armor_piercing = true
+	end
+
 	for _, category in ipairs(self:categories()) do
-		if self._use_armor_piercing then
+		if managers.player:has_category_upgrade(category, "ap_bullets") then
+			self._use_armor_piercing = true
 			break
 		end
-		self._use_armor_piercing = managers.player:upgrade_value_nil(category, "ap_bullets")
 	end
 end)
 
@@ -470,7 +475,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 	end 
-
+	
 	return multiplier
 end
 

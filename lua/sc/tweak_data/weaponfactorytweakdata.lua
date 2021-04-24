@@ -2172,11 +2172,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 			stats = {
 				value = 9,
 				total_ammo_mod = -33,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				damage = 15
 			},
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},
@@ -3191,6 +3195,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},			
@@ -3386,6 +3392,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},			
@@ -3937,6 +3945,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		custom_stats = {
 			damage_near_mul = 0.65,
 			damage_far_mul = 0.65,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			rays = 5
 		}
 	}			
@@ -5192,6 +5202,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},			
@@ -5315,6 +5327,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},				
@@ -5419,6 +5433,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 		custom_stats = {
 			damage_near_mul = 0.65,
 			damage_far_mul = 0.65,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			rays = 5
 		}
 	}			
@@ -6282,6 +6298,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_custom.custom_stats = {
 		damage_near_mul = 0.65,
 		damage_far_mul = 0.65,
+		ammo_pickup_max_mul = 0.8,
+		ammo_pickup_min_mul = 0.8,
 		rays = 5
 	}
 	
@@ -6900,6 +6918,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},				
@@ -8502,6 +8522,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},			
@@ -9708,6 +9730,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 		custom_stats = {
 			damage_near_mul = 0.65,
 			damage_far_mul = 0.65,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			rays = 5
 		}
 	}		
@@ -11515,6 +11539,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},				
@@ -15008,6 +15034,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},					
@@ -17702,6 +17730,8 @@ function WeaponFactoryTweakData:_init_x_judge()
 				custom_stats = {
 					damage_near_mul = 0.65,
 					damage_far_mul = 0.65,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					rays = 5
 				}
 			},	
@@ -17871,6 +17901,8 @@ function WeaponFactoryTweakData:_init_x_rota()
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},			
@@ -19542,6 +19574,8 @@ function WeaponFactoryTweakData:_init_coach()
 				custom_stats = {
 					damage_near_mul = 0.65,
 					damage_far_mul = 0.65,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					rays = 5
 				}
 			}	
@@ -21540,6 +21574,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 		custom_stats = {
 			damage_near_mul = 0.65,
 			damage_far_mul = 0.65,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
 			rays = 5
 		}
 	}		
@@ -21737,6 +21773,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 			custom_stats = {
 				damage_near_mul = 0.65,
 				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
 		},			
@@ -24588,6 +24626,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				custom_stats = {
 					damage_near_mul = 0.65,
 					damage_far_mul = 0.65,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					rays = 5
 				}
 			},			
@@ -25380,6 +25420,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 				custom_stats = {
 					damage_near_mul = 0.65,
 					damage_far_mul = 0.65,
+					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.8,
 					rays = 5
 				}
 			},			

@@ -72,9 +72,6 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 			if enemy_unit:base():char_tweak() then
 				if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
 					local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
-					if weapon_unit:base()._is_team_ai then
-						knock_chance = knock_chance * 0.25 --Bots have reduced knock chances. Usually hovers around 10%, weapons like the Thanatos cap around 25%.
-					end
 
 					if knock_chance > math.random() then
 						local damage_info = {

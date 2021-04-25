@@ -427,6 +427,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local cop_kill_count = 0
 	local hit_through_wall = false
 	local hit_through_shield = false
+	local shield_damage_reduction_applied = false
 	local hit_result = nil
 
 	for _, hit in ipairs(ray_hits) do
@@ -458,14 +459,17 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 		if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
 			hit_through_wall = true
+			shield_damage_reduction_applied = false
 		elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
 			hit_through_shield = hit_through_shield or alive(hit.unit:parent())
+			shield_damage_reduction_applied = false
 		end
 
 		--Damage reduction when shooting through shields.
 		--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
-		if hit_through_shield then
-			damage = damage * (self._shield_damage_mult or 0.5)
+		if hit_through_shield and not shield_damage_reduction_applied then
+			damage = damage * self._shield_pierce_damage_mult
+			shield_damage_reduction_applied = true
 		end
 
 		if hit_result and hit_result.type == "death" and cop_kill_count > 0 then

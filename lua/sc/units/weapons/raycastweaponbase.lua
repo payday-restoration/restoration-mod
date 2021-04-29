@@ -17,6 +17,8 @@ function RaycastWeaponBase:init(...)
 		self._bullet_slotmask = managers.mutators:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
 		self._bullet_slotmask = managers.modifiers:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
 	end
+
+	self._shield_pierce_damage_mult = 0.5
 end
 
 function RaycastWeaponBase:setup(...)

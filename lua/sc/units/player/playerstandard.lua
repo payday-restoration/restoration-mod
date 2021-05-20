@@ -523,6 +523,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 			}
 		end
 
+		managers.rumble:play("melee_hit", nil, nil, custom_data)
 		managers.game_play_central:physics_push(col_ray)
 
 		local character_unit, shield_knock = nil
@@ -935,7 +936,7 @@ local melee_vars = {
 	"player_melee",
 	"player_melee_var2"
 }
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry)
+function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
@@ -1481,7 +1482,11 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	local new_action = nil
 	local action_forbidden = false
 
-	if not input.btn_deploy_bipod and not self._toggle_underbarrel_wanted then
+	if _G.IS_VR then
+		if not input.btn_weapon_firemode_press and not self._toggle_underbarrel_wanted then
+			return new_action
+		end
+	elseif not input.btn_deploy_bipod and not self._toggle_underbarrel_wanted then
 		return new_action
 	end
 	

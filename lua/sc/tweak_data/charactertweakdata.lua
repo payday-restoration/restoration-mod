@@ -4871,7 +4871,8 @@ function CharacterTweakData:_presets(tweak_data)
 			zones = {
 				{none = 1}
 			}
-		}
+		},
+		tase = true,
 	}
 	presets.hurt_severities.heavy = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.heavy.bullet = {
@@ -25723,6 +25724,12 @@ function CharacterTweakData:character_map()
 				"civ_female_asian_casual_1",
 				"civ_female_asian_storekeeper",
 				"civ_male_auctioneer_2"
+			}
+		},
+		sand = {
+			path = "units/pd2_dlc_sand/characters/",
+			list = {
+				"civ_male_vlad"
 			}
 		},
 		sharks = {

@@ -3193,6 +3193,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.taser.stats.concealment = 28
 	self.melee_weapons.taser.repeat_expire_t = 0.6
 	self.melee_weapons.taser.melee_damage_delay = 0.2
+	self.melee_weapons.taser.tase_data = {
+		tase_strength = "light"
+	}	
 	
 	--Thanks Boss--	
 	self.melee_weapons.fight.stats.min_damage = 1
@@ -3478,6 +3481,9 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.zeus.stats.concealment = 28
 	self.melee_weapons.zeus.repeat_expire_t = 0.6
 	self.melee_weapons.zeus.melee_damage_delay = 0.2
+	self.melee_weapons.zeus.tase_data = {
+		tase_strength = "light"
+	}	
 
 	--you got blood on my suit--
 	self.melee_weapons.wing.info_id = "bm_melee_wing_info"	

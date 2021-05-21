@@ -8261,6 +8261,120 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Disable Akimbo AK Gen 21 Tactical
 	self.x_vityaz.use_data.selection_index = 4
 	
+	--Akimbo Miyaka 10
+	--Disabled--	
+	self.x_pm9.use_data.selection_index = 4	
+
+	--Miyaka 10
+	--Moved to Primary slot
+	self.pm9.use_data.selection_index = 2	
+	self.pm9.CLIP_AMMO_MAX = 25
+	self.pm9.AMMO_MAX = 180
+	self.pm9.fire_mode_data.fire_rate = 0.05454545454
+	self.pm9.auto.fire_rate = 0.05454545454
+	self.pm9.kick = self.stat_info.kick_tables.even_recoil
+	self.pm9.supported = true
+	self.pm9.stats = {
+		damage = 20,
+		spread = 16,
+		recoil = 18,
+		spread_moving = 8,
+		zoom = 1,
+		concealment = 29,
+		suppression = 7,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.pm9.stats_modifiers = nil
+	self.pm9.panic_suppression_chance = 0.05	
+	
+	--Kang Arms X1
+	self.qbu88.upgrade_blocks = nil
+	self.qbu88.has_description = true
+	self.qbu88.desc_id = "bm_ap_weapon_sc_desc"
+	self.qbu88.CLIP_AMMO_MAX = 10
+	self.qbu88.AMMO_MAX = 40
+	self.qbu88.fire_mode_data.fire_rate = 0.4
+	self.qbu88.CAN_TOGGLE_FIREMODE = false
+	self.qbu88.single = {}
+	self.qbu88.single.fire_rate = 0.4
+	self.qbu88.kick = self.stat_info.kick_tables.vertical_kick
+	self.qbu88.supported = true
+	self.qbu88.stats = {
+		damage = 90,
+		spread = 16,
+		recoil = 14,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 20,
+		suppression = 4,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 9,
+		reload = 20
+	}
+	self.qbu88.armor_piercing_chance = 1
+	self.qbu88.stats_modifiers = nil
+	self.qbu88.panic_suppression_chance = 0.05	
+	
+	--Byk-1 
+	self.groza.desc_id = "bm_m203_weapon_sc_desc"
+	self.groza.has_description = true
+	self.groza.AMMO_MAX = 60
+	self.groza.tactical_reload = 1
+	self.groza.FIRE_MODE = "auto"
+	self.groza.fire_mode_data.fire_rate = 0.08571428571
+	self.groza.CAN_TOGGLE_FIREMODE = true
+	self.groza.auto.fire_rate = 0.08571428571
+	self.groza.panic_suppression_chance = 0.05
+	self.groza.kick = self.stat_info.kick_tables.vertical_kick
+	self.groza.supported = true
+	self.groza.stats = {
+		damage = 45,
+		spread = 17,
+		recoil = 18,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 18,
+		suppression = 6,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.groza.stats_modifiers = nil
+	self.groza_underbarrel.upgrade_blocks = {
+		weapon = {
+			"clip_ammo_increase"
+		}
+	}		
+	self.groza_underbarrel.kick = self.stat_info.kick_tables.vertical_kick
+	self.groza_underbarrel.panic_suppression_chance = 0.05
+	self.groza_underbarrel.ignore_damage_upgrades = true
+	self.groza_underbarrel.AMMO_MAX = 6
+	self.groza_underbarrel.supported = true
+	self.groza_underbarrel.stats = {
+		damage = 40,
+		spread = 17,
+		recoil = 9,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 25,
+		suppression = 20,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.groza_underbarrel.stats_modifiers = {damage = 10}	
+	
+	
 	--Restoration Weapons--
 	
 	--Phoenix .500

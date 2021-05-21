@@ -60,6 +60,11 @@ tweak_data.projectiles.launcher_frag_m32.time_cheat = 0.7
 tweak_data.projectiles.launcher_incendiary_m32.time_cheat = 0.7
 tweak_data.projectiles.launcher_frag_china.damage = 80
 
+tweak_data.projectiles.underbarrel_m203_groza.damage = 80
+tweak_data.projectiles.underbarrel_m203_groza.player_damage = 80
+tweak_data.projectiles.underbarrel_m203_groza.curve_pow = 1
+tweak_data.projectiles.underbarrel_m203_groza.range = 500
+
 --M202--
 tweak_data.projectiles.rocket_ray_frag.damage = 120
 tweak_data.projectiles.rocket_ray_frag.player_damage = 60
@@ -87,6 +92,45 @@ tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
 	dot_length = 3.1,
 	dot_tick_period = 0.5
 }
+
+--Tactical ZAPper grenades (Grenade Launchers)
+tweak_data.projectiles.launcher_electric.damage = 40
+tweak_data.projectiles.launcher_electric.player_damage = 20
+tweak_data.projectiles.launcher_electric.curve_pow = 1
+tweak_data.projectiles.launcher_electric.range = 500
+
+tweak_data.projectiles.launcher_electric_m32.damage = 40
+tweak_data.projectiles.launcher_electric_m32.player_damage = 20
+tweak_data.projectiles.launcher_electric_m32.curve_pow = 1
+tweak_data.projectiles.launcher_electric_m32.range = 500
+
+tweak_data.projectiles.launcher_electric_china.damage = 40
+tweak_data.projectiles.launcher_electric_china.player_damage = 20
+tweak_data.projectiles.launcher_electric_china.curve_pow = 1
+tweak_data.projectiles.launcher_electric_china.range = 500
+
+tweak_data.projectiles.launcher_electric_slap.damage = 40
+tweak_data.projectiles.launcher_electric_slap.player_damage = 20
+tweak_data.projectiles.launcher_electric_slap.curve_pow = 1
+tweak_data.projectiles.launcher_electric_slap.range = 500
+
+tweak_data.projectiles.underbarrel_electric.damage = 40
+tweak_data.projectiles.underbarrel_electric.player_damage = 20
+tweak_data.projectiles.underbarrel_electric.curve_pow = 1
+tweak_data.projectiles.underbarrel_electric.range = 500
+
+tweak_data.projectiles.underbarrel_electric_groza.damage = 40
+tweak_data.projectiles.underbarrel_electric_groza.player_damage = 20
+tweak_data.projectiles.underbarrel_electric_groza.curve_pow = 1
+tweak_data.projectiles.underbarrel_electric_groza.range = 500
+
+--Tactical ZAPper (Arbiter)
+tweak_data.projectiles.launcher_electric_arbiter.damage = 20
+tweak_data.projectiles.launcher_electric_arbiter.player_damage = 10
+tweak_data.projectiles.launcher_electric_arbiter.launch_speed = 2500
+tweak_data.projectiles.launcher_electric_arbiter.range = 250
+tweak_data.projectiles.launcher_electric_arbiter.curve_pow = 1
+tweak_data.projectiles.launcher_electric_arbiter.init_timer = nil
 
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
@@ -207,6 +251,12 @@ tweak_data.projectiles.wpn_prj_jav.adjust_z = 30
 tweak_data.projectiles.wpn_prj_hur.damage = 36
 tweak_data.projectiles.wpn_prj_hur.launch_speed = 1000
 tweak_data.projectiles.wpn_prj_hur.adjust_z = 120
+
+--ZAPper grenade
+tweak_data.projectiles.wpn_gre_electric.damage = 40
+tweak_data.projectiles.wpn_gre_electric.player_damage = 20
+tweak_data.projectiles.wpn_gre_electric.curve_pow = 0.5
+tweak_data.projectiles.wpn_gre_electric.range = 500
 
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",

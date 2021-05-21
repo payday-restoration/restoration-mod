@@ -1,8 +1,16 @@
 local mvec_spread_direction = Vector3()
 
 function WeaponUnderbarrelLauncher:_fire_raycast(weapon_base, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
+	local projectile_type = self._launcher_projectile
+
+	if weapon_base:weapon_tweak_data() and weapon_base:weapon_tweak_data().projectile_types then
+		projectile_type = weapon_base:weapon_tweak_data().projectile_types[projectile_type] or projectile_type
+	end
+
+	local projectile_type_index = tweak_data.blackmarket:get_index_from_projectile_id(projectile_type)
+
 	self._ammo_data = {
-		launcher_grenade = self.launcher_projectile
+		launcher_grenade = projectile_type
 	}
 	local unit = nil
 	local spread_x, spread_y = weapon_base:_get_spread(user_unit)
@@ -16,9 +24,6 @@ function WeaponUnderbarrelLauncher:_fire_raycast(weapon_base, user_unit, from_po
 	mvector3.set(mvec_spread_direction, direction)
 	mvector3.add(mvec_spread_direction, right * ax)
 	mvector3.add(mvec_spread_direction, up * ay)
-
-	local projectile_type = self.launcher_projectile
-	local projectile_type_index = tweak_data.blackmarket:get_index_from_projectile_id(projectile_type)
 
 	self:_adjust_throw_z(mvec_spread_direction)
 

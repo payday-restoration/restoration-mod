@@ -986,6 +986,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--'Nade Launchers--
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Выпускает заряд, который разносит огонь в точке поражения. Огонь наносит урон через время и имеет шанс останавливать врагов.",
+		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "Выпускает заряд, взрывающийся при попадании. Взрыв наносит 800 урона в радиусе 5 метров.",
+		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Выпускает заряд, производящий электроразряд при попадании. Разряд наносит 400 урона в радиусе 5 метров, и имеет шанс поразить врагов током.",
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Выпускает заряд, производящий электроразряд при попадании. Разряд наносит 200 урона в радиусе 2.5 метров, и имеет шанс поразить врагов током.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Слабая прожарка",
@@ -1304,6 +1307,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wpn_prj_target_desc"] = "Количество: 9 \nУрон: 240 \n \nОтличный запасной план и надёжная тактика для точного, бесшумного убийства.",
 		["bm_wpn_prj_jav_desc"] = "Количество: 6 \nУрон: 360 \n \nКопьё - простое оружие, придуманное ещё в доисторические времена. Простая палка с острым концом, которая испортит кому-нибудь день.",
 		["bm_wpn_prj_hur_desc"] = "Количество: 6 \nУрон: 360 \n \nГоворят, заточенный топор никогда не ошибается. Метательный заточенный топор уж тем более.",
+		["bm_grenade_electric_desc"] = "Количество: 3\nУрон: 400 \nДальность: 5м \n \nОсколки - это неплохо, но иногда хочется кого-нибудь поджарить. Эта милая высоковольтная штучка отлично подойдёт.",
 
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot"] = "40MM Buckshot Rounds",
 		["bm_wp_wpn_fps_upg_scar_m203_buckshot_desc"] = "Round loaded with 6 heavy pellets.\n\nTotal ammo: 15\nDamage: 360\nAccuracy: 40\nEffective range: 9M\nMaximum range: 18M",

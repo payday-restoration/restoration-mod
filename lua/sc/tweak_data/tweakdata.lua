@@ -125,7 +125,7 @@ tweak_data.projectiles.underbarrel_electric_groza.curve_pow = 1
 tweak_data.projectiles.underbarrel_electric_groza.range = 500
 
 --Tactical ZAPper (Arbiter)
-tweak_data.projectiles.launcher_electric_arbiter.damage = 20
+tweak_data.projectiles.launcher_electric_arbiter.damage = 30
 tweak_data.projectiles.launcher_electric_arbiter.player_damage = 10
 tweak_data.projectiles.launcher_electric_arbiter.launch_speed = 2500
 tweak_data.projectiles.launcher_electric_arbiter.range = 250

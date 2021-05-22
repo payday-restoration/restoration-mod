@@ -6439,7 +6439,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.has_description = true
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.desc_id = "bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.supported = true
-	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.stats = {damage = -40}
+	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.stats = {damage = -30}
 	self.parts.wpn_fps_upg_a_grenade_launcher_electric_arbiter.custom_stats = {
 		launcher_grenade = "launcher_electric_arbiter"
 	}			

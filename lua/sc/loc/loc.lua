@@ -988,7 +988,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_grenade_launcher_incendiary_desc_sc"] = "Fires a round that causes a fire at point of impact. The fire deals damage over time and has a chance to interrupt enemies.",
 		["bm_wp_upg_a_grenade_launcher_frag_desc_sc"] = "Fires a round that causes an explosion at point of impact. The explosion deals 800 damage and has a radius of 5 meters.",
 		["bm_wp_upg_a_grenade_launcher_electric_desc_sc"] = "Fires a round that causes a burst of electricity at point of impact. The burst deals 400 damage, has a radius of 5 meters, and has a chance to tase enemies.",
-		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that causes a burst of electricity at point of impact. The burst deals 200 damage, has a radius of 2.5 meters, and has a chance to tase enemies.",
+		["bm_wp_upg_a_grenade_launcher_electric_arbiter_desc_sc"] = "Fires a round that causes a burst of electricity at point of impact. The burst deals 300 damage, has a radius of 2.5 meters, and has a chance to tase enemies.",
 
 		--Flamethrowers--
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Rare",

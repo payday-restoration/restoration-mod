@@ -24,8 +24,8 @@ local world_g = World
 local draw_explosion_sphere = nil
 local draw_sync_explosion_sphere = nil
 local draw_splinters = nil
-local draw_obstructed_splinters = true
-local draw_splinter_hits = true
+local draw_obstructed_splinters = nil
+local draw_splinter_hits = nil
 local draw_shield_obstructions = nil
 local draw_duration = 3
 

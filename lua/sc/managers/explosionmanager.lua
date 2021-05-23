@@ -194,9 +194,8 @@ function ExplosionManager:_apply_damage(bodies, splinters, params, damage_func, 
 				if not hit_units[hit_unit_key] then
 					ray_hit = true
 					hit_units[hit_unit_key] = hit_unit
-				elseif hit_units[hit_unit_key] and hit_damage_ext and hit_damage_ext.damage_explosion then --Special case for Dozer Faceplates, since the dozer's key may be on the table already.
-					ray_hit = true --Don't even bother with splinter checks, just smash the thing.
-					--Don't add it to the hit units table, the Dozer itself still needs damage applied to it!
+				elseif hit_units[hit_unit_key] and hit_damage_ext and hit_damage_ext.damage_explosion then --Special case for Dozer Faceplates, since the dozer's key may be on the table already. Also affects many props.
+					ray_hit = true --Why bother doing raycast checks on these.
 				end
 			end
 

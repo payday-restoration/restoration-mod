@@ -3135,7 +3135,7 @@ function CopLogicTravel._determine_destination_occupation(data, objective, path_
 			local max_dist = 1200
 			local max_dist_fail = 1200
 
-			if objective.called or data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) or data.tactics and data.tactics.shield_cover then
+			if objective.called or data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) then
 				max_dist = 300
 				max_dist_fail = 500
 			end
@@ -3152,10 +3152,6 @@ function CopLogicTravel._determine_destination_occupation(data, objective, path_
 				}
 			else
 				local pos = near_pos or path_pos or managers.navigation._nav_segments[objective.nav_seg].pos
-				
-					
-				   
-	   
 	
 				local wall_pos = CopLogicTravel._get_pos_on_wall(pos, max_dist_fail)
 				occupation = {
@@ -3197,7 +3193,6 @@ function CopLogicTravel._determine_destination_occupation(data, objective, path_
 		end
 
 		local cover = nil
-		
 		if not data.cool then
 			cover = managers.navigation:find_cover_in_nav_seg_3(dest_area.nav_segs, nil, follow_pos, threat_pos)
 		end
@@ -3205,7 +3200,7 @@ function CopLogicTravel._determine_destination_occupation(data, objective, path_
 		local max_dist = 1200
 		local max_dist_fail = 1200
 
-		if objective.called or data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) or data.tactics and data.tactics.shield_cover then
+		if objective.called or data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.is_converted or data.unit:in_slot(16) or data.unit:in_slot(managers.slot:get_mask("criminals")) then
 			max_dist = 300
 			max_dist_fail = 500
 		end

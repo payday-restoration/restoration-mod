@@ -12365,7 +12365,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",	
 			"shield_cover",			
 			"deathguard",
 			"groupcsr"
@@ -12386,7 +12385,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",	
 			"shield_cover",			
 			"deathguard",
 			"groupcsr"
@@ -12493,7 +12491,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",
 			"shield_cover",
 			"deathguard",
 			"groupcsr"
@@ -12516,7 +12513,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",	
 			"provide_coverfire",
 			"provide_support",
-			"ranged_fire",
 			"shield_cover",
 			"deathguard",
 			"groupcsr"
@@ -12629,7 +12625,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},		
 		--Mayhem Heavy
 		MH_heavy = { 
-			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12643,7 +12638,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			"elite_ranged_fire",	
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover",
@@ -12730,7 +12724,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"groupcsr"
 		},
 		DW_heavy = {
-			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
@@ -12740,11 +12733,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"groupcsr"
 		},		
 		DW_heavy_flank = {
-			"flank",
-			"ranged_fire",			
+			"flank",	
 			"smoke_grenade",
 			"flash_grenade",
-			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
 			"harass",	
@@ -12807,7 +12798,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"groupcsr"
 		},		
 		ELITE_heavy = { 
-			"ranged_fire",
 			"smoke_grenade",
 			"flash_grenade",
 			"harass",
@@ -12842,7 +12832,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			"elite_ranged_fire",
 			"harass",
 			"provide_coverfire",
 			"provide_support",
@@ -12869,11 +12858,11 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge"
 		},		
 		Cap_summers_minion = {
-			"shield_cover",
-			"charge"
+			"elite_ranged_fire",
+			"hitnrun",
+			"shield_cover"
 		},	
 		Cap_summers = {
-			"shield",
 			"charge"
 		},
 		Cap_autumn = {
@@ -18261,15 +18250,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.02,
 				0.04,
 				0.06
-			},	
-			--[[
-			--Baseline numbers to think about, work from this as an array for determining dozer types
-			GREEN_tanks = {
-				0.03,
-				0.04,
-				0.05
-			},			
-			]]--			
+			},
 			GREEN_tanks = {
 				0.009,
 				0.012,

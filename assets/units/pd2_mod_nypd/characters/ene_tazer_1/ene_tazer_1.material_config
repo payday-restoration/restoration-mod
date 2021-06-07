@@ -57,9 +57,9 @@
         <diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df"/>
 	</material>
 
-	 <material name="mullplane" render_template="effect:BLEND_MUL:DIFFUSE0_TEXTURE" version="2">
+	 <material name="mullplane" render_template="decal:DIFFUSE_TEXTURE" version="2">
         <diffuse_texture file="units/payday2/props/shadow_mullplan/mat_mull_small_df"/>
-        <variable type="scalar" name="intensity" value="identity"/>
+        <variable type="scalar" name="intensity" value="megatron"/>
     </material>
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>

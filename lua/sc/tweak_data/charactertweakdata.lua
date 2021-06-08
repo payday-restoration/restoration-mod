@@ -1308,8 +1308,8 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.experience = {}
 	self.sniper.weapon = presets.weapon.sniper
 	self.sniper.detection = presets.detection.sniper
-	self.sniper.HEALTH_INIT = 3
-	self.sniper.headshot_dmg_mul = 3
+	self.sniper.HEALTH_INIT = 2
+	self.sniper.headshot_dmg_mul = 2
 	self.sniper.damage.hurt_severity = presets.hurt_severities.no_hurts
 	self.sniper.allowed_poses = {stand = true}
 	self.sniper.move_speed = presets.move_speed.very_fast

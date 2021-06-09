@@ -1477,7 +1477,7 @@ if Network:is_server() then
 			if not criminal then
 				return
 			end
-			self:set_difficulty(nil, 0.05)
+			self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
 			
 		    if is_first or self._assault_number and self._assault_number >= 1 then
 				local roll = math.rand(1, 100)

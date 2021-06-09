@@ -79,7 +79,10 @@ local enemies_plink = {
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk"),
 	
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_r870_sc/ene_zeal_heavy_r870_sc"),
-	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_r870_sc/ene_zeal_heavy_r870_sc_husk"),
+	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_r870_sc/ene_zeal_heavy_r870_sc_husk"),             
+	
+	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),   
 	
 	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"),
 	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36_husk"),
@@ -159,7 +162,6 @@ function CopDamage:_spawn_head_gadget(params)
 		})
 		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
 		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
-		sound_ext:play("swat_heavy_visor_shatter", nil, nil)	
 	elseif smashablefuckers_hsg then
 		sound_ext:play("swatturret_weakspot_hit", nil, nil)
 	end

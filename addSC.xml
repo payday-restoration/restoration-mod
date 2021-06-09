@@ -3000,24 +3000,6 @@
 	<animation path="anims/shared/rifle/combat/cbt_sup_shoot" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_sup_shoot_aut" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_sup_shotgun_shoot" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var1" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var2" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var3" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var4" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var5" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var6" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var7" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var1" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var2" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var3" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var4" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var5" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var6" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var8" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var11" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var18" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var19" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var20" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl1_enter_var1" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl1_idle_var1" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl2_enter_var1" force="true"/>

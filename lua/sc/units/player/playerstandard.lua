@@ -1059,7 +1059,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			elseif special_weapon == "hyper_crit" and math.random() <= 0.05 then
 				dmg_multiplier = dmg_multiplier * 10
 				damage_effect = damage_effect * 10
-				--Should probably get an audio que at some point.
+				self._unit:sound():play("bell_ring")
 			end
 			
 			if charge_lerp_value >= 0.99 then

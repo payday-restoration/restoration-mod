@@ -164,6 +164,7 @@ function CopDamage:_spawn_head_gadget(params)
 		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
 	elseif smashablefuckers_hsg then
 		sound_ext:play("swatturret_weakspot_hit", nil, nil)
+		sound_ext:play("swatturret_weakspot_hit", nil, nil)
 	end
 
 	self._head_gear = false

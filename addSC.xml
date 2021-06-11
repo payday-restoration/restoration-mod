@@ -1841,7 +1841,11 @@
 	<model path="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_r870/r870_df" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_r870/r870_nm" force="true"/>	
-		
+
+	<!--NPC M1014 Benelli-->
+	<model path="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" force="true"/>
+
 	<!--NPC Saiga-->
 	<model path="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_saiga/saiga_df" force="true"/>

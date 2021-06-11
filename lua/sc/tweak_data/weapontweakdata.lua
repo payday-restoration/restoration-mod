@@ -3591,13 +3591,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.new_m14.panic_suppression_chance = 0.05
 
 	--Deagle
+	--Moved to primary
+	self.deagle.use_data.selection_index = 2
 	self.deagle.has_description = false
 	self.deagle.desc_id = "bm_ap_weapon_sc_desc"
 	self.deagle.fire_mode_data.fire_rate = 0.1
 	self.deagle.single.fire_rate = 0.1
 	self.deagle.kick = self.stat_info.kick_tables.moderate_kick
 	self.deagle.CLIP_AMMO_MAX = 8
-	self.deagle.AMMO_MAX = 30
+	self.deagle.AMMO_MAX = 60
 	self.deagle.supported = true
 	self.deagle.stats = {
 		damage = 60,
@@ -4471,7 +4473,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.galil.panic_suppression_chance = 0.05
 
 	--Clarion
-	self.famas.AMMO_MAX = 180
+	--Moved to secondary
+	self.famas.use_data.selection_index = 1
+	self.famas.AMMO_MAX = 90
 	self.famas.CLIP_AMMO_MAX = 25
 	self.famas.fire_mode_data.fire_rate = 0.06
 	self.famas.CAN_TOGGLE_FIREMODE = true
@@ -4659,6 +4663,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_b92fs.panic_suppression_chance = 0.05
 
 	--Akimbo Deagle
+	--DISABLED
+	self.x_deagle.use_data.selection_index = 4
 	self.x_deagle.has_description = false
 	self.x_deagle.desc_id = "bm_ap_weapon_sc_desc"
 	self.x_deagle.CLIP_AMMO_MAX = 16
@@ -4770,6 +4776,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.mg42.swap_speed_multiplier = 0.9
 
 	--Broomstick--
+	--Moved to primary
+	self.c96.use_data.selection_index = 2	
 	self.c96.sounds.fire = "c96_fire"
 	self.c96.sounds.fire_single = "c96_fire"
 	self.c96.sounds.fire_auto = "g18c_fire"
@@ -4780,7 +4788,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.c96.sounds.magazine_empty = "wp_pistol_slide_lock"		
 	self.c96.has_description = true
 	self.c96.desc_id = "bm_c96_sc_desc"
-	self.c96.AMMO_MAX = 60
+	self.c96.AMMO_MAX = 120
 	self.c96.FIRE_MODE = "auto"
 	self.c96.CAN_TOGGLE_FIREMODE = true
 	self.c96.fire_mode_data.fire_rate = 0.06
@@ -6058,9 +6066,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.packrat.stats_modifiers = nil
 
 	--Jackal SMG
+	--Moved to primary
+	self.schakal.use_data.selection_index = 2
 	self.schakal.fire_mode_data.fire_rate = 0.1
 	self.schakal.auto.fire_rate = 0.1
-	self.schakal.AMMO_MAX = 60
+	self.schakal.AMMO_MAX = 120
 	self.schakal.CLIP_AMMO_MAX = 25
 	self.schakal.BURST_FIRE = 3
 	self.schakal.ADAPTIVE_BURST_SIZE = false											
@@ -6363,7 +6373,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flint.panic_suppression_chance = 0.05
 
 	--Tatonka
-	self.coal.AMMO_MAX = 100
+	--Moved to primary
+	self.coal.use_data.selection_index = 2
+	self.coal.AMMO_MAX = 200
 	self.coal.CLIP_AMMO_MAX = 64
 	self.coal.fire_mode_data.fire_rate = 0.08823529411
 	self.coal.auto.fire_rate = 0.08823529411
@@ -7857,6 +7869,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Beretta Auto
 	self.beer.use_data.selection_index = 2
+	self.beer.BURST_FIRE = 3
+	self.beer.ADAPTIVE_BURST_SIZE = false		
+	self.beer.CAN_TOGGLE_FIREMODE = false
+	self.beer.FIRE_MODE = "single"	
 	self.beer.AMMO_MAX = 180
 	self.beer.fire_mode_data.fire_rate = 0.05454545454
 	self.beer.kick = self.stat_info.kick_tables.even_recoil
@@ -7864,7 +7880,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.beer.stats = {
 		damage = 20,
 		spread = 16,
-		recoil = 19,
+		recoil = 21,
 		spread_moving = 5,
 		zoom = 1,
 		concealment = 27,
@@ -9223,8 +9239,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Vanilla Mod Pack Volume 2
 	if self.bdgr then --Hornet .300
+		--Making it a secondary
+		self.bdgr.use_data.selection_index = 1
 		self.bdgr.tactical_reload = 1
-		self.bdgr.AMMO_MAX = 120
+		self.bdgr.AMMO_MAX = 60
 		self.bdgr.supported = true
 		self.bdgr.stats = {
 			damage = 30,

@@ -922,6 +922,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_i_93r"] = "Bernetti 93t Kit",
 		["bm_wp_upg_i_93r_desc"] = "Enables a 3 round burst firemode, at the cost of extra kick.", --still need to do the one for the primary bernetti--
 
+		--AMR16--
+		["bm_wp_upg_i_m16a2"] = "AMR-16 B3 Kit",
+		["bm_wp_upg_i_m16a2_desc"] = "Locks your weapon to semi/burst firemodes, but increases rate of fire by 200.",
+		
+		--Bernetti Auto--
+		["bm_wp_upg_i_b93o"] = "Bernetti OVERKILL Kit",
+		["bm_wp_upg_i_b93o_desc"] = "Replaces the 3 round burst firemode with an Auto firemode, at the cost of extra kick.",		
+		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to spread horizontally instead of clustering.",
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",

@@ -248,7 +248,7 @@ function PlayerDamage:can_take_damage(attack_data, damage_info)
 		return false
 	elseif self._unit:movement():current_state().immortal then
 		return false
-	elseif self._revive_miss and math.random() < self._revive_miss then
+	elseif  attack_data.col_ray and self._revive_miss and math.random() < self._revive_miss then
 		self:play_whizby(attack_data.col_ray.position)
 		return false
 	end

@@ -12220,7 +12220,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",
-			"shield_cover",
+			----"shield_cover",
 			"groupcsr"
 		},
 		--Shotgunner variant of Beat Cops, only real difference is they'll charge in
@@ -12228,7 +12228,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"charge",
-			"shield_cover",			
+			--"shield_cover",			
 			"groupcsr"
 		},		
 		--Beat Cop, flank variant. Will take control of the squad if they spawn and lead them to flank
@@ -12237,7 +12237,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",	
-			"shield_cover",			
+			--"shield_cover",			
 			"groupcsr"
 		},		
 		--Beat Cop, stealth variant. Prefers hit n run tactics and avoiding the front to prioritize hostages
@@ -12254,7 +12254,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",	
-			"shield_cover",			
+			--"shield_cover",			
 			"deathguard",
 			"groupcsr"
 		},
@@ -12264,7 +12264,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",			
+			--"shield_cover",			
 			"deathguard",			
 			"groupcsr"
 		},
@@ -12275,7 +12275,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",	
-			"shield_cover",			
+			--"shield_cover",			
 			"deathguard",
 			"groupcsr"
 		},			
@@ -12284,7 +12284,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",			
+			--"shield_cover",			
 			"deathguard",
 			"groupcsr"
 		},
@@ -12295,7 +12295,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
-			"shield_cover",			
+			--"shield_cover",			
 			"groupcsr"
 		},
 		--Heavy SWAT flanker, leads flank maneuvers. 
@@ -12304,7 +12304,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",			
+			--"shield_cover",			
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12321,7 +12321,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"charge",
 			"smoke_grenade",
-			"shield_cover",
+			--"shield_cover",
 			"murder",
 			"tunnel"
 		},		
@@ -12377,7 +12377,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",			
 			"provide_support",
 			"ranged_fire",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12388,7 +12388,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12398,7 +12398,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"ranged_fire",
-			"shield_cover",
+			--"shield_cover",
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
@@ -12410,7 +12410,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12419,7 +12419,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
-			"shield_cover",
+			--"shield_cover",
 			"provide_coverfire",
 			"provide_support",
 			"deathguard",
@@ -12432,7 +12432,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",	
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12515,7 +12515,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12526,7 +12526,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12538,7 +12538,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12548,7 +12548,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12559,7 +12559,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12603,7 +12603,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"flash_grenade",
 			"smoke_grenade",
-			"shield_cover",
+			--"shield_cover",
 			"murder",
 			"tunnel"
 		},
@@ -12624,7 +12624,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12638,7 +12638,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"ranged_fire",			
 			"harass",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12647,7 +12647,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12658,7 +12658,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"harass",	
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12703,7 +12703,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"harass",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"groupcsr"
 		},
 		ELITE_swat_shotgun = {
@@ -12712,7 +12712,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"harass",
 			"provide_coverfire",
-			"shield_cover",
+			--"shield_cover",
 			"provide_support",
 			"groupcsr"
 		},		
@@ -12722,7 +12722,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"harass",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
@@ -12733,7 +12733,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"provide_coverfire",
 			"provide_support",
-			"shield_cover",
+			--"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},		
@@ -12788,7 +12788,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"hunter",
 			"spoocavoidance",
-			"shield_cover",
+			--"shield_cover",
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",

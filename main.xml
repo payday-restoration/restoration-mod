@@ -245,6 +245,7 @@
 		<hook file="sc/units/equipment/sentrygunweapon.lua" source_file="lib/units/equipment/sentry_gun/sentrygunweapon"/>
 		<hook file="sc/managers/menumanagerpd2.lua" source_file="lib/managers/menumanagerpd2"/>
 		<hook file="sc/units/enemies/copsound.lua" source_file="lib/units/enemies/cop/copsound"/>
+		<hook file="sc/units/environment/environmentfire.lua" source_file="lib/units/environment/environmentfire"/>
 		<hook file="sc/managers/mission/elementmissionend.lua" source_file="lib/managers/mission/elementmissionend"/>
 		<hook file="sc/managers/mission/elementsmokegrenade.lua" source_file="lib/managers/mission/elementsmokegrenade"/>
 		<hook file="sc/tweak_data/skirmishtweakdata.lua" source_file="lib/tweak_data/skirmishtweakdata"/>

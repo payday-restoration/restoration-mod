@@ -440,6 +440,20 @@ function ExplosionManager:client_damage_and_push(from_pos, normal, user_unit, dm
 	self:units_to_push(units_to_push, from_pos, range)
 end
 
+function ExplosionManager:give_local_player_dmg(pos, range, damage, user_unit)
+	local player = managers.player:player_unit()
+
+	if player then
+		player:character_damage():damage_explosion({
+			variant = "explosion",
+			position = pos,
+			range = range,
+			damage = damage,
+			attacker_unit = user_unit
+		})
+	end
+end
+
 function ExplosionManager:draw_explosion_sphere(hit_pos, range)
 	if draw_explosion_sphere then
 		local new_brush = Draw:brush(Color.red:with_alpha(0.5), draw_duration)

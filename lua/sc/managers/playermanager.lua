@@ -677,11 +677,6 @@ end
 --Get health damage reduction gained via skills.
 --Crashes mentioning this function mean that there is a syntax error in the file.
 function PlayerManager:get_deflection_from_skills()
-	--"""Upgrade"""
-	if self:has_category_upgrade("player", "no_deflection") then
-		return -self:body_armor_value("deflection", nil, 0)
-	end
-
 	return 
 		  self:upgrade_value("player", "deflection_addend", 0)
 		+ self:upgrade_value("player", "frenzy_deflection", 0)

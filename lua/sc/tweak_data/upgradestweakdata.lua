@@ -377,7 +377,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
 	self.values.player.extra_revive_health = {0.25} --Bonus health % to add when getting up. Used by Muscle and Stoic.
-	self.values.player.no_deflection = {true} --Removes health DR. Used by Stoic.
 	
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
@@ -1621,7 +1620,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4
 	}
 	self.values.player.damage_control_healing = {
-		250
+		300
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
@@ -2081,15 +2080,6 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
-	self.definitions.player_no_deflection = {
-		category = "feature",
-		name_id = "menu_player_panic_suppression",
-		upgrade = {
-			category = "player",
-			upgrade = "no_deflection",
-			value = 1
-		}
-	}	
 	self.definitions.player_dodge_stacking_heal = {
 		category = "feature",
 		name_id = "menu_player_dodge_stacking_heal",

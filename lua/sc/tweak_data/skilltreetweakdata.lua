@@ -3144,7 +3144,6 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck19_1",
 				upgrades = {
 					"damage_control",
-					"player_no_deflection",
 					"player_damage_control_passive",
 					"player_damage_control_healing",
 					"player_armor_to_health_conversion"

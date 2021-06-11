@@ -420,8 +420,22 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		if stats.beretta_burst then
 			self:weapon_tweak_data().BURST_FIRE = 3	
 			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false	
-		end			
+		end	
 
+		if stats.m16_burst then
+			self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
+			self:weapon_tweak_data().FIRE_MODE = "single"	
+			self:weapon_tweak_data().BURST_FIRE = 3	
+			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
+		end		
+
+		if stats.beer_burst then
+			self:weapon_tweak_data().BURST_FIRE = false
+			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = nil				
+			self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = true
+			self:weapon_tweak_data().FIRE_MODE = "auto"	
+		end					
+		
 		if stats.can_shoot_through_titan_shield then
 			self._can_shoot_through_titan_shield = true
 		end

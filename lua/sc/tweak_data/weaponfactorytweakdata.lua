@@ -1772,7 +1772,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 		"wpn_fps_m4_uupg_s_fold",
 		"wpn_fps_upg_m4_s_standard",
 		"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_smg_olympic_s_short"
+		"wpn_fps_smg_olympic_s_short",
+		"wpn_fps_upg_i_m16a2"
 	}
 	
 	self.wpn_fps_ass_m16_npc.uses_parts = deep_clone(self.wpn_fps_ass_m16.uses_parts)
@@ -20186,7 +20187,8 @@ function WeaponFactoryTweakData:_init_beer()
 			"wpn_fps_upg_ns_pis_typhoon",
 			--Stuff--
 			"wpn_fps_pis_g18c_co_1",
-			"wpn_fps_pis_g18c_co_comp_2"					
+			"wpn_fps_pis_g18c_co_comp_2",
+			"wpn_fps_upg_i_b93o"
 		}
 	}
 	self.wpn_fps_pis_beer_npc = deep_clone(self.wpn_fps_pis_beer)
@@ -22133,6 +22135,53 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		internal_part = true,
 		dlc = "sc"
 	}	
+
+	--B3 Kit (M16A2 kit)
+	self.parts.wpn_fps_upg_i_m16a2 = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_m16a2",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		custom_stats = {
+			m16_burst = true,
+			rof_mult = 1.286
+		},
+		stats = {
+			value = 0		
+		},
+		internal_part = true,
+		dlc = "sc"
+	}	
+	
+	--OVERKILL Kit (Bernetti Auto autofire)
+	self.parts.wpn_fps_upg_i_b93o = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_b93o",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		custom_stats = {
+			beer_burst = true
+		},
+		stats = {
+			value = 0,
+			recoil = -2
+		},
+		internal_part = true,
+		dlc = "sc"
+	}		
+	
 	self.parts.wpn_fps_smg_mac10_s_no = {
 		pcs = {},
 		type = "stock",

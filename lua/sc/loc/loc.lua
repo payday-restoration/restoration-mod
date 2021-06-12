@@ -836,10 +836,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_street_new_name"] = "Heat Street: The Heist",
 		["heist_street_new_brief"] = "Someone once said there is no such thing as a sure thing, but this job looks easy: get in, get the briefcase, get out. Your trusted wheelman Matt will be waiting for you in the alley and as long as you get to the van there is no way you can fail. Is there?",
 
-		--Heat Street, Skirmish edition
+		--Heat Street, Holdout edition
 		["heist_skm_heat_street_name"] = "Uptown - Inkwell Industrial",
 		["heist_skm_heat_street_brief"] = "The kerels recently interrogated a prisoner that claims to have seen the face of Bain and can identify him. While we know it isn't true, the kerels don't, and neither do our rivals, so we're going to use the situation to gain some cash. Intercept the chop while they're transferring him to witness protection, near the old factory storage yard where that dumkop Matt crashed his car while trying to get away from us.",
-		["heist_skm_street_name"] = "Skirmish: Uptown - Inkwell Industrial",
+		["heist_skm_street_name"] = "Holdout: Uptown - Inkwell Industrial",
 		["heist_skm_street_brief"] = "The kerels recently interrogated a prisoner that claims to have seen the face of Bain and can identify him. While we know it isn't true, the kerels don't, and neither do our rivals, so we're going to use the situation to gain some cash. Intercept the chop while they're transferring him to witness protection, near the old factory storage yard where that dumkop Matt crashed his car while trying to get away from us.",	
 
 		--Xmas Hoxout and Breaking Feds
@@ -877,25 +877,25 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_toggle_one_down_lobbies"] = "Allow Pro-Job Lobbies",
 		
 		--Holdout--
-		["menu_cn_skirmish"] = "Skirmish",
-		["menu_skirmish"] = "Skirmish - Hostile Engagement",
+		["menu_cn_skirmish"] = "Holdout",
+		["menu_skirmish"] = "Holdout - Hostile Engagement",
 		["menu_skirmish_random"] = "Random Locale",
 		["menu_random_skirmish_subtitle"] = "Random combat location.\n\nNo weekly rewards, no starting modifiers.",
 		["menu_weekly_skirmish"] = "Target Locale",
 		["menu_weekly_skirmish_progress"] = "Waves Completed, Reward Upon Total Completion",
-		["menu_skirmish_random_briefing"] = "In this scenario, you're placed into a random SKIRMISH.\n\nA random SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash & experience reward with each wave completed, but failure will negate all rewards accrued.\n\nYou will fail if anyone in your crew -- including yourself -- is taken into custody, or if the target hostage is rescued by hostiles.",
-		["menu_weekly_skirmish_desc"] = "In this scenario, you're placed into a pre-configured SKIRMISH.\n\nThe weekly SKIRMISH consists of 9 waves, with starting modifiers. Each consecutive wave increases in difficulty.\n\nFinishing all waves will grant you additional weekly rewards, in addition to your cash payout.\n\n##You will fail if anyone in your crew -- including yourself -- are taken into custody, or if the target hostage is rescued by hostiles.##",
+		["menu_skirmish_random_briefing"] = "In this scenario, you're placed into a random HOLDOUT.\n\nA random HOLDOUT consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash & experience reward with each wave completed, but failure will negate all rewards accrued.\n\nYou will fail if anyone in your crew -- including yourself -- is taken into custody, or if the target hostage is rescued by hostiles.",
+		["menu_weekly_skirmish_desc"] = "In this scenario, you're placed into a pre-configured HOLDOUT.\n\nThe weekly HOLDOUT consists of 9 waves, with starting modifiers. Each consecutive wave increases in difficulty.\n\nFinishing all waves will grant you additional weekly rewards, in addition to your cash payout.\n\n##You will fail if anyone in your crew -- including yourself -- are taken into custody, or if the target hostage is rescued by hostiles.##",
 		["menu_weekly_skirmish_tab_description"] = "Operation Rundown",
 		["menu_weekly_skirmish_rewards"] = "Total Waves Completed & Associated Rewards",
-		["hud_skirmish"] = "Skirmish",
-		["hud_weekly_skirmish"] = "Weekly Skirmish",
-		["heist_contact_skirmish"] = "Skirmish",
+		["hud_skirmish"] = "Holdout",
+		["hud_weekly_skirmish"] = "Weekly Holdout",
+		["heist_contact_skirmish"] = "Holdout",
 		["menu_skirmish_pick_heist"] = "Jackal Company Entrusts You With This Task",
 		["menu_skirmish_map_selection"] = "Target Locations",
-		["menu_skirmish_selected_briefing"] = "In this scenario, you & your crew can select any SKIRMISH.\n\nA SKIRMISH consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash, experience, and loot reward with each wave completed.\n\nYou will fail if the target hostage is rescued by hostiles.",
-		["menu_skirmish_selected"] = "Skirmish",
+		["menu_skirmish_selected_briefing"] = "In this scenario, you & your crew can select any HOLDOUT.\n\nA HOLDOUT consists of 9 waves. Each consecutive wave increases in difficulty.\n\nYou gain a large cash, experience, and loot reward with each wave completed.\n\nYou will fail if the target hostage is rescued by hostiles.",
+		["menu_skirmish_selected"] = "Holdout",
 
-		--Skirmish Heists--
+		--Holdout Heists--
 		["heist_skm_mallcrasher"] = "Shield Mall",
 		["heist_skm_mallcrasher_h1"] = "Shield Mall",
 		["heist_skm_arena"] = "Monarch Stadium",

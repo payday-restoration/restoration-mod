@@ -758,6 +758,9 @@ function WeaponTweakData:_init_data_m14_sniper_npc()
 	--Zeal Sniper variant (unused)
 	self.heavy_snp_npc = deep_clone(self.m14_sniper_npc)
 	self.heavy_snp_npc.sounds.prefix = "zsniper_npc"
+	
+	--Railgun
+	self.railgun_npc = deep_clone(self.m14_sniper_npc)	
 end
 
 function WeaponTweakData:_init_data_r870_npc()
@@ -857,7 +860,7 @@ function WeaponTweakData:_init_data_mp5_npc()
 	--Autumn MPX
 	self.mpx_npc = deep_clone(self.mp5_tactical_npc)
 	self.mpx_npc.auto.fire_rate = 0.07058823529
-	self.mpx_npc.DAMAGE = 3.5
+	self.mpx_npc.DAMAGE = 2.5
 	
 	--Titan HRT MP9
 	self.mp9_titan_npc = deep_clone(self.mp5_npc)

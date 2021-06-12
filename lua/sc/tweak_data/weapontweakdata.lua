@@ -776,21 +776,7 @@ function WeaponTweakData:_init_data_r870_npc()
 	self.r870_npc.rays = 6
 	self.r870_npc.spread = 3
 	self.r870_npc.FIRE_MODE = "single"
-	
-	self.benelli_npc = deep_clone(self.r870_npc)
-	self.benelli_npc.sounds.prefix = "benelli_m4_npc"
-	self.benelli_npc.DAMAGE = 4.5
-	self.benelli_npc.CLIP_AMMO_MAX = 10
-	self.benelli_npc.alert_size = 2500
-	self.benelli_npc.suppression = 3	
-	
-	self.bayou_npc = deep_clone(self.r870_npc)
-	self.bayou_npc.sounds.prefix = "spas_npc"
-	self.bayou_npc.DAMAGE = 4.5
-	self.bayou_npc.CLIP_AMMO_MAX = 10
-	self.bayou_npc.alert_size = 2500
-	self.bayou_npc.suppression = 3		
-	
+		
 	self.r870_taser_npc = deep_clone(self.r870_npc)
 	self.r870_taser_npc.sounds.prefix = "keltec_npc"
 	self.r870_taser_npc.DAMAGE = 5
@@ -980,6 +966,24 @@ function WeaponTweakData:_init_data_saiga_npc()
 	self.saiga_npc.rays = 6
 	self.saiga_npc.spread = 3
 	self.saiga_npc.FIRE_MODE = "auto"
+		
+	self.benelli_npc = deep_clone(self.saiga_npc)
+	self.benelli_npc.sounds.prefix = "benelli_m4_npc"
+	self.benelli_npc.DAMAGE = 4.5
+	self.benelli_npc.CLIP_AMMO_MAX = 10
+	self.benelli_npc.alert_size = 2500
+	self.benelli_npc.suppression = 3	
+	self.benelli_npc.auto = nil
+	self.benelli_npc.FIRE_MODE = "single"
+	self.benelli_npc.usage = "is_shotgun_mag"
+	self.benelli_npc.anim_usage = "is_shotgun_pump"
+	
+	self.bayou_npc = deep_clone(self.benelli_npc)
+	self.bayou_npc.sounds.prefix = "spas_npc"
+	self.bayou_npc.DAMAGE = 4.5
+	self.bayou_npc.CLIP_AMMO_MAX = 10
+	self.bayou_npc.alert_size = 2500
+	self.bayou_npc.suppression = 3			
 end
 
 function WeaponTweakData:_init_data_swat_van_turret_module_npc()
@@ -9645,6 +9649,18 @@ function WeaponTweakData:_create_table_structure()
 		use_data = {},
 		auto = {}
 	}
+	self.m14_sniper_npc = {
+		usage = "is_sniper",
+		anim_usage = "is_rifle",
+		sounds = {},
+		use_data = {}
+	}	
+	self.benelli_npc = {
+		usage = "is_shotgun_mag",
+		anim_usage = "is_shotgun_pump",
+		sounds = {},
+		use_data = {}
+	}	
 	self.osipr_gl_npc = {
 		usage = "is_rifle",
 		sounds = {},

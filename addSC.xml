@@ -1828,6 +1828,11 @@
 	<!--NPC g36-->
 	<texture path="units/payday2/weapons/wpn_npc_g36/g36_df" force="true"/>
 	
+	<!--NPC UMP-->
+	<model path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump_nm" force="true"/>	
+	
 	<!--NPC M4 Yellow-->
 	<model path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>
 	<material_config path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>

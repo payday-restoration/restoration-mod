@@ -2220,6 +2220,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deckall_8_desc_sc"] = "Increases your doctor bag interaction speed by ##20%.##\n\nYou do ##25%## more damage. Does not apply to throwables, grenade launchers, or rocket launchers.",
 
 		--Crook--
+		["menu_st_spec_6_desc_sc"] = "The Crook is a versatile criminal. The term is as old as crime itself.\n\nTruly, the crook is a jack of all trades and a master of none. He steals, lies, cheats and does any and every dishonest or illegal work necessary to get by.\n\n\n\n\nBenefits from a full perk deck:\n##-##Your dodge is increased by ##5## points.\n##-##Your dodge is increased by an additional ##10## points for ballistic vests.\n##-##Your armor is increased by ##50%## for ballistic vests.",
 		["menu_deck6_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYour armor is increased by ##15%## for ballistic vests.",
 		["menu_deck6_3_desc_sc"] = "Your dodge is increased by an additional ##5## points for ballistic vests.",
 		["menu_deck6_5_desc_sc"] = "Your armor is increased by an additional ##15%## for ballistic vests.",
@@ -2227,6 +2228,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck6_9_desc_sc"] = "Your armor is increased by an additional ##20%## for ballistic vests.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
 		--Rogue
+		["menu_st_spec_4_desc_sc"] = "The Rogue is a stealthy criminal, capable of sneaky tricks and deadly force. Versatile and deceptive, the Rogue is hired to do anything from pickpocketing, to burglaries and con jobs.\n\nThe trademark of a Rogue is his versatility - what he lacks in strength he makes up for in skill.\n\n\n\n\nBenefits from a full perk deck:\n##-##Your dodge is increased by ##15## points.\n##-##You swap between your weapons ##30%## faster.\n##-##Your dodge meter will be filled to ##200%## of its normal maximum when you are revived.\n##-##Dodging an attack causes you to regenerate ##1## life point every ##2## seconds for the next ##20## seconds. This effect can stack, but all stacks are lost whenever you take health damage.",
 		["menu_deck4_1_desc_sc"] = "Your dodge is increased by ##5## points.\n\nYou swap between your weapons ##30%## faster.",
 		["menu_deck4_3_desc_sc"] = "Your dodge is increased by an additional ##5## points.",
 		["menu_deck4_5_desc_sc"] = "Your dodge meter will be filled to ##200%## of its normal maximum when you are revived.",
@@ -2239,24 +2241,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_5_sc"] = "With a Pencil",
 		["menu_deck5_7_sc"] = "Expert Assassin",
 
+		["menu_st_spec_5_desc_sc"] = "The Hitman is a professional killer from the criminal underworld who excels at close and ranged combat.\n\nCriminal syndicates will hire a hitman as a last resort to enforce criminal authority, deliver retribution or eliminate competition.\n\n\n\n\n\nBenefits from a full perk deck:\n##-##Killing an enemy outside of melee stores ##25## temporary health. You can store up to ##120## temporary health. Killing an enemy in melee turns that stored temporary health into temporary health that decays at a rate of ##5## per second. Temporary health can exceed your normal maximum health, but you can only have up to ##240## temporary health at once. Note: Frenzy will reduce temporary health by ##75%.##\n##-##Your dodge meter fills up by ##100%## of your dodge when your armor is restored.\n##-##You gain ##5## dodge points.\n##-##While you have temporary health you gain ##20## deflection and ##20%## more movement speed.",
 		["menu_deck5_1_desc_sc"] = "Killing an enemy outside of melee stores ##25## health. You can store up to ##75## health.\n\nKilling an enemy in melee turns that stored health into temporary health that decays at a rate of ##5## per second.\n\nTemporary health can exceed your normal maximum health, but you can only have up to ##240## temporary health at once.\n\nNote: Frenzy will reduce temporary health by ##75%##.",
 		["menu_deck5_3_desc_sc"] = "Your dodge meter fills up by ##100%## of your dodge when your armor is restored.\n\nYou gain ##5## dodge points.",
 		["menu_deck5_5_desc_sc"] = "You store ##60%## more health.",
 		["menu_deck5_7_desc_sc"] = "You gain ##120## temporary health when you are revived.\n\nYou gain an additional ##5## dodge points.",
 		["menu_deck5_9_desc_sc"] = "While you have temporary health, you gain ##20## deflection and ##20%## additional movement speed.\n\nEach point of deflection makes you take ##1%## less health damage, and is applied after other forms of damage reduction.\n\nDeck completion Bonus: Your chance of getting a higher quality item during PAYDAY is increased by ##10%.##",
 
+		--Muscle
+		["menu_st_spec_2_desc_sc"] = "The Muscle is a tough guy who uses violence to send messages from his Mafia superiors. They are the backbone of any criminal organization.\n\nThe muscle is called in whenever you need to rough someone up, break some legs, crush a skull or remind people who's boss.\n\n\n\nBenefits from a full perk deck:\n##-##You gain ##40%## more health.\n##-##You can now use your guns to ##spread panic among your enemies.##\n##-##You gain ##25%## of your maximum health after reviving.",
 		["menu_deck2_1_desc_sc"] = "You gain ##10%## more health.",
 		["menu_deck2_3_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_5_desc_sc"] = "You gain an additional ##10%## more health.",
 		["menu_deck2_7_desc_sc"] = "Every shot you fire with your guns has a ##5%## chance to spread panic among your enemies.\n\nPanic will make enemies go into short bursts of uncontrollable fear.",
 		["menu_deck2_9_desc_sc"] = "You gain an additional ##10%## more health.\n\nYou gain ##25%## of your maximum health after reviving.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
+		--Crew Chief
+		["menu_st_spec_1_desc_sc"] = "The Crew Chief, also known as the Caporegime, is the head of a branch of an organized crime syndicate. The Crew Chief commands a crew of soldiers and reports directly to a boss or an underboss.\n\nWhen the crime syndicate needs to have someone dealt with, the Crew Chief and his soldiers make sure it's done.\n\n\n\nBenefits from a full perk deck:\n##-##You gain ##15%## more health.\n##-##Your shout distance is increased by ##25%##\n##-##You gain ##10%## more armor.\n##-##You and your crew gain ##50%## more stamina.\n##-##Your crew gains ##5%## more HP.\n##-##You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.",
 		["menu_deck1_3_desc_sc"] = "You and your crew's stamina is increased by ##50%##.\n\nIncreases your shout distance by ##25%##.\n\nNote: Crew perks do not stack.",
 		["menu_deck1_5_desc_sc"] = "You and your crew gain ##5%## more health.\n\nNote: Crew perks do not stack.",
-		["menu_deck1_7_desc_sc"] = "You gain ##10%## more armor.\n\nNote: Crew perks do not stack.",
+		["menu_deck1_7_desc_sc"] = "You gain ##10%## more armor.",
 		["menu_deck1_9_desc_sc"] = "You and your crew gains ##5%## max health and ##10%## stamina for each hostage up to ##4## times.\n\nNote: Crew perks do not stack.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 		--I only had to put these in to fix Overkill's shitty rebalance attempt--
 		--Armorer--
+		["menu_st_spec_3_desc_sc"] = "The Armorer was formerly a profession within the military. The armorer's job is to maintain, repair and improve armors.\n\nAny self-respecting crime syndicate needs someone who can make sure the soldiers have the necessary protection to do their jobs.\n\n\n\n\nBenefits from a full perk deck:\n##-##You gain ##25%## more armor.\n##-##Your armor recovery rate is increased by ##20%##.",
 		["menu_deck3_1_desc_sc"] = "You gain ##10%## more armor.",
 		["menu_deck3_3_desc_sc"] = "You gain an additional ##10%## more armor.",
 		["menu_deck3_5_desc_sc"] = "You gain an additional ##5%## more armor.",

@@ -2036,7 +2036,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Crew Chief--
 	local sc_crew_chief = {
 			name_id = "menu_st_spec_1",
-			desc_id = "menu_st_spec_1_desc",
+			desc_id = "menu_st_spec_1_desc_sc",
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
@@ -2096,7 +2096,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Muscle--
 	local sc_muscle = {
 			name_id = "menu_st_spec_2",
-			desc_id = "menu_st_spec_2_desc",
+			desc_id = "menu_st_spec_2_desc_sc",
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
@@ -2157,7 +2157,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Armorer--
 	local sc_armorer = {
 			name_id = "menu_st_spec_3",
-			desc_id = "menu_st_spec_3_desc",
+			desc_id = "menu_st_spec_3_desc_sc",
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_1",
@@ -2215,7 +2215,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Rogue--
 	local sc_rogue = {
 			name_id = "menu_st_spec_4",
-			desc_id = "menu_st_spec_4_desc",
+			desc_id = "menu_st_spec_4_desc_sc",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2274,7 +2274,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Hitman--
 	local sc_hitman = {
 			name_id = "menu_st_spec_5",
-			desc_id = "menu_st_spec_5_desc",
+			desc_id = "menu_st_spec_5_desc_sc",
 			{
 				upgrades = {
 					"player_store_temp_health_1"
@@ -2333,7 +2333,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Crook--
 	local sc_crook = {
 			name_id = "menu_st_spec_6",
-			desc_id = "menu_st_spec_6_desc",
+			desc_id = "menu_st_spec_6_desc_sc",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",

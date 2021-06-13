@@ -1088,12 +1088,12 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	local days_multiplier = 0
 
 	for i = 1, #narrative_chains, 1 do
-		local day_mul = Global.game_settings.one_down and tweak_data:get_value("experience_manager", "pro_job_new", i) or tweak_data:get_value("experience_manager", "day_multiplier", i)
+		local day_mul = Global.game_settings.one_down and tweak_data:get_value("experience_manager", "pro_job_new") or tweak_data:get_value("experience_manager", "day_multiplier", i)
 		days_multiplier = days_multiplier + day_mul - 1
 	end
 
 	days_multiplier = 1 + days_multiplier / #narrative_chains
-	local last_day_mul = Global.game_settings.one_down and tweak_data:get_value("experience_manager", "pro_job_new", #narrative_chains) or tweak_data:get_value("experience_manager", "day_multiplier", #narrative_chains)
+	local last_day_mul = Global.game_settings.one_down and tweak_data:get_value("experience_manager", "pro_job_new") or tweak_data:get_value("experience_manager", "day_multiplier", #narrative_chains)
 	self._data = {
 		job_cash = job_value,
 		add_job_cash = job_risk_value,

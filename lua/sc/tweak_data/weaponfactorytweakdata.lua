@@ -16,9 +16,9 @@
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = "1.6",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
+					dot_damage = 1.6,
+					dot_length = 3.1,
+					dot_tick_period = 0.5
 				}
 			}
 		}
@@ -38,9 +38,9 @@
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = "2",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
+					dot_damage = 2,
+					dot_length = 3.1,
+					dot_tick_period = 0.5
 				}
 			}
 		}
@@ -61,9 +61,9 @@
 			dot_data = { 
 				type = "bleed",
 				custom_data = {
-					dot_damage = "3",
-					dot_length = "3.1",
-					dot_tick_period = "0.5"
+					dot_damage = 3,
+					dot_length = 3.1,
+					dot_tick_period = 0.5
 				}
 			}
 		}
@@ -83,10 +83,10 @@
 			can_shoot_through_shield = false,
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
-				dot_damage = "1.6",
-				dot_trigger_chance = "60",
-				dot_length = "3.1",
-				dot_tick_period = "0.5"
+				dot_damage = 1.6,
+				dot_trigger_chance = 60,
+				dot_length = 3.1,
+				dot_tick_period = 0.5
 			}
 		}
 	}
@@ -104,10 +104,10 @@
 			can_shoot_through_shield = false,
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
-				dot_damage = "3",
-				dot_trigger_chance = "60",
-				dot_length = "3.1",
-				dot_tick_period = "0.5"
+				dot_damage = 3,
+				dot_trigger_chance = 60,
+				dot_length = 3.1,
+				dot_tick_period = 0.5
 			}
 		}
 	}
@@ -126,10 +126,10 @@
 			can_shoot_through_shield = false,
 			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
 			fire_dot_data = {
-				dot_damage = "3",
-				dot_trigger_chance = "60",
-				dot_length = "3.1",
-				dot_tick_period = "0.5"
+				dot_damage = 3,
+				dot_trigger_chance = 60,
+				dot_length = 3.1,
+				dot_tick_period = 0.5
 			}
 		}
 	}
@@ -6350,7 +6350,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 			custom_data = {
 				dot_damage = "4",
 				dot_length = "3.1",
-				dot_tick_period = "0.5"
+				dot_tick_period = 0.5
 			}
 		}
 	}

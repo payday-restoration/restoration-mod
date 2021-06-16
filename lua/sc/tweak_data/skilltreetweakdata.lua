@@ -2401,7 +2401,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Burglar--
 	local sc_burglar = {
 			name_id = "menu_st_spec_7",
-			desc_id = "menu_st_spec_7_desc",
+			desc_id = "menu_st_spec_7_desc_sc",
 			dlc = "character_pack_clover",
 			{
 				upgrades = {
@@ -2463,7 +2463,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Infiltrator--
 	local sc_infiltrator = {
 			name_id = "menu_st_spec_8",
-			desc_id = "menu_st_spec_8_desc",
+			desc_id = "menu_st_spec_8_desc_sc",
 			dlc = "character_pack_dragan",
 			{
 				upgrades = {
@@ -2523,7 +2523,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Sociopath--
 	local sc_sociopath = {
 			name_id = "menu_st_spec_9",
-			desc_id = "menu_st_spec_9_desc",
+			desc_id = "menu_st_spec_9_desc_sc",
 			dlc = "hlm2_deluxe",
 			{
 				upgrades = {
@@ -2580,7 +2580,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Gambler--
 	local sc_gambler = {
 			name_id = "menu_st_spec_10",
-			desc_id = "menu_st_spec_10_desc",
+			desc_id = "menu_st_spec_10_desc_sc",
 			{
 				upgrades = {
 					"temporary_loose_ammo_restore_health_1"
@@ -2640,7 +2640,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Grinder--
 	local sc_grinder = {
 			name_id = "menu_st_spec_11",
-			desc_id = "menu_st_spec_11_desc",
+			desc_id = "menu_st_spec_11_desc_sc",
 			dlc = "character_pack_sokol",
 			{
 				upgrades = {
@@ -2698,7 +2698,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Yakuza--
 	local sc_yakuza = {
 			name_id = "menu_st_spec_12",
-			desc_id = "menu_st_spec_12_desc",
+			desc_id = "menu_st_spec_12_desc_sc",
 			dlc = "dragon",
 			{
 				upgrades = {

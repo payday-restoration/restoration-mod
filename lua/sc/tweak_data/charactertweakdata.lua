@@ -25683,13 +25683,18 @@ function CharacterTweakData:character_map()
 				"civ_male_asian_casual_3",
 				"civ_female_asian_casual_1",
 				"civ_female_asian_storekeeper",
-				"civ_male_auctioneer_2"
+				"civ_male_auctioneer_2",
+				"ene_male_chas_police_01",
+				"ene_male_chas_police_02"				
 			}
 		},
 		sand = {
 			path = "units/pd2_dlc_sand/characters/",
 			list = {
-				"civ_male_vlad"
+				"civ_male_vlad",
+				"civ_male_dockworker_01",
+				"civ_male_dockworker_02",
+				"civ_male_dockworker_03"				
 			}
 		},
 		sharks = {

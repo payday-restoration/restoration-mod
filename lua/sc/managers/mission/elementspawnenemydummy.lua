@@ -243,6 +243,9 @@ local america_deathwish = {
 		["units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		["units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
+		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc",
+		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc", 				
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/payday2/characters/ene_shield_gensec/ene_shield_gensec",

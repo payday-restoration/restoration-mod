@@ -397,6 +397,13 @@
 	<model path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_contour" force="false"/>
+
+	<!--Titan Taser Helm Acc-->
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
+	<object path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
 	
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/mask_nm" force="false"/>	
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		

@@ -19,10 +19,18 @@ function CopBase:random_mat_seq_initialization()
         	
 	--BEAT COP FACE STUFF STARTS HERE	
 	local cop1_4 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1_husk")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3_husk")
 	
 	local cop2_3 = unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2") 
+	or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2_husk")	
 	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4_husk")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest")
+	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk")
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_1_4") and cop1_4 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_cop_1_4")
@@ -32,25 +40,30 @@ function CopBase:random_mat_seq_initialization()
 	--END BEAT COP FACE STUFF
 
 	
-	--START FBI HRT FACES. fuck this useless enemy! praise jules for removing him!
+	--START FBI HRT FACES.
 	local fbi_1_2 = unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1") 
+	or unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1_husk")	
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2")
+	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2_husk")
 	
 	local fbi_3 = unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3") 
+	or unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3_husk")	
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_1_2") and fbi_1_2 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_1_2")	
 	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_3") and fbi_3 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_3")	--he is obscured so there's no need to replace him.
+		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_3")	
 	end	 	
 
 	
 	--security $!!SLAT^* insanity	
 	local sec_2_3 = unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2") 
+	or unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3")
+	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3_husk")
 	
 	local sec_1 = unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1") 
-	
+	or unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1_husk")
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_sec_1") and sec_1 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_sec_1")	
@@ -59,16 +72,19 @@ function CopBase:random_mat_seq_initialization()
 	end
 	--end security shit
 	
-    local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5") 
+    local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5_husk")	
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870_husk")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")	
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45_husk")
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5_husk")
 		
     local murkies = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") 
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk")
 	
-	if self._unit:damage() and self._unit:damage():has_sequence("nypdrandom") and nypd_cops then
-        self._unit:damage():run_sequence_simple("nypdrandom")
-    elseif self._unit:damage() and self._unit:damage():has_sequence("murksecrandom") and murk_sec then
+    if self._unit:damage() and self._unit:damage():has_sequence("murksecrandom") and murk_sec then
         self._unit:damage():run_sequence_simple("murksecrandom")				
     elseif self._unit:damage() and self._unit:damage():has_sequence("set_style_murky") and murkies then
         self._unit:damage():run_sequence_simple("set_style_murky")

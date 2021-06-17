@@ -210,7 +210,7 @@ function GroupAIStateBase:chk_guard_delay_deduction()
 	end
 end	
 
-function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_id)
+function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_id, point_of_no_return_tweak_id)
 	if time == nil or setup:has_queued_exec() then
 		return
 	end
@@ -226,9 +226,10 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 
 	self._point_of_no_return_timer = time
 	self._point_of_no_return_id = point_of_no_return_id
+	self._point_of_no_return_tweak_id = point_of_no_return_tweak_id
 	self._point_of_no_return_areas = nil
 
-	managers.hud:show_point_of_no_return_timer()
+	managers.hud:show_point_of_no_return_timer(self._point_of_no_return_tweak_id)
 	managers.hud:add_updator("point_of_no_return", callback(self, self, "_update_point_of_no_return"))
 	--log("setting diff to 1!!")
 	self:set_difficulty(nil, 1)

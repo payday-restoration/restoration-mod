@@ -1,0 +1,111 @@
+<table>	
+	<table search="unit">			
+				<variables>
+					<var_pick_head_b value="1"/>
+					<var_pick_murky value="1"/>					
+				</variables>
+				
+				<!-- a = default head. 
+					 b = race-swapped head. 
+				-->
+
+				<filter name="'filter_pick_normalhead'">
+					<check value="vars.var_pick_murky >= 0"/>
+					<check value="vars.var_pick_murky <= 2000"/>
+				</filter>
+				
+					  
+				<filter name="'filter_pick_head'">
+					<check value="vars.var_pick_murky <= 1"/>
+				</filter>
+				
+				<filter name="'filter_pick_head_a'">
+					<check value="vars.var_pick_head_b >= 0"/>
+					<check value="vars.var_pick_head_b <= 100"/>
+				</filter>
+						  
+				<filter name="'filter_pick_head_b'">
+					<check value="vars.var_pick_head_b <= 25"/>
+				</filter>								
+					
+			<!-- beatcops-->
+				<!-- dc -->
+					<sequence editable_state="true" once="true" triggable="true" name="'pick_mats_for_cop_1_4'">        
+						<set_variables var_pick_head_b="rand()*100"/>
+						<material_config filter="'filter_pick_head_a'"  name="'units/payday2/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_2/ene_cop_2','ene_cop_3/ene_cop_3','ene_cop_4/ene_cop_4')"/>
+							
+						<material_config filter="'filter_pick_head_b'" name="'units/payday2/characters/'..pick('ene_cop_vars/ene_cop_var1','ene_cop_vars/ene_cop_var2','ene_cop_vars/ene_cop_var3')"/>
+						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
+						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										
+					</sequence>
+						
+					<sequence editable_state="true" once="true" triggable="true" name="'pick_mats_for_cop_2_3'">        
+						<set_variables var_pick_head_b="rand()*100"/>
+						<material_config filter="'filter_pick_head_a'"  name="'units/payday2/characters/'..pick('ene_cop_1/ene_cop_1','ene_cop_2/ene_cop_2','ene_cop_3/ene_cop_3','ene_cop_4/ene_cop_4')"/>
+							
+						<material_config filter="'filter_pick_head_b'" name="'units/payday2/characters/'..pick('ene_cop_vars/ene_cop_var1','ene_cop_vars/ene_cop_var2')"/>
+							
+						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
+						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										
+					</sequence>						
+				<!-- end beatcop stuff -->
+
+					
+				<!-- fbi -->
+					<sequence editable_state="true" once="true" triggable="true" name="'pick_mats_for_fbi_1_2'">        
+						<set_variables var_pick_head_b="rand()*100"/>
+						<material_config filter="'filter_pick_head_a'" name="'units/payday2/characters/'..pick('ene_fbi_1/ene_fbi_1', 'ene_fbi_vars/ene_fbi_var1','ene_fbi_vars/ene_fbi_var2','ene_fbi_vars/ene_fbi_var3')"/>
+							
+						<material_config filter="'filter_pick_head_b'" name="'units/payday2/characters/'..pick('ene_fbi_vars/ene_fbi_var4','ene_fbi_vars/ene_fbi_var5','ene_fbi_vars/ene_fbi_var6')"/>
+							
+						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
+						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										
+					</sequence>				
+						
+					<sequence editable_state="true" once="true" triggable="true" name="'pick_mats_for_fbi_3'">        
+						<material_config name="'units/payday2/characters/'..pick('ene_fbi_1/ene_fbi_1', 'ene_fbi_vars/ene_fbi_var1','ene_fbi_vars/ene_fbi_var2','ene_fbi_vars/ene_fbi_var3','ene_fbi_3/ene_fbi_3', 'ene_fbi_vars/ene_fbi_var4','ene_fbi_vars/ene_fbi_var5','ene_fbi_vars/ene_fbi_var6')"/>					
+					</sequence>
+				<!-- end fbi things-->
+
+					
+				<!-- security guards -->
+					<!-- whiteshirts -->
+					<sequence editable_state="true" once="true" triggable="true" name="'pick_mats_for_sec_1'">        
+						<set_variables var_pick_head_b="rand()*100"/>
+						<material_config filter="'filter_pick_head_a'" name="'units/payday2/characters/'..pick('ene_security_1/ene_security_1','ene_security_2/ene_security_2','ene_security_3/ene_security_3','ene_security_vars/ene_security_var1','ene_security_vars/ene_security_var2','ene_security_vars/ene_security_var3','ene_security_3/ene_security_3','ene_security_vars/ene_security_var6')"/>
+							
+						<material_config filter="'filter_pick_head_b'" name="'units/payday2/characters/'..pick('ene_security_vars/ene_security_var4','ene_security_vars/ene_security_var5')"/>
+							
+						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
+						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										
+					</sequence>
+
+					<sequence editable_state="true" once="true" triggable="true" name="'pick_mats_for_sec_2_3'">        
+						<set_variables var_pick_head_b="rand()*100"/>
+						<material_config filter="'filter_pick_head_a'" name="'units/payday2/characters/'..pick('ene_security_1/ene_security_1','ene_security_2/ene_security_2','ene_security_3/ene_security_3','ene_security_vars/ene_security_var1','ene_security_vars/ene_security_var2','ene_security_vars/ene_security_var3','ene_security_3/ene_security_3')"/>
+							
+						<material_config filter="'filter_pick_head_b'" name="'units/payday2/characters/'..pick('ene_security_vars/ene_security_var4','ene_security_vars/ene_security_var5', 'ene_security_vars/ene_security_var6')"/>
+							
+						<object filter="'filter_pick_head_b'" enabled="false" name="'g_head_var_1'"/>					
+						<object filter="'filter_pick_head_b'" enabled="true" name="'g_head_var_2'"/>										
+					</sequence>
+
+					<sequence editable_state="true" name="'murksecrandom'" once="true" triggable="true">
+						<material_config name="'units/pd2_mod_sharks/characters/'..pick('ene_murky_cs_cop_c45/ene_murky_cs_cop_c45','ene_murky_cs_cop_r870/ene_murky_cs_cop_r870','ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5')"/>
+					</sequence>		
+				<!-- security guard sequences: the end -->					
+			<!-- da end -->
+						
+			<sequence editable_state="true" name="'squelch'" once="true" triggable="true">
+				<effect name="'effects/payday2/particles/impacts/blood/brain_splat'" parent="object( 'Head' )" position="v()"/>	
+				<sound action="'play'" event="'expl_gen_head'" object="'Head'"/>
+			</sequence>
+			  			  			  
+			<sequence editable_state="true" once="true" triggable="true" name="'set_style_murky'">        
+				<set_variables var_pick_murky="rand()*2000"/>
+				<material_config filter="'filter_pick_normalhead'" name="'units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1'"/>
+				<object filter="'filter_pick_head'" enabled="true" name="'g_stache'" />						
+				<material_config filter="'filter_pick_head'" name="'units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa'"/>
+			</sequence>
+	</table>	
+</table>

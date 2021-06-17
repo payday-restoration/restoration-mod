@@ -1,0 +1,1782 @@
+<table directory="assets">		
+	<!--Updated Assets-->	
+	<environment path="environments/pd2_env_night/pd2_env_night" force="true"/>
+	<environment path="environments/pd2_env_mid_day/pd2_env_mid_day" force="true"/>
+	<object path="units/payday2/props/lcm_prop_securitydoor/lcm_prop_securitydoor_01" force="true"/>
+	<material_config path="units/pd2_dlc_friend/nature/terrain/sfm_backdrop" force="true"/>
+	
+	<object path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
+	
+	<!-- Dark window cop cars with fixed uniforms -->
+	<!--Washington DC-->
+	<material_config path="units/payday2/vehicles/bnk_vehicle_police_animated/bnk_vehicle_police_animated" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_4/bnk_vehicle_car_police_anim_4" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_3/bnk_vehicle_car_police_anim_3" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_2/bnk_vehicle_car_police_anim_2" force="true" />
+	<material_config path="units/payday2/vehicles/bnk_vehicle_car_police_anim_1/bnk_vehicle_car_police_anim_1" force="true" />
+	<material_config path="units/payday2/vehicles/anim_vehicle_car_police/anim_vehicle_car_police" force="true" />
+	
+	<texture path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
+	
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/chill_combat"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/fwb" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/green_bridge" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/panicroom" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/slaughterhouse" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/counterfeit" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/undercover" force="true"/>
+	<texture path="guis/dlcs/bro/textures/pd2/crimenet/dah" force="true"/>
+	<texture path="guis/dlcs/nmh/textures/pd2/crimenet/nmh" force="true"/>	
+	
+	<!--New logo-->
+	<texture path="guis/textures/game_small_logo" force="true"/>
+	<texture path="guis/textures/menu_title_screen" force="true"/>
+	<texture path="units/menu/menu_scene/menu_cylinder_logo" force="true"/>
+	
+	<!--Info Hud Skill Icons-->
+	<texture path="guis/textures/pd2/skilltree/info_ammo_efficiency" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_single_shot_fast_reload" force="false" load="false"/> <!-- Aggressive Reload -->
+	<texture path="guis/textures/pd2/skilltree/info_bloodthirst_reload_speed" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_bullet_storm" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_revive_damage_reduction" force="false" load="false"/> <!-- Combat Medic -->
+	<texture path="guis/textures/pd2/skilltree/info_desperado" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_grinder" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_infiltrator" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_long_dis_revive" force="false" load="false"/> <!-- inspire -->
+	<texture path="guis/textures/pd2/skilltree/info_messiah" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_overkill_damage_multiplier" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_revived_damage_reduction" force="false" load="false"/> <!-- Painkillers -->
+	<texture path="guis/textures/pd2/skilltree/info_first_aid_damage_reduction" force="false" load="false"/> <!-- Quick Fix -->
+	<texture path="guis/textures/pd2/skilltree/info_rogue" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_increased_movement_speed" force="false" load="false"/> <!-- Running From Death -->
+	<texture path="guis/textures/pd2/skilltree/info_headshot_fire_rate_mult" force="false" load="false"/> <!-- Sharpshooter Ace -->
+	<texture path="guis/textures/pd2/skilltree/info_trigger_happy" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_dmg_multiplier_outnumbered" force="false" load="false"/> <!-- Underdog -->
+	<texture path="guis/textures/pd2/skilltree/info_unseen_strike" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_doctor_bag_health_regen" force="false" load="false"/>
+	<texture path="guis/textures/pd2/skilltree/info_survive_one_hit" force="false" load="false"/> <!-- Yakuza Oni Irezumi -->
+
+
+	<model path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container" force="true"/>
+	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" force="true"/>
+	<texture path="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" force="true"/>
+		
+	<!--Tiny Heist Edits that Change like a few things-->	
+	<mission path="levels/narratives/pbr/jerry/world/world" force="true" unload="true"/> <!--removes scripted sewer spawns. might have messed something up on the sewer part, so uh pls test kthx.-->		
+	<mission path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
+	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
+	<mission path="levels/narratives/classics/dinner/world/world" force="true" unload="true"/>  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
+	<continent path="levels/narratives/classics/dinner/world/world" force="true" unload="true"/>
+	
+	<mission path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	<continent path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
+	
+	<mission path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--adds a bikerdozer to the bunker, removes swat turret.-->	
+	<continent path="levels/narratives/elephant/born/world/world" force="true" unload="true"/> <!--fixes cars clipping into ground-->
+
+	<mission path="levels/narratives/elephant/chew/world/world" force="true" unload="true"/> <!--adds back in ponr, re-enables 4player c4 event, changes feedback-->
+	
+	<mission path="levels/narratives/butcher/friend/world/world" force="true" unload="true"/> <!--Forces boat escape-->
+	
+	<mission path="levels/instances/shared/obj_skm/world/world" force="true" unload="true"/> <!-- disables custody failure and wave modifier dialogue.-->
+	
+	<mission path="levels/instances/shared/skm_negotiator/world/world" force="true" unload="true"/> <!-- disables modifier dialogue and re-enables an unused negotiator line for players going in custody.-->
+	
+	<continent path="levels/narratives/bain/big/world/world" force="true" unload="true"/> <!--you can now drill the small cashbox, money cassettes spawn-->
+	
+	<continent path="levels/narratives/classics/dah/world/world" force="true" unload="true"/>
+	<nav_data path="levels/narratives/classics/dah/nav_manager_data" force="true" unload="true"/>
+	
+	<cover_data path="levels/narratives/h_firestarter/stage_3/cover_data" force="true" unload="true"/>
+	<nav_data path="levels/narratives/h_firestarter/stage_3/nav_manager_data" force="true" unload="true"/>
+
+	<continent path="levels/narratives/locke/brb/art/art" force="true" unload="true"/><!--optimization-->	
+	<continent path="levels/narratives/locke/brb/world/world" force="true" unload="true"/><!--optimization-->	
+	<continent path="levels/narratives/locke/brb/props/props" force="true" unload="true"/><!--optimization, money cassettes spawn-->
+	<continent path="levels/narratives/locke/brb/christmas_props/christmas_props" force="true" unload="true"/><!--fuck the xmas assets-->	
+
+	<continent path="levels/narratives/locke/vit/art/art" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/backdrop/backdrop" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/collision/collision" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/lights/lights" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/props/props" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/props1/props1" force="true" unload="true"/>
+	<continent path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<mission path="levels/narratives/locke/vit/world/world" force="true" unload="true"/>
+	<cover_data path="levels/narratives/locke/vit/cover_data" force="true" unload="true"/>
+	<nav_data path="levels/narratives/locke/vit/nav_manager_data" force="true" unload="true"/>
+
+	<nav_data path="levels/narratives/vlad/bex/nav_manager_data" force="true" unload="true"/>
+
+	<!--I LOVE GOOOOOOOOOOOOOLD-->
+	<continent path="levels/instances/unique/kenaz/vault/world/world" force="true" unload="true"/>
+
+	<!--ffs ovk, dont load the entire map if you force the players in one area-->
+	<continent path="levels/narratives/skm/skm_cas/world/world" force="true" unload="true"/>
+
+	<!--fuck your powerboxes-->
+	<mission path="levels/narratives/e_framing_frame/stage_3/world/world" force="true" unload="true"/>
+
+	<!--5 minute edit-->
+	<mission path="levels/narratives/vlad/shout/world/world" force="true" unload="true"/>
+
+	<!--First World Bank-->
+	<mission path="levels/narratives/classics/red2/world/world" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/red2/world/world" force="true" unload="true"/> 
+	<nav_data path="levels/narratives/classics/red2/nav_manager_data" force="true" unload="true"/>	
+	<cover_data path="levels/narratives/classics/red2/cover_data" force="true" unload="true"/>
+
+	<!--UNDERCOVER-->
+	<mission path="levels/narratives/classics/man/world/world" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/man/world/world" force="true" unload="true"/> 
+	<continent path="levels/narratives/classics/man/shadow_caster/shadow_caster" force="true" unload="true"/>
+	<nav_data path="levels/narratives/classics/man/nav_manager_data" force="true" unload="true"/>	
+	<cover_data path="levels/narratives/classics/man/cover_data" force="true" unload="true"/>
+	
+	<sequence_manager path="units/world/architecture/secret_stash/props/secret_stash_hack_computer_interaction" force="true"/>
+	<sequence_manager path="units/pd2_dlc_jolly/equipment/gen_interactable_saw/gen_interactable_saw" force="true"/>
+	
+	<!--PANIC ROOM-->
+	<mission path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/flat/world/world" force="true" unload="true"/>
+	<nav_data path="levels/narratives/classics/flat/nav_manager_data" force="true" unload="true"/>	
+	<cover_data path="levels/narratives/classics/flat/cover_data" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/flat/art_dhruva/art_dhruva" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/flat/lights/lights" force="true" unload="true"/>
+	<continent path="levels/narratives/classics/flat/collision/collision" force="true" unload="true"/>
+	
+	<!--Misc. Changes and Fixes to Base Game Objects-->
+	
+	<!-- Hoxton Breakout FBI Boss Vetcop -->
+	<unit path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" load="true" force="true" />
+	<object path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1" force="true" />	
+	<unit path="units/payday2/characters/ene_fbi_boss_1/ene_fbi_boss_1_husk" load="true" force="true" />
+	
+	<!-- Gensec Security: Beret Poppin' -->
+	<unit path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" load="true" force="true" />
+	<unit path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_husk" load="true" force="true" />	
+	<object path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />	
+	<model path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />	
+	<material_config path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1" force="true" />	
+	<material_config path="units/pd2_dlc1/characters/ene_security_gensec_1/ene_security_gensec_1_contour" force="true" />	
+
+	<unit path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" load="true" force="true" />
+	<unit path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2_husk" load="true" force="true" />	
+	<object path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" force="true" />	
+	<model path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" force="true" />	
+
+	<!--NPC DS Police Sniper-->
+	<unit path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<model path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<object path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<cooked_physics path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<material_config path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />	
+
+	<!--Unshootable Flashbangs-->
+	<sequence_manager path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<model path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<object path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<unit path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" load="true" force="false"/>		
+		
+	<unit_mat path="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle"  />
+	<cooked_physics path="units/payday2/weapons/wpn_npc_degle/wpn_npc_degle" />
+	
+	<!--Improved Flashlight-->	
+	<texture path="effects/particles/weapons/flashlight/e_gradient_radial2" force="true"/>	
+	<texture path="units/lights/spot_light_projection_textures/spotprojection_11_flashlight_df" force="true"/>	
+
+	<!--Reduced Sicario Smoke-->	
+	<effect path="effects/particles/explosions/smoke_screen" force="true"/>
+	<!--concussion grenade depth scaling vanilla bug-->	
+	<material_config path="units/pd2_crimefest_2016/fez1/weapons/wpn_fps_gre_pressure/wpn_fps_gre_pressure_husk" force="true" />
+	<!--Dynamite no rolly polly-->
+	<object path="units/pd2_dlc_west/weapons/wpn_gre_dynamite/wpn_gre_dynamite" force="true" />		
+
+	<!--REMOVED CAP REQUIREMENT FOR LMG SIGHTS FOLLOWING LID-->
+	<model path="units/pd2_dlc_gage_historical/weapons/wpn_fps_lmg_mg42_pts/wpn_fps_lmg_mg42_reciever" force="true"/>
+	<model path="units/pd2_dlc_gage_lmg/weapons/wpn_fps_lmg_m249_pts/wpn_fps_lmg_m249_upper_reciever" force="true"/>
+	<model path="units/pd2_dlc_par/weapons/wpn_fps_lmg_par_pts/wpn_fps_lmg_par_upper_reciever" force="true"/>
+	
+	<!-- M60 TROPICAL FOREGRIP FIX -->
+	<model path="units/pd2_dlc_atw/weapons/wpn_fps_lmg_m60_pts/wpn_fps_lmg_m60_fg_tropical" force="true"/>
+	
+	<!-- AS VAL GRIP ATTACHMENT STUFF  -->
+	<unit_obj path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_pgrip" />
+	<unit_obj path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_hgrip" />
+	
+	<unit_mat_cc path="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_hgrip" />	
+	<unit_mat_cc path="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_pgrip" />
+	
+	<model path="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval/wpn_fps_ass_asval" force="true"/>
+	<model path="units/pd2_dlc_character_sokol/weapons/wpn_fps_ass_asval_pts/wpn_fps_ass_asval_g_standard" force="true"/>
+	<model path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_standard" force="true"/>
+	
+	<!--PDTH Smokebomb-->
+	<effect path="effects/particles/explosions/smoke_grenade_smoke" force="true"/>
+
+	<!--Corrected NPC Weapon Sounds-->	
+	<unit path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true" load="true" />		
+	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" force="true" load="true"/>	
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_sr2/wpn_npc_sr2" force="true" load="true"/>			
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true" load="true"/>	
+	<unit path="units/pd2_dlc_chico/weapons/wpn_npc_sg417/wpn_npc_sg417" force="true" load="true"/>		
+
+	<!--Reaper Bullet Impact Fixes-->	
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_r870/ene_akan_cs_cop_r870" force="true" />	
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_akmsu_smg/ene_akan_cs_cop_akmsu_smg" force="true" />	
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_asval_smg/ene_akan_cs_cop_asval_smg" force="true" />	
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_ak47_ass/ene_akan_cs_swat_ak47_ass" force="true" />		
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" force="true" />	<!--hey you probably won't see him close, but it'll be nice to have, yeah?-->
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_r870/ene_akan_cs_swat_r870" force="true" />		
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg" force="true" />	
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_shield_c45/ene_akan_cs_shield_c45" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass" force="true" />
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />	
+	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />	
+	<object path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />
+
+	
+	<!--Panic Room Bullet Impact Fixes-->		
+	<object path="units/pd2_dlc_flat/characters/npc_chavez/npc_chavez" force="true" />
+	<object path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican" force="true" />	
+	
+	<!--Parachute Collision edit (No more Boiling Point suicides)-->
+	<object path="units/pd2_dlc_jerry/props/jry_equipment_parachute/jry_equipment_parachute_ragdoll" force="true"/>
+	
+	<!--Scarface Guys-->		
+	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
+	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02" force="true" />	
+	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01" force="true" />
+	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02" force="true" />	
+	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" force="true" />		
+	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss_stealth/ene_drug_lord_boss_stealth" force="true" />			
+	<object path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />
+	
+	<!--Change to Armored Hector's Visor Texture (now uses the Hard Hat's visor texture, for consistency reasons.)-->		
+	<material_config path="units/pd2_mcmansion/characters/ene_male_hector_1/ene_male_hector_1" force="true" />
+	<material_config path="units/pd2_mcmansion/characters/ene_male_hector_1/ene_male_hector_1_contour" force="true" />	
+	
+	<effect path="effects/payday2/particles/character/flashlight_ss" load="true"/>
+	
+	<!--Fixes for Objects not Casting Shadows-->		
+	<object path="units/payday2/architecture/air_hangar_segment/air_shed_welcometothejungle_a" force="true" />	
+	
+	<!--epic hd cloaker eyes thanks jarey-->
+	<texture path="units/payday2/characters/shared_textures/spook_il"/>
+
+	<!--More Cop Facial Variety (Thanks AGAIN Wekk!!!!)-->	
+	<object path="units/payday2/characters/ene_fbi_1/ene_fbi_1" />	
+	<model path="units/payday2/characters/ene_fbi_1/ene_fbi_1" />	
+
+	<object path="units/payday2/characters/ene_fbi_2/ene_fbi_2" />	
+	<model path="units/payday2/characters/ene_fbi_2/ene_fbi_2" />	
+	<model path="units/payday2/characters/ene_fbi_3/ene_fbi_3" />		
+		
+	<model path="units/payday2/characters/ene_cop_1/ene_cop_1" force="true" />	
+	<object path="units/payday2/characters/ene_cop_1/ene_cop_1" force="true" />	
+	
+	<model path="units/payday2/characters/ene_cop_2/ene_cop_2" force="true" />	
+	<object path="units/payday2/characters/ene_cop_2/ene_cop_2" force="true" />	
+	
+	<model path="units/payday2/characters/ene_cop_3/ene_cop_3" force="true" />	
+	<object path="units/payday2/characters/ene_cop_3/ene_cop_3" force="true" />	
+	
+	<model path="units/payday2/characters/ene_cop_4/ene_cop_4" force="true" />	
+	<object path="units/payday2/characters/ene_cop_4/ene_cop_4" force="true" />	
+
+	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1" force="true" />	
+	<material_config path="units/payday2/characters/ene_fbi_1/ene_fbi_1_contour" force="true" />	
+	<material_config path="units/payday2/characters/ene_fbi_2/ene_fbi_2" force="true" />	
+	<material_config path="units/payday2/characters/ene_fbi_2/ene_fbi_2_contour" force="true" />	
+	<material_config path="units/payday2/characters/ene_fbi_3/ene_fbi_3_contour" />	
+	<material_config path="units/payday2/characters/ene_fbi_3/ene_fbi_3" />
+	
+	<material_config path="units/payday2/characters/ene_cop_1/ene_cop_1" force="true" />
+	<material_config path="units/payday2/characters/ene_cop_1/ene_cop_1_contour" force="true" />	
+	<material_config path="units/payday2/characters/ene_cop_2/ene_cop_2" force="true" />
+	<material_config path="units/payday2/characters/ene_cop_2/ene_cop_2_contour" force="true" />
+	<material_config path="units/payday2/characters/ene_cop_3/ene_cop_3" force="true" />
+	<material_config path="units/payday2/characters/ene_cop_3/ene_cop_3_contour" force="true" />	
+	<material_config path="units/payday2/characters/ene_cop_4/ene_cop_4" force="true" />
+	<material_config path="units/payday2/characters/ene_cop_4/ene_cop_4_contour" force="true" />
+
+	<material_config path="units/pd2_dlc_casino/characters/ene_secret_service_1_casino/ene_secret_service_1_casino" force="true" />
+	<material_config path="units/pd2_dlc_casino/characters/ene_secret_service_1_casino/ene_secret_service_1_casino_contour" force="true" />	
+
+	<material_config path="units/payday2/characters/ene_murkywater_2/ene_murkywater_2" force="true" />
+	<material_config path="units/payday2/characters/ene_murkywater_2/ene_murkywater_2_contour" force="true" />
+
+	<object path="units/payday2/characters/ene_security_2/ene_security_2" />	
+	<model path="units/payday2/characters/ene_security_2/ene_security_2" />	
+		
+	<texture path="units/payday2/characters/shared_textures/heads_cop_df" />
+	<texture path="units/payday2/characters/shared_textures/heads_cop_nm" />
+	<texture path="units/payday2/characters/shared_textures/heads_cop2_df"/>
+	<texture path="units/payday2/characters/shared_textures/heads_cop3_df"/>
+	<texture path="units/payday2/characters/shared_textures/heads_cop3_nm"/>
+	<texture path="units/payday2/characters/shared_textures/heads_var1_df"/>
+	<texture path="units/payday2/characters/shared_textures/heads_var1_nm"/>
+	<texture path="units/payday2/characters/shared_textures/heads_var2_df"/>
+	<texture path="units/payday2/characters/shared_textures/heads_var2_nm"/>
+	<texture path="units/payday2/characters/shared_textures/heads_var3_df"/>
+	<texture path="units/payday2/characters/shared_textures/heads_var3_nm"/>	
+	<texture path="units/payday2/characters/shared_textures/heads_sec_df"/>
+	<texture path="units/payday2/characters/shared_textures/heads_fbi_df"/>
+	<texture path="units/payday2/characters/shared_textures/heads_fbi_nm"/>
+	<texture path="units/payday2/characters/shared_textures/murkyhead_df"/>
+	<texture path="units/payday2/characters/shared_textures/murkyhead_nm"/>	
+	<texture path="units/payday2/characters/shared_textures/heads_ss_lv_df"/>
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_df" />	
+	<texture path="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_nm" />	
+	<texture path="units/pd2_dlc1/characters/shared_textures/ene_security_gensec_heads_df" force="true" />	
+	
+	<!--More Cop Facial Variety END-->	
+	
+
+	<!--Risk Level-->
+	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_4_sc" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_5_sc" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/assets_risklevel_6_sc" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/risk_bexico" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/risk_murky" force="false"/>
+	<texture path="guis/textures/pd2/mission_briefing/assets/risk_zombie" force="false"/>
+	
+	<!--Briefing assets-->
+	<texture path="guis/textures/pd2/mission_briefing/assets/alex_1_zipline" force="false"/>
+	
+	<!--New Crime Spree icons-->
+	<texture path="guis/dlcs/sc/textures/pd2/crime_spree/modifiers_atlas_sc"/>		
+
+	<!--New Crime Spree level icons-->
+	<texture path="guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc"/>
+	
+	<!--Crimewar skull icon for HUD Stealth Suspicion meter-->
+	<texture path="guis/textures/restoration/crimewar_skull"/>
+	<texture path="guis/textures/restoration/crimewar_skull_2"/>
+	
+	<!--TeamAI Enduring ability very epic-->
+	<texture path="guis/dlcs/mom/textures/pd2/ai_abilities" force="true"/>
+	
+	<!--Mats/Patterns-->
+	<texture path="units/pd2_mod_jack/matcaps/jkl_matt01" force="false"/>
+	<texture path="units/pd2_mod_jack/matcaps/jkl_matt02" force="false"/>	
+	<texture path="guis/textures/pd2/blackmarket/icons/materials/jkl_matt01"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/materials/jkl_matt02"/>	
+	
+	<texture path="patterns/jkl_patt01"/>
+	<texture path="patterns/jkl_patt02"/>
+			
+	<!--Mask: Shatter-->
+	<material_config path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
+	<unit path="units/mods/masks/msk_shatter_true/msk_shatter_true" load="false"/>
+	<cooked_physics path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
+	<object path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
+	<model path="units/mods/masks/msk_shatter_true/msk_shatter_true" force="false"/>
+	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_df" force="false"/>
+	<texture path="units/mods/masks/msk_shatter_true/msk_shatter_true_nm" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/shatter_true" force="false"/>
+	
+	<!--Mask: Unforsaken-->
+	<material_config path="units/mods/masks/unforsaken/msk_unforsaken" force="false"/>
+	<unit path="units/mods/masks/unforsaken/msk_unforsaken" load="false"/>
+	<cooked_physics path="units/mods/masks/unforsaken/msk_unforsaken" force="false"/>
+	<object path="units/mods/masks/unforsaken/msk_unforsaken" force="false"/>
+	<model path="units/mods/masks/unforsaken/msk_unforsaken" force="false"/>
+	<texture path="units/mods/masks/unforsaken/unforsaken_nm" force="false"/>
+	<texture path="units/mods/masks/unforsaken/unforsaken_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/unforsaken" force="false"/>	
+	
+	<!--Mask: Finger-->
+	<material_config path="units/mods/masks/finger/msk_finger" force="false"/>
+	<unit path="units/mods/masks/finger/msk_finger" load="false"/>
+	<cooked_physics path="units/mods/masks/finger/msk_finger" force="false"/>
+	<object path="units/mods/masks/finger/msk_finger" force="false"/>
+	<model path="units/mods/masks/finger/msk_finger" force="false"/>
+	<texture path="units/mods/masks/finger/finger_nm" force="false"/>
+	<texture path="units/mods/masks/finger/finger_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/finger" force="false"/>
+
+	<!--Mask: Instinct-->
+	<material_config path="units/mods/masks/instinct/msk_instinct" force="false"/>
+	<unit path="units/mods/masks/instinct/msk_instinct" load="false"/>
+	<cooked_physics path="units/mods/masks/instinct/msk_instinct" force="false"/>
+	<object path="units/mods/masks/instinct/msk_instinct" force="false"/>
+	<model path="units/mods/masks/instinct/msk_instinct" force="false"/>
+	<texture path="units/mods/masks/instinct/instinct_nm" force="false"/>
+	<texture path="units/mods/masks/instinct/instinct_df" force="false"/>
+	<texture path="units/mods/masks/instinct/instinct_il" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/instinct" force="false"/>	
+	
+	<!--Muldon Stock Unfolded (thx Jarey_!!!!)-->
+	<cooked_physics path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<model path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<object path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<unit path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded"/>
+	<material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_thq"/>
+	<material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc"/>
+    <material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_fps_shot_r870_s_muldonunfolded_cc_thq"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_shot_r870_s_muldonunfolded"/> 	
+	<cooked_physics path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
+	<model path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
+	<object path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>
+    <material_config path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>	
+	<unit path="units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded"/>		
+	
+	<!--Mask: Hockey Hell-->
+	<material_config path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
+	<unit path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" load="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
+	<object path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
+	<model path="units/pd2_mod_sharks/masks/msk_hockey_sc/msk_hockey_sc" force="false"/>
+	<texture path="units/pd2_mod_sharks/masks/msk_hockey_sc/hockey_b_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/canada" force="false"/>
+	
+	<!--Mask: Mrs. Graffiti-->
+	<material_config path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" force="false"/>
+	<unit path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" load="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" force="false"/>
+	<object path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" force="false"/>
+	<model path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_sc" force="false"/>
+	<texture path="units/pd2_mod_sharks/masks/msk_rubber_female_sc/msk_rubber_female_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/jsr" force="false"/>
+	
+	<!--Mask: Mr. Graffiti-->
+	<material_config path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" force="false"/>
+	<unit path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" load="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" force="false"/>
+	<object path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" force="false"/>
+	<model path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_sc" force="false"/>
+	<texture path="units/pd2_mod_sharks/masks/msk_rubber_male_sc/msk_rubber_male_df" force="false"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/jsrf" force="false"/>
+	
+	<!--Mask: The Lootbag-->
+	<material_config path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
+	<unit path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" load="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
+	<object path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
+	<model path="units/pd2_mod_sharks/masks/msk_zipper_sc/msk_zipper_sc" force="false"/>
+	<texture path="units/pd2_mod_sharks/masks/msk_zipper_sc/zipper_df" force="false"/>	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/courier_stash" force="false"/>
+
+	<!--Masks: Beta Female Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	<model path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	<object path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	<unit path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	<material_config path="units/pd2_mod_beta/msk_female_mask/msk_female_mask"/>
+	
+	<texture path="units/pd2_mod_beta/msk_female_mask/female_mask_01_df"/>
+	<texture path="units/pd2_mod_beta/msk_female_mask/female_mask_01_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/female_mask"/>
+
+	<!--Masks: Beta Female Blood Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	<model path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	<object path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	<unit path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	<material_config path="units/pd2_mod_beta/msk_female_mask_blood/msk_female_mask_blood"/>
+	
+	<texture path="units/pd2_mod_beta/msk_female_mask_blood/female_mask_01_blood_df"/>
+	<texture path="units/pd2_mod_beta/msk_female_mask_blood/female_mask_01_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/female_mask_blood"/>
+
+	<!--Masks: Beta Female Clown Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	<model path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	<object path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	<unit path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	<material_config path="units/pd2_mod_beta/msk_female_mask_clown/msk_female_mask_clown"/>
+	
+	<texture path="units/pd2_mod_beta/msk_female_mask_clown/female_mask_01_clown_df"/>
+	<texture path="units/pd2_mod_beta/msk_female_mask_clown/female_mask_01_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/female_mask_clown"/>
+	
+	<!--Masks: Beta Male Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	<model path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	<object path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	<unit path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	<material_config path="units/pd2_mod_beta/msk_male_mask/msk_male_mask"/>
+	
+	<texture path="units/pd2_mod_beta/msk_male_mask/male_mask_df"/>
+	<texture path="units/pd2_mod_beta/msk_male_mask/male_mask_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/male_mask"/>
+	
+	<!--Masks: Beta Male Blood Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	<model path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	<object path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	<unit path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	<material_config path="units/pd2_mod_beta/msk_male_mask_blood/msk_male_mask_blood"/>
+	
+	<texture path="units/pd2_mod_beta/msk_male_mask_blood/male_mask_blood_df"/>
+	<texture path="units/pd2_mod_beta/msk_male_mask_blood/male_mask_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/male_mask_blood"/>
+	
+	<!--Masks: Beta Male Clown Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	<model path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	<object path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	<unit path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	<material_config path="units/pd2_mod_beta/msk_male_mask_clown/msk_male_mask_clown"/>
+	
+	<texture path="units/pd2_mod_beta/msk_male_mask_clown/male_mask_clown_df"/>
+	<texture path="units/pd2_mod_beta/msk_male_mask_clown/male_mask_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/male_mask_clown"/>
+	
+	<!--Masks: Beta Twister Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	<model path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	<object path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	<unit path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	<material_config path="units/pd2_mod_beta/msk_twister/msk_twister"/>
+	
+	<texture path="units/pd2_mod_beta/msk_twister/twister_df"/>
+	<texture path="units/pd2_mod_beta/msk_twister/twister_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/twister_mask"/>
+		
+	<!--Masks: Beta Voodoo Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	<model path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	<object path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	<unit path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	<material_config path="units/pd2_mod_beta/msk_voodoo/msk_voodoo"/>
+	
+	<texture path="units/pd2_mod_beta/msk_voodoo/msk_voodoo_df"/>
+	<texture path="units/pd2_mod_beta/msk_voodoo/msk_voodoo_nm"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/voodoo_mask"/>
+	
+	<!--Mask: PS3 Sweet Tooth Mask-->
+	<cooked_physics path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	<model path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	<object path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	<unit path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	<material_config path="units/pd2_mod_beta/msk_sweettooth/msk_sweettooth"/>
+	
+	<texture path="units/pd2_mod_beta/msk_sweettooth/sweettooth_df"/>
+	<texture path="units/pd2_mod_beta/msk_sweettooth/sweettooth_nm"/>
+	<texture path="units/pd2_mod_beta/msk_sweettooth/hair_df"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/sweettooth"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/f1"/>
+
+	<!--Mask: Stonecold Wolf-->	
+	<cooked_physics path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <model path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <object path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <unit path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <material_config path="units/mods/masks/msk_wolf_stone/msk_wolf_stone"/>
+    <texture path="units/mods/masks/msk_wolf_stone/wolf_df"/>
+	
+	<!--Aged Crew Masks-->	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/wolf_stone"/>  
+    <cooked_physics path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+    <model path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+    <object path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+    <unit path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+    <material_config path="units/mods/masks/msk_dallas_aged/msk_dallas_aged"/>
+	
+	<cooked_physics path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+    <model path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+    <object path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+    <unit path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+    <material_config path="units/mods/masks/msk_chains_aged/msk_chains_aged"/>
+	
+	<cooked_physics path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+    <model path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+    <object path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+    <unit path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+    <material_config path="units/mods/masks/msk_hoxton_aged/msk_hoxton_aged"/>
+	
+	<cooked_physics path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+    <model path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+    <object path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+    <unit path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+    <material_config path="units/mods/masks/msk_wolf_aged/msk_wolf_aged"/>
+
+    <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/dallas_aged"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/chains_aged"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/hoxton_aged"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/wolf_aged"/>  
+	
+	<!--beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef-->		
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas"/>
+    <model path="units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas"/>
+    <object path="units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas_df"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_beef_dallas/msk_beef_dallas_nm"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains"/>
+    <model path="units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains"/>
+    <object path="units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains_df"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_beef_chains/msk_beef_chains_nm"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton"/>
+    <model path="units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton"/>
+    <object path="units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton_df"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_beef_hoxton/msk_beef_hoxton_nm"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf"/>
+    <model path="units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf"/>
+    <object path="units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf"/> 
+    <texture path="units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf_df"/> 
+    <texture path="units/pd2_mod_fucking_masks/msk_beef_wolf/msk_beef_wolf_nm"/> 
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/beef_dallas"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/beef_chains"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/beef_hoxton"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/beef_wolf"/> 
+	
+	<!--Vyse Masks-->		
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <model path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <object path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_dallas/msk_vyse_dallas_df"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <model path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <object path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_chains/msk_vyse_chains_df"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <model path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <object path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_hoxton/msk_vyse_hoxton_df"/>
+	
+	<cooked_physics path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/>
+    <model path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/>
+    <object path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf"/> 
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf_df"/> 
+    <texture path="units/pd2_mod_fucking_masks/msk_vyse_wolf/msk_vyse_wolf_nm"/> 
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_dallas"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_chains"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_hoxton"/> 
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/vyse_wolf"/> 
+   
+    <!--secret hoxton reborn-->
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <model path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <object path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_hoxton_secret_reborn/msk_hoxton_secret_reborn_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_old_hoxton"/> 
+   
+    <!--secret dragan-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_dragan_secret/msk_dragan_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_dragan_secret/dragan_secret_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_dragan"/> 
+   
+    <!--secret clover-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_clover_secret/msk_clover_secret_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_clover"/> 
+   
+    <!--secret bonnie-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_bonnie_secret/msk_bonnie_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_bonnie_secret/bonnie_secret_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_bonnie"/> 
+   
+    <!--secret sydney-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_sydney_secret/msk_sydney_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_sydney_secret/sydney_secret_df"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_sydney_secret/sydney_secret_nm"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_sydney"/> 
+    
+	<!--secret richard-->  
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <model path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <object path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_richard_secret/msk_richard_secret"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_richard_secret/richard_secret_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/secret_richard"/> 
+   
+    <!--secret dev mask ssshhh-->
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <model path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <object path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_eye/msk_eye"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_eye/msk_eye_df"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_eye/msk_eye_nm"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/all_seeing"/> 
+	
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"/>
+    <model path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"/>
+    <object path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet_df"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_classic_helmet/msk_classic_helmet_nm"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/classic_helmet"/>
+	
+    <cooked_physics path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <model path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <object path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <unit path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <material_config path="units/pd2_mod_fucking_masks/msk_cube/msk_cube"/>
+    <texture path="units/pd2_mod_fucking_masks/msk_cube/msk_cube_df"/>
+	
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/cube"/> 		
+	
+	<!--PDTH Halloween Masks-->
+	<unit_tex path="units/mods/masks/msk_chains_halloween/msk_chains_halloween"/>
+    <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/chains_halloween"/>
+    <unit_tex path="units/mods/masks/msk_dallas_halloween/msk_dallas_halloween"/>
+    <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/dallas_halloween"/>
+	<unit_tex path="units/mods/masks/msk_hoxton_halloween/msk_hoxton_halloween"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/hoxton_halloween"/>
+	<unit_tex path="units/mods/masks/msk_wolf_halloween/msk_wolf_halloween"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/masks/wolf_halloween"/>
+	
+	<!--Santa Hat-->
+	<!--cloaker standard-->
+	<cooked_physics path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>
+	<model path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>
+	<object path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>
+	<material_config path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc"/>
+	<unit path="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc" load="false"/>
+	<!--Dozer standard helm-->
+	<cooked_physics path="units/pd2_dlc_xm20/characters/ene_acc_dozer_santa_hat_sc/ene_acc_dozer_santa_hat_sc"/>
+	<model path="units/pd2_dlc_xm20/characters/ene_acc_dozer_santa_hat_sc/ene_acc_dozer_santa_hat_sc"/>
+	<object path="units/pd2_dlc_xm20/characters/ene_acc_dozer_santa_hat_sc/ene_acc_dozer_santa_hat_sc"/>
+	<unit path="units/pd2_dlc_xm20/characters/ene_acc_dozer_santa_hat_sc/ene_acc_dozer_santa_hat_sc" load="false"/>	
+		
+	<!--HK21-->
+	<material_config path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="true" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
+
+	<!--Russian Reaper Weapons looking nicer-->
+	<material_config path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" force="true"/>
+	<model path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" force="true"/>
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" force="true"/>
+	
+	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47_df"/>
+	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47_nm"/>
+	
+	<material_config path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" force="true"/>
+	<model path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" force="true"/>
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" force="true"/>	
+	<object path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu" force="true"/>
+	
+	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/akmsu_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_akmsu/akmsu_nm" force="true"/>	
+	
+	<model path="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" force="true"/>		
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" force="true"/>		
+	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_asval/asval_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_asval/asval_nm" force="true"/>	
+	
+	<model path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk" force="true"/>		
+	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk_df" force="true"/>
+	<texture path="units/pd2_dlc_mad/weapons/wpn_npc_rpk/wpn_npc_rpk_nm" force="true"/>
+	
+	<!--Halloween Sword-->
+	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
+	<model path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
+	<unit path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false" load="false"/>
+	<material_config path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
+	
+	<!--NPC Peacemaker-->	
+	<object path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+    <cooked_physics path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker_contour" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df" force="false"/>
+	
+	<unit path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" load="false" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" force="false"/>
+	
+	<!--vivinite enhanced caps-->
+	<object path="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_fbi_titan/ene_acc_fbi_titan" force="false"/>			
+
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_df" force="false"/>	
+	
+	<!--textures-->
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/red_glass_df" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op" load="true" force="false"/>
+			
+	<unit path="units/payday2/weapons/wpn_npc_beretta92_titan/wpn_npc_beretta92_titan" force="false" load="true"/>
+	
+	<texture path="guis/textures/pd2/hud_buff_skull" force="false" load="false"/>
+	<texture path="guis/textures/pd2/hud_buff_fire" force="false" load="false"/>
+	<texture path="guis/textures/pd2/hud_buff_spooc" force="false" load="false"/>
+    <texture path="guis/textures/pd2/hud_buff_shield" force="true" load="false"/>   
+	<texture path="guis/textures/pd2/hud_buff_halloween" force="false" load="false"/>   
+	<texture path="guis/textures/pd2/hud_buff_generic" force="false" load="false"/>  
+	<texture path="guis/textures/restoration/bloodyscreen" force="false" load="false"/>
+	
+	<!--Taser Shotgun-->
+	<material_config path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_df" force="true"/>	
+	<texture path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_nm" force="true"/>	
+		
+	<!--One step closer to heaven.-->	
+	<unit path="units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc" load="false" force="false"/>
+	
+	<!--M4 Boom-->
+	<object path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false" load="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom_contour" force="false"/>
+
+	<!--NPC XC45-->	
+	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45" force="true" load="false"/>
+	
+	<!--NPC Mosconi less ugly-->
+	<model path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/wpn_npc_sawnoff_shotgun" force="true"/>	
+	<texture path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/sawnoff_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_sawnoff_shotgun/sawnoff_nm" force="true"/>
+
+	<!--Fixed Sniper-->
+	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+
+	<!--Unshootable Flashbangs-->
+	<sequence_manager path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<model path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<object path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<cooked_physics path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" force="false"/>
+	<unit path="units/payday2/weapons/wpn_frag_sc_flashbang/wpn_frag_sc_flashbang" load="true" force="false"/>
+
+	<!--glass shatter helmet but invisible-->
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" load="false"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>	
+
+	<!--Headless Dozer-->
+	<object path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<sequence_manager path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<model path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<unit path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>
+	<material_config path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw_husk" force="false" load="true"/>
+	
+	<unit path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4" force="true" load="true"/>
+	<unit path="units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4_husk" force="true" load="true"/>	
+
+	<!--Spring-->
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_contour" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<object path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring" load="true" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_spring/ene_spring_husk" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_spring/spring_df" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_df" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_spring/heads_spring_il" force="false"/>	   
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/spring_glass_op" force="false" load="true"/>    
+	
+	<!--Autumn-->
+	<sequence_manager path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_contour" force="false"/>	
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_decloak" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<object path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn" load="true" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_autumn/ene_vip_autumn_husk" load="true" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_df" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_head_df" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_glow_df" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_head_glow_df" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_vip_autumn/autumn_cloak_glow_df" force="false" load="true"/>
+	
+
+	<cooked_physics path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<model path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<object path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx_autumn_dead"/>	
+	<sequence_manager path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"/>
+	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx" load="false"/>	
+
+	<effect path="effects/payday2/particles/spook_cloak/spook_cloak_smoke" load="true"/>
+	<effect path="effects/particles/character/titan_goggle" load="true"/>	
+	<texture path="units/payday2/characters/shared_textures/titan_il"/>
+	<texture path="units/payday2/characters/shared_textures/spook_cloak_glow_df" load="true"/> 		
+	
+	<!--Winter with his cool cigar (Jarey)-->
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_contour" force="true"/>	
+	<model path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>
+	<object path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true"/>	
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1" force="true" load="true"/>	
+	<unit path="units/pd2_dlc_vip/characters/ene_vip_1/ene_vip_1_husk" force="true" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_df"/>	
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_gear_nm"/>
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_body_df" force="true"/>	
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_head_df" force="true"/>		
+
+	<!--Winter with his cool shield (Jarey)-->
+	<!--doesn't exist yet :c NVM IT DOES NOW BAYBEEEEEE-->	
+	<model path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true"/>
+	<object path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/ene_acc_shield_vip" force="true"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_acc_shield_vip/shield_vip_df" force="true"/>	
+
+	<!--Halloween Axe-->
+	<object path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>
+	<model path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>
+	<unit path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false" load="false"/>
+	<material_config path="units/pd2_mod_halloween/weapons/wpn_mel_hw_axe/wpn_mel_hw_axe" force="false"/>
+	
+	<!--Halloween Molotov-->
+	<object path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
+	<model path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>
+	<unit path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false" load="true"/>
+	<material_config path="units/pd2_mod_halloween/weapons/wpn_npc_hatman_molotov/wpn_npc_hatman_molotov" force="false"/>	
+	
+	<!--Headless TitanDozer (Boss)-->	
+	<unit path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman" force="true" load="true"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman_husk" force="true" load="true"/>	
+	<object path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman" force="false"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman" force="false"/>
+	<model path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman" force="false"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman_contour" force="false"/>
+	<sequence_manager path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman" force="false"/>
+	<!--textures-->
+	<texture path="units/pd2_mod_halloween/characters/ene_headless_hatman/hatman_df" force="false"/>	
+	
+	<!--Titan Cloaca-->	
+	<model path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<object path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<sequence_manager path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<unit path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
+	<cooked_physics path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
+	<material_config path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
+	<unit path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
+
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_df" load="true"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_dead_df" load="true"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df" load="true"/>
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op" load="true"/>
+	
+	<!--Summers-->
+	<object path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_summers/ene_summers_husk" force="false" load="true"/>
+	
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_body_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_mask_nm" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_summers/summers_face_nm" force="false"/>	
+	<effect path="effects/payday2/particles/explosions/summers_footstep" load="false"/>	
+	
+
+	<!--Summers Flamethrower-->
+	<cooked_physics path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<model path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<object path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<material_config path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers"/>
+	<unit path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers" load="false"/>		
+	<texture path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/flamethrower_summers_df"/>
+	<texture path="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/flamethrower_summers_nm"/>
+	
+	<material_config path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<model path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<object path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<material_config path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers_thq" force="false"/>
+	<cooked_physics path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" force="false"/>
+	<unit path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/wpn_fps_fla_mk2_body_fierybeast_summers" load="false" force="false"/>
+	<texture path="units/payday2_cash/safes/cop/weapons/wpn_fps_fla_mk2_body_fierybeast_summers_pts/dragon_df" force="false"/>
+	<unit path="units/pd2_dlc_bbq/weapons/wpn_fps_fla_mk2/wpn_fps_fla_mk2_summers_npc" load="false" force="false"/>
+
+	<!--Summers' Gang-->
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/ene_phalanx_grenadier_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_head_nm" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_grenadier/phalanx_grenadier_face_nm" force="false"/>	
+
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_taser/ene_phalanx_taser_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_taser/phalanx_taser_face_df" force="false"/>
+
+	<unit path="units/payday2/weapons/wpn_fps_ass_m16/wpn_fps_ass_m16_summers_npc" load="false" force="false"/>
+
+	<object path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic" force="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic_contour" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_phalanx_medic/ene_phalanx_medic_husk" force="false" load="true"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_head_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/doctor_mask_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_phalanx_medic/phalanx_medic_face_df" force="false"/>	
+	
+
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_taser_helmet/ene_acc_phalanx_taser_helmet" />	
+	
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_grenadier_helmet/ene_acc_phalanx_grenadier_helmet" />		
+
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />	
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" load="true" />		
+	<object path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />
+	<model path="units/pd2_dlc_vip/characters/ene_acc_phalanx_medic_helmet/ene_acc_phalanx_medic_helmet" />		
+
+	<!--Buzz-->
+	<object path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>
+	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>
+	<model path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>
+	<unit path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false" load="false"/>
+	<material_config path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1_df" force="false"/>
+	<texture path="units/pd2_dlc_vip/characters/ene_acc_buzzer_1/ene_acc_buzzer_1_nm" force="false"/>	
+					
+	<!--Omnia Buff Effect-->
+	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false" load="false"/>
+	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>
+	
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/mega_rad_mutant_smoke_puff" load="false"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_01" load="false"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_02" load="false"/>
+	<effect path="effects/pd2_mod_omnia/particles/character/overkillpack/parts/green_smoke_var_03" load="false"/>
+
+	<!--Loading Screen Tips-->
+	<texture path="guis/textures/loading/hints/grenadier_load" force="false"/>	
+	<texture path="guis/textures/loading/hints/vet_cop_loading" force="false"/>	
+	<texture path="guis/textures/loading/hints/generic_tip" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_akantits" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_autumn" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_bex" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_bravos" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_chad" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_doc" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_gear" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_keith" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_lpf" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_murkies" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_spring" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_squad" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_summers" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tdozer" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_thrt" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tshield" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tsniper" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tspook" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_tswat" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_ttaser" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_winters_sc" force="false"/>	
+	<texture path="guis/textures/loading/hints/enemy_zeal_sc" force="false"/>	
+	<texture path="guis/textures/loading/hints/loading_australia" force="false"/>	
+	<texture path="guis/textures/loading/hints/loading_jackal" force="false"/>	
+	<texture path="guis/textures/loading/hints/loading_omnia" force="false"/>	
+
+	<!--Optimized gas-->
+	<effect path="effects/particles/explosions/cs_grenade_smoke_sc" force="false"/>
+	<effect path="effects/particles/explosions/cs_grenade_smoke_ds_sc" force="false"/>
+	
+	<!--Sniper Trails-->
+	<effect path="effects/particles/weapons/sniper_trail_sc" force="false"/>
+	<effect path="effects/particles/weapons/titan_trail_sc" force="false"/>
+	
+	<!--Stat Boost-->
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p1_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_total_ammo_p3_sc"/>
+	<texture path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_team_exp_money_p3_sc"/>
+	
+	<!--Incendiary Grenade-->
+	<effect path="effects/payday2/particles/explosions/grenade_incendiary_explosion_sc" load="false"/>
+	
+	<!--Incendiary Slug-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_slug_fire"/>
+	
+	<!--RPK banana mag-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_lmg_rpk_m_standard"/>	
+	
+	<!--AK drum mag-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_ak_m_drum"/>
+
+	<!--M4 Drum-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum"/>
+	
+	<!--Some angled grip, forgot what this one was lol-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_afg"/>
+	
+	<!--that ugly tan vert grip-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_stubby"/>
+	
+	<!--The other vert grip-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_vg_ass_smg_verticalgrip"/>
+	
+	<!--Saiga Drum-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd"/>
+	
+	<!--MP5 Drum-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mp5_m_drum"/>
+	
+	<!--Blank Statboost-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_sc_none"/>
+	
+	<!--SC Skill atlas-->
+	<texture path="guis/textures/pd2/skilltree/icons_atlas_sc"/>
+	
+	<!--ROF mods-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_slower_rof"/>	
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_faster_rof"/>	
+	
+	<!--I LOVE TO RELOAD DURING A HEIST-->
+	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<cooked_physics path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<model path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<object path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker" load="false"/>
+	<unit path="units/pd2_dlc_west/weapons/wpn_fps_x_peacemaker/wpn_fps_x_peacemaker_npc" load="false"/>
+			
+	<!--Birdshot (unused)-->
+	<!--
+	<texture path="guis/dlcs/gage_pack_shotgun/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_a_custom_free" force="true"/
+	>-->
+
+	<!--SKR-7 SPREE BABY!!!-->
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_mac10_s_no"/> 			
+	
+	<!--G3 Sniper Barrel Icon-->	
+	<texture path="guis/dlcs/gage_pack_assault/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_g3_b_sniper" force="true"/>
+	
+	<!--Saiga Drum Mag fix-->
+	<material_config path="units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd_thq"/>
+		
+	<!--M4 Drum Mag fix (note: could probably add a proper THQ config now)-->
+	<material_config path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum" force="true"/>
+	<model path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum" force="true"/>
+	
+	<!--Test skin texture for M4 Drum, remove? I don't know how well this works.-->
+	<texture path="units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum_df_cc" force="true"/>
+	
+	<!--Not getting rid of my NPC weps dammit-->
+	<!--NPC M4-->
+	<model path="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_m4/m4_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_m4/m4_nm" force="true"/>
+
+	<!--NPC g36-->
+	<texture path="units/payday2/weapons/wpn_npc_g36/g36_df" force="true"/>
+	
+	<!--NPC M4 Yellow-->
+	<model path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>
+	<object path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>	
+	
+	<!--NPC Mp5-->
+	<model path="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" force="true"/>
+
+	<!--NPC UMP-->
+	<model path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump_nm" force="true"/>	
+	
+	<!--NPC R870-->
+	<model path="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_r870/r870_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_r870/r870_nm" force="true"/>	
+		
+	<!--NPC Saiga-->
+	<model path="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_saiga/saiga_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_saiga/saiga_nm" force="true"/>
+
+	<!--NPC M1014 Benelli-->
+	<model path="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" force="true"/>
+	
+	<!--NPC M308 again? Might need to look into that other texture-->
+	<model path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_scar_murkywater/mk17_df" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_scar_murkywater/wpn_npc_scar_murkywater" force="true"/>
+
+	<!--NPC Sniper Overrides-->
+	<!--swat-->
+	<material_config path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_contour" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>		
+	<model path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+	<object path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_sniper/wpn_npc_sniper_p1_df" force="true"/>
+	<!--russian-->
+	<!--material_config path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd_contour" force="true"-->
+	<material_config path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" force="true"/>
+	<model path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" force="true"/>
+	<object path="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" force="true"/>		
+	<!--glint texture-->
+	<texture path="units/payday2/weapons/wpn_npc_sniper/material_flare_il"/>
+	
+	<!--NPC DS Police Sniper-->
+	<unit path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<model path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<object path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<cooked_physics path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />
+	<material_config path="units/payday2/weapons/wpn_npc_sniper_sc/wpn_npc_sniper_sc" />	
+	
+	<!--NPC DS Merc Sniper-->
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
+	<model path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
+	<object path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
+	<cooked_physics path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
+	<material_config path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc" />
+	<material_config path="units/pd2_dlc_mad/weapons/wpn_npc_svd_sc/wpn_npc_svd_sc_contour" />
+	
+	<!--P90 Tan Body-->
+	<texture path="units/payday2/weapons/wpn_fps_smg_p90_pts/body_tan_df"/>
+	<unit path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan" load="false"/>
+	<model path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
+	<material_config path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
+	<material_config path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_cc"/>
+	<material_config path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_cc_thq"/>
+	<material_config path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan_thq"/>
+	<object path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
+	<cooked_physics path="units/payday2/weapons/wpn_fps_smg_p90_pts/wpn_fps_smg_p90_body_tan"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_p90_body_tan"/>
+	
+	<!--Commando Rocket-->
+	<texture path="units/pd2_dlc_friend/weapons/wpn_third_gre_ray_pts/wpn_third_gre_ray_rocket_df" force="true"/>
+	<material_config path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>
+	<model path="units/pd2_dlc_friend/weapons/wpn_third_ray_fired_rocket/wpn_third_ray_fired_rocket" force="true"/>	
+
+	<!--Cloaked MP5-->
+	<model path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<object path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<unit path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak" load="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<material_config path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_dead"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
+	
+	<!--OVERKILL removed this at somepoint-->
+	<texture path="units/characters/enemies/textures/police_force_nm" />
+			
+	<!--murky and OMNIA seqmans-->
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
+	<sequence_manager path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky"/>
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_1/ene_bulldozer_1"/>	
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"/>		
+    <sequence_manager path="units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3"/>		
+	<sequence_manager path="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" force="false"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249" force="false"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic" force="false"/>		
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga" force="false"/>
+	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" force="false"/>
+	
+	<!--murky heavy hat-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false" load="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>	
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>	
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_hat/ene_acc_murky_hat" force="false"/>		
+	
+	<!--MOTHER FUCKING BERET ACC FUCK YEAH BEST FEATURE-->
+	<unit path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false" load="false"/>
+	<object path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>
+	<cooked_physics path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
+	<material_config path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
+	<model path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
+						
+	<!--"NYPD" murky (just soft cap guys who look more like vanilla murkies-->
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1_contour" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1_husk" force="false" load="true"/>
+	
+	<!--2-->
+	<object path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
+	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
+	<model path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false" load="true"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2" force="false"/>
+	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_contour" force="false"/>
+	<unit path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_husk" force="false" load="true"/>
+
+	<!--ben guy acc-->	
+	<material_config path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />
+	<cooked_physics path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />	
+	<unit path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" load="true" />		
+	<object path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />
+	<model path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />	
+	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />
+	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
+	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_df" />	
+	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmets_shotgun_df" />	
+	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_nm" />	
+	
+	<texture path="units/pd2_mod_nypd/characters/shared_textures/murky_heavy_df" />	
+			
+	<texture path="units/payday2/characters/shared_textures/mask_df" />	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_head_nm" />	
+	
+    <!--murky glass-->
+     <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>
+     <texture path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_op" force="false"/>	
+		
+	<!--zeal city 3 hat-->
+	<object path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<cooked_physics path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<model path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>
+	<unit path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false" load="true"/>
+	<material_config path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_city_3_hat/ene_acc_zeal_city_3_hat" force="false"/>			
+	
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/zomnia_glass_op" force="false"/>	
+				
+	<!--reinbeck muzzleflash-->
+	<effect path="effects/particles/shotgun/muzzleflash" load="false"/>
+	<!--shotgun muzzleflash-->
+	<effect path="effects/particles/shotgun/shotgun_gen" load="false"/>
+	<!--stronger joker convert money effect-->
+	<effect path="effects/payday2/particles/impacts/money_impact_pd2" force="true" load="false"/>
+	
+	<!--unique vanilla heavy shotgunner assets-->
+	<!--textures-->
+	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />	
+	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
+	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />	
+	
+	<!--vanilla unit texture overrides and other new stuff-->
+	<texture path="units/payday2/characters/shared_textures/helmets_atlas_df" force="true"/>
+			
+	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"  load="true"/>
+		
+	<object path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
+	<cooked_physics path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
+	<model path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>
+	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp"  load="true"/>
+	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp" force="false"/>	
+	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_swamp/wpn_npc_swamp_contour" force="false"/>	
+	
+	<object path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<cooked_physics path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<model path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false" load="true"/>
+	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>	
+	<sequence_manager path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df" force="false"/>	
+	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_nm" force="false"/>	
+	
+
+	<!-- Bravo Grenades -->
+	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" load="true"/>
+	<unit path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_husk" load="true"/>
+	<cooked_physics path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<model path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<object path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<sequence_manager path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag"/>	
+	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_df"/>	
+	<texture path="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag_nm"/>
+	<effect path="effects/payday2/particles/explosions/wpn_npc_bravo_frag_flash"/>
+	<effect path="effects/payday2/particles/explosions/wpn_npc_spring_frag_flash"/>	
+	
+	<!-- Spring Cluster Grenades -->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"/>
+	<material_config path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"/>
+	<model path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"/>
+	<object path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck"/>
+	<unit path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck" load="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck_df"/>
+	<texture path="units/payday2/weapons/wpn_npc_cluster_fuck/wpn_npc_cluster_fuck_il"/>
+	
+	<cooked_physics path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"/>
+	<model path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"/>
+	<object path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade"/>
+	<unit path="units/payday2/weapons/wpn_npc_child_grenade/wpn_npc_child_grenade" load="true"/>
+	
+    <!--not shit secret masks-->
+	<object path="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" force="true"/>
+    <object path="units/pd2_dlc_sms/masks/sms_02/msk_sms_02" force="true"/>
+    <object path="units/pd2_dlc_sms/masks/sms_03/msk_sms_03" force="true"/>
+    <object path="units/pd2_dlc_sms/masks/sms_04/msk_sms_04" force="true"/>
+	<model path="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" force="true"/>
+    <model path="units/pd2_dlc_sms/masks/sms_02/msk_sms_02" force="true"/>
+    <model path="units/pd2_dlc_sms/masks/sms_03/msk_sms_03" force="true"/>
+    <model path="units/pd2_dlc_sms/masks/sms_04/msk_sms_04" force="true"/>
+    <material_config path="units/pd2_dlc_sms/masks/sms_01/msk_sms_01" force="true"/>
+    <material_config path="units/pd2_dlc_sms/masks/sms_02/msk_sms_02" force="true"/>
+    <material_config path="units/pd2_dlc_sms/masks/sms_03/msk_sms_03" force="true"/>
+    <material_config path="units/pd2_dlc_sms/masks/sms_04/msk_sms_04" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_01/sms_01_df" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_02/sms_02_df" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_03/sms_03_df" force="true"/>
+    <texture path="units/pd2_dlc_sms/masks/sms_04/sms_04_df" force="true"/>
+	
+	<!--Perk Decks-->
+    <texture path="guis/textures/pd2/specialization/icons_atlas" force="true"/>
+    <texture path="guis/dlcs/chico/textures/pd2/specialization/icons_atlas" force="true"/>
+    <texture path="guis/dlcs/wild/textures/pd2/specialization/icons_atlas" force="true"/>	
+	<!--grenade throwable case-->
+	<texture path="guis/textures/pd2/equipment" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/deployables/armor_kit" force="true"/>
+	<texture path="guis/textures/pd2/blackmarket/icons/deployables/outline/armor_kit" force="true"/>	
+	<unit path="units/payday2/equipment/gen_equipment_grenade_crate/gen_equipment_grenade_crate_dummy_unit" load="true" />	
+	<texture path="units/payday2/characters/shared_textures/equipment_armor_bag_df" force="true"/>
+	
+	<!--suit inventory icons-->
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/loud_suit"/>
+	<texture path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/jumpsuit_flecktarn"/>
+	<texture path="guis/dlcs/trd/textures/pd2/blackmarket/icons/player_styles/jumpsuit_flatgreen"/>		
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_prison"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/suit_sunny"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/two_piece_suit"/>
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/player_styles/poggers"/>	
+		
+	<!--zombie necro cloaker-->
+	<material_config path="units/pd2_dlc_help/props/hlp_prop_giant_cloaker/hlp_prop_giant_cloaker"/>
+	<material_config path="units/pd2_dlc_nails/props/nls_prop_giant_cloaker/nls_prop_giant_cloaker"/>
+
+	<!--NPC Crosskill.45 1911-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>		
+	<object path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" load="true" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_df"/>
+	<texture path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911_nm"/>
+	
+	<!--NPC ScarLight-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>	
+	<material_config path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>		
+	<object path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light" load="true" force="false"/>
+	
+	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_df"/>
+	<texture path="units/payday2/weapons/wpn_npc_scar_light/wpn_npc_scar_light_nm"/>
+
+	<!--female cop husk fixes-->	
+	<unit path="units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1_husk" load="true" force="true" />	
+	<unit path="units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2_husk" load="true" force="true" />	
+	<unit path="units/payday2/characters/ene_fbi_female_3/ene_fbi_female_3_husk" load="true" force="true" />	
+	<unit path="units/payday2/characters/ene_fbi_female_4/ene_fbi_female_4_husk" load="true" force="true" />	
+	<!--object files just in case-->
+	<object path="units/payday2/characters/ene_fbi_female_1/ene_fbi_female_1" force="true" />	
+	<object path="units/payday2/characters/ene_fbi_female_2/ene_fbi_female_2" force="true" />	
+	<object path="units/payday2/characters/ene_fbi_female_3/ene_fbi_female_3" force="true" />	
+	<object path="units/payday2/characters/ene_fbi_female_4/ene_fbi_female_4" force="true" />		
+	    
+	<!--raincoats-->
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true" load="true"/>
+	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat/glc_acc_raincoat" force="true"/>
+
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie_sc/glc_acc_raincoat_bonnie_sc" load="true"/>
+	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie_sc/glc_acc_raincoat_bonnie_sc"/>
+	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie_sc/glc_acc_raincoat_bonnie_sc"/>
+	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie_sc/glc_acc_raincoat_bonnie_sc"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat_bonnie_sc/glc_acc_raincoat_bonnie_sc"/>
+
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true" load="true"/>
+	<object path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	<model path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	<material_config path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_raincoat_ethan/glc_acc_raincoat_ethan" force="true"/>
+	
+	<unit path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true" load="true"/>
+	<object path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	<model path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	<material_config path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	<cooked_physics path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
+	
+	<!--fixed male suit heister faces and necks-->
+ 	<model path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" force="true"/>
+	<model path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_menu_1" force="true"/>	 
+	
+	<!--Alpha blood effects improved-->
+	<texture path="effects/particles/bullet_hit/flesh/textures/e_bullet_impact_blood_01_df" force="true"/>
+	<texture path="effects/particles/bullet_hit/flesh/textures/e_bullet_impact_blood_02_df" force="true"/>
+	<texture path="effects/particles/bullet_hit/flesh/textures/e_head_chunks_01_df" force="true"/>
+	<effect path="effects/particles/bullet_hit/flesh/bullet_hit_blood" force="true"/>
+	<effect path="effects/particles/bullet_hit/flesh/bullet_impact_flesh_01" force="true"/>
+	<effect path="effects/particles/bullet_hit/flesh/bullet_impact_flesh_02" force="true"/>
+	<effect path="effects/particles/bullet_hit/flesh/bullet_impact_flesh_03" force="true"/>
+	<effect path="effects/particles/bullet_hit/flesh/bullet_impact_flesh_04" force="true"/>	
+	<effect path="effects/payday2/particles/impacts/blood/blood_collection_a" force="true"/>	
+	<effect path="effects/payday2/particles/impacts/blood/blood_impact_a" force="true"/>	
+	<effect path="effects/payday2/particles/impacts/blood/blood_impact_b" force="true"/>		
+	<!--Headshot effect-->
+	<effect path="effects/payday2/particles/impacts/blood/brain_splat" />		
+	<texture path="effects/textures/brain_impacts_df" />
+	
+	<!-- Halloween Sword icon -->
+	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/>
+	
+	<!--Xmas menu assets-->
+	<cooked_physics path="units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc"/>	
+	<model path="units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc"/>
+	<object path="units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc"/>
+	<unit path="units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc"/>
+	<cooked_physics path="units/pd2_dlc_cane/props/cne_prop_snow_pile_01_sc/cne_prop_snow_pile_01_sc"/>	
+	<model path="units/pd2_dlc_cane/props/cne_prop_snow_pile_01_sc/cne_prop_snow_pile_01_sc"/>
+	<object path="units/pd2_dlc_cane/props/cne_prop_snow_pile_01_sc/cne_prop_snow_pile_01_sc"/>
+	<unit path="units/pd2_dlc_cane/props/cne_prop_snow_pile_01_sc/cne_prop_snow_pile_01_sc"/>
+
+	<!-- Actually Good Third Person Animations -->
+	<animation path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_crh_run_bwd" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_crh_run_fwd" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_crh_run_l" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_crh_run_r" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_idle_to_cbt_sup_idle" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_reload" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_run_bwd" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_run_bwd_to_cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_run_fwd" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_run_fwd_to_cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_run_l" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_run_l_to_cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_run_r" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_run_r_to_cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_shoot" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_shoot_aut" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_to_std" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_walk_bwd" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_walk_fwd" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_walk_l" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_crh_walk_r" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_arrest_gesture_var1" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_comehere_gesture_var1" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_idle" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_idle_to_cbt_sup_idle" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_melee" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_point_gesture_var1" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_shoot" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_shoot_aut" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_std_to_crh" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_sup_shoot" force="true"/>
+	<animation path="anims/shared/pistol/combat/cbt_sup_shoot_aut" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_crh_run_bwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_crh_run_fwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_crh_run_l" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_crh_run_r" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_idle_to_hos_sup_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_run_bwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_run_bwd_to_hos_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_run_fwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_run_fwd_to_hos_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_run_l" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_run_l_to_hos_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_run_r" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_run_r_to_hos_crh_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_to_std" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_walk_bwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_walk_fwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_walk_l" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_crh_walk_r" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_std_call" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_std_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_std_idle_to_hos_sup_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_std_supprised_fwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_std_to_crh" force="true"/>
+	<animation path="anims/shared/pistol/hostile/hos_sup_idle" force="true"/>
+	<animation path="anims/shared/pistol/hostile/sprint_bwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/sprint_fwd" force="true"/>
+	<animation path="anims/shared/pistol/hostile/sprint_left" force="true"/>
+	<animation path="anims/shared/pistol/hostile/sprint_right" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_crh_run_bwd" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_crh_run_fwd" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_crh_run_l" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_crh_run_r" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_idle_to_cbt_sup_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_rel" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_run_bwd" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_run_bwd_to_cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_run_fwd" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_run_fwd_to_cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_run_l" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_run_l_to_cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_run_r" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_run_r_to_cbt_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_shoot" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_shoot_aut" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_shotgun_rel" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_shotgun_shoot" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_to_std" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_walk_bwd" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_walk_fwd" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_walk_l" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_crh_walk_r" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_arrest_gesture_var1" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_comehere_gesture_var1" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_idle_to_cbt_sup_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_melee" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_point_gesture_var1" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_shoot" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_shoot_aut" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_shotgun_shoot" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_std_to_crh" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_sup_idle" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_sup_shoot" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_sup_shoot_aut" force="true"/>
+	<animation path="anims/shared/rifle/combat/cbt_sup_shotgun_shoot" force="true"/>
+	<animation path="anims/shared/rifle/generic/gen_sup_lvl1_enter_var1" force="true"/>
+	<animation path="anims/shared/rifle/generic/gen_sup_lvl1_idle_var1" force="true"/>
+	<animation path="anims/shared/rifle/generic/gen_sup_lvl2_enter_var1" force="true"/>
+	<animation path="anims/shared/rifle/generic/gen_sup_lvl2_idle_var1" force="true"/>
+	<animation path="anims/shared/rifle/generic/gen_untie_enter" force="true"/>
+	<animation path="anims/shared/rifle/generic/gen_untie_exit" force="true"/>
+	<animation path="anims/shared/rifle/generic/gen_untie_idle" force="true"/>
+	<animation path="anims/shared/rifle/generic/possessed_cop" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_hos_crh_run_bwd" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_hos_crh_run_fwd" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_hos_crh_run_l" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_hos_crh_run_r" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_idle_to_hos_sup_idle" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_run_bwd" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_run_bwd_to_hos_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_run_fwd" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_run_fwd_to_hos_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_run_l" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_run_l_to_hos_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_run_r" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_run_r_to_hos_crh_idle" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_to_std" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_walk_bwd" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_walk_fwd" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_walk_l" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_crh_walk_r" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_std_call" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_std_idle" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_std_idle_to_hos_sup_idle" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_std_supprised_fwd" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_std_to_crh" force="true"/>
+	<animation path="anims/shared/rifle/hostile/hos_sup_idle" force="true"/>
+</table>

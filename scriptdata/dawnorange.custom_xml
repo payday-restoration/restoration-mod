@@ -1,0 +1,55 @@
+<environment>
+	<metadata/>
+	<data>
+		<sky_orientation>
+			<param key="rotation" value="-89.220092773438"/>
+		</sky_orientation>
+		<others>
+			<param key="underlay" value="core/environments/skies/sky_0902_overcast/sky_0902_overcast"/>
+			<param key="global_texture" value="units/payday2/cubemaps/cubemap_window_weak_df"/>
+			<param key="sun_ray_color" value="1 0.560784 0.25098"/>
+			<param key="sun_ray_color_scale" value="1.311"/>
+		</others>
+		<post_effect>
+			<deferred>
+				<deferred_lighting>
+					<apply_ambient>
+						<param key="fog_min_range" value="0"/>
+						<param key="ambient_color_scale" value="1.189"/>
+						<param key="fog_start_color" value="0.8 0.431373 0.247059"/>
+						<param key="fog_max_range" value="40698"/>
+						<param key="fog_far_low_color" value="0.576471 0.588235 0.560784"/>
+						<param key="sky_bottom_color_scale" value="0.194"/>
+						<param key="sky_bottom_color" value="1 0.792157 0.576471"/>
+						<param key="sky_top_color_scale" value="0.194"/>
+						<param key="ambient_scale" value="0.194"/>
+						<param key="effect_light_scale" value="0.5"/>
+						<param key="ambient_falloff_scale" value="0"/>
+						<param key="ambient_color" value="0.0196078 0.0941176 0.2"/>
+						<param key="sky_top_color" value="0.582677 0.415872 0.171376"/>
+					</apply_ambient>
+				</deferred_lighting>
+			</deferred>
+			<shadow_processor>
+				<shadow_rendering>
+					<shadow_modifier>
+						<param key="slice1" value="1300 3034 0"/>
+						<param key="shadow_slice_overlap" value="1 1 1"/>
+						<param key="shadow_slice_depths" value="1301 3034 10000"/>
+						<param key="slice3" value="9999 50000 0"/>
+						<param key="slice0" value="0 1301 0"/>
+						<param key="slice2" value="3033 10000 0"/>
+					</shadow_modifier>
+				</shadow_rendering>
+			</shadow_processor>
+		</post_effect>
+		<underlay_effect>
+			<sky>
+				<param key="color2" value="0.54902 0.494118 0.384314"/>
+				<param key="color2_scale" value="1.395"/>
+				<param key="color0" value="0.901961 0.764706 0.360784"/>
+				<param key="color0_scale" value="0.659"/>
+			</sky>
+		</underlay_effect>
+	</data>
+</environment>

@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<tweak name="core/shaders/post_processor" extension="post_processor">
+    <search>
+        <?xml version="1.0" encoding="utf-8" ?>
+        <post_processor/>
+    </search>
+    <target>
+    <materials>
+        <!-- Color Plus -->
+        <material name="cg_plus">
+            <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>
+            <variable name="LUT_settings_b" type="vector3" value="0 0 0"/>
+            <variable name="contrast" type="scalar" value="0"/>
+            <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
+            <filter_color_texture file="core/textures/cg_plus"/>
+        </material>
+        <!-- Color Force -->
+        <material name="cg_force">
+            <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>
+            <variable name="LUT_settings_b" type="vector3" value="0 0 0"/>
+            <variable name="contrast" type="scalar" value="0"/>
+            <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
+            <filter_color_texture file="core/textures/cg_force"/>
+        </material>
+		<!-- Color E3 Nice -->
+		 <material name="cg_e3nice">
+            <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>
+            <variable name="LUT_settings_b" type="vector3" value="0 0 0"/>
+            <variable name="contrast" type="scalar" value="0"/>
+            <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
+            <filter_color_texture file="core/textures/cg_e3nice"/>
+        </material>
+        <!-- Color RVD1 -->
+        <material name="cg_rvd1">
+            <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>
+            <variable name="LUT_settings_b" type="vector3" value="0 0 0"/>
+            <variable name="contrast" type="scalar" value="0"/>
+            <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
+            <filter_color_texture file="core/textures/cg_rvd1"/>
+        </material>
+        <!-- Color Halloween Green -->
+        <material name="cg_halloween">
+            <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>
+            <variable name="LUT_settings_b" type="vector3" value="0 0 0"/>
+            <variable name="contrast" type="scalar" value="0"/>
+            <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
+            <filter_color_texture file="core/textures/cg_halloween"/>
+        </material>
+         <!-- Color Halloween Orange -->
+        <material name="cg_halloween2">
+            <variable name="LUT_settings_a" type="vector3" value="0 0 0"/>
+            <variable name="LUT_settings_b" type="vector3" value="0 0 0"/>
+            <variable name="contrast" type="scalar" value="0"/>
+            <reflection_texture file="core/textures/cg_he"/> <!-- Fire LUT -->
+            <filter_color_texture file="core/textures/cg_halloween2"/>
+        </material>
+    </materials>
+	
+        <!-- Color Plus -->
+        <effect name="color_plus">
+            <defined platform="PS3 X360">
+                <combiner diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_plus" scriptable="lut_settings"/>
+                <combiner diffuse_texture="albedo" self_illumination_texture="lut_target" dst="bb" render_template="post_color_grading" material="cg_plus" scriptable="lut_settings"/>
+            <else/>
+                <combiner src_respect_viewport="false" dst_respect_viewport="false" diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_plus" scriptable="lut_settings"/>
+                <combiner diffuse_texture="bb" self_illumination_texture="lut_target" dst="back_buffer" render_template="post_color_grading" material="cg_plus" scriptable="lut_settings"/>
+            </defined>
+        </effect>
+         <!-- Color Force -->
+        <effect name="color_force">
+            <defined platform="PS3 X360">
+                <combiner diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_force" scriptable="lut_settings"/>
+                <combiner diffuse_texture="albedo" self_illumination_texture="lut_target" dst="bb" render_template="post_color_grading" material="cg_force" scriptable="lut_settings"/>
+            <else/>
+                <combiner src_respect_viewport="false" dst_respect_viewport="false" diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_force" scriptable="lut_settings"/>
+                <combiner diffuse_texture="bb" self_illumination_texture="lut_target" dst="back_buffer" render_template="post_color_grading" material="cg_force" scriptable="lut_settings"/>
+            </defined>
+        </effect>
+		 <!-- Color E3 Nice -->
+        <effect name="color_e3nice">
+            <defined platform="PS3 X360">
+                <combiner diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_e3nice" scriptable="lut_settings"/>
+                <combiner diffuse_texture="albedo" self_illumination_texture="lut_target" dst="bb" render_template="post_color_grading" material="cg_e3nice" scriptable="lut_settings"/>
+            <else/>
+                <combiner src_respect_viewport="false" dst_respect_viewport="false" diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_e3nice" scriptable="lut_settings"/>
+                <combiner diffuse_texture="bb" self_illumination_texture="lut_target" dst="back_buffer" render_template="post_color_grading" material="cg_e3nice" scriptable="lut_settings"/>
+            </defined>
+        </effect>
+		 <!-- Color RVD1 -->
+        <effect name="color_rvd1">
+            <defined platform="PS3 X360">
+                <combiner diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_rvd1" scriptable="lut_settings"/>
+                <combiner diffuse_texture="albedo" self_illumination_texture="lut_target" dst="bb" render_template="post_color_grading" material="cg_rvd1" scriptable="lut_settings"/>
+            <else/>
+                <combiner src_respect_viewport="false" dst_respect_viewport="false" diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_rvd1" scriptable="lut_settings"/>
+                <combiner diffuse_texture="bb" self_illumination_texture="lut_target" dst="back_buffer" render_template="post_color_grading" material="cg_rvd1" scriptable="lut_settings"/>
+            </defined>
+        </effect>
+         <!-- Color Halloween Green -->
+        <effect name="color_halloween">
+            <defined platform="PS3 X360">
+                <combiner diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_halloween" scriptable="lut_settings"/>
+                <combiner diffuse_texture="albedo" self_illumination_texture="lut_target" dst="bb" render_template="post_color_grading" material="cg_halloween" scriptable="lut_settings"/>
+            <else/>
+                <combiner src_respect_viewport="false" dst_respect_viewport="false" diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_halloween" scriptable="lut_settings"/>
+                <combiner diffuse_texture="bb" self_illumination_texture="lut_target" dst="back_buffer" render_template="post_color_grading" material="cg_halloween" scriptable="lut_settings"/>
+            </defined>
+        </effect>
+         <!-- Color Halloween Orange -->
+        <effect name="color_halloween2">
+            <defined platform="PS3 X360">
+                <combiner diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_halloween2" scriptable="lut_settings"/>
+                <combiner diffuse_texture="albedo" self_illumination_texture="lut_target" dst="bb" render_template="post_color_grading" material="cg_halloween2" scriptable="lut_settings"/>
+            <else/>
+                <combiner src_respect_viewport="false" dst_respect_viewport="false" diffuse_texture="low_target_6" dst="lut_target" render_template="post_color_grading_prepare" material="cg_halloween2" scriptable="lut_settings"/>
+                <combiner diffuse_texture="bb" self_illumination_texture="lut_target" dst="back_buffer" render_template="post_color_grading" material="cg_halloween2" scriptable="lut_settings"/>
+            </defined>
+        </effect>
+    </target>
+</tweak>

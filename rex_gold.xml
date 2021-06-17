@@ -1,0 +1,35 @@
+<table directory="assets">
+	<add>
+		<material_config path="units/pd2_mod_custom/pickups/gold_bars/gold_bars" unload="true"/>
+		<material_config path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_contour" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_df" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_nm" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_gsma" unload="true"/>
+		<model path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_a" unload="true"/>
+		<object path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_a" unload="true"/>
+		<sequence_manager path="units/pd2_mod_custom/pickups/gold_bars/gold_bars" unload="true"/>
+		<unit path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_a" unload="true"/>
+	</add>
+	<add>
+		<material_config path="units/pd2_mod_custom/pickups/gold_bars/gold_bars" unload="true"/>
+		<material_config path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_contour" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_df" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_nm" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_gsma" unload="true"/>
+		<model path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_b" unload="true"/>
+		<object path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_b" unload="true"/>
+		<sequence_manager path="units/pd2_mod_custom/pickups/gold_bars/gold_bars" unload="true"/>
+		<unit path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_b" unload="true"/>
+	</add>
+	<add>
+		<material_config path="units/pd2_mod_custom/pickups/gold_bars/gold_bars" unload="true"/>
+		<material_config path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_contour" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_df" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_nm" unload="true"/>
+		<texture path="units/pd2_mod_custom/pickups/gold_bars/gold_bars_gsma" unload="true"/>
+		<model path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_c" unload="true"/>
+		<object path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_c" unload="true"/>
+		<sequence_manager path="units/pd2_mod_custom/pickups/gold_bars/gold_bars" unload="true"/>
+		<unit path="units/pd2_mod_custom/pickups/gold_bars/gen_pku_gold_c" unload="true"/>
+	</add>
+</table>

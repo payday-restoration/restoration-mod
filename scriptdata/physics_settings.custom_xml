@@ -1,0 +1,529 @@
+<physics_settings>
+
+	<!--******************-->
+	<!-- PHYSICS SETTINGS -->
+	<!--******************-->
+	
+	<!-- Extra distance to check when doing collision tests:
+	
+	   higher value   - lower risk of bullet-through-paper, more stable
+		 smaller value  - faster
+		 havoks default - 10
+	-->
+	<!-- <physics parameter="collision_tolerance" value="15" /> -->
+	
+	<!-- Radius of extra "shell" to add to all collision objects to speed up testing.
+	   higher value   - object's seem to float above the collision
+		 smaller value  - slower
+		 havoks default - 10
+	-->
+	<!-- <physics parameter="collision_radius"    value="5" /> -->
+	
+	<!-- Default damping factors applied to objects to reduce linear and angular momentum.
+	
+	   higher value   - more stable, less risk of "explosion"
+		 lower value    - more realistic simulation, objects do not loose energy
+		 havoks default - 0.1
+	-->
+	<physics parameter="linear_damping"      value="0.005" />
+	<physics parameter="angular_damping"     value="0.005" />
+
+	<!-- Default friciton and restitution for objects. -->
+	<physics parameter="friction"            value="0.6" />
+	<physics parameter="restitution"         value="0.06" />
+	
+		
+	<!--****************-->
+	<!-- BODY TEMPLATES -->
+	<!--****************-->
+	
+	<body_templates>
+		<!-- Notes for Payday 2-->
+		
+		<!-- For Payday 2 we should consider setting    -->
+		<!-- give_standing_velocity="false" for all     -->
+		<!-- objects and add ray pass for glass/windows -->
+
+		<!-- STATIC TEMPLATES -->
+		<!-- static_all          - replaces static         -->
+		<!-- static_nav          - replaces graph_blocker  -->
+		<!-- static_mover        - replaces mover_blocker  -->
+		<!-- static_ray          - replaces raycoll_static -->
+		<!-- static_all_no_ray   - replaces nav_walk  -->
+		<!-- static_all_no_ray   - replaces static_no_ray  -->
+
+		<!-- ANIMATED TEMPLATES -->
+		<!-- animated_all        - replaces animated                       -->
+		<!-- *animated_nav       - this template wont be nessecary         -->
+		<!-- animated_mover      - this template doesn't exist in Payday 1 -->
+		<!-- animated_ray        - replaces raycoll                        -->
+		<!-- animated_all_no_ray - replaces animated_no_ray                -->
+		
+		<!-- DYNAMIC TEMPLATES -->
+		<!-- dynamic_debris       - replaces debris -->
+		<!-- dynamic_pushable     - replaces dynamic -->
+		<!-- dynamic_not_pushable - replaces small_prop -->
+		
+		
+		<template name="editor">
+			<properties no_collision="true" ignore_static="true" editable="true" findable="true" editor_only="true"/>
+			<properties collides_with_mover="false" collision_force_from_mover="false" pushed_by_mover="false"/>
+			<properties give_standing_velocity="false" get_standing_weight="false" collides_with_wheels="false"/>
+			<properties ray="block" add_ray_type="editor" remove_ray_type="body camera bullet"/>
+			<properties wind_coefficient="0"/>
+		</template>		
+		
+		<template name="editor_animated">
+			<properties no_collision="true" ignore_static="true" keyframed="true" findable="true" editor_only="true"/>
+			<properties collides_with_mover="false" collision_force_from_mover="false" pushed_by_mover="false"/>
+			<properties give_standing_velocity="false" get_standing_weight="false" collides_with_wheels="false"/>
+			<properties ray="block" add_ray_type="editor" remove_ray_type="body camera bullet"/>
+			<properties wind_coefficient="0"/>
+		</template>
+
+		<!-- Only used for inheritance -->
+		<template name="mover">
+			<properties no_collision="true" ignore_static="false"/>
+			<properties collides_with_mover="true" collision_force_from_mover="true" pushed_by_mover="true"/>
+			<properties give_standing_velocity="true" get_standing_weight="true" collides_with_wheels="true"/>
+			<properties water_density="2200" wind_coefficient="0"/>
+		</template>
+		
+		<!-- Remove for payday 2 -->
+		<!-- Not used anywhere -->
+		<template name="mover_collision" template="mover">
+			<properties keyframed="true"/>
+		</template>
+		
+		<!-- static_mover -->
+		<template name="mover_blocker">
+			<properties no_collision="true" ignore_static="true" editable="true" findable="true"/>
+			<properties collides_with_mover="true" collision_force_from_mover="false" pushed_by_mover="false"/>
+			<properties give_standing_velocity="false" get_standing_weight="false" collides_with_wheels="false"/>
+			<properties ray="block" add_ray_type="mover editor" remove_ray_type="body camera walk bullet"/>
+			<properties wind_coefficient="0"/>
+		</template>
+
+		<template name="vehicle_blocker" template="mover_blocker">
+			<properties no_collision="false" collides_with_wheels="true" />
+			<properties collision_class="vehicle_blocker"/>
+		</template>		
+
+		<template name="vehicle_only_blocker" template="mover_blocker">
+			<properties no_collision="false" collides_with_wheels="true" />
+			<properties collides_with_mover="false" collision_force_from_mover="false" pushed_by_mover="false"/>
+			<properties ray="block" remove_ray_type="mover"/>
+			<properties collision_class="vehicle_only_blocker"/>
+		</template>		
+
+		<!-- Remove for payday 2 -->
+		<!-- And use nav_walk_collision instead -->
+		<template name="nav_walk">
+			<properties no_collision="true" ignore_static="true" editable="true" findable="true"/>
+			<properties collides_with_mover="true" collision_force_from_mover="false" pushed_by_mover="false"/>
+			<properties give_standing_velocity="false" get_standing_weight="false" collides_with_wheels="false"/>
+			<properties ray="block" add_ray_type="mover editor walk" remove_ray_type="body camera bullet"/>
+			<properties wind_coefficient="0"/>
+		</template>
+		
+		<!-- static_nav -->
+		<template name="nav_walk_collision" template="nav_walk">
+			<properties no_collision="false"/>
+		</template>
+		
+		<!-- dynamic_pushable -->
+		<template name="dynamic">
+			<properties no_collision="false" ignore_static="false"/>
+			<properties collides_with_mover="true" collision_force_from_mover="true" pushed_by_mover="true"/>
+			<properties give_standing_velocity="false" get_standing_weight="false" collides_with_wheels="true"/>
+			<properties ray="block" add_ray_type="camera sound bullet"/>
+			<properties water_density="2200" wind_coefficient="0"/>
+			<properties collision_script_filter="100" collision_script_quiet_time="1"/>
+		</template>
+		
+		<!-- Not used anywhere -->
+		<template name="dynamic_no_ray" template="dynamic">
+			<properties ray="ignore"/>
+		</template>
+		
+		<!-- Not used anywhere -->
+		<template name="prop" template="dynamic">
+			<properties get_standing_weight="true"/>
+		</template>
+		
+		
+		<!-- dynamic_not_pushable -->
+		<template name="small_prop" template="dynamic">
+			<properties collides_with_mover="false"/>
+			<properties get_standing_weight="true" collides_with_wheels="false"/>
+			<properties remove_ray_type="camera sound"/>
+			<properties wind_coefficient="0"/>
+			<properties collides_with_wheels="true"/>
+			<properties collision_class="minor_debris"/>
+		</template>
+		
+		<!-- dynamic_debris -->
+		<template name="debris" template="dynamic">
+			<properties minor_body="true" sweep="true"/>
+			<properties collides_with_mover="false"/>
+			<properties collides_with_wheels="false"/>
+			<properties remove_ray_type="camera sound"/>
+			<properties wind_coefficient="0"/>
+			<properties collision_class="minor_debris"/>
+		</template>
+
+		<!-- Not used anywhere -->
+		<template name="hair" template="small_prop">
+			<properties collision_force_from_mover="false" pushed_by_mover="false"/>
+			<properties ray="ignore"/>
+			<properties water_density="500"/>
+		</template>
+
+		<template name="corpse" template="dynamic">
+			<properties sweep="true"/>
+			<properties collides_with_mover="false"/>
+			<properties collides_with_wheels="false"/>
+			<properties remove_ray_type="camera sound"/>
+			<properties water_density="800"/>
+			<properties collision_script_filter="250"/>
+			<properties synchronized="false"/>
+		</template>
+		
+		<!-- animated_all -->
+		<template name="animated">
+			<properties no_collision="false" ignore_static="true" keyframed="true"/>
+			<properties collides_with_mover="true" collision_force_from_mover="false" pushed_by_mover="false"/>
+			<properties give_standing_velocity="true" get_standing_weight="false" collides_with_wheels="true"/>
+			<properties ray="block" add_ray_type="camera sound bullet walk vis_graph ai_vision equipment_placement"/>
+			<properties water_density="2200" wind_coefficient="0"/>
+			<properties collision_script_filter="100" collision_script_quiet_time="1"/>
+		</template>
+		
+		<!-- animated_all_no_ray -->
+		<template name="animated_no_ray" template="animated">
+			<properties ray="ignore"/>
+		</template>
+
+
+		<!-- static_all -->
+		<template name="static">
+			<properties no_collision="false" ignore_static="true" editable="true"/>
+			<properties collides_with_mover="true" collision_force_from_mover="false" pushed_by_mover="false" />
+			<properties give_standing_velocity="false" get_standing_weight="false" collides_with_wheels="true" />
+			<properties ray="block" add_ray_type="sound camera bullet walk vis_graph ai_vision equipment_placement"/>
+			<properties wind_coefficient="0"/>
+		</template>
+		
+		<!-- static_all_no_ray -->
+		<template name="static_no_ray" template="static">
+			<properties ray="ignore"/>
+		</template>
+
+		<template name="window" template="static">
+			<properties remove_ray_type="vis_graph ai_vision" />
+		</template>
+
+		<template name="window_animated" template="animated">
+			<properties remove_ray_type="vis_graph ai_vision" />
+		</template>
+
+		<template name="vehicle">
+			<properties no_collision="false" ignore_static="false" findable="true" keyframed="true"/>
+			<properties collides_with_mover="true" collision_force_from_mover="false" pushed_by_mover="false" />
+			<properties give_standing_velocity="false" get_standing_weight="false" collides_with_wheels="false"/>
+			<properties wind_coefficient="0"/>
+			<properties collision_class="vehicle"/>
+			<properties add_ray_type="vis_graph ai_vision walk" />
+		</template>
+
+		<!-- Remove for payday 2 -->
+		<!-- Used 3 times by the following -->
+		<!-- props\mansion\chandelier\man_prop_int_chandelier.object -->
+		<!-- props\street\streetplanters_vision_blocker.object -->
+		<!-- water\water_40x40.object -->
+		<template name="no_collision">
+			<properties no_collision="true" ignore_static="true" findable="true"/>
+			<properties collides_with_mover="false" collision_force_from_mover="false" pushed_by_mover="false" />
+			<properties give_standing_velocity="false" get_standing_weight="false" collides_with_wheels="false"/>
+			<properties wind_coefficient="0"/>
+		</template>
+		
+		<!-- static_nav -->
+		<template name="graph_blocker" template="no_collision">
+			<properties ray="block" add_ray_type="walk" remove_ray_type="body" editable="true" editor_only="true"/>
+		</template>
+		
+		<!-- Used by inflict damage body on player -->
+		<template name="no_collision_no_ray" template="no_collision">
+			<properties ray="ignore"/>
+		</template>
+		
+		<!-- This should be used for fences -->
+		<template name="fence" template="static">
+			<properties remove_ray_type="sound bullet body ai_vision" add_ray_type="mover editor bag"/> <!-- Ray type "bag" prevents interaction -->
+		</template>
+
+		<template name="bag" template="mover_blocker">
+			<properties no_collision="false" add_ray_type="bag"/>
+		</template>
+
+		<template name="ragdoll_blocker" template="mover_blocker">
+			<properties no_collision="false" />
+		</template>
+
+		<template name="character" template="no_collision">
+			<properties	keyframed="true" findable="true"/>
+			<properties ray="block" collision_class="character"/>
+			<!-- <properties collides_with_cloth="true"/> -->
+		</template>
+
+		<!-- Remove for payday 2 -->
+		<!-- Not used anywhere -->
+		<template name="camera" template="no_collision">
+			<properties keyframed="true"/>
+			<properties add_ray_type="camera" remove_ray_type="body"/>
+		</template>
+
+		<!-- Remove for payday 2 -->
+		<!-- Not used anywhere -->
+		<template name="raypass" template="no_collision">
+			<properties keyframed="true"/>
+			<properties ray="pass"/>
+		</template>
+		
+		<!-- Remove for payday 2 -->
+		<!-- Not used anywhere -->
+		<template name="raypass_only_bullet" template="no_collision">
+			<properties keyframed="true"/>
+			<properties ray="pass" add_ray_type="bullet" remove_ray_type="body"/>
+		</template>
+		
+		<!-- animated_ray -->
+		<template name="raycoll" template="no_collision">
+			<properties keyframed="true"/>
+			<properties ray="block" add_ray_type="sound camera bullet"/>
+		</template>
+		
+		
+		<!-- added for payday 2 hitbox -->
+		<template name="bullet_only" template="no_collision">
+			<properties keyframed="true"/>
+			<properties ray="block" add_ray_type="bullet"/>
+		</template>
+		
+		<template name="lock_only" template="no_collision">
+			<properties keyframed="true"/>
+			<properties ray="block" add_ray_type="lock" remove_ray_type="body bullet"/>
+		</template>
+		
+		<!-- static_ray -->
+		<template name="raycoll_static" template="no_collision">
+			<properties editable="true"/>
+			<properties ray="block" add_ray_type="sound camera bullet"/>
+		</template>
+		
+		<!-- foliage use for bushes and trees to block AI vision -->
+		<template name="foliage" template="no_collision">
+			<properties editable="true"/>
+			<properties ray="block" add_ray_type="vis_graph ai_vision" remove_ray_type="body bullet"/>
+		</template>
+		
+		<!-- Remove for payday 2 -->
+		<!-- Not used anywhere -->
+		<template name="raycoll_no_bullet" template="raycoll">
+			<properties remove_ray_type="bullet"/>
+		</template>
+		
+		<!-- Remove for payday 2 -->
+		<!-- only used by units\world\water\water_40x40.object -->
+		<template name="water" template="no_collision">
+			<properties editable="true"/>
+			<properties ray="block" add_ray_type="editor" remove_ray_type="body"/>
+			<properties water_density="1000"/>
+		</template>
+
+		<!-- Remove for payday 2 -->
+		<!-- Not used anywhere -->
+		<template name="fire" template="no_collision">
+			<properties keyframed="true"/>
+			<properties ray="ignore"/>
+		</template>
+
+		<!-- Remove for payday 2 -->
+		<!-- Not used anywhere -->
+		<template name="afro" template="no_collision">
+			<properties keyframed="true" findable="false"/>
+			<properties ray="pass"/>
+		</template>
+	</body_templates>
+
+	<!--******************-->
+	<!-- COLLISION CLASSES -->
+	<!--******************-->
+	
+	<collision_class name="minor_debris" />
+	<collision_class name="ragdoll" />
+	<collision_class name="projectile" />
+	<collision_class name="character" ignore_normal="true"/>
+	<collision_class name="dev_ragdoll_blocker" />
+	<collision_class name="disabled" />
+	<collision_class name="bag" />
+	<collision_class name="bag_blocker" />
+	<collision_class name="hair" ignore_normal="true"/>	
+	<collision_class name="vehicle" auto_slot="39"/>
+	<collision_class name="vehicle_blocker"  />
+	<collision_class name="vehicle_only_blocker"  />
+
+	<enable_collision between="hair" and="hair"/>
+	<enable_collision between="ragdoll" and="ragdoll"/>
+	<enable_collision between="dev_ragdoll_blocker" and="ragdoll"/>
+	<enable_collision between="bag" and="bag_blocker"/>
+	<enable_collision between="projectile" and="ragdoll"/>
+	<enable_collision between="character" and="projectile"/>
+	<enable_collision between="vehicle_blocker" and="vehicle"/>
+	<enable_collision between="vehicle_blocker" and="minor_debris"/>
+	<enable_collision between="vehicle" and="minor_debris"/>
+	<enable_collision between="vehicle" and="projectile"/>
+	<enable_collision between="bag" and="vehicle"/>
+	<enable_collision between="vehicle_only_blocker" and="vehicle"/>
+
+	
+	<!--******************-->
+	<!--    FREEZE POOLS   -->
+	<!--******************-->
+
+  <frustum_freeze_pools>
+		<pool name="cloth" size="5" keep_awake="true" />
+  </frustum_freeze_pools>
+
+	<!--******************-->
+	<!-- CLOTH TEMPLATES -->
+	<!--******************-->
+
+	<cloth_templates>
+		<cloth_template name="leather" density="0.6" thickness="0.02" friction="0.7" damping="0.1">
+			<constraint type="link" stiffness="1.0" />
+			<constraint type="bend" stiffness="1.0" flatness_factor="0.8" />
+			<constraint type="stretch" stiffness="1.0" rigid_factor="1.0" stretch_direction="0 0 0" />
+			<constraint type="hinge" stiffness="0.05" relax_factor="1.0" />
+		</cloth_template>
+		
+		<cloth_template name="old_leather" density="0.6" thickness="0.02" friction="1.0" damping="0.15">
+			<constraint type="link" stiffness="1.0" />
+			<constraint type="bend" stiffness="1.0" flatness_factor="1.0" />
+			<constraint type="stretch" stiffness="1.0" rigid_factor="1.0" stretch_direction="0 0 0" />
+			<constraint type="hinge" stiffness="0.2" relax_factor="1.0" />
+		</cloth_template>
+		
+		<cloth_template name="burlap" density="0.7" thickness="0.04" friction="1.0" damping="0.2">
+			<constraint type="link" stiffness="1.0" />
+			<constraint type="bend" stiffness="1.0" flatness_factor="1.0" />
+			<constraint type="stretch" stiffness="1.0" rigid_factor="1.0" stretch_direction="0 0 0" />
+			<constraint type="hinge" stiffness="0.05" relax_factor="1.0" />
+		</cloth_template>
+		
+		<cloth_template name="chainlink" density="1.0" thickness="0.02" friction="0.3" damping="0.001">
+			<constraint type="link" stiffness="1.0" />
+		</cloth_template>
+		
+		<cloth_template name="velvet" density="0.4" thickness="0.02" friction="0.5" damping="0.1">
+			<constraint type="link" stiffness="1.0" />
+			<constraint type="bend" stiffness="1.0" flatness_factor="0.95" />
+			<constraint type="stretch" stiffness="1.0" rigid_factor="1.0f" stretch_direction="0 0 0" />
+			<constraint type="hinge" stiffness="0.01" relax_factor="1.0" />
+		</cloth_template>
+		
+		<cloth_template name="satin" density="0.2" thickness="0.01" friction="0.3" damping="0.1">
+			<constraint type="link" stiffness="1.0" />
+			<constraint type="stretch" stiffness="0.3" rigid_factor="1.0" stretch_direction="0 0 0" />
+		</cloth_template>
+		
+		<cloth_template name="silk" density="0.15" thickness="0.01" friction="0.1" damping="0.05">
+			<constraint type="link" stiffness="1.0" />
+		</cloth_template>
+		
+		<cloth_template name="wicker" density="0.3" thickness="0.04" friction="1.0" damping="0.2">
+			<constraint type="link" stiffness="1.0" />
+			<constraint type="bend" stiffness="1.0" flatness_factor="1.0" />
+			<constraint type="stretch" stiffness="1.0" rigid_factor="1.0" stretch_direction="0 0 0" />
+			<constraint type="hinge" stiffness="1.0" relax_factor="1.0" />
+		</cloth_template>
+	</cloth_templates>
+
+	<!--******************-->
+	<!--     MATERIALS     -->
+	<!--******************-->
+
+ <!-- for more see: http://www.simetric.co.uk/siprefix.htm -->
+ <!-- kg per cubic meter -->
+
+	<!-- liquids -->
+	
+	<material name="saltwater" density="1022" />
+	<material name="beer"      density="1010" /> <!-- staropramen -->
+	<material name="water"     density="1000" />
+	<material name="oil" 			 density="925" /> <!-- whale oil at 15 C -->
+	<material name="diesel"    density="900" /> <!-- 820 to 950 -->
+	<material name="alcohol" 	 density="786" /> <!-- alcohol, methyl -->
+	<material name="gasoline"  density="737" /> <!-- vehicle gasoline-->
+	
+	<!-- natural materials -->
+	
+	<material name="arsenic"   density="5671" />
+	<material name="granite"   density="2691" />
+	<material name="stone"     density="2515" /> <!-- common generaic -->
+	<material name="mud"       density="1906" /> <!-- packed -->
+	<material name="ivory"     density="1842" />
+	<material name="rock"      density="1700" />
+	<material name="gravel"    density="1682" /> <!-- dry 1/4 to 2 inch grains -->
+	<material name="sand"      density="1600" />
+	<material name="earth"     density="1422" />
+	<material name="nonfat"    density="1100" />
+	<material name="human"     density="1010" />
+	<material name="ice"       density="919" />
+	<material name="fat"       density="900" />
+	<material name="snow"      density="481" /> <!-- compacted -->
+	
+	<!-- wood -->
+	
+	<material name="ebony"     density="1050" /> <!-- 960 to 1120 -->
+	<material name="oak"       density="705" /> <!-- 590 to 930 -->
+	<material name="wood"      density="500" />
+	<material name="bamboo"    density="350" />
+	<material name="balsa"     density="170" />
+	
+	<!-- manufactured materials -->
+	
+	<material name="glass_window"  density="2579" />
+	<material name="concrete"      density="2403" />
+	<material name="asphalt"       density="2243" />
+	<material name="cement"        density="2162" />
+	<material name="glass"         density="1940" />
+	<material name="brick"         density="1922" />
+	<material name="rubber"        density="1522" />
+	<material name="clay"          density="1362" /> <!-- baked -->
+	<material name="paper"         density="1201" /> <!-- standard -->
+	<material name="plastic"       density="955" />
+	<material name="cardboard"     density="689" />
+	<material name="cork"          density="240" />
+
+	<!-- metals -->
+	
+	<material name="platinum"  		    density="21400" />
+	<material name="gold"      		    density="19320" />
+	<material name="mercury"   		    density="13593" />
+	<material name="lead"   			    density="11340" />
+	<material name="silver"   			  density="10490" />
+	<material name="delta metal"      density="8600" /> <!-- processed metal/ metal plate (shell="0.1" to 2 cm) -->
+	<material name="stainless"        density="8030" /> <!-- stainless steel, 304 or 18Cr-8Ni -->
+	<material name="iron"      		    density="7850" /> <!-- pure iron or carbon steel -->
+	<material name="steel"      	    density="7480" /> <!-- stainless steel -->
+	<material name="vanadium"         density="5494" /> <!-- exoskelleton -->
+	<material name="exoskeleton" 	    density="5000" />
+	<material name="titanium"					density="4500" />
+	<material name="aluminium" 		    density="2640" />
+	<material name="aluminium_alloy" 	density="2560" />
+	<material name="magnesium_alloy" 	density="1760" />
+
+</physics_settings>
+

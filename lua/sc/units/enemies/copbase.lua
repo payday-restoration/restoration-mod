@@ -169,7 +169,7 @@ function CopBase:default_weapon_name()
 	end
 	
 	--Blue SWAT Weapon Changes (test)--
-	if self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") then
+	if self._unit:name() == Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc") then
 		default_weapon_id = "m4_blue"	
 	elseif self._unit:name() == Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1") then
 		default_weapon_id = "m4_blue"	

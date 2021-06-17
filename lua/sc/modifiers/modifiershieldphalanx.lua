@@ -1,7 +1,7 @@
 ModifierShieldPhalanx.default_value = "spawn_chance"
 ModifierShieldPhalanx.shields = {
-	Idstring("units/payday2/characters/ene_shield_1/ene_shield_1"),
-	Idstring("units/payday2/characters/ene_shield_2/ene_shield_2"),
+	Idstring("units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc"),
+	Idstring("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"),
 	Idstring("units/payday2/characters/ene_shield_gensec/ene_shield_gensec"),
 	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_shield_sr2_smg/ene_akan_fbi_shield_sr2_smg"),
 	Idstring("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"),	

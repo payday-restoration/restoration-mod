@@ -9,7 +9,7 @@ function ModifierDozerMinigun:init(data)
 	local unit_types = tweak_data.group_ai.unit_categories.FBI_tank.unit_types
 	local unit_types_black = tweak_data.group_ai.unit_categories.BLACK_tank.unit_types
 	
-	local mini_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+	local mini_unit_name = Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 	local classic_mini_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
 	
 	if difficulty_index <= 7 then 

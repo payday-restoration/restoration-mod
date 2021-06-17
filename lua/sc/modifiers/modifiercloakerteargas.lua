@@ -1,6 +1,6 @@
 ModifierCloakerTearGas.default_value = "spawn_chance"
 ModifierCloakerTearGas.hrts = {
-	Idstring("units/payday2/characters/ene_swat_1/ene_swat_1"),
+	Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"),
 	Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal"),
 	Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
 	Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"),

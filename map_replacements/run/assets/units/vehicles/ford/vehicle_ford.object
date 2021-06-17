@@ -25,7 +25,7 @@
       <object name="c_vehicle_ford" collision_type="mesh_mopp" />
 	  </body>
 	  <body name="graph_blocker" enabled="true" template="graph_blocker">
-      <object name="c_graph_blocker" collision_type="box" />
+      <object name="c_graph_blocker" collision_type="box"/>
 	  </body>
 	  <body remove_ray_type="ai_vision" name="window_right_rear" enabled="true" template="static">
       <object name="c_window_right_rear" collision_type="mesh_mopp" two_sided="true"/>

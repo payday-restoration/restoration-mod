@@ -24,6 +24,7 @@ function SkillTreeTweakData:init(tweak_data)
 	}
 
    	self.default_upgrades = {
+   		"player_doctor_bag_health_regen",
 		"carry_interact_speed_multiplier_1",
 		"carry_interact_speed_multiplier_2",
 		"carry_movement_speed_multiplier",
@@ -290,13 +291,14 @@ function SkillTreeTweakData:init(tweak_data)
 				[1] = {
 					upgrades = {
 						"player_convert_enemies",
+						"player_passive_convert_enemies_health_multiplier_1",
 						"player_convert_enemies_max_minions_1"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_convert_enemies_damage_multiplier_1",
+						"player_passive_convert_enemies_health_multiplier_2",
 						"player_convert_enemies_max_minions_2"
 					},
 					cost = self.costs.hightierpro
@@ -310,15 +312,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {1, 10},
 				[1] = {
 					upgrades = {
-						"player_minion_master_speed_multiplier",
-						"player_passive_convert_enemies_health_multiplier_1"
+						"player_hostage_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
-						"player_minion_master_health_multiplier",
-						"player_passive_convert_enemies_health_multiplier_2"
+						"player_hostage_health_multiplier"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -539,12 +539,13 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {8, 5},
 				[1] = {
 					upgrades = {
-						"shotgun_steelsight_accuracy_inc_1"
+						"player_steelsight_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},
 				[2] = {
 					upgrades = {
+						"shotgun_steelsight_accuracy_inc_1",
 						"shotgun_steelsight_range_inc_1"
 					},
 					cost = self.costs.hightierpro
@@ -1050,7 +1051,7 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Kickstarter--
 			self.skills.kick_starter = {
-				["name_id"] = "menu_kick_starter_beta",
+				["name_id"] = "menu_kick_starter_beta_sc",
 				["desc_id"] = "menu_kick_starter_beta_desc_sc",
 				["icon_xy"] = {9, 8},
 				[1] = {
@@ -1069,8 +1070,8 @@ function SkillTreeTweakData:init(tweak_data)
 
 			--Fire Trap--
 			self.skills.fire_trap = {
-				["name_id"] = "menu_fire_trap_beta",
-				["desc_id"] = "menu_fire_trap_beta_desc",
+				["name_id"] = "menu_fire_trap_beta_sc",
+				["desc_id"] = "menu_fire_trap_beta_desc_sc",
 				["icon_xy"] = {9, 9},
 				[1] = {
 					upgrades = {
@@ -1146,7 +1147,9 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"assault_rifle_steelsight_accuracy_inc_1",
-						"snp_steelsight_accuracy_inc_1"
+						"snp_steelsight_accuracy_inc_1",
+						"assault_rifle_steelsight_range_inc_1",
+						"snp_steelsight_range_inc_1"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1677,7 +1680,7 @@ function SkillTreeTweakData:init(tweak_data)
 				[2] = {
 					upgrades = {
 						"akimbo_extra_ammo_multiplier_1",
-						"akimbo_recoil_index_addend_3"
+						"akimbo_pick_up_multiplier"
 					},
 					cost = self.costs.hightierpro
 				}	
@@ -1696,8 +1699,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"pistol_stacked_accuracy_bonus_2",
-						"player_desperado_bodyshot_refresh"
+						"pistol_stacked_accuracy_bonus_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1716,8 +1718,7 @@ function SkillTreeTweakData:init(tweak_data)
 				},
 				[2] = {
 					upgrades = {
-						"pistol_stacking_hit_damage_multiplier_2",
-						"player_trigger_happy_bodyshot_refresh"
+						"pistol_stacking_hit_damage_multiplier_2"
 					},
 					cost = self.costs.hightierpro
 				}
@@ -1833,7 +1834,8 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {2, 9},
 				[1] = {
 					upgrades = {
-						"player_messiah_revive_from_bleed_out_1"
+						"player_messiah_revive_from_bleed_out_1",
+						"player_additional_lives_1"
 					},
 					cost = self.costs.hightier
 				},
@@ -2009,7 +2011,6 @@ function SkillTreeTweakData:init(tweak_data)
 	local deck6 = {
 		upgrades = {
 			"armor_kit",
-			"player_pick_up_ammo_multiplier",
 			"weapon_passive_damage_multiplier_3",
 			"player_non_special_melee_multiplier_3",
 			"player_melee_damage_multiplier_3"			
@@ -2035,7 +2036,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Crew Chief--
 	local sc_crew_chief = {
 			name_id = "menu_st_spec_1",
-			desc_id = "menu_st_spec_1_desc",
+			desc_id = "menu_st_spec_1_desc_sc",
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
@@ -2071,9 +2072,7 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_tier_armor_multiplier_1",
-					"player_tier_armor_multiplier_2",
-					"team_passive_armor_multiplier"
+					"player_tier_armor_multiplier_1"
 				},
 				cost = 2400,
 				icon_xy = {6, 0},
@@ -2097,7 +2096,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Muscle--
 	local sc_muscle = {
 			name_id = "menu_st_spec_2",
-			desc_id = "menu_st_spec_2_desc",
+			desc_id = "menu_st_spec_2_desc_sc",
 			{
 				upgrades = {
 					"player_passive_health_multiplier_1",
@@ -2158,7 +2157,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Armorer--
 	local sc_armorer = {
 			name_id = "menu_st_spec_3",
-			desc_id = "menu_st_spec_3_desc",
+			desc_id = "menu_st_spec_3_desc_sc",
 			{
 				upgrades = {
 					"player_tier_armor_multiplier_1",
@@ -2216,7 +2215,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Rogue--
 	local sc_rogue = {
 			name_id = "menu_st_spec_4",
-			desc_id = "menu_st_spec_4_desc",
+			desc_id = "menu_st_spec_4_desc_sc",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2275,7 +2274,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Hitman--
 	local sc_hitman = {
 			name_id = "menu_st_spec_5",
-			desc_id = "menu_st_spec_5_desc",
+			desc_id = "menu_st_spec_5_desc_sc",
 			{
 				upgrades = {
 					"player_store_temp_health_1"
@@ -2334,7 +2333,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Crook--
 	local sc_crook = {
 			name_id = "menu_st_spec_6",
-			desc_id = "menu_st_spec_6_desc",
+			desc_id = "menu_st_spec_6_desc_sc",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -2594,7 +2593,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck2,
 			{
 				upgrades = {
-					"temporary_loose_ammo_give_team"
+					"temporary_loose_ammo_give_team",
+					"player_passive_dodge_chance_1"
 				},
 				cost = 400,
 				icon_xy = {5, 5},
@@ -2604,7 +2604,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck4,
 			{
 				upgrades = {
-					"temporary_loose_ammo_restore_health_2"
+					"temporary_loose_ammo_restore_health_2",
+					"player_loose_ammo_give_dodge"
 				},
 				cost = 1000,
 				icon_xy = {7, 5},
@@ -2614,7 +2615,8 @@ function SkillTreeTweakData:init(tweak_data)
 			deck6,
 			{
 				upgrades = {
-					"player_loose_ammo_restore_health_give_team"
+					"player_loose_ammo_restore_health_give_team",
+					"player_passive_dodge_chance_2"
 				},
 				cost = 2400,
 				icon_xy = {6, 5},
@@ -3142,7 +3144,6 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck19_1",
 				upgrades = {
 					"damage_control",
-					"player_no_deflection",
 					"player_damage_control_passive",
 					"player_damage_control_healing",
 					"player_armor_to_health_conversion"
@@ -3216,7 +3217,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck20_1",
 				upgrades = {
 					"tag_team",
-					"player_tag_team_base",
+					"player_tag_team_base_1",
 					"player_tag_team_cooldown_drain_1"
 				},
 				icon_xy = {
@@ -3231,7 +3232,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_3_desc_sc",
 				name_id = "menu_deck20_3",
 				upgrades = {
-					"player_tag_team_cooldown_drain_2"
+					"player_tag_team_base_2"
 				},
 				icon_xy = {
 					0,
@@ -3245,7 +3246,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_5_desc_sc",
 				name_id = "menu_deck20_5",
 				upgrades = {
-					"player_tag_team_damage_absorption_1"
+					"player_tag_team_damage_absorption"
 				},
 				icon_xy = {
 					2,
@@ -3259,7 +3260,7 @@ function SkillTreeTweakData:init(tweak_data)
 				desc_id = "menu_deck20_7_desc_sc",
 				name_id = "menu_deck20_7",
 				upgrades = {
-					"player_tag_team_damage_absorption_2"
+					"player_tag_team_base_3"
 				},
 				icon_xy = {
 					2,
@@ -3274,7 +3275,7 @@ function SkillTreeTweakData:init(tweak_data)
 				name_id = "menu_deck20_9",
 				upgrades = {
 					"player_passive_loot_drop_multiplier",
-					"player_tag_team_cooldown_drain_3"
+					"player_tag_team_cooldown_drain_2"
 				},
 				icon_xy = {
 					0,

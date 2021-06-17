@@ -1,6 +1,0 @@
-<materials version="3">
-	<material name="mtr_helmet" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
-        <bump_normal_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_nm"/>
-        <diffuse_texture file="units/payday2/characters/ene_bulldozer_biker_1/ene_bulldozer_biker_helm_df"/>
-	</material>
-</materials>

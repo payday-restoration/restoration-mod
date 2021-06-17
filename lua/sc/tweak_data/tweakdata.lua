@@ -17,8 +17,12 @@ tweak_data.ammo.ricochet.autohit = {
 }
 
 --Swap Speed Multipliers
-tweak_data.pistol = {swap_bonus = 1.35}
-tweak_data.akimbo = {swap_bonus = 0.65}
+--TODO: Move to stat_info
+tweak_data.pistol = {swap_bonus = 1.35, range_mul = 0.8}
+tweak_data.akimbo = {swap_bonus = 0.65, range_mul = 0.8}
+tweak_data.smg = {range_mul = 0.8}
+tweak_data.lmg = {range_mul = 1.25} --Stacks with smg to give a mul of 1
+tweak_data.snp = {range_mul = 1.25}
 
 --Max concealment for guns.
 tweak_data.concealment_cap = 32
@@ -56,6 +60,11 @@ tweak_data.projectiles.launcher_frag_m32.time_cheat = 0.7
 tweak_data.projectiles.launcher_incendiary_m32.time_cheat = 0.7
 tweak_data.projectiles.launcher_frag_china.damage = 80
 
+tweak_data.projectiles.underbarrel_m203_groza.damage = 80
+tweak_data.projectiles.underbarrel_m203_groza.player_damage = 80
+tweak_data.projectiles.underbarrel_m203_groza.curve_pow = 1
+tweak_data.projectiles.underbarrel_m203_groza.range = 500
+
 --M202--
 tweak_data.projectiles.rocket_ray_frag.damage = 120
 tweak_data.projectiles.rocket_ray_frag.player_damage = 60
@@ -83,6 +92,45 @@ tweak_data.projectiles.launcher_incendiary_arbiter.fire_dot_data = {
 	dot_length = 3.1,
 	dot_tick_period = 0.5
 }
+
+--Tactical ZAPper grenades (Grenade Launchers)
+tweak_data.projectiles.launcher_electric.damage = 40
+tweak_data.projectiles.launcher_electric.player_damage = 20
+tweak_data.projectiles.launcher_electric.curve_pow = 1
+tweak_data.projectiles.launcher_electric.range = 500
+
+tweak_data.projectiles.launcher_electric_m32.damage = 40
+tweak_data.projectiles.launcher_electric_m32.player_damage = 20
+tweak_data.projectiles.launcher_electric_m32.curve_pow = 1
+tweak_data.projectiles.launcher_electric_m32.range = 500
+
+tweak_data.projectiles.launcher_electric_china.damage = 40
+tweak_data.projectiles.launcher_electric_china.player_damage = 20
+tweak_data.projectiles.launcher_electric_china.curve_pow = 1
+tweak_data.projectiles.launcher_electric_china.range = 500
+
+tweak_data.projectiles.launcher_electric_slap.damage = 40
+tweak_data.projectiles.launcher_electric_slap.player_damage = 20
+tweak_data.projectiles.launcher_electric_slap.curve_pow = 1
+tweak_data.projectiles.launcher_electric_slap.range = 500
+
+tweak_data.projectiles.underbarrel_electric.damage = 40
+tweak_data.projectiles.underbarrel_electric.player_damage = 20
+tweak_data.projectiles.underbarrel_electric.curve_pow = 1
+tweak_data.projectiles.underbarrel_electric.range = 500
+
+tweak_data.projectiles.underbarrel_electric_groza.damage = 40
+tweak_data.projectiles.underbarrel_electric_groza.player_damage = 20
+tweak_data.projectiles.underbarrel_electric_groza.curve_pow = 1
+tweak_data.projectiles.underbarrel_electric_groza.range = 500
+
+--Tactical ZAPper (Arbiter)
+tweak_data.projectiles.launcher_electric_arbiter.damage = 30
+tweak_data.projectiles.launcher_electric_arbiter.player_damage = 10
+tweak_data.projectiles.launcher_electric_arbiter.launch_speed = 2500
+tweak_data.projectiles.launcher_electric_arbiter.range = 250
+tweak_data.projectiles.launcher_electric_arbiter.curve_pow = 1
+tweak_data.projectiles.launcher_electric_arbiter.init_timer = nil
 
 --Plainsrider--
 tweak_data.projectiles.west_arrow.damage = 24
@@ -149,7 +197,7 @@ tweak_data.projectiles.frag.range = 500
 --Dynamite--
 tweak_data.projectiles.dynamite.damage = 80
 tweak_data.projectiles.dynamite.player_damage = 40
-tweak_data.projectiles.dynamite.curve_pow = 0.6
+tweak_data.projectiles.dynamite.curve_pow = 0.5
 tweak_data.projectiles.dynamite.range = 400
 
 --Community Frag--
@@ -203,6 +251,12 @@ tweak_data.projectiles.wpn_prj_jav.adjust_z = 30
 tweak_data.projectiles.wpn_prj_hur.damage = 36
 tweak_data.projectiles.wpn_prj_hur.launch_speed = 1000
 tweak_data.projectiles.wpn_prj_hur.adjust_z = 120
+
+--ZAPper grenade
+tweak_data.projectiles.wpn_gre_electric.damage = 40
+tweak_data.projectiles.wpn_gre_electric.player_damage = 20
+tweak_data.projectiles.wpn_gre_electric.curve_pow = 0.5
+tweak_data.projectiles.wpn_gre_electric.range = 500
 
 tweak_data.dot_types.poison = {
 	damage_class = "PoisonBulletBase",
@@ -457,7 +511,7 @@ tweak_data.experience_manager.pro_day_multiplier = {
 }
 
 if Global.game_settings and Global.game_settings.one_down then
-	tweak_data.experience_manager.limited_bonus_multiplier = 1.2
+	tweak_data.experience_manager.pro_job_new = 1.2
 end
 
 	tweak_data.gui.buy_weapon_categories = {
@@ -666,67 +720,3 @@ tweak_data.player.stances.siltstone.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.r700.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.sbl.steelsight.shakers.breathing.amplitude = 0
 tweak_data.player.stances.desertfox.steelsight.shakers.breathing.amplitude = 0
-
-if not Global.game_settings then
-    return
-end
-
-local Inter = tweak_data.interaction
-local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-
-_G.restoration.data = {
-    sounds = {
-        start = {"g92", "g10", "a01x_any", "g72", "p29"},
-        success = {"g28", "v46", "p17"},
-        halfway = {"t02x_sin"},
-        fail = {"g60", "g29"},
-        complete = {"v46", "v07"},
-    },
-    circles = {
-        "ui/interact_lockpick_circle_1",
-        "ui/interact_lockpick_circle_2",
-        "ui/interact_lockpick_circle_3",
-    },
-    circle_radius = {
-        133,
-        134,
-        270,
-        320,
-        360,
-        400,
-    },
-    difficulty = {
-        0.9,
-        0.93,
-        0.94,
-        0.95,
-        0.96,
-        0.97
-    },
-    speed = {
-		160,
-		180,
-        190,
-        220,
-        300,
-        400
-    },
-    failed_cooldown = 1,
-    completed_delay = 0.5,
-    num_of_circles = difficulty_index < 7 and 2 or 3,
-    direction = {1, -1, 1, -1, 1, -1},
-    max_circles = 6
-}
-
-if difficulty_index == 5 then
-    difficulty_index = 4
-elseif difficulty_index == 6 or difficulty_index == 7 then
-    difficulty_index = 5
-end
-
-local raid = _G.restoration.data
-
-local lock_hard = Inter.pick_lock_hard
-lock_hard.failable = true
-lock_hard.number_of_circles = math.clamp(difficulty_index, 3, raid.max_circles)

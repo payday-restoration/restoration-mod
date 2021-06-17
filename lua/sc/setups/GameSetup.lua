@@ -106,36 +106,13 @@ function GameSetup:load_packages()
 
     if ai_type == z then
         faction_package = {
-            "packages/zombieassets",
             "packages/narr_hvh", 
             "levels/narratives/bain/hvh/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
     elseif ai_type == r then
         faction_package = {
-            "packages/akanassets", 
             "packages/lvl_mad"
-        }
-        table.insert(self._loaded_faction_packages, faction_package)
-    elseif ai_type == m then
-        faction_package = {
-            "packages/murkyassets"
-        }
-        table.insert(self._loaded_faction_packages, faction_package)
-    elseif ai_type == f then
-        faction_package = {
-            "packages/mexicoassets"
-        }
-        table.insert(self._loaded_faction_packages, faction_package)
-    elseif ai_type == la then
-        faction_package = {
-            "packages/lapdassets",
-            "packages/narr_rvd"
-        }
-        table.insert(self._loaded_faction_packages, faction_package)
-    elseif ai_type == ny then
-        faction_package = {
-            "packages/nypdassets"
         }
         table.insert(self._loaded_faction_packages, faction_package)
     end

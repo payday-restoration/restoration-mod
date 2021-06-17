@@ -870,7 +870,9 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.fir_com.max_amount = 3
 	self.projectiles.smoke_screen_grenade.base_cooldown = 40
 	self.projectiles.damage_control.base_cooldown = 30
+	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3
+	self.projectiles.wpn_gre_electric.max_amount = 3
 	
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
 	self.projectiles.pocket_ecm_jammer.base_cooldown = 80
@@ -878,6 +880,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	--Fuck off
 	self.projectiles.frag.no_cheat_count = true
 	self.projectiles.concussion.no_cheat_count = true
+	self.projectiles.dynamite.no_cheat_count = true
 	self.projectiles.molotov.no_cheat_count = true
 	self.projectiles.wpn_prj_four.no_cheat_count = true
 	self.projectiles.wpn_prj_ace.no_cheat_count = true
@@ -887,6 +890,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.frag_com.no_cheat_count = true
 	self.projectiles.fir_com.no_cheat_count = true
 	self.projectiles.dada_com.no_cheat_count = true
+	self.projectiles.wpn_gre_electric.no_cheat_count = true
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE
@@ -1498,6 +1502,7 @@ function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 			}
 		}
 	}
+	--Legendary part additions
 	self.weapon_skins.model70_baaah.default_blueprint = {
 		"wpn_fps_snp_model70_b_standard",
 		"wpn_fps_snp_model70_body_standard",
@@ -2405,6 +2410,43 @@ function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 			pattern = Idstring("units/payday2_cash/safes/default/pattern/pattern_default_df")
 		}}
 	}	
+		
+	--Croupier blueprint/sticker fix
+	self.weapon_skins.m16_ait.default_blueprint = {
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_amcar_bolt_standard",
+		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+		"wpn_fps_upg_ass_m4_lower_reciever_core",
+		"wpn_fps_upg_ass_m4_upper_reciever_core",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_snp_tti_s_vltor",
+		"wpn_fps_upg_m4_g_mgrip",
+		"wpn_fps_m16_fg_standard",
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_upg_ass_ns_battle",
+		"wpn_fps_upg_o_cmore"
+	}
+	self.weapon_skins.m16_ait.parts.wpn_fps_m4_uupg_m_std_vanilla = {
+		[Idstring("m4_mag_std"):key()] = {
+			pattern = "units/payday2_cash/safes/ait/pattern/ait_pattern_024_g_df",
+			pattern_gradient = "units/payday2_cash/safes/ait/pattern_gradient/gradient_ait_024_b_df"
+		}
+	}
+	
+	--Born to steal fix
+	self.weapon_skins.m16_cs4.default_blueprint = {
+		"wpn_fps_m4_lower_reciever",
+		"wpn_fps_m4_upper_reciever_round",
+		"wpn_fps_amcar_bolt_standard",
+		"wpn_fps_m4_uupg_draghandle",
+		"wpn_fps_m4_uupg_m_std_vanilla",
+		"wpn_fps_upg_m4_g_standard_vanilla",
+		"wpn_fps_m16_fg_standard",
+		"wpn_fps_m4_uupg_b_medium_vanilla",
+		"wpn_fps_ass_m16_o_handle_sight",
+		"wpn_fps_m16_s_solid_vanilla"
+	}
+	
 end
 
 local melee_weapons_old = BlackMarketTweakData._init_melee_weapons
@@ -3720,6 +3762,65 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.chac.stats.range = 160
 	self.melee_weapons.chac.stats.concealment = 29
 	self.melee_weapons.chac.melee_damage_delay = 0.2
-	self.melee_weapons.chac.expire_t = 1.1		
+	self.melee_weapons.chac.expire_t = 1.1
+	
+	--WHAT IB WE JUZ USED A SPUUUN :DDDDD--
+	self.melee_weapons.spoon.stats.min_damage = 4.5
+	self.melee_weapons.spoon.stats.max_damage = 9.1
+	self.melee_weapons.spoon.stats.min_damage_effect = 4.5
+	self.melee_weapons.spoon.stats.max_damage_effect = 5
+	self.melee_weapons.spoon.stats.charge_time = 2.1
+	self.melee_weapons.spoon.stats.range = 210
+	self.melee_weapons.spoon.stats.concealment = 23
+	self.melee_weapons.spoon.repeat_expire_t = 1.05
+	self.melee_weapons.spoon.melee_damage_delay = 0.2
+	self.melee_weapons.spoon.expire_t = 1.2	
+	
+	--BIRE xddddddd--
+	self.melee_weapons.spoon_gold.anim_global_param = "melee_baseballbat"
+	self.melee_weapons.spoon_gold.type = "axe"
+	self.melee_weapons.spoon_gold.fire_dot_data = {
+		dot_trigger_chance = "50",
+		dot_damage = "2",
+		dot_length = "3.1",
+		dot_trigger_max_distance = "3000",
+		dot_tick_period = "0.5"
+	}	
+	self.melee_weapons.spoon_gold.info_id = "bm_melee_spoon_gold_info"
+	self.melee_weapons.spoon_gold.align_objects = {"a_weapon_right"}
+	self.melee_weapons.spoon_gold.anim_attack_vars = {"var1","var2"}
+	self.melee_weapons.spoon_gold.stats.min_damage = 4.5
+	self.melee_weapons.spoon_gold.stats.max_damage = 9.1
+	self.melee_weapons.spoon_gold.stats.max_damage_effect = 4
+	self.melee_weapons.spoon_gold.stats.min_damage_effect = 3.5
+	self.melee_weapons.spoon_gold.stats.charge_time = 2.3
+	self.melee_weapons.spoon_gold.stats.range = 210
+	self.melee_weapons.spoon_gold.repeat_expire_t = 1.05
+	self.melee_weapons.spoon_gold.expire_t = 1.2
+	self.melee_weapons.spoon_gold.melee_damage_delay = 0.2
+	self.melee_weapons.spoon_gold.stats.concealment = 23	
+	
+	-- Workaround for custom melee bug
+	self.melee_weapons.halloween_sword = deep_clone(self.melee_weapons.great)
+	self.melee_weapons.halloween_sword.name_id = "bm_melee_halloween_sword"
+	self.melee_weapons.halloween_sword.info_id = "bm_melee_headless_sword_info"
+	self.melee_weapons.halloween_sword.special_weapon = "panic"
+	self.melee_weapons.halloween_sword.unit = "units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"
+	self.melee_weapons.halloween_sword.third_unit = "units/mods/weapons/wpn_mel_halloween_sword/wpn_third_halloween_sword"
+	self.melee_weapons.halloween_sword.texture_bundle_folder = "mods"
+	self.melee_weapons.halloween_sword.sounds = {
+		equip = "great_equip",
+		hit_air = "morning_hit_air",
+		hit_gen = "great_hit_gen",
+		hit_body = "great_hit_body",
+		charge = "great_charge"
+	}
+	self.melee_weapons.halloween_sword.dlc = "rest"
+	self.melee_weapons.halloween_sword.stats.concealment = 23
+	self.melee_weapons.halloween_sword.stats.min_damage_effect = 1.9
+	self.melee_weapons.halloween_sword.stats.max_damage_effect = 2
+	self.melee_weapons.halloween_sword.stats.charge_time = 5
+	self.melee_weapons.halloween_sword.free = true
+	self.melee_weapons.halloween_sword.stats.custom = true
 
 end

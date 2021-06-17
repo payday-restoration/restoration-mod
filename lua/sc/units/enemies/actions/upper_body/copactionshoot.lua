@@ -381,7 +381,7 @@ function CopActionShoot:on_attention(attention, old_attention)
 				self._can_attack_with_special_move = true
 			end
 
-			if self._ext_base._tweak_table == "sniper" then
+			if self._w_usage_tweak.sniper_charge_attack then
 				self._use_sniper_focus = true
 				self._sniper_focus_start_t = t
 			end
@@ -396,6 +396,8 @@ function CopActionShoot:on_attention(attention, old_attention)
 
 			if shoot_hist then
 				if self._use_sniper_focus then
+					aim_delay_minmax = managers.modifiers:modify_value("CopActionShoot:ModifierSniperAim", aim_delay_minmax)
+
 					if self._draw_focus_displacement then
 						local line_1 = Draw:brush(Color.blue:with_alpha(0.5), 2)
 						line_1:cylinder(self._shoot_from_pos, shoot_hist.m_last_pos, 0.5)
@@ -697,7 +699,7 @@ function CopActionShoot:update(t)
 					self._ext_brain._deploy_gas_t = t + 10
 
 					local is_normal_grenadier = self._ext_base._tweak_table == "boom"
-					local roll_chance = is_normal_grenadier and 0.75 or 0.5
+					local roll_chance = self._common_data.char_tweak.chance_use_gas or 0.5
 					local gas_roll = math_random() <= roll_chance
 
 					if gas_roll then
@@ -742,7 +744,7 @@ function CopActionShoot:update(t)
 							end
 						end
 
-						local gas_roll = math_random() <= 0.5
+						local gas_roll = math_random() <= self._common_data.char_tweak.chance_use_gas or 0.3
 
 						if gas_roll then
 							if self:throw_grenade(nil, nil, nil, "tear_gas") then
@@ -896,7 +898,7 @@ function CopActionShoot:update(t)
 							end
 
 							local aim_delay = 0
-							local aim_delay_minmax = self._aim_delay_minmax
+							local aim_delay_minmax = managers.modifiers:modify_value("CopActionShoot:ModifierSniperAim", self._aim_delay_minmax)
 
 							if aim_delay_minmax[1] ~= 0 or aim_delay_minmax[2] ~= 0 then
 								if aim_delay_minmax[1] == aim_delay_minmax[2] then
@@ -1171,7 +1173,8 @@ function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shoot
 		local enemy_vec = temp_vec2
 
 		mvec3_set(enemy_vec, pos)
-		mvec3_sub(enemy_vec, self._common_data.pos)
+		--Calculate miss chance from head position instead of feet position.
+		mvec3_sub(enemy_vec, self._ext_movement:m_head_pos())
 
 		local error_vec = Vector3()
 
@@ -1180,7 +1183,8 @@ function CopActionShoot:_get_unit_shoot_pos(t, pos, dis, falloff, i_range, shoot
 		mvec3_rot(error_vec, temp_rot1)
 
 		local miss_min_dis = shooting_local_player and 31 or 150
-		local error_vec_len = miss_min_dis + self._spread * math_random() + self._miss_dis * math_random() * (1 - focus_prog)
+		--Crackdown fix for spread rng sometimes causing shots that should miss to hit.
+		local error_vec_len = miss_min_dis + self._spread + self._miss_dis * math_random() * (1 - focus_prog)
 
 		mvec3_set_l(error_vec, error_vec_len)
 		mvec3_add(error_vec, pos)
@@ -1466,11 +1470,11 @@ function CopActionShoot:anim_clbk_melee_strike()
 
 		if defense_data and defense_data ~= "friendly_fire" then
 			if defense_data == "countered" then
-				self._common_data.melee_countered_t = TimerManager:game():time()
-
-				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
 				local melee_entry = character_unit == local_player and managers.blackmarket:equipped_melee_weapon() or character_unit:base():melee_weapon()
 				local melee_tweak = tweak_data.blackmarket.melee_weapons[melee_entry]
+
+				self._common_data.melee_countered_t = TimerManager:game():time()
+				local attack_dir = self._unit:movement():m_com() - character_unit:movement():m_head_pos()
 
 				mvec3_norm(attack_dir)
 

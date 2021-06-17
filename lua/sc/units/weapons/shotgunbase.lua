@@ -12,46 +12,37 @@ function ShotgunBase:_update_stats_values()
 		end
 	end
 
+	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
+	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul
+
 	if self._ammo_data then
 		if self._ammo_data.rays ~= nil then
 			self._rays = self._ammo_data.rays
 		end
-		if self._ammo_data.damage_near ~= nil then
-			self._damage_near = self._ammo_data.damage_near
-		end
 		if self._ammo_data.damage_near_mul ~= nil then
-			self._damage_near = self._damage_near + self._ammo_data.damage_near_mul
-		end
-		if self._ammo_data.damage_far ~= nil then
-			self._damage_far = self._ammo_data.damage_far
+			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
 		end
 		if self._ammo_data.damage_far_mul ~= nil then
-			self._damage_far = self._damage_far + self._ammo_data.damage_far_mul
+			self._damage_far_mul = self._damage_far_mul * self._ammo_data.damage_far_mul
 		end
 	end
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
 		if stats.damage_near_mul then
-			self._damage_near = self._damage_near + stats.damage_near_mul
+			self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
 		end
 		if stats.damage_far_mul then
-			self._damage_far = self._damage_far + stats.damage_far_mul
+			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
 		end
 	end
 
-	if self._silencer then
-		self._damage_near = self._damage_near + managers.player:upgrade_value("weapon", "silencer_spread_index_addend", 0) * 75
-		self._damage_far = self._damage_far + managers.player:upgrade_value("weapon", "silencer_spread_index_addend", 0) * 150
-	end
-
-	self._range = self._damage_far
+	self._range = tweak_data.weapon.stat_info.damage_falloff.max * self._damage_far_mul
 	
 	if self._ammo_data then
 		if self._ammo_data.rays ~= 1 and self._is_real_shotgun then
 			self._rays = self._rays + managers.player:upgrade_value("shotgun", "extra_rays", 0)
 		end
 	end
-	
 end
 
 function ShotgunBase:reload_expire_t()
@@ -390,22 +381,4 @@ function ShotgunBase:run_and_shoot_allowed()
 	local allowed = ShotgunBase.super.run_and_shoot_allowed(self)
 
 	return allowed or managers.player:has_category_upgrade("shotgun", "hip_run_and_shoot") and self._is_real_shotgun
-end
-
-function ShotgunBase:get_damage_falloff(damage, col_ray, user_unit)
-	local pm = managers.player
-	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
-	local inc_range_mul = 1
-	local inc_range_addend = 0
-	local current_state = user_unit:movement()._current_state
-
-	if current_state and current_state:in_steelsight() and self._is_real_shotgun then
-		inc_range_mul = pm:upgrade_value("shotgun", "steelsight_range_inc", 1)
-	end
-
-	if current_state and not current_state._moving then
-		inc_range_addend = inc_range_addend + pm:upgrade_value("player", "not_moving_accuracy_increase", 0) * 75
-	end
-
-	return math.max((1 - math.min(1, math.max(0, distance - (self._damage_near + inc_range_addend) * inc_range_mul) / ((self._damage_far + 2*inc_range_addend) * inc_range_mul))) * damage, 0.05 * damage)
 end

@@ -1,76 +1,103 @@
-function GroupAIStateBesiege:init(group_ai_state)
-	GroupAIStateBesiege.super.init(self)
-
-	if Network:is_server() and managers.navigation:is_data_ready() then
-		self:_queue_police_upd_task()
-	end
-
-	self._tweak_data = tweak_data.group_ai[group_ai_state]
-	self._spawn_group_timers = {}
-	self._graph_distance_cache = {}
+--Ensured PONR flag is set to nil.
+Hooks:PostHook(GroupAIStateBesiege, "init", "ResInit", function(self, group_ai_state)
 	self._ponr_is_on = nil
-end	
 
---[[function GroupAIStateBesiege:init(group_ai_state)
-	GroupAIStateBesiege.super.init(self)
-
-	if Network:is_server() and managers.navigation:is_data_ready() then
-		self:_queue_police_upd_task()
-	end
-
-	self._tweak_data = tweak_data.group_ai[group_ai_state]
-	self._spawn_group_timers = {}
-	self._graph_distance_cache = {}
-	self._ponr_is_on = nil
-	self:set_debug_draw_state(true)
-end]]--
---uncomment to test ai debug stuff
-
--- Tracks the cooldowns of each group type, will be populated by the GroupAIStateBesiege:_spawn_in_group() hook 
-local group_timestamps = {}
+	--Sets functions that determine chatter for spawn group leaders to say upon spawning.
+	self:_init_group_entry_lines()
+	--self:set_debug_draw_state(true) --Uncomment to debug AI stuff.
+end)
 
 local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 local difficulty_index = tweak_data:difficulty_to_index(difficulty)
 
+--Implements cooldowns and hard-diff filters for specific spawn groups, by prefiltering them before actually choosing the best groups.
+local group_timestamps = {}
 local _choose_best_groups_actual = GroupAIStateBesiege._choose_best_groups
 function GroupAIStateBesiege:_choose_best_groups(best_groups, group, group_types, allowed_groups, weight, ...)
-	local new_allowed_groups = {}
-	local currenttime = Application:time()
-	-- Remember not to modify allowed_groups nor its subtables, otherwise you'll unknowingly be altering
-	-- tweak_data.group_ai.besiege.recon.groups instead
+	local new_allowed_groups = {} --Replacement table for _choose_best_groups_actual.
+	local currenttime = self._t
+	local sustain = self._task_data.assault and self._task_data.assault.phase == "sustain"
+	local constraints_tweak = self._tweak_data.group_constraints
+
+	--Check each spawn group and see if it meets filter.
 	for group_type, cat_weights in pairs(allowed_groups) do
-		local previoustimestamp = group_timestamps[group_type]
-		local cooldown = self._tweak_data.group_cooldowns[group_type] or 0
-		local cooldown_over = previoustimestamp == nil or (currenttime - previoustimestamp) > cooldown
-		local valid_diff = (self._tweak_data.group_max_diff[group_type] or 1) >= self._difficulty_value and self._difficulty_value > (self._tweak_data.group_min_diff[group_type] or 0)
-		if cooldown_over == true and valid_diff == true then
-			-- This group type if off cooldown and can spawn on this diff, copy the subtable reference to the new_allowed_groups table
-			-- rule applies - do not modify the subtable or you'll be affecting global state, which will make debugging the cause
-			-- a nightmare)
+		--Get spawn group constraints.
+		local constraints = constraints_tweak[group_type]
+		local valid = true
+
+		--If group had constraints tied to it, then check for them.
+		if constraints then
+			local cooldown = constraints.cooldown
+			local previoustimestamp = group_timestamps[group_type]
+			if cooldown and previoustimestamp and (currenttime - previoustimestamp) < cooldown then
+				valid = nil
+			end
+
+			local min_diff = constraints.min_diff
+			local max_diff = constraints.max_diff
+			if (min_diff and self._difficulty_value <= min_diff) or (max_diff and self._difficulty_value >= max_diff) then
+				valid = nil
+			end
+
+			local sustain_only = constraints.sustain_only
+			if sustain_only and sustain == false then
+				valid = nil
+			end
+		end
+
+		--If all constraints are met, add it to the replacement table. Otherwise, ignore it.
+		if valid then
 			new_allowed_groups[group_type] = cat_weights
 		end
 	end
 
-	-- Call the original function with the manipulated list
+	-- Call the original function with the replacement spawngroup table.
 	return _choose_best_groups_actual(self, best_groups, group, group_types, new_allowed_groups, weight, ...)
 end
 
-function GroupAIStateBesiege:not_assault_0_check()
-	if self._assault_number and self._assault_number <= 0 then
-		return
-	end
-	
-	return true
+--Set timestamp for whatever spawngroup was just spawned in to allow for cooldown tracking.
+local _spawn_in_group_actual = GroupAIStateBesiege._spawn_in_group
+function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, ...)
+	group_timestamps[spawn_group_type] = self._t
+
+	return _spawn_in_group_actual(self, spawn_group, spawn_group_type, ...)
 end
 
+-- Cache for normal spawngroups to avoid losing them when they're overwritten.
+-- Once a captain is spawned in, this gets reset back to nil.
+local cached_spawn_groups = nil
+-- Hard forces the next spawn group type by temporarily replacing the assault.groups table.
+-- When the group is spawned, the assault.groups table is reverted to cached_spawn_groups.
+-- Used by skirmish to force captain spawns.
+function GroupAIStateBesiege:force_spawn_group_hard(spawn_group)
+	-- Ignore previous force attempt if ones overlap.
+	-- Might change to using a LIFO queue if we need support for multiple nearby calls at some point.
+	if cached_spawn_groups then
+		self._tweak_data.assault.groups = cached_spawn_groups
+		cached_spawn_groups = nil
+	end
+
+	--Create new forced spawngroup.
+	local new_spawn_groups = nil
+	if managers.skirmish:is_skirmish() then --Handle Skirmish's custom diff curve.
+		new_spawn_groups = { [spawn_group] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1} }
+	else
+		new_spawn_groups = { [spawn_group] = {1, 1, 1} }
+	end
+
+	--Cache old spawn groups, and apply new forced spawn group table.
+	cached_spawn_groups = self._tweak_data.assault.groups
+	self._tweak_data.assault.groups = new_spawn_groups
+end
+
+--Exactly the same as the _get_megaphone_sound_source in TradeManager (without application error calls).
+--Used to play voice lines to correspond to specific spawn groups.
 function GroupAIStateBesiege:_get_megaphone_sound_source()
 	local level_id = Global.level_data.level_id
 	local pos = nil
 
 	if not level_id then
 		pos = Vector3(0, 0, 0)
-
-		Application:error("[TradeManager:_get_megaphone_sound_source] This level has no megaphone position!")
 	elseif not tweak_data.levels[level_id].megaphone_pos then
 		pos = Vector3(0, 0, 0)
 	else
@@ -84,19 +111,13 @@ function GroupAIStateBesiege:_get_megaphone_sound_source()
 	return sound_source
 end
 
--- Simple wrapper function to identify the winning candidate group that was actually selected and spawned in, and when they were
--- spawned in
-local _spawn_in_group_actual = GroupAIStateBesiege._spawn_in_group
-function GroupAIStateBesiege:_spawn_in_group(spawn_group, spawn_group_type, ...)
-	group_timestamps[spawn_group_type] = Application:time()
-
-	return _spawn_in_group_actual(self, spawn_group, spawn_group_type, ...)
-end
-
+--Disable vanilla captain spawning behavior.
 function GroupAIStateBesiege:_check_spawn_phalanx()
 	return
 end
 
+--Returns whether or not an assault is currently active.
+--Is used in various coplogics to determine behavior.
 function GroupAIStateBesiege:chk_assault_active_atm()
 	local assault_task = self._task_data.assault
 	
@@ -107,6 +128,8 @@ function GroupAIStateBesiege:chk_assault_active_atm()
 	return
 end
 
+--Returns whether or not detection should decay over time for coplogics.
+--Currently matches whether or not an assault is active. Kept seperate to reduce coupling in case we want different behavior in the future.
 function GroupAIStateBesiege:is_detection_persistent()
 	local assault_task = self._task_data.assault
 	
@@ -117,81 +140,55 @@ function GroupAIStateBesiege:is_detection_persistent()
 	return
 end
 
-function GroupAIStateBesiege:get_hostage_count_for_chatter()
-	
-	if self._hostage_headcount > 0 then
-		return self._hostage_headcount
-	end
-	
-	return 0
+--Used for police chatter based on number of hostages.
+function GroupAIStateBesiege:get_hostage_count()
+	return self._hostage_headcount or 0
 end
 
 function GroupAIStateBesiege:chk_heat_bonus_retreat()
 	local assault_task = self._task_data.assault
-	
+
 	if assault_task and assault_task.phase == "build" or assault_task and assault_task.phase == "sustain" then
 		if self._activeassaultbreak then
 			return true
 		end
 	end
-	
+
 	return	
 end
 
+--Returns whether or not the majority of hostages are civilians.
+--Used for police chatter about hostages.
 function GroupAIStateBesiege:chk_has_civilian_hostages()
-	if self._police_hostage_headcount and self._hostage_headcount > 0 then
-		if self._hostage_headcount - self._police_hostage_headcount > 0 then
-			return true
-		end
+	if self._hostage_headcount > (self._police_hostage_headcount or 0) then
+		return true
 	end
 end
 
-function GroupAIStateBesiege:chk_no_fighting_atm()
-
-	if self._drama_data.amount > tweak_data.drama.consistentcombat then
-		return
-	end
-	
-	return true
-end
-
+--Used for police chatter.
 function GroupAIStateBesiege:chk_had_hostages()
 	return self._had_hostages
 end
 
-function GroupAIStateBesiege:chk_anticipation()
-	local assault_task = self._task_data.assault
-	
-	if not assault_task.active or assault_task and assault_task.phase == "anticipation" and assault_task.phase_end_t and assault_task.phase_end_t < self._t then
-		return true
-	end
-	
-	return
-end
-
+--Sets the cooldown for smoke and flash grenades.
 function GroupAIStateBesiege:apply_grenade_cooldown(flash)
-
 	if not self._task_data.assault then
 		return
 	end
 	
-	local task_data = self._task_data.assault
-	local duration = tweak_data.group_ai.smoke_grenade_lifetime
-	local cooldown = math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.random())
-	
+	local cooldown
 	if flash then
-		duration = 4
-		cooldown = cooldown * 0.5
+		cooldown = tweak_data.group_ai.flash_grenade_lifetime + math.lerp(tweak_data.group_ai.flash_grenade_timeout[1], tweak_data.group_ai.flash_grenade_timeout[2], math.random())
+	else
+		cooldown = tweak_data.group_ai.smoke_grenade_lifetime + math.lerp(tweak_data.group_ai.smoke_grenade_timeout[1], tweak_data.group_ai.smoke_grenade_timeout[2], math.random())
 	end
 
-	cooldown = cooldown + duration
-	
+	local task_data = self._task_data.assault	
 	task_data.use_smoke_timer = self._t + cooldown
 	task_data.use_smoke = nil
-	
 end
 
-
+--No clue why this is here. Is entirely new code. Will investigate later.
 function GroupAIStateBesiege:_upd_assault_areas(current_area)
 	local all_areas = self._area_data
 	local nav_manager = managers.navigation
@@ -288,9 +285,9 @@ function GroupAIStateBesiege:_upd_assault_areas(current_area)
 	if assault_candidates and #assault_candidates > 0 then
 		return assault_candidates
 	end
-	
 end
 
+--Calls upd_assault_areas if that is nil, and sets the current_target_area.
 function GroupAIStateBesiege:_begin_assault_task(assault_areas)
 	local assault_task = self._task_data.assault
 	assault_task.active = true
@@ -332,82 +329,87 @@ function GroupAIStateBesiege:_begin_assault_task(assault_areas)
 	self._task_data.recon.tasks = {}
 end
 
+--Generate table used to find spawn-in voicelines.
+function GroupAIStateBesiege:_init_group_entry_lines()
+	local function random_cs()
+		local randomgroupcallout = math.random(1, 100)
+		if randomgroupcallout < 25 then
+			return "csalpha"
+		elseif randomgroupcallout < 50 then
+			return "csbravo"
+		elseif randomgroupcallout < 75 then
+			return "cscharlie"
+		else
+			return "csdelta"
+		end
+	end
+
+	local function random_hrt()
+		local randomgroupcallout = math.random(1, 100)
+		if randomgroupcallout < 25 then
+			return "hrtalpha"
+		elseif randomgroupcallout < 50 then
+			return "hrtbravo"
+		elseif randomgroupcallout < 75 then
+			return "hrtcharlie"
+		else
+			return "hrtdelta"
+		end
+	end
+
+	--Metatable to handle more complex rng selections.
+	self._group_entry_line_selectors = setmetatable(
+		{
+			groupcs1 = "csalpha",
+			groupcs2 = "csbravo",
+			groupcs3 = "cscharlie",
+			groupcs4 = "csdelta",
+			grouphrt1 = "hrtalpha",
+			grouphrt2 = "hrtbravo",
+			grouphrt3 = "hrtcharlie",
+			grouphrt4 = "hrtdelta"
+		},{
+			__index = function(table, key)
+				if key == "groupcsr" then
+					return random_cs()
+				elseif key == "grouphrtr" then
+					return random_hrt()
+				elseif key == "groupany" then
+					if self._task_data.assault.active then
+						random_cs()
+					else
+						random_hrt()
+					end
+				else
+					return rawget(table, key)
+				end
+			end
+		}
+	)
+end
+
+--Plays spawn in chatter.
+--Refers to the _group_entry_line_selectors to determine what exactly to play.
 function GroupAIStateBesiege:_voice_groupentry(group)
 	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
 
 	if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.char_tweak.chatter.entry then
 		for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
-			local randomgroupcallout = math.random(1, 100)
-			--assign tactic-identifiers for this in groupaistatebesiege on a group-to-group basis
-			--groupcs is for assault team, grouphrt is for rescue team,groupcsr/grouphrtr picks a random letter, groupany depends on whether assault is active and picks a random letter or not
-			if tactic_name == "groupcs1" then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
-			elseif tactic_name == "groupcs2" then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
-			elseif tactic_name == "groupcs3" then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
-			elseif tactic_name == "groupcs4" then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
-			elseif tactic_name == "grouphrt1" then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
-			elseif tactic_name == "grouphrt2" then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
-			elseif tactic_name == "grouphrt3" then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
-			elseif tactic_name == "grouphrt4" then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
-			elseif tactic_name == "groupcsr" then
-				if randomgroupcallout < 25 then
-					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
-				elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
-					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
-				elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
-					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
-				else
-					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
-				end
-			elseif tactic_name == "grouphrtr" then
-				if randomgroupcallout < 25 then
-					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
-				elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
-					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
-				elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
-					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
-				else
-					self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
-				end
-			elseif tactic_name == "groupany" then
-				if self._task_data.assault.active then
-					if randomgroupcallout < 25 then
-						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csalpha")
-					elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
-						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csbravo")
-					elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
-						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "cscharlie")
-					else
-						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "csdelta")
-					end
-				else
-					if randomgroupcallout < 25 then
-						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtalpha")
-					elseif randomgroupcallout > 25 and randomgroupcallout < 50 then
-						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtbravo")
-					elseif randomgroupcallout < 74 and randomgroupcallout > 50 then
-						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtcharlie")
-					else
-						self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "hrtdelta")
-					end
-				end
+			local selection = self._group_entry_line_selectors[tactic_name]
+			if selection then
+				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, selection)
 			end
 		end
 	end
 end
 
+--Captain Assault Banner enabled on enemy spawn, rather than via groupai.
 function GroupAIStateBesiege:set_damage_reduction_buff_hud()
 	--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
 end
 
-function GroupAIStateBesiege:is_smoke_grenade_active() --this functions differently, check for if use_smoke IS a thing instead
+--Check for if use_smoke IS a thing instead of calculating smoke grenade time.
+function GroupAIStateBesiege:is_smoke_grenade_active()
 	if not self._task_data.assault.use_smoke then
 		return
 	end
@@ -447,11 +449,11 @@ function GroupAIStateBesiege:_chk_group_use_smoke_grenade(group, task_data, deto
 
 				if detonate_pos and shooter_u_data then
 					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, false)
-
-					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.rand(0, 1) ^ 0.5)
-					task_data.use_smoke = false
+					self:apply_grenade_cooldown()
 
 					u_data.unit:sound():say("d01", true)
+
+					--Plays grenade throwing animation.
 					u_data.unit:movement():play_redirect("throw_grenade")
 
 					return true
@@ -492,9 +494,7 @@ function GroupAIStateBesiege:_chk_group_use_flash_grenade(group, task_data, deto
 
 				if detonate_pos and shooter_u_data then
 					self:detonate_smoke_grenade(detonate_pos, shooter_pos, duration, true)
-
-					task_data.use_smoke_timer = self._t + math.lerp(tweak_data.group_ai.smoke_and_flash_grenade_timeout[1], tweak_data.group_ai.smoke_and_flash_grenade_timeout[2], math.random() ^ 0.5)
-					task_data.use_smoke = false
+					self:apply_grenade_cooldown(true)
 
 					u_data.unit:sound():say("d02", true)	
 					u_data.unit:movement():play_redirect("throw_grenade")					
@@ -728,6 +728,11 @@ function GroupAIStateBesiege:_upd_assault_task()
 					stance = "hos"
 				}
 				self:_spawn_in_group(spawn_group, spawn_group_type, grp_objective, task_data)
+
+				if cached_spawn_groups then
+					self._tweak_data.assault.groups = cached_spawn_groups
+					cached_spawn_groups = nil
+				end
 			end
 		end
 	end
@@ -1781,12 +1786,4 @@ function GroupAIStateBesiege:_voice_dont_delay_assault(group)
 		end
 	end
 	return false
-end
-
-function GroupAIStateBesiege:chk_no_fighting_atm()
-	if self._drama_data.amount > 0.2 then
-		return
-	end
-
-	return true
 end

@@ -1,0 +1,72 @@
+<table>
+	<command cmd="speed" offset="-5000" param="50"/>
+	<text text="MOD DESIGN BY" type="title"/>
+	<br/>
+	<image scale="0.6" src="guis/textures/restoration/credits"/>
+	<br/>
+	<text text="Restoration Mod Team" type="title"/>
+	<br/>
+	<text text="Founders" type="title"/>
+	<br/>
+	<text text="Rhynne" type="name"/>
+	<text text="SC" type="name"/>
+	<br/>
+	<text text="Major Contributions" type="title"/>
+	<br/>
+	<text text="Rhynne" type="name"/>
+	<text text="DoktorAkcel" type="name"/>
+	<text text="SC" type="name"/>
+	<text text="DMC" type="name"/>
+	<text text="Rino" type="name"/>
+	<text text="Zdann" type="name"/>
+	<text text="Jarey" type="name"/>
+	<br/>
+	<text text="Contributions" type="title"/>
+	<br/>
+	<text text="Splish" type="name"/>
+	<text text="Rex" type="name"/>
+	<text text="Fuglore" type="name"/>
+	<text text="Ravicale" type="name"/>
+	<text text="Teacyn" type="name"/>
+	<text text="Nelson01023" type="name"/>
+	<text text="Iamgoofball" type="name"/>
+	<text text="Hoxi" type="name"/>
+	<text text="Offyerrocker" type="name"/>
+	<text text="Test1" type="name"/>
+	<text text="Luffy" type="name"/>
+	<text text="Finale" type="name"/>
+	<text text="Ellie" type="name"/>
+	<text text="Skwuruhl" type="name"/>
+	<text text="Major Pyatosin" type="name"/>
+	<text text="Whurr" type="name"/>
+	<text text="Porky da Corgi" type="name"/>
+	<text text="Wekk" type="name"/>
+	<text text="Hoppip" type="name"/>
+	<text text="Baddy" type="name"/>
+	<text text="Nardo" type="name"/>
+	<text text="KLEITON" type="name"/>
+	<text text="Tom Blaine" type="name"/>
+	<text text="The-Rant-Man" type="name"/>
+	<text text="RedFlame" type="name"/>
+	<br/>
+	<text text="Sound Contributions" type="title"/>
+	<br/>
+	<text text="Scruffy" type="name"/>
+	<text text="VxWolf" type="name"/>
+	<text text="JimTheCookie" type="name"/>
+	<text text="DryBittenCuticles" type="name"/>
+	<text text="MarioInATopHat" type="name"/>
+	<br/>
+	<text text="Testers" type="title"/>
+	<br/>
+	<text text="ShortonComedyGamer" type="name"/>
+	<text text="K4_Kydure" type="name"/>
+	<text text="Finale" type="name"/>
+	<text text="Derma" type="name"/>
+	<br/>
+	<text text="Translations" type="title"/>
+	<br/>
+	<text text="MsMarshie" type="name"/>
+	<text text="LR_Daring" type="name"/>
+	<command cmd="stop" offset="220"/>
+</table>

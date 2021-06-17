@@ -6,15 +6,15 @@
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/pd2_dlc_bex/weapons/wpn_npc_hajk/wpn_npc_hajk" />		
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_acc_bex_riflar/ene_acc_bex_riflar" />
-		<depends_on unit="units/payday2/weapons/wpn_npc_g36/wpn_npc_g36" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="city_swat" />
-			<var name="_default_weapon_id" value="g36" />
+			<var name="_default_weapon_id" value="hajk_cop" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

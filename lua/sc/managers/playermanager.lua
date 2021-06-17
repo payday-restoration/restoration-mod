@@ -37,6 +37,38 @@ Hooks:PostHook(PlayerManager, "init", "ResInit", function(self)
 	}
 end)
 
+--Make armor bot boost increase armor by % instead of adding.
+function PlayerManager:body_armor_skill_multiplier(override_armor)
+	local multiplier = 1
+	multiplier = multiplier + self:upgrade_value("player", "tier_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "passive_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "armor_multiplier", 1) - 1
+	multiplier = multiplier + self:team_upgrade_value("armor", "multiplier", 1) - 1
+	multiplier = multiplier + self:get_hostage_bonus_multiplier("armor") - 1
+	multiplier = multiplier + self:upgrade_value("player", "perk_armor_loss_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "chico_armor_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("team", "crew_add_armor", 1) - 1 --Added bot armor boost.
+
+	return multiplier
+end
+
+
+function PlayerManager:body_armor_skill_addend(override_armor)
+	local addend = 0
+	addend = addend + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_armor_addend", 0)
+
+	if self:has_category_upgrade("player", "armor_increase") then
+		local health_multiplier = self:health_skill_multiplier()
+		local max_health = (PlayerDamage._HEALTH_INIT + self:health_skill_addend()) * health_multiplier
+		addend = addend + max_health * self:upgrade_value("player", "armor_increase", 1)
+	end
+
+	--Removed bot armor boost.
+
+	return addend
+end
+
 function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, upgrade_level, health_ratio)
 	local multiplier = 1
 	local armor_penalty = self:mod_movement_penalty(self:body_armor_value("movement", upgrade_level, 1))
@@ -52,9 +84,6 @@ function PlayerManager:movement_speed_multiplier(speed_state, bonus_multiplier, 
 
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("speed") - 1
 	multiplier = multiplier + self:upgrade_value("player", "movement_speed_multiplier", 1) - 1
-
-	--Make movespeed bonus from converts vary based on number of converts.
-	multiplier = multiplier + self:num_local_minions() * (self:upgrade_value("player", "minion_master_speed_multiplier", 1) - 1)
 
 	--Kingpin movespeed bonus.
 	if self:has_activate_temporary_upgrade("temporary", "chico_injector") then
@@ -444,8 +473,6 @@ function PlayerManager:health_skill_multiplier()
 	multiplier = multiplier + self:upgrade_value("player", "passive_health_multiplier", 1) - 1
 	multiplier = multiplier + self:team_upgrade_value("health", "passive_multiplier", 1) - 1
 	multiplier = multiplier + self:get_hostage_bonus_multiplier("health") - 1
-	--Now scales off of number of converts.
-	multiplier = multiplier + self:num_local_minions() * (self:upgrade_value("player", "minion_master_health_multiplier", 1) - 1)
 	multiplier = multiplier * self:upgrade_value("player", "health_decrease", 1.0) --Anarchist reduces health by expected amount.
 	
 	return multiplier
@@ -650,11 +677,6 @@ end
 --Get health damage reduction gained via skills.
 --Crashes mentioning this function mean that there is a syntax error in the file.
 function PlayerManager:get_deflection_from_skills()
-	--"""Upgrade"""
-	if self:has_category_upgrade("player", "no_deflection") then
-		return -self:body_armor_value("deflection", nil, 0)
-	end
-
 	return 
 		  self:upgrade_value("player", "deflection_addend", 0)
 		+ self:upgrade_value("player", "frenzy_deflection", 0)
@@ -869,10 +891,7 @@ function PlayerManager:health_regen()
 	local health_regen = tweak_data.player.damage.HEALTH_REGEN
 	health_regen = health_regen + self:temporary_upgrade_value("temporary", "wolverine_health_regen", 0)
 	health_regen = health_regen + self:upgrade_value("player", "passive_health_regen", 0)
-
-	if self:is_db_regen_active() then
-		health_regen = health_regen + tweak_data.upgrades.values.doctor_bag.passive_regen
-	end
+	health_regen = health_regen + self:temporary_upgrade_value("temporary", "doctor_bag_health_regen", 0)
 
 	return health_regen
 end
@@ -882,27 +901,12 @@ function PlayerManager:fixed_health_regen()
 	local health_regen = 0
 	health_regen = health_regen + self:upgrade_value("team", "crew_health_regen", 0)
 	health_regen = health_regen + self:get_hostage_bonus_addend("health_regen")
-	if (managers.groupai and managers.groupai:state():hostage_count() or 0) >= tweak_data:get_raw_value("upgrades", "hostage_max_num", "health_regen") then
+	local groupai = managers.groupai and managers.groupai:state()
+	if (groupai and groupai:hostage_count() + (groupai._num_converted_police or self:num_local_minions()) or self:num_local_minions() or 0) >= tweak_data:get_raw_value("upgrades", "hostage_max_num", "health_regen") then
 		health_regen = health_regen + self:get_hostage_bonus_addend("health_regen") * self:upgrade_value("player", "hostage_health_regen_max_mult", 0)
 	end
-
+	
 	return health_regen
-end
-
---DB management.
-function PlayerManager:activate_db_regen()
-	self._db_regen_endtime = Application:time() + tweak_data.upgrades.values.doctor_bag.passive_regen_duration
-end
-
-function PlayerManager:deactivate_db_regen()
-	self._db_regen_endtime = nil
-end
-
-function PlayerManager:is_db_regen_active()
-	if self._db_regen_endtime and Application:time() < self._db_regen_endtime then
-		return true
-	end
-	return false
 end
 
 --Slows the player by a % that decays linearly over a duration, along with a visual.
@@ -1063,6 +1067,52 @@ function PlayerManager:check_enduring()
 	end
 end
 
+--Makes *all* converts contribute to hostage skills, rather than just local converts.
+function PlayerManager:get_hostage_bonus_multiplier(category)
+	local groupai = managers.groupai and managers.groupai:state()
+	local hostages = groupai and groupai:hostage_count() or 0
+	hostages = hostages + (groupai and groupai._num_converted_police or self:num_local_minions() or 0)
+	local multiplier = 0
+	local hostage_max_num = tweak_data:get_raw_value("upgrades", "hostage_max_num", category)
+
+	if hostage_max_num then
+		hostages = math.min(hostages, hostage_max_num)
+	end
+
+	multiplier = multiplier + self:team_upgrade_value(category, "hostage_multiplier", 1) - 1
+	multiplier = multiplier + self:team_upgrade_value(category, "passive_hostage_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "hostage_" .. category .. "_multiplier", 1) - 1
+	multiplier = multiplier + self:upgrade_value("player", "passive_hostage_" .. category .. "_multiplier", 1) - 1
+	--Removed useless local_player call.
+
+	--No close to hostage boosts.
+
+	return 1 + multiplier * hostages
+end
+
+--Makes *all* converts contribute to hostage skills, rather than just local converts.
+function PlayerManager:get_hostage_bonus_addend(category)
+	local groupai = managers.groupai and managers.groupai:state()
+	local hostages = groupai and groupai:hostage_count() or 0
+	hostages = hostages + (groupai and groupai._num_converted_police or self:num_local_minions() or 0)
+	local addend = 0
+	local hostage_max_num = tweak_data:get_raw_value("upgrades", "hostage_max_num", category)
+
+	if hostage_max_num then
+		hostages = math.min(hostages, hostage_max_num)
+	end
+
+	addend = addend + self:team_upgrade_value(category, "hostage_addend", 0)
+	addend = addend + self:team_upgrade_value(category, "passive_hostage_addend", 0)
+	addend = addend + self:upgrade_value("player", "hostage_" .. category .. "_addend", 0)
+	addend = addend + self:upgrade_value("player", "passive_hostage_" .. category .. "_addend", 0)
+	--Removed useless local_player call.
+
+	--No close to hostage boosts.
+
+	return addend * hostages
+end
+
 --Instantly reloads all equipped weapons. Used by Running from Death Ace.
 function PlayerManager:reload_weapons()
 	local weapons = {
@@ -1105,32 +1155,6 @@ function PlayerManager:_get_cocaine_damage_absorption_from_data(data)
 	end
 	
 	return math.floor((amount + 1) / (tweak_data.upgrades.cocaine_stacks_convert_levels and tweak_data.upgrades.cocaine_stacks_convert_levels[upgrade_level] or 20)) * (tweak_data.upgrades.cocaine_stacks_dmg_absorption_value or 0.1)
-end
-
---Makes the multiplier capstone work as described.
-function PlayerManager:get_best_cocaine_damage_absorption(my_peer_id)
-	local data = self._global.synced_cocaine_stacks[my_peer_id] or {}
-	local multiplier = self:upgrade_value("player", "cocaine_stack_absorption_multiplier", 1) --Previously always returned 1.
-	local absorption = 0
-	local best_peer_id = 0
-
-	if self._global.synced_cocaine_stacks then
-		local peer_absorption = nil
-
-		for peer_id, data in pairs(self._global.synced_cocaine_stacks) do
-			if peer_id == my_peer_id or data.in_use then
-				peer_absorption = self:_get_cocaine_damage_absorption_from_data(data)
-
-				if absorption < peer_absorption then
-					best_peer_id = peer_id or best_peer_id
-				end
-
-				absorption = math.max(absorption, peer_absorption)
-			end
-		end
-	end
-
-	return absorption * multiplier, best_peer_id
 end
 
 --Adds buff tracker call.

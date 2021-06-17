@@ -362,7 +362,12 @@ function HUDAssaultCorner:init(hud, full_hud)
 			self.buff_icon = "guis/textures/pd2/hud_buff_halloween"
 			break
 		end
-	end		
+	end	
+
+	--Skirmish exclusive stuff
+	if managers.skirmish:is_skirmish() then
+		self.buff_icon = "guis/textures/pd2/hud_buff_generic"
+	end
 	
 	local buffs_pad_panel = self._hud_panel:panel({
 		visible = false,
@@ -740,8 +745,6 @@ function HUDAssaultCorner:_set_text_list(text_list)
 	end
 end
 function HUDAssaultCorner:_start_assault(text_list)
-	if self._assault then
-	return end
 	text_list = text_list or {""}
 	local assault_panel = self._hud_panel:child("assault_panel")
 	local text_panel = assault_panel:child("text_panel")
@@ -826,12 +829,10 @@ function HUDAssaultCorner:_end_assault()
 	--self._hud_panel:child("assault_panel"):child("text_panel"):clear()
 	if self:has_waves() then
 		assault_panel:set_visible(restoration.Options:GetValue("HUD/AssaultStyle") == 1)
-		self._raid_finised = false
 		wave_panel = self._hud_panel:child("wave_panel")
 		self:_update_assault_hud_color(self._assault_survived_color)
 		self:_set_text_list(self:_get_survived_assault_strings())
 		text_panel:animate(callback(self, self, "_animate_text"), nil, nil, nil)
-		--self._completed_waves = self._completed_waves + 1
 		self._hud_panel:child("wave_panel"):set_visible(false)		
 		wave_panel:animate(callback(self, self, "_animate_wave_completed"), self)
 		if restoration.Options:GetValue("HUD/AssaultStyle") == 2 then

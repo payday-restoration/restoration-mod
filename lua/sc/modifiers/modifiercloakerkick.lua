@@ -1,28 +1,24 @@
-ModifierCloakerKick.default_value = "spawn_chance"
-ModifierCloakerKick.cloakers = {
-	Idstring("units/payday2/characters/ene_spook_1/ene_spook_1"),
-	Idstring("units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"),		
-	Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),				
-	Idstring("units/pd2_dlc_hvh/characters/ene_spook_hvh_1/ene_spook_hvh_1"),
-	Idstring("units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/ene_zeal_cloaker")
-}
+--Cloakers dropping flash grenades when they dodge
+function ModifierCloakerKick:init(data)
+	ModifierCloakerKick.super.init(self, data)
 
-ModifierCloakerKick.reapercloaker = {
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")
-}	
+    tweak_data.character.spooc.dodge_with_grenade = {
+        flash = {duration = {
+            12,
+            12
+        }},
+        check = function (t, nr_grenades_used)
+            local delay_till_next_use = 30
+            local chance = 0.5
 
-function ModifierCloakerKick:modify_value(id, value)
-	if id == "GroupAIStateBesiege:SpawningUnit" then
-		local is_cloakers = table.contains(ModifierCloakerKick.cloakers, value)
-		local is_reapercloaker = table.contains(ModifierCloakerKick.reapercloaker, value)			
-		if is_cloakers and math.random(0,100) < 10 then
-			return Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
-		elseif is_reapercloaker and math.random(0,100) < 10 then
-			return Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1")				
-		end
-	end
-	return value
+            if math.random() < chance then
+                return true, t + delay_till_next_use
+            end
+
+            return false, t + delay_till_next_use
+        end
+    } 	
+
 end
 
 function ModifierCloakerKick:OnPlayerCloakerKicked(cloaker_unit)

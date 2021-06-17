@@ -59,6 +59,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"colt_1911",
 					"mac10",
 					"hajk",
+					"spoon",
 					"x_mac10"
 				}
 			},	
@@ -227,7 +228,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			},
 		l50 = {
 				name_id = "lvl_50",
-				upgrades = {}
+				upgrades = {
+					"halloween_sword"
+				}
 			},
 		l51 = {
 				name_id = "weapons",
@@ -273,6 +276,12 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 	end 	
 end)
 
+Hooks:PostHook(UpgradesTweakData, "_melee_weapon_definitions", "ResMeleeDef", function(self)
+	self.definitions.halloween_sword = {
+		dlc = "rest",
+		category = "melee_weapon"
+	}
+end)
 
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
@@ -368,14 +377,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
 	self.values.player.extra_revive_health = {0.25} --Bonus health % to add when getting up. Used by Muscle and Stoic.
-	self.values.player.no_deflection = {true} --Removes health DR. Used by Stoic.
 	
 	--Bot boost stuff stuff--
 	self.values.team.crew_add_health = {3}
-	self.values.team.crew_add_armor = {1.5}
+	self.values.team.crew_add_armor = {1.1} --Now adds % armor, rather than flat armor.
 	self.values.team.crew_add_dodge = {0.03} --Now adds % of dodge stat every second to meter.
-	self.values.team.crew_add_concealment = {1}
-	self.values.team.crew_add_stamina = {25}
+	self.values.team.crew_add_concealment = {2}
+	self.values.team.crew_add_stamina = {15}
 	self.values.team.crew_reduce_speed_penalty = {1}
 	self.values.team.crew_health_regen = {0.1}
 	self.values.team.crew_throwable_regen = {70}
@@ -417,8 +425,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Doctor Bags: Intended to offer consistent sustain over a long period of time.
 	self.doctor_bag_base = 2 --Starting Number
 	self.values.doctor_bag.heal_amount = 0.2 --Heals 20% of max health on use.
-	self.values.doctor_bag.passive_regen = 0.04
-	self.values.doctor_bag.passive_regen_duration = 180.1 --Heals 4% of max health every 4 seconds for the next 3 minutes or until you enter bleedout.
+	self.values.temporary.doctor_bag_health_regen = {{0.04, 180.1}} --Heals 4% of max health every 4 seconds for the next 3 minutes.
 	
 	--ECMs: They're ECMs
 	self.ecm_jammer_base_battery_life = 10
@@ -445,6 +452,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.player.small_loot_multiplier = {1.3, 1.3}
 	self.values.player.melee_kill_snatch_pager_chance = {1}
 	self.values.player.run_speed_multiplier = {1.25}
+	self.values.player.walk_speed_multiplier = {
+		1.25
+	}
+	self.values.player.crouch_speed_multiplier = {
+		1.1,
+		1.2
+	}	
 	self.values.player.climb_speed_multiplier = {1.2, 1.75}
 	self.values.player.can_free_run = {true}
 	self.values.player.fall_health_damage_multiplier = {0}
@@ -535,6 +549,11 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						1, --Basic
 						2 --Ace
 					}
+					--Says health multiplier, but actually multiplies damage taken.
+					self.values.player.passive_convert_enemies_health_multiplier = {
+						0.4, --Basic
+						0.2 --Ace
+					}					
 					--Basic
 						self.values.player.convert_enemies = {true}
 					--Ace
@@ -549,15 +568,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						self.values.player.civilian_gives_ammo = {true}
 
 				--Partners in Crime--
-					--Says health multiplier, but actually multiplies damage taken.
-					self.values.player.passive_convert_enemies_health_multiplier = {
-						0.5, --Basic
-						0.2 --Ace
-					}
 					--Basic
-						self.values.player.minion_master_speed_multiplier = {1.05}
+						self.values.player.hostage_speed_multiplier = {1.03}
 					--Ace
-						self.values.player.minion_master_health_multiplier = {1.15}
+						self.values.player.hostage_health_multiplier = {1.1}
 							
 				--Hostage Taker
 					self.values.player.hostage_health_regen_addend = {
@@ -634,9 +648,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Far Away
 				--Basic
-					self.values.shotgun.steelsight_accuracy_inc = {0.6}
+					self.values.player.steelsight_speed_multiplier = {1.6} --Movement speed while ADSing.
 				--Ace
-					self.values.shotgun.steelsight_range_inc = {1.5}
+					self.values.shotgun.steelsight_accuracy_inc = {0.7}
+					self.values.shotgun.steelsight_range_inc = {1.3}
 
 			--Close By
 				--Basic
@@ -778,8 +793,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					--Basic
 						self.values.player.unpierceable_armor = {true}
 					--Ace
-						self.values.player.armor_full_damage_absorb = {0.25}
-						self.values.player.armor_regen_timer_multiplier_tier = {0.9}				
+						self.values.player.armor_full_damage_absorb = {0.3}
+						self.values.player.armor_regen_timer_multiplier_tier = {0.85}				
 			
 		--Breacher--
 			--Hardware Expert
@@ -845,6 +860,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				--Ace
 					self.values.assault_rifle.steelsight_accuracy_inc = {0.7}
 					self.values.snp.steelsight_accuracy_inc = {0.7}
+					self.values.assault_rifle.steelsight_range_inc = {1.3}
+					self.values.snp.steelsight_range_inc = {1.3}
 					
 			--Mind Blown, formerly Explosive Headshot, formerly Graze
 				self.values.snp.graze_damage = {
@@ -1108,40 +1125,38 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.pistol.move_spread_multiplier = {0.6}
 				
 			--Akimbo
-				--Ace
-					self.values.akimbo.extra_ammo_multiplier = {1.25, 1.25}
-
 				self.values.akimbo.recoil_index_addend = {
 					0,
-					2, --Basic
-					4, --Ace
-					6,
-					8
+					4, --Basic
+					4,
+					4,
+					4
 				}
+
+				--Ace
+					self.values.akimbo.extra_ammo_multiplier = {1.25}
+					self.values.akimbo.pick_up_multiplier = {1.25}
+
 				--Reserved for future use.
 				self.values.akimbo.spread_index_addend = {
 					0,
-					1,
-					2,
-					3,
-					4
+					0,
+					0,
+					0,
+					0
 				}
 
 			--Desperado
 				self.values.pistol.stacked_accuracy_bonus = {
-					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 5}, --Basic
-					{accuracy_bonus = 0.9, max_stacks = 5, max_time = 10} --Ace
+					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 4}, --Basic
+					{accuracy_bonus = 0.92, max_stacks = 5, max_time = 10} --Ace
 				}
-				--Ace
-					self.values.player.desperado_bodyshot_refresh = {true}
 				
 			--Trigger Happy
 				self.values.pistol.stacking_hit_damage_multiplier = {
-					{damage_bonus = 1.1, max_stacks = 5, max_time = 5}, --Basic
+					{damage_bonus = 1.1, max_stacks = 5, max_time = 4}, --Basic
 					{damage_bonus = 1.1, max_stacks = 5, max_time = 10} --Ace
 				}
-				--Ace
-					self.values.player.trigger_happy_bodyshot_refresh = {true}
 			
 		--Revenant
 			--Running From Death
@@ -1233,7 +1248,6 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.values.weapon.passive_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.melee_damage_multiplier = {1.25, 1.5, 1.75, 2}
 	self.values.player.non_special_melee_multiplier = {1.25, 1.5, 1.75, 2}
-	self.values.player.pick_up_ammo_multiplier = {1.25}
 
 	--Burglar
 	self.values.player.crouch_dodge_chance = {0.05, 0.10}
@@ -1338,7 +1352,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		stamina = 4,
 		damage_dampener = 1
 	}
-	self.values.team.health.hostage_multiplier = {1.025}
+	self.values.team.health.hostage_multiplier = {1.05}
 	self.values.team.stamina.hostage_multiplier = {1.10}
 	self.values.player.passive_dodge_chance = {
 		0.05,
@@ -1457,6 +1471,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.loose_ammo_give_team_health_ratio = 0.5 --% of healing given to team.
 	self.values.player.loose_ammo_restore_health_give_team = {true}	
 	self.values.player.loose_ammo_give_armor = {3}
+	self.values.player.loose_ammo_give_dodge = {1}
 
 	--Create actual upgrade table for Gambler.
 	self.values.temporary.loose_ammo_restore_health = {}
@@ -1549,21 +1564,21 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--I AM A BAD MOTHERFUCKA--
 	--maniac
 	self.cocaine_stacks_convert_levels = {
-		300,
-		240
+		400,
+		300
 	}	
 	self.cocaine_stacks_dmg_absorption_value = 0.1
 	self.cocaine_stacks_tick_t = 0
 	self.max_cocaine_stacks_per_tick = 2400
 	self.max_total_cocaine_stacks = 2400
 	self.cocaine_stacks_decay_t = 8
-	self.cocaine_stacks_decay_amount_per_tick = 300
+	self.cocaine_stacks_decay_amount_per_tick = 400
 	self.cocaine_stacks_decay_percentage_per_tick = 0
 	self.values.player.cocaine_stacking = {1}
 	self.values.player.sync_cocaine_stacks = {true}
-	self.values.player.cocaine_stacks_decay_multiplier = {0.8}
+	self.values.player.cocaine_stacks_decay_multiplier = {0.75}
 	self.values.player.sync_cocaine_upgrade_level = {2}
-	self.values.player.cocaine_stack_absorption_multiplier = {1.5}
+	self.values.player.cocaine_stack_absorption_multiplier = {2}
 	
 	--Chico--
 	--kingpin
@@ -1605,7 +1620,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4
 	}
 	self.values.player.damage_control_healing = {
-		250
+		300
 	}
 
 	self.values.player.damage_control_cooldown_drain = {
@@ -1665,37 +1680,50 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	--Tag Team--
 	self.values.player.tag_team_base = {
 		{
-			kill_health_gain = 1.5,
+			kill_health_gain = 0.8,
 			radius = 0.6,
 			distance = 18,
-			kill_extension = 2,
-			duration = 12,
-			tagged_health_gain_ratio = 0.5
+			kill_duration = 0,
+			kill_dropoff = 0,
+			duration = 11,
+			tagged_health_gain_ratio = 0.625
+		},
+		{
+			kill_health_gain = 0.8,
+			radius = 0.6,
+			distance = 18,
+			kill_duration = 2,
+			kill_dropoff = 0.2,
+			duration = 11,
+			tagged_health_gain_ratio = 0.625
+		},
+		{
+			kill_health_gain = 1.6,
+			radius = 0.6,
+			distance = 18,
+			kill_duration = 2,
+			kill_dropoff = 0.2,
+			duration = 11,
+			tagged_health_gain_ratio = 0.625
 		}
-	}	
+	}
+
 	self.values.player.tag_team_cooldown_drain = {
 		{
 			tagged = 0,
 			owner = 0
-		},	
-		{
-			tagged = 0,
-			owner = 2
 		},
 		{
 			tagged = 2,
 			owner = 2
 		}
 	}
+
 	self.values.player.tag_team_damage_absorption = {
 		{
 			kill_gain = 0.05,
-			max = 2
-		},
-		{
-			kill_gain = 0.1,
-			max = 2
-		}		
+			max = 0.8
+		}	
 	}	
 	
 	--Hacker
@@ -2052,15 +2080,6 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
-	self.definitions.player_no_deflection = {
-		category = "feature",
-		name_id = "menu_player_panic_suppression",
-		upgrade = {
-			category = "player",
-			upgrade = "no_deflection",
-			value = 1
-		}
-	}	
 	self.definitions.player_dodge_stacking_heal = {
 		category = "feature",
 		name_id = "menu_player_dodge_stacking_heal",
@@ -2088,6 +2107,33 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
+	self.definitions.player_tag_team_base_1 = {
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
+	self.definitions.player_tag_team_base_2 = {
+		category = "feature",
+		upgrade = {
+			value = 2,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
+	self.definitions.player_tag_team_base_3 = {
+		category = "feature",
+		upgrade = {
+			value = 3,
+			upgrade = "tag_team_base",
+			synced = true,
+			category = "player"
+		}
+	}
 	self.definitions.player_tag_team_cooldown_drain_1 = {
 		category = "feature",
 		upgrade = {
@@ -2104,14 +2150,6 @@ function UpgradesTweakData:_player_definitions()
 			category = "player"
 		}
 	}
-	self.definitions.player_tag_team_cooldown_drain_3 = {
-		category = "feature",
-		upgrade = {
-			value = 3,
-			upgrade = "tag_team_cooldown_drain",
-			category = "player"
-		}
-	}		
 	self.definitions.player_passive_health_multiplier_5 = {
 		category = "feature",
 		name_id = "menu_player_health_multiplier",
@@ -2420,18 +2458,10 @@ function UpgradesTweakData:_player_definitions()
 			value = 1
 		}
 	}
-	self.definitions.player_tag_team_damage_absorption_1 = {
+	self.definitions.player_tag_team_damage_absorption = {
 		category = "feature",
 		upgrade = {
 			value = 1,
-			upgrade = "tag_team_damage_absorption",
-			category = "player"
-		}
-	}	
-	self.definitions.player_tag_team_damage_absorption_2 = {
-		category = "feature",
-		upgrade = {
-			value = 2,
 			upgrade = "tag_team_damage_absorption",
 			category = "player"
 		}
@@ -2510,7 +2540,16 @@ function UpgradesTweakData:_player_definitions()
 			upgrade = "loose_ammo_give_armor",
 			category = "player"
 		}
-	}		
+	}
+	self.definitions.player_loose_ammo_give_dodge = {
+		name_id = "menu_player_loose_ammo_give_dodge",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "loose_ammo_give_dodge",
+			category = "player"
+		}
+	}	
 	
 	--Passive Perk Deck Dam increases
 	self.definitions.weapon_passive_damage_multiplier_1 = {
@@ -2555,6 +2594,42 @@ function UpgradesTweakData:_player_definitions()
 		upgrade = {
 			value = 1,
 			upgrade = "hostage_health_regen_max_mult",
+			category = "player"
+		}
+	}
+	self.definitions.player_hostage_health_multiplier = {
+		name_id = "menu_player_hostage_health_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hostage_health_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_hostage_speed_multiplier = {
+		name_id = "menu_player_hostage_speed_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "hostage_speed_multiplier",
+			category = "player"
+		}
+	}
+	self.definitions.player_doctor_bag_health_regen = {
+		name_id = "menu_temporary_doctor_bag_health_regen",
+		category = "temporary",
+		upgrade = {
+			value = 1,
+			upgrade = "doctor_bag_health_regen",
+			category = "temporary"
+		}
+	}
+	self.definitions.player_steelsight_speed_multiplier = {
+		name_id = "menu_player_steelsight_speed_multiplier",
+		category = "player",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_speed_multiplier",
 			category = "player"
 		}
 	}
@@ -2924,24 +2999,6 @@ function UpgradesTweakData:_saw_definitions()
 			upgrade = "spooc_damage_resist",
 			category = "player"
 		}
-	}	
-	self.definitions.player_trigger_happy_bodyshot_refresh = {
-		name_id = "menu_player_trigger_happy_bodyshot_refresh",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "trigger_happy_bodyshot_refresh",
-			category = "player"
-		}
-	}
-	self.definitions.player_desperado_bodyshot_refresh = {
-		name_id = "menu_player_desperado_bodyshot_refresh",
-		category = "feature",
-		upgrade = {
-			value = 1,
-			upgrade = "desperado_bodyshot_refresh",
-			category = "player"
-		}
 	}
 	self.definitions.player_frenzy_deflection_1 = {
 		name_id = "menu_player_frenzy_deflection",
@@ -3234,6 +3291,24 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			category = "assault_rifle"
 		}
 	}
+	self.definitions.snp_steelsight_range_inc_1 = {
+		name_id = "menu_snp_steelsight_range_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_range_inc",
+			category = "snp"
+		}
+	}
+	self.definitions.assault_rifle_steelsight_range_inc_1 = {
+		name_id = "menu_assault_rifle_steelsight_range_inc",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "steelsight_range_inc",
+			category = "assault_rifle"
+		}
+	}
 	self.definitions.pistol_ap_bullets_1 = {
 		name_id = "menu_pistol_ap_bullets_1",
 		category = "feature",
@@ -3241,6 +3316,15 @@ Hooks:PostHook(UpgradesTweakData, "_weapon_definitions", "ResWeaponSkills", func
 			value = 1,
 			upgrade = "ap_bullets",
 			category = "pistol"
+		}
+	}
+	self.definitions.akimbo_pick_up_multiplier = {
+		name_id = "menu_akimbo_pick_up_multiplier",
+		category = "feature",
+		upgrade = {
+			value = 1,
+			upgrade = "pick_up_multiplier",
+			category = "akimbo"
 		}
 	}
 end)

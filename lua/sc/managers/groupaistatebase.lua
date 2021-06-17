@@ -23,9 +23,9 @@ function GroupAIStateBase:_calculate_difficulty_ratio()
 
 	self._difficulty_point_index = i
 	self._difficulty_ramp = (diff - (ramp[i - 1] or 0)) / ((ramp[i] or 1) - (ramp[i - 1] or 0))
-	log("Diff = " .. tostring(diff))
-	log("Index = " .. tostring(self._difficulty_point_index))
-	log("Value = " .. tostring(self._difficulty_ramp + self._difficulty_point_index))
+	--log("Diff = " .. tostring(diff))
+	--log("Index = " .. tostring(self._difficulty_point_index))
+	--log("Value = " .. tostring(self._difficulty_ramp + self._difficulty_point_index))
 end
 
 function GroupAIStateBase:_check_assault_panic_chatter()
@@ -101,16 +101,16 @@ function GroupAIStateBase:_init_misc_data()
 	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 	
 	if diff_index <= 2 then
-		self._weapons_hot_threshold = 0.90
+		self._weapons_hot_threshold = 0.70
 		self._suspicion_threshold = 0.6
 	elseif diff_index == 3 then
-		self._weapons_hot_threshold = 0.80
+		self._weapons_hot_threshold = 0.65
 		self._suspicion_threshold = 0.65
 	elseif diff_index == 4 then
-		self._weapons_hot_threshold = 0.70
+		self._weapons_hot_threshold = 0.60
 		self._suspicion_threshold = 0.7
 	elseif diff_index == 5 then
-		self._weapons_hot_threshold = 0.60
+		self._weapons_hot_threshold = 0.55
 		self._suspicion_threshold = 0.75
 	elseif diff_index == 6 then
 		self._weapons_hot_threshold = 0.50
@@ -119,7 +119,7 @@ function GroupAIStateBase:_init_misc_data()
 		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.85
 	else
-		self._weapons_hot_threshold = 0.40
+		self._weapons_hot_threshold = 0.45
 		self._suspicion_threshold = 0.9
 	end
 	self._blackout_units = {} --offy wuz hear
@@ -169,16 +169,16 @@ function GroupAIStateBase:on_simulation_started()
 	local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
 	
 	if diff_index <= 2 then
-		self._weapons_hot_threshold = 0.90
+		self._weapons_hot_threshold = 0.70
 		self._suspicion_threshold = 0.6
 	elseif diff_index == 3 then
-		self._weapons_hot_threshold = 0.80
+		self._weapons_hot_threshold = 0.65
 		self._suspicion_threshold = 0.65
 	elseif diff_index == 4 then
-		self._weapons_hot_threshold = 0.70
+		self._weapons_hot_threshold = 0.60
 		self._suspicion_threshold = 0.7
 	elseif diff_index == 5 then
-		self._weapons_hot_threshold = 0.60
+		self._weapons_hot_threshold = 0.55
 		self._suspicion_threshold = 0.75
 	elseif diff_index == 6 then
 		self._weapons_hot_threshold = 0.50
@@ -187,7 +187,7 @@ function GroupAIStateBase:on_simulation_started()
 		self._weapons_hot_threshold = 0.50
 		self._suspicion_threshold = 0.85
 	else
-		self._weapons_hot_threshold = 0.40
+		self._weapons_hot_threshold = 0.45
 		self._suspicion_threshold = 0.9
 	end
 	
@@ -210,7 +210,7 @@ function GroupAIStateBase:chk_guard_delay_deduction()
 	end
 end	
 
-function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_id)
+function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_id, point_of_no_return_tweak_id)
 	if time == nil or setup:has_queued_exec() then
 		return
 	end
@@ -226,9 +226,10 @@ function GroupAIStateBase:set_point_of_no_return_timer(time, point_of_no_return_
 
 	self._point_of_no_return_timer = time
 	self._point_of_no_return_id = point_of_no_return_id
+	self._point_of_no_return_tweak_id = point_of_no_return_tweak_id
 	self._point_of_no_return_areas = nil
 
-	managers.hud:show_point_of_no_return_timer()
+	managers.hud:show_point_of_no_return_timer(self._point_of_no_return_tweak_id)
 	managers.hud:add_updator("point_of_no_return", callback(self, self, "_update_point_of_no_return"))
 	--log("setting diff to 1!!")
 	self:set_difficulty(nil, 1)
@@ -1477,7 +1478,7 @@ if Network:is_server() then
 			if not criminal then
 				return
 			end
-			self:set_difficulty(nil, 0.05)
+			self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
 			
 		    if is_first or self._assault_number and self._assault_number >= 1 then
 				local roll = math.rand(1, 100)
@@ -1515,11 +1516,13 @@ function GroupAIStateBase:set_difficulty(script_value, manual_value)
 
 			return
 		elseif not self._loud_diff_set and script_value > 0  then
+			local starting_diff = 0.1
+			starting_diff = managers.modifiers:modify_value("GroupAIStateBase:CheckingDiff", starting_diff)
 			--hopefully better way to do it. when game tries to set diff to anything that isnt 0, we add 0.1
 			--only do this once (or when value is set to false as said below). otherwise we'll set diff to 1 super fast and that's mean
 			--should fix armored transport and its jank mission scripts	(ovk why)
 			--also, add 0.1 here instead of setting so you cant bypass civ penalty on some heists
-			self._difficulty_value = self._difficulty_value + 0.1
+			self._difficulty_value = self._difficulty_value + starting_diff
 			self:_calculate_difficulty_ratio()
 			--please kill me
 			self._loud_diff_set = true

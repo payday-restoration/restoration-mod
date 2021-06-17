@@ -17,28 +17,45 @@ MutatorMinidozers.icon_coords = {
 function MutatorMinidozers:setup(data)
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-
+	
+	local unit_types = tweak_data.group_ai.unit_categories.FBI_tank.unit_types
 	local unit_types_black = tweak_data.group_ai.unit_categories.BLACK_tank.unit_types
 	
 	local mini_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 	local classic_mini_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_minigun_classic/ene_bulldozer_minigun_classic")
 	
 	if difficulty_index <= 7 then 
-	table.insert(unit_types_black.america, classic_mini_unit_name)
-	table.insert(unit_types_black.russia, classic_mini_unit_name)
-	table.insert(unit_types_black.zombie, classic_mini_unit_name)
-	table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))
-	table.insert(unit_types_black.murkywater, classic_medic_unit_name)
-	table.insert(unit_types_black.nypd, classic_mini_unit_name)
-	table.insert(unit_types_black.lapd, classic_mini_unit_name)				
-	else		
-	table.insert(unit_types_black.america, mini_unit_name)
-	table.insert(unit_types_black.russia, mini_unit_name)
-	table.insert(unit_types_black.zombie, mini_unit_name)
-	table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))		
-	table.insert(unit_types_black.murkywater, mini_unit_name)
-	table.insert(unit_types_black.nypd, mini_unit_name)
-	table.insert(unit_types_black.lapd, mini_unit_name)		
+		table.insert(unit_types.america, classic_mini_unit_name)
+		table.insert(unit_types.russia, classic_mini_unit_name)
+		table.insert(unit_types.zombie, classic_mini_unit_name)
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))
+		table.insert(unit_types.murkywater, classic_medic_unit_name)
+		table.insert(unit_types.nypd, classic_mini_unit_name)
+		table.insert(unit_types.lapd, classic_mini_unit_name)		
+	
+		table.insert(unit_types_black.america, classic_mini_unit_name)
+		table.insert(unit_types_black.russia, classic_mini_unit_name)
+		table.insert(unit_types_black.zombie, classic_mini_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))
+		table.insert(unit_types_black.murkywater, classic_medic_unit_name)
+		table.insert(unit_types_black.nypd, classic_mini_unit_name)
+		table.insert(unit_types_black.lapd, classic_mini_unit_name)				
+	else	
+		table.insert(unit_types.america, mini_unit_name)
+		table.insert(unit_types.russia, mini_unit_name)
+		table.insert(unit_types.zombie, mini_unit_name)
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))		
+		table.insert(unit_types.murkywater, mini_unit_name)
+		table.insert(unit_types.nypd, mini_unit_name)
+		table.insert(unit_types.lapd, mini_unit_name)	
+	
+		table.insert(unit_types_black.america, mini_unit_name)
+		table.insert(unit_types_black.russia, mini_unit_name)
+		table.insert(unit_types_black.zombie, mini_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun"))		
+		table.insert(unit_types_black.murkywater, mini_unit_name)
+		table.insert(unit_types_black.nypd, mini_unit_name)
+		table.insert(unit_types_black.lapd, mini_unit_name)		
 	end
 end	
 
@@ -70,53 +87,53 @@ function MutatorMedicdozers:setup(data)
 	local classic_medic_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic")
 
 	if difficulty_index <= 7 then 
-	table.insert(unit_types.america, classic_medic_unit_name)
-	table.insert(unit_types.russia, classic_medic_unit_name)
-	table.insert(unit_types.zombie, classic_medic_unit_name)
-	table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-	table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
-	table.insert(unit_types.nypd, classic_medic_unit_name)
-	table.insert(unit_types.lapd, classic_medic_unit_name)
-	
-	table.insert(unit_types_black.america, classic_medic_unit_name)
-	table.insert(unit_types_black.russia, classic_medic_unit_name)
-	table.insert(unit_types_black.zombie, classic_medic_unit_name)
-	table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-	table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
-	table.insert(unit_types_black.nypd, classic_medic_unit_name)
-	table.insert(unit_types_black.lapd, classic_medic_unit_name)
+		table.insert(unit_types.america, classic_medic_unit_name)
+		table.insert(unit_types.russia, classic_medic_unit_name)
+		table.insert(unit_types.zombie, classic_medic_unit_name)
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
+		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types.nypd, classic_medic_unit_name)
+		table.insert(unit_types.lapd, classic_medic_unit_name)
+		
+		table.insert(unit_types_black.america, classic_medic_unit_name)
+		table.insert(unit_types_black.russia, classic_medic_unit_name)
+		table.insert(unit_types_black.zombie, classic_medic_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
+		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types_black.nypd, classic_medic_unit_name)
+		table.insert(unit_types_black.lapd, classic_medic_unit_name)
 
-	table.insert(unit_types_skull.america, classic_medic_unit_name)
-	table.insert(unit_types_skull.russia, classic_medic_unit_name)
-	table.insert(unit_types_skull.zombie, classic_medic_unit_name)
-	table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-	table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
-	table.insert(unit_types_skull.nypd, classic_medic_unit_name)
-	table.insert(unit_types_skull.lapd, classic_medic_unit_name)			
+		table.insert(unit_types_skull.america, classic_medic_unit_name)
+		table.insert(unit_types_skull.russia, classic_medic_unit_name)
+		table.insert(unit_types_skull.zombie, classic_medic_unit_name)
+		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
+		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types_skull.nypd, classic_medic_unit_name)
+		table.insert(unit_types_skull.lapd, classic_medic_unit_name)			
 	else
-	table.insert(unit_types.america, medic_unit_name)
-	table.insert(unit_types.russia, medic_unit_name)
-	table.insert(unit_types.zombie, medic_unit_name)
-	table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-	table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
-	table.insert(unit_types.nypd, medic_unit_name)
-	table.insert(unit_types.lapd, medic_unit_name)
-	
-	table.insert(unit_types_black.america, medic_unit_name)
-	table.insert(unit_types_black.russia, medic_unit_name)
-	table.insert(unit_types_black.zombie, medic_unit_name)
-	table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-	table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
-	table.insert(unit_types_black.nypd, medic_unit_name)
-	table.insert(unit_types_black.lapd, medic_unit_name)
+		table.insert(unit_types.america, medic_unit_name)
+		table.insert(unit_types.russia, medic_unit_name)
+		table.insert(unit_types.zombie, medic_unit_name)
+		table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
+		table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types.nypd, medic_unit_name)
+		table.insert(unit_types.lapd, medic_unit_name)
+		
+		table.insert(unit_types_black.america, medic_unit_name)
+		table.insert(unit_types_black.russia, medic_unit_name)
+		table.insert(unit_types_black.zombie, medic_unit_name)
+		table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
+		table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types_black.nypd, medic_unit_name)
+		table.insert(unit_types_black.lapd, medic_unit_name)
 
-	table.insert(unit_types_skull.america, medic_unit_name)
-	table.insert(unit_types_skull.russia, medic_unit_name)
-	table.insert(unit_types_skull.zombie, medic_unit_name)
-	table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
-	table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
-	table.insert(unit_types_skull.nypd, medic_unit_name)
-	table.insert(unit_types_skull.lapd, medic_unit_name)					
+		table.insert(unit_types_skull.america, medic_unit_name)
+		table.insert(unit_types_skull.russia, medic_unit_name)
+		table.insert(unit_types_skull.zombie, medic_unit_name)
+		table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_medic_policia_federale/ene_swat_dozer_medic_policia_federale"))
+		table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+		table.insert(unit_types_skull.nypd, medic_unit_name)
+		table.insert(unit_types_skull.lapd, medic_unit_name)					
 	end		
 end
 
@@ -374,7 +391,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1")							
 				},	
 				lapd = {
-					Idstring("units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1")							
+					Idstring("units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1")							
 				}					
 			},
 			access = access_type_all
@@ -436,7 +453,7 @@ function MutatorNoTitans:setup(data)
 				Idstring("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870")					
 			},
 			lapd = {
-				Idstring("units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2")				
+				Idstring("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870")				
 			}					
 		},
 		access = access_type_all
@@ -654,12 +671,12 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale")							
 				},					
 				nypd = {
-					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
 					Idstring("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4")								
 				},	
 				lapd = {
-					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
-					Idstring("units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1")							
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"),	
+					Idstring("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1")							
 				}					
 			},
 			access = access_type_all
@@ -683,10 +700,10 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi")
 				},										
 				nypd = {
-					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1")								
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1")								
 				},	
 				lapd = {
-					Idstring("units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1")							
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1")							
 				}					
 			},
 			access = access_type_all
@@ -773,12 +790,12 @@ function MutatorNoTitans:setup(data)
 				Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump")
 			},					
 			nypd = {
-				Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3")					
 			},
 			lapd = {
-				Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
-				Idstring("units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3")			
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+				Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3")			
 			}					
 		},
 		access = access_type_all
@@ -808,11 +825,11 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump")
 				},										
 				nypd = {
-					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3")			
 				},	
 				lapd = {
-					Idstring("units/payday2/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"),
 					Idstring("units/payday2/characters/ene_city_swat_3/ene_city_swat_3")					
 				}				
 			},
@@ -908,10 +925,10 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870")
 				},					
 				nypd = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
+					Idstring("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
 				},
 				lapd = {
-					Idstring("units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
+					Idstring("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870")
 				}						
 			},
 			access = access_type_all
@@ -935,10 +952,10 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870")
 				},										
 				nypd = {
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
+					Idstring("units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870")
 				},
 				lapd = {
-					Idstring("units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870")
+					Idstring("units/pd2_mod_lapd/characters/ene_city_heavy_r870/ene_city_heavy_r870")
 				}					
 			},
 			access = access_type_all
@@ -992,10 +1009,10 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9")
 				},																				
 				nypd = {
-					Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
+					Idstring("units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1")
 				},		
 				lapd = {
-					Idstring("units/payday2/characters/ene_shield_1/ene_shield_1")
+					Idstring("units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1")
 				}					
 			},
 			access = access_type_all,
@@ -1149,7 +1166,7 @@ function MutatorNoTitans:setup(data)
 		tweak_data.group_ai.unit_categories.medic_M4 = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_medic_mp5/ene_medic_mp5")
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann")
@@ -1164,10 +1181,10 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale")
 				},										
 				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
 				},
 				lapd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_nypd_medic/ene_nypd_medic")
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_medic/ene_zeal_medic")
 				}					
 			},
 			access = access_type_all,

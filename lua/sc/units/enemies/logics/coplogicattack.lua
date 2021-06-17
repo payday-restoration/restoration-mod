@@ -1659,7 +1659,11 @@ function CopLogicAttack._upd_enemy_detection(data, is_synchronous)
 						local flank_pos = CopLogicAttack._find_flank_pos(data, my_data, new_attention.nav_tracker)
 						
 						if flank_pos then
-							my_data.optimal_pos = flank_pos
+							my_data.optimal_pos = flank_pos		
+		                    if data.char_tweak.chatter and data.char_tweak.chatter.look_for_angle then		
+						        managers.groupai:state():chk_say_enemy_chatter( data.unit, data.m_pos, "look_for_angle" )
+							    --log("flank chatter")
+		                    end
 							--if my_data.optimal_pos then
 							--	local draw_duration = 2
 							--	local line3 = Draw:brush(Color.blue:with_alpha(0.5), draw_duration)
@@ -1672,7 +1676,7 @@ function CopLogicAttack._upd_enemy_detection(data, is_synchronous)
 						local charge_pos = CopLogicTravel._get_pos_on_wall(new_attention.nav_tracker:field_position(), my_data.weapon_range.close, 45, nil)
 						
 						if charge_pos then
-							my_data.optimal_pos = charge_pos
+							my_data.optimal_pos = charge_pos	
 							--if my_data.optimal_pos then
 							--	local draw_duration = 2
 							--	local line4 = Draw:brush(Color.red:with_alpha(0.5), draw_duration)
@@ -2233,7 +2237,7 @@ end
 function CopLogicAttack.queue_update(data, my_data)
 	local delay = data.important and 0.35 or 1	
 	
-	local hostage_count = managers.groupai:state():get_hostage_count_for_chatter() --check current hostage count
+	local hostage_count = managers.groupai:state():get_hostage_count() --check current hostage count
 	local chosen_panic_chatter = "controlpanic" --set default generic assault break chatter
 	
 	if hostage_count > 0 then --make sure the hostage count is actually above zero before replacing any of the lines
@@ -2267,6 +2271,7 @@ function CopLogicAttack.queue_update(data, my_data)
 			chosen_panic_chatter = "hostagepanic3" -- no more hostages!!! full force!!!
 		end
 	end
+	
 	
 	local chosen_sabotage_chatter = "sabotagegeneric" --set default sabotage chatter for variety's sake
 	local skirmish_map = managers.skirmish:is_skirmish()--these shouldnt play on holdout

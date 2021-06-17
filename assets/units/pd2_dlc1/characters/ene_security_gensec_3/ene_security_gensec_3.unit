@@ -11,7 +11,7 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
-			<var name="_tweak_table" value="gensec" />
+			<var name="_tweak_table" value="gensec_guard" />
 			<var name="_default_weapon_id" value="r870" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />

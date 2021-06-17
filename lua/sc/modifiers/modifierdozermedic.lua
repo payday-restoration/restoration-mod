@@ -1,70 +1,68 @@
 ModifierDozerMedic.default_value = "spawn_chance"
-ModifierDozerMedic.america = {
-	Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3"),
-	Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_mp5/ene_zeal_fbi_mp5"),
-	Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4")				
-}
-
-ModifierDozerMedic.russia = {
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"),
-	Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal")
-}	
-
-ModifierDozerMedic.murky = {
-	Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3"),
-	Idstring("units/pd2_mod_sharks/characters/ene_fbi_2/ene_fbi_2")
-}		
-
-ModifierDozerMedic.zombie = {
-	Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_2/ene_fbi_hvh_2"),
-	Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
-}		
-
-ModifierDozerMedic.nypd = {
-	Idstring("units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"),
-	Idstring("units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3")
-}			
 
 function ModifierDozerMedic:init(data)
 	ModifierDozerMedic.super.init(self, data)
+	
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
+	local unit_types = tweak_data.group_ai.unit_categories.FBI_tank.unit_types
+	local unit_types_black = tweak_data.group_ai.unit_categories.BLACK_tank.unit_types
+	local unit_types_skull = tweak_data.group_ai.unit_categories.SKULL_tank.unit_types
+	
+	local medic_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic")
+	local classic_medic_unit_name = Idstring("units/pd2_dlc_drm/characters/ene_bulldozer_medic_classic/ene_bulldozer_medic_classic")
+
+	if difficulty_index <= 7 then 
+			table.insert(unit_types.america, classic_medic_unit_name)
+			table.insert(unit_types.russia, classic_medic_unit_name)
+			table.insert(unit_types.zombie, classic_medic_unit_name)
+			table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
+			table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+			table.insert(unit_types.nypd, classic_medic_unit_name)
+			table.insert(unit_types.lapd, classic_medic_unit_name)
+			
+			table.insert(unit_types_black.america, classic_medic_unit_name)
+			table.insert(unit_types_black.russia, classic_medic_unit_name)
+			table.insert(unit_types_black.zombie, classic_medic_unit_name)
+			table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
+			table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+			table.insert(unit_types_black.nypd, classic_medic_unit_name)
+			table.insert(unit_types_black.lapd, classic_medic_unit_name)
+
+			table.insert(unit_types_skull.america, classic_medic_unit_name)
+			table.insert(unit_types_skull.russia, classic_medic_unit_name)
+			table.insert(unit_types_skull.zombie, classic_medic_unit_name)
+			table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
+			table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+			table.insert(unit_types_skull.nypd, classic_medic_unit_name)
+			table.insert(unit_types_skull.lapd, classic_medic_unit_name)			
+		else
+			table.insert(unit_types.america, medic_unit_name)
+			table.insert(unit_types.russia, medic_unit_name)
+			table.insert(unit_types.zombie, medic_unit_name)
+			table.insert(unit_types.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
+			table.insert(unit_types.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+			table.insert(unit_types.nypd, medic_unit_name)
+			table.insert(unit_types.lapd, medic_unit_name)
+			
+			table.insert(unit_types_black.america, medic_unit_name)
+			table.insert(unit_types_black.russia, medic_unit_name)
+			table.insert(unit_types_black.zombie, medic_unit_name)
+			table.insert(unit_types_black.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
+			table.insert(unit_types_black.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+			table.insert(unit_types_black.nypd, medic_unit_name)
+			table.insert(unit_types_black.lapd, medic_unit_name)
+
+			table.insert(unit_types_skull.america, medic_unit_name)
+			table.insert(unit_types_skull.russia, medic_unit_name)
+			table.insert(unit_types_skull.zombie, medic_unit_name)
+			table.insert(unit_types_skull.federales, Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_medic/ene_swat_dozer_policia_federale_medic"))
+			table.insert(unit_types_skull.murkywater, Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_medic/ene_murky_fbi_tank_medic"))
+			table.insert(unit_types_skull.nypd, medic_unit_name)
+			table.insert(unit_types_skull.lapd, medic_unit_name)					
+	end			
 end
 
 function ModifierDozerMedic:modify_value(id, value)
-	if id == "GroupAIStateBesiege:SpawningUnit" then
-		local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-		local difficulty_index = tweak_data:difficulty_to_index(difficulty)		
-		local is_america = table.contains(ModifierDozerMedic.america, value)
-		local is_russia = table.contains(ModifierDozerMedic.russia, value)
-		local is_zombie = table.contains(ModifierDozerMedic.zombie, value)
-		local is_murky = table.contains(ModifierDozerMedic.murky, value)
-		local is_nypd = table.contains(ModifierDozerMedic.nypd, value)		
-		local is_lapd = table.contains(ModifierDozerMedic.nypd, value)						
-		if is_america and difficulty_index <= 6 and math.random(0,100) < 15 then
-			return Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")
-		elseif is_america and math.random(0,100) < 15 then
-			return Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")				
-		elseif is_russia and difficulty_index <= 6 and math.random(0,100) < 15 then
-			return Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1")
-		elseif is_russia and math.random(0,100) < 15 then
-			return Idstring("units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2")				
-		elseif is_zombie and difficulty_index <= 6 and math.random(0,100) < 15 then
-			return Idstring("units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2")	
-		elseif is_zombie and math.random(0,100) < 15 then
-			return Idstring("units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1")					
-		elseif is_nypd and difficulty_index <= 6 and math.random(0,100) < 15 then
-			return Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_2/ene_nypd_veteran_cop_2")	
-		elseif is_nypd and math.random(0,100) < 15 then
-			return Idstring("units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1")
-		elseif is_lapd and difficulty_index <= 6 and math.random(0,100) < 15 then
-			return Idstring("units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2")	
-		elseif is_lapd and math.random(0,100) < 15 then
-			return Idstring("units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1")
-		elseif is_murky and difficulty_index <= 6 and math.random(0,100) < 15 then
-			return Idstring("units/pd2_mod_sharks/characters/ene_murky_veteran_2/ene_murky_veteran_2")					
-		elseif is_murky and math.random(0,100) < 15 then
-			return Idstring("units/pd2_mod_sharks/characters/ene_murky_veteran_1/ene_murky_veteran_1")								
-		end
-	end
-	return value
 end

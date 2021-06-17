@@ -9,4 +9,5 @@ RestorationCoreHooks:Post(HUDChat, "init", function(self)
 		p:child("output_bg"):configure(opt)
 		self._input_panel:child("input_bg"):configure(opt)
 	end
+	self._panel:set_bottom(self._panel:parent():h() - 160)
 end)

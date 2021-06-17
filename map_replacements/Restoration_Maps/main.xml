@@ -180,8 +180,8 @@
 			<value_node value="60000"/>
 		</payout>
 	</narrative>
-	<level ai_group_type="federales" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
-		<add file="levels/junk/add.xml"/>
+	<level ai_group_type="federales" player_style="suit_sunny" id="junk" load_screen="guis/textures/customheist_gui/junk_loading" max_bags="20">
+		<add file="levels/junk/add.xml" />
 		<assets>
 			<asset name="ammo_bag"/>
 			<asset name="health_bag"/>
@@ -207,7 +207,7 @@
 		<outro_event/>
 		<packages>
 			<value_node value="packages/mexicoassets"/>
-            <value_node value="levels/narratives/vlad/bex/world_sounds"/>
+			<value_node value="levels/narratives/vlad/bex/world_sounds"/>
 			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
 			<value_node value="levels/instances/unique/pbr/pbr_ladder_placed/world/world"/>
 			<value_node value="levels/narratives/e_election_day/stage_1/pc_only/pc_only"/>

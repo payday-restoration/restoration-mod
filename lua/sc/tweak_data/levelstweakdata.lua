@@ -30,45 +30,51 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.ai_groups.nypd = nypd
 	self.ai_groups.lapd = lapd
 	
-	--///MEXICAN LEVELS\\\--
-	self.bex.package = {"packages/job_bex"}
+	--Christmas Dozer/Cloaker jingle bells
+	if restoration and restoration.Options:GetValue("OTHER/Holiday") then
+		if Month == 12 then
+			if not PackageManager:loaded("packages/event_xmas") then
+				PackageManager:load("packages/event_xmas")
+			end		
+			
+			for lvl_id, lvl_data in pairs(self) do
+				if type(lvl_data) == "table" and lvl_data.name_id then
+					self[lvl_id].is_christmas_heist = true
+				end
+			end					
+		end
+	end
 	
-	self.skm_bex.package = {"packages/dlcs/skm/job_bex_skm"}
+	--///MEXICAN LEVELS\\\--
+	
+	self.skm_bex.package = {"packages/mexicoassets", "packages/dlcs/skm/job_bex_skm"}
 
-	self.mex_cooking.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
+	self.mex_cooking.package = {"packages/mexicoassets", "levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
 	self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
 	
-	self.pex.package = {"packages/job_pex"}
 	self.pex.player_style = "slaughterhouse"
 	
-	self.fex.package = {"packages/job_fex"}
 	self.fex.player_style = "suit_sunny"
 	
 	--///MURKYWATER LEVELS\\\--
-	self.shoutout_raid.package = {"packages/vlad_shout"}
+	self.shoutout_raid.package = {"packages/murkyassets", "packages/vlad_shout"}
 	self.shoutout_raid.ai_group_type = murkywater
 	self.shoutout_raid.player_style = "loud_suit" --using this until we sort out the coats
 	
-	self.pbr.package = {"packages/narr_jerry1"}
 	self.pbr.ai_group_type = murkywater
 	self.pbr.player_style = "loud_suit"
 	
-	self.des.package = {"packages/job_des"}
 	self.des.ai_group_type = murkywater 
 	self.des.player_style = "loud_suit"
 	
-	self.bph.package = {"packages/dlcs/bph/job_bph"}
 	self.bph.ai_group_type = murkywater 
 	self.bph.player_style = "loud_suit"
 	
-	self.vit.package = {"packages/dlcs/vit/job_vit"}
 	self.vit.ai_group_type = murkywater 
 	
-	self.wwh.package = {"packages/lvl_wwh"}
 	self.wwh.ai_group_type = murkywater 
 	
-	self.arm_for.package = {"packages/narr_arm_for"}
 	self.arm_for.ai_group_type = murkywater 
 	self.arm_for.player_style = "sneak_suit"
 	
@@ -76,15 +82,12 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"	
 
-	self.crojob2.package = {"packages/dlcs/the_bomb/crojob_stage_2"}
 	self.crojob2.ai_group_type = murkywater			
 	self.crojob2.player_style = "slaughterhouse"	
 
-	self.dark.package = {"packages/job_dark"}
 	self.dark.ai_group_type = murkywater	
 	self.dark.player_style = "sneak_suit"
 	
-	self.kosugi.package = {"packages/kosugi"}
 	self.kosugi.ai_group_type = murkywater	
 	self.kosugi.player_style = "sneak_suit"			
 	
@@ -94,17 +97,13 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.spa.player_style = "slaughterhouse"
 	
 	self.brb.ai_group_type = nypd
-	self.brb.package = {"packages/lvl_brb"}
 	self.brb.player_style = "peacoat"
 	
 	self.red2.ai_group_type = nypd
-	self.red2.package = {"packages/narr_red2"}
 	
 	self.run.ai_group_type = nypd
-	self.run.package = {"packages/narr_run"}
 	
 	self.flat.ai_group_type = nypd
-	self.flat.package = {"packages/narr_flat"}
 	
 	if restoration and restoration.Options:GetValue("OTHER/QuietRain") then
 		self.glace.ai_group_type = nypd
@@ -115,7 +114,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	end
 	
 	self.dah.ai_group_type = nypd
-	self.dah.package = {"packages/lvl_dah"}
 	self.dah.player_style = "slaughterhouse"
 	
 	self.dinner.ai_group_type = nypd
@@ -177,14 +175,13 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	}
 	
 	self.nmh.ai_group_type = nypd
-	self.nmh.package = {"packages/dlcs/nmh/job_nmh"}
 	self.nmh.ghost_bonus = nil
-	
+	-- not sure what to do about skirmish tbh
 	self.skm_run.ai_group_type = nypd
-	self.skm_run.package = {"packages/dlcs/skm/job_skm"}
+	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
 	
 	self.skm_red2.ai_group_type = nypd
-	self.skm_red2.package = {"packages/dlcs/skm/job_skm"}
+	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
 	
 	--///LAPD LEVELS\\\--			
 	self.jolly.ai_group_type = lapd
@@ -192,7 +189,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.jolly.player_style = "suit_sunny"
 	
 	self.pal.ai_group_type = lapd
-	self.pal.package = {"packages/narr_pal"}	
 	
 	self.friend.ai_group_type = lapd
 	self.friend.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/lvl_friend"}
@@ -203,16 +199,20 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.kenaz.player_style = "continental"				
 	
 	self.rvd1.ai_group_type = lapd
-	self.rvd1.package = {"packages/job_rvd"}	
 	self.rvd1.player_style = "suit_sunny"		
 	
 	self.rvd2.ai_group_type = lapd
-	self.rvd2.package = {"packages/job_rvd2"}
 	self.rvd2.player_style = "suit_sunny"
+	
+	self.chas.ai_group_type = lapd
+	self.chas.player_style = "suit_sunny"
 
+	
+	self.sand.ai_group_type = lapd
+	self.sand.player_style = "highinttech"
+	
 	--///NEW OUTFITS\\\--
 	
-	self.fish.package = {"packages/lvl_fish"}
 	self.fish.player_style = "tux"
 	
 	self.arena.player_style = "hiphop"
@@ -263,7 +263,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 	
-	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2"}
+	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/murkyassets",}
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 	
@@ -375,7 +375,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 			old_hoxton = true
 		},
 		ai_group_type = america,
-		player_style = "loud_suit",
+		player_style = "xmas_tuxedo",
 		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_1_xmn_df"
 	}
 
@@ -398,7 +398,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 			old_hoxton = true
 		},
 		ai_group_type = america,
-		player_style = "loud_suit",
+		player_style = "xmas_tuxedo",
 		load_screen = "guis/dlcs/xmn/textures/loading/job_hox_2_xmn_df"
 	}
 	
@@ -407,16 +407,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.xmn_tag = deep_clone(self.tag)
 	self.xmn_tag.name_id = "heist_xmn_tag_name"
 	self.xmn_tag.world_name = "narratives/locke/tag_xmn"
+	self.xmn_tag.player_style = "xmas_tuxedo"
 	self.xmn_tag.load_screen = "guis/dlcs/xmn/textures/loading/job_tag_xmn_df"
-
-
-	
-	--///ZOMBIE LEVELS\\\--
-	-- self.haunted.package = {"packages/zombieassets", "packages/narr_haunted", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-	-- self.nail.package = {"packages/zombieassets", "packages/job_nail", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-	-- self.help.package = {"packages/zombieassets", "packages/lvl_help", "packages/narr_hvh", "levels/narratives/bain/hvh/world_sounds"}
-	-- self.hvh.package = {"packages/zombieassets", "packages/narr_hvh"}
-	
+		
 	--[[
 	
 	--Zombies on H&T for the holidays--
@@ -443,19 +436,19 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mallcrasher.ghost_bonus = 0.05
 	
 	--///REAPER LEVELS\\\--
-	-- self.mad.package = {"packages/akanassets", "packages/lvl_mad"}
+	self.mad.package = {"packages/akanassets", "packages/lvl_mad"}
 	self.mad.player_style = "winter_suit"
 	--We're never actually told where the forest is ;)
-	-- self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
+	self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad",}
 	self.pines.player_style = "loud_suit"
 	self.pines.ai_group_type = russia	
 	
 	--Bomb: Forest--
-	-- self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/akanassets", "packages/lvl_mad",}
+	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/akanassets", "packages/lvl_mad",}
 	self.crojob3.ai_group_type = russia			
 	self.crojob3.player_style = "loud_suit"
 
-	-- self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/akanassets", "packages/lvl_mad",}
+	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/akanassets", "packages/lvl_mad",}
 	self.crojob3_night.ai_group_type = russia				
 	self.crojob3_night.player_style = "loud_suit"		
 	
@@ -467,7 +460,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.vit.ghost_bonus = 0.15
 	
 	--///SKIRMISH FIXES\\\--
-	self.skm_cas.package = {"packages/dlcs/skm/job_skm"}
+	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/lapdassets"}
+	self.skm_cas.ai_group_type = lapd
+	self.skm_cas.player_style = "continental"		
 end)
 
 function LevelsTweakData:get_ai_group_type()

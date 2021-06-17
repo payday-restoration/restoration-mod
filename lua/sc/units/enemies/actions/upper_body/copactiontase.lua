@@ -33,13 +33,16 @@ function CopActionTase:clbk_malfunction()
 		normal = math_up
 	})
 
+	--Get accurate attacker position to use in ray.
 	local attacker_pos = managers.player:player_unit() and managers.player:player_unit():movement():m_head_pos() or self._ext_movement:m_com() + self._ext_movement:m_rot():y() * 100
+	--Get proper ray for the counter.
 	local counter_ray = World:raycast("ray", attacker_pos, self._ext_movement:m_com(), "sphere_cast_radius", 20, "target_unit", self._unit)
 	local action_data = {
 		damage_effect = 1,
 		damage = 0,
 		variant = "counter_spooc",
 		attacker_unit = managers.player:player_unit() or self._unit,
+		--More accurate col_ray than vanilla common_data.
 		col_ray = counter_ray,
 		attack_dir = counter_ray.ray,
 	}
@@ -60,12 +63,8 @@ function CopActionTase:init(action_desc, common_data)
 	self._is_server = Network:is_server()
 	local attention = common_data.attention
 
-	if not attention or not attention.unit then
-		if self._is_server then
-			--debug_pause("[CopActionTase:init] no attention", inspect(action_desc))
-
-			return
-		end
+	if not attention or not attention.unit and self._is_server then
+		return
 	end
 
 	local weapon_unit = self._ext_inventory:equipped_unit()
@@ -76,7 +75,6 @@ function CopActionTase:init(action_desc, common_data)
 
 	self._weapon_unit = weapon_unit
 	self._weapon_base = weapon_unit:base()
-
 	local weap_tweak = weapon_unit:base():weapon_tweak_data()
 	local weapon_usage_tweak = common_data.char_tweak.weapon[weap_tweak.usage]
 	self._weap_tweak = weap_tweak

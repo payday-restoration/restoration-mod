@@ -13,6 +13,34 @@ function PrePlanningTweakData:init(tweak_data)
 	
 	self.locations.branchbank.mission_briefing_texture = "guis/textures/pd2/pre_planning/mission_briefing_branchbank"
 	
+	--Sniper, now requires Insider assets
+	self.types.sniper.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}
+	
+	self.types.crojob3_sniper.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}	
+	
+	--Bank Heist vault keys, now requires Inside Man
+	self.types.branchbank_vault_key.upgrade_lock = {
+		upgrade = "additional_assets",
+		category = "player"
+	}
+	self.types.branchbank_vault_key.category = "insider_help"
+	
+	--Safe escape, doesn't need upgrades anymore
+	self.types.safe_escape.upgrade_lock = nil
+	self.types.safe_escape.category = "hired_help"
+	
+	--Bodybag case, no upgrade lock on non-pro jobs now
+	self.types.bodybags_bag.upgrade_lock = nil
+	
+	--Making vantage point only one favor because god damn it's worthless
+	self.types.sniper_spot.budget_cost = 1
+	
 	--Pro Job Changes
 	
 	if Global.game_settings and Global.game_settings.one_down then

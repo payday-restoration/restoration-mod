@@ -1,0 +1,107 @@
+<materials version="3" group="ene_fbi_shared">
+    <material name="mtr_police_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/head_01_nm"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/heads_cop2_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_police_head_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/head_01_nm" mip="1"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/heads_cop2_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_police_head_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/head_01_nm" mip="4"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/heads_cop2_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+
+    <material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm"/>
+		<diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_head_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" mip="1"/>
+		<diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_head_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" mip="4"/>
+		<diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+
+    <material name="mtr_police_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/police_nm" mip="1"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/fbi_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_police_body_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/police_nm" mip="1"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/fbi_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_police_body_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+        <bump_normal_texture file="units/payday2/characters/shared_textures/police_nm" mip="4"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/fbi_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+	
+    <material name="mtr_vest" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture 	file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_nm" />
+		<diffuse_texture 		file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_vest_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture 	file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+    <material name="mtr_vest_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+		<bump_normal_texture 	file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+
+	<material name="mtr_static_extras" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_nm" />
+		<diffuse_texture 		file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_df"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+	
+	<material name="mtr_static_extras_lod_1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_nm" mip="1"/>
+		<diffuse_texture 		file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_df" mip="1"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+	
+	<material name="mtr_static_extras_lod_2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2">
+		<bump_normal_texture 	file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_nm" mip="4"/>
+		<diffuse_texture 		file="units/pd2_mod_lapd/characters/shared_textures/shirt_vest_df" mip="4"/>
+        <variable value="1 1 1" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>		
+	</material>
+
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2" name="mtr_glass" unique="true">
+        <variable value="0 1 0.66999995708466" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/pd2_dlc_infamy/masks/msk_aviator/msk_aviator_glass_op"/>
+        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+	
+    <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
+</materials>

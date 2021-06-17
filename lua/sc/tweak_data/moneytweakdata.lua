@@ -1,11 +1,9 @@
-local old_init = MoneyTweakData.init
-function MoneyTweakData:init(tweak_data, presets)
-	old_init(self, tweak_data)
+Hooks:PostHook( MoneyTweakData, "init", "SC_MoneyTweaks", function(self, tweak_data)
+	-- New Pro Job Bonus
+	self.pro_job_new = 0
 	--if one down, give 20% more cash/exp
-	if Global.load_level then
-		if Global.game_settings.one_down then
-			self.limited_bonus_multiplier = 1.2
-		end
+	if Global.game_settings and Global.game_settings.one_down then
+		self.pro_job_new = 1.2
 	end
 	-- self.difficulty_multiplier_payout = {
 	-- 	1,
@@ -27,4 +25,4 @@ function MoneyTweakData:init(tweak_data, presets)
 	--self.bag_values.diamonds = 2265 
 	self.bag_values.red_diamond = 21000
 	self.bag_values.meth = 11500
-end
+end)

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_mod_halloween/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc" orientation_object="root_point" />
+	<diesel materials="units/pd2_dlc_hvh/characters/ene_hvh_swat_1/ene_hvh_swat_1" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
 
 	<bodies>

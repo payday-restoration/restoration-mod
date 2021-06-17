@@ -76,15 +76,6 @@ function HudIconsTweakData:init()
 			csm_h
 		}
 	}
-	self.csm_arena = {
-		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
-		texture_rect = {
-			csm_w * 2,
-			csm_h * 0,
-			csm_w,
-			csm_h
-		}
-	}
 	self.csm_shoutout_raid = {
 		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
 		texture_rect = {
@@ -121,15 +112,6 @@ function HudIconsTweakData:init()
 			csm_h
 		}
 	}
-	self.csm_sah = {
-		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
-		texture_rect = {
-			csm_w * 0,
-			csm_h * 1,
-			csm_w,
-			csm_h
-		}
-	}
 	self.csm_nightclub = {
 		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
 		texture_rect = {
@@ -143,15 +125,6 @@ function HudIconsTweakData:init()
 		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
 		texture_rect = {
 			csm_w * 2,
-			csm_h * 1,
-			csm_w,
-			csm_h
-		}
-	}
-	self.csm_bex = {
-		texture = "guis/dlcs/sc/textures/pd2/crime_spree/mission_atlas_sc",
-		texture_rect = {
-			csm_w * 3,
 			csm_h * 1,
 			csm_w,
 			csm_h

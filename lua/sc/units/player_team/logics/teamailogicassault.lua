@@ -1,7 +1,3 @@
-if SystemFS:exists("mods/Better Bots/mod.txt") then
-	return
-end
-
 local math_min = math.min
 
 function TeamAILogicAssault._upd_enemy_detection(data, is_synchronous)

@@ -1,0 +1,23 @@
+<dynamic_object>
+    <diesel orientation_object="rp_ene_acc_dozer_zeal_santa_hat" materials="units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc" />
+	
+	<bodies>
+	 <body name="static_body" enabled="true" template="static">
+			<object name="c_box" 			collision_type="box" 	padding="-2.5" />
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel_no_decal">
+	</decal_surfaces>
+
+    <graphics>
+			<lod_object name="lod_ene_acc_spook_santa_hat">
+        		<object enabled="true" name="g_hat" >
+					<material materials="mtr_hat" max_distance="1000" />
+					<material materials="mtr_hat_lod_1" max_distance="1500" />
+					<material materials="mtr_hat_lod_2" />
+				</object>
+			</lod_object>
+    </graphics>
+	
+</dynamic_object>

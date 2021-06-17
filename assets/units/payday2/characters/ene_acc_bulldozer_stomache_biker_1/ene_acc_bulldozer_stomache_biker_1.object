@@ -1,5 +1,5 @@
 <dynamic_object>
-	<diesel materials="units/payday2/characters/ene_acc_bulldozer_stomache_biker_1/ene_acc_bulldozer_stomache_biker_1" orientation_object="rp_ene_acc_bulldozer_stomache" />
+	<diesel materials="units/payday2/characters/ene_acc_bulldozer_back_biker_1/ene_acc_bulldozer_back_biker_1" orientation_object="rp_ene_acc_bulldozer_stomache" />
 
 	<bodies>
 	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">

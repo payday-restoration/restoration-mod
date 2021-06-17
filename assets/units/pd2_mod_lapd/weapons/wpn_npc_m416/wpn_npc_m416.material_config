@@ -1,0 +1,6 @@
+<materials version="3" group="wpn_npc_m4">
+    <material name="m416_npc" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+        <bump_normal_texture file="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_nm"/>
+        <diffuse_texture file="units/pd2_mod_lapd/weapons/wpn_npc_m416/m416_atlas_df"/>
+    </material>
+</materials>

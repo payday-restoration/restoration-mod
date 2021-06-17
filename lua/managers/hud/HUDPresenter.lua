@@ -72,7 +72,7 @@ function HUDPresenter:_present_information(params)
 	
 	local title = message_panel:child( "title" )
 	local text = message_panel:child( "text" )
-	title:set_text( utf8.to_upper( params.title or "ERROR" ) )
+	title:set_text( utf8.to_upper( params.title ) )
 	text:set_text( utf8.to_upper( params.text ) )
 	
 	local _,_,w,_ = title:text_rect()

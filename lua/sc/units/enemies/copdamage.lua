@@ -1,7 +1,116 @@
 local mvec_1 = Vector3()
 local mvec_2 = Vector3()
+local ids_func = Idstring
+local table_contains = table.contains
+
+local enemies_visor = {
+	ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"),
+	ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk"),
+	ids_func("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),    
+	ids_func("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk"),    
+	ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"),
+	ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1_husk"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870_husk"),
+	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
+	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),                 	
+	ids_func("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"),
+	ids_func("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_husk"),                 	
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),                 	
+	ids_func("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"),
+	ids_func("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc_husk"),
+	ids_func("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
+	ids_func("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk"),     
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale_husk"),                 
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36_husk"),                 
+	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
+	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_husk"),                 
+	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
+	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),                 
+	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
+	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),                 
+	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
+	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),                 
+	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
+	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                             
+	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),                 
+	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
+	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                 
+	ids_func("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer"),
+	ids_func("units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer_husk"),                 
+	ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"),                 
+	ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),               
+	ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),                 
+	ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),
+	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
+	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                 	
+	ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),
+	ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser_husk"),                 	
+	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),                 	
+	ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"),
+	ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4_husk"),                 
+	ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"),
+	ids_func("units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk"),                 	
+}
+
+local enemies_plink = {
+	ids_func("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+	ids_func("units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),
+	ids_func("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+	ids_func("units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),
+	  
+	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"),
+	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk"),                     
+	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+	ids_func("units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),   
+	
+	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy"),
+	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy_husk"),
+	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870"),
+	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk"),
+	
+	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_r870_sc/ene_zeal_heavy_r870_sc"),
+	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_r870_sc/ene_zeal_heavy_r870_sc_husk"),     
+	
+	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),                 	
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),                 	
+	
+	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
+	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),   	
+	
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36_husk"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870_husk"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870_husk"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870_husk"),
+
+	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw"),
+	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw_husk"),
+	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36"),
+	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36_husk"),
+	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870"),
+	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870_husk"),
+	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870"),
+	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870_husk"),
+	
+}
 
 function CopDamage:_spawn_head_gadget(params)
+	local unit_name = self._unit:name()
+	local my_unit = self._unit
+
 	if not self._head_gear then
 		return
 	end
@@ -34,6 +143,31 @@ function CopDamage:_spawn_head_gadget(params)
 		local body = unit:body(0)
 
 		body:push_at(body:mass(), dir * math.lerp(450, 650, math.random()), unit:position() + Vector3(math.rand(1), math.rand(1), math.rand(1)))
+	end
+	
+    local smashablefuckers = table_contains(enemies_visor, unit_name)
+    local smashablefuckers_hsg = table_contains(enemies_plink, unit_name)
+	
+ 	local head_obj = ids_func("Head")
+	local head_object_get = my_unit:get_object(head_obj)
+	
+	if not head_object_get then
+		return
+	end
+	
+	local world_g = World		
+	local sound_ext = my_unit:sound()	
+      
+	if smashablefuckers then
+		world_g:effect_manager():spawn({
+			effect = ids_func("effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable"),
+			parent = head_object_get		
+		})
+		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
+		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
+	elseif smashablefuckers_hsg then
+		sound_ext:play("swatturret_weakspot_hit", nil, nil)
+		sound_ext:play("swatturret_weakspot_hit", nil, nil)
 	end
 
 	self._head_gear = false
@@ -95,8 +229,14 @@ function CopDamage:damage_fire(attack_data)
 
 	local headshot_multiplier = 1
 	local damage = attack_data.damage
+	local distance = 1000
+	local hit_pos = attack_data.col_ray.hit_position
 
 	if attack_data.attacker_unit == managers.player:player_unit() then
+		if hit_pos then
+			distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
+		end
+
 		if weap_unit and alive(weap_unit) and attack_data.variant ~= "stun" then
 			local weap_base = weap_unit:base()
 			local is_grenade_or_ground_fire = nil
@@ -127,11 +267,16 @@ function CopDamage:damage_fire(attack_data)
 					damage = damage * managers.player:upgrade_value("weapon", "special_damage_taken_multiplier", 1)
 				end
 
+				local damage_scale = nil
+				if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
+					damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
+				end		
+
 				if not attack_data.is_fire_dot_damage and damage > 0 then
 					if critical_hit then
-						managers.hud:on_crit_confirmed()
+						managers.hud:on_crit_confirmed(damage_scale)
 					else
-						managers.hud:on_hit_confirmed()
+						managers.hud:on_hit_confirmed(damage_scale)
 					end
 				end
 			end
@@ -146,10 +291,20 @@ function CopDamage:damage_fire(attack_data)
 		end
 	end
 
-	if self._char_tweak.damage.fire_damage_mul then
-		damage = damage * self._char_tweak.damage.fire_damage_mul
+	--Allows seperate damage mults for fire pools and fire damage.
+	if alive(weap_unit) then
+		local weap_base = weap_unit:base()
+		if weap_base.thrower_unit or weap_base.get_name_id and weap_base:get_name_id() == "environment_fire" then
+			if self._char_tweak.damage.fire_pool_damage_mul then
+				damage = damage * self._char_tweak.damage.fire_pool_damage_mul
+			end	
+		else
+			if self._char_tweak.damage.fire_damage_mul then
+				damage = damage * self._char_tweak.damage.fire_damage_mul
+			end	
+		end	
 	end
-
+		
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
 
@@ -234,7 +389,7 @@ function CopDamage:damage_fire(attack_data)
 			end
 		end
 
-		if Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -274,9 +429,13 @@ function CopDamage:damage_fire(attack_data)
 	end
 
 	local weapon_unit = weap_unit
-
-	if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
-		weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+	local weap_base = nil
+	
+	if alive(weapon_unit) and weapon_unit.base then
+		weap_base = weapon_unit:base() 
+		if weap_base and weap_base.add_damage_result then
+			weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
+		end
 	end
 
 	if not attack_data.is_fire_dot_damage and attack_data.fire_dot_data and result.type ~= "death" then --DoT never triggers an animation so it shouldn't constantly micro-stun enemies that are vulnerable to fire
@@ -290,18 +449,16 @@ function CopDamage:damage_fire(attack_data)
 		end
 
 		if flammable then
-			local distance = 1000
-			local hit_pos = attack_data.col_ray.hit_position
-
-			if hit_pos and attack_data.attacker_unit and alive(attack_data.attacker_unit) then
-				distance = mvector3.distance(hit_pos, attack_data.attacker_unit:position())
-			end
-
-			local fire_dot_max_distance = tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
+			local fire_dot_max_distance = weap_base and weap_base.far_falloff_distance and weap_base.far_falloff_distance + weap_base.near_falloff_distance or tonumber(fire_dot_data.dot_trigger_max_distance) or 3000
 
 			if distance < fire_dot_max_distance then
 				local start_dot_damage_roll = math.random(1, 100)
 				local fire_dot_trigger_chance = tonumber(fire_dot_data.dot_trigger_chance) or 30
+
+				--Dragon's breath trigger chance scales with range.
+				if weap_base and weap_base.far_falloff_distance then
+					fire_dot_trigger_chance = (1 - math.min(1, math.max(0, distance - weap_base.near_falloff_distance) / weap_base.far_falloff_distance)) * fire_dot_trigger_chance
+				end
 
 				if start_dot_damage_roll <= fire_dot_trigger_chance then
 					local dot_damage = fire_dot_data.dot_damage or 25
@@ -359,6 +516,7 @@ function CopDamage:damage_fire(attack_data)
 
 	return result
 end
+
 
 function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dance_antimation, death, direction, weapon_type, weapon_id, healed)
 	if self._dead then
@@ -454,7 +612,7 @@ function CopDamage:sync_damage_fire(attacker_unit, damage_percent, start_dot_dan
 			})
 		end
 
-		if Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -535,12 +693,13 @@ function CopDamage:damage_bullet(attack_data)
 		end
 	end
 
+	local weap_base = attack_data.weapon_unit:base()
 	if self._char_tweak.damage.bullet_dodge_chance then
 		local dodge_chance = self._char_tweak.damage.bullet_dodge_chance
 		if self._unit:base()._tweak_table == "fbi_vet" then
 			dodge_chance = managers.modifiers and managers.modifiers:modify_value("CopDamage:CheckingDodge", dodge_chance)
 		end
-		if attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
+		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
 			dodge_chance = 0
 		end
 
@@ -560,9 +719,7 @@ function CopDamage:damage_bullet(attack_data)
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
 		local pierce_armor = nil
 
-		if attack_data.armor_piercing then
-			pierce_armor = true
-		elseif attack_data.weapon_unit:base().thrower_unit or attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("bow", "crossbow", "saw") then
+		if attack_data.armor_piercing or weap_base.thrower_unit then
 			pierce_armor = true
 		end
 
@@ -573,74 +730,16 @@ function CopDamage:damage_bullet(attack_data)
 				normal = attack_data.col_ray.ray
 			})
 		else
-			local armor_pierce_roll = math.rand(1)
-			local armor_pierce_value = 0
-
-			if attack_data.attacker_unit == managers.player:player_unit() then
-				armor_pierce_value = armor_pierce_value + attack_data.weapon_unit:base():armor_piercing_chance()
-				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("player", "armor_piercing_chance", 0)
-				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("weapon", "armor_piercing_chance", 0)
-				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("weapon", "armor_piercing_chance_2", 0)
-
-				if attack_data.weapon_unit:base():got_silencer() then
-					armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("weapon", "armor_piercing_chance_silencer", 0)
-				end
-			end
-
-			if armor_pierce_value <= armor_pierce_roll then
-				local result_type = nil
-
-				if not self._char_tweak.immune_to_knock_down then
-					if attack_data.knock_down then
-						result_type = "knock_down"
-					elseif attack_data.stagger and not self._has_been_staggered then
-						result_type = "stagger"
-						self._has_been_staggered = true
-					end
-				end
-
-				if not result_type then
-					local damage = attack_data.damage
-					damage = math.clamp(damage, 0, self._HEALTH_INIT)
-					local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
-					damage = damage_percent * self._HEALTH_INIT_PRECENT
-					damage, damage_percent = self:_apply_min_health_limit(damage, damage_percent)
-
-					result_type = self:get_damage_type(damage_percent, "bullet")
-				end
-
-				attack_data.damage = 0
-				attack_data.raw_damage = 0
-
-				local result = {
-					type = result_type,
-					variant = attack_data.variant
-				}
-
-				attack_data.result = result
-				attack_data.pos = attack_data.col_ray.position
-
-				local body_index = self._unit:get_body_index(attack_data.col_ray.body:name())
-				local hit_offset_height = math.clamp(attack_data.col_ray.position.z - self._unit:position().z, 0, 300)
-				local attacker = attack_data.attacker_unit
-
-				if not attacker or not alive(attacker) or attacker:id() == -1 then
-					attacker = self._unit
-				end
-
-				self:_send_bullet_attack_result(attack_data, attacker, 0, body_index, hit_offset_height, 0)
-				self:_on_damage_received(attack_data)
-
-				result.attack_data = attack_data
-
-				return result
-			end
-
 			World:effect_manager():spawn({
-				effect = Idstring("effects/payday2/particles/impacts/blood/blood_impact_a"),
+				effect = Idstring("effects/payday2/particles/impacts/steel_no_decal_impact_pd2"),
 				position = attack_data.col_ray.position,
 				normal = attack_data.col_ray.ray
-			})
+			})			
+			--Fucking loud, can be subject to change. Just the only sound ID I found on short notice
+			--new sound pls
+			--self._unit:sound():play("swatturret_weakspot_hit", nil, nil)
+		
+			return
 		end
 	end
 
@@ -669,7 +768,7 @@ function CopDamage:damage_bullet(attack_data)
 	local body_index = self._unit:get_body_index(attack_data.col_ray.body:name())
 	local head = self._head_body_name and not self._unit:in_slot(16) and not self._char_tweak.ignore_headshot and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_head_body_name
 
-	if head and not attack_data.weapon_unit:base().thrower_unit and self._unit:base():has_tag("tank") then
+	if head and not weap_base.thrower_unit and self._unit:base():has_tag("tank") then
 		mvector3.set(mvec_1, attack_data.col_ray.ray)
 		mrotation.z(self._unit:movement():m_head_rot(), mvec_2)
 
@@ -685,9 +784,17 @@ function CopDamage:damage_bullet(attack_data)
 	local damage = attack_data.damage
 	local headshot_by_player = false
 	local headshot_multiplier = 1
+	local distance = attack_data.col_ray and attack_data.col_ray.distance or mvector3.distance(attack_data.origin, self._unit:position()) or 0
 
 	if attack_data.attacker_unit == managers.player:player_unit() then
 		attack_data.backstab = self:check_backstab(attack_data)
+		
+		local damage_scale = nil
+
+		if weap_base.near_falloff_distance and weap_base.far_falloff_distance then
+			damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
+		end		
+		
 		local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
 
 		if critical_hit then
@@ -695,11 +802,11 @@ function CopDamage:damage_bullet(attack_data)
 			attack_data.critical_hit = true
 
 			if damage > 0 then
-				managers.hud:on_crit_confirmed()
+				managers.hud:on_crit_confirmed(damage_scale)
 			end
 		else
 			if damage > 0 then
-				managers.hud:on_hit_confirmed()
+				managers.hud:on_hit_confirmed(damage_scale)
 			end
 		end
 
@@ -731,17 +838,16 @@ function CopDamage:damage_bullet(attack_data)
 		damage = damage * self._marked_dmg_mul
 
 		if self._marked_dmg_dist_mul then
-			local dst = mvector3.distance(attack_data.origin, self._unit:position())
 			local spott_dst = tweak_data.upgrades.values.player.marked_inc_dmg_distance[self._marked_dmg_dist_mul]
 
-			if spott_dst[1] < dst then
+			if spott_dst[1] < distance then
 				damage = damage * spott_dst[2]
 			end
 		end
 	end
 
 	if not head and attack_data.attacker_unit == managers.player:player_unit() and not self._char_tweak.must_headshot and self._char_tweak.headshot_dmg_mul then
-				if attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("smg", "lmg", "minigun") and managers.player:has_category_upgrade("weapon", "automatic_head_shot_add") or managers.player:has_category_upgrade("player", "universal_body_expertise") then
+		if weap_base.is_category and weap_base:is_category("smg", "lmg", "minigun") and managers.player:has_category_upgrade("weapon", "automatic_head_shot_add") or managers.player:has_category_upgrade("player", "universal_body_expertise") then
 			attack_data.add_head_shot_mul = managers.player:upgrade_value("weapon", "automatic_head_shot_add", nil)
 		end
 
@@ -754,13 +860,17 @@ function CopDamage:damage_bullet(attack_data)
 
 	damage = self:_apply_damage_reduction(damage)
 
+	--Saw+Throwables ignore clamps
 	if self._char_tweak.DAMAGE_CLAMP_BULLET then
-		damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
+		if weap_base.thrower_unit or weap_base.is_category and weap_base:is_category("saw") then
+		else
+			damage = math.min(damage, self._char_tweak.DAMAGE_CLAMP_BULLET)
+		end
 	end
 
 	attack_data.raw_damage = damage
 
-	if attack_data.weapon_unit and attack_data.weapon_unit:base().is_category and attack_data.weapon_unit:base():is_category("saw") then
+	if attack_data.weapon_unit and weap_base.is_category and weap_base:is_category("saw") then
 		managers.groupai:state():_voice_saw() --THAT MADMAN HAS A FUCKIN' SAW
 	end
 
@@ -801,7 +911,7 @@ function CopDamage:damage_bullet(attack_data)
 						dir = attack_data.col_ray.ray
 					})
 				end
-			elseif Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+			elseif Network:is_server() and self._char_tweak.gas_on_death then
 				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 			end
 
@@ -869,7 +979,7 @@ function CopDamage:damage_bullet(attack_data)
 			managers.statistics:killed(data)
 			self:_check_damage_achievements(attack_data, head)
 
-			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not attack_data.weapon_unit:base().thrower_unit and attack_data.weapon_unit:base():is_category("shotgun", "saw") then
+			if not is_civilian and managers.player:has_category_upgrade("temporary", "overkill_damage_multiplier") and not weap_base.thrower_unit and weap_base:is_category("shotgun", "saw") then
 				managers.player:activate_temporary_upgrade("temporary", "overkill_damage_multiplier")
 			end
 
@@ -878,7 +988,7 @@ function CopDamage:damage_bullet(attack_data)
 			end
 		elseif attack_data.attacker_unit:base().sentry_gun then
 			if Network:is_server() then
-				local server_info = attack_data.weapon_unit:base():server_information()
+				local server_info = weap_base:server_information()
 
 				if server_info and server_info.owner_peer_id ~= managers.network:session():local_peer():id() then
 					local owner_peer = managers.network:session():peer(server_info.owner_peer_id)
@@ -917,10 +1027,8 @@ function CopDamage:damage_bullet(attack_data)
 		attacker = self._unit
 	end
 
-	local weapon_unit = attack_data.weapon_unit
-
-	if alive(weapon_unit) and weapon_unit:base() and weapon_unit:base().add_damage_result then
-		weapon_unit:base():add_damage_result(self._unit, result.type == "death", attacker, damage_percent) --add bow and arrow base checks
+	if weap_base.add_damage_result then
+		weap_base:add_damage_result(self._unit, result.type == "death", attacker, damage_percent) --add bow and arrow base checks
 	end
 
 	local i_result = nil
@@ -1010,7 +1118,7 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 					dir = attack_dir
 				})
 			end
-		elseif Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -1152,6 +1260,10 @@ function CopDamage:damage_melee(attack_data)
 			damage_effect = self._health * 10
 		end
 	end
+	
+	if self._char_tweak.damage.melee_damage_mul then
+		damage = damage * self._char_tweak.damage.melee_damage_mul
+	end		
 
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul
@@ -1339,7 +1451,7 @@ function CopDamage:damage_melee(attack_data)
 		local enemy_type = enemy_base._tweak_table
 		local unit_weapon = enemy_base._default_weapon_id
 		local health_ratio = managers.player:player_unit():character_damage():health_ratio() * 100
-		local melee_pass, melee_weapons_pass, type_pass, enemy_pass, enemy_weapon_pass, diff_pass, health_pass, level_pass, job_pass, jobs_pass, enemy_count_pass, tags_all_pass, tags_any_pass, all_pass, cop_pass, gangster_pass, civilian_pass, stealth_pass, on_fire_pass, behind_pass, result_pass, mutators_pass, critical_pass, action_pass, is_dropin_pass = nil
+		local melee_pass, melee_weapons_pass, type_pass, enemy_pass, enemy_weapon_pass, diff_pass, health_pass, level_pass, job_pass, jobs_pass, enemy_count_pass, tags_all_pass, tags_any_pass, all_pass, cop_pass, gangster_pass, civilian_pass, stealth_pass, on_fire_pass, behind_pass, result_pass, mutators_pass, critical_pass, action_pass, is_dropin_pass, style_pass = nil
 
 		for achievement, achievement_data in pairs(achievements) do
 			melee_pass = not achievement_data.melee_id or achievement_data.melee_id == attack_data.name_id
@@ -1363,6 +1475,7 @@ function CopDamage:damage_melee(attack_data)
 			stealth_pass = not achievement_data.is_stealth or managers.groupai:state():whisper_mode()
 			on_fire_pass = not achievement_data.is_on_fire or managers.fire:is_set_on_fire(self._unit)
 			is_dropin_pass = achievement_data.is_dropin == nil or achievement_data.is_dropin == managers.statistics:is_dropin()
+			style_pass = not achievement_data.player_style or achievement_data.player_style.style == managers.blackmarket:equipped_player_style() and (not achievement_data.player_style.variation or achievement_data.player_style.variation == managers.blackmarket:equipped_suit_variation())
 
 			if achievement_data.enemies then
 				enemy_pass = false
@@ -1391,7 +1504,7 @@ function CopDamage:damage_melee(attack_data)
 				action_pass = action_type == achievement_data.action.type
 			end
 
-			all_pass = melee_pass and melee_weapons_pass and type_pass and enemy_pass and enemy_weapon_pass and behind_pass and diff_pass and health_pass and level_pass and job_pass and jobs_pass and cop_pass and gangster_pass and civilian_pass and stealth_pass and on_fire_pass and enemy_count_pass and tags_all_pass and tags_any_pass and result_pass and mutators_pass and critical_pass and action_pass and is_dropin_pass
+			all_pass = melee_pass and melee_weapons_pass and type_pass and enemy_pass and enemy_weapon_pass and behind_pass and diff_pass and health_pass and level_pass and job_pass and jobs_pass and cop_pass and gangster_pass and civilian_pass and stealth_pass and on_fire_pass and enemy_count_pass and tags_all_pass and tags_any_pass and result_pass and mutators_pass and critical_pass and action_pass and is_dropin_pass and style_pass
 
 			if all_pass then
 				if achievement_data.stat then
@@ -1947,7 +2060,7 @@ function CopDamage:damage_explosion(attack_data)
 			end
 		end
 
-		if Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -2111,7 +2224,7 @@ function CopDamage:sync_damage_explosion(attacker_unit, damage_percent, i_attack
 			end
 		end
 
-		if Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 
@@ -2966,7 +3079,7 @@ function CopDamage:damage_mission(attack_data)
 	if attack_data.attacker_unit == managers.player:local_player() then
 		if CopDamage.is_civilian(self._unit:base()._tweak_table) then
 			managers.money:civilian_killed()
-		elseif Network:is_server() and self._unit:base()._tweak_table == "swat_titan" then
+		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
 	end

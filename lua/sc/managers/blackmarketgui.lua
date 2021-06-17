@@ -29,7 +29,7 @@ local small_font_size = tweak_data.menu.pd2_small_font_size
 local tiny_font_size = tweak_data.menu.pd2_tiny_font_size
 
 local function format_round(num, round_value)
-	return round_value and tostring(math.round(num)) or string.format("%.2f", num):gsub("%.?0+$", "")
+	return round_value and tostring(math.round(num)) or string.format("%.1f", num):gsub("%.?0+$", "")
 end
 
 function BlackMarketGui:populate_mods(data)
@@ -2161,6 +2161,9 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					stat_name = "total_ammo_mod"
 				},
 				{
+					name = "pickup"
+				},
+				{
 					round_value = true,
 					name = "fire_rate"
 				},
@@ -2184,18 +2187,22 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					name = "concealment"
 				},
 				{
-					percent = false,
-					inverted = true,
-					name = "suppression",
-					offset = true
-				},
-				{
 					inverted = true,
 					name = "reload"
 				},
 				{
 					inverted = true,
 					name = "swap_speed"
+				},
+				{
+					round = true,
+					append = "m",
+					name = "standing_range"
+				},
+				{
+					round = true,
+					append = "m",
+					name = "moving_range"
 				}
 			}
 
@@ -2204,7 +2211,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				x = 10,
 				layer = 1,
 				w = self._weapon_info_panel:w() - 20,
-				h = self._weapon_info_panel:h() - 84
+				h = self._weapon_info_panel:h() - 48
 			})
 			local panel = self._stats_panel:panel({
 				h = 20,
@@ -2996,16 +3003,25 @@ function BlackMarketGui:show_stats()
 
 			value = math.max(base_stats[stat.name].value + mods_stats[stat.name].value + skill_stats[stat.name].value, 0)
 			local base = base_stats[stat.name].value
+			local append = stat.append or ""
 
 			self._stats_texts[stat.name].equip:set_alpha(1)
-			self._stats_texts[stat.name].equip:set_text(format_round(value, stat.round_value))
-			self._stats_texts[stat.name].base:set_text(format_round(base, stat.round_value))
-			self._stats_texts[stat.name].mods:set_text(mods_stats[stat.name].value == 0 and "" or (mods_stats[stat.name].value > 0 and "+" or "") .. format_round(mods_stats[stat.name].value, stat.round_value))
-			self._stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) or "")
+			self._stats_texts[stat.name].equip:set_text(format_round(value, stat.round_value) .. append)
+			self._stats_texts[stat.name].base:set_text(format_round(base, stat.round_value) .. append)
+			self._stats_texts[stat.name].mods:set_text(mods_stats[stat.name].value == 0 and "" or (mods_stats[stat.name].value > 0 and "+" or "") .. format_round(mods_stats[stat.name].value, stat.round_value) .. append)
+			self._stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) .. append or "")
 			self._stats_texts[stat.name].total:set_text("")
 			self._stats_texts[stat.name].base:set_alpha(0.75)
 			self._stats_texts[stat.name].mods:set_alpha(0.75)
 			self._stats_texts[stat.name].skill:set_alpha(0.75)
+			
+			--Temporaryish until I can figure out how remove_stats is set up.
+			if base_stats[stat.name].value == -1 then
+				self._stats_texts[stat.name].equip:set_text("")
+				self._stats_texts[stat.name].base:set_text("")
+				self._stats_texts[stat.name].mods:set_text("")
+				self._stats_texts[stat.name].skill:set_text("")
+			end
 
 			if base < value then
 				self._stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
@@ -3112,17 +3128,26 @@ function BlackMarketGui:show_stats()
 
 			if slot == equipped_slot then
 				local base = base_stats[stat.name].value
+				local append = stat.append or ""
 
 				self._stats_texts[stat.name].equip:set_alpha(1)
-				self._stats_texts[stat.name].equip:set_text(format_round(value, stat.round_value))
-				self._stats_texts[stat.name].base:set_text(format_round(base, stat.round_value))
-				self._stats_texts[stat.name].mods:set_text(mods_stats[stat.name].value == 0 and "" or (mods_stats[stat.name].value > 0 and "+" or "") .. format_round(mods_stats[stat.name].value, stat.round_value))
-				self._stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value) or "")
+				self._stats_texts[stat.name].equip:set_text(format_round(value, stat.round_value) .. append)
+				self._stats_texts[stat.name].base:set_text(format_round(base, stat.round_value) .. append)
+				self._stats_texts[stat.name].mods:set_text(mods_stats[stat.name].value == 0 and "" or (mods_stats[stat.name].value > 0 and "+" or "") .. format_round(mods_stats[stat.name].value, stat.round_value) .. append)
+				self._stats_texts[stat.name].skill:set_text(skill_stats[stat.name].skill_in_effect and (skill_stats[stat.name].value > 0 and "+" or "") .. format_round(skill_stats[stat.name].value, stat.round_value)  .. append or "")
 				self._stats_texts[stat.name].total:set_text("")
 				self._stats_texts[stat.name].removed:set_text("")
 				self._stats_texts[stat.name].base:set_alpha(0.75)
 				self._stats_texts[stat.name].mods:set_alpha(0.75)
 				self._stats_texts[stat.name].skill:set_alpha(0.75)
+
+				--Temporaryish until I can figure out how remove_stats is set up.
+				if base_stats[stat.name].value == -1 then
+					self._stats_texts[stat.name].equip:set_text("")
+					self._stats_texts[stat.name].base:set_text("")
+					self._stats_texts[stat.name].mods:set_text("")
+					self._stats_texts[stat.name].skill:set_text("")
+				end
 
 				if base < value then
 					self._stats_texts[stat.name].equip:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
@@ -3160,14 +3185,21 @@ function BlackMarketGui:show_stats()
 				end
 			else
 				local equip = math.max(equip_base_stats[stat.name].value + equip_mods_stats[stat.name].value + equip_skill_stats[stat.name].value, 0)
+				local append = stat.append or ""
 
 				self._stats_texts[stat.name].equip:set_alpha(0.75)
-				self._stats_texts[stat.name].equip:set_text(format_round(equip, stat.round_value))
+				self._stats_texts[stat.name].equip:set_text(format_round(equip, stat.round_value) .. append)
 				self._stats_texts[stat.name].base:set_text("")
 				self._stats_texts[stat.name].mods:set_text("")
 				self._stats_texts[stat.name].skill:set_text("")
 				self._stats_texts[stat.name].removed:set_text("")
-				self._stats_texts[stat.name].total:set_text(format_round(value, stat.round_value))
+				self._stats_texts[stat.name].total:set_text(format_round(value, stat.round_value) .. append)
+
+				--Temporaryish until I can figure out how remove_stats is set up.
+				if base_stats[stat.name].value == -1 then
+					self._stats_texts[stat.name].equip:set_text("")
+					self._stats_texts[stat.name].total:set_text("")
+				end
 
 				if equip < value then
 					self._stats_texts[stat.name].total:set_color(stat.inverted and tweak_data.screen_colors.stats_negative or tweak_data.screen_colors.stats_positive)
@@ -3593,12 +3625,14 @@ function BlackMarketGui:show_stats()
 		local hide_equip = mod_stats.equip.name == mod_stats.chosen.name
 		local remove_stats = {}
 
-		--Minimal but hacky way to add swap_speed to weapon mod stat changes.
+		--Minimal but hacky way to add custom stats to weapon mod stat changes.
 		--Checks if the weapon stats with the mod (and no skills) change, and if they do, displays the difference.
 		--Would write a better solution, but I hate this file.
-		if unaltered_total_mods_stats.swap_speed.value ~= total_mods_stats.swap_speed.value then
-			mod_stats.chosen.swap_speed = (total_base_stats.swap_speed.value + total_mods_stats.swap_speed.value)
-				- (unaltered_total_base_stats.swap_speed.value + unaltered_total_mods_stats.swap_speed.value)
+		for name, data in pairs(unaltered_total_mods_stats) do
+			if unaltered_total_mods_stats[name].value ~= total_mods_stats[name].value then
+				mod_stats.chosen[name] = (total_base_stats[name].value + total_mods_stats[name].value)
+				- (unaltered_total_base_stats[name].value + unaltered_total_mods_stats[name].value)
+			end
 		end
 		
 		if self._slot_data.removes then
@@ -3674,13 +3708,20 @@ function BlackMarketGui:show_stats()
 			end
 
 			local equip_text = equip == 0 and "" or (equip > 0 and "+" or "") .. format_round(equip, stat.round_value)
+			local append = stat.append or ""
 
 			self._stats_texts[stat.name].base:set_text(equip_text)
 			self._stats_texts[stat.name].base:set_alpha(0.75)
 			self._stats_texts[stat.name].equip:set_alpha(1)
-			self._stats_texts[stat.name].equip:set_text(format_round(total_value, stat.round_value))
+			self._stats_texts[stat.name].equip:set_text(format_round(total_value, stat.round_value) .. append)
 			self._stats_texts[stat.name].skill:set_alpha(1)
-			self._stats_texts[stat.name].skill:set_text(value == 0 and "" or (value > 0 and "+" or "") .. format_round(value, stat.round_value))
+			self._stats_texts[stat.name].skill:set_text(value == 0 and "" or (value > 0 and "+" or "") .. format_round(value, stat.round_value) .. append)
+
+			--Temporaryish until I can figure out how remove_stats is set up.
+			if total_base_stats[stat.name].value == -1 then
+				self._stats_texts[stat.name].equip:set_text("")
+				self._stats_texts[stat.name].skill:set_text("")
+			end
 
 			if remove_stats[stat.name] and remove_stats[stat.name] ~= 0 then
 				local stat_str = remove_stats[stat.name] == 0 and "" or (remove_stats[stat.name] > 0 and "+" or "") .. format_round(remove_stats[stat.name], stat.round_value)
@@ -3985,29 +4026,35 @@ function BlackMarketGui:update_info_text()
 		updated_texts[1].text = self._slot_data.name_localized
 
 		if not slot_data.unlocked then
-			local skill_based = slot_data.skill_based
-			local level_based = slot_data.level and slot_data.level > 0
-			local dlc_based = slot_data.dlc_based or tweak_data.lootdrop.global_values[slot_data.global_value] and tweak_data.lootdrop.global_values[slot_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(slot_data.global_value)
-			local skill_text_id = skill_based and (slot_data.skill_name or "bm_menu_skilltree_locked") or false
-			local level_text_id = level_based and "bm_menu_level_req" or false
-			local dlc_text_id = dlc_based and slot_data.dlc_locked or false
-			local text = ""
+			local grenade_tweak = tweak_data.blackmarket.projectiles[slot_data.name]
 
-			if slot_data.install_lock then
-				text = text .. managers.localization:to_upper_text(slot_data.install_lock, {}) .. "\n"
-			elseif skill_text_id then
-				text = text .. managers.localization:to_upper_text(skill_text_id, {
-					slot_data.name_localized
-				}) .. "\n"
-			elseif dlc_text_id then
-				text = text .. managers.localization:to_upper_text(dlc_text_id, {}) .. "\n"
-			elseif level_text_id then
-				text = text .. managers.localization:to_upper_text(level_text_id, {
-					level = slot_data.level
-				}) .. "\n"
+			if grenade_tweak and grenade_tweak.unlock_id then
+				updated_texts[3].text = managers.localization:to_upper_text(grenade_tweak.unlock_id)
+			else
+				local skill_based = slot_data.skill_based
+				local level_based = slot_data.level and slot_data.level > 0
+				local dlc_based = slot_data.dlc_based or tweak_data.lootdrop.global_values[slot_data.global_value] and tweak_data.lootdrop.global_values[slot_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(slot_data.global_value)
+				local skill_text_id = skill_based and (slot_data.skill_name or "bm_menu_skilltree_locked") or false
+				local level_text_id = level_based and "bm_menu_level_req" or false
+				local dlc_text_id = dlc_based and slot_data.dlc_locked or false
+				local text = ""
+
+				if slot_data.install_lock then
+					text = text .. managers.localization:to_upper_text(slot_data.install_lock, {}) .. "\n"
+				elseif skill_text_id then
+					text = text .. managers.localization:to_upper_text(skill_text_id, {
+						slot_data.name_localized
+					}) .. "\n"
+				elseif dlc_text_id then
+					text = text .. managers.localization:to_upper_text(dlc_text_id, {}) .. "\n"
+				elseif level_text_id then
+					text = text .. managers.localization:to_upper_text(level_text_id, {
+						level = slot_data.level
+					}) .. "\n"
+				end
+
+				updated_texts[3].text = text
 			end
-
-			updated_texts[3].text = text
 		end
 
 		updated_texts[4].resource_color = {}

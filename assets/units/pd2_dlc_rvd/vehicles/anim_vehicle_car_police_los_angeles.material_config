@@ -9,8 +9,8 @@
     </material>
     <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" decal_material="glass_breakable" version="2" name="mtr_windows">
 		<reflection_texture type="cubemap" global_texture="current_global_texture" />
-        <opacity_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_op"/>
-        <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df"/>
+        <opacity_texture file="units/glass/vehicle_glass_dark2_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_dark_b_df"/>
 		<variable value="0 1 0" type="vector3" name="fresnel_settings"/>
     </material>
     <material render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:GSMA_TEXTURE:NORMALMAP:RL_BIGPROPS:SKINNED_1WEIGHT" name="mtr_car" version="2">
@@ -46,7 +46,7 @@
         <material_texture file="units/pd2_dlc_rvd/characters/ene_la_cop_texture/ene_la_cop_gsma"/>
     </material>
     <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_BIGPROPS" name="mtr_police_la_head" version="2">
-        <bump_normal_texture file="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_nm"/>
-        <diffuse_texture file="units/pd2_mod_lapd/characters/shared_textures/heads_cop_la_df"/>
-	</material>
+        <bump_normal_texture file="units/payday2/characters/shared_textures/head_01_nm" mip="1"/>
+        <diffuse_texture file="units/payday2/characters/shared_textures/head_01_df"/>
+    </material>
 </materials>

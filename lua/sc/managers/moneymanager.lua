@@ -137,21 +137,21 @@ function MoneyManager:get_money_by_params(params)
 		crew_value = total_payout - crew_value
 	end
 
-	local limited_bonus = self:get_tweak_value("money_manager", "limited_bonus_multiplier") or 1
+	local pro_job_bonus = self:get_tweak_value("money_manager", "pro_job_new") or 1
 
-	if limited_bonus > 1 then
-		stage_value = stage_value * limited_bonus
-		stage_risk = stage_risk * limited_bonus
-		bag_value = bag_value * limited_bonus
-		bag_risk = bag_risk * limited_bonus
-		vehicle_value = vehicle_value * limited_bonus
-		vehicle_risk = vehicle_risk * limited_bonus
-		small_value = small_value * limited_bonus
-		small_risk = small_risk * limited_bonus
-		crew_value = crew_value * limited_bonus
-		total_payout = total_payout * limited_bonus
+	if pro_job_bonus > 1 then
+		stage_value = stage_value * pro_job_bonus
+		stage_risk = stage_risk * pro_job_bonus
+		bag_value = bag_value * pro_job_bonus
+		bag_risk = bag_risk * pro_job_bonus
+		vehicle_value = vehicle_value * pro_job_bonus
+		vehicle_risk = vehicle_risk * pro_job_bonus
+		small_value = small_value * pro_job_bonus
+		small_risk = small_risk * pro_job_bonus
+		crew_value = crew_value * pro_job_bonus
+		total_payout = total_payout * pro_job_bonus
 	end
-	
+
 	local is_level_limited = player_stars < job_stars
 
 	if is_level_limited and stage_value > 0 then

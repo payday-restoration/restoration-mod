@@ -1,10 +1,15 @@
 --Adds ability to define per weapon category AP skills.
 Hooks:PostHook(NewRaycastWeaponBase, "init", "ResExtraSkills", function(self)
+	--Since armor piercing chance is no longer used, lets use weapon category to determine armor piercing baseline.
+	if self:is_category("bow", "crossbow", "saw", "snp") then
+		self._use_armor_piercing = true
+	end
+
 	for _, category in ipairs(self:categories()) do
-		if self._use_armor_piercing then
+		if managers.player:has_category_upgrade(category, "ap_bullets") then
+			self._use_armor_piercing = true
 			break
 		end
-		self._use_armor_piercing = managers.player:upgrade_value_nil(category, "ap_bullets")
 	end
 end)
 
@@ -364,7 +369,20 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		self._burst_rounds_fired = 0
 	else
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
-	end		
+	end	
+
+	--Set range multipliers.
+	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
+	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul
+
+	if self._ammo_data then
+		if self._ammo_data.damage_near_mul ~= nil then
+			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
+		end
+		if self._ammo_data.damage_far_mul ~= nil then
+			self._damage_far_mul = self._damage_far_mul * self._ammo_data.damage_far_mul
+		end
+	end
 	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
@@ -402,8 +420,22 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		if stats.beretta_burst then
 			self:weapon_tweak_data().BURST_FIRE = 3	
 			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false	
-		end			
+		end	
 
+		if stats.m16_burst then
+			self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
+			self:weapon_tweak_data().FIRE_MODE = "single"	
+			self:weapon_tweak_data().BURST_FIRE = 3	
+			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
+		end		
+
+		if stats.beer_burst then
+			self:weapon_tweak_data().BURST_FIRE = false
+			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = nil				
+			self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = true
+			self:weapon_tweak_data().FIRE_MODE = "auto"	
+		end					
+		
 		if stats.can_shoot_through_titan_shield then
 			self._can_shoot_through_titan_shield = true
 		end
@@ -414,58 +446,33 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 			end
 		end
 
-		--Flamethrower stuff, since fire DOT data doesn't like being changed in a normal custom stat
-		if stats.use_rare_dot then
-			if self:weapon_tweak_data().fire_dot_data then
-				self:weapon_tweak_data().fire_dot_data = {
-					dot_damage = 0.5,
-					dot_trigger_max_distance = 999999,
-					dot_trigger_chance = 50,
-					dot_length = 6.1,
-					dot_tick_period = 0.5
-				}					
-			end
-		end		
+		if stats.damage_near_mul then
+			self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
+		end
 
-		--Worst way to eat a steak, seriously what the fuck's wrong with you
-		if stats.use_well_done_dot then
-			if self:weapon_tweak_data().fire_dot_data then
-				self:weapon_tweak_data().fire_dot_data = {
-					dot_damage = 2,
-					dot_trigger_max_distance = 999999,
-					dot_trigger_chance = 50,
-					dot_length = 1.6,
-					dot_tick_period = 0.5
-				}					
-			end
-		end					
+		if stats.damage_far_mul then
+			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
+		end
 	end
 
+	self:precalculate_ammo_pickup()
+end
+
+function NewRaycastWeaponBase:precalculate_ammo_pickup()
 	--Precalculate ammo pickup values.
-	if self:weapon_tweak_data().AMMO_PICKUP then --Filters out npc guns.
-		self._ammo_pickup = {self:weapon_tweak_data().AMMO_PICKUP[1], self:weapon_tweak_data().AMMO_PICKUP[2]} --Get base pickup % values. Make sure these are grabbed individually so you don't accidentally pass in the table by reference.
-		local total_ammo = self:get_ammo_max() * (tweak_data.weapon[self._name_id].use_data.selection_index == 1 and 2 or 1) --Total ammo used in pickup calcs as if the weapon was a primary. Double this if it's a secondary.
+	if self:weapon_tweak_data().AMMO_PICKUP then
+		self._ammo_pickup = {self:weapon_tweak_data().AMMO_PICKUP[1], self:weapon_tweak_data().AMMO_PICKUP[2]} --Get base gun ammo pickup.
 
-		--Pickup multiplier
-		local pickup_multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1) --Skills
-			* managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
-			* (1 / managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)) --Compensate for fully loaded bonus ammo.
+		--Pickup multiplier from skills.
+		local pickup_multiplier = managers.player:upgrade_value("player", "fully_loaded_pick_up_multiplier", 1)
 
-		for _, category in ipairs(self:weapon_tweak_data().categories) do --Compensate for weapon category based bonus ammo.
-			pickup_multiplier = pickup_multiplier * (1 / managers.player:upgrade_value(category, "extra_ammo_multiplier", 1))
+		for _, category in ipairs(self:categories()) do
+			pickup_multiplier = pickup_multiplier + managers.player:upgrade_value(category, "pick_up_multiplier", 1) - 1
 		end
 
-		--Compensate for perk deck damage boosts and damage being /10 overall. Treat damage as if you have the max level.
-		local damage_multiplier = 10
-		local primary_category = self:weapon_tweak_data().categories[1] --The perk deck damage boost doesn't apply to most special weapons.
-		if primary_category ~= "grenade_launcher" and primary_category ~= "rocket_frag" and primary_category ~= "bow" and primary_category ~= "crossbow" then
-			damage_multiplier = damage_multiplier / managers.player:upgrade_value("player", "passive_damage_multiplier", 1)
-		end
-
-		--Set actual pickup values. Use ammo_pickup = (base% - exponent*sqrt(damage)) * pickup_multiplier * total_ammo.
-		--self._ammo_data.ammo_pickup_xxx_mul corresponds to a multiplier from weapon mods, especially ones that may modify total ammo without changing damage tiers or add DOT effects.
-		self._ammo_pickup[1] = (self._ammo_pickup[1] + tweak_data.weapon.stat_info.pickup_exponents.min * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
-		self._ammo_pickup[2] = math.max((self._ammo_pickup[2] + tweak_data.weapon.stat_info.pickup_exponents.max * math.sqrt(self._damage * damage_multiplier)) * pickup_multiplier * total_ammo * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1), self._ammo_pickup[1])
+		--Apply multiplier from skills and ammo.
+		self._ammo_pickup[1] = self._ammo_pickup[1] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_min_mul) or 1)
+		self._ammo_pickup[2] = self._ammo_pickup[2] * pickup_multiplier * ((self._ammo_data and self._ammo_data.ammo_pickup_max_mul) or 1)
 	end
 end
 					
@@ -473,6 +480,8 @@ end
 function NewRaycastWeaponBase:fire_rate_multiplier()
 	local multiplier = self._fire_rate_multiplier or 1
 	
+	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
+
 	if self:in_burst_mode() then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
 	end		
@@ -480,7 +489,7 @@ function NewRaycastWeaponBase:fire_rate_multiplier()
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
 	end 
-
+	
 	return multiplier
 end
 
@@ -566,6 +575,12 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "reload_speed_multiplier", 1)
 	
 	if self._setup and alive(self._setup.user_unit) and self._setup.user_unit:movement() then
+		local morale_boost_bonus = self._setup.user_unit:movement():morale_boost()
+
+		if morale_boost_bonus then
+			multiplier = multiplier * morale_boost_bonus.reload_speed_bonus
+		end
+		
 		if self._setup.user_unit:movement():next_reload_speed_multiplier() then
 			multiplier = multiplier * self._setup.user_unit:movement():next_reload_speed_multiplier()
 		end
@@ -613,4 +628,58 @@ function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
 	end
 	ammo = math.floor(ammo)
 	return ammo
+end
+
+function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
+	--Initialize base info.
+	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
+	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
+	local current_state = user_unit:movement()._current_state
+	local base_falloff = falloff_info.base
+
+	if current_state then
+		--Get bonus from accuracy.
+		local acc_bonus = falloff_info.acc_bonus * (self._current_stats_indices.spread + managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) - 1)
+		
+		--Get bonus from stability.
+		local stab_bonus = falloff_info.stab_bonus * 25
+		if current_state._moving then
+			stab_bonus = falloff_info.stab_bonus * (self._current_stats_indices.recoil + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) - 1)
+		end
+
+		--Apply acc/stab bonuses.
+		base_falloff = base_falloff + stab_bonus + acc_bonus
+
+		--Get ADS multiplier.
+		if current_state:in_steelsight() then
+			for _, category in ipairs(self:categories()) do
+				base_falloff = base_falloff * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
+			end
+		end
+
+		if self._rays and self._rays > 1 then
+			base_falloff = base_falloff * falloff_info.shotgun_penalty
+		end
+	end
+
+	--Apply global range multipliers.
+	base_falloff = base_falloff * (1 + 1 - managers.player:get_property("desperado", 1))
+
+	base_falloff = base_falloff * (self:weapon_tweak_data().range_mul or 1)
+	for _, category in ipairs(self:categories()) do
+		if tweak_data[category] and tweak_data[category].range_mul then
+			base_falloff = base_falloff * tweak_data[category].range_mul
+		end
+	end
+
+	--Apply multipliers.
+	local falloff_near = base_falloff * self._damage_near_mul
+	local falloff_far = base_falloff * self._damage_far_mul
+
+	--Cache falloff values for usage in hitmarkers.
+	self.near_falloff_distance = falloff_near
+	self.far_falloff_distance = falloff_far
+
+	--Compute final damage.
+	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)
 end

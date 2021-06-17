@@ -241,6 +241,8 @@ function MissionEndState:at_enter(old_state, params)
 
 	if self._success then
 		managers.preplanning:reset_rebuy_assets()
+	else
+		managers.story:set_last_failed_heist(managers.job:current_job_id())		
 	end
 
 	Telemetry:on_end_heist(self._type, total_exp_gained)
@@ -396,7 +398,7 @@ function MissionEndState:on_statistics_result(best_kills_peer_id, best_kills_sco
 
 	print("on_statistics_result end")
 
-	local level_id, all_pass, total_kill_pass, total_accuracy_pass, total_headshots_pass, total_downed_pass, level_pass, levels_pass, num_players_pass, diff_pass, one_down_pass, is_dropin_pass, success_pass = nil
+	local level_id, all_pass, total_kill_pass, total_accuracy_pass, total_headshots_pass, total_downed_pass, level_pass, levels_pass, num_players_pass, diff_pass, one_down_pass, is_dropin_pass, success_pass, killed_by_weapon_category_pass = nil
 
 	for achievement, achievement_data in pairs(tweak_data.achievement.complete_heist_statistics_achievements or {}) do
 		level_id = managers.job:has_active_job() and managers.job:current_level_id() or ""
@@ -421,7 +423,25 @@ function MissionEndState:on_statistics_result(best_kills_peer_id, best_kills_sco
 			total_headshots_pass = true
 		end
 
-		all_pass = diff_pass and one_down_pass and num_players_pass and level_pass and levels_pass and total_kill_pass and total_accuracy_pass and total_downed_pass and is_dropin_pass and total_headshots_pass and managers.challenge:check_equipped(achievement_data) and managers.challenge:check_equipped_team(achievement_data) and success_pass
+		killed_by_weapon_category_pass = true
+
+		if achievement_data.killed_by_weapon_categories then
+			for weapon_category, required_kill_count in pairs(achievement_data.killed_by_weapon_categories) do
+				local killed_by_weapon_category = managers.statistics:session_killed_by_weapon_category(weapon_category)
+
+				if required_kill_count == 0 then
+					killed_by_weapon_category_pass = killed_by_weapon_category == 0
+				else
+					killed_by_weapon_category_pass = required_kill_count <= killed_by_weapon_category
+				end
+
+				if not killed_by_weapon_category_pass then
+					break
+				end
+			end
+		end
+
+		all_pass = diff_pass and one_down_pass and num_players_pass and level_pass and levels_pass and total_kill_pass and total_accuracy_pass and total_downed_pass and is_dropin_pass and total_headshots_pass and managers.challenge:check_equipped(achievement_data) and managers.challenge:check_equipped_team(achievement_data) and success_pass and killed_by_weapon_category_pass
 
 		if all_pass and not managers.achievment:award_data(achievement_data) then
 			Application:debug("[MissionEndState] complete_heist_achievements:", achievement)

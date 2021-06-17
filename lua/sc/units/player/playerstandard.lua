@@ -43,7 +43,7 @@ function PlayerStandard:set_night_vision_state(state)
 	local ambient_color_key = CoreEnvironmentFeeder.PostAmbientColorFeeder.DATA_PATH_KEY
 	--Use a proper fallback env instead of whatever vanilla does if there's an issue.
 	local level_id = Global.game_settings.level_id
-	local env_setting = gradient_filter and tweak_data.levels[level_id].env_params and tweak_data.levels[level_id].env_params.color_grading
+	local env_setting = tweak_data.levels[level_id].env_params and tweak_data.levels[level_id].env_params.color_grading
 	local level_check = env_setting or managers.user:get_setting("video_color_grading")
 	local effect = state and night_vision.effect or level_check
 
@@ -523,6 +523,7 @@ function PlayerStandard:_do_chainsaw_damage(t)
 			}
 		end
 
+		managers.rumble:play("melee_hit", nil, nil, custom_data)
 		managers.game_play_central:physics_push(col_ray)
 
 		local character_unit, shield_knock = nil
@@ -935,7 +936,7 @@ local melee_vars = {
 	"player_melee",
 	"player_melee_var2"
 }
-function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry)
+function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
@@ -1058,7 +1059,7 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			elseif special_weapon == "hyper_crit" and math.random() <= 0.05 then
 				dmg_multiplier = dmg_multiplier * 10
 				damage_effect = damage_effect * 10
-				--Should probably get an audio que at some point.
+				self._unit:sound():play("bell_ring")
 			end
 			
 			if charge_lerp_value >= 0.99 then
@@ -1098,6 +1099,18 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			local defense_data = character_unit:character_damage():damage_melee(action_data)
 			self:_check_melee_dot_damage(col_ray, defense_data, melee_entry)
 			self:_perform_sync_melee_damage(hit_unit, col_ray, action_data.damage)
+			
+			if tweak_data.blackmarket.melee_weapons[melee_entry].fire_dot_data and character_unit:character_damage().damage_fire then
+				local action_data = {
+					variant = "fire",
+					damage = 0,
+					attacker_unit = self._unit,
+					col_ray = col_ray,
+					fire_dot_data = tweak_data.blackmarket.melee_weapons[melee_entry].fire_dot_data
+				}
+
+				character_unit:character_damage():damage_fire(action_data)
+			end			
 
 			return defense_data
 		else
@@ -1356,8 +1369,15 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 			end
 		end
 	end
+	
+	--Failsafe so you can still shout at bots on FFD2 to stop a softlock
+	local can_intimidate_teammates = nil	
+	local job = Global.level_data and Global.level_data.level_id
+	if not managers.groupai:state():whisper_mode() or job == "framing_frame_2" then
+		can_intimidate_teammates = true
+	end
 
-	if intimidate_teammates and not managers.groupai:state():whisper_mode() then
+	if intimidate_teammates and can_intimidate_teammates then
 		local criminals = managers.groupai:state():all_char_criminals()
 
 		for u_key, u_data in pairs(criminals) do
@@ -1438,38 +1458,6 @@ function PlayerStandard:_get_unit_intimidation_action(intimidate_enemies, intimi
 	return self:_get_intimidation_action(prime_target, char_table, intimidation_amount, primary_only, detect_only, secondary)
 end
 
-function PlayerStandard:interrupt_all_actions()
-	local t = TimerManager:game():time()
-
-	self:_interupt_action_reload(t)
-	self:_interupt_action_steelsight(t)
-	self:_interupt_action_running(t)
-	self:_interupt_action_charging_weapon(t)
-	self:_interupt_action_interact(t)
-	self:_interupt_action_ladder(t)
-	self:_interupt_action_melee(t)
-	self:_interupt_action_throw_grenade(t)
-	self:_interupt_action_throw_projectile(t)
-	self:_interupt_action_use_item(t)
-	self:_interupt_action_cash_inspect(t)
-end
-
---RAID minigames.  Disabled for the time being.
---[[Hooks:PostHook(PlayerStandard, "_start_action_interact", "RaidMinigameCheckInteraction", function(self, t, input, timer, object)
-	if alive(object) then
-		local name = object:interaction().tweak_data
-		local tweak = tweak_data.interaction[name]
-		if name ~= "open_door_with_keys" then -- Crashes & is not really lockpicking in the same sense.
-			if tweak and (tweak.is_lockpicking or tweak.special_interaction == "raid") then
-				game_state_machine:change_state_by_name("ingame_special_interaction", {object = object, type = tweak.special_interaction or "raid"})
-				self._interact_expire_t = nil
-				managers.hud:hide_interaction_bar()
-				object:interaction():_post_event(self._unit, "sound_interupt")
-			end
-		end
-	end
-end)]]--
-
 --Replace coroutine with a playermanager function. The coroutine had issues with randomly not being called- or not having values get reset, and overall being jank???
 function PlayerStandard:_find_pickups(t)
 	local pickups = World:find_units_quick("sphere", self._unit:movement():m_pos(), self._pickup_area, self._slotmask_pickups)
@@ -1494,7 +1482,11 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	local new_action = nil
 	local action_forbidden = false
 
-	if not input.btn_deploy_bipod and not self._toggle_underbarrel_wanted then
+	if _G.IS_VR then
+		if not input.btn_weapon_firemode_press and not self._toggle_underbarrel_wanted then
+			return new_action
+		end
+	elseif not input.btn_deploy_bipod and not self._toggle_underbarrel_wanted then
 		return new_action
 	end
 	

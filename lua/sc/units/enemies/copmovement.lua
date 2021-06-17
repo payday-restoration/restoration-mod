@@ -34,8 +34,6 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.weekend = security_variant
 	CopMovement._action_variants.weekend_dmr = security_variant
 	CopMovement._action_variants.weekend_lmg = security_variant
-	CopMovement._action_variants.omnia = security_variant
-	CopMovement._action_variants.omnia_heavy = security_variant
 	CopMovement._action_variants.boom = security_variant
 	CopMovement._action_variants.fbi_vet = security_variant
 	CopMovement._action_variants.fbi_vet_boss = security_variant
@@ -45,7 +43,9 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.meme_man_shield.hurt = ShieldActionHurt
 	CopMovement._action_variants.meme_man_shield.walk = ShieldCopActionWalk		
 	CopMovement._action_variants.spring = clone(security_variant)
+	CopMovement._action_variants.spring.walk = TankCopActionWalk
 	CopMovement._action_variants.headless_hatman = clone(security_variant)
+	CopMovement._action_variants.headless_hatman.walk = TankCopActionWalk
 	CopMovement._action_variants.summers = clone(security_variant)
 	CopMovement._action_variants.boom_summers = clone(security_variant)
 	CopMovement._action_variants.boom_summers.heal = MedicActionHeal

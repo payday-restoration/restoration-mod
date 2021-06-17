@@ -698,13 +698,6 @@
 	"RestorationModPDTHChallengesTitleID" : "Show PDTH Challenges",
 	"RestorationModPDTHChallengesDescID" : "Toggles the visibility of the PDTH challenges in the menu and the hud",
 
-    "RestorationModRaidLockPickingTitleID" : "Modify Lockpicks",
-    "RestorationModRaidLockPickingDescID" : "Should the mod modify lockpicks? This changes the gameplay revolving lockpicks",
-    "RestorationModRaidLockPickingVOTitleID" : "Play Voice Lines",
-    "RestorationModRaidLockPickingVODescID" : "Should the mod play voice lines when picking a lock?",
-    "hud_legend_lockpicking_interact": "$BTN_INTERACT Lockpick",
-    "hud_legend_persuade_interact": "$BTN_INTERACT Persuade",
-    "hud_legend_exit": "$BTN_CANCEL Exit",
 	"RestorationModArmorFixTitleID" : "Armor Flash Fix",
 	"RestorationModArmorFixDescID" : "Enable or disable armor flash fix.",
 

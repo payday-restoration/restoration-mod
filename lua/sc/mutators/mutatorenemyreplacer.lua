@@ -464,7 +464,7 @@ function MutatorNoTitans:setup(data)
 		tweak_data.group_ai.unit_categories.CS_tazer = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_tazer_1/ene_tazer_1")					
+					Idstring("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc")					
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_tazer_ak47_ass/ene_akan_cs_tazer_ak47_ass")

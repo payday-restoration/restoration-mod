@@ -53,6 +53,9 @@ function GameSetup:load_packages()
     local la = tweak_data.levels.ai_groups.lapd
     local ny = tweak_data.levels.ai_groups.nypd
     local ai_type = tweak_data.levels:get_ai_group_type()
+
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty) 
     
 	if job_tweak_package_data and job_tweak_package_data.load_all_difficulty_packages then
 		for i, difficulty in ipairs(tweak_data.difficulties) do
@@ -62,6 +65,10 @@ function GameSetup:load_packages()
         end
     elseif ai_type == a then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_america" or "normal")
+
+		load_difficulty_package(diff_package)
+	elseif ai_type == a and difficulty_index == 8 then
+		local diff_package = "packages/sm_wish" and "packages/sm_wish_sc_america"
 
 		load_difficulty_package(diff_package)
 	elseif ai_type == z then

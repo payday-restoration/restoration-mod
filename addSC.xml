@@ -1290,6 +1290,7 @@
 	
 	<!--NPC R870-->
 	<model path="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" force="true"/>
+	<unit path="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_r870/r870_df" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_r870/r870_nm" force="true"/>	
 		

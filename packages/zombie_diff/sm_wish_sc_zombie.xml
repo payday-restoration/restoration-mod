@@ -95,6 +95,7 @@
 	
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_fbi_head_df" />
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/ene_zeal_fbi_df" />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmets_shotgun_df" />
 	
 	<texture path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_fbi_nm" />	
 	
@@ -471,4 +472,59 @@
 	<!--Titan HRT MP9-->	
 	<unit path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->	
+
+	<!-- bravos	 -->
+	<!--bravo dmr-->
+	<object path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
+	<cooked_physics path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
+	<model path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"  load="true"/>
+	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr" />
+	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_contour" />
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr_husk"  load="true"/>
+	
+	<!--bravo shotgun-->
+	<object path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
+	<cooked_physics path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
+	<model path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun"  load="true"/>
+	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun" />
+	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun_contour" />
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_shotgun/ene_bravo_shotgun_husk"  load="true"/>	
+
+	<!--bravo rifle-->
+	<object path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
+	<cooked_physics path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
+	<model path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle"  load="true"/>
+	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle" />
+	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_contour" />
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle_husk"  load="true"/>	
+	
+	<!--bravo lmg-->
+	<object path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" />
+	<cooked_physics path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" />
+	<model path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" />
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg"  load="true"/>
+	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg" />
+	<material_config path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg_contour" />
+	<unit path="units/pd2_mod_bravo/characters/ene_bravo_lmg/ene_bravo_lmg_husk"  load="true"/>	
+	
+	<!--cool hat brovo-->
+	<object path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />
+	<cooked_physics path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />
+	<model path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />
+	<unit path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat"  load="true"/>
+	<material_config path="units/pd2_mod_bravo/characters/ene_acc_bravo_sickhat/ene_acc_bravo_sickhat" />
+	
+	<!--textures-->	
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_dmr_df"/>
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_df"/>
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_df"/>
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_shotgun_df"/>
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_df"/>
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_nm"/>
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_df"/>
+	<texture path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_nm"/>			
 </table>

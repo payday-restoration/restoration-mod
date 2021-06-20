@@ -190,9 +190,7 @@
 		</constraint>
 	</constraints>
 
-	<decal_surfaces default_material="flesh" >
-		<decal_mesh name="dm_helmet" enabled="true" material="steel_no_decal" />
-	</decal_surfaces>
+	<decal_surfaces default_material="flesh" />
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
@@ -204,7 +202,7 @@
 					<material materials="mtr_swat_fbi_lod_2" />
 				</object>
 				<object name="g_body_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_swat_fbi" max_distance="0" /cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_fbi" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_swat_fbi_lod_2" />
 				</object>
 			</lod_object>
@@ -232,10 +230,10 @@
 					<material materials="mtr_helmet_lod_2" />
 				</object>
 			</lod_object>
-			
+
 			<lod_object name="lod_glass">
-				<object name="g_glass" 	enabled="true"  max_distance="2000"  max_draw_lod="0" >
-					<material materials="mtr_glass" max_distance="0" />
+				<object name="g_glass" 	enabled="true"  max_distance="5000"  max_draw_lod="0" >
+					<material materials="mtr_glass" max_distance="1500" />
 					<material materials="mtr_glass_lod1" max_distance="3000" />
 					<material materials="mtr_glass_lod2" />
 				</object>

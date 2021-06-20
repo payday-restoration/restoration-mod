@@ -889,9 +889,6 @@
 	<cooked_physics path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
 	<model path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
 	<unit path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false" load="false"/>
-	<material_config path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
-	<sequence_manager path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
-	<material_config path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom_contour" force="false"/>
 
 	<!--NPC XC45-->	
 	<unit path="units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45" force="true" load="false"/>
@@ -1427,9 +1424,7 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
 	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_df" />	
-	
-	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmets_shotgun_df" />	
-	
+		
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/caps_murky_nm" />	
 	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/murky_heavy_df" />	

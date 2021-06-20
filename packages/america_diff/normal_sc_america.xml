@@ -19,7 +19,6 @@
 	<material_config path="units/payday2/characters/ene_cop_vars/ene_cop_var2_contour" />
 	<material_config path="units/payday2/characters/ene_cop_vars/ene_cop_var3" />
 	<material_config path="units/payday2/characters/ene_cop_vars/ene_cop_var3_contour" />
-
 	
 	<!--HoxRev Heavy FBI Swats with helmet pop-->
 	<texture path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df" force="true"/>

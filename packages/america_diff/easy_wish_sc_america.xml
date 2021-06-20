@@ -89,6 +89,18 @@
 	<unit path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true"/>	
 	<unit path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" force="true"/>	
 	
+	<!--AMCAR-->	
+	<unit path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>	
+	
+	<!-- the singular blue swat -->
+    <unit path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc" load="true"/>
+    <unit path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc_husk" load="true"/>	
+	<model path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc" />	
+	<object path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc" />	
+	<material_config path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc" />	
+	<material_config path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc_contour" />	
+	<cooked_physics path="units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc" />	
+	
 	<!-- fbi tier -->
 	<!--fbi swat 1-->
     <unit path="units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc" load="true"/>

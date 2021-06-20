@@ -25858,6 +25858,8 @@ function CharacterTweakData:character_map()
 				"ene_city_swat_3",
 				"ene_fbi_swat_3",
 				"ene_medic_mp5",
+				"ene_sniper_1",
+				"ene_sniper_3",
 				"ene_zeal_fbi_m4",
 				"ene_zeal_fbi_mp5",
 				"ene_zeal_swat_shield",

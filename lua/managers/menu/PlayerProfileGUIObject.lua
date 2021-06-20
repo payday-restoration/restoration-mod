@@ -140,10 +140,11 @@ function PlayerProfileGuiObject:init(ws)
 	player_text:set_left(math.round(exp_ring:right()))
 
 	max_left_len = math.max(max_left_len, player_text:w())
+	local cash = self:get_text("menu_cash", {
+		money = managers.money:total_string()
+	})
 	local money_text = panel:text({
-		text = self:get_text("menu_cash", {
-			money = managers.money:total_string()
-		}),
+		text = cash:gsub('##', ' '),
 		font_size = font_size,
 		font = font,
 		color = tweak_data.screen_color_blue
@@ -190,13 +191,14 @@ function PlayerProfileGuiObject:init(ws)
 
 	local skillpoints = managers.skilltree:points()
 	local skill_text, skill_glow = nil
+	local skill = self:get_text("menu_spendable_skill_points", {
+		points = tostring(skillpoints)
+	})
 
 	if skillpoints > 0 then
 		skill_text = panel:text({
 			layer = 1,
-			text = self:get_text("menu_spendable_skill_points", {
-				points = tostring(skillpoints)
-			}),
+			text = skill:gsub('##', ' '),
 			font_size = font_size,
 			font = font,
 			color = tweak_data.screen_color_blue

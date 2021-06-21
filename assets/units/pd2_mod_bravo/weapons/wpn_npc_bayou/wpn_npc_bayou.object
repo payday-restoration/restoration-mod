@@ -17,7 +17,6 @@
         <object  name="g_body" enabled="true" max_draw_lod="0" max_distance="1000" />
         <object lod="1" name="g_body_lod1" enabled="true" />
       </lod_object>
-      <object name="g_body_lod1" shadow_caster="true" />
     </graphic_group>
   </graphics>
   <lights>

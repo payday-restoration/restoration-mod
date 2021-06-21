@@ -55,7 +55,7 @@ function GameSetup:load_packages()
     local ai_type = tweak_data.levels:get_ai_group_type()
 
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty) 
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
     
 	if job_tweak_package_data and job_tweak_package_data.load_all_difficulty_packages then
 		for i, difficulty in ipairs(tweak_data.difficulties) do
@@ -67,12 +67,7 @@ function GameSetup:load_packages()
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_america" or "normal")
 
 		load_difficulty_package(diff_package)
-	elseif ai_type == a and difficulty_index == 8 then
-		local diff_package = "packages/sm_wish"
-		local new_zeal = "packages/sm_wish_sc_america"
-
-		load_difficulty_package(diff_package)
-		load_difficulty_package(new_zeal)
+		PackageManager:load("packages/sm_wish")
 	elseif ai_type == z then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_zombie" or "normal")
 

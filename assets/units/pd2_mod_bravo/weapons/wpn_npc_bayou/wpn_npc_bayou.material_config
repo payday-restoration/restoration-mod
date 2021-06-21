@@ -3,7 +3,7 @@
         <diffuse_texture file="units/payday2/weapons/wpn_npc_r870/r870_df"/>
         <bump_normal_texture file="units/payday2/weapons/wpn_npc_r870/r870_nm"/>
     </material>
-    <material name="weapon_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_3RD_WEAPONS">
+    <material name="weapon_lod1" version="2" render_template="generic:DIFFUSE_TEXTURE:RL_3RD_WEAPONS">
         <diffuse_texture file="units/payday2/weapons/wpn_npc_r870/r870_df"/>
     </material>
 </materials>

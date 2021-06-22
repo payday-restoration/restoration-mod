@@ -1476,8 +1476,6 @@
 	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false" load="true"/>
 	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>	
 	<sequence_manager path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
-	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df" force="false"/>	
-	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_nm" force="false"/>	
 	
 
 	<!-- Bravo Grenades -->

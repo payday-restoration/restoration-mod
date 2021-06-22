@@ -9684,6 +9684,26 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 	self.parts.wpn_fps_snp_model70_iron_sight.stats = {
 		value = 0
 	}
+	self.parts.wpn_fps_snp_model70_iron_sight.stance_mod = {
+		wpn_fps_snp_msr = {
+			translation = Vector3(0, 0, -3)
+		},
+		wpn_fps_snp_desertfox = {
+			translation = Vector3(0, 0, -3.5)
+		},
+		wpn_fps_snp_r93 = {
+			translation = Vector3(0, 0, -3.1)
+		},
+		wpn_fps_snp_m95 = {
+			translation = Vector3(0, 25, -1.5)
+		},
+		wpn_fps_snp_tti = {
+			translation = Vector3(0, 0, 0.25)
+		},
+		wpn_fps_snp_r700 = {
+			translation = Vector3(0, 0, -3)
+		}	
+	}
 
 end)
 

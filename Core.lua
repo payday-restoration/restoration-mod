@@ -153,6 +153,7 @@ function restoration:Init()
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
 		"fex", --Buluc's Mansion
 		"rat", --Cook Off
+		"sand", --The Ukrainian Prisoner
 		--Custom Heists below--
 		"junk",
 		"wetwork_burn", --Burnout

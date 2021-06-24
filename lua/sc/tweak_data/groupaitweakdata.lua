@@ -9355,65 +9355,34 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "headless_hatman"
 	}	
 	--Headless Titandozers that spawn with boss
-	if difficulty_index <= 6 then
-		self.unit_categories.HVH_Boss_Headless = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},
-				zombie = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},					
-				russia = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},
-				murkywater = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},
-				federales = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},				
-				nypd = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},	
-				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				}				
+	self.unit_categories.HVH_Boss_Headless = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
 			},
-			access = access_type_all,
-			special_type = "tank",
-			is_captain = true
-		}
-	else
-		self.unit_categories.HVH_Boss_Headless = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},
-				zombie = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},					
-				russia = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},
-				murkywater = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},
-				federales = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},				
-				nypd = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},	
-				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				}				
+			zombie = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},					
+			russia = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
 			},
-			access = access_type_all,
-			special_type = "tank",
-			is_captain = true
-		}	
-	end
+			murkywater = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},
+			federales = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},				
+			nypd = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			}				
+		},
+		access = access_type_all,
+		special_type = "tank",
+		is_captain = true
+	}
 	--Ghost Titancloakers that spawn with boss
 	self.unit_categories.HVH_Boss_Spooc = {
 		unit_types = {
@@ -14825,8 +14794,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Headless",
 					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				}
@@ -14847,16 +14816,16 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "HVH_Boss_Headless",
 					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
-					tactics = self._tactics.TIT_tank,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.HVH_boss,
 					rank = 2
 				},
 				{
 					unit = "HVH_Boss_Spooc",
 					freq = 1,
-					amount_min = 4,
-					amount_max = 4,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.HVH_boss,
 					rank = 2
 				},					

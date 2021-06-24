@@ -3837,12 +3837,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_usp", "resmod_usp", function(self)
 		spread = -1
 	}
 	
-	--Part Additions
-	table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_upg_fl_pis_socomlam")
-	table.insert(self.wpn_fps_pis_usp_npc.uses_parts, "wpn_fps_upg_fl_pis_socomlam")		
-	
-	self.wpn_fps_pis_usp_npc.uses_parts = deep_clone(self.wpn_fps_pis_usp.uses_parts)		
-
 end)	
 
 --Chimano Custom
@@ -8343,13 +8337,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_usp", "resmod_x_usp", function(s
 			reload = -2
 		}
 	}
-	
-	--Part Additions
-	table.insert(self.wpn_fps_pis_x_usp.uses_parts, "wpn_fps_upg_fl_pis_socomlam")
-	table.insert(self.wpn_fps_pis_x_usp_npc.uses_parts, "wpn_fps_upg_fl_pis_socomlam")		
-	
-	self.wpn_fps_pis_x_usp_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_usp.uses_parts)		
-	
+		
 end)
 
 --Flamethrower
@@ -25868,125 +25856,144 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 --Resmod Custom Weapon stuff
 
 --Raze's Fury
-
-self.wpn_fps_pis_shatters_fury.adds = {
-	wpn_fps_upg_o_specter = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_aimpoint = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_aimpoint_2 = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_docter = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_eotech = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_t1micro = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_cmore = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_acog = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_cs = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_eotech_xps = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_reflex = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_rx01 = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_rx30 = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_spot = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_bmg = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_fc1 = {
-		"wpn_fps_pis_rage_o_adapter"
-	},
-	wpn_fps_upg_o_uh = {
-		"wpn_fps_pis_rage_o_adapter"
-	}			
-}
-self.wpn_fps_pis_shatters_fury.override = {
-	wpn_fps_pis_rage_lock = { 
-		forbids = {}
+if self.wpn_fps_pis_shatters_fury then
+	self.wpn_fps_pis_shatters_fury.adds = {
+		wpn_fps_upg_o_specter = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_aimpoint = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_aimpoint_2 = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_docter = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_eotech = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_t1micro = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_cmore = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_acog = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_cs = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_eotech_xps = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_reflex = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_rx01 = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_rx30 = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_spot = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_bmg = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_fc1 = {
+			"wpn_fps_pis_rage_o_adapter"
+		},
+		wpn_fps_upg_o_uh = {
+			"wpn_fps_pis_rage_o_adapter"
+		}			
 	}
-}	
-self.wpn_fps_pis_shatters_fury.uses_parts = {
-	"wpn_fps_pis_shatters_fury_body_standard",
-	"wpn_fps_pis_shatters_fury_body_smooth",
-	"wpn_fps_pis_shatters_fury_b_standard",
-	"wpn_fps_pis_shatters_fury_b_short",
-	"wpn_fps_pis_shatters_fury_b_long",
-	"wpn_fps_pis_shatters_fury_b_comp1",
-	"wpn_fps_pis_shatters_fury_b_comp2",
-	"wpn_fps_pis_shatters_fury_g_standard",
-	"wpn_fps_pis_shatters_fury_g_ergo",
-	"wpn_fps_upg_o_specter",
-	"wpn_fps_upg_o_aimpoint",
-	"wpn_fps_upg_o_docter",
-	"wpn_fps_upg_o_eotech",
-	"wpn_fps_upg_o_t1micro",
-	"wpn_fps_upg_o_cmore",
-	"wpn_fps_upg_o_aimpoint_2",
-	"wpn_fps_upg_o_acog",
-	"wpn_fps_upg_o_eotech_xps",
-	"wpn_fps_upg_o_reflex",
-	"wpn_fps_upg_o_rx01",
-	"wpn_fps_upg_o_rx30",
-	"wpn_fps_upg_o_cs",
-	"wpn_fps_pis_rage_o_adapter",
-	"wpn_fps_pis_rage_lock",
-	"wpn_fps_upg_o_spot",
-	"wpn_fps_upg_o_xpsg33_magnifier",
-	"wpn_fps_upg_o_sig",
-	"wpn_fps_upg_o_bmg",
-	"wpn_fps_upg_o_uh",
-	"wpn_fps_upg_o_fc1"		
-}
+	self.wpn_fps_pis_shatters_fury.override = {
+		wpn_fps_pis_rage_lock = { 
+			forbids = {}
+		}
+	}	
+	self.wpn_fps_pis_shatters_fury.uses_parts = {
+		"wpn_fps_pis_shatters_fury_body_standard",
+		"wpn_fps_pis_shatters_fury_body_smooth",
+		"wpn_fps_pis_shatters_fury_b_standard",
+		"wpn_fps_pis_shatters_fury_b_short",
+		"wpn_fps_pis_shatters_fury_b_long",
+		"wpn_fps_pis_shatters_fury_b_comp1",
+		"wpn_fps_pis_shatters_fury_b_comp2",
+		"wpn_fps_pis_shatters_fury_g_standard",
+		"wpn_fps_pis_shatters_fury_g_ergo",
+		"wpn_fps_upg_o_specter",
+		"wpn_fps_upg_o_aimpoint",
+		"wpn_fps_upg_o_docter",
+		"wpn_fps_upg_o_eotech",
+		"wpn_fps_upg_o_t1micro",
+		"wpn_fps_upg_o_cmore",
+		"wpn_fps_upg_o_aimpoint_2",
+		"wpn_fps_upg_o_acog",
+		"wpn_fps_upg_o_eotech_xps",
+		"wpn_fps_upg_o_reflex",
+		"wpn_fps_upg_o_rx01",
+		"wpn_fps_upg_o_rx30",
+		"wpn_fps_upg_o_cs",
+		"wpn_fps_pis_rage_o_adapter",
+		"wpn_fps_pis_rage_lock",
+		"wpn_fps_upg_o_spot",
+		"wpn_fps_upg_o_xpsg33_magnifier",
+		"wpn_fps_upg_o_sig",
+		"wpn_fps_upg_o_bmg",
+		"wpn_fps_upg_o_uh",
+		"wpn_fps_upg_o_fc1"		
+	}
+end
 
 --OICW
-self.parts.wpn_fps_ass_osipr_scope.material_parameters = {
-	gfx_reddot = {
-		{
-			id = Idstring("holo_reticle_scale"),
-			value = Vector3(0.2, 1.5, 40),
-			condition = function ()
-				return not _G.IS_VR
-			end
-		},
-		{
-			id = Idstring("holo_reticle_scale"),
-			value = Vector3(0.2, 1, 20),
-			condition = function ()
-				return _G.IS_VR
-			end
+if self.wpn_fps_ass_osipr then
+	self.parts.wpn_fps_ass_osipr_scope.material_parameters = {
+		gfx_reddot = {
+			{
+				id = Idstring("holo_reticle_scale"),
+				value = Vector3(0.2, 1.5, 40),
+				condition = function ()
+					return not _G.IS_VR
+				end
+			},
+			{
+				id = Idstring("holo_reticle_scale"),
+				value = Vector3(0.2, 1, 20),
+				condition = function ()
+					return _G.IS_VR
+				end
+			}
 		}
 	}
-}
-self.parts.wpn_fps_ass_osipr_b_standard.custom = false
-self.parts.wpn_fps_ass_osipr_body.custom = false
-self.parts.wpn_fps_ass_osipr_bolt.custom = false
-self.parts.wpn_fps_ass_osipr_gl.custom = false
-self.parts.wpn_fps_ass_osipr_gl_incendiary.custom = false
-self.parts.wpn_fps_ass_osipr_scope.custom = false
-self.parts.wpn_fps_ass_osipr_m_gl.custom = false
-self.parts.wpn_fps_ass_osipr_m_gl_incendiary.custom = false
+	self.parts.wpn_fps_ass_osipr_b_standard.custom = false
+	self.parts.wpn_fps_ass_osipr_body.custom = false
+	self.parts.wpn_fps_ass_osipr_bolt.custom = false
+	self.parts.wpn_fps_ass_osipr_gl.custom = false
+	self.parts.wpn_fps_ass_osipr_gl_incendiary.custom = false
+	self.parts.wpn_fps_ass_osipr_scope.custom = false
+	self.parts.wpn_fps_ass_osipr_m_gl.custom = false
+	self.parts.wpn_fps_ass_osipr_m_gl_incendiary.custom = false
+end
+
+if self.wpn_fps_pis_socom then
+
+	--Part Additions
+	table.insert(self.wpn_fps_pis_usp.uses_parts, "wpn_fps_upg_fl_pis_socomlam")
+	table.insert(self.wpn_fps_pis_usp_npc.uses_parts, "wpn_fps_upg_fl_pis_socomlam")		
+
+	self.wpn_fps_pis_usp_npc.uses_parts = deep_clone(self.wpn_fps_pis_usp.uses_parts)	
+
+	table.insert(self.wpn_fps_pis_x_usp.uses_parts, "wpn_fps_upg_fl_pis_socomlam")
+	table.insert(self.wpn_fps_pis_x_usp_npc.uses_parts, "wpn_fps_upg_fl_pis_socomlam")		
+
+	self.wpn_fps_pis_x_usp_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_usp.uses_parts)	
+	
+end
+
 
 --Deal with legendary and semi-hidden mods so they don't waste time triggering custom mod stat generation.
 --The game seems to ignore some of these because reasons???

@@ -1300,12 +1300,17 @@ function PlayerDamage:add_revive()
 end
 
 --Make Ex-Pres only consume stored health that actually goes to healing.
+--Also makes healing reduction work as expected.
 function PlayerDamage:consume_armor_stored_health(amount)
 	if self._armor_stored_health and not self._dead and not self._bleed_out and not self._check_berserker_done then
 		local old_health = self:get_real_health()
-		self:change_health(self._armor_stored_health)
+		self:change_health(self._armor_stored_health * self._healing_reduction)
 		local new_health = self:get_real_health()
-		self._armor_stored_health = self._armor_stored_health - (new_health - old_health)
+		if self._healing_reduction ~= 0 then
+			self._armor_stored_health = self._armor_stored_health - ((new_health - old_health) / self._healing_reduction)
+		else
+			self._armor_stored_health = 0
+		end
 	end
 
 	self:update_armor_stored_health()

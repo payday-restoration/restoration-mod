@@ -67,6 +67,9 @@
 	<material_config path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_contour" force="false"/>
 	<unit path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_husk" force="false" load="true"/>
 	<sequence_manager path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>	
+	
+	<!--Russian AK101+GP for Grenadier (WIP)-->	
+	<unit path="units/pd2_dlc_mad/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" load="false" force="false"/>		
 
 	<!--Russian FBI-->
 	<object path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>

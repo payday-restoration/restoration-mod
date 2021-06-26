@@ -654,6 +654,10 @@ function WeaponTweakData:_init_data_m4_npc()
 	self.ak47_ass_npc = deep_clone(self.m4_npc)
 	self.ak47_ass_npc.sounds.prefix = "ak74_npc"
 	
+	--AK 101+GP25 used by Reaper Grenadier
+	self.ak47_ass_boom_npc = deep_clone(self.ak47_ass_npc)
+	self.ak47_ass_boom_npc.sounds.prefix = "ak74_npc"	
+	
 	--Bravo Rifle
 	self.swamp_npc = deep_clone(self.m4_npc)
 	self.swamp_npc.sounds.prefix = "m16_npc"	

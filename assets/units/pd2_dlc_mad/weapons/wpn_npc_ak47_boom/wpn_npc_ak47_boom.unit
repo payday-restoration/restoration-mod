@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="wpn" slot="13">
-	<object file="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" />
+	<object file="units/pd2_dlc_mad/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" />
 	<dependencies>
 		<depends_on effect="effects/particles/weapons/rifle/muzzleflash_3dp" />
 		<depends_on effect="effects/particles/weapons/sniper_trail" />

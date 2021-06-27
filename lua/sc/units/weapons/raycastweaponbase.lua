@@ -17,6 +17,8 @@ function RaycastWeaponBase:init(...)
 		self._bullet_slotmask = managers.mutators:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
 		self._bullet_slotmask = managers.modifiers:modify_value("RaycastWeaponBase:setup:weapon_slot_mask", self._bullet_slotmask)
 	end
+
+	self._shield_pierce_damage_mult = 0.5
 end
 
 function RaycastWeaponBase:setup(...)
@@ -72,9 +74,6 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 			if enemy_unit:base():char_tweak() then
 				if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
 					local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
-					if weapon_unit:base()._is_team_ai then
-						knock_chance = knock_chance * 0.25 --Bots have reduced knock chances. Usually hovers around 10%, weapons like the Thanatos cap around 25%.
-					end
 
 					if knock_chance > math.random() then
 						local damage_info = {
@@ -226,9 +225,6 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 			if enemy_unit:base():char_tweak() then
 				if enemy_unit:base():char_tweak().damage.shield_knocked and not enemy_unit:character_damage():is_immune_to_shield_knockback() then
 					local knock_chance = math.sqrt(0.03 * damage) --Makes a nice curve.
-					if weapon_unit:base()._is_team_ai then
-						knock_chance = knock_chance * 0.25 --Bots have reduced knock chances. Usually hovers around 10%, weapons like the Thanatos cap around 25%.
-					end
 
 					if knock_chance > math.random() then
 						local damage_info = {
@@ -433,6 +429,7 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local cop_kill_count = 0
 	local hit_through_wall = false
 	local hit_through_shield = false
+	local shield_damage_reduction_applied = false
 	local hit_result = nil
 
 	for _, hit in ipairs(ray_hits) do
@@ -464,14 +461,17 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 
 		if hit.unit:in_slot(managers.slot:get_mask("world_geometry")) then
 			hit_through_wall = true
+			shield_damage_reduction_applied = false
 		elseif hit.unit:in_slot(managers.slot:get_mask("enemy_shield_check")) then
 			hit_through_shield = hit_through_shield or alive(hit.unit:parent())
+			shield_damage_reduction_applied = false
 		end
 
 		--Damage reduction when shooting through shields.
 		--self._shield_damage_mult to be sorted out later, will be useful for setting it per gun if wanted in the future.
-		if hit_through_shield then
-			damage = damage * (self._shield_damage_mult or 0.5)
+		if hit_through_shield and not shield_damage_reduction_applied then
+			damage = damage * self._shield_pierce_damage_mult
+			shield_damage_reduction_applied = true
 		end
 
 		if hit_result and hit_result.type == "death" and cop_kill_count > 0 then
@@ -875,4 +875,75 @@ function BleedBulletBase:give_damage_dot(col_ray, weapon_unit, attacker_unit, da
 	end
 
 	return defense_data
+end
+
+function InstantExplosiveBulletBase:on_collision_server(position, normal, damage, user_unit, weapon_unit, owner_peer_id, owner_selection_index)
+	local slot_mask = managers.slot:get_mask("explosion_targets")
+
+	managers.explosion:play_sound_and_effects(position, normal, self.RANGE, self.EFFECT_PARAMS)
+
+	managers.explosion:give_local_player_dmg(position, self.RANGE, damage * self.PLAYER_DMG_MUL, user_unit) --Funny vanilla code doesn't call this and works off of magic because reasons idk.
+	local hit_units, splinters, results = managers.explosion:detect_and_give_dmg({
+		hit_pos = position,
+		range = self.RANGE,
+		collision_slotmask = slot_mask,
+		curve_pow = self.CURVE_POW,
+		damage = damage,
+		player_damage = damage * self.PLAYER_DMG_MUL,
+		ignore_unit = weapon_unit,
+		user = user_unit,
+		owner = weapon_unit
+	})
+	local network_damage = math.ceil(damage * 163.84)
+
+	managers.network:session():send_to_peers_synched("sync_explode_bullet", position, normal, math.min(16384, network_damage), owner_peer_id)
+
+	if managers.network:session():local_peer():id() == owner_peer_id then
+		local enemies_hit = (results.count_gangsters or 0) + (results.count_cops or 0)
+		local enemies_killed = (results.count_gangster_kills or 0) + (results.count_cop_kills or 0)
+
+		managers.statistics:shot_fired({
+			hit = false,
+			weapon_unit = weapon_unit
+		})
+
+		for i = 1, enemies_hit do
+			managers.statistics:shot_fired({
+				skip_bullet_count = true,
+				hit = true,
+				weapon_unit = weapon_unit
+			})
+		end
+
+		local weapon_pass, weapon_type_pass, count_pass, all_pass = nil
+
+		for achievement, achievement_data in pairs(tweak_data.achievement.explosion_achievements) do
+			weapon_pass = not achievement_data.weapon or true
+			weapon_type_pass = not achievement_data.weapon_type or weapon_unit:base() and weapon_unit:base().weapon_tweak_data and weapon_unit:base():is_category(achievement_data.weapon_type)
+			count_pass = not achievement_data.count or achievement_data.count <= (achievement_data.kill and enemies_killed or enemies_hit)
+			all_pass = weapon_pass and weapon_type_pass and count_pass
+
+			if all_pass and achievement_data.award then
+				managers.achievment:award(achievement_data.award)
+			end
+		end
+	else
+		local peer = managers.network:session():peer(owner_peer_id)
+		local SYNCH_MIN = 0
+		local SYNCH_MAX = 31
+		local count_cops = math.clamp(results.count_cops, SYNCH_MIN, SYNCH_MAX)
+		local count_gangsters = math.clamp(results.count_gangsters, SYNCH_MIN, SYNCH_MAX)
+		local count_civilians = math.clamp(results.count_civilians, SYNCH_MIN, SYNCH_MAX)
+		local count_cop_kills = math.clamp(results.count_cop_kills, SYNCH_MIN, SYNCH_MAX)
+		local count_gangster_kills = math.clamp(results.count_gangster_kills, SYNCH_MIN, SYNCH_MAX)
+		local count_civilian_kills = math.clamp(results.count_civilian_kills, SYNCH_MIN, SYNCH_MAX)
+
+		managers.network:session():send_to_peer_synched(peer, "sync_explosion_results", count_cops, count_gangsters, count_civilians, count_cop_kills, count_gangster_kills, count_civilian_kills, owner_selection_index)
+	end
+end
+
+
+function InstantExplosiveBulletBase:on_collision_client(position, normal, damage, user_unit)
+	managers.explosion:give_local_player_dmg(position, self.RANGE, damage * self.PLAYER_DMG_MUL, user_unit) --Passes in the unit that actually made the attack.
+	managers.explosion:explode_on_client(position, normal, user_unit, damage, self.RANGE, self.CURVE_POW, self.EFFECT_PARAMS)
 end

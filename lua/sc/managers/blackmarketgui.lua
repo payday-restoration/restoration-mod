@@ -4026,29 +4026,35 @@ function BlackMarketGui:update_info_text()
 		updated_texts[1].text = self._slot_data.name_localized
 
 		if not slot_data.unlocked then
-			local skill_based = slot_data.skill_based
-			local level_based = slot_data.level and slot_data.level > 0
-			local dlc_based = slot_data.dlc_based or tweak_data.lootdrop.global_values[slot_data.global_value] and tweak_data.lootdrop.global_values[slot_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(slot_data.global_value)
-			local skill_text_id = skill_based and (slot_data.skill_name or "bm_menu_skilltree_locked") or false
-			local level_text_id = level_based and "bm_menu_level_req" or false
-			local dlc_text_id = dlc_based and slot_data.dlc_locked or false
-			local text = ""
+			local grenade_tweak = tweak_data.blackmarket.projectiles[slot_data.name]
 
-			if slot_data.install_lock then
-				text = text .. managers.localization:to_upper_text(slot_data.install_lock, {}) .. "\n"
-			elseif skill_text_id then
-				text = text .. managers.localization:to_upper_text(skill_text_id, {
-					slot_data.name_localized
-				}) .. "\n"
-			elseif dlc_text_id then
-				text = text .. managers.localization:to_upper_text(dlc_text_id, {}) .. "\n"
-			elseif level_text_id then
-				text = text .. managers.localization:to_upper_text(level_text_id, {
-					level = slot_data.level
-				}) .. "\n"
+			if grenade_tweak and grenade_tweak.unlock_id then
+				updated_texts[3].text = managers.localization:to_upper_text(grenade_tweak.unlock_id)
+			else
+				local skill_based = slot_data.skill_based
+				local level_based = slot_data.level and slot_data.level > 0
+				local dlc_based = slot_data.dlc_based or tweak_data.lootdrop.global_values[slot_data.global_value] and tweak_data.lootdrop.global_values[slot_data.global_value].dlc and not managers.dlc:is_dlc_unlocked(slot_data.global_value)
+				local skill_text_id = skill_based and (slot_data.skill_name or "bm_menu_skilltree_locked") or false
+				local level_text_id = level_based and "bm_menu_level_req" or false
+				local dlc_text_id = dlc_based and slot_data.dlc_locked or false
+				local text = ""
+
+				if slot_data.install_lock then
+					text = text .. managers.localization:to_upper_text(slot_data.install_lock, {}) .. "\n"
+				elseif skill_text_id then
+					text = text .. managers.localization:to_upper_text(skill_text_id, {
+						slot_data.name_localized
+					}) .. "\n"
+				elseif dlc_text_id then
+					text = text .. managers.localization:to_upper_text(dlc_text_id, {}) .. "\n"
+				elseif level_text_id then
+					text = text .. managers.localization:to_upper_text(level_text_id, {
+						level = slot_data.level
+					}) .. "\n"
+				end
+
+				updated_texts[3].text = text
 			end
-
-			updated_texts[3].text = text
 		end
 
 		updated_texts[4].resource_color = {}

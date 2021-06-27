@@ -1088,12 +1088,12 @@ function CrimeNetContractGui:init(ws, fullscreen_ws, node)
 	local days_multiplier = 0
 
 	for i = 1, #narrative_chains, 1 do
-		local day_mul = narrative.professional and tweak_data:get_value("experience_manager", "pro_day_multiplier", i) or tweak_data:get_value("experience_manager", "day_multiplier", i)
+		local day_mul = Global.game_settings.one_down and tweak_data:get_value("experience_manager", "pro_job_new") or tweak_data:get_value("experience_manager", "day_multiplier", i)
 		days_multiplier = days_multiplier + day_mul - 1
 	end
 
 	days_multiplier = 1 + days_multiplier / #narrative_chains
-	local last_day_mul = narrative.professional and tweak_data:get_value("experience_manager", "pro_day_multiplier", #narrative_chains) or tweak_data:get_value("experience_manager", "day_multiplier", #narrative_chains)
+	local last_day_mul = Global.game_settings.one_down and tweak_data:get_value("experience_manager", "pro_job_new") or tweak_data:get_value("experience_manager", "day_multiplier", #narrative_chains)
 	self._data = {
 		job_cash = job_value,
 		add_job_cash = job_risk_value,
@@ -1649,7 +1649,7 @@ function CrimeNetContractGui:set_potential_rewards(show_max)
 
 	if show_max then
 		local xp_max = contract_visuals.max_mission_xp and (type(contract_visuals.max_mission_xp) == "table" and contract_visuals.max_mission_xp[difficulty_stars + 1] or contract_visuals.max_mission_xp) or 0
-		total_xp, dissected_xp = managers.experience:get_contract_xp_by_stars(job_data.job_id, job_stars, difficulty_stars, job_data.professional, #narrative_chains, {
+		total_xp, dissected_xp = managers.experience:get_contract_xp_by_stars(job_data.job_id, job_stars, difficulty_stars, job_data.one_down, #narrative_chains, {
 			ignore_heat = job_heat_value > 0 and self._customizable,
 			mission_xp = xp_max
 		})
@@ -1661,7 +1661,7 @@ function CrimeNetContractGui:set_potential_rewards(show_max)
 		})
 	else
 		local xp_min = contract_visuals.min_mission_xp and (type(contract_visuals.min_mission_xp) == "table" and contract_visuals.min_mission_xp[difficulty_stars + 1] or contract_visuals.min_mission_xp) or 0
-		total_xp, dissected_xp = managers.experience:get_contract_xp_by_stars(job_data.job_id, job_stars, difficulty_stars, job_data.professional, #narrative_chains, {
+		total_xp, dissected_xp = managers.experience:get_contract_xp_by_stars(job_data.job_id, job_stars, difficulty_stars, job_data.one_down, #narrative_chains, {
 			ignore_heat = job_heat_value > 0 and self._customizable,
 			mission_xp = xp_min
 		})
@@ -1838,7 +1838,7 @@ function CrimeNetContractGui:set_all(t, dt)
 		local job_heat_value = managers.job:get_job_heat(job_data.job_id)
 		local contract_visuals = job_data.contract_visuals or {}
 		local xp_min = contract_visuals.min_mission_xp and (type(contract_visuals.min_mission_xp) == "table" and contract_visuals.min_mission_xp[difficulty_stars + 1] or contract_visuals.min_mission_xp) or 0
-		local total_xp, dissected_xp = managers.experience:get_contract_xp_by_stars(job_data.job_id, job_stars, difficulty_stars, job_data.professional, #narrative_chains, {
+		local total_xp, dissected_xp = managers.experience:get_contract_xp_by_stars(job_data.job_id, job_stars, difficulty_stars, job_data.one_down, #narrative_chains, {
 			ignore_heat = job_heat_value > 0 and self._customizable,
 			mission_xp = xp_min
 		})

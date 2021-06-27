@@ -1828,6 +1828,11 @@
 	<!--NPC g36-->
 	<texture path="units/payday2/weapons/wpn_npc_g36/g36_df" force="true"/>
 	
+	<!--NPC UMP-->
+	<model path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump_df" force="true"/>
+	<texture path="units/payday2/weapons/wpn_npc_ump/wpn_npc_ump_nm" force="true"/>	
+	
 	<!--NPC M4 Yellow-->
 	<model path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>
 	<material_config path="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" force="true"/>
@@ -1841,7 +1846,11 @@
 	<model path="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_r870/r870_df" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_r870/r870_nm" force="true"/>	
-		
+
+	<!--NPC M1014 Benelli-->
+	<model path="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" force="true"/>
+	<material_config path="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" force="true"/>
+
 	<!--NPC Saiga-->
 	<model path="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" force="true"/>
 	<texture path="units/payday2/weapons/wpn_npc_saiga/saiga_df" force="true"/>
@@ -2728,8 +2737,6 @@
 	<unit path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false" load="true"/>
 	<material_config path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>	
 	<sequence_manager path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
-	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df" force="false"/>	
-	<texture path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_nm" force="false"/>	
 	
 	<!--textures-->	
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_body_nm"/>
@@ -2794,29 +2801,20 @@
 	<unit path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk" load="true"/>		
 
 	<!--HoxRev Heavy FBI Swats with helmet pop-->
-	<cooked_physics path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true"/>
 	<material_config path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true" />
 	<material_config path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_contour" force="true" />
 	<model path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true"/>
 	<object path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true"/>	
 	<unit path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1" force="true"/>	
 	<unit path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1_husk" force="true"/>
+	
 	<texture path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_df" force="true"/>
 	<texture path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/hoxton_breakout_guard_nm" force="true"/>
 	
-	<cooked_physics path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true"/>
-	<material_config path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true" />
-	<material_config path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_contour" force="true" />
 	<model path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true"/>
 	<object path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true"/>	
 	<unit path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2" force="true"/>	
 	<unit path="units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2_husk" force="true"/>	
-	
-	<cooked_physics path="units/payday2/characters/ene_acc_hoxton_breakout_guard_helmet/ene_acc_hoxton_breakout_guard_helmet"/>
-	<material_config path="units/payday2/characters/ene_acc_hoxton_breakout_guard_helmet/ene_acc_hoxton_breakout_guard_helmet"/>
-	<model path="units/payday2/characters/ene_acc_hoxton_breakout_guard_helmet/ene_acc_hoxton_breakout_guard_helmet"/>
-	<object path="units/payday2/characters/ene_acc_hoxton_breakout_guard_helmet/ene_acc_hoxton_breakout_guard_helmet"/>	
-	<unit path="units/payday2/characters/ene_acc_hoxton_breakout_guard_helmet/ene_acc_hoxton_breakout_guard_helmet" load="true"/>		
 
 	<!--NPC Crosskill.45 1911-->
 	<cooked_physics path="units/payday2/weapons/wpn_npc_1911/wpn_npc_1911" force="false"/>	
@@ -3009,24 +3007,6 @@
 	<animation path="anims/shared/rifle/combat/cbt_sup_shoot" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_sup_shoot_aut" force="true"/>
 	<animation path="anims/shared/rifle/combat/cbt_sup_shotgun_shoot" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var1" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var2" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var3" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var4" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var5" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var6" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_lowbdy_fwd_var7" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var1" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var2" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var3" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var4" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var5" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var6" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var8" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var11" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var18" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var19" force="true"/>
-	<animation path="anims/shared/rifle/generic/gen_dth_range_upbdy_fwd_var20" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl1_enter_var1" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl1_idle_var1" force="true"/>
 	<animation path="anims/shared/rifle/generic/gen_sup_lvl2_enter_var1" force="true"/>

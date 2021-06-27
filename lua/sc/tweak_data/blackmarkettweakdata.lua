@@ -872,6 +872,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.damage_control.base_cooldown = 30
 	self.projectiles.tag_team.base_cooldown = 80
 	self.projectiles.concussion.max_amount = 3
+	self.projectiles.wpn_gre_electric.max_amount = 3
 	
 	self.projectiles.pocket_ecm_jammer.max_amount = 1
 	self.projectiles.pocket_ecm_jammer.base_cooldown = 80
@@ -889,6 +890,7 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.frag_com.no_cheat_count = true
 	self.projectiles.fir_com.no_cheat_count = true
 	self.projectiles.dada_com.no_cheat_count = true
+	self.projectiles.wpn_gre_electric.no_cheat_count = true
 
 	--Animation overrides for grenades so they aren't shitty. Like seriously, Javelin throw for grenades..?	
 	--HE

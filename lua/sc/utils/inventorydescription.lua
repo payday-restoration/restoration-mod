@@ -32,7 +32,7 @@ function WeaponDescription._get_base_stats(name)
 			base_stats[stat.name].index = tweak_data.weapon[name].stats.total_ammo_mod
 			base_stats[stat.name].value = tweak_data.weapon[name].AMMO_MAX
 		elseif stat.name == "fire_rate" then
-			local fire_rate = 60 / tweak_data.weapon[name].fire_mode_data.fire_rate
+			local fire_rate = 60 * (tweak_data.weapon[name].fire_rate_multiplier or 1) / tweak_data.weapon[name].fire_mode_data.fire_rate
 			base_stats[stat.name].value = fire_rate / 10 * 10
 		elseif stat.name == "reload" then
 			index = math.clamp(tweak_data.weapon[name].stats[stat.name], 1, #tweak_stats[stat.name])

@@ -90,13 +90,6 @@
 			<sound action="'play'" event="'expl_gen_head'" object="'Head'"/>
 		</sequence>
 		
-		<sequence editable_state="true" once="true" triggable="true" name="'shatter'">        
-			<effect name="'effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable'" parent="object( 'Head' )" position="v()"/>	
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>
-			<sound action="'play'" event="'swat_heavy_visor_shatter'" object="'Head'"/>					
-		</sequence>
-		
 		<variables>
 			<var_pick_murky value="1"/>
 		</variables>

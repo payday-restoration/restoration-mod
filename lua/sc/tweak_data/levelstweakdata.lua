@@ -224,6 +224,14 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.rvd2.ai_group_type = lapd
 	self.rvd2.package = {"packages/job_rvd2", "packages/lapdassets"}
 	self.rvd2.player_style = "suit_sunny"
+	
+	self.chas.ai_group_type = lapd
+	self.chas.package = {"packages/job_chas", "packages/lapdassets"}
+	self.chas.player_style = "suit_sunny"
+	
+	self.sand.ai_group_type = lapd
+	self.sand.package = {"packages/job_sand", "packages/lapdassets"}
+	self.sand.player_style = "highinttech"
 
 	--///NEW OUTFITS\\\--
 	

@@ -1,4 +1,5 @@
 <table directory="assets">
+
 	<!-- these work fine in here so i'm leaving them in here -->		
 	<material_config path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1" />
 	<material_config path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1_contour" />

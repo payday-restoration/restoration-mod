@@ -61,7 +61,7 @@
 	<texture path="units/payday2/characters/shared_textures/bulldozer_city_df" />
 	<texture path="units/payday2/characters/shared_textures/helmets_city_df" />	
 	<texture path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
-	<texture path="units/payday2/characters/shared_textures/swat_city_df_sc" />	
+	<texture path="units/payday2/characters/shared_textures/swat_city_df" />	
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />			
 	<texture path="units/payday2/characters/shared_textures/genshill_helm_df"/>

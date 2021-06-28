@@ -100,7 +100,20 @@
 				<effect name="'effects/payday2/particles/impacts/blood/brain_splat'" parent="object( 'Head' )" position="v()"/>	
 				<sound action="'play'" event="'expl_gen_head'" object="'Head'"/>
 			</sequence>
-			  			  			  
+			
+			<sequence editable_state="true" name="'switch_sniper_to_lapd'" once="true" triggable="true">
+				<material_config name="'units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3'"/>
+			</sequence>
+						
+			<sequence editable_state="true" name="'switch_sniper_to_nypd'" once="true" triggable="true">
+				<material_config name="'units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1'"/>
+			</sequence>
+
+
+			<sequence editable_state="true" name="'switch_sniper_3_to_zombie'" once="true" triggable="true">
+				<material_config name="'units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3'"/>
+			</sequence>
+			
 			<sequence editable_state="true" once="true" triggable="true" name="'set_style_murky'">        
 				<set_variables var_pick_murky="rand()*2000"/>
 				<material_config filter="'filter_pick_normalhead'" name="'units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1'"/>

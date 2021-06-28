@@ -531,5 +531,13 @@
     <Package id="packages/easy_wish_sc_nypd" file="packages/nypd_diff/easy_wish_sc_nypd.xml"/>
     <Package id="packages/overkill_290_sc_nypd" file="packages/nypd_diff/overkill_290_sc_nypd.xml"/>
     <Package id="packages/sm_wish_sc_nypd" file="packages/nypd_diff/sm_wish_sc_nypd.xml"/>
-	
+
+    <!-- ///DIFF PACKAGES LAPD\\\ -->
+    <Package id="packages/normal_sc_lapd" file="packages/lapd_diff/normal_sc_lapd.xml"/>
+    <Package id="packages/hard_sc_lapd" file="packages/lapd_diff/hard_sc_lapd.xml"/>
+    <Package id="packages/overkill_sc_lapd" file="packages/lapd_diff/overkill_sc_lapd.xml"/>
+    <Package id="packages/overkill_145_sc_lapd" file="packages/lapd_diff/overkill_145_sc_lapd.xml"/>
+    <Package id="packages/easy_wish_sc_lapd" file="packages/lapd_diff/easy_wish_sc_lapd.xml"/>
+    <Package id="packages/overkill_290_sc_lapd" file="packages/lapd_diff/overkill_290_sc_lapd.xml"/>
+    <Package id="packages/sm_wish_sc_lapd" file="packages/lapd_diff/sm_wish_sc_lapd.xml"/>
 </mod>

@@ -654,6 +654,10 @@ function WeaponTweakData:_init_data_m4_npc()
 	self.ak47_ass_npc = deep_clone(self.m4_npc)
 	self.ak47_ass_npc.sounds.prefix = "ak74_npc"
 	
+	--AK 101+GP25 used by Reaper Grenadier
+	self.ak47_ass_boom_npc = deep_clone(self.ak47_ass_npc)
+	self.ak47_ass_boom_npc.sounds.prefix = "ak74_npc"	
+	
 	--Bravo Rifle
 	self.swamp_npc = deep_clone(self.m4_npc)
 	self.swamp_npc.sounds.prefix = "m16_npc"	
@@ -8401,166 +8405,176 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	--Restoration Weapons--
 	
 	--Phoenix .500
-	self.shatters_fury.fire_mode_data.fire_rate = 0.25
-	self.shatters_fury.single.fire_rate = 0.25	
-	self.shatters_fury.AMMO_MAX = 40
-	self.shatters_fury.CLIP_AMMO_MAX = 5
-	self.shatters_fury.kick = self.stat_info.kick_tables.vertical_kick
-	self.shatters_fury.supported = true
-	self.shatters_fury.stats = {
-		damage = 90,
-		spread = 17,
-		recoil = 10,
-		spread_moving = 9,
-		zoom = 1,
-		concealment = 21,
-		suppression = 4,
-		alert_size = 2,
-		extra_ammo = 101,
-		total_ammo_mod = 100,
-		value = 1,
-		reload = 20
-	}
-	self.shatters_fury.stats_modifiers = nil
-	self.shatters_fury.panic_suppression_chance = 0.05
-	self.shatters_fury.has_description = true
-	self.shatters_fury.desc_id = "bm_wp_shatters_fury_desc"
-	self.shatters_fury.can_shoot_through_enemy = true
-	self.shatters_fury.can_shoot_through_shield = true
-	self.shatters_fury.can_shoot_through_wall = true
-	self.shatters_fury.armor_piercing_chance = 1
-	--self.shatters_fury.animations.reload_name_id = "chinchilla"
-	self.shatters_fury.timers.reload_not_empty = 2.4
-	self.shatters_fury.timers.reload_empty = 2.4
-	self.shatters_fury.swap_speed_multiplier = 0.6
-	--this line doesn't do shit
-	--self.shatters_fury.custom = true
+	if self.shatters_fury then
+		self.shatters_fury.fire_mode_data.fire_rate = 0.25
+		self.shatters_fury.single.fire_rate = 0.25	
+		self.shatters_fury.AMMO_MAX = 40
+		self.shatters_fury.CLIP_AMMO_MAX = 5
+		self.shatters_fury.kick = self.stat_info.kick_tables.vertical_kick
+		self.shatters_fury.supported = true
+		self.shatters_fury.stats = {
+			damage = 90,
+			spread = 17,
+			recoil = 10,
+			spread_moving = 9,
+			zoom = 1,
+			concealment = 21,
+			suppression = 4,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.shatters_fury.stats_modifiers = nil
+		self.shatters_fury.panic_suppression_chance = 0.05
+		self.shatters_fury.has_description = true
+		self.shatters_fury.desc_id = "bm_wp_shatters_fury_desc"
+		self.shatters_fury.can_shoot_through_enemy = true
+		self.shatters_fury.can_shoot_through_shield = true
+		self.shatters_fury.can_shoot_through_wall = true
+		self.shatters_fury.armor_piercing_chance = 1
+		--self.shatters_fury.animations.reload_name_id = "chinchilla"
+		self.shatters_fury.timers.reload_not_empty = 2.4
+		self.shatters_fury.timers.reload_empty = 2.4
+		self.shatters_fury.swap_speed_multiplier = 0.6
+		--this line doesn't do shit
+		--self.shatters_fury.custom = true
+	end
 	
 	--OICW
-	self.osipr.tactical_reload = 1		
-	self.osipr.AMMO_MAX = 120
-	self.osipr.CLIP_AMMO_MAX = 30
-	self.osipr.fire_mode_data.fire_rate = 0.075
-	self.osipr.auto.fire_rate = 0.075
-	self.osipr.kick = self.stat_info.kick_tables.moderate_kick
-	self.osipr.supported = true
-	self.osipr.stats = {
-		damage = 24,
-		spread = 17,
-		recoil = 18,
-		spread_moving = 6,
-		zoom = 1,
-		concealment = 20,
-		suppression = 8,
-		alert_size = 2,
-		extra_ammo = 101,
-		total_ammo_mod = 100,
-		value = 1,
-		reload = 20
-	}
-	self.osipr.stats_modifiers = nil
-	self.osipr.timers.reload_not_empty = 2.16
-	self.osipr.timers.reload_empty = 3.5		
-	self.osipr.panic_suppression_chance = 0.05
-	self.osipr.has_description = true
-	self.osipr.desc_id = "bm_w_osipr_desc"
-	self.osipr.custom = false	--TEMP fix for BeardLib sync
+	if self.osipr then
+		self.osipr.tactical_reload = 1		
+		self.osipr.AMMO_MAX = 120
+		self.osipr.CLIP_AMMO_MAX = 30
+		self.osipr.fire_mode_data.fire_rate = 0.075
+		self.osipr.auto.fire_rate = 0.075
+		self.osipr.kick = self.stat_info.kick_tables.moderate_kick
+		self.osipr.supported = true
+		self.osipr.stats = {
+			damage = 24,
+			spread = 17,
+			recoil = 18,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 20,
+			suppression = 8,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.osipr.stats_modifiers = nil
+		self.osipr.timers.reload_not_empty = 2.16
+		self.osipr.timers.reload_empty = 3.5		
+		self.osipr.panic_suppression_chance = 0.05
+		self.osipr.has_description = true
+		self.osipr.desc_id = "bm_w_osipr_desc"
+		self.osipr.custom = false	--TEMP fix for BeardLib sync
+	end
 	
-	self.osipr_gl.AMMO_MAX = 9
-	self.osipr_gl.CLIP_AMMO_MAX = 6
-	self.osipr_gl.fire_mode_data.fire_rate = 0.75
-	self.osipr_gl.kick = self.stat_info.kick_tables.vertical_kick
-	self.osipr_gl.supported = true
-	self.osipr_gl.stats = {
-		damage = 60,
-		spread = 6,
-		recoil = 8,
-		spread_moving = 6,
-		zoom = 1,
-		concealment = 15,
-		suppression = 20,
-		alert_size = 2,
-		extra_ammo = 101,
-		total_ammo_mod = 100,
-		value = 1,
-		reload = 20
-	}
-	self.osipr_gl.stats_modifiers = nil
-	self.osipr_gl.timers.reload_not_empty = 3.34
-	self.osipr_gl.timers.reload_empty = 4.5		
-	self.osipr_gl.panic_suppression_chance = 0.05
-	self.osipr_gl.custom = false	--Temp fix for BeardLib sync 
-	self.osipr_gl_npc.sounds.prefix = "contrabandm203_npc"
-	self.osipr_gl_npc.use_data.selection_index = 2
-	self.osipr_gl_npc.DAMAGE = 2
-	self.osipr_gl_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
-	self.osipr_gl_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
-	self.osipr_gl_npc.no_trail = true
-	self.osipr_gl_npc.CLIP_AMMO_MAX = 3
-	self.osipr_gl_npc.NR_CLIPS_MAX = 1
-	self.osipr_gl_npc.auto.fire_rate = 0.1
-	self.osipr_gl_npc.hold = "rifle"
-	self.osipr_gl_npc.alert_size = 2800
-	self.osipr_gl_npc.suppression = 1
-	self.osipr_gl_npc.FIRE_MODE = "auto"
+	if self.osipr_gl then
+		self.osipr_gl.AMMO_MAX = 9
+		self.osipr_gl.CLIP_AMMO_MAX = 6
+		self.osipr_gl.fire_mode_data.fire_rate = 0.75
+		self.osipr_gl.kick = self.stat_info.kick_tables.vertical_kick
+		self.osipr_gl.supported = true
+		self.osipr_gl.stats = {
+			damage = 60,
+			spread = 6,
+			recoil = 8,
+			spread_moving = 6,
+			zoom = 1,
+			concealment = 15,
+			suppression = 20,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.osipr_gl.stats_modifiers = nil
+		self.osipr_gl.timers.reload_not_empty = 3.34
+		self.osipr_gl.timers.reload_empty = 4.5		
+		self.osipr_gl.panic_suppression_chance = 0.05
+		self.osipr_gl.custom = false	--Temp fix for BeardLib sync 
+		self.osipr_gl_npc.sounds.prefix = "contrabandm203_npc"
+		self.osipr_gl_npc.use_data.selection_index = 2
+		self.osipr_gl_npc.DAMAGE = 2
+		self.osipr_gl_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+		self.osipr_gl_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
+		self.osipr_gl_npc.no_trail = true
+		self.osipr_gl_npc.CLIP_AMMO_MAX = 3
+		self.osipr_gl_npc.NR_CLIPS_MAX = 1
+		self.osipr_gl_npc.auto.fire_rate = 0.1
+		self.osipr_gl_npc.hold = "rifle"
+		self.osipr_gl_npc.alert_size = 2800
+		self.osipr_gl_npc.suppression = 1
+		self.osipr_gl_npc.FIRE_MODE = "auto"
+	end
 
 	--Anubis .45
-	self.socom.timers = {
-		reload_not_empty = 1.5435,
-		reload_empty = 2.226,
-		unequip = 0.5,
-		equip = 0.35
-	}	
-	self.socom.tactical_reload = 1	
-	self.socom.fire_mode_data.fire_rate = 0.08571428571
-	self.socom.single.fire_rate = 0.08571428571
-	self.socom.CLIP_AMMO_MAX = 12
-	self.socom.AMMO_MAX = 40
-	self.socom.kick = self.stat_info.kick_tables.even_recoil
-	self.socom.supported = true
-	self.socom.stats = {
-		damage = 45,
-		spread = 16,
-		recoil = 21,
-		spread_moving = 5,
-		zoom = 1,
-		concealment = 25,
-		suppression = 6,
-		alert_size = 2,
-		extra_ammo = 101,
-		total_ammo_mod = 100,
-		value = 1,
-		reload = 20
-	}
-	self.socom.stats_modifiers = nil
-	self.socom.panic_suppression_chance = 0.05
-	self.socom.swap_speed_multiplier = 0.95
+	if self.socom then
+		self.socom.timers = {
+			reload_not_empty = 1.5435,
+			reload_empty = 2.226,
+			unequip = 0.5,
+			equip = 0.35
+		}	
+		self.socom.tactical_reload = 1	
+		self.socom.fire_mode_data.fire_rate = 0.08571428571
+		self.socom.single.fire_rate = 0.08571428571
+		self.socom.CLIP_AMMO_MAX = 12
+		self.socom.AMMO_MAX = 40
+		self.socom.kick = self.stat_info.kick_tables.even_recoil
+		self.socom.supported = true
+		self.socom.stats = {
+			damage = 45,
+			spread = 16,
+			recoil = 21,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 25,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.socom.stats_modifiers = nil
+		self.socom.panic_suppression_chance = 0.05
+		self.socom.swap_speed_multiplier = 0.95
+	end
 	
 	--Akimbo Anubis .45
-	self.x_socom.tactical_reload = 2
-	self.x_socom.fire_mode_data.fire_rate = 0.08571428571
-	self.x_socom.single.fire_rate = 0.08571428571
-	self.x_socom.CLIP_AMMO_MAX = 24
-	self.x_socom.AMMO_MAX = 80
-	self.x_socom.kick = self.stat_info.kick_tables.even_recoil
-	self.x_socom.supported = true
-	self.x_socom.stats = {
-		damage = 45,
-		spread = 14,
-		recoil = 11,
-		spread_moving = 5,
-		zoom = 1,
-		concealment = 25,
-		suppression = 6,
-		alert_size = 2,
-		extra_ammo = 101,
-		total_ammo_mod = 100,
-		value = 1,
-		reload = 20
-	}
-	self.x_socom.stats_modifiers = nil
-	self.x_socom.panic_suppression_chance = 0.05
-	self.x_socom.swap_speed_multiplier = 0.95	
+	if self.x_socom then
+		self.x_socom.tactical_reload = 2
+		self.x_socom.fire_mode_data.fire_rate = 0.08571428571
+		self.x_socom.single.fire_rate = 0.08571428571
+		self.x_socom.CLIP_AMMO_MAX = 24
+		self.x_socom.AMMO_MAX = 80
+		self.x_socom.kick = self.stat_info.kick_tables.even_recoil
+		self.x_socom.supported = true
+		self.x_socom.stats = {
+			damage = 45,
+			spread = 14,
+			recoil = 11,
+			spread_moving = 5,
+			zoom = 1,
+			concealment = 25,
+			suppression = 6,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 1,
+			reload = 20
+		}
+		self.x_socom.stats_modifiers = nil
+		self.x_socom.panic_suppression_chance = 0.05
+		self.x_socom.swap_speed_multiplier = 0.95
+	end
 	
 	--Custom weapons below--
 	if self.amt then --Matthelzor, Gambyt, >:3, and Alcat's Automag .44

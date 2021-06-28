@@ -16,7 +16,8 @@ end)
 
 function CopBase:random_mat_seq_initialization()
     local unit_name = self._unit:name()
-        	
+ 	local faction = tweak_data.levels:get_ai_group_type()
+       	
 	--BEAT COP FACE STUFF STARTS HERE	
 	local cop1_4 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
 	or unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1_husk")
@@ -39,6 +40,27 @@ function CopBase:random_mat_seq_initialization()
 	end	
 	--END BEAT COP FACE STUFF
 
+	-- sniper nonsense (don't trust this being executed every time a common unit spawns tbh)
+	local sniper_fbi = unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") 
+	or unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk")
+	
+	local sniper_blue = unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc") 
+	or unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc_husk")
+	
+	local sniper_gensec = unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3") 
+	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3")
+	
+	if self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_lapd") and sniper_fbi and faction == "lapd" then
+		self._unit:damage():run_sequence_simple("switch_sniper_to_lapd")
+	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_nypd") and sniper_fbi and faction == "nypd" then
+		self._unit:damage():run_sequence_simple("switch_sniper_to_nypd")		
+	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_zombie") and sniper_fbi and faction == "nypd" then
+		self._unit:damage():run_sequence_simple("switch_sniper_to_zombie")		
+	end
+			
+	if self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_3_to_zombie") and sniper_gensec and faction == "zombie" then
+		self._unit:damage():run_sequence_simple("switch_sniper_3_to_zombie")	
+	end	
 	
 	--START FBI HRT FACES.
 	local fbi_1_2 = unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1") 
@@ -54,7 +76,6 @@ function CopBase:random_mat_seq_initialization()
 	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_3") and fbi_3 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_3")	
 	end	 	
-
 	
 	--security $!!SLAT^* insanity	
 	local sec_2_3 = unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2") 

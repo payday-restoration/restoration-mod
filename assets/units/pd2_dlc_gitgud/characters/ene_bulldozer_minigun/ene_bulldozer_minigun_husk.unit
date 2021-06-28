@@ -13,7 +13,6 @@
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_neck/ene_acc_bulldozer_minigun_neck" />
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_stomache/ene_acc_bulldozer_minigun_stomache" />
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_throat/ene_acc_bulldozer_minigun_throat" />
-		<depends_on unit="units/pd2_dlc_drm/weapons/wpn_npc_mini/wpn_npc_mini" />
 	</dependencies>
 
 	<extensions>

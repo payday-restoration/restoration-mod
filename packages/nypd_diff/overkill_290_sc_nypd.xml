@@ -1,4 +1,10 @@
 <table directory="assets">
+	<!--NYPD-->
+	<material_config path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york" force="true" />
+	<material_config path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york_windows_tinted" force="true" />
+	<!--NYPD PDTH model-->
+	<material_config path="units/vehicles/animated_cars/police_ny_noinstance" force="true" />
+	<material_config path="units/vehicles/animated_cars/police_ny_suburbia" force="true" />
 
 	<!--NYPD FBI/HRTs-->
 	<unit path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	
@@ -58,14 +64,13 @@
 	<texture path="units/payday2/characters/shared_textures/bulldozer_city_df" />
 	<texture path="units/payday2/characters/shared_textures/helmets_city_df" />	
 	<texture path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
-	<texture path="units/payday2/characters/shared_textures/swat_city_df_sc" />		
+	<texture path="units/payday2/characters/shared_textures/swat_city_df" />		
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />			
 	<texture path="units/payday2/characters/shared_textures/genshill_helm_df"/>
 	<texture path="units/payday2/characters/shared_textures/genshill_helm_nm"/>	
 	<texture path="units/payday2/characters/shared_textures/ene_city_heavy_df" />
 	<texture path="units/payday2/characters/shared_textures/ene_city_heavy_nm" />	
-	<texture path="units/payday2/characters/shared_textures/fbi_df" />
 	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />	

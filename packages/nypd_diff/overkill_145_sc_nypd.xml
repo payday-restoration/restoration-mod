@@ -1,4 +1,10 @@
 <table directory="assets">
+	<!--NYPD-->
+	<material_config path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york" force="true" />
+	<material_config path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york_windows_tinted" force="true" />
+	<!--NYPD PDTH model-->
+	<material_config path="units/vehicles/animated_cars/police_ny_noinstance" force="true" />
+	<material_config path="units/vehicles/animated_cars/police_ny_suburbia" force="true" />
 
 	<!--NYPD FBI/HRTs-->
 	<unit path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	

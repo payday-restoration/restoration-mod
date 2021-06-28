@@ -126,7 +126,7 @@
     <unit path="units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc" load="true"/>
     <unit path="units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc_husk" load="true"/>	
 	<model path="units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc" />	
-	<object path="units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc" />	
+	<object path="units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc" />
 	<cooked_physics path="units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc" />	
 
 	<!-- blue swat tier end -->
@@ -176,6 +176,8 @@
     <unit path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk" load="true"/>	
 	<model path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
 	<object path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<material_config path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<material_config path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_contour" />	
 	<cooked_physics path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
 	
 	<!-- shield -->

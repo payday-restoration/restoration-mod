@@ -1,4 +1,10 @@
 <table directory="assets">
+	<!--NYPD-->
+	<material_config path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york" force="true" />
+	<material_config path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york_windows_tinted" force="true" />
+	<!--NYPD PDTH model-->
+	<material_config path="units/vehicles/animated_cars/police_ny_noinstance" force="true" />
+	<material_config path="units/vehicles/animated_cars/police_ny_suburbia" force="true" />
 
 	<!--NYPD FBI/HRTs-->
 	<unit path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	
@@ -97,14 +103,13 @@
 	<texture path="units/payday2/characters/shared_textures/bulldozer_city_df" />
 	<texture path="units/payday2/characters/shared_textures/helmets_city_df" />	
 	<texture path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
-	<texture path="units/payday2/characters/shared_textures/swat_city_df_sc" />		
+	<texture path="units/payday2/characters/shared_textures/swat_city_df" />		
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
 	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />			
 	<texture path="units/payday2/characters/shared_textures/genshill_helm_df"/>
 	<texture path="units/payday2/characters/shared_textures/genshill_helm_nm"/>	
 	<texture path="units/payday2/characters/shared_textures/ene_city_heavy_df" />
 	<texture path="units/payday2/characters/shared_textures/ene_city_heavy_nm" />	
-	<texture path="units/payday2/characters/shared_textures/fbi_df" />
 	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
@@ -118,8 +123,6 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_2_df" />
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />		
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd1_df" />	
-	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_df" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm" />	
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
@@ -128,30 +131,6 @@
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/swat_fbi_body_df" />
 	<texture path="units/pd2_mod_nypd/characters/shared_textures/spook_heavy_df" />
 	
-	<!-- blue swats here -->
-	<!--swat 1-->
-	<!--AMCAR-->	
-	<unit path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		
-	
-	<!--swat 1-->
-    <unit path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1" load="true"/>
-    <unit path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1_husk" load="true"/>	
-	<model path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1" />	
-	<object path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1" />	
-	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1" />	
-	<material_config path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1_contour" />	
-	<cooked_physics path="units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1" />	
-				
-	<!-- sniper -->
-    <unit path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" load="true"/>
-    <unit path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1_husk" load="true"/>	
-	<model path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" />	
-	<object path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" />	
-	<material_config path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"  />		
-	<material_config path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1_contour"  />	
-	<cooked_physics path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" />	
-	<!-- blue swat tier end -->
-
 	<!-- gensec tier -->
 	<!--city swat 1-->
     <unit path="units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc" load="true"/>
@@ -233,6 +212,14 @@
 	<model path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
 	<object path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3" />	
+	
+    <unit path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" load="true"/>
+    <unit path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk" load="true"/>	
+	<model path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<object path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<material_config path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
+	<material_config path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_contour" />	
+	<cooked_physics path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" />	
 
 	<unit_obj path="units/pd2_mod_nypd/characters/ene_acc_greenframe/ene_acc_greenframe" />
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_acc_greenframe/ene_acc_greenframe"/>
@@ -280,6 +267,17 @@
 	<material_config path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />			
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_bulldozer_2/ene_bulldozer_2" />	
 
+	<!-- skulldozer -->
+    <unit path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" load="true"/>
+    <unit path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_husk" load="true"/>	
+	<model path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
+	<object path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />
+	<material_config path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
+	<material_config path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc_contour" />			
+	<cooked_physics path="units/payday2/characters/ene_bulldozer_3_sc/ene_bulldozer_3_sc" />	
+
+	<texture path="units/payday2/characters/shared_textures/bulldozer_city_df" />
+	
 	<unit_mat path="units/pd2_mod_nypd/characters/ene_acc_bulldozer_faceplate/ene_acc_bulldozer_faceplate" />
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_acc_bulldozer_faceplate/ene_acc_bulldozer_faceplate"/>	
 

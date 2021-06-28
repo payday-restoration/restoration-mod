@@ -72,6 +72,7 @@ function GameSetup:load_packages()
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_zombie" or "normal")
 
         load_difficulty_package(diff_package)
+		PackageManager:load("packages/sm_wish")
     elseif ai_type == r then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_russia" or "normal")
 
@@ -98,40 +99,41 @@ function GameSetup:load_packages()
 		load_difficulty_package(diff_package)
     end
     
-    -- self._loaded_faction_packages = {}
+    self._loaded_faction_packages = {}
 
-    -- local faction_package
+    local faction_package
 
-    -- if not Global.level_data or not Global.level_data.level_id then
-	-- 	if not Application:editor() then
-	-- 		faction_package = "packages/production/level_debug"
-	-- 	end
-    -- end
+    if not Global.level_data or not Global.level_data.level_id then
+		if not Application:editor() then
+			faction_package = "packages/production/level_debug"
+		end
+    end
 
-    -- if ai_type == z then
-    --     faction_package = {
-    --         "packages/narr_hvh", 
-    --         "levels/narratives/bain/hvh/world_sounds"
-    --     }
-    --     table.insert(self._loaded_faction_packages, faction_package)
-    -- elseif ai_type == r then
-    --     faction_package = {
-    --         "packages/lvl_mad"
-    --     }
-    --     table.insert(self._loaded_faction_packages, faction_package)
-    -- end
+    if ai_type == z then
+        faction_package = {
+            "packages/narr_hvh", 
+            "levels/narratives/bain/hvh/world_sounds"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
+    elseif ai_type == r then
+        faction_package = {
+            "packages/lvl_mad",
+			"levels/narratives/elephant/mad/world_sounds"
+        }
+        table.insert(self._loaded_faction_packages, faction_package)
+    end
 
-    -- if faction_package then
-    --     if type(faction_package) == "table" then
-    --         self._loaded_faction_packages = faction_package
+    if faction_package then
+        if type(faction_package) == "table" then
+            self._loaded_faction_packages = faction_package
             
-    --         for _, package in ipairs(faction_package) do
-	-- 			if not PackageManager:loaded(package) then
-	-- 				PackageManager:load(package)
-	-- 			end
-	-- 		end
-    --     end
-	-- end
+            for _, package in ipairs(faction_package) do
+				if not PackageManager:loaded(package) then
+					PackageManager:load(package)
+				end
+			end
+        end
+	end
 
 	local level_package = nil
 

@@ -1,4 +1,13 @@
 <table directory="assets">
+	<!--Scarface Guys-->		
+	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
+	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02" force="true" />	
+	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01" force="true" />
+	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02" force="true" />	
+	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" force="true" />		
+	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss_stealth/ene_drug_lord_boss_stealth" force="true" />			
+	<object path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />
+
 	<!--Pensacola / LAPD Tinted Windows-->
 	<material_config path="units/pd2_dlc_pal/vehicles/str_vehicle_car_police_pensacola/str_vehicle_car_police_pensacola" force="true" />
 	<material_config path="units/pd2_dlc_rvd/vehicles/anim_vehicle_car_police_los_angeles" force="true" />		
@@ -191,8 +200,6 @@
     <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
 	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour"/>
 	
 	<!--fbi swat 3-->
     <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
@@ -230,6 +237,9 @@
 	<!-- fbi tier end -->
 	
 	<!-- specials-->
+	<!-- cloaca -->
+	<texture path="units/payday2/characters/shared_textures/spook_heavy_df" />
+	
 	<!-- greendozer -->
     <unit path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" load="true"/>
     <unit path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_husk" load="true"/>	

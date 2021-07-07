@@ -309,7 +309,7 @@
 	<effect path="units/pd2_mod_nypd/effects/particles/character/cloaker_goggle"/>		
 	
 	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_nvg_df"/>
-	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_gasmask_df"/>
+	
 	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_df"/>
 	<texture path="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_nm"/>
 	

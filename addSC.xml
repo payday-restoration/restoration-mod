@@ -398,6 +398,16 @@
 	<!-- M60 TROPICAL FOREGRIP FIX -->
 	<model path="units/pd2_dlc_atw/weapons/wpn_fps_lmg_m60_pts/wpn_fps_lmg_m60_fg_tropical" force="true"/>
 	
+	<!--NPC Railgun-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false" load="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun_df" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun_nm" force="false"/>	
+	
 	<!-- AS VAL GRIP ATTACHMENT STUFF  -->
 	<unit_obj path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_pgrip" />
 	<unit_obj path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_hgrip" />

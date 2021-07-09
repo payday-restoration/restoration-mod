@@ -12,14 +12,14 @@
         <cooked_physics path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <model path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <object path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
-        <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
+        <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword" load="true"/>
         <material_config path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <material_config path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword_thq"/>
 
         <cooked_physics path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
         <model path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
         <object path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
-        <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
+        <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword" load="true"/>
         <material_config path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
 
         <!-- <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/> -->

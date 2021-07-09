@@ -20891,7 +20891,8 @@ function CharacterTweakData:_create_table_structure()
 		"ak_blue",
 		"amcar",
 		"ak102",
-		"m416_npc"
+		"m416_npc",
+		"railgun_npc"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -20939,7 +20940,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_dlc_uno/weapons/wpn_npc_smoke/wpn_npc_smoke"),
 		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47"),
 		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval"),
-		Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
+		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom"),
 		Idstring("units/pd2_dlc_vip/weapons/wpn_npc_mpx/wpn_npc_mpx"),
 		Idstring("units/payday2/weapons/wpn_npc_s553/wpn_npc_s553"),
 		Idstring("units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc"),
@@ -20966,7 +20967,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_akmsu/wpn_npc_akmsu"),
 		Idstring("units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar"),
 		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_ak102/wpn_npc_ak102"),
-		Idstring("units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416")
+		Idstring("units/pd2_mod_lapd/weapons/wpn_npc_m416/wpn_npc_m416"),
+		Idstring("units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun")
 	}
 end
 

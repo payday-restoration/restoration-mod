@@ -665,6 +665,10 @@ local lapd_normal = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1",
@@ -717,6 +721,10 @@ local lapd_hard = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1",
@@ -768,6 +776,10 @@ local lapd_very_hard = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1",
@@ -819,6 +831,10 @@ local lapd_overkill = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1",
@@ -831,7 +847,6 @@ local lapd_overkill = {
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc", 
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc",
-		
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1",	
@@ -843,20 +858,6 @@ local lapd_overkill = {
 		["units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
-		
-        --city swat
-		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
-		
-		--ZEALS
-		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc", 
 	}	
 local lapd_mayhem = {
         --scripted spawns for mayhem
@@ -871,6 +872,10 @@ local lapd_mayhem = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -929,6 +934,10 @@ local lapd_deathwish = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 		
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1",
@@ -980,6 +989,10 @@ local lapd_zeal = {
 		["units/payday2/characters/ene_cop_2/ene_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
 		["units/payday2/characters/ene_cop_3/ene_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
 		["units/payday2/characters/ene_cop_4/ene_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_1/ene_la_cop_1"] = "units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_2/ene_la_cop_2"] = "units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_3/ene_la_cop_3"] = "units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3",
+		["units/pd2_dlc_rvd/characters/ene_la_cop_4/ene_la_cop_4"] = "units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4",
 				
 		--swat
 		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",

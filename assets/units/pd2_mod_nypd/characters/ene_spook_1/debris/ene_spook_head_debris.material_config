@@ -1,0 +1,17 @@
+<materials version="3" group="ene_nypd_spook_head">	
+	<material name="mtr_night_vision" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 			file="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_nvg_nm" />
+		<diffuse_texture 				file="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_nvg_df" />
+	</material>
+	
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 			file="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_nm"/>
+		<diffuse_texture 				file="units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_classic_body_df"/>
+	</material>
+
+	<material name="mtr_gore" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
+		<bump_normal_texture 			file="units/payday2/characters/shared_textures/spook_heavy_nm"/>
+		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_heavy_df"/>
+	</material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

@@ -13,6 +13,7 @@
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_throat_4/ene_acc_bulldozer_throat_4" />
 		<depends_on unit="units/pd2_halloween/weapons/wpn_mel_titan_hammer/wpn_mel_titan_hammer" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" />
 	</dependencies>
 
 	<extensions>
@@ -20,7 +21,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_hw" />
-			<var name="_default_weapon_id" value="m14_sniper_npc" />
+			<var name="_default_weapon_id" value="railgun_npc" />
 			<var name="_melee_weapon_table" value="helloween" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />

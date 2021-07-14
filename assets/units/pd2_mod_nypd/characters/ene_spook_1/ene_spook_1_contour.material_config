@@ -31,7 +31,6 @@
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0"     type="scalar" name="contour_opacity"/>		
 	</material>
-
 	<material name="mtr_il" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:OPACITY_TEXTURE:RL_COPS:SELF_ILLUMINATION" version="2">
 		<diffuse_texture 				file="units/payday2/characters/shared_textures/spook_il"/>
 		<self_illumination_texture 		file="units/payday2/characters/shared_textures/spook_il"/>

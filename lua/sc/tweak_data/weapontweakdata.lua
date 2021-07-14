@@ -765,6 +765,8 @@ function WeaponTweakData:_init_data_m14_sniper_npc()
 	
 	--Railgun
 	self.railgun_npc = deep_clone(self.m14_sniper_npc)	
+	self.railgun_npc.CLIP_AMMO_MAX = 4
+	self.railgun_npc.sounds.prefix = "barrett_npc"
 end
 
 function WeaponTweakData:_init_data_r870_npc()

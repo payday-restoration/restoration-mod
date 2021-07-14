@@ -40,6 +40,8 @@ local enemies_visor = {
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),                 
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),                 
+	ids_func("units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"),
+	ids_func("units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk"),                 
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),                 
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
@@ -114,6 +116,13 @@ local enemies_plink = {
 	ids_func("units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870_husk"),
 	
 }
+
+local old_init = CopDamage.init
+function CopDamage:init(...)
+	old_init(self, ...)
+	
+	self._player_damage_ratio = 0 --Damage dealt to this enemy by players that contributed to the kill.
+end
 
 function CopDamage:_spawn_head_gadget(params)
 	local unit_name = self._unit:name()
@@ -353,6 +362,7 @@ function CopDamage:damage_fire(attack_data)
 				type = "healed",
 				variant = attack_data.variant
 			}
+			self._player_damage_ratio = 0
 		else
 			result = {
 				type = "death",
@@ -745,7 +755,7 @@ function CopDamage:damage_bullet(attack_data)
 			})			
 			--Fucking loud, can be subject to change. Just the only sound ID I found on short notice
 			--new sound pls
-			self._unit:sound():play("knuckles_hit_gen", nil, nil)
+			--self._unit:sound():play("swatturret_weakspot_hit", nil, nil)
 		
 			return
 		end
@@ -903,6 +913,7 @@ function CopDamage:damage_bullet(attack_data)
 				type = "healed",
 				variant = attack_data.variant
 			}
+			self._player_damage_ratio = 0
 		else
 			if head then
 				managers.player:on_lethal_headshot_dealt(attack_data.attacker_unit, attack_data)
@@ -1312,6 +1323,7 @@ function CopDamage:damage_melee(attack_data)
 				type = "healed",
 				variant = "melee"
 			}
+			self._player_damage_ratio = 0
 		else
 			if head then
 				if self._unit:base()._tweak_table == "boom" then
@@ -1680,15 +1692,17 @@ function CopDamage:die(attack_data)
 		managers.skirmish:do_kill()
 	end
 
-	if not self._char_tweak.always_drop then
+	if not self._char_tweak.always_drop and self._pickup == "ammo" then
 		local attacker_unit = attack_data.attacker_unit
 
 		if attacker_unit and alive(attacker_unit) then
 			if attacker_unit:in_slot(16) then
-				local roll = math.rand(1, 100)
-				local no_ammo_chance = 80
+				local roll = math.random()
+				local ammo_chance = 0.2 + self._player_damage_ratio --Enemy bot ammo drop chance increases based on the amount of damage dealy by a player.
+				--80% of health damage leading to kill dealt by a player == 100% chance to drop ammo.
+				--0% of health damage leading to kill dealt by a player == 20% chance to drop ammo.
 
-				if roll <= no_ammo_chance then
+				if roll >= ammo_chance then
 					self:set_pickup()
 				end
 			end
@@ -2018,6 +2032,7 @@ function CopDamage:damage_explosion(attack_data)
 				type = "healed",
 				variant = attack_data.variant
 			}
+			self._player_damage_ratio = 0
 		else
 			result = {
 				type = "death",
@@ -2352,6 +2367,7 @@ function CopDamage:damage_simple(attack_data)
 				type = "healed",
 				variant = attack_data.variant
 			}
+			self._player_damage_ratio = 0
 		else
 			result = {
 				type = "death",
@@ -2617,6 +2633,7 @@ function CopDamage:damage_dot(attack_data)
 				type = "healed",
 				variant = attack_data.variant
 			}
+			self._player_damage_ratio = 0
 		else
 			result = {
 				type = "death",
@@ -3009,16 +3026,27 @@ function CopDamage:_on_damage_received(damage_info)
 
 	local attacker_unit = damage_info and damage_info.attacker_unit
 
-	if alive(attacker_unit) and attacker_unit:base() then
-		if attacker_unit:base().thrower_unit then
-			attacker_unit = attacker_unit:base():thrower_unit()
-		elseif attacker_unit:base().sentry_gun then
-			attacker_unit = attacker_unit:base():get_owner()
-		end
-	end
+	if alive(attacker_unit) then
+		local attacker_base = attacker_unit:base()
 
-	if attacker_unit == managers.player:player_unit() then
-		managers.player:on_damage_dealt(self._unit, damage_info)
+		if attacker_base then
+			if attacker_unit:base().thrower_unit then
+				attacker_unit = attacker_unit:base():thrower_unit()
+				attacker_base = alive(attacker_unit) and attacker_unit:base()
+			elseif attacker_unit:base().sentry_gun then
+				attacker_unit = attacker_unit:base():get_owner()
+				attacker_base = alive(attacker_unit) and attacker_unit:base()
+			end
+		end
+
+		if attacker_base then
+			if attacker_base.is_husk_player then
+				self._player_damage_ratio = self._player_damage_ratio + ((damage_info.damage or 0) / self._HEALTH_INIT)
+			elseif attacker_base.is_local_player then
+				managers.player:on_damage_dealt(self._unit, damage_info)
+				self._player_damage_ratio = self._player_damage_ratio + ((damage_info.damage or 0) / self._HEALTH_INIT)
+			end
+		end
 	end
 
 	--should prevent countering and shield knock from counting towards this

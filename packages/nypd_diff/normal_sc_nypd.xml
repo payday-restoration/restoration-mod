@@ -214,7 +214,7 @@
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
 	
 	<!--fbi heavy r870-->
-    <unit path="units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_sc" load="true"/>
+    <unit path="units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
     <unit path="units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
     <object path="units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<cooked_physics path="units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>

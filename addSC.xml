@@ -201,6 +201,16 @@
 	
 	<!-- M60 TROPICAL FOREGRIP FIX -->
 	<model path="units/pd2_dlc_atw/weapons/wpn_fps_lmg_m60_pts/wpn_fps_lmg_m60_fg_tropical" force="true"/>
+
+	<!--NPC Railgun-->
+	<cooked_physics path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<material_config path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<model path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<object path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<sequence_manager path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
+	<unit path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false" load="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun_df" force="false"/>
+	<texture path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun_nm" force="false"/>	
 	
 	<!-- AS VAL GRIP ATTACHMENT STUFF  -->
 	<unit_obj path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_pgrip" />
@@ -245,16 +255,7 @@
 	
 	<!--Parachute Collision edit (No more Boiling Point suicides)-->
 	<object path="units/pd2_dlc_jerry/props/jry_equipment_parachute/jry_equipment_parachute_ragdoll" force="true"/>
-	
-	<!--Scarface Guys-->		
-	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
-	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02" force="true" />	
-	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01" force="true" />
-	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02" force="true" />	
-	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" force="true" />		
-	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss_stealth/ene_drug_lord_boss_stealth" force="true" />			
-	<object path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />
-	
+		
 	<!--Change to Armored Hector's Visor Texture (now uses the Hard Hat's visor texture, for consistency reasons.)-->		
 	<material_config path="units/pd2_mcmansion/characters/ene_male_hector_1/ene_male_hector_1" force="true" />
 	<material_config path="units/pd2_mcmansion/characters/ene_male_hector_1/ene_male_hector_1_contour" force="true" />	
@@ -828,7 +829,7 @@
 	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	<model path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
-	<unit path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false" load="false"/>
+	<unit path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false" load="true"/>
 	<material_config path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	
 	<!--NPC Peacemaker-->	
@@ -1363,10 +1364,7 @@
 	<material_config path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak_dead"/>
 	<sequence_manager path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
 	<cooked_physics path="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"/>
-	
-	<!--OVERKILL removed this at somepoint-->
-	<texture path="units/characters/enemies/textures/police_force_nm" />
-			
+				
 	<!--murky and OMNIA seqmans-->
 	<sequence_manager path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
 	<sequence_manager path="units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"/>

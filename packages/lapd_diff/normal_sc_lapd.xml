@@ -129,7 +129,7 @@
 	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_head_df" />		
 
 	<!--opscore-->
-	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
+	<unit_mat path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
 	
 	<!--brownframe-->
@@ -157,20 +157,20 @@
 	<unit path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk" load="true"/>		
 	
 	<!--LAPD swat mp5-->
+	<unit path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1" load="true"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_husk" load="true"/>			
 	<object path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
 	<model path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1" load="true"/>
 	<material_config path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
 	<material_config path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_contour"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_husk" load="true"/>	
 	
 	<!--LAPD swat r870-->
+	<unit path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2" load="true"/>
+	<unit path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>		
 	<object path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
 	<cooked_physics path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
 	<model path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2" load="true"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>	
 	
 	<!--swat shield 2-->
 	<unit path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"/>
@@ -280,7 +280,7 @@
 	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
 	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_contour"/>
 	<unit path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_husk" load="true"/>			
-		
+	
 	<!--Titan Taser Helm Acc-->
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>

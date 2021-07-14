@@ -220,14 +220,17 @@
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_taser_df" force="false"/>		
 
-	<!--LAPD vet 2-->	
-	<object path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
-	<model path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2" load="true"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_contour"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_husk" load="true"/>			
+	<!--Veteran Cop-->	
+	<object path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
+	<cooked_physics path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
+	<model path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false" load="true"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
+	<material_config path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2_contour" force="false"/>
+	<unit path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2_husk" force="false" load="true"/>
+	
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_2_df" force="false"/>
+	<texture path="units/payday2/characters/shared_textures/veteran_cop_2_nm" force="false"/>
 	
 	<!--Titan Taser Helm Acc-->
 	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>

@@ -225,14 +225,6 @@
 	<material_config path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_contour" force="false"/>
 
 	<!--Veteran Cop-->	
-	<object path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
-	<cooked_physics path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
-	<model path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
-	<unit path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false" load="true"/>
-	<material_config path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
-	<material_config path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_contour" force="false"/>
-	<unit path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_husk" force="false" load="true"/>
-
 	<object path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
 	<cooked_physics path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
 	<model path="units/payday2/characters/ene_veteran_cop_2/ene_veteran_cop_2" force="false"/>
@@ -243,8 +235,6 @@
 	
 	<texture path="units/payday2/characters/shared_textures/veteran_cop_2_df" force="false"/>
 	<texture path="units/payday2/characters/shared_textures/veteran_cop_2_nm" force="false"/>
-	<texture path="units/payday2/characters/shared_textures/veteran_cop_df" force="false"/>
-	<texture path="units/payday2/characters/shared_textures/veteran_cop_nm" force="false"/>
 	
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/mask_nm" force="false"/>	
 	<texture path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		

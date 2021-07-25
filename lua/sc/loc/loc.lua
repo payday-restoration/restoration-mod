@@ -367,17 +367,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["heist_vivinite_name"] = "Zero Day",
 
-		["heist_contact_shatter"] = "Jackal & Raze",
+		["heist_contact_shatter"] = "Jackal",
 		["heist_contact_akashic"] = "Nico",
 
 		["menu_contacts_shatter"] = "CRIMENET Affiliates",
-		["heist_contact_shatter_description"] = "Jackal & Raze. CRIMENET's asset and fighting force handlers. They have a healthy hatred for OMNIA Technologies and GenSec.",
+		
 		["heist_contact_jackal_description"] = "Jackal started out working for GenSec, but quit after an incident with human trafficking, tied to GenSec and OMNIA.\n\nNow, he works for CRIMENET, bringing the fight to their front door.",
-		["heist_contact_raze_description"] = "Raze. Jackal's partner in crime, and a skilled fighter.\n\nBorn in 1995, she escaped her family at the age of 15, and ran to the life of crime, never looking back.",
+		
 		["heist_contact_akashic_description"] = "Formerly a high ranking lieutenant working under Hector Morales, Nicolas 'Nico' René is now commanding the remnants of the Sinaloan Cartel operating in the USA.\nTheir numbers are small, and the larger Colombian cartel has no intention of helping them -- or repairing the relationship with CRIMENET.\n\nAbsorbing various smaller gangs operating on the east coast and allying with CRIMENET, he'll provide his resources in exchange for their services.",
 
-		["bm_msk_shatter_true"] = "Raze",
-		["bm_msk_shatter_true_desc"] = "The mask of Raze, Jackal's partner in crime. The Phoenix represents rebirth. Each death bringing about new life. Raze believes that the mask is her 'lucky charm', and often doesn't work without it.",
+		["bm_msk_shatter_true"] = "Shatter",
+		["bm_msk_shatter_true_desc"] = "The legendary mask that has only been spoken of in hushed tones.\n\nOf course, it's just a duplicate.\n\nThere's something much more special about the real one, but I think you'll like a copy just as much.\n\nThe Phoenix symbolizes re-birth, a timeless being that can never truly be killed.  Attempting to smite one down, it will strike back in an awesome show of flames and combustion.",
 
 		["menu_l_global_value_veritas"] = "Restoration Mod",
 		["menu_l_global_value_veritas_desc"] = "This is a Restoration Mod item!",
@@ -1023,8 +1023,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 
-		--Raze's Fury--
-		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Raze's weapon of choice.\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+		--Phoenix .500--
+		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
@@ -1566,7 +1566,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks (Wildcard and Blank) which provide only the common perks and no perks whatsoever, respectively. They are meant for self-imposed challenges.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
-		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal and Raze' Contractor, as well as 'Doghouse' under Vlad.",	
+		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal' Contractor, as well as 'Doghouse' under Vlad.",	
 		["loading_misc_res_2"] = "Restoration Mod has a Steam Guide! This should be your resource for more detailed information. Check the Main Menu.",	
 		["loading_misc_res_3"] = "Restoration Mod has a Discord server! Join for discussion, balance feedback, and matchmaking! Check the Main Menu.",	
 		--Trivia Hints

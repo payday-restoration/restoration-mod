@@ -877,6 +877,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_inspect_player_desc"] = "Inspect player's stats",
 		["menu_toggle_one_down_lobbies"] = "Allow Pro-Job Lobbies",
 		
+		["heist_safehouse"] = "The Safe House - Basics",
+		
 		--Events
 		
 		--Anniversary Event

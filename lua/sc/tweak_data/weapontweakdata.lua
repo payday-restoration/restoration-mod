@@ -5232,7 +5232,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.flamethrower_mk2.stats = {
 		damage = 24,
 		spread = 7,
-		recoil = 23,
+		recoil = 19,
 		spread_moving = 6,
 		zoom = 1,
 		concealment = 16,
@@ -7653,7 +7653,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.system.stats = {
 		damage = 24,
 		spread = 6,
-		recoil = 23,
+		recoil = 19,
 		spread_moving = 6,
 		zoom = 1,
 		concealment = 19,
@@ -8403,7 +8403,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.groza_underbarrel.stats_modifiers = {damage = 10}	
 	
-	--Money Thrower
+	--Cash Blaster
 	self.money.categories = {
 		"flamethrower",
 		"shotgun"
@@ -8427,21 +8427,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.money.can_shoot_through_shield = false
 	self.money.can_shoot_through_wall = false
 	self.money.kick = self.stat_info.kick_tables.horizontal_recoil
-	self.money.fire_dot_data = nil
-	--Kill until I figure out why it's crashing
-	--[[
 	self.money.fire_dot_data = {
 		dot_damage = 1.6,
 		dot_trigger_chance = 60,
 		dot_length = 3.1,
 		dot_tick_period = 0.5
 	}
-	]]--
 	self.money.supported = true
 	self.money.stats = {
 		damage = 24,
 		spread = 6,
-		recoil = 23,
+		recoil = 19,
 		spread_moving = 6,
 		zoom = 1,
 		concealment = 19,

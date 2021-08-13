@@ -1418,6 +1418,7 @@ function CopMovement:damage_clbk(my_unit, damage_info)
 		body_part = body_part,
 		blocks = blocks,
 		client_interrupt = client_interrupt,
+		weapon_unit = damage_info.weapon_unit,
 		attacker_unit = damage_info.attacker_unit,
 		death_type = death_type,
 		ignite_character = damage_info.ignite_character,

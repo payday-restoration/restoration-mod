@@ -766,7 +766,7 @@ function WeaponTweakData:_init_data_m14_sniper_npc()
 	--Railgun
 	self.railgun_npc = deep_clone(self.m14_sniper_npc)	
 	self.railgun_npc.CLIP_AMMO_MAX = 4
-	self.railgun_npc.sounds.prefix = "barrett_npc"
+	--self.railgun_npc.sounds.prefix = "barrett_npc"
 end
 
 function WeaponTweakData:_init_data_r870_npc()
@@ -8402,6 +8402,58 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.groza_underbarrel.stats_modifiers = {damage = 10}	
+	
+	--Money Thrower
+	self.money.categories = {
+		"flamethrower",
+		"shotgun"
+	}
+	self.money.recategorize = "wpn_special"
+	self.money.has_description = true
+	self.money.desc_id = "bm_ap_money_sc_desc"
+	self.money.timers.reload_not_empty = 8
+	self.money.timers.reload_empty = 8
+	self.money.rays = 9
+	self.money.CLIP_AMMO_MAX = 35
+	self.money.AMMO_MAX = 60
+	self.money.fire_mode_data.fire_rate = 0.1
+	self.money.auto = {}
+	self.money.auto.fire_rate = 0.1
+	self.money.flame_max_range = 1400
+	self.money.single_flame_effect_duration = 1
+	self.money.fire_variant = "money"
+	self.money.armor_piercing_chance = 1
+	self.money.can_shoot_through_enemy = false
+	self.money.can_shoot_through_shield = false
+	self.money.can_shoot_through_wall = false
+	self.money.kick = self.stat_info.kick_tables.horizontal_recoil
+	self.money.fire_dot_data = nil
+	--Kill until I figure out why it's crashing
+	--[[
+	self.money.fire_dot_data = {
+		dot_damage = 1.6,
+		dot_trigger_chance = 60,
+		dot_length = 3.1,
+		dot_tick_period = 0.5
+	}
+	]]--
+	self.money.supported = true
+	self.money.stats = {
+		damage = 24,
+		spread = 6,
+		recoil = 23,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 19,
+		suppression = 7,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.money.stats_modifiers = nil
+	self.money.panic_suppression_chance = 0.05	
 	
 	
 	--Restoration Weapons--

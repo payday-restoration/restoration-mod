@@ -656,9 +656,8 @@ function CopActionShoot:update(t)
 		local proceed_as_usual = true
 
 		if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
-			local distance = mvec3_dis(target_pos, shoot_from_pos)
 			
-			if self._throw_frag and self._ext_brain._throw_frag_t < t and 2000 >= distance and 500 <= distance then
+			if self._throw_frag and self._ext_brain._throw_frag_t < t and 2000 >= target_dis and 500 <= target_dis then
 				local is_spring = self._ext_base._tweak_table == "spring"
 				local frag_cooldown = 6 --This stuff should really be defined via tweakdata in the future.
 				if is_spring then
@@ -673,7 +672,7 @@ function CopActionShoot:update(t)
 				self._ext_brain._throw_frag_t = t + frag_cooldown
 
 				if frag_roll then
-					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type, distance) then
+					if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type, target_dis) then
 						self._ext_movement:play_redirect("throw_grenade")
 						self._unit:sound():say("use_gas", true, nil, true)
 						managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
@@ -683,12 +682,12 @@ function CopActionShoot:update(t)
 				end
 			end
 
-			if proceed_as_usual and self._throw_molotov and self._ext_brain._throw_molotov_t < t and 2000 >= distance and 500 <= distance then
+			if proceed_as_usual and self._throw_molotov and self._ext_brain._throw_molotov_t < t and 2000 >= target_dis and 500 <= target_dis then
 				self._ext_brain._throw_molotov_t = t + 10
 				local is_hatman = self._ext_base._tweak_table == "headless_hatman"
 				local grenade_type = is_hatman and "hatman_molotov" or "molotov"	--Really should be handled by tweakdata.
 
-				if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type, distance) then
+				if self:throw_grenade(mvec3_copy(shoot_from_pos) + projectile_throw_pos_offset, mvec3_copy(target_vec), mvec3_copy(target_pos), grenade_type, target_dis) then
 					self._ext_movement:play_redirect("throw_grenade")
 					managers.network:session():send_to_peers_synched("play_distance_interact_redirect", self._unit, "throw_grenade")
 					self._unit:sound():say("use_gas", true, nil, true)
@@ -698,7 +697,7 @@ function CopActionShoot:update(t)
 			end
 
 			if proceed_as_usual then
-				if self._deploy_gas and self._ext_brain._deploy_gas_t < t and 2800 >= distance and 500 <= distance then
+				if self._deploy_gas and self._ext_brain._deploy_gas_t < t and 2800 >= target_dis and 500 <= target_dis then
 					self._ext_brain._deploy_gas_t = t + 10
 
 					local is_normal_grenadier = self._ext_base._tweak_table == "boom"

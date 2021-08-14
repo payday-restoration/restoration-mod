@@ -3186,6 +3186,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.switchblade.backstab_damage_multiplier = 2
 
 	--RIP Buzzer meta--
+	self.melee_weapons.taser.special_weapon = "taser"	
 	self.melee_weapons.taser.stats.min_damage = 1
 	self.melee_weapons.taser.stats.max_damage = 2
 	self.melee_weapons.taser.stats.min_damage_effect = 0

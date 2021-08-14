@@ -654,9 +654,10 @@ function CopActionShoot:update(t)
 
 	if not ext_anim.reload and not ext_anim.equip and not ext_anim.melee then
 		local proceed_as_usual = true
-		local distance = mvec3_dis(target_pos, shoot_from_pos)
 
 		if self._can_attack_with_special_move and not self._autofiring and target_vec and self._common_data.allow_fire then
+			local distance = mvec3_dis(target_pos, shoot_from_pos)
+			
 			if self._throw_frag and self._ext_brain._throw_frag_t < t and 2000 >= distance and 500 <= distance then
 				local is_spring = self._ext_base._tweak_table == "spring"
 				local frag_cooldown = 6 --This stuff should really be defined via tweakdata in the future.

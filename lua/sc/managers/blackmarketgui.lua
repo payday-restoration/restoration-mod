@@ -1478,6 +1478,26 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				name = "bm_menu_btn_equip_gloves",
 				callback = callback(self, self, "equip_gloves_callback")
 			},
+			hnd_customize = {
+                btn = "BTN_Y",
+                name = "bm_menu_btn_customize_gloves",
+                prio = 2,
+                pc_btn = "menu_modify_item",
+                callback = callback(self, self, "customize_glove_callback")
+            },
+            hnd_mod_equip = {
+                btn = "BTN_A",
+                prio = 1,
+                name = "bm_menu_btn_equip_suit_variation",
+                callback = callback(self, self, "equip_glove_variation_callback")
+            },
+            hnd_mod_preview = {
+                btn = "BTN_STICK_R",
+                name = "bm_menu_btn_preview_suit_variation",
+                prio = 2,
+                pc_btn = "menu_preview_item",
+                callback = callback(self, self, "preview_glove_variation_callback")
+            },
 			hnd_preview = {
 				btn = "BTN_STICK_R",
 				name = "bm_menu_btn_preview_gloves",

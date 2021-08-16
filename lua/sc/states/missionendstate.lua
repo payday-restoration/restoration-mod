@@ -161,6 +161,9 @@ function MissionEndState:at_enter(old_state, params)
 	self._sound_listener:activate(true)
 
 	local total_killed = managers.statistics:session_total_killed()
+	local spending_kills, spendings = managers.money:on_spend_session_moneythrower()
+	self._moneythrower_spending_kills = spending_kills
+	self._moneythrower_spendings = spendings	
 	self._criminals_completed = self._success and params.num_winners or 0
 
 	managers.statistics:stop_session({
@@ -245,7 +248,7 @@ function MissionEndState:at_enter(old_state, params)
 		managers.story:set_last_failed_heist(managers.job:current_job_id())		
 	end
 
-	Telemetry:on_end_heist(self._type, total_exp_gained)
+	Telemetry:on_end_heist(self._type, total_exp_gained, self._moneythrower_spending_kills)
 end
 
 local on_statistics_result_ori = MissionEndState.on_statistics_result
@@ -392,7 +395,8 @@ function MissionEndState:on_statistics_result(best_kills_peer_id, best_kills_sco
 			total_head_shots = total_head_shots,
 			group_hit_accuracy = group_accuracy .. "%",
 			group_total_downed = group_downs,
-			stage_cash_summary = stage_cash_summary_string
+			stage_cash_summary = stage_cash_summary_string,
+			moneythrower_spending = self._moneythrower_spendings > 0 and managers.experience:cash_string(self._moneythrower_spendings) or nil
 		}
 	end
 

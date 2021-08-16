@@ -367,17 +367,17 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["heist_vivinite_name"] = "Zero Day",
 
-		["heist_contact_shatter"] = "Jackal & Raze",
+		["heist_contact_shatter"] = "Jackal",
 		["heist_contact_akashic"] = "Nico",
 
 		["menu_contacts_shatter"] = "CRIMENET Affiliates",
-		["heist_contact_shatter_description"] = "Jackal & Raze. CRIMENET's asset and fighting force handlers. They have a healthy hatred for OMNIA Technologies and GenSec.",
+		
 		["heist_contact_jackal_description"] = "Jackal started out working for GenSec, but quit after an incident with human trafficking, tied to GenSec and OMNIA.\n\nNow, he works for CRIMENET, bringing the fight to their front door.",
-		["heist_contact_raze_description"] = "Raze. Jackal's partner in crime, and a skilled fighter.\n\nBorn in 1995, she escaped her family at the age of 15, and ran to the life of crime, never looking back.",
+		
 		["heist_contact_akashic_description"] = "Formerly a high ranking lieutenant working under Hector Morales, Nicolas 'Nico' René is now commanding the remnants of the Sinaloan Cartel operating in the USA.\nTheir numbers are small, and the larger Colombian cartel has no intention of helping them -- or repairing the relationship with CRIMENET.\n\nAbsorbing various smaller gangs operating on the east coast and allying with CRIMENET, he'll provide his resources in exchange for their services.",
 
-		["bm_msk_shatter_true"] = "Raze",
-		["bm_msk_shatter_true_desc"] = "The mask of Raze, Jackal's partner in crime. The Phoenix represents rebirth. Each death bringing about new life. Raze believes that the mask is her 'lucky charm', and often doesn't work without it.",
+		["bm_msk_shatter_true"] = "Shatter",
+		["bm_msk_shatter_true_desc"] = "The legendary mask that has only been spoken of in hushed tones.\n\nOf course, it's just a duplicate.\n\nThere's something much more special about the real one, but I think you'll like a copy just as much.\n\nThe Phoenix symbolizes re-birth, a timeless being that can never truly be killed.  Attempting to smite one down, it will strike back in an awesome show of flames and combustion.",
 
 		["menu_l_global_value_veritas"] = "Restoration Mod",
 		["menu_l_global_value_veritas_desc"] = "This is a Restoration Mod item!",
@@ -877,6 +877,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["menu_inspect_player_desc"] = "Inspect player's stats",
 		["menu_toggle_one_down_lobbies"] = "Allow Pro-Job Lobbies",
 		
+		["heist_safehouse"] = "The Safe House - Basics",
+		
+		--Events
+		
+		--Anniversary Event
+		["menu_pda8_1_prog_obj_desc"] = "Find 2 different anniversary statues from Jewelry Store, Four Stores, Nightclub, Bank Heist, or Mallcrasher. You need to finish the heist for the statues to register.",
+		["menu_pda8_2_prog_obj_desc"] = "As a community all Heisters must spend $5,000,000,000 retiring cops with the Cash Blaster and you need to find 3 different anniversary statues from Jewelry Store, Four Stores, Nightclub, Bank Heist, or Mallcrasher. You need to finish the heist for the statues to register.",
+		["menu_pda8_3_prog_obj_desc"] = "As a community all Heisters must spend $10,000,000,000 retiring cops with the Cash Blaster and you need to find 4 different anniversary statues from Jewelry Store, Four Stores, Nightclub, Bank Heist, or Mallcrasher. You need to finish the heist for the statues to register.",
+		["menu_pda8_item_1_desc"] = "As a community all Heisters must spend $15,000,000,000 retiring cops with the Cash Blaster and you need to find all 5 different anniversary statues from Jewelry Store, Four Stores, Nightclub, Bank Heist, or Mallcrasher. You need to finish the heist for the statues to register.",
+
+		["menu_pda8_2_prog_obj"] = "Find 3 Anniversary Statues.",
+		["menu_pda8_3_prog_obj"] = "Find 4 Anniversary Statues.",
+			
 		--Holdout--
 		["menu_cn_skirmish"] = "Holdout",
 		["menu_skirmish"] = "Holdout - Hostile Engagement",
@@ -1004,6 +1017,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "Doubles the burn duration on ignited enemies, but halves damage over time.",
 		["bm_wp_fla_mk2_mag_well_desc_sc"] = "Halves the burn duration on ignited enemies, but doubles damage over time.",
 		["bm_ap_flamethrower_sc_desc"] = "Thousands of degrees of pure pain. How did it come to this?\nBURNS THROUGH BODY ARMOR.", --used by both flamethrowers, decouple later?--
+		["bm_ap_money_sc_desc"] = "Thousands of dollars of pure bliss. Turn the valve, and unleash the cash.\nBRIBES THROUGH BODY ARMOR.", --used by both flamethrowers, decouple later?--
 
 		--LMGs/Miniguns--
 		["bm_wp_upg_a_halfthatkit"] = "Super Size Me!", -- lol
@@ -1023,8 +1037,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_90_body_boxy"] = "OMNIA Assault Frame",
 		["bm_wp_90_body_boxy_desc"] = "Recovered from the desolated remains of an old OMNIA warehouse, this frame makes no difference to the weapon's handling or its functionality whatsoever, but its block-like aesthetic surely makes it a nice thing to have.",
 
-		--Raze's Fury--
-		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Raze's weapon of choice.\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+		--Phoenix .500--
+		["bm_wp_shatters_fury_desc"] = "A massive .500 caliber revolver with insane kick and stopping power. Shatter's weapon of choice.\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "X-Generation weapon technology. Equipped with 20mm airburst grenade launcher.\nPress $BTN_BIPOD to switch to the Grenade Launcher.",
@@ -1566,7 +1580,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_31"] = "Restoration Mod adds two new Perk Decks (Wildcard and Blank) which provide only the common perks and no perks whatsoever, respectively. They are meant for self-imposed challenges.",
 		--Misc Hints
 		["loading_misc_res_title"] = "Restoration Miscellaneous Tips",
-		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal and Raze' Contractor, as well as 'Doghouse' under Vlad.",	
+		["loading_misc_res_1"] = "Try our Custom Heists as well! You can find most of them under the 'Jackal' Contractor, as well as 'Doghouse' under Vlad.",	
 		["loading_misc_res_2"] = "Restoration Mod has a Steam Guide! This should be your resource for more detailed information. Check the Main Menu.",	
 		["loading_misc_res_3"] = "Restoration Mod has a Discord server! Join for discussion, balance feedback, and matchmaking! Check the Main Menu.",	
 		--Trivia Hints
@@ -2377,7 +2391,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "Every ##25%## armor missing increases the number of health gained from kills by ##2##.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 
 		--Yakuza--
-		["menu_st_spec_12_desc_sc"] = "The Yakuza are one of the most feared crime syndicates in the world. Ruled by the ninkyo and lead by the Oyabun, the Yakuza are known for their strict code of conduct, organized nature and the tattoos that cover their entire bodies.\n\nAn outcast and a dropout from society, the Yakuza knows how it is to fend for himself. While he appears gentle, he is not to be taken lightly.\n\n\nBenefits from a full perk deck:\n##-##When your health is below 50%:\nYour dodge meter fills up by up to ##8%## of your dodge every second.\nYour dodge meter fills by up to ##50%## of your dodge when you kill an enemy.\nYour dodge meter fills by up to ##50%## of your dodge when you kill an enemy in melee (Stacks with effect 2).\nYou take up to ##20%## less damage.\n##-##Once per down, if you would be downed, you instead survive with ##1## life point and you regain ##50## armor.",
+		["menu_st_spec_12_desc_sc"] = "The Yakuza are one of the most feared crime syndicates in the world. Ruled by the ninkyo and lead by the Oyabun, the Yakuza are known for their strict code of conduct, organized nature and the tattoos that cover their entire bodies.\n\nAn outcast and a dropout from society, the Yakuza knows how it is to fend for himself. While he appears gentle, he is not to be taken lightly.\n\n\nBenefits from a full perk deck:\n##-##When your health is below 50%:\nYour dodge meter fills by up to ##8%## of your dodge every second.\nYour dodge meter fills by up to ##50%## of your dodge when you kill an enemy.\nYour dodge meter fills by up to ##50%## of your dodge when you kill an enemy in melee (Stacks with effect 2).\nYou take up to ##20%## less damage.\n##-##Once per down, if you would be downed, you instead survive with ##1## life point and you regain ##50## armor.",
 		["menu_deck12_1_desc_sc"] = "The lower your health, the faster your dodge meter will passively fill up. When your health is below ##50%##, your dodge meter fills by up to ##8%## of your dodge every second.\n\nYour dodge is increased by ##5## points.",
 		["menu_deck12_3_desc_sc"] = "The lower your health the more your dodge meter is filled when you kill an enemy. When your health is below ##50%##, your meter fills by up to ##50%## of your dodge.",
 		["menu_deck12_5_desc_sc"] = "The lower your health, the less damage you take. When your health is below ##50%##, you will take up to ##20%## less damage.",

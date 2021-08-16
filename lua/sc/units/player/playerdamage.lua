@@ -471,12 +471,26 @@ function PlayerDamage:damage_melee(attack_data)
 	if alive(attacker_unit) then
 		if attacker_char_tweak and attacker_char_tweak.tase_on_melee then
 			attacker_unit:sound():say("post_tasing_taunt")
-			attack_data.variant = "taser_tased"
+	
+			if pm:current_state() == "standard" or pm:current_state() == "carry" or pm:current_state() == "bipod" then
+				if pm:current_state() == "bipod" then
+					self._unit:movement()._current_state:exit(nil, "tased")
+				end
+
+				self._unit:movement():on_non_lethal_electrocution()
+				pm:set_player_state("tased")
+			end		
 		elseif attacker_char_tweak and attacker_char_tweak.cuff_on_melee then
 			if attacker_unit:base()._tweak_table == "autumn" then
 				attacker_unit:sound():say("i03", true, nil, true)
 			end
 			pm:set_player_state("arrested")
+		--If the player's in the bipod state, punch them out if they're not getting cuffed or tased
+		else
+			if pm:current_state() == "bipod" then
+				self._unit:movement()._current_state:exit(nil, "standard")
+				pm:set_player_state("standard")
+			end					
 		end
 	end	
 
@@ -520,28 +534,12 @@ function PlayerDamage:damage_melee(attack_data)
 	}
 	self._unit:camera():play_shaker(vars[math.random(#vars)], math.max(1 * self._melee_push_multiplier, 0.2))
 
-	--Knock players out of bipods, and tase them if needed.
-	local tase_player = attack_data.variant == "taser_tased"
-	if tase_player then
-		if pm:current_state() == "standard" or pm:current_state() == "carry" or pm:current_state() == "bipod" then
-			if pm:current_state() == "bipod" then
-				self._unit:movement()._current_state:exit(nil, "tased")
-			end
-
-			self._unit:movement():on_non_lethal_electrocution()
-			pm:set_player_state("tased")
-		end
-	elseif pm:current_state() == "bipod" then
-		self._unit:movement()._current_state:exit(nil, "standard")
-		pm:set_player_state("standard")
-	end
-
 	--Apply changes to actual melee push, this *can* be reduced to 0. Also don't allow players in bleedout to be pushed.
 	if not self._bleed_out then
 		mvector3.multiply(attack_data.push_vel, self._melee_push_multiplier)
 		self._unit:movement():push(attack_data.push_vel)
 	end
-
+	
 	return
 end
 

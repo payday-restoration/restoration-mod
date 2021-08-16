@@ -1,4 +1,10 @@
 Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
+	self.tutorials = {
+		{job = "safehouse"},
+		{job = "short1"},
+		{job = "short2"}
+	}
+
 	--how the fuck does this wanna be set up
 	--self.jobs.man.contract_visuals.preview_image = {icon = "guis/textures/restoration/cni/secret_stash"}
 	self.jobs.mex.jc = 60

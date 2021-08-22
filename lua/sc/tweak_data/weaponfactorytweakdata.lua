@@ -24943,14 +24943,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			value = 3,
 			recoil = 1,
 			concealment = -2
-		}
-
-		--Point Shoot Module
-		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.supported = true
-		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stats = {
-			value = 5
-		}
-		
+		}		
 	end
 
 	if self.wpn_fps_smg_owen then 	-- Silent Enforcer's Owen Gun		
@@ -25649,6 +25642,12 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_ass_asval_o_oldrail.supported = true
 		self.parts.wpn_fps_ass_asval_o_oldrail.stats = {
 			value = 2
+		}
+
+		--Point Shoot Module
+		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.supported = true
+		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stats = {
+			value = 5
 		}
 
 		--(M308) Mini 308 Magazine

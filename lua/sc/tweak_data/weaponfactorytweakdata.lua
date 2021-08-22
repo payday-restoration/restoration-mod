@@ -24247,7 +24247,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_shot_m37_b_ridge.supported = true
 		self.parts.wpn_fps_shot_m37_b_ridge.stats = {
 			value = 1,
-			accuracy = -1,
+			spread = -1,
 			recoil = 1
 		}
 
@@ -24312,7 +24312,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_ass_contraband_s_tecci.supported = true
 		self.parts.wpn_fps_ass_contraband_s_tecci.stats = {
 			value = 3,
-			accuracy = -1,
+			spread = -1,
 			concealment = 1
 		}
 
@@ -24409,8 +24409,8 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		self.parts.wpn_fps_pis_1911_g_classic.supported = true
 		self.parts.wpn_fps_pis_1911_g_classic.stats = {
 			value = 2,
-			spread = 1,
-			recoil = -1			
+			spread = -1,
+			recoil = 1	
 		}
 
 		--Sport Grip
@@ -24696,6 +24696,13 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			concealment = -1
 		}
 
+		--(Bernetti 9) Desert Grip
+		self.parts.wpn_fps_pis_beretta_g_tan.supported = true
+		self.parts.wpn_fps_pis_beretta_g_tan.stats = {
+			value = 2,
+			spread = -1,
+			recoil = 1
+		}
 
 		self.parts.wpn_fps_ass_s552_o_custom.supported = true
 
@@ -24793,7 +24800,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			value = 2,
 			concealment = 1,
 			recoil = 1,
-			accuracy = -2
+			spread = -2
 		}
 
 		--(Draco Pistol) Discreet Foregrip
@@ -24929,6 +24936,20 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				}
 			}
 		}
+
+		--(KSP 58) Aftermarket Rail
+		self.parts.wpn_fps_lmg_par_rail.supported = true
+		self.parts.wpn_fps_lmg_par_rail.stats = {
+			value = 3,
+			recoil = 1,
+			concealment = -2
+		}
+
+		--Point Shoot Module
+		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.supported = true
+		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stats = {
+			value = 5
+		}
 		
 	end
 
@@ -24954,7 +24975,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			self.parts.wpn_fps_smg_owen_s_no.stats = {
 					value = 2,
 					recoil = -2,
-					concealment = 3
+					concealment = 2
 				}							
 			self.parts.wpn_fps_smg_owen_low_window.supported = true							
 			self.parts.wpn_fps_smg_owen_low_window.stats = {
@@ -24966,7 +24987,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 			self.parts.wpn_fps_smg_owen_b_43.stats = {
 					value = 4,
 					spread = -1,
-					recoil = 2,
+					recoil = 1,
 				}					
 		end				
 
@@ -25464,7 +25485,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			value = 6,
 			spread = -1,
 			concealment = -1,
-			reload = 2
+			reload = 3
 		}
 
 		--(GSPS 12G) High Capacity Barrel
@@ -25628,6 +25649,82 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		self.parts.wpn_fps_ass_asval_o_oldrail.supported = true
 		self.parts.wpn_fps_ass_asval_o_oldrail.stats = {
 			value = 2
+		}
+
+		--(M308) Mini 308 Magazine
+		self.parts.wpn_fps_ass_m14_m_curve.supported = true
+		self.parts.wpn_fps_ass_m14_m_curve.stats = {
+			value = 1
+		}
+
+		--(GSPS 12) Hunting Sight
+		self.parts.wpn_fps_shot_m37_o_classic.supported = true
+		self.parts.wpn_fps_shot_m37_o_classic.stats = {
+			value = 1
+		}
+
+		--(GSPS 12) Long Range Sight
+		self.parts.wpn_fps_shot_m37_o_circle.supported = true
+		self.parts.wpn_fps_shot_m37_o_circle.stats = {
+			value = 1,
+			zoom = 1
+		}
+
+		--(Frenchman) Smooth Cylinder
+		self.parts.wpn_fps_pis_model3_cylinder_smooth.supported = true
+
+		--(Compact 5)
+		self.parts.wpn_fps_smg_mp5_m_small.supported = true
+		self.parts.wpn_fps_smg_mp5_m_small.stats = {
+			value = 2,
+			concealment = 1,
+			reload = 3,
+			extra_ammo = -10
+		}
+
+		--(Compact 5) Adjusted Stock
+		self.parts.wpn_fps_smg_mp5_s_adjusted.supported = true
+		self.parts.wpn_fps_smg_mp5_s_adjusted.stats = {
+			value = 3,
+			spread = -1,
+			recoil = -1,
+			concealment = 2
+		}
+
+		--(Compact 5) Marksman Foregrip
+		self.parts.wpn_fps_smg_mp5_fg_long.supported = true
+		self.parts.wpn_fps_smg_mp5_fg_long.stats = {
+			value = 2,
+			spread = 2,
+			recoil = -2,
+			concealment = -2
+		}
+
+		--(Jackal) Solid Stock
+		self.parts.wpn_fps_smg_schakal_s_solid.supported = true
+		self.parts.wpn_fps_smg_schakal_s_solid.stats = {
+			value = 2,
+			spread = 1,
+			recoil = -1,
+			concealment = -1
+		}
+
+		--(Jackal) Lightweight Stock
+		self.parts.wpn_fps_smg_schakal_s_hollow.supported = true
+		self.parts.wpn_fps_smg_schakal_s_hollow.stats = {
+			value = 2,
+			recoil = -1,
+			concealment = 1
+		}
+
+
+		--(Jackal) Tactical Stock
+		self.parts.wpn_fps_smg_schakal_s_recon.supported = true
+		self.parts.wpn_fps_smg_schakal_s_recon.stats = {
+			value = 3,
+			spread = 2,
+			concealment = -2,
+			recoil = -2,
 		}
 
 		self.wpn_fps_shot_minibeck.override = {

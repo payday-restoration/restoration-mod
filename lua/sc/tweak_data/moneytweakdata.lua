@@ -25,4 +25,11 @@ Hooks:PostHook( MoneyTweakData, "init", "SC_MoneyTweaks", function(self, tweak_d
 	--self.bag_values.diamonds = 2265 
 	self.bag_values.red_diamond = 21000
 	self.bag_values.meth = 11500
+
+	--Event's over, no more killing cash
+	self.moneythrower = {
+		max_kills_per_session = 0,
+		kill_to_offshore_multiplier = 0
+	}	
+	
 end)

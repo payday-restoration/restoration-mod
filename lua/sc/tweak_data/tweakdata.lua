@@ -272,6 +272,18 @@ tweak_data.dot_types.bleed = {
 	hurt_animation_chance = 0
 }
 
+--Fire!
+tweak_data.fire.effects.money_short = {
+	expensive = "effects/payday2/particles/explosions/sparkle_enemies_11sec",
+	cheap = "effects/payday2/particles/explosions/sparkle_enemies_11sec",
+	normal = "effects/payday2/particles/explosions/sparkle_enemies_11sec"
+}
+tweak_data.fire.effects.money_endless = {
+	expensive = "effects/payday2/particles/explosions/sparkle_enemies",
+	cheap = "effects/payday2/particles/explosions/sparkle_enemies",
+	normal = "effects/payday2/particles/explosions/sparkle_enemies"
+}
+
 --Stun nades--
 tweak_data.projectiles.concussion.damage = 0
 tweak_data.projectiles.concussion.curve_pow = 0.8

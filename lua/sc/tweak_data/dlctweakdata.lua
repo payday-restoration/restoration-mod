@@ -249,6 +249,16 @@ function DLCTweakData:init(...)
 		}
 	}
 	
+	--Always have it
+	self.pda8_wpn_money = {
+		content = {},
+		dlc = "has_pda8_wpn_money"
+	}
+	self.pda8_wpn_money.free = true
+	self.pda8_wpn_money.content.loot_global_value = "pda8_wpn_money"
+	self.pda8_wpn_money.content.loot_drops = {}
+	self.pda8_wpn_money.content.upgrades = {}	
+	
 	self.sc = {}
 	self.sc.free = true
 	self.sc.content = {}

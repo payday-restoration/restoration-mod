@@ -338,18 +338,6 @@ table.insert (tweak_data.gui.crime_net.codex,
 				id = "shatter",
 				name_id = "heist_contact_shatter",
 				{
-					desc_id = "heist_contact_shatter_description",
-					videos = {"shatter1"}
-				},
-				id = "shatter",
-				name_id = "heist_contact_shatter",
-				{
-					desc_id = "heist_contact_raze_description",
-					videos = {"shatter1"}
-				},
-				id = "shatter",
-				name_id = "heist_contact_shatter",
-				{
 					desc_id = "heist_contact_jackal_description",
 					videos = {"shatter1"}
 				}
@@ -365,10 +353,10 @@ table.insert (tweak_data.gui.crime_net.codex,
 
 		} )
 
---Jackal & Raze narrative entry
+--Jackal narrative entry
 tweak_data.narrative.contacts.shatter				= {}
 tweak_data.narrative.contacts.shatter.name_id					= "heist_contact_shatter"
-tweak_data.narrative.contacts.shatter.description_id	= "heist_contact_shatter_description"
+tweak_data.narrative.contacts.shatter.description_id	= "heist_contact_jackal_description"
 tweak_data.narrative.contacts.shatter.image		= "guis/textures/pd2/crimenet_portrait_interupt"
 tweak_data.narrative.contacts.shatter.package = "packages/contact_interupt"
 tweak_data.narrative.contacts.shatter.assets_gui = Idstring( "guis/mission_briefing/preload_contact_interupt" )

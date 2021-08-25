@@ -2401,7 +2401,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Burglar--
 	local sc_burglar = {
 			name_id = "menu_st_spec_7",
-			desc_id = "menu_st_spec_7_desc",
+			desc_id = "menu_st_spec_7_desc_sc",
 			dlc = "character_pack_clover",
 			{
 				upgrades = {
@@ -2463,7 +2463,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Infiltrator--
 	local sc_infiltrator = {
 			name_id = "menu_st_spec_8",
-			desc_id = "menu_st_spec_8_desc",
+			desc_id = "menu_st_spec_8_desc_sc",
 			dlc = "character_pack_dragan",
 			{
 				upgrades = {
@@ -2523,7 +2523,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Sociopath--
 	local sc_sociopath = {
 			name_id = "menu_st_spec_9",
-			desc_id = "menu_st_spec_9_desc",
+			desc_id = "menu_st_spec_9_desc_sc",
 			dlc = "hlm2_deluxe",
 			{
 				upgrades = {
@@ -2580,7 +2580,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Gambler--
 	local sc_gambler = {
 			name_id = "menu_st_spec_10",
-			desc_id = "menu_st_spec_10_desc",
+			desc_id = "menu_st_spec_10_desc_sc",
 			{
 				upgrades = {
 					"temporary_loose_ammo_restore_health_1"
@@ -2640,7 +2640,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Grinder--
 	local sc_grinder = {
 			name_id = "menu_st_spec_11",
-			desc_id = "menu_st_spec_11_desc",
+			desc_id = "menu_st_spec_11_desc_sc",
 			dlc = "character_pack_sokol",
 			{
 				upgrades = {
@@ -2698,7 +2698,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Yakuza--
 	local sc_yakuza = {
 			name_id = "menu_st_spec_12",
-			desc_id = "menu_st_spec_12_desc",
+			desc_id = "menu_st_spec_12_desc_sc",
 			dlc = "dragon",
 			{
 				upgrades = {
@@ -2757,7 +2757,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Ex President--
 	local sc_ex = {
 			name_id = "menu_st_spec_13",
-			desc_id = "menu_st_spec_13_desc",
+			desc_id = "menu_st_spec_13_desc_sc",
 			{
 				upgrades = {
 					"player_armor_health_store_amount_1"
@@ -2816,7 +2816,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Maniac--
 	local sc_maniac = {
 			name_id = "menu_st_spec_14",
-			desc_id = "menu_st_spec_14_desc",
+			desc_id = "menu_st_spec_14_desc_sc",
 			{
 				upgrades = {
 					"player_cocaine_stacking_1"
@@ -2877,7 +2877,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Anarchist--
 	local sc_sydney = {
 			name_id = "menu_st_spec_15",
-			desc_id = "menu_st_spec_15_desc",
+			desc_id = "menu_st_spec_15_desc_sc",
 			dlc = "opera",
 			{
 				upgrades = {
@@ -3007,13 +3007,13 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			name_id = "menu_st_spec_16",
 			dlc = "wild",
-			desc_id = "menu_st_spec_16_desc"
+			desc_id = "menu_st_spec_16_desc_sc"
 		}
 
 	--YOU AND I--
 	local sc_scarface = {
 			name_id = "menu_st_spec_17",
-			desc_id = "menu_st_spec_17_desc",
+			desc_id = "menu_st_spec_17_desc_sc",
 			dlc = "chico",
 			{
 				upgrades = {
@@ -3077,7 +3077,7 @@ function SkillTreeTweakData:init(tweak_data)
 	--Chicken Tacos--
 	local sc_wall = {
 			name_id = "menu_st_spec_18",
-			desc_id = "menu_st_spec_18_desc",
+			desc_id = "menu_st_spec_18_desc_sc",
 			{
 				upgrades = {
 					"player_passive_dodge_chance_1",
@@ -3135,7 +3135,7 @@ function SkillTreeTweakData:init(tweak_data)
 		
 	--Don't cry for me, I'm already dead.--
 	local sc_august = {
-			desc_id = "menu_st_spec_19_desc",
+			desc_id = "menu_st_spec_19_desc_sc",
 			name_id = "menu_st_spec_19",
 			{
 				cost = 200,
@@ -3284,7 +3284,7 @@ function SkillTreeTweakData:init(tweak_data)
 			},
 			name_id = "menu_st_spec_20",
 			dlc = "ecp",
-			desc_id = "menu_st_spec_20_desc"
+			desc_id = "menu_st_spec_20_desc_sc"
 		}
 		
 	--You need a science skill of 100 to understand the fuck's the point of this perk deck--
@@ -3360,7 +3360,7 @@ function SkillTreeTweakData:init(tweak_data)
 					1
 				}
 			},
-			desc_id = "menu_st_spec_21_desc",
+			desc_id = "menu_st_spec_21_desc_sc",
 			name_id = "menu_st_spec_21"
 		}	
 		

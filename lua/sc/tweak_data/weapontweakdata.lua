@@ -9400,7 +9400,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.bs23.AMMO_MAX = 40
 		self.bs23.CLIP_AMMO_MAX = 3
 		self.bs23.reload_speed_multiplier = 1.35
-		self.bs23.fire_rate_multiplier = 1.4
+		self.bs23.fire_rate_multiplier = 1.56
 		self.bs23.single.fire_rate = 1.25
 		self.bs23.fire_mode_data.fire_rate = 1.25
 		self.bs23.rays = 9

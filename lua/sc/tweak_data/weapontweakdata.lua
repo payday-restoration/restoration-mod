@@ -6035,7 +6035,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.boot.rays = 9
 	self.boot.muzzleflash = "effects/particles/shotgun/muzzleflash"
 	self.boot.kick = self.stat_info.kick_tables.right_kick
-	self.boot.timers.shotgun_reload_first_shell_offset = 0.15
 	self.boot.supported = true
 	self.boot.stats = {
 		damage = 90,
@@ -6050,6 +6049,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		total_ammo_mod = 100,
 		value = 1,
 		reload = 20
+	}
+	self.boot.timers = {
+		shotgun_reload_enter = 0.733,
+		shotgun_reload_exit_empty = 0.85,
+		shotgun_reload_exit_not_empty = 0.55,
+		shotgun_reload_shell = 0.33,
+		shotgun_reload_first_shell_offset = 0.15,
+		unequip = 0.55,
+		equip = 0.85
 	}
 	self.boot.stats_modifiers = nil
 	self.boot.panic_suppression_chance = 0.05
@@ -9386,15 +9394,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	end
 	
-	if self.bs23 then --Reinbeck Auto
+	if self.bs23 then
 		--Hammer 23
 		self.bs23.tactical_reload = 1
 		self.bs23.AMMO_MAX = 40
 		self.bs23.CLIP_AMMO_MAX = 3
-		self.bs23.reload_speed_multiplier = 1.25
-		self.bs23.fire_rate_multiplier = 1.25
-		self.bs23.fire_mode_data.fire_rate = 1.25
+		self.bs23.reload_speed_multiplier = 1.35
+		self.bs23.fire_rate_multiplier = 1.4
 		self.bs23.single.fire_rate = 1.25
+		self.bs23.fire_mode_data.fire_rate = 1.25
 		self.bs23.rays = 9
 		self.bs23.muzzleflash = "effects/particles/shotgun/muzzleflash"
 		self.bs23.kick = self.stat_info.kick_tables.right_kick
@@ -9405,7 +9413,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			recoil = 16,
 			spread_moving = 5,
 			zoom = 1,
-			concealment = 22,
+			concealment = 21,
 			suppression = 4,
 			alert_size = 2,
 			extra_ammo = 101,
@@ -9415,6 +9423,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.bs23.stats_modifiers = nil
 		self.bs23.panic_suppression_chance = 0.05
+		self.bs23.timers = {
+			shotgun_reload_enter = 0.4,
+			shotgun_reload_exit_empty = 1.6,
+			shotgun_reload_exit_not_empty = 0.6,
+			shotgun_reload_shell = 0.8333,
+			shotgun_reload_first_shell_offset = 0.0,
+			unequip = 0.6,
+			equip = 1
+		}
 	end
 
 	--Silent Killer Pack

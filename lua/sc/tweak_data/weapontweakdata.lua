@@ -8412,7 +8412,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.groza_underbarrel.stats_modifiers = {damage = 10}	
 	
-	--Cash Blaster
+	--Cash Blaster, rip
+	--[[
 	self.money.categories = {
 		"flamethrower",
 		"shotgun"
@@ -8459,6 +8460,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.money.stats_modifiers = nil
 	self.money.panic_suppression_chance = 0.05	
+	]]--
 	
 	
 	--Restoration Weapons--

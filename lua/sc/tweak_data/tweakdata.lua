@@ -69,7 +69,7 @@ tweak_data.projectiles.underbarrel_m203_groza.range = 500
 tweak_data.projectiles.rocket_ray_frag.damage = 120
 tweak_data.projectiles.rocket_ray_frag.player_damage = 60
 tweak_data.projectiles.rocket_ray_frag.range = 500
-tweak_data.projectiles.rocket_ray_frag.curve_pow = 1
+tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.1
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 
 --Arbiter--

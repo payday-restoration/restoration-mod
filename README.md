@@ -99,4 +99,10 @@ Marcel Kamisso: For the multicam used on Murky units
 
 RedFlame: Fixed some iffy scripting for Framing Frame D3
 
+Dorpenka: Updated Combat Harness viewmodel
+
+Marshie: Russian localisation
+
+LR_Daring: Chinese localisation
+
 Additional Testers: Derma, ShortonComedyGamer, K4_Kydure, Finale

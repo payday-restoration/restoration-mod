@@ -1,25 +1,18 @@
 {
- "name" : "RestorationMod",
- "description" : "This restores many HUD, Menu, and other functionality that were abandoned before the release of PAYDAY 2.",
- "author" : "Rhynne, DoktorAkcel, SC, & The Restoration Mod Crew",
- "contact" : "Join the official Steam group",
- "version" : "11.1.3",
- "priority" : 46,
- "blt_version" : 2,
- "image" : "res.png",
- "undisablable" : true,
- "disable_safe_mode" : false,
- "pre_hooks" : [
+	"name" : "RestorationMod",
+	"description" : "This restores many HUD, Menu, and other functionality that were abandoned before the release of PAYDAY 2.",
+	"author" : "Rhynne, DoktorAkcel, SC, & The Restoration Mod Crew",
+	"contact" : "Join the official Steam group",
+	"version" : "11.1.5",
+	"priority" : 46,
+	"blt_version" : 2,
+	"image" : "res.png",
+	"undisablable" : true,
+	"disable_safe_mode" : false,
+ 	"pre_hooks" : [
 		{ "hook_id" : "lib/entry", "script_path" : "Corepre.lua" }
     ],
- "libraries" : [
-        {
-            "display_name" : "BeardLib",
-            "identifier" : "beardlib",
-            "optional" : "false"
-        }
-    ],
-		"hooks" : [
+	"hooks" : [
 		{ 	"hook_id" : "lib/tweak_data/weaponfactorytweakdata",
 			"script_path" : "lua/sc/tweak_data/weaponfactorytweakdata.lua"
 		},
@@ -44,39 +37,39 @@
 			"script_path" : "lua/sc/units/player/playertased.lua"
 		},
 		{
-			"hook_id" : "lib/managers/group_ai_states/groupaistatebase"
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebase",
 			"script_path" : "lua/sc/managers/groupaistatebase.lua"
 		},
 		{
-			"hook_id" : "lib/managers/group_ai_states/groupaistatebesiege"
+			"hook_id" : "lib/managers/group_ai_states/groupaistatebesiege",
 			"script_path" : "lua/sc/managers/groupaistatebesiege.lua"
 		},
 		{
-			"hook_id" : "lib/managers/playermanager"
+			"hook_id" : "lib/managers/playermanager",
 			"script_path" : "lua/sc/managers/playermanager.lua"
 		},
 		{
-			"hook_id" : "lib/units/weapons/newraycastweaponbase"
+			"hook_id" : "lib/units/weapons/newraycastweaponbase",
 			"script_path" : "lua/sc/units/weapons/newraycastweaponbase.lua"
 		},
 		{
-			"hook_id" : "lib/units/beings/player/huskplayerdamage"
+			"hook_id" : "lib/units/beings/player/huskplayerdamage",
 			"script_path" : "lua/sc/units/player/huskplayerdamage.lua"
 		},
 		{
-			"hook_id" : "lib/utils/temporarypropertymanager"
+			"hook_id" : "lib/utils/temporarypropertymanager",
 			"script_path" : "lua/sc/utils/temporarypropertymanager.lua"
 		},
 		{
-			"hook_id" : "lib/units/weapons/projectiles/fraggrenade"
+			"hook_id" : "lib/units/weapons/projectiles/fraggrenade",
 			"script_path" : "lua/sc/units/weapons/frag.lua"
 		},
 		{
-			"hook_id" : "lib/units/weapons/sentrygunweapon"
+			"hook_id" : "lib/units/weapons/sentrygunweapon",
 			"script_path" : "lua/sc/units/weapons/sentrygunweapon.lua"
 		},
 		{
-			"hook_id" : "lib/managers/skirmishmanager"
+			"hook_id" : "lib/managers/skirmishmanager",
 			"script_path" : "lua/sc/managers/skirmishmanager.lua"
 		}
 	]

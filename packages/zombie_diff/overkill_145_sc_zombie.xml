@@ -37,7 +37,8 @@
 	<object path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/ene_shield_hvh_1" force="true" />
 	
 	<texture path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
-	
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmet_shotgun_df"  />
+
 	<!-- blue swart -->
 	<unit path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"  load="true"/>
 	<unit path="units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1_husk"  load="true"/>

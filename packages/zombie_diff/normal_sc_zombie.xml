@@ -55,6 +55,7 @@
 	
 
 	<texture path="units/pd2_dlc_hvh/characters/ene_shield_hvh_1/swat_fbi_body_hvh_df"  />
+	<texture path="units/pd2_mod_halloween/characters/shared_textures/helmet_shotgun_df"  />	
 
 	<!--AMCAR-->	
 	<unit path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		

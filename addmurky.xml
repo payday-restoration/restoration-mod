@@ -786,16 +786,4 @@
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_murky_df" />	
 	<texture path="units/pd2_mod_bravo/characters/shared_textures/bravo_murky_df" />	
 	
-	<!--Murky Security, just clones of the normal 'cops' for the sake of scripted spawn access flags. They function the exact same otherwise-->
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45" force="false" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45_husk" force="false" load="true"/>	
-	
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5" force="false" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5_husk" force="false" load="true"/>	
-
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870" force="false" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870_husk" force="false" load="true"/>
-
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull" force="false" load="true"/>
-	<unit path="units/pd2_mod_sharks/characters/ene_murky_security_raging_bull/ene_murky_security_raging_bull_husk" force="false" load="true"/>
 </table>

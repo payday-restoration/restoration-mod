@@ -515,6 +515,15 @@
     <Package id="packages/easy_wish_sc_america" file="packages/america_diff/easy_wish_sc_america.xml"/>
     <Package id="packages/overkill_290_sc_america" file="packages/america_diff/overkill_290_sc_america.xml"/>
     <Package id="packages/sm_wish_sc_america" file="packages/america_diff/sm_wish_sc_america.xml"/>	
+   
+   <!-- ///DIFF PACKAGES MURKYWATER\\\ -->
+    <Package id="packages/normal_sc_murkywater" file="packages/murkywater_diff/normal_sc_murkywater.xml"/>
+    <Package id="packages/hard_sc_murkywater" file="packages/murkywater_diff/hard_sc_murkywater.xml"/>
+    <Package id="packages/overkill_sc_murkywater" file="packages/murkywater_diff/overkill_sc_murkywater.xml"/>
+    <Package id="packages/overkill_145_sc_murkywater" file="packages/murkywater_diff/overkill_145_sc_murkywater.xml"/>
+    <Package id="packages/easy_wish_sc_murkywater" file="packages/murkywater_diff/easy_wish_sc_murkywater.xml"/>
+    <Package id="packages/overkill_290_sc_murkywater" file="packages/murkywater_diff/overkill_290_sc_murkywater.xml"/>
+    <Package id="packages/sm_wish_sc_murkywater" file="packages/murkywater_diff/sm_wish_sc_murkywater.xml"/>	
 
 	<!--///DIFF PACKAGES ZOMBIE\\\-->
     <Package id="packages/normal_sc_zombie" file="packages/zombie_diff/normal_sc_zombie.xml"/>

@@ -240,9 +240,6 @@
 			<!-- glass -->
 			<object name="g_helmet_lod3" enabled="true" />
 			
-			<!-- goggle frame -->
-			<object name="g_helmet_lod4" enabled="true" />
-			
 		</graphic_group>
 	</graphics>
 

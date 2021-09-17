@@ -258,9 +258,15 @@
             </lod_object>
 			<object name="s_head" enabled="true" shadow_caster="true"/>
 		</graphic_group>
-		
-		<object name="g_head_gore1" enabled="false" />
-		<object name="g_head_gore2" enabled="false" />
+
+		<lod_object name="lod_headless1">
+			<object name="g_head_gore1" 		enabled="false"  max_distance="3000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+			</object>
+		</lod_object>		
+		<lod_object name="lod_headless2">
+			<object name="g_head_gore2" 		enabled="false"  max_distance="3000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+			</object>
+		</lod_object>		
 	</graphics>
 
 </dynamic_object>

@@ -1365,7 +1365,7 @@ local murkywater_normal_hard_very_hard_overkill = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga", 
-		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_zeal_tazer/ene_zeal_tazer",
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
@@ -1424,10 +1424,10 @@ local murkywater_mayhem = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249", 
-		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_zeal_tazer/ene_zeal_tazer",
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
-		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
+		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",
 		
@@ -1483,7 +1483,7 @@ local murkywater_deathwish = {
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249", 
-		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_zeal_tazer/ene_zeal_tazer",
+		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow",
@@ -1543,7 +1543,7 @@ local murkywater_omnia = {
 		--specials
 		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
-		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_gitgud/characters/ene_vip_2_assault/ene_vip_2_assault", 
+		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault", 
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield",
@@ -1568,7 +1568,7 @@ local murkywater_omnia = {
 		--OMNIA :)))
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy/ene_zeal_swat_heavy"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_gitgud/characters/ene_vip_2_assault/ene_vip_2_assault",
+		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_dlc_vip/characters/ene_vip_2_assault/ene_vip_2_assault",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3", 
 		
@@ -2086,36 +2086,30 @@ function ElementSpawnEnemyDummy:init(...)
 
 	--Murkywater
 	if ai_type == "murkywater" then
-		--Very Hard	and below		
-		if difficulty_index <= 4 then
+		--Overkill and below		
+		if difficulty_index < 6 then
 			if murkywater_normal_hard_very_hard_overkill[self._values.enemy] then
 				self._values.enemy = murkywater_normal_hard_very_hard_overkill[self._values.enemy]
 			end
 			self._values.enemy = murkywater_normal_hard_very_hard_overkill[self._values.enemy] or self._values.enemy	
-		--Overkill
-		elseif difficulty_index == 5 then
-			if nypd_overkill[self._values.enemy] then
-				self._values.enemy = nypd_overkill[self._values.enemy]
-			end
-			self._values.enemy = nypd_overkill[self._values.enemy] or self._values.enemy
 		--Mayhem	
 		elseif difficulty_index == 6 then
-			if nypd_mayhem[self._values.enemy] then
-				self._values.enemy = nypd_mayhem[self._values.enemy]
+			if murkywater_mayhem[self._values.enemy] then
+				self._values.enemy = murkywater_mayhem[self._values.enemy]
 			end
-			self._values.enemy = nypd_mayhem[self._values.enemy] or self._values.enemy				
+			self._values.enemy = murkywater_mayhem[self._values.enemy] or self._values.enemy				
 		--Deathwish		
 		elseif difficulty_index == 7 then
-			if nypd_deathwish[self._values.enemy] then
-				self._values.enemy = nypd_deathwish[self._values.enemy]
+			if murkywater_deathwish[self._values.enemy] then
+				self._values.enemy = murkywater_deathwish[self._values.enemy]
 			end
-			self._values.enemy = nypd_deathwish[self._values.enemy] or self._values.enemy			
+			self._values.enemy = murkywater_deathwish[self._values.enemy] or self._values.enemy			
 		--deaf sentence XD						
 		elseif difficulty_index == 8 then
-			if nypd_zeal[self._values.enemy] then
-				self._values.enemy = nypd_zeal[self._values.enemy]
+			if murkywater_omnia[self._values.enemy] then
+				self._values.enemy = murkywater_omnia[self._values.enemy]
 			end
-			self._values.enemy = nypd_zeal[self._values.enemy] or self._values.enemy							
+			self._values.enemy = murkywater_omnia[self._values.enemy] or self._values.enemy							
 		end	
 	--Reapers
 	elseif ai_type == "russia" then

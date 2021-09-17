@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_2/ene_acc_bulldozer_stomache_murky_2" orientation_object="rp_ene_acc_bulldozer_stomache" />
+	<diesel materials="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_2/ene_acc_bulldozer_back_murky_2" orientation_object="rp_ene_acc_bulldozer_stomache" />
 	
 	<bodies>
 	 <body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">

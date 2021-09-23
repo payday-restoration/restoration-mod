@@ -4677,7 +4677,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Deagle
 	--DISABLED
-	self.x_deagle.use_data.selection_index = 4
+	self.x_deagle.use_data.selection_index = 5
 	self.x_deagle.has_description = false
 	self.x_deagle.desc_id = "bm_ap_weapon_sc_desc"
 	self.x_deagle.CLIP_AMMO_MAX = 16
@@ -6696,7 +6696,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Disabled--	
 	--Akimbo Grimms
-	self.x_basset.use_data.selection_index = 4			
+	self.x_basset.use_data.selection_index = 5			
 	self.x_basset.tactical_akimbo = true
 	self.x_basset.rays = 9
 	self.x_basset.CLIP_AMMO_MAX = 12
@@ -6780,7 +6780,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Disabled--
 	--Akimbo Tatonka
-	self.x_coal.use_data.selection_index = 4
+	self.x_coal.use_data.selection_index = 5
 	self.x_coal.AMMO_MAX = 200
 	self.x_coal.CLIP_AMMO_MAX = 128
 	self.x_coal.fire_mode_data.fire_rate = 0.08823529411
@@ -6838,7 +6838,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Jacket's Piece
 	--Disabled--
-	self.x_cobray.use_data.selection_index = 4		
+	self.x_cobray.use_data.selection_index = 5		
 	self.x_cobray.timers.reload_not_empty = 2.00
 	self.x_cobray.timers.reload_empty = 2.7
 	self.x_cobray.CLIP_AMMO_MAX = 120
@@ -6868,7 +6868,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo MP40
 	--Disabled--
-	self.x_erma.use_data.selection_index = 4			
+	self.x_erma.use_data.selection_index = 5			
 	self.x_erma.CLIP_AMMO_MAX = 64
 	self.x_erma.AMMO_MAX = 150
 	self.x_erma.fire_mode_data.fire_rate = 0.10909090909
@@ -6895,7 +6895,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo CR805
 	--Disabled--
-	self.x_hajk.use_data.selection_index = 4				
+	self.x_hajk.use_data.selection_index = 5				
 	self.x_hajk.fire_mode_data.fire_rate = 0.075
 	self.x_hajk.single.fire_rate = 0.075
 	self.x_hajk.CLIP_AMMO_MAX = 60
@@ -6923,7 +6923,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Swedish K
 	--Disabled--
-	self.x_m45.use_data.selection_index = 4				
+	self.x_m45.use_data.selection_index = 5				
 	self.x_m45.CLIP_AMMO_MAX = 60
 	self.x_m45.AMMO_MAX = 150
 	self.x_m45.kick = self.stat_info.kick_tables.moderate_kick
@@ -6947,7 +6947,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Chicago typewriter
 	--Disabled--	
-	self.x_m1928.use_data.selection_index = 4
+	self.x_m1928.use_data.selection_index = 5
 	self.x_m1928.fire_mode_data.fire_rate = 0.075
 	self.x_m1928.CAN_TOGGLE_FIREMODE = true
 	self.x_m1928.single.fire_rate = 0.075
@@ -6999,7 +6999,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Spec Ops
 	--Disabled--	
-	self.x_mp7.use_data.selection_index = 4		
+	self.x_mp7.use_data.selection_index = 5		
 	self.x_mp7.CLIP_AMMO_MAX = 40
 	self.x_mp7.AMMO_MAX = 150
 	self.x_mp7.fire_mode_data.fire_rate = 0.06315789473
@@ -7026,7 +7026,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo CMP
 	--Disabled--	
-	self.x_mp9.use_data.selection_index = 4				
+	self.x_mp9.use_data.selection_index = 5				
 	self.x_mp9.CLIP_AMMO_MAX = 40
 	self.x_mp9.single.fire_rate = 0.06666666666
 	self.x_mp9.fire_mode_data.fire_rate = 0.06666666666
@@ -7052,7 +7052,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Para
 	--Disabled--	
-	self.x_olympic.use_data.selection_index = 4			
+	self.x_olympic.use_data.selection_index = 5			
 	self.x_olympic.CLIP_AMMO_MAX = 60
 	self.x_olympic.AMMO_MAX = 180
 	self.x_olympic.fire_mode_data.fire_rate = 0.075
@@ -7078,7 +7078,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Kobus 90
 	--Disabled--	
-	self.x_p90.use_data.selection_index = 4			
+	self.x_p90.use_data.selection_index = 5			
 	self.x_p90.AMMO_MAX = 200
 	self.x_p90.fire_mode_data.fire_rate = 0.06666666666
 	self.x_p90.single.fire_rate = 0.06666666666
@@ -7104,7 +7104,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Kross Vertex
 	--Disabled--	
-	self.x_polymer.use_data.selection_index = 4			
+	self.x_polymer.use_data.selection_index = 5			
 	self.x_polymer.CLIP_AMMO_MAX = 60
 	self.x_polymer.AMMO_MAX = 120
 	self.x_polymer.fire_mode_data.fire_rate = 0.05
@@ -7132,7 +7132,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Jackal
 	--Disabled--	
-	self.x_schakal.use_data.selection_index = 4			
+	self.x_schakal.use_data.selection_index = 5			
 	self.x_schakal.fire_mode_data.fire_rate = 0.1
 	self.x_schakal.single.fire_rate = 0.1
 	self.x_schakal.AMMO_MAX = 120
@@ -7160,7 +7160,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Cobra
 	--Disabled--	
-	self.x_scorpion.use_data.selection_index = 4				
+	self.x_scorpion.use_data.selection_index = 5				
 	self.x_scorpion.CLIP_AMMO_MAX = 40
 	self.x_scorpion.AMMO_MAX = 180
 	self.x_scorpion.fire_mode_data.fire_rate = 0.07058823529
@@ -7186,7 +7186,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Patchett
 	--Disabled--	
-	self.x_sterling.use_data.selection_index = 4				
+	self.x_sterling.use_data.selection_index = 5				
 	self.x_sterling.CLIP_AMMO_MAX = 40
 	self.x_sterling.AMMO_MAX = 150
 	self.x_sterling.fire_mode_data.fire_rate = 0.10909090909
@@ -7212,7 +7212,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Blasster 9mm
 	--Disabled--	
-	self.x_tec9.use_data.selection_index = 4			
+	self.x_tec9.use_data.selection_index = 5			
 	self.x_tec9.AMMO_MAX = 150
 	self.x_tec9.CLIP_AMMO_MAX = 40
 	self.x_tec9.fire_mode_data.fire_rate = 0.06
@@ -7238,7 +7238,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Uzi
 	--Disabled--	
-	self.x_uzi.use_data.selection_index = 4		
+	self.x_uzi.use_data.selection_index = 5		
 	self.x_uzi.AMMO_MAX = 120
 	self.x_uzi.CLIP_AMMO_MAX = 44
 	self.x_uzi.fire_mode_data.fire_rate = 0.086
@@ -7294,7 +7294,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Parabellum
 	--Disabled--	
-	self.x_breech.use_data.selection_index = 4			
+	self.x_breech.use_data.selection_index = 5			
 	self.x_breech.AMMO_MAX = 180
 	self.x_breech.CLIP_AMMO_MAX = 24
 	self.x_breech.fire_mode_data.fire_rate = 0.08571428571
@@ -7320,7 +7320,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--akimbo Broomstick
 	--Disabled--	
-	self.x_c96.use_data.selection_index = 4				
+	self.x_c96.use_data.selection_index = 5				
 	self.x_c96.AMMO_MAX = 120
 	self.x_c96.FIRE_MODE = "single"
 	self.x_c96.sounds.fire = "c96_fire"
@@ -7376,7 +7376,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Leo
 	--Disabled--	
-	self.x_hs2000.use_data.selection_index = 4			
+	self.x_hs2000.use_data.selection_index = 5			
 	self.x_hs2000.CLIP_AMMO_MAX = 28
 	self.x_hs2000.AMMO_MAX = 120
 	self.x_hs2000.FIRE_MODE = "single"
@@ -7405,7 +7405,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Signature .40
 	--Disabled--	
-	self.x_p226.use_data.selection_index = 4				
+	self.x_p226.use_data.selection_index = 5				
 	self.x_p226.AMMO_MAX = 150
 	self.x_p226.CLIP_AMMO_MAX = 28
 	self.x_p226.fire_mode_data.fire_rate = 0.08571428571
@@ -7430,7 +7430,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo White Streak
 	--Disabled--	
-	self.x_pl14.use_data.selection_index = 4		
+	self.x_pl14.use_data.selection_index = 5		
 	self.x_pl14.fire_mode_data.fire_rate = 0.08571428571
 	self.x_pl14.single.fire_rate = 0.08571428571
 	self.x_pl14.CLIP_AMMO_MAX = 20
@@ -7456,7 +7456,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Gruber Kurz
 	--Disabled--	
-	self.x_ppk.use_data.selection_index = 4				
+	self.x_ppk.use_data.selection_index = 5				
 	self.x_ppk.AMMO_MAX = 180
 	self.x_ppk.CLIP_AMMO_MAX = 24
 	self.x_ppk.fire_mode_data.fire_rate = 0.08571428571
@@ -7512,7 +7512,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Baby Deagle
 	--Disabled--	
-	self.x_sparrow.use_data.selection_index = 4			
+	self.x_sparrow.use_data.selection_index = 5			
 	self.x_sparrow.AMMO_MAX = 150
 	self.x_sparrow.kick = self.stat_info.kick_tables.even_recoil
 	self.x_sparrow.fire_mode_data.fire_rate = 0.08571428571
@@ -7569,7 +7569,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Goliath 12g
 	--Disabled--	
-	self.x_rota.use_data.selection_index = 4			
+	self.x_rota.use_data.selection_index = 5			
 	self.x_rota.upgrade_blocks = nil
 	self.x_rota.AMMO_MAX = 80
 	self.x_rota.rays = 9 * 1 * 1 * 1 * 1 * 1 * 1
@@ -7705,7 +7705,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Signature SMG
 	--Disabled--	
-	self.x_shepheard.use_data.selection_index = 4
+	self.x_shepheard.use_data.selection_index = 5
 	self.x_shepheard.CLIP_AMMO_MAX = 60
 	self.x_shepheard.fire_mode_data.fire_rate = 0.07058823529
 	self.x_shepheard.single.fire_rate = 0.07058823529
@@ -7865,7 +7865,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo M13
 	--Disabled--	
-	self.x_legacy.use_data.selection_index = 4		
+	self.x_legacy.use_data.selection_index = 5		
 	self.x_legacy.fire_mode_data.fire_rate = 0.08571428571
 	self.x_legacy.single.fire_rate = 0.08571428571
 	self.x_legacy.CLIP_AMMO_MAX = 24
@@ -7916,7 +7916,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.beer.stats_modifiers = nil
 	self.beer.panic_suppression_chance = 0.05
 	--Disabled
-	self.x_beer.use_data.selection_index = 4
+	self.x_beer.use_data.selection_index = 5
 	self.x_beer.supported = true
 
 	--CZ 75
@@ -8244,7 +8244,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m1911.swap_speed_multiplier = 0.9
 
 	--Disable Akimbo Crosskill Chunky
-	self.x_m1911.use_data.selection_index = 4
+	self.x_m1911.use_data.selection_index = 5
 	
 	--Mosconi 12G Tactical
 	self.m590.tactical_reload = 1	
@@ -8297,11 +8297,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.vityaz.panic_suppression_chance = 0.05
 
 	--Disable Akimbo AK Gen 21 Tactical
-	self.x_vityaz.use_data.selection_index = 4
+	self.x_vityaz.use_data.selection_index = 5
 	
 	--Akimbo Miyaka 10
 	--Disabled--	
-	self.x_pm9.use_data.selection_index = 4	
+	self.x_pm9.use_data.selection_index = 5	
 
 	--Miyaka 10
 	--Moved to Primary slot
@@ -8845,7 +8845,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.czevo.stats_modifiers = nil
 		self.czevo.panic_suppression_chance = 0.05
-		self.x_czevo.use_data.selection_index = 4 
+		self.x_czevo.use_data.selection_index = 5 
 	end	
 		
 	if self.winchester1894 then --Pawcio's Winchester 1894
@@ -9033,7 +9033,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.lebman.timers.reload_empty = 2.5
 		self.lebman.timers.reload_not_empty = 1.8
 		--Disabled
-		self.x_lebman.use_data.selection_index = 4
+		self.x_lebman.use_data.selection_index = 5
 		self.x_lebman.supported = true
 	end
 
@@ -9181,22 +9181,22 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	end		
 
 	if self.x_car9 then --disabled vmp akimbos
-		self.x_car9.use_data.selection_index = 4
+		self.x_car9.use_data.selection_index = 5
 		self.x_car9.supported = true
 	end	
 
 	if self.x_smolak then --disabled vmp akimbos
-		self.x_smolak.use_data.selection_index = 4
+		self.x_smolak.use_data.selection_index = 5
 		self.x_smolak.supported = true
 	end	
 
 	if self.x_ak5s then --disabled vmp akimbos
-		self.x_ak5s.use_data.selection_index = 4
+		self.x_ak5s.use_data.selection_index = 5
 		self.x_ak5s.supported = true
 	end	
 
 	if self.x_cold then --disabled vmp akimbos
-		self.x_cold.use_data.selection_index = 4
+		self.x_cold.use_data.selection_index = 5
 		self.x_cold.supported = true
 	end		
 

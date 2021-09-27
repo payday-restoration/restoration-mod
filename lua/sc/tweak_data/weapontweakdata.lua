@@ -8464,6 +8464,31 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.money.panic_suppression_chance = 0.05	
 	]]--
 	
+	--KS12 Urban
+	self.shak12.CLIP_AMMO_MAX = 20
+	self.shak12.fire_mode_data.fire_rate = 0.08
+	self.shak12.auto.fire_rate = 0.08
+	self.shak12.kick = self.stat_info.kick_tables.moderate_kick
+	self.shak12.AMMO_MAX = 60
+	self.shak12.tactical_reload = 1
+	self.shak12.supported = true
+	self.shak12.stats = {
+		damage = 60,
+		spread = 20,
+		recoil = 14,
+		spread_moving = 5,
+		zoom = 1,
+		concealment = 21,
+		suppression = 5,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.shak12.stats_modifiers = nil
+	self.shak12.panic_suppression_chance = 0.05	
+	
 	--Model 54--
 	self.type54.CLIP_AMMO_MAX = 9
 	self.type54.AMMO_MAX = 60
@@ -8492,15 +8517,43 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.type54.stats_modifiers = nil
 	self.type54.panic_suppression_chance = 0.05	
 	
+	--Akimbo Model 54--
+	self.x_type54.CLIP_AMMO_MAX = 9
+	self.x_type54.AMMO_MAX = 120
+	self.x_type54.tactical_reload = 1
+	self.x_type54.FIRE_MODE = "single"
+	self.x_type54.fire_mode_data = {}
+	self.x_type54.fire_mode_data.fire_rate = 0.08571428571
+	self.x_type54.single = {}
+	self.x_type54.single.fire_rate = 0.08571428571
+	self.x_type54.kick = self.stat_info.kick_tables.left_recoil
+	self.x_type54.supported = true
+	self.x_type54.stats = {
+		damage = 30,
+		spread = 16,
+		recoil = 12,
+		spread_moving = 7,
+		zoom = 1,
+		concealment = 28,
+		suppression = 7,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 4,
+		reload = 20
+	}
+	self.x_type54.stats_modifiers = nil
+	self.x_type54.panic_suppression_chance = 0.05		
+	
 	--Model 54 Underbarrel
 	self.type54_underbarrel.rays = 9
 	self.type54_underbarrel.muzzleflash = "effects/particles/shotgun/muzzleflash"
-	self.type54_underbarrel.AMMO_MAX = 40
+	self.type54_underbarrel.AMMO_MAX = 20
+	self.type54_underbarrel.CLIP_AMMO_MAX = 1
 	self.type54_underbarrel.fire_mode_data = {}
 	self.type54_underbarrel.fire_mode_data.fire_rate = 0.06
 	self.type54_underbarrel.single = {}
 	self.type54_underbarrel.single.fire_rate = 0.06	
-	--@SC, double barrel shotguns kicking mostly side to side instead of upwards felt really fucking bad to use. Using huntsman values scaled to match the overall recoil from new_m4.
 	self.type54_underbarrel.kick = self.stat_info.kick_tables.vertical_kick
 	self.type54_underbarrel.supported = true
 	self.type54_underbarrel.stats = {
@@ -8518,10 +8571,35 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.type54_underbarrel.stats_modifiers = nil
-	self.type54_underbarrel.timers.reload_not_empty = 2.3
-	self.type54_underbarrel.timers.reload_empty = 2.3
-	self.type54_underbarrel.reload_speed_multiplier = 1.2
 	self.type54_underbarrel.panic_suppression_chance = 0.05	
+	
+	--Akimbo Model 54 Underbarrel
+	self.x_type54_underbarrel.rays = 9
+	self.x_type54_underbarrel.muzzleflash = "effects/particles/shotgun/muzzleflash"
+	self.x_type54_underbarrel.AMMO_MAX = 40
+	self.x_type54_underbarrel.CLIP_AMMO_MAX = 2
+	self.x_type54_underbarrel.fire_mode_data = {}
+	self.x_type54_underbarrel.fire_mode_data.fire_rate = 0.06
+	self.x_type54_underbarrel.single = {}
+	self.x_type54_underbarrel.single.fire_rate = 0.06	
+	self.x_type54_underbarrel.kick = self.stat_info.kick_tables.vertical_kick
+	self.x_type54_underbarrel.supported = true
+	self.x_type54_underbarrel.stats = {
+		damage = 90,
+		spread = 12,
+		recoil = 13,
+		spread_moving = 6,
+		zoom = 1,
+		concealment = 21,
+		suppression = 3,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.x_type54_underbarrel.stats_modifiers = nil
+	self.x_type54_underbarrel.panic_suppression_chance = 0.05		
 	
 	--Restoration Weapons--
 	

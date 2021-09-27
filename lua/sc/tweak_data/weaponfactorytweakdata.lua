@@ -573,6 +573,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 	}
 	self.parts.wpn_fps_upg_o_tf90.perks = {"scope"}	
 	self.parts.wpn_fps_upg_o_tf90.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)
+
+	--Owl Glass
+	self.parts.wpn_fps_upg_o_poe.pcs = {
+		10, 
+		20,
+		30, 
+		40	
+	}
+	self.parts.wpn_fps_upg_o_poe.has_description = true
+	self.parts.wpn_fps_upg_o_poe.desc_id = "bm_wp_upg_o_aim"		
+	self.parts.wpn_fps_upg_o_poe.supported = true		
+	self.parts.wpn_fps_upg_o_poe.stats = {
+		value = 8,
+		zoom = 10
+	}
+	self.parts.wpn_fps_upg_o_poe.perks = {"scope"}
+	self.parts.wpn_fps_upg_o_poe.stance_mod = deep_clone(self.parts.wpn_fps_upg_o_specter.stance_mod)	
 	
 	--Holographic Sight
 	self.parts.wpn_fps_upg_o_eotech.pcs = {
@@ -22065,6 +22082,175 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_groza", "resmod_groza", function(s
 		reload = 3
 	}	
 		
+
+end)
+
+--KS12 Urban 
+Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function(self)
+
+	--Reinforced Frame (Formerly DMR kit)
+	self.parts.wpn_fps_ass_shak12_body_vks.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_ass_shak12_body_vks.supported = true
+	self.parts.wpn_fps_ass_shak12_body_vks.stats = {
+		value = 2,
+		spread = -1,
+		recoil = 1
+	}
+	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = nil
+	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
+	
+	--Carry Handle Sight
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.supported = true
+	self.parts.wpn_fps_ass_shak12_o_carry_dummy.stats = {
+		value = 0
+	}	
+	
+	--Long Silencer
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.supported = true
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.stats = {
+		value = 5,
+		suppression = 12,
+		alert_size = -1,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
+	}
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.perks = {"silencer"}
+
+	--A Burst Muzzle
+	self.parts.wpn_fps_ass_shak12_ns_muzzle.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_ass_shak12_ns_muzzle.supported = true
+	self.parts.wpn_fps_ass_shak12_ns_muzzle.stats = {
+		value = 4,
+		suppression = -2,
+		recoil = 1,
+		spread = -1
+	}	
+
+end)
+
+--Model 54
+Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function(self)
+
+	--Long Barrel
+	self.parts.wpn_fps_pis_type54_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_type54_b_long.supported = true
+	self.parts.wpn_fps_pis_type54_b_long.stats = {
+		value = 2,
+		spread = 1,
+		concealment = -1,
+		recoil = -1
+	}	
+	
+	--Extended magazine
+	self.parts.wpn_fps_pis_type54_m_ext.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_type54_m_ext.supported = true
+	self.parts.wpn_fps_pis_type54_m_ext.stats = {
+		value = 2,
+		extra_ammo = 5,
+		reload = -3,
+		spread = -1,
+		concealment = -2
+	}		
+	
+	--Underbarrel Shotgun
+	self.parts.wpn_fps_pis_type54_underbarrel.pcs = {}
+	self.parts.wpn_fps_pis_type54_underbarrel.supported = true
+	self.parts.wpn_fps_pis_type54_underbarrel.stats = {
+		value = 8,
+		total_ammo_mod = -33, 
+		concealment = -4
+	}		
+	
+	--Overrides for Glock comps
+	self.wpn_fps_pis_type54.override.wpn_fps_pis_g18c_co_comp_2 = {
+		parent = "barrel", 
+		a_obj = "a_ns"
+	}
+	self.wpn_fps_pis_type54.override.wpn_fps_pis_g18c_co_1 = {
+		parent = "barrel", 
+		a_obj = "a_ns"
+	}
+		
+	table.insert(self.wpn_fps_pis_type54.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_type54_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_type54.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_type54_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
+	
+	self.wpn_fps_pis_type54_npc.uses_parts = deep_clone(self.wpn_fps_pis_type54.uses_parts)		
+
+end)
+
+--Akimbo Model 54
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_type54", "resmod_x_type54", function(self)
+
+	--Underbarrel Shotgun
+	self.parts.wpn_fps_pis_x_type54_underbarrel.pcs = {}
+	self.parts.wpn_fps_pis_x_type54_underbarrel.supported = true
+	self.parts.wpn_fps_pis_x_type54_underbarrel.stats = {
+		value = 8,
+		total_ammo_mod = -33, 
+		concealment = -4
+	}	
+
+	--Overrides for Glock comps
+	self.wpn_fps_pis_x_type54.override.wpn_fps_pis_g18c_co_comp_2 = {
+		parent = "barrel", 
+		a_obj = "a_ns"
+	}
+	self.wpn_fps_pis_x_type54.override.wpn_fps_pis_g18c_co_1 = {
+		parent = "barrel", 
+		a_obj = "a_ns"
+	}
+	self.wpn_fps_pis_x_type54.override.wpn_fps_pis_type54_m_ext = {
+		stats = {
+			value = 2,
+			extra_ammo = 10,
+			reload = -3,
+			spread = -1,
+			concealment = -2
+		},
+		supported = true
+	}	
+		
+	table.insert(self.wpn_fps_pis_x_type54.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_x_type54_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_x_type54.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_x_type54_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
+	
+	self.wpn_fps_pis_x_type54_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_type54.uses_parts)	
 
 end)
 

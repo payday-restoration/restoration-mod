@@ -941,13 +941,18 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
-	self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, charge_lerp_value))
 	local sphere_cast_radius = 20
 	local col_ray = nil
 	--Melee weapon tweakdata.
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 	--Holds info for certain melee gimmicks (IE: Taser Shock, Psycho Knife Panic, ect)
 	local special_weapon = melee_weapon.special_weapon
+	
+	-- If true, disables the shaker when a melee weapon connects
+	if not melee_weapon.no_hit_shaker then
+		self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, charge_lerp_value))
+	end
+	
 	if melee_hit_ray then
 		col_ray = melee_hit_ray ~= true and melee_hit_ray or nil
 	else

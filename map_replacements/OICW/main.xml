@@ -188,5 +188,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/outline/osipr"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/weapons/osipr_gl"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_osipr_m_gl_incendiary"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_fps_ass_osipr_m_gl_electric"/>
 	</AddFiles>
 </mod>

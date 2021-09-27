@@ -22,7 +22,7 @@ function BlackMarketManager:fire_rate_multiplier(name, categories, silencer, det
 	local tweak_data = tweak_data.weapon
 	local weapon = tweak_data[name]
 	local factory = tweak_data.factory[factory_id]
-	local default_blueprint = factory.default_blueprint			
+	local default_blueprint = factory and factory.default_blueprint			
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(factory_id, blueprint or default_blueprint)
 	local multiplier = 1
 	local rof_multiplier = 1
@@ -82,8 +82,8 @@ function BlackMarketManager:_calculate_weapon_concealment(weapon)
 	local factory_id = weapon.factory_id
 	local weapon_id = weapon.weapon_id or managers.weapon_factory:get_weapon_id_by_factory_id(factory_id)
 	local blueprint = weapon.blueprint
-	local base_stats = tweak_data.weapon[weapon_id].stats
-	local modifiers_stats = tweak_data.weapon[weapon_id].stats_modifiers
+	local base_stats = weapon_id and tweak_data.weapon[weapon_id].stats
+	local modifiers_stats = weapon_id and tweak_data.weapon[weapon_id].stats_modifiers
 	local bonus = 0
 
 	if not base_stats or not base_stats.concealment then
@@ -105,7 +105,7 @@ function BlackMarketManager:get_silencer_concealment_modifiers(weapon)
 	local factory_id = weapon.factory_id
 	local blueprint = weapon.blueprint
 	local weapon_id = weapon.weapon_id or managers.weapon_factory:get_weapon_id_by_factory_id(factory_id)
-	local base_stats = tweak_data.weapon[weapon_id].stats
+	local base_stats = weapon_id and tweak_data.weapon[weapon_id].stats
 	local bonus = 0
 
 	if not base_stats or not base_stats.concealment then

@@ -8518,7 +8518,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.type54.panic_suppression_chance = 0.05	
 	
 	--Akimbo Model 54--
-	self.x_type54.CLIP_AMMO_MAX = 9
+	self.x_type54.CLIP_AMMO_MAX = 18
 	self.x_type54.AMMO_MAX = 120
 	self.x_type54.tactical_reload = 1
 	self.x_type54.FIRE_MODE = "single"
@@ -8572,6 +8572,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.type54_underbarrel.stats_modifiers = nil
 	self.type54_underbarrel.panic_suppression_chance = 0.05	
+	self.type54_underbarrel.ignore_crit_damage = false
+	self.type54_underbarrel.ignore_damage_multipliers = false
+	self.type54_underbarrel.ignore_damage_upgrades = false	
 	
 	--Akimbo Model 54 Underbarrel
 	self.x_type54_underbarrel.rays = 9
@@ -8599,7 +8602,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		reload = 20
 	}
 	self.x_type54_underbarrel.stats_modifiers = nil
-	self.x_type54_underbarrel.panic_suppression_chance = 0.05		
+	self.x_type54_underbarrel.panic_suppression_chance = 0.05	
+	self.x_type54_underbarrel.ignore_crit_damage = false
+	self.x_type54_underbarrel.ignore_damage_multipliers = false
+	self.x_type54_underbarrel.ignore_damage_upgrades = false		
 	
 	--Restoration Weapons--
 	

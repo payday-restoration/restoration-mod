@@ -41,3 +41,9 @@ function CoreEnvironmentControllerManager:set_post_composite(t, dt)
         self._vp:vp():set_post_processor_effect("World", Idstring("color_grading_post"), Idstring(color_grading))
 	end
 end
+
+local init_orig = CoreEnvironmentControllerManager.init
+function CoreEnvironmentControllerManager:set_chromatic_enabled(enabled)
+	self._chromatic_enabled = enabled
+
+end

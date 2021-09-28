@@ -20,6 +20,8 @@ function EventJobsTweakData:init(tweak_data)
 end
 
 function EventJobsTweakData:_init_pda8_challenges(tweak_data)
+	--Commenting out for now, until we figure this BS out
+	--[[
 	table.insert(self.challenges, {
 		reward_id = "menu_pda8_1_reward",
 		name_id = "menu_pda8_1",
@@ -45,6 +47,7 @@ function EventJobsTweakData:_init_pda8_challenges(tweak_data)
 			}
 		}
 	})
+	]]--
 	table.insert(self.challenges, {
 		reward_id = "menu_pda8_2_reward",
 		locked_id = "bm_menu_locked_pda8_2",

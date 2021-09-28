@@ -224,7 +224,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			},
 		l40 = {
 				name_id = "lvl_40",
-				upgrades = {}
+				upgrades = {
+					"shak12"
+				}
 			},
 		l42 = {
 				name_id = "weapons",

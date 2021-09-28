@@ -1,0 +1,8 @@
+<mod name="nin_res" author="Zdann" min_lib_ver="3.38">
+	<AddFiles directory="assets">
+		<animation path="anims/fps/melee/nin_res/nin_attack_var_miss" load="true"/>
+		<animation path="anims/fps/melee/nin_res/nin_attack_var1" load="true"/>
+		<animation path="anims/fps/melee/nin_res/nin_charge" load="true"/>
+		<animation path="anims/fps/melee/nin_res/nin_start" load="true"/>
+	</AddFiles>
+</mod>

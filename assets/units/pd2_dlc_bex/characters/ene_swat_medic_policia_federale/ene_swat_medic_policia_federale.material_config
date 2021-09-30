@@ -37,11 +37,6 @@
         <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="4"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" mip="4"/>
     </material>
-	
-    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_frame" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/shared_textures/helmets_city_atlas_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/helmets_city_atlas_df"/>
-    </material>
 
     <material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE" version="2">
         <variable value="2 1 0.6" type="vector3" name="fresnel_settings"/>

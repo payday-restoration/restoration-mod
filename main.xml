@@ -515,6 +515,15 @@
     <Package id="packages/easy_wish_sc_america" file="packages/america_diff/easy_wish_sc_america.xml"/>
     <Package id="packages/overkill_290_sc_america" file="packages/america_diff/overkill_290_sc_america.xml"/>
     <Package id="packages/sm_wish_sc_america" file="packages/america_diff/sm_wish_sc_america.xml"/>	
+
+    <!-- ///DIFF PACKAGES FEDERALES\\\ -->
+    <Package id="packages/normal_sc_federales" file="packages/federales_diff/normal_sc_federales.xml"/>
+    <Package id="packages/hard_sc_federales" file="packages/federales_diff/hard_sc_federales.xml"/>
+    <Package id="packages/overkill_sc_federales" file="packages/federales_diff/overkill_sc_federales.xml"/>
+    <Package id="packages/overkill_145_sc_federales" file="packages/federales_diff/overkill_145_sc_federales.xml"/>
+    <Package id="packages/easy_wish_sc_federales" file="packages/federales_diff/easy_wish_sc_federales.xml"/>
+    <Package id="packages/overkill_290_sc_federales" file="packages/federales_diff/overkill_290_sc_federales.xml"/>
+    <Package id="packages/sm_wish_sc_federales" file="packages/federales_diff/sm_wish_sc_federales.xml"/>	
    
    <!-- ///DIFF PACKAGES MURKYWATER\\\ -->
     <Package id="packages/normal_sc_murkywater" file="packages/murkywater_diff/normal_sc_murkywater.xml"/>

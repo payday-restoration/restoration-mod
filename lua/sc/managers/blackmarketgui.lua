@@ -158,7 +158,8 @@ function BlackMarketGui:populate_mods(data)
 				})
 			end
 			local is_gadget = false
-			if not new_data.conflict and new_data.unlocked and not is_gadget and not new_data.dlc_locked then
+			local show_stats = not new_data.conflict and new_data.unlocked and not is_gadget and not new_data.dlc_locked and tweak_data.weapon.factory.parts[new_data.name].type ~= "charm"
+			if show_stats then
 				new_data.comparision_data = managers.blackmarket:get_weapon_stats_with_mod(new_data.category, new_data.slot, mod_name)
 			end
 			if managers.blackmarket:got_new_drop(mod_global_value, "weapon_mods", mod_name) then
@@ -3949,10 +3950,20 @@ function BlackMarketGui:update_info_text()
 				updated_texts[4].resource_color = tweak_data.lootdrop.global_values[slot_data.global_value].color
 				updated_texts[4].below_stats = true
 			end
+			
+			local weapon_id = slot_data.name
+			local weapon_tweak = weapon_id and tweak_data.weapon[weapon_id]
+
+			if weapon_tweak.has_description then
+				if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
+					updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+				else
+					updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+				end
+				updated_texts[4].below_stats = true
+			end			
 
 			if slot_data.not_moddable then
-				local weapon_id = slot_data.name
-				local weapon_tweak = weapon_id and tweak_data.weapon[weapon_id]
 				local movement_penalty = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 
 				if movement_penalty < 1 then
@@ -3962,14 +3973,6 @@ function BlackMarketGui:update_info_text()
 					})
 				end
 
-				if weapon_tweak.has_description then
-					if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
-						updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
-					else
-						updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
-					end
-					updated_texts[4].below_stats = true
-				end
 			end
 
 			updated_texts[5].below_stats = true

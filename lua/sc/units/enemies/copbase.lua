@@ -17,6 +17,8 @@ end)
 function CopBase:random_mat_seq_initialization()
     local unit_name = self._unit:name()
  	local faction = tweak_data.levels:get_ai_group_type()
+	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
        	
 	--BEAT COP FACE STUFF STARTS HERE	
 	local cop1_4 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
@@ -49,6 +51,19 @@ function CopBase:random_mat_seq_initialization()
 	
 	local sniper_gensec = unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3") 
 	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3")
+
+	local switch_mat_config_federales_sniper = unit_name == Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper")
+	or unit_name == Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper_husk")
+
+	if faction == "federales" and difficulty_index == 6 then
+		if self._unit:damage() and self._unit:damage():has_sequence("swap_federales_to_fbi") and switch_mat_config_federales_sniper then
+			self._unit:damage():run_sequence_simple("swap_federales_to_fbi")
+		elseif faction == "federales" and difficulty_index == 7 then
+			if self._unit:damage() and self._unit:damage():has_sequence("swap_federales_to_city") and switch_mat_config_federales_sniper then
+				self._unit:damage():run_sequence_simple("swap_federales_to_city")
+			end
+		end	
+	end
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_lapd") and sniper_fbi and faction == "lapd" then
 		self._unit:damage():run_sequence_simple("switch_sniper_to_lapd")

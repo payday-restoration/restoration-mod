@@ -1,7 +1,7 @@
 local old_update_stats_values = ShotgunBase._update_stats_values
 
-function ShotgunBase:_update_stats_values()
-	ShotgunBase.super._update_stats_values(self)
+function ShotgunBase:_update_stats_values(disallow_replenish, ammo_data)
+	ShotgunBase.super._update_stats_values(self, disallow_replenish, ammo_data)
 	self:setup_default()
 
 	self._is_real_shotgun = false --Stop the HX25 from mooching off of shotgun skills.

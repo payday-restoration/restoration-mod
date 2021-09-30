@@ -1276,6 +1276,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_b_sniper"] = "Macro Barrel",
 		["bm_wp_g3_b_short"] = "Micro Barrel",
 		["bm_wp_g3_m_psg"] = "Präzision Magazine",
+		["bm_wp_shak12_body_vks"] = "Reinforced Frame",
 
 		["bm_w_beck_desc"] = "The criminal underworld's most popular shotgun has returned from its grave to reclaim its rightful place in the shotgun hierarchy. Originally used in the 2011 Crimewave, this shotgun has been proven extremely reliable in just about any close range situation.",
 

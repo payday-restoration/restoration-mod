@@ -121,6 +121,10 @@
 	
 	<!--Murky Cop Textures-->
 	<texture path="units/pd2_mod_sharks/characters/shared_textures/murkycop_df" />	
+
+	<!--OMNIA Sniper-->
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper" force="false" load="true"/>
+	<unit path="units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper_husk" force="false" load="true"/>			
 	<!-- feds cops n scripted kooks end -->
 
 	<unit_mat path="units/pd2_mod_omnia/characters/ene_acc_omnia_crew_cap/ene_acc_omnia_crew_cap" force="false" load="true"/>

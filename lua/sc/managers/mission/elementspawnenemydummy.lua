@@ -1526,8 +1526,8 @@ local murkywater_omnia = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook",
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield",
-		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_omnia/characters/ene_murky_sniper/ene_murky_sniper",	
-		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_omnia/characters/ene_murky_sniper/ene_murky_sniper",
+		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",	
+		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city",

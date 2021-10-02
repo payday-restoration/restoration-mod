@@ -747,55 +747,49 @@ Hooks:PostHook(BlackMarketTweakData, "_init_player_styles", "ResPlayerStyles", f
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit/res_acc_sunny_suit",
 		characters = {}
 	}
-	set_characters_data("suit_sunny", characters_male_big, {
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
-	})
-	set_characters_data("suit_sunny", characters_female, {
-		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female"
-	})
 	set_characters_data("suit_sunny", characters_female_big, {
 		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female",
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
 	})
-	self.player_styles.suit_sunny.characters.dragon = {
-		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02"
-	}
-	self.player_styles.suit_sunny.characters.myh = {
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
-	}
-	self.player_styles.suit_sunny.characters.jowi = {
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
-	}
-	self.player_styles.suit_sunny.characters.chico = {
-		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_rust/res_acc_sunny_suit_rust"
-	}
-	self.player_styles.suit_sunny.characters.chains = {
-		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_chains/res_acc_sunny_suit_chains"
-	}
-	self.player_styles.suit_sunny.characters.max = {
-		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_sangres/res_acc_sunny_suit_sangres"
-	}
-	self.player_styles.suit_sunny.characters.bodhi = {
-		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_bodhi/res_acc_sunny_suit_bodhi"
-	}
-	self.player_styles.suit_sunny.characters.jacket = {
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_jacket/res_acc_sunny_suit_jacket"
-	}
 	self.player_styles.suit_sunny.characters.ecp_male = {
 		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_big/res_acc_sunny_suit_big"
 	}
+	
+	set_characters_data("suit_sunny", characters_female, {
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female",
+		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female"
+	})
+	
 	self.player_styles.suit_sunny.characters.sydney = {
 		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_sydney",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_sydney/res_acc_sunny_suit_sydney"
+		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female",		
+		third_material = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/sydney/res_acc_sunny_suit_female_sydney"
 	}
 	self.player_styles.suit_sunny.characters.joy = {
 		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_female_joy",
-		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_joy/res_acc_sunny_suit_joy"
+		third_unit = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female",				
+		third_material = "units/pd2_mod_suits/characters/res_acc_sunny_suit_female/joy/res_acc_sunny_suit_female_joy"
+	}
+	
+	self.player_styles.suit_sunny.characters.dragon = {
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02",
+		third_material = "units/pd2_mod_suits/characters/res_acc_sunny_suit/dragon/res_acc_sunny_suit_dragon"		
+	}	
+	self.player_styles.suit_sunny.characters.chico = {
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_02",
+		third_material = "units/pd2_mod_suits/characters/res_acc_sunny_suit/dragon/res_acc_sunny_suit_dragon"		
+	}	
+	self.player_styles.suit_sunny.characters.chains = {
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_chains",
+		third_material = "units/pd2_mod_suits/characters/res_acc_sunny_suit/chains/res_acc_sunny_suit_chains",	
+	}
+	self.player_styles.suit_sunny.characters.max = {
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_sangres",
+		third_material = "units/pd2_mod_suits/characters/res_acc_sunny_suit/sangres/res_acc_sunny_suit_sangres"
+	}
+	self.player_styles.suit_sunny.characters.bodhi = {
+		unit = "units/pd2_dlc_sus/characters/sus_acc_slaughterhouse/sus_acc_fps_slaughterhouse/sus_acc_fps_slaughterhouse_bodhi",
+		third_material = "units/pd2_mod_suits/characters/res_acc_sunny_suit/bodhi/res_acc_sunny_suit_bodhi",	
 	}
 
 	--Resmod Prison Suit

@@ -2,8 +2,7 @@
 <dynamic_object>
 	<diesel materials="units/pd2_mod_suits/characters/res_acc_sunny_suit_female/res_acc_sunny_suit_female" orientation_object="root_point" />
 	<graphics>
-		<graphic_group name="character" enabled="true" culling_object="g_body">
-			<object name="g_body" enabled="true"/>
-		</graphic_group>
+		<object name="g_body" enabled="true" />
+		<object name="g_arms" enabled="true" />
 	</graphics>
 </dynamic_object>

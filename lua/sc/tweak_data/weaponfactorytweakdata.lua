@@ -22254,6 +22254,73 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_type54", "resmod_x_type54", func
 
 end)
 
+--RUS-12 Angry Tiger
+Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(self)
+
+	--Compensated Barrel
+	self.parts.wpn_fps_pis_rsh12_b_comp.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_rsh12_b_comp.supported = true
+	self.parts.wpn_fps_pis_rsh12_b_comp.stats = {
+		value = 5,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
+	}
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.parts.wpn_fps_pis_rsh12_b_comp.forbids, "wpn_fps_pis_g18c_co_comp_2")
+	
+	--Short Barrel
+	self.parts.wpn_fps_pis_rsh12_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_rsh12_b_short.supported = true
+	self.parts.wpn_fps_pis_rsh12_b_short.stats = {
+		value = 3,
+		spread = -1,
+		concealment = 1
+	}	
+	
+	--Wood Grip
+	self.parts.wpn_fps_pis_rsh12_g_wood.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_rsh12_g_wood.supported = true
+	self.parts.wpn_fps_pis_rsh12_g_wood.stats = {
+		value = 3,
+		spread = -1,
+		recoil = 1
+	}	
+	
+	--Overrides for Glock comps
+	self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_comp_2 = {
+		parent = "barrel", 
+		a_obj = "a_ns"
+	}
+	self.wpn_fps_pis_rsh12.override.wpn_fps_pis_g18c_co_1 = {
+		parent = "barrel", 
+		a_obj = "a_ns"
+	}	
+	
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_rsh12_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_rsh12_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
+	
+	self.wpn_fps_pis_rsh12_npc.uses_parts = deep_clone(self.wpn_fps_pis_rsh12.uses_parts)		
+
+end)
+
 --Resmod Custom Content					
 Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(self)
 	self.parts.wpn_fps_upg_i_slower_rof = {

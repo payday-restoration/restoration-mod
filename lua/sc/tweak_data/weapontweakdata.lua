@@ -8605,7 +8605,37 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_type54_underbarrel.panic_suppression_chance = 0.05	
 	self.x_type54_underbarrel.ignore_crit_damage = false
 	self.x_type54_underbarrel.ignore_damage_multipliers = false
-	self.x_type54_underbarrel.ignore_damage_upgrades = false		
+	self.x_type54_underbarrel.ignore_damage_upgrades = false	
+
+	--RUS-12 Angry Tiger
+	self.rsh12.fire_mode_data.fire_rate = 0.15
+	self.rsh12.single.fire_rate = 0.15
+	self.rsh12.AMMO_MAX = 40
+	self.rsh12.CLIP_AMMO_MAX = 5
+	self.rsh12.use_data.selection_index = 2
+	self.rsh12.kick = self.stat_info.kick_tables.vertical_kick
+	self.rsh12.supported = true
+	self.rsh12.stats = {
+		damage = 90,
+		spread = 16,
+		recoil = 7,
+		spread_moving = 9,
+		zoom = 1,
+		concealment = 21,
+		suppression = 4,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.rsh12.stats_modifiers = nil
+	self.rsh12.panic_suppression_chance = 0.05
+	self.rsh12.can_shoot_through_enemy = true
+	self.rsh12.can_shoot_through_shield = true
+	self.rsh12.can_shoot_through_wall = true
+	self.rsh12.armor_piercing_chance = 1
+	self.rsh12.swap_speed_multiplier = 0.6
 	
 	--Restoration Weapons--
 	

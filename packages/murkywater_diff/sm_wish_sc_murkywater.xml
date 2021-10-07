@@ -192,14 +192,6 @@
 	<material_config path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_contour" force="false"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk" force="false" load="true"/>	
 
-	<!--OMNIA heavy helmet-->
-	<object path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
-	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
-	<model path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>
-	<unit path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false" load="true"/>
-	<material_config path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>			
-	<cooked_physics path="units/pd2_mod_omnia/characters/ene_acc_omnia_heavy_helmet/ene_acc_omnia_heavy_helmet" force="false"/>		
-
 	<!--OMNIA Shield-->
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield" force="false" load="true"/>
 	<unit path="units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield_husk" force="false" load="true"/>

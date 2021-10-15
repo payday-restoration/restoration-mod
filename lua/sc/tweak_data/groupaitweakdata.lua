@@ -13987,7 +13987,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 3
 				},
 				{
-					unit = "FBI_heavy_R870",
+					unit = "GS_heavy_R870",
 					freq = 1,
 					amount_min = 1,
 					tactics = self._tactics.ELITE_heavy_shotgun,

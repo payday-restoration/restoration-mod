@@ -25700,6 +25700,24 @@ function CharacterTweakData:character_map()
 				"civ_male_dockworker_03"				
 			}
 		},
+		chca = {
+			path = "units/pd2_dlc_chca/characters/",
+			list = {
+				"civ_male_boss_1",
+				"civ_male_boss_2",
+				"ene_security_cruise_1",
+				"ene_security_cruise_2",
+				"ene_security_cruise_3",
+				"ene_triad_cruise_1",
+				"ene_triad_cruise_2",
+				"ene_triad_cruise_3",
+				"civ_male_bathhouse_1",
+				"civ_male_bathhouse_2",
+				"civ_male_bathhouse_3",
+				"civ_female_bathhouse_1",
+				"civ_female_bathhouse_2"
+			}
+		},
 		sharks = {
 			path = "units/pd2_mod_sharks/characters/",
 			list = {

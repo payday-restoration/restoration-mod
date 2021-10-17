@@ -63,7 +63,6 @@
 	<cooked_physics path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
 	<model path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1" />
 	<object path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
-	<material_config path="units/payday2/characters/ene_acc_bulldozer_throat_biker_1/ene_acc_bulldozer_throat_biker_1"/>
 	<!--end armor bits-->
 	
 	<!--UMPSTER CAP-->	

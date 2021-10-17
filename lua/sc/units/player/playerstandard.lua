@@ -982,9 +982,11 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 				})
 			end
 			self._camera_unit:base():play_anim_melee_item("hit_body")
-		elseif self._on_melee_restart_drill and hit_unit:base() and (hit_unit:base().is_drill or hit_unit:base().is_saw) then
-			hit_unit:base():on_melee_hit(managers.network:session():local_peer():id())
 		else
+			if self._on_melee_restart_drill and hit_unit:base() and (hit_unit:base().is_drill or hit_unit:base().is_saw) then
+				hit_unit:base():on_melee_hit(managers.network:session():local_peer():id())
+			end		
+		
 			if bayonet_melee then
 				self._unit:sound():play("knife_hit_gen", nil, false)
 			elseif special_weapon == "taser" and charge_lerp_value ~= 1 then --Feedback for non-charged attacks with shock weapons. Might not do anything, need to verify.

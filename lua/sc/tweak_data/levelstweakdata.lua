@@ -209,6 +209,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.sand.ai_group_type = lapd
 	self.sand.player_style = "highinttech"
+
+	self.chca.ai_group_type = lapd
+	self.chca.player_style = "suit_sunny"
 	
 	--///NEW OUTFITS\\\--
 	

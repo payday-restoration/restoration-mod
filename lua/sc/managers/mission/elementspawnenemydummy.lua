@@ -584,6 +584,9 @@ local nypd_deathwish = {
 		["units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc",
 		["units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		["units/payday2/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
+		["units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
+		["units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
+		["units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		
         --city swat 
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",

@@ -410,7 +410,7 @@ function PlayerDamage:damage_bullet(attack_data)
 	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
-	local t = Application:time()
+	local t = pm:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "bullet", t) then
 		return
 	end
@@ -522,7 +522,7 @@ function PlayerDamage:damage_melee(attack_data)
 	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
 	managers.rumble:play("damage_bullet")
 	
-	local t = Application:time()
+	local t = pm:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "melee", t) then
 		return
 	end
@@ -573,7 +573,7 @@ function PlayerDamage:damage_explosion(attack_data)
 	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage) --Gage explosion immunity bonus sets explosive damage to 0, which causes an early return.
 	attack_data.damage = attack_data.damage * (1 - distance / attack_data.range) --Outside of that, apply falloff to the explosion damage.
 
-	local t = Application:time()
+	local t = managers.player:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "explosion", t, distance) then
 		return
 	end
@@ -613,7 +613,7 @@ function PlayerDamage:damage_fire(attack_data)
 		return
 	end
 
-	local t = Application:time()
+	local t = managers.player:player_timer():time()
 	self:_apply_damage(attack_data, damage_info, "fire", t)
 end
 

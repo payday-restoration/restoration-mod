@@ -15,7 +15,6 @@ function PlayerDamage:init(unit)
 	self._temp_health = 0 --Hitman temporary health.
 	self._health_without_temp = 0 --Health below temp hp. Needed for correct max health calculations.
 	self._next_temp_health_decay_t = 0 --When to hit hitman temp health with decay next.
-
 	self:replenish() --Sets a number of things, mostly resetting armor, health, and ui stuff. Vanilla code.
 
 	local player_manager = managers.player
@@ -286,7 +285,6 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	end
 	
 	self._last_received_dmg = attack_data.damage --Raw damage taken before (most) modifiers is used to calculate grace period.
-	local next_allowed_dmg_t_old = self._next_allowed_dmg_t --Needed to check if grace piercing occured.
 	self._next_allowed_dmg_t = Application:digest_value(t + self._dmg_interval, true)
 
 	--Perform overall damage reduction calcs.
@@ -412,7 +410,8 @@ function PlayerDamage:damage_bullet(attack_data)
 	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
-	if not self:_apply_damage(attack_data, damage_info, "bullet", Application:time()) then
+	local t = Application:time()
+	if not self:_apply_damage(attack_data, damage_info, "bullet", t) then
 		return
 	end
 
@@ -523,7 +522,8 @@ function PlayerDamage:damage_melee(attack_data)
 	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
 	managers.rumble:play("damage_bullet")
 	
-	if not self:_apply_damage(attack_data, damage_info, "melee", Application:time()) then
+	local t = Application:time()
+	if not self:_apply_damage(attack_data, damage_info, "melee", t) then
 		return
 	end
 
@@ -573,7 +573,8 @@ function PlayerDamage:damage_explosion(attack_data)
 	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage) --Gage explosion immunity bonus sets explosive damage to 0, which causes an early return.
 	attack_data.damage = attack_data.damage * (1 - distance / attack_data.range) --Outside of that, apply falloff to the explosion damage.
 
-	if not self:_apply_damage(attack_data, damage_info, "explosion", Application:time(), distance) then
+	local t = Application:time()
+	if not self:_apply_damage(attack_data, damage_info, "explosion", t, distance) then
 		return
 	end
 
@@ -612,7 +613,8 @@ function PlayerDamage:damage_fire(attack_data)
 		return
 	end
 
-	self:_apply_damage(attack_data, damage_info, "fire", Application:time())
+	local t = Application:time()
+	self:_apply_damage(attack_data, damage_info, "fire", t)
 end
 
 --Does not use _apply_damage, instead uses its own stuff.

@@ -287,7 +287,7 @@
 					<material materials="mtr_bulldozer_lod_1" max_distance="1500" />
 					<material materials="mtr_bulldozer_lod_2" />
 				</object>
-				<object name="g_helmet_plate_lod1" 		enabled="true" lod="1" >
+				<object name="g_helmet_plate_lod" 		enabled="true" lod="1" >
 					<material materials="mtr_bulldozer" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_bulldozer_lod_2" />
 				</object>

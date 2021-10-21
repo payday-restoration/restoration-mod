@@ -99,7 +99,7 @@ Marcel Kamisso: For the multicam used on Murky units
 
 RedFlame: Fixed some iffy scripting for Framing Frame D3
 
-Dorpenka: Updated Combat Harness viewmodel
+Dorpenka: Updated Combat Harness viewmodel, chromatic aberration and civilian kill line fixes
 
 Marshie: Russian localisation
 

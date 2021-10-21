@@ -727,6 +727,13 @@ function CopDamage:damage_bullet(attack_data)
 
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
 		local pierce_armor = nil
+		
+		--Just as a fallback, ugly as sin but whatever
+		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun then
+			if attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
+				pierce_armor = true
+			end
+		end
 
 		if attack_data.armor_piercing or weap_base.thrower_unit then
 			pierce_armor = true
@@ -844,10 +851,12 @@ function CopDamage:damage_bullet(attack_data)
 	end	
 	
 	if self._char_tweak.damage.non_ap_damage_mul then
-		if attack_data.armor_piercing or weap_base.thrower_unit then
-			--Nada, did consider having a damage *bonus* but we'll see
-		else
-			damage = damage * self._char_tweak.damage.non_ap_damage_mul
+		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun then
+			if attack_data.armor_piercing or weap_base.thrower_unit or attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
+				--Nada, did consider having a damage *bonus* but we'll see
+			else
+				damage = damage * self._char_tweak.damage.non_ap_damage_mul
+			end
 		end
 	end		
 

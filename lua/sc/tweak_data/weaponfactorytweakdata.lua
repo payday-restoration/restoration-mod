@@ -6456,38 +6456,40 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		launcher_grenade = "launcher_electric_arbiter"
 	}			
 		
-	--Underbarrel Slugs 
-	self.parts.wpn_fps_pis_type54_underbarrel_slug.pcs = {}
-	self.parts.wpn_fps_pis_type54_underbarrel_slug.name_id = "bm_wp_upg_a_slug_sc"
-	self.parts.wpn_fps_pis_type54_underbarrel_slug.desc_id = "bm_wp_upg_a_slug_desc"
-	self.parts.wpn_fps_pis_type54_underbarrel_slug.supported = true
-	self.parts.wpn_fps_pis_type54_underbarrel_slug.has_description = true
-	self.parts.wpn_fps_pis_type54_underbarrel_slug.stats = {
-		value = 10,
-		total_ammo_mod = -33, 
-		concealment = -4
-	}
+	--Underbarrel Slug Single Launcher (Temporarily disabled)
+	self.parts.wpn_fps_pis_type54_underbarrel_slug.pcs = nil
+	self.parts.wpn_fps_pis_type54_underbarrel_slug.supported = false
+	self.parts.wpn_fps_pis_type54_underbarrel_slug.stats = {}	
 	self.parts.wpn_fps_pis_type54_underbarrel_slug.custom_stats = {}	
 
-	self.parts.wpn_fps_upg_a_slug_underbarrel.pcs = {}
-	self.parts.wpn_fps_upg_a_slug_underbarrel.supported = true
-	self.parts.wpn_fps_upg_a_slug_underbarrel.stats = {
-		value = 10,
-		total_ammo_mod = -25,
-		damage = 30,	
-		recoil = -2,
-		spread = 8,
-		spread_multi = {1, 1},	
-		suppression = -1
-	}
-	self.parts.wpn_fps_upg_a_slug_underbarrel.custom_stats = {
-		muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",												
-		rays = 1,
-		armor_piercing_add = 1,
-		can_shoot_through_enemy = true,
-		can_shoot_through_shield = true,
-		can_shoot_through_wall = true
-	}
+	--Underbarrel Slug Double Launcher
+	self.parts.wpn_fps_pis_x_type54_underbarrel_slug.pcs = nil
+	self.parts.wpn_fps_pis_x_type54_underbarrel_slug.supported = false
+	self.parts.wpn_fps_pis_x_type54_underbarrel_slug.stats = {}
+	self.parts.wpn_fps_pis_x_type54_underbarrel_slug.custom_stats = {}
+	
+	--Underbarrel Slug Ammo
+	self.parts.wpn_fps_upg_a_slug_underbarrel.pcs = nil
+	self.parts.wpn_fps_upg_a_slug_underbarrel.supported = false
+	self.parts.wpn_fps_upg_a_slug_underbarrel.stats = {}
+	self.parts.wpn_fps_upg_a_slug_underbarrel.custom_stats = {}	
+	
+	--Underbarrel Flechettes (Ditto)
+	self.parts.wpn_fps_pis_type54_underbarrel_piercing.pcs = nil
+	self.parts.wpn_fps_pis_type54_underbarrel_piercing.supported = false
+	self.parts.wpn_fps_pis_type54_underbarrel_piercing.stats = {}	
+	self.parts.wpn_fps_pis_type54_underbarrel_piercing.custom_stats = {}	
+	
+	self.parts.wpn_fps_pis_x_type54_underbarrel_piercing.pcs = nil
+	self.parts.wpn_fps_pis_x_type54_underbarrel_piercing.supported = false
+	self.parts.wpn_fps_pis_x_type54_underbarrel_piercing.stats = {}	
+	self.parts.wpn_fps_pis_x_type54_underbarrel_piercing.custom_stats = {}	
+	
+	--Underbarrel Flechettes Ammo
+	self.parts.wpn_fps_upg_a_piercing_underbarrel.pcs = nil
+	self.parts.wpn_fps_upg_a_piercing_underbarrel.supported = false
+	self.parts.wpn_fps_upg_a_piercing_underbarrel.stats = {}
+	self.parts.wpn_fps_upg_a_piercing_underbarrel.custom_stats = {}		
 			
 	--You're pretty good
 	self.parts.wpn_fps_upg_pis_adam = {

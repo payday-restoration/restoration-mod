@@ -24006,9 +24006,6 @@ function CharacterTweakData:_set_overkill_290()
 end
 
 function CharacterTweakData:_set_sm_wish()
-	--if not PackageManager:loaded("packages/zealassets") then
-	--	PackageManager:load("packages/zealassets")
-	--end
 	if SystemInfo:platform() == Idstring("PS3") then
 		self:_multiply_all_hp(2, 0.915)
 	else
@@ -25445,7 +25442,7 @@ function CharacterTweakData:character_map()
 				"ene_bulldozer_hvh_3",
 				"ene_fbi_swat_hvh_1",
 				"ene_fbi_swat_hvh_2",
-				"ene_fbi_heavy_hvh_1",
+				"ene_fbi_heavy_hvh_1_sc",
 				"ene_fbi_heavy_hvh_r870",
 				"ene_sniper_hvh_2"
 			}

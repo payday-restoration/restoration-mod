@@ -164,6 +164,8 @@
 	<cooked_physics path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	<model path="units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	
+	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
+	<texture path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />				
 	<!-- fbi tier end -->
 	
 	<!-- specials-->

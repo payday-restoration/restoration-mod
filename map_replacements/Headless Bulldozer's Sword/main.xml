@@ -1,5 +1,5 @@
 <table name="halloween_sword">
-    <!-- <GlobalValue id="halloween_sword" color="Color(1, 0.5, 0)"/>
+    <GlobalValue id="halloween_sword" color="Color(1, 0.5, 0)"/>
 
       
     <Melee id="halloween_sword" based_on="great" info_id = "bm_melee_headless_sword_info" special_weapon="panic" unit="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword" third_unit="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_halloween_sword" texture_bundle_folder="mods" dlc="rest">
@@ -7,23 +7,22 @@
 	<stats concealment="23" charge_time="5" min_damage_effect="1.9" max_damage_effect="2"/>
 	</Melee>
     
-    <AddFiles directory="assets">
-        Halloween Sword
+    <AddFiles directory="assets"> 
+        <!-- Halloween Sword -->
         <cooked_physics path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <model path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <object path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
-        <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword" load="true"/>
+        <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <material_config path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <material_config path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword_thq"/>
 
         <cooked_physics path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
         <model path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
         <object path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
-        <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword" load="true"/>
+        <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
         <material_config path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
 
-        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/> -->
-      
-        
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/>
+             
     </AddFiles>
 </table>

@@ -5,10 +5,10 @@
     <Melee id="halloween_sword" based_on="great" info_id = "bm_melee_headless_sword_info" special_weapon="panic" unit="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword" third_unit="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_halloween_sword" texture_bundle_folder="mods" dlc="rest">
 	<sounds equip="great_equip" hit_air="morning_hit_air" hit_gen="great_hit_gen" hit_body="great_hit_body" charge="great_charge"/>
 	<stats concealment="23" charge_time="5" min_damage_effect="1.9" max_damage_effect="2"/>
-	</Melee>     -->
+	</Melee>
     
     <AddFiles directory="assets">
-        <!-- Halloween Sword -->
+        Halloween Sword
         <cooked_physics path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <model path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
         <object path="units/mods/weapons/wpn_mel_halloween_sword/wpn_fps_mel_halloween_sword"/>
@@ -22,7 +22,7 @@
         <unit path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword" load="true"/>
         <material_config path="units/mods/weapons/wpn_mel_halloween_sword/wpn_third_mel_halloween_sword"/>
 
-        <!-- <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/> -->
+        <texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/> -->
       
         
     </AddFiles>

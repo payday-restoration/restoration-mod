@@ -3817,6 +3817,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.spoon_gold.melee_damage_delay = 0.2
 	self.melee_weapons.spoon_gold.stats.concealment = 23	
 	
+	--[[
 	-- Workaround for custom melee bug
 	self.melee_weapons.halloween_sword = deep_clone(self.melee_weapons.great)
 	self.melee_weapons.halloween_sword.name_id = "bm_melee_halloween_sword"
@@ -3839,5 +3840,6 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.halloween_sword.stats.charge_time = 5
 	self.melee_weapons.halloween_sword.free = true
 	self.melee_weapons.halloween_sword.stats.custom = true
+	]]--
 
 end

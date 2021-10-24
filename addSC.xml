@@ -1227,7 +1227,7 @@
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df" load="true"/>
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op" load="true"/>
 	
-	<!--Halloween Sword-->
+	<!--NPC Halloween Sword-->
 	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	<model path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
@@ -2901,7 +2901,7 @@
 	<!--Headshot effect-->
 	<effect path="effects/payday2/particles/impacts/blood/brain_splat" />		
 	<texture path="effects/textures/brain_impacts_df" />
-	
+		
 	<!-- Halloween Sword icon -->
 	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/>
 	

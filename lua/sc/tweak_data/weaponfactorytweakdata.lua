@@ -25934,7 +25934,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 		--Point Shoot Module
 		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.supported = true
 		self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stats = {
-			value = 5
+			value = 5,
+			gadget_zoom = 1
 		}
 
 		--(M308) Mini 308 Magazine

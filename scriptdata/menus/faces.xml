@@ -109,10 +109,10 @@
 				<material_config name="'units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1'"/>
 			</sequence>
 
-			<sequence editable_state="false" name="'swap_federales_to_city'" triggable="true">
+			<sequence editable_state="false" name="'swap_federales_to_city'" once="true" triggable="true">
 				<material_config name="'units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city'"/>
 			</sequence>	
-			<sequence editable_state="false" name="'swap_federales_to_fbi'" triggable="true">
+			<sequence editable_state="false" name="'swap_federales_to_fbi'" once="true" triggable="true">
 				<material_config name="'units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi'"/>
 			</sequence>						
 

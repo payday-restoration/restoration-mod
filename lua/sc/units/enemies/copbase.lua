@@ -69,7 +69,7 @@ function CopBase:random_mat_seq_initialization()
 		self._unit:damage():run_sequence_simple("switch_sniper_to_lapd")
 	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_nypd") and sniper_fbi and faction == "nypd" then
 		self._unit:damage():run_sequence_simple("switch_sniper_to_nypd")		
-	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_zombie") and sniper_fbi and faction == "nypd" then
+	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_zombie") and sniper_fbi and faction == "zombie" then
 		self._unit:damage():run_sequence_simple("switch_sniper_to_zombie")		
 	end
 			

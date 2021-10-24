@@ -695,11 +695,12 @@ function PlayerDamage:damage_fall(data)
 			type = "hurt"
 		}
 	}
+	local is_free_falling = self._unit:movement():current_state_name() == "jerry1"
 
 	local fall_height = data.height
 
 	--Checks that player can actually take fall damage.
-	if self._god_mode or self._invulnerable or self._mission_damage_blockers.invulnerable then
+	if self._god_mode and not is_free_falling or self._invulnerable or self._mission_damage_blockers.invulnerable then
 		self:_call_listeners(damage_info)
 		return
 	elseif self:incapacitated() then
@@ -710,7 +711,7 @@ function PlayerDamage:damage_fall(data)
 		return
 	elseif data.height < height_limit then
 		return
-	elseif self._bleed_out and self._unit:movement():current_state_name() ~= "jerry1" then
+	elseif self._bleed_out and not is_free_falling then
 		self._unit:sound():play("player_hit")
 		managers.environment_controller:hit_feedback_down()
 		managers.hud:on_hit_direction(Vector3(0, 0, 0), HUDHitDirection.DAMAGE_TYPES.HEALTH, 0)
@@ -730,7 +731,7 @@ function PlayerDamage:damage_fall(data)
 		self._check_berserker_done = false
 
 		--Falling without a parachute.
-		if self._unit:movement():current_state_name() == "jerry1" then
+		if is_free_falling then
 			self._revives = Application:digest_value(1, true)
 		end
 	end

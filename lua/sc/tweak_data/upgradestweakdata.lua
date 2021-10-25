@@ -224,7 +224,9 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			},
 		l40 = {
 				name_id = "lvl_40",
-				upgrades = {}
+				upgrades = {
+					"shak12"
+				}
 			},
 		l42 = {
 				name_id = "weapons",
@@ -236,9 +238,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			},
 		l50 = {
 				name_id = "lvl_50",
-				upgrades = {
-					"halloween_sword"
-				}
+				upgrades = {}
 			},
 		l51 = {
 				name_id = "weapons",
@@ -284,12 +284,15 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 	end 	
 end)
 
+--Temp Disabled
+--[[
 Hooks:PostHook(UpgradesTweakData, "_melee_weapon_definitions", "ResMeleeDef", function(self)
 	self.definitions.halloween_sword = {
 		dlc = "rest",
 		category = "melee_weapon"
 	}
 end)
+]]--
 
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)
@@ -682,7 +685,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 					self.values.player.damage_shake_addend = {1}
 					self.values.player.resist_melee_push = {0.025}
 				--Ace
-					self.values.player.flashbang_multiplier = {0.5, 0.5}
+					self.values.player.flashbang_multiplier = {1, 0.5}
 				
 				--Die Hard
 					self.values.player.deflection_addend = {

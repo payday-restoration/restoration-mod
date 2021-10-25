@@ -15,11 +15,11 @@ function PlayerDamage:init(unit)
 	self._temp_health = 0 --Hitman temporary health.
 	self._health_without_temp = 0 --Health below temp hp. Needed for correct max health calculations.
 	self._next_temp_health_decay_t = 0 --When to hit hitman temp health with decay next.
-
 	self:replenish() --Sets a number of things, mostly resetting armor, health, and ui stuff. Vanilla code.
 
 	local player_manager = managers.player
 	self._bleed_out_health = Application:digest_value(tweak_data.player.damage.BLEED_OUT_HEALTH_INIT * player_manager:upgrade_value("player", "bleed_out_health_multiplier", 1), true)
+	Global.god_mode = false
 	self._god_mode = Global.god_mode
 	self._invulnerable = false
 	self._mission_damage_blockers = {}
@@ -286,7 +286,6 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	end
 	
 	self._last_received_dmg = attack_data.damage --Raw damage taken before (most) modifiers is used to calculate grace period.
-	local next_allowed_dmg_t_old = self._next_allowed_dmg_t --Needed to check if grace piercing occured.
 	self._next_allowed_dmg_t = Application:digest_value(t + self._dmg_interval, true)
 
 	--Perform overall damage reduction calcs.
@@ -412,7 +411,8 @@ function PlayerDamage:damage_bullet(attack_data)
 	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
 	managers.rumble:play("damage_bullet")
 	
-	if not self:_apply_damage(attack_data, damage_info, "bullet", Application:time()) then
+	local t = pm:player_timer():time()
+	if not self:_apply_damage(attack_data, damage_info, "bullet", t) then
 		return
 	end
 
@@ -523,7 +523,8 @@ function PlayerDamage:damage_melee(attack_data)
 	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
 	managers.rumble:play("damage_bullet")
 	
-	if not self:_apply_damage(attack_data, damage_info, "melee", Application:time()) then
+	local t = pm:player_timer():time()
+	if not self:_apply_damage(attack_data, damage_info, "melee", t) then
 		return
 	end
 
@@ -573,7 +574,8 @@ function PlayerDamage:damage_explosion(attack_data)
 	attack_data.damage = managers.modifiers:modify_value("PlayerDamage:OnTakeExplosionDamage", attack_data.damage) --Gage explosion immunity bonus sets explosive damage to 0, which causes an early return.
 	attack_data.damage = attack_data.damage * (1 - distance / attack_data.range) --Outside of that, apply falloff to the explosion damage.
 
-	if not self:_apply_damage(attack_data, damage_info, "explosion", Application:time(), distance) then
+	local t = managers.player:player_timer():time()
+	if not self:_apply_damage(attack_data, damage_info, "explosion", t, distance) then
 		return
 	end
 
@@ -612,7 +614,8 @@ function PlayerDamage:damage_fire(attack_data)
 		return
 	end
 
-	self:_apply_damage(attack_data, damage_info, "fire", Application:time())
+	local t = managers.player:player_timer():time()
+	self:_apply_damage(attack_data, damage_info, "fire", t)
 end
 
 --Does not use _apply_damage, instead uses its own stuff.
@@ -692,11 +695,12 @@ function PlayerDamage:damage_fall(data)
 			type = "hurt"
 		}
 	}
+	local is_free_falling = self._unit:movement():current_state_name() == "jerry1"
 
 	local fall_height = data.height
 
 	--Checks that player can actually take fall damage.
-	if self._god_mode or self._invulnerable or self._mission_damage_blockers.invulnerable then
+	if self._god_mode and not is_free_falling or self._invulnerable or self._mission_damage_blockers.invulnerable then
 		self:_call_listeners(damage_info)
 		return
 	elseif self:incapacitated() then
@@ -707,7 +711,7 @@ function PlayerDamage:damage_fall(data)
 		return
 	elseif data.height < height_limit then
 		return
-	elseif self._bleed_out and self._unit:movement():current_state_name() ~= "jerry1" then
+	elseif self._bleed_out and not is_free_falling then
 		self._unit:sound():play("player_hit")
 		managers.environment_controller:hit_feedback_down()
 		managers.hud:on_hit_direction(Vector3(0, 0, 0), HUDHitDirection.DAMAGE_TYPES.HEALTH, 0)
@@ -727,7 +731,7 @@ function PlayerDamage:damage_fall(data)
 		self._check_berserker_done = false
 
 		--Falling without a parachute.
-		if self._unit:movement():current_state_name() == "jerry1" then
+		if is_free_falling then
 			self._revives = Application:digest_value(1, true)
 		end
 	end

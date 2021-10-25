@@ -346,6 +346,12 @@ function EnemyManager:on_enemy_died(dead_unit, damage_info)
 
 	managers.hud:remove_waypoint("wp_hostage_trade" .. tostring(dead_unit:key()))
 	managers.modifiers:run_func("OnEnemyDied", dead_unit, damage_info)
+	
+	if Network:is_server() and managers.mutators:is_mutator_active(MutatorBirthday) and dead_unit:base():has_tag("special") and managers.mutators:is_mutator_active(MutatorBirthday) then
+		local birthday_mutator = managers.mutators:get_mutator(MutatorBirthday)
+
+		birthday_mutator:on_special_killed(dead_unit)
+	end	
 end
 
 function EnemyManager:on_enemy_destroyed(enemy)
@@ -374,7 +380,7 @@ function EnemyManager:on_enemy_destroyed(enemy)
 end
 
 function EnemyManager:on_civilian_died(dead_unit, damage_info)
-	if Network:is_server() and damage_info.attacker_unit and not dead_unit:base().enemy then
+	if Network:is_server() and damage_info.attacker_unit and not dead_unit:base().enemy and not tweak_data.character[dead_unit:base()._tweak_table].no_civ_penalty then
 		managers.groupai:state():hostage_killed(damage_info.attacker_unit)
 	end
 

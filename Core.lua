@@ -44,7 +44,7 @@ function restoration:Init()
 	restoration.captain_murderdozer = {
 		"dah", --diamond heist
 		"hox_2", --Hoxout Day 2
-		"xmn_hox_2", --Hoxout Day 2, christmas
+		"xmn_hox2", --Hoxout Day 2, christmas
 		"firestarter_1", --firestarter day 1
 		"arm_for",	--train heist
 		"big", --big bank
@@ -98,7 +98,7 @@ function restoration:Init()
 		restoration.what_a_horrible_heist_to_have_a_curse = {
 			"dah", --diamond heist
 			"hox_2", --Hoxout Day 2
-			"xmn_hox_2", --Hoxout Day 2, christmas
+			"xmn_hox2", --Hoxout Day 2, christmas
 			"firestarter_1", --firestarter day 1
 			"arm_for",	--train heist
 			"big", --big bank
@@ -169,7 +169,7 @@ function restoration:Init()
 		"mia_2", --Hotline Miami 2
 		"nail",	--Lab Rats. Fuck this heist	
 		"hox_1",
-		"xmn_hox_1",
+		"xmn_hox1",
 		--Custom Heists below--
 		"thechase"
 	}	
@@ -217,7 +217,7 @@ function restoration:Init()
 		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne
 		--"hox_1", --Hoxout D1
-		--"xmn_hox_1" --Xmas edition
+		--"xmn_hox1" --Xmas edition
 	}	
 	
 	restoration.Environment_Settings_Table = {} --leave blank, it will generate contents based on the table below

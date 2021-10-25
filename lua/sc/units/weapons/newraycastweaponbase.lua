@@ -335,8 +335,8 @@ end
 
 --Le stats face
 local old_update_stats_values = NewRaycastWeaponBase._update_stats_values	
-function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
-	old_update_stats_values(self, disallow_replenish)
+function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data)
+	old_update_stats_values(self, disallow_replenish, ammo_data)
 	
 	self._reload_speed_mult = self:weapon_tweak_data().reload_speed_multiplier or 1
 	self._ads_speed_mult = self._ads_speed_mult or 1

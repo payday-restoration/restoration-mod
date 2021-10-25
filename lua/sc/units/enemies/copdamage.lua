@@ -173,9 +173,9 @@ function CopDamage:_spawn_head_gadget(params)
 		})
 		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
 		sound_ext:play("swat_heavy_visor_shatter", nil, nil)
-	elseif smashablefuckers_hsg then
+	--[[elseif smashablefuckers_hsg then
 		sound_ext:play("swatturret_weakspot_hit", nil, nil)
-		sound_ext:play("swatturret_weakspot_hit", nil, nil)
+		sound_ext:play("swatturret_weakspot_hit", nil, nil)]]--
 	end
 
 	self._head_gear = false
@@ -727,6 +727,13 @@ function CopDamage:damage_bullet(attack_data)
 
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
 		local pierce_armor = nil
+		
+		--Just as a fallback, ugly as sin but whatever
+		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun then
+			if attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
+				pierce_armor = true
+			end
+		end
 
 		if attack_data.armor_piercing or weap_base.thrower_unit then
 			pierce_armor = true
@@ -842,6 +849,16 @@ function CopDamage:damage_bullet(attack_data)
 	if self._char_tweak.damage.bullet_damage_mul then
 		damage = damage * self._char_tweak.damage.bullet_damage_mul
 	end	
+	
+	if self._char_tweak.damage.non_ap_damage_mul then
+		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun then
+			if attack_data.armor_piercing or weap_base.thrower_unit or attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
+				--Nada, did consider having a damage *bonus* but we'll see
+			else
+				damage = damage * self._char_tweak.damage.non_ap_damage_mul
+			end
+		end
+	end		
 
 	if self._marked_dmg_mul then
 		damage = damage * self._marked_dmg_mul

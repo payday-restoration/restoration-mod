@@ -1108,6 +1108,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.detection = presets.detection.normal
 	self.fbi_heavy_swat.HEALTH_INIT = 20
 	self.fbi_heavy_swat.headshot_dmg_mul = 2
+	self.fbi_heavy_swat.damage.non_ap_damage_mul = 1
 	self.fbi_heavy_swat.move_speed = presets.move_speed.fast
 	self.fbi_heavy_swat.surrender_break_time = {6, 8}
 	self.fbi_heavy_swat.suppression = presets.suppression.hard_agg
@@ -25697,6 +25698,24 @@ function CharacterTweakData:character_map()
 				"civ_male_dockworker_01",
 				"civ_male_dockworker_02",
 				"civ_male_dockworker_03"				
+			}
+		},
+		chca = {
+			path = "units/pd2_dlc_chca/characters/",
+			list = {
+				"civ_male_boss_1",
+				"civ_male_boss_2",
+				"ene_security_cruise_1",
+				"ene_security_cruise_2",
+				"ene_security_cruise_3",
+				"ene_triad_cruise_1",
+				"ene_triad_cruise_2",
+				"ene_triad_cruise_3",
+				"civ_male_bathhouse_1",
+				"civ_male_bathhouse_2",
+				"civ_male_bathhouse_3",
+				"civ_female_bathhouse_1",
+				"civ_female_bathhouse_2"
 			}
 		},
 		sharks = {

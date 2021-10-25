@@ -644,3 +644,48 @@ function CopBrain:clbk_alarm_pager(ignore_this, data)
 		managers.enemy:add_delayed_clbk(self._alarm_pager_data.pager_clbk_id, callback(self, self, "clbk_alarm_pager"), TimerManager:game():time() + call_delay)
 	end
 end
+
+--Fix dodge with grenade cooldown not having a cooldown as intended.
+function CopBrain:_chk_use_cover_grenade(unit)
+	if not Network:is_server() or not self._logic_data.char_tweak.dodge_with_grenade or not self._logic_data.attention_obj then
+		return
+	end
+
+	local check_f = self._logic_data.char_tweak.dodge_with_grenade.check
+	local t = TimerManager:game():time()
+
+	if check_f then
+		if (self._next_cover_grenade_chk_t or 0) > t then
+			return
+		end
+
+		local result, next_t = check_f(t, self._nr_flashbang_covers_used or 0)
+		self._next_cover_grenade_chk_t = next_t
+
+		if not result then
+			return
+		end
+	end
+
+	local grenade_was_used = nil
+
+	if self._logic_data.attention_obj.dis > 1000 or not self._logic_data.char_tweak.dodge_with_grenade.flash then
+		if self._logic_data.char_tweak.dodge_with_grenade.smoke and not managers.groupai:state():is_smoke_grenade_active() then
+			local duration = self._logic_data.char_tweak.dodge_with_grenade.smoke.duration
+
+			managers.groupai:state():detonate_smoke_grenade(self._logic_data.m_pos + math.UP * 10, self._unit:movement():m_head_pos(), math.lerp(duration[1], duration[2], math.random()), false)
+
+			grenade_was_used = true
+		end
+	elseif self._logic_data.char_tweak.dodge_with_grenade.flash then
+		local duration = self._logic_data.char_tweak.dodge_with_grenade.flash.duration
+
+		managers.groupai:state():detonate_smoke_grenade(self._logic_data.m_pos + math.UP * 10, self._unit:movement():m_head_pos(), math.lerp(duration[1], duration[2], math.random()), true)
+
+		grenade_was_used = true
+	end
+
+	if grenade_was_used then
+		self._nr_flashbang_covers_used = (self._nr_flashbang_covers_used or 0) + 1
+	end
+end

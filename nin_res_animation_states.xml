@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<tweaks>	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/melee_start"/>
+			<anim name="melee_start" weight="melee_knife"/>
+		</search>
+		<target mode="append">
+			<anim name="melee_nin_res_start" weight="melee_nin_res"/>	
+		</target>
+	</tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/melee_charge"/>
+			<anim name="melee_charge_var2" weight="melee_knife * charge_lerp"/>
+		</search>
+		<target mode="append">
+			<anim name="melee_nin_res_charge" 				weight="melee_nin_res * (1-charge_lerp)"/>
+			<anim name="melee_nin_res_charge_var2" 			weight="melee_nin_res * charge_lerp"/>
+		</target>
+	</tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/melee_attack"/>
+			<anim name="melee_attack_var4" weight="melee_knife * var4"/>
+		</search>
+		<target mode="append">
+			<anim name="melee_nin_res_attack_var1" 			weight="melee_nin_res * var1 * hit"/>
+			<anim name="melee_nin_res_attack_var_miss" 		weight="melee_nin_res * (1-hit)"/>	
+		</target>
+	</tweak>
+</tweaks>

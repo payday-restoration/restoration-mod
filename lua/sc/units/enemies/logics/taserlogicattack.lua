@@ -8,7 +8,7 @@ function TaserLogicAttack.queued_update(data)
 
 		return
 	elseif not data.attention_obj then
-		CopLogicBase.queue_task(my_data, my_data.update_task_key, TaserLogicAttack.queued_update, data, data.t + 0)
+		CopLogicBase.queue_task(my_data, my_data.update_task_key, TaserLogicAttack.queued_update, data, data.t + 0.3)
 		CopLogicBase._report_detections(data.detected_attention_objects)
 
 		return

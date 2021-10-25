@@ -220,8 +220,8 @@
 	
 	<continent path="levels/narratives/bain/big/world/world" force="true" unload="true"/> <!--you can now drill the small cashbox, money cassettes spawn-->
 	
-	<continent path="levels/narratives/classics/dah/world/world" force="true" unload="true"/>
-	<nav_data path="levels/narratives/classics/dah/nav_manager_data" force="true" unload="true"/>
+	<!--<continent path="levels/narratives/classics/dah/world/world" force="true" unload="true"/>-->
+	<!--<nav_data path="levels/narratives/classics/dah/nav_manager_data" force="true" unload="true"/>-->
 	
 	<cover_data path="levels/narratives/h_firestarter/stage_3/cover_data" force="true" unload="true"/>
 	<nav_data path="levels/narratives/h_firestarter/stage_3/nav_manager_data" force="true" unload="true"/>
@@ -1227,7 +1227,7 @@
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df" load="true"/>
 	<texture path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op" load="true"/>
 	
-	<!--Halloween Sword-->
+	<!--NPC Halloween Sword-->
 	<object path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	<cooked_physics path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
 	<model path="units/payday2/weapons/wpn_mel_hw_sword/wpn_mel_hw_sword" force="false"/>
@@ -2901,9 +2901,6 @@
 	<!--Headshot effect-->
 	<effect path="effects/payday2/particles/impacts/blood/brain_splat" />		
 	<texture path="effects/textures/brain_impacts_df" />
-	
-	<!-- Halloween Sword icon -->
-	<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/>
 	
 	<!--Xmas menu assets-->
 	<cooked_physics path="units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc"/>	

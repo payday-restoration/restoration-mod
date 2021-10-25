@@ -69,7 +69,7 @@ tweak_data.projectiles.underbarrel_m203_groza.range = 500
 tweak_data.projectiles.rocket_ray_frag.damage = 120
 tweak_data.projectiles.rocket_ray_frag.player_damage = 60
 tweak_data.projectiles.rocket_ray_frag.range = 500
-tweak_data.projectiles.rocket_ray_frag.curve_pow = 1
+tweak_data.projectiles.rocket_ray_frag.curve_pow = 0.1
 tweak_data.projectiles.rocket_ray_frag.turret_instakill = true
 
 --Arbiter--
@@ -373,7 +373,7 @@ tweak_data.projectiles.launcher_frag_osipr = {
 	curve_pow = 1,
 	player_damage = 30,
 	range = 250,
-	init_timer = 2.5,
+	init_timer = nil,
 	mass_look_up_modifier = 1,
 	sound_event = "gl_explode",
 	name_id = "bm_launcher_frag"
@@ -391,7 +391,7 @@ tweak_data.projectiles.launcher_incendiary_osipr = {
 		dot_tick_period = 0.5
 	},
 	range = 350,
-	init_timer = 2.5,
+	init_timer = nil,
 	mass_look_up_modifier = 1,
 	sound_event = "gl_explode",
 	sound_event_impact_duration = 0.25,
@@ -399,6 +399,18 @@ tweak_data.projectiles.launcher_incendiary_osipr = {
 	burn_duration = 5,
 	burn_tick_period = 0.5
 }
+tweak_data.projectiles.launcher_electric_osipr = {
+	damage = 30,
+	launch_speed = 2500,
+	curve_pow = 1,
+	player_damage = 10,
+	range = 250,
+	init_timer = nil,
+	mass_look_up_modifier = 1,
+	sound_event = "gl_explode",
+	name_id = "bm_launcher_frag"
+}
+
 
 --Hatman Molotov
 tweak_data.projectiles.hatman_molotov = {}

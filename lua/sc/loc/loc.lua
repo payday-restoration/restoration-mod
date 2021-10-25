@@ -1356,9 +1356,9 @@ local ai_type = tweak_data.levels:get_ai_group_type()
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ИДЁТ ЩТУРМ НАЁМНИКОВ",
+			["hud_assault_assault"] = "ИДЁТ ШТУРМ НАЁМНИКОВ",
 			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
-			["hud_assault_alpha"] = "ЩTУPM HAЁMHИKOB"
+			["hud_assault_alpha"] = "ШTУPM HAЁMHИKOB"
 		})
 	end)
 elseif ai_type == z then

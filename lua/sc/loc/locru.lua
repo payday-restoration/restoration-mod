@@ -991,7 +991,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_slow_motor_sc_desc"] = "Уменьшает скорость ротации на 15%.",
 
 		--Weapon Sights--
-		["bm_wp_upg_o_leupold_desc_sc"] = "Во время прицеливания автоматически помечает специальных противников, а также охранников в стелсе.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
+		["bm_wp_upg_o_leupold_desc_sc"] = "Во время прицеливания автоматически помечает специальных противников и охранников.", --I believe all sights/objects with this effect call this same line, rather than having a unique one. Will need to be decoupled later when we add zoom to all of the sight descriptions.
 
 		--Generic Optic Zoom Descriptions--
 		["bm_wp_upg_o_tiny"] = "УВЕЛИЧЕНИЕ 1.1x.",
@@ -1035,7 +1035,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_90_body_boxy_desc"] = "Найденный на заброшенном складе корпорации OMNIA, этот корпус совершенно не влияет на функционал или удобность оружия, но его квадратный дизайн приятен глазу.",
 
 		--Raze's Fury--
-		["bm_wp_shatters_fury_desc"] = "Мощный револьвер калибра .500 с сильной отдачей. Любимое оружие Рейз.\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ И НЕБОЛЬШИЕ СТЕНЫ.",
+		["bm_wp_shatters_fury_desc"] = "Мощный револьвер калибра .500 с сильной отдачей.\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ И НЕБОЛЬШИЕ СТЕНЫ.",
 
 		--OICW--
 		["bm_w_osipr_desc_pc"] = "Военная технология нового поколения. Снаряжён 20мм гранатомётом.\nНажмите $BTN_BIPOD, чтобы переключиться на гранатомёт.",
@@ -1163,8 +1163,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_deflection"] = "Устой-вость",
 		["bm_menu_regen_time"] = "Регенерация",
 		["bm_menu_swap_speed"] = "Ск. смены",
-		["bm_menu_standing_range"] = "Дальность",
-		["bm_menu_moving_range"] = "Даль-сть (в движ.)",
+		["bm_menu_standing_range"] = "Даль-сть",
+		["bm_menu_moving_range"] = "В движении",
 		["bm_menu_pickup"] = "Подбор",
 
 		--Blackmarket gui per-armor skill descriptions.
@@ -1239,8 +1239,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_corgi_b_short"] = "Ствол MSG",
 
 		--Bipod--
-		["bm_sc_bipod_desc_pc"] = "Расставляются/убираются на кнопку $BTN_BIPOD, если место позволяет.\n\nУбирает отдачу.",
-		["bm_sc_bipod_desc"] = "Расставляются/убираются на кнопку $BTN_BIPOD, если место позволяет.\n\nУбирает отдачу.",
+		["bm_sc_bipod_desc_pc"] = "Расставляются/убираются на кнопку $BTN_BIPOD, если место позволяет.\n\nУбирают отдачу.",
+		["bm_sc_bipod_desc"] = "Расставляются/убираются на кнопку $BTN_BIPOD, если место позволяет.\n\nУбирают отдачу.",
 
 		--String override for the stungun--
 		["bm_melee_taser_info"] = "Устройство, которое бьёт током и оглушает цели при полном заряде.",
@@ -1552,7 +1552,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_5"] = "Вульф прокачал Турели - теперь их можно ремонтировать прямо во время боя. Это занимает время, но зато процесс автоматический - вам нужно только запустить его.",	
 		["loading_equip_skills_res_6"] = "Если у вас открыты бронебойные патроны для Турелей, вы можете выбрать стандартный тип патронов в меню снаряжения. ",	
 		["loading_equip_skills_res_7"] = "Наборы перков предоставляют значительный бонус к урону, и многие из них обладают редкими и ценными лечебными навыками. Прокачивайте их, если собираетесь играть на высоких сложностях.",
-		["loading_equip_skills_res_8"] = "Капо, Оружейник, Силовик, Аферист, Шулер и Байкер - это простые и поэтому надёжные наборы перков. Это отличный выбор для нового игрока.",
+		["loading_equip_skills_res_8"] = "Капо, Оружейник, Силовик, Аферист, Шулер и Байкер - это простые и поэтому надёжные наборы перков. Отличный выбор для нового игрока.",
 		["loading_equip_skills_res_9"] = "Киллер (Hitman) был переработан в набор перков, который обладает низкой выживаемостью и надёжностью, но взамен предоставляет возможность получить большое количество 'временного здоровья', чтобы пробиться через сложные ситуации.",
 		["loading_equip_skills_res_10"] = "Капо (Crew Chief) - это командный набор перков, который предоставляет небольшие, но полезные бонусы для вас и ваших соратников, и ещё больше бонусов, если вы берёте заложников. Он хорошо сочетается с веткой Командира у Манипулятора.",
 		["loading_equip_skills_res_11"] = "Шулер (Gambler) - это командный набор перков, который предоставляет немного здоровья вам и бонусные боеприпасы для ваших товарищей, когда вы подбираете патроны. Хорошо сочетается с навыками, которые дают дополнительные коробки патронов с врагов.",	
@@ -1563,7 +1563,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_16"] = "Убойный тандем (Tag Team) - командный набор перков, который позволяет предоставить большое количество лечения конкретному соратнику, при условии, что вы вдвоём устраняете врагов без остановки.",	
 		["loading_equip_skills_res_17"] = "Бронебойные пули на полуавтоматических и автоматических дробовиках не пробивают броню, врагов, стены и щиты.",	
 		["loading_equip_skills_res_18"] = "Револьверы Peacemaker и Phoenix .500 могут пробивать врагов, стены и щиты, как снайперские винтовки.",	
-		["loading_equip_skills_res_19"] = "Если справа на экране отображается шкала синего цвета - у вас есть Уворот (Dodge). Когда он подсвечивается, вы увернётесь от следующей пули. Для более подробного объяснения механики уворота, используйте Гайд.",	
+		["loading_equip_skills_res_19"] = "Если справа на экране отображается шкала синего цвета - у вас есть Уворот (Dodge). Когда она подсвечивается, вы увернётесь от следующей пули. Для более подробного объяснения механики уворота, используйте Гайд.",	
 		["loading_equip_skills_res_20"] = "Чем выше Скрытность оружия, тем быстрее вы его достаёте и убираете.",	
 		["loading_equip_skills_res_21"] = "Когда вы достаёте Бензопилу или Казагуруму, они наносят урон противникам впереди вас.",
 		["loading_equip_skills_res_22"] = "Нож-бабочка и Выкидной нож наносят огромный урон при атаке со спины.",		
@@ -1720,7 +1720,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_interact_desc"] = "Игроки взаимодействуют на 15% быстрее за каждого бота в команде.",
 
 	["menu_crew_inspire"] = "Вдохновление",
-        ["menu_crew_inspire_desc"] = "Боты с этим перком могут использовать на вас вдохновление.\n\nОни не могут его использовать чаще чем в 90 секунд. Перезарядка уменьшается на 15 секунд за каждого бота в команде.",
+        ["menu_crew_inspire_desc"] = "Боты с этим перком могут использовать на вас Вдохновление.\n\nОни не могут его использовать чаще чем в 90 секунд. Перезарядка уменьшается на 15 секунд за каждого бота в команде.",
 
         ["menu_crew_scavenge"] = "Выносливый",
         ["menu_crew_scavenge_desc"] = "Игроки получают 1 падение после каждых трёх штурмов.\n\nЧисло необходимых штурмов убавляется на 1 за каждого бота.",
@@ -1735,7 +1735,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["menu_crew_sturdy_desc"] = "Броня игроков увеличена на 10%.",
 
         ["menu_crew_evasive"] = "Отвлекающий манёвр",
-        ["menu_crew_evasive_desc"] = "Додж метр игроков заполняется на 3% от их максимального доджа.",
+        ["menu_crew_evasive_desc"] = "Полоска уворота игроков заполняется на 3% от их максимального уворота.",
 
         ["menu_crew_motivated"] = "Тренер",
         ["menu_crew_motivated_desc"] = "Игроки получают на 15 больше выносливости.",
@@ -1743,7 +1743,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
         ["menu_crew_regen"] = "Лекарь",
         ["menu_crew_regen_desc"] = "Игроки лечат 1 очко здоровья каждые 4 секунды.",
 
-        ["menu_crew_quiet"] = "Скрытый",
+        ["menu_crew_quiet"] = "Скрытный",
         ["menu_crew_quiet_desc"] = "Игроки получают на 2 больше скрытности.",
 
         ["menu_crew_generous"] = "Подарочек",
@@ -2309,7 +2309,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_9_desc_sc"] = "Каждый успешный удар оружием ближнего боя восстанавливает ##1## очко здоровья каждые ##1.25## секунд на ##10## секунд, этот эффект может складываться до ##5## раз.\n\nБонус полной колоды: Шанс получения предмета высокого качества после прохождения ограбления увеличен на ##10%.##",
 
 		--Sociopath--
-		["menu_st_spec_9_desc_sc"] = "The Sociopath is known to be one of the most effective type of criminals. Where he is effective, he is also difficult to deal with, which is why larger organizations avoid him.\n\nBold, disinhibitted and mean, the Sociopath excels in the most violent of jobs. Unable to feel guilt for the crimes he commits, the Sociopath is a dangerous enemy.\n\n\nBenefits from a full perk deck:\n##-##When you are within ##18## meters of an enemy, you receive ##5%## less damage from enemies.\n##-##Killing an enemy regenerates ##40## armor. Cannot occur more than once every ##3## seconds.\n##-##Killing an enemy with a melee weapon regenerates ##5%## health. Cannot occur more than once every ##3## seconds.\n##-##Killing an enemy within ##18## meters has a ##25%## chance to spread panic among your enemies. Cannot occur more than once every ##2## seconds.",
+		["menu_st_spec_9_desc_sc"] = "Известно, что лучшими преступниками становятся социопаты. Хоть они и эффективны, но с ними трудно найти общий язык, поэтому крупные организации избегают их.\n\nНаглые, самоуверенные и жестокие, социопаты отлично справляются с жестокими поручениями. Они очень опасные противники, так как не чувствуют вины за совершённые преступления.\n\n\nБонусы полной колоды:\n##-##Когда вы в ##18## метров от врага, вы получаете на ##5%## меньше урона.\n##-##Убийство врага восстанавливает ##40## Брони. Имеет задержку в ##3## секунды.\n##-##Убийство врага оружием ближнего боя восстанавливает ##5%## здоровья. Имеет задержку в ##3## секунды.\n##-##Убийство врага в радиусе ##18## метров имеет ##25%## посеять панику среди врагов. Имеет задержку в ##2## секунды.",
 		["menu_deck9_1_sc"] = "No Talk",
 		["menu_deck9_1_desc_sc"] = "Когда 3 или более врага находятся в ##18## метрах от вас, вы получаете на ##5%## меньше урона.",
 		["menu_deck9_3_desc_sc"] = "Убийство врага восстанавливает ##20## брони.\n\nЭто может происходить только раз в ##3## секунды.",

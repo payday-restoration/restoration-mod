@@ -14803,7 +14803,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}				
 	else
 		self.enemy_spawn_groups.HVH_Boss = {
-			amount = {7, 7},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "HVH_Boss",

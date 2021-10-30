@@ -342,6 +342,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_fex"] = "秘密的时间, 墨西哥-布鲁克庄园",
 		["restoration_level_data_chas"] = "下午8:30, 旧金山-唐人街",
 		["restoration_level_data_sand"] = "下午10:30, 旧金山-船坞",
+		["restoration_level_data_chca"] = "9:24 PM, San Francisco Bay - The Black Cat",
 		["restoration_level_data_wetwork"] = "秘密的时间, 秘密的地点",
 		["restoration_level_data_junk"] = "秘密的时间, 秘密的地点",
 		["restoration_level_data_holly"] = "下午5:00 , 洛杉矶-卢卡斯的庄园",

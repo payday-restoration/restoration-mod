@@ -340,6 +340,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_fex"] = "TIME CLASSIFIED, Mexico - Buluc's Mansion",
 		["restoration_level_data_chas"] = "8:30 PM, San Francisco - Chinatown",
 		["restoration_level_data_sand"] = "10:30 PM, San Francisco - Dockyard",
+		["restoration_level_data_chca"] = "9:24 PM, San Francisco Bay - The Black Cat",
 		["restoration_level_data_wetwork"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
@@ -1356,9 +1357,9 @@ local ai_type = tweak_data.levels:get_ai_group_type()
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ИДЁТ ЩТУРМ НАЁМНИКОВ",
+			["hud_assault_assault"] = "ИДЁТ ШТУРМ НАЁМНИКОВ",
 			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
-			["hud_assault_alpha"] = "ЩTУPM HAЁMHИKOB"
+			["hud_assault_alpha"] = "ШTУPM HAЁMHИKOB"
 		})
 	end)
 elseif ai_type == z then

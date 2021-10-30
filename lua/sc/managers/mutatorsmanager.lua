@@ -22,7 +22,7 @@ function MutatorsManager:init()
 		MutatorCloakerEffect:new(self),
 		MutatorShieldDozers:new(self),
 		MutatorTitandozers:new(self),
-		MutatorBirthday:new(self),
+		-- MutatorBirthday:new(self),
 		MutatorMinidozers:new(self),
 		MutatorFatRoll:new(self),
 		MutatorMememanOnly:new(self),	

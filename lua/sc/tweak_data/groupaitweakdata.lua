@@ -17420,6 +17420,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		1.3
 	}
 	self.besiege.assault.fade_duration = 35
+	self.besiege.assault.fade_settings = {
+		enemies_defeated_percentage = 0.5,
+		enemies_defeated_time_limit = 30,
+		drama_engagement_time_limit = 30
+	}
 	if difficulty_index <= 2 then
 		self.besiege.assault.delay = {
 			80,

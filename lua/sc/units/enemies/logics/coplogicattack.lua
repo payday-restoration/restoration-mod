@@ -135,7 +135,7 @@ Hooks:PostHook(CopLogicAttack, "aim_allow_fire", "RR_aim_allow_fire", function(s
 			managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
 		elseif data.unit:base():has_tag("shield") and (not my_data.shield_knock_cooldown or my_data.shield_knock_cooldown < data.t) then
 			if tweak_data:difficulty_to_index(Global.game_settings.difficulty) >= 8 then
-				data.unit:sound():play("hos_shield_indication_sound_terminator_style", nil, true)
+				data.unit:sound():say("use_gas", true, nil, true)
 			else
 				data.unit:sound():play("shield_identification", nil, true)
 			end

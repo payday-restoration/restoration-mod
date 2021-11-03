@@ -1,3 +1,52 @@
+local mvec3_x = mvector3.x
+local mvec3_y = mvector3.y
+local mvec3_z = mvector3.z
+local mvec3_set = mvector3.set
+local mvec3_set_z = mvector3.set_z
+local mvec3_add = mvector3.add
+local mvec3_mul = mvector3.multiply
+local mvec3_sub = mvector3.subtract
+local mvec3_dot = mvector3.dot
+local mvec3_dis = mvector3.distance
+local mvec3_dis_sq = mvector3.distance_sq
+local mvec3_dir = mvector3.direction
+local mvec3_norm = mvector3.normalize
+local mvec3_cross = mvector3.cross
+local mvec3_rand_ortho = mvector3.random_orthogonal
+local mvec3_negate = mvector3.negate
+local mvec3_len = mvector3.length
+local mvec3_cpy = mvector3.copy
+local mvec3_set_stat = mvector3.set_static
+local mvec3_set_length = mvector3.set_length
+local mvec3_angle = mvector3.angle
+local mvec3_step = mvector3.step
+
+local tmp_vec1 = Vector3()
+local tmp_vec2 = Vector3()
+
+local m_rot_x = mrotation.x
+local m_rot_y = mrotation.y
+local m_rot_z = mrotation.z
+
+local math_lerp = math.lerp
+local math_random = math.random
+local math_up = math.UP
+local math_abs = math.abs
+local math_clamp = math.clamp
+local math_min = math.min
+
+local table_insert = table.insert
+local table_contains = table.contains
+
+local REACT_AIM = AIAttentionObject.REACT_AIM
+local REACT_ARREST = AIAttentionObject.REACT_ARREST
+local REACT_COMBAT = AIAttentionObject.REACT_COMBAT
+local REACT_SCARED = AIAttentionObject.REACT_SCARED
+local REACT_SHOOT = AIAttentionObject.REACT_SHOOT
+local REACT_SURPRISED = AIAttentionObject.REACT_SURPRISED
+local REACT_SUSPICIOUS = AIAttentionObject.REACT_SUSPICIOUS
+
+
 -- Instant detection outside of stealth
 local _create_detected_attention_object_data_original = CopLogicBase._create_detected_attention_object_data
 function CopLogicBase._create_detected_attention_object_data(...)
@@ -199,4 +248,236 @@ function CopLogicBase.chk_start_action_dodge(data, reason)
 	end
 
 	return action
+end
+
+function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
+	local old_att_obj = data.attention_obj
+	data.attention_obj = new_att_obj
+
+	if new_att_obj then
+		new_reaction = new_reaction or new_att_obj.settings.reaction
+		new_att_obj.reaction = new_reaction
+		local new_crim_rec = new_att_obj.criminal_record
+		local is_same_obj, contact_chatter_time_ok = nil
+
+		if old_att_obj then
+			if old_att_obj.u_key == new_att_obj.u_key then
+				is_same_obj = true
+				contact_chatter_time_ok = new_crim_rec and data.t - new_crim_rec.det_t > 2
+
+				if new_att_obj.stare_expire_t and new_att_obj.stare_expire_t < data.t then
+					if new_att_obj.settings.pause then
+						new_att_obj.stare_expire_t = nil
+						new_att_obj.pause_expire_t = data.t + math.lerp(new_att_obj.settings.pause[1], new_att_obj.settings.pause[2], math.random())
+					end
+				elseif new_att_obj.pause_expire_t and new_att_obj.pause_expire_t < data.t then
+					if not new_att_obj.settings.attract_chance or math.random() < new_att_obj.settings.attract_chance then
+						new_att_obj.pause_expire_t = nil
+						new_att_obj.stare_expire_t = data.t + math.lerp(new_att_obj.settings.duration[1], new_att_obj.settings.duration[2], math.random())
+					else
+						debug_pause_unit(data.unit, "skipping attraction")
+
+						new_att_obj.pause_expire_t = data.t + math.lerp(new_att_obj.settings.pause[1], new_att_obj.settings.pause[2], math.random())
+					end
+				end
+			else
+				if old_att_obj.criminal_record then
+					managers.groupai:state():on_enemy_disengaging(data.unit, old_att_obj.u_key)
+				end
+
+				if new_crim_rec then
+					managers.groupai:state():on_enemy_engaging(data.unit, new_att_obj.u_key)
+				end
+
+				contact_chatter_time_ok = new_crim_rec and data.t - new_crim_rec.det_t > 15
+			end
+		else
+			if new_crim_rec then
+				managers.groupai:state():on_enemy_engaging(data.unit, new_att_obj.u_key)
+			end
+
+			contact_chatter_time_ok = new_crim_rec and data.t - new_crim_rec.det_t > 15
+		end
+
+		if not is_same_obj then
+			if new_att_obj.settings.duration then
+				new_att_obj.stare_expire_t = data.t + math.lerp(new_att_obj.settings.duration[1], new_att_obj.settings.duration[2], math.random())
+				new_att_obj.pause_expire_t = nil
+			end
+
+			new_att_obj.acquire_t = data.t
+		end
+
+		if AIAttentionObject.REACT_SHOOT <= new_reaction and new_att_obj.verified and contact_chatter_time_ok and (data.unit:anim_data().idle or data.unit:anim_data().move) and new_att_obj.is_person and data.char_tweak.chatter.contact then
+			if data.unit:anim_data().idle or data.unit:anim_data().move then
+				local tweak_table = data.unit:base()._tweak_table
+				if tweak_table == "phalanx_vip" then
+					data.unit:sound():say("a01", true)
+				elseif tweak_table == "spring" then
+					data.unit:sound():say("a01", true)						
+				elseif tweak_table == "gensec" then
+					data.unit:sound():say("a01", true)			
+				elseif tweak_table == "security" then
+					data.unit:sound():say("a01", true)		
+				elseif tweak_table == "spooc" then
+					data.unit:sound():say("clk_c01x_plu", true, true)
+				elseif data.unit:base().has_tag and data.unit:base():has_tag("shield") then
+					if not data.attack_sound_t or data.t - data.attack_sound_t > 40 then
+						data.attack_sound_t = data.t
+
+						data.unit:sound():play("shield_identification", nil, true)
+					end
+				else
+					data.unit:sound():say("c01", true)
+				end
+			end
+		end
+		
+	elseif old_att_obj and old_att_obj.criminal_record then
+		managers.groupai:state():on_enemy_disengaging(data.unit, old_att_obj.u_key)
+	end
+end
+
+function CopLogicBase._upd_stance_and_pose(data, my_data, objective)
+	if my_data ~= data.internal_data then
+		--log("how is this man")
+
+		return
+	end
+
+	if data.char_tweak.allowed_poses or data.is_converted or my_data.tasing or my_data.spooc_attack or data.unit:in_slot(managers.slot:get_mask("criminals")) then
+		return
+	end
+
+	if data.team and data.team.id == tweak_data.levels:get_default_team_ID("player") or data.unit:movement():chk_action_forbidden("walk") then
+		return
+	end
+
+	local obj_has_stance, obj_has_pose, agg_pose = nil
+	local can_stand_or_crouch = nil
+
+	if not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.crouch then
+		if not data.char_tweak.allowed_poses or data.char_tweak.allowed_poses.stand then
+			if data.char_tweak.crouch_move then
+				can_stand_or_crouch = true
+			end
+		end
+	end
+
+	if can_stand_or_crouch then
+		local diff_index = tweak_data:difficulty_to_index(Global.game_settings.difficulty)
+
+		if data.is_suppressed then
+			if diff_index <= 5 then
+				if data.unit:anim_data().stand then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_crouch(data) then
+							my_data.next_allowed_stance_t = data.t + math.lerp(1.5, 7, math.random())
+							agg_pose = true
+						end
+					end
+				end
+			else
+				if data.unit:anim_data().stand then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_crouch(data) then
+							my_data.next_allowed_stance_t = data.t + math.lerp(1.5, 7, math.random())
+							agg_pose = true
+						end
+					end
+				elseif data.unit:anim_data().crouch then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_stand(data) then
+							my_data.next_allowed_stance_t = data.t + math.lerp(1.5, 7, math.random())
+							agg_pose = true
+						end
+					end
+				end
+			end
+		elseif data.attention_obj and data.attention_obj.aimed_at and data.attention_obj.reaction and data.attention_obj.reaction >= REACT_COMBAT and data.attention_obj.verified then
+			if diff_index > 5 then
+				if data.unit:anim_data().stand then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_crouch(data) then
+							my_data.next_allowed_stance_t = data.t + math.lerp(1.5, 7, math.random())
+							agg_pose = true
+						end
+					end
+				elseif data.unit:anim_data().crouch then
+					if not my_data.next_allowed_stance_t or my_data.next_allowed_stance_t < data.t then
+						if CopLogicAttack._chk_request_action_stand(data) then
+							my_data.next_allowed_stance_t = data.t + math.lerp(1.5, 7, math.random())
+							agg_pose = true
+						end
+					end
+				end
+			end
+		end
+	end
+
+	if agg_pose then
+		return
+	end
+
+	if data.char_tweak.allowed_poses and can_stand_or_crouch and not obj_has_pose and not agg_pose then
+		for pose_name, state in pairs(data.char_tweak.allowed_poses) do
+			if state then
+				if pose_name == "stand" then
+					CopLogicAttack._chk_request_action_stand(data)
+
+					break
+				end
+
+				if pose_name == "crouch" then
+					CopLogicAttack._chk_request_action_crouch(data)
+
+					break
+				end
+			end
+		end
+	end
+end
+
+function CopLogicBase.chk_am_i_aimed_at(data, attention_obj, max_dot)
+	if not attention_obj.is_person or not attention_obj.is_alive then
+		return
+	end
+
+	if attention_obj.dis < 700 and max_dot > 0.3 then
+		max_dot = math_lerp(0.3, max_dot, (attention_obj.dis - 50) / 650)
+	end
+
+	local enemy_look_dir = nil
+	local weapon_rot = nil
+
+	if attention_obj.is_husk_player then
+		enemy_look_dir = attention_obj.unit:movement():detect_look_dir()
+	else
+		enemy_look_dir = tmp_vec1
+
+		if attention_obj.is_local_player then
+			m_rot_y(attention_obj.unit:movement():m_head_rot(), enemy_look_dir)
+		else
+			if attention_obj.unit:inventory() and attention_obj.unit:inventory():equipped_unit() then
+				if attention_obj.unit:movement()._stance.values[3] >= 0.6 then
+					local weapon_fire_obj = attention_obj.unit:inventory():equipped_unit():get_object(Idstring("fire"))
+
+					if alive(weapon_fire_obj) then
+						weapon_rot = weapon_fire_obj:rotation()
+					end
+				end
+			end
+
+			if weapon_rot then
+				m_rot_y(weapon_rot, enemy_look_dir)
+			else
+				m_rot_z(attention_obj.unit:movement():m_head_rot(), enemy_look_dir)
+			end
+		end
+	end
+
+	local enemy_vec = tmp_vec2
+	mvec3_dir(enemy_vec, attention_obj.m_head_pos, data.unit:movement():m_com())
+
+	return max_dot < mvec3_dot(enemy_vec, enemy_look_dir)
 end

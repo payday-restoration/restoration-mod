@@ -12,7 +12,7 @@ Hooks:PostHook(GroupAIStateBesiege, "init", "ResInit", function(self, group_ai_s
 	self._ponr_is_on = nil
 
 	--Sets functions that determine chatter for spawn group leaders to say upon spawning.
-	self:_init_group_entry_lines()
+	--self:_init_group_entry_lines()
 	--self:set_debug_draw_state(true) --Uncomment to debug AI stuff.
 end)
 
@@ -216,80 +216,6 @@ function GroupAIStateBesiege:apply_grenade_cooldown(flash)
 	task_data.use_smoke = nil
 end
 
---Generate table used to find spawn-in voicelines.
-function GroupAIStateBesiege:_init_group_entry_lines()
-	local function random_cs()
-		local randomgroupcallout = math.random(1, 100)
-		if randomgroupcallout < 25 then
-			return "csalpha"
-		elseif randomgroupcallout < 50 then
-			return "csbravo"
-		elseif randomgroupcallout < 75 then
-			return "cscharlie"
-		else
-			return "csdelta"
-		end
-	end
-
-	local function random_hrt()
-		local randomgroupcallout = math.random(1, 100)
-		if randomgroupcallout < 25 then
-			return "hrtalpha"
-		elseif randomgroupcallout < 50 then
-			return "hrtbravo"
-		elseif randomgroupcallout < 75 then
-			return "hrtcharlie"
-		else
-			return "hrtdelta"
-		end
-	end
-
-	--Metatable to handle more complex rng selections.
-	self._group_entry_line_selectors = setmetatable(
-		{
-			groupcs1 = "csalpha",
-			groupcs2 = "csbravo",
-			groupcs3 = "cscharlie",
-			groupcs4 = "csdelta",
-			grouphrt1 = "hrtalpha",
-			grouphrt2 = "hrtbravo",
-			grouphrt3 = "hrtcharlie",
-			grouphrt4 = "hrtdelta"
-		},{
-			__index = function(table, key)
-				if key == "groupcsr" then
-					return random_cs()
-				elseif key == "grouphrtr" then
-					return random_hrt()
-				elseif key == "groupany" then
-					if self._task_data.assault.active then
-						random_cs()
-					else
-						random_hrt()
-					end
-				else
-					return rawget(table, key)
-				end
-			end
-		}
-	)
-end
-
---Plays spawn in chatter.
---Refers to the _group_entry_line_selectors to determine what exactly to play.
-function GroupAIStateBesiege:_voice_groupentry(group)
-	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
-
-	if group_leader_u_data and group_leader_u_data.tactics and group_leader_u_data.char_tweak.chatter.entry then
-		for i_tactic, tactic_name in ipairs(group_leader_u_data.tactics) do
-			local selection = self._group_entry_line_selectors[tactic_name]
-			if selection then
-				self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, selection)
-			end
-		end
-	end
-end
-
 --Captain Assault Banner enabled on enemy spawn, rather than via groupai.
 function GroupAIStateBesiege:set_damage_reduction_buff_hud()
 	--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
@@ -491,41 +417,6 @@ function GroupAIStateBesiege:_upd_assault_task(...)
 
 	self:_assign_enemy_groups_to_assault(task_data.phase)
 end
-
-
--- Add an alternate in_place check to prevent enemy groups from getting stuck
-function GroupAIStateBesiege:_assign_enemy_groups_to_assault(phase)
-	for _, group in pairs(self._groups) do
-		if group.has_spawned and group.objective.type == "assault_area" then
-			if group.objective.moving_out then
-				local done_moving
-
-				for _, u_data in pairs(group.units) do
-					local objective = u_data.unit:brain():objective()
-					if objective and objective.grp_objective == group.objective then
-						if objective.in_place or objective.area and objective.area.nav_segs[u_data.unit:movement():nav_tracker():nav_segment()] then
-							done_moving = true
-						else
-							done_moving = false
-							break
-						end
-					end
-				end
-
-				if done_moving then
-					group.objective.moving_out = nil
-					group.in_place_t = self._t
-					group.objective.moving_in = nil
-					self:_voice_move_complete(group)
-				end
-			end
-
-			if not group.objective.moving_in then
-				self:_set_assault_objective_to_group(group, phase)
-			end
-		end
-	end
-end
 -- Add an alternate in_place check to prevent enemy groups from getting stuck
 function GroupAIStateBesiege:_assign_enemy_groups_to_assault(phase)
 	for _, group in pairs(self._groups) do
@@ -626,7 +517,7 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 						group.is_chasing = true
 
 						self:_set_objective_to_enemy_group(group, grp_objective)
-						self:_voice_deathguard_start(group)
+						--self:_voice_deathguard_start(group)
 						return
 					end
 				end
@@ -951,7 +842,7 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 		return
 	end
 
-	-- If players camp a specific area for too long, turn the originally chosen grenade into a teargas grenade instead
+	--[[If players camp a specific area for too long, turn the originally chosen grenade into a teargas grenade instead
 	local use_teargas
 	if area and area.criminal_entered_t and table.size(area.neighbours) <= 2 and math_random() < (self._t - area.criminal_entered_t - 60) / 240 then
 		-- Check if a player actually currently is in this area
@@ -968,14 +859,14 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 			mvector3.set_z(detonate_pos, area.pos.z)
 			use_teargas = true
 		end
-	end
+	end]]--
 
-	if use_teargas then
+	--[[if use_teargas then
 		area.criminal_entered_t = nil
 		grenade_type = "cs_grenade"
 
-		self:detonate_cs_grenade(detonate_pos, mvector3.copy(grenade_user.m_pos), tweak_data.group_ai.cs_grenade_lifetime or 10)
-	else
+		self:detonate_cs_grenade(detonate_pos, mvector3.copy(grenade_user.m_pos), tweak_data.group_ai.cs_grenade_lifetime or 10)]]--
+	--else
 		if grenade_type == "flash_grenade" and grenade_user.char_tweak.chatter.flash_grenade then
 			self:chk_say_enemy_chatter(grenade_user.unit, grenade_user.m_pos, "flash_grenade")
 		elseif grenade_type == "smoke_grenade" and grenade_user.char_tweak.chatter.smoke then
@@ -983,7 +874,7 @@ function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 		end
 
 		self:detonate_smoke_grenade(detonate_pos, mvector3.copy(grenade_user.m_pos), tweak_data.group_ai[grenade_type .. "_lifetime"] or 10, grenade_type == "flash_grenade")
-	end
+	--end
 
 	local timeout = tweak_data.group_ai[grenade_type .. "_timeout"] or tweak_data.group_ai.smoke_and_flash_grenade_timeout
 	task_data.use_smoke_push_t = self._t + timeout[1] * 0.15
@@ -1302,7 +1193,7 @@ end
 
 function GroupAIStateBesiege:_voice_friend_dead(group)
 	for u_key, unit_data in pairs(group.units) do
-		if unit_data.char_tweak.chatter and unit_data.char_tweak.chatter.enemyidlepanic and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "assaultpanic") then
+		if unit_data.char_tweak.chatter and unit_data.char_tweak.chatter.enemyidlepanic and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "aggressive") then
 			else
 		end
 	end
@@ -1366,3 +1257,53 @@ function GroupAIStateBesiege:_voice_dont_delay_assault(group)
 	end
 	return false
 end
+
+--chatter below
+local math_random = math.random
+
+function GroupAIStateBesiege:chk_has_civilian_hostages()
+	return self._hostage_headcount - self._police_hostage_headcount > 0
+end
+
+function GroupAIStateBesiege:chk_had_hostages()
+	return self._had_hostages
+end
+
+function GroupAIStateBesiege:chk_assault_active_atm()
+	local assault_task = self._task_data.assault
+	return assault_task and (assault_task.phase == "build" or assault_task.phase == "sustain" or assault_task.phase == "fade")
+end
+	
+-- Assault/Rescue team going in lines
+function GroupAIStateBesiege:_voice_groupentry(group, recon)
+	local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
+	if group_leader_u_data and group_leader_u_data.char_tweak.chatter.entry then
+		self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, recon and "hrt" .. math_random(1, 4) or "cs" .. math_random(1, 4))
+	end
+end
+
+Hooks:PreHook(GroupAIStateBesiege, "_set_objective_to_enemy_group", "RR_set_objective_to_enemy_group", function(self, group, grp_objective)
+	if grp_objective.type == "recon_area" then
+		local target_area = grp_objective.target_area or grp_objective.area
+		grp_objective.chatter_type = target_area and (target_area.loot and "sabotagebags" or target_area.hostages and "sabotagehostages")
+	end
+end)
+
+Hooks:PostHook(GroupAIStateBesiege, "_perform_group_spawning", "RR_perform_group_spawning", function(self, spawn_task)
+	if spawn_task.group.has_spawned then
+		self:_voice_groupentry(spawn_task.group, spawn_task.group.objective.type == "recon_area") -- so it doesn't depend on setting this up in groupaitweakdata anymore as well as being more accurate to the group's actual intent
+	end
+end)
+
+Hooks:PostHook(GroupAIStateBesiege, "_end_regroup_task", "RR_end_regroup_task", function(self)
+	self._had_hostages = self._hostage_headcount > 3
+end)
+
+Hooks:PreHook(GroupAIStateBesiege, "_assign_group_to_retire", "RR_assign_group_to_retire", function(self, group)
+	if group.objective.type == "assault_area" then
+		local group_leader_u_key, group_leader_u_data = self._determine_group_leader(group.units)
+		if group_leader_u_data and group_leader_u_data.char_tweak.chatter.retreat then
+			self:chk_say_enemy_chatter(group_leader_u_data.unit, group_leader_u_data.m_pos, "retreat")
+		end
+	end
+end)

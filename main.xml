@@ -84,6 +84,8 @@
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
+		<hook file="sc/units/props/carrydata.lua" source_file="lib/units/props/carrydata"/>
+		<hook file="sc/units/props/drill.lua" source_file="lib/units/props/drill"/>
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
 		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
@@ -231,6 +233,7 @@
 		<hook file="sc/units/weapons/npcraycastweaponbase.lua" source_file="lib/units/weapons/npcraycastweaponbase"/>
 		<hook file="sc/tweak_data/timespeedeffecttweakdata.lua" source_file="lib/tweak_data/timespeedeffecttweakdata"/>
 		<hook file="sc/units/civilians/civilianlogictravel.lua" source_file="lib/units/civilians/logics/civilianlogictravel"/>
+		<hook file="sc/units/civilians/civilianlogicflee.lua" source_file="lib/units/civilians/logics/civilianlogicflee"/>
 		<hook file="sc/units/enemies/tankcopdamage.lua" source_file="lib/units/enemies/tank/tankcopdamage"/>
 		<hook file="sc/units/enemies/husktankcopdamage.lua" source_file="lib/units/enemies/tank/husktankcopdamage"/>
 		<hook file="sc/units/weapons/trip_mine/tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
@@ -343,8 +346,6 @@
 		<!--DO NOT MODIFY-->
 		<hook file="sc/managers/savefilemanager.lua" source_file="lib/managers/savefilemanager"/>
 		<!--DO NOT MODIFY-->
-		
-		<hook file="sc/managers/customsafehousemanager.lua" source_file="lib/managers/customsafehousemanager"/>
 		
     </Hooks>
 	<!--///MOD SETTINGS\\\-->

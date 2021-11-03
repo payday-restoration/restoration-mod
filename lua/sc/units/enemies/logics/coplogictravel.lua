@@ -275,3 +275,166 @@ function CopLogicTravel._chk_start_pathing_to_next_nav_point(data, my_data)
 
 	data.unit:brain():search_for_path(my_data.advance_path_search_id, to_pos, prio, nil, nav_segs)
 end
+
+	function CopLogicTravel.action_complete_clbk(data, action)
+		local my_data = data.internal_data
+		local action_type = action:type()
+
+		if action_type == "walk" then
+			if action:expired() and not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
+				my_data.coarse_path_index = my_data.coarse_path_index + 1
+
+				if #my_data.coarse_path < my_data.coarse_path_index then
+					debug_pause_unit(data.unit, "[CopLogicTravel.action_complete_clbk] invalid coarse path index increment", data.unit, inspect(my_data.coarse_path), my_data.coarse_path_index)
+
+					my_data.coarse_path_index = my_data.coarse_path_index - 1
+				end
+			end
+
+			my_data.advancing = nil
+
+			if my_data.moving_to_cover then
+				if action:expired() then
+					if my_data.best_cover then
+						managers.navigation:release_cover(my_data.best_cover[1])
+					end
+
+					my_data.best_cover = my_data.moving_to_cover
+
+					CopLogicBase.chk_cancel_delayed_clbk(my_data, my_data.cover_update_task_key)
+
+					local high_ray = CopLogicTravel._chk_cover_height(data, my_data.best_cover[1], data.visibility_slotmask)
+					my_data.best_cover[4] = high_ray
+					my_data.in_cover = true
+					local cover_wait_time = my_data.coarse_path_index == #my_data.coarse_path - 1 and 0.3 or 0.6 + 0.4 * math.random()
+
+					my_data.cover_leave_t = data.t + cover_wait_time
+				else
+					managers.navigation:release_cover(my_data.moving_to_cover[1])
+
+					if my_data.best_cover then
+						local dis = mvector3.distance(my_data.best_cover[1][1], data.unit:movement():m_pos())
+
+						if dis > 100 then
+							managers.navigation:release_cover(my_data.best_cover[1])
+
+							my_data.best_cover = nil
+						end
+					end
+				end
+
+				my_data.moving_to_cover = nil
+			elseif my_data.best_cover then
+				local dis = mvector3.distance(my_data.best_cover[1][1], data.unit:movement():m_pos())
+
+				if dis > 100 then
+					managers.navigation:release_cover(my_data.best_cover[1])
+
+					my_data.best_cover = nil
+				end
+			end
+
+			if not action:expired() then
+				if my_data.processing_advance_path then
+					local pathing_results = data.pathing_results
+
+					if pathing_results and pathing_results[my_data.advance_path_search_id] then
+						data.pathing_results[my_data.advance_path_search_id] = nil
+						my_data.processing_advance_path = nil
+					end
+				elseif my_data.advance_path then
+					my_data.advance_path = nil
+				end
+
+				data.unit:brain():abort_detailed_pathing(my_data.advance_path_search_id)
+			end
+		elseif action_type == "turn" then
+			data.internal_data.turning = nil
+		elseif action_type == "shoot" then
+			data.internal_data.shooting = nil
+		elseif action_type == "dodge" then
+			local objective = data.objective
+			local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, objective, nil, nil)
+
+			if allow_trans then
+				local wanted_state = data.logic._get_logic_state_from_reaction(data)
+
+				if wanted_state and wanted_state ~= data.name and obj_failed then
+					if data.unit:in_slot(managers.slot:get_mask("enemies")) or data.unit:in_slot(17) then
+						data.objective_failed_clbk(data.unit, data.objective)
+					elseif data.unit:in_slot(managers.slot:get_mask("criminals")) then
+						managers.groupai:state():on_criminal_objective_failed(data.unit, data.objective, false)
+					end
+
+					if my_data == data.internal_data then
+						debug_pause_unit(data.unit, "[CopLogicTravel.action_complete_clbk] exiting without discarding objective", data.unit, inspect(data.objective))
+						CopLogicBase._exit(data.unit, wanted_state)
+					end
+				end
+			end
+		end
+	end
+
+--chatter below
+local killdapowa = {
+	['e_so_pull_lever'] = true,
+	['e_so_pull_lever_var2'] = true
+}
+local math_random = math.random
+local react_aim = AIAttentionObject.REACT_AIM
+
+Hooks:PostHook(CopLogicTravel, "upd_advance", "RR_upd_advance", function(data)
+	local my_data = data.internal_data
+	local chatter = data.char_tweak.chatter
+	local focus_enemy = data.attention_obj
+	if chatter and not data.is_converted and not data.unit:sound():speaking(data.t) and my_data.coarse_path and not my_data.warp_pos and not my_data.advancing and (not focus_enemy or react_aim > focus_enemy.reaction or not focus_enemy.verified_t or data.t - focus_enemy.verified_t > 5) then -- we're not speaking, not currently going to move anywhere and don't see any criminals
+		local objective = data.objective
+		if data.cool then -- don't try and play approachingspecial or clear lines if we're cool
+			if chatter.clear_whisper then
+				managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, math_random() > 0.5 and "clear_whisper_1" or "clear_whisper_2") -- report in saying everything is good
+			end
+		elseif objective and objective.grp_objective and objective.grp_objective.type == "recon_area" then -- we want after the loot or the hostages
+			local hostage_count = managers.groupai:state():hostage_count()
+			if hostage_count > 0 then
+				if hostage_count > 3 then
+					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "hostagepanic2")
+				elseif managers.groupai:state():chk_has_civilian_hostages() then
+					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "civilianpanic")
+				else
+					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "hostagepanic1")
+				end
+			elseif managers.groupai:state():chk_had_hostages() then
+				managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "hostagepanic3")
+			end
+		elseif chatter.approachingspecial then -- else we're going after the criminals, not the loot or hostages
+			managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "approachingspecial") -- announce ourself to the criminals
+		elseif chatter.clear then -- might be a good idea to also check whether there's a criminal in our current (maybe neighbours too) navsegment
+			managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "clear") -- no criminals, clear!
+			--log("clear!!")
+		end
+	end
+end)
+
+-- to ensure they play these lines as they start moving towards their final destination, to free a hostage for example
+Hooks:PostHook(CopLogicTravel, "_chk_request_action_walk_to_advance_pos", "RR_chk_request_action_walk_to_advance_pos", function(data, my_data)
+	local objective = data.objective
+	if objective and not data.is_converted and not data.cool and not data.unit:sound():speaking(data.t) and not managers.skirmish:is_skirmish() and my_data.advancing and my_data.coarse_path and my_data.coarse_path_index and my_data.coarse_path_index >= #my_data.coarse_path - 1 then
+		local chatter = data.char_tweak.chatter
+		local grp_objective = objective.grp_objective
+		if objective.chatter_type and chatter[objective.chatter_type] then
+			managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, objective.chatter_type)
+		elseif grp_objective and grp_objective.chatter_type and chatter[grp_objective.chatter_type] then
+			managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, grp_objective.chatter_type)
+		elseif objective.action and killdapowa[objective.action.variant] and chatter.sabotagepower then -- best way i can think of implementing this at the moment
+			managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "sabotagepower")
+		end
+	end
+end)
+
+Hooks:PreHook(CopLogicTravel, "_on_destination_reached", "RR_on_destination_reached", function(data)
+	local objective = data.objective
+	local chatter = data.char_tweak.chatter
+	if objective.type ~= "flee" and (not objective.grp_objective or objective.grp_objective.type ~= "retire") and chatter and (chatter.inpos or chatter.ready) and not data.is_converted and not data.cool and not data.unit:sound():speaking(data.t) then
+		managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, math_random() > 0.5 and "ready" or "inpos") -- Ready! / I'm in position!
+	end
+end)

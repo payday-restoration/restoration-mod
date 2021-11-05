@@ -313,10 +313,6 @@ function CopBase:default_weapon_name()
 		default_weapon_id = "raging_bull"				
 	end
 	
-	if self._unit:name() == Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249") then
-		default_weapon_id = "m60"				
-	end
-	
 	--Security Guards
 	if self._unit:name() == Idstring("units/payday2/characters/ene_security_3/ene_security_3") then
 		default_weapon_id = "r870"	

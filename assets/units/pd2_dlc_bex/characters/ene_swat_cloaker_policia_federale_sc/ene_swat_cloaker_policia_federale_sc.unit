@@ -10,6 +10,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on effect="effects/particles/character/cloaker_goggle" />
 		<depends_on unit="units/payday2/characters/ene_acc_baton/ene_acc_baton" />
+		<depends_on unit="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_head_debris" />
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_body_debris" />
 	</dependencies>

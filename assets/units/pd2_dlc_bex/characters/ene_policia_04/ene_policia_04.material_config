@@ -26,10 +26,5 @@
 		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/sjnp_beatcop_atlas_df" mip="4"/>
 	</material>
 	
-	<material name="mtr_hat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/pd2_dlc_bex/characters/shared_textures/sjnp_beatcop_atlas_nm"/>
-		<diffuse_texture 		file="units/pd2_dlc_bex/characters/shared_textures/sjnp_beatcop_atlas_df"/>
-	</material>
-	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>
 </materials>

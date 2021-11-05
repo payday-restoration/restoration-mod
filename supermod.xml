@@ -9,5 +9,4 @@
 	<tweak definition="nin_res_animation_state_machine.xml" />
 	<tweak definition="nin_res_animation_states.xml" />
 	<tweak definition="nin_res_animation_subset.xml" />
-	<!-- <:include src="addoutfit.xml"/> -->
 </mod>

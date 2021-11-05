@@ -22,7 +22,7 @@
 	
 	<material name="mtr_gore" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
         <bump_normal_texture 	file="units/payday2/characters/shared_textures/heads_atlas_nm"/>
-        <diffuse_texture 		file="units/payday2/characters/shared_textures/heads_atlas_df"/>
+        <diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_heads_df"/>
 	</material>
 
 	<material name="mtr_head_lod" render_template="generic:DIFFUSE_TEXTURE:RL_COPS:SKINNED_3WEIGHTS" version="2">

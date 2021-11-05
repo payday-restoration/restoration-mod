@@ -1018,6 +1018,7 @@
 	<sequence_manager path="units/pd2_mod_halloween/characters/ene_headless_hatman/ene_headless_hatman" force="false"/>
 	<!--textures-->
 	<texture path="units/pd2_mod_halloween/characters/ene_headless_hatman/hatman_df" force="false"/>	
+	<texture path="units/pd2_dlc_vip/characters/shared_textures/vip_2_body_nm" force="false"/>
 	
 	<!--Titan Cloaca-->	
 	<model path="units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>

@@ -42,6 +42,7 @@
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/grenadier_atlas_df" />
 	<texture path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/>		
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/material_body_df" force="false"/>	
+	<texture path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>	
 	<texture path="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df" />
 	<texture path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>		
 	<texture path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" />
@@ -271,12 +272,12 @@
 	<model path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_body_debris"/>		
 
 	<!--Medic-->
-	<object path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale" />
-	<model path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale" />
-	<unit path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale"  load="true"/>
-	<material_config path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale" />
-	<material_config path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale_contour" />
-	<unit path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_swat_medic_policia_federale_husk"  load="true"/>	
+	<object path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc" />
+	<model path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc" />
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc"  load="true"/>
+	<material_config path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc" />
+	<material_config path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc_contour" />
+	<unit path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc_husk"  load="true"/>	
 
 	<!--Grenadier here, where's the fiesta-->
 	<object path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>

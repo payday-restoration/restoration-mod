@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+	<assets base_path="assets/">
+		<group name="units/pd2_mod_suits/characters/" dyn_package="false">
+			<!-- prison suit (male)-->
+			<file :name="res_acc_prison_suit/res_acc_prison_suit.object" />
+			<file :name="res_acc_prison_suit/res_acc_prison_suit.unit" />
+			<file :name="res_acc_prison_suit/res_acc_prison_suit.model" />
+			<file :name="res_acc_prison_suit/res_acc_prison_suit.material_config" />
+			<file :name="res_acc_prison_suit/res_acc_prison_suit.cooked_physics" />
+			
+			<!-- prison suit (female)-->
+			<file :name="res_acc_prison_suit_female/res_acc_prison_suit_female.object" />
+			<file :name="res_acc_prison_suit_female/res_acc_prison_suit_female.unit" />
+			<file :name="res_acc_prison_suit_female/res_acc_prison_suit_female.model" />
+			<file :name="res_acc_prison_suit_female/res_acc_prison_suit_female.cooked_physics" />
+			
+			<!-- prison suit (big)-->
+			<file :name="res_acc_prison_suit_big/res_acc_prison_suit_big.object" />
+			<file :name="res_acc_prison_suit_big/res_acc_prison_suit_big.unit" />
+			<file :name="res_acc_prison_suit_big/res_acc_prison_suit_big.model" />
+			<file :name="res_acc_prison_suit_big/res_acc_prison_suit_big.cooked_physics" />
+			
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit_df.texture" />
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit_nm.texture" />
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit_gsma.texture" />
+			
+			<!-- fps arms -->
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit.object" />
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit.unit" />
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit.model" />
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit.material_config" />
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit.cooked_physics" />
+			
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit_df.texture" />
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit_nm.texture" />
+			<file :name="res_acc_fps_prison_suit/res_acc_fps_prison_suit_gsma.texture" />
+		
+			<!-- loud suit (male)-->
+			<file :name="res_acc_loud_suit/res_acc_loud_suit.object" />
+			<file :name="res_acc_loud_suit/res_acc_loud_suit.unit" />
+			<file :name="res_acc_loud_suit/res_acc_loud_suit.model" />
+			<file :name="res_acc_loud_suit/res_acc_loud_suit.material_config" />
+			<file :name="res_acc_loud_suit/res_acc_loud_suit.cooked_physics" />
+			
+			<!-- loud suit (big male)-->
+			<file :name="res_acc_loud_suit_male_big/res_acc_loud_suit_male_big.object" />
+			<file :name="res_acc_loud_suit_male_big/res_acc_loud_suit_male_big.unit" />
+			<file :name="res_acc_loud_suit_male_big/res_acc_loud_suit_male_big.model" />
+			<file :name="res_acc_loud_suit_male_big/res_acc_loud_suit_male_big.cooked_physics" />
+			
+			<!-- loud suit (female)-->
+			<file :name="res_acc_loud_suit_female/res_acc_loud_suit_female.object" />
+			<file :name="res_acc_loud_suit_female/res_acc_loud_suit_female.unit" />
+			<file :name="res_acc_loud_suit_female/res_acc_loud_suit_female.model" />
+			<file :name="res_acc_loud_suit_female/res_acc_loud_suit_female.cooked_physics" />
+			
+			<!-- loud suit (thin female)-->
+			<file :name="res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin.object" />
+			<file :name="res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin.unit" />
+			<file :name="res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin.model" />
+			<file :name="res_acc_loud_suit_female_thin/res_acc_loud_suit_female_thin.cooked_physics" />
+			
+			<!-- loud suit (big female)-->
+			<file :name="res_acc_loud_suit_female_big/res_acc_loud_suit_female_big.object" />
+			<file :name="res_acc_loud_suit_female_big/res_acc_loud_suit_female_big.unit" />
+			<file :name="res_acc_loud_suit_female_big/res_acc_loud_suit_female_big.model" />
+			<file :name="res_acc_loud_suit_female_big/res_acc_loud_suit_female_big.cooked_physics" />
+
+			<!-- fps arms -->
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit.object" />
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit.material_config" />
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit.unit" />
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit.model" />
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit.cooked_physics" />
+			
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit_2.object" />
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit_2.unit" />
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit_2.model" />
+			<file :name="res_acc_fps_loud_suit/res_acc_fps_loud_suit_2.cooked_physics" />
+
+			
+			<file :name="res_acc_loud_suit/player_tactical_outfit_df.texture" />
+			<file :name="res_acc_loud_suit/player_tactical_outfit_gsma.texture" />
+			<file :name="res_acc_loud_suit/player_tactical_outfit_nm.texture" />
+			<file :name="res_acc_fps_loud_suit/player_tactical_outfit_fp_df.texture" />
+			<file :name="res_acc_fps_loud_suit/player_tactical_outfit_fp_nm.texture" />
+			<file :name="res_acc_fps_loud_suit/player_tactical_outfit_fp_gsma.texture" />
+			
+			<!-- sunny side robber (male)-->		
+			<file :name="res_acc_sunny_suit/res_acc_sunny_suit.object" />
+			<file :name="res_acc_sunny_suit/res_acc_sunny_suit.unit" />
+			<file :name="res_acc_sunny_suit/res_acc_sunny_suit.model" />
+			<file :name="res_acc_sunny_suit/res_acc_sunny_suit.material_config" />
+			<file :name="res_acc_sunny_suit/res_acc_sunny_suit.cooked_physics" />
+			
+			<file :name="res_acc_sunny_suit/dragon/res_acc_sunny_suit_dragon.material_config" />
+			
+			<file :name="res_acc_sunny_suit/sangres/res_acc_sunny_suit_sangres.material_config" />
+			<file :name="res_acc_sunny_suit/sangres/res_acc_sunny_suit_sangres_df.texture" />
+
+			<file :name="res_acc_sunny_suit/chains/res_acc_sunny_suit_chains.material_config" />
+
+			<file :name="res_acc_sunny_suit/bodhi/res_acc_sunny_suit_bodhi.material_config" />
+
+			<file :name="res_acc_sunny_suit/res_acc_sunny_suit_df.texture" />	
+		
+			<!-- sunny side robber (big)-->		
+			<file :name="res_acc_sunny_suit_big/res_acc_sunny_suit_big.object" />
+			<file :name="res_acc_sunny_suit_big/res_acc_sunny_suit_big.unit" />
+			<file :name="res_acc_sunny_suit_big/res_acc_sunny_suit_big.model" />
+			<file :name="res_acc_sunny_suit_big/res_acc_sunny_suit_big.cooked_physics" />
+		
+			<!-- sunny side robber (female)-->		
+			<file :name="res_acc_sunny_suit_female/res_acc_sunny_suit_female.object" />
+			<file :name="res_acc_sunny_suit_female/res_acc_sunny_suit_female.unit" />
+			<file :name="res_acc_sunny_suit_female/res_acc_sunny_suit_female.material_config" />
+			<file :name="res_acc_sunny_suit_female/res_acc_sunny_suit_female.model" />
+			<file :name="res_acc_sunny_suit_female/res_acc_sunny_suit_female.cooked_physics" />
+
+			<file :name="res_acc_sunny_suit_female/joy/res_acc_sunny_suit_female_joy.material_config" />
+			<file :name="res_acc_sunny_suit_female/sydney/res_acc_sunny_suit_female_sydney.material_config" />	
+
+			<!-- boiler suit tweaks-->		
+			<file :name="res_acc_sunny_suit_big/res_acc_sunny_suit_big.object" />
+			<file :name="res_acc_sunny_suit_big/res_acc_sunny_suit_big.unit" />
+			<file :name="res_acc_sunny_suit_big/res_acc_sunny_suit_big.model" />
+			<file :name="res_acc_sunny_suit_big/res_acc_sunny_suit_big.cooked_physics" />			
+		</group>
+		
+		<group name="units/pd2_dlc_trd/characters/trd_acc_jumpsuits/" dyn_package="false">
+		
+			<!-- boiler suit default texture tweaks-->		
+			<file :name="shared_textures/trd_acc_jumpsuits_gsma.texture" />
+			<file :name="shared_textures/trd_acc_jumpsuits_red_df.texture" />
+			<file :name="trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_gsma.texture" />
+			
+			<!-- fucktarn camo -->
+			<file :name="trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/trd_acc_jumpsuit_male_average_flecktarn.material_config" />
+			<file :name="trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn.material_config" />
+
+			<file :name="trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flecktarn_df.texture" />
+			<file :name="trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_flecktarn_df.texture" />
+			
+			<!-- flat green camo -->
+			<file :name="trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flatgreen.material_config" />
+			<file :name="trd_acc_jumpsuits/trd_acc_jumpsuits/trd_acc_jumpsuit_male_average/trd_acc_jumpsuit_male_average_flatgreen.material_config" />
+
+			<file :name="trd_acc_jumpsuits/trd_acc_fps_jumpsuit/trd_acc_fps_jumpsuit_flatgreen_df.texture" />
+			<file :name="trd_acc_jumpsuits/shared_textures/trd_acc_jumpsuits_flatgreen_df.texture" />
+			
+		</group>
+		
+</assets>

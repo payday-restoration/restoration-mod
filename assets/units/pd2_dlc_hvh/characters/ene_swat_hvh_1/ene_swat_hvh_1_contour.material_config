@@ -69,7 +69,7 @@
         <reflection_texture type="cubemap" global_texture="current_global_texture"/>
 	</material>
 	<material name="mtr_glass_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-        <bump_normal_texture file="units/payday2/textures/blank_nm" mip="4"/>
+        <bump_normal_texture file="units/payday2/textures/blank_nm"/>
         <diffuse_texture file="units/pd2_dlc_vip/characters/shared_textures/titan_glass_df" mip="4"/>
 	</material>
 	

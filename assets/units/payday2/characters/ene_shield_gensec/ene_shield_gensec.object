@@ -236,12 +236,11 @@
 			<lod_object name="lod_glass">
 				<object name="g_helmet_lod3" 	enabled="true"  max_distance="2000"  max_draw_lod="0" >
 					<material materials="mtr_glass" max_distance="1500" />
-					<material materials="mtr_glass_lod_1" />
+					<material materials="mtr_glass_lod" />
 				</object>
 				<object name="g_helmet_lod4" 	enabled="true" lod="1" >
 					<material materials="mtr_glass" max_distance="0" />
-					<material materials="mtr_glass_lod_1" max_distance="3000" />
-					<material materials="mtr_glass_lod_2" />
+					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>
 						

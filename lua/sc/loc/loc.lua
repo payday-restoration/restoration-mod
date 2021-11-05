@@ -340,6 +340,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_fex"] = "TIME CLASSIFIED, Mexico - Buluc's Mansion",
 		["restoration_level_data_chas"] = "8:30 PM, San Francisco - Chinatown",
 		["restoration_level_data_sand"] = "10:30 PM, San Francisco - Dockyard",
+		["restoration_level_data_chca"] = "9:24 PM, San Francisco Bay - The Black Cat",
 		["restoration_level_data_wetwork"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_junk"] = "TIME CLASSIFIED, LOCATION CLASSIFIED",
 		["restoration_level_data_holly"] = "5:00 PM, Los Angeles - Lukas' Mansion",
@@ -1356,9 +1357,9 @@ local ai_type = tweak_data.levels:get_ai_group_type()
 if ai_type == r then
 	Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
 		LocalizationManager:add_localized_strings({
-			["hud_assault_assault"] = "ИДЁТ ЩТУРМ НАЁМНИКОВ",
+			["hud_assault_assault"] = "ИДЁТ ШТУРМ НАЁМНИКОВ",
 			["hud_assault_cover"] = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
-			["hud_assault_alpha"] = "ЩTУPM HAЁMHИKOB"
+			["hud_assault_alpha"] = "ШTУPM HAЁMHИKOB"
 		})
 	end)
 elseif ai_type == z then
@@ -2299,7 +2300,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_st_spec_10_desc_sc"] = "Luck is an elusive quality. The ancient Greeks believed it was the design of the Gods. It isn't. It certainly exists, but it's something you can earn. It requires preparation and forethought to get your pieces in place, and maximizes your chances of a return. It's counting cards, rather than the blessing of Fortuna.\n\nThe Gambler perk deck is a support deck. Anyone can help the team win, but it takes the Gambler to help the team win big.\n\nBenefits from a full perk deck:\n##-##Ammo supplies you pick up also yield medical supplies that heal you for ##8## to ##12## health. Cannot occur more than once every ##10## seconds, but every ammo box you pick up reduces this by ##3## to ##5## seconds.\n##-##When you get healed from picking up ammo packs:\nYour ##teammates also gain an ammo pickup##.\nYour dodge meter is filled up by ##100%## of your dodge when healing from ammo packs.\nYour teammates get healed for ##50%## of the amount.\nYou gain ##30## armor.\n##-##You gain ##10## dodge points.",		
 		["menu_deck10_1_desc_sc"] = "Ammo supplies you pick up also yield medical supplies that heal you for ##4## to ##8## health.\n\nCannot occur more than once every ##10## seconds, but every ammo box you pick up reduces this by ##3## to ##5## seconds.",
 		["menu_deck10_3_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also gain an ammo pickup.\n\nYou gain ##5## dodge points.",
-		["menu_deck10_5_desc_sc"] = "Increase health gained from ammo packs by an additional ##2##.n\nWhen you get healed from picking up ammo packs, your dodge meter is also filled up by ##100%## of your dodge.",
+		["menu_deck10_5_desc_sc"] = "Increase health gained from ammo packs by an additional ##2##.\n\nWhen you get healed from picking up ammo packs, your dodge meter is also filled up by ##100%## of your dodge.",
 		["menu_deck10_7_desc_sc"] = "When you get healed from picking up ammo packs, your teammates also get healed for ##50%## of the amount.\n\nYou gain ##5## dodge points.",
 		["menu_deck10_9_desc_sc"] = "Increase health gained from ammo packs by an additional ##2##.\n\nWhen you get healed from picking up ammo packs, you also gain ##30## armor.\n\nDeck Completion Bonus: Your chance of getting a higher quality item during a PAYDAY is increased by ##10%.##",
 

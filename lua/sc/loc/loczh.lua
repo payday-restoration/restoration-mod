@@ -119,6 +119,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModInfo_dmg_multiplier_outnumberedDescID"] = "开启或关闭对此技能的追踪",
 		["RestorationModInfo_unseen_strikeTitleID"] = "掩其无备",
 		["RestorationModInfo_unseen_strikeDescID"] = "开启或关闭对此技能的追踪",
+		["RestorationModInfo_survive_one_hitTitleID"] = "鬼之刺青 (极道)",
+		["RestorationModInfo_survive_one_hitDescID"] = "开启或关闭对此技能的追踪",
+		["RestorationModInfo_doctor_bag_health_regenTitleID"] = "医疗箱血量恢复",
+		["RestorationModInfo_doctor_bag_health_regenDescID"] = "开启或关闭对医疗箱血量恢复剩余时间的追踪",
 		["RestorationModAltLastDownColorTitleID"] = "更改被逮捕前最后一次倒地的颜色",
 		["RestorationModAltLastDownColorDescID"] = "将被逮捕前最后一次倒地时角色边框的颜色设置为 color_sin_classic*.",
 		["RestorationModNoBleedoutTiltTitleID"] = "取消倒地视角的倾斜",
@@ -127,6 +131,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModClassicMoviesDescID"] = "选择是否在任务简报界面采用PD:TH的经典页面(仅适用于经典劫案)",
 		["RestorationModQuietRainTitleID"] = "减轻雨声",
 		["RestorationModQuietRainDescID"] = "在下雨的劫案中雨声不会那么嘈杂",
+		
+
 
 		["default"] = "默认",
 		["random"] = "随机",
@@ -336,6 +342,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_fex"] = "秘密的时间, 墨西哥-布鲁克庄园",
 		["restoration_level_data_chas"] = "下午8:30, 旧金山-唐人街",
 		["restoration_level_data_sand"] = "下午10:30, 旧金山-船坞",
+		["restoration_level_data_chca"] = "9:24 PM, San Francisco Bay - The Black Cat",
 		["restoration_level_data_wetwork"] = "秘密的时间, 秘密的地点",
 		["restoration_level_data_junk"] = "秘密的时间, 秘密的地点",
 		["restoration_level_data_holly"] = "下午5:00 , 洛杉矶-卢卡斯的庄园",
@@ -372,8 +379,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		
 		["heist_contact_akashic_description"] = "曾在赫克特·莫拉莱斯手下工作的高级中尉，尼古拉斯·\"尼可\"·雷内现在指挥着锡那罗亚贩毒集团在美国的残部。\n他们数量较少，因此规模更大的哥伦比亚贩毒集团不愿帮助他们，也不愿改善同CRIMNET的关系。\n\n于是尼可拉拢了在东海岸活动的各种小规模帮派并同CRIMENET结盟，他会提供他的资源以换取CRIME.NET的服务。",
 
-		["bm_msk_shatter_true"] = "Shatter",
-		["bm_msk_shatter_true_desc"] = "The legendary mask that has only been spoken of in hushed tones.\n\nOf course, it's just a duplicate.\n\nThere's something much more special about the real one, but I think you'll like a copy just as much.\n\nThe Phoenix symbolizes re-birth, a timeless being that can never truly be killed.  Attempting to smite one down, it will strike back in an awesome show of flames and combustion.",
+		["bm_msk_shatter_true"] = "刺眼火花",
+		["bm_msk_shatter_true_desc"] = "只被人们隐晦提及的传奇面具。/n/n当然了，这只是件复制品。/n/n原品实在是过于珍贵，以至于我认为这件复制品就足以满足你的收藏欲望。/n/n凤凰，重生的象征，无法真正死亡的永生之物。若是将其抹杀，它将火光与烈焰中给予反击。",
 
 		["menu_l_global_value_veritas"] = "恢复MOD",
 		["menu_l_global_value_veritas_desc"] = "这是一件恢复MOD物品！",
@@ -433,13 +440,13 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_wolf_aged"] = "远古沃尔夫",
 		["bm_msk_wolf_aged_desc"] = "你和你的团队在猎宝奇兵的诡异埃及宝箱中找到的这些面具。宝箱在随后的运输中被截获，里面剩下的东西被交给你们。\n\n关于这些面具的事情…很不寻常。没有关于它们来自哪里的情报。\n\n胡狼推测这可能就是个笑话，或者是某种吓跑四人组的尝试。\n\n不过你又能知道啥呢？它们看起来非常，非常古老。",
 
-		["bm_msk_beef_dallas"] = "牛肉达拉斯",
+		["bm_msk_beef_dallas"] = "怨念达拉斯",
 		["bm_msk_beef_dallas_desc"] = "四人组在大闹屠宰场时戴的就是这些面具。\n\n达拉斯选择继续保持他那标志性的小丑面具设计。",
-		["bm_msk_beef_chains"] = "牛肉钱恩斯",
+		["bm_msk_beef_chains"] = "怨念钱恩斯",
 		["bm_msk_beef_chains_desc"] = "四人组在大闹屠宰场时戴的就是这些面具。\n\n作为暴徒的钱恩斯想要一种骇人的动物作为自己的面具设计。还有什么会比一只该死的恐龙更骇人呢？",
-		["bm_msk_beef_hoxton"] = "牛肉霍斯顿",
+		["bm_msk_beef_hoxton"] = "怨念霍斯顿",
 		["bm_msk_beef_hoxton_desc"] = "四人组在大闹屠宰场时戴的就是这些面具。\n\n霍斯顿对于他的面具设计要求简单明了：\n-有保护！\n-很高效！\n-够时髦！\n\n于是，这个面具诞生了。",
-		["bm_msk_beef_wolf"] = "牛肉沃尔夫",
+		["bm_msk_beef_wolf"] = "怨念沃尔夫",
 		["bm_msk_beef_wolf_desc"] = "四人组在大闹屠宰场时戴的就是这些面具。\n\n沃尔夫的面具设计灵感源于他在游戏开发时期所喜欢的角色设计之一。",
 
 		["bm_msk_vyse_dallas"] = "起源",
@@ -710,7 +717,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["ch_vs"] = "$weapons VS. $eneType $no",
 		["ch_vs_head_shots"] = "$weapon VS. $eneType 爆头$no",
 
-		["ene_law"] = "警察世界",
+		["ene_law"] = "执法人员",
 		["ene_law_desc"] = "敌对单位",
 
 		["menu_me"] = "劫匪",
@@ -1273,6 +1280,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_g3_b_sniper"] = "狙击枪管",
 		["bm_wp_g3_b_short"] = "短枪管",
 		["bm_wp_g3_m_psg"] = "狙击弹匣",
+		["bm_wp_g36_o_vintage_desc"] = "G36标配瞄具",
 
 		["bm_w_m590"] = "雷恩贝克890霰弹枪",
 		["bm_w_m590_desc"] = "在犯罪世界里最流行的霰弹枪的精神继承者又回来了！在保持了原版雷恩贝克霰弹枪的高伤害的同时，做了一些细节上的修改而使它的射速更快但是稳定性更差。",
@@ -1427,7 +1435,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["debug_equipment_armor_kit"] = "手雷箱",
 		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你必须先按住 $BTN_USE_ITEM 将其放下。 手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住 $BTN_INTERACT 来补充投掷物。 手雷箱只能被使用三次。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能补满你的投掷物。",
 
-		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，它可以生效10秒。\n\n你可以与其互动以启用ECM干扰器的反馈功能，反馈有几率使半径25米内的敌人失去行动能力，反馈持续20秒且可以在4的充能后重新使用。\n\nECM干扰器可以用于打开ATM机且可以暂时使电子设备失效，如干扰手机报警、摄像头与其它探测系统的电子设备，让你更轻松地实现目标。",
+		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，它可以生效10秒。\n\n你可以与其互动以启用ECM干扰器的反馈功能，反馈有几率使半径25米内的敌人失去行动能力，反馈持续20秒且可以在4分钟的充能后重新使用。\n\nECM干扰器可以用于打开ATM机且可以暂时使电子设备失效，如干扰手机报警、摄像头与其它探测系统的电子设备，让你更轻松地实现目标。",
 		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以回复100点血量。急救包只能使用一次。\n\n急救包可以在紧急情况下快速进行急救。",
 		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以立即回复血量上限20%的血量，然后在3分钟内每4秒回复血量上限4%的血量。医疗箱在无技能时可以使用两次。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
 		["bm_equipment_sentry_gun_desc"] = "要使用哨戒机枪，你需要按住 $BTN_USE_ITEM 将其部署下来。部署哨戒机枪将用掉你备弹上限40%的弹药。哨戒机枪在承受过多伤害后会损坏，此时你可以通过按住 $BTN_INTERACT 使其进入自动维修模式。捡起哨戒机枪将会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于恐吓平民，使平民保持趴在地上的状态。\n\n哨戒机枪会自动瞄准和射击它的感应器检测到的目标，别问这是什么感应器。它通常用于分散敌人的注意力，避免敌人集火你和你的队友。",
@@ -1456,7 +1464,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_title"] = "恢复MOD劫匪小贴士(强攻)",
 		["loading_gameplay_res_1"] = "幻影特工在要飞踢劫匪时会发出\"Wulululululu\"的声音，用这个来找到他们的位置。",
 		["loading_gameplay_res_2"] = "幻影特工在普通和充能状态不再发出\"嗞嗞\"的声音了。注意你的周围，因为他们的夜视镜灯现在变的很亮。",
-		["loading_gameplay_res_3"] = "在\"死刑宣判\"难度下，如果你在换子弹，敌人会更优先地跑过来和攻击你。确保你在换弹的时候远离敌人或处于掩体之后。有时候切换为副武器可能是一个更好的选择，尤其是你的副武器装备了手枪时。It might be better to swap weapons sometimes, especially if using a pistol as your secondary.",
+		["loading_gameplay_res_3"] = "在\"死刑宣判\"难度下，如果你在换子弹，敌人会更优先地跑过来和攻击你。确保你在换弹的时候远离敌人或处于掩体之后。有时候切换为副武器可能是一个更好的选择，尤其是你的副武器装备了手枪时。",
 		["loading_gameplay_res_4"] = "泰瑟警察在电击你时你的子弹不会回满了。试着让自己的弹药保持充足，或在被电击前切换为副武器。",
 		["loading_gameplay_res_5"] = "幻影特工喜欢跟着那些落单的劫匪，与你的队友待在一起，否则就等着进局子喝茶吧。",
 		["loading_gameplay_res_6"] = "幻影特工在飞踢你后会对你的血量造成直接的伤害。此伤害可以被\"血量减伤分数\"或逃犯格斗系二阶的\"反\'控\'精英\"技能减少。",
@@ -1516,7 +1524,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_captains_res_9"] = "你也许未能在第一次与秋日队长的交战中就击败他......不，想都别想。",	
 		["loading_captains_res_10"] = "凛冬队长对爆炸和火焰几乎免疫，并且有很强的抗子弹能力，但很容易受到近战伤害。",	
 		["loading_captains_res_11"] = "凛冬队长的盾牌是无法穿透的。",	
-		["loading_captains_res_12"] = "凛冬队长的行动模式和能力已被重做。他现在会在整个移动游走，并恢复他周围大片区域警察的血量。同时他还会找机会带领他的队友们冲锋陷阵。",	
+		["loading_captains_res_12"] = "凛冬队长的行动模式和能力已被重做。他现在会在整个地图上移动游走，并恢复他周围大片区域警察的血量。同时他还会找机会带领他的队友们冲锋陷阵。",	
 		--Stealth Hints
 		["loading_stealth_res_title"] = "恢复MOD劫匪小贴士(潜入)",
 		["loading_stealth_res_1"] = "保安们不再会因为看到损坏的摄像头而立即警觉。有一个专门的保安会来检查摄像头，因此你可以用摄像头作为诱饵。",	
@@ -1587,7 +1595,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_5"] = "看到那名拿着UMP45的狂热突击队精英了吗？他的名字叫查德。",	
 		["loading_fluff_res_6"] = "由于基因工程、人体实验和战斗用药的关系，泰坦熊有着一双发出荧光的眼睛。",	
 		["loading_fluff_res_7"] = "春日队长其实不是人类......他也许曾经是，很久以前......",	
-		["loading_fluff_res_8"] = "恢复MOD原名Restoration Mod，时常被国内玩家戏称为\"PAYDAY2.5\"。",	
+		["loading_fluff_res_8"] = "恢复MOD原名Restoration Mod，时常被国内玩家戏称为\"PAYDAY2.5\"和\"收获日2重制版\"。",	
 		["loading_fluff_res_9"] = "OMNIA公司一直在试图开发新型加固的安全门，以防止恐龙袭击。对，你没听错。",	
 		["loading_fluff_res_10"] = "掷弹兵过去从事的是害虫防治工作。",	
 		["loading_fluff_res_11"] = "你从没遇到过泰坦幻影特工。",
@@ -1604,9 +1612,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_22"] = "鬼知道做恢复MOD汉化的人从开始汉化到完成汉化鸽了多久。",
 		["loading_fluff_res_23"] = "B站是唯一一个可以直播PAYDAY2的知名平台。",
 		["loading_fluff_res_24"] = "你知道吗？每当队长被你打死时，他们并不是真的死了，而是跟你一样进了局子。",
-		["loading_fluff_res_25"] = "REAPER offered a 'quick and brutal crackdown on cartels' at a price cheaper than OMNIA, which led to the Policía Federal adopting their version of TITAN units. This was a ploy to get their forces closer to OMNIA and Murky operations both in Mexico and the US.",
+		["loading_fluff_res_25"] = "作为联邦特警成立联邦泰坦计划的替代品，REAPER以更快更高效的执行速度，与低于OMNIA的报价，从同类竞品中脱颖而出。该集团有望使联邦特警在墨西哥与美国两地拥有接近OMNIA和黑水的势力。",
 
-		["menu_button_deploy_bipod"] = "BIPOD/ALT-FIRE",
+		["menu_button_deploy_bipod"] = "切换为脚架/下挂榴弹",
 		["skill_stockholm_syndrome_trade"] = "倒地次数已恢复！",
 		["hint_short_max_pagers"] = "不回答对讲机将会极大地增加怀疑度。",
 
@@ -1818,7 +1826,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Leadership
 			["menu_stable_shot_beta_sc"] = "领导风范",	
-			["menu_stable_shot_beta_desc_sc"] = "掌握: ##$basic##\n冲锋枪和轻机枪的稳定性增加##4##。\n\n专精: ##$pro##\n全队的武器稳定性增加##4##点。",
+			["menu_stable_shot_beta_desc_sc"] = "掌握: ##$basic##\n冲锋枪和轻机枪的稳定性增加##4##。\n\n专精: ##$pro##\n全队的武器稳定性额外增加##4##点。",
 
 			--MG Handling
 			["menu_scavenger_sc"] = "控枪达人",	
@@ -2082,7 +2090,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Sharpshooter--
 		["menu_discipline_sc"] = "神枪手",
-		["menu_discipline_desc_sc"] = "掌握: ##$basic##\n突击步枪和狙击步枪的稳定性增加##4##\n\n专精: ##$pro##\n完成爆头击杀将在##10##秒内使你的开火速率增加##20%##，该效果只能由##单发模式##的突击步枪和狙击步枪触发",
+		["menu_discipline_desc_sc"] = "掌握: ##$basic##\n突击步枪和狙击步枪的稳定性增加##4##\n\n专精: ##$pro##\n完成爆头击杀将在##10##秒内使你的开火速率增加##20%##，该效果只能由##单发模式##和##三连发模式##的突击步枪和狙击步枪触发",
 
 		--Kilmer--	
 		["menu_heavy_impact_beta_sc"] = "基尔默",
@@ -2094,7 +2102,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Ammo Efficiency--
 		["menu_single_shot_ammo_return_sc"] = "弹无虚发",
-		["menu_single_shot_ammo_return_desc_sc"] = "掌握: ##$basic##\n在##8##秒内完成##3##次爆头击杀会额外给予你武器总弹量##3%##的子弹，最少可以获得##1##发弹药。\n该效果只能被##单发模式##的突击步枪和狙击步枪触发。\n\n专精: ##$pro##\n现在只需要##2##次爆头就能触发技能，子弹会在你弹匣不满时##直接加进弹匣中##。",
+		["menu_single_shot_ammo_return_desc_sc"] = "掌握: ##$basic##\n在##8##秒内完成##3##次爆头击杀会额外给予你武器总弹量##3%##的子弹，最少可以获得##1##发弹药。\n该效果只能由##单发模式##和##三连发模式##的突击步枪和狙击步枪触发。\n\n专精: ##$pro##\n现在只需要##2##次爆头就能触发技能，子弹会在你弹匣不满时##直接加进弹匣中##。",
 
 		--Rifleman
 		["menu_rifleman_sc"] = "步枪精通",
@@ -2146,7 +2154,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "掩其无备",
-		["menu_backstab_beta_desc_sc"] = "掌握: ##$basic##\n如果你在##3##秒内没有受到任何伤害，你将获得##15%##的暴击率加成直到你受到伤害为止\n\n暴击将使你造成的伤害提升##100%##\n\n提示：\"杀手\"天赋的临时虚血自动衰减不算受到伤害,而临时虚血因非衰减因素降低都算受到伤害。\n\n专精: ##$pro##\n受到伤害后，暴击率加成扔将持续##4##秒",																								
+		["menu_backstab_beta_desc_sc"] = "掌握: ##$basic##\n如果你在##3##秒内没有受到任何伤害，你将获得##15%##的暴击率加成直到你受到伤害为止\n\n暴击将使你造成的伤害提升##100%##\n\n提示：\"杀手\"天赋的临时虚血自动衰减不算受到伤害,而临时虚血因非衰减因素降低都算受到伤害。\n\n专精: ##$pro##\n受到伤害后，暴击率加成仍将持续##4##秒",																								
 
 		--Spotter--
 		["menu_hitman_beta_sc"] = "侦察先锋",
@@ -2178,7 +2186,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "乱枪狂人",
-		["menu_trigger_happy_beta_desc_sc"] = "掌握: ##$basic##\n使用手枪完成爆头击杀会在##4##秒内提高 手枪##10%## 的伤害。\n该效果可叠加##5##次，每次使用手枪##爆头##可以使效果持续时间重置为四秒。\n\n专精: ##$pro##\n该效果的持续时间延长至##10##秒，现在只需要手枪##命中##敌人就可以重置持续时间至十秒。",																								
+		["menu_trigger_happy_beta_desc_sc"] = "掌握: ##$basic##\n使用手枪完成爆头击杀会在##4##秒内提高 手枪##10%## 的伤害。\n该效果可叠加##5##次，每次使用手枪##爆头##可以使效果持续时间重置为四秒。\n\n专精: ##$pro##\n该效果的持续时间延长至##10##秒。",																								
 
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "死里逃生",
@@ -2194,7 +2202,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Haunt--
 		["menu_haunt_sc"] = "恐惧弥漫",
-		["menu_haunt_desc_sc"] = "掌握: ##$basic##\n击杀一名半径##18##米内的敌人有概率在敌人中##散播恐慌##，初始概率为##5%##，每次倒地会提升该效果触发概率的##5%##\n\n恐慌会使敌人短暂地失去行动能力\n\n专精: ##$pro##\n初始概率提高至##20%##。",																																																																																																																																																																																																																																		
+		["menu_haunt_desc_sc"] = "掌握: ##$basic##\n击杀一名在半径##18##米内的敌人有概率在敌人中##散播恐慌##，初始概率为##5%##，每次倒地会提升该效果触发概率的##5%##，该效果会随着你倒地次数的恢复而减少。\n\n恐慌会使敌人短暂地失去行动能力\n\n专精: ##$pro##\n初始概率提高至##20%##。",																																																																																																																																																																																																																																		
 
 		--Messiah--
 		["menu_pistol_beta_messiah_sc"] = "弥赛亚",
@@ -2374,7 +2382,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_1_desc_sc"] = "解锁##电子烟##以供你使用。\n\n要使用电子烟，你需要看向一名没有视野遮挡的##18##米内的队友并按下使用投掷物的按键标记他。\n\n你和你标记的队友每击杀一名敌人都会为你回复##8##点血量，并且为你标记的队友回复##5##点血量。\n\n电子烟的持续时间为##11##秒，冷却时间为##80##秒。",
 		["menu_deck20_3_desc_sc"] = "你和你标记的队友每击杀一名敌人都会延长电子烟的持续时间##2##秒。每次杀敌将减少下次杀敌延长时间的##0.2##秒。",
 		["menu_deck20_5_desc_sc"] = "你和你标记的队友每击杀一名敌人都会为你获得##0.5##的伤害减免，最多获得##8##点伤害减免，电子烟效果结束时失效。",
-		["menu_deck20_7_desc_sc"] = "电子烟效果回复的血量变为原来的#2#倍。",
+		["menu_deck20_7_desc_sc"] = "电子烟效果回复的血量变为原来的##2##倍。",
 		["menu_deck20_9_desc_sc"] = "你每击杀一名敌人都会减少电子烟的冷却时间##2##秒。\n\n电子烟效果持续时间，你标记的队友击杀敌人也能为你减少电子烟的冷却时间##2##秒。\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 		
 		--Biker--
@@ -2399,7 +2407,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_3_desc_sc"] = "你的闪避点数增加##5##",
 		["menu_deck21_5_desc_sc"] = "便携式ECM干扰器的反馈生效时，击杀一名敌人将为你回复##20##点血量",
 		["menu_deck21_7_desc_sc"] = "你的护甲回复速率增加##10%##\n\n你的闪避点数额外增加##5##",
-		["menu_deck21_9_desc_sc"] = "你的队友击杀一名敌人也能回复##10##点血量\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
+		["menu_deck21_9_desc_sc"] = "便携式ECM干扰器的反馈生效时，你的队友击杀一名敌人也能回复##10##点血量\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "空白天赋",

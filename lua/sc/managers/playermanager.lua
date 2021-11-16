@@ -376,7 +376,20 @@ end
 function PlayerManager:detection_risk_movement_speed_bonus()
 	local multiplier = 0
 	local detection_risk_add_movement_speed = managers.player:upgrade_value("player", "detection_risk_add_movement_speed")
-	multiplier = multiplier + self:get_value_from_risk_upgrade(detection_risk_add_movement_speed)
+	multiplier = multiplier + self:get_value_from_risk_upgrade(detection_risk_add_movement_speed, self._detection_risk)
+	return multiplier
+end
+
+--Remove some unused skills, and make use of cached detection risk value.
+function PlayerManager:critical_hit_chance(detection_risk)
+	local multiplier = 0
+	multiplier = multiplier + self:upgrade_value("player", "critical_hit_chance", 0)
+	multiplier = multiplier + self:upgrade_value("weapon", "critical_hit_chance", 0)
+	multiplier = multiplier + managers.player:temporary_upgrade_value("temporary", "unseen_strike", 1) - 1
+	multiplier = multiplier + self._crit_mul - 1
+	local detection_risk_add_crit_chance = managers.player:upgrade_value("player", "detection_risk_add_crit_chance")
+	multiplier = multiplier + self:get_value_from_risk_upgrade(detection_risk_add_crit_chance, self._detection_risk)
+
 	return multiplier
 end
 
@@ -456,7 +469,7 @@ function PlayerManager:skill_dodge_chance(running, crouching, on_zipline, overri
 	chance = chance + self:upgrade_value("player", "tier_dodge_chance", 0)
 
 	local detection_risk_add_dodge_chance = self:upgrade_value("player", "detection_risk_add_dodge_chance")
-	chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, detection_risk)
+	chance = chance + self:get_value_from_risk_upgrade(detection_risk_add_dodge_chance, self._detection_risk)
 	chance = chance + self:upgrade_value("player", tostring(override_armor or managers.blackmarket:equipped_armor(true, true)) .. "_dodge_addend", 0)
 
 	return chance
@@ -833,6 +846,9 @@ function PlayerManager:_internal_load()
 		power = 0,
 		start_time = 0
 	}
+
+	--Precache detection risk, so that the value does not need to be recalculated every frame (very slow).
+	self._detection_risk = math.round(managers.blackmarket:get_suspicion_offset_of_local(tweak_data.player.SUSPICION_OFFSET_LERP or 0.75) * 100)
 end
 
 --Adds rogue health regen stack on dodge.

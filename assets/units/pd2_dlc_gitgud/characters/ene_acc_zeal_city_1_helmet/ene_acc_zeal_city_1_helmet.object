@@ -11,17 +11,10 @@
 		</body>
 	</bodies>
 
-	<decal_surfaces default_material="steel_no_decal">
-	</decal_surfaces>
+	<decal_surfaces default_material="steel_no_decal"/>
 
 	<graphics>
-		<lod_object name="lod_ene_acc_fbi_swat_helmet">
-			<object name="g_helmet" enabled="true" >
-				<material materials="mtr_helmet" max_distance="1000" />
-				<material materials="mtr_helmet_lod_1" max_distance="1500" />
-				<material materials="mtr_helmet_lod_2" /> 
-			</object>
-		</lod_object>
+		<object name="g_helmet" enabled="true" />
 	</graphics>
 	
 </dynamic_object>

@@ -89,10 +89,12 @@ function GameSetup:load_packages()
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_lapd" or "normal")
 
         load_difficulty_package(diff_package)
+		PackageManager:load("packages/sm_wish")
     elseif ai_type == ny then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_nypd" or "normal")
 
-		load_difficulty_package(diff_package)
+        load_difficulty_package(diff_package)
+		PackageManager:load("packages/sm_wish")
 	else
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty or "normal")
 

@@ -776,18 +776,6 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 	end
 end
 
-
--- Optimize this function to directly check areas
-function GroupAIStateBesiege:_chk_group_areas_tresspassed(group)
-	for _, u_data in pairs(group.units) do
-		local area = self:get_area_from_nav_seg_id(u_data.tracker:nav_segment())
-		if next(area.criminal.units) then
-			return area
-		end
-	end
-end
-
-
 -- Add custom grenade usage function
 function GroupAIStateBesiege:_chk_group_use_grenade(group, detonate_pos)
 	local task_data = self._task_data.assault
@@ -1006,7 +994,7 @@ end
 function GroupAIStateBesiege:_queue_police_upd_task()
 	if not self._police_upd_task_queued then
 		self._police_upd_task_queued = true
-		managers.enemy:queue_task("GroupAIStateBesiege._upd_police_activity", self._upd_police_activity, self, self._t + 0.5)
+		managers.enemy:queue_task("GroupAIStateBesiege._upd_police_activity", self._upd_police_activity, self, self._t + 1)
 	end
 end
 

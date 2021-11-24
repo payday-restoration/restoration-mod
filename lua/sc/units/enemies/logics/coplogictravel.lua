@@ -85,13 +85,13 @@ local _get_exact_move_pos_original = CopLogicTravel._get_exact_move_pos
 function CopLogicTravel._get_exact_move_pos(data, nav_index, ...)
 	local my_data = data.internal_data
 
-	if data.group and data.tactics and data.tactics.shield_cover and alive(data.objective.follow_unit) then
+	if alive(data.objective.shield_cover_unit) then
 		if my_data.moving_to_cover then
 			managers.navigation:release_cover(my_data.moving_to_cover[1])
 			my_data.moving_to_cover = nil
 		end
 
-		return CopLogicTravel._get_pos_behind_unit(data, data.objective.follow_unit, 50, 300)
+		return CopLogicTravel._get_pos_behind_unit(data, data.objective.shield_cover_unit, 50, 300)
 	end
 
 	local to_pos = nil
@@ -154,15 +154,16 @@ end
 
 function CopLogicTravel._get_pos_behind_unit(data, unit, min_dis, max_dis)
 	local advancing = unit:brain() and unit:brain():is_advancing()
-	local unit_pos = advancing or unit:movement():m_pos()
+	local unit_movement = unit:movement()
+	local unit_pos = advancing or unit_movement:m_pos()
 	-- If target unit is advancing, add an offset so we don't run in front of it during advance
-	local offset = advancing and mvec3_dis(advancing, unit:movement():m_pos()) * 0.5 or 0
+	local offset = advancing and mvec3_dis(advancing, unit_movement:m_pos()) * 0.5 or 0
 
 	-- Get the threat direction
 	if data.attention_obj and data.attention_obj.reaction >= AIAttentionObject.REACT_AIM then
 		mvec3_dir(tmp_vec1, data.attention_obj.m_pos, unit_pos)
 	else
-		mvec3_set(tmp_vec1, unit:movement():m_fwd())
+		mvec3_set(tmp_vec1, unit_movement.m_fwd and unit_movement:m_fwd() or unit_movement:m_head_rot():y())
 		mvec3_neg(tmp_vec1)
 	end
 

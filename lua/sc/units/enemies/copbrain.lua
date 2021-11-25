@@ -273,10 +273,6 @@ Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(
 	
 end)
 
-function CopBrain:clbk_pathing_results(search_id, path)
-    self:_add_pathing_result(search_id, path)
-end
-
 function CopBrain:on_nav_link_unregistered(element_id)
 	if self._logic_data.pathing_results then
 		local failed_search_ids = nil

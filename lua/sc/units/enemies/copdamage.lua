@@ -729,7 +729,7 @@ function CopDamage:damage_bullet(attack_data)
 		local pierce_armor = nil
 		
 		--Just as a fallback, ugly as sin but whatever
-		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun then
+		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun and not weap_base.thrower_unit then
 			if attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
 				pierce_armor = true
 			end

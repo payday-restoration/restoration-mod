@@ -1,307 +1,307 @@
 <table directory="assets">
 	<!--Scarface Guys-->		
-	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
-	<object path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02" force="true" />	
-	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01" force="true" />
-	<object path="units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02" force="true" />	
-	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" force="true" />		
-	<object path="units/pd2_dlc_friend/characters/ene_drug_lord_boss_stealth/ene_drug_lord_boss_stealth" force="true" />			
-	<object path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />
+	<object				path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
+	<object				path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02" force="true" />	
+	<object				path="units/pd2_dlc_friend/characters/ene_thug_indoor_01/ene_thug_indoor_01" force="true" />
+	<object				path="units/pd2_dlc_friend/characters/ene_thug_indoor_02/ene_thug_indoor_02" force="true" />	
+	<object				path="units/pd2_dlc_friend/characters/ene_drug_lord_boss/ene_drug_lord_boss" force="true" />		
+	<object				path="units/pd2_dlc_friend/characters/ene_drug_lord_boss_stealth/ene_drug_lord_boss_stealth" force="true" />			
+	<object				path="units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager" force="true" />
 
 	<!--Pensacola / LAPD Tinted Windows	-->
-	<material_config path="units/pd2_dlc_pal/vehicles/str_vehicle_car_police_pensacola/str_vehicle_car_police_pensacola" force="true" />
-	<material_config path="units/pd2_dlc_rvd/vehicles/anim_vehicle_car_police_los_angeles" force="true" />		
+	<material_config	path="units/pd2_dlc_pal/vehicles/str_vehicle_car_police_pensacola/str_vehicle_car_police_pensacola" force="true" />
+	<material_config	path="units/pd2_dlc_rvd/vehicles/anim_vehicle_car_police_los_angeles" force="true" />		
 
 	<!--LAPD FBI/HRTs-->
-	<unit path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	
-	<unit path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2_husk" load="true"/>					
-	<object path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2" />
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"	/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	
+	<unit				path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2_husk" load="true"/>					
+	<object				path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2" />
+	<model				path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2"	/>
 	
-	<sequence_manager path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2" />
-	<sequence_manager path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3" />
+	<sequence_manager	path="units/pd2_mod_lapd/characters/ene_fbi_2/ene_fbi_2" />
+	<sequence_manager	path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3" />
 	
-	<unit path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	
-	<unit path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3_husk" load="true"/>					
-	<object path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3" />
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3"	/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	
+	<unit				path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3_husk" load="true"/>					
+	<object				path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3" />
+	<model				path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3"	/>
 	
 	<!-- da main shared mat config -->
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_3/ene_fbi_3_contour" />
 	
-	<df_nm path="units/pd2_mod_lapd/characters/shared_textures/shirt_vest" />
-	<texture path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
+	<df_nm				path="units/pd2_mod_lapd/characters/shared_textures/shirt_vest" />
+	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
 
 	<!-- la fbi .mat configs-->	
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var1" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var1_contour" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var2" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var2_contour" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var3" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var3_contour" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var4" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var4_contour" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var5" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var5_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var1" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var1_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var2" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var2_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var3" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var3_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var4" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var4_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var5" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_vars/ene_fbi_var5_contour" />
 	
 	<!-- LAPD COPS -->
-	<sequence_manager path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_4" />	
-	<sequence_manager path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_3" />	
+	<sequence_manager	path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_4" />	
+	<sequence_manager	path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_3" />	
 	
-	<unit path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" load="true" />	
-	<unit path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_husk" load="true" />
-	<object path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />	
-	<model path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />	
-	<material_config path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_contour" />
+	<unit				path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" load="true" />	
+	<unit				path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_husk" load="true" />
+	<object				path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />	
+	<model				path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />	
+	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_1/ene_cop_1_contour" />
 
-	<unit path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" load="true" />	
-	<unit path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_husk" load="true" />
-	<object path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />	
-	<model path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />	
-	<material_config path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_contour" />
+	<unit				path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" load="true" />	
+	<unit				path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_husk" load="true" />
+	<object				path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />	
+	<model				path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />	
+	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_2/ene_cop_2_contour" />
 	
-	<unit path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" load="true" />	
-	<unit path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3_husk" load="true" />
-	<object path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" />	
-	<model path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" />	
+	<unit				path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" load="true" />	
+	<unit				path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3_husk" load="true" />
+	<object				path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" />	
+	<model				path="units/pd2_mod_lapd/characters/ene_cop_3/ene_cop_3" />	
 	
-	<unit path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" load="true" />	
-	<unit path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4_husk" load="true" />
-	<object path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />	
-	<model path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />	
-	<material_config path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4_contour" />
+	<unit				path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" load="true" />	
+	<unit				path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4_husk" load="true" />
+	<object				path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />	
+	<model				path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />	
+	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_cop_4/ene_cop_4_contour" />
 	
 	<!-- la cop .mat configs-->	
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var1" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var1_contour" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var2" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var2_contour" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var3" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var3_contour" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var4" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var4_contour" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5" />
-	<material_config path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var1" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var1_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var2" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var2_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var3" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var3_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var4" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var4_contour" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5" />
+	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5_contour" />
 	
-	<object path="units/payday2/characters/ene_security_1/ene_security_1" />
-	<model path="units/payday2/characters/ene_security_1/ene_security_1" />
+	<object				path="units/payday2/characters/ene_security_1/ene_security_1" />
+	<model				path="units/payday2/characters/ene_security_1/ene_security_1" />
 	
-	<material_config path="units/payday2/characters/ene_security_2/ene_security_2_contour" force="true" />	
-	<material_config path="units/payday2/characters/ene_security_2/ene_security_2" force="true" />
+	<material_config	path="units/payday2/characters/ene_security_2/ene_security_2_contour" force="true" />	
+	<material_config	path="units/payday2/characters/ene_security_2/ene_security_2" force="true" />
 	
-	<material_config path="units/payday2/characters/ene_security_3/ene_security_3"  />
-	<object path="units/payday2/characters/ene_security_3/ene_security_3" />	
-	<model path="units/payday2/characters/ene_security_3/ene_security_3" />	
-	<material_config path="units/payday2/characters/ene_security_3/ene_security_3_contour"  />	
+	<material_config	path="units/payday2/characters/ene_security_3/ene_security_3"  />
+	<object				path="units/payday2/characters/ene_security_3/ene_security_3" />	
+	<model				path="units/payday2/characters/ene_security_3/ene_security_3" />	
+	<material_config	path="units/payday2/characters/ene_security_3/ene_security_3_contour"  />	
 
 
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var1" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var1_contour" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var2" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var2_contour" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var3" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var3_contour" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var4" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var4_contour" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var5" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var5_contour" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var6" />
-	<material_config path="units/payday2/characters/ene_security_vars/ene_security_var6_contour" />	
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var1" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var1_contour" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var2" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var2_contour" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var3" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var3_contour" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var4" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var4_contour" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var5" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var5_contour" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var6" />
+	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var6_contour" />	
 	
 	<!--lapd textures-->	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" />	
-	<texture path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/swat_body_df" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/spook_heavy_df" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/opscore_df" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/opscore_nm" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_df" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_nm" />		
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_helms_df" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_nm" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_2_df" />	
-	<texture path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_head_df" />		
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_fbi_body_df" />	
+	<texture			path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/swat_body_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/spook_heavy_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/opscore_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/opscore_nm" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_dw_heads_nm" />		
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_heads_nm" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_helms_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_nm" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_2_df" />	
+	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_head_df" />		
 
 	<!--opscore-->
-	<unit_mat path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
+	<unit_mat			path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore"/>
 	
 	<!--brownframe-->
-	<unit_obj path="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe" />
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe"/>
+	<unit_obj			path="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe" />
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_acc_brownframe/ene_acc_brownframe"/>
 	
 	<!-- blue swats here -->
 	<!--AMCAR-->	
-	<unit path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		
+	<unit				path="units/payday2/weapons/wpn_npc_amcar/wpn_npc_amcar" load="false" force="false"/>		
 	
 	<!--LAPD heavy r870-->	
-	<object path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"/>
-	<model path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" load="true"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk" load="true"/>		
+	<object				path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk" load="true"/>		
 	
 	<!--LAPD heavy m4-->
-	<object path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"/>
-	<model path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1" load="true"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_contour"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk" load="true"/>		
+	<object				path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1" load="true"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_contour"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk" load="true"/>		
 	
 	<!--LAPD swat mp5-->
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1" load="true"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_husk" load="true"/>			
-	<object path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
-	<model path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_contour"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1" load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_husk" load="true"/>			
+	<object				path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1_contour"/>
 	
 	<!--LAPD swat r870-->
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2" load="true"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>		
-	<object path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
-	<model path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2" load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2_husk" load="true"/>		
+	<object				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"/>
 	
 	<!--swat shield 2-->
-	<unit path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk"/>
 		
 	<!--LAPD Sniper -->	
-	<unit path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1" load="true" />
-	<unit path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1_husk" load="true" />
-	<object path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"  />		
-	<model path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"  />	
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"  />	
+	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1" load="true" />
+	<unit				path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1_husk" load="true" />
+	<object				path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"  />		
+	<model				path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"  />	
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_sniper_1/ene_sniper_1"  />	
 	<!-- blue swat tier end -->
 	
 	<!--FBI Tier-->
 	<!--fbi swat 1-->
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1" load="true"/>
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk" load="true"/>
-    <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_contour"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1" load="true"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk" load="true"/>
+    <object				path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1_contour"/>
 	
 	<!--fbi swat 2-->
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2" load="true"/>
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>
-    <object path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2" load="true"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>
+    <object				path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
 	
 	<!--fbi heavy r870-->
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
-    <unit path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
-    <object path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc" load="true"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc_husk" load="true"/>
+    <object				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"/>
 	
 	<!--fbi heavy 1-->
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"   load="true"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"  load="true"/>
-	<object path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
-	<model path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
-	<material_config path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_contour" />	
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"   load="true"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"  load="true"/>
+	<object				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
+	<model				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
+	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_contour" />	
 	<!-- fbi tier end -->
 	
 	<!-- specials-->
 	<!-- greendozer -->
-    <unit path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" load="true"/>
-    <unit path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_husk" load="true"/>	
-	<model path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
-	<object path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
-	<material_config path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
-	<material_config path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_contour" />			
-	<cooked_physics path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
+    <unit				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
+	<object				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
+	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
+	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_contour" />			
+	<cooked_physics		path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
 			
-    <unit path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" load="true"/>
-    <unit path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk" load="true"/>	
-	<model path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
-	<object path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
-	<material_config path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
-	<material_config path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_contour" />				
-	<cooked_physics path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
+    <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
+	<object				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />
+	<material_config	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
+	<material_config	path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_contour" />				
+	<cooked_physics		path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" />	
 	<!-- specials end -->
 
 	<!-- titans -->
 	<!--Keep those helmets flying ;)-->	
-	<object path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	<model path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
-	<unit path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="false"/>
-	<sequence_manager path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" load="false"/>
+	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
 	
 	<!--Titan Shotgunner-->	
-	<unit path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
-	<unit path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
-	<object path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<cooked_physics path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<model path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
 	
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
 
     <!--Titan Taser-->	
-	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
-	<unit path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
-	<object path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<cooked_physics path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<model path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_contour" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser_contour" force="false"/>
 	
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/mask_nm" force="false"/>	
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_taser_df" force="false"/>		
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/mask_nm" force="false"/>	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_taser_df" force="false"/>		
 
 	<!--LAPD vet 2-->	
-	<object path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
-	<cooked_physics path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
-	<model path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2" load="true"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
-	<material_config path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_contour"/>
-	<unit path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_husk" load="true"/>			
+	<object				path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2" load="true"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2"/>
+	<material_config	path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_contour"/>
+	<unit				path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_2/ene_lapd_veteran_cop_2_husk" load="true"/>			
 	
 	<!--Titan Taser Helm Acc-->
-	<cooked_physics path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<model path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<object path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
-	<unit path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
 	
 	<!--Titan HRT-->	
-	<unit path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
-	<unit path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk" force="false" load="true"/>
-	<object path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<cooked_physics path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<model path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
-	<material_config path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk" force="false" load="true"/>
+	<object				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
+	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
+	<model				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
+	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
 	
 		
-	<texture path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>	
 	
 	<!--Titan HRT MP9-->	
-	<unit path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
+	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->
     
 </table>

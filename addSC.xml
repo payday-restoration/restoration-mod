@@ -116,6 +116,7 @@
 	<material_config	path="units/vehicles/animated_cars/police_ny_suburbia" force="true" />
 	
 	<texture			path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
+	<texture			path="units/world/brushes/grafitti/b_posters_grafitti_df" force="true"/>	
 	
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/chill_combat"/>
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/fwb" force="true"/>

@@ -13,6 +13,11 @@ end)
 -- 	}
 -- end)
 
+
+--[[
+
+You shittin' me?
+
 function MenuSceneManager:_setup_bg()
 	local yaw = 180
 	self._bg_unit = World:spawn_unit(Idstring("units/menu/menu_scene/menu_cylinder"), Vector3(0, 0, 0), Rotation(yaw, 0, 0))
@@ -44,3 +49,5 @@ function MenuSceneManager:_setup_bg()
 	self:_setup_lobby_characters()
 	self:_setup_henchmen_characters()
 end
+
+]]--

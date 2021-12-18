@@ -2561,11 +2561,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_9_desc_sc"] = "便携式ECM干扰器的反馈生效时，你的队友击杀一名敌人也能回复##10##点血量\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Blank Perk Deck--
-		["menu_st_spec_0"] = "空白天赋",
-		["menu_st_spec_22"] = "空白天赋",		
+		["menu_st_spec_0"] = "空白天赋",	
 		["menu_st_spec_0_desc"] = "这个天赋没有任何增益",
-		["menu_st_spec_00"] = "通用天赋",
-		["menu_st_spec_23"] = "通用天赋",				
+		["menu_st_spec_00"] = "通用天赋",		
 		["menu_st_spec_00_desc"] = "这个天赋只有所有天赋共同拥有的牌组的效果",
 		["menu_deck0_1"] = "",
 		["menu_deck0_1_desc"] = "",		

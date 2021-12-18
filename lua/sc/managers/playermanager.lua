@@ -197,6 +197,28 @@ function PlayerManager:on_killshot(killed_unit, variant, headshot, weapon_id)
 			self._throw_regen_kills = 0
 		end
 	end
+	
+	--Leech stuff
+	if self:has_activate_temporary_upgrade("temporary", "copr_ability") then
+		local kill_life_leech = self:upgrade_value_nil("player", "copr_kill_life_leech")
+		local static_damage_ratio = self:upgrade_value_nil("player", "copr_static_damage_ratio")
+
+		if kill_life_leech and static_damage_ratio and damage_ext then
+			self._copr_kill_life_leech_num = (self._copr_kill_life_leech_num or 0) + 1
+
+			if kill_life_leech <= self._copr_kill_life_leech_num then
+				self._copr_kill_life_leech_num = 0
+				local current_health_ratio = damage_ext:health_ratio()
+				local wanted_health_ratio = math.floor((current_health_ratio + 0.01 + static_damage_ratio) / static_damage_ratio) * static_damage_ratio
+				local health_regen = wanted_health_ratio - current_health_ratio
+
+				if health_regen > 0 then
+					damage_ext:restore_health(health_regen)
+					damage_ext:on_copr_killshot()
+				end
+			end
+		end
+	end	
 
 	--Yakuza dodge meter generation.
 	if damage_ext:health_ratio() < 0.5 then
@@ -1224,4 +1246,37 @@ function PlayerManager:activate_temporary_upgrade_indefinitely(category, upgrade
 	}
 	managers.hud:remove_skill(upgrade)
 	managers.hud:add_skill(upgrade)
+end
+
+--Use the old version of this function prior to Overkill's update because they don't invalidate the cached value properly in menus.
+function PlayerManager:get_value_from_risk_upgrade(risk_upgrade, detection_risk)
+    local risk_value = 0
+
+    if not detection_risk then
+        detection_risk = managers.blackmarket:get_suspicion_offset_of_local(tweak_data.player.SUSPICION_OFFSET_LERP or 0.75)
+        detection_risk = math.round(detection_risk * 100)
+    end
+
+    if risk_upgrade and type(risk_upgrade) == "table" then
+        local value = risk_upgrade[1]
+        local step = risk_upgrade[2]
+        local operator = risk_upgrade[3]
+        local threshold = risk_upgrade[4]
+        local cap = risk_upgrade[5]
+        local num_steps = 0
+
+        if operator == "above" then
+            num_steps = math.max(math.floor((detection_risk - threshold) / step), 0)
+        elseif operator == "below" then
+            num_steps = math.max(math.floor((threshold - detection_risk) / step), 0)
+        end
+
+        risk_value = num_steps * value
+
+        if cap then
+            risk_value = math.min(cap, risk_value) or risk_value
+        end
+    end
+
+    return risk_value
 end

@@ -298,7 +298,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	end
 
 	attack_data.damage = math.max(attack_data.damage, 0.1)
-
+	
 	if self._bleed_out then --If player is in bleedout, redirect to the bleedout damage function.
 		self:_bleed_out_damage(attack_data)
 		
@@ -315,6 +315,9 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 	else
 		self._unit:sound():play("player_hit_permadamage")
 	end
+	
+	--Leech stuff
+	self:copr_update_attack_data(attack_data)	
 
 	--Kingpin stuff.
 	self._ally_attack = self:is_friendly_fire(attacker_unit, true, variant == "explosion" or variant == "fire") --Filter out friendly fire from perk deck stuff and the armor_broken flag.
@@ -511,7 +514,7 @@ function PlayerDamage:damage_melee(attack_data)
 			normal = rot
 		})
 	end
-
+	
 	if attacker_unit:base()._tweak_table == "tank" then
 		managers.achievment:set_script_data("dodge_this_fail", true)
 	end
@@ -729,6 +732,8 @@ function PlayerDamage:damage_fall(data)
 		health_damage = health_damage_ratio * health_damage
 	else
 		self._check_berserker_done = false
+		
+		managers.player:force_end_copr_ability()
 
 		--Falling without a parachute.
 		if is_free_falling then
@@ -922,6 +927,7 @@ function PlayerDamage:recover_health()
 
 	self:restore_health(tweak_data.upgrades.values.doctor_bag.heal_amount) --Initial % heal.
 	managers.player:activate_temporary_upgrade("temporary", "doctor_bag_health_regen")  --Heal over time.
+	managers.player:set_property("copr_risen", false)
 end
 
 --Returns number of lives used up. Is relied on for What Doesn't Kill calcs.
@@ -940,6 +946,14 @@ function PlayerDamage:_calc_health_damage_no_deflection(attack_data)
 	self:change_health(-attack_data.damage)
 	health_subtracted = health_subtracted - self:get_real_health()
 	
+	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") and health_subtracted > 0 then
+		local teammate_heal_level = managers.player:upgrade_level_nil("player", "copr_teammate_heal")
+
+		if teammate_heal_level and self:get_real_health() > 0 then
+			self._unit:network():send("copr_teammate_heal", teammate_heal_level)
+		end
+	end
+		
 	local trigger_skills = table.contains({
 		"bullet",
 		"explosion",
@@ -1446,6 +1460,10 @@ end)
 
 --Remove old ex-pres stuff.
 function PlayerDamage:set_armor(armor)
+	if self._armor_change_blocked then
+		return
+	end
+
 	self:_check_update_max_armor()
 
 	armor = math.clamp(armor, 0, self:_max_armor())

@@ -4,7 +4,9 @@ RestorationMapFramework = RestorationMapFramework or class(MapFramework)
 RestorationMapFramework._directory = ModPath .. "map_replacements"
 RestorationMapFramework.type_name = "restoration"
 
-RestorationMapFramework:new()
+RestorationMapFramework:init()
+RestorationMapFramework:Load()
+RestorationMapFramework:InitMods()
 if not PackageManager:loaded("packages/scassets") then
 	PackageManager:load("packages/scassets")
 end

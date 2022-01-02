@@ -849,7 +849,12 @@ function PlayerDamage:revive(silent)
 		return
 	end
 	local arrested = self:arrested()
+	
 	managers.player:set_player_state("standard")
+	
+	--Leech stuff
+	managers.player:remove_copr_risen_cooldown()
+	
 	if not silent then
 		PlayerStandard.say_line(self, "s05x_sin")
 	end
@@ -927,7 +932,10 @@ function PlayerDamage:recover_health()
 
 	self:restore_health(tweak_data.upgrades.values.doctor_bag.heal_amount) --Initial % heal.
 	managers.player:activate_temporary_upgrade("temporary", "doctor_bag_health_regen")  --Heal over time.
+	
+	--Leech stuff, might delete later idk
 	managers.player:set_property("copr_risen", false)
+	managers.player:remove_copr_risen_cooldown()
 end
 
 --Returns number of lives used up. Is relied on for What Doesn't Kill calcs.

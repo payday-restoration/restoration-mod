@@ -2408,10 +2408,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Пустой",
-		["menu_st_spec_22"] = "Пустой",
 		["menu_st_spec_0_desc"] = "Данный набор совсем не предоставляет перков. Испытайте себя!",
 		["menu_st_spec_00"] = "Шаблонный",
-		["menu_st_spec_23"] = "Шаблонный",
 		["menu_st_spec_00_desc"] = "В этом наборе содержатся только общие перки. Испытайте себя!",
 		["menu_deck0_1"] = "",
 		["menu_deck0_1_desc"] = "",

@@ -2410,10 +2410,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Blank Perk Deck--
 		["menu_st_spec_0"] = "Blank Deck",
-		["menu_st_spec_22"] = "Blank Deck",
 		["menu_st_spec_0_desc"] = "This deck has no benefits at all.",
 		["menu_st_spec_00"] = "Wildcard Deck",
-		["menu_st_spec_23"] = "Wildcard Deck",
 		["menu_st_spec_00_desc"] = "This deck only has the shared skills.",
 		["menu_deck0_1"] = "",
 		["menu_deck0_1_desc"] = "",

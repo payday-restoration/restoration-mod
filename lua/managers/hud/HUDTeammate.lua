@@ -466,6 +466,13 @@ function HUDTeammate:_create_radial_health(radial_health_panel)
 		w = radial_health_panel:w(),
 		h = radial_health_panel:h()
 	})
+
+	local copr_overlay_panel = radial_health_panel:panel({
+		name = "copr_overlay_panel",
+		layer = 3,
+		w = radial_health_panel:w(),
+		h = radial_health_panel:h()
+	})
 	self:_create_condition(radial_health_panel)
 end
 

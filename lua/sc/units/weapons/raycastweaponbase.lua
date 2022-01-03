@@ -890,6 +890,7 @@ function InstantExplosiveBulletBase:on_collision_server(position, normal, damage
 		curve_pow = self.CURVE_POW,
 		damage = damage,
 		player_damage = damage * self.PLAYER_DMG_MUL,
+		alert_radius = self.ALERT_RADIUS,
 		ignore_unit = weapon_unit,
 		user = user_unit,
 		owner = weapon_unit

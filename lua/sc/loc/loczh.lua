@@ -543,7 +543,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_male_mask"] = "标准分发面具（男性）",
 		["bm_msk_male_mask_desc"] = "一个由CRIMENET提供的标准分发面具。\n\n由致密材料制成，不容易坏，但是也没那么容易戴上。",
 		["bm_msk_male_mask_blood"] = "补好的面具（男性）",
-		["bm_msk_male_mask_blood_desc"] = "一个由CRIMENET提供的标准分发面具。\n\n由致密材料制成，不容易坏，但是也没那么容易戴上。\n\n这是在对OMNIA仓库一次只剩尸体和血迹的拙劣抢劫后发现的面具。\n\n船员在失联前留下的最后一条消息是\"紧急警报\"。",
+		["bm_msk_male_mask_blood_desc"] = "一个由CRIMENET提供的标准分发面具。\n\n由致密材料制成，不容易坏，但是也没那么容易戴上。\n\n这是在对OMNIA仓库一次血肉横飞的拙劣抢劫后发现的面具。\n\n船员在失联前留下的最后一条消息是\"紧急警报\"。",
 		["bm_msk_male_mask_clown"] = "克罗斯",
 		["bm_msk_male_mask_clown_desc"] = "一个由CRIMENET提供的标准分发面具。\n\n由致密材料制成，不容易坏，但是也没那么容易戴上。\n\n这个面具曾由一个绰号叫克罗斯的劫匪佩戴，虽然他这几天戴上新的面具了...\n\n一个天赋异禀的神枪手，他曾在五秒内干掉了四个装甲运钞车司机。",
 
@@ -720,7 +720,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPocoCrimenetScaleDescID"] = "允许您设置CRIMENET尺寸。",
 		["RestorationModVoiceIconTitleID"] = "语音聊天图标",
 	    ["RestorationModVoiceIconDescID"] = "当玩家使用游戏内语音聊天时显示。",
-		["alpha_assault"] = "早期Alpha角",
+		["alpha_assault"] = "早期Alpha类型",
 		["beta_assault"] = "Alpha类型",
 
 		["menu_ingame_manual"] = "大修指南",
@@ -887,22 +887,41 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		-- /// Challenges Below ///
 
-		["ch_deploy_ammobag_hl"] = "最后一发！",
-		["ch_deploy_ammobag"] = "部署$count个弹药包。",
-		["ch_plant_tripmine_hl"] = "激光秀",
-		["ch_plant_tripmine"] = "部署$count个诡雷。",
-		["ch_deploy_medicbag_hl"] = "保险福利",
-		["ch_deploy_medicbag"] = "部署$count个医疗箱。",
-		["ch_deploy_ecm_hl"] = "系统摧毁者",
-		["ch_deploy_ecm"] = "部署$count个电子干扰器。",
-		["ch_deploy_fak_hl"] = "生命线",
-		["ch_deploy_fak"] = "部署$count个急救包。",
-		["ch_deploy_sentry_hl"] = "白山基地爱好者",
-		["ch_deploy_sentry"] = "部署$count个哨戒机枪。",
+        --no font again lol
+		--["ch_deploy_ammobag_hl"] = "最后一发！",
+		--["ch_deploy_ammobag"] = "部署$count个弹药包。",
+		--["ch_plant_tripmine_hl"] = "激光秀",
+		--["ch_plant_tripmine"] = "部署$count个诡雷。",
+		--["ch_deploy_medicbag_hl"] = "保险福利",
+		--["ch_deploy_medicbag"] = "部署$count个医疗箱。",
+		--["ch_deploy_ecm_hl"] = "系统摧毁者",
+		--["ch_deploy_ecm"] = "部署$count个电子干扰器。",
+		--["ch_deploy_fak_hl"] = "生命线",
+		--["ch_deploy_fak"] = "部署$count个急救包。",
+		--["ch_deploy_sentry_hl"] = "白山基地爱好者",
+		--["ch_deploy_sentry"] = "部署$count个哨戒机枪。",
 
 
-		["ch_watchdogs_d1_heavy_wpn1_hl"] = "重甲配大枪",
-		["ch_watchdogs_d1_heavy_wpn1"] = "身穿改良型复合战术背心，仅使用Vulcan转轮机枪、Thanatos.50 cal狙击步枪或HRL-7火箭发射器完成\"看门狗\"任务第一天，难度为枪林弹雨或以上。要完成此挑战，你必须从头开始劫案。",
+		--["ch_watchdogs_d1_heavy_wpn1_hl"] = "重甲配大枪",
+		--["ch_watchdogs_d1_heavy_wpn1"] = "身穿改良型复合战术背心，仅使用Vulcan转轮机枪、Thanatos.50 cal狙击步枪或HRL-7火箭发射器完成\"看门狗\"任务第一天，难度为枪林弹雨或以上。要完成此挑战，你必须从头开始劫案。",
+
+		["ch_deploy_ammobag_hl"] = "Last Bullet!",
+		["ch_deploy_ammobag"] = "Deploy $count Ammo Bags.",
+		["ch_plant_tripmine_hl"] = "Laser Show",
+		["ch_plant_tripmine"] = "Deploy $count Trip Mines.",
+		["ch_deploy_medicbag_hl"] = "Insurance Benefits",
+		["ch_deploy_medicbag"] = "Deploy $count Medic Bags.",
+		["ch_deploy_ecm_hl"] = "System Crasher",
+		["ch_deploy_ecm"] = "Deploy $count ECM's.",
+		["ch_deploy_fak_hl"] = "Lifeline",
+		["ch_deploy_fak"] = "Deploy $count First Aid Kits.",
+		["ch_deploy_sentry_hl"] = "White Mesa Enthusiast",
+		["ch_deploy_sentry"] = "Deploy $count Sentries.",
+
+
+		["ch_watchdogs_d1_heavy_wpn1_hl"] = "HEAVY ARMOR, AND HEAVIER WEAPONS",
+		["ch_watchdogs_d1_heavy_wpn1"] = "Complete day one of the WATCHDOGS job, wearing an ICTV and using miniguns, the Thanatos sniper, or RPG's only, on the OVERKILL difficulty or above.  You must have played from the start of the heist to complete this challenge.",
+
 		
 		["test_net"] = "Fast.Net",
 		["menu_test"] = "",
@@ -1260,7 +1279,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_hint_titan_end"] = "泰坦重型特警去其它世界寻找猎物了！",
 
 		["bm_hint_titan_end"] = "泰坦重型特警去其它世界寻找猎物了！",
-		["bm_menu_gadget_plural"] = "Gadgets",
+		["bm_menu_gadget_plural"] = "配件",
 		["menu_pistol_carbine"] = "卡宾手枪",
 		["menu_battle_rifle"] = "战斗步枪",
 
@@ -1578,8 +1597,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["cn_menu_contract_jobpay_header"] = "合约报酬：",
 		["victory_stage_cash_summary_name_job"] = "你从当日劫案中获得了额外的金钱： $stage_cash 因为完成合约，你又获得了额外的金钱： $job_cash ",
 
-		["debug_interact_grenade_crate_take_grenades"] = "按住 $BTN_INTERACT 来拾取一个投掷物",
-		["debug_interact_bodybags_bag_take_bodybag"] = "按住 $BTN_INTERACT 来拾取一个尸体袋",
+		["debug_interact_grenade_crate_take_grenades"] = "按住 $BTN_INTERACT 来拾取一次投掷物(补满)",
+		["debug_interact_bodybags_bag_take_bodybag"] = "按住 $BTN_INTERACT 来拾取一次尸体袋(补满)",
 		
 		["menu_equipment_armor_kit"] = "手雷箱",
 		["bm_equipment_armor_kit"] = "手雷箱",
@@ -1645,7 +1664,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_title"] = "恢复MOD劫匪小贴士(敌对单位)",
 		["loading_new_units_res_1"] = "泰坦人质救援队的行动非常迅速，他们的主要目标是在不被你发现的前提下营救人质和抢走战利品。此外，如果你没有使用近战或爆头击杀他们，他们会在死亡时扔出一颗催泪瓦斯对你造成伤害。",
 		["loading_new_units_res_2"] = "爱国战线部队非常害怕近战攻击。",
-		["loading_new_units_res_3"] = "轻型部队可以被身边人质救援队超量治疗。受到超量治疗的敌人以紫色标记，他们受到的第一枪射击不能致命。",
+		["loading_new_units_res_3"] = "轻型部队可以被身边的维生部队超量治疗。受到超量治疗的敌人以紫色标记，他们受到的第一枪射击不能致命。",
 		["loading_new_units_res_4"] = "泰坦幻影特工使用了先进了装备以致于他们几乎是隐身的，但他们会发出\"嗞嗞\"的声音。戴上你的耳机，聆听他们发出的声音，找出他们的位置，一枪爆他们的狗头！",
 		["loading_new_units_res_5"] = "泰坦熊会尽可能避免与你正面作战，他们会试图保持安全距离并对你进行火力压制。",
 		["loading_new_units_res_6"] = "泰坦狙击手以降低伤害和不能穿甲为代价换取了更高的射速和移动射击的能力。",
@@ -2234,7 +2253,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Duck and Cover--
 		["menu_sprinter_beta_sc"] = "蹲防战术",
-		["menu_sprinter_beta_desc_sc"] = "掌握: ##$basic##\n你的耐力将提前##25%##的时间进行恢复且恢复速度加快##25%##\n\n专精: ##$pro##\n每次在冲刺时闪避将增加你闪避条的##10%##\n\n每次在滑索上闪避将增加你闪避条的##30%##",																								
+		["menu_sprinter_beta_desc_sc"] = "掌握: ##$basic##\n你的耐力将提前##25%##的时间进行恢复且恢复速度加快##25%##\n\n专精: ##$pro##\n冲刺时你闪避条每秒增加##10%##\n\n滑索上你闪避条每秒增加##30%##",																								
 
 		--Sneaky Bastard--
 		["menu_jail_diet_beta_desc_sc"] = "掌握: ##$basic##\n当你的暴露度低于##35##时，每降低##3##点暴露度都将获得##1##点闪避点数，最多增加##10##点\n\n专精: ##$pro##\n当你的暴露度低于##35##时，每降低##1##点暴露度都将获得##1##点闪避点数，最多增加##10##点\n\n你的护甲被破坏时，每次闪避成功都将恢复你血量上限##6%##的血量",
@@ -2261,7 +2280,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Aggressive Reload
 		["menu_engineering_beta_sc"] = "迅猛装填",
-		["menu_engineering_beta_desc_sc"] = "掌握: ##$basic##\n完成爆头击杀会在##10##秒内减少你##25%##的换弹速度，该效果只能由##单发模式##或##三连发模式##的突击步枪和狙击步枪触发\n\n专精: ##$pro##\n换弹速度增益提升至##50%##且可以由##连发模式##的突击步枪和狙击步枪触发",					
+		["menu_engineering_beta_desc_sc"] = "掌握: ##$basic##\n完成爆头击杀会在##10##秒内加快你##25%##的换弹速度，该效果只能由##单发模式##或##三连发模式##的突击步枪和狙击步枪触发\n\n专精: ##$pro##\n换弹速度增益提升至##50%##且可以由##连发模式##的突击步枪和狙击步枪触发",					
 			
 		--Cleaner--
 		["menu_jail_workout_sc"] = "清道夫",
@@ -2329,15 +2348,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "孤岛飞鹰",
-		["menu_akimbo_skill_desc_sc"] = "掌握: ##$basic##\n双持武器的稳定性增加##16##\n\n专精: ##$pro##\n双持武器的总弹量和捡弹量各增加25%",																																																																																																																																																																																																																																		
+		["menu_akimbo_skill_desc_sc"] = "掌握: ##$basic##\n双持武器的稳定性增加##16##\n\n专精: ##$pro##\n双持武器的总弹量和捡弹量各增加##25%##",																																																																																																																																																																																																																																		
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "亡命之徒",
-		["menu_expert_handling_desc_sc"] = "掌握: ##$basic##\n使用手枪完成爆头击杀会在##4##秒内提高 所有武器##8%## 的精准度和射程，可叠加##5##次，每次使用手枪##爆头##可以使效果持续时间重置为五秒\n\n提示：该技能的精准度增加不适用于霰弹枪和火焰喷射器\n\n专精: ##$pro##\n该效果的持续时间延长至##10##秒，重置后持续时间也是十秒",																																																																																																																																																																																																																																		
+		["menu_expert_handling_desc_sc"] = "掌握: ##$basic##\n使用手枪完成爆头击杀会在##4##秒内提高你所有武器##8%##的精准度和射程，可叠加##5##次，每次使用手枪##爆头##可以使效果持续时间重置为四秒\n\n提示：该技能的精准度增加不适用于霰弹枪和火焰喷射器\n\n专精: ##$pro##\n该效果的持续时间延长至##10##秒，重置后持续时间也是十秒",																																																																																																																																																																																																																																		
 
 		--Trigger Happy--
 		["menu_trigger_happy_beta_sc"] = "乱枪狂人",
-		["menu_trigger_happy_beta_desc_sc"] = "掌握: ##$basic##\n使用手枪完成爆头击杀会在##4##秒内提高 手枪##10%## 的伤害。\n该效果可叠加##5##次，每次使用手枪##爆头##可以使效果持续时间重置为四秒。\n\n专精: ##$pro##\n该效果的持续时间延长至##10##秒。",																								
+		["menu_trigger_happy_beta_desc_sc"] = "掌握: ##$basic##\n使用手枪完成爆头击杀会在##4##秒内提高手枪##10%##的伤害。\n该效果可叠加##5##次，每次使用手枪##爆头##可以使效果持续时间重置为四秒。\n\n专精: ##$pro##\n该效果的持续时间延长至##10##秒。",																								
 
 		--Running From Death--
 		["menu_nine_lives_beta_sc"] = "死里逃生",
@@ -2469,7 +2488,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_1_sc"] = "非礼勿言",
 		["menu_deck9_1_desc_sc"] = "当你被##18##米内至少##3##名敌人包围时，你受到来自敌人的伤害减少##5%##",
 		["menu_deck9_3_desc_sc"] = "击杀一名敌人将为你回复##20##点护甲值\n\n该效果的冷却时间为##3##秒",
-		["menu_deck9_5_desc_sc"] = "使用近战武器击杀一名敌人将为你回复##5%##点血量\n\n该效果的冷却时间为##3##秒",
+		["menu_deck9_5_desc_sc"] = "使用近战武器击杀一名敌人将为你回复##5%##的血量\n\n该效果的冷却时间为##3##秒",
 		["menu_deck9_7_desc_sc"] = "击杀一名距你##18##米内的敌人将为你额外回复##20##点护甲值\n\n该效果的冷却时间为##3##秒",
 		["menu_deck9_9_desc_sc"] = "击杀一名距你##18##米内的敌人将有##25%##的几率在敌人中##散播恐慌##\n\n恐慌会使敌人短暂地失去行动能力\n\n该效果的冷却时间为##2##秒\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
@@ -2561,11 +2580,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck21_9_desc_sc"] = "便携式ECM干扰器的反馈生效时，你的队友击杀一名敌人也能回复##10##点血量\n\n天赋牌组完成奖励：你结束劫案后翻牌获得稀有物品的概率增加##10%##",
 
 		--Blank Perk Deck--
-		["menu_st_spec_0"] = "空白天赋",
-		["menu_st_spec_22"] = "空白天赋",		
+		["menu_st_spec_0"] = "空白天赋",	
 		["menu_st_spec_0_desc"] = "这个天赋没有任何增益",
-		["menu_st_spec_00"] = "通用天赋",
-		["menu_st_spec_23"] = "通用天赋",				
+		["menu_st_spec_00"] = "通用天赋",		
 		["menu_st_spec_00_desc"] = "这个天赋只有所有天赋共同拥有的牌组的效果",
 		["menu_deck0_1"] = "",
 		["menu_deck0_1_desc"] = "",		

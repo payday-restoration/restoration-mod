@@ -17,6 +17,7 @@
 	<material_config	path="units/payday2/vehicles/anim_vehicle_car_police/anim_vehicle_car_police" force="true" />
 	
 	<texture			path="units/payday2/props/off_prop_office_monitor/display_master_jewelry_il" force="true"/>
+	<texture			path="units/world/brushes/grafitti/b_posters_grafitti_df" force="true"/>	
 	
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/chill_combat"/>
 	<texture			path="guis/dlcs/bro/textures/pd2/crimenet/fwb" force="true"/>

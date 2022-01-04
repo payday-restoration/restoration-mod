@@ -46,9 +46,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	end
 	
 	--///MEXICAN LEVELS\\\--
-	
-	self.skm_bex.package = {"packages/mexicoassets", "packages/dlcs/skm/job_bex_skm"}
-
 	self.mex_cooking.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/vlad/bex/world_sounds", "packages/job_bex", "packages/job_mex2"}
 	self.mex_cooking.ai_group_type = federales 
 	self.mex_cooking.player_style = "suit_sunny"	
@@ -175,12 +172,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
-	-- not sure what to do about skirmish tbh
-	self.skm_run.ai_group_type = nypd
-	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
-	
-	self.skm_red2.ai_group_type = nypd
-	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/nypdassets"}
 	
 	--///LAPD LEVELS\\\--			
 	self.jolly.ai_group_type = lapd
@@ -461,10 +452,28 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	--White House Heist Stelf Bonus--		
 	self.vit.ghost_bonus = 0.15
 	
-	--///SKIRMISH FIXES\\\--
+	--///SKIRMISH shit\\\--
 	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/lapdassets"}
 	self.skm_cas.ai_group_type = lapd
 	self.skm_cas.player_style = "continental"		
+
+	self.skm_bex.package = {"packages/skm_sc_federales", "packages/dlcs/skm/job_bex_skm"}
+
+	self.skm_run.ai_group_type = nypd
+	self.skm_run.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_nypd"}
+	
+	self.skm_red2.ai_group_type = nypd
+	self.skm_red2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_nypd"}
+		
+	self.skm_mus.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	
+	self.skm_watchdogs_stage2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	
+	self.skm_mallcrasher.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	
+	self.skm_arena.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+		
+	self.skm_big2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
 end)
 
 function LevelsTweakData:get_ai_group_type()

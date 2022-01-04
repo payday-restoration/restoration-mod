@@ -57,7 +57,7 @@ function GameSetup:load_packages()
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
 	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
     
-	if job_tweak_package_data and job_tweak_package_data.load_all_difficulty_packages then
+	if job_tweak_package_data and job_tweak_package_data.load_all_difficulty_packages and not managers.skirmish:is_skirmish() then
 		for i, difficulty in ipairs(tweak_data.difficulties) do
 			local diff_package = "packages/" .. (difficulty or "normal")
 

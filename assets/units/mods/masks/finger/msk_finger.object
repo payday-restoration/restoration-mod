@@ -1,6 +1,0 @@
-<dynamic_object>
-	<diesel materials="units/mods/masks/finger/msk_finger" orientation_object="rp_finger_mask" />
-	<graphics>
-		<object name="g_finger" enabled="true" />
-	</graphics>
-</dynamic_object>

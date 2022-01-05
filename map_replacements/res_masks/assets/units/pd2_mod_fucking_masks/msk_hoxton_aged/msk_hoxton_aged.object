@@ -1,0 +1,6 @@
+<dynamic_object>
+    <diesel orientation_object="rp_hoxton_mask" materials="units/pd2_mod_fucking_masks/msk_hoxton_aged/msk_hoxton_aged" />
+    <graphics>
+        <object enabled="true" name="g_hoxton" />
+    </graphics>
+</dynamic_object>

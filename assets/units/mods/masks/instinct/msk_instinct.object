@@ -1,7 +1,0 @@
-<dynamic_object>
-	<diesel materials="units/mods/masks/instinct/msk_instinct" orientation_object="rp_instinct_mask" />
-	<graphics>
-		<object name="g_il" enabled="true" />
-		<object name="g_instinct" enabled="true" />
-	</graphics>
-</dynamic_object>

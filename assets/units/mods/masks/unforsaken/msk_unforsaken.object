@@ -1,6 +1,0 @@
-<dynamic_object>
-	<diesel materials="units/mods/masks/unforsaken/msk_unforsaken" orientation_object="rp_unforsaken_mask" />
-	<graphics>
-		<object name="g_unforsaken" enabled="true" />
-	</graphics>
-</dynamic_object>

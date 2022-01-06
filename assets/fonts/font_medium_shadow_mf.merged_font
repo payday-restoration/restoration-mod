@@ -3,4 +3,6 @@
       <font name="fonts/font_medium_buttons_old_ps3" color="ffffff"/>
       <font name="fonts/font_noto_scn_medium"/>
       <font name="fonts/font_noto_support_medium"/>
+      <font name="fonts/font_noto_ko_medium"/>
+      <font name="fonts/font_noto_support_medium"/>
 </merged_font>

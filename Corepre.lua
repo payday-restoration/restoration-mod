@@ -21,3 +21,6 @@ end
 if not PackageManager:loaded("core/packages/language_schinese") then
 	PackageManager:load("core/packages/language_schinese")
 end
+if not PackageManager:loaded("core/packages/language_korean") then
+	PackageManager:load("core/packages/language_korean")
+end

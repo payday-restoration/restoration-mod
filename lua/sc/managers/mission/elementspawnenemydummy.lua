@@ -659,6 +659,7 @@ local lapd_deathwish = {
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_mod_lapd/characters/ene_sniper_3/ene_sniper_3",
+		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_mod_lapd/characters/ene_city_shield/ene_city_shield",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1",
@@ -713,6 +714,7 @@ local lapd_zeal = {
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper",
 		["units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"] = "units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1",
+		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		
 		--fbi swat
 		["units/payday2/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",

@@ -221,6 +221,18 @@
 				</object>
 			</lod_object>
 
+			<lod_object name="lod_shoulderpad_l">
+				<object name="g_shoulderpad_l" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_static_swat" max_distance="1000" />
+					<material materials="mtr_static_swat_lod_1" max_distance="1500" />
+					<material materials="mtr_static_swat_lod_2" />
+				</object>
+				<object name="g_shoulderpad_l_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_static_swat" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
+					<material materials="mtr_static_swat_lod_2" />
+				</object>
+			</lod_object>			
+
 			<lod_object name="lod_shoulderpad_r">
 				<object name="g_shoulderpad_r" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_static_swat" max_distance="1000" />

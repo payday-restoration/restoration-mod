@@ -40,6 +40,12 @@ local tmp_vec4 = Vector3()
 local temp_rot1 = Rotation()
 local idstr_base = Idstring("base")
 
+-- Helper function to get the final path position
+function CopActionWalk:get_destination_pos()
+	return self._nav_point_pos(self._simplified_path and self._simplified_path[#self._simplified_path] or self._nav_path and self._nav_path[#self._nav_path])
+end
+
+
 function CopActionWalk:init(action_desc, common_data)
 	self._common_data = common_data
 	self._action_desc = action_desc

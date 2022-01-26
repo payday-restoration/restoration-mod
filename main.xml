@@ -214,6 +214,7 @@
 		<hook file="sc/managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
 		<hook file="sc/tweak_data/dramatweakdata.lua" source_file="lib/tweak_data/dramatweakdata"/>
 		<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>
+		<hook file="sc/managers/mission/elementareatrigger.lua" source_file="lib/managers/mission/elementareatrigger"/>
 		<hook file="sc/managers/mission/elementfilter.lua" source_file="lib/managers/mission/elementfilter"/>
 		<hook file="sc/tweak_data/crimespreetweakdata.lua" source_file="lib/tweak_data/crimespreetweakdata"/>
 		<hook file="sc/managers/menu/menunodegui.lua" source_file="lib/managers/menu/menunodegui"/>

@@ -451,7 +451,6 @@ function GroupAIStateBesiege:_assign_enemy_groups_to_assault(phase)
 	end
 end
 
-
 -- Fix more cases of stuck enemies
 function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 	local phase_is_anticipation = phase == "anticipation"
@@ -517,7 +516,7 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 						group.is_chasing = true
 
 						self:_set_objective_to_enemy_group(group, grp_objective)
-						--self:_voice_deathguard_start(group)
+						self:_voice_deathguard_start(group)
 						return
 					end
 				end
@@ -583,6 +582,24 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 			-- If none of the above applies, push if we can't see any enemy or if we're chasing, open fire otherwise (if we aren't already doing that)
 			push = not has_visible_target or group.is_chasing or not tactics_map.ranged_fire
 			open_fire = not push and not current_objective.open_fire
+		end
+	else
+		-- If we see an enemy while moving out and have the ranged_fire tactics, open fire and stay in position for a bit
+		if tactics_map.ranged_fire and not current_objective.open_fire then
+			for _, u_data in pairs(group.units) do
+				local logic_data = u_data.unit:brain()._logic_data
+				local focus_enemy = logic_data and logic_data.attention_obj
+				if focus_enemy and focus_enemy.reaction >= AIAttentionObject.REACT_AIM and focus_enemy.verified then
+					if focus_enemy.verified_dis < (logic_data.internal_data.weapon_range and logic_data.internal_data.weapon_range.far or 3000) then
+						local forwardmost_i_nav_point = self:_get_group_forwardmost_coarse_path_index(group)
+						if forwardmost_i_nav_point then
+							open_fire = true
+							objective_area = self:get_area_from_nav_seg_id(current_objective.coarse_path[forwardmost_i_nav_point][1])
+						end
+					end
+					break
+				end
+			end
 		end
 	end
 
@@ -708,7 +725,7 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 				if used_grenade then
 					self:_voice_move_in_start(group)
 				elseif not group.ignore_grenade_check_t then
-					group.ignore_grenade_check_t = self._t + 2
+					group.ignore_grenade_check_t = self._t + 3
 				end
 			end
 

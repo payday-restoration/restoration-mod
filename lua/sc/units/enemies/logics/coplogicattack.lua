@@ -37,10 +37,13 @@ function CopLogicAttack._upd_aim(data, my_data)
 		end
 	else
 		if my_data.shooting then
-			my_data.shooting = not data.unit:brain():action_request({
+			local success = data.unit:brain():action_request({
 				body_part = 3,
 				type = "idle"
 			})
+			if success then
+				my_data.shooting = nil
+			end
 		end
 
 		if my_data.attention_unit then
@@ -64,7 +67,7 @@ function CopLogicAttack._check_aim_shoot(data, my_data, focus_enemy, verified, n
 	local weapon_range = data.internal_data.weapon_range or { close = 1000, far = 4000 }
 	local firing_range = running and weapon_range.close or weapon_range.far
 
-	local aim = not advancing or time_since_verification < math.lerp(4, 1, focus_enemy.verified_dis / firing_range) or focus_enemy.verified_dis < weapon_range.close or data.char_tweak.always_face_enemy
+	local aim = not advancing or time_since_verification < math.lerp(4, 1, focus_enemy.verified_dis / firing_range) or focus_enemy.verified_dis < 800 or data.char_tweak.always_face_enemy
 	local shoot = aim and my_data.shooting and AIAttentionObject.REACT_SHOOT <= focus_enemy.reaction and time_since_verification < (running and 2 or 4)
 	local expected_pos = not shoot and focus_enemy.verified_dis < weapon_range.close and focus_enemy.m_head_pos or focus_enemy.last_verified_pos or focus_enemy.verified_pos
 

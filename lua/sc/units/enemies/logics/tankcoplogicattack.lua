@@ -3,6 +3,19 @@ if TheFixes then
 	TheFixes.dozers_walk = false
 end
 
+
+-- Check if the current chase pos is too far from our focus enemy and if so, cancel chase to get a better pos
+Hooks:PreHook(TankCopLogicAttack, "queued_update", "sh_queued_update", function (data)
+	local my_data = data.internal_data
+	local focus_enemy = data.attention_obj
+	if my_data.walking_to_chase_pos and focus_enemy then
+		if mvector3.distance_sq(my_data.walking_to_chase_pos:get_destination_pos(), focus_enemy.m_pos) > 1440000 then
+			TankCopLogicAttack._cancel_chase_attempt(data, my_data)
+		end
+	end
+end)
+
+
 -- Rearrange some pathing code to allow updated pathing in one function call and fix Dozers sprinting when they shouldn't
 function TankCopLogicAttack.update(data)
 	local t = data.t
@@ -91,6 +104,8 @@ function TankCopLogicAttack.update(data)
 		end
 
 		if my_data.chase_path then
+			-- Fix incorrect path starting position
+			CopLogicAttack._correct_path_start_pos(data, my_data.chase_path)
 			TankCopLogicAttack._chk_request_action_walk_to_chase_pos(data, my_data, walk and "walk" or "run")
 		end
 	else

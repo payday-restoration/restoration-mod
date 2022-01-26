@@ -25,7 +25,7 @@ function TaserLogicAttack._upd_aim(data, my_data, reaction)
 		end
 
 		if not data.unit:anim_data().reload and not data.unit:movement():chk_action_forbidden("action") then
-			if tase and not focus_enemy.unit:movement():zipline_unit() then
+			if tase and not my_data.tasing and not focus_enemy.unit:movement():zipline_unit() then
 				-- Stop moving when we're about to tase
 				if not data.unit:movement():chk_action_forbidden("walk") then
 					data.unit:brain():action_request({
@@ -49,7 +49,7 @@ function TaserLogicAttack._upd_aim(data, my_data, reaction)
 					CopLogicAttack._cancel_charge(data, my_data)
 					managers.groupai:state():on_tase_start(data.key, focus_enemy.u_key)
 				end
-			elseif not my_data.shooting then
+			elseif not my_data.shooting and not my_data.tasing then
 				my_data.shooting = data.unit:brain():action_request({
 					body_part = 3,
 					type = "shoot"
@@ -57,11 +57,15 @@ function TaserLogicAttack._upd_aim(data, my_data, reaction)
 			end
 		end
 	else
-		if my_data.shooting then
-			my_data.shooting = not data.unit:brain():action_request({
+		if my_data.shooting or my_data.tasing then
+			local success = data.unit:brain():action_request({
 				body_part = 3,
 				type = "idle"
 			})
+			if success then
+				my_data.shooting = nil
+				my_data.tasing = nil
+			end
 		end
 
 		if my_data.attention_unit then

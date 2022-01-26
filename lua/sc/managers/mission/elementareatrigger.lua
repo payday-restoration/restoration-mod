@@ -16,10 +16,10 @@ local function check_executed_objects(area_trigger, current, recursion_depth)
 			area_trigger._reinforce_point_enabled = area_trigger._values.enabled
 			if area_trigger._values.enabled then
 				managers.groupai:state():set_area_min_police_force(area_trigger._id, 3, area_trigger._values.position)
-				StreamHeist:log(element_class == ElementMissionEnd and "Escape" or "Loot secure", "zone activated, enabling reinforce groups in its area")
+				restoration:log(element_class == ElementMissionEnd and "Escape" or "Loot secure", "zone activated, enabling reinforce groups in its area")
 			else
 				managers.groupai:state():set_area_min_police_force(area_trigger._id)
-				StreamHeist:log(element_class == ElementMissionEnd and "Escape" or "Loot secure", "zone deactivated, disabling reinforce groups in its area")
+				restoration:log(element_class == ElementMissionEnd and "Escape" or "Loot secure", "zone deactivated, disabling reinforce groups in its area")
 			end
 			return true
 		elseif recursion_depth > 0 and element_class == MissionScriptElement then

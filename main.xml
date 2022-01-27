@@ -162,6 +162,7 @@
 		<hook file="sc/units/enemies/actions/upper_body/copactionreload.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionreload"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactionshoot.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionshoot"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactiontase.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactiontase"/>
+		<hook file="sc/units/enemies/actions/lower_body/copactionidle.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionidle"/>
 		<hook file="sc/units/enemies/actions/lower_body/copactionturn.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionturn"/>
 		<hook file="sc/units/enemies/actions/lower_body/copactionwalk.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionwalk"/>
 		<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>

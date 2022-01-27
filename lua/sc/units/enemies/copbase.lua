@@ -16,24 +16,13 @@ end)
 
 function CopBase:random_mat_seq_initialization()
     local unit_name = self._unit:name()
- 	local faction = tweak_data.levels:get_ai_group_type()
-	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
-	local difficulty_index = tweak_data:difficulty_to_index(difficulty)
-       	
+        	
 	--BEAT COP FACE STUFF STARTS HERE	
 	local cop1_4 = unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1/ene_cop_1_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_3/ene_cop_3_husk")
 	
 	local cop2_3 = unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2") 
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2/ene_cop_2_husk")	
 	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_4/ene_cop_4_husk")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest")
-	or unit_name == Idstring("units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk")
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_cop_1_4") and cop1_4 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_cop_1_4")
@@ -42,64 +31,26 @@ function CopBase:random_mat_seq_initialization()
 	end	
 	--END BEAT COP FACE STUFF
 
-	-- sniper nonsense (don't trust this being executed every time a common unit spawns tbh)
-	local sniper_fbi = unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc") 
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc_husk")
 	
-	local sniper_blue = unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc") 
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc_husk")
-	
-	local sniper_gensec = unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3") 
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3")
-
-	local switch_mat_config_federales_sniper = unit_name == Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper")
-	or unit_name == Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper_husk")
-
-	if faction == "federales" and difficulty_index == 6 then
-		if self._unit:damage() and self._unit:damage():has_sequence("swap_federales_to_fbi") and switch_mat_config_federales_sniper then
-			self._unit:damage():run_sequence_simple("swap_federales_to_fbi")
-		elseif faction == "federales" and difficulty_index == 7 then
-			if self._unit:damage() and self._unit:damage():has_sequence("swap_federales_to_city") and switch_mat_config_federales_sniper then
-				self._unit:damage():run_sequence_simple("swap_federales_to_city")
-			end
-		end	
-	end
-	
-	if self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_lapd") and sniper_fbi and faction == "lapd" then
-		self._unit:damage():run_sequence_simple("switch_sniper_to_lapd")
-	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_nypd") and sniper_fbi and faction == "nypd" then
-		self._unit:damage():run_sequence_simple("switch_sniper_to_nypd")		
-	elseif self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_to_zombie") and sniper_fbi and faction == "zombie" then
-		self._unit:damage():run_sequence_simple("switch_sniper_to_zombie")		
-	end
-			
-	if self._unit:damage() and self._unit:damage():has_sequence("switch_sniper_3_to_zombie") and sniper_gensec and faction == "zombie" then
-		self._unit:damage():run_sequence_simple("switch_sniper_3_to_zombie")	
-	end	
-	
-	--START FBI HRT FACES.
+	--START FBI HRT FACES. fuck this useless enemy! praise jules for removing him!
 	local fbi_1_2 = unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1") 
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_1/ene_fbi_1_husk")	
 	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2")
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_2/ene_fbi_2_husk")
 	
 	local fbi_3 = unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3") 
-	or unit_name == Idstring("units/payday2/characters/ene_fbi_3/ene_fbi_3_husk")	
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_1_2") and fbi_1_2 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_1_2")	
 	elseif self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_fbi_3") and fbi_3 then
-		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_3")	
+		self._unit:damage():run_sequence_simple("pick_mats_for_fbi_3")	--he is obscured so there's no need to replace him.
 	end	 	
+
 	
 	--security $!!SLAT^* insanity	
 	local sec_2_3 = unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_2/ene_security_2_husk")
 	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3")
-	or unit_name == Idstring("units/payday2/characters/ene_security_3/ene_security_3_husk")
 	
 	local sec_1 = unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1") 
-	or unit_name == Idstring("units/payday2/characters/ene_security_1/ene_security_1_husk")
+	
 	
 	if self._unit:damage() and self._unit:damage():has_sequence("pick_mats_for_sec_1") and sec_1 then
 		self._unit:damage():run_sequence_simple("pick_mats_for_sec_1")	
@@ -108,19 +59,16 @@ function CopBase:random_mat_seq_initialization()
 	end
 	--end security shit
 	
-    local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5_husk")	
+    local murk_sec = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5") 
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_r870/ene_murky_cs_cop_r870_husk")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")	
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45_husk")
+    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_c45/ene_murky_cs_cop_c45")
     or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5")
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_murky_cs_cop_mp5/ene_murky_cs_cop_mp5_husk")
 		
     local murkies = unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1") 
-    or unit_name == Idstring("units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk")
 	
-    if self._unit:damage() and self._unit:damage():has_sequence("murksecrandom") and murk_sec then
+	if self._unit:damage() and self._unit:damage():has_sequence("nypdrandom") and nypd_cops then
+        self._unit:damage():run_sequence_simple("nypdrandom")
+    elseif self._unit:damage() and self._unit:damage():has_sequence("murksecrandom") and murk_sec then
         self._unit:damage():run_sequence_simple("murksecrandom")				
     elseif self._unit:damage() and self._unit:damage():has_sequence("set_style_murky") and murkies then
         self._unit:damage():run_sequence_simple("set_style_murky")
@@ -176,10 +124,10 @@ function CopBase:_chk_spawn_gear()
 			if job == x or Month == "12" then
 				if self._tweak_table == "tank_hw" or self._tweak_table == "spooc_titan" or self._tweak_table == "autumn" then
 					--In case we decide to give these guys a unique hat that has some crazy seq manager stuff
+				elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2_husk") then
+					--These guys need a unique hat shifted down, can be done whenever
 				elseif self._tweak_table == "tank_medic" or self._tweak_table == "tank_mini" or self._tweak_table == "spring" then
 					self._headwear_unit = safe_spawn_unit("units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc", Vector3(), Rotation())
-				elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2_husk") then
-					--These guys need a unique hat shifted down, can be done whenever				
 				elseif self._tweak_table == "tank_titan" or self._tweak_table == "tank_titan_assault" then
 					if region == "russia" or region == "federales" then
 						self._headwear_unit = safe_spawn_unit("units/payday2/characters/ene_acc_spook_santa_hat_sc/ene_acc_spook_santa_hat_sc", Vector3(), Rotation())					
@@ -223,7 +171,7 @@ function CopBase:default_weapon_name()
 	end
 	
 	--Blue SWAT Weapon Changes (test)--
-	if self._unit:name() == Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc") then
+	if self._unit:name() == Idstring("units/payday2/characters/ene_swat_1/ene_swat_1") then
 		default_weapon_id = "m4_blue"	
 	elseif self._unit:name() == Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1") then
 		default_weapon_id = "m4_blue"	
@@ -313,6 +261,10 @@ function CopBase:default_weapon_name()
 		default_weapon_id = "mac11"		
 	elseif self._unit:name() == Idstring("units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager") then
 		default_weapon_id = "raging_bull"				
+	end
+	
+	if self._unit:name() == Idstring("units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249") then
+		default_weapon_id = "m60"				
 	end
 	
 	--Security Guards

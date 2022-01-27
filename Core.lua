@@ -144,7 +144,6 @@ function restoration:Init()
 		"man", --Undercover
 		"man_res", --Undercover resmod edit		
 		"jolly", --Aftershock
-		"branchbank", --Bank heist
 		"firestarter_3", --firestarter day 3
 		"firestarter_3_res", --firestarter day 3, res edit
 		"mex_cooking", --Border Crystals

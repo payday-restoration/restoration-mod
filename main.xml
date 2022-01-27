@@ -84,10 +84,12 @@
 		<!--///NOTIFICATIONS\\\-->
 		<hook file="notify.lua" source_file="lib/managers/menu/menunodegui"/>
         <!--///OVERHAUL\\\-->
+		<hook file="sc/units/props/carrydata.lua" source_file="lib/units/props/carrydata"/>
+		<hook file="sc/units/props/drill.lua" source_file="lib/units/props/drill"/>
 		<hook file="sc/network/base/hostnetworksession.lua" source_file="lib/network/base/hostnetworksession"/>
 		<hook file="sc/states/missionendstate.lua" source_file="lib/states/missionendstate"/>
 		<hook file="sc/tweak_data/guitweakdata.lua" source_file="lib/tweak_data/guitweakdata"/>
-		<hook file="sc/units/environment/environmentfire.lua" source_file="lib/units/environment/environmentfire"/>		
+		<hook file="sc/units/environment/environmentfire.lua" source_file="lib/units/environment/environmentfire"/>	
 		<hook file="sc/managers/featuremanager.lua" source_file="lib/managers/featuremanager"/>
 		<hook file="sc/managers/mission/elementspawnenemygroup.lua" source_file="lib/managers/mission/elementspawnenemygroup"/>
 		<hook file="sc/managers/mission/elementpointofnoreturn.lua" source_file="lib/managers/mission/elementpointofnoreturn"/>
@@ -161,6 +163,7 @@
 		<hook file="sc/units/enemies/actions/upper_body/copactionreload.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionreload"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactionshoot.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactionshoot"/>
 		<hook file="sc/units/enemies/actions/upper_body/copactiontase.lua" source_file="lib/units/enemies/cop/actions/upper_body/copactiontase"/>
+		<hook file="sc/units/enemies/actions/lower_body/copactionidle.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionidle"/>
 		<hook file="sc/units/enemies/actions/lower_body/copactionturn.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionturn"/>
 		<hook file="sc/units/enemies/actions/lower_body/copactionwalk.lua" source_file="lib/units/enemies/cop/actions/lower_body/copactionwalk"/>
 		<hook file="sc/units/enemies/actions/full_body/copactionhurt.lua" source_file="lib/units/enemies/cop/actions/full_body/copactionhurt"/>
@@ -213,6 +216,7 @@
 		<hook file="sc/managers/hud/hudassaultcorner.lua" source_file="lib/managers/hud/hudassaultcorner"/>
 		<hook file="sc/tweak_data/dramatweakdata.lua" source_file="lib/tweak_data/dramatweakdata"/>
 		<hook file="sc/managers/mission/elementspawnenemydummy.lua" source_file="lib/managers/mission/elementspawnenemydummy"/>
+		<hook file="sc/managers/mission/elementareatrigger.lua" source_file="lib/managers/mission/elementareatrigger"/>
 		<hook file="sc/managers/mission/elementfilter.lua" source_file="lib/managers/mission/elementfilter"/>
 		<hook file="sc/tweak_data/crimespreetweakdata.lua" source_file="lib/tweak_data/crimespreetweakdata"/>
 		<hook file="sc/managers/menu/menunodegui.lua" source_file="lib/managers/menu/menunodegui"/>
@@ -232,6 +236,7 @@
 		<hook file="sc/units/weapons/npcraycastweaponbase.lua" source_file="lib/units/weapons/npcraycastweaponbase"/>
 		<hook file="sc/tweak_data/timespeedeffecttweakdata.lua" source_file="lib/tweak_data/timespeedeffecttweakdata"/>
 		<hook file="sc/units/civilians/civilianlogictravel.lua" source_file="lib/units/civilians/logics/civilianlogictravel"/>
+		<hook file="sc/units/civilians/civilianlogicflee.lua" source_file="lib/units/civilians/logics/civilianlogicflee"/>
 		<hook file="sc/units/enemies/tankcopdamage.lua" source_file="lib/units/enemies/tank/tankcopdamage"/>
 		<hook file="sc/units/enemies/husktankcopdamage.lua" source_file="lib/units/enemies/tank/husktankcopdamage"/>
 		<hook file="sc/units/weapons/trip_mine/tripminebase.lua" source_file="lib/units/weapons/trip_mine/tripminebase"/>
@@ -246,6 +251,7 @@
 		<hook file="sc/units/equipment/sentrygunweapon.lua" source_file="lib/units/equipment/sentry_gun/sentrygunweapon"/>
 		<hook file="sc/managers/menumanagerpd2.lua" source_file="lib/managers/menumanagerpd2"/>
 		<hook file="sc/units/enemies/copsound.lua" source_file="lib/units/enemies/cop/copsound"/>
+		<hook file="sc/units/environment/environmentfire.lua" source_file="lib/units/environment/environmentfire"/>
 		<hook file="sc/managers/mission/elementmissionend.lua" source_file="lib/managers/mission/elementmissionend"/>
 		<hook file="sc/managers/mission/elementsmokegrenade.lua" source_file="lib/managers/mission/elementsmokegrenade"/>
 		<hook file="sc/tweak_data/skirmishtweakdata.lua" source_file="lib/tweak_data/skirmishtweakdata"/>
@@ -281,7 +287,7 @@
 		<hook file="sc/managers/CrimeNetManager.lua" source_file="lib/managers/CrimeNetManager"/>
 		<hook file="sc/tweak_data/eventjobstweakdata.lua" source_file="lib/tweak_data/eventjobstweakdata"/>
 		<hook file="sc/managers/sidejobeventmanager.lua" source_file="lib/managers/sidejobeventmanager"/>
-		<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>		
+		<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

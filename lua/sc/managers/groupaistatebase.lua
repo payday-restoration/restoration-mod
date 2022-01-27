@@ -304,135 +304,6 @@ function GroupAIStateBase:_radio_chatter_clbk()
 	managers.enemy:add_delayed_clbk("_radio_chatter_clbk", self._radio_clbk, Application:time() + 30 + math.random(0, 20))
 end	
 
-function GroupAIStateBase:_draw_current_logics()
-	for key, data in pairs(self._police) do
-		if data.unit:brain() and data.unit:brain().is_current_logic then
-			local brain = data.unit:brain()
-			
-			if brain:is_current_logic("arrest") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.blue:with_alpha(1), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("attack") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.red:with_alpha(1), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("base") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.white:with_alpha(0.5), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("flee") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.orange:with_alpha(0.5), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("guard") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.blue:with_alpha(0.1), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("idle") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.green:with_alpha(0.5), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("inactive") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.black:with_alpha(0.5), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("intimidated") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.black:with_alpha(0.5), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("sniper") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.red:with_alpha(0.1), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			elseif brain:is_current_logic("travel") then
-				local draw_duration = 0.1
-				local new_brush = Draw:brush(Color.yellow:with_alpha(0.5), draw_duration)
-				new_brush:sphere(data.unit:movement():m_head_pos(), 20)
-			end
-		end
-	end
-end
-
-function GroupAIStateBase:find_followers_to_unit(leader_key, leader_data)
-	local leader_u_data = self._police[leader_key]
-	if not leader_u_data then
-		return
-	end
-	leader_u_data.followers = leader_u_data.followers or {}
-	local followers = leader_u_data.followers
-	local nr_followers = #followers
-	local max_nr_followers = leader_data.max_nr_followers
-	if nr_followers >= max_nr_followers then
-		return
-	end
-	local wanted_nr_new_followers = max_nr_followers - nr_followers
-	local leader_unit = leader_u_data.unit
-	local leader_nav_seg = leader_u_data.tracker:nav_segment()
-	local objective = {
-		type = "follow",
-		follow_unit = leader_unit,
-		scan = true,
-		nav_seg = leader_nav_seg,
-		stance = "cbt",
-		distance = 600
-	}
-	local candidates = {}
-	for u_key, u_data in pairs(self._police) do
-		if u_data.assigned_area and not u_data.follower and u_data.char_tweak.follower and u_data.tracker:nav_segment() == leader_nav_seg and u_data.unit:brain():is_available_for_assignment(objective) then
-			table.insert(followers, u_key)
-			u_data.follower = leader_key
-			local new_follow_objective = clone(objective)
-			new_follow_objective.fail_clbk = callback(self, self, "clbk_follow_objective_failed", {
-				leader_u_data = leader_u_data,
-				follower_unit = u_data.unit
-			})
-			u_data.unit:brain():set_objective(new_follow_objective)
-			if #candidates == wanted_nr_new_followers then
-				break
-			end
-		end
-	end
-end
-
-function GroupAIStateBase:chk_has_followers(leader_key)
-	local leader_u_data = self._police[leader_key]
-	if leader_u_data and next(leader_u_data.followers) then
-		return true
-	end
-end
-
-function GroupAIStateBase:are_followers_ready(leader_key)
-	local leader_u_data = self._police[leader_key]
-	if not leader_u_data or not leader_u_data.followers then
-		return true
-	end
-	for i, follower_key in ipairs(leader_u_data.followers) do
-		local follower_u_data = self._police[follower_key]
-		local objective = follower_u_data.unit:brain():objective()
-		if objective and not objective.in_place then
-			return
-		end
-	end
-	return true
-end
-
-function GroupAIStateBase:clbk_follow_objective_failed(data)
-	local leader_u_data = data.leader_u_data
-	local follower_unit = data.follower_unit
-	local follower_key = follower_unit:key()
-	for i, _follower_key in ipairs(leader_u_data.followers) do
-		if _follower_key == follower_key then
-			table.remove(leader_u_data.followers, i)
-			break
-		end
-	end
-	local follower_u_data = self._police[follower_key]
-	if follower_u_data then
-		follower_u_data.follower = nil
-	end
-end
-
 function GroupAIStateBase:_get_balancing_multiplier(balance_multipliers)
 	local nr_players = 0
 	for u_key, u_data in pairs(self:all_criminals()) do
@@ -1624,26 +1495,6 @@ function GroupAIStateBase:do_blackout(state)
 	end
 end
 
-function GroupAIStateBase:_merge_coarse_path_by_area(coarse_path)
-	local i_nav_seg = #coarse_path
-	local last_area = nil
-
-	while i_nav_seg > 0 do
-		if #coarse_path > 2 then
-			local nav_seg = coarse_path[i_nav_seg][1]
-			local area = self:get_area_from_nav_seg_id(nav_seg)
-
-			if last_area and last_area == area then
-				table.remove(coarse_path, i_nav_seg)
-			else
-				last_area = area
-			end
-		end
-
-		i_nav_seg = i_nav_seg - 1
-	end
-end
-
 local _upd_criminal_suspicion_progress_original = GroupAIStateBase._upd_criminal_suspicion_progress
  
 function GroupAIStateBase:_upd_criminal_suspicion_progress(...)
@@ -1691,3 +1542,80 @@ Hooks:PreHook(GroupAIStateBase, "sync_assault_mode" , "TriggerEnduringHost" , fu
 		managers.player:check_enduring()
 	end
 end)
+
+Hooks:PostHook(GroupAIStateBase, "_init_misc_data", "sh__init_misc_data", register_special_types)
+Hooks:PostHook(GroupAIStateBase, "on_simulation_started", "sh_on_simulation_started", register_special_types)
+
+-- Fix cloaker spawn noise for host
+local _process_recurring_grp_SO_original = GroupAIStateBase._process_recurring_grp_SO
+function GroupAIStateBase:_process_recurring_grp_SO(...)
+	if _process_recurring_grp_SO_original(self, ...) then
+		managers.hud:post_event("cloaker_spawn")
+		return true
+	end
+end
+
+-- Delay spawn points when enemies die close to them
+Hooks:PostHook(GroupAIStateBase, "on_enemy_unregistered", "sh_on_enemy_unregistered", function (self, unit)
+	if not Network:is_server() or not unit:character_damage():dead() then
+		return
+	end
+
+	local e_data = self._police[unit:key()]
+	if not e_data.group or not e_data.group.has_spawned then
+		return
+	end
+
+	local spawn_point = unit:unit_data().mission_element
+	if not spawn_point then
+		return
+	end
+
+	local u_pos = e_data.m_pos
+	local spawn_pos = spawn_point:value("position")
+	local dist_sq = mvector3.distance_sq(spawn_pos, u_pos)
+	local max_dist_sq = 1000000
+	if dist_sq > max_dist_sq then
+		return
+	end
+
+	for _, area in pairs(self._area_data) do
+		if area.spawn_groups then
+			for _, group in pairs(area.spawn_groups) do
+				if group.spawn_pts then
+					for _, point in pairs(group.spawn_pts) do
+						if point.mission_element == spawn_point then
+							local delay_t = self._t + math.lerp(8, 0, dist_sq / max_dist_sq)
+							group.delay_t = math.max(group.delay_t, delay_t)
+							return
+						end
+					end
+				end
+			end
+		end
+	end
+end)
+
+-- Fix this function doing nothing
+function GroupAIStateBase:_merge_coarse_path_by_area(coarse_path)
+	local i_nav_seg = #coarse_path
+	local area, last_area
+	while i_nav_seg > 0 and #coarse_path > 2 do
+		area = self:get_area_from_nav_seg_id(coarse_path[i_nav_seg][1])
+		if last_area and last_area == area then
+			table.remove(coarse_path, i_nav_seg)
+		else
+			last_area = area
+		end
+		i_nav_seg = i_nav_seg - 1
+	end
+end
+
+-- Make specials not take up importance slots (they're already always counted as important)
+local set_importance_weight_original = GroupAIStateBase.set_importance_weight
+function GroupAIStateBase:set_importance_weight(u_key, ...)
+	if self._police[u_key] and self._police[u_key].unit:brain()._forced_important then
+		return
+	end
+	return set_importance_weight_original(self, u_key, ...)
+end

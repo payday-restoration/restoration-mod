@@ -623,29 +623,19 @@ function CopActionShoot:update(t)
 
 		local fwd = self._common_data.fwd
 		local fwd_dot = mvec3_dot(fwd, tar_vec_flat)
+		local active_actions_2 = self._common_data.active_actions[2]
+		local queued_actions = self._common_data.queued_actions
 
-		if self._turn_allowed then
-			local active_actions = self._common_data.active_actions
-
-			if not active_actions[2] or active_actions[2]:type() == "idle" then
-				local queued_actions = self._common_data.queued_actions
-
-				if not queued_actions or not queued_actions[1] and not queued_actions[2] then
-					if not self._ext_movement:chk_action_forbidden("turn") then
-						local fwd_dot_flat = mvec3_dot(tar_vec_flat, fwd)
-
-						if fwd_dot_flat < 0.96 then
-							local spin = tar_vec_flat:to_polar_with_reference(fwd, math_up).spin
-							local new_action_data = {
-								body_part = 2,
-								type = "turn",
-								angle = spin
-							}
-
-							self._ext_movement:action_request(new_action_data)
-						end
-					end
-				end
+		-- This originally only executed on client side which causes great inconsistencies in enemy turning behaviour
+		-- between host and client. Reworking the turning condition and enabling it for the host too should fix that.
+		if (not active_actions_2 or active_actions_2:type() == "idle") and (not queued_actions or not queued_actions[1] and not queued_actions[2]) then
+			local spin = tar_vec_flat:to_polar_with_reference(fwd, math.UP).spin
+			if math.abs(spin) > 25 then
+				self._ext_movement:action_request({
+					body_part = 2,
+					type = "turn",
+					angle = spin
+				})
 			end
 		end
 

@@ -1126,16 +1126,6 @@ function GroupAIStateBesiege:_assign_recon_groups_to_retire(...)
 	return _assign_recon_groups_to_retire_original(self, ...)
 end
 
---Disable vanilla captain spawning behavior.
-function GroupAIStateBesiege:_check_spawn_phalanx()
-	return
-end
-
---Captain Assault Banner enabled on enemy spawn, rather than via groupai.
-function GroupAIStateBesiege:set_damage_reduction_buff_hud()
-	--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
-end
-
 function GroupAIStateBesiege:_voice_saw(dead_unit)
 	local dead_unit_u_key = dead_unit:key()
 	local group = self._police[dead_unit_u_key] and self._police[dead_unit_u_key].group
@@ -1170,4 +1160,22 @@ function GroupAIStateBesiege:_voice_sentry(dead_unit)
 			end
 		end
 	end
+end
+
+function GroupAIStateBesiege:_voice_friend_dead(group)
+	for u_key, unit_data in pairs(group.units) do
+		if unit_data.char_tweak.chatter and unit_data.char_tweak.chatter.enemyidlepanic and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "assaultpanic") then
+			break
+		end
+	end
+end
+
+--Disable vanilla captain spawning behavior.
+function GroupAIStateBesiege:_check_spawn_phalanx()
+	return
+end
+
+--Captain Assault Banner enabled on enemy spawn, rather than via groupai.
+function GroupAIStateBesiege:set_damage_reduction_buff_hud()
+	--Were you expecting some cute girl? Nope, it's just me! Dev Comments!
 end

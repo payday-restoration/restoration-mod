@@ -4,42 +4,52 @@ local ids_func = Idstring
 local table_contains = table.contains
 
 local enemies_visor = {
-	ids_func("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
-	ids_func("units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),
+	ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"),
+	ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk"),
+	ids_func("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"),
+	ids_func("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc_husk"),
 	ids_func("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"),    
 	ids_func("units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc_husk"),    
-	ids_func("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
-	ids_func("units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),
+	ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc"),
+	ids_func("units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc_husk"),
 	ids_func("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1"),
 	ids_func("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_1/ene_swat_heavy_hvh_1_husk"),
 	ids_func("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870"),
 	ids_func("units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870_husk"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1/ene_fbi_heavy_hvh_1_husk"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_tazer_hvh_1/ene_tazer_hvh_1_husk"),     
+	ids_func("units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_shield_hvh_2/ene_shield_hvh_2_husk"),     	
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),                 	
-	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
-	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),                 	
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer"),
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_tazer/ene_zeal_tazer_husk"),                 	
-	ids_func("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
-	ids_func("units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),
-	ids_func("units/payday2/characters/ene_shield_2/ene_shield_2"),
-	ids_func("units/payday2/characters/ene_shield_2/ene_shield_2_husk"),
-	ids_func("units/payday2/characters/ene_tazer_1/ene_tazer_1"),
-	ids_func("units/payday2/characters/ene_tazer_1/ene_tazer_1_husk"),     
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36"),
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"),                 	
+	ids_func("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"),
+	ids_func("units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc_husk"),
+	ids_func("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc"),
+	ids_func("units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk"),     
 	ids_func("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"),
-	ids_func("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale_husk"),                
-	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"),
-	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale_husk"), 
-	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36"),
-	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36_husk"), 
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale_husk"),                 
 	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36"),
 	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36_husk"),                 
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36_husk"),                 
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_r870/ene_swat_heavy_policia_federale_r870_husk"),                 
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"),
+	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale_husk"),                 
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"),
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_husk"),                 
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"),
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"),                 
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"),
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),                 
+	ids_func("units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"),
+	ids_func("units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2_husk"),                 
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),
 	ids_func("units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),                 
 	ids_func("units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
@@ -83,10 +93,17 @@ local enemies_plink = {
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870_husk"),
 	
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_r870_sc/ene_zeal_heavy_r870_sc"),
-	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_r870_sc/ene_zeal_heavy_r870_sc_husk"),             
+	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_heavy_r870_sc/ene_zeal_heavy_r870_sc_husk"),     
+	
+	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
+	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),                 	
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),
+	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc_husk"),                 	
+	ids_func("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"),
+	ids_func("units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870_husk"),
 	
 	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"),
-	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),   
+	ids_func("units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"),   	
 	
 	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"),
 	ids_func("units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36_husk"),
@@ -727,13 +744,6 @@ function CopDamage:damage_bullet(attack_data)
 
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name then
 		local pierce_armor = nil
-		
-		--Just as a fallback, ugly as sin but whatever
-		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun and not weap_base.thrower_unit then
-			if attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
-				pierce_armor = true
-			end
-		end
 
 		if attack_data.armor_piercing or weap_base.thrower_unit then
 			pierce_armor = true
@@ -851,12 +861,10 @@ function CopDamage:damage_bullet(attack_data)
 	end	
 	
 	if self._char_tweak.damage.non_ap_damage_mul then
-		if attack_data.attacker_unit:base() and not attack_data.attacker_unit:base().sentry_gun then
-			if attack_data.armor_piercing or weap_base.thrower_unit or attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
-				--Nada, did consider having a damage *bonus* but we'll see
-			else
-				damage = damage * self._char_tweak.damage.non_ap_damage_mul
-			end
+		if attack_data.armor_piercing or weap_base.thrower_unit then
+			--Nada, did consider having a damage *bonus* but we'll see
+		else
+			damage = damage * self._char_tweak.damage.non_ap_damage_mul
 		end
 	end		
 

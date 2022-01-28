@@ -7,6 +7,9 @@ local table_remove = table.remove
 local mvec_dis = mvector3.distance
 local mvec_dis_sq = mvector3.distance_sq
 
+local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
+local difficulty_index = tweak_data:difficulty_to_index(difficulty)
+
 function GroupAIStateBesiege:chk_has_civilian_hostages()
 	return self._hostage_headcount - self._police_hostage_headcount > 0
 end
@@ -170,6 +173,7 @@ function GroupAIStateBesiege:_upd_assault_task(...)
 
 			managers.mission:call_global_event("end_assault")
 			self:_begin_regroup_task(force_regroup)
+			self:set_difficulty(nil, 0.3)
 			return
 		end
 	end

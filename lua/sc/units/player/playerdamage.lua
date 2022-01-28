@@ -738,6 +738,8 @@ function PlayerDamage:damage_fall(data)
 		--Falling without a parachute.
 		if is_free_falling then
 			self._revives = Application:digest_value(1, true)
+			
+			self:_send_set_revives()
 		end
 	end
 

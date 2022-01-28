@@ -8,6 +8,8 @@ elseif russian then
     dofile(ModPath .. "lua/sc/loc/locru.lua")
 elseif schinese then
     dofile(ModPath .. "lua/sc/loc/loczh.lua")
+elseif korean then
+    dofile(ModPath .. "lua/sc/loc/locko.lua")
 else
     dofile(ModPath .. "lua/sc/loc/loc.lua")
 end

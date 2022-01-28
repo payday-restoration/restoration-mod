@@ -43,11 +43,11 @@
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/mask_df"/>
 	</material>
 	<material name="mtr_mask_lod_1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/payday2/textures/blank_nm" mip="1"/>
+		<bump_normal_texture 	file="units/payday2/textures/blank_nm" />
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/mask_df" mip="1"/>
 	</material>
 	<material name="mtr_mask_lod_2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-		<bump_normal_texture 	file="units/payday2/textures/blank_nm" mip="4"/>
+		<bump_normal_texture 	ffile="units/payday2/textures/blank_nm" />
 		<diffuse_texture 		file="units/payday2/characters/shared_textures/mask_df" mip="4"/>
 	</material>
 	

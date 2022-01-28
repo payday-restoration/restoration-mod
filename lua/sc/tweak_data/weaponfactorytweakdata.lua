@@ -1416,6 +1416,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		damage_far_mul = 1
 	}
 	
+	--Longbore (M4 exclusive mod kit)
+	--Temp Disabled until we figure out what to do with it
+	self.parts.wpn_fps_m4_upg_fg_mk12.supported = true
+	self.parts.wpn_fps_m4_upg_fg_mk12.stats = {
+		value = 0
+	}	
+	self.parts.wpn_fps_m4_upg_fg_mk12.perks = nil
+	self.parts.wpn_fps_m4_upg_fg_mk12.pcs = nil
+	
 	--CAR-4 Override Tables
 	self.wpn_fps_ass_m4.override.wpn_fps_upg_m4_s_standard_vanilla = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_s_solid",

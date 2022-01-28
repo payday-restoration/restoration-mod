@@ -119,6 +119,20 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 
 			managers.statistics:killed(data)
 		end
+		
+		if self._is_car then
+			local ja22_01_data = tweak_data.achievement.ja22_01
+			local total_health = self._HEALTH_INIT + self._SHIELD_HEALTH_INIT * (1 + self._repair_counter)
+
+			if ja22_01_data.percentage_dmg < self._local_car_damage / total_health then
+				print("JA22_01: Sentrygun Achievement Awarded!", "Damage: " .. math.truncate(self._local_car_damage, 1), "Percentage: " .. math.truncate(self._local_car_damage / total_health * 100, 1) .. "%")
+				managers.achievment:award(ja22_01_data.award)
+			else
+				print("JA22_01: Not enough damage", "Damage: " .. math.truncate(self._local_car_damage, 1), "Percentage: " .. math.truncate(self._local_car_damage / total_health * 100, 1) .. "%")
+			end
+		else
+			print("JA22_01: Sentrygun not a car")
+		end		
 
 		self._health = 0
 		self._dead = true
@@ -210,6 +224,10 @@ function SentryGunDamage:init(unit)
 
 	self._HEALTH_INIT_PERCENT = self._HEALTH_INIT / self._HEALTH_GRANULARITY
 	self._SHIELD_HEALTH_INIT_PERCENT = self._SHIELD_HEALTH_INIT / self._HEALTH_GRANULARITY
+
+	self._local_car_damage = 0
+	self._repair_counter = 0	
+	
 	self._char_tweak = tweak_data.weapon[self._unit:base():get_name_id()]
 end
 
@@ -332,6 +350,12 @@ function SentryGunDamage:damage_bullet(attack_data)
 	}
 	attack_data.result = result
 	result.attack_data = attack_data
+	
+	if self._is_car and attack_data and attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base() and attack_data.weapon_unit:base().name_id == tweak_data.achievement.ja22_01.weapon then
+		self._local_car_damage = self._local_car_damage + dmg_adjusted
+
+		print("Ja22_DamageDealt", "Damage_Dealt: " .. math.truncate(dmg_adjusted, 1), "Total_Local_Damage_Dealt: " .. math.truncate(self._local_car_damage, 1), "Percentage Dealt: " .. math.truncate(self._local_car_damage / (self._HEALTH_INIT + self._SHIELD_HEALTH_INIT * 3) * 100, 2) .. "%")
+	end	
 
 	if damage_post_apply == 0 then
 		return result

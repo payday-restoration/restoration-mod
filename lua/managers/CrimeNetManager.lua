@@ -6,6 +6,8 @@ local is_x360 = SystemInfo:platform() == Idstring("X360")
 local is_xb1 = SystemInfo:platform() == Idstring("XB1")
 local is_ps4 = SystemInfo:platform() == Idstring("PS4")
 
+local xmas_ = false
+
 function CrimeNetGui:init(ws, fullscreeen_ws, node)
 	self._tweak_data = tweak_data.gui.crime_net
 	self._crimenet_enabled = true
@@ -441,7 +443,8 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 		texture = "guis/textures/pd2/cn_mini_xmas",
 		x = 10,
 		y = next_y + 2,
-		color = tweak_data.screen_colors.event_color
+		color = tweak_data.screen_colors.event_color,
+		visible = xmas_
 	})
 	local holiday_text = legend_panel:text({
 		blend_mode = "add",
@@ -450,7 +453,8 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 		x = host_text:left(),
 		y = next_y,
 		text = managers.localization:to_upper_text("menu_cn_legend_holiday"),
-		color = tweak_data.screen_colors.event_color
+		color = tweak_data.screen_colors.event_color,
+		visible = xmas_
 	})
 	mw = math.max(mw, self:make_fine_text(holiday_text))
 	next_y = holiday_text:bottom()
@@ -633,21 +637,25 @@ function CrimeNetGui:init(ws, fullscreeen_ws, node)
 		end
 	end
 
-	local limited_bonus = (tweak_data:get_value("experience_manager", "limited_xmas_bonus_multiplier") or 1) - 1
+	if xmas_ then
 
-	if limited_bonus > 0 then
-		local limited_string = mul_to_procent_string(limited_bonus)
-		local limited_text = global_bonuses_panel:text({
-			blend_mode = "add",
-			align = "center",
-			font = tweak_data.menu.pd2_small_font,
-			font_size = tweak_data.menu.pd2_small_font_size,
-			text = managers.localization:to_upper_text("menu_cn_holiday_bonus", {
-				bonus = limited_string,
-				event_icon = managers.localization:get_default_macro("BTN_XMAS")
-			}),
-			color = tweak_data.screen_colors.event_color
-		})
+		local limited_bonus = (tweak_data:get_value("experience_manager", "limited_xmas_bonus_multiplier") or 1) - 1
+
+		if limited_bonus > 0 then
+			local limited_string = mul_to_procent_string(limited_bonus)
+			local limited_text = global_bonuses_panel:text({
+				blend_mode = "add",
+				align = "center",
+				font = tweak_data.menu.pd2_small_font,
+				font_size = tweak_data.menu.pd2_small_font_size,
+				text = managers.localization:to_upper_text("menu_cn_holiday_bonus", {
+					bonus = limited_string,
+					event_icon = managers.localization:get_default_macro("BTN_XMAS")
+				}),
+				color = tweak_data.screen_colors.event_color
+			})
+		end
+
 	end
 
 	if #global_bonuses_panel:children() > 1 then
@@ -2421,7 +2429,7 @@ function CrimeNetGui:_create_job_gui(data, type, fixed_x, fixed_y, fixed_locatio
 
 	local christmas_icon = nil
 
-	if data.job_id and managers.job:is_christmas_job(data.job_id) then
+	if data.job_id and managers.job:is_christmas_job(data.job_id) and xmas_ then
 		christmas_icon = icon_panel:bitmap({
 			blend_mode = "add",
 			name = "christmas_icon",

@@ -117,6 +117,48 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 
 	box_ai_bg:set_bottom(name:top())
 
+	local name_bg = teammate_panel:child("name_bg")
+
+	self._panel:child("callsign_bg"):set_visible(true)
+	self._panel:child("callsign"):set_visible(true)
+	name_bg:set_h(name:h() + 4)
+
+	local revive_panel = self._player_panel:panel({
+		name = "revive_panel",
+		w = name:h() - 1,
+		h = name_bg:h() + 20
+	})
+
+	revive_panel:set_center_y(name_bg:y() + name_bg:h() / 2)
+	revive_panel:set_right(name_bg:x())
+	revive_panel:bitmap({
+		alpha = 0,
+		name = "revive_bg",
+		layer = 2
+	})
+	revive_panel:text({
+		text = "2x",
+		name = "revive_amount",
+		font_size = 16,
+		font = "fonts/font_medium_mf",
+		align = "center",
+		layer = 3,
+		color = Color.white
+	})
+
+	local arrow_size = 14
+	local arrow = revive_panel:bitmap({
+		texture = "guis/textures/pd2/arrow_downcounter",
+		name = "revive_arrow",
+		alpha = 0,
+		layer = 3,
+		y = revive_panel:h() - arrow_size + 1,
+		h = arrow_size,
+		w = arrow_size
+	})
+
+	arrow:set_center_x(revive_panel:w() / 2)
+
 	local box_bg = teammate_panel:bitmap({
 		texture = "guis/textures/pd2/box_bg",
 		name = "box_bg",
@@ -1057,4 +1099,12 @@ function HUDTeammate:set_voice_com(status)
 	local texture_rect = status and { 0, 0, 16, 16 } or { 84, 34, 19, 19 }
 	local callsign = self._panel:child("callsign")
 	callsign:set_image(texture, unpack(texture_rect))
-end 
+end
+
+function HUDTeammate:set_callsign(id)
+	local teammate_panel = self._panel
+	local callsign = teammate_panel:child("callsign")
+	local alpha = callsign:color().a
+
+	callsign:set_color((tweak_data.chat_colors[id] or tweak_data.chat_colors[#tweak_data.chat_colors]):with_alpha(alpha))
+end

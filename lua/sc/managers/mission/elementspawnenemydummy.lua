@@ -1821,14 +1821,8 @@ function ElementSpawnEnemyDummy:init(...)
 		end		
 	--NYPD
 	elseif ai_type == "nypd" then
-		--Hard
-		if difficulty_index <= 3 then
-			if nypd_hard[self._values.enemy] then
-				self._values.enemy = nypd_hard[self._values.enemy]
-			end
-			self._values.enemy = nypd_hard[self._values.enemy] or self._values.enemy
 		--Very Hard			
-		elseif difficulty_index == 4 then
+		if difficulty_index <= 4 then
 			if nypd_very_hard[self._values.enemy] then
 				self._values.enemy = nypd_very_hard[self._values.enemy]
 			end

@@ -1781,14 +1781,8 @@ function ElementSpawnEnemyDummy:init(...)
 			end
 			self._values.enemy = nail[self._values.enemy] or self._values.enemy		
 		else
-			--Hard
-			if difficulty_index <= 3 then
-				if zombie_hard[self._values.enemy] then
-					self._values.enemy = zombie_hard[self._values.enemy]
-				end
-				self._values.enemy = zombie_hard[self._values.enemy] or self._values.enemy
 			--Very Hard			
-			elseif difficulty_index == 4 then
+			if difficulty_index <= 4 then
 				if zombie_very_hard[self._values.enemy] then
 					self._values.enemy = zombie_very_hard[self._values.enemy]
 				end
@@ -1854,14 +1848,8 @@ function ElementSpawnEnemyDummy:init(...)
 		end	
 	--LAPD
 	elseif ai_type == "lapd" then
-		--Hard
-		if difficulty_index <= 3 then
-			if lapd_hard[self._values.enemy] then
-				self._values.enemy = lapd_hard[self._values.enemy]
-			end
-			self._values.enemy = lapd_hard[self._values.enemy] or self._values.enemy
 		--Very Hard			
-		elseif difficulty_index == 4 then
+		if difficulty_index <= 4 then
 			if lapd_very_hard[self._values.enemy] then
 				self._values.enemy = lapd_very_hard[self._values.enemy]
 			end
@@ -1892,14 +1880,8 @@ function ElementSpawnEnemyDummy:init(...)
 			self._values.enemy = lapd_zeal[self._values.enemy] or self._values.enemy							
 		end	
 	elseif ai_type == "federales" then
-		--Hard
-		if difficulty_index <= 3 then
-			if federales_hard[self._values.enemy] then
-				self._values.enemy = federales_hard[self._values.enemy]
-			end
-			self._values.enemy = federales_hard[self._values.enemy] or self._values.enemy
 		--Very Hard			
-		elseif difficulty_index == 4 then
+		if difficulty_index <= 4 then
 			if federales_very_hard[self._values.enemy] then
 				self._values.enemy = federales_very_hard[self._values.enemy]
 			end
@@ -1931,14 +1913,8 @@ function ElementSpawnEnemyDummy:init(...)
 		end		
 	--America (default)
 	else
-		--Hard
-		if difficulty_index <= 3 then
-			if america_hard[self._values.enemy] then
-				self._values.enemy = america_hard[self._values.enemy]
-			end
-			self._values.enemy = america_hard[self._values.enemy] or self._values.enemy
 		--Very Hard			
-		elseif difficulty_index == 4 then
+		if difficulty_index <= 4 then
 			if america_very_hard[self._values.enemy] then
 				self._values.enemy = america_very_hard[self._values.enemy]
 			end

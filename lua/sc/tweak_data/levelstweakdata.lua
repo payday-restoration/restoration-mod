@@ -209,7 +209,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.fish.player_style = "tux"
 	
 	self.arena.player_style = "hiphop"
-	
+
+	self.born.package = {"packages/narr_jerry2", "packages/miscassets"}	
 	self.born.player_style = "punk"
 	
 	
@@ -256,7 +257,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 	
-	self.welcome_to_the_jungle_2.package = {"packages/narr_jungle2", "packages/murkyassets",}
 	self.welcome_to_the_jungle_2.ai_group_type = murkywater
 	self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 	

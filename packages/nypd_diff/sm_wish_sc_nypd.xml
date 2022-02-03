@@ -448,6 +448,7 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_veteran_cop_1/ene_nypd_veteran_cop_1_husk" force="false" load="true"/>
 	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />		
 
 	<!--Dozer Zeal helm-->
 	<cooked_physics		path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>

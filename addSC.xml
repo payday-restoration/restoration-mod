@@ -66,8 +66,8 @@
 	<mission			path="levels/narratives/pbr/jerry/world/world" force="true" unload="true"/> <!--removes scripted sewer spawns. might have messed something up on the sewer part, so uh pls test kthx.-->		
 	<mission			path="levels/instances/unique/pbr/pbr_plane_cargo/world/world" force="true" unload="true"/> <!--makes the murkydozers use their actual models on the plane. not gonna touch the other instance, 
 	because editing instances is hard as fuck to do, and the fact that I always fuck the scripting here whenever I try to add a difficulty filter.-->	
-	<mission			path="levels/narratives/classics/dinner/world/world" force="true" unload="true"/>  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
-	<continent			path="levels/narratives/classics/dinner/world/world" force="true" unload="true"/>
+	<mission			path="levels/narratives/classics/dinner/world/world" force="true" />  <!--so actual murky dozers rappel down when the helicopters arrive. also changes the van dozer.-->
+	<continent			path="levels/narratives/classics/dinner/world/world" force="true" />
 	
 	<mission			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>
 	<continent			path="levels/narratives/elephant/mad/world/world" force="true" unload="true"/>

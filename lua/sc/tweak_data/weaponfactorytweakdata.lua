@@ -1415,16 +1415,173 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		damage_near_mul = 1,
 		damage_far_mul = 1
 	}
-	
-	--Longbore (M4 exclusive mod kit)
-	--Temp Disabled until we figure out what to do with it
+		
+	--Longbore (Exclusive Set)
+	self.parts.wpn_fps_m4_upg_fg_mk12.pcs = {}
+	self.parts.wpn_fps_m4_upg_fg_mk12.unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_m4_upg_fg_mk12.third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+	self.parts.wpn_fps_m4_upg_fg_mk12.adds = {
+		"wpn_fps_m4_uupg_fg_rail_ext_mk12"
+	}
+	self.parts.wpn_fps_m4_upg_fg_mk12.sound_switch = nil
+	self.parts.wpn_fps_m4_upg_fg_mk12.forbids = nil
 	self.parts.wpn_fps_m4_upg_fg_mk12.supported = true
 	self.parts.wpn_fps_m4_upg_fg_mk12.stats = {
 		value = 0
 	}	
 	self.parts.wpn_fps_m4_upg_fg_mk12.perks = nil
-	self.parts.wpn_fps_m4_upg_fg_mk12.pcs = nil
-	
+	self.parts.wpn_fps_m4_upg_fg_mk12.override = {
+		--Hiding Rail Extensions
+		wpn_fps_m4_uupg_fg_rail_ext = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},		
+		--Overriding barrels for the unique FG model
+		wpn_fps_m4_uupg_b_medium_vanilla = {
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_long",
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long"
+		},
+		wpn_fps_m4_uupg_b_short = {
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_long",
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long"
+		},		
+		wpn_fps_m4_uupg_b_sd = {
+			adds = {
+				"wpn_fps_m4_upg_ns_mk12"
+			},
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_long",
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long"
+		},	
+		wpn_fps_m4_uupg_b_long = {
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_b_long",
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_b_long"
+		},			
+		--Now foregrips
+		wpn_fps_m4_uupg_fg_rail = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_fg_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_fg_mk12"
+		},		
+		wpn_fps_m4_uupg_fg_lr300 = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_fg_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_fg_mk12"
+		},
+		wpn_fps_upg_fg_jp = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_fg_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_fg_mk12"
+		},	
+		wpn_fps_upg_fg_smr = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_fg_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_fg_mk12"
+		},		
+		wpn_fps_upg_ass_m4_fg_moe = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_fg_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_fg_mk12"
+		},	
+		wpn_fps_upg_ass_m4_fg_lvoa = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_fg_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_fg_mk12"
+		},		
+		--Suppressors replaced by unique suppressor
+		wpn_fps_upg_ns_ass_smg_large = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_ns_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_ns_mk12"
+		},	
+		wpn_fps_upg_ns_ass_smg_medium = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_ns_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_ns_mk12"
+		},	
+		wpn_fps_upg_ns_ass_smg_small = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_ns_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_ns_mk12"
+		},		
+		wpn_fps_ass_shak12_ns_suppressor = {
+			third_unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_third_m4_upg_ns_mk12",
+			unit = "units/pd2_dlc_ja22/weapons/wpn_fps_m4_upg_mk12_pts/wpn_fps_m4_upg_ns_mk12"
+		},			
+		--Slight change to optics just cause of how huge the FG is
+		wpn_fps_upg_o_specter = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_aimpoint = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_aimpoint_2 = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_docter = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_eotech = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_t1micro = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_cmore = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_acog = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_cs = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_eotech_xps = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_reflex = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_rx01 = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_rx30 = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_m4_uupg_o_flipup = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_spot = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_bmg = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_fc1 = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_uh = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_tf90 = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_o_poe = {
+			a_obj = "a_o_2"
+		},
+		wpn_fps_upg_fl_ass_smg_sho_peqbox = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_ass_smg_sho_surefire = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_ass_peq15 = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_ass_laser = {
+			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_fl_ass_utg = {
+			a_obj = "a_fl_2"
+		}		
+	}
+	--Longbore Suppressor
+	self.parts.wpn_fps_m4_upg_ns_mk12.pcs = nil
+	self.parts.wpn_fps_m4_upg_ns_mk12.supported = true
+	self.parts.wpn_fps_m4_upg_ns_mk12.stats = {
+		value = 0
+	}	
+		
 	--CAR-4 Override Tables
 	self.wpn_fps_ass_m4.override.wpn_fps_upg_m4_s_standard_vanilla = {
 		unit = "units/payday2/weapons/wpn_fps_ass_m16_pts/wpn_fps_m16_s_solid",

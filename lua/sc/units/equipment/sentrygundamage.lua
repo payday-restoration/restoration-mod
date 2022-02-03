@@ -95,7 +95,8 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 		self._unit:movement():set_active(false)
 		self._unit:brain():set_active(false)
 
-		self._shield_smoke_level = 0
+		self._shield_smoke_level = 0		
+		self._repair_counter = self._repair_counter + 1
 
 		self._unit:contour():remove("deployable_active")
 		if owner == managers.network:session():local_peer():id() then
@@ -122,16 +123,11 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 		
 		if self._is_car then
 			local ja22_01_data = tweak_data.achievement.ja22_01
-			local total_health = self._HEALTH_INIT + self._SHIELD_HEALTH_INIT * (1 + self._repair_counter)
+			local total_health = self._HEALTH_INIT
 
 			if ja22_01_data.percentage_dmg < self._local_car_damage / total_health then
-				print("JA22_01: Sentrygun Achievement Awarded!", "Damage: " .. math.truncate(self._local_car_damage, 1), "Percentage: " .. math.truncate(self._local_car_damage / total_health * 100, 1) .. "%")
 				managers.achievment:award(ja22_01_data.award)
-			else
-				print("JA22_01: Not enough damage", "Damage: " .. math.truncate(self._local_car_damage, 1), "Percentage: " .. math.truncate(self._local_car_damage / total_health * 100, 1) .. "%")
 			end
-		else
-			print("JA22_01: Sentrygun not a car")
 		end		
 
 		self._health = 0
@@ -352,9 +348,7 @@ function SentryGunDamage:damage_bullet(attack_data)
 	result.attack_data = attack_data
 	
 	if self._is_car and attack_data and attack_data.attacker_unit == managers.player:player_unit() and attack_data.weapon_unit and attack_data.weapon_unit:base() and attack_data.weapon_unit:base().name_id == tweak_data.achievement.ja22_01.weapon then
-		self._local_car_damage = self._local_car_damage + dmg_adjusted
-
-		print("Ja22_DamageDealt", "Damage_Dealt: " .. math.truncate(dmg_adjusted, 1), "Total_Local_Damage_Dealt: " .. math.truncate(self._local_car_damage, 1), "Percentage Dealt: " .. math.truncate(self._local_car_damage / (self._HEALTH_INIT + self._SHIELD_HEALTH_INIT * 3) * 100, 2) .. "%")
+		self._local_car_damage = self._local_car_damage + damage
 	end	
 
 	if damage_post_apply == 0 then

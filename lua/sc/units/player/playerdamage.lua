@@ -1318,11 +1318,16 @@ end
 function PlayerDamage:add_revive()
 	self._revives = Application:digest_value(math.min(self._lives_init + managers.player:upgrade_value("player", "additional_lives", 0), Application:digest_value(self._revives, false) + 1), true)
 	self._revive_health_i = math.max(self._revive_health_i - 1, 1)
+	
+	self:_send_set_revives()
+	
 	managers.environment_controller:set_last_life(Application:digest_value(self._revives, false) <= 1)
 	managers.player:set_damage_absorption(
 		"down_absorption",
 		managers.player:upgrade_value("player", "damage_absorption_low_revives", 0) * self:get_missing_revives()
 	)
+	
+	
 end
 
 --Make Ex-Pres only consume stored health that actually goes to healing.

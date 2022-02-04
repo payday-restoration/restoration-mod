@@ -234,8 +234,8 @@
 			</lod_object>
 
 			<lod_object name="lod_glass">
-				<object name="g_glass" 	enabled="true"  max_distance="2000"  max_draw_lod="0" >
-					<material materials="mtr_glass" max_distance="1500" />
+				<object name="g_glass" 	enabled="true"  max_distance="4000"  max_draw_lod="0" >
+					<material materials="mtr_glass" max_distance="2000" />
 					<material materials="mtr_glass_lod" />
 				</object>
 			</lod_object>

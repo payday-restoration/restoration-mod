@@ -210,7 +210,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.arena.player_style = "hiphop"
 
-	self.born.package = {"packages/narr_jerry2", "packages/miscassets"}	
+	self.born.package = {"packages/narr_born_1", "packages/miscassets"}	
 	self.born.player_style = "punk"
 	
 	

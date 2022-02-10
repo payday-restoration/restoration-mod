@@ -35,7 +35,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

@@ -904,13 +904,13 @@ function CopDamage:damage_bullet(attack_data)
 
 	attack_data.raw_damage = damage
 
-	if attack_data.weapon_unit and weap_base.is_category and weap_base:is_category("saw") then
+	--[[if attack_data.weapon_unit and weap_base.is_category and weap_base:is_category("saw") then
 		managers.groupai:state():_voice_saw() --THAT MADMAN HAS A FUCKIN' SAW
 	end
 
 	if attack_data.attacker_unit:base().sentry_gun and not self:is_friendly_fire(attack_data.attacker_unit) then
 		managers.groupai:state():_voice_sentry() --FUCKING SCI-FI ROBOT GUNS
-	end
+	end--]]
 
 	damage = math.clamp(damage, 0, self._HEALTH_INIT)
 	local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)

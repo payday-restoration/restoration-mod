@@ -646,26 +646,20 @@ function CopMovement:do_summers_heal(self)
 	end
 end
 
+local play_redirect_orig = CopMovement.play_redirect
 function CopMovement:play_redirect(redirect_name, at_time)
 	--Not pretty but groupai didn't like me checking unit slots
-	if redirect_name == "throw_grenade" then 
-		if self._unit:in_slot(16) or self._unit:in_slot(22) then	
-			return 
-		end
+	if redirect_name == "throw_grenade" and (self._unit:in_slot(16) or self._unit:in_slot(22) or self._unit:base()._tweak_table == "boom" or (self._machine:get_global("shield") or 0) == 1) then	
+		return
 	end
-	
-	if redirect_name == "throw_grenade" then 
-		if self._unit:base()._tweak_table == "boom" or self._unit:base()._tweak_table == "shield" or self._unit:base()._tweak_table == "phalanx_minion" or self._unit:base()._tweak_table == "phalanx_minion_assault" or self._unit:base()._tweak_table == "phalanx_vip" then	
-			return 
-		end
-	end
-	
-	local result = self._unit:play_redirect(Idstring(redirect_name), at_time)
-	
 
-	return result ~= Idstring("") and result
+	local result = play_redirect_orig(self, redirect_name, at_time)
+	if result and redirect_name == "suppressed_reaction" and self._ext_anim.crouch then
+		self._machine:set_parameter(result, "from_stand", 0) -- so cops don't play a stand-suppress animation when they're crouching
+	end
+
+	return result
 end
-
 
 local mvec3_set = mvector3.set
 local mvec3_set_z = mvector3.set_z

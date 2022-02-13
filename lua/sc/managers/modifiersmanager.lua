@@ -16,6 +16,8 @@ if ai_type == b then
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36",
 		--Federales FBI Heavy Shotgun
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale/ene_swat_heavy_policia_federale_r870"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870",
+		--Federales FBI Shield
+		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi",
 		
 		--Mex Bravo Rifle
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_mex/ene_bravo_rifle_mex",
@@ -77,6 +79,8 @@ elseif ai_type == m then
 		["units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		--Murky FBI Heavy Shotgun
 		["units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		--Murky FBI Shield
+		["units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
 		
 		--Murky Bravo Rifle
 		["units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle_murky/ene_bravo_rifle_murky",
@@ -96,19 +100,23 @@ else
 		--FBI Rifle
 		["units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"] = "units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
 		["units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/pd2_mod_lapd/characters/ene_lapd_light_1/ene_lapd_light_1"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_mod_lapd/characters/ene_swat_1/ene_swat_1"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		--FBI Shotgun
 		["units/payday2/characters/ene_swat_2_sc/ene_swat_2_sc"] = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc",
 		["units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
-		["units/pd2_mod_lapd/characters/ene_lapd_light_2/ene_lapd_light_2"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_mod_lapd/characters/ene_swat_2/ene_swat_2"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		--FBI Heavy Rifle
 		["units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"] = "units/payday2/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"] = "units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
-		["units/pd2_mod_lapd/characters/ene_lapd_heavy_1/ene_lapd_heavy_1"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_mod_lapd/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		--FBI Heavy Shotgun
 		["units/payday2/characters/ene_swat_heavy_r870_sc/ene_swat_heavy_r870_sc"] = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
 		["units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"] = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
-		["units/pd2_mod_lapd/characters/ene_lapd_heavy_2/ene_lapd_heavy_2"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
+		["units/pd2_mod_lapd/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
+		--FBI Shield
+		["units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc"] = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc",
+		["units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"] = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1",
+		["units/pd2_mod_lapd/characters/ene_shield_2/ene_shield_2"] = "units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1",
 		
 		--Bravo Rifle
 		["units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1"] = "units/pd2_mod_bravo/characters/ene_bravo_rifle/ene_bravo_rifle",

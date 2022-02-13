@@ -186,7 +186,26 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"  load="true"/>
 	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870_contour" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870_husk"  load="true"/>		
+	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870_husk"  load="true"/>
+	
+	<!--shield no idea why i made a unique model for him but he's the homie-->
+	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi_contour" />	
+	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" />
+	<object				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" />
+	<model				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" />	
+	<unit				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi_husk" load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" load="true"/>	
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"/>	
+	
+	<!--big shield acc-->
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
+	<object				path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
+	<model				path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" load="true"/>
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/ene_acc_shield_lights_df" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc"/>
+	
 	<!-- fbi tier end -->
 	
 	<!-- specials-->

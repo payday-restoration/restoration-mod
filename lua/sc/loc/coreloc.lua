@@ -1,6 +1,7 @@
 local russian = Idstring("russian"):key() == SystemInfo:language():key()
 local english = Idstring("english"):key() == SystemInfo:language():key()
 local schinese = Idstring("schinese"):key() == SystemInfo:language():key()
+local korean = Idstring("korean"):key() == SystemInfo:language():key()
 
 if english then
     dofile(ModPath .. "lua/sc/loc/loc.lua")

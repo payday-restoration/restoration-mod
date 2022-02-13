@@ -17,7 +17,7 @@ local america_very_hard = {
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/payday2/characters/ene_shield_1_sc/ene_shield_1_sc",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/payday2/characters/ene_shield_2_sc/ene_shield_2_sc",
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc",	
-		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc",
+		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc",
 		["units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4"] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw",
 		
 		--fbi swat

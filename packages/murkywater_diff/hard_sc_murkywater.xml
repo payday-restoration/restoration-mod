@@ -155,6 +155,21 @@
 	<!-- blue swat tier end -->
 	
 	<!--for pro jobs-->
+	<!--Murky Shield Acc Lights-->
+	<unit				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" load="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_shield_murky_shield/ene_acc_shield_murky" force="false"/>
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/shield_df"/>		
+	
+	<!-- shield -->
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi" force="false" load="true"/>
+	<unit				path="units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi_husk" force="false" load="true"/>
+	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	<model				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
+	
 	<!--Murky FBI SWAT M4-->
 	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>

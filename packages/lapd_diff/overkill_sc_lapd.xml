@@ -225,6 +225,13 @@
 	<model				path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
 	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />	
 	<material_config	path="units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_contour" />
+	
+	<!--shield-->
+    <unit				path="units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1" load="true"/>
+    <unit				path="units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1_husk" load="true"/>
+    <object				path="units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"/>
+	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"/>
+	<model				path="units/pd2_mod_lapd/characters/ene_shield_1/ene_shield_1"/>
 
 	<!-- sniper -->
     <unit				path="units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc" load="true"/>

@@ -1573,6 +1573,33 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		},
 		wpn_fps_upg_fl_ass_utg = {
 			a_obj = "a_fl_2"
+		},
+		wpn_fps_upg_o_45rds = {
+			a_obj = "a_o_2",
+			stance_mod = {
+				wpn_fps_ass_m4 = {
+					translation = Vector3(-5.2, -3, -1.5),
+					rotation = Rotation(-0, -0, -10)
+				}
+			}
+		},
+		wpn_fps_upg_o_45rds_v2 = {
+			a_obj = "a_o_2",
+			stance_mod = {
+				wpn_fps_ass_m4 = {
+					translation = Vector3(-5.35, -3, -1.8),
+					rotation = Rotation(-0, -0, -10)
+				}
+			}
+		},
+		wpn_fps_upg_o_45steel = {
+			a_obj = "a_o_2",
+			stance_mod = {
+				wpn_fps_ass_m4 = {
+					translation = Vector3(-5.35, -1, -1.8),
+					rotation = Rotation(-0, -0, -10)
+				}
+			}
 		}		
 	}
 	--Longbore Suppressor

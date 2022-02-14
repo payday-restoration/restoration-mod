@@ -304,14 +304,18 @@ function BlackMarketGui:populate_mods(data)
 				})
 			end
 		end
-		local mod_td = tweak_data.weapon.factory.parts[data[equipped].name]
-		if (data.name == "gadget" or table.contains(mod_td.perks or {}, "gadget")) and (mod_td.sub_type == "laser" or mod_td.sub_type == "flashlight") then
+		
+		local gmod_name = data[equipped].name
+		local gmod_td = tweak_data.weapon.factory.parts[gmod_name]
+		local has_customizable_gadget = (data.name == "gadget" or table.contains(gmod_td.perks or {}, "gadget")) and (gmod_td.sub_type == "laser" or gmod_td.sub_type == "flashlight")
+			
+		if has_customizable_gadget then
 			if not crafted.customize_locked then
 				table.insert(data[equipped], "wm_customize_gadget")
 			end
 			local secondary_sub_type = false
-			if mod_td.adds then
-				for _, part_id in ipairs(mod_td.adds) do
+			if gmod_td.adds then
+				for _, part_id in ipairs(gmod_td.adds) do
 					local sub_type = tweak_data.weapon.factory.parts[part_id].sub_type
 					if sub_type == "laser" or sub_type == "flashlight" then
 						secondary_sub_type = sub_type
@@ -319,14 +323,20 @@ function BlackMarketGui:populate_mods(data)
 					end
 				end
 			end
-			local colors = managers.blackmarket:get_part_custom_colors(data[equipped].category, data[equipped].slot, data[equipped].name)
+			
+			local colors = managers.blackmarket:get_part_custom_colors(data[equipped].category, data[equipped].slot, gmod_name)
+			
 			if colors then
 				data[equipped].mini_colors = {}
-				table.insert(data[equipped].mini_colors, {
-					alpha = 0.8,
-					blend = "add",
-					color = colors[mod_td.sub_type] or Color(1, 0, 1)
-				})
+
+				if gmod_td.sub_type then
+					table.insert(data[equipped].mini_colors, {
+						alpha = 0.8,
+						blend = "add",
+						color = colors[gmod_td.sub_type] or Color(1, 0, 1)
+					})
+				end
+
 				if secondary_sub_type then
 					table.insert(data[equipped].mini_colors, {
 						alpha = 0.8,
@@ -334,7 +344,8 @@ function BlackMarketGui:populate_mods(data)
 						color = colors[secondary_sub_type] or Color(1, 0, 1)
 					})
 				end
-			end
+			end	
+				
 		end
 		if not data[equipped].conflict and false then
 			if data[equipped].default_mod then

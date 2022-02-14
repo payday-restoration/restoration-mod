@@ -23,6 +23,7 @@ function restoration:Init()
 		"four_stores", --Gee, I wonder what this could be.
 		"moon", --Stealing Xmas
 		"mus",	--the diamond
+		"red2", --first world bank
 		"gallery", --art gallery
 		--Custom Heists--
 		"office_strike", --office strike
@@ -34,6 +35,7 @@ function restoration:Init()
 		"crojob2", --bomb dockyard
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
+		"mad", --boiling point 
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime

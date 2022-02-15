@@ -125,7 +125,7 @@ elseif ai_type == z then
 
 		["units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
 		["units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
-		["units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr",
+		["units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3"] = "units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr"
 	}	
 else
 	replacement_table = {

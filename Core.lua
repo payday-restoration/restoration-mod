@@ -35,7 +35,6 @@ function restoration:Init()
 		"crojob2", --bomb dockyard
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
-		"mad", --boiling point 
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime

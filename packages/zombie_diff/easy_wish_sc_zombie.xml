@@ -34,8 +34,6 @@
 	<unit				path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870_husk"  load="true"/>
 	<model				path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"  />
 	<object				path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"  />
-	<material_config	path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870"  />
-	<material_config	path="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870_contour"  />
 	
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
 

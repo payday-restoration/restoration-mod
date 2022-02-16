@@ -150,6 +150,7 @@
 		<hook file="sc/units/player/huskplayerdamage.lua" source_file="lib/units/beings/player/huskplayerdamage"/>
 		<hook file="sc/units/player/playerbipod.lua" source_file="lib/units/beings/player/states/playerbipod"/>
 		<hook file="sc/units/player/playerinventory.lua" source_file="lib/units/beings/player/playerinventory"/>
+	    	<hook file="sc/units/player/playersound.lua" source_file="lib/units/beings/player/playersound"/>
 		<hook file="sc/units/player/playerstandard.lua" source_file="lib/units/beings/player/states/playerstandard"/>
 		<hook file="sc/units/player/playerdriving.lua" source_file="lib/units/beings/player/states/playerdriving"/>
 		<hook file="sc/units/player/playerclean.lua" source_file="lib/units/beings/player/states/playerclean"/>

@@ -558,6 +558,19 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	return result
 end
 
+-- Fix inverted suppression - in vanilla, the closer your shots are to an enemy, the less they suppress them
+local check_autoaim_original = RaycastWeaponBase.check_autoaim
+function RaycastWeaponBase:check_autoaim(...)
+	local closest_ray, suppression_enemies = check_autoaim_original(self, ...)
+	if suppression_enemies then
+		for k, dis_error in pairs(suppression_enemies) do
+			suppression_enemies[k] = 1 - dis_error
+		end
+	end
+
+	return closest_ray, suppression_enemies
+end
+
 --Original mod by 90e, uploaded by DarKobalt.
 --Reverb fixed by Doctor Mister Cool, aka Didn'tMeltCables, aka DinoMegaCool
 --New version uploaded and maintained by Offyerrocker.

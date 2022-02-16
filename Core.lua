@@ -23,6 +23,7 @@ function restoration:Init()
 		"four_stores", --Gee, I wonder what this could be.
 		"moon", --Stealing Xmas
 		"mus",	--the diamond
+		"red2", --first world bank
 		"gallery", --art gallery
 		--Custom Heists--
 		"office_strike", --office strike

@@ -270,6 +270,9 @@
 	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker_contour"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker_husk" load="true"/>
+	
+	<texture			path="units/pd2_mod_halloween/characters/zeal_cloaker_body_df/zeal_cloaker_body_df" />	
+	<texture			path="units/pd2_mod_halloween/characters/zeal_cloaker_head_df/zeal_cloaker_head_df" />
 
 	<!--gibs for the zcloaker cause zeal assets are godawful-->
 	<object				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/debris/ene_spook_head_debris"/>

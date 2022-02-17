@@ -1253,6 +1253,34 @@ function GroupAIStateBase:set_whisper_mode(state)
 	end
 end
 
+function GroupAIStateBase:chk_say_teamAI_combat_chatter(unit)
+	if not self:is_detection_persistent() then
+		return
+	end
+
+	local drama_amount = self._drama_data.amount
+	local frequency_lerp = drama_amount
+	local delay_tweak = tweak_data.sound.criminal_sound.combat_callout_delay
+	local delay = math.lerp(delay_tweak[1], delay_tweak[2], frequency_lerp)
+	local delay_t = self._teamAI_last_combat_chatter_t + delay
+
+	if self._t < delay_t then
+		return
+	end
+
+	self._teamAI_last_combat_chatter_t = self._t
+
+	local frequency_lerp_clamp = math.clamp(frequency_lerp ^ 2, 0, 1)
+	local chance_tweak = tweak_data.sound.criminal_sound.combat_callout_chance
+	local chance = math.lerp(chance_tweak[1], chance_tweak[2], frequency_lerp_clamp)
+
+	if chance < math.random() then
+		return
+	end
+
+	unit:sound():say("g90", true, true)
+end
+
 function GroupAIStateBase:register_AI_attention_object(unit, handler, nav_tracker, team, SO_access)
 	local store_instead = nil
 

@@ -103,6 +103,12 @@
 	<cooked_physics		path="units/pd2_dlc_pex/characters/ene_acc_office_cap/ene_acc_office_cap"/>
 
 	<!--HRT-->	
+	<!--glock-->	
+	<object				path="units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1" />
+	<model				path="units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1" load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_1/ene_fbi_1_husk" load="true"/>
 	<!--m4-->	
 	<object				path="units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2" />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_2/ene_fbi_2" />

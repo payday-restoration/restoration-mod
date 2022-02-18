@@ -1956,6 +1956,13 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank")
 	
 	self.tank_medic = deep_clone(self.tank)
+	if is_reaper then
+		self.tank_medic.spawn_sound_event = "rbdz_entrance_elite"
+	elseif is_federales then
+		self.tank_medic.spawn_sound_event = "mbdz_entrance_elite"
+	else	
+		self.tank_medic.spawn_sound_event = "bdz_entrance_elite"
+	end
 	self.tank_medic.headshot_dmg_mul = 18.75
 	self.tank_medic.HEALTH_INIT = 400
 	self.tank_medic.is_special = true
@@ -2591,7 +2598,13 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank_hw")	
 	
 	self.tank_mini = deep_clone(self.tank)
-	self.tank_mini.spawn_sound_event = "bdz_entrance_elite"
+	if is_reaper then
+		self.tank_mini.spawn_sound_event = "rbdz_entrance_elite"
+	elseif is_federales then
+		self.tank_mini.spawn_sound_event = "mbdz_entrance_elite"
+	else	
+		self.tank_mini.spawn_sound_event = "bdz_entrance_elite"
+	end
 	self.tank_mini.weapon = deep_clone(presets.weapon.normal)
 	table.insert(self._enemy_list, "tank_mini")	
 end

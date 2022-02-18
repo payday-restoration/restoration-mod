@@ -680,18 +680,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_m_holiday"] = "The Headless Bulldozer",
 
 		["menu_color_plus"] = "E3 PAYDAY+",
-		["menu_color_rvd1"] = "Inverted",
+		["menu_color_rvd1"] = "반전",
 		["menu_color_e3nice"] = "E3 Nice",
 		["menu_color_force"] = "E3 BHD",
-		["menu_color_halloween"] = "Change",
-		["menu_color_halloween2"] = "Pumpkin Spice",
+		["menu_color_halloween"] = "변이",
+		["menu_color_halloween2"] = "호박 향신료",
 
 		["color_plus"] = "E3 PAYDAY+",
-		["color_rvd1"] = "Inverted",
+		["color_rvd1"] = "반전",
 		["color_e3nice"] = "E3 Nice",
 		["color_force"] = "E3 BHD",
-		["color_halloween"] = "Change",
-		["color_halloween2"] = "Pumpkin Spice",
+		["color_halloween"] = "변이",
+		["color_halloween2"] = "호박 향신료",
 
 		["gm_gms_purchase"] = "컨티넨탈 코인으로 구매",
 		["gm_gms_purchase_window_title"] = "확실하십니까?",
@@ -2210,7 +2210,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Pumping Iron--
 		["menu_steroids_beta_sc"] = "펌핑 아이언",
-		["menu_steroids_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기를 휘두르고 충전하는 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n근접 무기를 휘두르고 중전하는 속도가 추가로 ##30%##만큼 빨라집니다.",
+		["menu_steroids_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기를 휘두르고 충전하는 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n근접 무기를 휘두르고 충전하는 속도가 추가로 ##30%##만큼 빨라집니다.",
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "광분",

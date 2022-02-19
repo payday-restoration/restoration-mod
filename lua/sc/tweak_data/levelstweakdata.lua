@@ -76,7 +76,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.mex.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex"}
 	self.mex.ai_group_type = murkywater 
-	self.mex.player_style = "suit_sunny"	
+	self.mex.player_style = "suit_sunny"
+
+	self.welcome_to_the_jungle_2.ai_group_type = murkywater
+	self.welcome_to_the_jungle_2.player_style = "sneak_suit"	
 
 	self.crojob2.ai_group_type = murkywater			
 	self.crojob2.player_style = "slaughterhouse"	
@@ -204,6 +207,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.chca.ai_group_type = lapd
 	self.chca.player_style = "tux"
 	
+	self.pent.ai_group_type = lapd
+	self.pent.player_style = "tux"
+	
 	--///NEW OUTFITS\\\--
 	
 	self.fish.player_style = "tux"
@@ -257,8 +263,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
 	
-	self.welcome_to_the_jungle_2.ai_group_type = murkywater
-	self.welcome_to_the_jungle_2.player_style = "sneak_suit"
 	
 	self.chew.player_style = "loud_suit"
 	

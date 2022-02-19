@@ -25718,6 +25718,12 @@ function CharacterTweakData:character_map()
 				"civ_female_bathhouse_2"
 			}
 		},
+		pent = {
+			path = "units/pd2_dlc_pent/characters/",
+			list = {
+				"placeholder_unit"
+			}
+		},
 		sharks = {
 			path = "units/pd2_mod_sharks/characters/",
 			list = {

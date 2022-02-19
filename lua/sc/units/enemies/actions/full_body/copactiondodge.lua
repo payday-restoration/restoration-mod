@@ -49,7 +49,7 @@ function CopActionDodge:init(action_desc, common_data)
 			local i_side = CopActionDodge._get_side_index(action_desc.side)
 			local dir = Rotation(action_desc.direction, math_up):yaw()
 			local shoot_accuracy = action_desc.shoot_accuracy or 1
-			local sync_accuracy = math_clamp(math_floor(shoot_accuracy * 10) / 10, 0, 10)
+			local sync_accuracy = math_clamp(math_floor(shoot_accuracy * 10), 0, 10)
 
 			common_data.ext_network:send("action_dodge_start", action_desc.body_part, i_variation, i_side, dir, speed, sync_accuracy)
 		end

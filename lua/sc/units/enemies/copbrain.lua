@@ -273,6 +273,20 @@ Hooks:PostHook(CopBrain, "convert_to_criminal", "SCCopBrainDoConvert", function(
 	
 end)
 
+-- Update immediately once we have our pathing results instead of waiting for the next update
+-- Not posthooking _add_pathing_result instead of these two just in case the path gets modified before navlink delays are applied in clbk_pathing_results
+Hooks:PostHook(CopBrain, "clbk_pathing_results", "res_clbk_pathing_results", function(self, search_id, path)
+	if path and self._current_logic.on_pathing_results then
+		self._current_logic.on_pathing_results(self._logic_data)
+	end
+end)
+
+Hooks:PostHook(CopBrain, "clbk_coarse_pathing_results", "res_clbk_coarse_pathing_results", function(self, search_id, path)
+	if path and self._current_logic.on_pathing_results then
+		self._current_logic.on_pathing_results(self._logic_data)
+	end
+end)
+
 function CopBrain:on_nav_link_unregistered(element_id)
 	if self._logic_data.pathing_results then
 		local failed_search_ids = nil

@@ -237,9 +237,13 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.chca.package = {"packages/job_chca", "packages/lapdassets"}
 	self.chca.player_style = "tux"
 	
+	--[[
+	Nil value dummies!
+	
 	self.pent.ai_group_type = lapd
 	self.pent.package = {"packages/job_pent", "packages/lapdassets"}
 	self.pent.player_style = "tux"
+	]]--
 
 	--///NEW OUTFITS\\\--
 	

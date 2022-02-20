@@ -2401,6 +2401,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				value = 10,
 				total_ammo_mod = -50,
 				recoil = -5,
+				concealment = -5,
 				spread_multi = {1, 1},	
 				damage = 30
 			},
@@ -11961,10 +11962,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_upg_ns_duck.supported = true
 	self.parts.wpn_fps_upg_ns_duck.stats = {
 		value = 5,
-		spread_multi = {2.25, 0.5},
-		suppression = -2,
-		recoil = 1,
-		spread = -1
+		spread_multi = {2.25, 0.5}
 	}
 	self.parts.wpn_fps_upg_ns_duck.custom_stats = {
 		damage_near_mul = 1,
@@ -15339,6 +15337,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 				value = 10,
 				total_ammo_mod = -50,
 				recoil = -5,
+				concealment = -5,
 				spread_multi = {1, 1},	
 				damage = 30
 			},
@@ -22546,6 +22545,353 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 	
 	self.wpn_fps_pis_rsh12_npc.uses_parts = deep_clone(self.wpn_fps_pis_rsh12.uses_parts)		
 
+end)
+
+--Argos III (Ultima)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function(self)
+
+	--Try-Core Compensator
+	self.parts.wpn_fps_sho_ultima_ns_comp.pcs = {
+		10,
+		20,
+		30,
+		40	
+	}
+	self.parts.wpn_fps_sho_ultima_ns_comp.desc_id = "bm_wp_ns_ultima_desc_sc"
+	self.parts.wpn_fps_sho_ultima_ns_comp.has_description = true
+	self.parts.wpn_fps_sho_ultima_ns_comp.supported = true
+	self.parts.wpn_fps_sho_ultima_ns_comp.stats = {
+		value = 5,
+		spread_multi = {1.75, 1.75}
+	}
+	self.parts.wpn_fps_sho_ultima_ns_comp.custom_stats = {
+		damage_near_mul = 1,
+		damage_far_mul = 1
+	}
+	
+	--Flak Frame Null Stock
+	self.parts.wpn_fps_sho_ultima_s_light.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_ultima_s_light.supported = true
+	self.parts.wpn_fps_sho_ultima_s_light.stats = {
+		value = 2,
+		concealment = -2,
+		recoil = 1
+	}
+	
+	--Shellswitch M8 (Quick Pull)
+	self.parts.wpn_fps_sho_ultima_body_rack.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_ultima_body_rack.supported = true
+	self.parts.wpn_fps_sho_ultima_body_rack.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 3
+	}
+	self.parts.wpn_fps_sho_ultima_body_rack.custom_stats = {
+		damage_near_mul = 1,
+		damage_far_mul = 1
+	}	
+	
+	--Triple Tech Threat (Ultima Exclusive Kit)
+	self.parts.wpn_fps_sho_ultima_body_kit.supported = true
+	self.parts.wpn_fps_sho_ultima_body_kit.has_description = true
+	self.parts.wpn_fps_sho_ultima_body_kit.desc_id = "bm_wp_upg_ultima_body_kit_desc_sc"
+	self.parts.wpn_fps_sho_ultima_body_kit.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_ultima_body_kit.stats = {
+		value = 0
+	}
+	self.parts.wpn_fps_sho_ultima_body_kit.forbids = {
+		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
+		"wpn_fps_upg_fl_ass_smg_sho_surefire",
+		"wpn_fps_upg_fl_ass_peq15",
+		"wpn_fps_upg_fl_ass_laser",
+		"wpn_fps_upg_fl_ass_utg"
+	}
+	self.parts.wpn_fps_sho_ultima_body_kit.override = {
+		wpn_fps_sho_ultima_body_rack = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},		
+		wpn_fps_sho_ultima_fg_standard = {
+			third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_shot_ultima_pts/wpn_third_sho_ultima_fg_kit",
+			unit = "units/pd2_dlc_lawp/weapons/wpn_fps_shot_ultima_pts/wpn_fps_sho_ultima_fg_kit"
+		},
+		wpn_fps_sho_ultima_body_standard = {
+			third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_shot_ultima_pts/wpn_third_sho_ultima_body_kit",
+			unit = "units/pd2_dlc_lawp/weapons/wpn_fps_shot_ultima_pts/wpn_fps_sho_ultima_body_kit"
+		},
+		wpn_fps_sho_ultima_b_standard = {
+			third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_shot_ultima_pts/wpn_third_sho_ultima_b_kit",
+			unit = "units/pd2_dlc_lawp/weapons/wpn_fps_shot_ultima_pts/wpn_fps_sho_ultima_b_kit"
+		}
+	}
+	
+	--Override Table
+	self.wpn_fps_sho_ultima.override = {
+		wpn_fps_upg_a_slug = {
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
+			supported = true,
+			stats = {
+				value = 10,
+				concealment = -5,
+				total_ammo_mod = -33,
+				damage = 15,
+				recoil = -2,
+				spread = 8,
+				suppression = -1,
+				spread_multi = {1, 1},	
+				moving_spread = 0
+			},
+			custom_stats = {
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",					
+				rays = 1,
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true
+			}
+		},
+		wpn_fps_upg_a_custom = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -33,
+				damage = 15
+			},
+			custom_stats = {
+				damage_near_mul = 0.65,
+				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				rays = 5
+			}
+		},
+		wpn_fps_upg_a_custom_free = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -33,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				damage = 15
+			},
+			custom_stats = {
+				damage_near_mul = 0.65,
+				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				rays = 5
+			}
+		},
+		wpn_fps_upg_a_explosive = {
+			supported = true,
+			stats = {
+				value = 10,
+				total_ammo_mod = -50,
+				recoil = -5,
+				concealment = -5,
+				spread_multi = {1, 1},	
+				damage = 30
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 1,
+				bullet_class = "InstantExplosiveBulletBase"
+			}
+		},
+		wpn_fps_upg_a_piercing = a_piercing_auto_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override		
+	}		
+
+end)
+
+--Wasp-DS (FMG-9)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(self)
+
+	--Rake Grip
+	self.parts.wpn_fps_smg_fmg9_grip_tape.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_smg_fmg9_grip_tape.supported = true
+	self.parts.wpn_fps_smg_fmg9_grip_tape.stats = {
+		value = 2,
+		concealment = -3,
+		spread = 1
+	}
+	
+	--Bounce Slate RX Stock
+	self.parts.wpn_fps_smg_fmg9_stock_padded.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_smg_fmg9_stock_padded.supported = true
+	self.parts.wpn_fps_smg_fmg9_stock_padded.stats = {
+		value = 2,
+		concealment = -2,
+		recoil = 1
+	}	
+	
+	--Celerity X9 Mag
+	self.parts.wpn_fps_smg_fmg9_m_speed.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_smg_fmg9_m_speed.supported = true
+	self.parts.wpn_fps_smg_fmg9_m_speed.stats = {
+		value = 2,
+		spread = -1,
+		concealment = -1,
+		reload = 3
+	}
+	
+	--Whisper 9 Silencer (Exclusive kit)
+	self.parts.wpn_fps_smg_fmg9_conversion.pcs = {}
+	self.parts.wpn_fps_smg_fmg9_conversion.has_description = true
+	self.parts.wpn_fps_smg_fmg9_conversion.desc_id = "bm_wp_upg_fmg9_conversion_desc_sc"
+	self.parts.wpn_fps_smg_fmg9_conversion.unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_fps_smg_fmg9_conversion"
+	self.parts.wpn_fps_smg_fmg9_conversion.third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_third_smg_fmg9_conversion"
+	self.parts.wpn_fps_smg_fmg9_conversion.adds = {
+		"wpn_fps_smg_fmg9_conversion_display_dummy",
+		"wpn_fps_smg_fmg9_conversion_laser_dummy",
+		"wpn_fps_smg_fmg9_b_dummy"
+	}
+	self.parts.wpn_fps_smg_fmg9_conversion.sound_switch = nil
+	self.parts.wpn_fps_smg_fmg9_conversion.forbids = {
+		"wpn_fps_smg_fmg9_o_sight"
+	}
+	self.parts.wpn_fps_smg_fmg9_conversion.supported = true
+	self.parts.wpn_fps_smg_fmg9_conversion.stats = {
+		value = 0
+	}	
+	self.parts.wpn_fps_smg_fmg9_conversion.perks = nil
+	self.parts.wpn_fps_smg_fmg9_conversion.override = {		
+		--Hiding Barrel Extensions
+		wpn_fps_upg_ns_ass_smg_small = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},		
+		wpn_fps_upg_ns_ass_smg_medium = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},
+		wpn_fps_upg_ns_ass_smg_large = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},	
+		wpn_fps_upg_ns_ass_smg_stubby = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},		
+		wpn_fps_upg_ns_ass_smg_tank = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},	
+		wpn_fps_upg_ns_ass_smg_firepig = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},		
+		wpn_fps_upg_ass_ns_surefire = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},		
+		wpn_fps_upg_ass_ns_jprifles = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},	
+		wpn_fps_upg_ass_ns_linear = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},	
+		wpn_fps_upg_ass_ns_battle = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},	
+		wpn_fps_upg_ns_pis_putnik = {
+			third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+			unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+		},		
+		--Hiding Gadgets
+		wpn_fps_upg_fl_pis_perst = {
+			third_unit = "units/payday2/weapons/wpn_third_upg_fl_pis_laser/wpn_third_upg_fl_pis_laser",
+			unit = "units/payday2/weapons/wpn_fps_upg_fl_pis_laser/wpn_fps_upg_fl_pis_laser"
+		},	
+		wpn_fps_upg_fl_pis_laser = {
+			third_unit = "units/payday2/weapons/wpn_third_upg_fl_pis_laser/wpn_third_upg_fl_pis_laser",
+			unit = "units/payday2/weapons/wpn_fps_upg_fl_pis_laser/wpn_fps_upg_fl_pis_laser"
+		},
+		wpn_fps_upg_fl_pis_tlr1 = {
+			third_unit = "units/payday2/weapons/wpn_third_upg_fl_pis_laser/wpn_third_upg_fl_pis_laser",
+			unit = "units/payday2/weapons/wpn_fps_upg_fl_pis_laser/wpn_fps_upg_fl_pis_laser"
+		},		
+		--Body Replacements
+		wpn_fps_smg_fmg9_body = {
+			third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_third_smg_fmg9_body",
+			unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_fps_smg_fmg9_body_conversion"
+		},
+		wpn_fps_smg_fmg9_dh = {
+			third_unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_third_smg_fmg9_dh",
+			unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_fps_smg_fmg9_dh_conversion"
+		}		
+	}	
+		
+	--Medved R4 Suppressor
+	self.parts.wpn_fps_upg_ns_pis_putnik.desc_id = "bm_sc_blank"
+	self.parts.wpn_fps_upg_ns_pis_putnik.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_ns_pis_putnik.supported = true
+	self.parts.wpn_fps_upg_ns_pis_putnik.has_description = false
+	self.parts.wpn_fps_upg_ns_pis_putnik.perks = {
+		"silencer"
+	}
+	self.parts.wpn_fps_upg_ns_pis_putnik.stats = {
+		value = 5,
+		spread = 1,
+		concealment = -3
+	}	
+	
+	--Medved R4 Laser Sight
+	self.parts.wpn_fps_upg_fl_pis_perst.pcs = {
+		10,	
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_upg_fl_pis_perst.supported = true
+	self.parts.wpn_fps_upg_fl_pis_perst.stats = {
+		value = 4
+	}
+	self.parts.wpn_fps_upg_ns_pis_putnik.perks = {
+		"gadget"
+	}	
+	
 end)
 
 --Resmod Custom Content					

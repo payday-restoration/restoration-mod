@@ -376,6 +376,10 @@ end
 		end
 	end
 
+Hooks:PreHook(CopLogicTravel, "_begin_coarse_pathing", "res_begin_coarse_pathing", function(data, my_data)
+	my_data.processing_coarse_path = true -- otherwise the pathing results callback will cause a stack overflow if the coarse path is returned immediately
+end)
+
 --chatter below
 local killdapowa = {
 	['e_so_pull_lever'] = true,

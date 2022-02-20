@@ -110,7 +110,6 @@
 			<value_node value="levels/narratives/e_election_day/stage_1/world/world"/>
 			<value_node value="levels/narratives/vlad/cane/world/world"/>
 			<value_node value="levels/narratives/vlad/cane/world"/>
-			<value_node value="packages/murkyassets"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
@@ -206,7 +205,6 @@
 		<intro_event/>
 		<outro_event/>
 		<packages>
-			<value_node value="packages/mexicoassets"/>
 			<value_node value="levels/narratives/vlad/bex/world_sounds"/>
 			<value_node value="levels/narratives/elephant/chew/collision/collision"/>
 			<value_node value="levels/instances/unique/pbr/pbr_ladder_placed/world/world"/>
@@ -359,7 +357,6 @@
 			<value_node value="levels/narratives/elephant/mad/art1/art1"/>
 			<value_node value="levels/instances/unique/friend/painting_stack_burn/world/world"/>
 			<value_node value="levels/instances/unique/are_elevator/world/world"/>
-			<value_node value="packages/murkyassets"/>
 		</packages>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">

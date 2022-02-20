@@ -990,7 +990,7 @@ function CopMovement:sync_action_dodge_start(body_part, var, side, rot, speed, s
 		direction = Rotation(rot):y(),
 		side = CopActionDodge.get_side_name(side),
 		speed = speed,
-		shoot_accuracy = shoot_acc,
+		shoot_accuracy = shoot_acc / 10,
 		blocks = {
 			act = -1,
 			tase = -1,

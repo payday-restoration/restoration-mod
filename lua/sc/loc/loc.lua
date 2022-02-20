@@ -947,6 +947,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to spread horizontally instead of clustering.",
+		["bm_wp_ns_ultima_desc_sc"] = "Increases overall spread of pellets by 75%.",
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
 		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fires a single accurate lead slug that penetrates body armor, enemies, shields, titan shields, and walls.", --For shotguns that can hit Heavy Sniper damage tier--
@@ -1056,6 +1057,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_legendary_r870"] = "Big Kahuna",
 		["bm_wskn_ak74_rodina_desc_sc"] = "A special-issue AK that - in war and crime - has demonstrated an unquenchable thirst for blood.",
 		["bm_wskn_deagle_bling_desc_sc"] = "A hand-crafted Deagle built as testament to the finest gaming-trained crackshot in the world.",
+
+		--Exclusive Sets--
+		["bm_wp_upg_ultima_body_kit_desc_sc"] = "This Exclusive Set adds a unique 'Triple Threat' laser sight that is mutually exclusive with other gadgets.",
+		["bm_wp_upg_fmg9_conversion_desc_sc"] = "This Exclusive Set adds a High-Tech Ammo Counter as well as a laser sight that is mutually exclusive with other gadgets.",
 
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
@@ -1315,6 +1320,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov Rifle",
 		["bm_w_x_akmsu"] = "Akimbo Krinkov Rifles",
 		["bm_w_hajk"] = "CR 805B Rifle",
+		
+		["bm_w_fmg9"] = "Wasp-DS Machine-Pistol",
 
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
 

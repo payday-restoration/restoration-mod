@@ -532,6 +532,29 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.launcher_incendiary_m32.time_cheat = 0.7
 end
 
+--Overrides this function to allow abominations on Gold AKs
+function BlackMarketTweakData:create_new_color_skin(name, data, color_skin_data)
+	data.name_id = "bm_wskn_" .. name
+	data.rarity = "common"
+	data.weapon_ids = {}
+
+	table.insert(data.weapon_ids, "money")
+
+	data.use_blacklist = true
+	data.is_a_unlockable = true
+	data.is_a_color_skin = true
+	data.group_id = data.global_value_category or data.global_value or data.dlc or "normal"
+	data.color_skin_data = color_skin_data
+
+	if not table.contains(self.weapon_color_groups, data.group_id) then
+		table.insert(self.weapon_color_groups, data.group_id)
+	end
+
+	self.weapon_skins[name] = data
+
+	table.insert(self.weapon_colors, name)
+end
+
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins
 function BlackMarketTweakData:_init_weapon_skins(tweak_data)
 	old_weapon_skins(self, tweak_data)
@@ -3348,6 +3371,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.spoon_gold.stats.concealment = 23	
 	
 	-- Workaround for custom melee bug
+	--[[
 	self.melee_weapons.halloween_sword = deep_clone(self.melee_weapons.great)
 	self.melee_weapons.halloween_sword.name_id = "bm_melee_halloween_sword"
 	self.melee_weapons.halloween_sword.info_id = "bm_melee_headless_sword_info"
@@ -3369,5 +3393,6 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	self.melee_weapons.halloween_sword.stats.charge_time = 5
 	self.melee_weapons.halloween_sword.free = true
 	self.melee_weapons.halloween_sword.stats.custom = true
+	]]--
 
 end

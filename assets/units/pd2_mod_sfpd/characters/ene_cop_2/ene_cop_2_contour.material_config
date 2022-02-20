@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<materials group="ene_male_chas_police_02" version="3">
+	<material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_mod_sfpd/characters/shared_textures/police_df"/>
+		<bump_normal_texture file="units/pd2_mod_sfpd/characters/shared_textures/police_nm"/>
+		<variable name="contour_color" type="vector3" value="1 1 1"/>
+		<variable name="contour_opacity" type="scalar" value="0"/>
+	</material>
+	<material name="mtr_head" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_white_heads/ntr_male_white_head_3_df"/>
+		<bump_normal_texture file="units/pd2_dlc_chas/characters/shared_textures/ntr_male_white_heads/ntr_male_white_head_3_nm"/>
+		<variable name="contour_color" type="vector3" value="1 1 1"/>
+		<variable name="contour_opacity" type="scalar" value="0"/>
+	</material>
+	<material name="mtr_hair" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:GLOBAL_ENVIRONMENT_MAPPING:GLOSS_BLURS_CUBEMAP:GSMA_TEXTURE:NORMALMAP:OPACITY_TEXTURE:RL_CIVILIANS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_fex/characters/ntr_hair/ntr_hair_black_df"/>
+		<bump_normal_texture file="units/pd2_dlc_fex/characters/ntr_hair/ntr_generic_hair_nm"/>
+		<opacity_texture file="units/pd2_dlc_fex/characters/ntr_hair/ntr_generic_hair_op"/>
+		<variable name="alpha_ref" type="scalar" value="0.12"/>
+		<variable name="contour_color" type="vector3" value="1 1 1"/>
+		<variable name="contour_opacity" type="scalar" value="0"/>
+	</material>
+	<material name="mtr_arms" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+		<diffuse_texture file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_1_df"/>
+		<bump_normal_texture file="units/pd2_dlc_pex/characters/ntr_male_generic_arms/ntr_male_generic_arms_hispanic_nm"/>
+		<variable name="contour_color" type="vector3" value="1 1 1"/>
+		<variable name="contour_opacity" type="scalar" value="0"/>
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT"/>
+</materials>

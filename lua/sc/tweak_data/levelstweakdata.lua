@@ -212,6 +212,25 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pent.player_style = "tux"
 	]]--
 	
+	--///SFPD LEVELS\\\--	
+	
+	--[[
+	self.election_day_1.ai_group_type = sfpd
+	
+	self.chas.ai_group_type = sfpd
+	self.chas.player_style = "suit_sunny"
+	
+	self.sand.ai_group_type = sfpd
+	self.sand.player_style = "highinttech"
+
+	self.chca.ai_group_type = sfpd
+	self.chca.player_style = "tux"
+	
+	self.pent.ai_group_type = sfpd
+	self.pent.player_style = "tux"
+	
+	]]--
+	
 	--///NEW OUTFITS\\\--
 	
 	self.fish.player_style = "tux"

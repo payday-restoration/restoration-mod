@@ -52,6 +52,7 @@ function GameSetup:load_packages()
     local f = tweak_data.levels.ai_groups.federales
     local la = tweak_data.levels.ai_groups.lapd
     local ny = tweak_data.levels.ai_groups.nypd
+	local sf = tweak_data.levels.ai_groups.sfpd
     local ai_type = tweak_data.levels:get_ai_group_type()
 
 	local difficulty = Global.game_settings and Global.game_settings.difficulty or "normal"
@@ -90,6 +91,13 @@ function GameSetup:load_packages()
 
         load_difficulty_package(diff_package)
 		PackageManager:load("packages/sm_wish")
+	--[[	
+	  elseif ai_type == sf then
+		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_sfpd" or "normal")
+
+        load_difficulty_package(diff_package)
+		PackageManager:load("packages/sm_wish")	
+	--]]	
     elseif ai_type == ny then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_nypd" or "normal")
 

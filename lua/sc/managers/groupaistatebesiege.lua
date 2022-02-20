@@ -658,6 +658,9 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 		elseif current_objective.moving_out and tactics_map.ranged_fire then
 			-- If we run into enemies while moving out, open fire (if we aren't already doing that)
 			open_fire = not current_objective.open_fire
+		elseif current_objective.moving_out and tactics_map.elite_ranged_fire then
+			-- Clone of Ranged Fire for now, might add more later
+			open_fire = not current_objective.open_fire			
 		elseif not current_objective.pushed or charge and not current_objective.charge then
 			-- If we run into enemies and haven't pushed yet, push
 			push = true
@@ -700,16 +703,16 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 		elseif not has_criminals_close or not group.in_place_t then
 			-- If no criminals are close or if we just spawned, approach if we can't see any enemy, are not using ranged fire or have been in place for a while
 			-- Open fire otherwise (if we aren't already doing that)
-			approach = not has_visible_target or not tactics_map.ranged_fire or in_place_duration > 10
+			approach = not has_visible_target or not tactics_map.ranged_fire or not tactics_map.elite_ranged_fire or in_place_duration > 10
 			open_fire = not approach and not current_objective.open_fire
 		else
 			-- If none of the above applies, push if we can't see any enemy or if we're chasing, open fire otherwise (if we aren't already doing that)
-			push = not has_visible_target or group.is_chasing or not tactics_map.ranged_fire
+			push = not has_visible_target or group.is_chasing or not tactics_map.ranged_fire or not tactics_map.elite_ranged_fire
 			open_fire = not push and not current_objective.open_fire
 		end
 	else
 		-- If we see an enemy while moving out and have the ranged_fire tactics, open fire and stay in position for a bit
-		if tactics_map.ranged_fire and not current_objective.open_fire then
+		if tactics_map.ranged_fire or tactics_map.elite_ranged_fire and not current_objective.open_fire then
 			for _, u_data in pairs(group.units) do
 				local logic_data = u_data.unit:brain()._logic_data
 				local focus_enemy = logic_data and logic_data.attention_obj

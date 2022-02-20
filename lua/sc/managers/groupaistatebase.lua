@@ -1571,8 +1571,12 @@ Hooks:PreHook(GroupAIStateBase, "sync_assault_mode" , "TriggerEnduringHost" , fu
 	end
 end)
 
+--[[
+Unused?
+
 Hooks:PostHook(GroupAIStateBase, "_init_misc_data", "sh__init_misc_data", register_special_types)
 Hooks:PostHook(GroupAIStateBase, "on_simulation_started", "sh_on_simulation_started", register_special_types)
+]]--
 
 -- Fix cloaker spawn noise for host
 local _process_recurring_grp_SO_original = GroupAIStateBase._process_recurring_grp_SO

@@ -11785,7 +11785,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--FBI HRT tactics, for when participating in assaults
 		FBI_suit = {
 			"flank",
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"flash_grenade",
 			"grouphrtr"
 		},		
@@ -11798,7 +11798,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_support",
 			"flash_grenade",
 			--"hitnrun",
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"grouphrtr"
 		},
 		--FBI Rifle SWATs, can now use flash grenades
@@ -11887,7 +11887,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Grenadier, passive. Tries to hide behind shields/other units when possible
 		FBI_Boom = {
 			--"harass",		
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"provide_coverfire",		
 			"flash_grenade",
 			"smoke_grenade",
@@ -11898,7 +11898,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",	
 			--"hitnrun",
 			--"reloadingretreat",
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"shield_cover"
 		},	
 		--Flank Medic tactics, avoid confrontations and flanks. Hugs squad leader
@@ -11908,7 +11908,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",	
 			--"hitnrun",
 			--"reloadingretreat",
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"shield_cover"
 		},	
 		--Reinforce groups
@@ -11966,7 +11966,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
 			--"shield_cover",
@@ -12043,7 +12043,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"smoke_grenade",
 			--"harass",		
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"provide_coverfire",
 			--"hitnrun",
 			"shield_cover"
@@ -12064,7 +12064,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",			
@@ -12109,7 +12109,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			--"reloadingretreat",
 			--"spoocavoidance",
 			"murder",
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			--"harass"
 		},
 			
@@ -12172,7 +12172,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			--"harass",
 			"provide_coverfire",
 			"provide_support",
@@ -12208,7 +12208,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge"
 		},		
 		Cap_summers_minion = {
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			--"hitnrun",
 			"shield_cover"
 		},	
@@ -12237,7 +12237,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},	
 		Cap_winters_minion_sniper = {
 			--"harass",	
-			--"elite_ranged_fire",
+			"elite_ranged_fire",
 			"provide_coverfire",
 			"provide_support",
 		},		

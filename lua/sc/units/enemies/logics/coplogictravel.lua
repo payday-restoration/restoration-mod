@@ -307,7 +307,7 @@ end
 					local high_ray = CopLogicTravel._chk_cover_height(data, my_data.best_cover[1], data.visibility_slotmask)
 					my_data.best_cover[4] = high_ray
 					my_data.in_cover = true
-					local cover_wait_time = my_data.coarse_path_index == #my_data.coarse_path - 1 and 0.3 or 0.6 + 0.4 * math.random()
+					local cover_wait_time = 4
 
 					my_data.cover_leave_t = data.t + cover_wait_time
 				else

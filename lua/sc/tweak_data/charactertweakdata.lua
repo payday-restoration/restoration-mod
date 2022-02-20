@@ -25912,40 +25912,6 @@ function CharacterTweakData:character_map()
 				"ene_lapd_veteran_cop_2"
 			}
 		},
-		sfpd = {
-			path = "units/pd2_mod_sfpd/characters/",
-			list = {
-				"ene_shield_1",
-				"ene_shield_2",
-				"ene_cop_1",
-				"ene_cop_2",
-				"ene_cop_3",
-				"ene_cop_4",				
-				"ene_sniper_1",				
-				"ene_sniper_3",				
-				"ene_fbi_swat_1",
-				"ene_fbi_swat_2",
-				"ene_fbi_3",
-				"ene_fbi_2",
-				"ene_fbi_1",
-				"ene_fbi_swat_3",
-				"ene_city_swat_1",
-				"ene_city_swat_2",
-				"ene_city_swat_3",
-				"ene_bulldozer_3",
-				"ene_fbi_heavy_1",
-				"ene_fbi_heavy_r870",
-				"ene_fbi_heavy_r870_sc",
-				"ene_city_heavy_g36",
-				"ene_city_heavy_r870_sc",
-				"ene_swat_1",
-				"ene_swat_2",
-				"ene_swat_heavy_1",
-				"ene_swat_heavy_r870",
-				"ene_sfpd_veteran_cop_1",
-				"ene_sfpd_veteran_cop_2"
-			}
-		},
 		bravo = {
 			path = "units/pd2_mod_bravo/characters/",
 			list = {

@@ -3059,7 +3059,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','fmg9'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
@@ -3449,7 +3449,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akmsu.timers.reload_not_empty = 1.95 
 	self.akmsu.timers.reload_empty = 3.7
 
-	--Izhma 12G
+	--Izhma 12G	
 	self.saiga.rays = 9
 	self.saiga.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.saiga.CLIP_AMMO_MAX = 6
@@ -4073,7 +4073,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Eagle Heavy
 	self.scar.AMMO_MAX = 80
-	self.scar.CLIP_AMMO_MAX = 20
 	self.scar.fire_mode_data.fire_rate = 0.09523809523
 	self.scar.CAN_TOGGLE_FIREMODE = true
 	self.scar.auto.fire_rate = 0.09523809523
@@ -5429,7 +5428,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.asval.sounds.stop_fire = "akm_stop"
 	self.asval.sounds.dryfire = "primary_dryfire"
 	self.asval.AMMO_MAX = 80
-	self.asval.CLIP_AMMO_MAX = 20
 	self.asval.FIRE_MODE = "auto"
 	self.asval.fire_mode_data = {}
 	self.asval.fire_mode_data.fire_rate = 0.06666666666
@@ -8639,6 +8637,59 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rsh12.armor_piercing_chance = 1
 	self.rsh12.swap_speed_multiplier = 0.6
 	
+	--Argos III (Ultima)
+	self.ultima.rays = 9
+	self.ultima.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+	self.ultima.CLIP_AMMO_MAX = 7
+	self.ultima.AMMO_MAX = 120
+	self.ultima.use_data.selection_index = 2
+	self.ultima.fire_mode_data.fire_rate = 0.1
+	self.ultima.kick = self.stat_info.kick_tables.moderate_kick
+	self.ultima.supported = true
+	self.ultima.stats = {
+		damage = 30,
+		spread = 8,
+		recoil = 19,
+		spread_moving = 7,
+		zoom = 1,
+		concealment = 24,
+		suppression = 7,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.ultima.stats_modifiers = nil
+	self.ultima.panic_suppression_chance = 0.05	
+	self.ultima.reload_speed_multiplier = 1.1
+	
+	--Wasp-DS (FMG-9)
+	self.fmg9.categories = {"pistol"}
+	self.fmg9.fire_mode_data.fire_rate = 0.05454545454
+	self.fmg9.auto.fire_rate = 0.05454545454
+	self.fmg9.CLIP_AMMO_MAX = 33
+	self.fmg9.AMMO_MAX = 200
+	self.fmg9.use_data.selection_index = 2
+	self.fmg9.kick = self.stat_info.kick_tables.left_recoil
+	self.fmg9.supported = true
+	self.fmg9.stats = {
+		damage = 18,
+		spread = 17,
+		recoil = 19,
+		spread_moving = 9,
+		zoom = 1,
+		concealment = 28,
+		suppression = 10,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.fmg9.stats_modifiers = nil
+	self.fmg9.panic_suppression_chance = 0.05	
+		
 	--Restoration Weapons--
 	
 	--Phoenix .500

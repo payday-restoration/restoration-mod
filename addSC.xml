@@ -1228,10 +1228,7 @@
 	<!--Headshot effect-->
 	<effect				path="effects/payday2/particles/impacts/blood/brain_splat" />		
 	<texture			path="effects/textures/brain_impacts_df" />
-	
-	<!-- Halloween Sword icon -->
-	<texture			path="guis/dlcs/mods/textures/pd2/blackmarket/icons/melee_weapons/halloween_sword"/>
-	
+		
 	<!--Xmas menu assets-->
 	<cooked_physics		path="units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc"/>	
 	<model				path="units/pd2_dlc2/props/com_props_christmas_tree_sc/com_prop_christmas_tree_sc"/>

@@ -207,8 +207,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.chca.ai_group_type = lapd
 	self.chca.player_style = "tux"
 	
+	--[[
 	self.pent.ai_group_type = lapd
 	self.pent.player_style = "tux"
+	]]--
 	
 	--///NEW OUTFITS\\\--
 	

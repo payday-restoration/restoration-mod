@@ -100,7 +100,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"plainsrider",
 					"sub2000",
 					"road",
-					"legacy"
+					"legacy",
+					"fmg9"
 				}
 			},
 		l18 = {
@@ -124,7 +125,8 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 					"baka",
 					"x_baka",
 					"pugio",
-					"ballistic"
+					"ballistic",
+					"maxim9"
 				}
 			},
 		l20 = {
@@ -238,9 +240,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			},
 		l50 = {
 				name_id = "lvl_50",
-				upgrades = {
-					"halloween_sword"
-				}
+				upgrades = {}
 			},
 		l51 = {
 				name_id = "weapons",
@@ -286,12 +286,15 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 	end 	
 end)
 
+--Temp Disabled
+--[[
 Hooks:PostHook(UpgradesTweakData, "_melee_weapon_definitions", "ResMeleeDef", function(self)
 	self.definitions.halloween_sword = {
 		dlc = "rest",
 		category = "melee_weapon"
 	}
 end)
+]]--
 
 --Upgrade Value changes for skills and such--
 Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(self)

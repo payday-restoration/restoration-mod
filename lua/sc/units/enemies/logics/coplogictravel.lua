@@ -277,104 +277,110 @@ function CopLogicTravel._chk_start_pathing_to_next_nav_point(data, my_data)
 	data.unit:brain():search_for_path(my_data.advance_path_search_id, to_pos, prio, nil, nav_segs)
 end
 
-	function CopLogicTravel.action_complete_clbk(data, action)
-		local my_data = data.internal_data
-		local action_type = action:type()
+function CopLogicTravel.action_complete_clbk(data, action)
+	local my_data = data.internal_data
+	local action_type = action:type()
+	if action_type == "walk" then
+		local update = false
+		if not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
+			update = true -- don't want to update travel logic for a walk action from a previous logic
 
-		if action_type == "walk" then
-			if action:expired() and not my_data.starting_advance_action and my_data.coarse_path_index and not my_data.has_old_action and my_data.advancing then
+			if action:expired() then
 				my_data.coarse_path_index = my_data.coarse_path_index + 1
-
-				if #my_data.coarse_path < my_data.coarse_path_index then
-					debug_pause_unit(data.unit, "[CopLogicTravel.action_complete_clbk] invalid coarse path index increment", data.unit, inspect(my_data.coarse_path), my_data.coarse_path_index)
-
-					my_data.coarse_path_index = my_data.coarse_path_index - 1
-				end
 			end
+		end
 
-			my_data.advancing = nil
+		my_data.advancing = nil
 
-			if my_data.moving_to_cover then
-				if action:expired() then
-					if my_data.best_cover then
-						managers.navigation:release_cover(my_data.best_cover[1])
-					end
-
-					my_data.best_cover = my_data.moving_to_cover
-
-					CopLogicBase.chk_cancel_delayed_clbk(my_data, my_data.cover_update_task_key)
-
-					local high_ray = CopLogicTravel._chk_cover_height(data, my_data.best_cover[1], data.visibility_slotmask)
-					my_data.best_cover[4] = high_ray
-					my_data.in_cover = true
-					local cover_wait_time = 4
-
-					my_data.cover_leave_t = data.t + cover_wait_time
-				else
-					managers.navigation:release_cover(my_data.moving_to_cover[1])
-
-					if my_data.best_cover then
-						local dis = mvector3.distance(my_data.best_cover[1][1], data.unit:movement():m_pos())
-
-						if dis > 100 then
-							managers.navigation:release_cover(my_data.best_cover[1])
-
-							my_data.best_cover = nil
-						end
-					end
-				end
-
-				my_data.moving_to_cover = nil
-			elseif my_data.best_cover then
-				local dis = mvector3.distance(my_data.best_cover[1][1], data.unit:movement():m_pos())
-
-				if dis > 100 then
+		if my_data.moving_to_cover then
+			if action:expired() then
+				if my_data.best_cover then
 					managers.navigation:release_cover(my_data.best_cover[1])
+				end
 
-					my_data.best_cover = nil
+				my_data.best_cover = my_data.moving_to_cover
+
+				CopLogicBase.chk_cancel_delayed_clbk(my_data, my_data.cover_update_task_key)
+
+				local high_ray = CopLogicTravel._chk_cover_height(data, my_data.best_cover[1], data.visibility_slotmask)
+				my_data.best_cover[4] = high_ray
+				my_data.in_cover = true
+				local cover_wait_time = 4
+
+				my_data.cover_leave_t = data.t + cover_wait_time
+			else
+				managers.navigation:release_cover(my_data.moving_to_cover[1])
+
+				if my_data.best_cover then
+					local dis = mvector3.distance(my_data.best_cover[1][1], data.unit:movement():m_pos())
+
+					if dis > 100 then
+						managers.navigation:release_cover(my_data.best_cover[1])
+
+						my_data.best_cover = nil
+					end
 				end
 			end
 
-			if not action:expired() then
-				if my_data.processing_advance_path then
-					local pathing_results = data.pathing_results
+			my_data.moving_to_cover = nil
+		elseif my_data.best_cover then
+			local dis = mvector3.distance(my_data.best_cover[1][1], data.unit:movement():m_pos())
 
-					if pathing_results and pathing_results[my_data.advance_path_search_id] then
-						data.pathing_results[my_data.advance_path_search_id] = nil
-						my_data.processing_advance_path = nil
-					end
-				elseif my_data.advance_path then
-					my_data.advance_path = nil
+			if dis > 100 then
+				managers.navigation:release_cover(my_data.best_cover[1])
+
+				my_data.best_cover = nil
+			end
+		end
+
+		if not action:expired() then
+			if my_data.processing_advance_path then
+				local pathing_results = data.pathing_results
+
+				if pathing_results and pathing_results[my_data.advance_path_search_id] then
+					data.pathing_results[my_data.advance_path_search_id] = nil
+					my_data.processing_advance_path = nil
+				end
+			elseif my_data.advance_path then
+				my_data.advance_path = nil
+			end
+
+			data.unit:brain():abort_detailed_pathing(my_data.advance_path_search_id)
+		end
+
+		if update then 
+			if my_data.coarse_path_index >= #my_data.coarse_path then
+				CopLogicTravel._on_destination_reached(data) -- we're at the destination, no need to wait for cover_wait_t or other things
+			elseif data.logic.on_pathing_results then
+				data.logic.on_pathing_results(data) -- update the logic, can't just call upd_advance as other logics re-use action_complete_clbk
+			end
+		end
+	elseif action_type == "turn" then
+		data.internal_data.turning = nil
+	elseif action_type == "shoot" then
+		data.internal_data.shooting = nil
+	elseif action_type == "dodge" then
+		local objective = data.objective
+		local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, objective, nil, nil)
+
+		if allow_trans then
+			local wanted_state = data.logic._get_logic_state_from_reaction(data)
+
+			if wanted_state and wanted_state ~= data.name and obj_failed then
+				if data.unit:in_slot(managers.slot:get_mask("enemies")) or data.unit:in_slot(17) then
+					data.objective_failed_clbk(data.unit, data.objective)
+				elseif data.unit:in_slot(managers.slot:get_mask("criminals")) then
+					managers.groupai:state():on_criminal_objective_failed(data.unit, data.objective, false)
 				end
 
-				data.unit:brain():abort_detailed_pathing(my_data.advance_path_search_id)
-			end
-		elseif action_type == "turn" then
-			data.internal_data.turning = nil
-		elseif action_type == "shoot" then
-			data.internal_data.shooting = nil
-		elseif action_type == "dodge" then
-			local objective = data.objective
-			local allow_trans, obj_failed = CopLogicBase.is_obstructed(data, objective, nil, nil)
-
-			if allow_trans then
-				local wanted_state = data.logic._get_logic_state_from_reaction(data)
-
-				if wanted_state and wanted_state ~= data.name and obj_failed then
-					if data.unit:in_slot(managers.slot:get_mask("enemies")) or data.unit:in_slot(17) then
-						data.objective_failed_clbk(data.unit, data.objective)
-					elseif data.unit:in_slot(managers.slot:get_mask("criminals")) then
-						managers.groupai:state():on_criminal_objective_failed(data.unit, data.objective, false)
-					end
-
-					if my_data == data.internal_data then
-						debug_pause_unit(data.unit, "[CopLogicTravel.action_complete_clbk] exiting without discarding objective", data.unit, inspect(data.objective))
-						CopLogicBase._exit(data.unit, wanted_state)
-					end
+				if my_data == data.internal_data then
+					debug_pause_unit(data.unit, "[CopLogicTravel.action_complete_clbk] exiting without discarding objective", data.unit, inspect(data.objective))
+					CopLogicBase._exit(data.unit, wanted_state)
 				end
 			end
 		end
 	end
+end
 
 Hooks:PreHook(CopLogicTravel, "_begin_coarse_pathing", "res_begin_coarse_pathing", function(data, my_data)
 	my_data.processing_coarse_path = true -- otherwise the pathing results callback will cause a stack overflow if the coarse path is returned immediately

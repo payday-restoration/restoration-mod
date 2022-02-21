@@ -13638,7 +13638,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 					rank = 2
 				},
 				{
-					unit = "FBI_swat_M4",
+					unit = "GS_swat_M4",
 					freq = 1,
 					amount_max = 2,
 					tactics = self._tactics.FBI_swat_rifle,
@@ -17727,7 +17727,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0,
 				0.0095,
 				0.019
-			},		
+			},	
+			SKULL_tanks = {
+				0,
+				0,
+				0.019
+			},
 			TIT_tanks = {
 				0,
 				0.001,

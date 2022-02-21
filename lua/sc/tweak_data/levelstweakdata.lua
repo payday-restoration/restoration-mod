@@ -176,7 +176,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.nmh.ai_group_type = nypd
 	self.nmh.ghost_bonus = nil
 	
-	--///LAPD LEVELS\\\--			
+	--///LAPD LEVELS\\\--		
+	self.election_day_1.ai_group_type = lapd
+	
 	self.jolly.ai_group_type = lapd
 	self.jolly.package = {"packages/jolly", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.jolly.player_style = "suit_sunny"

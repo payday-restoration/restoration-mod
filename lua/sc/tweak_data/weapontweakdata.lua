@@ -3059,7 +3059,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','fmg9'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
@@ -5428,6 +5428,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.asval.sounds.stop_fire = "akm_stop"
 	self.asval.sounds.dryfire = "primary_dryfire"
 	self.asval.AMMO_MAX = 80
+	self.asval.CLIP_AMMO_MAX = 20
 	self.asval.FIRE_MODE = "auto"
 	self.asval.fire_mode_data = {}
 	self.asval.fire_mode_data.fire_rate = 0.06666666666
@@ -8636,6 +8637,32 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rsh12.can_shoot_through_wall = true
 	self.rsh12.armor_piercing_chance = 1
 	self.rsh12.swap_speed_multiplier = 0.6
+	
+	--Gecko M2 (Maxim 9)
+	self.maxim9.has_description = true
+	self.maxim9.desc_id = "bm_tranq_maxim_sc_desc"	
+	self.maxim9.fire_mode_data.fire_rate = 0.08571428571
+	self.maxim9.single.fire_rate = 0.08571428571
+	self.maxim9.CLIP_AMMO_MAX = 18
+	self.maxim9.AMMO_MAX = 90
+	self.maxim9.kick = self.stat_info.kick_tables.even_recoil
+	self.maxim9.supported = true
+	self.maxim9.stats = {
+		damage = 15,
+		spread = 18,
+		recoil = 24,
+		spread_moving = 7,
+		zoom = 1,
+		concealment = 30,
+		suppression = 20,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.maxim9.stats_modifiers = nil
+	self.maxim9.panic_suppression_chance = 0.05	
 	
 	--Argos III (Ultima)
 	self.ultima.rays = 9

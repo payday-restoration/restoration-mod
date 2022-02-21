@@ -22547,6 +22547,111 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 
 end)
 
+--Gecko M2 (Maxim 9)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function(self)
+
+	--Upshot Barrel
+	self.parts.wpn_fps_pis_maxim9_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_maxim9_b_long.supported = true
+	self.parts.wpn_fps_pis_maxim9_b_long.stats = {
+		value = 4,
+		spread = 1,
+		concealment = -3
+	}	
+	
+	--Pinnacle Barrel
+	self.parts.wpn_fps_pis_maxim9_b_marksman.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_maxim9_b_marksman.supported = true
+	self.parts.wpn_fps_pis_maxim9_b_marksman.stats = {
+		value = 2,
+		recoil = 1,
+		concealment = -2
+	}	
+
+	--(Maxim-9) Extended Mag.
+	self.parts.wpn_fps_pis_maxim9_m_ext.pcs = {
+		10,
+		20,
+		30, 
+		40
+	}
+	self.parts.wpn_fps_pis_maxim9_m_ext.supported = true
+	self.parts.wpn_fps_pis_maxim9_m_ext.stats = {
+		value = 6,
+		extra_ammo = 15,
+		concealment = -1,
+		reload = -2
+	}	
+	
+	--Maxim Default body, added to add unique ammo type
+	self.parts.wpn_fps_pis_maxim9_body_upper.adds = {
+		"wpn_fps_pis_maxim9_a_tranq"
+	}
+	
+	--Tranq Rounds
+	self.parts.wpn_fps_pis_maxim9_a_tranq = {
+		a_obj = "a_body",
+		type = "ammo",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		internal_part = true,
+		name_id = "bm_wp_upg_a_tranq",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		stats = {
+			value = 0
+		},
+		custom_stats = {
+			bullet_class = "PoisonBulletBase",
+			dot_data = { 
+				type = "poison",
+				custom_data = {
+					dot_damage = 2,
+					dot_length = 3.1,
+					dot_tick_period = 0.5,
+					hurt_animation_chance = 0.75
+				}
+			}
+		}
+	}	
+	
+	--Maxim 9 Part Additions
+	self.wpn_fps_pis_maxim9.uses_parts = {
+		"wpn_fps_pis_maxim9_b_standard",
+		"wpn_fps_pis_maxim9_b_long",
+		"wpn_fps_pis_maxim9_b_marksman",
+		"wpn_fps_pis_maxim9_body_upper",
+		"wpn_fps_pis_maxim9_body_lower",
+		"wpn_fps_pis_maxim9_m_standard",
+		"wpn_fps_pis_maxim9_m_ext",
+		"wpn_fps_upg_fl_pis_laser",
+		"wpn_fps_upg_fl_pis_tlr1",
+		"wpn_fps_upg_fl_pis_perst",
+		"wpn_fps_upg_o_rmr",
+		--"wpn_fps_upg_pis_ns_flash",
+		"wpn_fps_upg_fl_pis_crimson",
+		"wpn_fps_upg_fl_pis_x400v",
+		--"wpn_fps_upg_ns_pis_meatgrinder",
+		--"wpn_fps_upg_ns_pis_ipsccomp",
+		"wpn_fps_upg_fl_pis_m3x",
+		"wpn_fps_upg_o_rms",
+		"wpn_fps_upg_o_rikt",
+		--Custom content
+		"wpn_fps_pis_maxim9_a_tranq"
+	}
+	
+	self.wpn_fps_pis_maxim9_npc.uses_parts = deep_clone(self.wpn_fps_pis_maxim9.uses_parts)
+	
+end)
+
 --Argos III (Ultima)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function(self)
 

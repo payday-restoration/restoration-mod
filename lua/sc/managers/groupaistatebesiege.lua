@@ -712,7 +712,7 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 		end
 	else
 		-- If we see an enemy while moving out and have the ranged_fire tactics, open fire and stay in position for a bit
-		if tactics_map.ranged_fire or tactics_map.elite_ranged_fire and not current_objective.open_fire then
+		if (tactics_map.ranged_fire or tactics_map.elite_ranged_fire) and not current_objective.open_fire then
 			for _, u_data in pairs(group.units) do
 				local logic_data = u_data.unit:brain()._logic_data
 				local focus_enemy = logic_data and logic_data.attention_obj

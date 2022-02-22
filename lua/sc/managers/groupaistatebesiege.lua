@@ -133,50 +133,132 @@ function GroupAIStateBesiege:_upd_assault_task(...)
 		return
 	end
 
-	if task_data.phase ~= "fade" then
+	local t = self._t
+
+	--[[if task_data.phase ~= "fade" then
 		return _upd_assault_task_original(self, ...)
-	end
+	end]]--
 
 	self:_assign_recon_groups_to_retire()
+   --vanilla stuff start
+	local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul)
+	local task_spawn_allowance = force_pool - (self._hunt_mode and 0 or task_data.force_spawned)
 
-	if not self._hunt_mode then
-		local end_assault
-		local is_skirmish = managers.skirmish:is_skirmish()
-		local enemies_defeated_time_limit = is_skirmish and 0 or self._tweak_data.assault.fade_settings.enemies_defeated_time_limit or 30
-		local drama_engagement_time_limit = is_skirmish and 0 or self._tweak_data.assault.fade_settings.drama_engagement_time_limit or 30
+	if task_data.phase == "anticipation" then
+		if task_spawn_allowance <= 0 then
+			print("spawn_pool empty: -----------FADE-------------")
+
+			task_data.phase = "fade"
+			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
+		elseif task_data.phase_end_t < t or self._drama_data.zone == "high" then
+			self._assault_number = self._assault_number + 1
+			
+			self:_get_megaphone_sound_source():post_event("mga_generic_c")
+
+			managers.mission:call_global_event("start_assault")
+			managers.hud:start_assault(self._assault_number)
+			managers.groupai:dispatch_event("start_assault", self._assault_number)
+			self:_set_rescue_state(false)
+
+			task_data.phase = "build"
+			task_data.phase_end_t = self._t + self._tweak_data.assault.build_duration
+			task_data.is_hesitating = nil
+
+			self:set_assault_mode(true)
+			managers.trade:set_trade_countdown(false)
+		else
+			managers.hud:check_anticipation_voice(task_data.phase_end_t - t)
+			managers.hud:check_start_anticipation_music(task_data.phase_end_t - t)
+
+			if task_data.is_hesitating and task_data.voice_delay < self._t then
+				if self._hostage_headcount > 0 then
+					local best_group = nil
+
+					for _, group in pairs(self._groups) do
+						if not best_group or group.objective.type == "reenforce_area" then
+							best_group = group
+						elseif best_group.objective.type ~= "reenforce_area" and group.objective.type ~= "retire" then
+							best_group = group
+						end
+					end
+
+					if best_group and self:_voice_delay_assault(best_group) then
+						task_data.is_hesitating = nil
+					end
+				else
+					task_data.is_hesitating = nil
+				end
+			end
+		end
+	elseif task_data.phase == "build" then
+		if task_spawn_allowance <= 0 then
+			task_data.phase = "fade"
+			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
+		elseif task_data.phase_end_t < t or self._drama_data.zone == "high" then
+			local sustain_duration = math.lerp(self:_get_difficulty_dependent_value(self._tweak_data.assault.sustain_duration_min), self:_get_difficulty_dependent_value(self._tweak_data.assault.sustain_duration_max), math.random()) * self:_get_balancing_multiplier(self._tweak_data.assault.sustain_duration_balance_mul)
+
+			managers.modifiers:run_func("OnEnterSustainPhase", sustain_duration)
+
+			task_data.phase = "sustain"
+			task_data.phase_end_t = t + sustain_duration
+		end
+	elseif task_data.phase == "sustain" then
+		local end_t = self:assault_phase_end_time()
+		task_spawn_allowance = managers.modifiers:modify_value("GroupAIStateBesiege:SustainSpawnAllowance", task_spawn_allowance, force_pool)
+
+		if task_spawn_allowance <= 0 then
+			task_data.phase = "fade"
+			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
+		elseif end_t < t and not self._hunt_mode then
+			task_data.phase = "fade"
+			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
+		end
+	else
+		local end_assault = false
 		local enemies_left = self:_count_police_force("assault")
-		local min_enemies_left = task_data.force * (self._tweak_data.assault.fade_settings.enemies_defeated_percentage or 0.5)
-		local enemies_defeated = enemies_left < min_enemies_left or self._t > task_data.phase_end_t + enemies_defeated_time_limit
-		if enemies_defeated then
-			if not task_data.said_retreat then
-				task_data.said_retreat = true
-				self:_police_announce_retreat()
-			elseif task_data.phase_end_t < self._t then
-				local drama_pass = self._drama_data.amount < tweak_data.drama.assault_fade_end
-				local engagement_pass = self:_count_criminals_engaged_force(11) <= 10
-				local taking_too_long = self._t > task_data.phase_end_t + drama_engagement_time_limit
-				end_assault = drama_pass and engagement_pass or taking_too_long
-			end
-		end
-
-		if task_data.force_end or end_assault then
-			task_data.active = nil
-			task_data.phase = nil
-			task_data.said_retreat = nil
-			task_data.force_end = nil
-			local force_regroup = task_data.force_regroup
-			task_data.force_regroup = nil
-
-			if self._draw_drama then
-				self._draw_drama.assault_hist[#self._draw_drama.assault_hist][2] = self._t
-			end
-
-			managers.mission:call_global_event("end_assault")
-			self:_begin_regroup_task(force_regroup)
-			self:set_difficulty(nil, 0.3)
-			return
-		end
+   --vanilla stuff end
+	    if not self._hunt_mode then
+	    	local end_assault
+	    	local is_skirmish = managers.skirmish:is_skirmish()
+	    	local enemies_defeated_time_limit = is_skirmish and 0 or self._tweak_data.assault.fade_settings.enemies_defeated_time_limit or 30
+	    	local drama_engagement_time_limit = is_skirmish and 0 or self._tweak_data.assault.fade_settings.drama_engagement_time_limit or 30
+	    	local enemies_left = self:_count_police_force("assault")
+	    	local min_enemies_left = task_data.force * (self._tweak_data.assault.fade_settings.enemies_defeated_percentage or 0.5)
+	    	local enemies_defeated = enemies_left < min_enemies_left or self._t > task_data.phase_end_t + enemies_defeated_time_limit
+	    	if enemies_defeated then
+	    		if not task_data.said_retreat then
+	    			task_data.said_retreat = true
+	    			self:_police_announce_retreat()
+	    			self:_get_megaphone_sound_source():post_event("mga_robbers_clever")
+	    		elseif task_data.phase_end_t < self._t then
+	    			local drama_pass = self._drama_data.amount < tweak_data.drama.assault_fade_end
+	    			local engagement_pass = self:_count_criminals_engaged_force(11) <= 10
+	    			local taking_too_long = self._t > task_data.phase_end_t + drama_engagement_time_limit
+	    			end_assault = drama_pass and engagement_pass or taking_too_long
+	    		end
+	    	end
+	    
+	    	if task_data.force_end or end_assault then
+	    		task_data.active = nil
+	    		task_data.phase = nil
+	    		task_data.said_retreat = nil
+	    		task_data.force_end = nil
+	    		local force_regroup = task_data.force_regroup
+	    		task_data.force_regroup = nil
+	    		self:_get_megaphone_sound_source():post_event("mga_leave")
+	    
+	    		if self._draw_drama then
+	    			self._draw_drama.assault_hist[#self._draw_drama.assault_hist][2] = self._t
+	    		end
+                
+	    		managers.mission:call_global_event("end_assault")
+	    		self:_begin_regroup_task(force_regroup)
+	    		self:set_difficulty(nil, 0.3)
+	    		return
+	    	end
+	    end
 	end
+	
 
 	if self._drama_data.amount <= tweak_data.drama.low then
 		for criminal_key, criminal_data in pairs(self._player_criminals) do

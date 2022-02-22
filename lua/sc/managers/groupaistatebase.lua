@@ -1576,9 +1576,8 @@ Unused?
 
 Hooks:PostHook(GroupAIStateBase, "_init_misc_data", "sh__init_misc_data", register_special_types)
 Hooks:PostHook(GroupAIStateBase, "on_simulation_started", "sh_on_simulation_started", register_special_types)
-]]--
 
--- Fix cloaker spawn noise for host
+-- Fix cloaker spawn noise for host, disabled as we don't want that noise for Cloakers
 local _process_recurring_grp_SO_original = GroupAIStateBase._process_recurring_grp_SO
 function GroupAIStateBase:_process_recurring_grp_SO(...)
 	if _process_recurring_grp_SO_original(self, ...) then
@@ -1586,6 +1585,8 @@ function GroupAIStateBase:_process_recurring_grp_SO(...)
 		return true
 	end
 end
+
+]]--
 
 -- Delay spawn points when enemies die close to them
 Hooks:PostHook(GroupAIStateBase, "on_enemy_unregistered", "sh_on_enemy_unregistered", function (self, unit)

@@ -22652,6 +22652,45 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 	
 end)
 
+--Akimbo Gecko M2 (Akimbo Maxim 9)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_maxim9", "resmod_x_maxim9", function(self)
+
+	--Override
+	self.wpn_fps_pis_x_maxim9.override.wpn_fps_pis_maxim9_m_ext = {
+		stats = {
+			value = 6,
+			extra_ammo = 30,
+			concealment = -1,
+			reload = -2
+		}
+	}
+	
+	--Akimbo Maxim 9 Part Additions
+	self.wpn_fps_pis_x_maxim9.uses_parts = {
+		"wpn_fps_pis_maxim9_b_standard",
+		"wpn_fps_pis_maxim9_b_long",
+		"wpn_fps_pis_maxim9_b_marksman",
+		"wpn_fps_pis_maxim9_body_upper",
+		"wpn_fps_pis_maxim9_body_lower",
+		"wpn_fps_pis_maxim9_m_standard",
+		"wpn_fps_pis_maxim9_m_ext",
+		"wpn_fps_upg_fl_pis_laser",
+		"wpn_fps_upg_fl_pis_tlr1",
+		"wpn_fps_upg_fl_pis_perst",
+		--"wpn_fps_upg_pis_ns_flash",
+		"wpn_fps_upg_fl_pis_crimson",
+		"wpn_fps_upg_fl_pis_x400v",
+		--"wpn_fps_upg_ns_pis_meatgrinder",
+		--"wpn_fps_upg_ns_pis_ipsccomp",
+		"wpn_fps_upg_fl_pis_m3x",
+		--Custom Content
+		"wpn_fps_pis_maxim9_a_tranq"		
+	}
+	
+	self.wpn_fps_pis_x_maxim9_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_maxim9.uses_parts)	
+
+end)
+
 --Argos III (Ultima)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function(self)
 

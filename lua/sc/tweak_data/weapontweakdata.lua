@@ -3064,7 +3064,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
 	end
-	local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt'}
+	local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9'}
 	for i, wep_id in ipairs(tact_akimbo_pistol) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].recategorize = "akimbo"
@@ -8664,6 +8664,32 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.maxim9.stats_modifiers = nil
 	self.maxim9.panic_suppression_chance = 0.05	
+	
+	--Akimbo Geck M2 (Akimbo Maxim 9)
+	self.x_maxim9.has_description = true
+	self.x_maxim9.desc_id = "bm_tranq_maxim_sc_desc"	
+	self.x_maxim9.fire_mode_data.fire_rate = 0.08571428571
+	self.x_maxim9.single.fire_rate = 0.08571428571
+	self.x_maxim9.CLIP_AMMO_MAX = 36
+	self.x_maxim9.AMMO_MAX = 180
+	self.x_maxim9.kick = self.stat_info.kick_tables.even_recoil
+	self.x_maxim9.supported = true
+	self.x_maxim9.stats = {
+		damage = 15,
+		spread = 16,
+		recoil = 14,
+		spread_moving = 7,
+		zoom = 1,
+		concealment = 30,
+		suppression = 20,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.x_maxim9.stats_modifiers = nil
+	self.x_maxim9.panic_suppression_chance = 0.05		
 	
 	--Argos III (Ultima)
 	self.ultima.rays = 9

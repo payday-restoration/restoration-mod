@@ -680,18 +680,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_m_holiday"] = "The Headless Bulldozer",
 
 		["menu_color_plus"] = "E3 PAYDAY+",
-		["menu_color_rvd1"] = "Inverted",
+		["menu_color_rvd1"] = "반전",
 		["menu_color_e3nice"] = "E3 Nice",
 		["menu_color_force"] = "E3 BHD",
-		["menu_color_halloween"] = "Change",
-		["menu_color_halloween2"] = "Pumpkin Spice",
+		["menu_color_halloween"] = "변이",
+		["menu_color_halloween2"] = "호박 향신료",
 
 		["color_plus"] = "E3 PAYDAY+",
-		["color_rvd1"] = "Inverted",
+		["color_rvd1"] = "반전",
 		["color_e3nice"] = "E3 Nice",
 		["color_force"] = "E3 BHD",
-		["color_halloween"] = "Change",
-		["color_halloween2"] = "Pumpkin Spice",
+		["color_halloween"] = "변이",
+		["color_halloween2"] = "호박 향신료",
 
 		["gm_gms_purchase"] = "컨티넨탈 코인으로 구매",
 		["gm_gms_purchase_window_title"] = "확실하십니까?",
@@ -946,6 +946,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "펠릿이 뭉치지 않고 수평으로 퍼지도록 합니다.",
+		["bm_wp_ns_ultima_desc_sc"] = "펠릿의 전체 확산을 75%만큼 증가시킵니다.",
 		["bm_wp_upg_a_slug_sc"] = "철갑 슬러그탄",
 		["bm_wp_upg_a_slug_sc_desc"] = "정확한 한 발의 샷건 슬러그탄을 발사합니다. 관통하지 않습니다.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "방탄복, 적, 실드, 타이탄 실드 및 벽을 관통하는 단일 정확한 납탄 슬러그를 발사합니다.", --For shotguns that can hit Heavy Sniper damage tier--
@@ -1056,6 +1057,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_ak74_rodina_desc_sc"] = "전쟁과 범죄에서 피에 대한 끝없는 갈증을 보여준 특별한 AK 소총입니다.",
 		["bm_wskn_deagle_bling_desc_sc"] = "직접 만들어진 이 Deagle은 세계 최고의 게임 훈련을 받은 명사수의 증거로 제작되었습니다.",
 
+		--Exclusive Sets--
+		["bm_wp_upg_ultima_body_kit_desc_sc"] = "이 전용 세트는 다른 장치와 함께 사용할 수 없는 독특한 '트리플 트리트' 레이저 조준기가 추가합니다.",
+		["bm_wp_upg_fmg9_conversion_desc_sc"] = "이 전용 세트는 하이테크 탄약 카운터와 다른 장비와 함께 사용할 수 없는 레이저 조준기가 추가됩니다.",
+		
+		
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "수정치 없음",
 		["bm_wp_upg_bonus_sc_none_desc"] = "무기 스킨의 부스트를 비활성화합니다.",
@@ -1314,6 +1320,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov 소총",
 		["bm_w_x_akmsu"] = "아킴보 Krinkov 소총",
 		["bm_w_hajk"] = "CR 805B 소총",
+		
+		["bm_w_fmg9"] = "Wasp-DS 기관권총",
 
 		["menu_akimbo_assault_rifle"] = "아킴보 돌격소총",
 
@@ -2210,7 +2218,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Pumping Iron--
 		["menu_steroids_beta_sc"] = "펌핑 아이언",
-		["menu_steroids_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기를 휘두르고 충전하는 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n근접 무기를 휘두르고 중전하는 속도가 추가로 ##30%##만큼 빨라집니다.",
+		["menu_steroids_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기를 휘두르고 충전하는 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n근접 무기를 휘두르고 충전하는 속도가 추가로 ##30%##만큼 빨라집니다.",
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "광분",

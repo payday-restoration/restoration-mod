@@ -372,7 +372,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_contact_akashic"] = "Нико",
 
 		["menu_contacts_shatter"] = "Союзники CRIMENET",
+		
 		["heist_contact_jackal_description"] = "Джекел начал свою карьеру в GenSec, но уволился после инцидента, связанного с торговлей людьми, в котором были замешаны GenSec и OMNIA.\n\nТеперь он работает на CRIMENET, поставляя проблемы им прямо на дом.",
+		
 		["heist_contact_akashic_description"] = "В прошлом - высокопоставленный агент Гектора Моралеса, Николас 'Нико' Рене теперь командует остатками Синалоанского картеля в США. \nИх численность мала, и более крупный Колумбийский картель не собирается ни предоставлять помощь, ни восстанавливать союз с CRIMENET. Нико объединяется с различными мелкими бандами на Восточном побережье, а также с CRIMENET - он предоставит свои ресурсы в обмен на услуги.",
 
 		["bm_msk_shatter_true"] = "Шаттер",
@@ -945,6 +947,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Дробинки будут разлетаться горизонтально, а не распыляться.",
+		["bm_wp_ns_ultima_desc_sc"] = "Увеличевает разброс дроби на 75%.",
 		["bm_wp_upg_a_slug_sc"] = "Бронебойная пуля",
 		["bm_wp_upg_a_slug_sc_desc"] = "Точные бронебойные пули. Не обладают пробитием.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Точные бронебойные пули, которые пробивают броню, врагов, щиты, титановые щиты и стены.", --For shotguns that can hit Heavy Sniper damage tier--
@@ -1053,6 +1056,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_sc_legendary_r870"] = "Big Kahuna",
 		["bm_wskn_ak74_rodina_desc_sc"] = "Особенный АК, который продемонстрировал свою кровожадность как на войне, так и на ограблениях.",
 		["bm_wskn_deagle_bling_desc_sc"] = "Вручную собранный Deagle, сделанный в дань уважения сумасшедшему стрелку, который тренировался в компьютерных играх.",
+		
+		--Exclusive Sets--
+		["bm_wp_upg_ultima_body_kit_desc_sc"] = "Этот набор добавляет уникальный тройной лазерный прицел, несовместимый с другими устройствами.",
+		["bm_wp_upg_fmg9_conversion_desc_sc"] = "Этот набор добавляет счетчик патронов и лазерный прицел, несовместимые с другими устройствами.",
 
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "Нет модификатора",
@@ -1082,6 +1089,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_sap_sc_desc"] = "Характеристики этого оружия были сгенерированны автоматически и могут быть несбалансированны, или не отражать идею автора.\n\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ, ТИТАНОВЫЕ ЩИТЫ И ТОНКИЕ СТЕНЫ.",
 		["bm_auto_generated_lmg_sc_desc"] = "Характеристики этого оружия были сгенерированны автоматически и могут быть несбалансированны, или не отражать идею автора.\n\nНОШЕНИЕ ЭТОГО ОРУЖИЯ ЗАМЕДЛИТ ВАШУ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ## на 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "Характеристики этого модуля были убраны, так как автоматическая генерация характеристик модулей на данный момент не реализована.",
+		["bm_tranq_maxim_sc_desc"] = "ТРАНКВИЛИЗАТОР: НАНОСИТ УРОН ЧЕРЕЗ ВРЕМЯ. ИМЕЕТ ВСТРОЕННЫЙ ГЛУШИТЕЛЬ",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration",
@@ -1312,6 +1320,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Винтовка Krinkov",
 		["bm_w_x_akmsu"] = "Парные винтовки Krinkov",
 		["bm_w_hajk"] = "Винтовка CR 805B",
+		
+		["bm_w_fmg9"] = "Автоматический пистолет Wasp-DS",
 
 		["menu_akimbo_assault_rifle"] = "Парные винтовки",
 

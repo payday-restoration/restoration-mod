@@ -4073,6 +4073,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Eagle Heavy
 	self.scar.AMMO_MAX = 80
+	self.scar.CLIP_AMMO_MAX = 20
 	self.scar.fire_mode_data.fire_rate = 0.09523809523
 	self.scar.CAN_TOGGLE_FIREMODE = true
 	self.scar.auto.fire_rate = 0.09523809523

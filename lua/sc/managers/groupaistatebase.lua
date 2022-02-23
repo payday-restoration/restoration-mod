@@ -1355,38 +1355,38 @@ end
 --probably fine if clients run it, but better safe than sorry
 if Network:is_server() then
 	--increase diff by x amount for each hostage killed (only by players)
-	local hostage_killed = GroupAIStateBase.hostage_killed
-	function GroupAIStateBase:hostage_killed(killer_unit)
-		hostage_killed(self, killer_unit)
-			--vanilla checks to make sure its a player
+	Hooks:PostHook(GroupAIStateBase, "hostage_killed", "res_hostage_killed", function(self, killer_unit)
+		--vanilla checks to make sure its a player
+		if not alive(killer_unit) then
+			return
+		end
+
+		if killer_unit:base() and killer_unit:base().thrower_unit then
+			killer_unit = killer_unit:base():thrower_unit()
+
 			if not alive(killer_unit) then
 				return
 			end
+		end
 
-			if killer_unit:base() and killer_unit:base().thrower_unit then
-				killer_unit = killer_unit:base():thrower_unit()
+		local key = killer_unit:key()
+		local criminal = self._criminals[key]
+		if not criminal then
+			return
+		end
 
-				if not alive(killer_unit) then
-					return
-				end
+		self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
+
+		if not self._hunt_mode and self._assault_number and self._assault_number >= 1 then
+			self._megaphone_hostages_killed = (self._megaphone_hostages_killed or 0) + 1 -- have to track separately to self._hostages_killed because some may be killed before going loud
+
+			if self._megaphone_hostages_killed == 1 then
+				self:_get_megaphone_sound_source():post_event("mga_killed_civ_1st")
+			elseif self._megaphone_hostages_killed == 4 then
+				self:_get_megaphone_sound_source():post_event("mga_killed_civ_2nd")
 			end
-
-			local key = killer_unit:key()
-			local criminal = self._criminals[key]
-
-			if not criminal then
-				return
-			end
-			self:set_difficulty(nil, 0.1) --Diff increase when killing a civ
-			
-		    if is_first or self._assault_number and self._assault_number >= 1 then
-				local roll = math.rand(1, 100)
-				local chance_civ = 50
-			    if roll <= chance_civ then
-			        self:_get_megaphone_sound_source():post_event("mga_killed_civ_1st")
-				end	
-			end
-	end
+		end
+	end)
 end
 
 --this function has been repurposed. instead of overriding any previous value, this ADDS diff

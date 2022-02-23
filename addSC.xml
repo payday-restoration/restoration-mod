@@ -1080,6 +1080,8 @@
 	<cooked_physics		path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
 	<model				path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
 	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" force="false"/>
+	<texture	        path="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou_df" force="false"/>
 	
 
 	<!-- Bravo Grenades -->

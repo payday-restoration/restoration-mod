@@ -452,6 +452,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.fbi.speech_prefix_p2 = "n"
 	self.fbi.speech_prefix_count = 4
+	self.fbi.can_slide_on_suppress = true
 	self.fbi.silent_priority_shout = "f37"
 	self.fbi.access = "fbi"
 	self.fbi.dodge = presets.dodge.athletic
@@ -776,6 +777,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.speech_prefix_p1 = self._prefix_data_p1.cop()
 	self.swat.speech_prefix_p2 = "n"
 	self.swat.speech_prefix_count = 4
+	self.swat.can_slide_on_suppress = true	
 	--Just in case, makes them be able to go for the hostage
 	if managers.skirmish and managers.skirmish:is_skirmish() then
 		self.swat.access = "fbi"
@@ -866,6 +868,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
 	self.heavy_swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.heavy_swat.speech_prefix_count = 4
+	self.heavy_swat.can_slide_on_suppress = true	
 	self.heavy_swat.access = "swat"
 	self.heavy_swat.dodge = presets.dodge.heavy
 	self.heavy_swat.no_arrest = false
@@ -1067,6 +1070,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
 	self.fbi_swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.fbi_swat.speech_prefix_count = 4
+	self.fbi_swat.can_slide_on_suppress = true	
 	self.fbi_swat.access = "swat"
 	self.fbi_swat.dodge = presets.dodge.athletic_very_hard
 	self.fbi_swat.no_arrest = false
@@ -1123,6 +1127,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.speech_prefix_p1 = self._prefix_data_p1.heavy_swat()
 	self.fbi_heavy_swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.fbi_heavy_swat.speech_prefix_count = 4
+	self.fbi_heavy_swat.can_slide_on_suppress = true	
 	self.fbi_heavy_swat.access = "swat"
 	self.fbi_heavy_swat.dodge = presets.dodge.heavy_very_hard
 	self.fbi_heavy_swat.no_arrest = false
@@ -1175,6 +1180,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.speech_prefix_p1 = self._prefix_data_p1.swat()
 	self.city_swat.speech_prefix_p2 = self._speech_prefix_p2
 	self.city_swat.speech_prefix_count = 4
+	self.city_swat.can_slide_on_suppress = true	
 	self.city_swat.access = "swat"
 	self.city_swat.dodge = presets.dodge.athletic_overkill
 	self.city_swat.chatter = presets.enemy_chatter.swat
@@ -21935,10 +21941,7 @@ function CharacterTweakData:_set_overkill_145()
 	self:_set_characters_melee_preset("2.8", "2")
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true
-	self.hrt.can_shoot_while_dodging = true
-	self.fbi.can_slide_on_suppress = true		
-	self.swat.can_slide_on_suppress = true	
-	self.hrt.can_slide_on_suppress = true		
+	self.hrt.can_shoot_while_dodging = true	
 	
 	self.shield.weapon.is_pistol.melee_speed = nil
 	self.shield.weapon.is_pistol.melee_dmg = nil
@@ -22630,12 +22633,6 @@ function CharacterTweakData:_set_easy_wish()
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true	
 	self.hrt.can_shoot_while_dodging = true
-	self.fbi.can_slide_on_suppress = true		
-	self.swat.can_slide_on_suppress = true		
-	self.hrt.can_slide_on_suppress = true	
-	self.fbi_swat.can_slide_on_suppress = true		
-	self.city_swat.can_slide_on_suppress = true		
-	self.city_swat_guard.can_slide_on_suppress = true	
 	self:_set_characters_melee_preset("2.8", "2")
 	
 	--Weekend Rifles/Shotguns
@@ -23413,13 +23410,7 @@ function CharacterTweakData:_set_overkill_290()
 	self:_set_characters_melee_preset("3.5", "2.8")
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true	
-	self.hrt.can_shoot_while_dodging = true
-	self.fbi.can_slide_on_suppress = true		
-	self.swat.can_slide_on_suppress = true	
-	self.hrt.can_slide_on_suppress = true	
-	self.fbi_swat.can_slide_on_suppress = true		
-	self.city_swat.can_slide_on_suppress = true
-	self.city_swat_guard.can_slide_on_suppress = true			
+	self.hrt.can_shoot_while_dodging = true		
 			
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 6.0
@@ -24090,14 +24081,7 @@ function CharacterTweakData:_set_sm_wish()
 	self:_set_characters_melee_preset("3.5", "2.8")
 	self.fbi.can_shoot_while_dodging = true
 	self.swat.can_shoot_while_dodging = true
-	self.hrt.can_shoot_while_dodging = true	
-	self.fbi.can_slide_on_suppress = true		
-	self.swat.can_slide_on_suppress = true	
-	self.hrt.can_slide_on_suppress = true		
-	self.fbi_swat.can_slide_on_suppress = true		
-	self.city_swat.can_slide_on_suppress = true		
-	self.city_swat_guard.can_slide_on_suppress = true	
-	self.fbi_heavy_swat.can_slide_on_suppress = true		
+	self.hrt.can_shoot_while_dodging = true		
 				
 	--Set damage dealt for false downs.
 	self.spooc.kick_damage = 8.0

@@ -88,9 +88,6 @@ function GroupAIStateBesiege:_upd_police_activity()
 
 		-- Do _upd_group_spawning and _begin_new_tasks before the various task updates
 		if self._enemy_weapons_hot then
-			self:_check_spawn_phalanx() -- useless to check in stealth
-			self:_check_phalanx_group_has_spawned() -- useless to check in stealth
-			self:_check_phalanx_damage_reduction_increase() -- useless to check in stealth
 			self:_claculate_drama_value()
 			self:_upd_group_spawning()
 			self:_begin_new_tasks()
@@ -98,6 +95,9 @@ function GroupAIStateBesiege:_upd_police_activity()
 			self:_upd_reenforce_tasks()
 			self:_upd_recon_tasks()
 			self:_upd_assault_task()
+			self:_check_spawn_phalanx() -- useless to check in stealth
+			self:_check_phalanx_group_has_spawned() -- useless to check in stealth
+			self:_check_phalanx_damage_reduction_increase() -- useless to check in stealth
 			self:_upd_groups()
 		end
 	end
@@ -120,6 +120,8 @@ function GroupAIStateBesiege:_begin_assault_task(...)
 		assault_task.phase_end_t = self._t + anticipation_duration + hesitation_delay * hostage_multiplier
 		assault_task.is_hesitating = true
 		assault_task.voice_delay = self._t + (assault_task.phase_end_t - self._t) / 2
+
+		self:_get_megaphone_sound_source():post_event("mga_hostage_assault_delay")
 	end
 end
 
@@ -128,18 +130,17 @@ end
 local _upd_assault_task_original = GroupAIStateBesiege._upd_assault_task
 function GroupAIStateBesiege:_upd_assault_task(...)
 	local task_data = self._task_data.assault
-
 	if not task_data.active then
 		return
 	end
-	
-	local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul)
-	local task_spawn_allowance = force_pool - (self._hunt_mode and 0 or task_data.force_spawned)
-	if task_data.phase == "anticipation" and task_spawn_allowance > 0 and (self._t > task_data.phase_end_t or self._drama_data.zone == "high") then
-		self:_get_megaphone_sound_source():post_event("mga_generic_c")
-	end
 
 	if task_data.phase ~= "fade" then
+		local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul)
+		local task_spawn_allowance = force_pool - (self._hunt_mode and 0 or task_data.force_spawned)
+		if task_data.phase == "anticipation" and task_spawn_allowance > 0 and (self._t > task_data.phase_end_t or self._drama_data.zone == "high") then
+			self:_get_megaphone_sound_source():post_event("mga_generic_c")
+		end
+		
 		return _upd_assault_task_original(self, ...)
 	end
 
@@ -663,12 +664,9 @@ function GroupAIStateBesiege:_set_assault_objective_to_group(group, phase)
 		if phase_is_anticipation then
 			-- If we run into enemies during anticipation, pull back
 			pull_back = true
-		elseif current_objective.moving_out and tactics_map.ranged_fire then
+		elseif current_objective.moving_out and (tactics_map.ranged_fire or tactics_map.elite_ranged_fire) then
 			-- If we run into enemies while moving out, open fire (if we aren't already doing that)
-			open_fire = not current_objective.open_fire
-		elseif current_objective.moving_out and tactics_map.elite_ranged_fire then
-			-- Clone of Ranged Fire for now, might add more later
-			open_fire = not current_objective.open_fire			
+			open_fire = not current_objective.open_fire		
 		elseif not current_objective.pushed or charge and not current_objective.charge then
 			-- If we run into enemies and haven't pushed yet, push
 			push = true
@@ -1139,6 +1137,14 @@ function GroupAIStateBesiege:_assign_recon_groups_to_retire(...)
 		return
 	end
 	return _assign_recon_groups_to_retire_original(self, ...)
+end
+
+function GroupAIStateBesiege:_voice_open_fire_start(group)
+	for u_key, unit_data in pairs(group.units) do
+		if unit_data.char_tweak.chatter.aggressive and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
+			break
+		end
+	end
 end
 
 function GroupAIStateBesiege:_voice_saw(dead_unit)

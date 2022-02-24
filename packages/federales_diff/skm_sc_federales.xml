@@ -134,55 +134,55 @@
 	
 	<!-- fbi tier -->
 	<!--Rifle-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi" load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi_contour" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi_husk" load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1" />
+	<model				path="units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1" load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1_husk" load="true"/>	
 	<!--Shotgun-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870" load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870_contour"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_r870/ene_swat_policia_federale_fbi_r870_husk" load="true"/>		
+	<object				path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2" />
+	<model				path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2" load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>		
 	<!-- UMP Drillar -->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump" load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump_contour"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi_ump/ene_swat_policia_federale_fbi_ump_husk" load="true"/>		
+	<object				path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3" />
+	<model				path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3" load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3_contour"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3_husk" load="true"/>		
 
 	<!--FBI Heavy Rifle-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"  />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"  />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"  />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"  load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36"  />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36_contour"  />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_g36/ene_swat_heavy_policia_federale_fbi_g36_husk"    load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  />
+	<model				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_contour"  />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"    load="true"/>	
 	<!--FBI Heavy Shotgun-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"  load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870_contour" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870_husk"  load="true"/>		
-
+	<object				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870" />
+	<model				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870_husk"  load="true"/>
+	
 	<!--shield no idea why i made a unique model for him but he's the homie-->
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi_contour" />	
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" />
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" />	
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi_husk" load="true"/>	
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi" load="true"/>	
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_fbi/ene_swat_shield_policia_federale_mp9_fbi"/>	
+	<material_config	path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1_contour" />	
+	<material_config	path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1" />
+	<object				path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1" />
+	<model				path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1" />	
+	<unit				path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1_husk" load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1" load="true"/>	
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1"/>	
 	
 	<!--big shield acc-->
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc" />
@@ -194,106 +194,106 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_shield_lights_sc/ene_acc_shield_lights_sc"/>	
 
 	<!--sniper-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"  load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper_contour" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper_husk"  load="true"/>		
+	<object				path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1" />
+	<model				path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1_husk"  load="true"/>	
 	<!-- fbi tier end -->
 	
 	<!-- gensec tier -->	
 	<!--Rifle-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"  />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"  />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"  />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"  load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"  />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city_contour"  />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city_husk"    load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1"  />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1"  />
+	<model				path="units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1"  />
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1"  />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1_contour"  />
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1_husk"    load="true"/>	
 	<!--Shotgun-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"  load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870_husk"  load="true"/>		
+	<object				path="units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2" />
+	<model				path="units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2_husk"  load="true"/>		
 	<!--Ump-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump" load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_ump/ene_swat_policia_federale_city_ump_husk" load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3" />
+	<model				path="units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3" load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3_husk" load="true"/>	
 	<!--City Heavy Rifle-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36"  />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36"  />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36"  />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36"  load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36"  />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36_contour"  />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_g36/ene_swat_heavy_policia_federale_city_g36_husk"    load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36"  />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36"  />
+	<model				path="units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36"  />
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36"  />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36_contour"  />
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk"    load="true"/>	
 	<!--City Heavy Shotgun-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870"  load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_city_r870/ene_swat_heavy_policia_federale_city_r870_husk"  load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
+	<model				path="units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870_husk"  load="true"/>	
 
 	<!--Shield-->
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc_contour" />	
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc" />
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc" />	
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc_husk" load="true"/>	
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc" load="true"/>	
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_sc/ene_swat_shield_policia_federale_mp9_sc"/>		
+	<material_config	path="units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec_contour" />	
+	<material_config	path="units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec" />
+	<object				path="units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec" />
+	<model				path="units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec" />	
+	<unit				path="units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec_husk" load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec" load="true"/>	
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec"/>		
 	<!-- gensec tier end -->
 
 	<!--Zeal Tier-->
 	<!--Rifle-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"  />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"  />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"  />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"  />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal_contour"  />	
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal"  load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal/ene_swat_policia_federale_zeal_husk"    load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1"  />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1"  />
+	<model				path="units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1"  />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1"  />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1_contour"  />	
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1_husk"    load="true"/>	
 	
 	<!-- riflar acc -->
 	<unit_obj			path="units/pd2_dlc_bex/characters/ene_acc_bex_riflar/ene_acc_bex_riflar" />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_acc_bex_riflar/ene_acc_bex_riflar"/>
 	
 	<!--Shotgun-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870"  load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_r870/ene_swat_policia_federale_zeal_r870_husk"  load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2" />
+	<model				path="units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2_husk"  load="true"/>	
 	
 	<!--Ump-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump" load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_federale_zeal_ump/ene_swat_policia_federale_zeal_ump_husk" load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3" />
+	<model				path="units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3" load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
 	
 	<!-- ump acc -->
 	<unit_obj			path="units/pd2_dlc_bex/characters/ene_acc_bexret/ene_acc_bexret" />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_acc_bexret/ene_acc_bexret"/>
 	
 	<!--ZEAL Heavy Rifle-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36"  />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36"  />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36"  />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36"  load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36"  />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36_contour"  />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_g36/ene_swat_heavy_policia_federale_zeal_g36_husk"    load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"  />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"  />
+	<model				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"  />
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"  />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_contour"  />
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc_husk"    load="true"/>	
 	<!--ZEAL Heavy Shotgun-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870"  load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_zeal_r870/ene_swat_heavy_policia_federale_zeal_r870_husk"  load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
+	<model				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870_husk"  load="true"/>	
 
 	<!--Zeal-->
 	<model				path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/ene_acc_shield_zeal"/>
@@ -308,42 +308,50 @@
 	<texture			path="units/pd2_dlc_bex/characters/ene_acc_shield_zeal/shield_il"/>	
 	
 	<!--Shield-->
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal_husk" load="true"/>	
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9_zeal/ene_swat_shield_policia_federale_mp9_zeal" load="true"/>		
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield_husk" load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" load="true"/>		
 
 	<!--Sniper-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper_zeal/ene_swat_policia_sniper_zeal" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper_zeal/ene_swat_policia_sniper_zeal" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper_zeal/ene_swat_policia_sniper_zeal_contour" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper_zeal/ene_swat_policia_sniper_zeal" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper_zeal/ene_swat_policia_sniper_zeal"  load="true"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_policia_sniper_zeal/ene_swat_policia_sniper_zeal_husk"  load="true"/>		
+	<object				path="units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper_contour" />
+	<model				path="units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper"  load="true"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper_husk"  load="true"/>		
 	<!-- ZEAL tier end -->
 	
 	<!-- specials-->
 	
 	<!-- greendozer -->
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870_contour" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870" />
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_swat_dozer_policia_federale_r870" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1_contour" />
+	<model				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1_husk"  load="true"/>	
 	
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_r870/ene_akan_dozer_policia_federale_body_df" />	
 
-	<!--greendozer accs-->
+	<!--Green Acc-->
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_back_akan_1/ene_acc_bulldozer_back_akan_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_chest_akan_1/ene_acc_bulldozer_chest_akan_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_neck_akan_1/ene_acc_bulldozer_neck_akan_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_throat_akan_1/ene_acc_bulldozer_throat_akan_1" />
-	<model				path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" />	
+	<model					path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" />	
 
 	<!--blackdozer-->
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga_contour" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga" />
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_swat_dozer_policia_federale_saiga" />	
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />
+	<model				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />	
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2_husk"  load="true"/>
 	
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_saiga/ene_akan_dozer_policia_federale_body_black_df"/>	
 
@@ -354,12 +362,17 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_neck_akan_2/ene_acc_bulldozer_neck_akan_2" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_stomache_akan_2/ene_acc_bulldozer_stomache_akan_2" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_throat_akan_2/ene_acc_bulldozer_throat_akan_2" />
-	<model				path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_helmet_plate_akan_2/ene_acc_bulldozer_helmet_plate_akan_2" />	
+	<model				path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_helmet_plate_akan_2/ene_acc_bulldozer_helmet_plate_akan_2" />
 
 	<!--skulldozer-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249" />	
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_swat_dozer_policia_federale_m249_contour" />
+	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3" />	
+	<model				path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3_husk"  load="true"/>
 	
 	<!--City Acc-->	
 	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_back_2/ene_acc_bulldozer_back_2" />
@@ -372,29 +385,34 @@
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_dozer_policia_federale_body_grey_df" />	
 	
 	<!--benellidozer-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun" />	
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun_contour" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_swat_dozer_policia_federale_minigun" />
+	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />
+	<model				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk"  load="true"/>
 
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_minigun/ene_dozer_policia_federale_body_minigun_df" />
 	
 	<!--Taser-->
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale"  load="true"/>	
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale_husk"  load="true"/>		
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_swat_tazer_policia_federale_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1_husk"  load="true"/>		
+	<object				path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1" />
+	<model				path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1_contour" />
 
 	<!--Cloaker-->	
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc"/>
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc"/>
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc" load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc_contour"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc_husk" load="true"/>
+	<object				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
+	<model				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1" load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1_contour"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1_husk" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale" />
 	
 	<!--Debris-->
@@ -407,12 +425,12 @@
 	<model				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_body_debris"/>		
 
 	<!--Medic-->
-	<object				path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc" />
-	<model				path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc"  load="true"/>
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc_contour" />
-	<unit				path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale_sc/ene_swat_medic_policia_federale_sc_husk"  load="true"/>	
+	<object				path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5" />
+	<model				path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5_husk"  load="true"/>		
 
 	<!--Grenadier here, where's the fiesta-->
 	<object				path="units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1" force="false"/>
@@ -543,10 +561,21 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2_contour" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2_husk"  load="true"/>	
+	
+	<object				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1" />
+	<model				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1"  load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1_contour" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_1/ene_veteran_enrique_1_husk"  load="true"/>
 	<!--MARIACHI HAT-->	
 	<unit_mat			path="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" load="true"/>
 	
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/vet_df" force="false"/>
+	
+	<unit_mat			path="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" load="true"/>
+	
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/vet_blood_df" force="false"/>
 	
 	<!--Titan HRT-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>

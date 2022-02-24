@@ -50,7 +50,7 @@ function CopBase:random_mat_seq_initialization()
 	or unit_name == Idstring("units/payday2/characters/ene_sniper_1_sc/ene_sniper_1_sc_husk")
 	
 	local sniper_gensec = unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3") 
-	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3")
+	or unit_name == Idstring("units/payday2/characters/ene_sniper_3/ene_sniper_3_husk")
 
 	local switch_mat_config_federales_sniper = unit_name == Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper")
 	or unit_name == Idstring("units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper_husk")

@@ -479,5 +479,6 @@
 	<texture			path="units/pd2_mod_bravo/characters/ene_bravo_dmr_murky/dmr_hood_nm" />	
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_murky_df" />	
 	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_murky_df" />
+	<texture			path="units/pd2_mod_sharks/characters/shared_textures/murky_grenadier_helm_df" />
 	<!-- bravoss squad end-->	
 </table>

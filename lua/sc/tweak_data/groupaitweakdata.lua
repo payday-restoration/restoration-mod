@@ -7643,7 +7643,35 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		}
 	end
 	
-	if difficulty_index <= 4 then
+	if difficulty_index <= 3 then
+		self.unit_categories.FBI_tank = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")								
+				},
+				russia = {
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")								
+				},
+				zombie = {
+					Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1")							
+				},							
+				murkywater = {
+					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")					
+				},
+				federales = {
+					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1")
+				},				
+				nypd = {
+					Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")							
+				},
+				lapd = {
+					Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")								
+				}					
+			},
+			access = access_type_all,
+			special_type = "tank"
+		}
+	elseif difficulty_index == 4 then
 		self.unit_categories.FBI_tank = {
 			unit_types = {
 				america = {
@@ -7660,7 +7688,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1")
-				},				
+				},						
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1")							
 				},
@@ -7670,7 +7698,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			},
 			access = access_type_all,
 			special_type = "tank"
-		}
+		}	
 	elseif difficulty_index == 5 then
 		self.unit_categories.FBI_tank = {
 			unit_types = {

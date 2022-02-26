@@ -305,7 +305,7 @@ function CopLogicTravel.action_complete_clbk(data, action)
 				local high_ray = CopLogicTravel._chk_cover_height(data, my_data.best_cover[1], data.visibility_slotmask)
 				my_data.best_cover[4] = high_ray
 				my_data.in_cover = true
-				local cover_wait_time = 4
+				local cover_wait_time = 5
 
 				my_data.cover_leave_t = data.t + cover_wait_time
 			else

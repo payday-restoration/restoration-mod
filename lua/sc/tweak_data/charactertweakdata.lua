@@ -763,7 +763,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat.weapon = presets.weapon.normal
 	self.swat.detection = presets.detection.normal
 	self.swat.HEALTH_INIT = 8
-	self.swat.headshot_dmg_mul = 3.5
+	self.swat.headshot_dmg_mul = 2
 	self.swat.move_speed = presets.move_speed.very_fast
 	self.swat.surrender_break_time = {6, 10}
 	self.swat.suppression = presets.suppression.hard_agg
@@ -807,6 +807,7 @@ function CharacterTweakData:_init_swat(presets)
 	
 	self.hrt = deep_clone(self.swat)
 	self.hrt.access = "fbi"
+	self.hrt.headshot_dmg_mul = 3.5
 	self.hrt.rescue_hostages = true
 	self.hrt.steal_loot = true	
 	table.insert(self._enemy_list, "hrt")
@@ -853,7 +854,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat.weapon = presets.weapon.normal
 	self.heavy_swat.detection = presets.detection.normal
 	self.heavy_swat.HEALTH_INIT = 13
-	self.heavy_swat.headshot_dmg_mul = 3.25
+	self.heavy_swat.headshot_dmg_mul = 2.2
 	self.heavy_swat.move_speed = presets.move_speed.fast
 	self.heavy_swat.surrender_break_time = {6, 8}
 	self.heavy_swat.suppression = presets.suppression.hard_agg
@@ -974,7 +975,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		}
 	}	
 	self.heavy_swat_sniper.HEALTH_INIT = 9
-	self.heavy_swat_sniper.headshot_dmg_mul = 3.4
+	self.heavy_swat_sniper.headshot_dmg_mul = 2.2
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = nil
 	self.heavy_swat_sniper.surrender = nil
@@ -1027,7 +1028,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.weekend_dmr.custom_voicework = "bravo_elite"
 	end	
 	self.weekend_dmr.HEALTH_INIT = 11.25
-	self.weekend_dmr.headshot_dmg_mul = 4.25  
+	self.weekend_dmr.headshot_dmg_mul = 2.75
 	self.weekend_dmr.heal_cooldown = 5
 	self.weekend_dmr.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_dmr")
@@ -1056,7 +1057,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.weapon = deep_clone(presets.weapon.good)
 	self.fbi_swat.detection = presets.detection.normal
 	self.fbi_swat.HEALTH_INIT = 15
-	self.fbi_swat.headshot_dmg_mul = 3
+	self.fbi_swat.headshot_dmg_mul = 2.2
 	self.fbi_swat.move_speed = presets.move_speed.very_fast
 	self.fbi_swat.surrender_break_time = {6, 10}
 	self.fbi_swat.suppression = presets.suppression.hard_def
@@ -1111,7 +1112,7 @@ function CharacterTweakData:_init_fbi_heavy_swat(presets)
 	self.fbi_heavy_swat.weapon = deep_clone(presets.weapon.normal)
 	self.fbi_heavy_swat.detection = presets.detection.normal
 	self.fbi_heavy_swat.HEALTH_INIT = 20
-	self.fbi_heavy_swat.headshot_dmg_mul = 2
+	self.fbi_heavy_swat.headshot_dmg_mul = 1.5
 	self.fbi_heavy_swat.damage.non_ap_damage_mul = 1
 	self.fbi_heavy_swat.move_speed = presets.move_speed.fast
 	self.fbi_heavy_swat.surrender_break_time = {6, 8}
@@ -1164,7 +1165,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.weapon = deep_clone(presets.weapon.expert)
 	self.city_swat.detection = presets.detection.normal
 	self.city_swat.HEALTH_INIT = 15
-	self.city_swat.headshot_dmg_mul = 3
+	self.city_swat.headshot_dmg_mul = 2.2
 	self.city_swat.move_speed = presets.move_speed.very_fast
 	self.city_swat.surrender_break_time = {6, 10}
 	self.city_swat.suppression = presets.suppression.hard_def
@@ -1223,7 +1224,7 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.weekend.custom_voicework = "bravo"
 	end	
 	self.weekend.HEALTH_INIT = 18.75
-	self.weekend.headshot_dmg_mul = 3.75		
+	self.weekend.headshot_dmg_mul = 2.75	
 	self.weekend.speech_prefix_p1 = "null"
 	self.weekend.speech_prefix_p2 = nil
 	self.weekend.speech_prefix_count = nil	
@@ -1243,9 +1244,9 @@ function CharacterTweakData:_init_city_swat(presets)
 		self.city_swat_titan.custom_voicework = "pdth"
 	end				
 	self.city_swat_titan.HEALTH_INIT = 22.5
-	self.city_swat_titan.headshot_dmg_mul = 3
+	self.city_swat_titan.headshot_dmg_mul = 2.2
 	self.city_swat_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
-	self.city_swat_titan.damage.bullet_damage_mul = 1.1
+	self.city_swat_titan.damage.bullet_damage_mul = 1
 	self.city_swat_titan.damage.explosion_damage_mul = 0.8		
 	self.city_swat_titan.use_animation_on_fire_damage = true
 	self.city_swat_titan.move_speed = presets.move_speed.fast
@@ -1280,7 +1281,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.speech_prefix_p2 = nil
 	self.weekend_lmg.speech_prefix_count = nil
 	self.weekend_lmg.HEALTH_INIT = 28.125
-	self.weekend_lmg.headshot_dmg_mul = 3.75		
+	self.weekend_lmg.headshot_dmg_mul = 2.75	
 	self.weekend_lmg.heal_cooldown = 3.75
 	self.weekend_lmg.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_lmg")

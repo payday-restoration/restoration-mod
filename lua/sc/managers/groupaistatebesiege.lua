@@ -245,6 +245,18 @@ Hooks:PostHook(GroupAIStateBesiege, "_end_regroup_task", "RR_end_regroup_task", 
 	self._had_hostages = self._hostage_headcount > 3
 end)
 
+function GroupAIStateBesiege:_begin_reenforce_task(reenforce_area)
+	local new_task = {
+		use_spawn_event = true,
+		target_area = reenforce_area,
+		start_t = self._t
+	}
+
+	table_insert(self._task_data.reenforce.tasks, new_task)
+
+	self._task_data.reenforce.active = true
+end
+
 -- Reduce the importance of spawn group distance in spawn group weight to encourage enemies spawning from more directions
 -- Also slightly optimized this function to properly check all areas
 function GroupAIStateBesiege:_find_spawn_group_near_area(target_area, allowed_groups, target_pos, max_dis, verify_clbk)
@@ -1141,7 +1153,7 @@ end
 
 function GroupAIStateBesiege:_voice_open_fire_start(group)
 	for u_key, unit_data in pairs(group.units) do
-		if unit_data.char_tweak.chatter.aggressive and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
+		if unit_data.char_tweak.chatter.open_fire and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
 			break
 		end
 	end

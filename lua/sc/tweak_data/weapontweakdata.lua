@@ -8726,9 +8726,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.fmg9.use_data.selection_index = 2
 	self.fmg9.kick = self.stat_info.kick_tables.left_recoil
 	self.fmg9.supported = true
+	self.fmg9.timers = {
+		reload_not_empty = 1.9,
+		reload_empty = 3.65,
+		unequip = 1.8,
+		equip = 1.4
+	}	
 	self.fmg9.stats = {
 		damage = 18,
-		spread = 17,
+		spread = 18,
 		recoil = 19,
 		spread_moving = 9,
 		zoom = 1,

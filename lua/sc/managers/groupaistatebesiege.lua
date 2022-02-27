@@ -137,7 +137,7 @@ function GroupAIStateBesiege:_upd_assault_task(...)
 	if task_data.phase ~= "fade" then
 		local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul)
 		local task_spawn_allowance = force_pool - (self._hunt_mode and 0 or task_data.force_spawned)
-		if task_data.phase == "anticipation" and task_spawn_allowance > 0 and (self._t > task_data.phase_end_t or self._drama_data.zone == "high") then
+		if task_data.phase == "anticipation" and task_spawn_allowance > 0 and (self._t > task_data.phase_end_t) then
 			self:_get_megaphone_sound_source():post_event("mga_generic_c")
 		end
 		

@@ -654,7 +654,7 @@ function CopActionShoot:update(t)
 					frag_cooldown = 12
 				end
 				
-				local frag_roll_chance = is_spring and 1 or 0.3
+				local frag_roll_chance = is_spring and 1 or 0.1
 				local frag_roll = math_random() <= frag_roll_chance	
 				local grenade_type = is_spring and "cluster_fuck" or "bravo_frag"
 									

@@ -237,7 +237,10 @@
 	<object				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_contour" />			
-	<cooked_physics		path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
+	<cooked_physics		path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
+
+	<unit				path="units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard" load="true"/>
+    <unit				path="units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk" load="true"/>
 			
     <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk" load="true"/>	

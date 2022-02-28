@@ -909,7 +909,7 @@ local federales_very_hard = {
 		["units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_mp9/ene_swat_shield_policia_federale_mp9"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
 		["units/pd2_dlc_bex/characters/ene_swat_shield_policia_federale_c45/ene_swat_shield_policia_federale_c45"] = "units/pd2_dlc_bex/characters/ene_shield_2/ene_shield_2",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper",	
+		["units/pd2_dlc_bex/characters/ene_swat_policia_sniper/ene_swat_policia_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		
 		--fbi swat
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_fbi/ene_swat_policia_federale_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
@@ -920,8 +920,8 @@ local federales_very_hard = {
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_policia_federale_fbi_r870/ene_swat_heavy_policia_federale_fbi_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
         --city swat
-		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
-		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2",
+		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
 		
 		--Scripted Murky Sniper and Secret Service Replacers 
@@ -1494,7 +1494,7 @@ local murkywater_deathwish = {
 		["units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
 		["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",	
-		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_omnia/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",
@@ -1558,7 +1558,7 @@ local murkywater_omnia = {
 		["units/pd2_dlc_des/characters/ene_murkywater_not_security_2/ene_murkywater_not_security_2"] = "units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2",	
 		["units/pd2_dlc_berry/characters/ene_murkywater_no_light/ene_murkywater_no_light"] = "units/pd2_mod_omnia/characters/ene_omnia_crew_2/ene_omnia_crew_2",	
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",	
-		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_omnia/characters/ene_murky_security_mp5/ene_murky_security_mp5",
+		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/pd2_mod_sharks/characters/ene_murky_security_c45/ene_murky_security_c45",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/pd2_mod_sharks/characters/ene_murky_security_mp5/ene_murky_security_mp5",
 		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/pd2_mod_sharks/characters/ene_murky_security_r870/ene_murky_security_r870",

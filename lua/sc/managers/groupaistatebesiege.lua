@@ -127,26 +127,91 @@ end
 
 -- Improve ending condition for assault fade
 -- The hardcoded amount of minimum enemies left was way too high and would lead to fade being instantly over after its minimum duration
-local _upd_assault_task_original = GroupAIStateBesiege._upd_assault_task
-function GroupAIStateBesiege:_upd_assault_task(...)
+function GroupAIStateBesiege:_upd_assault_task()
 	local task_data = self._task_data.assault
+
 	if not task_data.active then
 		return
 	end
 
-	if task_data.phase ~= "fade" then
-		local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul)
-		local task_spawn_allowance = force_pool - (self._hunt_mode and 0 or task_data.force_spawned)
-		if task_data.phase == "anticipation" and task_spawn_allowance > 0 and (self._t > task_data.phase_end_t or self._drama_data.zone == "high") then
-			self:_get_megaphone_sound_source():post_event("mga_generic_c")
-		end
-		
-		return _upd_assault_task_original(self, ...)
-	end
-
+	local t = self._t
+	
 	self:_assign_recon_groups_to_retire()
 
-	if not self._hunt_mode then
+	local force_pool = self:_get_difficulty_dependent_value(self._tweak_data.assault.force_pool) * self:_get_balancing_multiplier(self._tweak_data.assault.force_pool_balance_mul)
+	local task_spawn_allowance = force_pool - (self._hunt_mode and 0 or task_data.force_spawned)
+
+	if task_data.phase == "anticipation" then
+		if task_spawn_allowance <= 0 then
+			print("spawn_pool empty: -----------FADE-------------")
+
+			task_data.phase = "fade"
+			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
+		--Stops drama from skipping anticipation
+		elseif task_data.phase_end_t < t then
+			self._assault_number = self._assault_number + 1
+			
+			self:_get_megaphone_sound_source():post_event("mga_generic_c")
+
+			managers.mission:call_global_event("start_assault")
+			managers.hud:start_assault(self._assault_number)
+			managers.groupai:dispatch_event("start_assault", self._assault_number)
+			self:_set_rescue_state(false)
+
+			task_data.phase = "build"
+			task_data.phase_end_t = self._t + self._tweak_data.assault.build_duration
+			task_data.is_hesitating = nil
+
+			self:set_assault_mode(true)
+			managers.trade:set_trade_countdown(false)
+		else
+			managers.hud:check_anticipation_voice(task_data.phase_end_t - t)
+			managers.hud:check_start_anticipation_music(task_data.phase_end_t - t)
+
+			if task_data.is_hesitating and task_data.voice_delay < self._t then
+				if self._hostage_headcount > 0 then
+					local best_group = nil
+
+					for _, group in pairs(self._groups) do
+						if not best_group or group.objective.type == "reenforce_area" then
+							best_group = group
+						elseif best_group.objective.type ~= "reenforce_area" and group.objective.type ~= "retire" then
+							best_group = group
+						end
+					end
+
+					if best_group and self:_voice_delay_assault(best_group) then
+						task_data.is_hesitating = nil
+					end
+				else
+					task_data.is_hesitating = nil
+				end
+			end
+		end
+	elseif task_data.phase == "build" then
+		if task_spawn_allowance <= 0 then
+			task_data.phase = "fade"
+			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
+		elseif task_data.phase_end_t < t or self._drama_data.zone == "high" then
+			local sustain_duration = math.lerp(self:_get_difficulty_dependent_value(self._tweak_data.assault.sustain_duration_min), self:_get_difficulty_dependent_value(self._tweak_data.assault.sustain_duration_max), math.random()) * self:_get_balancing_multiplier(self._tweak_data.assault.sustain_duration_balance_mul)
+
+			managers.modifiers:run_func("OnEnterSustainPhase", sustain_duration)
+
+			task_data.phase = "sustain"
+			task_data.phase_end_t = t + sustain_duration
+		end
+	elseif task_data.phase == "sustain" then
+		local end_t = self:assault_phase_end_time()
+		task_spawn_allowance = managers.modifiers:modify_value("GroupAIStateBesiege:SustainSpawnAllowance", task_spawn_allowance, force_pool)
+
+		if task_spawn_allowance <= 0 then
+			task_data.phase = "fade"
+			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
+		elseif end_t < t and not self._hunt_mode then
+			task_data.phase = "fade"
+			task_data.phase_end_t = t + self._tweak_data.assault.fade_duration
+		end
+	else
 		local end_assault
 		local is_skirmish = managers.skirmish:is_skirmish()
 		local enemies_defeated_time_limit = is_skirmish and 0 or self._tweak_data.assault.fade_settings.enemies_defeated_time_limit or 30
@@ -220,6 +285,50 @@ function GroupAIStateBesiege:_upd_assault_task(...)
 		if nearest_area then
 			primary_target_area = nearest_area
 			task_data.target_areas[1] = nearest_area
+		end
+	end
+
+	local nr_wanted = task_data.force - self:_count_police_force("assault")
+
+	if task_data.phase == "anticipation" then
+		nr_wanted = nr_wanted - 5
+	end
+
+	if nr_wanted > 0 and task_data.phase ~= "fade" then
+		local used_event = nil
+
+		if task_data.use_spawn_event and task_data.phase ~= "anticipation" then
+			task_data.use_spawn_event = false
+
+			if self:_try_use_task_spawn_event(t, primary_target_area, "assault") then
+				used_event = true
+			end
+		end
+
+		if not used_event then
+			if next(self._spawning_groups) then
+				-- Nothing
+			else
+				local spawn_group, spawn_group_type = self:_find_spawn_group_near_area(primary_target_area, self._tweak_data.assault.groups, nil, nil, nil)
+
+				if spawn_group then
+					local grp_objective = {
+						attitude = "avoid",
+						stance = "hos",
+						pose = "crouch",
+						type = "assault_area",
+						area = spawn_group.area,
+						coarse_path = {
+							{
+								spawn_group.area.pos_nav_seg,
+								spawn_group.area.pos
+							}
+						}
+					}
+
+					self:_spawn_in_group(spawn_group, spawn_group_type, grp_objective, task_data)
+				end
+			end
 		end
 	end
 

@@ -1306,7 +1306,7 @@ end
 
 function GroupAIStateBesiege:_voice_friend_dead(group)
 	for u_key, unit_data in pairs(group.units) do
-		if unit_data.char_tweak.chatter and unit_data.char_tweak.chatter.enemyidlepanic and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "aggressive") then
+		if unit_data.char_tweak.chatter and unit_data.char_tweak.chatter.aggressive and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "aggressive") then
 			break
 		end
 	end

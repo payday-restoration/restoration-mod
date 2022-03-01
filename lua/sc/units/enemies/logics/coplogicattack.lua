@@ -124,31 +124,46 @@ Hooks:PreHook(CopLogicAttack, "action_complete_clbk", "RR_action_complete_clbk",
 	end
 end)
 
-Hooks:PostHook(CopLogicAttack, "aim_allow_fire", "RR_aim_allow_fire", function(shoot, aim, data, my_data)
-	if shoot and my_data.firing and not data.unit:in_slot(16) and not data.is_converted and data.char_tweak and data.char_tweak.chatter and data.char_tweak.chatter.aggressive then
-		if not data.unit:base():has_tag("special") then 
-			if data.unit:base():has_tag("law") and data.unit:base()._tweak_table ~= "gensec" and data.unit:base()._tweak_table ~= "security" then
-				if managers.groupai:state():chk_assault_active_atm() then
-					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "open_fire")
+function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data) -- doesn't really work as a posthook
+	local focus_enemy = data.attention_obj
+
+	if shoot then
+		if not my_data.firing then
+			data.unit:movement():set_allow_fire(true)
+
+			my_data.firing = true
+
+			local chatter = data.char_tweak.chatter
+			if not data.unit:in_slot(16) and not data.is_converted and chatter and chatter.aggressive then
+				if not data.unit:base():has_tag("special") then 
+					if data.unit:base():has_tag("law") and data.unit:base()._tweak_table ~= "gensec" and data.unit:base()._tweak_table ~= "security" then
+						if managers.groupai:state():chk_assault_active_atm() and chatter.open_fire then
+							managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "open_fire")
+						else
+							managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
+						end
+					end
+				elseif not data.unit:base():has_tag("tank") and data.unit:base():has_tag("medic") then
+					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
+				elseif data.unit:base():has_tag("shield") and (not my_data.shield_knock_cooldown or my_data.shield_knock_cooldown < data.t) then
+					if tweak_data:difficulty_to_index(Global.game_settings.difficulty) >= 8 then
+						data.unit:sound():play("hos_shield_indication_sound_terminator_style", nil, true)
+					else
+						data.unit:sound():play("shield_identification", nil, true)
+					end
+
+					my_data.shield_knock_cooldown = data.t + math_random(6, 12)
 				else
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "contact")
 				end
 			end
-		elseif not data.unit:base():has_tag("tank") and data.unit:base():has_tag("medic") then
-			managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
-		elseif data.unit:base():has_tag("shield") and (not my_data.shield_knock_cooldown or my_data.shield_knock_cooldown < data.t) then
-			if data.unit:base()._tweak_table == "phalanx_minion" or data.unit:base()._tweak_table == "phalanx_minion_assault" then
-				data.unit:sound():say("use_gas", true, nil, true)
-			else
-				data.unit:sound():play("shield_identification", nil, true)
-			end
-
-			my_data.shield_knock_cooldown = data.t + math_random(12, 24)
-		else
-			managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "contact")
 		end
+	elseif my_data.firing then
+		data.unit:movement():set_allow_fire(false)
+
+		my_data.firing = nil
 	end
-end)
+end
 
 Hooks:PostHook(CopLogicAttack, "_upd_aim", "RR_upd_aim", function(data)
 	local focus_enemy = data.attention_obj

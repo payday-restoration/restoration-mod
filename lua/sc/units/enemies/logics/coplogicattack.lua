@@ -146,13 +146,13 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data) -- doesn't rea
 				elseif not data.unit:base():has_tag("tank") and data.unit:base():has_tag("medic") then
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
 				elseif data.unit:base():has_tag("shield") and (not my_data.shield_knock_cooldown or my_data.shield_knock_cooldown < data.t) then
-					if tweak_data:difficulty_to_index(Global.game_settings.difficulty) >= 8 then
-						data.unit:sound():play("hos_shield_indication_sound_terminator_style", nil, true)
+					if data.unit:base()._tweak_table == "phalanx_minion" or data.unit:base()._tweak_table == "phalanx_minion_assault" then
+						data.unit:sound():say("use_gas", true, nil, true)
 					else
 						data.unit:sound():play("shield_identification", nil, true)
 					end
 
-					my_data.shield_knock_cooldown = data.t + math_random(6, 12)
+					my_data.shield_knock_cooldown = data.t + math_random(12, 24)
 				else
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "contact")
 				end

@@ -13,6 +13,40 @@ function DialogManager:queue_dialog(id, ...)
 			
 	if Global.game_settings and Global.game_settings.one_down then
 	
+		--Black Cat Fun Method--				
+		if id == "Play_loc_chca_79" then
+			if difficulty_index <= 2 then
+				escape_time = 1050
+			elseif difficulty_index == 3 then
+				escape_time = 1020
+			elseif difficulty_index == 4 then
+				escape_time = 990
+			elseif difficulty_index == 5 then
+				escape_time = 960	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 930					
+			else
+				escape_time = 900
+			end			
+		end	
+	
+		--Black Cat C4--				
+		if id == "Play_loc_chca_105" then
+			if difficulty_index <= 2 then
+				escape_time = 690
+			elseif difficulty_index == 3 then
+				escape_time = 660
+			elseif difficulty_index == 4 then
+				escape_time = 630
+			elseif difficulty_index == 5 then
+				escape_time = 600	
+			elseif difficulty_index == 6 or difficulty_index == 7 then
+				escape_time = 570						
+			else
+				escape_time = 540
+			end		
+		end	
+	
 		--Dragon Heist--				
 		if id == "Play_loc_chas_89" then
 			if difficulty_index <= 2 then
@@ -405,7 +439,7 @@ function DialogManager:queue_dialog(id, ...)
 		end		
 		
 		--Firestarter Day 1--
-		if id == "pln_fs1_11" then
+		if id == "pln_fs1_09" then
 			if difficulty_index <= 2 then
 				escape_time = 1200 
 			elseif difficulty_index == 3 then

@@ -1312,6 +1312,18 @@ function GroupAIStateBesiege:_voice_friend_dead(group)
 	end
 end
 
+function GroupAIStateBesiege:_voice_friend_dead_2(dead_unit)
+	local dead_unit_u_key = dead_unit:key()
+	local group = self._police[dead_unit_u_key] and self._police[dead_unit_u_key].group
+	if group then
+		for u_key, unit_data in pairs(group.units) do
+			if dead_unit_u_key ~= u_key and unit_data.char_tweak.chatter.aggressive and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "aggressive") then
+				break
+			end
+		end
+	end
+end
+
 --Disable vanilla captain spawning behavior.
 function GroupAIStateBesiege:_check_spawn_phalanx()
 	return

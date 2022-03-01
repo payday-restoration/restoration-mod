@@ -365,6 +365,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.cop.static_dodge_preset = true
 	self.cop.has_alarm_pager = false
 	self.cop.heal_cooldown = 2
+	self.cop.overheal_mult = 2
 	table.insert(self._enemy_list, "cop")
 	self.cop_scared = deep_clone(self.cop)
 	self.cop_scared.surrender = presets.surrender.always
@@ -462,6 +463,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.rescue_hostages = true
 	self.fbi.no_arrest = false
 	self.fbi.heal_cooldown = 2
+	self.fbi.overheal_mult = 2
 	table.insert(self._enemy_list, "fbi")
 	self.fbi_female = deep_clone(self.fbi)
 	self.fbi_female.speech_prefix_p1 = "fl"
@@ -635,6 +637,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
 	self.medic.is_special = true
+	self.medic.no_omnia_heal = true
 	table.insert(self._enemy_list, "medic")
 	
 	self.medic_summers = deep_clone(self.medic)
@@ -667,8 +670,9 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.use_radio = "dsp_radio_russian"
 	self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
 	self.medic_summers.is_special = true
-	self.medic_summers.do_summers_heal = true
+	self.medic_summers.do_omnia = true
 	self.medic_summers.follower = true
+	self.medic_summers.no_omnia_heal = true
 	table.insert(self._enemy_list, "medic_summers")
 end
 
@@ -733,7 +737,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.bot_priority_shout = "f47x_any"
 	self.omnia_lpf.tags = {"law", "medic", "lpf", "special", "customvo"}
 	self.omnia_lpf.do_omnia = true
-	self.omnia_lpf.do_aoe_heal = true
+	self.omnia_lpf.no_omnia_heal = true
 	self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
 	self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 	self.omnia_lpf.is_special = true
@@ -803,6 +807,7 @@ function CharacterTweakData:_init_swat(presets)
 	end		
 	self.swat.silent_priority_shout = "f37"
 	self.swat.heal_cooldown = 2.5
+	self.swat.overheal_mult = 2
 	table.insert(self._enemy_list, "swat")
 	
 	self.hrt = deep_clone(self.swat)
@@ -1413,6 +1418,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.unintimidateable = true
 	self.gangster.always_drop = true
 	self.gangster.heal_cooldown = 2
+	self.gangster.no_omnia_heal = true
 	table.insert(self._enemy_list, "gangster")
 end
 
@@ -1577,6 +1583,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.always_drop = true
 	self.mobster_boss.heal_cooldown = 45
 	self.mobster_boss.die_sound_event = "l1n_burndeath"
+	self.mobster_boss.no_omnia_heal = true
 	table.insert(self._enemy_list, "mobster_boss")
 end
 
@@ -1628,6 +1635,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.is_special = true
 	self.biker_boss.heal_cooldown = 45
 	self.biker_boss.die_sound_event = "f1n_x01a_any_3p"
+	self.biker_boss.no_omnia_heal = true
 	table.insert(self._enemy_list, "biker_boss")
 end
 
@@ -1716,6 +1724,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.always_drop = true
 	self.chavez_boss.heal_cooldown = 45
 	self.chavez_boss.die_sound_event = "l1n_burndeath"
+	self.chavez_boss.no_omnia_heal = true
 	table.insert(self._enemy_list, "chavez_boss")
 end
 
@@ -1830,6 +1839,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.is_special = true
 	self.drug_lord_boss.always_drop = true
 	self.drug_lord_boss.heal_cooldown = 45
+	self.drug_lord_boss.no_omnia_heal = true
 	self.drug_lord_boss.die_sound_event = "l1n_burndeath"
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
@@ -1871,6 +1881,7 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.immune_to_concussion = false
 	self.drug_lord_boss_stealth.always_drop = true
 	self.drug_lord_boss_stealth.heal_cooldown = 2
+	self.drug_lord_boss_stealth.no_omnia_heal = true
 	self.drug_lord_boss_stealth.die_sound_event = "l2n_x01a_any_3p"
 	table.insert(self._enemy_list, "drug_lord_boss_stealth")
 end
@@ -1973,6 +1984,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_medic.headshot_dmg_mul = 18.75
 	self.tank_medic.HEALTH_INIT = 400
 	self.tank_medic.is_special = true
+	self.tank_medic.no_omnia_heal = true
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
 	
@@ -2628,6 +2640,7 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.die_sound_event = "x02_any_3p"	
 	self.tank_biker.die_sound_event_2 = "l1n_burndeath"	
 	self.tank_biker.chatter = presets.enemy_chatter.swat
+	self.tank_biker.no_omnia_heal = true
 end
 
 function CharacterTweakData:_init_spooc(presets)
@@ -2954,7 +2967,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.ends_assault_on_death = true
-	self.phalanx_vip.do_winters_aoe_heal = true
+	self.phalanx_vip.do_omnia = true
 	self.phalanx_vip.suppression = nil
 	self.phalanx_vip.ecm_hurts = {}
 	self.phalanx_vip.is_special = true
@@ -2977,6 +2990,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 		heal_chatter_winters = true,
 		entrance = true
 	}		
+	self.phalanx_vip.no_omnia_heal = true
 	table.insert(self._enemy_list, "phalanx_vip")
 end
 
@@ -3032,6 +3046,7 @@ function CharacterTweakData:_init_spring(presets)
 	}
 	self.spring.static_dodge_preset = true
 	self.spring.is_special = true
+	self.spring.no_omnia_heal = true
 	table.insert(self._enemy_list, "spring")
 	
 	--Headless Titandozer Boss 
@@ -3043,6 +3058,7 @@ function CharacterTweakData:_init_spring(presets)
 	}
 	self.headless_hatman.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = true
+	self.headless_hatman.no_omnia_heal = true
 	table.insert(self._enemy_list, "headless_hatman")
 end
 
@@ -3121,6 +3137,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.steal_loot = nil
 	self.summers.is_special = true
 	self.summers.leader = {max_nr_followers = 3}
+	self.summers.no_omnia_heal = true
 	table.insert(self._enemy_list, "summers")
 end
 
@@ -3201,6 +3218,7 @@ function CharacterTweakData:_init_autumn(presets)
 		end
 	}
 	self.autumn.do_autumn_blackout = true --if true, deployables in a radius around this cop will be disabled
+	self.autumn.no_omnia_heal = true
 	table.insert(self._enemy_list, "autumn")
 end	
 
@@ -3313,6 +3331,7 @@ function CharacterTweakData:_init_taser(presets)
 		power = 1,
 		taunt = true
 	}
+	self.taser_summers.no_omnia_heal = true
 	table.insert(self._enemy_list, "taser_summers")
 	
 	self.taser_titan = deep_clone(self.taser)
@@ -3458,6 +3477,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.follower = true
 	self.boom_summers.ecm_vulnerability = 0
 	self.boom_summers.ecm_hurts = {}		
+	self.boom_summers.no_omnia_heal = true
 	table.insert(self._enemy_list, "boom_summers")		
 	
 	self.boom_titan = deep_clone(self.boom)
@@ -3491,6 +3511,7 @@ function CharacterTweakData:_init_inside_man(presets)
 	self.inside_man.chatter = presets.enemy_chatter.no_chatter
 	self.inside_man.melee_weapon = "baton"
 	self.inside_man.calls_in = nil
+	self.inside_man.no_omnia_heal = true
 end
 
 function CharacterTweakData:_init_civilian(presets)
@@ -3621,6 +3642,7 @@ function CharacterTweakData:_init_old_hoxton_mission(presets)
 	self.old_hoxton_mission.HEALTH_INIT = 20
 	self.old_hoxton_mission.headshot_dmg_mul = 1
 	self.old_hoxton_mission.move_speed = presets.move_speed.gang_member
+	self.old_hoxton_mission.no_omnia_heal = true
 	--Cause they don't like being told what to do
 	self.old_hoxton_mission.allowed_poses = {stand = true}
 	self.old_hoxton_mission.surrender_break_time = {6, 10}
@@ -3652,6 +3674,7 @@ function CharacterTweakData:_init_spa_vip(presets)
 	self.spa_vip.is_escort = true
 	self.spa_vip.escort_idle_talk = false
 	self.spa_vip.escort_scared_dist = 100
+	self.spa_vip.no_omnia_heal = true
 end
 
 function CharacterTweakData:_init_spa_vip_hurt(presets)
@@ -3663,6 +3686,7 @@ function CharacterTweakData:_init_spa_vip_hurt(presets)
 	self.spa_vip_hurt.challenges = {type = "civilians"}
 	self.spa_vip_hurt.calls_in = nil
 	self.spa_vip_hurt.ignores_aggression = true
+	self.spa_vip_hurt.no_omnia_heal = true
 end
 
 function CharacterTweakData:_init_russian(presets)
@@ -5038,6 +5062,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.damage.hurt_severity = presets.hurt_severities.base
 	presets.base.damage.death_severity = 0.5
 	presets.base.damage.explosion_damage_mul = 1
+	presets.base.overheal_mult = 1
 	presets.base.critical_hits = {
 		damage_mul = 2
 	}
@@ -24202,10 +24227,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.tank_hw.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
 		
 	self.autumn.damage.bullet_damage_mul = 0.4
-	
-	--Winters can now overheal ala LPF
-	self.phalanx_vip.do_omnia = true
-	
+		
 	--Titandozer changes
 	self.tank_titan.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_titan.weapon.is_lmg.FALLOFF = {

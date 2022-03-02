@@ -502,6 +502,7 @@
     </Options>
 	<!--///PACKAGES\\\-->	
 	<Package id="packages/scassets" file="addSC.xml" use_clbk="self:LoadSCAssets"/>
+	<Package id="packages/akanassets" file="addakan.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/miscassets" file="addMISC.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addbdu" file="addbdu.xml" use_clbk="self:DebugLoadAssets"/> 

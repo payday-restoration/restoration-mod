@@ -1630,7 +1630,7 @@ Hooks:PostHook(GroupAIStateBase, "on_enemy_unregistered", "sh_on_enemy_unregiste
 end)
 
 function GroupAIStateBase:is_nav_seg_safe(nav_seg)
-	for _, criminal_data in pairs(self._char_criminals) do
+	for _, criminal_data in pairs(self._criminals) do
 		if criminal_data.tracker:nav_segment() == nav_seg then
 			return false
 		end

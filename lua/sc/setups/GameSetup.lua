@@ -73,10 +73,12 @@ function GameSetup:load_packages()
 
         load_difficulty_package(diff_package)
 		PackageManager:load("packages/sm_wish")
+	--[[	
     elseif ai_type == r then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_russia" or "normal")
 
-        load_difficulty_package(diff_package)
+        load_difficulty_package(diff_package) 
+	]]--
     elseif ai_type == m then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_murkywater" or "normal")
 

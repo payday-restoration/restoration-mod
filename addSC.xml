@@ -248,6 +248,13 @@
 	<object				path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870/ene_akan_fbi_swat_dw_r870" force="true" />	
 	<object				path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" force="true" />	
 	<object				path="units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass" force="true" />
+	
+	<!--Cops for the Bomb: Forest heist-->
+	<unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest" load="true"/>
+    <unit				path="units/payday2/characters/ene_cop_1_forest/ene_cop_1_forest_husk" load="true"/>
+	
+	<unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest" load="true"/>
+    <unit				path="units/payday2/characters/ene_cop_2_forest/ene_cop_2_forest_husk" load="true"/>
 
 	
 	<!--Panic Room Bullet Impact Fixes-->		

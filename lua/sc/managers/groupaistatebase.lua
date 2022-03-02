@@ -1629,6 +1629,16 @@ Hooks:PostHook(GroupAIStateBase, "on_enemy_unregistered", "sh_on_enemy_unregiste
 	end
 end)
 
+function GroupAIStateBase:is_nav_seg_safe(nav_seg)
+	for _, criminal_data in pairs(self._char_criminals) do
+		if criminal_data.tracker:nav_segment() == nav_seg then
+			return false
+		end
+	end
+	
+	return true
+end
+
 -- Fix this function doing nothing
 function GroupAIStateBase:_merge_coarse_path_by_area(coarse_path)
 	local i_nav_seg = #coarse_path

@@ -904,13 +904,13 @@ function CopDamage:damage_bullet(attack_data)
 
 	attack_data.raw_damage = damage
 
-	--[[if attack_data.weapon_unit and weap_base.is_category and weap_base:is_category("saw") then
+	if attack_data.weapon_unit and weap_base.is_category and weap_base:is_category("saw") then
 		managers.groupai:state():_voice_saw() --THAT MADMAN HAS A FUCKIN' SAW
 	end
 
 	if attack_data.attacker_unit:base().sentry_gun and not self:is_friendly_fire(attack_data.attacker_unit) then
 		managers.groupai:state():_voice_sentry() --FUCKING SCI-FI ROBOT GUNS
-	end--]]
+	end
 
 	damage = math.clamp(damage, 0, self._HEALTH_INIT)
 	local damage_percent = math.ceil(damage / self._HEALTH_INIT_PRECENT)
@@ -3097,14 +3097,14 @@ function CopDamage:_on_damage_received(damage_info)
 	local attacker_unit = damage_info and damage_info.attacker_unit
 	if Network:is_server() and damage_info.result.type == "death" and alive(attacker_unit) and attacker_unit:base() then -- if this gets run on clients, don't do anything
 		local weapon_unit = attacker_unit.inventory and attacker_unit:inventory() and attacker_unit:inventory():equipped_unit()
-		if weapon_unit and weapon_unit:base():is_category("saw") then
-			managers.groupai:state():_voice_saw(self._unit)
+		--[[if weapon_unit and weapon_unit:base():is_category("saw") then
+			managers.groupai:state():_voice_saw
 		elseif attacker_unit:base().sentry_gun then
-			managers.groupai:state():_voice_sentry(self._unit)
-		elseif attacker_unit:base().is_tripmine then -- might not work since the tripmine might've been destroyed by now
-			managers.groupai:state():_voice_trip_mine(self._unit)
-		else
-			managers.groupai:state():_voice_friend_dead_2(self._unit)
+			managers.groupai:state():_voice_sentry
+		else]]--
+		if attacker_unit:base().is_tripmine then -- might not work since the tripmine might've been destroyed by now
+			managers.groupai:state():_voice_trip_mine
+
 		end
 	end
 	

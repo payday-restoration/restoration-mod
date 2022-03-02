@@ -1268,13 +1268,26 @@ function GroupAIStateBesiege:_voice_open_fire_start(group)
 	end
 end
 
-function GroupAIStateBesiege:_voice_saw(dead_unit)
-	local dead_unit_u_key = dead_unit:key()
-	local group = self._police[dead_unit_u_key] and self._police[dead_unit_u_key].group
-	if group then
-		for u_key, unit_data in pairs(group.units) do
-			if dead_unit_u_key ~= u_key and unit_data.char_tweak.chatter.saw and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "saw") then
-				break
+function GroupAIStateBesiege:_voice_saw()
+	for group_id, group in pairs(self._groups) do
+		for u_key, u_data in pairs(group.units) do
+			if u_data.char_tweak.chatter and u_data.char_tweak.chatter.saw then
+				self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "saw")
+			else
+				
+			end
+		end
+	end
+end
+
+
+function GroupAIStateBesiege:_voice_sentry()
+	for group_id, group in pairs(self._groups) do
+		for u_key, u_data in pairs(group.units) do
+			if u_data.char_tweak.chatter and u_data.char_tweak.chatter.sentry then
+				self:chk_say_enemy_chatter(u_data.unit, u_data.m_pos, "sentry")
+			else
+				
 			end
 		end
 	end
@@ -1292,7 +1305,19 @@ function GroupAIStateBesiege:_voice_trip_mine(dead_unit)
 	end
 end
 
-function GroupAIStateBesiege:_voice_sentry(dead_unit)
+--[[function GroupAIStateBesiege:_voice_saw(dead_unit)
+	local dead_unit_u_key = dead_unit:key()
+	local group = self._police[dead_unit_u_key] and self._police[dead_unit_u_key].group
+	if group then
+		for u_key, unit_data in pairs(group.units) do
+			if dead_unit_u_key ~= u_key and unit_data.char_tweak.chatter.saw and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "saw") then
+				break
+			end
+		end
+	end
+end]]--
+
+--[[function GroupAIStateBesiege:_voice_sentry(dead_unit)
 	local dead_unit_u_key = dead_unit:key()
 	local group = self._police[dead_unit_u_key] and self._police[dead_unit_u_key].group
 	if group then
@@ -1302,7 +1327,7 @@ function GroupAIStateBesiege:_voice_sentry(dead_unit)
 			end
 		end
 	end
-end
+end]]--
 
 function GroupAIStateBesiege:_voice_friend_dead(group)
 	for u_key, unit_data in pairs(group.units) do

@@ -303,7 +303,7 @@ function GroupAITweakData:_init_chatter_data()
 		radius = 2000,
 		max_nr = 10,
 		duration = {2, 4},
-		interval = {4, 10},
+		interval = {1, 1},
 		group_min = 0,
 		queue = "ch4"
 	}
@@ -319,7 +319,7 @@ function GroupAITweakData:_init_chatter_data()
 		radius = 2000,
 		max_nr = 10,
 		duration = {2, 4},
-		interval = {4, 10},
+		interval = {1, 1},
 		group_min = 0,
 		queue = "ch2"
 	}

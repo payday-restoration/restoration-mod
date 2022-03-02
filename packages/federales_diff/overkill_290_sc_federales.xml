@@ -24,7 +24,7 @@
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_heads_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_helmets_df" />
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body_nm" />
-	<texture			path="units/pd2_dlc_bex/characters/ene_swat_tazer_policia_federale/ene_tazer_1_policia_federale_body_df" />
+	<texture			path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1_policia_federale_body_df" />
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/swat_city_df" />	
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df" force="false"/>
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op" force="false"/>	

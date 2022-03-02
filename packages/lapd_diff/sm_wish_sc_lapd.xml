@@ -113,7 +113,8 @@
 	
 	<!--textures-->			
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
-		
+			
+	
 	<!--Zeal Riot Shield-->
 	<model				path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/shield_il" />	 <!--Thanks Wekk-->	
@@ -170,6 +171,7 @@
 
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_df" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_nm" />	
+	
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_nm" />	
 
@@ -226,9 +228,9 @@
 	<!--Jarey_ zeals shit below-->
 	<!--GREEN-->
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/bulldozer_2_df" />	
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" />
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" />	
-	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" />	
+	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>
+	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>	
+	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2" force="true"/>	
 	
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" load="false"/>
 	<model				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_greendozer_neck/ene_acc_bulldozer_neck" force="false"/>
@@ -258,9 +260,9 @@
 
 	<!--BLACK-->
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/bulldozer_3_df" />	
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" />	
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" />	
-	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" />		
+	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>	
+	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>	
+	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3" force="true"/>		
 	
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" load="false"/>
 	<model				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_neck/ene_acc_bulldozer_neck" force="false"/>
@@ -289,12 +291,12 @@
 	<cooked_physics		path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_blackdozer_stomache/ene_acc_bulldozer_stomache" force="false"/>	
 
 	<!--SKULL-->
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" />	
+	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/bulldozer_df" />	
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" />	
-	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" />
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" />	
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_contour" />	
+	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>	
+	<sequence_manager	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>
+	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer" force="true"/>	
+	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer_contour" force="true"/>	
 
 	<!-- NEW BENELLI DOZER-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" load="true"/>
@@ -308,20 +310,20 @@
 	<df_nm				path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas" />	
 	
 	<!--shield-->
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" />	
+    <model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	
 	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_df" />	
 	
 	<!--zeal taser-->
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" />
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"  load="true"/>
-	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_husk"  load="true"/>
-	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" />	
-	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_df" />	
-	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df" />	
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" />
-	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_contour" />	
+	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>
+	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer"  force="true" load="true"/>
+	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_husk"  force="true" load="true"/>
+	<object				path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>	
+	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_df" force="true"/>	
+	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_head_df" force="true"/>	
+	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" force="true"/>
+	<material_config	path="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_contour" force="true"/>	
 
 	<!--zeal grenadier-->
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_grenadier_1/ene_grenadier_1" load="true"/>
@@ -359,8 +361,8 @@
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_cloaker/zeal_cloaker_head_df" />	
 
 	<!-- i was too lazy to map this to the hrt acc Xd-->
-	<object				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" />	
-	<model				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" />	
+	<object				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>	
+	<model				path="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet/ene_acc_zeal_swat_helmet" force="true"/>	
 	
 	<!--FTSU Guards -->	
 	<unit				path="units/payday2/characters/ene_city_guard_1/ene_city_guard_1" load="true" />
@@ -434,14 +436,15 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
 	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_sniper_head_il" force="false"/>		
+	
 	<!--gnarly ass titan sniper hat-->
 	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false" load="true"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>	
-
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_sniper_head_il" force="false"/>			
+	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/helmets_snp_df" force="false"/>	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_phalanx_snp_df" force="false"/>		
 	
@@ -480,19 +483,18 @@
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_taser_df" force="false"/>		
 
-	<!--LAPD vet 1-->	
-	<object				path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"/>
-	<cooked_physics		path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"/>
-	<model				path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"/>
-	<unit				path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1" load="true"/>
-	<material_config	path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1"/>
-	<material_config	path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1_contour"/>
-	<unit				path="units/pd2_mod_lapd/characters/ene_lapd_veteran_cop_1/ene_lapd_veteran_cop_1_husk" load="true"/>		
-
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_nm" force="false"/>
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_1_df" force="false"/>
-	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_head_df" force="false"/>
+	<!--Veteran Cop-->	
+	<object				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<cooked_physics		path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<model				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<unit				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false" load="true"/>
+	<unit				path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_husk" force="false" load="true"/>
+	<material_config	path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1" force="false"/>
+	<material_config	path="units/payday2/characters/ene_veteran_cop_1/ene_veteran_cop_1_contour" force="false"/>
 	
+	<texture			path="units/payday2/characters/shared_textures/veteran_cop_df" force="false"/>
+	<texture			path="units/payday2/characters/shared_textures/veteran_cop_nm" force="false"/>
+
 	<!--Dozer Zeal helm-->
 	<cooked_physics		path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>
 	<model				path="units/pd2_dlc_xm20/characters/ene_acc_dozer_zeal_santa_hat_sc/ene_acc_dozer_zeal_santa_hat_sc"/>

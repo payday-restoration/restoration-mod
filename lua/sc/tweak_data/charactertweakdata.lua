@@ -414,6 +414,7 @@ function CharacterTweakData:_init_cop(presets)
 	self.dave.speech_prefix_p1 = "fuckyou"
 	self.dave.speech_prefix_count = nil   
 	self.dave.heal_cooldown = 10
+	self.dave.overheal_mult = 1
 end
 
 function CharacterTweakData:_init_fbi(presets)
@@ -516,6 +517,7 @@ function CharacterTweakData:_init_fbi(presets)
 		self.fbi_vet.speech_prefix_count = nil	
 	end
 	self.fbi_vet.heal_cooldown = 2
+	self.fbi_vet.overheal_mult = 1
 	table.insert(self._enemy_list, "fbi_vet")	
 
 	self.fbi_vet_boss = deep_clone(self.fbi_vet)
@@ -831,8 +833,10 @@ function CharacterTweakData:_init_swat(presets)
 	self.swat_titan.custom_voicework = nil
 	self.swat_titan.static_dodge_preset = true
 	self.swat_titan.heal_cooldown = 3.75
+	self.swat_titan.overheal_mult = 1
 	self.swat_titan.rescue_hostages = true
 	self.swat_titan.steal_loot = true		
+	self.swat_titan.do_asu = true
 	table.insert(self._enemy_list, "swat_titan")
 end
 
@@ -1357,6 +1361,7 @@ end
 
 function CharacterTweakData:_init_gangster(presets)
 	self.gangster = deep_clone(presets.base)
+	self.gangster.tags = {"gangster"}
 	self.gangster.experience = {}
 	self.gangster.weapon = presets.weapon.normal
 	self.gangster.detection = presets.detection.normal
@@ -1385,6 +1390,7 @@ function CharacterTweakData:_init_gangster(presets)
 		self.gangster.speech_prefix_count = 2
 	elseif job == "man" then	
 		self.gangster.speech_prefix_p1 = self._prefix_data_p1.cop()
+		self.gangster.tags = {"law"}
 		self.gangster.HEALTH_INIT = 4
 		self.gangster.speech_prefix_p2 = "n"
 		self.gangster.speech_prefix_count = 4	
@@ -1424,6 +1430,7 @@ end
 
 function CharacterTweakData:_init_biker(presets)
 	self.biker = deep_clone(self.gangster)
+	self.biker.tags = {"gangster"}
 	if job == "mex" then
 		self.biker.access = "security"
 	else
@@ -1479,6 +1486,7 @@ end
 
 function CharacterTweakData:_init_triad(presets)
 	self.triad = deep_clone(self.gangster)
+	self.triad.tags = {"gangster"}
 	self.triad.access = "gangster"
 	self.triad.calls_in = true
 	self.triad.die_sound_event = "l2n_x01a_any_3p"
@@ -1515,6 +1523,7 @@ end
 
 function CharacterTweakData:_init_mobster(presets)
 	self.mobster = deep_clone(self.gangster)
+	self.mobster.tags = {"gangster"}
 	self.mobster.calls_in = true
 	self.mobster.melee_weapon = "fists"
 	self.mobster.HEALTH_INIT = 4

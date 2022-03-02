@@ -136,13 +136,20 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data) -- doesn't rea
 			local chatter = data.char_tweak.chatter
 			if not data.unit:in_slot(16) and not data.is_converted and chatter and chatter.aggressive then
 				if not data.unit:base():has_tag("special") then 
-					if data.unit:base():has_tag("law") and data.unit:base()._tweak_table ~= "gensec" and data.unit:base()._tweak_table ~= "security" then
-						if managers.groupai:state():chk_assault_active_atm() and chatter.open_fire then
-							managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "open_fire")
+					if data.unit:base():has_tag("law") then
+						if data.unit:base()._tweak_table == "gensec" or data.unit:base()._tweak_table == "security" or data.unit:base()._tweak_table == "city_swat_guard" then
+							--HE'S GOT A GUN
+							data.unit:sound():say("a01", true)
 						else
-							managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
+							if managers.groupai:state():chk_assault_active_atm() and chatter.open_fire then
+								managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "open_fire")
+							else
+								managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
+							end
 						end
 					end
+				elseif data.unit:base():has_tag("gangster") then
+					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
 				elseif not data.unit:base():has_tag("tank") and data.unit:base():has_tag("medic") then
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "aggressive")
 				elseif data.unit:base():has_tag("shield") and (not my_data.shield_knock_cooldown or my_data.shield_knock_cooldown < data.t) then
@@ -153,6 +160,8 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data) -- doesn't rea
 					end
 
 					my_data.shield_knock_cooldown = data.t + math_random(12, 24)
+				elseif data.unit:base()._tweak_table == "spring" or data.unit:base()._tweak_table == "phalanx_vip" then
+					data.unit:sound():say("a05", true)
 				else
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "contact")
 				end

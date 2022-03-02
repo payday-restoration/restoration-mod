@@ -31,6 +31,13 @@
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal_husk" load="true"/>
 	
+	<!--Akan Snipers-->
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_sniper_svd_snp/ene_akan_fbi_sniper_svd_snp" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_sniper_svd_snp/ene_akan_fbi_sniper_svd_snp_husk" force="false" load="true"/>
+	
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_sniper_dw_svd_snp/ene_akan_fbi_sniper_dw_svd_snp" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_sniper_dw_svd_snp/ene_akan_fbi_sniper_dw_svd_snp_husk" force="false" load="true"/>
+	
 	<!--Akan Gensec Tan-->
 	<object				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
@@ -81,6 +88,9 @@
 
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2_husk" force="false" load="true"/>
+	
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3_husk" force="false" load="true"/>
 
 	<!--Akan Shield Acc Small-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" load="false"/>

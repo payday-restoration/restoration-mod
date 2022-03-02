@@ -2336,14 +2336,6 @@ function CopDamage:damage_simple(attack_data)
 		return
 	end
 
-	if attack_data.variant == "graze" then
-		local has_surrendered = self._unit:brain().surrendered and self._unit:brain():surrendered() or self._unit:anim_data().surrender or self._unit:anim_data().hands_back or self._unit:anim_data().hands_tied
-
-		if has_surrendered then
-			return
-		end
-	end
-
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 	local result = nil
 	local damage = attack_data.damage

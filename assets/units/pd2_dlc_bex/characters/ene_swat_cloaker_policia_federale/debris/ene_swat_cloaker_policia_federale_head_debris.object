@@ -1,5 +1,5 @@
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale_sc/ene_swat_cloaker_policia_federale_sc" orientation_object="rp_ene_spook_head_debris" />
+	<diesel materials="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1" orientation_object="rp_ene_spook_head_debris" />
 	<bodies>
 		<body name="body_c_sphere" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">
 			<object name="rp_ene_spook_head_debris" />

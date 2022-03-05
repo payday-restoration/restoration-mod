@@ -73,12 +73,12 @@ function GameSetup:load_packages()
 
         load_difficulty_package(diff_package)
 		PackageManager:load("packages/sm_wish")
-	--[[	
+	
     elseif ai_type == r then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_russia" or "normal")
 
         load_difficulty_package(diff_package) 
-	]]--
+
     elseif ai_type == m then
 		local diff_package = "packages/" .. (Global.game_settings and Global.game_settings.difficulty .. "_sc_murkywater" or "normal")
 
@@ -119,14 +119,15 @@ function GameSetup:load_packages()
             "levels/narratives/bain/hvh/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
+	--[[	
     elseif ai_type == r then
         faction_package = {
             "packages/lvl_mad",
 			"levels/narratives/elephant/mad/world_sounds"
         }
         table.insert(self._loaded_faction_packages, faction_package)
+	]]--	
     end
-
     if faction_package then
         if type(faction_package) == "table" then
             self._loaded_faction_packages = faction_package

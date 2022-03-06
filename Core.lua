@@ -21,7 +21,9 @@ function restoration:Init()
 		"election_day_3_skip2", --Election Day 3 (Skipped 2)
 		"firestarter_2", --firestarter day 2
 		"four_stores", --Gee, I wonder what this could be.
+		"hox_3", --hoxton revenge
 		"moon", --Stealing Xmas
+		"born", --biker heist day 1
 		"mus",	--the diamond
 		"red2", --first world bank
 		"gallery", --art gallery
@@ -48,6 +50,7 @@ function restoration:Init()
 		"xmn_hox_2", --Hoxout Day 2, christmas
 		"firestarter_1", --firestarter day 1
 		"arm_for",	--train heist
+		"kenaz", --golden grin casino 
 		"big", --big bank
 		"dinner", --Slaughterhouse
 		--custom heists		
@@ -68,6 +71,7 @@ function restoration:Init()
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
 		"lvl_fourmorestores", --four more stores
+		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
 	}
@@ -103,11 +107,13 @@ function restoration:Init()
 			"firestarter_1", --firestarter day 1
 			"arm_for",	--train heist
 			"big", --big bank
+			"kenaz", --golden grin casino 
 			"dinner", --Slaughterhouse
 			"branchbank", --Gets Branchbank from Autumn		
 			"help", --Prison Nightmare			
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
+			"tj_htsb", --Gets Southern Branchbank from Autumn
 			"lvl_friday" --Crashing Capitol
 		}		
 	

@@ -435,19 +435,18 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.mallcrasher.ghost_bonus = 0.05
 	
 	--///REAPER LEVELS\\\--
-	self.mad.package = {"packages/akanassets", "packages/lvl_mad"}
 	self.mad.player_style = "winter_suit"
 	--We're never actually told where the forest is ;)
-	self.pines.package = {"packages/narr_pines", "packages/akanassets", "packages/lvl_mad"}
+	self.pines.package = {"packages/narr_pines", "packages/lvl_mad"}
 	self.pines.player_style = "loud_suit"
 	self.pines.ai_group_type = russia	
 	
 	--Bomb: Forest--
-	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/akanassets", "packages/lvl_mad"}
+	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/lvl_mad"}
 	self.crojob3.ai_group_type = russia			
 	self.crojob3.player_style = "loud_suit"
 
-	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/akanassets", "packages/lvl_mad"}
+	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/lvl_mad"}
 	self.crojob3_night.ai_group_type = russia				
 	self.crojob3_night.player_style = "loud_suit"		
 	

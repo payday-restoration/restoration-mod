@@ -502,7 +502,6 @@
     </Options>
 	<!--///PACKAGES\\\-->	
 	<Package id="packages/scassets" file="addSC.xml" use_clbk="self:LoadSCAssets"/>
-	<Package id="packages/akanassets" file="addakan.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/miscassets" file="addMISC.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/outfitassets" file="addoutfit.xml" use_clbk="self:DebugLoadAssets"/>
 	<Package id="packages/addbdu" file="addbdu.xml" use_clbk="self:DebugLoadAssets"/> 
@@ -552,6 +551,15 @@
     <Package id="packages/easy_wish_sc_zombie" file="packages/zombie_diff/easy_wish_sc_zombie.xml"/>
     <Package id="packages/overkill_290_sc_zombie" file="packages/zombie_diff/overkill_290_sc_zombie.xml"/>
     <Package id="packages/sm_wish_sc_zombie" file="packages/zombie_diff/sm_wish_sc_zombie.xml"/>
+	
+	<!--///DIFF PACKAGES REAPERS\\\-->
+    <Package id="packages/normal_sc_russia" file="packages/russia_diff/normal_sc_russia.xml"/>
+    <Package id="packages/hard_sc_russia" file="packages/russia_diff/hard_sc_russia.xml"/>
+    <Package id="packages/overkill_sc_russia" file="packages/russia_diff/overkill_sc_russia.xml"/>
+    <Package id="packages/overkill_145_sc_russia" file="packages/russia_diff/overkill_145_sc_russia.xml"/>
+    <Package id="packages/easy_wish_sc_russia" file="packages/russia_diff/easy_wish_sc_russia.xml"/>
+    <Package id="packages/overkill_290_sc_russia" file="packages/russia_diff/overkill_290_sc_russia.xml"/>
+    <Package id="packages/sm_wish_sc_russia" file="packages/russia_diff/sm_wish_sc_russia.xml"/>
 
     <!-- ///DIFF PACKAGES NYPD\\\ -->
     <Package id="packages/normal_sc_nypd" file="packages/nypd_diff/normal_sc_nypd.xml"/>

@@ -385,7 +385,7 @@
 	<df_nm				path="units/pd2_dlc_gitgud/characters/shared_textures/dozers_head_atlas" />	
 	
 	<!--shield-->
-	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" />	
+	<model				path="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield" force="true"/>	
 	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_head_df" />	
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_df" />	

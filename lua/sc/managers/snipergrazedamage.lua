@@ -64,13 +64,20 @@ function SniperGrazeDamage:find_closest_hit(hit, ignored_enemies, upgrade_value,
 	local closest_d_sq
 	for _, unit in ipairs(hit_units) do
 		if not ignored_enemies[unit:key()] then
-		local d_s = mvector3.distance_sq(hit.position, unit:movement():m_head_pos())
-		if not closest_d_sq or d_s < closest_d_sq then
-			if not World:raycast("ray", hit.position, unit:movement():m_head_pos(), "slot_mask", geometry_mask) then
-			closest = unit
-			closest_d_sq = d_s
+			local unit_brain = unit.brain and unit:brain()
+			local unit_anim = unit.anim_data and unit:anim_data()
+			local is_surrendered = (unit_brain and unit_brain.surrendered and unit_brain:surrendered())
+				or (unit_anim and (unit_anim.surrender or unit_anim.hands_back or unit_anim.hands_tied))
+
+			if not is_surrendered then
+				local d_s = mvector3.distance_sq(hit.position, unit:movement():m_head_pos())
+				if not closest_d_sq or d_s < closest_d_sq then
+					if not World:raycast("ray", hit.position, unit:movement():m_head_pos(), "slot_mask", geometry_mask) then
+					closest = unit
+					closest_d_sq = d_s
+					end
+				end
 			end
-		end
 		end
 	end
 	if closest then

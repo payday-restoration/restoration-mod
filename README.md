@@ -97,7 +97,9 @@ easterunit100: creating the code for enemies commenting on certain deployables
 
 Marcel Kamisso: For the multicam used on Murky units
 
-RedFlame: Fixed some iffy scripting for Framing Frame D3
+RedFlame: Fixed some iffy scripting for Framing Frame D3, overall improvements and fixes to AI logics and other issues. 
+
+SonicSoapyBoi: Assisted with debugging, testing, and fixes. 
 
 Dorpenka: Updated Combat Harness viewmodel, chromatic aberration and civilian kill line fixes
 

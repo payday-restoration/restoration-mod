@@ -10,7 +10,8 @@ function SkirmishTweakData:_init_special_unit_spawn_limits()
 			medic = 3,
 			spring = 1,
 			autumn = 1,
-			summers = 1
+			summers = 1,
+			phalanx_vip = 1
 		}
 	}
 end
@@ -151,18 +152,18 @@ function SkirmishTweakData:_init_wave_phase_durations(tweak_data)
 
 	--Temp
 	skirmish_data.assault.force = {
-		10,
-		10,
-		11,
-		12,
-		13,
-		14,
+		15,
 		15,
 		16,
+		16,
+		17,
 		17,
 		18,
+		18,
+		19,
+		19,
 		20,
-		30
+		20
 	}
 
 	skirmish_data.recon.force = {

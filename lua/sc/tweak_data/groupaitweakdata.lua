@@ -8721,7 +8721,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			}				
 		},
 		access = access_type_all,
-		special_type = "shield",
+		special_type = "phalanx_vip",
 		is_captain = true
 	}
 	--New Winters
@@ -17318,8 +17318,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
 			10,
-			13,
-			16
+			12,
+			14
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17342,8 +17342,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
 			10,
-			13,
-			16
+			12,
+			14
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17365,9 +17365,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
-			13,
-			16,
-			19
+			12,
+			14,
+			16
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17389,9 +17389,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
-			13,
-			16,
-			19
+			12,
+			14,
+			16
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17413,9 +17413,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
-			15,
-			18,
-			21
+			14,
+			16,
+			18
 		}
 		self.besiege.assault.force_pool = {
 			90,
@@ -17437,9 +17437,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
-			15,
-			18,
-			21
+			14,
+			16,
+			18
 		}
 		self.besiege.assault.force_pool = {
 			90,
@@ -17461,9 +17461,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	else
 		self.besiege.assault.force = {
+			16,
 			18,
-			21,
-			24
+			20
 		}
 		self.besiege.assault.force_pool = {
 			105,
@@ -18053,9 +18053,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		end
 	end		
 	self.besiege.reenforce.interval = {
+		20,
 		15,
-		10,
-		5
+		10
 	}
 	if difficulty_index <= 2 then
 		self.besiege.reenforce.groups = {

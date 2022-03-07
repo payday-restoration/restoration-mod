@@ -258,6 +258,8 @@
 	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	
+	<texture			path="units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_dozer_policia_federale_body_grey_df" />	
+	
 	<!--benellidozer-->
 	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />

@@ -22,6 +22,23 @@
 	<!--nypd textures-->			
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />	
 	
+	<!--NYPD FBI/HRTs-->
+	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	
+	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3_husk" load="true"/>					
+	<object				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3"	force="true"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" force="false"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3_contour" force="false"/>
+
+	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" load="true"/>	
+	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_husk" load="true"/>					
+	<object				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
+	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
+	<model				path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2"	force="false"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2" force="false"/>
+	<material_config	path="units/pd2_mod_nypd/characters/ene_fbi_2/ene_fbi_2_contour" force="false"/>
+	
 	<!--NYPD cop 1-->
 	<object				path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_cop_1/ene_cop_1"/>

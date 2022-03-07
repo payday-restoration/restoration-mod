@@ -77,7 +77,7 @@ Porky da Corgi: creating the base textures for the grenadier and OMNIA Light
 
 Wekk: Telling us what LPF should mean and allowing us to implement "Less Clones, More Face Variations" mod and "Zeal Shield Illumination Fix" into the mod.
 
-Hoppip: Created the Mind Blown graze rework.
+Hoppip: Created the Mind Blown graze rework, and the Streamlined Heisting framework. 
 
 Baddy: Major asset contributions.
 
@@ -97,7 +97,7 @@ easterunit100: creating the code for enemies commenting on certain deployables
 
 Marcel Kamisso: For the multicam used on Murky units
 
-RedFlame: Fixed some iffy scripting for Framing Frame D3, overall improvements and fixes to AI logics and other issues. 
+RedFlame: Fixed some iffy scripting for Framing Frame D3, Spawn delay fix, overall improvements and fixes to AI logics and other issues. 
 
 SonicSoapyBoi: Assisted with debugging, testing, and fixes. 
 

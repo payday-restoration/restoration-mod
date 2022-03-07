@@ -1091,6 +1091,7 @@ function CharacterTweakData:_init_fbi_swat(presets)
 	self.fbi_swat.static_dodge_preset = true
 	self.fbi_swat.static_melee_preset = true
 	self.fbi_swat.heal_cooldown = 2.5
+	self.fbi_swat.overheal_mult = 1.5
 	table.insert(self._enemy_list, "fbi_swat")
 	
 	self.fbi_swat_vet = deep_clone(self.fbi_swat)
@@ -1210,6 +1211,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat.static_melee_preset = true	
 	self.city_swat.custom_voicework = nil
 	self.city_swat.heal_cooldown = 2.5
+	self.city_swat.overheal_mult = 1.5
 	table.insert(self._enemy_list, "city_swat")
 	
 	--Guard variant, different entry type as a failsafe
@@ -1266,6 +1268,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_titan.static_dodge_preset = true
 	self.city_swat_titan.static_melee_preset = true	
 	self.city_swat_titan.heal_cooldown = 3.75
+	self.city_swat_titan.overheal_mult = 1.25
 	table.insert(self._enemy_list, "city_swat_titan")
 	
 	self.city_swat_titan_assault = deep_clone(self.city_swat_titan)
@@ -1379,6 +1382,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.no_retreat = true
 	self.gangster.weapon_voice = "3"
 	self.gangster.experience.cable_tie = "tie_swat"
+	self.gangster.no_omnia_heal = true
 	self.gangster.use_radio = nil		
 	if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
 		self.gangster.speech_prefix_p1 = "rt"
@@ -1396,7 +1400,8 @@ function CharacterTweakData:_init_gangster(presets)
 		self.gangster.speech_prefix_count = 4	
 		self.gangster.no_arrest = false
 		self.gangster.rescue_hostages = true
-		self.gangster.use_radio = self._default_chatter				
+		self.gangster.use_radio = self._default_chatter	
+		self.gangster.no_omnia_heal = false		
 	else
 		self.gangster.speech_prefix_p1 = "lt"
 		self.gangster.speech_prefix_p2 = nil
@@ -1424,7 +1429,6 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.unintimidateable = true
 	self.gangster.always_drop = true
 	self.gangster.heal_cooldown = 2
-	self.gangster.no_omnia_heal = true
 	table.insert(self._enemy_list, "gangster")
 end
 
@@ -3257,7 +3261,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.weapon.is_rifle.tase_sphere_cast_radius = 30
 	self.taser.detection = presets.detection.normal
 	self.taser.HEALTH_INIT = 30
-	self.taser.headshot_dmg_mul = 2.2
+	self.taser.headshot_dmg_mul = 1.5
 	self.taser.move_speed = presets.move_speed.fast
 	self.taser.no_retreat = true
 	self.taser.no_arrest = true
@@ -3407,7 +3411,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom.use_animation_on_fire_damage = true
 	self.boom.damage.explosion_damage_mul = 0.5
 	self.boom.damage.hurt_severity = presets.hurt_severities.boom
-	self.boom.headshot_dmg_mul = 2.2
+	self.boom.headshot_dmg_mul = 1.5
 	self.boom.bag_dmg_mul = 6
 	self.boom.move_speed = presets.move_speed.fast
 	self.boom.no_retreat = true

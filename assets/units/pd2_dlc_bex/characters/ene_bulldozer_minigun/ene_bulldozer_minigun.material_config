@@ -11,6 +11,18 @@
         <bump_normal_texture file="units/pd2_dlc_bex/characters/ene_swat_dozer_policia_federale_m249/ene_dozer_policia_federale_body_nm" mip="4"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_dozer_policia_federale_body_minigun_df" mip="4"/>
     </material>
+	<material name="mtr_head" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_nm"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_df"/>
+	</material>
+	<material name="mtr_head_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_nm" mip="1"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_df" mip="1"/>
+	</material>
+	<material name="mtr_head_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+        <bump_normal_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_nm" mip="4"/>
+        <diffuse_texture file="units/pd2_mod_bravo/characters/shared_textures/heads_atlas_mex_df" mip="4"/>
+	</material>	
     <material name="mtr_glass" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:SKINNED_3WEIGHTS" version="2">
 	    <reflection_texture type="cubemap" global_texture="current_global_texture"/>
         <opacity_texture file="units/glass/vehicle_glass_dark2_op"/>

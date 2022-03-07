@@ -18,39 +18,45 @@
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
 
-    <material name="mtr_swat" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+    <material name="mtr_body" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
         <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_nm"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
-    <material name="mtr_swat_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+    <material name="mtr_body_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
         <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_nm" mip="1"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
-    <material name="mtr_swat_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
+    <material name="mtr_body_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS" unique="true" version="2" >
         <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_nm" mip="4"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
+	
+	<material name="mtr_frame" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
+		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_heads_df"/>
+		<variable value="1 1 1" type="vector3" name="contour_color"/>
+		<variable value="0" type="scalar" name="contour_opacity"/>
+	</material>
 
-
-	<material name="mtr_ene_acc_swat_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+	<material name="mtr_helmet" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
 		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df"/>
 		<variable value="1 1 1" type="vector3" name="contour_color"/>
 		<variable value="0" type="scalar" name="contour_opacity"/>
 	</material>
-    <material name="mtr_ene_acc_swat_helmet_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+    <material name="mtr_helmet_lod1" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
         <bump_normal_texture    file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="1"/>
         <diffuse_texture        file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" mip="1"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>
         <variable value="0" type="scalar" name="contour_opacity"/>
     </material>
-    <material name="mtr_ene_acc_swat_helmet_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
+    <material name="mtr_helmet_lod2" render_template="generic:CONTOUR:DIFFUSE_TEXTURE:NORMALMAP" unique="true" version="2" >
         <bump_normal_texture    file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="4"/>
         <diffuse_texture        file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" mip="4"/>
         <variable value="1 1 1" type="vector3" name="contour_color"/>

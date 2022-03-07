@@ -667,6 +667,14 @@ function WeaponTweakData:_init_data_m4_npc()
 	self.sg417_npc = deep_clone(self.m4_npc)
 	self.sg417_npc.sounds.prefix = "contraband_npc"
 	
+	--HK33 
+	self.hk33_npc = deep_clone(self.m4_npc)
+	self.hk33_npc.sounds.prefix = "g36_npc"
+	
+	self.hk33_bravo_npc = deep_clone(self.m4_npc)
+	self.hk33_bravo_npc.sounds.prefix = "g36_npc"
+	self.hk33_bravo_npc.CLIP_AMMO_MAX = 60
+	
 	--[[
 	self.sg417_npc.auto.fire_rate = 0.1
 	self.sg417_npc.CLIP_AMMO_MAX = 20
@@ -790,6 +798,9 @@ function WeaponTweakData:_init_data_r870_npc()
 	self.r870_taser_npc.sounds.prefix = "keltec_npc"
 	self.r870_taser_npc.DAMAGE = 5
 	self.r870_taser_npc.CLIP_AMMO_MAX = 8
+
+	self.m500_npc = deep_clone(self.r870_npc)
+	self.m500_npc.sounds.prefix = "m590_npc"	
 end
 
 function WeaponTweakData:_init_data_mossberg_npc()

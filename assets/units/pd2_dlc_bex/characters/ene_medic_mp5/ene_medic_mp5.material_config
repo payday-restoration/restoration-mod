@@ -12,28 +12,33 @@
 		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" mip="4"/>
 	</material>
 
-	<material name="mtr_swat" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_body" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_nm"/>
 		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df"/>
 	</material>
-	<material name="mtr_swat_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_body_lod1" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_nm" mip="1"/>
 		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" mip="1"/>
 	</material>
-	<material name="mtr_swat_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
+	<material name="mtr_body_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS:SKINNED_3WEIGHTS" version="2">
 		<bump_normal_texture 	file="units/payday2/characters/shared_textures/ene_medic_nm" mip="4"/>
 		<diffuse_texture 		file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" mip="4"/>
 	</material>
+
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_frame" version="2">
+        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
+        <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_heads_df"/>
+    </material>
 	
-    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet" version="2">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_helmet" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df"/>
     </material>
-    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet_lod1" version="2">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_helmet_lod1" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="1"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" mip="1"/>
     </material>
-    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_ene_acc_swat_helmet_lod2" version="2">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" name="mtr_helmet_lod2" version="2">
         <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm" mip="4"/>
         <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" mip="4"/>
     </material>
@@ -54,11 +59,6 @@
 	
     <material name="mtr_glass_lod2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
         <diffuse_texture file="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df" mip="4"/>
-    </material>	
-	
-    <material name="mat_light" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_COPS" version="2">
-        <bump_normal_texture file="units/payday2/characters/shared_textures/ene_medic_head_nm"/>
-        <diffuse_texture file="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df"/>
     </material>	
 	
     <material name="shadow_caster" render_template="shadow_caster_only:SKINNED_1WEIGHT" version="2"/>

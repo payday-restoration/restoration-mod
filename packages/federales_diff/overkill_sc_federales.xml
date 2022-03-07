@@ -1,4 +1,14 @@
 <table directory="assets">
+	<!--mosconi 12g tactical-->
+	<unit_obj			path="units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500" />
+	
+	<!--bravo g3-->
+	<unit_obj			path="units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo" />
+	<cooked_physics		path="units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo" force="false"/>
+	<material_config	path="units/pd2_dlc_bex/weapons/wpn_npc_hk33/wpn_npc_hk33" force="false"/>
+	
+	<df_nm				path="units/pd2_dlc_bex/weapons/wpn_npc_hk33/hk33" force="false"/>
+
 	<!--NPC M60-->
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
 	<material_config	path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
@@ -238,22 +248,20 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1_contour" />
 	<model				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
-	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1"  load="true"/>	
 	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1_husk"  load="true"/>	
 	
 	<texture			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_akan_dozer_policia_federale_body_df" />	
 
 	<!--Green Acc-->
-	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_back_akan_1/ene_acc_bulldozer_back_akan_1" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_chest_akan_1/ene_acc_bulldozer_chest_akan_1" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_neck_akan_1/ene_acc_bulldozer_neck_akan_1" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" />
-	<material_config	path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_throat_akan_1/ene_acc_bulldozer_throat_akan_1" />
-	<model				path="units/pd2_dlc_bex/characters/ene_acc_bulldozer_helmet_plate_akan_1/ene_acc_bulldozer_helmet_plate_akan_1" />	
+	<unit_mat				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	
 	<!--Taser-->
 	<unit				path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"  load="true"/>	

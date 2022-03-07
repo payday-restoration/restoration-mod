@@ -7642,7 +7642,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")					
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1")
+					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")
 				},				
 				nypd = {
 					Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")							

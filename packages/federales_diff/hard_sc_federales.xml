@@ -222,6 +222,9 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1"  load="true"/>	
 	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1_husk"  load="true"/>	
 	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk"  load="true"/>	
+	
 	<texture			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_akan_dozer_policia_federale_body_df" />	
 
 	<!--Green Acc-->
@@ -230,6 +233,25 @@
 	
 	<unit_obj			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	
+	<!--blackdozer for ponr-->
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2_contour" />
+	<model				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />	
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2_husk"  load="true"/>
+	
+	<texture			path="units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_akan_dozer_policia_federale_body_black_df"/>	
+
+	<!--blackdozer accs-->	
+	<unit_mat				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_2/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	
 	<!--Taser-->
 	<unit				path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"  load="true"/>	

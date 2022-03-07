@@ -263,6 +263,28 @@
 	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_1/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	
+	<!--benellidozer for ponr-->
+	<object				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />	
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_contour" />
+	<model				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" />
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"  load="true"/>	
+	<unit				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_husk"  load="true"/>
+
+	<texture			path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_dozer_policia_federale_body_minigun_df" />
+
+	<!--benellidozer acc-->	
+	<unit_mat				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+	
+	<unit_obj				path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	<cooked_physics			path="units/pd2_dlc_bex/characters/ene_bulldozer_minigun/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+	
 	<!--Taser-->
 	<unit				path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1"  load="true"/>	
 	<unit				path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1_husk"  load="true"/>		

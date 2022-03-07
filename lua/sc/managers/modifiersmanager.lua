@@ -9,10 +9,14 @@ local ai_type = tweak_data.levels:get_ai_group_type()
 --also, no need to include Idstring here anymore
 if ai_type == b then
 	replacement_table = {
+		--Bulldozers
+		["units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",
+		
 		--Federales FBI Rifle
-		["units/payday2/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		--Federales FBI Shotgun
-		["units/payday2/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		--Federales FBI Heavy Rifle
 		["units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		--Federales FBI Heavy Shotgun

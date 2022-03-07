@@ -11608,6 +11608,70 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all
 	}		
+	
+	--Benelli Dozers on Skirmish, 50% chance to replace Greendozers
+	self.unit_categories.SKM_GREEN_TANK_W7 = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_hvh/characters/ene_bulldozer_hvh_1/ene_bulldozer_hvh_1"), 
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},                            
+			murkywater = {
+				Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870"),    
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1"),
+				Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")				
+			},                
+			nypd = {
+				Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"),  
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},
+			lapd = {
+				Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			}        	
+		},
+		access = access_type_all,
+		special_type = "tank"
+	}		
+	--Only Benelli Dozers after W8
+	self.unit_categories.SKM_GREEN_TANK_W8 = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},
+			russia = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},
+			zombie = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},                            
+			murkywater = {   
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},
+			federales = {
+				Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")				
+			},                
+			nypd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			},
+			lapd = {
+				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
+			}        	
+		},
+		access = access_type_all,
+		special_type = "tank"
+	}		
 
 end
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
@@ -16224,7 +16288,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		amount = {3, 4},
 		spawn = {
 			{
-				unit = "FBI_tank",
+				unit = "SKM_GREEN_TANK_W7",
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,
@@ -16604,7 +16668,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		amount = {3, 4},
 		spawn = {
 			{
-				unit = "FBI_tank",
+				unit = "SKM_GREEN_TANK_W8",
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,
@@ -16984,7 +17048,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		amount = {4, 5},
 		spawn = {
 			{
-				unit = "FBI_tank",
+				unit = "SKM_GREEN_TANK_W8",
 				freq = 1,
 				amount_min = 1,
 				amount_max = 1,

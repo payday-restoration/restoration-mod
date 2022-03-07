@@ -2630,6 +2630,8 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self._enemy_list, "tank_hw")	
 	
 	self.tank_mini = deep_clone(self.tank)
+	self.tank_mini.HEALTH_INIT = 625
+	self.tank_mini.headshot_dmg_mul = 15.625
 	if is_reaper then
 		self.tank_mini.spawn_sound_event = "rbdz_entrance_elite"
 	elseif is_federales then

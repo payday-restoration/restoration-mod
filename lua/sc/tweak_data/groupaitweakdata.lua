@@ -11613,7 +11613,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 	self.unit_categories.SKM_GREEN_TANK_W7 = {
 		unit_types = {
 			america = {
-				Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
 				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			russia = {
@@ -11633,11 +11633,11 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")				
 			},                
 			nypd = {
-				Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"),  
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),  
 				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			},
 			lapd = {
-				Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard"),
+				Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"),
 				Idstring("units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun")
 			}        	
 		},

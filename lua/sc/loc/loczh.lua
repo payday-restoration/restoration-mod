@@ -1437,6 +1437,8 @@ end
  if _G.HopLib then
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
+	local lapd = tweak_data.levels.ai_groups.lapd
+	local mex = tweak_data.levels.ai_groups.federales
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")

@@ -1406,6 +1406,7 @@ end
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local murkywetew = tweak_data.levels.ai_groups.murkywater
 	local lapd = tweak_data.levels.ai_groups.lapd
+	local mex = tweak_data.levels.ai_groups.federales
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1418,7 +1419,11 @@ end
 	elseif ai_type == lapd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
-		end)	
+		end)
+	elseif ai_type == mex then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
+		end)		
 	end
  end
 
@@ -1481,7 +1486,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_12"] = "데스 센텐스에서 불도저는 바이저가 깨지면 버서커 분노 상태에 돌입하여 공격력을 10%만큼 증가시킵니다.",
 		["loading_gameplay_res_13"] = "클로커는 점프 킥을 하려고 할 때는 상징적인 소리를 냅니다, 소리가 들리면 옆으로 피하십시오.",
 		["loading_gameplay_res_14"] = "클로커의 점프 킥은 당신을 다운 대신에 수갑을 채웁니다.",
-		["loading_gameplay_res_15"] = "데스 센텐스에서는 섬광탄을 부술 수 없습니다.",
+		["loading_gameplay_res_15"] = "데스 센텐스에서는 섬광탄을 파괴할 수 없습니다.",
 		["loading_gameplay_res_16"] = "근접 무기를 충전하여 적의 근접 공격을 반격 할 수 있습니다. 이것은 클로커 킥도 반격 할 수 있도록 업그레이드할 수 있습니다.",
 		["loading_gameplay_res_17"] = "적의 근접 공격은 이전보다 훨씬 더 효과적입니다. 단순히 적 무리를 쉽게 지나칠 것이라고 기대하지 마십시오.",
 		["loading_gameplay_res_18"] = "야구 방망이로 적을 때리는 것보다 더 나은 것이 무엇인지 아십니까? 야구 방망이로 머리를 때려 헤드샷 피해를 주십시오.",
@@ -1493,7 +1498,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_24"] = "적들은 더 높은 난이도에서 훨씬 더 똑똑하게 행동하고 예측하기 어렵습니다.",
 		["loading_gameplay_res_25"] = "데스 센텐스는 바닐라보다 불공평하지 않으면서 더 어렵고 의미심장하게 만들기 위해 전면적인 디자인 개편을 거쳤습니다. 가이드를 확인하세요.",
 		["loading_gameplay_res_26"] = "프로 잡은 습격 전에 일반 에셋(예: 의료 가방, 탄약 가방 또는 시체 가방)을 구매하는 것이 불가능해지고, 아군 사격이 가능해지고(봇도 적용) 임무의 마지막 부분에 다다르면 특별한 브라보 적이 대열에 나타나고 PONR이 발생합니다.",
-		["loading_gameplay_res_27"] = "레스트레이션 모드는 머키워터 용병들 같은 다른 주의 집행자와 다양한 팩션을 제공합니다. 그들은 기능이 동일하지만 워싱턴 DC에서 정식으로 발생하는 하이스트에 멋진 풍미를 더합니다.",
+		["loading_gameplay_res_27"] = "레스트레이션 모드는 머키워터 용병 같은 다른 주의 집행자와 다양한 진영을 제공합니다. 그들은 기능이 동일하지만 워싱턴 DC에서 정식으로 발생하는 하이스트에 멋진 풍미를 더합니다.",
 		["loading_gameplay_res_28"] = "클로커는 돌진하기 전에 연막탄을 던집니다.",
 		
 		["loading_new_units_res_title"] = "레스트레이션 유닛 팁",
@@ -1682,7 +1687,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_zombie_outbreak_desc"] = "모든 적을 좀비 유닛으로 교체합니다",
 		["mutator_zombie_outbreak_longdesc"] = "죽은 자들이 일어났다! 모든 적을 좀비 유닛으로 교체합니다.",
 
-		["mutator_faction_override"] = "적 팩션 오버라이드",
+		["mutator_faction_override"] = "적 진영 오버라이드",
 		["mutator_faction_override_desc"] = "",
 		["mutator_faction_override_longdesc"] = "",
 		["mutator_faction_override_"] = "",
@@ -1693,7 +1698,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_faction_override_murkywater"] = "머키워터",
 		["mutator_faction_override_nypd"] = "NYPD",
 		["mutator_faction_override_lapd"] = "LAPD",
-		["faction_selector_choice"] = "팩션: ",
+		["faction_selector_choice"] = "진영: ",
 
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "크라임 스프리는 연속적으로 실행되는 무작위로 선택되는 하이스트의 끝없는 시리즈입니다. 하이스트를 완료할 때마다 등급과 보상이 증가합니다! 20 또는 26 등급마다 개조를 선택해야 하고 100 등급마다 리스크 레벨이 증가하므로 다음 습격을 완료하기가 더 어려워집니다. 리스크 레벨 600 이후에는 플레이어가 가지고 있는 무적 프레임의 양이 감소하기 시작하고 브라보 유닛이 정상적으로 스폰되기 시작합니다.\n\n##팀원을 초대하는 경우 랭크와 보상을 얻기 위해 합류하기 전에 자신만의 크라임 스프리를 시작했는지 확인하십시오.##",

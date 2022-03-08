@@ -667,6 +667,14 @@ function WeaponTweakData:_init_data_m4_npc()
 	self.sg417_npc = deep_clone(self.m4_npc)
 	self.sg417_npc.sounds.prefix = "contraband_npc"
 	
+	--HK33 
+	self.hk33_npc = deep_clone(self.m4_npc)
+	self.hk33_npc.sounds.prefix = "g36_npc"
+	
+	self.hk33_bravo_npc = deep_clone(self.m4_npc)
+	self.hk33_bravo_npc.sounds.prefix = "g36_npc"
+	self.hk33_bravo_npc.CLIP_AMMO_MAX = 60
+	
 	--[[
 	self.sg417_npc.auto.fire_rate = 0.1
 	self.sg417_npc.CLIP_AMMO_MAX = 20
@@ -790,6 +798,9 @@ function WeaponTweakData:_init_data_r870_npc()
 	self.r870_taser_npc.sounds.prefix = "keltec_npc"
 	self.r870_taser_npc.DAMAGE = 5
 	self.r870_taser_npc.CLIP_AMMO_MAX = 8
+
+	self.m500_npc = deep_clone(self.r870_npc)
+	self.m500_npc.sounds.prefix = "m590_npc"	
 end
 
 function WeaponTweakData:_init_data_mossberg_npc()
@@ -8649,14 +8660,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.maxim9.kick = self.stat_info.kick_tables.even_recoil
 	self.maxim9.supported = true
 	self.maxim9.stats = {
-		damage = 15,
+		damage = 18,
 		spread = 18,
 		recoil = 24,
 		spread_moving = 7,
 		zoom = 1,
 		concealment = 30,
 		suppression = 20,
-		alert_size = 2,
+		alert_size = 1,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8675,14 +8686,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.x_maxim9.kick = self.stat_info.kick_tables.even_recoil
 	self.x_maxim9.supported = true
 	self.x_maxim9.stats = {
-		damage = 15,
+		damage = 18,
 		spread = 16,
 		recoil = 14,
 		spread_moving = 7,
 		zoom = 1,
 		concealment = 30,
 		suppression = 20,
-		alert_size = 2,
+		alert_size = 1,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
@@ -8695,28 +8706,27 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.ultima.rays = 9
 	self.ultima.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.ultima.CLIP_AMMO_MAX = 7
-	self.ultima.AMMO_MAX = 120
+	self.ultima.AMMO_MAX = 80
 	self.ultima.use_data.selection_index = 2
-	self.ultima.fire_mode_data.fire_rate = 0.1
+	self.ultima.fire_mode_data.fire_rate = 0.12
 	self.ultima.kick = self.stat_info.kick_tables.moderate_kick
 	self.ultima.supported = true
 	self.ultima.stats = {
-		damage = 30,
-		spread = 8,
-		recoil = 19,
+		damage = 45,
+		spread = 6,
+		recoil = 17,
 		spread_moving = 7,
 		zoom = 1,
 		concealment = 24,
-		suppression = 7,
+		suppression = 6,
 		alert_size = 2,
 		extra_ammo = 101,
 		total_ammo_mod = 100,
 		value = 1,
 		reload = 20
-	}
+	}	
 	self.ultima.stats_modifiers = nil
 	self.ultima.panic_suppression_chance = 0.05	
-	self.ultima.reload_speed_multiplier = 1.1
 	
 	--Wasp-DS (FMG-9)
 	self.fmg9.categories = {"pistol"}
@@ -8727,9 +8737,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.fmg9.use_data.selection_index = 2
 	self.fmg9.kick = self.stat_info.kick_tables.left_recoil
 	self.fmg9.supported = true
+	self.fmg9.timers = {
+		reload_not_empty = 1.9,
+		reload_empty = 3.65,
+		unequip = 1.8,
+		equip = 1.4
+	}	
 	self.fmg9.stats = {
 		damage = 18,
-		spread = 17,
+		spread = 18,
 		recoil = 19,
 		spread_moving = 9,
 		zoom = 1,

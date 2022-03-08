@@ -22794,16 +22794,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 			stats = {
 				value = 10,
 				concealment = -5,
-				total_ammo_mod = -33,
+				total_ammo_mod = -25,
 				damage = 15,
-				recoil = -2,
 				spread = 8,
-				suppression = -1,
 				spread_multi = {1, 1},	
+				recoil = -1,
 				moving_spread = 0
 			},
 			custom_stats = {
-				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",					
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",													
 				rays = 1,
 				armor_piercing_add = 1,
 				can_shoot_through_enemy = true,
@@ -22815,7 +22814,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 			supported = true,
 			stats = {
 				value = 9,
-				total_ammo_mod = -33,
+				total_ammo_mod = -25,
 				damage = 15
 			},
 			custom_stats = {
@@ -22830,9 +22829,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 			supported = true,
 			stats = {
 				value = 9,
-				total_ammo_mod = -33,
-				ammo_pickup_max_mul = 0.8,
-				ammo_pickup_min_mul = 0.8,
+				total_ammo_mod = -25,
 				damage = 15
 			},
 			custom_stats = {
@@ -22842,16 +22839,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 				ammo_pickup_min_mul = 0.8,
 				rays = 5
 			}
-		},
+		},			
 		wpn_fps_upg_a_explosive = {
 			supported = true,
 			stats = {
 				value = 10,
+				concealment = -5,
 				total_ammo_mod = -50,
 				recoil = -5,
-				concealment = -5,
 				spread_multi = {1, 1},	
-				damage = 30
+				damage = 45
 			},
 			custom_stats = {
 				ignore_statistic = true,
@@ -22860,8 +22857,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		},
-		wpn_fps_upg_a_piercing = a_piercing_auto_override,
-		wpn_fps_upg_a_dragons_breath = a_dragons_breath_auto_override		
+		wpn_fps_upg_a_piercing = a_piercing_semi_override,
+		wpn_fps_upg_a_dragons_breath = a_dragons_breath_semi_override			
 	}		
 
 end)

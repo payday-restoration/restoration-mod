@@ -1404,9 +1404,13 @@ end
 
 			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
 		end)
-			elseif ai_type == lapd then
+	elseif ai_type == lapd then
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
+		end)
+	elseif ai_type == mex then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
 		end)	
 	end
  end

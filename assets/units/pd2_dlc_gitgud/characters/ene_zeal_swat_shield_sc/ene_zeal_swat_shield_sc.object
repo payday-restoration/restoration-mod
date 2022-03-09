@@ -1,15 +1,7 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" orientation_object="root_point" />
+	<diesel materials="units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc" orientation_object="root_point" />
 	<sequence_manager file="units/payday2/characters/ragdoll" /> <animation_def name="anims/units/enemies/cop/cop_def" />
-
-	<effects>
-		<effect_spawner name="fire_torso" enabled="false" object="Spine2" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_arm" enabled="false" object="RightForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_arm" enabled="false" object="LeftForeArm" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_l_leg" enabled="false" object="LeftLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-		<effect_spawner name="fire_r_leg" enabled="false" object="RightLeg" effect="effects/payday2/particles/explosions/molotov_grenade" />
-	</effects>
 
 	<bodies>
 		<body name="body" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
@@ -184,7 +176,7 @@
 		<constraint type="limited_hinge" name="RightLeg" enabled="false">
 			<param body_a="rag_RightUpLeg" body_b="rag_RightLeg"/>
 			<param pivot="position:RightLeg"/>
-			<param min_angle="20" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
+			<param min_angle="-40" max_angle="60" axis="xaxis:RightLeg" twist_freedom="5"/>
 			<param plane_axis="yaxis:RightLeg"/>
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
@@ -192,7 +184,7 @@
 		<constraint type="limited_hinge" name="LeftLeg" enabled="false">
 			<param body_b="rag_LeftLeg" body_a="rag_LeftUpLeg"/>
 			<param pivot="position:LeftLeg"/>
-			<param min_angle="20" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
+			<param min_angle="-40" max_angle="60" axis="xaxis:LeftLeg" twist_freedom="5"/>
 			<param plane_axis="yaxis:LeftLeg"/>
 			<param damping="1" spring_constant="200" min_restitution="0"/>
 		</constraint>
@@ -204,58 +196,24 @@
 
 	<graphics>
 		<graphic_group name="character" enabled="true" culling_object="g_body">
-		
-			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_body" max_distance="1000" />
-					<material materials="mtr_body_lod_1" max_distance="1500" />
-					<material materials="mtr_body_lod_2" />
-				</object>
-				<object name="g_body_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_body" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_body_lod_2" />
-				</object>
+
+			<lod_object name="g_body_lod">
+				<object name="g_body" enabled="true"  max_distance="1000" />
+				<object name="g_body_lod1" enabled="true" />
 			</lod_object>
-			
-			<lod_object name="lod_helmet">
-				<object name="g_helmet_lod1" 	enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_ene_acc_swat_helmet" max_distance="1000" />
-					<material materials="mtr_ene_acc_swat_helmet_lod_1" max_distance="1500" />
-					<material materials="mtr_ene_acc_swat_helmet_lod_2" />
-				</object>
-				<object name="g_helmet_lod2" 	enabled="true" lod="1" >
-					<material materials="mtr_ene_acc_swat_helmet" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_ene_acc_swat_helmet_lod_2" />
-				</object>
+
+			<lod_object name="g_head_lod">
+				<object name="g_head" enabled="true"  max_distance="1000" />
+				<object name="g_head_lod1" enabled="true" />
 			</lod_object>
-			
-			<lod_object name="lod_visor"> <!-- wanted to avoid doing this by adding it as a new object but for some fucking reason when i did that itd be invisible so i had to overwrite the old helm with this wicked ting-->
-				<object name="g_helmet_lod3" 	enabled="true" >
-					<material materials="mtr_ene_acc_swat_helmet" max_distance="0"/>
-					<material materials="mtr_glass" max_distance="1500" />
-					<material materials="mtr_glass_lod" />
-				</object>
+
+			<lod_object name="g_helmet_lod">
+				<object name="g_helmet_lod1" enabled="true"  max_distance="1000" />
+				<object name="g_helmet_lod2" enabled="true" />
 			</lod_object>
-								
 			<object name="s_body" enabled="true" shadow_caster="true"/>
+			
 		</graphic_group>
-		
-		<graphic_group name="head" enabled="true" culling_object="g_head">
-			<lod_object name="lod_head">
-				<object name="g_head" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
-					<material materials="mtr_head" max_distance="1000" />
-					<material materials="mtr_head_lod_1" max_distance="1500" />
-					<material materials="mtr_head_lod_2" />
-				</object>
-				<object name="g_head_lod1" 	enabled="true" lod="1" >
-					<material materials="mtr_head" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
-					<material materials="mtr_head_lod_2" />
-				</object>
-			</lod_object>
-			<object name="s_head" enabled="true" shadow_caster="true"/>			
-		</graphic_group>
-		<object name="g_head_gore1" enabled="false" />
-		<object name="g_head_gore2" enabled="false" />
 	</graphics>
 
 </dynamic_object>

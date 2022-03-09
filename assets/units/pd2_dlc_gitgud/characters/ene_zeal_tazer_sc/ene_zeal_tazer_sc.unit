@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer" />
+	<object file="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc" />
 
 	<dependencies>
 		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
@@ -42,7 +42,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_gitgud/characters/ene_zeal_tazer/ene_zeal_tazer_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

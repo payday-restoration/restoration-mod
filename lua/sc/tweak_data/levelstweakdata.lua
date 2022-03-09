@@ -209,7 +209,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 
 
 	self.pent.ai_group_type = lapd
-	self.pent.player_style = "tux"
+	self.pent.player_style = "suit_sunny"
 
 	
 	--///NEW OUTFITS\\\--

@@ -7,7 +7,7 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_mod_bravo/weapons/wpn_npc_bayou/wpn_npc_bayou" />														
-		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" />
+		<depends_on unit="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" />			
 	</dependencies>
@@ -25,7 +25,7 @@
 			<var name="_head_body_name" value="head" />
 			<var name="_head_gear_object" value="g_hat_lod" />
 			<var name="_nr_head_gear_objects" value="2" />
-			<var name="_head_gear" value="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" />
+			<var name="_head_gear" value="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" />
 		</extension>
 		<extension name="movement" class="CopMovement" >
 			<var name="_footwear" value="hardsole" />

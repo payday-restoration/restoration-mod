@@ -1007,6 +1007,13 @@
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
 	<material_config	path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
 	<model				path="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" force="false"/>	
+	
+	<!--beret but green !?!??!!? this is truly awesome win core-->
+	<unit				path="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" force="false" load="false"/>
+	<object				path="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" force="false"/>
+	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" force="false"/>	
+	<material_config	path="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" force="false"/>	
+	<model				path="units/pd2_mod_bravo/characters/ene_acc_bravo_beret/ene_acc_bravo_beret" force="false"/>	
 						
 	<!--"NYPD" murky (just soft cap guys who look more like vanilla murkies-->
 	<object				path="units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1" force="false"/>

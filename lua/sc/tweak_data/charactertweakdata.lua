@@ -25721,7 +25721,17 @@ function CharacterTweakData:character_map()
 		pent = {
 			path = "units/pd2_dlc_pent/characters/",
 			list = {
-				"placeholder_unit"
+				"civ_male_receptionist_penthouse",
+				"civ_female_guest_penthouse_1",
+				"civ_female_guest_penthouse_2",
+				"civ_male_guest_penthouse_1",
+				"civ_male_guest_penthouse_2",
+				"npc_male_yufuwang",
+				"npc_male_yufuwang_armored",
+				"ene_male_security_penthouse_1",
+				"ene_male_security_penthouse_2",
+				"ene_male_security_penthouse_3",
+				"ene_male_security_penthouse_4"
 			}
 		},
 		sharks = {

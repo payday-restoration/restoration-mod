@@ -21009,7 +21009,8 @@ function CharacterTweakData:_create_table_structure()
 		"railgun_npc",
 		"hk33",
 		"hk33_bravo",
-		"m500"
+		"m500",
+		"flamethrower"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -21088,7 +21089,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun"),
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33/wpn_npc_hk33"),
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo"),
-		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500")		
+		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500"),
+		Idstring("units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower")
 	}
 end
 

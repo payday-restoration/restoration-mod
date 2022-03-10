@@ -545,6 +545,12 @@ local temp_vec1 = Vector3()
 local temp_vec2 = Vector3()
 local temp_vec3 = Vector3()
 
+Hooks:PostHook(CopMovement, "set_cool", "res_set_cool", function(self, state)
+	if self._ext_inventory:equipped_unit() then
+		self._ext_inventory:equipped_unit():base():set_flashlight_enabled(not state)
+	end
+end)
+
 function CopMovement:on_suppressed(state)
 	local suppression = self._suppression
 	local end_value = state and 1 or 0

@@ -1,4 +1,6 @@
 Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)	
+	self._allow_invisible = true
+
 	--Cloakers lights are always on
 	if self._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("turn_on_spook_lights")

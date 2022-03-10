@@ -29,3 +29,21 @@ CopActionAct._act_redirects.script = {
 	"cmd_gogo",
 	"cmd_point"
 }
+
+local _play_anim_orig = CopActionAct._play_anim
+function CopActionAct:_play_anim()
+	local result = _play_anim_orig(self)
+	-- act actions disable the flashlight if it's full_body or shooting is not allowed
+	if result and (self._action_desc.body_part == 1 or self._blocks.action) and self._unit:inventory():equipped_unit() then
+		self._flashlight_disabled = true
+		self._unit:inventory():equipped_unit():base():set_flashlight_enabled(false)
+	end
+
+	return result
+end
+
+Hooks:PostHook(CopActionAct, "on_exit", "res_on_exit", function(self)
+	if self._flashlight_disabled and self._unit:inventory():equipped_unit() then
+		self._unit:inventory():equipped_unit():base():set_flashlight_enabled(true)
+	end
+end)

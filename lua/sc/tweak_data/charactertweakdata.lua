@@ -3239,8 +3239,7 @@ function CharacterTweakData:_init_summers(presets)
 	else
 		self.summers.spawn_sound_event = "cpa_a02_01"
 	end
-	self.summers.die_sound_event = "rtsr_x02a_any_3p"
-	self.summers.die_sound_event_2 = "mga_death_scream"
+	self.summers.die_sound_event = "mga_death_scream"
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.steal_loot = nil
 	self.summers.is_special = true

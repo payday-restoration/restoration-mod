@@ -1,6 +1,13 @@
 <dynamic_object>
     <diesel orientation_object="rp_m4" materials="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers" />
-    <graphics>
-    	<object name="g_body" enabled="true" />
+    <sequence_manager file="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" />
+    <bodies>
+        <body name="body" enabled="false" template="debris" pushed_by_mover="false">
+  	        <object name="rp_m4" />
+  	        <object name="g_body" collision_type="convex" padding="-2.5" mass="2.5"/>
+        </body>
+    </bodies>
+	<graphics>
+       	<object name="g_body" enabled="true" />
     </graphics>
 </dynamic_object>

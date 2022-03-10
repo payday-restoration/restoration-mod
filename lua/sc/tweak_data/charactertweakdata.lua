@@ -2744,7 +2744,7 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.speech_prefix_p1 = "bik"
 	self.tank_biker.speech_prefix_p2 = nil
 	self.tank_biker.speech_prefix_count = 2	
-	self.tank_biker.die_sound_event = "x02_any_3p"	
+	self.tank_biker.die_sound_event = "x02a_any_3p"	
 	self.tank_biker.die_sound_event_2 = "l1n_burndeath"	
 	self.tank_biker.chatter = presets.enemy_chatter.swat
 	self.tank_biker.no_omnia_heal = true
@@ -3239,7 +3239,8 @@ function CharacterTweakData:_init_summers(presets)
 	else
 		self.summers.spawn_sound_event = "cpa_a02_01"
 	end
-	self.summers.die_sound_event = "mga_death_scream"
+	self.summers.die_sound_event = "rtsr_x02a_any_3p"
+	self.summers.die_sound_event_2 = "mga_death_scream"
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.steal_loot = nil
 	self.summers.is_special = true

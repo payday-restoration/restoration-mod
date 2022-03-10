@@ -51,27 +51,6 @@ function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray)
 	end
 end
 
-Hooks:PostHook(NPCRaycastWeaponBase, "init", "flamethrower_mk2_flamer_init", function(self)
-	if self._name_id and self._name_id == "flamethrower_mk2_flamer" then
-		self._flamethrower_init = true
-		self._use_shell_ejection_effect = false
-		self._use_trails = false
-		self._rays = 9
-		self._range = 1400
-		self._flame_max_range = 1500
-		self._single_flame_effect_duration = 1
-		self._bullet_class = FlameBulletBase
-		self._bullet_slotmask = managers.slot:get_mask("bullet_impact_targets_no_criminals")
-		self._blank_slotmask = self._bullet_class:blank_slotmask()
-		
-		self:set_ammo_max(tweak_data.weapon[self._name_id].AMMO_MAX)
-		self:set_ammo_total(self:get_ammo_max())
-		self:set_ammo_max_per_clip(tweak_data.weapon[self._name_id].CLIP_AMMO_MAX)
-		self:set_ammo_remaining_in_clip(self:get_ammo_max_per_clip())
-		self._damage = tweak_data.weapon[self._name_id].DAMAGE
-	end
-end)
-
 local mvec_to = Vector3()
 local mvec_spread = Vector3()
 
@@ -94,19 +73,6 @@ function NPCRaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_
 	local col_ray = World:raycast("ray", from_pos, mvec_to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units)
 	local player_hit, player_ray_data = nil
 	
-	if self._flamethrower_init then
-		if not self._check_shooting_expired then
-			self:play_tweak_data_sound("fire")
-		end
-
-		self._check_shooting_expired = {
-			check_t = Application:time() + 0.3
-		}
-
-		self._unit:set_extension_update_enabled(Idstring("base"), true)
-		self._unit:flamethrower_effect_extension():_spawn_muzzle_effect(self._obj_fire:position(), direction)			
-	end
-
 	if shoot_player and self._hit_player then
 		player_hit, player_ray_data = self:damage_player(col_ray, from_pos, direction, result)
 
@@ -157,14 +123,8 @@ function NPCRaycastWeaponBase:_sound_autofire_end()
 	local sound_name = tweak_sound.prefix .. self._setup.user_sound_variant .. self._voice .. "_end"
 	local sound = self._sound_fire:post_event(sound_name)
 
-	if self._flamethrower_init then
-		if not sound then
-			sound = self._sound_fire:post_event("flamethrower_npc_fire_stop")
-		end
-	else
-		if not sound then
-			sound_name = tweak_sound.prefix .. "1" .. self._voice .. "_end"
-			sound = self._sound_fire:post_event(sound_name)
-		end		
-	end
+	if not sound then
+		sound_name = tweak_sound.prefix .. "1" .. self._voice .. "_end"
+		sound = self._sound_fire:post_event(sound_name)
+	end		
 end	

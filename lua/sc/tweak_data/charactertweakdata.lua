@@ -1498,6 +1498,96 @@ function CharacterTweakData:_init_triad(presets)
 	table.insert(self._enemy_list, "triad")
 end
 
+function CharacterTweakData:_init_triad_boss(presets)
+	self.triad_boss = deep_clone(presets.base)
+	self.triad_boss.experience = {}
+	self.triad_boss.weapon = deep_clone(presets.weapon.normal)
+	self.triad_boss.detection = presets.detection.normal
+	self.triad_boss.HEALTH_INIT = 750
+	self.triad_boss.headshot_dmg_mul = 7.99425	
+	self.triad_boss.damage.hurt_severity = presets.hurt_severities.boss
+	self.triad_boss.damage.explosion_damage_mul = 1.25
+	self.triad_boss.can_be_tased = false
+	self.triad_boss.suppression = nil
+	self.triad_boss.move_speed = presets.move_speed.slow
+	self.triad_boss.allowed_stances = {
+		cbt = true
+	}
+	self.triad_boss.allowed_poses = {
+		stand = true
+	}
+	self.triad_boss.crouch_move = false
+	self.triad_boss.no_run_start = true
+	self.triad_boss.no_run_stop = true
+	self.triad_boss.no_retreat = true
+	self.triad_boss.no_arrest = true
+	self.triad_boss.surrender = nil
+	self.triad_boss.ecm_vulnerability = 0
+	self.triad_boss.ecm_hurts = {}
+	self.triad_boss.weapon_voice = "3"
+	self.triad_boss.experience.cable_tie = "tie_swat"
+	self.triad_boss.access = "gangster"
+	self.triad_boss.speech_prefix_p1 = "bb"
+	self.triad_boss.speech_prefix_p2 = "n"
+	self.triad_boss.speech_prefix_count = 1
+	self.triad_boss.die_sound_event = "Play_yuw_pent_death"
+	self.triad_boss.rescue_hostages = false
+	self.triad_boss.melee_weapon = "fists_dozer"
+	self.triad_boss.steal_loot = nil
+	self.triad_boss.calls_in = nil
+	self.triad_boss.chatter = presets.enemy_chatter.no_chatter
+	self.triad_boss.use_radio = nil
+	self.triad_boss.use_animation_on_fire_damage = false
+	self.triad_boss.flammable = true
+	self.triad_boss.immune_to_knock_down = true
+	self.triad_boss.immune_to_concussion = true
+	self.triad_boss.priority_shout = "g29"
+	self.triad_boss.bot_priority_shout = "g29"	
+	self.triad_boss.silent_priority_shout = nil
+	self.triad_boss.silent_priority_shout = nil
+	self.triad_boss.priority_shout_max_dis = 3000
+	self.triad_boss.custom_shout = true
+	self.triad_boss.must_headshot = true
+	self.triad_boss.static_dodge_preset = true
+	self.triad_boss.is_special = true
+	self.triad_boss.always_drop = true	
+	self.triad_boss.no_omnia_heal = true	
+	self.triad_boss.can_reload_while_moving_tmp = true
+	self.triad_boss.throwable = "molotov"
+	self.triad_boss.aoe_damage_data = {
+		verification_delay = 0.3,
+		activation_range = 300,
+		activation_delay = 1,
+		env_tweak_name = "triad_boss_aoe_fire",
+		play_voiceline = true,
+		check_player = true,
+		check_npc_slotmask = {
+			"criminals",
+			-2,
+			-3
+		}
+	}
+	table.insert(self._enemy_list, "triad_boss")
+
+	self.triad_boss_no_armor = deep_clone(self.gangster)
+	self.triad_boss_no_armor.HEALTH_INIT = 4
+	self.triad_boss_no_armor.headshot_dmg_mul = 2.25	
+	self.triad_boss_no_armor.suspicious = nil
+	self.triad_boss_no_armor.detection = presets.detection.normal
+	self.triad_boss_no_armor.no_retreat = true
+	self.triad_boss_no_armor.no_arrest = true
+	self.triad_boss_no_armor.surrender = nil
+	self.triad_boss_no_armor.unintimidateable = true
+	self.triad_boss_no_armor.rescue_hostages = false
+	self.triad_boss_no_armor.steal_loot = nil
+	self.triad_boss_no_armor.calls_in = nil
+	self.triad_boss_no_armor.chatter = presets.enemy_chatter.no_chatter
+	self.triad_boss_no_armor.use_radio = nil
+	self.triad_boss_no_armor.radio_prefix = "fri_"
+
+	table.insert(self._enemy_list, "triad_boss_no_armor")
+end
+
 function CharacterTweakData:_init_captain(presets)
 	self.captain = deep_clone(self.gangster)
 	self.captain.calls_in = true
@@ -1971,12 +2061,14 @@ function CharacterTweakData:_init_tank(presets)
 		entrance = true
 	}
 	self.tank.announce_incomming = "incomming_tank"
+	self.tank.kill_taunt = "post_kill_taunt"
 	self.tank.steal_loot = nil
 	self.tank.calls_in = nil
 	self.tank.use_animation_on_fire_damage = false
 	self.tank.flammable = true
 	self.tank.can_be_tased = false
 	self.tank.immune_to_concussion = false
+	self.tank.no_headshot_add_mul = true
 	self.tank.immune_to_knock_down = true
 	self.tank.tank_concussion = true
 	self.tank.must_headshot = true
@@ -5122,7 +5214,7 @@ function CharacterTweakData:_presets(tweak_data)
 		akimbo_pistol = {},
 		mini = {},
 		is_sniper = {},
-		flamethrower = {}
+		is_flamethrower = {}
 	}
 	presets.weapon.normal.is_pistol.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_pistol.focus_delay = 10
@@ -7777,18 +7869,18 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}	
-	presets.weapon.normal.flamethrower = deep_clone(presets.weapon.normal.is_shotgun_pump)
-	presets.weapon.normal.flamethrower.melee_speed = 1
-	presets.weapon.normal.flamethrower.melee_dmg = 3
-	presets.weapon.normal.flamethrower.melee_retry_delay = {2, 2}		
-	presets.weapon.normal.flamethrower.autofire_rounds = {25, 50}
-	presets.weapon.normal.flamethrower.RELOAD_SPEED = 0.5
-	presets.weapon.normal.flamethrower.range = {
+	presets.weapon.normal.is_flamethrower = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.normal.is_flamethrower.melee_speed = 1
+	presets.weapon.normal.is_flamethrower.melee_dmg = 3
+	presets.weapon.normal.is_flamethrower.melee_retry_delay = {2, 2}		
+	presets.weapon.normal.is_flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.normal.is_flamethrower.RELOAD_SPEED = 0.5
+	presets.weapon.normal.is_flamethrower.range = {
 		close = 250,
 		optimal = 750,
 		far = 1400
 	}
-	presets.weapon.normal.flamethrower.FALLOFF = {
+	presets.weapon.normal.is_flamethrower.FALLOFF = {
 		{
 			r = 250,
 			acc = {1, 1},
@@ -9358,18 +9450,18 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.good.flamethrower = deep_clone(presets.weapon.good.is_shotgun_pump)
-	presets.weapon.good.flamethrower.melee_speed = 1
-	presets.weapon.good.flamethrower.melee_dmg = 6
-	presets.weapon.good.flamethrower.melee_retry_delay = {2, 2}
-	presets.weapon.good.flamethrower.autofire_rounds = {25, 50}
-	presets.weapon.good.flamethrower.RELOAD_SPEED = 0.5
-	presets.weapon.good.flamethrower.range = {
+	presets.weapon.good.is_flamethrower = deep_clone(presets.weapon.good.is_shotgun_pump)
+	presets.weapon.good.is_flamethrower.melee_speed = 1
+	presets.weapon.good.is_flamethrower.melee_dmg = 6
+	presets.weapon.good.is_flamethrower.melee_retry_delay = {2, 2}
+	presets.weapon.good.is_flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.good.is_flamethrower.RELOAD_SPEED = 0.5
+	presets.weapon.good.is_flamethrower.range = {
 		close = 250,
 		optimal = 750,
 		far = 1400
 	}
-	presets.weapon.good.flamethrower.FALLOFF = {
+	presets.weapon.good.is_flamethrower.FALLOFF = {
 		{
 			r = 250,
 			acc = {1, 1},
@@ -12477,15 +12569,15 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.expert.flamethrower = deep_clone(presets.weapon.expert.is_shotgun_pump)
-	presets.weapon.expert.flamethrower.autofire_rounds = {25, 50}
-	presets.weapon.expert.flamethrower.RELOAD_SPEED = 0.5
-	presets.weapon.expert.flamethrower.range = {
+	presets.weapon.expert.is_flamethrower = deep_clone(presets.weapon.expert.is_shotgun_pump)
+	presets.weapon.expert.is_flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.expert.is_flamethrower.RELOAD_SPEED = 0.5
+	presets.weapon.expert.is_flamethrower.range = {
 		close = 250,
 		optimal = 750,
 		far = 1400
 	}
-	presets.weapon.expert.flamethrower.FALLOFF = {
+	presets.weapon.expert.is_flamethrower.FALLOFF = {
 		{
 			r = 250,
 			acc = {1, 1},
@@ -14750,15 +14842,15 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.deathwish.flamethrower = deep_clone(presets.weapon.deathwish.is_shotgun_pump)
-	presets.weapon.deathwish.flamethrower.autofire_rounds = {25, 50}
-	presets.weapon.deathwish.flamethrower.RELOAD_SPEED = 0.5
-	presets.weapon.deathwish.flamethrower.range = {
+	presets.weapon.deathwish.is_flamethrower = deep_clone(presets.weapon.deathwish.is_shotgun_pump)
+	presets.weapon.deathwish.is_flamethrower.autofire_rounds = {25, 50}
+	presets.weapon.deathwish.is_flamethrower.RELOAD_SPEED = 0.5
+	presets.weapon.deathwish.is_flamethrower.range = {
 		close = 250,
 		optimal = 750,
 		far = 1400
 	}
-	presets.weapon.deathwish.flamethrower.FALLOFF = {
+	presets.weapon.deathwish.is_flamethrower.FALLOFF = {
 		{
 			r = 250,
 			acc = {1, 1},

@@ -1,18 +1,21 @@
-<unit type="wpn" slot="1">
-    <object file="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers" />
-	<dependencies>
-		<depends_on bnk="soundbanks/weapon_flamethrower"/>
+<?xml version="1.0"?>
+<unit type="wpn" slot="13">
+  <object file="units/pd2_dlc_vip/weapons/wpn_npc_flamethrower_summers/wpn_npc_flamethrower_summers" />
+
+  <dependencies>
+       <depends_on effect="effects/payday2/particles/weapons/heat/overheat" />
+       <depends_on effect="effects/payday2/particles/explosions/flamethrower_cheap" />
+       <depends_on bnk="soundbanks/weapon_flamethrower" />
 		<depends_on effect="effects/payday2/particles/explosions/flamethrower" />
 		<depends_on effect="effects/payday2/particles/explosions/flamethrower_pilot" />
-		<depends_on effect="effects/payday2/particles/explosions/flamethrower_nosel" />
-	</dependencies>
-	<extensions>
-		<extension name="base" class="NPCRaycastWeaponBase" > 
-			<var name="name_id" value="flamethrower_mk2_flamer" />
-		</extension>
-		<extension name="unit_data" class="ScriptUnitData" />
-		<extension name="flamethrower_effect_extension" class="FlamethrowerEffectExtension" >
-			<var name="name_id" value="flamethrower_mk2" />
-		</extension>
-	</extensions>
+		<depends_on effect="effects/payday2/particles/explosions/flamethrower_nosel" />	   
+  </dependencies>
+
+  <extensions>
+      <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="NPCBossFlamethrowerBase" >
+        <var name="name_id" value="flamethrower_npc" />
+    </extension>
+  <extension name="damage" class="UnitDamage" />
+  </extensions>
 </unit>

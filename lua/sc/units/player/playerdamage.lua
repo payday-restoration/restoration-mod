@@ -355,7 +355,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 		self._kill_taunt_clbk_id = "kill_taunt" .. tostring(self._unit:key())
 		if tweak_table == "tank" then
 			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt", attack_data), t + 0.3)
-		elseif tweak_table == "spring" then
+		elseif tweak_table == "spring" or tweak_table == "phalanx_vip" then
 			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_spring", attack_data), t + 0.3)	
 		elseif tweak_table == "taser" then
 			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_tase", attack_data), t + 0.3)	
@@ -416,6 +416,78 @@ function PlayerDamage:damage_bullet(attack_data)
 	
 	local t = pm:player_timer():time()
 	if not self:_apply_damage(attack_data, damage_info, "bullet", t) then
+		return
+	end
+
+	local hit_pos = mvector3.copy(self._unit:movement():m_com())
+    local attack_dir = nil
+    if attacker_unit then
+        attack_dir = hit_pos - attacker_unit:position()
+        mvector3.normalize(attack_dir)
+    else
+        attack_dir = self._unit:rotation():y()
+    end
+
+    managers.game_play_central:sync_play_impact_flesh(hit_pos, attack_dir)
+	
+	--Apply slow debuff if bullet has one.
+	if alive(attacker_unit) and tweak_data.character[attacker_unit:base()._tweak_table] and tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets and alive(self._unit) and not self._unit:movement():current_state().driving then
+		local slow_data = tweak_data.character[attacker_unit:base()._tweak_table].slowing_bullets
+		if slow_data.taunt then
+			attacker_unit:sound():say("post_tasing_taunt")
+		end
+		managers.player:apply_slow_debuff(slow_data.duration, slow_data.power)
+	end
+	
+	return 
+end
+
+function PlayerDamage:damage_fire_hit(attack_data)
+	local attacker_unit = attack_data.attacker_unit
+	local damage_info = {
+		result = {type = "hurt", variant = "fire"},
+		attacker_unit = attacker_unit
+	}
+
+	--Vanilla checks just encased into a function for reuse.
+	if not self:can_take_damage(attack_data, damage_info) then
+		return
+	end
+
+	local pm = managers.player
+	if attack_data.damage > 0 then
+		self:fill_dodge_meter(self._dodge_points) --Getting attacked fills your dodge meter by your dodge stat.
+		if self._dodge_meter >= 1.0 then --Dodge attacks if your meter is at '100'.
+			self._unit:sound():play("pickup_fak_skill") --PLEASE PLEASE PLEASE REPLACE WITH BETTER SOUND IN THE FUTURE!!!
+			if attack_data.damage > 0 then
+				self:fill_dodge_meter(-1.0) --If attack is dodged, subtract '100' from the meter.
+				self:_send_damage_drama(attack_data, 0)
+			end
+			self:_call_listeners(damage_info)
+			self:play_whizby(attack_data.col_ray.position)
+			self:_hit_direction(attacker_unit:position())
+			self._last_received_dmg = math.huge --Makes the grace period from dodging effectively impossible to pierce.
+			if not self:is_friendly_fire(attacker_unit, true) then
+				managers.player:send_message(Message.OnPlayerDodge) --Call skills that listen for dodging.
+			end
+			return	
+		end
+	end
+
+	if attacker_unit:base()._tweak_table == "tank" then
+		managers.achievment:set_script_data("dodge_this_fail", true)
+	end
+	
+	local shake_armor_multiplier = pm:body_armor_value("damage_shake") * pm:upgrade_value("player", "damage_shake_multiplier", 1)
+	local gui_shake_number = tweak_data.gui.armor_damage_shake_base / shake_armor_multiplier
+	gui_shake_number = gui_shake_number + pm:upgrade_value("player", "damage_shake_addend", 0)
+	shake_armor_multiplier = tweak_data.gui.armor_damage_shake_base / gui_shake_number
+	local shake_multiplier = math.clamp(attack_data.damage, 0.2, 2) * shake_armor_multiplier
+	self._unit:camera():play_shaker("player_bullet_damage", 1 * shake_multiplier)
+	managers.rumble:play("damage_bullet")
+	
+	local t = pm:player_timer():time()
+	if not self:_apply_damage(attack_data, damage_info, "fire", t) then
 		return
 	end
 
@@ -595,6 +667,10 @@ function PlayerDamage:damage_explosion(attack_data)
 end
 
 function PlayerDamage:damage_fire(attack_data)
+	if attack_data.is_hit then
+		return self:damage_fire_hit(attack_data)
+	end
+
 	local damage_info = {
 		result = {
 			variant = "explosion",

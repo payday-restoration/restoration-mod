@@ -103,6 +103,10 @@ function CopSound:chk_voice_prefix()
 end	
 
 function CopSound:say(sound_name, sync, skip_prefix, important, callback)
+	if self._unit:character_damage():dead() then
+		return
+	end
+
 	local line_array = { c01 = "contact",
 		c01x = "contact",
 		burnhurt = "burnhurt",

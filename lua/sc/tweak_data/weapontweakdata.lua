@@ -1487,58 +1487,33 @@ function WeaponTweakData:_init_data_mini_npc()
 	self.x_mini_npc.FIRE_MODE = "auto"		
 end
 
---Crew weapons but not really--
-function WeaponTweakData:_init_data_flamethrower_mk2_crew()
-	self.flamethrower_mk2_crew.categories = clone(self.flamethrower_mk2.categories)
-	self.flamethrower_mk2_crew.sounds.prefix = "flamethrower_npc"
-	self.flamethrower_mk2_crew.sounds.fire = "flamethrower_npc_fire"
-	self.flamethrower_mk2_crew.sounds.stop_fire = "flamethrower_npc_fire_stop"
-	self.flamethrower_mk2_crew.use_data.selection_index = 2
-	self.flamethrower_mk2_crew.DAMAGE = 3.7
-	self.flamethrower_mk2_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
-	self.flamethrower_mk2_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-	self.flamethrower_mk2_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
-	self.flamethrower_mk2_crew.CLIP_AMMO_MAX = 60
-	self.flamethrower_mk2_crew.NR_CLIPS_MAX = 4
-	self.flamethrower_mk2_crew.pull_magazine_during_reload = "large_metal"
-	self.flamethrower_mk2_crew.hold = {"bullpup", "rifle"}
-	self.flamethrower_mk2_crew.auto.fire_rate = 0.1
-	self.flamethrower_mk2_crew.hud_icon = "rifle"
-	self.flamethrower_mk2_crew.alert_size = 2500
-	self.flamethrower_mk2_crew.suppression = 3.1
-	self.flamethrower_mk2_crew.FIRE_MODE = "auto"
-	
-	self.flamethrower_mk2_flamer = {}
-	self.flamethrower_mk2_flamer = deep_clone(self.flamethrower_mk2_crew)
-	self.flamethrower_mk2_flamer.categories = clone(self.flamethrower_mk2.categories)
-	self.flamethrower_mk2_flamer.sounds.prefix = "flamethrower_npc"
-	self.flamethrower_mk2_flamer.sounds.fire = "flamethrower_npc_fire"
-	self.flamethrower_mk2_flamer.sounds.stop_fire = "flamethrower_npc_fire_stop"
-	self.flamethrower_mk2_flamer.CLIP_AMMO_MAX = 60
-	self.flamethrower_mk2_flamer.NR_CLIPS_MAX = 4
-	self.flamethrower_mk2_flamer.FIRE_RANGE = 1400
-	self.flamethrower_mk2_flamer.DAMAGE = 3.7
-	self.flamethrower_mk2_flamer.fire_dot_data = {
-		dot_trigger_chance = 0,
-		dot_damage = 0,
-		dot_length = 0,
-		dot_trigger_max_distance = 0,
-		dot_tick_period = 0
+function WeaponTweakData:_init_data_flamethrower_npc()
+	--NPC flamethrower
+	self.flamethrower_npc.categories = {
+		"flamethrower"
 	}
-	self.flamethrower_mk2_flamer.FIRE_MODE = "auto"
-	self.flamethrower_mk2_flamer.fire_rate = 0.1
-	self.flamethrower_mk2_flamer.hold = {
+	self.flamethrower_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+	self.flamethrower_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+	self.flamethrower_npc.shell_ejection = "effects/payday2/particles/weapons/heat/overheat"
+	self.flamethrower_npc.single_flame_effect_duration = 1
+	self.flamethrower_npc.flame_effect = "effects/payday2/particles/explosions/flamethrower_cheap"
+	self.flamethrower_npc.bullet_class = "FlameBulletBase"
+	self.flamethrower_npc.flame_max_range = 1400
+	self.flamethrower_npc.sounds.prefix = "flamethrower_npc"
+	self.flamethrower_npc.sounds.fire = "flamethrower_npc_fire"
+	self.flamethrower_npc.sounds.stop_fire = "flamethrower_npc_fire_stop"
+	self.flamethrower_npc.use_data.selection_index = 2
+	self.flamethrower_npc.DAMAGE = 3.7
+	self.flamethrower_npc.CLIP_AMMO_MAX = 60
+	self.flamethrower_npc.NR_CLIPS_MAX = 4
+	self.flamethrower_npc.hold = {
 		"bullpup",
 		"rifle"
 	}
-	self.flamethrower_mk2_flamer.alert_size = 2500
-	self.flamethrower_mk2_flamer.suppression = 3.1
-	self.flamethrower_mk2_flamer.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
-	self.flamethrower_mk2_flamer.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-	self.flamethrower_mk2_flamer.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
-	self.flamethrower_mk2_flamer.pull_magazine_during_reload = "large_metal"
-	self.flamethrower_mk2_flamer.usage = "flamethrower"
-	self.flamethrower_mk2_flamer.anim_usage = "is_bullpup"			
+	self.flamethrower_npc.auto.fire_rate = 0.1
+	self.flamethrower_npc.alert_size = 2500
+	self.flamethrower_npc.suppression = 3.1
+	self.flamethrower_npc.FIRE_MODE = "auto"
 end
 
 --Lotta crew guns in here now--

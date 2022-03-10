@@ -127,6 +127,7 @@ function restoration:Init()
 		"crojob2", --Bomb Dockyard
 		"friend", --Scarface Mansion
 		"dah", --Diamond Heist
+		"chca", --Black Cat Heist
 		"peta" --Goatsim 1
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
@@ -159,9 +160,11 @@ function restoration:Init()
 		"jewelry_store", --Ukrainian job left off since its bag moving is optional, to compensate for the extra easiness.
 		"fex", --Buluc's Mansion
 		"rat", --Cook Off
-		"sand", --The Ukrainian Prisoner		
+		"chas", --Dragon Heist
+		"sand", --The Ukrainian Prisoner	
+		"pent", --Mountain Master Heist
 		--Custom Heists below--
-		"junk",
+		"junk", --Doghouse
 		"wetwork_burn", --Burnout
 		"spa_CD",
 		"wwh_CD"

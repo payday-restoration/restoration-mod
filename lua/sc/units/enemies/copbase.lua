@@ -1,3 +1,7 @@
+local ids_lod = Idstring("lod")
+local ids_lod1 = Idstring("lod1")
+local ids_ik_aim = Idstring("ik_aim")
+
 Month = os.date("%m")
 local job = Global.level_data and Global.level_data.level_id
 
@@ -339,6 +343,66 @@ function CopBase:default_weapon_name()
 			return tweak_data.character.weap_unit_names[i_weap_id]
 		end
 	end
+end
+
+local ids_lod = Idstring("lod")
+local ids_lod1 = Idstring("lod1")
+local ids_ik_aim = Idstring("ik_aim")
+
+function CopBase:set_visibility_state(stage)
+	local state = stage and true
+	if not state and not self._allow_invisible then
+		state = true
+		stage = 3 -- lowest lod stage since the only time this gets called with stage as false is if the unit is not in sight
+	end
+
+	if self._lod_stage == stage then
+		return
+	end
+
+	local inventory = self._unit:inventory()
+	local weapon = inventory and inventory.get_weapon and inventory:get_weapon()
+
+	if weapon then
+		-- flashlight enables if the unit is visible and in LOD stage 1/2 instead of only LOD stage 2
+		weapon:base():set_flashlight_light_lod_enabled(stage and stage <= 2)
+	end
+
+	if self._visibility_state ~= state then
+		local unit = self._unit
+
+		if inventory then
+			inventory:set_visibility_state(state)
+		end
+
+		unit:set_visible(state)
+
+		if self._headwear_unit then
+			self._headwear_unit:set_visible(state)
+		end
+
+		if state or self._ext_anim.can_freeze and self._ext_anim.upper_body_empty then
+			unit:set_animatable_enabled(ids_lod, state)
+			unit:set_animatable_enabled(ids_ik_aim, state)
+		end
+
+		self._visibility_state = state
+	end
+
+	if state then
+		self:set_anim_lod(stage)
+		self._unit:movement():enable_update(true)
+
+		if stage == 1 then
+			self._unit:set_animatable_enabled(ids_lod1, true)
+		elseif self._lod_stage == 1 then
+			self._unit:set_animatable_enabled(ids_lod1, false)
+		end
+	end
+
+	self._lod_stage = stage
+
+	self:chk_freeze_anims()
 end
 
 local init_orig = CopBase.init

@@ -126,7 +126,7 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 	local revive_panel = self._player_panel:panel({
 		name = "revive_panel",
 		w = name:h() - 1,
-		h = name_bg:h() + 20
+		h = name_bg:h() + 24
 	})
 
 	revive_panel:set_center_y(name_bg:y() + name_bg:h() / 2)

@@ -43,7 +43,7 @@ function CopActionAct:_play_anim()
 end
 
 Hooks:PostHook(CopActionAct, "on_exit", "res_on_exit", function(self)
-	if self._flashlight_disabled and self._unit:inventory():equipped_unit() then
+	if self._flashlight_disabled and self._unit:inventory():equipped_unit() and not self._unit:movement():cool() then
 		self._unit:inventory():equipped_unit():base():set_flashlight_enabled(true)
 	end
 end)

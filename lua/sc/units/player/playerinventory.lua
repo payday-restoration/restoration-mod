@@ -20,3 +20,14 @@ function PlayerInventory:add_unit_by_factory_name(...)
 	setup_data.alert_filter = self._unit:movement():SO_access()
 	setup_data.timer = managers.player:player_timer()
 end
+
+-- probably not needed but better safe than sorry
+local equip_selection_orig = PlayerInventory.equip_selection
+function PlayerInventory:equip_selection(...)
+	local result = equip_selection_orig(self, ...)
+	if result and self._unit:movement().cool and self._unit:movement():cool() then
+		self:equipped_unit():base():set_flashlight_enabled(false) -- disable the flashlight if we equip something while cool
+	end
+
+	return result
+end

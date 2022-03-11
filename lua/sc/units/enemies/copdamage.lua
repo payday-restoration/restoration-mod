@@ -3442,10 +3442,11 @@ function CopDamage.is_hrt(type)
 end
 
 function CopDamage:roll_critical_hit(attack_data, damage)
+	local damage = attack_data.damage
 	if not self:can_be_critical(attack_data) then
 		return false, damage
 	end
-
+	
 	local critical_hits = self._char_tweak.critical_hits or {}
 	local critical_hit = false
 	local critical_value = critical_hits.base_chance or 0

@@ -351,19 +351,7 @@ function PlayerDamage:_apply_damage(attack_data, damage_info, variant, t)
 
 	--Unique kill taunt stuff, in case player was knocked into bleedout.
 	if self._bleed_out and alive(attacker_unit) and attacker_unit:alive() then
-		local tweak_table = attack_data.attacker_unit:base()._tweak_table
-		self._kill_taunt_clbk_id = "kill_taunt" .. tostring(self._unit:key())
-		if tweak_table == "tank" then
-			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt", attack_data), t + 0.3)
-		elseif tweak_table == "spring" or tweak_table == "phalanx_vip" then
-			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_spring", attack_data), t + 0.3)	
-		elseif tweak_table == "taser" then
-			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_tase", attack_data), t + 0.3)	
-		elseif tweak_table == "taser_titan" then
-			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_tase", attack_data), t + 0.3)	
-		else
-			managers.enemy:add_delayed_clbk(self._kill_taunt_clbk_id, callback(self, self, "clbk_kill_taunt_common", attack_data), t + 0.3)			
-		end
+		self:chk_queue_taunt_line(attack_data)
 	end
 
 	return true
@@ -1079,33 +1067,6 @@ function PlayerDamage:_calc_health_damage(attack_data)
 
 	return self:_calc_health_damage_no_deflection(attack_data)
 end
-
-function PlayerDamage:clbk_kill_taunt_spring(attack_data)
-	if attack_data.attacker_unit and attack_data.attacker_unit:alive() then
-		self._kill_taunt_clbk_id = nil
-
-		attack_data.attacker_unit:sound():say("a02")
-	end
-end		
-
-function PlayerDamage:clbk_kill_taunt_tase(attack_data)
-	if attack_data.attacker_unit and attack_data.attacker_unit:alive() then
-		self._kill_taunt_clbk_id = nil
-
-		attack_data.attacker_unit:sound():say("post_tasing_taunt")
-	end
-end		
-
-function PlayerDamage:clbk_kill_taunt_common(attack_data)
-	if attack_data.attacker_unit and attack_data.attacker_unit:alive() then
-		if not attack_data.attacker_unit:base()._tweak_table then
-			return
-		end
-		self._kill_taunt_clbk_id = nil
-
-		attack_data.attacker_unit:sound():say("i03")
-	end
-end	
 
 --Make lock picking skill affect arrested time.
 function PlayerDamage:on_arrested()

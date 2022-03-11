@@ -3072,6 +3072,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.ecm_vulnerability = nil	
 	self.phalanx_vip.die_sound_event = "mga_death_scream"
 	self.phalanx_vip.die_sound_event_2 = "l2n_x01a_any_3p"
+	self.phalanx_vip.kill_taunt = "a02"
 	self.phalanx_vip.must_headshot = true
 	self.phalanx_vip.ends_assault_on_death = true
 	self.phalanx_vip.do_omnia = true
@@ -3137,6 +3138,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.speech_prefix_p1 = "cpw"
 	self.spring.speech_prefix_p2 = nil
 	self.spring.speech_prefix_count = nil
+	self.spring.kill_taunt = "a02"
 	self.spring.chatter = {
 		aggressive = true,
 		retreat = true,
@@ -3371,6 +3373,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.speech_prefix_p1 = self._prefix_data_p1.taser()
 	self.taser.speech_prefix_p2 = nil
 	self.taser.speech_prefix_count = nil
+	self.taser.kill_taunt = "post_tasing_taunt"
 	self.taser.spawn_sound_event = self._prefix_data_p1.taser() .. "_entrance"
 	self.taser.access = "taser"
 	self.taser.dodge = presets.dodge.athletic
@@ -5154,6 +5157,7 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.base.submission_intimidate = 15
 	presets.base.speech_prefix = "po"
 	presets.base.speech_prefix_count = 1
+	presets.base.kill_taunt = "i03"
 	presets.base.follower = false
 	presets.base.rescue_hostages = false
 	presets.base.steal_loot = false

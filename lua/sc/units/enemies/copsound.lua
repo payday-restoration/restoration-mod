@@ -182,7 +182,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		bdz_entrance_elite = "spawn",
 		bdz_g90 = "gogo",
 		bdz_post_kill_taunt = "gogo",
-		bdz_visor_lost = "gogo",
+		bdz_visor_lost = "visor_lost",
 		cloaker_taunt_after_assault = "kill",
 		cloaker_taunt_during_assault = "kill",
 		cpa_taunt_after_assault = "kill",

@@ -25888,8 +25888,10 @@ function CharacterTweakData:character_map()
 				"npc_male_yufuwang_armored",
 				"ene_male_security_penthouse_1",
 				"ene_male_security_penthouse_2",
-				"ene_male_security_penthouse_3",
-				"ene_male_security_penthouse_4"
+				"ene_male_triad_penthouse_1",
+				"ene_male_triad_penthouse_2",
+				"ene_male_triad_penthouse_3",
+				"ene_male_triad_penthouse_4"
 			}
 		},
 		sharks = {

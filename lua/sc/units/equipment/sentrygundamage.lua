@@ -418,7 +418,7 @@ function SentryGunDamage:damage_fire(attack_data)
 		weapon_unit = attack_data.attacker_unit
 	end
 
-	if attacker_unit and PlayerDamage.is_friendly_fire(self, attacker_unit) then
+	if attacker_unit and not alive(attacker_unit) or PlayerDamage.is_friendly_fire(self, attacker_unit) then
 		return "friendly_fire"
 	end
 

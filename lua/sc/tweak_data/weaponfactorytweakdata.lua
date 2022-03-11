@@ -24523,10 +24523,6 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 		end	
 		
 	if self.wpn_fps_snp_winchester1894 then -- Pawcio's Winchester 1894				
-			self.parts.wpn_fps_upg_winchester1894_body_synthetic.supported = true				
-			self.parts.wpn_fps_upg_winchester1894_body_synthetic.stats = {
-				value = 0
-			}
 			self.parts.wpn_fps_upg_winchester1894_stock_shellholder.has_description = false
 			self.parts.wpn_fps_upg_winchester1894_stock_shellholder.supported = true
 			self.parts.wpn_fps_upg_winchester1894_stock_shellholder.stats = {

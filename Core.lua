@@ -111,7 +111,8 @@ function restoration:Init()
 			"kenaz", --golden grin casino 
 			"dinner", --Slaughterhouse
 			"branchbank", --Gets Branchbank from Autumn		
-			"help", --Prison Nightmare			
+			"help", --Prison Nightmare	
+			"chca", --Black Cat Heist
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"tj_htsb", --Gets Southern Branchbank from Autumn

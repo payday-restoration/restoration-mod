@@ -2185,7 +2185,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
-		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nAkibmo weapons gain ##16## stability.\n\nACE: ##$pro##\nAkimbo weapons gain ##25%## more total ammo capacity and pickup.",
+		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nAkimbo weapons gain ##16## stability.\n\nACE: ##$pro##\nAkimbo weapons gain ##25%## more total ammo capacity and pickup.",
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",

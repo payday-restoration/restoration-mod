@@ -20,7 +20,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank_biker" />
-			<var name="_default_weapon_id" value="mossberg" />
+			<var name="_default_weapon_id" value="flamethrower" />
 			<var name="_stats_name" value="tank_green" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />

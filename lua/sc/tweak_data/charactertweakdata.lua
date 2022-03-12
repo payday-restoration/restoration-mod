@@ -2742,12 +2742,13 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.access = "gangster"
 	self.tank_biker.custom_voicework = "tank_biker"
 	self.tank_biker.use_radio = nil
-	--self.tank_biker.speech_prefix_p1 = "bik"
-	--self.tank_biker.speech_prefix_p2 = nil
+	self.tank_biker.speech_prefix_p1 = "t_biker"
+	self.tank_biker.speech_prefix_p2 = nil
 	--self.tank_biker.speech_prefix_count = 2	
 	--self.tank_biker.die_sound_event = "x02a_any_3p"	
 	--self.tank_biker.die_sound_event_2 = "l1n_burndeath"	
 	self.tank_biker.chatter = presets.enemy_chatter.swat
+	self.tank_biker.can_throw_frag = true
 	self.tank_biker.no_omnia_heal = true
 end
 

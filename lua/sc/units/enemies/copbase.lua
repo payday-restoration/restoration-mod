@@ -300,8 +300,10 @@ local weapons_map = {
 local default_weapon_name_orig = CopBase.default_weapon_name
 function CopBase:default_weapon_name(...)
 	local job = Global.level_data and Global.level_data.level_id or ""
-
-	self._default_weapon_id = weapons_map[job] and weapons_map[job][self._unit:name():key()] or weapons_map[self._unit:name():key()] or self._default_weapon_id
+	local weapon_override = weapons_map[job] and weapons_map[job][self._unit:name():key()] or weapons_map[self._unit:name():key()]
+	if weapon_override then
+		self._default_weapon_id = type(weapon_override) == "table" and table.random(weapon_override) or weapon_override
+	end
 
 	return default_weapon_name_orig(self, ...)
 end

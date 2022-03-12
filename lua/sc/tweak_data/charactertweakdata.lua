@@ -2054,7 +2054,6 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.damage.hurt_severity = presets.hurt_severities.only_light_hurt_no_explode
 	self.tank.chatter = {
 		reload = true, --this is just here for tdozers
-		visor_lost = true, --this is just here for bikerdozer but it doesn't work for some reason :/
 		aggressive = true,
 		retreat = true,
 		go_go = true,
@@ -2738,17 +2737,14 @@ end
 
 function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker = deep_clone(self.tank)
+	self.tank_biker.speech_prefix_p1 = "https://www.youtube.com/watch?v=_jRbH9bcOMQ"
+	self.tank_biker.speech_prefix_p2 = nil
+	self.tank_biker.speech_prefix_count = nil
 	self.tank_biker.spawn_sound_event = nil
 	self.tank_biker.spawn_sound_event_2 = nil
 	self.tank_biker.access = "gangster"
 	self.tank_biker.custom_voicework = "tank_biker"
 	self.tank_biker.use_radio = nil
-	self.tank_biker.speech_prefix_p1 = "t_biker"
-	self.tank_biker.speech_prefix_p2 = nil
-	--self.tank_biker.speech_prefix_count = 2	
-	--self.tank_biker.die_sound_event = "x02a_any_3p"	
-	--self.tank_biker.die_sound_event_2 = "l1n_burndeath"	
-	self.tank_biker.chatter = presets.enemy_chatter.tank
 	self.tank_biker.can_throw_frag = true
 	self.tank_biker.no_omnia_heal = true
 end

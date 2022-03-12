@@ -156,7 +156,7 @@ function DescriptionItem:init(panel, text, i, saved_descriptions)
 	local desc_text = self._scroll_panel:text({
 		name = "description_text",
 		text = desc_string,
-		font_size = 20,
+		font_size = 18,
 		font = tweak_data.menu.small_font,
 		wrap = true,
 		word_wrap = true,

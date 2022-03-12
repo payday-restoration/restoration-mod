@@ -292,7 +292,7 @@ local nypd_very_hard = {
 		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
 		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
 		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
-		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1"
 	}	
 local nypd_overkill = {
         --scripted spawns for overkill
@@ -361,7 +361,7 @@ local nypd_overkill = {
 		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
 		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
 		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
-		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1"
 
 	}	
 local nypd_mayhem = {
@@ -435,7 +435,7 @@ local nypd_mayhem = {
 		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
 		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
 		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
-		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1"
 
 	}			
 local nypd_deathwish = {
@@ -516,7 +516,7 @@ local nypd_deathwish = {
 		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
 		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
 		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
-		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1"
 
 	}
 local nypd_zeal = {
@@ -587,7 +587,7 @@ local nypd_zeal = {
 		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
 		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
 		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
-		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1"
 
 	}	
 	

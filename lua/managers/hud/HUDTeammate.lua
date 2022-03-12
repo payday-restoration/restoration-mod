@@ -121,7 +121,7 @@ function HUDTeammate:init(i, teammates_panel, is_player, width)
 
 	self._panel:child("callsign_bg"):set_visible(true)
 	self._panel:child("callsign"):set_visible(true)
-	name_bg:set_h(name:h() + 4)
+	--name_bg:set_h(name:h() + 4)
 
 	local revive_panel = self._player_panel:panel({
 		name = "revive_panel",

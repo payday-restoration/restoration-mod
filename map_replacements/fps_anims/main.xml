@@ -1,8 +1,13 @@
-<mod name="nin_res" author="Zdann" min_lib_ver="3.38">
+<mod name="fps_anims" author="Zdann" min_lib_ver="3.38">
 	<AddFiles directory="assets">
+		<!--Nailgun-->
 		<animation path="anims/fps/melee/nin_res/nin_attack_var_miss" load="true"/>
 		<animation path="anims/fps/melee/nin_res/nin_attack_var1" load="true"/>
 		<animation path="anims/fps/melee/nin_res/nin_charge" load="true"/>
 		<animation path="anims/fps/melee/nin_res/nin_start" load="true"/>
+		
+		<!--RPK Banana Mag-->
+		<animation path="anims/fps/rpk/rpk_reload_normal" load="true"/>
+		<animation path="anims/fps/rpk/rpk_reload_normal_not_empty" load="true"/>
 	</AddFiles>
 </mod>

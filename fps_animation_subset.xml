@@ -5,6 +5,12 @@
 			<xml/>
 		</search>
 		<target mode="attach">
+			<anim name="melee_nin_res_start" 						file="anims/fps/melee/nin_res/nin_start" blend_set="all"/>
+			<anim name="melee_nin_res_charge" 						file="anims/fps/melee/nin_res/nin_charge" blend_set="all"/>
+			<anim name="melee_nin_res_charge_var2"					file="anims/fps/melee/nin_res/nin_charge" blend_set="all"/>
+			<anim name="melee_nin_res_attack_var1" 					file="anims/fps/melee/nin_res/nin_attack_var1" blend_set="all"/>
+			<anim name="melee_nin_res_attack_var_miss" 				file="anims/fps/melee/nin_res/nin_attack_var_miss" blend_set="all"/>
+			
 			<anim name="oicw_reload" 								file="anims/fps/oicw/oicw_reload" blend_set="all"/>
 			<anim name="oicw_reload_not_empty" 						file="anims/fps/oicw/oicw_reload_not_empty" blend_set="all"/>
 			<anim name="oicw_idle" 									file="anims/fps/oicw/oicw_idle" blend_set="all"/>
@@ -56,6 +62,9 @@
 			<anim name="osipr_underbarrel_sprint_enter" 			file="anims/fps/oicw/oicw_sprint_enter" blend_set="all"/>
 			<anim name="osipr_underbarrel_sprint_exit" 				file="anims/fps/oicw/oicw_sprint_exit" blend_set="all"/>
 			<anim name="osipr_underbarrel_unequip" 					file="anims/fps/oicw/oicw_unequip" blend_set="all"/>
+			
+			<anim name="rpk_reload_normal" 							file="anims/fps/rpk/rpk_reload_normal" blend_set="all"/>
+			<anim name="rpk_reload_normal_not_empty" 				file="anims/fps/rpk/rpk_reload_normal_not_empty" blend_set="all"/>
 		</target>
 	</tweak>
 </tweaks>

@@ -3,10 +3,8 @@
 	<tweak definition="restorationmod_network_tweak.xml"/>
 	<tweak definition="restorationmod_postprocessor_tweak.xml"/>
 	<tweak definition="restorationmod_defaultrendertemplates_tweak.xml"/>
-	<tweak definition="oicw_animation_state_machine.xml" />
-	<tweak definition="oicw_animation_states.xml" />
-	<tweak definition="oicw_animation_subset.xml" />
-	<tweak definition="nin_res_animation_state_machine.xml" />
-	<tweak definition="nin_res_animation_states.xml" />
-	<tweak definition="nin_res_animation_subset.xml" />
+	<tweak definition="fps_animation_state_machine.xml" />
+	<tweak definition="fps_animation_states.xml" />
+	<tweak definition="fps_animation_subset.xml" />
+	<!-- <:include src="addoutfit.xml"/> -->
 </mod>

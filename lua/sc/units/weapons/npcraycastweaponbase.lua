@@ -4,30 +4,47 @@ local mvec_spread = Vector3()
 local init_original = NPCRaycastWeaponBase.init
 local setup_original = NPCRaycastWeaponBase.setup
 
-function NPCRaycastWeaponBase:init(...)
-	init_original(self, ...)
+Hooks:PostHook(NPCRaycastWeaponBase, "init", "res_init", function(self)
 	self._bullet_slotmask = self._bullet_slotmask - World:make_slot_mask(22)
-	
-	local weapon_tweak = tweak_data.weapon[self._name_id]
 
+	local weapon_tweak = tweak_data.weapon[self._name_id]
 	if weapon_tweak.armor_piercing then
 		self._use_armor_piercing = true
 	end
 
 	local trail = Idstring("effects/particles/weapons/weapon_trail")
-	
 	if weapon_tweak and weapon_tweak.sniper_trail then
 		trail = Idstring("effects/particles/weapons/sniper_trail_sc")
 	elseif weapon_tweak and weapon_tweak.titan_trail then
 		trail = Idstring("effects/particles/weapons/titan_trail_sc")
 	end
-	
+
 	self._trail_effect_table = {
 		effect = trail,
 		position = Vector3(),
 		normal = Vector3()
 	}
-end
+
+	if not self._flashlight_data and self._unit:get_object(Idstring("a_effect_flashlight")) then
+		local effect = self._unit:effect_spawner(Idstring("flashlight"))
+		if not effect then return end -- effect failed to spawn for whatever reason, most likely the object is missing the effect spawner
+
+		local light = World:create_light("spot|specular")
+		local light_object = self._unit:get_object(Idstring("a_effect_flashlight"))
+
+		self._light = light
+		self._flashlight_data = {
+			light = light,
+			effect = effect
+		}
+		light:set_far_range(400)
+		light:set_spot_angle_end(25)
+		light:set_multiplier(2)
+		light:link(light_object)
+		light:set_rotation(Rotation(light_object:rotation():z(), -light_object:rotation():x(), -light_object:rotation():y()))
+		light:set_enable(false)
+	end
+end)
 
 function NPCRaycastWeaponBase:setup(setup_data, ...)
 	setup_original(self, setup_data, ...)
@@ -39,6 +56,12 @@ function NPCRaycastWeaponBase:setup(setup_data, ...)
 		end
 	end		
 end
+
+Hooks:PostHook(NPCRaycastWeaponBase, "destroy", "res_destroy", function(self)
+	if alive(self._light) then
+		World:delete_light(self._light)
+	end
+end)
 
 function NPCRaycastWeaponBase:_spawn_trail_effect(direction, col_ray)
 	self._obj_fire:m_position(self._trail_effect_table.position)

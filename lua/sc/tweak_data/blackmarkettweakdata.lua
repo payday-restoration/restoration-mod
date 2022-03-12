@@ -1002,7 +1002,8 @@ function BlackMarketTweakData:_init_projectiles(tweak_data)
 	self.projectiles.launcher_incendiary_m32.time_cheat = 0.7
 end
 
---Overrides this function to allow abominations on Gold AKs
+--[[
+--Overrides this function to allow abominations on Gold AKs, buged will add later properly when I can be fucked
 function BlackMarketTweakData:create_new_color_skin(name, data, color_skin_data)
 	data.name_id = "bm_wskn_" .. name
 	data.rarity = "common"
@@ -1024,6 +1025,7 @@ function BlackMarketTweakData:create_new_color_skin(name, data, color_skin_data)
 
 	table.insert(self.weapon_colors, name)
 end
+]]--
 
 local old_weapon_skins = BlackMarketTweakData._init_weapon_skins
 function BlackMarketTweakData:_init_weapon_skins(tweak_data)

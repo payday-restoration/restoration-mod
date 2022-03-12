@@ -213,167 +213,97 @@ function CopBase:_chk_spawn_gear()
 	end
 end
 
-function CopBase:default_weapon_name()
-	local default_weapon_id = self._default_weapon_id
-	local weap_ids = tweak_data.character.weap_ids
-	
-	local job = Global.level_data and Global.level_data.level_id
-
+local weapons_map = {
 	--M1911 Users--
-	if self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_1/ene_secret_service_1") 
-	or self._unit:name() == Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2")
-	or self._unit:name() == Idstring("units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service")	then
-		default_weapon_id = "m1911_npc"
-	end
-	
+	[Idstring("units/payday2/characters/ene_secret_service_1/ene_secret_service_1"):key()] = "m1911_npc",
+	[Idstring("units/payday2/characters/ene_secret_service_2/ene_secret_service_2"):key()] = "m1911_npc",
+	[Idstring("units/pd2_dlc_vit/characters/ene_murkywater_secret_service/ene_murkywater_secret_service"):key()] = "m1911_npc",
+
 	--Blue SWAT Weapon Changes (test)--
-	if self._unit:name() == Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc") then
-		default_weapon_id = "m4_blue"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1") then
-		default_weapon_id = "m4_blue"	
-	end		
-	
+	[Idstring("units/payday2/characters/ene_swat_1_sc/ene_swat_1_sc"):key()] = "m4_blue",
+	[Idstring("units/pd2_dlc_hvh/characters/ene_swat_hvh_1/ene_swat_hvh_1"):key()] = "m4_blue",
+
 	--Yellow Heavy SWAT Weapon Changes (test)
-	if self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass") then
-		default_weapon_id = "ak102"		
-	end		
-	
+	[Idstring("units/pd2_dlc_mad/characters/ene_akan_cs_heavy_ak47_ass/ene_akan_cs_heavy_ak47_ass"):key()] = "ak102"
+
 	--Biker Weapon Changes--
-	if self._unit:name() == Idstring("units/payday2/characters/ene_biker_1/ene_biker_1") then
-		default_weapon_id = "mac11"
-	elseif self._unit:name() == Idstring("units/payday2/characters/ene_biker_2/ene_biker_2") then
-		default_weapon_id = "mossberg"
-	elseif self._unit:name() == Idstring("units/payday2/characters/ene_biker_3/ene_biker_3") then
-		default_weapon_id = "ak47"
-	elseif self._unit:name() == Idstring("units/payday2/characters/ene_biker_4/ene_biker_4") then
-		default_weapon_id = "raging_bull"			
-	end
-	
+	[Idstring("units/payday2/characters/ene_biker_1/ene_biker_1"):key()] = "mac11",
+	[Idstring("units/payday2/characters/ene_biker_2/ene_biker_2"):key()] = "mossberg",
+	[Idstring("units/payday2/characters/ene_biker_3/ene_biker_3"):key()] = "ak47",
+	[Idstring("units/payday2/characters/ene_biker_4/ene_biker_4"):key()] = "raging_bull",
+
 	--Mendoza Weapon Changes
-	if self._unit:name() == Idstring("units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1") then
-		default_weapon_id = "mac11"
-	elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2") then
-		default_weapon_id = "mossberg"
-	elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3") then
-		default_weapon_id = "ak47"
-	elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4") then
-		default_weapon_id = "raging_bull"			
-	end
-	
+	[Idstring("units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1"):key()] = "mac11",
+	[Idstring("units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2"):key()] = "mossberg",
+	[Idstring("units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3"):key()] = "ak47",
+	[Idstring("units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4"):key()] = "raging_bull",
+
 	--Cobras Weapon Changes
-	if job == "man" then
-		if self._unit:name() == Idstring("units/payday2/characters/ene_gang_black_1/ene_gang_black_1") then
-			default_weapon_id = "c45"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_black_2/ene_gang_black_2") then
-			default_weapon_id = "raging_bull"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_black_3/ene_gang_black_3") then
-			default_weapon_id = "c45"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_black_4/ene_gang_black_4") then
-			default_weapon_id = "raging_bull"			
-		end		
-	else
-		if self._unit:name() == Idstring("units/payday2/characters/ene_gang_black_1/ene_gang_black_1") then
-			default_weapon_id = "mac11"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_black_2/ene_gang_black_2") then
-			default_weapon_id = "mossberg"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_black_3/ene_gang_black_3") then
-			default_weapon_id = "ak47"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_black_4/ene_gang_black_4") then
-			default_weapon_id = "raging_bull"			
-		end				
-	end
-	
+	["man"] = {
+		[Idstring("units/payday2/characters/ene_gang_black_1/ene_gang_black_1"):key()] = "c45",
+		[Idstring("units/payday2/characters/ene_gang_black_2/ene_gang_black_2"):key()] = "raging_bull",
+		[Idstring("units/payday2/characters/ene_gang_black_3/ene_gang_black_3"):key()] = "c45",
+		[Idstring("units/payday2/characters/ene_gang_black_4/ene_gang_black_4"):key()] = "raging_bull",
+	},
+	[Idstring("units/payday2/characters/ene_gang_black_1/ene_gang_black_1"):key()] = "mac11",
+	[Idstring("units/payday2/characters/ene_gang_black_2/ene_gang_black_2"):key()] = "mossberg",
+	[Idstring("units/payday2/characters/ene_gang_black_3/ene_gang_black_3"):key()] = "ak47",
+	[Idstring("units/payday2/characters/ene_gang_black_4/ene_gang_black_4"):key()] = "raging_bull",
+
 	--Russian Gangster Weapon Changes
-	if job == "spa" then
-		if self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1") then
-			default_weapon_id = "ak47"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2") then
-			default_weapon_id = "raging_bull"	
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3") then
-			default_weapon_id = "mossberg"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5") then
-			default_weapon_id = "ak47"			
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4") then
-			default_weapon_id = "mac11"			
-		end		
-	else
-		if self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1") then
-			default_weapon_id = "mossberg"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2") then
-			default_weapon_id = "raging_bull"	
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3") then
-			default_weapon_id = "ak47"
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5") then
-			default_weapon_id = "ak47"			
-		elseif self._unit:name() == Idstring("units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4") then
-			default_weapon_id = "mac11"			
-		end				
-	end
-	
+	["spa"] = {
+		[Idstring("units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"):key()] = "ak47",
+		[Idstring("units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"):key()] = "raging_bull",
+		[Idstring("units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"):key()] = "mossberg",
+		[Idstring("units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"):key()] = "mac11",
+		[Idstring("units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"):key()] = "ak47",
+	},
+	[Idstring("units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"):key()] = "mossberg",
+	[Idstring("units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"):key()] = "raging_bull",
+	[Idstring("units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"):key()] = "ak47",
+	[Idstring("units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"):key()] = "mac11",
+	[Idstring("units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"):key()] = "ak47",
+
 	--Bolivian Weapons
-	if self._unit:name() == Idstring("units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01") then
-		default_weapon_id = "mossberg"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02") then
-		default_weapon_id = "mac11"		
-	elseif self._unit:name() == Idstring("units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager") then
-		default_weapon_id = "raging_bull"				
-	end
-	
+	[Idstring("units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01"):key()] = "mossberg",
+	[Idstring("units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02"):key()] = "mac11",
+	[Idstring("units/pd2_dlc_friend/characters/ene_security_manager/ene_security_manager"):key()] = "raging_bull",
+
 	--Triads (Because why the fuck they carry only pistols)
-	if self._unit:name() == Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_2/ene_male_triad_gang_2") then
-		default_weapon_id = "sr2_smg"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_3/ene_male_triad_gang_3") then
-		default_weapon_id = "deagle"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_4/ene_male_triad_gang_4") then
-		default_weapon_id = "ak47"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_5/ene_male_triad_gang_5") then
-		default_weapon_id = "mossberg"
-    elseif self._unit:name() == Idstring("units/pd2_dlc_chca/characters/ene_triad_cruise_1/ene_triad_cruise_1") then
-		default_weapon_id = "m1911_npc"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_chca/characters/ene_triad_cruise_2/ene_triad_cruise_2") then
-		default_weapon_id = "akmsu_smg"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_chca/characters/ene_triad_cruise_3/ene_triad_cruise_3") then
-		default_weapon_id = "mac11"			
-	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1") then
-		default_weapon_id = "m1911_npc"
-	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2") then
-		default_weapon_id = "akmsu_smg"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_2/ene_male_triad_penthouse_2") then
-		default_weapon_id = "mac11"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_3/ene_male_triad_penthouse_3") then
-		default_weapon_id = "ak47"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_4/ene_male_triad_penthouse_4") then
-		default_weapon_id = "raging_bull"
-	end
-	
+	[Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_2/ene_male_triad_gang_2"):key()] = "sr2_smg",
+	[Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_3/ene_male_triad_gang_3"):key()] = "deagle",
+	[Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_4/ene_male_triad_gang_4"):key()] = "ak47",
+	[Idstring("units/pd2_dlc_chas/characters/ene_male_triad_gang_5/ene_male_triad_gang_5"):key()] = "mossberg",
+	[Idstring("units/pd2_dlc_chca/characters/ene_triad_cruise_1/ene_triad_cruise_1"):key()] = "m1911_npc",
+	[Idstring("units/pd2_dlc_chca/characters/ene_triad_cruise_2/ene_triad_cruise_2"):key()] = "akmsu_smg",
+	[Idstring("units/pd2_dlc_chca/characters/ene_triad_cruise_3/ene_triad_cruise_3"):key()] = "mac11",
+	[Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1"):key()] = "m1911_npc",
+	[Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2"):key()] = "akmsu_smg",
+	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_2/ene_male_triad_penthouse_2"):key()] = "mac11",
+	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_3/ene_male_triad_penthouse_3"):key()] = "ak47",
+	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_4/ene_male_triad_penthouse_4"):key()] = "raging_bull",
+
 	--Security Guards
-	if self._unit:name() == Idstring("units/payday2/characters/ene_security_3/ene_security_3") then
-		default_weapon_id = "r870"	
-	elseif self._unit:name() == Idstring("units/pd2_dlc_chca/characters/ene_security_cruise_1/ene_security_cruise_1") then
-		default_weapon_id = "m1911_npc"	
-    elseif self._unit:name() == Idstring("units/pd2_dlc_chca/characters/ene_security_cruise_2/ene_security_cruise_2") then
-		default_weapon_id = "mp5"	
-	end
+	[Idstring("units/payday2/characters/ene_security_3/ene_security_3"):key()] = "r870",
+	[Idstring("units/pd2_dlc_chca/characters/ene_security_cruise_1/ene_security_cruise_1"):key()] = "m1911_npc",
+	[Idstring("units/pd2_dlc_chca/characters/ene_security_cruise_2/ene_security_cruise_2"):key()] = "mp5",
 
 	--Giving Friendly AI silenced pistols
-	if self._unit:name() == Idstring("units/pd2_dlc_spa/characters/npc_spa/npc_spa") then
-		default_weapon_id = "beretta92"	
-	elseif self._unit:name() == Idstring("units/payday2/characters/npc_old_hoxton_prisonsuit_2/npc_old_hoxton_prisonsuit_2") then
-		default_weapon_id = "beretta92"				
-	elseif self._unit:name() == Idstring("units/pd2_dlc_berry/characters/npc_locke/npc_locke") then
-		default_weapon_id = "beretta92"					
-	end
-	
-	--Giving Vanilla Titanshields their silent pistols
-	if self._unit:name() == Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1") then
-		default_weapon_id = "beretta92_titan"	
-	end	
+	[Idstring("units/pd2_dlc_spa/characters/npc_spa/npc_spa"):key()] = "beretta92",
+	[Idstring("units/payday2/characters/npc_old_hoxton_prisonsuit_2/npc_old_hoxton_prisonsuit_2"):key()] = "beretta92",
+	[Idstring("units/pd2_dlc_berry/characters/npc_locke/npc_locke"):key()] = "beretta92",
 
-	for i_weap_id, weap_id in ipairs(weap_ids) do
-		if default_weapon_id == weap_id then
-			return tweak_data.character.weap_unit_names[i_weap_id]
-		end
-	end
+	--Giving Vanilla Titanshields their silent pistols
+	[Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1"):key()] = "beretta92_titan",
+}
+
+local default_weapon_name_orig = CopBase.default_weapon_name
+function CopBase:default_weapon_name(...)
+	local job = Global.level_data and Global.level_data.level_id or ""
+
+	self._default_weapon_id = weapons_map[job] and weapons_map[job][self._unit:name():key()] or weapons_map[self._unit:name():key()] or self._default_weapon_id
+
+	return default_weapon_name_orig(self, ...)
 end
 
 local ids_lod = Idstring("lod")

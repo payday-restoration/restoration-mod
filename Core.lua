@@ -53,6 +53,7 @@ function restoration:Init()
 		"kenaz", --golden grin casino 
 		"big", --big bank
 		"dinner", --Slaughterhouse
+		"chca", --Black Cat Heist
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"lvl_friday" --Crashing Capitol

@@ -280,8 +280,19 @@ local nypd_very_hard = {
 		
 		--Murky bois
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
+		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		
+		--Panic Room Gangsters
+		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_black_2/ene_gang_black_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_black_3/ene_gang_black_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_black_4/ene_gang_black_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		
+		["units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
 	}	
 local nypd_overkill = {
         --scripted spawns for overkill
@@ -338,7 +349,20 @@ local nypd_overkill = {
 
 		--Murky bois
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"	
+		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+	
+		--Panic Room Gangsters
+		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_black_2/ene_gang_black_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_black_3/ene_gang_black_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_black_4/ene_gang_black_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		
+		["units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+
 	}	
 local nypd_mayhem = {
         --scripted spawns for mayhem
@@ -399,7 +423,20 @@ local nypd_mayhem = {
 		
 		--Murky bois
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
+		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		
+		--Panic Room Gangsters
+		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_black_2/ene_gang_black_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_black_3/ene_gang_black_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_black_4/ene_gang_black_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		
+		["units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+
 	}			
 local nypd_deathwish = {
         --scripted spawns for death wish
@@ -467,7 +504,20 @@ local nypd_deathwish = {
 
 		--Murky bois
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"	
+		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+
+		--Panic Room Gangsters
+		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_black_2/ene_gang_black_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_black_3/ene_gang_black_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_black_4/ene_gang_black_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		
+		["units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+
 	}
 local nypd_zeal = {
 	   --scripted spawns for death sentence
@@ -525,7 +575,20 @@ local nypd_zeal = {
 
 		--Murky bois
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",	
-		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"	
+		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+
+		--Panic Room Gangsters
+		["units/payday2/characters/ene_gang_black_1/ene_gang_black_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_black_2/ene_gang_black_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_black_3/ene_gang_black_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_black_4/ene_gang_black_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		
+		["units/payday2/characters/ene_gang_russian_1/ene_gang_russian_1"] = "units/payday2/characters/ene_gang_mexican_1/ene_gang_mexican_1",	
+		["units/payday2/characters/ene_gang_russian_2/ene_gang_russian_2"] = "units/payday2/characters/ene_gang_mexican_2/ene_gang_mexican_2",
+		["units/payday2/characters/ene_gang_russian_3/ene_gang_russian_3"] = "units/payday2/characters/ene_gang_mexican_3/ene_gang_mexican_3",	
+		["units/payday2/characters/ene_gang_russian_4/ene_gang_russian_4"] = "units/payday2/characters/ene_gang_mexican_4/ene_gang_mexican_4",
+		["units/payday2/characters/ene_gang_russian_5/ene_gang_russian_5"] = "units/payday2/characters/ene_gang_mexican_5/ene_gang_mexican_5"
+
 	}	
 	
 	---------------------------------------------------NYPD END---------------------------------------------------	

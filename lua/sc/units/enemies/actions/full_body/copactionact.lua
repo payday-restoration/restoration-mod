@@ -33,8 +33,8 @@ CopActionAct._act_redirects.script = {
 local _play_anim_orig = CopActionAct._play_anim
 function CopActionAct:_play_anim()
 	local result = _play_anim_orig(self)
-	-- act actions disable the flashlight if it's full_body or shooting is not allowed
-	if result and (self._action_desc.body_part == 1 or self._blocks.action) and self._unit:inventory():equipped_unit() then
+	-- act actions disable the flashlight if it needs to be done from idle, which generally means specialobjectives
+	if result and self._action_desc.needs_full_blend and self._unit:inventory():equipped_unit() then
 		self._flashlight_disabled = true
 		self._unit:inventory():equipped_unit():base():set_flashlight_enabled(false)
 	end

@@ -29,6 +29,7 @@ function restoration:Init()
 		"gallery", --art gallery
 		--Custom Heists--
 		"office_strike", --office strike
+		"gallery_v2", --Art Gallery Remastered 
 		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	restoration.captain_teamwork = {
@@ -146,6 +147,8 @@ function restoration:Init()
 		"dinner", --Slaughterhouse
 		"born", --Biker 1
 		"flat",
+		"gallery", --Art Gallery
+		"framing_frame_1",  --Art Gallery but FF 
 		"framing_frame_3", --Framing Frame 3
 		"spa", --Brooklyn 10-10
 		"des",	--Henry's Rock
@@ -167,9 +170,8 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		--Custom Heists below--
 		"junk", --Doghouse
-		"wetwork_burn", --Burnout
-		"spa_CD",
-		"wwh_CD"
+		"gallery_v2", --Art Gallery Remastered 
+		"wetwork_burn" --Burnout
 	}
 	--For levels that have aggressive scripted spawns, or spawn placement such that enemies are constantly spawned next to players.
 	restoration.very_tiny_levels = {
@@ -182,7 +184,8 @@ function restoration:Init()
 		"hox_1",
 		"xmn_hox_1",
 		--Custom Heists below--
-		"thechase"
+		"thechase",
+		"infinitebank_room"  --First World Tower
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
 	restoration.extremely_tiny_levels = {

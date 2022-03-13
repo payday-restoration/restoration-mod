@@ -7,6 +7,9 @@
 		</search>
 		<target mode="append">
 			<global name="melee_nin_res" value="0"/>
+			<global name="oicw" value="0"/>
+			<global name="osipr_underbarrel" value="0"/>
+			<global name="ban_mag" value="0"/>
 		</target>
 	</tweak>
 </tweaks>

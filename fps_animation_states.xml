@@ -1,5 +1,46 @@
 <?xml version="1.0"?>
-<tweaks>	
+<tweaks>
+
+<!--Nailgun-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/melee_start"/>
+			<anim name="melee_start" weight="melee_knife"/>
+		</search>
+		<target mode="append">
+			<anim name="melee_nin_res_start" weight="melee_nin_res"/>	
+		</target>
+	</tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/melee_charge"/>
+			<anim name="melee_charge_var2" weight="melee_knife * charge_lerp"/>
+		</search>
+		<target mode="append">
+			<anim name="melee_nin_res_charge" 				weight="melee_nin_res * (1-charge_lerp)"/>
+			<anim name="melee_nin_res_charge_var2" 			weight="melee_nin_res * charge_lerp"/>
+		</target>
+	</tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/melee_attack"/>
+			<anim name="melee_attack_var4" weight="melee_knife * var4"/>
+		</search>
+		<target mode="append">
+			<anim name="melee_nin_res_attack_var1" 			weight="melee_nin_res * var1 * hit"/>
+			<anim name="melee_nin_res_attack_var_miss" 		weight="melee_nin_res * (1-hit)"/>	
+		</target>
+	</tweak>
+<!--Nailgun End-->
+	
+	
+	
+<!--SABR-->
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
 		<search>
 			<xml/>
@@ -624,4 +665,87 @@
 			<anim name="osipr_underbarrel_com_inspect" weight="osipr_underbarrel"/>
 		</target>
 	</tweak>
+<!--SABR End-->
+
+<!--RPK Banana Mag Reload-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/rpk"/>
+        </search>
+        <target mode="attributes">
+			<attr name="type" value="mix"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/rpk"/>
+			<anim name="rpk_reload"/>
+        </search>
+        <target mode="replace">
+			<anim name="rpk_reload" weight="rpk * (1 - ban_mag)"/>
+			<anim name="rpk_reload_normal" weight="rpk * ban_mag"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/rpk"/>
+            <keys/>
+            <key at="trigger" trigger="wp_clip_generic_ass_center"/>
+        </search>
+        <target mode="append">
+			<key at="trigger" trigger="wp_rpk_mag_grab" callback="play_sound" class_name="base" param1="wp_ak47_clip_take_new"/>
+            <key at="trigger" trigger="wp_rpk_mag_slide_in" callback="play_sound" class_name="base" param1="wp_ak47_clip_slide_in"/>
+			<key at="trigger" trigger="wp_rpk_mag_take_new" callback="play_sound" class_name="base" param1="wp_ak47_clip_take_new"/>
+			<key at="trigger" trigger="wp_rpk_mag_out" callback="play_sound" class_name="base" param1="wp_ak47_clip_slide_out"/>
+			<key at="trigger" trigger="wp_rpk_mag_in_contact" callback="play_sound" class_name="base" param1="wp_ak47_clip_in_contact"/>
+			<key at="trigger" trigger="wp_rpk_mag_hit_ground" callback="play_sound" class_name="base" param1="wp_clip_generic_heavy_metal_npc"/>
+			<key at="trigger" trigger="wp_ak47_tilt" callback="play_sound" class_name="base" param1="wp_ak47_tilt"/>
+			<key at="trigger" trigger="wp_ak47_tilt_back" callback="play_sound" class_name="base" param1="wp_ak47_tilt_back"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/rpk"/>
+        </search>
+        <target mode="attributes">
+			<attr name="type" value="mix"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/rpk"/>
+			<anim name="rpk_reload_not_empty"/>
+        </search>
+        <target mode="replace">
+			<anim name="rpk_reload_not_empty" weight="rpk * (1 - ban_mag)"/>
+			<anim name="rpk_reload_normal_not_empty" weight="rpk * ban_mag"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/rpk"/>
+            <keys/>
+            <key at="trigger" trigger="wp_clip_generic_ass_center"/>
+        </search>
+        <target mode="append">
+			<key at="trigger" trigger="wp_rpk_mag_grab" callback="play_sound" class_name="base" param1="wp_ak47_clip_take_new"/>
+            <key at="trigger" trigger="wp_rpk_mag_slide_in" callback="play_sound" class_name="base" param1="wp_ak47_clip_slide_in"/>
+			<key at="trigger" trigger="wp_rpk_mag_take_new" callback="play_sound" class_name="base" param1="wp_ak47_clip_take_new"/>
+			<key at="trigger" trigger="wp_rpk_mag_out" callback="play_sound" class_name="base" param1="wp_ak47_clip_slide_out"/>
+			<key at="trigger" trigger="wp_rpk_mag_in_contact" callback="play_sound" class_name="base" param1="wp_ak47_clip_in_contact"/>
+			<key at="trigger" trigger="wp_rpk_mag_hit_ground" callback="play_sound" class_name="base" param1="wp_clip_generic_heavy_metal_npc"/>
+        </target>
+    </tweak>
+<!--RPK Banana Mag Reload End-->
 </tweaks>

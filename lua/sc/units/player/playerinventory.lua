@@ -31,3 +31,14 @@ function PlayerInventory:equip_selection(...)
 
 	return result
 end
+
+-- hide masks upon the unit going invisible, if the unit has one
+Hooks:PostHook(PlayerInventory, "set_visibility_state", "res_set_visibility_state", function(self, state)
+	if alive(self._mask_unit) then
+		self._mask_unit:set_visible(state)
+
+		for _, linked_unit in ipairs(self._mask_unit:children()) do
+			linked_unit:set_visible(state)
+		end
+	end
+end)

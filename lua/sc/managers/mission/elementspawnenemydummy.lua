@@ -1430,6 +1430,34 @@ local murkywater_normal_overkill = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870", 
 		
+		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1",
+		
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga", --i guess that's a minidozer
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",	 --fuck off u stupid piece of shit vanilla murky cloaker that is a literally copy of US cloaker
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
+		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",	
 		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_sharks/characters/ene_swat_2/ene_swat_2",	
@@ -1491,6 +1519,34 @@ local murkywater_mayhem = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870", 
+		
+		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249", --i guess that's a minidozer
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",	 --fuck off u stupid piece of shit vanilla murky cloaker that is a literally copy of US cloaker
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
 		
 		--Scripted Spawns Only
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_sharks/characters/ene_swat_1/ene_swat_1",	
@@ -1554,6 +1610,34 @@ local murkywater_deathwish = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870", 
 		
+		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249", --i guess that's a minidozer
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_saiga/ene_murky_fbi_tank_saiga",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_mod_sharks/characters/ene_murky_fbi_tank_m249/ene_murky_fbi_tank_m249",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook",	 --fuck off u stupid piece of shit vanilla murky cloaker that is a literally copy of US cloaker
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_mod_sharks/characters/ene_murky_shield_fbi/ene_murky_shield_fbi",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_mod_sharks/characters/ene_murky_tazer/ene_murky_tazer",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_sharks/characters/ene_murky_sniper/ene_murky_sniper",	
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_sharks/characters/ene_murky_medic_m4/ene_murky_medic_m4",
+		
 		--Elite Murky Guards
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1",	
 		["units/payday2/characters/ene_murkywater_2/ene_murkywater_2"] = "units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2",	
@@ -1585,7 +1669,7 @@ local murkywater_omnia = {
 		["units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870",
 		
 		--specials
-		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3", --no benellidozer :<
 		["units/payday2/characters/ene_bulldozer_2/ene_bulldozer_2"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/payday2/characters/ene_bulldozer_3/ene_bulldozer_3"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3", 
 		["units/payday2/characters/ene_tazer_1/ene_tazer_1"]  = "units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser",
@@ -1619,6 +1703,34 @@ local murkywater_omnia = {
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer/ene_zeal_bulldozer"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2/ene_zeal_bulldozer_2"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
 		["units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3/ene_zeal_bulldozer_3"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3", 
+		
+		--Vanilla Murky Replacers (Just in case if there's a normal/custom heist that uses vanilla murkys in scripted spawns)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy",
+		
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3", --no benellidozer :<
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_mod_omnia/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook",	 --fuck off u stupid piece of shit vanilla murky cloaker that is a literally copy of US cloaker
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_mod_omnia/characters/ene_omnia_shield/ene_omnia_shield",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_mod_omnia/characters/ene_omnia_tazer/ene_omnia_tazer",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_mod_omnia/characters/ene_omnia_sniper/ene_omnia_sniper",	
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_medic/ene_omnia_medic",
 		
 		--OMNIA Guards
 		["units/payday2/characters/ene_murkywater_1/ene_murkywater_1"] = "units/pd2_mod_omnia/characters/ene_omnia_crew/ene_omnia_crew",	

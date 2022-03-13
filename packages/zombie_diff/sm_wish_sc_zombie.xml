@@ -8,16 +8,6 @@
 	<texture			path="units/payday2/weapons/wpn_npc_s553/sg_zeal_df" force="false"/>	
 	<texture			path="units/payday2/weapons/wpn_npc_s553/sg_zeal_nm" force="false"/>	
 
-	<!--zcloaker-->
-	<object				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
-	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
-	<model				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker" load="true"/>
-	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>	
-	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"/>
-	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker_contour"/>
-	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker_husk" load="true"/>
-
 	<!--gibs for the zcloaker cause zeal assets are godawful-->
 	<object				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/debris/ene_spook_head_debris"/>
 	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/debris/ene_spook_head_debris"/>
@@ -271,8 +261,8 @@
 	<material_config	path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker_contour"/>
 	<unit				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker_husk" load="true"/>
 	
-	<texture			path="units/pd2_mod_halloween/characters/zeal_cloaker_body_df/zeal_cloaker_body_df" />	
-	<texture			path="units/pd2_mod_halloween/characters/zeal_cloaker_head_df/zeal_cloaker_head_df" />
+	<texture			path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/zeal_cloaker_body_df" />	
+	<texture			path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/zeal_cloaker_head_df" />
 
 	<!--gibs for the zcloaker cause zeal assets are godawful-->
 	<object				path="units/pd2_mod_halloween/characters/ene_zeal_cloaker/debris/ene_spook_head_debris"/>

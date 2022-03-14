@@ -513,7 +513,7 @@ end
 --Refactored from vanilla code to be a bit easier to read and debug. Also adds timestamp support.
 local debug_spawn_groups = true
 --Should stick these in a global table somewhere since I constantly paste them in for debugging purposes.
-	function value_of(v, k, indent, seen)
+	local function value_of(v, k, indent, seen)
 		indent = indent and indent .. "    " or ""
 		seen = seen or {}
 		k = k or "[Unknown]"
@@ -534,7 +534,7 @@ local debug_spawn_groups = true
 		end
 	end
 
-	function value_of_table(t, name, indent, seen)
+	local function value_of_table(t, name, indent, seen)
 		indent = indent and indent .. "    " or ""
 		seen = seen or {}
 		name = name or "[Unknown]"

@@ -667,6 +667,14 @@ function WeaponTweakData:_init_data_m4_npc()
 	self.sg417_npc = deep_clone(self.m4_npc)
 	self.sg417_npc.sounds.prefix = "contraband_npc"
 	
+	--HK33 
+	self.hk33_npc = deep_clone(self.m4_npc)
+	self.hk33_npc.sounds.prefix = "g36_npc"
+	
+	self.hk33_bravo_npc = deep_clone(self.m4_npc)
+	self.hk33_bravo_npc.sounds.prefix = "g36_npc"
+	self.hk33_bravo_npc.CLIP_AMMO_MAX = 60
+	
 	--[[
 	self.sg417_npc.auto.fire_rate = 0.1
 	self.sg417_npc.CLIP_AMMO_MAX = 20
@@ -790,6 +798,9 @@ function WeaponTweakData:_init_data_r870_npc()
 	self.r870_taser_npc.sounds.prefix = "keltec_npc"
 	self.r870_taser_npc.DAMAGE = 5
 	self.r870_taser_npc.CLIP_AMMO_MAX = 8
+
+	self.m500_npc = deep_clone(self.r870_npc)
+	self.m500_npc.sounds.prefix = "m590_npc"	
 end
 
 function WeaponTweakData:_init_data_mossberg_npc()
@@ -1476,58 +1487,33 @@ function WeaponTweakData:_init_data_mini_npc()
 	self.x_mini_npc.FIRE_MODE = "auto"		
 end
 
---Crew weapons but not really--
-function WeaponTweakData:_init_data_flamethrower_mk2_crew()
-	self.flamethrower_mk2_crew.categories = clone(self.flamethrower_mk2.categories)
-	self.flamethrower_mk2_crew.sounds.prefix = "flamethrower_npc"
-	self.flamethrower_mk2_crew.sounds.fire = "flamethrower_npc_fire"
-	self.flamethrower_mk2_crew.sounds.stop_fire = "flamethrower_npc_fire_stop"
-	self.flamethrower_mk2_crew.use_data.selection_index = 2
-	self.flamethrower_mk2_crew.DAMAGE = 3.7
-	self.flamethrower_mk2_crew.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
-	self.flamethrower_mk2_crew.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-	self.flamethrower_mk2_crew.shell_ejection = "effects/payday2/particles/weapons/shells/shell_9mm"
-	self.flamethrower_mk2_crew.CLIP_AMMO_MAX = 60
-	self.flamethrower_mk2_crew.NR_CLIPS_MAX = 4
-	self.flamethrower_mk2_crew.pull_magazine_during_reload = "large_metal"
-	self.flamethrower_mk2_crew.hold = {"bullpup", "rifle"}
-	self.flamethrower_mk2_crew.auto.fire_rate = 0.1
-	self.flamethrower_mk2_crew.hud_icon = "rifle"
-	self.flamethrower_mk2_crew.alert_size = 2500
-	self.flamethrower_mk2_crew.suppression = 3.1
-	self.flamethrower_mk2_crew.FIRE_MODE = "auto"
-	
-	self.flamethrower_mk2_flamer = {}
-	self.flamethrower_mk2_flamer = deep_clone(self.flamethrower_mk2_crew)
-	self.flamethrower_mk2_flamer.categories = clone(self.flamethrower_mk2.categories)
-	self.flamethrower_mk2_flamer.sounds.prefix = "flamethrower_npc"
-	self.flamethrower_mk2_flamer.sounds.fire = "flamethrower_npc_fire"
-	self.flamethrower_mk2_flamer.sounds.stop_fire = "flamethrower_npc_fire_stop"
-	self.flamethrower_mk2_flamer.CLIP_AMMO_MAX = 60
-	self.flamethrower_mk2_flamer.NR_CLIPS_MAX = 4
-	self.flamethrower_mk2_flamer.FIRE_RANGE = 1400
-	self.flamethrower_mk2_flamer.DAMAGE = 3.7
-	self.flamethrower_mk2_flamer.fire_dot_data = {
-		dot_trigger_chance = 0,
-		dot_damage = 0,
-		dot_length = 0,
-		dot_trigger_max_distance = 0,
-		dot_tick_period = 0
+function WeaponTweakData:_init_data_flamethrower_npc()
+	--NPC flamethrower
+	self.flamethrower_npc.categories = {
+		"flamethrower"
 	}
-	self.flamethrower_mk2_flamer.FIRE_MODE = "auto"
-	self.flamethrower_mk2_flamer.fire_rate = 0.1
-	self.flamethrower_mk2_flamer.hold = {
+	self.flamethrower_npc.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
+	self.flamethrower_npc.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
+	self.flamethrower_npc.shell_ejection = "effects/payday2/particles/weapons/heat/overheat"
+	self.flamethrower_npc.single_flame_effect_duration = 1
+	self.flamethrower_npc.flame_effect = "effects/payday2/particles/explosions/flamethrower_cheap"
+	self.flamethrower_npc.bullet_class = "FlameBulletBase"
+	self.flamethrower_npc.flame_max_range = 1400
+	self.flamethrower_npc.sounds.prefix = "flamethrower_npc"
+	self.flamethrower_npc.sounds.fire = "flamethrower_npc_fire"
+	self.flamethrower_npc.sounds.stop_fire = "flamethrower_npc_fire_stop"
+	self.flamethrower_npc.use_data.selection_index = 2
+	self.flamethrower_npc.DAMAGE = 3.7
+	self.flamethrower_npc.CLIP_AMMO_MAX = 60
+	self.flamethrower_npc.NR_CLIPS_MAX = 4
+	self.flamethrower_npc.hold = {
 		"bullpup",
 		"rifle"
 	}
-	self.flamethrower_mk2_flamer.alert_size = 2500
-	self.flamethrower_mk2_flamer.suppression = 3.1
-	self.flamethrower_mk2_flamer.muzzleflash = "effects/payday2/particles/weapons/9mm_auto"
-	self.flamethrower_mk2_flamer.muzzleflash_silenced = "effects/payday2/particles/weapons/9mm_auto_silence"
-	self.flamethrower_mk2_flamer.shell_ejection = "effects/payday2/particles/weapons/shells/shell_empty"
-	self.flamethrower_mk2_flamer.pull_magazine_during_reload = "large_metal"
-	self.flamethrower_mk2_flamer.usage = "flamethrower"
-	self.flamethrower_mk2_flamer.anim_usage = "is_bullpup"			
+	self.flamethrower_npc.auto.fire_rate = 0.1
+	self.flamethrower_npc.alert_size = 2500
+	self.flamethrower_npc.suppression = 3.1
+	self.flamethrower_npc.FIRE_MODE = "auto"
 end
 
 --Lotta crew guns in here now--
@@ -3059,12 +3045,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--self:_init_new_weapon_sync(weapon_data)
 	--self:_init_new_weapon_sync_crew()
-	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt'}
+	local tact_rel = {'deagle','colt_1911','usp','p226','g22c','glock_17','glock_18c','b92fs','ppk','mp9','new_mp5','mp7','p90','olympic','akmsu','akm','akm_gold','ak74','m16','amcar','new_m4','ak5','s552','g36','aug','saiga','new_m14','scar','fal','rpk','msr','r93','m95','famas','galil','g3','scorpion','benelli','serbu','r870','ksg','g26','spas12','l85a2','vhs','hs2000','tec9','asval','sub2000','polymer','wa2000','model70','sparrow','m37','sr2','pl14','tecci','hajk','boot','packrat','schakal','desertfox','tti','siltstone','flint','coal','lemming','breech','basset','shrew','corgi','shepheard','komodo','legacy','beer','czech','stech','r700','holt','maxim9','fmg9'}
 	for i, wep_id in ipairs(tact_rel) do
 		self[wep_id].tactical_reload = 1
 		self[wep_id].has_description = false
 	end
-	local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt'}
+	local tact_akimbo_pistol = {'x_deagle','x_1911','x_b92fs','jowi','x_usp','x_g17','x_g22c','x_packrat','x_shrew','x_breech','x_g18c','x_hs2000','x_p226','x_pl14','x_ppk','x_sparrow','x_legacy','x_czech','x_stech','x_holt','x_maxim9'}
 	for i, wep_id in ipairs(tact_akimbo_pistol) do
 		self[wep_id].tactical_reload = 2
 		self[wep_id].recategorize = "akimbo"
@@ -3449,7 +3435,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.akmsu.timers.reload_not_empty = 1.95 
 	self.akmsu.timers.reload_empty = 3.7
 
-	--Izhma 12G
+	--Izhma 12G	
 	self.saiga.rays = 9
 	self.saiga.muzzleflash = "effects/particles/shotgun/shotgun_gen"
 	self.saiga.CLIP_AMMO_MAX = 6
@@ -4073,6 +4059,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Eagle Heavy
 	self.scar.AMMO_MAX = 80
+	self.scar.CLIP_AMMO_MAX = 20
 	self.scar.fire_mode_data.fire_rate = 0.09523809523
 	self.scar.CAN_TOGGLE_FIREMODE = true
 	self.scar.auto.fire_rate = 0.09523809523
@@ -5428,6 +5415,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.asval.sounds.stop_fire = "akm_stop"
 	self.asval.sounds.dryfire = "primary_dryfire"
 	self.asval.AMMO_MAX = 80
+	self.asval.CLIP_AMMO_MAX = 20
 	self.asval.FIRE_MODE = "auto"
 	self.asval.fire_mode_data = {}
 	self.asval.fire_mode_data.fire_rate = 0.06666666666
@@ -8637,6 +8625,116 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.rsh12.armor_piercing_chance = 1
 	self.rsh12.swap_speed_multiplier = 0.6
 	
+	--Gecko M2 (Maxim 9)
+	self.maxim9.has_description = true
+	self.maxim9.desc_id = "bm_tranq_maxim_sc_desc"	
+	self.maxim9.fire_mode_data.fire_rate = 0.08571428571
+	self.maxim9.single.fire_rate = 0.08571428571
+	self.maxim9.CLIP_AMMO_MAX = 18
+	self.maxim9.AMMO_MAX = 90
+	self.maxim9.kick = self.stat_info.kick_tables.even_recoil
+	self.maxim9.supported = true
+	self.maxim9.stats = {
+		damage = 18,
+		spread = 18,
+		recoil = 24,
+		spread_moving = 7,
+		zoom = 1,
+		concealment = 30,
+		suppression = 20,
+		alert_size = 1,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.maxim9.stats_modifiers = nil
+	self.maxim9.panic_suppression_chance = 0.05	
+	
+	--Akimbo Geck M2 (Akimbo Maxim 9)
+	self.x_maxim9.has_description = true
+	self.x_maxim9.desc_id = "bm_tranq_maxim_sc_desc"	
+	self.x_maxim9.fire_mode_data.fire_rate = 0.08571428571
+	self.x_maxim9.single.fire_rate = 0.08571428571
+	self.x_maxim9.CLIP_AMMO_MAX = 36
+	self.x_maxim9.AMMO_MAX = 180
+	self.x_maxim9.kick = self.stat_info.kick_tables.even_recoil
+	self.x_maxim9.supported = true
+	self.x_maxim9.stats = {
+		damage = 18,
+		spread = 16,
+		recoil = 14,
+		spread_moving = 7,
+		zoom = 1,
+		concealment = 30,
+		suppression = 20,
+		alert_size = 1,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.x_maxim9.stats_modifiers = nil
+	self.x_maxim9.panic_suppression_chance = 0.05		
+	
+	--Argos III (Ultima)
+	self.ultima.rays = 9
+	self.ultima.muzzleflash = "effects/particles/shotgun/shotgun_gen"
+	self.ultima.CLIP_AMMO_MAX = 7
+	self.ultima.AMMO_MAX = 80
+	self.ultima.use_data.selection_index = 2
+	self.ultima.fire_mode_data.fire_rate = 0.12
+	self.ultima.kick = self.stat_info.kick_tables.moderate_kick
+	self.ultima.supported = true
+	self.ultima.stats = {
+		damage = 45,
+		spread = 6,
+		recoil = 17,
+		spread_moving = 7,
+		zoom = 1,
+		concealment = 24,
+		suppression = 6,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}	
+	self.ultima.stats_modifiers = nil
+	self.ultima.panic_suppression_chance = 0.05	
+	
+	--Wasp-DS (FMG-9)
+	self.fmg9.categories = {"pistol"}
+	self.fmg9.fire_mode_data.fire_rate = 0.05454545454
+	self.fmg9.auto.fire_rate = 0.05454545454
+	self.fmg9.CLIP_AMMO_MAX = 33
+	self.fmg9.AMMO_MAX = 200
+	self.fmg9.use_data.selection_index = 2
+	self.fmg9.kick = self.stat_info.kick_tables.left_recoil
+	self.fmg9.supported = true
+	self.fmg9.timers = {
+		reload_not_empty = 1.9,
+		reload_empty = 3.65,
+		unequip = 1.8,
+		equip = 1.4
+	}	
+	self.fmg9.stats = {
+		damage = 18,
+		spread = 18,
+		recoil = 19,
+		spread_moving = 9,
+		zoom = 1,
+		concealment = 28,
+		suppression = 10,
+		alert_size = 2,
+		extra_ammo = 101,
+		total_ammo_mod = 100,
+		value = 1,
+		reload = 20
+	}
+	self.fmg9.stats_modifiers = nil
+	self.fmg9.panic_suppression_chance = 0.05	
+		
 	--Restoration Weapons--
 	
 	--Phoenix .500

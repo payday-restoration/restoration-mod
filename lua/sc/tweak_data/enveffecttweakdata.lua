@@ -48,6 +48,31 @@ function EnvEffectTweakData:hatman_molotov_fire()
 	return params
 end
 
+function EnvEffectTweakData:triad_boss_aoe_fire()
+	local params = {
+		sound_event = "PENT_Boss_Molotov_Drop",
+		range = 100,
+		curve_pow = 1,
+		no_fire_alert = true,
+		sound_event_burning = "no_sound",
+		damage = 3,
+		player_damage = 3,
+		sound_event_impact_duration = 1.5,
+		burn_tick_period = 0.5,
+		burn_duration = 10,
+		effect_name = "effects/payday2/particles/explosions/molotov_grenade_pent_boss",
+		fire_dot_data = {
+			dot_damage = 1,
+			dot_trigger_max_distance = 3000,
+			dot_trigger_chance = 50,
+			dot_length = 3.1,
+			dot_tick_period = 0.5
+		}
+	}
+
+	return params
+end
+
 function EnvEffectTweakData:incendiary_burst_fire()
 	local params = {
 		damage = 6,

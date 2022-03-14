@@ -185,6 +185,10 @@ function CopDamage:damage_fire(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
+	
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end
 
 	local attacker_unit = attack_data.attacker_unit
 	local weap_unit = attack_data.weapon_unit
@@ -265,7 +269,7 @@ function CopDamage:damage_fire(attack_data)
 					managers.player:on_headshot_dealt(self._unit, attack_data)
 				end
 
-				local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
+				local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
 
 				if critical_hit then
 					damage = crit_damage
@@ -693,6 +697,23 @@ function CopDamage:damage_bullet(attack_data)
 	if self:is_friendly_fire(attack_data.attacker_unit) then
 		return "friendly_fire"
 	end
+	
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end
+
+	if self._char_tweak.bullet_damage_only_from_front then
+		mvector3.set(mvec_1, attack_data.col_ray.ray)
+		mvector3.set_z(mvec_1, 0)
+		mrotation.y(self._unit:rotation(), mvec_2)
+		mvector3.set_z(mvec_2, 0)
+
+		local not_from_the_front = mvector3.dot(mvec_1, mvec_2) > 0.3
+
+		if not_from_the_front then
+			return
+		end
+	end	
 
 	if alive(attack_data.attacker_unit) and attack_data.attacker_unit:in_slot(16) then
 		local has_surrendered = self._unit:brain().surrendered and self._unit:brain():surrendered() or self._unit:anim_data().surrender or self._unit:anim_data().hands_back or self._unit:anim_data().hands_tied
@@ -733,7 +754,7 @@ function CopDamage:damage_bullet(attack_data)
 			if attack_data.weapon_unit:base():armor_piercing_chance() == 1 then
 				pierce_armor = true
 			end
-		end
+		end		
 
 		if attack_data.armor_piercing or weap_base.thrower_unit then
 			pierce_armor = true
@@ -811,7 +832,7 @@ function CopDamage:damage_bullet(attack_data)
 			damage_scale = distance >= weap_base.far_falloff_distance + weap_base.near_falloff_distance and 0 or distance >= weap_base.near_falloff_distance and 0.5 or 1
 		end		
 		
-		local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
+		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
 
 		if critical_hit then
 			damage = crit_damage
@@ -1204,6 +1225,10 @@ function CopDamage:damage_melee(attack_data)
 	if self:is_friendly_fire(attack_data.attacker_unit) then
 		return "friendly_fire"
 	end
+	
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end	
 
 	if alive(attack_data.attacker_unit) and attack_data.attacker_unit:in_slot(16) then
 		local has_surrendered = self._unit:brain().surrendered and self._unit:brain():surrendered() or self._unit:anim_data().surrender or self._unit:anim_data().hands_back or self._unit:anim_data().hands_tied
@@ -1237,8 +1262,8 @@ function CopDamage:damage_melee(attack_data)
 			damage_effect = damage_effect * attack_data.backstab_multiplier
 		end
 
-		local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
-
+		local critical_hit, crit_damage = self:roll_critical_hit(attack_data, damage)
+		
 		if critical_hit then
 			damage = crit_damage
 
@@ -1848,6 +1873,10 @@ function CopDamage:heal_unit(unit, override_cooldown)
 end
 
 function CopDamage:stun_hit(attack_data)
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end
+
 	if self._dead or self._invulnerable or self._unit:in_slot(16, 21, 22) then
 		return
 	else
@@ -1946,6 +1975,10 @@ function CopDamage:damage_explosion(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
+	
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end	
 
 	if attack_data.weapon_unit and alive(attack_data.weapon_unit) then
 		if attack_data.weapon_unit:base() and attack_data.weapon_unit:base()._variant == "explosion" and not attack_data.weapon_unit:base()._thrower_unit then
@@ -2331,17 +2364,13 @@ function CopDamage:damage_simple(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
+	
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end	
 
 	if self._unit:in_slot(16, 21, 22) then
 		return
-	end
-
-	if attack_data.variant == "graze" then
-		local has_surrendered = self._unit:brain().surrendered and self._unit:brain():surrendered() or self._unit:anim_data().surrender or self._unit:anim_data().hands_back or self._unit:anim_data().hands_tied
-
-		if has_surrendered then
-			return
-		end
 	end
 
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
@@ -2595,6 +2624,10 @@ function CopDamage:damage_dot(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
+	
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end	
 
 	if attack_data.attacker_unit and alive(attack_data.attacker_unit) and self:is_friendly_fire(attack_data.attacker_unit) then
 		return "friendly_fire"
@@ -2795,6 +2828,10 @@ function CopDamage:damage_tase(attack_data)
 	if self._dead or self._invulnerable then
 		return
 	end
+	
+	if self:chk_immune_to_attacker(attack_data.attacker_unit) then
+		return
+	end	
 
 	local attacker_unit = attack_data.attacker_unit
 	local weap_unit = attack_data.weapon_unit
@@ -3025,12 +3062,18 @@ function CopDamage:sync_damage_tase(attacker_unit, damage_percent, i_result, dea
 end
 
 function CopDamage:_on_damage_received(damage_info)
+	self:chk_health_sequences()
 	self:_call_listeners(damage_info)
 	CopDamage._notify_listeners("on_damage", damage_info)
 
 	if damage_info.result.type == "death" then
 		managers.enemy:on_enemy_died(self._unit, damage_info)
+		self:chk_disable_aoe_damage()
 	end
+	
+	if not self._dead then
+		self:_chk_unique_death_requirements(damage_info, false)
+	end	
 
 	local attacker_unit = damage_info and damage_info.attacker_unit
 
@@ -3083,6 +3126,7 @@ function CopDamage:_on_damage_received(damage_info)
 			end
 		end
 	end
+	
 end
 
 function CopDamage:damage_mission(attack_data)
@@ -3389,13 +3433,12 @@ function CopDamage.is_hrt(type)
 	return type == "swat" or type == "fbi" or type == "cop" or type == "security"
 end
 
-function CopDamage:roll_critical_hit(attack_data)
+function CopDamage:roll_critical_hit(attack_data, damage)
 	local damage = attack_data.damage
-
 	if not self:can_be_critical(attack_data) then
 		return false, damage
 	end
-
+	
 	local critical_hits = self._char_tweak.critical_hits or {}
 	local critical_hit = false
 	local critical_value = critical_hits.base_chance or 0

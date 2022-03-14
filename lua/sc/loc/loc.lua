@@ -947,6 +947,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "Causes pellets to spread horizontally instead of clustering.",
+		["bm_wp_ns_ultima_desc_sc"] = "Increases overall spread of pellets by 75%.",
 		["bm_wp_upg_a_slug_sc"] = "AP Slug",
 		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fires a single accurate lead slug that penetrates body armor, enemies, shields, titan shields, and walls.", --For shotguns that can hit Heavy Sniper damage tier--
@@ -1057,6 +1058,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_ak74_rodina_desc_sc"] = "A special-issue AK that - in war and crime - has demonstrated an unquenchable thirst for blood.",
 		["bm_wskn_deagle_bling_desc_sc"] = "A hand-crafted Deagle built as testament to the finest gaming-trained crackshot in the world.",
 
+		--Exclusive Sets--
+		["bm_wp_upg_ultima_body_kit_desc_sc"] = "This Exclusive Set adds a unique 'Triple Threat' laser sight that is mutually exclusive with other gadgets.",
+		["bm_wp_upg_fmg9_conversion_desc_sc"] = "This Exclusive Set adds a High-Tech Ammo Counter as well as a laser sight that is mutually exclusive with other gadgets.",
+
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "No Modifier",
 		["bm_wp_upg_bonus_sc_none_desc"] = "USE THIS TO DISABLE BOOSTS FROM WEAPON SKINS.",
@@ -1085,7 +1090,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
-
+		["bm_tranq_maxim_sc_desc"] = "DEALS DAMAGE OVER TIME WITH TRANQUILIZER ROUNDS, INTEGRALLY SUPPRESSED.",
+		
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
 		["loot_sc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM!",
@@ -1315,6 +1321,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov Rifle",
 		["bm_w_x_akmsu"] = "Akimbo Krinkov Rifles",
 		["bm_w_hajk"] = "CR 805B Rifle",
+		
+		["bm_w_fmg9"] = "Wasp-DS Machine-Pistol",
 
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
 
@@ -2177,7 +2185,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "Akimbo",
-		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nAkibmo weapons gain ##16## stability.\n\nACE: ##$pro##\nAkimbo weapons gain ##25%## more total ammo capacity and pickup.",
+		["menu_akimbo_skill_desc_sc"] = "BASIC: ##$basic##\nAkimbo weapons gain ##16## stability.\n\nACE: ##$pro##\nAkimbo weapons gain ##25%## more total ammo capacity and pickup.",
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "Desperado",

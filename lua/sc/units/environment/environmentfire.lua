@@ -2,7 +2,7 @@ function EnvironmentFire:_do_damage()
 	local pos = self._unit:position()
 	local normal = math.UP
 	local range = self._range
-	local slot_mask = managers.slot:get_mask("explosion_targets")
+	local slot_mask = self._damage_slotmask
 	local player_in_range = false
 	local player_in_range_count = 0
 
@@ -37,6 +37,8 @@ function EnvironmentFire:_do_damage()
 				end
 
 				if Network:is_server() then
+					local user = self._user_unit
+					user = alive(user) and user or nil				
 					local hit_units, splinters = managers.fire:detect_and_give_dmg({
 						player_damage = 0,
 						push_units = false,
@@ -45,10 +47,11 @@ function EnvironmentFire:_do_damage()
 						collision_slotmask = slot_mask,
 						curve_pow = self._curve_pow,
 						damage = self._damage,
-						ignore_unit = self._unit,
-						user = self._user_unit,
+						ignore_unit = user or self._unit,
+						user = user,
 						owner = self._unit,
 						alert_radius = self._fire_alert_radius,
+						no_alert = self._no_fire_alert,
 						fire_dot_data = self._fire_dot_data,
 						is_molotov = self._is_molotov
 					})

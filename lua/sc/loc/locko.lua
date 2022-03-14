@@ -680,18 +680,18 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_m_holiday"] = "The Headless Bulldozer",
 
 		["menu_color_plus"] = "E3 PAYDAY+",
-		["menu_color_rvd1"] = "Inverted",
+		["menu_color_rvd1"] = "반전",
 		["menu_color_e3nice"] = "E3 Nice",
 		["menu_color_force"] = "E3 BHD",
-		["menu_color_halloween"] = "Change",
-		["menu_color_halloween2"] = "Pumpkin Spice",
+		["menu_color_halloween"] = "변이",
+		["menu_color_halloween2"] = "호박 향신료",
 
 		["color_plus"] = "E3 PAYDAY+",
-		["color_rvd1"] = "Inverted",
+		["color_rvd1"] = "반전",
 		["color_e3nice"] = "E3 Nice",
 		["color_force"] = "E3 BHD",
-		["color_halloween"] = "Change",
-		["color_halloween2"] = "Pumpkin Spice",
+		["color_halloween"] = "변이",
+		["color_halloween2"] = "호박 향신료",
 
 		["gm_gms_purchase"] = "컨티넨탈 코인으로 구매",
 		["gm_gms_purchase_window_title"] = "확실하십니까?",
@@ -946,6 +946,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "펠릿이 뭉치지 않고 수평으로 퍼지도록 합니다.",
+		["bm_wp_ns_ultima_desc_sc"] = "펠릿의 전체 확산을 75%만큼 증가시킵니다.",
 		["bm_wp_upg_a_slug_sc"] = "철갑 슬러그탄",
 		["bm_wp_upg_a_slug_sc_desc"] = "정확한 한 발의 샷건 슬러그탄을 발사합니다. 관통하지 않습니다.", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "방탄복, 적, 실드, 타이탄 실드 및 벽을 관통하는 단일 정확한 납탄 슬러그를 발사합니다.", --For shotguns that can hit Heavy Sniper damage tier--
@@ -1056,6 +1057,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_ak74_rodina_desc_sc"] = "전쟁과 범죄에서 피에 대한 끝없는 갈증을 보여준 특별한 AK 소총입니다.",
 		["bm_wskn_deagle_bling_desc_sc"] = "직접 만들어진 이 Deagle은 세계 최고의 게임 훈련을 받은 명사수의 증거로 제작되었습니다.",
 
+		--Exclusive Sets--
+		["bm_wp_upg_ultima_body_kit_desc_sc"] = "이 전용 세트는 다른 장치와 함께 사용할 수 없는 독특한 '트리플 트리트' 레이저 조준기가 추가합니다.",
+		["bm_wp_upg_fmg9_conversion_desc_sc"] = "이 전용 세트는 하이테크 탄약 카운터와 다른 장비와 함께 사용할 수 없는 레이저 조준기가 추가됩니다.",
+		
+		
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "수정치 없음",
 		["bm_wp_upg_bonus_sc_none_desc"] = "무기 스킨의 부스트를 비활성화합니다.",
@@ -1084,6 +1090,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_sap_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n방탄복, 실드, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_auto_generated_lmg_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n이 무기를 들고 있는 동안 이동 속도가 25% 감소합니다.",
 		["bm_auto_generated_mod_sc_desc"] = "이 부착물의 능력치는 자동 커스텀 부착물 능력치 생성이 완료될 때까지 제거되었습니다.",
+		["bm_tranq_maxim_sc_desc"] = "시간에 지남에 따라 피해를 입히는 마취탄을 사용하고, 총과 통합된 소음기가 장착되어있습니다.",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "레스트레이션 오버홀",
@@ -1314,6 +1321,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov 소총",
 		["bm_w_x_akmsu"] = "아킴보 Krinkov 소총",
 		["bm_w_hajk"] = "CR 805B 소총",
+		
+		["bm_w_fmg9"] = "Wasp-DS 기관권총",
 
 		["menu_akimbo_assault_rifle"] = "아킴보 돌격소총",
 
@@ -2210,7 +2219,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Pumping Iron--
 		["menu_steroids_beta_sc"] = "펌핑 아이언",
-		["menu_steroids_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기를 휘두르고 충전하는 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n근접 무기를 휘두르고 중전하는 속도가 추가로 ##30%##만큼 빨라집니다.",
+		["menu_steroids_beta_desc_sc"] = "베이직: ##$basic##\n근접 무기를 휘두르고 충전하는 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n근접 무기를 휘두르고 충전하는 속도가 추가로 ##30%##만큼 빨라집니다.",
 
 		--Frenzy--
 		["menu_wolverine_beta_sc"] = "광분",
@@ -2390,7 +2399,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "방어력을 ##25%##만큼 손실될 때마다 처치로 얻는 체력 수가 ##2##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Yakuza--
-		["menu_st_spec_12_desc_sc"] = "야쿠자는 세계에서 가장 두려운 폭력조직 중 하나입니다. 야쿠자는 임협으로 다스려지고 오야붕에게 통솔되며, 엄격한 행동 강령과 조직성, 그리고 전신을 감싸는 문신으로 잘 알려져 있습니다. 사회로부터 추방되고 낙오된 야쿠자들은 자기 자신을 보호하기 위해 어떻게 행동해야 하는지 알고 있습니다. 그들이 관대해 보이더라도, 결코 가볍게 봐서는 안됩니다.\n\n\n전체 특전 덱의 이점:\n##-##체력이 50% 이하일 때:\n회피 미터가 초당 회피의 최대 ##8%##만큼 채워집니다.\n적을 죽였을 때 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.\n근접 공격에서 적을 죽일 때 회피 미터가 회피의 최대 ##50%##만큼 채워집니다(효과 2와 중첩 가능).\n받는 피해가 최대 ##20%## 감소합니다.\n##-##다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방어구를 ##50##만큼 회복합니다.",
+		["menu_st_spec_12_desc_sc"] = "야쿠자는 세계에서 가장 두려운 폭력조직 중 하나입니다. 야쿠자는 임협으로 다스려지고 오야붕에게 통솔되며, 엄격한 행동 강령과 조직성, 그리고 전신을 감싸는 문신으로 잘 알려져 있습니다. 사회로부터 추방되고 낙오된 야쿠자들은 자기 자신을 보호하기 위해 어떻게 행동해야 하는지 알고 있습니다. 그들이 관대해 보이더라도, 결코 가볍게 봐서는 안됩니다.\n\n\n전체 특전 덱의 이점:\n##-##체력이 50% 이하일 때:\n회피 미터가 초당 회피의 최대 ##8%##만큼 채워집니다.\n적을 죽였을 때 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.\n근접 공격으로 적을 죽일 때 회피 미터가 회피의 최대 ##50%##만큼 채워집니다(효과 2와 중첩 가능).\n받는 피해가 최대 ##20%## 감소합니다.\n##-##다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방어구를 ##50##만큼 회복합니다.",
 		["menu_deck12_1_desc_sc"] = "체력이 낮을수록 회피 미터가 더 빨리 채워집니다. 체력이 ##50%## 미만이면 회피 미터가 초당 회피의 최대 ##8%##만큼 채워집니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck12_3_desc_sc"] = "체력이 낮을수록 적을 죽일 때 회피 미터가 채워집니다. 체력이 ##50%## 이하일 때, 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.",
 		["menu_deck12_5_desc_sc"] = "체력이 낮을수록 받는 피해가 줄어듭니다. 체력이 ##50%## 미만일 때 받는 피해가 최대 ##20%## 감소합니다.",

@@ -144,7 +144,7 @@ function PlayerProfileGuiObject:init(ws)
 		money = managers.money:total_string()
 	})
 	local money_text = panel:text({
-		text = cash:gsub('##', ' '),
+		text = cash:gsub('##', ''),
 		font_size = font_size,
 		font = font,
 		color = tweak_data.screen_color_blue
@@ -198,7 +198,7 @@ function PlayerProfileGuiObject:init(ws)
 	if skillpoints > 0 then
 		skill_text = panel:text({
 			layer = 1,
-			text = skill:gsub('##', ' '),
+			text = skill:gsub('##', ''),
 			font_size = font_size,
 			font = font,
 			color = tweak_data.screen_color_blue

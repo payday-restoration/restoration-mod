@@ -71,33 +71,86 @@ else
 		self._reload_objects = {}
 	end
 	
-	function NewRaycastWeaponBase:reload_expire_t()
+	function NewRaycastWeaponBase:reload_expire_t(is_not_empty)
 		if self._use_shotgun_reload then
-			local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
-			if self._started_reload_empty or self:weapon_tweak_data().tactical_reload ~= 1 then
-				return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+			local shotgun_reload_tweak = self:_get_shotgun_reload_tweak_data(is_not_empty)
+			if shotgun_reload_tweak and shotgun_reload_tweak.reload_queue then
+				local ammo_total = self:get_ammo_total()
+				local ammo_max_per_clip = self:get_ammo_max_per_clip() + (not self._started_reload_empty and self:weapon_tweak_data().tactical_reload and 1 or 0)
+				local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
+				local ammo_to_reload = math.min(ammo_total - ammo_remaining_in_clip, ammo_max_per_clip - ammo_remaining_in_clip)
+				local reload_expire_t = 0
+				local queue_index = 0
+				local queue_data = nil
+				local queue_num = #shotgun_reload_tweak.reload_queue
+
+				while ammo_to_reload > 0 do
+					if queue_index == queue_num then
+						reload_expire_t = reload_expire_t + (shotgun_reload_tweak.reload_queue_wrap or 0)
+					end
+
+					queue_index = queue_index % queue_num + 1
+					queue_data = shotgun_reload_tweak.reload_queue[queue_index]
+					reload_expire_t = reload_expire_t + queue_data.expire_t or 0.5666666666666667
+					ammo_to_reload = ammo_to_reload - (queue_data.reload_num or 1)
+				end
+
+				return reload_expire_t
 			else
-				return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() + 1 - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+				local reload_count = math.ceil(self:max_bullets_to_reload(not is_not_empty or self._started_reload_empty) / (shotgun_reload_tweak and shotgun_reload_tweak.reload_num or 1))
+				return reload_count * self:reload_shell_expire_t(is_not_empty)
 			end
 		end
-		return nil
+		
 	end
 	
+	function NewRaycastWeaponBase:max_bullets_to_reload(from_empty)
+		local max_per_mag = self:get_ammo_max_per_clip()
+		if not from_empty and self:weapon_tweak_data().tactical_reload then
+			max_per_mag = max_per_mag + self:weapon_tweak_data().tactical_reload or 1
+		end
+		return math.min(self:get_ammo_total(), max_per_mag) - self:get_ammo_remaining_in_clip()
+	end	
+	
 	function NewRaycastWeaponBase:update_reloading(t, dt, time_left)
-		if self._use_shotgun_reload and t > self._next_shell_reloded_t then
+		if self._use_shotgun_reload and self._next_shell_reloded_t and t > self._next_shell_reloded_t then
 			local speed_multiplier = self:reload_speed_multiplier()
-			self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t() / speed_multiplier
-			if self._started_reload_empty or self:weapon_tweak_data().tactical_reload ~= 1 then
-				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
-				return true
+			local shotgun_reload_tweak = self:_get_shotgun_reload_tweak_data(not self._started_reload_empty)
+			local ammo_to_reload = 1
+			local next_queue_data = nil
+
+			if shotgun_reload_tweak and shotgun_reload_tweak.reload_queue then
+				self._shotgun_queue_index = self._shotgun_queue_index % #shotgun_reload_tweak.reload_queue + 1
+
+				if self._shotgun_queue_index == #shotgun_reload_tweak.reload_queue then
+					self._next_shell_reloded_t = self._next_shell_reloded_t + (shotgun_reload_tweak.reload_queue_wrap or 0)
+				end
+
+				local queue_data = shotgun_reload_tweak.reload_queue[self._shotgun_queue_index]
+				ammo_to_reload = queue_data and queue_data.reload_num or 1
+				next_queue_data = shotgun_reload_tweak.reload_queue[self._shotgun_queue_index + 1]
+				self._next_shell_reloded_t = self._next_shell_reloded_t + (next_queue_data and next_queue_data.expire_t or 0.5666666666666667) / speed_multiplier
 			else
-				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + 1))
-				return true
+				self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t(not self._started_reload_empty) / speed_multiplier
+				ammo_to_reload = shotgun_reload_tweak and shotgun_reload_tweak.reload_num or 1
 			end
+
+			if not self._started_reload_empty and self:weapon_tweak_data().tactical_reload then
+				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip() + 1, self:get_ammo_remaining_in_clip() + ammo_to_reload))
+			else
+				self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + ammo_to_reload))
+			end
+
 			managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
+
+			if not next_queue_data or not next_queue_data.skip_update_ammo then
+				self:update_ammo_objects()
+			end
+
 			return true
 		end
-	end	
+	end
+
 end
 
 NewRaycastWeaponBase.DEFAULT_BURST_SIZE = 3

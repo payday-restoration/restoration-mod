@@ -306,11 +306,11 @@ local weapons_map = {
 	--Security Guards
 	[Idstring("units/payday2/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5"},
 	[Idstring("units/payday2/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5"},
-	[Idstring("units/payday2/characters/ene_security_3/ene_security_3"):key()] = {"c45", "mp5", "r870"},
+	[Idstring("units/payday2/characters/ene_security_3/ene_security_3"):key()] = "r870",
 	[Idstring("units/payday2/characters/ene_security_4/ene_security_4"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/payday2/characters/ene_security_5/ene_security_5"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/payday2/characters/ene_security_6/ene_security_6"):key()] = {"m1911_npc", "mp5"},
-	[Idstring("units/payday2/characters/ene_security_7/ene_security_7"):key()] = {"m1911_npc", "mp5", "r870"},
+	[Idstring("units/payday2/characters/ene_security_7/ene_security_7"):key()] = "r870",
 	[Idstring("units/payday2/characters/ene_security_8/ene_security_8"):key()] = {"m1911_npc", "mp5"},
 	
 	[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"):key()] = {"m1911_npc", "mp5"},
@@ -319,7 +319,6 @@ local weapons_map = {
 	
 	[Idstring("units/payday2/characters/ene_city_guard_1/ene_city_guard_1"):key()] = {"deagle", "ump"},
 	[Idstring("units/payday2/characters/ene_city_guard_2/ene_city_guard_2"):key()] = {"deagle", "ump"},
-	[Idstring("units/payday2/characters/ene_city_guard_3/ene_city_guard_3"):key()] = {"deagle", "ump", "benelli"},
 	
 	[Idstring("units/pd2_dlc_chca/characters/ene_security_cruise_1/ene_security_cruise_1"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_dlc_chca/characters/ene_security_cruise_2/ene_security_cruise_2"):key()] = {"m1911_npc", "mp5"},

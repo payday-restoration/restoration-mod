@@ -304,14 +304,14 @@ local weapons_map = {
 	[Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_4/ene_male_triad_penthouse_4"):key()] = {"m1911_npc", "mac11", "ak47", "raging_bull", "r870"},
 
 	--Security Guards
-	[Idstring("units/payday2/characters/ene_security_1/ene_security_1"):key()] = {"c45", "raging_bull", "mp5"},
-	[Idstring("units/payday2/characters/ene_security_2/ene_security_2"):key()] = {"c45", "raging_bull", "mp5"},
+	[Idstring("units/payday2/characters/ene_security_1/ene_security_1"):key()] = {"c45", "mp5"},
+	[Idstring("units/payday2/characters/ene_security_2/ene_security_2"):key()] = {"c45", "mp5"},
 	[Idstring("units/payday2/characters/ene_security_3/ene_security_3"):key()] = {"c45", "mp5", "r870"},
-	[Idstring("units/payday2/characters/ene_security_4/ene_security_4"):key()] = {"m1911_npc", "raging_bull", "mp5"},
-	[Idstring("units/payday2/characters/ene_security_5/ene_security_5"):key()] = {"m1911_npc", "raging_bull", "mp5"},
-	[Idstring("units/payday2/characters/ene_security_6/ene_security_6"):key()] = {"m1911_npc", "raging_bull", "mp5"},
-	[Idstring("units/payday2/characters/ene_security_7/ene_security_7"):key()] = {"m1911_npc", "raging_bull", "mp5", "r870"},
-	[Idstring("units/payday2/characters/ene_security_8/ene_security_8"):key()] = {"m1911_npc", "raging_bull", "mp5"},
+	[Idstring("units/payday2/characters/ene_security_4/ene_security_4"):key()] = {"m1911_npc", "mp5"},
+	[Idstring("units/payday2/characters/ene_security_5/ene_security_5"):key()] = {"m1911_npc", "mp5"},
+	[Idstring("units/payday2/characters/ene_security_6/ene_security_6"):key()] = {"m1911_npc", "mp5"},
+	[Idstring("units/payday2/characters/ene_security_7/ene_security_7"):key()] = {"m1911_npc", "mp5", "r870"},
+	[Idstring("units/payday2/characters/ene_security_8/ene_security_8"):key()] = {"m1911_npc", "mp5"},
 	
 	[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_1/ene_security_gensec_guard_1"):key()] = {"m1911_npc", "mp5"},
 	[Idstring("units/pd2_dlc1/characters/ene_security_gensec_guard_2/ene_security_gensec_guard_2"):key()] = {"m1911_npc", "mp5"},

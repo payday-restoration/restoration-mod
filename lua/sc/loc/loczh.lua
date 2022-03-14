@@ -983,6 +983,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Shotgun Generic Mods--
 		["bm_wp_ns_duck_desc_sc"] = "使弹丸散布面呈横向扩散，而非缩小散布。",
+		["bm_wp_ns_ultima_desc_sc"] = "增加75%的弹丸扩散。",
 		["bm_wp_upg_a_slug_sc"] = "独头弹",
 		["bm_wp_upg_a_slug_sc_desc"] = "射出一发较为精准的弹头，不能穿透护甲。", --Auto/Semi-Auto shotguns--
 		["bm_wp_upg_a_slug_heavy_desc_sc"] = "射出一发精准的弹头，可以穿透护甲、盾牌、泰坦盾牌、墙壁以及敌人身体。", --For shotguns that can hit Heavy Sniper damage tier--
@@ -1093,6 +1094,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wskn_ak74_rodina_desc_sc"] = "无论是战争还是犯罪，这把特种AK都充满了对血的渴望。",
 		["bm_wskn_deagle_bling_desc_sc"] = "这把手工打造的工艺品手枪是所有游戏界的头号玩家梦寐以求的武器。",
 
+		--Exclusive Sets--
+		["bm_wp_upg_ultima_body_kit_desc_sc"] = "这个专有装置添加了一个独特的\"三重威胁\"镭射附件，与其它配件冲突。",
+		["bm_wp_upg_fmg9_conversion_desc_sc"] = "这个专有装置添加了一个高科技弹药计数器和一个镭射附件，与其它配件冲突。",
+
 		--Modifiers--
 		["bm_wp_upg_bonus_sc_none"] = "无增强",
 		["bm_wp_upg_bonus_sc_none_desc"] = "用于禁用皮肤的增强属性",
@@ -1121,7 +1126,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_sap_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n可以穿透护甲，盾牌，泰坦盾牌及薄墙壁。",
 		["bm_auto_generated_lmg_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n装备该武器时，你的移速会减慢##25%.",
 		["bm_auto_generated_mod_sc_desc"] = "该配件的属性将暂时被移除，直至自制配件的属性生成完毕。", -- The stats on this attachment have been removed until automatic custom attachment stat generation is finished.
-
+		["bm_tranq_maxim_sc_desc"] = "使用镇静子弹随时间对敌人造成伤害并且是消音的。",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
@@ -1355,6 +1360,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_akmsu"] = "Krinkov步枪",
 		["bm_w_x_akmsu"] = "双持Krinkov步枪",
 		["bm_w_hajk"] = "CR 805B步枪",
+
+		["bm_w_fmg9"] = "Wasp-DS自动手枪",
 		
 		["menu_akimbo_assault_rifle"] = "双持突击步枪",
 
@@ -1437,8 +1444,6 @@ end
  if _G.HopLib then
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
-	local lapd = tweak_data.levels.ai_groups.lapd
-	local mex = tweak_data.levels.ai_groups.federales
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1449,14 +1454,6 @@ end
 			-- log("awesome! loaded!")
 			loc:load_localization_file(ModPath .. "lua/sc/loc/murkywetew.json")
 		end)
-	elseif ai_type == lapd then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_LAPD", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/lapd.json")
-		end)
-	elseif ai_type == mex then
-		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
-			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")
-		end)	
 	end
  end
 

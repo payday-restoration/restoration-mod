@@ -25529,6 +25529,7 @@ function CharacterTweakData:character_map()
 				"ene_zeal_bulldozer_3_sc",
 				"ene_bulldozer_minigun",				
 				"ene_zeal_cloaker",
+				"ene_zeal_cloaker_sc",
 				"ene_zeal_swat",
 				"ene_zeal_city_1",
 				"ene_zeal_city_2",

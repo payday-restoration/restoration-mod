@@ -1,4 +1,7 @@
 <table directory="assets">
+	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_effbeeeye_df" force="false"/>
+	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_fbi" force="false" />
+
 	<!--Scarface Guys-->		
 	<object				path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_01/ene_bolivian_thug_outdoor_01" force="true" />
 	<object				path="units/pd2_dlc_friend/characters/ene_bolivian_thug_outdoor_02/ene_bolivian_thug_outdoor_02" force="true" />	

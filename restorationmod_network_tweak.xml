@@ -155,17 +155,26 @@
 			<attr name="max" value="128"/>
 		</target>
 	</tweak>
-	 <tweak name="settings/network" extension="network_settings">
+	<tweak name="settings/network" extension="network_settings">
 		<search>
 			<network/>
 			<rpc/>
+			<message name="sync_throw_projectile_npc"/>
+	        <param type="int" min="1" max="64" />
 		</search>
-		<target>
-			<message name="sync_grenades" delivery="ordered" receiver="connection">
-				<param type="string"/>
-				<param type="int" min="0" max="63"/>
-				<param type="int" min="0" max="15" />
-			</message>
+		<target mode="attributes">
+			<attr name="max" value="128"/>
+		</target>
+	</tweak>
+	<tweak name="settings/network" extension="network_settings">
+		<search>
+			<network/>
+			<rpc/>
+			<message name="sync_attach_projectile"/>
+	        <param type="int" min="1" max="64" />
+		</search>
+		<target mode="attributes">
+			<attr name="max" value="128"/>
 		</target>
 	</tweak>
 </tweaks>

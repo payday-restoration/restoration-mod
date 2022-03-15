@@ -54,9 +54,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.fex.player_style = "suit_sunny"
 	
+	
 	--///MURKYWATER LEVELS\\\--
 	self.shoutout_raid.ai_group_type = murkywater
-	self.shoutout_raid.player_style = "loud_suit" --using this until we sort out the coats
+	self.shoutout_raid.player_style = "raincoat" --actually years late on setting this back to the raincoat :)))--
 	
 	self.pbr.ai_group_type = murkywater
 	self.pbr.player_style = "loud_suit"
@@ -94,6 +95,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.spa.ai_group_type = nypd
 	self.spa.package = {"packages/job_spa", "levels/narratives/dentist/mia/stage2/world_sounds"}
 	self.spa.player_style = "slaughterhouse"
+	self.spa.flashlights_on = true
 	
 	self.brb.ai_group_type = nypd
 	self.brb.player_style = "peacoat"
@@ -106,9 +108,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.glace.ai_group_type = nypd
 	self.glace.package = {"packages/narr_glace"}
+	self.glace.flashlights_on = true
 	
 	self.dah.ai_group_type = nypd
 	self.dah.player_style = "slaughterhouse"
+	self.dah.flashlights_on = true
 	
 	self.dinner.ai_group_type = nypd
 	self.dinner.package = {"packages/narr_dinner", "packages/miscassets"}
@@ -224,12 +228,14 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	
 	self.arm_fac.player_style = "jumpsuit"
+	self.arm_fac.flashlights_on = true
 	
 	
 	self.arm_par.player_style = "jumpsuit"		
 	
 	
 	self.arm_und.player_style = "scrub"
+	self.arm_und.flashlights_on = true
 							
 	
 	self.hox_1.player_style = "slaughterhouse"
@@ -435,6 +441,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pines.package = {"packages/narr_pines", "packages/lvl_mad"}
 	self.pines.player_style = "loud_suit"
 	self.pines.ai_group_type = russia	
+	self.pines.flashlights_on = true
 	
 	--Bomb: Forest--
 	self.crojob3.package = {"packages/dlcs/the_bomb/crojob_stage_3", "packages/lvl_mad"}
@@ -444,6 +451,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.crojob3_night.package = {"packages/dlcs/the_bomb/crojob_stage_3_night", "packages/lvl_mad"}
 	self.crojob3_night.ai_group_type = russia				
 	self.crojob3_night.player_style = "loud_suit"		
+	self.crojob3_night.flashlights_on = true	
 	
 	--///BAG FIXES\\\--
 	self.pbr2.max_bags = 20

@@ -26,6 +26,12 @@ function TeamAIMovement:on_SPOOCed(enemy_unit, flying_strike)
 	return true
 end
 
+Hooks:PostHook(TeamAIMovement, "set_cool", "res_set_cool", function(self, state)
+	if self._ext_inventory:equipped_unit() then
+		self._ext_inventory:equipped_unit():base():set_flashlight_enabled(not state) -- enable the flashlight when we become uncool, or disable if we become cool again
+	end
+end)
+
 local old_throw = TeamAIMovement.throw_bag
 function TeamAIMovement:throw_bag(...)
 	local data = self._ext_brain._logic_data

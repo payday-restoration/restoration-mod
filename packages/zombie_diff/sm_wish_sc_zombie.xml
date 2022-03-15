@@ -1,4 +1,7 @@
 <table directory="assets">			
+	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_zeal_df" force="false"/>
+	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_zeal" force="false" />
+
 	<!--sg553-->
 	<object				path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" force="false"/>

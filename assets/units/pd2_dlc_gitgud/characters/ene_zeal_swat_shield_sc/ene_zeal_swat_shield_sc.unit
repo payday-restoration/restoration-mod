@@ -7,7 +7,7 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_helmet_sc/ene_acc_zeal_swat_helmet_sc" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
 
@@ -19,7 +19,7 @@
 			<var name="_default_weapon_id" value="mp9" />
 		</extension>
 		<extension name="inventory" class="CopInventory" >
-			<var name="_shield_unit_name" value="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat/ene_acc_shield_new_swat" />
+			<var name="_shield_unit_name" value="units/pd2_dlc_gitgud/characters/ene_acc_shield_new_swat_sc/ene_acc_shield_new_swat_sc" />
 		</extension>
 		<extension name="brain" class="CopBrain" />
 		<extension name="anim_data" class="PlayerAnimationData" />

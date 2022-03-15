@@ -1,4 +1,7 @@
 <table directory="assets">
+	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_swat_df" force="false"/>
+	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_blue" force="false" />
+
 	<!--NYPD-->
 	<material_config	path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york" force="true" />
 	<material_config	path="units/pd2_dlc_spa/vehicles/str_vehicle_car_police_new_york/str_vehicle_car_police_new_york_windows_tinted" force="true" />

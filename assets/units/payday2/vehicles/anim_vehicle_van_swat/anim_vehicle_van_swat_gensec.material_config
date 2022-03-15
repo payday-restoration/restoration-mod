@@ -1,0 +1,29 @@
+<materials version="3" group="truck_fbi">
+    <material render_template="decal:DIFFUSE_TEXTURE" name="mat_mull" version="2">
+        <diffuse_texture file="units/payday2/props/shadow_mullplan/shadow_mullplan_df"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_1WEIGHT" name="apc" version="2">
+        <diffuse_texture file="units/payday2/vehicles/gen_vehicle_truck_fbi/gen_vehicle_truck_gensec_df"/>
+        <bump_normal_texture file="units/payday2/vehicles/gen_vehicle_truck_fbi/gen_vehicle_truck_fbi_nm"/>
+    </material>
+    <material render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" name="mtr_illumination" version="2">
+        <diffuse_texture file="units/payday2/vehicles/gen_vehicle_truck_fbi/gen_vehicle_truck_gensec_df"/>
+        <self_illumination_texture file="units/payday2/weapons/wpn_effects_textures/wpn_effect_flashlight_il"/>
+        <variable type="scalar" name="il_multiplier" value="searchlight"/>
+    </material>
+    <material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:NORMALMAP:SKINNED_1WEIGHT" name="net" version="2">
+        <diffuse_texture file="units/world/props/shared_textures/fence_tile_df"/>
+        <bump_normal_texture file="units/world/props/shared_textures/fence_tile_nm"/>
+        <variable type="scalar" name="alpha_ref" value="0.053000003099442"/>
+    </material>
+    <material version="2" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DOUBLE_SIDED:VIEW_ANGLE_FALLOFF_OP" decal_material="sheet_metal" name="cone_light">
+        <diffuse_texture file="units/world/street/street_lights/cone_light_2_df"/>
+        <variable type="scalar" name="falloff_exp" value="2"/>
+        <variable type="scalar" name="intensity" value="identity"/>
+    </material>
+    <material render_template="shadow_caster_only" name="shadow_caster" version="2"/>
+    <material render_template="shadow_caster_only:ALPHA_MASKED:EXTERNAL_ALPHA_REF" name="mat_fence_shadow" version="2">
+        <diffuse_texture file="units/world/props/shared_textures/fence_tile_df"/>
+        <variable type="scalar" name="alpha_ref" value="0.40800001937896"/>
+    </material>
+</materials>

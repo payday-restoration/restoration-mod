@@ -8,12 +8,12 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_bulldozer_back/ene_acc_bulldozer_back" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_bulldozer_chest/ene_acc_bulldozer_chest" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_bulldozer_2_helmet_plate/ene_acc_bulldozer_helmet_plate" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache" />
-		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_back/ene_acc_bulldozer_back" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_chest/ene_acc_bulldozer_chest" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_helmet_plate/ene_acc_bulldozer_helmet_plate" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
+		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_2_sc/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
 	</dependencies>
 
 	<extensions>

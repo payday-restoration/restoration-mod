@@ -1,4 +1,7 @@
 <table directory="assets">
+	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_gensec_df" force="false"/>
+	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_gensec" force="false" />
+
 	<!--zombie city heavy-->
     <unit				path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36" load="true"/>
     <unit				path="units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36_husk" load="true"/>

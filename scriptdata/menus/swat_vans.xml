@@ -20,12 +20,6 @@
 	<sequence editable_state="true" name="'mat_blueswat'" triggable="true">
 		<material_config name="'units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_blue'"/>
 	</sequence>
-	<sequence editable_state="true" name="'mat_zeals'" triggable="true">
-		<material_config name="'units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_zeal'"/>
-	</sequence>
-	<sequence editable_state="true" name="'mat_reapers'" triggable="true">
-		<material_config name="'units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_reaper'"/>
-	</sequence>
 	
 	<!-- str_versions -->
 	<sequence editable_state="true" name="'mat_omnia_str'" triggable="true">
@@ -42,5 +36,11 @@
 	</sequence>
 	<sequence editable_state="true" name="'mat_blueswat_str'" triggable="true">
 		<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_blue'"/>
+	</sequence>
+	<sequence editable_state="true" name="'mat_zeals'" triggable="true">
+		<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_zeal'"/>
+	</sequence>
+	<sequence editable_state="true" name="'mat_reapers'" triggable="true">
+		<material_config name="'units/payday2/vehicles/str_vehicle_van_swat/str_vehicle_van_swat_reaper'"/>
 	</sequence>
 </table>

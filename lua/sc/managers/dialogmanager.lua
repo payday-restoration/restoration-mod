@@ -16,17 +16,17 @@ function DialogManager:queue_dialog(id, ...)
 		--Mountain Master--				
 		if id == "Play_loc_pent_65" then
 			if difficulty_index <= 2 then
-				escape_time = 1050
+				escape_time = 1250
 			elseif difficulty_index == 3 then
-				escape_time = 1020
+				escape_time = 1220
 			elseif difficulty_index == 4 then
-				escape_time = 990
+				escape_time = 1290
 			elseif difficulty_index == 5 then
-				escape_time = 960	
+				escape_time = 1260	
 			elseif difficulty_index == 6 or difficulty_index == 7 then
-				escape_time = 930					
+				escape_time = 1230					
 			else
-				escape_time = 900
+				escape_time = 1200
 			end			
 		end	
 	

@@ -21,12 +21,12 @@
 			<object name="Head"/>
 			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
 		</body>
-		<body name="body_helmet_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body_helmet_plate" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_plate" collision_type="convex"/>
+			<object name="c_helmet_glass" collision_type="convex"/>
 		</body>
 		
-		<body name="body_helmet_glass" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body_helmet_glass" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
 			<object name="c_helmet_glass" collision_type="convex"/>
 		</body>
@@ -283,13 +283,13 @@
 				</object>
 			</lod_object>
 
-		<!--	<lod_object name="lod_helmet_plate">
-				<object name="g_helmet_plate" 			enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+		    <!--<lod_object name="lod_helmet_plate">
+				<object name="g_helmet_plate" 			enabled="false"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_bulldozer" max_distance="1000" />
 					<material materials="mtr_bulldozer_lod" max_distance="1500" />
 					<material materials="mtr_bulldozer_lod_3" />
 				</object>
-				<object name="g_helmet_plate_lod1" 		enabled="true" lod="1" >
+				<object name="g_helmet_plate_lod1" 		enabled="false" lod="1" >
 					<material materials="mtr_bulldozer_lod" max_distance="0" cpy_material_vars="contour_color, contour_opacity"/>
 					<material materials="mtr_bulldozer_lod_3" />
 				</object>

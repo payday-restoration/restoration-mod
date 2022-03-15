@@ -20,12 +20,12 @@
 			<object name="Head"/>
 			<object name="c_sphere_helmet" collision_type="sphere" padding="-10" />
 		</body>
-		<body name="body_helmet_plate" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body_helmet_plate" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
-			<object name="c_helmet_plate" collision_type="convex"/>
+			<object name="c_helmet_glass" collision_type="convex"/>
 		</body>
 		
-		<body name="body_helmet_glass" enabled="true" template="character" friction="0.6" collision_class="ragdoll">
+		<body name="body_helmet_glass" enabled="false" template="character" friction="0.6" collision_class="ragdoll">
 			<object name="Head"/>
 			<object name="c_helmet_glass" collision_type="convex"/>
 		</body>

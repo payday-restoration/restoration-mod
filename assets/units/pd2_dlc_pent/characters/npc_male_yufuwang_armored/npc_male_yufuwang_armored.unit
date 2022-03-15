@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<unit type="being" slot="12">
+    <anim_state_machine name="anims/units/enemies/cop/cop_machine"/>
+    <object file="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored"/>
+    <dependencies>
+        <depends_on bnk="soundbanks/regular_vox"/>
+        <depends_on bnk="soundbanks/regular_sfx"/>
+        <depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_helmet"/>
+        <depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_neck"/>
+        <depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_rt_shldr"/>
+        <depends_on unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/ene_acc_yufuwang_armor/ene_acc_yufuwang_lf_shldr"/>
+        <depends_on unit="units/pd2_dlc_pent/pickups/pent_pku_yufuwang_mask/pent_pku_yufuwang_mask"/>
+        <depends_on unit="units/pd2_dlc_bbq/weapons/molotov_cocktail/wpn_molotov_third"/>
+        <depends_on effect="effects/payday2/particles/explosions/molotov_grenade_pent_boss"/>
+    </dependencies>
+    <extensions>
+        <extension name="unit_data" class="ScriptUnitData"/>
+        <extension name="base" class="CopBase">
+            <var name="_tweak_table" value="triad_boss"/>
+            <var name="_default_weapon_id" value="flamethrower"/>
+            <var name="_stats_name" value="triad_boss"/>
+        </extension>
+        <extension name="inventory" class="CopInventory"/>
+        <extension name="brain" class="CopBrain"/>
+        <extension name="anim_data" class="PlayerAnimationData"/>
+        <extension name="character_damage" class="BossDamage">
+            <var name="_head_body_name" value="head"/> 
+
+			<!-- sequences to trigger on the character after taking damage -->
+			<var name="_health_sequences_array" type="table" >
+				<var value="int_seq_shoulder_left_off"/>
+				<var value="int_seq_shoulder_right_off"/>
+				<var value="int_seq_neck_off"/>
+				<var value="int_seq_helmet_off"/>
+			</var>
+
+			<!-- flag used to determine if sequences should be skipped if health goes below more than one step at a time and should not play afterwards -->
+			<!--
+			<var name="_health_sequences_skip" value="true"/>
+			-->
+
+			<!-- manual steps to trigger each specific sequence, supports triggering more than one at a certain threshold -->
+			<!-- the order of the list here isn't important, just the values used for each sequence, which are based on percentage of health from 0 to 1 -->
+			<!-- it's better to use integers here and convert them properly afterwards through lua, since it prevents some floating point precision issues -->
+			<!--
+			<var name="_health_sequences_steps_map" type="table" >
+				<var name="int_seq_shoulder_left_off" value="80"/>
+				<var name="int_seq_shoulder_right_off" value="60"/>
+				<var name="int_seq_neck_off" value="40"/>
+				<var name="int_seq_helmet_off" value="20"/>
+			</var>
+			-->
+
+			<!-- if no _health_sequences_steps table is provided, the sequences go off as health goes down in the order they're listed -->
+			<!-- in such cases, steps are handled based on 100 / (amount of sequences + 1) -->
+
+
+			<!-- the automated system won't account for 0% health (see line above) -->
+			<!-- so for deaths, define a variable with the name '_death_sequence' and the name of the sequence for its value -->
+			<!-- or define '_health_sequences_steps_map' with a sequence with a value of 0 -->
+
+			<!-- in this case, since no steps are provided, as an example, it goes like this in-game
+				80% health = int_seq_shoulder_left_off
+				60% health = int_seq_shoulder_right_off
+				40% health = int_seq_neck_off
+				20% health = int_seq_helmet_off
+			-->
+
+			<!-- unique death sequence or mission element event when certain requirements are met for killing the unit -->
+			<!-- do not define the same table on the husk unit (if even needed), it must not have event triggers, and no networked units in the case of the sequence -->
+			<var name="_unique_death_req" type="table" >
+				<var name="mission_event" value="fire_death"/> <!-- element event for level scripts -->
+				<var name="sequence" value="int_seq_mask_off"/> <!-- sequence defined in the sequence_manager file -->
+				<var name="pickup" value="units/pd2_dlc_pent/pickups/pent_pku_yufuwang_mask/pent_pku_yufuwang_mask"/>
+				<var name="can_fail_on_invalid_damage" value="true"/> <!-- any damage dealt to the enemy (if not negated completely) will check and negate this if it fails at any point -->
+				<var name="weapon_categories" type="table" > <!-- weapons used must be under any of the following categories -->
+					<var name="flamethrower" value="true"/>
+				</var>
+				<var name="damage_variants" type="table" > <!-- damage variants must be any of the following ones -->
+					<var name="fire" value="true"/>
+				</var>
+				<var name="styles" type="table" > <!-- attackers must have any of the following outfits (only works on heisters, any other attackers will count as a fail) -->
+					<var name="thug" value="true"/>
+				</var>
+			</var>
+        </extension>
+        <extension name="movement" class="CopMovement">
+            <var name="_footwear" value="bulldozer"/>
+            <var name="_anim_global" value="tank"/>
+        </extension>
+        <extension name="interaction" class="IntimitateInteractionExt">
+            <var name="tweak_data" value="intimidate"/>
+        </extension>
+        <extension name="network" class="NetworkBaseExtension"/>
+        <extension name="damage" class="UnitDamage">
+            <var name="_skip_save_anim_state_machine" value="true"/>
+        </extension>
+        <extension name="contour" class="ContourExt"/>
+        <extension name="sound" class="BossSound">
+			<var name="_prefix" value="Play_yuw_pent_"/>
+			<var name="_events_map" type="table">
+				<var name="armorbreak" type="table">
+					<var name="prio" value="1"/>
+					<var name="cooldown" value="3"/>
+				</var>
+				<var name="aoe" type="table">
+					<var name="prio" value="2"/>
+					<var name="cooldown" value="7"/>
+				</var>
+				<var name="combat" type="table">
+					<var name="prio" value="3"/>
+					<var name="cooldown" value="15"/>
+				</var>
+			</var>
+        </extension>
+    </extensions>
+    <network sync="spawn" remote_unit="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored_husk"/>
+    <sounds>
+        <default_soundsource source="Hips"/>
+    </sounds>
+</unit>

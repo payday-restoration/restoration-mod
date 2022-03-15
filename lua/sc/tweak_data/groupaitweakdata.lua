@@ -17382,8 +17382,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
 			10,
-			12,
-			14
+			11,
+			12
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17406,8 +17406,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
 			10,
-			12,
-			14
+			11,
+			12
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17430,8 +17430,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
 			12,
-			14,
-			16
+			13,
+			14
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17454,8 +17454,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
 			12,
-			14,
-			16
+			13,
+			14
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17478,8 +17478,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 6 then
 		self.besiege.assault.force = {
 			14,
-			16,
-			18
+			15,
+			16
 		}
 		self.besiege.assault.force_pool = {
 			90,
@@ -17502,8 +17502,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	elseif difficulty_index == 7 then
 		self.besiege.assault.force = {
 			14,
-			16,
-			18
+			15,
+			16
 		}
 		self.besiege.assault.force_pool = {
 			90,
@@ -17526,8 +17526,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	else
 		self.besiege.assault.force = {
 			16,
-			18,
-			20
+			17,
+			18
 		}
 		self.besiege.assault.force_pool = {
 			105,
@@ -18125,31 +18125,31 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.reenforce.groups = {
 			CS_defend_a = {
 				1,
-				0.2,
-				0
+				0.5,
+				0.4
 			},
 			CS_defend_b = {
 				0,
-				0.8,
-				1
+				0.5,
+				0.6
 			}
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.reenforce.groups = {
 			CS_defend_a = {
-				0.35,
-				0,
+				0.5,
+				0.25,
 				0
 			},
 			CS_defend_b = {
-				0.65,
-				1,
-				0
+				0.5,
+				0.75,
+				0.6
 			},
 			CS_defend_c = {
 				0,
 				0,
-				1
+				0.4
 			}
 		}
 	elseif difficulty_index == 4 then
@@ -18195,12 +18195,12 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			FBI_defend_c = {
 				0,
 				0.5,
-				0
+				0.6
 			},
 			FBI_defend_d = {
 				0,
 				0,
-				1
+				0.4
 			}
 		}
 	elseif difficulty_index == 6 then
@@ -18218,35 +18218,30 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			FBI_defend_c = {
 				0,
 				0.5,
-				0
+				0.6
 			},
 			FBI_defend_d = {
 				0,
 				0,
-				1
+				0.4
 			}
 		}	
 	else
 		self.besiege.reenforce.groups = {
-			CS_defend_a = {
-				0.1,
-				0,
-				0
-			},
 			GS_defend_b = {
-				0.9,
-				0.5,
-				0
+				0.6,
+				0.25,
+				0.2
 			},
 			GS_defend_c = {
-				0,
+				0.4,
 				0.5,
-				0
+				0.3
 			},
 			GS_defend_d = {
 				0,
-				0,
-				1
+				0.25,
+				0.5
 			}
 		}
 	end

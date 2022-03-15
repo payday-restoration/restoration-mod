@@ -149,9 +149,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 5,
 		suppression = 12,
 		alert_size = -1,
-		spread = 2,
-		recoil = -2,
-		concealment = -2
+		spread = 1,
+		concealment = -3
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_large.perks = {"silencer"}
 	
@@ -167,9 +166,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 2,
 		suppression = 11,
 		alert_size = -1,
-		recoil = -1,
-		spread = 1,
-		concealment = -1
+		recoil = 1,
+		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_medium.perks = {"silencer"}
 	
@@ -185,7 +183,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 3,
 		suppression = 10,
 		alert_size = -1,
-		recoil = 1,				
+		concealment = 1,				
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_small.perks = {"silencer"}
@@ -202,9 +200,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 5,
 		suppression = 12,
 		alert_size = -1,
-		spread = 2,
-		recoil = -2,
-		concealment = -2
+		spread = 1,
+		concealment = -3
 	}
 	self.parts.wpn_fps_upg_ns_pis_large.perks = {"silencer"}
 
@@ -220,9 +217,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 2,
 		suppression = 11,
 		alert_size = -1,
-		recoil = -1,
-		spread = 1,
-		concealment = -1
+		recoil = 1,
+		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ns_pis_medium.perks = {"silencer"}
 
@@ -238,7 +234,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 3,
 		suppression = 10,
 		alert_size = -1,
-		recoil = 1,				
+		concealment = 1,				
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_ns_pis_small.perks = {"silencer"}
@@ -252,11 +248,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		}	
 	self.parts.wpn_fps_upg_ns_shot_thick.supported = true	
 	self.parts.wpn_fps_upg_ns_shot_thick.stats = {
-		value = 7,
-		suppression = 12,
+		value = 2,
+		suppression = 11,
 		alert_size = -1,
 		recoil = 1,
-		spread = -1
+		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ns_shot_thick.perks = {"silencer"}
 	self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {
@@ -281,10 +277,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_firepig.supported = true
 	self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats = {
-		value = 4,
+		value = 2,
 		suppression = -2,
 		recoil = 1,
-		spread = -1
+		concealment = -2
 	}
 		
 	--Stubby Compensator
@@ -296,7 +292,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.supported = true
 	self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats = {
-		value = 4,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}
@@ -312,8 +308,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.stats = {
 		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 
 	--Shark Teeth
@@ -325,10 +320,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	}
 	self.parts.wpn_fps_upg_ns_shot_shark.supported = true
 	self.parts.wpn_fps_upg_ns_shot_shark.stats = {
-		value = 5,
+		value = 2,
 		suppression = -2,
 		recoil = 1,
-		spread = -1
+		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ns_shot_shark.custom_stats = {
 		damage_near_mul = 1,
@@ -15306,7 +15301,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 			supported = true,
 			stats = {
 				value = 9,
-				total_ammo_mod = -25,
+				total_ammo_mod = -33,
 				damage = 15
 			},
 			custom_stats = {

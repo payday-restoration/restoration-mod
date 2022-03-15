@@ -129,8 +129,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoBleedoutTiltDescID"] = "Disables the camera tilt that happens while in bleedout.",
 		["RestorationModClassicMoviesTitleID"] = "Classic Loadout Backgrounds",
 		["RestorationModClassicMoviesDescID"] = "Enable or disable PD:TH loadout backgrounds when playing on Classic heists.",
-		["RestorationModQuietRainTitleID"] = "Quiet Rain",
-		["RestorationModQuietRainDescID"] = "Makes the rain quieter on rainy heists.",
 
 		["default"] = "Default",
 		["random"] = "Random",

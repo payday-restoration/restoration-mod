@@ -129,8 +129,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoBleedoutTiltDescID"] = "Відключає нахил камери, який відбувається після падіння.",
 		["RestorationModClassicMoviesTitleID"] = "Класичний фон підготовки",
 		["RestorationModClassicMoviesDescID"] = "Включити або вимкнути фон екрану підготовки з PD: TH при грі на класичних пограбуваннях.",
-		["RestorationModQuietRainTitleID"] = "Тихий дощ",
-		["RestorationModQuietRainDescID"] = "Робить звуки дощу тихіше на дощових пограбуваннях.",
 
         ["default"] = "Стандартна",
 		["random"] = "Випадковий",

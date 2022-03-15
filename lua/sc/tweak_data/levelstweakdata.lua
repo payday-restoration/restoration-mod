@@ -104,13 +104,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.flat.ai_group_type = nypd
 	
-	if restoration and restoration.Options:GetValue("OTHER/QuietRain") then
-		self.glace.ai_group_type = nypd
-		self.glace.package = {"packages/narr_glace", "packages/addrain"}
-	else
-		self.glace.ai_group_type = nypd
-		self.glace.package = {"packages/narr_glace"}
-	end
+	self.glace.ai_group_type = nypd
+	self.glace.package = {"packages/narr_glace"}
 	
 	self.dah.ai_group_type = nypd
 	self.dah.player_style = "slaughterhouse"

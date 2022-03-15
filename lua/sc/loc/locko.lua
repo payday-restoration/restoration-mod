@@ -128,8 +128,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoBleedoutTiltDescID"] = "최후의 저항 상태에서 발생하는 카메라 기울기를 비활성화합니다.",
 		["RestorationModClassicMoviesTitleID"] = "클래식 로드아웃 배경",
 		["RestorationModClassicMoviesDescID"] = "클래식 하이스트을 플레이할 때 PD:TH 로드아웃 배경을 활성화 또는 비활성화합니다.",
-		["RestorationModQuietRainTitleID"] = "조용한 비",
-		["RestorationModQuietRainDescID"] = "비 내리는 하이스트의 비를 더 조용하게 만듭니다.",
 
 		["default"] = "기본",
 		["random"] = "랜덤",

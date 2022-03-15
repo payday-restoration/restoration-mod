@@ -129,8 +129,6 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoBleedoutTiltDescID"] = "倒地后玩家的视角将不再倾斜",
 		["RestorationModClassicMoviesTitleID"] = "PD:TH经典界面",
 		["RestorationModClassicMoviesDescID"] = "选择是否在任务简报界面采用PD:TH的经典页面(仅适用于经典劫案)",
-		["RestorationModQuietRainTitleID"] = "减轻雨声",
-		["RestorationModQuietRainDescID"] = "在下雨的劫案中雨声不会那么嘈杂",
 		
 
 

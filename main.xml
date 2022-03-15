@@ -332,7 +332,6 @@
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>
 		<hook file="sc/network/base/clientnetworksession.lua" source_file="lib/network/base/clientnetworksession"/>
 		<hook file="sc/network/base/basenetworksession.lua" source_file="lib/network/base/basenetworksession"/>
-		<hook file="sc/core/CoreSoundEnvironmentManagerNew.lua" source_file="core/lib/managers/coresoundenvironmentmanager"/>
 		<hook file="sc/core/coreenvironmentcontrollermanager.lua" source_file="core/lib/managers/coreenvironmentcontrollermanager"/>
 		<!--///OVERHAUL UI ELEMENTS\\\-->
 		<hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>
@@ -474,7 +473,6 @@
 				<option type="bool" default_value="false" name="ClassicMovies"/>
 				<option type="bool" default_value="false" name="RestoreHitFlash"/>
 				<option type="bool" default_value="true" hidden="true" name="ResModChallenges"/>
-				<option type="bool" default_value="true" name="QuietRain"/>
 				<divider name="tod_divider" size="15"/>
 				<option type="multichoice" default_value="2" name="Env_Banks" values_tbl="restoration.environments_choice_bank"/>
 				<option type="multichoice" default_value="2" name="Env_RVD1" values_tbl="restoration.environments_choice_rvd1"/>
@@ -516,7 +514,6 @@
 	<Package id="packages/classicmovies" file="classicmovies.xml" use_clbk="self:LoadClassicMovies"/>
 	<Package id="packages/custom_fonts" file="fonts.xml" use_clbk="self:LoadFonts"/>
 	<Package id="packages/addhudmisc" file="addhudmisc.xml"/>
-	<Package id="packages/addrain" file="addRAIN.xml"/>
 
     <!-- ///DIFF PACKAGES AMERICA\\\ -->
     <Package id="packages/normal_sc_america" file="packages/america_diff/normal_sc_america.xml"/>

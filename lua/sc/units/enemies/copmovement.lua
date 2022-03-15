@@ -1032,6 +1032,10 @@ function CopMovement:set_uncloaked(state)
 		managers.network:session():send_to_peers_synched("sync_unit_event_id_16", self._unit, "brain", HuskCopBrain._NET_EVENTS.cloak)
 	end
 
+	if self._ext_inventory:equipped_unit() then
+		self._ext_inventory:equipped_unit():base():set_flashlight_enabled(state) -- disable the flashlight upon cloaking
+	end
+
 	self._uncloaked = state
 end
 

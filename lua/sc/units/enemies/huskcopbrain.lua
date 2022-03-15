@@ -130,8 +130,12 @@ function HuskCopBrain:sync_net_event(event_id)
 
 			local weapon_unit = self._unit:inventory():equipped_unit()
 
-			if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
-				weapon_unit:damage():run_sequence_simple("cloak_engaged")
+			if weapon_unit then 
+				weapon_unit:base():set_flashlight_enabled(false)
+
+				if weapon_unit:damage() and weapon_unit:damage():has_sequence("cloak_engaged") then
+					weapon_unit:damage():run_sequence_simple("cloak_engaged")
+				end
 			end
 		end
 	elseif event_id == self._NET_EVENTS.uncloak then
@@ -140,8 +144,12 @@ function HuskCopBrain:sync_net_event(event_id)
 
 			local weapon_unit = self._unit:inventory():equipped_unit()
 
-			if weapon_unit and weapon_unit:damage() and weapon_unit:damage():has_sequence("decloak") then
-				weapon_unit:damage():run_sequence_simple("decloak")
+			if weapon_unit then 
+				weapon_unit:base():set_flashlight_enabled(true)
+
+				if weapon_unit:damage() and weapon_unit:damage():has_sequence("decloak") then
+					weapon_unit:damage():run_sequence_simple("decloak")
+				end
 			end
 		end
 	elseif event_id == self._NET_EVENTS.weapon_laser_on then

@@ -213,6 +213,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///NEW OUTFITS\\\--
 	
+	self.nightclub.flashlights_on = true
+	
 	self.fish.player_style = "tux"
 	
 	self.arena.player_style = "hiphop"

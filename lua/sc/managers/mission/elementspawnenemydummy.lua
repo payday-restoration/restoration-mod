@@ -2890,7 +2890,7 @@ function ElementSpawnEnemyDummy:init(...)
 					self._values.enemy = nypd_pr_deathwish[self._values.enemy]
 				end
 				self._values.enemy = nypd_pr_deathwish[self._values.enemy] or self._values.enemy		
-			else
+			elseif difficulty_index == 8 then
 				if nypd_pr_zeal[self._values.enemy] then
 					self._values.enemy = nypd_pr_zeal[self._values.enemy]
 				end

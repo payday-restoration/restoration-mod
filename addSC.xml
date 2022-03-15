@@ -262,8 +262,8 @@
 	<object				path="units/pd2_dlc_flat/characters/npc_jamaican/npc_jamaican" force="true" />	
 	
 	<!--Yufu Wang's head fix-->
-	<unit				path="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored" load="true" force="true"/>
-    <unit				path="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored_husk" load="true" force="true"/>
+	<unit				path="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored" force="true"/>
+    <unit				path="units/pd2_dlc_pent/characters/npc_male_yufuwang_armored/npc_male_yufuwang_armored_husk" force="true"/>
 	
 	<!--Parachute Collision edit (No more Boiling Point suicides)-->
 	<object				path="units/pd2_dlc_jerry/props/jry_equipment_parachute/jry_equipment_parachute_ragdoll" force="true"/>

@@ -265,6 +265,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
+	self.welcome_to_the_jungle_1_night.flashlights_on = true
 	
 	
 	self.chew.player_style = "loud_suit"
@@ -274,8 +275,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.watchdogs_1.player_style = "suit_sunny"
 	self.watchdogs_2.player_style = "loud_suit"
+	self.watchdogs_2.flashlights_on = true --i think this is the night version
 	
 	self.watchdogs_1_night.player_style = "suit_sunny"
+	self.watchdogs_1_night.flashlights_on = true
 	self.watchdogs_2_day.player_style = "loud_suit"
 	
 	self.mia_1.player_style = "miami"

@@ -9,5 +9,9 @@
 		<!--RPK Banana Mag-->
 		<animation path="anims/fps/rpk/rpk_reload_normal" load="true"/>
 		<animation path="anims/fps/rpk/rpk_reload_normal_not_empty" load="true"/>
+		
+		<!--Izhma Drum Mag-->
+		<animation path="anims/fps/saiga/saiga_reload_drum" load="true"/>
+		<animation path="anims/fps/saiga/saiga_reload_drum_not_empty" load="true"/>
 	</AddFiles>
 </mod>

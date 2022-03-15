@@ -2316,6 +2316,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 	--(Izhma) Drum Mag
 	self.parts.wpn_upg_saiga_m_20rnd = {
 		pcs = {},
+		fps_animation_weight = "drum_mag",
 		type = "magazine",
 		name_id = "bm_wp_saiga_m_20rnd",
 		a_obj = "a_m",

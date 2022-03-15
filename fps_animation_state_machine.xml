@@ -10,6 +10,7 @@
 			<global name="oicw" value="0"/>
 			<global name="osipr_underbarrel" value="0"/>
 			<global name="ban_mag" value="0"/>
+			<global name="drum_mag" value="0"/>
 		</target>
 	</tweak>
 </tweaks>

@@ -1297,11 +1297,7 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.weekend_lmg.heal_cooldown = 3.75
 	self.weekend_lmg.can_throw_frag = true
 	table.insert(self._enemy_list, "weekend_lmg")
-
-	--Temp Solution
-	if job == "haunted" then
-		self.city_swat = deep_clone(self.skeleton_swat_titan)
-	end
+	
 end
 
 function CharacterTweakData:_init_sniper(presets)

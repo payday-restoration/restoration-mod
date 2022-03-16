@@ -103,7 +103,16 @@
 	<material_config	path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" force="false"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_contour" force="false"/>
 	
-	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_body_df" force="false"/>			
+	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_phalanx_body_df" force="false"/>	
+
+	<!--skeleton SWAT m4-->
+    <object				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<cooked_physics		path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<model				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat" load="true"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"/>
+	<material_config	path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_contour"/>
+	<unit				path="units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_husk" load="true"/>
 		
 	<!--skeleton SWAT saiga-->	
     <object				path="units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"/>

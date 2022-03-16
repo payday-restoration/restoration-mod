@@ -16,5 +16,6 @@
 		
 		<!--Grimm Drum Mag-->
 		<animation path="anims/fps/basset/basset_reload_drum" load="true"/>
+		<animation path="anims/fps/basset/basset_reload_drum_not_empty" load="true"/>
 	</AddFiles>
 </mod>

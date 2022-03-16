@@ -1253,6 +1253,9 @@
 	<model				path="units/pd2_dlc_cane/props/cne_prop_snow_pile_01_sc/cne_prop_snow_pile_01_sc"/>
 	<object				path="units/pd2_dlc_cane/props/cne_prop_snow_pile_01_sc/cne_prop_snow_pile_01_sc"/>
 	<unit				path="units/pd2_dlc_cane/props/cne_prop_snow_pile_01_sc/cne_prop_snow_pile_01_sc"/>
+	
+	<!--Fixed firing audio for the Grimm-->
+	<unit				path="units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset/wpn_fps_sho_basset" force="true"/>
 
 	<!-- Actually Good Third Person Animations -->
 	<animation			path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>

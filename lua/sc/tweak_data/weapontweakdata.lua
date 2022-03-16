@@ -6683,6 +6683,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}		
 	self.basset.stats_modifiers = nil
 	self.basset.reload_speed_multiplier = 1.25
+	self.basset.sounds.fire_single = "basset_x_fire_single"
 
 	--Disabled--	
 	--Akimbo Grimms

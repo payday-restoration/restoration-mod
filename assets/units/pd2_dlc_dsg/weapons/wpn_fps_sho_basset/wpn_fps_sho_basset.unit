@@ -1,0 +1,13 @@
+<unit type="wpn" slot="1" >
+	<object file="units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset/wpn_fps_sho_basset" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_basset"/>
+		<depends_on bnk="soundbanks/weapon_basset_x"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="SaigaShotgun" >
+			<var name="name_id" value="basset" />
+		</extension>
+	</extensions>
+</unit>

@@ -25,6 +25,10 @@
 	<!--nypd textures-->			
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_2_df" />
 	
 	<!--NYPD FBI/HRTs-->
 	<unit				path="units/pd2_mod_nypd/characters/ene_fbi_3/ene_fbi_3" load="true"/>	

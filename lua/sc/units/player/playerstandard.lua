@@ -1559,30 +1559,3 @@ function PlayerStandard:_interupt_action_reload(t)
 	managers.player:remove_property("shock_and_awe_reload_multiplier")
 	self:send_reload_interupt()
 end
-
-
---Animation weight stuff. 
---TODO: Hopefully someone smarter than me will actually cache the weights instead of iterating through every part on swap.
-local weapon_anim_weights = {}
-
---Get weights from current weapon on unequip
-Hooks:PostHook(PlayerStandard, "_start_action_unequip_weapon", "ResStartUnequip", function(self, t)
-	local weapon = self._equipped_unit:base()
-	weapon_anim_weights = managers.weapon_factory:get_animation_weights_from_weapon(weapon._factory_id, weapon._blueprint)
-end)
-
-Hooks:PostHook(PlayerStandard, "_start_action_equip_weapon", "ResStartEquip", function(self, t)
-	local weapon = self._equipped_unit:base()
-	
-	--Remove previous weapon weights
-	for _, weights in pairs(weapon_anim_weights) do
-		self._camera_unit:anim_state_machine():set_global(weights, 0)
-	end
-	
-	weapon_anim_weights = managers.weapon_factory:get_animation_weights_from_weapon(weapon._factory_id, weapon._blueprint)
-	
-	--And apply the current weapon weights
-	for _, weights in pairs(weapon_anim_weights) do
-		self._camera_unit:anim_state_machine():set_global(weights, 1)
-	end
-end) 

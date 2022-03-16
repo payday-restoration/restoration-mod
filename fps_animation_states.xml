@@ -825,4 +825,51 @@
         </target>
     </tweak>
 <!--Izhma Drum Mag Reload End-->
+
+
+<!--Grimm Drum Mag Reload-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/basset"/>
+        </search>
+        <target mode="attributes">
+			<attr name="type" value="mix"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/basset"/>
+			<anim name="basset_reload"/>
+        </search>
+        <target mode="replace">
+			<anim name="basset_reload" weight="basset * (1 - drum_mag)"/>
+			<anim name="basset_reload_drum" weight="basset * drum_mag"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/basset"/>
+        </search>
+        <target mode="attributes">
+			<attr name="type" value="mix"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/basset"/>
+			<anim name="basset_reload_not_empty"/>
+        </search>
+        <target mode="replace">
+			<anim name="basset_reload_not_empty" weight="basset * (1 - drum_mag)"/>
+			<anim name="basset_reload_drum_not_empty" weight="basset * drum_mag"/>
+        </target>
+    </tweak>
+<!--Izhma Drum Mag Reload End-->
 </tweaks>

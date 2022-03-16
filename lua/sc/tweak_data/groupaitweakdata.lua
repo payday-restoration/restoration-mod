@@ -18117,9 +18117,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		end
 	end		
 	self.besiege.reenforce.interval = {
-		20,
-		15,
-		10
+		30,
+		25,
+		20
 	}
 	if difficulty_index <= 2 then
 		self.besiege.reenforce.groups = {

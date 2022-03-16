@@ -1944,6 +1944,11 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.heal_cooldown = 45
 	self.drug_lord_boss.no_omnia_heal = true
 	self.drug_lord_boss.die_sound_event = "l1n_burndeath"
+	
+	--M203 Launcher
+	self.drug_lord_boss.throwable = "launcher_m203"
+	self.drug_lord_boss.throwable_on_sight = true
+	self.drug_lord_boss.throwable_cooldown = 10	
 	table.insert(self._enemy_list, "drug_lord_boss")
 end
 

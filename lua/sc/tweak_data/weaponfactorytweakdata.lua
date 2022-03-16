@@ -403,7 +403,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 		stats = {
 			value = 1,
 			recoil = 1,
-			spread = -1
+			concealment = -2
 		}
 	}
 	
@@ -418,10 +418,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 		unit = "units/payday2/weapons/wpn_fps_upg_vg_ass_smg_stubby/wpn_fps_upg_vg_ass_smg_stubby",
 		supported = true,
 		stats = {
-			value = 1,
+			value = 4,
 			spread = 1,
-			recoil = -1,
-			concealment = -1
+			concealment = -3
 		}
 	}
 	
@@ -436,7 +435,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 		unit = "units/payday2/weapons/wpn_fps_upg_vg_ass_smg_afg/wpn_fps_upg_vg_ass_smg_afg",
 		supported = true,
 		stats = {
-			value = 1,
+			value = 2,
 			recoil = -1,				
 			concealment = 1
 		}
@@ -737,7 +736,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 	self.parts.wpn_fps_upg_i_singlefire.supported = true
 	self.parts.wpn_fps_upg_i_singlefire.stats = {
 		value = 5,
-		spread = 1
+		spread = 2
 	}
 	self.parts.wpn_fps_upg_i_singlefire.custom_stats = {
 		damage_near_mul = 1,
@@ -809,8 +808,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 	self.parts.wpn_fps_upg_m4_g_mgrip.supported = true
 	self.parts.wpn_fps_upg_m4_g_mgrip.stats = {
 		value = 2,
-		recoil = -2,
-		concealment = 2
+		recoil = -1,
+		concealment = 1
 	}
 
 end)
@@ -1189,10 +1188,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}
 	self.parts.wpn_fps_m4_uupg_b_long.supported = true
 	self.parts.wpn_fps_m4_uupg_b_long.stats = {
-		value = 4,			
+		value = 5,			
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 
 	--(CAR) Short Barrel
@@ -1204,7 +1202,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}
 	self.parts.wpn_fps_m4_uupg_b_short.supported = true
 	self.parts.wpn_fps_m4_uupg_b_short.stats = {
-		value = 4,					
+		value = 3,					
 		spread = -1,
 		concealment = 1
 	}
@@ -1218,10 +1216,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}
 	self.parts.wpn_fps_m4_uupg_b_medium.supported = true
 	self.parts.wpn_fps_m4_uupg_b_medium.stats = {
-		value = 1,
+		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 	
 	--(CAR) Stealth Barrel
@@ -1249,10 +1246,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}
 	self.parts.wpn_fps_m4_uupg_fg_lr300.supported = true
 	self.parts.wpn_fps_m4_uupg_fg_lr300.stats = {
-		value = 5,
-		recoil = -1,
-		spread = 1,
-		concealment = -1
+		value = 3,
+		recoil = 1,
+		concealment = -2
 	}
 
 	--Milspec Mag.
@@ -1294,8 +1290,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}
 	self.parts.wpn_fps_upg_m4_g_ergo.supported = true
 	self.parts.wpn_fps_upg_m4_g_ergo.stats = {
-		value = 2,
-		spread = -1,
+		value = 3,
+		concealment = -2,
 		recoil = 1
 	}
 	self.parts.wpn_fps_upg_m4_g_ergo.custom_stats = {
@@ -1314,8 +1310,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	self.parts.wpn_fps_upg_m4_g_sniper.stats = {
 		value = 6,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 	self.parts.wpn_fps_upg_m4_g_sniper.custom_stats = {
 		damage_near_mul = 1,
@@ -1383,9 +1378,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}
 	self.parts.wpn_fps_upg_m4_s_standard.supported = true
 	self.parts.wpn_fps_upg_m4_s_standard.stats = {
-		value = 1,
+		value = 3,
 		recoil = 1,
-		spread = -1
+		concealment = -2
 	}
 	self.parts.wpn_fps_upg_m4_s_standard.custom_stats = {
 		damage_near_mul = 1,
@@ -1401,10 +1396,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	}
 	self.parts.wpn_fps_upg_m4_s_pts.supported = true
 	self.parts.wpn_fps_upg_m4_s_pts.stats = {
-		value = 3,
+		value = 6,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 	self.parts.wpn_fps_upg_m4_s_pts.custom_stats = {
 		damage_near_mul = 1,

@@ -231,6 +231,7 @@ function restoration:Init()
 		"ukrainian_job", --uk joj
 		"ukrainian_job_res", --ditto
 		"sah", --shacklethorne
+		"lvl_friday", --Mallbank / Crashing Capitol
 		--"hox_1", --Hoxout D1
 		--"xmn_hox_1" --Xmas edition
 	}	

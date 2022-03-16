@@ -170,6 +170,7 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		--Custom Heists below--
 		"junk", --Doghouse
+		"knk_jwl" --Knockover: Jewerly Store
 		"gallery_v2", --Art Gallery Remastered 
 		"wetwork_burn" --Burnout
 	}

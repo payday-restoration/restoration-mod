@@ -1,45 +1,43 @@
-<table name="no_mercy_ranted_s">
+<table name="no_mercy_ranted">
 	<AddFiles directory="assets">
 		<texture path="guis/mercy/icon_nmh"/>
 	</AddFiles>
-	<AssetUpdates id="-1" provider="modworkshop" use_local_dir="true" version="1.2.41"/>
-	<Localization default="english.txt" directory="loc">
-		<loc file="english.txt" language="english"/>
-	</Localization>
-	<instance id="nmh_fuge2">
-		<add directory="assets"/>
-		<include directory="levels/instances/nmh_fuge2">
-			<file file="world.world" type="generic_xml"/>
-			<file file="continents.continents" type="custom_xml"/>
-			<file file="mission.mission" type="custom_xml"/>
-			<file file="nav_manager_data.nav_data" type="generic_xml"/>
-			<file file="world_sounds.world_sounds" type="generic_xml"/>
-			<file file="world_cameras.world_cameras" type="custom_xml"/>
-			<file file="world/world.continent" type="custom_xml"/>
-			<file file="world/world.mission" type="generic_xml"/>
-			<file file="cover_data.cover_data" type="custom_xml"/>
-		</include>
-		<packages>
-			<value_node value="levels/instances/unique/sub_sewer_sidespawn/world/world"/>
-			<value_node value="levels/instances/unique/nmh/nmh_fuge/world"/>
-			<value_node value="levels/instances/unique/nmh/nmh_fuge/world_sounds"/>
-			<value_node value="levels/instances/unique/nmh/nmh_fuge/world/world"/>
-		</packages>
-		<script_data_mods directory="scriptdata"/>
-	</instance>
-	<level ai_group_type="america" briefing_dialog="Play_pln_nmh_brf" cube="cube_apply_heist_bank" failure_event="Play_pln_nmh_end_fail" id="nmh_rant" intro_event="Play_pln_nmh_intro" load_screen="guis/dlcs/nmh/textures/loading/job_nmh_df" max_bags="0" narrator="bain" orig_id="nmh_rant">
-		<add file="levels/nmh_rant/add.xml"/>
+	<AssetUpdates id="-1" provider="modworkshop" use_local_dir="true" version="1"/>
+	<level ai_group_type="nypd" briefing_dialog="Play_pln_nmh_brf" cube="cube_apply_heist_bank" failure_event="Play_pln_nmh_end_fail" id="nmh_res" intro_event="Play_old_ban_nmh_intro" load_screen="guis/dlcs/nmh/textures/loading/job_nmh_df" max_bags="0" narrator="bain">
+		<add file="levels/nmh_res/add.xml"/>
 		<assets>
 			<asset name="ammo_bag"/>
 			<asset name="health_bag"/>
 			<asset name="grenade_crate"/>
 		</assets>
-		<hooks/>
+		<include directory="levels/nmh_res">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="art_light/art_light.continent" type="binary"/>
+			<file file="art_light/art_light.mission" type="binary"/>
+			<file file="lights/lights.continent" type="binary"/>
+			<file file="lights/lights.mission" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="env/env.continent" type="binary"/>
+			<file file="env/env.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+			<file file="environments/newer_darkness.environment" type="custom_xml"/>
+			<file file="environments/no_mercy_default.environment" type="custom_xml"/>
+			<file file="environments/maybe_some_mercy.environment" type="custom_xml"/>
+		</include>
 		<outro_event>
 			<value_node value="Play_pln_nmh_end_win"/>
 		</outro_event>
 		<packages>
 			<value_node value="packages/dlcs/nmh/job_nmh"/>
+			<value_node value="packages/nypdassets"/>
 			<value_node value="levels/narratives/classics/nmh/world"/>
 			<value_node value="levels/narratives/classics/nmh/world_sounds"/>
 			<value_node value="levels/narratives/classics/nmh/art_light/art_light"/>
@@ -55,9 +53,9 @@
 			</mod>
 		</script_data_mods>
 	</level>
-	<narrative briefing_event="Play_rb1_nmh_cbf_01" contact="classic" hide_from_crimenet="false" icon="guis/mercy/icon_nmh" id="no_mercy_ranted_s" jc="30" region="street">
+	<narrative brief_id="heist_nmh_crimenet" briefing_event="Play_rb1_nmh_cbf_01" contact="classic" hide_from_crimenet="false" icon="guis/mercy/icon_nmh" id="nmh" jc="30" name_id="heist_nmh" region="street">
 		<chain>
-			<table level_id="nmh_rant" type="d" type_id="heist_type_assault"/>
+			<table level_id="nmh_res" type="d" type_id="heist_type_assault"/>
 		</chain>
 		<contract_cost>
 			<value_node value="31000"/>

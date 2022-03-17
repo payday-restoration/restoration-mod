@@ -2312,7 +2312,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		pcs = {},
 		fps_animation_weight = "drum_mag",
 		type = "magazine",
-		name_id = "bm_wp_saiga_m_20rnd",
+		name_id = "bm_wp_aa12_mag_drum",
 		a_obj = "a_m",
 		dlc = "sc",
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd",
@@ -2993,6 +2993,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 	--(Compact-5) Drum Mag
 	self.parts.wpn_fps_smg_mp5_m_drum = {
 		pcs = {},
+		fps_animation_weight = "drum_mag",
 		type = "magazine",
 		name_id = "bm_wp_aa12_mag_drum",
 		a_obj = "a_m",

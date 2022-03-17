@@ -872,4 +872,51 @@
         </target>
     </tweak>
 <!--Izhma Drum Mag Reload End-->
+
+
+<!--Compact-5 Drum Mag Reload-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/mp5"/>
+        </search>
+        <target mode="attributes">
+			<attr name="type" value="mix"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload/mp5"/>
+			<anim name="mp5_rifle_reload"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_reload" weight="mp5 * (1 - drum_mag)"/>
+			<anim name="mp5_rifle_reload_drum" weight="mp5 * drum_mag"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/mp5"/>
+        </search>
+        <target mode="attributes">
+			<attr name="type" value="mix"/>
+        </target>
+    </tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/reload_not_empty/mp5"/>
+			<anim name="mp5_rifle_reload_not_empty"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_reload_not_empty" weight="mp5 * (1 - drum_mag)"/>
+			<anim name="mp5_rifle_reload_drum_not_empty" weight="mp5 * drum_mag"/>
+        </target>
+    </tweak>
+<!--Compact-5 Drum Mag Reload End-->
 </tweaks>

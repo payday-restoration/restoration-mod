@@ -159,7 +159,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["wheresthevan"] = "Where's The Van",
 		["menu_jukebox_heist_ponr"] = "Точка невозврата",
 		["RestorationModPaintingsTitleID"] = "Вирізані картини в картинній галереї",
-		["RestorationModPaintingsDescID"] = "Включає або вимикає відображення вирізаних картин на пограбуванні"Картинна галерея". Працює тільки для хоста.",
+		["RestorationModPaintingsDescID"] = "Включає або вимикає відображення вирізаних картин на пограбуванні 'Картинна галерея'. Працює тільки для хоста.",
 		["RestorationModMainHUDTitleID"] = "Alpha HUD - ВКЛ/ВИМК",
 		["RestorationModMainHUDDescID"] = "Повністю включає або вимикає інтерфейс з альфа-версії гри.",
 		["RestorationModWaypointsTitleID"] = "Іконки цілей з Альфи",

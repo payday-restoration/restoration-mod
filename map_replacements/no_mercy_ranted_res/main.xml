@@ -3,6 +3,27 @@
 		<texture path="guis/mercy/icon_nmh"/>
 	</AddFiles>
 	<AssetUpdates id="-1" provider="modworkshop" use_local_dir="true" version="1"/>
+		<instance id="nmh_fuge2">
+		<add directory="assets"/>
+		<include directory="levels/instances/nmh_fuge2">
+			<file file="world.world" type="generic_xml"/>
+			<file file="continents.continents" type="custom_xml"/>
+			<file file="mission.mission" type="custom_xml"/>
+			<file file="nav_manager_data.nav_data" type="generic_xml"/>
+			<file file="world_sounds.world_sounds" type="generic_xml"/>
+			<file file="world_cameras.world_cameras" type="custom_xml"/>
+			<file file="world/world.continent" type="custom_xml"/>
+			<file file="world/world.mission" type="generic_xml"/>
+			<file file="cover_data.cover_data" type="custom_xml"/>
+		</include>
+		<packages>
+			<value_node value="levels/instances/unique/sub_sewer_sidespawn/world/world"/>
+			<value_node value="levels/instances/unique/nmh/nmh_fuge/world"/>
+			<value_node value="levels/instances/unique/nmh/nmh_fuge/world_sounds"/>
+			<value_node value="levels/instances/unique/nmh/nmh_fuge/world/world"/>
+		</packages>
+		<script_data_mods directory="scriptdata"/>
+	</instance>
 	<level ai_group_type="nypd" briefing_dialog="Play_pln_nmh_brf" cube="cube_apply_heist_bank" failure_event="Play_pln_nmh_end_fail" id="nmh_res" intro_event="Play_old_ban_nmh_intro" load_screen="guis/dlcs/nmh/textures/loading/job_nmh_df" max_bags="0" narrator="bain">
 		<add file="levels/nmh_res/add.xml"/>
 		<assets>

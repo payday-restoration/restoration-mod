@@ -71,6 +71,9 @@
 			
 			<anim name="basset_reload_drum" 						file="anims/fps/basset/basset_reload_drum" blend_set="all"/>
 			<anim name="basset_reload_drum_not_empty" 				file="anims/fps/basset/basset_reload_drum_not_empty" blend_set="all"/>
+			
+			<anim name="mp5_rifle_reload_drum" 						file="anims/fps/mp5/mp5_reload_drum" blend_set="all"/>
+			<anim name="mp5_rifle_reload_drum_not_empty" 			file="anims/fps/mp5/mp5_reload_drum_not_empty" blend_set="all"/>
 		</target>
 	</tweak>
 </tweaks>

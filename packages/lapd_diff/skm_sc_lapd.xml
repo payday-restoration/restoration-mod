@@ -771,6 +771,7 @@
 	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
 		
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_df" />
+	<texture			path="units/payday2/characters/shared_textures/spook_cloak_glow_df" />
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_dead_df" load="true"/> 
 	<texture			path="units/payday2/characters/shared_textures/nvg_df"/>
 	<texture			path="units/payday2/characters/shared_textures/spook_cloak_nm"/>

@@ -1,0 +1,22 @@
+<table>
+	<world path="world" script_data_type="binary"/>
+	<continents path="continents" script_data_type="binary"/>
+	<mission path="mission" script_data_type="binary"/>
+	<nav_data path="nav_manager_data" script_data_type="binary"/>
+	<world_sounds path="world_sounds" script_data_type="binary"/>
+	<world_cameras path="world_cameras" script_data_type="binary"/>
+	<continent path="art_light/art_light" script_data_type="binary"/>
+	<mission path="art_light/art_light" script_data_type="binary"/>
+	<continent path="lights/lights" script_data_type="binary"/>
+	<mission path="lights/lights" script_data_type="binary"/>
+	<continent path="world/world" script_data_type="binary"/>
+	<mission path="world/world" script_data_type="binary"/>
+	<continent path="env/env" script_data_type="binary"/>
+	<mission path="env/env" script_data_type="binary"/>
+	<continent path="editor_only/editor_only" script_data_type="binary"/>
+	<mission path="editor_only/editor_only" script_data_type="binary"/>
+	<cover_data path="cover_data" script_data_type="binary"/>
+	<environment path="environments/newer_darkness" script_data_type="custom_xml"/>
+	<environment path="environments/no_mercy_default" script_data_type="custom_xml"/>
+	<environment path="environments/maybe_some_mercy" script_data_type="custom_xml"/>
+</table>

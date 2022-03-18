@@ -68,11 +68,14 @@ function restoration:Init()
 		"framing_frame_1", --art gallery but ff
 		"framing_frame_3", --Powerbox simulator
 		"jewelry_store", --Jewelry Store
+		"nmh", --no mercy
+		"rvd2", --garnet group boutique
 		"ukrainian_job", --Ukrainian Job
 		--custom heists
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
 		"lvl_fourmorestores", --four more stores
+		"nmh_res", --no mercy ranted 
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
@@ -95,9 +98,12 @@ function restoration:Init()
 			"framing_frame_3", --Powerbox simulator
 			"jewelry_store", --Jewelry Store
 			"ukrainian_job", --Ukrainian Job
+			"rvd2", --garnet group boutique
+			"nmh", --no mercy
 			--custom heists
 			"wetwork", --res map package wetworks
 			"alex_1_res", --Rats Day 1 res edit version
+			"nmh_res", --no mercy ranted 
 			"lvl_fourmorestores", --four more stores
 			"ukrainian_job_res", --Ukrainian Job res edit version
 			"hntn" --harvest and trustee north
@@ -111,12 +117,14 @@ function restoration:Init()
 			"big", --big bank
 			"kenaz", --golden grin casino 
 			"dinner", --Slaughterhouse
+			"nmh", --spooki heist
 			"branchbank", --Gets Branchbank from Autumn		
 			"help", --Prison Nightmare	
 			"chca", --Black Cat Heist
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"tj_htsb", --Gets Southern Branchbank from Autumn
+			"nmh_res", --spooki heist
 			"lvl_friday" --Crashing Capitol
 		}		
 	

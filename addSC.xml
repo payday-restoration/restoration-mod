@@ -805,6 +805,9 @@
 	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
 	
+	<!--Weapon Mod Trails-->
+	<effect				path="effects/particles/weapons/sterwers_trail" force="false"/>
+	
 	<!--Stat Boost-->
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc"/>
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p2_sc"/>

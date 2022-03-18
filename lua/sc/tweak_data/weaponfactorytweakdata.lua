@@ -7247,10 +7247,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 		alert_size = -1
 	}
 	self.parts.wpn_fps_lmg_mg42_b_vg38.custom_stats = {
-		is_laser_gun = true
+		starwars = true
 	}				
 	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = {"silencer"}
-	
+	self.parts.wpn_fps_lmg_mg42_b_vg38.sound_switch = {
+		suppressed = "suppressed_b"
+	}
+		
 	--Rails
 	self.wpn_fps_lmg_mg42.adds = { 
 		wpn_fps_upg_o_specter = { "wpn_fps_snp_mosin_rail" },
@@ -7435,7 +7438,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 		concealment = -1
 	}
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
-		is_laser_gun = true
+		starwars = true
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = {"silencer"}
 	

@@ -69,7 +69,6 @@ function restoration:Init()
 		"framing_frame_3", --Powerbox simulator
 		"jewelry_store", --Jewelry Store
 		"nmh", --no mercy
-		"rvd2", --garnet group boutique
 		"ukrainian_job", --Ukrainian Job
 		--custom heists
 		"wetwork", --res map package wetworks
@@ -98,7 +97,6 @@ function restoration:Init()
 			"framing_frame_3", --Powerbox simulator
 			"jewelry_store", --Jewelry Store
 			"ukrainian_job", --Ukrainian Job
-			"rvd2", --garnet group boutique
 			--custom heists
 			"wetwork", --res map package wetworks
 			"alex_1_res", --Rats Day 1 res edit version

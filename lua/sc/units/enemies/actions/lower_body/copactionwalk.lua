@@ -723,20 +723,32 @@ function CopActionWalk:update(t)
 					variant = "walk"
 				end
 			elseif anim_data.run then
-				if real_velocity > 530 and walk_anim_velocities.sprint and anim_data.pose == "stand" then
+				if real_velocity > 530 and walk_anim_velocities and walk_anim_velocities.sprint and anim_data.pose == "stand" then
 					variant = "sprint"
 				elseif real_velocity > 250 then
 					variant = "run"
 				elseif not self._no_walk then
 					variant = "walk"
 				end
-			elseif real_velocity > 530 and walk_anim_velocities.sprint and anim_data.pose == "stand" then
+			elseif real_velocity > 530 and walk_anim_velocities and walk_anim_velocities.sprint and anim_data.pose == "stand" then
 				variant = "sprint"
 			elseif real_velocity > 300 then
 				variant = "run"
 			elseif not self._no_walk then
 				variant = "walk"
 			end
+		end
+
+		if not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"]
+		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name]
+		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant] then
+		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant][wanted_walk_dir] then
+			log("Something's fucked up!!!")
+			log("tweak_table: " .. tostring(self._unit:base()._tweak_table))
+			log("pose: " .. tostring(self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"))
+			log("stance: " .. tostring(self._stance.name))
+			log("haste: " .. tostring(variant))
+			log("move_dir: " .. tostring(wanted_walk_dir))
 		end
 
 		self:_adjust_move_anim(wanted_walk_dir, variant)

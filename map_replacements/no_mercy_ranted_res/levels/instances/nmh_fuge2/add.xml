@@ -1,0 +1,14 @@
+<table directory="assets">
+	<add from_db="true" path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge" type="unit">
+		<unit path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge"/>
+		<object path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge"/>
+		<material_config path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge"/>
+		<sequence_manager path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge" type="unit">
+		<material_config path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge"/>
+		<object path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge"/>
+		<sequence_manager path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge"/>
+		<unit path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge"/>
+	</add>
+</table>

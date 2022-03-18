@@ -1300,6 +1300,11 @@ function CopActionWalk:get_walk_to_pos()
 	return --[[self._simplified_path[2] and--]] self._nav_point_pos(self._simplified_path[2]) -- never called on clients so no need to account for the rare case of no 2nd entry
 end
 
+-- Helper function to get the final path position
+function CopActionWalk:get_destination_pos()
+	return self._nav_point_pos(self._simplified_path[#self._simplified_path])
+end
+
 function CopActionWalk:_upd_wait(t)
 	if self._ext_anim.move then
 		self:_stop_walk()

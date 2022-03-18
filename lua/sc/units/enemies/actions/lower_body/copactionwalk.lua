@@ -741,7 +741,7 @@ function CopActionWalk:update(t)
 
 		if not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"]
 		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name]
-		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant] then
+		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant]
 		or not self._walk_anim_velocities[self._stance.values[4] > 0 and "wounded" or anim_data.pose or "stand"][self._stance.name][variant][wanted_walk_dir] then
 			log("Something's fucked up!!!")
 			log("tweak_table: " .. tostring(self._unit:base()._tweak_table))

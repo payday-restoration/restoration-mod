@@ -393,6 +393,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	--TAC Vertical Grip
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip = {
 		pcs = {},
+		fps_animation_weight = "vertical_grip",
 		type = "vertical_grip",
 		name_id = "bm_wp_upg_vg_tac",
 		a_obj = "a_vg",
@@ -410,6 +411,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	--Stubby Vertical Grip
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby = {
 		pcs = {},
+		fps_animation_weight = "vertical_grip",
 		type = "vertical_grip",
 		name_id = "bm_wp_upg_vg_stubby",
 		a_obj = "a_vg",

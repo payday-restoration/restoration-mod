@@ -874,7 +874,216 @@
 <!--Izhma Drum Mag Reload End-->
 
 
-<!--Compact-5 Drum Mag Reload-->
+<!--Compact-5 Tweaks-->
+	<!--Idle-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/idle"/>
+			<anim name="mp5_rifle_idle"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_idle" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_idle" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
+	<!--Equips-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/equip"/>
+			<anim name="mp5_rifle_equip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_equip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_equip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+		<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/melee_exit"/>
+			<anim name="mp5_rifle_equip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_equip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_equip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/throw_grenade_exit"/>
+			<anim name="mp5_rifle_equip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_equip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_equip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/throw_projectile_exit"/>
+			<anim name="mp5_rifle_equip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_equip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_equip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
+	<!--Unequips-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/unequip"/>
+			<anim name="mp5_rifle_unequip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_unequip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_unequip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/melee_enter"/>
+			<anim name="mp5_rifle_unequip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_unequip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_unequip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/throw_projectile_enter"/>
+			<anim name="mp5_rifle_unequip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_unequip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_unequip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/throw_grenade_enter"/>
+			<anim name="mp5_rifle_unequip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_unequip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_unequip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/throw_molotov_enter"/>
+			<anim name="mp5_rifle_unequip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_unequip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_unequip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/throw_concussion_enter"/>
+			<anim name="mp5_rifle_unequip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_unequip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_unequip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/throw_dada_enter"/>
+			<anim name="mp5_rifle_unequip"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_unequip" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_unequip" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
+	<!--Inspect-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/cash_inspect"/>
+			<anim name="mp5_inspect"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_inspect" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_vg_inspect" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
+	<!--Recoil-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/recoil"/>
+			<anim name="mp5_rifle_recoil"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_recoil" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_recoil" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/recoil_steelsight"/>
+			<anim name="mp5_rifle_recoil"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_recoil" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_recoil" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/recoil_enter"/>
+			<anim name="mp5_rifle_recoil_enter"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_recoil_enter" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_recoil_enter" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/recoil_loop"/>
+			<anim name="mp5_rifle_recoil_loop"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_recoil_loop" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_recoil_loop" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/recoil_exit"/>
+			<anim name="mp5_rifle_recoil_exit"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_recoil_exit" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_recoil_exit" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
+	<!--Reloads-->
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
         <search>
             <xml/>
@@ -892,8 +1101,10 @@
 			<anim name="mp5_rifle_reload"/>
         </search>
         <target mode="replace">
-			<anim name="mp5_rifle_reload" weight="mp5 * (1 - drum_mag)"/>
-			<anim name="mp5_rifle_reload_drum" weight="mp5 * drum_mag"/>
+			<anim name="mp5_rifle_reload" weight="mp5 * (1 - drum_mag) * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_reload_drum" weight="mp5 * drum_mag * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_reload" weight="mp5 * vertical_grip * (1 - drum_mag)"/>
+			<anim name="mp5_rifle_vg_reload_drum" weight="mp5 * drum_mag * vertical_grip"/>
         </target>
     </tweak>
 	
@@ -914,9 +1125,11 @@
 			<anim name="mp5_rifle_reload_not_empty"/>
         </search>
         <target mode="replace">
-			<anim name="mp5_rifle_reload_not_empty" weight="mp5 * (1 - drum_mag)"/>
-			<anim name="mp5_rifle_reload_drum_not_empty" weight="mp5 * drum_mag"/>
+			<anim name="mp5_rifle_reload_not_empty" weight="mp5 * (1 - drum_mag) * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_reload_drum_not_empty" weight="mp5 * drum_mag * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_reload_not_empty" weight="mp5 * vertical_grip * (1 - drum_mag)"/>
+			<anim name="mp5_rifle_vg_reload_drum_not_empty" weight="mp5 * drum_mag * vertical_grip"/>
         </target>
     </tweak>
-<!--Compact-5 Drum Mag Reload End-->
+<!--Compact-5 Tweaks End-->
 </tweaks>

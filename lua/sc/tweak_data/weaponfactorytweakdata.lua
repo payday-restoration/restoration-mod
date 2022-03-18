@@ -393,6 +393,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	--TAC Vertical Grip
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip = {
 		pcs = {},
+		fps_animation_weight = "vertical_grip",
 		type = "vertical_grip",
 		name_id = "bm_wp_upg_vg_tac",
 		a_obj = "a_vg",
@@ -410,6 +411,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	--Stubby Vertical Grip
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby = {
 		pcs = {},
+		fps_animation_weight = "vertical_grip",
 		type = "vertical_grip",
 		name_id = "bm_wp_upg_vg_stubby",
 		a_obj = "a_vg",
@@ -446,12 +448,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby.third_unit = "units/payday2/weapons/wpn_third_upg_vg_ass_smg_stubby/wpn_third_upg_vg_ass_smg_stubby"
 	self.parts.wpn_fps_upg_vg_ass_smg_afg.third_unit = "units/payday2/weapons/wpn_third_upg_vg_ass_smg_afg/wpn_third_upg_vg_ass_smg_afg"
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip)
+	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla.fps_animation_weight = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla.stats = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla.pcs = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_afg_vanilla = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_afg)
 	self.parts.wpn_fps_upg_vg_ass_smg_afg_vanilla.stats = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_afg_vanilla.pcs = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby_vanilla = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_stubby)
+	self.parts.wpn_fps_upg_vg_ass_smg_stubby_vanilla.fps_animation_weight = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby_vanilla.stats = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby_vanilla.pcs = nil
 
@@ -7243,10 +7247,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 		alert_size = -1
 	}
 	self.parts.wpn_fps_lmg_mg42_b_vg38.custom_stats = {
-		is_laser_gun = true
+		starwars = true
 	}				
 	self.parts.wpn_fps_lmg_mg42_b_vg38.perks = {"silencer"}
-	
+	self.parts.wpn_fps_lmg_mg42_b_vg38.sound_switch = {
+		suppressed = "suppressed_b"
+	}
+		
 	--Rails
 	self.wpn_fps_lmg_mg42.adds = { 
 		wpn_fps_upg_o_specter = { "wpn_fps_snp_mosin_rail" },
@@ -7431,7 +7438,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 		concealment = -1
 	}
 	self.parts.wpn_fps_smg_sterling_b_e11.custom_stats = {
-		is_laser_gun = true
+		starwars = true
 	}	
 	self.parts.wpn_fps_smg_sterling_b_e11.perks = {"silencer"}
 	

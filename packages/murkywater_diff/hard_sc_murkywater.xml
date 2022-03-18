@@ -172,7 +172,7 @@
 	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
 	<model				path="units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3" force="false"/>
-	
+
 	<!--Murky FBI SWAT M4-->
 	<object				path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1" force="false"/>
@@ -188,6 +188,10 @@
 	<model				path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2" force="false" load="true"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" force="false" load="true"/>	
+	
+	<!--UMPSTER CAP-->	
+	<unit_mat			path="units/pd2_mod_sharks/characters/ene_acc_murky_hat_ump/ene_acc_murky_hat_ump" load="true"/>
+	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_murky_hat_ump/ene_acc_murky_hat_ump" />		
 	
     <!--Murky FBI Heavy M4-->
 	<object				path="units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" force="false"/>
@@ -214,7 +218,8 @@
 	<!-- disktrasa -->
 	<material_config	path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa" force="false"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1_disktrasa_contour" force="false"/>
-   
+	<!-- fbi tier end -->
+	
 	<!-- specials-->
 	<!-- greendozer -->
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870" load="true"/>
@@ -235,7 +240,7 @@
 
 	<unit_obj			path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_1/ene_acc_bulldozer_stomache_murky_1" load="false"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_1/ene_acc_bulldozer_stomache_murky_1" force="false"/>
-	
+
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/bulldozer_df" force="false"/>
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/bulldozer_glass_op" force="false"/>	
 	
@@ -260,13 +265,12 @@
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook" load="true"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
 	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>
-	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>	
+	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook"/>		
 	<material_config	path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook_contour"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_spook/ene_murky_spook_husk" load="true"/>
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/spook_heavy_df"/>				
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_df"/>				
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_spook/nvg_nm"/>				
-
 	<!--Murky Cloaker Debris-->
 	<!--head-->
 	<model				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_head_debris"/>
@@ -279,7 +283,7 @@
 	<object				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_upper_body_debris"/>
 	<cooked_physics		path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_upper_body_debris"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_murky_spook/debris/ene_murky_spook_upper_body_debris" load="false"/>
-	<!--end debris-->	
+	<!--end debris-->			
 	<!-- specials end -->
 
 	<!--Shared textures-->	
@@ -296,7 +300,7 @@
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/swat_heavy_df" force="false"/>	
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/gren_glass_df" />	
 	
-	<!-- titans -->
+	<!-- titans	 -->
 	<!--Keep those helmets flying ;)-->	
 	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_helmet/ene_acc_titan_helmet" force="false"/>
@@ -313,10 +317,11 @@
 	<model				path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
+
 	
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/heads_dozer_il" load="true" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
 
     <!--Titan Taser-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
@@ -342,13 +347,14 @@
 	
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_body_2_df" force="false"/>
 	<texture			path="units/pd2_mod_sharks/characters/shared_textures/ene_veteran_head_1_df" force="false"/>	
-	
+		
 	<!--Titan Taser Helm Acc-->
 	<cooked_physics		path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<model				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
+	
 	
 	<!--Titan HRT-->	
 	<unit				path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
@@ -364,4 +370,5 @@
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	<!-- titans end -->
+	
 </table>

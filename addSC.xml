@@ -649,6 +649,7 @@
 
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_df" load="true"/>
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/spook_cloak_dead_df" load="true"/>
+	<texture			path="units/payday2/characters/shared_textures/spook_cloak_glow_df" />
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_df" load="true"/>
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/material_sds_04_op" load="true"/>
 	
@@ -803,6 +804,9 @@
 	<!--Sniper Trails-->
 	<effect				path="effects/particles/weapons/sniper_trail_sc" force="false"/>
 	<effect				path="effects/particles/weapons/titan_trail_sc" force="false"/>
+	
+	<!--Weapon Mod Trails-->
+	<effect				path="effects/particles/weapons/sterwers_trail" force="false"/>
 	
 	<!--Stat Boost-->
 	<texture			path="guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p1_sc"/>

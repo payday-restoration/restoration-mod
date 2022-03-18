@@ -506,7 +506,17 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		if stats.damage_far_mul then
 			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
 		end
+		
+		if stats.starwars then
+            self._starwars = true
+        end
 	end
+	
+    if BeardLib and self._trail_effect_table then
+        if self._starwars == true then
+            self._trail_effect_table.effect = Idstring("effects/particles/weapons/sterwers_trail")
+		end
+    end	
 
 	self:precalculate_ammo_pickup()
 end

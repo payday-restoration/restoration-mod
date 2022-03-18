@@ -72,8 +72,32 @@
 			<anim name="basset_reload_drum" 						file="anims/fps/basset/basset_reload_drum" blend_set="all"/>
 			<anim name="basset_reload_drum_not_empty" 				file="anims/fps/basset/basset_reload_drum_not_empty" blend_set="all"/>
 			
-			<anim name="mp5_rifle_reload_drum" 						file="anims/fps/mp5/mp5_reload_drum" blend_set="all"/>
-			<anim name="mp5_rifle_reload_drum_not_empty" 			file="anims/fps/mp5/mp5_reload_drum_not_empty" blend_set="all"/>
+			<anim name="mp5_rifle_reload_drum"						file="anims/fps/mp5/mp5_reload_drum" blend_set="all"/>
+			<anim name="mp5_rifle_reload_drum_not_empty"			file="anims/fps/mp5/mp5_reload_drum_not_empty" blend_set="all"/>
+			<anim name="mp5_rifle_vg_reload"						file="anims/fps/mp5/mp5_reload" blend_set="all"/>
+			<anim name="mp5_rifle_vg_reload_not_empty"				file="anims/fps/mp5/mp5_reload_not_empty" blend_set="all"/>
+			<anim name="mp5_rifle_vg_reload_drum"					file="anims/fps/mp5/mp5_reload_drum" blend_set="all"/>
+			<anim name="mp5_rifle_vg_reload_drum_not_empty"			file="anims/fps/mp5/mp5_reload_drum_not_empty" blend_set="all"/>
+			<anim name="mp5_rifle_vg_idle"							file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_recoil" 						file="anims/fps/mp5/mp5_vg_recoil" blend_set="all"/>
+			<anim name="mp5_rifle_vg_recoil_enter" 					file="anims/fps/mp5/mp5_vg_recoil_enter" blend_set="all"/>
+			<anim name="mp5_rifle_vg_recoil_loop" 					file="anims/fps/mp5/mp5_vg_recoil_loop" blend_set="all"/>
+			<anim name="mp5_rifle_vg_recoil_exit" 					file="anims/fps/mp5/mp5_vg_recoil_exit" blend_set="all"/>
+			<anim name="mp5_rifle_vg_equip" 						file="anims/fps/mp5/mp5_vg_equip" blend_set="all"/>
+			<anim name="mp5_rifle_vg_unequip" 						file="anims/fps/mp5/mp5_vg_unequip" blend_set="all"/>
+			<anim name="mp5_rifle_vg_melee" 						file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_melee_miss" 					file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_use" 							file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_sprint_enter" 					file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_sprint" 						file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_sprint_exit" 					file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_com_down_var1" 				file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_com_stop" 						file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_com_come" 						file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_com_point" 					file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_get_up" 						file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_rifle_vg_gogo" 							file="anims/fps/mp5/mp5_vg_idle" blend_set="all"/>
+			<anim name="mp5_vg_inspect" 							file="anims/fps/mp5/mp5_vg_inspect" blend_set="all"/>
 		</target>
 	</tweak>
 </tweaks>

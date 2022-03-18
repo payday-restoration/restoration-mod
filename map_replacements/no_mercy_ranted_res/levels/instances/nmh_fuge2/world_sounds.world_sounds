@@ -1,0 +1,12 @@
+<generic_scriptdata type="table">
+	<entry key="ambience_enabled" type="boolean" value="false"/>
+	<entry key="default_ambience" type="string" value="ambience_cft_outdoors_01"/>
+	<entry key="default_environment" type="string" value="Default (Custom)"/>
+	<entry key="default_occasional" type="string" value="occasionals_a_silent"/>
+	<entry key="sound_area_emitters" type="table">
+	</entry>
+	<entry key="sound_emitters" type="table">
+	</entry>
+	<entry key="sound_environments" type="table">
+	</entry>
+</generic_scriptdata>

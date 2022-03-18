@@ -1,12 +1,12 @@
 <table directory="assets">
-	<material_config path="units/pd2_dlc_nmh/architecture/nmh_architecture_hospital_garage/nmh_architecture_hospital_garage" force="true"/>
-	<material_config path="units/pd2_dlc_nmh/architecture/nmh_ceiling_hole_office_300x300/nmh_ceiling_hole_office_300x300" force="true"/>
-	<material_config path="units/pd2_dlc_nmh/architecture/nmh_ceiling_venthole_office_300x300/nmh_ceiling_venthole_office_300x300" force="true"/>
-	<material_config path="units/pd2_dlc_nmh/architecture/nmh_hospital_breakable_wall/nmh_hospital_breakable_wall_3x3" force="true"/>
-	<material_config path="units/pd2_dlc_nmh/architecture/nmh_hospital_door_02/nmh_hospital_door_02" force="true"/>
-	<material_config path="units/pd2_dlc_nmh/architecture/nmh_hospital_wall_hole_04/nmh_hospital_wall_hole_04" force="true"/>
-	<material_config path="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_main_mesh" force="true"/>
-	<material_config path="units/pd2_dlc_nmh/architecture/nmh_prop_doormain01/nmh_hospital_door_01" force="true"/>
+	<material_config force="true" path="units/pd2_dlc_nmh/architecture/nmh_architecture_hospital_garage/nmh_architecture_hospital_garage"/>
+	<material_config force="true" path="units/pd2_dlc_nmh/architecture/nmh_ceiling_hole_office_300x300/nmh_ceiling_hole_office_300x300"/>
+	<material_config force="true" path="units/pd2_dlc_nmh/architecture/nmh_ceiling_venthole_office_300x300/nmh_ceiling_venthole_office_300x300"/>
+	<material_config force="true" path="units/pd2_dlc_nmh/architecture/nmh_hospital_breakable_wall/nmh_hospital_breakable_wall_3x3"/>
+	<material_config force="true" path="units/pd2_dlc_nmh/architecture/nmh_hospital_door_02/nmh_hospital_door_02"/>
+	<material_config force="true" path="units/pd2_dlc_nmh/architecture/nmh_hospital_wall_hole_04/nmh_hospital_wall_hole_04"/>
+	<material_config force="true" path="units/pd2_dlc_nmh/architecture/nmh_main_mesh/nmh_main_mesh"/>
+	<material_config force="true" path="units/pd2_dlc_nmh/architecture/nmh_prop_doormain01/nmh_hospital_door_01"/>
 	<texture path="levels/mods/nmh_res/cube_lights/300003"/>
 	<texture path="levels/mods/nmh_res/cube_lights/300113"/>
 	<texture path="levels/mods/nmh_res/cube_lights/300400"/>
@@ -122,4 +122,16 @@
 	<texture path="levels/mods/nmh_res/cube_lights/300104"/>
 	<texture path="levels/mods/nmh_res/cube_lights/300102"/>
 	<texture path="levels/mods/nmh_res/cube_lights/300186"/>
+	<add from_db="true" path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge" type="unit">
+		<unit path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge"/>
+		<object path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge"/>
+		<material_config path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge"/>
+		<sequence_manager path="units/pd2_dlc_nmh/props/nmh_hospital_veil_rack_2/nmh_hospital_veil_interaction_centrifuge"/>
+	</add>
+	<add from_db="true" path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge" type="unit">
+		<material_config path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge"/>
+		<object path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge"/>
+		<sequence_manager path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge"/>
+		<unit path="units/pd2_dlc_nmh/props/nmh_interactable_blood_centrifuge/nmh_interactable_blood_centrifuge"/>
+	</add>
 </table>

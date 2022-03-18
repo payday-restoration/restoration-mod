@@ -1,7 +1,12 @@
-<table directory="assets">	
+<table directory="assets">
 	<!--mosconi 12g tactical-->
 	<unit_obj			path="units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500" />
-
+	
+	<!--UZI Suzie i hate animations-->
+	<unit_mat			path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />
+	
+	<df_nm				path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/hajk_uzi_atlas" />		
+	
 	<!-- textures -->
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/swat_fbi_body_df" />
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/spook_heavy_df" />
@@ -12,7 +17,6 @@
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/heads_swat_atlas_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_helmets_df" />
 	<texture			path="units/pd2_mod_sharks/characters/ene_murky_tazer/taser_body_nm" />
-	<texture			path="units/pd2_dlc_bex/characters/ene_swat_policia_federale/ene_swat_policia_federale_helmets_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1_policia_federale_body_df" />
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_df" force="false"/>
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/tank_glass_op" force="false"/>	
@@ -20,7 +24,6 @@
 	<texture			path="units/pd2_dlc_pex/characters/shared_textures/ene_office_cops_head_atlas_nm" />	
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" />
-	
 	
 	<!--Fixed Beat Cops-->
 	<!--Glock-->	
@@ -172,8 +175,8 @@
 	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2" load="true"/>
 	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2"/>
 	<material_config	path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2_contour"/>
-	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>		
-	
+	<unit				path="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2_husk" load="true"/>			
+
 	<!--FBI Heavy Rifle-->	
 	<object				path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  />
 	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"  />
@@ -212,6 +215,7 @@
 	<!-- fbi tier end -->
 	
 	<!-- specials-->
+	
 	<!-- greendozer -->
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1_contour" />
@@ -240,6 +244,27 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1_contour" />
 	
 	<texture			path="units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1_policia_federale_body_df" />
+	
+	<!--Cloaker-->	
+	<object				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
+	<cooked_physics		path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
+	<model				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1" load="true"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"/>
+	<material_config	path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1_contour"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1_husk" load="true"/>
+	<sequence_manager	path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/ene_swat_cloaker_policia_federale" />
+	
+	<!--Debris-->
+	<object				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_head_debris"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_head_debris" load="true"/>
+	<model				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_head_debris"/>	
+	
+	<object				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_body_debris"/>
+	<unit				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_body_debris" load="true"/>
+	<model				path="units/pd2_dlc_bex/characters/ene_swat_cloaker_policia_federale/debris/ene_swat_cloaker_policia_federale_body_debris"/>	
+	
+
 	<!-- specials end -->
 
 	<!-- titans -->
@@ -250,6 +275,7 @@
 	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>	
 	<unit				path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false" load="true"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>	
+
 	
 	<!--Titan Shotgunner-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
@@ -275,6 +301,7 @@
 	<model				path="units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser" force="false"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser" force="false"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser_contour" force="false"/>
+	
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/ene_titan_taser_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/mask_df" force="false"/>		
 
@@ -292,7 +319,6 @@
 	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
 	<material_config	path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2_contour" />
 	<unit				path="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2_husk"  load="true"/>	
-	
 	<!--MARIACHI HAT-->	
 	<unit_mat			path="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" load="true"/>
 	

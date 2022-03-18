@@ -723,14 +723,14 @@ function CopActionWalk:update(t)
 					variant = "walk"
 				end
 			elseif anim_data.run then
-				if real_velocity > 530 and walk_anim_velocities.sprint and anim_data.pose == "stand" then
+				if real_velocity > 530 and walk_anim_velocities and walk_anim_velocities.sprint and anim_data.pose == "stand" then
 					variant = "sprint"
 				elseif real_velocity > 250 then
 					variant = "run"
 				elseif not self._no_walk then
 					variant = "walk"
 				end
-			elseif real_velocity > 530 and walk_anim_velocities.sprint and anim_data.pose == "stand" then
+			elseif real_velocity > 530 and walk_anim_velocities and walk_anim_velocities.sprint and anim_data.pose == "stand" then
 				variant = "sprint"
 			elseif real_velocity > 300 then
 				variant = "run"

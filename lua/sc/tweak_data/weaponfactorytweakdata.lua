@@ -448,12 +448,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby.third_unit = "units/payday2/weapons/wpn_third_upg_vg_ass_smg_stubby/wpn_third_upg_vg_ass_smg_stubby"
 	self.parts.wpn_fps_upg_vg_ass_smg_afg.third_unit = "units/payday2/weapons/wpn_third_upg_vg_ass_smg_afg/wpn_third_upg_vg_ass_smg_afg"
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip)
+	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla.fps_animation_weight = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla.stats = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla.pcs = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_afg_vanilla = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_afg)
 	self.parts.wpn_fps_upg_vg_ass_smg_afg_vanilla.stats = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_afg_vanilla.pcs = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby_vanilla = deep_clone(self.parts.wpn_fps_upg_vg_ass_smg_stubby)
+	self.parts.wpn_fps_upg_vg_ass_smg_stubby_vanilla.fps_animation_weight = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby_vanilla.stats = nil
 	self.parts.wpn_fps_upg_vg_ass_smg_stubby_vanilla.pcs = nil
 

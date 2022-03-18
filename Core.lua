@@ -99,11 +99,9 @@ function restoration:Init()
 			"jewelry_store", --Jewelry Store
 			"ukrainian_job", --Ukrainian Job
 			"rvd2", --garnet group boutique
-			"nmh", --no mercy
 			--custom heists
 			"wetwork", --res map package wetworks
 			"alex_1_res", --Rats Day 1 res edit version
-			"nmh_res", --no mercy ranted 
 			"lvl_fourmorestores", --four more stores
 			"ukrainian_job_res", --Ukrainian Job res edit version
 			"hntn" --harvest and trustee north

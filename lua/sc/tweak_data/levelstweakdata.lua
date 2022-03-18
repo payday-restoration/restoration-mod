@@ -472,7 +472,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.vit.ghost_bonus = 0.15
 	
 	--///SKIRMISH shit\\\--
-	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/lapdassets"}
+	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_lapd"}
 	self.skm_cas.ai_group_type = lapd
 	self.skm_cas.player_style = "continental"		
 

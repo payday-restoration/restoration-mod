@@ -1083,6 +1083,146 @@
         </target>
     </tweak>
 	
+	<!--Sprint-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/running"/>
+			<anim name="mp5_rifle_sprint"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_sprint" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_sprint" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/start_running"/>
+			<anim name="mp5_rifle_sprint_enter"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_sprint_enter" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_sprint_enter" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/stop_running"/>
+			<anim name="mp5_rifle_sprint_exit"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_sprint_exit" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_sprint_exit" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
+	<!--Melee-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/melee_miss"/>
+			<anim name="mp5_rifle_melee_miss"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_melee_miss" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_melee_miss" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/melee"/>
+			<anim name="mp5_rifle_melee"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_melee" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_melee" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
+	<!--Use-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/use"/>
+			<anim name="mp5_rifle_use"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_use" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_use" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
+	<!--Commands-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/command/down"/>
+			<anim name="mp5_rifle_com_down_var1"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_com_down_var1" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_com_down_var1" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/command/stop"/>
+			<anim name="mp5_rifle_com_stop"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_com_stop" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_com_stop" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/command/come"/>
+			<anim name="mp5_rifle_com_come"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_com_come" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_com_come" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/command/point"/>
+			<anim name="mp5_rifle_com_point"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_com_point" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_com_point" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/command/gogo"/>
+			<anim name="mp5_rifle_gogo"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_gogo" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_gogo" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+        <search>
+            <xml/>
+            <state name="fps/command/get_up"/>
+			<anim name="mp5_rifle_get_up"/>
+        </search>
+        <target mode="replace">
+			<anim name="mp5_rifle_get_up" weight="mp5 * (1 - vertical_grip)"/>
+			<anim name="mp5_rifle_vg_get_up" weight="mp5 * vertical_grip"/>
+        </target>
+    </tweak>
+	
 	<!--Reloads-->
 	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
         <search>

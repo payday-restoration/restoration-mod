@@ -27,6 +27,22 @@
 		<animation path="anims/fps/mp5/mp5_vg_recoil_enter" load="true"/>
 		<animation path="anims/fps/mp5/mp5_vg_recoil_loop" load="true"/>
 		<animation path="anims/fps/mp5/mp5_vg_recoil_exit" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_sprint" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_sprint_enter" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_sprint_exit" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_melee" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_melee_miss" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_use" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_com_var1" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_com_var5" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_com_var6" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_com_var7" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_gogo" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_get_up" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_reload" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_reload_not_empty" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_reload_drum" load="true"/>
+		<animation path="anims/fps/mp5/mp5_vg_reload_drum_not_empty" load="true"/>
 		<animation path="anims/fps/mp5/mp5_reload_drum" load="true"/>
 		<animation path="anims/fps/mp5/mp5_reload_drum_not_empty" load="true"/>
 	</AddFiles>

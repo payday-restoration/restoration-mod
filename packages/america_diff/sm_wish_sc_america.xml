@@ -498,21 +498,6 @@
 
 	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
 
-	<unit				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
-	<unit				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>		
-	<model				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<object				path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<sequence_manager	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<cooked_physics		path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
-	<material_config	path="units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>	
-		
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_df" />
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_glow_df" load="true"/>
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_dead_df" load="true"/> 
-	<texture			path="units/payday2/characters/shared_textures/nvg_df"/>
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_nm"/>
 
 	<!--gnarly ass titan sniper hat-->
 	<object				path="units/pd2_dlc_vip/characters/ene_acc_titan_sniper_hat/ene_acc_titan_sniper_hat" force="false"/>

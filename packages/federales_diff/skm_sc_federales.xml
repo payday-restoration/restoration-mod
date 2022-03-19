@@ -599,22 +599,6 @@
 	
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/vet_blood_df" force="false"/>
 	
-	<!--Titan Cloaker-->		
-	<model				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<object				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>		
-	<unit				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
-	
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_head_df" load="true"/>	
-	<texture			path="units/payday2/characters/shared_textures/spook_cloak_glow_df" load="true"/>	
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_head_nm" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_body_df" load="true"/>
-	
 	<!--Titan HRT-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk" force="false" load="true"/>

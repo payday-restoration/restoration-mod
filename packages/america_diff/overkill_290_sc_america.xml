@@ -43,9 +43,7 @@
 	<texture			path="units/payday2/characters/shared_textures/heads_atlas_city_df" />	
 	<texture			path="units/payday2/characters/shared_textures/swat_city_df" />	
 	<texture			path="units/payday2/characters/shared_textures/helmet_shotgun_df" />
-	<texture			path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />			
-	<texture			path="units/payday2/characters/shared_textures/genshill_helm_df"/>
-	<texture			path="units/payday2/characters/shared_textures/genshill_helm_nm"/>	
+	<texture			path="units/payday2/characters/shared_textures/helmet_shotgun_nm" />	
 	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_df" force="true"/>
 	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_nm" force="true"/>	
 	<texture			path="units/payday2/characters/shared_textures/police_df" force="true"/>

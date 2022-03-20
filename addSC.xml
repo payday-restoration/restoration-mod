@@ -1064,6 +1064,11 @@
 	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_contour" force="false"/>
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2_husk" force="false" load="true"/>
 
+	<!--city heavy acc-->	
+	<object         	path="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" force="true"/>
+	<model		        path="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" force="true"/>	
+	<material_config	path="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" force="true"/>	
+	
 	<!--ben guy acc-->	
 	<material_config	path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />
 	<cooked_physics		path="units/payday2/characters/ene_acc_benfucker/ene_acc_benfucker" />	
@@ -1082,6 +1087,9 @@
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/murky_heavy_df" />	
 			
 	<texture			path="units/payday2/characters/shared_textures/mask_df" />	
+
+	<texture			path="units/payday2/characters/shared_textures/genshill_helm_nm" />	
+	<texture			path="units/payday2/characters/shared_textures/genshill_helm_df" />	
 	
     <!--murky glass-->
      <texture			path="units/pd2_mod_sharks/characters/shared_textures/tank_glass_df" force="false"/>

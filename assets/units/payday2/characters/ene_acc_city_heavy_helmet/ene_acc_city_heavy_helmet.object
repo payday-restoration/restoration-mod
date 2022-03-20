@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dynamic_object>
-	<diesel materials="units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc" orientation_object="rp_ene_acc_swat_helmet" />
+	<diesel materials="units/payday2/characters/ene_acc_city_heavy_helmet/ene_acc_city_heavy_helmet" orientation_object="rp_ene_acc_swat_helmet" />
 	
 	<bodies>
 	<body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9">

@@ -9,6 +9,7 @@
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/pd2_mod_omnia/characters/ene_omnia_city_helmet/ene_omnia_city_helmet" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_oicw/wpn_npc_oicw" />
+		<depends_on bnk="soundbanks/weapon_swatturret" />
 	</dependencies>
 
 	<extensions>

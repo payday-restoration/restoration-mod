@@ -7,6 +7,7 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+		<depends_on bnk="soundbanks/weapon_swatturret" />
 	</dependencies>
 
 	<extensions>

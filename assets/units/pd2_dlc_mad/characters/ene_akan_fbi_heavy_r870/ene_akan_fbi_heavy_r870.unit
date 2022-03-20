@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
-	<object file="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1" />
-
+	<object file="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36" />
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
 		<depends_on bnk="soundbanks/weapon_swatturret" />
@@ -14,7 +12,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
 			<var name="_tweak_table" value="fbi_heavy_swat" />
-			<var name="_default_weapon_id" value="m4" />
+			<var name="_default_weapon_id" value="r870" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />
@@ -41,7 +39,7 @@
 		<extension name="sound" class="CopSound" />
 	</extensions>
 
-	<network sync="spawn" remote_unit="units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"/>
+	<network sync="spawn" remote_unit="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870_husk"/>
 
 	<sounds>
 		<default_soundsource source="Hips"/>

@@ -5,6 +5,7 @@
 
 	<dependencies>
 		
+		<depends_on bnk="soundbanks/weapon_swatturret" />
 	</dependencies>
 
 	<extensions>

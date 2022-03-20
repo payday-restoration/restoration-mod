@@ -6,6 +6,7 @@
 	<dependencies>
 		
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_acc_bex_riflar/ene_acc_bex_riflar" />
+		<depends_on bnk="soundbanks/weapon_swatturret" />
 	</dependencies>
 
 	<extensions>

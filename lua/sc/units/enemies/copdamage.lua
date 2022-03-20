@@ -197,7 +197,7 @@ function CopDamage:_spawn_head_gadget(params)
 			effect = ids_func("effects/payday2/particles/impacts/metal_impact_pd2"),
 			parent = head_object_get		
 		})
-		sound_ext:play("swatturret_weakspot_hit", nil, nil)
+		sound_ext:play("swatturret_plate_off", nil, nil)
 	end
 
 	self._head_gear = false

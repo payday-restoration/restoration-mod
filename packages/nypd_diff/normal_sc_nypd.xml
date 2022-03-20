@@ -75,31 +75,6 @@
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var5_contour" />
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var6" />
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var6_contour" />
-		
-	<object				path="units/payday2/characters/ene_security_1/ene_security_1" />
-	<model				path="units/payday2/characters/ene_security_1/ene_security_1" />
-	
-	<material_config	path="units/payday2/characters/ene_security_2/ene_security_2_contour" force="true" />	
-	<material_config	path="units/payday2/characters/ene_security_2/ene_security_2" force="true" />
-	
-	<material_config	path="units/payday2/characters/ene_security_3/ene_security_3"  />
-	<object				path="units/payday2/characters/ene_security_3/ene_security_3" />	
-	<model				path="units/payday2/characters/ene_security_3/ene_security_3" />	
-	<material_config	path="units/payday2/characters/ene_security_3/ene_security_3_contour"  />	
-
-
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var1" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var1_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var2" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var2_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var3" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var3_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var4" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var4_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var5" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var5_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var6" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var6_contour" />	
 	
 	<!--nypd textures-->	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	

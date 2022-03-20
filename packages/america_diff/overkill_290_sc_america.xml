@@ -2,18 +2,7 @@
 	<texture			path="units/payday2/vehicles/gen_vehicle_van_swat/gen_vehicle_truck_gensec_df" force="false"/>
 	<material_config	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat_gensec" force="false" />
 
-	<!-- these work fine in here so i'm leaving them in here -->
-	<object				path="units/payday2/characters/ene_security_7/ene_security_7" />		
-
-	<material_config	path="units/payday2/characters/ene_security_4/ene_security_4"  />
-	<material_config	path="units/payday2/characters/ene_security_4/ene_security_4_contour"  />	
-
-	<material_config	path="units/payday2/characters/ene_security_7/ene_security_7"  />
-	<material_config	path="units/payday2/characters/ene_security_7/ene_security_7_contour"  />	
-	
-	<material_config	path="units/payday2/characters/ene_security_5/ene_security_5"  />
-	<material_config	path="units/payday2/characters/ene_security_5/ene_security_5_contour"  />		
-
+	<!-- these work fine in here so i'm leaving them in here -->		
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1" />
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var1_contour" />
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var2" />

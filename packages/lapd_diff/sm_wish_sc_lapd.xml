@@ -89,31 +89,6 @@
 	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5" />
 	<material_config	path="units/pd2_mod_lapd/characters/ene_la_cop_vars/ene_la_cop_var5_contour" />
 	
-	<object				path="units/payday2/characters/ene_security_1/ene_security_1" />
-	<model				path="units/payday2/characters/ene_security_1/ene_security_1" />
-	
-	<material_config	path="units/payday2/characters/ene_security_2/ene_security_2_contour" force="true" />	
-	<material_config	path="units/payday2/characters/ene_security_2/ene_security_2" force="true" />
-	
-	<material_config	path="units/payday2/characters/ene_security_3/ene_security_3"  />
-	<object				path="units/payday2/characters/ene_security_3/ene_security_3" />	
-	<model				path="units/payday2/characters/ene_security_3/ene_security_3" />	
-	<material_config	path="units/payday2/characters/ene_security_3/ene_security_3_contour"  />	
-
-
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var1" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var1_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var2" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var2_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var3" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var3_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var4" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var4_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var5" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var5_contour" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var6" />
-	<material_config	path="units/payday2/characters/ene_security_vars/ene_security_var6_contour" />	
-	
 	<!--textures-->			
 	<texture			path="units/payday2/characters/shared_textures/fbi_df" force="true"/>
 	<texture			path="units/pd2_mod_lapd/characters/shared_textures/lapd_vet_body_nm" />	

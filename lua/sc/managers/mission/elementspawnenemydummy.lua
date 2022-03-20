@@ -34,7 +34,7 @@ local america_very_hard = {
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc",
-		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc",
+		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
 		
 		--ZEALS (only gonna show up in enemy spawner but I'd rather that map doesn't crash)
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
@@ -75,7 +75,7 @@ local america_overkill = {
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc",
-		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc",
+		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
 		
 		--ZEALS (only gonna show up in enemy spawner but I'd rather that map doesn't crash)
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
@@ -2608,7 +2608,7 @@ local zombie_deathwish = {
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3",
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
-		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
+		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
 		--ZEALS 
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1",
@@ -2913,7 +2913,7 @@ local zombie_nail_deathwish = {
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3",
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
-		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
+		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
 		--ZEALS 
 		["units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat"] = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1",

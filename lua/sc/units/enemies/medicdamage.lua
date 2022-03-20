@@ -76,8 +76,8 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 		self._unit:movement():action_request(action_data)
 	end
 
-	--temporarily disabling buffs because there's no way to sync them properly when a client locally procs the heal
-	--[[if Global.game_settings.difficulty == "sm_wish" then
+	--To do: make this actually sync correctly, since Overkill likely never will
+	if Global.game_settings.difficulty == "sm_wish" then
 		if my_tweak_data == "medic" or my_tweak_data == "tank_medic" then
 			unit:base():add_buff("base_damage", 15 * 0.01)
 
@@ -93,7 +93,7 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 				unit:contour():add("medic_buff", false)
 			end
 		end
-	end]]
+	end
 
 	managers.network:session():send_to_peers("sync_medic_heal", self._unit)
 	MedicActionHeal:check_achievements()

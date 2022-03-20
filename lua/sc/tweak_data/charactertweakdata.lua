@@ -983,7 +983,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 			}
 		}
 	}	
-	self.heavy_swat_sniper.HEALTH_INIT = 9
+	self.heavy_swat_sniper.HEALTH_INIT = 19.5
 	self.heavy_swat_sniper.headshot_dmg_mul = 2.2
 	self.heavy_swat_sniper.surrender_break_time = {6, 10}
 	self.heavy_swat_sniper.suppression = nil
@@ -1000,7 +1000,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	self.heavy_swat_sniper.access = "swat"
 	self.heavy_swat_sniper.damage.hurt_severity = presets.hurt_severities.elite
 	self.heavy_swat_sniper.use_animation_on_fire_damage = false
-	self.heavy_swat_sniper.move_speed = presets.move_speed.lightning
+	self.heavy_swat_sniper.move_speed = presets.move_speed.very_fast
 	self.heavy_swat_sniper.dodge = presets.dodge.elite
 	self.heavy_swat_sniper.chatter = presets.enemy_chatter.swat
 	self.heavy_swat_sniper.melee_weapon = nil
@@ -1036,7 +1036,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	else
 		self.weekend_dmr.custom_voicework = "bravo_elite"
 	end	
-	self.weekend_dmr.HEALTH_INIT = 11.25
+	self.weekend_dmr.HEALTH_INIT = 24.375
 	self.weekend_dmr.headshot_dmg_mul = 2.75
 	self.weekend_dmr.heal_cooldown = 5
 	self.weekend_dmr.can_throw_frag = true
@@ -1505,7 +1505,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.damage.explosion_damage_mul = 1.25
 	self.triad_boss.can_be_tased = false
 	self.triad_boss.suppression = nil
-	self.triad_boss.move_speed = presets.move_speed.slow
+	self.triad_boss.move_speed = presets.move_speed.very_slow
 	self.triad_boss.allowed_stances = {
 		cbt = true
 	}
@@ -1644,7 +1644,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.headshot_dmg_mul = 7.99425
 	self.mobster_boss.damage.hurt_severity = presets.hurt_severities.boss
 	self.mobster_boss.damage.explosion_damage_mul = 1.25
-	self.mobster_boss.move_speed = presets.move_speed.slow
+	self.mobster_boss.move_speed = presets.move_speed.very_slow
 	self.mobster_boss.allowed_poses = {stand = true}
 	self.mobster_boss.crouch_move = false
 	self.mobster_boss.no_run_start = true
@@ -3592,6 +3592,12 @@ function CharacterTweakData:_init_boom(presets)
 	
 	self.boom_titan = deep_clone(self.boom)
 	self.boom_titan.heal_cooldown = 22.5
+	self.boom_titan.HEALTH_INIT = 45
+	self.boom_titan.headshot_dmg_mul = 2.2	
+	self.boom_titan.throwable = "launcher_frag_m32"
+	self.boom_titan.throwable_on_sight = true
+	self.boom_titan.throwable_cooldown = 10		
+	
 	table.insert(self._enemy_list, "boom_titan")		
 end
 

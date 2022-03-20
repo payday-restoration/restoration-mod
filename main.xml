@@ -328,6 +328,9 @@
 		<hook file="sc/mutators/mutatorhydra.lua" source_file="lib/mutators/mutatorhydra"/>
 		<hook file="sc/mutators/mutatorenemyreplacer.lua" source_file="lib/mutators/mutatorenemyreplacer"/>
 		<hook file="sc/mutators/mutatorexplodingenemies.lua" source_file="lib/mutators/mutatorexplodingenemies"/>
+		<hook file="sc/mutators/mutatorshotguntweak.lua" source_file="lib/mutators/mutatorshotguntweak"/>
+		<!--///NEW MUTATORS GO HERE\\\-->
+		<hook file="sc/mutators/new/mutatornotitans.lua" source_file="lib/mutators/basemutator"/>
 		<!--///NETWORKING\\\-->
 		<hook file="sc/network/base/handlers/connectionnetworkhandler.lua" source_file="lib/network/base/handlers/connectionnetworkhandler"/>
 		<hook file="sc/network/base/networkmanager.lua" source_file="lib/network/base/networkmanager"/>

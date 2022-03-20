@@ -67,6 +67,8 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.spooc_titan = security_variant
 	CopMovement._action_variants.autumn = security_variant
 	CopMovement._action_variants.taser_titan = clone(security_variant)
+	CopMovement._action_variants.boom_titan = clone(security_variant)
+	CopMovement._action_variants.boom_titan.walk = TankCopActionWalk
 	
 	old_init(self, unit)		
 end
@@ -295,6 +297,7 @@ function CopMovement:do_omnia(self)
 		if not self._unit:character_damage():dead() then
 			local cops_to_heal = tweak_data.character:enemy_list()
 			local heal_range = tweak_data.medic.lpf_radius or 800
+			local heal_vo = "heal_chatter"
 			
 			if self._unit:base()._tweak_table == "medic_summers" then
 				cops_to_heal = {
@@ -303,6 +306,9 @@ function CopMovement:do_omnia(self)
 					"summers"
 				}				
 				heal_range = 1600
+			elseif self._unit:base()._tweak_table == "phalanx_vip" then
+				heal_range = 2000
+				heal_vo = "heal_chatter_winters"
 			end
 			
 			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), heal_range, managers.slot:get_mask("enemies"))
@@ -335,7 +341,7 @@ function CopMovement:do_omnia(self)
 							if self._unit:contour() then
 								self._unit:contour():add("medic_show", false)
 								self._unit:contour():flash("medic_show", 0.2)
-								managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
+								managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, heal_vo)
 							end										
 							if enemy:contour() then
 								if overheal_mult > 1 then

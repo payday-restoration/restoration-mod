@@ -4,6 +4,8 @@ local ids_func = Idstring
 local table_contains = table.contains
 
 local enemies_visor = {
+	ids_func("units/payday2/characters/ene_city_guard_2/ene_city_guard_2"),
+	ids_func("units/payday2/characters/ene_city_guard_2/ene_city_guard_2_husk"),
 	ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc"),
 	ids_func("units/payday2/characters/ene_swat_heavy_1_sc/ene_swat_heavy_1_sc_husk"),
 	ids_func("units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc"),

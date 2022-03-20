@@ -260,7 +260,6 @@
 		<hook file="sc/managers/menumanager.lua" source_file="lib/managers/menumanager"/>
 		<hook file="sc/network/handlers/unitnetworkhandler.lua" source_file="lib/network/handlers/unitnetworkhandler"/>
 		<hook file="sc/units/equipment/sentrygunbase.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbase"/>
-		<hook file="sc/managers/experiencemanager.lua" source_file="lib/managers/experiencemanager"/>
 		<hook file="sc/units/civilians/civilianlogicsurrender.lua" source_file="lib/units/civilians/logics/civilianlogicsurrender"/>
 		<hook file="sc/units/equipment/sentrygunbrain.lua" source_file="lib/units/equipment/sentry_gun/sentrygunbrain"/>
 		<hook file="sc/units/weapons/molotovgrenade.lua" source_file="lib/units/weapons/grenades/molotovgrenade"/>
@@ -337,11 +336,6 @@
 		<hook file="sc/network/base/clientnetworksession.lua" source_file="lib/network/base/clientnetworksession"/>
 		<hook file="sc/network/base/basenetworksession.lua" source_file="lib/network/base/basenetworksession"/>
 		<hook file="sc/core/coreenvironmentcontrollermanager.lua" source_file="core/lib/managers/coreenvironmentcontrollermanager"/>
-		<!--///OVERHAUL UI ELEMENTS\\\-->
-		<hook file="sc/managers/moneymanager.lua" source_file="lib/managers/moneymanager"/>
-		<hook file="sc/managers/menu/CrimeNetContractGUI.lua" source_file="lib/managers/menu/crimenetcontractgui"/>
-		<hook file="sc/managers/menu/ingamecontractgui.lua" source_file="lib/managers/menu/ingamecontractgui"/>
-		<hook file="sc/managers/menu/ContractBoxGUI.lua" source_file="lib/managers/menu/ContractBoxGUI"/>
 		<!--///PDTH Challenges\\\-->
 		<hook file="sc/managers/menu/items/CoreItemChallenges.lua" source_file="lib/managers/menu/items/menuitemchallenge"/>
 		<hook file="sc/setups/Setup.lua" source_file="lib/setups/setup"/>

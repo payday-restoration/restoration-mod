@@ -124,3 +124,71 @@ function CarryData:_chk_register_steal_SO()
 	managers.groupai:state():add_special_objective(so_id, so_descriptor)
 	managers.groupai:state():register_loot(self._unit, pickup_area)
 end
+
+function CarryData:link_to(parent_unit, keep_collisions)
+	if self._linked_to and managers.groupai:state():is_unit_team_AI(self._linked_to) then
+		self._linked_to:movement():set_carrying_bag(nil)
+	end
+
+	call_on_next_update(function ()
+		if not alive(self._unit) or not alive(parent_unit) then
+			return
+		end
+
+		local body = self._unit:body("hinge_body_1") or self._unit:body(0)
+
+		body:set_keyframed()
+
+		local parent_obj_name = Idstring("Neck")
+
+		parent_unit:link(parent_obj_name, self._unit)
+
+		local parent_obj = parent_unit:get_object(parent_obj_name)
+		local parent_obj_rot = parent_obj:rotation()
+		local world_pos = parent_obj:position() - parent_obj_rot:z() * 30 - parent_obj_rot:y() * 10
+
+		self._unit:set_position(world_pos)
+
+		local world_rot = Rotation(parent_obj_rot:x(), -parent_obj_rot:z())
+
+		self._unit:set_rotation(world_rot)
+	end)
+
+	self._disabled_collisions = {}
+	local nr_bodies = self._unit:num_bodies()
+
+	if keep_collisions then
+		self._kept_collisions = true
+
+		self._unit:set_body_collision_callback(function (tag, unit, colliding_body, other_unit, other_body, position, normal, velocity)
+			if tag ~= Idstring("throw") then
+				return
+			end
+
+			if other_unit:unit_data().only_visible_in_editor then -- dev units that don't show up ingame, invisible collision basically
+				unit:carry_data():unlink()
+			else
+				unit:set_disable_collision_with_unit(other_unit)
+			end
+		end)
+	else
+		for i_body = 0, nr_bodies - 1 do
+			local body = self._unit:body(i_body)
+
+			if body:collisions_enabled() then
+				table.insert(self._disabled_collisions, body)
+				body:set_collisions_enabled(false)
+			end
+		end
+	end
+
+	if parent_unit:movement().set_carrying_bag then
+		parent_unit:movement():set_carrying_bag(self._unit)
+	end
+
+	self._linked_to = parent_unit
+
+	if Network:is_server() then
+		managers.network:session():send_to_peers_synched("loot_link", self._unit, parent_unit)
+	end
+end

@@ -1683,8 +1683,19 @@ function CopActionWalk:_upd_nav_link(t)
 end
 
 function CopActionWalk:_upd_walk_turn_first_frame(t)
-	mvec3_set(tmp_vec2, self._curve_path[self._curve_path_index + 2])
-	mvec3_sub(tmp_vec2, self._curve_path[self._curve_path_index + 1])
+	local pos1 = self._curve_path[self._curve_path_index + 1]
+	local pos2 = self._curve_path[self._curve_path_index + 2]
+	if not pos1 or not pos2 then
+		self._walk_turn = nil
+
+		self:_set_updator(nil)
+		self:update(t)
+
+		return
+	end
+
+	mvec3_set(tmp_vec2, pos2)
+	mvec3_sub(tmp_vec2, pos1)
 	-- no need to set z to 0 or normalise, since we don't care about the exact dot product, only whether it's positive or negative
 
 	local seg_rel_t = self._machine:segment_relative_time(idstr_base)

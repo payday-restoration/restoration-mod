@@ -349,12 +349,6 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 			end
 		end
 			
-		if self._prefix == "f1n_" then
-			if sound_name == "x02a_any_3p" then
-				full_sound = "f1n_x01a_any_3p"
-			end
-		end
-			
 		if self._prefix == "r1n_" or self._prefix == "r2n_" or self._prefix == "r3n_" or self._prefix == "r4n_" then
 			if sound_name == "x02a_any_3p" then
 				full_sound = "l2n_x01a_any_3p"

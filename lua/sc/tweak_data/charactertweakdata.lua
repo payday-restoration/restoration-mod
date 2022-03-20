@@ -1733,7 +1733,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.always_drop = true
 	self.biker_boss.is_special = true
 	self.biker_boss.heal_cooldown = 45
-	self.biker_boss.die_sound_event = "f1n_x01a_any_3p"
+	self.biker_boss.die_sound_event = "fl1n_x02a_any_3p"
 	self.biker_boss.no_omnia_heal = true
 	table.insert(self._enemy_list, "biker_boss")
 end
@@ -3655,7 +3655,7 @@ function CharacterTweakData:_init_civilian(presets)
 		ears = {min_duration = 0, max_duration = 0}
 	}
 	self.civilian.experience.cable_tie = "tie_civ"
-	self.civilian.die_sound_event = "a01x_any"
+	self.civilian.die_sound_event = "l1n_x01a_any_3p"
 	self.civilian.silent_priority_shout = "f37"
 	self.civilian.speech_prefix_p1 = "cm"
 	self.civilian.speech_prefix_count = 2
@@ -3669,7 +3669,7 @@ function CharacterTweakData:_init_civilian(presets)
 	end
 	self.civilian.hostage_move_speed = 1.5
 	self.civilian_female = deep_clone(self.civilian)
-	self.civilian_female.die_sound_event = "a02x_any"
+	self.civilian_female.die_sound_event = "fl1n_x02a_any_3p"
 	self.civilian_female.speech_prefix_p1 = "cf"
 	self.civilian_female.speech_prefix_count = 5
 	self.civilian_female.female = true
@@ -3696,7 +3696,7 @@ function CharacterTweakData:_init_bank_manager(presets)
 		escort = {}
 	}
 	self.bank_manager.tags = {"civilian"}
-	self.bank_manager.die_sound_event = "a01x_any"
+	self.bank_manager.die_sound_event = "l1n_x01a_any_3p"
 	self.bank_manager.detection = presets.detection.civilian
 	self.bank_manager.HEALTH_INIT = self.civilian.HEALTH_INIT
 	self.bank_manager.headshot_dmg_mul = self.civilian.headshot_dmg_mul

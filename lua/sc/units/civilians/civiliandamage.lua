@@ -63,5 +63,5 @@ function CivilianDamage:die(variant)
 
 	self:set_mover_collision_state(false)
 	
-	self._unit:sound():say(self._unit:base():char_tweak().die_sound_event or "a01x_any", true)
+	self._unit:sound():play(self._char_tweak.die_sound_event, nil, true)
 end

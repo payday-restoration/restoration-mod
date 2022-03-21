@@ -1070,6 +1070,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Mosin--
 		["bm_mosin_sc_desc"] = "고전적이고 강력한 볼트액션 소총. 이 무기는 한 번에 5발의 탄환으로 재장전됩니다.\n\n방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_wp_upg_a_tranq_mosin"] = "마취탄",
+		["bm_wp_upg_a_tranq_mosin_desc"] = "시간이 지남에 따라 피해를 입히고 적을 기절시킬 수 있는 약한 마취탄를 발사합니다.\n\n진정한 망각을 위해, 디 엔드",				
 
 		--Broomstick--
 		["bm_c96_sc_desc"] = "독일의 혁명적인 기관권총. 완전 자동으로 미친 속도로 발사할 수 있지만 탄약 소모가 큽니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",

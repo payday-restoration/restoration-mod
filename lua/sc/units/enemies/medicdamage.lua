@@ -85,14 +85,6 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 				unit:contour():add("medic_buff", false)
 			end
 		end
-	elseif Global.game_settings.difficulty == "overkill_290" then
-		if my_tweak_data == "medic" or my_tweak_data == "tank_medic" then
-			unit:base():add_buff("base_damage", 5 * 0.01)
-
-			if unit:contour() then
-				unit:contour():add("medic_buff", false)
-			end
-		end
 	end
 
 	managers.network:session():send_to_peers("sync_medic_heal", self._unit)

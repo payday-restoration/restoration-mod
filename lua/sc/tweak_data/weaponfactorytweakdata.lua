@@ -7498,17 +7498,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	self.parts.wpn_fps_snp_mosin_b_standard.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_standard.supported = true
 	self.parts.wpn_fps_snp_mosin_b_standard.stats = {
-		value = 1,
+		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 	
 	--Short Barrel
 	self.parts.wpn_fps_snp_mosin_b_short.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_short.supported = true
 	self.parts.wpn_fps_snp_mosin_b_short.stats = {
-		value = 1,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}
@@ -7517,11 +7516,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	self.parts.wpn_fps_snp_mosin_b_sniper.pcs = {}
 	self.parts.wpn_fps_snp_mosin_b_sniper.supported = true
 	self.parts.wpn_fps_snp_mosin_b_sniper.stats = {
-		value = 10,
-		suppression = 10,
+		value = 3,
+		suppression = 11,
 		alert_size = -1,
-		spread = -1,
-		recoil = 1
+		recoil = 1,
+		concealment = -2
 	}
 	self.parts.wpn_fps_snp_mosin_b_sniper.perks = {"silencer"}
 	
@@ -7552,6 +7551,42 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mosin", "resmod_mosin", function(s
 	self.parts.wpn_fps_snp_mosin_iron_sight.stats = {
 		value = 0
 	}
+	
+	--Tranq Rounds
+	self.parts.wpn_fps_snp_mosin_a_tranq = {
+		pcs = {},
+		a_obj = "a_body",
+		type = "ammo",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		alt_icon = "guis/textures/pd2/blackmarket/icons/deployables/ammo_bag",
+		internal_part = true,
+		supported = true,
+		name_id = "bm_wp_upg_a_tranq_mosin",
+		desc_id = "bm_wp_upg_a_tranq_mosin_desc",
+		has_description = true,
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		stats = {
+			value = 5,
+			damage = -20
+		},
+		custom_stats = {
+			bullet_class = "PoisonBulletBase",
+			dot_data = { 
+				type = "poison",
+				custom_data = {
+					dot_damage = 2,
+					dot_length = 3.1,
+					dot_tick_period = 0.5,
+					hurt_animation_chance = 0.75
+				}
+			}
+		}
+	}		
+	
+	table.insert(self.wpn_fps_snp_mosin.uses_parts, "wpn_fps_snp_mosin_a_tranq")
+	table.insert(self.wpn_fps_snp_mosin_npc.uses_parts, "wpn_fps_snp_mosin_a_tranq")		
+	
+	self.wpn_fps_snp_mosin_npc.uses_parts = deep_clone(self.wpn_fps_snp_mosin.uses_parts)	
 	
 end)
 
@@ -22603,6 +22638,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 		type = "ammo",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		internal_part = true,
+		supported = true,
 		name_id = "bm_wp_upg_a_tranq",
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		stats = {

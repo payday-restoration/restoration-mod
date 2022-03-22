@@ -191,8 +191,7 @@ function restoration:Init()
 		"xmn_hox_1",
 		--Custom Heists below--
 		"thechase",
-		"nmh_res", --Resmod edit of no mercy.
-		"infinitebank_room"  --First World Tower
+		"nmh_res" --Resmod edit of no mercy.
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
 	restoration.extremely_tiny_levels = {

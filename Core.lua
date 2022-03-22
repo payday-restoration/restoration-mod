@@ -186,20 +186,21 @@ function restoration:Init()
 		"vit", --White House
 		"mia_2", --Hotline Miami 2
 		"nail",	--Lab Rats. Fuck this heist	
+		"nmh", --No Mercy
 		"hox_1",
 		"xmn_hox_1",
 		--Custom Heists below--
 		"thechase",
+		"nmh_res", --Resmod edit of no mercy.
 		"infinitebank_room"  --First World Tower
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"chew", --Biker day 2
-		"nmh", --No Mercy
-		"nmh_res", --Resmod edit of no mercy.
 		"peta2", --Goats day 2. Fuck this heist too		
 		--Custom Heists below--
+		"infinitebank_room",  --First World Tower
 		"Victor Romeo"
 	}	
 	--For custom heists that seem to be broken with our normal spawn setup

@@ -8818,7 +8818,35 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		},
 		access = access_type_all,
 		is_captain = true
-	}		
+	}
+	--Titan Bravo Snipers that spawn with Winters on the 9th wave in HO
+	self.unit_categories.Bravo_Sniper = {
+		unit_types = {
+			america = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
+			},
+			russia = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru")
+			},
+			zombie = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
+			},					
+			murkywater = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
+			},
+			federales = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr_mex/ene_bravo_dmr_mex")
+			},				
+			nypd = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
+			},
+			lapd = {
+				Idstring("units/pd2_mod_bravo/characters/ene_bravo_dmr/ene_bravo_dmr")
+			}				
+		},
+		access = access_type_all,
+		is_captain = true
+	}	
 	--Captain Autumn
 	self.unit_categories.Cap_Autumn = {
 		unit_types = {
@@ -17161,6 +17189,36 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}	
+	
+	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
+			amount = {7, 7},
+			spawn = {
+				{
+					unit = "Phalanx_vip_new",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.Cap_winters,
+					rank = 1
+				},
+				{
+					unit = "Phalanx_minion_new",
+					freq = 1,
+					amount_min = 4,
+					amount_max = 4,
+					tactics = self._tactics.Cap_winters_minion,
+					rank = 2
+				},
+				{
+					unit = "Bravo_Sniper",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.Cap_winters_minion_sniper,
+					rank = 2
+				}
+			}
+		}
 	
 	--Captains, deep_clone off of the normal ones
 	self.enemy_spawn_groups.SKM_Cap_Autumn_W9 = deep_clone(self.enemy_spawn_groups.Cap_Autumn)

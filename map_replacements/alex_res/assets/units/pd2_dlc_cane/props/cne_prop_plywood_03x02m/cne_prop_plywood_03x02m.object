@@ -1,0 +1,33 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_cane/props/cne_prop_plywood_03x02m/cne_prop_plywood_03x02m" orientation_object="rp_cne_prop_plywood_03x02m" />
+	<sequence_manager file="units/pd2_dlc_cane/props/cne_prop_plywood_03x02m/cne_prop_plywood_03x02m" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_cne_prop_plywood_03x02m" />
+			<object name="c_box" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="wood">
+		<decal_mesh name="dm_wood" enabled="true" material="wood" />
+	</decal_surfaces>
+	<graphics>
+		<graphic_group name="grp_plywood_01" enabled="true">
+			<lod_object name="lod_g_plywood_03x02m_01">
+				<object name="g_plywood_03x02m_01_lod0" enabled="true" max_distance="4500" instance_struct="world_tm"/>
+				<object name="g_plywood_03x02m_01_lod1" enabled="true" instance_struct="world_tm" />
+			</lod_object>
+		</graphic_group>
+		<graphic_group name="grp_plywood_02" enabled="false">
+			<lod_object name="lod_g_plywood_03x02m_02">
+				<object name="g_plywood_03x02m_02_lod0" enabled="true" max_distance="4500" instance_struct="world_tm"/>
+				<object name="g_plywood_03x02m_02_lod1" enabled="true" instance_struct="world_tm" />
+			</lod_object>
+		</graphic_group>
+		<graphic_group name="grp_plywood_03" enabled="false">
+			<lod_object name="lod_g_plywood_03x02m_03">
+				<object name="g_plywood_03x02m_03_lod0" enabled="true" max_distance="4500" instance_struct="world_tm"/>
+				<object name="g_plywood_03x02m_03_lod1" enabled="true" instance_struct="world_tm" />
+			</lod_object>
+		</graphic_group>
+	</graphics>
+</dynamic_object>

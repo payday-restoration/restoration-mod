@@ -1,0 +1,131 @@
+<xml>
+	
+	<anim name="anim_chew_bwd"		file="anims/helicopter/chew/chew_bwd"		blend_set="all"/>
+	<anim name="anim_chew_bwd_to_l"	file="anims/helicopter/chew/chew_bwd_to_l"	blend_set="all"/>
+	<anim name="anim_chew_bwd_to_r"	file="anims/helicopter/chew/chew_bwd_to_r"	blend_set="all"/>
+	<anim name="anim_chew_exit"		file="anims/helicopter/chew/chew_exit"		blend_set="all"/>
+	<anim name="anim_chew_fwd"		file="anims/helicopter/chew/chew_fwd"		blend_set="all"/>
+	<anim name="anim_chew_fwd_to_l"	file="anims/helicopter/chew/chew_fwd_to_l"	blend_set="all"/>
+	<anim name="anim_chew_fwd_to_r"	file="anims/helicopter/chew/chew_fwd_to_r"	blend_set="all"/>
+	<anim name="anim_chew_idle"		file="anims/helicopter/chew/chew_idle"		blend_set="all"/>
+	<anim name="anim_chew_start"	file="anims/helicopter/chew/chew_start"		blend_set="all"/>
+	
+
+	
+	<anim name="anim_glace_idle"		file="anims/helicopter/glace/glace_idle"		blend_set="all"/>
+	<anim name="anim_glace_l_bwd"		file="anims/helicopter/glace/glace_l_bwd"		blend_set="all"/>
+	<anim name="anim_glace_l_escape"	file="anims/helicopter/glace/glace_l_escape"	blend_set="all"/>
+	<anim name="anim_glace_l_fwd"		file="anims/helicopter/glace/glace_l_fwd"		blend_set="all"/>
+	<anim name="anim_glace_r_bwd"		file="anims/helicopter/glace/glace_r_bwd"		blend_set="all"/>
+	<anim name="anim_glace_r_escape"	file="anims/helicopter/glace/glace_r_escape"	blend_set="all"/>
+	<anim name="anim_glace_r_fwd"		file="anims/helicopter/glace/glace_r_fwd"		blend_set="all"/>
+	<anim name="anim_glace_start"		file="anims/helicopter/glace/glace_start"		blend_set="all"/>
+	<anim name="anim_glace_exit"		file="anims/helicopter/glace/glace_exit"		blend_set="all"/>
+	
+	
+	<anim name="anim_spa_enter"				file="anims/helicopter/spa/spa_enter"					blend_set="all"/>
+	<anim name="anim_spa_exit"				file="anims/helicopter/spa/spa_exit"					blend_set="all"/>
+	<anim name="anim_spa_idle"				file="anims/helicopter/spa/spa_idle"					blend_set="all"/>
+	<anim name="anim_spa_gunship_enter"		file="anims/helicopter/spa/spa_turretheli1_enter"		blend_set="all"/>
+	<anim name="anim_spa_gunship_exit"		file="anims/helicopter/spa/spa_turretheli1_exit"		blend_set="all"/>
+	<anim name="anim_spa_gunship_idle"		file="anims/helicopter/spa/spa_turretheli1_loop"		blend_set="all"/>
+
+	<anim name="anim_spa_helispotlight_enter"	file="anims/helicopter/spa/spa_helispotlight_enter"		blend_set="all"/>
+	<anim name="anim_spa_helispotlight_fwd"		file="anims/helicopter/spa/spa_helispotlight_fwd"		blend_set="all"/>
+	<anim name="anim_spa_helispotlight_exit"	file="anims/helicopter/spa/spa_helispotlight_exit"		blend_set="all"/>
+	<anim name="anim_spa_helispotlight_idle"	file="anims/helicopter/spa/spa_helispotlight_idle"		blend_set="all"/>	
+	
+	
+	<anim name="anim_rvd_enter"				file="anims/helicopter/rvd/rvd_enter"					blend_set="all"/>
+	<anim name="anim_rvd_exit"				file="anims/helicopter/rvd/rvd_exit"					blend_set="all"/>
+	<anim name="anim_rvd_idle"				file="anims/helicopter/rvd/rvd_idle"					blend_set="all"/>
+	
+	<anim name="hover_idle_loop" file="anims/helicopter/hover_idle" blend_set="all_no_root"/>
+	<anim name="jry_hover_idle" file="anims/helicopter/jry_hover_idle" blend_set="all_no_root"/>
+	<anim name="hover_idle_2_loop" file="anims/helicopter/hover_idle_2" blend_set="all_no_root"/>
+	<anim name="circulate" file="anims/helicopter/circulate" blend_set="all_no_root"/>
+	<anim name="circulate_to_hover" file="anims/helicopter/circulate_to_hover" blend_set="all_no_root"/>
+	<anim name="flyin_forward_to_hover" file="anims/helicopter/flyin_from_behind_to_hover" blend_set="all_no_root"/>
+	<anim name="flyin_left_to_hover" file="anims/helicopter/flyin_from_left_to_hover" blend_set="all_no_root"/>
+	<anim name="flyin_right_to_hover" file="anims/helicopter/flyin_from_right_to_hover" blend_set="all_no_root"/>
+	<anim name="hover_to_circulate" file="anims/helicopter/hover_to_circulate" blend_set="all_no_root"/>
+	<anim name="hover_to_flyout_backward" file="anims/helicopter/hover_to_fly_bwd" blend_set="all_no_root"/>
+	<anim name="hover_to_flyout_left" file="anims/helicopter/hover_to_fly_left" blend_set="all_no_root"/>
+	<anim name="hover_to_flyout_right" file="anims/helicopter/hover_to_fly_right" blend_set="all_no_root"/>
+	<anim name="hover_to_land" file="anims/helicopter/hover_to_land" blend_set="all_no_root"/>
+	<anim name="takeoff_backwards" file="anims/helicopter/takeoff_backwards" blend_set="all_no_root"/>
+	<anim name="takeoff_forward" file="anims/helicopter/takeoff_forward" blend_set="all_no_root"/>
+	<anim name="takeoff_left" file="anims/helicopter/takeoff_left" blend_set="all_no_root"/>
+	<anim name="takeoff_right" file="anims/helicopter/takeoff_right" blend_set="all_no_root"/>
+	<anim name="takeoff_to_hover" file="anims/helicopter/takeoff_to_hover" blend_set="all_no_root"/>
+	
+	<anim name="street_1_enter" file="anims/helicopter/street_1_enter" blend_set="all_no_root"/>
+	<anim name="street_2_hover_idle" file="anims/helicopter/street_2_hover_idle" blend_set="all_no_root"/>
+	<anim name="street_3_land" file="anims/helicopter/street_3_land" blend_set="all_no_root"/>
+	<anim name="street_4_land_idle" file="anims/helicopter/street_4_land_idle" blend_set="all_no_root"/>
+	<anim name="street_5_backout" file="anims/helicopter/street_5_backout" blend_set="all_no_root"/>
+	<anim name="street_6_hover_idle" file="anims/helicopter/street_6_hover_idle" blend_set="all_no_root"/>
+	<anim name="street_7_land" file="anims/helicopter/street_7_land" blend_set="all_no_root"/>
+	<anim name="street_8_hover_idle" file="anims/helicopter/street_8_hover_idle" blend_set="all_no_root"/>
+	
+	<anim name="street_first_flyin" file="anims/helicopter/street_first_flyin" blend_set="all_no_root"/>
+	<anim name="street_first_hover" file="anims/helicopter/street_first_hover" blend_set="all_no_root"/>
+	<anim name="street_first_flyout" file="anims/helicopter/street_first_flyout" blend_set="all_no_root"/>
+	
+	<anim name="street_second_flyin" file="anims/helicopter/street_second_flyin" blend_set="all_no_root"/>
+	<anim name="street_second_flyout" file="anims/helicopter/street_second_flyout" blend_set="all_no_root"/>
+	<anim name="street_second_hover" file="anims/helicopter/street_second_hover" blend_set="all_no_root"/>
+	
+	<anim name="street_third_flyin" file="anims/helicopter/street_third_flyin" blend_set="all_no_root"/>
+	<anim name="street_third_hover" file="anims/helicopter/street_third_hover" blend_set="all_no_root"/>
+	<anim name="street_third_flyout" file="anims/helicopter/street_third_flyout" blend_set="all_no_root"/>
+	<anim name="street_third_flyin2" file="anims/helicopter/street_third_flyin2" blend_set="all_no_root"/>
+	<anim name="street_third_hover2" file="anims/helicopter/street_third_hover2" blend_set="all_no_root"/>
+	<anim name="street_third_flyout2" file="anims/helicopter/street_third_flyout2" blend_set="all_no_root"/>
+	
+	<anim name="street_fourth_flyin" file="anims/helicopter/street_fourth_flyin" blend_set="all_no_root"/>
+	<anim name="street_fourth_hover" file="anims/helicopter/street_fourth_hover" blend_set="all_no_root"/>
+	<anim name="street_fourth_flyout" file="anims/helicopter/street_fourth_flyout" blend_set="all_no_root"/>
+	
+	<anim name="street_fifth_flyin" file="anims/helicopter/street_fifth_flyin" blend_set="all_no_root"/>
+	<anim name="street_fifth_hover" file="anims/helicopter/street_fifth_hover" blend_set="all_no_root"/>
+	<anim name="street_fifth_flyout" file="anims/helicopter/street_fifth_flyout" blend_set="all_no_root"/>
+	
+	<anim name="street_sixth_flyin" file="anims/helicopter/street_sixth_flyin" blend_set="all_no_root"/>
+	<anim name="street_sixth_hover" file="anims/helicopter/street_sixth_hover" blend_set="all_no_root"/>
+	<anim name="street_sixth_flyout" file="anims/helicopter/street_sixth_flyout" blend_set="all_no_root"/>
+	
+	<anim name="street_seventh_flyin" file="anims/helicopter/street_seventh_flyin" blend_set="all_no_root"/>
+	<anim name="street_seventh_hover" file="anims/helicopter/street_seventh_hover" blend_set="all_no_root"/>
+	<anim name="street_seventh_flyout" file="anims/helicopter/street_seventh_flyout" blend_set="all_no_root"/>
+	
+	<anim name="street_news_sweep" file="anims/helicopter/street_news_sweep" blend_set="all_no_root"/>
+	
+	<anim name="dh_circulate" file="anims/helicopter/dh_circulate" blend_set="all_no_root"/>
+	<anim name="dh_circulate_2" file="anims/helicopter/dh_circulate_2" blend_set="all_no_root"/>
+	
+	<anim name="pos_pickup" file="anims/helicopter/pos_pickup" blend_set="all_no_root"/>
+	
+	<anim name="suburbia_flyin" file="anims/helicopter/suburbia_flyin" blend_set="all_no_root"/>
+	<anim name="suburbia_hover" file="anims/helicopter/suburbia_hover" blend_set="all_no_root"/>
+	<anim name="suburbia_flyaway" file="anims/helicopter/suburbia_flyaway" blend_set="all_no_root"/>
+	
+	<anim name="framing3_flyin_1" file="anims/helicopter/framing3_flyin_1" blend_set="all_no_root"/>
+	<anim name="framing3_circulate_1" file="anims/helicopter/framing3_circulate_1" blend_set="all_no_root"/>
+	<anim name="framing3_flyin_2" file="anims/helicopter/framing3_flyin_2" blend_set="all_no_root"/>
+	<anim name="framing3_circulate_2" file="anims/helicopter/framing3_circulate_2" blend_set="all_no_root"/>
+	<anim name="framing3_flyin_3" file="anims/helicopter/framing3_flyin_3" blend_set="all_no_root"/>
+	<anim name="framing3_circulate_3" file="anims/helicopter/framing3_circulate_3" blend_set="all_no_root"/>
+	<anim name="framing3_flyin_4" file="anims/helicopter/framing3_flyin_4" blend_set="all_no_root"/>
+
+	<!-- Payday 1 -->
+	<anim name="apartment_enter" file="anims/helicopter/aprt_enter_circulate" blend_set="all_no_root"/>
+	<anim name="aprt_drop_bag" file="anims/helicopter/aprt_drop_bag" blend_set="all_no_root"/>
+	<anim name="apartment_circulate_loop" file="anims/helicopter/aprt_circulate" blend_set="all_no_root"/>
+	<anim name="apartment_to_panicroom" file="anims/helicopter/aprt_exit_circulate" blend_set="all_no_root"/>
+	<anim name="apartment_liftoff_panicroom" file="anims/helicopter/aprt_flyoff_panicroom" blend_set="all_no_root"/>
+	<anim name="apartment_repel_to_panicroom" file="anims/helicopter/aprt_hover_repel_cable" blend_set="all_no_root"/>
+
+
+
+</xml>

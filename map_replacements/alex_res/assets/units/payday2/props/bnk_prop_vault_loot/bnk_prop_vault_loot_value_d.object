@@ -1,0 +1,18 @@
+<dynamic_object>
+    <diesel orientation_object="rp_bnk_prop_vault_loot_value_d" materials="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_d" />
+   	<sequence_manager file="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value" />
+    <bodies>
+        <body enabled="true" template="editor" name="static_body" >
+            <object collision_type="box" name="c_box_editor" />
+        </body>
+    </bodies>
+    <graphics>
+        <object enabled="true" name="g_g" />
+     <graphic_group name="grp_outline" enabled="true" >
+         <lod_object name="lod_outline">
+             <object name="g_outline_lod0" enabled="true"  max_distance="300" />
+             <object name="g_outline_lod1" enabled="true" />
+         </lod_object>
+     </graphic_group>   
+    </graphics>
+</dynamic_object>

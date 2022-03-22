@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/gen_prop_loot_blueprint/gen_prop_loot_blueprint" orientation_object="rp_gen_prop_loot_blueprint" />
+	<sequence_manager file="units/payday2/props/gen_prop_loot_blueprint/gen_prop_loot_blueprint" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_gen_prop_loot_blueprint" />
+			<object name="c_blueprints" collision_type="box" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="thin_layer">
+	</decal_surfaces>
+	<graphics>
+		<object name="g_blueprints" enabled="true"  />
+	</graphics>
+</dynamic_object>

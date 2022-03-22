@@ -1,0 +1,8 @@
+<materials version="3">
+    <material name="mat_door" version="2" render_template="generic:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP:SKINNED_3WEIGHTS">
+        <bump_normal_texture file="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_nm"/>
+        <diffuse_texture file="units/payday2/equipment/gen_interactable_door_reinforced_lab/gen_prop_door_metal_lab_df"/>
+        <reflection_texture file="units/payday2/cubemaps/cubemap_steel" type="cubemap"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

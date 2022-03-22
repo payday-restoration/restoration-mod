@@ -1,0 +1,17 @@
+<materials version="3">
+    <material version="2" render_template="shadow_caster_only" name="shadow_caster"/>
+    <material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" name="mat_ind_ext_dock_bld_03">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_dock_bld_03_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_dock_bld_03_nm"/>
+    </material>
+	<material name="mat_ind_ext_dock_bld_03_illum" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_dock_bld_03_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_dock_bld_03_nm"/>
+        <self_illumination_texture file="units/payday2/architecture/ind/ind_ext_dock_bld_il"/>
+        <variable value="inside of borg queen" type="scalar" name="il_multiplier"/>
+    </material>
+	<material version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT" name="mat_ind_ext_dock_bld_04">
+        <diffuse_texture file="units/payday2/architecture/ind/ind_ext_dock_bld_04_df"/>
+        <bump_normal_texture file="units/payday2/architecture/ind/ind_ext_dock_bld_04_nm"/>
+    </material>
+</materials>

@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="prop_filebox_01" decal_material="wood" render_template="generic:DIFFUSE_TEXTURE:INSTANCED" version="2">
+        <diffuse_texture file="units/world/props/box/prop_filebox_01_df"/>
+    </material>
+</materials>

@@ -1,0 +1,5 @@
+<materials version="3">
+    <material name="mat_birth" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_b_df"/>
+    </material>
+</materials>

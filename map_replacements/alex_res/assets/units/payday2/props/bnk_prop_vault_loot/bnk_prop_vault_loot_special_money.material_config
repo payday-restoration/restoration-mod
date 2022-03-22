@@ -1,0 +1,12 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2" name="mtr_money">
+        <diffuse_texture file="units/payday2/pickups/gen_pku_money/gen_pku_money_df"/>
+        <bump_normal_texture file="units/payday2/pickups/gen_pku_money/gen_pku_money_nm"/>
+    </material>
+    <material name="mat_outline" unique="true" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <opacity_texture file="units/transparent_op"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="0" type="scalar" name="contour_opacity"/>
+    </material>
+</materials>

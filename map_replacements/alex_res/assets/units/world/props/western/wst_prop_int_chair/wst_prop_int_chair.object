@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/western/wst_prop_int_chair/wst_prop_int_chair" orientation_object="rp_rp" />
+  <!--<sequence_manager file="units/world/props/apartment/hide_units" />-->
+  <bodies>
+    <body name="body" enabled="true" template="static">
+      <object name="rp_rp" />
+      <object name="c_mesh_mopp" collision_type="mesh_mopp"/>
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="wood">
+    <decal_mesh name="dm_wood" enabled="true" material="wood" />
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_g" enabled="true"  instance_struct="world_tm"/>
+  </graphics>
+</dynamic_object> 

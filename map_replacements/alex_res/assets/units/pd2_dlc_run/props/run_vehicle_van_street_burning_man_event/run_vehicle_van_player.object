@@ -1,0 +1,142 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_run/props/run_vehicle_van_street_burning_man_event/run_vehicle_van_player" orientation_object="rp_run_vehicle_van_player" />
+	<sequence_manager file="units/pd2_dlc_run/props/run_vehicle_van_street_burning_man_event/run_vehicle_van_player" />
+	
+	<animations>
+
+		<animation_group name="doors_left" enabled="false" >
+			<object name="a_door_back_left" />
+		</animation_group>
+
+		<animation_group name="doors_right" enabled="false"  >
+			<object name="a_door_back_right" />
+		</animation_group>
+
+		<animation_group name="ag_tire_front_right">
+			<object name="a_tire_front_right" />
+		</animation_group>
+		
+		<animation_group name="ag_tire_front_left">
+			<object name="a_tire_front_left" />
+		</animation_group>
+		
+		<animation_group name="ag_tire_rear_right">
+			<object name="a_tire_rear_right" />
+		</animation_group>
+
+		<animation_group name="ag_tire_rear_left">
+			<object name="a_tire_rear_left" />
+		</animation_group>
+
+  	</animations>
+
+	<bodies>
+		<body name="body_collision_01" enabled="true" template="static">
+			<object name="a_body" />
+			<object name="c_convex2" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_02" enabled="true" template="static">
+			<object name="a_door_back_left" />
+			<object name="c_convex1" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_03" enabled="true" template="static">
+			<object name="a_door_back_right" />
+			<object name="c_convex" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_04" enabled="true" template="static">
+			<object name="a_vehicle_tires_front_left_2" />
+			<object name="c_convex4" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_05" enabled="true" template="static">
+			<object name="a_vehicle_tires_front_right_2" />
+			<object name="c_convex3" collision_type="convex" padding="-2.5" />
+		</body>
+		<body name="body_collision_06" enabled="true" template="static">
+			<object name="a_vehicle_tires_rear_2" />
+			<object name="c_convex5" collision_type="convex" padding="-2.5" />
+		</body>
+
+		<body name="body_collision_07" enabled="true" template="static">
+			<object name="a_vehicle_tires_rear_2" />
+			<object name="c_convex6" collision_type="convex" padding="-2.5" />
+		</body>
+
+	</bodies>
+
+
+	<decal_surfaces default_material="glass_unbreakable" >
+		<decal_mesh name="dm_glass_unbreakable" enabled="true" material="glass_unbreakable" />
+		<decal_mesh name="dm_glass_unbreakable1" enabled="true" material="glass_unbreakable" />
+		<decal_mesh name="dm_glass_unbreakable2" enabled="true" material="glass_unbreakable" />
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+		<decal_mesh name="dm_metal1" enabled="true" material="metal" />
+		<decal_mesh name="dm_metal2" enabled="true" material="metal" />
+		<decal_mesh name="dm_metal3" enabled="true" material="metal" />
+		<decal_mesh name="dm_metal4" enabled="true" material="metal" />
+		<decal_mesh name="dm_metal5" enabled="true" material="metal" />
+		<decal_mesh name="dm_plastic" enabled="true" material="plastic" />
+		<decal_mesh name="dm_plastic2" enabled="true" material="plastic" />
+		<decal_mesh name="dm_rubber" enabled="true" material="rubber" />
+		<decal_mesh name="dm_rubber1" enabled="true" material="rubber" />
+		<decal_mesh name="dm_rubber2" enabled="true" material="rubber" />
+	</decal_surfaces>
+
+
+	<graphics>
+		<graphic_group name="grp_body" enabled="true" visibility="true" >
+			<lod_object name="lod_g_body">
+				<object name="g_body_lod0" enabled="true" max_distance="5000" />
+				<object name="g_body_lod1" enabled="true" max_distance="8000" />
+				<object name="g_body_lod2" enabled="true" />
+			</lod_object>
+		</graphic_group>
+
+		<graphic_group name="grp_door_left" enabled="true" visibility="true" >
+			<lod_object name="lod_g_door_left">
+				<object name="g_door_left_lod0" enabled="true" max_distance="5000" />
+				<object name="g_door_left_lod1" enabled="true" max_distance="8000" />
+				<object name="g_door_left_lod2" enabled="true" />
+			</lod_object>
+		</graphic_group>	
+
+		<graphic_group name="grp_door_right" enabled="true" visibility="true" >
+			<lod_object name="lod_g_door_right">
+				<object name="g_door_right_lod0" enabled="true" max_distance="5000" />
+				<object name="g_door_right_lod1" enabled="true" max_distance="8000" />
+				<object name="g_door_right_lod2" enabled="true" />
+			</lod_object>
+		</graphic_group>
+
+		<graphic_group name="grp_wheel_FL" enabled="true" visibility="true" >
+			<lod_object name="lod_g_wheel1">
+				<object name="g_wheel1_lod0" enabled="true" max_distance="5000" />
+				<object name="g_wheel1_lod1" enabled="true" max_distance="8000" />
+				<object name="g_wheel1_lod2" enabled="true" />
+			</lod_object>
+		</graphic_group>
+
+		<graphic_group name="grp_wheel_FR" enabled="true" visibility="true" >
+			<lod_object name="lod_g_wheel2">
+				<object name="g_wheel2_lod0" enabled="true" max_distance="5000" />
+				<object name="g_wheel2_lod1" enabled="true" max_distance="8000" />
+				<object name="g_wheel2_lod2" enabled="true" />
+			</lod_object>
+		</graphic_group>
+			
+		<graphic_group name="grp_wheel_RLR" enabled="true" visibility="true" >
+			<lod_object name="lod_g_wheel3">
+				<object name="g_wheel3_lod0" enabled="true" max_distance="5000" />
+				<object name="g_wheel3_lod1" enabled="true" max_distance="8000" />
+				<object name="g_wheel3_lod2" enabled="true" />				
+			</lod_object>
+		</graphic_group>	
+
+		<object name="s_s_front_left" enabled="true" shadow_caster="true" />
+		<object name="s_s_back_left" enabled="true" shadow_caster="true" />
+		<object name="s_s_body" enabled="true" shadow_caster="true" />
+		<object name="s_s_front_right_2" enabled="true" shadow_caster="true" />
+		<object name="s_s_wheel2" enabled="true" shadow_caster="true" />
+		<object name="s_s_wheel3" enabled="true" shadow_caster="true" />
+	</graphics>
+
+</dynamic_object>

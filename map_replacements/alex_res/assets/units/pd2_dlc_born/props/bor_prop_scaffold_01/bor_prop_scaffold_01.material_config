@@ -1,0 +1,6 @@
+<materials version="3">
+	<material name="mat_scaffold" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc2/architecture/gov_c_ext/gov_c_ext_scaffolding_df" />
+		<bump_normal_texture file="units/pd2_dlc2/architecture/gov_c_ext/gov_c_ext_scaffolding_nm" />
+	</material>
+</materials>

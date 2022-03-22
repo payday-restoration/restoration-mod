@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/environment/train/vista/tra_backdrop_near_bridgesteel/tra_near_bridgesteel" orientation_object="rp_tra_backdrop_near_bridgesteel_mid" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="c_tra_backdrop_near_bridgesteel_mid_mesh_mopp" collision_type="box" />
+    </body>
+  </bodies>
+  <graphics>
+    <object name="g_tra_backdrop_near_bridgesteel_mid" enabled="true"  />
+  </graphics>
+</dynamic_object>

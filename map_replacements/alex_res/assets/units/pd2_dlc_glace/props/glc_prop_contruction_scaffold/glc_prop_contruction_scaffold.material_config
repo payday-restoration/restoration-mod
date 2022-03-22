@@ -1,0 +1,11 @@
+<materials version="3">
+	<material name="mat_wood" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_glace/props/glc_prop_contruction_scaffold/glc_ext_bridge_construction_wood_df" />
+		<bump_normal_texture file="units/pd2_dlc_glace/props/glc_prop_contruction_scaffold/glc_ext_bridge_construction_wood_nm" />
+	</material>
+	<material name="mat_wood_lod" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture file="units/pd2_dlc_glace/props/glc_prop_contruction_scaffold/glc_ext_bridge_construction_wood_df" mip="4" />
+		<bump_normal_texture file="units/pd2_dlc_glace/props/glc_prop_contruction_scaffold/glc_ext_bridge_construction_wood_df" mip="4" />
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2" />
+</materials>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" orientation_object="rp_gen_pku_keycard" />
+	<sequence_manager file="units/payday2/pickups/gen_pku_keycard/gen_pku_keycard" />
+	
+	<bodies>
+		<body name="editor" enabled="true" template="editor">
+			<object name="rp_gen_pku_keycard" />
+			<object name="g_keycard" collision_type="box" />
+		</body>
+	</bodies>
+
+	<graphics>
+		<object name="g_keycard" enabled="true" />
+	</graphics>
+
+</dynamic_object> 

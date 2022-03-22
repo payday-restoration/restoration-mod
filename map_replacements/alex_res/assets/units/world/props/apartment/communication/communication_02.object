@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/apartment/communication/communication_01" orientation_object="rp_comm_02" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_comm_02" />
+      <object name="c_sheet_metal" collision_type="box" padding="-2"/>
+    </body>
+  </bodies>
+  
+  <decal_surfaces default_material="metal_chassis">
+    <decal_mesh name="c_sheet_metal" enabled="true" material="metal_chassis" />
+  </decal_surfaces>
+  
+  <graphics>
+    <object name="g_comm_02" enabled="true"  />
+  </graphics>
+</dynamic_object>

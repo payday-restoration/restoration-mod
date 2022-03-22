@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/payday2/nature/pnau/pnau_terrain_rock_edge/pnau_terrain_rock_edge_01_d_v2" orientation_object="rp_pnau_terrain_rock_edge_01_c_v2" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="c_pnau_terrain_rock_edge_01_c_v2" collision_type="mesh_mopp" />
+    </body>
+  </bodies>
+  <decal_surfaces default_material="grass">
+    <decal_mesh name="g_pnau_terrain_rock_edge_01_c_v2" enabled="true" material="grass" />
+  </decal_surfaces>
+  <graphics>
+    <object name="g_pnau_terrain_rock_edge_01_c_v2" enabled="true" shadow_caster="true"  />
+  </graphics>
+</dynamic_object>

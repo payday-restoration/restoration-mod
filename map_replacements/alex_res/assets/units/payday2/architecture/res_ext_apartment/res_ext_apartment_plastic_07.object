@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/res_ext_apartment/rp_res_ext_apartment_plastic_01" orientation_object="rp_res_ext_apartment_plastic_07" />
+	<bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_res_ext_apartment_plastic_07"/>
+			<object name="c_capsule_01" collision_type="capsule" padding="-2.5" />
+        </body>
+    </bodies>
+
+	<graphics>
+			<object enabled="true" name="g_g" shadow_caster="true" instance_struct="world_tm" />
+    </graphics>
+
+</dynamic_object>

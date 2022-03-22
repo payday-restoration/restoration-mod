@@ -1,0 +1,32 @@
+<materials version="3">
+    <material name="mtr_water" render_template="generic:CUBE_ENVIRONMENT_MAPPING:CUBE_ENVIRONMENT_MAPPING_WATER:DIFFUSE_TEXTURE:RL_BACKDROP:WATER_BIG" version="2">
+        <diffuse_texture file="units/world/water/water_foam_df"/>
+        <variable value="0.5 1.6345999240875 0" type="vector3" name="water_settings_c"/>
+        <variable value="0.029999999329448 0 0.096000000834465" type="vector3" name="water_settings_b"/>
+        <bump_normal_texture file="units/world/water/water_2_nm"/>
+        <variable value="0.040944866836071 0.047244071960449 0.035016193985939" type="vector3" name="water_color_a"/>
+        <variable value="0.070032432675362 0.07522002607584 0.094488203525543" type="vector3" name="water_color_b"/>
+        <variable value="0.70000004768372 1.2000000476837 0" type="vector3" name="water_settings"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+    <material name="mat_docks_water" render_template="generic:CUBE_ENVIRONMENT_MAPPING:CUBE_ENVIRONMENT_MAPPING_WATER:DIFFUSE_TEXTURE:RL_BACKDROP:WATER_BIG" version="2">
+        <diffuse_texture file="units/world/water/water_foam_df"/>
+        <variable value="0.20000001788139 0.43459993600845 0" type="vector3" name="water_settings_c"/>
+        <variable value="0.029999999329448 0 0.096000000834465" type="vector3" name="water_settings_b"/>
+        <bump_normal_texture file="units/world/water/water_weak_nm"/>
+        <variable value="0.019607843831182 0.031372550874949 0.050980392843485" type="vector3" name="water_color_a"/>
+        <variable value="0 0.023529412224889 0.050980392843485" type="vector3" name="water_color_b"/>
+        <variable value="1.7000000476837 1.2000000476837 0" type="vector3" name="water_settings"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+    <material name="mat_warehouse_water" render_template="generic:CUBE_ENVIRONMENT_MAPPING:CUBE_ENVIRONMENT_MAPPING_WATER:DIFFUSE_TEXTURE:RL_BACKDROP:WATER_BIG" version="2">
+        <diffuse_texture file="units/world/water/water_foam_df"/>
+        <variable value="0.20000001788139 0.33459993600845 0" type="vector3" name="water_settings_c"/>
+        <variable value="0.029999999329448 0 0.096000000834465" type="vector3" name="water_settings_b"/>
+        <bump_normal_texture file="units/world/water/water_weak_nm"/>
+        <variable value="0.058638267219067 0.070866145193577 0.0069476617500186" type="vector3" name="water_color_a"/>
+        <variable value="0.059039682149887 0.062992125749588 0.053111013025045" type="vector3" name="water_color_b"/>
+        <variable value="3.0500001907349 4.4500002861023 1.1" type="vector3" name="water_settings"/>
+        <reflection_texture type="cubemap" file="units/payday2/cubemaps/cubemap_kosugi"/>
+    </material>
+</materials>

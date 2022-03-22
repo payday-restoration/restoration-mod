@@ -1,0 +1,39 @@
+<materials version="3">
+    <material name="ecm" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_jammer/ecm_df"/>
+        <bump_normal_texture file="units/payday2/equipment/gen_equipment_jammer/ecm_nm"/>
+    </material>
+    <material name="mtr_cheeze" render_template="opacity:CUBE_ENVIRONMENT_MAPPING:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <bump_normal_texture file="units/payday2/equipment/gen_equipment_jammer/ecm_nm"/>
+        <opacity_texture file="units/white_df"/>
+        <diffuse_texture file="units/gui/gui_color_use_df"/>
+        <reflection_texture type="cube" global_texture="current_global_texture"/>
+    </material>
+    <material name="glow" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION:SELF_ILLUMINATION_UVANIM" version="2">
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_jammer/glow_il"/>
+        <self_illumination_texture file="units/payday2/equipment/gen_equipment_jammer/glow_il"/>
+        <variable value="searchlight" type="scalar" name="il_multiplier"/>
+        <variable value="0 2.4060001373291 0" type="vector3" name="uv_speed"/>
+    </material>	
+    <material name="glow_red" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/equipment/gen_equipment_jammer/glow_red_il"/>
+        <self_illumination_texture file="units/payday2/equipment/gen_equipment_jammer/glow_red_il"/>
+        <variable value="searchlight" type="scalar" name="il_multiplier"/>
+    </material>
+    <material name="hud_brackets" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/gui_brackets_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mtr_ecm" render_template="effect:DIFFUSE0_TEXTURE:VIEW_ANGLE_FALLOFF_OP" version="2">
+        <diffuse_texture file="units/gui/ecm_indicator_df"/>
+        <variable value="identity" type="scalar" name="intensity"/>
+        <variable value="1" type="scalar" name="falloff_exp"/>
+    </material>
+    <material name="mat_contour" render_template="generic:ALPHA_MASKED:CONTOUR:DIFFUSE_TEXTURE:OPACITY_TEXTURE" unique="true" version="2">
+        <diffuse_texture file="units/white_df"/>
+        <variable value="0 1 0" type="vector3" name="contour_color"/>
+        <variable value="1" type="scalar" name="contour_opacity"/>
+        <opacity_texture file="units/transparent_op"/>
+    </material>
+</materials>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/bridge/construction_blueprint/blueprint" orientation_object="rp_blueprint" />
+  
+  <bodies>
+    <body name="frame_static_body" enabled="true" template="editor">
+		<object name="rp_blueprint"/>
+		<object name="g_g" collision_type="box" />
+    </body>
+</bodies>
+  
+  
+  <graphics>
+    <object name="g_g" enabled="true" />
+  </graphics>
+</dynamic_object>

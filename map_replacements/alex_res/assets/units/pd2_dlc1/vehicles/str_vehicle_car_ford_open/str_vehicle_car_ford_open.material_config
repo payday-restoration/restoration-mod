@@ -1,0 +1,26 @@
+<materials version="3" group="ford_lights">
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:NORMALMAP:OPACITY_FADE" decal_material="glass_breakable" name="glass_shattered" version="2">
+        <variable value="2 1 0.59999996423721" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_shattered_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_shattered_df"/>
+        <bump_normal_texture file="units/payday2/glass/glass_shattered_nm"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material render_template="opacity:CUBE_ENVIRONMENT_MAPPING:CUBE_FRESNEL:DIFFUSE_TEXTURE:OPACITY_FADE" decal_material="glass_breakable" version="2" name="glass_breakable">
+        <variable value="0.55000001192093 1 0.37000000476837" type="vector3" name="fresnel_settings"/>
+        <opacity_texture file="units/payday2/glass/glass_clear_vehicle_op"/>
+        <diffuse_texture file="units/payday2/glass/glass_clear_vehicle_df"/>
+        <reflection_texture type="cubemap" global_texture="current_global_texture"/>
+        <variable value="10 4000 0" type="vector3" name="opacity_fade"/>
+    </material>
+    <material name="ford" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP">
+        <bump_normal_texture file="units/pd2_dlc1/vehicles/str_vehicle_car_ford_open/str_vehicle_car_ford_nm"/>
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_car_ford_open/str_vehicle_car_ford_df"/>
+    </material>
+    <material name="ford_low" version="2" render_template="generic:DIFFUSE_TEXTURE">
+        <variable value="0.10196078568697 0.10196078568697 0.10196078568697" type="vector3" name="tint_color"/>
+        <diffuse_texture file="units/pd2_dlc1/vehicles/str_vehicle_car_ford_open/str_vehicle_car_ford_df"/>
+    </material>
+    <material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

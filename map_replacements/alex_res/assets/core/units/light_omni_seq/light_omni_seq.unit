@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<unit name="light_omni" type="dev" slot="1">
+<network sync="spawn"/>
+  <object file="core/units/light_omni_seq/light_omni_seq" />
+  <movers />
+  <dependencies />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData">
+      <var name="only_visible_in_editor" value="true" />
+    </extension>
+    <extension name="damage" class="UnitDamage" />
+    <extension name="sync_unit_data" class="SyncUnitData" />
+  </extensions>
+  <sounds>
+    <default_soundsource />
+  </sounds>
+</unit>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="des" slot="1">
+  <object file="units/world/architecture/desert/des_vil_house_rooftop/des_vil_house_rooftop_02" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

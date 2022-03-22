@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_help/props/hlp_tra_backdrop_near_bridgestone/hlp_tra_backdrop_near_bridgestone_destroyed" orientation_object="rp_hlp_tra_backdrop_near_bridgestone_destroyed" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_hlp_tra_backdrop_near_bridgestone_destroyed" />
+			<object name="c_mesh_mopp_01" collision_type="mesh_mopp" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_bars" enabled="true" />
+		<object name="g_g" enabled="true" />
+		<object name="s_s" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

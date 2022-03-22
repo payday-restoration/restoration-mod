@@ -1,0 +1,13 @@
+<materials version="3">
+    <material name="cloth" render_template="generic:DIFFUSE_TEXTURE:DOUBLE_SIDED:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence_cloth_df"/>
+        <bump_normal_texture file="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence_cloth_nm"/>
+    </material>
+    <material name="cloth_v2" render_template="generic:DIFFUSE_TEXTURE:DOUBLE_SIDED:NORMALMAP:VEGETATION_BENDING" version="2">
+        <diffuse_texture file="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence_cloth_v2_df"/>
+        <bump_normal_texture file="units/payday2/props/air_prop_runway_fence/air_prop_runway_fence_cloth_v2_nm"/>
+        <variable value="1.5500000715256" type="scalar" name="speed"/>
+        <variable value="4 0.2250000089407 0" type="vector3" name="detail_settings"/>
+        <variable value="5 0.070000000298023 0" type="vector3" name="branch_settings"/>
+    </material>
+</materials>

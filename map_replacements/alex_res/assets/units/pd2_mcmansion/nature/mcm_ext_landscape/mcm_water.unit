@@ -1,0 +1,6 @@
+<unit type="mcm" slot="1">
+	<object file="units/pd2_mcmansion/nature/mcm_ext_landscape/mcm_water" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

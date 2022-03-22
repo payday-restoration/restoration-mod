@@ -1,0 +1,14 @@
+<dynamic_object>
+	<diesel materials="units/world/environment/train/vista/tra_backdrop_near_bridgestone/tra_near_bridgestone" orientation_object="rp_tra_backdrop_near_bridgestone_destroyed_pillar" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_tra_backdrop_near_bridgestone_destroyed_pillar" />
+			<object name="c_convex_01" collision_type="convex" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_bars" enabled="true" />
+		<object name="g_g" enabled="true" />
+		<object name="s_s" enabled="true" shadow_caster="true"/>
+	</graphics>
+</dynamic_object>

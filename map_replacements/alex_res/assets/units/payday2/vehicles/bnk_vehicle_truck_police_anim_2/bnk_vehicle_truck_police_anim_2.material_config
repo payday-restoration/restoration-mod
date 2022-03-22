@@ -1,0 +1,12 @@
+<materials version="3">
+	<material name="mtr_apc" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+		<diffuse_texture 		file="units/payday2/vehicles/gen_vehicle_truck_fbi/gen_vehicle_truck_fbi_df"/>
+		<bump_normal_texture 	file="units/payday2/vehicles/gen_vehicle_truck_fbi/gen_vehicle_truck_fbi_nm"/>
+	</material>
+	<material name="mtr_net" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:DOUBLE_SIDED:EXTERNAL_ALPHA_REF:NORMALMAP" version="2">
+		<diffuse_texture 		file="units/world/props/shared_textures/fence_tile_df"/>
+		<bump_normal_texture 	file="units/world/props/shared_textures/fence_tile_nm"/>
+		<variable value="0.053000003099442" type="scalar" name="alpha_ref"/>
+	</material>
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

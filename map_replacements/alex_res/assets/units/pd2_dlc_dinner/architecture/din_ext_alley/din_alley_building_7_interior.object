@@ -1,0 +1,18 @@
+<dynamic_object>
+	<diesel materials="units/pd2_dlc_dinner/architecture/din" orientation_object="rp_din_alley_building_7_interior" />
+    <bodies>
+        <body enabled="true" name="body0" template="static">
+            <object name="rp_din_alley_building_7_interior"/>
+			<object collision_type="mesh_mopp" enabled="true" name="c_alley_building_7_interior"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="concrete" static="true">
+		<decal_mesh name="dm_alley_building_7_interior_plaster" material="plaster" enabled="true"/>
+		<decal_mesh name="dm_alley_building_7_interior_hardwood" material="hardwood" enabled="true"/>
+	</decal_surfaces>
+
+    <graphics>
+		<object enabled="true" name="g_alley_building_7_interior"/>
+    </graphics>
+</dynamic_object>

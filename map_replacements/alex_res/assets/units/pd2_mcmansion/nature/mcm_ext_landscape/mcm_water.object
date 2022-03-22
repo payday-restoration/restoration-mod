@@ -1,0 +1,12 @@
+<dynamic_object>
+	<diesel materials="units/pd2_mcmansion/nature/mcm_ext_landscape/mcm_water" orientation_object="rp_mcm_water" />
+	<bodies>
+		<body name="body_static" enabled="true" template="editor">
+			<object name="rp_mcm_water" />
+			<object name="c_water" collision_type="box" padding="-2.5" />
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_water" enabled="true" />
+	</graphics>
+</dynamic_object>

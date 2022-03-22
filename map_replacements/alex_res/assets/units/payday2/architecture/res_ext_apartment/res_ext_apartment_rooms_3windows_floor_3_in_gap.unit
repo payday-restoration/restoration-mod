@@ -1,0 +1,6 @@
+<unit type="res" slot="1" >
+    <object file="units/payday2/architecture/res_ext_apartment/res_ext_apartment_rooms_3windows_floor_3_in_gap" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

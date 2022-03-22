@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="core/material_configs/hub_elements" orientation_object="rp_light_omni_seq" />
+  <sequence_manager file="core/units/light_omni_seq/light_omni_seq" />
+  <animations>
+	<animation_group name="flicker" enabled="true">
+		<object name="lo_omni" />
+	</animation_group>
+  </animations>
+  <bodies>
+    <body name="omnilight" enabled="true" template="editor">
+      <object name="rp_light_omni_seq" enabled="true" />
+      <object name="c_omnilight_sphere" enabled="true" collision_type="sphere" />
+    </body>
+  </bodies>
+  <cloths />
+  <constraints />
+  <decal_surfaces />
+  <effects />
+  <graphics>
+    <object name="g_omnilight_il" enabled="true"  instance_struct="world_tm"/>
+    <object name="g_omnilight" enabled="true" instance_struct="world_tm" />
+  </graphics>
+  <lights>
+    <light multiplier="identity" editable="true" name="lo_omni" enabled="true" type="omni|specular" />
+  </lights>
+  <objects />
+</dynamic_object>

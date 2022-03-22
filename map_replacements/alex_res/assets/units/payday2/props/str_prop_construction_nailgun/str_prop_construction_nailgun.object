@@ -1,0 +1,11 @@
+<dynamic_object>
+    <diesel orientation_object="rp_str_prop_construction_nailgun" materials="units/payday2/props/str_prop_construction_nailgun/str_prop_construction_nailgun" />
+    <bodies>
+        <body enabled="true" template="static" name="static_body" >
+            <object collision_type="convex" name="c_convex_01" padding="-2.5"/>
+        </body>
+    </bodies>
+    <graphics>
+		<object name="g_g" enabled="true"/>
+    </graphics>
+</dynamic_object>

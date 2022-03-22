@@ -1,0 +1,6 @@
+<unit type="air" slot="1" >
+    <object file="units/payday2/architecture/air_backdrop/air_backdrop" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

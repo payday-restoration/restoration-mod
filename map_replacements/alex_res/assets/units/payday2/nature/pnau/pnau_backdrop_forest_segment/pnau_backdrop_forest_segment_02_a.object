@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/nature/pnau/pnau_backdrop_forest_segment/pnau_backdrop_forest_segment" orientation_object="rp_pnau_backdrop_forest_segment_02_a" />
+	<bodies>
+		<body name="static_body" enabled="true" template="editor">
+			<object name="c_box" collision_type="box" padding="-2.5" instance_struct="world_tm"/>
+		</body>
+	</bodies>
+	<graphics>
+		<object name="g_pnau_backdrop_forest_segment_02_a" enabled="true" shadow_caster="true" instance_struct="world_tm" />
+	</graphics>
+</dynamic_object>

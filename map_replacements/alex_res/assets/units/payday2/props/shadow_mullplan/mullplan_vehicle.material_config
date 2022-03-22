@@ -1,0 +1,11 @@
+<materials version="3">
+    <material render_template="decal:DIFFUSE_TEXTURE" name="mat_mull" version="2">
+        <diffuse_texture file="units/payday2/props/shadow_mullplan/shadow_mullplan_df"/>
+    </material>
+    <material render_template="decal:DIFFUSE_TEXTURE" name="mat_mull_light" version="2">
+        <diffuse_texture file="units/payday2/props/shadow_mullplan/shadow_mullplan_v2_df"/>
+    </material>
+    <material render_template="decal:DIFFUSE_TEXTURE" name="mat_mull_small" version="2">
+        <diffuse_texture file="units/payday2/props/shadow_mullplan/mat_mull_small_df"/>
+    </material>
+</materials>

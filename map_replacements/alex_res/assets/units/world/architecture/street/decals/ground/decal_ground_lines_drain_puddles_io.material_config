@@ -1,0 +1,6 @@
+<materials version="3">
+    <material name="ground_decal" render_template="decal:DIFFUSE_TEXTURE:OPACITY_TEXTURE" version="2">
+        <diffuse_texture file="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles_df"/>
+        <opacity_texture file="units/world/architecture/street/decals/ground/decal_ground_lines_drain_puddles_op"/>
+    </material>
+</materials>

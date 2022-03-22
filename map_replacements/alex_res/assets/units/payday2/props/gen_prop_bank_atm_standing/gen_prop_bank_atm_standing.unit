@@ -1,0 +1,16 @@
+<unit type="gen" slot="1" >
+    <object file="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing" />
+	<network sync="spawn"/>
+	<dependencies>
+		<depends_on physic_effect="physic_effects/push_sphere" />
+		<depends_on unit="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_jammer" />
+		<depends_on unit="units/payday2/props/gen_prop_bank_atm_standing/gen_prop_bank_atm_standing_spawn" />
+	</dependencies>  
+	<extensions>
+		<extension name="base" class="MissionDoor" >
+			<var name="tweak_data" value="atm" />
+		</extension>
+		<extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+	</extensions>
+</unit>

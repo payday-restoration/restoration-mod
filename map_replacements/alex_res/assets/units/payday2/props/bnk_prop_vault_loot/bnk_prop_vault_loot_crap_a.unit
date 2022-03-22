@@ -1,0 +1,7 @@
+<unit type="bnk" slot="1" >
+    <object file="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_crap_a" />
+	<network sync="spawn" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+    </extensions>
+</unit>

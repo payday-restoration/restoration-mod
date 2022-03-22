@@ -1,0 +1,5 @@
+<materials version="3">
+	<material name="mtr_blueprint" render_template="generic:DIFFUSE_TEXTURE">
+		<diffuse_texture file="units/payday2/props/gen_prop_loot_blueprint/gen_prop_loot_blueprint_df"/>
+	</material>
+</materials>

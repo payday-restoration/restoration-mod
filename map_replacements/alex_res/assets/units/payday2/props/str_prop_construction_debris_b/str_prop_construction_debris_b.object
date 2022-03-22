@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/str_prop_construction_debris_b/str_prop_construction_debris_b" orientation_object="rp_str_prop_construction_debris_b" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="c_box_b_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_b_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_b_03" collision_type="box" padding="-2.5"/>
+			<object name="c_box_b_04" collision_type="box" padding="-2.5"/>
+			<object name="c_box_b_05" collision_type="box" padding="-2.5"/>
+			<object name="c_box_b_06" collision_type="box" padding="-2.5"/>
+			<object name="c_box_b_07" collision_type="box" padding="-2.5"/>
+			<object name="c_convex_01" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_02" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_03" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_04" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_05" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_06" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_07" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_08" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_09" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_10" collision_type="convex" padding="-2.5"/>
+			<object name="c_convex_11" collision_type="convex" padding="-2.5"/>
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_str_prop_construction_debris_b" enabled="true" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_str_prop_construction_debris_b_lod0" enabled="true"  />
+		<object name="s_s_str_prop_construction_debris_b" 	 enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

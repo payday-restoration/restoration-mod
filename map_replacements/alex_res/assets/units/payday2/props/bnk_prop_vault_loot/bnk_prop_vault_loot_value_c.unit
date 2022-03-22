@@ -1,0 +1,22 @@
+<unit type="bnk" slot="1" >
+    <object file="units/payday2/props/bnk_prop_vault_loot/bnk_prop_vault_loot_value_c" />
+	<network sync="spawn" />
+    <extensions>
+        <extension class="ScriptUnitData" name="unit_data" />
+		<extension name="damage" class="UnitDamage" />
+		
+		<extension name="base" class="SmallLootBase">
+			<var name="small_loot" value="vault_loot_ring" />
+		</extension>
+
+		<extension name="interaction" class="SmallLootInteractionExt">
+			<var name="tweak_data" value="safe_loot_pickup" />
+			<var name="_interact_object" value="interaction"/>
+			<var name="_ray_object_names" type="table" >
+				<!-- <var value="a_ray_object_1"/> -->
+				<!-- <var value="a_ray_object_2"/> -->
+			</var>
+		</extension>
+		
+    </extensions>
+</unit>

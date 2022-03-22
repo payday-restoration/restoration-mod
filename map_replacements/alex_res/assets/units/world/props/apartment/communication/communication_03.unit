@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="apa" slot="1">
+  <object file="units/world/props/apartment/communication/communication_03" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+  </extensions>
+</unit>

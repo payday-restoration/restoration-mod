@@ -1,0 +1,41 @@
+<materials version="3">
+	<material name="shadow_caster" render_template="generic" version="2"/>
+	<material name="mat_mossystone_blend" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_terrain_custom_rockgrass_df"/>
+		<diffuse_layer0_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossy_01_df"/>
+		<diffuse_layer1_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossystone_01_mask_df"/>
+		<normal_layer0_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossy_01_nm"/>
+		<bump_normal_texture file="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_terrain_custom_rockgrass_nm"/>
+	</material>
+	<material name="mat_mossyleaf_blend" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossyleafs_01_df"/>
+		<diffuse_layer0_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossy_01_df"/>
+		<diffuse_layer1_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossyleafs_01_mask_df"/>
+		<normal_layer0_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossyleafs_01_nm"/>
+		<bump_normal_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossy_01_nm"/>
+	</material>
+	<material name="mat_gravel_blend" render_template="generic:BLEND_DIFFUSE:BLEND_MASK_SEPERATE:BLEND_NORMAL:BLEND_SMOOTH:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT:VERTEX_COLOR" version="2">
+		<diffuse_texture file="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_gravel_xy_df"/>
+		<diffuse_layer0_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossy_01_df"/>
+		<diffuse_layer1_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossyleafs_01_mask_df"/>
+		<normal_layer0_texture file="units/payday2/nature/pnau/pnau_terrain/pnau_terrain_mossy_01_nm"/>
+		<bump_normal_texture file="units/payday2/nature/pnau/pnau_terrain_custom_turfwar/pnau_gravel_xy_nm"/>
+	</material>
+	<material version="2" decal_material="concrete" render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:NORMALMAP:RL_CORE_ENVIRONMENT" name="mat_str_marking_01">
+		<diffuse_texture file="units/payday2/architecture/str/str_ext_marking_02_df"/>
+		<bump_normal_texture file="units/payday2/architecture/str/str_ext_marking_02_nm"/>
+		<variable value="0.053000003099442" type="scalar" name="alpha_ref"/>
+	</material>
+	<material name="mat_road" version="2" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_CORE_ENVIRONMENT">
+		<diffuse_texture file="units/payday2/architecture/str/str_03_df"/>
+		<bump_normal_texture file="units/payday2/architecture/str/str_03_nm"/>
+	</material>
+	<material render_template="generic:ALPHA_MASKED:DIFFUSE_TEXTURE:EXTERNAL_ALPHA_REF:RL_CORE_ENVIRONMENT" version="2" name="mat_bdrop_forest">
+		<diffuse_texture file="units/payday2/nature/pnau/pnau_terrain_custom_alex/pnau_bdrop_alex_forest_df"/>
+		<variable value="0.010000000707805" type="scalar" name="alpha_ref"/>
+	</material>
+	<material name="mat_cinderblock" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP:RL_ENVIRONMENT" version="2">
+		<diffuse_texture file="units/payday2/architecture/ind/ind_ext_01_cinderblock_a_df"/>
+		<bump_normal_texture file="units/payday2/architecture/ind/ind_ext_01_cinderblock_a_nm"/>
+	</material>
+</materials>

@@ -1,0 +1,9 @@
+<materials version="3">
+    <material render_template="generic:DIFFUSE_TEXTURE:DOUBLE_SIDED:NORMALMAP:VEGETATION_BENDING" name="mat_tape" version="2">
+        <diffuse_texture file="units/pd2_dlc_bph/props/bph_prop_dangertape/mat_dangertape_df"/>
+        <variable type="scalar" name="speed" value="6.9960003322922"/>
+        <variable type="vector3" name="detail_settings" value="0.4990000128746 0.2790000140667 0"/>
+        <variable type="vector3" name="branch_settings" value="6 0.094999998807907 0"/>
+        <bump_normal_texture file="units/pd2_dlc_bph/props/bph_prop_dangertape/mat_dangertape_nm"/>
+    </material>
+</materials>

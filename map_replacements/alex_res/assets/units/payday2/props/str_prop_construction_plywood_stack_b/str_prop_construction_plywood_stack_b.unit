@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+	<object file="units/payday2/props/str_prop_construction_plywood_stack_b/str_prop_construction_plywood_stack_b" />
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+	</extensions>
+</unit>

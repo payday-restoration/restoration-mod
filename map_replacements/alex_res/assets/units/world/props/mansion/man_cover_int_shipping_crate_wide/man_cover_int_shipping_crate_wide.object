@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/world/props/mansion/man_cover_int_shipping_crate_wide/man_cover_int_shipping_crate_wide" orientation_object="rp_man_cover_int_shipping_crate_wide" />
+	<bodies>
+	<body name="static_body" enabled="true" template="static">
+		<object name="rp_man_cover_int_shipping_crate_wide" />
+			<object name="c_box" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+  
+	<decal_surfaces static="true" default_material="wood">
+		<decal_mesh name="dm_wood" enabled="true" material="wood"/>
+	</decal_surfaces>
+  
+	<graphics>
+		<lod_object name="lod_crate_wide">
+	        <object enabled="true" name="g_g" >
+			  	<material materials="crate_wide" max_distance="1000"/>
+	        	<material materials="crate_wide_lod_1" max_distance="1800"/>
+	        	<material materials="crate_wide_lod_2"/>
+			</object>
+		</lod_object>	
+		<object name="s_s" enabled="true" shadow_caster="true"/>
+	</graphics>
+</dynamic_object>

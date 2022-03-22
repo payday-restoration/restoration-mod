@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<dynamic_object>
+  <diesel materials="units/world/props/mansion/man_cover_int_shipping_box_pallet/man_cover_int_shipping_box_pallet" orientation_object="rp_man_cover_int_shipping_box_pallet" />
+  <bodies>
+    <body name="static_body" enabled="true" template="static">
+      <object name="rp_man_cover_int_shipping_box_pallet"/>
+      <object name="c_box_01" collision_type="box"/>
+      <object name="c_box_02" collision_type="box"/>
+      <object name="c_box_03" collision_type="box"/>
+      <object name="c_box_04" collision_type="box"/>
+      <object name="c_box_05" collision_type="box"/>
+      <object name="c_box_06" collision_type="box"/>
+      <object name="c_box_07" collision_type="box"/>
+      <object name="c_box_08" collision_type="box"/>
+      <object name="c_box_09" collision_type="box"/>
+      <object name="c_box_010" collision_type="box"/>
+      <object name="c_box_011" collision_type="box"/>
+      <object name="c_box_012" collision_type="box"/>
+      <object name="c_box_013" collision_type="box"/>
+    </body>
+  </bodies>
+  
+  <decal_surfaces static="true" default_material="wood">
+    <decal_mesh name="dm_wood"  material="wood"  enabled="true" />
+    <decal_mesh name="dm_metal" material="metal" enabled="true" />
+  </decal_surfaces>
+  
+  <graphics>
+    <lod_object name="lod_box_pallet">
+      <object name="g_g_lod0" enabled="true" max_distance="2000" />
+      <object name="g_g_lod1" enabled="true" />
+    </lod_object>
+    <object name="s_s" enabled="true" shadow_caster="true"  instance_struct="world_tm" />
+  </graphics>
+</dynamic_object>

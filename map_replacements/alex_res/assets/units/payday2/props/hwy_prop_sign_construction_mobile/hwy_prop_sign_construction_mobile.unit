@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<unit type="str" slot="1">
+    <object file="units/payday2/props/hwy_prop_sign_construction_mobile/hwy_prop_sign_construction_mobile" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+	<extension name="damage" class="UnitDamage" />
+  </extensions>
+</unit>

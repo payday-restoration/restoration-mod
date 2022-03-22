@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/str_prop_construction_fence_b_1m/str_prop_construction_fence_b_1m" orientation_object="rp_str_prop_construction_fence_b_1m" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_str_prop_construction_fence_b_1m" />
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_concrete" enabled="true" material="concrete" />
+		<decal_mesh name="dm_cloth" enabled="true" material="cloth" />
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_str_prop_construction_fence_alpha" enabled="true"  />
+		<object name="g_str_prop_construction_fence_frame" enabled="true"  />
+		<object name="g_str_prop_construction_fence_b_green" enabled="true"  />
+		<object name="s_s_pipe" enabled="true" shadow_caster="true" />
+		<object name="s_s_cloth" enabled="true" shadow_caster="true" />
+	</graphics>
+</dynamic_object>

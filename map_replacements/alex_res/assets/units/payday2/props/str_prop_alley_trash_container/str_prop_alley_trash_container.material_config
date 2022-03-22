@@ -1,0 +1,18 @@
+<materials version="3">    
+	<material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" decal_material="sheet_metal" version="2" name="mtr_trash_container">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df"/>
+        <bump_normal_texture file="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm"/>
+    </material>
+	<material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" decal_material="sheet_metal" version="2" name="mtr_trash_container_lod_1">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" mip="3"/>
+        <bump_normal_texture file="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" mip="3"/>
+    </material>
+	<material render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" decal_material="sheet_metal" version="2" name="mtr_trash_container_lod_2">
+        <variable value="0" type="scalar" name="specular_power"/>
+        <diffuse_texture file="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_df" mip="5"/>
+        <bump_normal_texture file="units/payday2/props/str_prop_alley_trash_container/str_prop_alley_trash_container_nm" mip="5"/>
+    </material>
+	<material name="shadow_caster" render_template="shadow_caster_only" version="2"/>
+</materials>

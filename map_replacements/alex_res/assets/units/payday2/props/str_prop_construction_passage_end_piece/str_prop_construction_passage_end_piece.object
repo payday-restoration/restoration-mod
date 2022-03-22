@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/str_prop_construction_passage_end_piece/str_prop_construction_passage_end_piece" orientation_object="rp_str_prop_construction_passage_end_piece" />
+	<bodies>
+		<body name="body_static" enabled="true" template="static">
+			<object name="rp_str_prop_construction_passage_end_piece" />
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+			<object name="c_box_02" collision_type="box" padding="-2.5"/>
+			<object name="c_box_03" collision_type="box" padding="-2.5"/>
+		</body>
+	</bodies>
+	<decal_surfaces default_material="wood">
+		<decal_mesh name="dm_str_prop_passage_end_piece" enabled="true" material="wood" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_str_prop_passage_end_piece" enabled="true"  />
+		<object name="s_s" shadow_caster="true" enabled="true"  />
+	</graphics>
+</dynamic_object>

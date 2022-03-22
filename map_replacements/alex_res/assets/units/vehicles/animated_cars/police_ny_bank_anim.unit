@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<unit type="storm" slot="1">
+  <object file="units/vehicles/animated_cars/police_ny_bank_anim" />
+    <network sync="spawn"/>
+  <dependencies>
+	<depends_on effect="effects/particles/bullet_hit/misc/misc_tire" />
+    <depends_on effect="effects/particles/window/vehicle_window" />
+    <depends_on bnk="soundbanks/effects" />
+	<depends_on effect="effects/particles/environment/cop_car_lights" />
+  </dependencies>
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="damage" class="UnitDamage" />
+  </extensions>
+  <sounds>
+  	<soundsource name="police_siren" source="a_body" />
+  </sounds>
+</unit>

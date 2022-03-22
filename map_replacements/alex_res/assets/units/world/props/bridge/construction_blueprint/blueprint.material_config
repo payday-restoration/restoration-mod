@@ -1,0 +1,7 @@
+<materials version="3">
+    <material name="blueprint" render_template="generic:DIFFUSE_TEXTURE" version="2">
+        <diffuse_texture file="units/world/props/bridge/construction_blueprint/construction_blueprint_df" />
+    </material>
+    <material name="lambert1" render_template="generic" version="2">
+    </material>
+</materials>

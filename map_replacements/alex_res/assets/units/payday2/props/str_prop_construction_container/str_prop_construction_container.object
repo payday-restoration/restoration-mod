@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/payday2/props/str_prop_construction_container/str_prop_construction_container" orientation_object="rp_str_prop_construction_container" />
+	<bodies>
+		<body name="static_body" enabled="true" template="static">
+			<object name="rp_str_prop_construction_container" />
+			<object name="c_box_01" collision_type="box" />
+		</body>
+	</bodies>
+	<decal_surfaces default_material="metal">
+		<decal_mesh name="dm_concrete" enabled="true" material="concrete" />
+		<decal_mesh name="dm_metal" enabled="true" material="metal" />
+	</decal_surfaces>
+	<graphics>
+		<object name="g_str_prop_construction_container_lod2" enabled="false"/>
+		<object name="g_str_prop_construction_container_lod1" enabled="false"/>
+		<object name="g_str_prop_construction_container_lod0" enabled="true" shadow_caster="false" />
+		<object name="s_s" 									  enabled="true" shadow_caster="true" />
+		<object name="g_mull" enabled="true"/>
+	</graphics>
+</dynamic_object>

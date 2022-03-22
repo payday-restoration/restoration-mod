@@ -1,0 +1,18 @@
+<dynamic_object>
+	<diesel materials="units/payday2/equipment/gen_interactable_sec_safe_2x1_titan/gen_interactable_sec_safe_2x1_titan" orientation_object="rp_dest_sec_safe_2x05_door_titan" />
+	
+	<bodies>
+	 	<body name="static_body" enabled="true" template="small_prop" pushed_by_mover="false" ang_damping="0.9" collision_class="disabled">
+			<object name="rp_dest_sec_safe_2x05_door_titan" />
+			<object name="c_door" collision_type="convex" mass="20" padding="-3"/>
+		</body>
+	</bodies>
+
+	<decal_surfaces default_material="steel">
+	</decal_surfaces>
+
+	<graphics>
+		<object name="g_door" 		enabled="true" />
+	</graphics>
+	
+</dynamic_object>

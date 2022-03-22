@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<dynamic_object>
+	<diesel materials="units/payday2/architecture/ind/ind_v2" orientation_object="rp_ind_ext_dock_beam_big" />
+	<bodies>
+        <body name="static_body" template="static" enabled="true" >
+            <object name="rp_ind_ext_dock_beam_big"/>
+			<object name="c_box_01" collision_type="box" padding="-2.5"/>
+        </body>
+    </bodies>
+	
+	<decal_surfaces default_material="metal">
+        <decal_mesh enabled="true" name="dm_metal" material="sheet_metal" />
+    </decal_surfaces>
+
+    <graphics>
+        <object enabled="true" name="g_g" />
+		<object enabled="true" name="s_s" shadow_caster="true"/>
+
+
+    </graphics>
+</dynamic_object> 

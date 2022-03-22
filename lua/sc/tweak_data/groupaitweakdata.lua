@@ -339,6 +339,15 @@ function GroupAITweakData:_init_chatter_data()
 		group_min = 0,
 		queue = "a05"
 	}	
+	--Placeholder, replace with new voice set
+	self.enemy_chatter.asu_command = {
+		radius = 700,
+		max_nr = 10,
+		duration = {2, 4},
+		interval = {15, 15},
+		group_min = 0,
+		queue = "prm"
+	}	
 	self.enemy_chatter.deathguard = {
 		radius = 700,
 		max_nr = 10,
@@ -12305,11 +12314,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		Cap_winters = {
 			"shield",
-			"charge"
+			"provide_coverfire",
+			"provide_support",
 		},	
 		Cap_winters_minion = {
 			"shield",
-			"charge"
+			"provide_coverfire",
+			"provide_support",
 		},	
 		Cap_winters_minion_sniper = {
 			--"harass",	
@@ -14489,7 +14500,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--New Winters
 	if difficulty_index <= 5 then
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {6, 6},
+			amount = {3, 3},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -14502,8 +14513,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 5,
-					amount_max = 5,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				}					
@@ -14511,7 +14522,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}	
 	elseif difficulty_index == 6 or difficulty_index == 7 then
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {8, 8},
+			amount = {5, 5},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -14524,8 +14535,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 7,
-					amount_max = 7,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				}				
@@ -14533,7 +14544,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}				
 	else
 		self.enemy_spawn_groups.Cap_Winters = {
-			amount = {10, 10},
+			amount = {7, 7},
 			spawn = {
 				{
 					unit = "Phalanx_vip_new",
@@ -14546,8 +14557,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				{
 					unit = "Phalanx_minion_new",
 					freq = 1,
-					amount_min = 7,
-					amount_max = 7,
+					amount_min = 4,
+					amount_max = 4,
 					tactics = self._tactics.Cap_winters_minion,
 					rank = 2
 				},
@@ -17381,9 +17392,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 
 	if difficulty_index <= 2 then
 		self.besiege.assault.force = {
-			10,
-			11,
-			12
+			12,
+			13,
+			14
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17405,9 +17416,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 3 then
 		self.besiege.assault.force = {
-			10,
-			11,
-			12
+			12,
+			13,
+			14
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17429,9 +17440,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.force = {
-			12,
 			13,
-			14
+			14,
+			15
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17453,9 +17464,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 5 then
 		self.besiege.assault.force = {
-			12,
 			13,
-			14
+			14,
+			15
 		}
 		self.besiege.assault.force_pool = {
 			75,
@@ -17525,9 +17536,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	else
 		self.besiege.assault.force = {
+			15,
 			16,
-			17,
-			18
+			17
 		}
 		self.besiege.assault.force_pool = {
 			105,
@@ -18065,13 +18076,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.besiege.reenforce.groups = {
 			CS_defend_a = {
 				1,
-				0.5,
-				0.4
+				0.75,
+				0.5
 			},
 			CS_defend_b = {
 				0,
-				0.5,
-				0.6
+				0.25,
+				0.5
 			}
 		}
 	elseif difficulty_index == 3 then

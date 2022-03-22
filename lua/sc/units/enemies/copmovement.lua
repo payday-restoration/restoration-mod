@@ -182,7 +182,7 @@ function CopMovement:post_init()
 
 	self:_post_init()
 	self._omnia_cooldown = 0
-	self._aoe_heal_cooldown = 0 --should not be used anymore
+	self._asu_cooldown = 0
 	self._aoe_blackout_cooldown = 0		
 	
 	if self._tweak_data.do_autumn_blackout then 
@@ -283,6 +283,12 @@ function CopMovement:_upd_actions(t)
 			self:do_omnia(self)		
 		end
 	end
+	
+	if self._tweak_data.do_asu then
+		if not self._unit:character_damage():dead() then			
+			self:do_asu(self)		
+		end
+	end	
 end
 
 function CopMovement:do_omnia(self)
@@ -359,6 +365,50 @@ function CopMovement:do_omnia(self)
 		end
 	else
 		restoration.log_shit("SC: UNIT NOT FOUND WTF")
+	end
+end
+
+function CopMovement:do_asu(self)
+	local t = TimerManager:main():time()
+	
+	if self._asu_cooldown > t then
+		return
+	else
+		self._asu_cooldown = t + 1
+	end
+	if self and self._unit then
+		if not self._unit:character_damage():dead() then
+			local cops_to_buff = tweak_data.character:enemy_list()
+			local buff_range = tweak_data.asu_buff_radius or 800
+			local asu_vo = "asu_command"
+						
+			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), buff_range, managers.slot:get_mask("enemies"))
+			if enemies then
+				for _,enemy in ipairs(enemies) do
+					local enemy_tweak_data = tweak_data.character[enemy:base()._tweak_table]
+					local enemy_found = false
+					for __,enemy_type in ipairs(cops_to_buff) do
+						if not enemy_tweak_data.no_asu then
+							if enemy:base()._tweak_table == enemy_type then
+								enemy_found = true
+							end
+						end
+					end
+					if enemy_found then
+						if enemy:base():get_total_buff("base_damage") > 0 then
+							return
+						end
+						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)									
+						if enemy:contour() then
+							enemy:contour():add("medic_buff", false)
+						end		
+						enemy:base():add_buff("base_damage", 10 * 0.01)
+					end
+				end
+			end
+		end
+	else
+		return
 	end
 end
 	
@@ -466,60 +516,6 @@ function CopMovement:do_autumn_blackout(self)	--no longer used
 				self._ext_brain:set_objective(override_objective)
 			end
 		end
-	end
-end
-
-function CopMovement:do_summers_heal(self)
-	local t = TimerManager:main():time()
-	if self._aoe_heal_cooldown > t then
-		return
-	else
-		self._aoe_heal_cooldown = t + 0.4
-	end
-	if self and self._unit then
-		if self._unit:base()._tweak_table == "medic_summers" and not self._unit:character_damage():dead() then
-			local cops_to_heal = {
-				"taser_summers",
-				"boom_summers",
-				"summers"
-			}
-			local enemies = World:find_units_quick(self._unit, "sphere", self._unit:position(), tweak_data.medic.doc_radius * 1, managers.slot:get_mask("enemies"))
-			if enemies then
-				restoration.log_shit("SC: FOUND ENEMIES")
-				for _,enemy in ipairs(enemies) do
-					local found_dat_shit = false
-					for __,enemy_type in ipairs(cops_to_heal) do
-						restoration.log_shit("SC: CHECKING " .. enemy_type .. " VS " .. enemy:base()._tweak_table)
-						if enemy:base()._tweak_table == enemy_type then
-							restoration.log_shit("SC: ENEMY TO HEAL FOUND " .. enemy_type)
-							found_dat_shit = true
-						end
-					end
-					if found_dat_shit then
-						local health_left = enemy:character_damage()._health
-						restoration.log_shit("SC: health_left: " .. tostring(health_left))
-						local max_health = enemy:character_damage()._HEALTH_INIT * 1
-						restoration.log_shit("SC: max_health: " .. tostring(max_health))
-						if health_left < max_health then
-							local amount_to_heal = math.ceil(((max_health - health_left) / 20))
-							restoration.log_shit("SC: HEALING FOR " .. amount_to_heal)
-							if self._unit:contour() then
-								self._unit:contour():add("medic_show", false)
-								self._unit:contour():flash("medic_show", 0.2)
-								managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, "heal_chatter")
-							end								
-							if enemy:contour() then
-								enemy:contour():add("medic_heal", true)
-								enemy:contour():flash("medic_heal", 0.2)
-							end		
-							enemy:character_damage():_apply_damage_to_health((amount_to_heal * -1))							
-						end
-					end
-				end
-			end
-		end
-	else
-		restoration.log_shit("SC: UNIT NOT FOUND WTF")
 	end
 end
 

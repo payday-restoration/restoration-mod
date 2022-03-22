@@ -546,6 +546,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man.move_speed = presets.move_speed.lightning
 	self.meme_man.surrender = nil
 	self.meme_man.is_special = true
+	self.meme_man.no_asu = true
 	self.meme_man.unintimidateable = true
 	self.meme_man.heal_cooldown = 45
 	self.meme_man.rescue_hostages = false
@@ -560,6 +561,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.use_animation_on_fire_damage = false
 	self.meme_man_shield.surrender = nil
 	self.meme_man_shield.is_special = true
+	self.meme_man_shield.no_asu = true
 	self.meme_man_shield.unintimidateable = true
 	self.meme_man_shield.allowed_poses = {crouch = true}
 	self.meme_man_shield.always_face_enemy = true
@@ -639,6 +641,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.bot_priority_shout = "f47x_any"
 	self.medic.priority_shout_max_dis = 3000
 	self.medic.is_special = true
+	self.medic.no_asu = true
 	self.medic.no_omnia_heal = true
 	table.insert(self._enemy_list, "medic")
 	
@@ -672,6 +675,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.use_radio = "dsp_radio_russian"
 	self.medic_summers.chatter = presets.enemy_chatter.omnia_lpf
 	self.medic_summers.is_special = true
+	self.medic_summers.no_asu = true
 	self.medic_summers.do_omnia = true
 	self.medic_summers.follower = true
 	self.medic_summers.no_omnia_heal = true
@@ -743,6 +747,7 @@ function CharacterTweakData:_init_omnia_lpf(presets)
 	self.omnia_lpf.spawn_sound_event_2 = "cloaker_spawn"
 	self.omnia_lpf.die_sound_event_2 = "mga_death_scream"		
 	self.omnia_lpf.is_special = true
+	self.omnia_lpf.no_asu = true
 	table.insert(self._enemy_list, "omnia_lpf")
 end
 
@@ -1019,6 +1024,7 @@ function CharacterTweakData:_init_heavy_swat(presets)
 		self.heavy_swat_sniper.custom_voicework = "tsniper_real"
 	end		
 	self.heavy_swat_sniper.is_special = true
+	self.heavy_swat_sniper.no_asu = true
 	self.heavy_swat_sniper.heal_cooldown = 5
 	table.insert(self._enemy_list, "heavy_swat_sniper")
 	
@@ -1352,6 +1358,7 @@ function CharacterTweakData:_init_sniper(presets)
 	self.sniper.static_dodge_preset = true
 	self.sniper.crouch_move = nil
 	self.sniper.is_special = true
+	self.sniper.no_asu = true
 	self.sniper.die_sound_event = "mga_death_scream"
 	self.sniper.spawn_sound_event = "mga_deploy_snipers"
 	self.sniper.do_not_drop_ammo = true
@@ -1379,6 +1386,7 @@ function CharacterTweakData:_init_gangster(presets)
 	self.gangster.weapon_voice = "3"
 	self.gangster.experience.cable_tie = "tie_swat"
 	self.gangster.no_omnia_heal = true
+	self.gangster.no_asu = true	
 	self.gangster.use_radio = nil		
 	if job == "nightclub" or job == "short2_stage1" or job == "jolly" or job == "spa" then
 		self.gangster.speech_prefix_p1 = "rt"
@@ -1398,6 +1406,7 @@ function CharacterTweakData:_init_gangster(presets)
 		self.gangster.rescue_hostages = true
 		self.gangster.use_radio = self._default_chatter	
 		self.gangster.no_omnia_heal = false		
+		self.gangster.no_asu = false	
 	else
 		self.gangster.speech_prefix_p1 = "lt"
 		self.gangster.speech_prefix_p2 = nil
@@ -1546,6 +1555,7 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.must_headshot = true
 	self.triad_boss.static_dodge_preset = true
 	self.triad_boss.is_special = true
+	self.triad_boss.no_asu = true
 	self.triad_boss.always_drop = true	
 	self.triad_boss.no_omnia_heal = true	
 	self.triad_boss.can_reload_while_moving_tmp = true
@@ -1679,6 +1689,7 @@ function CharacterTweakData:_init_mobster_boss(presets)
 	self.mobster_boss.must_headshot = true
 	self.mobster_boss.static_dodge_preset = true
 	self.mobster_boss.is_special = true
+	self.mobster_boss.no_asu = true
 	self.mobster_boss.always_drop = true
 	self.mobster_boss.heal_cooldown = 45
 	self.mobster_boss.die_sound_event = "l1n_burndeath"
@@ -1732,6 +1743,7 @@ function CharacterTweakData:_init_biker_boss(presets)
 	self.biker_boss.static_dodge_preset = true
 	self.biker_boss.always_drop = true
 	self.biker_boss.is_special = true
+	self.biker_boss.no_asu = true
 	self.biker_boss.heal_cooldown = 45
 	self.biker_boss.die_sound_event = "fl1n_x02a_any_3p"
 	self.biker_boss.no_omnia_heal = true
@@ -1749,6 +1761,7 @@ function CharacterTweakData:_init_hector_boss(presets)
 	self.hector_boss.custom_shout = true
 	self.hector_boss.priority_shout_max_dis = 3000
 	self.hector_boss.is_special = true
+	self.hector_boss.no_asu = true
 	self.hector_boss.always_drop = true
 	self.hector_boss.heal_cooldown = 45
 	self.hector_boss.die_sound_event = "l1n_burndeath"
@@ -1820,6 +1833,7 @@ function CharacterTweakData:_init_chavez_boss(presets)
 	self.chavez_boss.must_headshot = true
 	self.chavez_boss.static_dodge_preset = true
 	self.chavez_boss.is_special = true
+	self.chavez_boss.no_asu = true
 	self.chavez_boss.always_drop = true
 	self.chavez_boss.heal_cooldown = 45
 	self.chavez_boss.die_sound_event = "l1n_burndeath"
@@ -1936,6 +1950,7 @@ function CharacterTweakData:_init_drug_lord_boss(presets)
 	self.drug_lord_boss.must_headshot = true
 	self.drug_lord_boss.static_dodge_preset = true
 	self.drug_lord_boss.is_special = true
+	self.drug_lord_boss.no_asu = true
 	self.drug_lord_boss.always_drop = true
 	self.drug_lord_boss.heal_cooldown = 45
 	self.drug_lord_boss.no_omnia_heal = true
@@ -1986,6 +2001,7 @@ function CharacterTweakData:_init_drug_lord_boss_stealth(presets)
 	self.drug_lord_boss_stealth.always_drop = true
 	self.drug_lord_boss_stealth.heal_cooldown = 2
 	self.drug_lord_boss_stealth.no_omnia_heal = true
+	self.drug_lord_boss_stealth.no_asu = true	
 	self.drug_lord_boss_stealth.die_sound_event = "l2n_x01a_any_3p"
 	table.insert(self._enemy_list, "drug_lord_boss_stealth")
 end
@@ -2076,6 +2092,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.static_dodge_preset = true
 	self.tank.no_recoil = true
 	self.tank.is_special = true
+	self.tank.no_asu = true
 	self.tank.heal_cooldown = 45
 	table.insert(self._enemy_list, "tank")
 	
@@ -2090,6 +2107,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_medic.headshot_dmg_mul = 18.75
 	self.tank_medic.HEALTH_INIT = 400
 	self.tank_medic.is_special = true
+	self.tank_medic.no_asu = true
 	self.tank_medic.no_omnia_heal = true
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
@@ -2417,6 +2435,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.die_sound_event = "mga_death_scream"
 	self.tank_titan.damage.explosion_damage_mul = 1.25
 	self.tank_titan.is_special = true
+	self.tank_titan.no_asu = true
 	self.tank_titan.heal_cooldown = 45
 	table.insert(self._enemy_list, "tank_titan")
 	
@@ -2748,6 +2767,7 @@ function CharacterTweakData:_init_tank_biker(presets)
 	self.tank_biker.use_radio = nil
 	self.tank_biker.can_throw_frag = true
 	self.tank_biker.no_omnia_heal = true
+	self.tank_biker.no_asu = true	
 end
 
 function CharacterTweakData:_init_spooc(presets)
@@ -2802,6 +2822,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc.can_be_tased = true
 	self.spooc.static_dodge_preset = true
 	self.spooc.is_special = true
+	self.spooc.no_asu = true
 	self.spooc.kick_damage = 8.0 --Amount of damage dealt when cloakers hick players.
 	self.spooc.spawn_sound_event_2 = "clk_c01x_plu"
 	self.spooc.spooc_sound_events = {
@@ -2849,6 +2870,7 @@ function CharacterTweakData:_init_spooc(presets)
 	self.spooc_titan.spawn_sound_event = "cloaker_presence_loop"
 	self.spooc_titan.die_sound_event = "cloaker_presence_stop"
 	self.spooc_titan.is_special = true
+	self.spooc_titan.no_asu = true
 	if is_reaper or is_federales then
 		self.spooc_titan.custom_voicework = nil
 	else
@@ -2907,6 +2929,7 @@ function CharacterTweakData:_init_shadow_spooc(presets)
 	self.shadow_spooc.can_be_tased = true
 	self.shadow_spooc.static_dodge_preset = true
 	self.shadow_spooc.is_special = true
+	self.shadow_spooc.no_asu = true
 	self.shadow_spooc.heal_cooldown = 22.5
 	table.insert(self._enemy_list, "shadow_spooc")
 end	
@@ -2979,6 +3002,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.immune_to_knock_down = true
 	self.shield.static_dodge_preset = true
 	self.shield.is_special = true
+	self.shield.no_asu = true
 	self.shield.heal_cooldown = 10
 	table.insert(self._enemy_list, "shield")
 end
@@ -3035,6 +3059,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.spawn_sound_event = "shield_identification"
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
+	self.phalanx_minion.no_asu = true
 	self.phalanx_minion.speech_prefix_p1 = "fug"
 	self.phalanx_minion.speech_prefix_p2 = nil
 	self.phalanx_minion.speech_prefix_count = 1	
@@ -3079,6 +3104,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.suppression = nil
 	self.phalanx_vip.ecm_hurts = {}
 	self.phalanx_vip.is_special = true
+	self.phalanx_vip.no_asu = true
 	self.phalanx_vip.custom_voicework = nil
 	self.phalanx_vip.speech_prefix_p1 = "cpw"
 	self.phalanx_vip.speech_prefix_p2 = nil
@@ -3155,6 +3181,7 @@ function CharacterTweakData:_init_spring(presets)
 	}
 	self.spring.static_dodge_preset = true
 	self.spring.is_special = true
+	self.spring.no_asu = true
 	self.spring.no_omnia_heal = true
 	table.insert(self._enemy_list, "spring")
 	
@@ -3245,6 +3272,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.steal_loot = nil
 	self.summers.is_special = true
+	self.summers.no_asu = true
 	self.summers.leader = {max_nr_followers = 3}
 	self.summers.no_omnia_heal = true
 	table.insert(self._enemy_list, "summers")
@@ -3286,7 +3314,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.no_damage_mission = true
 	self.autumn.spawn_sound_event_2 = "cloaker_spawn"
 	self.autumn.can_deploy_tear_gas = true
-	self.autumn.chance_use_gas = 0.3
+	self.autumn.chance_use_gas = 0.2
 	self.autumn.cuff_on_melee = true
 	--self.autumn.spawn_sound_event_2 = "cpa_a02_01"--uncomment for testing purposes
 	self.autumn.spooc_attack_use_smoke_chance = 1
@@ -3310,6 +3338,7 @@ function CharacterTweakData:_init_autumn(presets)
 	self.autumn.use_radio = nil
 	self.autumn.static_dodge_preset = true
 	self.autumn.is_special = true
+	self.autumn.no_asu = true
 	self.autumn.dodge_with_grenade = {
 		smoke = {duration = {
 			12,
@@ -3401,6 +3430,7 @@ function CharacterTweakData:_init_taser(presets)
 		}
 	}
 	self.taser.is_special = true
+	self.taser.no_asu = true
 	self.taser.heal_cooldown = 15
 	table.insert(self._enemy_list, "taser")
 	
@@ -3434,6 +3464,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.spawn_sound_event = nil
 	self.taser_summers.custom_voicework = nil
 	self.taser_summers.is_special = true	
+	self.taser_summers.no_asu = true
 	self.taser_summers.follower = true
 	self.taser_summers.tase_on_melee = true
 	self.taser_summers.slowing_bullets = {
@@ -3466,6 +3497,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.dodge = presets.dodge.elite
 	self.taser_titan.static_dodge_preset = true
 	self.taser_titan.is_special = true	
+	self.taser_titan.no_asu = true
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 22.5
 	self.taser_titan.tase_on_melee = true
@@ -3552,7 +3584,8 @@ function CharacterTweakData:_init_boom(presets)
 	else
 		self.boom.custom_voicework = "grenadier"
 	end
-	self.boom.is_special = true		
+	self.boom.is_special = true	
+	self.boom.no_asu = true	
 	self.boom.heal_cooldown = 15
 	table.insert(self._enemy_list, "boom")
 	
@@ -21223,6 +21256,10 @@ function CharacterTweakData:_set_easy()
 	self.spring.can_throw_frag = false
 	self.headless_hatman.can_throw_molotov = false
 	
+	--No Gas on Autumn on lower difficulties
+	self.autumn.can_deploy_tear_gas = false
+	self.autumn.chance_use_gas = 0		
+	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 	self.weekend.dodge = self.presets.dodge.athletic_very_hard
@@ -21419,6 +21456,10 @@ function CharacterTweakData:_set_normal()
 	self.spring.can_throw_frag = false		
 	self.headless_hatman.can_throw_molotov = false
 	
+	--No Gas on Autumn on lower difficulties
+	self.autumn.can_deploy_tear_gas = false
+	self.autumn.chance_use_gas = 0		
+	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
 	self.weekend.melee_weapon_dmg_multiplier = 1
@@ -21609,6 +21650,10 @@ function CharacterTweakData:_set_hard()
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false		
 	self.headless_hatman.can_throw_molotov = false
+	
+	--No Gas on Autumn on lower difficulties
+	self.autumn.can_deploy_tear_gas = false
+	self.autumn.chance_use_gas = 0		
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.normal)
@@ -21810,6 +21855,10 @@ function CharacterTweakData:_set_overkill()
 	--No Frags on Spring on lower difficulties
 	self.spring.can_throw_frag = false	
 	self.headless_hatman.can_throw_molotov = false
+	
+	--No Gas on Autumn on lower difficulties
+	self.autumn.can_deploy_tear_gas = false
+	self.autumn.chance_use_gas = 0	
 	
 	--Weekend Rifles/Shotguns
 	self.weekend.weapon = deep_clone(self.presets.weapon.good)

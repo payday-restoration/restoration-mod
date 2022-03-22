@@ -1,0 +1,15 @@
+{
+	"skm_friend_name":"Holdout: Scarface Mansion"
+	"3":"Fuckin' With the Best"
+	"3_desc":"Having started from wave 1, beat wave 3 of Holdout on the Scarface Mansion heist."
+	"3_obj":"Having started from wave 1, beat wave 3 of Holdout on the Scarface Mansion heist."
+	"5":"The Hostage is Yours"
+	"5_desc":"Having started from wave 1, beat wave 5 of Holdout on the Scarface Mansion heist."
+	"5_obj":"Having started from wave 1, beat wave 5 of Holdout on the Scarface Mansion heist."
+	"7":"You Think You Kill Me With Bullets?"
+	"7_desc":"Having started from wave 1, beat wave 7 of Holdout on the Scarface Mansion heist."
+	"7_obj":"Having started from wave 1, beat wave 7 of Holdout on the Scarface Mansion heist."
+	"9":"Look at 'em Run!"
+	"9_desc":"Having started from wave 1, beat wave 9 of Holdout on the Scarface Mansion heist."
+	"9_obj":"Having started from wave 1, beat wave 9 of Holdout on the Scarface Mansion heist."
+}

@@ -1,0 +1,39 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data continent="art_bo_cheng" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_lobby_lamp_wall/sfm_prop_lobby_lamp_wall" name_id="sfm_prop_lobby_lamp_wall_011" position="-1513 -173 334.987" rotation="0 0 0.707107 -0.707107" unit_id="500057"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1676 -2291 450" _prev_rot="0 0 0.707107 -0.707107" continent="art_bo_cheng" disable_on_ai_graph="true" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="state_interaction_disabled" name="units/pd2_dlc_friend/architecture/int/sfm_int_door_white" name_id="sfm_int_door_white_001" position="-1676 -2291 450" rotation="0 0 0.707107 -0.707107" unit_id="500153"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1508.75 -3241 381.288" _prev_rot="0 0 -0.707107 -0.707107" continent="art_bo_cheng" disable_shadows="true" local_pos="-299 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_curtains/sfm_prop_bedroom_curtains_opaque_short" name_id="sfm_prop_bedroom_curtains_opaque_short_031" position="-1508.75 -3241 442.288" rotation="0 0 -0.707107 -0.707107" unit_id="500002"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1508.75 -2942 381.288" _prev_rot="0 0 -0.707107 -0.707107" continent="art_bo_cheng" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_curtains/sfm_prop_bedroom_curtains_opaque_short" name_id="sfm_prop_bedroom_curtains_opaque_short_033" position="-1508.75 -2942 442.288" rotation="0 0 -0.707107 -0.707107" unit_id="500003"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1508.75 -2745 381.288" _prev_rot="0 0 -0.707107 -0.707107" continent="art_bo_cheng" disable_shadows="true" local_pos="197 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_curtains/sfm_prop_bedroom_curtains_opaque_short" name_id="sfm_prop_bedroom_curtains_opaque_short_036" position="-1508.75 -2745 442.288" rotation="0 0 -0.707107 -0.707107" unit_id="500004"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1508.75 -2745 449.288" _prev_rot="0 0 -0.707107 -0.707107" continent="art_bo_cheng" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_curtains/sfm_prop_bedroom_curtains_opaque_short" name_id="sfm_prop_bedroom_curtains_opaque_short_037" position="-1508.75 -2446 449.288" rotation="0 0 -0.707107 -0.707107" unit_id="500005"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1952 -4185 450" _prev_rot="0 0 -0.707107 -0.707107" continent="art_bo_cheng" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_curtains/sfm_prop_bedroom_curtains_opaque_short" name_id="sfm_prop_bedroom_curtains_opaque_short_046" position="-1952 -4185 450" rotation="0 0 -0.707107 -0.707107" unit_id="500000"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1952 -4185 450" _prev_rot="0 0 -0.707107 -0.707107" continent="art_bo_cheng" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_curtains/sfm_prop_bedroom_curtains_opaque_short" name_id="sfm_prop_bedroom_curtains_opaque_short_047" position="-1952 -4066 450" rotation="0 0 -0.707107 -0.707107" unit_id="500007"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1952 -4066 450" _prev_rot="0 0 -0.707107 -0.707107" continent="art_bo_cheng" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_curtains/sfm_prop_bedroom_curtains_opaque_short" name_id="sfm_prop_bedroom_curtains_opaque_short_048" position="-1952 -3945 450" rotation="0 0 -0.707107 -0.707107" unit_id="500008"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1952 -4185 450" _prev_rot="0 0 -0.707107 -0.707107" continent="art_bo_cheng" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_curtains/sfm_prop_bedroom_curtains_opaque_short" name_id="sfm_prop_bedroom_curtains_opaque_short_049" position="-1952 -4304 450" rotation="0 0 -0.707107 -0.707107" unit_id="500009"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

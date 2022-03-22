@@ -1,0 +1,27 @@
+<table>
+	<world path="world" script_data_type="generic_xml"/>
+	<continents path="continents" script_data_type="custom_xml"/>
+	<mission path="mission" script_data_type="custom_xml"/>
+	<nav_data path="nav_manager_data" script_data_type="generic_xml"/>
+	<world_sounds path="world_sounds" script_data_type="generic_xml"/>
+	<world_cameras path="world_cameras" script_data_type="custom_xml"/>
+	<continent path="collision/collision" script_data_type="custom_xml"/>
+	<mission path="collision/collision" script_data_type="generic_xml"/>
+	<continent path="art_upper_courtyard/art_upper_courtyard" script_data_type="custom_xml"/>
+	<mission path="art_upper_courtyard/art_upper_courtyard" script_data_type="generic_xml"/>
+	<continent path="art_main_yard/art_main_yard" script_data_type="custom_xml"/>
+	<mission path="art_main_yard/art_main_yard" script_data_type="generic_xml"/>
+	<continent path="editor_only/editor_only" script_data_type="custom_xml"/>
+	<mission path="editor_only/editor_only" script_data_type="generic_xml"/>
+	<continent path="art_patio/art_patio" script_data_type="custom_xml"/>
+	<mission path="art_patio/art_patio" script_data_type="generic_xml"/>
+	<continent path="art_lower_courtyard/art_lower_courtyard" script_data_type="custom_xml"/>
+	<mission path="art_lower_courtyard/art_lower_courtyard" script_data_type="generic_xml"/>
+	<continent path="world/world" script_data_type="custom_xml"/>
+	<mission path="world/world" script_data_type="generic_xml"/>
+	<continent path="art_bo_cheng/art_bo_cheng" script_data_type="custom_xml"/>
+	<mission path="art_bo_cheng/art_bo_cheng" script_data_type="generic_xml"/>
+	<continent path="art_house_exterior/art_house_exterior" script_data_type="custom_xml"/>
+	<mission path="art_house_exterior/art_house_exterior" script_data_type="generic_xml"/>
+	<cover_data path="cover_data" script_data_type="custom_xml"/>
+</table>

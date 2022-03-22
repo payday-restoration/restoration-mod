@@ -1,0 +1,1187 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data _prev_pos="2194.54 -3471.35 -150" _prev_rot="0 0 0.492423 -0.870356" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_084" position="2194.54 -3471.35 -150" rotation="0 0 0.492424 -0.870356" unit_id="600011"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_074" position="2159 -3595 -150" rotation="0 0 0.382683 -0.92388" unit_id="600012"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2148 -3650 -150" _prev_rot="0 0 -0.382683 -0.92388" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_075" position="2148 -3650 -150" rotation="0 0 -0.382683 -0.92388" unit_id="600013"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_076" position="2214 -3629 -150" rotation="0 0 -0.75471 -0.656059" unit_id="600014"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_019" position="2200 -3785 -150" rotation="0 0 -0.382684 -0.923879" unit_id="600015"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2210.22 -3895.04 -150" _prev_rot="0 0 0.777146 -0.629321" continent="art_upper_courtyard" disable_on_ai_graph="false" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_020" position="2210.22 -3895.04 -150" rotation="0 0 0.777146 -0.62932" unit_id="600016"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_077" position="2169 -3878 -150" rotation="0 0 -0.707107 -0.707107" unit_id="600017"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_078" position="2202 -3906 -150" rotation="0 0 0.848048 -0.52992" unit_id="600018"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_bush_palm_a" name_id="lxa_veg_bush_palm_a_021" position="2176 -4051 -150" rotation="0 0 -0.707107 -0.707107" unit_id="600019"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2218 -4098 -136.737" _prev_rot="0 0 -0.814116 -0.580703" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_080" position="2218 -4098 -136.737" rotation="0 0 -0.814115 -0.580703" unit_id="600022"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_large" name_id="sfm_veg_bush_bambopalm_large_025" position="2173 -4174 -150" rotation="0 0 -0.707107 -0.707107" unit_id="600023"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_085" position="2196 -4302 -150" rotation="0 0 -0.62932 -0.777146" unit_id="600026"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_081" position="2174 -4416 -168" rotation="0 0 0.224951 -0.97437" unit_id="600029"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2202 -4460 -150" _prev_rot="0 0 0.97437 -0.224951" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_086" position="2202 -4460 -150" rotation="0 0 0.97437 -0.224951" unit_id="600030"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-2024.66 -6088.06 -250.371" _prev_rot="0.0139688 0.0939865 0.248761 -0.963893" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_049" position="-2024.66 -6088.06 -250.371" rotation="0.0139688 0.0939865 0.248761 -0.963893" unit_id="600031"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_030" position="2154 -4572 -150" rotation="0 0 0.965926 -0.258819" unit_id="600033"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_031" position="2206 -4599 -150" rotation="0 0 -0.258819 -0.965926" unit_id="600034"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2664 -4369 -150.012" _prev_rot="-0 0 -0 -1" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_040" position="2664 -4369 -150.012" rotation="-0 0 -0 -1" unit_id="600035"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_032" position="2151 -4653 -150" rotation="0 0 0.130526 -0.991445" unit_id="600037"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_023" position="-1373 -6049 -112.46" rotation="0 0 0.92388 0.382683" unit_id="600038"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2724.75 -4360.5 -150.012" _prev_rot="0 0 0.92388 0.382683" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_041" position="2724.75 -4360.5 -150.012" rotation="0 0 0.92388 0.382683" unit_id="600039"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_c" name_id="lxa_veg_tree_palm_c_026" position="-816.925 -5886.08 -130.981" rotation="0 0 0.92388 0.382683" unit_id="600040"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_082" position="2793.08 -4383.24 -150.012" rotation="0 0 -0.382684 -0.923879" unit_id="600041"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_047" position="2147 -4746 -150" rotation="0 0 -0.382683 -0.92388" unit_id="600042"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_048" position="2209 -4720 -150" rotation="0 0 1 4.76837e-007" unit_id="600043"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_03" name_id="sfm_ext_rock_03_015" position="-1491.79 -6190.81 -263.768" rotation="0.00362627 0.0278381 0.840598 -0.540931" unit_id="600044"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_large" name_id="sfm_veg_bush_bambopalm_large_026" position="2169.12 -4817.8 -198" rotation="0 0 0.642787 -0.766045" unit_id="600048"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_083" position="3035 -4365 -150.012" rotation="0 0 1 -3.8743e-007" unit_id="600050"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_023" position="-1845.5 -6463.25 -376.815" rotation="-0.0468079 0.00241082 -0.774503 -0.630831" unit_id="600052"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_093" position="2711 -4720 -150.012" rotation="0 0 0.92388 0.382683" unit_id="600053"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_021" position="2522 -4810 -150.012" rotation="0 0 0.92388 0.382683" unit_id="600054"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_large" name_id="sfm_veg_bush_windmillpalm_large_015" position="-1165 -6326 -115.928" rotation="0 0 -0.382684 -0.923879" unit_id="600055"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_062" position="-1795.1 -6554.96 -191.55" rotation="0 0 -0.833886 -0.551937" unit_id="600056"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2912 -4708.2 -150.012" _prev_rot="0 0 0.923879 -0.382684" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_087" position="2912 -4708.2 -150.012" rotation="0 0 0.92388 -0.382683" unit_id="600057"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_094" position="-549 -6208 -104.844" rotation="0 0 0.707107 -0.707107" unit_id="600058"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_084" position="2485 -4984 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600059"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_022" position="2643 -4919 -150.012" rotation="0 0 0.793353 -0.608762" unit_id="600060"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_024" position="2796 -4856 -181.012" rotation="0 0 0.92388 0.382683" unit_id="600061"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_085" position="2572 -5018 -150.012" rotation="0 0 -0.382684 -0.923879" unit_id="600064"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_088" position="-758.732 -6360.97 -101.767" rotation="0.0522085 0.0696609 0.996197 0.00365065" unit_id="600065"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_086" position="2521 -5048 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600066"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_089" position="2935 -4879 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600068"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2719 -4989 -156" _prev_rot="0 0 0 -1" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_106" position="2719 -4989 -156" rotation="0 0 0 -1" unit_id="600073"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_063" position="-1282 -6640 -153.216" rotation="-0.0253152 -0.0240232 0.41444 -0.909407" unit_id="600075"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_025" position="2867 -4999 -150.012" rotation="0 0 0 -1" unit_id="600076"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_064" position="-244.051 -6295.19 -77.7098" rotation="0.00373183 -0.000725394 0.147972 -0.988984" unit_id="600077"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_091" position="2508 -5185 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600078"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_065" position="-809.051 -6535.19 -77.7099" rotation="0.000757932 -0.00372536 0.970329 -0.241759" unit_id="600079"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_canarypalm/sfm_veg_tree_canarypalm_large" name_id="sfm_veg_tree_canarypalm_large_053" position="-267 -6376 -145.446" rotation="0 0 -0.707107 -0.707106" unit_id="600081"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_040" position="2680 -5178 -150.012" rotation="0 0 0 -1" unit_id="600082"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_008" position="-480 -6529 -112" rotation="0 0 0.707106 -0.707107" unit_id="600083"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_041" position="2925 -5169 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600084"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_050" position="-1669.81 -6929.54 -472.466" rotation="0.00663019 0.315732 0.921711 -0.225207" unit_id="600085"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_024" position="-373 -6529 -112" rotation="0 0 0.707106 -0.707107" unit_id="600086"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_043" position="-1196 -6835 -154.653" rotation="0 0 0.92388 0.382683" unit_id="600088"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_087" position="2823 -5269 -150.012" rotation="0 0 0.923879 -0.382684" unit_id="600089"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_093" position="-1303 -6913 -153.66" rotation="0 0 0 -1" unit_id="600090"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_097" position="-1077 -6870 -97.9698" rotation="0 0 0.92388 0.382683" unit_id="600091"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_025" position="-643 -6724 -105" rotation="0 0 0.92388 0.382683" unit_id="600092"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_098" position="-1147 -6978 -123.186" rotation="0 0 0 -1" unit_id="600093"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_026" position="211 -6501 -83.6312" rotation="0 0 -9.83477e-007 -1" unit_id="600094"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_c" name_id="lxa_veg_tree_palm_c_027" position="563.403 -6371.72 -239" rotation="0 0 0.382683 -0.92388" unit_id="600095"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_094" position="-968 -6982 -81.4841" rotation="0 0 1 -1.19209e-007" unit_id="600096"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_099" position="-807 -6949 -61.7672" rotation="0 0 0.382683 -0.92388" unit_id="600098"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_044" position="-1071 -7063 -117.775" rotation="0 0 0 -1" unit_id="600099"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_100" position="-149 -6776 -44.8214" rotation="0.0246777 0.0493253 0.706676 -0.705385" unit_id="600100"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_101" position="-406 -6886 -22.3724" rotation="0 0 0.923879 -0.382684" unit_id="600101"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_045" position="-641 -7026 -46.7245" rotation="0 0 -0.382683 -0.92388" unit_id="600103"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_166" position="5319.29 -4437.98 -377" rotation="0 0 -0.406737 -0.913545" unit_id="600104"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_medium" name_id="sfm_veg_bush_windmillpalm_medium_034" position="4281 -4995 -214.117" rotation="0 0 -0.707107 -0.707107" unit_id="600105"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_066" position="-378 -7002 -20.8307" rotation="0 0 0.979925 -0.199368" unit_id="600106"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_04" name_id="sfm_prop_small_rock_04_093" position="2628.28 -5785.29 -152" rotation="0 0 0.725374 -0.688355" unit_id="600107"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_01" name_id="sfm_prop_small_rock_01_120" position="2590.81 -5811.45 -155" rotation="0.0770363 -0.00613298 -0.203743 -0.97597" unit_id="600110"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_05" name_id="sfm_prop_small_rock_05_097" position="2556.86 -5828.42 -158" rotation="-0.372129 -0.345185 0.227275 -0.831092" unit_id="600111"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_03" name_id="sfm_prop_small_rock_03_092" position="2672.95 -5781.04 -162" rotation="-0.10104 -0.391354 0.628009 -0.665009" unit_id="600141"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_large" name_id="sfm_veg_bush_windmillpalm_large_016" position="123 -6837 -60.6033" rotation="0 0 0.707107 -0.707107" unit_id="600144"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_046" position="-619 -7115 -42.8639" rotation="0 0 0.92388 0.382683" unit_id="600145"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_067" position="439 -6719 -89.9688" rotation="-0.0607322 -0.0407794 0.997274 -0.00970301" unit_id="600146"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_canarypalm/sfm_veg_tree_canarypalm_large" name_id="sfm_veg_tree_canarypalm_large_041" position="1363.9 -6366.77 -167" rotation="0 0 -6.55651e-007 -1" unit_id="600147"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_04" name_id="sfm_prop_small_rock_04_094" position="2568.89 -5872.97 -149" rotation="0 0 0.913546 0.406736" unit_id="600148"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_01" name_id="sfm_prop_small_rock_01_121" position="2706.77 -5819.93 -154" rotation="0 0 0.97437 -0.224952" unit_id="600149"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_c" name_id="lxa_veg_tree_palm_c_028" position="2639.47 -5856.58 -150" rotation="0 0 5.06639e-007 -1" unit_id="600150"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_086" position="4188 -5151 -225.297" rotation="0 0 -2.68221e-007 -1" unit_id="600151"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_large/lxa_vegetation_bush_large_c" name_id="lxa_vegetation_bush_large_c_064" position="5145.89 -4677.63 -353" rotation="0 0 0.5373 -0.843391" unit_id="600152"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_05" name_id="sfm_prop_small_rock_05_098" position="2591.51 -5912.56 -153" rotation="-0.507217 0.0190528 0.748379 -0.426963" unit_id="600153"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_04" name_id="sfm_prop_small_rock_04_095" position="2727.28 -5861.65 -150" rotation="0 0 0.913546 0.406736" unit_id="600154"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_167" position="5564 -4501 -367.837" rotation="0 0 -2.98023e-007 -1" unit_id="600156"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_01" name_id="sfm_prop_small_rock_01_122" position="2619.09 -5933.07 -152" rotation="0.0238144 -0.0735193 0.823709 -0.561721" unit_id="600157"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_168" position="4549.78 -5028.04 -300" rotation="0 0 0.843391 -0.5373" unit_id="600158"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_103" position="-357 -7143 -19.2154" rotation="0 0 -0.707107 -0.707107" unit_id="600159"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_03" name_id="sfm_prop_small_rock_03_093" position="2715.14 -5906.32 -163" rotation="-0.40023 -0.0564161 0.854717 0.325717" unit_id="600160"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_02" name_id="sfm_prop_small_rock_02_081" position="2667.47 -5940.68 -154" rotation="0.0238144 -0.0735193 0.823709 -0.561721" unit_id="600161"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_169" position="4378.48 -5197.18 -226.313" rotation="0 0 0.382683 -0.92388" unit_id="600162"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_068" position="273 -7003 -63.9688" rotation="0.0512507 0.0221214 0.882284 -0.467395" unit_id="600164"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_047" position="-269 -7225 0.257241" rotation="0 0 -0.707107 -0.707107" unit_id="600165"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_087" position="5406.87 -4703.67 -473" rotation="0 0 -0.382684 -0.923879" unit_id="600166"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_170" position="4741 -5063 -300" rotation="0 0 0.976296 0.216439" unit_id="600167"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_171" position="5074.28 -4939.13 -296" rotation="0 0 -0.406737 -0.913545" unit_id="600168"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_172" position="4206.78 -5380.07 -218.357" rotation="0 0 0.998135 0.0610484" unit_id="600169"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_medium" name_id="sfm_veg_bush_windmillpalm_medium_035" position="5792 -4571 -427.621" rotation="0 0 -0.707107 -0.707107" unit_id="600170"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_088" position="6048 -4445 -565.783" rotation="0 0 0.382683 -0.92388" unit_id="600171"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_048" position="134 -7184 -11.9293" rotation="0 0 0 -1" unit_id="600173"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_096" position="24 -7240 2.67053" rotation="0 0 -0.382683 -0.92388" unit_id="600174"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_049" position="217 -7181 -20.9474" rotation="0 0 -0.707107 -0.707107" unit_id="600175"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_089" position="4722.59 -5213.41 -322" rotation="0 0 0.382683 -0.92388" unit_id="600176"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_173" position="5668.65 -4760.54 -446.837" rotation="0 0 0.92388 0.382683" unit_id="600177"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_106" position="411 -7167 -42.3778" rotation="0 0 0 -1" unit_id="600178"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_02" name_id="sfm_prop_small_rock_02_082" position="3685.31 -5795.26 -150" rotation="0.0735193 0.0238144 -0.561721 -0.823709" unit_id="600179"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_c" name_id="lxa_veg_tree_palm_c_029" position="2244.9 -6409.9 -351" rotation="0 0 -0.382684 -0.923879" unit_id="600180"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_03" name_id="sfm_prop_small_rock_03_094" position="3639.64 -5827.61 -156" rotation="0.056416 -0.40023 0.325717 -0.854717" unit_id="600181"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_01" name_id="sfm_prop_small_rock_01_123" position="3733.68 -5802.86 -150" rotation="0.0735193 0.0238144 -0.561721 -0.823709" unit_id="600182"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_107" position="696 -7098 -75.4402" rotation="0 0 0 -1" unit_id="600183"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_108" position="841 -7046 -82.4568" rotation="0 0 0.92388 0.382683" unit_id="600184"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_04" name_id="sfm_prop_small_rock_04_096" position="3625.49 -5874.28 -150" rotation="0 0 0.406736 -0.913546" unit_id="600186"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_174" position="4341.55 -5521.55 -334.357" rotation="0 0 0.748956 -0.66262" unit_id="600187"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_05" name_id="sfm_prop_small_rock_05_099" position="3761.26 -5823.37 -147" rotation="-0.0190529 -0.507217 -0.426963 -0.748379" unit_id="600189"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_large/lxa_vegetation_bush_large_c" name_id="lxa_vegetation_bush_large_c_065" position="6327.84 -4517.46 -473.086" rotation="0 0 -0.777146 -0.62932" unit_id="600191"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_c" name_id="lxa_veg_tree_palm_c_030" position="3714 -5867 -150" rotation="0 0 0.92388 -0.382683" unit_id="600193"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_175" position="6009.06 -4722.92 -378.587" rotation="0 0 0.92388 0.382683" unit_id="600195"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_042" position="1351 -6900 -119.836" rotation="0 0 -0.707108 -0.707106" unit_id="600196"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_01" name_id="sfm_prop_small_rock_01_124" position="3644 -5914 -155" rotation="0 0 -0.224951 -0.97437" unit_id="600197"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_04" name_id="sfm_prop_small_rock_04_097" position="3793.89 -5856.97 -148" rotation="0 0 0.406736 -0.913546" unit_id="600198"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_112" position="537 -7273 -46.0742" rotation="0 0 0.707107 -0.707107" unit_id="600199"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_03" name_id="sfm_prop_small_rock_03_095" position="3677.82 -5954.89 -156" rotation="0.391354 -0.10104 -0.665009 -0.628009" unit_id="600200"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_tree_01" name_id="sfm_veg_forest_tree_01_043" position="4480.45 -5567.12 -262.548" rotation="0 0 0.976296 -0.216439" unit_id="600202"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_05" name_id="sfm_prop_small_rock_05_100" position="3795.91 -5907.51 -152" rotation="-0.345185 0.372129 0.831092 0.227275" unit_id="600203"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_01" name_id="sfm_prop_small_rock_01_125" position="3761.97 -5924.49 -155" rotation="-0.006133 -0.0770363 0.97597 -0.203743" unit_id="600204"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_04" name_id="sfm_prop_small_rock_04_098" position="3724.49 -5950.65 -152" rotation="0 0 -0.688355 -0.725374" unit_id="600205"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_043" position="1106 -7106 -109.754" rotation="0 0 0 -1" unit_id="600207"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_176" position="6636 -4518 -515.743" rotation="0 0 -0.707107 -0.707107" unit_id="600208"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_097" position="696 -7319 -61.9031" rotation="0 0 0.350207 -0.936672" unit_id="600209"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_069" position="1713 -6924 -47.6026" rotation="0.100717 -0.0830249 -0.488211 -0.862909" unit_id="600210"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="4315.84 -5763.45 -258.733" _prev_rot="0 0 0.909961 -0.414693" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_large/lxa_vegetation_bush_large_c" name_id="lxa_vegetation_bush_large_c_066" position="4315.84 -5763.45 -258.733" rotation="0 0 0.909961 -0.414693" unit_id="600211"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_049" position="565 -7402 -55.377" rotation="0 0 1 -1.19209e-007" unit_id="600212"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_tree_01" name_id="sfm_veg_forest_tree_01_056" position="6427.72 -4702.54 -410.82" rotation="0 0 0.906308 0.422618" unit_id="600213"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_091" position="6876.5 -4474.29 -538.411" rotation="0 0 -0.777147 -0.62932" unit_id="600214"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_044" position="1408 -7123 -59.6807" rotation="0 0 1 -1.2219e-006" unit_id="600215"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_070" position="951 -7305 -64.7757" rotation="0 0 0.190809 -0.981627" unit_id="600216"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_medium" name_id="sfm_veg_bush_windmillpalm_medium_014" position="1821 -6981 -96.146" rotation="0 0 1 -1.19209e-007" unit_id="600217"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="5354.22 -5339.29 -424.454" _prev_rot="0 0 -0.793354 -0.60876" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_canarypalm/sfm_veg_tree_canarypalm_large" name_id="sfm_veg_tree_canarypalm_large_054" position="5354.22 -5339.29 -424.454" rotation="0 0 -0.793354 -0.60876" unit_id="600218"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_canarypalm/sfm_veg_tree_canarypalm_large" name_id="sfm_veg_tree_canarypalm_large_055" position="3171 -6431 -171.917" rotation="0 0 1 -8.04663e-007" unit_id="600219"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_177" position="6774 -4663 -414.583" rotation="0 0 1 -4.17233e-007" unit_id="600220"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_178" position="7093.56 -4496.73 -464.355" rotation="0 0 0.382683 -0.92388" unit_id="600222"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_051" position="2044 -6962 -123.627" rotation="0.0474062 -0.081997 0.872587 -0.479187" unit_id="600223"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_051" position="1758 -7102 -36.9044" rotation="0 0 0.707107 -0.707107" unit_id="600224"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_medium" name_id="sfm_veg_bush_windmillpalm_medium_018" position="4262 -6001 -217.905" rotation="0 0 1 -1.19209e-007" unit_id="600225"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_114" position="1289 -7336 -51.3509" rotation="0 0 -2.68221e-007 -1" unit_id="600226"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_179" position="4559 -5929 -204.393" rotation="0 0 -2.98023e-007 -1" unit_id="600227"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_098" position="1146 -7450 -74.972" rotation="0 0 0.707107 -0.707107" unit_id="600229"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_099" position="1447 -7360 -37.2307" rotation="0 0 0.707107 -0.707107" unit_id="600230"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_092" position="4454 -6034 -301.048" rotation="0 0 1 -1.19209e-007" unit_id="600231"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_medium" name_id="sfm_veg_bush_windmillpalm_medium_036" position="7340.74 -4558.15 -502.557" rotation="0 0 0.782608 -0.622515" unit_id="600232"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_050" position="1607 -7367 -21.1365" rotation="0 0 0.707107 -0.707107" unit_id="600234"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_109" position="4283.3 -6191.24 -252" rotation="0 0 -0.173649 -0.984808" unit_id="600235"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_093" position="7824 -4421 -496.009" rotation="0 0 0.994522 -0.104529" unit_id="600236"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_07" name_id="sfm_veg_forest_bush_07_051" position="1426 -7553 -38.2627" rotation="0 0 -2.68221e-007 -1" unit_id="600237"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_canarypalm/sfm_veg_tree_canarypalm_large" name_id="sfm_veg_tree_canarypalm_large_044" position="7224 -4750 -675.823" rotation="0 0 0.965926 0.258818" unit_id="600238"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_100" position="1567 -7519 -19.9972" rotation="0 0 0.936672 0.350207" unit_id="600239"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_094" position="4206 -6345 -388.048" rotation="0 0 0.707107 -0.707107" unit_id="600240"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_071" position="1819 -7493 -15.1383" rotation="0 0 0.999391 0.0348993" unit_id="600241"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_052" position="7854 -4610 -466.239" rotation="0 0 0.92388 0.382683" unit_id="600243"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_181" position="7502.6 -4809.59 -465.238" rotation="0 0 0.382683 -0.92388" unit_id="600245"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_072" position="2767 -7168 -132.623" rotation="0 0 0.981627 0.190809" unit_id="600246"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="8133.14 -4487.9 -599.502" _prev_rot="0 0 0.382683 -0.92388" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_182" position="8133.14 -4487.9 -599.502" rotation="0 0 0.382683 -0.92388" unit_id="600249"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_053" position="2305 -7410 -215.666" rotation="0.106974 -0.0172983 0.989188 -0.0988145" unit_id="600250"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="9929.37 -2060.46 -779.847" _prev_rot="0 0 0.374607 -0.927184" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_tree_01" name_id="sfm_veg_forest_tree_01_057" position="9929.37 -2060.46 -757.847" rotation="0 0 0.374607 -0.927184" unit_id="600251"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_183" position="8523 -4461 -537.919" rotation="0 0 -0.382684 -0.923879" unit_id="600252"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_tree_01" name_id="sfm_veg_forest_tree_01_058" position="8213 -4700 -506.341" rotation="0 0 0.939693 -0.34202" unit_id="600253"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_large/lxa_vegetation_bush_large_c" name_id="lxa_vegetation_bush_large_c_067" position="8407.9 -4589.87 -591.302" rotation="0 0 -0.333807 -0.942641" unit_id="600254"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_medium" name_id="sfm_veg_bush_windmillpalm_medium_037" position="8793.49 -4518.09 -505.291" rotation="0 0 0.902585 -0.430511" unit_id="600255"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_184" position="9790 -3970 -626.979" rotation="0 0 0.707106 -0.707107" unit_id="600256"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_095" position="9087 -4410 -560.752" rotation="0 0 0.62932 -0.777146" unit_id="600257"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_veg/lxa_veg_tree_palm_b" name_id="lxa_veg_tree_palm_b_096" position="10080.3 -3942.07 -552.78" rotation="0 0 0.793353 -0.608762" unit_id="600258"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3295 -7576 -220.455" _prev_rot="0.0646529 -0.0238138 -0.265627 -0.961611" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_054" position="3295 -7576 -220.455" rotation="0.0646529 -0.0238138 -0.265627 -0.961611" unit_id="600259"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="10546.8 -3354.96 -724" _prev_rot="0 0 -0.580703 -0.814116" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_055" position="10546.8 -3354.96 -724" rotation="0 0 -0.580703 -0.814116" unit_id="600260"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_medium" name_id="sfm_veg_bush_windmillpalm_medium_038" position="9056.41 -4632.14 -498.13" rotation="0 0 0.333807 -0.942641" unit_id="600261"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_canarypalm/sfm_veg_tree_canarypalm_large" name_id="sfm_veg_tree_canarypalm_large_056" position="8746 -4815 -569.812" rotation="0 0 0.60876 -0.793354" unit_id="600262"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_024" position="3526 -7533 -153.024" rotation="-0.0027938 0.014765 0.835557 -0.549199" unit_id="600263"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_large/lxa_vegetation_bush_large_c" name_id="lxa_vegetation_bush_large_c_068" position="9336.62 -4504.59 -590.186" rotation="0 0 -0.838671 -0.544638" unit_id="600264"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_tree_01" name_id="sfm_veg_forest_tree_01_059" position="9854.31 -4360.78 -562.478" rotation="0 0 0.422618 -0.906308" unit_id="600265"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_185" position="9624.98 -4505.95 -569.849" rotation="0 0 0.92388 0.382683" unit_id="600266"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_tree_01" name_id="sfm_veg_forest_tree_01_060" position="9444.82 -4665.27 -519.205" rotation="0 0 0.414693 -0.909961" unit_id="600267"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_073" position="2772 -11660 -108.639" rotation="0 0 0.190809 -0.981627" unit_id="600272"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_056" position="3338 -11650 -103.667" rotation="0.0595465 0.0491498 0.226552 -0.970934" unit_id="600273"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_074" position="2537 -12046 -75.7186" rotation="0 0 0.99863 -0.052336" unit_id="600274"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_03" name_id="sfm_ext_rock_03_016" position="3361.25 -11975.8 -155.893" rotation="0.0680863 0.003696 0.974663 0.21303" unit_id="600275"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_025" position="2324.89 -12541 -66.2911" rotation="0.085018 -0.0563783 0.826918 -0.552993" unit_id="600276"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_057" position="2743.42 -12581.8 -131.275" rotation="0.0768599 -0.00735276 0.84675 -0.526358" unit_id="600277"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_075" position="2496 -13001 42.7773" rotation="0 0 0.968148 -0.25038" unit_id="600278"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_058" position="3643.41 -12791.4 -184.671" rotation="0.022621 -0.0738226 -0.162254 -0.983724" unit_id="600279"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_017" position="-165 -17810 -277.231" rotation="-0.11405 -0.0229847 0.95559 0.270763" unit_id="600280"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_024" position="-854 -18389 -320.104" rotation="0.0723382 -0.0269939 0.954129 -0.289267" unit_id="600281"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_018" position="327 -18568 -74.2314" rotation="0.0666757 -0.0300021 -0.656961 -0.750371" unit_id="600282"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_03" name_id="sfm_ext_rock_03_011" position="-350 -18809 -149.6" rotation="0.0448862 0.0845271 -0.312409 -0.945114" unit_id="600283"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_025" position="1620 -22599 -103.667" rotation="0.00735157 0.0768599 -0.526358 -0.84675" unit_id="600284"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_026" position="2761.42 -22293.6 -184.671" rotation="0.068196 -0.036205 -0.810329 -0.580867" unit_id="600285"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_03" name_id="sfm_ext_rock_03_012" position="1945.77 -22575.7 -155.893" rotation="0.0455308 0.0507577 0.839826 -0.538557" unit_id="600286"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_026" position="1630 -23165 -108.639" rotation="0 0 -0.559193 -0.829038" unit_id="600287"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_027" position="2551.81 -23193.6 -131.275" rotation="0.0595465 0.0491498 0.226552 -0.970934" unit_id="600288"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_027" position="2016 -23400 -75.7188" rotation="0 0 0.669131 -0.743145" unit_id="600289"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_028" position="2971 -23441 42.7771" rotation="0 0 0.507538 -0.861629" unit_id="600290"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_019" position="2511 -23612.1 -66.2913" rotation="0.0999823 0.0202513 0.193694 -0.975744" unit_id="600291"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="4291.07 -3302.18 -32.415" _prev_rot="-0 0 -0 -1" continent="art_upper_courtyard" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_004" position="4287.07 -3302.18 -32.415" projection_light="lo_omni" rotation="-0 0 -0 -1" unit_id="600292">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.384314 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="1" spot_angle_start="1"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_008" position="2431.74 -3257.62 -150" projection_light="lo_omni" rotation="0 0 -0.75471 -0.656059" unit_id="600117">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_010" position="3916 -2108 -150" projection_light="lo_omni" rotation="0 0 -0.0610485 -0.998135" unit_id="600025">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_011" position="3259 -2108 -150" projection_light="lo_omni" rotation="0 0 0.748956 -0.66262" unit_id="600032">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDccbbe27c7fdc0fd9@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_013" position="2433 -2108 -150" projection_light="lo_omni" rotation="0 0 0.207912 -0.978148" unit_id="600113">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_015" position="3911.05 -4132.55 -150" projection_light="lo_omni" rotation="0 0 -0.0610486 -0.998135" unit_id="600115">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="2433 -4140 -150" _prev_rot="0 0 0.207912 -0.978148" continent="art_upper_courtyard" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_017" position="2433 -4140 -150" projection_light="lo_omni" rotation="0 0 0.207912 -0.978148" unit_id="600118">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.384314 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="1" spot_angle_start="1"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_018" position="3017 -4917 -148" projection_light="lo_omni" rotation="0 0 -0.052336 -0.99863" unit_id="600119">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDccbbe27c7fdc0fd9@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_019" position="3333 -4917 -148" projection_light="lo_omni" rotation="0 0 0.748956 -0.66262" unit_id="600120">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_020" position="3017 -1450 -148" projection_light="lo_omni" rotation="0 0 -0.052336 -0.99863" unit_id="600121">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDccbbe27c7fdc0fd9@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_021" position="3333 -1450 -148" projection_light="lo_omni" rotation="0 0 0.748956 -0.66262" unit_id="600122">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDccbbe27c7fdc0fd9@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_023" position="3858 -1578 -150" projection_light="lo_omni" rotation="0 0 -0.438371 -0.898794" unit_id="600134">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_024" position="3853 -965 -150" projection_light="lo_omni" rotation="0 0 -0.438371 -0.898794" unit_id="600135">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_025" position="2484 -965 -150" projection_light="lo_omni" rotation="0 0 -0.438371 -0.898794" unit_id="600129">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_026" position="2485 -1586 -150" projection_light="lo_omni" rotation="0 0 -0.748956 -0.66262" unit_id="600136">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_027" position="2214 -2500 -150" projection_light="lo_omni" rotation="0 0 -0.656059 -0.75471" unit_id="600125">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_028" position="2214 -3726 -150" projection_light="lo_omni" rotation="0 0 -0.656059 -0.75471" unit_id="600126">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDccbbe27c7fdc0fd9@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_029" position="3852 -5060 -148" projection_light="lo_omni" rotation="0 0 0.748956 -0.66262" unit_id="600020">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDccbbe27c7fdc0fd9@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_030" position="2484 -5098 -148" projection_light="lo_omni" rotation="0 0 0.515038 -0.857167" unit_id="600021">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" hide_on_projection_light="true" name="units/pd2_dlc_friend/props/sfm_prop_ext_lamp_wall_medium/sfm_prop_ext_lamp_wall_medium" name_id="sfm_prop_ext_lamp_wall_medium_001" position="2209 -6158 13" rotation="0 0 0.707107 -0.707107" unit_id="600130"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" hide_on_projection_light="true" name="units/pd2_dlc_friend/props/sfm_prop_ext_lamp_wall_medium/sfm_prop_ext_lamp_wall_medium" name_id="sfm_prop_ext_lamp_wall_medium_043" position="983 -6158 13" rotation="0 0 0.707107 -0.707107" unit_id="600137"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" hide_on_projection_light="true" name="units/pd2_dlc_friend/props/sfm_prop_ext_lamp_wall_medium/sfm_prop_ext_lamp_wall_medium" name_id="sfm_prop_ext_lamp_wall_medium_057" position="-126 -6158 13" rotation="0 0 0.861629 -0.507538" unit_id="600296"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3259.95 -3017.83 -110" _prev_rot="0 0 -0.422618 -0.906308" continent="art_upper_courtyard" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_033" position="3259.95 -3017.83 -110" projection_light="lo_omni" rotation="0 0 -0.422618 -0.906308" unit_id="600304">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.384314 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="1" spot_angle_start="1"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_034" position="3085.4 -3227.41 -110" projection_light="lo_omni" rotation="0 0 -0.406736 -0.913546" unit_id="600303">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@ID8c34304230e70372@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_028" position="1699.56 -11406.9 -225.207" rotation="0.148626 -0.00471056 0.460431 -0.875152" unit_id="600271"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_03" name_id="sfm_ext_rock_03_013" position="2133.94 -10889.6 -168.051" rotation="0.0667058 -0.013479 0.889326 0.452181" unit_id="600293"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_020" position="1898.76 -10207.4 -130.607" rotation="-0.00211582 0.0306415 0.997571 0.0625239" unit_id="600305"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_021" position="1125.04 -10714.7 -173.996" rotation="0.0217619 -0.0851071 0.872678 -0.480329" unit_id="600306"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_022" position="462 -13924 -182" rotation="0.0564104 0.150833 -0.295844 -0.941564" unit_id="600307"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_02" name_id="sfm_ext_rock_02_029" position="293.19 -13541.2 -346.544" rotation="0.0517911 0.125685 -0.108242 -0.984787" unit_id="600308"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_01" name_id="sfm_ext_rock_01_026" position="1960.72 -13541.9 -74.2541" rotation="0.00677822 -0.0130317 0.99917 -0.0379976" unit_id="600112"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/vehicles/boat_backdrop/boat_backdrop_03" name_id="boat_backdrop_03_001" position="-19676.9 -21488.6 -297" rotation="0 0 0.748956 -0.66262" unit_id="600310"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-5595 -5385 0" _prev_rot="0 0 0.608761 -0.793353" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/vehicles/boat_backdrop/boat_backdrop_04" name_id="boat_backdrop_04_001" position="-5595 -5385 -311" rotation="0 0 0.608761 -0.793353" unit_id="600311"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/vehicles/boat_backdrop/boat_backdrop_05" name_id="boat_backdrop_05_001" position="-12648.8 11188.9 -297" rotation="0 0 -0.551937 -0.833886" unit_id="600312"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/vehicles/boat_backdrop/boat_backdrop_04" name_id="boat_backdrop_04_002" position="-24525.9 -6745.27 -297" rotation="0 0 0.97437 0.224951" unit_id="600314"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/vehicles/boat_backdrop/boat_backdrop_05" name_id="boat_backdrop_05_002" position="-7223 -15619.2 -300" rotation="0 0 0.622514 -0.782608" unit_id="600313"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="5000 -10000 0" _prev_rot="0 0 0 -1" continent="art_upper_courtyard" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/nature/terrain/sfm_backdrop_02" name_id="sfm_backdrop_02_001" position="5000 -10000 0" rotation="0 0 0 -1" unit_id="600316"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_076" position="-4922.81 4781.7 -362.993" rotation="0.0351061 0.0270838 0.594503 -0.80287" unit_id="600317"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_077" position="-4974.81 4565.7 -348.993" rotation="-0.0115876 0.0427983 -0.514249 -0.856494" unit_id="600318"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_078" position="-5243.81 4320.7 -384.993" rotation="0.611724 0.00186947 -0.0813562 -0.786875" unit_id="600319"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_248" position="-5529 4365 -374.466" rotation="0 0 0 -1" unit_id="600131"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_249" position="-5229.73 4438.83 -346.991" rotation="-0.0867938 0.0958337 -0.38228 -0.914956" unit_id="600132"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_250" position="-5022.14 4627.9 -324.076" rotation="0.0644466 -0.0266946 0.921629 0.381751" unit_id="600320"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_252" position="-5070.45 5032.52 -339.693" rotation="-0.00250896 0.0958129 0.959194 0.266008" unit_id="600322"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_253" position="-5809 4461 -356.053" rotation="0 0 0.95882 0.284015" unit_id="600323"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_255" position="-6151.28 4666.38 -361.38" rotation="0.0214792 0.0379644 0.491955 -0.869527" unit_id="600325"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/nature/rocks/sfm_ext_rock_04" name_id="sfm_ext_rock_04_079" position="-5856.7 4616.17 -348.835" rotation="0.00143174 0.0443161 -0.241364 -0.969421" unit_id="600326"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_256" position="-5632.67 4700.29 -336.422" rotation="0 0 0.492424 -0.870356" unit_id="600327"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_260" position="-6025.73 5053.85 -341.422" rotation="0 0 0.902585 0.430511" unit_id="600331"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_261" position="-5927.15 4806.64 -333.422" rotation="0 0 0.99863 0.0523359" unit_id="600332"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_holly/mansion/vegetation/lxa_vegetation_bush_small/lxa_vegetation_bush_small_c" name_id="lxa_vegetation_bush_small_c_262" position="-6284.91 4960.76 -370.335" rotation="0 0 -0.71325 -0.700909" unit_id="600333"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-6000 -2000 0" _prev_rot="0 0 0 -1" continent="art_upper_courtyard" disable_collision="false" disable_on_ai_graph="false" disable_shadows="true" local_pos="-6000 -2000 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/nature/terrain/sfm_water" name_id="sfm_water_001" position="-6000 -2000 0" rotation="0 0 0 -1" unit_id="600201"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3007 -5778 -150" _prev_rot="0 0 -0.707107 -0.707107" continent="art_upper_courtyard" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/props/sfm_prop_ext_pillar/sfm_prop_ext_pillar" name_id="sfm_prop_ext_pillar_016" position="3007 -5778 -150" rotation="0 0 -0.707107 -0.707107" unit_id="600334"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3335 -5778 -150" _prev_rot="0 0 -0.707107 -0.707107" continent="art_upper_courtyard" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/props/sfm_prop_ext_pillar/sfm_prop_ext_pillar" name_id="sfm_prop_ext_pillar_017" position="3335 -5778 -150" rotation="0 0 -0.707107 -0.707107" unit_id="600335"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_033" position="2580.22 -4367.93 -150" rotation="0 0 -0.258819 -0.965926" unit_id="600036"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_045" position="2873.56 -4375.24 -154" rotation="0 0 -0.258819 -0.965926" unit_id="600045"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_088" position="2961 -4374 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600046"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_089" position="2490.61 -4357.19 -150.012" rotation="0 0 0.948324 0.317304" unit_id="600047"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" name="units/pd2_dlc_friend/architecture/ext/sfm_ext_hedges_6m" name_id="sfm_ext_hedges_6m_001" position="2742 -4470 -148.033" rotation="0 0 0 -1" unit_id="600049"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3563 -4470 -148.033" _prev_rot="0 0 0 -1" continent="art_upper_courtyard" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/architecture/ext/sfm_ext_hedges_6m" name_id="sfm_ext_hedges_6m_002" position="3563 -4470 -148.033" rotation="-0 0 -0 -1" unit_id="600338"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/architecture/ext/sfm_ext_hedges_6m" name_id="sfm_ext_hedges_6m_003" position="3563 -1766 -148.033" rotation="0 0 0 -1" unit_id="600339"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2742 -1766 -148.033" _prev_rot="0 0 0 -1" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/architecture/ext/sfm_ext_hedges_6m" name_id="sfm_ext_hedges_6m_004" position="2742 -1766 -148.033" rotation="-0 0 -0 -1" unit_id="600340"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_042" position="3547.75 -4360.5 -150.012" rotation="0 0 0.92388 0.382683" unit_id="600000"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_046" position="3696.56 -4375.24 -154" rotation="0 0 -0.258819 -0.965926" unit_id="600001"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_090" position="3616.08 -4383.24 -150.012" rotation="0 0 -0.382684 -0.923879" unit_id="600002"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_091" position="3784 -4374 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600003"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_043" position="3487 -4369 -150.012" rotation="0 0 0 -1" unit_id="600004"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_092" position="3858 -4365 -150.012" rotation="0 0 1 -3.8743e-007" unit_id="600005"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_047" position="3403.22 -4367.93 -150" rotation="0 0 -0.258819 -0.965926" unit_id="600006"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3313.61 -4357.19 -150.012" _prev_rot="0 0 0.948324 0.317304" continent="art_upper_courtyard" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="true" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_093" position="3313.61 -4357.19 -150.012" rotation="0 0 0.948324 0.317304" unit_id="600007"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_103" position="3735 -4708.2 -150.012" rotation="0 0 0.923879 -0.382684" unit_id="600008"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3534 -4720 -150.012" _prev_rot="0 0 0.92388 0.382683" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_118" position="3534 -4720 -150.012" rotation="0 0 0.92388 0.382683" unit_id="600009"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_023" position="3345 -4810 -150.012" rotation="0 0 0.92388 0.382683" unit_id="600010"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_104" position="3758 -4879 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600051"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_026" position="3619 -4856 -181.012" rotation="0 0 0.92388 0.382683" unit_id="600062"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_024" position="3466 -4919 -150.012" rotation="0 0 0.793353 -0.608762" unit_id="600087"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_027" position="3690 -4999 -150.012" rotation="0 0 0 -1" unit_id="600097"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_107" position="3542 -4989 -156" rotation="0 0 0 -1" unit_id="600108"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_094" position="3308 -4984 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600337"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_095" position="3395 -5018 -150.012" rotation="0 0 -0.382684 -0.923879" unit_id="600341"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_096" position="3344 -5048 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600342"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_047" position="3748 -5169 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600344"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_048" position="3503 -5178 -150.012" rotation="0 0 0 -1" unit_id="600345"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_105" position="3331 -5185 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600346"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_097" position="3646 -5269 -150.012" rotation="0 0 0.923879 -0.382684" unit_id="600347"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3478 -1233 -150.012" _prev_rot="0 0 1 -1.19209e-007" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_028" position="3478 -1233 -150.012" rotation="0 0 1 -4.37114e-008" unit_id="600067"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_049" position="3420 -1063 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600348"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_106" position="3410 -1353 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600349"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_098" position="3522 -963 -150.012" rotation="0 0 -0.382684 -0.923879" unit_id="600350"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_107" position="3433 -1523.8 -150.012" rotation="0 0 -0.382684 -0.923879" unit_id="600351"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_108" position="3626 -1243 -156" rotation="0 0 1 -1.19209e-007" unit_id="600352"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_050" position="3665 -1054 -150.012" rotation="0 0 1 -1.19209e-007" unit_id="600353"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_025" position="3702 -1313 -150.012" rotation="0 0 -0.608762 -0.793353" unit_id="600354"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_119" position="3634 -1512 -150.012" rotation="0 0 0.382683 -0.92388" unit_id="600355"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_099" position="3773 -1214 -150.012" rotation="0 0 0.923879 -0.382684" unit_id="600356"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_029" position="3549 -1376 -181.012" rotation="0 0 0.382683 -0.92388" unit_id="600357"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_100" position="3824 -1184 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600358"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3837 -1047 -150.012" _prev_rot="0 0 -0.707107 -0.707107" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_108" position="3837 -1047 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600361"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_101" position="3860 -1248 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600362"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_026" position="3823 -1422 -150.012" rotation="0 0 0.382683 -0.92388" unit_id="600363"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_102" position="3384 -1858 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600364"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_103" position="3310 -1867 -150.012" rotation="0 0 -5.06639e-007 -1" unit_id="600365"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_048" position="3471.44 -1856.76 -154" rotation="0 0 0.965926 -0.258819" unit_id="600366"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_104" position="3551.92 -1848.76 -150.012" rotation="0 0 0.923879 -0.382684" unit_id="600367"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3620.26 -1871.5 -150.012" _prev_rot="0 0 0.382683 -0.92388" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_044" position="3620.26 -1871.5 -150.012" rotation="0 0 0.382683 -0.92388" unit_id="600368"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_045" position="3681 -1863 -150.012" rotation="0 0 1 -1.19209e-007" unit_id="600369"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_049" position="3764.78 -1864.07 -150" rotation="0 0 0.965926 -0.258819" unit_id="600370"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_105" position="3854.39 -1874.81 -150.012" rotation="0 0 0.317304 -0.948324" unit_id="600371"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_030" position="2650 -1233 -150.012" rotation="0 0 1 -1.19209e-007" unit_id="600372"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_051" position="2592 -1063 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600373"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2582 -1353 -150.012" _prev_rot="0 0 0.707107 -0.707107" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_109" position="2582 -1353 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600374"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_106" position="2694 -963 -150.012" rotation="0 0 -0.382684 -0.923879" unit_id="600375"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_110" position="2605 -1523.8 -150.012" rotation="0 0 -0.382684 -0.923879" unit_id="600376"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2798 -1243 -156" _prev_rot="0 0 1 -1.19209e-007" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_110" position="2798 -1243 -156" rotation="0 0 1 -4.37114e-008" unit_id="600377"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_052" position="2837 -1054 -150.012" rotation="0 0 1 -1.19209e-007" unit_id="600378"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_027" position="2874 -1313 -150.012" rotation="0 0 -0.608762 -0.793353" unit_id="600379"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_01" name_id="sfm_veg_forest_bush_01_120" position="2806 -1512 -150.012" rotation="0 0 0.382683 -0.92388" unit_id="600380"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_107" position="2945 -1214 -150.012" rotation="0 0 0.923879 -0.382684" unit_id="600381"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2721 -1376 -181.012" _prev_rot="0 0 0.382683 -0.92388" continent="art_upper_courtyard" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_08" name_id="sfm_veg_forest_bush_08_031" position="2721 -1376 -181.012" rotation="0 0 0.382683 -0.92388" unit_id="600382"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_108" position="2996 -1184 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600383"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_09" name_id="sfm_veg_forest_bush_09_111" position="3009 -1047 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600386"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_109" position="3032 -1248 -150.012" rotation="0 0 -0.707107 -0.707107" unit_id="600387"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_02" name_id="sfm_veg_forest_bush_02_028" position="2995 -1422 -150.012" rotation="0 0 0.382683 -0.92388" unit_id="600388"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_110" position="2556 -1858 -150.012" rotation="0 0 0.707107 -0.707107" unit_id="600389"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_111" position="2482 -1867 -150.012" rotation="0 0 -5.06639e-007 -1" unit_id="600390"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_050" position="2643.44 -1856.76 -154" rotation="0 0 0.965926 -0.258819" unit_id="600391"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_112" position="2723.92 -1848.76 -150.012" rotation="0 0 0.923879 -0.382684" unit_id="600392"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2792.26 -1871.5 -150.012" _prev_rot="0 0 0.382683 -0.92388" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_046" position="2792.26 -1871.5 -150.012" rotation="0 0 0.382683 -0.92388" unit_id="600393"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_04" name_id="sfm_veg_forest_bush_04_052" position="2853 -1863 -150.012" rotation="0 0 1 -1.19209e-007" unit_id="600394"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_051" position="2936.78 -1864.07 -150" rotation="0 0 0.965926 -0.258819" unit_id="600395"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_veg_forest_wall/sfm_veg_forest_bush_06" name_id="sfm_veg_forest_bush_06_113" position="3026.39 -1874.81 -150.012" rotation="0 0 0.317304 -0.948324" unit_id="600396"/>
+		</table>
+		<table>
+			<unit_data continent="art_upper_courtyard" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_windmillpalm/sfm_veg_bush_windmillpalm_small" name_id="sfm_veg_bush_windmillpalm_small_053" position="90 916 -54.5424" rotation="0 0 0.923879 -0.382684" unit_id="600027"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3428.19 -2317.81 -200.977" _prev_rot="0 0 -0.694658 -0.71934" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/payday2/architecture/res_ext_apartment/res_ext_debris" name_id="res_ext_debris_004" position="3649.06 -2325.52 -200.977" rotation="0 0 -0.694658 -0.71934" unit_id="600063"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3458.1 -3611.68 -134.06" _prev_rot="0 0 0.241922 -0.970296" continent="art_upper_courtyard" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="1.48437 1.5869 67.917" local_rot="0 0 -0.00872669 0.999962" mesh_variation="state_interaction_disabled" name="units/pd2_dlc_friend/props/sfm_interactable_shipping_crate_2x1x1m/sfm_interactable_shipping_crate_2x1x1m" name_id="sfm_interactable_shipping_crate_2x1x1m_014" position="3420.54 -3592.3 -134.06" rotation="0 0 0.165048 -0.986286" unit_id="600080"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="2845.3 -3598.58 -107.48" _prev_rot="0.696364 0.122788 -0.696364 0.122788" continent="art_upper_courtyard" disable_on_ai_graph="false" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/vehicles/sfm_vehicle_car_cadillac/sfm_vehicle_cadillac_destroyed" name_id="sfm_vehicle_cadillac_destroyed_001" position="2845.3 -3598.58 -107.48" rotation="0.696364 0.122788 -0.696364 0.122788" unit_id="600102"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="4287.07 -3302.18 -32.415" _prev_rot="0 0 0 -1" continent="art_upper_courtyard" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_005" position="4287.07 -2948.18 -32.415" projection_light="lo_omni" rotation="0 0 0 -1" unit_id="600109">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.384314 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="0" spot_angle_end="1" spot_angle_start="1"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="3085.34 -4143.22 -152.043" _prev_rot="0 0 0.748956 -0.66262" continent="art_upper_courtyard" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="light_on" name="units/pd2_dlc_friend/props/sfm_prop_ext_candles/sfm_prop_ext_candles_small" name_id="sfm_prop_ext_candles_small_012" position="3086.07 -4137.26 -152.043" projection_light="lo_omni" rotation="0 0 0.748956 -0.66262" unit_id="600024">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.388235 0.0901961" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDccbbe27c7fdc0fd9@" name="lo_omni" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+				<projection_lights>
+					<lo_omni x="32" y="32"/>
+				</projection_lights>
+			</unit_data>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

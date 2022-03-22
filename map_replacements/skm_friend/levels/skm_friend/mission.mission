@@ -1,0 +1,11 @@
+<table>
+	<art_bo_cheng file="art_bo_cheng/art_bo_cheng"/>
+	<art_house_exterior file="art_house_exterior/art_house_exterior"/>
+	<art_lower_courtyard file="art_lower_courtyard/art_lower_courtyard"/>
+	<art_main_yard file="art_main_yard/art_main_yard"/>
+	<art_patio file="art_patio/art_patio"/>
+	<art_upper_courtyard file="art_upper_courtyard/art_upper_courtyard"/>
+	<collision file="collision/collision"/>
+	<editor_only file="editor_only/editor_only"/>
+	<world file="world/world"/>
+</table>

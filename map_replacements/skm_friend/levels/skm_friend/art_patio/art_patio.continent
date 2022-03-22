@@ -1,0 +1,412 @@
+<table>
+	<editor_groups/>
+	<instances/>
+	<statics>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_019" position="538 -4523 74" rotation="0 0 -0.707107 -0.707107" unit_id="700141">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.501961 0.25098" enabled="true" falloff_exponent="4.9" far_range="500" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_020" position="393 -4523 74" rotation="0 0 -0.707107 -0.707107" unit_id="700142">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.501961 0.25098" enabled="true" falloff_exponent="4.9" far_range="500" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_021" position="811 -4451 41" rotation="0 0 0 -1" unit_id="700143">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 0.501961" enabled="true" falloff_exponent="1" far_range="200" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 0 -1" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/architecture/int/sfm_int_fireplace_room/sfm_int_room_fireplace_room" name_id="sfm_int_room_fireplace_room_002" position="0 0 0" rotation="0 0 0 -1" unit_id="700145"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/architecture/int/sfm_int_room_library" name_id="sfm_int_room_library_004" position="0 0 0" rotation="0 0 0 -1" unit_id="700002"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_027" position="-1402.42 -2095 -63.9127" rotation="0 -0.0871557 0 -0.996195" unit_id="700011"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_large" name_id="sfm_veg_bush_bambopalm_large_018" position="-492.595 -2314.76 -101.025" rotation="-0.0308439 -0.0308439 0.706434 -0.706434" unit_id="700012"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_large" name_id="sfm_veg_bush_bambopalm_large_019" position="-636.138 -2201.15 -193.056" rotation="0.0123038 0.000817646 -0.208305 -0.977986" unit_id="700014"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="sfm_int_window_white_032" position="-187 -2094 -29" rotation="0 0 0 -1" unit_id="700018"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_04" name_id="sfm_prop_small_rock_04_034" position="-687.467 -2159 -48.9114" rotation="0 -0.0523359 0 -0.99863" unit_id="700022"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_05" name_id="sfm_prop_small_rock_05_047" position="-738 -2184 -55" rotation="0 0 0 -1" unit_id="700024"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_large" name_id="sfm_veg_bush_bambopalm_large_022" position="-1234.97 -2221.44 -51.8611" rotation="-0.0391573 -0.0969175 0.372555 -0.922104" unit_id="700025"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_small" name_id="sfm_veg_bush_bambopalm_small_022" position="-233.287 -2316.21 -55.9058" rotation="0.0744538 0.0669059 0.00318825 -0.994972" unit_id="700029"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_large" name_id="sfm_veg_tree_desertfanpalm_large_007" position="-1280.91 -2359.15 -88.9565" rotation="-0.0183492 0.0255482 -0.0353388 -0.99888" unit_id="700041"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_small_rocks/sfm_prop_small_rock_02" name_id="sfm_prop_small_rock_02_056" position="-1168.51 -3334.65 -52.148" rotation="0.293355 0.159279 0.828409 -0.44979" unit_id="700059"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1194.13 -3368 -101.636" _prev_rot="-0.0377755 -0.0218097 0.865201 0.499524" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_medium" name_id="sfm_veg_tree_desertfanpalm_medium_010" position="-1194.13 -3368 -101.636" rotation="-0.0377755 -0.0218097 0.865201 0.499524" unit_id="700067"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_medium" name_id="sfm_veg_tree_desertfanpalm_medium_011" position="-473.656 -3353 -94.9277" rotation="0 0 0.891006 0.453991" unit_id="700069"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_011" position="493 -4198 97" rotation="0 0 -2.68221e-007 -1" unit_id="700118">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_012" position="780 -4198 97" rotation="0 0 -2.68221e-007 -1" unit_id="700120">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_books_01" name_id="sfm_prop_books_01_014" position="228 -4221 -51" rotation="0 0 0 -1" unit_id="700122"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_books_01" name_id="sfm_prop_books_01_015" position="372 -4221 -51" rotation="0 0 0 -1" unit_id="700124"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_bookcase_end_left_01" name_id="sfm_prop_bookcase_end_left_01_008" position="259 -4251 -51" rotation="0 0 0 -1" unit_id="700127"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_bookcase_end_right_01" name_id="sfm_prop_bookcase_end_right_01_008" position="357 -4251 -51" rotation="0 0 0 -1" unit_id="700128"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_bookcase_middle_01" name_id="sfm_prop_bookcase_middle_01_011" position="358 -4251 -51" rotation="0 0 0 -1" unit_id="700129"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_013" position="-275 -4370 97" rotation="0 0 -0.707107 -0.707107" unit_id="700130">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="801 -4449 24" _prev_rot="0 0 0.707106 -0.707107" _visibility_counter="0" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_lamp_table_thin/sfm_prop_bedroom_lamp_table_thin" name_id="sfm_prop_bedroom_lamp_table_thin_004" position="801 -4508 24" rotation="0 0 0.707106 -0.707107" unit_id="700135"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="787.385 -4447.93 -49" _prev_rot="0 0 -0.382683 -0.92388" _visibility_counter="0" continent="art_patio" disable_shadows="true" local_pos="-1.06984 -13.615 -73" local_rot="0 0 0.923879 0.382685" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_nightstand/sfm_prop_bedroom_nightstand" name_id="sfm_prop_bedroom_nightstand_004" position="787.385 -4506.93 -49" rotation="0 0 -0.382683 -0.92388" unit_id="700136"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="13.1573 -4251.31 -51.5" _prev_rot="0 0 0 -1" _visibility_counter="0" continent="art_patio" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="true" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_bookcase_middle_01" name_id="sfm_prop_bookcase_middle_01_012" position="13.1573 -4251.31 -51.5" rotation="0 0 0 -1" unit_id="700137"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="59.1573 -4251.31 -51.5" _prev_rot="0 0 0 -1" _visibility_counter="0" continent="art_patio" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="true" hide_on_projection_light="false" local_pos="121 -22 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_bookcase_end_right_01" name_id="sfm_prop_bookcase_end_right_01_009" position="12.1573 -4251.31 -51.5" rotation="0 0 0 -1" unit_id="700138"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_015" position="-201 -4649 97" rotation="0 0 1 -1.19209e-007" unit_id="700144">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data _prev_pos="-38.8427 -4251.31 -51.5" _prev_rot="0 0 0 -1" _visibility_counter="0" continent="art_patio" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="true" hide_on_projection_light="false" local_pos="23.0001 -22 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_bookcase_end_left_01" name_id="sfm_prop_bookcase_end_left_01_009" position="-85.8427 -4251.31 -51.5" rotation="0 0 0 -1" unit_id="700146"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="82.1572 -4229.31 -51.5" _prev_rot="0 0 0 -1" _visibility_counter="0" continent="art_patio" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="true" hide_on_projection_light="false" local_pos="144 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_books_01" name_id="sfm_prop_books_01_016" position="35.1572 -4229.31 -51.5" rotation="0 0 0 -1" unit_id="700147"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-105.843 -4229.31 -51.5" _prev_rot="0 0 0 -1" _visibility_counter="0" continent="art_patio" delayed_load="false" disable_collision="false" disable_on_ai_graph="false" disable_shadows="true" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_library_bookcase/sfm_prop_books_01" name_id="sfm_prop_books_01_017" position="-100.843 -4229.31 -51.5" rotation="0 0 0 -1" unit_id="700148"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="195 -4666 -30" _prev_rot="0 0 -0.707107 -0.707107" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="shatter_window_1" position="195 -4666 -30" rotation="0 0 -0.707107 -0.707107" unit_id="700150"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="394 -4666 -30" _prev_rot="0 0 -0.707107 -0.707107" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="shatter_window_2" position="394 -4666 -30" rotation="0 0 -0.707107 -0.707107" unit_id="700151"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="594 -4666 -30" _prev_rot="0 0 -0.707107 -0.707107" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="shatter_window_3" position="594 -4666 -30" rotation="0 0 -0.707107 -0.707107" unit_id="700152"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/architecture/int/sfm_int_doorframe_wide" name_id="sfm_int_doorframe_wide_007" position="444 -2251 -50" rotation="0 0 1 -1.19209e-007" unit_id="700158"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/architecture/int/sfm_int_doorframe_wide" name_id="sfm_int_doorframe_wide_008" position="229 -3765 -50" rotation="0 0 0.707107 -0.707107" unit_id="700159"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_lamp_chandelier/sfm_prop_bedroom_lamp_chandelier" name_id="sfm_prop_bedroom_lamp_chandelier_001" position="644 -2268 198" rotation="0 0 -0.382683 -0.92388" unit_id="700168"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_lamp_chandelier/sfm_prop_bedroom_lamp_chandelier" name_id="sfm_prop_bedroom_lamp_chandelier_004" position="644 -3068 198" rotation="0 0 -0.382683 -0.92388" unit_id="700170"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="575 -3974 198" _prev_rot="0 0 0 -1" _visibility_counter="0" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_lamp_chandelier/sfm_prop_bedroom_lamp_chandelier" name_id="sfm_prop_bedroom_lamp_chandelier_006" position="575 -3974 198" rotation="-0 0 -0 -1" unit_id="700176"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_lamp_chandelier/sfm_prop_bedroom_lamp_chandelier" name_id="sfm_prop_bedroom_lamp_chandelier_011" position="-1723 -4442 198" rotation="0 0 -0.382683 -0.92388" unit_id="700184"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_022" position="135 -2153 260" rotation="0 0 0 -1" unit_id="700225">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 1 1" enabled="true" falloff_exponent="1" far_range="400" multiplier="@IDbca13ba1d306f87b@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_060" position="-300 -4668 97" rotation="0 0 0.707107 -0.707107" unit_id="700224">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_061" position="-300 -4270 97" rotation="0 0 0.707107 -0.707107" unit_id="700227">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_062" position="-760 -4198 97" rotation="0 0 -2.68221e-007 -1" unit_id="700228">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_063" position="-1101 -4198 97" rotation="0 0 -2.68221e-007 -1" unit_id="700229">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_064" position="-1514 -4546 97" rotation="0 0 -0.707107 -0.707107" unit_id="700230">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_065" position="-1050 -5024 97" rotation="0 0 1 -4.17233e-007" unit_id="700231">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_066" position="-854 -5024 97" rotation="0 0 1 -4.17233e-007" unit_id="700232">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/payday2/props/bnk_prop_office_lamp_wall/bnk_prop_office_lamp_wall" name_id="bnk_prop_office_lamp_wall_067" position="-660 -5024 97" rotation="0 0 1 -4.17233e-007" unit_id="700233">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.889767 0.509804" enabled="true" falloff_exponent="1" far_range="250" multiplier="@IDbca13ba1d306f87b@" name="lo_omni_01" near_range="0" spot_angle_end="0" spot_angle_start="0"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_026" position="-1279 -4413 143" rotation="0 0 -0.707107 -0.707107" unit_id="700235">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.466667 0.207843" enabled="true" falloff_exponent="1" far_range="500" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_027" position="-818 -4413 143" rotation="0 0 -0.707107 -0.707107" unit_id="700234">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.372549 0.0666667" enabled="true" falloff_exponent="1" far_range="500" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_028" position="-491 -4413 143" rotation="0 0 -0.707107 -0.707107" unit_id="700236">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.466667 0.207843" enabled="true" falloff_exponent="1" far_range="500" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_029" position="-1214 -4745 99" rotation="0 0 -0.707107 -0.707107" unit_id="700237">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.466667 0.207843" enabled="true" falloff_exponent="1" far_range="500" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_030" position="-818 -4829 99" rotation="0 0 -0.707107 -0.707107" unit_id="700238">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.466667 0.207843" enabled="true" falloff_exponent="1" far_range="500" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="core/units/light_omni/light_omni" name_id="light_omni_031" position="-581 -4745 99" rotation="0 0 -0.707107 -0.707107" unit_id="700239">
+				<lights>
+					<table clipping_values="10000 -10000 0" color="1 0.466667 0.207843" enabled="true" falloff_exponent="1" far_range="500" multiplier="@ID18ceffa252d5a43d@" name="lo_omni" near_range="80" spot_angle_end="-1" spot_angle_start="-1"/>
+				</lights>
+			</unit_data>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_int_table_coffee/sfm_prop_int_table_coffee" name_id="sfm_prop_int_table_coffee_001" position="-905 -4264 -55" rotation="0 0 0 -1" unit_id="700242"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_int_table_console_wooden/sfm_prop_int_table_console_wooden" name_id="sfm_prop_int_table_console_wooden_002" position="-335 -4773 -50" rotation="0 0 -0.707107 -0.707107" unit_id="700245"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_office_vanitytable_and_mirror/sfm_prop_office_vanitytable" name_id="sfm_prop_office_vanitytable_001" position="-458 -4232 -50" rotation="0 0 0 -1" unit_id="700244"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_int_table_console_wooden/sfm_prop_int_table_console_wooden" name_id="sfm_prop_int_table_console_wooden_003" position="-1481 -4550 -50" rotation="0 0 -0.707107 -0.707107" unit_id="700246"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_decanter" name_id="sfm_prop_bedroom_bar_decanter_001" position="-425 -4217 25" rotation="0 0 0 -1" unit_id="700248"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_bourbon" name_id="sfm_prop_bedroom_bar_bourbon_001" position="-407 -4223 25" rotation="0 0 0 -1" unit_id="700249"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_gin" name_id="sfm_prop_bedroom_bar_gin_001" position="-423 -4233 25" rotation="0 0 0 -1" unit_id="700250"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_icebox" name_id="sfm_prop_bedroom_bar_icebox_001" position="-481 -4236 24" rotation="0 0 0 -1" unit_id="700251"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_vermouth" name_id="sfm_prop_bedroom_bar_vermouth_001" position="-410 -4244 25" rotation="0 0 0 -1" unit_id="700252"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_whiskey" name_id="sfm_prop_bedroom_bar_whiskey_001" position="-430 -4246 25" rotation="0 0 0 -1" unit_id="700253"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_office_decanter_and_glass/sfm_prop_office_glass" name_id="sfm_prop_office_glass_001" position="-956 -4250 -9" rotation="0 0 0 -1" unit_id="700254"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_ext_table_decoration_b/sfm_prop_ext_table_decoration_b" name_id="sfm_prop_ext_table_decoration_b_002" position="-1483.15 -4516.79 30" rotation="0 0 -0.156434 -0.987688" unit_id="700258"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_ext_table_decoration_b/sfm_prop_ext_table_decoration_b" name_id="sfm_prop_ext_table_decoration_b_003" position="-1483.15 -4575.79 30" rotation="0 0 0.992546 -0.121869" unit_id="700257"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_lamp_table_thin/sfm_prop_bedroom_lamp_table_thin" name_id="sfm_prop_bedroom_lamp_table_thin_002" position="-453 -4226 24" rotation="0 0 -2.68221e-007 -1" unit_id="700256"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_cornplant/sfm_prop_cornplant" name_id="sfm_prop_cornplant_001" position="-1136 -4241 -52" rotation="0 0 0 -1" unit_id="700259"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_cornplant/sfm_prop_cornplant" name_id="sfm_prop_cornplant_002" position="-669 -4241 -52" rotation="0 0 -0.707107 -0.707107" unit_id="700260"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-899 -4251 -8" _prev_rot="0 0 0 -1" _visibility_counter="0" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_lamp_table_wide/sfm_prop_bedroom_lamp_table_wide" name_id="sfm_prop_bedroom_lamp_table_wide_001" position="-899 -4251 -8" rotation="-0 0 -0 -1" unit_id="700261"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_lobby_stool/sfm_prop_lobby_stool" name_id="sfm_prop_lobby_stool_004" position="-1369 -4767 -52" rotation="0 0 -0.707107 -0.707107" unit_id="700262"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_vase/sfm_prop_bedroom_vase" name_id="sfm_prop_bedroom_vase_001" position="-333 -4765 30" rotation="0 0 0 -1" unit_id="700243"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_vase/sfm_prop_bedroom_vase" name_id="sfm_prop_bedroom_vase_002" position="-1482.15 -4547.79 30" rotation="0 0 0 -1" unit_id="700263"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1042 -4913 -51" _prev_rot="0 0 -0.707107 -0.707107" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/props/sfm_prop_int_rug_a/sfm_prop_int_rug_a" name_id="sfm_prop_int_rug_a_002" position="-1042 -4913 -51" rotation="0 0 -0.707107 -0.707107" unit_id="700265"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_int_rug_a/sfm_prop_int_rug_a" name_id="sfm_prop_int_rug_a_003" position="-656 -4913 -51" rotation="0 0 -0.707107 -0.707107" unit_id="700266"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_couch_english/sfm_prop_couch_english" name_id="sfm_prop_couch_english_003" position="-1051 -4276 -50" rotation="0 0 -0.0871557 -0.996195" unit_id="700241"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_couch_english/sfm_prop_couch_english" name_id="sfm_prop_couch_english_001" position="-758 -4276 -50" rotation="0 0 0.173648 -0.984808" unit_id="700276"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_lobby_lamp_wall/sfm_prop_lobby_lamp_wall" name_id="sfm_prop_lobby_lamp_wall_006" position="-850 -4600 206" rotation="0 0 1 -1.19209e-007" unit_id="700001"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_lobby_lamp_wall/sfm_prop_lobby_lamp_wall" name_id="sfm_prop_lobby_lamp_wall_007" position="-850 -4700 206" rotation="0 0 -2.68221e-007 -1" unit_id="700240"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 0 -1" continent="art_patio" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/architecture/int/sfm_int_dining_room" name_id="sfm_int_dining_room_001" position="0 0 0" rotation="0 0 0 -1" unit_id="101980"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1069 138 470" _prev_rot="0 0 0.707107 -0.707107" continent="art_patio" disable_on_ai_graph="true" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="destroy_all" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="sfm_int_window_white_004" position="-1069 138 470" rotation="0 0 0.707107 -0.707107" unit_id="700096"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-869 138 470" _prev_rot="0 0 0.707107 -0.707107" continent="art_patio" disable_on_ai_graph="true" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="destroy_all" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="sfm_int_window_white_005" position="-869 138 470" rotation="0 0 0.707107 -0.707107" unit_id="700162"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-469 138 470" _prev_rot="0 0 0.707107 -0.707107" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="sfm_int_window_white_006" position="-469 138 470" rotation="0 0 0.707107 -0.707107" unit_id="700163"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="sfm_int_window_white_007" position="-270 138 470" rotation="0 0 0.707107 -0.707107" unit_id="700164"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="189 -207 476" _prev_rot="0 0 1 -4.37114e-008" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="destroy_all" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="sfm_int_window_white_008" position="189 -207 476" rotation="0 0 1 4.37114e-008" unit_id="700165"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="189 -7 476" _prev_rot="0 0 1 -4.37114e-008" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="destroy_all" name="units/pd2_dlc_friend/architecture/int/sfm_int_window_white" name_id="sfm_int_window_white_009" position="189 -7 476" rotation="0 0 1 4.37114e-008" unit_id="700166"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 0 -1" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/architecture/int/sfm_int_side_staircase" name_id="sfm_int_side_staircase_003" position="0 0 0" rotation="-0 0 -0 -1" unit_id="700054"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 0 -1" continent="art_patio" disable_shadows="false" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/architecture/ext/sfm_ext_front_porch" name_id="sfm_ext_front_porch_002" position="0 0 0" rotation="-0 0 -0 -1" unit_id="700167"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_bush_bambopalm_large/sfm_veg_bush_bambopalm_large" name_id="sfm_veg_bush_bambopalm_large_021" position="-1025.14 -2205.15 -178.056" rotation="-0.010107 0.0190838 -0.284168 -0.958531" unit_id="700006"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_casino/vegetation/sfm_veg_tree_desertfanpalm/sfm_veg_tree_desertfanpalm_small" name_id="sfm_veg_tree_desertfanpalm_small_028" position="-316.42 -2138 -63.9127" rotation="-0.0860826 -0.0136341 0.98393 -0.155839" unit_id="700016"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_int_sofa/sfm_prop_int_chair" name_id="sfm_prop_int_chair_003" position="38.2635 -2005.17 -49" rotation="0 0 -0.19081 -0.981627" unit_id="700357"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_int_sofa/sfm_prop_int_chair" name_id="sfm_prop_int_chair_004" position="213.263 -2005.17 -49" rotation="0 0 0.173648 -0.984808" unit_id="700361"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_nightstand/sfm_prop_bedroom_nightstand" name_id="sfm_prop_bedroom_nightstand_005" position="125 -1997 -50" rotation="0 0 -0.707106 -0.707107" unit_id="700368"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_decanter" name_id="sfm_prop_bedroom_bar_decanter_002" position="133 -1984 23" rotation="0 0 0.0697565 -0.997564" unit_id="700369"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_icebox" name_id="sfm_prop_bedroom_bar_icebox_002" position="115 -1989 23" rotation="0 0 0 -1" unit_id="700370"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_bedroom_bar/sfm_prop_bedroom_bar_gin" name_id="sfm_prop_bedroom_bar_gin_002" position="143.026 -1995.04 23" rotation="0 0 -0.317305 -0.948324" unit_id="700371"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="3418.64 -3593.35 -201.977" _prev_rot="0 0 0.156434 -0.987688" continent="art_patio" disable_collision="false" disable_on_ai_graph="false" disable_shadows="false" hide_on_projection_light="false" local_pos="0 0 0" local_rot="0 0 0 1" mesh_variation="state_interaction_disabled" name="units/pd2_dlc_friend/props/sfm_interactable_shipping_crate_2x1x1m/sfm_interactable_shipping_crate_2x1x1m" name_id="sfm_interactable_shipping_crate_2x1x1m_012" position="3418.64 -3593.35 -201.977" rotation="0 0 0.156434 -0.987688" unit_id="700219"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_int_rug_a/sfm_prop_int_rug_a" name_id="sfm_prop_int_rug_a_009" position="-906 -4342 -51" rotation="0 0 -0.707107 -0.707107" unit_id="700047"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="-1515 -4476 -50" _prev_rot="0 0 1 -1.19209e-007" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/architecture/int/sfm_int_doorframe_wide" name_id="sfm_int_doorframe_wide_010" position="-1515 -4476 -50" rotation="0 0 1 -1.19209e-007" unit_id="700132"/>
+		</table>
+		<table>
+			<unit_data _prev_pos="0 0 0" _prev_rot="0 0 0 -1" continent="art_patio" disable_shadows="true" local_pos="0 0 0" local_rot="0 0 0 1" name="units/pd2_dlc_friend/architecture/int/sfm_int_corridor" name_id="sfm_int_corridor_002" position="0 0 0" rotation="0 0 0 -1" unit_id="700171"/>
+		</table>
+		<table>
+			<unit_data continent="art_patio" disable_shadows="true" name="units/pd2_dlc_friend/props/sfm_prop_office_decanter_and_glass/sfm_prop_office_glass" name_id="sfm_prop_office_glass_002" position="-507 -4232 24" rotation="0 0 0 -1" unit_id="700177"/>
+		</table>
+	</statics>
+	<values>
+		<workviews/>
+	</values>
+</table>

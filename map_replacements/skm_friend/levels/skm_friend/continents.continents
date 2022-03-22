@@ -1,0 +1,11 @@
+<table>
+	<art_bo_cheng base_id="500000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="art_bo_cheng" visible="false"/>
+	<art_house_exterior base_id="800000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="art_house_exterior" visible="true"/>
+	<art_lower_courtyard base_id="300000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="art_lower_courtyard" visible="false"/>
+	<art_main_yard base_id="900000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="art_main_yard" visible="false"/>
+	<art_patio base_id="700000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="art_patio" visible="true"/>
+	<art_upper_courtyard base_id="600000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="art_upper_courtyard" visible="false"/>
+	<collision base_id="400000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="collision" visible="true"/>
+	<editor_only base_id="200000" editor_only="true" enabled="true" enabled_in_simulation="true" locked="false" name="editor_only" visible="false"/>
+	<world base_id="100000" editor_only="false" enabled="true" enabled_in_simulation="true" locked="false" name="world" visible="true"/>
+</table>

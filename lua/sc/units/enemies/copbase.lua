@@ -423,7 +423,7 @@ end)
 
 function CopBase:play_voiceline(buffer, force)
 	local t = TimerManager:game():time()
-	if force or t > self.voice_end_t then
+	if buffer and (force or t > self.voice_end_t) then
 		if self.my_voice and not self.my_voice:is_closed() then
 			self.my_voice:stop()
 			self.my_voice:close()

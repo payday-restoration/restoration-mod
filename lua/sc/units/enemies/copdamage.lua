@@ -66,6 +66,8 @@ local enemies_visor = {
 	ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_1/ene_swat_heavy_1_husk"),               
 	ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"),                 
 	ids_func("units/pd2_mod_sharks/characters/ene_swat_heavy_r870/ene_swat_heavy_r870_husk"),
+	ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow"),
+	ids_func("units/pd2_mod_sharks/characters/ene_murky_shield_yellow/ene_murky_shield_yellow_husk"),
 	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"),
 	ids_func("units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1_husk"),                 	
 	ids_func("units/pd2_mod_omnia/characters/ene_omnia_taser/ene_omnia_taser"),

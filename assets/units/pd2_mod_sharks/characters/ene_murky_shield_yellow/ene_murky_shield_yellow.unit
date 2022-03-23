@@ -23,7 +23,7 @@
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="CopDamage">
 			<var name="_head_body_name" value="head" />
-			<var name="_head_gear_object" value="g_helmet_lod2" />
+			<var name="_head_gear_object" value="g_helmet_lod" />
 			<var name="_head_gear" value="units/payday2/characters/ene_acc_shield_helmet/ene_acc_shield_helmet" />
 			<var name="_head_gear_decal_mesh" value="dm_helmet" />
 		</extension>

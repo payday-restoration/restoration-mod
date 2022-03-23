@@ -436,15 +436,15 @@ function CopBase:play_voiceline(buffer, force)
 			self.voice_length = 0
 		end
 		local _time = math.floor(TimerManager:game():time())
-		if self.voice_length == 0 or self.voice_start_time < _time then
-			if self.my_voice and not self.my_voice:is_closed() then
+		--if self.voice_length == 0 or self.voice_start_time < _time then
+			--[[if self.my_voice and not self.my_voice:is_closed() then
 				self.my_voice:stop()
 				self.my_voice:close()
 				self.my_voice = nil
-			end
+			end]]--
 			self.my_voice = XAudio.UnitSource:new(self._unit, buffer)
 			self.voice_length = buffer:get_length()
 			self.voice_start_time = _time + buffer:get_length()
-		end
+		--end
 	end
 end

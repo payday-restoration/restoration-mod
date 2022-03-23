@@ -566,6 +566,18 @@
 	<model				path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>
 	<unit				path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" load="false"/>
 	<sequence_manager	path="units/pd2_mod_sharks/characters/ene_acc_murky_helmet_invisible/ene_acc_murky_helmet_invisible" force="false"/>	
+	
+	
+	<!--Biker Guard-->
+	<unit				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1" load="true"/>
+	<unit 				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_husk" load="true"/>
+	<cooked_physics 	path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
+	<model 				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1" />
+	<object				path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
+	<material_config 	path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1"/>
+	<material_config 	path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_contour"/>
+	<texture 			path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_body_df"/>
+	<texture			path="units/payday2/characters/ene_guard_biker_1/ene_guard_biker_1_head_df"/>
 
 	<!--Headless Dozer-->
 	<object				path="units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw" force="false"/>

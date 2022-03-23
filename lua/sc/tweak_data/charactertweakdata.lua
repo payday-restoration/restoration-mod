@@ -3624,8 +3624,11 @@ function CharacterTweakData:_init_boom(presets)
 	table.insert(self._enemy_list, "boom_summers")		
 	
 	self.boom_titan = deep_clone(self.boom)
+	self.boom_titan.damage.hurt_severity = presets.hurt_severities.boom_titan
+	self.boom_titan.move_speed = presets.move_speed.normal
 	self.boom_titan.heal_cooldown = 22.5
 	self.boom_titan.HEALTH_INIT = 45
+	self.boom_titan.bag_death = true
 	self.boom_titan.headshot_dmg_mul = 2.2	
 	self.boom_titan.throwable = "launcher_frag_m32"
 	self.boom_titan.throwable_on_sight = true
@@ -5169,6 +5172,42 @@ function CharacterTweakData:_presets(tweak_data)
 			{none = 1}
 		}
 	}
+	
+	--Titan Grenadier
+	presets.hurt_severities.boom_titan = deep_clone(presets.hurt_severities.base)
+	presets.hurt_severities.boom_titan.explosion = {
+		health_reference = 1,
+		zones = {
+			{none = 1}
+		}
+	}	
+	presets.hurt_severities.boom_titan.bullet = {
+		health_reference = "current",
+		zones = {
+			{
+				health_limit = 0.3,
+				none = 0.2,
+				light = 0.7,
+				moderate = 0.1
+			},
+			{
+				health_limit = 0.6,
+				light = 0.4,
+				moderate = 0.6
+			},
+			{
+				health_limit = 0.9,
+				light = 0.2,
+				moderate = 0.8
+			},
+			{
+				light = 0,
+				moderate = 1,
+				heavy = 0
+			}
+		}
+	}	
+	
 	presets.hurt_severities.base_no_poison = deep_clone(presets.hurt_severities.base)
 	presets.hurt_severities.base_no_poison.poison = {
 		health_reference = 1,
@@ -5257,7 +5296,8 @@ function CharacterTweakData:_presets(tweak_data)
 		akimbo_pistol = {},
 		mini = {},
 		is_sniper = {},
-		is_flamethrower = {}
+		is_flamethrower = {},
+		is_m32 = {}
 	}
 	presets.weapon.normal.is_pistol.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_pistol.focus_delay = 10
@@ -8360,6 +8400,33 @@ function CharacterTweakData:_presets(tweak_data)
 			acc = {1, 1},
 			dmg_mul = 1,
 			recoil = {4, 6},
+			mode = {
+				1,
+				0,
+				0,
+				0
+			}
+		}
+	}	
+	
+	--M32 handling, normal
+	presets.weapon.normal.is_m32 = deep_clone(presets.weapon.normal.is_shotgun_pump)
+	presets.weapon.normal.is_m32.melee_speed = 1
+	presets.weapon.normal.is_m32.melee_dmg = 3
+	presets.weapon.normal.is_m32.melee_retry_delay = {2, 2}		
+	presets.weapon.normal.is_m32.autofire_rounds = {25, 50}
+	presets.weapon.normal.is_m32.RELOAD_SPEED = 0.5
+	presets.weapon.normal.is_m32.range = {
+		close = 200,
+		optimal = 250,
+		far = 300
+	}
+	presets.weapon.normal.is_m32.FALLOFF = {
+		{
+			r = 300,
+			acc = {0.6, 0.9},
+			dmg_mul = 1,
+			recoil = {2, 3},
 			mode = {
 				1,
 				0,

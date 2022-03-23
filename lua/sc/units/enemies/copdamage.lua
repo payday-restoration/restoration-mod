@@ -427,7 +427,7 @@ function CopDamage:damage_fire(attack_data)
 		if Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		end
-
+		
 		local data = {
 			name = self._unit:base()._tweak_table,
 			stats_name = self._unit:base()._stats_name,
@@ -949,7 +949,7 @@ function CopDamage:damage_bullet(attack_data)
 
 	if self._health <= damage then
 		attack_data.damage = self._health
-
+		
 		if self:check_medic_heal() then
 			result = {
 				type = "healed",
@@ -959,7 +959,7 @@ function CopDamage:damage_bullet(attack_data)
 		else
 			if head then
 				managers.player:on_lethal_headshot_dealt(attack_data.attacker_unit, attack_data)
-
+				
 				if self._unit:base()._tweak_table == "boom" then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
@@ -973,7 +973,9 @@ function CopDamage:damage_bullet(attack_data)
 					})
 				end
 			elseif Network:is_server() and self._char_tweak.gas_on_death then
-				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
+				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)	
+			elseif Network:is_server() and self._char_tweak.bag_death then
+				self:bag_explode(attack_data)
 			end
 
 
@@ -1181,6 +1183,8 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			end
 		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
+		elseif Network:is_server() and self._char_tweak.bag_death then
+			self:bag_explode(attack_data)			
 		end
 
 		result = {
@@ -3492,4 +3496,43 @@ function CopDamage:check_backstab(attack_data)
 	end
 
 	return false
+end
+
+function CopDamage:bag_explode(attack_data)
+	local pos = attack_data.pos
+
+	if not pos and alive(self._unit) then
+		pos = self._unit:get_object(Idstring("Spine2")):position() or pos
+	end
+
+	local range = 400
+	local damage = 800
+	local ply_damage = damage * 0.5
+	local normal = attack_data.attack_dir or math.UP
+	local slot_mask = managers.slot:get_mask("explosion_targets")
+	local curve_pow = 4
+
+	local damage_params = {
+		no_raycast_check_characters = false,
+		hit_pos = pos,
+		range = range,
+		collision_slotmask = slot_mask,
+		curve_pow = curve_pow,
+		damage = damage,
+		player_damage = ply_damage,
+		ignore_unit = self._unit,
+		user = attack_data.attacker_unit
+	}
+	local effect_params = {
+		sound_event = "grenade_explode",
+		effect = "effects/payday2/particles/explosions/grenade_explosion",
+		camera_shake_max_mul = 4,
+		sound_muffle_effect = true,
+		feedback_range = range * 2
+	}
+
+	managers.explosion:give_local_player_dmg(pos, range, ply_damage)
+	managers.explosion:play_sound_and_effects(pos, normal, range, effect_params)
+	managers.explosion:detect_and_give_dmg(damage_params)
+	managers.network:session():send_to_peers_synched("sync_explosion_to_client", attack_data.attacker_unit, pos, normal, ply_damage, range, curve_pow)												
 end

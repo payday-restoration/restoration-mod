@@ -398,10 +398,12 @@ function CopMovement:do_asu(self)
 						if enemy:base():get_total_buff("base_damage") > 0 then
 							return
 						end
-						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)									
+						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)		
+						--[[
 						if enemy:contour() then
 							enemy:contour():add("medic_buff", false)
 						end		
+						]]--
 						enemy:base():add_buff("base_damage", 10 * 0.01)
 					end
 				end

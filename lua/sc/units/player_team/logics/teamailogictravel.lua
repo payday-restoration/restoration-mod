@@ -1,5 +1,7 @@
 local mvec3_dist_sq = mvector3.distance_sq
 
+TeamAILogicTravel.on_pathing_results = CopLogicTravel.on_pathing_results
+
 --Adds inspire animation, I think.
 function TeamAILogicTravel.check_inspire(data, attention)
 	if not attention then

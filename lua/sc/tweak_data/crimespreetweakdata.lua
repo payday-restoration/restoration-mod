@@ -42,11 +42,11 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.branchbank_cash
 			},
 			{
-				stage_id = "firestarter_2",
+				stage_id = "firestarter_2_res",
 				add = debug_short_add,
-				id = "fs_2",
+				id = "firestarter_2_res",
 				icon = "csm_fs_2",
-				level = tweak_data.narrative.stages.firestarter_2
+				level = tweak_data.narrative.stages.firestarter_2_res
 			},
 			{
 				stage_id = "hox_3",
@@ -189,11 +189,11 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.four_stores
 			},
 			{
-				stage_id = "ukrainian_job",
+				stage_id = "ukrainian_job_res",
 				add = debug_very_short_add,
-				id = "ukrainian_job",
+				id = "ukrainian_job_res",
 				icon = "csm_ukrainian_job",
-				level = tweak_data.narrative.stages.ukrainian_job
+				level = tweak_data.narrative.stages.ukrainian_job_res
 			},
 			{
 				stage_id = "family",
@@ -289,11 +289,11 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				level = tweak_data.narrative.stages.chew
 			},
 			{
-				stage_id = "firestarter_1",
+				stage_id = "firestarter_1_res",
 				add = debug_med_add,
-				id = "fs_1",
+				id = "firestarter_1_res",
 				icon = "csm_fs_1",
-				level = tweak_data.narrative.stages.firestarter_1
+				level = tweak_data.narrative.stages.firestarter_1_res
 			},
 			{
 				stage_id = "nail",

@@ -26,7 +26,7 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.fbi_female = security_variant
 	CopMovement._action_variants.hrt = security_variant
 	CopMovement._action_variants.fbi_swat_vet = security_variant
-	CopMovement._action_variants.swat_titan = security_variant
+	CopMovement._action_variants.hrt_titan = security_variant
 	CopMovement._action_variants.city_swat_guard = security_variant
 	CopMovement._action_variants.city_swat_titan = security_variant
 	CopMovement._action_variants.city_swat_titan_assault = security_variant

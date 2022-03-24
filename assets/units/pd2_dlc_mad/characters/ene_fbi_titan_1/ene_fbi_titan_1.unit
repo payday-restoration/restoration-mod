@@ -15,7 +15,7 @@
         <extension name="unit_data" class="ScriptUnitData" />
         <extension name="base" class="CopBase" >
             <var name="can_be_marked" value="true" />
-            <var name="_tweak_table" value="swat_titan" />
+            <var name="_tweak_table" value="hrt_titan" />
             <var name="_default_weapon_id" value="sr2_titan" />
         </extension>
         <extension name="inventory" class="CopInventory" />

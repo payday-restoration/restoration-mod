@@ -38,8 +38,12 @@ function CopSound:init(unit)
 		self._prefix = ("rclk") .. "_"
 	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf") then
 		self._prefix = ("rmdc") .. "_"
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault") then
+	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1") then
 		self._prefix = ("r1n") .. "_"
+		
+	--Penthouse Guards
+	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2") then
+		self._prefix = ("rt") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"
 	
 	
 	--husks		
@@ -72,8 +76,11 @@ function CopSound:init(unit)
 		self._prefix = ("rclk") .. "_"
 	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_husk") then
 		self._prefix = ("rmdc") .. "_"
-	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk") then
-		self._prefix = ("r1n") .. "_"	
+	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk") then
+		self._prefix = ("r1n") .. "_"
+	--Penthouse Guards
+	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk") then
+		self._prefix = ("rt") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"
 	else
 		self._prefix = (char_tweak.speech_prefix_p1 or "") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. (char_tweak.speech_prefix_p2 or "") .. "_"
 	end

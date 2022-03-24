@@ -99,6 +99,10 @@ local enemies_plink = {
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
 	ids_func("units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),     
 	
+	ids_func("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat"),
+	ids_func("units/pd2_mod_halloween/characters/ene_skele_swat/ene_skele_swat_husk"),
+	ids_func("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2"),
+	ids_func("units/pd2_mod_halloween/characters/ene_skele_swat_2/ene_skele_swat_2_husk"),
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"),
 	ids_func("units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc_husk"),                 	
 	ids_func("units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"),

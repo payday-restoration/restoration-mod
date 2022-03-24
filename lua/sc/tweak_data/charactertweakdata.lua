@@ -25412,7 +25412,7 @@ function CharacterTweakData:character_map()
 				"ene_shield_1",
 				"ene_shield_2",
 				"ene_shield_gensec",	
-				"ene_zeal_swat_shield_sc",
+				"ene_zeal_swat_shield",
 				"ene_sniper_1",	
 				"ene_zeal_sniper",
 				"ene_medic_mp5",

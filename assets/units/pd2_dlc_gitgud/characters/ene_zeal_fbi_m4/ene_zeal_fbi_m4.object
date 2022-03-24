@@ -198,7 +198,7 @@
 		<graphic_group name="character" enabled="true" culling_object="g_body">
 
 			<lod_object name="lod_body">
-				<object name="g_body" 		enabled="true"  max_distance="2000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+				<object name="g_body" 		enabled="true"  max_distance="999999999999999"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
 					<material materials="mtr_swat" max_distance="1000" />
 					<material materials="mtr_swat_lod_1" max_distance="1500" />
 					<material materials="mtr_swat_lod_2" />

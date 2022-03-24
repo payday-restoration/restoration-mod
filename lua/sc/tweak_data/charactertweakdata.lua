@@ -1036,9 +1036,9 @@ function CharacterTweakData:_init_heavy_swat(presets)
 	if is_reaper then
 		self.weekend_dmr.custom_voicework = "tswat_ru"
 	elseif is_murky then
-		self.weekend_dmr.custom_voicework = "bravo_murky"	
+		self.weekend_dmr.custom_voicework = "bravo_elite_murky"	
 	elseif is_federales then
-		self.weekend_dmr.custom_voicework = "bravo_mex"
+		self.weekend_dmr.custom_voicework = "bravo_elite_mex"
 	else
 		self.weekend_dmr.custom_voicework = "bravo_elite"
 	end	
@@ -1289,9 +1289,9 @@ function CharacterTweakData:_init_city_swat(presets)
 	if is_reaper then
 		self.weekend_lmg.custom_voicework = "tswat_ru"
 	elseif is_murky then
-		self.weekend_lmg.custom_voicework = "bravo_murky"	
+		self.weekend_lmg.custom_voicework = "bravo_elite_murky"	
 	elseif is_federales then
-		self.weekend_lmg.custom_voicework = "bravo_mex"
+		self.weekend_lmg.custom_voicework = "bravo_elite_mex"
 	else
 		self.weekend_lmg.custom_voicework = "bravo_elite"
 	end		

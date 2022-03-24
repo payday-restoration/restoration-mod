@@ -843,7 +843,7 @@ function CharacterTweakData:_init_swat(presets)
 	self.hrt_titan.steal_loot = true		
 	self.hrt_titan.do_asu = true
 	self.hrt_titan.no_asu = true
-	table.insert(self._enemy_list, "swat_titan")
+	table.insert(self._enemy_list, "hrt_titan")
 end
 
 function CharacterTweakData:_init_heavy_swat(presets)
@@ -23704,7 +23704,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 	
 	--Fast Titan HRTs
-	self.swat_titan.move_speed = self.presets.move_speed.lightning
+	self.hrt_titan.move_speed = self.presets.move_speed.lightning
 	
 	--Titandozer changes
 	self.tank_titan.weapon = deep_clone(self.presets.weapon.expert)
@@ -24461,7 +24461,7 @@ function CharacterTweakData:_set_sm_wish()
 	self.weekend_lmg.use_animation_on_fire_damage = false				
 
 	--Fast Titan HRTs
-	self.swat_titan.move_speed = self.presets.move_speed.lightning		
+	self.hrt_titan.move_speed = self.presets.move_speed.lightning		
 	
 	--Titandozers become immune to stunning
 	self.tank_titan.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase

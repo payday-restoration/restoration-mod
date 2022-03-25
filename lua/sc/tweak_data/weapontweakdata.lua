@@ -4446,6 +4446,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Gecko 7.62
 	self.galil.AMMO_MAX = 80
+	self.galil.CLIP_AMMO_MAX = 30
 	self.galil.FIRE_MODE = "auto"
 	self.galil.fire_mode_data = {}
 	self.galil.fire_mode_data.fire_rate = 0.08
@@ -5312,7 +5313,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.peacemaker.stats_modifiers = nil
 	self.peacemaker.panic_suppression_chance = 0.05
 	self.peacemaker.has_description = true
-	self.peacemaker.desc_id = "bm_ap_weapon_sc_desc"
+	self.peacemaker.desc_id = "bm_ap_weapon_peacemaker_sc_desc"
 	self.peacemaker.can_shoot_through_enemy = true
 	self.peacemaker.can_shoot_through_shield = true
 	self.peacemaker.can_shoot_through_wall = true
@@ -5426,8 +5427,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.asval.supported = true
 	self.asval.stats = {
 		damage = 45,
-		spread = 18,
-		recoil = 14,
+		spread = 19,
+		recoil = 13,
 		spread_moving = 6,
 		zoom = 1,
 		concealment = 22,

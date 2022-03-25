@@ -25208,6 +25208,7 @@ function CharacterTweakData:character_map()
 		
 		--FBI
 		table.insert(char_map.basic.list, "ene_bulldozer_2_sc")
+		table.insert(char_map.basic.list, "ene_medic_mp5")
 		table.insert(char_map.basic.list, "ene_grenadier_1")
 		table.insert(char_map.basic.list, "ene_fbi_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_fbi_swat_2_sc")

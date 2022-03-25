@@ -25353,7 +25353,6 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",				
 				"ene_zeal_sniper",
 				"ene_zeal_swat_heavy",
-				"ene_zeal_heavy_shield",
 				"ene_zeal_swat_shield",
 				"ene_zeal_swat_shield_sc",
 				"ene_zeal_tazer",
@@ -25477,7 +25476,6 @@ function CharacterTweakData:character_map()
 				"ene_murky_cs_cop_r870",
 				"ene_murky_cs_cop_raging_bull",
 				"ene_fbi_3",
-				"ene_murky_swat_r870",
 				"ene_fbi_1",
 				"ene_fbi_2",
 				"ene_fbi_swat_1",
@@ -25526,6 +25524,7 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",
 				"ene_omnia_medic",
 				"ene_omnia_taser",
+				"ene_omnia_sniper",
 				"ene_omnia_shield"					
 			}
 		}

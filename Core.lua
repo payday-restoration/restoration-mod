@@ -59,7 +59,6 @@ function restoration:Init()
 		"nmh", --no mercy
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
-		"lvl_fourmorestores", --four more stores
 		"nmh_res", --no mercy ranted 
 		"lvl_friday" --Crashing Capitol
 	}

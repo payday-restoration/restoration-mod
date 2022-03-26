@@ -1732,101 +1732,33 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_amcar", "resmod_amcar", function(s
 		"wpn_fps_m4_uupg_o_flipup",
 		"wpn_fps_m4_uupg_fg_rail_ext"
 	}
-		
-	--AMCAR Default Blueprint, gotta basically override this weapon entirely to make it work with most mods
-	self.wpn_fps_ass_amcar.default_blueprint = {
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_amcar_uupg_body_upperreciever",
-		"wpn_fps_amcar_uupg_fg_amcar",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_s_standard_vanilla",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_amcar_bolt_standard"
-	}
+				
+	--AMCAR Default Blueprint, making it use the 30 rounder by default
+	self.wpn_fps_ass_amcar.default_blueprint[5] = "wpn_fps_m4_uupg_m_std_vanilla"	
 	
-	--AMCAR Part Table, ditto. Stuff commented out is WIP and I'm not gonna bother for a bit to preserve my mental state.
-	self.wpn_fps_ass_amcar.uses_parts = {
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_amcar_uupg_body_upperreciever",
-		"wpn_fps_m4_upper_reciever_round_vanilla",
-		"wpn_fps_amcar_uupg_fg_amcar",
-		"wpn_fps_upg_m4_s_standard_vanilla",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_m4_s_crane",
-		"wpn_fps_upg_m4_s_mk46",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_upg_m4_m_l5",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_amcar_bolt_standard",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_upg_m4_g_ergo",
-		"wpn_fps_upg_m4_g_sniper",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_upg_m4_g_mgrip",
-		"wpn_fps_snp_tti_g_grippy",
-		"wpn_fps_upg_g_m4_surgeon",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_m_straight",
-		"wpn_fps_upg_m4_m_quad",
-		"wpn_fps_ass_l85a2_m_emag",
-		"wpn_fps_upg_m4_m_pmag",
-		"wpn_fps_upg_m4_m_l5",
-		"wpn_fps_m4_upg_m_quick",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_45rds_v2",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_45steel",
-		--Custom parts after this point
-		"wpn_fps_upg_m4_s_standard",
-		"wpn_fps_upg_m4_s_pts",		
-		"wpn_fps_m4_uupg_s_fold",
-		"wpn_fps_smg_olympic_s_short",
-		--"wpn_fps_m4_uupg_fg_lr300",
-		--"wpn_fps_upg_fg_jp",
-		--"wpn_fps_upg_fg_smr",		
-		"wpn_fps_upg_ass_m4_lower_reciever_core",
-		--"wpn_fps_m4_upper_reciever_edge",
-		--"wpn_fps_m4_uupg_o_flipup"
-	}
+	--AMCAR Part Table
+	self.wpn_fps_ass_amcar.uses_parts[49] = "wpn_fps_m4_uupg_m_std_vanilla"	
+	self.wpn_fps_ass_amcar.uses_parts[50] = "wpn_fps_upg_m4_m_straight"
 	
-	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_m4_uupg_s_fold")
+	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")		
+	
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_upg_m4_s_standard")		
+	
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_upg_m4_s_pts")	
+
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_smg_olympic_s_short")
+	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_smg_olympic_s_short")			
+	
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_ass_m4_lower_reciever_core")
+	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_upg_ass_m4_lower_reciever_core")	
+	
+	table.insert(self.wpn_fps_ass_amcar.uses_parts, "wpn_fps_upg_m4_m_drum")
+	table.insert(self.wpn_fps_ass_amcar_npc.uses_parts, "wpn_fps_upg_m4_m_drum")	
+	
+	self.wpn_fps_ass_amcar_npc.uses_parts = deep_clone(self.wpn_fps_ass_amcar.uses_parts)	
 
 end)
 
@@ -1864,114 +1796,28 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 	--Overriding these
 	self.wpn_fps_ass_m16.adds = {}
 	self.wpn_fps_ass_m16.override = {}
+		
+	--M16 Default Blueprint, making it use the 30 rounder by default
+	self.wpn_fps_ass_m16.default_blueprint[4] = "wpn_fps_m4_uupg_m_std_vanilla"	
 	
-	--AMR-16 Default Blueprint
-	self.wpn_fps_ass_m16.default_blueprint = {
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_m4_upper_reciever_round",
-		"wpn_fps_m4_uupg_draghandle",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_m16_fg_standard",
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_ass_m16_o_handle_sight",
-		"wpn_fps_m16_s_solid_vanilla",
-		"wpn_fps_amcar_bolt_standard"
-	}
+	--M16 Part Table
+	self.wpn_fps_ass_m16.uses_parts[11] = "wpn_fps_upg_m4_m_straight"
+	self.wpn_fps_ass_m16.uses_parts[14] = "wpn_fps_m4_uupg_m_std_vanilla"
 	
-	--AMR-16 Parts Table
-	self.wpn_fps_ass_m16.uses_parts = {
-		"wpn_fps_m16_fg_railed",
-		"wpn_fps_m16_fg_standard",
-		"wpn_fps_m16_fg_vietnam",
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_m4_upper_reciever_edge",
-		"wpn_fps_m4_uupg_draghandle",
-		"wpn_fps_m4_uupg_b_long",
-		"wpn_fps_m4_uupg_b_medium_vanilla",
-		"wpn_fps_m4_upper_reciever_round",
-		"wpn_fps_m16_s_solid_vanilla",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_m_drum",
-		"wpn_fps_upg_m4_m_pmag",
-		"wpn_fps_upg_m4_m_straight",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_upg_m4_g_ergo",
-		"wpn_fps_upg_m4_g_sniper",
-		"wpn_fps_upg_vg_ass_smg_verticalgrip",
-		"wpn_fps_upg_vg_ass_smg_stubby",
-		"wpn_fps_upg_vg_ass_smg_afg",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_ass_m16_o_handle_sight",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_upg_m4_g_mgrip",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_m4_m_quad",
-		"wpn_fps_ass_l85a2_m_emag",
-		"wpn_fps_upg_m4_s_crane",
-		"wpn_fps_upg_m4_s_mk46",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_upg_m4_m_l5",
-		"wpn_fps_upg_ass_m4_upper_reciever_ballos",
-		"wpn_fps_upg_ass_m4_upper_reciever_core",
-		"wpn_fps_upg_ass_m4_lower_reciever_core",
-		"wpn_fps_m4_uupg_draghandle_ballos",
-		"wpn_fps_m4_uupg_draghandle_core",
-		"wpn_fps_upg_ass_m4_b_beowulf",
-		"wpn_fps_upg_ass_m16_fg_stag",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_amcar_bolt_standard",
-		"wpn_fps_ass_m16_b_legend",
-		"wpn_fps_ass_m16_fg_legend",
-		"wpn_fps_ass_m16_s_legend",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_m4_upg_m_quick",
-		"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_snp_tti_g_grippy",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_45rds_v2",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_g_m4_surgeon",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_45steel",
-		--Custom Parts below
-		"wpn_fps_m4_uupg_s_fold",
-		"wpn_fps_upg_m4_s_standard",
-		"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_smg_olympic_s_short",
-		"wpn_fps_upg_i_m16a2"
-	}
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_m4_uupg_s_fold")
+	table.insert(self.wpn_fps_ass_m16_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")		
+	
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_ass_m16_npc.uses_parts, "wpn_fps_upg_m4_s_standard")		
+	
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_ass_m16_npc.uses_parts, "wpn_fps_upg_m4_s_pts")	
+
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_smg_olympic_s_short")
+	table.insert(self.wpn_fps_ass_m16_npc.uses_parts, "wpn_fps_smg_olympic_s_short")			
+	
+	table.insert(self.wpn_fps_ass_m16.uses_parts, "wpn_fps_upg_i_m16a2")
+	table.insert(self.wpn_fps_ass_m16_npc.uses_parts, "wpn_fps_upg_i_m16a2")	
 	
 	self.wpn_fps_ass_m16_npc.uses_parts = deep_clone(self.wpn_fps_ass_m16.uses_parts)
 
@@ -2008,105 +1854,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 		concealment = 2
 	}
 
-	--Para Default Blueprint
-	self.wpn_fps_smg_olympic.default_blueprint = {
-		"wpn_fps_smg_olympic_s_adjust",
-		"wpn_fps_m4_uupg_draghandle",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_m4_uupg_b_short_vanilla",
-		"wpn_fps_m4_upper_reciever_round",
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_smg_olympic_fg_olympic",
-		"wpn_fps_ass_m16_o_handle_sight",
-		"wpn_fps_amcar_bolt_standard"
-	}
+	--Para Default Blueprint, making it use the 30 rounder by default
+	self.wpn_fps_smg_olympic.default_blueprint[3] = "wpn_fps_m4_uupg_m_std_vanilla"	
 	
 	--Para Part Table
-	self.wpn_fps_smg_olympic.uses_parts = {
-		"wpn_fps_m4_lower_reciever",
-		"wpn_fps_m4_upper_reciever_edge",
-		"wpn_fps_m4_upper_reciever_round",
-		"wpn_fps_m4_uupg_draghandle",
-		"wpn_fps_smg_olympic_fg_olympic",
-		"wpn_fps_smg_olympic_fg_railed",
-		"wpn_fps_smg_olympic_s_short",
-		"wpn_fps_smg_olympic_s_adjust",
-		"wpn_fps_upg_m4_s_standard",
-		"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_m4_uupg_b_short_vanilla",
-		"wpn_fps_m4_uupg_b_medium",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		--"wpn_fps_upg_m4_m_drum",
-		"wpn_fps_upg_m4_m_pmag",
-		"wpn_fps_upg_m4_m_straight",
-		"wpn_fps_ass_m16_o_handle_sight",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_vg_ass_smg_verticalgrip",
-		"wpn_fps_upg_vg_ass_smg_stubby",
-		"wpn_fps_upg_vg_ass_smg_afg",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_upg_m4_g_ergo",
-		"wpn_fps_upg_m4_g_sniper",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_upg_m4_g_mgrip",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_m4_m_quad",
-		"wpn_fps_ass_l85a2_m_emag",
-		"wpn_fps_upg_m4_s_crane",
-		"wpn_fps_upg_m4_s_mk46",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_upg_m4_m_l5",
-		"wpn_fps_upg_ass_m4_upper_reciever_ballos",
-		"wpn_fps_upg_ass_m4_upper_reciever_core",
-		"wpn_fps_upg_ass_m4_lower_reciever_core",
-		"wpn_fps_m4_uupg_draghandle_ballos",
-		"wpn_fps_m4_uupg_draghandle_core",
-		"wpn_fps_upg_smg_olympic_fg_lr300",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_amcar_bolt_standard",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_m4_upg_m_quick",
-		"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_snp_tti_g_grippy",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_g_m4_surgeon",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",		
-		--Custom Parts Below
-		"wpn_fps_m4_uupg_s_fold"
-	}
+	self.wpn_fps_smg_olympic.uses_parts[14] = "wpn_fps_m4_uupg_m_std_vanilla"
 	
+	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_m4_uupg_s_fold")
+	table.insert(self.wpn_fps_smg_olympic_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")		
+		
 	self.wpn_fps_smg_olympic_npc.uses_parts = deep_clone(self.wpn_fps_smg_olympic.uses_parts)
 
 end)
@@ -7737,7 +7493,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ass_ak_b_zastava.pcs = {}
 	self.parts.wpn_fps_upg_ass_ak_b_zastava.supported = true
 	self.parts.wpn_fps_upg_ass_ak_b_zastava.stats = {
-		value = 1,
+		value = 5,
 		spread = 2,
 		recoil = -2,
 		concealment = -2
@@ -7803,19 +7559,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ak_s_solidstock.pcs = {}
 	self.parts.wpn_fps_upg_ak_s_solidstock.supported = true
 	self.parts.wpn_fps_upg_ak_s_solidstock.stats = {
-		value = 0
+		value = 4,
+		recoil = 3,
+		spread = -3
 	}
 	
 	--PBS Suppressor
 	self.parts.wpn_fps_upg_ns_ass_pbs1.pcs = {}
 	self.parts.wpn_fps_upg_ns_ass_pbs1.supported = true
 	self.parts.wpn_fps_upg_ns_ass_pbs1.stats = {
-		value = 10,
-		suppression = 12,
-		alert_size = -1,
-		spread = 2,
-		recoil = -2,
-		concealment = -2
+		value = 2,
+		suppression = 10,
+		alert_size = -1
 	}
 	self.parts.wpn_fps_upg_ns_ass_pbs1.perks = {"silencer"}
 	
@@ -7849,7 +7604,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ass_m16_fg_stag.pcs = {}
 	self.parts.wpn_fps_upg_ass_m16_fg_stag.supported = true
 	self.parts.wpn_fps_upg_ass_m16_fg_stag.stats = {
-		value = 2,
+		value = 5,
 		spread = 1,
 		recoil = -1,
 		concealment = -1
@@ -7859,7 +7614,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_smg_olympic_fg_lr300.pcs = {}
 	self.parts.wpn_fps_upg_smg_olympic_fg_lr300.supported = true
 	self.parts.wpn_fps_upg_smg_olympic_fg_lr300.stats = {
-		value = 4,
+		value = 5,
 		recoil = -1,
 		spread = 1,
 		concealment = -1
@@ -7869,10 +7624,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.pcs = {}
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.supported = true
 	self.parts.wpn_fps_upg_ass_m4_upper_reciever_ballos.stats = {
-		value = 1,
-		recoil = -2,
-		spread = 2,
-		concealment = -2
+		value = 5,
+		recoil = -1,
+		spread = 1,
+		concealment = -1
 	}
 	
 	--THRUST Upper Receiver
@@ -7888,10 +7643,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ass_m4_lower_reciever_core.pcs = {}
 	self.parts.wpn_fps_upg_ass_m4_lower_reciever_core.supported = true
 	self.parts.wpn_fps_upg_ass_m4_lower_reciever_core.stats = {
-		value = 1,
-		spread = 1,
+		value = 3,
 		recoil = -1,
-		concealment = -1
+		reload = 1
 	}
 	
 	--L5 Magazine
@@ -7905,7 +7659,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_m4_s_ubr.pcs = {}
 	self.parts.wpn_fps_upg_m4_s_ubr.supported = true
 	self.parts.wpn_fps_upg_m4_s_ubr.stats = {
-		value = 1,
+		value = 3,
 		recoil = 2,
 		spread = -2
 	}
@@ -7918,7 +7672,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ass_m4_b_beowulf.pcs = {}
 	self.parts.wpn_fps_upg_ass_m4_b_beowulf.supported = true
 	self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats = {
-		value = 1,
+		value = 6,
 		spread = 2,
 		recoil = -2,
 		concealment = -2,
@@ -9159,7 +8913,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 	self.parts.wpn_fps_ass_sub2000_fg_gen2.pcs = {}
 	self.parts.wpn_fps_ass_sub2000_fg_gen2.supported = true
 	self.parts.wpn_fps_ass_sub2000_fg_gen2.stats = {
-		value = 1,
+		value = 3,
 		recoil = -1,
 		concealment = 1
 	}
@@ -9168,20 +8922,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 	self.parts.wpn_fps_ass_sub2000_fg_railed.pcs = {}
 	self.parts.wpn_fps_ass_sub2000_fg_railed.supported = true
 	self.parts.wpn_fps_ass_sub2000_fg_railed.stats = {
-		value = 1,
+		value = 2,
 		recoil = 1,
-		spread = -1
+		concealment = -2
 	}
 	
 	--Tooth Fairy Suppressor
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.pcs = {}
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.supported = true
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.stats = {
-		value = 10,
+		value = 2,
 		suppression = 10,
-		alert_size = -1,
-		spread = -1,
-		recoil = 1
+		alert_size = -1
 	}
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.perks = {"silencer"}
 	
@@ -9199,10 +8951,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 	}
 	self.parts.wpn_fps_snp_wa2000_b_long.supported = true
 	self.parts.wpn_fps_snp_wa2000_b_long.stats = {
-		value = 1,
+		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 	
 	--Suppressed Barrel
@@ -9214,11 +8965,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 	}
 	self.parts.wpn_fps_snp_wa2000_b_suppressed.supported = true
 	self.parts.wpn_fps_snp_wa2000_b_suppressed.stats = {
-		value = 10,
+		value = 2,
 		suppression = 10,
-		alert_size = -1,
-		spread = -1,
-		recoil = 1
+		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_wa2000_b_suppressed.perks = {"silencer"}
 	
@@ -9231,10 +8980,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 	}
 	self.parts.wpn_fps_snp_wa2000_g_light.supported = true
 	self.parts.wpn_fps_snp_wa2000_g_light.stats = {
-		value = 1,
+		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 	
 	--Stealth Grip
@@ -9246,7 +8994,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 	}
 	self.parts.wpn_fps_snp_wa2000_g_stealth.supported = true
 	self.parts.wpn_fps_snp_wa2000_g_stealth.stats = {
-		value = 1,
+		value = 3,
 		recoil = -1,
 		concealment = 1
 	}
@@ -9260,9 +9008,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 	}
 	self.parts.wpn_fps_snp_wa2000_g_walnut.supported = true
 	self.parts.wpn_fps_snp_wa2000_g_walnut.stats = {
-		value = 1,
+		value = 2,
 		recoil = 1,
-		spread = -1
+		concealment = -2
 	}
 
 end)
@@ -9294,73 +9042,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_polymer", "resmod_polymer", functi
 	}
 	self.parts.wpn_fps_smg_polymer_ns_silencer.supported = true
 	self.parts.wpn_fps_smg_polymer_ns_silencer.stats = {
-		value = 5,
-		suppression = 12,
-		alert_size = -1,
-		spread = 2,
-		recoil = -2,
-		concealment = -2
+		value = 2,
+		suppression = 10,
+		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_polymer_ns_silencer.perks = {"silencer"}
 	
-	self.wpn_fps_smg_polymer.uses_parts = {
-		"wpn_fps_smg_polymer_body_standard",
-		"wpn_fps_smg_polymer_bolt_standard",
-		"wpn_fps_smg_polymer_dh_standard",
-		"wpn_fps_smg_polymer_extra_sling",
-		"wpn_fps_smg_polymer_o_iron",
-		"wpn_fps_smg_polymer_fg_standard",
-		"wpn_fps_smg_polymer_barrel_standard",
-		"wpn_fps_smg_polymer_m_standard",
-		"wpn_fps_smg_polymer_s_standard",
-		"wpn_fps_smg_polymer_barrel_precision",
-		"wpn_fps_smg_polymer_ns_silencer",
-		"wpn_fps_smg_polymer_s_adapter",
-		"wpn_fps_upg_m4_s_standard",
-		"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_upg_m4_s_crane",
-		"wpn_fps_upg_m4_s_mk46",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_tf90"
-	}
+	--Disabling Vertical Grip mods
+	self.wpn_fps_smg_polymer.uses_parts[25] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+	self.wpn_fps_smg_polymer.uses_parts[26] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
+	self.wpn_fps_smg_polymer.uses_parts[27] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"	
+
+	self.wpn_fps_smg_polymer_npc.uses_parts = deep_clone(self.wpn_fps_smg_polymer.uses_parts)		
 
 end)
 
@@ -9385,7 +9078,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 		40
 	}
 	self.parts.wpn_fps_bow_hunter_b_skeletal.supported = true
-	self.parts.wpn_fps_bow_hunter_b_skeletal.stats = {value = 1, spread = -1, concealment = 1}
+	self.parts.wpn_fps_bow_hunter_b_skeletal.stats = {value = 3, spread = -1, concealment = 1}
 	
 	--Camo Grip
 	self.parts.wpn_fps_bow_hunter_g_camo.pcs = {
@@ -9395,7 +9088,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 		40
 	}
 	self.parts.wpn_fps_bow_hunter_g_camo.supported = true
-	self.parts.wpn_fps_bow_hunter_g_camo.stats = {value = 1, recoil = -1, concealment = 1}
+	self.parts.wpn_fps_bow_hunter_g_camo.stats = {value = 3, recoil = -1, concealment = 1}
 	
 	--Walnut Grip
 	self.parts.wpn_fps_bow_hunter_g_walnut.pcs = {
@@ -9405,7 +9098,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hunter", "resmod_hunter", function
 		40
 	}
 	self.parts.wpn_fps_bow_hunter_g_walnut.supported = true
-	self.parts.wpn_fps_bow_hunter_g_walnut.stats = {value = 1, recoil = 1, spread = -1}
+	self.parts.wpn_fps_bow_hunter_g_walnut.stats = {value = 2, recoil = 1, concealment = -2}
 
 	--Poisoned Bolts
 	self.parts.wpn_fps_upg_a_crossbow_poison.pcs = {}
@@ -9460,9 +9153,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 		value = 2,
 		suppression = 11,
 		alert_size = -1,
-		recoil = -1,
-		spread = 1,
-		concealment = -1
+		recoil = 1,
+		concealment = -2
 	}
 	
 	--Spring Suppressor
@@ -9477,7 +9169,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 		value = 3,
 		suppression = 10,
 		alert_size = -1,
-		recoil = 1,				
+		concealment = 1,				
 		spread = -1
 	}
 	
@@ -9493,12 +9185,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 		value = 5,
 		suppression = 12,
 		alert_size = -1,
-		spread = 2,
-		recoil = -2,
-		concealment = -2
+		spread = 1,
+		concealment = -3
 	}
 	
-	--Unfolded Stock
+	--No Stock
 	self.parts.wpn_fps_smg_baka_s_standard.pcs = {
 		10,
 		20,
@@ -9507,12 +9198,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 	}
 	self.parts.wpn_fps_smg_baka_s_standard.supported = true
 	self.parts.wpn_fps_smg_baka_s_standard.stats = {
-		value = 1,
+		value = 2,
 		recoil = -1,
 		concealment = 1
 	}
 	
-	--No Stock
+	--Unfolded Stock
 	self.parts.wpn_fps_smg_baka_s_unfolded.pcs = {
 		10,
 		20,
@@ -9521,9 +9212,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 	}
 	self.parts.wpn_fps_smg_baka_s_unfolded.supported = true
 	self.parts.wpn_fps_smg_baka_s_unfolded.stats = {
-		value = 1,
+		value = 2,
 		recoil = 1,
-		spread = -1
+		concealment = -2
 	}
 
 end)
@@ -9617,7 +9308,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 		40
 	}
 	self.parts.wpn_fps_lmg_par_b_short.supported = true
-	self.parts.wpn_fps_lmg_par_b_short.stats = {value = 1, concealment = 1, spread = -1}
+	self.parts.wpn_fps_lmg_par_b_short.stats = {value = 3, concealment = 1, spread = -1}
 	
 	--Plastic Stock
 	self.parts.wpn_fps_lmg_par_s_plastic.pcs = {
@@ -9628,9 +9319,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 	}
 	self.parts.wpn_fps_lmg_par_s_plastic.supported = true
 	self.parts.wpn_fps_lmg_par_s_plastic.stats = {
-		value = 1,
-		recoil = 1,
-		spread = -1
+		value = 3,
+		concealment = 1,
+		recoil = -1
 	}
 	
 	--M240 Part Additions
@@ -9695,14 +9386,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_bipods", "resmod_bipods", function
 	}
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.desc_id = "bm_sc_bipod_desc"
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.supported = true
-	self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats = {value = 0, zoom = 1, concealment = -2}
+	self.parts.wpn_fps_upg_bp_lmg_lionbipod.stats = {value = 5, zoom = 1, concealment = -2}
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.forbids = {} --g3 various attachments workaround
 	self.parts.wpn_fps_upg_bp_lmg_lionbipod.perks = {"bipod"}
 	
 end)
 
 --Baby Deagle
---Someday, you gotta carry that weight.
 Hooks:PostHook(WeaponFactoryTweakData, "_init_sparrow", "resmod_sparrow", function(self)
 
 	--Ported Barrel
@@ -9714,10 +9404,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sparrow", "resmod_sparrow", functi
 	}
 	self.parts.wpn_fps_pis_sparrow_b_comp.supported = true
 	self.parts.wpn_fps_pis_sparrow_b_comp.stats = {
-		value = 1,
+		value = 5,
 		spread = 1, 
-		recoil = -1, 
-		concealment = -1
+		concealment = -3
 	}
 	self.parts.wpn_fps_pis_sparrow_b_comp.forbids = {}
 
@@ -9729,7 +9418,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sparrow", "resmod_sparrow", functi
 		40
 	}
 	self.parts.wpn_fps_pis_sparrow_b_threaded.supported = true
-	self.parts.wpn_fps_pis_sparrow_b_threaded.stats = {value = 1, recoil = 1, spread = -1}
+	self.parts.wpn_fps_pis_sparrow_b_threaded.stats = {value = 2, recoil = 1, concealment = -2}
 	
 	--Spike Kit
 	self.parts.wpn_fps_pis_sparrow_body_941.pcs = {
@@ -9740,7 +9429,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sparrow", "resmod_sparrow", functi
 	}
 	self.parts.wpn_fps_pis_sparrow_body_941.supported = true
 	self.parts.wpn_fps_pis_sparrow_body_941.stats = {
-		value = 0
+		value = 3,
+		concealment = 1,
+		recoil = -1
 	}
 	
 	--Spike Grip
@@ -9751,8 +9442,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sparrow", "resmod_sparrow", functi
 		40
 	}
 	self.parts.wpn_fps_pis_sparrow_g_cowboy.supported = true
+	self.parts.wpn_fps_pis_sparrow_g_cowboy.has_description = true
+	self.parts.wpn_fps_pis_sparrow_g_cowboy.desc_id = "bm_w_sparrow_sc_g_cowboy_desc"
 	self.parts.wpn_fps_pis_sparrow_g_cowboy.stats = {
-		value = 0
+		value = 5,
+		concealment = -3,
+		spread = 1
 	}
 	
 	--Overrides for Glock comps
@@ -9786,11 +9481,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 	}
 	self.parts.wpn_fps_snp_model70_ns_suppressor.supported = true
 	self.parts.wpn_fps_snp_model70_ns_suppressor.stats = {
-		value = 10,
+		value = 2,
 		suppression = 10,
-		alert_size = -1,
-		spread = -1,
-		recoil = 1
+		alert_size = -1
 	}
 	
 	--Iron Sight
@@ -9834,7 +9527,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 	}
 	self.parts.wpn_fps_shot_m37_b_short.supported = true
 	self.parts.wpn_fps_shot_m37_b_short.stats = {
-		value = 1,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}
@@ -9852,7 +9545,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 	}
 	self.parts.wpn_fps_shot_m37_s_short.supported = true
 	self.parts.wpn_fps_shot_m37_s_short.stats = {
-		value = 1,
+		value = 3,
 		recoil = -1,
 		concealment = 1
 	}
@@ -9993,7 +9686,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_china", "resmod_china", function(s
 	}
 	self.parts.wpn_fps_gre_china_s_short.supported = true
 	self.parts.wpn_fps_gre_china_s_short.stats = {
-		value = 1,
+		value = 3,
 		recoil = -1,
 		concealment = 1
 	}
@@ -10011,7 +9704,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sr2", "resmod_sr2", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_sr2_s_unfolded.supported = true
-	self.parts.wpn_fps_smg_sr2_s_unfolded.stats = {value = 1, recoil = 1, spread = -1}
+	self.parts.wpn_fps_smg_sr2_s_unfolded.stats = {
+		value = 2, 
+		recoil = 1, 
+		concealment = -2
+	}
 	
 	--Tishina Suppressor
 	self.parts.wpn_fps_smg_sr2_ns_silencer.pcs = {
@@ -10022,12 +9719,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sr2", "resmod_sr2", function(self)
 	}
 	self.parts.wpn_fps_smg_sr2_ns_silencer.supported = true
 	self.parts.wpn_fps_smg_sr2_ns_silencer.stats = {
-		value = 5,
-		suppression = 12,
-		alert_size = -1,
-		spread = 2,
-		recoil = -2,
-		concealment = -2
+		value = 2,
+		suppression = 10,
+		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_sr2_ns_silencer.perks = {"silencer"}
 	
@@ -10052,10 +9746,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pl14", "resmod_pl14", function(sel
 	}
 	self.parts.wpn_fps_pis_pl14_b_comp.supported = true
 	self.parts.wpn_fps_pis_pl14_b_comp.stats = {
-		value = 1,
+		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 	self.parts.wpn_fps_pis_pl14_b_comp.forbids = {}
 	
@@ -10103,7 +9796,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_mp5", "resmod_x_mp5", function(s
 		supported = true,
 		stats = {
 			value = 1,
-			recoil = -2,
+			recoil = -4,
 			spread = 2
 		},
 		animations = {}
@@ -10138,180 +9831,40 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_akmsu", "resmod_x_akmsu", functi
 
 end)
 
-function WeaponFactoryTweakData:_init_tecci()
-	self.parts.wpn_fps_ass_tecci_b_standard = {
-		type = "barrel",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_b_standard",
-		supported = true,
-		stats = {value = 1}
+--Bootleg (HK416)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_tecci", "resmod_tecci", function(self)
+
+	--Long Barrel
+	self.parts.wpn_fps_ass_tecci_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_ass_tecci_b_long = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_tecci_b_long",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_b_long",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		dlc = "opera",
-		texture_bundle_folder = "opera"
+	self.parts.wpn_fps_ass_tecci_b_long.supported = true
+	self.parts.wpn_fps_ass_tecci_b_long.stats = {
+		value = 5,
+		spread = 1,
+		concealment = -3
 	}
-	self.parts.wpn_fps_ass_tecci_dh_standard = {
-		type = "drag_handle",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_dh",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_dh_standard",
-		supported = true,
-		stats = {value = 1}
+	
+	--Bootstrap Compensator
+	self.parts.wpn_fps_ass_tecci_ns_special.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_ass_tecci_fg_standard = {
-		type = "foregrip",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_fg",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_fg_standard",
-		supported = true,
-		stats = {value = 1}
+	self.parts.wpn_fps_ass_tecci_ns_special.supported = true
+	self.parts.wpn_fps_ass_tecci_ns_special.stats = {
+		value = 5,
+		suppression = -4,
+		spread = -1,
+		recoil = 1
 	}
-	self.parts.wpn_fps_ass_tecci_g_standard = {
-		type = "grip",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_g_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_tecci_lower_reciever = {
-		type = "lower_reciever",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_lower_reciever",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_tecci_m_drum = {
-		type = "magazine",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 100},
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_m_drum",
-		supported = true,
-		stats = {value = 1},
-		animations = {
-			reload = "reload",
-			reload_not_empty = "reload_not_empty"
-		}
-	}
-	self.parts.wpn_fps_ass_tecci_ns_standard = {
-		type = "barrel_ext",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_ns_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_tecci_ns_special = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel_ext",
-		name_id = "bm_wp_tecci_ns_special",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_ns_special",
-		supported = true,
-		stats = {
-			value = 5,
-			suppression = -4,
-			spread = -2,
-			recoil = 2,
-			concealment = -2
-		},
-		dlc = "opera",
-		texture_bundle_folder = "opera"
-	}
-	self.parts.wpn_fps_ass_tecci_o_standard = {
-		type = "sight",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_o_standard",
-		supported = true,
-		stats = {value = 1},
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds",
-			"wpn_fps_upg_o_45rds_v2",
-			"wpn_fps_upg_o_sig",
-			"wpn_fps_upg_o_45steel"				
-		}
-	}
-	self.parts.wpn_fps_ass_tecci_s_standard = {
-		type = "stock",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_s_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_tecci_upper_reciever = {
-		type = "upper_reciever",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_upper_reciever",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_tecci_vg_standard = {
-		type = "vertical_grip",
-		name_id = "bm_wp_m4_lower_reciever",
-		a_obj = "a_vg",
-		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_vg_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_tecci_b_standard.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_b_standard"
-	self.parts.wpn_fps_ass_tecci_b_long.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_b_long"
-	self.parts.wpn_fps_ass_tecci_dh_standard.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_dh_standard"
-	self.parts.wpn_fps_ass_tecci_fg_standard.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_fg_standard"
-	self.parts.wpn_fps_ass_tecci_g_standard.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_g_standard"
-	self.parts.wpn_fps_ass_tecci_lower_reciever.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_lower_reciever"
-	self.parts.wpn_fps_ass_tecci_m_drum.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
-	self.parts.wpn_fps_ass_tecci_ns_standard.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_ns_standard"
-	self.parts.wpn_fps_ass_tecci_ns_special.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_ns_special"
-	self.parts.wpn_fps_ass_tecci_o_standard.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_o_standard"
-	self.parts.wpn_fps_ass_tecci_s_standard.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_s_standard"
-	self.parts.wpn_fps_ass_tecci_upper_reciever.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_upper_reciever"
-	self.parts.wpn_fps_ass_tecci_vg_standard.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_vg_standard"
-	self.wpn_fps_ass_tecci = {}
-	self.wpn_fps_ass_tecci.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"vertical_grip"
-	}
-	self.wpn_fps_ass_tecci.unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci/wpn_fps_ass_tecci"
-	self.wpn_fps_ass_tecci.stock_adapter = "wpn_fps_upg_m4_s_adapter"
+	
+	--Overrides
 	self.wpn_fps_ass_tecci.override = {
-		wpn_fps_m4_uupg_m_std = {
-			animations = {
-				reload = "reload",
-				reload_not_empty = "reload_not_empty"
-			}
-		},
 		wpn_fps_upg_ammo_half_that = {
 			supported = true,
 			desc_id = "bm_wp_upg_a_halfthatkit_tecci_desc",
@@ -10320,484 +9873,130 @@ function WeaponFactoryTweakData:_init_tecci()
 				total_ammo_mod = 50,
 				concealment = -2
 			},
-			custom_stats = {movement_speed = 0.75},	
-		}			
-	}	
-	self.wpn_fps_ass_tecci.default_blueprint = {
-		"wpn_fps_ass_tecci_b_standard",
-		"wpn_fps_ass_tecci_dh_standard",
-		"wpn_fps_ass_tecci_fg_standard",
-		"wpn_fps_ass_tecci_g_standard",
-		"wpn_fps_ass_tecci_lower_reciever",
-		"wpn_fps_ass_tecci_m_drum",
-		"wpn_fps_ass_tecci_ns_standard",
-		"wpn_fps_ass_tecci_o_standard",
-		"wpn_fps_ass_tecci_s_standard",
-		"wpn_fps_ass_tecci_upper_reciever",
-		"wpn_fps_ass_tecci_vg_standard"
+			custom_stats = {movement_speed = 0.75}	
+		}	
 	}
-	self.wpn_fps_ass_tecci.uses_parts = {
-		"wpn_fps_ass_tecci_b_standard",
-		"wpn_fps_ass_tecci_b_long",
-		"wpn_fps_ass_tecci_dh_standard",
-		"wpn_fps_ass_tecci_fg_standard",
-		"wpn_fps_ass_tecci_g_standard",
-		"wpn_fps_ass_tecci_lower_reciever",
-		"wpn_fps_ass_tecci_m_drum",
-		"wpn_fps_ass_tecci_ns_standard",
-		"wpn_fps_ass_tecci_ns_special",
-		"wpn_fps_ass_tecci_o_standard",
-		"wpn_fps_ass_tecci_s_standard",
-		"wpn_fps_ass_tecci_upper_reciever",
-		"wpn_fps_ass_tecci_vg_standard",
-		"wpn_fps_ass_tecci_b_legend",
-		"wpn_fps_ass_tecci_fg_legend",
-		"wpn_fps_ass_tecci_s_legend",
-		"wpn_fps_upg_m4_s_adapter",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_m4_s_crane",
-		"wpn_fps_upg_m4_s_mk46",
-		"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_m4_uupg_s_fold",
-		"wpn_fps_upg_m4_s_standard_vanilla",
-		"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_upg_m4_g_mgrip",
-		"wpn_fps_upg_m4_g_sniper",
-		"wpn_fps_upg_m4_g_standard_vanilla",
-		"wpn_fps_upg_m4_g_ergo",
-		"wpn_fps_m4_uupg_o_flipup",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_m4_s_standard",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_snp_tti_g_grippy",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_45rds_v2",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_g_m4_surgeon",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_45steel",
-		--Stuff--
-		"wpn_fps_upg_vg_ass_smg_verticalgrip",
-		"wpn_fps_upg_vg_ass_smg_stubby",
-		"wpn_fps_upg_vg_ass_smg_afg",
-		"wpn_fps_upg_i_slower_rof",
-		"wpn_fps_upg_i_faster_rof",	
-		"wpn_fps_upg_ammo_half_that"
-	}
-	self.wpn_fps_ass_tecci_npc = deep_clone(self.wpn_fps_ass_tecci)
-	self.wpn_fps_ass_tecci_npc.unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci/wpn_fps_ass_tecci_npc"
-end
 
-function WeaponFactoryTweakData:_init_hajk()
-	self.parts.wpn_fps_smg_hajk_b_standard = {
-		type = "barrel",
-		name_id = "bm_wp_hajk_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_b_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_hajk_b_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_hajk_b_short",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_b_short",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -1,
-			recoil = -1,
-			concealment = 2
-		},
-		dlc = "born",
-		texture_bundle_folder = "born"
-	}
-	self.parts.wpn_fps_smg_hajk_b_medium = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_hajk_b_medium",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_b_medium",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -1,
-			concealment = 1
-		},
-		dlc = "born",
-		texture_bundle_folder = "born"
-	}
-	self.parts.wpn_fps_smg_hajk_fg_standard = {
-		type = "foregrip",
-		name_id = "bm_wp_hajk_fg_standard",
-		a_obj = "a_fg",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_fg_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_hajk_g_standard = {
-		type = "grip",
-		name_id = "bm_wp_hajk_g_standard",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_g_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_hajk_ns_standard = {
-		type = "barrel_ext",
-		name_id = "bm_wp_hajk_ns_standard",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_ns_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_hajk_o_standard = {
-		type = "sight",
-		name_id = "bm_wp_hajk_o_sight",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_o_standard",
-		supported = true,
-		stats = {value = 1},
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_sig"
-		}
-	}
-	self.parts.wpn_fps_smg_hajk_s_standard = {
-		type = "stock",
-		name_id = "bm_wp_hajk_s_standard",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_s_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_hajk_body_standard = {
-		type = "lower_reciever",
-		name_id = "bm_wp_hajk_body_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_body_standard",
-		supported = true,
-		stats = {value = 1},
-		animations = {
-			reload = "reload",
-			fire = "recoil",
-			fire_steelsight = "recoil",
-			magazine_empty = "last_recoil"
-		}
-	}
-	self.parts.wpn_fps_smg_hajk_vg_moe = {
-		type = "vertical_grip",
-		name_id = "bm_wp_hajk_vg_moe",
-		a_obj = "a_vg",
-		unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk_pts/wpn_fps_smg_hajk_vg_moe",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_hajk_b_standard.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_b_standard"
-	self.parts.wpn_fps_smg_hajk_b_short.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_b_short"
-	self.parts.wpn_fps_smg_hajk_b_medium.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_b_medium"
-	self.parts.wpn_fps_smg_hajk_fg_standard.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_fg_standard"
-	self.parts.wpn_fps_smg_hajk_g_standard.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_g_standard"
-	self.parts.wpn_fps_smg_hajk_ns_standard.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_ns_standard"
-	self.parts.wpn_fps_smg_hajk_o_standard.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_o_standard"
-	self.parts.wpn_fps_smg_hajk_s_standard.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_s_standard"
-	self.parts.wpn_fps_smg_hajk_body_standard.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_body_standard"
-	self.parts.wpn_fps_smg_hajk_vg_moe.third_unit = "units/pd2_dlc_born/weapons/wpn_third_smg_hajk_pts/wpn_third_smg_hajk_vg_moe"
-	self.wpn_fps_smg_hajk = {}
-	self.wpn_fps_smg_hajk.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"vertical_grip"
-	}
-	self.wpn_fps_smg_hajk.animations = {
-		reload = "reload",
-		reload_not_empty = "reload_not_empty"
-	}
-	self.wpn_fps_smg_hajk.unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk/wpn_fps_smg_hajk"
-	self.wpn_fps_smg_hajk.default_blueprint = {
-		"wpn_fps_smg_hajk_b_standard",
-		"wpn_fps_smg_hajk_fg_standard",
-		"wpn_fps_smg_hajk_g_standard",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_smg_hajk_ns_standard",
-		"wpn_fps_smg_hajk_o_standard",
-		"wpn_fps_smg_hajk_s_standard",
-		"wpn_fps_smg_hajk_body_standard",
-		"wpn_fps_smg_hajk_vg_moe"
-	}
-	self.wpn_fps_smg_hajk.uses_parts = {
-		"wpn_fps_smg_hajk_b_standard",
-		"wpn_fps_smg_hajk_b_short",
-		"wpn_fps_smg_hajk_b_medium",
-		"wpn_fps_smg_hajk_fg_standard",
-		"wpn_fps_smg_hajk_g_standard",
-		"wpn_fps_smg_hajk_ns_standard",
-		"wpn_fps_smg_hajk_o_standard",
-		"wpn_fps_smg_hajk_s_standard",
-		"wpn_fps_smg_hajk_body_standard",
-		"wpn_fps_smg_hajk_vg_moe",
-		"wpn_fps_m4_uupg_m_std_vanilla",
-		"wpn_fps_ass_l85a2_m_emag",
-		"wpn_fps_upg_m4_m_pmag",
-		"wpn_fps_upg_m4_m_l5",
-		"wpn_fps_upg_m4_m_quad",
-		"wpn_fps_upg_m4_m_straight",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		--"wpn_fps_upg_m4_m_drum",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_m4_upg_m_quick",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_i_slower_rof",
-		"wpn_fps_upg_i_faster_rof"	
-	}
-	self.wpn_fps_smg_hajk_npc = deep_clone(self.wpn_fps_smg_hajk)
-	self.wpn_fps_smg_hajk_npc.unit = "units/pd2_dlc_born/weapons/wpn_fps_smg_hajk/wpn_fps_smg_hajk_npc"
-end
+	--New parts
+	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+	table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
+	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
+	table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")	
+	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_vg_ass_smg_afg")
+	table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_upg_vg_ass_smg_afg")	
+	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_upg_m4_s_standard")	
+	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_smg_olympic_s_short")
+	table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_smg_olympic_s_short")		
+	table.insert(self.wpn_fps_ass_tecci.uses_parts, "wpn_fps_upg_ammo_half_that")
+	table.insert(self.wpn_fps_ass_tecci_npc.uses_parts, "wpn_fps_upg_ammo_half_that")		
+	
+	self.wpn_fps_ass_tecci_npc.uses_parts = deep_clone(self.wpn_fps_ass_tecci.uses_parts)	
 
-function WeaponFactoryTweakData:_init_boot()
-	self.parts.wpn_fps_sho_boot_b_standard = {
-		type = "barrel",
-		name_id = "bm_wp_boot_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_b_standard",
-		supported = true,
-		stats = {value = 1}
+end)
+
+--CR 805B
+Hooks:PostHook(WeaponFactoryTweakData, "_init_hajk", "resmod_hajk", function(self)
+
+	--Short Barrel
+	self.parts.wpn_fps_smg_hajk_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_sho_boot_b_short = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_boot_b_short",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_b_short",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -1,
-			concealment = 1
-		},
-		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1
-		},
-		dlc = "wild",
-		texture_bundle_folder = "wild"
+	self.parts.wpn_fps_smg_hajk_b_short.supported = true
+	self.parts.wpn_fps_smg_hajk_b_short.stats = {
+		value = 4,
+		spread = -1,
+		recoil = -1,
+		concealment = 2
 	}
-	self.parts.wpn_fps_sho_boot_b_long = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "barrel",
-		name_id = "bm_wp_boot_b_long",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_b_long",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1
-		},
-		dlc = "wild",
-		texture_bundle_folder = "wild"
+	
+	--Medium Barrel
+	self.parts.wpn_fps_smg_hajk_b_medium.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_sho_boot_fg_standard = {
-		type = "foregrip",
-		name_id = "bm_wp_boot_fg_standard",
-		a_obj = "a_fg",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_fg_standard",
-		supported = true,
-		stats = {value = 1}
+	self.parts.wpn_fps_smg_hajk_b_medium.supported = true
+	self.parts.wpn_fps_smg_hajk_b_medium.stats = {
+		value = 3,
+		spread = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_sho_boot_s_short = {
-		type = "stock",
-		name_id = "bm_wp_boot_s_standard",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_s_short",
-		supported = true,
-		stats = {value = 1}
+
+end)
+
+--Breaker 12G
+Hooks:PostHook(WeaponFactoryTweakData, "_init_boot", "resmod_boot", function(self)
+
+	--Short Barrel
+	self.parts.wpn_fps_sho_boot_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_sho_boot_s_long = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "stock",
-		name_id = "bm_wp_boot_s_long",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_s_long",
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = 2,
-			concealment = -4
-		},
-		dlc = "wild",
-		texture_bundle_folder = "wild"
+	self.parts.wpn_fps_sho_boot_b_short.supported = true
+	self.parts.wpn_fps_sho_boot_b_short.stats = {
+		value = 3,
+		spread = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_sho_boot_body_standard = {
-		type = "lower_reciever",
-		name_id = "bm_wp_boot_body_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_body_standard",
-		supported = true,
-		stats = {value = 1},
-		animations = {
-			reload_enter = "reload_enter",
-			reload_exit = "reload_exit",
-			reload_not_empty_exit = "reload_exit_not_empty",
-			fire = "recoil",
-			fire_steelsight = "recoil_steelsight"
-		}
+	self.parts.wpn_fps_sho_boot_b_short.custom_stats = {
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
-	self.parts.wpn_fps_sho_boot_body_exotic = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		type = "lower_reciever",
-		name_id = "bm_wp_boot_body_exotic",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_body_exotic",
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = 1,
-			concealment = -1
-		},
-		dlc = "wild",
-		texture_bundle_folder = "wild",
-		animations = {
-			reload_enter = "reload_enter",
-			reload_exit = "reload_exit",
-			reload_not_empty_exit = "reload_exit_not_empty",
-			fire = "recoil",
-			fire_steelsight = "recoil_steelsight"
-		}
+	
+	--Long Barrel
+	self.parts.wpn_fps_sho_boot_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_sho_boot_m_standard = {
-		type = "magazine",
-		name_id = "bm_wp_boot_s_standard",
-		a_obj = "a_m",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_m_standard",
-		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		supported = true,
-		stats = {value = 1}
+	self.parts.wpn_fps_sho_boot_b_long.supported = true
+	self.parts.wpn_fps_sho_boot_b_long.stats = {
+		value = 5,
+		spread = 1,
+		concealment = -3
 	}
-	self.parts.wpn_fps_sho_boot_em_extra = {
-		type = "extra",
-		name_id = "bm_wp_boot_s_standard",
-		a_obj = "a_em",
-		unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot_pts/wpn_fps_sho_boot_em_extra",
-		supported = true,
-		stats = {value = 1}
+	self.parts.wpn_fps_sho_boot_b_long.custom_stats = {
+		damage_near_mul = 1,
+		damage_far_mul = 1
 	}
-	self.parts.wpn_fps_sho_boot_b_standard.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_b_standard"
-	self.parts.wpn_fps_sho_boot_b_short.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_b_short"
-	self.parts.wpn_fps_sho_boot_b_long.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_b_long"
-	self.parts.wpn_fps_sho_boot_fg_standard.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_fg_standard"
-	self.parts.wpn_fps_sho_boot_s_short.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_s_short"
-	self.parts.wpn_fps_sho_boot_s_long.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_s_long"
-	self.parts.wpn_fps_sho_boot_body_standard.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_body_standard"
-	self.parts.wpn_fps_sho_boot_body_exotic.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_body_exotic"
-	self.parts.wpn_fps_sho_boot_m_standard.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_m_standard"
-	self.parts.wpn_fps_sho_boot_em_extra.third_unit = "units/pd2_dlc_wild/weapons/wpn_third_sho_boot_pts/wpn_third_sho_boot_em_extra"
-	self.wpn_fps_sho_boot = {}
+	
+	--Long Stock
+	self.parts.wpn_fps_sho_boot_s_long.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_boot_s_long.supported = true
+	self.parts.wpn_fps_sho_boot_s_long.stats = {
+		value = 2,
+		recoil = 1,
+		concealment = -2
+	}
+
+	--Treated Body
+	self.parts.wpn_fps_sho_boot_body_exotic.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_boot_body_exotic.supported = true
+	self.parts.wpn_fps_sho_boot_body_exotic.stats = {
+		value = 2,
+		recoil = 1,
+		concealment = -2
+	}
+	
+	--Override Table
 	self.wpn_fps_sho_boot.override = {
 		wpn_fps_upg_a_explosive = {
 			supported = true,
@@ -10816,813 +10015,192 @@ function WeaponFactoryTweakData:_init_boot()
 				bullet_class = "InstantExplosiveBulletBase"
 			}
 		}
-	}
-	self.wpn_fps_sho_boot.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"sight"
-	}
-	self.wpn_fps_sho_boot.unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot/wpn_fps_sho_boot"
-	self.wpn_fps_sho_boot.animations = {
-		reload_enter = "reload_enter",
-		reload_exit = "reload_exit",
-		reload_not_empty_exit = "reload_exit_not_empty",
-		fire = "recoil",
-		fire_steelsight = "recoil"
-	}
-	self.wpn_fps_sho_boot.default_blueprint = {
-		"wpn_fps_sho_boot_b_standard",
-		"wpn_fps_sho_boot_fg_standard",
-		"wpn_fps_sho_boot_s_short",
-		"wpn_fps_sho_boot_body_standard",
-		"wpn_fps_sho_boot_m_standard",
-		"wpn_fps_sho_boot_em_extra"
-	}
-	self.wpn_fps_sho_boot.uses_parts = {
-		"wpn_fps_sho_boot_b_standard",
-		"wpn_fps_sho_boot_b_short",
-		"wpn_fps_sho_boot_b_long",
-		"wpn_fps_sho_boot_fg_standard",
-		"wpn_fps_sho_boot_s_short",
-		"wpn_fps_sho_boot_s_long",
-		"wpn_fps_sho_boot_body_standard",
-		"wpn_fps_sho_boot_body_exotic",
-		"wpn_fps_sho_boot_m_standard",
-		"wpn_fps_sho_boot_em_extra",
-		"wpn_fps_sho_boot_b_legendary",
-		"wpn_fps_sho_boot_fg_legendary",
-		"wpn_fps_sho_boot_o_legendary",
-		"wpn_fps_sho_boot_s_legendary",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_ns_shot_thick",
-		"wpn_fps_upg_ns_shot_shark",
-		"wpn_fps_upg_shot_ns_king",
-		"wpn_fps_upg_ns_sho_salvo_large",
-		"wpn_fps_upg_ns_duck"
-	}
-	self.wpn_fps_sho_boot_npc = deep_clone(self.wpn_fps_sho_boot)
-	self.wpn_fps_sho_boot_npc.unit = "units/pd2_dlc_wild/weapons/wpn_fps_sho_boot/wpn_fps_sho_boot_npc"
-end
+	}	
 
-function WeaponFactoryTweakData:_init_packrat()
-	self.parts.wpn_fps_pis_packrat_b_standard = {
-		type = "barrel",
-		name_id = "bm_wp_packrat_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_b_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_pis_packrat_body_standard = {
-		type = "lower_receiver",
-		name_id = "bm_wp_packrat_b_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_body_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_pis_packrat_bolt_standard = {
-		type = "extra",
-		name_id = "bm_wp_packrat_b_standard",
-		a_obj = "a_bolt",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_bolt_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_pis_packrat_m_extended = {
-		pcs = {},
-		type = "magazine",
-		name_id = "bm_wp_packrat_m_extended",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 1},
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_m_extended",
-		supported = true,
-		stats = {
-			value = 1,
-			extra_ammo = 10,
-			concealment = -1,
-			reload = -2
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_pis_packrat_m_standard = {
-		type = "magazine",
-		name_id = "bm_wp_packrat_b_standard",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 1},
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_m_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_pis_packrat_ns_wick = {
-		pcs = {},
-		type = "barrel_ext",
-		name_id = "bm_wp_packrat_ns_extended",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_ns_wick",
-		supported = true,
-		stats = {
-			value = 5,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_pis_packrat_o_expert = {
-		pcs = {},
-		type = "sight",
-		name_id = "bm_wp_packrat_o_expert",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_o_expert",
-		supported = true,
-		stats = {value = 1},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_pis_packrat_o_standard = {
-		type = "sight",
-		name_id = "bm_wp_packrat_b_standard",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_o_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_pis_packrat_sl_standard = {
-		type = "slide",
-		name_id = "bm_wp_packrat_b_standard",
-		a_obj = "a_sl",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_fps_pis_packrat_sl_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_pis_packrat_b_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_b_standard"
-	self.parts.wpn_fps_pis_packrat_body_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_body_standard"
-	self.parts.wpn_fps_pis_packrat_bolt_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_bolt_standard"
-	self.parts.wpn_fps_pis_packrat_m_extended.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_m_extended"
-	self.parts.wpn_fps_pis_packrat_m_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_m_standard"
-	self.parts.wpn_fps_pis_packrat_ns_wick.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_ns_wick"
-	self.parts.wpn_fps_pis_packrat_o_expert.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_o_expert"
-	self.parts.wpn_fps_pis_packrat_o_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_o_standard"
-	self.parts.wpn_fps_pis_packrat_sl_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat_pts/wpn_third_pis_packrat_sl_standard"
-	self.wpn_fps_pis_packrat = {}
-	self.wpn_fps_pis_packrat.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"sight"
-	}
-	self.wpn_fps_pis_packrat.unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat/wpn_fps_pis_packrat"
-	self.wpn_fps_pis_packrat.animations = {
-		reload = "reload",
-		reload_not_empty = "reload_not_empty",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		magazine_empty = "last_recoil"
-	}
-	self.wpn_fps_pis_packrat.override = {
-		wpn_fps_upg_o_rmr = {parent = "slide"},
-		wpn_fps_upg_pis_ns_flash = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_medium_slim = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_ass_filter = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_jungle = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_large = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_medium = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_small = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_large_kac = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_medium_gem = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_ipsccomp = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_pis_g18c_co_1 = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_pis_g18c_co_comp_2 = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_meatgrinder = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_o_rms = {
-			parent = "slide"
-		},
-		wpn_fps_upg_o_rikt = {
-			parent = "slide"
-		},
-		wpn_fps_upg_ns_pis_typhoon = {
-			a_obj = "a_ns",
-			parent = "barrel"
-		}			
-	}
-	self.wpn_fps_pis_packrat.default_blueprint = {
-		"wpn_fps_pis_packrat_b_standard",
-		"wpn_fps_pis_packrat_body_standard",
-		"wpn_fps_pis_packrat_bolt_standard",
-		"wpn_fps_pis_packrat_m_standard",
-		"wpn_fps_pis_packrat_o_standard",
-		"wpn_fps_pis_packrat_sl_standard"
-	}
-	self.wpn_fps_pis_packrat.uses_parts = {
-		"wpn_fps_pis_packrat_b_standard",
-		"wpn_fps_pis_packrat_body_standard",
-		"wpn_fps_pis_packrat_bolt_standard",
-		"wpn_fps_pis_packrat_m_standard",
-		"wpn_fps_pis_packrat_o_standard",
-		"wpn_fps_pis_packrat_sl_standard",
-		"wpn_fps_pis_packrat_m_extended",
-		"wpn_fps_pis_packrat_ns_wick",
-		"wpn_fps_pis_packrat_o_expert",
-		"wpn_fps_upg_fl_pis_laser",
-		"wpn_fps_upg_fl_pis_tlr1",
-		"wpn_fps_upg_ns_pis_large",
-		"wpn_fps_upg_ns_pis_medium",
-		"wpn_fps_upg_ns_pis_small",
-		"wpn_fps_upg_ns_pis_large_kac",
-		"wpn_fps_upg_ns_pis_medium_gem",
-		"wpn_fps_upg_o_rmr",
-		"wpn_fps_upg_ns_pis_medium_slim",
-		"wpn_fps_upg_pis_ns_flash",
-		"wpn_fps_upg_fl_pis_crimson",
-		"wpn_fps_upg_fl_pis_x400v",
-		"wpn_fps_upg_ns_pis_meatgrinder",
-		"wpn_fps_upg_ns_pis_ipsccomp",
-		"wpn_fps_upg_fl_pis_m3x",
-		"wpn_fps_upg_ns_ass_filter",
-		"wpn_fps_upg_ns_pis_jungle",
-		"wpn_fps_upg_o_rms",
-		"wpn_fps_upg_o_rikt",
-		"wpn_fps_upg_ns_pis_typhoon",
-		"wpn_fps_pis_g18c_co_1",
-		"wpn_fps_pis_g18c_co_comp_2"
-	}
-	self.wpn_fps_pis_packrat_npc = deep_clone(self.wpn_fps_pis_packrat)
-	self.wpn_fps_pis_packrat_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_pis_packrat/wpn_fps_pis_packrat_npc"
-end
+end)
 
-function WeaponFactoryTweakData:_init_schakal()
-	self.parts.wpn_fps_smg_schakal_b_civil = {
-		pcs = {},
-		type = "barrel",
-		name_id = "bm_wp_schakal_b_civil",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_b_civil",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_smg_schakal_b_standard = {
-		type = "barrel",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_b_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_schakal_body_lower = {
-		type = "lower_receiver",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_body_lower",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_schakal_body_upper = {
-		type = "upper_reciever",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_body_upper",
-		supported = true,
-		stats = {value = 1},
-		adds = {
-			"wpn_fps_smg_schakal_vg_extra"
-		}
-	}
-	self.parts.wpn_fps_smg_schakal_m_long = {
-		pcs = {},
-		type = "magazine",
-		name_id = "bm_wp_schakal_m_long",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 40},
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_m_long",
-		supported = true,
-		stats = {
-			value = 1,
-			extra_ammo = 10,
-			reload = -2,
-			concealment = -1
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_smg_schakal_m_short = {
-		pcs = {},
-		type = "magazine",
-		name_id = "bm_wp_schakal_m_short",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 16},
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_m_short",
-		supported = true,
-		stats = {
-			value = 1,
-			extra_ammo = -10,
-			reload = 2,
-			concealment = 1,
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_smg_schakal_m_standard = {
-		type = "magazine",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 28},
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_m_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_schakal_ns_silencer = {
-		pcs = {},
-		type = "barrel_ext",
-		sub_type = "silencer",
-		name_id = "bm_wp_schakal_ns_silencer",
-		parent = "barrel",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_ns_silencer",
-		supported = true,
-		stats = {
-			value = 5,
-			suppression = 12,
-			alert_size = -1,
-			spread = 2,
-			recoil = -2,
-			concealment = -2
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_c"
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_smg_schakal_s_civil = {
-		pcs = {},
-		type = "stock",
-		name_id = "bm_wp_schakal_s_civil",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_s_civil",
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = 1,
-			spread = -1
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_smg_schakal_s_folded = {
-		pcs = {},
-		type = "stock",
-		name_id = "bm_wp_schakal_s_folded",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_s_folded",
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = -1,
-			concealment = 1
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_smg_schakal_s_standard = {
-		type = "stock",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_s_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_schakal_dh_standard = {
-		type = "drag_handle",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_dh",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_dh_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_schakal_bolt_standard = {
-		type = "extra",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_bolt",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_bolt_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_schakal_vg_extra = {
-		type = "extra",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_vg",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_vg_extra",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_schakal_extra_magrelease = {
-		type = "extra",
-		name_id = "bm_wp_schakal_standard",
-		a_obj = "a_extra",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_extra_magrelease",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_smg_schakal_vg_surefire = {
-		pcs = {},
-		type = "vertical_grip",
-		name_id = "bm_wp_schakal_vg_surefire",
-		a_obj = "a_vg",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal_pts/wpn_fps_smg_schakal_vg_surefire",
-		supported = true,
-		stats = {value = 1},
-		perks = {"gadget"},
-		sub_type = "laser",
-		forbids = {
-			"wpn_fps_smg_schakal_vg_extra"
-		},
-		adds = {
-			"wpn_fps_smg_schakal_vg_surefire_flashlight"
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_smg_schakal_vg_surefire_flashlight = {
-		type = "extra",
-		a_obj = "a_fl",
-		sub_type = "flashlight",
-		parent = "vertical_grip",
-		unit = "units/pd2_dlc_gage_jobs/weapons/wpn_fps_upg_fl_ass_peq15/wpn_fps_upg_fl_ass_peq15_flashlight",
-		supported = true,
-		stats = {value = 1},
-		perks = {"gadget"}
-	}
-	self.parts.wpn_fps_smg_schakal_b_civil.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_b_civil"
-	self.parts.wpn_fps_smg_schakal_b_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_b_standard"
-	self.parts.wpn_fps_smg_schakal_body_lower.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_body_lower"
-	self.parts.wpn_fps_smg_schakal_body_upper.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_body_upper"
-	self.parts.wpn_fps_smg_schakal_m_long.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_m_long"
-	self.parts.wpn_fps_smg_schakal_m_short.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_m_short"
-	self.parts.wpn_fps_smg_schakal_m_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_m_standard"
-	self.parts.wpn_fps_smg_schakal_ns_silencer.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_ns_silencer"
-	self.parts.wpn_fps_smg_schakal_s_civil.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_s_civil"
-	self.parts.wpn_fps_smg_schakal_s_folded.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_s_folded"
-	self.parts.wpn_fps_smg_schakal_s_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_s_standard"
-	self.parts.wpn_fps_smg_schakal_dh_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_dh_standard"
-	self.parts.wpn_fps_smg_schakal_bolt_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_bolt_standard"
-	self.parts.wpn_fps_smg_schakal_vg_extra.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_vg_extra"
-	self.parts.wpn_fps_smg_schakal_vg_surefire.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_vg_surefire"
-	self.parts.wpn_fps_smg_schakal_extra_magrelease.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_smg_schakal_pts/wpn_third_smg_schakal_extra_magrelease"
-	self.wpn_fps_smg_schakal = {}
-	self.wpn_fps_smg_schakal.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"sight"
-	}
-	self.wpn_fps_smg_schakal.unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal/wpn_fps_smg_schakal"
-	self.wpn_fps_smg_schakal.animations = {
-		reload_not_empty = "reload_not_empty",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		reload = "reload",
-		magazine_empty = "last_recoil"
-	}
-	self.wpn_fps_smg_schakal.default_blueprint = {
-		"wpn_fps_smg_schakal_b_standard",
-		"wpn_fps_smg_schakal_body_lower",
-		"wpn_fps_smg_schakal_body_upper",
-		"wpn_fps_smg_schakal_m_standard",
-		"wpn_fps_smg_schakal_s_standard",
-		"wpn_fps_smg_schakal_dh_standard",
-		"wpn_fps_smg_schakal_bolt_standard",
-		"wpn_fps_smg_schakal_extra_magrelease"
-	}
-	self.wpn_fps_smg_schakal.uses_parts = {
-		"wpn_fps_smg_schakal_b_civil",
-		"wpn_fps_smg_schakal_b_standard",
-		"wpn_fps_smg_schakal_body_lower",
-		"wpn_fps_smg_schakal_body_upper",
-		"wpn_fps_smg_schakal_m_long",
-		"wpn_fps_smg_schakal_m_short",
-		"wpn_fps_smg_schakal_m_standard",
-		"wpn_fps_smg_schakal_ns_silencer",
-		"wpn_fps_smg_schakal_s_civil",
-		"wpn_fps_smg_schakal_s_folded",
-		"wpn_fps_smg_schakal_s_standard",
-		"wpn_fps_smg_schakal_dh_standard",
-		"wpn_fps_smg_schakal_bolt_standard",
-		"wpn_fps_smg_schakal_vg_extra",
-		"wpn_fps_smg_schakal_vg_surefire",
-		"wpn_fps_smg_schakal_extra_magrelease",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_vg_ass_smg_verticalgrip",
-		"wpn_fps_upg_vg_ass_smg_stubby",
-		"wpn_fps_upg_vg_ass_smg_afg",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_i_slower_rof",
-		"wpn_fps_upg_i_faster_rof"	
-	}
-	self.wpn_fps_smg_schakal_npc = deep_clone(self.wpn_fps_smg_schakal)
-	self.wpn_fps_smg_schakal_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_smg_schakal/wpn_fps_smg_schakal_npc"
-end
+--Breaker 12G
+Hooks:PostHook(WeaponFactoryTweakData, "_init_packrat", "resmod_packrat", function(self)
 
-function WeaponFactoryTweakData:_init_desertfox()
-	self.parts.wpn_fps_snp_desertfox_b_long = {
-		pcs = {},
-		type = "barrel",
-		name_id = "bm_wp_desertfox_b_long",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox_pts/wpn_fps_snp_desertfox_b_long",
-		supported = true,
-		stats = {
-			value = 3,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
+	--Extended Magazine
+	self.parts.wpn_fps_pis_packrat_m_extended.pcs = {}
+	self.parts.wpn_fps_pis_packrat_m_extended.supported = true
+	self.parts.wpn_fps_pis_packrat_m_extended.stats = {
+		value = 1,
+		extra_ammo = 10,
+		concealment = -1,
+		reload = -2
 	}
-	self.parts.wpn_fps_snp_desertfox_b_short = {
-		type = "barrel",
-		name_id = "bm_wp_desertfox_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox_pts/wpn_fps_snp_desertfox_b_short",
-		supported = true,
-		stats = {value = 1}
+	
+	--Contractor Compensator
+	self.parts.wpn_fps_pis_packrat_ns_wick.pcs = {}
+	self.parts.wpn_fps_pis_packrat_ns_wick.supported = true
+	self.parts.wpn_fps_pis_packrat_ns_wick.stats = {
+		value = 6,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
 	}
-	self.parts.wpn_fps_snp_desertfox_b_silencer = {
-		pcs = {},
-		type = "barrel",
-		name_id = "bm_wp_desertfox_b_silenced",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox_pts/wpn_fps_snp_desertfox_b_silencer",
-		supported = true,
-		stats = {
-			value = 10,
-			suppression = 10,
-			alert_size = -1,
-			spread = -1,
-			recoil = 1
-		},
-		perks = {"silencer"},
-		sound_switch = {
-			suppressed = "suppressed_c"
-		},
-		dlc = "pim",
-		texture_bundle_folder = "pim",
-		is_a_unlockable = true
+	
+	--Tritanium Sights
+	self.parts.wpn_fps_pis_packrat_o_expert.pcs = {}
+	self.parts.wpn_fps_pis_packrat_o_expert.supported = true
+	self.parts.wpn_fps_pis_packrat_o_expert.stats = {value = 0}
+	
+	--Overrides
+	self.wpn_fps_pis_packrat.override.wpn_fps_pis_g18c_co_1 = {parent = "barrel", a_obj = "a_ns"}
+	self.wpn_fps_pis_packrat.override.wpn_fps_pis_g18c_co_comp_2 = {parent = "barrel", a_obj = "a_ns"}
+
+	--New Parts
+	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_packrat_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
+
+	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_packrat_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
+
+	self.wpn_fps_pis_packrat_npc.uses_parts = deep_clone(self.wpn_fps_pis_packrat.uses_parts)
+
+end)
+
+--Jackal (UMP)
+Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", function(self)
+
+	self.parts.wpn_fps_smg_schakal_b_civil.pcs = {}
+	self.parts.wpn_fps_smg_schakal_b_civil.supported = true
+	self.parts.wpn_fps_smg_schakal_b_civil.stats = {
+		value = 5,
+		spread = 1,
+		concealment = -3
 	}
-	self.parts.wpn_fps_snp_desertfox_body = {
-		type = "lower_receiver",
-		name_id = "bm_wp_desertfox_b_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox_pts/wpn_fps_snp_desertfox_body",
-		supported = true,
-		stats = {value = 1}
+	
+	--Long Magazine
+	self.parts.wpn_fps_smg_schakal_m_long.pcs = {}
+	self.parts.wpn_fps_smg_schakal_m_long.supported = true
+	self.parts.wpn_fps_smg_schakal_m_long.stats = {
+		value = 1,
+		extra_ammo = 10,
+		reload = -2,
+		concealment = -1
 	}
-	self.parts.wpn_fps_snp_desertfox_dh_standard = {
-		type = "extra",
-		name_id = "bm_wp_desertfox_b_standard",
-		a_obj = "a_bolt",
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox_pts/wpn_fps_snp_desertfox_dh_standard",
-		supported = true,
-		stats = {value = 1}
+	
+	--Short Magazine
+	self.parts.wpn_fps_smg_schakal_m_short.pcs = {}
+	self.parts.wpn_fps_smg_schakal_m_short.supported = true
+	self.parts.wpn_fps_smg_schakal_m_short.stats = {
+		value = 1,
+		extra_ammo = -10,
+		reload = 2,
+		concealment = 1,
 	}
-	self.parts.wpn_fps_snp_desertfox_mag = {
-		type = "magazine",
-		name_id = "bm_wp_desertfox_b_standard",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 1},
-		unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox_pts/wpn_fps_snp_desertfox_mag",
-		supported = true,
-		stats = {value = 1}
+	
+	--Silentgear Silencer
+	self.parts.wpn_fps_smg_schakal_ns_silencer.pcs = {}
+	self.parts.wpn_fps_smg_schakal_ns_silencer.supported = true
+	self.parts.wpn_fps_smg_schakal_ns_silencer.stats = {
+		value = 2,
+		suppression = 10,
+		alert_size = -1
 	}
-	self.parts.wpn_fps_snp_desertfox_b_long.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_snp_desertfox_pts/wpn_third_snp_desertfox_b_long"
-	self.parts.wpn_fps_snp_desertfox_b_short.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_snp_desertfox_pts/wpn_third_snp_desertfox_b_short"
-	self.parts.wpn_fps_snp_desertfox_b_silencer.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_snp_desertfox_pts/wpn_third_snp_desertfox_b_silencer"
-	self.parts.wpn_fps_snp_desertfox_body.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_snp_desertfox_pts/wpn_third_snp_desertfox_body"
-	self.parts.wpn_fps_snp_desertfox_dh_standard.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_snp_desertfox_pts/wpn_third_snp_desertfox_dh_standard"
-	self.parts.wpn_fps_snp_desertfox_mag.third_unit = "units/pd2_dlc_pim/weapons/wpn_third_snp_desertfox_pts/wpn_third_snp_desertfox_mag"
-	self.wpn_fps_snp_desertfox = {}
-	self.wpn_fps_snp_desertfox.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"sight"
+	self.parts.wpn_fps_smg_schakal_ns_silencer.perks = {"silencer"}
+	
+	--Civilian Stock
+	self.parts.wpn_fps_smg_schakal_s_civil.pcs = {}
+	self.parts.wpn_fps_smg_schakal_s_civil.supported = true
+	self.parts.wpn_fps_smg_schakal_s_civil.stats = {
+		value = 2,
+		recoil = 1,
+		concealment = -2
 	}
-	self.wpn_fps_snp_desertfox.unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox/wpn_fps_snp_desertfox"
-	self.wpn_fps_snp_desertfox.animations = {
-		reload = "reload",
-		reload_not_empty = "reload_not_empty",
-		fire = "recoil",
-		fire_steelsight = "recoil"
-	}				
+	
+	--Folded Stock
+	self.parts.wpn_fps_smg_schakal_s_folded.pcs = {}
+	self.parts.wpn_fps_smg_schakal_s_folded.supported = true
+	self.parts.wpn_fps_smg_schakal_s_folded.stats = {
+		value = 3,
+		recoil = -1,
+		concealment = 1
+	}
+	
+	--Twinkle Grip
+	self.parts.wpn_fps_smg_schakal_vg_surefire.pcs = {}
+	self.parts.wpn_fps_smg_schakal_vg_surefire.supported = true
+	self.parts.wpn_fps_smg_schakal_vg_surefire.stats = {
+		value = 5,
+		recoil = 1,
+		concealment = -2
+	}
+	self.parts.wpn_fps_smg_schakal_vg_surefire.perks = {"gadget"}
+	
+	self.wpn_fps_smg_schakal.default_blueprint[8] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"	
+	
+	self.wpn_fps_smg_schakal.uses_parts[25] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"	
+	self.wpn_fps_smg_schakal.uses_parts[27] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"	
+	
+	self.wpn_fps_smg_schakal_npc.uses_parts = deep_clone(self.wpn_fps_smg_schakal.uses_parts)
+
+end)
+
+--Desertfox
+Hooks:PostHook(WeaponFactoryTweakData, "_init_desertfox", "resmod_desertfox", function(self)
+
+	--Long Barrel
+	self.parts.wpn_fps_snp_desertfox_b_long.pcs = {}
+	self.parts.wpn_fps_snp_desertfox_b_long.supported = true
+	self.parts.wpn_fps_snp_desertfox_b_long.stats = {
+		value = 5,
+		spread = 1,
+		concealment = -3
+	}
+	
+	--Suppressed Barrel
+	self.parts.wpn_fps_snp_desertfox_b_silencer.pcs = {}
+	self.parts.wpn_fps_snp_desertfox_b_silencer.supported = true
+	self.parts.wpn_fps_snp_desertfox_b_silencer.stats = {
+		value = 2,
+		suppression = 10,
+		alert_size = -1
+	}
+	
+	--Override table
 	self.wpn_fps_snp_desertfox.override = {	
 		wpn_fps_snp_model70_iron_sight = { 
 			adds = {"wpn_fps_m4_uupg_o_flipup"}
 		}
-	}
-	self.wpn_fps_snp_desertfox.default_blueprint = {
-		"wpn_fps_snp_desertfox_b_short",
-		"wpn_fps_snp_desertfox_body",
-		"wpn_fps_snp_desertfox_dh_standard",
-		"wpn_fps_snp_desertfox_mag",
-		"wpn_fps_upg_o_shortdot"
-	}
-	self.wpn_fps_snp_desertfox.uses_parts = {
-		"wpn_fps_snp_desertfox_b_long",
-		"wpn_fps_snp_desertfox_b_short",
-		"wpn_fps_snp_desertfox_b_silencer",
-		"wpn_fps_snp_desertfox_body",
-		"wpn_fps_snp_desertfox_dh_standard",
-		"wpn_fps_snp_desertfox_mag",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_shortdot",
-		"wpn_fps_upg_o_leupold",
-		"wpn_fps_upg_o_45iron",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_snp_model70_iron_sight",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_o_box",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_45rds_v2",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_45steel"
-	}
-	self.wpn_fps_snp_desertfox_npc = deep_clone(self.wpn_fps_snp_desertfox)
-	self.wpn_fps_snp_desertfox_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_snp_desertfox/wpn_fps_snp_desertfox_npc"
-end
+	}	
+	
+	table.insert(self.wpn_fps_snp_desertfox.uses_parts, "wpn_fps_snp_model70_iron_sight")
+	table.insert(self.wpn_fps_snp_desertfox_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")		
+	
+	self.wpn_fps_snp_desertfox_npc.uses_parts = deep_clone(self.wpn_fps_snp_desertfox.uses_parts)
 
-function WeaponFactoryTweakData:_init_x_packrat()
-	self.wpn_fps_x_packrat = {}
-	self.wpn_fps_x_packrat.optional_types = {
-		"barrel_ext",
-		"gadget",
-		"sight"
-	}
-	self.wpn_fps_x_packrat.unit = "units/pd2_dlc_pim/weapons/wpn_fps_x_packrat/wpn_fps_x_packrat"
-	self.wpn_fps_x_packrat.animations = {
-		reload = "reload_right",
-		reload_not_empty = "reload_not_empty_right",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		reload_left = "reload_left",
-		reload_not_empty_left = "reload_not_empty_left",
-		magazine_empty = "last_recoil"
-	}
-	self.wpn_fps_x_packrat.override = {
-		wpn_fps_upg_o_rmr = {parent = "slide"},
-		wpn_fps_upg_pis_ns_flash = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_medium_slim = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_ass_filter = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_jungle = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_large = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_medium = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_small = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_large_kac = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_medium_gem = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_ipsccomp = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_pis_g18c_co_1 = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_pis_g18c_co_comp_2 = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_ns_pis_meatgrinder = {parent = "barrel", a_obj = "a_ns"},
-		wpn_fps_upg_o_rms = {
-			parent = "slide"
-		},
-		wpn_fps_upg_o_rikt = {
-			parent = "slide"
-		},
-		wpn_fps_upg_ns_pis_typhoon = {
-			a_obj = "a_ns",
-			parent = "barrel"
-		},			
-		wpn_fps_pis_packrat_m_extended = {
-			supported = true,
-			stats = {
-				value = 1,
-				extra_ammo = 20,
-				concealment = -1,
-				reload = -2
-			}
+end)
+
+--Akimbo Contractors
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_packrat", "resmod_x_packrat", function(self)
+
+	--Override Table
+	self.wpn_fps_x_packrat.override.wpn_fps_pis_g18c_co_1 = {parent = "barrel", a_obj = "a_ns"}
+	self.wpn_fps_x_packrat.override.wpn_fps_pis_g18c_co_comp_2 = {parent = "barrel", a_obj = "a_ns"}		
+	self.wpn_fps_x_packrat.override.wpn_fps_pis_packrat_m_extended = {
+		supported = true,
+		stats = {
+			value = 1,
+			extra_ammo = 20,
+			concealment = -1,
+			reload = -2
 		}
 	}
-	self.wpn_fps_x_packrat.default_blueprint = {
-		"wpn_fps_pis_packrat_b_standard",
-		"wpn_fps_pis_packrat_body_standard",
-		"wpn_fps_pis_packrat_bolt_standard",
-		"wpn_fps_pis_packrat_m_standard",
-		"wpn_fps_pis_packrat_o_standard",
-		"wpn_fps_pis_packrat_sl_standard"
-	}
-	self.wpn_fps_x_packrat.uses_parts = {
-		"wpn_fps_pis_packrat_b_standard",
-		"wpn_fps_pis_packrat_body_standard",
-		"wpn_fps_pis_packrat_bolt_standard",
-		"wpn_fps_pis_packrat_m_standard",
-		"wpn_fps_pis_packrat_o_standard",
-		"wpn_fps_pis_packrat_sl_standard",
-		"wpn_fps_pis_packrat_m_extended",
-		"wpn_fps_pis_packrat_ns_wick",
-		"wpn_fps_pis_packrat_o_expert",
-		"wpn_fps_upg_fl_pis_laser",
-		"wpn_fps_upg_fl_pis_tlr1",
-		"wpn_fps_upg_ns_pis_large",
-		"wpn_fps_upg_ns_pis_medium",
-		"wpn_fps_upg_ns_pis_small",
-		"wpn_fps_upg_ns_pis_large_kac",
-		"wpn_fps_upg_ns_pis_medium_gem",
-		"wpn_fps_upg_ns_pis_medium_slim",
-		"wpn_fps_upg_pis_ns_flash",
-		"wpn_fps_upg_fl_pis_crimson",
-		"wpn_fps_upg_fl_pis_x400v",
-		"wpn_fps_upg_ns_pis_meatgrinder",
-		"wpn_fps_upg_ns_pis_ipsccomp",
-		"wpn_fps_upg_fl_pis_m3x",
-		"wpn_fps_upg_ns_ass_filter",
-		"wpn_fps_upg_ns_pis_jungle",
-		"wpn_fps_upg_ns_pis_typhoon",
-		"wpn_fps_pis_g18c_co_1",
-		"wpn_fps_pis_g18c_co_comp_2"
-	}
-	self.wpn_fps_x_packrat_npc = deep_clone(self.wpn_fps_x_packrat)
-	self.wpn_fps_x_packrat_npc.unit = "units/pd2_dlc_pim/weapons/wpn_fps_x_packrat/wpn_fps_x_packrat_npc"
-end
+	
+	--New Parts
+	table.insert(self.wpn_fps_x_packrat.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_x_packrat_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
+
+	table.insert(self.wpn_fps_x_packrat.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_x_packrat_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
+
+	self.wpn_fps_x_packrat_npc.uses_parts = deep_clone(self.wpn_fps_x_packrat.uses_parts)	
+
+end)
 
 --Goliath 12G
 Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(self)
@@ -11750,7 +10328,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_sho_saiga_b_short.pcs = {}
 	self.parts.wpn_fps_sho_saiga_b_short.supported = true
 	self.parts.wpn_fps_sho_saiga_b_short.stats = {
-		value = 1,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}
@@ -11762,7 +10340,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--Hollow Handle
 	self.parts.wpn_fps_sho_saiga_fg_holy.pcs = {}
 	self.parts.wpn_fps_sho_saiga_fg_holy.supported = true
-	self.parts.wpn_fps_sho_saiga_fg_holy.stats = {value = 1, recoil = -1, concealment = 1}
+	self.parts.wpn_fps_sho_saiga_fg_holy.stats = {value = 3, recoil = -1, concealment = 1}
 	
 	--45 RDS
 	self.parts.wpn_fps_upg_o_45rds.pcs = {}
@@ -11775,6 +10353,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	
 	--Reconnaissance Sight
 	self.parts.wpn_fps_upg_o_spot.pcs = {}
+	self.parts.wpn_fps_upg_o_spot.has_description = true
+	self.parts.wpn_fps_upg_o_spot.desc_id = "bm_wp_upg_o_huge"	
 	self.parts.wpn_fps_upg_o_spot.supported = true
 	self.parts.wpn_fps_upg_o_spot.stats = {
 		value = 8,
@@ -11799,6 +10379,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	--Vintage Sight
 	self.parts.wpn_fps_ass_g36_o_vintage.pcs = {}
 	self.parts.wpn_fps_ass_g36_o_vintage.has_description = true
+	self.parts.wpn_fps_ass_g36_o_vintage.desc_id = "bm_wp_upg_o_huge"	
 	self.parts.wpn_fps_ass_g36_o_vintage.reticle_obj = nil
 	self.parts.wpn_fps_ass_g36_o_vintage.supported = true
 	self.parts.wpn_fps_ass_g36_o_vintage.stats = {
@@ -11811,17 +10392,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_upg_g36_fg_long.pcs = {}
 	self.parts.wpn_fps_upg_g36_fg_long.supported = true
 	self.parts.wpn_fps_upg_g36_fg_long.stats = {
-		value = 1,
-		spread = 1,
-		recoil = -1,
-		concealment = -1
+		value = 6,
+		spread = 2,
+		recoil = -2,
+		concealment = -2
 	}
 	
 	--Enlightened Foregrip
 	self.parts.wpn_fps_smg_mp5_fg_flash.pcs = {}
 	self.parts.wpn_fps_smg_mp5_fg_flash.supported = true
 	self.parts.wpn_fps_smg_mp5_fg_flash.stats = {
-		value = 1,
+		value = 8,
 		spread = 1,
 		recoil = -1,
 		concealment = -1
@@ -11832,8 +10413,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_smg_mp5_s_folding.pcs = {}
 	self.parts.wpn_fps_smg_mp5_s_folding.supported = true
 	self.parts.wpn_fps_smg_mp5_s_folding.stats = {
-		value = 1, 
-		spread = -1, 
+		value = 2, 
+		concealment = -2, 
 		recoil = 1
 	}
 	
@@ -11940,406 +10521,62 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 
 end)
 
-function WeaponFactoryTweakData:_init_arbiter()
-	self.parts.wpn_fps_gre_arbiter_b_standard = {
-		type = "barrel",
-		name_id = "bm_wp_arbiter_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_b_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_gre_arbiter_b_long = {
-		pcs = {},
-		type = "barrel",
-		name_id = "bm_wp_arbiter_b_long",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_b_long",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = 1,
-			recoil = -1,
-			concealment = -1
-		},
-		texture_bundle_folder = "tng",
-		dlc = "tango",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_gre_arbiter_b_comp = {
-		pcs = {},
-		type = "barrel",
-		name_id = "bm_wp_arbiter_b_comp",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_b_comp",
-		supported = true,
-		stats = {
-			value = 1,
-			spread = -1,
-			concealment = 1
-		},
-		texture_bundle_folder = "tng",
-		dlc = "tango",
-		is_a_unlockable = true
-	}
-	self.parts.wpn_fps_gre_arbiter_body_standard = {
-		type = "lower_reciever",
-		name_id = "bm_wp_l85a2_fg_medium",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_body_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_gre_arbiter_m_standard = {
-		type = "magazine",
-		name_id = "bm_wp_l85a2_fg_medium",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 1},
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_m_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_gre_arbiter_s_standard = {
-		type = "stock",
-		name_id = "bm_wp_mp5_s_folding",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_s_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_gre_arbiter_bolt = {
-		type = "extra",
-		name_id = "bm_wp_mp5_s_folding",
-		a_obj = "a_bolt",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_bolt",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_gre_arbiter_charginghandle = {
-		type = "drag_handle",
-		name_id = "bm_wp_mp5_s_folding",
-		a_obj = "a_dh",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_charginghandle",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_gre_arbiter_ejector = {
-		type = "extra",
-		name_id = "bm_wp_mp5_s_folding",
-		a_obj = "a_ejector",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_ejector",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_gre_arbiter_o_standard = {
-		type = "sight",
-		name_id = "bm_wp_mp5_s_folding",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter_pts/wpn_fps_gre_arbiter_o_standard",
-		supported = true,
-		stats = {value = 1},
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_sig"
-		}
-	}
-	self.parts.wpn_fps_gre_arbiter_b_comp.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_b_comp"
-	self.parts.wpn_fps_gre_arbiter_b_long.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_b_long"
-	self.parts.wpn_fps_gre_arbiter_b_standard.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_b_standard"
-	self.parts.wpn_fps_gre_arbiter_body_standard.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_body_standard"
-	self.parts.wpn_fps_gre_arbiter_m_standard.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_m_standard"
-	self.parts.wpn_fps_gre_arbiter_s_standard.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_s_standard"
-	self.parts.wpn_fps_gre_arbiter_bolt.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_bolt"
-	self.parts.wpn_fps_gre_arbiter_charginghandle.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_charginghandle"
-	self.parts.wpn_fps_gre_arbiter_ejector.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_ejector"
-	self.parts.wpn_fps_gre_arbiter_o_standard.third_unit = "units/pd2_dlc_tng/weapons/wpn_third_gre_arbiter_pts/wpn_third_gre_arbiter_o_standard"
-	self.wpn_fps_gre_arbiter = {}
-	self.wpn_fps_gre_arbiter.unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter/wpn_fps_gre_arbiter"
-	self.wpn_fps_gre_arbiter.optional_types = {
-		"gadget",
-		"sight",
-		"barrel_ext"
-	}
-	self.wpn_fps_gre_arbiter.animations = {
-		reload = "reload",
-		reload_not_empty = "reload_not_empty",
-		fire = "recoil",
-		fire_steelsight = "recoil_zoom"
-	}
-	self.wpn_fps_gre_arbiter.stock_adapter = "wpn_fps_gre_arbiter_stock_adapter"
-	self.wpn_fps_gre_arbiter.forbids = {
-		"wpn_fps_addon_ris"
-	}
-	self.wpn_fps_gre_arbiter.adds = {}
-	self.wpn_fps_gre_arbiter.default_blueprint = {
-		"wpn_fps_gre_arbiter_b_standard",
-		"wpn_fps_gre_arbiter_body_standard",
-		"wpn_fps_gre_arbiter_m_standard",
-		"wpn_fps_gre_arbiter_s_standard",
-		"wpn_fps_gre_arbiter_bolt",
-		"wpn_fps_gre_arbiter_charginghandle",
-		"wpn_fps_gre_arbiter_ejector",
-		"wpn_fps_gre_arbiter_o_standard"
-	}
-	self.wpn_fps_gre_arbiter.uses_parts = {
-		"wpn_fps_gre_arbiter_b_comp",
-		"wpn_fps_gre_arbiter_b_long",
-		"wpn_fps_gre_arbiter_b_standard",
-		"wpn_fps_gre_arbiter_body_standard",
-		"wpn_fps_gre_arbiter_m_standard",
-		"wpn_fps_gre_arbiter_s_standard",
-		"wpn_fps_gre_arbiter_bolt",
-		"wpn_fps_gre_arbiter_charginghandle",
-		"wpn_fps_gre_arbiter_ejector",
-		"wpn_fps_gre_arbiter_o_standard",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1"			
-	}
-	self.wpn_fps_gre_arbiter_npc = deep_clone(self.wpn_fps_gre_arbiter)
-	self.wpn_fps_gre_arbiter_npc.unit = "units/pd2_dlc_tng/weapons/wpn_fps_gre_arbiter/wpn_fps_gre_arbiter_npc"
-end
+--Arbiter
+Hooks:PostHook(WeaponFactoryTweakData, "_init_arbiter", "resmod_arbiter", function(self)
 
-function WeaponFactoryTweakData:_init_contraband()
-	self.parts.wpn_fps_ass_contraband_b_standard = {
-		type = "barrel",
-		name_id = "bm_wp_contraband_b_standard",
-		a_obj = "a_b",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_b_standard",
-		supported = true,
-		stats = {value = 1}
+	--Long Barrel
+	self.parts.wpn_fps_gre_arbiter_b_long.pcs = {}
+	self.parts.wpn_fps_gre_arbiter_b_long.supported = true
+	self.parts.wpn_fps_gre_arbiter_b_long.stats = {
+		value = 5,
+		spread = 1,
+		concealment = -3
 	}
-	self.parts.wpn_fps_ass_contraband_body_standard = {
-		type = "lower_receiver",
-		name_id = "bm_wp_contraband_body_standard",
-		a_obj = "a_body",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_body_standard",
-		supported = true,
-		stats = {value = 1}
+	
+	--Bombardier Barrel
+	self.parts.wpn_fps_gre_arbiter_b_comp.pcs = {}
+	self.parts.wpn_fps_gre_arbiter_b_comp.supported = true
+	self.parts.wpn_fps_gre_arbiter_b_comp.stats = {
+		value = 1,
+		spread = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_ass_contraband_dh_standard = {
-		type = "drag_handle",
-		name_id = "bm_wp_contraband_dh_standard",
-		a_obj = "a_dh",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_dh_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_contraband_fg_standard = {
-		type = "foregrip",
-		name_id = "bm_wp_contraband_fg_standard",
-		a_obj = "a_fg",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_fg_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_contraband_g_standard = {
-		type = "grip",
-		name_id = "bm_wp_contraband_g_standard",
-		a_obj = "a_g",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_g_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_contraband_gl_m203 = {
-		type = "underbarrel",
-		sub_type = "grenade_launcher",
-		name_id = "bm_wp_contraband_gl_m203",
-		bullet_objects = {prefix = "g_grenade_", amount = 1},
-		a_obj = "a_gl",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_gl_m203",
-		supported = true,
-		stats = {value = 1},
-		animations = {bipod_reload = "reload_ul"},
-		perks = {
-			"underbarrel"
-		}
-	}
-	self.parts.wpn_fps_ass_contraband_m_standard = {
-		type = "magazine",
-		name_id = "bm_wp_contraband_m_standard",
-		a_obj = "a_m",
-		bullet_objects = {prefix = "g_bullet_", amount = 2},
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_m_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_contraband_ns_standard = {
-		type = "barrel_ext",
-		name_id = "bm_wp_contraband_ns_standard",
-		a_obj = "a_ns",
-		parent = "barrel",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_ns_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_contraband_o_standard = {
-		type = "sight",
-		name_id = "bm_wp_contraband_o_standard",
-		a_obj = "a_o",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_o_standard",
-		supported = true,
-		stats = {value = 1},
-		forbids = {
-			"wpn_fps_upg_o_xpsg33_magnifier",
-			"wpn_fps_upg_o_45rds",
-			"wpn_fps_upg_o_45rds_v2",
-			"wpn_fps_upg_o_sig",
-			"wpn_fps_upg_o_45steel"				
-		}
-	}
-	self.parts.wpn_fps_ass_contraband_s_standard = {
-		type = "stock",
-		name_id = "bm_wp_contraband_s_standard",
-		a_obj = "a_s",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_s_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_contraband_bolt_standard = {
-		type = "extra",
-		name_id = "bm_wp_contraband_s_standard",
-		a_obj = "a_bolt",
-		unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband_pts/wpn_fps_ass_contraband_bolt_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_ass_contraband_b_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_b_standard"
-	self.parts.wpn_fps_ass_contraband_body_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_body_standard"
-	self.parts.wpn_fps_ass_contraband_dh_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_dh_standard"
-	self.parts.wpn_fps_ass_contraband_fg_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_fg_standard"
-	self.parts.wpn_fps_ass_contraband_g_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_g_standard"
-	self.parts.wpn_fps_ass_contraband_gl_m203.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_gl_m203"
-	self.parts.wpn_fps_ass_contraband_m_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_m_standard"
-	self.parts.wpn_fps_ass_contraband_ns_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_ns_standard"
-	self.parts.wpn_fps_ass_contraband_o_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_o_standard"
-	self.parts.wpn_fps_ass_contraband_s_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_s_standard"
-	self.parts.wpn_fps_ass_contraband_bolt_standard.third_unit = "units/pd2_dlc_chico/weapons/wpn_third_ass_contraband_pts/wpn_third_ass_contraband_bolt_standard"
-	self.wpn_fps_ass_contraband = {}
-	self.wpn_fps_ass_contraband.unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband/wpn_fps_ass_contraband"
-	self.wpn_fps_ass_contraband.optional_types = {
-		"gadget",
-		"sight",
-		"barrel_ext"
-	}
-	self.wpn_fps_ass_contraband.animations = {
-		reload = "reload",
-		reload_not_empty = "reload_not_empty",
-		fire = "recoil",
-		fire_steelsight = "recoil",
-		bipod_reload = "bipod_reload",
-		bipod_fire = "bipod_recoil",
-		bipod_fire_steelsight = "bipod_recoil_zoom"
-	}
-	self.wpn_fps_ass_contraband.forbids = {
-		"wpn_fps_addon_ris"
-	}
-	self.wpn_fps_ass_contraband.adds = {}
+	
+end)
+
+--Contraband
+Hooks:PostHook(WeaponFactoryTweakData, "_init_contraband", "resmod_contraband", function(self)
+
+	--Stock Adapter
 	self.wpn_fps_ass_contraband.stock_adapter = "wpn_fps_upg_m4_s_adapter"
-	self.wpn_fps_ass_contraband.default_blueprint = {
-		"wpn_fps_ass_contraband_b_standard",
-		"wpn_fps_ass_contraband_body_standard",
-		"wpn_fps_ass_contraband_dh_standard",
-		"wpn_fps_ass_contraband_fg_standard",
-		"wpn_fps_ass_contraband_g_standard",
-		"wpn_fps_ass_contraband_gl_m203",
-		"wpn_fps_ass_contraband_m_standard",
-		"wpn_fps_ass_contraband_ns_standard",
-		"wpn_fps_ass_contraband_o_standard",
-		"wpn_fps_ass_contraband_s_standard",
-		"wpn_fps_ass_contraband_bolt_standard"
-	}
-	self.wpn_fps_ass_contraband.uses_parts = {
-		"wpn_fps_ass_contraband_b_standard",
-		"wpn_fps_ass_contraband_body_standard",
-		"wpn_fps_ass_contraband_dh_standard",
-		"wpn_fps_ass_contraband_fg_standard",
-		"wpn_fps_ass_contraband_g_standard",
-		"wpn_fps_ass_contraband_gl_m203",
-		"wpn_fps_ass_contraband_m_standard",
-		"wpn_fps_ass_contraband_ns_standard",
-		"wpn_fps_ass_contraband_o_standard",
-		"wpn_fps_ass_contraband_s_standard",
-		"wpn_fps_ass_contraband_bolt_standard",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_o_45rds",
-		"wpn_fps_upg_o_spot",
-		--Here comes custom shit--
-		"wpn_fps_upg_m4_g_ergo",
-		"wpn_fps_upg_m4_g_sniper",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_upg_m4_g_mgrip",
-		"wpn_fps_m4_uupg_s_fold",
-		"wpn_fps_upg_m4_s_standard",
-		"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_upg_m4_s_crane",
-		"wpn_fps_upg_m4_s_mk46",
-		"wpn_fps_smg_olympic_s_short",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_o_45rds_v2",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		"wpn_fps_upg_o_45steel",			
-		"wpn_fps_upg_i_slower_rof",
-		"wpn_fps_upg_i_faster_rof"	
-	}
-	self.wpn_fps_ass_contraband_npc = deep_clone(self.wpn_fps_ass_contraband)
-	self.wpn_fps_ass_contraband_npc.unit = "units/pd2_dlc_chico/weapons/wpn_fps_ass_contraband/wpn_fps_ass_contraband_npc"
-end
+	
+	--So it has more than like 3 parts
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_g_ergo")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_g_ergo")
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_g_sniper")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_g_sniper")	
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_g_hgrip")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_g_hgrip")	
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_g_mgrip")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_g_mgrip")
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_m4_uupg_s_fold")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")		
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_s_standard")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_s_standard")	
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_s_pts")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_s_pts")	
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_s_ubr")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_s_ubr")	
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_s_crane")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_s_crane")	
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_upg_m4_s_mk46")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_upg_m4_s_mk46")	
+	table.insert(self.wpn_fps_ass_contraband.uses_parts, "wpn_fps_smg_olympic_s_short")
+	table.insert(self.wpn_fps_ass_contraband_npc.uses_parts, "wpn_fps_smg_olympic_s_short")	
+	
+	self.wpn_fps_ass_contraband_npc.uses_parts = deep_clone(self.wpn_fps_ass_contraband.uses_parts)		
+
+end)
 
 --Contractor (Sniper)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
@@ -19581,6 +17818,7 @@ end
 --Cartel Optics Pack
 Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 
+	--Marmon Compensator
 	self.parts.wpn_fps_upg_ns_ass_smg_v6.pcs = {
 		10,
 		20,
@@ -19589,10 +17827,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_v6.supported = true
 	self.parts.wpn_fps_upg_ns_ass_smg_v6.stats = {
-		value = 5,
-		suppression = -4,
-		spread = -2,
-		recoil = 2
+		value = 6,
+		concealment = -2,
+		spread = 2,
+		recoil = -2
 	}
 	
 	--Skeletal Grip
@@ -19619,8 +17857,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	self.parts.wpn_fps_upg_o_sig.supported = true
 	self.parts.wpn_fps_upg_o_sig.stats = {
 		value = 2,
-		gadget_zoom = 9,
-		concealment = -1
+		gadget_zoom = 9
 	}
 	self.parts.wpn_fps_upg_o_sig.perks = {
 		"gadget"
@@ -21963,11 +20200,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_groza", "resmod_groza", function(s
 	}
 	self.parts.wpn_fps_ass_groza_b_supressor.supported = true
 	self.parts.wpn_fps_ass_groza_b_supressor.stats = {
-		value = 10,
+		value = 2,
 		suppression = 10,
-		alert_size = -1,
-		spread = -1,
-		recoil = 1
+		alert_size = -1
 	}
 	self.parts.wpn_fps_ass_groza_b_supressor.perks = {"silencer"}
 	
@@ -22002,7 +20237,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	self.parts.wpn_fps_ass_shak12_body_vks.supported = true
 	self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 		value = 2,
-		spread = -1,
+		concealment = -2,
 		recoil = 1
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = nil
@@ -22029,12 +20264,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	}
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.supported = true
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.stats = {
-		value = 5,
+		value = 7,
 		suppression = 12,
 		alert_size = -1,
-		spread = 2,
-		recoil = -2,
-		concealment = -2
+		spread = 3,
+		recoil = -3,
+		concealment = -3
 	}
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.perks = {"silencer"}
 
@@ -22047,10 +20282,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	}
 	self.parts.wpn_fps_ass_shak12_ns_muzzle.supported = true
 	self.parts.wpn_fps_ass_shak12_ns_muzzle.stats = {
-		value = 4,
-		suppression = -2,
-		recoil = 1,
-		spread = -1
+		value = 5,
+		recoil = 3,
+		spread = -3
 	}	
 
 end)

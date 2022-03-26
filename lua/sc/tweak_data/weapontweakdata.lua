@@ -6057,6 +6057,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Contractor Pistol
 	self.packrat.AMMO_MAX = 90
+	self.packrat.CLIP_AMMO_MAX = 15
 	self.packrat.fire_mode_data.fire_rate = 0.08571428571
 	self.packrat.single.fire_rate = 0.08571428571
 	self.packrat.kick = self.stat_info.kick_tables.even_recoil
@@ -6133,6 +6134,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Akimbo Contractor Pistols
 	self.x_packrat.AMMO_MAX = 180
+	self.x_packrat.CLIP_AMMO_MAX = 30
 	self.x_packrat.fire_mode_data.fire_rate = 0.08571428571
 	self.x_packrat.single.fire_rate = 0.08571428571
 	self.x_packrat.kick = self.stat_info.kick_tables.even_recoil

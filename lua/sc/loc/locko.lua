@@ -1045,6 +1045,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--socom deez nuts--
 		["bm_w_socom_desc"] = "자칼이 선택한 보조무기. 세련된 디자인과 안정적이고 강력한 .45ACP 권총입니다.",
+		
+		--Baby Deagle--
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",		
 
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -1356,7 +1359,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 	})
 
 	local twirl = math.rand(1)
-	local shalashaska = 0.05
+	local shalashaska = 0.06
 
 	if twirl <= shalashaska then
 		LocalizationManager:add_localized_strings({	

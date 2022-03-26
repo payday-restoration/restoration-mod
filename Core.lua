@@ -232,6 +232,7 @@ function restoration:Init()
 		"lit1", --California's Heat
 		"lit2", --California's Heat but Payday 3 
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
+		"santas_hardware_store", --Hardware Store but Xmas
 		"hardware_store",
 		"tj_htsb",
 		"hntn",
@@ -248,6 +249,7 @@ function restoration:Init()
 		"moon",
 		--Custom Heists--
 		"roberts_v2",
+		"santas_hardware_store", --Hardware Store but Xmas
 		"santa_pain"
 	}	
 	--heists to remove infinite assaults from

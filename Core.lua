@@ -151,6 +151,7 @@ function restoration:Init()
 		"hardware_store", --Hardware Store 
 		"lit1", --California's Heat
 		"lit2", --California's Heat but Payday 3 
+		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"santas_hardware_store" --Hardware Store but Xmas
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
@@ -211,7 +212,6 @@ function restoration:Init()
 		"xmn_hox_1",
 		--Custom Heists below--
 		"thechase",
-		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"nmh_res" --Resmod edit of no mercy.
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
@@ -231,6 +231,7 @@ function restoration:Init()
 		"Victor Romeo",
 		"lit1", --California's Heat
 		"lit2", --California's Heat but Payday 3 
+		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"hardware_store",
 		"tj_htsb",
 		"hntn",

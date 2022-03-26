@@ -30,6 +30,7 @@ function restoration:Init()
 		--Custom Heists--
 		"office_strike", --office strike
 		"gallery_v2", --Art Gallery Remastered 
+		"Skyscraper", --The Skyscraper Heist
 		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	restoration.captain_teamwork = {
@@ -44,6 +45,7 @@ function restoration:Init()
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
+		"lit1", --California's Heat
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {
@@ -59,6 +61,8 @@ function restoration:Init()
 		"nmh", --no mercy
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
+		"hardware_store", --Hardware Store 
+		"santas_hardware_store", --Santa Spring Is Coming To Town
 		"nmh_res", --no mercy ranted 
 		"lvl_friday" --Crashing Capitol
 	}
@@ -75,6 +79,8 @@ function restoration:Init()
 		--custom heists
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
+		"amsdeal1", --Armsdeal Alleyway
+		"Gambling_room", --Underground Bargains
 		"lvl_fourmorestores", --four more stores
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
@@ -101,7 +107,9 @@ function restoration:Init()
 			--custom heists
 			"wetwork", --res map package wetworks
 			"alex_1_res", --Rats Day 1 res edit version
+			"amsdeal1", --Armsdeal Alleyway
 			"lvl_fourmorestores", --four more stores
+			"Gambling_room", --Underground Bargains
 			"ukrainian_job_res", --Ukrainian Job res edit version
 			"hntn" --harvest and trustee north
 		}		
@@ -121,6 +129,8 @@ function restoration:Init()
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"tj_htsb", --Gets Southern Branchbank from Autumn
+			"hardware_store", --Hardware Store 
+			"santas_hardware_store", --Bad Xmas
 			"nmh_res", --spooki heist
 			"lvl_friday" --Crashing Capitol
 		}		
@@ -136,7 +146,12 @@ function restoration:Init()
 		"friend", --Scarface Mansion
 		"dah", --Diamond Heist
 		"chca", --Black Cat Heist
-		"peta" --Goatsim 1
+		"peta", --Goatsim 1
+		--Custom Heists below--
+		"hardware_store", --Hardware Store 
+		"lit1", --California's Heat
+		"lit2", --California's Heat but Payday 3 
+		"santas_hardware_store" --Hardware Store but Xmas
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
@@ -151,7 +166,7 @@ function restoration:Init()
 		"pbr", --Beneath the Mountain
 		"dinner", --Slaughterhouse
 		"born", --Biker 1
-		"flat",
+		"flat", --Panic Room
 		"gallery", --Art Gallery
 		"framing_frame_1",  --Art Gallery but FF 
 		"framing_frame_3", --Framing Frame 3
@@ -163,7 +178,6 @@ function restoration:Init()
 		"man_res", --Undercover resmod edit		
 		"jolly", --Aftershock
 		"firestarter_3", --firestarter day 3
-		"firestarter_3_res", --firestarter day 3, res edit
 		"mex_cooking", --Border Crystals
 		"roberts", --Go Bank
 		"family", --Diamond Store
@@ -175,7 +189,12 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		--Custom Heists below--
 		"junk", --Doghouse
+		"amsdeal1", --Armsdeal Alleyway
 		"knk_jwl", --Knockover: Jewerly Store
+		"Skyscraper", --The Skyscraper Heist
+		"Gambling_room", --Underground Bargains
+		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
+		"firestarter_3_res", --firestarter day 3, res edit
 		"gallery_v2", --Art Gallery Remastered 
 		"wetwork_burn" --Burnout
 	}
@@ -192,6 +211,7 @@ function restoration:Init()
 		"xmn_hox_1",
 		--Custom Heists below--
 		"thechase",
+		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"nmh_res" --Resmod edit of no mercy.
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
@@ -209,6 +229,8 @@ function restoration:Init()
 		"fex", --Buluc's Mansion			
 		--Custom Heists--
 		"Victor Romeo",
+		"lit1", --California's Heat
+		"lit2", --California's Heat but Payday 3 
 		"hardware_store",
 		"tj_htsb",
 		"hntn",

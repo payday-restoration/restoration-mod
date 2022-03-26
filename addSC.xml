@@ -166,7 +166,7 @@
 	<object				path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" force="true" />	
 	<model				path="units/pd2_dlc1/characters/ene_security_gensec_2/ene_security_gensec_2" force="true" />	
 	
-	<!--Penthouse Security (Damn you OVK)-->
+	<!--Penthouse Security-->
 	<unit				path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1" load="true" force="true" />
 	<unit				path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk" load="true" force="true" />	
 	<object				path="units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1" force="true" />	
@@ -543,7 +543,10 @@
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
 	<unit				path="units/payday2/weapons/wpn_npc_r870_taser_sc/wpn_npc_r870_taser_sc" force="false"/>
 	<texture			path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_df" force="true"/>	
-	<texture			path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_nm" force="true"/>	
+	<texture			path="units/payday2/weapons/wpn_npc_r870_taser/r870_taser_nm" force="true"/>
+
+	<!--NPC Bronco Flashlight Fix-->
+	<object				path="units/payday2/weapons/wpn_npc_raging_bull/wpn_npc_raging_bull" force="true"/>
 		
 	<!--One step closer to heaven.-->	
 	<unit				path="units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc" load="false" force="false"/>

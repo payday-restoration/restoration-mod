@@ -1047,7 +1047,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_socom_desc"] = "자칼이 선택한 보조무기. 세련된 디자인과 안정적이고 강력한 .45ACP 권총입니다.",
 		
 		--Baby Deagle--
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",		
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "당신도 이 무게로도 들 수 있을 겁니다.",
 
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -1363,13 +1363,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 	if twirl <= shalashaska then
 		LocalizationManager:add_localized_strings({	
-			["bm_w_peacemaker"] = "Revolver Ocelot",
-			["bm_w_peacemaker_desc"] = "Revolver Ocelot",
-			["bm_ap_weapon_peacemaker_sc_desc"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot"
+			["bm_w_peacemaker"] = "리볼버 오셀롯",
+			["bm_w_peacemaker_desc"] = "리볼버 오셀롯",
+			["bm_ap_weapon_peacemaker_sc_desc"] = "리볼버 오셀롯",
+			["bm_wp_peacemaker_barrel_long"] = "리볼버 오셀롯",
+			["bm_wp_peacemaker_barrel_short"] = "리볼버 오셀롯",
+			["bm_wp_peacemaker_handle_bling"] = "리볼버 오셀롯",
+			["bm_wp_peacemaker_rifle_stock"] = "리볼버 오셀롯"
 		})
 	end	
 	

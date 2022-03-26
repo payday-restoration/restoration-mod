@@ -148,9 +148,7 @@ function restoration:Init()
 		"chca", --Black Cat Heist
 		"peta", --Goatsim 1
 		--Custom Heists below--
-		"hardware_store", --Hardware Store 
-		"lit1", --California's Heat
-		"lit2", --California's Heat but Payday 3 
+		"hardware_store", --Hardware Store  
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"santas_hardware_store" --Hardware Store but Xmas
 	}			
@@ -196,6 +194,8 @@ function restoration:Init()
 		"Gambling_room", --Underground Bargains
 		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
 		"firestarter_3_res", --firestarter day 3, res edit
+		"lit1", --California's Heat
+		"lit2", --California's Heat but Payday 3
 		"gallery_v2", --Art Gallery Remastered 
 		"wetwork_burn" --Burnout
 	}

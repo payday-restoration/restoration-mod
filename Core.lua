@@ -31,6 +31,7 @@ function restoration:Init()
 		"office_strike", --office strike
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
+		"bookmakers_office", --Bookmaker's Office
 		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	restoration.captain_teamwork = {
@@ -190,6 +191,7 @@ function restoration:Init()
 		"Gambling_room", --Underground Bargains
 		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
 		"firestarter_3_res", --firestarter day 3, res edit
+		"bookmakers_office", --Bookmaker's Office
 		"lit1", --California's Heat
 		"lit2", --California's Heat but Payday 3
 		"gallery_v2", --Art Gallery Remastered 
@@ -232,7 +234,7 @@ function restoration:Init()
 		"hardware_store",
 		"tj_htsb",
 		"hntn",
-		"bookmakers_office",
+		"bookmakers_office", --Bookmaker's Office
 		"thechase",
 		"office_strike",
 		"santa_pain"

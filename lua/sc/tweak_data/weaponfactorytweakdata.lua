@@ -4273,9 +4273,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scar", "resmod_scar", function(sel
 	}
 	
 	--Disabling Vertical Grip Mods
+	self.wpn_fps_ass_scar.default_blueprint[6] = "wpn_fps_upg_m4_g_standard"	
 	self.wpn_fps_ass_scar.default_blueprint[7] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"	
 	
+	self.wpn_fps_ass_scar.uses_parts[13] = "wpn_fps_upg_m4_g_standard"	
 	self.wpn_fps_ass_scar.uses_parts[17] = "wpn_fps_upg_vg_ass_smg_afg_vanilla"	
+	
+	--SCAR Part mods
+	table.insert(self.wpn_fps_ass_scar.uses_parts, "wpn_fps_upg_m4_g_hgrip")
+	table.insert(self.wpn_fps_ass_scar_npc.uses_parts, "wpn_fps_upg_m4_g_hgrip")		
 	
 	self.wpn_fps_ass_scar_npc.uses_parts = deep_clone(self.wpn_fps_ass_scar.uses_parts)
 	
@@ -10214,7 +10220,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 	}
 	self.parts.wpn_fps_sho_rota_b_short.supported = true
 	self.parts.wpn_fps_sho_rota_b_short.stats = {
-		value = 1,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}
@@ -10233,11 +10239,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 	self.parts.wpn_fps_sho_rota_b_silencer.supported = true
 	self.parts.wpn_fps_sho_rota_b_silencer.stats = {
 		value = 2,
-		suppression = 11,
-		alert_size = -1,
-		recoil = -1,
-		spread = 1,
-		concealment = -1
+		suppression = 10,
+		alert_size = -1
 	}
 	self.parts.wpn_fps_sho_rota_b_silencer.custom_stats = {
 		damage_near_mul = 1,

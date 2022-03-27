@@ -1550,7 +1550,6 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.priority_shout = "g29"
 	self.triad_boss.bot_priority_shout = "g29"	
 	self.triad_boss.silent_priority_shout = nil
-	self.triad_boss.silent_priority_shout = nil
 	self.triad_boss.priority_shout_max_dis = 3000
 	self.triad_boss.custom_shout = true
 	self.triad_boss.must_headshot = true
@@ -1561,19 +1560,6 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.no_omnia_heal = true	
 	self.triad_boss.can_reload_while_moving_tmp = true
 	self.triad_boss.throwable = "molotov"
-	self.triad_boss.aoe_damage_data = {
-		verification_delay = 0.3,
-		activation_range = 300,
-		activation_delay = 1,
-		env_tweak_name = "triad_boss_aoe_fire",
-		play_voiceline = true,
-		check_player = true,
-		check_npc_slotmask = {
-			"criminals",
-			-2,
-			-3
-		}
-	}
 	table.insert(self._enemy_list, "triad_boss")
 
 	self.triad_boss_no_armor = deep_clone(self.gangster)
@@ -3501,7 +3487,6 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.no_asu = true
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 22.5
-	self.taser_titan.tase_on_melee = true
 	self.taser_titan.slowing_bullets = {
 		duration = 3,
 		power = 1,
@@ -23702,10 +23687,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.skeleton_swat_titan.use_animation_on_fire_damage = false	
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false				
-	
-	--Fast Titan HRTs
-	self.hrt_titan.move_speed = self.presets.move_speed.lightning
-	
+		
 	--Titandozer changes
 	self.tank_titan.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_titan.weapon.is_lmg.FALLOFF = {
@@ -24459,9 +24441,6 @@ function CharacterTweakData:_set_sm_wish()
 	self.skeleton_swat_titan.use_animation_on_fire_damage = false			
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false				
-
-	--Fast Titan HRTs
-	self.hrt_titan.move_speed = self.presets.move_speed.lightning		
 	
 	--Titandozers become immune to stunning
 	self.tank_titan.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase

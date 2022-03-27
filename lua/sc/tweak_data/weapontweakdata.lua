@@ -1503,7 +1503,7 @@ function WeaponTweakData:_init_data_flamethrower_npc()
 	self.flamethrower_npc.sounds.fire = "flamethrower_npc_fire"
 	self.flamethrower_npc.sounds.stop_fire = "flamethrower_npc_fire_stop"
 	self.flamethrower_npc.use_data.selection_index = 2
-	self.flamethrower_npc.DAMAGE = 3.7
+	self.flamethrower_npc.DAMAGE = 3
 	self.flamethrower_npc.CLIP_AMMO_MAX = 60
 	self.flamethrower_npc.NR_CLIPS_MAX = 4
 	self.flamethrower_npc.hold = {
@@ -1770,23 +1770,6 @@ function WeaponTweakData:_init_data_m16_crew()
 	self.m16_crew.suppression = 2.2
 	self.m16_crew.pull_magazine_during_reload = "rifle"
 	self.m16_crew.FIRE_MODE = "auto"
-	
-	--Summers M16
-	self.m16_crew_summers = deep_clone(self.m16_crew)
-	self.m16_crew_summers.categories = clone(self.m16.categories)
-	self.m16_crew_summers.sounds.prefix = "m16_npc"
-	self.m16_crew_summers.use_data.selection_index = 2
-	self.m16_crew_summers.DAMAGE = 6
-	self.m16_crew_summers.muzzleflash = "effects/payday2/particles/weapons/762_auto"
-	self.m16_crew_summers.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556"
-	self.m16_crew_summers.CLIP_AMMO_MAX = 30
-	self.m16_crew_summers.NR_CLIPS_MAX = 8
-	self.m16_crew_summers.auto.fire_rate = 0.08571428571
-	self.m16_crew_summers.hold = "rifle"
-	self.m16_crew_summers.alert_size = 2500
-	self.m16_crew_summers.suppression = 2.8
-	self.m16_crew_summers.pull_magazine_during_reload = "rifle"
-	self.m16_crew_summers.FIRE_MODE = "auto"		
 end
 
 function WeaponTweakData:_init_data_s552_crew()
@@ -10140,7 +10123,6 @@ function WeaponTweakData:_precalculate_values()
 	self.mp5_cloak_npc.AMMO_MAX = self.mp5_cloak_npc.CLIP_AMMO_MAX * self.mp5_cloak_npc.NR_CLIPS_MAX
 	self.peacemaker_npc.AMMO_MAX = self.peacemaker_npc.CLIP_AMMO_MAX * self.peacemaker_npc.NR_CLIPS_MAX
 	self.m16_crew.AMMO_MAX = 9999999
-	self.m16_crew_summers.AMMO_MAX = 9999999
 	self.peacemaker_crew.AMMO_MAX = 9999999
 	self.p90_crew.AMMO_MAX = 9999999
 	self.flamethrower_mk2_crew.AMMO_MAX = 9999999

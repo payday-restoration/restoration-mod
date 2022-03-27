@@ -47,6 +47,7 @@ function restoration:Init()
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
 		"lit1", --California's Heat
+		"constantine_harbor_lvl", --Harboring a Grudge
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {
@@ -62,6 +63,7 @@ function restoration:Init()
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
+		"constantine_bank_lvl", --Pacific Bank
 		"santas_hardware_store", --Santa Spring Is Coming To Town
 		"lvl_friday" --Crashing Capitol
 	}
@@ -80,6 +82,7 @@ function restoration:Init()
 		"alex_1_res", --Rats Day 1 res edit version
 		"amsdeal1", --Armsdeal Alleyway
 		"Gambling_room", --Underground Bargains
+		"branchbank_meth", --Bank Heist: Meth
 		"lvl_fourmorestores", --four more stores
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
@@ -128,6 +131,8 @@ function restoration:Init()
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"tj_htsb", --Gets Southern Branchbank from Autumn
 			"hardware_store", --Hardware Store 
+			"constantine_bank_lvl", --Pacific Bank
+			"branchbank_meth", --Bank Heist: Meth
 			"santas_hardware_store", --Bad Xmas
 			"lvl_friday" --Crashing Capitol
 		}		
@@ -147,6 +152,7 @@ function restoration:Init()
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
+		"constantine_bank_lvl", --Pacific Bank 
 		"santas_hardware_store" --Hardware Store but Xmas
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
@@ -188,10 +194,14 @@ function restoration:Init()
 		"amsdeal1", --Armsdeal Alleyway
 		"knk_jwl", --Knockover: Jewerly Store
 		"Skyscraper", --The Skyscraper Heist
+		"RogueCompany", --Rogue Company
+		"constantine_harbor_lvl", --Harboring a Grudge
 		"Gambling_room", --Underground Bargains
 		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
+		"sh_raiders", --Safehouse Raiders 
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
+		"branchbank_meth", --Bank Heist: Meth
 		"lit1", --California's Heat
 		"lit2", --California's Heat but Payday 3
 		"gallery_v2", --Art Gallery Remastered 
@@ -231,10 +241,14 @@ function restoration:Init()
 		"lit2", --California's Heat but Payday 3 
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"santas_hardware_store", --Hardware Store but Xmas
+		"constantine_bank_lvl", --Pacific Bank
+		"sh_raiders", --Safehouse Raiders
 		"hardware_store",
 		"tj_htsb",
 		"hntn",
 		"bookmakers_office", --Bookmaker's Office
+		"constantine_harbor_lvl", --Harboring a Grudge
+		"RogueCompany", --Rogue Company
 		"thechase",
 		"office_strike",
 		"santa_pain"

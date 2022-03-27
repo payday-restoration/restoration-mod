@@ -9,6 +9,7 @@ function HuskCopDamage:die(attack_data)
 	if self._unit:contour() then
 		self._unit:contour():remove("omnia_heal", false)
 		self._unit:contour():remove("medic_show", false)
+		self._unit:contour():remove("medic_buff", false)
 	end
 
 	if self._unit:base():has_tag("tank_titan") or self._unit:base():has_tag("shield_titan") or self._unit:base():has_tag("captain") or self._unit:base():has_tag("lpf") then

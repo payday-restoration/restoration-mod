@@ -241,13 +241,19 @@ function restoration:Init()
 		"lit2", --California's Heat but Payday 3 
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"santas_hardware_store", --Hardware Store but Xmas
+		"hardware_store", --Hardware Store 
 		"constantine_bank_lvl", --Pacific Bank
 		"sh_raiders", --Safehouse Raiders
+		"Gambling_room", --Underground Bargains
+		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
+		"sh_raiders", --Safehouse Raiders 
+		"amsdeal1", --Armsdeal Alleyway
 		"hardware_store",
 		"tj_htsb",
 		"hntn",
 		"bookmakers_office", --Bookmaker's Office
 		"constantine_harbor_lvl", --Harboring a Grudge
+		"Skyscraper", --The Skyscraper Heist
 		"RogueCompany", --Rogue Company
 		"thechase",
 		"office_strike",

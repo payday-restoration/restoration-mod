@@ -197,7 +197,7 @@ function restoration:Init()
 		"RogueCompany", --Rogue Company
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"Gambling_room", --Underground Bargains
-		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
+		"hwu", --Avalon's Shadow
 		"sh_raiders", --Safehouse Raiders 
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office

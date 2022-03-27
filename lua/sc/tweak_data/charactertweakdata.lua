@@ -25200,6 +25200,7 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_shield_1_sc")
 		
 		--GenSec	
+		table.insert(char_map.basic.list, "ene_bulldozer_3_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_2_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_3_sc")

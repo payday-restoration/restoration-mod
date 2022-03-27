@@ -58,12 +58,10 @@ function restoration:Init()
 		"big", --big bank
 		"dinner", --Slaughterhouse
 		"chca", --Black Cat Heist
-		"nmh", --no mercy
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
 		"santas_hardware_store", --Santa Spring Is Coming To Town
-		"nmh_res", --no mercy ranted 
 		"lvl_friday" --Crashing Capitol
 	}
 	restoration.captain_stelf = {

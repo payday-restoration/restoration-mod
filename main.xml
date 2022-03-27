@@ -146,6 +146,7 @@
 		<hook file="sc/units/player/playerbleedout.lua" source_file="lib/units/beings/player/states/playerbleedout"/>
 		<hook file="sc/units/player/playertased.lua" source_file="lib/units/beings/player/states/playertased"/>
 		<hook file="sc/units/player/playermovement.lua" source_file="lib/units/beings/player/playermovement"/>
+	    	<hook file="sc/units/beings/player/huskplayerbase.lua" source_file="lib/units/beings/player/huskplayerbase"/>
 		<hook file="sc/units/player/huskplayermovement.lua" source_file="lib/units/beings/player/huskplayermovement"/>
 		<hook file="sc/units/player/huskplayerdamage.lua" source_file="lib/units/beings/player/huskplayerdamage"/>
 		<hook file="sc/units/player/playerbipod.lua" source_file="lib/units/beings/player/states/playerbipod"/>

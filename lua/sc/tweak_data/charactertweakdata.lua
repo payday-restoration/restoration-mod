@@ -1550,7 +1550,6 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.priority_shout = "g29"
 	self.triad_boss.bot_priority_shout = "g29"	
 	self.triad_boss.silent_priority_shout = nil
-	self.triad_boss.silent_priority_shout = nil
 	self.triad_boss.priority_shout_max_dis = 3000
 	self.triad_boss.custom_shout = true
 	self.triad_boss.must_headshot = true
@@ -1561,19 +1560,6 @@ function CharacterTweakData:_init_triad_boss(presets)
 	self.triad_boss.no_omnia_heal = true	
 	self.triad_boss.can_reload_while_moving_tmp = true
 	self.triad_boss.throwable = "molotov"
-	self.triad_boss.aoe_damage_data = {
-		verification_delay = 0.3,
-		activation_range = 300,
-		activation_delay = 1,
-		env_tweak_name = "triad_boss_aoe_fire",
-		play_voiceline = true,
-		check_player = true,
-		check_npc_slotmask = {
-			"criminals",
-			-2,
-			-3
-		}
-	}
 	table.insert(self._enemy_list, "triad_boss")
 
 	self.triad_boss_no_armor = deep_clone(self.gangster)
@@ -3501,7 +3487,6 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_titan.no_asu = true
 	self.taser_titan.move_speed = presets.move_speed.fast
 	self.taser_titan.heal_cooldown = 22.5
-	self.taser_titan.tase_on_melee = true
 	self.taser_titan.slowing_bullets = {
 		duration = 3,
 		power = 1,
@@ -23702,10 +23687,7 @@ function CharacterTweakData:_set_overkill_290()
 	self.skeleton_swat_titan.use_animation_on_fire_damage = false	
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false				
-	
-	--Fast Titan HRTs
-	self.hrt_titan.move_speed = self.presets.move_speed.lightning
-	
+		
 	--Titandozer changes
 	self.tank_titan.weapon = deep_clone(self.presets.weapon.expert)
 	self.tank_titan.weapon.is_lmg.FALLOFF = {
@@ -24459,9 +24441,6 @@ function CharacterTweakData:_set_sm_wish()
 	self.skeleton_swat_titan.use_animation_on_fire_damage = false			
 	self.weekend_lmg.damage.hurt_severity = self.presets.hurt_severities.elite	
 	self.weekend_lmg.use_animation_on_fire_damage = false				
-
-	--Fast Titan HRTs
-	self.hrt_titan.move_speed = self.presets.move_speed.lightning		
 	
 	--Titandozers become immune to stunning
 	self.tank_titan.damage.hurt_severity = self.presets.hurt_severities.no_hurts_no_tase
@@ -25208,6 +25187,7 @@ function CharacterTweakData:character_map()
 		
 		--FBI
 		table.insert(char_map.basic.list, "ene_bulldozer_2_sc")
+		table.insert(char_map.basic.list, "ene_medic_mp5")
 		table.insert(char_map.basic.list, "ene_grenadier_1")
 		table.insert(char_map.basic.list, "ene_fbi_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_fbi_swat_2_sc")
@@ -25220,6 +25200,7 @@ function CharacterTweakData:character_map()
 		table.insert(char_map.basic.list, "ene_shield_1_sc")
 		
 		--GenSec	
+		table.insert(char_map.basic.list, "ene_bulldozer_3_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_1_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_2_sc")
 		table.insert(char_map.basic.list, "ene_city_swat_3_sc")
@@ -25352,7 +25333,6 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",				
 				"ene_zeal_sniper",
 				"ene_zeal_swat_heavy",
-				"ene_zeal_heavy_shield",
 				"ene_zeal_swat_shield",
 				"ene_zeal_swat_shield_sc",
 				"ene_zeal_tazer",
@@ -25476,7 +25456,6 @@ function CharacterTweakData:character_map()
 				"ene_murky_cs_cop_r870",
 				"ene_murky_cs_cop_raging_bull",
 				"ene_fbi_3",
-				"ene_murky_swat_r870",
 				"ene_fbi_1",
 				"ene_fbi_2",
 				"ene_fbi_swat_1",
@@ -25525,6 +25504,7 @@ function CharacterTweakData:character_map()
 				"ene_grenadier_1",
 				"ene_omnia_medic",
 				"ene_omnia_taser",
+				"ene_omnia_sniper",
 				"ene_omnia_shield"					
 			}
 		}

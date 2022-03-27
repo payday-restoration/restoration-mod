@@ -278,7 +278,7 @@ function MutatorNoTitans:setup(data)
 					Idstring("units/pd2_dlc_hvh/characters/ene_fbi_hvh_3/ene_fbi_hvh_3")
 				},						
 				murkywater = {
-					Idstring("units/pd2_mod_sharks/characters/ene_fbi_3/ene_fbi_3")
+					Idstring("units/pd2_mod_omnia/characters/ene_omnia_hrt_1/ene_omnia_hrt_1")
 				},
 				federales = {
 					Idstring("units/pd2_dlc_bex/characters/ene_fbi_3/ene_fbi_3")							

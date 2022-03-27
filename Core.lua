@@ -30,6 +30,8 @@ function restoration:Init()
 		--Custom Heists--
 		"office_strike", --office strike
 		"gallery_v2", --Art Gallery Remastered 
+		"Skyscraper", --The Skyscraper Heist
+		"bookmakers_office", --Bookmaker's Office
 		"firestarter_2_res" --firestarter day 2 res edit version
 	}
 	restoration.captain_teamwork = {
@@ -40,9 +42,12 @@ function restoration:Init()
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
 		"watchdogs_2", --watch dogs 2
+		"wwh", --alaskan deal
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
+		"lit1", --California's Heat
+		"constantine_harbor_lvl", --Harboring a Grudge
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {
@@ -57,6 +62,9 @@ function restoration:Init()
 		"chca", --Black Cat Heist
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
+		"hardware_store", --Hardware Store 
+		"constantine_bank_lvl", --Pacific Bank
+		"santas_hardware_store", --Santa Spring Is Coming To Town
 		"lvl_friday" --Crashing Capitol
 	}
 	restoration.captain_stelf = {
@@ -68,13 +76,14 @@ function restoration:Init()
 		"framing_frame_1", --art gallery but ff
 		"framing_frame_3", --Powerbox simulator
 		"jewelry_store", --Jewelry Store
-		"nmh", --no mercy
 		"ukrainian_job", --Ukrainian Job
 		--custom heists
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
+		"amsdeal1", --Armsdeal Alleyway
+		"Gambling_room", --Underground Bargains
+		"branchbank_meth", --Bank Heist: Meth
 		"lvl_fourmorestores", --four more stores
-		"nmh_res", --no mercy ranted 
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
@@ -100,7 +109,9 @@ function restoration:Init()
 			--custom heists
 			"wetwork", --res map package wetworks
 			"alex_1_res", --Rats Day 1 res edit version
+			"amsdeal1", --Armsdeal Alleyway
 			"lvl_fourmorestores", --four more stores
+			"Gambling_room", --Underground Bargains
 			"ukrainian_job_res", --Ukrainian Job res edit version
 			"hntn" --harvest and trustee north
 		}		
@@ -113,14 +124,16 @@ function restoration:Init()
 			"big", --big bank
 			"kenaz", --golden grin casino 
 			"dinner", --Slaughterhouse
-			"nmh", --spooki heist
 			"branchbank", --Gets Branchbank from Autumn		
 			"help", --Prison Nightmare	
 			"chca", --Black Cat Heist
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"tj_htsb", --Gets Southern Branchbank from Autumn
-			"nmh_res", --spooki heist
+			"hardware_store", --Hardware Store 
+			"constantine_bank_lvl", --Pacific Bank
+			"branchbank_meth", --Bank Heist: Meth
+			"santas_hardware_store", --Bad Xmas
 			"lvl_friday" --Crashing Capitol
 		}		
 	
@@ -135,7 +148,12 @@ function restoration:Init()
 		"friend", --Scarface Mansion
 		"dah", --Diamond Heist
 		"chca", --Black Cat Heist
-		"peta" --Goatsim 1
+		"peta", --Goatsim 1
+		--Custom Heists below--
+		"hardware_store", --Hardware Store  
+		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
+		"constantine_bank_lvl", --Pacific Bank 
+		"santas_hardware_store" --Hardware Store but Xmas
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
 	restoration.tiny_levels = {
@@ -150,7 +168,7 @@ function restoration:Init()
 		"pbr", --Beneath the Mountain
 		"dinner", --Slaughterhouse
 		"born", --Biker 1
-		"flat",
+		"flat", --Panic Room
 		"gallery", --Art Gallery
 		"framing_frame_1",  --Art Gallery but FF 
 		"framing_frame_3", --Framing Frame 3
@@ -162,7 +180,6 @@ function restoration:Init()
 		"man_res", --Undercover resmod edit		
 		"jolly", --Aftershock
 		"firestarter_3", --firestarter day 3
-		"firestarter_3_res", --firestarter day 3, res edit
 		"mex_cooking", --Border Crystals
 		"roberts", --Go Bank
 		"family", --Diamond Store
@@ -174,7 +191,20 @@ function restoration:Init()
 		"pent", --Mountain Master Heist
 		--Custom Heists below--
 		"junk", --Doghouse
+		"amsdeal1", --Armsdeal Alleyway
 		"knk_jwl", --Knockover: Jewerly Store
+		"Skyscraper", --The Skyscraper Heist
+		"RogueCompany", --Rogue Company
+		"constantine_harbor_lvl", --Harboring a Grudge
+		"Gambling_room", --Underground Bargains
+		"hwu", --Avalon's Shadow
+		"sh_raiders", --Safehouse Raiders 
+		"firestarter_3_res", --firestarter day 3, res edit
+		"bookmakers_office", --Bookmaker's Office
+		"branchbank_meth", --Bank Heist: Meth
+		"modders_devmap", --Proving Grounds
+		"lit1", --California's Heat
+		"lit2", --California's Heat but Payday 3
 		"gallery_v2", --Art Gallery Remastered 
 		"wetwork_burn" --Burnout
 	}
@@ -208,10 +238,25 @@ function restoration:Init()
 		"fex", --Buluc's Mansion			
 		--Custom Heists--
 		"Victor Romeo",
+		"lit1", --California's Heat
+		"lit2", --California's Heat but Payday 3 
+		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
+		"santas_hardware_store", --Hardware Store but Xmas
+		"hardware_store", --Hardware Store 
+		"constantine_bank_lvl", --Pacific Bank
+		"sh_raiders", --Safehouse Raiders
+		"Gambling_room", --Underground Bargains
+		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
+		"sh_raiders", --Safehouse Raiders 
+		"amsdeal1", --Armsdeal Alleyway
 		"hardware_store",
 		"tj_htsb",
 		"hntn",
-		"bookmakers_office",
+		"bookmakers_office", --Bookmaker's Office
+		"constantine_harbor_lvl", --Harboring a Grudge
+		"Skyscraper", --The Skyscraper Heist
+		"RogueCompany", --Rogue Company
+		"modders_devmap", --Proving Grounds
 		"thechase",
 		"office_strike",
 		"santa_pain"
@@ -224,6 +269,7 @@ function restoration:Init()
 		"moon",
 		--Custom Heists--
 		"roberts_v2",
+		"santas_hardware_store", --Hardware Store but Xmas
 		"santa_pain"
 	}	
 	--heists to remove infinite assaults from

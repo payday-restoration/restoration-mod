@@ -1047,6 +1047,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--socom deez nuts--
 		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45ACP handgun with a stylish design.",
 
+		--Baby Deagle--
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "You're gonna carry that weight.",
+
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
 		["bm_menu_sc_legendary_flamethrower"] = "Dragon Lord",
@@ -1091,6 +1094,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 		["bm_tranq_maxim_sc_desc"] = "DEALS DAMAGE OVER TIME WITH TRANQUILIZER ROUNDS, INTEGRALLY SUPPRESSED.",
+		
+		["bm_ap_weapon_peacemaker_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
 		
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
@@ -1352,6 +1357,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "40MM Flechette Rounds",
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
 	})
+
+	local twirl = math.rand(1)
+	local shalashaska = 0.06
+
+	if twirl <= shalashaska then
+		LocalizationManager:add_localized_strings({	
+			["bm_w_peacemaker"] = "Revolver Ocelot",
+			["bm_w_peacemaker_desc"] = "Revolver Ocelot",
+			["bm_ap_weapon_peacemaker_sc_desc"] = "Revolver Ocelot",
+			["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
+			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
+			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
+			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot"
+		})
+	end
+	
 end)
 
 local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
@@ -1447,7 +1468,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["debug_equipment_armor_kit"] = "Throwable Case",
 		["bm_equipment_armor_kit_desc"] = "To use the throwable case, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to refill your throwables. It can only be used three times.\n\nYou can see how many uses are left by looking into the case.\n\nThe Throwable Case is a concealable case, usually used by a soldier or mercenary to carry specialized weaponry when the heat comes.",
 
-		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback will have a chance to incapacitate your enemies within a 25 meter radius. Feedback lasts for 20 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
+		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback will have a chance to incapacitate your enemies within a 25 meter radius. Feedback lasts for 10 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
 		["bm_equipment_first_aid_kit_desc"] = "To use the first aid kit, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 100 health. First aid kits can only be used once.\n\nThe first aid kit is a collection of supplies and equipment for use in rapidly giving first aid in emergency situations.",
 		["bm_equipment_doctor_bag_desc"] = "To use the doctor bag, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 20% of their maximum health and 4% maximum health every 4 seconds for 3 minutes. Doctor bags can be used twice.\n\nThe doctor dag is a portable bag, usually used by a physician or other medical professional to transport medical supplies and medicine.",
 		["bm_equipment_sentry_gun_desc"] = "To use the sentry gun, you need to place it by holding $BTN_USE_ITEM. Upon deployment it will use 40% of your maximum ammo. Upon taking too much damage, it will shut off. While in this state, interacting with it by holding $BTN_INTERACT will place it into an automatic repair mode. Picking up sentries will refund their remaining ammo and repair them. Sentry guns terrify civilians, forcing them to the ground.\n\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention away from you and your team.",

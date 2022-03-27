@@ -202,6 +202,7 @@ function restoration:Init()
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
 		"branchbank_meth", --Bank Heist: Meth
+		"modders_devmap", --Proving Grounds
 		"lit1", --California's Heat
 		"lit2", --California's Heat but Payday 3
 		"gallery_v2", --Art Gallery Remastered 
@@ -255,6 +256,7 @@ function restoration:Init()
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"Skyscraper", --The Skyscraper Heist
 		"RogueCompany", --Rogue Company
+		"modders_devmap", --Proving Grounds
 		"thechase",
 		"office_strike",
 		"santa_pain"

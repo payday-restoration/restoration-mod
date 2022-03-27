@@ -1,5 +1,22 @@
 <table name="skm_friend">
-	<level ai_group_type="lapd" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_friend" intro_event="Play_loc_skm_intro" name_id="heist_friend_hl" narrator="locke" wave_count="9">
+	<Achievements icon="guis/achievements/friend" id="skm_friend">
+		<achievement desc_id="friend_3_desc" icon="guis/achievements/friend_3" id="friend_3" name_id="friend_3" objective_id="friend_3_obj" rank="1"/>
+		<achievement desc_id="friend_5_desc" icon="guis/achievements/friend_5" id="friend_5" name_id="friend_5" objective_id="friend_5_obj" rank="2"/>
+		<achievement desc_id="friend_7_desc" icon="guis/achievements/friend_7" id="friend_7" name_id="friend_7" objective_id="friend_7_obj" rank="3"/>
+		<achievement desc_id="friend_9_desc" icon="guis/achievements/friend_9" id="friend_9" name_id="friend_9" objective_id="friend_9_obj" rank="4"/>
+	</Achievements>
+	<AddFiles directory="assets">
+		<texture force="true" path="guis/achievements/friend"/>
+		<texture force="true" path="guis/achievements/friend_3"/>
+		<texture force="true" path="guis/achievements/friend_5"/>
+		<texture force="true" path="guis/achievements/friend_7"/>
+		<texture force="true" path="guis/achievements/friend_9"/>
+	</AddFiles>
+	<AssetUpdates id="36672" provider="modworkshop" version="1.2"/>
+	<Localization default="english.txt" directory="loc">
+		<loc file="english.txt" language="english"/>
+	</Localization>
+	<level ai_group_type="america" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_friend" intro_event="Play_loc_skm_intro" name_id="heist_friend_hl" narrator="locke" wave_count="9">
 		<add file="levels/skm_friend/add.xml"/>
 		<assets/>
 		<outro_event>
@@ -8,7 +25,6 @@
 		</outro_event>
 		<packages>
 			<value_node value="packages/dlcs/skm/job_skm"/>
-			<value_node value="packages/skm_sc_lapd"/>
 			<value_node value="levels/instances/shared/obj_skm/world"/>
 			<value_node value="levels/instances/shared/obj_skm/world/world"/>
 			<value_node value="levels/instances/shared/obj_skm/world_sounds"/>
@@ -29,12 +45,6 @@
 			<value_node value="levels/narratives/butcher/friend/art_main_yard/art_main_yard"/>
 			<value_node value="levels/narratives/butcher/friend/art_upper_courtyard/art_upper_courtyard"/>
 		</packages>
-	<Achievements icon="" id="skm_friend">
-		<achievement desc_id="3_desc" icon="" id="3" name_id="3" objective_id="3_obj" rank="1" icon=""/>
-		<achievement desc_id="5_desc" icon="" id="5" name_id="5" objective_id="5_obj" rank="2" icon=""/>
-		<achievement desc_id="7_desc" icon="" id="7" name_id="7" objective_id="7_obj" rank="3" icon=""/>
-		<achievement desc_id="9_desc" icon="" id="9" name_id="9" objective_id="9_obj" rank="4" icon=""/>
-	</Achievements>
 		<script_data_mods directory="scriptdata">
 			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
 				<options merge_mode="add" mode="add"/>

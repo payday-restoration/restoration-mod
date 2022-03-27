@@ -120,7 +120,6 @@ function restoration:Init()
 			"big", --big bank
 			"kenaz", --golden grin casino 
 			"dinner", --Slaughterhouse
-			"nmh", --spooki heist
 			"branchbank", --Gets Branchbank from Autumn		
 			"help", --Prison Nightmare	
 			"chca", --Black Cat Heist
@@ -129,7 +128,6 @@ function restoration:Init()
 			"tj_htsb", --Gets Southern Branchbank from Autumn
 			"hardware_store", --Hardware Store 
 			"santas_hardware_store", --Bad Xmas
-			"nmh_res", --spooki heist
 			"lvl_friday" --Crashing Capitol
 		}		
 	

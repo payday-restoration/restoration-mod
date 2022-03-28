@@ -3206,9 +3206,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.tags = {"law", "custom", "special", "summers"}
 	self.summers.experience = {}
 	self.summers.weapon = deep_clone(presets.weapon.normal)
-	self.summers.melee_weapon = "buzzer_summer"
 	self.summers.melee_weapon_dmg_multiplier = 1
-	self.summers.weapon_safety_range = 1
 	self.summers.detection = presets.detection.normal
 	self.summers.HEALTH_INIT = 72
 	self.summers.flammable = false
@@ -3243,11 +3241,9 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.speech_prefix_count = nil
 	self.summers.access = "taser"
 	self.summers.dodge = presets.dodge.elite
-	self.summers.use_gas = true
 	self.summers.can_be_tased = false
 	self.summers.immune_to_concussion = true
 	self.summers.deathguard = true
-	self.summers.tase_on_melee = true
 	self.summers.chatter = presets.enemy_chatter.summers
 	self.summers.announce_incomming = "incomming_captain"
 	if is_reaper then
@@ -3256,6 +3252,7 @@ function CharacterTweakData:_init_summers(presets)
 		self.summers.spawn_sound_event = "cpa_a02_01"
 	end
 	self.summers.die_sound_event = "mga_death_scream"
+	self.summers.fire_bag_death = true	
 	self.summers.use_radio = "dsp_radio_russian"
 	self.summers.steal_loot = nil
 	self.summers.is_special = true
@@ -3454,6 +3451,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser_summers.no_asu = true
 	self.taser_summers.follower = true
 	self.taser_summers.tase_on_melee = true
+	self.taser_summers.melee_weapon = "buzzer_summer"
 	self.taser_summers.slowing_bullets = {
 		duration = 3,
 		power = 1,
@@ -5589,7 +5587,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}
 	}
-	presets.weapon.normal.akimbo_pistol = presets.weapon.normal.is_pistol
+	presets.weapon.normal.akimbo_pistol = deep_clone(presets.weapon.normal.is_pistol)
+	presets.weapon.normal.akimbo_pistol.RELOAD_SPEED = 0.8
 	presets.weapon.normal.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.normal.is_rifle.focus_delay = 10
 	presets.weapon.normal.is_rifle.focus_dis = 200
@@ -7939,9 +7938,10 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}	
 	presets.weapon.normal.is_flamethrower = deep_clone(presets.weapon.normal.is_shotgun_pump)
-	presets.weapon.normal.is_flamethrower.melee_speed = 1
-	presets.weapon.normal.is_flamethrower.melee_dmg = 3
-	presets.weapon.normal.is_flamethrower.melee_retry_delay = {2, 2}		
+	presets.weapon.normal.is_flamethrower.melee_speed = nil
+	presets.weapon.normal.is_flamethrower.melee_dmg = nil
+	presets.weapon.normal.is_flamethrower.melee_retry_delay = nil	
+	presets.weapon.normal.is_flamethrower.no_melee = true
 	presets.weapon.normal.is_flamethrower.autofire_rounds = {25, 50}
 	presets.weapon.normal.is_flamethrower.RELOAD_SPEED = 0.5
 	presets.weapon.normal.is_flamethrower.range = {
@@ -8723,7 +8723,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}		
 	}
-	presets.weapon.good.akimbo_pistol = presets.weapon.good.is_pistol
+	presets.weapon.good.akimbo_pistol = deep_clone(presets.weapon.good.is_pistol)
+	presets.weapon.good.akimbo_pistol.RELOAD_SPEED = 0.8	
 	presets.weapon.good.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.good.is_rifle.focus_delay = 3
 	presets.weapon.good.is_rifle.focus_dis = 200
@@ -9547,9 +9548,10 @@ function CharacterTweakData:_presets(tweak_data)
 		}
 	}
 	presets.weapon.good.is_flamethrower = deep_clone(presets.weapon.good.is_shotgun_pump)
-	presets.weapon.good.is_flamethrower.melee_speed = 1
-	presets.weapon.good.is_flamethrower.melee_dmg = 6
-	presets.weapon.good.is_flamethrower.melee_retry_delay = {2, 2}
+	presets.weapon.good.is_flamethrower.melee_speed = nil
+	presets.weapon.good.is_flamethrower.melee_dmg = nil
+	presets.weapon.good.is_flamethrower.melee_retry_delay = nil
+	presets.weapon.good.is_flamethrower.no_melee = true
 	presets.weapon.good.is_flamethrower.autofire_rounds = {25, 50}
 	presets.weapon.good.is_flamethrower.RELOAD_SPEED = 0.5
 	presets.weapon.good.is_flamethrower.range = {
@@ -11830,7 +11832,8 @@ function CharacterTweakData:_presets(tweak_data)
 			}
 		}						
 	}
-	presets.weapon.expert.akimbo_pistol = presets.weapon.expert.is_pistol
+	presets.weapon.expert.akimbo_pistol = deep_clone(presets.weapon.expert.is_pistol)
+	presets.weapon.expert.akimbo_pistol.RELOAD_SPEED = 0.8		
 	presets.weapon.expert.is_rifle.aim_delay = {0.15, 0.15}
 	presets.weapon.expert.is_rifle.focus_delay = 2
 	presets.weapon.expert.is_rifle.focus_dis = 300
@@ -15547,6 +15550,7 @@ function CharacterTweakData:_presets(tweak_data)
 		}							
 	}
 	presets.weapon.deathwish.akimbo_pistol.melee_dmg = 10.5
+	presets.weapon.deathwish.akimbo_pistol.RELOAD_SPEED = 0.8			
 	presets.weapon.deathwish.akimbo_pistol.FALLOFF = {
 		{
 			r = 100,
@@ -19623,15 +19627,12 @@ function CharacterTweakData:_presets(tweak_data)
 	presets.weapon.normal.rifle = deep_clone(presets.weapon.normal.is_rifle)
 	
 	restoration.log_shit("SC: good presets")
-	presets.weapon.good.akimbo_pistol = deep_clone(presets.weapon.good.is_pistol)
 	presets.weapon.good.rifle = deep_clone(presets.weapon.good.is_rifle)
 	
 	restoration.log_shit("SC: expert presets")
-	presets.weapon.expert.akimbo_pistol = deep_clone(presets.weapon.expert.is_pistol)
 	presets.weapon.expert.rifle = deep_clone(presets.weapon.expert.is_rifle)
 
 	restoration.log_shit("SC: deathwish presets")
-	presets.weapon.deathwish.akimbo_pistol = deep_clone(presets.weapon.deathwish.is_pistol)
 	presets.weapon.deathwish.rifle = deep_clone(presets.weapon.deathwish.is_rifle)
 	
 	presets.detection = {}

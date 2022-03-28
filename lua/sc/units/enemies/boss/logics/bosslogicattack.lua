@@ -1,30 +1,32 @@
+local mvec3_add = mvector3.add
+local mvec3_cpy = mvector3.copy
+local mvec3_dir = mvector3.direction
+local mvec3_lerp = mvector3.lerp
+local mvec3_mul = mvector3.multiply
+local mvec3_not_equal = mvector3.not_equal
 local mvec3_set = mvector3.set
 local mvec3_set_z = mvector3.set_z
-local mvec3_add = mvector3.add
-local mvec3_mul = mvector3.multiply
-local mvec3_dir = mvector3.direction
-local mvec3_cpy = mvector3.copy
-local mvec3_not_equal = mvector3.not_equal
 local math_abs = math.abs
 local tmp_vec = Vector3()
 
--- Boss should basically always be in shooting action
+-- Boss should basically always be in shooting action, from Streamlined Heisting
 function BossLogicAttack._upd_aim(data, my_data, ...)
 	if BossLogicAttack._chk_use_throwable(data) then
-		CopLogicAttack.aim_allow_fire(false, false, data, my_data)
 		return
 	end
 
 	local focus_enemy = data.attention_obj
 	local visible = focus_enemy and (focus_enemy.verified or focus_enemy.nearly_visible)
-	local shoot, expected_pos
+	local aim, shoot, expected_pos
 	if focus_enemy then
 		local time_since_verification = focus_enemy.verified_t and data.t - focus_enemy.verified_t or math.huge
-		shoot = (visible or time_since_verification < 2) and focus_enemy.verified_dis < my_data.weapon_range.far
+		local time_since_damaged = focus_enemy.dmg_t and data.t - focus_enemy.dmg_t or math.huge
+		aim = focus_enemy.verified_dis < my_data.weapon_range.far
+		shoot = aim and (visible or time_since_verification < 4) or time_since_damaged < 4
 		expected_pos = focus_enemy.last_verified_pos or focus_enemy.verified_pos
 	end
 
-	if shoot then
+	if aim or shoot then
 		if visible then
 			if my_data.attention_unit ~= focus_enemy.u_key then
 				CopLogicBase._set_attention(data, focus_enemy)
@@ -60,10 +62,13 @@ function BossLogicAttack._upd_aim(data, my_data, ...)
 		end
 	end
 
-	CopLogicAttack.aim_allow_fire(shoot, shoot, data, my_data)
+	CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data)
 end
 
--- Adjust throwable code to allow for non throwable projectiles and tweak
+
+-- Adjust throwable code to allow for non throwable projectiles
+-- Also make the throwing use an actual action so it properly interrupts shooting
+-- We're adjusting the throwing vector to always throw at player's feet and add z compensation depending on projectile speed
 function BossLogicAttack._chk_use_throwable(data)
 	local throwable = data.char_tweak.throwable
 	local throwable_tweak = tweak_data.projectiles[throwable]
@@ -96,7 +101,7 @@ function BossLogicAttack._chk_use_throwable(data)
 	end
 
 	local throw_dis = focus.verified_dis
-	if throw_dis < 400 or throw_dis > 2000 then
+	if throw_dis < 400 or throw_dis > (throwable_tweak.launch_speed or 600) * 3 then
 		return
 	end
 
@@ -109,32 +114,41 @@ function BossLogicAttack._chk_use_throwable(data)
 		throw_from = data.unit:inventory():equipped_unit():position()
 	end
 
-	local launch_speed = throwable_tweak.launch_speed or 250
-	local adjust_z = throwable_tweak.adjust_z or 100
-	local throw_to = tmp_vec
-	mvec3_set(throw_to, focus.verified and focus.m_pos or focus.last_verified_pos)
-	mvec3_set_z(throw_to, throw_to.z + adjust_z * ((throw_dis - 400) / launch_speed))
-
+	local throw_to = focus.verified and focus.m_pos or focus.last_verified_pos
 	local slotmask = managers.slot:get_mask("world_geometry")
-	local obstructed = data.unit:raycast("ray", throw_from, throw_to, "sphere_cast_radius", 15, "slot_mask", slotmask, "report")
-	if obstructed then
+	mvec3_set(tmp_vec, throw_to)
+	mvec3_set_z(tmp_vec, tmp_vec.z - 200)
+	local ray = data.unit:raycast("ray", throw_to, tmp_vec, "slot_mask", slotmask)
+	if not ray then
+		return
+	end
+	throw_to = ray.hit_position
+
+	local compensation = throwable_tweak.adjust_z ~= 0 and (((throw_dis - 400) / 10) ^ 2) / ((throwable_tweak.launch_speed or 250) / 10) or 0
+	mvec3_set_z(throw_to, throw_to.z + compensation)
+	mvec3_lerp(tmp_vec, throw_from, throw_to, 0.5)
+	if data.unit:raycast("ray", throw_from, tmp_vec, "sphere_cast_radius", 15, "slot_mask", slotmask, "report") then
 		return
 	end
 
-	local throw_dir = throw_to
-	mvec3_dir(throw_dir, throw_from, throw_to)
-
 	data.used_throwable_t = data.t + (data.char_tweak.throwable_cooldown or 15)
 
-	if not is_throwable or mov_ext:play_redirect("throw_grenade") then
-		if is_throwable then
-			managers.network:session():send_to_peers_synched("play_distance_interact_redirect", data.unit, "throw_grenade")
-		end
-		ProjectileBase.throw_projectile_npc(throwable, throw_from, throw_dir, data.unit)
-
-		return true
+	local action_data = {
+		body_part = 3,
+		type = "act",
+		variant = is_throwable and "throw_grenade" or "recoil_single"
+	}
+	if not data.unit:brain():action_request(action_data) then
+		return
 	end
+
+	local throw_dir = tmp_vec
+	mvec3_dir(throw_dir, throw_from, throw_to)
+	ProjectileBase.throw_projectile_npc(throwable, throw_from, throw_dir, data.unit)
+
+	return true
 end
+
 
 -- Check for weapon range to determine wether to move closer
 function BossLogicAttack._upd_combat_movement(data, my_data)

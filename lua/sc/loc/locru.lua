@@ -1075,6 +1075,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_tranq_mosin"] = "Транквилизаторы",
 		["bm_wp_upg_a_tranq_mosin_desc"] = "Слабые патроны, которые наносят урон через время и могут отравить врагов.\n\nFor true oblivion, The End.",
 
+		--Crosskill Guard
+		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness. ",
+
 		--Broomstick--
 		["bm_c96_sc_desc"] = "Инновационный немецкий автоматический пистолет. Может вести полностью автоматический огонь с бешеной скоростью, но очень быстро опустошит ваши запасы патронов.\nЭто оружие перезаряжается обоймами по 10 патронов.",
 

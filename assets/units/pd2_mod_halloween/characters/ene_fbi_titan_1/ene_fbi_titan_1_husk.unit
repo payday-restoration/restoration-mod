@@ -10,8 +10,8 @@
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
-			<var name="_tweak_table" value="swat_titan" />
-			<var name="_default_weapon_id" value="mp5" />
+			<var name="_tweak_table" value="hrt_titan" />
+			<var name="_default_weapon_id" value="mp9_titan" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

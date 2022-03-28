@@ -292,6 +292,7 @@
 		<hook file="sc/managers/sidejobeventmanager.lua" source_file="lib/managers/sidejobeventmanager"/>
 		<hook file="sc/tweak_data/mutatortweakdata.lua" source_file="lib/tweak_data/mutatortweakdata"/>
 		<hook file="sc/core/coreworldinstancemanager.lua" source_file="core/lib/managers/coreworldinstancemanager"/>
+		<hook file="sc/managers/missionmanager.lua" source_file="lib/managers/missionmanager"/>
 		<!--///CRIMESPREE\\\-->
 		<hook file="sc/modifiers/modifierheavies.lua" source_file="lib/modifiers/modifierheavies"/>
 		<hook file="sc/modifiers/modifierdozermedic.lua" source_file="lib/modifiers/modifierdozermedic"/>

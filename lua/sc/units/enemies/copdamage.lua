@@ -982,6 +982,8 @@ function CopDamage:damage_bullet(attack_data)
 				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)	
 			elseif Network:is_server() and self._char_tweak.bag_death then
 				self:bag_explode(attack_data)
+			elseif Network:is_server() and self._char_tweak.fire_bag_death then
+				self:bag_fire(attack_data)				
 			end
 
 
@@ -1191,6 +1193,8 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		elseif Network:is_server() and self._char_tweak.bag_death then
 			self:bag_explode(attack_data)			
+		elseif Network:is_server() and self._char_tweak.fire_bag_death then
+			self:bag_fire(attack_data)				
 		end
 
 		result = {
@@ -3541,4 +3545,32 @@ function CopDamage:bag_explode(attack_data)
 	managers.explosion:play_sound_and_effects(pos, normal, range, effect_params)
 	managers.explosion:detect_and_give_dmg(damage_params)
 	managers.network:session():send_to_peers_synched("sync_explosion_to_client", attack_data.attacker_unit, pos, normal, ply_damage, range, curve_pow)												
+end
+
+function CopDamage:bag_fire(attack_data)
+	local position = self._unit:position()
+	local rotation = self._unit:rotation()
+	local data = {
+		damage = 6,
+		player_damage = 3,
+		fire_dot_data = {
+			dot_damage = 1,
+			dot_trigger_max_distance = 3000,
+			dot_trigger_chance = 50,
+			dot_length = 3.1,
+			dot_tick_period = 0.5
+		},
+		range = 75,
+		burn_duration = 12,
+		burn_tick_period = 0.5,
+		curve_pow = 3,
+		sound_event = "white_explosion",
+		sound_event_burning = "burn_loop_gen",
+		sound_event_impact_duration = 4,
+		alert_radius = 15000,
+		fire_alert_radius = 15000,
+		effect_name = "effects/payday2/particles/explosions/grenade_incendiary_explosion_sc"
+	}
+
+	EnvironmentFire.spawn(position, rotation, data, math.UP, nil, 0, 1)											
 end

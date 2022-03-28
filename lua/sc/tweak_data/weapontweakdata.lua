@@ -10122,9 +10122,4 @@ function WeaponTweakData:_precalculate_values()
 	self.hk21_sc_npc.AMMO_MAX = self.hk21_sc_npc.CLIP_AMMO_MAX * self.hk21_sc_npc.NR_CLIPS_MAX
 	self.mp5_cloak_npc.AMMO_MAX = self.mp5_cloak_npc.CLIP_AMMO_MAX * self.mp5_cloak_npc.NR_CLIPS_MAX
 	self.peacemaker_npc.AMMO_MAX = self.peacemaker_npc.CLIP_AMMO_MAX * self.peacemaker_npc.NR_CLIPS_MAX
-	self.m16_crew.AMMO_MAX = 9999999
-	self.peacemaker_crew.AMMO_MAX = 9999999
-	self.p90_crew.AMMO_MAX = 9999999
-	self.flamethrower_mk2_crew.AMMO_MAX = 9999999
-	self.olympic_crew.AMMO_MAX = 9999999
 end

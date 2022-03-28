@@ -1111,7 +1111,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 
 		--Mosin--
 		["bm_mosin_sc_desc"] = "威力十足的栓动步枪，使用5发装弹夹供弹。\n\n可以穿透护甲，盾牌及薄墙壁。",
-
+		
+		--Crosskill Guard
+		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness. ",
+		
 		--Broomstick--
 		["bm_c96_sc_desc"] = "革命性的德国制冲锋手枪，极高的理论射速让你的弹药存量捉襟见肘。\n该武器使用10发装弹夹供弹。",
 

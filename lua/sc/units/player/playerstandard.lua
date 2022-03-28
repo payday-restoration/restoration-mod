@@ -858,7 +858,19 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	if weapon:get_name_id() == "m134" then
 		weapon:update_spin()
 	end
+	
+	if self:full_steelsight() and not self._state_data.in_full_steelsight then
+		self._state_data.in_full_steelsight = true
+	end
+	if self._state_data.in_full_steelsight and not self:in_steelsight() then
+		self._state_data.in_full_steelsight = nil
+	end
+	
 end)
+
+function PlayerStandard:full_steelsight()
+	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
+end
 
 --Deals with burst fire hud stuff when swapping from an underbarrel back to a weapon in burst fire.
 local _check_action_deploy_underbarrel_original = PlayerStandard._check_action_deploy_underbarrel	
@@ -1126,7 +1138,7 @@ end
 
 --Now also returns steelsight information. Used for referencing spread values to give steelsight bonuses.
 function PlayerStandard:get_movement_state()
-	if self._state_data.in_steelsight then
+	if self._state_data.in_steelsight and self._state_data.in_full_steelsight then
 		return self._moving and "moving_steelsight" or "steelsight"
 	end
 

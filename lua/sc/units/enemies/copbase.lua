@@ -18,6 +18,31 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	end		
 end)
 
+
+--Yufu Wang Hitbox fix
+Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
+	if self._tweak_table == "triad_boss" then
+		self._unit:body("head"--[[self._unit:character_damage()._head_body_name--]]):set_sphere_radius(15)
+		self._unit:body("body"):set_sphere_radius(25)	
+
+		self._unit:body("rag_LeftArm"):set_enabled(true)
+		self._unit:body("rag_LeftForeArm"):set_enabled(true)
+
+		self._unit:body("rag_RightArm"):set_enabled(true)
+		self._unit:body("rag_RightForeArm"):set_enabled(true)
+
+		self._unit:body("rag_LeftArm"):set_sphere_radius(11)
+		self._unit:body("rag_LeftForeArm"):set_sphere_radius(7)
+		self._unit:body("rag_RightArm"):set_sphere_radius(11)
+		self._unit:body("rag_RightForeArm"):set_sphere_radius(7)
+
+		self._unit:body("rag_LeftUpLeg"):set_sphere_radius(10)
+		self._unit:body("rag_LeftLeg"):set_sphere_radius(7)
+		self._unit:body("rag_RightUpLeg"):set_sphere_radius(10)
+		self._unit:body("rag_RightLeg"):set_sphere_radius(7)
+	end
+end)
+
 function CopBase:random_mat_seq_initialization()
     local unit_name = self._unit:name()
  	local faction = tweak_data.levels:get_ai_group_type()

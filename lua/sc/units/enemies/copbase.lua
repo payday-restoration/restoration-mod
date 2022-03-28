@@ -22,7 +22,7 @@ end)
 --Yufu Wang Hitbox fix
 Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
 	if self._tweak_table == "triad_boss" then
-		self._unit:body("head"[self._unit:character_damage()._head_body_name]):set_sphere_radius(15)
+		self._unit:body("head"--[[self._unit:character_damage()._head_body_name--]]):set_sphere_radius(15)
 		self._unit:body("body"):set_sphere_radius(25)	
 
 		self._unit:body("rag_LeftArm"):set_enabled(true)

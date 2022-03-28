@@ -1047,7 +1047,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_socom_desc"] = "자칼이 선택한 보조무기. 세련된 디자인과 안정적이고 강력한 .45ACP 권총입니다.",
 		
 		--Baby Deagle--
-		["bm_w_sparrow_sc_g_cowboy_desc"] = "당신도 이 무게로도 들 수 있을 겁니다.",
+		["bm_w_sparrow_sc_g_cowboy_desc"] = "당신은 이 무게로도 들 수 있을 겁니다.",
 
 		--Legendary Skins--
 		["bm_menu_sc_legendary_ak"] = "Vlad's Rodina",
@@ -1077,7 +1077,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_tranq_mosin_desc"] = "시간이 지남에 따라 피해를 입히고 적을 기절시킬 수 있는 약한 마취탄를 발사합니다.\n\n진정한 망각을 위해, 디 엔드",				
 
 		--Crosskill Guard
-		["bm_shrew_g_bling_sc_desc"] = "In a world filled with misery and uncertainty, it is a great comfort to know that, in the end, there is light in the darkness. ",
+		["bm_shrew_g_bling_sc_desc"] = "고통과 부정으로 가득한 세상에서 어둠 속에 빛이 있다는 것을 아는 것은 결국엔 큰 위안이 될 것입니다. ",
 
 		--Broomstick--
 		["bm_c96_sc_desc"] = "독일의 혁명적인 기관권총. 완전 자동으로 미친 속도로 발사할 수 있지만 탄약 소모가 큽니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
@@ -1145,7 +1145,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_melee_fight_info"] = "물 처럼 되어라, 친구여.\n\n적의 근접 공격을 반격하면 120의 근접 피해를 입힙니다. 이것은 스킬로 늘릴 수 있습니다.", --Empty Palm Kata
 		["bm_melee_slot_lever_info"] = "잭팟 나와줘!\n\n5% 확률로 10배의 데미지와 넉다운을 줍니다.",
 		["bm_melee_specialist_info"] = "두 배의 칼날, 두 배의 재미.\n\n근접 공격은 뽑힌 동안 첫 번째 공격 이후 매 공격마다 두 배의 피해를 줍니다.", --Specialist Knives, Talons, Knuckle Daggers, Push Daggers
-		["bm_melee_cleaver_info"] = "그는 치고 자르고 베고 있습니다.\n\n몸과 팔다리에 대한 전반적인 효과가 증가하는 대신 헤드샷 피해가 50% 감소합니다.",
+		["bm_melee_cleaver_info"] = "치고 자르고 베고 있습니다.\n\n몸과 팔다리에 대한 전반적인 효과가 증가하는 대신 헤드샷 피해가 50% 감소합니다.",
 
 		--We assets now--
 		["menu_asset_dinner_safe"] = "금고",

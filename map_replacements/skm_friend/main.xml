@@ -16,7 +16,7 @@
 	<Localization default="english.txt" directory="loc">
 		<loc file="english.txt" language="english"/>
 	</Localization>
-	<level ai_group_type="america" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_friend" intro_event="Play_loc_skm_intro" name_id="heist_friend_hl" narrator="locke" wave_count="9">
+	<level ai_group_type="lapd" briefing_dialog="Play_loc_skm_brf" cube="cube_apply_heist_bank" group_ai_state="skirmish" id="skm_friend" intro_event="Play_loc_skm_intro" name_id="heist_friend_hl" narrator="locke" wave_count="9">
 		<add file="levels/skm_friend/add.xml"/>
 		<assets/>
 		<outro_event>
@@ -25,6 +25,7 @@
 		</outro_event>
 		<packages>
 			<value_node value="packages/dlcs/skm/job_skm"/>
+			<value_node value="packages/skm_sc_lapd"/>
 			<value_node value="levels/instances/shared/obj_skm/world"/>
 			<value_node value="levels/instances/shared/obj_skm/world/world"/>
 			<value_node value="levels/instances/shared/obj_skm/world_sounds"/>

@@ -34,6 +34,7 @@ local america_very_hard = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
 		
@@ -77,6 +78,7 @@ local america_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_fbi_swat_1_sc/ene_fbi_swat_1_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/payday2/characters/ene_fbi_swat_2_sc/ene_fbi_swat_2_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_fbi_heavy_1_sc/ene_fbi_heavy_1_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
 		
@@ -121,6 +123,7 @@ local america_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -164,6 +167,7 @@ local america_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -214,6 +218,7 @@ local america_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 		
@@ -274,6 +279,7 @@ local nypd_very_hard = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870",
 		
@@ -333,6 +339,7 @@ local nypd_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",	
 		
@@ -395,6 +402,7 @@ local nypd_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -459,6 +467,7 @@ local nypd_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -522,6 +531,7 @@ local nypd_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 		
@@ -585,6 +595,7 @@ local nypd_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870",
 		
@@ -656,6 +667,7 @@ local nypd_pr_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",	
 		
@@ -731,6 +743,7 @@ local nypd_pr_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -808,6 +821,7 @@ local nypd_pr_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/payday2/characters/ene_city_swat_1_sc/ene_city_swat_1_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/payday2/characters/ene_city_swat_2_sc/ene_city_swat_2_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/payday2/characters/ene_city_swat_3_sc/ene_city_swat_3_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/payday2/characters/ene_city_heavy_g36_sc/ene_city_heavy_g36_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -884,6 +898,7 @@ local nypd_pr_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 		
@@ -967,6 +982,7 @@ local lapd_very_hard = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_lapd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc",
 		
@@ -1023,6 +1039,7 @@ local lapd_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_lapd/characters/ene_fbi_swat_2/ene_fbi_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -1081,6 +1098,7 @@ local lapd_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -1146,6 +1164,7 @@ local lapd_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_lapd/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_lapd/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_lapd/characters/ene_city_swat_3/ene_city_swat_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_lapd/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_lapd/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -1204,6 +1223,7 @@ local lapd_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 		
@@ -1271,6 +1291,7 @@ local federales_very_hard = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -1367,6 +1388,7 @@ local federales_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -1465,6 +1487,7 @@ local federales_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",
 		
@@ -1561,6 +1584,7 @@ local federales_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",
 		
@@ -1658,6 +1682,7 @@ local federales_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
 		
@@ -1745,6 +1770,7 @@ local murkywater_normal_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_swat_2/ene_fbi_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -1835,6 +1861,7 @@ local murkywater_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -1925,6 +1952,7 @@ local murkywater_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_sharks/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_sharks/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_sharks/characters/ene_city_swat_3/ene_city_swat_3", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -2019,6 +2047,7 @@ local murkywater_omnia = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_omnia/characters/ene_omnia_city/ene_omnia_city",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_omnia/characters/ene_omnia_city_3/ene_omnia_city_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_city_2/ene_omnia_city_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy/ene_omnia_heavy",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_omnia/characters/ene_omnia_heavy_r870/ene_omnia_heavy_r870",
 		
@@ -2123,6 +2152,7 @@ local russia_very_hard = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870",
 		["units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870",
@@ -2183,6 +2213,7 @@ local russia_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ak47_ass/ene_akan_fbi_swat_ak47_ass",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870",
 		["units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870",
@@ -2245,6 +2276,7 @@ local russia_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870",
 		["units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870",
@@ -2308,6 +2340,7 @@ local russia_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870",
 		["units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870",
@@ -2371,6 +2404,7 @@ local russia_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ump/ene_akan_fbi_swat_dw_ump",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870",
 		["units/payday2/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870",
@@ -2437,6 +2471,7 @@ local zombie_very_hard = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1_sc/ene_fbi_heavy_hvh_1_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870",
 		
@@ -2489,6 +2524,7 @@ local zombie_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1_sc/ene_fbi_heavy_hvh_1_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870",
 		
@@ -2551,6 +2587,7 @@ local zombie_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -2613,6 +2650,7 @@ local zombie_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -2672,6 +2710,7 @@ local zombie_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 		
@@ -2727,6 +2766,7 @@ local zombie_nail_very_hard = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1_sc/ene_fbi_heavy_hvh_1_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870",
 		
@@ -2784,6 +2824,7 @@ local zombie_nail_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_1/ene_fbi_swat_hvh_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_fbi_swat_3/ene_fbi_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_hvh/characters/ene_fbi_swat_hvh_2/ene_fbi_swat_hvh_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1_sc/ene_fbi_heavy_hvh_1_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_r870/ene_fbi_heavy_hvh_r870",
 		
@@ -2851,6 +2892,7 @@ local zombie_nail_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -2918,6 +2960,7 @@ local zombie_nail_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_halloween/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_city_swat_3/ene_city_swat_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_halloween/characters/ene_city_swat_2/ene_city_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_halloween/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_city_heavy_r870_sc/ene_city_heavy_r870_sc",
 		
@@ -2982,6 +3025,7 @@ local zombie_nail_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_mod_halloween/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_mod_halloween/characters/ene_zeal_city_3/ene_zeal_city_3",
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_mod_halloween/characters/ene_zeal_city_2/ene_zeal_city_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_mod_halloween/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc",
 		

@@ -1,3 +1,11 @@
+Hooks:PostHook(Drill, "start", "res_start", function(self)
+	managers.groupai:state():set_area_min_police_force(self._unit:key(), 3, self._unit:position())
+end)
+
+Hooks:PostHook(Drill, "done", "res_done", function(self)
+	managers.groupai:state():set_area_min_police_force(self._unit:key())
+end)
+
 function Drill:_register_sabotage_SO()
 	if self._sabotage_SO_id or not managers.navigation:is_data_ready() or not self._unit:timer_gui() or not self._unit:timer_gui()._can_jam or not self._sabotage_align_obj_name then
 		return
@@ -81,4 +89,8 @@ end
 
 Hooks:PostHook(Drill, "on_sabotage_SO_completed", "RR_on_sabotage_SO_completed", function(self, saboteur)
 	saboteur:sound():say(self.is_drill and "e05" or "e06", true)
+end)
+
+Hooks:PostHook(Drill, "destroy", "res_destroy", function(self)
+	managers.groupai:state():set_area_min_police_force(self._unit:key())
 end)

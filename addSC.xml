@@ -1360,6 +1360,10 @@
 	<!--Fixed firing audio for the Grimm-->
 	<unit				path="units/pd2_dlc_dsg/weapons/wpn_fps_sho_basset/wpn_fps_sho_basset" force="true"/>
 
+	<!-- Bearable G3 FPS Animations -->
+	<animation			path="anims/fps/g3/g3_reload_not_empty" force="true"/>
+	<animation			path="anims/fps/g3/g3_reload" force="true"/>
+
 	<!-- Actually Good Third Person Animations -->
 	<animation			path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>
 	<animation			path="anims/shared/pistol/combat/cbt_crh_idle" force="true"/>

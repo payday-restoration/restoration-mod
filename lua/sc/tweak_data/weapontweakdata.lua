@@ -4426,6 +4426,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	self.g3.stats_modifiers = nil
 	self.g3.panic_suppression_chance = 0.05
+	self.g3.timers.reload_not_empty = 2.5
+	self.g3.timers.reload_empty = 3.8
+	self.g3.reload_speed_multiplier = 1.9
 
 	--Gecko 7.62
 	self.galil.AMMO_MAX = 80

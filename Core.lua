@@ -154,6 +154,7 @@ function restoration:Init()
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"lit1", --California's Heat
 		"lit2", --California's Heat but Payday 3
+		"Skyscraper", --The Skyscraper Heist
 		"constantine_bank_lvl", --Pacific Bank 
 		"santas_hardware_store" --Hardware Store but Xmas
 	}			
@@ -195,7 +196,6 @@ function restoration:Init()
 		"junk", --Doghouse
 		"amsdeal1", --Armsdeal Alleyway
 		"knk_jwl", --Knockover: Jewerly Store
-		"Skyscraper", --The Skyscraper Heist
 		"RogueCompany", --Rogue Company
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"Gambling_room", --Underground Bargains

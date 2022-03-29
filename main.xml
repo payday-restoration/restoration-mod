@@ -174,6 +174,7 @@
 		<hook file="sc/units/enemies/copbase.lua" source_file="lib/units/enemies/cop/copbase"/>
 		<hook file="sc/units/enemies/huskcopbase.lua" source_file="lib/units/enemies/cop/huskcopbase"/>
 		<hook file="sc/units/player_team/teamaimovement.lua" source_file="lib/units/player_team/teamaimovement"/>
+		<hook file="sc/units/player_team/teamaidamage.lua" source_file="lib/units/player_team/teamaidamage"/>
 		<hook file="sc/units/player_team/huskteamaidamage.lua" source_file="lib/units/player_team/huskteamaidamage"/>
 		<hook file="sc/units/enemies/logics/coplogicinactive.lua" source_file="lib/units/enemies/cop/logics/coplogicinactive"/>
 		<hook file="sc/units/enemies/logics/coplogicintimidated.lua" source_file="lib/units/enemies/cop/logics/coplogicintimidated"/>

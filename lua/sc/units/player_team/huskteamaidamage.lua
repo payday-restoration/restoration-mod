@@ -142,6 +142,18 @@ function HuskTeamAIDamage:sync_damage_fire(attacker_unit, result_index, i_attack
 	self:_call_listeners(attack_data)
 end
 
+local old_husk_damage_melee = HuskTeamAIDamage.damage_melee
+function HuskTeamAIDamage:damage_melee(attack_data)
+	
+	if attack_data.name_id and attack_data.name_id == "fear" then
+		if self._unit:base()._tweak_table == "russian" then
+			self._unit:sound():say("s05x_sin", true)
+		end
+	end
+
+	old_husk_damage_melee(self, attack_data)
+end
+
 function HuskTeamAIDamage:sync_damage_melee(attacker_unit, hit_offset_height, result_index)
 	if self._dead or self._fatal then
 		return

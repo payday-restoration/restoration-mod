@@ -1363,6 +1363,13 @@
 	<!-- Bearable G3 FPS Animations -->
 	<animation			path="anims/fps/g3/g3_reload_not_empty" force="true"/>
 	<animation			path="anims/fps/g3/g3_reload" force="true"/>
+	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_bipod" force="true"/>
+	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_psg" force="true"/>
+	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_railed" force="true"/>
+	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro" force="true"/>
+	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_fg_retro_plastic" force="true"/>
+	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag" force="true"/>
+	<model				path="units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag_psg" force="true"/>
 
 	<!-- Actually Good Third Person Animations -->
 	<animation			path="anims/shared/boss/tank/cbt_std_arrest_gesture_var1" force="true"/>

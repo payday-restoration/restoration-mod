@@ -3136,23 +3136,21 @@ function CopDamage:_on_damage_received(damage_info)
 
 	if not self._dead and not self._unit:base():has_tag("special") and self._health > 0 then
 		local t = TimerManager:game():time()
-    if not self._unit:base():char_tweak()["custom_voicework"] then
-		    if not self._next_allowed_hurt_t or self._next_allowed_hurt_t and self._next_allowed_hurt_t < t then
-		    	if damage_info.damage and damage_info.damage > 0.01 and self._health > damage_info.damage then
-		    		if not damage_info.result_type or damage_info.result_type ~= "healed" or damage_info.variant == "hurt_sick" and damage_info.result_type ~= "death" then
-		    			if damage_info.is_fire_dot_damage or damage_info.variant == "fire" then
-		    				if self._next_allowed_burnhurt_t and self._next_allowed_burnhurt_t < t or not self._next_allowed_burnhurt_t then
-		    					self._unit:sound():say("burnhurt", nil, nil, nil, nil)
-		    					self._next_allowed_burnhurt_t = t + 8
-		    					self._next_allowed_hurt_t = t + math.random(1, 1.28)
-		    				end
-		    			else
-		    				self._unit:sound():say("x01a_any_3p", nil, nil, nil, nil)
-		    			end
-		    		end
-		    	end
-		    end
-		end	
+		if not self._next_allowed_hurt_t or self._next_allowed_hurt_t and self._next_allowed_hurt_t < t then
+			if damage_info.damage and damage_info.damage > 0.01 and self._health > damage_info.damage then
+				if not damage_info.result_type or damage_info.result_type ~= "healed" or damage_info.variant == "hurt_sick" and damage_info.result_type ~= "death" then
+					if damage_info.is_fire_dot_damage or damage_info.variant == "fire" then
+						if self._next_allowed_burnhurt_t and self._next_allowed_burnhurt_t < t or not self._next_allowed_burnhurt_t then
+							self._unit:sound():say("burnhurt", nil, nil, nil, nil)
+							self._next_allowed_burnhurt_t = t + 8
+							self._next_allowed_hurt_t = t + math.random(1, 1.28)
+						end
+					else
+						self._unit:sound():say("x01a_any_3p", nil, nil, nil, nil)
+					end
+				end
+			end
+		end
 	end
 	
 end

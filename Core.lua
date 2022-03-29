@@ -249,7 +249,6 @@ function restoration:Init()
 		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
 		"sh_raiders", --Safehouse Raiders 
 		"amsdeal1", --Armsdeal Alleyway
-		"hardware_store",
 		"tj_htsb",
 		"hntn",
 		"bookmakers_office", --Bookmaker's Office

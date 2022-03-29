@@ -668,7 +668,9 @@ function PlayerStandard:_update_melee_timers(t, input)
 
 	if self._state_data.melee_repeat_expire_t and self._state_data.melee_repeat_expire_t <= t then
 		self._state_data.melee_repeat_expire_t = nil
-
+		if melee_weapon.force_play_charge then
+			self._camera_unit:base():play_anim_melee_item("charge")
+		end
 		if input.btn_meleet_state then
 			self._state_data.melee_charge_wanted = not instant and true
 		end
@@ -741,14 +743,24 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 	local anim_speed = tweak_data.blackmarket.melee_weapons[melee_entry].anim_speed_mult or 1
 	speed = speed * anim_speed
 	speed = speed * managers.player:upgrade_value("player", "melee_swing_multiplier", 1)
-	melee_damage_delay = melee_damage_delay * managers.player:upgrade_value("player", "melee_swing_multiplier_delay", 1)
+	--Unsure if this is still needed since melee swings sync up now 
+	--melee_damage_delay = melee_damage_delay * managers.player:upgrade_value("player", "melee_swing_multiplier_delay", 1)
 	local melee_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].expire_t or 0 --Add fallbacks for certain stats.
+	local melee_miss_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].miss_expire_t or 0
 	local melee_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t or 0
+	local melee_miss_repeat_expire_t = tweak_data.blackmarket.melee_weapons[melee_entry].miss_repeat_expire_t or 0
+	--So the timers play nicely with the anim speed mult
+	melee_expire_t = melee_expire_t / speed
+	melee_miss_expire_t = melee_miss_expire_t / speed
+	melee_repeat_expire_t = melee_repeat_expire_t / speed
+	melee_miss_repeat_expire_t = melee_miss_repeat_expire_t / speed
+	melee_damage_delay = melee_damage_delay / speed
 	melee_damage_delay = math.min(melee_damage_delay, tweak_data.blackmarket.melee_weapons[melee_entry].repeat_expire_t)
 	local primary = managers.blackmarket:equipped_primary()
 	local primary_id = primary.weapon_id
 	local bayonet_id = managers.blackmarket:equipped_bayonet(primary_id)
 	local bayonet_melee = false
+	local can_melee_miss = tweak_data.blackmarket.melee_weapons[melee_entry].can_melee_miss
 
 	if bayonet_id and self._equipped_unit:base():selection_index() == 2 then
 		bayonet_melee = true
@@ -758,11 +770,10 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 		speed = math.max(speed, speed * (charge_lerp_value * charge_bonus_speed))
 		melee_damage_delay = math.min(melee_damage_delay, melee_damage_delay / (charge_lerp_value * charge_bonus_speed))
 		melee_expire_t = math.min(melee_expire_t, melee_expire_t / (charge_lerp_value * charge_bonus_speed))
+		melee_miss_expire_t = math.min(melee_miss_expire_t, melee_miss_expire_t / (charge_lerp_value * charge_bonus_speed))
 		melee_repeat_expire_t = math.min(melee_repeat_expire_t, melee_repeat_expire_t / (charge_lerp_value * charge_bonus_speed))
+		melee_miss_repeat_expire_t = math.min(melee_miss_repeat_expire_t, melee_miss_repeat_expire_t / (charge_lerp_value * charge_bonus_speed))
 	end
-	
-	self._state_data.melee_expire_t = t + melee_expire_t
-	self._state_data.melee_repeat_expire_t = t + math.min(melee_repeat_expire_t, melee_expire_t)
 	if not instant_hit and not skip_damage then
 		self._state_data.melee_damage_delay_t = t + melee_damage_delay
 
@@ -772,6 +783,14 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 			self._state_data.melee_hit_ray = nil
 		end
 	end
+	
+	if can_melee_miss and self._state_data.melee_hit_ray == true then 
+		melee_repeat_expire_t = melee_miss_repeat_expire_t
+		melee_expire_t = melee_miss_expire_t
+	end
+	
+	self._state_data.melee_expire_t = t + melee_expire_t
+	self._state_data.melee_repeat_expire_t = t + math.min(melee_repeat_expire_t, melee_expire_t)
 
 	local send_redirect = instant_hit and (bayonet_melee and "melee_bayonet" or "melee") or "melee_item"
 
@@ -819,7 +838,7 @@ function PlayerStandard:_do_action_melee(t, input, skip_damage)
 			anim_attack_param = anim_attack_charged_vars and anim_attack_charged_vars[self._melee_attack_var]
 		elseif self._stick_move then
 			local angle = mvector3.angle(self._stick_move, math.X)
-			if anim_attack_left_vars and angle and (angle <= 180) and (angle >= 135) then
+			if anim_attack_left_vars and angle and (angle <= 181) and (angle >= 134) then
 				self._melee_attack_var = anim_attack_left_vars and math.random(#anim_attack_left_vars)
 				anim_attack_param = anim_attack_left_vars and anim_attack_left_vars[self._melee_attack_var]
 			elseif anim_attack_right_vars and angle and (angle <= 45) and (angle >= 0) then
@@ -859,6 +878,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 		weapon:update_spin()
 	end
 	
+	--Applying (and removing) the conditon for being fully ADS'd
 	if self:full_steelsight() and not self._state_data.in_full_steelsight then
 		self._state_data.in_full_steelsight = true
 	end
@@ -868,6 +888,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	
 end)
 
+--Check for being fully ADS'd
 function PlayerStandard:full_steelsight()
 	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
 end
@@ -944,6 +965,9 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
 	local sphere_cast_radius = 20
 	local col_ray = nil
+	local make_effect = bayonet_melee or tweak_data.blackmarket.melee_weapons[melee_entry].make_effect or nil
+	local make_decal = tweak_data.blackmarket.melee_weapons[melee_entry].make_decal or nil
+	local make_saw = tweak_data.blackmarket.melee_weapons[melee_entry].make_saw or nil --not implemented yet
 	--Melee weapon tweakdata.
 	local melee_weapon = tweak_data.blackmarket.melee_weapons[melee_entry]
 	--Holds info for certain melee gimmicks (IE: Taser Shock, Psycho Knife Panic, ect)
@@ -995,12 +1019,20 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 			else
 				self:_play_melee_sound(melee_entry, "hit_gen")
 			end
-			managers.game_play_central:play_impact_sound_and_effects({
-				col_ray = col_ray,
-				effect = Idstring("effects/payday2/particles/impacts/fallback_impact_pd2"),
-				no_decal = true,
-				no_sound = true
-			})
+			if make_effect then
+				managers.game_play_central:play_impact_sound_and_effects({
+					col_ray = col_ray,
+					no_decal = not make_decal and true,
+					no_sound = true
+				})
+			else
+				managers.game_play_central:play_impact_sound_and_effects({
+					col_ray = col_ray,
+					effect = Idstring("effects/payday2/particles/impacts/fallback_impact_pd2"),
+					no_decal = not make_decal and true,
+					no_sound = true
+				})
+			end
 		end
 
 		--Out of date syncing method, reenable in case it was load bearing.

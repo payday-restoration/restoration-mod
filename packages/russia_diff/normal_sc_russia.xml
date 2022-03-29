@@ -2,14 +2,6 @@
     <!--Akan FBI SWAT w/ UMP-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_ump/ene_akan_fbi_swat_ump_husk" load="true"/>
-
-	<!--Akan Gensec Elite-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass_sc/ene_akan_fbi_swat_dw_ak47_ass_sc_husk" load="true"/>
-
-	<!--Akan Gensec Shotgunner this is only here to fix a bug anyway-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_r870_sc/ene_akan_fbi_swat_dw_r870_sc_husk" load="true"/>
 	
 	<!--Akan Bronco guy-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_cop_raging_bull_sc/ene_akan_cs_cop_raging_bull_sc" load="true"/>
@@ -31,33 +23,13 @@
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_cs_swat_zeal/ene_akan_cs_swat_zeal_husk" load="true"/>
 	
-	<!--Akan Snipers-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_sniper_svd_snp/ene_akan_fbi_sniper_svd_snp" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_sniper_svd_snp/ene_akan_fbi_sniper_svd_snp_husk" force="false" load="true"/>
-	
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_sniper_dw_svd_snp/ene_akan_fbi_sniper_dw_svd_snp" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_sniper_dw_svd_snp/ene_akan_fbi_sniper_dw_svd_snp_husk" force="false" load="true"/>
-	
-	<!--Akan Gensec Tan-->
-	<object				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw_contour" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw/ene_akan_fbi_heavy_dw_husk" force="false" load="true"/>
-
-	<!--Akan Gensec Tan w/ Shotgun-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870_husk" force="false" load="true"/>
-
 	<!--Akan FBI Tan-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36" force="true" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_g36/ene_akan_fbi_heavy_g36_husk" force="true" load="true"/>
 	
 	<!--Akan FBI Tan w/ Shotgun-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_dw_r870" force="true" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_dw_r870_husk" force="true" load="true"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870" force="true" load="true"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_r870_husk" force="true" load="true"/>
 
 	<!--Akan Gensec Tan K63 Accessory-->
 	<object				path="units/pd2_dlc_mad/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" force="false"/>
@@ -72,16 +44,6 @@
 	<model				path="units/pd2_dlc_mad/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false" load="true"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_acc_helmet_fbi_titan_1/ene_acc_helmet_fbi_titan_1" force="false"/>	
-	
-	<!--Russian Grenadier-->
-	<object				path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_contour" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1_husk" force="false" load="true"/>
-	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>	
 
 	<!--Russian FBI-->
 	<object				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
@@ -105,41 +67,7 @@
 	<model				path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="false"/>
 	<object				path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="false"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="false"/>
-	
-    <!--Titan Sniper-->	
-	<unit				path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper_contour" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/helmets_snp_df" force="false"/>	
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/ene_phalanx_snp_df" force="false"/>	
-
-	<!--Titan Sniper Cap Accessory-->
-	<object				path="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_acc_helmet_titsnip_cap/ene_acc_helmet_titsnip_cap" force="false"/>	
-
-	<!--akan LPF-->
-	<object				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_picklerick" force="false"/>	
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_contour" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_husk" force="false" load="true"/>
-	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" />
-	
-	
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/lpf_body_df" force="false" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_df" force="false" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_il" force="false" load="true"/>	
+	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" force="false"/>	
 	
 	<!--Russian Vet-->
 	<object				path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false"/>
@@ -149,18 +77,6 @@
 	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1_contour" force="false"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1_husk" force="false" load="true"/>
-	
-	<object				path="units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2_contour" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_2/ene_akan_veteran_2_husk" force="false" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_df" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_head_df" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_nm" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/compound_test_subject_head_nm" force="false"/>
 					
 	<!--Russian Medic bob-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" load="true"/>
@@ -176,17 +92,6 @@
 	<!--(thx baddy) russian medic helmet acc-->	
 	<unit_mat			path="units/pd2_dlc_mad/characters/ene_acc_akan_medic_helmet/ene_acc_akan_medic_helmet" load="true"/>
 	<unit_mat			path="units/pd2_dlc_mad/characters/ene_acc_akan_medic_helmet_zdann/ene_acc_akan_medic_helmet_zdann" load="true"/>
-	
-	<!--Russian Medic zdann-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
-	<model				path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_contour" force="false" />
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_head_df" force="false" />
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_body_df" force="false" />
 
 	<!--Titan Shotgunner-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>
@@ -197,17 +102,6 @@
 	<material_config	path="units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun" force="false"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun_contour" force="false"/>
 	<texture			path="units/pd2_dlc_mad/characters/shared_textures/ene_titan_shotgun_df" force="false"/>
-	
-	<!--Titan Rifle-->	
-	<unit				path="units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle_husk" force="false" load="true"/>	
-	<object				path="units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_titan_rifle/ene_titan_rifle_contour" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/ene_titan_rifle_df" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/k63_tit_df" force="false"/>
 
 	<!--Titan SWAT K63 Acc.-->
 	<object				path="units/pd2_dlc_mad/characters/ene_acc_tswat_k63/ene_acc_tswat_k63" force="false"/>
@@ -230,22 +124,6 @@
 	<!--Titan HRT SR2-->	
 	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan" load="false" force="false"/>		
 	
-	<!--Titandozer-->	
-	<object				path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2_contour" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2_husk" force="false" load="true"/>
-	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_vip_2/ene_vip_2" force="false"/>
-	<!--textures-->
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/vip_2_body_df" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_il" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_df" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_hurt_df" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/heads_dozer_hurt_nm" force="false"/>
-	
     <!--Titan Taser-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_titan_taser/ene_titan_taser_husk" force="false" load="true"/>
@@ -263,75 +141,7 @@
 	<model				path="units/pd2_dlc_mad/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<object				path="units/pd2_dlc_mad/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_acc_titan_taser_helm/ene_acc_titan_taser_helm" force="false" load="true"/>	
-	
-    <!--Titan Cloaker-->		
-	<model				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<object				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1" load="true"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_dead"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_contour"/>		
-	<unit				path="units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1_husk" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_head_df" load="true"/>		
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_head_nm" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/cloaker_body_df" load="true"/>		
-	
-	<!--Titanshield-->	
-	<unit				path="units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" load="true"/>
 
-	<!--Generic Bravo Airframe-->	
-	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet" load="true"/>
-
-	<!--Bravo SWAT Helmet-->	
-	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_swat_helmet/ene_acc_bravo_akan_swat_helmet" load="true"/>	
-
-	<!--Bravo Rifleman Helmet-->	
-	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_k63/ene_acc_bravo_akan_k63" load="true"/>	
-	
-	<!--bravo dmr-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_dmr_ru/ene_bravo_dmr_ru_husk"  load="true"/>		
-	<!--bravo lmg-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_lmg_ru/ene_bravo_lmg_ru_husk"  load="true"/>	
-	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_lmg_m249_bravo/wpn_npc_lmg_m249_bravo"  load="true"/>
-	<!--bravo rifle-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_rifle_ru/ene_bravo_rifle_ru_husk"  load="true"/>	
-	<!--bravo shotgun-->
-	<object				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru" />
-	<cooked_physics		path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru" />
-	<model				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru"  load="true"/>
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru" />
-	<material_config	path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru_contour" />
-	<unit				path="units/pd2_mod_bravo/characters/ene_bravo_shotgun_ru/ene_bravo_shotgun_ru_husk"  load="true"/>	
-	<!--textures-->	
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_dmr_ru_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_lmg_ru_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_ru_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_shotgun_ru_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_ru_head_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/helmets_atlas_ru_df"/>
-	<texture			path="units/pd2_mod_bravo/characters/shared_textures/bravo_rifle_helmet_ru_df"/>
 	
 	<!--AK102-->	
 	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_ak102/wpn_npc_ak102" load="false" force="false"/>

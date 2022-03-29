@@ -3174,6 +3174,9 @@ function CharacterTweakData:_init_spring(presets)
 	
 	--Headless Titandozer Boss 
 	self.headless_hatman = deep_clone(self.spring)
+	self.headless_hatman.speech_prefix_p1 = "Horseless Hatless Headless Titan Dozer from Hell"
+	self.headless_hatman.speech_prefix_p2 = nil
+	self.headless_hatman.speech_prefix_count = nil
 	self.headless_hatman.custom_voicework = "hatman"
 	self.headless_hatman.slowing_bullets = {
 		duration = 1,

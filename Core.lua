@@ -152,6 +152,8 @@ function restoration:Init()
 		--Custom Heists below--
 		"hardware_store", --Hardware Store  
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
+		"lit1", --California's Heat
+		"lit2", --California's Heat but Payday 3
 		"constantine_bank_lvl", --Pacific Bank 
 		"santas_hardware_store" --Hardware Store but Xmas
 	}			
@@ -203,8 +205,6 @@ function restoration:Init()
 		"bookmakers_office", --Bookmaker's Office
 		"branchbank_meth", --Bank Heist: Meth
 		"modders_devmap", --Proving Grounds
-		"lit1", --California's Heat
-		"lit2", --California's Heat but Payday 3
 		"gallery_v2", --Art Gallery Remastered 
 		"wetwork_burn" --Burnout
 	}

@@ -14610,9 +14610,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	self.parts.wpn_fps_upg_fl_pis_perst.stats = {
 		value = 4
 	}
-	self.parts.wpn_fps_upg_ns_pis_putnik.perks = {
-		"gadget"
-	}	
 	
 end)
 

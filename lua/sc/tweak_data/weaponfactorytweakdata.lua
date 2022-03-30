@@ -8337,6 +8337,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_peacemaker", "resmod_peacemaker", 
 		40
 	}
 	self.parts.wpn_fps_pis_peacemaker_s_skeletal.supported = true
+	self.parts.wpn_fps_pis_peacemaker_s_skeletal.fps_animation_weight = "stock"
 	self.parts.wpn_fps_pis_peacemaker_s_skeletal.stats = {
 		value = 2,
 		recoil = 1,

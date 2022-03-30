@@ -45,5 +45,8 @@
 		<animation path="anims/fps/mp5/mp5_vg_reload_drum_not_empty" load="true"/>
 		<animation path="anims/fps/mp5/mp5_reload_drum" load="true"/>
 		<animation path="anims/fps/mp5/mp5_reload_drum_not_empty" load="true"/>
+		
+		<!--Ocelots are proud creatures (Peacemaker alt inspect)-->
+		<animation path="anims/fps/peacemaker/peacemaker_inspect_alt" load="true"/>
 	</AddFiles>
 </mod>

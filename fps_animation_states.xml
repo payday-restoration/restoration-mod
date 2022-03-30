@@ -1272,4 +1272,41 @@
         </target>
     </tweak>
 <!--Compact-5 Tweaks End-->
+
+<!--Peacemaker Alt Inspect-->
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/cash_inspect"/>
+			<from name="fps/recoil"/>
+		</search>
+		<target mode="append">
+			<param name="alt_inspect" value="0"/>
+		</target>
+	</tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/cash_inspect"/>
+			<anim name="peacemaker_inspect" weight="peacemaker"/>
+		</search>
+		<target mode="replace">
+			<anim name="peacemaker_inspect" weight="(peacemaker * (1 - alt_inspect)) + (peacemaker * stock)"/>
+			<anim name="peacemaker_inspect_alt" weight="peacemaker * alt_inspect * (1 - stock)"/>
+		</target>
+	</tweak>
+	
+	<tweak version="2" name="anims/fps/fps_spawn" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="fps/cash_inspect"/>
+			<keys/>
+			<key/>
+		</search>
+		<target mode="append">
+			<key at="trigger" trigger="peacemaker_equip" callback="play_sound" class_name="base" param1="pmkr45_equip"/>
+		</target>
+	</tweak>
+<!--Peacemaker Alt Inspect End-->
 </tweaks>

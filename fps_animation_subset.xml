@@ -98,6 +98,8 @@
 			<anim name="mp5_rifle_vg_get_up" 						file="anims/fps/mp5/mp5_vg_get_up" blend_set="all"/>
 			<anim name="mp5_rifle_vg_gogo" 							file="anims/fps/mp5/mp5_vg_gogo" blend_set="all"/>
 			<anim name="mp5_vg_inspect" 							file="anims/fps/mp5/mp5_vg_inspect" blend_set="all"/>
+			
+			<anim name="peacemaker_inspect_alt" 					file="anims/fps/peacemaker/peacemaker_inspect_alt" blend_set="all"/>
 		</target>
 	</tweak>
 </tweaks>

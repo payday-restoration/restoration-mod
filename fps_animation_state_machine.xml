@@ -12,6 +12,7 @@
 			<global name="ban_mag" value="0"/>
 			<global name="drum_mag" value="0"/>
 			<global name="vertical_grip" value="0"/>
+			<global name="stock" value="0"/>
 		</target>
 	</tweak>
 </tweaks>

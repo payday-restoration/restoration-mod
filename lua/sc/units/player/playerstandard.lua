@@ -1582,24 +1582,33 @@ function PlayerStandard:_check_action_deploy_underbarrel(t, input)
 	return new_action
 end
 
-function PlayerStandard:_interupt_action_reload(t)
-	if alive(self._equipped_unit) then
-		self._equipped_unit:base():check_bullet_objects()
-	end
-
-	if self:_is_reloading() then
-		self._equipped_unit:base():tweak_data_anim_stop("reload_enter")
-		self._equipped_unit:base():tweak_data_anim_stop("reload")
-		self._equipped_unit:base():tweak_data_anim_stop("reload_not_empty")
-		self._equipped_unit:base():tweak_data_anim_stop("reload_exit")
-	end
-
-	self._state_data.reload_enter_expire_t = nil
-	self._state_data.reload_expire_t = nil
-	self._state_data.reload_exit_expire_t = nil
-	--Fixes weapons using shotgun-style reloads occasionally only loading one shell in
+--Fixes weapons using shotgun-style reloads occasionally only loading one shell in
+Hooks:PostHook(PlayerStandard, "_interupt_action_reload", "ResInterruptReloadFix", function(self, t)
 	self._queue_reload_interupt = nil
+end)
 
-	managers.player:remove_property("shock_and_awe_reload_multiplier")
-	self:send_reload_interupt()
+--Randomized inspect animations since rnd() doesn't work in anim xml
+function PlayerStandard:_check_action_cash_inspect(t, input)
+	if not input.btn_cash_inspect_press then
+		return
+	end
+
+	local action_forbidden = self:_interacting() or self:is_deploying() or self:_changing_weapon() or self:_is_throwing_projectile() or self:_is_meleeing() or self:_on_zipline() or self:running() or self:_is_reloading() or self:in_steelsight() or self:is_equipping() or self:shooting() or self:_is_cash_inspecting(t)
+
+	if action_forbidden then
+		return
+	end
+	
+	--Anim weight randomizing
+	local anim_weight = 0
+	if (math.random() < 0.2) then
+		anim_weight = 1
+	end
+	
+	local state = self._ext_camera:play_redirect(self:get_animation("cash_inspect"))
+
+	--Applys the anim weight
+	self._camera_unit:anim_state_machine():set_parameter(state, "alt_inspect", anim_weight)
+	
+	managers.player:send_message(Message.OnCashInspectWeapon)
 end

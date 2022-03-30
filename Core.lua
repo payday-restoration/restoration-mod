@@ -210,6 +210,7 @@ function restoration:Init()
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
 		"branchbank_meth", --Bank Heist: Meth
+		"ttr_yct_lvl", --Triad Takedown Remastered 
 		"modders_devmap", --Proving Grounds
 		"gallery_v2", --Art Gallery Remastered 
 		"wetwork_burn" --Burnout
@@ -262,6 +263,7 @@ function restoration:Init()
 		"hntn",
 		"bookmakers_office", --Bookmaker's Office
 		"constantine_harbor_lvl", --Harboring a Grudge
+		"ttr_yct_lvl", --Triad Takedown Remastered 
 		"Skyscraper", --The Skyscraper Heist
 		"RogueCompany", --Rogue Company
 		"modders_devmap", --Proving Grounds

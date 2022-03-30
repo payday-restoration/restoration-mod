@@ -3153,9 +3153,10 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.damage.hurt_severity = presets.hurt_severities.captain
 	self.spring.melee_weapon = "fists_dozer"
 	self.spring.melee_weapon_dmg_multiplier = 1
-	self.spring.speech_prefix_p1 = "cpw"
+	self.spring.speech_prefix_p1 = "cpa"
 	self.spring.speech_prefix_p2 = nil
 	self.spring.speech_prefix_count = nil
+	self.spring.custom_voicework = "spring"
 	self.spring.kill_taunt = "a02"
 	self.spring.chatter = {
 		aggressive = true,
@@ -3179,7 +3180,7 @@ function CharacterTweakData:_init_spring(presets)
 	
 	--Headless Titandozer Boss 
 	self.headless_hatman = deep_clone(self.spring)
-	self.headless_hatman.speech_prefix_p1 = "Horseless Hatless Headless Titan Dozer from Hell"
+	self.headless_hatman.speech_prefix_p1 = "cpa"
 	self.headless_hatman.speech_prefix_p2 = nil
 	self.headless_hatman.speech_prefix_count = nil
 	self.headless_hatman.custom_voicework = "hatman"

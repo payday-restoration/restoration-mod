@@ -14589,7 +14589,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	
 	--Medved R4 Suppressor, disabled because it is *crashing* people and I have no idea why
 	self.parts.wpn_fps_upg_ns_pis_putnik.desc_id = "bm_sc_blank"
-	self.parts.wpn_fps_upg_ns_pis_putnik.pcs = nil
+	self.parts.wpn_fps_upg_ns_pis_putnik.pcs = {
+		10,	
+		20,
+		30,
+		40
+	}
 	self.parts.wpn_fps_upg_ns_pis_putnik.supported = true
 	self.parts.wpn_fps_upg_ns_pis_putnik.has_description = false
 	self.parts.wpn_fps_upg_ns_pis_putnik.perks = {

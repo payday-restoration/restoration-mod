@@ -2428,7 +2428,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].align_objects = {"a_weapon_right","a_weapon_left"}
 		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3","var4"}
 		self.melee_weapons[melee_id].expire_t = 0.4
-		self.melee_weapons[melee_id].repeat_expire_t = 0.35
+		self.melee_weapons[melee_id].repeat_expire_t = 0.3
 		self.melee_weapons[melee_id].melee_damage_delay = 0.1
 		self.melee_weapons[melee_id].anim_speed_mult = 0.525 --Still a bit faster than it was originally, even with this heavy of a slowdown
 	end

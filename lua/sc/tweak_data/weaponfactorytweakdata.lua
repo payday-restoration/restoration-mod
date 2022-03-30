@@ -1858,7 +1858,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	self.wpn_fps_smg_olympic.default_blueprint[3] = "wpn_fps_m4_uupg_m_std_vanilla"	
 	
 	--Para Part Table
-	self.wpn_fps_smg_olympic.uses_parts[14] = "wpn_fps_m4_uupg_m_std_vanilla"
+	self.wpn_fps_smg_olympic.uses_parts[13] = "wpn_fps_upg_m4_m_straight"
+	self.wpn_fps_smg_olympic.uses_parts[16] = "wpn_fps_m4_uupg_m_std_vanilla"
 	
 	table.insert(self.wpn_fps_smg_olympic.uses_parts, "wpn_fps_m4_uupg_s_fold")
 	table.insert(self.wpn_fps_smg_olympic_npc.uses_parts, "wpn_fps_m4_uupg_s_fold")		
@@ -11653,223 +11654,118 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_legacy", "resmod_legacy", function
 	self.wpn_fps_pis_legacy_npc.uses_parts = deep_clone(self.wpn_fps_pis_legacy.uses_parts)	
 
 end)
-	
-function WeaponFactoryTweakData:_init_coach()
-	self.parts.wpn_fps_sho_coach_barrel_lock = {
-		name_id = "bm_wp_coach_barrel_lock",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_barrel_lock",
-		a_obj = "a_barrel_lock",
-		type = "barrel_lock"
-	}
-	self.parts.wpn_fps_sho_coach_right_hammer = {
-		name_id = "bm_wp_coach_right_hammer",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_right_hammer",
-		a_obj = "a_right_hammer",
-		type = "right_hammer"
-	}
-	self.parts.wpn_fps_sho_coach_left_hammer = {
-		name_id = "bm_wp_coach_left_hammer",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_left_hammer",
-		a_obj = "a_left_hammer",
-		type = "left_hammer"
-	}
-	self.parts.wpn_fps_sho_coach_b_standard = {
-		a_obj = "a_b",
-		type = "barrel",
-		name_id = "bm_wp_coach_b_standard",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_b_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_coach_b_short = {
-		texture_bundle_folder = "sdb",
-		a_obj = "a_b",
-		type = "barrel",
-		name_id = "bm_wp_coach_b_short",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_b_short",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			value = 10,
-			spread = -2,
-			concealment = 2
-		},
-		custom_stats = {
-			damage_near_mul = 1,
-			damage_far_mul = 1
-		}			
-	}
-	self.parts.wpn_fps_sho_coach_s_long = {
-		a_obj = "a_s",
-		type = "stock",
-		name_id = "bm_wp_coach_s_long",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_s_long",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_coach_s_short = {
-		texture_bundle_folder = "sdb",
-		a_obj = "a_s",
-		type = "stock",
-		name_id = "bm_wp_coach_s_short",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_s_short",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			value = 10,
-			recoil = -1,
-			concealment = 1
-		}
-	}
-	self.parts.wpn_fps_sho_coach_body_standard = {
-		a_obj = "a_body",
-		type = "lower_reciever",
-		name_id = "bm_wp_coach_body_standard",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_body_standard",
-		supported = true,
-		stats = {value = 1}
-	}
-	self.parts.wpn_fps_sho_coach_right_slug = {
-		name_id = "bm_wp_coach_right_slug",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_right_slug",
-		a_obj = "a_right_slug",
-		type = "right_slug"
-	}
-	self.parts.wpn_fps_sho_coach_left_slug = {
-		name_id = "bm_wp_coach_left_slug",
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_fps_sho_coach_left_slug",
-		a_obj = "a_left_slug",
-		type = "left_slug"
-	}
-	self.parts.wpn_fps_sho_coach_barrel_lock.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_barrel_lock"
-	self.parts.wpn_fps_sho_coach_right_hammer.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_right_hammer"
-	self.parts.wpn_fps_sho_coach_left_hammer.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_left_hammer"
-	self.parts.wpn_fps_sho_coach_b_standard.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_b_standard"
-	self.parts.wpn_fps_sho_coach_b_short.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_b_short"
-	self.parts.wpn_fps_sho_coach_s_long.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_s_long"
-	self.parts.wpn_fps_sho_coach_s_short.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_s_short"
-	self.parts.wpn_fps_sho_coach_body_standard.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_body_standard"
-	self.parts.wpn_fps_sho_coach_right_slug.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_right_slug"
-	self.parts.wpn_fps_sho_coach_left_slug.third_unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach_pts/wpn_third_sho_coach_left_slug"
-	self.wpn_fps_sho_coach = {
-		unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach/wpn_fps_sho_coach",
-		animations = {
-			reload_not_empty = "reload_not_empty",
-			fire = "recoil",
-			fire_steelsight = "recoil",
-			reload = "reload",
-			magazine_empty = "last_recoil"
-		},
-		optional_types = {},
-		override = {
-			wpn_fps_upg_a_explosive = {
-				supported = true,
-				stats = {
-					value = 10,
-					recoil = -5,
-					spread_multi = {1, 1},	
-					concealment = -7,
-					total_ammo_mod = -60,
-					damage = 90
-				},
-				custom_stats = {
-					ignore_statistic = true,
-					block_b_storm = true,
-					rays = 1,
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_slug = {
-				supported = true,
-				name_id = "bm_wp_upg_a_slug",
-				desc_id = "bm_wp_upg_a_slug_desc",
-				stats = {
-					value = 10,
-					concealment = -5,
-					total_ammo_mod = -25,
-					damage = 30,	
-					recoil = -2,
-					spread = 8,
-					spread_multi = {1, 1},	
-					suppression = -1
-				},
-				custom_stats = {
-					muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
-					rays = 1,
-					armor_piercing_add = 1,
-					can_shoot_through_enemy = true,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-				},
-			},
-			wpn_fps_upg_a_custom = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -25,
-					damage = 30
-				},
-				custom_stats = {
-					damage_near_mul = 0.65,
-					damage_far_mul = 0.65,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					rays = 5
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				supported = true,
-				stats = {
-					value = 9,
-					total_ammo_mod = -25,
-					damage = 30
-				},
-				custom_stats = {
-					damage_near_mul = 0.65,
-					damage_far_mul = 0.65,
-					ammo_pickup_max_mul = 0.8,
-					ammo_pickup_min_mul = 0.8,
-					rays = 5
-				}
-			}	
-		},
-		default_blueprint = {
-			"wpn_fps_sho_coach_b_standard",
-			"wpn_fps_sho_coach_body_standard",
-			"wpn_fps_sho_coach_right_hammer",
-			"wpn_fps_sho_coach_left_hammer",
-			"wpn_fps_sho_coach_barrel_lock",
-			"wpn_fps_sho_coach_s_long",
-			"wpn_fps_sho_coach_right_slug",
-			"wpn_fps_sho_coach_left_slug"
-		},
-		uses_parts = {
-			"wpn_fps_sho_coach_b_short",
-			"wpn_fps_sho_coach_s_short",
-			"wpn_fps_sho_coach_b_standard",
-			"wpn_fps_sho_coach_body_standard",
-			"wpn_fps_sho_coach_right_hammer",
-			"wpn_fps_sho_coach_left_hammer",
-			"wpn_fps_sho_coach_barrel_lock",
-			"wpn_fps_sho_coach_s_long",
-			"wpn_fps_sho_coach_right_slug",
-			"wpn_fps_sho_coach_left_slug"
-		}
-	}
-	self.wpn_fps_sho_coach_npc = deep_clone(self.wpn_fps_sho_coach)
-	self.wpn_fps_sho_coach_npc.unit = "units/pd2_dlc_sdb/weapons/wpn_fps_sho_coach/wpn_fps_sho_coach_npc"
-end	
 
+--Claire 12G
+Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(self)
+
+	--Sawed Off Barrel
+	self.parts.wpn_fps_sho_coach_b_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_coach_b_short.supported = true
+	self.parts.wpn_fps_sho_coach_b_short.stats = {
+		value = 4,
+		spread = -2,
+		concealment = 2
+	}
+	self.parts.wpn_fps_sho_coach_b_short.custom_stats = {
+		damage_near_mul = 1,
+		damage_far_mul = 1
+	}		
+	
+	--Deadman's Stock
+	self.parts.wpn_fps_sho_coach_s_short.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_sho_coach_s_short.supported = true
+	self.parts.wpn_fps_sho_coach_s_short.stats = {
+		value = 3,
+		recoil = -1,
+		concealment = 1
+	}
+	
+	--Override Table
+	self.wpn_fps_sho_coach.override = {
+		wpn_fps_upg_a_explosive = {
+			supported = true,
+			stats = {
+				value = 10,
+				recoil = -5,
+				spread_multi = {1, 1},	
+				concealment = -7,
+				total_ammo_mod = -60,
+				damage = 90
+			},
+			custom_stats = {
+				ignore_statistic = true,
+				block_b_storm = true,
+				rays = 1,
+				bullet_class = "InstantExplosiveBulletBase"
+			}
+		},
+		wpn_fps_upg_a_slug = {
+			supported = true,
+			name_id = "bm_wp_upg_a_slug",
+			desc_id = "bm_wp_upg_a_slug_desc",
+			stats = {
+				value = 10,
+				concealment = -5,
+				total_ammo_mod = -25,
+				damage = 30,	
+				recoil = -2,
+				spread = 8,
+				spread_multi = {1, 1},	
+				suppression = -1
+			},
+			custom_stats = {
+				muzzleflash = "effects/payday2/particles/weapons/762_auto_fps",									
+				rays = 1,
+				armor_piercing_add = 1,
+				can_shoot_through_enemy = true,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true,
+			},
+		},
+		wpn_fps_upg_a_custom = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -25,
+				damage = 30
+			},
+			custom_stats = {
+				damage_near_mul = 0.65,
+				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				rays = 5
+			}
+		},
+		wpn_fps_upg_a_custom_free = {
+			supported = true,
+			stats = {
+				value = 9,
+				total_ammo_mod = -25,
+				damage = 30
+			},
+			custom_stats = {
+				damage_near_mul = 0.65,
+				damage_far_mul = 0.65,
+				ammo_pickup_max_mul = 0.8,
+				ammo_pickup_min_mul = 0.8,
+				rays = 5
+			}
+		}	
+	}	
+
+end)
+	
 --Cartel Optics Pack
 Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 
@@ -11897,7 +11793,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 	}
 	self.parts.wpn_fps_upg_g_m4_surgeon.supported = true
 	self.parts.wpn_fps_upg_g_m4_surgeon.stats = {
-		value = 2,
+		value = 4,
 		recoil = -2,
 		concealment = 2
 	}
@@ -12039,382 +11935,106 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mwm", "resmod_mwm", function(self)
 
 end)
 
-function WeaponFactoryTweakData:_init_beer()
-	self.parts.wpn_fps_pis_beer_b_robo = {
-		type = "barrel",
-		texture_bundle_folder = "afp",
-		a_obj = "a_b",
-		dlc = "afp",
-		name_id = "bm_wp_beer_b_robo",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_b_robo",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			spread = 1,
-			recoil = -1,
-			value = 8,
-			concealment = -1
-		},
-		forbids = {
-			"wpn_fps_upg_o_rmr",
-			"wpn_fps_upg_o_rms",
-			"wpn_fps_upg_o_rikt"
-		},			
-		override = {
-			wpn_fps_pis_beer_o_std = {
-				unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_o_robo"
-			},
-			wpn_fps_pis_beer_body_modern = {
-				unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_body_robo"
-			},
-			wpn_fps_upg_fl_pis_laser = {
-				a_obj = "a_fl_2"
-			},
-			wpn_fps_upg_fl_pis_tlr1 = {
-				a_obj = "a_fl_2"
-			},
-			wpn_fps_upg_fl_pis_m3x = {
-				a_obj = "a_fl_2"
-			},
-			wpn_fps_upg_fl_pis_crimson = {
-				a_obj = "a_fl_2"
-			},
-			wpn_fps_upg_fl_pis_x400v = {
-				a_obj = "a_fl_2"
-			}
-		},
-		stance_mod = {
-			wpn_fps_pis_beer = {
-				translation = Vector3(0, 0, -1.5)
-			}
-		}
+--Bernetti Auto
+Hooks:PostHook(WeaponFactoryTweakData, "_init_beer", "resmod_beer", function(self)
+
+	--Weller Barrel
+	self.parts.wpn_fps_pis_beer_b_robo.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_beer_b_std = {
-		a_obj = "a_b",
-		type = "barrel",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_b_std",
-		supported = true,
-		stats = {
-			value = 1
-		}
+	self.parts.wpn_fps_pis_beer_b_robo.supported = true
+	self.parts.wpn_fps_pis_beer_b_robo.forbids = {
+		"wpn_fps_upg_o_rmr",
+		"wpn_fps_upg_o_rms",
+		"wpn_fps_upg_o_rikt"
+	}	
+	self.parts.wpn_fps_pis_beer_b_robo.stats = {
+		spread = 1,
+		recoil = 1,
+		value = 6,
+		concealment = -5
 	}
-	self.parts.wpn_fps_pis_beer_body_modern = {
-		a_obj = "a_body",
-		type = "lower_reciever",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_body_modern",
-		supported = true,
-		stats = {
-			value = 1
-		}
+	
+	--Weller Grip
+	self.parts.wpn_fps_pis_beer_g_robo.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_beer_body_robo = {
-		a_obj = "a_body",
-		type = "lower_reciever",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_body_robo",
-		supported = true,
-		stats = {
-			value = 1
-		}
+	self.parts.wpn_fps_pis_beer_g_robo.supported = true
+	self.parts.wpn_fps_pis_beer_g_robo.stats = {
+		value = 3,
+		recoil = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_pis_beer_dh_hammer = {
-		a_obj = "a_dh",
-		type = "drag_handle",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_dh_hammer",
-		supported = true,
-		stats = {
-			value = 1
-		}
+	
+	--Cartel Grip
+	self.parts.wpn_fps_pis_beer_g_lux.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_beer_g_robo = {
-		texture_bundle_folder = "afp",
-		dlc = "afp",
-		type = "grip",
-		name_id = "bm_wp_beer_g_robo",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_g_robo",
-		a_obj = "a_g",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = -1,
-			concealment = 1
-		}
+	self.parts.wpn_fps_pis_beer_g_lux.supported = true
+	self.parts.wpn_fps_pis_beer_g_lux.stats = {
+		concealment = -2,
+		value = 2,
+		recoil = 1
 	}
-	self.parts.wpn_fps_pis_beer_g_lux = {
-		texture_bundle_folder = "afp",
-		dlc = "afp",
-		type = "grip",
-		name_id = "bm_wp_beer_g_lux",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_g_lux",
-		a_obj = "a_g",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			spread = -1,
-			value = 1,
-			recoil = 1
-		}
+	
+	--Extended Magazine
+	self.parts.wpn_fps_pis_beer_m_extended.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_beer_g_std = {
-		a_obj = "a_g",
-		type = "grip",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_g_std",
-		supported = true,
-		stats = {
-			value = 1
-		}
+	self.parts.wpn_fps_pis_beer_m_extended.supported = true
+	self.parts.wpn_fps_pis_beer_m_extended.stats = {
+		extra_ammo = 5,
+		value = 3,
+		reload = -1,
+		concealment = -1
 	}
-	self.parts.wpn_fps_pis_beer_m_std = {
-		a_obj = "a_m",
-		type = "magazine",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_m_std",
-		bullet_objects = {
-			amount = 1,
-			prefix = "g_bullet_"
-		},
-		supported = true,
-		stats = {
-			value = 1
-		}
+	
+	--Federales Stock
+	self.parts.wpn_fps_pis_beer_s_std.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_beer_m_extended = {
-		a_obj = "a_m",
-		texture_bundle_folder = "afp",
-		type = "magazine",
-		dlc = "afp",
-		name_id = "bm_wp_beer_m_extended",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_m_extended",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		bullet_objects = {
-			amount = 1,
-			prefix = "g_bullet_"
-		},
-		supported = true,
-		stats = {
-			extra_ammo = 5,
-			value = 3,
-			reload = -1,
-			concealment = -1
-		}
+	self.parts.wpn_fps_pis_beer_s_std.supported = true
+	self.parts.wpn_fps_pis_beer_s_std.stats = {
+		value = 2,
+		recoil = 1,
+		concealment = -2
 	}
-	self.parts.wpn_fps_pis_beer_o_std = {
-		texture_bundle_folder = "afp",
-		a_obj = "a_o",
-		type = "extra",
-		name_id = "bm_wp_beer_s_standard",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_o_std",
-		supported = true,
-		stats = {
-			value = 1
-		}
+	
+	--Overrides
+	self.wpn_fps_pis_beer.override.wpn_fps_pis_beretta_co_co1 = {
+		a_obj = "a_ns",
+		parent = "barrel"
 	}
-	self.parts.wpn_fps_pis_beer_o_robo = {
-		a_obj = "a_o",
-		type = "extra",
-		name_id = "bm_wp_beer_s_standard",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_o_robo",
-		supported = true,
-		stats = {
-			value = 1
-		}
-	}
-	self.parts.wpn_fps_pis_beer_s_std = {
-		texture_bundle_folder = "afp",
-		dlc = "afp",
-		type = "stock",
-		name_id = "bm_wp_beer_s_std",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_s_std",
-		a_obj = "a_s",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			value = 7,
-			recoil = 1,
-			spread = -1
-		}
-	}
-	self.parts.wpn_fps_pis_beer_sl_std = {
-		a_obj = "a_sl",
-		type = "slide",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_fps_pis_beer_sl_std",
-		supported = true,
-		stats = {
-			value = 1
-		}
-	}
-	self.parts.wpn_fps_pis_beer_b_robo.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_b_robo"
-	self.parts.wpn_fps_pis_beer_o_robo.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_o_robo"
-	self.parts.wpn_fps_pis_beer_g_robo.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_g_robo"
-	self.parts.wpn_fps_pis_beer_g_lux.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_g_lux"
-	self.parts.wpn_fps_pis_beer_g_std.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_g_std"
-	self.parts.wpn_fps_pis_beer_b_std.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_b_std"
-	self.parts.wpn_fps_pis_beer_sl_std.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_sl_std"
-	self.parts.wpn_fps_pis_beer_m_std.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_m_std"
-	self.parts.wpn_fps_pis_beer_m_extended.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_m_extended"
-	self.parts.wpn_fps_pis_beer_s_std.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_s_std"
-	self.parts.wpn_fps_pis_beer_body_modern.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_body_modern"
-	self.parts.wpn_fps_pis_beer_body_robo.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_body_robo"
-	self.parts.wpn_fps_pis_beer_dh_hammer.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_dh_hammer"
-	self.parts.wpn_fps_pis_beer_o_std.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer_pts/wpn_third_pis_beer_o_std"
-	self.wpn_fps_pis_beer = {
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer/wpn_fps_pis_beer",
-		animations = {
-			reload_not_empty = "reload_not_empty",
-			fire = "recoil",
-			fire_steelsight = "recoil",
-			reload = "reload",
-			magazine_empty = "last_recoil"
-		},
-		override = {
-			wpn_fps_upg_o_rmr = {
-				parent = "slide"
-			},
-			wpn_fps_upg_o_rms = {
-				parent = "slide"
-			},
-			wpn_fps_upg_o_rikt = {
-				parent = "slide"
-			},
-			wpn_fps_upg_ns_pis_typhoon = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_pis_ns_flash = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium_slim = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_ass_filter = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_jungle = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_large = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_small = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_large_kac = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium_gem = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_ipsccomp = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_meatgrinder = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_pis_g18c_co_1 = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_pis_g18c_co_comp_2 = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},				
-		},
-		default_blueprint = {
-			"wpn_fps_pis_beer_b_std",
-			"wpn_fps_pis_beer_body_modern",
-			"wpn_fps_pis_beer_dh_hammer",
-			"wpn_fps_pis_beer_g_std",
-			"wpn_fps_pis_beer_m_std",
-			"wpn_fps_pis_beer_o_std",
-			"wpn_fps_pis_beer_sl_std"
-		},
-		uses_parts = {
-			"wpn_fps_pis_beer_b_std",
-			"wpn_fps_pis_beer_b_robo",
-			"wpn_fps_pis_beer_body_modern",
-			"wpn_fps_pis_beer_dh_hammer",
-			"wpn_fps_pis_beer_g_std",
-			"wpn_fps_pis_beer_g_lux",
-			"wpn_fps_pis_beer_g_robo",
-			"wpn_fps_pis_beer_m_std",
-			"wpn_fps_pis_beer_m_extended",
-			"wpn_fps_pis_beer_o_std",
-			"wpn_fps_pis_beer_sl_std",
-			"wpn_fps_pis_beer_s_std",
-			"wpn_fps_upg_fl_pis_laser",
-			"wpn_fps_upg_fl_pis_tlr1",
-			"wpn_fps_upg_ns_pis_large",
-			"wpn_fps_upg_ns_pis_medium",
-			"wpn_fps_upg_ns_pis_small",
-			"wpn_fps_upg_ns_pis_large_kac",
-			"wpn_fps_upg_ns_pis_medium_gem",
-			"wpn_fps_upg_o_rmr",
-			"wpn_fps_upg_ns_pis_medium_slim",
-			"wpn_fps_upg_pis_ns_flash",
-			"wpn_fps_upg_fl_pis_crimson",
-			"wpn_fps_upg_fl_pis_x400v",
-			"wpn_fps_upg_ns_pis_meatgrinder",
-			"wpn_fps_upg_ns_pis_ipsccomp",
-			"wpn_fps_upg_fl_pis_m3x",
-			"wpn_fps_upg_ns_ass_filter",
-			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_fps_upg_o_rms",
-			"wpn_fps_upg_o_rikt",
-			"wpn_fps_upg_ns_pis_typhoon",
-			--Stuff--
-			"wpn_fps_pis_g18c_co_1",
-			"wpn_fps_pis_g18c_co_comp_2",
-			"wpn_fps_upg_i_b93o"
-		}
-	}
-	self.wpn_fps_pis_beer_npc = deep_clone(self.wpn_fps_pis_beer)
-	self.wpn_fps_pis_beer_npc.unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_beer/wpn_fps_pis_beer_npc"
-end	
+	self.wpn_fps_pis_beer.override.wpn_fps_pis_beretta_co_co2 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}			
+			
+	table.insert(self.wpn_fps_pis_beer.uses_parts, "wpn_fps_pis_beretta_co_co1")
+	table.insert(self.wpn_fps_pis_beer_npc.uses_parts, "wpn_fps_pis_beretta_co_co1")
+	table.insert(self.wpn_fps_pis_beer.uses_parts, "wpn_fps_pis_beretta_co_co2")
+	table.insert(self.wpn_fps_pis_beer_npc.uses_parts, "wpn_fps_pis_beretta_co_co2")		
+	table.insert(self.wpn_fps_pis_beer.uses_parts, "wpn_fps_upg_i_b93o")
+	table.insert(self.wpn_fps_pis_beer_npc.uses_parts, "wpn_fps_upg_i_b93o")		
+		
+	self.wpn_fps_pis_beer_npc.uses_parts = deep_clone(self.wpn_fps_pis_beer.uses_parts)			
+
+end)
 
 function WeaponFactoryTweakData:_init_czech()
 	self.parts.wpn_fps_pis_czech_b_standard = {
@@ -14966,26 +14586,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 			unit = "units/pd2_dlc_lawp/weapons/wpn_fps_smg_fmg9_pts/wpn_fps_smg_fmg9_dh_conversion"
 		}		
 	}	
-		
-	--Medved R4 Suppressor
+	
+	--Medved R4 Suppressor, disabled because it is *crashing* people and I have no idea why
 	self.parts.wpn_fps_upg_ns_pis_putnik.desc_id = "bm_sc_blank"
-	self.parts.wpn_fps_upg_ns_pis_putnik.pcs = {
-		10,
-		20,
-		30,
-		40
-	}
+	self.parts.wpn_fps_upg_ns_pis_putnik.pcs = nil
 	self.parts.wpn_fps_upg_ns_pis_putnik.supported = true
 	self.parts.wpn_fps_upg_ns_pis_putnik.has_description = false
 	self.parts.wpn_fps_upg_ns_pis_putnik.perks = {
 		"silencer"
 	}
 	self.parts.wpn_fps_upg_ns_pis_putnik.stats = {
-		value = 5,
-		spread = 1,
-		concealment = -3
+		value = 0
 	}	
-	
+		
 	--Medved R4 Laser Sight
 	self.parts.wpn_fps_upg_fl_pis_perst.pcs = {
 		10,	

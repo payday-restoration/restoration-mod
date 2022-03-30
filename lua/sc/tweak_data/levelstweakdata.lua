@@ -274,7 +274,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.welcome_to_the_jungle_1.player_style = "suit_sunny"
 	self.welcome_to_the_jungle_1_night.player_style = "suit_sunny"
-	self.welcome_to_the_jungle_1_night.flashlights_on = true
+	--self.welcome_to_the_jungle_1_night.flashlights_on = true
 	
 	
 	self.chew.player_style = "loud_suit"

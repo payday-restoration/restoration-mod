@@ -265,6 +265,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.framing_frame_1.player_style = "sneak_suit"
 	
 	self.framing_frame_3.player_style = "sneak_suit"
+	self.framing_frame_3.flashlights_on = false
 	
 			
 	self.alex_1.player_style = "suit_sunny"

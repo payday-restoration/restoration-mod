@@ -4115,7 +4115,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp7", "resmod_mp7", function(self)
 		value = 1,
 		concealment = -1,
 		reload = -1,
-		extra_ammo = 10
+		extra_ammo = 20
 	}
 
 	--Suppressed Barrel
@@ -14587,7 +14587,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 		}		
 	}	
 	
-	--Medved R4 Suppressor, disabled because it is *crashing* people and I have no idea why
+	--Medved R4 Suppressor, re-enabled :^)
 	self.parts.wpn_fps_upg_ns_pis_putnik.desc_id = "bm_sc_blank"
 	self.parts.wpn_fps_upg_ns_pis_putnik.pcs = {
 		10,	

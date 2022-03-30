@@ -2239,17 +2239,15 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].anim_global_param = "melee_catch"
 		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2",}
-		self.melee_weapons[melee_id].expire_t = 0.35
-		self.melee_weapons[melee_id].repeat_expire_t = 0.22
+		self.melee_weapons[melee_id].expire_t = 0.625
+		self.melee_weapons[melee_id].repeat_expire_t = 0.525
 		self.melee_weapons[melee_id].melee_damage_delay = 0.1
-		self.melee_weapons[melee_id].anim_speed_mult = 0.55
+		self.melee_weapons[melee_id].anim_speed_mult = 0.675
 	end	
 
 
 	
 	--melee_happy
-	--As in happily fuck off as this anim set is fuckbad. Off screen charging, immediate requiping of gun after a melee swing that demands a substantially faster swing speed to avoid swapfests, janky as fuck draw animation. Fuck this animation set.
-	--This is just to set up the weapon to animate better when shoved on "melee_blunt"
 	melee_anim = {
 		'happy'
 	}
@@ -2257,10 +2255,10 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].anim_global_param = "melee_happy"
 		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3"}
-		self.melee_weapons[melee_id].expire_t = 0.4
-		self.melee_weapons[melee_id].repeat_expire_t = 0.3
+		self.melee_weapons[melee_id].expire_t = 0.625
+		self.melee_weapons[melee_id].repeat_expire_t = 0.575
 		self.melee_weapons[melee_id].melee_damage_delay = 0.125
-		self.melee_weapons[melee_id].anim_speed_mult = 0.8 --Can't go any slower than this and not have it look off. Fuck this anim set
+		self.melee_weapons[melee_id].anim_speed_mult = 0.775
 		self.melee_weapons[melee_id].force_play_charge = nil
 		self.melee_weapons[melee_id].anims = {
 		var1_attack = {
@@ -2283,7 +2281,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--melee_blunt
 	melee_anim = {
-		'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock','happy',
+		'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock',
 		'spatula','swagger','selfie','chac',
 		'iceaxe'
 	}
@@ -2321,7 +2319,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	
 	--melee_axe
 	melee_anim = {
-		'moneybundle','tomahawk','scalper','becker','gator','oxide','machete','agave','bullseye','sap'
+		'moneybundle','tomahawk','scalper','becker','gator','oxide','machete','bullseye','sap'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		self.melee_weapons[melee_id].anim_global_param = "melee_axe"
@@ -2583,15 +2581,16 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	--NOTE: Has a really fast transition to requiping your gun. Couldn't balance it with the old swing speed in mind so I moved it to melee_axe, like the other machetes
 	--Also offscreen charge anims are boring (Hi "melee_happy"), say what you want about "melee_axe" but at least you can see it
 	melee_anim = {
+		'agave'
 	}
 	for i, melee_id in ipairs(melee_anim) do
 		self.melee_weapons[melee_id].anim_global_param = "melee_agave"
 		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
 		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2","var3","var4"}
-		self.melee_weapons[melee_id].expire_t = 0.4
-		self.melee_weapons[melee_id].repeat_expire_t = 0.275
+		self.melee_weapons[melee_id].expire_t = 0.675
+		self.melee_weapons[melee_id].repeat_expire_t = 0.575
 		self.melee_weapons[melee_id].melee_damage_delay = 0.175
-		self.melee_weapons[melee_id].anim_speed_mult = 0.85
+		self.melee_weapons[melee_id].anim_speed_mult = 0.8
 	end
 
 	--Weapon butt--

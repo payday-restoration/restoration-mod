@@ -400,164 +400,60 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.spooc = {
 			unit_types = {
 				america = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),	
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),	
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),	
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),	
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 				},
 				russia = {
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),	
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),		
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),	
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),	
-					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg"),	
-					Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1")								
+					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_spooc_asval_smg/ene_akan_fbi_spooc_asval_smg")								
 				},
 				zombie = {
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),	
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),	
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),	
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),	
-					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker"),
-					Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+					Idstring("units/pd2_mod_halloween/characters/ene_zeal_cloaker/ene_zeal_cloaker")
 				},
 				murkywater = {
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook"),
-					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+					Idstring("units/pd2_mod_omnia/characters/ene_omnia_spook/ene_omnia_spook")
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),	
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),	
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1"),
-					Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+					Idstring("units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1")
 				},					
 				nypd = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),	
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),			
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),	
-					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 				},
 				lapd = {
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),	
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),			
-					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc"),	
-					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+					Idstring("units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc")
 				}			
 			},
 			access = access_type_all,
 			special_type = "spooc"
 		}
 	end
+	
+	self.unit_categories.spooc_titan = {
+			unit_types = {
+				america = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},
+				russia = {
+					Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1")								
+				},
+				zombie = {
+					Idstring("units/pd2_mod_halloween/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},
+				murkywater = {
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},
+				federales = {
+					Idstring("units/pd2_dlc_mad/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},					
+				nypd = {	
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				},
+				lapd = {	
+					Idstring("units/payday2/characters/ene_spook_cloak_1/ene_spook_cloak_1")
+				}			
+			},
+			access = access_type_all,
+			special_type = "spooc_titan"
+		}
+	
 	self.unit_categories.CS_cop_C45_R870 = {
 		unit_types = {
 			america = {
@@ -13262,6 +13158,50 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}
+	--Three Cloaker groups
+	self.enemy_spawn_groups.three_spooc = {
+		amount = {3, 3},
+		spawn = {
+			{
+				unit = "spooc",
+				freq = 1,
+				amount_min = 3,
+				amount_max = 3,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
+	
+	--One Titan Cloaker groups
+	self.enemy_spawn_groups.single_spooc_titan = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc_titan",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
+	
+	--Three Titan Cloaker groups
+	self.enemy_spawn_groups.three_spooc_titan = {
+		amount = {3, 3},
+		spawn = {
+			{
+				unit = "spooc_titan",
+				freq = 1,
+				amount_min = 3,
+				amount_max = 3,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
+	
 	self.enemy_spawn_groups.FBI_spoocs = self.enemy_spawn_groups.single_spooc
 	
 	--Skirmish Spawngroups Below
@@ -14099,7 +14039,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			}
 		}
-	}	
+	}
+
+	self.enemy_spawn_groups.SKM_single_titan_spooc_W5 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc_titan",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
 	
 	--Wave 6, more or less just normal DS now
 	self.enemy_spawn_groups.SKM_Light_Swat_W6 = {
@@ -14479,7 +14432,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			}
 		}
-	}		
+	}	
+
+	self.enemy_spawn_groups.SKM_single_titan_spooc_W6 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc_titan",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
 	
 	--Wave 7, more or less just normal DS now WITH Bravo support
 	self.enemy_spawn_groups.SKM_Light_Swat_W7 = {
@@ -14859,7 +14825,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				rank = 1
 			}
 		}
-	}			
+	}		
+
+	self.enemy_spawn_groups.SKM_single_titan_spooc_W7 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc_titan",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
 	
 	--Wave 8, DS but only Bravos
 	self.enemy_spawn_groups.SKM_Light_Swat_W8 = {
@@ -15233,6 +15212,19 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		spawn = {
 			{
 				unit = "spooc",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
+	
+	self.enemy_spawn_groups.SKM_single_titan_spooc_W8 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc_titan",
 				freq = 1,
 				amount_min = 1,
 				tactics = self._tactics.spooc,
@@ -15621,6 +15613,19 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	}	
 	
+	self.enemy_spawn_groups.SKM_single_titan_spooc_W9 = {
+		amount = {1, 1},
+		spawn = {
+			{
+				unit = "spooc_titan",
+				freq = 1,
+				amount_min = 1,
+				tactics = self._tactics.spooc,
+				rank = 1
+			}
+		}
+	}
+	
 	self.enemy_spawn_groups.SKM_Cap_Winters_W9 = {
 			amount = {7, 7},
 			spawn = {
@@ -15895,6 +15900,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			taser = 1,
 			boom = 0,
 			spooc = 0,
+			spooc_titan = 0,
 			shield = math.max(math.round(2 * map_scale_factor), 1),
 			medic = 0,
 			phalanx_vip = 0,
@@ -15919,6 +15925,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			taser = math.max(math.round(2 * map_scale_factor), 1),
 			boom = 0,
 			spooc = 1,
+			spooc_titan = 0,
 			shield = math.max(math.round(3 * map_scale_factor), 1),
 			medic = 0,
 			phalanx_vip = 1,
@@ -15943,6 +15950,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			taser = math.max(math.round(3 * map_scale_factor), 1),
 			boom = 0,
 			spooc = math.max(math.round(2 * map_scale_factor), 1),
+			spooc_titan = 0,
 			shield = math.max(math.round(3 * map_scale_factor), 1),
 			medic = math.max(math.round(3 * map_scale_factor), 1),
 			phalanx_vip = 1,
@@ -15967,6 +15975,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			taser = math.max(math.round(4 * map_scale_factor), 1),
 			boom = math.max(math.round(0 * map_scale_factor), 1),
 			spooc = math.max(math.round(2 * map_scale_factor), 1),
+			spooc_titan = 0,
 			shield = math.max(math.round(3 * map_scale_factor), 1),
 			medic = math.max(math.round(3 * map_scale_factor), 1),
 			phalanx_vip = 1,
@@ -15991,6 +16000,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			taser = math.max(math.round(4 * map_scale_factor), 1),
 			boom = math.max(math.round(2 * map_scale_factor), 1),
 			spooc = math.max(math.round(3 * map_scale_factor), 1),
+			spooc_titan = 0,
 			shield = math.max(math.round(4 * map_scale_factor), 1),
 			medic = math.max(math.round(4 * map_scale_factor), 1),
 			phalanx_vip = 1,
@@ -16015,6 +16025,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			taser = math.max(math.round(4 * map_scale_factor), 1),
 			boom = math.max(math.round(2 * map_scale_factor), 1),
 			spooc = math.max(math.round(4 * map_scale_factor), 1),
+			spooc_titan = 0,
 			shield = math.max(math.round(4 * map_scale_factor), 1),
 			medic = math.max(math.round(4 * map_scale_factor), 1),
 			phalanx_vip = 1,
@@ -16039,6 +16050,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			taser = math.max(math.round(4 * map_scale_factor), 1),
 			boom = math.max(math.round(2 * map_scale_factor), 1),
 			spooc = math.max(math.round(4 * map_scale_factor), 1),
+			spooc_titan = 3,
 			shield = math.max(math.round(4 * map_scale_factor), 1),
 			medic = math.max(math.round(4 * map_scale_factor), 1),
 			phalanx_vip = 1,
@@ -16389,6 +16401,11 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0,
 				0.08,
 				0.1
+			},
+			three_spooc = {
+				0,
+				0.05,
+				0.05
 			}
 		}
 	else
@@ -16447,6 +16464,21 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0,
 				0.08,
 				0.1
+			},
+			three_spooc = {
+				0,
+				0.05,
+				0.05
+			},
+			single_spooc_titan = {
+				0,
+				0.05,
+				0.08
+			},
+			three_spooc_titan = {
+				0,
+				0.05,
+				0.05
 			}
 		}
 	end
@@ -16841,12 +16873,28 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			1,
 			1,
 			1
+		},
+		three_spooc = {
+			1,
+			1,
+			1
+		},
+		single_spooc_titan = {
+			1,
+			1,
+			1
+		},
+		three_spooc_titan = {
+			1,
+			1,
+			1
 		}
 	}
 
 	local captain_cooldown = 2700
 	local captain_min_diff = 0.5
 	local dozer_cooldown = 45
+	local titanspooc_cooldown = 200 
 
 	if Global.game_settings and Global.game_settings.one_down then
 		captain_cooldown = 1800
@@ -16878,6 +16926,9 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			cooldown = captain_cooldown / 2,
 			min_diff = captain_min_diff,
 			sustain_only = true
+		},
+		three_spooc_titan = {
+			cooldown = titanspooc_cooldown
 		},
 		GREEN_tanks = {
 			cooldown = dozer_cooldown

@@ -624,6 +624,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.access = "swat"
 	self.medic.dodge = presets.dodge.athletic
 	self.medic.deathguard = true
+	self.medic.rescue_hostages = true
 	self.medic.no_arrest = true
 	if is_murky then
 	    self.medic.custom_voicework = "murky_medic"

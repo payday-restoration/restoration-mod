@@ -29,6 +29,7 @@ function restoration:Init()
 		"gallery", --art gallery
 		--Custom Heists--
 		"office_strike", --office strike
+		"schl", --Scarlet Club House
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
 		"bookmakers_office", --Bookmaker's Office
@@ -47,6 +48,7 @@ function restoration:Init()
 		"jolly_CD", --jolly crackdown edit
 		--custom heists		
 		"lit1", --California's Heat
+		"glb", --Golden Lotus Bank 
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
@@ -63,6 +65,7 @@ function restoration:Init()
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
+		"anlh", --An End To Liang
 		"constantine_bank_lvl", --Pacific Bank
 		"santas_hardware_store", --Santa Spring Is Coming To Town
 		"lvl_friday" --Crashing Capitol
@@ -156,6 +159,9 @@ function restoration:Init()
 		"lit2", --California's Heat but Payday 3
 		"Skyscraper", --The Skyscraper Heist
 		"constantine_bank_lvl", --Pacific Bank 
+		"anlh", --An End To Liang
+		"glb", --Golden Lotus Bank 
+		"schl", --Scarlet Club House
 		"santas_hardware_store" --Hardware Store but Xmas
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.
@@ -248,6 +254,9 @@ function restoration:Init()
 		"Gambling_room", --Underground Bargains
 		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
 		"sh_raiders", --Safehouse Raiders 
+		"schl", --Scarlet Club House
+		"glb", --Golden Lotus Bank 
+		"anlh", --An End To Liang
 		"amsdeal1", --Armsdeal Alleyway
 		"tj_htsb",
 		"hntn",

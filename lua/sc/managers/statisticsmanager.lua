@@ -25,6 +25,7 @@ StatisticsManager.special_unit_ids = {
 	"headless_hatman",
 	"summers",
 	"omnia_lpf",
+	"hrt_titan",
 	"swat_turret",
 	"biker_boss",
 	"chavez_boss",

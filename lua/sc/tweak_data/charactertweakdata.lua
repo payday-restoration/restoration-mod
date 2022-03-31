@@ -624,7 +624,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic.access = "swat"
 	self.medic.dodge = presets.dodge.athletic
 	self.medic.deathguard = true
-	self.medic.rescue_hostages = true
+	self.medic.rescue_hostages = false
 	self.medic.no_arrest = true
 	if is_murky then
 	    self.medic.custom_voicework = "murky_medic"
@@ -826,6 +826,11 @@ function CharacterTweakData:_init_swat(presets)
 	table.insert(self._enemy_list, "hrt")
 	
 	self.hrt_titan = deep_clone(self.hrt)
+	self.hrt_titan.priority_shout = "g29"
+	self.hrt_titan.bot_priority_shout = "g29"
+	self.hrt_titan.priority_shout_max_dis = 3000
+	self.hrt_titan.silent_priority_shout = nil
+	self.hrt_titan.custom_shout = true	
 	self.hrt_titan.can_slide_on_suppress = true
 	self.hrt_titan.damage.hurt_severity = presets.hurt_severities.elite_easy
 	self.hrt_titan.gas_on_death = true
@@ -835,7 +840,6 @@ function CharacterTweakData:_init_swat(presets)
 	self.hrt_titan.HEALTH_INIT = 13
 	self.hrt_titan.headshot_dmg_mul = 1.3
 	self.hrt_titan.surrender = nil
-	self.hrt_titan.unintimidateable = true	
 	self.hrt_titan.custom_voicework = nil
 	self.hrt_titan.static_dodge_preset = true
 	self.hrt_titan.heal_cooldown = 3.75

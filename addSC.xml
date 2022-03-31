@@ -1378,10 +1378,6 @@
 	<animation			path="anims/fps/melee/agave/melee_attack_var4" force="true"/>
 	<animation			path="anims/fps/melee/catch/catch_attack_var1" force="true"/>
 	<animation			path="anims/fps/melee/catch/catch_attack_var2" force="true"/>
-	<animation			path="anims/fps/melee/chac/chac_attack_var1" force="true"/>
-	<animation			path="anims/fps/melee/chac/chac_attack_var2" force="true"/>
-	<animation			path="anims/fps/melee/chac/chac_attack_var3" force="true"/>
-	<animation			path="anims/fps/melee/chac/chac_attack_var4" force="true"/>
 	<animation			path="anims/fps/melee/happy/melee_attack_var2" force="true"/>
 	<animation			path="anims/fps/melee/happy/melee_attack_var3" force="true"/>
 

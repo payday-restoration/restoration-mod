@@ -112,6 +112,7 @@
 	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1" force="false"/>
 	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1_contour" force="false"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_veteran_1/ene_akan_veteran_1_husk" force="false" load="true"/>
+	<texture 			path="units/pd2_dlc_mad/characters/shared_textures/ene_veteran_akan_1_df" />
 					
 	<!--Russian Medic bob-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" load="true"/>

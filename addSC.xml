@@ -468,6 +468,11 @@
 	<model				path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" force="true"/>
 	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" force="true"/>
 	
+	<!--Russian AK101+GP for Grenadier-->	
+	<model				path="units/pd2_dlc_mad/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" force="false"/>
+	<object				path="units/pd2_dlc_mad/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" force="false"/>
+	<unit				path="units/pd2_dlc_mad/weapons/wpn_npc_ak47_boom/wpn_npc_ak47_boom" load="true" force="false"/>
+	
 	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47_df"/>
 	<texture			path="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47_nm"/>
 	

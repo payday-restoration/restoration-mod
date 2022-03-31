@@ -28,7 +28,7 @@ function CrimeNetManager:_get_jobs_by_jc()
 					t[job_jc] = t[job_jc] or {}
 					
 					-- Change below to whatever value
-					if math.random(0.2) then
+					if math.random() < 0.2 then
 						table.insert(t[job_jc], {
 							job_id = job_id,
 							difficulty_id = difficulty_id,

@@ -3051,6 +3051,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].recategorize = "akimbo"
 		self[wep_id].categories = {"akimbo", "assault_rifle"}
 	end
+	
+	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','s552','new_m14','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','hunter','frankish','arblast','sparrow','pl14','hajk','packrat','arbiter','siltstone','x_packrat','lemming','ching','breech','erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54'}
+	for i, wep_id in ipairs(lock_em_up) do
+		self[ wep_id ].lock_slide = true
+	end
+	self.m1911.lock_slide_alt = true
+	self.ching.lock_slide_alt = true
+	
 	self.c96.uses_clip = true
 	self.mosin.uses_clip = true
 	self.c96.clip_capacity = 10
@@ -3708,7 +3716,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.huntsman.AMMO_MAX = 40
 	self.huntsman.sounds.fire_single = "huntsman_fire"
 	self.huntsman.sounds.fire_auto = "huntsman_fire"
-	self.huntsman.BURST_FIRE = 3
+	self.huntsman.BURST_FIRE = 4
 	self.huntsman.BURST_FIRE_RATE_MULTIPLIER = 120				
 	self.huntsman.ADAPTIVE_BURST_SIZE = false	
 	self.huntsman.CAN_TOGGLE_FIREMODE = false			
@@ -5505,7 +5513,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.polymer.CAN_TOGGLE_FIREMODE = true
 	self.polymer.auto = {}
 	self.polymer.auto.fire_rate = 0.05
-	self.polymer.BURST_FIRE = 3
+	self.polymer.BURST_FIRE = 4
 	self.polymer.ADAPTIVE_BURST_SIZE = false													
 	self.polymer.kick = self.stat_info.kick_tables.moderate_kick
 	self.polymer.supported = true
@@ -5977,7 +5985,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.hajk.fire_mode_data.fire_rate = 0.075
 	self.hajk.auto.fire_rate = 0.075
 	self.hajk.AMMO_MAX = 75
-	self.hajk.BURST_FIRE = 3
+	self.hajk.BURST_FIRE = 4
 	self.hajk.ADAPTIVE_BURST_SIZE = false											
 	self.hajk.kick = self.stat_info.kick_tables.moderate_kick
 	self.hajk.categories = {
@@ -6072,7 +6080,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.schakal.auto.fire_rate = 0.1
 	self.schakal.AMMO_MAX = 120
 	self.schakal.CLIP_AMMO_MAX = 25
-	self.schakal.BURST_FIRE = 3
+	self.schakal.BURST_FIRE = 4
 	self.schakal.ADAPTIVE_BURST_SIZE = false											
 	self.schakal.kick = self.stat_info.kick_tables.even_recoil
 	self.schakal.panic_suppression_chance = 0.05
@@ -7783,7 +7791,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.coach.AMMO_MAX = 20
 	self.coach.sounds.fire_single = "coach_fire"
 	self.coach.sounds.fire_auto = "coach_fire"		
-	self.coach.BURST_FIRE = 3			
+	self.coach.BURST_FIRE = 4
 	self.coach.CAN_TOGGLE_FIREMODE = false								
 	self.coach.BURST_FIRE_RATE_MULTIPLIER = 120
 	self.coach.DELAYED_BURST_RECOIL = true
@@ -8933,7 +8941,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.tilt.has_description = false		
 		self.tilt.tactical_reload = 1
 		self.tilt.AMMO_MAX = 150
-		self.tilt.BURST_FIRE = 3
+		self.tilt.BURST_FIRE = 4
 		self.tilt.BURST_FIRE_RATE_MULTIPLIER = 3		
 		self.tilt.ADAPTIVE_BURST_SIZE = false														
 		self.tilt.fire_mode_data.fire_rate = 0.1

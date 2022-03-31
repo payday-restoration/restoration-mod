@@ -872,6 +872,7 @@ end
 --Updates burst fire and minigun spinup.
 Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_burst_fire(t)
+	self:_update_slide_locks()
 		
 	local weapon = self._unit:inventory():equipped_unit():base()
 	if weapon:get_name_id() == "m134" then
@@ -953,6 +954,51 @@ Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsig
 		end
 	end
 end)
+
+function PlayerStandard:_update_slide_locks()
+	local weap_base = self._equipped_unit:base()
+	if weap_base and weap_base:weapon_tweak_data().lock_slide then
+		if (weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() > 1) or (not weap_base.AKIMBO and not weap_base:clip_empty()) then
+			weap_base:tweak_data_anim_stop("magazine_empty")
+			weap_base:tweak_data_anim_stop("reload")
+			weap_base:tweak_data_anim_stop("reload_left")
+			if weap_base.AKIMBO then
+				weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
+				weap_base._second_gun:base():tweak_data_anim_stop("reload")
+				weap_base._second_gun:base():tweak_data_anim_stop("reload_left")
+			end
+		end
+		if --[[not weap_base._starwars and]] not self:_is_reloading() then
+			if weap_base.AKIMBO and weap_base:ammo_base():get_ammo_remaining_in_clip() == 1 then
+				weap_base:tweak_data_anim_stop("fire")
+				weap_base:tweak_data_anim_stop("magazine_empty")
+				weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty") 
+				if weap_base._fire_second_gun_next == false then
+					weap_base:tweak_data_anim_offset("reload_left", 0.033, true)
+				else
+					weap_base:tweak_data_anim_offset("reload_left", 0.033)
+				end
+			elseif weap_base:clip_empty() then
+				weap_base:tweak_data_anim_stop("fire")
+				weap_base:tweak_data_anim_stop("magazine_empty")
+				weap_base:tweak_data_anim_stop("reload")
+				weap_base:tweak_data_anim_stop("reload_left")
+				if weap_base.AKIMBO then
+					weap_base._second_gun:base():tweak_data_anim_stop("magazine_empty")
+					weap_base:tweak_data_anim_offset("reload", 0.033)
+					weap_base:tweak_data_anim_offset("reload_left", 0.033, true)
+				else
+					if (weap_base:weapon_tweak_data().animations and weap_base:weapon_tweak_data().animations.magazine_empty and weap_base:weapon_tweak_data().lock_slide_alt) then
+						--Currently the M1 Garand is the only gun that should have the bolt/slide lock done this way due to the En-Bloc clip hovering in midair when using the "reload" animation
+						weap_base:tweak_data_anim_offset("magazine_empty", 1)
+					else 
+						weap_base:tweak_data_anim_offset("reload", 0.033)
+					end
+				end
+			end
+		end
+	end
+end	
 
 local melee_vars = {
 	"player_melee",

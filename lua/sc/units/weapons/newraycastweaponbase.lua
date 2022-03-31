@@ -521,6 +521,40 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self:precalculate_ammo_pickup()
 end
 
+function NewRaycastWeaponBase:tweak_data_anim_offset(anim, offset, second_gun)
+	local unit_anim = anim
+	local data = tweak_data.weapon.factory[self._factory_id]
+	if second_gun and alive(self._second_gun) then
+		if data.animations and data.animations[unit_anim] then
+			local anim_name = data.animations[unit_anim]
+			local ids_anim_name = Idstring(anim_name)
+			self._second_gun:base()._unit:anim_set_time(ids_anim_name, offset)
+		end
+		for part_id, data in pairs(self._second_gun:base()._parts) do
+			if data.animations and data.animations[unit_anim] then
+				local anim_name = data.animations[unit_anim]
+				local ids_anim_name = Idstring(anim_name)
+				data.unit:anim_set_time(ids_anim_name, offset)
+			end
+		end
+	else
+		if data.animations and data.animations[unit_anim] then
+			local anim_name = data.animations[unit_anim]
+			local ids_anim_name = Idstring(anim_name)
+			self._unit:anim_set_time(ids_anim_name, offset)
+		end
+	
+		for part_id, data in pairs(self._parts) do
+			if data.animations and data.animations[unit_anim] then
+				local anim_name = data.animations[unit_anim]
+				local ids_anim_name = Idstring(anim_name)
+				data.unit:anim_set_time(ids_anim_name, offset)
+			end
+		end
+	end
+	return true
+end
+
 function NewRaycastWeaponBase:precalculate_ammo_pickup()
 	--Precalculate ammo pickup values.
 	if self:weapon_tweak_data().AMMO_PICKUP then
@@ -744,5 +778,5 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	self.far_falloff_distance = falloff_far
 
 	--Compute final damage.
-	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.05 * damage)
+	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.30 * damage)
 end

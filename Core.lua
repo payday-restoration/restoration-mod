@@ -32,6 +32,7 @@ function restoration:Init()
 		"schl", --Scarlet Club House
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
+		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"bookmakers_office", --Bookmaker's Office
 		"firestarter_2_res" --firestarter day 2 res edit version
 	}
@@ -50,6 +51,7 @@ function restoration:Init()
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 
 		"constantine_harbor_lvl", --Harboring a Grudge
+		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"firestarter_3_res" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {
@@ -66,6 +68,7 @@ function restoration:Init()
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
 		"anlh", --An End To Liang
+		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"constantine_bank_lvl", --Pacific Bank
 		"santas_hardware_store", --Santa Spring Is Coming To Town
 		"lvl_friday" --Crashing Capitol
@@ -86,12 +89,14 @@ function restoration:Init()
 		"amsdeal1", --Armsdeal Alleyway
 		"Gambling_room", --Underground Bargains
 		"branchbank_meth", --Bank Heist: Meth
+		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"lvl_fourmorestores", --four more stores
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn" --harvest and trustee north
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {
+		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"help" --Prison Nightmare
 	}
 	
@@ -160,6 +165,7 @@ function restoration:Init()
 		"Skyscraper", --The Skyscraper Heist
 		"constantine_bank_lvl", --Pacific Bank 
 		"anlh", --An End To Liang
+		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"glb", --Golden Lotus Bank 
 		"schl", --Scarlet Club House
 		"santas_hardware_store" --Hardware Store but Xmas

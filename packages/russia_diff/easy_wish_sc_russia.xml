@@ -84,24 +84,36 @@
 	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_akan_grenadier_1/ene_akan_grenadier_1" force="false"/>	
 	
 	<texture 			path="units/pd2_dlc_mad/characters/shared_textures/ene_akan_grenadier_df" force="false"/>
-	
 
 	<!--Russian FBI-->
-	<object				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
-	<model				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false" load="true"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" force="false"/>
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1_contour" force="false"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1_husk" force="false" load="true"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_agent_2_df" force="false"/>
-	<texture			path="units/pd2_dlc_mad/characters/shared_textures/ene_soldier_akan_head_3_df" force="false"/>
+	<unit  				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" load="true" force="false"/>
+	<unit  				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1_husk" load="true" force="false"/>
+	<material_config 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1"/>
+	<material_config 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1_contour"/>
+	<cooked_physics 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1"/>
+	<model 				path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1"/>
+	<object 			path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1"/>
+	<texture 			path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/security_winter_df"/>
+	<texture 			path="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_soldier_akan_head3_df"/>
 
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2_husk" force="false" load="true"/>
-	
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3_husk" force="false" load="true"/>
+	<unit  				path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2" load="true" force="false"/>
+	<unit  				path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2_husk" load="true" force="false"/>
+	<material_config 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"/>
+	<material_config 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2_contour"/>
+	<cooked_physics 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"/>
+	<model 				path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"/>
+	<object 			path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_akan_fbi_2"/>
+	<texture 			path="units/pd2_dlc_mad/characters/ene_akan_fbi_2/ene_soldier_akan_head6_df"/>
+
+	<unit 				path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3" load="true" force="false"/>
+	<unit 				path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3_husk" load="true" force="false"/>	
+	<material_config 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3"/>
+	<material_config 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3_contour"/>	
+	<object 			path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3" />
+	<model 				path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3" />	
+	<cooked_physics 	path="units/pd2_dlc_mad/characters/ene_akan_fbi_3/ene_akan_fbi_3"/>	
+	<texture 			path="units/pd2_dlc_mad/characters/shared_textures/head_atlas_df" force="false"/>
+	<texture 			path="units/pd2_dlc_mad/characters/shared_textures/head_atlas_nm" force="false"/>
 	
     <!--Titan Sniper-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_titan_sniper/ene_titan_sniper" force="false" load="true"/>

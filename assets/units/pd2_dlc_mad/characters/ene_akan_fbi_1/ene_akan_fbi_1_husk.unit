@@ -3,6 +3,10 @@
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
 	<object file="units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1" />
 
+	<dependencies>
+		
+	</dependencies>
+
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >

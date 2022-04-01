@@ -555,6 +555,7 @@
 		
 	<!--One step closer to heaven.-->	
 	<unit				path="units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_npc" load="false" force="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc" load="false" force="false"/>
 	
 	<!--M4 Boom-->
 	<object				path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
@@ -1521,4 +1522,21 @@
 	<animation			path="anims/shared/rifle/hostile/hos_std_supprised_fwd" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_std_to_crh" force="true"/>
 	<animation			path="anims/shared/rifle/hostile/hos_sup_idle" force="true"/>
+	
+	<!--LOD Vet Cop-->		
+	<object				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
+	<cooked_physics		path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
+	<model				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
+	<unit				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false" load="true"/>
+	<material_config	path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" force="false"/>
+	<material_config	path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1_contour" force="false"/>
+	<unit				path="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1_husk" force="false" load="true"/>
+
+	<object				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
+	<cooked_physics		path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
+	<model				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
+	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false" load="true"/>
+	<material_config	path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2" force="false"/>
+	<material_config	path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_contour" force="false"/>
+	<unit				path="units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2_husk" force="false" load="true"/>	
 </table>

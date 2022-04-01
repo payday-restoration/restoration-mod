@@ -1647,7 +1647,7 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 	
 	--Anim weight randomizing
 	local anim_weight = 0
-	if (math.random() < 0.2) then
+	if (math.random() < 0.5) then
 		anim_weight = 1
 	end
 	

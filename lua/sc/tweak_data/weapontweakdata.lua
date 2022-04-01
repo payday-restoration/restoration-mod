@@ -561,6 +561,13 @@ function WeaponTweakData:_init_data_x_c45_npc()
 	self.x_c45_npc.alert_size = 2500
 	self.x_c45_npc.suppression = 2.4
 	self.x_c45_npc.FIRE_MODE = "single"
+	
+	self.x_raging_bull_meme_npc = deep_clone(self.x_c45_npc)		
+	self.x_raging_bull_meme_npc.sounds.prefix = "rbull_npc"
+	self.x_raging_bull_meme_npc.categories = clone(self.x_rage.categories)		
+	self.x_raging_bull_meme_npc.use_data.selection_index = 1
+	self.x_raging_bull_meme_npc.hold = "akimbo_pistol"
+	self.x_raging_bull_meme_npc.FIRE_MODE = "single"	
 end
 
 function WeaponTweakData:_init_data_beretta92_npc()

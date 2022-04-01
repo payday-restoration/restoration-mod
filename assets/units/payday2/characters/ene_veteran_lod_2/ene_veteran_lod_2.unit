@@ -13,7 +13,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="false" />
 			<var name="_tweak_table" value="vetlod" />
-			<var name="_default_weapon_id" value="x_raging_bull_npc" />
+			<var name="_default_weapon_id" value="x_raging_bull_meme_npc" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

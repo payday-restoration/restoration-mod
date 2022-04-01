@@ -3412,8 +3412,13 @@ function CopDamage:_comment_death(attacker, killed_unit, special_comment)
 	elseif victim_base:has_tag("medic") then
 		PlayerStandard.say_line(attacker:sound(), "g36x_any")
 	elseif victim_base:has_tag("custom") then
-		PlayerStandard.say_line(attacker:sound(), "g92")
+		local delay = TimerManager:game():time() + 1
+		managers.enemy:add_delayed_clbk(clbk_id, callback(self, self, "_comment_custom_death", attacker), delay)
 	end
+end
+
+function CopDamage:_comment_custom_death(attacker)
+	PlayerStandard.say_line(attacker:sound(), "g92")
 end
 
 function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)
@@ -3434,8 +3439,13 @@ function CopDamage:_AI_comment_death(unit, killed_unit, special_comment)
 	elseif victim_base:has_tag("medic") then
 		unit:sound():say("g36x_any", true)
 	elseif victim_base:has_tag("custom") then
-		unit:sound():say("g92", true)
+		local delay = TimerManager:game():time() + 1
+		managers.enemy:add_delayed_clbk(clbk_id, callback(self, self, "_comment_ai_custom_death", unit), delay)		
 	end
+end
+
+function CopDamage:_comment_ai_custom_death(unit)
+	unit:sound():say("g92", true)
 end
 
 function CopDamage:_on_death(variant)

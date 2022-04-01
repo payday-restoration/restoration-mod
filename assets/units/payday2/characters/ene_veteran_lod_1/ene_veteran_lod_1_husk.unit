@@ -12,7 +12,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="false" />
 			<var name="_tweak_table" value="vetlod" />
-			<var name="_default_weapon_id" value="x_raging_bull_npc" />
+			<var name="_default_weapon_id" value="x_raging_bull_meme_npc" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

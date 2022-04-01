@@ -466,6 +466,8 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi.heal_cooldown = 2
 	self.fbi.overheal_mult = 2
 	table.insert(self._enemy_list, "fbi")
+	
+	--Female FBI Agents (Unused)
 	self.fbi_female = deep_clone(self.fbi)
 	self.fbi_female.speech_prefix_p1 = "fl"
 	self.fbi_female.speech_prefix_p2 = "n"
@@ -473,6 +475,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_female.tags = {"law", "female_enemy"}
 	table.insert(self._enemy_list, "fbi_female")
 	
+	--Veteran Cop
 	self.fbi_vet = deep_clone(self.fbi)
 	self.fbi_vet.can_shoot_while_dodging = true
 	self.fbi_vet.can_slide_on_suppress = true
@@ -520,6 +523,7 @@ function CharacterTweakData:_init_fbi(presets)
 	self.fbi_vet.overheal_mult = 1
 	table.insert(self._enemy_list, "fbi_vet")	
 
+	--FBI Boss
 	self.fbi_vet_boss = deep_clone(self.fbi_vet)
 	self.fbi_vet_boss.HEALTH_INIT = 24
 	self.fbi_vet_boss.headshot_dmg_mul = 3.4		
@@ -577,8 +581,13 @@ function CharacterTweakData:_init_fbi(presets)
 	self.meme_man_shield.ignore_medic_revive_animation = true
 	self.meme_man_shield.damage.hurt_severity = presets.hurt_severities.only_explosion_hurts
 	self.meme_man_shield.damage.shield_knocked = true		
-	table.insert(self._enemy_list, "meme_man_shield")				
-	self.vetlod = deep_clone(self.fbi_vet)		
+	table.insert(self._enemy_list, "meme_man_shield")	
+
+	--April Fools Vet Cop
+	self.vetlod = deep_clone(self.fbi_vet)	
+	self.vetlod.speech_prefix_p1 = "buge"
+	self.vetlod.speech_prefix_p2 = nil
+	self.vetlod.speech_prefix_count = nil		
 	self.vetlod.custom_voicework = "tdozer"
 	self.vetlod.access = "fbi"
 	table.insert(self._enemy_list, "vetlod")							
@@ -826,6 +835,7 @@ function CharacterTweakData:_init_swat(presets)
 	table.insert(self._enemy_list, "hrt")
 	
 	self.hrt_titan = deep_clone(self.hrt)
+	self.hrt_titan.tags = {"law", "custom", "special"}
 	self.hrt_titan.priority_shout = "g29"
 	self.hrt_titan.bot_priority_shout = "g29"
 	self.hrt_titan.priority_shout_max_dis = 3000
@@ -2093,6 +2103,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.heal_cooldown = 45
 	table.insert(self._enemy_list, "tank")
 	
+	--Medic Dozer
 	self.tank_medic = deep_clone(self.tank)
 	if is_reaper then
 		self.tank_medic.spawn_sound_event = "rbdz_entrance_elite"
@@ -2109,298 +2120,9 @@ function CharacterTweakData:_init_tank(presets)
 	table.insert(self.tank_medic.tags, "medic")
 	table.insert(self._enemy_list, "tank_medic")
 	
+	--Titandozer
 	self.tank_titan = deep_clone(self.tank)
 	self.tank_titan.weapon = deep_clone(presets.weapon.normal)
-	self.tank_titan.weapon.is_lmg.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.7, 0.9},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 500,
-			acc = {0.5, 0.75},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.3, 0.6},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.25, 0.55},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2700,
-			acc = {0.15, 0.5},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2800,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.95,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 2900,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.9,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3000,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.85,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3100,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.8,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3200,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.75,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 3300,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.7,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3400,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.65,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3500,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.6,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3600,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.55,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3700,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.5,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3800,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.45,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3900,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.4,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},		
-		{
-			r = 4000,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.35,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 4100,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.3,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 4200,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.25,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 4300,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.2,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},		
-		{
-			r = 4400,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.15,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 4500,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 4600,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.05,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		}	
-	}	
 	self.tank_titan.tags = {"law", "tank", "special", "tank_titan", "customvo"}	
 	self.tank_titan.move_speed = presets.move_speed.very_slow
 	self.tank_titan.damage.hurt_severity = presets.hurt_severities.titan	
@@ -2436,308 +2158,21 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan.heal_cooldown = 45
 	table.insert(self._enemy_list, "tank_titan")
 	
+	--Titandozer, assault variant
 	self.tank_titan_assault = deep_clone(self.tank_titan)
 	self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 	self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 	table.insert(self._enemy_list, "tank_titan_assault")
 	
+	--Halloween Bulldozer
 	self.tank_hw = deep_clone(self.tank_titan_assault)
 	self.tank_hw.weapon = deep_clone(presets.weapon.normal)
-	self.tank_hw.weapon.is_lmg.FALLOFF = {
-		{
-			r = 100,
-			acc = {0.7, 0.9},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 500,
-			acc = {0.5, 0.75},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 1000,
-			acc = {0.3, 0.6},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2000,
-			acc = {0.25, 0.55},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2700,
-			acc = {0.15, 0.5},
-			dmg_mul = 1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 2800,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.95,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 2900,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.9,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3000,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.85,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3100,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.8,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3200,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.75,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 3300,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.7,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3400,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.65,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3500,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.6,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3600,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.55,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3700,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.5,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3800,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.45,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 3900,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.4,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},		
-		{
-			r = 4000,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.35,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 4100,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.3,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 4200,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.25,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 4300,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.2,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},		
-		{
-			r = 4400,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.15,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},	
-		{
-			r = 4500,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.1,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		},
-		{
-			r = 4600,
-			acc = {0.15, 0.5},
-			dmg_mul = 0.05,
-			recoil = {0.4, 0.7},
-			mode = {
-				0,
-				0,
-				0,
-				1
-			}
-		}	
-	}			
 	self.tank_hw.ignore_headshot = false
 	self.tank_hw.melee_anims = nil
 	self.tank_hw.move_speed = presets.move_speed.very_slow
 	table.insert(self._enemy_list, "tank_hw")	
 	
+	--Benelli (Bravo) Dozer
 	self.tank_mini = deep_clone(self.tank)
 	self.tank_mini.HEALTH_INIT = 625
 	self.tank_mini.headshot_dmg_mul = 15.625
@@ -21213,7 +20648,8 @@ function CharacterTweakData:_create_table_structure()
 		"hk33",
 		"hk33_bravo",
 		"m500",
-		"flamethrower"
+		"flamethrower",
+		"x_raging_bull_meme_npc"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -21293,7 +20729,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33/wpn_npc_hk33"),
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo"),
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500"),
-		Idstring("units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower")
+		Idstring("units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"),
+		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc")
 	}
 end
 

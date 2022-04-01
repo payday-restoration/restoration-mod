@@ -7625,65 +7625,34 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		special_type = "headless_hatman"
 	}	
 	--Headless Titandozers that spawn with boss
-	if difficulty_index <= 6 then
-		self.unit_categories.HVH_Boss_Headless = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},
-				zombie = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},					
-				russia = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},
-				murkywater = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},
-				federales = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},				
-				nypd = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				},	
-				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
-				}				
+	self.unit_categories.HVH_Boss_Headless = {
+		unit_types = {
+			america = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
 			},
-			access = access_type_all,
-			special_type = "tank",
-			is_captain = true
-		}
-	else
-		self.unit_categories.HVH_Boss_Headless = {
-			unit_types = {
-				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},
-				zombie = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},					
-				russia = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},
-				murkywater = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},
-				federales = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},				
-				nypd = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				},	
-				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_4/ene_bulldozer_4")
-				}				
+			zombie = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},					
+			russia = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
 			},
-			access = access_type_all,
-			special_type = "tank",
-			is_captain = true
-		}	
-	end
+			murkywater = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},
+			federales = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},				
+			nypd = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			},	
+			lapd = {
+				Idstring("units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw")
+			}				
+		},
+		access = access_type_all,
+		special_type = "tank",
+		is_captain = true
+	}
 	--Ghost Titancloakers that spawn with boss
 	self.unit_categories.HVH_Boss_Spooc = {
 		unit_types = {
@@ -10169,6 +10138,74 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		access = access_type_all,
 		special_type = "tank"
 	}		
+	
+	--Holiday effects
+	--April Fools
+	if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday") then
+		if difficulty_index <= 3 then
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.federales[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+		elseif difficulty_index == 4 then
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[19] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[19] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie[19] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater[19] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.federales[19] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[19] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[19] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"		
+		elseif difficulty_index == 5 then
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[35] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[37] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[35] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[37] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie[35] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie[37] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater[35] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater[37] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.federales[35] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.federales[37] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.federales[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[35] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[37] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[35] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"	
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[37] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[39] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+		elseif difficulty_index == 6 then
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[9] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[9] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie[9] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater[9] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.federales[9] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[9] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[9] = "units/payday2/characters/ene_veteran_lod_2/ene_veteran_lod_2"			
+		elseif difficulty_index == 7 then
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[9] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[9] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie[9] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater[9] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.federales[9] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[9] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[9] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"	
+		else
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.america[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.russia[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.zombie[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.murkywater[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.federales[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
+			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"	
+		end
+	end
 
 end
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)

@@ -106,6 +106,7 @@ function restoration:Init()
 	restoration.what_a_horrible_heist_to_have_a_curse = {
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
+		"nft_heist", --EN EF TEE HEIST
 		"help" --Prison Nightmare
 	}
 	

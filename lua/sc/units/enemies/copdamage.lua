@@ -204,6 +204,7 @@ function CopDamage:_spawn_head_gadget(params)
 			parent = head_object_get		
 		})
 		sound_ext:play("swatturret_weakspot_hit", nil, nil)
+		sound_ext:play("swatturret_weakspot_hit", nil, nil)
 	end
 
 	self._head_gear = false

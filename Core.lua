@@ -32,6 +32,7 @@ function restoration:Init()
 		"schl", --Scarlet Club House
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
+		"nft_heist", --EN EF TEE HEIST
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"bookmakers_office", --Bookmaker's Office
@@ -51,6 +52,7 @@ function restoration:Init()
 		--custom heists		
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 
+		"nft_heist", --EN EF TEE HEIST
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"butt", --Best heist ever (Fuck Scarface Mansion)
@@ -69,6 +71,7 @@ function restoration:Init()
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
+		"nft_heist", --EN EF TEE HEIST
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"anlh", --An End To Liang
 		"butt", --Best heist ever (Fuck Scarface Mansion)
@@ -90,6 +93,7 @@ function restoration:Init()
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
 		"amsdeal1", --Armsdeal Alleyway
+		"nft_heist", --EN EF TEE HEIST
 		"Gambling_room", --Underground Bargains
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"branchbank_meth", --Bank Heist: Meth
@@ -174,6 +178,7 @@ function restoration:Init()
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"glb", --Golden Lotus Bank 
 		"schl", --Scarlet Club House
+		"nft_heist", --EN EF TEE HEIST
 		"santas_hardware_store" --Hardware Store but Xmas
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.

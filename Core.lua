@@ -32,6 +32,7 @@ function restoration:Init()
 		"schl", --Scarlet Club House
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
+		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"bookmakers_office", --Bookmaker's Office
 		"firestarter_2_res" --firestarter day 2 res edit version
@@ -50,6 +51,7 @@ function restoration:Init()
 		--custom heists		
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 
+		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"firestarter_3_res" --firestarter day 3 res edit version
@@ -67,6 +69,7 @@ function restoration:Init()
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
+		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"anlh", --An End To Liang
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"constantine_bank_lvl", --Pacific Bank
@@ -88,6 +91,7 @@ function restoration:Init()
 		"alex_1_res", --Rats Day 1 res edit version
 		"amsdeal1", --Armsdeal Alleyway
 		"Gambling_room", --Underground Bargains
+		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"branchbank_meth", --Bank Heist: Meth
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"lvl_fourmorestores", --four more stores
@@ -97,6 +101,7 @@ function restoration:Init()
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {
 		"butt", --Best heist ever (Fuck Scarface Mansion)
+		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"help" --Prison Nightmare
 	}
 	
@@ -166,6 +171,7 @@ function restoration:Init()
 		"constantine_bank_lvl", --Pacific Bank 
 		"anlh", --An End To Liang
 		"butt", --Best heist ever (Fuck Scarface Mansion)
+		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"glb", --Golden Lotus Bank 
 		"schl", --Scarlet Club House
 		"santas_hardware_store" --Hardware Store but Xmas

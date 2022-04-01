@@ -12033,6 +12033,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_beer", "resmod_beer", function(sel
 	table.insert(self.wpn_fps_pis_beer.uses_parts, "wpn_fps_upg_i_b93o")
 	table.insert(self.wpn_fps_pis_beer_npc.uses_parts, "wpn_fps_upg_i_b93o")		
 		
+	self.wpn_fps_pis_beer_npc.override = deep_clone(self.wpn_fps_pis_beer.override)	
 	self.wpn_fps_pis_beer_npc.uses_parts = deep_clone(self.wpn_fps_pis_beer.uses_parts)			
 
 end)
@@ -12163,434 +12164,130 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_czech", "resmod_x_czech", functi
 
 end)
 
-function WeaponFactoryTweakData:_init_stech()
-	self.parts.wpn_fps_pis_stech_b_standard = {
-		a_obj = "a_b",
-		type = "barrel",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_b_standard",
-		supported = true,
-		stats = {
-			value = 1
-		}
+--Igor Automatik
+Hooks:PostHook(WeaponFactoryTweakData, "_init_stech", "resmod_stech", function(self)
+
+	--Tirador Barrel
+	self.parts.wpn_fps_pis_stech_b_long.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_stech_b_long = {
-		texture_bundle_folder = "afp",
-		dlc = "afp",
-		type = "barrel",
-		name_id = "bm_wp_stech_b_long",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_b_long",
-		a_obj = "a_b",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			spread = 1,
-			value = 5,
-			concealment = -1,
-			recoil = -1
-		}
+	self.parts.wpn_fps_pis_stech_b_long.supported = true
+	self.parts.wpn_fps_pis_stech_b_long.stats = {
+		value = 6,
+		spread = 1,
+		concealment = -5,
+		recoil = 1
 	}
-	self.parts.wpn_fps_pis_stech_body_standard = {
-		a_obj = "a_body",
-		type = "lower_reciever",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_body_standard",
-		supported = true,
-		stats = {
-			value = 1
-		}
+
+	--Cartel Grip
+	self.parts.wpn_fps_pis_stech_g_luxury.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_stech_g_standard = {
-		a_obj = "a_g",
-		type = "grip",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_g_standard",
-		supported = true,
-		stats = {
-			value = 1
-		}
+	self.parts.wpn_fps_pis_stech_g_luxury.supported = true
+	self.parts.wpn_fps_pis_stech_g_luxury.stats = {
+		recoil = 1,
+		value = 2,
+		concealment = -2
 	}
-	self.parts.wpn_fps_pis_stech_g_luxury = {
-		texture_bundle_folder = "afp",
-		dlc = "afp",
-		type = "grip",
-		name_id = "bm_wp_stech_g_luxury",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_g_luxury",
-		a_obj = "a_g",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			recoil = 1,
-			value = 4,
-			spread = -1
-		}
+	
+	--Federales Grip
+	self.parts.wpn_fps_pis_stech_g_tactical.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_stech_g_tactical = {
-		texture_bundle_folder = "afp",
-		dlc = "afp",
-		type = "grip",
-		name_id = "bm_wp_stech_g_tactical",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_g_tactical",
-		a_obj = "a_g",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			value = 3,
-			recoil = -1,
-			concealment = 1
-		}
+	self.parts.wpn_fps_pis_stech_g_tactical.supported = true
+	self.parts.wpn_fps_pis_stech_g_tactical.stats = {
+		value = 3,
+		recoil = -1,
+		concealment = 1
 	}
-	self.parts.wpn_fps_pis_stech_m_standard = {
-		a_obj = "a_m",
-		type = "magazine",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_m_standard",
-		bullet_objects = {
-			amount = 20,
-			prefix = "g_bullet_"
-		},
-		supported = true,
-		stats = {
-			value = 1
-		}
+	
+	--Extended Mag
+	self.parts.wpn_fps_pis_stech_m_extended.pcs = {
+		10,
+		20,
+		30,
+		40
 	}
-	self.parts.wpn_fps_pis_stech_m_extended = {
-		a_obj = "a_m",
-		texture_bundle_folder = "afp",
-		type = "magazine",
-		dlc = "afp",
-		name_id = "bm_wp_stech_m_extended",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_m_extended",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		bullet_objects = {
-			amount = 30,
-			prefix = "g_bullet_"
-		},
+	supported = true
+	stats = {
+		value = 5,
+		reload = -1,
+		extra_ammo = 5,
+		concealment = -1
+	}
+	
+	--Federales Stock
+	self.parts.wpn_fps_pis_stech_s_standard.pcs = {
+		10,
+		20,
+		30,
+		40
+	}
+	self.parts.wpn_fps_pis_stech_s_standard.supported = true
+	self.parts.wpn_fps_pis_stech_s_standard.stats = {
+		value = 2,
+		recoil = 1,
+		concealment = -2
+	}
+	
+	self.wpn_fps_pis_stech.wpn_fps_pis_g18c_co_1 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_stech.wpn_fps_pis_g18c_co_comp_2 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}				
+	
+	table.insert(self.wpn_fps_pis_stech.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_stech_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
+	table.insert(self.wpn_fps_pis_stech.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_stech_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")		
+		
+	self.wpn_fps_pis_stech_npc.override = deep_clone(self.wpn_fps_pis_stech.override)	
+	self.wpn_fps_pis_stech_npc.uses_parts = deep_clone(self.wpn_fps_pis_stech.uses_parts)		
+
+end)
+
+--Akimbo Igor Automatik
+Hooks:PostHook(WeaponFactoryTweakData, "_init_x_stech", "resmod_x_stech", function(self)
+
+	self.wpn_fps_pis_x_stech.override.wpn_fps_pis_g18c_co_1 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}
+	self.wpn_fps_pis_x_stech.override.wpn_fps_pis_g18c_co_comp_2 = {
+		a_obj = "a_ns",
+		parent = "barrel"
+	}			
+	self.wpn_fps_pis_x_stech.override.wpn_fps_pis_stech_m_extended = {
 		supported = true,
 		stats = {
 			value = 5,
 			reload = -1,
-			extra_ammo = 5,
+			extra_ammo = 10,
 			concealment = -1
 		}
 	}
-	self.parts.wpn_fps_pis_stech_s_standard = {
-		texture_bundle_folder = "afp",
-		dlc = "afp",
-		type = "stock",
-		name_id = "bm_wp_stech_s_standard",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_s_standard",
-		a_obj = "a_s",
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
-		supported = true,
-		stats = {
-			value = 1,
-			recoil = 1,
-			spread = -1
-		}
-	}
-	self.parts.wpn_fps_pis_stech_sl_standard = {
-		a_obj = "a_sl",
-		type = "slide",
-		name_id = "default",
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_fps_pis_stech_sl_standard",
-		supported = true,
-		stats = {
-			value = 1
-		}
-	}
-	self.parts.wpn_fps_pis_stech_b_standard.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_b_standard"
-	self.parts.wpn_fps_pis_stech_b_long.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_b_standard"
-	self.parts.wpn_fps_pis_stech_body_standard.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_body_standard"
-	self.parts.wpn_fps_pis_stech_g_standard.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_g_standard"
-	self.parts.wpn_fps_pis_stech_g_luxury.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_g_luxury"
-	self.parts.wpn_fps_pis_stech_g_tactical.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_g_tactical"
-	self.parts.wpn_fps_pis_stech_m_extended.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_m_extended"
-	self.parts.wpn_fps_pis_stech_m_standard.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_m_standard"
-	self.parts.wpn_fps_pis_stech_s_standard.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_s_standard"
-	self.parts.wpn_fps_pis_stech_sl_standard.third_unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech_pts/wpn_third_pis_stech_sl_standard"
-	self.wpn_fps_pis_stech = {
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech/wpn_fps_pis_stech",
-		animations = {
-			reload_not_empty = "reload_not_empty",
-			fire = "recoil",
-			fire_steelsight = "recoil",
-			reload = "reload",
-			magazine_empty = "last_recoil"
-		},
-		override = {
-			wpn_fps_upg_o_rmr = {
-				parent = "slide"
-			},
-			wpn_fps_upg_o_rms = {
-				parent = "slide"
-			},
-			wpn_fps_upg_o_rikt = {
-				parent = "slide"
-			},
-			wpn_fps_upg_ns_pis_typhoon = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_pis_ns_flash = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium_slim = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_ass_filter = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_jungle = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_large = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_small = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_large_kac = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium_gem = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_ipsccomp = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_meatgrinder = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_pis_g18c_co_1 = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_pis_g18c_co_comp_2 = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			}				
-		},
-		default_blueprint = {
-			"wpn_fps_pis_stech_b_standard",
-			"wpn_fps_pis_stech_body_standard",
-			"wpn_fps_pis_stech_g_standard",
-			"wpn_fps_pis_stech_m_standard",
-			"wpn_fps_pis_stech_sl_standard"
-		},
-		uses_parts = {
-			"wpn_fps_pis_stech_b_standard",
-			"wpn_fps_pis_stech_b_long",
-			"wpn_fps_pis_stech_body_standard",
-			"wpn_fps_pis_stech_g_standard",
-			"wpn_fps_pis_stech_g_luxury",
-			"wpn_fps_pis_stech_g_tactical",
-			"wpn_fps_pis_stech_m_standard",
-			"wpn_fps_pis_stech_m_extended",
-			"wpn_fps_pis_stech_s_standard",
-			"wpn_fps_pis_stech_sl_standard",
-			"wpn_fps_upg_fl_pis_laser",
-			"wpn_fps_upg_fl_pis_tlr1",
-			"wpn_fps_upg_ns_pis_large",
-			"wpn_fps_upg_ns_pis_medium",
-			"wpn_fps_upg_ns_pis_small",
-			"wpn_fps_upg_ns_pis_large_kac",
-			"wpn_fps_upg_ns_pis_medium_gem",
-			"wpn_fps_upg_o_rmr",
-			"wpn_fps_upg_ns_pis_medium_slim",
-			"wpn_fps_upg_pis_ns_flash",
-			"wpn_fps_upg_fl_pis_crimson",
-			"wpn_fps_upg_fl_pis_x400v",
-			"wpn_fps_upg_ns_pis_meatgrinder",
-			"wpn_fps_upg_ns_pis_ipsccomp",
-			"wpn_fps_upg_fl_pis_m3x",
-			"wpn_fps_upg_ns_ass_filter",
-			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_fps_upg_o_rms",
-			"wpn_fps_upg_o_rikt",
-			"wpn_fps_upg_ns_pis_typhoon",
-			--Stuff--
-			"wpn_fps_pis_g18c_co_1",
-			"wpn_fps_pis_g18c_co_comp_2"				
-		}
-	}
-	self.wpn_fps_pis_stech_npc = deep_clone(self.wpn_fps_pis_stech)
-	self.wpn_fps_pis_stech_npc.unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_stech/wpn_fps_pis_stech_npc"
-end	
+	
+	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_g18c_co_1")
+	table.insert(self.wpn_fps_pis_x_stech_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
+	table.insert(self.wpn_fps_pis_x_stech.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
+	table.insert(self.wpn_fps_pis_x_stech_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")		
+		
+	self.wpn_fps_pis_x_stech_npc.override = deep_clone(self.wpn_fps_pis_x_stech.override)	
+	self.wpn_fps_pis_x_stech_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_stech.uses_parts)		
 
-function WeaponFactoryTweakData:_init_x_stech()
-	self.wpn_fps_pis_x_stech = {
-		unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_x_stech/wpn_fps_pis_x_stech",
-		override = {
-			wpn_fps_upg_o_rmr = {
-				parent = "slide"
-			},
-			wpn_fps_upg_o_rms = {
-				parent = "slide"
-			},
-			wpn_fps_upg_o_rikt = {
-				parent = "slide"
-			},
-			wpn_fps_upg_ns_pis_typhoon = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_pis_ns_flash = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium_slim = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_ass_filter = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_jungle = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_large = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_small = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_large_kac = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_medium_gem = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_ipsccomp = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_upg_ns_pis_meatgrinder = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_pis_g18c_co_1 = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},
-			wpn_fps_pis_g18c_co_comp_2 = {
-				a_obj = "a_ns",
-				parent = "barrel"
-			},				
-			wpn_fps_pis_stech_m_extended = {
-				supported = true,
-				stats = {
-					value = 5,
-					reload = -1,
-					extra_ammo = 10,
-					concealment = -1
-				}
-			}
-		},
-		animations = {
-			reload_left = "reload_left",
-			fire = "recoil",
-			fire_steelsight = "recoil",
-			reload_not_empty_left = "reload_not_empty_left",
-			reload = "reload_right",
-			reload_not_empty = "reload_not_empty_right",
-			magazine_empty = "last_recoil"
-		},
-		optional_types = {
-			"barrel_ext",
-			"gadget"
-		},
-		default_blueprint = {
-			"wpn_fps_pis_stech_b_standard",
-			"wpn_fps_pis_stech_body_standard",
-			"wpn_fps_pis_stech_g_standard",
-			"wpn_fps_pis_stech_m_standard",
-			"wpn_fps_pis_stech_sl_standard"
-		},
-		uses_parts = {
-			"wpn_fps_pis_stech_b_standard",
-			"wpn_fps_pis_stech_b_long",
-			"wpn_fps_pis_stech_body_standard",
-			"wpn_fps_pis_stech_g_standard",
-			"wpn_fps_pis_stech_g_luxury",
-			"wpn_fps_pis_stech_g_tactical",
-			"wpn_fps_pis_stech_m_standard",
-			"wpn_fps_pis_stech_m_extended",
-			"wpn_fps_pis_stech_sl_standard",
-			"wpn_fps_upg_fl_pis_laser",
-			"wpn_fps_upg_fl_pis_tlr1",
-			"wpn_fps_upg_ns_pis_large",
-			"wpn_fps_upg_ns_pis_medium",
-			"wpn_fps_upg_ns_pis_small",
-			"wpn_fps_upg_ns_pis_large_kac",
-			"wpn_fps_upg_ns_pis_medium_gem",
-			"wpn_fps_upg_ns_pis_medium_slim",
-			"wpn_fps_upg_pis_ns_flash",
-			"wpn_fps_upg_fl_pis_crimson",
-			"wpn_fps_upg_fl_pis_x400v",
-			"wpn_fps_upg_ns_pis_meatgrinder",
-			"wpn_fps_upg_ns_pis_ipsccomp",
-			"wpn_fps_upg_fl_pis_m3x",
-			"wpn_fps_upg_ns_ass_filter",
-			"wpn_fps_upg_ns_pis_jungle",
-			"wpn_fps_upg_ns_pis_typhoon",
-			--Stuff--
-			"wpn_fps_pis_g18c_co_1",
-			"wpn_fps_pis_g18c_co_comp_2"	
-		}
-	}
-	self.wpn_fps_pis_x_stech_npc = deep_clone(self.wpn_fps_pis_x_stech)
-	self.wpn_fps_pis_x_stech_npc.unit = "units/pd2_dlc_afp/weapons/wpn_fps_pis_x_stech/wpn_fps_pis_x_stech_npc"
-end	
+end)
 
 --Holt 9mm
 Hooks:PostHook(WeaponFactoryTweakData, "_init_holt", "resmod_holt", function(self)

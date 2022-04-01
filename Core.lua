@@ -161,6 +161,8 @@ function restoration:Init()
 		"jackal_zero_day_stage7" --Zero Day 7
 	}]]--
 	--Increased spawns, should only be reserved for larger maps.
+	restoration.very_large_levels = {}
+	--Increased spawns, slightly less. Ditto
 	restoration.large_levels = {
 		"crojob2", --Bomb Dockyard
 		"friend", --Scarface Mansion

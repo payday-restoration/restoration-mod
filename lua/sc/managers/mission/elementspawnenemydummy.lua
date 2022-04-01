@@ -2122,9 +2122,7 @@ local murkywater_omnia = {
 	
 	---------------------------------------------------REAPERS START---------------------------------------------------
 	
---You should thank me Nelson for what i did here.
---Only their asset package needs to be done. 
-
+--Hey Nelson! You should thank me for what I did here. 
 
 local russia_very_hard = {
 --Scripted spawns for very hard and below 
@@ -2381,7 +2379,7 @@ local russia_deathwish = {
 local russia_zeal = {
 		--go home now fbi elites
 		--zeal tier is now introduced
-		--City Swat Tier as a temp until Zeal tier will be made
+		--City Swat Tier as a temp until Zeal tier will be done
 		
 		--hrt  
 		["units/payday2/characters/ene_fbi_1/ene_fbi_1"] = "units/pd2_dlc_mad/characters/ene_akan_fbi_1/ene_akan_fbi_1",

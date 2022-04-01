@@ -32,7 +32,6 @@ function restoration:Init()
 		"schl", --Scarlet Club House
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
-		"nft_heist", --EN EF TEE HEIST
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"bookmakers_office", --Bookmaker's Office
@@ -52,8 +51,6 @@ function restoration:Init()
 		--custom heists		
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 
-		"nft_heist", --EN EF TEE HEIST
-		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"constantine_harbor_lvl", --Harboring a Grudge
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"firestarter_3_res" --firestarter day 3 res edit version
@@ -72,7 +69,6 @@ function restoration:Init()
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
 		"nft_heist", --EN EF TEE HEIST
-		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"anlh", --An End To Liang
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"constantine_bank_lvl", --Pacific Bank
@@ -93,9 +89,7 @@ function restoration:Init()
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
 		"amsdeal1", --Armsdeal Alleyway
-		"nft_heist", --EN EF TEE HEIST
 		"Gambling_room", --Underground Bargains
-		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"branchbank_meth", --Bank Heist: Meth
 		"butt", --Best heist ever (Fuck Scarface Mansion)
 		"lvl_fourmorestores", --four more stores
@@ -104,9 +98,6 @@ function restoration:Init()
 		"hntn" --harvest and trustee north
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {
-		"butt", --Best heist ever (Fuck Scarface Mansion)
-		"tj_af22_kitteh_level", --The Greatest Bank Of All time
-		"nft_heist", --EN EF TEE HEIST
 		"help" --Prison Nightmare
 	}
 	

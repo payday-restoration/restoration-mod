@@ -7,7 +7,6 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_heavy_helmet_sc/ene_acc_zeal_swat_heavy_helmet_sc" />
-		<depends_on bnk="soundbanks/weapon_swatturret" />
 	</dependencies>
 	
 	<extensions>

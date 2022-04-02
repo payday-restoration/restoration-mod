@@ -58,7 +58,6 @@ function restoration:Init()
 		"hox_2", --Hoxout Day 2
 		"xmn_hox_2", --Hoxout Day 2, christmas
 		"firestarter_1", --firestarter day 1
-		"arm_for",	--train heist
 		"kenaz", --golden grin casino 
 		"big", --big bank
 		"dinner", --Slaughterhouse
@@ -125,7 +124,6 @@ function restoration:Init()
 			"hox_2", --Hoxout Day 2
 			"xmn_hox_2", --Hoxout Day 2, christmas
 			"firestarter_1", --firestarter day 1
-			"arm_for",	--train heist
 			"big", --big bank
 			"kenaz", --golden grin casino 
 			"dinner", --Slaughterhouse

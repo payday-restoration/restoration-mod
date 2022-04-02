@@ -8,6 +8,7 @@
 	<model				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
 	<object				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
 	<sequence_manager	path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false" load="false"/>
 	<texture			path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_df" force="false"/>
 	<texture			path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_nm" force="false"/>	
 	

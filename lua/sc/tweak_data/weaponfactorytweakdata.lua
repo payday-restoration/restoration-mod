@@ -2513,55 +2513,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp9", "resmod_mp9", function(self)
 		concealment = -2
 	}
 	
-	--CMP Part Table
-	self.wpn_fps_smg_mp9.uses_parts = {
-		"wpn_fps_smg_mp9_b_dummy",
-		"wpn_fps_smg_mp9_b_suppressed",
-		"wpn_fps_smg_mp9_body_mp9",
-		"wpn_fps_smg_mp9_m_extended",
-		"wpn_fps_smg_mp9_m_short",
-		"wpn_fps_smg_mp9_s_fold",
-		"wpn_fps_smg_mp9_s_skel",
-		"wpn_fps_upg_ass_ns_battle",
-		"wpn_fps_upg_ass_ns_jprifles",
-		"wpn_fps_upg_ass_ns_linear",
-		"wpn_fps_upg_ass_ns_surefire",
-		"wpn_fps_upg_fl_ass_laser",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_i_autofire",
-		"wpn_fps_upg_i_singlefire",
-		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_upg_ns_ass_smg_large",
-		"wpn_fps_upg_ns_ass_smg_medium",
-		"wpn_fps_upg_ns_ass_smg_small",
-		"wpn_fps_upg_ns_ass_smg_stubby",
-		"wpn_fps_upg_ns_ass_smg_tank",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_t1micro",
-		--"wpn_fps_upg_vg_ass_smg_stubby",
-		--"wpn_fps_upg_vg_ass_smg_verticalgrip",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_ns_ass_smg_v6",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1"
-	}
+	--CMP Part Table	
+	self.wpn_fps_smg_mp9.uses_parts[38] = "wpn_fps_upg_vg_ass_smg_stubby_vanilla"
+	self.wpn_fps_smg_mp9.uses_parts[39] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"
+	
 	self.wpn_fps_smg_mp9_npc.uses_parts = deep_clone(self.wpn_fps_smg_mp9.uses_parts)
 
 end)
@@ -3142,71 +3097,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	}
 	
-	--Use Part Table
-	self.wpn_fps_shot_r870.uses_parts = {
-		"wpn_fps_shot_r870_body_rack",
-		"wpn_fps_shot_r870_body_standard",
-		"wpn_fps_shot_r870_b_long",
-		"wpn_fps_shot_r870_fg_big",
-		"wpn_fps_shot_r870_fg_railed",
-		"wpn_fps_shot_r870_fg_wood",
-		"wpn_fps_shot_r870_m_extended",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_shot_r870_s_folding",
-		"wpn_fps_shot_r870_s_m4",
-		--"wpn_fps_upg_m4_s_standard",
-		--"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_shot_r870_s_nostock_big",
-		"wpn_fps_shot_r870_s_nostock_single",
-		"wpn_fps_shot_r870_s_nostock",
-		"wpn_fps_shot_r870_s_solid_vanilla",
-		"wpn_fps_shot_r870_s_solid_big",
-		"wpn_fps_shot_r870_s_solid_single",
-		"wpn_fps_upg_m4_g_standard",
-		"wpn_fps_upg_m4_g_ergo",
-		"wpn_fps_upg_m4_g_sniper",
-		"wpn_fps_upg_ns_shot_thick",
-		"wpn_fps_upg_ns_shot_shark",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_upg_m4_g_mgrip",
-		"wpn_fps_upg_shot_ns_king",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		--"wpn_fps_upg_m4_s_crane",
-		--"wpn_fps_upg_m4_s_mk46",
-		--"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_ns_sho_salvo_large",
-		"wpn_fps_shot_r870_b_legendary",
-		"wpn_fps_shot_r870_s_legendary",
-		"wpn_fps_shot_r870_fg_legendary",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_ns_duck",
-		--"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_snp_tti_g_grippy",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_g_m4_surgeon",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		--Custom stuff
-		"wpn_fps_shot_r870_s_folding_ext"
-	}
+	self.wpn_fps_shot_r870.uses_parts[18] = "resmod_dummy"
+	self.wpn_fps_shot_r870.uses_parts[19] = "resmod_dummy"
+	self.wpn_fps_shot_r870.uses_parts[43] = "resmod_dummy"
+	self.wpn_fps_shot_r870.uses_parts[44] = "resmod_dummy"
+	self.wpn_fps_shot_r870.uses_parts[45] = "resmod_dummy"
+	self.wpn_fps_shot_r870.uses_parts[53] = "resmod_dummy"
+		
+	table.insert(self.wpn_fps_shot_r870.uses_parts, "wpn_fps_shot_r870_s_folding_ext")
+	table.insert(self.wpn_fps_shot_r870_npc.uses_parts, "wpn_fps_shot_r870_s_folding_ext")		
 	
 	self.wpn_fps_shot_r870_npc.uses_parts = deep_clone(self.wpn_fps_shot_r870.uses_parts)
 
@@ -3338,70 +3237,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 		wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override			
 	}
 	
-	--Use Part Table
-	self.wpn_fps_shot_serbu.uses_parts = {
-		"wpn_fps_shot_r870_body_rack",
-		"wpn_fps_shot_r870_body_standard",
-		"wpn_fps_shot_r870_b_short",
-		"wpn_fps_shot_r870_fg_railed",
-		"wpn_fps_shot_r870_fg_small",
-		"wpn_fps_shot_shorty_m_extended_short",
-		"wpn_fps_upg_o_specter",
-		"wpn_fps_upg_o_aimpoint",
-		"wpn_fps_upg_o_docter",
-		"wpn_fps_upg_o_eotech",
-		"wpn_fps_upg_o_t1micro",
-		"wpn_fps_upg_o_cmore",
-		"wpn_fps_upg_o_aimpoint_2",
-		"wpn_fps_upg_o_acog",
-		"wpn_fps_shot_r870_s_folding",
-		"wpn_fps_shot_r870_s_m4",
-		--"wpn_fps_upg_m4_s_standard",
-		--"wpn_fps_upg_m4_s_pts",
-		"wpn_fps_shot_shorty_s_nostock_short",
-		"wpn_fps_shot_r870_s_nostock_single",
-		"wpn_fps_shot_r870_s_nostock_vanilla",
-		"wpn_fps_shot_r870_s_solid",
-		"wpn_fps_shot_shorty_s_solid_short",
-		"wpn_fps_shot_r870_s_solid_single",
-		"wpn_fps_upg_m4_g_standard",
-		"wpn_fps_upg_m4_g_ergo",
-		"wpn_fps_upg_m4_g_sniper",
-		"wpn_fps_upg_ns_shot_thick",
-		"wpn_fps_upg_ns_shot_shark",
-		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
-		"wpn_fps_upg_fl_ass_smg_sho_surefire",
-		"wpn_fps_upg_m4_g_hgrip",
-		"wpn_fps_upg_m4_g_mgrip",
-		"wpn_fps_shot_shorty_b_legendary",
-		"wpn_fps_shot_shorty_s_legendary",
-		"wpn_fps_shot_shorty_fg_legendary",
-		"wpn_fps_upg_shot_ns_king",
-		"wpn_fps_upg_o_eotech_xps",
-		"wpn_fps_upg_o_reflex",
-		"wpn_fps_upg_o_rx01",
-		"wpn_fps_upg_o_rx30",
-		"wpn_fps_upg_o_cs",
-		"wpn_fps_upg_fl_ass_peq15",
-		"wpn_fps_upg_fl_ass_laser",
-		--"wpn_fps_upg_m4_s_crane",
-		--"wpn_fps_upg_m4_s_mk46",
-		--"wpn_fps_upg_m4_s_ubr",
-		"wpn_fps_upg_fl_ass_utg",
-		"wpn_fps_upg_ns_sho_salvo_large",
-		"wpn_fps_upg_o_spot",
-		"wpn_fps_upg_ns_duck",
-		--"wpn_fps_snp_tti_s_vltor",
-		"wpn_fps_snp_tti_g_grippy",
-		"wpn_fps_upg_o_xpsg33_magnifier",
-		"wpn_fps_upg_g_m4_surgeon",
-		"wpn_fps_upg_o_sig",
-		"wpn_fps_upg_o_bmg",
-		"wpn_fps_upg_o_uh",
-		"wpn_fps_upg_o_fc1",
-		--Custom stuff
-		"wpn_fps_shot_r870_s_folding_ext"
-	}	
+	self.wpn_fps_shot_serbu.uses_parts[17] = "resmod_dummy"
+	self.wpn_fps_shot_serbu.uses_parts[18] = "resmod_dummy"
+	self.wpn_fps_shot_serbu.uses_parts[45] = "resmod_dummy"
+	self.wpn_fps_shot_serbu.uses_parts[46] = "resmod_dummy"
+	self.wpn_fps_shot_serbu.uses_parts[47] = "resmod_dummy"
+	self.wpn_fps_shot_serbu.uses_parts[52] = "resmod_dummy"	
+		
+	table.insert(self.wpn_fps_shot_serbu.uses_parts, "wpn_fps_shot_r870_s_folding_ext")
+	table.insert(self.wpn_fps_shot_serbu_npc.uses_parts, "wpn_fps_shot_r870_s_folding_ext")		
 	
 	self.wpn_fps_shot_serbu_npc.uses_parts = deep_clone(self.wpn_fps_shot_serbu.uses_parts)
 
@@ -12301,8 +12145,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_holt", "resmod_holt", function(sel
 	}
 	self.parts.wpn_fps_pis_holt_g_bling.supported = true
 	self.parts.wpn_fps_pis_holt_g_bling.stats = {
-		value = 3,
-		recoil = -1,
+		value = 5,
+		concealment = -3,
 		spread = 1
 	}
 	
@@ -12316,7 +12160,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_holt", "resmod_holt", function(sel
 	self.parts.wpn_fps_pis_holt_g_ergo.supported = true
 	self.parts.wpn_fps_pis_holt_g_ergo.stats = {
 		value = 2,
-		spread = -1,
+		concealment = -2,
 		recoil = 1
 	}
 	
@@ -12350,7 +12194,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_holt", "resmod_holt", function(sel
 
 	table.insert(self.wpn_fps_pis_holt.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_holt_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
-					
+	
+	self.wpn_fps_pis_holt_npc.override = deep_clone(self.wpn_fps_pis_holt.override)	
 	self.wpn_fps_pis_holt_npc.uses_parts = deep_clone(self.wpn_fps_pis_holt.uses_parts)			
 
 end)
@@ -12382,7 +12227,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_holt", "resmod_x_holt", function
 
 	table.insert(self.wpn_fps_pis_x_holt.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_x_holt_npc.uses_parts, "wpn_fps_pis_g18c_co_1")	
-					
+	
+	self.wpn_fps_pis_x_holt_npc.override = deep_clone(self.wpn_fps_pis_x_holt.override)	
 	self.wpn_fps_pis_x_holt_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_holt.uses_parts)			
 
 end)
@@ -12400,7 +12246,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_atw_mod", "resmod_atw_mod", functi
 	self.parts.wpn_fps_ass_m14_body_ruger.stats = {
 		concealment = 1,
 		recoil = -1,
-		value = 1
+		value = 3
 	}
 
 end)
@@ -12432,8 +12278,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	}
 	self.parts.wpn_fps_lmg_m60_fg_tactical.supported = true
 	self.parts.wpn_fps_lmg_m60_fg_tactical.stats = {
-		value = 1,
-		spread = -1,
+		value = 2,
+		concealment = -2,
 		recoil = 1
 	}
 	
@@ -12446,7 +12292,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	}
 	self.parts.wpn_fps_lmg_m60_fg_tropical.supported = true
 	self.parts.wpn_fps_lmg_m60_fg_tropical.stats = {
-		value = 1,
+		value = 3,
 		concealment = 1,
 		spread = -1
 	}
@@ -12461,9 +12307,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	self.parts.wpn_fps_lmg_m60_fg_keymod.supported = true
 	self.parts.wpn_fps_lmg_m60_fg_keymod.stats = {
 		spread = 1,
-		recoil = -1,
-		concealment = -1,
-		value = 1
+		concealment = -3,
+		value = 5
 	}
 		
 	--M60 Part Additions
@@ -12515,7 +12360,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m60", "resmod_m60", function(self)
 	table.insert(self.wpn_fps_lmg_m60_npc.uses_parts, "wpn_fps_upg_o_fc1")		
 	
 	]]--
-			
+		
 	self.wpn_fps_lmg_m60_npc.uses_parts = deep_clone(self.wpn_fps_lmg_m60.uses_parts)			
 
 end)
@@ -12546,11 +12391,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 	}
 	self.parts.wpn_fps_snp_r700_b_medium.supported = true
 	self.parts.wpn_fps_snp_r700_b_medium.stats = {
-		value = 3,
+		value = 2,
 		suppression = 10,
-		alert_size = -1,
-		spread = -1,
-		recoil = 1
+		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_r700_b_medium.perks = {"silencer"}
 	
@@ -12563,9 +12406,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 	}
 	self.parts.wpn_fps_snp_r700_s_tactical.supported = true
 	self.parts.wpn_fps_snp_r700_s_tactical.stats = {
-		value = 0,
+		value = 2,
 		recoil = 1,
-		spread = -1
+		concealment = -2
 	}
 	
 	--Military Stock
@@ -12606,7 +12449,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 
 	table.insert(self.wpn_fps_snp_r700.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	table.insert(self.wpn_fps_snp_r700_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
-			
+	
+	self.wpn_fps_snp_r700_npc.override = deep_clone(self.wpn_fps_snp_r700.override)	
 	self.wpn_fps_snp_r700_npc.uses_parts = deep_clone(self.wpn_fps_snp_r700.uses_parts)		
 
 end)
@@ -12623,10 +12467,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 	}
 	self.parts.wpn_fps_snp_sbl_b_long.supported = true
 	self.parts.wpn_fps_snp_sbl_b_long.stats = {
-		value = 3,
-		concealment = -1,
-		spread = 1,
-		recoil = -1
+		value = 5,
+		concealment = -3,
+		spread = 1
 	}
 	
 	--Sniper Suppressor
@@ -12638,11 +12481,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 	}
 	self.parts.wpn_fps_snp_sbl_b_short.supported = true
 	self.parts.wpn_fps_snp_sbl_b_short.stats = {
-		value = 3,
+		value = 2,
 		suppression = 10,
-		alert_size = -1,
-		spread = -1,
-		recoil = 1
+		alert_size = -1
 	}
 	self.parts.wpn_fps_snp_sbl_b_short.perks = {"silencer"}
 	
@@ -12670,7 +12511,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 	--Override Table
 	self.wpn_fps_snp_sbl.override = {}
 	self.wpn_fps_snp_sbl.adds = {}
-					
+			
+	self.wpn_fps_snp_sbl_npc.override = deep_clone(self.wpn_fps_snp_sbl.override)	
 	self.wpn_fps_snp_sbl_npc.uses_parts = deep_clone(self.wpn_fps_snp_sbl.uses_parts)		
 
 end)
@@ -12687,7 +12529,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model3", "resmod_model3", function
 	}
 	self.parts.wpn_fps_pis_model3_b_short.supported = true
 	self.parts.wpn_fps_pis_model3_b_short.stats = {
-		value = 2,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}
@@ -12701,10 +12543,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model3", "resmod_model3", function
 	}
 	self.parts.wpn_fps_pis_model3_b_long.supported = true
 	self.parts.wpn_fps_pis_model3_b_long.stats = {
-		value = 3,
-		concealment = -1,
-		spread = 1,
-		recoil = -1
+		value = 5,
+		concealment = -3,
+		spread = 1
 	}
 		
 	--Bling Grip
@@ -12716,10 +12557,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model3", "resmod_model3", function
 	}
 	self.parts.wpn_fps_pis_model3_g_bling.supported = true
 	self.parts.wpn_fps_pis_model3_g_bling.stats = {
-		value = 2,
+		value = 5,
 		spread = 1,
-		concealment = -1,
-		recoil = -1
+		concealment = -3
 	}
 	
 end)
@@ -12743,7 +12583,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 	}
 	self.parts.wpn_fps_shot_m1897_b_short.supported = true
 	self.parts.wpn_fps_shot_m1897_b_short.stats = {
-		value = 2,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}
@@ -12761,10 +12601,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 	}
 	self.parts.wpn_fps_shot_m1897_b_long.supported = true
 	self.parts.wpn_fps_shot_m1897_b_long.stats = {
-		value = 3,
-		concealment = -1,
-		spread = 1,
-		recoil = -1
+		value = 5,
+		concealment = -3,
+		spread = 1
 	}
 	self.parts.wpn_fps_shot_m1897_b_long.custom_stats = {
 		damage_near_mul = 1,
@@ -12780,7 +12619,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 	}
 	self.parts.wpn_fps_shot_m1897_s_short.supported = true
 	self.parts.wpn_fps_shot_m1897_s_short.stats = {
-		value = 1,
+		value = 3,
 		concealment = 1,
 		recoil = -1
 	}
@@ -12892,8 +12731,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1911", "resmod_m1911", function(s
 	self.parts.wpn_fps_pis_m1911_sl_match.stats = {
 		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}
 	
 	--Chunky Hunter Slide
@@ -12905,7 +12743,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1911", "resmod_m1911", function(s
 	}
 	self.parts.wpn_fps_pis_m1911_sl_hardballer.supported = true
 	self.parts.wpn_fps_pis_m1911_sl_hardballer.stats = {
-		value = 5,
+		value = 6,
 		spread = 2,
 		recoil = -2,
 		concealment = -2
@@ -12927,6 +12765,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1911", "resmod_m1911", function(s
 	table.insert(self.wpn_fps_pis_m1911.uses_parts, "wpn_fps_pis_1911_co_2")
 	table.insert(self.wpn_fps_pis_m1911_npc.uses_parts, "wpn_fps_pis_1911_co_2")	
 
+	self.wpn_fps_pis_m1911_npc.override = deep_clone(self.wpn_fps_pis_m1911.override)
 	self.wpn_fps_pis_m1911_npc.uses_parts = deep_clone(self.wpn_fps_pis_m1911.uses_parts)	
 
 end)
@@ -12944,11 +12783,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 	self.parts.wpn_fps_sho_m590_b_suppressor.supported = true
 	self.parts.wpn_fps_sho_m590_b_suppressor.stats = {
 		value = 2,
-		suppression = 11,
-		alert_size = -1,
-		recoil = -1,
-		spread = 1,
-		concealment = -1
+		suppression = 10,
+		alert_size = -1
 	}
 	self.parts.wpn_fps_sho_m590_b_suppressor.perks = {
 		"silencer"
@@ -12964,9 +12800,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 	self.parts.wpn_fps_sho_m590_b_long.supported = true
 	self.parts.wpn_fps_sho_m590_b_long.stats = {
 		spread = 1,
-		value = 1,
-		concealment = -1,
-		recoil = -1
+		value = 5,
+		concealment = -3
 	}
 	
 	--CE Rail Stabilizer
@@ -12979,7 +12814,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 	self.parts.wpn_fps_sho_m590_body_rail.supported = true
 	self.parts.wpn_fps_sho_m590_body_rail.stats = {
 		recoil = 1,
-		value = 1,
+		value = 2,
 		concealment = -2
 	}	
 	
@@ -13074,11 +12909,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 	}
 	self.parts.wpn_fps_smg_vityaz_b_supressed.supported = true
 	self.parts.wpn_fps_smg_vityaz_b_supressed.stats = {
-		value = 10,
+		value = 2,
 		suppression = 10,
-		alert_size = -1,
-		spread = -1,
-		recoil = 1
+		alert_size = -1
 	}
 	self.parts.wpn_fps_smg_vityaz_b_supressed.perks = {
 		"silencer"
@@ -13095,9 +12928,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 	self.parts.wpn_fps_smg_vityaz_b_long.supported = true
 	self.parts.wpn_fps_smg_vityaz_b_long.stats = {
 		spread = 1,
-		recoil = -1,
-		value = 1,
-		concealment = -1
+		value = 5,
+		concealment = -3
 	}
 	
 	--Short Stock
@@ -13109,7 +12941,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 	}
 	self.parts.wpn_fps_smg_vityaz_s_short.supported = true
 	self.parts.wpn_fps_smg_vityaz_s_short.stats = {
-		value = 1,
+		value = 4,
 		recoil = -2,
 		concealment = 2
 	}
@@ -13143,7 +12975,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 	}
 	self.parts.wpn_fps_smg_pm9_b_short.supported = true
 	self.parts.wpn_fps_smg_pm9_b_short.stats = {
-		value = 1,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}	
@@ -13157,8 +12989,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 	}
 	self.parts.wpn_fps_smg_pm9_g_wood.supported = true
 	self.parts.wpn_fps_smg_pm9_g_wood.stats = {
-		value = 1,
-		spread = -1,
+		value = 2,
+		concealment = -2,
 		recoil = 1
 	}	
 	
@@ -13171,10 +13003,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 	}
 	self.parts.wpn_fps_smg_pm9_s_tactical.supported = true
 	self.parts.wpn_fps_smg_pm9_s_tactical.stats = {
-		value = 2,
+		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}	
 		
 end)
@@ -13191,7 +13022,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_qbu88", "resmod_qbu88", function(s
 	}
 	self.parts.wpn_fps_snp_qbu88_b_short.supported = true
 	self.parts.wpn_fps_snp_qbu88_b_short.stats = {
-		value = 1,
+		value = 3,
 		spread = -1,
 		concealment = 1
 	}	
@@ -13205,10 +13036,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_qbu88", "resmod_qbu88", function(s
 	}
 	self.parts.wpn_fps_snp_qbu88_b_long.supported = true
 	self.parts.wpn_fps_snp_qbu88_b_long.stats = {
-		value = 1,
+		value = 5,
 		spread = 1,
-		recoil = -1,
-		concealment = -1
+		concealment = -3
 	}	
 		
 	--Extended Mag
@@ -13353,10 +13183,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function
 	}
 	self.parts.wpn_fps_pis_type54_b_long.supported = true
 	self.parts.wpn_fps_pis_type54_b_long.stats = {
-		value = 2,
+		value = 5,
 		spread = 1,
-		concealment = -1,
-		recoil = -1
+		concealment = -3
 	}	
 	
 	--Extended magazine
@@ -13399,6 +13228,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function
 	table.insert(self.wpn_fps_pis_type54.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_type54_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 	
+	self.wpn_fps_pis_type54_npc.override = deep_clone(self.wpn_fps_pis_type54.override)
 	self.wpn_fps_pis_type54_npc.uses_parts = deep_clone(self.wpn_fps_pis_type54.uses_parts)		
 
 end)
@@ -13440,6 +13270,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_type54", "resmod_x_type54", func
 	table.insert(self.wpn_fps_pis_x_type54.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_x_type54_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 	
+	self.wpn_fps_pis_x_type54_npc.override = deep_clone(self.wpn_fps_pis_x_type54.override)	
 	self.wpn_fps_pis_x_type54_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_type54.uses_parts)	
 
 end)
@@ -13487,8 +13318,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 	}
 	self.parts.wpn_fps_pis_rsh12_g_wood.supported = true
 	self.parts.wpn_fps_pis_rsh12_g_wood.stats = {
-		value = 3,
-		spread = -1,
+		value = 2,
+		concealment = -2,
 		recoil = 1
 	}	
 	
@@ -13507,6 +13338,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 	table.insert(self.wpn_fps_pis_rsh12.uses_parts, "wpn_fps_pis_g18c_co_1")
 	table.insert(self.wpn_fps_pis_rsh12_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
 	
+	self.wpn_fps_pis_rsh12_npc.override = deep_clone(self.wpn_fps_pis_rsh12.override)
 	self.wpn_fps_pis_rsh12_npc.uses_parts = deep_clone(self.wpn_fps_pis_rsh12.uses_parts)		
 
 end)
@@ -13523,7 +13355,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 	}
 	self.parts.wpn_fps_pis_maxim9_b_long.supported = true
 	self.parts.wpn_fps_pis_maxim9_b_long.stats = {
-		value = 4,
+		value = 5,
 		spread = 1,
 		concealment = -3
 	}	
@@ -13587,31 +13419,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 			}
 		}
 	}	
+		
+	self.wpn_fps_pis_maxim9.uses_parts[12] = "resmod_dummy"
+	self.wpn_fps_pis_maxim9.uses_parts[15] = "resmod_dummy"
+	self.wpn_fps_pis_maxim9.uses_parts[16] = "resmod_dummy"
 	
-	--Maxim 9 Part Additions
-	self.wpn_fps_pis_maxim9.uses_parts = {
-		"wpn_fps_pis_maxim9_b_standard",
-		"wpn_fps_pis_maxim9_b_long",
-		"wpn_fps_pis_maxim9_b_marksman",
-		"wpn_fps_pis_maxim9_body_upper",
-		"wpn_fps_pis_maxim9_body_lower",
-		"wpn_fps_pis_maxim9_m_standard",
-		"wpn_fps_pis_maxim9_m_ext",
-		"wpn_fps_upg_fl_pis_laser",
-		"wpn_fps_upg_fl_pis_tlr1",
-		"wpn_fps_upg_fl_pis_perst",
-		"wpn_fps_upg_o_rmr",
-		--"wpn_fps_upg_pis_ns_flash",
-		"wpn_fps_upg_fl_pis_crimson",
-		"wpn_fps_upg_fl_pis_x400v",
-		--"wpn_fps_upg_ns_pis_meatgrinder",
-		--"wpn_fps_upg_ns_pis_ipsccomp",
-		"wpn_fps_upg_fl_pis_m3x",
-		"wpn_fps_upg_o_rms",
-		"wpn_fps_upg_o_rikt",
-		--Custom content
-		"wpn_fps_pis_maxim9_a_tranq"
-	}
+	table.insert(self.wpn_fps_pis_maxim9.uses_parts, "wpn_fps_pis_maxim9_a_tranq")
+	table.insert(self.wpn_fps_pis_maxim9_npc.uses_parts, "wpn_fps_pis_maxim9_a_tranq")		
 	
 	self.wpn_fps_pis_maxim9_npc.uses_parts = deep_clone(self.wpn_fps_pis_maxim9.uses_parts)
 	
@@ -13630,27 +13444,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_maxim9", "resmod_x_maxim9", func
 		}
 	}
 	
-	--Akimbo Maxim 9 Part Additions
-	self.wpn_fps_pis_x_maxim9.uses_parts = {
-		"wpn_fps_pis_maxim9_b_standard",
-		"wpn_fps_pis_maxim9_b_long",
-		"wpn_fps_pis_maxim9_b_marksman",
-		"wpn_fps_pis_maxim9_body_upper",
-		"wpn_fps_pis_maxim9_body_lower",
-		"wpn_fps_pis_maxim9_m_standard",
-		"wpn_fps_pis_maxim9_m_ext",
-		"wpn_fps_upg_fl_pis_laser",
-		"wpn_fps_upg_fl_pis_tlr1",
-		"wpn_fps_upg_fl_pis_perst",
-		--"wpn_fps_upg_pis_ns_flash",
-		"wpn_fps_upg_fl_pis_crimson",
-		"wpn_fps_upg_fl_pis_x400v",
-		--"wpn_fps_upg_ns_pis_meatgrinder",
-		--"wpn_fps_upg_ns_pis_ipsccomp",
-		"wpn_fps_upg_fl_pis_m3x",
-		--Custom Content
-		"wpn_fps_pis_maxim9_a_tranq"		
-	}
+	self.wpn_fps_pis_x_maxim9.uses_parts[11] = "resmod_dummy"
+	self.wpn_fps_pis_x_maxim9.uses_parts[14] = "resmod_dummy"
+	self.wpn_fps_pis_x_maxim9.uses_parts[15] = "resmod_dummy"
+	
+	table.insert(self.wpn_fps_pis_x_maxim9.uses_parts, "wpn_fps_pis_maxim9_a_tranq")
+	table.insert(self.wpn_fps_pis_x_maxim9_npc.uses_parts, "wpn_fps_pis_maxim9_a_tranq")			
 	
 	self.wpn_fps_pis_x_maxim9_npc.uses_parts = deep_clone(self.wpn_fps_pis_x_maxim9.uses_parts)	
 
@@ -13722,7 +13521,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 		40
 	}
 	self.parts.wpn_fps_sho_ultima_body_kit.stats = {
-		value = 0
+		value = 4
 	}
 	self.parts.wpn_fps_sho_ultima_body_kit.forbids = {
 		"wpn_fps_upg_fl_ass_smg_sho_peqbox",
@@ -13840,7 +13639,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	}
 	self.parts.wpn_fps_smg_fmg9_grip_tape.supported = true
 	self.parts.wpn_fps_smg_fmg9_grip_tape.stats = {
-		value = 2,
+		value = 5,
 		concealment = -3,
 		spread = 1
 	}
@@ -13891,7 +13690,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	}
 	self.parts.wpn_fps_smg_fmg9_conversion.supported = true
 	self.parts.wpn_fps_smg_fmg9_conversion.stats = {
-		value = 0
+		value = 4
 	}	
 	self.parts.wpn_fps_smg_fmg9_conversion.perks = nil
 	self.parts.wpn_fps_smg_fmg9_conversion.override = {		

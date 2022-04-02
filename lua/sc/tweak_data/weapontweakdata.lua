@@ -1363,6 +1363,8 @@ function WeaponTweakData:_init_data_scar_npc()
 	self.scar_npc.suppression = 2.8
 	self.scar_npc.FIRE_MODE = "single"
 	self.scar_npc.titan_trail = true
+	self.scar_npc.usage = "is_dmr"
+	self.scar_npc.anim_usage = "is_rifle"	
 	self.scar_secondary_npc = deep_clone(self.scar_npc)
 	self.scar_secondary_npc.use_data.selection_index = 1
 end
@@ -10002,6 +10004,13 @@ function WeaponTweakData:_create_table_structure()
 		use_data = {},
 		auto = {}
 	}			
+	self.scar_npc = {
+		usage = "is_dmr",
+		anim_usage = "is_rifle",
+		sounds = {},
+		use_data = {},
+		auto = {}
+	}	
 	self.hk21_sc_npc = {
 		usage = "is_lmg",
 		anim_usage = "is_rifle",

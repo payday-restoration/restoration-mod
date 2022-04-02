@@ -3816,6 +3816,7 @@ function CharacterTweakData:_presets(tweak_data)
 			retreat = true,
 			contact = true,
 			clear = true,
+			clear_whisper = true,
 			go_go = true,
 			push = true,
 			reload = true,

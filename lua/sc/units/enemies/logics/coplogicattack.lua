@@ -15,6 +15,30 @@ function CopLogicAttack._upd_aim(data, my_data)
 	local nearly_visible = focus_enemy and focus_enemy.nearly_visible
 
 	local aim, shoot, expected_pos = CopLogicAttack._check_aim_shoot(data, my_data, focus_enemy, verified, nearly_visible)
+	
+	if focus_enemy and focus_enemy.is_person and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and not data.unit:in_slot(16) and not data.is_converted then
+		if focus_enemy.is_local_player then
+			local time_since_verify = data.attention_obj.verified_t and data.t - data.attention_obj.verified_t
+			local e_movement_state = focus_enemy.unit:movement():current_state()
+
+			if e_movement_state:_is_reloading() and time_since_verify and time_since_verify < 2 then
+				if not data.unit:in_slot(16) and data.char_tweak.chatter.reload then
+					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "reload")
+					log("spot reload 1")
+				end
+			end
+		else
+			local e_anim_data = focus_enemy.unit:anim_data()
+			local time_since_verify = data.attention_obj.verified_t and data.t - data.attention_obj.verified_t
+
+			if e_anim_data.reload and time_since_verify and time_since_verify < 2 then
+				if not data.unit:in_slot(16) and data.char_tweak.chatter.reload then
+					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "reload")
+					log("spot reload 1")
+				end			
+			end
+		end
+	end
 
 	if aim or shoot then
 		if verified or nearly_visible then
@@ -173,31 +197,6 @@ function CopLogicAttack.aim_allow_fire(shoot, aim, data, my_data) -- doesn't rea
 		my_data.firing = nil
 	end
 end
-
-Hooks:PostHook(CopLogicAttack, "_upd_aim", "RR_upd_aim", function(data)
-	local focus_enemy = data.attention_obj
-	if focus_enemy and focus_enemy.is_person and AIAttentionObject.REACT_COMBAT <= data.attention_obj.reaction and not data.unit:in_slot(16) and not data.is_converted then
-		if focus_enemy.is_local_player then
-			local time_since_verify = data.attention_obj.verified_t and data.t - data.attention_obj.verified_t
-			local e_movement_state = focus_enemy.unit:movement():current_state()
-
-			if e_movement_state:_is_reloading() and time_since_verify and time_since_verify < 2 then
-				if not data.unit:in_slot(16) and data.char_tweak.chatter.reload then
-					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "reload")
-				end
-			end
-		else
-			local e_anim_data = focus_enemy.unit:anim_data()
-			local time_since_verify = data.attention_obj.verified_t and data.t - data.attention_obj.verified_t
-
-			if e_anim_data.reload and time_since_verify and time_since_verify < 2 then
-				if not data.unit:in_slot(16) and data.char_tweak.chatter.reload then
-					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "reload")
-				end			
-			end
-		end
-	end
-end)
 
 -- The big stuff, cops will comment on player equipment
 

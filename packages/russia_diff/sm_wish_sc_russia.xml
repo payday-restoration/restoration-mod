@@ -141,7 +141,6 @@
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_husk" force="false" load="true"/>
 	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" />
 	
-	
 	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/lpf_body_df" force="false" load="true"/>
 	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_df" force="false" load="true"/>
 	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_il" force="false" load="true"/>	
@@ -163,7 +162,7 @@
 	<unit_mat			path="units/pd2_dlc_mad/characters/ene_acc_akan_medic_helmet/ene_acc_akan_medic_helmet" load="true"/>
 	<unit_mat			path="units/pd2_dlc_mad/characters/ene_acc_akan_medic_helmet_zdann/ene_acc_akan_medic_helmet_zdann" load="true"/>
 	
-	<!--Russian Medic zdann--
+	<!--Russian Medic zdann-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_husk" force="false" load="true"/>
 	<object				path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann" force="false" />
@@ -173,17 +172,6 @@
 	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_zdann_contour" force="false" />
 	<texture			path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_head_df" force="false" />
 	<texture			path="units/pd2_dlc_mad/characters/ene_akan_medic_zdann/ene_akan_medic_body_df" force="false" />
-	
-	<!--Russian Medic bob-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob_husk" force="false" load="true"/>
-	<object				path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
-	<model				path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
-	<cooked_physics		path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob" force="false" />
-	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_bob_contour" force="false" />
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_head_df" force="false" />
-	<texture			path="units/pd2_dlc_mad/characters/ene_akan_medic_bob/ene_akan_medic_body_df" force="false" />	
 	
 	<!--Titan Shotgunner-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_titan_shotgun/ene_titan_shotgun" force="false" load="true"/>

@@ -224,7 +224,10 @@
 	<sequence_manager	path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false"/>
 	<unit				path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun" force="false" load="false"/>
 	<texture			path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun_df" force="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun_nm" force="false"/>	
+	<texture			path="units/payday2/weapons/wpn_npc_railgun/wpn_npc_railgun_nm" force="false"/>
+
+	<!--LPF's S552-->
+	<unit				path="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" force="false" load="false"/>
 	
 	<!-- AS VAL GRIP ATTACHMENT STUFF  -->
 	<unit_obj			path="units/pd2_dlc_character_sokol/weapons/wpn_third_ass_asval_pts/wpn_third_ass_asval_g_pgrip" />

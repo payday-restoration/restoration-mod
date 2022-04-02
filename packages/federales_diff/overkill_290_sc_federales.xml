@@ -398,9 +398,7 @@
 	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_picklerick" force="false"/>	
 	<material_config	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_contour" force="false"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf_husk" force="false" load="true"/>
-	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" />
-
-	<unit				path="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" force="false" load="false"/>	
+	<sequence_manager	path="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" />	
 	
 	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/lpf_body_df" force="false" load="true"/>
 	<texture			path="units/pd2_dlc_mad/characters/ene_akan_lpf/maska_df" force="false" load="true"/>

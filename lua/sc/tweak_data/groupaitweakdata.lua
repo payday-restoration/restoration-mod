@@ -248,7 +248,7 @@ function GroupAITweakData:_init_chatter_data()
 		max_nr = 40,
 		duration = {2, 4},
 		interval = {6, 15},
-		group_min = 2,
+		group_min = 0,
 		queue = "rrl"
 	}
 	self.enemy_chatter.look_for_angle = {

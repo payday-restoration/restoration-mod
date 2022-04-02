@@ -5,7 +5,6 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" />
-		<depends_on bnk="soundbanks/weapon_swatturret" />
 	</dependencies>
 
 	<extensions>

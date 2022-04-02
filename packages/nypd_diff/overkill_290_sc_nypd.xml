@@ -87,21 +87,23 @@
 	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_df" />
 	<texture			path="units/payday2/characters/shared_textures/ene_city_heavy_nm" />	
 	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" />		
-	<texture			path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" />		
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />		
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_2_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />		
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />	
+    <texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />		
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/helmets_atlas_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_fbi_body_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df" />			
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/spook_heavy_df" />
 
 	<!-- security -->
 	<unit				path="units/pd2_dlc1/characters/ene_security_gensec_3/ene_security_gensec_3" load="true" />

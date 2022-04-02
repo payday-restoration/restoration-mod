@@ -77,27 +77,22 @@
 	<material_config	path="units/payday2/characters/ene_fbi_vars/ene_fbi_var6_contour" />
 	
 	<!--nypd textures-->	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_nm" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/bulldozer_saiga_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/ene_nypd_shield/taser_body_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/ene_tazer_1/taser_body_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_df" />		
-	<texture			path="units/pd2_mod_nypd/characters/ene_tazer_1/mask_nm" />		
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_body_2_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd_vetcop_head_df" />		
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_2_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />		
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd1_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd2_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/nypd2_nm" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_classic_1_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_head_clsc_df" />	
+    <texture			path="units/pd2_mod_nypd/characters/shared_textures/fbi_cap_df" />	
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/police_df" />
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
-	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df" />			
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/helmets_atlas_df" />
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_fbi_body_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_df" />
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/swat_body_nm" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/heads_nypd_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_df" />	
+	<texture			path="units/pd2_mod_nypd/characters/shared_textures/ene_nypd_medic_head_df" />			
 	<texture			path="units/pd2_mod_nypd/characters/shared_textures/spook_heavy_df" />
 	
 	<!-- blue swats here -->
@@ -119,8 +114,6 @@
     <unit				path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2_husk" load="true"/>	
 	<model				path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2" />	
 	<object				path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2" />	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2" />	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2_contour" />	
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2" />	
 	
 	<!--swat heavy 1-->
@@ -128,8 +121,6 @@
 	<unit				path="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4_husk" load="true"/>
 	<object				path="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4" />	
 	<model				path="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4" />	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4" />	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4_contour" />	
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4" />	
 	
 	<!--swat heavy r870-->
@@ -137,8 +128,6 @@
     <unit				path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_husk" load="true"/>
     <object				path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"/>
 	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"/>
-	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870" />	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870_contour" />
 	<model				path="units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"/>
 	
 	<!--swat shield 2-->
@@ -159,11 +148,6 @@
 	<!-- sniper -->
     <unit				path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" load="true"/>
     <unit				path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1_husk" load="true"/>	
-	<model				path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" />	
-	<object				path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" />	
-	<material_config	path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"  />		
-	<material_config	path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1_contour"  />	
-	<cooked_physics		path="units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1" />	
 	<!-- blue swat tier end -->
 	
 	<!-- fbi tier here for pro jobs-->

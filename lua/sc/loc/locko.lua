@@ -707,7 +707,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["pdth_hud_completed_challenges"] = "완료된 챌린지",
 		["pdth_hud_completed_challenges_hint"] = "완료 및 달성된 챌린지를 봅니다.",
 
-		["ch_vs_desc"] = "Using the $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
+		["ch_vs_desc"] = "Using $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
 		["ch_vs_head_shots_desc"] = "Using the $weapon, defeat $count $eneType with Headshots.",
 		["ch_vs"] = "$weapon VS. $eneType $no",
 		["ch_vs_head_shots"] = "$weapon VS. $eneType HEADSHOTS $no",
@@ -1197,6 +1197,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_fuel"] = "연료",
 		["bm_menu_cylinder"] = "실린더",
 		["bm_menu_model"] = "모델",
+		["bm_menu_forebarrelgrip"] = "총열 및 총열덮개",
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "틱당 방탄복 재생량: $passive_armor_regen",

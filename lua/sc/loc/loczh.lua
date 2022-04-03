@@ -472,8 +472,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_secret_bonnie"] = "惊世之秘 邦妮",
 		["bm_msk_secret_bonnie_desc"] = "邦妮在贝恩告诉她惊世之秘后，立马灌了一大口她最爱的威士忌，并急不可耐地要去干翻\"共盟会\"了。",
 
-		["bm_msk_secret_syndey"] = "惊世之秘 希妮",
-		["bm_msk_secret_syndey_desc"] = "当贝恩告诉她惊世之秘的时候，希妮不信远古力量的传说。但就算有机会挑战未知，能骑在当权者的头上也足以让她入伙了。",
+		["bm_msk_secret_sydney"] = "惊世之秘 希妮",
+		["bm_msk_secret_sydney_desc"] = "当贝恩告诉她惊世之秘的时候，希妮不信远古力量的传说。但就算有机会挑战未知，能骑在当权者的头上也足以让她入伙了。",
 
 		["bm_msk_secret_richard"] = "惊世之秘 理查德",
 		["bm_msk_secret_richard_desc"] = "在犯罪地下世界流传着关于启发了夹克男的杀手的传言：一个有着出自未知组织之手的阴暗结局的杀手。当贝恩告诉夹克男惊世之秘后，他随即戴着那个似乎灵感源自于那个杀手的面具出现了。",

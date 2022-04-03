@@ -2157,7 +2157,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -2174,7 +2174,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_explosive = {
@@ -3058,7 +3058,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -3073,7 +3073,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -3198,7 +3198,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -3213,7 +3213,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -3325,7 +3325,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_b92fs", "resmod_b92fs", function(s
 	self.parts.wpn_fps_pis_beretta_m_extended.stats = {
 		value = 2,
 		concealment = -1,
-		extra_ammo = 14,
+		extra_ammo = 15,
 		reload = -2
 	}
 
@@ -3619,7 +3619,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g22c", "resmod_g22c", function(sel
 		supported = true,
 		stats = {
 			value = 6,
-			extra_ammo = 12,
+			extra_ammo = 13,
 			concealment = -1,
 			reload = -2
 		}
@@ -3684,7 +3684,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}
 	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free = {
@@ -3699,7 +3699,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}			
 	
@@ -4770,7 +4770,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 	self.parts.wpn_fps_sho_ben_b_short.stats = {
 		value = 3,
 		concealment = 1,
-		extra_ammo = -2
+		extra_ammo = -1
 	}
 	
 	--Collapsed Stock
@@ -4832,7 +4832,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -4847,7 +4847,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -4953,7 +4953,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -4968,7 +4968,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},				
 		wpn_fps_upg_a_explosive = {
@@ -5059,7 +5059,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free = {
@@ -5074,7 +5074,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}			
 	self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive = {
@@ -5493,9 +5493,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tec9", "resmod_tec9", function(sel
 	self.parts.wpn_fps_smg_tec9_m_extended.supported = true
 	self.parts.wpn_fps_smg_tec9_m_extended.stats = {
 		value = 4,
-		extra_ammo = 12,
-		reload = -1,
-		concealment = -1
+		extra_ammo = 18,
+		reload = -3,
+		concealment = -3
 	}
 	
 	--Just Bend It
@@ -5919,7 +5919,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		damage_far_mul = 0.65,
 		ammo_pickup_max_mul = 0.8,
 		ammo_pickup_min_mul = 0.8,
-		rays = 5
+		rays = 6
 	}
 	
 	--000 Buck (Free)
@@ -6541,7 +6541,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},		
 		wpn_fps_upg_a_custom_free = {
@@ -6556,7 +6556,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},				
 		wpn_fps_upg_a_explosive = {
@@ -7188,7 +7188,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hs2000", "resmod_hs2000", function
 	self.parts.wpn_fps_pis_hs2000_m_extended.supported = true
 	self.parts.wpn_fps_pis_hs2000_m_extended.stats = {
 		value = 1,
-		extra_ammo = 8,
+		extra_ammo = 12,
 		reload = -2,
 		concealment = -1
 	}
@@ -8047,7 +8047,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 	self.parts.wpn_fps_sho_aa12_mag_drum.supported = true
 	self.parts.wpn_fps_sho_aa12_mag_drum.stats = {
 		value = 1,
-		extra_ammo = 10,
+		extra_ammo = 12,
 		reload = -6,
 		spread = -1,
 		concealment = -3
@@ -8090,7 +8090,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -8105,7 +8105,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -8205,6 +8205,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_winchester1874", "resmod_wincheste
 	self.parts.wpn_fps_snp_winchester_b_long.supported = true
 	self.parts.wpn_fps_snp_winchester_b_long.stats = {
 		value = 5,
+		extra_ammo = 2,
 		spread = 1,
 		concealment = -3
 	}
@@ -9259,7 +9260,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free = {
@@ -9274,7 +9275,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}		
 	self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive = {
@@ -9950,7 +9951,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -9965,7 +9966,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},				
 		wpn_fps_upg_a_explosive = {
@@ -10786,6 +10787,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shrew", "resmod_shrew", function(s
 	self.parts.wpn_fps_pis_shrew_m_extended.supported = true
 	self.parts.wpn_fps_pis_shrew_m_extended.stats = {
 		extra_ammo = 2,
+		reload = -1,
 		concealment = -1,
 		value = 1
 	}
@@ -10825,6 +10827,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_shrew", "resmod_x_shrew", functi
 		supported = true,
 		stats = {
 			extra_ammo = 4,
+			reload = -1,
 			concealment = -1,
 			value = 1
 		}
@@ -10903,7 +10906,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -10918,7 +10921,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},					
 		wpn_fps_upg_a_explosive = {
@@ -11152,7 +11155,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}
 	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = {
@@ -11167,7 +11170,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}
 
@@ -11589,7 +11592,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -11604,7 +11607,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		}	
 	}	
@@ -11929,6 +11932,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_czech", "resmod_czech", function(s
 	}
 	
 	--Extended Mag
+	--CZECH EM
 	self.parts.wpn_fps_pis_czech_m_extended.pcs = {
 		10,
 		20,
@@ -11938,9 +11942,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_czech", "resmod_czech", function(s
 	self.parts.wpn_fps_pis_czech_m_extended.supported = true
 	self.parts.wpn_fps_pis_czech_m_extended.stats = {
 		value = 1,
-		reload = -1,
-		extra_ammo = 5,
-		concealment = -1
+		reload = -2,
+		extra_ammo = 7,
+		concealment = -2
 	}
 	
 	--Tirador Stock
@@ -11993,8 +11997,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_czech", "resmod_x_czech", functi
 		stats = {
 			value = 1,
 			reload = -1,
-			extra_ammo = 10,
-			concealment = -1
+			extra_ammo = 14,
+			concealment = -2
 		}
 	}
 	
@@ -12064,9 +12068,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_stech", "resmod_stech", function(s
 	supported = true
 	stats = {
 		value = 5,
-		reload = -1,
-		extra_ammo = 5,
-		concealment = -1
+		reload = -2,
+		extra_ammo = 10,
+		concealment = -2
 	}
 	
 	--Federales Stock
@@ -12117,9 +12121,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_stech", "resmod_x_stech", functi
 		supported = true,
 		stats = {
 			value = 5,
-			reload = -1,
-			extra_ammo = 10,
-			concealment = -1
+			reload = -2,
+			extra_ammo = 20,
+			concealment = -2
 		}
 	}
 	
@@ -12468,7 +12472,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 	self.parts.wpn_fps_snp_sbl_b_long.supported = true
 	self.parts.wpn_fps_snp_sbl_b_long.stats = {
 		value = 5,
-		concealment = -3,
+		extra_ammo = -1,
+		concealment = -2,
 		spread = 1
 	}
 	
@@ -12482,6 +12487,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 	self.parts.wpn_fps_snp_sbl_b_short.supported = true
 	self.parts.wpn_fps_snp_sbl_b_short.stats = {
 		value = 2,
+		extra_ammo = -1,
 		suppression = 10,
 		alert_size = -1
 	}
@@ -12661,7 +12667,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free = {
@@ -12676,7 +12682,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			damage_far_mul = 0.65,
 			ammo_pickup_max_mul = 0.8,
 			ammo_pickup_min_mul = 0.8,
-			rays = 5
+			rays = 6
 		}
 	}		
 	self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive = {
@@ -12716,7 +12722,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1911", "resmod_m1911", function(s
 	self.parts.wpn_fps_pis_m1911_m_extended.stats = {
 		value = 3,
 		concealment = -1,
-		extra_ammo = 4,
+		extra_ammo = 3,
 		reload = -1
 	}
 	
@@ -12856,7 +12862,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},	
 		wpn_fps_upg_a_custom_free = {
@@ -12871,7 +12877,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -13199,7 +13205,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function
 	self.parts.wpn_fps_pis_type54_m_ext.stats = {
 		value = 2,
 		extra_ammo = 5,
-		reload = -3,
+		reload = -2,
 		spread = -1,
 		concealment = -2
 	}		
@@ -13258,7 +13264,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_type54", "resmod_x_type54", func
 		stats = {
 			value = 2,
 			extra_ammo = 10,
-			reload = -3,
+			reload = -2,
 			spread = -1,
 			concealment = -2
 		},
@@ -13586,7 +13592,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},
 		wpn_fps_upg_a_custom_free = {
@@ -13601,7 +13607,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 				damage_far_mul = 0.65,
 				ammo_pickup_max_mul = 0.8,
 				ammo_pickup_min_mul = 0.8,
-				rays = 5
+				rays = 6
 			}
 		},			
 		wpn_fps_upg_a_explosive = {
@@ -16621,7 +16627,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					damage_far_mul = 0.65,
 					ammo_pickup_max_mul = 0.8,
 					ammo_pickup_min_mul = 0.8,
-					rays = 5
+					rays = 6
 				}
 			},
 			wpn_fps_upg_a_custom_free = {
@@ -16636,7 +16642,7 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					damage_far_mul = 0.65,
 					ammo_pickup_max_mul = 0.8,
 					ammo_pickup_min_mul = 0.8,
-					rays = 5
+					rays = 6
 				}
 			},			
 			wpn_fps_upg_a_explosive = {
@@ -17505,7 +17511,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					damage_far_mul = 0.65,
 					ammo_pickup_max_mul = 0.8,
 					ammo_pickup_min_mul = 0.8,
-					rays = 5
+					rays = 6
 				}
 			},	
 			wpn_fps_upg_a_custom_free = {
@@ -17520,7 +17526,7 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					damage_far_mul = 0.65,
 					ammo_pickup_max_mul = 0.8,
 					ammo_pickup_min_mul = 0.8,
-					rays = 5
+					rays = 6
 				}
 			},			
 			wpn_fps_upg_a_explosive = {

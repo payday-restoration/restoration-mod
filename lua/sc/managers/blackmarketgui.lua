@@ -369,6 +369,230 @@ function BlackMarketGui:populate_mods(data)
 	end
 end
 
+
+function BlackMarketGui:choose_weapon_mods_callback(data)
+	local dropable_mods = managers.blackmarket:get_dropable_mods_by_weapon_id(data.name, {
+		category = data.category,
+		slot = data.slot
+	})
+	local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(data.name)
+	local default_blueprint = managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
+	local new_node_data = {}
+	local cosmetic_instances = managers.blackmarket:get_cosmetics_instances_by_weapon_id(data.name)
+	local all_cosmetics = managers.blackmarket:get_cosmetics_by_weapon_id(data.name)
+
+	local weapon_id = data.name
+	local weapon_tweak = tweak_data.weapon
+	local has_type_override = weapon_tweak[ weapon_id ] and weapon_tweak[ weapon_id ].override_mod_type_name
+	
+	for id, data in pairs(all_cosmetics) do
+		if managers.blackmarket:is_weapon_skin_tam(id) then
+			all_cosmetics[id] = nil
+		end
+	end
+
+	if table.size(all_cosmetics) > 0 then
+		local inventory_tradable = managers.blackmarket:get_inventory_tradable()
+		local td = tweak_data.blackmarket.weapon_skins
+		local rtd = tweak_data.economy.rarities
+		local x_td, y_td, x_rar, y_rar, x_quality, y_quality, weapon_skin_id = nil
+
+		local function sort_func_instances(x, y)
+			x_td = td[inventory_tradable[x].entry]
+			y_td = td[inventory_tradable[y].entry]
+			x_rar = rtd[x_td.rarity]
+			y_rar = rtd[y_td.rarity]
+
+			if x_rar.index ~= y_rar.index then
+				return x_rar.index < y_rar.index
+			end
+
+			if inventory_tradable[x].entry ~= inventory_tradable[y].entry then
+				return inventory_tradable[y].entry < inventory_tradable[x].entry
+			end
+
+			x_quality = tweak_data.economy.qualities[inventory_tradable[x].quality]
+			y_quality = tweak_data.economy.qualities[inventory_tradable[y].quality]
+
+			if x_quality.index ~= y_quality.index then
+				return y_quality.index < x_quality.index
+			end
+
+			return y < x
+		end
+
+		local function sort_func_cosmetics(x, y)
+			x_td = td[x.id]
+			x_rar = rtd[x_td.rarity or "common"]
+			y_td = td[y.id]
+			y_rar = rtd[y_td.rarity or "common"]
+
+			if x_rar.index ~= y_rar.index then
+				return y_rar.index < x_rar.index
+			end
+
+			return y.id < x.id
+		end
+
+		table.sort(cosmetic_instances, sort_func_instances)
+
+		for _, instance_id in ipairs(cosmetic_instances) do
+			weapon_skin_id = inventory_tradable[instance_id].entry
+			all_cosmetics[weapon_skin_id] = nil
+		end
+
+		local all_cosmetics_sorted = {}
+
+		for id, data in pairs(all_cosmetics) do
+			if not data.is_a_color_skin then
+				table.insert(all_cosmetics_sorted, {
+					id = id,
+					data = data
+				})
+			end
+		end
+
+		table.sort(all_cosmetics_sorted, sort_func_cosmetics)
+		table.insert(new_node_data, {
+			name = "weapon_cosmetics",
+			on_create_func_name = "populate_weapon_cosmetics",
+			name_localized = managers.localization:text("bm_menu_weapon_cosmetics"),
+			category = data.category,
+			prev_node_data = data,
+			on_create_data = {
+				instances = cosmetic_instances,
+				cosmetics = all_cosmetics_sorted
+			},
+			override_slots = WEAPON_MODS_SLOTS,
+			identifier = BlackMarketGui.identifiers.weapon_cosmetic
+		})
+	end
+
+	local mods = {}
+
+	for i, d in pairs(dropable_mods) do
+		mods[i] = d
+	end
+
+	local sort_mods = {}
+
+	for id, _ in pairs(mods) do
+		table.insert(sort_mods, id)
+	end
+
+	table.sort(sort_mods, function (x, y)
+		return x < y
+	end)
+
+	for i, id in ipairs(sort_mods) do
+		local my_mods = deep_clone(mods[id])
+		local crafted = managers.blackmarket:get_crafted_category(data.category)[data.slot]
+		local factory_id = crafted.factory_id
+		local default_blueprint = managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
+		local default_mod = nil
+		local ids_id = Idstring(id)
+		
+		local fake_id = nil
+		
+		if has_type_override and has_type_override[id] then
+			fake_id = weapon_tweak[ weapon_id ].override_mod_type_name[id]
+		end
+
+		for i, d_mod in ipairs(default_blueprint) do
+			if Idstring(tweak_data.weapon.factory.parts[d_mod].type) == ids_id then
+				default_mod = d_mod
+
+				break
+			end
+		end
+
+		local sort_td = tweak_data.blackmarket.weapon_mods
+		local x_td, y_td, x_pc, y_pc = nil
+
+		table.sort(my_mods, function (x, y)
+			x_td = sort_td[x[1]]
+			y_td = sort_td[y[1]]
+			x_pc = x_td.value or x_td.pc or x_td.pcs and x_td.pcs[1] or 10
+			y_pc = y_td.value or y_td.pc or y_td.pcs and y_td.pcs[1] or 10
+			x_pc = x_pc + (x[2] and tweak_data.lootdrop.global_values[x[2]].sort_number or 0)
+			y_pc = y_pc + (y[2] and tweak_data.lootdrop.global_values[y[2]].sort_number or 0)
+			x_pc = x_pc + (x_td.sort_number or 0)
+			y_pc = y_pc + (y_td.sort_number or 0)
+
+			return x_pc < y_pc or x_pc == y_pc and x[1] < y[1]
+		end)
+
+		local mod_data = {}
+
+		for a = 1, #my_mods do
+			table.insert(mod_data, {
+				my_mods[a][1],
+				false,
+				my_mods[a][2]
+			})
+		end
+
+		mod_data.default_mod = default_mod
+		
+		if fake_id then
+			table.insert(new_node_data, {
+				on_create_func_name = "populate_mods",
+				name = id,
+				category = data.category,
+				prev_node_data = data,
+				name_localized = managers.localization:text("bm_menu_" .. fake_id),
+				on_create_data = mod_data,
+				override_slots = WEAPON_MODS_SLOTS,
+				identifier = BlackMarketGui.identifiers.weapon_mod
+			})
+		else
+			table.insert(new_node_data, {
+				on_create_func_name = "populate_mods",
+				name = id,
+				category = data.category,
+				prev_node_data = data,
+				name_localized = managers.localization:text("bm_menu_" .. id),
+				on_create_data = mod_data,
+				override_slots = WEAPON_MODS_SLOTS,
+				identifier = BlackMarketGui.identifiers.weapon_mod
+			})
+		end
+	end
+
+	new_node_data.topic_id = "bm_menu_blackmarket_title"
+	new_node_data.topic_params = {
+		item = data.name_localized
+	}
+	new_node_data.selected_tab = data.selected_tab
+	new_node_data.prev_node_data = data
+	new_node_data.show_tabs = true
+	new_node_data.panel_grid_h_mul = WEAPON_MODS_GRID_H_MUL
+	new_node_data.panel_grid_top_padding = 1 - new_node_data.panel_grid_h_mul
+	new_node_data.skip_blur = true
+	new_node_data.use_bgs = true
+
+	if type(new_node_data.selected_tab) == "string" then
+		for i, data in ipairs(new_node_data) do
+			if data.name == new_node_data.selected_tab then
+				new_node_data.selected_tab = i
+
+				break
+			end
+		end
+	end
+
+	new_node_data.open_callback_name = "set_equipped_comparision"
+	new_node_data.open_callback_params = {
+		category = data.category,
+		slot = data.slot
+	}
+	new_node_data.blur_fade = self._data and self._data.blur_fade
+	local open_node = data.open_node or self._inception_node_name or "blackmarket_node"
+
+	self:_start_crafting_weapon(data, new_node_data)
+end
+
+
 function BlackMarketGui:_get_armor_stats(name)
 	local base_stats = {}
 	local mods_stats = {}

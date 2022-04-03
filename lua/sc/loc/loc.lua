@@ -1184,6 +1184,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_standing_range"] = "Range",
 		["bm_menu_moving_range"] = "Range (Moving)",
 		["bm_menu_pickup"] = "Ammo Pickup",
+		
+		--Attachment type names--
+		["bm_menu_barrel_ext"] = "Muzzle",
+		["bm_menu_foregrip"] = "Handguard",
+		["bm_menu_vertical_grip"] = "Foregrip",
+		--Spoof types--
+		["bm_menu_frame"] = "Frame",
+		["bm_menu_whole_receiver"] = "Receiver",
+		["bm_menu_shell_rack"] = "Shell Rack",
+		["bm_menu_nozzle"] = "Nozzle",
+		["bm_menu_fuel"] = "Tank",
+		["bm_menu_cylinder"] = "Cylinder",
+		["bm_menu_model"] = "Model",
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: $passive_armor_regen",

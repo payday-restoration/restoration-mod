@@ -2053,6 +2053,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var4"}
 		self.melee_weapons[melee_id].anim_attack_left_vars = {"var3"}
 		self.melee_weapons[melee_id].anim_attack_right_vars = {"var2"}
+		self.melee_weapons[melee_id].timing_fix = {"var1"}
+		self.melee_weapons[melee_id].timing_fix_speed_mult = 1.2
 		self.melee_weapons[melee_id].expire_t = 0.9
 		self.melee_weapons[melee_id].repeat_expire_t = 0.8
 		self.melee_weapons[melee_id].melee_damage_delay = 0.45
@@ -2162,7 +2164,7 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].anim_global_param = "melee_knife"
 		self.melee_weapons[melee_id].align_objects = {"a_weapon_left"}
 		self.melee_weapons[melee_id].anim_attack_vars = {"var1", "var3", "var4"}
-		self.melee_weapons[melee_id].expire_t = 0.9
+		self.melee_weapons[melee_id].expire_t = 1.1
 		self.melee_weapons[melee_id].repeat_expire_t = 0.8
 		self.melee_weapons[melee_id].melee_damage_delay = 0.1
 		self.melee_weapons[melee_id].anim_speed_mult = 1.2
@@ -2398,6 +2400,8 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].align_objects = {"a_weapon_left","a_weapon_right"}
 		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var4"}
 		self.melee_weapons[melee_id].anim_attack_charged_vars = {"var2","var3"}
+		self.melee_weapons[melee_id].timing_fix = {"var4","var3"}
+		self.melee_weapons[melee_id].timing_fix_speed_mult = 1.2
 		self.melee_weapons[melee_id].expire_t = 0.7
 		self.melee_weapons[melee_id].repeat_expire_t = 0.35
 		self.melee_weapons[melee_id].melee_damage_delay = 0.125

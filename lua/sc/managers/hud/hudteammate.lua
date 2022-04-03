@@ -17,7 +17,7 @@ HUDTeammate.set_weapon_firemode_burst = HUDTeammate.set_weapon_firemode_burst or
 			self:set_weapon_firemode_active(firemode_auto, firemode ~= "single")
 		end
 	end
-end
+
 
 HUDTeammateVR.default_recreate_weapon_firemode = HUDTeammate.recreate_weapon_firemode
 

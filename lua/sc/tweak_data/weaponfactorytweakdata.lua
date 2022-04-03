@@ -12065,8 +12065,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_stech", "resmod_stech", function(s
 		30,
 		40
 	}
-	supported = true
-	stats = {
+	self.parts.wpn_fps_pis_stech_m_extended.supported = true
+	self.parts.wpn_fps_pis_stech_m_extended.stats = {
 		value = 5,
 		reload = -2,
 		extra_ammo = 10,

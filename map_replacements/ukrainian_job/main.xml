@@ -3,21 +3,6 @@
 		<add file="levels/ukrainian_job_res/add.xml"/>
 		<assets/>
 		<env_params color_grading="color_nice"/>
-		<include directory="levels/ukrainian_job_res">
-			<file file="world.world" type="binary"/>
-			<file file="continents.continents" type="binary"/>
-			<file file="mission.mission" type="binary"/>
-			<file file="nav_manager_data.nav_data" type="binary"/>
-			<file file="world_sounds.world_sounds" type="binary"/>
-			<file file="world_cameras.world_cameras" type="binary"/>
-			<file file="world/world.continent" type="binary"/>
-			<file file="world/world.mission" type="binary"/>
-			<file file="pc_only/pc_only.continent" type="binary"/>
-			<file file="pc_only/pc_only.mission" type="binary"/>
-			<file file="editor_only/editor_only.continent" type="binary"/>
-			<file file="editor_only/editor_only.mission" type="binary"/>
-			<file file="cover_data.cover_data" type="binary"/>
-		</include>
 		<outro_event>
 			<value_node value="Play_pln_ukranian_stage1_end_a"/>
 			<value_node value="Play_pln_ukranian_stage1_end_b"/>

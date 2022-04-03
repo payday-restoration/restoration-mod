@@ -10205,6 +10205,15 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			self.unit_categories.FBI_suit_M4_MP5.unit_types.nypd[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"
 			self.unit_categories.FBI_suit_M4_MP5.unit_types.lapd[7] = "units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1"	
 		end
+	--Halloween
+	elseif Month == "10" and restoration.Options:GetValue("OTHER/Holiday") then
+		self.unit_categories.BLACK_tank.unit_types.america[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		self.unit_categories.BLACK_tank.unit_types.russia[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		self.unit_categories.BLACK_tank.unit_types.zombie[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		self.unit_categories.BLACK_tank.unit_types.murkywater[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		self.unit_categories.BLACK_tank.unit_types.federales[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		self.unit_categories.BLACK_tank.unit_types.nypd[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
+		self.unit_categories.BLACK_tank.unit_types.lapd[1] = "units/payday2/characters/ene_bulldozer_2_hw/ene_bulldozer_2_hw"
 	end
 
 end

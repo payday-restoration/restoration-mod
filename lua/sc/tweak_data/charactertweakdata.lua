@@ -2088,8 +2088,20 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 	self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 	table.insert(self._enemy_list, "tank_titan_assault")
+
+	--Halloween Bulldozer (Black)
+	self.tank_hw_black = deep_clone(self.tank)
+	self.tank_hw_black.weapon = deep_clone(presets.weapon.normal)
+	self.tank_hw_black.custom_voicework = "tdozer"
+	self.tank_hw_black.headshot_dmg_mul = 8.875
+	self.tank_hw_black.ignore_headshot = false
+	self.tank_hw_black.melee_anims = nil
+	self.tank_hw_black.speech_prefix_p1 = "tank_hw_black"
+	self.tank_hw_black.speech_prefix_p2 = nil
+	self.tank_hw_black.speech_prefix_count = nil	
+	table.insert(self._enemy_list, "tank_hw_black")	
 	
-	--Halloween Bulldozer
+	--Halloween Bulldozer (Titan)
 	self.tank_hw = deep_clone(self.tank_titan_assault)
 	self.tank_hw.weapon = deep_clone(presets.weapon.normal)
 	self.tank_hw.ignore_headshot = false

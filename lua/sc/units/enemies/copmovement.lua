@@ -54,6 +54,8 @@ function CopMovement:init(unit)
 	CopMovement._action_variants.omnia_lpf = security_variant
 	CopMovement._action_variants.medic_summers = clone(security_variant)
 	CopMovement._action_variants.medic_summers.heal = MedicActionHeal
+	CopMovement._action_variants.tank_hw_black = clone(security_variant)
+	CopMovement._action_variants.tank_hw_black.walk = TankCopActionWalk	
 	CopMovement._action_variants.tank_titan = clone(security_variant)
 	CopMovement._action_variants.tank_titan.walk = TankCopActionWalk
 	CopMovement._action_variants.tank_titan_assault = clone(security_variant)

@@ -708,10 +708,10 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["pdth_hud_completed_challenges"] = "Completed Challenges",
 		["pdth_hud_completed_challenges_hint"] = "Completed and rewarded challenges.",
 
-		["ch_vs_desc"] = "Using the $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
-		["ch_vs_head_shots_desc"] = "Using the $weapon, defeat $count $eneType with Headshots.",
-		["ch_vs"] = "$weapons VS. $eneType $no",
-		["ch_vs_head_shots"] = "$weapon VS. $eneType HEADSHOTS $no",
+		["ch_vs_desc"] = "Using $weapon s, defeat $count $eneType. Using melee does not contribute to this challenge.",
+		["ch_vs_head_shots_desc"] = "Using the $weapon s, defeat $count $eneType with Headshots.",
+		["ch_vs"] = "$weapon s VS. $eneType $no",
+		["ch_vs_head_shots"] = "$weapon s VS. $eneType HEADSHOTS $no",
 
 		["ene_law"] = "THE WORLD",
 		["ene_law_desc"] = "hostile units",

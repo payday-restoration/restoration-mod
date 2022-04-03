@@ -17,7 +17,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
-			<var name="_tweak_table" value="tank_hw" />
+			<var name="_tweak_table" value="tank_hw_black" />
 			<var name="_default_weapon_id" value="saiga" />
 			<var name="_melee_weapon_table" value="helloween_sword" />
 		</extension>

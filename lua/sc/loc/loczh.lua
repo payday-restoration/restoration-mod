@@ -727,7 +727,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["ch_vs_desc"] = "Using the $weapon, defeat $count $eneType. Using melee does not contribute to this challenge.",
 		["ch_vs_head_shots_desc"] = "Using the $weapon, defeat $count $eneType with Headshots.",
-		["ch_vs"] = "$weapons VS. $eneType $no",
+		["ch_vs"] = "$weapon VS. $eneType $no",
 		["ch_vs_head_shots"] = "$weapon VS. $eneType HEADSHOTS $no",
 
 		["ene_law"] = "THE WORLD",

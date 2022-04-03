@@ -236,6 +236,8 @@ function CopBrain:init(unit)
 	CopBrain._logic_variants.headless_hatman.attack = TankCopLogicAttack	
 	CopBrain._logic_variants.summers = clone(security_variant)
 	CopBrain._logic_variants.summers.attack = TankCopLogicAttack
+	CopBrain._logic_variants.tank_hw_black = clone(security_variant)
+	CopBrain._logic_variants.tank_hw_black.attack = TankCopLogicAttack	
 	CopBrain._logic_variants.tank_titan = clone(security_variant)
 	CopBrain._logic_variants.tank_titan.attack = TankCopLogicAttack
 	CopBrain._logic_variants.tank_titan_assault = clone(security_variant)

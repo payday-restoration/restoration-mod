@@ -2646,7 +2646,7 @@ function WeaponTweakData:_init_stats()
 		stab_bonus = 50,
 		near_mul = 1,
 		far_mul = 2,
-		shotgun_penalty = 0.55
+		shotgun_penalty = 0.45
 	}
 
 	--Recoil multiplier. Used for stability.
@@ -3114,6 +3114,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.scar.override_mod_type_name = {
 		["foregrip"] = "extra",
 	}
+	self.x_mac10.override_mod_type_name = {
+		["lower_reciever"] = "whole_receiver",
+	}
 	self.mac10.override_mod_type_name = {
 		["lower_reciever"] = "whole_receiver",
 	}
@@ -3129,9 +3132,14 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	self.m134.override_mod_type_name = {
 		["extra"] = "whole_receiver",
 	}
-	
 	self.sparrow.override_mod_type_name = {
 		["lower_reciever"] = "model"
+	}
+	self.g36.override_mod_type_name = {
+		["foregrip"] = "forebarrelgrip"
+	}
+	self.galil.override_mod_type_name = {
+		["foregrip"] = "forebarrelgrip"
 	}
 	self.aug.override_mod_type_name = {
 		["lower_reciever"] = "stock",

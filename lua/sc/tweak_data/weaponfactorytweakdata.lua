@@ -12488,6 +12488,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sbl", "resmod_sbl", function(self)
 	self.parts.wpn_fps_snp_sbl_b_short.stats = {
 		value = 2,
 		extra_ammo = -1,
+		concealment = 1,
 		suppression = 10,
 		alert_size = -1
 	}

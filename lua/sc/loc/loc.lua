@@ -1197,6 +1197,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_fuel"] = "Tank",
 		["bm_menu_cylinder"] = "Cylinder",
 		["bm_menu_model"] = "Model",
+		["bm_menu_forebarrelgrip"] = "Barrel & Handguard",
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: $passive_armor_regen",

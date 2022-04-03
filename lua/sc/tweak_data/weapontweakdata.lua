@@ -3139,7 +3139,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		["foregrip"] = "forebarrelgrip"
 	}
 	self.galil.override_mod_type_name = {
-		["foregrip"] = "forebarrelgrip"
+		["barrel"] = "forebarrelgrip"
 	}
 	self.aug.override_mod_type_name = {
 		["lower_reciever"] = "stock",

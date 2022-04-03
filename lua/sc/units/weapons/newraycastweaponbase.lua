@@ -776,7 +776,15 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	--Cache falloff values for usage in hitmarkers.
 	self.near_falloff_distance = falloff_near
 	self.far_falloff_distance = falloff_far
+	
+	--Minimum damage multiplier when taking falloff into account
+	local minimum_damage = 0.30
+	
+	--Have a harsher falloff for Shotguns
+	if self._rays and self._rays > 1 then
+		minimum_damage = 0.05
+	end
 
 	--Compute final damage.
-	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, 0.30 * damage)
+	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, minimum_damage * damage)
 end

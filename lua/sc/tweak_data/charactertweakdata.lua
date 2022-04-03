@@ -829,7 +829,7 @@ function CharacterTweakData:_init_swat(presets)
 	
 	self.hrt = deep_clone(self.swat)
 	self.hrt.access = "fbi"
-	self.hrt.headshot_dmg_mul = 3.5
+	self.hrt.headshot_dmg_mul = 4.56
 	self.hrt.rescue_hostages = true
 	self.hrt.steal_loot = true	
 	table.insert(self._enemy_list, "hrt")

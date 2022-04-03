@@ -6114,7 +6114,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 	--Breaker 12g
 	self.boot.AMMO_MAX = 40
-	self.boot.CLIP_AMMO_MAX = 5
+	self.boot.CLIP_AMMO_MAX = 6
+	self.boot.tactical_reload = 1
 	self.boot.fire_rate_multiplier = 1.13
 	self.boot.fire_mode_data.fire_rate = 0.85
 	self.boot.single.fire_rate = 0.85

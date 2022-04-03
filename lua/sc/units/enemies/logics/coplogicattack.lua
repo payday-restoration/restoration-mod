@@ -24,7 +24,6 @@ function CopLogicAttack._upd_aim(data, my_data)
 			if e_movement_state:_is_reloading() and time_since_verify and time_since_verify < 2 then
 				if not data.unit:in_slot(16) and data.char_tweak.chatter.reload then
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "reload")
-					log("spot reload 1")
 				end
 			end
 		else
@@ -34,7 +33,6 @@ function CopLogicAttack._upd_aim(data, my_data)
 			if e_anim_data.reload and time_since_verify and time_since_verify < 2 then
 				if not data.unit:in_slot(16) and data.char_tweak.chatter.reload then
 					managers.groupai:state():chk_say_enemy_chatter(data.unit, data.m_pos, "reload")
-					log("spot reload 1")
 				end			
 			end
 		end

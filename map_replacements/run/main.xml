@@ -10,28 +10,6 @@
 			<asset name="ammo_bag"/>
 			<asset name="grenade_crate"/>
 		</assets>
-		<include directory="levels/run_res">
-			<file file="world.world" type="binary"/>
-			<file file="continents.continents" type="binary"/>
-			<file file="mission.mission" type="binary"/>
-			<file file="nav_manager_data.nav_data" type="binary"/>
-			<file file="world_sounds.world_sounds" type="binary"/>
-			<file file="world_cameras.world_cameras" type="binary"/>
-			<file file="collision/collision.continent" type="binary"/>
-			<file file="collision/collision.mission" type="binary"/>
-			<file file="editor only/editor only.continent" type="binary"/>
-			<file file="editor only/editor only.mission" type="binary"/>
-			<file file="dhruva_art/dhruva_art.continent" type="binary"/>
-			<file file="dhruva_art/dhruva_art.mission" type="binary"/>
-			<file file="backdrop/backdrop.continent" type="binary"/>
-			<file file="backdrop/backdrop.mission" type="binary"/>
-			<file file="lights/lights.continent" type="binary"/>
-			<file file="lights/lights.mission" type="binary"/>
-			<file file="world/world.continent" type="binary"/>
-			<file file="world/world.mission" type="binary"/>
-			<file file="cover_data.cover_data" type="binary"/>
-			<file file="environments/env_street.environment" type="custom_xml"/>
-		</include>
 		<outro_event>
 			<value_node value="Play_loc_run_end"/>
 		</outro_event>

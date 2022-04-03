@@ -458,11 +458,15 @@
 	</add>
 	<texture path="levels/mods/run_res/cube_lights/500018"/>
 	<add path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" type="unit">
-		<unit path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
-		<object path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
 		<material_config path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
+		<object path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
+		<unit path="units/world/props/street/concrete_barrier/concrete_barrier_stripes" unload="true"/>
 	</add>
 	<texture path="levels/mods/run_res/cubemaps/101308"/>
 	<texture path="levels/mods/run_res/cube_lights/100714"/>
 	<texture path="levels/mods/run_res/cube_lights/100762"/>
+	<add from_db="true" path="core/environments/skies/default/default" type="scene">
+		<scene path="core/environments/skies/default/default"/>
+		<material_config path="core/environments/skies/sky_cloudy_blue/sky_cloudy_blue"/>
+	</add>
 </table>

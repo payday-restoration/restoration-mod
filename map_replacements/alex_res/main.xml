@@ -2,21 +2,6 @@
 	<level ai_group_type="america" brief_id="heist_alex_1_briefing" briefing_dialog="Play_pln_rat_stage1_brief" cube="cube_apply_heist_bank" id="alex_1_res" intro_event="Play_pln_rat_stage1_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats01" max_bags="11" music="heist" name_id="heist_alex_1_hl">
 		<add file="levels/alex_1_res/add.xml"/>
 		<assets/>
-		<include directory="levels/alex_1_res">
-			<file file="world.world" type="binary"/>
-			<file file="continents.continents" type="binary"/>
-			<file file="mission.mission" type="binary"/>
-			<file file="nav_manager_data.nav_data" type="binary"/>
-			<file file="world_sounds.world_sounds" type="binary"/>
-			<file file="world_cameras.world_cameras" type="binary"/>
-			<file file="world/world.continent" type="binary"/>
-			<file file="world/world.mission" type="binary"/>
-			<file file="interior_01/interior_01.continent" type="binary"/>
-			<file file="interior_01/interior_01.mission" type="binary"/>
-			<file file="editor_only/editor_only.continent" type="binary"/>
-			<file file="editor_only/editor_only.mission" type="binary"/>
-			<file file="cover_data.cover_data" type="binary"/>
-		</include>
 		<outro_event>
 			<value_node value="Play_pln_rat_stage1_end_a"/>
 			<value_node value="Play_pln_rat_stage1_end_b"/>
@@ -38,21 +23,6 @@
 	<level ai_group_type="america" brief_id="heist_alex_2_briefing" briefing_dialog="Play_pln_rat_stage2_brief" cube="cube_apply_heist_bank" id="alex_2_res" intro_event="Play_pln_rat_stage2_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats02" max_bags="19" music="heist" name_id="heist_alex_2_hl" repossess_bags="true">
 		<add file="levels/alex_2_res/add.xml"/>
 		<assets/>
-		<include directory="levels/alex_2_res">
-			<file file="nav_manager_data.nav_data" type="binary"/>
-			<file file="world.world" type="binary"/>
-			<file file="continents.continents" type="binary"/>
-			<file file="mission.mission" type="binary"/>
-			<file file="world_sounds.world_sounds" type="binary"/>
-			<file file="world_cameras.world_cameras" type="binary"/>
-			<file file="world/world.continent" type="binary"/>
-			<file file="world/world.mission" type="binary"/>
-			<file file="pc_only/pc_only.continent" type="binary"/>
-			<file file="pc_only/pc_only.mission" type="binary"/>
-			<file file="editor_only/editor_only.continent" type="binary"/>
-			<file file="editor_only/editor_only.mission" type="binary"/>
-			<file file="cover_data.cover_data" type="binary"/>
-		</include>
 		<outro_event>
 			<value_node value="Play_pln_rat_stage2_end_a"/>
 			<value_node value="Play_pln_rat_stage2_end_b"/>
@@ -79,23 +49,6 @@
 	<level ai_group_type="america" brief_id="heist_alex_3_briefing" briefing_dialog="Play_pln_rat_stage3_brief" cube="cube_apply_heist_bank" id="alex_3_res" intro_event="Play_pln_rat_stage3_intro_a" load_screen="guis/dlcs/pic/textures/loading/job_rats03" max_bags="34" music="heist" name_id="heist_alex_3_hl">
 		<add file="levels/alex_3_res/add.xml"/>
 		<assets/>
-		<include directory="levels/alex_3_res">
-			<file file="world.world" type="binary"/>
-			<file file="continents.continents" type="binary"/>
-			<file file="mission.mission" type="binary"/>
-			<file file="nav_manager_data.nav_data" type="binary"/>
-			<file file="world_sounds.world_sounds" type="binary"/>
-			<file file="world_cameras.world_cameras" type="binary"/>
-			<file file="pc_only/pc_only.continent" type="binary"/>
-			<file file="pc_only/pc_only.mission" type="binary"/>
-			<file file="world/world.continent" type="binary"/>
-			<file file="world/world.mission" type="binary"/>
-			<file file="backdrop/backdrop.continent" type="binary"/>
-			<file file="backdrop/backdrop.mission" type="binary"/>
-			<file file="editor_only/editor_only.continent" type="binary"/>
-			<file file="editor_only/editor_only.mission" type="binary"/>
-			<file file="cover_data.cover_data" type="binary"/>
-		</include>
 		<outro_event>
 			<value_node value="Play_pln_rat_stage3_end_a"/>
 			<value_node value="Play_pln_rat_stage3_end_b"/>
@@ -174,5 +127,5 @@
 			<value_node value="50000"/>
 			<value_node value="50000"/>
 		</payout>
-	</narrative> 
+	</narrative>
 </table>

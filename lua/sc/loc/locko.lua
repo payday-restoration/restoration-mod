@@ -960,9 +960,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_piercing_heavy_desc_sc"] = "3초에 걸쳐 240의 출혈 피해를 입히는 철갑 플레셰트를 발사합니다.",
 
 		--Generic Mods--
-		["bm_wp_upg_vg_afg"] = "AFG 그립",
-		["bm_wp_upg_vg_stubby"] = "Stubby 수직 그립",
-		["bm_wp_upg_vg_tac"] = "TAC 수직 그립",
+		["bm_wp_upg_vg_afg"] = "각진 수직 손잡이",
+		["bm_wp_upg_vg_stubby"] = "단축형 수직 손잡이",
+		["bm_wp_upg_vg_tac"] = "TAC 수직 손잡이",
 
 		["bm_wp_upg_vintage_sc"] = "빈티지 탄창",
 		["bm_wp_upg_mil_sc"] = "밀스펙 탄창",
@@ -1184,6 +1184,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_standing_range"] = "사거리",
 		["bm_menu_moving_range"] = "사거리 (움직일때)",
 		["bm_menu_pickup"] = "탄약 획득량",
+
+		--Attachment type names--
+		["bm_menu_barrel_ext"] = "머즐",
+		["bm_menu_foregrip"] = "총열덮개",
+		["bm_menu_vertical_grip"] = "포어그립",
+		--Spoof types--
+		["bm_menu_frame"] = "프레임",
+		["bm_menu_whole_receiver"] = "리시버",
+		["bm_menu_shell_rack"] = "탄환 랙",
+		["bm_menu_nozzle"] = "노즐",
+		["bm_menu_fuel"] = "연료",
+		["bm_menu_cylinder"] = "실린더",
+		["bm_menu_model"] = "모델",
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "틱당 방탄복 재생량: $passive_armor_regen",

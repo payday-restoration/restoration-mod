@@ -16189,7 +16189,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),
 			taser = math.max(math.round(4 * map_scale_factor), 1),
-			boom = math.max(math.round(3 * map_scale_factor), 1),
+			boom = math.max(math.round(2 * map_scale_factor), 1),
 			spooc = math.max(math.round(4 * map_scale_factor), 1),
 			shield = math.max(math.round(4 * map_scale_factor), 1),
 			medic = math.max(math.round(4 * map_scale_factor), 1),

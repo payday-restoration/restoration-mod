@@ -227,9 +227,7 @@
 	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" force="false"/>
 	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_lightsout" force="false"/>	
 	<material_config	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf_contour" force="false"/>
-	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf"/> 
-	
-	<unit				path="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" force="false" load="false"/>	
+	<sequence_manager	path="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf"/> 	
 	
 	<texture			path="units/pd2_mod_halloween/characters/shared_textures/ene_titan_taser_df" />
 	

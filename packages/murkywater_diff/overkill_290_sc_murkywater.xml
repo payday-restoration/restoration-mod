@@ -481,7 +481,6 @@
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_df" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_omnia_lpf_nm" force="false"/>
 	<sequence_manager	path="units/pd2_dlc_vip/characters/ene_omnia_lpf/ene_omnia_lpf"/> 
-	<unit				path="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" force="false" load="false"/>	
 	
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_df" force="false" load="true"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_mask_lpf_nm" force="false" load="true"/>

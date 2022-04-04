@@ -12441,13 +12441,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}
 	elseif difficulty_index == 7 then	
 		self.enemy_spawn_groups.TIT_tanks = {
-			amount = {2, 3},
+			amount = {3, 4},
 			spawn = {
 				{
 					unit = "TIT_tank",
 					freq = 1,
 					amount_min = 1,
-					amount_max = 1,
+					amount_max = 2,
 					tactics = self._tactics.TIT_tank,
 					rank = 3
 				},
@@ -12469,13 +12469,13 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		}		
 	else
 		self.enemy_spawn_groups.TIT_tanks = {
-			amount = {3, 4},
+			amount = {4, 5},
 			spawn = {
 				{
 					unit = "TIT_tank",
 					freq = 1,
-					amount_min = 1,
-					amount_max = 1,
+					amount_min = 2,
+					amount_max = 2,
 					tactics = self._tactics.TIT_tank,
 					rank = 3
 				},
@@ -16189,7 +16189,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		self.special_unit_spawn_limits = {
 			tank = math.max(math.round(3 * map_scale_factor), 1),
 			taser = math.max(math.round(4 * map_scale_factor), 1),
-			boom = math.max(math.round(2 * map_scale_factor), 1),
+			boom = math.max(math.round(3 * map_scale_factor), 1),
 			spooc = math.max(math.round(4 * map_scale_factor), 1),
 			shield = math.max(math.round(4 * map_scale_factor), 1),
 			medic = math.max(math.round(4 * map_scale_factor), 1),

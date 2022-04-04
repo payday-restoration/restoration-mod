@@ -47,10 +47,6 @@
 	<!--Akan Gensec Tan w/ Shotgun-->
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_dw_r870/ene_akan_fbi_heavy_dw_r870_husk" force="false" load="true"/>
-	
-	<!--Akan FBI Tan w/ Shotgun-->
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_dw_r870" force="true" load="true"/>
-	<unit				path="units/pd2_dlc_mad/characters/ene_akan_fbi_heavy_r870/ene_akan_fbi_heavy_dw_r870_husk" force="true" load="true"/>
 
 	<!--Akan Gensec Tan K63 Accessory-->
 	<object				path="units/pd2_dlc_mad/characters/ene_acc_helmet_k63/ene_acc_helmet_k63" force="false"/>

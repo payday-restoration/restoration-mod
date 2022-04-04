@@ -8811,6 +8811,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}	
 	self.ultima.stats_modifiers = nil
 	self.ultima.panic_suppression_chance = 0.05	
+	self.ultima.reload_speed_multiplier = 0.75
 	
 	--Wasp-DS (FMG-9)
 	self.fmg9.categories = {"pistol"}
@@ -10015,6 +10016,29 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.hx25.stats_modifiers = {damage = 10}
 		self.hx25.reload_speed_multiplier = 1.25
 		self.hx25.swap_speed_multiplier = 1.25
+	end
+	
+	
+	if self.raygun then
+		self.raygun.use_data.selection_index = 2
+		self.raygun.AMMO_MAX = 40
+		self.raygun.supported = true
+		self.raygun.fire_mode_data.fire_rate = 0.33149171270
+		self.raygun.single.fire_rate = 0.33149171270
+		self.raygun.stats = {
+			damage = 18,
+			spread = 18,
+			recoil = 18,
+			zoom = 1,
+			concealment = 18,
+			alert_size = 2,
+			suppression = 20,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			reload = 20,
+			value = 10
+		}
+		self.raygun.panic_suppression_chance = 0.05
 	end
 
 	--Automatically generate reasonableish stats for custom weapons.

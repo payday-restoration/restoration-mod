@@ -170,3 +170,83 @@ function FPCameraPlayerBase:_horizonatal_recoil_kick(t, dt)
 
 	return r_value
 end
+
+
+--Ripped from PlayerStandard, lol
+--Will probably downsize this later if nothing other than the recoil anims are needed
+local ANIM_STATES = {
+	standard = {
+		equip = Idstring("equip"),
+		mask_equip = Idstring("mask_equip"),
+		unequip = Idstring("unequip"),
+		reload_exit = Idstring("reload_exit"),
+		reload_not_empty_exit = Idstring("reload_not_empty_exit"),
+		start_running = Idstring("start_running"),
+		stop_running = Idstring("stop_running"),
+		melee = Idstring("melee"),
+		melee_miss = Idstring("melee_miss"),
+		melee_bayonet = Idstring("melee_bayonet"),
+		melee_miss_bayonet = Idstring("melee_miss_bayonet"),
+		idle = Idstring("idle"),
+		use = Idstring("use"),
+		recoil = Idstring("recoil"),
+		recoil_steelsight = Idstring("recoil_steelsight"),
+		recoil_enter = Idstring("recoil_enter"),
+		recoil_loop = Idstring("recoil_loop"),
+		recoil_exit = Idstring("recoil_exit"),
+		melee_charge = Idstring("melee_charge"),
+		melee_charge_state = Idstring("fps/melee_charge"),
+		melee_attack = Idstring("melee_attack"),
+		melee_attack_state = Idstring("fps/melee_attack"),
+		melee_exit_state = Idstring("fps/melee_exit"),
+		melee_enter = Idstring("melee_enter"),
+		projectile_start = Idstring("throw_projectile_start"),
+		projectile_idle = Idstring("throw_projectile_idle"),
+		projectile_throw = Idstring("throw_projectile"),
+		projectile_throw_state = Idstring("fps/throw_projectile"),
+		projectile_exit_state = Idstring("fps/throw_projectile_exit"),
+		projectile_enter = Idstring("throw_projectile_enter"),
+		charge = Idstring("charge"),
+		base = Idstring("base"),
+		cash_inspect = Idstring("cash_inspect"),
+		falling = Idstring("falling"),
+		tased = Idstring("tased"),
+		tased_exit = Idstring("tased_exit"),
+		tased_boost = Idstring("tased_boost"),
+		tased_counter = Idstring("tazer_counter")
+	},
+	bipod = {
+		recoil = Idstring("bipod_recoil"),
+		recoil_steelsight = Idstring("bipod_recoil_steelsight"),
+		recoil_enter = Idstring("bipod_recoil_enter"),
+		recoil_loop = Idstring("bipod_recoil_loop"),
+		recoil_exit = Idstring("bipod_recoil_exit")
+	},
+	underbarrel = {}
+}
+
+function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
+	self:set_anims_enabled(true)
+	
+	--Fix for fire rate speed mults not applying to anims, especially whie aiming
+	--Like fuck am I doing this fix through "PlayerStandard:_check_action_primary_attack" instead
+	local equipped_weapon = self._parent_unit:inventory():equipped_unit()
+	if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
+		if alive(equipped_weapon) then
+			speed = equipped_weapon:base():fire_rate_multiplier()
+		end
+	end
+	
+	self._anim_empty_state_wanted = false
+	local result = self._unit:play_redirect(redirect_name, offset_time)
+
+	if result == self.IDS_NOSTRING then
+		return false
+	end
+
+	if speed then
+		self._unit:anim_state_machine():set_speed(result, speed)
+	end
+
+	return result
+end

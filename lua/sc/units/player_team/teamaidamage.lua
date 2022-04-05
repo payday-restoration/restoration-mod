@@ -1,3 +1,5 @@
+TeamAIDamage.is_friendly_fire = PlayerDamage.is_friendly_fire
+
 local old_damage_melee = TeamAIDamage.damage_melee
 function TeamAIDamage:damage_melee(attack_data)
 	

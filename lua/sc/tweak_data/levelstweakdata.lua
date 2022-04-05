@@ -470,8 +470,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pbr2.max_bags = 20
 	self.spa.max_bags = 8
 	self.fish.max_bags = 20
-	--White House Heist Stelf Bonus--		
+	--Increased Stelf Bonus in some heists--		
 	self.vit.ghost_bonus = 0.15
+	self.kosugi.ghost_bonus = 0.10
+	self.arm_for.ghost_bonus = 0.15
 	
 	--///SKIRMISH shit\\\--
 	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_lapd"}

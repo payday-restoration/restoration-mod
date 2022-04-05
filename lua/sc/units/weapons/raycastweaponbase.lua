@@ -218,7 +218,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	-- MUST be done at the start of the function because you may shoot a destructible body and it'll get respawned into a slotmask the decal effect won't find
 	-- i.e, you shoot a dozer's armour and destroy it, it gets moved into the slotmask for debris and therefore won't be found for the decal impact so you get a blood impact instead
 	-- so the decal effect must be queued before damage is applied
-	if not hit_unit:character_damage() or not hit_unit:character_damage()._no_blood and not hit_unit:character_damage():is_friendly_fire(user_unit) then
+	if not hit_unit:character_damage() or not hit_unit:character_damage()._no_blood and (not hit_unit:character_damage().is_friendly_fire or not hit_unit:character_damage():is_friendly_fire(user_unit)) then
 		managers.game_play_central:play_impact_flesh({
 			col_ray = col_ray,
 			no_sound = no_sound

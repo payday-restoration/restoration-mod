@@ -1439,7 +1439,6 @@ function CharacterTweakData:_init_triad(presets)
 	self.triad.tags = {"gangster"}
 	self.triad.access = "gangster"
 	self.triad.calls_in = true
-	self.triad.die_sound_event = "l2n_x01a_any_3p"
 
 	table.insert(self._enemy_list, "triad")
 end

@@ -1,3 +1,5 @@
+SentryGunDamage.is_friendly_fire = PlayerDamage.is_friendly_fire
+
 function SentryGunDamage:_apply_damage(damage, dmg_shield, dmg_body, is_local, attacker_unit, variant)
 	if dmg_shield and self._shield_health > 0 then
 		local shield_dmg = damage == "death" and self._shield_health or damage

@@ -1656,6 +1656,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 		concealment = -3
 	}
 	
+	--Default Mag.
+	self.parts.wpn_fps_pis_g18c_m_mag_17rnd.bullet_objects = {
+		amount = 1,
+		prefix = "g_bullet_"
+	}
+	
 	--(STRYK 18c) Extended Mag.
 	self.parts.wpn_fps_pis_g18c_m_mag_33rnd.pcs = {
 		10,
@@ -1669,6 +1675,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 		extra_ammo = 15,
 		concealment = -1,
 		reload = -2
+	}
+	self.parts.wpn_fps_pis_g18c_m_mag_33rnd.bullet_objects = {
+		amount = 1,
+		prefix = "g_bullet_"
 	}
 
 	--(STRYK 18c) Stock
@@ -1698,7 +1708,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 		recoil = -1,
 		concealment = 1
 	}
+	
+	self.parts.wpn_fps_pis_g18c_b_standard.animations.fire_steelsight = "recoil"
 
+	
 	--STRYK 18c Part Additions
 	--Single/Autofire Locks
 	table.insert(self.wpn_fps_pis_g18c.uses_parts, "wpn_fps_upg_i_singlefire")
@@ -2819,6 +2832,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 		concealment = -1,
 		extra_ammo = 4,
 		reload = -1
+	}
+	
+	--fix for static ironsights while ADS
+	self.wpn_fps_pis_1911.animations = {
+		reload = "reload", 
+		fire = "recoil", 
+		fire_steelsight = "recoil", 
+		magazine_empty = "last_recoil"
 	}
 
 end)
@@ -6122,6 +6143,13 @@ end)
 --Chimano Compact
 Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 
+	self.parts.wpn_fps_pis_g26_b_standard.animations = {
+		reload = "reload",
+		fire = "recoil",
+		fire_steelsight = "recoil",
+		magazine_empty = "last_recoil"
+	}
+	
 	--Striking Slide
 	self.parts.wpn_fps_pis_g26_b_custom.pcs = {
 		10,
@@ -6135,7 +6163,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		spread = 1,
 		concealment = -3
 	}
-
+	self.parts.wpn_fps_pis_g26_b_custom.animations = {
+		reload = "reload",
+		fire = "recoil",
+		fire_steelsight = "recoil",
+		magazine_empty = "last_recoil"
+	}
+	
 	--Striking Body Kit
 	self.parts.wpn_fps_pis_g26_body_custom.pcs = {
 		10,
@@ -6337,6 +6371,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_jowi", "resmod_jowi", function(sel
 			concealment = -2,
 			reload = -1
 		}
+	}
+	self.wpn_fps_jowi.override.wpn_fps_pis_g26_b_standard = {
+		animations = {
+			reload = "reload_right", 
+			reload_left = "reload_left", 
+			fire = "recoil", 
+			fire_steelsight = "recoil"}
+	}
+	self.wpn_fps_jowi.override.wpn_fps_pis_g26_b_custom = {
+		animations = {
+			reload = "reload_right", 
+			reload_left = "reload_left", 
+			fire = "recoil", 
+			fire_steelsight = "recoil"}
 	}
 	
 	--Parts
@@ -11081,6 +11129,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g18c", "resmod_x_g18c", function
 			concealment = -1,
 			reload = -2
 		}
+	}
+	
+	self.wpn_fps_pis_x_g18c.override.wpn_fps_pis_g18c_b_standard.animations = {
+		reload_left = "reload_left",
+		fire = "recoil",
+		fire_steelsight = "recoil",
+		reload_not_empty = "reload_not_empty_right",
+		reload = "reload_right",
+		reload_not_empty_left = "reload_not_empty_left",
+		magazine_empty = "last_recoil"
 	}
 
 end)

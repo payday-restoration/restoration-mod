@@ -211,13 +211,22 @@ function RaycastWeaponBase:_get_current_damage(dmg_mul)
 end
 
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound, already_ricocheted)
-	if Network:is_client() and not blank and user_unit ~= managers.player:player_unit() then
-		blank = true
-	end
+	blank = blank or Network:is_client() and user_unit ~= managers.player:player_unit() 
 
 	local hit_unit = col_ray.unit
-	local is_shield = hit_unit:in_slot(managers.slot:get_mask("enemy_shield_check")) and alive(hit_unit:parent())
 
+	-- MUST be done at the start of the function because you may shoot a destructible body and it'll get respawned into a slotmask the decal effect won't find
+	-- i.e, you shoot a dozer's armour and destroy it, it gets moved into the slotmask for debris and therefore won't be found for the decal impact so you get a blood impact instead
+	-- so the decal effect must be queued before damage is applied
+	if not hit_unit:character_damage() or not hit_unit:character_damage()._no_blood and not hit_unit:character_damage():is_friendly_fire(user_unit) then
+		managers.game_play_central:play_impact_flesh({
+			col_ray = col_ray,
+			no_sound = no_sound
+		})
+		self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
+	end
+
+	local is_shield = hit_unit:in_slot(managers.slot:get_mask("enemy_shield_check")) and alive(hit_unit:parent())
 	if alive(weapon_unit) and is_shield and weapon_unit:base()._shield_knock then
 		local enemy_unit = hit_unit:parent()
 
@@ -244,8 +253,6 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 			end
 		end
 	end
-
-	local play_impact_flesh = not hit_unit:character_damage() or not hit_unit:character_damage()._no_blood
 
 	if hit_unit:damage() and managers.network:session() and col_ray.body:extension() and col_ray.body:extension().damage then
 		local damage_body_extension = true
@@ -290,37 +297,18 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	end
 
 	local result = nil
-
 	if alive(weapon_unit) and hit_unit:character_damage() and hit_unit:character_damage().damage_bullet then
-		local is_alive = not hit_unit:character_damage():dead()
-
+		local was_alive = not hit_unit:character_damage():dead()
 		if not blank then
 			--Knock down skill now checks for whether or not a bipod is active.
 			local knock_down = weapon_unit:base()._knock_down and managers.player._current_state == "bipod" and weapon_unit:base()._knock_down > 0 and math.random() < weapon_unit:base()._knock_down
 			result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, weapon_unit:base()._use_armor_piercing, false, knock_down, weapon_unit:base()._stagger, weapon_unit:base()._variant)
 		end
 
-		local is_dead = hit_unit:character_damage():dead()
-
-		if not is_dead then
-			if not result or result == "friendly_fire" then
-				play_impact_flesh = false
-			end
-		end
-
-		local push_multiplier = self:_get_character_push_multiplier(weapon_unit, is_alive and is_dead)
-
+		local push_multiplier = self:_get_character_push_multiplier(weapon_unit, was_alive and hit_unit:character_damage():dead())
 		managers.game_play_central:physics_push(col_ray, push_multiplier)
 	else
 		managers.game_play_central:physics_push(col_ray)
-	end
-
-	if play_impact_flesh then
-		managers.game_play_central:play_impact_flesh({
-			col_ray = col_ray,
-			no_sound = no_sound
-		})
-		self:play_impact_sound_and_effects(weapon_unit, col_ray, no_sound)
 	end
 
 	return result

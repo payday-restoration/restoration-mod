@@ -498,3 +498,9 @@ function PlayerTweakData:_init_m60()
 	self.stances.m60.bipod.vel_overshot.pitch_pos = 0
 	self.stances.m60.bipod.shakers = {breathing = {amplitude = 0}}		
 end
+
+if SystemFS:exists("assets/mod_overrides/Crosskill Fixed Scale") then
+	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "crosskillscalefix", function(self)
+		self.stances.colt_1911.steelsight.shoulders.translation = Vector3(-8.61721, -8.12715, 4.09579)
+	end)
+end	

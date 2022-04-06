@@ -40,9 +40,6 @@ function CopSound:init(unit)
 		self._prefix = ("rmdc") .. "_"
 	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1") then
 		self._prefix = ("r1n") .. "_"
-	--Penthouse Triads (I don't know why but they have cop voices for some reason)
-	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_1/ene_male_triad_penthouse_1") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_2/ene_male_triad_penthouse_2") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_3/ene_male_triad_penthouse_3") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_4/ene_male_triad_penthouse_4") then
-		self._prefix = ("lt") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"
 	--Penthouse Guards
 	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2") then
 		self._prefix = ("rt") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"
@@ -80,9 +77,6 @@ function CopSound:init(unit)
 		self._prefix = ("rmdc") .. "_"
 	elseif self._unit:name() == Idstring("units/pd2_dlc_mad/characters/ene_fbi_titan_1/ene_fbi_titan_1_husk") then
 		self._prefix = ("r1n") .. "_"
-	--Penthouse Triads (I don't know why but they have cop voices for some reason)
-	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_1/ene_male_triad_penthouse_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_2/ene_male_triad_penthouse_2_husk") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_3/ene_male_triad_penthouse_3_husk") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_triad_penthouse_4/ene_male_triad_penthouse_4_husk") then
-		self._prefix = ("lt") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"
 	--Penthouse Guards
 	elseif self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_1/ene_male_security_penthouse_1_husk") or self._unit:name() == Idstring("units/pd2_dlc_pent/characters/ene_male_security_penthouse_2/ene_male_security_penthouse_2_husk") then
 		self._prefix = ("rt") .. (nr_variations and tostring(math.random(nr_variations)) or "") .. "_"

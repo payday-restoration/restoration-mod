@@ -75,7 +75,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.arm_for.ai_group_type = murkywater 
 	self.arm_for.player_style = "sneak_suit"
 	
-	self.mex.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "packages/job_mex"}
+	self.mex.package = {"levels/narratives/h_alex_must_die/stage_1/world_sounds", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds", "packages/job_mex"}
 	self.mex.ai_group_type = murkywater 
 	self.mex.player_style = "suit_sunny"
 
@@ -473,13 +473,23 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.pbr2.max_bags = 20
 	self.spa.max_bags = 8
 	self.fish.max_bags = 20
-	--Increased Stelf Bonus in some heists--		
-	self.vit.ghost_bonus = 0.15
-	self.kosugi.ghost_bonus = 0.10
-	self.arm_for.ghost_bonus = 0.15
+	--Increased Stelf Bonus in some heists--	
+	--Bain's Heists goes here--
 	self.arena.ghost_bonus = 0.20
+	self.dah.ghost_bonus = 0.15
+	self.arm_for.ghost_bonus = 0.15
+	self.kosugi.ghost_bonus = 0.10
+	--Locke's Heists goes here--
+	self.mex.ghost_bonus = 0.25
+	self.vit.ghost_bonus = 0.15
+	--The Dentist's Heists goes here--
+	self.big.ghost_bonus = 0.20
 	self.kenaz.ghost_bonus = 0.20
+	--Vlad's Heists goes here--
 	self.chca.ghost_bonus = 0.30
+	--The Butcher's Heists goes here--
+	self.friend.ghost_bonus = 0.20
+	self.crojob2.ghost_bonus = 0.20
 	
 	--///SKIRMISH shit\\\--
 	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_lapd"}

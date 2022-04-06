@@ -1,5 +1,5 @@
 <table name="GOBank_v2">
-	<level ai_group_type="america" briefing_dialog="Play_pln_cs1_brf" cube="cube_apply_heist_bank" ghost_bonus="0.1" id="roberts_v2" intro_event="Play_pln_cs1_intro_01" max_bags="14" music="heist">
+	<level ai_group_type="america" briefing_dialog="Play_pln_cs1_brf" cube="cube_apply_heist_bank" ghost_bonus="0.15" id="roberts_v2" intro_event="Play_pln_cs1_intro_01" max_bags="14" music="heist">
 		<add file="levels/roberts_v2/add.xml"/>
 		<assets>
 			<asset name="roberts_plan_a"/>

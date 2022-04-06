@@ -1692,6 +1692,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "뮤테이터를 활성화하면 경험치와 획득한 돈이 감소되고 도전과제, 대부분의 트로피 및 레벨 완료 획득을 비활성화합니다!",
+
+		--Enemy Replacers
+		["mutator_specials_override_boom"] = "Grenadiers",
+
 		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
 		["mutator_medicdozers"] = "메딕 도저",
 		["mutator_medicdozers_desc"] = "이제 메딕 도저가 생성됩니다.",

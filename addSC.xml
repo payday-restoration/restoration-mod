@@ -897,7 +897,20 @@
 	<model				path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate" />
 	<object				path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate"/>
 	<material_config	path="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate"/>
-	<!--MemeMan2 Mod-->		
+	<!--MemeMan2 Mod-->	
+
+	<!--Big Dave-->
+	<object				path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
+	<cooked_physics		path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
+	<model				path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
+	<unit				path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false" load="true"/>
+	<material_config	path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave" force="false"/>
+	<material_config	path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave_contour" force="false"/>
+	<unit				path="units/pd2_mod_dave/characters/ene_big_dave/ene_big_dave_husk" force="false" load="true"/> 
+	<texture			path="units/pd2_mod_dave/characters/shared_textures/taser_body_df"/>
+	<texture			path="units/pd2_mod_dave/characters/shared_textures/taser_body_nm"/>
+	<texture			path="units/pd2_mod_dave/characters/shared_textures/heads_atlas_df"/>
+	<texture			path="units/pd2_mod_dave/characters/shared_textures/helmets_heavy_taser_atlas_df"/>		
 	
 	<!--Omnia Buff Effect-->
 	<object				path="units/pd2_mod_omnia/characters/ene_acc_omnia_buff/ene_acc_omnia_buff" force="false"/>

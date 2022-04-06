@@ -1719,6 +1719,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "启用突变模式将减少你获得的经验和金钱，同时也会禁用成就、大多数奖杯和劫案完成次数。",
+
+		--Enemy Replacers
+		["mutator_specials_override_boom"] = "Grenadiers",
+
 		["mutator_medidozer_longdesc"] = "所有水军都将被替换为医疗兵，所有的特殊单位都将被替换为熊。",
 		["mutator_medicdozers"] = "医疗熊",
 		["mutator_medicdozers_desc"] = "在任意难度下生成医疗熊。",

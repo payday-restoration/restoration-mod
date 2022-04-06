@@ -1679,6 +1679,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "Мутаторы, которые урезают Опыт и Деньги также не будут давать достижения, большинство трофеев и не считаются за прохождение ограбления!",
+
+		--Enemy Replacers
+		["mutator_specials_override_boom"] = "Grenadiers",
+
 		["mutator_medidozer_longdesc"] = "Все обычные враги заменены на медиков, все специальные враги заменены на Бульдозеров.",
 		["mutator_medicdozers"] = "Дозеры-медики",
 		["mutator_medicdozers_desc"] = "Теперь появляются Дозеры-медики.",

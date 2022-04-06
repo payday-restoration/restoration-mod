@@ -2246,8 +2246,59 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		self.melee_weapons[melee_id].melee_damage_delay = 0.1
 		self.melee_weapons[melee_id].anim_speed_mult = 0.675
 	end	
-
-
+	
+	--melee_blunt
+	melee_anim = {
+		'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock',
+		'spatula','swagger','selfie','chac',
+		'iceaxe'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		self.melee_weapons[melee_id].anim_global_param = "melee_blunt"
+		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2"}
+		self.melee_weapons[melee_id].expire_t = 1.05
+		self.melee_weapons[melee_id].repeat_expire_t = 0.8
+		self.melee_weapons[melee_id].melee_damage_delay = 0.1
+		self.melee_weapons[melee_id].anim_speed_mult = 1
+	end	
+	self.melee_weapons.spatula.anim_speed_mult = 1.3
+	self.melee_weapons.swagger.anim_speed_mult = 1.3
+	self.melee_weapons.selfie.anim_speed_mult = 1.3
+	self.melee_weapons.chac.anim_speed_mult = 1.3
+	self.melee_weapons.iceaxe.anim_attack_vars = {"var1"}
+	self.melee_weapons.iceaxe.make_decal = true
+	self.melee_weapons.iceaxe.make_effect = true
+	
+	--melee_brick
+	--Pretty much a clone of melee_blunt but the hand hold is wider
+	melee_anim = {
+		'brick'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		self.melee_weapons[melee_id].anim_global_param = "melee_brick"
+		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2"}
+		self.melee_weapons[melee_id].expire_t = 1.05
+		self.melee_weapons[melee_id].repeat_expire_t = 0.8
+		self.melee_weapons[melee_id].melee_damage_delay = 0.1
+		self.melee_weapons[melee_id].anim_speed_mult = 1
+	end
+	
+	--melee_axe
+	melee_anim = {
+		'moneybundle','tomahawk','scalper','becker','gator','oxide','machete','bullseye','sap'
+	}
+	for i, melee_id in ipairs(melee_anim) do
+		self.melee_weapons[melee_id].anim_global_param = "melee_axe"
+		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
+		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var3","var4"}
+		self.melee_weapons[melee_id].expire_t = 0.85
+		self.melee_weapons[melee_id].repeat_expire_t = 0.7
+		self.melee_weapons[melee_id].melee_damage_delay = 0.1
+		self.melee_weapons[melee_id].anim_speed_mult = 0.95
+	end
+	self.melee_weapons.moneybundle.anim_speed_mult = 1.25
 	
 	--melee_happy
 	melee_anim = {
@@ -2280,60 +2331,6 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 		}
 	}
 	end
-	
-	--melee_blunt
-	melee_anim = {
-		'baton','oldbaton','detector','shovel','shillelagh','whiskey','morning','branding_iron','slot_lever','hammer','tenderizer','croupier_rake','shock',
-		'spatula','swagger','selfie','chac',
-		'iceaxe'
-	}
-	for i, melee_id in ipairs(melee_anim) do
-		self.melee_weapons[melee_id].anim_global_param = "melee_blunt"
-		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2"}
-		self.melee_weapons[melee_id].expire_t = 1.05
-		self.melee_weapons[melee_id].repeat_expire_t = 0.8
-		self.melee_weapons[melee_id].melee_damage_delay = 0.1
-		self.melee_weapons[melee_id].anim_speed_mult = 0.975
-	end	
-	self.melee_weapons.spatula.anim_speed_mult = 1.3
-	self.melee_weapons.swagger.anim_speed_mult = 1.3
-	self.melee_weapons.selfie.anim_speed_mult = 1.3
-	self.melee_weapons.chac.anim_speed_mult = 1.3
-	self.melee_weapons.iceaxe.anim_attack_vars = {"var1"}
-	self.melee_weapons.iceaxe.make_decal = true
-	self.melee_weapons.iceaxe.make_effect = true
-	
-	--melee_brick
-	--Pretty much a clone of melee_blunt but the hand hold is wider
-	melee_anim = {
-		'brick'
-	}
-	for i, melee_id in ipairs(melee_anim) do
-		self.melee_weapons[melee_id].anim_global_param = "melee_brick"
-		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var2"}
-		self.melee_weapons[melee_id].expire_t = 1.05
-		self.melee_weapons[melee_id].repeat_expire_t = 0.8
-		self.melee_weapons[melee_id].melee_damage_delay = 0.1
-		self.melee_weapons[melee_id].anim_speed_mult = 0.975
-	end
-	
-	--melee_axe
-	melee_anim = {
-		'moneybundle','tomahawk','scalper','becker','gator','oxide','machete','bullseye','sap'
-	}
-	for i, melee_id in ipairs(melee_anim) do
-		self.melee_weapons[melee_id].anim_global_param = "melee_axe"
-		self.melee_weapons[melee_id].align_objects = {"a_weapon_right"}
-		self.melee_weapons[melee_id].anim_attack_vars = {"var1","var3","var4"}
-		self.melee_weapons[melee_id].expire_t = 0.85
-		self.melee_weapons[melee_id].repeat_expire_t = 0.7
-		self.melee_weapons[melee_id].melee_damage_delay = 0.1
-		self.melee_weapons[melee_id].anim_speed_mult = 0.95
-	end
-	self.melee_weapons.moneybundle.anim_speed_mult = 1.25
-	
 	
 	--melee_pitchfork
 	melee_anim = {
@@ -2582,8 +2579,6 @@ function BlackMarketTweakData:_init_melee_weapons(...)
 	end
 	
 	--melee_agave
-	--NOTE: Has a really fast transition to requiping your gun. Couldn't balance it with the old swing speed in mind so I moved it to melee_axe, like the other machetes
-	--Also offscreen charge anims are boring (Hi "melee_happy"), say what you want about "melee_axe" but at least you can see it
 	melee_anim = {
 		'agave'
 	}

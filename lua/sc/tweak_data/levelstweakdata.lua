@@ -477,6 +477,9 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.vit.ghost_bonus = 0.15
 	self.kosugi.ghost_bonus = 0.10
 	self.arm_for.ghost_bonus = 0.15
+	self.arena.ghost_bonus = 0.20
+	self.kenaz.ghost_bonus = 0.20
+	self.chca.ghost_bonus = 0.30
 	
 	--///SKIRMISH shit\\\--
 	self.skm_cas.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_lapd"}

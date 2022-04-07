@@ -10,6 +10,7 @@
 		<depends_on unit="units/payday2/characters/ene_acc_mememan_2_helmet_plate/ene_acc_mememan_2_helmet_plate" />
 		<depends_on unit="units/payday2/characters/ene_acc_mememan_2_neck/ene_acc_mememan_2_neck" />
 		<depends_on unit="units/payday2/characters/ene_acc_mememan_2_throat/ene_acc_mememan_2_throat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_smg_mp9/wpn_npc_smg_mp9" />
 	</dependencies>
 
 	<extensions>

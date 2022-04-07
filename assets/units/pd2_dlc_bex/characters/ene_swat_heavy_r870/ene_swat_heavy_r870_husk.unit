@@ -6,6 +6,7 @@
 	<dependencies>
 		
 		<depends_on unit="units/payday2/characters/ene_acc_shield_helmet/ene_acc_shield_helmet" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m500/wpn_npc_m500" />
 	</dependencies>
 
 	<extensions>

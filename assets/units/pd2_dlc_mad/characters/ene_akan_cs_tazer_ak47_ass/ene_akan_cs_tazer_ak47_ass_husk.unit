@@ -7,6 +7,7 @@
 		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
 		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" />
 <!-- 		<depends_on unit="units/payday2/characters/ene_acc_tazer_helmet/ene_acc_tazer_helmet" /> -->
 	</dependencies>
 

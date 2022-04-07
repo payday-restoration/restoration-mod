@@ -13,6 +13,7 @@
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/debris/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_zeal_bulldozer_3_sc/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" />
 	</dependencies>
 
 	<extensions>

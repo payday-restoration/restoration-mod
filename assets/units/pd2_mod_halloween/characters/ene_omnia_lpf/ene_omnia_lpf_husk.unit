@@ -4,7 +4,7 @@
 	<object file="units/pd2_mod_halloween/characters/ene_omnia_lpf/ene_omnia_lpf" />
 
 	<dependencies>
-		
+		<depends_on unit="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" />
 	</dependencies>
 
 	<extensions>

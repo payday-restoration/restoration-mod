@@ -6,6 +6,7 @@
 	<dependencies>
 		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_shield_akan_shield_small/ene_acc_shield_akan_small" />
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_c45/wpn_npc_c45" />
 	</dependencies>
 
 	<extensions>

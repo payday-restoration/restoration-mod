@@ -5,6 +5,7 @@
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_asval/wpn_npc_asval" />
 	</dependencies>
 
 	<extensions>

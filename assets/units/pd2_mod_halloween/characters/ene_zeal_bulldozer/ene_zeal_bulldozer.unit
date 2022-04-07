@@ -14,6 +14,7 @@
 		<depends_on unit="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_neck/ene_acc_bulldozer_neck" />
 		<depends_on unit="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/pd2_mod_halloween/characters/ene_acc_zeal_bulldozer_throat/ene_acc_bulldozer_throat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249" />
 	</dependencies>
 
 	<extensions>
@@ -25,7 +26,9 @@
 			<var name="_stats_name" value="tank_skull" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
-		<extension name="brain" class="CopBrain" />
+		<extension name="brain" class="CopBrain">
+			<var name="entrance_chatter_cue" value="entrance_elite" />
+		</extension>
 		<extension name="anim_data" class="PlayerAnimationData" />
 		<extension name="character_damage" class="TankCopDamage">
 			<var name="_head_body_name" value="head" />

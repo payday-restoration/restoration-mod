@@ -2,7 +2,10 @@
 <unit type="being" slot="12">
 	<anim_state_machine name="anims/units/enemies/cop/cop_machine" />
 	<object file="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_r870/ene_akan_fbi_swat_r870" />
-
+	<dependencies>
+		
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
+	</dependencies>
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >

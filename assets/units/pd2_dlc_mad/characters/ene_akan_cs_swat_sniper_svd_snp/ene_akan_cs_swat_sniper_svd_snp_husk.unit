@@ -4,7 +4,7 @@
 	<object file="units/pd2_dlc_mad/characters/ene_akan_cs_swat_sniper_svd_snp/ene_akan_cs_swat_sniper_svd_snp" />
 
 	<dependencies>
-		
+		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" />
 	</dependencies>
 
 	<extensions>

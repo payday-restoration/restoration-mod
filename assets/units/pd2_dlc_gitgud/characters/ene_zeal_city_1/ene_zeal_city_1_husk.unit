@@ -4,7 +4,8 @@
 	<object file="units/pd2_dlc_gitgud/characters/ene_zeal_city_1/ene_zeal_city_1" />
 
 	<dependencies>		
-		</dependencies>
+		<depends_on unit="units/payday2/weapons/wpn_npc_s553/wpn_npc_s553" />
+	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />

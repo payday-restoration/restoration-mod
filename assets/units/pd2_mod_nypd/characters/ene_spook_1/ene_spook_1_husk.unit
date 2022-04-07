@@ -8,7 +8,8 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_baton/ene_acc_baton" />
 		<depends_on unit="units/pd2_mod_nypd/characters/ene_spook_1/debris/ene_spook_head_debris" />
-		<depends_on unit="units/pd2_mod_nypd/characters/ene_spook_1/debris/ene_spook_upper_body_debris" />		
+		<depends_on unit="units/pd2_mod_nypd/characters/ene_spook_1/debris/ene_spook_upper_body_debris" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_mp5_tactical/wpn_npc_mp5_tactical" />		
 	</dependencies>
 
 	<extensions>

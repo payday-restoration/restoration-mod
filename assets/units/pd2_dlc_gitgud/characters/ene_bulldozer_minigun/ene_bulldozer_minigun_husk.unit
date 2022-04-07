@@ -13,6 +13,7 @@
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_neck/ene_acc_bulldozer_minigun_neck" />
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_stomache/ene_acc_bulldozer_minigun_stomache" />
 		<depends_on unit="units/pd2_dlc_drm/characters/ene_acc_bulldozer_minigun_throat/ene_acc_bulldozer_minigun_throat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
 	</dependencies>
 
 	<extensions>

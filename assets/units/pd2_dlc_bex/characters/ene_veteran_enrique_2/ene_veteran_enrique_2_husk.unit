@@ -5,6 +5,7 @@
 
 	<dependencies>
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_x_c45/wpn_npc_x_c45" />
 	</dependencies>
 
 	<extensions>

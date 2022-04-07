@@ -5,6 +5,7 @@
 	<dependencies>
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
+		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_ak47/wpn_npc_ak47" />
 	</dependencies>
 
 	<extensions>

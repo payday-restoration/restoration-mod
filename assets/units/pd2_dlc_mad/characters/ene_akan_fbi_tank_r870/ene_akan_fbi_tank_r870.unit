@@ -14,6 +14,7 @@
 		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_bulldozer_neck_akan_1/ene_acc_bulldozer_neck_akan_1" />
 		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_bulldozer_stomache_akan_1/ene_acc_bulldozer_stomache_akan_1" />
 		<depends_on unit="units/pd2_dlc_mad/characters/ene_acc_bulldozer_throat_akan_1/ene_acc_bulldozer_throat_akan_1" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
 	</dependencies>
 
 	<extensions>

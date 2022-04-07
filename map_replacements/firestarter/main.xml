@@ -1,5 +1,5 @@
-<table name="firestarter_res">
-	<level ai_group_type="America" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_res" intro_event="Play_pln_firestarter_stage1_intro_a" max_bags="50" music="heist" name_id="heist_firestarter_1_hl" player_style="loud_suit">
+<table name="firestarter_rant">
+	<level ai_group_type="America" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_rant" intro_event="Play_pln_firestarter_stage1_intro_a" max_bags="70" music="heist" name_id="heist_firestarter_1_hl" player_style="loud_suit">
 		<add file="levels/firestarter_1_rant/add.xml"/>
 		<assets/>
 		<outro_event>
@@ -20,7 +20,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="America" brief_id="heist_firestarter_2_briefing" briefing_dialog="Play_pln_firestarter_stage2_brief" cube="cube_apply_heist_bank" ghost_bonus="0.05" id="firestarter_2_res" intro_event="Play_pln_firestarter_stage2_intro_a" max_bags="60" music="heist" name_id="heist_firestarter_2_hl" player_style="sneak_suit">
+	<level ai_group_type="America" brief_id="heist_firestarter_2_briefing" briefing_dialog="Play_pln_firestarter_stage2_brief" cube="cube_apply_heist_bank" id="firestarter_2_rant" intro_event="Play_pln_firestarter_stage2_intro_a" max_bags="80" music="heist" name_id="heist_firestarter_2_hl" player_style="sneak_suit">
 		<add file="levels/firestarter_2_rant/add.xml"/>
 		<assets/>
 		<outro_event>
@@ -43,7 +43,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="America" brief_id="heist_firestarter_3_briefing" briefing_dialog="Play_pln_firestarter_stage3_brief" cube="cube_apply_heist_bank" ghost_bonus="0.15" id="firestarter_3_res" intro_event="Play_pln_firestarter_stage3_intro_a" max_bags="108" music="heist" name_id="heist_firestarter_3_hl">
+	<level ai_group_type="America" brief_id="heist_firestarter_3_briefing" briefing_dialog="Play_pln_firestarter_stage3_brief" cube="cube_apply_heist_bank" id="firestarter_3_rant" intro_event="Play_pln_firestarter_stage3_intro_a" max_bags="128" music="heist" name_id="heist_firestarter_3_hl" player_style="generic">
 		<add file="levels/firestarter_3_rant/add.xml"/>
 		<assets/>
 		<mission_data>
@@ -66,9 +66,9 @@
 	</level>
 	<narrative brief_id="heist_firestarter_crimenet" briefing_event="hct_firestarter_brf" contact="hector" custom="true" icon="guis/dlcs/bro/textures/pd2/crimenet/firestarter_01" id="firestarter" jc="50" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" name_id="heist_firestarter">
 		<chain>
-			<table level_id="firestarter_1_res" type="d" type_id="heist_type_hijack"/>
-			<table level_id="firestarter_2_res" type="d" type_id="heist_type_stealth"/>
-			<table level_id="firestarter_3_res" mission="default" type="d" type_id="heist_type_knockover">
+			<table level_id="firestarter_1_rant" type="d" type_id="heist_type_hijack"/>
+			<table level_id="firestarter_2_rant" type="d" type_id="heist_type_stealth"/>
+			<table level_id="firestarter_3_rant" mission="default" type="d" type_id="heist_type_knockover">
 				<mission_filter>
 					<value_node value="5"/>
 				</mission_filter>

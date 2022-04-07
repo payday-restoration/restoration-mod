@@ -46,7 +46,7 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				add = debug_short_add,
 				id = "firestarter_2_rant",
 				icon = "csm_fs_2",
-				level = tweak_data.narrative.stages.firestarter_2_res
+				level = tweak_data.narrative.stages.firestarter_2_rant
 			},
 			{
 				stage_id = "hox_3",
@@ -293,7 +293,7 @@ function CrimeSpreeTweakData:init_missions(tweak_data)
 				add = debug_med_add,
 				id = "firestarter_1_rant",
 				icon = "csm_fs_1",
-				level = tweak_data.narrative.stages.firestarter_1_res
+				level = tweak_data.narrative.stages.firestarter_1_rant
 			},
 			{
 				stage_id = "nail",

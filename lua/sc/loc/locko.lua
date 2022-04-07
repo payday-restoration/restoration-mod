@@ -1,13 +1,13 @@
 Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_es_boost"] = "부스트",
-		["menu_es_crew"] = "동료",
-		["menu_es_personal"] = "개인",
-		["menu_es_bad"] = "나쁨",
-		["menu_es_other"] = "기타",
-		["RestorationPDTHHudNeeded"] = "PD:TH HUD REBORN이 필요합니다!",
-		["menu_paygrade"] = "급여 등급: ",
-		["menu_diffgrade"] = "난이도: ",
+		["menu_es_boost"] = "Boost",
+		["menu_es_crew"] = "Crew",
+		["menu_es_personal"] = "Personal",
+		["menu_es_bad"] = "Bad",
+		["menu_es_other"] = "Other",
+		["RestorationPDTHHudNeeded"] = "PD:TH HUD REBORN IS REQUIRED!",
+		["menu_paygrade"] = "Pay grade: ",
+		["menu_diffgrade"] = "Difficulty: ",
 		["menu_utility_radial_menu_name"] = "Utility Radial Menu",
 		["menu_utility_radial_menu_desc"] = "Open the Utility Menu",
 
@@ -18,7 +18,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["dialog_show_overhaul_dialog"] = "You are DISABLING the Complete Overhaul. It is typically NOT RECOMMENDED to do this, and you should instead REMOVE the mod from your mods folder if you intend not to use the Overhaul actively.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",
 		["dialog_enable_overhaul_dialog"] = "You are ENABLING the Complete Overhaul. The Overhaul should typically remain ON at all times, and only be disabled by removing the mod from your mods folder.\n\nYour game will close automatically in $TIME seconds, or when you press OK.",	
 
-		["res_saveboost"] = "$BTN_INTERACT 키를 길게 눌려 레벨 100으로 올립니다.",
+		["res_saveboost"] = "$BTN_INTERACT 키를 길게 눌려 레벨 100으로 올리기.",
 
 		["RestorationModOptionsButtonTitleID"] = "레스트레이션 모드 옵션",
 		["RestorationModOptionsButtonDescID"] = "레스트레이션 모드의 옵션.",
@@ -158,7 +158,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["wheresthevan"] = "Where's The Van",
 		["menu_jukebox_heist_ponr"] = "돌아갈 수 없는 지점",
 		["RestorationModPaintingsTitleID"] = "미사용된 미술관 그림",
-		["RestorationModPaintingsDescID"] = "아트 갤러리에서 미사용된 그림이 생성되는 기능을 활성화하거나 비활성화합니다. 호스트만 보입니다.",
+		["RestorationModPaintingsDescID"] = "아트 갤러리에서 미사용된 그림이 생성되는 기능을 활성화하거나 비활성화합니다. 오직 호스트에게만 보입니다.",
 		["RestorationModMainHUDTitleID"] = "알파 HUD 켜기/끄기",
 		["RestorationModMainHUDDescID"] = "알파 HUD를 완전히 활성화 또는 비활성화합니다.",
 		["RestorationModWaypointsTitleID"] = "알파 웨이포인트",
@@ -204,9 +204,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModPauseTitleID"] = "알파 일시 중지 메뉴",
 		["RestorationModPauseDescID"] = "알파 일시 중지 메뉴를 활성화하거나 비활성화합니다.",
 
-		["menu_support"] = "오버홀 가이드/지원",
-		["menu_support_help"] = "레스트레이션 모드의 오버홀 가이드를 보고 지원을 받거나 팀원을 찾을 수 있습니다.",
-		["menu_manual_header"] = "자리 표시기 텍스트",
+		["menu_support"] = "Overhaul Guide/Support",
+		["menu_support_help"] = "View the guide for Restoration Mod's Overhaul, get support, find crew mates.",
+		["menu_manual_header"] = "Placeholder Text",
 		["hud_assault_alpha"] = "경찰 타격대",
 		["hud_loot_secured_title"] = "전리품 확보!",
 		["debug_none"] = "목표",
@@ -219,7 +219,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_framing_frame_3"] = "오전 2:20, 고층 아파트",
 		["restoration_level_data_election_day_1"] = "오후 12:37, 39번 부두",
 		["restoration_level_data_election_day_2"] = "오전 8:10, 저장 창고",
-		["restoration_level_data_election_day_3"] = "안녕하세요! 게임 플레이 중 이 문자열을 발견하면 레스트레이션 팀에 신고하세요! 감사합니다!",
+		["restoration_level_data_election_day_3"] = "안녕하세요! 만약 게임 플레이 중 이 문자열을 발견하면 레스트레이션 팀에 신고하세요! 감사합니다!",
 		["restoration_level_data_election_day_3_skip1"] = "오후 4:25, 국회 저축은행",
 		["restoration_level_data_election_day_3_skip2"] = "오후 3:25, 국회 저축은행",
 		["restoration_level_data_watchdogs_1"] = "오후 4:10, 고기 트럭",
@@ -310,7 +310,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_chew"] = "오후 5:25, DC 외부 - 움직이는 기차!",
 		["restoration_level_data_flat"] = "오후 4:02, 프로젝트 - 차베스의 집",
 		["restoration_level_data_chill"] = "오후 1:00, 세이프하우스",
-		["restoration_level_data_chill_combat"] = "오후 1:00, 세이프하우스 - 경찰 습격!",
+		["restoration_level_data_chill_combat"] = "오후 1:00, 세이프하우스 - 경찰들의 습격!",
 		["restoration_level_data_help"] = "다이얼을 만지지 마라. 이제 시작일 뿐이니.",
 		["restoration_level_data_friend"] = "오후 4:30, 마이애미 - 엘 푸레이디스 맨션",
 		["restoration_level_data_fish"] = "오후 7:30, 뉴욕시 외곽 - '레테' 요트",
@@ -319,7 +319,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_run"] = "오전 11:00, 업타운 - 이중 교차로",
 		["restoration_level_data_glace"] = "오후 10:45, 그린 브릿지 - 남쪽",
 		["restoration_level_data_dah"] = "오전 1:30, 22층 - 가넷 그룹 고층 빌딩",
-		["restoration_level_data_hvh"] = "틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡. 틱, 톡.",
+		["restoration_level_data_hvh"] = "짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍. 짹, 깍.",
 		["restoration_level_data_wwh"] = "시간 불명, 알래스카 어딘가...",
 		["restoration_level_data_rvd1"] = "시간 기밀, 위치 기밀",
 		["restoration_level_data_rvd2"] = "시간 기밀, 위치 기밀",
@@ -370,12 +370,12 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["menu_contacts_shatter"] = "Crime.net 계약자",
 		
-		["heist_contact_jackal_description"] = "자칼은 젠섹에서 소속했었지만 젠섹 및 옴니아와 관련된 인신매매 사건 이후 그만두었습니다.\n\n지금은 Crime.net에서 소속하여 싸움을 그들의 문으로 데려갑니다.",
+		["heist_contact_jackal_description"] = "자칼은 젠섹에서 소속되었지만 젠섹 및 옴니아와 관련된 인신매매 사건 이후 그만두었습니다.\n\n지금은 Crime.net에서 소속하여 싸움을 그들의 문으로 데려갑니다.",
 		
-		["heist_contact_akashic_description"] = "이전에 헥터 모랄레스 아래에서 속해있는 고위 간부였던 니콜라스 '니코' 르네는 현재 미국에서 시날론 카르텔의 잔당을 지휘하고 있습니다.\n그들의 수는 적고 더 큰 콜롬비아 카르텔은 그들을 돕거나 Crime.net과의 관계를 회복할 의도가 없었습니다.\n\n동부 해안에서 활동하는 다양한 소규모 갱단을 흡수하고 Crime.net과 동맹을 맺은 그는 서비스에 대한 대가로 자원을 제공합니다.",
+		["heist_contact_akashic_description"] = "이전에 헥터 모랄레스 아래에서 속해있는 고위 간부였던 니콜라스 '니코' 르네는 현재 미국에서 시날론 카르텔의 잔당을 지휘하고 있습니다.\n한때 그들의 인원은 적었고 더 큰 콜롬비아 카르텔은 그들을 돕거나 Crime.net과의 관계를 회복할 의도가 없었지만.\n\n동부 해안에서 활동하는 다양한 소규모 갱단들을 흡수하고 Crime.net과 동맹을 맺은 그는 서비스에 대한 대가로 자원을 제공합니다.",
 
-		["bm_msk_shatter_true"] = "샤터",
-		["bm_msk_shatter_true_desc"] = "은밀한 어조로만 말했던 전설의 마스크입니다.\n\n물론, 이건 단지 복제품일 뿐입니다.\n\n실제보다 훨씬 더 특별한 것이 있지만 진짜도 그만큼 좋아할 거라 생각됩니다.\n\n불사조는 진정으로 죽일 수 없는 영원한 존재인 재생을 상징합니다. 하나를 내리치려고 하면 화염과 연소의 멋진 쇼로 반격합니다.",
+		["bm_msk_shatter_true"] = "Shatter",
+		["bm_msk_shatter_true_desc"] = "The legendary mask that has only been spoken of in hushed tones.\n\nOf course, it's just a duplicate.\n\nThere's something much more special about the real one, but I think you'll like a copy just as much.\n\nThe Phoenix symbolizes re-birth, a timeless being that can never truly be killed.  Attempting to smite one down, it will strike back in an awesome show of flames and combustion.",
 
 		["menu_l_global_value_veritas"] = "레스트레이션 모드",
 		["menu_l_global_value_veritas_desc"] = "이 상품은 레스트레이션 모드 아이템입니다!",
@@ -384,56 +384,56 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 
 		["menu_asset_wet_intel"] = "정보",
 		["menu_asset_risk_murky"] = "머키워터 용병들",
-		["menu_asset_risk_bexico"] = "연방 경찰",
-		["menu_asset_risk_zombie"] = "좀비들의 대응",
+		["menu_asset_risk_bexico"] = "연방경찰",
+		["menu_asset_risk_zombie"] = "조옴비들의 대으응",
 		["menu_asset_wet_boat"] = "보트",
-		["menu_asset_wet_boat_desc"] = "확보 및 탈출 할 수 있는 보트를 삽니다",
+		["menu_asset_wet_boat_desc"] = "전리품 확보 및 탈출 할 수 있는 보트를 삽니다",
 
 		["bm_msk_canada"] = "하키 지옥",
-		["bm_msk_canada_desc"] = "아무 것도 남기지 마세요. 더위가 닥쳐도 원하는 시간에 원하는 것을 위해 싸울 수 있습니다. (아님 열압폭발이 일어나더라도.)",
+		["bm_msk_canada_desc"] = "아무 것도 남기지 마세요. 열기가 닥쳐와도 원하는게 있다면 원하는 것을 위해 싸우십시오. (아님 그게 열압폭발 일지라도)",
 		["bm_msk_jsr"] = "그래피티 부인",
-		["bm_msk_jsr_desc"] = "진정한 예술가에 의해 만들어졌습니다. 낙서를 청소하는 것은 책을 태우는 것과 같죠?\n\n예술은 예술입니다, 그것을 존중하십시오.",
+		["bm_msk_jsr_desc"] = "진정한 예술가에 의해 만들어졌습니다. 낙서를 청소하는 것은 책을 태우는 것과 같습니다. 그렇죠?\n\n예술은 예술입니다, 그것을 존중하십시오.",
 		["bm_msk_jsrf"] = "미스터 그래피티",
-		["bm_msk_jsrf_desc"] = "그래피티는 이야기를 전합니다. 추운 도시에서 예술가가 된다는 것은 고통스러운 이야기일 수 있습니다.\n\n그래피티는 이 이야기를 책처럼 들려줍니다. 당신은 그들을 가장 잘 읽을 것입니다.",
+		["bm_msk_jsrf_desc"] = "그래피티는 이야기를 전합니다. 추운 도시에서 예술가가 된다는 것은 고통스러운 이야기라는걸요.\n\n그래피티는 이 이야기를 책처럼 들려줍니다. 당신은 그걸 가장 잘 읽을 것입니다.",
 		["bm_msk_courier_stash"] = "전리품 가방",
 		["bm_msk_courier_stash_desc"] = "몇 백 달러짜리 지폐를 몇 장 더 들고 싶은데 주머니에 여유가 없다면 이 마스크가 도움이 될 것입니다.",
 
 		["bm_msk_female_mask"] = "표준 마스크 (여)",
 		["bm_msk_female_mask_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.",
 		["bm_msk_female_mask_blood"] = "회수된 마스크 (여)",
-		["bm_msk_female_mask_blood_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.\n\n이것은 옴니아 창고에서 발생한 강도 사건의 여파로 발견되었으며, 그 곳에 남은 것은 시체와 피뿐이었습니다.\n\n어두워지기 전 팀원들의 마지막 메시지는 '에리트 프리미엄 생귀인 생텀''이었습니다.",
+		["bm_msk_female_mask_blood_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.\n\n이것은 옴니아 창고에서 발생한 강도 사건의 여파로 발견되었으며, 그곳에 남은 것은 시체와 피뿐이었습니다.\n\n어두워지기 전 팀원들의 마지막 메시지는 ''에리트 프리미엄 생귀인 생텀''이었습니다.",
 		["bm_msk_female_mask_clown"] = "로지",
 		["bm_msk_female_mask_clown_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.\n\n이것은 로지라는 별명의 하이스터가 착용했지만, 그녀는 요즘엔 새 마스크을 쓰고 있습니다.\n\n영상에서 그녀는 완전히 무장하지 않은 SWAT의 전체 분대를 쓰러뜨리는 것이 보였습니다.",
 		["bm_msk_male_mask"] = "표준 마스크 (남)",
 		["bm_msk_male_mask_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.",
 		["bm_msk_male_mask_blood"] = "회수된 마스크 (남)",
-		["bm_msk_male_mask_blood_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.\n\n이것은 옴니아 창고에서 발생한 강도 사건의 여파로 발견되었으며, 그 곳에 남은 것은 시체와 피뿐이었습니다.\n\n어두워지기 전 팀원들의 마지막 메시지는 '에리트 프리미엄 생귀인 생텀''이었습니다.",
+		["bm_msk_male_mask_blood_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.\n\n이것은 옴니아 창고에서 발생한 강도 사건의 여파로 발견되었으며, 그 곳에 남은 것은 시체와 피뿐이었습니다.\n\n어두워지기 전 팀원들의 마지막 메시지는 ''에리트 프리미엄 생귀인 생텀''이었습니다.",
 		["bm_msk_male_mask_clown"] = "크로스",
-		["bm_msk_male_mask_clown_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.\n\n이것은 크로스라는 별명을 사용하는 하이스터가 착용했지만, 그는 요즘엔 새 마스크을 쓰고 있습니다.\n\n재능 있는 명사수인 그는 한때 5초 동안 4대의 장갑차를 격파했습니다.",
+		["bm_msk_male_mask_clown_desc"] = "CRIMENET에서 제공하는 표준 마스크입니다.\n\n촘촘한 소재로 헐렁하지도 않고, 그렇다고 쓰기도 쉽지 않습니다.\n\n이것은 크로스라는 별명을 사용하는 하이스터가 착용했지만, 그는 요즘엔 새 마스크을 쓰고 있습니다.\n\n재능 있는 명사수인 그는 한때 5초 동안 4대의 장갑차를 격파했었습니다.",
 
 		["bm_msk_twister_mask"] = "미스터리 맨",
-		["bm_msk_twister_mask_desc"] = "이 마스크 뒤에 누가 있는지는 미스터리입니다.\n\n모르는 사람일 수도 있고, 오랫동안 알고 지낸 사람일 수도 있습니다.",
+		["bm_msk_twister_mask_desc"] = "이 마스크 뒤에 누가 있는지는 미스터리입니다.\n\n모르는 사람일 수도 있고, 당신이 오랫동안 알고 지내던 사람일 수도 있습니다.",
 		["bm_msk_voodoo_mask"] = "흑마법",
-		["bm_msk_voodoo_mask_desc"] = "폭격 공습 당한 정글 폐허에서 발견된 이 마스크는 환경과 대학살을 견뎌냈고 지금은 징조로 알려져 있습니다.\n\n당신이 가장 필요로 할 때 당신을 찾아내고 파괴를 견딜 수 있는 행운을 불러일으킬 것입니다.\n\n하지만 이건 물어봐야 합니다. 비용은 얼마입니까?",
+		["bm_msk_voodoo_mask_desc"] = "폭격 공습을 당한 정글 폐허에서 발견된 이 마스크는 환경과 대학살을 견뎌냈고 지금은 징조로 알려져 있습니다.\n\n당신이 가장 필요로 할 때 당신을 찾아내고 파괴를 견딜 수 있는 행운을 불러일으킬 것입니다.\n\n하지만 이건 물어봐야 합니다. 비용은 얼마입니까?",
 
 		["bm_msk_f1"] = "X1 헬멧",
-		["bm_msk_f1_desc"] = "고속도로에서 속도를 내고 붐비는 거리에서 고무를 태울 때 보호 장비를 착용하십시오.\n\n이건 심한 추락으로부터 당신을 보호 할 수 있지만 확실히 총알에는 먹히지 않습니다.",
-		["bm_msk_f1_b"] = "X1 헬멧 (깨긋함)",
-		["bm_msk_f1_b_desc"] = "고속도로에서 속도를 내고 붐비는 거리에서 고무를 태울 때 보호 장비를 착용하십시오.\n\n이건 심한 추락으로부터 당신을 보호 할 수 있지만 확실히 총알은 먹히지 않습니다.\n\n이것은 브랜드 스티커가 없는 헬멧의 복제품으로, 멋진 차량 무리와 함께 잠긴 곳에서 발견되었습니다.\n\n이것을 편리하게 보관하면 자신의 차를 운전할 기회를 얻을 수 있습니다.",
+		["bm_msk_f1_desc"] = "고속도로에서 속도를 내고 붐비는 거리에서 고무를 태울 때 보호 장비를 착용하십시오.\n\n이건 심한 추락으로부터 당신을 보호 할 수 있지만 총알에는 확실히 보호되지 않습니다.",
+		["bm_msk_f1_b"] = "X1 Helmet (Clean)",
+		["bm_msk_f1_b_desc"] = "When speeding down highways & burning rubber through crowded streets, make sure you wear protection.\n\nIt might protect you from a nasty fall -- but definitely not bullets.\n\nThis is a duplicate of the helmet, without those brand stickers on it, found in a lockup with a bunch of fancy vehicles.\n\nKeep this handy, and you might get the chance to drive one of your own.",
 		["bm_msk_sweettooth"] = "스위트 튜",
 		["bm_msk_sweettooth_desc"] = "스위트 튜, 본명 마커스 '누들' 케인은 Twisted Metal 비디오 게임 시리즈의 캐릭터입니다. 스위트 튜는 전투용 아이스크림 트럭을 운전하는 살인자 광대로 가장 잘 알려져 있습니다.\n\n한때 정신병원에서 탈출한 적이 있다고 합니다. 이제 그는 범죄의 삶을 살고 있습니다.",
 
 		["bm_msk_wolf_stone"] = "스톤콜드 울프",
-		["bm_msk_wolf_stone_desc"] = "그가 가장 좋아하는 매체의 범죄를 연기하면서 처음으로 가장자리를 넘어섰을 때의 울프의 원래 마스크, 이 마스크는 비디오 게임 'Hyper Heisting'에서 영감을 받아 강도 사건에서 잃어버린 것으로 생각되었습니다.\n\n갱단의 초기 작업의 여파로 마스크가 다시 나타났고 베인의 동료 중 한 명이 세이프하우스로 가져갔습니다.\n\n마스크의 원래 패턴은 시간이 지남에 따라 부분적으로 닳았으며 아마도 울프의 정신 안정감이 감소한 것을 반영한 것일 수 있습니다.",
+		["bm_msk_wolf_stone_desc"] = "그가 가장 좋아하는 매체의 범죄를 연기하면서, 처음으로 가장자리를 넘어섰을 때의 울프의 원래 마스크입니다. 이 마스크는 강도 사건에서 잃어버린 것으로 생각되었고. 비디오 게임 'Hyper Heisting'에서 영감을 받아 만들어졌습니다.\n\n갱단의 초기 작업의 여파로 마스크가 다시 나타났고 베인의 동료 중 한 명이 세이프하우스로 가져갔습니다.\n\n마스크의 원래 패턴은 시간이 지남에 따라 부분적으로 닳았으며 아마도 울프의 정신적 안정이 감소된 것을 반영한 것일 수도 있습니다.",
 
 		["bm_msk_dallas_aged"] = "오래된 달라스",
-		["bm_msk_dallas_aged_desc"] = "당신과 당신의 팀원은 헨리스 락에서 이상한 이집트 상자에 이 마스크를 찾았습니다. 상자 자체는 나중에 운송 중에 가로채고 나머지 내용물은 귀하에게 배달되었습니다.\n\n이 마스크에 대해 뭔가... 이상합니다. 그들이 어디에서 왔는지에 대한 정보가 없습니다.\n\n자칼은 이것이 실용적인 농담일 수도 있고, 팀원을 놀라게 하려는 시도일 수도 있다고 말합니다.\n\n당신이 말할 수있는 한? 이것들은 아주 아주 오래된 것 같습니다.",
+		["bm_msk_dallas_aged_desc"] = "당신과 당신의 팀원은 헨리스 락에서 이상한 이집트 상자에 이 마스크를 찾았습니다. 상자 자체는 나중에 운송중인걸 가로채고 나머지 내용물은 귀하에게 배달되었습니다.\n\n이 마스크에 대해 뭔가... 이상합니다. 이것이 어디에서 왔는지에 대한 정보가 없습니다.\n\n자칼은 이것이 실용적인 농담일 수도 있고, 팀원을 놀라게 하려는 시도일 수도 있다고 말합니다.\n\n당신이 말할 수있는 한? 이것들은 아주 아주 오래된 것 같습니다.",
 		["bm_msk_chains_aged"] = "오래된 체인스",
-		["bm_msk_chains_aged_desc"] = "당신과 당신의 팀원은 헨리스 락에서 이상한 이집트 상자에 이 마스크를 찾았습니다. 상자 자체는 나중에 운송 중에 가로채고 나머지 내용물은 귀하에게 배달되었습니다.\n\n이 마스크에 대해 뭔가... 이상합니다. 그들이 어디에서 왔는지에 대한 정보가 없습니다.\n\n자칼은 이것이 실용적인 농담일 수도 있고, 팀원을 놀라게 하려는 시도일 수도 있다고 말합니다.\n\n당신이 말할 수있는 한? 이것들은 아주 아주 오래된 것 같습니다.",
+		["bm_msk_chains_aged_desc"] = "당신과 당신의 팀원은 헨리스 락에서 이상한 이집트 상자에 이 마스크를 찾았습니다. 상자 자체는 나중에 운송중인걸 가로채고 나머지 내용물은 귀하에게 배달되었습니다.\n\n이 마스크에 대해 뭔가... 이상합니다. 이것이 어디에서 왔는지에 대한 정보가 없습니다.\n\n자칼은 이것이 실용적인 농담일 수도 있고, 팀원을 놀라게 하려는 시도일 수도 있다고 말합니다.\n\n당신이 말할 수있는 한? 이것들은 아주 아주 오래된 것 같습니다.",
 		["bm_msk_hoxton_aged"] = "오래된 혹스턴",
-		["bm_msk_hoxton_aged_desc"] = "당신과 당신의 팀원은 헨리스 락에서 이상한 이집트 상자에 이 마스크를 찾았습니다. 상자 자체는 나중에 운송 중에 가로채고 나머지 내용물은 귀하에게 배달되었습니다.\n\n이 마스크에 대해 뭔가... 이상합니다. 그들이 어디에서 왔는지에 대한 정보가 없습니다.\n\n자칼은 이것이 실용적인 농담일 수도 있고, 팀원을 놀라게 하려는 시도일 수도 있다고 말합니다.\n\n당신이 말할 수있는 한? 이것들은 아주 아주 오래된 것 같습니다.",
+		["bm_msk_hoxton_aged_desc"] = "당신과 당신의 팀원은 헨리스 락에서 이상한 이집트 상자에 이 마스크를 찾았습니다. 상자 자체는 나중에 운송중인걸 가로채고 나머지 내용물은 귀하에게 배달되었습니다.\n\n이 마스크에 대해 뭔가... 이상합니다. 이것이 어디에서 왔는지에 대한 정보가 없습니다.\n\n자칼은 이것이 실용적인 농담일 수도 있고, 팀원을 놀라게 하려는 시도일 수도 있다고 말합니다.\n\n당신이 말할 수있는 한? 이것들은 아주 아주 오래된 것 같습니다.",
 		["bm_msk_wolf_aged"] = "오래된 울프",
-		["bm_msk_wolf_aged_desc"] = "당신과 당신의 팀원은 헨리스 락에서 이상한 이집트 상자에 이 마스크를 찾았습니다. 상자 자체는 나중에 운송 중에 가로채고 나머지 내용물은 귀하에게 배달되었습니다.\n\n이 마스크에 대해 뭔가... 이상합니다. 그들이 어디에서 왔는지에 대한 정보가 없습니다.\n\n자칼은 이것이 실용적인 농담일 수도 있고, 팀원을 놀라게 하려는 시도일 수도 있다고 말합니다.\n\n당신이 말할 수있는 한? 이것들은 아주 아주 오래된 것 같습니다.",
+		["bm_msk_wolf_aged_desc"] = "당신과 당신의 팀원은 헨리스 락에서 이상한 이집트 상자에 이 마스크를 찾았습니다. 상자 자체는 나중에 운송중인걸 가로채고 나머지 내용물은 귀하에게 배달되었습니다.\n\n이 마스크에 대해 뭔가... 이상합니다. 이것이 어디에서 왔는지에 대한 정보가 없습니다.\n\n자칼은 이것이 실용적인 농담일 수도 있고, 팀원을 놀라게 하려는 시도일 수도 있다고 말합니다.\n\n당신이 말할 수있는 한? 이것들은 아주 아주 오래된 것 같습니다.",
 
 		["bm_msk_beef_dallas"] = "비프 달라스",
 		["bm_msk_beef_dallas_desc"] = "팀원들은 도살장 하이스트를 할 때 이 마스크를 사용했습니다.\n\n달라스는 그의 상징적인 광대 마스크와 유사한 디자인을 유지하기로 결정했습니다.",
@@ -447,14 +447,14 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_vyse_dallas"] = "근원",
 		["bm_msk_vyse_dallas_desc"] = "바이세는 후추 추출물의 악마와 대면하고 살아남았습니다. 이 마스크는 악마의 뼈로 만들어졌습니다.",
 		["bm_msk_vyse_chains"] = "얘들 놀이",
-		["bm_msk_vyse_chains_desc"] = "바이세는 포트 녹스가 보유할 수 있는 것보다 더 많은 돈과 금을 훔쳤지만 일부 내용물을 아픈 아이들과 공유하는 것을 보여줄 수 있는 품위가 있었습니다.\n\n베인이 그 아이들 중 일부를 방문했다고 전해지는 바에 따르면 이 마스크는 바이세에 대한 감사의 표시입니다.",
+		["bm_msk_vyse_chains_desc"] = "바이세는 포트 녹스가 보유할 수 있는 것보다 더 많은 돈과 금을 훔쳤지만 일부 내용물을 아픈 아이들과 공유하는 것을 보여줄 수 있는 품위가 있습니다.\n\n베인이 그 아이들 중 일부를 방문했다고 전해지는 바에 따르면 이 마스크는 바이세에 대한 감사의 표시입니다.",
 		["bm_msk_vyse_hoxton"] = "3명의 멍청이들",
-		["bm_msk_vyse_hoxton_desc"] = "그들은 당신이 엉망이되면 고통을 직면하고 다시 시도해야한다고 말합니다. 그러나 바이세는 아닙니다. 그가 망칠 때마다 전직 군인들에게 계속 뺨을 맞고 다녔습니다. 래리, 컬리, 모에조차도 그런 구타를 견딜 수 없었습니다.",
+		["bm_msk_vyse_hoxton_desc"] = "그들은 당신이 망치면 고통을 직면하고 다시 시도해야한다고 말합니다. 그러나 바이세는 아니였습니다. 그가 망칠 때마다 전직 군인들에게 계속 뺨을 맞고 다녔습니다. 래리, 컬리, 모에조차도 그런 구타를 견딜 수 없었습니다.",
 		["bm_msk_vyse_wolf"] = "베어 그릴스",
-		["bm_msk_vyse_wolf_desc"] = "바이세는 베어 그릴스에게 오줌 마시기 대결에 도전했고 바이세가 이겼습니다. 그리고 미스터 그릴스는 생존 기술을 사용하여 이 가면을 만들었습니다.",
+		["bm_msk_vyse_wolf_desc"] = "바이세는 베어 그릴스에게 오줌 마시기 대결에 도전했고 이 대결은 바이세가 이겼습니다. 그리고 미스터 그릴스는 생존 기술을 이용하여 이 가면을 만들었습니다.",
 
 		["bm_msk_secret_old_hoxton"] = "시크릿 혹스턴 리본",
-		["bm_msk_secret_old_hoxton_desc"] = "혹스턴은 새 월급날을 받기 위해 본국을 떠났습니다. 베인이 그에게 비밀에 대해 처음 이야기했을 때, 그는 베인이 이야기한 전설적인 힘이 진짜인지 아닌지에 대해 전혀 신경 쓰지 않고 잠재적 가치를 위해 고대 아이템을 쫓는 아이디어를 생각했습니다.",
+		["bm_msk_secret_old_hoxton_desc"] = "혹스턴은 새로운 월급날을 받기 위해 본국을 떠났습니다. 베인이 그에게 비밀에 대해 처음 이야기했을 때, 그는 베인이 이야기한 전설적인 힘이 진짜인지 아닌지에 대해 전혀 신경쓰지 않고 잠재적 가치를 위해 고대 아이템을 쫓는 아이디어를 생각했습니다.",
 
 		["bm_msk_secret_clover"] = "시크릿 클로버",
 		["bm_msk_secret_clover_desc"] = "베인이 클로버에게 비밀에 대해 이야기했을 때 그녀는 회의적이었습니다. 신화적인 힘을 지닌 고대의 물건에 대한 베인의 이야기는 항상 터무니없는 것 같았지만, 세 상자의 집합체를 마주했을 때 모든 의심이 그녀의 마음을 떠났습니다.",
@@ -463,47 +463,47 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["bm_msk_secret_dragan_desc"] = "전직 경찰이었던 드라간은 증거를 찾는 눈이 있었고 베인이 비밀에 대한 연구를 보여주었을 때 그는 고대의 권력 물체를 사냥할 준비가 되어 있었습니다.",
 
 		["bm_msk_secret_bonnie"] = "시크릿 보니",
-		["bm_msk_secret_bonnie_desc"] = "베인에게 비밀을 들은 보니는 자신이 가장 좋아하는 위스키를 한 모금 마시고 카타루를 엿먹이려고 덤벼들었습니다.",
+		["bm_msk_secret_bonnie_desc"] = "베인에게 비밀을 들은 보니는 자신이 가장 좋아하는 위스키를 한 모금 마시고 카타루를 엿먹이러 갔습니다.",
 
-		["bm_msk_secret_sydney"] = "시크릿 시드니",
-		["bm_msk_secret_sydney_desc"] = "베인에게 비밀을 들었을 때 시드니는 고대 세력에 대한 이야기를 믿지 않았습니다. 그럼에도 불구하고 알려지지 않았지만 가장 중요한 권위에 도전할 기회는 그녀를 승선시키기에 충분했습니다.",
+		["bm_msk_secret_syndey"] = "시크릿 시드니",
+		["bm_msk_secret_syndey_desc"] = "베인에게 비밀을 들었을 때 시드니는 고대 세력에 대한 이야기를 믿지 않았습니다. 알려지지 않았지만 그럼에도 불구하고 가장 중요한 권위에 도전할 기회는 그녀를 승선시키기에 충분했습니다.",
 
 		["bm_msk_secret_richard"] = "시크릿 리차드",
 		["bm_msk_secret_richard_desc"] = "범죄 지하 세계를 돌고 있는 소문은 알려지지 않은 조직의 손에 끔찍한 최후를 맞이한 살인자 자켓에게 영감을 준 살인자에 대해 이야기합니다. 자켓이 베인한테 비밀에 대해 들었을 때, 그는 나중에 그의 가장 큰 영감의 가면처럼 보이는 것을 가지고 나타났습니다.",
 
-		["bm_all_seeing"] = "모든 것을 보는 앵커",
-		["bm_all_seeing_desc"] = "끔찍한 광경, 악몽 같은 광경.\n\n당신을 본 힘과 당신의 기여에 대한 보상을 보장합니다.",
+		["bm_all_seeing"] = "The All Seeing Anchor",
+		["bm_all_seeing_desc"] = "A horrifying vision, a nightmarish sight.\n\nThe powers that be have seen you, and ensure you are rewarded for your contributions.",
 
-		["bm_msk_classic_helmet"] = "클래식 인포서",
-		["bm_msk_classic_helmet_desc"] = "전직 SWAT 인포서가 준 선물. 은퇴하기 전에 그는 자칼을 찾았고... 자칼의 노력을 돕기 위해 허용할 수 있는 장비만 제공했습니다.\n\n그의 호기심 어린 제안은 한 가지 이유 때문이었습니다. 그는 옴니아가 비밀리에 하고 있는 것을 보았습니다. 그러나 그 자신은 그 비밀을 밝히기를 거부하고 곧 떠나서 다시는 볼 수 없게 되었습니다.\n\n자칼은 이 헬멧을 여기로 보냈습니다. 기여에 대한 보상입니다.",
+		["bm_msk_classic_helmet"] = "The Classic Enforcer",
+		["bm_msk_classic_helmet_desc"] = "A gift given by an ex-SWAT enforcer. Before retiring, he found Jackal... and offered only the gear he had access to, to aid in Jackal's efforts.\n\nHis curious offer was due to one reason: he saw himself, what OMNIA was doing in secret. But he himself, refused to divulge those secrets, and left soon after, never to be seen again.\n\nJackal sent these helmets forward. A reward for your contributions.",
 
 		["bm_cube"] = "devmask.model",
 		["bm_cube_desc"] = "Push the placeholder, we'll get around to it.",
 
 		["bm_j4"] = "J-4",
-		["bm_j4_desc"] = "자칼의 가면 또는 재현품.\n\n실제 마스크는 자칼에게 중요하며 일부에서는 실제로 민감한 데이터가 포함되어 있다고 말합니다.\n\n그러나 이 재현은 디스플레이를 실행하는 시스템이 매우 기초적이고 실제를 복제하려고 합니다.\n\n당신의 노력에 대한 선물입니다.",
+		["bm_j4_desc"] = "Jackal's mask. Or at least, a recreation.\n\nThe real mask is important to Jackal, and some say the real thing is loaded with sensitive data.\n\nThis recreation, however, the system running the display is very rudimentary, and only seeks to replicate the real thing.\n\nA gift for your efforts.",
 
 
 		["bm_msk_finger"] = "그리퍼",
 		["bm_msk_finger_desc"] = "그리퍼는 신화 속의 짐승으로 오래전에 이 세계의 일부였다고 알려져 있습니다. 그 짐승은 의도적으로 마을과 마을의 일반 사람들을 쫓고 괴롭히고, 순진한 방법으로 그들을 사냥했습니다. 그리퍼는 이러한 행위에서 즐거움을 얻었고 왕의 부하들이 마침내 그를 찾아내고 그를 죽일 때까지 평화를 위협했습니다.",
 
-		["bm_msk_instinct"] = "직관",
+		["bm_msk_instinct"] = "직감",
 		["bm_msk_instinct_desc"] = "이 마스크는 먼 곳에서 온 수수께끼의 전사의 것이었습니다. 그는 직감에 따라 땅을 걸으며 전 세계의 악의 세력을 사냥했습니다. 그는 던전을 탐험하고 그가 만난 수천 명의 사악한 존재를 죽였습니다. 결국 그는 자신이 그랬던 것처럼 다음 세대가 계속될 것이라는 것을 알고 평화를 찾았습니다.",
 
 		["bm_msk_unforsaken"] = "포세이큰",
-		["bm_msk_unforsaken_desc"] = "이 전설적인 마스크는 커뮤니티의 헌신, 이해 및 지속적인 지원에 대한 감사의 표시입니다. 오버킬 팀원에게 - 우리는 당신에게 경의를 표합니다.\n\n두꺼운 것과 얇은 것을 통해 그 헬멧을 날게하십시오.",
+		["bm_msk_unforsaken_desc"] = "이 전설적인 마스크는 커뮤니티의 헌신, 이해 및 지속적인 지원에 대한 감사의 표시입니다. 오버킬 팀원에게 - 우리는 당신에게 경의를 표합니다.\n\n두꺼운 것과 얇은 것을 사이로 그 헬멧을 날리십시오.",
 
 		["bm_msk_chains_halloween"] = "샤터 실드",
-		["bm_msk_chains_halloween_desc"] = "고용된 용병이 되면 많은 고통과 죽음을 보게 됩니다. 당신이 무적이거나 멈출 수 없다고 느끼더라도... 때때로 모든 것이 당신을 괴롭히기 위해 되돌아옵니다.\n\n2008년의 아름답고 밝고 눈이 내리는 10월 오후, 체인스는 잠을 자고 있었습니다. 머키워터 대신하여 암살 일을 막 마친 그는 힘든 일을 하고 급여를 받았으며 잠을 잘 수 있는 멋진 호텔 방을 얻었습니다.\n\n몇 년 만에 처음으로 그는 악몽에 시달렸습니다. 그는 그것이 무엇인지 기억할 수 없지만 깨어나 마비되었고, 그 위에 사람보다 더 해골 같은 형체가 서 있었고 움직일 수 없었습니다.\n\n그 날 이후 총을 들 때마다 다음 밤은 불안하고 끔찍했졌습니다.\n\n결국 그는 '충분하다'라고 말해야 했고. 용병 사업에서 나와 치료사를 만났습니다. 약이 도움이 되었고 덕분에 1년은 잘 살았습니다...\n\n정확히 1년 후인 2009년 10월 31일 머키워터는 자신의 삶을 고친 사람이 비밀을 폭로하고 회사를 해칠 것이라고 확신했습니다. 그들은 그렇게 냅둘 순 없었습니다.\n\n범죄 생활에 휘말린 체인스는 결국 자신을 지키기 위해 다시 군인이 됩니다.\n\n그런데 이번에는 달랐습니다. 악몽과 수면마비는 돌아오지 않았고. 그는 다른 사람들에게 상처를 주려고 나온 것이 아닙니다.\n\n이번에는 자신을 보호하는 것이었습니다.",
+		["bm_msk_chains_halloween_desc"] = "당신이 무적이거나 멈출 수 없다고 느끼더라도 고용된 용병이 되면 많은 고통과 죽음을 보게 됩니다... 때때로 모든 것이 당신을 괴롭히기 위해 되돌아오죠.\n\n2008년의 아름답고 밝고 눈이 내리는 10월 오후, 체인스는 잠을 자고 있었습니다. 머키워터 대신하여 암살 의뢰를 막 마친 그는 힘든 일을 하고 급여를 받았으며 잠을 잘 수 있는 멋진 호텔 방을 얻었습니다.\n\n몇 년 만에 처음으로 그는 악몽에 시달렸습니다. 그는 그것이 무엇인지 기억할 수 없지만 깨어나보니 몸이 마비되었고, 그 위에 사람보다 더 해골 같은 형체가 서 있었고 몸을 움직일 수 없었습니다.\n\n그 날 이후 총을 들 때마다 다음 밤은 불안하고 끔찍해졌습니다.\n\n결국 그는 '그만하라'고 말해야 했고. 용병 사업에서 나와 치료사를 만났습니다. 약이 도움이 되었고 덕분에 1년은 잘 살았습니다...\n\n정확히 1년 후인 2009년 10월 31일 머키워터는 자신의 삶을 고친 사람이 비밀을 폭로하고 회사를 해칠 것이라고 확신했습니다. 그들은 그렇게 냅둘 순 없었습니다.\n\n범죄 생활에 휘말린 체인스는 결국 자신을 지키기 위해 다시 군인이 됩니다.\n\n그런데 이번에는 달랐습니다. 악몽과 수면마비는 돌아오지 않았고. 그는 다른 사람들에게 상처를 주려고 나온 것이 아닙니다.\n\n이번에는 자기 자신을 보호하는 것이었습니다.",
 
 		["bm_msk_dallas_halloween"] = "괴물의 반사",
-		["bm_msk_dallas_halloween_desc"] = "거짓 신원, 거짓말, 이야기를 구성하는 데 너무 많은 세월을 보내다 보면 자신을 잃어버리기 시작합니다.\n\n당신은 당신의 다양한 친구, 연인, 친구로부터 특성과 특징을 선택하면서 사람에서 사람으로 튀기 시작합니다. 아마도 그것들이 서로 섞이기 시작하고, 당신은 융합처럼 느껴질 것입니다.\n\n달라스는 10월의 어느 날 아침에 일어나 거울로 걸어갔습니다. 머리는 못생긴 금발로 염색했고 헝클어진 면도를 했습니다. 쉼 없는 악몽의 땀으로 얼룩진 끈적끈적한 양복. 술에서 술로 넘어간 주말 후 욱신거리는 두통.\n\n자신을 쳐다보면서 그가 생각할 수 있는 것은 그가 사람이라기보다 프랑켄슈타인의 괴물에 더 가깝다는 것뿐이었습니다. 그의 범죄 경력을 더 발전시키기에 충분할 만큼 충분히 설득력 있는 부분일 뿐입니다.\n\n전환점이 되었지만 때때로 그는 여전히 자신의 조각이 전부가 아니라는 느낌은 지울 수가 없습니다.",
+		["bm_msk_dallas_halloween_desc"] = "거짓 신원, 거짓말, 이야기를 구성하는 데 너무 많은 세월을 보내다 보면 자신을 잃어버리기 시작합니다.\n\n당신은 당신의 다양한 친구, 연인, 친구로부터 특성과 특징을 선택하면서 사람에서 사람으로 빠자기 시작합니다. 아마도 그것들이 서로 섞이기 시작하고, 당신은 융합처럼 느껴질 것입니다.\n\n10월의 어느 날 아침, 달라스는 일어나 거울로 걸어갔습니다. 머리는 못생긴 금발로 염색했고 헝클어진 면도를 했습니다. 쉼 없는 악몽의 땀으로 정장이 얼룩진 끈적끈적해졌고, 술에서 술로 넘어간 주말 후 욱신거리는 두통이 느껴졌습니다다.\n\n자신을 쳐다보면서 그가 생각할 수 있는 것은 그가 사람이라기보다 프랑켄슈타인의 괴물에 더 가깝다는 것뿐이었습니다. 그의 범죄 경력을 더 발전시키기에 충분할 만큼 충분히 설득력 있는 부분일 뿐입니다.\n\n전환점이 되었지만 때때로 그는 여전히 자신의 조각이 전부가 아니라는 느낌은 지울 수가 없습니다.",
 
 		["bm_msk_hoxton_halloween"] = "할로윈 꿈",
 		["bm_msk_hoxton_halloween_desc"] = "혹스턴의 할로윈 기억 중 하나는 뉴욕에 일종의 특별한 휴양지로 보기 위해 친척과 함께 10월에 미국으로 여행하는 것이었습니다.\n\n그는 사탕의 열렬한 팬이 아니었지만 친척의 파티에서 제공되는 호박 파이를 좋아했습니다.\n\n연회장 밖 홀을 배회하는 동안 그는 커다란 금고 문이 있고 온갖 종류의 장신구와 재물이 들어 있는 것을 보았습니다.\n\n그 이후로 그는 항상 휴일 동안 장소를 치는 것을 좋아했습니다.",
 
 		["bm_msk_wolf_halloween"] = "악마의 외침",
-		["bm_msk_wolf_halloween_desc"] = "2010년의 추운 10월 저녁, 울프는 파산하는 회사로 인한 재정적 타격에서 여전히 회복 중이었습니다.\n\n모텔방에 혼자 누워 그는 가족에 대해 생각했고 가족에게 실망감을 안겼다는 생각이 들었고 마지막 생명선이 자신을 절단한 후 온 나라에서 가족을 다시는 볼 수 없을 것이라고 생각했습니다..\n\n새 집에서 새로 시작할 수 있는 충분한 돈을 확보하기 위해 그는 마지막으로 저축한 돈을 미국으로 여행하는 데 썼습니다.\n\n몇 주 후, 친구의 집, 모텔, 피난처에 간 그는 몇 주 만에 중요한 다른 사람에게서 첫 번째 전화를 받았습니다.\n\n관계는 더 이상 없었다. '더 이상 잘 일하지 않아.'\n\n아마도 새로운 시작이 있었을거나.\n\n아마도 추구해야 할 새로운 직업이 있었을 것입니다.",
+		["bm_msk_wolf_halloween_desc"] = "2010년의 추운 10월 저녁, 울프는 파산하는 회사로 인한 재정적 타격에서 여전히 회복 중이었습니다.\n\n모텔방에 혼자 누워있는 그는 가족에 대해 생각했고, 가족을 실망시켰다는 생각이 들었고, 가족을 다시는 볼 수 없을지도 모른다는 생각을 했습니다. 온 나라와 마지막 생명줄이 그를 절단한 후 좌초된 상태였습니다.\n\n새 집에서 새로 시작할 수 있는 충분한 돈을 확보하기 위해 그는 마지막으로 저축한 돈을 미국으로 여행하는 데 썼습니다.\n\n몇 주 후, 친구의 집, 모텔, 피난처에 간 그는 몇 주 만에 중요한 다른 사람에게서 첫 번째 전화를 받았습니다.\n\n관계는 더 이상 없었습니다. '더 이상 잘 일하지 않는거 같아.'\n\n아마도 새로운 시작이 있었을거나.\n\n아마도 추구해야 할 새로운 직업이 있었을 것입니다.",
 
 
 		["pattern_jkl_patt01_title"] = "자칼",
@@ -533,9 +533,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModHintTextTitleID"] = "힌트 텍스트",
 		["RestorationModMaskOnTextTitleID"] = "마스크 끼기 텍스트",
 		["RestorationModStopAllBotsTitleID"] = "모든 봇 멈추기",
-		["RestorationModStopAllBotsDescID"] = "봇 멈추는 키를 눌러 모든 봇을 멈춥니다.",
+		["RestorationModStopAllBotsDescID"] = "봇 멈추는 키를 눌러 모든 봇을 멈추게합니다.",
 		["RestorationModPONRTrackTitleID"] = "돌아갈 수 없는 지점 음악",
-		["RestorationModPONRTrackDescID"] = "돌아올 수 없는 지점이 시작되면 프로 잡의 음악 트랙을 변경합니다.",
+		["RestorationModPONRTrackDescID"] = "돌아올 수 없는 지점이 시작되면 프로 잡의 음악 트랙으로 변경합니다.",
 		["RestorationModPONRTracksTitleID"] = "돌아갈 수 없는 지점 음악",
 		["RestorationModPONRTracksDescID"] = "돌아올 수 없는 지점이 시작될 때 프로 잡의 음악 트랙을 선택합니다.",
 		["RestorationModMusicShuffleTitleID"] = "음악 셔플",
@@ -568,7 +568,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModCasingTickerDescID"] = "알파 케이싱 테이프를 활성화 또는 비활성화합니다 (알파 테이프 스타일 필요).",
 		["RestorationModCustodyTitleID"] = "알파 구금",
 		["RestorationModCustodyDescID"] = "알파 구금 패널을 활성화 또는 비활성화합니다.",
-		["RestorationModCrimenetTitleID"] = "알파 CRIMENET (WIP)",
+		["RestorationModCrimenetTitleID"] = "알파 CRIMENET (미완성)",
 		["RestorationModCrimenetDescID"] = "알파 CRIMENET을 활성화 또는 비활성화합니다.",
 		["RestorationModProfileTitleID"] = "알파 프로필 박스",
 		["RestorationModProfileDescID"] = "알파 프로필 박스를 활성화하거나 비활성화합니다.",
@@ -946,9 +946,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_ns_duck_desc_sc"] = "펠릿이 뭉치지 않고 수평으로 퍼지도록 합니다.",
 		["bm_wp_ns_ultima_desc_sc"] = "펠릿의 전체 확산을 75%만큼 증가시킵니다.",
 		["bm_wp_upg_a_slug_sc"] = "철갑 슬러그탄",
-		["bm_wp_upg_a_slug_sc_desc"] = "정확한 한 발의 샷건 슬러그탄을 발사합니다. 관통하지 않습니다.", --Auto/Semi-Auto shotguns--
-		["bm_wp_upg_a_slug_heavy_desc_sc"] = "방탄복, 적, 실드, 타이탄 실드 및 벽을 관통하는 단일 정확한 납탄 슬러그를 발사합니다.", --For shotguns that can hit Heavy Sniper damage tier--
-		["bm_wp_upg_a_explosive_desc_sc"] = "고폭 슬러그. 대상을 죽이거나 기절시키는 폭발탄 하나를 발사합니다. 헤드샷을 할 수 없습니다.",
+		["bm_wp_upg_a_slug_sc_desc"] = "Fires a single accurate shotgun slug. Does not pierce.", --Auto/Semi-Auto shotguns--
+		["bm_wp_upg_a_slug_heavy_desc_sc"] = "Fires a single accurate lead slug that penetrates body armor, enemies, shields, titan shields, and walls.", --For shotguns that can hit Heavy Sniper damage tier--
+		["bm_wp_upg_a_explosive_desc_sc"] = "대상을 죽이거나 기절시키고 폭발하는 고폭 슬러그 하나를 발사합니다. 헤드샷을 할 수 없습니다.",
 		["bm_wp_upg_a_custom_desc"] = "약간의 견실성과 탄약을 희생시키면서 피해를 증가시키는 더 적은 수의 더 큰 펠릿를 발사합니다.",
 		["bm_wp_upg_a_dragons_breath_auto_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 96의 피해를 입히고 3초에 걸쳐 기절시킬 수 있습니다.",
 		["bm_wp_upg_a_dragons_breath_semi_desc_sc"] = "방탄복을 관통하여 불태우는 탄환을 발사합니다. 일정 확률로 근거리에서 적을 불태워 120의 피해를 입히고 3초에 걸쳐 기절시킬 수 있습니다.",
@@ -986,8 +986,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
 
 		--Saw--
-		["bm_ap_saw_sc_desc"] = "방탄복을 관통할 수 있습니다.",
-		["bm_ap_saw_blade_sc_desc"] = "방탄복을 뚫을 수 있을 정도로 칼날을 날카롭게 합니다.",
+		["bm_ap_saw_sc_desc"] = "CUTS THROUGH BODY ARMOR.",
+		["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to cut through body armor.",
 		["bm_fast_motor_sc_desc"] = "분당 회전 수가 15% 증가합니다.",
 		["bm_slow_motor_sc_desc"] = "분당 회전 수가 15% 감소합니다.",
 
@@ -1025,7 +1025,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_upg_a_halfthatkit_tecci_desc"] = "무기 들고 있을 때 이동 속도 25% 패널티를 추가합니다.\n\n무기의 탄약 획득량이 50% 증가합니다.",
 
 		--Thanatos--
-		["bm_thanatos_sc_desc"] = "경량 차량를 상대할때 사용되는 대물 소총. 이것을 유기적 목표물에 사용하는 것은 아마도 전범일 것입니다.\n\n방탄복, 실드, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_thanatos_sc_desc"] = "Anti-materiel rifle used to combat small vehicles. Using this on organic targets is probably a war crime.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
 
 		--Galant--
 		["bm_galant_sc_desc"] = "고전적인 2차 세계 대전의 전투 소총. 안정적이고 정확하며 빠르게 재장전합니다.\n\n탄창이 빈 상태로 재장전하면 재장전 속도가 빨라집니다.",
@@ -1044,7 +1044,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_w_osipr_desc"] = "X세대 무기 기술. 20mm 공중 폭발 유탄 발사기가 장착되어있습니다.\n$BTN_BIPOD 키를 꾹 눌러 유탄 발사기로 전환합니다.",
 
 		--socom deez nuts--
-		["bm_w_socom_desc"] = "자칼이 선택한 보조무기. 세련된 디자인과 안정적이고 강력한 .45ACP 권총입니다.",
+		["bm_w_socom_desc"] = "Jackal's sidearm of choice. A reliable and powerful .45ACP handgun with a stylish design.",
 		
 		--Baby Deagle--
 		["bm_w_sparrow_sc_g_cowboy_desc"] = "당신은 이 무게로도 들 수 있을 겁니다.",
@@ -1312,26 +1312,26 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 
 		--Modifiers-- --Let me know if I'm safe to move these up, like the other stuff--
-		["bm_menu_bonus_concealment_p1"] = "작은 은닉성 보너스 및 명중률/안정성 패널티",
-		["bm_menu_bonus_concealment_p1_mod"] = "작은 은닉성 수정치",
-		["bm_menu_bonus_concealment_p2"] = "큰 은닉성 보너스 및 명중률/안정성 패널티",
-		["bm_menu_bonus_concealment_p2_mod"] = "큰 은닉성 수정치",
+		["bm_menu_bonus_concealment_p1"] = "적은 은닉성 보너스 및 명중률/안정성 패널티",
+		["bm_menu_bonus_concealment_p1_mod"] = "적은 은닉성 수정치",
+		["bm_menu_bonus_concealment_p2"] = "많은 은닉성 보너스 및 명중률/안정성 패널티",
+		["bm_menu_bonus_concealment_p2_mod"] = "많은 은닉성 수정치",
 		["bm_menu_bonus_concealment_p3"] = "대규모 은닉성 보너스 및 명중률/안정성 패널티",
 		["bm_menu_bonus_concealment_p3_mod"] = "대규모 은닉성 수정치",
-		["bm_menu_bonus_spread_p1"] = "작은 명중률 보너스 및 안정성 패널티",
-		["bm_menu_bonus_spread_p1_mod"] = "작은 명중률 수정치",
+		["bm_menu_bonus_spread_p1"] = "적은 명중률 보너스 및 안정성 패널티",
+		["bm_menu_bonus_spread_p1_mod"] = "적은 명중률 수정치",
 		["bm_menu_bonus_spread_n1"] = "대규모 안정성 보너스 및 명중률 패널티",
 		["bm_menu_bonus_recoil_p3_mod"] = "대규모 안정성 수정치",
-		["bm_menu_bonus_recoil_p1"] = "작은 안정성 보너스 및 명중률 패널티",
+		["bm_menu_bonus_recoil_p1"] = "적은 안정성 보너스 및 명중률 패널티",
 		["bm_menu_bonus_recoil_p1_mod"] = "작은 안정성 수정치",
-		["bm_menu_bonus_recoil_p2"] = "큰 안정성 보너스 및 명중률 패널티",
+		["bm_menu_bonus_recoil_p2"] = "많은 안정성 보너스 및 명중률 패널티",
 		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "당신과 당신의 팀원은 경험치 보상을 +5%만큼 받는 대신 돈 보상을 -10%만큼 받습니다.",
 		["bm_menu_spread"] = "명중률\n",
 		["bm_menu_recoil"] = "안정성\n",
 		["bm_menu_concealment"] = "은닉성\n",
-		["bm_menu_bonus_spread_p2_mod"] = "큰 정확도 수정치",
+		["bm_menu_bonus_spread_p2_mod"] = "많은 정확도 수정치",
 		["bm_menu_bonus_spread_p3_mod"] = "대규모 정확도 수정치",
-		["bm_menu_bonus_recoil_p2_mod"] = "큰 안정성 수정치",
+		["bm_menu_bonus_recoil_p2_mod"] = "많은 안정성 수정치",
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "돈 부스트",
 		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "당신과 당신의 팀원은 돈 보상을 +10%만큼 받는 대신 경험치 보상을 -5%만큼 받습니다.",
 
@@ -1491,14 +1491,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_sentry_gun_desc"] = "센트리 건을 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 배치 시 최대 탄약의 40%를 사용합니다. 너무 많은 피해를 입으면 꺼집니다. 이 상태에서 $BTN_INTERACT 키를 길게 눌러 자동 복구 모드로 전환합니다. 센트리 건을 회수하면 남은 탄약을 되돌리고 수리합니다. 민간인을 겁에 질리게 하여 바닥에 눕게합니다.\n\n센트리 건은 센서에 감지된 목표물을 자동으로 조준하고 발사합니다. 일반적으로 주의를 산만하게 하여 당신과 당신의 팀원으로부터 주의를 끌기 위해 사용됩니다.",
 		["bm_equipment_sentry_gun_silent_desc"] = "센트리 건을 사용하려면 $BTN_USE_ITEM 키를 길게 눌러 설치해야합니다. 배치 시 최대 탄약의 40%를 사용합니다. 너무 많은 피해를 입으면 꺼집니다. 이 상태에서 $BTN_INTERACT 키를 길게 눌러 자동 복구 모드로 전환합니다. 센트리 건을 회수하면 남은 탄약을 되돌리고 수리합니다. 민간인을 겁에 질리게 하여 바닥에 눕게합니다.\n\n저소음 센트리 건은 일반적인 방해 요소보다 적을 제거하는 데 더 많이 사용되기 때문에 일반 센트리 건에 대응합니다.",
 
-		["hud_int_hold_take_pardons"] = "$BTN_INTERACT 키를 눌러 사면장을 얻습니다.",
-		["debug_interact_gage_assignment_take"] = "$BTN_INTERACT 키를 눌러 패키지를 얻습니다.",
+		["hud_int_hold_take_pardons"] = "$BTN_INTERACT 키를 눌러 사면장을 얻기.",
+		["debug_interact_gage_assignment_take"] = "$BTN_INTERACT 키를 눌러 패키지를 얻기.",
 
 		["far_repair_sentry_macro"] = "센트리가 심각하게 손상되어 수리가 필요합니다.",
 		["fixing_sentry_macro"] = "수리 진행도: $AMMO_LEFT%",
-		["repair_sentry_macro"] = " 키를 길게 눌러 센트리 자동 수리 시퀀스를 시작합니다",
-		["pickup_sentry_macro"] = " 키를 길게 눌러 센트리를 회수합니다.\n남은 탄약 수 $AMMO_LEFT ",
-		["firemode_sentry_macro"] = " 키를 눌러 발사 모드를 변경합니다.\n남은 탄약 수 $AMMO_LEFT",
+		["repair_sentry_macro"] = " 키를 길게 눌러 센트리 자동 수리 시퀀스를 시작하기",
+		["pickup_sentry_macro"] = " 키를 길게 눌러 센트리를 회수하기.\n남은 탄약 수 $AMMO_LEFT ",
+		["firemode_sentry_macro"] = " 키를 눌러 발사 모드를 변경하기.\n남은 탄약 수 $AMMO_LEFT",
 		["hud_interact_pickup_sentry_gun"] = "$AMMO_LEFT",
 		["hud_interact_sentry_gun_switch_fire_mode"] = "$AMMO_LEFT",
 		["hud_repair_sentry"] = "$AMMO_LEFT",
@@ -1519,7 +1519,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_7"] = "그린 불도저는 플레이어의 측면을 공격하려고 시도하고 기습하면서 발사하다가 도망칩니다. 당황하거나 놀라지 않도록 주의하십시오.",
 		["loading_gameplay_res_8"] = "사이가/블랙 불도저는 매우 공격적이며 플레이어를 향해 돌격합니다. 예측하기 쉽지만 준비되지 않은 경우 매우 위험합니다.",
 		["loading_gameplay_res_9"] = "경기관총 도저/스컬도저는 다른 유닛을 엄호 사격으로 지원하지만 여전히 그외 상황에서는 돌격하고 매우 높은 공격 속도를 가지고 있습니다.",
-		["loading_gameplay_res_10"] = "베넬리 샷건 도저는 미니건 도저를 대체합니다. 그들은 크라임 스프리 혹은 데스 센텐스에서 캡틴 스프링과 함께 스폰됩니다. 그들은 매우, 매우 위험합니다.",
+		["loading_gameplay_res_10"] = "베넬리 샷거너 도저는 미니건 도저를 대체합니다. 그들은 크라임 스프리 혹은 데스 센텐스에서 캡틴 스프링과 함께 스폰됩니다. 그들은 매우, 매우 위험합니다.",
 		["loading_gameplay_res_11"] = "모든 도저는 재장전 중인 플레이어를 우선 순위로 지정합니다.",
 		["loading_gameplay_res_12"] = "데스 센텐스에서 불도저는 바이저가 깨지면 버서커 분노 상태에 돌입하여 공격력을 10%만큼 증가시킵니다.",
 		["loading_gameplay_res_13"] = "클로커는 점프 킥을 하려고 할 때는 상징적인 소리를 냅니다, 소리가 들리면 옆으로 피하십시오.",
@@ -1530,10 +1530,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_gameplay_res_18"] = "야구 방망이로 적을 때리는 것보다 더 나은 것이 무엇인지 아십니까? 야구 방망이로 머리를 때려 헤드샷 피해를 주십시오.",
 		["loading_gameplay_res_19"] = "저격수는 발사하기 전에 집중하는 데 짧은 시간이 걸립니다. 모든 오디오가 희미해지기 시작하면 언제 집중당하고 있는지 알 수 있습니다.",
 		["loading_gameplay_res_20"] = "당신의 조커들은 클로커의 발차기로 부터 안전하지 않습니다.",
-		["loading_gameplay_res_21"] = "일반 적들이 다양한 무기로 당신을 공격할 것입니다. 유니폼의 세부 사항을 보면 누가 무엇을 들고 있는지 알 수 있습니다.",
+		["loading_gameplay_res_21"] = "일반 적들은 다양한 무기로 당신을 공격할 것입니다. 유니폼의 세부 사항을 보면 누가 무엇을 들고 있는지 알 수 있습니다.",
 		["loading_gameplay_res_22"] = "산탄총을 든 적들은 치명적입니다. 가까이에 있는 상태에서 방탄복이 많지 않다면 두 발로 쓰러질 수 있습니다. 그러나 그들은 매우 제한된 사거리를 가지고 있습니다.",
-		["loading_gameplay_res_23"] = "적들은 더 높은 난이도에서 실드 뒤에 숨으려고 시도합니다.",
-		["loading_gameplay_res_24"] = "적들은 더 높은 난이도에서 훨씬 더 똑똑하게 행동하고 예측하기 어렵습니다.",
+		["loading_gameplay_res_23"] = "적들은 더 높은 난이도에서 실드 뒤에 숨으려고 시도할 것입니다.",
+		["loading_gameplay_res_24"] = "적들은 더 높은 난이도에서 훨씬 더 똑똑하게 행동하고 예측하기 어려워집니다.",
 		["loading_gameplay_res_25"] = "데스 센텐스는 바닐라보다 불공평하지 않으면서 더 어렵고 의미심장하게 만들기 위해 전면적인 디자인 개편을 거쳤습니다. 가이드를 확인하세요.",
 		["loading_gameplay_res_26"] = "프로 잡은 습격 전에 일반 에셋(예: 의료 가방, 탄약 가방 또는 시체 가방)을 구매하는 것이 불가능해지고, 아군 사격이 가능해지고(봇도 적용) 임무의 마지막 부분에 다다르면 특별한 브라보 적이 대열에 나타나고 PONR이 발생합니다.",
 		["loading_gameplay_res_27"] = "레스트레이션 모드는 머키워터 용병 같은 다른 주의 집행자와 다양한 진영을 제공합니다. 그들은 기능이 동일하지만 워싱턴 DC에서 정식으로 발생하는 하이스트에 멋진 풍미를 더합니다.",
@@ -1543,7 +1543,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_1"] = "타이탄 HRT는 그들이 있다는 것을 알기도 전에 인질을 구출하고 전리품을 몰래 가져가는 번개처럼 빠른 유닛입니다. 또한 헤드샷이나 근접 공격 이외에 죽으면 최루탄을 떨어뜨립니다.",
 		["loading_new_units_res_2"] = "LPF는 근접 공격에 약합니다.",
 		["loading_new_units_res_3"] = "경무장 유닛은 LPF에 의해 과치료됩니다. 과치료된 적은 보라색 테두리으로 표시됩니다. 과치료된 유닛은 항상 적어도 한 발은 버팁니다.",
-		["loading_new_units_res_4"] = "타이탄 클로커는 거의 보이지 않게 만드는 고급 은폐 장비를 가지고 있지만 여전히 표준 클로커 장비의 이전 모델의 주변 소음이 있습니다. 그 소리에 귀를 기울이십시오.",
+		["loading_new_units_res_4"] = "타이탄 클로커는 거의 보이지 않게 만드는 고급 은폐 장비를 가지고 있지만 여전히 표준 클로커 장비의 이전 모델의 주변 소음을 가지고 있습니다. 그 소리에 귀를 기울이십시오.",
 		["loading_new_units_res_5"] = "타이탄 도저는 가능한 한 직접적인 전투를 피하고 적극적으로 오고 안전한 거리에서 제압 사격을 가합니다.",
 		["loading_new_units_res_6"] = "타이탄 명사수는 더 높은 연사력과 이동 중에 사격할 수 있는 대신 표준품의 탄당 피해량과 방탄복 관통력을 교환했습니다.",
 		["loading_new_units_res_7"] = "타이탄 명사수는 레이저 조준기를 사용하지 않는 대신 사격하면 보라색 예광을 남깁니다. 이를 이용하여 명사수를 추적하십시오.",
@@ -1552,17 +1552,17 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_new_units_res_10"] = "타이탄 테이저는 일시적으로 움직임을 심각하게 제한시키는 감전탄을 발사합니다. 맞으면 화면이 파란색으로 빛납니다.",
 		["loading_new_units_res_11"] = "베테랑 경찰은 주어진 사격이 얼마나 많은 피해를 줄 수 있는지를 제한하는 빠른 반사 능력을 가지고 있습니다. 하지만 그들은 근접, 화염 또는 폭발을 회피할 수 없습니다. 발사 속도가 빠르고 피해가 적은 무기를 선택해보십시오.",
 		["loading_new_units_res_12"] = "베테랑 경찰은 물리적으로 피하고 사방에 점프하여 공격하기 어렵게 만듭니다. 또한 연막탄을 자주 떨어뜨립니다.",
-		["loading_new_units_res_13"] = "타이탄 SWAT은 근접 공격에 약간의 저항력을 갖지만 여전히 마무리용으론 유용합니다.",
-		["loading_new_units_res_14"] = "타이탄 SWAT은 인질로 잡히거나 당신 편에 싸우도록 전향시킬 수도 없습니다.",
+		["loading_new_units_res_13"] = "타이탄 SWAT은 근접 공격에 약간의 저항력을 갖지만 여전히 마무리용으로는 유용합니다.",
+		["loading_new_units_res_14"] = "타이탄 SWAT은 인질로 잡거나 당신 편에 싸우도록 전향시킬 수도 없습니다.",
 		["loading_new_units_res_15"] = "타이탄 SWAT은 경기관총과 자동 산탄총로 무장했습니다. 그들은 당신의 웰빙에 큰 위협이 됩니다.",
 		["loading_new_units_res_16"] = "위험한 브라보 유닛은 프로 잡에서 PONR이 트리거될 때만 생성됩니다. 그들은 강화된 방탄복과 더 강력한 무기를 갖춘 강력하고 무자비한 적입니다.",
 		["loading_new_units_res_17"] = "브라보 유닛은 파편 수류탄을 던질 수 있습니다. 점멸기를 보고 신호음을 들으십시오.",
 		["loading_new_units_res_18"] = "아칸은 다르게 보이지만 같은 방식으로 행동하는 자체 타이탄 유닛을 배치합니다. 그러나 전체적인 색 구성표와 시각적 특성은 동일하므로 쉽게 식별할 수 있습니다.",
-		["loading_new_units_res_19"] = "척탄병은 장착된 언더베럴을 사용하여 원거리에서 최루 가스 유탄을 발사하여 구름 속에 있는 플레이어에게 피해를 줍니다. 데스 센텐스에선 대신 더 치명적이고 스태미나를 소모하는 신경 가스 유탄으로 무장합니다.",
+		["loading_new_units_res_19"] = "척탄병은 장착된 언더베럴을 사용하여 원거리에서 최루가스 유탄을 발사하여 구름 속에 있는 플레이어에게 피해를 줍니다. 데스 센텐스에선 대신 더 치명적이고 스태미나를 소모하는 신경가스 유탄으로 무장합니다.",
 		
 		["loading_captains_res_title"] = "레스트레이션 캡틴 팁",
-		["loading_captains_res_1"] = "캡틴 서머스를 쓰러뜨리려면 먼저 닥과 그의 팀원들부터 목표로 삼으십시오. 그는 그의 모든 팀원들이 죽을 때까지 죽일 수 없으며 다른 두 사람은 닥이 죽을 때까지 거의 무적입니다.",		
-		["loading_captains_res_2"] = "캡틴 서머스를 안아주지 마세요. 그는 화염 방사기로 당신을 녹일 것이고, 당신을 감전시킬 버저를 가지고 있습니다.",		
+		["loading_captains_res_1"] = "캡틴 서머스를 쓰러뜨리려면 먼저 닥과 그의 팀원들부터 목표로 삼으십시오. 그는 그의 모든 팀원들이 죽을 때까지 죽일 수 없으며 다른 두 사람은 닥이 죽을 때까지는 거의 무적입니다.",		
+		["loading_captains_res_2"] = "캡틴 서머스를 안아주지 마십시오. 그는 화염 방사기로 당신을 녹일 것이고, 당신을 감전시킬 버저를 가지고 있습니다.",		
 		["loading_captains_res_3"] = "캡틴 스프링은 엄청난 피해를 버틸 수 있지만 결국 쓰러질 것입니다. 그의 수류탄을 조심하고 매우 느리기 때문에 그를 유인해보십시오.",	
 		["loading_captains_res_4"] = "캡틴 스프링은 주기적으로 클러스터 고폭 수류탄을 던집니다. 그와 오랫동안 가까이 있지 마십시오.",	
 		["loading_captains_res_5"] = "캡틴 스프링은 위험할 수 있지만 엄청나게 느리고 좋지 않은 사거리를 가지고 있습니다.",	
@@ -1587,33 +1587,33 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_stealth_res_10"] = "소음기 무기는 스텔스에서 소음을 내지 않습니다.",	
 		["loading_stealth_res_11"] = "라우드처럼 스텔스에 최대 4명의 경찰을 인질로 잡을 수 있습니다. 이것은 페이저를 활성화하거나 의심을 증가시키지 않지만 나중에 죽이면 활성화됩니다.",	
 		["loading_stealth_res_12"] = "스텔스에 대부분의 즉각적인 실패(예: 경고 받은 카메라 또는 최대 페이저 수 초과)가 제거되었거나 심각하게 감소되었습니다. 자세한 내용은 가이드를 확인하세요.",	
-		["loading_stealth_res_13"] = "경비원은 더 이상 경계하지 않은 상태에서 피해를 입더라도 즉시 죽지 않습니다. 머리를 겨냥하고 주먹보다 더 강력한 것을 가져 오십시오.",	
+		["loading_stealth_res_13"] = "경비원은 더 이상 경계하지 않은 상태에서 피해를 입더라도 즉시 죽지 않습니다. 머리를 겨냥하고 주먹보다 더 강력한 것을 가져오십시오.",	
 		["loading_stealth_res_14"] = "의심 미터가 가득 차면 알람이 울리기 전에 시작한 작업을 완료할 수 있는 60초가 주어집니다.",	
 		["loading_stealth_res_15"] = "의심 미터가 높을수록 경비원에게 더 쉽게 감지됩니다.",	
 		["loading_stealth_res_16"] = "기본 게임보다 더 많은 시체 가방을 휴대할 수 있으며, 솔로 플레이의 경우에는 더욱 많아집니다.",	
 		["loading_stealth_res_17"] = "Crime.net 오프라인 모드에서는 없는 플레이어를 보충하기 위해 추가 케이블 타이가 제공됩니다. 올바른 스킬이 있으면 케이블 타이가 증가합니다.",	
 		["loading_stealth_res_18"] = "총격으로 사망한 경비원은 페이저를 울립니다. 페이저를 울리는 것은 의심을 증가시키지는 않지만 무시하면 의심이 증가합니다.",	
-		["loading_stealth_res_19"] = "페이저 오프레이터는 난이도가 높을 수록 덜 관대합니다. 마지막 페이저는 특수 대사을 사용하여 표시됩니다.",	
+		["loading_stealth_res_19"] = "페이저 오프레이터는 난이도가 높을 수록 덜 관대합니다. 마지막 페이저는 특수 대사을 사용하여 가리킵니다.",	
 		["loading_stealth_res_20"] = "허용된 한도를 초과하여 페이저에 응답하면 의심이 크게 증가하지만 페이저를 끊거나 응답하지 않는 것만큼은 아닙니다.",	
 		["loading_stealth_res_21"] = "높은 난이도에서는 페이저를 응답하는 데 더 오래 걸리고 더 빨리 사라집니다.",	
 		--Equipment/Skill Hints
 		["loading_equip_skills_res_title"] = "레스트레이션 장비/스킬 팁",
-		["loading_equip_skills_res_1"] = "산탄총은 정확도가 낮아질수록 사거리가 줄어듭니다. 실험을 통해 무엇이 가장 효과적인지 확인하십시오! 저격수를 상대할 수 없게 하지 않도록 주의하십시오. 아니면 산탄총이 아닌 보조무기를 고려하십시오.",	
+		["loading_equip_skills_res_1"] = "산탄총은 정확도가 낮아질수록 사거리가 줄어듭니다. 실험을 통해 무엇이 가장 효과적인지 확인하십시오! 다만 저격수를 상대할 수 없게 하지 않도록 주의하십시오. 아니면 산탄총이 아닌 보조무기를 고려하십시오.",	
 		["loading_equip_skills_res_2"] = "권총은 교체가 매우 빠르고 일반적으로 정확도와 안정성이 높습니다. 당신이 다른 것에 특화되어 있지 않다면 백업 무기로도 아주 유용합니다.",	
 		["loading_equip_skills_res_3"] = "레스트레이션의 무기는 장단점이 있는 다양한 클래스에 속합니다. 더 높은 데미지의 무기는 적을 더 빨리 죽일 수 있지만, 그것을 알기도 전에 탄약이 다 떨어져 있을겁니다!",	
 		["loading_equip_skills_res_4"] = "데미지가 높은 무기는 일반적으로 정확도나 발사 속도와 같은 심각한 단점이 없는 한 은닉성이 낮습니다.",	
-		["loading_equip_skills_res_5"] = "울프는 현장 수리가 가능하도록 센트리 건을 업그레이드했습니다. 시간이 좀 걸리지만 시작하면 자동으로 복구됩니다.",	
+		["loading_equip_skills_res_5"] = "울프는 현장 수리가 가능하도록 센트리 건을 업그레이드했습니다. 시간이 좀 걸리지만 시작하면 자동으로 수리합니다.",	
 		["loading_equip_skills_res_6"] = "센트리 철갑탄을 잠금 해제된 경우 장비 메뉴에서 기본 탄약 유형을 선택할 수 있습니다.",	
-		["loading_equip_skills_res_7"] = "퍽 덱은 상당한 데미지 보너스를 제공하며 그 중 다수는 희귀하고 귀중한 치유 능력을 제공합니다. 높은 난이도를 플레이하고 싶다면 업그레이드를 게을리하지 마십시오.",	
-		["loading_equip_skills_res_8"] = "크루 치프, 아머러, 머슬, 크룩, 겜블러 및 바이커는 기본적이지만 일관된 퍽 덱입니다. 이것은 퍽 덱을 구축하기 위한 훌륭한 첫 번째 퍽 덱으로 선택할 수 있습니다.",	
-		["loading_equip_skills_res_9"] = "히트맨은 낮은 장기 생존성과 일관성 퍽 덱으로 리워크 되었지만 그 대가로 '임시 HP'를 엄청나게 모아 어려운 지점을 통과할 수 있습니다.",	
-		["loading_equip_skills_res_10"] = "크루 치프는 적지만 유용한 버프를 당신과 팀원에게 부여하고 여러 명의 인질이 있는 경우 더 많은 버프를 제공하는 팀 중심의 퍽 덱입니다. 마스터마인드의 통제자 트리와 함께 쓸 수 있습니다.",	
-		["loading_equip_skills_res_11"] = "갬블러는 탄약을 획득할 때 팀원에게 약간의 체력과 추가 탄약을 제공하는 팀 중심의 퍽 덱입니다. 추가 탄약을 제공하는 스킬과 함께 쓸 수 있습니다.",	
-		["loading_equip_skills_res_12"] = "매니악은 빠른 팀 중심의 퍽 덱으로, 계속되는 킬을 유지하는 한 자신과 팀원에게 받는 피해를 줄여줍니다. 고 데미지 출력 빌드와 데미지 저항 빌드와 함께 쓸 수 있습니다.",	
+		["loading_equip_skills_res_7"] = "특성 덱은 상당한 데미지 보너스를 제공하며 그 중 다수는 희귀하고 귀중한 치유 능력을 제공합니다. 높은 난이도를 플레이하고 싶다면 업그레이드를 게을리하지 마십시오.",	
+		["loading_equip_skills_res_8"] = "크루 치프, 아머러, 머슬, 크룩, 겜블러 및 바이커는 기본적이지만 일관된 특성 덱입니다. 이것은 특성 덱을 구축하기 위한 훌륭한 첫 번째 특성 덱으로 선택할 수 있습니다.",	
+		["loading_equip_skills_res_9"] = "히트맨은 낮은 장기 생존성과 일관성 특성 덱으로 리워크 되었지만 그 대가로 '임시 HP'를 엄청나게 모아 어려운 지점을 통과할 수 있습니다.",	
+		["loading_equip_skills_res_10"] = "크루 치프는 적지만 유용한 버프를 당신과 팀원에게 부여하고 여러 명의 인질이 있는 경우 더 많은 버프를 제공하는 팀 중심의 특성 덱입니다. 마스터마인드의 통제자 트리와 함께 쓸 수 있습니다.",	
+		["loading_equip_skills_res_11"] = "갬블러는 탄약을 획득할 때 팀원에게 약간의 체력과 추가 탄약을 제공하는 팀 중심의 특성 덱입니다. 추가 탄약을 제공하는 스킬과 함께 쓸 수 있습니다.",	
+		["loading_equip_skills_res_12"] = "매니악은 빠른 팀 중심의 특성 덱으로, 계속되는 킬을 유지하는 한 자신과 팀원에게 받는 피해를 줄여줍니다. 고 데미지 출력 빌드와 데미지 저항 빌드와 함께 쓸 수 있습니다.",	
 		["loading_equip_skills_res_13"] = "해커의 휴대용 ECM은 팀 전체의 치유와 강력한 군중 제어를 제공하지만 재충전하는 데 오랜 시간이 걸립니다. 스텔스에서도 효과적입니다.",	
-		["loading_equip_skills_res_14"] = "버글러는 라우드용으로 사용되는 다른 덱보다 약간 약한 대가로 스텔스에 약간의 보너스를 제공하는 퍽 덱입니다.",	
-		["loading_equip_skills_res_15"] = "킹핀은 다재다능한 퍽 덱입니다. 주사기로 자가 유지, 높은 데미지에서 살아남거나 팀 대신 적의 사격을 맞아주는 데 사용할 수 있습니다.",	
-		["loading_equip_skills_res_16"] = "태그 팀은 두 사람이 계속되는 킬을 유지하는 한 특정 팀원에게 많은 치유를 제공할 수 있는 팀 중심의 퍽 덱입니다.",	
+		["loading_equip_skills_res_14"] = "버글러는 라우드용으로 사용되는 다른 덱보다 약간 약한 대가로 스텔스에 약간의 보너스를 제공하는 특성 덱입니다.",	
+		["loading_equip_skills_res_15"] = "킹핀은 다재다능한 특성 덱입니다. 주사기로 자가 유지, 높은 데미지에서 살아남거나 팀 대신 적의 사격을 맞아주는 데 사용할 수 있습니다.",	
+		["loading_equip_skills_res_16"] = "태그 팀은 두 사람이 계속되는 킬을 유지하는 한 특정 팀원에게 많은 치유를 제공할 수 있는 팀 중심의 특성 덱입니다.",	
 		["loading_equip_skills_res_17"] = "실드를 관통하는 총알은 절반의 피해를 줍니다.",	
 		["loading_equip_skills_res_18"] = "Peacemaker와 Phoenix .500 리볼버는 저격소총처럼 방탄복을 관통할 수 있습니다.",
 		["loading_equip_skills_res_19"] = "화면 측면에 파란색 미터가 있으면 회피가 있다는 뜻입니다. 깜박거리면 다음 총알을 피할 수 있습니다. 회피 리워크에 대한 자세한 설명은 가이드를 참조하십시오.",	
@@ -1625,10 +1625,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_equip_skills_res_25"] = "충격탄은 불도저를 상대로도 매우 강력한 교란을 줍니다.",	
 		["loading_equip_skills_res_26"] = "조준기로 조준하면 경기관총을 사용하더라도 정확도가 크게 증가하고 반동이 감소합니다.",	
 		["loading_equip_skills_res_27"] = "파운더 네일건은 다른 어떤 근접 무기보다 훨씬 더 긴 사거리를 가지고 있습니다.",	
-		["loading_equip_skills_res_28"] = "퍽 덱의 레벨을 올리면 투척물 케이스가 잠금 해제됩니다.",
+		["loading_equip_skills_res_28"] = "특성 덱의 레벨을 올리면 투척물 케이스가 잠금 해제됩니다.",
 		["loading_equip_skills_res_29"] = "이제 투척물 케이스로 사용할 때마다 투척물을 보충하면 모두 채워줍니다.",	
 		["loading_equip_skills_res_30"] = "상황이 안 좋을때 인스파이어 에이스로 팀원을 구하십시오. 재사용 대기 시간이 매우 길고 시야가 필요합니다.",	
-		["loading_equip_skills_res_31"] = "레스트레이션 모드는 각각 일반 퍽만 제공하거나 퍽은 제공하지 않는 두 개의 새로운 퍽 덱(와일드카드 및 백지)을 추가했습니다. 이것은 스스로 부과한 도전을 하고 싶은 사람들을 위한 퍽 덱입니다.",
+		["loading_equip_skills_res_31"] = "레스트레이션 모드는 각각 일반 퍽만 제공하거나 퍽은 제공하지 않는 두 개의 새로운 특성 덱(와일드카드 및 백지)을 추가했습니다. 이것은 스스로 부과한 도전을 하고 싶은 사람들을 위한 특성 덱입니다.",
 		--Misc Hints
 		["loading_misc_res_title"] = "레스트레이션 기타 팁",
 		["loading_misc_res_1"] = "저희가 만든 커스텀 하이스트도 해보십시오! 블라드의 '도그하우스'뿐만 아니라 '자칼'의 계약에서 대부분 찾을 수 있습니다.",	
@@ -1642,7 +1642,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["loading_fluff_res_4"] = "NYPD Bronco 경찰은 도넛을 좋아합니다.",	
 		["loading_fluff_res_5"] = "ZEAL UMP 엘리트 SWAT의 이름은 Chad입니다.",	
 		["loading_fluff_res_6"] = "타이탄 도저는 광범위한 유전 공학, 인간 실험 및 전투용 약물 덕분에 빛나는 눈을 가지고 있습니다.",	
-		["loading_fluff_res_7"] = "캡틴 스프링은 인간이 아닙니다. 아니면 아주 옛날에 인간이였을 수도 있습니다.",	
+		["loading_fluff_res_7"] = "캡틴 스프링은 인간이 아닙니다. 아니면 아주 옛날에 인간이였을겁니다.",	
 		["loading_fluff_res_8"] = "레스트레이션 모드는 커뮤니티의 다양한 맴버와 개발 팀에 의해 'resmod','SCmod','furry mod' 및 'mememod'라는 별명이 붙었습니다.",	
 		["loading_fluff_res_9"] = "옴니아는 공룡의 공격으로부터 보호하기 위해 강화된 보안문을 개발하고 있습니다.",	
 		["loading_fluff_res_10"] = "척탄병은 해충 구제에도 투입됩니다.",	
@@ -1674,13 +1674,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["st_menu_enforcer_armor"] = "저거너트",
 		["st_menu_enforcer_ammo"] = "지원",
 		["st_menu_technician_auto"] = "전투 공병",
-		["st_menu_technician_breaching"] = "브리처",
+		["st_menu_technician_breaching"] = "돌파자",
 		["st_menu_technician_sentry"] = "요새",
 		["hud_instruct_mask_on"] = "$BTN_USE_ITEM 키를 눌러 마스크 착용",
 		["hud_instruct_mask_on_alpha"] = "$BTN_USE_ITEM 키를 눌러 마스크 착용",
 
 		--Default Suit String
-		["bm_suit_none_desc"] = "이것은 선택한 갑옷을 입은 하이스터의 기본 복장입니다. 선택한 습격에 따라 투피스 슈트에서 자동으로 변경됩니다!",
+		["bm_suit_none_desc"] = "이것은 선택한 갑옷을 입은 하이스터의 기본 복장입니다. 선택한 습격에 따라 투피스 정장에서 자동으로 변경됩니다!",
 
 		-- Ad Banner Change
 		["menu_changelog"] = "Latest Changelog",
@@ -1692,9 +1692,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Mutators
 		["menu_mutators_achievement_disabled"] = "뮤테이터를 활성화하면 경험치와 획득한 돈이 감소되고 도전과제, 대부분의 트로피 및 레벨 완료 획득을 비활성화합니다!",
-
+		
 		--Enemy Replacers
-		["mutator_specials_override_boom"] = "Grenadiers",
+		["mutator_specials_override_boom"] = "척탄병",
 
 		["mutator_medidozer_longdesc"] = "All normal enemies during assault waves are replaced with Medics, and all special units are replaced with Bulldozers.",
 		["mutator_medicdozers"] = "메딕 도저",
@@ -1703,7 +1703,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_notitans"] = "예산 삭감",
 		["mutator_notitans_desc"] = "타이탄 유닛을 비활성화합니다.",
-		["mutator_notitans_longdesc"] = "타이탄 유닛의 모든 생성 인스턴스가 비활성화됩니다.",
+		["mutator_notitans_longdesc"] = "타이탄 유닛의 모든 스폰 인스턴스가 비활성화됩니다.",
 
 		["mutator_mememanonly"] = "님들아 그걸 믿었음?",
 		["mutator_mememanonly_desc"] = "정신나갈거같애",
@@ -1725,22 +1725,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_fatroll_desc"] = "피해 유예시간을 비활성화 시킵니다.",
 		["mutator_fatroll_longdesc"] = "플레이어와 AI 팀원에 대한 피해 유예는 0으로 설정되어 피해가 들어오는 지연이 없어집니다.",
 
-		["mutator_zombie_outbreak"] = "데드 워킹",
-		["mutator_zombie_outbreak_desc"] = "모든 적을 좀비 유닛으로 교체합니다",
-		["mutator_zombie_outbreak_longdesc"] = "죽은 자들이 일어났다! 모든 적을 좀비 유닛으로 교체합니다.",
+		["mutator_zombie_outbreak"] = "The Dead Walking",
+		["mutator_zombie_outbreak_desc"] = "Replaces all enemies with Zombie units",
+		["mutator_zombie_outbreak_longdesc"] = "The dead have risen! Replaces all enemies with Zombie units",
 
-		["mutator_faction_override"] = "적 진영 오버라이드",
+		["mutator_faction_override"] = "Enemy Faction Override",
 		["mutator_faction_override_desc"] = "",
 		["mutator_faction_override_longdesc"] = "",
 		["mutator_faction_override_"] = "",
 		["mutator_faction_override_select"] = "",
-		["mutator_faction_override_america"] = "미국",
-		["mutator_faction_override_russia"] = "러시아",
-		["mutator_faction_override_zombie"] = "좀비",
-		["mutator_faction_override_murkywater"] = "머키워터",
+		["mutator_faction_override_america"] = "America",
+		["mutator_faction_override_russia"] = "Russia",
+		["mutator_faction_override_zombie"] = "Zombie",
+		["mutator_faction_override_murkywater"] = "MurkyWater",
 		["mutator_faction_override_nypd"] = "NYPD",
 		["mutator_faction_override_lapd"] = "LAPD",
-		["faction_selector_choice"] = "진영: ",
+		["faction_selector_choice"] = "Faction: ",
 
 		--Crime spree modifier changes
 		["cn_crime_spree_brief"] = "크라임 스프리는 연속적으로 실행되는 무작위로 선택되는 하이스트의 끝없는 시리즈입니다. 하이스트를 완료할 때마다 등급과 보상이 증가합니다! 20 또는 26 등급마다 개조를 선택해야 하고 100 등급마다 리스크 레벨이 증가하므로 다음 습격을 완료하기가 더 어려워집니다. 리스크 레벨 600 이후에는 플레이어가 가지고 있는 무적 프레임의 양이 감소하기 시작하고 브라보 유닛이 정상적으로 스폰되기 시작합니다.\n\n##팀원을 초대하는 경우 랭크와 보상을 얻기 위해 합류하기 전에 자신만의 크라임 스프리를 시작했는지 확인하십시오.##",
@@ -1755,7 +1755,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_boomboom"] = "척탄병은 이제 사망 시 폭발합니다.",
 		["menu_cs_modifier_friendlyfire"] = "팀원이 아군 사격 피해를 100% 받습니다.",
 		["menu_cs_modifier_dodgethis"] = "베테랑 경찰은 이제 모든 총알을 피합니다.",
-		["menu_cs_modifier_sniper_aim"] = "저격수가 이제 소총을 100% 더 빠르게 조준합니다.",
+		["menu_cs_modifier_sniper_aim"] = "저격수는 이제 소총을 100% 더 빠르게 조준합니다.",
 		["menu_cs_modifier_health_damage_total"] = "",
 		["menu_cs_modifier_heavies"] = "모든 소총 SWAT 유닛은 15%의 추가 확률로 엘리트 UMP 유닛이 됩니다.",
 		["menu_cs_modifier_heavy_sniper"] = "타이탄 명사수와 브라보 지정사수는 이제 근거리에서 완전 자동으로 소총을 발사합니다.",
@@ -1763,7 +1763,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_cs_modifier_dozer_minigun"] = "그린 또는  블랙 불도저가 생성될 때마다 M1014를 든 불도저로 교체될 확률이 생깁니다.",
 		["menu_cs_modifier_shield_phalanx"] = "모든 일반 실드 유닛은 15%의 추가 확률로 타이탄 실드가 됩니다.",
 		["menu_cs_modifier_taser_overcharge"] = "테이저의 테이징 녹아웃 효과가 더 이상 지연되지 않습니다.",
-		["menu_cs_modifier_dozer_rage"] = "불도저의 안면부가 파괴되면 불도저는 광포한 분노에 빠져 기본 피해량을 10% 증가시킵니다.",
+		["menu_cs_modifier_dozer_rage"] = "불도저의 안면부가 파괴되면 불도저는 버서커 분노에 빠져 기본 피해량을 10% 증가시킵니다.",
 		["menu_cs_modifier_medic_adrenaline"] = "모든 메딕 유닛은 15%의 추가 확률로 옴니아 LPF가 됩니다.",
 		["menu_cs_modifier_cloaker_arrest"] = "클로커의 근접 공격운 이제 플레이어를 수갑을 채우게합니다.",
 		["menu_cs_modifier_cloaker_smoke"] = "클로커는 이제 회피 시 50%의 확률로 섬광탄을 떨어뜨립니다.",
@@ -1804,7 +1804,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_quiet_desc"] = "플레이어의 은페도가 2만큼 증가합니다.",
 
 		["menu_crew_generous"] = "비축자",
-		["menu_crew_generous_desc"] = "플레이어의 매 70킬마다 투척 무기를 한 개씩 회수합니다.",
+		["menu_crew_generous_desc"] = "플레이어의 투척 무기를 매 70킬마다 한 개씩 얻습니다.",
 
 		["menu_crew_eager"] = "가속자",
 		["menu_crew_eager_desc"] = "플레이어의 장전 속도가 10%만큼 빨라집니다.",
@@ -2290,7 +2290,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deckall_8_desc_sc"] = "의료 가방의 상호 작용 속도가 ##20%만큼 빨라집니다.##\n\n##25%## 더 많은 피해를 입힙니다. 투척 무기, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.",
 
 		--Crook--
-		["menu_st_spec_6_desc_sc"] = "크룩은 다재다능한 범죄자입니다. 사기꾼이란 단어는 범죄란 단어처럼 역사가 깊은 단어입니다.\n\n크룩은 진정한 팔방미인입니다. 그는 자신이 원하는 것이 있다면 훔치고, 거짓말하고, 속이고, 어떠한 일이더라도 할 것입니다.\n\n\n\n전체 특전 덱의 이점:\n##-##회피 포인트가 ##5##만큼 증가합니다.\n##-##방탄 조끼의 경우 회피가 추가로 ##10##만큼 증가합니다.\n##-##방탄 조끼의 방어력이 ##50%##만큼 증가합니다.",
+		["menu_st_spec_6_desc_sc"] = "크룩은 다재다능한 범죄자입니다. 사기꾼이란 단어는 범죄란 단어처럼 역사가 깊은 단어입니다.\n\n크룩은 진정한 팔방미인입니다. 그는 자신이 원하는 것이 있다면 훔치고, 거짓말하고, 속이고, 어떠한 일이더라도 할 것입니다.\n\n\n\n전체 특성 덱의 이점:\n##-##회피 포인트가 ##5##만큼 증가합니다.\n##-##방탄 조끼의 경우 회피가 추가로 ##10##만큼 증가합니다.\n##-##방탄 조끼의 방어력이 ##50%##만큼 증가합니다.",
 		["menu_deck6_1_desc_sc"] = "회피가 ##5##만큼 증가합니다.\n\n방어 조끼의 경우 방어도가 ##15%##만큼 증가합니다.",
 		["menu_deck6_3_desc_sc"] = "방탄조끼류의 회피 포인트가 추가로 ##5##만큼 증가합니다.",
 		["menu_deck6_5_desc_sc"] = "방탄조끼류의 방어력이 추가로 ##15%##만큼 증가합니다.",
@@ -2298,7 +2298,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck6_9_desc_sc"] = "방탄조끼류의 방어력이 추가로 ##20%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Rogue
-		["menu_st_spec_4_desc_sc"] = "로그는 야비한 수단과 치명적인 힘을 둘 다 가진 은밀한 범죄자입니다. 다재다능하고 모두를 잘 속일수 있기에, 로그는 좀도둑질뿐만 아니라 사기까지 모든 일을 할 수 있습니다.\n\n로그의 트레이드마크라면 다재다능함이죠. 로그는 화력이 부족하더라도 그만의 기술로 커버할 수 있습니다.\n\n\n\n전체 특전 덱의 이점:\n##-##회피가 ##15##만큼 증가합니다.\n##-##무기를 교체하는 속도가 ##30%##만큼 빨라집니다.\n##-##일어날 때 회피 미터가 정상 최대치의 ##200%##까지 채워집니다.\n##-##공격을 회피하면 다음 ##20##초 동안 ##2##초마다 체력이 ##1##씩 회복됩니다. 이 효과는 중첩될 수 있지만 체력 피해를 입을 때마다 모든 중첩이 손실됩니다.",
+		["menu_st_spec_4_desc_sc"] = "로그는 야비한 수단과 치명적인 힘을 둘 다 가진 은밀한 범죄자입니다. 다재다능하고 모두를 잘 속일수 있기에, 로그는 좀도둑질뿐만 아니라 사기까지 모든 일을 할 수 있습니다.\n\n로그의 트레이드마크라면 다재다능함이죠. 로그는 화력이 부족하더라도 그만의 기술로 커버할 수 있습니다.\n\n\n\n전체 특성 덱의 이점:\n##-##회피가 ##15##만큼 증가합니다.\n##-##무기를 교체하는 속도가 ##30%##만큼 빨라집니다.\n##-##일어날 때 회피 미터가 정상 최대치의 ##200%##까지 채워집니다.\n##-##공격을 회피하면 다음 ##20##초 동안 ##2##초마다 체력이 ##1##씩 회복됩니다. 이 효과는 중첩될 수 있지만 체력 피해를 입을 때마다 모든 중첩이 손실됩니다.",
 		["menu_deck4_1_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.\n\n무기를 교체하는 속도가 ##30%## 빨라집니다.",
 		["menu_deck4_3_desc_sc"] = "회피 포인트가 추가로 ##5##만큼 증가합니다.",
 		["menu_deck4_5_desc_sc"] = "일어날 때 회피 미터가 정상 최대치의 ##200%##까지 채워집니다.",
@@ -2311,7 +2311,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_5_sc"] = "연필로",
 		["menu_deck5_7_sc"] = "전문 암살자",
 
-		["menu_st_spec_5_desc_sc"] = "히트맨은 범죄의 뒷골목에서 온 근접전뿐만 아니라 원거리전에도 능통한 프로 암살자입니다.\n\n범죄단은 자신들의 힘을 보여주거나, 보복을 하거나, 경쟁자를 제거하기 위한 마지막 수단으로 히트맨을 고용할 것입니다.\n\n\n\n\n전체 특전 덱의 이점:\n##-##근접 무기 외로 적을 죽이면 ##25## 임시 체력이 생깁니다. 최대 ##120##까지 임시 체력을 저장할 수 있습니다. 근접 공격으로 적을 죽이면 저장된 임시 체력이 초당 ##5##씩 감소하는 임시 체력으로 바뀝니다. 임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다. 참고: 광분은 임시 체력을 ##75%만큼 감소합니다.##\n##-##방어력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n##-##회피가 ##5##만큼 증가합니다.\n##-##임시 체력이 있는 동안 굴절이 ##20## 증가하고 이동 속도가 ##20%## 증가합니다.",
+		["menu_st_spec_5_desc_sc"] = "히트맨은 범죄의 뒷골목에서 온 근접전뿐만 아니라 원거리전에도 능통한 프로 암살자입니다.\n\n범죄단은 자신들의 힘을 보여주거나, 보복을 하거나, 경쟁자를 제거하기 위한 마지막 수단으로 히트맨을 고용할 것입니다.\n\n\n\n\n전체 특성 덱의 이점:\n##-##근접 무기 외로 적을 죽이면 ##25## 임시 체력이 생깁니다. 최대 ##120##까지 임시 체력을 저장할 수 있습니다. 근접 공격으로 적을 죽이면 저장된 임시 체력이 초당 ##5##씩 감소하는 임시 체력으로 바뀝니다. 임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다. 참고: 광분은 임시 체력을 ##75%만큼 감소합니다.##\n##-##방어력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n##-##회피가 ##5##만큼 증가합니다.\n##-##임시 체력이 있는 동안 굴절이 ##20## 증가하고 이동 속도가 ##20%## 증가합니다.",
 		["menu_deck5_1_desc_sc"] = "근접 외로 적을 죽이면 ##25## 임시 체력이 생깁니다. 최대 ##75##의 체력을 저장할 수 있습니다.\n\n근접 공격으로 적을 죽이면 저장된 체력이 초당 ##5##의 속도로 감소하는 임시 체력으로 바뀝니다.\n\n임시 체력은 일반 최대 체력을 초과할 수 있지만 한 번에 최대 ##240## 임시 체력만 가질 수 있습니다.\n\n참고: 광분은 일시적인 체력을 ##75%만큼 감소시킵니다.##",
 		["menu_deck5_3_desc_sc"] = "방어력이 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.\n\n추가로 회피 포인트를 ##5##만큼 얻습니다.",
 		["menu_deck5_5_desc_sc"] = "임시 체력을 ##60%##만큼 더 저장합니다.",
@@ -2319,7 +2319,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck5_9_desc_sc"] = "임시 체력이 있는 동안 ##20## 굴절 및 ##20%## 추가 이동 속도를 얻습니다.\n\n각 굴절 포인트마다 받는 체력 피해를 ##1%## 적게 하며 다른 형태의 피해 감소 후에 적용됩니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Muscle
-		["menu_st_spec_2_desc_sc"] = "머슬은 자신의 마피아 간부들의 말을 폭력으로 전하는 터프가이입니다. 그들은 모든 범죄조직의 중심입니다.\n\n누군가가 다른사람을 때리고, 다리를 부러트리고, 머리를 박살내고, 누가 짱인지를 보여줘야할때, 머슬이 제 역할을 할 것입니다.\n\n\n전체 특전 덱의 이점:\n##-##체력을 ##40%## 더 얻습니다.\n##-##총을 사용하여 ##적들 사이에 공포를 퍼뜨릴 수 있습니다.##\n##-##일어난 후 최대 체력의 ##25%##를 얻습니다.",
+		["menu_st_spec_2_desc_sc"] = "머슬은 자신의 마피아 간부들의 말을 폭력으로 전하는 터프가이입니다. 그들은 모든 범죄조직의 중심입니다.\n\n누군가가 다른사람을 때리고, 다리를 부러트리고, 머리를 박살내고, 누가 짱인지를 보여줘야할때, 머슬이 제 역할을 할 것입니다.\n\n\n전체 특성 덱의 이점:\n##-##체력을 ##40%## 더 얻습니다.\n##-##총을 사용하여 ##적들 사이에 공포를 퍼뜨릴 수 있습니다.##\n##-##일어난 후 최대 체력의 ##25%##를 얻습니다.",
 		["menu_deck2_1_desc_sc"] = "체력을 ##10%##만큼 얻습니다.",
 		["menu_deck2_3_desc_sc"] = "체력을 추가로 ##10%##만큼 얻습니다.",
 		["menu_deck2_5_desc_sc"] = "체력을 추가로 ##10%##만큼 얻습니다.",
@@ -2327,14 +2327,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck2_9_desc_sc"] = "추가로 체력을 ##10%##만큼 얻습니다.\n\n일어난 후 최대 체력의 ##25%##를 회복합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Crew Chief
-		["menu_st_spec_1_desc_sc"] = "카포레짐으로도 알려져 있는 크루 치프는 마피아의 일부를 이끌 수 있는 고위 간부를 말합니다. 크루 치프는 그의 하수인과 동료들에게 지시를 하고 곧바로 보스와 그의 오른팔에게 보고합니다.\n\n범죄단이 처리할 일이 필요하다면, 크루 치프와 그의 동료들이 그 일을 제대로 처리할 것입니다.\n\n\n전체 특전 덱의 이점:\n##-##체력을 ##15%##만큼 얻습니다.\n##-##외침 거리가 ##25%##만큼 증가합니다.\n##-##방어력을 ##10%##만큼 얻습니다.\n##-##당신과 당신의 팀원이 스태미나를 ##50%##만큼 더 얻습니다.\n##-##팀원의 체력이 ##5%##만큼 증가합니다.\n##-##각 인질이 있을 때마다 당신과 당신의 팀원은 최대 ##5%## 최대 체력과 ##10%## 스태미나를 ##4##번 얻습니다.",
+		["menu_st_spec_1_desc_sc"] = "카포레짐으로도 알려져 있는 크루 치프는 마피아의 일부를 이끌 수 있는 고위 간부를 말합니다. 크루 치프는 그의 하수인과 동료들에게 지시를 하고 곧바로 보스와 그의 오른팔에게 보고합니다.\n\n범죄단이 처리할 일이 필요하다면, 크루 치프와 그의 동료들이 그 일을 제대로 처리할 것입니다.\n\n\n전체 특성 덱의 이점:\n##-##체력을 ##15%##만큼 얻습니다.\n##-##외침 거리가 ##25%##만큼 증가합니다.\n##-##방어력을 ##10%##만큼 얻습니다.\n##-##당신과 당신의 팀원이 스태미나를 ##50%##만큼 더 얻습니다.\n##-##팀원의 체력이 ##5%##만큼 증가합니다.\n##-##각 인질이 있을 때마다 당신과 당신의 팀원은 최대 ##5%## 최대 체력과 ##10%## 스태미나를 ##4##번 얻습니다.",
 		["menu_deck1_3_desc_sc"] = "당신과 당신의 팀원의 스태미나가 ##50%##만큼 증가합니다.\n\n외침 거리가 ##25%##만큼 증가합니다.\n\n참고: 팀원의 퍽과 중첩되지 않습니다.",
 		["menu_deck1_5_desc_sc"] = "당신과 당신의 팀원의 체력이 ##5%## 많이 얻습니다.\n\n참고: 팀원의 퍽은 중첩되지 않습니다.",
 		["menu_deck1_7_desc_sc"] = "방어력을 ##10%##만큼 얻습니다.",
 		["menu_deck1_9_desc_sc"] = "각 인질이 있을 때마다 당신과 당신의 팀원은 ##5%## 최대 체력과 ##10%## 스태미나를 최대 ##4##번 얻습니다.\n\n참고: 팀원의 퍽과 중첩되지 않습니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 		
 		--Armorer--
-		["menu_st_spec_3_desc_sc"] = "아머러는 군대에 있었던 직책이었습니다. 아머러는 갑옷을 유지, 보수, 개량하는것이 자신의 일입니다.\n\n어느 범죄조직이라도 모두가 효율적인 일처리를 수행할 수 있게끔 충분한 보호구를 제공해 줄 수 있는 사람이 필요할 것입니다.\n\n\n\n전체 특전 덱의 이점:\n##-##방어력을 ##25%##만큼 얻습니다.\n##-##방어구 회복 속도가 ##20%##만큼 증가합니다.",
+		["menu_st_spec_3_desc_sc"] = "아머러는 군대에 있었던 직책이었습니다. 아머러는 갑옷을 유지, 보수, 개량하는것이 자신의 일입니다.\n\n어느 범죄조직이라도 모두가 효율적인 일처리를 수행할 수 있게끔 충분한 보호구를 제공해 줄 수 있는 사람이 필요할 것입니다.\n\n\n\n전체 특성 덱의 이점:\n##-##방어력을 ##25%##만큼 얻습니다.\n##-##방어구 회복 속도가 ##20%##만큼 증가합니다.",
 		["menu_deck3_1_desc_sc"] = "방어력을 ##10%##만큼 얻습니다.",
 		["menu_deck3_3_desc_sc"] = "방어력을 추가로 ##10%##만큼 얻습니다.",
 		["menu_deck3_5_desc_sc"] = "방어력을 추가로 ##5%##만큼 얻습니다.",
@@ -2342,7 +2342,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck3_9_desc_sc"] = "방어구 회복률이 추가로 ##10%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Burglar--
-		["menu_st_spec_7_desc_sc"] = "버글러의 타고난 민첩함은 단순히 쳐부수고 들어가는 것을 넘어섭니다. 버글러의 재빠름은 자물쇠를 따는것과 시체를 처리하는것, 그리고 페이저에 응답하는것을 빠르게 하게 합니다.\n\n또한 그들은 전투에서 피격되기 힘듭니다. 그들은 대개 싸움에서 벗어나는 방법으로 살아남습니다.\n\n\n\n전체 특전 덱의 이점:\n##-##회피 포인트가 ##15##만큼 증가합니다.\n##-##웅크리고 있는 동안 회피 미터가 1초마다 회피의 ##10%##만큼 채워집니다.\n##-##시체 가방을 싸는 시간이 ##20%##만큼 빨라집니다.\n##-##락픽 시간이 ##20%##만큼 빨라집니다.\n##-##페이저에 응답하는 속도가 ##10%##만큼 빨라집니다.\n##-##방어구 회복률이 ##10%##만큼 증가합니다.\n##-##웅크리고 있을 때 이동 속도가 ##10%##만큼 증가합니다.",		
+		["menu_st_spec_7_desc_sc"] = "버글러의 타고난 민첩함은 단순히 쳐부수고 들어가는 것을 넘어섭니다. 버글러의 재빠름은 자물쇠를 따는것과 시체를 처리하는것, 그리고 페이저에 응답하는것을 빠르게 하게 합니다.\n\n또한 그들은 전투에서 피격되기 힘듭니다. 그들은 대개 싸움에서 벗어나는 방법으로 살아남습니다.\n\n\n\n전체 특성 덱의 이점:\n##-##회피 포인트가 ##15##만큼 증가합니다.\n##-##웅크리고 있는 동안 회피 미터가 1초마다 회피의 ##10%##만큼 채워집니다.\n##-##시체 가방을 싸는 시간이 ##20%##만큼 빨라집니다.\n##-##락픽 시간이 ##20%##만큼 빨라집니다.\n##-##페이저에 응답하는 속도가 ##10%##만큼 빨라집니다.\n##-##방어구 회복률이 ##10%##만큼 증가합니다.\n##-##웅크리고 있을 때 이동 속도가 ##10%##만큼 증가합니다.",		
 		["menu_deck7_1_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.\n\n웅크리고 있는 동안 회피 미터가 1초마다 회피의 ##5%##만큼 채워집니다.",
 		["menu_deck7_3_desc_sc"] = "추가로 회피 포인트가 ##5##만큼 증가합니다.\n\n시체 가방을 싸는 시간이 ##20%##만큼 빨라집니다.",
 		["menu_deck7_5_desc_sc"] = "락픽 시간이 ##20%##만큼 빨라집니다.\n\n웅크리고 있는 동안 회피 미터가 1초마다 회피의 ##5%##만큼 채워집니다.",
@@ -2350,7 +2350,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck7_9_desc_sc"] = "방어구 회복률이 ##10%##만큼 증가합니다.\n\n웅크리고 있을 때 이동 속도가 ##10%##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Gambler--
-		["menu_st_spec_10_desc_sc"] = "운은 보기 힘든 재능입니다. 고대 그리스인들은 운을 신들만이 만들어 줬다고 믿었습니다. 이는 사실이 아닙니다. 운을 타고난 사람들도 존재하지만, 운은 만들어 낼 수도 있습니다. 이를 위해서는 준비와, 모든 것이 계획대로 이루어지게 하여 수익을 최대한으로 끌어들일 수 있는 치밀한 고려가 필요합니다. 운의 여신을 기다리는 것이 아니라, 카드들을 전부 기억해 두는 것이죠.\n\n갬블러 특성 덱은 지원형 덱입니다. 모두가 팀이 승리하도록 도울 수 있지만, 갬블러는 팀이 크게 승리하도록 돕습니다.\n\n전체 특전 덱의 이점:\n##-##획득한 탄약 상자가 ##8##에서 ##12##의 체력을 치료하는 의약품을 생성합니다. 매 ##10##초마다 한 번 밖에 일어나지만, 탄약 상자를 얻을 때마다 이를 ##3##에서 ##5##초씩 감소시킵니다.\n##-##탄약 상자를 획득하고 회복되면:\n당신의 팀원들도 ##탄약을 얻습니다##.\n탄약 상자로 치료할 때 회피 미터가 회피의 ##100%##만큼 채워집니다.\n당신의 팀원이 ##50%##만큼 치유됩니다.\n방어력을 ##30##만큼 얻습니다.\n##-##회피 포인트를 ##10##만큼 얻습니다.",		
+		["menu_st_spec_10_desc_sc"] = "운은 보기 힘든 재능입니다. 고대 그리스인들은 운을 신들만이 만들어 줬다고 믿었습니다. 이는 사실이 아닙니다. 운을 타고난 사람들도 존재하지만, 운은 만들어 낼 수도 있습니다. 이를 위해서는 준비와, 모든 것이 계획대로 이루어지게 하여 수익을 최대한으로 끌어들일 수 있는 치밀한 고려가 필요합니다. 운의 여신을 기다리는 것이 아니라, 카드들을 전부 기억해 두는 것이죠.\n\n갬블러 특성 덱은 지원형 덱입니다. 모두가 팀이 승리하도록 도울 수 있지만, 갬블러는 팀이 크게 승리하도록 돕습니다.\n\n전체 특성 덱의 이점:\n##-##획득한 탄약 상자가 ##8##에서 ##12##의 체력을 치료하는 의약품을 생성합니다. 매 ##10##초마다 한 번 밖에 일어나지만, 탄약 상자를 얻을 때마다 이를 ##3##에서 ##5##초씩 감소시킵니다.\n##-##탄약 상자를 획득하고 회복되면:\n당신의 팀원들도 ##탄약을 얻습니다##.\n탄약 상자로 치료할 때 회피 미터가 회피의 ##100%##만큼 채워집니다.\n당신의 팀원이 ##50%##만큼 치유됩니다.\n방어력을 ##30##만큼 얻습니다.\n##-##회피 포인트를 ##10##만큼 얻습니다.",		
 		["menu_deck10_1_desc_sc"] = "획득한 탄약 상자가 ##8##에서 ##12##의 체력을 치료하는 의약품을 생성합니다.\n\n매 ##10##초마다 한 번 밖에 일어나지만, 탄약 상자를 얻을 때마다 이를 ##3##에서 ##5##초씩 감소시킵니다.",
 		["menu_deck10_3_desc_sc"] = "탄약 상자를 획득하고 회복되면, 당신의 팀원들도 ##탄약을 얻습니다##.\n\n회피 포인트를 ##5##만큼 얻습니다.",
 		["menu_deck10_5_desc_sc"] = "탄약 상자로 얻는 회복률을 ##2##만큼 추가로 증가합니다.\n\n탄약 상자를 획득하고 회복되면 회피 미터가 회피의 ##100%##만큼 채워집니다.",
@@ -2358,7 +2358,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck10_9_desc_sc"] = "탄약 상자로 얻는 회복률을 ##2##만큼 추가로 증가합니다.\n\n탄약 상자를 획득하고 회복되면 방어구도 ##30##만큼 회복합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Infiltrator--
-		["menu_st_spec_8_desc_sc"] = "인필트레이터는 정부나 거대 범죄단에서 적의 정보를 알아내기 위해서나 기업에서 경쟁사의 기밀을 알아내기 위해 고용되는 요원입니다.\n\n인필트레이터는 전투에서 주변환경을 이용하는 근접전의 전문가입니다.\n\n\n전체 특전 덱의 이점:\n##-##적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##20%##만큼 감소합니다.\n##-##근접 공격이 적중할 때마다 ##10##초 동안 근접 피해가 ##16%##만큼 추가로 증가하며 최대 ##5##번 중첩될 수 있습니다.\n##-##근접 공격이 적중할 때마다 ##10##초 동안 ##1.25##초마다 체력이 ##1##씩 회복되며 최대 ##5##번 중첩됩니다.",
+		["menu_st_spec_8_desc_sc"] = "인필트레이터는 정부나 거대 범죄단에서 적의 정보를 알아내기 위해서나 기업에서 경쟁사의 기밀을 알아내기 위해 고용되는 요원입니다.\n\n인필트레이터는 전투에서 주변환경을 이용하는 근접전의 전문가입니다.\n\n\n전체 특성 덱의 이점:\n##-##적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##20%##만큼 감소합니다.\n##-##근접 공격이 적중할 때마다 ##10##초 동안 근접 피해가 ##16%##만큼 추가로 증가하며 최대 ##5##번 중첩될 수 있습니다.\n##-##근접 공격이 적중할 때마다 ##10##초 동안 ##1.25##초마다 체력이 ##1##씩 회복되며 최대 ##5##번 중첩됩니다.",
 		["menu_deck8_1_desc_sc"] = "적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 감소합니다.",
 		["menu_deck8_3_desc_sc"] = "적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 추가로 감소합니다.",
 		["menu_deck8_5_desc_sc"] = "적과 ##12##미터 이내에 있으면 적에게 받는 피해가 ##10%##만큼 추가로 감소합니다.\n\n근접 공격이 적중할 때마다 ##10##초 동안 근접 피해가 ##8%##만큼 추가로 증가하며 최대 ##5##번 중첩될 수 있습니다.",
@@ -2366,7 +2366,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_9_desc_sc"] = "근접 공격이 적중할 때마다 ##10##초 동안 ##1.25##초마다 체력이 ##1##씩 회복되며 최대 ##5##번 중첩됩니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sociopath--
-		["menu_st_spec_9_desc_sc"] = "소시오패스는 범죄자중 가장 유용한 타입중 하나로 알려져 있습니다. 유용하기도 하지만, 상대하기에는 벅차기 때문에, 큰 조직들은 이들을 기피합니다.\n\n대담하고, 막을수 없고, 사악하기에, 소시오패스는 대부분의 잔혹한 일에 뛰어납니다. 자신이 저지르는 범죄에 대한 죄책감 따윈 없기에, 그들은 위험한 적이됩니다.\n\n\n전체 특전 덱의 이점:\n##-##적과 ##18##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 감소합니다.\n##-##적을 죽이면 방어력이 ##40##만큼  재생됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-##근접 무기로 적을 죽이면 체력이 ##5%##만큼 회복됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-## ##18## 미터 이내의 적을 죽이면 ##25%## 확률로 적들에게 퍼뜨립니다. 매 ##2##초마다 한 번만 일어납니다.",
+		["menu_st_spec_9_desc_sc"] = "소시오패스는 범죄자중 가장 유용한 타입중 하나로 알려져 있습니다. 유용하기도 하지만, 상대하기에는 벅차기 때문에, 큰 조직들은 이들을 기피합니다.\n\n대담하고, 막을수 없고, 사악하기에, 소시오패스는 대부분의 잔혹한 일에 뛰어납니다. 자신이 저지르는 범죄에 대한 죄책감 따윈 없기에, 그들은 위험한 적이됩니다.\n\n\n전체 특성 덱의 이점:\n##-##적과 ##18##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 감소합니다.\n##-##적을 죽이면 방어력이 ##40##만큼  재생됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-##근접 무기로 적을 죽이면 체력이 ##5%##만큼 회복됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-## ##18## 미터 이내의 적을 죽이면 ##25%## 확률로 적들에게 퍼뜨립니다. 매 ##2##초마다 한 번만 일어납니다.",
 		["menu_deck9_1_sc"] = "말 없는",
 		["menu_deck9_1_desc_sc"] = "##18미터## 내에 3명 이상의 적에게 둘러싸여 있을 때 적에게 받는 피해가 ##5%## 감소합니다.",
 		["menu_deck9_3_desc_sc"] = "적을 죽이면 방어력이 ##20##만큼 재생됩니다.\n\n매 ##3##초마다 한 번만 일어납니다.",
@@ -2375,7 +2375,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck9_9_desc_sc"] = "##18## 미터 이내의 있는 적을 죽이면 ##25%## 확률로 적들에게 패닉을 퍼뜨립니다.\n\n패닉은 적을 공포에 질려 짧은 파열로 제어할 수 없게 만듭니다.\n\n매 ##2##초마다 한 번만 일어납니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%##만큼 상승합니다.",
 
 		--Grinder--
-		["menu_st_spec_11_desc_sc"] = "전형적인 그라인더는 열심히 일하고, 어려운 상황들 속에서도 흔들리지 않고 상황을 해결할 수 있습니다. \n\n그라인더는 항상 전방에 서고, 여러 처벌들을 이겨내 가며, 그가 얼마나 피해를 받든지 간에 적에게 피해를 줘 살아날수 있는 점에 크게 의존하고 있습니다.\n\n\n전체 특전 덱의 이점:\n##-##적에게 피해를 입히면 ##5##초 동안 1초마다 체력이 ##3##씩 회복됩니다. 이 효과는 최대 ##5##번까지 중첩되며 매 ##0.5##초마다 한 번만 일어나고 방편복을 착용한 상태에서만 발생합니다. 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n##-##방편복을 착용하는 동안 방어력을 ##80##만큼 잃습니다.\n##-##모든 중첩이 이동 속도를 ##5%##만큼 증가시킵니다.",
+		["menu_st_spec_11_desc_sc"] = "전형적인 그라인더는 열심히 일하고, 어려운 상황들 속에서도 흔들리지 않고 상황을 해결할 수 있습니다. \n\n그라인더는 항상 전방에 서고, 여러 처벌들을 이겨내 가며, 그가 얼마나 피해를 받든지 간에 적에게 피해를 줘 살아날수 있는 점에 크게 의존하고 있습니다.\n\n\n전체 특성 덱의 이점:\n##-##적에게 피해를 입히면 ##5##초 동안 1초마다 체력이 ##3##씩 회복됩니다. 이 효과는 최대 ##5##번까지 중첩되며 매 ##0.5##초마다 한 번만 일어나고 방편복을 착용한 상태에서만 발생합니다. 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n##-##방편복을 착용하는 동안 방어력을 ##80##만큼 잃습니다.\n##-##모든 중첩이 이동 속도를 ##5%##만큼 증가시킵니다.",
 		["menu_deck11_1_desc_sc"] = "적에게 피해를 입히면 ##3##초 동안 1초마다 체력이 ##3##씩 회복됩니다.\n\n이 효과는 최대 ##5##번까지 중첩되며 매 ##0.5##초마다 한 번만 일어나고 ##방편복을 착용한 상태에서만 발생합니다.## 센트리 또는 지속 피해 효과로 적에게 피해를 입혀도 중첩이 부여되지 않습니다.\n\n방편복을 착용하는 동안 방어력을 ##80##만큼 잃습니다",
 		["menu_deck11_3_desc_sc"] = "중첩이 1초마다 ##1## 체력을 추가로 회복합니다.",
 		["menu_deck11_5_desc_sc"] = "중첩이 ##2##초 동안 추가로 지속됩니다.",
@@ -2383,7 +2383,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck11_9_desc_sc"] = "모든 중첩이 이동 속도를 ##5%##만큼 증가시킵니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Open your mind--
-		["menu_st_spec_13_desc_sc"] = "엑스-프레지던트들은 가장 대담한 하이스터들 중 한 부류입니다. 상당한 위험부담을 감수하면서도 전우들과 같이 행동합니다. 그들은 반드시 죽게 된다는 사실에 대해 두려움을 느끼지 않기에 똘똘 뭉치게 되었고 지금과 같은 위치에 도달하게 되었습니다.\n\n엑스-프레지던트는 어떤 규율도 따르지 않고, 자연을 존중하기 위한 몇가지 시험인 오자키 8 만을 고수합니다.\n\n\n전체 특전 덱의 이점:\n##-##방어력이 있는 동안 적을 ##1##명씩 죽일때 마다 체력을 ##8##만큼 저장합니다. 방어력이 완전히 부서진 후 재생되기 시작하면 저장된 체력만큼 체력을 얻습니다. 저장할 수 있는 최대 체력은 장착한 방탄복에 따라 다릅니다.\n##-##적을 처치하면 방탄복의 양에 따라 방어력 회복 시간이 빨라집니다. 갑옷이 많을수록 처치당 회복 속도가 줄어듭니다. 방어력 회복 속도는 방어력이 회복될 때마다 초기화됩니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",
+		["menu_st_spec_13_desc_sc"] = "엑스-프레지던트들은 가장 대담한 하이스터들 중 한 부류입니다. 상당한 위험부담을 감수하면서도 전우들과 같이 행동합니다. 그들은 반드시 죽게 된다는 사실에 대해 두려움을 느끼지 않기에 똘똘 뭉치게 되었고 지금과 같은 위치에 도달하게 되었습니다.\n\n엑스-프레지던트는 어떤 규율도 따르지 않고, 자연을 존중하기 위한 몇가지 시험인 오자키 8 만을 고수합니다.\n\n\n전체 특성 덱의 이점:\n##-##방어력이 있는 동안 적을 ##1##명씩 죽일때 마다 체력을 ##8##만큼 저장합니다. 방어력이 완전히 부서진 후 재생되기 시작하면 저장된 체력만큼 체력을 얻습니다. 저장할 수 있는 최대 체력은 장착한 방탄복에 따라 다릅니다.\n##-##적을 처치하면 방탄복의 양에 따라 방어력 회복 시간이 빨라집니다. 갑옷이 많을수록 처치당 회복 속도가 줄어듭니다. 방어력 회복 속도는 방어력이 회복될 때마다 초기화됩니다.\n##-##회피 포인트가 ##10##만큼 증가합니다.",
 		["menu_deck13_1_desc_sc"] = "방어력이 있는 동안 적을 ##1##명씩 죽일때 마다 체력을 ##4##만큼 저장합니다.\n\n방어력이 완전히 부서진 후 재생되기 시작하면 저장된 체력만큼 체력을 얻습니다.\n\n저장할 수 있는 최대 체력은 장착한 방탄복에 따라 다르며, 무거운 방탄복일 수록 가벼운 방탄복보다 체력을 저장할 수 있는 양이 적어집니다.",
 		["menu_deck13_3_desc_sc"] = "처치 시 저장할 수 있는 체력이 ##2##만큼 증가합니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck13_5_desc_sc"] = "저장할 수 있는 최대 체력이 ##25%## 증가합니다.",
@@ -2391,30 +2391,30 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck13_9_desc_sc"] = "적을 처치하면 장착한 방탄복에 따라 방어구 회복 속도가 빨라집니다. 무거운 방탄복일 수록 가벼운 방탄복보다 적은 보너스를 얻습니다. 이 보너스는 방어력이 회복될 때마다 초기화됩니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--THIS IS WAR BABY--
-		["menu_st_spec_14_desc_sc"] = "매니악 특성 덱은 위험의 순간에도 나쁜 확률 따위 신경쓰지 않는 광기의 상징입니다. 계속 밀어붙이면서 지속적으로 대미지를 가하면, 당신의 팀원은 일시적인 보호를 느끼며 지미의 무적과 같은 영혼을 잠시나마 느끼게 될 것입니다.\n\n\n\n\n\n전체 특전 덱의 이점:\n##-##당신이 입힌 피해가 히스테리 스택으로 전환됩니다. 최대 스택 수는 ##2400##입니다. 히스테리 스택: 히스테리가 ##240## 스택될 때마다 받는 피해가 ##1.5##만큼 감소합니다. 히스테리 스택은 ##8##초마다 ##240##씩 감소합니다.\n##-##당신의 팀원 또한 당신의 히스테리 스택의 효과를 얻습니다.",
+		["menu_st_spec_14_desc_sc"] = "매니악 특성 덱은 위험의 순간에도 나쁜 확률 따위 신경쓰지 않는 광기의 상징입니다. 계속 밀어붙이면서 지속적으로 대미지를 가하면, 당신의 팀원은 일시적인 보호를 느끼며 지미의 무적과 같은 영혼을 잠시나마 느끼게 될 것입니다.\n\n\n\n\n\n전체 특성 덱의 이점:\n##-##당신이 입힌 피해가 히스테리 스택으로 전환됩니다. 최대 스택 수는 ##2400##입니다. 히스테리 스택: 히스테리가 ##240## 스택될 때마다 받는 피해가 ##1.5##만큼 감소합니다. 히스테리 스택은 ##8##초마다 ##240##씩 감소합니다.\n##-##당신의 팀원 또한 당신의 히스테리 스택의 효과를 얻습니다.",
 		["menu_deck14_1_desc_sc"] = "당신이 입힌 피해가 히스테리 스택으로 전환됩니다. 최대 스택 수는 ##2400##입니다.\n\n히스테리 스택:\nI받는 피해가 히스테리의 ##400## 중첩마다 ##1## 포인트만큼 감소합니다. 히스테리 스택은 ##8##초마다 ##400##씩 감소합니다.",
 		["menu_deck14_5_desc_sc"] = "히스테리 스택의 감소를 ##8##초마다 ##300##으로 변경합니다.",
 		["menu_deck14_7_desc_sc"] = "이제 히스테리의 ##300## 중첩마다 받는 피해가 ##1##만큼 감소합니다.",
 		["menu_deck14_9_desc_sc"] = "히스테리 스택이 ##100%## 더 강력해집니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Anarchist--
-		["menu_st_spec_15_desc_sc"] = "아나키스트는 공권력이 사람들을 지도해야 한다고 믿지 않고 사람들은 스스로 자기 자신을 보호할 수 있다고 생각하는 사람들입니다.권력에 저항하는 방해 행위와 폭력은 더 좋은 결과를 내기 위한 수단일 뿐입니다. 아나키스트는 싸움에서 도망치지 않고 언제나 무력에 대항할 것입니다. 아나키스트는 돈만 밝히며 싸우는 것이 아니라 파괴 자체를 즐기기 때문에 진정한 도움이 될 것입니다.\n\n\n전체 특전 덱의 이점:\n##-##아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 ##8##만큼 방탄복과 동일한 속도로 방어력을 주기적으로 재생합니다. 방탄복이 무거울 수록 틱당 많은 방어력을 재생하지만 틱 사이에는 긴 재생 시간이 있습니다.\n##-## 체력의 ##50%##가 ##150%##만큼 방어구로 변환됩니다.\n##-##피해를 입히면 방어력이 부여됩니다. 이것은 매 ##3##초마다 한 번만 발생합니다. 방탄복이 무거울 수록 많은 방어력이 부여됩니다.",
-		["menu_deck15_1_desc_sc"] = "아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 ##8##만큼 방탄복과 동일한 속도로 방어력을 주기적으로 재생합니다. 방탄복이 무거울 수록 틱당 많은 방어력을 재생하지만 틱 사이에는 긴 재생 시간이 있습니다.\n\n참고: 이 퍽 덱을 사용할 때 방어구 회복 속도를 증가시키는 스킬과 퍽은 비활성화됩니다.",
+		["menu_st_spec_15_desc_sc"] = "아나키스트는 공권력이 사람들을 지도해야 한다고 믿지 않고 사람들은 스스로 자기 자신을 보호할 수 있다고 생각하는 사람들입니다.권력에 저항하는 방해 행위와 폭력은 더 좋은 결과를 내기 위한 수단일 뿐입니다. 아나키스트는 싸움에서 도망치지 않고 언제나 무력에 대항할 것입니다. 아나키스트는 돈만 밝히며 싸우는 것이 아니라 파괴 자체를 즐기기 때문에 진정한 도움이 될 것입니다.\n\n\n전체 특성 덱의 이점:\n##-##아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 ##8##만큼 방탄복과 동일한 속도로 방어력을 주기적으로 재생합니다. 방탄복이 무거울 수록 틱당 많은 방어력을 재생하지만 틱 사이에는 긴 재생 시간이 있습니다.\n##-## 체력의 ##50%##가 ##150%##만큼 방어구로 변환됩니다.\n##-##피해를 입히면 방어력이 부여됩니다. 이것은 매 ##3##초마다 한 번만 발생합니다. 방탄복이 무거울 수록 많은 방어력이 부여됩니다.",
+		["menu_deck15_1_desc_sc"] = "아나키스트는 전투 중이 아닐 때 갑옷을 완전히 재생하는 대신 초당 ##8##만큼 방탄복과 동일한 속도로 방어력을 주기적으로 재생합니다. 방탄복이 무거울 수록 틱당 많은 방어력을 재생하지만 틱 사이에는 긴 재생 시간이 있습니다.\n\n참고: 이 특성 덱을 사용할 때 방어구 회복 속도를 증가시키는 스킬과 퍽은 비활성화됩니다.",
 		["menu_deck15_3_desc_sc"] = "체력의 ##50%##가 ##50%##만큼 방어구로 전환됩니다.",
 		["menu_deck15_5_desc_sc"] = "체력의 ##50%##가 ##100%##만큼 방어구로 전환됩니다.",
 		["menu_deck15_7_desc_sc"] = "체력의 ##50%##가 ##150%##만큼 방어구로 전환됩니다.",
 		["menu_deck15_9_desc_sc"] = "피해를 입히면 방어력이 부여됩니다. 이것은 매 ##3##초마다 한 번만 발생합니다. 방탄복이 무거울 수록 많은 방어력이 부여됩니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Scarface--
-		["menu_st_spec_17_desc_sc"] = "킹핀은 대장, 어떠한 변덕을 부릴지라도 복종해야할 군주입니다. 허나 그전에 먼저 돈이 있어야 합니다. 그리고 돈을 얻었다면, 힘을 가질 수 있죠. 기억하십시오, 이 세상에서 당신에게 명령할 수 있는 유일한 존재는...당신의 배짱 뿐입니다.\n\n\n\n\n\n전체 특전 덱의 이점:\n##-##킹핀 주사기를 잠금 해제하고 장착합니다. 주사기를 활성화하면 ##6##초 동안 받은 모든 피해의 ##30%##만큼 치유됩니다. 효과 중에도 여전히 피해를 입을 수 있습니다. 주사기는 매 ##30##초마다 한 번만 사용할 수 있습니다.\n##-##킹핀 주사기가 활성화되어 있는 동안 이동 속도가 ##20%##만큼 증가합니다.\n##-##주사기가 활성화되어 있는 동안 주변의 적들은 가능할 때마다 당신을 조준하는 것을 집중합니다.\n##-##체력이 ##25%## 미만일 때 주사기 효과를 받는 동안 받는 체력이 ##60%##만큼 증가합니다.\n##-##최대 체력일 때 주사기 효과 동안 얻은 체력 ##3##마다 주사기 재충전 시간이 ##1##초만큼 감소합니다.",
-		["menu_deck17_1_desc_sc"] = "킹핀 주사기를 잠금 해제하고 장착합니다. 다른 특전 덱으로 변경하면 주사기를 사용할 수 없게 됩니다. 주사기는 현재 투척무기을 대체하고 던질 수 있는 슬롯에 장착되어 있으며 원하는 경우 전환할 수 있습니다.\n\n게임 중에 투척무기 키를 사용하여 주사기를 활성화할 수 있습니다. 주사기를 활성화하면 ##4##초 동안 받는 모든 피해의 ##30%##만큼 치유됩니다.\n\n효과 중에도 여전히 피해를 입을 수 있습니다. 주사기는 매 ##30##초마다 한 번만 사용할 수 있습니다.",
+		["menu_st_spec_17_desc_sc"] = "킹핀은 대장, 어떠한 변덕을 부릴지라도 복종해야할 군주입니다. 허나 그전에 먼저 돈이 있어야 합니다. 그리고 돈을 얻었다면, 힘을 가질 수 있죠. 기억하십시오, 이 세상에서 당신에게 명령할 수 있는 유일한 존재는...당신의 배짱 뿐입니다.\n\n\n\n\n\n전체 특성 덱의 이점:\n##-##킹핀 주사기를 잠금 해제하고 장착합니다. 주사기를 활성화하면 ##6##초 동안 받은 모든 피해의 ##30%##만큼 치유됩니다. 효과 중에도 여전히 피해를 입을 수 있습니다. 주사기는 매 ##30##초마다 한 번만 사용할 수 있습니다.\n##-##킹핀 주사기가 활성화되어 있는 동안 이동 속도가 ##20%##만큼 증가합니다.\n##-##주사기가 활성화되어 있는 동안 주변의 적들은 가능할 때마다 당신을 조준하는 것을 집중합니다.\n##-##체력이 ##25%## 미만일 때 주사기 효과를 받는 동안 받는 체력이 ##60%##만큼 증가합니다.\n##-##최대 체력일 때 주사기 효과 동안 얻은 체력 ##3##마다 주사기 재충전 시간이 ##1##초만큼 감소합니다.",
+		["menu_deck17_1_desc_sc"] = "킹핀 주사기를 잠금 해제하고 장착합니다. 다른 특성 덱으로 변경하면 주사기를 사용할 수 없게 됩니다. 주사기는 현재 투척무기을 대체하고 던질 수 있는 슬롯에 장착되어 있으며 원하는 경우 전환할 수 있습니다.\n\n게임 중에 투척무기 키를 사용하여 주사기를 활성화할 수 있습니다. 주사기를 활성화하면 ##4##초 동안 받는 모든 피해의 ##30%##만큼 치유됩니다.\n\n효과 중에도 여전히 피해를 입을 수 있습니다. 주사기는 매 ##30##초마다 한 번만 사용할 수 있습니다.",
 		["menu_deck17_3_desc_sc"] = "킹핀 주사기가 활성화되어 있는 동안 이동 속도가 ##20%##만큼 증가합니다.",
 		["menu_deck17_5_desc_sc"] = "이제 킹핀 주사기가 활성화된 동안 ##6##초 동안 받는 모든 피해의 ##30%##만큼 치유됩니다.\n\n주사기가 활성화되어 있는 동안 주변의 적들은 가능할 때마다 당신을 조준하는 것을 집중합니다.",
 		["menu_deck17_7_desc_sc"] = "체력이 ##25%## 미만일 때 주사기 효과를 받는 동안 받는 체력이 ##60%##만큼 증가합니다.",
 		["menu_deck17_9_desc_sc"] = "최대 체력일 때 주사기 효과 동안 얻은 체력 ##5##마다 주사기 재충전 시간이 ##1##초만큼 감소합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--10 feet higher--
-		["menu_st_spec_18_desc_sc"] = "시카리오는 모든 마약 카르텔의 필수요소입니다. 모든 종류의 골칫거리를 대부분 치명적인 방법으로 해결하는 사람입니다. 시카리오는 절대 싸움에서 몸을 내빼지 않으며, 망설임이나 두려움없이 임무를 완수합니다.\n\n\n\n\n\n전체 특전 덱의 이점:\n##-##투척무기인 연막탄을 잠금 해제하고 장비합니다. 연막탄을 배치하면 ##12##초 동안 지속되는 연막이 생성됩니다. 연막탄 안에 서 있는 동안, 당신과 당신의 아군은 방어력을 ##100%## 더 빠르게 재생하고 적의 정확도가 ##75%##만큼 감소합니다. 연기가 사라진 후 연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초 감소합니다.\n##-##공격을 회피하면 연막탄의 재사용 대기시간이 ##1##초 감소합니다.\n##-##연막 안에 있는 동안 회피 미터가 1초마다 회피의 ##40%##만큼 채워집니다.\n회피 포인트가 ##15##만큼 증가합니다.",
+		["menu_st_spec_18_desc_sc"] = "시카리오는 모든 마약 카르텔의 필수요소입니다. 모든 종류의 골칫거리를 대부분 치명적인 방법으로 해결하는 사람입니다. 시카리오는 절대 싸움에서 몸을 내빼지 않으며, 망설임이나 두려움없이 임무를 완수합니다.\n\n\n\n\n\n전체 특성 덱의 이점:\n##-##투척무기인 연막탄을 잠금 해제하고 장비합니다. 연막탄을 배치하면 ##12##초 동안 지속되는 연막이 생성됩니다. 연막탄 안에 서 있는 동안, 당신과 당신의 아군은 방어력을 ##100%## 더 빠르게 재생하고 적의 정확도가 ##75%##만큼 감소합니다. 연기가 사라진 후 연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초 감소합니다.\n##-##공격을 회피하면 연막탄의 재사용 대기시간이 ##1##초 감소합니다.\n##-##연막 안에 있는 동안 회피 미터가 1초마다 회피의 ##40%##만큼 채워집니다.\n회피 포인트가 ##15##만큼 증가합니다.",
 		["menu_deck18_1_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.\n\n투척무기인 연막탄을 잠금 해제하고 장비합니다.\n\n연막탄을 배치하면 ##12##초 동안 지속되는 연막이 생성됩니다. 연막탄 안에 서 있는 동안, 당신과 당신의 아군은 방어력을 ##100%## 더 빠르게 재생하고 적의 정확도가 ##75%##만큼 감소합니다\n\n연막탄의 재사용 대기시간은 ##40##초이지만 적을 죽이면 이 재사용 대기시간이 ##1##초 감소합니다.",
 		["menu_deck18_3_desc_sc"] = "회피 포인트가 ##5##만큼 추가로 증가합니다.",
 		["menu_deck18_5_desc_sc"] = "공격을 회피하면 연막탄의 재사용 대기시간이 ##1##초 감소합니다.",
@@ -2422,7 +2422,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck18_9_desc_sc"] = "연막 안에 있는 동안 회피 미터가 1초마다 회피의 ##40%##만큼 채워집니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sweet liquor eases the pain--
-		["menu_st_spec_19_desc_sc"] = "당신의 결의와 침착함은 쓰러지지 않는 벽과 같습니다. 정신 단련은 금욕주의자로 하여금 다른 이들이 울부짖으며 전율하는 돌무더기로 만드는 문제조차 이겨낼 수 있게 도와줍니다. 수도승에게 배운 호흡법과 신체의 행동-통제는 적이 당신에게 무엇을 끼얹든간에 충분히 임무를 끝마치게끔 지켜줄 것입니다.\n\n\n\n전체 특전 덱의 이점:\n##-##금욕주의자의 힙 플라스크를 잠금 해제하고 장착합니다. 받는 피해의 ##30%##가 시간에(##8##초)에 걸쳐 적용됩니다. 힙 플라스크를 활성화하면 시간 경과에 따른 피해를 즉시 무효화됩니다. 지속 피해가 무효화될 때마다 남은 지속 피해의 ##250%##만큼 치유합니다. 플라스크의 재사용 대기시간은 ##30##입니다.\n##-##모든 방어구가 ##50%##만큼 체력으로 전환됩니다.\n##-##적을 죽일 때마다 플라스크의 재사용 대기시간이 ##1##초씩 감소합니다.\n##-## ##4##초 동안 피해를 입지 않으면 모든 지속 피해가 무효화됩니다.\n##-##체력이 ##50%## 미만이면 플라스크의 재사용 대기시간이 적을 죽일 때마다 ##6##초씩 감소합니다.\n##-##일어날 때 최대 체력의 ##25%##만큼 회복합니다.",
+		["menu_st_spec_19_desc_sc"] = "당신의 결의와 침착함은 쓰러지지 않는 벽과 같습니다. 정신 단련은 금욕주의자로 하여금 다른 이들이 울부짖으며 전율하는 돌무더기로 만드는 문제조차 이겨낼 수 있게 도와줍니다. 수도승에게 배운 호흡법과 신체의 행동-통제는 적이 당신에게 무엇을 끼얹든간에 충분히 임무를 끝마치게끔 지켜줄 것입니다.\n\n\n\n전체 특성 덱의 이점:\n##-##금욕주의자의 힙 플라스크를 잠금 해제하고 장착합니다. 받는 피해의 ##30%##가 시간에(##8##초)에 걸쳐 적용됩니다. 힙 플라스크를 활성화하면 시간 경과에 따른 피해를 즉시 무효화됩니다. 지속 피해가 무효화될 때마다 남은 지속 피해의 ##250%##만큼 치유합니다. 플라스크의 재사용 대기시간은 ##30##입니다.\n##-##모든 방어구가 ##50%##만큼 체력으로 전환됩니다.\n##-##적을 죽일 때마다 플라스크의 재사용 대기시간이 ##1##초씩 감소합니다.\n##-## ##4##초 동안 피해를 입지 않으면 모든 지속 피해가 무효화됩니다.\n##-##체력이 ##50%## 미만이면 플라스크의 재사용 대기시간이 적을 죽일 때마다 ##6##초씩 감소합니다.\n##-##일어날 때 최대 체력의 ##25%##만큼 회복합니다.",
 		["menu_deck19_1_desc_sc"] = "금욕주의자의 힙 플라스크를 잠금 해제하고 장착합니다.\n\n받는 피해의 ##30%##가 시간에(##8##초)에 걸쳐 적용됩니다.\n\n투척무기 키를 눌러 힙 플라스크를 활성화하면 시간 경과에 따른 피해를 즉시 무효화됩니다.\n\n지속 피해가 무효화될 때마다 남은 지속 피해의 ##300%##만큼 치유합니다. 플라스크의 재사용 대기시간은 ##30##입니다.\n\n모든 ##방어구가 50%만큼## 체력으로 전환됩니다.",
 		["menu_deck19_3_desc_sc"] = "적을 죽일 때마다 플라스크의 재사용 대기시간이 ##1##초씩 감소합니다.",
 		["menu_deck19_5_desc_sc"] = "##4##초 동안 피해를 입지 않으면 모든 지속 피해가 무효화됩니다.",
@@ -2430,7 +2430,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck19_9_desc_sc"] = "일어날 때 최대 체력의 ##25%##만큼 회복합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--it's not a war crime if they're not people--
-		["menu_st_spec_20_desc_sc"] = "어떤 경험들은 서로 공유할 때 더 값진 법이고, 오감을 돋구는 가스를 방출하는 기계의 경우에는 더더욱 맞는 말입니다. 당신과 같은 특별한 하이스터를 위해서. 이것은 은행 금고에서 물건들을 훔치거나 일을 처리할 때 같이 나눠서 즐길 수 있는 물건입니다.\n\n\n\n\n\n전체 특전 덱의 이점:\n##-##기체 디스펜서를 잠금 해제하고 장비합니다. 기체 디스펜서를 활성화하려면 ##18## 미터 반경 내에서 시야가 확보된 상태에서 다른 아군 유닛을 보고 투척무기 키를 눌러 태그를 지정해야 합니다. 당신이나 태그로 지정된 유닛이 적을 죽일 때마다 ##15##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 ##7.5##만큼 회복합니다. 적을 죽일 때마다 효과 지속 시간이 ##2##초씩 늘어납니다. 효과는 ##12##초 동안 지속되며 재사용 대기시간은 ##60##초입니다.\n##-##당신이나 태그가 붙은 유닛을 죽일 때마다 최대 ##20##까지 흡수를 ##1##만큼 부여합니다. 이 효과는 퍽 덱 아이템의 재사용 대기시간이 끝날 때까지 지속됩니다.\n##-##적을 죽이면 재사용 대기시간이 ##2##초씩 감소합니다.\n##-##태그로 지정된 유닛이 적을 죽일 때마다 더 이상 짝을 이루지 않을 때까지 퍽 덱 아이템 재사용 대기시간이 ##2##초씩 감소합니다.",
+		["menu_st_spec_20_desc_sc"] = "어떤 경험들은 서로 공유할 때 더 값진 법이고, 오감을 돋구는 가스를 방출하는 기계의 경우에는 더더욱 맞는 말입니다. 당신과 같은 특별한 하이스터를 위해서. 이것은 은행 금고에서 물건들을 훔치거나 일을 처리할 때 같이 나눠서 즐길 수 있는 물건입니다.\n\n\n\n\n\n전체 특성 덱의 이점:\n##-##기체 디스펜서를 잠금 해제하고 장비합니다. 기체 디스펜서를 활성화하려면 ##18## 미터 반경 내에서 시야가 확보된 상태에서 다른 아군 유닛을 보고 투척무기 키를 눌러 태그를 지정해야 합니다. 당신이나 태그로 지정된 유닛이 적을 죽일 때마다 ##15##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 ##7.5##만큼 회복합니다. 적을 죽일 때마다 효과 지속 시간이 ##2##초씩 늘어납니다. 효과는 ##12##초 동안 지속되며 재사용 대기시간은 ##60##초입니다.\n##-##당신이나 태그가 붙은 유닛을 죽일 때마다 최대 ##20##까지 흡수를 ##1##만큼 부여합니다. 이 효과는 특성 덱 아이템의 재사용 대기시간이 끝날 때까지 지속됩니다.\n##-##적을 죽이면 재사용 대기시간이 ##2##초씩 감소합니다.\n##-##태그로 지정된 유닛이 적을 죽일 때마다 더 이상 짝을 이루지 않을 때까지 특성 덱 아이템 재사용 대기시간이 ##2##초씩 감소합니다.",
 		["menu_deck20_1_desc_sc"] = "기체 디스펜서를 잠금 해제하고 장비합니다.\n\n기체 디스펜서를 활성화하려면 ##18## 미터 반경 내에서 시야가 확보된 상태에서 다른 아군 유닛을 보고 투척무기 키를 눌러 태그를 지정해야 합니다.\n\n당신이나 태그로 지정된 유닛이 적을 죽일 때마다 ##8##만큼 체력을 회복하고 태그로 지정된 유닛의 체력을 ##5##만큼 회복합니다.\n\n효과는 ##11##초 동안 지속되며 재사용 대기시간은 ##80##초입니다.",
 		["menu_deck20_3_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽이면 기체 디스펜서의 지속 시간이 ##2##초만큼 증가합니니다. 이 증가는 발생할 때마다 ##0.2##초씩 감소합니다.",
 		["menu_deck20_5_desc_sc"] = "당신이나 태그로 지정된 유닛이 적을 죽일 때마다 당신이 받는 피해가 기체 디스펜서의 효과와 재사용 대기시간이 끝날 때까지 ##0.5##만큼 최대 ##8##만큼 감소합니다.",
@@ -2438,7 +2438,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck20_9_desc_sc"] = "적을 죽일 때마다 기체 디스펜서의 재사용 대기시간이 ##2##초씩 감소합니다.\n\n태그가 지정된 유닛이 더 이상 짝을 이루지 않을 때까지 적을 죽일 때마다 기체 디스펜서의 재사용 대기시간이 ##2##초 씩 감소합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Biker--
-		["menu_st_spec_16_desc_sc"] = "바이커 갱은 전 세계에서 두려움의 대상이며, 가장 거대한 조직은 어느 누구나 알고 있을정도 입니다. 바이커가 되기 위해선 터프함과 충성심, 그리고 조직의 규칙이 절대적이란것에 대한 이해가 필요합니다. 바이커들은 무자비하고 폭력적인것으로 알려져 있으며, 감히 바이커에게 거스르는 대상이 누구든 도전하는것을 절대 두려워하지 않습니다.\n\n\n\n전체 특전 덱의 이점:\n##-##당신이나 당신의 팀원이 적을 죽일때마다 당신은 ##2##만큼 체력을 회복합니다. 매 ##2##초마다 한 번만 발생할 수 있습니다.\n##-## ##3##초마다 방어구를 ##10##만큼 재생합니다.\n##-##방어력을 ##25%##만큼 손실될 때마다 처치 재생을 위한 재사용 대기시간이 ##0.5##초 감소하고 처치로 얻는 회복이 ##2.##만큼 증가합니다.\n##-## ##2.5##초마다 방어구를 ##10##만큼 추가로 재생합니다. 근접 무기로 적을 죽이면 즉시 이 효과가 발동되고 다음 방어구 재생 틱이 ##1##초 더 빨리 발생합니다.",
+		["menu_st_spec_16_desc_sc"] = "바이커 갱은 전 세계에서 두려움의 대상이며, 가장 거대한 조직은 어느 누구나 알고 있을정도 입니다. 바이커가 되기 위해선 터프함과 충성심, 그리고 조직의 규칙이 절대적이란것에 대한 이해가 필요합니다. 바이커들은 무자비하고 폭력적인것으로 알려져 있으며, 감히 바이커에게 거스르는 대상이 누구든 도전하는것을 절대 두려워하지 않습니다.\n\n\n\n전체 특성 덱의 이점:\n##-##당신이나 당신의 팀원이 적을 죽일때마다 당신은 ##2##만큼 체력을 회복합니다. 매 ##2##초마다 한 번만 발생할 수 있습니다.\n##-## ##3##초마다 방어구를 ##10##만큼 재생합니다.\n##-##방어력을 ##25%##만큼 손실될 때마다 처치 재생을 위한 재사용 대기시간이 ##0.5##초 감소하고 처치로 얻는 회복이 ##2.##만큼 증가합니다.\n##-## ##2.5##초마다 방어구를 ##10##만큼 추가로 재생합니다. 근접 무기로 적을 죽이면 즉시 이 효과가 발동되고 다음 방어구 재생 틱이 ##1##초 더 빨리 발생합니다.",
 		["menu_deck16_1_desc_sc"] = "당신이나 당신의 팀원이 적을 죽일때마다 당신은 ##2##만큼 체력을 회복합니다. 매 ##2##초마다 한 번만 발생할 수 있습니다.",
 		["menu_deck16_3_desc_sc"] = "##3##초마다 방어구를 ##10##만큼 재생합니다.",
 		["menu_deck16_5_desc_sc"] = "방어력을 ##25%##만큼 손실될 때마다 처치 재생을 위한 재사용 대기시간이 ##0.5##초 감소합니다",
@@ -2446,7 +2446,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck16_9_desc_sc"] = "방어력을 ##25%##만큼 손실될 때마다 처치로 얻는 체력 수가 ##2##만큼 증가합니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Yakuza--
-		["menu_st_spec_12_desc_sc"] = "야쿠자는 세계에서 가장 두려운 폭력조직 중 하나입니다. 야쿠자는 임협으로 다스려지고 오야붕에게 통솔되며, 엄격한 행동 강령과 조직성, 그리고 전신을 감싸는 문신으로 잘 알려져 있습니다. 사회로부터 추방되고 낙오된 야쿠자들은 자기 자신을 보호하기 위해 어떻게 행동해야 하는지 알고 있습니다. 그들이 관대해 보이더라도, 결코 가볍게 봐서는 안됩니다.\n\n\n전체 특전 덱의 이점:\n##-##체력이 50% 이하일 때:\n회피 미터가 초당 회피의 최대 ##8%##만큼 채워집니다.\n적을 죽였을 때 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.\n근접 공격으로 적을 죽일 때 회피 미터가 회피의 최대 ##50%##만큼 채워집니다(효과 2와 중첩 가능).\n받는 피해가 최대 ##20%## 감소합니다.\n##-##다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방어구를 ##50##만큼 회복합니다.",
+		["menu_st_spec_12_desc_sc"] = "야쿠자는 세계에서 가장 두려운 폭력조직 중 하나입니다. 야쿠자는 임협으로 다스려지고 오야붕에게 통솔되며, 엄격한 행동 강령과 조직성, 그리고 전신을 감싸는 문신으로 잘 알려져 있습니다. 사회로부터 추방되고 낙오된 야쿠자들은 자기 자신을 보호하기 위해 어떻게 행동해야 하는지 알고 있습니다. 그들이 관대해 보이더라도, 결코 가볍게 봐서는 안됩니다.\n\n\n전체 특성 덱의 이점:\n##-##체력이 50% 이하일 때:\n회피 미터가 초당 회피의 최대 ##8%##만큼 채워집니다.\n적을 죽였을 때 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.\n근접 공격으로 적을 죽일 때 회피 미터가 회피의 최대 ##50%##만큼 채워집니다(효과 2와 중첩 가능).\n받는 피해가 최대 ##20%## 감소합니다.\n##-##다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 방어구를 ##50##만큼 회복합니다.",
 		["menu_deck12_1_desc_sc"] = "체력이 낮을수록 회피 미터가 더 빨리 채워집니다. 체력이 ##50%## 미만이면 회피 미터가 초당 회피의 최대 ##8%##만큼 채워집니다.\n\n회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck12_3_desc_sc"] = "체력이 낮을수록 적을 죽일 때 회피 미터가 채워집니다. 체력이 ##50%## 이하일 때, 회피 미터가 회피의 최대 ##50%##만큼 채워집니다.",
 		["menu_deck12_5_desc_sc"] = "체력이 낮을수록 받는 피해가 줄어듭니다. 체력이 ##50%## 미만일 때 받는 피해가 최대 ##20%## 감소합니다.",
@@ -2454,7 +2454,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck12_9_desc_sc"] = "다운당 한 번, 다운할려고 하면 대신 체력 ##1##만큼 남은 상태로 생존하고 ##50## 방어구를 회복합니다.\n\n참고: 이 효과는 클로커 킥과 테이저 전기충격로 인한 다운에는 적용되지 않으며 효과는 다시 돌아오지 않습니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Hacker--
-		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n\n\n\n전체 특전 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##12##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##12##초 동안 맵에 있는 적을 1초마다 기절시킬 확률을 부여합니다. 휴대용 ECM 재머에는 ##1##씩 충전되고 ##80##초의 재사용 대기시간 타이머가 있지만, 적을 죽일 때마다 재사용 대기시간이 ##3##초 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 ##20##의 체력이 회복됩니다. 피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 ##10##의 체력이 회복됩니다.\n##-##방어구 회복률이 ##10% 증가합니다.##\n##-##회피 포인트가 ##10##만큼 증가합니다.",
+		["menu_st_spec_21_desc_sc"] = "여러분의 날카로운 두뇌와 장비를 사용해, 여러분은 어떤 보안 시스템이라도 버튼 하나 누르는 것만으로 무릎을 꿇게 만들 수 있습니다. 여러분은 어떤 카메라나 보안 경비에게도 들키지 않을 테지만, 일이 엉망이 되어도 여러분은 적 무전을 듣는 이들에게 끔찍한 깜짝 선물을 줘서 손쉽게 뚤고 나갈 수 있을 것입니다.\n\n\n\n\n전체 특성 덱의 이점:\n##-##휴대용 ECM 재머를 잠금 해제하고 장비합니다. 알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##12##초 동안 모든 전자 장치와 호출기가 비활성화됩니다. 알람이 발생한 후 휴대용 ECM 재머을 활성화하면 피드백 효과가 발동되어 ##12##초 동안 맵에 있는 적을 1초마다 기절시킬 확률을 부여합니다. 휴대용 ECM 재머에는 ##1##씩 충전되고 ##80##초의 재사용 대기시간 타이머가 있지만, 적을 죽일 때마다 재사용 대기시간이 ##3##초 단축됩니다.\n##-##피드백 효과가 활성화된 상태에서 적을 죽이면 ##20##의 체력이 회복됩니다. 피드백 효과가 활성화된 상태에서 팀원이 적을 죽이면 ##10##의 체력이 회복됩니다.\n##-##방어구 회복률이 ##10% 증가합니다.##\n##-##회피 포인트가 ##10##만큼 증가합니다.",
 		["menu_deck21_1_desc_sc"] = "##휴대용 ECM 재머##를 잠금 해제하고 장착합니다.\n\n게임 내에서 투척무기 키를 사용하여 휴대용 ECM 재머를 활성화할 수 있습니다.\n\n알람이 울리기 전에 휴대용 ECM 재머를 활성화하면 방해 효과가 발생하여 ##12##초 동안 모든 전자 장치와 페이저를 비활성화합니다.\n\n알람이 발생한 후 휴대용 ECM 재머를 활성화하면 피드백 효과가 발동되어 ##12##초 동안 맵의 적을 1초마다 기절시킬 확률을 부여합니다.\n\n휴대용 ECM 재머에는 ##1## 충전과 ##80##초의 재사용 대기시간 타이머가 있지만 적을 처치할 때마다 재사용 대기시간이 ##3##초 단축됩니다.",
 		["menu_deck21_3_desc_sc"] = "회피 포인트가 ##5##만큼 증가합니다.",
 		["menu_deck21_5_desc_sc"] = "피드백 효과가 활성화된 상태에서 적을 죽이면 ##20##의 체력이 회복됩니다.",

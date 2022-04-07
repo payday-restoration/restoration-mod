@@ -7071,6 +7071,7 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 			special_type = "medic"
 		}
 	end
+	
 	if Month == "04" and Day == "01" and restoration.Options:GetValue("OTHER/Holiday") then		
 		self.unit_categories.TIT_tank = {
 			unit_types = {
@@ -7229,16 +7230,16 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 			},
 			russia = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 			},
 			zombie = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_mod_halloween/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 			},					
 			murkywater = {
 				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
 			},
 			federales = {
-				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")
+				Idstring("units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault")
 			},				
 			nypd = {
 				Idstring("units/pd2_dlc_vip/characters/ene_phalanx_1/ene_phalanx_1")

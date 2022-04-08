@@ -26,6 +26,7 @@ function restoration:Init()
 		"born", --biker heist day 1
 		"mus",	--the diamond
 		"red2", --first world bank
+		"watchdogs_1", --Watchdogs Day 1
 		"gallery", --art gallery
 		--Custom Heists--
 		"office_strike", --office strike
@@ -43,7 +44,6 @@ function restoration:Init()
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
-		"watchdogs_2", --watch dogs 2
 		"wwh", --alaskan deal
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
@@ -79,8 +79,11 @@ function restoration:Init()
 		"family", --diamond store
 		"framing_frame_1", --art gallery but ff
 		"framing_frame_3", --Powerbox simulator
+		"glace", --Green Bridge
 		"jewelry_store", --Jewelry Store
 		"ukrainian_job", --Ukrainian Job
+		"watchdogs_1_night", --Watchdogs Day 1 Night
+		"watchdogs_2", --watch dogs 2 Night
 		--custom heists
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version

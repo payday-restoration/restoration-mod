@@ -35,7 +35,7 @@ function restoration:Init()
 		"Skyscraper", --The Skyscraper Heist
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"bookmakers_office", --Bookmaker's Office
-		"firestarter_2_res" --firestarter day 2 res edit version
+		"firestarter_2_rant" --firestarter day 2 res edit version
 	}
 	restoration.captain_teamwork = {
 		"pal", --counterfeit
@@ -51,7 +51,7 @@ function restoration:Init()
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 
 		"constantine_harbor_lvl", --Harboring a Grudge
-		"firestarter_3_res" --firestarter day 3 res edit version
+		"firestarter_3_rant" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {
 		"dah", --diamond heist
@@ -63,7 +63,7 @@ function restoration:Init()
 		"dinner", --Slaughterhouse
 		"chca", --Black Cat Heist
 		--custom heists		
-		"firestarter_1_res", --firestarter day 1 res edit version
+		"firestarter_1_rant", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
 		"nft_heist", --EN EF TEE HEIST
 		"anlh", --An End To Liang
@@ -134,7 +134,7 @@ function restoration:Init()
 			"help", --Prison Nightmare	
 			"chca", --Black Cat Heist
 			--custom heists		
-			"firestarter_1_res", --firestarter day 1 res edit version
+			"firestarter_1_rant", --firestarter day 1 res edit version
 			"tj_htsb", --Gets Southern Branchbank from Autumn
 			"hardware_store", --Hardware Store 
 			"constantine_bank_lvl", --Pacific Bank

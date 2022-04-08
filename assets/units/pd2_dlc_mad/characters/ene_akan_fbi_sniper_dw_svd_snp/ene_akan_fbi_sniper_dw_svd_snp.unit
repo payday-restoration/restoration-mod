@@ -4,7 +4,6 @@
 	<object file="units/pd2_dlc_mad/characters/ene_akan_fbi_swat_dw_ak47_ass/ene_akan_fbi_swat_dw_ak47_ass" />
 
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_mad/weapons/wpn_npc_svd/wpn_npc_svd" />
 	</dependencies>

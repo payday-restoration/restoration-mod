@@ -4,7 +4,6 @@
 	<object file="units/pd2_dlc_hvh/characters/ene_swat_hvh_2/ene_swat_hvh_2" />
 
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />

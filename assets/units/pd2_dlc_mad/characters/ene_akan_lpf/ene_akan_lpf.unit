@@ -2,7 +2,6 @@
 <unit type="being" slot="12">
     <anim_state_machine name="anims/units/enemies/cop/cop_machine" />
     <object file="units/pd2_dlc_mad/characters/ene_akan_lpf/ene_akan_lpf" />
-
     <dependencies>
 		<depends_on effect="effects/payday2/particles/impacts/blood/blood_impact_katana" />
 		<depends_on effect="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable" />	
@@ -11,7 +10,6 @@
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc" />
     </dependencies>
-
     <extensions>
         <extension name="unit_data" class="ScriptUnitData" />
         <extension name="base" class="CopBase" >

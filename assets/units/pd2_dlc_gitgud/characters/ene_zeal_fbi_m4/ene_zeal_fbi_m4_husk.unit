@@ -4,7 +4,7 @@
 	<object file="units/pd2_dlc_gitgud/characters/ene_zeal_fbi_m4/ene_zeal_fbi_m4" />
 
 	<dependencies>
-		<depends_on unit="units/payday2/weapons/wpn_npc_mp4/wpn_npc_mp4" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" />
 	</dependencies>
 
 	<extensions>

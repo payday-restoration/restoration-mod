@@ -1391,7 +1391,7 @@
 	<cooked_physics		path="units/pd2_dlc_glace/characters/glc_acc_fps_raincoat/glc_acc_fps_raincoat" force="true"/>
 
 	
-	<!--fixed male suit heister faces and necks-->
+	<!--fixed male suit heister faces and necks--
  	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_1" force="true"/>
 	<model				path="units/payday2/characters/npc_criminals_suit_1/npc_criminals_suit_menu_1" force="true"/>	 
 	

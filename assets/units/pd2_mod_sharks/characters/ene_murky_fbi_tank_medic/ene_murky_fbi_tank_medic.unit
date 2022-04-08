@@ -12,6 +12,7 @@
 		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_back_murky_3/ene_acc_bulldozer_back_murky_3" />
 		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_chest_murky_3/ene_acc_bulldozer_chest_murky_3" />
 		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_bulldozer_stomache_murky_3/ene_acc_bulldozer_stomache_murky_3" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" />	
 	</dependencies>
 
 	<extensions>

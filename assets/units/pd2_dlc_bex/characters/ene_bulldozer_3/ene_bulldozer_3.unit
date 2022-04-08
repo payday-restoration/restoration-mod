@@ -14,7 +14,7 @@
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />	
-		<depends_on unit="units/payday2/weapons/wpn_npc_lmg_m249/wpn_npc_lmg_m249" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" />
 	</dependencies>
 
 	<extensions>

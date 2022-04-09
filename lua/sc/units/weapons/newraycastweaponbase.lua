@@ -392,7 +392,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	old_update_stats_values(self, disallow_replenish, ammo_data)
 	
 	self._reload_speed_mult = self:weapon_tweak_data().reload_speed_multiplier or 1
-	self._ads_speed_mult = self._ads_speed_mult or 1
+	self._ads_speed_mult = self._ads_speed_mult or  1
 	self._flame_max_range = self:weapon_tweak_data().flame_max_range or nil
 	
 	self._deploy_anim_override = self:weapon_tweak_data().deploy_anim_override or nil
@@ -438,79 +438,82 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	end
 	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
-	for part_id, stats in pairs(custom_stats) do
-		if stats.ads_speed_mult then
-			self._ads_speed_mult = self._ads_speed_mult * stats.ads_speed_mult
-		end
-		if self._flame_max_range and stats.flame_max_range_set then
-			self._flame_max_range = stats.flame_max_range_set
-			NewRaycastWeaponBase.flame_max_range = stats.flame_max_range_set
-		end
-		if stats.block_b_storm then
-			if not self:weapon_tweak_data().sub_category then
-				 self:weapon_tweak_data().sub_category = {}
+	if not self._custom_stats_done then
+		for part_id, stats in pairs(custom_stats) do
+			if stats.ads_speed_mult then
+				self._ads_speed_mult = self._ads_speed_mult * stats.ads_speed_mult
 			end
-			self:weapon_tweak_data().sub_category = "grenade_launcher"
-		end
-		if stats.disable_steelsight_stance then
-			if self:weapon_tweak_data().animations then
-				self:weapon_tweak_data().animations.has_steelsight_stance = false
+			if self._flame_max_range and stats.flame_max_range_set then
+				self._flame_max_range = stats.flame_max_range_set
+				NewRaycastWeaponBase.flame_max_range = stats.flame_max_range_set
+			end
+			if stats.block_b_storm then
+				if not self:weapon_tweak_data().sub_category then
+					self:weapon_tweak_data().sub_category = {}
+				end
+				self:weapon_tweak_data().sub_category = "grenade_launcher"
+			end
+			if stats.disable_steelsight_stance then
+				if self:weapon_tweak_data().animations then
+					self:weapon_tweak_data().animations.has_steelsight_stance = false
+				end
+			end
+	
+			if stats.is_drum_aa12 then
+				if self:weapon_tweak_data().animations then
+					self:weapon_tweak_data().animations.reload_name_id = "aa12"
+				end
+			end
+	
+			if stats.is_mag_akm then
+				if self:weapon_tweak_data().animations then
+					self:weapon_tweak_data().animations.reload_name_id = "akm"
+				end
+			end
+			
+			if stats.beretta_burst then
+				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false	
+			end	
+	
+			if stats.m16_burst then
+				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
+				self:weapon_tweak_data().FIRE_MODE = "single"	
+				self:weapon_tweak_data().BURST_FIRE = 3	
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
+			end		
+	
+			if stats.beer_burst then
+				self:weapon_tweak_data().BURST_FIRE = false
+				self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = nil				
+				self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = true
+				self:weapon_tweak_data().FIRE_MODE = "auto"	
+			end					
+			
+			if stats.can_shoot_through_titan_shield then
+				self._can_shoot_through_titan_shield = true
+			end
+	
+			if stats.is_pistol then
+				if self:weapon_tweak_data().categories then
+					self:weapon_tweak_data().categories = {"pistol"}
+				end
+			end
+	
+			if stats.damage_near_mul then
+				self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
+			end
+	
+			if stats.damage_far_mul then
+				self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
+			end
+			
+			if stats.starwars then
+				self._starwars = true
 			end
 		end
-
-		if stats.is_drum_aa12 then
-			if self:weapon_tweak_data().animations then
-				self:weapon_tweak_data().animations.reload_name_id = "aa12"
-			end
-		end
-
-		if stats.is_mag_akm then
-			if self:weapon_tweak_data().animations then
-				self:weapon_tweak_data().animations.reload_name_id = "akm"
-			end
-		end
-		
-		if stats.beretta_burst then
-			self:weapon_tweak_data().BURST_FIRE = 3	
-			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false	
-		end	
-
-		if stats.m16_burst then
-			self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = false
-			self:weapon_tweak_data().FIRE_MODE = "single"	
-			self:weapon_tweak_data().BURST_FIRE = 3	
-			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = false			
-		end		
-
-		if stats.beer_burst then
-			self:weapon_tweak_data().BURST_FIRE = false
-			self:weapon_tweak_data().ADAPTIVE_BURST_SIZE = nil				
-			self:weapon_tweak_data().CAN_TOGGLE_FIREMODE = true
-			self:weapon_tweak_data().FIRE_MODE = "auto"	
-		end					
-		
-		if stats.can_shoot_through_titan_shield then
-			self._can_shoot_through_titan_shield = true
-		end
-
-		if stats.is_pistol then
-			if self:weapon_tweak_data().categories then
-				self:weapon_tweak_data().categories = {"pistol"}
-			end
-		end
-
-		if stats.damage_near_mul then
-			self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
-		end
-
-		if stats.damage_far_mul then
-			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
-		end
-		
-		if stats.starwars then
-            self._starwars = true
-        end
 	end
+	self._custom_stats_done = true
 	
     if BeardLib and self._trail_effect_table then
         if self._starwars == true then
@@ -702,7 +705,7 @@ end
 function NewRaycastWeaponBase:enter_steelsight_speed_multiplier()
 	local multiplier = 1
 	local categories = self:weapon_tweak_data().categories
-	local ads_time = self:weapon_tweak_data().ads_speed or 0.300
+	local ads_time = self:weapon_tweak_data().ads_speed or 0.200
 	
 	multiplier = multiplier / ( ads_time / tweak_data.player.TRANSITION_DURATION)
 	multiplier = multiplier * self._ads_speed_mult

@@ -8733,6 +8733,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 		recoil = 1,
 		concealment = -2
 	}
+	
+	table.insert(self.wpn_fps_snp_wa2000.uses_parts, "wpn_fps_snp_model70_iron_sight")
+	table.insert(self.wpn_fps_snp_wa2000_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")
 
 end)
 
@@ -9215,22 +9218,25 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_model70", "resmod_model70", functi
 	}
 	self.parts.wpn_fps_snp_model70_iron_sight.stance_mod = {
 		wpn_fps_snp_msr = {
-			translation = Vector3(0, 0, -3)
+			translation = Vector3(0, -3, -3.1)
 		},
 		wpn_fps_snp_desertfox = {
-			translation = Vector3(0, 0, -3.5)
+			translation = Vector3(0, -12, -3.48)
 		},
 		wpn_fps_snp_r93 = {
-			translation = Vector3(0, 0, -3.1)
+			translation = Vector3(0, 0, -3.22)
 		},
 		wpn_fps_snp_m95 = {
-			translation = Vector3(0, 25, -1.5)
+			translation = Vector3(0, 8, -3.3)
 		},
 		wpn_fps_snp_tti = {
-			translation = Vector3(0, 0, 0.25)
+			translation = Vector3(0, -2, 0.47)
 		},
 		wpn_fps_snp_r700 = {
-			translation = Vector3(0, 0, -3)
+			translation = Vector3(0, -2, -0.45)
+		},
+		wpn_fps_snp_wa2000 = {
+			translation = Vector3(0, -4, 1.17)
 		}	
 	}
 
@@ -10454,7 +10460,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_flint", "resmod_flint", function(s
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_upg_i_autofire")
 	table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_fps_upg_i_autofire")	
 	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_upg_ak_m_drum")
-	table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_upg_ak_m_drum")		
+	table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_upg_ak_m_drum")	
+	table.insert(self.wpn_fps_ass_flint.uses_parts, "wpn_fps_ass_asval_s_solid")
+	table.insert(self.wpn_fps_ass_flint_npc.uses_parts, "wpn_fps_ass_asval_s_solid")		
 		
 	self.wpn_fps_ass_flint_npc.uses_parts = deep_clone(self.wpn_fps_ass_flint.uses_parts)	
 

@@ -234,7 +234,7 @@ function PlayerTweakData:init()
 		}
 	}
 	self.max_nr_following_hostages = 1
-	self.TRANSITION_DURATION = 0.23
+	self.TRANSITION_DURATION = 0.2
 	self.stances = {
 		default = {
 			standard = {
@@ -485,7 +485,7 @@ function PlayerTweakData:_init_m60()
 	default_init_m60(self)
 	local pivot_shoulder_translation = Vector3(10.716, 4, -0.1)
 	local pivot_shoulder_rotation = Rotation(0.106596, -0.0844502, 0.629187)    
-	local pivot_head_translation = Vector3(0, 12, 0)
+	local pivot_head_translation = Vector3(0, 1, 0)
 	local pivot_head_rotation = Rotation(0, 0, 0)
 	self.stances.m60.steelsight.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
 	self.stances.m60.steelsight.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
@@ -499,8 +499,22 @@ function PlayerTweakData:_init_m60()
 	self.stances.m60.bipod.shakers = {breathing = {amplitude = 0}}		
 end
 
+Hooks:PostHook(PlayerTweakData, "_init_new_stances", "disable_ads_sway_and_drag", function(self)	
+	for wep_id, i in pairs(self.stances) do
+		if self.stances[ wep_id ] and self.stances[ wep_id ].steelsight then
+			self.stances[ wep_id ].steelsight.shakers.breathing.amplitude = 0
+			self.stances[ wep_id ].steelsight.vel_overshot.yaw_neg = 0
+			self.stances[ wep_id ].steelsight.vel_overshot.yaw_pos = 0
+			self.stances[ wep_id ].steelsight.vel_overshot.pitch_neg = 0
+			self.stances[ wep_id ].steelsight.vel_overshot.pitch_pos = 0
+		end
+	end
+end)
+
+
 if SystemFS:exists("assets/mod_overrides/Crosskill Fixed Scale") then
 	Hooks:PostHook(PlayerTweakData, "_init_new_stances", "crosskillscalefix", function(self)
 		self.stances.colt_1911.steelsight.shoulders.translation = Vector3(-8.61721, -8.12715, 4.09579)
 	end)
+
 end	

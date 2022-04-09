@@ -1181,9 +1181,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_deflection"] = "Deflection",
 		["bm_menu_regen_time"] = "Regen Delay",
 		["bm_menu_swap_speed"] = "Swap Time",
-		["bm_menu_standing_range"] = "Range",
-		["bm_menu_moving_range"] = "Range (Moving)",
 		["bm_menu_pickup"] = "Ammo Pickup",
+		["bm_menu_ads_speed"] = "Aim Time",
+		["bm_menu_reload"] = "Reload Time",
+		["bm_menu_damage"] = "Damage", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Damage Max",
+		["bm_menu_standing_range"] = "Max Range",
+		["bm_menu_damage_min"] = "Damage Min",
+		["bm_menu_moving_range"] = "Min Range",
 		
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Muzzle",
@@ -1198,6 +1202,49 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_cylinder"] = "Cylinder",
 		["bm_menu_model"] = "Model",
 		["bm_menu_forebarrelgrip"] = "Barrel & Handguard",
+		
+		--Weapon categories--
+		["menu_pistol"] = "Pistols",
+		["menu_akimbo_pistol"] = "Dual Pistols",
+		--
+		["menu_light_pis"] = "Light Pistols",
+		["menu_heavy_pis"] = "Heavy Pistols",
+		
+		["menu_shotgun"] = "Shotguns",
+		["menu_akimbo_shotgun"] = "Dual Shotguns",
+		--
+		["menu_light_shot"] = "Light Shotguns",
+		["menu_heavy_shot"] = "Heavy Shotguns",
+		["menu_break_shot"] = "Break-Action Shotguns",
+		
+		["menu_smg"] = "SMGs",
+		["menu_akimbo_smg"] = "Dual SMGs",
+		--
+		["menu_light_smg"] = "Light SMGs",
+		["menu_heavy_smg"] = "Heavy SMGs",
+		
+		["menu_assault_rifle"] = "Rifles",
+		["menu_akimbo_assault_rifle"] = "Dual Rifles",
+		--
+		["menu_light_ar"] = "Light Rifles",
+		["menu_heavy_ar"] = "Heavy Rifles",
+		["menu_dmr_ar"] = "Marksman Rifles",
+		
+		["menu_lmg"] = "Machine Guns",
+		--
+		["menu_light_mg"] = "LMGs",
+		["menu_heavy_mg"] = "HMGs",
+		
+		["menu_snp"] = "Snipers",
+		--
+		["menu_light_snp"] = "Light Snipers",
+		["menu_heavy_snp"] = "Heavy Snipers",
+		["menu_antim_snp"] = "Anti-Materiel Rifles",
+
+		["menu_wpn_special"] = "Specials & Unsorted",
+		
+		
+		
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: $passive_armor_regen",

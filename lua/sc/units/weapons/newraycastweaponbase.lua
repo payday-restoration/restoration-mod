@@ -702,12 +702,15 @@ end
 function NewRaycastWeaponBase:enter_steelsight_speed_multiplier()
 	local multiplier = 1
 	local categories = self:weapon_tweak_data().categories
+	local ads_time = self:weapon_tweak_data().ads_speed or 0.300
+	
+	multiplier = multiplier / ( ads_time / tweak_data.player.TRANSITION_DURATION)
+	multiplier = multiplier * self._ads_speed_mult
+	
 	for _, category in ipairs(categories) do
 		multiplier = multiplier * managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1)
 	end
-			
-	multiplier = multiplier * self._ads_speed_mult
-
+	
 	multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "combat_medic_enter_steelsight_speed_multiplier", 1)
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "enter_steelsight_speed_multiplier", 1)
 	
@@ -739,7 +742,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 		local acc_bonus = falloff_info.acc_bonus * (self._current_stats_indices.spread + managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) - 1)
 		
 		--Get bonus from stability.
-		local stab_bonus = falloff_info.stab_bonus * 25
+		local stab_bonus = falloff_info.stab_bonus * 20
 		if current_state._moving then
 			stab_bonus = falloff_info.stab_bonus * (self._current_stats_indices.recoil + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) - 1)
 		end

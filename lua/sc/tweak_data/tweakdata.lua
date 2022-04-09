@@ -545,45 +545,59 @@ end
 
 	tweak_data.gui.buy_weapon_categories = {
 		primaries = {
-			{"assault_rifle"},
-			{"shotgun"},
-			{"lmg"},
-			{"snp"},
-			{"pistol"},
-			{
-				"akimbo",
-				"pistol"
-			},
-			{
-				"akimbo",
-				"smg"
-			},
-			{
-				"akimbo",
-				"shotgun"
-			},
-			{
-				"akimbo",
-				"assault_rifle"
-			},			
-			{"wpn_special"},
-			{"smg"}
+		
+			{ "light_pis" },
+			{ "heavy_pis" },
+			
+			{ "light_shot" },
+			{ "heavy_shot" },
+			{ "break_shot" },
+			
+			{ "light_smg" },
+			{ "heavy_smg" },
+			
+			{ "light_ar" },
+			{ "heavy_ar" },
+			{ "dmr_ar" },
+			
+			{ "light_mg" },
+			{ "heavy_mg" },
+			
+			{ "light_snp" },
+			{ "heavy_snp" },
+			{ "antim_snp" },
+		
+			{ "wpn_special" }
+			
 		},
 		secondaries = {
-			{"pistol"},
-			{"smg"},
-			{"wpn_special"},
-			{"shotgun"},
-			{"assault_rifle"}
+		
+			{ "light_pis" },
+			{ "heavy_pis" },
+			
+			{ "light_shot" },
+			{ "heavy_shot" },
+			{ "break_shot" },
+			
+			{ "light_smg" },
+			{ "heavy_smg" },
+			
+			{ "light_ar" },
+			{ "heavy_ar" },
+			
+			{ "wpn_special" }
 		}
 	}
+
+--[[
 	if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") or SystemFS:exists("assets/mod_overrides/Mosin Nagant M9130 Obrez/main.xml") then
 		table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"snp"})
 	end		
 
 	if SystemFS:exists("assets/mod_overrides/Volmer HK51-B/main.xml") then
 		table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
-	end						
+	end		
+]]	
 
 --Sounds of Animals Fighting--
 local animal_fight = {

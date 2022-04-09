@@ -14,6 +14,13 @@ table.insert(WeaponDescription._stats_shown, {
 	name = "pickup"
 })
 
+table.insert(WeaponDescription._stats_shown, {
+	name = "damage_min"
+})
+table.insert(WeaponDescription._stats_shown, {
+	name = "ads_speed"
+})
+
 --Add support for .reload_speed_multiplier
 function WeaponDescription._get_base_stats(name)
 	local base_stats = {}
@@ -547,6 +554,74 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 	end
 end
 
+function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local damage_base = base_stats.damage.value
+	local damage_min_mult = 0.35
+	
+	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+		damage_min_mult = 0.1
+	end
+	
+	
+	return damage_base * damage_min_mult
+end
+
+function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local damage_base = base_stats.damage.value
+	local damage_mods = mods_stats.damage.value
+	local damage_min_mult = 0.35
+	
+	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+		damage_min_mult = 0.1
+	end
+	
+	damage_mods = (damage_mods + damage_base) * damage_min_mult 
+	damage_base = damage_base * damage_min_mult 
+	
+	return damage_mods - damage_base
+end
+
+function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local damage_base = base_stats.damage.value
+	local damage_mods = mods_stats.damage.value
+	local damage_min_mult = 0.35
+	local multiplier = managers.blackmarket:damage_multiplier(name, weapon_tweak.categories, silencer, detection_risk, nil, blueprint) or 1
+	
+	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+		damage_min_mult = 0.1
+	end
+	
+	local damage_skill = (((damage_base + damage_mods) * multiplier) - ( damage_base + damage_mods ) ) * damage_min_mult 
+	
+	return damage_skill
+end
+
+function WeaponDescription._get_base_ads_speed(weapon, name)
+	local weapon_tweak = tweak_data.weapon[name]
+	local ads_speed = weapon_tweak.ads_speed or 0.2
+	return ads_speed * 1000
+end
+
+function WeaponDescription._get_mods_ads_speed(weapon, name, base_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	local ads_speed = base_stats.ads_speed.value
+	
+	for part_id, stats in pairs(custom_data) do
+		if stats.ads_speed_mult then
+			ads_speed = ads_speed * stats.ads_speed_mult
+		end
+	end
+	
+	return ads_speed - base_stats.ads_speed.value
+end
+
 function WeaponDescription._get_stats(name, category, slot, blueprint)
 	local equipped_mods = nil
 	local silencer = false
@@ -602,9 +677,11 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	skill_stats.swap_speed.skill_in_effect, skill_stats.swap_speed.value = WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats, silencer)
 
 	--and range.
+	--Standing range modified for damage dropoff start range (Max damage up until x range)
 	base_stats.standing_range.value = WeaponDescription._get_base_range(weapon, name, base_stats, false)
 	mods_stats.standing_range.value = WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, false)
 	skill_stats.standing_range.skill_in_effect, skill_stats.standing_range.value = WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, false)
+	--Moving range modified for damage dropoff end range (Minimum damage at x range)
 	base_stats.moving_range.value = WeaponDescription._get_base_range(weapon, name, base_stats, true)
 	mods_stats.moving_range.value = WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, true)
 	skill_stats.moving_range.skill_in_effect, skill_stats.moving_range.value = WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, true)
@@ -614,7 +691,17 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	base_stats.pickup.value = WeaponDescription._get_base_pickup(weapon, name)
 	mods_stats.pickup.value = WeaponDescription._get_mods_pickup(weapon, name, base_stats)
 	skill_stats.pickup.skill_in_effect, skill_stats.pickup.value = WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats)
-
+	
+	--Continuing the ugly
+	base_stats.damage_min.value = WeaponDescription._get_base_damage_min(weapon, name, base_stats)
+	mods_stats.damage_min.value = WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_stats)
+	skill_stats.damage_min.skill_in_effect = WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint)
+	skill_stats.damage_min.value = WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint) --Can't have skill.value and skill.skill_in_effect together because ???????
+	
+	base_stats.ads_speed.value = WeaponDescription._get_base_ads_speed(weapon, name, base_stats)
+	mods_stats.ads_speed.value = WeaponDescription._get_mods_ads_speed(weapon, name, base_stats)
+	skill_stats.ads_speed.value = 0 * 1000 --WeaponDescription._get_skill_ads_speed(weapon, name, base_stats) * 1000 --Haven't set this up yet
+	
 	return base_stats, mods_stats, skill_stats
 end
 

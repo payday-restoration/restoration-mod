@@ -228,7 +228,6 @@ function restoration:Init()
 		"pbr2", --Birth of Sky
 		"rvd2", --Resivoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
-		"mia_2", --Hotline Miami 2
 		"nail",	--Lab Rats. Fuck this heist	
 		"nmh", --No Mercy
 		"hox_1",
@@ -241,7 +240,8 @@ function restoration:Init()
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"chew", --Biker day 2
-		"peta2", --Goats day 2. Fuck this heist too		
+		"peta2", --Goats day 2. Fuck this heist too	
+		"mia_2", --Hotline Miami 2	
 		--Custom Heists below--
 		"infinitebank_room",  --First World Tower
 		"Victor Romeo"

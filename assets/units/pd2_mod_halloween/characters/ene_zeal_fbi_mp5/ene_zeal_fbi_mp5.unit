@@ -6,13 +6,15 @@
 	<dependencies>
 		
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5" />
 	</dependencies>
 
 	<extensions>
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="CopBase" >
-			<var name="_tweak_table" value="swat" />
+			<var name="_tweak_table" value="hrt" />
 			<var name="_default_weapon_id" value="mp5" />
+			<var name="_stats_name" value="hostage_rescue" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

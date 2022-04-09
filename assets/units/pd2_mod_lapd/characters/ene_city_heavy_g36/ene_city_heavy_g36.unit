@@ -7,6 +7,7 @@
 		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_mod_lapd/characters/ene_acc_opscore/ene_acc_opscore" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_g36/wpn_npc_g36" />
 	</dependencies>
 
 	<extensions>

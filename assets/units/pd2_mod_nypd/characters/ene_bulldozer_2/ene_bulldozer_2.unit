@@ -11,6 +11,7 @@
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_back_2/ene_acc_bulldozer_back_2" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_chest_2/ene_acc_bulldozer_chest_2" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache_2/ene_acc_bulldozer_stomache_2" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_saiga/wpn_npc_saiga" />
 	</dependencies>
 
 	<extensions>

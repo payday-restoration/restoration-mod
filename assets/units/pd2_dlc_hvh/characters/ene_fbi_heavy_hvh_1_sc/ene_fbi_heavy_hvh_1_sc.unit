@@ -4,8 +4,8 @@
 	<object file="units/pd2_dlc_hvh/characters/ene_fbi_heavy_hvh_1_sc/ene_fbi_heavy_hvh_1_sc" />
 
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m4/wpn_npc_m4" />
 	</dependencies>
 
 	<extensions>

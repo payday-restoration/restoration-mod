@@ -26,6 +26,7 @@ function restoration:Init()
 		"born", --biker heist day 1
 		"mus",	--the diamond
 		"red2", --first world bank
+		"watchdogs_1", --Watchdogs Day 1
 		"gallery", --art gallery
 		--Custom Heists--
 		"office_strike", --office strike
@@ -34,7 +35,7 @@ function restoration:Init()
 		"Skyscraper", --The Skyscraper Heist
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"bookmakers_office", --Bookmaker's Office
-		"firestarter_2_res" --firestarter day 2 res edit version
+		"firestarter_2_rant" --firestarter day 2 res edit version
 	}
 	restoration.captain_teamwork = {
 		"pal", --counterfeit
@@ -43,7 +44,6 @@ function restoration:Init()
 		"firestarter_3", --firestarter day 3
 		"jolly", --aftershock
 		"rvd1", --highland mortuary 
-		"watchdogs_2", --watch dogs 2
 		"wwh", --alaskan deal
 		"watchdogs_2_day", --Watchdogs Day 2 Daytime
 		"jolly_CD", --jolly crackdown edit
@@ -51,7 +51,7 @@ function restoration:Init()
 		"lit1", --California's Heat
 		"glb", --Golden Lotus Bank 
 		"constantine_harbor_lvl", --Harboring a Grudge
-		"firestarter_3_res" --firestarter day 3 res edit version
+		"firestarter_3_rant" --firestarter day 3 res edit version
 	}
 	restoration.captain_murderdozer = {
 		"dah", --diamond heist
@@ -63,7 +63,7 @@ function restoration:Init()
 		"dinner", --Slaughterhouse
 		"chca", --Black Cat Heist
 		--custom heists		
-		"firestarter_1_res", --firestarter day 1 res edit version
+		"firestarter_1_rant", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
 		"nft_heist", --EN EF TEE HEIST
 		"anlh", --An End To Liang
@@ -79,8 +79,11 @@ function restoration:Init()
 		"family", --diamond store
 		"framing_frame_1", --art gallery but ff
 		"framing_frame_3", --Powerbox simulator
+		"glace", --Green Bridge
 		"jewelry_store", --Jewelry Store
 		"ukrainian_job", --Ukrainian Job
+		"watchdogs_1_night", --Watchdogs Day 1 Night
+		"watchdogs_2", --watch dogs 2 Night
 		--custom heists
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
@@ -131,7 +134,7 @@ function restoration:Init()
 			"help", --Prison Nightmare	
 			"chca", --Black Cat Heist
 			--custom heists		
-			"firestarter_1_res", --firestarter day 1 res edit version
+			"firestarter_1_rant", --firestarter day 1 res edit version
 			"tj_htsb", --Gets Southern Branchbank from Autumn
 			"hardware_store", --Hardware Store 
 			"constantine_bank_lvl", --Pacific Bank
@@ -211,7 +214,7 @@ function restoration:Init()
 		"Gambling_room", --Underground Bargains
 		"hwu", --Avalon's Shadow
 		"sh_raiders", --Safehouse Raiders 
-		"firestarter_3_res", --firestarter day 3, res edit
+		"firestarter_3_rant", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
 		"branchbank_meth", --Bank Heist: Meth
 		"ttr_yct_lvl", --Triad Takedown Remastered 
@@ -225,7 +228,6 @@ function restoration:Init()
 		"pbr2", --Birth of Sky
 		"rvd2", --Resivoir Dogs 2, has very aggressive scripted spawns.
 		"vit", --White House
-		"mia_2", --Hotline Miami 2
 		"nail",	--Lab Rats. Fuck this heist	
 		"nmh", --No Mercy
 		"hox_1",
@@ -238,7 +240,8 @@ function restoration:Init()
 	restoration.extremely_tiny_levels = {
 		"hvh", --CKR
 		"chew", --Biker day 2
-		"peta2", --Goats day 2. Fuck this heist too		
+		"peta2", --Goats day 2. Fuck this heist too	
+		"mia_2", --Hotline Miami 2	
 		--Custom Heists below--
 		"infinitebank_room",  --First World Tower
 		"Victor Romeo"

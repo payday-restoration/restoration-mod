@@ -8,6 +8,7 @@
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on effect="effects/particles/character/cloaker_goggle" />
 		<depends_on unit="units/payday2/characters/ene_acc_baton/ene_acc_baton" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak" />
 	</dependencies>
 
 	<extensions>

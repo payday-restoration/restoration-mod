@@ -7,6 +7,7 @@
 		
 		<depends_on unit="units/pd2_mod_sharks/characters/ene_acc_murky_beret/ene_acc_murky_beret" />
 		<depends_on bnk="soundbanks/npc_russian_mercenaries" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_benelli/wpn_npc_benelli" />
 	</dependencies>
 
 	<extensions>

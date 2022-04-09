@@ -4,8 +4,8 @@
 	<object file="units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2" />
 
 	<dependencies>
-	
 		<depends_on unit="units/payday2/characters/ene_acc_fbi_swat_helmet/ene_acc_fbi_swat_helmet" />
+		<depends_on unit="units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500" />
 	</dependencies>
 
 	<extensions>

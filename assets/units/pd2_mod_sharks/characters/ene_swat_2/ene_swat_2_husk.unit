@@ -6,6 +6,7 @@
 	<dependencies>
 		
 		<depends_on unit="units/pd2_dlc_bph/characters/ene_acc_murkywater_hat/ene_acc_murkywater_hat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
 	</dependencies>
 
 	<extensions>

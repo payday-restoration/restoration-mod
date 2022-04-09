@@ -8,6 +8,7 @@
 		<depends_on effect="effects/payday2/particles/character/taser_thread" />
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on bnk="soundbanks/regular_sfx" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m4_yellow/wpn_npc_m4_yellow" />
 	</dependencies>
 
 	<extensions>

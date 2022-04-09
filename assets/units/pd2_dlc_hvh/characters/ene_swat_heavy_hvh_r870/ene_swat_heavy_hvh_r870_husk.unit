@@ -4,8 +4,8 @@
 	<object file="units/pd2_dlc_hvh/characters/ene_swat_heavy_hvh_r870/ene_swat_heavy_hvh_r870" />
 
 	<dependencies>
-		
 		<depends_on unit="units/payday2/characters/ene_acc_shield_helmet/ene_acc_shield_helmet" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
 	</dependencies>
 
 	<extensions>

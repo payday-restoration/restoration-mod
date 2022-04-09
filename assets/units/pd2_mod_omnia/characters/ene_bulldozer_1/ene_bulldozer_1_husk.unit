@@ -14,6 +14,7 @@
 		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_neck/ene_acc_bulldozer_1_neck" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/pd2_mod_omnia/characters/ene_acc_bulldozer_1_throat/ene_acc_bulldozer_1_throat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
 	</dependencies>
 
 	<extensions>

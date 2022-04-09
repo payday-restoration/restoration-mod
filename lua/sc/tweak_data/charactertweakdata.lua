@@ -22743,6 +22743,7 @@ function CharacterTweakData:character_map()
 				"ene_medic_mp5",
 				"ene_zeal_fbi_m4",
 				"ene_zeal_fbi_mp5",
+				"ene_zeal_medic",
 				"ene_zeal_swat_shield",
 				"ene_zeal_bulldozer",
 				"ene_zeal_bulldozer_2",

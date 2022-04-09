@@ -4,9 +4,9 @@
 	<object file="units/pd2_dlc_bex/characters/ene_veteran_enrique_2/ene_veteran_enrique_2" />
 
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_acc_bex_sexyhat/ene_acc_bex_sexyhat" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45" />
 	</dependencies>
 
 	<extensions>

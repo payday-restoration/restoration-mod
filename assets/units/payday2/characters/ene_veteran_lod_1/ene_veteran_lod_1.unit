@@ -4,8 +4,8 @@
 	<object file="units/payday2/characters/ene_veteran_lod_1/ene_veteran_lod_1" />
 
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc" />
 	</dependencies>
 
 	<extensions>

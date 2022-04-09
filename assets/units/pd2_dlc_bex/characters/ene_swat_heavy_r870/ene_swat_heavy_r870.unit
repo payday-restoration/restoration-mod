@@ -4,9 +4,9 @@
 	<object file="units/pd2_dlc_bex/characters/ene_swat_heavy_r870/ene_swat_heavy_r870" />
 
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/payday2/characters/ene_acc_shield_helmet/ene_acc_shield_helmet" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_m500/wpn_npc_m500" />
 	</dependencies>
 	
 	<extensions>

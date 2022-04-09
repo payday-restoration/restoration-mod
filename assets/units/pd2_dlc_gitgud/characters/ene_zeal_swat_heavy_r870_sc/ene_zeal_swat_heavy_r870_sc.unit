@@ -4,9 +4,9 @@
 	<object file="units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc" />
 
 	<dependencies>
-		
 		<depends_on bnk="soundbanks/regular_vox" />
 		<depends_on unit="units/pd2_dlc_gitgud/characters/ene_acc_zeal_swat_heavy_helmet_sc/ene_acc_zeal_swat_heavy_helmet_sc" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_r870/wpn_npc_r870" />
 	</dependencies>
 	
 	<extensions>

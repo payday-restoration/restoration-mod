@@ -31,6 +31,7 @@ function restoration:Init()
 		--Custom Heists--
 		"office_strike", --office strike
 		"schl", --Scarlet Club House
+		"TonCont", --Armored Transport: Atrium
 		"gallery_v2", --Art Gallery Remastered 
 		"Skyscraper", --The Skyscraper Heist
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
@@ -169,6 +170,7 @@ function restoration:Init()
 		"glb", --Golden Lotus Bank 
 		"schl", --Scarlet Club House
 		"nft_heist", --EN EF TEE HEIST
+		"TonCont", --Armored Transport: Atrium
 		"santas_hardware_store" --Hardware Store but Xmas
 	}			
 	--Slightly reduced spawns, generally use for heists with lengthy sections where players typically hold out in one smallish position, or 'early game' heists.

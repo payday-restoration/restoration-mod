@@ -5,6 +5,26 @@ local ids_ik_aim = Idstring("ik_aim")
 Month = os.date("%m")
 local job = Global.level_data and Global.level_data.level_id
 
+function CopBase:enable_weapon_asu_laser()
+	self._weapon_laser_on = true
+
+	self._unit:inventory():equipped_unit():base():set_asu_laser_enabled(true)
+	managers.enemy:_destroy_unit_gfx_lod_data(self._unit:key())
+end
+
+function CopBase:enable_asu_laser()
+	if self._is_server then
+		if not self._active_laser then
+			self._weapon_base:set_asu_laser_enabled(true)
+			self._logic_data.internal_data.weapon_laser_on = true
+			managers.enemy:_destroy_unit_gfx_lod_data(self._unit:key())
+			self._active_laser = true
+		end
+	elseif not self._weapon_laser_on then
+		self:enable_weapon_asu_laser()
+	end
+end
+
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
     -- log("cursed mod xd")
     self:random_mat_seq_initialization()
@@ -17,7 +37,6 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 		managers.hud:set_buff_enabled("vip", true)
 	end		
 end)
-
 
 --Yufu Wang Hitbox fix
 Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)

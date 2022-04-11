@@ -1,0 +1,37 @@
+<materials version="3">
+    <material name="peqbox" render_template="generic:DIFFUSE_TEXTURE:NORMALMAP" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_third_upg_fl_ass_smg_sho_peqbox/wpn_third_upg_fl_ass_smg_sho_peqbox_df"/>
+        <bump_normal_texture file="units/payday2/weapons/wpn_third_upg_fl_ass_smg_sho_peqbox/wpn_third_upg_fl_ass_smg_sho_peqbox_nm"/>
+    </material>
+    <material name="indicator" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_effects_textures/wpn_effect_green_il"/>
+        <self_illumination_texture file="units/payday2/weapons/wpn_effects_textures/wpn_effect_green_il"/>
+        <variable value="sun" type="scalar" name="il_multiplier"/>
+    </material>
+	
+	<material name="mtr_flare" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_TINT" version="2" unique="true">
+		<diffuse_texture file="units/payday2/weapons/laser_flare"/>
+		<variable name="tint_diffuse0_color" type="vector3" value="0.5 0.5 0.0"/>
+		<variable name="intensity" type="scalar" value="0.5"/>
+	</material>
+
+	<material name="laser" render_template="effect:BLEND_ADD:DIFFUSE0_TEXTURE:DIFFUSE0_TINT" version="2" unique="true">
+		<diffuse_texture file="units/payday2/weapons/wpn_asu_laser/laser"/>
+		<variable name="tint_diffuse0_color" type="vector3" value="0.5 0.5 0.0"/>
+		<variable name="intensity" type="scalar" value="0.5"/>
+	</material>
+
+	<!--<material name="mtr_laser" render_template="effect:LAZER" version="2" unique="true">
+		<diffuse_texture file="units/pd2_dlc_vr/units/gen_pen_laser/beam_df"/>
+		<variable type="scalar" name="lazer_time_scale" value="0.05"/>
+		<variable type="scalar" name="lazer_smoke_scale" value="0.01"/>
+		<variable type="scalar" name="lazer_length" value="1"/>
+		<variable type="vector3" name="lazer_color" value="0 1 0"/>
+	</material>-->
+   
+   <!--<material name="laser" render_template="generic:DIFFUSE_TEXTURE:SELF_ILLUMINATION" version="2">
+        <diffuse_texture file="units/payday2/weapons/wpn_effects_textures/wpn_effect_green_il"/>
+        <self_illumination_texture file="units/payday2/weapons/wpn_effects_textures/wpn_effect_green_il"/>
+        <variable value="sun" type="scalar" name="il_multiplier"/>
+    </material>-->
+</materials>

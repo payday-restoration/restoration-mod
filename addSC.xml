@@ -6,6 +6,15 @@
 	<material_config	path="units/pd2_dlc_friend/nature/terrain/sfm_backdrop" force="true"/>
 	
 	<object				path="units/vehicles/animated_cars/police_ny_bank_anim" force="true"/>
+
+	<!--ASU Laser-->	
+	<texture		    path="units/payday2/weapons/wpn_asu_laser/laser" />
+	<texture		    path="units/payday2/weapons/wpn_asu_laser/laser_flare" />
+	<material_config	path="units/payday2/weapons/wpn_asu_laser/wpn_asu_laser" />
+	<object	            path="units/payday2/weapons/wpn_asu_laser/wpn_asu_laser" />
+	<model	            path="units/payday2/weapons/wpn_asu_laser/wpn_asu_laser" />
+	<unit	            path="units/payday2/weapons/wpn_asu_laser/wpn_asu_laser" load="true"/>
+	<cooked_physics	    path="units/payday2/weapons/wpn_asu_laser/wpn_asu_laser" />
 	
 	<!-- Dark window cop cars with fixed uniforms -->
 	<!--Washington DC-->

@@ -77,7 +77,7 @@ Porky da Corgi: creating the base textures for the grenadier and OMNIA Light
 
 Wekk: Telling us what LPF should mean and allowing us to implement "Less Clones, More Face Variations" mod and "Zeal Shield Illumination Fix" into the mod.
 
-Hoppip: Created the Mind Blown graze rework, and the Streamlined Heisting framework. 
+Hoppip: Created the Mind Blown graze rework, the prettier laser assets used for enemy damage buffs and the Streamlined Heisting framework. 
 
 Baddy: Major asset contributions.
 

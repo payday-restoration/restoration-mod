@@ -29,3 +29,7 @@ end
 function JobManager:check_add_heat_to_jobs()
 	self:_check_add_heat_to_jobs()
 end
+
+function JobManager:on_buy_job(job_id, difficulty_id) --Allows XP Boost in Contact Broker (something that vanilla should have)
+	return
+end

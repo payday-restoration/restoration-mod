@@ -227,7 +227,9 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 	if dodge_enemies and self._suppression then
 		for enemy_data, dis_error in pairs(dodge_enemies) do
-			enemy_data.unit:character_damage():build_suppression(suppr_mul * dis_error * self._suppression, self._panic_suppression_chance)
+			if not enemy_data.unit:movement():cool() then -- cannot suppress ppl who have no idea that there is combat
+				enemy_data.unit:character_damage():build_suppression(suppr_mul * dis_error * self._suppression, self._panic_suppression_chance)
+			end
 		end
 	end
 

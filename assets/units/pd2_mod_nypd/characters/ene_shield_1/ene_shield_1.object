@@ -208,6 +208,19 @@
 					<material materials="mtr_swat_fbi_lod_2" />
 				</object>
 			</lod_object>
+			
+			<lod_object name="lod_extras">
+				<object name="g_extras" 		enabled="true"  max_distance="3000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_swat_fbi" max_distance="0" />				
+					<material materials="mtr_extras" max_distance="1000" />
+					<material materials="mtr_extras_lod_1" max_distance="1500" />
+					<material materials="mtr_extras_lod_2" />
+				</object>
+				<object name="g_extras_lod1" 	enabled="true" lod="1" >
+					<material materials="mtr_swat_fbi" max_distance="0" /cpy_material_vars="contour_color, contour_opacity">
+					<material materials="mtr_extras_lod_2" />
+				</object>
+			</lod_object>
 
 			<lod_object name="lod_head">
 				<object name="g_head" 		enabled="true"  max_distance="3000"  max_draw_lod="0" cpy_material_vars="contour_color, contour_opacity">

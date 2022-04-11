@@ -910,7 +910,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_fg_midwest.stats = {
 		value = 3,
 		recoil = -2,
-		concealment = 2
+		concealment = 1
+	}
+	self.parts.wpn_fps_upg_fg_midwest.custom_stats = {
+		ads_speed_mult = 0.95
 	}
 
 	--AK Slavic Dragon Barrel
@@ -921,16 +924,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		spread = -2,
 		concealment = 2
 	}
+	self.parts.wpn_fps_upg_ak_b_draco.custom_stats = {
+		falloff_start_mult = 0.85,
+		falloff_end_mult = 0.85,
+		ads_speed_mult = 0.9
+	}
 	
 	--AK Quadstacked Mag
 	self.parts.wpn_fps_upg_ak_m_quad.pcs = {}
 	self.parts.wpn_fps_upg_ak_m_quad.supported = true
 	self.parts.wpn_fps_upg_ak_m_quad.stats = {
 		value = 3,
-		concealment = -3,
+		concealment = -4,
 		extra_ammo = 30,
-		reload = -3,
-		spread = -1
+		reload = -3
+	}
+	self.parts.wpn_fps_upg_ak_m_quad.custom_stats = {
+		ads_speed_mult = 1.20
 	}
 	
 	--AK Rubber Grip
@@ -938,14 +948,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_ak_g_hgrip.supported = true
 	self.parts.wpn_fps_upg_ak_g_hgrip.stats = {
 		value = 2,
-		spread = 1,
-		recoil = -1,
+		recoil = 2,
 		concealment = -1
 	}
-	self.parts.wpn_fps_upg_ak_g_hgrip.custom_stats = {
-		damage_near_mul = 1,
-		damage_far_mul = 1
-	}
+	self.parts.wpn_fps_upg_ak_g_hgrip.custom_stats = {}
 	self.parts.wpn_fps_upg_ak_g_hgrip.forbids = {
 		"wpn_upg_ak_g_standard",
 		"wpn_fps_ass_asval_g_standard"
@@ -956,13 +962,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_ak_g_pgrip.supported = true
 	self.parts.wpn_fps_upg_ak_g_pgrip.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
-	self.parts.wpn_fps_upg_ak_g_pgrip.custom_stats = {
-		damage_near_mul = 1,
-		damage_far_mul = 1
-	}		
+	self.parts.wpn_fps_upg_ak_g_pgrip.custom_stats = {}		
 	self.parts.wpn_fps_upg_ak_g_pgrip.forbids = {
 		"wpn_upg_ak_g_standard",
 		"wpn_fps_ass_asval_g_standard"
@@ -974,12 +977,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_ak_g_wgrip.stats = {
 		value = 2,
 		spread = -1,
-		recoil = 1
+		recoil = 2
 	}
-	self.parts.wpn_fps_upg_ak_g_wgrip.custom_stats = {
-		damage_near_mul = 1,
-		damage_far_mul = 1
-	}		
+	self.parts.wpn_fps_upg_ak_g_wgrip.custom_stats = {}		
 	self.parts.wpn_fps_upg_ak_g_wgrip.forbids = {
 		"wpn_upg_ak_g_standard",
 		"wpn_fps_ass_asval_g_standard"
@@ -1325,17 +1325,19 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 		bullet_objects = {prefix = "g_bullet_", amount = 98},
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_drum",
 		dlc = "sc",
-		unit = "units/payday2/weapons/wpn_fps_upg_m4_reusable/wpn_fps_upg_m4_m_drum",
+		unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_m_drum",
 		supported = true,
 		stats = {
 			value = 9,
 			extra_ammo = 70,
-			spread = -2,
 			reload = -6,
 			concealment = -5
+		},
+		custom_stats = {
+			ads_speed_mult = 1.25
 		}
 	}
-	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_m_drum"
+	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
 	
 	--(CAR) Tactical Mag.
 	self.parts.wpn_fps_upg_m4_m_pmag.pcs = {
@@ -1925,13 +1927,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		supported = true,
 		stats = {
 			value = 5,
-			spread = -2,
 			concealment = -5,
-			extra_ammo = 70,
+			extra_ammo = 45,
 			reload = -6
+		},
+		custom_stats = {
+			ads_speed_mult = 1.25
 		}
 	}
-	self.parts.wpn_upg_ak_m_drum.third_unit = "units/payday2/weapons/wpn_third_upg_ak_reusable/wpn_third_upg_ak_m_drum"
+	self.parts.wpn_upg_ak_m_drum.third_unit = "units/pd2_dlc_gage_lmg/weapons/wpn_third_lmg_rpk_pts/wpn_third_lmg_rpk_m_drum"
 	self.parts.wpn_upg_ak_m_drum_vanilla = deep_clone(self.parts.wpn_upg_ak_m_drum)
 	self.parts.wpn_upg_ak_m_drum_vanilla.stats = nil
 	self.parts.wpn_upg_ak_m_drum_vanilla.pcs = nil	
@@ -4470,9 +4474,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rpk", "resmod_rpk", function(self)
 					reload = 2,
 					extra_ammo = -40,
 				}
-		}		
+		},
+		wpn_fps_ass_74_body_upperreceiver = {
+			unit = "units/payday2/weapons/wpn_fps_ass_akm_pts/wpn_fps_ass_akm_body_upperreceiver",
+			third_unit = "units/payday2/weapons/wpn_third_ass_akm_pts/wpn_third_ass_akm_body_upperreceiver"
+		}
 	}
-		
+
 	--Disabling Vertical Grip Mods
 	self.wpn_fps_lmg_rpk.uses_parts[25] = "wpn_fps_upg_vg_ass_smg_verticalgrip_vanilla"		
 	
@@ -5155,8 +5163,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_b_sniper.stats = {
 		value = 5,
 		spread = 2,
-		recoil = -2,
-		concealment = -2
+		recoil = 4,
+		concealment = -4
+	}
+	self.parts.wpn_fps_ass_g3_b_sniper.custom_stats = {
+		falloff_start_mult = 1.25,
+		falloff_end_mult = 1.25,
+		ads_speed_mult = 1.1
 	}
 	self.parts.wpn_fps_ass_g3_b_sniper.override = {}
 	self.parts.wpn_fps_ass_g3_b_sniper.adds = {}
@@ -5172,9 +5185,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_b_short.stats = {
 		value = 3,
 		spread = -1,
-		concealment = 1,
+		recoil = -6,
+		concealment = 4,
 	}
-	self.parts.wpn_fps_ass_g3_b_short.custom_stats = {}
+	self.parts.wpn_fps_ass_g3_b_short.custom_stats = {
+		falloff_start_mult = 0.85,
+		falloff_end_mult = 0.85,
+		ads_speed_mult = 0.95
+	}
 	
 	--Precision Foregrip
 	self.parts.wpn_fps_ass_g3_fg_psg.pcs = {}
@@ -5182,7 +5200,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_fg_psg.stats = {
 		value = 5,
 		spread = 1,
-		concealment = -3
+		recoil = 2,
+		concealment = -2
+	}
+	self.parts.wpn_fps_ass_g3_fg_psg.custom_stats = {
+		falloff_start_mult = 1.05,
+		falloff_end_mult = 1.05,
+		ads_speed_mult = 1.025
 	}
 
 	--Tactical Foregrip
@@ -5190,7 +5214,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_fg_railed.supported = true
 	self.parts.wpn_fps_ass_g3_fg_railed.stats = {
 		value = 2,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 	
@@ -5199,8 +5223,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_fg_retro.supported = true
 	self.parts.wpn_fps_ass_g3_fg_retro.stats = {
 		value = 2,
-		recoil = 1,
-		concealment = -2
+		spread = -2,
+		recoil = 2,
+		concealment = 1
+	}
+	self.parts.wpn_fps_ass_g3_fg_retro.custom_stats = {
+		falloff_start_mult = 0.9,
+		falloff_end_mult = 0.9
 	}
 	
 	--Plastic Foregrip
@@ -5209,7 +5238,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_fg_retro_plastic.stats = {
 		value = 2,
 		spread = -2,
-		concealment = 2
+		recoil = -4,
+		concealment = 4
+	}
+	self.parts.wpn_fps_ass_g3_fg_retro_plastic.custom_stats = {
+		falloff_start_mult = 0.9,
+		falloff_end_mult = 0.9,
+		ads_speed_mult = 0.975
 	}
 	
 	--Retro Grip
@@ -5217,8 +5252,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_g_retro.supported = true
 	self.parts.wpn_fps_ass_g3_g_retro.stats = {
 		value = 2,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
+	}
+	self.parts.wpn_fps_ass_g3_g_retro.custom_stats = {
+		ads_speed_mult = 0.975
 	}
 	
 	--Precision Grip
@@ -5226,8 +5264,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_g_sniper.supported = true
 	self.parts.wpn_fps_ass_g3_g_sniper.stats = {
 		value = 5,
-		spread = 1,
-		concealment = -3
+		recoil = 4,
+		concealment = -2
 	}
 	
 	--Precision Stock
@@ -5236,6 +5274,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_s_sniper.stats = {
 		value = 5,
 		spread = 1,
+		recoil = 4,
 		concealment = -3
 	}
 	
@@ -5244,8 +5283,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_s_wood.supported = true
 	self.parts.wpn_fps_ass_g3_s_wood.stats = {
 		value = 2,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 	
 	--PSG Magazine
@@ -5258,7 +5297,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_m4_m_straight",
 		unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag_psg",
 		supported = true,
-		stats = {value = 2, extra_ammo = -10, reload = 3, concealment = 2}
+		stats = {value = 2, extra_ammo = -10, reload = 3, concealment = 2},
+		custom_stats = { ads_speed_mult = 0.95},
+		animations = {
+			reload_not_empty = "reload_not_empty",
+			reload = "reload"
+		}
 	}
 	self.parts.wpn_fps_ass_g3_m_psg.third_unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_third_ass_g3_m_mag_psg"
 
@@ -10149,7 +10193,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_upg_ns_duck.supported = true
 	self.parts.wpn_fps_upg_ns_duck.stats = {
 		value = 5,
-		spread_multi = {2.25, 0.5}
+		spread_multi = {2.0, 0.5}
 	}
 	self.parts.wpn_fps_upg_ns_duck.custom_stats = {
 		damage_near_mul = 1,
@@ -13124,11 +13168,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_qbu88", "resmod_qbu88", function(s
 	self.parts.wpn_fps_snp_qbu88_m_extended.supported = true
 	self.parts.wpn_fps_snp_qbu88_m_extended.stats = {
 		value = 2,
-		extra_ammo = 5,
-		reload = -3,
-		spread = -1,
+		extra_ammo = 10,
+		reload = -4,
 		concealment = -2
-	}	
+	}
+	self.parts.wpn_fps_snp_qbu88_m_extended.custom_stats = {
+		ads_speed_mult = 1.05
+	}
 	
 	--Iron Sight
 	self.parts.wpn_fps_snp_qbu88_o_standard.pcs = {
@@ -18018,7 +18064,7 @@ end
 			value = 5,
 			concealment = 2,
 			reload = 2,
-			extra_ammo = -40,
+			extra_ammo = -30,
 		}
 	}		
 	self.parts.wpn_fps_upg_extra_mp_lock = {

@@ -1067,7 +1067,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					1
 				}
 			})
-			local h = self._extra_options_panel:h() + 5
+			local h = self._extra_options_panel:h() + 88
 			info_box_top = info_box_top + h
 			info_box_h = info_box_h - h
 			self._data.extra_options_data = self._extra_options_data
@@ -4217,23 +4217,21 @@ function BlackMarketGui:update_info_text()
 
 			if weapon_tweak.has_description then
 				if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
-					updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+					updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
 				else
-					updated_texts[4].text = updated_texts[4].text .. "\n\n" .. managers.localization:to_upper_text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+					updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
 				end
 				updated_texts[4].below_stats = true
 			end			
 
-			if slot_data.not_moddable then
-				local movement_penalty = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
+			local movement_penalty = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 
-				if movement_penalty < 1 then
-					local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
-					updated_texts[5].text = updated_texts[5].text .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info", {
-						penalty = penalty_as_string
-					})
-				end
 
+			local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
+			local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
+			if movement_penalty < 1 then
+			local penalty_as_string = string.format("%d%%", math.round((1 - movement_penalty) * 100))
+				updated_texts[5].text = updated_texts[5].text .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info") .. penalty_as_string .. managers.localization:to_upper_text("bm_menu_weapon_movement_penalty_info_2")
 			end
 
 			updated_texts[5].below_stats = true
@@ -5542,6 +5540,7 @@ function BlackMarketGui:update_info_text()
 		self._rename_caret:set_world_position(x + w, y)
 	end
 end
+
 
 function BlackMarketGui:open_weapon_buy_menu(data, check_allowed_item_func)
 	local blackmarket_items = managers.blackmarket:get_weapon_category(data.category) or {}

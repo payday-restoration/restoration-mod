@@ -408,14 +408,14 @@ function WeaponDescription._get_base_range(weapon, name, base_stats, calc_min)
 	end
 
 	if has_range then
-		local base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.start_dist or 30
+		local base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.start_dist or 3000
 		local range = base_range
 		
 		if calc_min then
-			base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.end_dist or 60
+			base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.end_dist or 6000
 		end
 		
-		range = base_range
+		range = base_range / 100
 
 		return range
 	else
@@ -436,13 +436,13 @@ function WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats,
 	end
 
 	if has_range then
-		local base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.start_dist or 30
+		local base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.start_dist or 300
 		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 		local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 		local range = base_range
 		
 		if calc_min then
-			base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.end_dist or 60
+			base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.end_dist or 600
 			range = base_range
 			for part_id, stats in pairs(custom_data) do
 				if stats.falloff_end_mult then
@@ -459,12 +459,13 @@ function WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats,
 			end
 		end
 		
-		return range - base_range
+		return (range - base_range) / 100
 	else
 		return 0
 	end
 end
 
+--Currently always returns false since I don't know of any passive range bonuses that can be displayed as a skill + I don't want to work on this anymore. Math big stinky
 function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, calc_min)
 	local weapon_tweak = tweak_data.weapon[name]
 
@@ -550,14 +551,28 @@ end
 function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 	local weapon_tweak = tweak_data.weapon[name]
 	local damage_base = base_stats.damage.value
-	local damage_min_mult = 0.35
+	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
+
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
-		damage_min_mult = 0.1
+		damage_min_mult = 0.05
 	end
-	
-	
+
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			damage_min_mult = 1
+		end
+	end
+
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	for part_id, stats in pairs(custom_data) do
+		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
+			damage_min_mult = 1
+		end
+	end
+
 	return damage_base * damage_min_mult
 end
 
@@ -565,11 +580,18 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 	local weapon_tweak = tweak_data.weapon[name]
 	local damage_base = base_stats.damage.value
 	local damage_mods = mods_stats.damage.value
-	local damage_min_mult = 0.35
+	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
-		damage_min_mult = 0.1
+		damage_min_mult = 0.05
+	end
+
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	for part_id, stats in pairs(custom_data) do
+		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
+			damage_min_mult = 1
+		end
 	end
 	
 	damage_mods = (damage_mods + damage_base) * damage_min_mult 
@@ -582,12 +604,19 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 	local weapon_tweak = tweak_data.weapon[name]
 	local damage_base = base_stats.damage.value
 	local damage_mods = mods_stats.damage.value
-	local damage_min_mult = 0.35
+	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 	local multiplier = managers.blackmarket:damage_multiplier(name, weapon_tweak.categories, silencer, detection_risk, nil, blueprint) or 1
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
-		damage_min_mult = 0.1
+		damage_min_mult = 0.05
+	end
+
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	for part_id, stats in pairs(custom_data) do
+		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
+			damage_min_mult = 1
+		end
 	end
 	
 	local damage_skill = (((damage_base + damage_mods) * multiplier) - ( damage_base + damage_mods ) ) * damage_min_mult 
@@ -597,6 +626,7 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 		return false, 0
 	end
 end
+
 
 function WeaponDescription._get_base_ads_speed(weapon, name)
 	local weapon_tweak = tweak_data.weapon[name]
@@ -626,10 +656,9 @@ function WeaponDescription._get_skill_ads_speed(weapon, name, base_stats, mods_s
 	local categories = weapon_tweak.categories
 
 	for _, category in ipairs(categories) do
-		ads_multiplier = ads_multiplier * managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1)
+		ads_multiplier = ads_multiplier * ( 1 + 1 -  managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1))
 	end
-	ads_multiplier = ads_multiplier * managers.player:upgrade_value("weapon", "enter_steelsight_speed_multiplier", 1)
-	ads_multiplier = ads_multiplier * managers.player:upgrade_value(name, "enter_steelsight_speed_multiplier", 1)
+	ads_multiplier = ads_multiplier * ( 1 + 1 - managers.player:upgrade_value("weapon", "enter_steelsight_speed_multiplier", 1))
 	if ads_multiplier < 1 then
 		local skill_ads = (base_ads + mods_ads) * ads_multiplier
 		return true, skill_ads - base_ads - mods_ads
@@ -719,7 +748,6 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	
 	return base_stats, mods_stats, skill_stats
 end
-
 
 --Identical to vanilla function, but including it somehow fixes incorrect reload speeds showing up on the attachment selection screen for weapons with reload_speed_multiplier.
 function WeaponDescription.get_stats_for_mod(mod_name, weapon_name, category, slot)

@@ -1264,6 +1264,8 @@ end)
 
 function PlayerStandard:_update_reload_timers(t, dt, input)
 	if self._state_data.reload_enter_expire_t and self._state_data.reload_enter_expire_t <= t then
+		self._equipped_unit:base():tweak_data_anim_stop("fire")
+		self._equipped_unit:base():tweak_data_anim_stop("fire_steelsight")
 		self._state_data.reload_enter_expire_t = nil
 		self:_start_action_reload(t)
 	end
@@ -1282,16 +1284,31 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		end
 		if self._state_data.reload_expire_t <= t or interupt then
 			managers.player:remove_property("shock_and_awe_reload_multiplier")
-			self._state_data.reload_expire_t = nil
-			if self._equipped_unit:base():reload_exit_expire_t() then
+			self._state_data.reload_expire_t = nil	
+			local is_reload_not_empty = not self._equipped_unit:base():clip_empty()
+			if not self._equipped_unit:base()._use_shotgun_reload and self._equipped_unit:base():reload_exit_expire_t() and self._equipped_unit:base():reload_not_empty_exit_expire_t() then
+				if not interupt then
+					self._equipped_unit:base():on_reload()
+				end
+				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
+				
+				managers.statistics:reloaded()
+				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
+			elseif self._equipped_unit:base():reload_exit_expire_t() then
 				local is_reload_not_empty = not self._equipped_unit:base():started_reload_empty()
 				local animation_name = is_reload_not_empty and "reload_not_empty_exit" or "reload_exit"
 				local animation = self:get_animation(animation_name)
+				
 				self._state_data.reload_exit_expire_t = t + self._equipped_unit:base():reload_exit_expire_t(is_reload_not_empty) / speed_multiplier
+				
 				local result = self._ext_camera:play_redirect(animation, speed_multiplier)
+				
 				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier)
+				
+				
 			elseif self._state_data.reload_expire_t and self._state_data.reload_expire_t <= t then --Update timers in case player total ammo changes to allow for more to be reloaded.
-				self._state_data.reload_expire_t = t + (self._equipped_unit:base():reload_expire_t() or 2.2) / speed_multiplier				
+				self._state_data.reload_expire_t = t + (self._equipped_unit:base():reload_expire_t() or 2.2) / speed_multiplier		
+				
 			elseif self._equipped_unit then
 				if not interupt then
 					self._equipped_unit:base():on_reload()

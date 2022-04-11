@@ -220,11 +220,18 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 
 	--Apply skill and stance multipliers to overall spread area.
 	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
+	
 	spread_area = spread_area * multiplier
 
 	--Convert spread area to degrees.
 	local spread_x = math.sqrt((spread_area)/math.pi)
 	local spread_y = spread_x
+	
+	if self._spread_multiplier then
+		spread_x = spread_x * self._spread_multiplier[1]
+		spread_y = spread_y * self._spread_multiplier[2]
+	end
+
 
 	return spread_x, spread_y
 end
@@ -425,9 +432,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	end	
 
 	--Set range multipliers.
-	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
-	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul
-
+	self._damage_near_mul = self._damage_near_mul or 1
+	self._damage_far_mul = self._damage_far_mul or 1
+	
 	if self._ammo_data then
 		if self._ammo_data.damage_near_mul ~= nil then
 			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
@@ -500,12 +507,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 				end
 			end
 	
-			if stats.damage_near_mul then
-				self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
+			if stats.falloff_start_mult then
+				self._damage_near_mul = self._damage_near_mul * stats.falloff_start_mult
 			end
 	
-			if stats.damage_far_mul then
-				self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
+			if stats.falloff_end_mult then
+				self._damage_far_mul = self._damage_far_mul * stats.falloff_end_mult
 			end
 			
 			if stats.starwars then
@@ -702,20 +709,22 @@ function NewRaycastWeaponBase:reload_speed_multiplier()
 	return multiplier
 end
 
-function NewRaycastWeaponBase:enter_steelsight_speed_multiplier()
+function NewRaycastWeaponBase:enter_steelsight_speed_multiplier( mult_only )
 	local multiplier = 1
 	local categories = self:weapon_tweak_data().categories
 	local ads_time = self:weapon_tweak_data().ads_speed or 0.200
 	
-	multiplier = multiplier / ( ads_time / tweak_data.player.TRANSITION_DURATION)
-	multiplier = multiplier * self._ads_speed_mult
+	if not mult_only then
+		multiplier = multiplier / ( ads_time / tweak_data.player.TRANSITION_DURATION)
+	end
+
+	multiplier = multiplier / self._ads_speed_mult
 	
 	for _, category in ipairs(categories) do
-		multiplier = multiplier * managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1)
+		multiplier = multiplier / (1 + 1 - managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1))
 	end
 	
-	multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "combat_medic_enter_steelsight_speed_multiplier", 1)
-	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "enter_steelsight_speed_multiplier", 1)
+	multiplier = multiplier / ( 1 + 1 - managers.player:upgrade_value("weapon", "enter_steelsight_speed_multiplier", 1))
 	
 	return multiplier
 end
@@ -735,62 +744,89 @@ end
 
 function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	--Initialize base info.
-	local falloff_info = tweak_data.weapon.stat_info.damage_falloff
 	local distance = col_ray.distance or mvector3.distance(col_ray.unit:position(), user_unit:position())
 	local current_state = user_unit:movement()._current_state
-	local base_falloff = falloff_info.base
-
+	local damage_falloff = self:weapon_tweak_data().damage_falloff
+	local falloff_start = damage_falloff and damage_falloff.start_dist or 3000
+	local falloff_end = damage_falloff and damage_falloff.end_dist or 6000
+	
+	--[[
+	log("falloff_start : " .. tostring( falloff_start /100 ))
+	log("falloff_end : " .. tostring( falloff_end /100 ))
+	
+	
+	log("falloff_start_mult : " .. tostring( self._damage_near_mul ))
+	log("falloff_end_mult : " .. tostring( self._damage_far_mul ))
+	]]
+	
 	if current_state then
-		--Get bonus from accuracy.
-		local acc_bonus = falloff_info.acc_bonus * (self._current_stats_indices.spread + managers.blackmarket:accuracy_index_addend(self._name_id, self:categories(), self._silencer, current_state, self:fire_mode(), self._blueprint) - 1)
-		
-		--Get bonus from stability.
-		local stab_bonus = falloff_info.stab_bonus * 20
-		if current_state._moving then
-			stab_bonus = falloff_info.stab_bonus * (self._current_stats_indices.recoil + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) - 1)
-		end
-
-		--Apply acc/stab bonuses.
-		base_falloff = base_falloff + stab_bonus + acc_bonus
-
 		--Get ADS multiplier.
 		if current_state:in_steelsight() then
 			for _, category in ipairs(self:categories()) do
-				base_falloff = base_falloff * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
+				falloff_start = falloff_start * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
+				falloff_end = falloff_end * managers.player:upgrade_value(category, "steelsight_range_inc", 1)
 			end
 		end
-
-		if self._rays and self._rays > 1 then
-			base_falloff = base_falloff * falloff_info.shotgun_penalty
-		end
 	end
-
 	--Apply global range multipliers.
-	base_falloff = base_falloff * (1 + 1 - managers.player:get_property("desperado", 1))
-
-	base_falloff = base_falloff * (self:weapon_tweak_data().range_mul or 1)
-	for _, category in ipairs(self:categories()) do
-		if tweak_data[category] and tweak_data[category].range_mul then
-			base_falloff = base_falloff * tweak_data[category].range_mul
-		end
-	end
-
-	--Apply multipliers.
-	local falloff_near = base_falloff * self._damage_near_mul
-	local falloff_far = base_falloff * self._damage_far_mul
-
+	falloff_start = falloff_start * (1 + 1 - managers.player:get_property("desperado", 1))
+	falloff_end = falloff_end * (1 + 1 - managers.player:get_property("desperado", 1))
+	
+	--[[
+	log("falloff_start AFTER MULTS : " .. tostring( (falloff_start * self._damage_near_mul) / 100 ))
+	log("falloff_end AFTER MULTS: " .. tostring( (falloff_end * self._damage_far_mul )/ 100))
+	]]
+	
+	falloff_start = falloff_start * self._damage_near_mul
+	falloff_end = falloff_end * self._damage_far_mul
+	
 	--Cache falloff values for usage in hitmarkers.
 	self.near_falloff_distance = falloff_near
-	self.far_falloff_distance = falloff_far
+	self.far_falloff_distance = falloff_end
 	
 	--Minimum damage multiplier when taking falloff into account
-	local minimum_damage = 0.30
+	local minimum_damage = damage_falloff and damage_falloff.min_mult or 0.3
 	
 	--Have a harsher falloff for Shotguns
 	if self._rays and self._rays > 1 then
 		minimum_damage = 0.05
 	end
-
+	
+	--[[
+	log("DAMAGE: " .. tostring( damage * 10 ))
+	log("DAMAGE MIN: " .. tostring( damage * minimum_damage * 10 ))
+	log("HIT AT: " .. tostring( distance / 100 ) .. " METERS")
+	log("DAMAGE DONE: " .. tostring( (math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end))) * damage, minimum_damage * damage)) * 10 ) .. "\n\n")
+	]]
+	
 	--Compute final damage.
-	return math.max((1 - math.min(1, math.max(0, distance - falloff_near) / (falloff_far))) * damage, minimum_damage * damage)
+	return math.max((1 - math.min(1, math.max(0, distance - falloff_start) / (falloff_end))) * damage, minimum_damage * damage)
+end
+
+function NewRaycastWeaponBase:reload_exit_expire_t()
+	if not self._use_shotgun_reload then
+		return self:weapon_tweak_data().timers.reload_exit_empty or nil
+	end
+	return self:weapon_tweak_data().timers.shotgun_reload_exit_empty or 0.7
+end
+
+function NewRaycastWeaponBase:reload_not_empty_exit_expire_t()
+	if not self._use_shotgun_reload then
+		return self:weapon_tweak_data().timers.reload_exit_not_empty or nil
+	end
+	return self:weapon_tweak_data().timers.shotgun_reload_exit_not_empty or 0.3
+end
+
+function NewRaycastWeaponBase:exit_run_speed_multiplier()
+	local multiplier = 1
+
+	for _, category in ipairs(self:weapon_tweak_data().categories) do
+		multiplier = multiplier * managers.player:upgrade_value(category, "exit_run_speed_multiplier", 1)
+	end
+	multiplier = multiplier * managers.player:upgrade_value("weapon", "exit_run_speed_multiplier", 1)
+	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "exit_run_speed_multiplier", 1)
+
+	--multiplier = multiplier / ( (self:weapon_tweak_data().sprintout_time or 0.300) / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
+	multiplier = multiplier / ( ((self:weapon_tweak_data().ads_speed or 0.200) / self:enter_steelsight_speed_multiplier(true)) * 0.9 / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
+	return multiplier
 end

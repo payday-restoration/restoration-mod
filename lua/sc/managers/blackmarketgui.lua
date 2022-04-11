@@ -2153,7 +2153,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			end
 		end
 
-		local scale = 0.6
+		local scale = 0.55
 		local detection_ring_left_bg = self._detection_panel:bitmap({
 			blend_mode = "add",
 			name = "detection_left_bg",
@@ -2217,8 +2217,8 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			color = tweak_data.screen_colors.text
 		})
 
-		detection_value:set_x(detection_ring_left_bg:x() + detection_ring_left_bg:w() / 2 - medium_font_size / 2 + 2)
-		detection_value:set_y(detection_ring_left_bg:y() + detection_ring_left_bg:h() / 2 - medium_font_size / 2 + 2)
+		detection_value:set_x(detection_ring_left_bg:x() + detection_ring_left_bg:w() / 1.8 - medium_font_size / 2 + 2)
+		detection_value:set_y(detection_ring_left_bg:y() + detection_ring_left_bg:h() / 1.8 - medium_font_size / 2 + 2)
 
 		local detection_text = self._detection_panel:text({
 			blend_mode = "add",
@@ -2605,14 +2605,14 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			}
 			self._stats_texts = {}
 			self._rweapon_stats_panel = self._stats_panel:panel()
-
+			local scale_chart = 0.9
 			for i, stat in ipairs(self._stats_shown) do
 				panel = self._rweapon_stats_panel:panel({
 					name = "weapon_stats",
 					h = 20,
 					x = 0,
 					layer = 1,
-					y = y,
+					y = y * scale_chart,
 					w = self._rweapon_stats_panel:w()
 				})
 
@@ -2624,9 +2624,8 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 				end
 
 				x = 2
-				y = y + 18
+				y = y + 18 
 				self._stats_texts[stat.name] = {}
-
 				for _, column in ipairs(text_columns) do
 					text_panel = panel:panel({
 						layer = 0,
@@ -2636,13 +2635,13 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 					})
 					self._stats_texts[stat.name][column.name] = text_panel:text({
 						layer = 1,
-						font_size = column.font_size or small_font_size,
+						font_size = (column.font_size or small_font_size) * scale_chart,
 						font = column.font or small_font,
 						align = column.align,
 						alpha = column.alpha,
 						blend_mode = column.blend,
 						color = column.color or tweak_data.screen_colors.text,
-						y = panel:h() - (column.font_size or small_font_size)
+						y = panel:h() - (column.font_size or small_font_size) * scale_chart
 					})
 					x = x + column.size + (column.offset or 0)
 

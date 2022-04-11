@@ -2460,7 +2460,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 	self.parts.wpn_fps_ass_m14_body_ebr.stats = {
 		value = 2,
 		recoil = 1,
-		concealment = -2
+		spread = -1,
+		concealment = 1
+	}
+	self.parts.wpn_fps_ass_m14_body_ebr.custom_stats = {
+		ads_speed_mult = 1.2
 	}
 		
 	--Jaeger Body
@@ -2471,9 +2475,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_m14_body_jae.supported = true
+	self.parts.wpn_fps_ass_m14_body_jae.custom_stats = {
+		ads_speed_mult = 1.025
+	}
 	self.parts.wpn_fps_ass_m14_body_jae.stats = {
 		value = 5,
 		spread = 1,
+		recoil = 4,
 		concealment = -3
 	}
 		
@@ -4572,7 +4580,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m95", "resmod_m95", function(self)
 	self.parts.wpn_fps_snp_m95_barrel_suppressed.perks = {"silencer"}
 		
 	self.wpn_fps_snp_m95.override.wpn_fps_snp_model70_iron_sight = { 
-		adds = {"wpn_fps_ass_vhs_o_standard"}
+		adds = {"wpn_fps_gre_arbiter_o_standard"}
 	}
 	self.wpn_fps_snp_m95.override.wpn_fps_upg_m4_g_mgrip = { 
 		stats = {
@@ -4619,18 +4627,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_msr", "resmod_msr", function(self)
 		recoil = -1,
 		concealment = 1
 	}
+	self.parts.wpn_fps_snp_msr_body_msr.override = {}
+	self.parts.wpn_fps_snp_msr_body_msr.override.wpn_fps_snp_model70_iron_sight = {
+		adds = {"wpn_fps_smg_hajk_o_standard"}
+	}
 	
 	--Default Wood Body
 	self.parts.wpn_fps_snp_msr_body_wood.override = {}
 	self.parts.wpn_fps_snp_msr_body_wood.override.wpn_fps_snp_model70_iron_sight = {
-		unit = "units/pd2_dlc_dec5/weapons/wpn_fps_ass_scar_pts/wpn_fps_ass_scar_fg_railext",
-		a_obj = "a_b"
+		adds = {"wpn_fps_gre_arbiter_o_standard"}
 	}
 
 	self.wpn_fps_snp_msr.override = {}
-	self.wpn_fps_snp_msr.override.wpn_fps_snp_model70_iron_sight = { 
-		adds = {"wpn_fps_m4_uupg_o_flipup"}
-	}	
 
 	table.insert(self.wpn_fps_snp_msr.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	table.insert(self.wpn_fps_snp_msr_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")			
@@ -4673,9 +4681,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r93", "resmod_r93", function(self)
 	--Override Table
 	self.wpn_fps_snp_r93.override = {
 		wpn_fps_snp_model70_iron_sight = { 
-			adds = {"wpn_fps_m4_uupg_o_flipup", "wpn_fps_shot_r870_s_nostock_single"},
-		},
-		wpn_fps_shot_r870_s_nostock_single = { a_obj = "a_b" }
+			adds = {"wpn_fps_gre_arbiter_o_standard"},
+		}
 	}
 
 	table.insert(self.wpn_fps_snp_r93.uses_parts, "wpn_fps_snp_model70_iron_sight")
@@ -8778,6 +8785,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_wa2000", "resmod_wa2000", function
 		concealment = -2
 	}
 	
+	self.wpn_fps_snp_wa2000.override = {	
+		wpn_fps_snp_model70_iron_sight = { 
+			adds = {"wpn_fps_gre_arbiter_o_standard"}
+		}
+	}	
+	
 	table.insert(self.wpn_fps_snp_wa2000.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	table.insert(self.wpn_fps_snp_wa2000_npc.uses_parts, "wpn_fps_snp_model70_iron_sight")
 
@@ -9935,7 +9948,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_desertfox", "resmod_desertfox", fu
 	--Override table
 	self.wpn_fps_snp_desertfox.override = {	
 		wpn_fps_snp_model70_iron_sight = { 
-			adds = {"wpn_fps_m4_uupg_o_flipup"}
+			adds = {"wpn_fps_sho_rota_o_standard"}
 		}
 	}	
 	
@@ -10401,6 +10414,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 	self.wpn_fps_snp_tti.override = {	
 		wpn_fps_snp_model70_iron_sight = { 
 			adds = {"wpn_fps_m4_uupg_o_flipup"}
+		},
+		wpn_fps_m4_uupg_o_flipup = {
+			third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_o_flipup_emo",
+			unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_o_flipup_emo"
 		}
 	}		
 	
@@ -12358,9 +12375,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_atw_mod", "resmod_atw_mod", functi
 	}
 	self.parts.wpn_fps_ass_m14_body_ruger.supported = true
 	self.parts.wpn_fps_ass_m14_body_ruger.stats = {
-		concealment = 1,
-		recoil = -1,
+		concealment = 3,
+		recoil = -4,
+		spread = -1,
 		value = 3
+	}
+	self.parts.wpn_fps_ass_m14_body_ruger.custom_stats = {
+		falloff_start_mult = 0.85,
+		falloff_end_mult = 0.85,
+		ads_speed_mult = 0.95
 	}
 
 end)
@@ -12524,6 +12547,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 		recoil = 1,
 		concealment = -2
 	}
+	self.parts.wpn_fps_snp_r700_s_tactical.override = {}
+	self.parts.wpn_fps_snp_r700_s_tactical.override.wpn_fps_snp_model70_iron_sight = {
+		adds = {"wpn_fps_m4_uupg_o_flipup"},
+		stance_mod = {
+			wpn_fps_snp_r700 = { translation = Vector3(0, -8, -3.22) }
+		}
+	}	
 	
 	--Military Stock
 	self.parts.wpn_fps_snp_r700_s_military.pcs = {
@@ -12541,22 +12571,17 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r700", "resmod_r700", function(sel
 	}
 	self.parts.wpn_fps_snp_r700_s_military.override = {}
 	self.parts.wpn_fps_snp_r700_s_military.override.wpn_fps_snp_model70_iron_sight = {
-		adds = {"wpn_fps_m4_uupg_o_flipup", "wpn_fps_shot_r870_s_nostock_single"}
+		adds = {"wpn_fps_bow_ecp_o_iron"}
 	}		
 	
 	--Default Wood Body
 	self.parts.wpn_fps_snp_r700_s_standard.override = {}
 	self.parts.wpn_fps_snp_r700_s_standard.override.wpn_fps_snp_model70_iron_sight = {
-		adds = {"wpn_fps_m4_uupg_o_flipup", "wpn_fps_shot_r870_s_nostock_single"}
+		adds = {"wpn_fps_bow_ecp_o_iron"}
 	}
 	
 	--Override Table
 	self.wpn_fps_snp_r700.override = {}
-	self.wpn_fps_snp_r700.override.wpn_fps_snp_model70_iron_sight = { 
-		adds = {"wpn_fps_m4_uupg_o_flipup"}
-	}	
-	self.wpn_fps_snp_r700.override.wpn_fps_shot_r870_s_nostock_single = { a_obj = "a_b" }
-	
 	self.wpn_fps_snp_r700.adds.wpn_fps_snp_model70_iron_sight = {
 		"wpn_fps_snp_r700_o_rail"
 	}
@@ -17176,6 +17201,9 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 			concealment = 1,
 			recoil = -1
 		}
+		self.parts.wpn_fps_snp_r700_s_redwood.override.wpn_fps_snp_model70_iron_sight = {
+			adds = {"wpn_fps_bow_ecp_o_iron"}
+		}		
 
 		--(R700) Low Profile Iron Sight
 		self.parts.wpn_fps_snp_r700_o_is.supported = true

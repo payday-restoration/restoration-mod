@@ -392,6 +392,9 @@ function PlayerStandard:_start_action_running(t)
 	end
 				
 	self:set_running(true)
+	
+	self._equipped_unit:base():tweak_data_anim_stop("fire")
+	self._equipped_unit:base():tweak_data_anim_stop("fire_steelsight")
 
 	self._end_running_expire_t = nil
 	self._start_running_t = t
@@ -1344,6 +1347,14 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 	end
 end
 
+--Fixes use_shotgun_reload enabled weapons' parts still animating upon starting a reload
+Hooks:PostHook(PlayerStandard, "_start_action_reload_enter", "ResStopFireAnimReloadFix", function(self, t)
+	local weapon = self._equipped_unit:base()
+	if weapon and weapon:can_reload() then
+		weapon:tweak_data_anim_stop("fire")
+		weapon:tweak_data_anim_stop("fire_steelsight")
+	end
+end)
 
 function PlayerStandard:_start_action_reload(t)
 	local weapon = self._equipped_unit:base()
@@ -1352,6 +1363,7 @@ function PlayerStandard:_start_action_reload(t)
 		local is_reload_not_empty = weapon:clip_not_empty()
 	
 		weapon:tweak_data_anim_stop("fire")
+		weapon:tweak_data_anim_stop("fire_steelsight")
 
 		local speed_multiplier = weapon:reload_speed_multiplier()
 		local empty_reload = weapon:clip_empty() and 1 or 0

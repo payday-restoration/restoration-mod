@@ -370,26 +370,6 @@ function CopMovement:do_omnia(self)
 	end
 end
 
-function CopMovement:enable_weapon_asu_laser()
-	self._weapon_laser_on = true
-
-	self._unit:inventory():equipped_unit():base():set_asu_laser_enabled(true)
-	managers.enemy:_destroy_unit_gfx_lod_data(self._unit:key())
-end
-
-function CopMovement:enable_asu_laser()
-	if self._is_server then
-		if not self._active_laser then
-			self._weapon_base:set_asu_laser_enabled(true)
-			self._logic_data.internal_data.weapon_laser_on = true
-			managers.enemy:_destroy_unit_gfx_lod_data(self._unit:key())
-			self._active_laser = true
-		end
-	elseif not self._weapon_laser_on then
-		self:enable_weapon_asu_laser()
-	end
-end
-
 function CopMovement:do_asu(self)
 	local t = TimerManager:main():time()
 	

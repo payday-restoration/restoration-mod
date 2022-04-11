@@ -130,6 +130,7 @@
 		<hook file="sc/tweak_data/blackmarkettweakdata.lua" source_file="lib/tweak_data/blackmarkettweakdata"/>
 		<hook file="sc/units/weapons/saw.lua" source_file="lib/units/weapons/sawweaponbase"/>
 		<hook file="sc/units/weapons/weaponflashlight.lua" source_file="lib/units/weapons/weaponflashlight"/>
+		<hook file="sc/units/weapons/weaponlaser.lua" source_file="lib/units/weapons/weaponlaser"/>
 		<hook file="sc/tweak_data/groupaitweakdata.lua" source_file="lib/tweak_data/groupaitweakdata"/>
 		<hook file="sc/loc/coreloc.lua" source_file="lib/managers/localizationmanager"/>
 		<hook file="sc/units/weapons/frag.lua" source_file="lib/units/weapons/grenades/fraggrenade"/>

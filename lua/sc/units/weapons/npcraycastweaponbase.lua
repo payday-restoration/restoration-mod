@@ -166,8 +166,7 @@ function NPCRaycastWeaponBase:set_asu_laser_enabled(state)
 		self._unit:link(self._obj_fire:name(), self._laser_unit)
 		self._laser_unit:base():set_npc()
 		self._laser_unit:base():set_on()
-		--need something that sets the dot to yellow
-		--self._laser_unit:base():set_color_by_theme("turret_module_rearming")
+		self._laser_unit:base():set_color_by_theme("asu_laser")
 		self._laser_unit:base():set_max_distace(0)
 	elseif alive(self._laser_unit) then
 		self._laser_unit:set_slot(0)

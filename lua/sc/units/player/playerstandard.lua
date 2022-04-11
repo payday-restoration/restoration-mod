@@ -416,7 +416,9 @@ end
 function PlayerStandard:_end_action_running(t)
 	if not self._end_running_expire_t then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier()
-		self._end_running_expire_t = t + 0.4 / speed_multiplier
+		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
+
+		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
 		local stop_running = not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and (not self.RUN_AND_RELOAD or not self:_is_reloading())
 		
@@ -1299,8 +1301,10 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 				local animation_name = is_reload_not_empty and "reload_not_empty_exit" or "reload_exit"
 				local animation = self:get_animation(animation_name)
 				
-				self._state_data.reload_exit_expire_t = t + self._equipped_unit:base():reload_exit_expire_t(is_reload_not_empty) / speed_multiplier
-				
+				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
+
+				log(tostring( animation_name ))
+
 				local result = self._ext_camera:play_redirect(animation, speed_multiplier)
 				
 				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier)
@@ -1339,6 +1343,7 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		end
 	end
 end
+
 
 function PlayerStandard:_start_action_reload(t)
 	local weapon = self._equipped_unit:base()

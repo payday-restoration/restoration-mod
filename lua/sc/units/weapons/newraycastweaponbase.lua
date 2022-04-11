@@ -819,6 +819,8 @@ end
 
 function NewRaycastWeaponBase:exit_run_speed_multiplier()
 	local multiplier = 1
+	local sprintout_anim_time = self:weapon_tweak_data().sprintout_anim_time or 0.4
+	local ads_speed = self:weapon_tweak_data().ads_speed or 0.200
 
 	for _, category in ipairs(self:weapon_tweak_data().categories) do
 		multiplier = multiplier * managers.player:upgrade_value(category, "exit_run_speed_multiplier", 1)
@@ -827,6 +829,6 @@ function NewRaycastWeaponBase:exit_run_speed_multiplier()
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "exit_run_speed_multiplier", 1)
 
 	--multiplier = multiplier / ( (self:weapon_tweak_data().sprintout_time or 0.300) / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
-	multiplier = multiplier / ( ((self:weapon_tweak_data().ads_speed or 0.200) / self:enter_steelsight_speed_multiplier(true)) * 0.9 / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
+	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 0.9 / sprintout_anim_time )
 	return multiplier
 end

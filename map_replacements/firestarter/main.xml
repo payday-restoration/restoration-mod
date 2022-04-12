@@ -1,4 +1,4 @@
-<table name="firestarter_rant">
+<table name="firestarter">
 	<level ai_group_type="America" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_rant" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" intro_event="Play_pln_firestarter_stage1_intro_a" max_bags="70" music="heist" name_id="heist_firestarter_1_hl" player_style="loud_suit">
 		<add file="levels/firestarter_1_rant/add.xml"/>
 		<assets/>

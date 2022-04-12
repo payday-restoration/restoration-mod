@@ -5305,7 +5305,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 		unit = "units/pd2_dlc_gage_assault/weapons/wpn_fps_ass_g3_pts/wpn_fps_ass_g3_m_mag_psg",
 		supported = true,
 		stats = {value = 2, extra_ammo = -10, reload = 3, concealment = 2},
-		custom_stats = { ads_speed_mult = 0.95},
+		custom_stats = { ads_speed_mult = 0.90},
 		animations = {
 			reload_not_empty = "reload_not_empty",
 			reload = "reload"
@@ -9103,6 +9103,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_par", "resmod_par", function(self)
 		value = 3,
 		concealment = 1,
 		recoil = -1
+	}
+
+	--Belt fix
+	self.parts.wpn_fps_lmg_par_m_standard.bullet_objects = {
+		prefix = "g_bullet_", 
+		amount = 5
 	}
 	
 	--M240 Part Additions

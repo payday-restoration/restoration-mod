@@ -3726,7 +3726,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.r870.stats = {
 					damage = 60,
 					spread = 41,
-					recoil = 83,
+					recoil = 51,
 					spread_moving = 6,
 					zoom = 1,
 					concealment = 22,
@@ -4718,7 +4718,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.ching.ads_speed = 0.350
 			self.ching.damage_falloff = {
 				start_dist = 4800,
-				end_dist = 9200
+				end_dist = 9200,
+				min_mult = 0.5
 			}
 			self.ching.stats = {
 				damage = 60,
@@ -4751,7 +4752,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.new_m14.ads_speed = 0.400
 			self.new_m14.damage_falloff = {
 				start_dist = 4200,
-				end_dist = 8200
+				end_dist = 8200,
+				min_mult = 0.5
 			}
 			self.new_m14.stats = {
 				damage = 60,
@@ -4784,7 +4786,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.g3.ads_speed = 0.380
 			self.g3.damage_falloff = {
 				start_dist = 3800,
-				end_dist = 8000
+				end_dist = 8000,
+				min_mult = 0.5
 			}
 			self.g3.stats = {
 				damage = 60,
@@ -4822,7 +4825,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.galil.ads_speed = 0.400
 			self.galil.damage_falloff = {
 				start_dist = 3300,
-				end_dist = 7500
+				end_dist = 7500,
+				min_mult = 0.6666
 			}
 			self.galil.stats = {
 				damage = 45,
@@ -4856,7 +4860,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.fal.ads_speed = 0.400
 			self.fal.damage_falloff = {
 				start_dist = 3300,
-				end_dist = 7500
+				end_dist = 7500,
+				min_mult = 0.6666
 			}
 			self.fal.stats = {
 				damage = 45,
@@ -4920,7 +4925,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband.ads_speed = 0.410
 			self.contraband.damage_falloff = {
 				start_dist = 3000,
-				end_dist = 7100
+				end_dist = 7100,
+				min_mult = 0.6666
 			}	
 			self.contraband.stats = {
 				damage = 45,
@@ -4949,6 +4955,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband_m203.ignore_damage_upgrades = true
 			self.contraband_m203.AMMO_MAX = 6
 			self.contraband_m203.supported = true
+			self.contraband_m203.ads_speed = 0.410
 			self.contraband_m203.stats = {
 				damage = 80,
 				spread = 91,
@@ -4977,7 +4984,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.scar.ads_speed = 0.350
 			self.scar.damage_falloff = {
 				start_dist = 3300,
-				end_dist = 7500
+				end_dist = 7500,
+				min_mult = 0.6666
 			}
 			self.scar.stats = {
 				damage = 45,

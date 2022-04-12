@@ -1140,8 +1140,8 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			local num_market_bundles = #market_bundles
 
 			if managers.menu:is_pc_controller() and num_market_bundles > 0 then
-				info_box_top = info_box_top + h
-				info_box_h = info_box_h - h
+				info_box_top = info_box_top + h + 75
+				info_box_h = info_box_h - h - 75
 				local title_text = self._panel:text({
 					text = managers.localization:to_upper_text("menu_steam_market_inspect_title"),
 					font = small_font,
@@ -2489,7 +2489,7 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			}
 
 			self._stats_panel = self._weapon_info_panel:panel({
-				y = 58,
+				y = 52,
 				x = 10,
 				layer = 1,
 				w = self._weapon_info_panel:w() - 20,
@@ -2605,21 +2605,22 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 			}
 			self._stats_texts = {}
 			self._rweapon_stats_panel = self._stats_panel:panel()
-			local scale_chart = 0.9
+			local scale_chart = 0.85
 			for i, stat in ipairs(self._stats_shown) do
 				panel = self._rweapon_stats_panel:panel({
 					name = "weapon_stats",
-					h = 20,
+					h = 20 * scale_chart,
 					x = 0,
 					layer = 1,
-					y = y * scale_chart,
+					y = y + 1 * scale_chart,
 					w = self._rweapon_stats_panel:w()
 				})
 
 				if math.mod(i, 2) == 0 and not panel:child(tostring(i)) then
 					panel:rect({
 						name = tostring(i),
-						color = Color.black:with_alpha(0.3)
+						color = Color.black:with_alpha(0.3),
+						h = h + 2 * scale_chart
 					})
 				end
 
@@ -3089,11 +3090,11 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 
 		local info_box_panel = self._panel:child("info_box_panel")
 		self._steam_inventory_extra_panel = self._panel:panel({
-			h = top_padding
+			h = top_padding,
 		})
 
 		self._steam_inventory_extra_panel:set_width(info_box_panel:width())
-		self._steam_inventory_extra_panel:set_top(info_box_panel:bottom() + 5)
+		self._steam_inventory_extra_panel:set_top(info_box_panel:bottom() - 70)
 		self._steam_inventory_extra_panel:set_world_right(self._tabs[self._selected]._grid_panel:world_right())
 
 		self._steam_inventory_extra_data = {}
@@ -3214,6 +3215,8 @@ function BlackMarketGui:_setup(is_start_page, component_data)
 
 	self._in_setup = nil
 end
+
+
 
 function BlackMarketGui:show_stats()
 	if not self._stats_panel or not self._rweapon_stats_panel or not self._armor_stats_panel or not self._mweapon_stats_panel then

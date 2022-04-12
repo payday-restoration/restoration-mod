@@ -1946,11 +1946,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
-			["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapons' magazine sizes are increased by ##20%.##\n\nNote: Does not apply to Crossbows, Bows, Grenade Launchers, or Rocket Launchers.\n\nACE: ##$pro##\nYou can now hip-fire with your weapons while sprinting.\n\nYour weapons' magazine sizes are increased by an additional ##30%.##",
+			["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapons' magazine sizes are increased by ##20%.##\n\nNote: Does not apply to Crossbows, Bows, Grenade Launchers, or Rocket Launchers.\n\nACE: ##$pro##\nYour weapons can be hip-fired while sprinting and their sprint-to-fire delay is removed.\n\nYour weapons' magazine sizes are increased by an additional ##30%.##",
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "Heavy Impact",
-			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nLMGs have a ##40%## chance to knock down enemies while using a bipod.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, and Shields.\n\nACE: ##$pro##\nYou take ##50%## less damage while using a bipod.",
+			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs have a ##20%## chance to knock down enemies.\nThe effect is raised to ##40%## when using a bipod.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, and Shields.\n\nACE: ##$pro##\nYou take ##12.5%## less damage while crouched.\nThe effect is raised to ##50%## when using a bipod.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
@@ -1970,7 +1970,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers aim down sights ##50%## faster.\n\nACE: ##$pro##\nShotguns and Flamethrowers reload ##25%## faster.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds for Shotguns and Flamethrowers are ##50%## faster.\n\nACE: ##$pro##\nShotguns and Flamethrowers reload ##25%## faster.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
@@ -1982,7 +1982,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",
-			["menu_close_by_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now hip-fire with shotguns and flamethrowers while sprinting.\n\nACE: ##$pro##\nYour rate of fire is increased by ##35%## while hip-firing with shotguns and flamethrowers.",
+			["menu_close_by_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and flamethrowers can be hip-fired while sprinting and their sprint-to-fire delay is removed.\n\nACE: ##$pro##\nYour rate of fire is increased by ##35%## while hip-firing with shotguns and flamethrowers.",
 
 			--Overkill
 			["menu_overkill_sc"] = "OVERKILL",
@@ -2213,7 +2213,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "Rifleman",
-		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##50%## faster.\n\nACE: ##$pro##\nRifles gain ##30%## more accuracy and range while aiming down sights.",
+		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds are ##50%## faster.\n\nACE: ##$pro##\nRifles gain ##30%## more accuracy and range while aiming down sights.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Aggressive Reload",

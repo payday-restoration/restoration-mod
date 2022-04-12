@@ -16359,7 +16359,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			},
 			--Ditto
 			CS_shields = {
-				0.12,
+				0.14,
 				0,
 				0
 			},

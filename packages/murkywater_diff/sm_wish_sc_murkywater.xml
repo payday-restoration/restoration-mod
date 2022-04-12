@@ -352,6 +352,7 @@
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/omshot_df"/>	
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/omshot_nm"/>	
 	<texture			path="units/pd2_mod_omnia/characters/shared_textures/swat_body_nm"/>
+	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/zomnia_glass_op"/>
 	
 	<!-- titans	 -->
 	<!--Keep those helmets flying ;)-->	

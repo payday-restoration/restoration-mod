@@ -1707,7 +1707,6 @@ end
 
 function PlayerStandard:_play_unequip_animation()
 	local speed_multiplier = self:_get_swap_speed_multiplier()
-	local speed_multiplier = self:_get_swap_speed_multiplier()
 	self._ext_camera:play_redirect(self:get_animation("unequip"), speed_multiplier)
 	self._equipped_unit:base():tweak_data_anim_stop("equip")
 	self._equipped_unit:base():tweak_data_anim_play("unequip", speed_multiplier)

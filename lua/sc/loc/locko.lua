@@ -242,7 +242,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_firestarter_3"] = "오후 12:15, 하베스트 & 트러스티 은행",
 		["restoration_level_data_firestarter_3_rant"] = "오후 12:15, 하베스트 & 트러스티 은행",
 		["restoration_level_data_ukrainian_job"] = "오후 2:50, 프레서스 띵스",
-		["restoration_level_data_ukrainian_job_rant"] = "오후 2:50, 프레서스 띵스",
+		["restoration_level_data_ukrainian_job_res"] = "오후 2:50, 프레서스 띵스",
 		["restoration_level_data_jewelry_store"] = "오후 2:50, 프레서스 띵스",
 		["restoration_level_data_four_stores"] = "오후 1:20, 상점 앞",
 		["restoration_level_data_mallcrasher"] = "오후 12:50, 실드 쇼핑몰",

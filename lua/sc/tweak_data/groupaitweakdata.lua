@@ -6127,7 +6127,8 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 		self.unit_categories.FBI_tank = {
 			unit_types = {
 				america = {
-					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")								
+					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
+					Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")	
 				},
 				russia = {
 					Idstring("units/pd2_dlc_mad/characters/ene_akan_fbi_tank_r870/ene_akan_fbi_tank_r870")								
@@ -6139,13 +6140,16 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 					Idstring("units/pd2_mod_sharks/characters/ene_murky_fbi_tank_r870/ene_murky_fbi_tank_r870")					
 				},
 				federales = {
-					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1")
+					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1"),
+					Idstring("units/pd2_dlc_bex/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")
 				},						
 				nypd = {
-					Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1")							
+					Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"),
+					Idstring("units/pd2_mod_nypd/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")
 				},
 				lapd = {
-					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc")								
+					Idstring("units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc"),
+					Idstring("units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard")
 				}					
 			},
 			access = access_type_all,
@@ -13426,10 +13430,36 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			}
 		}
 	}
-	
-	--FBI Cloakers, same as single but have a chance to spawn in assaults
-	self.enemy_spawn_groups.FBI_spoocs = self.enemy_spawn_groups.single_spooc
-	
+	if difficulty_index <= 6 then
+		self.enemy_spawn_groups.FBI_spoocs = {
+			amount = {1, 1},
+			spawn = {
+				{
+					unit = "spooc",
+					freq = 1,
+					amount_min = 1,
+					amount_max = 1,
+					tactics = self._tactics.spooc,
+					rank = 1
+				}
+			}
+		}
+	else
+		self.enemy_spawn_groups.FBI_spoocs = {
+			amount = {3, 3},
+			spawn = {
+				{
+					unit = "spooc",
+					freq = 1,
+					amount_min = 3,
+					amount_max = 3,
+					tactics = self._tactics.spooc,
+					rank = 1
+				}
+			}
+		}	
+	end
+
 	--Skirmish Spawngroups Below
 	
 	--Wave 1
@@ -16262,16 +16292,15 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.groups = {
-			--Assist FBI SWATs for a short while, pull out by the last diff increase
 			CS_swats = {
 				0.44,
 				0.22,
-				0
+				0.15
 			},		
 			CS_heavys = {
 				0.32,
 				0.13,
-				0
+				0.08
 			},
 			FBI_swats = {
 				0,
@@ -16287,7 +16316,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			CS_shields = {
 				0.14,
 				0.07,
-				0
+				0.04
 			},
 			FBI_shields = {
 				0,
@@ -16327,7 +16356,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.14,
 				0,
 				0
-			},			
+			},
+			--Ditto
+			CS_shields = {
+				0.12,
+				0,
+				0
+			},
 			FBI_heavys = {
 				0.14,
 				0.25,

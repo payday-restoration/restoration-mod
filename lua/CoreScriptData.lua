@@ -299,8 +299,8 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/uk_job_new.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 		elseif level_id == "family_res" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/family.custom_xml", "custom_xml", "environments/pd2_env_jew_street/pd2_env_jew_street", "environment")
-		elseif level_id == "watchdogs_1_res" then 
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+		--elseif level_id == "watchdogs_1_res" then 
+			--BeardLib:ReplaceScriptData(mod_path .. "scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 			--"sky_orientation/rotation":"278.53564453125",
 		elseif level_id == "firestarter_2_rant" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")

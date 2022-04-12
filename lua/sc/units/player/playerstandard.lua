@@ -1658,3 +1658,34 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 	
 	managers.player:send_message(Message.OnCashInspectWeapon)
 end
+
+--Apply swap speed multiplier to more forms of equip/unequip animation.
+function PlayerStandard:_start_action_equip(redirect, extra_time)
+	local tweak_data = self._equipped_unit:base():weapon_tweak_data()
+	local speed_multiplier = self:_get_swap_speed_multiplier()
+	self._equip_weapon_expire_t = (managers.player:player_timer():time() + (tweak_data.timers.equip or 0.7) + (extra_time or 0)) / speed_multiplier
+
+	if redirect == self:get_animation("equip") then
+		self._equipped_unit:base():tweak_data_anim_stop("unequip")
+		self._equipped_unit:base():tweak_data_anim_play("equip")
+	end
+
+	local result = self._ext_camera:play_redirect(redirect or self:get_animation("equip"), speed_multiplier)
+end
+
+function PlayerStandard:_play_equip_animation()
+	local tweak_data = self._equipped_unit:base():weapon_tweak_data()
+	local speed_multiplier = self:_get_swap_speed_multiplier()
+	self._equip_weapon_expire_t = (managers.player:player_timer():time() + (tweak_data.timers.equip or 0.7)) / speed_multiplier
+	local result = self._ext_camera:play_redirect(self:get_animation("equip"), speed_multiplier)
+
+	self._equipped_unit:base():tweak_data_anim_stop("unequip")
+	self._equipped_unit:base():tweak_data_anim_play("equip", speed_multiplier)
+end
+
+function PlayerStandard:_play_unequip_animation()
+	local speed_multiplier = self:_get_swap_speed_multiplier()
+	self._ext_camera:play_redirect(self:get_animation("unequip"), speed_multiplier)
+	self._equipped_unit:base():tweak_data_anim_stop("equip")
+	self._equipped_unit:base():tweak_data_anim_play("unequip", speed_multiplier)
+end

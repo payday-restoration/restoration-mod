@@ -16320,8 +16320,6 @@
 				<entry key="values" type="table">
 					<entry key="base_delay" type="number" value="0"/>
 					<entry key="elements" type="table">
-						<entry index="1" type="number" value="400000"/>
-						<entry index="2" type="number" value="400001"/>
 						<entry index="3" type="number" value="400007"/>
 					</entry>
 					<entry key="enabled" type="boolean" value="true"/>

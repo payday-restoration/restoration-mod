@@ -302,10 +302,10 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 		elseif level_id == "watchdogs_1_res" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/brightnight.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 			--"sky_orientation/rotation":"278.53564453125",
-		elseif level_id == "firestarter_2_res" then 
+		elseif level_id == "firestarter_2_rant" then 
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter2.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			--"sky_orientation/rotation":"278.53564453125",
-		elseif level_id == "firestarter_1_res" then 
+		elseif level_id == "firestarter_1_rant" then 
 			--if rnd == 1 or rnd == 2 then
 			--BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			--if rnd == 3 then
@@ -349,7 +349,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "RESMapsCallBeardLibSequenceFuncs", fu
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/platinum.custom_xml", "custom_xml", "core/environments/default", "environment")
 		end
 		
-		if Global.game_settings.level_id == "firestarter_3_res" then
+		if Global.game_settings.level_id == "firestarter_3_rant" then
 			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 		end			
 	end

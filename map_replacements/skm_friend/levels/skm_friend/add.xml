@@ -170,13 +170,10 @@
 	<texture path="levels/mods/skm_friend/cube_lights/600025"/>
 	<add from_db="true" path="units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870" type="unit">
 		<unit path="units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"/>
-		<animation_state_machine path="anims/units/enemies/cop/cop_machine"/>
 		<animation_states path="anims/units/enemies/cop/std"/>
 		<animation_states path="anims/units/enemies/cop/civilian"/>
 		<object path="units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"/>
 		<material_config path="units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"/>
-		<sequence_manager path="units/payday2/characters/ragdoll"/>
-		<animation_def path="anims/units/enemies/cop/cop_def"/>
 		<animation_subset path="anims/units/enemies/cop/std"/>
 		<animation_subset path="anims/units/enemies/cop/neutral_legs"/>
 		<animation_subset path="anims/units/enemies/cop/neutral_rifle"/>
@@ -203,6 +200,9 @@
 		<object path="units/pd2_dlc_bph/characters/ene_acc_murkywater_medic_helmet/ene_acc_murkywater_medic_helmet"/>
 		<material_config path="units/pd2_dlc_bph/characters/ene_acc_murkywater_medic_helmet/ene_acc_murkywater_medic_helmet"/>
 		<unit load="true" path="units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic_husk"/>
+		<animation_def path="anims/units/enemies/cop/cop_def"/>
+		<animation_state_machine path="anims/units/enemies/cop/cop_machine"/>
+		<sequence_manager path="units/payday2/characters/ragdoll"/>
 	</add>
 	<add from_db="true" path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic" type="unit">
 		<unit path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
@@ -252,6 +252,46 @@
 		<animation_state_machine path="anims/units/enemies/cop/cop_machine"/>
 		<effect load="true" path="effects/particles/bullet_hit/glass_breakable/bullet_hit_glass_breakable"/>
 		<sequence_manager path="units/pd2_dlc_drm/characters/ene_bulldozer_medic/ene_bulldozer_medic"/>
+	</add>
+	<add from_db="true" path="units/payday2/characters/ene_spook_1/ene_spook_1" type="unit">
+		<unit path="units/payday2/characters/ene_spook_1/ene_spook_1"/>
+		<animation_state_machine path="anims/units/enemies/cop/cop_machine"/>
+		<animation_states path="anims/units/enemies/cop/std"/>
+		<animation_states path="anims/units/enemies/cop/civilian"/>
+		<object path="units/payday2/characters/ene_spook_1/ene_spook_1"/>
+		<material_config path="units/payday2/characters/ene_spook_1/ene_spook_1"/>
+		<sequence_manager path="units/payday2/characters/ene_spook_1/ene_spook_1"/>
+		<unit path="units/payday2/characters/ene_spook_1/debris/ene_spook_upper_body_debris"/>
+		<object path="units/payday2/characters/ene_spook_1/debris/ene_spook_upper_body_debris"/>
+		<unit path="units/payday2/characters/ene_spook_1/debris/ene_spook_head_debris"/>
+		<object path="units/payday2/characters/ene_spook_1/debris/ene_spook_head_debris"/>
+		<material_config path="units/payday2/characters/ene_spook_1/debris/ene_spook_head_debris"/>
+		<animation_def path="anims/units/enemies/cop/cop_def"/>
+		<animation_subset path="anims/units/enemies/cop/std"/>
+		<animation_subset path="anims/units/enemies/cop/neutral_legs"/>
+		<animation_subset path="anims/units/enemies/cop/neutral_rifle"/>
+		<animation_subset path="anims/units/enemies/cop/neutral_pistol"/>
+		<animation_subset path="anims/units/enemies/cop/hostile_legs"/>
+		<animation_subset path="anims/units/enemies/cop/hostile_rifle"/>
+		<animation_subset path="anims/units/enemies/cop/hostile_pistol"/>
+		<animation_subset path="anims/units/enemies/cop/combat_legs"/>
+		<animation_subset path="anims/units/enemies/cop/combat_rifle"/>
+		<animation_subset path="anims/units/enemies/cop/combat_pistol"/>
+		<animation_subset path="anims/units/enemies/cop/combat_shield"/>
+		<animation_subset path="anims/units/enemies/cop/civilian"/>
+		<animation_subset path="anims/units/enemies/cop/hostile_akimbo_pistol"/>
+		<animation_subset path="anims/units/enemies/cop/combat_akimbo_pistol"/>
+		<animation_subset path="anims/units/enemies/cop/hostile_bow"/>
+		<animation_subset path="anims/units/enemies/cop/combat_bow"/>
+		<animation_subset path="anims/units/enemies/cop/combat_bullpup"/>
+		<effect load="true" path="effects/particles/character/cloaker_goggle"/>
+		<physic_effect path="core/physic_effects/sequencemanager_push"/>
+		<physic_effect path="core/physic_effects/sequencemanager_push_with_ang"/>
+		<bnk path="soundbanks/regular_vox"/>
+		<unit path="units/payday2/characters/ene_acc_baton/ene_acc_baton"/>
+		<object path="units/payday2/characters/ene_acc_baton/ene_acc_baton"/>
+		<material_config path="units/payday2/characters/ene_acc_baton/ene_acc_baton"/>
+		<unit load="true" path="units/payday2/characters/ene_spook_1/ene_spook_1_husk"/>
 	</add>
 	<material_config path="units/pd2_dlc_chill/props/chl_prop_warehouse_pallet_pile/chl_prop_warehouse_pallet_pile" unload="true"/>
 </table>

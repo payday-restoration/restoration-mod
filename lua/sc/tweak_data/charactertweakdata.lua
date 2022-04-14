@@ -199,6 +199,11 @@ function CharacterTweakData:_init_security(presets)
 	self.security.speech_prefix_p2 = "n"
 	self.security.speech_prefix_count = 4
 	self.security.access = "security"
+	if job == "nmh" or job == "nmh_res" then
+		self.security.has_alarm_pager = false
+	else
+		self.security.has_alarm_pager = true
+	end
 	self.security.use_radio = nil
 	self.security.silent_priority_shout = "f37"
 	self.security.dodge = presets.dodge.poor

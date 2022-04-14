@@ -402,7 +402,7 @@ function CopMovement:do_asu(self)
 						end
 						managers.groupai:state():chk_say_enemy_chatter(self._unit, self._m_pos, asu_vo)		
 														
-			            enemy:base():enable_asu_laser()
+						enemy:base():enable_asu_laser(true)
 						
 						enemy:base():add_buff("base_damage", 10 * 0.01)
 					end

@@ -1349,7 +1349,6 @@ function CharacterTweakData:_init_gangster(presets)
 		self.gangster.speech_prefix_count = 4	
 		self.gangster.no_arrest = false
 		self.gangster.rescue_hostages = true
-		self.gangster.access = "cop"  --for some reason cops are killing their undercovers
 		self.gangster.use_radio = self._default_chatter	
 		self.gangster.no_omnia_heal = false		
 		self.gangster.no_asu = false	

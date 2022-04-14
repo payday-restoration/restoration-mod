@@ -36,7 +36,7 @@ function restoration:Init()
 		"Skyscraper", --The Skyscraper Heist
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"bookmakers_office", --Bookmaker's Office
-		"firestarter_2_rant" --firestarter day 2 res edit version
+		"firestarter_2_rant", --firestarter day 2 res edit version
 		"tRain_returns" --wip rant-man heist
 	}
 	restoration.captain_teamwork = {
@@ -95,8 +95,7 @@ function restoration:Init()
 		"lvl_fourmorestores", --four more stores
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
-		"hntn", --harvest and trustee north
-		--"tRain_returns" --wip rant-man heist
+		"hntn" --harvest and trustee north
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {
 		"help" --Prison Nightmare

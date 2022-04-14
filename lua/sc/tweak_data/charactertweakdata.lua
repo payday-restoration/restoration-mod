@@ -209,7 +209,6 @@ function CharacterTweakData:_init_security(presets)
 	self.security.dodge = presets.dodge.poor
 	self.security.deathguard = false
 	self.security.chatter = presets.enemy_chatter.guard
-	self.security.has_alarm_pager = true
 	if is_murky then
 		self.security.radio_prefix = "fri_"
 	end			

@@ -37,6 +37,7 @@ function restoration:Init()
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"bookmakers_office", --Bookmaker's Office
 		"firestarter_2_rant" --firestarter day 2 res edit version
+		"tRain_returns" --wip rant-man heist
 	}
 	restoration.captain_teamwork = {
 		"pal", --counterfeit
@@ -95,7 +96,7 @@ function restoration:Init()
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
 		"hntn", --harvest and trustee north
-		"tRain_returns" --wip rant-man heist
+		--"tRain_returns" --wip rant-man heist
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {
 		"help" --Prison Nightmare

@@ -89,7 +89,11 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.dark.player_style = "sneak_suit"
 	
 	self.kosugi.ai_group_type = murkywater	
-	self.kosugi.player_style = "sneak_suit"			
+	self.kosugi.player_style = "sneak_suit"	
+
+	self.sand.ai_group_type = murkywater
+	self.sand.package = {"packages/job_sand", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
+	self.sand.player_style = "highinttech"
 	
 	--///NYPD LEVELS\\\--
 	self.spa.ai_group_type = nypd
@@ -199,11 +203,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	self.chas.ai_group_type = lapd
 	self.chas.package = {"packages/job_chas", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	self.chas.player_style = "suit_sunny"
-
-	
-	self.sand.ai_group_type = lapd
-	self.sand.package = {"packages/job_sand", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
-	self.sand.player_style = "highinttech"
 
 	self.chca.ai_group_type = lapd
 	self.chca.package = {"packages/job_chca", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}

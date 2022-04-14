@@ -15,7 +15,7 @@ function TankCopDamage:seq_clbk_vizor_shatter()
 			self._unit:sound():play("clk_turn", nil, nil)
 			self._unit:base():add_buff("base_damage", 10 * 0.01)
 			self._unit:movement():play_redirect("use_syringe")
-			self._unit:base():enable_asu_laser()
+			self._unit:base():enable_asu_laser(true)
 		else
 			self._unit:sound():say("visor_lost")
 		end		

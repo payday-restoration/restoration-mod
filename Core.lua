@@ -94,7 +94,8 @@ function restoration:Init()
 		"lvl_fourmorestores", --four more stores
 		"tj_htsb", --harvest and trustee - southern branch
 		"ukrainian_job_res", --Ukrainian Job res edit version
-		"hntn" --harvest and trustee north
+		"hntn", --harvest and trustee north
+		"tRain_returns" --wip rant-man heist
 	}
 	restoration.what_a_horrible_heist_to_have_a_curse = {
 		"help" --Prison Nightmare
@@ -278,7 +279,8 @@ function restoration:Init()
 		"modders_devmap", --Proving Grounds
 		"thechase",
 		"office_strike",
-		"santa_pain"
+		"santa_pain",
+		"tRain_returns"
 	}	
 	--Christmas Effects Heists
 	restoration.christmas_heists = {

@@ -363,6 +363,8 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
 
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_df" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/zomnia_glass_op" />
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_nm" />	
 	
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" />	

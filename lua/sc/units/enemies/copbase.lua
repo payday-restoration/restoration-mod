@@ -7,7 +7,7 @@ local job = Global.level_data and Global.level_data.level_id
 
 function CopBase:enable_asu_laser(state)
 	local weapon = self._unit:inventory():equipped_unit()
-	if weapon
+	if weapon then
 		weapon:base():set_asu_laser_enabled(state)
 	end
 end

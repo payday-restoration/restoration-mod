@@ -1013,15 +1013,20 @@ function CopDamage:damage_bullet(attack_data)
 				if self._unit:base()._tweak_table == "boom" then
 					self._unit:damage():run_sequence_simple("grenadier_glass_break")
 				else
-					if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
-						self._unit:damage():run_sequence_simple("squelch")
-					end
+				    if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
+				    	self._unit:damage():run_sequence_simple("squelch")
+				    end	
 					self:_spawn_head_gadget({
 						position = attack_data.col_ray.body:position(),
 						rotation = attack_data.col_ray.body:rotation(),
 						dir = attack_data.col_ray.ray
 					})
 				end
+			
+			local my_unit = self._unit	
+	        local sound_ext = my_unit:sound()	
+	        sound_ext:play("expl_gen_head", nil, nil)	
+			
 			elseif Network:is_server() and self._char_tweak.gas_on_death then
 				managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)	
 			elseif Network:is_server() and self._char_tweak.bag_death then
@@ -1226,13 +1231,18 @@ function CopDamage:sync_damage_bullet(attacker_unit, damage_percent, i_body, hit
 			else
 				if self._unit:damage() and self._unit:damage():has_sequence("squelch") then
 					self._unit:damage():run_sequence_simple("squelch")
-				end			
+				end	
 				self:_spawn_head_gadget({
 					position = body:position(),
 					rotation = body:rotation(),
 					dir = attack_dir
 				})
 			end
+			
+			local my_unit = self._unit	
+	        local sound_ext = my_unit:sound()	
+	        sound_ext:play("expl_gen_head", nil, nil)	
+		
 		elseif Network:is_server() and self._char_tweak.gas_on_death then
 			managers.groupai:state():detonate_cs_grenade(self._unit:movement():m_pos() + math.UP * 10, mvector3.copy(self._unit:movement():m_head_pos()), 7.5)
 		elseif Network:is_server() and self._char_tweak.bag_death then

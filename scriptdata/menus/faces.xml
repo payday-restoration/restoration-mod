@@ -98,7 +98,6 @@
 						
 			<sequence editable_state="true" name="'squelch'" once="true" triggable="true">
 				<effect name="'effects/payday2/particles/impacts/blood/brain_splat'" parent="object( 'Head' )" position="v()"/>	
-				<sound action="'play'" event="'expl_gen_head'" object="'Head'"/>
 			</sequence>
 			
 			<sequence editable_state="true" name="'switch_sniper_to_lapd'" once="true" triggable="true">

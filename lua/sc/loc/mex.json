@@ -10,5 +10,13 @@
   "ene_zeal_swat_heavy_sc" : "Gendarmería Grupo de la Muerte Heavy",
   "ene_zeal_swat_heavy_r870" : "Gendarmería Grupo de la Muerte Heavy",
   "ene_zeal_sniper" : "Gendarmería Grupo de la Muerte Sniper",
-  "ene_zeal_swat_shield" : "Gendarmería Grupo de la Muerte Shield"
+  "ene_zeal_swat_shield" : "Gendarmería Grupo de la Muerte Shield",
+  "ene_fbi_titan" : "DRAK ASU",
+  "ene_phalanx_1_assault" : "DRAK Titan Shield",
+  "ene_spook_cloak_1" : "DRAK Titan Cloaker",
+  "ene_titan_rifle" : "DRAK Titan",
+  "ene_titan_shotgun" : "DRAK Titan",
+  "ene_titan_sniper" : "DRAK Titan Sniper",
+  "ene_titan_taser" : "DRAK Titan Taser",
+  "ene_vip_2" : "DRAK Titandozer"
 }

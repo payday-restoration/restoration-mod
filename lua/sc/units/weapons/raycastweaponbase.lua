@@ -33,7 +33,7 @@ function RaycastWeaponBase:setup(...)
 		log("Using fallback")
 		local moving_spread_index = 0
 		local recoil_table = tweak_data.weapon.stats.recoil
-		for i = 0, 25, 1 do
+		for i = 0, 100, 1 do
 			if recoil_table[i] == self._recoil then
 				moving_spread_index = i
 				break

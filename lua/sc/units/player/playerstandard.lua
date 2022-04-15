@@ -392,7 +392,7 @@ function PlayerStandard:_start_action_running(t)
 	end
 				
 	self:set_running(true)
-	
+
 	self._equipped_unit:base():tweak_data_anim_stop("fire")
 	self._equipped_unit:base():tweak_data_anim_stop("fire_steelsight")
 
@@ -880,7 +880,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_slide_locks()
 		
 	local weapon = self._unit:inventory():equipped_unit():base()
-	if weapon:get_name_id() == "m134" then
+	if weapon:get_name_id() == "m11134" then
 		weapon:update_spin()
 	end
 	
@@ -973,7 +973,7 @@ end
 Hooks:PostHook(PlayerStandard, "_start_action_steelsight", "ResMinigunEnterSteelsight", function(self, t, gadget_state)
 	if self._state_data.in_steelsight or self._steelsight_wanted then
 		local weapon = self._unit:inventory():equipped_unit():base()
-		if weapon:get_name_id() == "m134" then
+		if weapon:get_name_id() == "m11134" then
 			weapon:vulcan_enter_steelsight()
 		end
 	end
@@ -983,7 +983,7 @@ end)
 Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsight", function(self, t, gadget_state)
 	if not self._state_data.in_steelsight then
 		local weapon = self._unit:inventory():equipped_unit():base()
-		if weapon:get_name_id() == "m134" then
+		if weapon:get_name_id() == "m11134" then
 			weapon:vulcan_exit_steelsight()
 		end
 	end

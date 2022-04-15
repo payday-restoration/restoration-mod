@@ -311,3 +311,30 @@ function ShotgunBase:run_and_shoot_allowed()
 
 	return allowed or managers.player:has_category_upgrade("shotgun", "hip_run_and_shoot") and self._is_real_shotgun
 end
+
+
+function ShotgunBase:fire_rate_multiplier()
+	local multiplier = self._fire_rate_multiplier or 1
+	local init_mult = self._fire_rate_init_mult
+	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
+
+	if self:in_burst_mode() then
+		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
+	end	
+	
+	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
+		--[
+		if self._fire_rate_init_ramp_up then
+			local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
+			init_mult =  init_ramp_up_add
+		end
+		--]]
+		multiplier = multiplier * init_mult
+	end
+	
+	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
+		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+	end 
+	
+	return multiplier
+end

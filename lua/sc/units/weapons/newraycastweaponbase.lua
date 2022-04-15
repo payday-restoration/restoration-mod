@@ -247,29 +247,28 @@ RaycastWeaponBase._SPIN_DOWN_T = 0.75
 
 function RaycastWeaponBase:start_shooting(...)
 	start_shooting_original(self, ...)
-	
-	if self._name_id == "m134" then
+	if self._name_id == "m11134" then
 		self:_start_spin()
 	end
 end
 
 function RaycastWeaponBase:stop_shooting(...)
 	stop_shooting_original(self, ...)
-
-	if self._name_id == "m134" then
+	self._shots_fired = 0
+	if self._name_id == "m11134" then
 		self:_stop_spin()
 		self._vulcan_firing = nil
 	end
 end
 
 function RaycastWeaponBase:_fire_sound(...)
-	if self._name_id ~= "m134" or self._vulcan_firing then
+	if self._name_id ~= "m11134" or self._vulcan_firing then
 		return _fire_sound_original(self, ...)
 	end
 end
 
 function RaycastWeaponBase:trigger_held(...)
-	if self._name_id == "m134" then
+	if self._name_id == "m11134" then
 		self:update_spin()
 		local fired
 		if self._next_fire_allowed <= self._unit:timer():time() then
@@ -296,7 +295,7 @@ function NewRaycastWeaponBase:recoil_multiplier(...)
 		mult = 0
 	end
 	
-	if self._name_id == "m134" and not self._vulcan_firing then
+	if self._name_id == "m11134" and not self._vulcan_firing then
 		return 0
 	end
 
@@ -407,6 +406,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		
 	self._can_shoot_through_titan_shield = self:weapon_tweak_data().can_shoot_through_titan_shield or false --implementing Heavy AP
 	
+	self._fire_rate_init_count = self:weapon_tweak_data().fire_rate_init_count or nil
+	self._fire_rate_init_mult = self:weapon_tweak_data().fire_rate_init_mult or 1
+	self._fire_rate_init_ramp_up = self:weapon_tweak_data().fire_rate_init_ramp_up or nil
+
 	if not self:is_npc() then
 		local weapon = {
 			factory_id = self._factory_id,
@@ -421,12 +424,18 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		
 		--self._has_burst_fire = (not self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) or (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
-		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE
+		self._burst_size = (self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE) * 2
+		-- YEAH FOR SOME FUCKING REASON fire() GETS CALLED TWICE AND BREAKS/UNDERSHOOTS BURST VALUES THAT AREN'T EXPLICITLY 3, ANY OTHER VALUE HAS TO BE DOUBLED IF YOU WANT THEM TO BEHAVE CORRECTLY
+		-- GEE 3-ROUND BURST GUNS, WHY DO YOU GET TO HAVE TWO VALID VALUES TO ACHIEVE YOUR BURST SIZE?
+		-- YES, I AM ANGRY ABOUT HOW UTTERLY FUCKING STUPID OF A FIX THIS IS, BUT IT WORKS AND I CANNOT BE FUCKED TO FIGURE OUT WHY fire() GETS CALLED TWICE (though I assume it's prolly due to being cloned off RaycastWeaponBase or something, I dunno)
+		-- I ONLY HOPE THERE AREN'T INSTANCES OF fire() CORRECTLY BEING CALLED ONCE
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
 		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1
 		self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		
 		self._burst_rounds_fired = 0
+		self._shots_fired = 0
+		self._fire_rate_init_ramp_up_add = 0
 	else
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
@@ -586,12 +595,22 @@ end
 --[[	fire rate multipler in-game stuff	]]--
 function NewRaycastWeaponBase:fire_rate_multiplier()
 	local multiplier = self._fire_rate_multiplier or 1
-	
+	local init_mult = self._fire_rate_init_mult
 	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
 
 	if self:in_burst_mode() then
 		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
-	end		
+	end	
+	
+	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
+		--[
+		if self._fire_rate_init_ramp_up then
+			local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
+			init_mult =  init_ramp_up_add
+		end
+		--]]
+		multiplier = multiplier * init_mult
+	end
 	
 	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
 		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
@@ -603,8 +622,8 @@ end
 local fire_original = NewRaycastWeaponBase.fire
 function NewRaycastWeaponBase:fire(...)
 	local result = fire_original(self, ...)
-	
-	if result and not self.AKIMBO and self:in_burst_mode() then
+	self._shots_fired = self._shots_fired + 0.5 --increases in half increments due to the double call bug for this function
+	if not self.AKIMBO and self:in_burst_mode() then
 		if self:clip_empty() then
 			self:cancel_burst()
 		else

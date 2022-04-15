@@ -174,6 +174,7 @@ function CopSound:say(sound_name, sync, skip_prefix, important, callback)
 		s01x = "surrender",
 		cn1 = "joker",
 		use_gas = "use_gas",
+		buff = "buff",
 		spawn = "spawn",
 		tasing = "tasing",
 		heal = "heal",

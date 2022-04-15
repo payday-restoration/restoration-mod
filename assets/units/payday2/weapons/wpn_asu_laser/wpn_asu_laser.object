@@ -1,0 +1,9 @@
+<dynamic_object>
+    <diesel orientation_object="rp_third_peqbox" materials="units/payday2/weapons/wpn_asu_laser/wpn_asu_laser" />
+    <graphics>
+		<object name="g_flare" enabled="true" />
+        <object name="g_peqbox" enabled="true" />
+        <object name="g_laser" enabled="false" />
+        <object name="g_indicator" enabled="false" />
+    </graphics>
+</dynamic_object>

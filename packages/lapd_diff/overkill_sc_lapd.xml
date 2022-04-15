@@ -233,7 +233,19 @@
 	<object				path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
 	<material_config	path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc_contour" />			
-	<cooked_physics		path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />	
+	<cooked_physics		path="units/payday2/characters/ene_bulldozer_1_sc/ene_bulldozer_1_sc" />
+
+	<unit				path="units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard" load="true"/>
+    <unit				path="units/payday2/characters/ene_bulldozer_1_hard/ene_bulldozer_1_hard_husk" load="true"/>
+	
+	<!-- blackdozer -->
+    <unit				path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" load="true"/>
+    <unit				path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc_husk" load="true"/>	
+	<model				path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />	
+	<object				path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />
+	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />	
+	<material_config	path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc_contour" />			
+	<cooked_physics		path="units/payday2/characters/ene_bulldozer_2_sc/ene_bulldozer_2_sc" />
 			
     <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc" load="true"/>
     <unit				path="units/payday2/characters/ene_tazer_1_sc/ene_tazer_1_sc_husk" load="true"/>	
@@ -347,7 +359,9 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
 		
-	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>	
+	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_df" force="false"/>	
+	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_nm" force="false"/>		
 	
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	

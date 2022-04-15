@@ -81,9 +81,7 @@ function MedicDamage:heal_unit(unit, override_cooldown)
 		if my_tweak_data == "medic" or my_tweak_data == "tank_medic" then
 			unit:base():add_buff("base_damage", 15 * 0.01)
 
-			if unit:contour() then
-				unit:contour():add("medic_buff", false)
-			end
+			unit:base():enable_asu_laser(true)
 		end
 	end
 

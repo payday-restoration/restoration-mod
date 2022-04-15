@@ -694,20 +694,42 @@ function PlayerStandard:_update_melee_timers(t, input)
 	end
 end
 
-Hooks:PostHook(PlayerStandard, "_interupt_action_melee", "ResPlayerStandardPostInteruptActionMelee", function(self, t)
+function PlayerStandard:_interupt_action_melee(t)
+	if not self:_is_meleeing() then
+		return
+	end
+
+	self._state_data.melee_hit_ray = nil
+	self._state_data.melee_charge_wanted = nil
+	self._state_data.melee_expire_t = nil
+	self._state_data.melee_repeat_expire_t = nil
+	self._state_data.melee_attack_allowed_t = nil
+	self._state_data.melee_damage_delay_t = nil
+	self._state_data.meleeing = nil	
+	self._state_data.chainsaw_t = nil --Stop chainsaw stuff if also no longer in melee.
+	self._melee_repeat_damage_bonus = nil --Same goes for the melee repeat hitter bonus.
+
+	self._unit:sound():play("interupt_melee", nil, false)
+	self:_play_melee_sound(managers.blackmarket:equipped_melee_weapon(), "hit_air", self._melee_attack_var)
+	self._camera_unit:base():unspawn_melee_item()
+	self._camera_unit:base():show_weapon()
+	self:_play_equip_animation() --Use generic equip animation function.
+
+	if self._state_data.melee_charge_shake then
+		self._ext_camera:stop_shaker(self._state_data.melee_charge_shake)
+
+		self._state_data.melee_charge_shake = nil
+	end
+
+	self:_stance_entered()
+
 	--Interrupting melee attacks also interrupt melee sprinting.
 	self:_interupt_action_running(t)
 	local running = self._running and not self._end_running_expire_t
 	if running then
 		self._running_wanted = true
 	end
-	
-	--Stop chainsaw stuff if also no longer in melee.
-	self._state_data.chainsaw_t = nil
-
-	--Same goes for the melee repeat hitter bonus.
-	self._melee_repeat_damage_bonus = nil
-end)	
+end
 
 function PlayerStandard:_start_action_jump(t, action_start_data)
 	--Don't interrupt melee sprinting.
@@ -1720,4 +1742,52 @@ function PlayerStandard:_check_action_cash_inspect(t, input)
 	self._camera_unit:anim_state_machine():set_parameter(state, "alt_inspect", anim_weight)
 	
 	managers.player:send_message(Message.OnCashInspectWeapon)
+end
+
+--Apply swap speed multiplier to more forms of equip/unequip animation.
+function PlayerStandard:_start_action_equip(redirect, extra_time)
+	local tweak_data = self._equipped_unit:base():weapon_tweak_data()
+	local speed_multiplier = 1
+
+	if redirect == self:get_animation("equip") then
+		speed_multiplier = self:_get_swap_speed_multiplier()
+		self._equipped_unit:base():tweak_data_anim_stop("unequip")
+		self._equipped_unit:base():tweak_data_anim_play("equip", speed_multiplier)
+	end
+
+	self._equip_weapon_expire_t = (managers.player:player_timer():time() + (tweak_data.timers.equip or 0.7) / speed_multiplier + (extra_time or 0))
+	self._ext_camera:play_redirect(redirect or self:get_animation("equip"), speed_multiplier)
+end
+
+function PlayerStandard:_play_equip_animation()
+	local tweak_data = self._equipped_unit:base():weapon_tweak_data()
+	local speed_multiplier = self:_get_swap_speed_multiplier()
+	self._equip_weapon_expire_t = managers.player:player_timer():time() + (tweak_data.timers.equip or 0.7) / speed_multiplier
+	local result = self._ext_camera:play_redirect(self:get_animation("equip"), speed_multiplier)
+	self._equipped_unit:base():tweak_data_anim_stop("unequip")
+	self._equipped_unit:base():tweak_data_anim_play("equip", speed_multiplier)
+end
+
+function PlayerStandard:_play_unequip_animation()
+	local speed_multiplier = self:_get_swap_speed_multiplier()
+	self._ext_camera:play_redirect(self:get_animation("unequip"), speed_multiplier)
+	self._equipped_unit:base():tweak_data_anim_stop("equip")
+	self._equipped_unit:base():tweak_data_anim_play("unequip", speed_multiplier)
+end
+
+function PlayerStandard:_interupt_action_throw_projectile(t)
+	if not self:_is_throwing_projectile() then
+		return
+	end
+
+	self._state_data.projectile_idle_wanted = nil
+	self._state_data.projectile_expire_t = nil
+	self._state_data.projectile_throw_allowed_t = nil
+	self._state_data.throwing_projectile = nil
+	self._camera_unit_anim_data.throwing = nil
+
+	self._camera_unit:base():unspawn_grenade()
+	self._camera_unit:base():show_weapon()
+	self:_play_equip_animation()
+	self:_stance_entered()
 end

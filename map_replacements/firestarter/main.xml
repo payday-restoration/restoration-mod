@@ -1,4 +1,4 @@
-<table name="firestarter_rant">
+<table name="firestarter">
 	<level ai_group_type="America" brief_id="heist_firestarter_1_briefing" briefing_dialog="Play_pln_firestarter_stage1_brief" cube="cube_apply_heist_bank" id="firestarter_1_rant" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_01" intro_event="Play_pln_firestarter_stage1_intro_a" max_bags="70" music="heist" name_id="heist_firestarter_1_hl" player_style="loud_suit">
 		<add file="levels/firestarter_1_rant/add.xml"/>
 		<assets/>
@@ -20,7 +20,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="America" brief_id="heist_firestarter_2_briefing" briefing_dialog="Play_pln_firestarter_stage2_brief" cube="cube_apply_heist_bank" id="firestarter_2_rant" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_02" intro_event="Play_pln_firestarter_stage2_intro_a" max_bags="80" music="heist" name_id="heist_firestarter_2_hl" player_style="sneak_suit">
+	<level ai_group_type="America" brief_id="heist_firestarter_2_briefing" ghost_bonus="0.1" briefing_dialog="Play_pln_firestarter_stage2_brief" cube="cube_apply_heist_bank" id="firestarter_2_rant" load_screen="guis/dlcs/pic/textures/loading/job_firestarter_02" intro_event="Play_pln_firestarter_stage2_intro_a" max_bags="80" music="heist" name_id="heist_firestarter_2_hl" player_style="sneak_suit">
 		<add file="levels/firestarter_2_rant/add.xml"/>
 		<assets/>
 		<outro_event>
@@ -43,7 +43,7 @@
 		</packages>
 		<script_data_mods directory="scriptdata"/>
 	</level>
-	<level ai_group_type="America" brief_id="heist_firestarter_3_briefing" briefing_dialog="Play_pln_firestarter_stage3_brief" cube="cube_apply_heist_bank" id="firestarter_3_rant" load_screen="guis/dlcs/pic/textures/loading/job_branchbank" intro_event="Play_pln_firestarter_stage3_intro_a" max_bags="128" music="heist" name_id="heist_firestarter_3_hl" player_style="generic">
+	<level ai_group_type="America" brief_id="heist_firestarter_3_briefing" ghost_bonus="0.1" briefing_dialog="Play_pln_firestarter_stage3_brief" cube="cube_apply_heist_bank" id="firestarter_3_rant" load_screen="guis/dlcs/pic/textures/loading/job_branchbank" intro_event="Play_pln_firestarter_stage3_intro_a" max_bags="128" music="heist" name_id="heist_firestarter_3_hl">
 		<add file="levels/firestarter_3_rant/add.xml"/>
 		<assets/>
 		<mission_data>

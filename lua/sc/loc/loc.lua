@@ -237,11 +237,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["restoration_level_data_alex_2_res"] = "5:55 AM, Projects",
 		["restoration_level_data_alex_3_res"] = "7:20 AM, Washington Justice Bridge",
 		["restoration_level_data_firestarter_1"] = "9:25 AM, Private Airport",
-		["restoration_level_data_firestarter_1_res"] = "9:25 AM, Private Airport",
+		["restoration_level_data_firestarter_1_rant"] = "9:25 AM, Private Airport",
 		["restoration_level_data_firestarter_2"] = "10:05 AM, FBI Branch Office",
-		["restoration_level_data_firestarter_2_res"] = "10:05 AM, FBI Branch Office",
+		["restoration_level_data_firestarter_2_rant"] = "10:05 AM, FBI Branch Office",
 		["restoration_level_data_firestarter_3"] = "12:15 PM, Harvest & Trustee Bank",
-		["restoration_level_data_firestarter_3_res"] = "12:15 PM, Harvest & Trustee Bank",
+		["restoration_level_data_firestarter_3_rant"] = "12:15 PM, Harvest & Trustee Bank",
 		["restoration_level_data_ukrainian_job"] = "2:50 PM, Precious Things",
 		["restoration_level_data_ukrainian_job_res"] = "2:50 PM, Precious Things",
 		["restoration_level_data_jewelry_store"] = "2:50 PM, Precious Things",
@@ -1500,6 +1500,7 @@ end
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 	local lapd = tweak_data.levels.ai_groups.lapd
 	local mex = tweak_data.levels.ai_groups.federales
+	local akan = tweak_data.levels.ai_groups.russia
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1517,6 +1518,10 @@ end
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
 		end)
+	elseif ai_type == akan then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
+		end)	
 	end
  end
 
@@ -1541,7 +1546,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_armor_kit_desc"] = "To use the throwable case, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to refill your throwables. It can only be used three times.\n\nYou can see how many uses are left by looking into the case.\n\nThe Throwable Case is a concealable case, usually used by a soldier or mercenary to carry specialized weaponry when the heat comes.",
 
 		["bm_equipment_ecm_jammer_desc"] = "To use the ECM Jammer, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved and it will be active for 10 seconds.\n\nYou can toggle the ECM Jammer's feedback ability by interacting with it. The feedback will have a chance to incapacitate your enemies within a 25 meter radius. Feedback lasts for 10 seconds and will recharge after 4 minutes.\n\nECM jammers can open ATM machines and temporarily cancel out electronic devices such as cell phones, cameras, and other detection systems easing your way towards your goal.",
-		["bm_equipment_first_aid_kit_desc"] = "To use the first aid kit, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 100 health. First aid kits can only be used once.\n\nThe first aid kit is a collection of supplies and equipment for use in rapidly giving first aid in emergency situations.",
+		["bm_equipment_first_aid_kit_desc"] = "To use the first aid kit, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 150 health. First aid kits can only be used once.\n\nThe first aid kit is a collection of supplies and equipment for use in rapidly giving first aid in emergency situations.",
 		["bm_equipment_doctor_bag_desc"] = "To use the doctor bag, you need to place it by holding $BTN_USE_ITEM. Once placed it cannot be moved, but it can be used by you and your crew by holding $BTN_INTERACT to regain 20% of their maximum health and 4% maximum health every 4 seconds for 3 minutes. Doctor bags can be used twice.\n\nThe doctor dag is a portable bag, usually used by a physician or other medical professional to transport medical supplies and medicine.",
 		["bm_equipment_sentry_gun_desc"] = "To use the sentry gun, you need to place it by holding $BTN_USE_ITEM. Upon deployment it will use 40% of your maximum ammo. Upon taking too much damage, it will shut off. While in this state, interacting with it by holding $BTN_INTERACT will place it into an automatic repair mode. Picking up sentries will refund their remaining ammo and repair them. Sentry guns terrify civilians, forcing them to the ground.\n\nThe Sentry Gun automatically aims and fires at targets that are detected by its sensors. It's commonly used as a distraction, drawing attention away from you and your team.",
 		["bm_equipment_sentry_gun_silent_desc"] = "To use the sentry gun, you need to place it by holding $BTN_USE_ITEM. Upon deployment it will use 40% of your maximum ammo. Upon taking too much damage, it will shut off. While in this state, interacting with it by holding $BTN_INTERACT will place it into an automatic repair mode. Picking up sentries will refund their remaining ammo and repair them. Sentry guns terrify civilians, forcing them to the ground.\n\nThe Suppressed Sentry Gun is the counterpart to the regular, louder Sentry Gun as it's more used to take out enemies than a classic distraction.",

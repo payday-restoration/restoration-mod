@@ -5,19 +5,34 @@ local ids_ik_aim = Idstring("ik_aim")
 Month = os.date("%m")
 local job = Global.level_data and Global.level_data.level_id
 
+function CopBase:enable_asu_laser(state)
+	local weapon = self._unit:inventory():equipped_unit()
+	if weapon then
+		weapon:base():set_asu_laser_enabled(state)
+	end
+end
+
+function CopBase:disable_asu_laser(state)
+	local weapon = self._unit:inventory():equipped_unit()
+	if weapon then
+		weapon:base():set_asu_laser_enabled(false)
+	end
+end
+
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
-    -- log("cursed mod xd")
-    self:random_mat_seq_initialization()
-	
+	self:random_mat_seq_initialization()
+
 	if self._tweak_table == "spooc" then
 		self._unit:damage():run_sequence_simple("turn_on_spook_lights")
-	end
-	if self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" or managers.skirmish:is_skirmish() and self._tweak_table == "autumn" then
+	elseif self._tweak_table == "phalanx_vip" or self._tweak_table == "spring" or self._tweak_table == "summers" or self._tweak_table == "headless_hatman" or managers.skirmish:is_skirmish() and self._tweak_table == "autumn" then
 		GroupAIStateBesiege:set_assault_endless(true)
 		managers.hud:set_buff_enabled("vip", true)
-	end		
-end)
+	end
 
+	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
+		"death"
+	}, callback(self, self, "disable_asu_laser"))
+end)
 
 --Yufu Wang Hitbox fix
 Hooks:PostHook(CopBase, "post_init", "hitbox_fix_post_init", function(self)
@@ -360,6 +375,14 @@ local weapons_map = {
 	
 	[Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_1/ene_nypd_murky_1"):key()] = {"m1911_npc", "c45", "ump", "m4"},
 	[Idstring("units/pd2_mod_nypd/characters/ene_nypd_murky_2/ene_nypd_murky_2"):key()] = {"m1911_npc", "c45", "ump", "m4"},
+	
+	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_01/ene_bex_security_01"):key()] = {"c45", "mp5", "r870"},
+	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_02/ene_bex_security_02"):key()] = {"c45", "mp5", "r870"},
+	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_03/ene_bex_security_03"):key()] = {"c45", "mp5", "r870"},
+	
+	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_suit_01/ene_bex_security_suit_01"):key()] = {"m1911_npc", "mp5", "r870"},
+	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_suit_02/ene_bex_security_suit_02"):key()] = {"m1911_npc", "mp5", "r870"},
+	[Idstring("units/pd2_dlc_bex/characters/ene_bex_security_suit_03/ene_bex_security_suit_03"):key()] = {"m1911_npc", "mp5", "r870"},
 
 	--Giving Friendly AI silenced pistols
 	[Idstring("units/pd2_dlc_spa/characters/npc_spa/npc_spa"):key()] = "beretta92",

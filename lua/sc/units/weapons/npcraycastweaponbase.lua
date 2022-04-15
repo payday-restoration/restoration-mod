@@ -151,3 +151,26 @@ function NPCRaycastWeaponBase:_sound_autofire_end()
 		sound = self._sound_fire:post_event(sound_name)
 	end		
 end	
+
+function NPCRaycastWeaponBase:set_asu_laser_enabled(state)
+	if state then
+		if alive(self._laser_unit) then
+			return
+		end
+
+		local spawn_rot = self._obj_fire:rotation()
+		local spawn_pos = self._obj_fire:position()
+		spawn_pos = spawn_pos - spawn_rot:y() * 8 + spawn_rot:z() * 2 - spawn_rot:x() * 1.5
+		self._laser_unit = World:spawn_unit(Idstring("units/payday2/weapons/wpn_asu_laser/wpn_asu_laser"), spawn_pos, spawn_rot)
+
+		self._unit:link(self._obj_fire:name(), self._laser_unit)
+		self._laser_unit:base():set_npc()
+		self._laser_unit:base():set_on()
+		self._laser_unit:base():set_color_by_theme("asu_laser")
+		self._laser_unit:base():set_max_distace(0)
+	elseif alive(self._laser_unit) then
+		self._laser_unit:set_slot(0)
+
+		self._laser_unit = nil
+	end
+end

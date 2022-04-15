@@ -150,6 +150,8 @@
 	<unit				path="units/pd2_dlc_gitgud/characters/ene_zeal_city_3/ene_zeal_city_3_husk" load="true"/>	
 
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_df" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/zomnia_glass_op" />
 	<texture			path="units/pd2_dlc_gitgud/characters/ene_zeal_swat/ene_zeal_swat_nm" />	
 	
 	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/ene_zeal_city_head_df" />	
@@ -545,6 +547,8 @@
 	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1" force="false"/>
 	<material_config	path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/ene_fbi_titan_1_contour" force="false"/>
 	<texture			path="units/pd2_dlc_vip/characters/shared_textures/ene_titan_fbi_head_df" force="false"/>
+	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_df" force="false"/>	
+	<texture			path="units/pd2_dlc_vip/characters/ene_fbi_titan_1/asu_nm" force="false"/>	
 
 	<texture			path="units/pd2_dlc_drm/characters/ene_bulldozer_minigun/ene_bulldozer_minigun_df" force="true"/>	
 

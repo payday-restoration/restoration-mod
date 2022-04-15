@@ -199,12 +199,16 @@ function CharacterTweakData:_init_security(presets)
 	self.security.speech_prefix_p2 = "n"
 	self.security.speech_prefix_count = 4
 	self.security.access = "security"
+	if job == "nmh" or job == "nmh_res" then
+		self.security.has_alarm_pager = false
+	else
+		self.security.has_alarm_pager = true
+	end
 	self.security.use_radio = nil
 	self.security.silent_priority_shout = "f37"
 	self.security.dodge = presets.dodge.poor
 	self.security.deathguard = false
 	self.security.chatter = presets.enemy_chatter.guard
-	self.security.has_alarm_pager = true
 	if is_murky then
 		self.security.radio_prefix = "fri_"
 	end			
@@ -850,7 +854,20 @@ function CharacterTweakData:_init_swat(presets)
 	self.hrt_titan.HEALTH_INIT = 13
 	self.hrt_titan.headshot_dmg_mul = 1.3
 	self.hrt_titan.surrender = nil
-	self.hrt_titan.custom_voicework = nil
+	if is_reaper or is_federales then
+		self.hrt_titan.custom_voicework = nil
+	else
+		self.hrt_titan.custom_voicework = "asu"
+	end	
+	if is_reaper or is_federales then
+	    self.hrt_titan.speech_prefix_p1 = self._prefix_data_p1.cop()
+	    self.hrt_titan.speech_prefix_p2 = "n"
+	    self.hrt_titan.speech_prefix_count = 4
+	else
+	    self.hrt_titan.speech_prefix_p1 = "gaming"
+	    self.hrt_titan.speech_prefix_p2 = nil
+	    self.hrt_titan.speech_prefix_count = nil
+	end	
 	self.hrt_titan.static_dodge_preset = true
 	self.hrt_titan.heal_cooldown = 3.75
 	self.hrt_titan.overheal_mult = 1

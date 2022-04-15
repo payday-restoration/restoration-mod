@@ -93,7 +93,7 @@
   "ene_omnia_lpf" : "OMNIA LPF",
   "ene_akan_lpf" : "AKAN LPF",    
   "ene_akan_grenadier_1" : "Grenadier",    
-  "ene_fbi_titan" : "Titan HRT",    
+  "ene_fbi_titan" : "OMNIA ASU",    
   "ene_vip" : "Captain Winters",
   "ene_phalanx_1_assault" : "Titan Shield",
   "ene_skele_swat" : "Skeleswat",    
@@ -136,5 +136,6 @@
   "ene_swat_heavy_policia_federale_city" : "Policía Federal Elite Heavy",
   "ene_swat_heavy_policia_federale_zeal" : "Gendarmería Grupo de la Muerte Heavy",
   "ene_headless_hatman" : "Horseless Hatless Headless Titan Dozer from Hell",
-  "ene_city_guard" : "FTSU Field Agent"
+  "ene_city_guard" : "FTSU Field Agent",
+  "ene_hoxton_breakout_guard" : "FBI Ready Team Guard"
 }

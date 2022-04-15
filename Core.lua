@@ -36,7 +36,8 @@ function restoration:Init()
 		"Skyscraper", --The Skyscraper Heist
 		"tj_af22_kitteh_level", --The Greatest Bank Of All time
 		"bookmakers_office", --Bookmaker's Office
-		"firestarter_2_rant" --firestarter day 2 res edit version
+		"firestarter_2_rant", --firestarter day 2 res edit version
+		"tRain_returns" --wip rant-man heist
 	}
 	restoration.captain_teamwork = {
 		"pal", --counterfeit
@@ -278,7 +279,8 @@ function restoration:Init()
 		"modders_devmap", --Proving Grounds
 		"thechase",
 		"office_strike",
-		"santa_pain"
+		"santa_pain",
+		"tRain_returns"
 	}	
 	--Christmas Effects Heists
 	restoration.christmas_heists = {

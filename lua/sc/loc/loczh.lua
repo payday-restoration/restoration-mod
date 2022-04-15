@@ -1470,6 +1470,7 @@ end
 	local murkywetew = tweak_data.levels.ai_groups.murkywater --LevelsTweakData.LevelType.Murkywater
 	local lapd = tweak_data.levels.ai_groups.lapd
 	local mex = tweak_data.levels.ai_groups.federales
+	local akan = tweak_data.levels.ai_groups.russia
 
 	Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat", function(loc)
 		loc:load_localization_file(ModPath .. "lua/sc/loc/hoplibkillfeedcompat.json")
@@ -1487,6 +1488,10 @@ end
 		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_mex", function(loc)
 			loc:load_localization_file(ModPath .. "lua/sc/loc/mex.json")		
 		end)
+	elseif ai_type == akan then
+		Hooks:Add("LocalizationManagerPostInit", "SC_HoplibKillFeedCompat_akan", function(loc)
+			loc:load_localization_file(ModPath .. "lua/sc/loc/akan.json")		
+		end)	
 	end
  end
 
@@ -1511,7 +1516,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["bm_equipment_armor_kit_desc"] = "要使用手雷箱，你必须先按住 $BTN_USE_ITEM 将其放下。 手雷箱一旦被放下就不能被移动，但是你和你的队友可以按住 $BTN_INTERACT 来补充投掷物。 手雷箱只能被使用三次。\n\n你可以通过看手雷箱里还剩多少个盒子来判断剩余使用次数。\n\n每使用一次就能补满你的投掷物。",
 
 		["bm_equipment_ecm_jammer_desc"] = "要使用ECM干扰器，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，它可以生效10秒。\n\n你可以与其互动以启用ECM干扰器的反馈功能，反馈有几率使半径25米内的敌人失去行动能力，反馈持续10秒且可以在4分钟的充能后重新使用。\n\nECM干扰器可以用于打开ATM机且可以暂时使电子设备失效，如干扰手机报警、摄像头与其它探测系统的电子设备，让你更轻松地实现目标。",
-		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以回复100点血量。急救包只能使用一次。\n\n急救包可以在紧急情况下快速进行急救。",
+		["bm_equipment_first_aid_kit_desc"] = "要使用急救包，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以回复150点血量。急救包只能使用一次。\n\n急救包可以在紧急情况下快速进行急救。",
 		["bm_equipment_doctor_bag_desc"] = "要使用医疗箱，你需要按住 $BTN_USE_ITEM 将其部署下来。一旦部署完毕就无法移动，你或你的队友使用可以立即回复血量上限20%的血量，然后在3分钟内每4秒回复血量上限4%的血量。医疗箱在无技能时可以使用两次。\n\n医疗箱是一种便携医疗用品，通常给医务人员用于运输医疗物品。",
 		["bm_equipment_sentry_gun_desc"] = "要使用哨戒机枪，你需要按住 $BTN_USE_ITEM 将其部署下来。部署哨戒机枪将用掉你备弹上限40%的弹药。哨戒机枪在承受过多伤害后会损坏，此时你可以通过按住 $BTN_INTERACT 使其进入自动维修模式。捡起哨戒机枪将会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于恐吓平民，使平民保持趴在地上的状态。\n\n哨戒机枪会自动瞄准和射击它的感应器检测到的目标，别问这是什么感应器。它通常用于分散敌人的注意力，避免敌人集火你和你的队友。",
 		["bm_equipment_sentry_gun_silent_desc"] = "要使用消音哨戒机枪，你需要按住 $BTN_USE_ITEM 将其部署下来。部署哨戒机枪将用掉你备弹上限40%的弹药。哨戒机枪在承受过多伤害后会损坏，此时你可以通过按住 $BTN_INTERACT 使其进入自动维修模式。捡起哨戒机枪将会返还它的剩余弹药并使其恢复到完好的状态。\n哨戒机枪可以用于恐吓平民，使平民保持趴在地上的状态。\n\n这个消音的哨戒机枪与普通的不同，它更多地被用于消灭敌人，而不是分散注意力。",

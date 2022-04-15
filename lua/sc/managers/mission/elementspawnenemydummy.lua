@@ -236,7 +236,10 @@ local america_zeal = {
 		--Security Guards get replaced with FTSU Agents
 		["units/payday2/characters/ene_security_1/ene_security_1"] = "units/payday2/characters/ene_city_guard_1/ene_city_guard_1",
 		["units/payday2/characters/ene_security_2/ene_security_2"] = "units/payday2/characters/ene_city_guard_2/ene_city_guard_2",
-		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3"		
+		["units/payday2/characters/ene_security_3/ene_security_3"] = "units/payday2/characters/ene_city_guard_3/ene_city_guard_3",		
+	    --Secret Service replaced by ready teams
+	    ["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_1/ene_hoxton_breakout_guard_1",					
+		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_mcmansion/characters/ene_hoxton_breakout_guard_2/ene_hoxton_breakout_guard_2"
 	}	
 	---------------------------------------------------DC END---------------------------------------------------
 	

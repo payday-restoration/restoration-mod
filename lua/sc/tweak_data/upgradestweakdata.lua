@@ -433,8 +433,8 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	}
 	
 	--Equipment--
-	--FAKS: Intended to offer on-demand burst healing that cann save people from going down.
-	self.values.first_aid_kit.heal_amount = 10 --Heals 100 health on use.
+	--FAKS: Intended to offer on-demand burst healing that can save people from going down.
+	self.values.first_aid_kit.heal_amount = 15 --Heals 150 health on use.
 
 	--Doctor Bags: Intended to offer consistent sustain over a long period of time.
 	self.doctor_bag_base = 2 --Starting Number

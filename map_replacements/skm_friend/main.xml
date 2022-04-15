@@ -12,7 +12,6 @@
 		<texture force="true" path="guis/achievements/friend_7"/>
 		<texture force="true" path="guis/achievements/friend_9"/>
 	</AddFiles>
-	<AssetUpdates id="36672" provider="modworkshop" version="1.2"/>
 	<Localization default="english.txt" directory="loc">
 		<loc file="english.txt" language="english"/>
 	</Localization>

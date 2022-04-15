@@ -31,5 +31,5 @@ Hooks:PostHook(HuskCopBase, "post_init", "postinithuskbase", function(self)
 		
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
 		"death"
-	}, callback(self, self, "enable_asu_laser"))
+	}, callback(self, self, "disable_asu_laser"))
 end)

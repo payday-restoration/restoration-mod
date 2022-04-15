@@ -12,6 +12,13 @@ function CopBase:enable_asu_laser(state)
 	end
 end
 
+function CopBase:disable_asu_laser(state)
+	local weapon = self._unit:inventory():equipped_unit()
+	if weapon then
+		weapon:base():set_asu_laser_enabled(false)
+	end
+end
+
 Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 	self:random_mat_seq_initialization()
 
@@ -24,7 +31,7 @@ Hooks:PostHook(CopBase, "post_init", "postinithooksex", function(self)
 
 	self._unit:character_damage():add_listener("asu_laser_state" .. tostring(self._unit:key()), {
 		"death"
-	}, callback(self, self, "enable_asu_laser"))
+	}, callback(self, self, "disable_asu_laser"))
 end)
 
 --Yufu Wang Hitbox fix

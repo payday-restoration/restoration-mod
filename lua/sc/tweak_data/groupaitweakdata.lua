@@ -346,7 +346,7 @@ function GroupAITweakData:_init_chatter_data()
 		duration = {2, 4},
 		interval = {15, 15},
 		group_min = 0,
-		queue = "prm"
+		queue = "buff"
 	}	
 	self.enemy_chatter.deathguard = {
 		radius = 700,

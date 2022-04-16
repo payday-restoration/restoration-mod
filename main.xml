@@ -592,6 +592,7 @@
     <Package id="packages/skm_sc_america" file="packages/america_diff/skm_sc_america.xml"/>
     <Package id="packages/skm_sc_nypd" file="packages/nypd_diff/skm_sc_nypd.xml"/>
     <Package id="packages/skm_sc_lapd" file="packages/lapd_diff/skm_sc_lapd.xml"/>
+	<Package id="packages/skm_sc_russia" file="packages/russia_diff/skm_sc_russia.xml"/>
 	<Package id="packages/skm_sc_murkywater" file="packages/murkywater_diff/skm_sc_murkywater.xml"/>
     <Package id="packages/skm_sc_federales" file="packages/federales_diff/skm_sc_federales.xml"/>
 	

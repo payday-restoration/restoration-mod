@@ -18,13 +18,33 @@ tweak_data.ammo.ricochet.autohit = {
 
 --Swap Speed Multipliers
 --TODO: Move to stat_info
-tweak_data.pistol = {swap_bonus = 1.65}
-tweak_data.akimbo = {swap_bonus = 0.80}
-tweak_data.smg = {}
-tweak_data.lmg = {swap_bonus = 0.75}
-tweak_data.minigun = {swap_bonus = 0.75}
-tweak_data.snp = {swap_bonus = 0.95}
-tweak_data.assault_rifle = {swap_bonus = 0.95}
+tweak_data.pistol = {
+	swap_bonus = 1.70,
+	ads_move_speed_mult = 0.95
+}
+tweak_data.akimbo = {
+	swap_bonus = 0.80
+}
+tweak_data.shotgun = {}
+tweak_data.smg = {
+	ads_move_speed_mult = 0.75
+}
+tweak_data.lmg = {
+	swap_bonus = 0.80,
+	ads_move_speed_mult = 0.20
+}
+tweak_data.minigun = {
+	swap_bonus = 0.80,
+	ads_move_speed_mult = 0.20
+}
+tweak_data.snp = {
+	swap_bonus = 0.95,
+	ads_move_speed_mult = 0.40
+}
+tweak_data.assault_rifle = {
+	swap_bonus = 0.95,
+	ads_move_speed_mult = 0.40
+}
 
 --Max concealment for guns.
 tweak_data.concealment_cap = 32

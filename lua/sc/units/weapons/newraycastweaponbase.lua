@@ -851,3 +851,49 @@ function NewRaycastWeaponBase:exit_run_speed_multiplier()
 	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 0.9 / sprintout_anim_time )
 	return multiplier
 end
+
+--Gets ADS movement speeds
+function NewRaycastWeaponBase:movement_penalty()
+	local mult = 1
+	local state = managers.player:player_unit():movement():current_state()
+	
+	local base_speed = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX / tweak_data.player.movement_state.standard.movement.speed.STEELSIGHT_MAX
+	if state._state_data.ducking then
+		base_speed = tweak_data.player.movement_state.standard.movement.speed.CROUCHING_MAX / tweak_data.player.movement_state.standard.movement.speed.STEELSIGHT_MAX
+	end		
+	if state._state_data.in_steelsight and not managers.player:has_category_upgrade("player", "steelsight_normal_movement_speed") then
+		for _, category in ipairs(self:weapon_tweak_data().categories) do
+			if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
+				mult = base_speed * (tweak_data[category] and tweak_data[category].ads_move_speed_mult)
+				break --hopefully this only grabs the main category's speed
+			end
+		end
+		if self:weapon_tweak_data().steelsight_movement_speed then
+			mult = base_speed * self:weapon_tweak_data().steelsight_movement_speed
+		end
+		
+		--bullpup bonus speed
+		if self:weapon_tweak_data().is_bullpup then 
+			mult = mult * 1.2
+		end	
+
+	end
+	--[[
+	if (state._state_data.reload_expire_t or state._state_data.reload_enter_expire_t or state._state_data.reload_exit_expire_t) then
+		mult = mult * self._rms
+	end
+	if state._shooting then
+		if state._state_data.in_steelsight then
+			mult = mult * self._ads_sms
+		else
+			mult = mult * self._sms
+		end
+	end
+	--]]
+	
+	--if magic occurs, prevents modified steelsight speeds exceeding the walking/crouched state's speed
+	if mult > base_speed then
+		mult = base_speed
+	end
+	return (self._movement_penalty or 1) * mult
+end

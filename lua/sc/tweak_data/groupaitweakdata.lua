@@ -16357,7 +16357,13 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.14,
 				0,
 				0
-			},			
+			},		
+			--Ditto
+			CS_shields = {
+				0.14,
+				0,
+				0
+			},
 			FBI_heavys = {
 				0.14,
 				0.25,

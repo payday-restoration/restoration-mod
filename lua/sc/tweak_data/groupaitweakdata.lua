@@ -16292,15 +16292,16 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		}
 	elseif difficulty_index == 4 then
 		self.besiege.assault.groups = {
+			--Assist FBI SWATs for a short while, pull out by the last diff increase
 			CS_swats = {
 				0.44,
 				0.22,
-				0.15
+				0
 			},		
 			CS_heavys = {
 				0.32,
 				0.13,
-				0.08
+				0
 			},
 			FBI_swats = {
 				0,
@@ -16316,7 +16317,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 			CS_shields = {
 				0.14,
 				0.07,
-				0.04
+				0
 			},
 			FBI_shields = {
 				0,
@@ -16356,7 +16357,7 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 				0.14,
 				0,
 				0
-			},
+			},		
 			--Ditto
 			CS_shields = {
 				0.14,

@@ -504,7 +504,8 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 		
 	self.skm_mus.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
 	
-	self.skm_watchdogs_stage2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
+	self.skm_watchdogs_stage2.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_murkywater"}
+	self.skm_watchdogs_stage2.ai_group_type = murkywater
 	
 	self.skm_mallcrasher.package = {"packages/dlcs/skm/job_skm", "packages/skm_sc_america"}
 	

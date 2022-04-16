@@ -887,7 +887,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_m4_m_quad.pcs = {}
 	self.parts.wpn_fps_upg_m4_m_quad.supported = true
 	self.parts.wpn_fps_upg_m4_m_quad.custom_stats = {
-		ads_speed_mult = 1.20
+		ads_speed_mult = 1.30
 	}
 	self.parts.wpn_fps_upg_m4_m_quad.stats = {
 		value = 3,
@@ -1337,7 +1337,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 			concealment = -5
 		},
 		custom_stats = {
-			ads_speed_mult = 1.30
+			ads_speed_mult = 1.40
 		}
 	}
 	self.parts.wpn_fps_upg_m4_m_drum.third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_m_drum"
@@ -2150,8 +2150,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 				concealment = -5,
 				total_ammo_mod = -33,
 				damage = 15,
-				recoil = -10,
-				spread = 15,
+				recoil = -20,
+				spread = 20,
 				suppression = -1,
 				spread_multi = {1, 1},	
 				moving_spread = 0
@@ -3065,8 +3065,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r870", "resmod_r870", function(sel
 				value = 10,
 				total_ammo_mod = -33,
 				damage = 30,
-				recoil = -10,
-				spread = 15,
+				recoil = -20,
+				spread = 20,
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
@@ -3212,8 +3212,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_serbu", "resmod_serbu", function(s
 				value = 10,
 				total_ammo_mod = -33,
 				damage = 30,
-				recoil = -10,
-				spread = 15,
+				recoil = -20,
+				spread = 20,
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
@@ -3705,10 +3705,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 		stats = {
 			value = 10,
 			concealment = -5,
-			total_ammo_mod = -25,
+			total_ammo_mod = -33,
 			damage = 30,	
-			recoil = -10,
-			spread = 15,
+			recoil = -20,
+			spread = 20,
 			spread_multi = {1, 1},	
 			suppression = -1
 		},
@@ -4861,9 +4861,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 15,
+				spread = 20,
 				spread_multi = {1, 1},	
-				recoil = -10,
+				recoil = -20,
 				moving_spread = 0
 			},
 			custom_stats = {
@@ -4983,9 +4983,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 				concealment = 0,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 15,
+				spread = 20,
 				spread_multi = {1, 1},	
-				recoil = -10,
+				recoil = -20,
 				moving_spread = 0
 			},
 			custom_stats = {
@@ -5092,8 +5092,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 			value = 10,
 			total_ammo_mod = -33,
 			damage = 30,
-			recoil = -10,
-			spread = 15,
+			recoil = -20,
+			spread = 20,
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
@@ -5992,8 +5992,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "create_ammunition", "resmod_create_ammun
 		concealment = -5,
 		total_ammo_mod = -25,
 		damage = 30,	
-		recoil = -10,
-		spread = 15,
+		recoil = -20,
+		spread = 20,
 		spread_multi = {1, 1},	
 		suppression = -1,
 		moving_spread = 0
@@ -6646,9 +6646,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 15,
+				spread = 20,
 				spread_multi = {1, 1},	
-				recoil = -10,
+				recoil = -20,
 				moving_spread = 0
 			},
 			custom_stats = {
@@ -8180,12 +8180,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 		40
 	}
 	self.parts.wpn_fps_sho_aa12_mag_drum.supported = true
+	self.parts.wpn_fps_sho_aa12_mag_drum.custom_stats = {
+			ads_speed_mult = 1.20
+		}
 	self.parts.wpn_fps_sho_aa12_mag_drum.stats = {
 		value = 1,
 		extra_ammo = 12,
-		reload = -6,
-		spread = -1,
-		concealment = -3
+		reload = -5,
+		concealment = -4
 	}
 	
 	--Override tables
@@ -8199,9 +8201,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aa12", "resmod_aa12", function(sel
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 15,
+				spread = 20,
 				spread_multi = {1, 1},	
-				recoil = -10,
+				recoil = -20,
 				moving_spread = 0
 			},
 			custom_stats = {
@@ -9388,8 +9390,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m37", "resmod_m37", function(self)
 			value = 10,
 			total_ammo_mod = -33,
 			damage = 30,
-			recoil = -10,
-			spread = 15,
+			recoil = -20,
+			spread = 20,
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
@@ -10084,9 +10086,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rota", "resmod_rota", function(sel
 				concealment = 0,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 15,
+				spread = 20,
 				spread_multi = {1, 1},	
-				recoil = -10,
+				recoil = -20,
 				moving_spread = 0
 			},
 			custom_stats = {
@@ -11047,8 +11049,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,	
-				recoil = -10,
-				spread = 15,
+				recoil = -20,
+				spread = 20,
 				spread_multi = {1, 1},	
 				suppression = -1,
 				moving_spread = 0
@@ -11309,8 +11311,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			concealment = -5,
 			total_ammo_mod = -25,
 			damage = 30,	
-			recoil = -10,
-			spread = 15,
+			recoil = -20,
+			spread = 20,
 			spread_multi = {1, 1},	
 			suppression = -1,
 			moving_spread = 0
@@ -11750,8 +11752,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_coach", "resmod_coach", function(s
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 30,	
-				recoil = -10,
-				spread = 15,
+				recoil = -20,
+				spread = 20,
 				spread_multi = {1, 1},	
 				suppression = -1
 			},
@@ -12844,8 +12846,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m1897", "resmod_m1897", function(s
 			value = 10,
 			total_ammo_mod = -33,
 			damage = 30,
-			recoil = -10,
-			spread = 15,
+			recoil = -20,
+			spread = 20,
 			spread_multi = {1, 1},	
 			moving_spread = 0,
 			suppression = -1,
@@ -13018,7 +13020,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 		ads_speed_mult = 1.1,
 	}
 	self.parts.wpn_fps_sho_m590_b_long.stats = {
-		spread = 1,
+		spread = 2,
+		recoil = 2,
 		extra_ammo = 1,
 		value = 5,
 		concealment = -3
@@ -13033,7 +13036,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 	}
 	self.parts.wpn_fps_sho_m590_body_rail.supported = true
 	self.parts.wpn_fps_sho_m590_body_rail.stats = {
-		recoil = 1,
+		recoil = 4,
 		value = 2,
 		concealment = -2
 	}	
@@ -13048,8 +13051,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m590", "resmod_m590", function(sel
 				value = 10,
 				total_ammo_mod = -33,
 				damage = 30,
-				recoil = -10,
-				spread = 15,
+				recoil = -20,
+				spread = 20,
 				spread_multi = {1, 1},	
 				moving_spread = 0,
 				suppression = -1,
@@ -13785,9 +13788,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 				concealment = -5,
 				total_ammo_mod = -25,
 				damage = 15,
-				spread = 15,
+				spread = 20,
 				spread_multi = {1, 1},	
-				recoil = -10,
+				recoil = -20,
 				moving_spread = 0
 			},
 			custom_stats = {
@@ -13799,7 +13802,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 				can_shoot_through_wall = true,
 				falloff_start_mult = 3.00,
 				falloff_end_mult = 3.00,
-				ads_speed_mult = 1.10
+				ads_speed_mult = 1.10,
+				min_mult_override = 0.4
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -15473,9 +15477,9 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 				concealment = -5,
 				total_ammo_mod = -33,
 				damage = 60,
-				spread = 15,
+				spread = 20,
 				spread_multi = {1, 1},	
-				recoil = -10,
+				recoil = -20,
 				moving_spread = 0
 			}
 		self.parts.wpn_fps_upg_ks23_ammo_slug.custom_stats = {
@@ -16828,9 +16832,9 @@ if self.wpn_fps_shot_ks23 then 	-- Pawcio's KS-23
 					concealment = -5,
 					total_ammo_mod = -25,
 					damage = 15,
-					spread = 15,
+					spread = 20,
 					spread_multi = {1, 1},	
-					recoil = -10,
+					recoil = -20,
 					moving_spread = 0
 				},
 				custom_stats = {
@@ -17716,8 +17720,8 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					value = 10,
 					total_ammo_mod = -33,
 					damage = 30,
-					recoil = -10,
-					spread = 15,
+					spread = 20,
+					spread = 20,
 					spread_multi = {1, 1},	
 					moving_spread = 0,
 					suppression = -1,
@@ -17904,8 +17908,22 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 
 		self.parts.wpn_fps_upg_hx25_buckshot_ammo.supported = true
 		self.parts.wpn_fps_upg_hx25_buckshot_ammo.desc_id = "bm_hx25_buck_sc_desc"
+		self.parts.wpn_fps_upg_hx25_buckshot_ammo.pcs = nil
 
 		self.wpn_fps_gre_hx25.override = {
+			wpn_fps_upg_hx25_buckshot_ammo = {
+				supported = true,
+				stats = {
+					value = 10
+				},
+				custom_stats = {
+					ignore_statistic = true,
+					block_b_storm = true,
+					rays = 7,
+					bullet_class = "InstantExplosiveBulletBase"
+				}
+			},
+			--[[
 			wpn_fps_upg_hx25_buckshot_ammo = {
 				supported = true,
 				stats = {
@@ -17915,9 +17933,11 @@ if self.wpn_fps_smg_czevo then 	--Gambyt's Scorpion EVO
 					suppression = -19
 				},
 					custom_stats = {
-					rays = 12
+					rays = 12,
+					dont_ignore_rays = true
 				}
 			},
+			--]]
 			wpn_fps_gre_hx25_explosive_ammo = {
 				supported = true,
 				stats = {

@@ -1191,9 +1191,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_ads_speed"] = "Aim Time",
 		["bm_menu_reload"] = "Reload Time",
 		["bm_menu_damage"] = "Damage", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Damage Max",
-		["bm_menu_standing_range"] = "Max Range",
+		["bm_menu_standing_range"] = "Falloff Start",
 		["bm_menu_damage_min"] = "Damage Min",
-		["bm_menu_moving_range"] = "Min Range",
+		["bm_menu_moving_range"] = "Falloff End",
 		
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Muzzle",

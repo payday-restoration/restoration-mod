@@ -623,7 +623,7 @@ local fire_original = NewRaycastWeaponBase.fire
 function NewRaycastWeaponBase:fire(...)
 	local result = fire_original(self, ...)
 	self._shots_fired = self._shots_fired + 0.5 --increases in half increments due to the double call bug for this function
-	if not self.AKIMBO and self:in_burst_mode() then
+	if result and not self.AKIMBO and self:in_burst_mode() then
 		if self:clip_empty() then
 			self:cancel_burst()
 		else

@@ -555,20 +555,15 @@ function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	if weapon_tweak.rays and weapon_tweak.rays > 1 then
 		damage_min_mult = 0.05
 	end
+
 
 	for i = 1, #weapon_tweak.categories do
 		local category = weapon_tweak.categories[i]
 		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
-			damage_min_mult = 1
-		end
-	end
-
-	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-	for part_id, stats in pairs(custom_data) do
-		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
 			damage_min_mult = 1
 		end
 	end
@@ -578,10 +573,11 @@ end
 
 function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_stats)
 	local weapon_tweak = tweak_data.weapon[name]
-	local damage_base = base_stats.damage.value
+	local damage_base = base_stats.damage.value 
 	local damage_mods = mods_stats.damage.value
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
-	
+	local ignore_rays = weapon_tweak.ignore_rays or false
+
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
 		damage_min_mult = 0.05
@@ -592,9 +588,16 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
 			damage_min_mult = 1
 		end
+		if stats.dont_ignore_rays and stats.dont_ignore_rays == true then
+			ignore_rays = false
+		end
 	end
-	
+
 	damage_mods = (damage_mods + damage_base) * damage_min_mult 
+
+	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 then
+		damage_min_mult = 0.05
+	end
 	damage_base = damage_base * damage_min_mult 
 	
 	return damage_mods - damage_base
@@ -606,6 +609,7 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 	local damage_mods = mods_stats.damage.value
 	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
 	local multiplier = managers.blackmarket:damage_multiplier(name, weapon_tweak.categories, silencer, detection_risk, nil, blueprint) or 1
+	local ignore_rays = weapon_tweak.ignore_rays or false
 	
 	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
@@ -617,6 +621,9 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
 			damage_min_mult = 1
 		end
+		if stats.dont_ignore_rays then
+			ignore_rays = false
+		end
 	end
 	
 	local damage_skill = (((damage_base + damage_mods) * multiplier) - ( damage_base + damage_mods ) ) * damage_min_mult 
@@ -626,7 +633,6 @@ function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_
 		return false, 0
 	end
 end
-
 
 function WeaponDescription._get_base_ads_speed(weapon, name)
 	local weapon_tweak = tweak_data.weapon[name]

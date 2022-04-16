@@ -52,4 +52,19 @@ function GamePlayCentralManager:request_play_footstep( unit, m_pos )
 			end
 		end
 	end
-end	
+end
+
+function GamePlayCentralManager:set_flashlights_on(flashlights_on)
+	if self._flashlights_on == flashlights_on then
+		return
+	end
+
+	self._flashlights_on = flashlights_on
+	local weapons = World:find_units_quick("all", 13)
+
+	for _, weapon in ipairs(weapons) do
+		if weapon:base().flashlight_state_changed then
+			weapon:base():flashlight_state_changed()
+		end
+	end
+end

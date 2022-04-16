@@ -753,6 +753,7 @@ function HUDAssaultCorner:_start_assault(text_list)
 	local text_panel = assault_panel:child("text_panel")
 	local corner_panel = self._hud_panel:child("corner_panel")
 	self:_set_text_list(text_list)
+	local started_now = not self._assault
 	self._assault = true
 	if self._hud_panel:child("assault_panel"):child("text_panel") then
 		self._hud_panel:child("assault_panel"):child("text_panel"):stop()
@@ -773,7 +774,7 @@ function HUDAssaultCorner:_start_assault(text_list)
 	self._hud_panel:child("wave_panel"):set_visible(true)
 	end
 	
-	if managers.skirmish:is_skirmish() then
+	if managers.skirmish:is_skirmish() and started_now then
 		self:_popup_wave_started()
 	end
 

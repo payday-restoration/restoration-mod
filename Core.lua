@@ -237,6 +237,7 @@ function restoration:Init()
 		"xmn_hox_1",
 		--Custom Heists below--
 		"thechase",
+		"trop", --Tropical Treasure 
 		"nmh_res" --Resmod edit of no mercy.
 	}	
 	--Mostly for stuff like Cursed Killed Room and other crap puny heists
@@ -259,6 +260,7 @@ function restoration:Init()
 		"lit2", --California's Heat but Payday 3 
 		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
 		"santas_hardware_store", --Hardware Store but Xmas
+		"trop", --Tropical Treasure 
 		"hardware_store", --Hardware Store 
 		"constantine_bank_lvl", --Pacific Bank
 		"sh_raiders", --Safehouse Raiders

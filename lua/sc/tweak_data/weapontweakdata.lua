@@ -5884,7 +5884,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 84,
 					spread_moving = 1,
 					zoom = 1,
-					concealment = 22,
+					concealment = 26,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -5981,7 +5981,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 89,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 28,
+					concealment = 26,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -10841,7 +10841,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self:generate_custom_weapon_stats(weap)	
 			end
 			-- roughly normalizes swap speeds before additional modifiers are in play
-			weap.desired_swap_time = 1.9
+			weap.desired_swap_time = 1.75
 			self:get_swap_speed_multiplier(weap)
 			self:calculate_ammo_pickup(weap)
 		end

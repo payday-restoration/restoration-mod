@@ -434,11 +434,12 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		
 		self._burst_rounds_fired = 0
-		self._shots_fired = 0
 		self._fire_rate_init_ramp_up_add = 0
 	else
 		self._can_shoot_through_titan_shield = false --to prevent npc abuse
 	end	
+	
+	self._shots_fired = 0
 
 	--Set range multipliers.
 	self._damage_near_mul = self._damage_near_mul or 1

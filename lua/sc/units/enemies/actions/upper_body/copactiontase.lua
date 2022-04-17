@@ -63,7 +63,7 @@ function CopActionTase:init(action_desc, common_data)
 	self._is_server = Network:is_server()
 	local attention = common_data.attention
 
-	if not attention or not attention.unit and self._is_server then
+	if (not attention or not attention.unit) and self._is_server then
 		return
 	end
 

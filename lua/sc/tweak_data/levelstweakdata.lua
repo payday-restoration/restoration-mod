@@ -227,7 +227,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	self.arena.player_style = "hiphop"
 
-	self.born.package = {"packages/narr_born_1", "packages/miscassets"}	
+	self.born.package = {"packages/narr_born_1", "packages/miscassets", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}	
 	self.born.player_style = "punk"
 	
 	
@@ -280,6 +280,7 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	
 	self.chew.player_style = "loud_suit"
+	self.chew.package = {"packages/lvl_chew", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 	
 	self.pbr2.package = {"packages/narr_jerry2", "packages/miscassets"}
 	self.pbr2.player_style = "loud_suit"

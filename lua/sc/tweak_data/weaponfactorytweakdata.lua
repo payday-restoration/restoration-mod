@@ -400,7 +400,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 		supported = true,
 		stats = {
 			value = 1,
-			recoil = 1,
+			recoil = 4,
 			concealment = -2
 		}
 	}
@@ -418,8 +418,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 		supported = true,
 		stats = {
 			value = 4,
-			spread = 1,
-			concealment = -3
+			recoil = 2,
+			concealment = -1
 		}
 	}
 	
@@ -435,8 +435,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vertical_grips", "resmod_vertical_
 		supported = true,
 		stats = {
 			value = 2,
-			recoil = -1,				
-			concealment = 1
+			spread = 1,				
+			concealment = -1
 		}
 	}
 	
@@ -902,7 +902,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_ak_fg_tapco.supported = true
 	self.parts.wpn_fps_upg_ak_fg_tapco.stats = {
 		value = 5,
-		recoil = 1,
+		recoil = 2,
 		spread = -1
 	}
 	
@@ -1000,7 +1000,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		value = 5,
 		suppression = -4,
 		spread = -1,
-		recoil = 1
+		recoil = 2
 	}
 	
 	--Tactical Compensator
@@ -1008,7 +1008,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_ass_ns_surefire.supported = true
 	self.parts.wpn_fps_upg_ass_ns_surefire.stats = {
 		value = 5,
-		recoil = -1,
+		recoil = -2,
 		spread = 1,
 		concealment = -1
 	}
@@ -1043,7 +1043,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 		value = 2,
 		suppression = 11,
 		alert_size = -1,
-		recoil = -1,
+		recoil = -2,
 		spread = 1,
 		concealment = -1
 	}
@@ -1062,27 +1062,21 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_jobs", "resmod_content_job
 	self.parts.wpn_fps_upg_m4_s_crane.supported = true
 	self.parts.wpn_fps_upg_m4_s_crane.stats = {
 		value = 2,
-		recoil = 1,
+		recoil = 2,
 		spread = -1
 	}
-	self.parts.wpn_fps_upg_m4_s_crane.custom_stats = {
-		damage_near_mul = 1,
-		damage_far_mul = 1
-	}
+	self.parts.wpn_fps_upg_m4_s_crane.custom_stats = {}
 	
 	--War-Torn Stock
 	self.parts.wpn_fps_upg_m4_s_mk46.pcs = {}
 	self.parts.wpn_fps_upg_m4_s_mk46.supported = true
 	self.parts.wpn_fps_upg_m4_s_mk46.stats = {
 		value = 6,
-		recoil = -1,
+		recoil = -2,
 		concealment = -1,
-		spread = 1
+		spread = 2
 	}
-	self.parts.wpn_fps_upg_m4_s_mk46.custom_stats = {
-		damage_near_mul = 1,
-		damage_far_mul = 1
-	}
+	self.parts.wpn_fps_upg_m4_s_mk46.custom_stats = {}
 
 	--Pistol Red Dot Sight
 	self.parts.wpn_fps_upg_o_rmr.pcs = {}
@@ -2166,7 +2160,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_upg_saiga_m_20rnd",
 		unit = "units/payday2/weapons/wpn_fps_shot_saiga_pts/wpn_upg_saiga_m_20rnd",
 		supported = true,
-		stats = {value = 1, extra_ammo = 14, spread = -1, reload = -7, concealment = -3}
+		stats = {
+			value = 1, 
+			extra_ammo = 14, 
+			spread = -1, 
+			reload = -7, 
+			concealment = -4
+		},
+		custom_stats = {
+			ads_speed_mult = 1.1
+		}
 	}
 	self.parts.wpn_upg_saiga_m_20rnd.third_unit = "units/payday2/weapons/wpn_third_shot_saiga_pts/wpn_third_saiga_m_20rnd"
 	
@@ -2772,8 +2775,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 	self.parts.wpn_fps_smg_mp5_s_adjust.supported = true
 	self.parts.wpn_fps_smg_mp5_s_adjust.stats = {
 		value = 3,
-		recoil = -2,
-		concealment = 1
+		recoil = -4,
+		concealment = 2
 	}
 	
 	--(Compact-5) Bare Essentials Stock
@@ -2785,12 +2788,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 	}
 	self.parts.wpn_fps_smg_mp5_s_ring.supported = true
 	self.parts.wpn_fps_smg_mp5_s_ring.custom_stats = {
-		ads_speed_mult = 0.95
+		ads_speed_mult = 0.925
 	}
 	self.parts.wpn_fps_smg_mp5_s_ring.stats = {
 		value = 4,
-		recoil = -4,
-		concealment = 2
+		recoil = -6,
+		concealment = 3
 	}
 
 end)
@@ -4380,7 +4383,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_hk21", "resmod_hk21", function(sel
 	table.insert(self.wpn_fps_lmg_hk21_npc.uses_parts, "wpn_fps_upg_o_uh")		
 
 	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_upg_o_fc1")
-	table.insert(self.wpn_fps_lmg_hk21_npc.uses_parts, "wpn_fps_upg_o_fc1")		
+	table.insert(self.wpn_fps_lmg_hk21_npc.uses_parts, "wpn_fps_upg_o_fc1")
+
+
+	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_ass_g3_s_sniper")
+	table.insert(self.wpn_fps_lmg_hk21.uses_parts, "wpn_fps_ass_g3_s_wood")
 			
 	self.wpn_fps_lmg_hk21_npc.uses_parts = deep_clone(self.wpn_fps_lmg_hk21.uses_parts)		
 		
@@ -5324,7 +5331,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 	self.parts.wpn_fps_ass_g3_fg_retro_plastic.supported = true
 	self.parts.wpn_fps_ass_g3_fg_retro_plastic.stats = {
 		value = 2,
-		recoil = -2,
+		recoil = -4,
 		concealment = 2
 	}
 	self.parts.wpn_fps_ass_g3_fg_retro_plastic.custom_stats = {
@@ -7466,7 +7473,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ak_m_uspalm.supported = true
 	self.parts.wpn_fps_upg_ak_m_uspalm.stats = {
 		value = 1,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 	
@@ -8154,6 +8161,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m32", "resmod_m32", function(self)
 		40
 	}
 	self.parts.wpn_fps_gre_m32_barrel_short.supported = true
+	self.parts.wpn_fps_gre_m32_barrel_short.custom_stats = {
+		ads_speed_mult = 0.975
+	}
 	self.parts.wpn_fps_gre_m32_barrel_short.stats = {
 		value = 3,
 		spread = -1,
@@ -8163,10 +8173,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m32", "resmod_m32", function(self)
 	--No Stock
 	self.parts.wpn_fps_gre_m32_no_stock.pcs = {}
 	self.parts.wpn_fps_gre_m32_no_stock.supported = true
+	self.parts.wpn_fps_gre_m32_no_stock.custom_stats = {
+		ads_speed_mult = 0.925
+	}
 	self.parts.wpn_fps_gre_m32_no_stock.stats = {
 		value = 3,
-		concealment = 1,
-		recoil = -1
+		concealment = 3,
+		recoil = -6
 	}
 	
 	table.insert(self.wpn_fps_gre_m32.uses_parts, "wpn_fps_upg_m4_s_standard")
@@ -10306,8 +10319,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tng", "resmod_tng", function(self)
 	self.parts.wpn_fps_smg_mp5_s_folding.supported = true
 	self.parts.wpn_fps_smg_mp5_s_folding.stats = {
 		value = 2, 
-		concealment = -2, 
-		recoil = 1
+		concealment = 1, 
+		recoil = -2
 	}
 	
 	--Donald's Horizontal Leveller
@@ -10538,6 +10551,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_tti", "resmod_tti", function(self)
 	table.insert(self.wpn_fps_snp_tti.uses_parts, "wpn_fps_upg_m4_s_standard")
 	table.insert(self.wpn_fps_snp_tti_npc.uses_parts, "wpn_fps_upg_m4_s_standard")		
 
+	table.insert(self.wpn_fps_snp_tti.uses_parts, "wpn_fps_smg_olympic_s_short")
+	table.insert(self.wpn_fps_snp_tti_npc.uses_parts, "wpn_fps_smg_olympic_s_short")		
 	
 	self.wpn_fps_snp_tti_npc.uses_parts = deep_clone(self.wpn_fps_snp_tti.uses_parts)	
 
@@ -10615,6 +10630,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_siltstone", "resmod_siltstone", fu
 		concealment = 1
 	}
 	
+	table.insert(self.wpn_fps_snp_siltstone.uses_parts, "wpn_upg_ak_s_psl")
+	table.insert(self.wpn_fps_snp_siltstone_npc.uses_parts, "wpn_upg_ak_s_psl")		
 end)
 
 --AK17
@@ -11095,7 +11112,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_basset", "resmod_basset", function
 		40
 	}
 	self.parts.wpn_fps_sho_basset_m_extended.supported = true
-	self.parts.wpn_fps_sho_basset_m_extended.stats = {value = 1, extra_ammo = 2, reload = -2, concealment = -1}
+	self.parts.wpn_fps_sho_basset_m_extended.custom_stats = {
+		ads_speed_mult = 1.05
+	}
+	self.parts.wpn_fps_sho_basset_m_extended.stats = {
+		value = 1, 
+		extra_ammo = 4, 
+		reload = -2, 
+		concealment = -2
+	}
 
 	self.wpn_fps_sho_basset.override = {
 		wpn_fps_upg_a_slug = {
@@ -13406,7 +13431,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	self.parts.wpn_fps_ass_shak12_body_vks.stats = {
 		value = 2,
 		concealment = -2,
-		recoil = 1
+		recoil = 4
 	}
 	self.parts.wpn_fps_ass_shak12_body_vks.custom_stats = nil
 	self.parts.wpn_fps_ass_shak12_body_vks.perks = nil
@@ -13431,13 +13456,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		40
 	}
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.supported = true
+	self.parts.wpn_fps_ass_shak12_ns_suppressor.custom_stats = {
+		falloff_start_mult = 1.2,
+		falloff_end_mult = 1.2,
+		ads_speed_mult = 1.1
+	}
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.stats = {
 		value = 7,
 		suppression = 12,
 		alert_size = -1,
-		spread = 3,
-		recoil = -3,
-		concealment = -3
+		spread = 2,
+		recoil = 4,
+		concealment = -4
 	}
 	self.parts.wpn_fps_ass_shak12_ns_suppressor.perks = {"silencer"}
 
@@ -13451,7 +13481,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 	self.parts.wpn_fps_ass_shak12_ns_muzzle.supported = true
 	self.parts.wpn_fps_ass_shak12_ns_muzzle.stats = {
 		value = 5,
-		recoil = 3,
+		recoil = 6,
 		spread = -3
 	}	
 

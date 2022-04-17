@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tweaks>
+	<!-- Make medic heals an upper_body animation -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_subset">
+		<search>
+			<xml/>
+			<anim name="heal"/>
+		</search>
+		<target mode="attributes">
+			<attr name="blend_set" value="upper_body_aim"/>
+		</target>
+	</tweak>
+</tweaks>

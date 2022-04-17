@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<tweaks>
+	<!-- Allow reloading while moving -->
+	<!-- has to be done twice -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stand/move"/>
+			<keys/>
+			<key extension_key="base_no_reload"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stand/move"/>
+			<keys/>
+			<key extension_key="base_no_reload"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<!-- has to be done twice -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/crouch/move"/>
+			<keys/>
+			<key extension_key="base_no_reload"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/crouch/move"/>
+			<keys/>
+			<key extension_key="base_no_reload"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<!-- Make medic heals an upper_body animation -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std"/>
+			<to name="heal"/>
+		</search>
+		<target mode="attributes">
+			<attr name="redirect" value="upper_body/heal"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/heal/heal"/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="upper_body/heal"/>
+			<attr name="segment" value="upper_body"/>
+			<attr name="mute" value="upper_body_ext"/>
+		</target>
+	</tweak>
+	<!-- has to be done twice -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/heal"/>
+			<keys/>
+			<key extension_key="pose"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/heal"/>
+			<keys/>
+			<key extension_key="pose"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="upper_body/heal"/>
+			<exit/>
+		</search>
+		<target mode="replace">
+			<exit name="upper_body/empty"/>
+		</target>
+	</tweak>
+	<!-- Concussion state fixes -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/stun/concussion"/>
+		</search>
+		<target mode="attach">
+			<keys timebase="relative">
+				<key at="enter" set_extension="anim_data" extension_key="hurt" extension_value="true"/>
+				<key at="exit" set_extension="anim_data" extension_key="hurt" extension_value="false"/>
+
+				<key at="0.7" set_extension="anim_data" extension_key="hurt_exit" extension_value="true"/>
+				<key at="exit" set_extension="anim_data" extension_key="hurt_exit" extension_value="false"/>
+
+				<key at="trigger" trigger="enable_ragdoll" set_extension="anim_data" extension_key="ragdoll" extension_value="true"/>
+				<key at="exit" set_extension="anim_data" extension_key="ragdoll" extension_value="false"/>
+			</keys>
+		</target>
+	</tweak>
+	<!-- Shield knockback state fixes -->
+	<!-- Just replacing this completely since it's ridiculously bad -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/shield_knock"/>
+		</search>
+		<target mode="replace">
+			<!-- Could be changed to type="once" if not for pseudorandom in CopActionHurt -->
+			<state name="std/hurt/shield_knock" type="mix" segment="base">
+				<param name="var1" value="0"/>
+				<param name="var2" value="0"/>
+				<param name="var3" value="0"/>
+				<param name="var4" value="0"/>
+				<param name="var5" value="0"/>
+
+				<anim name="cbt_crh_surprised_fwd" weight="var1"/>
+				<anim name="cbt_crh_surprised_fwd2" weight="var2"/>
+				<anim name="cbt_crh_surprised_fwd3" weight="var3"/>
+				<anim name="cbt_crh_surprised_fwd4" weight="var4"/>
+				<anim name="cbt_crh_surprised_fwd5" weight="var5"/>
+				<keys timebase="relative">
+					<key at="enter" set_extension="anim_data" extension_key="hurt" extension_value="true"/>
+					<key at="exit" set_extension="anim_data" extension_key="hurt" extension_value="false"/>
+
+					<key at="trigger" trigger="enable_ragdoll" set_extension="anim_data" extension_key="ragdoll" extension_value="true"/>
+					<key at="exit" set_extension="anim_data" extension_key="ragdoll" extension_value="false"/>
+
+					<key at="0.7" set_extension="anim_data" extension_key="hurt_exit" extension_value="true"/>
+					<key at="exit" set_extension="anim_data" extension_key="hurt_exit" extension_value="false"/>
+				</keys>
+				<exit name="std/crouch/still/idle"/>
+			</state>
+		</target>
+	</tweak>
+	<!-- Junk -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std"/>
+			<to name="shield_knock_var0"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std"/>
+			<to name="shield_knock_var1"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std"/>
+			<to name="shield_knock_var2"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std"/>
+			<to name="shield_knock_var3"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std"/>
+			<to name="shield_knock_var4"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/shield_knock/var1"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/shield_knock/var2"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/shield_knock/var3"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/shield_knock/var4"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/shield_knock/var5"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<!-- ECM Feedback state fixes -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/sick/exit"/>
+			<to name="idle"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/sick/exit"/>
+			<keys/>
+			<key extension_key="hurt"/>
+		</search>
+		<target mode="attributes">
+			<attr name="at" value="exit"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/sick/exit"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/stand/still/idle/look"/>
+		</target>
+	</tweak>
+	<!-- Poison state fixes -->
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/poison/enter"/>
+		</search>
+		<target mode="attributes">
+			<attr name="type" value="once"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/poison/enter"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/hurt/poison/loop"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+		</search>
+		<target mode="attach">
+			<state name="std/hurt/poison/loop" type="loop" segment="base">
+				<anim name="cough_loop"/>
+				<keys>
+					<key at="enter" callback="anim_clbk_spawn_effect" class_name="movement" param1="effects/payday2/particles/character/hurt_poison" param2="Head"/>
+					<key at="enter" callback="anim_clbk_play_sound" class_name="sound" param1="law_enf_puke"/>
+				</keys>
+			</state>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/poison/exit"/>
+		</search>
+		<target mode="attributes">
+			<attr name="type" value="once"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/poison/exit"/>
+			<to name="idle"/>
+		</search>
+		<target mode="replace">
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/poison/exit"/>
+			<keys/>
+			<key extension_key="hurt"/>
+		</search>
+		<target mode="attributes">
+			<attr name="at" value="exit"/>
+		</target>
+	</tweak>
+	<tweak version="2" name="anims/units/enemies/cop/std" extension="animation_states">
+		<search>
+			<xml/>
+			<state name="std/hurt/poison/exit"/>
+			<exit/>
+		</search>
+		<target mode="attributes">
+			<attr name="name" value="std/stand/still/idle/look"/>
+		</target>
+	</tweak>
+</tweaks>

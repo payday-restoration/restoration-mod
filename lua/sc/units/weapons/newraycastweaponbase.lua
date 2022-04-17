@@ -856,20 +856,19 @@ end
 function NewRaycastWeaponBase:movement_penalty()
 	local mult = 1
 	local state = managers.player:player_unit():movement():current_state()
-	
-	local base_speed = tweak_data.player.movement_state.standard.movement.speed.STANDARD_MAX / tweak_data.player.movement_state.standard.movement.speed.STEELSIGHT_MAX
-	if state._state_data.ducking then
-		base_speed = tweak_data.player.movement_state.standard.movement.speed.CROUCHING_MAX / tweak_data.player.movement_state.standard.movement.speed.STEELSIGHT_MAX
-	end		
+	local tweak_movement_speed = tweak_data.player.movement_state.standard.movement.speed
+	local base_speed = ((state._state_data.ducking and tweak_movement_speed.CROUCHING_MAX) or tweak_movement_speed.STANDARD_MAX) / tweak_movement_speed.STEELSIGHT_MAX
+
 	if state._state_data.in_steelsight and not managers.player:has_category_upgrade("player", "steelsight_normal_movement_speed") then
-		for _, category in ipairs(self:weapon_tweak_data().categories) do
-			if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
-				mult = base_speed * (tweak_data[category] and tweak_data[category].ads_move_speed_mult)
-				break --hopefully this only grabs the main category's speed
-			end
-		end
 		if self:weapon_tweak_data().steelsight_movement_speed then
 			mult = base_speed * self:weapon_tweak_data().steelsight_movement_speed
+		else
+			for _, category in ipairs(self:weapon_tweak_data().categories) do
+				if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
+					mult = base_speed * tweak_data[category].ads_move_speed_mult
+					break --hopefully this only grabs first category that has this stat
+				end
+			end
 		end
 		
 		--bullpup bonus speed
@@ -890,8 +889,6 @@ function NewRaycastWeaponBase:movement_penalty()
 		end
 	end
 	--]]
-	
-	--if magic occurs, prevents modified steelsight speeds exceeding the walking/crouched state's speed
 	if mult > base_speed then
 		mult = base_speed
 	end

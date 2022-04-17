@@ -5607,37 +5607,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.pm9.stats_modifiers = nil
 				self.pm9.panic_suppression_chance = 0.05
 
-			--Jacket's Piece (M11/9)
-				self.cobray.timers.reload_not_empty = 2
-				self.cobray.timers.reload_empty = 4.25
-				self.cobray.CLIP_AMMO_MAX = 30
-				self.cobray.NR_CLIPS_MAX = 4
-				self.cobray.AMMO_MAX = 60
-				self.cobray.kick = self.stat_info.kick_tables.even_recoil
-				self.cobray.fire_mode_data.fire_rate = 0.06
-				self.cobray.CAN_TOGGLE_FIREMODE = true
-				self.cobray.auto = {}
-				self.cobray.auto.fire_rate = 0.06
-				self.cobray.supported = true
-				self.cobray.stats = {
-					damage = 48,
-					spread = 62,
-					recoil = 99,
-					spread_moving = 1,
-					zoom = 1,
-					concealment = 22,
-					suppression = 7,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.cobray.stats_modifiers = nil
-				self.cobray.panic_suppression_chance = 0.05
-				self.cobray.reload_speed_multiplier = 1.15
-
-
 			--AK GEN 21 Tactical
 				self.vityaz.tactical_reload = 1	
 				self.vityaz.use_data.selection_index = 2
@@ -5738,7 +5707,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp7.stats = {
 					damage = 18,
 					spread = 72,
-					recoil = 88,
+					recoil = 86,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -5770,8 +5739,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.p90.stats = {
 					damage = 18,
-					spread = 76,
-					recoil = 92,
+					spread = 75,
+					recoil = 90,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 26,
@@ -5797,8 +5766,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tec9.kick = self.stat_info.kick_tables.left_recoil
 				self.tec9.supported = true
 				self.tec9.stats = {
-					damage = 24,
-					spread = 71,
+					damage = 20,
+					spread = 51,
 					recoil = 85,
 					spread_moving = 10,
 					zoom = 1,
@@ -5828,7 +5797,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.baka.supported = true
 				self.baka.stats = {
 					damage = 20,
-					spread = 71,
+					spread = 53,
 					recoil = 86,
 					spread_moving = 8,
 					zoom = 1,
@@ -5855,7 +5824,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scorpion.supported = true
 				self.scorpion.stats = {
 					damage = 20,
-					spread = 71,
+					spread = 57,
 					recoil = 91,
 					spread_moving = 7,
 					zoom = 1,
@@ -5871,6 +5840,37 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.scorpion.timers.reload_not_empty = 1.95		
 				self.scorpion.panic_suppression_chance = 0.05
 
+			--Jacket's Piece (M11/9)
+				self.cobray.timers.reload_not_empty = 2
+				self.cobray.timers.reload_empty = 4.25
+				self.cobray.CLIP_AMMO_MAX = 30
+				self.cobray.NR_CLIPS_MAX = 4
+				self.cobray.AMMO_MAX = 90
+				self.cobray.kick = self.stat_info.kick_tables.even_recoil
+				self.cobray.fire_mode_data.fire_rate = 0.06
+				self.cobray.CAN_TOGGLE_FIREMODE = true
+				self.cobray.auto = {}
+				self.cobray.auto.fire_rate = 0.06
+				self.cobray.supported = true
+				self.cobray.stats = {
+					damage = 20,
+					spread = 56,
+					recoil = 83,
+					spread_moving = 1,
+					zoom = 1,
+					concealment = 22,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.cobray.stats_modifiers = nil
+				self.cobray.panic_suppression_chance = 0.05
+				self.cobray.reload_speed_multiplier = 1.15
+
+
 			--Heather (SR2M)
 				self.sr2.auto.fire_rate = 0.06666666666
 				self.sr2.fire_mode_data.fire_rate = 0.06666666666
@@ -5881,8 +5881,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sr2.supported = true
 				self.sr2.stats = {
 					damage = 20,
-					spread = 86,
-					recoil = 89,
+					spread = 62,
+					recoil = 87,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 29,
@@ -5902,13 +5902,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mp9.CLIP_AMMO_MAX = 20
 				self.mp9.auto.fire_rate = 0.06666666666
 				self.mp9.fire_mode_data.fire_rate = 0.06666666666
-				self.mp9.AMMO_MAX = 100
+				self.mp9.AMMO_MAX = 90
 				self.mp9.kick = self.stat_info.kick_tables.even_recoil
 				self.mp9.supported = true
 				self.mp9.stats = {
-					damage = 18,
-					spread = 81,
-					recoil = 92,
+					damage = 20,
+					spread = 60,
+					recoil = 91,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 30,
@@ -5933,8 +5933,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_mp5.supported = true
 				self.new_mp5.stats = {
 					damage = 20,
-					spread = 81,
-					recoil = 92,
+					spread = 66,
+					recoil = 89,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 28,
@@ -5951,13 +5951,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Swedish K (M/45)
 				self.m45.CLIP_AMMO_MAX = 36
-				self.m45.AMMO_MAX = 75
+				self.m45.AMMO_MAX = 90
 				self.m45.kick = self.stat_info.kick_tables.even_recoil
 				self.m45.supported = true
 				self.m45.stats = {
-					damage = 24,
-					spread = 62,
-					recoil = 91,
+					damage = 20,
+					spread = 61,
+					recoil = 89,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 25,
@@ -5975,7 +5975,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Patchett
 				self.sterling.CLIP_AMMO_MAX = 20
-				self.sterling.AMMO_MAX = 75
+				self.sterling.AMMO_MAX = 90
 				self.sterling.fire_mode_data.fire_rate = 0.10909090909
 				self.sterling.CAN_TOGGLE_FIREMODE = true
 				self.sterling.auto = {}
@@ -5983,9 +5983,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.kick = self.stat_info.kick_tables.right_recoil
 				self.sterling.supported = true
 				self.sterling.stats = {
-					damage = 24,
-					spread = 71,
-					recoil = 93,
+					damage = 20,
+					spread = 62,
+					recoil = 91,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 26,

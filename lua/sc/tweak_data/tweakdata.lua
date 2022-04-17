@@ -31,19 +31,19 @@ tweak_data.smg = {
 }
 tweak_data.lmg = {
 	swap_bonus = 0.80,
-	ads_move_speed_mult = 0.20
+	ads_move_speed_mult = 0.3
 }
 tweak_data.minigun = {
 	swap_bonus = 0.80,
-	ads_move_speed_mult = 0.20
+	ads_move_speed_mult = 0.3
 }
 tweak_data.snp = {
 	swap_bonus = 0.95,
-	ads_move_speed_mult = 0.40
+	ads_move_speed_mult = 0.45
 }
 tweak_data.assault_rifle = {
 	swap_bonus = 0.95,
-	ads_move_speed_mult = 0.40
+	ads_move_speed_mult = 0.45
 }
 
 --Max concealment for guns.

@@ -2011,6 +2011,31 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 		concealment = 2
 	}
 
+
+	--(AK) No Stock
+	self.parts.wpn_upg_ak_s_nostock = {
+		pcs = {},
+		type = "stock",
+		name_id = "bm_wp_m32_no_stock",
+		a_obj = "a_s",
+		alt_icon = "guis/dlcs/fawp/textures/pd2/blackmarket/icons/mods/wpn_fps_smg_vityaz_s_short",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		dlc = "sc",
+		supported = true,
+		adds = {
+			"wpn_upg_ak_g_standard"
+		},
+		stats = {
+			value = 1,
+			recoil = -8,
+			concealment = 4
+		},
+		custom_stats = {
+			ads_speed_mult = 0.8
+		}
+	}
+	self.parts.wpn_upg_ak_s_nostock.third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy"
+
 end)
 
 --AK
@@ -2051,6 +2076,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm", "resmod_akm", function(self)
 	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_fps_lmg_rpk_s_standard")
 	table.insert(self.wpn_fps_ass_akm_npc.uses_parts, "wpn_fps_lmg_rpk_s_standard")	
 	
+	--No Stock
+	table.insert(self.wpn_fps_ass_akm.uses_parts, "wpn_upg_ak_s_nostock")
+	table.insert(self.wpn_fps_ass_akm_npc.uses_parts, "wpn_upg_ak_s_nostock")
+
 	self.wpn_fps_ass_akm_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm.uses_parts)
 	
 end)
@@ -2073,7 +2102,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akm_gold", "resmod_akm_gold", func
 
 	--Plastic Stock
 	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_fps_lmg_rpk_s_standard")
-	table.insert(self.wpn_fps_ass_akm_gold_npc.uses_parts, "wpn_fps_lmg_rpk_s_standard")		
+	table.insert(self.wpn_fps_ass_akm_gold_npc.uses_parts, "wpn_fps_lmg_rpk_s_standard")	
+
+	--No Stock
+	table.insert(self.wpn_fps_ass_akm_gold.uses_parts, "wpn_upg_ak_s_nostock")
+	table.insert(self.wpn_fps_ass_akm_gold_npc.uses_parts, "wpn_upg_ak_s_nostock")	
 	
 	self.wpn_fps_ass_akm_gold_npc.uses_parts = deep_clone(self.wpn_fps_ass_akm_gold.uses_parts)
 
@@ -2095,6 +2128,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 		spread = 1, 
 		concealment = -3
 	}
+
+
+	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_upg_ak_s_nostock")
+	table.insert(self.wpn_fps_smg_akmsu_npc.uses_parts, "wpn_upg_ak_s_nostock")	
 
 end)
 
@@ -2225,6 +2262,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 	--Drum Mag
 	table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_saiga_m_20rnd")
 	table.insert(self.wpn_fps_shot_saiga_npc.uses_parts, "wpn_upg_saiga_m_20rnd")	
+
+	
+	table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_ak_s_nostock")
+	table.insert(self.wpn_fps_shot_saiga_npc.uses_parts, "wpn_upg_ak_s_nostock")	
 
 	self.wpn_fps_shot_saiga_npc.uses_parts = deep_clone(self.wpn_fps_shot_saiga.uses_parts)
 
@@ -5224,9 +5265,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 		concealment = 4,
 	}
 	self.parts.wpn_fps_ass_g3_b_short.custom_stats = {
-		falloff_start_mult = 0.9,
-		falloff_end_mult = 0.9,
-		ads_speed_mult = 0.95
+		falloff_start_mult = 0.8,
+		falloff_end_mult = 0.8,
+		ads_speed_mult = 0.9
 	}
 	
 	--Precision Foregrip
@@ -5260,12 +5301,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g3", "resmod_g3", function(self)
 		value = 2,
 		spread = -2,
 		recoil = 2,
-		concealment = 1
+		concealment = 2
 	}
 	self.parts.wpn_fps_ass_g3_fg_retro.custom_stats = {
 		falloff_start_mult = 0.9,
-		falloff_end_mult = 0.9,
-		ads_speed_mult = 1.05
+		falloff_end_mult = 0.9
 	}
 	
 	--Plastic Foregrip

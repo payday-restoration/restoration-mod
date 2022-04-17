@@ -281,8 +281,7 @@ function restoration:Init()
 		"modders_devmap", --Proving Grounds
 		"thechase",
 		"office_strike",
-		"santa_pain",
-		"tRain_returns"
+		"santa_pain"
 	}	
 	--Christmas Effects Heists
 	restoration.christmas_heists = {

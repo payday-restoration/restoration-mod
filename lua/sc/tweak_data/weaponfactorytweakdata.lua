@@ -3816,9 +3816,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_m_extended.supported = true
 	self.parts.wpn_fps_smg_m45_m_extended.stats = {
 		value = 4,
-		concealment = -1,
-		reload = -1,
-		extra_ammo = 6
+		concealment = -3,
+		reload = -3,
+		extra_ammo = 14
 	}
 	
 	--Swedish Barrel
@@ -3831,7 +3831,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_b_green.supported = true
 	self.parts.wpn_fps_smg_m45_b_green.stats = {
 		value = 5,
-		spread = 1,
+		spread = 2,
+		recoil = 2,
 		concealment = -3
 	}
 	
@@ -3859,7 +3860,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_body_green.supported = true
 	self.parts.wpn_fps_smg_m45_body_green.stats = {
 		value = 2,
-		recoil = 1,
+		spread = 1,
+		recoil = 2,
 		concealment = -2
 	}
 
@@ -3873,7 +3875,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_s_folded.supported = true
 	self.parts.wpn_fps_smg_m45_s_folded.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 	
@@ -3887,7 +3889,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_g_ergo.supported = true
 	self.parts.wpn_fps_smg_m45_g_ergo.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 	
@@ -3901,7 +3903,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_g_bling.supported = true
 	self.parts.wpn_fps_smg_m45_g_bling.stats = {
 		value = 10,
-		recoil = 1,
+		recoil = 4,
 		concealment = -2
 	}
 

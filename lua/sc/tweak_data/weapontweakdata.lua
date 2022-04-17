@@ -6037,6 +6037,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					start_dist = 1400,
 					end_dist = 4500,
 					min_mult = 0.25
+				}
 				self.sterling.stats = {
 					damage = 24,
 					spread = 58,

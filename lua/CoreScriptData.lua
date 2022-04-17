@@ -309,7 +309,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "SCLECallBeardLibSequenceFuncs", funct
 			--if rnd == 1 or rnd == 2 then
 			--BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter1.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			--if rnd == 3 then
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/fsd1_eve.custom_xml", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter1_sunset", "custom_xml", "environments/pd2_env_night/pd2_env_night", "environment")
 			--"sky_orientation/rotation":"278.53564453125",
 				--end
 			--end
@@ -350,7 +350,7 @@ Hooks:Add("BeardLibCreateScriptDataMods", "RESMapsCallBeardLibSequenceFuncs", fu
 		end
 		
 		if Global.game_settings.level_id == "firestarter_3_res" then
-			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/dawnorange_grnhrv.custom_xml", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
+			BeardLib:ReplaceScriptData(mod_path .. "scriptdata/firestarter3_v2", "custom_xml", "environments/pd2_env_mid_day/pd2_env_mid_day", "environment")
 		end			
 	end
 end)

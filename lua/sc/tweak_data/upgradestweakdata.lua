@@ -307,7 +307,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.explosive_bullet.camera_shake_max_mul = 4
 
 	--Weapon Based Movement Modifiers--
-	self.weapon_movement_penalty.minigun = 0.65
+	self.weapon_movement_penalty.minigun = 0.50
 	self.weapon_movement_penalty.lmg = 0.75
 	
 	--Armor Stats--

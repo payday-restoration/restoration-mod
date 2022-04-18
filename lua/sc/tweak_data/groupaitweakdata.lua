@@ -1,4 +1,11 @@
 local job = Global.level_data and Global.level_data.level_id
+
+-- Slightly increase default tickrate to allow more responsive enemies
+Hooks:PostHook(GroupAITweakData, "init", "sh_init", function (self)
+	self.ai_tick_rate = 1 / 90
+end)
+
+
 function GroupAITweakData:_init_chatter_data()
 	self.enemy_chatter = {}
 	--[[
@@ -15776,6 +15783,8 @@ end
 
 function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 	local is_console = SystemInfo:platform() ~= Idstring("WIN32")
+	local f = math.max(0, difficulty_index - 2) / 6
+	
 	self.max_nr_simultaneous_boss_types = 0
 	self.difficulty_curve_points = {0.5}
 	self.skirmish_difficulty_curve_points = {

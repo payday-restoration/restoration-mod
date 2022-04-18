@@ -86,7 +86,7 @@ end)
 
 
 -- Increase simultaneous spawn limit (this is just an upper bound, usually less enemies are spawned per group spawn update)
-GroupAIStateBesiege._MAX_SIMULTANEOUS_SPAWNS = 5
+--GroupAIStateBesiege._MAX_SIMULTANEOUS_SPAWNS = 5
 
 --Implements cooldowns and hard-diff filters for specific spawn groups, by prefiltering them before actually choosing the best groups.
 local group_timestamps = {}
@@ -1611,6 +1611,15 @@ end)
 function GroupAIStateBesiege:_voice_open_fire_start(group)
 	for u_key, unit_data in pairs(group.units) do
 		if unit_data.char_tweak.chatter.open_fire and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "open_fire") then
+			break
+		end
+	end
+end
+
+
+function GroupAIStateBesiege:_voice_move_in_start(group)
+	for u_key, unit_data in pairs(group.units) do
+		if unit_data.char_tweak.chatter.go_go and self:chk_say_enemy_chatter(unit_data.unit, unit_data.m_pos, "go_go") then
 			break
 		end
 	end

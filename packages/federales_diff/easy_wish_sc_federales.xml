@@ -11,14 +11,14 @@
 	<cooked_physics		path="units/pd2_dlc_bex/weapons/wpn_npc_hk33/wpn_npc_hk33" force="false"/>
 	
 	<df_nm				path="units/pd2_dlc_bex/weapons/wpn_npc_hk33/hk33" force="false"/>
-
-	<!--NPC HK21-->
-	<cooked_physics		path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+		
+	<!--HK21-->
 	<material_config	path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<model				path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<object				path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
-	<unit				path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
 	<sequence_manager	path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<cooked_physics		path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" load="true" force="false"/>
 	<texture			path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
 	
 	<!--bravo HK21-->

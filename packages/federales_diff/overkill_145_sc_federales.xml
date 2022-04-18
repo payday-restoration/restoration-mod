@@ -48,7 +48,6 @@
 	<texture			path="units/payday2/characters/shared_textures/grenadier_atlas_nm" force="false"/>		
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/material_body_df" force="false"/>	
 	<texture			path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>	
-	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/grenadier_body_df" />
 	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>		
 	

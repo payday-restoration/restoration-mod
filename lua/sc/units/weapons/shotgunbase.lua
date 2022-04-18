@@ -12,29 +12,41 @@ function ShotgunBase:_update_stats_values(disallow_replenish, ammo_data)
 		end
 	end
 
-	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
-	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul
+	self._damage_near_mul = 1
+	self._damage_far_mul = 1
 
 	if self._ammo_data then
 		if self._ammo_data.rays ~= nil then
 			self._rays = self._ammo_data.rays
 		end
+		--[[
 		if self._ammo_data.damage_near_mul ~= nil then
 			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
 		end
 		if self._ammo_data.damage_far_mul ~= nil then
 			self._damage_far_mul = self._damage_far_mul * self._ammo_data.damage_far_mul
 		end
+		--]]
 	end
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
+		--[[
 		if stats.damage_near_mul then
 			self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
 		end
 		if stats.damage_far_mul then
 			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
 		end
+		]]
+		if stats.falloff_start_mult then
+			self._damage_near_mul = self._damage_near_mul * stats.falloff_start_mult
+		end
+	
+		if stats.falloff_end_mult then
+			self._damage_far_mul = self._damage_far_mul * stats.falloff_end_mult
+		end
 	end
+
 
 	self._range = tweak_data.weapon.stat_info.damage_falloff.max * self._damage_far_mul
 	

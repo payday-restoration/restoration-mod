@@ -662,7 +662,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Far Away
 				--Basic
-					self.values.player.steelsight_speed_multiplier = {1.6} --Movement speed while ADSing.
+					self.values.player.steelsight_move_speed_multiplier = {1.6} --Movement speed while ADSing.
 				--Ace
 					self.values.shotgun.steelsight_accuracy_inc = {0.7}
 					self.values.shotgun.steelsight_range_inc = {1.3}
@@ -2638,12 +2638,12 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}
-	self.definitions.player_steelsight_speed_multiplier = {
+	self.definitions.player_steelsight_move_speed_multiplier = {
 		name_id = "menu_player_steelsight_speed_multiplier",
 		category = "player",
 		upgrade = {
 			value = 1,
-			upgrade = "steelsight_speed_multiplier",
+			upgrade = "steelsight_move_speed_multiplier",
 			category = "player"
 		}
 	}

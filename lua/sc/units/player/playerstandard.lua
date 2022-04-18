@@ -372,6 +372,92 @@ function PlayerStandard:_update_omniscience(t, dt)
 	end
 end
 
+--ADS movement speed shit
+function PlayerStandard:_get_max_walk_speed(t, force_run)
+	local speed_tweak = self._tweak_data.movement.speed
+	local movement_speed = speed_tweak.STANDARD_MAX
+	local speed_state = "walk"
+
+	if self._state_data.in_steelsight and not managers.player:has_category_upgrade("player", "steelsight_normal_movement_speed") and not _G.IS_VR then
+		movement_speed = speed_tweak.STEELSIGHT_MAX
+		if alive(self._equipped_unit) then
+			local weapon = self._equipped_unit:base()
+			local weapon_tweak = weapon:weapon_tweak_data()
+			local base_speed = ( (self:on_ladder() and speed_tweak.CLIMBING_MAX ) or (self._state_data.ducking and speed_tweak.CROUCHING_MAX) or (self._state_data.in_air and speed_tweak.INAIR_MAX) or speed_tweak.STANDARD_MAX )
+			if weapon_tweak.steelsight_movement_speed then
+				movement_speed = base_speed * weapon_tweak.steelsight_movement_speed
+			else
+				for _, category in ipairs(weapon_tweak.categories) do
+					if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
+						movement_speed = base_speed * tweak_data[category].ads_move_speed_mult
+						break --hopefully this only grabs first category that has this stat
+					end
+				end
+			end
+			movement_speed = movement_speed * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
+			--bullpup bonus speed
+			if weapon_tweak.is_bullpup then 
+				--mult = mult * 1.2
+			end
+			if movement_speed > base_speed then
+				movement_speed = base_speed
+			end
+		end
+		speed_state = "steelsight"
+	elseif self:on_ladder() then
+		movement_speed = speed_tweak.CLIMBING_MAX
+		speed_state = "climb"
+	elseif self._state_data.ducking then
+		movement_speed = speed_tweak.CROUCHING_MAX
+		speed_state = "crouch"
+	elseif self._state_data.in_air then
+		movement_speed = speed_tweak.INAIR_MAX
+		speed_state = nil
+	elseif self._running or force_run then
+		movement_speed = speed_tweak.RUNNING_MAX
+		speed_state = "run"
+	end
+
+	movement_speed = managers.modifiers:modify_value("PlayerStandard:GetMaxWalkSpeed", movement_speed, self._state_data, speed_tweak)
+	local morale_boost_bonus = self._ext_movement:morale_boost()
+	local multiplier = managers.player:movement_speed_multiplier(speed_state, speed_state and morale_boost_bonus and morale_boost_bonus.move_speed_bonus, nil, self._ext_damage:health_ratio())
+	multiplier = multiplier * (self._tweak_data.movement.multiplier[speed_state] or 1)
+	local apply_weapon_penalty = true
+
+	if self:_is_meleeing() then
+		local melee_entry = managers.blackmarket:equipped_melee_weapon()
+		apply_weapon_penalty = not tweak_data.blackmarket.melee_weapons[melee_entry].stats.remove_weapon_movement_penalty
+	end
+
+	if alive(self._equipped_unit) and apply_weapon_penalty then
+		multiplier = multiplier * self._equipped_unit:base():movement_penalty()
+	end
+
+	if managers.player:has_activate_temporary_upgrade("temporary", "increased_movement_speed") then
+		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "increased_movement_speed", 1)
+	end
+
+	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") then
+		local out_of_health = self._unit:character_damage():health_ratio() + 0.01 < managers.player:upgrade_value("player", "copr_static_damage_ratio", 0)
+
+		if out_of_health then
+			multiplier = multiplier * managers.player:upgrade_value("player", "copr_out_of_health_move_slow", 1)
+		end
+	end
+
+	local final_speed = movement_speed * multiplier
+	self._cached_final_speed = self._cached_final_speed or 0
+
+	if final_speed ~= self._cached_final_speed then
+		self._cached_final_speed = final_speed
+
+		self._ext_network:send("action_change_speed", final_speed)
+	end
+	return final_speed
+end
+
+
+
 --Allows for melee sprinting.
 function PlayerStandard:_start_action_running(t)
 	--Consolidated vanilla checks.
@@ -1327,8 +1413,6 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 				local animation = self:get_animation(animation_name)
 				
 				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
-
-				log(tostring( animation_name ))
 
 				local result = self._ext_camera:play_redirect(animation, speed_multiplier)
 				

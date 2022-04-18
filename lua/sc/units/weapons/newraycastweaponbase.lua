@@ -442,9 +442,10 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	self._shots_fired = 0
 
 	--Set range multipliers.
-	self._damage_near_mul = self._damage_near_mul or 1
-	self._damage_far_mul = self._damage_far_mul or 1
+	self._damage_near_mul = 1
+	self._damage_far_mul = 1
 	
+	--[[
 	if self._ammo_data then
 		if self._ammo_data.damage_near_mul ~= nil then
 			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
@@ -453,6 +454,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			self._damage_far_mul = self._damage_far_mul * self._ammo_data.damage_far_mul
 		end
 	end
+	--]]
 	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	if not self._custom_stats_done then
@@ -851,47 +853,4 @@ function NewRaycastWeaponBase:exit_run_speed_multiplier()
 	--multiplier = multiplier / ( (self:weapon_tweak_data().sprintout_time or 0.300) / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
 	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 0.9 / sprintout_anim_time )
 	return multiplier
-end
-
---Gets ADS movement speeds
-function NewRaycastWeaponBase:movement_penalty()
-	local mult = 1
-	local state = managers.player:player_unit():movement():current_state()
-	local tweak_movement_speed = tweak_data.player.movement_state.standard.movement.speed
-	local base_speed = ((state._state_data.ducking and tweak_movement_speed.CROUCHING_MAX) or tweak_movement_speed.STANDARD_MAX) / tweak_movement_speed.STEELSIGHT_MAX
-
-	if state._state_data.in_steelsight and not managers.player:has_category_upgrade("player", "steelsight_normal_movement_speed") then
-		if self:weapon_tweak_data().steelsight_movement_speed then
-			mult = base_speed * self:weapon_tweak_data().steelsight_movement_speed
-		else
-			for _, category in ipairs(self:weapon_tweak_data().categories) do
-				if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
-					mult = base_speed * tweak_data[category].ads_move_speed_mult
-					break --hopefully this only grabs first category that has this stat
-				end
-			end
-		end
-		
-		--bullpup bonus speed
-		if self:weapon_tweak_data().is_bullpup then 
-			mult = mult * 1.2
-		end	
-
-	end
-	--[[
-	if (state._state_data.reload_expire_t or state._state_data.reload_enter_expire_t or state._state_data.reload_exit_expire_t) then
-		mult = mult * self._rms
-	end
-	if state._shooting then
-		if state._state_data.in_steelsight then
-			mult = mult * self._ads_sms
-		else
-			mult = mult * self._sms
-		end
-	end
-	--]]
-	if mult > base_speed then
-		mult = base_speed
-	end
-	return (self._movement_penalty or 1) * mult
 end

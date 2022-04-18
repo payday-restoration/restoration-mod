@@ -6191,10 +6191,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polymer.AMMO_MAX = 120
 				self.polymer.FIRE_MODE = "auto"
 				self.polymer.fire_mode_data = {}
-				self.polymer.fire_mode_data.fire_rate = 0.05
+				self.polymer.fire_mode_data.fire_rate = 0.0545454545
 				self.polymer.CAN_TOGGLE_FIREMODE = true
-				self.polymer.auto = {}
-				self.polymer.auto.fire_rate = 0.05
 				self.polymer.BURST_FIRE = 2
 				self.polymer.ADAPTIVE_BURST_SIZE = false													
 				self.polymer.kick = self.stat_info.kick_tables.moderate_kick

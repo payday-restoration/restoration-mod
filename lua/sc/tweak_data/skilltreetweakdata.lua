@@ -539,7 +539,7 @@ function SkillTreeTweakData:init(tweak_data)
 				["icon_xy"] = {8, 5},
 				[1] = {
 					upgrades = {
-						"player_steelsight_speed_multiplier"
+						"player_steelsight_move_speed_multiplier"
 					},
 					cost = self.costs.hightier
 				},

@@ -10224,46 +10224,27 @@ function GroupAITweakData:_init_unit_categories(difficulty_index)
 end
 function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 	--The below summarizes the functions of new or revised tactics in Restoration.
+	
 	--charge
 	--unit moves to player position and engages per conventional rules. Primary driver for most units.
 	--enemies will go into the room and get into sight of you.
+	
 	--ranged_fire 
 	--unit engages from longer range location with line of sight. Will eventually close with player.
+	
 	--elite_ranged_fire 
-	--Ranged_fire but with a forced retreat if player closer than closer than 8m (i think that's what we changed it to).
-	--obstacle 
-	--Unit attempts to position themselves in neighboring room near entrance closest to player.
-	--reloadingretreat
-	--if player is visible and unit is reloading, attempt to retreat into cover.
-	--hitnrun
-	--Approach enemies and engage for a short time, then, back away from the fight. Uses 10m retreat range.
-	--Tunnel
-	--Unit almost entirely targets one player until down, then moves on to next. Special-oriented.
-	--spoocavoidance
-	--If enemy aimed at or seen within 20m, they retreat away from the fight.
-	--harass
-	--Player entering non-combat state (such as task interactions or reloading) become priority target.
-	--hunter
-	--If a player is not within 15 meters of another player, becomes target. MUST NOT be used with deathguard - will cause crashes.
+	--copy of ranged_fire eventually we should restore old functionality 
+	
 	--deathguard
-	--Camps downed player. MUST NOT be used with Hunter - will cause crashes.
+	--Camps downed player.
+	
 	--shield_cover
 	--Unit attempts to place leader between self and player, stays close to leader. Can be employed for non-shield units.
-	--legday
-	--unit can only move by sprinting
-	--lonewolf
-	--Unit will copy the leader's objective, but behave separately from the group. Useful for pinch groups and to separate flankers from chargers, but still technically have them be part of the same group.
-	--skirmish
-	--system function for retreating in holdout mode. MUST be last tactic for all units. Do not touch.
-	--flank
-	--flank enemies will get around you and try to either, run past you, or to your side, so that you're not facing them. if they are walking, and they're within 15-10 meters, they'll crouch.
+	
 	self._tactics = {
 		--Cloaker tactics, static. Tries to avoid confrontation
 		spooc = {
-			--"hunter",
 			"flank",
-			--"lonewolf",
-			--"spoocavoidance",
 			"smoke_grenade",
 			"flash_grenade"
 		},	
@@ -10300,7 +10281,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"provide_coverfire",
 			"provide_support",
-			--"hitnrun",
 			"grouphrtr"
 		},
 		--Standard Blue SWAT, upgraded from Beat Cops and will now use smoke grenades. 
@@ -10377,17 +10357,12 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge",
 			"smoke_grenade",
 			"shield_cover",
-			"murder",
-			--"tunnel"
+			"murder"
 		},		
 		--Greendozers on Normal/Hard, will try to flank the player
 		CS_tank = {
 			"flank",
-			--"reloadingretreat",
 			"murder",
-			--"tunnel",
-			--"harass",
-			--"hitnrun",
 			"provide_coverfire",
 			"provide_support",
 			"shield"
@@ -10417,12 +10392,9 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--FBI HRT, stealth and avoiding combat
 		FBI_suit_stealth = { 
 			"flank",
-			--"hunter",
-			--"reloadingretreat",
 			"provide_coverfire",
 			"provide_support",
 			"flash_grenade",
-			--"hitnrun",
 			"elite_ranged_fire",
 			"grouphrtr"
 		},
@@ -10510,8 +10482,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard"
 		},			
 		--Grenadier, passive. Tries to hide behind shields/other units when possible
-		FBI_Boom = {
-			--"harass",		
+		FBI_Boom = {	
 			"elite_ranged_fire",
 			"provide_coverfire",		
 			"flash_grenade",
@@ -10520,19 +10491,14 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},				
 		--Medics, passive. Avoids confrontations.
 		FBI_medic = { 
-			"provide_coverfire",	
-			--"hitnrun",
-			--"reloadingretreat",
+			"provide_coverfire",
 			"elite_ranged_fire",
 			"shield_cover"
 		},	
 		--Flank Medic tactics, avoid confrontations and flanks. Hugs squad leader
 		FBI_medic_flank = {
 			"flank",
-			--"obstacle",
-			"provide_coverfire",	
-			--"hitnrun",
-			--"reloadingretreat",
+			"provide_coverfire",
 			"elite_ranged_fire",
 			"shield_cover"
 		},	
@@ -10545,11 +10511,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Greendozer on FBI tier and above, hitnrun tactics and flank a lot
 		GREEN_tank = {
 			"flank",
-			--"reloadingretreat",
 			"murder",
-			--"tunnel",
-			--"harass",
-			--"hitnrun",
 			"provide_coverfire",
 			"provide_support",
 			"shield"
@@ -10557,9 +10519,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--Blackdozers, hyper aggressive and unload on the player. 
 		BLACK_tank = {
 			"murder",
-			--"tunnel",
 			"charge",
-			--"harass",
 			"shield"
 		},
 		
@@ -10622,7 +10582,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		--Mayhem Shield, now moves much faster into position
 		MH_shield = { 
-			--"legday",
 			"charge",
 			"ranged_fire",
 			"provide_coverfire",
@@ -10632,7 +10591,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},		
 		--Passive MH shield
 		MH_shield_flank = { 
-			--"legday",
 			"ranged_fire",
 			"provide_coverfire",
 			"provide_support",
@@ -10645,33 +10603,26 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		--hunter hrt tactics
 		HRT_attack = { --sneaks up and targets players in bad positions
 			"flank",
-			--"hunter",
-			--"harass",
 			"provide_coverfire",
 			"provide_support",
 			"smoke_grenade",
 			"flash_grenade",
-			--"hitnrun",
 			"grouphrtr"
 		},	
 		--DW Taser, tries extremely hard to get up close and personal
 		DW_tazer = {
-			--"legday",
 			"charge",
 			"flash_grenade",
 			"smoke_grenade",
 			"shield_cover",
-			"murder",
-			--"tunnel"
+			"murder"
 		},
-		--DW Grenadier, even more passive and will use hitnrun
+		--DW Grenadier
 		ELITE_boom = {
 			"flash_grenade",
-			"smoke_grenade",
-			--"harass",		
+			"smoke_grenade",	
 			"elite_ranged_fire",
 			"provide_coverfire",
-			--"hitnrun",
 			"shield_cover"
 		},			
 		--death wish tactics
@@ -10685,7 +10636,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard",
 			"groupcsr"
 		},
-		--Will now also harrass players doing objectives/reloading/other stuff
 		DW_swat_rifle_flank = { 
 			"flank",
 			"smoke_grenade",
@@ -10694,7 +10644,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"provide_coverfire",
 			"provide_support",
 			"ranged_fire",			
-			--"harass",
 			"shield_cover",
 			"deathguard",
 			"groupcsr"
@@ -10714,29 +10663,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flash_grenade",
 			"provide_coverfire",
 			"provide_support",
-			--"harass",	
 			"shield_cover",
 			"deathguard",
 			"groupcsr"
 		},
 		--slightly more passive than the other dozers will stand his ground if charged
 		SKULL_tank = { 
-			--"reloadingretreat",
 			"ranged_fire",
 			"murder",
-			--"tunnel",
-			--"harass",
 			"shield"
 		},
-		--set up to use passive suppressive fire against players :)
+		--funny railgun dozer
 		TIT_tank = {
-			--"obstacle",
-			--"hitnrun",
-			--"reloadingretreat",
-			--"spoocavoidance",
 			"murder",
-			"elite_ranged_fire",
-			--"harass"
+			"elite_ranged_fire"
 		},
 			
 		--mean DS tactics below
@@ -10744,13 +10684,8 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			--"hunter",
-			--"legday",
-			--"reloadingretreat",
-			--"spoocavoidance",
 			"provide_coverfire",
 			"provide_support",
-			--"hitnrun",
 			"grouphrtr"
 		},
 		ELITE_swat_rifle = {
@@ -10758,7 +10693,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"provide_coverfire",
-			--"harass",
 			"provide_support",
 			"shield_cover",
 			"groupcsr"
@@ -10767,7 +10701,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"charge",
-			--"harass",
 			"provide_coverfire",
 			"shield_cover",
 			"provide_support",
@@ -10776,7 +10709,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		ELITE_heavy = { 
 			"smoke_grenade",
 			"flash_grenade",
-			--"harass",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover",
@@ -10786,7 +10718,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		ELITE_heavy_shotgun = { 
 			"smoke_grenade",
 			"flash_grenade",
-			--"harass",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
@@ -10799,7 +10730,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"smoke_grenade",
 			"flash_grenade",
 			"elite_ranged_fire",
-			--"harass",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover"
@@ -10808,7 +10738,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			--"harass",
 			"provide_coverfire",
 			"provide_support",
 			"shield_cover"
@@ -10817,7 +10746,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"flank",
 			"smoke_grenade",
 			"flash_grenade",
-			--"harass",	
 			"charge",
 			"provide_coverfire",
 			"provide_support",
@@ -10834,8 +10762,7 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"charge"
 		},		
 		Cap_summers_minion = {
-			"elite_ranged_fire",
-			--"hitnrun",
+			"ranged_fire",
 			"shield_cover"
 		},	
 		Cap_summers = {
@@ -10844,34 +10771,31 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 		},
 		Cap_autumn = {
 			"flank",
-			--"hunter",
-			--"spoocavoidance",
 			"shield_cover",
 			"smoke_grenade",
 			"provide_coverfire",
 			"provide_support",
-			"flash_grenade",
-			--"hitnrun"
+			"flash_grenade"
 		},
 		Cap_winters = {
+			"ranged_fire", --fuck you
 			"shield",
 			"provide_coverfire",
-			"provide_support",
+			"provide_support"
 		},	
 		Cap_winters_minion = {
+			"ranged_fire",
 			"shield",
 			"provide_coverfire",
-			"provide_support",
+			"provide_support"
 		},	
 		Cap_winters_minion_sniper = {
-			--"harass",	
 			"elite_ranged_fire",
 			"provide_coverfire",
-			"provide_support",
+			"provide_support"
 		},		
 		--Old Winters
 		Phalanx_minion = {
-			--"smoke_grenade",
 			"charge",
 			"provide_coverfire",
 			"provide_support",
@@ -10879,7 +10803,6 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 			"deathguard"
 		},
 		Phalanx_vip = {
-			--"smoke_grenade",
 			"charge",
 			"provide_coverfire",
 			"provide_support",

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <unit type="wpn" slot="13">
-	<object file="units/payday2/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo" />
+	<object file="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" />
   <dependencies>
  	<depends_on effect="effects/particles/weapons/shotgun/muzzleflash_3dp" />
 	<depends_on bnk="soundbanks/weapon_m60" />

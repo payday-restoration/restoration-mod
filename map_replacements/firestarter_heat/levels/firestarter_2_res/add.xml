@@ -566,8 +566,12 @@
 		<unit path="units/payday2/props/com_prop_barista_cup/com_prop_barista_cup_tall" unload="true"/>
 	</add>
 	<add path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" type="unit">
-		<unit path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" unload="true"/>
-		<object path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" unload="true"/>
 		<material_config path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01" unload="true"/>
+		<object path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" unload="true"/>
+		<unit path="units/pd2_dlc1/architecture/res_int_motel/res_int_motel_vending_machine_01_illum" unload="true"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars" type="scene">
+		<scene path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+		<material_config path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
 	</add>
 </table>

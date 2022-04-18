@@ -307,8 +307,53 @@
 		<unit force="true" path="units/payday2/props/shadow_mullplan/mullplan_branchbank_table_a" unload="true"/>
 	</add>
 	<add from_db="true" path="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_openable" type="unit">
-		<unit path="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_openable" unload="true"/>
-		<object path="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_openable" unload="true"/>
 		<material_config path="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal" unload="true"/>
+		<object path="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_openable" unload="true"/>
+		<unit path="units/payday2/props/gen_prop_door_metal/gen_prop_door_metal_openable" unload="true"/>
 	</add>
+	<add from_db="true" path="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds" type="scene">
+		<material_config path="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds"/>
+		<scene path="core/environments/skies/sky_1846_low_sun_nice_clouds/sky_1846_low_sun_nice_clouds"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/default/default" type="scene">
+		<material_config path="core/environments/skies/sky_cloudy_blue/sky_cloudy_blue"/>
+		<scene path="core/environments/skies/default/default"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars" type="scene">
+		<material_config path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+		<scene path="core/environments/skies/sky_0200_night_moon_stars/sky_0200_night_moon_stars"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_0927_whispy_clouds/sky_0927_whispy_clouds" type="scene">
+		<material_config path="core/environments/skies/sky_0927_whispy_clouds/sky_0927_whispy_clouds"/>
+		<scene path="core/environments/skies/sky_0927_whispy_clouds/sky_0927_whispy_clouds"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_1930_sunset_heavy_clouds/sky_1930_sunset_heavy_clouds" type="scene">
+		<material_config path="core/environments/skies/sky_1930_sunset_heavy_clouds/sky_1930_sunset_heavy_clouds"/>
+		<scene path="core/environments/skies/sky_1930_sunset_heavy_clouds/sky_1930_sunset_heavy_clouds"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_1930_twillight/sky_1930_twillight" type="scene">
+		<material_config path="core/environments/skies/sky_1930_twillight/sky_1930_twillight"/>
+		<scene path="core/environments/skies/sky_1930_twillight/sky_1930_twillight"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_2000_twilight_mad/sky_2000_twilight_mad" type="scene">
+		<material_config path="core/environments/skies/sky_2000_twilight_mad/sky_2000_twilight_mad"/>
+		<scene path="core/environments/skies/sky_2000_twilight_mad/sky_2000_twilight_mad"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_1345_clear_sky/sky_1345_clear_sky" type="scene">
+		<material_config path="core/environments/skies/sky_1345_clear_sky/sky_1345_clear_sky"/>
+		<scene path="core/environments/skies/sky_1345_clear_sky/sky_1345_clear_sky"/>
+	</add>
+	<add from_db="true" path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy_dark" type="scene">
+		<material_config path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy"/>
+		<scene path="core/environments/skies/sky_1313_cloudy_dark/sky_1313_cloudy_dark"/>
+	</add>
+	<add from_db="true" path="environments/cubemaps/cube_red_01" type="texture"/>
+	<add from_db="true" path="core/textures/cubemap_template_day" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_afternoon_hcm" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_afternoon_lcm" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_cash_saferoom" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_diamond_01" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_gold" type="texture"/>
+	<add from_db="true" path="environments/cubemaps/cubemap_gold_strong_df" type="texture"/>
 </table>

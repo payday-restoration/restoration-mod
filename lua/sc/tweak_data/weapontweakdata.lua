@@ -2607,7 +2607,7 @@ function WeaponTweakData:_init_stats()
 		standing = 3,
 		moving_crouching = 1.75,
 		crouching = 1.75,
-		moving_steelsight = 0.5,
+		moving_steelsight = 0.4,
 		steelsight = 0.1,
 		bipod = 1
 	}
@@ -6073,9 +6073,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mac10.single.fire_rate = 0.06
 				self.x_mac10.kick = self.stat_info.kick_tables.moderate_kick
 				self.x_mac10.supported = true
+				self.x_mac10.ads_speed = 0.230
+				self.x_mac10.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 3200,
+					min_mult = 0.3333
+				}
 				self.x_mac10.stats = {
 					damage = 30,
-					spread = 61,
+					spread = 41,
 					recoil = 69,
 					spread_moving = 8,
 					zoom = 1,
@@ -6104,10 +6110,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.polymer.ADAPTIVE_BURST_SIZE = false													
 				self.polymer.kick = self.stat_info.kick_tables.moderate_kick
 				self.polymer.supported = true
+				self.polymer.ads_speed = 0.275
+				self.polymer.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3500,
+					min_mult = 0.3333
+				}
 				self.polymer.stats = {
 					damage = 30,
-					spread = 66,
-					recoil = 82,
+					spread = 54,
+					recoil = 70,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 24,
@@ -6133,10 +6145,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.schakal.kick = self.stat_info.kick_tables.even_recoil
 				self.schakal.panic_suppression_chance = 0.05
 				self.schakal.supported = true
+				self.schakal.ads_speed = 0.250
+				self.schakal.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 3800,
+					min_mult = 0.3333
+				}
 				self.schakal.stats = {
 					damage = 30,
-					spread = 71,
-					recoil = 92,
+					spread = 66,
+					recoil = 84,
 					spread_moving = 7,
 					zoom = 1,
 					concealment = 23,
@@ -6148,6 +6166,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.schakal.stats_modifiers = nil
+				self.schakal.reload_speed_multiplier = 1.05
 
 		--SECONDARIES
 
@@ -6158,10 +6177,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.mac10.auto.fire_rate = 0.06
 				self.mac10.kick = self.stat_info.kick_tables.even_recoil
 				self.mac10.supported = true
+				self.mac10.ads_speed = 0.230
+				self.mac10.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 3200,
+					min_mult = 0.3333
+				}
 				self.mac10.stats = {
 					damage = 30,
-					spread = 71,
-					recoil = 83,
+					spread = 51,
+					recoil = 80,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 22,
@@ -6188,10 +6213,16 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.uzi.auto.fire_rate = 0.1
 				self.uzi.kick = self.stat_info.kick_tables.even_recoil
 				self.uzi.supported = true
+				self.uzi.ads_speed = 0.230
+				self.uzi.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4200,
+					min_mult = 0.3333
+				}
 				self.uzi.stats = {
 					damage = 30,
-					spread = 71,
-					recoil = 92,
+					spread = 60,
+					recoil = 89,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 25,
@@ -6204,20 +6235,25 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.uzi.stats_modifiers = nil
 				self.uzi.panic_suppression_chance = 0.05
+				self.uzi.reload_speed_multiplier = 1.1
 				self.uzi.timers.reload_not_empty = 2.40
 				self.uzi.timers.reload_empty = 3.6
 
 			--chicago typewriter
 				self.m1928.use_data.selection_index = 1
-				self.m1928.fire_mode_data.fire_rate = 0.075
+				self.m1928.fire_mode_data.fire_rate = 0.08571428
 				self.m1928.CAN_TOGGLE_FIREMODE = true
-				self.m1928.auto = {}
-				self.m1928.auto.fire_rate = 0.075
 				self.m1928.CLIP_AMMO_MAX = 50
 				self.m1928.AMMO_MAX = 60
 				self.m1928.kick = self.stat_info.kick_tables.horizontal_recoil
 				self.m1928.panic_suppression_chance = 0.05
 				self.m1928.supported = true
+				self.m1928.ads_speed = 0.350
+				self.m1928.damage_falloff = {
+					start_dist = 2000,
+					end_dist = 4500,
+					min_mult = 0.3333
+				}
 				self.m1928.stats = {
 					damage = 30,
 					spread = 66,
@@ -6458,7 +6494,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.flint.damage_falloff = {
 					start_dist = 3000,
 					end_dist = 5200,
-					min_mult = 0.4166
+					min_mult = 0.5
 				}
 				self.flint.stats = {
 					damage = 24,
@@ -6488,7 +6524,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ak74.damage_falloff = {
 					start_dist = 3200,
 					end_dist = 5500,
-					min_mult = 0.4166
+					min_mult = 0.5
 				}
 				self.ak74.stats = {
 					damage = 24,

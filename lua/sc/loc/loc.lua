@@ -1341,6 +1341,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
 		["bm_wp_p90_b_ninja"] = "Ninja Barrel",
+		["bm_wp_par_b_short"] = "Comped Barrel",
 
 		["menu_es_rep_upgrade"] = "",	--???--
 

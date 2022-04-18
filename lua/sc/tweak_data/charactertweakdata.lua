@@ -20896,7 +20896,6 @@ function CharacterTweakData:_create_table_structure()
 		"m60",
 		"m60_bravo",
 		"m60_om",
-		"wpn_npc_hk21_bravo",
 		"deagle",
 		"mp9_titan",
 		"sr2_titan",
@@ -20913,7 +20912,8 @@ function CharacterTweakData:_create_table_structure()
 		"hk33_bravo",
 		"m500",
 		"flamethrower",
-		"x_raging_bull_meme_npc"
+		"x_raging_bull_meme_npc",
+		"wpn_npc_hk21_bravo"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),
@@ -20978,7 +20978,6 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_m60/wpn_npc_m60"),
 		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"),
 		Idstring("units/payday2/weapons/wpn_npc_m60_om/wpn_npc_m60_om"),
-		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"),
 		Idstring("units/payday2/weapons/wpn_npc_degle/wpn_npc_degle"),
 		Idstring("units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan"),
 		Idstring("units/pd2_dlc_mad/weapons/wpn_npc_sr2_titan/wpn_npc_sr2_titan"),
@@ -20995,7 +20994,8 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_hk33_bravo/wpn_npc_hk33_bravo"),
 		Idstring("units/pd2_dlc_bex/weapons/wpn_npc_m500/wpn_npc_m500"),
 		Idstring("units/pd2_dlc_pent/weapons/wpn_npc_flamethrower/wpn_npc_flamethrower"),
-		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc")
+		Idstring("units/payday2/weapons/wpn_npc_raging_bull/x_raging_bull_meme_npc"),
+		Idstring("units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo")
 	}
 end
 

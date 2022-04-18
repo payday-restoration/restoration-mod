@@ -305,7 +305,11 @@ function CharacterTweakData:_init_gensec(presets)
 	self.gensec.dodge = presets.dodge.athletic
 	self.gensec.deathguard = false
 	self.gensec.chatter = presets.enemy_chatter.guard
-	self.gensec.has_alarm_pager = true
+	if job == "nmh" or job == "nmh_res" then
+		self.gensec.has_alarm_pager = false
+	else
+		self.gensec.has_alarm_pager = true
+	end
 	self.gensec.melee_weapon = "baton"
 	self.gensec.heal_cooldown = 1
 	table.insert(self._enemy_list, "gensec")
@@ -1184,6 +1188,11 @@ function CharacterTweakData:_init_city_swat(presets)
 	self.city_swat_guard.headshot_dmg_mul = 8.5
 	self.city_swat_guard.access = "security"
 	self.city_swat_guard.chatter = presets.enemy_chatter.guard
+	if job == "nmh" or job == "nmh_res" then
+		self.city_swat_guard.has_alarm_pager = false
+	else
+		self.city_swat_guard.has_alarm_pager = true
+	end
 	self.city_swat_guard.melee_weapon = "baton"
 	self.city_swat_guard.use_radio = nil
 	table.insert(self._enemy_list, "city_swat_guard")

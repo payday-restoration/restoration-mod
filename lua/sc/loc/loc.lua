@@ -662,6 +662,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_resmusic_lethalforce"] = "Lethal Force",
 		["menu_jukebox_resmusic_redmarks"] = "Red Marks",
 		["menu_jukebox_screen_resmusic_redmarks"] = "Red Marks",
+		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (Alpha Version)",
+		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (Alpha Version)",
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",

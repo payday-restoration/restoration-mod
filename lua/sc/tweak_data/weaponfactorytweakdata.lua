@@ -153,6 +153,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_large.perks = {"silencer"}
+	self.parts.wpn_fps_upg_ns_ass_smg_large.custom_stats = {
+		falloff_start_mult = 1.1,
+		falloff_end_mult = 1.1
+	}
 	
 	--Medium Suppressor
 	self.parts.wpn_fps_upg_ns_ass_smg_medium.pcs = {
@@ -187,6 +191,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_small.perks = {"silencer"}
+	self.parts.wpn_fps_upg_ns_ass_smg_small.custom_stats = {
+		falloff_start_mult = 0.95,
+		falloff_end_mult = 0.95
+	}
 	
 	--Monolith Suppressor
 	self.parts.wpn_fps_upg_ns_pis_large.pcs = {
@@ -204,6 +212,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ns_pis_large.perks = {"silencer"}
+	self.parts.wpn_fps_upg_ns_pis_large.custom_stats = {
+		falloff_start_mult = 1.1,
+		falloff_end_mult = 1.1
+	}
 
 	--Standard Issue Suppressor
 	self.parts.wpn_fps_upg_ns_pis_medium.pcs = {
@@ -238,6 +250,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		spread = -1
 	}
 	self.parts.wpn_fps_upg_ns_pis_small.perks = {"silencer"}
+	self.parts.wpn_fps_upg_ns_pis_small.custom_stats = {
+		falloff_start_mult = 0.95,
+		falloff_end_mult = 0.95
+	}
 	
 	--Silent Killer Suppressor
 	self.parts.wpn_fps_upg_ns_shot_thick.pcs = {
@@ -2023,7 +2039,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 			"wpn_upg_ak_g_standard"
 		},
 		stats = {
-			value = 1,
+			value = 0,
 			recoil = -8,
 			concealment = 4
 		},
@@ -2049,6 +2065,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak74", "resmod_ak74", function(sel
 	
 	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_fps_lmg_rpk_s_standard")
 	table.insert(self.wpn_fps_ass_74_npc.uses_parts, "wpn_fps_lmg_rpk_s_standard")
+
+	--No Stock
+	table.insert(self.wpn_fps_ass_74.uses_parts, "wpn_upg_ak_s_nostock")
+	table.insert(self.wpn_fps_ass_74_npc.uses_parts, "wpn_upg_ak_s_nostock")
 
 	self.wpn_fps_ass_74_npc.uses_parts = deep_clone(self.wpn_fps_ass_74.uses_parts)	
 
@@ -5662,7 +5682,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_scorpion", "resmod_scorpion", func
 		ads_speed_mult = 0.975
 	}
 	self.parts.wpn_fps_smg_scorpion_s_nostock.stats = {
-		value = 3,
+		value = 0,
 		recoil = -2,
 		concealment = 1
 	}
@@ -6731,7 +6751,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_spas12", "resmod_spas12", function
 	}
 	self.parts.wpn_fps_sho_s_spas12_nostock.supported = true
 	self.parts.wpn_fps_sho_s_spas12_nostock.stats = {
-		value = 4,
+		value = 0,
 		recoil = -2,
 		concealment = 2
 	}
@@ -7067,7 +7087,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.parts.wpn_fps_smg_sterling_s_folded.pcs = {}
 	self.parts.wpn_fps_smg_sterling_s_folded.supported = true
 	self.parts.wpn_fps_smg_sterling_s_folded.stats = {
-		value = 2,
+		value = 0,
 		recoil = -1,
 		concealment = 1
 	}
@@ -7076,7 +7096,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sterling", "resmod_sterling", func
 	self.parts.wpn_fps_smg_sterling_s_nostock.pcs = {}
 	self.parts.wpn_fps_smg_sterling_s_nostock.supported = true
 	self.parts.wpn_fps_smg_sterling_s_nostock.stats = {
-		value = 3,
+		value = 0,
 		recoil = -2,
 		concealment = 2
 	}
@@ -8245,7 +8265,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m32", "resmod_m32", function(self)
 		ads_speed_mult = 0.925
 	}
 	self.parts.wpn_fps_gre_m32_no_stock.stats = {
-		value = 3,
+		value = 0,
 		concealment = 3,
 		recoil = -6
 	}
@@ -9179,7 +9199,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 	}
 	self.parts.wpn_fps_smg_baka_s_standard.supported = true
 	self.parts.wpn_fps_smg_baka_s_standard.stats = {
-		value = 2,
+		value = 0,
 		recoil = -1,
 		concealment = 1
 	}
@@ -9193,7 +9213,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_baka", "resmod_baka", function(sel
 	}
 	self.parts.wpn_fps_smg_baka_s_unfolded.supported = true
 	self.parts.wpn_fps_smg_baka_s_unfolded.stats = {
-		value = 2,
+		value = 0,
 		recoil = 1,
 		concealment = -2
 	}
@@ -11741,7 +11761,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shepheard", "resmod_shepheard", fu
 	}
 	self.parts.wpn_fps_smg_shepheard_s_no.supported = true
 	self.parts.wpn_fps_smg_shepheard_s_no.stats = {
-		concealment = 2,
+		concealment = 0,
 		recoil = -2,
 		value = 3
 	}

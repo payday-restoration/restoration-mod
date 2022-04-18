@@ -149,8 +149,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 5,
 		suppression = 12,
 		alert_size = -1,
-		spread = 1,
-		concealment = -3
+		spread = 2,
+		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_large.perks = {"silencer"}
 	
@@ -166,8 +166,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 2,
 		suppression = 11,
 		alert_size = -1,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 	self.parts.wpn_fps_upg_ns_ass_smg_medium.perks = {"silencer"}
 	
@@ -200,8 +200,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 5,
 		suppression = 12,
 		alert_size = -1,
-		spread = 1,
-		concealment = -3
+		spread = 2,
+		concealment = -2
 	}
 	self.parts.wpn_fps_upg_ns_pis_large.perks = {"silencer"}
 
@@ -217,8 +217,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		value = 2,
 		suppression = 11,
 		alert_size = -1,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 	self.parts.wpn_fps_upg_ns_pis_medium.perks = {"silencer"}
 
@@ -255,10 +255,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_silencers", "resmod_silencers", fu
 		concealment = -1
 	}
 	self.parts.wpn_fps_upg_ns_shot_thick.perks = {"silencer"}
-	self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {
-		damage_near_mul = 1,
-		damage_far_mul = 1
-	}			
+	self.parts.wpn_fps_upg_ns_shot_thick.custom_stats = {}			
 	self.parts.wpn_fps_upg_ns_shot_thick.forbids = {
 		"wpn_fps_upg_a_explosive"
 	}
@@ -279,8 +276,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats = {
 		value = 2,
 		suppression = -2,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 		
 	--Stubby Compensator
@@ -307,8 +304,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.supported = true
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.stats = {
 		value = 5,
-		spread = 1,
-		concealment = -3
+		spread = 2,
+		concealment = -2
 	}
 
 	--Shark Teeth

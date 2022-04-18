@@ -6,7 +6,7 @@
 	<dependencies>
 		
 		<depends_on unit="units/payday2/characters/ene_acc_swat_helmet/ene_acc_swat_helmet" />
-		<depends_on unit="units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo" />
+		<depends_on unit="units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo" />
 		<depends_on unit="units/payday2/weapons/wpn_npc_bravo_frag/wpn_npc_bravo_frag" />			
 	</dependencies>
 
@@ -14,7 +14,7 @@
 		<extension name="unit_data" class="ScriptUnitData" />
 		<extension name="base" class="HuskCopBase" >
 			<var name="_tweak_table" value="weekend_lmg" />
-			<var name="_default_weapon_id" value="m60_bravo" />
+			<var name="_default_weapon_id" value="hk21_bravo_npc" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />
 		<extension name="brain" class="HuskCopBrain" />

@@ -1102,6 +1102,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 		["bm_tranq_maxim_sc_desc"] = "Integrally suppressed.\n\nDeals damage over time with tranquilizer rounds.",
+		["bm_m134_rof_init_sc_desc"] = "Briefly shoots at 2x the rate of fire for the first few rounds of each trigger pull.",
 		
 		["bm_ap_weapon_peacemaker_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
 		["bm_wolf_brigade_sc_desc"] = "50% less recoil when fired from the hip",

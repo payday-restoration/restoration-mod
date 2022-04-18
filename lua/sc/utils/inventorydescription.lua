@@ -564,7 +564,8 @@ function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
 	for i = 1, #weapon_tweak.categories do
 		local category = weapon_tweak.categories[i]
 		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
-			damage_min_mult = 1
+			damage_min_mult = 0
+			damage_base = 0
 		end
 	end
 
@@ -595,10 +596,21 @@ function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_s
 
 	damage_mods = (damage_mods + damage_base) * damage_min_mult 
 
+
+
 	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 then
 		damage_min_mult = 0.05
 	end
 	damage_base = damage_base * damage_min_mult 
+
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			damage_min_mult = 0
+			damage_mods = 0
+			damage_base = 0
+		end
+	end
 	
 	return damage_mods - damage_base
 end

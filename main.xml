@@ -13,12 +13,13 @@
 		<mod file="pause_menu.xml" type="custom_xml" target_file="gamedata/menus/pause_menu" target_type="menu" merge_mode="script_merge"/>
 		<mod file="faces.xml" type="custom_xml" target_file="units/payday2/characters/ragdoll" target_type="sequence_manager" merge_mode="script_merge"/>	
 		
-		<!--swat vans-->
-		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<!--swat vans
+		<mod file="swat_vans_str.xml" type="custom_xml" target_file="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" target_type="sequence_manager" merge_mode="script_merge"/>				
+		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" target_type="sequence_manager" merge_mode="script_merge"/>				
 		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" target_type="sequence_manager" merge_mode="script_merge"/>				
-		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_2/bnk_vehicle_truck_police_anim_2" target_type="sequence_manager" merge_mode="script_merge"/>	
+		<mod file="swat_vans.xml" type="custom_xml" target_file="units/payday2/vehicles/bnk_vehicle_truck_police_anim_2/bnk_vehicle_truck_police_anim_2" target_type="sequence_manager" merge_mode="script_merge"/>	-->
 		
-		<!-- i'm not recompiling every single fuckingsequence manager for these guys, fuck off i already dealt with the modded ones-->
+		<!-- i'm not recompiling every single fucking sequence manager for these guys, fuck off i already dealt with the modded ones-->
 		
 		<!--normal bulldozers-->
 		<mod file="bulldozers.xml" type="custom_xml" target_file="units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1" target_type="sequence_manager" merge_mode="script_merge"/>				

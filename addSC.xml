@@ -1,4 +1,10 @@
 <table directory="assets">		
+    <!--SWAT Van Sequence Managers-->	
+	<sequence_manager	path="units/payday2/vehicles/anim_vehicle_van_swat/anim_vehicle_van_swat" force="true"/>
+	<sequence_manager	path="units/payday2/vehicles/bnk_vehicle_truck_police_anim_1/bnk_vehicle_truck_police_anim_1" force="true"/>
+	<sequence_manager	path="units/payday2/vehicles/bnk_vehicle_truck_police_anim_2/bnk_vehicle_truck_police_anim_2" force="true"/>
+	<sequence_manager	path="units/payday2/vehicles/str_vehicle_swat_van/str_vehicle_swat_van" force="true"/>
+	
 	<!--Updated Assets-->	
 	<environment		path="environments/pd2_env_night/pd2_env_night" force="true"/>
 	<environment		path="environments/pd2_env_mid_day/pd2_env_mid_day" force="true"/>

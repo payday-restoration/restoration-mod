@@ -1063,7 +1063,6 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_set_assault_objective_to_group", f
 				end
 			end
 
-			StreamHeist:log("[Warning] Group", group.id, "had no valid path to any of its neighboring areas for 5s, removing group!")
 			for _, u_data in pairs(group.units) do
 				u_data.unit:brain():set_active(false)
 				u_data.unit:set_slot(0)
@@ -1561,7 +1560,6 @@ Hooks:OverrideFunction(GroupAIStateBesiege, "_perform_group_spawning", function 
 		end
 
 		if hopeless then
-			StreamHeist:log("[Warning] Spawn group", spawn_task.spawn_group.id, "failed to spawn unit", u_type_name)
 			return true
 		end
 	end

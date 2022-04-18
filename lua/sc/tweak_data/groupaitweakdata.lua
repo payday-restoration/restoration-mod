@@ -13444,6 +13444,20 @@ function GroupAITweakData:_init_enemy_spawn_groups(difficulty_index)
 				}
 			}
 		}
+	elseif difficulty_index == 7 then
+		self.enemy_spawn_groups.FBI_spoocs = {
+			amount = {2, 2},
+			spawn = {
+				{
+					unit = "spooc",
+					freq = 1,
+					amount_min = 2,
+					amount_max = 2,
+					tactics = self._tactics.spooc,
+					rank = 1
+				}
+			}
+		}		
 	else
 		self.enemy_spawn_groups.FBI_spoocs = {
 			amount = {3, 3},

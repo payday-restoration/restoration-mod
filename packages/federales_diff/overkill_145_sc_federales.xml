@@ -10,7 +10,7 @@
 	<df_nm				path="units/pd2_dlc_bex/weapons/wpn_npc_hk33/hk33" force="false"/>
 	
 	<!--bravo HK21-->
-	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_hk21_sc_bravo/wpn_npc_hk21_sc_bravo"  load="true"/>
+	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_hk21_bravo/wpn_npc_hk21_bravo"  load="true"/>
 
 	<!--UZI Suzie i hate animations-->
 	<unit_mat			path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />

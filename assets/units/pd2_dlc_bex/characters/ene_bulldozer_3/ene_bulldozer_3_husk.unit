@@ -21,7 +21,7 @@
 		<extension name="base" class="HuskCopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank" />
-			<var name="_default_weapon_id" value="hk21" />
+			<var name="_default_weapon_id" value="hk21_sc" />
 			<var name="_stats_name" value="tank_skull" />
 		</extension>
 		<extension name="inventory" class="HuskCopInventory" />

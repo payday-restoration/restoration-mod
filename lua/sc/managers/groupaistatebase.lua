@@ -1631,13 +1631,14 @@ Hooks:PostHook(GroupAIStateBase, "on_enemy_unregistered", "sh_on_enemy_unregiste
 	end
 end)
 
+-- Check nav segment safety directly instead of area safety
 function GroupAIStateBase:is_nav_seg_safe(nav_seg)
-	for _, criminal_data in pairs(self._criminals) do
-		if criminal_data.tracker:nav_segment() == nav_seg then
-			return false
+	for _, u_data in pairs(self._criminals) do
+		if u_data.tracker:nav_segment() == nav_seg then
+			return
 		end
 	end
-	
+
 	return true
 end
 

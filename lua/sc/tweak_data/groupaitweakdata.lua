@@ -15792,6 +15792,8 @@ function GroupAITweakData:_init_task_data(difficulty_index, difficulty)
 		0.5, --wave 10
 		--1 eventually
 	}
+	
+	self.spawn_cooldown_mul = math.lerp(2, 1, f)
 
 	if difficulty_index <= 2 then
 		self.smoke_grenade_timeout = {20, 20}

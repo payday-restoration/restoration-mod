@@ -693,6 +693,7 @@ function CharacterTweakData:_init_medic(presets)
 	self.medic_summers.do_omnia = true
 	self.medic_summers.follower = true
 	self.medic_summers.no_omnia_heal = true
+	self.medic_summers.min_obj_interrupt_dis = 300
 	table.insert(self._enemy_list, "medic_summers")
 end
 
@@ -2042,6 +2043,7 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank.is_special = true
 	self.tank.no_asu = true
 	self.tank.heal_cooldown = 22.5
+	self.tank.min_obj_interrupt_dis = 600
 	table.insert(self._enemy_list, "tank")
 	
 	--Medic Dozer
@@ -2231,6 +2233,7 @@ function CharacterTweakData:_init_spooc(presets)
 			}
 		}
 	}
+	self.spooc.min_obj_interrupt_dis = 800
 	table.insert(self._enemy_list, "spooc")
 
 	self.spooc_titan = deep_clone(self.spooc)
@@ -2316,6 +2319,7 @@ function CharacterTweakData:_init_shadow_spooc(presets)
 	self.shadow_spooc.is_special = true
 	self.shadow_spooc.no_asu = true
 	self.shadow_spooc.heal_cooldown = 11.25
+	self.shadow_spooc.min_obj_interrupt_dis = 800
 	table.insert(self._enemy_list, "shadow_spooc")
 end	
 
@@ -2389,6 +2393,7 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.is_special = true
 	self.shield.no_asu = true
 	self.shield.heal_cooldown = 5
+	self.shield.min_obj_interrupt_dis = 300
 	table.insert(self._enemy_list, "shield")
 end
 
@@ -2569,6 +2574,7 @@ function CharacterTweakData:_init_spring(presets)
 	self.spring.is_special = true
 	self.spring.no_asu = true
 	self.spring.no_omnia_heal = true
+	self.spring.min_obj_interrupt_dis = 300
 	table.insert(self._enemy_list, "spring")
 	
 	--Headless Titandozer Boss 
@@ -2661,6 +2667,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.no_asu = true
 	self.summers.leader = {max_nr_followers = 3}
 	self.summers.no_omnia_heal = true
+	self.summers.min_obj_interrupt_dis = 300
 	table.insert(self._enemy_list, "summers")
 end
 
@@ -2743,6 +2750,7 @@ function CharacterTweakData:_init_autumn(presets)
 	}
 	self.autumn.do_autumn_blackout = true --if true, deployables in a radius around this cop will be disabled
 	self.autumn.no_omnia_heal = true
+	self.autumn.min_obj_interrupt_dis = 300
 	table.insert(self._enemy_list, "autumn")
 end	
 
@@ -2818,6 +2826,7 @@ function CharacterTweakData:_init_taser(presets)
 	self.taser.is_special = true
 	self.taser.no_asu = true
 	self.taser.heal_cooldown = 7.5
+	self.taser.min_obj_interrupt_dis = 1000
 	table.insert(self._enemy_list, "taser")
 	
 	self.taser_summers = deep_clone(self.taser)
@@ -2860,6 +2869,7 @@ function CharacterTweakData:_init_taser(presets)
 		taunt = true
 	}
 	self.taser_summers.no_omnia_heal = true
+	self.taser_summers.min_obj_interrupt_dis = 300
 	table.insert(self._enemy_list, "taser_summers")
 	
 	self.taser_titan = deep_clone(self.taser)
@@ -3007,6 +3017,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.ecm_vulnerability = 0
 	self.boom_summers.ecm_hurts = {}		
 	self.boom_summers.no_omnia_heal = true
+	self.boom_summers.min_obj_interrupt_dis = 300
 	table.insert(self._enemy_list, "boom_summers")		
 	
 	self.boom_titan = deep_clone(self.boom)

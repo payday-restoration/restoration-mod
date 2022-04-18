@@ -9,7 +9,8 @@ local mvec3_set_z = mvector3.set_z
 local math_abs = math.abs
 local tmp_vec = Vector3()
 
--- Boss should basically always be in shooting action, from Streamlined Heisting
+
+-- Boss should basically always be in shooting action
 function BossLogicAttack._upd_aim(data, my_data, ...)
 	if BossLogicAttack._chk_use_throwable(data) then
 		return
@@ -81,16 +82,15 @@ function BossLogicAttack._chk_use_throwable(data)
 	end
 
 	local focus = data.attention_obj
-	local throw_on_sight = data.char_tweak.throwable_on_sight
-	if not focus.criminal_record or focus.is_deployable or focus.verified and not throw_on_sight then
+	if not focus.criminal_record or focus.is_deployable or (not focus.verified) == data.char_tweak.throwable_target_verified then
 		return
 	end
 
-	if not focus.last_verified_pos or not focus.identified_t or data.t - focus.identified_t < 2 then
+	if not focus.verified_t or not focus.last_verified_pos or not focus.identified_t or data.t - focus.identified_t < 2 then
 		return
 	end
 
-	if not focus.verified_t or not throw_on_sight and data.t - focus.verified_t < 2 then
+	if not focus.verified and (data.t - focus.verified_t < 2 or data.t - focus.verified_t > 8) then
 		return
 	end
 
@@ -107,9 +107,12 @@ function BossLogicAttack._chk_use_throwable(data)
 
 	local throw_from
 	if is_throwable then
-		throw_from = mov_ext:m_head_rot():y()
-		mvec3_mul(throw_from, 50)
+		throw_from = mov_ext:m_rot():y()
+		mvec3_mul(throw_from, 40)
 		mvec3_add(throw_from, mov_ext:m_head_pos())
+		local offset = mov_ext:m_rot():x()
+		mvec3_mul(offset, -20)
+		mvec3_add(throw_from, offset)
 	else
 		throw_from = data.unit:inventory():equipped_unit():position()
 	end
@@ -238,14 +241,13 @@ function BossLogicAttack._upd_combat_movement(data, my_data)
 			return
 		end
 
-		local enemy_dis = enemy_visible and focus_enemy.dis or focus_enemy.verified_dis
-		local run_dist = (enemy_visible and weapon_range.optimal or weapon_range.close) * 0.5
 		local change_speed
-
+		local enemy_dis = enemy_visible and focus_enemy.dis or focus_enemy.verified_dis
+		local run_dist = enemy_visible and weapon_range.optimal or weapon_range.close
 		if current_haste == "run" then
-			change_speed = enemy_dis < run_dist and "walk"
+			change_speed = enemy_dis < run_dist * 0.5 and "walk"
 		else
-			change_speed = run_dist <= enemy_dis and "run"
+			change_speed = enemy_dis > run_dist and "run"
 		end
 
 		if not change_speed then
@@ -282,3 +284,39 @@ function BossLogicAttack._upd_combat_movement(data, my_data)
 		end
 	end
 end
+
+
+-- Update logic every frame
+function BossLogicAttack.update(data)
+	local my_data = data.internal_data
+
+	if my_data.has_old_action then
+		CopLogicAttack._upd_stop_old_action(data, my_data)
+		return
+	end
+
+	if CopLogicAttack._chk_exit_non_walkable_area(data) or CopLogicIdle._chk_relocate(data) then
+		return
+	end
+
+	local focus_enemy = data.attention_obj
+	if not focus_enemy or focus_enemy.reaction < AIAttentionObject.REACT_AIM then
+		BossLogicAttack._upd_enemy_detection(data, true)
+		return
+	end
+
+	BossLogicAttack._process_pathing_results(data, my_data)
+
+	if focus_enemy and AIAttentionObject.REACT_COMBAT <= focus_enemy.reaction then
+		BossLogicAttack._upd_combat_movement(data, my_data)
+	else
+		BossLogicAttack._cancel_chase_attempt(data, my_data)
+	end
+
+	if not data.logic.action_taken then
+		BossLogicAttack._chk_start_action_move_out_of_the_way(data, my_data)
+	end
+end
+
+function BossLogicAttack.queued_update() end
+function BossLogicAttack.queue_update() end

@@ -57,14 +57,11 @@ function CopLogicBase._create_detected_attention_object_data(...)
 	return data
 end
 
-
--- Make important enemies more reactive
-local queue_task_original = CopLogicBase.queue_task
-function CopLogicBase.queue_task(internal_data, id, func, data, exec_t, asap, ...)
-	if asap and exec_t and data.important then
-		exec_t = math.min(exec_t, data.t + 0.1)
+-- Remove follow unit as soon as it dies, not just after the body despawned
+function CopLogicBase.on_objective_unit_damaged(data, unit, attacker_unit)
+	if unit:character_damage()._dead then
+		data.objective_failed_clbk(data.unit, data.objective)
 	end
-	return queue_task_original(internal_data, id, func, data, exec_t, asap, ...)
 end
 
 -- Make shield_cover tactics stick closer to their shield tactics providers
@@ -139,7 +136,8 @@ function CopLogicBase.chk_start_action_dodge(data, reason)
 			mvec3_neg(dodge_dir)
 		end
 	else
-		mvector3.random_orthogonal(dodge_dir, math.UP)
+		mvector3.set(dodge_dir, math.UP)
+		mvector3.random_orthogonal(dodge_dir)
 	end
 
 	local dis
@@ -480,4 +478,27 @@ function CopLogicBase.chk_am_i_aimed_at(data, attention_obj, max_dot)
 	mvec3_dir(enemy_vec, attention_obj.m_head_pos, data.unit:movement():m_com())
 
 	return max_dot < mvec3_dot(enemy_vec, enemy_look_dir)
+end
+
+
+-- Check for minimum objective interruption distance
+local is_obstructed_original = CopLogicBase.is_obstructed
+function CopLogicBase.is_obstructed(data, objective, strictness, attention, ...)
+	local min_obj_interrupt_dis = data.char_tweak.min_obj_interrupt_dis
+	if not min_obj_interrupt_dis or not objective or not objective.interrupt_dis or objective.interrupt_dis < 0 then
+		return is_obstructed_original(data, objective, strictness, attention, ...)
+	end
+
+	attention = attention or data.attention_obj
+	if not attention or not attention.verified then
+		-- This is an additional multiplier, is_obstructed already halves when not visible, but for larger ranges thats not enough
+		min_obj_interrupt_dis = min_obj_interrupt_dis * 0.25
+	end
+
+	local interrupt_dis = objective.interrupt_dis
+	objective.interrupt_dis = math.max(interrupt_dis, min_obj_interrupt_dis)
+	local allow_trans, obj_failed = is_obstructed_original(data, objective, strictness, attention, ...)
+	objective.interrupt_dis = interrupt_dis
+
+	return allow_trans, obj_failed
 end

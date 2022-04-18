@@ -2,8 +2,9 @@
 <unit type="wpn" slot="13">
 	<object file="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" />
   <dependencies>
- 	<depends_on effect="effects/particles/weapons/shotgun/muzzleflash_3dp" />
-	<depends_on bnk="soundbanks/weapon_m60" />
+		<depends_on effect="effects/particles/weapons/rifle/muzzleflash_3dp" />
+		<depends_on effect="effects/particles/weapons/sniper_trail" />
+		<depends_on bnk="soundbanks/weapon_hk23e"/>
   </dependencies>
   <extensions>
   	<extension name="unit_data" class="ScriptUnitData" />
@@ -11,9 +12,9 @@
 		<var name="name_id" value="hk21_bravo_npc" />
     </extension>
   <extension name="damage" class="UnitDamage" />
-  </extensions>
+  </extensions> 
   <sounds>
-    <soundsource name="root" source="rp_wpn_npc_rpk" />
-    <default_soundsource source="rp_wpn_npc_rpk" />
+  	<soundsource name="root" source="rp_m4" />
+  	<default_soundsource source="rp_m4" />
   </sounds>
 </unit>

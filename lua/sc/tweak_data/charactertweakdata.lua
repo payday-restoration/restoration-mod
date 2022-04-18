@@ -2986,6 +2986,7 @@ function CharacterTweakData:_init_boom(presets)
 	table.insert(self._enemy_list, "boom")
 	
 	self.boom_summers = deep_clone(self.boom)
+	self.boom_summers.flammable = false
 	self.boom_summers.use_animation_on_fire_damage = false
 	self.boom_summers.damage.explosion_damage_mul = 0.25
 	self.boom_summers.damage.fire_damage_mul = 0.25

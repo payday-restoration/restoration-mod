@@ -14,7 +14,7 @@
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_neck/ene_acc_bulldozer_neck" />
 		<depends_on unit="units/payday2/characters/ene_acc_bulldozer_stomache/ene_acc_bulldozer_stomache" />
 		<depends_on unit="units/pd2_dlc_bex/characters/ene_bulldozer_3/debris/ene_acc_bulldozer_throat/ene_acc_bulldozer_throat" />	
-		<depends_on unit="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" />
+		<depends_on unit="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" />
 	</dependencies>
 
 	<extensions>
@@ -22,7 +22,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="tank" />
-			<var name="_default_weapon_id" value="m60" />
+			<var name="_default_weapon_id" value="hk21" />
 			<var name="_stats_name" value="tank_skull" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />

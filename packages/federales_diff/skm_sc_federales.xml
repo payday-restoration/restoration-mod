@@ -16,18 +16,17 @@
 	<unit_obj			path="units/pd2_dlc_bex/weapons/wpn_npc_hajk/wpn_npc_hajk" />	
 	<cooked_physics		path="units/pd2_dlc_bex/weapons/wpn_npc_hajk/wpn_npc_hajk" />
 
-	<!--NPC M60-->
-	<cooked_physics		path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<material_config	path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<model				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<object				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<unit				path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>	
-	<sequence_manager	path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60" force="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_df" force="false"/>
-	<texture			path="units/payday2/weapons/wpn_npc_m60/wpn_npc_m60_nm" force="false"/>	
+	<!--NPC HK21-->
+	<cooked_physics		path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<material_config	path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<model				path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<object				path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>	
+	<sequence_manager	path="units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc" force="false"/>
+	<texture			path="units/payday2/weapons/wpn_npc_hk21_sc/hk21_sc_df" force="false"/>
 	
-	<!--bravo M60-->
-	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_m60_bravo/wpn_npc_m60_bravo"  load="true"/>
+	<!--bravo HK21-->
+	<unit				path="units/pd2_mod_bravo/weapons/wpn_npc_hk21_sc_bravo/wpn_npc_hk21_sc_bravo"  load="true"/>
 
 	<!--UZI Suzie i hate animations-->
 	<unit_mat			path="units/pd2_dlc_bex/weapons/wpn_npc_uzi/wpn_npc_uzi" />
@@ -65,6 +64,7 @@
 	<texture			path="units/payday2/characters/shared_textures/grenadier_body_nm" force="false"/>		
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" />
+    <texture			path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />	
 	
 	<!--Fixed Beat Cops-->
 	<!--Glock-->	

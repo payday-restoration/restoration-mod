@@ -1392,23 +1392,31 @@ function WeaponTweakData:_init_data_m249_npc()
 	--HK21
 	self.hk21_sc_npc = deep_clone(self.m249_npc)
 	self.hk21_sc_npc.sounds.prefix = "hk23e_npc"
-	self.hk21_sc_npc.use_data.selection_index = 2
+	--[[self.hk21_sc_npc.use_data.selection_index = 2
 	self.hk21_sc_npc.DAMAGE = 3
 	self.hk21_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 	self.hk21_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-	self.hk21_sc_npc.CLIP_AMMO_MAX = 100
+    self.hk21_sc_npc.CLIP_AMMO_MAX = 100
 	self.hk21_sc_npc.NR_CLIPS_MAX = 5
 	self.hk21_sc_npc.auto.fire_rate = 0.075
 	self.hk21_sc_npc.hold = "rifle"
 	self.hk21_sc_npc.alert_size = 2500
 	self.hk21_sc_npc.suppression = 2.4
-	self.hk21_sc_npc.usage = "is_lmg"
+	self.hk21_sc_npc.usage = "is_lmg"]]--
 	
 	--HK23
 	self.hk23_sc_npc = deep_clone(self.hk21_sc_npc)	
+	self.hk23_sc_npc.use_data.selection_index = 2
 	self.hk23_sc_npc.DAMAGE = 2
+	self.hk23_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+	self.hk23_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 	self.hk23_sc_npc.auto.fire_rate = 0.08
 	self.hk23_sc_npc.CLIP_AMMO_MAX = 50
+	self.hk23_sc_npc.NR_CLIPS_MAX = 5
+	self.hk23_sc_npc.auto.fire_rate = 0.075
+	self.hk23_sc_npc.hold = "rifle"
+	self.hk23_sc_npc.alert_size = 2500
+	self.hk23_sc_npc.suppression = 2.4
 	
 	--M60
 	self.m60_npc = deep_clone(self.m249_npc)	
@@ -1423,6 +1431,11 @@ function WeaponTweakData:_init_data_m249_npc()
 	self.m60_bravo_npc = deep_clone(self.hk23_sc_npc)
 	self.m60_bravo_npc.sounds.prefix = "m60_npc"
 	self.m60_bravo_npc.CLIP_AMMO_MAX = 200
+	
+	--Federales Bravo HK21
+	self.hk21_bravo_npc = deep_clone(self.hk23_sc_npc)
+	self.hk21_bravo_npc.sounds.prefix = "hk23e_npc"
+	self.hk21_bravo_npc.CLIP_AMMO_MAX = 200
 	
 	--M60 Omnia
 	self.m60_om_npc = deep_clone(self.m249_npc)	

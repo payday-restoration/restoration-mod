@@ -114,14 +114,6 @@ function CopLogicAttack._check_aim_shoot(data, my_data, focus_enemy, verified, n
 	return aim, shoot, expected_pos
 end
 
-
--- Prevent tasers from switching target while tasing
-local _chk_request_action_turn_to_enemy_original = CopLogicAttack._chk_request_action_turn_to_enemy
-function CopLogicAttack._chk_request_action_turn_to_enemy(data, my_data, ...)
-	return not my_data.tasing and _chk_request_action_turn_to_enemy_original(data, my_data, ...)
-end
-
-
 --chatter below
 local math_random = math.random
 

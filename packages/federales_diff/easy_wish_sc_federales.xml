@@ -51,7 +51,8 @@
 	<texture			path="units/pd2_dlc_bex/characters/shared_textures/material_body_df" force="false"/>	
 	<texture			path="units/payday2/characters/shared_textures/material_body_nm" force="false"/>	
 	<df_nm				path="units/pd2_dlc_bex/characters/shared_textures/helmets_city_atlas" />
-	<texture			path="units/pd2_dlc_bex/characters/shared_textures/mask_city_df" />		
+	<texture			path="units/pd2_dlc_bex/characters/shared_textures/mask_city_df" />	
+	<texture			path="units/pd2_dlc_gitgud/characters/shared_textures/helmets_shotgun_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_head_policia_federale_df" />
 	<texture			path="units/pd2_dlc_bex/characters/ene_swat_medic_policia_federale/ene_murkywater_medic_body_policia_federale_df" />
 	

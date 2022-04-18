@@ -660,8 +660,8 @@ function CharacterTweakData:_init_medic(presets)
 	table.insert(self._enemy_list, "medic")
 	
 	self.medic_summers = deep_clone(self.medic)
-	self.medic_summers.HEALTH_INIT = 60
-	self.medic_summers.headshot_dmg_mul = 1.25
+	self.medic_summers.HEALTH_INIT = 120
+	self.medic_summers.headshot_dmg_mul = 1.5
 	self.medic_summers.tags = {"medic_summers_special", "medic_summers", "custom", "special"}
 	self.medic_summers.ignore_medic_revive_animation = false
 	self.medic_summers.surrender = nil
@@ -2610,7 +2610,7 @@ function CharacterTweakData:_init_summers(presets)
 	self.summers.weapon = deep_clone(presets.weapon.normal)
 	self.summers.melee_weapon_dmg_multiplier = 1
 	self.summers.detection = presets.detection.normal
-	self.summers.HEALTH_INIT = 72
+	self.summers.HEALTH_INIT = 144
 	self.summers.flammable = false
 	self.summers.use_animation_on_fire_damage = false
 	self.summers.damage.bullet_damage_mul = 0.75
@@ -2821,7 +2821,7 @@ function CharacterTweakData:_init_taser(presets)
 	table.insert(self._enemy_list, "taser")
 	
 	self.taser_summers = deep_clone(self.taser)
-	self.taser_summers.HEALTH_INIT = 60
+	self.taser_summers.HEALTH_INIT = 120
 	self.taser_summers.headshot_dmg_mul = 1.5
 	self.taser_summers.tags = {"female_enemy","taser", "medic_summers", "custom", "special"}
 	self.taser_summers.ignore_medic_revive_animation = false
@@ -2988,7 +2988,7 @@ function CharacterTweakData:_init_boom(presets)
 	self.boom_summers.custom_voicework = nil
 	self.boom_summers.die_sound_event = "mga_death_scream"
 	self.boom_summers.use_radio = "dsp_radio_russian"
-	self.boom_summers.HEALTH_INIT = 60
+	self.boom_summers.HEALTH_INIT = 120
 	self.boom_summers.headshot_dmg_mul = 1.5
 	self.boom_summers.tags = {"female_enemy", "medic_summers", "custom", "special"}
 	self.boom_summers.ignore_medic_revive_animation = false
@@ -20848,7 +20848,7 @@ function CharacterTweakData:_create_table_structure()
 		"m4_boom",
 		"hk21_sc",
 		"mp5_zeal",
-		"p90_summer",
+		"shotgun_summer",
 		"m16_summer",
 		"mp5_cloak",
 		"s552_sc",
@@ -20929,7 +20929,7 @@ function CharacterTweakData:_create_table_structure()
 		Idstring("units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom"),
 		Idstring("units/payday2/weapons/wpn_npc_hk21_sc/wpn_npc_hk21_sc"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
-		Idstring("units/payday2/weapons/wpn_npc_mp5/wpn_npc_mp5"),
+		Idstring("units/payday2/weapons/wpn_npc_r870/wpn_npc_r870"),
 		Idstring("units/payday2/weapons/wpn_npc_m4/wpn_npc_m4"),
 		Idstring("units/payday2/weapons/wpn_npc_mp5_cloak/wpn_npc_mp5_cloak"),
 		Idstring("units/payday2/weapons/wpn_npc_s552_sc/wpn_npc_s552_sc"),

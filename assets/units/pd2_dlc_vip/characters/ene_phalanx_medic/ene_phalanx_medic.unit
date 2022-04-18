@@ -15,7 +15,7 @@
 		<extension name="base" class="CopBase" >
 			<var name="can_be_marked" value="true" />
 			<var name="_tweak_table" value="medic_summers" />
-			<var name="_default_weapon_id" value="akmsu_smg" />
+			<var name="_default_weapon_id" value="shotgun_summer" />
 		</extension>
 		<extension name="inventory" class="CopInventory" />
 		<extension name="brain" class="CopBrain" />

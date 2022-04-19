@@ -309,6 +309,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		spread = -1,
 		concealment = 1
 	}
+	self.parts.wpn_fps_upg_ns_ass_smg_stubby.custom_stats = {
+		falloff_start_mult = 0.95,
+		falloff_end_mult = 0.95
+	}
 		
 	--The Tank Compensator	
 	self.parts.wpn_fps_upg_ns_ass_smg_tank.pcs = {
@@ -322,6 +326,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_nozzles", "resmod_nozzles", functi
 		value = 5,
 		spread = 2,
 		concealment = -2
+	}
+	self.parts.wpn_fps_upg_ns_ass_smg_tank.custom_stats = {
+		falloff_start_mult = 1.1,
+		falloff_end_mult = 1.1
 	}
 
 	--Shark Teeth
@@ -8933,7 +8941,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sub2000", "resmod_sub2000", functi
 		alert_size = -1
 	}
 	self.parts.wpn_fps_ass_sub2000_fg_suppressed.perks = {"silencer"}
-	
+
+
+	self.parts.wpn_fps_ass_sub2000_body_gen1.adds = {
+			"wpn_fps_ass_sub2000_dh_standard",
+			"wpn_fps_ass_sub2000_o_back"
+		}
+	self.parts.wpn_fps_ass_sub2000_body_gen2.adds = {
+			"wpn_fps_ass_sub2000_dh_standard",
+			"wpn_fps_ass_sub2000_o_back"
+		}
+
+
 end)
 
 --WA2000
@@ -12507,12 +12526,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_stech", "resmod_stech", function(s
 		recoil = 1,
 		concealment = -2
 	}
+	self.parts.wpn_upg_ak_s_psl.custom_stats = {
+		ads_speed_mult = 1.1
+	}
 	
-	self.wpn_fps_pis_stech.wpn_fps_pis_g18c_co_1 = {
+	self.wpn_fps_pis_stech.override.wpn_fps_pis_g18c_co_1 = {
 		a_obj = "a_ns",
 		parent = "barrel"
 	}
-	self.wpn_fps_pis_stech.wpn_fps_pis_g18c_co_comp_2 = {
+	self.wpn_fps_pis_stech.override.wpn_fps_pis_g18c_co_comp_2 = {
 		a_obj = "a_ns",
 		parent = "barrel"
 	}				
@@ -13695,8 +13717,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function
 		
 	table.insert(self.wpn_fps_pis_type54.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_pis_type54_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
-	table.insert(self.wpn_fps_pis_type54.uses_parts, "wpn_fps_pis_g18c_co_1")
-	table.insert(self.wpn_fps_pis_type54_npc.uses_parts, "wpn_fps_pis_g18c_co_1")		
+	table.insert(self.wpn_fps_pis_type54.uses_parts, "wpn_fps_pis_1911_co_1")
+	table.insert(self.wpn_fps_pis_type54_npc.uses_parts, "wpn_fps_pis_1911_co_1")		
 	
 	self.wpn_fps_pis_type54_npc.override = deep_clone(self.wpn_fps_pis_type54.override)
 	self.wpn_fps_pis_type54_npc.uses_parts = deep_clone(self.wpn_fps_pis_type54.uses_parts)		

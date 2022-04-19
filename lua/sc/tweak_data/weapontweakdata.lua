@@ -3711,6 +3711,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.maxim9.AMMO_MAX = 90
 				self.maxim9.kick = self.stat_info.kick_tables.even_recoil
 				self.maxim9.supported = true
+				self.maxim9.ads_speed = 0.120
+				self.maxim9.damage_falloff = {
+					start_dist = 2100,
+					end_dist = 4200,
+					min_mult = 0.3333
+				}
 				self.maxim9.stats = {
 					damage = 18,
 					spread = 86,
@@ -3742,6 +3748,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.lemming.can_shoot_through_wall = false
 				self.lemming.armor_piercing_chance = 1
 				self.lemming.supported = true
+				self.lemming.ads_speed = 0.120
 				self.lemming.damage_falloff = {
 					start_dist = 2600,
 					end_dist = 4700,
@@ -3762,85 +3769,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.lemming.stats_modifiers = nil
-	
-			--Igor
-				self.stech.fire_mode_data.fire_rate = 0.08
-				self.stech.AMMO_MAX = 75
-				self.stech.kick = self.stat_info.kick_tables.moderate_kick
-				self.stech.CLIP_AMMO_MAX = 20
-				self.stech.supported = true
-				self.stech.stats = {
-					damage = 24,
-					spread = 81,
-					recoil = 89,
-					spread_moving = 9,
-					zoom = 1,
-					concealment = 26,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.stech.stats_modifiers = nil
-				self.stech.panic_suppression_chance = 0.05
-			
-			--Gruber Kurz (PPK)
-				self.ppk.AMMO_MAX = 75
-				self.ppk.CLIP_AMMO_MAX = 7
-				self.ppk.fire_mode_data.fire_rate = 0.08571428571
-				self.ppk.single.fire_rate = 0.08571428571
-				self.ppk.kick = self.stat_info.kick_tables.right_recoil
-				self.ppk.supported = true
-				self.ppk.stats = {
-					damage = 24,
-					spread = 96,
-					recoil = 95,
-					spread_moving = 9,
-					zoom = 1,
-					concealment = 31,
-					suppression = 9,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.ppk.stats_modifiers = nil
-				self.ppk.timers.reload_not_empty = 1.45
-				self.ppk.timers.reload_empty = 2.2	
-				self.ppk.panic_suppression_chance = 0.05
-				self.ppk.reload_speed_multiplier = 1.35
-
-			--Chimano Compact (Glock 26)
-				self.g26.CLIP_AMMO_MAX = 10
-				self.g26.AMMO_MAX = 75
-				self.g26.kick = self.stat_info.kick_tables.even_recoil
-				self.g26.fire_mode_data.fire_rate = 0.08571428571
-				self.g26.single.fire_rate = 0.08571428571
-				self.g26.supported = true
-				self.g26.damage_falloff = {
-					start_dist = 1200,
-					end_dist = 3000,
-					min_mult = 0.3
-				}
-				self.g26.stats = {
-					damage = 24,
-					spread = 96,
-					recoil = 95,
-					spread_moving = 9,
-					zoom = 1,
-					concealment = 32,
-					suppression = 9,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.g26.stats_modifiers = nil
-				self.g26.panic_suppression_chance = 0.05
 
 			--Stryk 18c (Glock 18)
 				self.glock_18c.desc_id = "bm_menu_sc_glock18c_desc"
@@ -3850,9 +3778,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.glock_18c.AMMO_MAX = 90
 				self.glock_18c.kick = self.stat_info.kick_tables.left_recoil
 				self.glock_18c.supported = true
+				self.glock_18c.ads_speed = 0.100
 				self.glock_18c.damage_falloff = {
-					start_dist = 1800,
-					end_dist = 3500,
+					start_dist = 1500,
+					end_dist = 3200,
 					min_mult = 0.3
 				}
 				self.glock_18c.stats = {
@@ -3878,6 +3807,12 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.czech.fire_mode_data.fire_rate = 0.06
 				self.czech.kick = self.stat_info.kick_tables.even_recoil
 				self.czech.supported = true
+				self.czech.ads_speed = 0.100
+				self.czech.damage_falloff = {
+					start_dist = 1700,
+					end_dist = 3300,
+					min_mult = 0.3
+				}
 				self.czech.stats = {
 					damage = 20,
 					spread = 59,
@@ -3900,6 +3835,98 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					unequip = 0.5,
 					equip = 0.5
 				}
+	
+			--Igor
+				self.stech.fire_mode_data.fire_rate = 0.08
+				self.stech.AMMO_MAX = 75
+				self.stech.kick = self.stat_info.kick_tables.moderate_kick
+				self.stech.CLIP_AMMO_MAX = 20
+				self.stech.supported = true
+				self.stech.ads_speed = 0.100
+				self.stech.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 3800,
+					min_mult = 0.25
+				}
+				self.stech.stats = {
+					damage = 24,
+					spread = 81,
+					recoil = 89,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 26,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.stech.stats_modifiers = nil
+				self.stech.panic_suppression_chance = 0.05
+			
+			--Gruber Kurz (PPK)
+				self.ppk.AMMO_MAX = 75
+				self.ppk.CLIP_AMMO_MAX = 7
+				self.ppk.fire_mode_data.fire_rate = 0.08571428571
+				self.ppk.single.fire_rate = 0.08571428571
+				self.ppk.kick = self.stat_info.kick_tables.right_recoil
+				self.ppk.supported = true
+				self.pkk.ads_speed = 0.080
+				self.pkk.damage_falloff = {
+					start_dist = 1100,
+					end_dist = 2900,
+					min_mult = 0.25
+				}
+				self.ppk.stats = {
+					damage = 24,
+					spread = 51,
+					recoil = 95,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 31,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.ppk.stats_modifiers = nil
+				self.ppk.timers.reload_not_empty = 1.45
+				self.ppk.timers.reload_empty = 2.2	
+				self.ppk.panic_suppression_chance = 0.05
+				self.ppk.reload_speed_multiplier = 1.35
+
+			--Chimano Compact (Glock 26)
+				self.g26.CLIP_AMMO_MAX = 10
+				self.g26.AMMO_MAX = 75
+				self.g26.kick = self.stat_info.kick_tables.even_recoil
+				self.g26.fire_mode_data.fire_rate = 0.08571428571
+				self.g26.single.fire_rate = 0.08571428571
+				self.g26.supported = true
+				self.g26.ads_speed = 0.080
+				self.g26.damage_falloff = {
+					start_dist = 1200,
+					end_dist = 3000,
+					min_mult = 0.25
+				}
+				self.g26.stats = {
+					damage = 24,
+					spread = 53,
+					recoil = 95,
+					spread_moving = 9,
+					zoom = 1,
+					concealment = 32,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.g26.stats_modifiers = nil
+				self.g26.panic_suppression_chance = 0.05
 
 			--M13
 				self.legacy.fire_mode_data.fire_rate = 0.08571428571
@@ -3908,9 +3935,15 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.legacy.AMMO_MAX = 75
 				self.legacy.kick = self.stat_info.kick_tables.left_recoil
 				self.legacy.supported = true
+				self.legacy.ads_speed = 0.100
+				self.legacy.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3300,
+					min_mult = 0.25
+				}
 				self.legacy.stats = {
 					damage = 24,
-					spread = 91,
+					spread = 56,
 					recoil = 92,
 					spread_moving = 9,
 					zoom = 1,
@@ -3931,16 +3964,52 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}		
 				self.legacy.panic_suppression_chance = 0.05
 
+			--Holt 9mm (Hudson H9)
+				self.holt.fire_mode_data.fire_rate = 0.08571428571
+				self.holt.single.fire_rate = 0.08571428571
+				self.holt.CLIP_AMMO_MAX = 15
+				self.holt.AMMO_MAX = 75
+				self.holt.kick = self.stat_info.kick_tables.even_recoil
+				self.holt.supported = true
+				self.holt.ads_speed = 0.100
+				self.holt.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3300,
+					min_mult = 0.25
+				}
+				self.holt.stats = {
+					damage = 24,
+					spread = 57,
+					recoil = 92,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 29,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.holt.stats_modifiers = nil
+				self.holt.panic_suppression_chance = 0.05
+
 			--Chimano 88 (Glock 17)
 				self.glock_17.desc_id = "bm_menu_sc_glock17_desc"
 				self.glock_17.fire_mode_data.fire_rate = 0.08571428571
 				self.glock_17.single.fire_rate = 0.08571428571
-				self.glock_17.AMMO_MAX = 90
+				self.glock_17.AMMO_MAX = 75
 				self.glock_17.CLIP_AMMO_MAX = 18
 				self.glock_17.kick = self.stat_info.kick_tables.even_recoil
 				self.glock_17.supported = true
+				self.glock_17.ads_speed = 0.100
+				self.glock_17.damage_falloff = {
+					start_dist = 1500,
+					end_dist = 3500,
+					min_mult = 0.25
+				}
 				self.glock_17.stats = {
-					damage = 20,
+					damage = 24,
 					spread = 59,
 					recoil = 89,
 					spread_moving = 9,
@@ -3958,13 +4027,19 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Bernetti 9 (M92FS)
 				self.b92fs.CLIP_AMMO_MAX = 15
-				self.b92fs.AMMO_MAX = 90
+				self.b92fs.AMMO_MAX = 75
 				self.b92fs.fire_mode_data.fire_rate = 0.08571428571
 				self.b92fs.single.fire_rate = 0.08571428571
 				self.b92fs.kick = self.stat_info.kick_tables.even_recoil
 				self.b92fs.supported = true
+				self.b92fs.ads_speed = 0.100
+				self.b92fs.damage_falloff = {
+					start_dist = 1700,
+					end_dist = 3700,
+					min_mult = 0.25
+				}
 				self.b92fs.stats = {
-					damage = 20,
+					damage = 24,
 					spread = 61,
 					recoil = 86,
 					spread_moving = 5,
@@ -3979,36 +4054,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.b92fs.stats_modifiers = nil
 				self.b92fs.panic_suppression_chance = 0.05
-
-			--Holt 9mm (Hudson H9)
-				self.holt.fire_mode_data.fire_rate = 0.08571428571
-				self.holt.single.fire_rate = 0.08571428571
-				self.holt.CLIP_AMMO_MAX = 15
-				self.holt.AMMO_MAX = 75
-				self.holt.kick = self.stat_info.kick_tables.even_recoil
-				self.holt.supported = true
-				self.holt.ads_speed = 0.100
-				self.holt.damage_falloff = {
-					start_dist = 1800,
-					end_dist = 4000,
-					min_mult = 0.25
-				}
-				self.holt.stats = {
-					damage = 24,
-					spread = 58,
-					recoil = 92,
-					spread_moving = 5,
-					zoom = 1,
-					concealment = 29,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.holt.stats_modifiers = nil
-				self.holt.panic_suppression_chance = 0.05
 
 			--Parabellum (Luger)
 				self.breech.timers = {
@@ -4026,7 +4071,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.ads_speed = 0.080
 				self.breech.damage_falloff = {
 					start_dist = 1800,
-					end_dist = 4000,
+					end_dist = 4400,
 					min_mult = 0.25
 				}
 				self.breech.stats = {

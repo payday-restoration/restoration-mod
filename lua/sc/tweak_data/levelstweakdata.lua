@@ -280,7 +280,6 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	
 	self.chew.player_style = "loud_suit"
-	self.chew.package = {"packages/lvl_chew", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 	
 	self.pbr2.package = {"packages/narr_jerry2", "packages/miscassets"}
 	self.pbr2.player_style = "loud_suit"
@@ -367,7 +366,10 @@ Hooks:PostHook( LevelsTweakData, "init", "SC_levels", function(self)
 	
 	--///GANGSTER VOICEOVER\\\--
 	self.short2_stage1.package = {"packages/job_short2_stage1", "levels/narratives/dentist/mia/stage2/world_sounds"}
+	self.chew.package = {"packages/lvl_chew", "levels/narratives/e_welcome_to_the_jungle/stage_1/world_sounds"}
 	self.nightclub.package = {"packages/vlad_nightclub", "levels/narratives/dentist/mia/stage2/world_sounds"}
+	self.peta.package = {"packages/narr_peta", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
+	self.peta2.package = {"packages/narr_peta2", "levels/narratives/h_alex_must_die/stage_1/world_sounds"}
 	
 	--//CHRISTMAS HEISTS\\--
 	

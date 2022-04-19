@@ -1393,23 +1393,31 @@ local job = Global.level_data and Global.level_data.level_id
 		--HK21
 		self.hk21_sc_npc = deep_clone(self.m249_npc)
 		self.hk21_sc_npc.sounds.prefix = "hk23e_npc"
-		self.hk21_sc_npc.use_data.selection_index = 2
+		--[[self.hk21_sc_npc.use_data.selection_index = 2
 		self.hk21_sc_npc.DAMAGE = 3
 		self.hk21_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
 		self.hk21_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
-		self.hk21_sc_npc.CLIP_AMMO_MAX = 100
+	    self.hk21_sc_npc.CLIP_AMMO_MAX = 100
 		self.hk21_sc_npc.NR_CLIPS_MAX = 5
 		self.hk21_sc_npc.auto.fire_rate = 0.075
 		self.hk21_sc_npc.hold = "rifle"
 		self.hk21_sc_npc.alert_size = 2500
 		self.hk21_sc_npc.suppression = 2.4
-		self.hk21_sc_npc.usage = "is_lmg"
+		self.hk21_sc_npc.usage = "is_lmg"]]--
 		
 		--HK23
 		self.hk23_sc_npc = deep_clone(self.hk21_sc_npc)	
+		self.hk23_sc_npc.use_data.selection_index = 2
 		self.hk23_sc_npc.DAMAGE = 2
+		self.hk23_sc_npc.muzzleflash = "effects/payday2/particles/weapons/big_762_auto"
+		self.hk23_sc_npc.shell_ejection = "effects/payday2/particles/weapons/shells/shell_556_lmg"
 		self.hk23_sc_npc.auto.fire_rate = 0.08
 		self.hk23_sc_npc.CLIP_AMMO_MAX = 50
+		self.hk23_sc_npc.NR_CLIPS_MAX = 5
+		self.hk23_sc_npc.auto.fire_rate = 0.075
+		self.hk23_sc_npc.hold = "rifle"
+		self.hk23_sc_npc.alert_size = 2500
+		self.hk23_sc_npc.suppression = 2.4
 		
 		--M60
 		self.m60_npc = deep_clone(self.m249_npc)	
@@ -1424,6 +1432,11 @@ local job = Global.level_data and Global.level_data.level_id
 		self.m60_bravo_npc = deep_clone(self.hk23_sc_npc)
 		self.m60_bravo_npc.sounds.prefix = "m60_npc"
 		self.m60_bravo_npc.CLIP_AMMO_MAX = 200
+		
+		--Federales Bravo HK21
+		self.hk21_bravo_npc = deep_clone(self.hk23_sc_npc)
+		self.hk21_bravo_npc.sounds.prefix = "hk23e_npc"
+		self.hk21_bravo_npc.CLIP_AMMO_MAX = 200
 		
 		--M60 Omnia
 		self.m60_om_npc = deep_clone(self.m249_npc)	
@@ -1730,7 +1743,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.g36_crew.suppression = 2.2
 		self.g36_crew.FIRE_MODE = "auto"
 	end
-
+	
 	function WeaponTweakData:_init_data_m14_crew()
 		self.m14_crew.categories = clone(self.new_m14.categories)
 		self.m14_crew.sounds.prefix = "m14_npc"
@@ -2248,7 +2261,7 @@ local job = Global.level_data and Global.level_data.level_id
 		self.msr_crew.suppression = 3.4
 		self.msr_crew.FIRE_MODE = "single"
 	end
-
+	
 	function WeaponTweakData:_init_data_r93_crew()
 		self.r93_crew.categories = clone(self.r93.categories)
 		self.r93_crew.sounds.prefix = "blazer_npc"

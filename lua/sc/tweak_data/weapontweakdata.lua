@@ -3872,8 +3872,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ppk.single.fire_rate = 0.08571428571
 				self.ppk.kick = self.stat_info.kick_tables.right_recoil
 				self.ppk.supported = true
-				self.pkk.ads_speed = 0.080
-				self.pkk.damage_falloff = {
+				self.ppk.ads_speed = 0.080
+				self.ppk.damage_falloff = {
 					start_dist = 1100,
 					end_dist = 2900,
 					min_mult = 0.25

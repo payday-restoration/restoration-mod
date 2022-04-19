@@ -3884,7 +3884,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 95,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 31,
+					concealment = 32,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4034,7 +4034,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.b92fs.supported = true
 				self.b92fs.ads_speed = 0.100
 				self.b92fs.damage_falloff = {
-					start_dist = 1700,
+					start_dist = 1600,
 					end_dist = 3700,
 					min_mult = 0.25
 				}
@@ -4055,6 +4055,67 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.b92fs.stats_modifiers = nil
 				self.b92fs.panic_suppression_chance = 0.05
 
+			--White Streak
+				self.pl14.fire_mode_data.fire_rate = 0.08571428571
+				self.pl14.single.fire_rate = 0.08571428571
+				self.pl14.CLIP_AMMO_MAX = 15
+				self.pl14.AMMO_MAX = 75
+				self.pl14.kick = self.stat_info.kick_tables.left_recoil
+				self.pl14.supported = true
+				self.pl14.ads_speed = 0.100
+				self.pl14.damage_falloff = {
+					start_dist = 1700,
+					end_dist = 4000,
+					min_mult = 0.25
+				}
+				self.pl14.stats = {
+					damage = 24,
+					spread = 91,
+					recoil = 92,
+					spread_moving = 5,
+					zoom = 1,
+					concealment = 30,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.pl14.stats_modifiers = nil
+				self.pl14.panic_suppression_chance = 0.05
+		
+			--Contractor Pistol
+				self.packrat.AMMO_MAX = 75
+				self.packrat.CLIP_AMMO_MAX = 15
+				self.packrat.fire_mode_data.fire_rate = 0.08571428571
+				self.packrat.single.fire_rate = 0.08571428571
+				self.packrat.kick = self.stat_info.kick_tables.even_recoil
+				self.packrat.panic_suppression_chance = 0.05
+				self.packrat.supported = true
+				self.packrat.ads_speed = 0.100
+				self.packrat.damage_falloff = {
+					start_dist = 1800,
+					end_dist = 4300,
+					min_mult = 0.25
+				}
+				self.packrat.stats = {
+					damage = 24,
+					spread = 91,
+					recoil = 93,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 31,
+					suppression = 9,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.packrat.stats_modifiers = nil
+				self.packrat.reload_speed_multiplier = 1.1
+
 			--Parabellum (Luger)
 				self.breech.timers = {
 					reload_not_empty = 1.55,
@@ -4070,8 +4131,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.supported = true
 				self.breech.ads_speed = 0.080
 				self.breech.damage_falloff = {
-					start_dist = 1800,
-					end_dist = 4400,
+					start_dist = 2000,
+					end_dist = 4500,
 					min_mult = 0.25
 				}
 				self.breech.stats = {
@@ -4080,7 +4141,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 93,
 					spread_moving = 9,
 					zoom = 1,
-					concealment = 31,
+					concealment = 32,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4091,6 +4152,73 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.breech.stats_modifiers = nil
 				self.breech.panic_suppression_chance = 0.05
 				self.breech.reload_speed_multiplier = 1.25
+
+			--Chimano Custom (Glock 22)
+				self.g22c.timers = {
+					reload_not_empty = 1.47,
+					reload_empty = 2.12,
+					unequip = 0.5,
+					equip = 0.35
+				}		
+				self.g22c.fire_mode_data.fire_rate = 0.08571428571
+				self.g22c.single.fire_rate = 0.08571428571
+				self.g22c.AMMO_MAX = 75
+				self.g22c.kick = self.stat_info.kick_tables.left_recoil
+				self.g22c.CLIP_AMMO_MAX = 15
+				self.g22c.supported = true
+				self.g22c.ads_speed = 0.120
+				self.g22c.damage_falloff = {
+					start_dist = 1300,
+					end_dist = 3200,
+					min_mult = 0.3
+				}
+				self.g22c.stats = {
+					damage = 30,
+					spread = 52,
+					recoil = 92,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 28,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.g22c.stats_modifiers = nil
+				self.g22c.panic_suppression_chance = 0.05
+
+			--Baby Deagle
+				self.sparrow.CLIP_AMMO_MAX = 12
+				self.sparrow.AMMO_MAX = 75
+				self.sparrow.kick = {}
+				self.sparrow.kick = self.stat_info.kick_tables.even_recoil
+				self.sparrow.fire_mode_data.fire_rate = 0.08571428571
+				self.sparrow.single.fire_rate = 0.08571428571
+				self.sparrow.supported = true
+				self.sparrow.ads_speed = 0.120
+				self.sparrow.damage_falloff = {
+					start_dist = 1600,
+					end_dist = 3500,
+					min_mult = 0.3
+				}
+				self.sparrow.stats = {
+					damage = 30,
+					spread = 54,
+					recoil = 89,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 29,
+					suppression = 8,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 100,
+					value = 1,
+					reload = 20
+				}
+				self.sparrow.stats_modifiers = nil
+				self.sparrow.panic_suppression_chance = 0.05
 
 			--Model 54--
 				self.type54.CLIP_AMMO_MAX = 9
@@ -4162,73 +4290,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.type54_underbarrel.ignore_crit_damage = false
 				self.type54_underbarrel.ignore_damage_multipliers = false
 				self.type54_underbarrel.ignore_damage_upgrades = false	
-
-			--Chimano Custom (Glock 22)
-				self.g22c.timers = {
-					reload_not_empty = 1.47,
-					reload_empty = 2.12,
-					unequip = 0.5,
-					equip = 0.35
-				}		
-				self.g22c.fire_mode_data.fire_rate = 0.08571428571
-				self.g22c.single.fire_rate = 0.08571428571
-				self.g22c.AMMO_MAX = 75
-				self.g22c.kick = self.stat_info.kick_tables.left_recoil
-				self.g22c.CLIP_AMMO_MAX = 15
-				self.g22c.supported = true
-				self.g22c.ads_speed = 0.120
-				self.g22c.damage_falloff = {
-					start_dist = 1300,
-					end_dist = 3200,
-					min_mult = 0.3
-				}
-				self.g22c.stats = {
-					damage = 30,
-					spread = 52,
-					recoil = 92,
-					spread_moving = 8,
-					zoom = 1,
-					concealment = 28,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.g22c.stats_modifiers = nil
-				self.g22c.panic_suppression_chance = 0.05
-
-			--Baby Deagle
-				self.sparrow.CLIP_AMMO_MAX = 12
-				self.sparrow.AMMO_MAX = 75
-				self.sparrow.kick = {}
-				self.sparrow.kick = self.stat_info.kick_tables.even_recoil
-				self.sparrow.fire_mode_data.fire_rate = 0.08571428571
-				self.sparrow.single.fire_rate = 0.08571428571
-				self.sparrow.supported = true
-				self.sparrow.ads_speed = 0.120
-				self.sparrow.damage_falloff = {
-					start_dist = 1600,
-					end_dist = 3500,
-					min_mult = 0.3
-				}
-				self.sparrow.stats = {
-					damage = 30,
-					spread = 54,
-					recoil = 89,
-					spread_moving = 8,
-					zoom = 1,
-					concealment = 29,
-					suppression = 8,
-					alert_size = 2,
-					extra_ammo = 101,
-					total_ammo_mod = 100,
-					value = 1,
-					reload = 20
-				}
-				self.sparrow.stats_modifiers = nil
-				self.sparrow.panic_suppression_chance = 0.05
 
 			--Signature .40 (P226)
 				self.p226.AMMO_MAX = 75
@@ -8973,31 +9034,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		}
 		self.x_sr2.stats_modifiers = nil
 		self.x_sr2.panic_suppression_chance = 0.05
-
-	--White Streak
-		self.pl14.fire_mode_data.fire_rate = 0.08571428571
-		self.pl14.single.fire_rate = 0.08571428571
-		self.pl14.CLIP_AMMO_MAX = 15
-		self.pl14.AMMO_MAX = 75
-		self.pl14.kick = self.stat_info.kick_tables.left_recoil
-		self.pl14.supported = true
-		self.pl14.stats = {
-			damage = 24,
-			spread = 91,
-			recoil = 92,
-			spread_moving = 5,
-			zoom = 1,
-			concealment = 30,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.pl14.stats_modifiers = nil
-		self.pl14.panic_suppression_chance = 0.05
-
 	--Akimbo MP5
 		self.x_mp5.fire_mode_data.fire_rate = 0.075
 		self.x_mp5.BURST_FIRE = 6
@@ -9048,30 +9084,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.x_akmsu.timers.reload_not_empty = 2.75
 		self.x_akmsu.timers.reload_empty = 3.4
 
-	--Contractor Pistol
-		self.packrat.AMMO_MAX = 90
-		self.packrat.CLIP_AMMO_MAX = 15
-		self.packrat.fire_mode_data.fire_rate = 0.08571428571
-		self.packrat.single.fire_rate = 0.08571428571
-		self.packrat.kick = self.stat_info.kick_tables.even_recoil
-		self.packrat.panic_suppression_chance = 0.05
-		self.packrat.supported = true
-		self.packrat.stats = {
-			damage = 20,
-			spread = 91,
-			recoil = 93,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 31,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.packrat.stats_modifiers = nil
-		self.packrat.reload_speed_multiplier = 1.1
 
 	--Akimbo Contractor Pistols
 		self.x_packrat.AMMO_MAX = 180
@@ -9096,8 +9108,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			reload = 20
 		}
 		self.x_packrat.stats_modifiers = nil
-
-
 
 	--Akimbo Castigo
 		self.x_chinchilla.tactical_akimbo = false
@@ -9133,731 +9143,738 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 
 
+
+
+
+
+
+
+
 	--[[     DISABLED SHIT NO ONE CARES ABOUT     ]]--
-
-	--Akimbo MP40
-	--DISABLED--
-		self.x_erma.use_data.selection_index = 5			
-		self.x_erma.CLIP_AMMO_MAX = 64
-		self.x_erma.AMMO_MAX = 150
-		self.x_erma.fire_mode_data.fire_rate = 0.10909090909
-		self.x_erma.single.fire_rate = 0.10909090909
-		self.x_erma.CAN_TOGGLE_FIREMODE = true
-		self.x_erma.kick = self.stat_info.kick_tables.moderate_kick
-		self.x_erma.supported = true
-		self.x_erma.stats = {
-			damage = 24,
-			spread = 66,
-			recoil = 79,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 26,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 5,
-			reload = 20
-		}
-		self.x_erma.stats_modifiers = nil
-		self.x_erma.panic_suppression_chance = 0.05	
-
-	--Akimbo Para
-	--DISABLED--
-		self.x_olympic.use_data.selection_index = 5			
-		self.x_olympic.CLIP_AMMO_MAX = 60
-		self.x_olympic.AMMO_MAX = 180
-		self.x_olympic.fire_mode_data.fire_rate = 0.075
-		self.x_olympic.single.fire_rate = 0.075
-		self.x_olympic.kick = self.stat_info.kick_tables.even_recoil
-		self.x_olympic.panic_suppression_chance = 0.05
-		self.x_olympic.supported = true
-		self.x_olympic.stats = {
-			damage = 20,
-			spread = 56,
-			recoil = 74,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 24,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}	
-		self.x_olympic.stats_modifiers = nil	
-
-	--Akimbo CR805
-	--DISABLED--
-		self.x_hajk.use_data.selection_index = 5				
-		self.x_hajk.fire_mode_data.fire_rate = 0.075
-		self.x_hajk.single.fire_rate = 0.075
-		self.x_hajk.CLIP_AMMO_MAX = 60
-		self.x_hajk.AMMO_MAX = 150
-		self.x_hajk.ADAPTIVE_BURST_SIZE = false						
-		self.x_hajk.BURST_FIRE = 2				
-		self.x_hajk.kick = self.stat_info.kick_tables.moderate_kick
-		self.x_hajk.panic_suppression_chance = 0.05
-		self.x_hajk.supported = true
-		self.x_hajk.stats = {
-			damage = 24,
-			spread = 71,
-			recoil = 76,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 21,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}	
-		self.x_hajk.stats_modifiers = nil
-
-	--Akimbo Kross Vertex
-	--DISABLED--	
-		self.x_polymer.use_data.selection_index = 5			
-		self.x_polymer.CLIP_AMMO_MAX = 60
-		self.x_polymer.AMMO_MAX = 120
-		self.x_polymer.fire_mode_data.fire_rate = 0.05
-		self.x_polymer.single.fire_rate = 0.05
-		self.x_polymer.BURST_FIRE = 2										
-		self.x_polymer.ADAPTIVE_BURST_SIZE = false										
-		self.x_polymer.kick = self.stat_info.kick_tables.vertical_kick
-		self.x_polymer.supported = true
-		self.x_polymer.stats = {
-			damage = 30,
-			spread = 56,
-			recoil = 68,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 24,
-			suppression = 7,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_polymer.stats_modifiers = nil
-		self.x_polymer.panic_suppression_chance = 0.05
-
-	--Akimbo Jackal
-	--DISABLED--	
-		self.x_schakal.use_data.selection_index = 5
-		self.x_schakal.fire_mode_data.fire_rate = 0.1
-		self.x_schakal.single.fire_rate = 0.1
-		self.x_schakal.AMMO_MAX = 120
-		self.x_schakal.BURST_FIRE = 2
-		self.x_schakal.ADAPTIVE_BURST_SIZE = false				
-		self.x_schakal.CLIP_AMMO_MAX = 50
-		self.x_schakal.kick = self.stat_info.kick_tables.even_recoil
-		self.x_schakal.panic_suppression_chance = 0.05
-		self.x_schakal.supported = true
-		self.x_schakal.stats = {
-			damage = 30,
-			spread = 71,
-			recoil = 74,
-			spread_moving = 14,
-			zoom = 1,
-			concealment = 23,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}	
-		self.x_schakal.stats_modifiers = nil
-
-	--Akimbo Chicago typewriter
-	--DISABLED--
-		self.x_m1928.use_data.selection_index = 5
-		self.x_m1928.fire_mode_data.fire_rate = 0.075
-		self.x_m1928.CAN_TOGGLE_FIREMODE = true
-		self.x_m1928.single.fire_rate = 0.075
-		self.x_m1928.CLIP_AMMO_MAX = 100
-		self.x_m1928.AMMO_MAX = 180
-		self.x_m1928.kick = self.stat_info.kick_tables.even_recoil
-		self.x_m1928.supported = true
-		self.x_m1928.stats = {
-			damage = 24,
-			spread = 56,
-			recoil = 72,
-			spread_moving = 6,
-			zoom = 1,
-			concealment = 22,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 9,
-			reload = 20
-		}
-		self.x_m1928.stats_modifiers = nil
-		self.x_m1928.panic_suppression_chance = 0.05	
-
-	--Akimbo Jacket's Piece
-	--DISABLED--
-		self.x_cobray.use_data.selection_index = 5		
-		self.x_cobray.timers.reload_not_empty = 2.00
-		self.x_cobray.timers.reload_empty = 2.7
-		self.x_cobray.CLIP_AMMO_MAX = 120
-		self.x_cobray.NR_CLIPS_MAX = 4
-		self.x_cobray.AMMO_MAX = 120
-		self.x_cobray.kick = self.stat_info.kick_tables.moderate_kick
-		self.x_cobray.fire_mode_data.fire_rate = 0.06
-		self.x_cobray.CAN_TOGGLE_FIREMODE = true
-		self.x_cobray.single.fire_rate = 0.06
-		self.x_cobray.supported = true
-		self.x_cobray.stats = {
-			damage = 30,
-			spread = 71,
-			recoil = 69,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 22,
-			suppression = 7,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_cobray.stats_modifiers = nil
-		self.x_cobray.panic_suppression_chance = 0.05
-
-	--Akimbo Tatonka
-	--DISABLED--
-		self.x_coal.use_data.selection_index = 5
-		self.x_coal.AMMO_MAX = 200
-		self.x_coal.CLIP_AMMO_MAX = 128
-		self.x_coal.fire_mode_data.fire_rate = 0.08823529411
-		self.x_coal.single.fire_rate = 0.08823529411
-		self.x_coal.panic_suppression_chance = 0.05
-		self.x_coal.kick = self.stat_info.kick_tables.moderate_right_kick
-		self.x_coal.supported = true
-		self.x_coal.stats = {
-			damage = 18,
-			spread = 66,
-			recoil = 78,
-			spread_moving = 9,
-			zoom = 1,
-			concealment = 25,
-			suppression = 10,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_coal.stats_modifiers = nil
-		self.x_coal.panic_suppression_chance = 0.05	
-
-	--Akimbo Spec Ops (Akimbo MP7)
-	--DISABLED--	
-		self.x_mp7.use_data.selection_index = 5		
-		self.x_mp7.CLIP_AMMO_MAX = 40
-		self.x_mp7.AMMO_MAX = 150
-		self.x_mp7.fire_mode_data.fire_rate = 0.06315789473
-		self.x_mp7.CAN_TOGGLE_FIREMODE = true
-		self.x_mp7.single.fire_rate = 0.06315789473
-		self.x_mp7.kick = self.stat_info.kick_tables.even_recoil
-		self.x_mp7.supported = true
-		self.x_mp7.stats = {
-			damage = 24,
-			spread = 51,
-			recoil = 71,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 26,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 7,
-			reload = 20
-		}
-		self.x_mp7.stats_modifiers = nil
-		self.x_mp7.panic_suppression_chance = 0.05
-
-	--Akimbo Kobus 90
-	--DISABLED--	
-		self.x_p90.use_data.selection_index = 5			
-		self.x_p90.AMMO_MAX = 200
-		self.x_p90.fire_mode_data.fire_rate = 0.06666666666
-		self.x_p90.single.fire_rate = 0.06666666666
-		self.x_p90.panic_suppression_chance = 0.05
-		self.x_p90.kick = self.stat_info.kick_tables.even_recoil
-		self.x_p90.supported = true
-		self.x_p90.stats = {
-			damage = 18,
-			spread = 61,
-			recoil = 78,
-			spread_moving = 9,
-			zoom = 1,
-			concealment = 26,
-			suppression = 10,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_p90.stats_modifiers = nil
-		self.x_p90.panic_suppression_chance = 0.05
-
-	--Akimbo Grimms
-	--DISABLED--
-		self.x_basset.use_data.selection_index = 5			
-		self.x_basset.tactical_akimbo = true
-		self.x_basset.rays = 9
-		self.x_basset.CLIP_AMMO_MAX = 12
-		self.x_basset.AMMO_MAX = 120
-		self.x_basset.fire_mode_data = {fire_rate = 0.1}
-		self.x_basset.auto = {fire_rate = 0.1}
-		self.x_basset.kick = self.stat_info.kick_tables.moderate_kick
-		self.x_basset.panic_suppression_chance = 0.05
-		self.x_basset.supported = true
-		self.x_basset.stats = {
-			zoom = 1,
-			total_ammo_mod = 100,
-			damage = 30,
-			alert_size = 2,
-			spread = 21,
-			spread_moving = 8,
-			recoil = 72,
-			value = 1,
-			extra_ammo = 101,
-			reload = 20,
-			suppression = 6,
-			concealment = 24
-		}
-		self.x_basset.stats_modifiers = nil
-			
-	--Akimbo Goliath 12g
-	--DISABLED--
-		self.x_rota.use_data.selection_index = 5			
-		self.x_rota.upgrade_blocks = nil
-		self.x_rota.AMMO_MAX = 80
-		self.x_rota.rays = 9 * 1 * 1 * 1 * 1 * 1 * 1
-		self.x_rota.kick = self.stat_info.kick_tables.vertical_kick
-		self.x_rota.fire_mode_data.fire_rate = 0.13953488372
-		self.x_rota.single.fire_rate = 0.13953488372
-		self.x_rota.panic_suppression_chance = 0.05
-		self.x_rota.supported = true
-		self.x_rota.stats = {
-			damage = 45,
-			spread = 11,
-			recoil = 71,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 22,
-			suppression = 6,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}	
-		self.x_rota.stats_modifiers = nil
-
-	--Akimbo CMP
-	--DISABLED--	
-		self.x_mp9.use_data.selection_index = 5				
-		self.x_mp9.CLIP_AMMO_MAX = 40
-		self.x_mp9.single.fire_rate = 0.06666666666
-		self.x_mp9.fire_mode_data.fire_rate = 0.06666666666
-		self.x_mp9.AMMO_MAX = 200
-		self.x_mp9.kick = self.stat_info.kick_tables.even_recoil
-		self.x_mp9.supported = true
-		self.x_mp9.stats = {
-			damage = 18,
-			spread = 71,
-			recoil = 78,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 30,
-			suppression = 10,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_mp9.stats_modifiers = nil
-		self.x_mp9.panic_suppression_chance = 0.05
-
-	--Akimbo Cobra
-	--DISABLED--	
-		self.x_scorpion.use_data.selection_index = 5				
-		self.x_scorpion.CLIP_AMMO_MAX = 40
-		self.x_scorpion.AMMO_MAX = 180
-		self.x_scorpion.fire_mode_data.fire_rate = 0.07058823529
-		self.x_scorpion.single.fire_rate = 0.07058823529
-		self.x_scorpion.kick = self.stat_info.kick_tables.even_recoil
-		self.x_scorpion.supported = true
-		self.x_scorpion.stats = {
-		damage = 20,
-		spread = 61,
-		recoil = 76,
-		spread_moving = 7,
-		zoom = 1,
-		concealment = 29,
-		suppression = 9,
-		alert_size = 2,
-		extra_ammo = 101,
-		total_ammo_mod = 100,
-		value = 7,
-		reload = 20
-		}
-		self.x_scorpion.stats_modifiers = nil
-		self.x_scorpion.panic_suppression_chance = 0.05	
-
-	--Akimbo Patchett
-	--DISABLED--	
-		self.x_sterling.use_data.selection_index = 5				
-		self.x_sterling.CLIP_AMMO_MAX = 40
-		self.x_sterling.AMMO_MAX = 150
-		self.x_sterling.fire_mode_data.fire_rate = 0.10909090909
-		self.x_sterling.single.fire_rate = 0.10909090909
-		self.x_sterling.kick = self.stat_info.kick_tables.right_recoil
-		self.x_sterling.supported = true
-		self.x_sterling.stats = {
-			damage = 24,
-			spread = 61,
-			recoil = 79,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 26,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 7,
-			reload = 20
-		}
-		self.x_sterling.stats_modifiers = nil
-		self.x_sterling.panic_suppression_chance = 0.05
-
-	--Akimbo Blaster 9mm
-	--DISABLED--	
-		self.x_tec9.use_data.selection_index = 5			
-		self.x_tec9.AMMO_MAX = 150
-		self.x_tec9.CLIP_AMMO_MAX = 40
-		self.x_tec9.fire_mode_data.fire_rate = 0.06
-		self.x_tec9.single.fire_rate = 0.06
-		self.x_tec9.kick = self.stat_info.kick_tables.even_recoil
-		self.x_tec9.supported = true
-		self.x_tec9.stats = {
-			damage = 24,
-			spread = 61,
-			recoil = 71,
-			spread_moving = 10,
-			zoom = 1,
-			concealment = 26,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 7,
-			reload = 20
-		}
-		self.x_tec9.stats_modifiers = nil
-		self.x_tec9.panic_suppression_chance = 0.05
-
-	--Akimbo Uzi
-	--DISABLED--	
-		self.x_uzi.use_data.selection_index = 5		
-		self.x_uzi.AMMO_MAX = 120
-		self.x_uzi.CLIP_AMMO_MAX = 44
-		self.x_uzi.fire_mode_data.fire_rate = 0.086
-		self.x_uzi.single.fire_rate = 0.086
-		self.x_uzi.kick = self.stat_info.kick_tables.even_recoil
-		self.x_uzi.supported = true
-		self.x_uzi.stats = {
-			damage = 30,
-			spread = 61,
-			recoil = 78,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 25,
-			suppression = 7,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 7,
-			reload = 20
-		}
-		self.x_uzi.stats_modifiers = nil
-		self.x_uzi.panic_suppression_chance = 0.05	
-
-	--Akimbo Parabellum
-	--DISABLED--	
-		self.x_breech.use_data.selection_index = 5			
-		self.x_breech.AMMO_MAX = 180
-		self.x_breech.CLIP_AMMO_MAX = 24
-		self.x_breech.fire_mode_data.fire_rate = 0.08571428571
-		self.x_breech.single.fire_rate = 0.08571428571
-		self.x_breech.kick = self.stat_info.kick_tables.even_recoil
-		self.x_breech.supported = true
-		self.x_breech.stats = {
-			damage = 20,
-			spread = 81,
-			recoil = 81,
-			spread_moving = 9,
-			zoom = 1,
-			concealment = 31,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_breech.stats_modifiers = nil
-		self.x_breech.panic_suppression_chance = 0.05
-
-	--akimbo Broomstick
-	--DISABLED--	
-		self.x_c96.use_data.selection_index = 5				
-		self.x_c96.AMMO_MAX = 120
-		self.x_c96.FIRE_MODE = "single"
-		self.x_c96.sounds.fire = "c96_fire"
-		self.x_c96.sounds.fire_single = "c96_fire"
-		self.x_c96.sounds.fire_auto = "g18c_fire"
-		self.x_c96.sounds.stop_fire = "g18c_stop"
-		self.x_c96.CAN_TOGGLE_FIREMODE = true
-		self.x_c96.fire_mode_data.fire_rate = 0.06
-		self.x_c96.single.fire_rate = 0.06
-		self.x_c96.kick = self.stat_info.kick_tables.moderate_kick
-		self.x_c96.supported = true
-		self.x_c96.stats = {
-			damage = 30,
-			spread = 66,
-			recoil = 74,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 25,
-			suppression = 7,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_c96.stats_modifiers = nil
-		self.x_c96.panic_suppression_chance = 0.05
-
-	--Akimbo Leo
-	--DISABLED--	
-		self.x_hs2000.use_data.selection_index = 5			
-		self.x_hs2000.CLIP_AMMO_MAX = 28
-		self.x_hs2000.AMMO_MAX = 120
-		self.x_hs2000.FIRE_MODE = "single"
-		self.x_hs2000.fire_mode_data = {}
-		self.x_hs2000.fire_mode_data.fire_rate = 0.08571428571
-		self.x_hs2000.single = {}
-		self.x_hs2000.single.fire_rate = 0.08571428571
-		self.x_hs2000.kick = self.stat_info.kick_tables.left_recoil
-		self.x_hs2000.supported = true
-		self.x_hs2000.stats = {
-			damage = 30,
-			spread = 66,
-			recoil = 78,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 27,
-			suppression = 7,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 4,
-			reload = 20
-		}
-		self.x_hs2000.stats_modifiers = nil
-		self.x_hs2000.panic_suppression_chance = 0.05
-
-	--Akimbo Signature .40
-	--DISABLED--	
-		self.x_p226.use_data.selection_index = 5				
-		self.x_p226.AMMO_MAX = 150
-		self.x_p226.CLIP_AMMO_MAX = 28
-		self.x_p226.fire_mode_data.fire_rate = 0.08571428571
-		self.x_p226.single.fire_rate = 0.08571428571
-		self.x_p226.kick = self.stat_info.kick_tables.even_recoil
-		self.x_p226.supported = true
-		self.x_p226.stats = {
-			damage = 40,
-			spread = 76,
-			recoil = 78,
-			spread_moving = 7,
-			zoom = 1,
-			concealment = 28,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 4,
-			reload = 20
-		}
-		self.x_p226.panic_suppression_chance = 0.05
-
-	--Akimbo White Streak
-	--DISABLED--	
-		self.x_pl14.use_data.selection_index = 5		
-		self.x_pl14.fire_mode_data.fire_rate = 0.08571428571
-		self.x_pl14.single.fire_rate = 0.08571428571
-		self.x_pl14.CLIP_AMMO_MAX = 20
-		self.x_pl14.AMMO_MAX = 150
-		self.x_pl14.kick = self.stat_info.kick_tables.even_recoil
-		self.x_pl14.supported = true
-		self.x_pl14.stats = {
-			damage = 24,
-			spread = 81,
-			recoil = 78,
-			spread_moving = 5,
-			zoom = 1,
-			concealment = 30,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_pl14.stats_modifiers = nil
-		self.x_pl14.panic_suppression_chance = 0.05
-
-	--Akimbo Gruber Kurz
-	--DISABLED--	
-		self.x_ppk.use_data.selection_index = 5				
-		self.x_ppk.AMMO_MAX = 180
-		self.x_ppk.CLIP_AMMO_MAX = 24
-		self.x_ppk.fire_mode_data.fire_rate = 0.08571428571
-		self.x_ppk.single.fire_rate = 0.08571428571
-		self.x_ppk.kick = self.stat_info.kick_tables.even_recoil
-		self.x_ppk.supported = true
-		self.x_ppk.stats = {
-			damage = 20,
-			spread = 86,
-			recoil = 81,
-			spread_moving = 9,
-			zoom = 1,
-			concealment = 31,
-			suppression = 9,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_ppk.stats_modifiers = nil
-		self.x_ppk.panic_suppression_chance = 0.05
-
-	--Akimbo Baby Deagle
-	--DISABLED--	
-		self.x_sparrow.use_data.selection_index = 5			
-		self.x_sparrow.AMMO_MAX = 150
-		self.x_sparrow.kick = self.stat_info.kick_tables.even_recoil
-		self.x_sparrow.fire_mode_data.fire_rate = 0.08571428571
-		self.x_sparrow.single.fire_rate = 0.08571428571
-		self.x_sparrow.supported = true
-		self.x_sparrow.stats = {
-			damage = 24,
-			spread = 81,
-			recoil = 78,
-			spread_moving = 5,
-			zoom = 1,
-			concealment = 29,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}
-		self.x_sparrow.stats_modifiers = nil
-		self.x_sparrow.panic_suppression_chance = 0.05
-
-	--Akimbo Swedish K
-	--DISABLED--
-		self.x_m45.use_data.selection_index = 5				
-		self.x_m45.CLIP_AMMO_MAX = 60
-		self.x_m45.AMMO_MAX = 150
-		self.x_m45.kick = self.stat_info.kick_tables.moderate_kick
-		self.x_m45.supported = true
-		self.x_m45.stats = {
-			damage = 24,
-			spread = 61,
-			recoil = 78,
-			spread_moving = 8,
-			zoom = 1,
-			concealment = 25,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 5,
-			reload = 20
-		}
-		self.x_m45.stats_modifiers = nil
-		self.x_m45.panic_suppression_chance = 0.05
-
-	--Akimbo Signature SMG
-	--DISABLED--	
-		self.x_shepheard.use_data.selection_index = 5
-		self.x_shepheard.CLIP_AMMO_MAX = 60
-		self.x_shepheard.fire_mode_data.fire_rate = 0.07058823529
-		self.x_shepheard.single.fire_rate = 0.07058823529
-		self.x_shepheard.panic_suppression_chance = 0.05
-		self.x_shepheard.kick = self.stat_info.kick_tables.moderate_kick
-		self.x_shepheard.AMMO_MAX = 180
-		self.x_shepheard.supported = true
-		self.x_shepheard.stats = {
+	
+		--Akimbo MP40
+		--DISABLED--
+			self.x_erma.use_data.selection_index = 5			
+			self.x_erma.CLIP_AMMO_MAX = 64
+			self.x_erma.AMMO_MAX = 150
+			self.x_erma.fire_mode_data.fire_rate = 0.10909090909
+			self.x_erma.single.fire_rate = 0.10909090909
+			self.x_erma.CAN_TOGGLE_FIREMODE = true
+			self.x_erma.kick = self.stat_info.kick_tables.moderate_kick
+			self.x_erma.supported = true
+			self.x_erma.stats = {
+				damage = 24,
+				spread = 66,
+				recoil = 79,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 26,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 5,
+				reload = 20
+			}
+			self.x_erma.stats_modifiers = nil
+			self.x_erma.panic_suppression_chance = 0.05	
+	
+		--Akimbo Para
+		--DISABLED--
+			self.x_olympic.use_data.selection_index = 5			
+			self.x_olympic.CLIP_AMMO_MAX = 60
+			self.x_olympic.AMMO_MAX = 180
+			self.x_olympic.fire_mode_data.fire_rate = 0.075
+			self.x_olympic.single.fire_rate = 0.075
+			self.x_olympic.kick = self.stat_info.kick_tables.even_recoil
+			self.x_olympic.panic_suppression_chance = 0.05
+			self.x_olympic.supported = true
+			self.x_olympic.stats = {
+				damage = 20,
+				spread = 56,
+				recoil = 74,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 24,
+				suppression = 9,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}	
+			self.x_olympic.stats_modifiers = nil	
+	
+		--Akimbo CR805
+		--DISABLED--
+			self.x_hajk.use_data.selection_index = 5				
+			self.x_hajk.fire_mode_data.fire_rate = 0.075
+			self.x_hajk.single.fire_rate = 0.075
+			self.x_hajk.CLIP_AMMO_MAX = 60
+			self.x_hajk.AMMO_MAX = 150
+			self.x_hajk.ADAPTIVE_BURST_SIZE = false						
+			self.x_hajk.BURST_FIRE = 2				
+			self.x_hajk.kick = self.stat_info.kick_tables.moderate_kick
+			self.x_hajk.panic_suppression_chance = 0.05
+			self.x_hajk.supported = true
+			self.x_hajk.stats = {
+				damage = 24,
+				spread = 71,
+				recoil = 76,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 21,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}	
+			self.x_hajk.stats_modifiers = nil
+	
+		--Akimbo Kross Vertex
+		--DISABLED--	
+			self.x_polymer.use_data.selection_index = 5			
+			self.x_polymer.CLIP_AMMO_MAX = 60
+			self.x_polymer.AMMO_MAX = 120
+			self.x_polymer.fire_mode_data.fire_rate = 0.05
+			self.x_polymer.single.fire_rate = 0.05
+			self.x_polymer.BURST_FIRE = 2										
+			self.x_polymer.ADAPTIVE_BURST_SIZE = false										
+			self.x_polymer.kick = self.stat_info.kick_tables.vertical_kick
+			self.x_polymer.supported = true
+			self.x_polymer.stats = {
+				damage = 30,
+				spread = 56,
+				recoil = 68,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 24,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_polymer.stats_modifiers = nil
+			self.x_polymer.panic_suppression_chance = 0.05
+	
+		--Akimbo Jackal
+		--DISABLED--	
+			self.x_schakal.use_data.selection_index = 5
+			self.x_schakal.fire_mode_data.fire_rate = 0.1
+			self.x_schakal.single.fire_rate = 0.1
+			self.x_schakal.AMMO_MAX = 120
+			self.x_schakal.BURST_FIRE = 2
+			self.x_schakal.ADAPTIVE_BURST_SIZE = false				
+			self.x_schakal.CLIP_AMMO_MAX = 50
+			self.x_schakal.kick = self.stat_info.kick_tables.even_recoil
+			self.x_schakal.panic_suppression_chance = 0.05
+			self.x_schakal.supported = true
+			self.x_schakal.stats = {
+				damage = 30,
+				spread = 71,
+				recoil = 74,
+				spread_moving = 14,
+				zoom = 1,
+				concealment = 23,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}	
+			self.x_schakal.stats_modifiers = nil
+	
+		--Akimbo Chicago typewriter
+		--DISABLED--
+			self.x_m1928.use_data.selection_index = 5
+			self.x_m1928.fire_mode_data.fire_rate = 0.075
+			self.x_m1928.CAN_TOGGLE_FIREMODE = true
+			self.x_m1928.single.fire_rate = 0.075
+			self.x_m1928.CLIP_AMMO_MAX = 100
+			self.x_m1928.AMMO_MAX = 180
+			self.x_m1928.kick = self.stat_info.kick_tables.even_recoil
+			self.x_m1928.supported = true
+			self.x_m1928.stats = {
+				damage = 24,
+				spread = 56,
+				recoil = 72,
+				spread_moving = 6,
+				zoom = 1,
+				concealment = 22,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 9,
+				reload = 20
+			}
+			self.x_m1928.stats_modifiers = nil
+			self.x_m1928.panic_suppression_chance = 0.05	
+	
+		--Akimbo Jacket's Piece
+		--DISABLED--
+			self.x_cobray.use_data.selection_index = 5		
+			self.x_cobray.timers.reload_not_empty = 2.00
+			self.x_cobray.timers.reload_empty = 2.7
+			self.x_cobray.CLIP_AMMO_MAX = 120
+			self.x_cobray.NR_CLIPS_MAX = 4
+			self.x_cobray.AMMO_MAX = 120
+			self.x_cobray.kick = self.stat_info.kick_tables.moderate_kick
+			self.x_cobray.fire_mode_data.fire_rate = 0.06
+			self.x_cobray.CAN_TOGGLE_FIREMODE = true
+			self.x_cobray.single.fire_rate = 0.06
+			self.x_cobray.supported = true
+			self.x_cobray.stats = {
+				damage = 30,
+				spread = 71,
+				recoil = 69,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 22,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_cobray.stats_modifiers = nil
+			self.x_cobray.panic_suppression_chance = 0.05
+	
+		--Akimbo Tatonka
+		--DISABLED--
+			self.x_coal.use_data.selection_index = 5
+			self.x_coal.AMMO_MAX = 200
+			self.x_coal.CLIP_AMMO_MAX = 128
+			self.x_coal.fire_mode_data.fire_rate = 0.08823529411
+			self.x_coal.single.fire_rate = 0.08823529411
+			self.x_coal.panic_suppression_chance = 0.05
+			self.x_coal.kick = self.stat_info.kick_tables.moderate_right_kick
+			self.x_coal.supported = true
+			self.x_coal.stats = {
+				damage = 18,
+				spread = 66,
+				recoil = 78,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 25,
+				suppression = 10,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_coal.stats_modifiers = nil
+			self.x_coal.panic_suppression_chance = 0.05	
+	
+		--Akimbo Spec Ops (Akimbo MP7)
+		--DISABLED--	
+			self.x_mp7.use_data.selection_index = 5		
+			self.x_mp7.CLIP_AMMO_MAX = 40
+			self.x_mp7.AMMO_MAX = 150
+			self.x_mp7.fire_mode_data.fire_rate = 0.06315789473
+			self.x_mp7.CAN_TOGGLE_FIREMODE = true
+			self.x_mp7.single.fire_rate = 0.06315789473
+			self.x_mp7.kick = self.stat_info.kick_tables.even_recoil
+			self.x_mp7.supported = true
+			self.x_mp7.stats = {
+				damage = 24,
+				spread = 51,
+				recoil = 71,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 26,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 7,
+				reload = 20
+			}
+			self.x_mp7.stats_modifiers = nil
+			self.x_mp7.panic_suppression_chance = 0.05
+	
+		--Akimbo Kobus 90
+		--DISABLED--	
+			self.x_p90.use_data.selection_index = 5			
+			self.x_p90.AMMO_MAX = 200
+			self.x_p90.fire_mode_data.fire_rate = 0.06666666666
+			self.x_p90.single.fire_rate = 0.06666666666
+			self.x_p90.panic_suppression_chance = 0.05
+			self.x_p90.kick = self.stat_info.kick_tables.even_recoil
+			self.x_p90.supported = true
+			self.x_p90.stats = {
+				damage = 18,
+				spread = 61,
+				recoil = 78,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 26,
+				suppression = 10,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_p90.stats_modifiers = nil
+			self.x_p90.panic_suppression_chance = 0.05
+	
+		--Akimbo Grimms
+		--DISABLED--
+			self.x_basset.use_data.selection_index = 5			
+			self.x_basset.tactical_akimbo = true
+			self.x_basset.rays = 9
+			self.x_basset.CLIP_AMMO_MAX = 12
+			self.x_basset.AMMO_MAX = 120
+			self.x_basset.fire_mode_data = {fire_rate = 0.1}
+			self.x_basset.auto = {fire_rate = 0.1}
+			self.x_basset.kick = self.stat_info.kick_tables.moderate_kick
+			self.x_basset.panic_suppression_chance = 0.05
+			self.x_basset.supported = true
+			self.x_basset.stats = {
+				zoom = 1,
+				total_ammo_mod = 100,
+				damage = 30,
+				alert_size = 2,
+				spread = 21,
+				spread_moving = 8,
+				recoil = 72,
+				value = 1,
+				extra_ammo = 101,
+				reload = 20,
+				suppression = 6,
+				concealment = 24
+			}
+			self.x_basset.stats_modifiers = nil
+				
+		--Akimbo Goliath 12g
+		--DISABLED--
+			self.x_rota.use_data.selection_index = 5			
+			self.x_rota.upgrade_blocks = nil
+			self.x_rota.AMMO_MAX = 80
+			self.x_rota.rays = 9 * 1 * 1 * 1 * 1 * 1 * 1
+			self.x_rota.kick = self.stat_info.kick_tables.vertical_kick
+			self.x_rota.fire_mode_data.fire_rate = 0.13953488372
+			self.x_rota.single.fire_rate = 0.13953488372
+			self.x_rota.panic_suppression_chance = 0.05
+			self.x_rota.supported = true
+			self.x_rota.stats = {
+				damage = 45,
+				spread = 11,
+				recoil = 71,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 22,
+				suppression = 6,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}	
+			self.x_rota.stats_modifiers = nil
+	
+		--Akimbo CMP
+		--DISABLED--	
+			self.x_mp9.use_data.selection_index = 5				
+			self.x_mp9.CLIP_AMMO_MAX = 40
+			self.x_mp9.single.fire_rate = 0.06666666666
+			self.x_mp9.fire_mode_data.fire_rate = 0.06666666666
+			self.x_mp9.AMMO_MAX = 200
+			self.x_mp9.kick = self.stat_info.kick_tables.even_recoil
+			self.x_mp9.supported = true
+			self.x_mp9.stats = {
+				damage = 18,
+				spread = 71,
+				recoil = 78,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 30,
+				suppression = 10,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_mp9.stats_modifiers = nil
+			self.x_mp9.panic_suppression_chance = 0.05
+	
+		--Akimbo Cobra
+		--DISABLED--	
+			self.x_scorpion.use_data.selection_index = 5				
+			self.x_scorpion.CLIP_AMMO_MAX = 40
+			self.x_scorpion.AMMO_MAX = 180
+			self.x_scorpion.fire_mode_data.fire_rate = 0.07058823529
+			self.x_scorpion.single.fire_rate = 0.07058823529
+			self.x_scorpion.kick = self.stat_info.kick_tables.even_recoil
+			self.x_scorpion.supported = true
+			self.x_scorpion.stats = {
 			damage = 20,
 			spread = 61,
 			recoil = 76,
-			spread_moving = 8,
+			spread_moving = 7,
 			zoom = 1,
-			concealment = 28,
+			concealment = 29,
 			suppression = 9,
 			alert_size = 2,
 			extra_ammo = 101,
 			total_ammo_mod = 100,
-			value = 1,
+			value = 7,
 			reload = 20
-		}
-		self.x_shepheard.stats_modifiers = nil
-		self.x_shepheard.panic_suppression_chance = 0.05
-
-	--Akimbo M13
-	--DISABLED--	
-		self.x_legacy.use_data.selection_index = 5		
-		self.x_legacy.fire_mode_data.fire_rate = 0.08571428571
-		self.x_legacy.single.fire_rate = 0.08571428571
-		self.x_legacy.CLIP_AMMO_MAX = 24
-		self.x_legacy.AMMO_MAX = 150
-		self.x_legacy.kick = self.stat_info.kick_tables.left_recoil
-		self.x_legacy.supported = true
-		self.x_legacy.stats = {
-			damage = 24,
-			spread = 79,
-			recoil = 78,
-			spread_moving = 5,
-			zoom = 1,
-			concealment = 29,
-			suppression = 8,
-			alert_size = 2,
-			extra_ammo = 101,
-			total_ammo_mod = 100,
-			value = 1,
-			reload = 20
-		}		
-		self.x_legacy.stats_modifiers = nil
-		self.x_legacy.panic_suppression_chance = 0.05
+			}
+			self.x_scorpion.stats_modifiers = nil
+			self.x_scorpion.panic_suppression_chance = 0.05	
+	
+		--Akimbo Patchett
+		--DISABLED--	
+			self.x_sterling.use_data.selection_index = 5				
+			self.x_sterling.CLIP_AMMO_MAX = 40
+			self.x_sterling.AMMO_MAX = 150
+			self.x_sterling.fire_mode_data.fire_rate = 0.10909090909
+			self.x_sterling.single.fire_rate = 0.10909090909
+			self.x_sterling.kick = self.stat_info.kick_tables.right_recoil
+			self.x_sterling.supported = true
+			self.x_sterling.stats = {
+				damage = 24,
+				spread = 61,
+				recoil = 79,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 26,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 7,
+				reload = 20
+			}
+			self.x_sterling.stats_modifiers = nil
+			self.x_sterling.panic_suppression_chance = 0.05
+	
+		--Akimbo Blaster 9mm
+		--DISABLED--	
+			self.x_tec9.use_data.selection_index = 5			
+			self.x_tec9.AMMO_MAX = 150
+			self.x_tec9.CLIP_AMMO_MAX = 40
+			self.x_tec9.fire_mode_data.fire_rate = 0.06
+			self.x_tec9.single.fire_rate = 0.06
+			self.x_tec9.kick = self.stat_info.kick_tables.even_recoil
+			self.x_tec9.supported = true
+			self.x_tec9.stats = {
+				damage = 24,
+				spread = 61,
+				recoil = 71,
+				spread_moving = 10,
+				zoom = 1,
+				concealment = 26,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 7,
+				reload = 20
+			}
+			self.x_tec9.stats_modifiers = nil
+			self.x_tec9.panic_suppression_chance = 0.05
+	
+		--Akimbo Uzi
+		--DISABLED--	
+			self.x_uzi.use_data.selection_index = 5		
+			self.x_uzi.AMMO_MAX = 120
+			self.x_uzi.CLIP_AMMO_MAX = 44
+			self.x_uzi.fire_mode_data.fire_rate = 0.086
+			self.x_uzi.single.fire_rate = 0.086
+			self.x_uzi.kick = self.stat_info.kick_tables.even_recoil
+			self.x_uzi.supported = true
+			self.x_uzi.stats = {
+				damage = 30,
+				spread = 61,
+				recoil = 78,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 25,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 7,
+				reload = 20
+			}
+			self.x_uzi.stats_modifiers = nil
+			self.x_uzi.panic_suppression_chance = 0.05	
+	
+		--Akimbo Parabellum
+		--DISABLED--	
+			self.x_breech.use_data.selection_index = 5			
+			self.x_breech.AMMO_MAX = 180
+			self.x_breech.CLIP_AMMO_MAX = 24
+			self.x_breech.fire_mode_data.fire_rate = 0.08571428571
+			self.x_breech.single.fire_rate = 0.08571428571
+			self.x_breech.kick = self.stat_info.kick_tables.even_recoil
+			self.x_breech.supported = true
+			self.x_breech.stats = {
+				damage = 20,
+				spread = 81,
+				recoil = 81,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 31,
+				suppression = 9,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_breech.stats_modifiers = nil
+			self.x_breech.panic_suppression_chance = 0.05
+	
+		--akimbo Broomstick
+		--DISABLED--	
+			self.x_c96.use_data.selection_index = 5				
+			self.x_c96.AMMO_MAX = 120
+			self.x_c96.FIRE_MODE = "single"
+			self.x_c96.sounds.fire = "c96_fire"
+			self.x_c96.sounds.fire_single = "c96_fire"
+			self.x_c96.sounds.fire_auto = "g18c_fire"
+			self.x_c96.sounds.stop_fire = "g18c_stop"
+			self.x_c96.CAN_TOGGLE_FIREMODE = true
+			self.x_c96.fire_mode_data.fire_rate = 0.06
+			self.x_c96.single.fire_rate = 0.06
+			self.x_c96.kick = self.stat_info.kick_tables.moderate_kick
+			self.x_c96.supported = true
+			self.x_c96.stats = {
+				damage = 30,
+				spread = 66,
+				recoil = 74,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 25,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_c96.stats_modifiers = nil
+			self.x_c96.panic_suppression_chance = 0.05
+	
+		--Akimbo Leo
+		--DISABLED--	
+			self.x_hs2000.use_data.selection_index = 5			
+			self.x_hs2000.CLIP_AMMO_MAX = 28
+			self.x_hs2000.AMMO_MAX = 120
+			self.x_hs2000.FIRE_MODE = "single"
+			self.x_hs2000.fire_mode_data = {}
+			self.x_hs2000.fire_mode_data.fire_rate = 0.08571428571
+			self.x_hs2000.single = {}
+			self.x_hs2000.single.fire_rate = 0.08571428571
+			self.x_hs2000.kick = self.stat_info.kick_tables.left_recoil
+			self.x_hs2000.supported = true
+			self.x_hs2000.stats = {
+				damage = 30,
+				spread = 66,
+				recoil = 78,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 27,
+				suppression = 7,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 4,
+				reload = 20
+			}
+			self.x_hs2000.stats_modifiers = nil
+			self.x_hs2000.panic_suppression_chance = 0.05
+	
+		--Akimbo Signature .40
+		--DISABLED--	
+			self.x_p226.use_data.selection_index = 5				
+			self.x_p226.AMMO_MAX = 150
+			self.x_p226.CLIP_AMMO_MAX = 28
+			self.x_p226.fire_mode_data.fire_rate = 0.08571428571
+			self.x_p226.single.fire_rate = 0.08571428571
+			self.x_p226.kick = self.stat_info.kick_tables.even_recoil
+			self.x_p226.supported = true
+			self.x_p226.stats = {
+				damage = 40,
+				spread = 76,
+				recoil = 78,
+				spread_moving = 7,
+				zoom = 1,
+				concealment = 28,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 4,
+				reload = 20
+			}
+			self.x_p226.panic_suppression_chance = 0.05
+	
+		--Akimbo White Streak
+		--DISABLED--	
+			self.x_pl14.use_data.selection_index = 5		
+			self.x_pl14.fire_mode_data.fire_rate = 0.08571428571
+			self.x_pl14.single.fire_rate = 0.08571428571
+			self.x_pl14.CLIP_AMMO_MAX = 20
+			self.x_pl14.AMMO_MAX = 150
+			self.x_pl14.kick = self.stat_info.kick_tables.even_recoil
+			self.x_pl14.supported = true
+			self.x_pl14.stats = {
+				damage = 24,
+				spread = 81,
+				recoil = 78,
+				spread_moving = 5,
+				zoom = 1,
+				concealment = 30,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_pl14.stats_modifiers = nil
+			self.x_pl14.panic_suppression_chance = 0.05
+	
+		--Akimbo Gruber Kurz
+		--DISABLED--	
+			self.x_ppk.use_data.selection_index = 5				
+			self.x_ppk.AMMO_MAX = 180
+			self.x_ppk.CLIP_AMMO_MAX = 24
+			self.x_ppk.fire_mode_data.fire_rate = 0.08571428571
+			self.x_ppk.single.fire_rate = 0.08571428571
+			self.x_ppk.kick = self.stat_info.kick_tables.even_recoil
+			self.x_ppk.supported = true
+			self.x_ppk.stats = {
+				damage = 20,
+				spread = 86,
+				recoil = 81,
+				spread_moving = 9,
+				zoom = 1,
+				concealment = 31,
+				suppression = 9,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_ppk.stats_modifiers = nil
+			self.x_ppk.panic_suppression_chance = 0.05
+	
+		--Akimbo Baby Deagle
+		--DISABLED--	
+			self.x_sparrow.use_data.selection_index = 5			
+			self.x_sparrow.AMMO_MAX = 150
+			self.x_sparrow.kick = self.stat_info.kick_tables.even_recoil
+			self.x_sparrow.fire_mode_data.fire_rate = 0.08571428571
+			self.x_sparrow.single.fire_rate = 0.08571428571
+			self.x_sparrow.supported = true
+			self.x_sparrow.stats = {
+				damage = 24,
+				spread = 81,
+				recoil = 78,
+				spread_moving = 5,
+				zoom = 1,
+				concealment = 29,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_sparrow.stats_modifiers = nil
+			self.x_sparrow.panic_suppression_chance = 0.05
+	
+		--Akimbo Swedish K
+		--DISABLED--
+			self.x_m45.use_data.selection_index = 5				
+			self.x_m45.CLIP_AMMO_MAX = 60
+			self.x_m45.AMMO_MAX = 150
+			self.x_m45.kick = self.stat_info.kick_tables.moderate_kick
+			self.x_m45.supported = true
+			self.x_m45.stats = {
+				damage = 24,
+				spread = 61,
+				recoil = 78,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 25,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 5,
+				reload = 20
+			}
+			self.x_m45.stats_modifiers = nil
+			self.x_m45.panic_suppression_chance = 0.05
+	
+		--Akimbo Signature SMG
+		--DISABLED--	
+			self.x_shepheard.use_data.selection_index = 5
+			self.x_shepheard.CLIP_AMMO_MAX = 60
+			self.x_shepheard.fire_mode_data.fire_rate = 0.07058823529
+			self.x_shepheard.single.fire_rate = 0.07058823529
+			self.x_shepheard.panic_suppression_chance = 0.05
+			self.x_shepheard.kick = self.stat_info.kick_tables.moderate_kick
+			self.x_shepheard.AMMO_MAX = 180
+			self.x_shepheard.supported = true
+			self.x_shepheard.stats = {
+				damage = 20,
+				spread = 61,
+				recoil = 76,
+				spread_moving = 8,
+				zoom = 1,
+				concealment = 28,
+				suppression = 9,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}
+			self.x_shepheard.stats_modifiers = nil
+			self.x_shepheard.panic_suppression_chance = 0.05
+	
+		--Akimbo M13
+		--DISABLED--	
+			self.x_legacy.use_data.selection_index = 5		
+			self.x_legacy.fire_mode_data.fire_rate = 0.08571428571
+			self.x_legacy.single.fire_rate = 0.08571428571
+			self.x_legacy.CLIP_AMMO_MAX = 24
+			self.x_legacy.AMMO_MAX = 150
+			self.x_legacy.kick = self.stat_info.kick_tables.left_recoil
+			self.x_legacy.supported = true
+			self.x_legacy.stats = {
+				damage = 24,
+				spread = 79,
+				recoil = 78,
+				spread_moving = 5,
+				zoom = 1,
+				concealment = 29,
+				suppression = 8,
+				alert_size = 2,
+				extra_ammo = 101,
+				total_ammo_mod = 100,
+				value = 1,
+				reload = 20
+			}		
+			self.x_legacy.stats_modifiers = nil
+			self.x_legacy.panic_suppression_chance = 0.05
 	
 	--Akimbo Beretta Auto
 	--DISABLED

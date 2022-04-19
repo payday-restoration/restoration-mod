@@ -1088,12 +1088,15 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_c96_sc_desc"] = "독일의 혁명적인 기관권총. 완전 자동으로 미친 속도로 발사할 수 있지만 탄약 소모가 큽니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
+	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
+		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",		
 		["bm_ap_weapon_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_ap_armor_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다",
 		["bm_heavy_ap_weapon_sc_desc"] = "방탄복, 실드, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_ap_2_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있으며, 화살을 더 오래 당길 수록 사거리가 증가합니다.",
 		["bm_ap_3_weapon_sc_desc"] = "방탄복을 관통할 수 있습니다. 화살은 집어들면 회수할 수 있습니다.",
 		["bm_40mm_weapon_sc_desc"] = "$BTN_GADGET키 를 눌러 플립 업 시점을 전환합니다.",
-		["bm_rocket_launcher_sc_desc"] = "이 무기를 들고 있는 동안 이동 속도가 15% 감소합니다. 이 무기로 발사하는 로켓은 즉시 터렛을 파괴합니다.",
+		["bm_rocket_launcher_sc_desc"] = "이 무기로 발사되는 로켓은 터렛을 즉시 파괴합니다.",
 		["bm_quake_shotgun_sc_desc"] = "두 배럴을 동시에 발사하여 펠렛 수를 두 배로 늘립니다.",
 		["bm_hx25_buck_sc_desc"] = "12개의 펠렛을 광범위하게 발사합니다.\n\n여전히 유탄 발사기로 취급하여 관련 스킬의 효과를 받습니다.",
 		["bm_auto_generated_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.",
@@ -1101,9 +1104,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_sap_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n방탄복, 실드, 타이탄 실드 및 얇은 벽을 관통할 수 있습니다.",
 		["bm_auto_generated_lmg_sc_desc"] = "이 무기는 자동 생성된 능력치를 사용하고 있으며 제작자의 의도에 맞지 않거나 완벽하게 균형이 맞지 않을 수 있습니다.\n\n이 무기를 들고 있는 동안 이동 속도가 25% 감소합니다.",
 		["bm_auto_generated_mod_sc_desc"] = "이 부착물의 능력치는 자동 커스텀 부착물 능력치 생성이 완료될 때까지 제거되었습니다.",
-		["bm_tranq_maxim_sc_desc"] = "시간에 지남에 따라 피해를 입히는 마취탄을 사용하고, 총과 통합된 소음기가 장착되어있습니다.",
+		["bm_tranq_maxim_sc_desc"] = "소음기와 통합되었습니다.\n\n마취탄을 발사하여 시간이 지남에 따라 지속 피해를 줍니다.",
+		["bm_m134_rof_init_sc_desc"] = "방아쇠을 당길때 처음 몇 총알을 발사하는 동안 2배의 발사 속도로 짧게 발사합니다.",
 		
 		["bm_ap_weapon_peacemaker_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
+		["bm_wolf_brigade_sc_desc"] = "비조준 상태에서 발사 시 반동이 50%만큼 감소합니다",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "레스트레이션 오버홀",
@@ -1190,9 +1195,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_ads_speed"] = "조준 시간",
 		["bm_menu_reload"] = "재장전 시간",
 		["bm_menu_damage"] = "대미지", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Damage Max",
-		["bm_menu_standing_range"] = "최대 사거리",
+		["bm_menu_standing_range"] = "폴오프 시작",
 		["bm_menu_damage_min"] = "최소 대미지",
-		["bm_menu_moving_range"] = "최소 사거리",		
+		["bm_menu_moving_range"] = "폴오프 끝",
 
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "머즐",
@@ -1207,6 +1212,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_cylinder"] = "실린더",
 		["bm_menu_model"] = "모델",
 		["bm_menu_forebarrelgrip"] = "총열 및 총열덮개",
+		["bm_menu_riser"] = "라이저",
+		["bm_menu_pump"] = "펌프",		
 		
 		--Weapon categories--
 		["menu_pistol"] = "권총",
@@ -1338,6 +1345,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_ass_ak_b_zastava"] = "연장 총열",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf 총열",
 		["bm_wp_p90_b_ninja"] = "Ninja 총열",
+		["bm_wp_par_b_short"] = "Comped 총열",
 
 		["menu_es_rep_upgrade"] = "",	--???--
 
@@ -1949,7 +1957,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "충격과 공포",
-			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: ##$basic##\n모든 무기의 장탄수가 ##20%##만큼 증가합니다.\n\n참고: 석궁, 활, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.\n\n에이스: ##$pro##\n달리면서 지향 사격이 가능해집니다.\n\n모든 무기의 장탄수가 추가로 ##30%##만큼 증가합니다.",
+			["menu_spotter_teamwork_beta_desc_sc"] = "베이직: ##$basic##\n모든 무기의 장탄수가 ##20%##만큼 증가합니다.\n\n참고: 석궁, 활, 유탄 발사기 또는 로켓 발사기에는 적용되지 않습니다.\n\n에이스: ##$pro##\n모든 무기로 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 지연이 제거됩니다.\n\n모든 무기의 장탄수가 추가로 ##30%##만큼 증가합니다.",
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "강력한 강타",
@@ -1973,7 +1981,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 정조준 속도가 ##50%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 조준 속도와 전력 질주 속도가 ##35%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
@@ -1985,7 +1993,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "궁호",
-			["menu_close_by_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기로 달리면서 지향 사격이 가능해집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기로 지향 사걱하는 동안 발사 속도가 ##35%##만큼 증가합니다.",
+			["menu_close_by_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염 방사기는 전력 질주하는 동안 지향 사격이 가능하며 전력 질주 지연이 제거됩니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기로 지향 사걱하는 동안 발사 속도가 ##35%##만큼 증가합니다.",
 
 			--Overkill
 			["menu_overkill_sc"] = "오버킬",
@@ -2216,7 +2224,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "라이플맨",
-		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n모든 무기의 조준경 전환 속도가 ##50##만큼 증가합니다\n\n에이스: ##$pro##\n조준하는 동안 소총의 명중률과 사거리가 ##30##만큼 증가합니다.",
+		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n모든 무기의 조준 속도와 전력 질주 속도가 ##35%## 빨라집니다.\n\n에이스: ##$pro##\n조준하는 동안 소총의 명중률과 사거리가 ##30##만큼 증가합니다.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "공격적인 재장전",

@@ -4226,9 +4226,6 @@ function BlackMarketGui:update_info_text()
 				updated_texts[4].below_stats = true
 			end			
 
-			local movement_penalty = weapon_tweak and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
-
-
 			local upgrade_tweak = weapon_id and tweak_data.upgrades.weapon_movement_penalty[weapon_tweak.categories[1]] or 1
 			local movement_penalty = weapon_tweak.weapon_movement_penalty or upgrade_tweak or 1
 			if movement_penalty < 1 then

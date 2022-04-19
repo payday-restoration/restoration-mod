@@ -1089,6 +1089,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_weapon_movement_penalty_info"] = "MOVEMENT SPEED IS REDUCED BY ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " WHILE DRAWN",
 		["bm_ap_weapon_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
+		["bm_ap_armor_weapon_sc_desc"] = "Can penetrate body armor.",
 		["bm_heavy_ap_weapon_sc_desc"] = "Can penetrate body armor, shields, titan shields and thin walls.",
 		["bm_ap_2_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be restored by picking them up and range increases the longer an arrow is drawn.",
 		["bm_ap_3_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be restored by picking them up.",

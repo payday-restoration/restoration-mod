@@ -444,7 +444,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 	--Set range multipliers.
 	self._damage_near_mul = 1
 	self._damage_far_mul = 1
-	
+
 	--[[
 	if self._ammo_data then
 		if self._ammo_data.damage_near_mul ~= nil then
@@ -455,6 +455,9 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		end
 	end
 	--]]
+
+	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
+	self._movement_penalty = self:weapon_tweak_data().weapon_movement_penalty or tweak_data.upgrades.weapon_movement_penalty[primary_category] or 1
 	
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	if not self._custom_stats_done then

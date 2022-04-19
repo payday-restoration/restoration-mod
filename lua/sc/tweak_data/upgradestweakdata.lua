@@ -277,6 +277,7 @@ Hooks:PostHook(UpgradesTweakData, "init", "ResLevelTableInit", function(self, tw
 			}			
 	}
 
+	self.values.striker.reload_speed_multiplier = {1} -- no :^)
 	--Insert level variables into level_tree.
 	for i=1, 100 do
 		local currLevel = level["l" .. tostring(i)]
@@ -306,9 +307,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 	self.explosive_bullet.camera_shake_max_mul = 4
 
 	--Weapon Based Movement Modifiers--
-	self.weapon_movement_penalty.minigun = 0.75
+	self.weapon_movement_penalty.minigun = 0.50
 	self.weapon_movement_penalty.lmg = 0.75
-
+	
 	--Armor Stats--
 	--Add 20 to the values in this table to get in game amounts.
 	self.values.player.body_armor.armor = {
@@ -603,9 +604,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Assault--
 			--Leadership--
 				--Basic
-					self.values.smg.recoil_index_addend = {1}
+					self.values.smg.recoil_index_addend = {4}
 				--Ace
-					self.values.team.weapon.recoil_index_addend = {1}
+					self.values.team.weapon.recoil_index_addend = {4}
 
 			--MG Handling
 				--Basic
@@ -643,13 +644,13 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Shotgunner--
 			--Shotgun Impact
 				--Basic
-					self.values.shotgun.recoil_index_addend = {1}
+					self.values.shotgun.recoil_index_addend = {4}
 				--Ace
 					self.values.shotgun.extra_rays = {3}
 
 			--Shotgun CQB
 				--Basic
-					self.values.shotgun.enter_steelsight_speed_multiplier = {1.75}
+					self.values.shotgun.enter_steelsight_speed_multiplier = {1.35}
 				--Ace
 					self.values.shotgun.reload_speed_multiplier = {1.25, 1.25}
 				
@@ -661,7 +662,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Far Away
 				--Basic
-					self.values.player.steelsight_speed_multiplier = {1.6} --Movement speed while ADSing.
+					self.values.player.steelsight_move_speed_multiplier = {1.6} --Movement speed while ADSing.
 				--Ace
 					self.values.shotgun.steelsight_accuracy_inc = {0.7}
 					self.values.shotgun.steelsight_range_inc = {1.3}
@@ -854,22 +855,22 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Combat Engineer--
 			--Sharpshooter
 				--Basic
-					self.values.snp.recoil_index_addend = {1}
-					self.values.assault_rifle.recoil_index_addend = {1}
+					self.values.snp.recoil_index_addend = {4}
+					self.values.assault_rifle.recoil_index_addend = {4}
 				--Ace
 					self.values.temporary.headshot_fire_rate_mult = {{1.2, 10}}
 				
 			--Kilmer
 				--Basic
-					self.values.snp.spread_index_addend = {1}
-					self.values.assault_rifle.spread_index_addend = {1}
+					self.values.snp.spread_index_addend = {5}
+					self.values.assault_rifle.spread_index_addend = {5}
 				--Ace
 					self.values.snp.reload_speed_multiplier = {1.25}
 					self.values.assault_rifle.reload_speed_multiplier = {1.25}
 
 			--Rifleman
 				--Basic
-					self.values.weapon.enter_steelsight_speed_multiplier = {1.5}
+					self.values.weapon.enter_steelsight_speed_multiplier = {1.35}
 				--Ace
 					self.values.assault_rifle.steelsight_accuracy_inc = {0.7}
 					self.values.snp.steelsight_accuracy_inc = {0.7}
@@ -1057,9 +1058,9 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--The Professional
 				--Basic
-					self.values.weapon.silencer_spread_index_addend = {1}
+					self.values.weapon.silencer_spread_index_addend = {5}
 				--Ace
-					self.values.weapon.silencer_recoil_index_addend = {1}
+					self.values.weapon.silencer_recoil_index_addend = {4}
 					self.values.player.special_double_drop = {true}
 
 			--Unseen Strike
@@ -1117,7 +1118,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		--Gunslinger
 			--Equilibrium
 				--Basic
-					self.values.team.pistol.recoil_index_addend = {1}
+					self.values.team.pistol.recoil_index_addend = {4}
 					self.values.team.pistol.suppression_recoil_index_addend = self.values.team.pistol.recoil_index_addend
 				--Ace
 					self.values.pistol.swap_speed_multiplier = {2}
@@ -1140,10 +1141,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Akimbo
 				self.values.akimbo.recoil_index_addend = {
 					0,
-					4, --Basic
-					4,
-					4,
-					4
+					16, --Basic
+					16,
+					16,
+					16
 				}
 
 				--Ace
@@ -2637,12 +2638,12 @@ function UpgradesTweakData:_player_definitions()
 			category = "temporary"
 		}
 	}
-	self.definitions.player_steelsight_speed_multiplier = {
+	self.definitions.player_steelsight_move_speed_multiplier = {
 		name_id = "menu_player_steelsight_speed_multiplier",
 		category = "player",
 		upgrade = {
 			value = 1,
-			upgrade = "steelsight_speed_multiplier",
+			upgrade = "steelsight_move_speed_multiplier",
 			category = "player"
 		}
 	}

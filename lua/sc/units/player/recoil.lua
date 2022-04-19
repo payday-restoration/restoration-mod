@@ -137,7 +137,7 @@ function FPCameraPlayerBase:_vertical_recoil_kick(t, dt)
 	local r_value = 0
 
 	if self._recoil_kick.accumulated and self._episilon < self._recoil_kick.accumulated then
-		local degrees_to_move = 40 * dt --Move camera 40 degrees per second, just like vanilla, but in a less fucky way.
+		local degrees_to_move = 80 * dt --Move camera 40 degrees per second, just like vanilla, but in a less fucky way.
 		r_value = math.min(self._recoil_kick.accumulated, degrees_to_move)
 		self._recoil_kick.accumulated = self._recoil_kick.accumulated - r_value --
 	elseif self._recoil_wait then
@@ -231,10 +231,16 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 	--Fix for fire rate speed mults not applying to anims, especially whie aiming
 	--Like fuck am I doing this fix through "PlayerStandard:_check_action_primary_attack" instead
 	local equipped_weapon = self._parent_unit:inventory():equipped_unit()
-	if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
-		if alive(equipped_weapon) then
-			speed = equipped_weapon:base():fire_rate_multiplier()
+	if alive(equipped_weapon) then
+		local weap_base = equipped_weapon:base()
+		if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then
+			speed = weap_base:fire_rate_multiplier()
 		end
+		--[[
+		if speed and weap_base:weapon_tweak_data().anim_speed_multiplier then
+			speed = speed * weap_base:weapon_tweak_data().anim_speed_multiplier
+		end
+		--]]
 	end
 	
 	self._anim_empty_state_wanted = false

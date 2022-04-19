@@ -18,11 +18,33 @@ tweak_data.ammo.ricochet.autohit = {
 
 --Swap Speed Multipliers
 --TODO: Move to stat_info
-tweak_data.pistol = {swap_bonus = 1.35, range_mul = 0.8}
-tweak_data.akimbo = {swap_bonus = 0.65, range_mul = 0.8}
-tweak_data.smg = {range_mul = 0.8}
-tweak_data.lmg = {range_mul = 1.25} --Stacks with smg to give a mul of 1
-tweak_data.snp = {range_mul = 1.25}
+tweak_data.pistol = {
+	swap_bonus = 1.75,
+	ads_move_speed_mult = 0.95
+}
+tweak_data.akimbo = {
+	swap_bonus = 0.85
+}
+tweak_data.shotgun = {}
+tweak_data.smg = {
+	ads_move_speed_mult = 0.75
+}
+tweak_data.lmg = {
+	swap_bonus = 0.85,
+	ads_move_speed_mult = 0.35
+}
+tweak_data.minigun = {
+	swap_bonus = 0.85,
+	ads_move_speed_mult = 0.35
+}
+tweak_data.snp = {
+	swap_bonus = 0.95,
+	ads_move_speed_mult = 0.45
+}
+tweak_data.assault_rifle = {
+	swap_bonus = 0.95,
+	ads_move_speed_mult = 0.45
+}
 
 --Max concealment for guns.
 tweak_data.concealment_cap = 32
@@ -545,45 +567,59 @@ end
 
 	tweak_data.gui.buy_weapon_categories = {
 		primaries = {
-			{"assault_rifle"},
-			{"shotgun"},
-			{"lmg"},
-			{"snp"},
-			{"pistol"},
-			{
-				"akimbo",
-				"pistol"
-			},
-			{
-				"akimbo",
-				"smg"
-			},
-			{
-				"akimbo",
-				"shotgun"
-			},
-			{
-				"akimbo",
-				"assault_rifle"
-			},			
-			{"wpn_special"},
-			{"smg"}
+		
+			{ "light_pis" },
+			{ "heavy_pis" },
+			
+			{ "light_shot" },
+			{ "heavy_shot" },
+			{ "break_shot" },
+			
+			{ "light_smg" },
+			{ "heavy_smg" },
+			
+			{ "light_ar" },
+			{ "heavy_ar" },
+			{ "dmr_ar" },
+			
+			{ "light_mg" },
+			{ "heavy_mg" },
+			
+			{ "light_snp" },
+			{ "heavy_snp" },
+			{ "antim_snp" },
+		
+			{ "wpn_special" }
+			
 		},
 		secondaries = {
-			{"pistol"},
-			{"smg"},
-			{"wpn_special"},
-			{"shotgun"},
-			{"assault_rifle"}
+		
+			{ "light_pis" },
+			{ "heavy_pis" },
+			
+			{ "light_shot" },
+			{ "heavy_shot" },
+			{ "break_shot" },
+			
+			{ "light_smg" },
+			{ "heavy_smg" },
+			
+			{ "light_ar" },
+			{ "heavy_ar" },
+			
+			{ "wpn_special" }
 		}
 	}
+
+--[[
 	if SystemFS:exists("assets/mod_overrides/Marlin Model 1894 Custom/main.xml") or SystemFS:exists("assets/mod_overrides/Mosin Nagant M9130 Obrez/main.xml") then
 		table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"snp"})
 	end		
 
 	if SystemFS:exists("assets/mod_overrides/Volmer HK51-B/main.xml") then
 		table.insert(tweak_data.gui.buy_weapon_categories.secondaries, {"lmg"})
-	end						
+	end		
+]]	
 
 --Sounds of Animals Fighting--
 local animal_fight = {

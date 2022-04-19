@@ -1186,9 +1186,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_deflection"] = "굴절",
 		["bm_menu_regen_time"] = "재생 지연",
 		["bm_menu_swap_speed"] = "스왑 시간",
-		["bm_menu_standing_range"] = "사거리",
-		["bm_menu_moving_range"] = "사거리 (움직일때)",
 		["bm_menu_pickup"] = "탄약 획득량",
+		["bm_menu_ads_speed"] = "조준 시간",
+		["bm_menu_reload"] = "재장전 시간",
+		["bm_menu_damage"] = "대미지", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Damage Max",
+		["bm_menu_standing_range"] = "최대 사거리",
+		["bm_menu_damage_min"] = "최소 대미지",
+		["bm_menu_moving_range"] = "최소 사거리",		
 
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "머즐",
@@ -1203,7 +1207,51 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_cylinder"] = "실린더",
 		["bm_menu_model"] = "모델",
 		["bm_menu_forebarrelgrip"] = "총열 및 총열덮개",
+		
+		--Weapon categories--
+		["menu_pistol"] = "권총",
+		["menu_akimbo_pistol"] = "듀얼 권총",
+		--
+		["menu_light_pis"] = "경권총",
+		["menu_heavy_pis"] = "중권총",
+		
+		["menu_shotgun"] = "산탄총",
+		["menu_akimbo_shotgun"] = "듀얼 산탄총",
+		--
+		["menu_light_shot"] = "경산탄총",
+		["menu_heavy_shot"] = "중산탄총",
+		["menu_break_shot"] = "중절식 산탄총",
+		
+		["menu_smg"] = "기관단총",
+		["menu_akimbo_smg"] = "듀얼 기관단총",
+		--
+		["menu_light_smg"] = "경기관단총",
+		["menu_heavy_smg"] = "중기관단총",
+		
+		["menu_assault_rifle"] = "소총",
+		["menu_akimbo_assault_rifle"] = "듀얼 소총",
+		--
+		["menu_light_ar"] = "경소총",
+		["menu_heavy_ar"] = "중소총",
+		["menu_dmr_ar"] = "저정사수 소총",
+		
+		["menu_lmg"] = "기관총",
+		--
+		["menu_light_mg"] = "경기관총",
+		["menu_heavy_mg"] = "중기관총",
+		
+		["menu_snp"] = "저격총",
+		--
+		["menu_light_snp"] = "경저격총",
+		["menu_heavy_snp"] = "중저격총",
+		["menu_antim_snp"] = "대물 소총",
 
+		["menu_wpn_special"] = "특수 & 분류되지 않음",
+
+
+
+
+		
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "틱당 방탄복 재생량: $passive_armor_regen",
 		["bm_menu_armor_grinding_2"] = "틱당 방탄복 재생량: $passive_armor_regen \n공격 적중시 방탄복 재생량: $active_armor_regen",
@@ -1925,7 +1973,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 정조준 속도가 ##75%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 정조준 속도가 ##50%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",

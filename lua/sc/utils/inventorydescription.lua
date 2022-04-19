@@ -14,6 +14,13 @@ table.insert(WeaponDescription._stats_shown, {
 	name = "pickup"
 })
 
+table.insert(WeaponDescription._stats_shown, {
+	name = "damage_min"
+})
+table.insert(WeaponDescription._stats_shown, {
+	name = "ads_speed"
+})
+
 --Add support for .reload_speed_multiplier
 function WeaponDescription._get_base_stats(name)
 	local base_stats = {}
@@ -386,7 +393,7 @@ function WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, s
 	end
 end
 
-function WeaponDescription._get_base_range(weapon, name, base_stats, consider_stability)
+function WeaponDescription._get_base_range(weapon, name, base_stats, calc_min)
 	local weapon_tweak = tweak_data.weapon[name]
 
 	local has_range = true
@@ -401,19 +408,14 @@ function WeaponDescription._get_base_range(weapon, name, base_stats, consider_st
 	end
 
 	if has_range then
-		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
-		local base_falloff = falloff_info.base
-		local acc_bonus = falloff_info.acc_bonus * base_stats.spread.value * 0.2
-		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
-
-		if consider_stability then
-			stab_bonus = falloff_info.stab_bonus * base_stats.recoil.value * 0.25
+		local base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.start_dist or 3000
+		local range = base_range
+		
+		if calc_min then
+			base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.end_dist or 6000
 		end
-
-		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus) * category_mul
-		if weapon_tweak.rays and weapon_tweak.rays > 1 then
-			range = range * falloff_info.shotgun_penalty
-		end
+		
+		range = base_range / 100
 
 		return range
 	else
@@ -421,7 +423,7 @@ function WeaponDescription._get_base_range(weapon, name, base_stats, consider_st
 	end
 end
 
-function WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, consider_stability)
+function WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, calc_min)
 	local weapon_tweak = tweak_data.weapon[name]
 
 	local has_range = true
@@ -430,41 +432,41 @@ function WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats,
 		local category = weapon_tweak.categories[i]
 		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
 			has_range = nil
-		elseif tweak_data[category] and tweak_data[category].range_mul then
-			category_mul = category_mul * tweak_data[category].range_mul
 		end
 	end
 
 	if has_range then
-		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
-		local base_falloff = falloff_info.base
-		local acc_bonus = falloff_info.acc_bonus * math.max(base_stats.spread.value + mods_stats.spread.value, 0) * 0.2
-		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
-		local base_range = base_stats.standing_range.value
-
-		if consider_stability then
-			stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value, 0) * 0.25
-			base_range = base_stats.moving_range.value
-		end
-
-		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus) * category_mul
-
+		local base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.start_dist or 300
 		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
-		if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
-			range = range * falloff_info.shotgun_penalty
+		local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+		local range = base_range
+		
+		if calc_min then
+			base_range = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.end_dist or 600
+			range = base_range
+			for part_id, stats in pairs(custom_data) do
+				if stats.falloff_end_mult then
+					range = range * stats.falloff_end_mult
+					--log("MIN RANGE: " .. tostring(range))
+				end
+			end
+		else
+			for part_id, stats in pairs(custom_data) do
+				if stats.falloff_start_mult then
+					range = range * stats.falloff_start_mult
+					--log("Max RANGE: " .. tostring(range))
+				end
+			end
 		end
-
-		if ammo_data.damage_near_mul then
-			range = range * ammo_data.damage_near_mul
-		end
-
-		return range - base_range
+		
+		return (range - base_range) / 100
 	else
 		return 0
 	end
 end
 
-function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, consider_stability)
+--Currently always returns false since I don't know of any passive range bonuses that can be displayed as a skill + I don't want to work on this anymore. Math big stinky
+function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, calc_min)
 	local weapon_tweak = tweak_data.weapon[name]
 
 	local has_range = true
@@ -473,27 +475,26 @@ function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats
 		local category = weapon_tweak.categories[i]
 		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
 			has_range = nil
-		elseif tweak_data[category] and tweak_data[category].range_mul then
-			category_mul = category_mul * tweak_data[category].range_mul
 		end
 	end
 
 	if has_range then
 		local falloff_info = tweak_data.weapon.stat_info.damage_falloff
 		local base_falloff = falloff_info.base
+		
 		local acc_bonus = falloff_info.acc_bonus * math.max(base_stats.spread.value + mods_stats.spread.value + skill_stats.spread.value, 0) * 0.2
 		local stab_bonus = falloff_info.stab_bonus * (#tweak_data.weapon.stats.recoil - 1)
 		local base_range = base_stats.standing_range.value
 		local mods_range = mods_stats.standing_range.value
 
-		if consider_stability then
-			stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value + skill_stats.recoil.value, 0) * 0.25
+		if calc_min then
+			stab_bonus = falloff_info.stab_bonus * math.max(base_stats.recoil.value + mods_stats.recoil.value + skill_stats.recoil.value, 0) * 0.2
 			base_range = base_stats.moving_range.value
 			mods_range = mods_stats.moving_range.value
 		end
 
 		local range = 0.01 * (base_falloff + acc_bonus + stab_bonus) * category_mul
-
+		
 		local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
 		if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
 			range = range * falloff_info.shotgun_penalty
@@ -506,7 +507,7 @@ function WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats
 		local skill_range = range - base_range - mods_range
 
 		if skill_range > 0 then
-			return true, skill_range
+			return false, 0 --true, skill_range
 		end
 	end
 
@@ -542,6 +543,143 @@ function WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stat
 		local max_pickup = weapon_tweak.AMMO_PICKUP[2] * (ammo_data.ammo_pickup_max_mul or 1) * pickup_multiplier
 		local average_pickup = (min_pickup + max_pickup) * 0.5
 		return true, average_pickup - mods_stats.pickup.value - base_stats.pickup.value
+	else
+		return false, 0
+	end
+end
+
+function WeaponDescription._get_base_damage_min(weapon, name, base_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local damage_base = base_stats.damage.value
+	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
+
+	
+	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	if weapon_tweak.rays and weapon_tweak.rays > 1 then
+		damage_min_mult = 0.05
+	end
+
+
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			damage_min_mult = 0
+			damage_base = 0
+		end
+	end
+
+	return damage_base * damage_min_mult
+end
+
+function WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local damage_base = base_stats.damage.value 
+	local damage_mods = mods_stats.damage.value
+	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
+	local ignore_rays = weapon_tweak.ignore_rays or false
+
+	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+		damage_min_mult = 0.05
+	end
+
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	for part_id, stats in pairs(custom_data) do
+		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
+			damage_min_mult = 1
+		end
+		if stats.dont_ignore_rays and stats.dont_ignore_rays == true then
+			ignore_rays = false
+		end
+	end
+
+	damage_mods = (damage_mods + damage_base) * damage_min_mult 
+
+
+
+	if ignore_rays == false and weapon_tweak.rays and weapon_tweak.rays > 1 then
+		damage_min_mult = 0.05
+	end
+	damage_base = damage_base * damage_min_mult 
+
+	for i = 1, #weapon_tweak.categories do
+		local category = weapon_tweak.categories[i]
+		if category == "rocket_frag" or category == "grenade_launcher" or category == "bow" or category == "saw" or category == "crossbow" then
+			damage_min_mult = 0
+			damage_mods = 0
+			damage_base = 0
+		end
+	end
+	
+	return damage_mods - damage_base
+end
+
+function WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local damage_base = base_stats.damage.value
+	local damage_mods = mods_stats.damage.value
+	local damage_min_mult = weapon_tweak.damage_falloff and weapon_tweak.damage_falloff.min_mult or 0.3
+	local multiplier = managers.blackmarket:damage_multiplier(name, weapon_tweak.categories, silencer, detection_risk, nil, blueprint) or 1
+	local ignore_rays = weapon_tweak.ignore_rays or false
+	
+	local ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	if weapon_tweak.rays and weapon_tweak.rays > 1 and not (ammo_data.rays and ammo_data.rays == 1) then
+		damage_min_mult = 0.05
+	end
+
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	for part_id, stats in pairs(custom_data) do
+		if stats.bullet_class and stats.bullet_class == "InstantExplosiveBulletBase" then
+			damage_min_mult = 1
+		end
+		if stats.dont_ignore_rays then
+			ignore_rays = false
+		end
+	end
+	
+	local damage_skill = (((damage_base + damage_mods) * multiplier) - ( damage_base + damage_mods ) ) * damage_min_mult 
+	if damage_skill > 0 then
+		return true, damage_skill
+	else
+		return false, 0
+	end
+end
+
+function WeaponDescription._get_base_ads_speed(weapon, name)
+	local weapon_tweak = tweak_data.weapon[name]
+	local ads_speed = weapon_tweak.ads_speed or 0.2
+	return ads_speed * 1000
+end
+
+function WeaponDescription._get_mods_ads_speed(weapon, name, base_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local custom_data = managers.weapon_factory:get_custom_stats_from_weapon(weapon.factory_id, weapon.blueprint) or {}
+	local ads_speed = base_stats.ads_speed.value
+	
+	for part_id, stats in pairs(custom_data) do
+		if stats.ads_speed_mult then
+			ads_speed = ads_speed * stats.ads_speed_mult
+		end
+	end
+	
+	return ads_speed - base_stats.ads_speed.value
+end
+
+function WeaponDescription._get_skill_ads_speed(weapon, name, base_stats, mods_stats)
+	local weapon_tweak = tweak_data.weapon[name]
+	local ads_multiplier = 1
+	local base_ads = base_stats.ads_speed.value
+	local mods_ads = mods_stats.ads_speed.value
+	local categories = weapon_tweak.categories
+
+	for _, category in ipairs(categories) do
+		ads_multiplier = ads_multiplier * ( 1 + 1 -  managers.player:upgrade_value(category, "enter_steelsight_speed_multiplier", 1))
+	end
+	ads_multiplier = ads_multiplier * ( 1 + 1 - managers.player:upgrade_value("weapon", "enter_steelsight_speed_multiplier", 1))
+	if ads_multiplier < 1 then
+		local skill_ads = (base_ads + mods_ads) * ads_multiplier
+		return true, skill_ads - base_ads - mods_ads
 	else
 		return false, 0
 	end
@@ -602,9 +740,11 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	skill_stats.swap_speed.skill_in_effect, skill_stats.swap_speed.value = WeaponDescription._get_skill_swap_speed(name, base_stats, mods_stats, skill_stats, silencer)
 
 	--and range.
+	--Standing range modified for damage dropoff start range (Max damage up until x range)
 	base_stats.standing_range.value = WeaponDescription._get_base_range(weapon, name, base_stats, false)
 	mods_stats.standing_range.value = WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, false)
 	skill_stats.standing_range.skill_in_effect, skill_stats.standing_range.value = WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, false)
+	--Moving range modified for damage dropoff end range (Minimum damage at x range)
 	base_stats.moving_range.value = WeaponDescription._get_base_range(weapon, name, base_stats, true)
 	mods_stats.moving_range.value = WeaponDescription._get_mods_range(weapon, name, base_stats, mods_stats, true)
 	skill_stats.moving_range.skill_in_effect, skill_stats.moving_range.value = WeaponDescription._get_skill_range(weapon, name, base_stats, mods_stats, skill_stats, true)
@@ -614,7 +754,16 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	base_stats.pickup.value = WeaponDescription._get_base_pickup(weapon, name)
 	mods_stats.pickup.value = WeaponDescription._get_mods_pickup(weapon, name, base_stats)
 	skill_stats.pickup.skill_in_effect, skill_stats.pickup.value = WeaponDescription._get_skill_pickup(weapon, name, base_stats, mods_stats)
-
+	
+	--Continuing the ugly
+	base_stats.damage_min.value = WeaponDescription._get_base_damage_min(weapon, name, base_stats)
+	mods_stats.damage_min.value = WeaponDescription._get_mods_damage_min(weapon, name, base_stats, mods_stats)
+	skill_stats.damage_min.skill_in_effect, skill_stats.damage_min.value = WeaponDescription._get_skill_damage_min(weapon, name, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint) 
+	
+	base_stats.ads_speed.value = WeaponDescription._get_base_ads_speed(weapon, name, base_stats)
+	mods_stats.ads_speed.value = WeaponDescription._get_mods_ads_speed(weapon, name, base_stats)
+	skill_stats.ads_speed.skill_in_effect, skill_stats.ads_speed.value = WeaponDescription._get_skill_ads_speed(weapon, name, base_stats, mods_stats)
+	
 	return base_stats, mods_stats, skill_stats
 end
 

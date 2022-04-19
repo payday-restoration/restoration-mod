@@ -12,29 +12,41 @@ function ShotgunBase:_update_stats_values(disallow_replenish, ammo_data)
 		end
 	end
 
-	self._damage_near_mul = tweak_data.weapon.stat_info.damage_falloff.near_mul
-	self._damage_far_mul = tweak_data.weapon.stat_info.damage_falloff.far_mul
+	self._damage_near_mul = 1
+	self._damage_far_mul = 1
 
 	if self._ammo_data then
 		if self._ammo_data.rays ~= nil then
 			self._rays = self._ammo_data.rays
 		end
+		--[[
 		if self._ammo_data.damage_near_mul ~= nil then
 			self._damage_near_mul = self._damage_near_mul * self._ammo_data.damage_near_mul
 		end
 		if self._ammo_data.damage_far_mul ~= nil then
 			self._damage_far_mul = self._damage_far_mul * self._ammo_data.damage_far_mul
 		end
+		--]]
 	end
 	local custom_stats = managers.weapon_factory:get_custom_stats_from_weapon(self._factory_id, self._blueprint)
 	for part_id, stats in pairs(custom_stats) do
+		--[[
 		if stats.damage_near_mul then
 			self._damage_near_mul = self._damage_near_mul * stats.damage_near_mul
 		end
 		if stats.damage_far_mul then
 			self._damage_far_mul = self._damage_far_mul * stats.damage_far_mul
 		end
+		]]
+		if stats.falloff_start_mult then
+			self._damage_near_mul = self._damage_near_mul * stats.falloff_start_mult
+		end
+	
+		if stats.falloff_end_mult then
+			self._damage_far_mul = self._damage_far_mul * stats.falloff_end_mult
+		end
 	end
+
 
 	self._range = tweak_data.weapon.stat_info.damage_falloff.max * self._damage_far_mul
 	
@@ -310,4 +322,31 @@ function ShotgunBase:run_and_shoot_allowed()
 	local allowed = ShotgunBase.super.run_and_shoot_allowed(self)
 
 	return allowed or managers.player:has_category_upgrade("shotgun", "hip_run_and_shoot") and self._is_real_shotgun
+end
+
+
+function ShotgunBase:fire_rate_multiplier()
+	local multiplier = self._fire_rate_multiplier or 1
+	local init_mult = self._fire_rate_init_mult
+	multiplier = multiplier * (self:weapon_tweak_data().fire_rate_multiplier or 1)
+
+	if self:in_burst_mode() then
+		multiplier = multiplier * (self._burst_fire_rate_multiplier or 1)
+	end	
+	
+	if self._fire_rate_init_count and (self._fire_rate_init_count > self._shots_fired) and self:fire_mode() ~= "single" and not self:in_burst_mode() then
+		--[
+		if self._fire_rate_init_ramp_up then
+			local init_ramp_up_add = (1 - self._fire_rate_init_mult ) / self._fire_rate_init_count  * self._shots_fired + init_mult
+			init_mult =  init_ramp_up_add
+		end
+		--]]
+		multiplier = multiplier * init_mult
+	end
+	
+	if managers.player:has_activate_temporary_upgrade("temporary", "headshot_fire_rate_mult") then
+		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "headshot_fire_rate_mult", 1)
+	end 
+	
+	return multiplier
 end

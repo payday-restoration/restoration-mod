@@ -1088,22 +1088,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_c96_sc_desc"] = "Revolutionary German machine pistol. Capable of firing in full-auto at an insane rate, but will decimate your ammo reserves.\nThis weapon reloads in clips of 10 bullets at a time.",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
-		["bm_heavy_ap_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
-		["bm_ap_2_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP, AND RANGE INCREASES THE LONGER AN ARROW IS DRAWN.",
-		["bm_ap_3_weapon_sc_desc"] = "CAN PENETRATE BODY ARMOR. ARROWS CAN BE RESTORED BY PICKING THEM UP.",
-		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle Flip Up Sight.",
-		["bm_rocket_launcher_sc_desc"] = "WHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED BY 15%. ROCKETS FIRED BY THIS WEAPON INSTANTLY DESTROY TURRETS.",
-		["bm_quake_shotgun_sc_desc"] = "FIRES BOTH BARRELS AT ONCE, DOUBLING THE NUMBER OF PELLETS.",
-		["bm_hx25_buck_sc_desc"] = "FIRES 12 PELLETS IN A WIDE SPREAD.\n\nSTILL TREATED AS A GRENADE LAUNCHER BY SKILLS.",
+		["bm_menu_weapon_movement_penalty_info"] = "MOVEMENT SPEED IS REDUCED BY ",
+		["bm_menu_weapon_movement_penalty_info_2"] = " WHILE DRAWN",
+		["bm_ap_weapon_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
+		["bm_ap_armor_weapon_sc_desc"] = "Can penetrate body armor.",
+		["bm_heavy_ap_weapon_sc_desc"] = "Can penetrate body armor, shields, titan shields and thin walls.",
+		["bm_ap_2_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be restored by picking them up and range increases the longer an arrow is drawn.",
+		["bm_ap_3_weapon_sc_desc"] = "Can penetrate body armor. Arrows can be restored by picking them up.",
+		["bm_40mm_weapon_sc_desc"] = "Press $BTN_GADGET to toggle the flip up sight.",
+		["bm_rocket_launcher_sc_desc"] = "Rockets fired by this weapon instantly destroy turrets.",
+		["bm_quake_shotgun_sc_desc"] = "Fires both barrels at one, doubleing the number of pellets.",
+		["bm_hx25_buck_sc_desc"] = "Fires 12 pellets in a wide spread.\n\nUses skills associated with launchers.",
 		["bm_auto_generated_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.",
 		["bm_auto_generated_ap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
 		["bm_auto_generated_sap_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nCAN PENETRATE BODY ARMOR, SHIELDS, TITAN SHIELDS, AND THIN WALLS.",
 		["bm_auto_generated_lmg_sc_desc"] = "This weapon is using automatically generated stats, and may not fit the creators intent or be perfectly balanced.\n\nWHILE EQUIPPED, THIS WEAPON WILL REDUCE YOUR MOVEMENT SPEED## BY 25%.",
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
-		["bm_tranq_maxim_sc_desc"] = "DEALS DAMAGE OVER TIME WITH TRANQUILIZER ROUNDS, INTEGRALLY SUPPRESSED.",
+		["bm_tranq_maxim_sc_desc"] = "Integrally suppressed.\n\nDeals damage over time with tranquilizer rounds.",
+		["bm_m134_rof_init_sc_desc"] = "Briefly shoots at 2x the rate of fire for the first few rounds of each trigger pull.",
 		
-		["bm_ap_weapon_peacemaker_sc_desc"] = "CAN PENETRATE BODY ARMOR, SHIELDS, AND THIN WALLS.",
+		["bm_ap_weapon_peacemaker_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
+		["bm_wolf_brigade_sc_desc"] = "50% less recoil when fired from the hip",
 		
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
@@ -1186,9 +1191,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_deflection"] = "Deflection",
 		["bm_menu_regen_time"] = "Regen Delay",
 		["bm_menu_swap_speed"] = "Swap Time",
-		["bm_menu_standing_range"] = "Range",
-		["bm_menu_moving_range"] = "Range (Moving)",
 		["bm_menu_pickup"] = "Ammo Pickup",
+		["bm_menu_ads_speed"] = "Aim Time",
+		["bm_menu_reload"] = "Reload Time",
+		["bm_menu_damage"] = "Damage", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Damage Max",
+		["bm_menu_standing_range"] = "Falloff Start",
+		["bm_menu_damage_min"] = "Damage Min",
+		["bm_menu_moving_range"] = "Falloff End",
 		
 		--Attachment type names--
 		["bm_menu_barrel_ext"] = "Muzzle",
@@ -1203,6 +1212,51 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_cylinder"] = "Cylinder",
 		["bm_menu_model"] = "Model",
 		["bm_menu_forebarrelgrip"] = "Barrel & Handguard",
+		["bm_menu_riser"] = "Riser",
+		["bm_menu_pump"] = "Pump",
+		
+		--Weapon categories--
+		["menu_pistol"] = "Pistols",
+		["menu_akimbo_pistol"] = "Dual Pistols",
+		--
+		["menu_light_pis"] = "Light Pistols",
+		["menu_heavy_pis"] = "Heavy Pistols",
+		
+		["menu_shotgun"] = "Shotguns",
+		["menu_akimbo_shotgun"] = "Dual Shotguns",
+		--
+		["menu_light_shot"] = "Light Shotguns",
+		["menu_heavy_shot"] = "Heavy Shotguns",
+		["menu_break_shot"] = "Break-Action Shotguns",
+		
+		["menu_smg"] = "SMGs",
+		["menu_akimbo_smg"] = "Dual SMGs",
+		--
+		["menu_light_smg"] = "Light SMGs",
+		["menu_heavy_smg"] = "Heavy SMGs",
+		
+		["menu_assault_rifle"] = "Rifles",
+		["menu_akimbo_assault_rifle"] = "Dual Rifles",
+		--
+		["menu_light_ar"] = "Light Rifles",
+		["menu_heavy_ar"] = "Heavy Rifles",
+		["menu_dmr_ar"] = "Marksman Rifles",
+		
+		["menu_lmg"] = "Machine Guns",
+		--
+		["menu_light_mg"] = "LMGs",
+		["menu_heavy_mg"] = "HMGs",
+		
+		["menu_snp"] = "Snipers",
+		--
+		["menu_light_snp"] = "Light Snipers",
+		["menu_heavy_snp"] = "Heavy Snipers",
+		["menu_antim_snp"] = "Anti-Materiel Rifles",
+
+		["menu_wpn_special"] = "Specials & Unsorted",
+		
+		
+		
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "Armor regenerated every tick: $passive_armor_regen",
@@ -1290,6 +1344,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_ass_ak_b_zastava"] = "Long Barrel",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Wolf Barrel",
 		["bm_wp_p90_b_ninja"] = "Ninja Barrel",
+		["bm_wp_par_b_short"] = "Comped Barrel",
 
 		["menu_es_rep_upgrade"] = "",	--???--
 
@@ -1903,11 +1958,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shock and Awe
 			["menu_spotter_teamwork_beta_sc"] = "Shock and Awe",
-			["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapons' magazine sizes are increased by ##20%.##\n\nNote: Does not apply to Crossbows, Bows, Grenade Launchers, or Rocket Launchers.\n\nACE: ##$pro##\nYou can now hip-fire with your weapons while sprinting.\n\nYour weapons' magazine sizes are increased by an additional ##30%.##",
+			["menu_spotter_teamwork_beta_desc_sc"] = "BASIC: ##$basic##\nYour weapons' magazine sizes are increased by ##20%.##\n\nNote: Does not apply to Crossbows, Bows, Grenade Launchers, or Rocket Launchers.\n\nACE: ##$pro##\nYour weapons can be hip-fired while sprinting and their sprint-to-fire delay is removed.\n\nYour weapons' magazine sizes are increased by an additional ##30%.##",
 
 			--Heavy Impact
 			["menu_speedy_reload_sc"] = "Heavy Impact",
-			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nLMGs have a ##40%## chance to knock down enemies while using a bipod.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, and Shields.\n\nACE: ##$pro##\nYou take ##50%## less damage while using a bipod.",
+			["menu_speedy_reload_desc_sc"] = "BASIC: ##$basic##\nSMGs and LMGs have a ##20%## chance to knock down enemies.\nThis chance is raised to ##40%## when using a bipod.\n\nNote: Stagger effects do not apply to Captains, Bulldozers, and Shields.\n\nACE: ##$pro##\nYou take ##12.5%## less damage while crouched.\nThe effect is raised to ##50%## when using a bipod.",
 
 			--Body Expertise
 			["menu_body_expertise_beta_sc"] = "Body Expertise",
@@ -1927,19 +1982,19 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "Shotgun CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers aim down sights ##75%## faster.\n\nACE: ##$pro##\nShotguns and Flamethrowers reload ##25%## faster.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds for Shotguns and flamethrowers are ##35%## faster.\n\nACE: ##$pro##\nShotguns and flamethrowers reload ##25%## faster.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "Shotgun Impact",
-			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and Flamethrowers gain ##4## stability.\n\nACE: ##$pro##\nShotguns fire ##3## extra pellets.\n\nNote: Does not apply to slugs or explosive rounds.",
+			["menu_shotgun_impact_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and flamethrowers gain ##4## stability.\n\nACE: ##$pro##\nShotguns fire ##3## extra pellets.\n\nNote: Does not apply to slugs or explosive rounds.",
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "Pigeon Shooter",
-			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##60%## faster while aiming down sights.\n\nACE: ##$pro##\nShotgun and Flamethrower accuracy and range is increased by ##30%## while aiming down sights.",
+			["menu_far_away_beta_desc_sc"] = "BASIC: ##$basic##\nYou move ##60%## faster while aiming down sights.\n\nACE: ##$pro##\nShotgun and flamethrower accuracy and range is increased by ##30%## while aiming down sights.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "Gung-Ho",
-			["menu_close_by_beta_desc_sc"] = "BASIC: ##$basic##\nYou can now hip-fire with shotguns and flamethrowers while sprinting.\n\nACE: ##$pro##\nYour rate of fire is increased by ##35%## while hip-firing with shotguns and flamethrowers.",
+			["menu_close_by_beta_desc_sc"] = "BASIC: ##$basic##\nShotguns and flamethrowers can be hip-fired while sprinting and their sprint-to-fire delay is removed.\n\nACE: ##$pro##\nYour rate of fire is increased by ##35%## while hip-firing with shotguns and flamethrowers.",
 
 			--Overkill
 			["menu_overkill_sc"] = "OVERKILL",
@@ -2170,7 +2225,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "Rifleman",
-		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYou aim down sights ##50%## faster.\n\nACE: ##$pro##\nRifles gain ##30%## more accuracy and range while aiming down sights.",
+		["menu_rifleman_desc_sc"] = "BASIC: ##$basic##\nYour aim down sights and sprint-to-fire speeds are ##35%## faster.\n\nACE: ##$pro##\nRifles gain ##30%## more accuracy and range while aiming down sights.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "Aggressive Reload",

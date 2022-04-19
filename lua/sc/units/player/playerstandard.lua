@@ -372,6 +372,92 @@ function PlayerStandard:_update_omniscience(t, dt)
 	end
 end
 
+--ADS movement speed shit
+function PlayerStandard:_get_max_walk_speed(t, force_run)
+	local speed_tweak = self._tweak_data.movement.speed
+	local movement_speed = speed_tweak.STANDARD_MAX
+	local speed_state = "walk"
+
+	if self._state_data.in_steelsight and not managers.player:has_category_upgrade("player", "steelsight_normal_movement_speed") and not _G.IS_VR then
+		movement_speed = speed_tweak.STEELSIGHT_MAX
+		if alive(self._equipped_unit) then
+			local weapon = self._equipped_unit:base()
+			local weapon_tweak = weapon:weapon_tweak_data()
+			local base_speed = ( (self:on_ladder() and speed_tweak.CLIMBING_MAX ) or (self._state_data.ducking and speed_tweak.CROUCHING_MAX) or (self._state_data.in_air and speed_tweak.INAIR_MAX) or speed_tweak.STANDARD_MAX )
+			if weapon_tweak.steelsight_movement_speed then
+				movement_speed = base_speed * weapon_tweak.steelsight_movement_speed
+			else
+				for _, category in ipairs(weapon_tweak.categories) do
+					if tweak_data[category] and tweak_data[category].ads_move_speed_mult then
+						movement_speed = base_speed * tweak_data[category].ads_move_speed_mult
+						break --hopefully this only grabs first category that has this stat
+					end
+				end
+			end
+			movement_speed = movement_speed * (managers.player:upgrade_value("player", "steelsight_move_speed_multiplier", 1) or 1)
+			--bullpup bonus speed
+			if weapon_tweak.is_bullpup then 
+				--mult = mult * 1.2
+			end
+			if movement_speed > base_speed then
+				movement_speed = base_speed
+			end
+		end
+		speed_state = "steelsight"
+	elseif self:on_ladder() then
+		movement_speed = speed_tweak.CLIMBING_MAX
+		speed_state = "climb"
+	elseif self._state_data.ducking then
+		movement_speed = speed_tweak.CROUCHING_MAX
+		speed_state = "crouch"
+	elseif self._state_data.in_air then
+		movement_speed = speed_tweak.INAIR_MAX
+		speed_state = nil
+	elseif self._running or force_run then
+		movement_speed = speed_tweak.RUNNING_MAX
+		speed_state = "run"
+	end
+
+	movement_speed = managers.modifiers:modify_value("PlayerStandard:GetMaxWalkSpeed", movement_speed, self._state_data, speed_tweak)
+	local morale_boost_bonus = self._ext_movement:morale_boost()
+	local multiplier = managers.player:movement_speed_multiplier(speed_state, speed_state and morale_boost_bonus and morale_boost_bonus.move_speed_bonus, nil, self._ext_damage:health_ratio())
+	multiplier = multiplier * (self._tweak_data.movement.multiplier[speed_state] or 1)
+	local apply_weapon_penalty = true
+
+	if self:_is_meleeing() then
+		local melee_entry = managers.blackmarket:equipped_melee_weapon()
+		apply_weapon_penalty = not tweak_data.blackmarket.melee_weapons[melee_entry].stats.remove_weapon_movement_penalty
+	end
+
+	if alive(self._equipped_unit) and apply_weapon_penalty then
+		multiplier = multiplier * self._equipped_unit:base():movement_penalty()
+	end
+
+	if managers.player:has_activate_temporary_upgrade("temporary", "increased_movement_speed") then
+		multiplier = multiplier * managers.player:temporary_upgrade_value("temporary", "increased_movement_speed", 1)
+	end
+
+	if managers.player:has_activate_temporary_upgrade("temporary", "copr_ability") then
+		local out_of_health = self._unit:character_damage():health_ratio() + 0.01 < managers.player:upgrade_value("player", "copr_static_damage_ratio", 0)
+
+		if out_of_health then
+			multiplier = multiplier * managers.player:upgrade_value("player", "copr_out_of_health_move_slow", 1)
+		end
+	end
+
+	local final_speed = movement_speed * multiplier
+	self._cached_final_speed = self._cached_final_speed or 0
+
+	if final_speed ~= self._cached_final_speed then
+		self._cached_final_speed = final_speed
+
+		self._ext_network:send("action_change_speed", final_speed)
+	end
+	return final_speed
+end
+
+
+
 --Allows for melee sprinting.
 function PlayerStandard:_start_action_running(t)
 	--Consolidated vanilla checks.
@@ -392,6 +478,9 @@ function PlayerStandard:_start_action_running(t)
 	end
 				
 	self:set_running(true)
+
+	self._equipped_unit:base():tweak_data_anim_stop("fire")
+	self._equipped_unit:base():tweak_data_anim_stop("fire_steelsight")
 
 	self._end_running_expire_t = nil
 	self._start_running_t = t
@@ -416,7 +505,9 @@ end
 function PlayerStandard:_end_action_running(t)
 	if not self._end_running_expire_t then
 		local speed_multiplier = self._equipped_unit:base():exit_run_speed_multiplier()
-		self._end_running_expire_t = t + 0.4 / speed_multiplier
+		local sprintout_anim_time = self._equipped_unit:base():weapon_tweak_data().sprintout_anim_time or 0.4
+
+		self._end_running_expire_t = t + sprintout_anim_time / speed_multiplier
 		--Adds a few melee related checks to avoid cutting off animations.
 		local stop_running = not self:_is_charging_weapon() and not self:_is_meleeing() and not self._equipped_unit:base():run_and_shoot_allowed() and (not self.RUN_AND_RELOAD or not self:_is_reloading())
 		
@@ -897,7 +988,7 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	self:_update_slide_locks()
 		
 	local weapon = self._unit:inventory():equipped_unit():base()
-	if weapon:get_name_id() == "m134" then
+	if weapon:get_name_id() == "m11134" then
 		weapon:update_spin()
 	end
 	
@@ -914,6 +1005,35 @@ end)
 --Check for being fully ADS'd
 function PlayerStandard:full_steelsight()
 	return self._state_data.in_steelsight and self._camera_unit:base():is_stance_done()
+end
+
+--ADS speed stuff
+function PlayerStandard:_stance_entered(unequipped)
+	local stance_standard = tweak_data.player.stances.default[managers.player:current_state()] or tweak_data.player.stances.default.standard
+	local head_stance = self._state_data.ducking and tweak_data.player.stances.default.crouched.head or stance_standard.head
+	local stance_id = nil
+	local stance_mod = {
+		translation = Vector3(0, 0, 0)
+	}
+
+	if not unequipped then
+		stance_id = self._equipped_unit:base():get_stance_id()
+
+		if self._state_data.in_steelsight and self._equipped_unit:base().stance_mod then
+			stance_mod = self._equipped_unit:base():stance_mod() or stance_mod
+		end
+	end
+
+	local stances = nil
+	stances = (self:_is_meleeing() or self:_is_throwing_projectile()) and tweak_data.player.stances.default or tweak_data.player.stances[stance_id] or tweak_data.player.stances.default
+	local misc_attribs = stances.standard
+	misc_attribs = (not self:_is_using_bipod() or self:_is_throwing_projectile() or stances.bipod) and (self._state_data.in_steelsight and stances.steelsight or self._state_data.ducking and stances.crouched or stances.standard)
+	local duration = tweak_data.player.TRANSITION_DURATION 
+	local duration_multiplier = not self._state_data.in_full_steelsight and self._state_data.in_steelsight and 1 / self._equipped_unit:base():enter_steelsight_speed_multiplier() or 1
+	local new_fov = self:get_zoom_fov(misc_attribs) + 0
+
+	self._camera_unit:base():clbk_stance_entered(misc_attribs.shoulders, head_stance, misc_attribs.vel_overshot, new_fov, misc_attribs.shakers, stance_mod, duration_multiplier, duration)
+	managers.menu:set_mouse_sensitivity(self:in_steelsight())
 end
 
 --Deals with burst fire hud stuff when swapping from an underbarrel back to a weapon in burst fire.
@@ -961,7 +1081,7 @@ end
 Hooks:PostHook(PlayerStandard, "_start_action_steelsight", "ResMinigunEnterSteelsight", function(self, t, gadget_state)
 	if self._state_data.in_steelsight or self._steelsight_wanted then
 		local weapon = self._unit:inventory():equipped_unit():base()
-		if weapon:get_name_id() == "m134" then
+		if weapon:get_name_id() == "m11134" then
 			weapon:vulcan_enter_steelsight()
 		end
 	end
@@ -971,7 +1091,7 @@ end)
 Hooks:PostHook(PlayerStandard, "_end_action_steelsight", "ResMinigunExitSteelsight", function(self, t, gadget_state)
 	if not self._state_data.in_steelsight then
 		local weapon = self._unit:inventory():equipped_unit():base()
-		if weapon:get_name_id() == "m134" then
+		if weapon:get_name_id() == "m11134" then
 			weapon:vulcan_exit_steelsight()
 		end
 	end
@@ -1257,6 +1377,8 @@ end)
 
 function PlayerStandard:_update_reload_timers(t, dt, input)
 	if self._state_data.reload_enter_expire_t and self._state_data.reload_enter_expire_t <= t then
+		self._equipped_unit:base():tweak_data_anim_stop("fire")
+		self._equipped_unit:base():tweak_data_anim_stop("fire_steelsight")
 		self._state_data.reload_enter_expire_t = nil
 		self:_start_action_reload(t)
 	end
@@ -1275,16 +1397,31 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 		end
 		if self._state_data.reload_expire_t <= t or interupt then
 			managers.player:remove_property("shock_and_awe_reload_multiplier")
-			self._state_data.reload_expire_t = nil
-			if self._equipped_unit:base():reload_exit_expire_t() then
+			self._state_data.reload_expire_t = nil	
+			local is_reload_not_empty = not self._equipped_unit:base():clip_empty()
+			if not self._equipped_unit:base()._use_shotgun_reload and self._equipped_unit:base():reload_exit_expire_t() and self._equipped_unit:base():reload_not_empty_exit_expire_t() then
+				if not interupt then
+					self._equipped_unit:base():on_reload()
+				end
+				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
+				
+				managers.statistics:reloaded()
+				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
+			elseif self._equipped_unit:base():reload_exit_expire_t() then
 				local is_reload_not_empty = not self._equipped_unit:base():started_reload_empty()
 				local animation_name = is_reload_not_empty and "reload_not_empty_exit" or "reload_exit"
 				local animation = self:get_animation(animation_name)
-				self._state_data.reload_exit_expire_t = t + self._equipped_unit:base():reload_exit_expire_t(is_reload_not_empty) / speed_multiplier
+				
+				self._state_data.reload_exit_expire_t = t + ((is_reload_not_empty and self._equipped_unit:base():reload_not_empty_exit_expire_t()) or self._equipped_unit:base():reload_exit_expire_t()) / speed_multiplier
+
 				local result = self._ext_camera:play_redirect(animation, speed_multiplier)
+				
 				self._equipped_unit:base():tweak_data_anim_play(animation_name, speed_multiplier)
+				
+				
 			elseif self._state_data.reload_expire_t and self._state_data.reload_expire_t <= t then --Update timers in case player total ammo changes to allow for more to be reloaded.
-				self._state_data.reload_expire_t = t + (self._equipped_unit:base():reload_expire_t() or 2.2) / speed_multiplier				
+				self._state_data.reload_expire_t = t + (self._equipped_unit:base():reload_expire_t() or 2.2) / speed_multiplier		
+				
 			elseif self._equipped_unit then
 				if not interupt then
 					self._equipped_unit:base():on_reload()
@@ -1316,6 +1453,15 @@ function PlayerStandard:_update_reload_timers(t, dt, input)
 	end
 end
 
+--Fixes use_shotgun_reload enabled weapons' parts still animating upon starting a reload
+Hooks:PostHook(PlayerStandard, "_start_action_reload_enter", "ResStopFireAnimReloadFix", function(self, t)
+	local weapon = self._equipped_unit:base()
+	if weapon and weapon:can_reload() then
+		weapon:tweak_data_anim_stop("fire")
+		weapon:tweak_data_anim_stop("fire_steelsight")
+	end
+end)
+
 function PlayerStandard:_start_action_reload(t)
 	local weapon = self._equipped_unit:base()
 
@@ -1323,6 +1469,7 @@ function PlayerStandard:_start_action_reload(t)
 		local is_reload_not_empty = weapon:clip_not_empty()
 	
 		weapon:tweak_data_anim_stop("fire")
+		weapon:tweak_data_anim_stop("fire_steelsight")
 
 		local speed_multiplier = weapon:reload_speed_multiplier()
 		local empty_reload = weapon:clip_empty() and 1 or 0

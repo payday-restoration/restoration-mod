@@ -853,6 +853,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["heist_xmn_hox_brief"] = "Дантист сфальсифицировал новое судебное разбирательство для Хокстона. Мы должны перехватить его сразу после слушания. Действовать будете настолько громко, насколько это возможно: взрываете стену, хватаете Хокстона и сбегаете к чертям.$NL;$NL;» Освободите Хокстона$NL;» Проведите его до бронированного грузовика$NL;» Сопровождайте грузовик$NL;» Скройтесь с места преступления вместе с Хокстоном.",
 
 		["heist_xmn_tag_name"] = "Проникновение на Рождество",
+		
+		--Rats Zipline
+		["menu_alex_1_zipline_desc"] = "Лебедка для быстрого переноса сумок"
 	})
 
 	local job = Global.level_data and Global.level_data.level_id
@@ -1018,7 +1021,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_wp_fla_mk2_mag_rare_sc"] = "Слабая прожарка",
 		["bm_wp_fla_mk2_mag_rare_desc_sc"] = "Удваивает время горения, но наполовину уменьшает его урон.",
 		["bm_wp_fla_mk2_mag_well_desc_sc"] = "Уменьшает время горения наполовину, но удваивает урон от него.",
-		["bm_ap_flamethrower_sc_desc"] = "Тысячи градусов чистой боли. Как до такого можно было додуматься?\nПРОЖИГАЕТ ЧЕРЕЗ БРОНЮ.", --used by both flamethrowers, decouple later?--
+		["bm_ap_flamethrower_sc_desc"] = "Тысячи градусов чистой боли. Кто мог придумать такое?\nПРОЖИГАЕТ ЧЕРЕЗ БРОНЮ.", --used by both flamethrowers, decouple later?--
+		["bm_ap_money_sc_desc"] = "Тысячи долларов чистого счастья. Поверните кран и выпускайте бабло.\nДАЕТ ВЗЯТКИ ЧЕРЕЗ БРОНЮ.", --used by both flamethrowers, decouple later?--
 
 		--LMGs/Miniguns--
 		["bm_wp_upg_a_halfthatkit"] = "Двойная порция", -- lol
@@ -1084,22 +1088,27 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_c96_sc_desc"] = "Инновационный немецкий автоматический пистолет. Может вести полностью автоматический огонь с бешеной скоростью, но очень быстро опустошит ваши запасы патронов.\nЭто оружие перезаряжается обоймами по 10 патронов.",
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
-		["bm_ap_weapon_sc_desc"] = "МОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ И ТОНКИЕ СТЕНЫ.",
-		["bm_heavy_ap_weapon_sc_desc"] = "МОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ, ТИТАНОВЫЕ ЩИТЫ И ТОНКИЕ СТЕНЫ.",
-		["bm_ap_2_weapon_sc_desc"] = "МОЖЕТ ПРОБИВАТЬ БРОНЮ. СТРЕЛЫ МОЖНО ПОДОБРАТЬ ДЛЯ ПОВТОРНОГО ИСПОЛЬЗОВАНИЯ. ЧЕМ ДОЛЬШЕ СТРЕЛА ЗАРЯЖАЕТСЯ, ТЕМ ВЫШЕ БУДЕТ ДАЛЬНОСТЬ.",
-		["bm_ap_3_weapon_sc_desc"] = "МОЖЕТ ПРОБИВАТЬ БРОНЮ. СТРЕЛЫ МОЖНО ПОДОБРАТЬ ДЛЯ ПОВТОРНОГО ИСПОЛЬЗОВАНИЯ.",
-		["bm_40mm_weapon_sc_desc"] = "Нажмите $BTN_GADGET чтобы воспользоваться прицелом.",
-		["bm_rocket_launcher_sc_desc"] = "НОШЕНИЕ ЭТОГО ОРУЖИЯ ЗАМЕДЛИТ ВАШУ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ НА 15%. РАКЕТЫ, ВЫПУЩЕННЫЕ ИЗ ЭТОГО ОРУЖИЯ, МГНОВЕННО УНИЧТОЖАЮТ ТУРЕЛИ.",
-		["bm_quake_shotgun_sc_desc"] = "СТРЕЛЯЕТ СРАЗУ С ДВУХ СТВОЛОВ, УДВАИВАЯ КОЛИЧЕСТВО ДРОБИНОК.",
-		["bm_hx25_buck_sc_desc"] = "ВЫСТРЕЛИВАЕТ 12 ДРОБИНОК С ШИРОКИМ РАЗБРОСОМ.\n\nРАСЦЕНИВАЕТСЯ НАВЫКАМИ КАК ГРАНАТОМЁТ.",
-		["bm_auto_generated_sc_desc"] = "Характеристики этого оружия были сгенерированны автоматически и могут быть несбалансированны, или не отражать идею автора.",
-		["bm_auto_generated_ap_sc_desc"] = "Характеристики этого оружия были сгенерированны автоматически и могут быть несбалансированны, или не отражать идею автора.\n\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ И ТОНКИЕ СТЕНЫ.",
-		["bm_auto_generated_sap_sc_desc"] = "Характеристики этого оружия были сгенерированны автоматически и могут быть несбалансированны, или не отражать идею автора.\n\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ, ТИТАНОВЫЕ ЩИТЫ И ТОНКИЕ СТЕНЫ.",
-		["bm_auto_generated_lmg_sc_desc"] = "Характеристики этого оружия были сгенерированны автоматически и могут быть несбалансированны, или не отражать идею автора.\n\nНОШЕНИЕ ЭТОГО ОРУЖИЯ ЗАМЕДЛИТ ВАШУ СКОРОСТЬ ПЕРЕДВИЖЕНИЯ ## на 25%.",
-		["bm_auto_generated_mod_sc_desc"] = "Характеристики этого модуля были убраны, так как автоматическая генерация характеристик модулей на данный момент не реализована.",
-		["bm_tranq_maxim_sc_desc"] = "ТРАНКВИЛИЗАТОР: НАНОСИТ УРОН ЧЕРЕЗ ВРЕМЯ. ИМЕЕТ ВСТРОЕННЫЙ ГЛУШИТЕЛЬ",
-
-		["bm_ap_weapon_peacemaker_sc_desc"] = "МОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ И ТОНКИЕ СТЕНЫ.",
+		["bm_menu_weapon_movement_penalty_info"] = "СКОРОСТЬ УМЕНЬШЕНА НА ",
+		["bm_menu_weapon_movement_penalty_info_2"] = " КОГДА ОРУЖИЕ В РУКАХ",
+		["bm_ap_weapon_sc_desc"] = "Может пробивать броню, щиты и тонкие стены.",
+		["bm_ap_armor_weapon_sc_desc"] = "Может пробивать броню.",
+		["bm_heavy_ap_weapon_sc_desc"] = "Может пробивать броню, щиты, титановые щиты и тонкие стены.",
+		["bm_ap_2_weapon_sc_desc"] = "Может пробивать броню. Стрелы можно подобрать обратно. Чем дольше держать тетиву, тем выше будет дальность.",
+		["bm_ap_3_weapon_sc_desc"] = "Может пробивать броню. Стрелы можно подобрать обратно.",
+		["bm_40mm_weapon_sc_desc"] = "Нажмите $BTN_GADGET чтобы поднять прицел.",
+		["bm_rocket_launcher_sc_desc"] = "Ракеты мгновенно уничтожают турели.",
+		["bm_quake_shotgun_sc_desc"] = "Стреляет из двух стволов сразу, удваивая количество дробинок.",
+		["bm_hx25_buck_sc_desc"] = "Выстреливает 12 дробинок с большим разбросом.\n\nИспользует навыки гранатометов.",
+		["bm_auto_generated_sc_desc"] = "Характеристики этого оружия сгенерированны автоматически и могут не соответствовать видению автора или балансу.",
+		["bm_auto_generated_ap_sc_desc"] = "Характеристики этого оружия сгенерированны автоматически и могут не соответствовать видению автора или балансу.\n\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ И ТОНКИЕ СТЕНЫ.",
+		["bm_auto_generated_sap_sc_desc"] = "Характеристики этого оружия сгенерированны автоматически и могут не соответствовать видению автора или балансу.\n\nМОЖЕТ ПРОБИВАТЬ БРОНЮ, ЩИТЫ, ТИТАНОВЫЕ ЩИТЫ И ТОНКИЕ СТЕНЫ.",
+		["bm_auto_generated_lmg_sc_desc"] = "Характеристики этого оружия сгенерированны автоматически и могут не соответствовать видению автора или балансу.\n\nКОГДА ОРУЖИЕ В РУКАХ, ВАША СКОРОСТЬ УМЕНЬШЕНА## НА 25%.",
+		["bm_auto_generated_mod_sc_desc"] = "Характеристики этого модуля автоматически убраны, так как генерация характеристик для модулей пока не реализована.",
+		["bm_tranq_maxim_sc_desc"] = "Имеет встроенный глушитель.\n\nСняряжен транквилизаторами, которые наносят урон через время.",
+		["bm_m134_rof_init_sc_desc"] = "Отстреливает первые несколько пуль в два раза быстрее после каждого нажатия курка.",
+		
+		["bm_ap_weapon_peacemaker_sc_desc"] = "Может пробивать броню, щиты и тонкие стены.",
+		["bm_wolf_brigade_sc_desc"] = "Отдача уменьшена на 50% при стрельбе от бедра.",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration",
@@ -1179,12 +1188,75 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "Этот костюм, по слухам, принадлежал одному из трёх членов банды психопатов и был найден в уничтоженном мусоровозе, который использовался в кровавом ограблении бронетранспорта GenSec, в ходе которого несколько членов SWAT были убиты и многие ранены. Личности этих бандитов до сих пор остаются в тайне, так как большинство улик было уничтожено вместе с мусоровозом - остался только этот костюм.",
 
 		--New menu stats--
-		["bm_menu_deflection"] = "Устой-вость",
+		["bm_menu_deflection"] = "Устойчивость",
 		["bm_menu_regen_time"] = "Регенерация",
 		["bm_menu_swap_speed"] = "Ск. смены",
-		["bm_menu_standing_range"] = "Даль-сть",
-		["bm_menu_moving_range"] = "В движении",
 		["bm_menu_pickup"] = "Подбор",
+		["bm_menu_ads_speed"] = "Ск. прицеливания",
+		["bm_menu_reload"] = "Ск. перезарядки",
+		["bm_menu_damage"] = "Урон", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Макс. урон",
+		["bm_menu_standing_range"] = "Мин. падение",
+		["bm_menu_damage_min"] = "Мин. урон",
+		["bm_menu_moving_range"] = "Макс. падение",
+		
+		--Attachment type names--
+		["bm_menu_barrel_ext"] = "Насадка",
+		["bm_menu_foregrip"] = "Цевье",
+		["bm_menu_vertical_grip"] = "Рукоятка",
+		--Spoof types--
+		["bm_menu_frame"] = "Рама",
+		["bm_menu_whole_receiver"] = "Затвор",
+		["bm_menu_shell_rack"] = "Патронташ",
+		["bm_menu_nozzle"] = "Насадка",
+		["bm_menu_fuel"] = "Баллон",
+		["bm_menu_cylinder"] = "Барабан",
+		["bm_menu_model"] = "Модель",
+		["bm_menu_forebarrelgrip"] = "Ствол и рукоятка",
+		["bm_menu_riser"] = "Рельс",
+		["bm_menu_pump"] = "Помпа",
+		
+		--Weapon categories--
+		["menu_pistol"] = "Пистолеты",
+		["menu_akimbo_pistol"] = "Парные пистолеты",
+		--
+		["menu_light_pis"] = "Легкие пистолеты",
+		["menu_heavy_pis"] = "Тяжелые пистолеты",
+		
+		["menu_shotgun"] = "Дробовики",
+		["menu_akimbo_shotgun"] = "Парные дробовики",
+		--
+		["menu_light_shot"] = "Легкие дробовики",
+		["menu_heavy_shot"] = "Тяжелые дробовики",
+		["menu_break_shot"] = "Ружья",
+		
+		["menu_smg"] = "ПП",
+		["menu_akimbo_smg"] = "Парные ПП",
+		--
+		["menu_light_smg"] = "Легкие ПП",
+		["menu_heavy_smg"] = "Тяжелые ПП",
+		
+		["menu_assault_rifle"] = "Винтовки",
+		["menu_akimbo_assault_rifle"] = "Парные винтовки",
+		--
+		["menu_light_ar"] = "Легкие винтовки",
+		["menu_heavy_ar"] = "Тяжелые винтовки",
+		["menu_dmr_ar"] = "Марксманские винтовки",
+		
+		["menu_lmg"] = "Пулеметы",
+		--
+		["menu_light_mg"] = "Легкие пулеметы",
+		["menu_heavy_mg"] = "Тяжелые пулеметы",
+		
+		["menu_snp"] = "Снайперские винтовки",
+		--
+		["menu_light_snp"] = "Легкие снайперские винтовки",
+		["menu_heavy_snp"] = "Тяжелые снайперские винтовки",
+		["menu_antim_snp"] = "Крупнокалиберные снайперские винтовки",
+
+		["menu_wpn_special"] = "Особое и прочее",
+		
+		
+	
 
 		--Blackmarket gui per-armor skill descriptions.
 		["bm_menu_armor_grinding_1"] = "Восстановление брони за раз: $passive_armor_regen",
@@ -1193,22 +1265,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_armor_max_health_store_1"] = "Максимальное количество запасного здоровья: $health_stored",
 		["bm_menu_armor_max_health_store_2"] = "Максимальное количество запасного здоровья: $health_stored \nРегенерация брони при убийстве: $regen_bonus%",
 	})
-
-	local twirl = math.rand(1)
-	local shalashaska = 0.06
-
-	if twirl <= shalashaska then
-		LocalizationManager:add_localized_strings({	
-			["bm_w_peacemaker"] = "Revolver Ocelot",
-			["bm_w_peacemaker_desc"] = "Revolver Ocelot",
-			["bm_ap_weapon_peacemaker_sc_desc"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot"
-		})
-	end	
-	
 end)
 
 Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc)
@@ -1288,6 +1344,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_upg_ass_ak_b_zastava"] = "Длинный ствол",
 		["bm_wp_upg_ass_m4_b_beowulf"] = "Ствол Вульфа",
 		["bm_wp_p90_b_ninja"] = "Ниндзя-ствол",
+		["bm_wp_par_b_short"] = "Укороченный ствол",
 
 		["menu_es_rep_upgrade"] = "",	--???--
 
@@ -1377,6 +1434,22 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette"] = "40MM Flechette Rounds",
 		["bm_wp_wpn_fps_upg_g3m203_gre_flechette_desc"] = "Round loaded with 12 small long range darts.\n\nTotal ammo: 20\nDamage: 240\nAccuracy: 50\nEffective range: 11M\nMaximum range: 22M",
 	})
+
+	local twirl = math.rand(1)
+	local shalashaska = 0.06
+
+	if twirl <= shalashaska then
+		LocalizationManager:add_localized_strings({	
+			["bm_w_peacemaker"] = "Revolver Ocelot",
+			["bm_w_peacemaker_desc"] = "Revolver Ocelot",
+			["bm_ap_weapon_peacemaker_sc_desc"] = "Revolver Ocelot",
+			["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
+			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
+			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
+			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot"
+		})
+	end
+	
 end)
 
 local r = tweak_data.levels.ai_groups.russia --LevelsTweakData.LevelType.Russia
@@ -2386,7 +2459,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--THIS IS WAR BABY--
 		["menu_st_spec_14_desc_sc"] = "The Maniac Perk Deck is the embodiment of crazy and to never accept bad odds in moments of danger. By pushing through and constantly deal damage, your fellow heisters will be granted a temporary shield making all of you feel Jimmy's invulnerable spirit.\n\n\n\n\n\nBenefits from a full perk deck:\n##-##Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##2400##. Hysteria Stacks: Incoming damage is reduced by ##1.5## points for every ##240## stacks of Hysteria. Hysteria Stacks decay by ##240## every ##8## seconds.\n##-##Members of your crew also gains the effect of your Hysteria Stacks.",
-		["menu_deck14_1_desc_sc"] = "Damage you deal is converted into Hysteria Stacks. Max amount of stacks is ##2400##.\n\nHysteria Stacks:\nIncoming damage is reduced by ##1## point for every ##400## stacks of Hysteria. Hysteria Stacks decay by ##400## every ##8## seconds.",
 		["menu_deck14_1_desc_sc"] = "Наносимый вами урон переводится в Истерию. Максимальное количество Истерии - ##2400##.\n\nИстерия:\nПолучаемый урон для вас и вашей команды уменьшается на ##1## очко за каждые ##400## очков Истерии. Истерия уменьшается на ##400## каждые ##8## секунд.",
 		["menu_deck14_5_desc_sc"] = "Истерия теперь уменьшается на ##300## каждые ##8## секунд.",
 		["menu_deck14_7_desc_sc"] = "Получаемый урон теперь уменьшается на ##1## очко за каждые ##300## очков Истерии.",

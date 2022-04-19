@@ -49,25 +49,7 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		1000000,
 		1000000
 	}	
-	self.jobs.chca.contract_visuals.min_mission_xp = {
-		39250,
-		39250,
-		39250,
-		39250,
-		39250,
-		39250,
-		39250
-	}
-	self.jobs.chca.contract_visuals.max_mission_xp = {
-		67500,
-		67500,
-		67500,
-		67500,
-		67500,
-		67500,
-		67500
-	}	
-	
+
 	--Border Crystals (it's basically Cook Off but in Mexico)
 	self.jobs.mex_cooking.payout = {			
 		90000,
@@ -87,25 +69,7 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		600000,
 		600000
 	}	
-	self.jobs.mex_cooking.contract_visuals.min_mission_xp = {
-		16000,
-		16000,
-		16000,
-		16000,
-		16000,
-		16000,
-		16000
-	}
-	self.jobs.mex_cooking.contract_visuals.max_mission_xp = {
-		9600000,
-		9600000,
-		9600000,
-		9600000,
-		9600000,
-		9600000,
-		9600000
-	}
-	
+
 	--Border Crossing
 	self.jobs.mex.payout = {			
 		90000,
@@ -125,25 +89,7 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		600000,
 		600000
 	}	
-	self.jobs.mex.contract_visuals.min_mission_xp = {
-		64000,
-		64000,
-		64000,
-		64000,
-		64000,
-		64000,
-		64000
-	}
-	self.jobs.mex.contract_visuals.max_mission_xp = {
-		96000,
-		96000,
-		96000,
-		96000,
-		96000,
-		96000,
-		96000
-	}
-	
+
 	--San Martin Bank
 	self.jobs.bex.payout = {			
 		60000,
@@ -163,22 +109,5 @@ Hooks:PostHook( NarrativeTweakData, "init", "SC_Narratives", function(self)
 		700000,
 		700000
 	}
-	self.jobs.bex.contract_visuals.min_mission_xp = {
-		28000,
-		28000,
-		28000,
-		28000,
-		28000,
-		28000,
-		28000
-	}
-	self.jobs.bex.contract_visuals.max_mission_xp = {
-		40100,
-		40100,
-		40100,
-		40100,
-		40100,
-		40100,
-		40100
-	}
+	
 end)

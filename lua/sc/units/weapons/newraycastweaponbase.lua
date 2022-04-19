@@ -424,11 +424,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		
 		--self._has_burst_fire = (not self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) or (self:can_toggle_firemode() or self:weapon_tweak_data().BURST_FIRE) and self:weapon_tweak_data().BURST_FIRE ~= false
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
-		self._burst_size = (self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE) * 2
-		-- YEAH FOR SOME FUCKING REASON fire() GETS CALLED TWICE AND BREAKS/UNDERSHOOTS BURST VALUES THAT AREN'T EXPLICITLY 3, ANY OTHER VALUE HAS TO BE DOUBLED IF YOU WANT THEM TO BEHAVE CORRECTLY
-		-- GEE 3-ROUND BURST GUNS, WHY DO YOU GET TO HAVE TWO VALID VALUES TO ACHIEVE YOUR BURST SIZE?
-		-- YES, I AM ANGRY ABOUT HOW UTTERLY FUCKING STUPID OF A FIX THIS IS, BUT IT WORKS AND I CANNOT BE FUCKED TO FIGURE OUT WHY fire() GETS CALLED TWICE (though I assume it's prolly due to being cloned off RaycastWeaponBase or something, I dunno)
-		-- I ONLY HOPE THERE AREN'T INSTANCES OF fire() CORRECTLY BEING CALLED ONCE
+		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
 		self._burst_fire_rate_multiplier = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER or 1
 		self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
@@ -633,8 +629,8 @@ function NewRaycastWeaponBase:fire(...)
 		if self:clip_empty() then
 			self:cancel_burst()
 		else
-			self._burst_rounds_fired = self._burst_rounds_fired + 1
-			self._burst_rounds_remaining = (self._burst_rounds_remaining <= 0 and self._burst_size or self._burst_rounds_remaining) - 1
+			self._burst_rounds_fired = self._burst_rounds_fired + 0.5
+			self._burst_rounds_remaining = (self._burst_rounds_remaining <= 0 and self._burst_size or self._burst_rounds_remaining) - 0.5
 			if self._burst_rounds_remaining <= 0 then
 				self:cancel_burst()
 			end

@@ -279,6 +279,7 @@
 		<hook file="sc/tweak_data/attentiontweakdata.lua" source_file="lib/tweak_data/attentiontweakdata"/>
 		<hook file="sc/managers/gameplaycentralmanager.lua" source_file="lib/managers/gameplaycentralmanager"/>
 		<hook file="sc/units/weapons/akimboweaponbase.lua" source_file="lib/units/weapons/akimboweaponbase"/>
+		<hook file="sc/units/weapons/akimboshotgunbase.lua" source_file="lib/units/weapons/akimboshotgunbase"/>
 		<hook file="sc/managers/hudmanagerpd2.lua" source_file="lib/managers/hudmanagerpd2"/>
 		<hook file="sc/managers/hud/hudteammate.lua" source_file="lib/managers/hud/hudteammate"/>
 		<hook file="sc/managers/menu/playerinventorygui.lua" source_file="lib/managers/menu/playerinventorygui"/>

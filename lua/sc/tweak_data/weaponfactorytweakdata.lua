@@ -3860,6 +3860,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_judge", "resmod_judge", function(s
 			rays = 6
 		}
 	}			
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+	self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 	
 end)	
 
@@ -11602,6 +11604,23 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_judge", "resmod_x_judge", functi
 			rays = 6
 		}
 	}
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free = {
+		supported = true,
+		stats = {
+			value = 9,
+			total_ammo_mod = -25,
+			damage = 30
+		},
+		custom_stats = {
+			falloff_start_mult = 0.75,
+			falloff_end_mult = 0.75,
+			ammo_pickup_max_mul = 0.8,
+			ammo_pickup_min_mul = 0.8,
+			rays = 6
+		}
+	}
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing = a_piercing_pump_override
+	self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath = a_dragons_breath_pump_override
 
 end)
 

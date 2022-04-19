@@ -30,7 +30,7 @@ else
 	end
 	
 	function AkimboWeaponBase:fire_rate_multiplier(...)
-		return fire_rate_multiplier_original(self, ...) * (self:_in_burst_or_auto_mode() and 1 or 2)
+		return fire_rate_multiplier_original(self, ...) * (self:_in_burst_or_auto_mode() and 1 or 1)
 	end
 	
 	--Override
@@ -51,18 +51,17 @@ else
 		return self._fire_mode == NewRaycastWeaponBase.IDSTRING_AUTO or self:in_burst_mode()
 	end
 	
-end	
-
--- Fix npc akimbo weapons to aktually fire both guns, from Streamlined Heisting
-function NPCAkimboWeaponBase:fire(...)
-	if self._fire_second_gun_next then
-		self._fire_second_gun_next = false
-		if alive(self._second_gun) then
-			return self._second_gun:base().super.fire(self._second_gun:base(), ...)
+	local _update_stats_values_original = AkimboShotgunBase._update_stats_values
+	function AkimboShotgunBase:_update_stats_values(...)
+		_update_stats_values_original(self, ...)
+		
+		if not self:is_npc() then
+			self._has_burst_fire = self._has_burst_fire or ((self:weapon_tweak_data().BURST_FIRE ~= false) and (self._fire_mode == NewRaycastWeaponBase.IDSTRING_SINGLE))
+			
+			if self._has_burst_fire then
+				self:_set_burst_mode(not self._manual_fire_second_gun, true)
+			end
 		end
-	else
-		self._fire_second_gun_next = true
-		return self.super.fire(self, ...)
 	end
-end
-
+	
+end	

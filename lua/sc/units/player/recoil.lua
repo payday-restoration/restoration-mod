@@ -230,7 +230,7 @@ function FPCameraPlayerBase:play_redirect(redirect_name, speed, offset_time)
 	
 	--Fix for fire rate speed mults not applying to anims, especially whie aiming
 	--Like fuck am I doing this fix through "PlayerStandard:_check_action_primary_attack" instead
-	local equipped_weapon = self._parent_unit:inventory():equipped_unit()
+	local equipped_weapon = self._parent_unit and self._parent_unit:inventory() and self._parent_unit:inventory():equipped_unit()
 	if alive(equipped_weapon) then
 		local weap_base = equipped_weapon:base()
 		if redirect_name == ANIM_STATES.standard.recoil_steelsight or redirect_name == ANIM_STATES.standard.recoil then

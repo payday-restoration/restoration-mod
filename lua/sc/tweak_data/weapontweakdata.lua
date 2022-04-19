@@ -5443,10 +5443,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			--Akimbo Judge
 				--Keeping
 				self.x_judge.fire_mode_data.fire_rate = 0.272727
-				self.x_judge.single.fire_rate = 0.272727
 				self.x_judge.rays = 9
-				self.x_judge.FIRE_MODE = "single"
-				self.x_judge.BURST_FIRE = true
+				self.x_judge.BURST_FIRE = 2
 				self.x_judge.AMMO_MAX = 40
 				self.x_judge.supported = true
 				self.x_judge.ads_speed = 0.300

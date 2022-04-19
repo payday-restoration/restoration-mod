@@ -1989,7 +1989,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Pigeon Shooting
 			["menu_far_away_beta_sc"] = "비둘기 사수",
-			["menu_far_away_beta_desc_sc"] = "베이직: ##$basic##\n조준하는 동안 이동 속도가 ##60%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 명중률와 사거리가 정조준하는 동안 ##30%##만큼 증가합니다.",
+			["menu_far_away_beta_desc_sc"] = "베이직: ##$basic##\n조준하는 동안 이동 속도가 ##60%##만큼 빨라집니다.\n\n참고: 속도는 현재 위치의 최대 속도로 제한됩니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 명중률와 사거리가 정조준하는 동안 ##30%##만큼 증가합니다.",
 
 			--Gung Ho
 			["menu_close_by_beta_sc"] = "궁호",

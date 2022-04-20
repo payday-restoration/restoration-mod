@@ -662,8 +662,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_resmusic_lethalforce"] = "Lethal Force",
 		["menu_jukebox_resmusic_redmarks"] = "Red Marks",
 		["menu_jukebox_screen_resmusic_redmarks"] = "Red Marks",
-		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (Alpha Version)",
-		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (Alpha Version)",
+		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (Альфа)",
+		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (Альфа)",
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
@@ -1108,7 +1108,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m134_rof_init_sc_desc"] = "Отстреливает первые несколько пуль в два раза быстрее после каждого нажатия курка.",
 		
 		["bm_ap_weapon_peacemaker_sc_desc"] = "Может пробивать броню, щиты и тонкие стены.",
-		["bm_wolf_brigade_sc_desc"] = "Отдача уменьшена на 50% при стрельбе от бедра.",
+		["bm_wolf_brigade_sc_desc"] = "Отдача уменьшена на 25% при стрельбе от бедра.",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration",
@@ -1188,12 +1188,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_suit_var_jumpsuit_flatgreen_desc"] = "Этот костюм, по слухам, принадлежал одному из трёх членов банды психопатов и был найден в уничтоженном мусоровозе, который использовался в кровавом ограблении бронетранспорта GenSec, в ходе которого несколько членов SWAT были убиты и многие ранены. Личности этих бандитов до сих пор остаются в тайне, так как большинство улик было уничтожено вместе с мусоровозом - остался только этот костюм.",
 
 		--New menu stats--
-		["bm_menu_deflection"] = "Устойчивость",
+		["bm_menu_deflection"] = "Устой-вость",
 		["bm_menu_regen_time"] = "Регенерация",
 		["bm_menu_swap_speed"] = "Ск. смены",
 		["bm_menu_pickup"] = "Подбор",
-		["bm_menu_ads_speed"] = "Ск. прицеливания",
-		["bm_menu_reload"] = "Ск. перезарядки",
+		["bm_menu_ads_speed"] = "Прицеливание",
+		["bm_menu_reload"] = "Перезарядка",
 		["bm_menu_damage"] = "Урон", -- I gotta find out WHO KILLED MY DA- how to spoof the damage readout for melee ["bm_menu_damage"] = "Макс. урон",
 		["bm_menu_standing_range"] = "Мин. падение",
 		["bm_menu_damage_min"] = "Мин. урон",
@@ -1214,6 +1214,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_forebarrelgrip"] = "Ствол и рукоятка",
 		["bm_menu_riser"] = "Рельс",
 		["bm_menu_pump"] = "Помпа",
+		
+		["bm_menu_ro_barrel"] = "Ствол",
+		["bm_menu_ro_stock"] = "Приклад",
+		["bm_menu_ro_modifier"] = "Модификаторы",
+		["bm_menu_ro_charm"] = "Брелок",
+		["bm_menu_ro_grip"] = "Рукоятка",
 		
 		--Weapon categories--
 		["menu_pistol"] = "Пистолеты",
@@ -1385,7 +1391,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_recoil_p1"] = "Маленький бонус к Стабильности и штраф к Точности",
 		["bm_menu_bonus_recoil_p1_mod"] = "Маленький модификатор Стабильности",
 		["bm_menu_bonus_recoil_p2"] = "Большой бонус к Стабильности и штраф к Точности",
-		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+5% опыта для вас и вашей команды, -10% денежной награды для вас и вашей команды",
+		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+5% опыта для вас и вашей команды.",
 		["bm_menu_spread"] = "Точность\n",
 		["bm_menu_recoil"] = "Стабильность\n",
 		["bm_menu_concealment"] = "Скрытность\n",
@@ -1393,7 +1399,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_spread_p3_mod"] = "Огромный модификатор скрытности",
 		["bm_menu_bonus_recoil_p2_mod"] = "Большой модификатор стабильности",
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "Денежный бонус",
-		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+10% к денежной награды для вас и команды, -5% опыта для вас и команды.",
+		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+5% к денежной награде для вас и команды.",
 
 		["bm_wp_upg_i_singlefire_desc"] = "ОСТАВЛЯЕТ ТОЛЬКО ОДИНОЧНУЮ СТРЕЛЬБУ.",
 		["bm_wp_upg_i_autofire_desc"] = "ОСТАВЛЯЕТ ТОЛЬКО АВТОМАТИЧЕСКУЮ СТРЕЛЬБУ.",
@@ -1447,6 +1453,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot"
+			
+			["bm_menu_ro_barrel"] = "Revolver Ocelot",
+			["bm_menu_ro_stock"] = "Revolver Ocelot",
+			["bm_menu_ro_modifier"] = "Revolver Ocelot",
+			["bm_menu_ro_charm"] = "Revolver Ocelot",
+			["bm_menu_ro_grip"] = "Revolver Ocelot"
 		})
 	end
 	

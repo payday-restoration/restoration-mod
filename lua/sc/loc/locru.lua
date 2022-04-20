@@ -1452,13 +1452,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot"
+			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",
 			
 			["bm_menu_ro_barrel"] = "Revolver Ocelot",
 			["bm_menu_ro_stock"] = "Revolver Ocelot",
 			["bm_menu_ro_modifier"] = "Revolver Ocelot",
 			["bm_menu_ro_charm"] = "Revolver Ocelot",
-			["bm_menu_ro_grip"] = "Revolver Ocelot"
+			["bm_menu_ro_grip"] = "Revolver Ocelot",
 		})
 	end
 	

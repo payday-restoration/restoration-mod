@@ -2616,9 +2616,9 @@ function WeaponTweakData:_init_stats()
 
 	--Stance multipliers for weapon spread.
 	self.stat_info.stance_spread_mults = {
-		moving_standing = 4,
+		moving_standing = 3.5,
 		standing = 3.5,
-		moving_crouching = 3,
+		moving_crouching = 2.5,
 		crouching = 2.5,
 		moving_steelsight = 0.5,
 		steelsight = 0.1,
@@ -2882,20 +2882,20 @@ function WeaponTweakData:_init_stats()
 		--Your average SMG and Pistol will be around here.
 		even_recoil = {
 			standing = {
-				0.475 * self.stat_info.stance_recoil_mults.standing,
-				0.375 * self.stat_info.stance_recoil_mults.standing,
+				0.55 * self.stat_info.stance_recoil_mults.standing,
+				0.4 * self.stat_info.stance_recoil_mults.standing,
 				-0.475 * self.stat_info.stance_recoil_mults.standing,
 				0.475 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
-				0.475 * self.stat_info.stance_recoil_mults.crouching,
-				0.375 * self.stat_info.stance_recoil_mults.crouching,
+				0.55 * self.stat_info.stance_recoil_mults.crouching,
+				0.4 * self.stat_info.stance_recoil_mults.crouching,
 				-0.475 * self.stat_info.stance_recoil_mults.crouching,
 				0.475 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
-				0.475 * self.stat_info.stance_recoil_mults.steelsight,
-				0.375 * self.stat_info.stance_recoil_mults.steelsight,
+				0.55 * self.stat_info.stance_recoil_mults.steelsight,
+				0.4 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.475 * self.stat_info.stance_recoil_mults.steelsight,
 				0.475 * self.stat_info.stance_recoil_mults.steelsight
 			}
@@ -2903,42 +2903,42 @@ function WeaponTweakData:_init_stats()
 
 		left_recoil = {
 			standing = {
-				0.475 * self.stat_info.stance_recoil_mults.standing,
-				0.375 * self.stat_info.stance_recoil_mults.standing,
+				0.55 * self.stat_info.stance_recoil_mults.standing,
+				0.4 * self.stat_info.stance_recoil_mults.standing,
 				-0.7  * self.stat_info.stance_recoil_mults.standing,
-				0.45 * self.stat_info.stance_recoil_mults.standing
+				0.35 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
-				0.475 * self.stat_info.stance_recoil_mults.crouching,
-				0.375 * self.stat_info.stance_recoil_mults.crouching,
+				0.55 * self.stat_info.stance_recoil_mults.crouching,
+				0.4 * self.stat_info.stance_recoil_mults.crouching,
 				-0.7  * self.stat_info.stance_recoil_mults.crouching,
-				0.45 * self.stat_info.stance_recoil_mults.crouching
+				0.35 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
-				0.475 * self.stat_info.stance_recoil_mults.steelsight,
-				0.375 * self.stat_info.stance_recoil_mults.steelsight,
+				0.55 * self.stat_info.stance_recoil_mults.steelsight,
+				0.4 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.7 * self.stat_info.stance_recoil_mults.steelsight,
-				0.45 * self.stat_info.stance_recoil_mults.steelsight
+				0.35 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},
 
 		right_recoil = {
 			standing = {
-				0.475 * self.stat_info.stance_recoil_mults.standing,
-				0.375 * self.stat_info.stance_recoil_mults.standing,
-				-0.45 * self.stat_info.stance_recoil_mults.standing,
+				0.55 * self.stat_info.stance_recoil_mults.standing,
+				0.4 * self.stat_info.stance_recoil_mults.standing,
+				-0.35 * self.stat_info.stance_recoil_mults.standing,
 				0.7 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
-				0.475 * self.stat_info.stance_recoil_mults.crouching,
-				0.375 * self.stat_info.stance_recoil_mults.crouching,
-				-0.45 * self.stat_info.stance_recoil_mults.crouching,
+				0.55 * self.stat_info.stance_recoil_mults.crouching,
+				0.4 * self.stat_info.stance_recoil_mults.crouching,
+				-0.35 * self.stat_info.stance_recoil_mults.crouching,
 				0.7 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
-				0.475 * self.stat_info.stance_recoil_mults.steelsight,
-				0.375 * self.stat_info.stance_recoil_mults.steelsight,
-				-0.45 * self.stat_info.stance_recoil_mults.steelsight,
+				0.55 * self.stat_info.stance_recoil_mults.steelsight,
+				0.4 * self.stat_info.stance_recoil_mults.steelsight,
+				-0.35 * self.stat_info.stance_recoil_mults.steelsight,
 				0.7 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},
@@ -2946,128 +2946,128 @@ function WeaponTweakData:_init_stats()
 		--Your average heavy pistol, light shotguns, or ARs will be around here.
 		moderate_kick = {
 			standing = {
+				0.675 * self.stat_info.stance_recoil_mults.standing,
 				0.575 * self.stat_info.stance_recoil_mults.standing,
-				0.475 * self.stat_info.stance_recoil_mults.standing,
-				-0.475 * self.stat_info.stance_recoil_mults.standing,
-				0.475 * self.stat_info.stance_recoil_mults.standing
+				-0.375 * self.stat_info.stance_recoil_mults.standing,
+				0.375 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
+				0.675 * self.stat_info.stance_recoil_mults.crouching,
 				0.575 * self.stat_info.stance_recoil_mults.crouching,
-				0.475 * self.stat_info.stance_recoil_mults.crouching,
-				-0.475 * self.stat_info.stance_recoil_mults.crouching,
-				0.475 * self.stat_info.stance_recoil_mults.crouching
+				-0.375 * self.stat_info.stance_recoil_mults.crouching,
+				0.375 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
+				0.675 * self.stat_info.stance_recoil_mults.steelsight,
 				0.575 * self.stat_info.stance_recoil_mults.steelsight,
-				0.475 * self.stat_info.stance_recoil_mults.steelsight,
-				-0.475 * self.stat_info.stance_recoil_mults.steelsight,
-				0.475 * self.stat_info.stance_recoil_mults.steelsight
+				-0.375 * self.stat_info.stance_recoil_mults.steelsight,
+				0.375 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},
 
 		moderate_left_kick = {
 			standing = {
+				0.675 * self.stat_info.stance_recoil_mults.standing,
 				0.575 * self.stat_info.stance_recoil_mults.standing,
-				0.475 * self.stat_info.stance_recoil_mults.standing,
-				-0.675 * self.stat_info.stance_recoil_mults.standing,
-				0.275 * self.stat_info.stance_recoil_mults.standing
+				-0.575 * self.stat_info.stance_recoil_mults.standing,
+				0.175 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
+				0.675 * self.stat_info.stance_recoil_mults.crouching,
 				0.575 * self.stat_info.stance_recoil_mults.crouching,
-				0.475 * self.stat_info.stance_recoil_mults.crouching,
-				-0.675 * self.stat_info.stance_recoil_mults.crouching,
-				0.275 * self.stat_info.stance_recoil_mults.crouching
+				-0.575 * self.stat_info.stance_recoil_mults.crouching,
+				0.175 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
+				0.675 * self.stat_info.stance_recoil_mults.steelsight,
 				0.575 * self.stat_info.stance_recoil_mults.steelsight,
-				0.475 * self.stat_info.stance_recoil_mults.steelsight,
-				-0.675 * self.stat_info.stance_recoil_mults.steelsight,
-				0.275 * self.stat_info.stance_recoil_mults.steelsight
+				-0.575 * self.stat_info.stance_recoil_mults.steelsight,
+				0.175 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},
 
 		moderate_right_kick = {
 			standing = {
+				0.675 * self.stat_info.stance_recoil_mults.standing,
 				0.575 * self.stat_info.stance_recoil_mults.standing,
-				0.475 * self.stat_info.stance_recoil_mults.standing,
-				-0.275 * self.stat_info.stance_recoil_mults.standing,
-				0.675 * self.stat_info.stance_recoil_mults.standing
+				-0.175 * self.stat_info.stance_recoil_mults.standing,
+				0.575 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
+				0.675 * self.stat_info.stance_recoil_mults.crouching,
 				0.575 * self.stat_info.stance_recoil_mults.crouching,
-				0.475 * self.stat_info.stance_recoil_mults.crouching,
-				-0.275 * self.stat_info.stance_recoil_mults.crouching,
-				0.675 * self.stat_info.stance_recoil_mults.crouching
+				-0.175 * self.stat_info.stance_recoil_mults.crouching,
+				0.575 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
+				0.675 * self.stat_info.stance_recoil_mults.steelsight,
 				0.575 * self.stat_info.stance_recoil_mults.steelsight,
-				0.475 * self.stat_info.stance_recoil_mults.steelsight,
-				-0.275 * self.stat_info.stance_recoil_mults.steelsight,
-				0.675 * self.stat_info.stance_recoil_mults.steelsight
+				-0.175 * self.stat_info.stance_recoil_mults.steelsight,
+				0.575 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},
 
 		--DMRs, Sniper Rifles, and heavy shotguns will be around here.
 		vertical_kick = {
 			standing = {
-				0.9 * self.stat_info.stance_recoil_mults.standing,
+				0.85 * self.stat_info.stance_recoil_mults.standing,
 				0.7 * self.stat_info.stance_recoil_mults.standing,
-				-0.2 * self.stat_info.stance_recoil_mults.standing,
-				0.2 * self.stat_info.stance_recoil_mults.standing
+				-0.225 * self.stat_info.stance_recoil_mults.standing,
+				0.225 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
-				0.9 * self.stat_info.stance_recoil_mults.crouching,
+				0.85 * self.stat_info.stance_recoil_mults.crouching,
 				0.7 * self.stat_info.stance_recoil_mults.crouching,
-				-0.2 * self.stat_info.stance_recoil_mults.crouching,
-				0.2 * self.stat_info.stance_recoil_mults.crouching
+				-0.225 * self.stat_info.stance_recoil_mults.crouching,
+				0.225 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
-				0.9 * self.stat_info.stance_recoil_mults.steelsight,
+				0.85 * self.stat_info.stance_recoil_mults.steelsight,
 				0.7 * self.stat_info.stance_recoil_mults.steelsight,
-				-0.2 * self.stat_info.stance_recoil_mults.steelsight,
-				0.2 * self.stat_info.stance_recoil_mults.steelsight
+				-0.225 * self.stat_info.stance_recoil_mults.steelsight,
+				0.225 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},
 
 		left_kick = {
 			standing = {
-				0.9 * self.stat_info.stance_recoil_mults.standing,
+				0.85 * self.stat_info.stance_recoil_mults.standing,
 				0.7 * self.stat_info.stance_recoil_mults.standing,
-				-0.35 * self.stat_info.stance_recoil_mults.standing,
+				-0.4 * self.stat_info.stance_recoil_mults.standing,
 				0.05 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
-				0.9 * self.stat_info.stance_recoil_mults.crouching,
+				0.85 * self.stat_info.stance_recoil_mults.crouching,
 				0.7 * self.stat_info.stance_recoil_mults.crouching,
-				-0.35 * self.stat_info.stance_recoil_mults.crouching,
+				-0.4 * self.stat_info.stance_recoil_mults.crouching,
 				0.05 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
-				0.9 * self.stat_info.stance_recoil_mults.steelsight,
+				0.85 * self.stat_info.stance_recoil_mults.steelsight,
 				0.7 * self.stat_info.stance_recoil_mults.steelsight,
-				-0.35 * self.stat_info.stance_recoil_mults.steelsight,
+				-0.4 * self.stat_info.stance_recoil_mults.steelsight,
 				0.05 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		},
 
 		right_kick = {
 			standing = {
-				0.9 * self.stat_info.stance_recoil_mults.standing,
+				0.85 * self.stat_info.stance_recoil_mults.standing,
 				0.7 * self.stat_info.stance_recoil_mults.standing,
 				-0.05 * self.stat_info.stance_recoil_mults.standing,
-				0.35 * self.stat_info.stance_recoil_mults.standing
+				0.4 * self.stat_info.stance_recoil_mults.standing
 			},
 			crouching = {
-				0.9 * self.stat_info.stance_recoil_mults.crouching,
+				0.85 * self.stat_info.stance_recoil_mults.crouching,
 				0.7 * self.stat_info.stance_recoil_mults.crouching,
 				-0.05 * self.stat_info.stance_recoil_mults.crouching,
-				0.35 * self.stat_info.stance_recoil_mults.crouching
+				0.4 * self.stat_info.stance_recoil_mults.crouching
 			},
 			steelsight = {
-				0.9 * self.stat_info.stance_recoil_mults.steelsight,
+				0.85 * self.stat_info.stance_recoil_mults.steelsight,
 				0.7 * self.stat_info.stance_recoil_mults.steelsight,
 				-0.05 * self.stat_info.stance_recoil_mults.steelsight,
-				0.35 * self.stat_info.stance_recoil_mults.steelsight
+				0.4 * self.stat_info.stance_recoil_mults.steelsight
 			}
 		}
 	}
@@ -3099,14 +3099,32 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self[wep_id].tactical_reload = 2
 		self[wep_id].categories = {"akimbo", "assault_rifle"}
 	end
-	
-	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','s552','new_m14','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','hunter','frankish','arblast','sparrow','pl14','hajk','packrat','arbiter','siltstone','x_packrat','lemming','ching','breech','erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach'}
+
+	local lock_em_up = {'colt_1911','usp','p226','g22c','glock_17','glock_18c','x_g18c','b92fs','ppk','mac10','x_mac10','deagle','x_deagle','x_1911','x_b92fs','jowi','g26','c96','sterling','m1928','hs2000','rpg7','cobray','x_usp','x_g17','x_g22c','sparrow','pl14','packrat','x_packrat','lemming','breech','erma','shrew','x_shrew','stech','x_stech','czech','x_czech','maxim9','x_maxim9','holt','x_holt','m1911','beer','x_beer','type54','x_type54','legacy','x_legacy','coach'}
 	for i, wep_id in ipairs(lock_em_up) do
 		self[ wep_id ].lock_slide = true
+		self[ wep_id ].sounds.magazine_empty = "wp_pistol_slide_lock"
 	end
 	self.m1911.lock_slide_alt = true
+	lock_em_up = {'s552','new_m14','hajk','arbiter','ching','siltstone','new_m4','m16','amcar','tecci','tti','olympic'}
+	for i, wep_id in ipairs(lock_em_up) do
+		self[ wep_id ].lock_slide = true
+		self[ wep_id ].sounds.magazine_empty = "wp_rifle_slide_lock"
+	end
+	lock_em_up = {'hunter','frankish','arblast'}
+	for i, wep_id in ipairs(lock_em_up) do
+		self[ wep_id ].lock_slide = true
+		self[ wep_id ].sounds.magazine_empty = nil
+	end
 	self.ching.lock_slide_alt = true
-	
+	self.ching.sounds.magazine_empty = "ching_magazine_empty"
+
+	local akimbo_rev = {'x_rage','x_chinchilla','x_2006m','x_model3','x_judge'}
+	for i, wep_id in ipairs(akimbo_rev) do
+		self[wep_id].BURST_FIRE = 2
+		self[wep_id].sounds.magazine_empty = nil
+	end
+
 	--Just fucking put this shit on everything
 	for wep_id, i in pairs(self) do
 		if self[ wep_id ].stats then
@@ -3114,7 +3132,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self[ wep_id ].ads_speed = 0.169
 			self[ wep_id ].damage_falloff = {
 				start_dist = 690,
-				end_dist = 6900,
+				end_dist = 690,
 				min_mult = 0.069,
 			}
 		end
@@ -3563,17 +3581,24 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.beer.ADAPTIVE_BURST_SIZE = false		
 				self.beer.CAN_TOGGLE_FIREMODE = false
 				self.beer.FIRE_MODE = "single"	
-				self.beer.AMMO_MAX = 180
+				self.beer.AMMO_MAX = 150
+				self.beer.CLIP_AMMO_MAX = 15
 				self.beer.fire_mode_data.fire_rate = 0.05454545454
 				self.beer.kick = self.stat_info.kick_tables.even_recoil
 				self.beer.supported = true
+				self.beer.ads_speed = 0.180
+				self.beer.damage_falloff = {
+					start_dist = 2600,
+					end_dist = 4500,
+					min_mult = 0.3
+				}
 				self.beer.stats = {
-					damage = 20,
-					spread = 76,
-					recoil = 89,
+					damage = 24,
+					spread = 64,
+					recoil = 86,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 27,
+					concealment = 28,
 					suppression = 9,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4598,6 +4623,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.sub2000.panic_suppression_chance = 0.05
 				self.sub2000.stats_modifiers = nil
+				self.sub2000.swap_speed_multiplier = 1
 				self.sub2000.timers.reload_exit_empty = 0.85
 				self.sub2000.timers.reload_exit_not_empty = 0.95
 
@@ -4642,7 +4668,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_deagle.FIRE_MODE = "single"
 				self.x_deagle.fire_mode_data = {}
 				self.x_deagle.fire_mode_data.fire_rate = 0.12
-				self.x_deagle.kick = self.stat_info.kick_tables.moderate_kick
+				self.x_deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.x_deagle.animations.has_steelsight_stance = true
 				self.x_deagle.supported = true
 				self.x_deagle.ads_speed = 0.300
@@ -4835,7 +4861,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 88,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 27,
+					concealment = 29,
 					suppression = 6,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4873,7 +4899,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 82,
 					spread_moving = 8,
 					zoom = 1,
-					concealment = 24,
+					concealment = 26,
 					suppression = 7,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4883,6 +4909,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.usp.stats_modifiers = nil
 				self.usp.panic_suppression_chance = 0.05
+				self.usp.timers.reload_exit_empty = 0.5
+				self.usp.timers.reload_exit_not_empty = 0.65
 
 			--Crosskill (1911)
 				self.colt_1911.fire_mode_data.fire_rate = 0.08571428571
@@ -4903,7 +4931,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 86,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 26,
+					concealment = 27,
 					suppression = 6,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4914,6 +4942,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.colt_1911.stats_modifiers = nil
 				self.colt_1911.panic_suppression_chance = 0.05
 				self.colt_1911.reload_speed_multiplier = 1.05
+				self.colt_1911.timers.reload_exit_empty = 0.5
+				self.colt_1911.timers.reload_exit_not_empty = 0.65
 
 			--Crosskill Chunky (M1911)
 				self.m1911.tactical_reload = 1	
@@ -4935,7 +4965,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					recoil = 84,
 					spread_moving = 5,
 					zoom = 1,
-					concealment = 26,
+					concealment = 28,
 					suppression = 6,
 					alert_size = 2,
 					extra_ammo = 101,
@@ -4946,6 +4976,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m1911.stats_modifiers = nil
 				self.m1911.panic_suppression_chance = 0.05
 				self.m1911.reload_speed_multiplier = 1.1
+				self.m1911.timers.reload_exit_empty = 0.5
+				self.m1911.timers.reload_exit_not_empty = 0.65
 				--Disable Akimbo Crosskill Chunky
 				self.x_m1911.use_data.selection_index = 5
 
@@ -4955,7 +4987,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deagle.has_description = false
 				self.deagle.desc_id = "bm_ap_weapon_sc_desc"
 				self.deagle.fire_mode_data.fire_rate = 0.12
-				self.deagle.kick = self.stat_info.kick_tables.moderate_kick
+				self.deagle.kick = self.stat_info.kick_tables.moderate_right_kick
 				self.deagle.CLIP_AMMO_MAX = 8
 				self.deagle.AMMO_MAX = 60
 				self.deagle.supported = true
@@ -4981,6 +5013,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.deagle.stats_modifiers = nil
 				self.deagle.panic_suppression_chance = 0.05
+				self.deagle.timers.reload_exit_empty = 0.75
+				self.deagle.timers.reload_exit_not_empty = 0.8
 
 			--Matever .357
 				self.mateba.fire_mode_data.fire_rate = 0.15789474
@@ -5013,6 +5047,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mateba.stats_modifiers = nil
 				self.mateba.panic_suppression_chance = 0.05
+				self.mateba.timers.reload_exit_empty = 0.55
+				self.mateba.timers.reload_exit_not_empty = 0.55
 
 			--Frenchman Model 87
 				self.model3.fire_mode_data = {}
@@ -5144,6 +5180,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.peacemaker.can_shoot_through_shield = true
 				self.peacemaker.can_shoot_through_wall = true
 				self.peacemaker.armor_piercing_chance = 1
+				self.peacemaker.reload_speed_multiplier = 1.385
 				self.peacemaker.timers.shotgun_reload_first_shell_offset = 0.5
 				self.peacemaker.fire_mode_data.fire_rate = 0.3
 				self.peacemaker.fire_rate_multiplier = 2.25
@@ -6300,8 +6337,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.sr2.stats_modifiers = nil
-				self.sr2.timers.reload_not_empty = 2
 				self.sr2.panic_suppression_chance = 0.05
+				self.sr2.reload_speed_multiplier = 1.1
+				self.sr2.timers.reload_not_empty = 2
+				self.sr2.timers.reload_exit_empty = 0.8
+				self.sr2.timers.reload_exit_not_empty = 0.7
 
 			--CMP (MP9)
 				self.mp9.desc_id = "bm_menu_sc_mp9_desc"
@@ -6336,7 +6376,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Compact-5
 				self.new_mp5.fire_mode_data.fire_rate = 0.075
-				self.new_mp5.auto.fire_rate = 0.075
 				self.new_mp5.BURST_FIRE = 3
 				self.new_mp5.ADAPTIVE_BURST_SIZE = false			
 				self.new_mp5.panic_suppression_chance = 0.05
@@ -6346,13 +6385,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.new_mp5.ads_speed = 0.240
 				self.new_mp5.damage_falloff = {
 					start_dist = 1200,
-					end_dist = 4000,
+					end_dist = 4100,
 					min_mult = 0.25
 				}
 				self.new_mp5.stats = {
 					damage = 24,
 					spread = 66,
-					recoil = 89,
+					recoil = 82,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 26,
@@ -6365,7 +6404,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.new_mp5.stats_modifiers = nil
 				self.new_mp5.panic_suppression_chance = 0.05
-				self.new_mp5.reload_speed_multiplier = 1.1
+				self.new_mp5.reload_speed_multiplier = 1.025
+				self.new_mp5.timers.reload_exit_empty = 0.6
+				self.new_mp5.timers.reload_exit_not_empty = 0.85
 
 			--Swedish K (M/45)
 				self.m45.CLIP_AMMO_MAX = 36
@@ -6381,7 +6422,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m45.stats = {
 					damage = 24,
 					spread = 61,
-					recoil = 89,
+					recoil = 88,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 25,
@@ -6406,10 +6447,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.sterling.auto.fire_rate = 0.10909090909
 				self.sterling.kick = self.stat_info.kick_tables.right_recoil
 				self.sterling.supported = true
-				self.m45.ads_speed = 0.260
-				self.m45.damage_falloff = {
-					start_dist = 1400,
-					end_dist = 4500,
+				self.sterling.ads_speed = 0.260
+				self.sterling.damage_falloff = {
+					start_dist = 1700,
+					end_dist = 4800,
 					min_mult = 0.25
 				}
 				self.sterling.stats = {
@@ -6439,7 +6480,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.x_mac10.AMMO_MAX = 120
 				self.x_mac10.fire_mode_data.fire_rate = 0.06
 				self.x_mac10.single.fire_rate = 0.06
-				self.x_mac10.kick = self.stat_info.kick_tables.moderate_kick
+				self.x_mac10.kick = self.stat_info.kick_tables.even_recoil
 				self.x_mac10.supported = true
 				self.x_mac10.ads_speed = 0.210
 				self.x_mac10.damage_falloff = {
@@ -6449,8 +6490,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.x_mac10.stats = {
 					damage = 30,
-					spread = 41,
-					recoil = 69,
+					spread = 34,
+					recoil = 60,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 22,
@@ -6551,8 +6592,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.mac10.stats = {
 					damage = 30,
-					spread = 51,
-					recoil = 80,
+					spread = 44,
+					recoil = 70,
 					spread_moving = 8,
 					zoom = 1,
 					concealment = 22,
@@ -7259,6 +7300,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.l85a2.stats_modifiers = nil
 				self.l85a2.timers.reload_not_empty = 3
 				self.l85a2.timers.reload_empty = 4	
+				self.l85a2.timers.reload_exit_empty = 0.75
+				self.l85a2.timers.reload_exit_not_empty = 1.05
 				self.l85a2.panic_suppression_chance = 0.05
 
 			--Byk-1 (OTs-14)
@@ -7294,6 +7337,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					reload = 20
 				}
 				self.groza.stats_modifiers = nil
+				self.groza.timers.reload_exit_empty = 0.55
+				self.groza.timers.reload_exit_not_empty = 0.55
+
 				self.groza_underbarrel.upgrade_blocks = {
 					weapon = {
 						"clip_ammo_increase"
@@ -7474,11 +7520,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		--Gewehr 3 (G3A3)
 			self.g3.AMMO_MAX = 60
 			self.g3.CLIP_AMMO_MAX = 20
-			self.g3.fire_mode_data.fire_rate = 0.10909090909
+			self.g3.fire_mode_data.fire_rate = 0.12
 			self.g3.CAN_TOGGLE_FIREMODE = true
 			self.g3.FIRE_MODE = "single"
 			self.g3.auto = {}
-			self.g3.auto.fire_rate = 0.10909090909
+			self.g3.auto.fire_rate = 0.12
 			self.g3.kick = self.stat_info.kick_tables.right_kick
 			self.g3.supported = true
 			self.g3.ads_speed = 0.380
@@ -7559,7 +7605,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.galil.stats = {
 				damage = 45,
 				spread = 81,
-				recoil = 63,
+				recoil = 68,
 				spread_moving = 6,
 				zoom = 1,
 				concealment = 20,
@@ -7588,17 +7634,17 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.fal.ads_speed = 0.380
 			self.fal.damage_falloff = {
 				start_dist = 3200,
-				end_dist = 7500,
+				end_dist = 7200,
 				min_mult = 0.6666
 			}
 			self.fal.stats = {
 				damage = 45,
 				spread = 83,
-				recoil = 66,
+				recoil = 70,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 20,
-				suppression = 7,
+				suppression = 6,
 				alert_size = 2,
 				extra_ammo = 101,
 				total_ammo_mod = 100,
@@ -7629,7 +7675,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband.stats = {
 				damage = 45,
 				spread = 84,
-				recoil = 69,
+				recoil = 66,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 17,
@@ -7648,7 +7694,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					"clip_ammo_increase"
 				}
 			}		
-			self.contraband_m203.kick = self.stat_info.kick_tables.right_kick
+			self.contraband_m203.kick = self.stat_info.kick_tables.vertical_kick
 			self.contraband_m203.panic_suppression_chance = 0.05
 			self.contraband_m203.ignore_damage_upgrades = true
 			self.contraband_m203.AMMO_MAX = 6
@@ -7656,11 +7702,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.contraband_m203.ads_speed = 0.430
 			self.contraband_m203.stats = {
 				damage = 80,
-				spread = 91,
-				recoil = 72,
+				spread = 84,
+				recoil = 69,
 				spread_moving = 6,
 				zoom = 1,
-				concealment = 25,
+				concealment = 17,
 				suppression = 20,
 				alert_size = 2,
 				extra_ammo = 101,
@@ -7679,18 +7725,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.scar.CAN_TOGGLE_FIREMODE = true
 			self.scar.FIRE_MODE = "single"
 			self.scar.auto.fire_rate = 0.1
-			self.scar.kick = self.stat_info.kick_tables.vertical_kick		
+			self.scar.kick = self.stat_info.kick_tables.moderate_right_kick		
 			self.scar.supported = true
-			self.scar.ads_speed = 0.350
+			self.scar.ads_speed = 0.340
 			self.scar.damage_falloff = {
-				start_dist = 3300,
-				end_dist = 7500,
+				start_dist = 3500,
+				end_dist = 7800,
 				min_mult = 0.6666
 			}
 			self.scar.stats = {
 				damage = 45,
 				spread = 86,
-				recoil = 66,
+				recoil = 72,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 22,
@@ -7727,7 +7773,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.shuno.CAN_TOGGLE_FIREMODE = false
 			self.shuno.auto = {}
 			self.shuno.auto.fire_rate = 0.048
-			self.shuno.kick = self.stat_info.kick_tables.horizontal_recoil
+			self.shuno.kick = self.stat_info.kick_tables.moderate_right_kick
 			self.shuno.panic_suppression_chance = 0.05
 			self.shuno.supported = true
 			self.shuno.ads_speed = 0.625
@@ -7738,8 +7784,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.shuno.stats = {
 				damage = 20,
-				spread = 59,
-				recoil = 76,
+				spread = 51,
+				recoil = 68,
 				spread_moving = 25,
 				zoom = 1,
 				concealment = 16,
@@ -7786,6 +7832,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				reload = 20
 			}
 			self.tecci.stats_modifiers = nil
+			self.tecci.timers.reload_exit_empty = 0.9
+			self.tecci.timers.reload_exit_not_empty = 1.0
 
 		--KSP (M249)
 			self.m249.categories = {
@@ -7878,13 +7926,13 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m134.FIRE_MODE = "auto"
 			self.m134.fire_mode_data = {}
 			self.m134.fire_mode_data.fire_rate = 0.06
-			self.m134.fire_rate_init_count = 25
+			self.m134.fire_rate_init_count = 20
 			self.m134.fire_rate_init_mult = 2
 			self.m134.fire_rate_init_ramp_up = true
 			self.m134.CAN_TOGGLE_FIREMODE = false
 			self.m134.auto = {}
 			self.m134.auto.fire_rate = 0.06
-			self.m134.kick = self.stat_info.kick_tables.even_recoil
+			self.m134.kick = self.stat_info.kick_tables.right_recoil
 			self.m134.panic_suppression_chance = 0.05
 			self.m134.supported = true
 			self.m134.ads_speed = 0.675
@@ -7896,8 +7944,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.m134.stats = {
 				damage = 30,
-				spread = 55,
-				recoil = 58,
+				spread = 42,
+				recoil = 66,
 				spread_moving = 5,
 				zoom = 1,
 				concealment = 14,
@@ -8142,7 +8190,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.qbu88.armor_piercing_chance = 1
 			self.qbu88.stats_modifiers = nil
-			self.qbu88.panic_suppression_chance = 0.05	
+			self.qbu88.panic_suppression_chance = 0.05
+			self.qbu88.reload_speed_multiplier = 0.9
 			self.qbu88.timers.equip = 0.5
 			self.qbu88.timers.reload_empty = 2.9
 			self.qbu88.timers.reload_not_empty = 2.1
@@ -8166,7 +8215,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.tti.supported = true
 			self.tti.ads_speed = 0.450
 			self.tti.damage_falloff = {
-				start_dist = 2500,
+				start_dist = 2000,
 				end_dist = 7200,
 				min_mult = 0.3333
 			}
@@ -8186,6 +8235,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.tti.armor_piercing_chance = 1
 			self.tti.stats_modifiers = nil
+			self.tti.reload_speed_multiplier = 0.8
 			self.tti.timers.reload_exit_empty = 0.725
 			self.tti.timers.reload_exit_not_empty = 0.8
 			self.tti.panic_suppression_chance = 0.05
@@ -8202,8 +8252,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.wa2000.supported = true
 			self.wa2000.ads_speed = 0.410
 			self.wa2000.damage_falloff = {
-				start_dist = 3000,
-				end_dist = 9500,
+				start_dist = 3100,
+				end_dist = 9100,
 				min_mult = 0.3333
 			}
 			self.wa2000.stats = {
@@ -8223,7 +8273,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.wa2000.armor_piercing_chance = 1
 			self.wa2000.stats_modifiers = nil
 			self.wa2000.panic_suppression_chance = 0.05
-			self.wa2000.reload_speed_multiplier = 1.15
+			self.wa2000.reload_speed_multiplier = 1.3
 			self.wa2000.timers.reload_exit_empty = 0.85
 			self.wa2000.timers.reload_exit_not_empty = 1
 
@@ -8241,7 +8291,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.msr.ads_speed = 0.420
 			self.msr.damage_falloff = {
 				start_dist = 3800,
-				end_dist = 12000,
+				end_dist = 11000,
 				min_mult = 0.3333
 			}
 			self.msr.stats = {
@@ -8278,7 +8328,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.r700.ads_speed = 0.400
 			self.r700.damage_falloff = {
 				start_dist = 4200,
-				end_dist = 16000,
+				end_dist = 14000,
 				min_mult = 0.3333
 			}
 			self.r700.stats = {
@@ -8312,7 +8362,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.r93.fire_mode_data.fire_rate = 1
 			self.r93.kick = self.stat_info.kick_tables.vertical_kick
 			self.r93.supported = true
-			self.r93.ads_speed = 0.500
+			self.r93.ads_speed = 0.475
 			self.r93.damage_falloff = {
 				start_dist = 4700,
 				end_dist = 12000,
@@ -8408,6 +8458,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.desertfox.stats_modifiers = nil
 			self.desertfox.reload_speed_multiplier = 0.95
+			self.model70.fire_rate_multiplier = 1.11111
 			self.desertfox.timers.reload_exit_empty = 0.7
 			self.desertfox.timers.reload_exit_not_empty = 0.75
 
@@ -8442,6 +8493,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.model70.stats_modifiers = nil
 			self.model70.reload_speed_multiplier = 1.15
+			self.model70.fire_rate_multiplier = 0.785714
 			self.model70.timers.reload_empty = 4.3	
 			self.model70.panic_suppression_chance = 0.05
 			self.model70.timers.reload_exit_empty = 0.8
@@ -8457,9 +8509,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mosin.supported = true
 			self.mosin.ads_speed = 0.450
 			self.mosin.damage_falloff = {
-				start_dist = 2800,
+				start_dist = 3100,
 				end_dist = 8100,
-				min_mult = 0.5
+				min_mult = 0.375
 			}
 			self.mosin.stats = {
 				damage = 120,
@@ -8477,6 +8529,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.mosin.stats_modifiers = nil
 			self.mosin.panic_suppression_chance = 0.05
+			self.mosin.fire_rate_multiplier = 1.3
 			self.mosin.timers.reload_exit_empty = 0.4
 			self.mosin.timers.reload_exit_not_empty = 0.4
 
@@ -8491,9 +8544,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.siltstone.supported = true
 			self.siltstone.ads_speed = 0.500
 			self.siltstone.damage_falloff = {
-				start_dist = 3100,
-				end_dist = 8600,
-				min_mult = 0.5
+				start_dist = 2700,
+				end_dist = 7700,
+				min_mult = 0.375
 			}
 			self.siltstone.stats = {
 				damage = 120,
@@ -11274,17 +11327,18 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.has_description = true
 		self.m107cq.desc_id = "bm_heavy_ap_weapon_sc_desc"
 		self.m107cq.AMMO_MAX = 20
-		self.m107cq.fire_mode_data.fire_rate = 0.36363636363
-		self.m107cq.kick = self.stat_info.kick_tables.left_kick
+		self.m107cq.fire_mode_data.fire_rate = 0.666666666
+		self.m107cq.kick = self.stat_info.kick_tables.moderate_right_kick
 		self.m107cq.supported = true
 		self.m107cq.ads_speed = 0.700
 		self.m107cq.damage_falloff = {
 			start_dist = 22000,
-			end_dist = 210000
+			end_dist = 210000,
+			min_mult = 0.5
 		}
 		self.m107cq.stats = {
 			damage = 180,
-			spread = 92,
+			spread = 91,
 			recoil = 9,
 			spread_moving = 8,
 			zoom = 1,
@@ -11300,6 +11354,53 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		self.m107cq.can_shoot_through_titan_shield = true
 		self.m107cq.stats_modifiers = nil
 		self.m107cq.panic_suppression_chance = 0.05
+	end
+
+	if self.m200 then --Pawcio's Intervention
+		self.m200.recategorize = { "antim_snp" }
+		self.m200.upgrade_blocks = nil
+		self.m200.has_description = true
+		self.m200.desc_id = "bm_heavy_ap_weapon_sc_desc"
+		self.m200.AMMO_MAX = 20
+		self.m200.CLIP_AMMO_MAX = 5
+		self.m200.fire_mode_data.fire_rate = 0.923076923
+		self.m200.kick = self.stat_info.kick_tables.moderate_right_kick
+		self.m200.supported = true
+		self.m200.ads_speed = 0.400
+		self.m200.damage_falloff = {
+			start_dist = 20000,
+			end_dist = 300000,
+			min_mult = 0.33333
+		}
+		self.m200.stats = {
+			damage = 180,
+			spread = 98,
+			recoil = 13,
+			spread_moving = 8,
+			zoom = 1,
+			concealment = 16,
+			suppression = 2,
+			alert_size = 2,
+			extra_ammo = 101,
+			total_ammo_mod = 100,
+			value = 9,
+			reload = 20
+		}
+		self.m200.fire_mode_data.fire_rate = 1.2
+		self.m200.fire_rate_multiplier = 1.3
+		self.m200.timers = {
+			reload_not_empty = 2.7,
+			reload_empty = 1.65,
+			unequip = 0.7,
+			equip = 0.6,
+			reload_exit_empty = 3.3,
+			reload_exit_not_empty = 0.95
+		}
+		self.m200.reload_speed_multiplier = 0.9
+		self.m200.armor_piercing_chance = 1
+		self.m200.can_shoot_through_titan_shield = true
+		self.m200.stats_modifiers = nil
+		self.m200.panic_suppression_chance = 0.05
 	end
 	
 	if self.raygun then --Leather Dann's CoD:Zombies Raygun

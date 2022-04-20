@@ -695,7 +695,7 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 		self:play_tweak_data_sound("fire_single","fire")
 		self:play_tweak_data_sound("stop_fire")
 	end
-
+	
 	return ray_res
 end
 

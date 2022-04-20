@@ -650,7 +650,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--Shotgun CQB
 				--Basic
-					self.values.shotgun.enter_steelsight_speed_multiplier = {1.35}
+					self.values.shotgun.enter_steelsight_speed_multiplier = {1.20}
 				--Ace
 					self.values.shotgun.reload_speed_multiplier = {1.25, 1.25}
 				
@@ -862,15 +862,15 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				
 			--Kilmer
 				--Basic
-					self.values.snp.spread_index_addend = {5}
-					self.values.assault_rifle.spread_index_addend = {5}
+					self.values.snp.spread_index_addend = {4}
+					self.values.assault_rifle.spread_index_addend = {4}
 				--Ace
 					self.values.snp.reload_speed_multiplier = {1.25}
 					self.values.assault_rifle.reload_speed_multiplier = {1.25}
 
 			--Rifleman
 				--Basic
-					self.values.weapon.enter_steelsight_speed_multiplier = {1.35}
+					self.values.weapon.enter_steelsight_speed_multiplier = {1.20}
 				--Ace
 					self.values.assault_rifle.steelsight_accuracy_inc = {0.7}
 					self.values.snp.steelsight_accuracy_inc = {0.7}
@@ -1058,7 +1058,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 
 			--The Professional
 				--Basic
-					self.values.weapon.silencer_spread_index_addend = {5}
+					self.values.weapon.silencer_spread_index_addend = {4}
 				--Ace
 					self.values.weapon.silencer_recoil_index_addend = {4}
 					self.values.player.special_double_drop = {true}
@@ -1141,10 +1141,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			--Akimbo
 				self.values.akimbo.recoil_index_addend = {
 					0,
-					16, --Basic
-					16,
-					16,
-					16
+					10, --Basic
+					10,
+					10,
+					10
 				}
 
 				--Ace

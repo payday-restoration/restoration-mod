@@ -7,6 +7,18 @@ else
 	local fire_rate_multiplier_original = AkimboWeaponBase.fire_rate_multiplier
 	local toggle_firemode_original = AkimboWeaponBase.toggle_firemode
 	
+	local init_original = AkimboWeaponBase.init
+
+	function AkimboWeaponBase:init(...)
+		init_original(self, ...)
+		
+		local fire_mode_data = tweak_data.weapon[self._name_id].fire_mode_data
+		if fire_mode_data then
+			fire_mode_data.original_fire_rate = fire_mode_data.original_fire_rate or fire_mode_data.fire_rate
+			fire_mode_data.fire_rate = fire_mode_data.original_fire_rate / 2
+		end
+	end
+
 	function AkimboWeaponBase:_update_stats_values(...)
 		_update_stats_values_original(self, ...)
 		
@@ -19,6 +31,7 @@ else
 		end
 	end
 	
+	--[[
 	function AkimboWeaponBase:fire(...)
 		local results = fire_original(self, ...)
 		
@@ -28,9 +41,42 @@ else
 		
 		return results
 	end
-	
+	]]
+
+	function AkimboWeaponBase:fire(...)
+		self._second_turn = not self._second_turn
+		local result
+		
+		if not self._second_turn then
+			result = AkimboWeaponBase.super.fire(self, ...)
+		elseif alive(self._second_gun) then
+			result = self._second_gun:base().super.fire(self._second_gun:base(), ...)
+			if result then
+				--self._second_gun:base():_fire_sound()
+				managers.hud:set_ammo_amount(self:selection_index(), self:ammo_info())
+				self._second_gun:base():tweak_data_anim_play("fire")
+			end
+		end
+		
+		if result and self:in_burst_mode() then
+			if self:clip_empty() then
+				self:cancel_burst()
+			else			
+				self._burst_rounds_fired = self._burst_rounds_fired + 1
+				self._burst_rounds_remaining = (self._burst_rounds_remaining <= 0 and self._burst_size or self._burst_rounds_remaining) - 1
+				if self._burst_rounds_remaining <= 0 then
+					self:cancel_burst()
+				end
+			end
+		end
+		
+		return result
+	end
+
+
+
 	function AkimboWeaponBase:fire_rate_multiplier(...)
-		return fire_rate_multiplier_original(self, ...) * (self:_in_burst_or_auto_mode() and 1 or 2)
+		return fire_rate_multiplier_original(self, ...) * (self:_in_burst_or_auto_mode() and 1 or 1)
 	end
 	
 	--Override

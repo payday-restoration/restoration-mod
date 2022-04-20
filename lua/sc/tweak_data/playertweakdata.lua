@@ -384,6 +384,13 @@ end
 local default_init_hk21 = PlayerTweakData._init_hk21
 function PlayerTweakData:_init_hk21()
 	default_init_hk21(self)
+	local pivot_shoulder_translation = Vector3(8.545, 11.3934, -3.33201)
+	local pivot_shoulder_rotation = Rotation(4.78916e-05, 0.00548037, -0.00110991)
+	local pivot_head_translation = Vector3(8, 6, -4)
+	local pivot_head_rotation = Rotation(0, 0, 0)
+	self.stances.hk21.standard.shoulders.translation = pivot_head_translation - pivot_shoulder_translation:rotate_with(pivot_shoulder_rotation:inverse()):rotate_with(pivot_head_rotation)
+	self.stances.hk21.standard.shoulders.rotation = pivot_head_rotation * pivot_shoulder_rotation:inverse()
+
 	local pivot_shoulder_translation = Vector3(8.59464, 11.3996, -3.26142)
 	local pivot_shoulder_rotation = Rotation(7.08051E-6, 0.00559065, 3.07211E-4)    
 	local pivot_head_translation = Vector3(0.03, 15, 0.1) -- 8, 10, -1

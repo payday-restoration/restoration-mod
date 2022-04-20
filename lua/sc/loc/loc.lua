@@ -1414,6 +1414,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		["menu_akimbo_assault_rifle"] = "Akimbo Assault Rifle",
 
+		["bm_w_m95"] = "Thanatos .50 cal Anti-Materiel Rifle",
+		["bm_w_m107cq"] = "Mors .50 cal Anti-Materiel Rifle",
 		["bm_w_m200"] = "TF-141 Anti-Materiel Rifle",
 
 		--Throwables--

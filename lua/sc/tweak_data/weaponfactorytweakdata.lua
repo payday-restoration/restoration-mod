@@ -1730,12 +1730,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 	self.parts.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 		value = 6,
 		extra_ammo = 15,
-		concealment = -1,
-		reload = -2
+		concealment = -2,
+		reload = -3
 	}
 	self.parts.wpn_fps_pis_g18c_m_mag_33rnd.bullet_objects = {
 		amount = 1,
 		prefix = "g_bullet_"
+	}
+	self.parts.wpn_fps_pis_g18c_m_mag_33rnd.custom_stats = {
+		ads_speed_mult = 1.05
 	}
 
 	--(STRYK 18c) Stock
@@ -1748,8 +1751,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 	self.parts.wpn_fps_pis_g18c_s_stock.supported = true
 	self.parts.wpn_fps_pis_g18c_s_stock.stats = {
 		value = 2,
-		recoil = 10,
-		concealment = -5
+		recoil = 8,
+		concealment = -4
+	}
+	self.parts.wpn_fps_pis_g18c_s_stock.custom_stats = {
+		ads_speed_mult = 1.1
 	}
 	
 	--(STRYK 18c) Ergo Grip
@@ -1764,6 +1770,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g18c", "resmod_g18c", function(sel
 		value = 4,
 		recoil = -2,
 		concealment = 1
+	}
+	self.parts.wpn_fps_pis_g18c_g_ergo.custom_stats = {
+		ads_speed_mult = 0.975
 	}
 	
 	self.parts.wpn_fps_pis_g18c_b_standard.animations.fire_steelsight = "recoil"
@@ -1845,7 +1854,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 	self.parts.wpn_fps_m16_fg_railed.supported = true
 	self.parts.wpn_fps_m16_fg_railed.stats = {
 		value = 2,
-		recoil = 1,
+		recoil = 4,
 		concealment = -2
 	}
 
@@ -1859,7 +1868,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m16", "resmod_m16", function(self)
 	self.parts.wpn_fps_m16_fg_vietnam.supported = true
 	self.parts.wpn_fps_m16_fg_vietnam.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 
@@ -1906,8 +1915,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_olympic", "resmod_olympic", functi
 	self.parts.wpn_fps_smg_olympic_fg_railed.supported = true
 	self.parts.wpn_fps_smg_olympic_fg_railed.stats = {
 		value = 2,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 	
 	--Shorter Than Short Stock
@@ -1954,8 +1963,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 	self.parts.wpn_upg_ak_fg_combo2.supported = true
 	self.parts.wpn_upg_ak_fg_combo2.stats = {
 		value = 3,
-		concealment = -2,
-		recoil = 1
+		concealment = -1,
+		recoil = 2
 	}
 	
 	--The Tactical Russian Handguard
@@ -1968,8 +1977,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 	self.parts.wpn_upg_ak_fg_combo3.supported = true
 	self.parts.wpn_upg_ak_fg_combo3.stats = {
 		value = 5,
-		spread = 1,
-		concealment = -3
+		spread = 2,
+		concealment = -2
 	}
 	
 	--(AK) Drum Mag
@@ -2008,7 +2017,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 	self.parts.wpn_upg_ak_s_folding.supported = true
 	self.parts.wpn_upg_ak_s_folding.stats = {
 		value = 4,
-		recoil = -2,
+		recoil = -4,
 		concealment = 2
 	}
 	
@@ -2061,19 +2070,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak_parts", "resmod_ak_parts", func
 	self.parts.wpn_upg_ak_s_skfoldable.supported = true
 	self.parts.wpn_upg_ak_s_skfoldable.stats = {
 		value = 4,
-		recoil = -2,
+		recoil = -4,
 		concealment = 2
 	}
 
 
 	--(AK) No Stock
 	self.parts.wpn_upg_ak_s_nostock = {
-		pcs = {
-			10,
-			20,
-			30,
-			40
-		},
+		pcs = {},
 		type = "stock",
 		name_id = "bm_wp_m32_no_stock",
 		a_obj = "a_s",
@@ -2189,8 +2193,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 	self.parts.wpn_fps_smg_akmsu_fg_rail.supported = true
 	self.parts.wpn_fps_smg_akmsu_fg_rail.stats = {
 		value = 5, 
-		spread = 1, 
-		concealment = -3
+		spread = 2, 
+		concealment = -2
 	}
 
 
@@ -2212,7 +2216,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 	self.parts.wpn_upg_saiga_fg_lowerrail.supported = true
 	self.parts.wpn_upg_saiga_fg_lowerrail.stats = {
 		value = 2,
-		recoil = 1,
+		recoil = 4,
 		concealment = -2
 	}
 	self.parts.wpn_upg_saiga_fg_lowerrail.custom_stats = {
@@ -2233,8 +2237,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 		supported = true,
 		stats = {
 			value = 1, 
-			extra_ammo = 14, 
-			spread = -1, 
+			extra_ammo = 14,
 			reload = -7, 
 			concealment = -4
 		},
@@ -2341,7 +2344,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_saiga", "resmod_saiga", function(s
 	table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_saiga_m_20rnd")
 	table.insert(self.wpn_fps_shot_saiga_npc.uses_parts, "wpn_upg_saiga_m_20rnd")	
 
-
 	table.insert(self.wpn_fps_shot_saiga.uses_parts, "wpn_upg_ak_s_nostock")
 	table.insert(self.wpn_fps_shot_saiga_npc.uses_parts, "wpn_upg_ak_s_nostock")
 
@@ -2394,8 +2396,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ak5", "resmod_ak5", function(self)
 	self.parts.wpn_fps_ass_ak5_s_ak5b.supported = true
 	self.parts.wpn_fps_ass_ak5_s_ak5b.stats = {
 		value = 2,
-		concealment = -2,
-		recoil = 4
+		concealment = -1,
+		recoil = 2
 	}
 	
 	--Caesar Stock
@@ -2427,8 +2429,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 	self.parts.wpn_fps_aug_b_long.supported = true
 	self.parts.wpn_fps_aug_b_long.stats = {
 		value = 5,
-		spread = 1,
+		spread = 3,
 		concealment = -3
+	}
+	self.parts.wpn_fps_aug_b_long.custom_stats = {
+		falloff_start_mult = 1.15,
+		falloff_end_mult = 1.15,
+		ads_speed_mult = 1.075
 	}
 
 	--(UAR) Short Barrel
@@ -2444,6 +2451,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 		spread = -1,
 		concealment = 1
 	}
+	self.parts.wpn_fps_aug_b_short.custom_stats = {
+		falloff_start_mult = 0.95,
+		falloff_end_mult = 0.95,
+		ads_speed_mult = 0.975
+	}
 
 	--A3 Tactical Foregrip
 	self.parts.wpn_fps_aug_fg_a3.pcs = {
@@ -2455,8 +2467,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_aug", "resmod_aug", function(self)
 	self.parts.wpn_fps_aug_fg_a3.supported = true
 	self.parts.wpn_fps_aug_fg_a3.stats = {
 		value = 2,
-		recoil = 1,
-		concealment = -2
+		spread = -1,
+		recoil = 4,
+		concealment = -1
 	}
 	
 	--UAR Default Blueprint, disabling Vertical Grips
@@ -2483,7 +2496,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 	self.parts.wpn_fps_ass_g36_fg_c.supported = true
 	self.parts.wpn_fps_ass_g36_fg_c.stats = {
 		value = 3,
-		recoil = -2,
+		spread = -1,
 		concealment = 1
 	}
 	self.parts.wpn_fps_ass_g36_fg_c.custom_stats = {
@@ -2531,8 +2544,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g36", "resmod_g36", function(self)
 	self.parts.wpn_fps_ass_g36_s_sl8.stats = {
 		value = 5,
 		spread = 1,
-		recoil = 2,
-		concealment = -2
+		recoil = 6,
+		concealment = -4
+	}
+	self.parts.wpn_fps_ass_g36_s_sl8.custom_stats = {
+		ads_speed_mult = 1.1
 	}
 
 end)
@@ -2550,8 +2566,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_p90", "resmod_p90", function(self)
 	self.parts.wpn_fps_smg_p90_b_long.supported = true
 	self.parts.wpn_fps_smg_p90_b_long.stats = {
 		value = 5,
-		spread = 1,
-		concealment = -3
+		spread = 2,
+		concealment = -2
+	}
+	self.parts.wpn_fps_ass_g36_s_sl8.custom_stats = {
+		falloff_start_mult = 1.1,
+		falloff_end_mult = 1.1,
+		ads_speed_mult = 1.05
 	}
 	
 	--(Kobus 90) Tan Body
@@ -2598,9 +2619,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 		recoil = 2,
 		concealment = 1
 	}
-	self.parts.wpn_fps_ass_m14_body_ebr.custom_stats = {
-		ads_speed_mult = 1.1
-	}
 		
 	--Jaeger Body
 	self.parts.wpn_fps_ass_m14_body_jae.pcs = {
@@ -2610,13 +2628,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m14", "resmod_m14", function(self)
 		40
 	}
 	self.parts.wpn_fps_ass_m14_body_jae.supported = true
-	self.parts.wpn_fps_ass_m14_body_jae.custom_stats = {
-		ads_speed_mult = 1.05
-	}
 	self.parts.wpn_fps_ass_m14_body_jae.stats = {
 		value = 5,
-		spread = 1,
-		recoil = 2,
+		spread = 2,
 		concealment = -2
 	}
 		
@@ -2658,6 +2672,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp9", "resmod_mp9", function(self)
 		reload = -1,
 		extra_ammo = 10
 	}
+	self.parts.wpn_fps_smg_mp9_m_extended.custom_stats = {
+		ads_speed_mult = 1.025
+	}
 	
 	--(CMP) Skeletal Stock
 	self.parts.wpn_fps_smg_mp9_s_skel.pcs = {
@@ -2669,8 +2686,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp9", "resmod_mp9", function(self)
 	self.parts.wpn_fps_smg_mp9_s_skel.supported = true
 	self.parts.wpn_fps_smg_mp9_s_skel.stats = {
 		value = 2,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 	
 	--CMP Part Table	
@@ -2694,8 +2711,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	self.parts.wpn_fps_pis_deagle_b_long.supported = true
 	self.parts.wpn_fps_pis_deagle_b_long.stats = {
 		value = 5,
-		spread = 1,
+		spread = 3,
 		concealment = -3
+	}
+	self.parts.wpn_fps_pis_deagle_b_long.custom_stats = {
+		falloff_start_mult = 1.15,
+		falloff_end_mult = 1.15,
+		ads_speed_mult = 1.05
 	}
 
 	--OVERKILL Compensator
@@ -2709,8 +2731,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	self.parts.wpn_fps_pis_deagle_co_long.stats = {
 		value = 6,
 		spread = 1,
-		recoil = 1,
-		concealment = -5
+		recoil = 2,
+		concealment = -2
 	}
 	
 	--La Femme Compensator
@@ -2725,7 +2747,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 		value = 3,
 		suppression = -2,
 		recoil = 2,
-		concealment = -4
+		concealment = -1
 	}
 
 	--(Deagle) Bling Grip
@@ -2738,8 +2760,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	self.parts.wpn_fps_pis_deagle_g_bling.supported = true
 	self.parts.wpn_fps_pis_deagle_g_bling.stats = {
 		value = 10,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 	
 	--(Deagle) Ergo Grip
@@ -2750,9 +2772,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 		40
 	}
 	self.parts.wpn_fps_pis_deagle_g_ergo.supported = true
+	self.parts.wpn_fps_pis_deagle_g_ergo.custom_stats = {
+		ads_speed_mult = 0.975
+	}
 	self.parts.wpn_fps_pis_deagle_g_ergo.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 
@@ -2765,9 +2790,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_deagle", "resmod_deagle", function
 	self.parts.wpn_fps_pis_deagle_m_extended.supported = true
 	self.parts.wpn_fps_pis_deagle_m_extended.stats = {
 		value = 5,
-		concealment = -1,
-		reload = -1,
-		extra_ammo = 2
+		concealment = -2,
+		reload = -3,
+		extra_ammo = 4
+	}
+	self.parts.wpn_fps_pis_deagle_m_extended.custom_stats = {
+		ads_speed_mult = 1.05
 	}
 	
 	--Deagle Additional Parts	
@@ -2792,10 +2820,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 		40
 	}
 	self.parts.wpn_fps_smg_mp5_fg_m5k.supported = true
+	self.parts.wpn_fps_smg_mp5_fg_m5k.custom_stats = {
+		falloff_start_mult = 0.9,
+		falloff_end_mult = 0.9,
+		ads_speed_mult = 0.975
+	}
 	self.parts.wpn_fps_smg_mp5_fg_m5k.stats = {
 		value = 3,
-		recoil = -1,
-		concealment = 1
+		recoil = -4,
+		concealment = 2
 	}
 	
 	--Polizei Tactical Barrel
@@ -2808,7 +2841,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp5", "resmod_mp5", function(self)
 	self.parts.wpn_fps_smg_mp5_fg_mp5a5.supported = true
 	self.parts.wpn_fps_smg_mp5_fg_mp5a5.stats = {
 		value = 2,
-		recoil = 1,
+		recoil = 4,
 		concealment = -2
 	}
 	
@@ -2896,8 +2929,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 	self.parts.wpn_fps_pis_1911_b_long.supported = true
 	self.parts.wpn_fps_pis_1911_b_long.stats = {
 		value = 5,
-		spread = 1,
+		spread = 3,
 		concealment = -3
+	}
+	self.parts.wpn_fps_pis_1911_b_long.custom_stats = {
+		falloff_start_mult = 1.15,
+		falloff_end_mult = 1.15,
+		ads_speed_mult = 1.075
 	}
 
 	--Vented Slide
@@ -2911,7 +2949,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 	self.parts.wpn_fps_pis_1911_b_vented.stats = {
 		value = 3,
 		spread = -1,
-		concealment = 1
+		recoil = 2
 	}
 
 	--Punisher Compensator
@@ -2925,7 +2963,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 	self.parts.wpn_fps_pis_1911_co_1.stats = {
 		value = 2,
 		suppression = -2,
-		recoil = 1,
+		recoil = 4,
 		concealment = -2
 	}
 	
@@ -2939,7 +2977,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 	self.parts.wpn_fps_pis_1911_co_2.supported = true
 	self.parts.wpn_fps_pis_1911_co_2.stats = {
 		value = 5,
-		spread = 1,
+		spread = 3,
 		concealment = -3
 	}
 	
@@ -2953,8 +2991,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 	self.parts.wpn_fps_pis_1911_g_bling.supported = true
 	self.parts.wpn_fps_pis_1911_g_bling.stats = {
 		value = 10,
-		recoil = 1,
-		concealment = -2
+		recoil = 2,
+		concealment = -1
 	}
 	
 	--Ergo Grip
@@ -2965,9 +3003,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_colt_1911", "resmod_1911", functio
 		40
 	}
 	self.parts.wpn_fps_pis_1911_g_ergo.supported = true
+	self.parts.wpn_fps_pis_1911_g_ergo.custom_stats = {
+		ads_speed_mult = 0.975
+	}
 	self.parts.wpn_fps_pis_1911_g_ergo.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 
@@ -3023,12 +3064,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mac10", "resmod_mac10", function(s
 	self.parts.wpn_fps_smg_mac10_m_extended.supported = true
 	self.parts.wpn_fps_smg_mac10_m_extended.stats = {
 		value = 2,
-		concealment = -1,
+		concealment = -2,
 		extra_ammo = 10,
-		reload = -1
+		reload = -2
 	}
 	self.parts.wpn_fps_smg_mac10_m_extended.custom_stats = {
-		ads_speed_mult = 1.025
+		ads_speed_mult = 1.05
 	}
 
 	--Skeletal Stock
@@ -3818,9 +3859,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g22c", "resmod_g22c", function(sel
 	self.parts.wpn_fps_pis_g22c_b_long.supported = true
 	self.parts.wpn_fps_pis_g22c_b_long.stats = {
 		value = 5,
-		spread = 1,
-		concealment = -3
+		spread = 2,
+		concealment = -2
 	}
+	self.parts.wpn_fps_pis_g22c_b_long.custom_stats = {
+		falloff_start_mult = 1.1,
+		falloff_end_mult = 1.1,
+		ads_speed_mult = 1.05
+	}
+	
 
 	--Chimano Custom Overrides
 	self.wpn_fps_pis_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd = {
@@ -3828,8 +3875,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g22c", "resmod_g22c", function(sel
 		stats = {
 			value = 6,
 			extra_ammo = 13,
-			concealment = -1,
-			reload = -2
+			concealment = -2,
+			reload = -3
 		}
 	}
 	
@@ -3933,8 +3980,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_m_extended.stats = {
 		value = 4,
 		concealment = -3,
-		reload = -3,
+		reload = -4,
 		extra_ammo = 14
+	}
+	self.parts.wpn_fps_smg_m45_m_extended.custom_stats = {
+		ads_speed_mult = 1.075
 	}
 	
 	--Swedish Barrel
@@ -3947,9 +3997,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_b_green.supported = true
 	self.parts.wpn_fps_smg_m45_b_green.stats = {
 		value = 5,
-		spread = 2,
 		recoil = 2,
-		concealment = -3
+		concealment = -1
 	}
 	
 	--Grease Barrel
@@ -3964,6 +4013,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 		value = 3,
 		spread = -1,
 		concealment = 1
+	}
+	self.parts.wpn_fps_smg_m45_b_small.custom_stats = {
+		falloff_start_mult = 0.95,
+		falloff_end_mult = 0.95,
+		ads_speed_mult = 0.975
 	}
 	
 	--Swedish Body
@@ -3991,8 +4045,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 	self.parts.wpn_fps_smg_m45_s_folded.supported = true
 	self.parts.wpn_fps_smg_m45_s_folded.stats = {
 		value = 3,
-		recoil = -2,
-		concealment = 1
+		recoil = -4,
+		concealment = 2
 	}
 	
 	--Ergo Grip
@@ -4007,6 +4061,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m45", "resmod_m45", function(self)
 		value = 3,
 		recoil = -2,
 		concealment = 1
+	}
+	self.parts.wpn_fps_smg_m45_g_ergo.custom_stats = {
+		ads_speed_mult = 0.975
 	}
 	
 	--Bling Grip
@@ -4046,8 +4103,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 	self.parts.wpn_fps_ass_s552_b_long.supported = true
 	self.parts.wpn_fps_ass_s552_b_long.stats = {
 		value = 5,
-		spread = 1,
+		spread = 3,
 		concealment = -3
+	}
+	self.parts.wpn_fps_ass_s552_b_long.custom_stats = {
+		falloff_start_mult = 1.15,
+		falloff_end_mult = 1.15,
+		ads_speed_mult = 1.075
 	}
 
 	--Heat Treated Body
@@ -4060,7 +4122,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 	self.parts.wpn_fps_ass_s552_body_standard_black.supported = true
 	self.parts.wpn_fps_ass_s552_body_standard_black.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 
@@ -4074,8 +4136,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 	self.parts.wpn_fps_ass_s552_fg_standard_green.supported = true
 	self.parts.wpn_fps_ass_s552_fg_standard_green.stats = {
 		value = 3,
-		recoil = -1,
-		concealment = 1
+		recoil = 2,
+		concealment = -1
 	}
 		
 	--Railed Foregrip
@@ -4089,7 +4151,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 	self.parts.wpn_fps_ass_s552_fg_railed.stats = {
 		value = 5,
 		spread = 1,
-		concealment = -3
+		concealment = -1
 	}
 
 	--Enhanced Grip
@@ -4102,8 +4164,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 	self.parts.wpn_fps_ass_s552_g_standard_green.supported = true
 	self.parts.wpn_fps_ass_s552_g_standard_green.stats = {
 		value = 3,
-		recoil = -1,
-		concealment = 1
+		recoil = 2,
+		concealment = -1
 	}
 	
 	--Enhanced Stock
@@ -4116,7 +4178,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_s552", "resmod_s552", function(sel
 	self.parts.wpn_fps_ass_s552_s_standard_green.supported = true
 	self.parts.wpn_fps_ass_s552_s_standard_green.stats = {
 		value = 2,
-		recoil = 1,
+		spread = 1,
+		recoil = 2,
 		concealment = -2
 	}
 	
@@ -4135,10 +4198,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ppk", "resmod_ppk", function(self)
 	self.parts.wpn_fps_pis_ppk_b_long.supported = true
 	self.parts.wpn_fps_pis_ppk_b_long.stats = {
 		value = 5,
-		spread = 1,
-		concealment = -3
+		spread = 2,
+		concealment = -2
 	}
-	
+	self.parts.wpn_fps_pis_ppk_b_long.custom_stats = {
+		falloff_start_mult = 1.1,
+		falloff_end_mult = 1.1,
+		ads_speed_mult = 1.05
+	}
+
 	--Laser Grip
 	self.parts.wpn_fps_pis_ppk_g_laser.pcs = {
 		10,
@@ -4179,7 +4247,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp7", "resmod_mp7", function(self)
 	self.parts.wpn_fps_smg_mp7_m_extended.stats = {
 		value = 2,
 		concealment = -2,
-		reload = -2,
+		reload = -3,
 		extra_ammo = 20
 	}
 
@@ -4208,7 +4276,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mp7", "resmod_mp7", function(self)
 	self.parts.wpn_fps_smg_mp7_s_long.supported = true
 	self.parts.wpn_fps_smg_mp7_s_long.stats = {
 		value = 2,
-		recoil = 1,
+		recoil = 4,
 		concealment = -2
 	}
 	
@@ -4811,10 +4879,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_msr", "resmod_msr", function(self)
 	--Long Barrel
 	self.parts.wpn_fps_snp_msr_b_long.pcs = {}
 	self.parts.wpn_fps_snp_msr_b_long.supported = true
+	self.parts.wpn_fps_snp_msr_b_long.custom_stats = {
+		falloff_start_mult = 1.1,
+		falloff_end_mult = 1.1,
+		ads_speed_mult = 1.05
+	}
 	self.parts.wpn_fps_snp_msr_b_long.stats = {
 		value = 5,
-		concealment = -3,
-		spread = 1
+		concealment = -2,
+		spread = 2
 	}
 	
 	--Sniper Suppressor
@@ -4830,9 +4903,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_msr", "resmod_msr", function(self)
 	--Tactical Aluminium Body
 	self.parts.wpn_fps_snp_msr_body_msr.pcs = {}
 	self.parts.wpn_fps_snp_msr_body_msr.supported = true
+	self.parts.wpn_fps_snp_msr_body_msr.custom_stats = {
+		ads_speed_mult = 0.975
+	}
 	self.parts.wpn_fps_snp_msr_body_msr.stats = {
 		value = 3,
-		recoil = -1,
+		recoil = -2,
 		concealment = 1
 	}
 	self.parts.wpn_fps_snp_msr_body_msr.override = {}
@@ -4861,10 +4937,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r93", "resmod_r93", function(self)
 	--Short Barrel
 	self.parts.wpn_fps_snp_r93_b_short.pcs = {}
 	self.parts.wpn_fps_snp_r93_b_short.supported = true
+	self.parts.wpn_fps_snp_r93_b_short.custom_stats = {
+		falloff_start_mult = 0.9,
+		falloff_end_mult = 0.9,
+		ads_speed_mult = 0.95
+	}
 	self.parts.wpn_fps_snp_r93_b_short.stats = {
 		value = 2,
-		spread = -1,
-		concealment = 1
+		spread = -2,
+		concealment = 2
 	}
 	
 	--Compensated Suppressor
@@ -4883,7 +4964,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_r93", "resmod_r93", function(self)
 	self.parts.wpn_fps_snp_r93_body_wood.stats = {
 		value = 2,
 		concealment = -2,
-		recoil = 1
+		recoil = 4
 	}
 	
 	--Override Table
@@ -4908,13 +4989,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	self.parts.wpn_fps_ass_fal_fg_01.supported = true
 	self.parts.wpn_fps_ass_fal_fg_01.stats = {
 		value = 3,
-		spread = -1,
-		concealment = 1
+		spread = -2,
+		concealment = 2
 	}
 	self.parts.wpn_fps_ass_fal_g_01.custom_stats = {
-		falloff_start_mult = 0.95,
-		falloff_end_mult = 0.95,
-		ads_speed_mult = 0.975
+		falloff_start_mult = 0.9,
+		falloff_end_mult = 0.9,
+		ads_speed_mult = 0.95
 	}
 	
 	--Retro Foregrip
@@ -4984,7 +5065,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	self.parts.wpn_fps_ass_fal_s_01.stats = {
 		value = 3,
 		concealment = 1,
-		recoil = -1
+		recoil = -2
 	}
 	
 	--Marksman Stock
@@ -4992,8 +5073,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	self.parts.wpn_fps_ass_fal_s_03.supported = true
 	self.parts.wpn_fps_ass_fal_s_03.stats = {
 		value = 5,
-		spread = 1,
-		concealment = -3
+		spread = 2,
+		concealment = -2
 	}
 	
 	--Wooden Stock
@@ -5001,7 +5082,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fal", "resmod_fal", function(self)
 	self.parts.wpn_fps_ass_fal_s_wood.supported = true
 	self.parts.wpn_fps_ass_fal_s_wood.stats = {
 		value = 2,
-		recoil = 1,
+		recoil = 4,
 		concealment = -2
 	}
 
@@ -5016,7 +5097,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 	self.parts.wpn_fps_sho_ben_b_long.stats = {
 		value = 4,
 		concealment = -1,
+		spread = 1,
 		extra_ammo = 2
+	}
+	self.parts.wpn_fps_sho_ben_b_long.custom_stats = {
+		falloff_start_mult = 1.05,
+		falloff_end_mult = 1.05,
+		ads_speed_mult = 1.025
 	}
 
 	--Short Barrel
@@ -5024,8 +5111,14 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 	self.parts.wpn_fps_sho_ben_b_short.supported = true
 	self.parts.wpn_fps_sho_ben_b_short.stats = {
 		value = 3,
-		concealment = 1,
+		concealment = 2,
+		spread = -2,
 		extra_ammo = -1
+	}
+	self.parts.wpn_fps_sho_ben_b_short.custom_stats = {
+		falloff_start_mult = 0.9,
+		falloff_end_mult = 0.9,
+		ads_speed_mult = 0.95
 	}
 	
 	--Collapsed Stock
@@ -5033,8 +5126,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 	self.parts.wpn_fps_sho_ben_s_collapsed.supported = true
 	self.parts.wpn_fps_sho_ben_s_collapsed.stats = {
 		value = 3,
-		recoil = -1,
-		concealment = 1
+		recoil = -4,
+		concealment = 2
 	}
 	
 	--Tactical Stock
@@ -5042,7 +5135,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ben", "resmod_ben", function(self)
 	self.parts.wpn_fps_sho_ben_s_solid.supported = true
 	self.parts.wpn_fps_sho_ben_s_solid.stats = {
 		value = 2,
-		recoil = 1,
+		recoil = 4,
 		concealment = -2
 	}
 	self.parts.wpn_fps_sho_ben_s_solid.custom_stats = {
@@ -5140,12 +5233,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_striker", "resmod_striker", functi
 	self.parts.wpn_fps_sho_striker_b_long.supported = true
 	self.parts.wpn_fps_sho_striker_b_long.stats = {
 		value = 5,
-		spread = 1,
+		spread = 3,
 		concealment = -3
 	}
 	self.parts.wpn_fps_sho_striker_b_long.custom_stats = {
-		falloff_start_mult = 1,
-		falloff_end_mult = 1
+		falloff_start_mult = 1.15,
+		falloff_end_mult = 1.15,
+		ads_speed_mult = 1.075
 	}
 	
 	--Suppressed Barrel
@@ -5265,8 +5359,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 	self.parts.wpn_fps_sho_ksg_b_long.supported = true
 	self.parts.wpn_fps_sho_ksg_b_long.stats = {
 		value = 4,
-		concealment = -1,
+		concealment = -2,
 		extra_ammo = 2
+	}
+	self.parts.wpn_fps_sho_ksg_b_long.custom_stats = {
+		falloff_start_mult = 1.1,
+		falloff_end_mult = 1.1,
+		ads_speed_mult = 1.05
 	}
 
 	--Short Barrel
@@ -5274,8 +5373,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "resmod_ksg", function(self)
 	self.parts.wpn_fps_sho_ksg_b_short.supported = true
 	self.parts.wpn_fps_sho_ksg_b_short.stats = {
 		value = 4,
-		concealment = 1,
+		concealment = 2,
 		extra_ammo = -2
+	}
+	self.parts.wpn_fps_sho_ksg_b_short.custom_stats = {
+		falloff_start_mult = 0.9,
+		falloff_end_mult = 0.9,
+		ads_speed_mult = 0.95
 	}
 	
 	--Flip-up Sight
@@ -5380,6 +5484,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_gre_m79", "resmod_gre_m79", functi
 		"wpn_fps_gre_m79_sight_up"
 	}
 	self.parts.wpn_fps_gre_m79_barrel_short.forbids = {}
+	self.parts.wpn_fps_gre_m79_barrel_short.custom_stats = {
+		ads_speed_mult = 0.975
+	}
 	
 	--Sawed-off Stock
 	self.parts.wpn_fps_gre_m79_stock_short.pcs = {}
@@ -6608,8 +6715,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_g26", "resmod_g26", function(self)
 		stats = {
 			value = 6,
 			extra_ammo = 23,
-			concealment = -1,
-			reload = -2
+			concealment = -2,
+			reload = -3
 		}
 	}
 	
@@ -6656,7 +6763,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_jowi", "resmod_jowi", function(sel
 			value = 6,
 			extra_ammo = 22,
 			concealment = -2,
-			reload = -1
+			reload = -3
 		}
 	}
 	self.wpn_fps_jowi.override.wpn_fps_pis_g26_b_standard = {
@@ -8176,8 +8283,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g22c", "resmod_x_g22c", function
 	self.wpn_fps_pis_x_g22c.override.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 		value = 6,
 		extra_ammo = 24,
-		concealment = -1,
-		reload = -2
+		concealment = -2,
+		reload = -3
 	}
 
 end)
@@ -8189,8 +8296,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g17", "resmod_x_g17", function(s
 	self.wpn_fps_pis_x_g17.override.wpn_fps_pis_g18c_m_mag_33rnd.stats = {
 		value = 6,
 		extra_ammo = 30,
-		concealment = -1,
-		reload = -2
+		concealment = -2,
+		reload = -3
 	}
 	
 	--Chimano 88 Part Additions
@@ -11608,8 +11715,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_g18c", "resmod_x_g18c", function
 		stats = {
 			value = 6,
 			extra_ammo = 30,
-			concealment = -1,
-			reload = -2
+			concealment = -2,
+			reload = -3
 		}
 	}
 	

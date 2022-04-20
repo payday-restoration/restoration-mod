@@ -5397,7 +5397,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.basset.reload_speed_multiplier = 1.25
 				self.basset.sounds.fire_single = "basset_x_fire_single"
 				self.basset.timers.reload_exit_empty = 0.55
-				self.basset.timers.reload_exit_not_empty = 0.55
+				self.basset.timers.reload_exit_not_empty = 0.65
 
 			--Street Sweeper
 				self.striker.rays = 9
@@ -7515,6 +7515,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.new_m14.stats_modifiers = nil
 			self.new_m14.timers.reload_not_empty = 2.60
+			self.new_m14.timers.reload_exit_empty = 0.9
+			self.new_m14.timers.reload_exit_not_empty = 1.1
 			self.new_m14.panic_suppression_chance = 0.05
 		
 		--Gewehr 3 (G3A3)
@@ -7584,6 +7586,8 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			}
 			self.shak12.stats_modifiers = nil
 			self.shak12.panic_suppression_chance = 0.05	
+			self.shak12.timers.reload_exit_empty = 0.55
+			self.shak12.timers.reload_exit_not_empty = 0.65
 
 		--Gecko 7.62 (Galil ARM 7.62)
 			self.galil.AMMO_MAX = 80
@@ -8577,7 +8581,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.m95.fire_mode_data.fire_rate = 1.5
 			self.m95.kick = self.stat_info.kick_tables.left_kick
 			self.m95.supported = true
-			self.m95.ads_speed = 0.600
+			self.m95.ads_speed = 0.525
 			self.m95.damage_falloff = {
 				start_dist = 25000,
 				end_dist = 270000,

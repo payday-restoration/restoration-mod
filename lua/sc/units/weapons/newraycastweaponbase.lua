@@ -214,7 +214,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
 		local moving_spread_mult = 1
 		for _, category in ipairs(self:weapon_tweak_data().categories) do
-			local ms_mult = tweak_data[category].moving_spread_mult or 1
+			local ms_mult = tweak_data[category] and tweak_data[category].moving_spread_mult or 1
 			moving_spread_mult = moving_spread_mult * ms_mult
 		end
 		moving_spread = moving_spread * moving_spread_mult
@@ -229,7 +229,7 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	if not current_state:full_steelsight() then
 		local hipfire_spread_mult = 1
 		for _, category in ipairs(self:weapon_tweak_data().categories) do
-			local hip_mult = tweak_data[category].hipfire_spread_mult or 1
+			local hip_mult = tweak_data[category] and tweak_data[category].hipfire_spread_mult or 1
 			hipfire_spread_mult = hipfire_spread_mult * hip_mult
 		end
 		multiplier = multiplier * hipfire_spread_mult

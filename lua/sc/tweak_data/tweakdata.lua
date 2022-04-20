@@ -21,7 +21,7 @@ tweak_data.ammo.ricochet.autohit = {
 tweak_data.pistol = {
 	swap_bonus = 1.75,
 	ads_move_speed_mult = 0.95,
-	hipfire_spread_mult = 0.85
+	hipfire_spread_mult = 0.75
 }
 tweak_data.akimbo = {
 	swap_bonus = 0.9
@@ -29,7 +29,7 @@ tweak_data.akimbo = {
 tweak_data.shotgun = {}
 tweak_data.smg = {
 	ads_move_speed_mult = 0.75,
-	hipfire_spread_mult = 0.95
+	hipfire_spread_mult = 0.9
 }
 tweak_data.lmg = {
 	swap_bonus = 0.9,

@@ -3244,7 +3244,11 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 		["lower_reciever"] = "stock"
 	}
 	self.peacemaker.override_mod_type_name = {
-		["slide"] = "barrel",
+		["slide"] = "ro_barrel",
+		["stock"] = "ro_stock",
+		["bonus"] = "ro_modifier",
+		["charm"] = "ro_charm",
+		["grip"] = "ro_grip"
 	}
 	self.scar.override_mod_type_name = {
 		["foregrip"] = "extra",

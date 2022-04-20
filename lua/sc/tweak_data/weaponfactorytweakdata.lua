@@ -8528,7 +8528,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_peacemaker", "resmod_peacemaker", 
 		recoil = 6,
 		concealment = -4
 	}
-	self.parts.wpn_fps_pis_peacemaker_s_skeletal.stats = {
+	self.parts.wpn_fps_pis_peacemaker_s_skeletal.custom_stats = {
 		ads_speed_mult = 1.1
 	}
 

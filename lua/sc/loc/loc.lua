@@ -1214,6 +1214,12 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_forebarrelgrip"] = "Barrel & Handguard",
 		["bm_menu_riser"] = "Riser",
 		["bm_menu_pump"] = "Pump",
+
+		["bm_menu_ro_barrel"] = "Barrel",
+		["bm_menu_ro_stock"] = "Stock",
+		["bm_menu_ro_modifier"] = "Modifiers",
+		["bm_menu_ro_charm"] = "Charm",
+		["bm_menu_ro_grip"] = "Grip",
 		
 		--Weapon categories--
 		["menu_pistol"] = "Pistols",
@@ -1446,7 +1452,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
 			["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
-			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot"
+			["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",
+
+			["bm_menu_ro_barrel"] = "Revolver Ocelot",
+			["bm_menu_ro_stock"] = "Revolver Ocelot",
+			["bm_menu_ro_modifier"] = "Revolver Ocelot",
+			["bm_menu_ro_charm"] = "Revolver Ocelot",
+			["bm_menu_ro_grip"] = "Revolver Ocelot"
 		})
 	end
 	

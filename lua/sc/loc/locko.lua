@@ -1108,7 +1108,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m134_rof_init_sc_desc"] = "방아쇠을 당길때 처음 몇 총알을 발사하는 동안 2배의 발사 속도로 짧게 발사합니다.",
 		
 		["bm_ap_weapon_peacemaker_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
-		["bm_wolf_brigade_sc_desc"] = "비조준 상태에서 발사 시 반동이 50%만큼 감소합니다",
+		["bm_wolf_brigade_sc_desc"] = "비조준 상태에서 발사 시 반동이 25%만큼 감소합니다",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "레스트레이션 오버홀",
@@ -1213,7 +1213,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_menu_model"] = "모델",
 		["bm_menu_forebarrelgrip"] = "총열 및 총열덮개",
 		["bm_menu_riser"] = "라이저",
-		["bm_menu_pump"] = "펌프",		
+		["bm_menu_pump"] = "펌프",
+
+		["bm_menu_ro_barrel"] = "총열",
+		["bm_menu_ro_stock"] = "개머리판",
+		["bm_menu_ro_modifier"] = "수정치",
+		["bm_menu_ro_charm"] = "장식품",
+		["bm_menu_ro_grip"] = "손잡이",		
 		
 		--Weapon categories--
 		["menu_pistol"] = "권총",
@@ -1386,7 +1392,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_recoil_p1"] = "적은 안정성 보너스 및 명중률 패널티",
 		["bm_menu_bonus_recoil_p1_mod"] = "작은 안정성 수정치",
 		["bm_menu_bonus_recoil_p2"] = "많은 안정성 보너스 및 명중률 패널티",
-		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "당신과 당신의 팀원은 경험치 보상을 +5%만큼 받는 대신 돈 보상을 -10%만큼 받습니다.",
+		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "당신과 당신의 팀원은 경험치 보상을 +5%만큼 받습니다.",
 		["bm_menu_spread"] = "명중률\n",
 		["bm_menu_recoil"] = "안정성\n",
 		["bm_menu_concealment"] = "은닉성\n",
@@ -1394,7 +1400,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_spread_p3_mod"] = "대규모 정확도 수정치",
 		["bm_menu_bonus_recoil_p2_mod"] = "많은 안정성 수정치",
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "돈 부스트",
-		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "당신과 당신의 팀원은 돈 보상을 +10%만큼 받는 대신 경험치 보상을 -5%만큼 받습니다.",
+		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "당신과 당신의 팀원은 돈 보상을 +5%만큼 받습니다.",
 
 		["bm_wp_upg_i_singlefire_desc"] = "무기를 단발 모드로 잠급니다.",
 		["bm_wp_upg_i_autofire_desc"] = "무기를 자동 발사 모드로 잠급니다.",
@@ -1447,7 +1453,13 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			["bm_wp_peacemaker_barrel_long"] = "리볼버 오셀롯",
 			["bm_wp_peacemaker_barrel_short"] = "리볼버 오셀롯",
 			["bm_wp_peacemaker_handle_bling"] = "리볼버 오셀롯",
-			["bm_wp_peacemaker_rifle_stock"] = "리볼버 오셀롯"
+			["bm_wp_peacemaker_rifle_stock"] = "리볼버 오셀롯",
+
+			["bm_menu_ro_barrel"] = "리볼버 오셀롯",
+			["bm_menu_ro_stock"] = "리볼버 오셀롯",
+			["bm_menu_ro_modifier"] = "리볼버 오셀롯",
+			["bm_menu_ro_charm"] = "리볼버 오셀롯",
+			["bm_menu_ro_grip"] = "리볼버 오셀롯"			
 		})
 	end	
 	

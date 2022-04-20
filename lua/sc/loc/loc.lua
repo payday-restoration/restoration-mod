@@ -1385,7 +1385,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_recoil_p1"] = "Small Stability bonus and Accuracy penalty",
 		["bm_menu_bonus_recoil_p1_mod"] = "Small Stability Modifier",
 		["bm_menu_bonus_recoil_p2"] = "Large Stability bonus and Accuracy penalty",
-		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+5% Experience reward for you and your crew, -10% Money reward for you and your crew",
+		["bm_wp_upg_bonus_team_exp_money_p3_desc"] = "+5% Experience reward for you and your crew.",
 		["bm_menu_spread"] = "Accuracy\n",
 		["bm_menu_recoil"] = "Stability\n",
 		["bm_menu_concealment"] = "Concealment\n",
@@ -1393,7 +1393,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_menu_bonus_spread_p3_mod"] = "Massive Accuracy Modifier",
 		["bm_menu_bonus_recoil_p2_mod"] = "Large Stability Modifier",
 		["bm_wp_upg_bonus_team_money_exp_p1"] = "Money Boost",
-		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+10% Money reward for you and your crew, -5% Experience reward for you and your crew.",
+		["bm_wp_upg_bonus_team_money_exp_p1_desc"] = "+5% Money reward for you and your crew.",
 
 		["bm_wp_upg_i_singlefire_desc"] = "LOCKS YOUR WEAPON TO SINGLE-FIRE MODE.",
 		["bm_wp_upg_i_autofire_desc"] = "LOCKS YOUR WEAPON TO AUTO-FIRE MODE.",

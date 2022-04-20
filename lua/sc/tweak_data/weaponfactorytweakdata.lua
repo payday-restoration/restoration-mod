@@ -795,7 +795,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 	self.parts.wpn_fps_upg_i_singlefire.supported = true
 	self.parts.wpn_fps_upg_i_singlefire.stats = {
 		value = 5,
-		spread = 2
+		spread = 10
 	}
 	self.parts.wpn_fps_upg_i_singlefire.custom_stats = {
 		falloff_start_mult = 1,
@@ -819,8 +819,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_content_dlc2", "resmod_content_dlc
 	self.parts.wpn_fps_upg_i_autofire.supported = true
 	self.parts.wpn_fps_upg_i_autofire.stats = {
 		value = 5,
-		spread = -1,
-		recoil = 1
+		spread = -3,
+		recoil = 6
 	}
 	self.parts.wpn_fps_upg_i_autofire.custom_stats = {
 		falloff_start_mult = 1,
@@ -5874,10 +5874,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		stats = {value = 1, concealment = 1, spread = -1},
-		custom_stats = {
-			falloff_start_mult = 0.95,
-			falloff_end_mult = 0.95,
-		},
+		custom_stats = {},
 		internal_part = true,
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -5895,10 +5892,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		stats = {value = 1, concealment = 2, spread = -2},
-		custom_stats = {
-			falloff_start_mult = 0.9,
-			falloff_end_mult = 0.9,
-		},
+		custom_stats = {},
 		internal_part = true,
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -5916,10 +5910,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3_sc",
 		supported = true,
 		stats = {value = 1, concealment = 3, spread = -3},
-		custom_stats = {
-			falloff_start_mult = 0.85,
-			falloff_end_mult = 0.85,
-		},
+		custom_stats = {},
 		internal_part = true,
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -5937,12 +5928,9 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_p1_sc",
 		supported = true,
-		stats = {value = 1, spread = 1, recoil = -2, concealment = -1},
+		stats = {value = 1, spread = 1, recoil = -2},
 		internal_part = true,
-		custom_stats = {
-			falloff_start_mult = 1,
-			falloff_end_mult = 1
-		},
+		custom_stats = {},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
 		sub_type = "bonus_stats",
@@ -5959,12 +5947,9 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p1_sc",
 		supported = true,
-		stats = {value = 1, spread = 2, recoil = -4, concealment = -2},
+		stats = {value = 1, spread = 2, recoil = -4},
 		internal_part = true,
-		custom_stats = {
-			falloff_start_mult = 1,
-			falloff_end_mult = 1
-		},
+		custom_stats = {},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
 		sub_type = "bonus_stats",
@@ -5981,11 +5966,8 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_damage_p2_sc",
 		supported = true,
-		stats = {value = 1, spread = 3, recoil = -6, concealment = -3},
-		custom_stats = {
-			falloff_start_mult = 1,
-			falloff_end_mult = 1
-		},
+		stats = {value = 1, spread = 3, recoil = -6},
+		custom_stats = {},
 		internal_part = true,
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -6003,10 +5985,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_recoil_p1_sc",
 		supported = true,
 		stats = {value = 1, spread = -1, recoil = 1},
-		custom_stats = {
-			falloff_start_mult = 1,
-			falloff_end_mult = 1
-		},
+		custom_stats = {},
 		internal_part = true,
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -6025,10 +6004,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1, spread = -2, recoil = 2},
 		internal_part = true,
-		custom_stats = {
-			falloff_start_mult = 1,
-			falloff_end_mult = 1
-		},
+		custom_stats = {},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
 		sub_type = "bonus_stats"
@@ -6045,10 +6021,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_spread_n1_sc",
 		supported = true,
 		stats = {value = 1, spread = -3, recoil = 3},
-		custom_stats = {
-			falloff_start_mult = 1,
-			falloff_end_mult = 1
-		},
+		custom_stats = {},
 		internal_part = true,
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
@@ -6066,7 +6039,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		stats = {value = 1},
-		custom_stats = {exp_multiplier = 1.05, money_multiplier = 0.9},
+		custom_stats = {exp_multiplier = 1.05},
 		alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_team_exp_money_p3_sc",
 		internal_part = true,
 		has_description = true,
@@ -6088,7 +6061,7 @@ function WeaponFactoryTweakData:create_bonuses(tweak_data, weapon_skins)
 		supported = true,
 		stats = {value = 1},
 		internal_part = true,
-		custom_stats = {money_multiplier = 1.1, exp_multiplier = 0.95},
+		custom_stats = {money_multiplier = 1.05},
 		perks = {"bonus"},
 		texture_bundle_folder = "boost_in_lootdrop",
 		sub_type = "bonus_team",
@@ -13510,8 +13483,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 	self.parts.wpn_fps_smg_vityaz_b_long.stats = {
 		spread = 1,
 		value = 5,
-		concealment = -3
+		concealment = -1
 	}
+	self.parts.wpn_fps_smg_vityaz_b_long.custom_stats = {
+		falloff_start_mult = 1.05,
+		falloff_end_mult = 1.05,
+		ads_speed_mult = 1.025
+	}			
 	
 	--Short Stock
 	self.parts.wpn_fps_smg_vityaz_s_short.pcs = {
@@ -13526,6 +13504,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_vityaz", "resmod_vityaz", function
 		recoil = -2,
 		concealment = 2
 	}
+	self.parts.wpn_fps_smg_vityaz_s_short.custom_stats = {
+		ads_speed_mult = 0.975
+	}			
 	
 end)
 
@@ -13560,6 +13541,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 		spread = -1,
 		concealment = 1
 	}	
+	self.parts.wpn_fps_smg_pm9_b_short.custom_stats = {
+		falloff_start_mult = 0.95,
+		falloff_end_mult = 0.95,
+		ads_speed_mult = 0.975
+	}		
 	
 	--Wood Grip
 	self.parts.wpn_fps_smg_pm9_g_wood.pcs = {
@@ -13571,8 +13557,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 	self.parts.wpn_fps_smg_pm9_g_wood.supported = true
 	self.parts.wpn_fps_smg_pm9_g_wood.stats = {
 		value = 2,
-		concealment = -2,
-		recoil = 1
+		concealment = -1,
+		recoil = 2
 	}	
 	
 	--Tac Stock
@@ -13586,7 +13572,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_pm9", "resmod_pm9", function(self)
 	self.parts.wpn_fps_smg_pm9_s_tactical.stats = {
 		value = 5,
 		spread = 1,
-		concealment = -3
+		concealment = -1
 	}	
 		
 end)
@@ -13607,6 +13593,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_qbu88", "resmod_qbu88", function(s
 		spread = -1,
 		concealment = 1
 	}	
+	self.parts.wpn_fps_snp_qbu88_b_short.custom_stats = {
+		falloff_start_mult = 0.95,
+		falloff_end_mult = 0.95,
+		ads_speed_mult = 0.975
+	}		
 	
 	--Long Barrel
 	self.parts.wpn_fps_snp_qbu88_b_long.pcs = {
@@ -13619,8 +13610,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_qbu88", "resmod_qbu88", function(s
 	self.parts.wpn_fps_snp_qbu88_b_long.stats = {
 		value = 5,
 		spread = 1,
-		concealment = -3
+		concealment = -1
 	}	
+	self.parts.wpn_fps_snp_qbu88_b_long.custom_stats = {
+		falloff_start_mult = 1.05,
+		falloff_end_mult = 1.05,
+		ads_speed_mult = 1.025
+	}			
 		
 	--Extended Mag
 	self.parts.wpn_fps_snp_qbu88_m_extended.pcs = {
@@ -13774,8 +13770,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function
 	self.parts.wpn_fps_pis_type54_b_long.stats = {
 		value = 5,
 		spread = 1,
-		concealment = -3
-	}	
+		concealment = -1
+	}		
+	self.parts.wpn_fps_pis_type54_b_long.custom_stats = {
+		falloff_start_mult = 1.05,
+		falloff_end_mult = 1.05,
+		ads_speed_mult = 1.025
+	}				
 	
 	--Extended magazine
 	self.parts.wpn_fps_pis_type54_m_ext.pcs = {
@@ -13792,6 +13793,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function
 		spread = -1,
 		concealment = -2
 	}		
+	self.parts.wpn_fps_pis_type54_m_ext.custom_stats = {
+		ads_speed_mult = 1.05
+	}	
 	
 	--Underbarrel Shotgun
 	self.parts.wpn_fps_pis_type54_underbarrel.pcs = {}
@@ -13877,7 +13881,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 	self.parts.wpn_fps_pis_rsh12_b_comp.supported = true
 	self.parts.wpn_fps_pis_rsh12_b_comp.stats = {
 		value = 5,
-		spread = 2,
+		spread = 3,
 		recoil = -2,
 		concealment = -2
 	}
@@ -13897,6 +13901,11 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 		spread = -1,
 		concealment = 1
 	}	
+	self.parts.wpn_fps_pis_rsh12_b_short.custom_stats = {
+		falloff_start_mult = 0.95,
+		falloff_end_mult = 0.95,
+		ads_speed_mult = 0.975
+	}		
 	
 	--Wood Grip
 	self.parts.wpn_fps_pis_rsh12_g_wood.pcs = {
@@ -13908,8 +13917,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_rsh12", "resmod_rsh12", function(s
 	self.parts.wpn_fps_pis_rsh12_g_wood.supported = true
 	self.parts.wpn_fps_pis_rsh12_g_wood.stats = {
 		value = 2,
-		concealment = -2,
-		recoil = 1
+		concealment = -1,
+		recoil = 2
 	}	
 	
 	--Overrides for Glock comps
@@ -13946,8 +13955,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 	self.parts.wpn_fps_pis_maxim9_b_long.stats = {
 		value = 5,
 		spread = 1,
-		concealment = -3
+		concealment = -1
 	}	
+	self.parts.wpn_fps_pis_maxim9_b_long.custom_stats = {
+		falloff_start_mult = 1.05,
+		falloff_end_mult = 1.05,
+		ads_speed_mult = 1.025
+	}			
 	
 	--Pinnacle Barrel
 	self.parts.wpn_fps_pis_maxim9_b_marksman.pcs = {
@@ -13959,9 +13973,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 	self.parts.wpn_fps_pis_maxim9_b_marksman.supported = true
 	self.parts.wpn_fps_pis_maxim9_b_marksman.stats = {
 		value = 2,
-		recoil = 1,
-		concealment = -2
-	}	
+		recoil = 2,
+		concealment = -1
+	}		
 
 	--(Maxim-9) Extended Mag.
 	self.parts.wpn_fps_pis_maxim9_m_ext.pcs = {
@@ -13977,6 +13991,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_maxim9", "resmod_maxim9", function
 		concealment = -1,
 		reload = -2
 	}	
+	self.parts.wpn_fps_pis_maxim9_m_ext.custom_stats = {
+		ads_speed_mult = 1.05
+	}		
 	
 	--Maxim Default body, added to add unique ammo type
 	self.parts.wpn_fps_pis_maxim9_body_upper.adds = {
@@ -14076,8 +14093,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_ultima", "resmod_ultima", function
 	self.parts.wpn_fps_sho_ultima_s_light.supported = true
 	self.parts.wpn_fps_sho_ultima_s_light.stats = {
 		value = 2,
-		concealment = -2,
-		recoil = 1
+		concealment = -1,
+		recoil = 2
 	}
 	
 	--Shellswitch M8 (Quick Pull)
@@ -14234,7 +14251,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	self.parts.wpn_fps_smg_fmg9_grip_tape.supported = true
 	self.parts.wpn_fps_smg_fmg9_grip_tape.stats = {
 		value = 5,
-		concealment = -3,
+		concealment = -1,
 		spread = 1
 	}
 	
@@ -14248,8 +14265,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	self.parts.wpn_fps_smg_fmg9_stock_padded.supported = true
 	self.parts.wpn_fps_smg_fmg9_stock_padded.stats = {
 		value = 2,
-		concealment = -2,
-		recoil = 1
+		concealment = -1,
+		recoil = 2
 	}	
 	
 	--Celerity X9 Mag
@@ -14372,7 +14389,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_fmg9", "resmod_fmg9", function(sel
 	}
 	self.parts.wpn_fps_upg_ns_pis_putnik.stats = {
 		value = 4,
-		recoil = 3,
+		recoil = 6,
 		spread = -3
 	}	
 		
@@ -14475,9 +14492,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
 		stats = {
-			value = 0,
-			spread = -1,
-			recoil = -2				
+			value = 5,
+			spread = -5,
+			recoil = -8			
 		},
 		internal_part = true,
 		dlc = "sc"
@@ -14500,7 +14517,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			rof_mult = 1.286
 		},
 		stats = {
-			value = 0		
+			value = 5,
+			spread = 1,
+			recoil = -2
 		},
 		internal_part = true,
 		dlc = "sc"
@@ -14522,8 +14541,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			beer_burst = true
 		},
 		stats = {
-			value = 0,
-			recoil = -2
+			value = 5,
+			recoil = -8
 		},
 		internal_part = true,
 		dlc = "sc"
@@ -14539,10 +14558,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",			
 		supported = true,			
 		stats = {
-			value = 1,
+			value = 3,
 			concealment = 1,
-			recoil = -1			
+			recoil = -2		
 		},
+	    custom_stats = {
+			ads_speed_mult = 0.975
+		},		
 		dlc = "sc"			
 	}								
 	self.parts.wpn_fps_shot_r870_s_folding_ext = { -- thanks jarey_!
@@ -14555,9 +14577,12 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		third_unit = "units/mods/weapons/wpn_fps_shot_r870_pts_mod/wpn_third_shot_r870_s_muldonunfolded",			
 		supported = true,			
 		stats = {
-			value = 5,
-			recoil = -1,
+			value = 3,
+			recoil = -2,
 			concealment = 1
+		},
+	    custom_stats = {
+			ads_speed_mult = 0.975
 		},
 		dlc = "sc"			
 	}						

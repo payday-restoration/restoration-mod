@@ -193,7 +193,6 @@ function restoration:Init()
 		"framing_frame_3", --Framing Frame 3
 		"spa", --Brooklyn 10-10
 		"des",	--Henry's Rock
-		"sah", --Shacklethorne
 		"chill_combat",	--Safehouse Raid
 		"man", --Undercover
 		"man_res", --Undercover resmod edit		
@@ -235,6 +234,7 @@ function restoration:Init()
 		"nmh", --No Mercy
 		"hox_1",
 		"xmn_hox_1",
+		"sah", --Shacklethorne		
 		--Custom Heists below--
 		"thechase",
 		"trop", --Tropical Treasure 

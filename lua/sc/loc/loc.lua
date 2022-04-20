@@ -1108,7 +1108,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_m134_rof_init_sc_desc"] = "Briefly shoots at 2x the rate of fire for the first few rounds of each trigger pull.",
 		
 		["bm_ap_weapon_peacemaker_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
-		["bm_wolf_brigade_sc_desc"] = "50% less recoil when fired from the hip",
+		["bm_wolf_brigade_sc_desc"] = "25% less recoil when fired from the hip",
 		
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",

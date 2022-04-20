@@ -212,7 +212,12 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 	if current_state._moving then
 		--Get spread area from stability stat.
 		local moving_spread = math.max(self._spread_moving + managers.blackmarket:stability_index_addend(self:categories(), self._silencer) * tweak_data.weapon.stat_info.spread_per_stability, 0)
-
+		local moving_spread_mult = 1
+		for _, category in ipairs(self:weapon_tweak_data().categories) do
+			local ms_mult = tweak_data[category].moving_spread_mult or 1
+			moving_spread_mult = moving_spread_mult * ms_mult
+		end
+		moving_spread = moving_spread * moving_spread_mult
 		--Add moving spread penalty reduction.
 		moving_spread = moving_spread * self:moving_spread_penalty_reduction()
 		spread_area = spread_area + moving_spread
@@ -220,7 +225,16 @@ function NewRaycastWeaponBase:_get_spread(user_unit)
 
 	--Apply skill and stance multipliers to overall spread area.
 	local multiplier = tweak_data.weapon.stat_info.stance_spread_mults[current_state:get_movement_state()] * self:conditional_accuracy_multiplier(current_state)
-	
+
+	if not current_state:full_steelsight() then
+		local hipfire_spread_mult = 1
+		for _, category in ipairs(self:weapon_tweak_data().categories) do
+			local hip_mult = tweak_data[category].hipfire_spread_mult or 1
+			hipfire_spread_mult = hipfire_spread_mult * hip_mult
+		end
+		multiplier = multiplier * hipfire_spread_mult
+	end
+
 	spread_area = spread_area * multiplier
 
 	--Convert spread area to degrees.
@@ -802,7 +816,7 @@ function NewRaycastWeaponBase:get_damage_falloff(damage, col_ray, user_unit)
 	falloff_end = falloff_end * self._damage_far_mul
 	
 	--Cache falloff values for usage in hitmarkers.
-	self.near_falloff_distance = falloff_near
+	self.near_falloff_distance = falloff_start
 	self.far_falloff_distance = falloff_end
 	
 	--Minimum damage multiplier when taking falloff into account
@@ -850,6 +864,6 @@ function NewRaycastWeaponBase:exit_run_speed_multiplier()
 	multiplier = multiplier * managers.player:upgrade_value(self._name_id, "exit_run_speed_multiplier", 1)
 
 	--multiplier = multiplier / ( (self:weapon_tweak_data().sprintout_time or 0.300) / (self:weapon_tweak_data().sprintout_anim_time or 0.350) )
-	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 0.9 / sprintout_anim_time )
+	multiplier = multiplier / ( (ads_speed / self:enter_steelsight_speed_multiplier(true)) * 0.95 / sprintout_anim_time )
 	return multiplier
 end

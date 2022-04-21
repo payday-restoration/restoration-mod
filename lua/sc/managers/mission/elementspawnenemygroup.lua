@@ -4309,15 +4309,10 @@ local spawnpoint_delays = {
 	}
 }
 
-groupsOLD = {
-	"tac_shield_wall_charge",
-	"FBI_spoocs",
-	"tac_tazer_charge",
-	"tac_tazer_flanking",
-	"tac_shield_wall",
-	"tac_swat_rifle_flank",
-	"tac_shield_wall_ranged",
-	"tac_bull_rush"
+-- if a spawngroup element has only spawngroups in this table, custom spawngroups aren't added
+local exclude_spawngroups = {
+	"single_spooc",
+	"Phalanx",
 }
 
 Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_delays_finalize_values", function(self)
@@ -4332,36 +4327,16 @@ Hooks:PostHook(ElementSpawnEnemyGroup, "_finalize_values", "revert_spawnpoint_de
 		level = "alex_1"
 	end
 
+	local groups = self._values.preferred_spawn_groups
 	local element = spawnpoint_delays[level] and spawnpoint_delays[level][self._id]
 	if element then
 		self._values.interval = element.interval
 		self._values.preferred_spawn_groups = element.preferred_spawn_groups
-	end
-	
-	local groups = self._values.preferred_spawn_groups
-	-- If we have an ordinary spawn with exactly the old group elements, add all defined groups.
-	if groups and #groups == #groupsOLD and table.contains_all(groups, groupsOLD) then
-		for name,_ in pairs(tweak_data.group_ai.enemy_spawn_groups) do
+	elseif groups and (#groups > #exclude_spawngroups or not table.contains_all(exclude_spawngroups, groups)) then
+		for name in pairs(tweak_data.group_ai.enemy_spawn_groups) do
 			if not table.contains(groups, name) then
 				table.insert(groups, name)
 			end
 		end
-	end	
-	
-end)
-	
-local job = Global.level_data and Global.level_data.level_id		
-	
---Super ugly fix but it won't work without doing this garbage otherwise, ugh	
-for _,h in pairs(restoration.bad_spawn_heists) do
-	if job == h then
-		function ElementSpawnEnemyGroup:spawn_groups()
-			local opt = {}
-			for cat_name, team in pairs(tweak_data.group_ai.enemy_spawn_groups) do
-				table.insert(opt, cat_name)
-			end
-			return opt
-		end		
-		break
 	end
-end
+end)

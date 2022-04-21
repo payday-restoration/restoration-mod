@@ -694,7 +694,7 @@ function DialogManager:queue_dialog(id, ...)
 		end	
 	
 		--Breakfast In Tijuana--
-		if id == "Play_loc_pex_102" then
+		if id == "Play_loc_pex_101" then
 			if difficulty_index <= 2 then
 				escape_time = 690
 			elseif difficulty_index == 3 then

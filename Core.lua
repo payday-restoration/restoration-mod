@@ -250,39 +250,6 @@ function restoration:Init()
 		"infinitebank_room",  --First World Tower
 		"Victor Romeo"
 	}	
-	--For custom heists that seem to be broken with our normal spawn setup
-	restoration.bad_spawn_heists = {
-		"help",
-		"fex", --Buluc's Mansion			
-		--Custom Heists--
-		"Victor Romeo",
-		"lit1", --California's Heat
-		"lit2", --California's Heat but Payday 3 
-		"bnktower", --Gensec HIVVVVVVVVVVVVVVEEEEEEEEEEEEEEEEE
-		"santas_hardware_store", --Hardware Store but Xmas
-		"trop", --Tropical Treasure 
-		"hardware_store", --Hardware Store 
-		"constantine_bank_lvl", --Pacific Bank
-		"sh_raiders", --Safehouse Raiders
-		"Gambling_room", --Underground Bargains
-		"hwu", --Avalon's Shadow The Hedgehog (ha! got em)
-		"sh_raiders", --Safehouse Raiders 
-		"schl", --Scarlet Club House
-		"glb", --Golden Lotus Bank 
-		"anlh", --An End To Liang
-		"amsdeal1", --Armsdeal Alleyway
-		"tj_htsb",
-		"hntn",
-		"bookmakers_office", --Bookmaker's Office
-		"constantine_harbor_lvl", --Harboring a Grudge
-		"ttr_yct_lvl", --Triad Takedown Remastered 
-		"Skyscraper", --The Skyscraper Heist
-		"RogueCompany", --Rogue Company
-		"modders_devmap", --Proving Grounds
-		"thechase",
-		"office_strike",
-		"santa_pain"
-	}	
 	--Christmas Effects Heists
 	restoration.christmas_heists = {
 		"roberts",

@@ -661,8 +661,8 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_resmusic_lethalforce"] = "Lethal Force",
 		["menu_jukebox_resmusic_redmarks"] = "Red Marks",
 		["menu_jukebox_screen_resmusic_redmarks"] = "Red Marks",
-		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (Alpha Version)",
-		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (Alpha Version)",
+		["menu_jukebox_resmusic_ticktockalpha"] = "Tick Tock (알파 버전)",
+		["menu_jukebox_screen_resmusic_ticktockalpha"] = "Tick Tock (알파 버전)",
 		["menu_jukebox_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_screen_resmusic_ponr"] = "Window of Opportunity",
 		["menu_jukebox_resmusic_speciesnova"] = "Species Nova",
@@ -671,9 +671,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["menu_jukebox_screen_resmusic_madvlad"] = "Mad Vlad",
 		["menu_jukebox_resmusic_proto"] = "Jackknife",
 		["menu_jukebox_screen_resmusic_proto"] = "Jackknife",
-		["menu_jukebox_screen_m1"] = "Criminal Intent (Old Version)",
-		["menu_jukebox_screen_m2"] = "Preparations (Old Version)",
-		["menu_jukebox_screen_m3"] = "Blueprints (Prototype Version)",
+		["menu_jukebox_screen_m1"] = "Criminal Intent (옛 버전)",
+		["menu_jukebox_screen_m2"] = "Preparations (옛 버전)",
+		["menu_jukebox_screen_m3"] = "Blueprints (프로토타입 버전)",
 		["menu_jukebox_screen_m4"] = "Resistance",
 		["menu_jukebox_screen_m5"] = "Fortress",
 		["menu_jukebox_screen_m6"] = "Payday Royale Theme",
@@ -1243,6 +1243,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		["menu_assault_rifle"] = "소총",
 		["menu_akimbo_assault_rifle"] = "듀얼 소총",
+		
 		--
 		["menu_light_ar"] = "경소총",
 		["menu_heavy_ar"] = "중소총",
@@ -1257,7 +1258,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--
 		["menu_light_snp"] = "경저격총",
 		["menu_heavy_snp"] = "중저격총",
-		["menu_antim_snp"] = "대물 소총",
+		["menu_antim_snp"] = "대물 저격소총",
 
 		["menu_wpn_special"] = "특수 & 분류되지 않음",
 
@@ -1414,6 +1415,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 		["bm_w_fmg9"] = "Wasp-DS 기관권총",
 
 		["menu_akimbo_assault_rifle"] = "아킴보 돌격소총",
+		
+		["bm_w_m95"] = "Thanatos .50 cal 대물 저격소총",
+		["bm_w_m107cq"] = "Mors .50 cal 대물 저격소총",		
+		["bm_w_m200"] = "TF-141 대물 저격소총",
 
 		--Throwables--
 		["bm_concussion_desc"] = "소지 갯수: 3개 \n사거리: 10m \n최대 4초 동안 적을 기절 \n7초 동안 적 정확도 50% 감소 \n타이탄 실드, 타이탄 불도저 및 캡틴를 제외한 모든 적을 기절시킵니다. \n \n이 놀라운 작은 아름다움은 모든 사람의 숨을 죽이고 그들을 죽일 추가 순간을 제공합니다.",
@@ -1993,7 +1998,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 			--Shotgun CQB
 			["menu_shotgun_cqb_beta_sc"] = "산탄총 CQB",
-			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 조준 속도와 전력 질주 속도가 ##35%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
+			["menu_shotgun_cqb_beta_desc_sc"] = "베이직: ##$basic##\n산탄총과 화염방사기의 조준 속도와 전력 질주 속도가 ##20%##만큼 빨라집니다.\n\n에이스: ##$pro##\n산탄총과 화염방사기의 장전속도가 ##25%##만큼 빨라집니다.",
 
 			--Shotgun Impact
 			["menu_shotgun_impact_beta_sc"] = "산탄총 임팩트",
@@ -2224,7 +2229,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Kilmer--
 		["menu_heavy_impact_beta_sc"] = "킬머",
-		["menu_heavy_impact_beta_desc_sc"] = "베이직: ##$basic##\n소총류의 명중률이 ##5##만큼 증가합니다.\n\n에이스: ##$pro##\n소총류의 재장전 속도가 ##25%##만큼 빨라집니다.",
+		["menu_heavy_impact_beta_desc_sc"] = "베이직: ##$basic##\n소총류의 명중률이 ##4##만큼 증가합니다.\n\n에이스: ##$pro##\n소총류의 재장전 속도가 ##25%##만큼 빨라집니다.",
 
 		--Mind Blown, formerly Explosive Headshot--
 		["menu_kilmer_sc"] = "마인드 블로우",
@@ -2236,7 +2241,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Rifleman
 		["menu_rifleman_sc"] = "라이플맨",
-		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n모든 무기의 조준 속도와 전력 질주 속도가 ##35%## 빨라집니다.\n\n에이스: ##$pro##\n조준하는 동안 소총의 명중률과 사거리가 ##30##만큼 증가합니다.",
+		["menu_rifleman_desc_sc"] = "베이직: ##$basic##\n모든 무기의 조준 속도와 전력 질주 속도가 ##20%## 빨라집니다.\n\n에이스: ##$pro##\n조준하는 동안 소총의 명중률과 사거리가 ##30##만큼 증가합니다.",
 
 		--Aggressive Reload
 		["menu_engineering_beta_sc"] = "공격적인 재장전",
@@ -2280,7 +2285,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--The Professional--
 		["menu_silence_expert_beta_sc"] = "프로페셔널",
-		["menu_silence_expert_beta_desc_sc"] = "베이직: ##$basic##\n소음기 무기의 안정성이 ##5##만큼 증가합니다.\n\n에이스: ##$pro##\n소음기 무기로 특수 적을 처치하면 추가 탄약 상자를 떨굽니다.",
+		["menu_silence_expert_beta_desc_sc"] = "베이직: ##$basic##\n소음기 무기의 안정성이 ##4##만큼 증가합니다.\n\n에이스: ##$pro##\n소음기 무기로 특수 적을 처치하면 추가 탄약 상자를 떨굽니다.",
 
 		--Unseen Strike, formally Dire Need--
 		["menu_backstab_beta_sc"] = "기습 공격",
@@ -2308,7 +2313,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		--Akimbo--
 		["menu_akimbo_skill_sc"] = "아킴보",
-		["menu_akimbo_skill_desc_sc"] = "베이직: ##$basic##\n아킴보 총기의 안정성이 ##16##만큼 상승합니다.\n\n에이스: ##$pro##\n아킴보 총기의 탄약과 탄약 회수가 ##25%##만큼 늘어납니다",
+		["menu_akimbo_skill_desc_sc"] = "베이직: ##$basic##\n아킴보 총기의 안정성이 ##10##만큼 상승합니다.\n\n에이스: ##$pro##\n아킴보 총기의 탄약과 탄약 회수가 ##25%##만큼 늘어납니다",
 
 		--Desperado--
 		["menu_expert_handling_sc"] = "데스페라도",

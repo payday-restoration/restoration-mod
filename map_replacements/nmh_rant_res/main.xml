@@ -1,4 +1,4 @@
-<table name="no_mercy_ranted">
+<table name="nmh_rant_res">
 	<AddFiles directory="assets">
 		<texture path="guis/mercy/icon_nmh"/>
 	</AddFiles>

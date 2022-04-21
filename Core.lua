@@ -219,6 +219,8 @@ function restoration:Init()
 		"firestarter_3_res", --firestarter day 3, res edit
 		"bookmakers_office", --Bookmaker's Office
 		"branchbank_meth", --Bank Heist: Meth
+		"tj_htsb", --Harvest and Trustee: Southern Branch 
+		"hntn" --harvest and trustee north
 		"ttr_yct_lvl", --Triad Takedown Remastered 
 		"modders_devmap", --Proving Grounds
 		"gallery_v2", --Art Gallery Remastered 

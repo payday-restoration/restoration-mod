@@ -525,7 +525,7 @@
 	<material_config	path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker_contour" force="false"/>
 	<model				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false"/>
 	<sequence_manager	path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="false"/>
-	<unit				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="false"/>
+	<unit				path="units/payday2/weapons/wpn_npc_peacemaker/wpn_npc_peacemaker" force="false" load="true"/>
 	<texture			path="units/payday2/weapons/wpn_npc_peacemaker/peacemaker_df" force="false"/>
 	
 	<unit				path="units/payday2/weapons/wpn_npc_hk23_sc/wpn_npc_hk23_sc" load="false" force="true"/>

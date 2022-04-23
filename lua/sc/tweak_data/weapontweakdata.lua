@@ -625,7 +625,7 @@ local job = Global.level_data and Global.level_data.level_id
 		
 		self.peacemaker_npc = deep_clone(self.raging_bull_npc)
 		self.peacemaker_npc.DAMAGE = 14.1
-		self.peacemaker_npc.armor_piercing = true
+		self.peacemaker_npc.armor_piercing = false --Reno told me do it 
 		
 		self.raging_bull_primary_npc = deep_clone(self.raging_bull_npc)
 		self.raging_bull_primary_npc.use_data.selection_index = 2

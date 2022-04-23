@@ -20913,7 +20913,7 @@ function CharacterTweakData:_create_table_structure()
 		"m500",
 		"flamethrower",
 		"x_raging_bull_meme_npc",
-		"wpn_npc_hk21_bravo"
+		"hk21_bravo_npc"
 	}
 	self.weap_unit_names = {
 		Idstring("units/payday2/weapons/wpn_npc_beretta92/wpn_npc_beretta92"),

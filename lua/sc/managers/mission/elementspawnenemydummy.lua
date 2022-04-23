@@ -1300,7 +1300,7 @@ local federales_very_hard = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
-		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",  --why tf Jules made r870 variant for medics?
+		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5", 
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
 		
@@ -1315,7 +1315,7 @@ local federales_very_hard = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
-		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2", 
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -1355,9 +1355,36 @@ local federales_very_hard = {
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		
+		--For Border Crystals (Idk why but this map is cursed for some reason)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 		
-		--Scripted Murky Sniper and Secret Service Replacers 
-		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",					
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1", --i guess that's a minidozer
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",	 
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		
+		
+		--Secret Service Replacers 					
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",	
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
@@ -1397,7 +1424,7 @@ local federales_overkill = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
-		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5", --why tf Jules made r870 variant for medics?
+		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5", 
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
 		
@@ -1412,7 +1439,7 @@ local federales_overkill = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_3/ene_fbi_swat_3",
-		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2", 
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
 		
@@ -1452,9 +1479,36 @@ local federales_overkill = {
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2",
 		
+		--For Border Crystals (Idk why but this map is cursed for some reason)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_dlc_bex/characters/ene_swat_1/ene_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_dlc_bex/characters/ene_swat_2/ene_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_dlc_bex/characters/ene_swat_heavy_1/ene_swat_heavy_1",
 		
-		--Scripted Murky Sniper and Secret Service Replacers 
-		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",					
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2", --i guess that's a minidozer
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",	 
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		
+		
+		--Secret Service Replacers 					
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",	
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
@@ -1496,7 +1550,7 @@ local federales_mayhem = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
-		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5", --why tf Jules made r870 variant for medics?
+		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5", 
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
 		
@@ -1511,7 +1565,7 @@ local federales_mayhem = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3",
-		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2", 
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",
 		
@@ -1549,9 +1603,35 @@ local federales_mayhem = {
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
 		
+		--For Border Crystals (Idk why but this map is cursed for some reason)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
 		
-		--Scripted Murky Sniper and Secret Service Replacers 
-		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",					
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_dlc_bex/characters/ene_fbi_swat_1/ene_fbi_swat_1", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_dlc_bex/characters/ene_fbi_swat_2/ene_fbi_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_1/ene_fbi_heavy_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_dlc_bex/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2", --i guess that's a minidozer
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",	 
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_dlc_bex/characters/ene_shield_1/ene_shield_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		
+		--Secret Service Replacers 					
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",	
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
@@ -1593,7 +1673,7 @@ local federales_deathwish = {
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
-		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",  --why tf Jules made r870 variant for medics?
+		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",  
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
 		
@@ -1608,7 +1688,7 @@ local federales_deathwish = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_city_swat_3/ene_city_swat_3",
-		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",
 		
@@ -1647,9 +1727,35 @@ local federales_deathwish = {
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
 		
+		--For Border Crystals (Idk why but this map is cursed for some reason)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
 		
-		--Scripted Murky Sniper and Secret Service Replacers 
-		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",					
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_city_heavy_g36/ene_city_heavy_g36",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_dlc_bex/characters/ene_city_heavy_r870/ene_city_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_dlc_bex/characters/ene_city_swat_1/ene_city_swat_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_dlc_bex/characters/ene_city_swat_2/ene_city_swat_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3", --i guess that's a minidozer
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_1/ene_bulldozer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_2/ene_bulldozer_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",	 
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_dlc_bex/characters/ene_shield_gensec/ene_shield_gensec",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_sniper_1/ene_sniper_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		
+		--Secret Service Replacers 					
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",	
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	
@@ -1688,11 +1794,11 @@ local federales_zeal = {
 		["units/payday2/characters/ene_shield_1/ene_shield_1"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/payday2/characters/ene_shield_2/ene_shield_2"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
 		["units/payday2/characters/ene_city_shield/ene_city_shield"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
-		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",  --just in case if that Zeal shield fucker would try to spawn in
+		["units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield/ene_zeal_swat_shield"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",  
 		["units/payday2/characters/ene_spook_1/ene_spook_1"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",
 		["units/payday2/characters/ene_grenadier_1/ene_grenadier_1"] = "units/pd2_dlc_bex/characters/ene_grenadier_1/ene_grenadier_1",
 		["units/payday2/characters/ene_medic_m4/ene_medic_m4"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
-		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",  --why tf Jules made r870 variant for medics?
+		["units/payday2/characters/ene_medic_r870/ene_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",  
 		["units/payday2/characters/ene_sniper_1/ene_sniper_1"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",	
 		["units/payday2/characters/ene_sniper_2/ene_sniper_2"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",
 		
@@ -1707,7 +1813,7 @@ local federales_zeal = {
 		["units/payday2/characters/ene_city_swat_1/ene_city_swat_1"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/payday2/characters/ene_city_swat_2/ene_city_swat_2"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
 		["units/payday2/characters/ene_city_swat_3/ene_city_swat_3"] = "units/pd2_dlc_bex/characters/ene_zeal_city_3/ene_zeal_city_3",
-		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2", --Why Jules made the r870 variant of City Swat? ene_city_swat_2 already exists......
+		["units/payday2/characters/ene_city_swat_r870/ene_city_swat_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2", 
 		["units/payday2/characters/ene_city_heavy_g36/ene_city_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		["units/payday2/characters/ene_city_heavy_r870/ene_city_heavy_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
 		
@@ -1745,9 +1851,35 @@ local federales_zeal = {
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city/ene_swat_policia_federale_city"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
 		["units/pd2_dlc_bex/characters/ene_swat_policia_federale_city_r870/ene_swat_policia_federale_city_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
 		
+		--For Border Crystals (Idk why but this map is cursed for some reason)
+		--swat
+		["units/pd2_dlc_bph/characters/ene_murkywater_light/ene_murkywater_light"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy/ene_murkywater_heavy"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
 		
-		--Scripted Murky Sniper and Secret Service Replacers 
-		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",					
+		--fbi
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_fbi/ene_murkywater_light_fbi"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1", 
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_r870/ene_murkywater_light_r870"]  = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_g36/ene_murkywater_heavy_g36"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc",
+		["units/pd2_dlc_bph/characters/ene_murkywater_heavy_shotgun/ene_murkywater_heavy_shotgun"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_heavy_r870/ene_zeal_swat_heavy_r870",
+		
+		--city (only 2 units for them?!!!!)
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city/ene_murkywater_light_city"] = "units/pd2_dlc_bex/characters/ene_zeal_city_1/ene_zeal_city_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_light_city_r870/ene_murkywater_light_city_r870"] = "units/pd2_dlc_bex/characters/ene_zeal_city_2/ene_zeal_city_2",
+		
+		--specials
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_1/ene_murkywater_bulldozer_1"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",  --I want this benelli boy to spawn so badly
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_2/ene_murkywater_bulldozer_2"] = "units/pd2_dlc_bex/characters/ene_bulldozer_minigun/ene_bulldozer_minigun",  --I want this benelli boy to spawn so badly
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_3/ene_murkywater_bulldozer_3"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bph/characters/ene_murkywater_bulldozer_4/ene_murkywater_bulldozer_4"] = "units/pd2_dlc_bex/characters/ene_bulldozer_3/ene_bulldozer_3",
+		["units/pd2_dlc_bph/characters/ene_murkywater_cloaker/ene_murkywater_cloaker"] = "units/pd2_dlc_bex/characters/ene_spook_1/ene_spook_1",	 
+		["units/pd2_dlc_bph/characters/ene_murkywater_shield/ene_murkywater_shield"] = "units/pd2_dlc_bex/characters/ene_zeal_swat_shield/ene_zeal_swat_shield",
+		["units/pd2_dlc_bph/characters/ene_murkywater_tazer/ene_murkywater_tazer"] = "units/pd2_dlc_bex/characters/ene_tazer_1/ene_tazer_1",
+		["units/pd2_dlc_bph/characters/ene_murkywater_sniper/ene_murkywater_sniper"] = "units/pd2_dlc_bex/characters/ene_zeal_sniper/ene_zeal_sniper",	
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic/ene_murkywater_medic"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		["units/pd2_dlc_bph/characters/ene_murkywater_medic_r870/ene_murkywater_medic_r870"] = "units/pd2_dlc_bex/characters/ene_medic_mp5/ene_medic_mp5",
+		
+		--Secret Service Replacers 				
 		["units/pd2_dlc_fex/characters/ene_secret_service_fex/ene_secret_service_fex"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",
 		["units/payday2/characters/ene_secret_service_1/ene_secret_service_1"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex",	
 		["units/payday2/characters/ene_secret_service_2/ene_secret_service_2"] = "units/pd2_dlc_fex/characters/ene_thug_outdoor_fex/ene_thug_outdoor_fex"	

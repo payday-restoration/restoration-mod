@@ -5,19 +5,23 @@ function SpoocLogicAttack._upd_spooc_attack(data, my_data)
 	end
 
 	local focus_enemy = data.attention_obj
-	if not focus_enemy.nav_tracker or not focus_enemy.is_person or not focus_enemy.verified then
+	if not focus_enemy.nav_tracker or not focus_enemy.is_person or not focus_enemy.verified or focus_enemy.reaction < AIAttentionObject.REACT_SHOOT then
 		return
 	end
 
-	if not focus_enemy.criminal_record or focus_enemy.criminal_record.status then
+	if focus_enemy.criminal_record and (focus_enemy.criminal_record.status or SpoocLogicAttack._is_last_standing_criminal(focus_enemy)) then
 		return
 	end
 
-	if focus_enemy.reaction < AIAttentionObject.REACT_SHOOT or focus_enemy.verified_dis > (my_data.want_to_take_cover and 1500 or 2500) then
+	if focus_enemy.verified_dis > (my_data.want_to_take_cover and 1500 or 2500) then
 		return
 	end
 
-	if SpoocLogicAttack._is_last_standing_criminal(focus_enemy) or not focus_enemy.unit:movement():is_SPOOC_attack_allowed() or focus_enemy.unit:movement():zipline_unit() then
+	if focus_enemy.unit:movement().zipline_unit and focus_enemy.unit:movement():zipline_unit() then
+		return
+	end
+
+	if focus_enemy.unit:movement().is_SPOOC_attack_allowed and not focus_enemy.unit:movement():is_SPOOC_attack_allowed() then
 		return
 	end
 

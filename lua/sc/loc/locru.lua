@@ -1085,7 +1085,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_c96_sc_desc"] = "Инновационный немецкий автоматический пистолет. Может вести полностью автоматический огонь с бешеной скоростью, но очень быстро опустошит ваши запасы патронов.\nЭто оружие перезаряжается обоймами по 10 патронов.",
 
 		--M4/CAR-4
-		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+		["bm_menu_sc_m4_desc"] = "Удобная, компактная, смертоносная. Популярная у современных армий винтовка под калибр 5.56.",
 
 		--Buzzsaw/Mg42
 		["bm_wolf_brigade_sc_desc"] = "Отдача уменьшена на 25% при стрельбе от бедра.",		
@@ -1418,6 +1418,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 		["menu_akimbo_assault_rifle"] = "Парные винтовки",
 		
+		["bm_w_m95"] = "Крупнокалиберная винтовка  Thanatos .50 cal",
+		["bm_w_m107cq"] = "Крупнокалиберная винтовка Mors .50 cal",
 		["bm_w_m200"] = "Крупнокалиберная винтовка TF-141",
 
 		--Throwables--
@@ -1861,11 +1863,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_interact"] = "Ловкий",
 		["menu_crew_interact_desc"] = "Игроки взаимодействуют на 15% быстрее за каждого бота в команде.",
 
-	["menu_crew_inspire"] = "Вдохновление",
+	    ["menu_crew_inspire"] = "Вдохновление",
         ["menu_crew_inspire_desc"] = "Боты с этим перком могут использовать на вас Вдохновление.\n\nОни не могут его использовать чаще чем в 90 секунд. Перезарядка уменьшается на 15 секунд за каждого бота в команде.",
 
-        ["menu_crew_scavenge"] = "Выносливый",
-        ["menu_crew_scavenge_desc"] = "Игроки получают 1 падение после каждых трёх штурмов.\n\nЧисло необходимых штурмов убавляется на 1 за каждого бота.",
+        ["menu_crew_scavenge"] = "Острый глаз",
+		["menu_crew_scavenge_desc"] = "Подбор патронов для игроков увеличен на 10% за каждого бота в команде.",
 
         ["menu_crew_ai_ap_ammo"] = "Пробитие",
         ["menu_crew_ai_ap_ammo_desc"] = "Ваши боты теперь могут пробивать броню и так же они наносят на 25% больше урона.\n\nЭто позволяет им простреливать через броню и щитов.",

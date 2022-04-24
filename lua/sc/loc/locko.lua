@@ -1085,14 +1085,14 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_c96_sc_desc"] = "독일의 혁명적인 기관권총. 완전 자동으로 미친 속도로 발사할 수 있지만 탄약 소모가 큽니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
 
 		--M4/CAR-4
-		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+		["bm_menu_sc_m4_desc"] = "안정적이고 컴팩트하며 치명적이고. 현대 군대에서 인기 있는 5.56mm 소총입니다.",
 
 		--Buzzsaw/Mg42
 		["bm_wolf_brigade_sc_desc"] = "비조준 상태에서 발사 시 반동이 25%만큼 감소합니다",		
 		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",		
 
 		--SAA/Peacemaker
-		["bm_ap_weapon_peacemaker_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.\n\nThe greatest handgun ever made.",		
+		["bm_ap_weapon_peacemaker_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.\n\n인류 최고의 권총.",				
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
@@ -1113,7 +1113,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_mod_sc_desc"] = "이 부착물의 능력치는 자동 커스텀 부착물 능력치 생성이 완료될 때까지 제거되었습니다.",
 		["bm_tranq_maxim_sc_desc"] = "소음기와 통합되었습니다.\n\n마취탄을 발사하여 시간이 지남에 따라 지속 피해를 줍니다.",
 		["bm_m134_rof_init_sc_desc"] = "방아쇠을 당길때 처음 몇 총알을 발사하는 동안 2배의 발사 속도로 짧게 발사합니다.",
-		
+
 		--Overhaul Content Indicators--
 		["loot_sc"] = "레스트레이션 오버홀",
 		["loot_sc_desc"] = "이 상품은 레스트레이션 오버홀의 아이템입니다!",
@@ -1866,8 +1866,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_inspire"] = "인스파이어",
 		["menu_crew_inspire_desc"] = "당신의 팀 AI가 인스파이어를 사용할 수 있습니다.\n\n매 90초마다 한 번 씩 인스파이어를 사용할 수 있습니다. 다른 AI가 한 명씩 있을 때마다 쿨타임이 15초씩 감소합니다.",
 
-		["menu_crew_scavenge"] = "끈질김",
-		["menu_crew_scavenge_desc"] = "플레이어가 3번의 어썰트 웨이브 후 1 다운을 회복합니다.\n\n다른 AI가 한 명씩 있을 때마다 요구되는 어썰트 웨이브의 수가 1씩 감소합니다.",
+		["menu_crew_scavenge"] = "예리함",
+		["menu_crew_scavenge_desc"] = "AI 제어 팀원당 플레이어의 탄약 획득량이 10%씩 증가합니다.",
 
 		["menu_crew_ai_ap_ammo"] = "관통탄",
 		["menu_crew_ai_ap_ammo_desc"] = "당신의 팀 AI가 25% 추가 데미지를 주는 관통 탄환을 사용합니다.\n\nAI의 탄환이 적의 갑옷을 관통하고 실드를 넘어뜨립니다.",
@@ -2453,7 +2453,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_deck8_9_desc_sc"] = "근접 공격이 적중할 때마다 ##10##초 동안 ##1.25##초마다 체력이 ##1##씩 회복되며 최대 ##5##번 중첩됩니다.\n\n덱 완성 보너스: PAYDAY 도중 높은 등급의 아이템을 얻을 확률이 ##10%## 상승합니다.",
 
 		--Sociopath--
-		["menu_st_spec_9_desc_sc"] = "소시오패스는 범죄자중 가장 유용한 타입중 하나로 알려져 있습니다. 유용하기도 하지만, 상대하기에는 벅차기 때문에, 큰 조직들은 이들을 기피합니다.\n\n대담하고, 막을수 없고, 사악하기에, 소시오패스는 대부분의 잔혹한 일에 뛰어납니다. 자신이 저지르는 범죄에 대한 죄책감 따윈 없기에, 그들은 위험한 적이됩니다.\n\n\n전체 특성 덱의 이점:\n##-##적과 ##18##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 감소합니다.\n##-##적을 죽이면 방어력이 ##40##만큼  재생됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-##근접 무기로 적을 죽이면 체력이 ##5%##만큼 회복됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-## ##18## 미터 이내의 적을 죽이면 ##25%## 확률로 적들에게 퍼뜨립니다. 매 ##2##초마다 한 번만 일어납니다.",
+		["menu_st_spec_9_desc_sc"] = "소시오패스는 범죄자중 가장 유용한 타입중 하나로 알려져 있습니다. 유용하기도 하지만, 상대하기에는 벅차기 때문에, 큰 조직들은 이들을 기피합니다.\n\n대담하고, 막을수 없고, 사악하기에, 소시오패스는 대부분의 잔혹한 일에 뛰어납니다. 자신이 저지르는 범죄에 대한 죄책감 따윈 없기에, 그들은 위험한 적이됩니다.\n\n\n전체 특성 덱의 이점:\n##-##적과 ##18##미터 이내에 있으면 적에게 받는 피해가 ##5%##만큼 감소합니다.\n##-##적을 죽이면 방어력이 ##40##만큼 재생됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-##근접 무기로 적을 죽이면 체력이 ##5%##만큼 회복됩니다. 매 ##3##초마다 한 번만 일어납니다.\n##-## ##18## 미터 이내의 적을 죽이면 ##25%## 확률로 적들에게 퍼뜨립니다. 매 ##2##초마다 한 번만 일어납니다.",
 		["menu_deck9_1_sc"] = "말 없는",
 		["menu_deck9_1_desc_sc"] = "##18미터## 내에 3명 이상의 적에게 둘러싸여 있을 때 적에게 받는 피해가 ##5%## 감소합니다.",
 		["menu_deck9_3_desc_sc"] = "적을 죽이면 방어력이 ##20##만큼 재생됩니다.\n\n매 ##3##초마다 한 번만 일어납니다.",

@@ -1023,9 +1023,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--RPK--
 		["bm_wp_rpk_m_ban_sc"] = "特制弹\"钾\"",
 
-		--Buzzsaw--
-		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟800发",
-
 		--Saw--
 		["bm_ap_saw_sc_desc"] = "破甲锯。",
 		["bm_ap_saw_blade_sc_desc"] = "更锋利的锯片足以锯开敌人护甲。",
@@ -1119,6 +1116,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		
 		--Broomstick--
 		["bm_c96_sc_desc"] = "革命性的德国制冲锋手枪，极高的理论射速让你的弹药存量捉襟见肘。\n该武器使用10发装弹夹供弹。",
+		
+		--M4/CAR-4
+		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+
+		--Buzzsaw/Mg42
+		["bm_wolf_brigade_sc_desc"] = "25% less recoil when fired from the hip.",		
+		["bm_wp_mg42_b_mg34_desc_sc"] = "将你的理论射速降至每分钟800发",
+
+		--SAA/Peacemaker
+		["bm_ap_weapon_peacemaker_sc_desc"] = "可以穿透护甲，盾牌及薄墙壁。\n\nThe greatest handgun ever made.",				
 
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_ap_weapon_sc_desc"] = "可以穿透护甲，盾牌及薄墙壁。",
@@ -1135,8 +1142,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_lmg_sc_desc"] = "该武器属性为随机生成，可能无法被改装到一个完美平衡的状态。\n\n装备该武器时，你的移速会减慢##25%##。",
 		["bm_auto_generated_mod_sc_desc"] = "该配件的属性将暂时被移除，直至自制配件的属性生成完毕。", -- The stats on this attachment have been removed until automatic custom attachment stat generation is finished.
 		["bm_tranq_maxim_sc_desc"] = "使用镇静子弹随时间对敌人造成伤害并且是消音的。",
-
-		["bm_ap_weapon_peacemaker_sc_desc"] = "可以穿透护甲，盾牌及薄墙壁。",
 
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",

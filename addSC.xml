@@ -580,6 +580,9 @@
 	<cooked_physics		path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
 	<model				path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false"/>
 	<unit				path="units/payday2/weapons/wpn_npc_m4_boom/wpn_npc_m4_boom" force="false" load="false"/>
+	
+	<!--M32-->
+	<unit				path="units/payday2/weapons/wpn_npc_m32/wpn_npc_m32" force="false"/>	
 
 	<!--NPC XC45-->	
 	<unit				path="units/payday2/weapons/wpn_npc_c45/wpn_npc_x_c45" force="true" load="false"/>

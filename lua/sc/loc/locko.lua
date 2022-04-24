@@ -987,9 +987,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--RPK--
 		["bm_wp_rpk_m_ban_sc"] = "Potassium 탄창",
 
-		--Buzzsaw--
-		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",
-
 		--Saw--
 		["bm_ap_saw_sc_desc"] = "방탄복을 관통할 수 있습니다.",
 		["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to cut through body armor.",
@@ -1087,6 +1084,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "독일의 혁명적인 기관권총. 완전 자동으로 미친 속도로 발사할 수 있지만 탄약 소모가 큽니다.\n이 무기는 한 번에 10발의 탄환으로 재장전됩니다.",
 
+		--M4/CAR-4
+		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+
+		--Buzzsaw/Mg42
+		["bm_wolf_brigade_sc_desc"] = "비조준 상태에서 발사 시 반동이 25%만큼 감소합니다",		
+		["bm_wp_mg42_b_mg34_desc_sc"] = "발사 속도가 800으로 감소합니다.",		
+
+		--SAA/Peacemaker
+		["bm_ap_weapon_peacemaker_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.\n\nThe greatest handgun ever made.",		
+
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 	    ["bm_menu_weapon_movement_penalty_info"] = "이 무기를 들고있는 동안 ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " 만큼 이동 속도가 감소합니다.",		
@@ -1107,9 +1114,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_tranq_maxim_sc_desc"] = "소음기와 통합되었습니다.\n\n마취탄을 발사하여 시간이 지남에 따라 지속 피해를 줍니다.",
 		["bm_m134_rof_init_sc_desc"] = "방아쇠을 당길때 처음 몇 총알을 발사하는 동안 2배의 발사 속도로 짧게 발사합니다.",
 		
-		["bm_ap_weapon_peacemaker_sc_desc"] = "방탄복, 실드 및 얇은 벽을 관통할 수 있습니다.",
-		["bm_wolf_brigade_sc_desc"] = "비조준 상태에서 발사 시 반동이 25%만큼 감소합니다",
-
 		--Overhaul Content Indicators--
 		["loot_sc"] = "레스트레이션 오버홀",
 		["loot_sc_desc"] = "이 상품은 레스트레이션 오버홀의 아이템입니다!",

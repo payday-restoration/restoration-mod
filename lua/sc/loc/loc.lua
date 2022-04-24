@@ -988,9 +988,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--RPK--
 		["bm_wp_rpk_m_ban_sc"] = "Potassium Magazine",
 
-		--Buzzsaw--
-		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800",
-
 		--Saw--
 		["bm_ap_saw_sc_desc"] = "CUTS THROUGH BODY ARMOR.",
 		["bm_ap_saw_blade_sc_desc"] = "Sharpens the blade enough to cut through body armor.",
@@ -1087,6 +1084,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "Revolutionary German machine pistol. Capable of firing in full-auto at an insane rate, but will decimate your ammo reserves.\nThis weapon reloads in clips of 10 bullets at a time.",
 
+		--M4/CAR-4
+		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+
+		--Buzzsaw/Mg42
+		["bm_wolf_brigade_sc_desc"] = "25% less recoil when fired from the hip.",		
+		["bm_wp_mg42_b_mg34_desc_sc"] = "Slows your rate of fire to 800",
+
+		--SAA/Peacemaker
+		["bm_ap_weapon_peacemaker_sc_desc"] = "Can penetrate body armor, shields and thin walls.\n\nThe greatest handgun ever made.",		
+
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "MOVEMENT SPEED IS REDUCED BY ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " WHILE DRAWN",
@@ -1106,10 +1113,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_auto_generated_mod_sc_desc"] = "The stats on this attachment have been removed until automatic custom attachment stat generation is finished.",
 		["bm_tranq_maxim_sc_desc"] = "Integrally suppressed.\n\nDeals damage over time with tranquilizer rounds.",
 		["bm_m134_rof_init_sc_desc"] = "Briefly shoots at 2x the rate of fire for the first few rounds of each trigger pull.",
-		
-		["bm_ap_weapon_peacemaker_sc_desc"] = "Can penetrate body armor, shields and thin walls.",
-		["bm_wolf_brigade_sc_desc"] = "25% less recoil when fired from the hip",
-		
+				
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration Overhaul",
 		["loot_sc_desc"] = "THIS IS A RESTORATION OVERHAUL ITEM!",

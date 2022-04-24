@@ -4218,10 +4218,19 @@ function BlackMarketGui:update_info_text()
 			local weapon_tweak = weapon_id and tweak_data.weapon[weapon_id]
 
 			if weapon_tweak.has_description then
-				if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
-					updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+
+				if slot_data.global_value and slot_data.global_value ~= "normal" then
+					if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
+						updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+					else
+						updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+					end
 				else
-					updated_texts[4].text = updated_texts[4].text .. "\n" .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+					if managers.menu:is_pc_controller() and managers.localization:exists(tweak_data.weapon[slot_data.name].desc_id .. "_pc") then
+						updated_texts[4].text = updated_texts[4].text .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id .. "_pc", desc_macros)
+					else
+						updated_texts[4].text = updated_texts[4].text .. managers.localization:text(tweak_data.weapon[slot_data.name].desc_id, desc_macros)
+					end
 				end
 				updated_texts[4].below_stats = true
 			end			

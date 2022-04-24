@@ -1862,8 +1862,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["menu_crew_inspire"] = "Inspiring",
 		["menu_crew_inspire_desc"] = "Bots equipped with this ability can now use the Inspire aced ability.\n\nThey cannot do this more than once every 90 seconds. Cooldown is reduced by 15 seconds per AI controlled crew member.",
 
-		["menu_crew_scavenge"] = "Enduring",
-		["menu_crew_scavenge_desc"] = "Players regain 1 down after 3 assault waves.\n\nThe number of assault waves required is reduced by 1 per AI controlled crew member.",
+		["menu_crew_scavenge"] = "Sharpeyed",
+		["menu_crew_scavenge_desc"] = "Players ammo pickup is increased by 10% per AI controlled crew member.",
 
 		["menu_crew_ai_ap_ammo"] = "Piercing",
 		["menu_crew_ai_ap_ammo_desc"] = "Your team AI will now use armor piercing rounds that deal 25% more damage.\n\nThis enables them to shoot through body armor and knock down shields.",

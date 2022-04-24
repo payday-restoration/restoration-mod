@@ -441,7 +441,7 @@
 	<texture			path="guis/textures/restoration/crimewar_skull_2"/>
 	
 	<!--TeamAI Enduring ability very epic-->
-	<texture			path="guis/dlcs/mom/textures/pd2/ai_abilities" force="true"/>
+	<!--texture			path="guis/dlcs/mom/textures/pd2/ai_abilities" force="true"-->
 	
 	<!--Mats/Patterns-->
 	<texture			path="units/pd2_mod_jack/matcaps/jkl_matt01" force="false"/>

@@ -412,12 +412,12 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 			60
 		}
 	}
-	--# waves required to regain a down.
+	--Team AI ammo pickup increase
 	self.values.team.crew_scavenge = {
 		{
-			3,
-			2,
-			1
+			1.3,
+			1.2,
+			1.1
 		}
 	}
 	self.values.team.crew_interact = {

@@ -1081,26 +1081,24 @@ function PlayerManager:extend_temporary_upgrade(category, upgrade, time)
 	self._temporary_upgrades[category][upgrade].expire_time = self._temporary_upgrades[category][upgrade].expire_time + time
 end
 
---Restores 1 down when enough assaults have passed and bots have the skill. Counter is paused when player is in custody or has max revives; or if the crew loses access to the skill.
+--Restores 1 down when enough assaults have passed. Counter is paused when player is in custody or has max revives
 function PlayerManager:check_enduring()
-	if self:has_category_upgrade("team", "crew_scavenge") then
-		if not self._assaults_to_extra_revive then
-			self._assaults_to_extra_revive = self:crew_ability_upgrade_value("crew_scavenge")
-		end
+	if not self._assaults_to_extra_revive then
+		self._assaults_to_extra_revive = Global.game_settings.single_player and 1 or 2
+	end
 
-		if self._assaults_to_extra_revive and alive(self:player_unit()) then
-			local damage_ext = self:player_unit():character_damage()
-			if damage_ext:get_missing_revives() > 0 then
-				self._assaults_to_extra_revive = math.max(self._assaults_to_extra_revive - 1, 0)
-				if self._assaults_to_extra_revive == 0 then
-					damage_ext:add_revive()
-					managers.hud:show_hint( { text = "Assaults Survived- Restoring 1 Down" } )
-					self._assaults_to_extra_revive = self:crew_ability_upgrade_value("crew_scavenge")
-				elseif self._assaults_to_extra_revive == 1 then
-					managers.hud:show_hint( { text = "1 Assault Remaining Until Down Restore." } )
-				else
-					managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assaults Remaining Until Down Restore." } )
-				end
+	if self._assaults_to_extra_revive and alive(self:player_unit()) then
+		local damage_ext = self:player_unit():character_damage()
+		if damage_ext:get_missing_revives() > 0 then
+			self._assaults_to_extra_revive = math.max(self._assaults_to_extra_revive - 1, 0)
+			if self._assaults_to_extra_revive == 0 then
+				damage_ext:add_revive()
+				managers.hud:show_hint( { text = "Assaults Survived- Restoring 1 Down" } )
+				self._assaults_to_extra_revive = Global.game_settings.single_player and 1 or 2
+			elseif self._assaults_to_extra_revive == 1 then
+				managers.hud:show_hint( { text = "1 Assault Remaining Until Down Restore." } )
+			else
+				managers.hud:show_hint( { text = tostring(self._assaults_to_extra_revive) .. " Assaults Remaining Until Down Restore." } )
 			end
 		end
 	end

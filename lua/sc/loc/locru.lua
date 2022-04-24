@@ -988,9 +988,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--RPK--
 		["bm_wp_rpk_m_ban_sc"] = "Банановый магазин",
 
-		--Buzzsaw--
-		["bm_wp_mg42_b_mg34_desc_sc"] = "Уменьшает Скорострельность до 800",
-
 		--Saw--
 		["bm_ap_saw_sc_desc"] = "ПРОРЕЗАЕТ БРОНЮ.",
 		["bm_ap_saw_blade_sc_desc"] = "Лезвия становятся настолько острыми, что прорезают броню.",
@@ -1087,6 +1084,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		--Broomstick--
 		["bm_c96_sc_desc"] = "Инновационный немецкий автоматический пистолет. Может вести полностью автоматический огонь с бешеной скоростью, но очень быстро опустошит ваши запасы патронов.\nЭто оружие перезаряжается обоймами по 10 патронов.",
 
+		--M4/CAR-4
+		["bm_menu_sc_m4_desc"] = "Reliable, compact, and deadly. A popular 5.56mm rifle among modern militaries.",
+
+		--Buzzsaw/Mg42
+		["bm_wolf_brigade_sc_desc"] = "Отдача уменьшена на 25% при стрельбе от бедра.",		
+		["bm_wp_mg42_b_mg34_desc_sc"] = "Уменьшает Скорострельность до 800",
+
+		--SAA/Peacemaker
+		["bm_ap_weapon_peacemaker_sc_desc"] = "Может пробивать броню, щиты и тонкие стены.\n\nThe greatest handgun ever made.",		
+
 		--Generic weapon descriptions (Keep for custom weapon purposes)--
 		["bm_menu_weapon_movement_penalty_info"] = "СКОРОСТЬ УМЕНЬШЕНА НА ",
 		["bm_menu_weapon_movement_penalty_info_2"] = " КОГДА ОРУЖИЕ В РУКАХ",
@@ -1107,9 +1114,6 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
 		["bm_tranq_maxim_sc_desc"] = "Имеет встроенный глушитель.\n\nСняряжен транквилизаторами, которые наносят урон через время.",
 		["bm_m134_rof_init_sc_desc"] = "Отстреливает первые несколько пуль в два раза быстрее после каждого нажатия курка.",
 		
-		["bm_ap_weapon_peacemaker_sc_desc"] = "Может пробивать броню, щиты и тонкие стены.",
-		["bm_wolf_brigade_sc_desc"] = "Отдача уменьшена на 25% при стрельбе от бедра.",
-
 		--Overhaul Content Indicators--
 		["loot_sc"] = "Restoration",
 		["loot_sc_desc"] = "ЭТО ПРЕДМЕТ ИЗ RESTORATION!",

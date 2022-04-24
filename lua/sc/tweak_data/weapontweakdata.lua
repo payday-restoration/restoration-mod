@@ -827,6 +827,11 @@ local job = Global.level_data and Global.level_data.level_id
 		self.mossberg_npc.rays = 6
 		self.mossberg_npc.spread = 3
 		self.mossberg_npc.FIRE_MODE = "single"
+		
+		self.m32_npc = deep_clone(self.mossberg_npc)
+		self.m32_npc.sounds.prefix = "mgl_npc"
+		self.m32_npc.anim_usage = "is_shotgun_pump"
+		self.m32_npc.usage = "is_m32"
 	end
 	
 	function WeaponTweakData:_init_data_mp5_npc()
@@ -6828,6 +6833,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 
 			--Car 4
 				self.new_m4.desc_id = "bm_menu_sc_m4_desc"
+				self.new_m4.has_description = true
 				self.new_m4.AMMO_MAX = 150
 				self.new_m4.CLIP_AMMO_MAX = 30
 				self.new_m4.fire_mode_data.fire_rate = 0.08571428571

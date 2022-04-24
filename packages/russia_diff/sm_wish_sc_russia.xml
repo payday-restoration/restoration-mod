@@ -259,6 +259,10 @@
 	<!--Titanshield-->	
 	<unit				path="units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" load="true"/>
 	<unit				path="units/pd2_dlc_mad/characters/ene_phalanx_1_assault/ene_phalanx_1_assault_husk" load="true"/>
+	<!--Titan Grenadier-->	
+	<unit				path="units/pd2_dlc_mad/characters/ene_titan_grenadier/ene_titan_grenadier" force="false" load="true"/>
+	<unit				path="units/pd2_dlc_mad/characters/ene_titan_grenadier/ene_titan_grenadier_husk" force="false" load="true"/>
+	<!-- titans end -->
 
 	<!--Generic Bravo Airframe-->	
 	<unit_mat			path="units/pd2_mod_bravo/characters/ene_acc_bravo_akan_air_helmet/ene_acc_bravo_akan_air_helmet" load="true"/>

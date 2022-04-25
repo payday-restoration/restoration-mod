@@ -35,6 +35,18 @@
 		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" alt_source="assaultalt.ogg" alt_source_chance="0.2"/>
 		<event name="control" source="control.ogg" start_source="assaultintro.ogg"/>
 	</HeistMusic>
+	<HeistMusic directory="sounds/gunmetalgreybeta" id="resmusic_gunmetalgreybeta" volume="0.7">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" />
+		<event name="control" source="control.ogg"/>
+	</HeistMusic>
+	<HeistMusic directory="sounds/doublecrossbeta" id="resmusic_doublecrossbeta" volume="0.7">
+		<event name="setup" source="setup.ogg"/>
+		<event name="anticipation" source="anticiloop.ogg" start_source="anticipation.ogg"/>
+		<event name="assault" source="assault.ogg" start_source="assaultintro.ogg" alt_source="assaultalt.ogg" alt_source_chance="0.2"/>
+		<event name="control" source="control.ogg" start_source="controlintro.ogg"/>
+	</HeistMusic>
 	<HeistMusic directory="sounds/ticktockalpha" id="resmusic_ticktockalpha" volume="0.7">
 		<event name="setup" source="stealth.ogg"/>	
 		<event name="anticipation" start_source="anticipation.ogg" source="anticiloop.ogg"/>

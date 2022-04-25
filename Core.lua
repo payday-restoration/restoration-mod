@@ -63,7 +63,6 @@ function restoration:Init()
 		"kenaz", --golden grin casino 
 		"big", --big bank
 		"dinner", --Slaughterhouse
-		"chca", --Black Cat Heist
 		--custom heists		
 		"firestarter_1_res", --firestarter day 1 res edit version
 		"hardware_store", --Hardware Store 
@@ -86,6 +85,7 @@ function restoration:Init()
 		"ukrainian_job", --Ukrainian Job
 		"watchdogs_1_night", --Watchdogs Day 1 Night
 		"watchdogs_2", --watch dogs 2 Night
+		"chca", --Black Cat Heist
 		--custom heists
 		"wetwork", --res map package wetworks
 		"alex_1_res", --Rats Day 1 res edit version
@@ -115,6 +115,9 @@ function restoration:Init()
 			"framing_frame_3", --Powerbox simulator
 			"jewelry_store", --Jewelry Store
 			"ukrainian_job", --Ukrainian Job
+			"chca", --Black Cat Heist
+			"watchdogs_1_night", --Watchdogs Day 1 Night
+			"watchdogs_2", --watch dogs 2 Night
 			--custom heists
 			"wetwork", --res map package wetworks
 			"alex_1_res", --Rats Day 1 res edit version
@@ -134,7 +137,6 @@ function restoration:Init()
 			"dinner", --Slaughterhouse
 			"branchbank", --Gets Branchbank from Autumn		
 			"help", --Prison Nightmare	
-			"chca", --Black Cat Heist
 			--custom heists		
 			"firestarter_1_res", --firestarter day 1 res edit version
 			"tj_htsb", --Gets Southern Branchbank from Autumn

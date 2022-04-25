@@ -563,7 +563,7 @@
 	<!--Titan HRT MP9-->	
 	<unit				path="units/payday2/weapons/wpn_npc_smg_mp9_titan/wpn_npc_smg_mp9_titan" load="false" force="false"/>	
 	
-	<!--Titan Grenadier-->	
+	<!--Titan Grenadier--
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_grenadier/ene_titan_grenadier" force="false" load="true"/>
 	<unit				path="units/pd2_dlc_vip/characters/ene_titan_grenadier/ene_titan_grenadier_husk" force="false" load="true"/>
 	<!-- titans end -->
